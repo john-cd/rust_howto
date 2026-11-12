@@ -1,3 +1,6 @@
+# Project-scoped Compose stack: rust-howto-dev.
+# Build inputs come from tracked .devcontainer/.env; from the repo root pass --env-file .devcontainer/.env.
+# Keep credentials in ignored .devcontainer/.env.local; from the repo root pass it as a second --env-file when present.
 # TODO Reviewed ??-??-2026.
 
 ## DEV settings
@@ -5,18 +8,60 @@
 ## Override / merges with settings in compose.yaml
 ## Docker Compose reference guide: https://docs.docker.com/go/compose-spec-reference/
 ##
-name: rust_howto # sets COMPOSE_PROJECT_NAME
+name: rust-howto-dev # sets COMPOSE_PROJECT_NAME
 services:
-  book:
-    image: johncd/rust_howto_dev:${IMAGE_VERSION:-latest} # Name and tag of the image that will be built
+  rust-howto-book:
+    image: johncd/rust_howto_dev:${IMAGE_VERSION:?Set IMAGE_VERSION in .devcontainer/.env or the host environment} # Name and tag of the image that will be built
     build:
       target: development
       args:
-        EMAIL: ${EMAIL:?email must be defined}
-        GIT_AUTHOR_NAME: ${GIT_AUTHOR_NAME:?git author name must be defined}
+        EMAIL: ${EMAIL:?Set EMAIL in .devcontainer/.env or the host environment}
+        GIT_AUTHOR_NAME: ${GIT_AUTHOR_NAME:?Set GIT_AUTHOR_NAME in .devcontainer/.env or the host environment}
+        BACON_VERSION: ${BACON_VERSION:?Set BACON_VERSION in .devcontainer/.env or the host environment}
+        CARGO_BINSTALL_VERSION: ${CARGO_BINSTALL_VERSION:?Set CARGO_BINSTALL_VERSION in .devcontainer/.env or the host environment}
+        CARGO_DENY_VERSION: ${CARGO_DENY_VERSION:?Set CARGO_DENY_VERSION in .devcontainer/.env or the host environment}
+        CARGO_FMT_TOML_VERSION: ${CARGO_FMT_TOML_VERSION:?Set CARGO_FMT_TOML_VERSION in .devcontainer/.env or the host environment}
+        CARGO_NEXTEST_VERSION: ${CARGO_NEXTEST_VERSION:?Set CARGO_NEXTEST_VERSION in .devcontainer/.env or the host environment}
+        DPRINT_VERSION: ${DPRINT_VERSION:?Set DPRINT_VERSION in .devcontainer/.env or the host environment}
+        FLUTTER_GIT_REVISION: ${FLUTTER_GIT_REVISION:?Set FLUTTER_GIT_REVISION in .devcontainer/.env or the host environment}
+        FLUTTER_RUST_BRIDGE_CODEGEN_VERSION: ${FLUTTER_RUST_BRIDGE_CODEGEN_VERSION:?Set FLUTTER_RUST_BRIDGE_CODEGEN_VERSION in .devcontainer/.env or the host environment}
+        FLUTTER_VERSION: ${FLUTTER_VERSION:?Set FLUTTER_VERSION in .devcontainer/.env or the host environment}
+        GH_CLI_LINUX_AMD64_SHA256: ${GH_CLI_LINUX_AMD64_SHA256:?Set GH_CLI_LINUX_AMD64_SHA256 in .devcontainer/.env or the host environment}
+        GH_CLI_LINUX_ARM64_SHA256: ${GH_CLI_LINUX_ARM64_SHA256:?Set GH_CLI_LINUX_ARM64_SHA256 in .devcontainer/.env or the host environment}
+        GH_CLI_VERSION: ${GH_CLI_VERSION:?Set GH_CLI_VERSION in .devcontainer/.env or the host environment}
+        JUST_VERSION: ${JUST_VERSION:?Set JUST_VERSION in .devcontainer/.env or the host environment}
+        KANI_VERIFIER_VERSION: ${KANI_VERIFIER_VERSION:?Set KANI_VERIFIER_VERSION in .devcontainer/.env or the host environment}
+        LYCHEE_VERSION: ${LYCHEE_VERSION:?Set LYCHEE_VERSION in .devcontainer/.env or the host environment}
+        MATURIN_VERSION: ${MATURIN_VERSION:?Set MATURIN_VERSION in .devcontainer/.env or the host environment}
+        MDBOOK_INDEXING_VERSION: ${MDBOOK_INDEXING_VERSION:?Set MDBOOK_INDEXING_VERSION in .devcontainer/.env or the host environment}
+        MDBOOK_LINKCHECK_VERSION: ${MDBOOK_LINKCHECK_VERSION:?Set MDBOOK_LINKCHECK_VERSION in .devcontainer/.env or the host environment}
+        MDBOOK_PANDOC_VERSION: ${MDBOOK_PANDOC_VERSION:?Set MDBOOK_PANDOC_VERSION in .devcontainer/.env or the host environment}
+        MDBOOK_UTILS_REV: ${MDBOOK_UTILS_REV:?Set MDBOOK_UTILS_REV in .devcontainer/.env or the host environment}
+        MDBOOK_VERSION: ${MDBOOK_VERSION:?Set MDBOOK_VERSION in .devcontainer/.env or the host environment}
+        ONNXRUNTIME_LINUX_AARCH64_SHA256: ${ONNXRUNTIME_LINUX_AARCH64_SHA256:?Set ONNXRUNTIME_LINUX_AARCH64_SHA256 in .devcontainer/.env or the host environment}
+        ONNXRUNTIME_LINUX_X64_SHA256: ${ONNXRUNTIME_LINUX_X64_SHA256:?Set ONNXRUNTIME_LINUX_X64_SHA256 in .devcontainer/.env or the host environment}
+        ONNXRUNTIME_VERSION: ${ONNXRUNTIME_VERSION:?Set ONNXRUNTIME_VERSION in .devcontainer/.env or the host environment}
+        ORACLE_CLIENT_DOWNLOAD_ID: ${ORACLE_CLIENT_DOWNLOAD_ID:?Set ORACLE_CLIENT_DOWNLOAD_ID in .devcontainer/.env or the host environment}
+        ORACLE_CLIENT_LINUX_AMD64_BASICLITE_SHA256: ${ORACLE_CLIENT_LINUX_AMD64_BASICLITE_SHA256:?Set ORACLE_CLIENT_LINUX_AMD64_BASICLITE_SHA256 in .devcontainer/.env or the host environment}
+        ORACLE_CLIENT_LINUX_AMD64_SDK_SHA256: ${ORACLE_CLIENT_LINUX_AMD64_SDK_SHA256:?Set ORACLE_CLIENT_LINUX_AMD64_SDK_SHA256 in .devcontainer/.env or the host environment}
+        ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256: ${ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256:?Set ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256 in .devcontainer/.env or the host environment}
+        ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256: ${ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256:?Set ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256 in .devcontainer/.env or the host environment}
+        ORACLE_CLIENT_VERSION: ${ORACLE_CLIENT_VERSION:?Set ORACLE_CLIENT_VERSION in .devcontainer/.env or the host environment}
+        PANDOC_LINUX_AMD64_DEB_SHA256: ${PANDOC_LINUX_AMD64_DEB_SHA256:?Set PANDOC_LINUX_AMD64_DEB_SHA256 in .devcontainer/.env or the host environment}
+        PANDOC_VERSION: ${PANDOC_VERSION:?Set PANDOC_VERSION in .devcontainer/.env or the host environment}
+        PREK_VERSION: ${PREK_VERSION:?Set PREK_VERSION in .devcontainer/.env or the host environment}
+        PYTHON_LINUX_SOURCE_SHA256: ${PYTHON_LINUX_SOURCE_SHA256:?Set PYTHON_LINUX_SOURCE_SHA256 in .devcontainer/.env or the host environment}
+        PYTHON_VERSION: ${PYTHON_VERSION:?Set PYTHON_VERSION in .devcontainer/.env or the host environment}
+        RIPGREP_VERSION: ${RIPGREP_VERSION:?Set RIPGREP_VERSION in .devcontainer/.env or the host environment}
+        RUMDL_VERSION: ${RUMDL_VERSION:?Set RUMDL_VERSION in .devcontainer/.env or the host environment}
+        RUSTFMT_TOOLCHAIN: ${RUSTFMT_TOOLCHAIN:?Set RUSTFMT_TOOLCHAIN in .devcontainer/.env or the host environment}
+        RUST_IMAGE_LABEL: ${RUST_IMAGE_LABEL:?Set RUST_IMAGE_LABEL in .devcontainer/.env or the host environment}
+        SCCACHE_VERSION: ${SCCACHE_VERSION:?Set SCCACHE_VERSION in .devcontainer/.env or the host environment}
+        TECTONIC_LINUX_SHA256: ${TECTONIC_LINUX_SHA256:?Set TECTONIC_LINUX_SHA256 in .devcontainer/.env or the host environment}
+        TECTONIC_VERSION: ${TECTONIC_VERSION:?Set TECTONIC_VERSION in .devcontainer/.env or the host environment}
       cache_from:
-        - johncd/rust_howto_dev:${IMAGE_VERSION:-latest}
-        - johncd/rust_howto_ci:${IMAGE_VERSION:-latest}
+        - johncd/rust_howto_dev:${IMAGE_VERSION:?Set IMAGE_VERSION in .devcontainer/.env or the host environment}
+        - johncd/rust_howto_ci:${IMAGE_VERSION:?Set IMAGE_VERSION in .devcontainer/.env or the host environment}
     volumes:
       - type: bind
         source: ..
@@ -24,14 +69,14 @@ services:
       # The Docker FS is ephemeral; we save the dependencies src and build caches in docker volumes, so that we don't need to redownload and rebuild them
       # every time the container is restarted.
       # Contains the dependencies (source) cache and installed bins https://doc.rust-lang.org/cargo/guide/cargo-home.html
-      - cargo_home_cache:/usr/local/cargo/
+      - rust-howto-cargo-home-cache:/usr/local/cargo/
       # Contains the compile cache:
-      - cargo_target_cache:/code/target/ # See {bk, tool, ...}/.cargo/config.toml. Note this should override the bind mount for that subfolder.
+      - rust-howto-cargo-target-cache:/code/target/ # See {bk, tool, ...}/.cargo/config.toml. Note this should override the bind mount for that subfolder.
       # just routes slot-specific build outputs and sccache through XDG_CACHE_HOME.
-      - cargo_build_cache:/root/.cache/
-      - command_history:/command_history
+      - rust-howto-cargo-build-cache:/root/.cache/
+      - rust-howto-command-history:/command_history
     environment:
-      RUSTFMT_TOOLCHAIN: ${RUSTFMT_TOOLCHAIN:-}
+      RUSTFMT_TOOLCHAIN: ${RUSTFMT_TOOLCHAIN:?Set RUSTFMT_TOOLCHAIN in .devcontainer/.env or the host environment}
       XDG_CACHE_HOME: /root/.cache
       SCCACHE_DIR: /root/.cache/sccache
     ## Required for ptrace-based debugger like C++, Go, and Rust.
@@ -42,13 +87,13 @@ services:
 
 # Create volumes in dev only, since the CI virtual machine is ephemeral
 volumes:
-  cargo_home_cache:
-    name: "${COMPOSE_PROJECT_NAME}_cargo_home_cache_${RUST_VERSION:?rust version must be defined}"
-  cargo_target_cache:
-    name: "${COMPOSE_PROJECT_NAME}_cargo_target_cache_${RUST_VERSION:?rust version must be defined}"
-  cargo_build_cache:
-    name: "${COMPOSE_PROJECT_NAME}_cargo_build_cache_${RUST_VERSION:?rust version must be defined}"
-  command_history:
-    name: "${COMPOSE_PROJECT_NAME}_command_history"
+  rust-howto-cargo-home-cache:
+    name: ${COMPOSE_PROJECT_NAME:?Set COMPOSE_PROJECT_NAME in .devcontainer/.env or the host environment}_rust-howto-cargo_home_cache version must be defined}"
+  rust-howto-cargo-target-cache:
+    name: ${COMPOSE_PROJECT_NAME:?Set COMPOSE_PROJECT_NAME in .devcontainer/.env or the host environment}_rust-howto-cargo_target_cache version must be defined}"
+  rust-howto-cargo-build-cache:
+    name: ${COMPOSE_PROJECT_NAME:?Set COMPOSE_PROJECT_NAME in .devcontainer/.env or the host environment}_rust-howto-cargo_build_cache version must be defined}"
+  rust-howto-command-history:
+    name: ${COMPOSE_PROJECT_NAME:?Set COMPOSE_PROJECT_NAME in .devcontainer/.env or the host environment}_rust-howto-command_history
 
 ## Without custom names, the docker volumes will be prefixed by the compose project name + _

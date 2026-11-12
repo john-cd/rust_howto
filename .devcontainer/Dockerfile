@@ -1,4 +1,7 @@
 # syntax=docker/dockerfile:1-labs
+# Dockerfile build inputs are required and supplied by Compose from tracked .devcontainer/.env.
+# From the repo root pass --env-file .devcontainer/.env and add --env-file .devcontainer/.env.local when present.
+# Dockerfile build inputs for rust-howto.
 # TODO Reviewed ??-??-2026.
 
 # This multi-stage build supplies the Rust toolchains and native libraries used by the book workspace.
@@ -16,7 +19,7 @@
 
 # The build arg is passed by compose.yaml and set from the RUST_IMAGE_LABEL
 # variable in `.devcontainer/.env`.
-ARG RUST_IMAGE_LABEL=1.99.1-slim-trixie
+ARG RUST_IMAGE_LABEL
 
 FROM rust:${RUST_IMAGE_LABEL} AS rust-core
 ## Repo for the Rust images: https://github.com/rust-lang/docker-rust/tree/master
@@ -413,8 +416,8 @@ EOF
 
 ## Git config
 # Compose build arguments override these fallback Git identity values.
-ARG EMAIL=nobody@users.noreply.github.com
-ARG GIT_AUTHOR_NAME=nemo
+ARG EMAIL
+ARG GIT_AUTHOR_NAME
 RUN git config --global user.email ${EMAIL} && git config --global user.name ${GIT_AUTHOR_NAME}
 
 ## For `mdbook serve --open`
