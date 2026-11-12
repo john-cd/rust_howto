@@ -16,6 +16,14 @@ publish = false
 keywords = ["markdown generation"]
 categories = ["development-tools", "command-line-utilities", "text-processing"]
 
+[[bench]]
+name = "tool_lib_bench"
+harness = false
+
+[[bench]]
+name = "templates"
+harness = false
+
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = { workspace = true }
@@ -48,25 +56,17 @@ trim-in-place = { workspace = true }
 # Recursively walk a directory.
 walkdir = { workspace = true }
 
-[[bench]]
-name = "tool_lib_bench"
-harness = false
-
 [dev-dependencies]
-# Measures Rust benchmark performance with statistical analysis and comparison reports.
-criterion = { workspace = true }
 # Date and time library for Rust
 chrono = { workspace = true }
+# Measures Rust benchmark performance with statistical analysis and comparison reports.
+criterion = { workspace = true }
 # HTTP mocking for Rust.
 mockito = { workspace = true }
 # A JSON serialization file format
 serde_json = { workspace = true }
 # URL library for Rust, based on the WHATWG URL Standard
 url = { workspace = true }
-
-[[bench]]
-name = "templates"
-harness = false
 
 [lints]
 workspace = true

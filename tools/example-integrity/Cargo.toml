@@ -9,6 +9,14 @@ license-file.workspace = true
 readme = "README.md"
 publish.workspace = true
 
+[[bench]]
+name = "example_integrity_bench"
+harness = false
+
+[[bench]]
+name = "audit"
+harness = false
+
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow.workspace = true
@@ -29,19 +37,11 @@ toml.workspace = true
 # Recursively walk a directory.
 walkdir.workspace = true
 
-[[bench]]
-name = "example_integrity_bench"
-harness = false
-
 [dev-dependencies]
 # Measures Rust benchmark performance with statistical analysis and comparison reports.
 criterion.workspace = true
 # A library for managing temporary files and directories.
 tempfile.workspace = true
-
-[[bench]]
-name = "audit"
-harness = false
 
 [lints]
 workspace = true
