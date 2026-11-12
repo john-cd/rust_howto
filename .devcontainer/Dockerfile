@@ -34,10 +34,7 @@ RUN rustup component add clippy rustfmt
 
 ## Install the repository-pinned formatter toolchain after stable, because it changes more often.
 ARG RUSTFMT_TOOLCHAIN
-COPY rustfmt-toolchain.toml /usr/local/share/rustfmt-toolchain.toml
-ENV RUSTFMT_TOOLCHAIN_FILE=/usr/local/share/rustfmt-toolchain.toml
-RUN RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(sed -n 's/^channel *= *"\([^"]*\)".*/\1/p' "$RUSTFMT_TOOLCHAIN_FILE")}" \
-    && rustup toolchain install "$RUSTFMT_TOOLCHAIN" --profile minimal --component rustfmt
+RUN rustup toolchain install "${RUSTFMT_TOOLCHAIN}" --profile minimal --component rustfmt
 ENV RUSTFMT_TOOLCHAIN=${RUSTFMT_TOOLCHAIN}
 
 ## Optional: make the pinned formatter toolchain the default for interactive Cargo commands.
@@ -137,8 +134,7 @@ RUN --mount=type=secret,id=github_token,required=false \
 
 ## Build repository tools in release mode with the pinned formatter toolchain.
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
-    RUSTFMT_TOOLCHAIN="${RUSTFMT_TOOLCHAIN:-$(sed -n 's/^channel *= *"\([^"]*\)".*/\1/p' "$RUSTFMT_TOOLCHAIN_FILE")}" \
-    && cargo +"$RUSTFMT_TOOLCHAIN" build --bins --locked --all-features --release -Z unstable-options --artifact-dir /code/bin --manifest-path /code/tools/Cargo.toml
+    cargo +"${RUSTFMT_TOOLCHAIN}" build --bins --locked --all-features --release -Z unstable-options --artifact-dir /code/bin --manifest-path /code/tools/Cargo.toml
 
 # ------------------------------------------------------------------------------------------------
 
