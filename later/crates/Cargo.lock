@@ -9335,11 +9335,11 @@ dependencies = [
 
 [[package]]
 name = "egui-notify"
-version = "0.24.0"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f022e19ac3be5e1798892426d9aa2ab55fe5acf346c476589601a0df46bf89dc"
+checksum = "0d9a4fdd9da87f468f8adce88cf35d40b6097467f7bd3f5798d8550479dd22fa"
 dependencies = [
- "egui 0.37.0",
+ "egui 0.36.2",
 ]
 
 [[package]]

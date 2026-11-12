@@ -8312,12 +8312,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f70749695b063ecbf6b62949ccccde2e733ec3ecbbd71d467dca4e5c6c97cca0"
 
 [[package]]
-name = "glam"
-version = "0.33.12"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "37bfe73dc8ec21f54d181e5a60554327ec3f1c600c455a75ccbfc65d2106a6c4"
-
-[[package]]
 name = "glob"
 version = "0.3.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -11364,7 +11358,7 @@ dependencies = [
  "cmaes",
  "fixed",
  "half",
- "nalgebra 0.35.0",
+ "nalgebra 0.34.2",
  "ndarray",
  "num",
  "num-bigint 0.5.1",
@@ -12049,7 +12043,7 @@ dependencies = [
  "num-traits",
  "rand 0.8.8",
  "rand_distr 0.4.3",
- "simba 0.9.1",
+ "simba",
  "typenum",
 ]
 
@@ -12083,28 +12077,8 @@ dependencies = [
  "num-complex 0.4.6",
  "num-rational",
  "num-traits",
- "simba 0.9.1",
- "typenum",
-]
-
-[[package]]
-name = "nalgebra"
-version = "0.35.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "adc43a60c217b0c6ff46e47f26911015ad8d2e5a8be1af668c67e370d99a4346"
-dependencies = [
- "approx 0.5.1",
- "glam 0.30.10",
- "glam 0.31.1",
- "glam 0.32.1",
- "glam 0.33.12",
- "matrixmultiply",
- "nalgebra-macros 0.3.0",
- "num-complex 0.4.6",
- "num-rational",
- "num-traits",
  "serde",
- "simba 0.10.2",
+ "simba",
  "typenum",
 ]
 
@@ -12800,7 +12774,7 @@ dependencies = [
  "nalgebra 0.34.2",
  "num-traits",
  "serde",
- "simba 0.9.1",
+ "simba",
  "thiserror 2.0.21",
 ]
 
@@ -18252,18 +18226,6 @@ dependencies = [
  "num-traits",
  "paste",
  "wide 0.7.33",
-]
-
-[[package]]
-name = "simba"
-version = "0.10.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f1a7200d82ff1c7b4235efd12f11e2537a402c91cf83a5cb97ce80eef787fde7"
-dependencies = [
- "approx 0.5.1",
- "num-complex 0.4.6",
- "num-traits",
- "wide 1.7.1",
 ]
 
 [[package]]

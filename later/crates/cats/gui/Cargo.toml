@@ -150,8 +150,8 @@ eframe_034 = { package = "eframe", version = "0.34.3", optional = true }
 eframe_036 = { package = "eframe", version = "0.36.2", optional = true }
 # An easy-to-use immediate mode GUI that runs on both web and native
 egui = "0.37.0"
-# Simple notifications library for egui
-egui-notify = { version = "0.24.0", optional = true } # Blocked: 0.24 needs egui 0.37, but egui-phosphor 0.14 (used with it in egui_toasts_icons) needs egui 0.36.
+# Simple notifications library for egui; pin to the egui 0.36 line used by egui-phosphor 0.14.
+egui-notify = { version = "=0.23.0", optional = true }
 # Phosphor icons for egui
 egui-phosphor = { version = "0.14.0", optional = true } # Latest release; depends on egui 0.36, one release behind egui 0.37.
 # Extra functionality and widgets for the egui GUI library
