@@ -19,7 +19,7 @@ compose() {
     docker compose --env-file "${d}/.env" \
         -f "${d}/compose.yaml" \
         -f "${d}/compose.override.yaml" \
-        -f "${d}/compose-heavy-tests.yaml" \
+        -f "${d}/compose.heavy-tests.yaml" \
         "$@"
 }
 

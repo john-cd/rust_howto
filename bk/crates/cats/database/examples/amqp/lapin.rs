@@ -142,7 +142,7 @@ mod tests {
     #[test]
     #[ignore = "needs RabbitMQ"]
     fn rabbitmq_round_trip() -> anyhow::Result<()> {
-        // `.devcontainer/compose-heavy-tests.yaml` configures AMQP_ADDR for the
+        // `.devcontainer/compose.heavy-tests.yaml` configures AMQP_ADDR for the
         // book service that runs this external-service test.
         main()
     }

@@ -25,7 +25,7 @@ To deploy the book, run **Build the book code and deploy the book to GitHub Page
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `load-pinned-versions` | Exports `RUST_VERSION`, `MDBOOK_*`, `CARGO_NEXTEST_VERSION`, `JUST_VERSION` from `.devcontainer/.env`, the single source of truth shared with the Docker image.                       |
 | `setup-rust`           | Installs the pinned stable/nightly toolchains and sccache, then restores Cargo artifact caches for the configured target/build paths. Identical in `book_tooling` and `mdbook-utils`. |
-| `set-cache-scope`      | Sets `GHA_CACHE_SCOPE`, the Docker layer cache scope used by `.devcontainer/compose-ci.yaml`.                                                                                         |
+| `set-cache-scope`      | Sets `GHA_CACHE_SCOPE`, the Docker layer cache scope used by `.devcontainer/compose.ci.yaml`.                                                                                         |
 | `docker-login`         | Docker Hub login; the only place that pins `docker/login-action`.                                                                                                                     |
 
 ## Conventions

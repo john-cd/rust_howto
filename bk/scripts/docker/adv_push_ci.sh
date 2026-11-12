@@ -20,7 +20,7 @@ docker login
 ## 3) Build with the custom builder. The image is pushed to the registry, not stored locally.
 ## Changing the cwd seems required to read the .env file
 cd ${root}.devcontainer/
-docker buildx bake -f compose.yaml -f compose-ci.yaml --builder=container --pull --push --allow=fs.read=..
+docker buildx bake -f compose.yaml -f compose.ci.yaml --builder=container --pull --push --allow=fs.read=..
 
 ## 4) Delete the custom builder
 docker buildx rm --keep-state container
@@ -42,7 +42,7 @@ docker buildx rm --keep-state container
 # docker buildx rm --all-inactive -f
 
 ## - Print the configuration used by bake
-# docker buildx bake -f .devcontainer/compose.yaml -f .devcontainer/compose-ci.yaml --builder=container --print
+# docker buildx bake -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml --builder=container --print
 
 ## - Build directly with the custom driver; use --load to load the image to the local image store and --push to push to DockerHub
 # docker buildx build -f .devcontainer/Dockerfile --target ci --tag johncd/rust_howto_ci:latest --builder=container --cache-from=type=registry,ref=johncd/rust_howto_ci:latest --push .
