@@ -10,8 +10,8 @@ description: Install the pinned stable and nightly (rustfmt) toolchains and cach
 
 inputs:
   toolchain:
-    description: Stable Rust version used to build and test. Keep in sync with `rust-version` / `.devcontainer/.env`.
-    default: "1.99.1"
+    description: Optional stable toolchain override. Defaults to the channel in `rust-toolchain.toml`.
+    default: ""
   nightly:
     description: Optional nightly toolchain override for `cargo fmt`; use `skip` to omit nightly rustfmt.
     default: ""
@@ -42,6 +42,13 @@ runs:
         COMPONENTS: ${{ inputs.components }}
       run: |
         set -euo pipefail
+        if [ -z "$TOOLCHAIN" ]; then
+          TOOLCHAIN="$(sed -n 's/^channel *= *"\([^"]*\)".*/\1/p' rust-toolchain.toml | head -n 1)"
+        fi
+        if [ -z "$TOOLCHAIN" ]; then
+          echo "Stable Rust channel is missing from rust-toolchain.toml" >&2
+          exit 1
+        fi
         args=()
         for c in $COMPONENTS; do args+=(--component "$c"); done
         rustup toolchain install "$TOOLCHAIN" --profile minimal ${args[@]+"${args[@]}"}

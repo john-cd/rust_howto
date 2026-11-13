@@ -35,9 +35,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Load pinned stable Rust version
+        id: load-stable-rust
+        shell: bash
+        working-directory: ${{ github.workspace }}
+        run: |
+          rust_version="$(sed -n 's/^[[:space:]]*channel[[:space:]]*=[[:space:]]*"\([^"]*\)".*/\1/p' rust-toolchain.toml | head -n 1)"
+          if [[ -z "$rust_version" ]]; then
+            echo "Could not read channel from rust-toolchain.toml" >&2
+            exit 1
+          fi
+          echo "RUST_VERSION=$rust_version" >> "$GITHUB_ENV"
+          echo "version=$rust_version" >> "$GITHUB_OUTPUT"
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
+          toolchain: ${{ steps.load-stable-rust.outputs.version }}
           targets: "${{ matrix.target }}"
 
       - name: Setup Cache
