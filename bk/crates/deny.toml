@@ -22,6 +22,7 @@ ignore = [
   { id = "RUSTSEC-2026-0403", reason = "zstd-safe 7.3.0 is pinned through zstd 0.13.3 by pingora; legacy-frame streaming decompression is not used by the examples." },
   { id = "RUSTSEC-2026-0194", reason = "quick-xml 0.39.4 is pinned by object_store 0.13.2 in the optional SurrealDB 3.3.4 stack. The example instantiates only the in-memory Mem engine and does not parse user-supplied XML; object_store requires quick-xml ^0.39.0, so updating the lockfile to the fixed 0.41.0 was rejected by Cargo. Revisit when SurrealDB releases an object_store dependency that accepts a fixed quick-xml." },
   { id = "RUSTSEC-2026-0195", reason = "quick-xml 0.39.4 is pinned by object_store 0.13.2 in the optional SurrealDB 3.3.4 stack. The example instantiates only the in-memory Mem engine and does not parse user-supplied XML; object_store requires quick-xml ^0.39.0, so updating the lockfile to the fixed 0.41.0 was rejected by Cargo. Revisit when SurrealDB releases an object_store dependency that accepts a fixed quick-xml." },
+  { id = "RUSTSEC-2026-0459", reason = "The bk/crates database adapters currently pin libsqlite3-sys 0.37.0: SQLx 0.9.0 caps it below 0.38 and Diesel 2.3.14 below 0.39. Bundled SQLite before 3.54.0 is affected, so this records an unresolved risk, not a remediation. Upgrade the adapters together to resolve patched libsqlite3-sys >=0.39.0, then remove this entry; tracked in #2245." },
 ]
 unmaintained = "workspace"
 unsound = "workspace"
