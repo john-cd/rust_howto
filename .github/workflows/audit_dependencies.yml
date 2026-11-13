@@ -171,6 +171,8 @@ jobs:
           command: check
           arguments: --workspace --config ${{ matrix.config }}
           command-arguments: --hide-inclusion-graph
+          # The tools workspace depends on the private john-cd/book_tooling repository.
+          credentials: ${{ matrix.workspace == 'tools' && secrets.BOOK_TOOLING_TOKEN != '' && format('https://{0}:{1}@github.com', github.repository_owner, secrets.BOOK_TOOLING_TOKEN) || '' }}
 env:
   ## The cargo-deny action runs in a container without sccache, which .cargo/config.toml sets as the rustc wrapper.
   RUSTC_WRAPPER: ""

@@ -130,7 +130,7 @@ opentelemetry = [
     "dep:tracing-opentelemetry",
 ]
 
-[target.'cfg(target_os = "linux")'.dependencies]
+[target.'cfg(unix)'.dependencies]
 # Syslog message formatter and writer, supporting unix sockets, UDP and TCP exporters
 syslog = "7.0.0"
 

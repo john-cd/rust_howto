@@ -77,6 +77,7 @@ jobs:
             --target local-tool-builder \
             --tag rust_howto_tools_app_builder:latest \
             --build-arg RUST_IMAGE_LABEL="$RUST_IMAGE_LABEL" \
+            --build-arg RUSTFMT_TOOLCHAIN="$RUSTFMT_TOOLCHAIN" \
             --cache-from type=gha,scope="$cache_scope" \
             --cache-to type=gha,mode=max,scope="$cache_scope" \
             ${GH_TOKEN:+--secret id=github_token,env=GH_TOKEN} \

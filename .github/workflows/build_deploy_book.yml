@@ -125,7 +125,7 @@ jobs:
         run: |
           docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml run \
             --rm --build --pull never \
-            book
+            rust-howto-book
 
   ## Introduction to GitHub Actions with Docker: https://docs.docker.com/guides/gha/
   build-image:
@@ -228,7 +228,7 @@ jobs:
           docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml run --rm \
             -e NEXTEST_ARGS="--partition hash:${{ matrix.partition }}/2" \
             -e SKIP_BOOK_BUILD="true" \
-            book
+            rust-howto-book
 
   build-book:
     if: ${{ github.event_name != 'pull_request' }}
@@ -271,7 +271,7 @@ jobs:
           docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml run --rm \
             -e SKIP_TESTS="true" \
             -e BUILD_PDF="${{ inputs.build_pdf || false }}" \
-            book
+            rust-howto-book
       - name: Upload artifacts
         # actions/upload-pages-artifact v5.0.0
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
