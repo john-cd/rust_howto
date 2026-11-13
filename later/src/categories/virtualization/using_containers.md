@@ -11,7 +11,7 @@ Use an image to package a process and its runtime dependencies. Use a Docker cli
 For an ordinary Cargo application with a checked-in `Cargo.lock` and a binary named `my-service`, the following multi-stage Dockerfile uses [cargo-chef][containers~cargo-chef] to cache dependencies. Rename the binary and include application assets as needed. The builder and final image both use Debian 13; native dependencies may require additional runtime libraries.
 
 ```dockerfile
-FROM rust:1.99.1-slim-trixie AS chef
+FROM rust:1.100.0-slim-trixie AS chef
 RUN cargo install cargo-chef --locked --version 0.1.78
 WORKDIR /app
 
