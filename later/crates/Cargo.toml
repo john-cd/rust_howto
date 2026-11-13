@@ -46,27 +46,13 @@ wasmer = { version = "7.5.0", default-features = false, features = ["wat"] }
 [workspace.package]
 version = "0.1.2"
 authors = ["John CD"]
-categories = [
-    "algorithms",
-    "asynchronous",
-    "concurrency",
-    "web-programming",
-    "development-tools",
-    "api-bindings",
-    "caching",
-    "command-line-interface",
-    "compilers",
-    "compression",
-]
 documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
 homepage = "https://john-cd.com/rust_howto/"
-keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 license-file = "../../LICENSE"
 publish = false
 repository = "https://github.com/john-cd/rust_howto/"
 rust-version = "1.98.1"
-description = "A documentation summary and a compendium of snippets and recipes for the Rust language and ecosystem. Everything you need for day-to-day Rust coding, all in one place."
 
 [workspace.lints.rust]
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
