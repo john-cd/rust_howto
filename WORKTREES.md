@@ -30,13 +30,13 @@ installations or rewrite independent package-manager settings.
 Use `just build-env` to inspect the effective environment and
 `just cargo <arguments>` to run Cargo. Windows targets use
 `CODE_TARGET_ROOT/rust_howto/<slot>` (default root `D:/target`);
-intermediates use `CODE_BUILD_ROOT/rust_howto/<slot>` (`C:/code_build`).
-The intermediate volume must be NTFS; the runner rejects ReFS.
+intermediates use `CODE_BUILD_ROOT/rust_howto/<slot>` (`D:/code_build`).
+The intermediate volume may use NTFS or ReFS with Rust 1.100.0 or newer.
 Unix defaults use XDG cache or `~/.cache` under `cargo-target` and
 `cargo-build`. The runner enables sccache with incremental compilation disabled
 and computes base directories from registered allowed worktrees.
 
-Run `just configure-cargo-host` once per host and after changing roots. It keeps shared compiler defaults in `CARGO_HOME/config.toml` and removes global target/build output overrides. Run build-setup once per checkout. Task-runner Cargo commands pass absolute `D:/target/<repo>/<slot>` and `C:/code_build/<repo>/<slot>` paths; use checkout links or explicit Cargo environment paths for direct Cargo and rust-analyzer as required by the host filesystem. See [README](README.md).
+Run `just configure-cargo-host` once per host and after changing roots. It keeps shared compiler defaults in `CARGO_HOME/config.toml` and removes global target/build output overrides. Run build-setup once per checkout. Task-runner Cargo commands pass absolute `D:/target/<repo>/<slot>` and `D:/code_build/<repo>/<slot>` paths; use checkout links or explicit Cargo environment paths for direct Cargo and rust-analyzer as required by the host filesystem. See [README](README.md).
 
 ## Python
 
@@ -65,7 +65,7 @@ reuse it.
 The primary `main` cache and worktree `a`/`b` caches remain in place. Slot `c`'s
 intermediate cache was removed on 2026-11-03 after confirming no Cargo or rustc
 process was active and the checkout's worktree was clean at a detached tip
-already contained in `develop`. Its empty `C:/code_build/rust_howto/c` directory
+already contained in `develop`. Its empty `D:/code_build/rust_howto/c` directory
 was recreated. The shared `D:/sccache` remains in place. A Git cherry-pick is
 currently in progress in slot `c`; preserve it until that operation is resolved.
 
