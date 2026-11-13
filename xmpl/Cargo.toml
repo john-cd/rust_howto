@@ -26,16 +26,13 @@ tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 [workspace.package]
 version = "0.1.2"
 authors = ["John CD"]
-categories = ["asynchronous", "command-line-utilities"]
 documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
 homepage = "https://john-cd.com/rust_howto/"
-keywords = ["examples", "rust-by-example", "tutorial", "reference"]
 license-file = "../LICENSE"
 publish = false
 repository = "https://github.com/john-cd/rust_howto/xmpl/"
 rust-version = "1.98.1"
-description = "A collection of standalone, ready-to-run Rust code examples for various programming domains."
 
 [workspace.lints.rust]
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
