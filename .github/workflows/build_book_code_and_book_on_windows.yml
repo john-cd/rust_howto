@@ -142,6 +142,25 @@ jobs:
           cargo test --workspace --doc --locked --profile ci -- --show-output
         working-directory: bk/crates
 
+      - name: Configure credentials for private Cargo dependencies
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.BOOK_TOOLING_TOKEN }}
+        run: |
+          if ($env:GH_TOKEN) {
+            $authHeader = [Convert]::ToBase64String(
+              [Text.Encoding]::UTF8.GetBytes("x-access-token:$env:GH_TOKEN")
+            )
+            @(
+              "CARGO_NET_GIT_FETCH_WITH_CLI=true"
+              "GIT_CONFIG_COUNT=1"
+              "GIT_CONFIG_KEY_0=http.https://github.com/.extraheader"
+              "GIT_CONFIG_VALUE_0=AUTHORIZATION: basic $authHeader"
+            ) | Add-Content -LiteralPath $env:GITHUB_ENV -Encoding utf8
+          } else {
+            Write-Warning 'BOOK_TOOLING_TOKEN is not set; the tools workspace cannot fetch john-cd/book_tooling.'
+          }
+
       - name: Build / release the tools, incl. mdbook-scrub
         run: cargo +"$RUSTFMT_TOOLCHAIN" build --bins --locked --release -Z unstable-options --artifact-dir "../bin"
         working-directory: tools
