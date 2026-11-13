@@ -27,8 +27,8 @@ if ($IsWindows) {
         }
         $ancestor = Split-Path -Parent $ancestor
     }
-    if ($fileSystem -ne 'NTFS') {
-        throw "Cargo intermediate builds require NTFS; $BuildRoot uses $fileSystem. Set CODE_BUILD_ROOT to an NTFS directory."
+    if ($fileSystem -notin @('NTFS', 'ReFS')) {
+        throw "Cargo intermediate builds require NTFS or ReFS with Rust 1.100.0 or newer; $BuildRoot uses $fileSystem. Set CODE_BUILD_ROOT to an NTFS or ReFS directory with Rust 1.100.0 or newer."
     }
 }
 

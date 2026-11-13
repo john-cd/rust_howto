@@ -18,7 +18,7 @@ build_code_temp_root := env("CODE_TEMP_ROOT", if os_family() == "windows" { if p
 build_code_packages_root := env("CODE_PACKAGES_ROOT", if os_family() == "windows" { "D:/packages" } else { join(home_directory(), ".local/share") })
 build_code_tools_root := env("CODE_TOOLS_ROOT", if os_family() == "windows" { "C:/tools" } else { join(home_directory(), ".local/tools") })
 build_code_target_root := env("CODE_TARGET_ROOT", if os_family() == "windows" { "D:/target" } else { join(build_cache_home, "cargo-target") })
-build_code_build_root := env("CODE_BUILD_ROOT", if os_family() == "windows" { "C:/code_build" } else { join(build_cache_home, "cargo-build") })
+build_code_build_root := env("CODE_BUILD_ROOT", if os_family() == "windows" { "D:/code_build" } else { join(build_cache_home, "cargo-build") })
 build_code_sccache_root := env("CODE_SCCACHE_ROOT", env("SCCACHE_DIR", if os_family() == "windows" { "D:/sccache" } else { join(build_cache_home, "sccache") }))
 build_target_base := join(build_code_target_root, "rust_howto")
 build_intermediate_base := join(build_code_build_root, "rust_howto")
@@ -49,7 +49,7 @@ done
 export CARGO_TARGET_DIR := build_target_dir
 export CARGO_BUILD_TARGET_DIR := build_target_dir
 host_build_volume := if os() == "windows" { trim(shell('pwsh.exe -NoLogo -NoProfile -File "$1" -BuildRoot "$2"', join(build_repo, "scripts/cargo-host.ps1"), build_code_build_root)) } else { "ok" }
-export CARGO_BUILD_BUILD_DIR := if host_build_volume == "ok" { build_intermediate_dir } else { error("Cargo build root must use NTFS") }
+export CARGO_BUILD_BUILD_DIR := if host_build_volume == "ok" { build_intermediate_dir } else { error("Cargo build root must use NTFS or ReFS (Rust 1.100.0 or newer)") }
 export RUSTC_WRAPPER := env("RUSTC_WRAPPER", "sccache")
 export CARGO_BUILD_RUSTC_WRAPPER := env("CARGO_BUILD_RUSTC_WRAPPER", "sccache")
 export CARGO_INCREMENTAL := "0"

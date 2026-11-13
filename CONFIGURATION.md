@@ -190,7 +190,7 @@ configuration files.
 
 On Windows slot `b`, `scripts/setup-build.ps1` reused the expected target/build/cache junctions
 and refused an alternate `CODE_TARGET_ROOT` because the existing target junction points elsewhere.
-`scripts/cargo-host.ps1 -BuildRoot C:/code_build -LinkOutputs` accepted the NTFS build volume and
+`scripts/cargo-host.ps1 -BuildRoot D:/code_build -LinkOutputs` accepted the NTFS build volume and
 existing checkout links. With elevated process access, the Just base-directory probe, `build-setup`,
 and custom `CODE_TARGET_ROOT`/`CODE_BUILD_ROOT` evaluation passed. `just deny` passed all 13 configured
 Cargo dependency-policy roots after the `pulldown-cmark` security update and scoped zip exceptions.

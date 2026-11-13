@@ -63,7 +63,7 @@ The book's [GitHub repository][rust-howto~repo]↗ is a "monorepo" with multiple
   - The [`tools`][rust-howto~tools~repo]↗ workspace builds a few CLI binaries that share a common `tool_lib` library.
   - In the base folder of each project, type [`just`][c~just~docs]↗{{hi:just}} at the shell prompt for a list of commands you can use to format, check, build, lint and test the code. `just release` builds tools in release mode and copies the binaries into the `bin` folder (in the repo root).
 
-Cargo's `target` and intermediate `build` directories are linked from the repository root to persistent, per-checkout cache directories by `just build-setup`. On Windows these are `D:\target\rust_howto\<slot>` and `C:\code_build\rust_howto\<slot>`; the Dev Container uses `/root/.cache/rust_howto/target/<slot>` and `/root/.cache/rust_howto/build/<slot>`. The root `.cargo/config.toml` and shared `scripts/build.just` configure these paths for the independent workspaces. Run `just build-setup` once in a checkout before direct Cargo commands; `just worktree` sets up new slots automatically.
+Cargo's `target` and intermediate `build` directories are linked from the repository root to persistent, per-checkout cache directories by `just build-setup`. On Windows these are `D:\target\rust_howto\<slot>` and `D:\code_build\rust_howto\<slot>`; the Dev Container uses `/root/.cache/rust_howto/target/<slot>` and `/root/.cache/rust_howto/build/<slot>`. The root `.cargo/config.toml` and shared `scripts/build.just` configure these paths for the independent workspaces. Run `just build-setup` once in a checkout before direct Cargo commands; `just worktree` sets up new slots automatically.
 
 Consult the `README.md` files of each crate for more details.
 
