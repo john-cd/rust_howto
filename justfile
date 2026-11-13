@@ -13,8 +13,6 @@ set shell := ["bash", "-uc"]
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 set quiet
 
-export CARGO_TERM_QUIET := env("CARGO_TERM_QUIET", "true")
-
 # Uniform task names (short aliases). The aggregate tasks run in every workspace.
 alias f := format
 alias fa := format-all

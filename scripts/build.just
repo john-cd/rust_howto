@@ -48,6 +48,7 @@ done
 
 export CARGO_TARGET_DIR := build_target_dir
 export CARGO_BUILD_TARGET_DIR := build_target_dir
+export CARGO_TERM_QUIET := env("CARGO_TERM_QUIET", "true")
 host_build_volume := if os() == "windows" { trim(shell('pwsh.exe -NoLogo -NoProfile -File "$1" -BuildRoot "$2"', join(build_repo, "scripts/cargo-host.ps1"), build_code_build_root)) } else { "ok" }
 export CARGO_BUILD_BUILD_DIR := if host_build_volume == "ok" { build_intermediate_dir } else { error("Cargo build root must use NTFS or ReFS (Rust 1.100.0 or newer)") }
 export RUSTC_WRAPPER := env("RUSTC_WRAPPER", "sccache")
@@ -64,7 +65,9 @@ export TMPDIR := if os() == "windows" { build_code_temp_root } else { env("TMPDI
 # Run an ad hoc Cargo command with this checkout's shared build environment.
 [positional-arguments]
 @cargo +args:
+    @printf '[cargo] start: %s\n' "$*"
     cargo "$@"
+    @printf '[cargo] done: %s\n' "$*"
 
 # Connect direct Cargo commands to the same persistent directories as just.
 [windows]
