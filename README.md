@@ -157,7 +157,8 @@ it does not move existing installations. Tool-specific overrides such as
 `CARGO_HOME`, `npm_config_cache`, and `NUGET_PACKAGES` remain independent.
 Rust builds also read `CODE_BUILD_ROOT`, `CODE_TARGET_ROOT`, and
 `CODE_SCCACHE_ROOT`. Their Windows defaults are `D:/code_build`, `D:/target`,
-and `D:/sccache`.
+and `D:/sccache`. The runner supports NTFS and ReFS intermediate volumes with
+Rust 1.100.0 or newer.
 Run `just configure-cargo-host` once per host (PowerShell 7 is required), and rerun it after changing roots. It preserves other Cargo settings, keeps the shared sccache and incremental defaults in `CARGO_HOME/config.toml`, and removes global output-directory overrides. Each checkout's Cargo config routes `target` and `build` through checkout-local links to `D:/target/<repo>/<slot>` and `D:/code_build/<repo>/<slot>`. Run the build-setup recipe once per checkout before using plain Cargo or rust-analyzer; task-runner Cargo commands supply the same per-slot paths and repository sccache settings.
 
 ## Repository configuration
