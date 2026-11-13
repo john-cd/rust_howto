@@ -27,6 +27,8 @@ same Maturin version.
   The separate `python_extension` workspace builds an importable module with
   Python, an active virtual environment, and Maturin. The installed Maturin
   version is pinned in `.devcontainer/.env`.
+- **Lua:** The Lua examples use the system Lua 5.4 development library and
+  headers. Install Lua 5.4 before enabling the `lua` or `lua-module` feature.
 
 See the Java, Ruby, and Python chapters for the commands to compile and run each
 language-side example.
