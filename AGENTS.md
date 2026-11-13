@@ -149,6 +149,7 @@ These Rust design and error-handling rules govern maintained tools and reusable 
 - Keep auxiliary Git worktrees directly under `.worktrees/` in slots `a`, `b`, or `c` only; keep the primary checkout separate.
 - Keep the main worktree on `develop`. Keep topic branches in auxiliary worktrees.
 - Windows: target outputs go to CODE_TARGET_ROOT/rust_howto/<slot> and intermediate build outputs go to CODE_BUILD_ROOT/rust_howto/<slot>.
+- Windows intermediate builds support NTFS and ReFS with Rust 1.100.0 or newer; the runner validates CODE_BUILD_ROOT before Cargo starts.
 - Linux/macOS: target outputs go to the XDG cache folder (or ~/.cache) under cargo-target/rust_howto/<slot>; intermediate outputs go under cargo-build/rust_howto/<slot>.
 - Run ad hoc commands as just cargo <subcommand> [args...]; existing cargo-make tasks also receive the configured paths.
 - Direct Cargo and workspace justfiles use sccache with incremental compilation disabled by `.cargo/config.toml`. Both paths keep Cargo outputs in the external directories above. Prefer the justfiles for ad hoc Cargo commands so they select the worktree's external paths.
