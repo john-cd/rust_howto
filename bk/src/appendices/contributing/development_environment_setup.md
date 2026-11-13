@@ -40,7 +40,7 @@ sudo apt-get update # Or equivalent for other distros
 # sudo apt-get install mold clang # If using
 rustup update
 rustup component add clippy
-cargo install cargo-nextest --version 0.9.148 --locked
+cargo install cargo-nextest --version 0.9.151 --locked
 cargo install mdbook --version 0.5.4 --locked
 cargo install just
 cargo install mdbook-linkcheck --version 0.7.7 --locked
@@ -78,7 +78,7 @@ After installing Rust via `rustup`, open a new terminal and run:
 
 ```powershell
 rustup component add clippy
-cargo install cargo-nextest --version 0.9.148 --locked
+cargo install cargo-nextest --version 0.9.151 --locked
 cargo install mdbook --version 0.5.4 --locked
 cargo install mdbook-linkcheck --version 0.7.7 --locked
 cargo install --git https://github.com/john-cd/mdbook-utils --rev 171a98f93a6d3817561c8dd9f8075a9dcf6629f3 --locked --force mdbook-utils
