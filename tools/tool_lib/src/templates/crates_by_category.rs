@@ -90,10 +90,7 @@ fn create_category_row(
     row.push_str(" | ");
     let mut previous_crate_had_recipes = false;
     for name in crate_names {
-        let links = recipe_links
-            .get(name)
-            .map(Vec::as_slice)
-            .unwrap_or_default();
+        let links = recipe_links.get(name).map_or_default(Vec::as_slice);
         if !row.ends_with(" | ") {
             row.push_str(if previous_crate_had_recipes || !links.is_empty() {
                 "<br>"

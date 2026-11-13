@@ -1,6 +1,10 @@
 // TODO Reviewed ??-??-2026.
 
 #![allow(clippy::same_name_method)]
+#![expect(
+    clippy::empty_enums,
+    reason = "Leptos generates an uninhabited builder helper for this component."
+)]
 #![cfg_attr(
     not(test),
     expect(

@@ -85,7 +85,7 @@ tracing = "0.1.44"
 # Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = "0.3.23"
 # Parses and serializes robot descriptions in the URDF XML format.
-urdf-rs = "0.10.0" # Parses the URDF robot description used by `k`.
+urdf-rs = "0.9.1" # Matches `k`'s URDF model type for conversions.
 # Zenoh: The Zero Overhead Pub/Sub/Query Protocol.
 zenoh = { version = "1.10.2", default-features = false, features = ["transport_tcp"], optional = true } # No compression, auth or shared memory: the local example needs only TCP.
 

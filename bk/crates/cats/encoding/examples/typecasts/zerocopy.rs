@@ -1,5 +1,8 @@
 // TODO Reviewed ??-??-2026.
-
+#![expect(
+    clippy::empty_enums,
+    reason = "This example intentionally includes uninhabited zerocopy fixtures."
+)]
 // ANCHOR: example
 //! This example demonstrates zero-cost memory manipulation with `zerocopy`.
 //!

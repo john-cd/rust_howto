@@ -95,8 +95,7 @@ fn main() -> anyhow::Result<()> {
                     let f: String = n
                         .chars()
                         .next()
-                        .map(|c| c.to_uppercase().collect())
-                        .unwrap_or_default();
+                        .map_or_default(|c| c.to_uppercase().collect());
                     (f, n)
                 })
                 .into_group_map();

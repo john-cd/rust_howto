@@ -1,5 +1,8 @@
 // TODO Reviewed ??-??-2026.
-
+#![expect(
+    clippy::empty_enums,
+    reason = "The example intentionally models an entity with no relations."
+)]
 // ANCHOR: example
 //! Build `SeaORM` queries from an inline entity definition.
 //!

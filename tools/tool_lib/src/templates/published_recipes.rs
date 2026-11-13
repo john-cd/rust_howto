@@ -73,10 +73,7 @@ pub fn collect_published_recipe_links(book_root: impl AsRef<Path>) -> Result<Rec
             };
             let title = recipe["title"].trim().to_owned();
             let reference = recipe["reference"].trim().to_owned();
-            let link = RecipeLink {
-                title: title.clone(),
-                reference: reference.clone(),
-            };
+            let link = RecipeLink { title, reference };
             for badge in crate_badge_pattern.captures_iter(line) {
                 let name = badge["name"].trim();
                 ensure!(

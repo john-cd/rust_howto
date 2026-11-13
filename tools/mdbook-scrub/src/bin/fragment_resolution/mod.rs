@@ -111,8 +111,7 @@ fn source_root(context: &Value) -> Result<PathBuf> {
     let root = context
         .get("root")
         .and_then(Value::as_str)
-        .map(PathBuf::from)
-        .unwrap_or_default();
+        .map_or_default(PathBuf::from);
     let source = context
         .pointer("/config/book/src")
         .and_then(Value::as_str)
