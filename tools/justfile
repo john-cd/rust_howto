@@ -14,6 +14,7 @@ root := replace(source_directory(), "\\", "/")
 rustfmt_toolchain_default := trim(replace_regex(read(join(root, "..", "rustfmt-toolchain.toml")), '(?s).*channel\s*=\s*"([^"]+)".*', "$1"))
 rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
 rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
+export RUSTFMT_TOOLCHAIN := rustfmt_toolchain
 
 # List the available recipes and task modules.
 [no-exit-message]

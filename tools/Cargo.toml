@@ -82,17 +82,13 @@ walkdir = "2.5.0"
 [workspace.package]
 version = "0.1.2"
 authors = ["John CD"]
-categories = ["development-tools"]
 documentation = "https://docs.rs/rust_howto/"
 edition = "2024"
 homepage = "https://john-cd.com/rust_howto/"
-keywords = ["rust-howto", "tooling", "mdbook", "automation", "preprocessor"]
 license-file = "../LICENSE"
 publish = false
-readme = "README.md"
 repository = "https://github.com/john-cd/rust_howto/tools/"
 rust-version = "1.98.1"
-description = "Internal tooling for managing the Rust How-to book, including cleaning, templating, and link scrubbing."
 
 [workspace.lints.rust]
 # Prohibit unsafe code blocks across the workspace unless explicitly audited

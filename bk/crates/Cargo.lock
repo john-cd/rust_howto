@@ -13478,7 +13478,6 @@ dependencies = [
  "nom 8.0.0",
  "pest",
  "pest_derive",
- "pest_generator",
  "tree-sitter",
  "tree-sitter-rust",
  "winnow 1.0.5",
@@ -22393,7 +22392,6 @@ dependencies = [
  "anyhow",
  "tempfile",
  "tracing",
- "walkdir",
 ]
 
 [[package]]

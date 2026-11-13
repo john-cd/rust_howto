@@ -106,10 +106,20 @@ path = "examples/testing/main.rs"
 test = true
 
 [dependencies]
-# Fuzzing Rust code with american-fuzzy-lop
-afl = { version = "0.18.2", optional = true }
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# A simple to use, efficient, and full-featured Command Line Argument Parser
+clap = { version = "4.6.7", features = ["derive"] }
+# Floating point approximate comparison traits
+float-cmp = "0.10.0"
+# Match command-line output and diagnostics in tests.
+predicates = "3.1.4"
+# A generic serialization/deserialization framework
+serde = { version = "1.0.229", features = ["derive"] }
+# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
+tokio = { version = "1.54.1", features = ["macros", "rt", "time", "test-util"] }
+
+[dev-dependencies]
 # Approximate floating point equality comparisons and assertions.
 approx = "0.5.1" # was pinned at 0.4.0
 # The trait for generating structured data from unstructured data
@@ -118,14 +128,10 @@ arbitrary = { version = "1.5.0", features = ["derive"] }
 assert_cmd = "2.2.2" # Test command-line programs.
 # fuzz and property testing front-end
 bolero = "=0.13.4" # Pinned: bolero-generator-derive 0.13.5+ requires indexmap =2.11.2, conflicting with indexmap 2.14 in data_structures.
-# A simple to use, efficient, and full-featured Command Line Argument Parser
-clap = { version = "4.6.7", features = ["derive"] }
 # An easy to use library and command line for generating fake data like name, number, address, lorem, dates, etc.
 fake = { version = "5.1.0", features = ["derive"] }
 # A library to mock structs
 faux = "0.1.13"
-# Floating point approximate comparison traits
-float-cmp = "0.10.0"
 # HTTP mocking library for Rust
 httpmock = "0.9.0" # Mock an HTTP server.
 # A snapshot testing library for Rust
@@ -134,22 +140,19 @@ insta = { version = "1.49.0", features = ["json", "redactions"] }
 lcov = "0.8.2" # Parse LCOV coverage reports.
 # A powerful mock object library for Rust.
 mockall = "0.15.0"
-# Match command-line output and diagnostics in tests.
-predicates = "3.1.4"
-
 # Hypothesis-like property-based testing and shrinking.
 proptest = "1.12.0"
 # Rust fixture based test framework. It use procedural macro to implement fixtures and table based tests.
 rstest = "0.28.0"
-# A generic serialization/deserialization framework
-serde = { version = "1.0.229", features = ["derive"] }
-# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
-tokio = { version = "1.54.1", features = ["macros", "rt", "time", "test-util"] }
 # Simple, safe HTTP client
 ureq = "3.5.1"
 
 [features]
 afl-fuzzing = ["dep:afl"]
+
+[target.'cfg(not(windows))'.dependencies]
+# Fuzzing Rust code with american-fuzzy-lop.
+afl = { version = "0.18.2", optional = true }
 
 [lints]
 workspace = true

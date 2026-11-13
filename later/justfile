@@ -12,11 +12,11 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 root := replace(source_directory(), "\\", "/")
 code_root := quote(clean(join(root, "crates")))
-ffi_features_without_module := "cpp,erlang,flutter,java,lua,node,objc,ruby,uniffi"
 ffi_features_for_linking := "cpp,erlang,flutter,java,lua,node,objc,uniffi"
 rustfmt_toolchain_default := trim(replace_regex(read(join(root, "..", "rustfmt-toolchain.toml")), '(?s).*channel\s*=\s*"([^"]+)".*', "$1"))
 rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
 rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
+export RUSTFMT_TOOLCHAIN := rustfmt_toolchain
 
 # List the available recipes and task modules.
 [no-exit-message]
@@ -69,10 +69,9 @@ alias docall := doc-serve
 @check:
     echo "Check all code (all packages, all features) in $(pwd)"
     # science_robotics needs a sourced ROS installation; science_geo needs GEOS.
-    # mlua-sys requires `vendored` and `module` in separate feature sets.
-    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo check --workspace --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-targets --locked --all-features
-    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo check --package development_tools_ffi --all-targets --locked --features {{ quote(ffi_features_without_module) }}
-    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo check --package development_tools_ffi --all-targets --locked --features lua-module
+    # The FFI crate's Ruby build script needs this flag on Windows; Lua's
+    # embedded and module features are now compatible in one all-features run.
+    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo check --workspace --exclude science_robotics --exclude science_geo --all-targets --locked --all-features
     cd {{ code_root }}/cats/gui/vizia; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo check --workspace --all-targets --locked --all-features
     cd {{ code_root }}/cats/development_tools_ffi/python_extension; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo check --workspace --all-targets --locked --all-features
 
@@ -81,10 +80,8 @@ alias docall := doc-serve
     echo "Scan all code for common mistakes (all packages, all features) in $(pwd)"
     # sccache 0.18.0 expands web-sys rustc arguments past Windows' process limit.
     # science_robotics needs ROS; science_geo needs GEOS and pkg-config.
-    # mlua-sys requires `vendored` and `module` in separate feature sets.
-    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --workspace --exclude wasm --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-targets --locked --all-features -- -D warnings
-    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --package development_tools_ffi --all-targets --locked --features {{ quote(ffi_features_without_module) }} -- -D warnings
-    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --package development_tools_ffi --all-targets --locked --features lua-module -- -D warnings
+    # The FFI crate's Ruby build script needs this flag on Windows.
+    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --workspace --exclude wasm --exclude science_robotics --exclude science_geo --all-targets --locked --all-features -- -D warnings
     cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --package wasm --all-targets --locked --all-features -- -D warnings
     cd {{ code_root }}/cats/gui/vizia; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
     cd {{ code_root }}/cats/development_tools_ffi/python_extension; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --workspace --all-targets --locked --all-features -- -D warnings
@@ -94,10 +91,8 @@ alias docall := doc-serve
     echo "Lint with autofix (all packages, all features) in $(pwd)"
     # sccache 0.18.0 expands web-sys rustc arguments past Windows' process limit.
     # science_robotics needs ROS; science_geo needs GEOS and pkg-config.
-    # mlua-sys requires `vendored` and `module` in separate feature sets.
-    cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --fix --allow-dirty --allow-staged --workspace --exclude wasm --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-targets --locked --all-features
-    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --fix --allow-dirty --allow-staged --package development_tools_ffi --all-targets --locked --features {{ quote(ffi_features_without_module) }}
-    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --fix --allow-dirty --allow-staged --package development_tools_ffi --all-targets --locked --features lua-module
+    # The FFI crate's Ruby build script needs this flag on Windows.
+    cd {{ code_root }}; NO_LINK_RUTIE=1 RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --fix --allow-dirty --allow-staged --workspace --exclude wasm --exclude science_robotics --exclude science_geo --all-targets --locked --all-features
     cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --fix --allow-dirty --allow-staged --package wasm --all-targets --locked --all-features
     cd {{ code_root }}/cats/gui/vizia; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --fix --allow-dirty --allow-staged --workspace --all-targets --locked --all-features
     cd {{ code_root }}/cats/development_tools_ffi/python_extension; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo clippy --fix --allow-dirty --allow-staged --workspace --all-targets --locked --all-features
@@ -116,7 +111,8 @@ alias docall := doc-serve
     echo "Build all packages, all features in $(pwd)"
     # science_robotics requires ROS, science_geo requires GEOS, and the FFI
     # Ruby example requires Ruby development libraries for linking.
-    # mlua-sys requires `vendored` and `module` in separate feature sets.
+    # Keep native-linking variants separate because their SDK prerequisites
+    # differ from the workspace check configuration.
     cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo build --workspace --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-targets --locked --all-features --timings
     cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo build --package development_tools_ffi --all-targets --locked --features {{ quote(ffi_features_for_linking) }}
     cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo build --package development_tools_ffi --all-targets --locked --features lua-module
@@ -127,7 +123,8 @@ alias docall := doc-serve
 @test:
     echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
     # sccache expands wasm's web-sys rustc arguments past Windows' process command-line limit.
-    # mlua-sys requires `vendored` and `module` in separate feature sets.
+    # Keep native-linking variants separate because their SDK prerequisites
+    # differ from the workspace check configuration.
     cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo test --doc --workspace --exclude wasm --exclude science_robotics --exclude science_geo --exclude development_tools_ffi --all-features --locked
     cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo test --doc --package development_tools_ffi --locked --features {{ quote(ffi_features_for_linking) }}
     cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo test --doc --package development_tools_ffi --locked --features lua-module

@@ -32,9 +32,12 @@ pub use array_iterator::ArrayIterator;
 pub use deadpool_postgres;
 pub use domain::Domain;
 pub use domain::DomainArray;
-#[cfg(not(any(feature = "deadpool", feature = "wasm-async")))]
+#[cfg(feature = "postgres")]
 pub use postgres;
-#[cfg(not(any(feature = "deadpool", feature = "wasm-async")))]
+#[cfg(all(
+    feature = "postgres",
+    not(any(feature = "deadpool", feature = "wasm-async"))
+))]
 pub use postgres::fallible_iterator;
 #[cfg(any(feature = "deadpool", feature = "wasm-async"))]
 pub use tokio_postgres;

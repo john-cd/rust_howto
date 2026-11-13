@@ -17,6 +17,7 @@ rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
 database_features := "cassandra,diesel,elasticsearch,lapin,lmdb,mongodb,mssql,postgres,redis,rocksdb,sea_orm,sqlx,sqlite"
 
 rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
+export RUSTFMT_TOOLCHAIN := rustfmt_toolchain
 
 # List the available recipes and task modules.
 [no-exit-message]

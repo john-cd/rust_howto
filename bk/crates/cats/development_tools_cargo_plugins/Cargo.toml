@@ -41,6 +41,7 @@ clap-cargo = { version = "0.19.0", features = ["cargo_metadata"] } # Standard ca
 tempfile = "3.27.0"
 # Application-level tracing for Rust.
 tracing = "0.1.44"
+[dev-dependencies]
 # Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 # Utilities for quick shell scripting in Rust

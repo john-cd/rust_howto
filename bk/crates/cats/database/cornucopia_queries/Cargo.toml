@@ -25,7 +25,8 @@ tokio-postgres= { version = "^0.7.18", default-features = false}
 
 [features]
 deadpool = ["dep:deadpool-postgres", "tokio-postgres/default"]
-default = ["dep:postgres", "deadpool"]
+default = ["postgres", "deadpool"]
+postgres = ["dep:postgres"]
 wasm-async = ["tokio-postgres/js"]
 
 [lints]

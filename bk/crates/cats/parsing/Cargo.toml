@@ -17,9 +17,6 @@ keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bi
 categories = ["parsing"]
 autolib = false
 
-[package.metadata.cargo-machete]
-ignored = ["pest_generator"]
-
 [[example]]
 name = "calc_parser"
 path = "examples/calc/calc_parser.rs"
@@ -57,10 +54,6 @@ tree-sitter = "0.27.2"
 tree-sitter-rust = "0.24.2"
 # A byte-oriented, zero-copy, parser combinators library
 winnow = "1.0.5"
-
-[build-dependencies]
-# Generates parser code from pest grammar definitions.
-pest_generator = "2.9.6"
 
 [lints]
 workspace = true
