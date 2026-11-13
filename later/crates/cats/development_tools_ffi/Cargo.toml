@@ -110,6 +110,9 @@ flutter_rust_bridge = { version = "=2.13.0", optional = true }
 # Rust bindings to the JNI
 jni = { version = "0.22.4", optional = true }
 # High level bindings to Lua 5.5/5.4/5.3/5.2/5.1 (including LuaJIT) and Luau
+# Use the host Lua ABI so the embedded and native-module examples can be
+# enabled together; mlua-sys rejects its `vendored` and `module` features in
+# the same dependency graph.
 mlua = { version = "0.12.2", features = ["lua54"], optional = true }
 # Exposes Rust functions and types through Node.js's N-API interface.
 napi = { version = "3.16.1", features = ["async"], optional = true }
@@ -141,7 +144,7 @@ cpp = ["dep:cxx", "dep:cxx-build"]
 erlang = ["dep:rustler"]
 flutter = ["dep:byteorder", "dep:flutter_rust_bridge"]
 java = ["dep:jni"]
-lua = ["dep:mlua", "mlua/vendored"]
+lua = ["dep:mlua"]
 lua-module = ["dep:mlua", "mlua/module"]
 objc = ["dep:objc2", "dep:objc2-foundation", "dep:objc2-app-kit"]
 node = ["dep:napi", "dep:napi-derive", "dep:neon"]
