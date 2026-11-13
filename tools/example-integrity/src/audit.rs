@@ -997,7 +997,7 @@ impl ScanState {
                 path: source_path.clone(),
                 anchored,
                 role: role.to_owned(),
-                cargo_targets: targets.clone(),
+                cargo_targets: targets,
                 conditions,
                 disposition,
             });

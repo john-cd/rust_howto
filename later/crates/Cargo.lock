@@ -15893,7 +15893,7 @@ dependencies = [
  "simba 0.7.3",
  "thiserror 1.0.69",
  "tracing",
- "urdf-rs 0.9.1",
+ "urdf-rs",
 ]
 
 [[package]]
@@ -24112,7 +24112,7 @@ dependencies = [
  "tokio",
  "tracing",
  "tracing-subscriber",
- "urdf-rs 0.10.0",
+ "urdf-rs",
  "zenoh",
 ]
 
@@ -28398,20 +28398,6 @@ name = "urdf-rs"
 version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8b4113a15747d43814d57a486b42a85c8387800d3c0d76cf4fc807dd239b0249"
-dependencies = [
- "RustyXML",
- "quick-xml 0.39.4",
- "regex",
- "serde",
- "serde-xml-rs",
- "thiserror 2.0.21",
-]
-
-[[package]]
-name = "urdf-rs"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0c1c4d002a2d281d6ae7a1a8b319bddc50506a35731e826fb9dbd8d648c39bcf"
 dependencies = [
  "RustyXML",
  "quick-xml 0.39.4",

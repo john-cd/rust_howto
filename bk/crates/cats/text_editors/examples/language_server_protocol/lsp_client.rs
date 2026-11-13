@@ -60,8 +60,7 @@ fn run_server(connection: Connection) -> anyhow::Result<()> {
                 let text = documents
                     .iter()
                     .find(|(u, _)| *u == uri)
-                    .map(|(_, text)| text.as_str())
-                    .unwrap_or_default();
+                    .map_or_default(|(_, text)| text.as_str());
                 let symbols = function_symbols(&uri, text);
                 let response = Response::new_ok(request.id, DocumentSymbolResponse::Flat(symbols));
                 connection.sender.send(Message::Response(response))?;

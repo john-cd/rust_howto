@@ -75,8 +75,7 @@ pub fn create_crate_block_badges_or_refdefs(
     let documentation = crate_data
         .documentation
         .as_ref()
-        .map(|s| normalize_docs_url(s))
-        .unwrap_or_default();
+        .map_or_default(|s| normalize_docs_url(s));
 
     let repository: String = crate_data
         .repository
