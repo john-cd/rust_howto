@@ -6,18 +6,7 @@ resolver = "3"
 
 # Default values for packages in the workspace
 [workspace.package]
-version = "0.1.2"
-authors = ["John CD"]
-categories = ["development-tools"]
-documentation = "https://docs.rs/rust_howto/"
-edition = "2024"
-homepage = "https://john-cd.com/rust_howto/"
-keywords = ["rust-howto", "playground", "experimental", "snippets"]
 license-file = "../LICENSE"
-publish = false
-repository = "https://github.com/john-cd/rust_howto/tools/"
-rust-version = "1.98.1"
-description = "Experimental scratchpad and work-in-progress snippets for the Rust How-to project."
 
 [workspace.lints.rust]
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
