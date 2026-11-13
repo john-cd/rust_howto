@@ -69,6 +69,18 @@ jobs:
       - name: Load pinned tool versions
         uses: ./.github/actions/load-pinned-versions
 
+      - name: Install OpenSSL for Vcpkg
+        shell: pwsh
+        run: |
+          if (-not $env:VCPKG_INSTALLATION_ROOT) {
+            throw 'The Windows runner does not define VCPKG_INSTALLATION_ROOT.'
+          }
+          $env:VCPKG_ROOT = $env:VCPKG_INSTALLATION_ROOT
+          $env:VCPKGRS_TRIPLET = 'x64-windows-static-md'
+          Add-Content -LiteralPath $env:GITHUB_ENV -Value "VCPKG_ROOT=$env:VCPKG_ROOT" -Encoding utf8
+          Add-Content -LiteralPath $env:GITHUB_ENV -Value "VCPKGRS_TRIPLET=$env:VCPKGRS_TRIPLET" -Encoding utf8
+          vcpkg install "openssl:$($env:VCPKGRS_TRIPLET)"
+
       - name: Set up Rust (pinned stable + nightly rustfmt, cached)
         uses: ./.github/actions/setup-rust
         with:
@@ -129,6 +141,25 @@ jobs:
           cargo nextest run --config-file .config/nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
           cargo test --workspace --doc --locked --profile ci -- --show-output
         working-directory: bk/crates
+
+      - name: Configure credentials for private Cargo dependencies
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.BOOK_TOOLING_TOKEN }}
+        run: |
+          if ($env:GH_TOKEN) {
+            $authHeader = [Convert]::ToBase64String(
+              [Text.Encoding]::UTF8.GetBytes("x-access-token:$env:GH_TOKEN")
+            )
+            @(
+              "CARGO_NET_GIT_FETCH_WITH_CLI=true"
+              "GIT_CONFIG_COUNT=1"
+              "GIT_CONFIG_KEY_0=http.https://github.com/.extraheader"
+              "GIT_CONFIG_VALUE_0=AUTHORIZATION: basic $authHeader"
+            ) | Add-Content -LiteralPath $env:GITHUB_ENV -Encoding utf8
+          } else {
+            Write-Warning 'BOOK_TOOLING_TOKEN is not set; the tools workspace cannot fetch john-cd/book_tooling.'
+          }
 
       - name: Build / release the tools, incl. mdbook-scrub
         run: cargo +"$RUSTFMT_TOOLCHAIN" build --bins --locked --release -Z unstable-options --artifact-dir "../bin"
