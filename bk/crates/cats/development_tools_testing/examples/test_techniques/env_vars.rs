@@ -2,14 +2,15 @@
 
 // ANCHOR: example
 //! Reads configuration from the process environment without mutating it in
-//! tests.
 //!
+//! tests.
 //! Environment variables are shared by all tests in a process, and tests run in
 //! parallel, so changing them can make tests interfere. Serialize such tests,
 //! or restore the variable afterwards.
 
 use std::ffi::OsString;
 
+/// Shared `default log level` used by this module.
 const DEFAULT_LOG_LEVEL: &str = "info";
 
 /// Typed configuration parsed from an injected environment value.
@@ -48,6 +49,17 @@ fn main() -> Result<(), String> {
     Ok(())
 }
 
+// ANCHOR_END: example
+
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<(), String> {
+    main()
+}
+
+/// Runs this test in child processes with controlled environment values.
 #[cfg(test)]
 mod tests {
     use std::process::Command;
@@ -113,8 +125,8 @@ mod tests {
         }
         Ok(())
     }
+    /// Performs the child checks controlled environment operation.
 
-    /// Checks the child process environment selected by the parent test.
     #[test]
     #[ignore = "spawned by the parent test with a controlled environment"]
     fn child_checks_controlled_environment() {
@@ -130,4 +142,3 @@ mod tests {
         }
     }
 }
-// ANCHOR_END: example

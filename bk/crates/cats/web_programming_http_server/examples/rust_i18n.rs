@@ -2,7 +2,6 @@
 
 // ANCHOR: example
 //! Localizes an API error using the request's `Accept-Language` header.
-//!
 //! Internationalization (i18n) adapts software to different languages. The
 //! `Accept-Language` header tells the server which languages the user prefers,
 //! in order, so error messages can come back in the right one.
@@ -34,6 +33,14 @@ fn main() {
     println!("{}", missing_user("fr-CA,fr;q=0.9,en;q=0.8", 42));
 }
 
+// ANCHOR_END: example
+
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
+
+/// Selects the best supported language and falls back for unknown ones.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -58,4 +65,3 @@ mod tests {
         main();
     }
 }
-// ANCHOR_END: example

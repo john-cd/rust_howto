@@ -14,13 +14,22 @@ use tokio_postgres::Client;
 /// - Create a temporary table for this connection.
 /// - Insert, query, update, and delete one row.
 /// - Wait for the connection task to finish after closing the client.
-pub async fn run() -> anyhow::Result<()> {
+///
+/// # Errors
+/// Returns an error if the operation fails.
+pub async fn example_body() -> anyhow::Result<()> {
     let database_url =
         std::env::var("DATABASE_URL").context("set DATABASE_URL to connect to PostgreSQL")?;
     run_with_url(&database_url).await
 }
 
 /// Runs the example against the database at `url`.
+///
+/// # Arguments
+/// * `url` - URL identifying the requested resource.
+///
+/// # Errors
+/// Returns an error if the operation fails.
 pub(crate) async fn run_with_url(url: &str) -> anyhow::Result<()> {
     // The libpq-style connection strings consist of space-separated
     // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.
@@ -117,7 +126,31 @@ async fn run_queries(client: &Client) -> anyhow::Result<()> {
 }
 
 /// Runs the tokio postgres example.
+///
+/// # Errors
+/// Returns an error if the operation fails.
 pub fn main() -> anyhow::Result<()> {
-    tokio::runtime::Runtime::new()?.block_on(run())
+    tokio::runtime::Runtime::new()?.block_on(example_body())
 }
 // ANCHOR_END: example
+
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+/// Runs the database round trip when a PostgreSQL service is configured.
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Connects to PostgreSQL and exercises the temporary-table round trip.
+    #[test]
+    #[ignore = "requires DATABASE_URL and a reachable PostgreSQL service"]
+    fn postgres_round_trip() {
+        run().expect("the configured PostgreSQL round trip succeeds");
+    }
+}

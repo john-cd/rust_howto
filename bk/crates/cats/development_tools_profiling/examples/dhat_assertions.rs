@@ -2,11 +2,11 @@
 
 // ANCHOR: example
 //! Asserts on heap allocations in a test with `dhat`.
-//!
 //! A heap profiler such as DHAT records every allocation. Asserting on the
 //! counts in a test turns "this function should not allocate" into a regression
 //! check.
 
+/// Shared `alloc` used by this module.
 #[global_allocator]
 static ALLOC: dhat::Alloc = dhat::Alloc;
 
@@ -18,17 +18,25 @@ fn with_capacity(parts: &[&str]) -> String {
     }
     s
 }
-
-/// Runs the allocation example outside the test harness.
-fn main() {
-    run();
-}
-
 /// Runs the example.
-pub fn run() {
+
+fn main() {
+    example_body();
+}
+/// Runs the example entry point.
+
+pub fn example_body() {
     println!("{}", with_capacity(&["a", "b", "c"]));
 }
 
+// ANCHOR_END: example
+
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
+
+/// Tests the documented behavior: Asserts on heap allocations in a test with `dhat`.
 #[cfg(test)]
 mod tests {
     use std::sync::Mutex;
@@ -42,7 +50,7 @@ mod tests {
     static SERIAL: Mutex<()> = Mutex::new(());
 
     // Keep all the allocation assertions in a single test.
-    /// Verifies the optimized string builder performs one allocation.
+    /// Performs the allocation counts operation.
     #[test]
     fn allocation_counts() {
         let _guard = SERIAL
@@ -62,6 +70,7 @@ mod tests {
         // The final block is still alive; nothing else leaked.
         dhat::assert_eq!(after.curr_blocks - before.curr_blocks, 1);
     }
+    /// Verifies main entry point.
 
     #[test]
     fn test_main_entry_point() {
@@ -71,4 +80,3 @@ mod tests {
         main();
     }
 }
-// ANCHOR_END: example
