@@ -2,7 +2,6 @@
 
 // ANCHOR: example
 //! Property-based testing with `proptest`.
-//!
 //! Property-based testing checks a rule that must hold for all inputs, such as
 //! "reversing twice gives the original". The tool generates many random inputs
 //! and, when one fails, shrinks it to a minimal failing case.
@@ -17,6 +16,24 @@ fn is_even(n: i32) -> bool {
     n % 2 == 0
 }
 
+/// Prints the results of the functions under test.
+fn main() {
+    println!("Max of 5 and 3: {}", max_of_two(5, 3));
+    println!("Is 4 even? {}", is_even(4));
+}
+
+// ANCHOR_END: example
+/// Runs the example entry point.
+
+#[allow(clippy::items_after_test_module)]
+pub fn run() {
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
+    let entry = main;
+    entry();
+}
+
+/// Checks that the maximum equals an input and is no smaller than either input.
 #[cfg(test)]
 mod tests {
     use proptest::prelude::*;
@@ -85,22 +102,7 @@ mod tests {
     }
 }
 
-/// Prints the results of the functions under test.
-fn main() {
-    println!("Max of 5 and 3: {}", max_of_two(5, 3));
-    println!("Is 4 even? {}", is_even(4));
-}
-
-// ANCHOR_END: example
-
-#[allow(clippy::items_after_test_module)]
-pub fn run() {
-    // Call through a binding: calling `main` directly trips
-    // `clippy::main_recursion`.
-    let entry = main;
-    entry();
-}
-
+/// Provides the `tests_of_main` implementation used by this module.
 #[cfg(test)]
 mod tests_of_main {
     use super::*;

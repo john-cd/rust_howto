@@ -2,8 +2,8 @@
 
 // ANCHOR: example
 //! Snapshots of structured data with `insta`: JSON, redactions and
-//! `Debug` output.
 //!
+//! `Debug` output.
 //! A snapshot test compares output with a stored reference. Values that change
 //! on every run, such as timestamps and IDs, are replaced by placeholders
 //! (redactions) first, so the snapshot stays stable.
@@ -15,7 +15,9 @@ use serde::Serialize;
 struct Order {
     /// Random: differs on every run.
     id: u64,
+    /// Customer name associated with the record.
     customer: String,
+    /// Collection consumed by order while preserving its ordering and relationships.
     items: Vec<String>,
 }
 
@@ -33,6 +35,18 @@ fn main() {
     println!("{:?}", create_order(1));
 }
 
+// ANCHOR_END: example
+/// Runs the example entry point.
+
+#[allow(clippy::items_after_test_module)]
+pub fn run() {
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
+    let entry = main;
+    entry();
+}
+
+/// Redacts the generated order id from the JSON snapshot.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -70,18 +84,10 @@ mod tests {
         }
         "#);
     }
+    /// Verifies main entry point.
 
     #[test]
     fn test_main_entry_point() {
         main();
     }
-}
-// ANCHOR_END: example
-
-#[allow(clippy::items_after_test_module)]
-pub fn run() {
-    // Call through a binding: calling `main` directly trips
-    // `clippy::main_recursion`.
-    let entry = main;
-    entry();
 }

@@ -2,7 +2,6 @@
 
 // ANCHOR: example
 //! Tests an HTTP client against a local mock server with `httpmock`.
-//!
 //! A mock HTTP server runs locally and answers with canned responses, so a
 //! client can be tested without the internet and with failures that are hard to
 //! trigger on demand, such as timeouts and error codes.
@@ -26,6 +25,21 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+// ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+
+#[allow(clippy::items_after_test_module)]
+pub fn run() -> anyhow::Result<()> {
+    // Call through a binding: calling `main` directly trips
+    // `clippy::main_recursion`.
+    let entry = main;
+    entry()
+}
+
+/// Returns the mocked greeting and verifies the request was received.
 #[cfg(test)]
 mod tests {
     use httpmock::prelude::*;
@@ -56,6 +70,7 @@ mod tests {
     fn main_greets_through_the_service() {
         assert!(main().is_ok());
     }
+    /// Performs the reports a server error operation.
 
     #[test]
     fn reports_a_server_error() {
@@ -70,13 +85,4 @@ mod tests {
         assert!(result.err().is_some_and(|e| e.to_string().contains("503")));
         mock.assert_calls(1);
     }
-}
-// ANCHOR_END: example
-
-#[allow(clippy::items_after_test_module)]
-pub fn run() -> anyhow::Result<()> {
-    // Call through a binding: calling `main` directly trips
-    // `clippy::main_recursion`.
-    let entry = main;
-    entry()
 }

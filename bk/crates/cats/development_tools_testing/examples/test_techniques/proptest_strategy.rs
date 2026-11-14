@@ -2,7 +2,6 @@
 
 // ANCHOR: example
 //! A custom `proptest` strategy that only generates valid values.
-//!
 //! A strategy tells `proptest` how to generate test inputs, for example numbers
 //! in a range or strings matching a pattern. Good strategies produce realistic
 //! data, so failures are meaningful.
@@ -10,7 +9,9 @@
 /// A closed range of whole numbers with `start <= end`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 struct Span {
+    /// Start of the selected range.
     start: i32,
+    /// End of the selected range.
     end: i32,
 }
 
@@ -20,13 +21,17 @@ impl Span {
         (start <= end).then_some(Self { start, end })
     }
 
-    /// Returns the number of integers in the span.
+    /// # Returns
+    ///
+    /// # Panics
+    /// Panics if `start <= end` guarantees a positive length.
     fn len(&self) -> u64 {
         u64::try_from(i64::from(self.end) - i64::from(self.start) + 1)
             .expect("`start <= end` guarantees a positive length")
     }
 
     /// Returns the smallest span that contains both spans.
+
     fn union(&self, other: &Self) -> Self {
         Self {
             start: self.start.min(other.start),
@@ -39,8 +44,8 @@ impl Span {
         self.start <= other.end && other.start <= self.end
     }
 }
-
 /// Combines two spans; the property tests below check the invariants.
+
 fn main() {
     let a = Span::new(1, 5).expect("ordered endpoints");
     let b = Span::new(4, 9).expect("ordered endpoints");
@@ -53,6 +58,14 @@ fn main() {
     );
 }
 
+// ANCHOR_END: example
+
+/// Runs the example through its program entry point.
+pub fn run() -> Span {
+    main()
+}
+
+/// Checks that construction succeeds exactly when endpoints are ordered.
 #[cfg(test)]
 mod tests {
     use proptest::prelude::*;
@@ -71,44 +84,44 @@ mod tests {
     }
 
     proptest! {
-        /// Checks that the union contains both input spans.
-        #[test]
-        fn union_contains_both(a in any_span(), b in any_span()) {
-            let u = a.union(&b);
-            prop_assert!(u.start <= a.start && a.end <= u.end);
-            prop_assert!(u.start <= b.start && b.end <= u.end);
-        }
+    /// Performs the union contains both operation.
+            #[test]
+            fn union_contains_both(a in any_span(), b in any_span()) {
+                let u = a.union(&b);
+                prop_assert!(u.start <= a.start && a.end <= u.end);
+                prop_assert!(u.start <= b.start && b.end <= u.end);
+            }
+    /// Performs the union is commutative operation.
 
-        /// Checks that span union is commutative.
-        #[test]
-        fn union_is_commutative(a in any_span(), b in any_span()) {
-            prop_assert_eq!(a.union(&b), b.union(&a));
-        }
+            #[test]
+            fn union_is_commutative(a in any_span(), b in any_span()) {
+                prop_assert_eq!(a.union(&b), b.union(&a));
+            }
+    /// Performs the overlap is symmetric operation.
 
-        /// Checks that span overlap is symmetric.
-        #[test]
-        fn overlap_is_symmetric(a in any_span(), b in any_span()) {
-            prop_assert_eq!(a.overlaps(&b), b.overlaps(&a));
-        }
+            #[test]
+            fn overlap_is_symmetric(a in any_span(), b in any_span()) {
+                prop_assert_eq!(a.overlaps(&b), b.overlaps(&a));
+            }
+    /// Performs the disjoint union is not smaller operation.
 
-        /// Checks that disjoint spans produce a union at least as large as their total length.
-        #[test]
-        fn disjoint_union_is_not_smaller(a in any_span(), b in any_span()) {
-            prop_assume!(!a.overlaps(&b));
-            prop_assert!(a.union(&b).len() >= a.len() + b.len());
-        }
+            #[test]
+            fn disjoint_union_is_not_smaller(a in any_span(), b in any_span()) {
+                prop_assume!(!a.overlaps(&b));
+                prop_assert!(a.union(&b).len() >= a.len() + b.len());
+            }
 
-        // `new` rejects exactly the inverted ranges.
-        /// Checks that construction succeeds exactly when endpoints are ordered.
-        #[test]
-        fn new_matches_ordering(start in any::<i32>(), end in any::<i32>()) {
-            prop_assert_eq!(Span::new(start, end).is_some(), start <= end);
+            // `new` rejects exactly the inverted ranges.
+            /// Checks that construction succeeds exactly when endpoints are ordered.
+            #[test]
+            fn new_matches_ordering(start in any::<i32>(), end in any::<i32>()) {
+                prop_assert_eq!(Span::new(start, end).is_some(), start <= end);
+            }
         }
-    }
+    /// Verifies main entry point.
 
     #[test]
     fn test_main_entry_point() {
         main();
     }
 }
-// ANCHOR_END: example

@@ -2,8 +2,8 @@
 
 // ANCHOR: example
 //! Criterion benchmark comparing `std::collections::HashMap`,
-//! `ahash::AHashMap`, and `rustc_hash::FxHashMap`.
 //!
+//! `ahash::AHashMap`, and `rustc_hash::FxHashMap`.
 //! Hasher trade-offs:
 //! - `std::collections::HashMap` uses SipHash by default, which protects against HashDoS attacks
 //!   with attacker-controlled keys at the cost of higher hashing latency.
@@ -55,6 +55,9 @@ fn count_fx(text: &str) -> FxHashMap<&str, usize> {
 }
 
 /// Benchmarks word counting performance across hasher implementations.
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
 fn benchmark_word_counting(c: &mut Criterion) {
     let mut group = c.benchmark_group("word_counting");
 
@@ -74,6 +77,9 @@ fn benchmark_word_counting(c: &mut Criterion) {
 }
 
 /// Benchmarks insertion and lookup performance for integer keys (`u64`).
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
 fn benchmark_integer_keys(c: &mut Criterion) {
     let mut group = c.benchmark_group("integer_keys");
 
@@ -132,6 +138,12 @@ criterion_group!(benches, benchmark_word_counting, benchmark_integer_keys);
 criterion_main!(benches);
 // ANCHOR_END: example
 
+/// Runs Criterion's generated benchmark entry point.
+pub fn run() {
+    main();
+}
+
+/// Verifies the `hashmap` example by running its entry point.
 #[cfg(test)]
 mod tests {
     /// Runs the hash map benchmark through its entry point.
