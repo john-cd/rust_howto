@@ -2,6 +2,13 @@
 # Build configuration: see CONFIGURATION.md at the repository root.
 # Run the repository build-setup recipe to link target/build to the central checkout slot.
 
+# Linker policy: use rustc's target defaults for native builds.
+# Windows MSVC: use link.exe from Visual Studio Build Tools and the Windows SDK.
+# macOS: use the Apple toolchain via cc and the Xcode or Command Line Tools SDK.
+# x86_64 GNU/Linux: Rust 1.90+ selects bundled LLD through the system C driver.
+# Other Linux targets use their target defaults. Set cross-linkers in local
+# Cargo configuration or CARGO_TARGET_<TRIPLE>_LINKER for the selected toolchain.
+
 [build]
 rustc-wrapper = "sccache"
 incremental = false

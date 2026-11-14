@@ -5,6 +5,13 @@
 
 # Shared build paths and sccache settings are inherited from the root .cargo/config.toml.
 
+# Linker policy: use rustc's target defaults for native builds.
+# Windows MSVC: use link.exe from Visual Studio Build Tools and the Windows SDK.
+# macOS: use the Apple toolchain via cc and the Xcode or Command Line Tools SDK.
+# x86_64 GNU/Linux: Rust 1.90+ selects bundled LLD through the system C driver.
+# Other Linux targets use their target defaults. Set cross-linkers in local
+# Cargo configuration or CARGO_TARGET_<TRIPLE>_LINKER for the selected toolchain.
+
 [env]
 SCCACHE_BASEDIRS = { value = ".", relative = true }
 CLANG_SYS_STATIC = "1"
@@ -13,8 +20,6 @@ CLANG_SYS_STATIC = "1"
 # mold is significantly faster than the default ld or lld.
 
 # [target.x86_64-unknown-linux-gnu]
-# linker = "clang"
-# rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"]
 
 # paths = ["/path/to/override"] # path dependency overrides
 
@@ -36,7 +41,6 @@ CLANG_SYS_STATIC = "1"
 ## See `compose.override.yaml` for more details.
 # target-dir="../../target/bk/"
 # rustflags = ["...", "..."]        # custom flags to pass to all compiler invocations
-# rustflags = ["-C", "link-arg=-fuse-ld=lld"]
 # rustdocflags = ["...", "..."]     # custom flags to pass to rustdoc
 # incremental = true            # whether or not to enable incremental compilation
 # dep-info-basedir = "..."        # path for the base directory for targets in depfiles
