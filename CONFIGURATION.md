@@ -75,29 +75,27 @@ and environment/command-line overrides take precedence over config values.
 
 | Profile                                | Workspace code                                           | Dependencies and build tools                                                                                                              |
 | -------------------------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `dev` / `test`                         | `opt-level = 0`, line tables, LTO off, 256 codegen units | `opt-level = "s"`, no debug info, usually 16 units; exact package overrides may select level 3 for hot-path or compile-time dependencies. |
-| `debugging`                            | Level 0 and full symbols                                 | Level 0 and full symbols, including build scripts/procedural macros; intentionally uses a separate cache variant.                         |
+| `dev` / `test` | Level 0, no symbols, incremental disabled | Level 1 by default, selected compute-heavy dependencies at level 3, no symbols. |
+| `debug` | Level 2 symbols for workspace crates | Same optimized dependency settings as `dev`, with dependency symbols disabled. |
 | `ci`                                   | Inherits `dev`, incremental disabled                     | Same flags as `dev` for dependency cache reuse. Use release jobs for performance validation.                                              |
-| `tools`                                | Level 2 for repeatedly executed repository tools         | Same dependency flags as `dev`; build overrides apply only to units not matched by a package override.                                    |
+| `tools` | Level 2 for repository tools | Same dependency settings as `dev`. |
 | `release` / other specialized profiles | Preserve existing shipping/profiling choices             | Preserve existing shipping/profiling choices.                                                                                             |
 
-`test` and `ci` inherit `dev`. Cargo checks an exact package override first, then the wildcard
-package override, then the build override. The independent `bk/crates`, `later/crates`, and `tools`
-workspaces each keep exact package overrides paired with level-0/full-symbol entries in
-`profile.debugging`; their lists differ where their dependency graphs differ. These exceptions
-cover hashing, collections, math, regex, parallelism, allocators, and compile-time tooling. A named
-package override takes precedence over `build-override`, including when that package is a build
-dependency. Level 3 is a workload choice, not a general compile-time or size guarantee. Matching
-profile flags improves cache eligibility; compiler versions, target/features, source paths, native
-tools, and rustflags also affect hits. The `debugging` profile intentionally rebuilds dependencies
-to make them debuggable.
+`test`, `ci`, `debug`, and `tools` inherit `dev`. Cargo checks an exact package override first, then
+the wildcard package override, then the build override. Independent `bk/crates`, `later/crates`,
+and `tools` workspaces keep exact level-3 overrides for selected math, matrix, concurrency,
+allocator, and compile-time dependencies. These overrides use no dependency debug symbols across
+profiles so optimized dependency artifacts remain reusable. Higher optimization can increase cold
+compile time, so keep named exceptions focused on measured workloads. Matching profile flags
+improves cache eligibility; compiler versions, target/features, source paths, native tools, and
+rustflags also affect hits.
 
 An effective unit-graph spot check on 2026-11-02 used Rust 1.99.1 for builds and
 `nightly-2026-11-11` for Cargo's unstable graph output, on `x86_64-pc-windows-msvc`. From `tools/`,
 the command below was run for each listed profile:
 
 ```powershell
-foreach ($profile in @('dev', 'test', 'debugging', 'ci', 'tools')) {
+foreach ($profile in @('dev', 'test', 'debug', 'ci', 'tools')) {
     cargo +nightly-2026-11-11 -Z unstable-options build --unit-graph --locked --offline -p mdbook-scrub --profile $profile
 }
 ```
@@ -159,7 +157,7 @@ compilations, not linking of binaries, dynamic libraries, or procedural macros. 
 restarting sccache. Clean only demonstrated stale/corrupt content, never by recursively deleting a
 checkout link or another active slot.
 
-Select profiles with `just cargo build --profile debugging` or `--profile tools`; ordinary
+Select profiles with `just cargo build --profile debug` or `--profile tools`; ordinary
 build/test uses `dev`/`test`. Select a Cargo profile in nextest with `--cargo-profile ci`, independently
 of nextest's test-runner `--profile ci`.
 

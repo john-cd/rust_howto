@@ -21,34 +21,111 @@ value = "45G"
 force = true
 
 [profile.dev]
-# Unoptimized workspace code, small cached dependencies, and no link-time optimization.
-opt-level = 0
-debug = "line-tables-only"
 lto = "off"
-incremental = false
-codegen-units = 256
-build-override = { opt-level = 3, debug = 0, codegen-units = 16 }
-
-[profile.dev.package]
-"*" = { opt-level = "s", debug = 0, codegen-units = 16 }
-# This wildcard also matches non-workspace build dependencies before build-override.
-
-[profile.test]
+debug = 0
 incremental = false
 
-[profile.debugging]
-inherits = "dev"
-opt-level = 0
+[profile.dev.package."*"]
+opt-level = 1
+debug = 0
+
+[profile.debug]
 debug = 2
-build-override = { opt-level = 0, debug = 2 }
 
-[profile.debugging.package]
-"*" = { opt-level = 0, debug = 2 }
+[profile.debug.package."*"]
+opt-level = 1
+debug = 0
 
 [profile.ci]
 inherits = "dev"
-incremental = false
 
 [profile.tools]
 inherits = "dev"
 opt-level = 2
+
+
+# Cargo defaults reference (Cargo 1.100.0). Comments only.
+#
+# [build]
+# target = <host>
+# target-dir = "target"
+# build-dir = <unset; defaults to target-dir>
+# rustc-wrapper = <unset>
+# incremental = <profile default>
+#
+# [env]
+# <variable> = <unset>
+#
+# [net]
+# retry = 3
+# git-fetch-with-cli = false
+# offline = false
+#
+# [term]
+# quiet = false
+# verbose = false
+# color = "auto"
+# hyperlinks = true
+# unicode = true
+# progress.when = "auto"
+# progress.width = 80
+# progress.term-integration = true
+#
+# [alias]
+# b = "build"
+# c = "check"
+# d = "doc"
+# t = "test"
+# r = "run"
+# rm = "remove"
+#
+# [profile.dev]
+# opt-level = 0
+# debug = true
+# split-debuginfo = <platform default>
+# strip = "none"
+# debug-assertions = true
+# overflow-checks = true
+# lto = false
+# panic = "unwind"
+# incremental = true
+# codegen-units = 256 when incremental is enabled; otherwise 16
+# rpath = false
+#
+# [profile.dev.package."*"]
+# opt-level = 0
+#
+# [profile.dev.build-override]
+# opt-level = 0
+# debug = false when possible
+# codegen-units = 256
+#
+# [profile.debug]
+# inherits = "dev"
+#
+# [profile.test]
+# inherits = "dev"
+#
+# [profile.release]
+# opt-level = 3
+# debug = false
+# split-debuginfo = <platform default>
+# strip = "none"
+# debug-assertions = false
+# overflow-checks = false
+# lto = false
+# panic = "unwind"
+# incremental = false
+# codegen-units = 16
+# rpath = false
+#
+# [profile.release.package."*"]
+# opt-level = 3
+#
+# [profile.release.build-override]
+# opt-level = 0
+# debug = false when possible
+# codegen-units = 256
+#
+# [profile.bench]
+# inherits = "release"
