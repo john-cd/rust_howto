@@ -1,5 +1,8 @@
 # TODO Reviewed ??-??-2026
 
+[env]
+SCCACHE_BASEDIRS = { value = ".", relative = true }
+
 [profile.dev.package]
 hashbrown = { opt-level = 3 }
 indexmap = { opt-level = 3 }
@@ -8,13 +11,97 @@ proc-macro2 = { opt-level = 3 }
 quote = { opt-level = 3 }
 syn = { opt-level = 3 }
 
-[profile.debugging.package]
-hashbrown = { opt-level = 0, debug = 2 }
-indexmap = { opt-level = 0, debug = 2 }
-memchr = { opt-level = 0, debug = 2 }
-proc-macro2 = { opt-level = 0, debug = 2 }
-quote = { opt-level = 0, debug = 2 }
-syn = { opt-level = 0, debug = 2 }
+[profile.debug.package]
+hashbrown = { opt-level = 3, debug = 0 }
+indexmap = { opt-level = 3, debug = 0 }
+memchr = { opt-level = 3, debug = 0 }
+proc-macro2 = { opt-level = 3, debug = 0 }
+quote = { opt-level = 3, debug = 0 }
+syn = { opt-level = 3, debug = 0 }
 
-[env]
-SCCACHE_BASEDIRS = { value = ".", relative = true }
+
+# Cargo defaults reference (Cargo 1.100.0). Comments only.
+#
+# [build]
+# target = <host>
+# target-dir = "target"
+# build-dir = <unset; defaults to target-dir>
+# rustc-wrapper = <unset>
+# incremental = <profile default>
+#
+# [env]
+# <variable> = <unset>
+#
+# [net]
+# retry = 3
+# git-fetch-with-cli = false
+# offline = false
+#
+# [term]
+# quiet = false
+# verbose = false
+# color = "auto"
+# hyperlinks = true
+# unicode = true
+# progress.when = "auto"
+# progress.width = 80
+# progress.term-integration = true
+#
+# [alias]
+# b = "build"
+# c = "check"
+# d = "doc"
+# t = "test"
+# r = "run"
+# rm = "remove"
+#
+# [profile.dev]
+# opt-level = 0
+# debug = true
+# split-debuginfo = <platform default>
+# strip = "none"
+# debug-assertions = true
+# overflow-checks = true
+# lto = false
+# panic = "unwind"
+# incremental = true
+# codegen-units = 256 when incremental is enabled; otherwise 16
+# rpath = false
+#
+# [profile.dev.package."*"]
+# opt-level = 0
+#
+# [profile.dev.build-override]
+# opt-level = 0
+# debug = false when possible
+# codegen-units = 256
+#
+# [profile.debug]
+# inherits = "dev"
+#
+# [profile.test]
+# inherits = "dev"
+#
+# [profile.release]
+# opt-level = 3
+# debug = false
+# split-debuginfo = <platform default>
+# strip = "none"
+# debug-assertions = false
+# overflow-checks = false
+# lto = false
+# panic = "unwind"
+# incremental = false
+# codegen-units = 16
+# rpath = false
+#
+# [profile.release.package."*"]
+# opt-level = 3
+#
+# [profile.release.build-override]
+# opt-level = 0
+# debug = false when possible
+# codegen-units = 256
+#
+# [profile.bench]
+# inherits = "release"
