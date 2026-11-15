@@ -105,7 +105,7 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if next, value fails.
+    /// Returns an error if the option parser cannot read the next argument or its value.
     #[test]
     fn lexopt_rejects_a_non_numeric_age_value() -> Result<(), Box<dyn std::error::Error>> {
         use lexopt::ValueExt as _;

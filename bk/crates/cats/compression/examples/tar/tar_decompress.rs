@@ -92,7 +92,7 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if run, main fails.
+    /// Returns an I/O error if the example cannot decompress its archive.
     #[test]
     fn test_main_entry_point() -> io::Result<()> {
         let _guard = crate::tar_compress::SAMPLE_ARCHIVE_LOCK

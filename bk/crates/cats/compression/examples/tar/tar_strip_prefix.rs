@@ -183,7 +183,7 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if main_extracts_the_sample_archive, create_archive fails.
+    /// Returns an error if creating the sample archive fails.
     #[test]
     fn main_extracts_the_sample_archive() -> anyhow::Result<()> {
         fs::create_dir_all("temp")?;

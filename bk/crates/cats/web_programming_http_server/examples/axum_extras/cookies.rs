@@ -50,7 +50,7 @@ pub fn run() -> Router {
     app()
 }
 
-/// An error is returned if default_without_cookie fails.
+/// Tests for the cookie-backed locale behavior.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -74,7 +74,8 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if default_without_cookie fails.
+    /// Returns an error if building the request, running the router, or reading the response body
+    /// fails.
     #[tokio::test]
     async fn default_without_cookie() -> anyhow::Result<()> {
         let response = app()
@@ -85,7 +86,8 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if cookie_round_trip, headers fails.
+    /// Returns an error if request handling fails, the `Set-Cookie` header is missing or invalid,
+    /// or a response body cannot be read.
     #[tokio::test]
     async fn cookie_round_trip() -> anyhow::Result<()> {
         let response = app()

@@ -47,7 +47,7 @@ pub fn run() -> Router {
     app()
 }
 
-/// An error is returned if headers, to_str fails.
+/// Tests for one-time flash message handling.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -93,7 +93,8 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if headers, to_str fails.
+    /// Returns an error if request handling fails, the session cookie is missing or invalid, or a
+    /// response body cannot be read.
     #[tokio::test]
     async fn message_is_shown_once() -> anyhow::Result<()> {
         let app = app();

@@ -68,7 +68,7 @@ pub fn run() -> Router {
     })
 }
 
-/// An error is returned if replaces_port_and_scheme, make_https fails.
+/// Tests for HTTPS URI conversion and redirect responses.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -85,7 +85,7 @@ mod tests {
     };
 
     /// # Errors
-    /// An error is returned if replaces_port_and_scheme, make_https fails.
+    /// Returns an error if parsing the input URI or converting it to HTTPS fails.
     #[test]
     fn replaces_port_and_scheme() -> anyhow::Result<()> {
         let uri: Uri = "/a/b?c=d".parse()?;
@@ -108,7 +108,7 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if invalid_host_is_an_error fails.
+    /// Returns an error if parsing the test URI fails.
     #[test]
     fn invalid_host_is_an_error() -> anyhow::Result<()> {
         assert!(make_https("bad host", &"/".parse()?, PORTS).is_err());
@@ -116,7 +116,7 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if redirects fails.
+    /// Returns an error if building the request or running the router fails.
     #[tokio::test]
     async fn redirects() -> anyhow::Result<()> {
         let request = Request::get("/login?next=%2F")

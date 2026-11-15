@@ -181,7 +181,7 @@ mod tests {
     /// the underlying source.
     ///
     /// # Errors
-    /// An error is returned if read_subcommand_requires_files, try_parse_from fails.
+    /// Returns an error if a command-line fixture cannot be parsed.
     ///
     /// # Panics
     /// Panics if the guarded invariant is violated.

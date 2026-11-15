@@ -66,7 +66,7 @@ pub fn run() {
     main();
 }
 
-/// An error is returned if join, read fails.
+/// Tests for the copy-on-write string and reference-counting examples.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -85,7 +85,7 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if join, read fails.
+    /// Returns an error if a worker thread panics or a lock is poisoned.
     #[test]
     fn test_rwlock_string_is_mutated_by_all_threads() -> Result<(), Box<dyn std::error::Error>> {
         let shared = Arc::new(RwLock::new("String".to_owned()));
