@@ -50,6 +50,7 @@ impl Receive<Pong> for PingPongActor {
         println!("Received Pong message");
     }
 }
+
 /// Starts an actor system, creates an actor and sends it a message.
 ///
 /// # Errors

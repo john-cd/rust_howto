@@ -49,7 +49,7 @@ impl Vault {
 }
 
 /// # Errors
-/// An error is returned if main, store fails.
+/// Returns an error if creating the vault or storing, loading, or deleting the secret fails.
 fn main() -> Result<(), Error> {
     let vault = Vault::new("alice")?;
     vault.store(b"s3cret")?;
@@ -61,9 +61,6 @@ fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     if let Err(e) = main() {
         eprintln!("credential store unavailable: {e}");
@@ -83,6 +80,7 @@ mod tests {
         Ok(())
     }
 
+    /// Stores and retrieves a credential through the OS keyring.
     #[test]
     #[ignore = "needs an OS credential store"]
     fn os_credential_store_round_trips() -> Result<(), Error> {

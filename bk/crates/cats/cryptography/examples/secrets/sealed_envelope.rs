@@ -160,7 +160,7 @@ impl SealedEnvelope {
 }
 
 /// # Errors
-/// An error is returned if main, to_string_pretty fails.
+/// Returns an error if sealing, serializing, deserializing, or opening the envelope fails.
 fn main() -> Result<()> {
     let envelope = SealedEnvelope::seal(b"sk-live-1234", b"correct horse", b"source-42")?;
     // The envelope is safe to store or ship as JSON.
@@ -175,9 +175,6 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     if let Err(e) = main() {
         eprintln!("{e:#}");
@@ -236,6 +233,7 @@ mod tests {
         run();
     }
 
+    /// Runs the sealed-envelope example through its entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

@@ -38,14 +38,11 @@ pub fn run() -> anyhow::Result<()> {
 }
 
 /// This example demonstrates how to parse a URL and extract a portion of it.
-///
-/// # Errors
-/// Returns an error if an operation in the example fails.
-/// Returns an error if a step of the example fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Runs the URL parsing example through its entry point.
     #[test]
     fn test_main_entry_point() {
         main().expect("main failed");

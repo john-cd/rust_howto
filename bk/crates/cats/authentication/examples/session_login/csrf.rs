@@ -107,9 +107,6 @@ fn main() {
 }
 
 /// Runs the CSRF protection example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -208,6 +205,7 @@ mod tests {
         Ok(())
     }
 
+    /// Rejects tokens with different lengths or byte contents.
     #[test]
     fn comparison_checks_length_and_content() {
         assert!(constant_time_eq("abc", "abc"));

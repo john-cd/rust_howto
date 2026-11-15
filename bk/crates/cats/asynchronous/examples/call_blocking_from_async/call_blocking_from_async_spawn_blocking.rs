@@ -33,9 +33,6 @@ async fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -60,6 +57,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports a join error when the blocking task panics.
     #[tokio::test]
     async fn panic_in_blocking_task_is_reported_as_join_error() {
         let err = tokio::task::spawn_blocking(|| panic!("boom"))

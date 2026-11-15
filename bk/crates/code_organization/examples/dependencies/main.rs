@@ -22,8 +22,10 @@ fn fallible(fail: bool) -> Result<u32> {
     Ok(1)
 }
 
+/// Program entry point for the external dependency example.
+///
 /// # Errors
-/// An error is returned if main, fallible fails.
+/// Returns an error if the example returns one.
 fn main() -> Result<()> {
     example()
 }
@@ -31,7 +33,7 @@ fn main() -> Result<()> {
 /// Uses imported names from `anyhow` and prints the successful result.
 ///
 /// # Errors
-/// Returns an error if either sample operation fails.
+/// Returns an error if `a_func` or `fallible(false)` returns one.
 fn example() -> Result<()> {
     a_func()?;
     let value = fallible(false)?;
@@ -49,14 +51,11 @@ pub fn run() -> Result<()> {
 }
 
 /// Using items from an external crate (a dependency).
-///
-/// # Errors
-/// Returns an error if an operation in the example fails.
-/// Returns an error if a step of the example fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Runs the dependency inspection example through its entry point.
     #[test]
     fn test_main() {
         main().expect("main should succeed");

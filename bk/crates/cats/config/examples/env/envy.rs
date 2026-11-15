@@ -36,9 +36,6 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -67,6 +64,7 @@ mod tests {
         Ok(())
     }
 
+    /// Loads child configuration from the supplied environment.
     #[test]
     #[ignore = "needs a parent-controlled environment"]
     fn child_reads_controlled_environment() {

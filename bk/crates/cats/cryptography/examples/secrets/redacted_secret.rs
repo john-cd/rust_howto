@@ -90,9 +90,6 @@ fn main() -> Result<(), Infallible> {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     let _ = main();
 }
@@ -118,6 +115,7 @@ mod tests {
         Ok(())
     }
 
+    /// Excludes the secret value from debug formatting.
     #[test]
     fn secrecy_debug_does_not_contain_the_secret() {
         let secret = SecretString::from("hunter2");
@@ -130,6 +128,7 @@ mod tests {
         run();
     }
 
+    /// Runs the redacted-secret example through its entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

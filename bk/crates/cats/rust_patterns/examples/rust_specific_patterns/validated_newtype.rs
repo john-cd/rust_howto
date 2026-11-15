@@ -133,9 +133,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     if let Err(e) = main() {
         eprintln!("{e}");

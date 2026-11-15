@@ -69,7 +69,8 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if tempdir, new fails.
+    /// Returns an error if creating the temporary archive, writing its entries, or reading them
+    /// back fails.
     #[test]
     fn archive_roundtrip_preserves_names_and_contents() -> anyhow::Result<()> {
         use std::io::Read as _;

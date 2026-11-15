@@ -111,7 +111,7 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
-/// An error is returned if let fails.
+/// Tests for the OAuth client-credentials flow using local mock servers.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -171,7 +171,7 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if let fails.
+    /// Returns an error if the mocked token or protected-resource request fails.
     #[test]
     fn missing_expiry_is_reported_as_none() -> anyhow::Result<()> {
         let auth_server = MockServer::start();

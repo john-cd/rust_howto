@@ -112,7 +112,7 @@ fn app() -> Router {
 /// Builds the router and serves it on a local TCP listener.
 // `tokio` macros and rt-multi-thread features should be enabled.
 /// # Errors
-/// An error is returned if main, local_addr fails.
+/// Returns an error if initializing or serving the example server fails.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     example_async().await
@@ -151,9 +151,6 @@ pub fn run() -> anyhow::Result<()> {
 
 /// This module demonstrates basic usage of axum.
 ///
-/// # Errors
-/// Returns an error if an operation in the example fails.
-/// Returns an error if a step of the example fails.
 ///
 /// A non-numeric id is rejected by the extractor.
 #[cfg(test)]
@@ -204,6 +201,7 @@ mod tests {
         main()
     }
 
+    /// Returns a greeting from the root route.
     #[tokio::test]
     async fn root_greets() {
         assert_eq!(
@@ -212,6 +210,7 @@ mod tests {
         );
     }
 
+    /// Extracts a user ID from a valid path.
     #[tokio::test]
     async fn path_parameters_are_extracted() {
         assert_eq!(get_uri(Method::GET, "/users/7").await.1, "User 7");
@@ -229,8 +228,7 @@ mod tests {
         assert_eq!(status, StatusCode::BAD_REQUEST);
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Combines query parameters with shared application state.
     #[tokio::test]
     async fn query_and_state_are_read() {
         assert!(
@@ -260,6 +258,7 @@ mod tests {
         Ok(())
     }
 
+    /// Returns the fallback response for an unknown route.
     #[tokio::test]
     async fn unknown_route_uses_the_fallback() {
         assert_eq!(

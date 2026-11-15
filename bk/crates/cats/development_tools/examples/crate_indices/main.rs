@@ -14,10 +14,6 @@ mod fixtures;
 /// Collect published recipe links from the local book index.
 mod published_recipes;
 
-/// Runs each local crate-index example in sequence.
-fn main() -> anyhow::Result<()> {
-    example_body()
-}
 /// Runs each offline capability from the shared book example runner.
 ///
 /// # Errors
@@ -27,6 +23,11 @@ pub fn example_body() -> anyhow::Result<()> {
     published_recipes::run()?;
     category_page::run()?;
     alphabetical_page::run()
+}
+
+/// Runs each local crate-index example in sequence.
+fn main() -> anyhow::Result<()> {
+    example_body()
 }
 // ANCHOR_END: example
 

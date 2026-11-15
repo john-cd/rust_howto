@@ -56,7 +56,7 @@ fn parse(
 }
 
 /// # Errors
-/// An error is returned if set_language, let fails.
+/// Returns an error if the Rust grammar cannot be loaded or parsing the source fails.
 fn main() -> anyhow::Result<()> {
     let mut parser = Parser::new();
     parser.set_language(&tree_sitter_rust::LANGUAGE.into())?;

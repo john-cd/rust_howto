@@ -91,9 +91,6 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 /// ## Per-Layer Filtering
 /// This example demonstrates how to add a filter to a specific layer.
 /// This allows different layers to have different filtering rules.
-///
-/// # Errors
-/// Returns an error if a fallible operation cannot complete.
 #[cfg_attr(
     not(test),
     expect(
@@ -190,6 +187,7 @@ mod tests {
         });
     }
 
+    /// Runs the tracing subscriber example through its entry point.
     #[test]
     fn test_main_entry_point() {
         isolated::run(module_path!(), "test_main_entry_point", || {

@@ -88,9 +88,6 @@ async fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -105,6 +102,7 @@ mod tests {
         main();
     }
 
+    /// Returns an error for inputs divisible by three.
     #[tokio::test(start_paused = true)]
     async fn fetch_data_fails_for_multiples_of_three() {
         assert_eq!(fetch_data(2).await, Ok("Data for id 2".to_owned()));

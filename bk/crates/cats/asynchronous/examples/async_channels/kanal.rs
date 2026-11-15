@@ -74,8 +74,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Collects every value sent by both producers.
     #[tokio::test]
     async fn every_produced_value_is_consumed() -> Result<(), Box<dyn std::error::Error>> {
         let (tx, rx) = kanal::bounded_async::<i32>(0);
@@ -96,6 +95,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports an error when the receiver is dropped before a send.
     #[tokio::test]
     async fn producer_fails_when_the_receiver_is_gone() {
         let (tx, rx) = kanal::bounded_async::<i32>(0);
@@ -103,11 +103,7 @@ mod tests {
         assert!(producer(tx, 1).await.is_err());
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
-    ///
-    /// # Panics
-    /// Panics if the consumer drains and stops.
+    /// Stops the consumer after the sender is dropped.
     #[tokio::test]
     async fn consumer_ends_when_the_sender_is_gone() -> Result<(), Box<dyn std::error::Error>> {
         let (tx, rx) = kanal::bounded_async::<i32>(1);
