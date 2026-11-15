@@ -52,6 +52,11 @@ fn process_file(filename: &str) -> Result<(), Error> {
 
 /// Runs a closure at the end of a scope, and cleans up after processing a file.
 fn main() -> Result<(), Error> {
+    example()
+}
+
+/// Demonstrates scope-exit cleanup and writes a sample file.
+fn example() -> Result<(), Error> {
     defer();
     process_file("temp/my_document.txt")?;
     Ok(())
@@ -63,7 +68,7 @@ fn main() -> Result<(), Error> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<(), Error> {
-    main()
+    example()
 }
 
 #[cfg(test)]

@@ -24,6 +24,11 @@ use tokio::time::sleep;
 /// Registers futures in an await-tree registry and prints the tree.
 #[tokio::main]
 async fn main() {
+    example_async().await;
+}
+
+/// Registers futures in an await-tree registry and prints the collected trees.
+async fn example_async() {
     // Create a configuration.
     let config = ConfigBuilder::default()
         .verbose(true)
@@ -109,9 +114,16 @@ async fn baz(n: i32) {
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
+/// Runs the asynchronous example with a current-thread Tokio runtime.
+///
+/// # Panics
+/// Panics if the Tokio runtime cannot be created.
 pub fn run() {
-    main();
+    tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()
+        .expect("the await-tree example requires a Tokio runtime")
+        .block_on(example_async());
 }
 
 #[cfg(test)]
@@ -126,6 +138,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if registry_collects_the_registered_trees fails.
+    #[tokio::test]
     async fn registry_collects_the_registered_trees() -> Result<(), Box<dyn std::error::Error>> {
         let registry = Registry::new(ConfigBuilder::default().verbose(true).build()?);
         for i in 0_i32..2 {

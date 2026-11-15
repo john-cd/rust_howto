@@ -22,14 +22,13 @@ fn build_connector() -> anyhow::Result<TlsConnector> {
 ///
 /// # Errors
 /// Returns an error if the connection or TLS handshake fails.
-
 fn connect_tls(connector: &TlsConnector, host: &str) -> anyhow::Result<TlsStream<TcpStream>> {
     let tcp_stream = TcpStream::connect((host, 443))
         .with_context(|| format!("could not connect to {host}:443"))?;
     Ok(connector.connect(host, tcp_stream)?)
 }
 /// Builds a connector and optionally connects to `NATIVE_TLS_HOST`.
-
+///
 /// Without the environment variable this example does not access the network.
 /// # Errors
 /// Returns an error if the connector cannot be built, the environment variable
@@ -65,6 +64,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if connector_builds_without_network_access fails.
+    #[test]
     fn connector_builds_without_network_access() -> anyhow::Result<()> {
         build_connector()?;
         Ok(())
@@ -79,6 +79,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if connecting_to_a_host_without_tls_port_fails_with_context fails.
+    #[test]
     fn connecting_to_a_host_without_tls_port_fails_with_context() -> anyhow::Result<()> {
         let connector = build_connector()?;
         // Nothing listens on port 443 of the loopback address in the tests.

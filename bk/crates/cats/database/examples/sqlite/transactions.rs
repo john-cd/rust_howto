@@ -59,7 +59,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 /// Inserts two colors and commits them in a single transaction.
-
+///
 /// # Errors
 /// Returns a SQLite error if any statement or the commit fails.
 /// state.
@@ -101,7 +101,6 @@ fn rolled_back_tx(connection: &mut Connection) -> rusqlite::Result<()> {
 /// # Errors
 ///
 /// Returns a SQLite error if the query cannot be prepared or read.
-
 fn color_names(connection: &Connection) -> rusqlite::Result<Vec<String>> {
     let mut statement = connection.prepare("SELECT name FROM cat_colors ORDER BY id")?;
     let rows = statement.query_map([], |row| row.get(0))?;
@@ -109,7 +108,7 @@ fn color_names(connection: &Connection) -> rusqlite::Result<Vec<String>> {
 }
 // ANCHOR_END: example
 /// Runs the transaction example.
-
+///
 /// # Errors
 /// Returns any unexpected database error from the example.
 #[cfg(target_os = "linux")]

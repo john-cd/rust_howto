@@ -16,7 +16,7 @@ use std::path::Path;
 use flate2::Compression;
 use flate2::write::GzEncoder;
 /// Creates a sample input directory and archive under the system temp
-
+///
 /// directory.
 ///
 /// # Errors

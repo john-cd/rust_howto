@@ -77,7 +77,6 @@ fn adhoc_profiling() {
     }
 }
 /// Runs the heap and ad hoc allocation profiling demonstrations.
-
 fn main() {
     heap_profiling();
     adhoc_profiling();
@@ -88,7 +87,6 @@ fn main() {
 // Example adapted from <https://docs.rs/dhat/latest/dhat/>
 // ANCHOR_END: example
 /// Runs both `dhat` profiling demonstrations.
-
 pub fn run() {
     main();
 }

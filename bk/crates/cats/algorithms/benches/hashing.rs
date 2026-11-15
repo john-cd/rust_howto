@@ -32,7 +32,6 @@ fn make_test_buffer(len: usize) -> Vec<u8> {
     (0..len).map(|i| (i % 256) as u8).collect()
 }
 /// Hashes a byte slice with standard `DefaultHasher` (SipHash 1-3).
-
 fn hash_std(data: &[u8]) -> u64 {
     let mut hasher = std::collections::hash_map::DefaultHasher::new();
     hasher.write(data);
@@ -61,7 +60,6 @@ fn hash_fold(data: &[u8]) -> u64 {
 ///
 /// # Arguments
 /// * `c` - Mutable criterion whose state is updated by this operation.
-
 fn benchmark_small_buffer(c: &mut Criterion) {
     let data = make_test_buffer(64);
     let mut group = c.benchmark_group("hashing_64_bytes");

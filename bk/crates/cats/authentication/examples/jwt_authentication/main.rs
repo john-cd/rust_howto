@@ -16,6 +16,9 @@ mod jwt_service;
 /// # Errors
 /// Returns an error if token creation or verification fails.
 fn main() -> anyhow::Result<()> {
+    let _claims = jwt::run()?;
+    let _router = jwt_axum_extractor::run()?;
+
     if std::env::var("JWT_SECRET").is_ok() {
         jwt_service::run_from_env()
     } else {

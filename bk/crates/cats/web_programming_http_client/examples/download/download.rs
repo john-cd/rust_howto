@@ -55,7 +55,7 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 /// Runs the asynchronous binary download example.
-
+///
 /// # Errors
 /// Returns any error from the asynchronous download.
 pub fn run() -> Result<()> {

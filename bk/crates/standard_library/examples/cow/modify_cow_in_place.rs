@@ -39,7 +39,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -48,13 +47,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `modify cow in place` example runs.
-
     #[test]
     fn test_modify_cow_in_place_example_entry_point() {
         main();
     }
     /// Verifies unmatched input stays borrowed.
-
     #[test]
     fn test_unmatched_input_stays_borrowed() {
         let mut c = Cow::Borrowed("Hello");
@@ -62,7 +59,6 @@ mod tests {
         assert!(matches!(c, Cow::Borrowed("Hello")));
     }
     /// Verifies matching input is cloned on write.
-
     #[test]
     fn test_matching_input_is_cloned_on_write() {
         let mut c = Cow::Borrowed("Rust");
@@ -71,7 +67,6 @@ mod tests {
         assert_eq!(c, "Rust is awesome!");
     }
     /// Verifies already owned input is modified in place.
-
     #[test]
     fn test_already_owned_input_is_modified_in_place() {
         let mut c: Cow<str> = Cow::Owned("Rust".to_owned());

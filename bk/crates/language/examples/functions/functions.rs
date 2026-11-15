@@ -28,7 +28,6 @@ fn multiply(x: i32, y: i32) -> i32 {
     x * y // No semicolon: this expression's value is returned.
 }
 /// Function bodies follow the same rules than blocks:
-
 #[allow(clippy::let_and_return)]
 fn foo(x: i32) -> i32 {
     let y = {
@@ -74,7 +73,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

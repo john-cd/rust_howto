@@ -67,7 +67,7 @@ fn artist_counts_by_nationality(client: &mut Client) -> anyhow::Result<Vec<Natio
 }
 // ANCHOR_END: example
 /// Runs the PostgreSQL aggregation example.
-
+///
 /// # Errors
 /// Returns an error if `DATABASE_URL` is missing or PostgreSQL query execution
 /// fails.

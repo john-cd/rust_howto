@@ -43,7 +43,6 @@ struct AppState {
 ///
 /// # Arguments
 /// * `state` - Application state containing the repositories and services needed by this workflow.
-
 async fn root(State(state): State<Arc<AppState>>) -> String {
     state.greeting.clone()
 }
@@ -51,7 +50,6 @@ async fn root(State(state): State<Arc<AppState>>) -> String {
 ///
 /// The [`Path`] extractor gives us the path parameters (here `id` in
 /// `/users/{id}`) and deserializes them.
-
 async fn get_user(Path(id): Path<u64>) -> String {
     format!("User {id}")
 }

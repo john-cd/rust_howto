@@ -23,7 +23,6 @@ mod https_redirect;
 /// Extract strongly typed headers with [`axum_extra::TypedHeader`].
 mod typed_header;
 /// Runs the example.
-
 fn main() {
     // Build the routers; serving them is shown in the tests.
     let routers = [

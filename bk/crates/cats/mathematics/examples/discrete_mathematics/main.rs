@@ -6,7 +6,6 @@
 mod set_operations;
 /// Runs the example.
 /// Runs the set operations example.
-
 fn main() {
     set_operations::run();
 }

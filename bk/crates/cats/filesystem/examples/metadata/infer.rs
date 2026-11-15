@@ -21,7 +21,6 @@ fn detect(bytes: &[u8]) -> Option<&'static str> {
     infer::get(bytes).map(|kind| kind.mime_type())
 }
 /// Returns the MIME type detected from the content of the file at `path`.
-
 fn detect_file(path: &Path) -> std::io::Result<Option<&'static str>> {
     Ok(infer::get_from_path(path)?.map(|kind| kind.mime_type()))
 }
@@ -29,7 +28,6 @@ fn detect_file(path: &Path) -> std::io::Result<Option<&'static str>> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn example_body() -> anyhow::Result<()> {
     assert_eq!(detect(PNG_HEADER), Some("image/png"));
     assert_eq!(detect(ZIP_HEADER), Some("application/zip"));

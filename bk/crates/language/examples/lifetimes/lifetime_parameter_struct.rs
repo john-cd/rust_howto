@@ -26,7 +26,6 @@ impl Excerpt<'static> {
 /// The `'_` notation indicates that the struct takes a lifetime parameter,
 /// but it does not matter which, because the lifetime is not referenced in the
 /// block.
-
 impl Excerpt<'_> {
     /// Returns a constant level, whatever the lifetime.
     /// A generic implementation block.
@@ -37,7 +36,6 @@ impl Excerpt<'_> {
 }
 /// A generic implementation block.
 /// Note the lifetime parameter `'a` after `impl`.
-
 impl<'a> Excerpt<'a> {
     /// Returns the excerpt with its original lifetime.
     fn part(&self) -> &'a str {
@@ -46,7 +44,6 @@ impl<'a> Excerpt<'a> {
 }
 /// Runs the example.
 /// Creates an excerpt and calls its methods.
-
 fn main() {
     // Create an instance of the `struct` using a string literal of type
     // `'static`. Therefore 'a = 'static.
@@ -69,7 +66,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

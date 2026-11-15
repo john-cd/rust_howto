@@ -46,7 +46,6 @@ mod settings {
         Ok(config()?.get::<T>(key)?)
     }
     /// Builds an isolated configuration from supplied environment values.
-
     #[cfg(test)]
     pub(super) fn from_source(
         environment_source: HashMap<String, String>,
@@ -55,7 +54,6 @@ mod settings {
     }
 }
 /// Reads the port and displays it.
-
 fn main() -> anyhow::Result<()> {
     let port = settings::get::<u16>("port")?;
     println!("Service port: {port}");

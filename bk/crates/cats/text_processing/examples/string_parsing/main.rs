@@ -6,7 +6,6 @@
 mod from_str;
 /// Runs the example.
 /// Runs the string parsing example.
-
 fn main() {
     from_str::run();
 }

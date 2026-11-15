@@ -15,7 +15,6 @@ use std::path::PathBuf;
 use std::process::Command;
 /// Runs the example.
 /// Builds an `OsString` and converts it to and from other string types.
-
 fn main() {
     // Create an `OsString` (owned platform-native string):
     let mut os_string = OsString::new();
@@ -70,7 +69,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

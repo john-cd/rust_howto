@@ -10,7 +10,6 @@
 use std::cell::OnceCell;
 /// Runs the example.
 /// Initializes a `OnceCell` on first access.
-
 fn main() {
     // Create a new OnceCell instance.
     let cell = OnceCell::new();
@@ -26,7 +25,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

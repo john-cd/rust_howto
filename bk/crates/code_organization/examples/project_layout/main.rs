@@ -86,7 +86,6 @@ mod tests {
         main();
     }
     /// Verifies reexports are reachable.
-
     #[test]
     fn test_reexports_are_reachable() {
         assert_eq!(public_function(), "public_function");
@@ -94,7 +93,6 @@ mod tests {
         assert_eq!(format!("{s1:?}"), "Struct1");
     }
     /// Verifies prelude items are reachable.
-
     #[test]
     fn test_prelude_items_are_reachable() {
         assert_eq!(super_common_function(), 42);

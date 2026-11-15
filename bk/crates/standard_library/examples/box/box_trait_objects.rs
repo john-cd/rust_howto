@@ -8,7 +8,7 @@
 // Let's define an example trait and implement it on two structs.
 /// A shape with an area.
 trait Shape {
-    ///
+    /// Returns the area of this shape in square units.
     fn area(&self) -> f64;
 }
 
@@ -59,7 +59,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -68,13 +67,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `box trait objects` example runs.
-
     #[test]
     fn test_box_trait_objects_example_entry_point() {
         main();
     }
     /// Verifies areas through trait objects.
-
     #[test]
     fn test_areas_through_trait_objects() {
         let shapes: Vec<Box<dyn Shape>> = vec![
@@ -89,7 +86,6 @@ mod tests {
         assert!((areas[1] - 12.0).abs() < f64::EPSILON);
     }
     /// Verifies degenerate shapes have zero area.
-
     #[test]
     fn test_degenerate_shapes_have_zero_area() {
         assert!(Circle { radius: 0.0 }.area().abs() < f64::EPSILON);

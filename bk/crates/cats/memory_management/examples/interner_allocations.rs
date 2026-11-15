@@ -67,6 +67,11 @@ static GLOBAL: CountingAllocator = CountingAllocator;
 
 /// Measures one insertion followed by repeated lookups, before printing.
 fn main() {
+    run();
+}
+
+/// Measures allocations for one insertion and repeated interner lookups.
+fn example() {
     interning::run();
     let mut interner = interning::Interner::default();
     let before = allocations();
@@ -91,7 +96,7 @@ fn main() {
 
 /// Counts allocation calls made by the hand-written string interner.
 fn run() {
-    main();
+    example();
 }
 
 /// allocates and that repeated lookups do not.

@@ -30,7 +30,7 @@ mod foo {
     }
 }
 /// Initializes the logger and logs warning, info, and debug messages from the
-
+///
 /// root module, then calls `foo::run()`.
 fn main() {
     env_logger::init();
@@ -43,7 +43,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

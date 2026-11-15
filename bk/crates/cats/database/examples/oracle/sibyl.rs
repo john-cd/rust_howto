@@ -50,7 +50,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 /// Runs the Sibyl Oracle example.
-
+///
 /// # Errors
 /// Returns an error when client setup, connection, or query execution fails.
 pub fn run() -> anyhow::Result<()> {

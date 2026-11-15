@@ -8,7 +8,6 @@ mod overflow_methods;
 mod wrapping_type;
 /// Runs the example.
 /// Runs the primitive methods and `Wrapping` examples.
-
 fn main() {
     overflow_methods::run();
     wrapping_type::run();

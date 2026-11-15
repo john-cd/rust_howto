@@ -37,7 +37,6 @@ impl S {
     /// Following Rust API Guidelines (C-GETTER), mutating getters use the `_mut` suffix
     /// rather than `get_mut_first` or `mut_first`.
     /// Requires exclusive mutable access (`&mut self`), preventing concurrent data races.
-
     pub fn first_mut(&mut self) -> &mut String {
         &mut self.first
     }
@@ -58,7 +57,6 @@ impl Container {
     }
 
     /// `IterMut` implements `Iterator<Item = &mut u32>`.
-
     pub fn iter_mut(&mut self) -> std::slice::IterMut<'_, u32> {
         self.items.iter_mut()
     }
@@ -97,7 +95,6 @@ impl IntoIterator for Container {
 }
 // ANCHOR_END: iterators
 /// Runs the example.
-
 fn main() {
     let mut s = S::new("a");
     s.first_mut().push('b');
@@ -122,7 +119,6 @@ mod tests {
         main();
     }
     /// Verifies getters.
-
     #[test]
     fn test_getters() {
         let mut s = S::new("a");
@@ -130,7 +126,6 @@ mod tests {
         assert_eq!(s.first(), "ab");
     }
     /// Verifies iterators.
-
     #[test]
     fn test_iterators() {
         let mut c = Container {

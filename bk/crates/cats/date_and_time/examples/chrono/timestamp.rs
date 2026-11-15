@@ -11,7 +11,7 @@ use chrono::DateTime;
 use chrono::NaiveDate;
 use chrono::Utc;
 /// Converts a `NaiveDateTime` to a timestamp and back.
-
+///
 /// # Errors
 /// Returns an error if a demonstration date, time, or timestamp is out of
 /// range.

@@ -13,7 +13,6 @@ use tokio::sync::oneshot;
 ///
 /// # Arguments
 /// * `input` - Input data whose fields determine the requested async channels oneshot operation.
-
 async fn some_computation(input: u32) -> String {
     format!("The result of computation is {input}")
 }

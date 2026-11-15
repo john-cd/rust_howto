@@ -58,7 +58,6 @@ mod tests {
         main()
     }
     /// Keys are case-insensitive and typed getters parse the value.
-
     #[test]
     fn reads_typed_values() -> anyhow::Result<()> {
         let mut config = Ini::new();

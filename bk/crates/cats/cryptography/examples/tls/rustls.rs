@@ -36,7 +36,6 @@ fn webpki_root_store() -> RootCertStore {
     RootCertStore::from_iter(webpki_roots::TLS_SERVER_ROOTS.iter().cloned())
 }
 /// Opens a verified TLS connection to the resolved server address.
-
 async fn connect_to_server(
     server_name: &str,
     address: SocketAddr,

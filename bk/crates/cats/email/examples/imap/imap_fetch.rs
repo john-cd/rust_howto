@@ -96,7 +96,7 @@ pub async fn fetch_unseen() -> Result<Vec<Summary>> {
     Ok(summaries)
 }
 /// Builds an IMAP TLS connector and optionally adds a PEM root certificate.
-
+///
 /// # Errors
 /// Returns an error if the optional root certificate cannot be read or parsed,
 /// or if the TLS connector cannot be built.

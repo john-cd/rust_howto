@@ -21,6 +21,11 @@ static KEYWORDS: phf::Map<&'static str, &'static str> = phf_map! {
 
 /// Looks up keywords and prints the compile-time map's entries.
 fn main() {
+    run();
+}
+
+/// Looks up sample keywords and prints the compile-time map's entries.
+fn example() {
     // Lookup is O(1) with no runtime map construction:
     assert_eq!(KEYWORDS.get("fn"), Some(&"function"));
     if let Some(meaning) = KEYWORDS.get("fn") {
@@ -44,7 +49,7 @@ fn main() {
 
 /// Demonstrates a compile-time perfect hash map.
 fn run() {
-    main();
+    example();
 }
 
 /// Verifies that the static map has its expected lookup behavior.

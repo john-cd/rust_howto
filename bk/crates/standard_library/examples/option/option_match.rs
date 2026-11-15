@@ -27,7 +27,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -36,13 +35,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `option match` example runs.
-
     #[test]
     fn test_option_match_example_entry_point() {
         main();
     }
     /// Verifies divide.
-
     #[test]
     fn test_divide() {
         assert_eq!(divide(10.0, 2.0), Some(5.0));
@@ -50,7 +47,6 @@ mod tests {
         assert_eq!(divide(0.0, 4.0), Some(0.0));
     }
     /// Verifies divide by zero is none.
-
     #[test]
     fn test_divide_by_zero_is_none() {
         assert_eq!(divide(10.0, 0.0), None);

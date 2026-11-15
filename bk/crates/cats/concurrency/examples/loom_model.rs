@@ -39,7 +39,6 @@ struct Slot {
 
 impl Slot {
     /// orderings.
-
     fn new(publish_order: Ordering, read_order: Ordering) -> Self {
         Self {
             value: AtomicU32::new(0),
@@ -51,7 +50,6 @@ impl Slot {
     }
 
     /// Publishes `value` unless cancelled; returns whether it published.
-
     fn publish(&self, value: u32) -> bool {
         if self.cancelled.load(Ordering::Acquire) {
             return false;
@@ -69,13 +67,11 @@ impl Slot {
     }
 
     /// Asks the producer to stop before it publishes.
-
     fn cancel(&self) {
         self.cancelled.store(true, Ordering::Release);
     }
 
     /// Reports whether the slot meets the ready condition so callers can choose the correct branch.
-
     fn is_ready(&self) -> bool {
         self.ready.load(Ordering::Acquire)
     }
@@ -83,7 +79,6 @@ impl Slot {
 /// Explores every bounded interleaving of one producer and one consumer.
 ///
 /// Panics (inside the model) when the protocol invariant is violated.
-
 fn check_protocol(publish_order: Ordering, read_order: Ordering) {
     // A small preemption bound keeps the state space tractable and the run
     // deterministic; Loom explores all schedules within the bound.
@@ -106,7 +101,7 @@ fn check_protocol(publish_order: Ordering, read_order: Ordering) {
     });
 }
 /// Checks the correct protocol: `Release` on publish pairs with `Acquire` on
-
+///
 /// read.
 fn run_model() {
     check_protocol(Ordering::Release, Ordering::Acquire);
@@ -114,14 +109,12 @@ fn run_model() {
 }
 /// Runs the example.
 /// Runs the model.
-
 fn main() {
     run_model();
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the model for the workspace example runner.
-
 pub fn run() {
     run_model();
 }
@@ -144,7 +137,6 @@ mod tests {
         check_protocol(Ordering::Relaxed, Ordering::Relaxed);
     }
     /// Verifies that the `loom model` example runs.
-
     #[test]
     fn test_loom_model_example_entry_point() {
         main();

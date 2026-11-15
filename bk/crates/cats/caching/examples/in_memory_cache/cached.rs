@@ -19,17 +19,11 @@ fn fibonacci(n: u64) -> u64 {
     fibonacci(n - 1) + fibonacci(n - 2)
 }
 
-/// Returns simulated data for the requested cache key and caches the result.
-/// The cache stores at most 50 entries and refreshes its 60-second TTL on hits.
+/// Returns simulated data for `key`, using a 50-entry cache with a refreshed
+/// 60-second time-to-live.
 ///
 /// # Arguments
-/// * `key` - Identifier used to select the cached record or cache entry affected by this operation.
-
-// Max cache size:
-// Set a time-to-live (TTL) for cached entries:
-// Specify whether to refresh the TTL on cache hits:
-
-/// Returns a cached value for `key`, computing it on a cache miss.
+/// * `key` - Identifier used to look up the simulated data.
 #[cached(max_size = 50, ttl_secs = 60, refresh = true)]
 fn fetch_data(key: usize) -> String {
     println!("Expensive data fetching simulated here.");
@@ -40,7 +34,6 @@ fn fetch_data(key: usize) -> String {
 ///
 /// # Arguments
 /// * `key` - Identifier used to select the cached record or cache entry affected by this operation.
-
 #[cached(ttl_secs = 1)]
 fn short_lived_data(key: &str) -> String {
     format!("value for {key}")
@@ -77,7 +70,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

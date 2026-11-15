@@ -43,7 +43,6 @@ criterion_main!(benches);
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the benchmark with the default `Criterion` configuration.
-
 pub fn run() {
     let mut criterion = Criterion::default().configure_from_args();
     benchmark_fibonacci(&mut criterion);

@@ -15,7 +15,6 @@ fn render_category_badge() -> Result<String> {
     create_category_badge("Encoding", "encoding")
 }
 /// Prints the generated category badge.
-
 fn main() -> Result<()> {
     println!("{}", render_category_badge()?);
     Ok(())

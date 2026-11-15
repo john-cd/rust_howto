@@ -15,7 +15,7 @@ use std::io::Write as _;
 use zip::write::SimpleFileOptions;
 use zip::write::ZipWriter;
 /// Creates a zip archive with two files and an empty directory.
-
+///
 /// # Errors
 /// Returns an error if temporary storage or archive writing fails.
 fn main() -> anyhow::Result<()> {

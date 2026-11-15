@@ -51,7 +51,6 @@ impl Container {
 }
 /// Runs the example.
 /// Creates containers from flags and checks their bits.
-
 fn main() {
     let container = Container::new(FlagsA::Foo | FlagsA::Bar);
     assert_eq!(container.0.bits(), 0b011);
@@ -64,7 +63,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

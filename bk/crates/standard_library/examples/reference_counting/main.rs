@@ -6,7 +6,6 @@
 mod rc;
 /// Runs the example.
 /// Runs the reference counting example.
-
 fn main() {
     rc::run();
 }

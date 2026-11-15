@@ -44,7 +44,6 @@ impl Interner {
     }
 }
 /// Interns identifiers and compares them by handle.
-
 fn main() {
     let mut interner = Interner::default();
     let a = interner.intern("foo");
@@ -67,7 +66,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

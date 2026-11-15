@@ -70,7 +70,6 @@ async fn run_pool(inputs: Vec<u64>) -> Outcome {
 }
 /// `abort_all` cancels the remaining tasks; they report a cancelled
 /// `JoinError`.
-
 async fn abort_demo() -> usize {
     let mut set = JoinSet::new();
     for _ in 0..3 {
@@ -87,7 +86,6 @@ async fn abort_demo() -> usize {
 }
 /// Runs the example.
 /// Runs the pool and the abort demonstration on a paused-clock runtime.
-
 fn main() {
     let runtime = match tokio::runtime::Builder::new_current_thread()
         .enable_time()
@@ -113,7 +111,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

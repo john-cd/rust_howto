@@ -21,7 +21,6 @@ impl<T> Deref for MyBox<T> {
     }
 }
 /// Dereferences a `MyBox` and relies on deref coercion.
-
 fn main() {
     let wrapped = MyBox(String::from("Hello, Deref!"));
 
@@ -35,7 +34,7 @@ fn main() {
 
 // ANCHOR_END: example
 /// Runs the example entry point.
-
+///
 /// Runs the example.
 pub fn run() {
     main();
@@ -45,13 +44,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `deref` example runs.
-
     #[test]
     fn test_deref_example_entry_point() {
         main();
     }
     /// Verifies auto deref calls methods of the target.
-
     #[test]
     fn test_auto_deref_calls_methods_of_the_target() {
         let wrapped = MyBox(String::from("Hello, Deref!"));
@@ -59,7 +56,6 @@ mod tests {
         assert_eq!((*wrapped).to_uppercase(), "HELLO, DEREF!");
     }
     /// Verifies deref coercion to str.
-
     #[test]
     fn test_deref_coercion_to_str() {
         fn takes_str(s: &str) -> usize {
@@ -71,7 +67,6 @@ mod tests {
         assert_eq!(takes_str(&MyBox(String::new())), 0);
     }
     /// Verifies explicit deref.
-
     #[test]
     fn test_explicit_deref() {
         let b = MyBox(5);

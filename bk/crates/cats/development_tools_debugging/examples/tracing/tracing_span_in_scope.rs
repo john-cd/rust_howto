@@ -62,7 +62,6 @@ async fn my_async_function() {
 /// code.
 async fn some_other_async_function() {}
 /// Initializes the subscriber and runs the instrumented async function.
-
 #[tokio::main]
 async fn main() {
     // Initialize the tracing subscriber to output logs to the console.
@@ -119,7 +118,6 @@ mod tests {
         }
 
         /// Flushes the current value.
-
         fn flush(&mut self) -> std::io::Result<()> {
             Ok(())
         }
@@ -135,7 +133,6 @@ mod tests {
         }
     }
     /// Runs `f` with a thread-local subscriber and returns what it logged.
-
     fn capture(f: impl FnOnce()) -> String {
         let buf = Buf::default();
         let subscriber = tracing_subscriber::fmt()

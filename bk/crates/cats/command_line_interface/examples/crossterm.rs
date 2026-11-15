@@ -32,6 +32,14 @@ use crossterm::terminal::ClearType;
 
 /// Prints colored text and reacts to key presses until `q` is pressed.
 fn main() -> anyhow::Result<()> {
+    example()
+}
+
+/// Sets up the terminal, handles key input, and restores terminal state.
+///
+/// # Errors
+/// Returns an error if terminal initialization, input, or cleanup fails.
+fn example() -> anyhow::Result<()> {
     let mut stdout = stdout();
 
     // Enter raw mode and enable mouse capture:
@@ -98,7 +106,7 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    example()
 }
 
 #[cfg(test)]

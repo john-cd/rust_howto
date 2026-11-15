@@ -19,7 +19,6 @@ unsafe extern "C" {
 }
 /// Runs the example.
 /// Converts between Rust strings and C strings.
-
 fn main() {
     // 1. Call a FFI function that requires a C string.
 

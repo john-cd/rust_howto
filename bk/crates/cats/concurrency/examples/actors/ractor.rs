@@ -101,7 +101,7 @@ impl ractor::Actor for Greeter {
     }
 }
 /// Sends one greeting request and returns the actor's reply.
-
+///
 /// # Errors
 /// Returns an error if the actor cannot start, receive its message, reply, or
 /// join successfully.
@@ -125,7 +125,7 @@ async fn run_actor() -> anyhow::Result<String> {
     Ok(reply)
 }
 /// Runs the asynchronous Ractor example on a Tokio runtime.
-
+///
 /// # Errors
 /// Returns an error if the actor cannot complete its message exchange.
 #[tokio::main]
@@ -136,7 +136,7 @@ async fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 /// Runs the Ractor actor example.
-
+///
 /// # Errors
 /// Returns an error if the actor cannot complete its message exchange.
 pub fn run() -> anyhow::Result<()> {

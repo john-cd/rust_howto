@@ -35,7 +35,6 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
     }
 }
 /// Runs the example.
-
 fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }

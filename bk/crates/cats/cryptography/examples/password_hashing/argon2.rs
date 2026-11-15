@@ -64,7 +64,6 @@ fn password_verification(password_to_check: &[u8], phc_string: &str) -> Result<b
     password_verification_with(&Argon2::default(), password_to_check, phc_string)
 }
 /// Verifies a password using the provided Argon2 configuration.
-
 fn password_verification_with(
     argon2: &Argon2<'_>,
     password_to_check: &[u8],

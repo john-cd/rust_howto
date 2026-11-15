@@ -12,14 +12,12 @@ trait MyHash {
 }
 /// Implement the `MyHash` trait for preexisting type `i64`,
 /// which is defined in the standard library.
-
 impl MyHash for i64 {
     fn myhash(&self) -> u64 {
         *self as u64
     }
 }
 /// Calls the method that the trait adds to `i64`.
-
 fn main() {
     let x = 1i64;
     // Since `i64` implements the `MyHash` trait, we can call its method.
@@ -29,7 +27,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

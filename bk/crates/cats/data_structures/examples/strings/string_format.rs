@@ -127,7 +127,6 @@ fn format() {
 }
 /// Runs the example.
 /// Runs each of the formatting examples.
-
 fn main() {
     print();
     variants();
@@ -137,7 +136,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

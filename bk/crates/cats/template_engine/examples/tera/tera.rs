@@ -28,15 +28,15 @@ static TEMPLATES: LazyLock<tera::TeraResult<tera::Tera>> = LazyLock::new(|| {
     Ok(t)
 });
 
-/// Filters are functions with the
+/// Replaces dashes with underscores using Tera's custom-filter signature.
 ///
 /// # Arguments
-/// * `_state` - State to inspect or update.
-/// `fn(Value, Kwargs, &State) -> Result` definition (the value may be any
-/// type that can be extracted from a Tera `Value`, such as `&str`), which can
-/// be used within templates.
+/// * `val` - Input string to transform.
+/// * `_kwargs` - Unused named filter arguments required by Tera's signature.
+/// * `_state` - Unused template state required by Tera's signature.
 ///
-/// The following filter replaces dashes by underscores.
+/// # Returns
+/// A new string with each dash replaced by an underscore.
 pub fn underscored(val: &str, _kwargs: tera::Kwargs, _state: &tera::State) -> String {
     val.replace('-', "_")
 }

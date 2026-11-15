@@ -12,7 +12,6 @@
 use bloomfilter::Bloom;
 /// Runs the example.
 /// Inserts items into a Bloom filter and checks for membership.
-
 fn main() {
     let items_count = 100;
     let mut bloom = Bloom::new_for_fp_rate(items_count, 0.01)
@@ -28,7 +27,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

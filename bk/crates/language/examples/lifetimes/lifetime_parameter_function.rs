@@ -21,7 +21,6 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 }
 /// Runs the example.
 /// Compares strings with different lifetimes.
-
 fn main() {
     // We define two variables, one with a scope / lifetime
     // shorter than the other.
@@ -42,7 +41,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

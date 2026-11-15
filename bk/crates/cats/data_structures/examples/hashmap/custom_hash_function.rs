@@ -13,7 +13,6 @@ use std::collections::HashMap;
 use std::collections::HashSet;
 /// Runs the example.
 /// Creates a `HashMap` and a `HashSet` that use the FNV hash function.
-
 fn main() {
     let mut fnv_map = HashMap::with_hasher(fnv::FnvBuildHasher::default());
     fnv_map.insert("key1", "value1");
@@ -48,7 +47,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

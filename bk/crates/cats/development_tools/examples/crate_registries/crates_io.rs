@@ -26,7 +26,7 @@ fn get_client() -> Result<SyncClient> {
 }
 
 /// Retrieve information for a given crate.
-
+///
 /// # Errors
 /// Returns an error if the get info for crate operation cannot satisfy its required invariants.
 #[tracing::instrument(err)]
@@ -146,6 +146,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if client_is_built_without_network_access fails.
+    #[test]
     fn client_is_built_without_network_access() -> Result<()> {
         // Constructing the client does not contact crates.io.
         get_client()?;

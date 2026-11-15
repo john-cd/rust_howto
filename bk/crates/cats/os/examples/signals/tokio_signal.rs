@@ -93,7 +93,6 @@ mod tests {
         assert!(ticks >= 1);
     }
     /// Runs completes.
-
     #[test]
     fn run_completes() -> anyhow::Result<()> {
         run()

@@ -130,7 +130,7 @@ fn or_do_that() {
     assert_eq!(final_count, initial + 20_000);
 }
 /// Runs the three approaches in turn.
-
+///
 /// Concurrency contract: calls are serialized, so `main` (and [`run`]) may be
 /// invoked repeatedly, and from several threads. The counters are not reset:
 /// they accumulate across calls, which is why the assertions check deltas.
@@ -145,7 +145,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

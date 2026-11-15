@@ -13,20 +13,23 @@
 /// ```rust,editable
 /// println!("{}", return_a_string());
 /// ```
-
 fn return_a_string() -> String {
     "This will be printed.".to_owned()
 }
 /// Prints the string returned by a documented function.
-
 fn main() {
+    example();
+}
+
+/// Prints the documented example string.
+fn example() {
     println!("{}", return_a_string());
 }
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    example();
 }
 
 #[cfg(test)]

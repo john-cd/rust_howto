@@ -53,7 +53,7 @@ enum Commands {
     Stakker,
 }
 /// Runs the example selected on the command line.
-
+///
 /// # Errors
 /// Returns an error if the selected actor example cannot complete its message
 /// exchange.

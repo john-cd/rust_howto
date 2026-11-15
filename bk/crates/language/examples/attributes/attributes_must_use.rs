@@ -14,7 +14,6 @@ fn add(a: i32, b: i32) -> i32 {
     a + b
 }
 /// Uses the result of a `#[must_use]` function.
-
 fn main() {
     // Use the return value of the function.
     println!("{}", add(1, 2));
@@ -28,7 +27,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -43,7 +41,7 @@ mod tests {
         main();
     }
     /// Verifies add.
-
+    ///
     /// `add` returns the sum, including with negative numbers.
     #[test]
     fn test_add() {

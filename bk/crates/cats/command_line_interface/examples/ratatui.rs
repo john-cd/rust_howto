@@ -38,6 +38,11 @@ use ratatui::widgets::Widget;
 ///
 /// It also handles any errors that occur during the application's execution.
 fn main() {
+    example();
+}
+
+/// Initializes the terminal, runs the application, and restores the terminal.
+fn example() {
     // Create a new `DefaultTerminal` and initialize it
     // with the following defaults:
     // - Backend: `CrosstermBackend` writing to `Stdout`,
@@ -220,7 +225,7 @@ impl Widget for MiddleWidget {
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    example();
 }
 
 /// Verifies that handle key event.
@@ -238,10 +243,9 @@ mod tests {
         Ok(())
     }
     /// Renders the current value.
-
+    ///
     /// # Arguments
     /// * `app` - Shared state and services used to complete the ratatui workflow.
-
     fn render(app: &App) -> String {
         let area = Rect::new(0, 0, 40, 12);
         let mut buf = Buffer::empty(area);
@@ -294,7 +298,6 @@ mod tests {
         assert!(text.contains("Text"));
     }
     /// Verifies that the `ratatui` example runs.
-
     #[test]
     #[ignore = "requires an interactive terminal and key input"]
     fn test_ratatui_example_entry_point() {

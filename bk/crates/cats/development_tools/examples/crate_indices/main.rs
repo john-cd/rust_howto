@@ -22,12 +22,11 @@ fn main() -> anyhow::Result<()> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn example_body() -> anyhow::Result<()> {
-    dependencies::example_body()?;
-    published_recipes::example_body()?;
-    category_page::example_body()?;
-    alphabetical_page::example_body()
+    dependencies::run()?;
+    published_recipes::run()?;
+    category_page::run()?;
+    alphabetical_page::run()
 }
 // ANCHOR_END: example
 
@@ -36,7 +35,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    example_body()
 }
 
 /// Verifies the crate-index examples run with their temporary fixtures.

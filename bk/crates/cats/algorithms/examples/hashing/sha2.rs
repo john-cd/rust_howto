@@ -105,7 +105,6 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
     /// Verifies that the `sha2` example runs.
-
     #[test]
     fn test_sha2_example_entry_point() {
         main().expect("the example should succeed");

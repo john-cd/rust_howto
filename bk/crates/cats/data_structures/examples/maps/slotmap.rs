@@ -12,7 +12,6 @@ use slotmap::SecondaryMap;
 use slotmap::SlotMap;
 /// Runs the example.
 /// Inserts into, accesses and removes from a `SlotMap`.
-
 fn main() {
     // Create a new `SlotMap`:
     let mut sm = SlotMap::new();
@@ -64,7 +63,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

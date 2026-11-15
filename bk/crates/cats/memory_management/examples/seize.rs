@@ -29,6 +29,11 @@ use seize::Guard as _;
 
 /// Retires a shared object and reclaims it once no thread can access it.
 fn main() {
+    example();
+}
+
+/// Demonstrates guarding and retiring a shared pointer with a collector.
+fn example() {
     // A `Collector` manages the access and retirement of concurrent objects.
     // It is typically stored alongside the data structure it protects.
     let collector = Arc::new(Collector::new());
@@ -82,7 +87,7 @@ fn main() {
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    example();
 }
 
 #[cfg(test)]

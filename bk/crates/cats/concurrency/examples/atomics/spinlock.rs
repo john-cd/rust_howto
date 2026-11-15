@@ -167,7 +167,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -187,7 +186,6 @@ mod tests {
     /// Requires a type to implement `Send` at compile time.
     fn assert_send<T: Send>() {}
     /// Requires a type to implement `Sync` at compile time.
-
     fn assert_sync<T: Sync>() {}
 
     #[test]

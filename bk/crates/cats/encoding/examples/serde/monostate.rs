@@ -20,7 +20,6 @@ use monostate::MustBe;
 use serde::Deserialize;
 /// Untagged API response distinguished by its `success` field.
 /// Represents a response that can be either a success or an error.
-
 #[derive(Deserialize)]
 #[serde(untagged)]
 pub enum ApiResponse {
@@ -39,7 +38,6 @@ pub enum ApiResponse {
 }
 /// Runs the example.
 /// Deserializes success and error responses from JSON.
-
 fn main() {
     let success = "{\"success\":true}";
     let response: ApiResponse =

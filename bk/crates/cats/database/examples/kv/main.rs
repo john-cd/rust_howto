@@ -72,14 +72,12 @@ mod tests {
         assert!(main().is_ok());
     }
     /// Verifies heed subcommand parses.
-
     #[cfg(feature = "lmdb")]
     #[test]
     fn test_heed_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "heed"]).is_ok());
     }
     /// Verifies rocksdb subcommand parses.
-
     #[cfg(feature = "rocksdb")]
     #[test]
     fn test_rocksdb_subcommand_parses() {

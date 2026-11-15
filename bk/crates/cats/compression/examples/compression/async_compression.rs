@@ -18,7 +18,7 @@ use tokio::fs::File;
 use tokio::io::AsyncWriteExt as _;
 use tokio::io::BufReader;
 /// Creates a file, compresses it to gzip, decompresses it and prints the
-
+///
 /// progress.
 ///
 /// # Errors
@@ -121,8 +121,11 @@ mod tests {
         Ok(())
     }
 
+    /// Compresses a temporary text file and verifies the decompressed content.
+    ///
     /// # Errors
-    /// An error is returned if compress_then_decompress_roundtrips_the_file fails.
+    /// Returns an error if temporary file I/O or compression fails.
+    #[tokio::test]
     async fn compress_then_decompress_roundtrips_the_file() -> anyhow::Result<()> {
         let dir = tempdir()?;
         let input = dir.path().join("in.txt");
@@ -151,8 +154,11 @@ mod tests {
         Ok(())
     }
 
+    /// Confirms malformed gzip input is reported as an error.
+    ///
     /// # Errors
-    /// An error is returned if decompressing_non_gzip_data_fails fails.
+    /// Returns an error if temporary file I/O fails.
+    #[tokio::test]
     async fn decompressing_non_gzip_data_fails() -> anyhow::Result<()> {
         let dir = tempdir()?;
         let bad = dir.path().join("bad.gz");

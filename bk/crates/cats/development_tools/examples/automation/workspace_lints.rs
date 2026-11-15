@@ -82,7 +82,6 @@ mod tests {
     }
     /// Checks that a candidate fix preserves comments and enables workspace
     /// lints.
-
     #[test]
     fn detects_and_fixes_a_missing_table() -> anyhow::Result<()> {
         let before = "[package]\nname = \"demo\" # keep this comment\n";

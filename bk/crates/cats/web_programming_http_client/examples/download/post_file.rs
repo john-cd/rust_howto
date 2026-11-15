@@ -47,7 +47,7 @@ async fn main() -> Result<()> {
 
 // ANCHOR_END: example
 /// Runs the file upload example.
-
+///
 /// # Errors
 /// Returns any error from the example's asynchronous entry point.
 pub fn run() -> Result<()> {
@@ -72,7 +72,6 @@ mod tests {
 
     use super::post_file;
     /// Starts server.
-
     fn start_server(
         response: &'static [u8],
     ) -> Result<(SocketAddr, JoinHandle<io::Result<Vec<u8>>>)> {

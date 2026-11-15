@@ -37,7 +37,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -46,13 +45,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `cow as function param` example runs.
-
     #[test]
     fn test_cow_as_function_param_example_entry_point() {
         main();
     }
     /// Verifies process text accepts every kind of input.
-
     #[test]
     fn test_process_text_accepts_every_kind_of_input() {
         // Each of these compiles because `&str` and `String` convert to `Cow`.
@@ -62,7 +59,6 @@ mod tests {
         process_text(String::from("owned").into());
     }
     /// Verifies conversions pick the right variant.
-
     #[test]
     fn test_conversions_pick_the_right_variant() {
         assert!(matches!(Cow::from("a"), Cow::Borrowed("a")));

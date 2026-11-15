@@ -52,7 +52,6 @@ mod tests {
         main()
     }
     /// Only PNG files at any depth match; an invalid pattern is an error.
-
     #[test]
     fn finds_png_files_recursively() -> Result<()> {
         let dir = tempfile::tempdir()?;

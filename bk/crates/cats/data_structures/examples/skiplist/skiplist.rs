@@ -11,7 +11,6 @@
 use skiplist::SkipMap;
 /// Runs the example.
 /// Inserts into a `SkipMap` and iterates in key order.
-
 fn main() {
     let mut map: SkipMap<i32, &str, 16> = SkipMap::new();
 
@@ -28,7 +27,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

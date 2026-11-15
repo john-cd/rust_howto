@@ -18,7 +18,6 @@ use std::collections::HashMap;
 use tinytemplate::TinyTemplate;
 /// Runs the example.
 /// Renders a template with values from a context and prints the result.
-
 fn main() {
     // Create a new template engine:
     let mut tt = TinyTemplate::new();
@@ -53,10 +52,7 @@ fn main() {
 }
 
 // ANCHOR_END: example
-/// Runs the example entry point.
-
-/// Runs the example.
-
+/// Runs the TinyTemplate example.
 pub fn run() {
     main();
 }

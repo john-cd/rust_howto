@@ -23,7 +23,7 @@ struct Args {
     fail: bool,
 }
 /// Parses CLI arguments and prints a greeting.
-
+///
 /// # Errors
 /// Returns an error when parsing fails or when the greeting action fails.
 fn main() -> anyhow::Result<()> {
@@ -37,7 +37,6 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 ///
 /// Returns an error if greeting creation fails.
-
 fn run_with_args<I, S>(args: I) -> anyhow::Result<()>
 where
     I: IntoIterator<Item = S>,

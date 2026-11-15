@@ -88,11 +88,23 @@ async fn fetch_with_retry_after(url: &str) -> Result<String> {
 
 /// # Errors
 /// An error is returned if a fallible operation fails.
-#[tokio::main]
-async fn main() -> Result<()> {
+async fn example_async() -> Result<()> {
     let body = fetch_with_retry_after("https://example.com").await?;
     println!("Received {} bytes", body.len());
     Ok(())
+}
+
+/// Runs the asynchronous HTTP example on a current-thread Tokio runtime.
+fn example() -> Result<()> {
+    tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()?
+        .block_on(example_async())
+}
+
+/// Starts the example as a standalone program.
+fn main() -> Result<()> {
+    example()
 }
 // ANCHOR_END: example
 
@@ -101,7 +113,7 @@ async fn main() -> Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<()> {
-    main()
+    example()
 }
 
 /// Panics if an internal invariant is violated.

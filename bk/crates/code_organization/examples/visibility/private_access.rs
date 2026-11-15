@@ -49,7 +49,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -63,7 +62,6 @@ mod tests {
         main();
     }
     /// Verifies private item reachable from same module.
-
     #[test]
     fn test_private_item_reachable_from_same_module() {
         assert_eq!(private_in_parent(), "private_in_parent");

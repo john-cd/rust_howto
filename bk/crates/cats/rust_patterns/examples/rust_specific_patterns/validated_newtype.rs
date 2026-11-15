@@ -102,7 +102,6 @@ impl fmt::Display for EmailAddress {
     }
 }
 /// Parses valid and invalid addresses, directly and through JSON.
-
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let email: EmailAddress = "ferris@example.com".parse()?;
     println!("Valid: {email}");

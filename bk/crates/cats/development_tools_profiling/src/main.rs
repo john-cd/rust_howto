@@ -10,7 +10,6 @@ mod memory_usage_analysis {
     pub mod measure_time;
 }
 /// Runs both the heap profiling and execution-time demonstrations.
-
 fn main() {
     memory_usage_analysis::dhat::run();
     memory_usage_analysis::measure_time::run();

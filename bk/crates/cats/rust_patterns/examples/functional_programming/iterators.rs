@@ -18,7 +18,6 @@ fn summarize_excess(readings: &[i32], baseline: i32) -> (usize, i32) {
         .fold((0, 0), |(count, total), excess| (count + 1, total + excess))
 }
 /// Prints the sum of readings above a baseline.
-
 fn main() {
     let readings = [8, 12, 16, 20];
     let (count, total) = summarize_excess(&readings, 12);
@@ -27,7 +26,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

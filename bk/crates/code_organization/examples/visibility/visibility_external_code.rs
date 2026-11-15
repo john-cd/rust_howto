@@ -31,7 +31,6 @@ mod crate_helper_module {
 }
 /// Runs the example.
 /// Calls the function of the private module.
-
 fn main() {
     println!("{}", public_to_external_crates());
     println!("{}", public_api::also_public_to_external_crates());
@@ -41,7 +40,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -55,7 +53,6 @@ mod tests {
         main();
     }
     /// Verifies public API.
-
     #[test]
     fn test_public_api() {
         assert_eq!(public_to_external_crates(), "public_to_external_crates");
@@ -65,7 +62,6 @@ mod tests {
         );
     }
     /// Verifies crate helper.
-
     #[test]
     fn test_crate_helper() {
         assert_eq!(crate_helper_module::crate_helper(), "crate_helper");

@@ -22,6 +22,14 @@ const WAKE_TOKEN: Token = Token(0);
 /// # Errors
 /// Returns an error if polling or waking the instance fails.
 fn main() -> std::io::Result<()> {
+    example()
+}
+
+/// Creates a poller, wakes it, and reports the resulting event.
+///
+/// # Errors
+/// Returns an error if polling or waking the instance fails.
+fn example() -> std::io::Result<()> {
     // Create a new polling instance and event storage.
     let mut poll = Poll::new()?;
     let mut events = Events::with_capacity(8);
@@ -52,7 +60,7 @@ fn main() -> std::io::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> std::io::Result<()> {
-    main()
+    example()
 }
 
 #[cfg(test)]

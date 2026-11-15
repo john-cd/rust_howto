@@ -22,7 +22,6 @@ impl From<Meters> for Millimeters {
 }
 /// Runs the example.
 /// Converts meters to millimeters with `from` and `into`.
-
 fn main() {
     let m = Meters(2);
     let mm: Millimeters = m.into();
@@ -38,7 +37,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -47,13 +45,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `from` example runs.
-
     #[test]
     fn test_from_example_entry_point() {
         main();
     }
     /// Verifies from and into are equivalent.
-
     #[test]
     fn test_from_and_into_are_equivalent() {
         let via_into: Millimeters = Meters(2).into();
@@ -62,13 +58,11 @@ mod tests {
         assert_eq!(via_from.0, via_into.0);
     }
     /// Verifies zero meters.
-
     #[test]
     fn test_zero_meters() {
         assert_eq!(Millimeters::from(Meters(0)).0, 0);
     }
     /// Verifies debug output.
-
     #[test]
     fn test_debug_output() {
         assert_eq!(

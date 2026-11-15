@@ -28,7 +28,6 @@ fn build_cli() -> Command {
 /// # Errors
 /// Returns an error if the directory cannot be created or the script cannot be
 /// written.
-
 fn main() -> std::io::Result<()> {
     // Build the CLI application definition.
     let mut cmd = build_cli();

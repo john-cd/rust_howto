@@ -95,9 +95,9 @@ type Client = CoreClient<
     EndpointMaybeSet,
 >;
 /// Builds the client from provider metadata that the application configured
-
+///
 /// itself: no discovery request is made.
-
+///
 /// # Errors
 /// Returns an error if the build client operation cannot satisfy its required invariants.
 fn build_client(issuer: &str) -> anyhow::Result<Client> {
@@ -204,7 +204,6 @@ fn sign(claims: &serde_json::Value, secret: &str) -> anyhow::Result<String> {
     )?)
 }
 /// A token endpoint that checks the PKCE verifier and returns `id_token`.
-
 fn token_endpoint(
     id_token: String,
     expected_verifier: String,
@@ -333,7 +332,6 @@ mod tests {
         )
     }
     /// The authorization URL carries state, nonce and an S256 challenge.
-
     #[test]
     fn main_completes_a_simulated_login() {
         assert!(main().is_ok());

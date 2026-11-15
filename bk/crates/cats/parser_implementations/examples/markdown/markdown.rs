@@ -16,7 +16,6 @@
 use markdown::to_html;
 /// Runs the example.
 /// Converts a Markdown string to HTML and prints it.
-
 fn main() {
     let markdown_text = "
 # Hello, Markdown!
@@ -36,7 +35,6 @@ This is a simple paragraph with **bold** and *italic* text.
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

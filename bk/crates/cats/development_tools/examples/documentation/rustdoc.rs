@@ -21,7 +21,6 @@ fn documented_function() {
 #[cfg_attr(doc, doc = include_str!("../../../../README.md"))]
 fn function_including_external_file_as_documentation() {}
 /// Calls the documented functions.
-
 fn main() {
     documented_function();
     function_including_external_file_as_documentation();
@@ -30,7 +29,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

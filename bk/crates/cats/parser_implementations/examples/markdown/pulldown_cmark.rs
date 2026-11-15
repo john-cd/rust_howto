@@ -57,9 +57,8 @@ fn example() {
 
 // ANCHOR_END: example
 /// Runs the example entry point.
-
+///
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -74,10 +73,9 @@ mod tests {
         main();
     }
     /// Renders the current value.
-
+    ///
     /// # Arguments
     /// * `input` - Input data whose fields determine the requested pulldown cmark operation.
-
     fn render(input: &str) -> String {
         let mut html_output = String::new();
         html::push_html(&mut html_output, Parser::new_ext(input, Options::all()));

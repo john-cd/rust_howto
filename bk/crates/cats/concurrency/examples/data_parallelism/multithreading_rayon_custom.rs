@@ -62,6 +62,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if custom_pool_has_the_requested_number_of_threads fails.
+    #[test]
     fn custom_pool_has_the_requested_number_of_threads() -> Result<(), Box<dyn std::error::Error>> {
         let pool = rayon::ThreadPoolBuilder::new().num_threads(3).build()?;
         assert_eq!(pool.current_num_threads(), 3);

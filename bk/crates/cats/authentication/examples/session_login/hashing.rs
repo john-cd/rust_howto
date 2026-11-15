@@ -23,11 +23,13 @@ use argon2::password_hash::PasswordHasher;
 use argon2::password_hash::PasswordVerifier;
 use argon2::password_hash::phc::PasswordHash;
 
-/// Hashes `password` with a random salt. The result is a self-describing PHC
+/// Hashes `password` with a random salt into a self-describing PHC string.
 ///
 /// # Arguments
 /// * `password` - Password to verify.
-/// string (algorithm, parameters, salt and hash) that is safe to store.
+///
+/// # Returns
+/// The encoded algorithm, parameters, salt and hash, safe to store.
 pub fn hash(password: &str) -> anyhow::Result<String> {
     let hash = Argon2::default()
         .hash_password(password.as_bytes())
@@ -35,9 +37,9 @@ pub fn hash(password: &str) -> anyhow::Result<String> {
     Ok(hash.to_string())
 }
 /// Verifies `password` against a stored PHC string. The comparison is done by
-
+///
 /// the library in constant time.
-
+///
 /// # Returns
 /// `true` when the condition described above holds, and `false` otherwise.
 pub fn verify(password: &str, stored: &str) -> bool {
@@ -54,13 +56,11 @@ pub fn verify(password: &str, stored: &str) -> bool {
 ///
 /// # Arguments
 /// * `password` - Credential checked against the account record before a session is issued.
-
 pub fn hash_with_password_auth(password: &str) -> String {
     password_auth::generate_hash(password)
 }
 // ANCHOR_END: example
 /// Hashes and verifies a sample password.
-
 fn main() -> anyhow::Result<()> {
     let password = "correct horse battery staple";
     let stored_hash = hash(password)?;
@@ -88,6 +88,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if hash_and_verify fails.
+    #[test]
     fn hash_and_verify() -> anyhow::Result<()> {
         let stored = hash("correct horse")?;
         assert!(stored.starts_with("$argon2id$"));
@@ -103,7 +104,6 @@ mod tests {
         assert!(password_auth::verify_password("pw", &stored).is_ok());
     }
     /// Verifies that the `hashing` example runs.
-
     #[test]
     fn test_hashing_example_entry_point() -> anyhow::Result<()> {
         main()

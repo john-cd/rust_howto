@@ -6,7 +6,6 @@
 mod criterion;
 /// Runs the example.
 /// Runs the benchmarking example.
-
 fn main() {
     criterion::run();
 }

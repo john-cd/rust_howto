@@ -25,7 +25,6 @@ fn remove_whitespaces(s: &str) -> Cow<'_, str> {
 }
 /// Runs the example.
 /// Removes the spaces of strings, allocating only when needed.
-
 fn main() {
     let original_string = "Hello world!  ";
     let modified_string = remove_whitespaces(original_string);
@@ -47,7 +46,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -56,13 +54,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `function returning cow` example runs.
-
     #[test]
     fn test_function_returning_cow_example_entry_point() {
         main();
     }
     /// Verifies spaces are removed with an allocation.
-
     #[test]
     fn test_spaces_are_removed_with_an_allocation() {
         let result = remove_whitespaces("Hello world!  ");
@@ -70,7 +66,6 @@ mod tests {
         assert_eq!(result, "Helloworld!");
     }
     /// Verifies no spaces means no allocation.
-
     #[test]
     fn test_no_spaces_means_no_allocation() {
         let input = "HelloWorld!";
@@ -80,7 +75,6 @@ mod tests {
         assert!(std::ptr::eq(result.as_ref(), input));
     }
     /// Verifies edge cases.
-
     #[test]
     fn test_edge_cases() {
         assert_eq!(remove_whitespaces(""), "");

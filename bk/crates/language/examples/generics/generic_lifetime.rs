@@ -25,7 +25,6 @@ impl<'a, T> DataHolder<'a, T> {
 }
 /// Runs the example.
 /// Creates a holder around a reference and reads it back.
-
 fn main() {
     // `T` is `u8`.
     let data = DataHolder { data: &10u8 };

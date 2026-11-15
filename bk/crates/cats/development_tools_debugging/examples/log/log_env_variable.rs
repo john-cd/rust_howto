@@ -8,7 +8,6 @@
 //! `RUST_LOG=my_crate=debug`.
 
 /// Initializes the logger and emits a message at each level.
-
 fn main() {
     // Initialize the logger.
     init_logger();
@@ -59,7 +58,6 @@ fn init_logger() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

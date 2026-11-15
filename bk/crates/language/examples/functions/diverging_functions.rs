@@ -45,7 +45,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -61,7 +60,6 @@ mod tests {
         main();
     }
     /// Verifies foo panics.
-
     #[test]
     /// `foo` never returns: it panics with its message.
     #[should_panic(expected = "This call never returns.")]

@@ -18,7 +18,6 @@ use comrak::parse_document;
 /// Converts markdown to HTML.
 /// Converts between the comrak representation and html while preserving the invariants required by
 /// callers.
-
 fn to_html() {
     let markdown_input = "# Hello world\n\nThis is **bold** text and *italic* text.";
     let html_output = markdown_to_html(markdown_input, &Options::default());
@@ -32,7 +31,7 @@ fn to_html() {
 /// # Arguments
 /// * `document` - The markdown document to modify.
 /// * `orig_string` - The string to replace.
-
+///
 /// # Panics
 /// Panics if failed to format HTML.
 fn replace_text(document: &str, orig_string: &str, replacement: &str) -> String {
@@ -58,7 +57,6 @@ fn replace_text(document: &str, orig_string: &str, replacement: &str) -> String 
 }
 /// Runs the example.
 /// Converts Markdown to HTML and replaces text in a Markdown document.
-
 fn main() {
     to_html();
 
@@ -73,7 +71,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

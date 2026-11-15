@@ -6,7 +6,6 @@
 mod tinytemplate;
 /// Runs the example.
 /// Runs the tinytemplate example.
-
 fn main() {
     tinytemplate::run();
 }

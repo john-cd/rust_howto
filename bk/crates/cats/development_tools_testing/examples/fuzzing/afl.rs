@@ -46,7 +46,7 @@ fn main() {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
+///
 /// Runs the afl example.
 /// `afl` (American Fuzzy Loop) is a popular fuzz testing tool, and `afl.rs` is a Rust crate that
 /// provides support for integrating AFL with Rust programs. Below is an example of how we can use

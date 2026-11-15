@@ -12,9 +12,9 @@ use std::path::PathBuf;
 
 use pathdiff::diff_paths;
 /// Returns the path that leads from `base` to `path`, or `None` if no
-
+///
 /// relative path exists (when `path` is relative and `base` is absolute).
-
+///
 /// # Arguments
 /// * `path` - Filesystem location the operation reads, updates, or uses as its scope.
 ///
@@ -27,7 +27,6 @@ fn relative_to(path: &Path, base: &Path) -> Option<PathBuf> {
     diff_paths(path, base)
 }
 /// Prints a few relative paths.
-
 pub fn example_body() {
     let site = PathBuf::from(if cfg!(windows) {
         r"C:\srv\site"

@@ -39,7 +39,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the CSS tokenization example.
-
+///
 /// # Errors
 /// Returns an error if the declaration list contains an invalid token.
 pub fn run() -> anyhow::Result<()> {
@@ -58,7 +58,6 @@ mod tests {
         main()
     }
     /// Collects the tokens of a CSS snippet as strings.
-
     fn tokens(css: &str) -> Vec<String> {
         let mut parser = Parser::new(css);
         let mut out = Vec::new();

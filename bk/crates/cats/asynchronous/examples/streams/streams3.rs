@@ -132,7 +132,6 @@ mod tests {
         Ok(())
     }
     /// Filters map drops the errors.
-
     #[tokio::test]
     async fn filter_map_drops_the_errors() {
         let items = stream::iter(vec![Ok("a"), Err("e".to_owned()), Ok("b")]);

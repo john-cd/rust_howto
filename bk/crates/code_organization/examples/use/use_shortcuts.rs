@@ -39,7 +39,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -53,7 +52,6 @@ mod tests {
         main();
     }
     /// Verifies glob import of default.
-
     #[test]
     fn test_glob_import_of_default() {
         let v: Vec<u8> = Default::default();
@@ -61,7 +59,6 @@ mod tests {
         destruct(v);
     }
     /// Verifies self import and group.
-
     #[test]
     fn test_self_import_and_group() {
         assert_eq!(iter::empty::<u8>().count(), 0);

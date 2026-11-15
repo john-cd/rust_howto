@@ -9,7 +9,6 @@
 
 use serde::Deserialize;
 /// Represents a record from the CSV data.
-
 #[derive(Debug, Deserialize, PartialEq)]
 struct Record {
     /// The year the car was built.
@@ -29,7 +28,6 @@ fn read_records(data: &str) -> Result<Vec<Record>, csv::Error> {
         .collect()
 }
 /// Deserializes CSV records into a struct and prints them.
-
 fn main() -> Result<(), csv::Error> {
     let data = "year,make,model,description
 1948,Porsche,356,Luxury sports car

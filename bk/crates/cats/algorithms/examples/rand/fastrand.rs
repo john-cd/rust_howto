@@ -52,7 +52,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -61,7 +60,6 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `fastrand` example runs.
-
     #[test]
     fn test_fastrand_example_entry_point() {
         main();

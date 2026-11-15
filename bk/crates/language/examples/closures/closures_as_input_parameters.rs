@@ -38,7 +38,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -53,7 +52,7 @@ mod tests {
         main();
     }
     /// Verifies apply calls closure.
-
+    ///
     /// `apply` calls a `FnOnce` closure exactly once.
     #[test]
     fn test_apply_calls_closure() {
@@ -62,7 +61,7 @@ mod tests {
         assert_eq!(called, 1);
     }
     /// Verifies apply to 3.
-
+    ///
     /// `apply_to_3` passes 3 to the closure and returns its result.
     #[test]
     fn test_apply_to_3() {

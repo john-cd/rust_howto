@@ -10,7 +10,6 @@
 
 use unicode_segmentation::UnicodeSegmentation;
 /// Runs the example.
-
 fn main() -> anyhow::Result<()> {
     let text = "Café déjà-vu: naïve 日本語 can't stop, won't stop.";
 

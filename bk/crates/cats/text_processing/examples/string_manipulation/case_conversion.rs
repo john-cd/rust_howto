@@ -26,7 +26,6 @@ fn main() -> anyhow::Result<()> {
 ///
 /// # Arguments
 /// * `input` - Input data whose fields determine the requested case conversion operation.
-
 fn capitalize_first_char(input: &str) -> String {
     let mut chars = input.chars();
     match chars.next() {

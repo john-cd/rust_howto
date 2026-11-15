@@ -6,7 +6,6 @@
 mod quantities_and_conversions;
 /// Runs the example.
 /// Runs the quantity conversion example.
-
 fn main() {
     quantities_and_conversions::run();
 }

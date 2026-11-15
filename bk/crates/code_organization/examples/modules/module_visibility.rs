@@ -95,7 +95,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -110,7 +109,6 @@ mod tests {
         main();
     }
     /// Verifies private items are usable in scope.
-
     #[test]
     fn test_private_items_are_usable_in_scope() {
         assert_eq!(private_in_top_module(), "Called private_in_top_module.");
@@ -121,7 +119,6 @@ mod tests {
         );
     }
     /// Verifies public items through path and alias.
-
     #[test]
     fn test_public_items_through_path_and_alias() {
         use my_module as alias;

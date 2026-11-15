@@ -10,7 +10,7 @@
 use csv::Error;
 use serde::Deserialize;
 /// Represents a record with a name, place, and an optional ID.
-
+///
 /// The `id` field uses a custom deserialization function `csv::invalid_option`
 /// to handle cases where the ID might not be a valid u64.
 #[derive(Debug, Deserialize, PartialEq)]
@@ -31,7 +31,6 @@ fn read_records(data: &str) -> Result<Vec<Record>, Error> {
         .collect()
 }
 /// Reads and prints CSV records with optional identifiers.
-
 fn main() -> Result<(), Error> {
     let data = "name,place,id
 mark,sydney,46.5

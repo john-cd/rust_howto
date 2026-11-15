@@ -6,7 +6,6 @@
 use std::iter;
 /// Runs the example.
 /// Creates and consumes each of the simple iterators.
-
 fn main() {
     // Creates an iterator that yields nothing.
     let mut empty_iter = iter::empty::<i32>();
@@ -81,7 +80,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

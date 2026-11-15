@@ -9,7 +9,7 @@
 //! version by n.
 
 /// Calculates the mean (average) of a slice of i32 integers.
-
+///
 /// # Arguments
 ///
 /// * `data` - A slice of i32 integers.
@@ -27,7 +27,7 @@ fn mean(data: &[i32]) -> Option<f64> {
     }
 }
 /// Calculates the standard deviation of a slice of i32 integers.
-
+///
 /// # Arguments
 ///
 /// * `data` - A slice of i32 integers.
@@ -84,7 +84,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

@@ -10,19 +10,18 @@
 
 use anyhow::Result;
 /// Converts a signed integer to `i32`, returning an error when it is out of
-
+///
 /// range.
-
+///
 /// # Arguments
 /// * `value` - Value the primitive operation validates, transforms, or stores.
-
+///
 /// # Errors
 /// Returns an error if the narrow to i32 operation cannot satisfy its required invariants.
 fn narrow_to_i32(value: i64) -> Result<i32, std::num::TryFromIntError> {
     i32::try_from(value)
 }
 /// Runs examples of primitive conversions.
-
 fn main() -> Result<()> {
     let count = narrow_to_i32(42_i64)?;
     let port = "443".parse::<u16>()?;

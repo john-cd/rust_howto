@@ -31,7 +31,6 @@ impl Vault {
     }
 
     /// Loads the secret, or `None` if nothing is stored.
-
     fn load(&self) -> Result<Option<Vec<u8>>, Error> {
         match self.entry.get_secret() {
             Ok(bytes) => Ok(Some(bytes)),

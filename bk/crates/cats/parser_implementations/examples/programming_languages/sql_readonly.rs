@@ -85,7 +85,6 @@ mod tests {
         main()
     }
     /// Shows that query classification alone cannot prove read-only behavior.
-
     #[test]
     fn accepts_query_syntax_with_a_side_effecting_function() {
         assert_eq!(

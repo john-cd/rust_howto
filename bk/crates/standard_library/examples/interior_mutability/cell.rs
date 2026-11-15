@@ -48,7 +48,6 @@ impl<T: Default> MyStruct<T> {
 }
 /// Runs the example.
 /// Reads and modifies a `Cell` through a shared reference.
-
 fn main() {
     let my_int_struct = MyStruct::new(42);
     let my_int_ref = &my_int_struct;
@@ -83,7 +82,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -92,13 +90,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `cell` example runs.
-
     #[test]
     fn test_cell_example_entry_point() {
         main();
     }
     /// Verifies set through a shared reference.
-
     #[test]
     fn test_set_through_a_shared_reference() {
         let s = MyStruct::new(42);
@@ -108,7 +104,6 @@ mod tests {
         assert_eq!(s.get_value(), 100);
     }
     /// Verifies take leaves the default value.
-
     #[test]
     fn test_take_leaves_the_default_value() {
         let s = MyStruct::new("example".to_owned());
@@ -116,7 +111,6 @@ mod tests {
         assert_eq!(s.take_value(), "");
     }
     /// Verifies replace and into inner.
-
     #[test]
     fn test_replace_and_into_inner() {
         let s = MyStruct::new(String::from("a"));

@@ -13,9 +13,9 @@ use anyhow::Result;
 use lazy_static::lazy_static;
 use regex::Regex;
 /// Returns the unique internal and external links found in the wiki markup
-
+///
 /// `content`.
-
+///
 /// # Panics
 /// Panics if the fixed MediaWiki link regex is valid.
 fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {

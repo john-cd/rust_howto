@@ -4,7 +4,6 @@
 //! Immutable Reference Example.
 
 /// Creates and dereferences a shared reference.
-
 fn main() {
     let a = 42;
 
@@ -34,7 +33,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

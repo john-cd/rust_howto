@@ -28,7 +28,6 @@ impl Actor for PingPongActor {
     type Msg = PingPongActorMsg;
 
     /// Receives the current value.
-
     fn recv(&mut self, ctx: &Context<Self::Msg>, msg: Self::Msg, sender: Sender) {
         self.receive(ctx, msg, sender);
     }
@@ -38,7 +37,6 @@ impl Receive<Ping> for PingPongActor {
     type Msg = PingPongActorMsg;
 
     /// Receives the current value.
-
     fn receive(&mut self, _ctx: &Context<Self::Msg>, _msg: Ping, _sender: Sender) {
         println!("Received Ping message");
     }
@@ -48,13 +46,12 @@ impl Receive<Pong> for PingPongActor {
     type Msg = PingPongActorMsg;
 
     /// Receives the current value.
-
     fn receive(&mut self, _ctx: &Context<Self::Msg>, _msg: Pong, _sender: Sender) {
         println!("Received Pong message");
     }
 }
 /// Starts an actor system, creates an actor and sends it a message.
-
+///
 /// # Errors
 /// Returns an error if the actor system or actor cannot be created.
 fn main() -> Result<()> {
@@ -80,7 +77,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the Riker actor example.
-
+///
 /// # Errors
 /// Returns an error if the actor system or actor cannot be created.
 pub fn run() -> Result<()> {

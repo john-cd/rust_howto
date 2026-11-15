@@ -65,7 +65,6 @@ impl RowStruct {
 /// # Errors
 ///
 /// Returns an error if the query fails or a result row cannot be decoded.
-
 async fn select_user(session: &CurrentSession, id: Uuid) -> anyhow::Result<Option<RowStruct>> {
     let response = session
         .query_with_values(
@@ -85,7 +84,7 @@ async fn select_user(session: &CurrentSession, id: Uuid) -> anyhow::Result<Optio
         .map_err(Into::into)
 }
 /// Creates the table, then inserts, reads, updates, and deletes a user row.
-
+///
 /// # Errors
 /// Returns an error if Cassandra cannot be reached or any schema or data query
 /// fails.
@@ -180,7 +179,7 @@ KEY, name TEXT, age INT);",
 
 // ANCHOR_END: example
 /// Runs the cdrs-tokio CRUD example.
-
+///
 /// # Errors
 /// Returns an error if connecting to Cassandra or any CRUD operation fails.
 pub async fn run() -> anyhow::Result<()> {

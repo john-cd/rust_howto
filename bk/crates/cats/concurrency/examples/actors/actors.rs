@@ -63,7 +63,7 @@ fn spawn_counter() -> (CounterHandle, tokio::task::JoinHandle<()>) {
     (CounterHandle { sender }, task)
 }
 /// Runs the counter actor and prints the result of two commands.
-
+///
 /// # Errors
 /// Returns an error if the actor task stops before replying or joining.
 async fn run_actor() -> anyhow::Result<()> {
@@ -77,7 +77,7 @@ async fn run_actor() -> anyhow::Result<()> {
     Ok(())
 }
 /// Runs the asynchronous actor example on a Tokio runtime.
-
+///
 /// # Errors
 /// Returns an error if the runtime cannot be created or the actor task fails.
 fn main() -> anyhow::Result<()> {
@@ -87,7 +87,6 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 /// # Errors
 /// Returns an error if the runtime cannot be created or the actor task fails.
-
 pub fn run() -> anyhow::Result<()> {
     main()
 }

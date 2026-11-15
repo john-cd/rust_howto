@@ -24,7 +24,6 @@ fn example() -> anyhow::Result<String> {
     Ok(cleaned.to_owned())
 }
 /// This example demonstrates how to parse a URL and extract a portion of it.
-
 fn main() -> anyhow::Result<()> {
     example().map(|_| ())
 }
@@ -35,7 +34,7 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    example().map(|_| ())
 }
 
 /// This example demonstrates how to parse a URL and extract a portion of it.
@@ -43,7 +42,6 @@ pub fn run() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if an operation in the example fails.
 /// Returns an error if a step of the example fails.
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -53,14 +51,12 @@ mod tests {
         main().expect("main failed");
     }
     /// Verifies example strips the query.
-
     #[test]
     fn test_example_strips_the_query() -> Result<(), Box<dyn std::error::Error>> {
         assert_eq!(example()?, "https://httpbin.org/cookies/set");
         Ok(())
     }
     /// Verifies invalid URL is an error.
-
     #[test]
     fn test_invalid_url_is_an_error() {
         assert!(Url::parse("not a url").is_err());

@@ -61,7 +61,6 @@ fn vec_example() {
 }
 /// Runs the example.
 /// Runs both examples.
-
 fn main() {
     string_slice();
     vec_example();
@@ -70,7 +69,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -79,13 +77,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `asref` example runs.
-
     #[test]
     fn test_asref_example_entry_point() {
         main();
     }
     /// Verifies print length accepts string and str.
-
     #[test]
     fn test_print_length_accepts_string_and_str() {
         assert_eq!(print_length(String::from("Hello, world!")), 13);
@@ -93,7 +89,6 @@ mod tests {
         assert_eq!(print_length(""), 0);
     }
     /// Verifies print vec accepts vec array and slice.
-
     #[test]
     fn test_print_vec_accepts_vec_array_and_slice() {
         let vec = vec![1, 2, 3];

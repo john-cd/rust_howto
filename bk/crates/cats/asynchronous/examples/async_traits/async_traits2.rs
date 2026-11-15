@@ -31,7 +31,6 @@ impl Container for MyContainer {
     }
 }
 /// Iterates over the items of a [`MyContainer`].
-
 fn main() {
     let c = MyContainer {
         items: vec![1, 2, 3],
@@ -44,7 +43,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

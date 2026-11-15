@@ -93,11 +93,11 @@ mod tests {
         Ok(())
     }
 
-    /// Retrieves the args parses the embedded argument list for the current lexopt from its current
+    /// Parses the embedded argument list and returns its name and age values.
     ///
     /// # Errors
-    /// An error is returned if get_args_parses_the_embedded_argument_list fails.
-    /// Returns an error if the requested data cannot be retrieved.
+    /// Returns an error if the example arguments are invalid.
+    #[test]
     fn get_args_parses_the_embedded_argument_list() -> Result<(), Box<dyn std::error::Error>> {
         let args = get_args()?;
         assert_eq!(args.name, "John");

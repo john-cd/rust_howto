@@ -39,8 +39,12 @@ mod bench {
 }
 /// When `harness` is set to false, we are responsible for defining a `main()`
 /// function to run tests and benchmarks.
-
 fn main() {
+    run_benchmarks();
+}
+
+/// Runs the registered benchmarks when this file is built as a benchmark.
+fn run_benchmarks() {
     // Run registered benchmarks.
     #[cfg(not(test))]
     divan::main();
@@ -50,7 +54,7 @@ fn main() {
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    run_benchmarks();
 }
 
 /// Checks that the benchmark entry point is available in test mode.

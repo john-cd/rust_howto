@@ -8,7 +8,6 @@
 mod swc_ecma_parser;
 /// Runs the example.
 /// Runs the javascript example.
-
 fn main() {
     swc_ecma_parser::run();
 }

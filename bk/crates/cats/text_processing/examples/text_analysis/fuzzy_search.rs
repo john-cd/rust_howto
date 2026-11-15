@@ -14,7 +14,6 @@ use nucleo::pattern::CaseMatching;
 use nucleo::pattern::Normalization;
 use nucleo::pattern::Pattern;
 /// Runs the example.
-
 fn main() -> anyhow::Result<()> {
     let commands = ["save file", "open file", "close window", "open folder"];
 

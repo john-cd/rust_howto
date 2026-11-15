@@ -105,7 +105,7 @@ async fn run_with_config(
 
 // ANCHOR_END: example
 /// Runs the Meilisearch example.
-
+///
 /// # Errors
 /// Returns an error if the Meilisearch server is unreachable or rejects a
 /// request.

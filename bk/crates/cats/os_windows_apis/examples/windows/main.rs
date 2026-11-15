@@ -37,7 +37,6 @@ enum Commands {
 }
 /// Runs the example.
 /// Runs the example selected on the command line.
-
 #[cfg(target_os = "windows")]
 fn main() {
     let cli = Cli::parse();

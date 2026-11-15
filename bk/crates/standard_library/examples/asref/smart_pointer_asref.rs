@@ -32,7 +32,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -41,13 +40,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `smart pointer asref` example runs.
-
     #[test]
     fn test_smart_pointer_asref_example_entry_point() {
         main();
     }
     /// Verifies box as ref and deref give the same content.
-
     #[test]
     fn test_box_as_ref_and_deref_give_the_same_content() {
         let my_box: Box<String> = Box::new("hello from box".to_owned());

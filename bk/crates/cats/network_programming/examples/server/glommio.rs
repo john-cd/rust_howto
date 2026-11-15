@@ -41,7 +41,6 @@ async fn handle_connection(mut stream: TcpStream) -> anyhow::Result<()> {
 }
 
 /// Formats the HTTP response returned by the example server.
-
 fn http_response() -> String {
     let body = "Hello from Glommio!\n";
     format!(

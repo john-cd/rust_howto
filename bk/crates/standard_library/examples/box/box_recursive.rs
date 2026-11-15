@@ -8,7 +8,6 @@
 //! breaks the cycle.
 
 /// Represents a single element in a (highly simplified) linked list.
-
 struct Node {
     /// The value stored in this node.
     value: i32,
@@ -61,9 +60,8 @@ fn main() {
 
 // ANCHOR_END: example
 /// Runs the example entry point.
-
+///
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -72,7 +70,6 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `box recursive` example runs.
-
     #[test]
     fn test_box_recursive_example_entry_point() {
         main();
@@ -88,7 +85,6 @@ mod tests {
         out
     }
     /// Verifies new node has no successor.
-
     #[test]
     fn test_new_node_has_no_successor() {
         let node = Node::new(1);
@@ -96,7 +92,6 @@ mod tests {
         assert!(node.next.is_none());
     }
     /// Verifies append adds nodes at the end.
-
     #[test]
     fn test_append_adds_nodes_at_the_end() {
         let mut head = Node::new(1);
@@ -106,7 +101,6 @@ mod tests {
         assert_eq!(values(&head), vec![1, 2, 3, 4]);
     }
     /// Verifies print does not panic on long lists.
-
     #[test]
     fn test_print_does_not_panic_on_long_lists() {
         let mut head = Node::new(0);

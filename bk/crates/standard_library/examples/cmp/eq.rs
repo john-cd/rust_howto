@@ -22,7 +22,6 @@ struct Point {
 }
 
 /// Compares points for equality.
-
 fn points() {
     let p1 = Point { x: 1, y: 2 };
     let p2 = Point { x: 1, y: 2 };
@@ -52,7 +51,6 @@ impl PartialEq for Person {
 // `Eq` has no methods.
 impl Eq for Person {}
 /// Compares people for equality.
-
 fn people() {
     let p1 = Person {
         id: 1,
@@ -67,7 +65,6 @@ fn people() {
 }
 /// Runs the example.
 /// Runs the examples.
-
 fn main() {
     points();
     people();
@@ -76,7 +73,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -85,13 +81,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `eq` example runs.
-
     #[test]
     fn test_eq_example_entry_point() {
         main();
     }
     /// Verifies derived equality compares all fields.
-
     #[test]
     fn test_derived_equality_compares_all_fields() {
         let p1 = Point { x: 1, y: 2 };
@@ -100,7 +94,6 @@ mod tests {
         assert_ne!(p1, Point { x: 1, y: 3 });
     }
     /// Verifies custom equality compares ids only.
-
     #[test]
     fn test_custom_equality_compares_ids_only() {
         let smith = Person {

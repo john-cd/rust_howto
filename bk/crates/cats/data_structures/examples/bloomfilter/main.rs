@@ -6,7 +6,6 @@
 mod bloomfilter;
 /// Runs the example.
 /// Runs the bloomfilter example.
-
 fn main() {
     bloomfilter::run();
 }

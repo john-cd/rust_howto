@@ -6,7 +6,6 @@
 mod cpu_count;
 /// Runs the example.
 /// Runs the processor example.
-
 fn main() {
     cpu_count::run();
 }

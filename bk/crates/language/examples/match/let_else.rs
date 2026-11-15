@@ -28,7 +28,6 @@ fn parse_number(input: &str) -> u32 {
 }
 /// Runs the example.
 /// Parses a number with `let ... else`.
-
 fn main() {
     let value = parse_number("42");
     println!("Parsed value: {value}");
@@ -37,7 +36,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

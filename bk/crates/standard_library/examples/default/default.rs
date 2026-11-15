@@ -50,7 +50,6 @@ impl Default for Config2 {
 }
 /// Runs the example.
 /// Creates configurations with default values and overrides some fields.
-
 fn main() {
     let config = Config::default();
     println!("{config:?}");
@@ -76,7 +75,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -85,13 +83,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `default` example runs.
-
     #[test]
     fn test_default_example_entry_point() {
         main();
     }
     /// Verifies derived default uses type defaults.
-
     #[test]
     fn test_derived_default_uses_type_defaults() {
         let c = Config::default();
@@ -101,7 +97,6 @@ mod tests {
         assert!(!c.logging_enabled);
     }
     /// Verifies custom default.
-
     #[test]
     fn test_custom_default() {
         let c = Config2::default();
@@ -111,7 +106,6 @@ mod tests {
         assert!(c.logging_enabled);
     }
     /// Verifies struct update syntax.
-
     #[test]
     fn test_struct_update_syntax() {
         let c = Config {

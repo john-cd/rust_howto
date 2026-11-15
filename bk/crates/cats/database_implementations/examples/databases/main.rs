@@ -83,21 +83,18 @@ mod tests {
         assert!(main().is_ok());
     }
     /// Verifies redb subcommand parses.
-
     #[cfg(feature = "redb")]
     #[test]
     fn test_redb_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "redb"]).is_ok());
     }
     /// Verifies sled subcommand parses.
-
     #[cfg(feature = "sled")]
     #[test]
     fn test_sled_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "sled"]).is_ok());
     }
     /// Verifies surrealdb subcommand parses.
-
     #[cfg(feature = "surrealdb")]
     #[test]
     fn test_surrealdb_subcommand_parses() {

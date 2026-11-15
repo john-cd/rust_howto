@@ -65,7 +65,6 @@ fn build_archive_path() -> PathBuf {
 }
 /// Runs the example.
 /// Builds paths and inspects their components.
-
 fn main() {
     // Create a `Path` from a string literal:
     let _path = Path::new("./temp/documents/report.txt");
@@ -86,7 +85,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

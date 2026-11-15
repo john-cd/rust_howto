@@ -15,8 +15,12 @@ struct File {
 }
 /// Demonstrates building and applying a composite predicate.
 /// Filters files by a name substring and a minimum size.
-
 fn main() {
+    run();
+}
+
+/// Builds the sample records and prints those matching both predicates.
+fn example() {
     // Imagine these values come from user input at runtime.
     let name_contains = "report";
     let min_size_kb = 50;
@@ -79,7 +83,7 @@ fn main() {
 
 /// Demonstrates building and applying a composite predicate.
 fn run() {
-    main();
+    example();
 }
 
 /// Verifies that the composed predicate keeps records matching both rules.

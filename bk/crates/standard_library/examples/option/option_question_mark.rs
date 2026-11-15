@@ -27,7 +27,6 @@ fn get_first_char_uppercase(input: Option<String>) -> Option<char> {
 }
 /// Runs the example.
 /// Applies the `?` operator to `Option` values.
-
 fn main() {
     // `Option` contains a `String` and it's not empty.
     let s1 = Some("hello".to_owned());
@@ -48,7 +47,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -57,13 +55,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `option question mark` example runs.
-
     #[test]
     fn test_option_question_mark_example_entry_point() {
         main();
     }
     /// Verifies first char is uppercased.
-
     #[test]
     fn test_first_char_is_uppercased() {
         assert_eq!(
@@ -77,7 +73,6 @@ mod tests {
         assert_eq!(get_first_char_uppercase(Some("1abc".to_owned())), Some('1'));
     }
     /// Verifies none and empty string give none.
-
     #[test]
     fn test_none_and_empty_string_give_none() {
         assert_eq!(get_first_char_uppercase(None), None);

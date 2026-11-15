@@ -86,7 +86,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the `petgraph` BFS example by calling `main()`.
-
 pub fn run() {
     main();
 }
@@ -95,7 +94,6 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `petgraph bfs` example runs.
-
     #[test]
     fn test_petgraph_bfs_example_entry_point() {
         main();

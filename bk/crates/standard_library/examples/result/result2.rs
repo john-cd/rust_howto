@@ -19,7 +19,6 @@ fn divide(a: i32, b: i32) -> Result<i32, &'static str> {
 }
 /// Runs the example.
 /// Transforms and chains `Result` values.
-
 #[allow(clippy::bind_instead_of_map)]
 fn main() {
     let result = divide(10, 2)
@@ -53,7 +52,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -62,13 +60,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `result2` example runs.
-
     #[test]
     fn test_result2_example_entry_point() {
         main();
     }
     /// Verifies divide.
-
     #[test]
     fn test_divide() {
         assert_eq!(divide(10, 2), Ok(5));
@@ -76,7 +72,6 @@ mod tests {
         assert_eq!(divide(10, 0), Err("Cannot divide by zero."));
     }
     /// Verifies combinators on ok.
-
     #[test]
     fn test_combinators_on_ok() {
         let result = divide(10, 2).map(|x| x * 2 + 1);
@@ -85,7 +80,6 @@ mod tests {
         assert_eq!(result.unwrap_or(-1), 11);
     }
     /// Verifies combinators short circuit on err.
-
     #[test]
     fn test_combinators_short_circuit_on_err() {
         let result = divide(10, 0).map(|x| x * 2);
@@ -93,7 +87,6 @@ mod tests {
         assert_eq!(result.unwrap_or(-1), -1);
     }
     /// Verifies expect on err panics.
-
     #[test]
     #[should_panic(expected = "Computation failed.")]
     fn test_expect_on_err_panics() {

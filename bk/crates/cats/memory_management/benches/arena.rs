@@ -38,7 +38,6 @@ struct BoxNode {
     right: Option<Box<Self>>,
 }
 /// Inserts a value into an arena-backed binary search tree.
-
 fn insert_arena<'bump>(
     bump: &'bump Bump,
     node: Option<&'bump ArenaNode<'bump>>,
@@ -157,8 +156,8 @@ criterion_main!(benches);
 // ANCHOR_END: example
 
 /// Builds one heap-backed tree node as a small allocation example.
-pub fn run() -> Box<BoxNode> {
-    insert_box(None, 1)
+pub fn run() {
+    black_box(insert_box(None, 1));
 }
 
 #[cfg(test)]

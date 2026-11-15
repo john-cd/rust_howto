@@ -24,7 +24,6 @@ struct Particle {
 }
 
 /// The Rastrigin function: many local minima, global minimum 0 at the origin.
-
 fn rastrigin(x: &[f64]) -> f64 {
     10.0 * x.len() as f64
         + x.iter()
@@ -36,7 +35,6 @@ fn rastrigin(x: &[f64]) -> f64 {
 /// Each velocity blends inertia, a pull toward the particle's own best
 /// position, and a pull toward the swarm's best position. The seed makes the
 /// run reproducible, and `iterations` caps the work.
-
 fn pso(
     f: impl Fn(&[f64]) -> f64,
     dim: usize,
@@ -111,12 +109,11 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
-
 pub fn run() {
     main();
 }
 /// Verifies that the seeded swarm gets close to the global minimum and that
-
+///
 /// the same seed gives the same answer.
 #[test]
 fn test_particle_swarm_is_reproducible_with_seed() {

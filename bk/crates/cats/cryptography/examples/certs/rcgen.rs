@@ -43,6 +43,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if certificate_and_key_are_pem_encoded fails.
+    #[test]
     fn certificate_and_key_are_pem_encoded() -> anyhow::Result<()> {
         let key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
         let cert = key.cert.pem();

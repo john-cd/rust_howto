@@ -82,21 +82,18 @@ mod tests {
         assert!(main().is_ok());
     }
     /// Verifies diesel oci subcommand parses.
-
     #[cfg(feature = "oracle")]
     #[test]
     fn test_diesel_oci_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "diesel_oci"]).is_ok());
     }
     /// Verifies oracle subcommand parses.
-
     #[cfg(feature = "oracle")]
     #[test]
     fn test_oracle_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "oracle"]).is_ok());
     }
     /// Verifies sibyl subcommand parses.
-
     #[cfg(feature = "sibyl")]
     #[test]
     fn test_sibyl_subcommand_parses() {

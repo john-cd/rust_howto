@@ -28,7 +28,6 @@ impl UserDirectory {
     }
 }
 /// Registers and looks up a user through the facade.
-
 fn main() -> anyhow::Result<()> {
     let mut directory = UserDirectory::default();
     directory.register("ada", "ada@example.test");

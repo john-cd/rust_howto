@@ -55,7 +55,6 @@ pub fn create_jwt(claims: &Claims, secret: &[u8]) -> Result<String, jsonwebtoken
 /// # Errors
 /// Returns an error if the token is malformed, expired, or signed with another
 /// key.
-
 pub fn verify_jwt(token: &str, secret: &[u8]) -> Result<Claims, jsonwebtoken::errors::Error> {
     let validation = Validation::new(Algorithm::HS256);
     decode::<Claims>(token, &DecodingKey::from_secret(secret), &validation).map(|data| data.claims)

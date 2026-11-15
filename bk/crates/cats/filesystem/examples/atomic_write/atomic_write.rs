@@ -66,7 +66,7 @@ fn replace_with_atomicwrites(target: &Path, contents: &[u8]) -> anyhow::Result<(
     Ok(())
 }
 /// Writes the same file twice with each variant.
-
+///
 /// # Errors
 /// Returns an error if fixture creation, replacement, synchronization, or
 /// reading the resulting contents fails.

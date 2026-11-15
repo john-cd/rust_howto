@@ -14,7 +14,6 @@ trait Message {
 /// A thing that greets; requires [`Message`].
 trait Greet: Message {
     /// Returns a greeting.
-
     fn greet(&self) -> String {
         self.message("Hello.")
     }
@@ -64,7 +63,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

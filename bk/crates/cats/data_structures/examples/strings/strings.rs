@@ -116,7 +116,6 @@ fn common_operations() {
 }
 /// Runs the example.
 /// Runs all the string examples.
-
 fn main() {
     string();
     string_slices();
@@ -127,7 +126,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

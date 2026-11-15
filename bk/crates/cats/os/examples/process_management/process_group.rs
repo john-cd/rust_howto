@@ -25,7 +25,6 @@ fn spawn_in_new_group(script: &str) -> std::io::Result<Child> {
         .spawn()
 }
 /// Sends `SIGKILL` to every process in the child's group, then reaps the child.
-
 fn kill_group(child: &mut Child) -> anyhow::Result<()> {
     let group = Pid::from_raw(i32::try_from(child.id())?);
     killpg(group, Signal::SIGKILL)?;

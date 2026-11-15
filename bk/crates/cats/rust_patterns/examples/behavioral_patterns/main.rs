@@ -6,7 +6,6 @@
 mod undo_redo;
 /// Runs the example.
 /// Runs the undo/redo example.
-
 fn main() {
     undo_redo::run();
 }

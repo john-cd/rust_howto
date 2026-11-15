@@ -71,14 +71,12 @@ mod tests {
         assert!(main().is_ok());
     }
     /// Verifies mongodb subcommand parses.
-
     #[cfg(feature = "mongodb")]
     #[test]
     fn test_mongodb_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "mongodb"]).is_ok());
     }
     /// Verifies redis subcommand parses.
-
     #[cfg(feature = "redis")]
     #[test]
     fn test_redis_subcommand_parses() {

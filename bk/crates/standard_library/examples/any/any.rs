@@ -46,7 +46,6 @@ fn print_if_string(value: Box<dyn Any>) {
 }
 /// Runs the example.
 /// Checks the type of values at runtime.
-
 fn main() {
     assert!(!is_string(&42));
     let s = "a string".to_owned();
@@ -70,13 +69,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `any` example runs.
-
     #[test]
     fn test_any_example_entry_point() {
         main();
     }
     /// Verifies is string.
-
     #[test]
     fn test_is_string() {
         assert!(is_string(&String::from("text")));

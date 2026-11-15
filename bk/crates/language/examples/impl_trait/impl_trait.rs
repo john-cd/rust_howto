@@ -11,7 +11,6 @@
 /// A thing that can speak.
 trait Speak {
     /// Returns what the animal says.
-
     fn speak(&self) -> String;
 }
 
@@ -78,7 +77,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

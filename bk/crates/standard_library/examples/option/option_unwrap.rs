@@ -53,7 +53,6 @@ fn unwrap_or_unwrap_or_else() {
 }
 /// Runs the example.
 /// Runs the `unwrap` examples.
-
 fn main() {
     unwrap_expect();
     unwrap_or_unwrap_or_else();
@@ -62,7 +61,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -71,20 +69,17 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `option unwrap` example runs.
-
     #[test]
     fn test_option_unwrap_example_entry_point() {
         main();
     }
     /// Verifies unwrap on some.
-
     #[test]
     fn test_unwrap_on_some() {
         assert_eq!(Some(10).unwrap(), 10);
         assert_eq!(Some("A string").expect("is Some"), "A string");
     }
     /// Verifies unwrap on none panics.
-
     #[test]
     #[should_panic(expected = "called `Option::unwrap()` on a `None` value")]
     fn test_unwrap_on_none_panics() {
@@ -92,7 +87,6 @@ mod tests {
         x.unwrap();
     }
     /// Verifies expect on none panics with message.
-
     #[test]
     #[should_panic(expected = "it was None")]
     fn test_expect_on_none_panics_with_message() {
@@ -100,7 +94,6 @@ mod tests {
         x.expect("it was None");
     }
     /// Verifies unwrap or variants.
-
     #[test]
     fn test_unwrap_or_variants() {
         assert_eq!(Some(100).unwrap_or(50), 100);

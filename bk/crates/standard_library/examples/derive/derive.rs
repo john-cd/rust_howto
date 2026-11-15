@@ -47,7 +47,6 @@ fn hash() {
 }
 /// Runs the example.
 /// Runs both examples.
-
 fn main() {
     simple_tests();
     hash();
@@ -56,7 +55,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -65,13 +63,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `derive` example runs.
-
     #[test]
     fn test_derive_example_entry_point() {
         main();
     }
     /// Verifies default debug clone copy.
-
     #[test]
     fn test_default_debug_clone_copy() {
         assert_eq!(S::default(), S(0));
@@ -81,7 +77,6 @@ mod tests {
         assert_eq!(one, also_one); // `one` is still usable: `Copy`.
     }
     /// Verifies ordering.
-
     #[test]
     fn test_ordering() {
         assert!(S(1) < S(2));
@@ -90,7 +85,6 @@ mod tests {
         assert_eq!([S(3), S(1), S(2)].iter().max(), Some(&S(3)));
     }
     /// Verifies hash as map key.
-
     #[test]
     fn test_hash_as_map_key() {
         let mut map = HashMap::new();

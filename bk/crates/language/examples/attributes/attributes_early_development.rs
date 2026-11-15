@@ -24,13 +24,11 @@ pub struct S;
 /// This function is defined but never called.
 fn dead_code() {}
 /// The return value of this function should be used.
-
 #[must_use]
 fn required() -> u32 {
     42
 }
 /// Defines variables that are not used, to show the effect of lint attributes.
-
 fn main() {
     dead_code();
     let _s = S;
@@ -47,7 +45,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

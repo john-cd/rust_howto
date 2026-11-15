@@ -61,7 +61,6 @@ fn main() -> syn::Result<()> {
             fn norm(&self) -> f64 { (self.x * self.x + self.y * self.y).sqrt() }
         }
 /// Runs the example.
-
         fn main() {
             fn helper() {}
             helper();

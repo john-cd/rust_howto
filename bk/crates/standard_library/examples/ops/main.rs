@@ -11,7 +11,6 @@
 mod ops;
 /// Runs the example.
 /// Runs the ops example.
-
 fn main() {
     ops::run();
 }

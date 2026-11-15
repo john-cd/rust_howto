@@ -35,6 +35,11 @@ use rsa::PublicKey;
 
 /// Generates a key pair, encrypts a message and decrypts it again.
 fn main() {
+    example();
+}
+
+/// Generates a sample key pair, then encrypts and decrypts a message.
+fn example() {
     // Define the message to be encrypted:
     let message = b"Secret message";
     println!(
@@ -73,7 +78,7 @@ fn main() {
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    example();
 }
 
 #[cfg(test)]

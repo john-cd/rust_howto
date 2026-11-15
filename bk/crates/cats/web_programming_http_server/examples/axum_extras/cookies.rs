@@ -31,14 +31,12 @@ async fn set_language(cookies: Cookies) -> &'static str {
 ///
 /// # Arguments
 /// * `cookies` - Cookie state updated with the authenticated session after successful verification.
-
 async fn get_language(cookies: Cookies) -> String {
     cookies
         .get(COOKIE_NAME)
         .map_or_else(|| "en".to_owned(), |c| c.value().to_owned())
 }
 /// Builds the router.
-
 pub fn app() -> Router {
     Router::new()
         .route("/set", get(set_language))

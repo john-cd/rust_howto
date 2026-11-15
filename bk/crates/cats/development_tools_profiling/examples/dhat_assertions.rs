@@ -19,12 +19,10 @@ fn with_capacity(parts: &[&str]) -> String {
     s
 }
 /// Runs the example.
-
 fn main() {
     example_body();
 }
 /// Runs the example entry point.
-
 pub fn example_body() {
     println!("{}", with_capacity(&["a", "b", "c"]));
 }
@@ -33,7 +31,7 @@ pub fn example_body() {
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    example_body();
 }
 
 #[cfg(test)]

@@ -11,7 +11,6 @@
 pub trait Summary {
     /// Returns a string that summarizes the item.
     /// Note that it can be just a method signature (no function body).
-
     fn summarize(&self) -> String;
 }
 
@@ -35,7 +34,6 @@ impl Summary for NewsArticle {
 }
 /// Runs the example.
 /// Creates an article and calls the method of the trait.
-
 fn main() {
     let na = NewsArticle {
         headline: "headline".to_owned(),
@@ -56,7 +54,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

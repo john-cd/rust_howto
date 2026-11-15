@@ -31,7 +31,7 @@ struct TokenPrinter {
 
 impl TokenPrinter {
     /// Updates text-run output when the next token changes character kind.
-
+    ///
     /// # Arguments
     /// * `is_char` - Whether the next token contains character data.
     fn is_char(&self, is_char: bool) {
@@ -50,7 +50,7 @@ impl TokenSink for TokenPrinter {
 
     /// Processes the token input for the html5ever workflow and applies the resulting state
     /// changes. It calls `process_token`, `CharacterTokens` to apply the required changes.
-
+    ///
     /// # Errors
     /// An error is returned if a fallible operation fails.
     fn process_token(&self, token: Token, _line_number: u64) -> TokenSinkResult<()> {
@@ -107,7 +107,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the HTML tokenization example.
-
+///
 /// # Errors
 /// Returns an error if the inline HTML cannot be tokenized.
 pub fn run() -> anyhow::Result<()> {
@@ -134,7 +134,7 @@ mod tests {
 
         /// Processes the token input for the html5ever workflow and applies the resulting state
         /// changes. It calls `process_token`, `TagToken` to apply the required changes.
-
+        ///
         /// # Errors
         /// An error is returned if a fallible operation fails.
         fn process_token(&self, token: Token, _line: u64) -> TokenSinkResult<()> {

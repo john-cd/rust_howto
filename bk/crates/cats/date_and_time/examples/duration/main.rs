@@ -6,7 +6,6 @@
 mod profile;
 /// Runs the example.
 /// Runs the duration example.
-
 fn main() {
     profile::run();
 }

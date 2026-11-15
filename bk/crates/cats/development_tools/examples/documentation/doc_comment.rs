@@ -23,14 +23,12 @@ doc_comment!(
 );
 /// Runs the example.
 /// Runs the doc comment example.
-
 fn main() {
     documented_function();
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     // Same body as `main`; calling `main` trips `clippy::main_recursion`.
     documented_function();

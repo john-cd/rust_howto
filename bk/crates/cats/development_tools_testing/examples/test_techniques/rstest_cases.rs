@@ -28,7 +28,6 @@ pub fn run() -> Option<u64> {
 }
 
 /// Runs the example.
-
 fn main() {
     for text in ["90s", "5m", "2h", "5x"] {
         println!("{text:?} -> {:?}", parse_seconds(text));
@@ -57,13 +56,11 @@ mod tests {
 
     // A fixture builds shared test data; tests receive it by argument name.
     /// Supplies representative durations for parameterized tests.
-
     #[fixture]
     fn inputs() -> Vec<&'static str> {
         vec!["1s", "1m", "1h"]
     }
     /// Checks that durations increase as the unit gets larger.
-
     #[rstest]
     fn units_increase(inputs: Vec<&str>) {
         let seconds: Vec<u64> = inputs.iter().filter_map(|s| parse_seconds(s)).collect();

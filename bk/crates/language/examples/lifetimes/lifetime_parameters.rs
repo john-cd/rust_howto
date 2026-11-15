@@ -82,7 +82,6 @@ impl<'a, T> Describable<'a> for RefHolder<'a, T> {
     }
 }
 /// Uses lifetime parameters in functions, structs and traits.
-
 fn main() {
     let s1 = "Hello";
     let s2 = "World!";
@@ -117,7 +116,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -139,7 +137,7 @@ mod tests {
         assert_eq!(longest("abc", "de"), "abc");
     }
     /// Verifies ref holder.
-
+    ///
     /// `RefHolder` displays and describes the referenced value.
     #[test]
     fn test_ref_holder() {

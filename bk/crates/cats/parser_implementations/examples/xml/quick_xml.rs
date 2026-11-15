@@ -94,7 +94,6 @@ mod tests {
         main()
     }
     /// XML child elements populate the corresponding person fields.
-
     #[test]
     fn deserializes_person_fields() -> anyhow::Result<()> {
         let person: Person = from_str("<person><name>John Doe</name><age>32</age></person>")?;

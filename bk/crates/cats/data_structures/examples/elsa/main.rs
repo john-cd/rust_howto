@@ -8,7 +8,6 @@ mod frozen_map;
 mod frozen_vec;
 /// Runs the example.
 /// Runs both `elsa` collection examples.
-
 fn main() {
     frozen_map::run();
     frozen_vec::run();

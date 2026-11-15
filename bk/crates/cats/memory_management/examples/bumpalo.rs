@@ -21,6 +21,11 @@ use bumpalo::Bump;
 
 /// Allocates values in a bump allocation arena.
 fn main() {
+    example();
+}
+
+/// Allocates example values in one bump arena and reports its usage.
+fn example() {
     // Create a new bump allocation arena.
     let bump = Bump::new();
 
@@ -53,7 +58,7 @@ fn main() {
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    example();
 }
 
 #[cfg(test)]

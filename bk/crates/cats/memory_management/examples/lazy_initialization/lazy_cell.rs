@@ -10,7 +10,6 @@
 use std::cell::LazyCell;
 /// Runs the example.
 /// Creates and reads a value initialized on first access.
-
 fn main() {
     let message = LazyCell::new(|| String::from("initialized on first access"));
     assert_eq!(&*message, "initialized on first access");
@@ -19,7 +18,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

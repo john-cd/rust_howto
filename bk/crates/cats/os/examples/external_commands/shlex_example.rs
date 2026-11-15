@@ -9,9 +9,9 @@
 
 use std::process::Command;
 /// Formats a program and its arguments as a line that can be pasted into a
-
+///
 /// POSIX shell. Use it for display or logs only.
-
+///
 /// # Errors
 /// Returns an error if the display command operation cannot satisfy its required invariants.
 fn display_command(program: &str, args: &[&str]) -> Result<String, shlex::QuoteError> {

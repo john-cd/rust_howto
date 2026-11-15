@@ -34,7 +34,6 @@ pub fn config_schema() -> anyhow::Result<serde_json::Value> {
 /// # Errors
 ///
 /// Returns an error if schema serialization or validator construction fails.
-
 pub fn is_valid(instance: &serde_json::Value) -> anyhow::Result<bool> {
     let validator = jsonschema::validator_for(&config_schema()?)?;
     Ok(validator.is_valid(instance))

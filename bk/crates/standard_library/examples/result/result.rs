@@ -64,10 +64,10 @@ fn read_file2(file_path: &str) -> Result<String, io::Error> {
 // You will often need to return one of multiple `Result` types.
 /// Reads a number from a file and maps its I/O and integer-parsing errors to
 /// the custom `MyError` type.
-
+///
 /// # Arguments
 /// * `file_path` - Path to the file containing the integer text.
-
+///
 /// # Errors
 /// Returns an error if the file cannot be opened or read, or its contents are
 /// not a valid `i32`.
@@ -218,7 +218,6 @@ mod tests {
 
     use super::*;
     /// Verifies that the `result` example runs.
-
     #[test]
     fn test_result_example_entry_point() -> Result<(), Box<dyn std::error::Error>> {
         // `example.txt` does not exist: every function reports an error, but
@@ -235,8 +234,7 @@ mod tests {
         Ok(path)
     }
 
-    ///
-
+    /// Returns the path of a file that is not expected to exist.
     fn missing_path() -> String {
         let path =
             std::env::temp_dir().join(format!("result_example_{}_missing", std::process::id()));
@@ -253,7 +251,6 @@ mod tests {
         Ok(())
     }
     /// Verifies read file variants fail on missing file.
-
     #[test]
     fn test_read_file_variants_fail_on_missing_file() {
         let p = missing_path();
@@ -290,7 +287,6 @@ mod tests {
         Ok(())
     }
     /// Verifies I/O errors are converted with from.
-
     #[test]
     fn test_io_errors_are_converted_with_from() {
         assert!(read_and_parse_file(&missing_path()).is_err());

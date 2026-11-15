@@ -33,7 +33,6 @@ trait OutlinePrint: fmt::Display {
 impl OutlinePrint for String {}
 /// Runs the example.
 /// Runs the supertraits example.
-
 fn main() {
     String::from("test").outline_print();
 }
@@ -41,7 +40,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

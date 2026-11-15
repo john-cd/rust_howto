@@ -8,28 +8,26 @@
 //! the difference and lets you accept it. It is convenient for large outputs
 //! such as generated text or JSON.
 
-/// Runs the example.
-
 // Snapshot testing with the `insta` crate keeps track of how your data
 // structures or output change over time.
 
 /// This is a sample function that formats user details.
-
+///
 /// # Arguments
 /// * `name` - Human-readable value used to identify or display the selected insta.
 pub fn format_user(name: &str, age: u32) -> String {
     format!("Name: {name}, Age: {age}")
 }
 
-/// Prints a formatted user.
-fn main() {
+/// Prints a sample user record for the snapshot example.
+fn example() {
     println!("{}", format_user("Alice", 30));
 }
 // ANCHOR_END: example
 
-/// Snapshot testing with `insta`.
+/// Prints a sample formatted user record.
 pub fn run() {
-    main();
+    example();
 }
 
 /// The following is a test that uses `insta` to snapshot the output.
@@ -52,6 +50,6 @@ mod tests {
 
     #[test]
     fn test_main_entry_point() {
-        main();
+        run();
     }
 }

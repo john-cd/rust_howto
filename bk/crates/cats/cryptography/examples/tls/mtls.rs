@@ -17,9 +17,9 @@ use reqwest::Identity;
 use rustls::crypto::CryptoProvider;
 use rustls::crypto::ring;
 /// Builds a client that trusts the supplied server CA and presents a client
-
+///
 /// identity.
-
+///
 /// # Errors
 /// Returns an error if the build client operation cannot satisfy its required invariants.
 fn build_client(ca_certificate_pem: &[u8], client_identity_pem: &[u8]) -> anyhow::Result<Client> {
@@ -49,7 +49,7 @@ fn install_crypto_provider() -> anyhow::Result<()> {
     }
 }
 /// Sends a GET request using the configured CA certificate and client identity
-
+///
 /// files.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {

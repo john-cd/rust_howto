@@ -66,7 +66,6 @@ mod tests {
         main();
     }
     /// Parses the current value.
-
     fn parse(source: &'static str) -> Result<Program, String> {
         let cm: Lrc<swc_common::SourceMap> = Default::default();
         let fm = cm.new_source_file(FileName::Custom("test.js".into()).into(), source);

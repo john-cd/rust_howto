@@ -90,7 +90,6 @@ fn main() {
 
 // ANCHOR_END: example
 /// Runs the implicit-grid A* pathfinding example.
-
 pub fn run() {
     main();
 }
@@ -100,7 +99,6 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies astar pathfinding example.
-
     #[test]
     fn test_astar_pathfinding_example() {
         main();

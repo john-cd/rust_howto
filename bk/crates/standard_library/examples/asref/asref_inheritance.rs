@@ -50,13 +50,12 @@ struct ImageFile {
 impl ImageFile {
     // The simplest way to access the nested data is, of course,
     // to write simple projection functions:
-    ///
+    /// Returns the embedded media file's size in bytes.
     fn get_file_size_bytes(&self) -> u64 {
         self.media.file_size_bytes
     }
 
     /// Returns a one-line description of the picture.
-
     fn describe(&self) -> String {
         format!(
             "{}x{} pixels, camera: {}",
@@ -87,7 +86,6 @@ impl AsRef<Self> for MediaFile {
 /// This function prints basic details of any media item.
 /// It works with anything that can provide a cheap reference to a `MediaFile`.
 /// Note that the conversion is fully _explicit_.
-
 fn print_media_details<M: AsRef<MediaFile>>(item: M) {
     // Get the `&MediaFile` reference.
     let media_ref = item.as_ref();
@@ -99,7 +97,6 @@ fn print_media_details<M: AsRef<MediaFile>>(item: M) {
 }
 /// Runs the example.
 /// Creates an image file and prints the details of its media file.
-
 fn main() {
     // Create an ImageFile.
     let photo = ImageFile {

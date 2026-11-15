@@ -28,7 +28,6 @@ fn extract_login(input: &str) -> Option<&str> {
 }
 /// Runs the example.
 /// Extracts the login from several strings.
-
 fn main() {
     let login = extract_login("I❤email@example.com");
     println!("{login:?}");
@@ -45,7 +44,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

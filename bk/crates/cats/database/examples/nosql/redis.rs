@@ -44,7 +44,7 @@ fn connect() -> Result<Connection> {
 }
 
 /// Enables TLS only for an explicit true value such as `IS_TLS=true`.
-
+///
 /// # Arguments
 /// * `value` - Value the redis operation validates, transforms, or stores.
 ///

@@ -49,9 +49,12 @@ fn query_rust(source: &str) -> anyhow::Result<Vec<(String, String)>> {
 }
 
 /// Parses Rust source code, prints its syntax tree and query captures.
-fn main() -> anyhow::Result<()> {
-    /// Greets the supplied user.
+///
+/// # Errors
+/// Returns an error if the parser or query cannot process the source.
+fn example() -> anyhow::Result<()> {
     let source = r#"
+// Greets the supplied user.
 fn greet() {
     let message = "hello";
     println!("{message}");
@@ -78,7 +81,7 @@ fn greet() {
 /// # Errors
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    example()
 }
 
 /// Verifies the query identifies function and local binding names.
@@ -104,9 +107,7 @@ mod tests {
     }
 
     #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+    fn test_example_entry_point() -> anyhow::Result<()> {
+        run()
     }
 }

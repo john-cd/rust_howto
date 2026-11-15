@@ -55,13 +55,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `rc` example runs.
-
     #[test]
     fn test_rc_example_entry_point() {
         main();
     }
     /// Verifies strong count follows clones and drops.
-
     #[test]
     fn test_strong_count_follows_clones_and_drops() {
         let a = Rc::new(vec![1.0, 2.0, 3.0]);
@@ -85,7 +83,6 @@ mod tests {
         Ok(())
     }
     /// Verifies try unwrap.
-
     #[test]
     fn test_try_unwrap() {
         assert_eq!(Rc::try_unwrap(Rc::new(6)), Ok(6));
@@ -98,7 +95,6 @@ mod tests {
         drop(other);
     }
     /// Verifies weak does not keep the value alive.
-
     #[test]
     fn test_weak_does_not_keep_the_value_alive() {
         let a = Rc::new(1);

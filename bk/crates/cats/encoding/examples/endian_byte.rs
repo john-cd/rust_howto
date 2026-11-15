@@ -46,6 +46,11 @@ fn decode(mut bytes: &[u8]) -> Result<Payload, Error> {
 
 /// Encodes a payload, decodes it and compares the two.
 fn main() -> Result<(), Error> {
+    example()
+}
+
+/// Encodes a sample payload, decodes it, and checks that the value round-trips.
+fn example() -> Result<(), Error> {
     // Create a default `Payload` instance.
     let original_payload = Payload::default();
 
@@ -68,7 +73,7 @@ fn main() -> Result<(), Error> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<(), Error> {
-    main()
+    example()
 }
 
 #[cfg(test)]

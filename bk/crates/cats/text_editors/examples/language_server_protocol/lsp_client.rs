@@ -203,7 +203,6 @@ mod tests {
     }
     /// Drives a real `rust-analyzer` over stdio. Run it with
     /// `cargo test -- --ignored` when `rust-analyzer` is on the `PATH`.
-
     #[test]
     #[ignore = "needs rust-analyzer on the PATH"]
     fn test_real_rust_analyzer() -> anyhow::Result<()> {

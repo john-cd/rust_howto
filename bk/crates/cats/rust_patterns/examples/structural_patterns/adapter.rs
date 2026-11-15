@@ -37,7 +37,6 @@ impl<R: BufRead> Iterator for CsvRows<R> {
     }
 }
 /// Prints rows using the adapter over an in-memory reader.
-
 fn main() -> anyhow::Result<()> {
     let input = Cursor::new("name,role\nAda,engineer\n");
 

@@ -34,7 +34,6 @@ fn diverge() -> ! {
 // This function could also contain an infinite loop,
 // or call the `exit` function.
 /// Calls functions that return the unit type.
-
 fn main() {
     a_func();
     b_func();
@@ -55,7 +54,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

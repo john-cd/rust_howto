@@ -83,7 +83,6 @@ mod tests {
     }
     /// Pins the wire format: a varint length, the UTF-8 bytes, a varint age
     /// and one byte for the boolean.
-
     #[test]
     fn standard_config_uses_varint_integers() -> anyhow::Result<()> {
         let encoded = encode_to_vec(sample(), standard())?;

@@ -73,7 +73,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -88,7 +87,7 @@ mod tests {
         main();
     }
     /// Verifies display.
-
+    ///
     /// `Display` uses the custom serialization.
     #[test]
     fn test_display() {

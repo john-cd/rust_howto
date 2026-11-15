@@ -61,7 +61,6 @@ mod tests {
         main()
     }
     /// Pins the wire format: field 1 (a string) then field 2 (a varint).
-
     #[test]
     fn encoding_matches_the_protobuf_wire_format() {
         let person = Person {

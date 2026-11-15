@@ -7,7 +7,6 @@
 mod graphemes;
 /// Runs the example.
 /// Runs the unicode example.
-
 fn main() {
     graphemes::run();
 }

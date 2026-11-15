@@ -116,6 +116,7 @@ mod tests {
     /// # Errors
     /// An error is returned if read_only_open_of_a_missing_database_fails fails.
     /// Returns an error if the requested data cannot be retrieved.
+    #[test]
     fn read_only_open_of_a_missing_database_fails() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
         let missing = dir.path().join("missing");

@@ -12,7 +12,6 @@ fn get_iter() -> impl Iterator<Item = i32> {
     [1, 2, 3].into_iter()
 }
 /// Prints the type name of the iterator.
-
 fn main() {
     let iter = get_iter();
     // NEW in Rust 1.76
@@ -30,7 +29,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

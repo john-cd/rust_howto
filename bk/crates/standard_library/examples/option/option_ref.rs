@@ -4,7 +4,6 @@
 //! Borrowing the content of an `Option` with `as_ref` and `as_mut`.
 
 /// Reads an `Option<String>` without consuming it.
-
 fn as_ref() {
     let text: Option<String> = Some("Hello, world!".to_owned());
     // First, cast `Option<String>` to `Option<&String>` with `as_ref`,
@@ -29,7 +28,6 @@ fn as_mut() {
 }
 /// Runs the example.
 /// Runs both examples.
-
 fn main() {
     as_ref();
     as_mut();
@@ -38,7 +36,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -47,13 +44,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `option ref` example runs.
-
     #[test]
     fn test_option_ref_example_entry_point() {
         main();
     }
     /// Verifies as ref keeps the original.
-
     #[test]
     fn test_as_ref_keeps_the_original() {
         let text = Some("Hello, world!".to_owned());
@@ -63,7 +58,6 @@ mod tests {
         assert_eq!(None::<String>.as_ref().map(String::len), None);
     }
     /// Verifies as mut modifies in place.
-
     #[test]
     fn test_as_mut_modifies_in_place() {
         let mut x = Some(2);

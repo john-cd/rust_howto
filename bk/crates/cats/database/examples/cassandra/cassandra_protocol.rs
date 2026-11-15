@@ -39,7 +39,7 @@ fn round_trip_startup_request() -> anyhow::Result<Envelope> {
     Ok(parsed.envelope)
 }
 /// Runs the frame encoding and decoding example without a Cassandra server.
-
+///
 /// # Errors
 /// Returns an error if frame serialization or decoding fails.
 fn main() -> anyhow::Result<()> {
@@ -52,7 +52,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the offline frame encoding and decoding example.
-
+///
 /// # Errors
 /// Returns an error if frame serialization or decoding fails.
 pub fn run() -> anyhow::Result<()> {

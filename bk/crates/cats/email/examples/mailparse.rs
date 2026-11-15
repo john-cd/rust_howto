@@ -52,6 +52,14 @@ fn parse_subject_and_text(raw: &[u8]) -> Result<(String, Vec<String>)> {
 
 /// Parses a sample message and prints its subject and plain-text body.
 fn main() -> Result<()> {
+    example()
+}
+
+/// Parses the bundled message and prints its subject and plain-text body.
+///
+/// # Errors
+/// Returns an error if parsing or decoding the message fails.
+fn example() -> Result<()> {
     let (subject, bodies) = parse_subject_and_text(RAW_MESSAGE.as_bytes())?;
     println!("Subject: {subject}");
     for body in bodies {
@@ -66,7 +74,7 @@ fn main() -> Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<()> {
-    main()
+    example()
 }
 
 /// Verifies the sample multipart message parses successfully.
@@ -80,7 +88,6 @@ mod tests {
         main()
     }
     /// Only the text/plain part is returned, decoded from quoted-printable.
-
     #[test]
     fn extracts_subject_and_decoded_plain_text() -> Result<()> {
         let (subject, bodies) = parse_subject_and_text(RAW_MESSAGE.as_bytes())?;

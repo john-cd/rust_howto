@@ -16,7 +16,7 @@ pub mod helloworld {
     tonic::include_proto!("helloworld");
 }
 /// Sends a greeting request to `address` and returns the reply.
-
+///
 /// # Errors
 /// Returns an error if the server cannot be reached or the request fails.
 ///

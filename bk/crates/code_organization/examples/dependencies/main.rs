@@ -13,7 +13,6 @@ fn a_func() -> anyhow::Result<()> {
     Ok(())
 }
 /// Refers to `Result` without having to write its full path every time.
-
 fn fallible(fail: bool) -> Result<u32> {
     if fail {
         // Build an `Error` with the `anyhow!` macro.
@@ -26,6 +25,14 @@ fn fallible(fail: bool) -> Result<u32> {
 /// # Errors
 /// An error is returned if main, fallible fails.
 fn main() -> Result<()> {
+    example()
+}
+
+/// Uses imported names from `anyhow` and prints the successful result.
+///
+/// # Errors
+/// Returns an error if either sample operation fails.
+fn example() -> Result<()> {
     a_func()?;
     let value = fallible(false)?;
     println!("value = {value}");
@@ -38,7 +45,7 @@ fn main() -> Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<()> {
-    main()
+    example()
 }
 
 /// Using items from an external crate (a dependency).
@@ -46,7 +53,6 @@ pub fn run() -> Result<()> {
 /// # Errors
 /// Returns an error if an operation in the example fails.
 /// Returns an error if a step of the example fails.
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -56,7 +62,6 @@ mod tests {
         main().expect("main should succeed");
     }
     /// Verifies error path.
-
     #[test]
     fn test_error_path() {
         let err = fallible(true).expect_err("should fail");

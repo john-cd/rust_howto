@@ -14,7 +14,6 @@
 #[allow(dead_code)]
 fn unused_function() {}
 /// Does not call `unused_function`.
-
 fn main() {
     println!("Nobody is calling `unused_function`.");
     // Expected output: Nobody is calling `unused_function`.
@@ -23,7 +22,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

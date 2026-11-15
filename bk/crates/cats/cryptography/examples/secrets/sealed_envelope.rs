@@ -79,12 +79,11 @@ fn derive_key(
     Ok(key)
 }
 /// Builds the associated data: it is authenticated but not encrypted, so
-
+///
 /// moving the envelope to another context makes decryption fail.
-
+///
 /// # Arguments
 /// * `context` - Application state and services required to perform the operation.
-
 fn associated_data(version: u32, context: &[u8]) -> Vec<u8> {
     let mut aad = b"example-envelope".to_vec();
     aad.extend_from_slice(&version.to_be_bytes());
@@ -202,6 +201,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if wrong_passphrase_or_context_fails fails.
+    #[test]
     fn wrong_passphrase_or_context_fails() -> Result<()> {
         let envelope = SealedEnvelope::seal(b"secret", b"pass", b"ctx")?;
         assert!(envelope.open(b"other", b"ctx").is_err());
@@ -223,6 +223,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if tampered_version_fails fails.
+    #[test]
     fn tampered_version_fails() -> Result<()> {
         let mut envelope = SealedEnvelope::seal(b"secret", b"pass", b"ctx")?;
         envelope.version = 2;

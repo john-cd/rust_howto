@@ -168,7 +168,7 @@ mod entry_tests {
     use super::*;
 
     /// The entry point runs without a collector.
-
+    ///
     /// # Panics
     /// Panics if the in-memory exporter needs no network.
     #[test]
@@ -187,7 +187,7 @@ mod tests {
     use super::*;
 
     /// finished spans.
-
+    ///
     /// # Panics
     /// Panics if flush should succeed.
     fn collect_spans(body: impl FnOnce()) -> Vec<SpanData> {

@@ -42,7 +42,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the module path example.
-
 pub fn run() {
     main();
 }
@@ -58,13 +57,11 @@ mod tests {
         main();
     }
     /// Verifies sibling module path.
-
     #[test]
     fn test_sibling_module_path() {
         assert_eq!(c::do_something(), "Created a::A through super::a.");
     }
     /// Verifies reexported module path.
-
     #[test]
     fn test_reexported_module_path() {
         // `f` is reachable from the crate root through `pub use`...

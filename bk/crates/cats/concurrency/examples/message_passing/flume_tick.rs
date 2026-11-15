@@ -24,9 +24,9 @@ enum Command {
     Quit,
 }
 /// Handles all pending commands without blocking.
-
+///
 /// Returns `true` if the loop should stop.
-
+///
 /// # Returns
 /// `true` when the condition described above holds, and `false` otherwise.
 fn drain_commands(rx: &flume::Receiver<Command>, total: &mut i32) -> bool {
@@ -40,7 +40,7 @@ fn drain_commands(rx: &flume::Receiver<Command>, total: &mut i32) -> bool {
     false
 }
 /// Runs a controller thread and a tick loop connected by a bounded channel.
-
+///
 /// # Errors
 /// Returns an error if the controller panics or the command receiver closes.
 fn main() -> Result<()> {
@@ -89,7 +89,7 @@ fn timeout_on_empty() {
 }
 // ANCHOR_END: example
 /// Runs the command loop and reports controller failures.
-
+///
 /// # Errors
 /// Returns an error if the controller panics or cannot send its commands.
 pub fn run() -> Result<()> {
@@ -106,7 +106,6 @@ mod tests {
         main()
     }
     /// Reports a timeout immediately when an open channel has no command.
-
     #[test]
     fn test_timeout_on_empty() {
         timeout_on_empty();

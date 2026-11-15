@@ -20,13 +20,11 @@ impl KillOnDrop {
     }
 
     /// Returns the child without killing it.
-
     fn release(mut self) -> Option<Child> {
         self.0.take()
     }
 
     /// Returns the guarded child's process id, if it was not released.
-
     fn id(&self) -> Option<u32> {
         self.0.as_ref().map(Child::id)
     }

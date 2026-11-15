@@ -57,6 +57,11 @@ mod example {
 
 /// Allocates memory with `jemalloc` and prints its statistics, except on MSVC.
 fn main() -> anyhow::Result<()> {
+    example()
+}
+
+/// Allocates memory with `jemalloc` and prints its statistics, except on MSVC.
+fn example() -> anyhow::Result<()> {
     #[cfg(not(target_env = "msvc"))]
     example::test_alloc()?;
     Ok(())
@@ -68,7 +73,7 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    example()
 }
 
 #[cfg(test)]

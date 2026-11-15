@@ -101,7 +101,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the thread priority example.
-
+///
 /// # Errors
 /// Returns an error if the consumer thread cannot be spawned or panics.
 pub fn run() -> Result<()> {
@@ -118,7 +118,6 @@ mod tests {
         main()
     }
     /// Delivers every sample in order, whether or not the priority is granted.
-
     #[test]
     fn consumer_receives_all_samples_in_order() -> Result<()> {
         let report = consume_with_priority(ThreadPriority::Min)?;

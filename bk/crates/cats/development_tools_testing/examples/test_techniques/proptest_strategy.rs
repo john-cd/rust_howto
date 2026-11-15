@@ -29,7 +29,6 @@ impl Span {
     }
 
     /// Returns the smallest span that contains both spans.
-
     fn union(&self, other: &Self) -> Self {
         Self {
             start: self.start.min(other.start),
@@ -43,8 +42,12 @@ impl Span {
     }
 }
 /// Combines two spans; the property tests below check the invariants.
-
 fn main() {
+    let _ = example();
+}
+
+/// Demonstrates valid span construction and returns the union of two samples.
+fn example() -> Span {
     let a = Span::new(1, 5).expect("ordered endpoints");
     let b = Span::new(4, 9).expect("ordered endpoints");
     assert!(Span::new(5, 1).is_none());
@@ -54,13 +57,14 @@ fn main() {
         a.union(&b),
         a.overlaps(&b)
     );
+    a.union(&b)
 }
 
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.
-pub fn run() -> Span {
-    main()
+pub fn run() {
+    example();
 }
 
 /// Checks that construction succeeds exactly when endpoints are ordered.

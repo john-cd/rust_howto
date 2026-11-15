@@ -46,7 +46,6 @@ mod cfg {
         ///
         /// # Arguments
         /// to it exist (clone-on-write).
-
         pub fn update(self: &mut Arc<Self>, server_address: String, max_connections: u8) {
             // If there are other `Arc` pointers to the same allocation,
             // then `make_mut` will clone the inner value to a new allocation to
@@ -81,7 +80,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

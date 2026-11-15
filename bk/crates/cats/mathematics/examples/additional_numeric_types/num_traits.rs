@@ -20,7 +20,6 @@ fn sum_values<T: Num + Copy>(values: &[T]) -> T {
         .fold(T::zero(), |sum, value| sum + value)
 }
 /// Uses the `Zero`, `One` and `NumCast` traits on a number.
-
 fn main() {
     let integer_sum = sum_values(&[1_i32, 2, 3]);
     let float_sum = sum_values(&[1.5_f64, 2.5]);
@@ -46,7 +45,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
