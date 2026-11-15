@@ -36,9 +36,9 @@ test = true
 # Imaging library. Provides basic image processing and encoders/decoders for common image formats.
 image = "0.25.10"
 # Exif parsing library written in pure Rust
-kamadak-exif.workspace = true
+kamadak-exif = "0.6.2"
 # A lossless PNG compression optimizer
-oxipng.workspace = true
+oxipng = { version = "10.2.1", default-features = false }
 # Convert and manage colors with a focus on correctness, flexibility and ease of use.
 palette = "0.7.7"
 

@@ -40,13 +40,13 @@ black_scholes = "0.11.1"
 # Date and time library for Rust
 chrono = "0.4.45"
 # A collection of finance calculations mimicking some of Excel Financial Functions interface
-financial.workspace = true
+financial = "1.1.5"
 # A rate-limiting implementation in Rust
 governor = "0.10.4"
 # Random number generators and other randomness functionality.
-rand.workspace = true
+rand = "0.10.4"
 # Sampling from random number distributions
-rand_distr.workspace = true
+rand_distr = "0.6.0"
 # Parse, format and perform calculations with money safely.
 rusty-money = "0.5.1" # Money with currency, ISO 4217 data and formatting.
 # A JSON serialization file format

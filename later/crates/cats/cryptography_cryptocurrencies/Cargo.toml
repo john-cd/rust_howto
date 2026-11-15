@@ -28,9 +28,9 @@ test = true
 # Connect applications to blockchains
 alloy = { version = "2.5.0", default-features = false, features = ["std", "contract", "sol-types", "provider-http", "reqwest", "reqwest-rustls-tls", "signer-local"] }
 # Flexible concrete Error type built on std::error::Error
-anyhow = { workspace = true }
+anyhow = "1.0.104"
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
-tokio = { workspace = true }
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net", "io-util", "time"] }
 
 [lints]
 workspace = true
