@@ -58,9 +58,9 @@ fn connect_drone() -> Result<()> {
 fn main() -> Result<()> {
     connect_drone()
 }
-/// Runs the example; it needs a real drone.
 // ANCHOR_END: example
 
+/// Runs the example; it needs a real drone.
 /// # Errors
 /// Returns an error if the drone rejects a command.
 pub fn run() -> Result<()> {
