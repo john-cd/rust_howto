@@ -23,9 +23,10 @@ py_environment_key := if py_environment_project == "." { join(py_repo_name, py_s
 # CODE_REPOS_ROOT reports the conventional checkout root (D:/code on Windows, ~/code on Unix);
 # py_repo_root itself is derived from this imported file's location.
 # CODE_TEMP_ROOT holds temporary files (D:/temp when present, else C:/temp; Unix TMPDIR or /tmp).
+# CODE_CACHE_ROOT holds shared tool caches (D:/cache on Windows).
 # CODE_PACKAGES_ROOT holds package data and caches (D:/packages or ~/.local/share).
 # CODE_TOOLS_ROOT holds portable tools (C:/tools or ~/.local/tools).
-# CODE_PYTHON_ENV_ROOT stores uv project environments; defaults below CODE_PACKAGES_ROOT.
+# CODE_PYTHON_ENV_ROOT stores uv project environments; uses the shared uv root on Windows.
 # CODE_PYTHON_BUILD_ROOT stores per-project/worktree Python caches; defaults below CODE_TEMP_ROOT.
 # CODE_PYTHON_OUTPUT_ROOT stores generated artifacts; defaults below CODE_TEMP_ROOT.
 # CODE_PYTHON_BUILD_DIR and CODE_PYTHON_OUTPUT_DIR scope build/output data to py_project_path
@@ -42,20 +43,21 @@ py_environment_key := if py_environment_project == "." { join(py_repo_name, py_s
 export CODE_REPOS_ROOT := env("CODE_REPOS_ROOT", if os() == "windows" { "D:/code" } else { join(home_directory(), "code") })
 export CODE_TEMP_ROOT := env("CODE_TEMP_ROOT", if os() == "windows" { if path_exists("D:/temp") == "true" { "D:/temp" } else { "C:/temp" } } else { env("TMPDIR", "/tmp") })
 export CODE_PACKAGES_ROOT := env("CODE_PACKAGES_ROOT", if os() == "windows" { "D:/packages" } else { join(home_directory(), ".local/share") })
+export CODE_CACHE_ROOT := env("CODE_CACHE_ROOT", if os() == "windows" { "D:/cache" } else { CODE_PACKAGES_ROOT })
 export CODE_TOOLS_ROOT := env("CODE_TOOLS_ROOT", if os() == "windows" { "C:/tools" } else { join(home_directory(), ".local/tools") })
-export CODE_PYTHON_ENV_ROOT := env("CODE_PYTHON_ENV_ROOT", join(CODE_PACKAGES_ROOT, "uv/environments"))
+export CODE_PYTHON_ENV_ROOT := replace(env("CODE_PYTHON_ENV_ROOT", join(CODE_CACHE_ROOT, "uv/environments")), "\\", "/")
 export CODE_PYTHON_BUILD_ROOT := env("CODE_PYTHON_BUILD_ROOT", join(CODE_TEMP_ROOT, "python-build"))
 export CODE_PYTHON_OUTPUT_ROOT := env("CODE_PYTHON_OUTPUT_ROOT", join(CODE_TEMP_ROOT, "python-output"))
 export CODE_PYTHON_BUILD_DIR := replace(join(CODE_PYTHON_BUILD_ROOT, py_project_key), "\\", "/")
 export CODE_PYTHON_OUTPUT_DIR := replace(join(CODE_PYTHON_OUTPUT_ROOT, py_project_key), "\\", "/")
 export UV_PROJECT_ENVIRONMENT := replace(join(CODE_PYTHON_ENV_ROOT, py_environment_key), "\\", "/")
-export UV_CACHE_DIR := replace(join(CODE_PACKAGES_ROOT, "uv/cache"), "\\", "/")
+export UV_CACHE_DIR := replace(env("UV_CACHE_DIR", join(CODE_CACHE_ROOT, "uv/cache")), "\\", "/")
 export UV_PYTHON_INSTALL_DIR := replace(join(CODE_TOOLS_ROOT, "uv/python"), "\\", "/")
 export UV_TOOL_DIR := replace(join(CODE_TOOLS_ROOT, "uv/tools"), "\\", "/")
 export UV_TOOL_BIN_DIR := replace(join(CODE_TOOLS_ROOT, "uv/bin"), "\\", "/")
 export UV_LINK_MODE := "copy"
-export PIP_CACHE_DIR := replace(join(CODE_PACKAGES_ROOT, "pip"), "\\", "/")
-export PREK_HOME := replace(join(CODE_PACKAGES_ROOT, "prek"), "\\", "/")
+export PIP_CACHE_DIR := replace(env("PIP_CACHE_DIR", join(CODE_CACHE_ROOT, "pip")), "\\", "/")
+export PREK_HOME := replace(env("PREK_HOME", join(CODE_CACHE_ROOT, "prek")), "\\", "/")
 export PYTHONPYCACHEPREFIX := CODE_PYTHON_BUILD_DIR + "/pycache"
 export RUFF_CACHE_DIR := CODE_PYTHON_BUILD_DIR + "/ruff"
 export PYTEST_ADDOPTS := trim(env("PYTEST_ADDOPTS", "") + ' -o "cache_dir=' + CODE_PYTHON_BUILD_DIR + '/pytest"')
@@ -112,6 +114,7 @@ env:
     @printf 'CODE_REPOS_ROOT=%s\n' {{quote(CODE_REPOS_ROOT)}}
     @printf 'CODE_TEMP_ROOT=%s\n' {{quote(CODE_TEMP_ROOT)}}
     @printf 'CODE_PACKAGES_ROOT=%s\n' {{quote(CODE_PACKAGES_ROOT)}}
+    @printf 'CODE_CACHE_ROOT=%s\n' {{quote(CODE_CACHE_ROOT)}}
     @printf 'CODE_TOOLS_ROOT=%s\n' {{quote(CODE_TOOLS_ROOT)}}
     @printf 'CODE_PYTHON_ENV_ROOT=%s\n' {{quote(CODE_PYTHON_ENV_ROOT)}}
     @printf 'CODE_PYTHON_BUILD_ROOT=%s\n' {{quote(CODE_PYTHON_BUILD_ROOT)}}
