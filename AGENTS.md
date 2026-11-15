@@ -117,7 +117,9 @@ This repo is primarily an mdBook publishing repo with Rust workspaces attached t
 
 - Document every module and public API, including fields and variants. Explain ownership, invariants, side effects, and concrete error conditions; document non-obvious private helpers and algorithms.
 - Add a specific doc comment to every function and method, including private helpers and tests, except standard trait implementations whose contracts are already defined by the trait.
-- Keep Rustdoc specific to the item. Put doc comments before attributes; avoid generic placeholder text and document fallible APIs with meaningful `# Errors` sections.
+- Separate code items with blank lines and leave a blank line before each doc-comment block. Keep each block attached to its item, with doc comments before the item's attributes.
+- Start function and method docs with a short, accurate description. Document non-obvious arguments and relevant `# Errors` and `# Panics` conditions; do not document a function with only an `# Errors` section.
+- Surround Markdown headings in doc comments with empty doc-comment lines. Do not leave empty `///` lines at the beginning or end of a doc-comment block.
 - Add focused behavior tests for new code and bug fixes, integration tests for CLI/file effects, and benchmarks when performance-sensitive behavior warrants them.
 - Keep unit tests near their code in an inline `#[cfg(test)] mod tests` at the bottom of the file. Do not wrap integration-test files in `#[cfg(test)]`.
 - Give each test function a one-line doc comment that explains the behavior it verifies. Put the comment before the test attributes, and do not repeat the function name or signature. Construct concrete fixtures and meaningful identifiers; review snapshots before accepting changes.
