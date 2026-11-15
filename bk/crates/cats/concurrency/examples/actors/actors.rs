@@ -83,9 +83,10 @@ async fn run_actor() -> anyhow::Result<()> {
 fn main() -> anyhow::Result<()> {
     tokio::runtime::Runtime::new()?.block_on(run_actor())
 }
-/// Runs the Tokio actor example.
 // ANCHOR_END: example
 
+/// Runs the Tokio actor example.
+///
 /// # Errors
 /// Returns an error if the runtime cannot be created or the actor task fails.
 pub fn run() -> anyhow::Result<()> {
