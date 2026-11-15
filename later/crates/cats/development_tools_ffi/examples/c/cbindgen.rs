@@ -40,6 +40,7 @@ fn main() {
     println!("Generated C header: {}", header.display());
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

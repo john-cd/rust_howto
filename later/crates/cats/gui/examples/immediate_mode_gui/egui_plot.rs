@@ -75,6 +75,7 @@ fn main() {
     assert!(bars.max()[1] >= 5.0);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

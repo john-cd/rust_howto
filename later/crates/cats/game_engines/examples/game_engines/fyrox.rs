@@ -48,6 +48,7 @@ fn main() {
     println!("The plugin ran {} update(s).", game.ticks());
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the Fyrox game engine example.
 pub fn run() {

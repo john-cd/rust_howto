@@ -97,6 +97,7 @@ fn main() {
     println!("summary  : {}", summary(&db, input));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// # Errors

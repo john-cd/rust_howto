@@ -31,6 +31,7 @@ fn main() {
     println!("Generated {} sine-wave samples.", samples.len());
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the device-free tone example.
 pub fn run() {

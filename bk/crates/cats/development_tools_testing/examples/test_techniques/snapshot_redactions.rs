@@ -35,6 +35,7 @@ fn main() {
     println!("{:?}", create_order(1));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 #[allow(clippy::items_after_test_module)]
 pub fn run() {

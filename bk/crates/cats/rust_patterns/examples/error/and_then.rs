@@ -34,6 +34,7 @@ fn main() {
     println!("5 divided by two and then three: {not_divisible:?}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

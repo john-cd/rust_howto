@@ -110,6 +110,7 @@ fn build_tls_parameters(domain: String) -> anyhow::Result<TlsParameters> {
     builder.build().context("build SMTP TLS parameters")
 }
 // ANCHOR_END: example
+
 /// Runs the SMTP delivery example.
 ///
 /// # Errors

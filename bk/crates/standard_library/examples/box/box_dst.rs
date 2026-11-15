@@ -31,6 +31,7 @@ fn main() {
     println!("Another boxed string: {another_boxed_str}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

@@ -91,6 +91,7 @@ fn main() -> anyhow::Result<(u32, u32)> {
     Ok((first, second))
 }
 // ANCHOR_END: example
+
 /// Runs the Stakker actor example.
 ///
 /// # Errors

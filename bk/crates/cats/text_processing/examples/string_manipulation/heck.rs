@@ -31,6 +31,7 @@ fn main() {
     println!("Title case: {}", input.to_title_case()); // Hello World Example String
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

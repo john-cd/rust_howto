@@ -28,6 +28,7 @@ fn main() {
     assert_eq!(mode, Some(1));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

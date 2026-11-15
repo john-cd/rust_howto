@@ -57,6 +57,7 @@ impl eframe::App for MyApp {
     }
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// # Errors

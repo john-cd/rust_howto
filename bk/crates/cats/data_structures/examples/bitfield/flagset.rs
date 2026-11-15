@@ -61,6 +61,7 @@ fn main() {
 
 // Adapted from <https://docs.rs/flagset>
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

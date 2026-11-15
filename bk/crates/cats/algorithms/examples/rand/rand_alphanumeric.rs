@@ -28,6 +28,7 @@ fn main() {
     println!("Another random string: {rand_string2}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

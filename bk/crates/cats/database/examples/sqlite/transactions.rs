@@ -107,6 +107,7 @@ fn color_names(connection: &Connection) -> rusqlite::Result<Vec<String>> {
     rows.collect()
 }
 // ANCHOR_END: example
+
 /// Runs the transaction example.
 ///
 /// # Errors

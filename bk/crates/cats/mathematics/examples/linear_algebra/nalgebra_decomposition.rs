@@ -44,6 +44,7 @@ fn main() {
     println!("Trace of M: {}", m.trace());
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

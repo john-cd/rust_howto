@@ -25,6 +25,7 @@ fn main() {
     assert!(matches!(mean, Some(value) if (value - 5.4).abs() < 1e-12));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

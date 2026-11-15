@@ -38,6 +38,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the CSS tokenization example.
 ///
 /// # Errors

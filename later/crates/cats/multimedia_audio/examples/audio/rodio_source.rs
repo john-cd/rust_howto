@@ -106,6 +106,7 @@ fn main() {
     println!("A4 generated; call play_chord() to hear it.");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

@@ -37,6 +37,7 @@ async fn main() {
     local.await;
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

@@ -76,6 +76,7 @@ fn main() {
     println!("Rustler NIFs defined. These are intended to be loaded by an Elixir/Erlang VM.");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

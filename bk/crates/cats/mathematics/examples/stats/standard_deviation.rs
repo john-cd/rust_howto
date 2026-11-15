@@ -81,6 +81,7 @@ fn main() {
     assert!(matches!(zscore, Some(value) if (value + 0.11076978).abs() < 1e-6));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

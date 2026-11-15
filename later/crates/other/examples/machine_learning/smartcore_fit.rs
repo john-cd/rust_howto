@@ -35,6 +35,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// # Errors

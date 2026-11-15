@@ -68,6 +68,7 @@ fn main() {
     assert_eq!(total_weight, 4);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the `petgraph` Minimum Spanning Tree example by calling `main()`.
 pub fn run() {

@@ -47,6 +47,7 @@ fn main() {
     println!("Updated a Bevy ECS app without opening a window.");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the headless Bevy example.
 pub fn run() {

@@ -79,6 +79,7 @@ fn main() {
     println!("{}", core.view().count);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// Exposes this example to the crate's dispatcher.

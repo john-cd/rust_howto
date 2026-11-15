@@ -79,6 +79,7 @@ fn create_sample_wav(sample_count: usize) -> Result<Vec<u8>, Box<dyn Error + Sen
     Ok(cursor.into_inner())
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// # Errors

@@ -37,6 +37,7 @@ fn main() {
     assert!((iv - sigma).abs() < 1e-4);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

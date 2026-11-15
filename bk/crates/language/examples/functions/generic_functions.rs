@@ -37,6 +37,7 @@ fn main() {
     take_two(Some(3), "4");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

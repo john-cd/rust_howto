@@ -21,6 +21,7 @@ fn main() {
     assert_eq!(sensitive_data, [0; 8]);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the zeroization example.
 pub fn run() {

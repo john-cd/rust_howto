@@ -35,6 +35,7 @@ fn main() {
     println!("`apply_to_3` result: {}", apply_to_3(|x| x + var));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

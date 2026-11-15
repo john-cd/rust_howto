@@ -23,6 +23,7 @@ fn main() {
     println!("{DATETIME}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the compile-time concatenation example.
 pub fn run() {

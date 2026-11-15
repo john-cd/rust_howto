@@ -73,6 +73,7 @@ fn main() {
     assert!(validate_position < load_position);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the `petgraph` topological sort example by calling `main()`.
 pub fn run() {

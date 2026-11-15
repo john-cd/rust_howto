@@ -17,6 +17,7 @@ fn main() {
     autocfg::rerun_path("build.rs");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the compiler capability probe.
 pub fn run() {

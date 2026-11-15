@@ -134,6 +134,7 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Maps a staging buffer and converts its little-endian words to `u32` values.
 ///
 /// # Errors

@@ -58,6 +58,7 @@ fn run_app() -> Result<(), winit::error::EventLoopError> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// # Errors

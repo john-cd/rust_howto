@@ -134,6 +134,7 @@ async fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the Ractor actor example.
 ///
 /// # Errors

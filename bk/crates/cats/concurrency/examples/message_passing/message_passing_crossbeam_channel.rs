@@ -104,6 +104,7 @@ fn main() {
     assert_eq!(r1.recv(), Err(RecvError));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

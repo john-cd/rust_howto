@@ -76,6 +76,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the Riker actor example.
 ///
 /// # Errors

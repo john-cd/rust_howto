@@ -68,6 +68,7 @@ fn main() {
     assert_eq!(small_vec, expected);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

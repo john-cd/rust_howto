@@ -34,6 +34,7 @@ fn main() {
     process_text(direct_string.into());
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

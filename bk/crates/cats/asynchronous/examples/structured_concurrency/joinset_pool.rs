@@ -109,6 +109,7 @@ fn main() {
     assert_eq!(runtime.block_on(abort_demo()), 3);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

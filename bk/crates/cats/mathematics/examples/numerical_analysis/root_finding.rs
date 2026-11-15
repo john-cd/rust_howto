@@ -49,6 +49,7 @@ fn main() {
     println!("cos(x) - x = 0 at x ≈ {root:.12}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {

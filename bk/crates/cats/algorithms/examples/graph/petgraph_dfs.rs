@@ -71,6 +71,7 @@ fn main() {
     assert_eq!(d_position, b_position.map(|position| position + 1));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the `petgraph` DFS example by calling `main()`.
 pub fn run() {

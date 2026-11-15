@@ -163,6 +163,7 @@ fn main() {
     }
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

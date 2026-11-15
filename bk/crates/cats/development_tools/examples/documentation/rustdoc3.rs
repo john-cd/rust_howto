@@ -15,6 +15,7 @@ fn main() {
     println!("//! ... are `inner` comments that apply to the containing module (or crate).");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

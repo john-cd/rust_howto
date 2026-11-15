@@ -51,6 +51,7 @@ fn main() {
     println!("{rendered}");
 }
 // ANCHOR_END: example
+
 /// Runs the TinyTemplate example.
 pub fn run() {
     main();

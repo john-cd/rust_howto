@@ -48,6 +48,7 @@ fn main() {
     println!("The average age of people older than 30 is {avg_over_30}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

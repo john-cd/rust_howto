@@ -46,6 +46,7 @@ fn main() {
     println!("London to New York = {distance_km:.0} km");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 
 pub fn run() {

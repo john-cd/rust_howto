@@ -91,6 +91,7 @@ fn main() {
     assert_eq!(parse_message(&[]), None);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

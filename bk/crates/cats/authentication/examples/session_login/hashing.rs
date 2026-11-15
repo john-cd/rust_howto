@@ -60,6 +60,7 @@ pub fn hash_with_password_auth(password: &str) -> String {
     password_auth::generate_hash(password)
 }
 // ANCHOR_END: example
+
 /// Hashes and verifies a sample password.
 fn main() -> anyhow::Result<()> {
     let password = "correct horse battery staple";

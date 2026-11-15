@@ -29,6 +29,7 @@ fn main() {
     println!("{} {}", S::CONST_NO_DEFAULT, S::CONST_WITH_DEFAULT);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

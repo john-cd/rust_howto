@@ -20,6 +20,7 @@ fn main() {
     println!("Center after blur: {:?}", blurred.get_pixel(4, 4));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the Gaussian blur example.
 pub fn run() {

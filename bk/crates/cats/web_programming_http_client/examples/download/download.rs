@@ -53,6 +53,7 @@ async fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the asynchronous binary download example.
 ///
 /// # Errors

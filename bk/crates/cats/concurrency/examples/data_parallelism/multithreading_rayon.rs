@@ -34,6 +34,7 @@ fn main() {
     println!("{}", sum_of_squares(&v[..]));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

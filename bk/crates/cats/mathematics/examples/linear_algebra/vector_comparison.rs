@@ -34,6 +34,7 @@ fn main() {
     assert_abs_diff_eq!(w, Array::from(vec![6., 6., 6., 6., 6.]));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

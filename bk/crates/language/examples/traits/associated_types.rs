@@ -46,6 +46,7 @@ fn main() {
     println!("{:?}", use_iterator(&mut it));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

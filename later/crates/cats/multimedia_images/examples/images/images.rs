@@ -67,6 +67,7 @@ fn image_output_path_from_args() -> Option<PathBuf> {
     std::env::args_os().nth(1).map(PathBuf::from)
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// # Errors

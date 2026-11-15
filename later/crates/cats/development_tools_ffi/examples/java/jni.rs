@@ -59,6 +59,7 @@ pub extern "system" fn Java_HelloWorld_hello<'a>(
         .resolve::<ThrowRuntimeExAndDefault>()
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the JNI example logic without starting a JVM.
 pub fn run() {

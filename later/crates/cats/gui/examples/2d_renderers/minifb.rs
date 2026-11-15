@@ -112,6 +112,7 @@ fn main() -> Result<()> {
     run_window()
 }
 // ANCHOR_END: example
+
 /// Opens the minifb window.
 ///
 /// # Errors

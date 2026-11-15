@@ -47,6 +47,7 @@ fn main() {
     // ERROR: println!("my_boxed_string: {my_boxed_string}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

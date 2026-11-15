@@ -26,6 +26,7 @@ fn main() {
     println!("Backtrace status: {:?}", backtrace.status());
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

@@ -46,6 +46,7 @@ fn main() {
     println!("private_access example: private items accessed only from parent/same module");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

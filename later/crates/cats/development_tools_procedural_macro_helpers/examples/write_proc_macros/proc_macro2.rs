@@ -91,6 +91,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the `proc_macro2` token-stream example.
 ///
 /// # Errors

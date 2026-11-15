@@ -58,6 +58,7 @@ fn main() {
     println!("European put: {put:.4}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

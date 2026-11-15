@@ -46,6 +46,7 @@ fn main() {
     println!("{}", describe_status(&status3)); // Output: Status: 500 Internal Server Error
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

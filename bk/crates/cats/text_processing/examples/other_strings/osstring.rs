@@ -66,6 +66,7 @@ fn main() {
     println!("Path as OsString: {path_os_string:?}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

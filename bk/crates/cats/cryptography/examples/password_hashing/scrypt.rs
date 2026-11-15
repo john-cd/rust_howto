@@ -53,6 +53,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     example()
 }
 // ANCHOR_END: example
+
 /// Runs the example.
 ///
 /// # Errors

@@ -45,6 +45,7 @@ async fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the file upload example.
 ///
 /// # Errors

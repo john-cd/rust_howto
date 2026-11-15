@@ -95,6 +95,7 @@ fn main() {
     to_from_bytes();
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

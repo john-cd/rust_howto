@@ -139,6 +139,7 @@ fn main() {
     render(&dark::DarkGUIFactory, "Hello from dark theme!");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

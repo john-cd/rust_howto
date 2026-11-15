@@ -32,6 +32,7 @@ fn main() {
     println!("{:?}", gray.dimensions());
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the in-memory resize, crop, and grayscale recipe.
 pub fn run() {

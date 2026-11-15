@@ -66,6 +66,7 @@ fn main() -> Result<(), baseview::Error> {
     window.run_until_closed()
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// # Errors

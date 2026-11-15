@@ -83,6 +83,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the trading days example through its entry point.
 ///
 /// # Errors

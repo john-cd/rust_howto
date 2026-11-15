@@ -99,6 +99,7 @@ fn main() {
     println!("{built} of 10000 rows were built");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

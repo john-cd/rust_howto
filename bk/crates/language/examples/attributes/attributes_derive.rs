@@ -32,6 +32,7 @@ fn main() {
     // x = 10, y = 20
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

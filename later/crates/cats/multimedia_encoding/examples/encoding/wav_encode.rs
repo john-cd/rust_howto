@@ -47,6 +47,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// # Errors

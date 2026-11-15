@@ -49,6 +49,7 @@ fn main() {
     println!("Sealed trait pattern: called some_public_method on {a}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

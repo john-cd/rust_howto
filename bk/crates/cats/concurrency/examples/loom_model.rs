@@ -113,6 +113,7 @@ fn main() {
     run_model();
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the model for the workspace example runner.
 pub fn run() {

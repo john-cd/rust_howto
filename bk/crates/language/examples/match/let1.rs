@@ -40,6 +40,7 @@ fn main() {
     println!("start: {start}, middle: {middle:?}, end: {end}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

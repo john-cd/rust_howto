@@ -54,6 +54,7 @@ async fn get_users(client: &Client, request_url: &str) -> Result<Vec<User>, Erro
         .await
 }
 // ANCHOR_END: example
+
 /// Runs the example.
 ///
 /// # Errors

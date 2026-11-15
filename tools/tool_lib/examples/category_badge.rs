@@ -28,6 +28,7 @@ fn main() -> Result<()> {
     run_example()
 }
 // ANCHOR_END: example
+
 /// Runs the category badge example for programmatic execution.
 ///
 /// # Errors

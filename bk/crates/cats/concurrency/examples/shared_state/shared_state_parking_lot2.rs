@@ -38,6 +38,7 @@ fn main() {
     assert_eq!(value_after_write(), 6);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

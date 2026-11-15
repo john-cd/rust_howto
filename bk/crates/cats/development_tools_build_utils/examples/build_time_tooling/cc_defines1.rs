@@ -63,6 +63,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the C preprocessor definitions example.
 ///
 /// # Errors
