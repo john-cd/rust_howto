@@ -57,7 +57,7 @@ test = true
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # Type erasure for async trait methods
-async-trait = "0.1.92"
+# async-trait = "0.1.92"
 # Implements behavior trees for organizing reactive robotics and game logic.
 bonsai-bt = "0.14.0"
 # A simple to use, efficient, and full-featured Command Line Argument Parser
@@ -81,9 +81,9 @@ rapier2d = "0.36.1"
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 # Application-level tracing for Rust.
-tracing = "0.1.44"
+# tracing = "0.1.44"
 # Utilities for implementing and composing `tracing` subscribers.
-tracing-subscriber = "0.3.23"
+# tracing-subscriber = "0.3.23"
 # Parses and serializes robot descriptions in the URDF XML format.
 urdf-rs = "0.9.1" # Matches `k`'s URDF model type for conversions.
 # Zenoh: The Zero Overhead Pub/Sub/Query Protocol.
