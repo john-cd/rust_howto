@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Use the Crossbeam crates when an application needs MPMC channels, channel selection, lock-free queues, or concurrent utility types. `std::thread::scope` covers scoped thread creation in current Rust.
 

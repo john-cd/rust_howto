@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~science_geo~geo]: geo.md#geo
 [ex~science_geo~geocode]: geo.md#geocode

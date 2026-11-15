@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [c~scc~crates.io]: https://crates.io/crates/scc
 [c~scc~docs]: https://docs.rs/scc

@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~virtualization~docker-compose]: virtualization.md#docker-compose
 [ex~virtualization~docker]: virtualization.md#docker

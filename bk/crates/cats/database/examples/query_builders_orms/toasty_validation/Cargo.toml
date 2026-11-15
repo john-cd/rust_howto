@@ -1,9 +1,10 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 [package]
 name = "toasty-validation"
 version = "0.1.0"
 edition = "2024"
+rust-version.workspace = true
 publish = false
 
 [dependencies]
@@ -18,3 +19,6 @@ tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 # workspace, so validate this example in an independent dependency graph.
 [workspace]
 resolver = "3"
+
+[workspace.package]
+rust-version = "1.98.1"

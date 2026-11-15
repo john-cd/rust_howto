@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# TODO Reviewed ??-??-2026
+
+# TODO Reviewed ??-??-2026.
 
 # Install the pinned CPython release used by the Windows setup and dev container.
 

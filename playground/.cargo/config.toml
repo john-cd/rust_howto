@@ -15,7 +15,6 @@
 [env]
 SCCACHE_BASEDIRS = { value = ".", relative = true }
 
-
 # Cargo defaults reference (Cargo 1.100.0). Comments only.
 #
 # [build]

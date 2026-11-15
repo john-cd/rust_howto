@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Distributed tracing links operations across services into a trace. Rust applications commonly emit spans with [`tracing`][c~tracing~docs] and bridge them to OpenTelemetry with [`tracing-opentelemetry`][tracing-opentelemetry~docs]. The OpenTelemetry SDK batches spans and exports them in the OpenTelemetry Protocol (OTLP) to a collector or compatible backend.
 

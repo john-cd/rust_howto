@@ -1,4 +1,5 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
+
 <!-- markdownlint-disable MD057 -->
 
 [c~yaml_serde~docs]: https://docs.rs/yaml_serde/latest/yaml_serde/

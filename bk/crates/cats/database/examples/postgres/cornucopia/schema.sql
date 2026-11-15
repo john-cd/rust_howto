@@ -1,4 +1,5 @@
--- TODO Reviewed ??-??-2026
+-- TODO Reviewed ??-??-2026.
+
 
 CREATE TABLE IF NOT EXISTS cornucopia_greetings (
     message TEXT PRIMARY KEY

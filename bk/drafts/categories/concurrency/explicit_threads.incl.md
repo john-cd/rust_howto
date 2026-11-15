@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 `std::thread::spawn` starts an owned thread and returns a `JoinHandle<T>`. Keep the handle and call `join` to collect its result and detect a panic; dropping it detaches the thread. The process can exit while detached threads are still running.
 

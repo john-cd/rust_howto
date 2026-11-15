@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# TODO Reviewed ??-??-2026
+
+# TODO Reviewed ??-??-2026.
 
 """Rewrite compatible crate badge sets in Markdown blocks to `{{#badges}}` (#2132, #2145).
 

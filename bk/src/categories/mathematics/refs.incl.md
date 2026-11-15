@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [c~fixed~crates.io]: https://crates.io/crates/fixed
 [c~fixed~crates.io~badge]: https://img.shields.io/badge/crates.io-fixed-crimson

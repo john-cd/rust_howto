@@ -1,4 +1,5 @@
--- TODO Reviewed ??-??-2026
+-- TODO Reviewed ??-??-2026.
+
 
 --! add_greeting
 INSERT INTO cornucopia_greetings (message)

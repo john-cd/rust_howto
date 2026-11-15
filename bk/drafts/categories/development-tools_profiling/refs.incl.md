@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~development-tools_profiling~cargo-flamegraph]: benchmarking.md#cargo-flamegraph
 [ex~development-tools_profiling~cargo-show-asm]: assembly.md#cargo-show-asm

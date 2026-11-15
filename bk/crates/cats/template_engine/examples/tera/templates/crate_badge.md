@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [![{{ crate_name }}][c~{{ crate_name }}~~docs~badge]][c~~{{ crate_name }}~docs]
 

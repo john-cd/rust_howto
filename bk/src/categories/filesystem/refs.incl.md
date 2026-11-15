@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [tempfile~persist-durability]: https://docs.rs/tempfile/latest/tempfile/struct.NamedTempFile.html#method.persist
 

@@ -1,6 +1,6 @@
-# Worktrees
+<!-- TODO Reviewed ??-??-2026. -->
 
-<!-- TODO Reviewed ??-??-2026 -->
+# Worktrees
 
 Updated 2026-11-03 (America/Los_Angeles). This file describes the managed layout;
 use `git worktree list --porcelain` and `git status --short` for live state.

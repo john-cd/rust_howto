@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [cargo-crev~repository]: https://github.com/crev-dev/cargo-crev
 [cargo-geiger~repository]: https://github.com/geiger-rs/cargo-geiger

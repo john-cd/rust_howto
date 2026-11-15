@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Layer configuration in a clear precedence order: built-in defaults, configuration files, environment variables, then command-line options. Deserialize the merged result into a typed struct so missing or invalid settings fail during startup.
 

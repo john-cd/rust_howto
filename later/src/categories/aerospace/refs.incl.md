@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~aerospace~aero]: aerospace.md#aero
 [p~aerospace-drones]: ../aerospace_drones/index.md

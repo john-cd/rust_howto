@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 # The Rust How-To Book
 
@@ -8,6 +8,10 @@
 **Everything you need for day-to-day Rust coding, all in one place.**
 
 Point your browser to [`https://john-cd.com/rust_howto`][rust-howto~website]↗ to read the [Rust How-to][rust-howto~website]↗ book.
+
+## Local Rust checks
+
+Install the toolchain from `rust-toolchain.toml` with `rustup show` in the checkout. From the repository root, run `just check` and `just test`. For targeted Cargo work, use `bk/crates`, `playground`, `publish`, `tools`, `xmpl`, or `later/crates` for deferred examples. For formatting, use the nightly pin in `rustfmt-toolchain.toml`.
 
 ## Work In Progress
 

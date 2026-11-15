@@ -1,4 +1,4 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 # Linker policy: use rustc's target defaults for native builds.
 # Windows MSVC: use link.exe from Visual Studio Build Tools and the Windows SDK.
@@ -47,7 +47,6 @@ regex-syntax = { opt-level = 3, debug = 0 }
 smallvec = { opt-level = 3, debug = 0 }
 syn = { opt-level = 3, debug = 0 }
 xxhash-rust = { opt-level = 3, debug = 0 }
-
 
 # Cargo defaults reference (Cargo 1.100.0). Comments only.
 #

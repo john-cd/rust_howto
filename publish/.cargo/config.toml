@@ -29,7 +29,6 @@ proc-macro2 = { opt-level = 3, debug = 0 }
 quote = { opt-level = 3, debug = 0 }
 syn = { opt-level = 3, debug = 0 }
 
-
 # Cargo defaults reference (Cargo 1.100.0). Comments only.
 #
 # [build]

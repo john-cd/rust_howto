@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 A transpiler translates source code into source code while retaining much of its structure. In Rust projects, translation tools are often used to migrate legacy code or generate language bindings; they do not replace compiler checks, tests, or human review. In particular, C-to-Rust output can preserve the original program while still containing extensive `unsafe` code.
 

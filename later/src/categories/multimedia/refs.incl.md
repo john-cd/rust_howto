@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~multimedia~multimedia]: multimedia.md#multimedia
 [c~retina~docs]: https://docs.rs/retina/latest/retina/

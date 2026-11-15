@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Use `flate2` for common gzip, zlib, and raw DEFLATE streams. Add `async-compression` when those codecs need Tokio-based asynchronous I/O; use `zip` or `async_zip` when the task is to package named entries in an archive.
 

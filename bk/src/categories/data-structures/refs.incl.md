@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~data-structures~arrayvec]: stack-allocated.md#arrayvec
 [ex~data-structures~binary-heap]: binary_heaps.md#binary-heap

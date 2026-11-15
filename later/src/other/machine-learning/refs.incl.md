@@ -1,4 +1,5 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
+
 [ex~ml~augurs]: forecasting.md#augurs
 [ex~ml~onnx]: inference.md#onnx
 [ex~ml~smartcore]: classical_ml.md#smartcore

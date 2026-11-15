@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 # Format Values for Display to a User, Potentially Adapting the Display to Various Languages and Regions
 

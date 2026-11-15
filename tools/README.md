@@ -1,3 +1,5 @@
+<!-- TODO Reviewed ??-??-2026. -->
+
 # Tools
 
 This workspace contains tools written in Rust, which you may use to manage the book.
@@ -134,5 +136,3 @@ just templ info <CRATE_NAME>...
 ### `tool_lib`
 
 A shared Rust library crate used internally across the workspace tools (`crate_indices`, `templ`, `example-integrity`, `mdbook-scrub`).
-
-<!-- TODO Reviewed ??-??-2026 -->

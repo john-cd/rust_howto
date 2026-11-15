@@ -103,6 +103,18 @@ jobs:
       - name: Protoc version (debug)
         run: protoc --version
 
+      - name: Check minimum supported Rust
+        env:
+          RUSTC_WRAPPER: ""
+          CARGO_BUILD_RUSTC_WRAPPER: ""
+          CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/msrv/book
+          CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/msrv/book
+          CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/msrv/book
+        run: |
+          rustup toolchain install 1.98.1 --profile minimal
+          cargo +1.98.1 check --workspace --all-targets --locked
+        working-directory: bk/crates
+
       - name: Install mdBook, mdBook linkcheck, Nextest, Just and cargo-deny (prebuilt binaries)
         # taiki-e/install-action v2.88.0
         uses: taiki-e/install-action@68a389c788b2cd04016ce8c80ee23b80d2ab3d68

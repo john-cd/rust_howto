@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Use shared state when threads need the same value. Prefer message passing when ownership can move through a channel. For shared mutation, start with `std::sync::Mutex`, `RwLock`, or atomics; the standard library is a good default. Reach for [`parking_lot`][c~parking_lot~docs], [`arc-swap`][c~arc-swap~docs], or [`DashMap`][c~dashmap~docs] when their specific behavior fits the workload.
 

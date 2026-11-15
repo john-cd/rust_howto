@@ -5,6 +5,7 @@ name = "example-integrity"
 version.workspace = true
 description = "Read-only chapter, include, and Cargo target inventory for the Rust How-to book"
 edition.workspace = true
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
 publish.workspace = true

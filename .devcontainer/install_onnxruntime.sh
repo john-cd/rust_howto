@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# TODO Reviewed ??-??-2026
+
+# TODO Reviewed ??-??-2026.
 
 # Install a checksum-pinned ONNX Runtime CPU build for the `ort` examples.
 

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# TODO Reviewed ??-??-2026
+
+# TODO Reviewed ??-??-2026.
 
 """Rebuild the example references of `src/indices/refs.incl.md`.
 

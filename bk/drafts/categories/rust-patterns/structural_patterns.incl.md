@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Rust does not use class inheritance for code reuse. Instead, compose values from smaller types, define shared behavior with traits, and wrap existing types with newtypes when a domain needs stronger invariants or a distinct interface. Common structural patterns include newtypes, adapters, decorators, facades, and composite trees.
 

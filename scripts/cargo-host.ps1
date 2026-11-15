@@ -1,4 +1,4 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 # Validate host storage and optionally configure shared Cargo compiler defaults.
 param(

@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Use a debugger when you can reproduce a problem and need to pause execution, inspect variables, or step through control flow. Rust's `rust-gdb` and `rust-lldb` wrappers configure GDB and LLDB for Rust; VS Code users can follow the [Windows debugger setup note][p~debugging-in-vscode] for the debugger extensions and heap setting.
 

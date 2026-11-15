@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# TODO Reviewed ??-??-2026
+
+# TODO Reviewed ??-??-2026.
 
 # Download and install a version-pinned Flutter source checkout.
 

@@ -1,4 +1,5 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
+
 [connectrpc~protocol]: https://connectrpc.com/docs/protocol/
 [c~accept-language~docs]: https://docs.rs/accept-language
 [c~accept-language~docs~badge]: https://img.shields.io/crates/v/accept-language?label=accept-language

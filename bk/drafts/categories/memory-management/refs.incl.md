@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~memory-management~bumpalo]: memory_allocation.md#bumpalo
 [ex~memory-management~bumpalo-tree]: arena_allocation.md#bumpalo-tree

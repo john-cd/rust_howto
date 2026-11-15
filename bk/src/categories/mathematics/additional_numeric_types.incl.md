@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Choose a numeric representation for the range, precision, and operations your problem needs. Use [`num-bigint`][c~num-bigint~docs] for integers that can exceed the built-in types, [`rust_decimal`][c~rust_decimal~docs] for bounded base-10 values such as financial amounts, [`num-rational`][c~num-rational~docs] for exact fractions, [`fixed`][c~fixed~docs] when the number of fractional bits is fixed, and [`half`][c~half~docs] for compact IEEE 754 binary16 storage when its lower precision is acceptable. For arbitrary-precision rationals, floats, or complex numbers backed by GMP, MPFR, and MPC, consider [`rug`][c~rug~docs].
 
