@@ -38,11 +38,13 @@ mod tests {
         main().expect("the example should succeed");
     }
 
+    /// Rejects the infinite standard deviation.
     #[test]
     fn infinite_standard_deviation_is_rejected() {
         assert!(Normal::new(2.0, f64::INFINITY).is_err());
     }
 
+    /// Confirms that the sample mean is close to the distribution mean.
     #[test]
     fn sample_mean_is_close_to_the_distribution_mean() {
         let mut rng = rand::rng();

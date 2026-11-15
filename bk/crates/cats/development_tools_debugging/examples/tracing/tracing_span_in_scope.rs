@@ -148,6 +148,7 @@ mod tests {
         String::from_utf8(output).expect("tracing output should be valid UTF-8")
     }
 
+    /// Attaches the active span to events from both instrumentation styles.
     #[test]
     fn in_scope_and_instrument_attach_the_span_to_events() {
         let out = capture(|| {

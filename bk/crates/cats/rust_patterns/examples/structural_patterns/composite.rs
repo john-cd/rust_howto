@@ -49,6 +49,7 @@ mod tests {
     use super::Expression;
     use super::main;
 
+    /// Verifies that the nested expression sums all values.
     #[test]
     fn nested_expression_sums_all_values() {
         let expression = Expression::Sum(vec![
@@ -59,6 +60,7 @@ mod tests {
         assert_eq!(expression.evaluate(), 42);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

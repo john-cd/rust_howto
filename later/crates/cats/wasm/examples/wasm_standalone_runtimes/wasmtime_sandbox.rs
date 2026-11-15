@@ -164,8 +164,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// Exercises the complete sandbox example.
-    /// Runs the wasmtime sandbox example through its entry point.
+    /// Runs the sandbox example through its entry point.
     #[test]
     fn test_wasmtime_sandbox_example_entry_point() -> Result<()> {
         main()
@@ -197,8 +196,7 @@ mod tests {
         Ok(())
     }
 
-    /// Confirms that memory growth beyond the store limit fails without
-    /// trapping.
+    /// Rejects memory growth beyond the store limit without trapping.
     #[test]
     fn memory_growth_is_limited() -> Result<()> {
         let mut sandbox = Sandbox::new(SandboxConfig {

@@ -65,6 +65,7 @@ fn run() -> RequestSpec {
 mod tests {
     use super::*;
 
+    /// Joins the request URL and appends its authentication token.
     #[test]
     fn joins_url_and_adds_token() {
         let sample = run();

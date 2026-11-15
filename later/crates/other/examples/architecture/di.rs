@@ -129,6 +129,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that the greeter is resolved from the module.
     #[test]
     fn greeter_is_resolved_from_the_module() {
         let module = MyModule::builder().build();
@@ -136,6 +137,7 @@ mod tests {
         assert_eq!(greeter.greet("World"), "Hello, World!");
     }
 
+    /// Checks that the conversation uses the injected greeter and parameters.
     #[test]
     fn conversation_uses_the_injected_greeter_and_parameters() {
         let module = MyModule::builder()
@@ -147,6 +149,7 @@ mod tests {
         assert_eq!(conversation.start(), "Hello, John!");
     }
 
+    /// Uses an empty name as the default for the conversation.
     #[test]
     fn conversation_defaults_to_an_empty_name() {
         let module = MyModule::builder().build();

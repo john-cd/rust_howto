@@ -195,8 +195,7 @@ mod tests {
         run_with_args(std::iter::empty())
     }
 
-    /// Verifies that a missing guest path follows the CLI usage path.
-    /// Verifies that a nonexistent guest blob returns an I/O error.
+    /// Reports a missing guest path as a usage error and a missing guest blob as an I/O error.
     #[test]
     fn missing_guest_file_is_an_error() {
         let path = std::env::temp_dir().join("rust_howto_no_such_guest.polkavm");

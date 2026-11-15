@@ -68,8 +68,7 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
-    /// Verifies that the example sends its request and deserializes the local
-    /// response.
+    /// Verifies that the example sends its request and deserializes the local response.
     #[tokio::test]
     async fn returns_deserialized_users() -> anyhow::Result<()> {
         let mut server = mockito::Server::new_async().await;

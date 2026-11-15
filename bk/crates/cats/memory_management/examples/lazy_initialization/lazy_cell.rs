@@ -27,6 +27,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Initializes on first access.
     #[test]
     fn initializes_on_first_access() {
         main();

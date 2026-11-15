@@ -60,6 +60,7 @@ fn run_example() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the blink changes the output level.
     #[test]
     fn blink_changes_the_output_level() {
         let mut pin = MockPin::default();

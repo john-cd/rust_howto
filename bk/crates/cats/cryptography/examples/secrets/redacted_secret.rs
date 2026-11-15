@@ -94,13 +94,12 @@ pub fn run() {
     let _ = main();
 }
 
-/// An error is returned if debug_and_display_never_contain_the_secret fails.
+/// Tests that formatted secrets do not expose their contents.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// An error is returned if debug_and_display_never_contain_the_secret fails.
+    /// Keeps secret values out of Debug and Display output.
     #[test]
     fn debug_and_display_never_contain_the_secret() -> Result<(), Infallible> {
         let secret: RedactedSecret = "hunter2".parse()?;

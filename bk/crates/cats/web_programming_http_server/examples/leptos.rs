@@ -78,7 +78,6 @@ mod tests {
     // output-only: the example only mounts a view or prints a message; see the
     // other tests for its logic.
     /// Verifies that the leptos example's main path succeeds.
-    /// Runs the leptos example through its entry point.
     #[test]
     fn test_leptos_example_entry_point() {
         #[cfg(not(feature = "leptos-support"))]

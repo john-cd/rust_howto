@@ -45,11 +45,13 @@ mod tests {
     use super::UserId;
     use super::main;
 
+    /// Rejects zero when processing the user id.
     #[test]
     fn user_id_rejects_zero() {
         assert!(UserId::new(0).is_err());
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

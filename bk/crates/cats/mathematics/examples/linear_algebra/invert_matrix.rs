@@ -46,8 +46,7 @@ mod tests {
         main();
     }
 
-    /// The inverse multiplies back to the identity; singular matrices have no
-    /// inverse.
+    /// The inverse multiplies back to the identity; singular matrices have no inverse.
     #[test]
     fn inverts_regular_matrices_only() {
         let m1 = Matrix3::new(2.0, 1.0, 1.0, 3.0, 2.0, 1.0, 2.0, 1.0, 2.0);

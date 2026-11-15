@@ -82,8 +82,6 @@ mod tests {
     use super::*;
 
     /// Aggregates the prepared artists table in a PostgreSQL service.
-    ///
-    /// Run with `DATABASE_URL` set to a reachable PostgreSQL database.
     #[test]
     #[ignore = "needs Postgres"]
     fn aggregates_artist_counts_by_nationality_on_postgres() -> anyhow::Result<()> {

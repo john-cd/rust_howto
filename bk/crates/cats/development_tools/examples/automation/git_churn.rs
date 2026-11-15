@@ -77,8 +77,7 @@ mod tests {
     fn counts_changes_in_the_example_checkout() -> anyhow::Result<()> {
         main()
     }
-    /// Reports a clear failure for a temporary directory outside any
-    /// repository.
+    /// Reports a clear failure for a temporary directory outside any repository.
     #[test]
     fn not_a_repository_is_an_error() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;

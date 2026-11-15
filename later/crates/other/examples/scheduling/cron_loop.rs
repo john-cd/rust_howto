@@ -123,22 +123,19 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Exercises cron wakeups and missed-fire behavior using Tokio's paused
-    /// clock.
+    /// Skips missed schedule times instead of firing for each one.
     #[tokio::test(start_paused = true)]
     async fn cron_loop_skips_missed_fires() -> anyhow::Result<()> {
         demo().await
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() -> anyhow::Result<()> {
         main()
     }
 
-    /// # Errors
-    /// An error is returned if cancelled_token_stops_the_loop_immediately fails.
-    /// # Panics
-    /// Panics if a valid date.
+    /// Stops the cron loop promptly when its cancellation token is cancelled.
     #[tokio::test(start_paused = true)]
     async fn cancelled_token_stops_the_loop_immediately() -> anyhow::Result<()> {
         let schedule = Schedule::from_str("*/10 * * * * *")?;

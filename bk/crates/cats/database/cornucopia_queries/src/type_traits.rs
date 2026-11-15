@@ -103,10 +103,11 @@ impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> T
     /// required by callers.
     ///
     /// # Errors
-    /// An error is returned if downcast, array_to_sql fails.
+    /// Returns an error if the iterator length cannot be represented or an element cannot be
+    /// serialized.
     ///
     /// # Panics
-    /// Panics if the guarded invariant is violated.
+    /// Panics if `ty` is not an array type.
     fn to_sql(
         &self,
         ty: &Type,

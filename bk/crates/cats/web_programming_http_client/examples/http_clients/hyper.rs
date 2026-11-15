@@ -98,9 +98,8 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Requires a live network service to run the example.
     #[test]
-    /// # Errors
-    /// An error is returned if require_network fails.
     fn require_network() -> anyhow::Result<()> {
         main()?;
         Ok(())

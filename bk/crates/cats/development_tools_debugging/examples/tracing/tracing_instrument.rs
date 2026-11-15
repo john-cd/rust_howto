@@ -67,7 +67,6 @@ mod tests {
     use super::*;
 
     /// Checks that the instrumented functions run.
-    /// Runs the tracing instrument example through its entry point.
     #[test]
     fn test_tracing_instrument_example_entry_point() {
         let _ = tracing_subscriber::fmt()
@@ -129,6 +128,7 @@ mod tests {
         String::from_utf8(output).expect("tracing output should be valid UTF-8")
     }
 
+    /// Verifies that the instrumented function records its argument in a span.
     #[test]
     fn instrumented_function_records_its_argument_in_a_span() {
         let out = capture(|| my_function(42));
@@ -137,6 +137,7 @@ mod tests {
         assert!(out.contains("inside my_function!"), "{out}");
     }
 
+    /// Checks that the async function uses the custom span name.
     #[test]
     fn async_function_uses_the_custom_span_name() {
         let out = capture(|| {

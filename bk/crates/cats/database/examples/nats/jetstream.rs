@@ -258,11 +258,7 @@ mod tests {
         }
     }
 
-    /// Publishes, consumes with a durable consumer and checks redelivery
-    /// handling against a real server.
-    ///
-    /// Start one with `nats-server -js` (or Docker image `nats:2` with
-    /// `-js`) and set `NATS_URL=nats://127.0.0.1:4222`.
+    /// Publishes and receives a message through JetStream.
     #[test]
     #[ignore = "needs a NATS server with JetStream enabled (NATS_URL)"]
     fn jetstream_round_trip() -> anyhow::Result<()> {

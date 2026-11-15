@@ -77,10 +77,10 @@ struct RelyingParty {
 }
 
 impl RelyingParty {
-    /// effective domain (or a registrable suffix of it).
+    /// Creates a relying party for the given RP ID and origin.
     ///
     /// # Errors
-    /// Returns an error if the new operation cannot satisfy its required invariants.
+    /// Returns an error if the relying-party ID or origin is invalid for WebAuthn configuration.
     fn new(rp_id: &str, origin: &Url) -> Result<Self> {
         let webauthn = WebauthnBuilder::new(rp_id, origin)?
             .rp_name("Rust How-to")
@@ -93,10 +93,10 @@ impl RelyingParty {
         })
     }
 
-    /// browser sends back and the options for `navigator.credentials.create`.
+    /// Starts a registration ceremony and returns its ticket and browser-facing options.
     ///
     /// # Errors
-    /// Returns an error if the start registration operation cannot satisfy its required invariants.
+    /// Returns an error if WebAuthn cannot create registration options for the user.
     fn start_registration(
         &mut self,
         user: &str,
@@ -367,8 +367,7 @@ mod tests {
         Ok(())
     }
 
-    /// A subdomain is allowed by the RP ID, but the server expects exactly
-    /// the configured origin and rejects ceremonies that ran elsewhere.
+    /// Rejects a registration request from an untrusted origin.
     #[test]
     fn server_rejects_a_different_origin() -> Result<()> {
         let mut s = setup();
@@ -392,8 +391,7 @@ mod tests {
         Ok(())
     }
 
-    /// An RP ID that is not a suffix of the origin's domain is refused up
-    /// front.
+    /// An RP ID that is not a suffix of the origin's domain is refused up front.
     #[test]
     fn rp_id_must_match_the_origin() {
         let origin = Url::parse("https://example.com").expect("valid URL");

@@ -57,7 +57,6 @@ mod tests {
     use super::*;
 
     /// Reads supplied input without blocking on interactive standard input.
-    /// Runs the stdin stdout example through its entry point.
     #[test]
     fn test_stdin_stdout_example_entry_point() -> anyhow::Result<()> {
         let input = io::Cursor::new("Ada\n");
@@ -65,6 +64,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

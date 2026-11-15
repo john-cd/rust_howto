@@ -82,6 +82,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Wraps long text to fit the specified width.
     #[test]
     fn wraps_text_at_narrow_width() {
         let text = "Parley lays out this longer sentence using the bundled Roboto font.";

@@ -49,6 +49,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Updates the reactive counter when actions are dispatched.
     #[test]
     fn actions_update_reactive_counter_state() {
         let counter = RwSignal::new(0);

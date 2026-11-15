@@ -29,6 +29,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Adds two integers.
     #[test]
     fn adds_two_integers() {
         assert_eq!(add(2, 2), 4);

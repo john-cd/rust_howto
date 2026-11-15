@@ -72,8 +72,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that the example succeeds with its injected test secret and fails on invalid
-    /// secrets.
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_jwt_service_entry_point() -> anyhow::Result<()> {
         main()?;

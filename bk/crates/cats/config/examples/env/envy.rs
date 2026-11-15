@@ -47,8 +47,7 @@ mod tests {
 
     use super::*;
 
-    /// Verifies the example with environment values isolated in a child
-    /// process.
+    /// Verifies the example with environment values isolated in a child process.
     #[test]
     fn test_envy_example_entry_point() -> std::io::Result<()> {
         let output = Command::new(std::env::current_exe()?)

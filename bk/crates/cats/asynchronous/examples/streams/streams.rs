@@ -43,6 +43,7 @@ mod tests {
         main();
     }
 
+    /// Verifies that the stream yields one to five then ends.
     #[tokio::test]
     async fn stream_yields_one_to_five_then_ends() {
         let mut s = count_to_five().await;

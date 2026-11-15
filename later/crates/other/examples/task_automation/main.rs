@@ -119,6 +119,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports an error when invalid schedule occurs.
     #[test]
     fn invalid_schedule_is_an_error() {
         assert!(Task::new("not a schedule", "true").is_err());

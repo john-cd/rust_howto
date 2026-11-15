@@ -447,7 +447,6 @@ mod tests {
     use super::*;
 
     /// Checks the parsed root, child element, attribute, and text node.
-    /// Runs the xml5ever example through its entry point.
     #[test]
     fn test_xml5ever_example_entry_point() -> anyhow::Result<()> {
         main()

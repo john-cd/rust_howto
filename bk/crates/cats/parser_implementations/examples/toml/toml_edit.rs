@@ -19,7 +19,7 @@ use toml_edit::value;
 /// Returns an error if parsing or document edits fail.
 ///
 /// # Panics
-/// Panics if `tokio` features should be an array.
+/// Panics if `tokio.features` is missing or is not an array.
 fn main() -> anyhow::Result<()> {
     // Parse existing TOML, here a `Cargo.toml` file:
     let toml_content = r#"

@@ -157,6 +157,7 @@ mod tests {
         assert!((report.average_wait_seconds - 1.0).abs() < f64::EPSILON);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

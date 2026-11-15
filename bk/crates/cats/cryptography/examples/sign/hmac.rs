@@ -59,13 +59,13 @@ mod tests {
     use super::*;
 
     /// Verifies that the hmac example's main path succeeds.
-    /// Runs the hmac example through its entry point.
     #[test]
     fn test_hmac_example_entry_point() -> anyhow::Result<()> {
         main().map_err(|_| anyhow::anyhow!("hmac.rs failure"))?;
         Ok(())
     }
 
+    /// Checks that the verification fails for other messages and keys.
     #[test]
     fn verification_fails_for_other_messages_and_keys() {
         let key = hmac::Key::new(hmac::HMAC_SHA256, &[1u8; 48]);
@@ -77,6 +77,7 @@ mod tests {
         assert!(hmac::verify(&other, b"message", tag.as_ref()).is_err());
     }
 
+    /// Matches the rfc 4231 test vector.
     #[test]
     fn matches_the_rfc_4231_test_vector() {
         let key = hmac::Key::new(hmac::HMAC_SHA256, &[0x0b; 20]);

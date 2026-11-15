@@ -66,6 +66,7 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["constants", "static_mut", "statics"];
 
+    /// Confirms that the command and its arguments are valid.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

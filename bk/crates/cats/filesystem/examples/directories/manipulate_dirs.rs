@@ -104,8 +104,7 @@ mod tests {
         Ok(())
     }
 
-    /// A pre-existing `example_dir` is reused; a non-empty one cannot be
-    /// removed.
+    /// A pre-existing `example_dir` is reused; a non-empty one cannot be removed.
     #[test]
     fn non_empty_example_dir_is_an_error() -> std::io::Result<()> {
         let base = tempfile::tempdir()?;

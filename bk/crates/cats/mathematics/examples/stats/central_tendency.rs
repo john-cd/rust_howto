@@ -38,7 +38,6 @@ mod tests {
     use super::*;
 
     /// Calculates the mean for the example data.
-    /// Runs the central tendency example through its entry point.
     #[test]
     fn test_central_tendency_example_entry_point() {
         main();

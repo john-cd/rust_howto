@@ -61,7 +61,6 @@ mod tests {
     use super::*;
 
     /// Verifies that the memmap2 example's main path succeeds.
-    /// Runs the memmap2 example through its entry point.
     #[test]
     fn test_memmap2_example_entry_point() -> anyhow::Result<()> {
         use std::fs;

@@ -99,7 +99,7 @@ type Client = CoreClient<
 /// itself: no discovery request is made.
 ///
 /// # Errors
-/// Returns an error if the build client operation cannot satisfy its required invariants.
+/// Returns an error if any provider, token, or redirect URL is invalid.
 fn build_client(issuer: &str) -> anyhow::Result<Client> {
     let metadata = CoreProviderMetadata::new(
         IssuerUrl::new(issuer.to_owned())?,
@@ -337,6 +337,7 @@ mod tests {
         assert!(main().is_ok());
     }
 
+    /// Confirms that the authorization URL has state nonce and pkce.
     #[test]
     fn authorization_url_has_state_nonce_and_pkce() {
         let client = build_client(ISSUER).expect("valid metadata");

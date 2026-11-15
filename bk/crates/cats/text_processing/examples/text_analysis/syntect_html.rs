@@ -28,7 +28,7 @@ static THEMES: LazyLock<ThemeSet> = LazyLock::new(ThemeSet::load_defaults);
 const THEME: &str = "base16-ocean.dark";
 
 /// # Errors
-/// An error is returned if find_syntax_by_extension, get fails.
+/// Returns an error if the Rust syntax or configured theme is unavailable, or highlighting fails.
 fn main() -> anyhow::Result<()> {
     let code = "fn main() {\n    println!(\"hello\");\n}\n";
 

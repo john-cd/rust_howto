@@ -44,6 +44,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Confirms that the rounded sum is approximately equal.
     #[test]
     fn rounded_sum_is_approximately_equal() {
         main();

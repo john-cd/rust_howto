@@ -75,14 +75,12 @@ mod tests {
     use super::*;
 
     /// Confirms the current example crate opts into the workspace lint table.
-    /// Runs the workspace lints example through its entry point.
     #[test]
     fn test_workspace_lints_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 
-    /// Checks that a candidate fix preserves comments and enables workspace
-    /// lints.
+    /// Checks that a candidate fix preserves comments and enables workspace lints.
     #[test]
     fn detects_and_fixes_a_missing_table() -> anyhow::Result<()> {
         let before = "[package]\nname = \"demo\" # keep this comment\n";

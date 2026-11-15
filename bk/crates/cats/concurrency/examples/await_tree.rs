@@ -136,8 +136,7 @@ mod tests {
         main();
     }
 
-    /// # Errors
-    /// An error is returned if registry_collects_the_registered_trees fails.
+    /// Verifies that the registry collects the registered trees.
     #[tokio::test]
     async fn registry_collects_the_registered_trees() -> Result<(), Box<dyn std::error::Error>> {
         let registry = Registry::new(ConfigBuilder::default().verbose(true).build()?);

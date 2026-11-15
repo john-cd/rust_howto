@@ -42,6 +42,7 @@ mod tests {
         main();
     }
 
+    /// Returns the documented string.
     #[test]
     fn returns_the_documented_string() {
         assert_eq!(return_a_string(), "This will be printed.");

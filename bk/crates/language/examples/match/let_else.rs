@@ -7,15 +7,13 @@
 //! must diverge (return, break or panic). It keeps the main path unindented
 //! compared with a nested `if let`.
 
-/// Parses `input` as a number, or panics.
-/// Turns the supplied number representation into the structured value consumed by let else,
-/// rejecting malformed input.
+/// Parses `input` as a `u32`, panicking if it is invalid.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested let else operation.
+/// * `input` - Text to parse as a `u32`.
 ///
 /// # Panics
-/// Panics if the guarded invariant is violated.
+/// Panics if `input` is not a valid `u32`.
 fn parse_number(input: &str) -> u32 {
     // Try to parse the input string.
     let Ok(num) = input.parse::<u32>() else {

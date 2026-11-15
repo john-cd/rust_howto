@@ -68,13 +68,13 @@ mod tests {
     use super::*;
 
     /// Verifies Ed25519 signatures reject a changed message.
-    /// Runs the ed25519 dalek example through its entry point.
     #[test]
     fn test_ed25519_dalek_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }
 
+    /// Rejects the tampered signature.
     #[test]
     fn tampered_signature_is_rejected() {
         let signing_key = SigningKey::from_bytes(&[9u8; 32]);
@@ -88,8 +88,7 @@ mod tests {
         assert!(verifying_key.verify(b"Hello, world!", &tampered).is_err());
     }
 
-    /// # Errors
-    /// An error is returned if from_bytes fails.
+    /// Verifies that the verifying key roundtrips through bytes.
     #[test]
     fn verifying_key_roundtrips_through_bytes() -> anyhow::Result<()> {
         let key = SigningKey::from_bytes(&[3u8; 32]).verifying_key();

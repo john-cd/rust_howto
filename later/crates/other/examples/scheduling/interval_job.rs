@@ -100,13 +100,13 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Exercises the interval and missed-tick behavior using Tokio's paused
-    /// clock.
+    /// Runs interval ticks and applies the missed-tick policy while Tokio's clock is paused.
     #[tokio::test(start_paused = true)]
     async fn paused_clock_runs_expected_ticks() -> anyhow::Result<()> {
         demo().await
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

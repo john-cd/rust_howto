@@ -69,6 +69,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Installs the telemetry exporter and flushes completed spans.
     #[test]
     fn installs_exporter_and_flushes_span() {
         main().expect("the in-process stdout exporter should flush");

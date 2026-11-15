@@ -51,6 +51,7 @@ mod tests {
 
     // output-only: the example only prompts the user, so there is nothing to
     // assert without an interactive terminal.
+    /// Runs the interactive prompt when user input is available.
     #[test]
     #[ignore = "Requires user input"]
     fn require_user_input() {

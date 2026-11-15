@@ -57,6 +57,7 @@ mod tests {
         main();
     }
 
+    /// Returns their values for spawned tasks.
     #[test]
     fn spawned_tasks_return_their_values() {
         let total = smol::block_on(async {
@@ -70,6 +71,7 @@ mod tests {
         assert_eq!(total, 3);
     }
 
+    /// Verifies that the timer waits at least the requested duration.
     #[test]
     fn timer_waits_at_least_the_requested_duration() {
         let start = std::time::Instant::now();

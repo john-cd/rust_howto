@@ -38,6 +38,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that the colorized strings contain ansi codes only when color is enabled.
     #[test]
     fn colorized_strings_contain_ansi_codes_only_when_color_is_enabled() {
         colored::control::set_override(true);

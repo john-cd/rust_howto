@@ -43,9 +43,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Launches the app: with the `dioxus` feature this opens a window, so it
-    /// is skipped; without it `main` does nothing.
-    /// Rendering.
+    /// Runs the example through its entry point without error.
     #[test]
     #[cfg_attr(feature = "dioxus", ignore = "launches the Dioxus renderer")]
     fn test_main_entry_point() {

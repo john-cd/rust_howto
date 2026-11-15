@@ -30,6 +30,7 @@ fn run() -> u8 {
 mod tests {
     use super::*;
 
+    /// Checks that the checksum wraps and handles empty input.
     #[test]
     fn checksum_wraps_and_handles_empty_input() {
         assert_eq!(checksum(&[]), 0);

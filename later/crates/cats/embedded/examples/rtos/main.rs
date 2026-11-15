@@ -69,9 +69,7 @@ fn run_example() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    /// work.
-
+    /// Schedules higher-priority work before lower-priority work when it becomes ready.
     #[test]
     fn higher_priority_job_runs_first_when_released() {
         let mut jobs = [

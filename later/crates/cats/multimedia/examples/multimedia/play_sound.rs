@@ -54,8 +54,7 @@ mod tests {
 
     use super::*;
 
-    /// The tone is mono and stops after about two seconds of samples, so it
-    /// needs no device.
+    /// Generates a mono tone of about two seconds without requiring an audio device.
     #[test]
     fn tone_has_the_expected_format() {
         let source = tone();

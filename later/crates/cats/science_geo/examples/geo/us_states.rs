@@ -51,6 +51,7 @@ mod tests {
         main();
     }
 
+    /// Rejects empty text.
     #[test]
     fn rejects_empty_text() {
         assert_eq!(parse_state(""), None);

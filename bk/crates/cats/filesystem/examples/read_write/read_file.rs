@@ -93,7 +93,6 @@ mod tests {
     use super::*;
 
     /// Verifies that the read file example's main path succeeds.
-    /// Runs the read file example through its entry point.
     #[test]
     fn test_read_file_example_entry_point() -> anyhow::Result<()> {
         use std::fs;

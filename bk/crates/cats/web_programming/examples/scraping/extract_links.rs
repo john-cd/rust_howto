@@ -63,8 +63,7 @@ mod tests {
     use super::extract_links;
     use super::main;
 
-    /// Verifies anchor links are selected while anchors without `href` are
-    /// skipped.
+    /// Verifies anchor links are selected while anchors without `href` are skipped.
     #[test]
     fn extracts_href_values_from_local_html() -> Result<()> {
         let html = r#"<a href="/first">one</a><a>empty</a><a href="https://example.test">two</a>"#;

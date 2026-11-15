@@ -73,8 +73,7 @@ mod tests {
         main()
     }
 
-    /// # Errors
-    /// Returns an I/O error if creating the poller or waker, waking it, or polling fails.
+    /// Checks that the waker produces a readable event.
     #[test]
     fn waker_produces_a_readable_event() -> std::io::Result<()> {
         let mut poll = Poll::new()?;
@@ -87,8 +86,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an I/O error if creating the poller or polling fails.
+    /// Verifies that the poll times out without events.
     #[test]
     fn poll_times_out_without_events() -> std::io::Result<()> {
         let mut poll = Poll::new()?;

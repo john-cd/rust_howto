@@ -86,7 +86,6 @@ mod tests {
     use super::*;
 
     /// Checks that all hash-map implementations count words consistently.
-    /// Runs the fast hashmap example through its entry point.
     #[test]
     fn test_fast_hashmap_example_entry_point() {
         main();

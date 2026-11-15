@@ -132,8 +132,7 @@ mod tests {
 
     use super::*;
 
-    /// Verifies that defaults, files, environment values, and CLI overrides
-    /// layer in order.
+    /// Verifies that defaults, files, environment values, and CLI overrides layer in order.
     #[test]
     fn cli_overrides_environment_and_toml_settings() -> anyhow::Result<()> {
         let config_dir = tempfile::tempdir()?;
@@ -157,6 +156,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

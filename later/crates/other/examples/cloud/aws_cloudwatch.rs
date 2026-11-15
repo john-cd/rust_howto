@@ -95,8 +95,7 @@ mod tests {
         Client::from_conf(config)
     }
 
-    /// Sends a metric to LocalStack and lists it back. Start LocalStack first:
-    /// `docker run -p 4566:4566 localstack/localstack`.
+    /// Sends a metric to LocalStack and retrieves it from CloudWatch.
     #[tokio::test]
     #[ignore = "requires LocalStack (CloudWatch) on localhost:4566"]
     async fn metrics_are_stored() -> Result<()> {

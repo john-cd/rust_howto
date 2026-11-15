@@ -188,6 +188,7 @@ mod tests {
     /// Requires a type to implement `Sync` at compile time.
     fn assert_sync<T: Sync>() {}
 
+    /// Verifies that the guard auto traits follow payload bounds.
     #[test]
     fn guard_auto_traits_follow_payload_bounds() {
         assert_send::<SpinlockGuard<'static, Cell<u8>>>();
@@ -195,6 +196,7 @@ mod tests {
         assert_sync::<SpinlockGuard<'static, u8>>();
     }
 
+    /// Verifies that the guard unlocks during unwind.
     #[test]
     fn guard_unlocks_during_unwind() {
         let lock = Spinlock::new(0);

@@ -259,8 +259,8 @@ mod tests {
         };
     }
 
+    /// Selects the expected link for routing scenario 1.
     #[test]
-    /// Tests the "full match" scenario with exactly one candidate.
     fn test_link_selection_scenario_1() {
         let selection = TransportUnicastUniversal::select(
             [
@@ -275,8 +275,8 @@ mod tests {
         assert_eq!(selection, Some(0));
     }
 
+    /// Selects the expected link for routing scenario 2.
     #[test]
-    /// Tests the "full match" scenario with multiple candidates.
     fn test_link_selection_scenario_2() {
         let selection = TransportUnicastUniversal::select(
             [
@@ -290,8 +290,8 @@ mod tests {
         assert_eq!(selection, Some(1));
     }
 
+    /// Selects the expected link for routing scenario 3.
     #[test]
-    /// Tests the "partial match" scenario.
     fn test_link_selection_scenario_3() {
         let selection = TransportUnicastUniversal::select(
             [
@@ -305,8 +305,8 @@ mod tests {
         assert_eq!(selection, Some(1));
     }
 
+    /// Selects the expected link for routing scenario 4.
     #[test]
-    /// Tests the "any match" scenario.
     fn test_link_selection_scenario_4() {
         let selection = TransportUnicastUniversal::select(
             [(Reliability::BestEffort, None)].into_iter(),

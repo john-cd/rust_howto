@@ -63,6 +63,7 @@ fn test_exponential_decay_solver_matches_exact_solution() {
 mod tests {
     use super::*;
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

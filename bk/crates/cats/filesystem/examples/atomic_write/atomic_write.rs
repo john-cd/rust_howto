@@ -107,8 +107,7 @@ mod tests {
         Ok(names)
     }
 
-    /// Replaces an existing file through tempfile and cleans up temporary
-    /// names.
+    /// Replaces an existing file through tempfile and cleans up temporary names.
     #[test]
     fn tempfile_variant_replaces_and_leaves_no_stray_files() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;

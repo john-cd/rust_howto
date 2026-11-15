@@ -51,13 +51,13 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Persists the lock publishes the updated value produced by the shared state parking lot2
-    /// workflow so later operations can retrieve it.
+    /// Writes lock publishes the updated value.
     #[test]
     fn write_lock_publishes_the_updated_value() {
         assert_eq!(value_after_write(), 6);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

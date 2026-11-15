@@ -48,6 +48,7 @@ mod tests {
 
     use super::documentation_subnet;
 
+    /// Checks that the subnet contains only its configured range.
     #[test]
     fn subnet_contains_only_its_configured_range() {
         let subnet = documentation_subnet();

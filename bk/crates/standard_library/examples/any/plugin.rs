@@ -173,7 +173,7 @@ pub fn run() {
     main();
 }
 
-/// An error is returned if ok_or fails.
+/// Tests conversions and downcasts involving plugin values.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -183,8 +183,7 @@ mod tests {
         main();
     }
 
-    /// # Errors
-    /// An error is returned if ok_or fails.
+    /// Registers and retrieves plugin state through shared and mutable references.
     #[test]
     fn test_context_register_get_and_get_mut() -> Result<(), Box<dyn std::error::Error>> {
         let mut ctx = Context::default();
@@ -201,8 +200,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if ok_or fails.
+    /// Verifies that the plugins cooperate through the context.
     #[test]
     fn test_plugins_cooperate_through_the_context() -> Result<(), Box<dyn std::error::Error>> {
         let mut manager = PluginManager::default();

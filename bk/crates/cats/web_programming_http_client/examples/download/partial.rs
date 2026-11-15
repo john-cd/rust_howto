@@ -362,8 +362,7 @@ mod tests {
         })
     }
 
-    /// Verifies adjacent inclusive ranges, empty intervals, and the integer
-    /// boundary.
+    /// Verifies adjacent inclusive ranges, empty intervals, and the integer boundary.
     #[test]
     fn iterator_produces_inclusive_non_overlapping_ranges() -> Result<()> {
         let ranges = PartialRangeIter::new(0, 24, 10)?

@@ -45,6 +45,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Matches expected output for standard and locale-specific formats.
     #[test]
     fn standard_and_locale_formats_match_expected_strings() {
         assert_eq!(format!("{:>10.2}", 12.5), "     12.50");
@@ -55,6 +56,7 @@ mod tests {
         assert_eq!(1_234_567_i64.to_formatted_string(&Locale::de), "1.234.567");
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

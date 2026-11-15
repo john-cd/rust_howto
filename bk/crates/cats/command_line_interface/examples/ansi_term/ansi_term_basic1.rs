@@ -34,6 +34,7 @@ mod tests {
         main();
     }
 
+    /// Verifies that the bold style wraps text in the bold code.
     #[test]
     fn bold_style_wraps_text_in_the_bold_code() {
         assert_eq!(
@@ -42,6 +43,7 @@ mod tests {
         );
     }
 
+    /// Leaves the text unchanged when processing the plain style.
     #[test]
     fn plain_style_leaves_text_unchanged() {
         assert_eq!(Style::new().paint("plain").to_string(), "plain");

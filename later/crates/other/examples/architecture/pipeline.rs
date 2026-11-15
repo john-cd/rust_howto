@@ -72,6 +72,7 @@ mod tests {
         main();
     }
 
+    /// Processes every item even when the queue exceeds channel capacity.
     #[test]
     fn processes_more_items_than_channel_capacity() {
         let results = run_pipeline(vec!["2"; 100]);

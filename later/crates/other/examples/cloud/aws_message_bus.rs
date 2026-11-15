@@ -383,11 +383,13 @@ mod tests {
         run()
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() -> Result<()> {
         main()
     }
 
+    /// Checks that garbage bodies are rejected when decoding.
     #[test]
     fn garbage_bodies_are_rejected_when_decoding() {
         assert!(decode_body::<OrderPlaced>("***not base64***").is_err());
@@ -410,9 +412,7 @@ mod tests {
             .await
     }
 
-    /// Publishes through SNS to a subscribed SQS queue and consumes the
-    /// message, then checks that it is gone. Start LocalStack first:
-    /// `docker run -p 4566:4566 localstack/localstack`.
+    /// Publishes through SNS to a subscribed SQS queue and consumes the resulting message.
     #[tokio::test]
     #[ignore = "requires LocalStack (SQS and SNS) on localhost:4566"]
     async fn sns_fans_out_to_sqs() -> Result<()> {

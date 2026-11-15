@@ -49,7 +49,7 @@ pub fn run() {
     main();
 }
 
-/// An error is returned if get_mut fails.
+/// Tests shared ownership and mutable access through `Rc`.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -70,8 +70,7 @@ mod tests {
         assert_eq!(Rc::strong_count(&a), 1);
     }
 
-    /// # Errors
-    /// An error is returned if get_mut fails.
+    /// Allows mutable access only when no other references to the value remain.
     #[test]
     fn test_get_mut_requires_unique_ownership() -> Result<(), Box<dyn std::error::Error>> {
         let mut y = Rc::new(4);

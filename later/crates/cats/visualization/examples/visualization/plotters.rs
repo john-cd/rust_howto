@@ -61,8 +61,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 mod tests {
     use super::*;
 
-    /// Tests that the line chart is rendered into an SVG string containing
-    /// expected elements.
+    /// Renders a line chart as SVG containing the expected elements.
     #[test]
     fn test_generate_line_chart_svg() {
         let svg = generate_line_chart_svg().expect("SVG generation should succeed.");

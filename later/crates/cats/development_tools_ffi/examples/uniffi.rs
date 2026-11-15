@@ -102,6 +102,7 @@ mod tests {
         uniffi_example()
     }
 
+    /// Formats the caller's name in the greeting response.
     #[test]
     fn greet_formats_the_name() {
         assert_eq!(greet("Ada".to_owned()), "Hello, Ada!");

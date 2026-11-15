@@ -84,7 +84,6 @@ mod tests {
     use super::*;
 
     /// Checks that the menu example builds and prints the enum metadata.
-    /// Runs the strum messages example through its entry point.
     #[test]
     fn test_strum_messages_example_entry_point() {
         main();

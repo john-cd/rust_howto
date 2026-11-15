@@ -104,8 +104,7 @@ fn run() {
 mod tests {
     use super::*;
 
-    /// allocates and that repeated lookups do not. The counting allocator is
-    /// per thread, so the test harness does not affect the counts.
+    /// allocates and that repeated lookups do not.
     #[test]
     fn test_main_measures_allocations() {
         main();

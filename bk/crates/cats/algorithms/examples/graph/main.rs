@@ -9,23 +9,17 @@ use clap::Subcommand;
 
 /// Implicit grid pathfinding using the A* algorithm and the `pathfinding` crate.
 mod pathfinding_astar;
-/// Builds or traverses graph graph data while preserving relationships needed by downstream
-/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
+/// Finds a shortest path on a weighted graph with A* and Manhattan distance.
 mod petgraph_astar;
-/// Builds or traverses graph graph data while preserving relationships needed by downstream
-/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
+/// Visits graph nodes level by level from the start node.
 mod petgraph_bfs;
-/// Builds or traverses graph graph data while preserving relationships needed by downstream
-/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
+/// Explores a graph depth first to illustrate branch traversal order.
 mod petgraph_dfs;
-/// Builds or traverses graph graph data while preserving relationships needed by downstream
-/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
+/// Computes single-source shortest paths in a weighted directed graph.
 mod petgraph_dijkstra;
-/// Builds or traverses graph graph data while preserving relationships needed by downstream
-/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
+/// Builds a minimum spanning tree of a weighted undirected graph with Kruskal's algorithm.
 mod petgraph_mst;
-/// Builds or traverses graph graph data while preserving relationships needed by downstream
-/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
+/// Orders tasks so each dependency precedes the task that needs it.
 mod petgraph_toposort;
 
 /// Command-line arguments.
@@ -39,25 +33,25 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-    /// Runs the `pathfinding_astar` example.
+    /// Finds a route through a grid with A* pathfinding.
     #[command(name = "pathfinding_astar")]
     PathfindingAstar,
-    /// Runs the `petgraph_astar` example.
+    /// Finds a low-cost route through a weighted graph with A*.
     #[command(name = "petgraph_astar")]
     Astar,
-    /// Runs the `petgraph_bfs` example.
+    /// Traverses an unweighted graph level by level with BFS.
     #[command(name = "petgraph_bfs")]
     Bfs,
-    /// Runs the `petgraph_dfs` example.
+    /// Traverses a graph depth first with DFS.
     #[command(name = "petgraph_dfs")]
     Dfs,
-    /// Runs the `petgraph_dijkstra` example.
+    /// Finds shortest paths from one source in a weighted graph.
     #[command(name = "petgraph_dijkstra")]
     Dijkstra,
-    /// Runs the `petgraph_toposort` example.
+    /// Orders task dependencies with a topological sort.
     #[command(name = "petgraph_toposort")]
     Toposort,
-    /// Runs the `petgraph_mst` example.
+    /// Builds a minimum spanning tree with Kruskal's algorithm.
     #[command(name = "petgraph_mst")]
     Mst,
 }
@@ -86,8 +80,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
-/// Parses the command line and runs the selected example.
+/// Parses the command line and dispatches to the selected graph example.
 fn main() {
     dispatch(Cli::parse());
 }
@@ -109,6 +102,7 @@ mod tests {
         "petgraph_mst",
     ];
 
+    /// Confirms that the command and its arguments are valid.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

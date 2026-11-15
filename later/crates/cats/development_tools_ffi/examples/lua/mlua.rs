@@ -40,16 +40,14 @@ pub fn run() -> LuaResult<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that Rust-created values are available to the Lua runtime.
-    /// Runs the mlua example through its entry point.
+    /// Makes Rust-created values available to the Lua runtime through the example entry point.
     #[test]
     fn test_mlua_example_entry_point() -> LuaResult<()> {
         main()?;
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if create_table, set fails.
+    /// Round-trips values between Rust globals and Lua table fields.
     #[test]
     fn globals_round_trip_through_lua() -> LuaResult<()> {
         let lua = Lua::new();
@@ -65,6 +63,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports errors for the lua syntax.
     #[test]
     fn lua_syntax_errors_are_reported() {
         let lua = Lua::new();

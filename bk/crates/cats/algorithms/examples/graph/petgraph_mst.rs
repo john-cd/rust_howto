@@ -69,13 +69,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the `petgraph` Minimum Spanning Tree example by calling `main()`.
+/// Demonstrates Kruskal's minimum spanning tree for an undirected weighted graph.
 pub fn run() {
     main();
 }
 
-/// using
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -76,11 +76,13 @@ mod tests {
         Ok(())
     }
 
+    /// Rejects an incomplete expression during parsing.
     #[test]
     fn parser_rejects_an_incomplete_expression() {
         assert!(parse_expression("3 +").is_err());
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

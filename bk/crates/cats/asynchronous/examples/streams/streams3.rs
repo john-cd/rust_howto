@@ -109,8 +109,7 @@ mod tests {
         assert!(fetch_data(6).await.is_err());
     }
 
-    /// # Errors
-    /// An error is returned if into_inner fails.
+    /// Checks that the concurrent processing handles every item.
     #[tokio::test(start_paused = true)]
     async fn concurrent_processing_handles_every_item() -> Result<(), Box<dyn std::error::Error>> {
         let results = std::sync::Mutex::new(Vec::new());

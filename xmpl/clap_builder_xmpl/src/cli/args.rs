@@ -215,9 +215,7 @@ mod tests {
     fn test_arg_verbose_none() -> std::io::Result<()> {
         check_environment(None, None)
     }
-    /// Checks that repeated `-v` flags raise the verbosity.
-
-    /// Accepts repeated verbose flags.
+    /// Raises verbosity according to the number of repeated `-v` flags.
     #[test]
     fn test_arg_verbose_multiple() {
         let m = cli().get_matches_from(vec!["prog", "-vvv"]);

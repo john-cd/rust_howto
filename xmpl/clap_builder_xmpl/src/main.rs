@@ -51,9 +51,7 @@ mod tests {
     fn describe_args(args: &[&str]) -> Vec<String> {
         describe(cli::get_args_from(args))
     }
-    /// valid for the demo CLI, so it only works when they are ignored.
-
-    /// Runs the program default command successfully.
+    /// Checks that the real CLI entry point starts under the test harness.
     #[test]
     #[ignore = "main() parses the real process arguments, which belong to the test harness"]
     fn main_runs() {
@@ -87,9 +85,7 @@ mod tests {
         assert_eq!(lines[1], "Value for config file: a.toml");
         assert_eq!(lines[2], r#"Command: open ["x.csv"]"#);
     }
-    /// Queries and test.
-
-    /// Parses the query and test subcommands.
+    /// Parses the `query` and `test` subcommands into their expected commands.
     #[test]
     fn query_and_test() {
         assert_eq!(

@@ -45,6 +45,7 @@ mod tests {
         main();
     }
 
+    /// Checks that generated strings are alphanumeric and sorted.
     #[test]
     fn generated_strings_are_alphanumeric_and_sorted() {
         let mut vec = vec![String::new(); 100];

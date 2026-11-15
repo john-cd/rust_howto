@@ -39,12 +39,12 @@ mod tests {
     use super::*;
 
     /// Verifies that the type and source-location diagnostics can be evaluated.
-    /// Runs the type name of val example through its entry point.
     #[test]
     fn test_type_name_of_val_example_entry_point() {
         main();
     }
 
+    /// Reports iterator sums and type names.
     #[test]
     fn iterator_sums_and_type_names_are_reported() {
         assert_eq!(get_iter().sum::<i32>(), 6);

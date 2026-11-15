@@ -123,11 +123,7 @@ mod tests {
         Client::from_conf(config)
     }
 
-    /// Sends an email through a local SES v2 emulator. The community edition
-    /// of LocalStack does not include SES v2; use Moto instead:
-    /// `pip install "moto[server]"`, then `moto_server -p 5000` and
-    /// `AWS_ENDPOINT_URL=http://localhost:5000`. SES v2 requires a verified
-    /// sender, so the test creates the identity first.
+    /// Sends an email through an SES v2 emulator after verifying the sender identity.
     #[tokio::test]
     #[ignore = "requires an SES v2 emulator (Moto) on AWS_ENDPOINT_URL"]
     async fn email_is_accepted() -> Result<()> {

@@ -38,6 +38,7 @@ fn ack_with_counters(bob_counters: HandoffCounterIds) -> open::ext::Shm {
     open::ext::Shm::new(bytes.into())
 }
 
+/// Enables shared memory for both reliability modes after a completed handshake.
 #[tokio::test]
 async fn completed_handshake_enables_shm_for_both_reliabilities() {
     for reliability in [Reliability::Reliable, Reliability::BestEffort] {
@@ -67,6 +68,7 @@ async fn completed_handshake_enables_shm_for_both_reliabilities() {
     }
 }
 
+/// Disables shared memory for both peers when either segment open fails.
 #[tokio::test]
 async fn one_sided_auth_segment_open_failure_disables_both_peers() {
     let alice_auth = AuthUnicast::new(&[]).unwrap();
@@ -102,6 +104,7 @@ async fn one_sided_auth_segment_open_failure_disables_both_peers() {
     assert_disabled(bob);
 }
 
+/// Disables initiator shared memory when the open acknowledgment is absent.
 #[tokio::test]
 async fn absent_open_ack_disables_initiator_shm() {
     let alice_auth = AuthUnicast::new(&[]).unwrap();
@@ -120,6 +123,7 @@ async fn absent_open_ack_disables_initiator_shm() {
     assert_disabled(alice);
 }
 
+/// Refuses the link when the peer rejects the shared-memory open request.
 #[tokio::test]
 async fn rejected_open_syn_refuses_the_link() {
     let alice_auth = AuthUnicast::new(&[]).unwrap();
@@ -146,6 +150,7 @@ async fn rejected_open_syn_refuses_the_link() {
     assert_disabled(bob);
 }
 
+/// Rejects establishment when shared-memory counters cannot be used.
 #[tokio::test]
 async fn unusable_open_syn_counters_reject_establishment() {
     let alice_auth = AuthUnicast::new(&[]).unwrap();
@@ -169,6 +174,7 @@ async fn unusable_open_syn_counters_reject_establishment() {
     assert_disabled(bob);
 }
 
+/// Checks that the absent open syn keeps acceptor plain.
 #[tokio::test]
 async fn absent_open_syn_keeps_acceptor_plain() {
     let bob_auth = AuthUnicast::new(&[]).unwrap();
@@ -179,6 +185,7 @@ async fn absent_open_syn_keeps_acceptor_plain() {
     assert_disabled(bob);
 }
 
+/// Rejects the establishment when processing malformed open ack.
 #[tokio::test]
 async fn malformed_open_ack_rejects_establishment() {
     let alice_auth = AuthUnicast::new(&[]).unwrap();
@@ -201,6 +208,7 @@ async fn malformed_open_ack_rejects_establishment() {
     );
 }
 
+/// Rejects establishment when the open acknowledgment has invalid counters.
 #[tokio::test]
 async fn invalid_open_ack_counters_reject_establishment() {
     let alice_auth = AuthUnicast::new(&[]).unwrap();
@@ -242,6 +250,7 @@ async fn exchange_init_with_unreachable_segment(alice: &ShmFsm<'_>, bob: &ShmFsm
     alice.recv_init_ack(Some(ack)).await.unwrap();
 }
 
+/// Rejects the establishment when processing the unsolicited open ack.
 #[tokio::test]
 async fn unsolicited_open_ack_rejects_establishment() {
     // Positive control: the same flow with a reachable segment completes.
@@ -271,8 +280,7 @@ async fn unsolicited_open_ack_rejects_establishment() {
     );
 }
 
-/// Loads the ack without offer is ignored required by the auth tests workflow and reports failures
-/// from the underlying source.
+/// Ignores an OpenAck shared-memory extension when the initiator made no shared-memory offer.
 #[tokio::test]
 async fn open_ack_without_offer_is_ignored() {
     // Every OpenAck below carries an extension that no offer asked for: a valid one,
@@ -303,11 +311,7 @@ async fn open_ack_without_offer_is_ignored() {
     }
 }
 
-/// Loads the ack without local proposal rejects establishment required by the auth tests workflow
-/// and reports failures from the underlying source.
-///
-/// # Panics
-/// Panics if an internal `Result` or `Option` has no usable value.
+/// Rejects the establishment when processing the open ack without local proposal.
 #[tokio::test]
 async fn open_ack_without_local_proposal_rejects_establishment() {
     let alice_auth = AuthUnicast::new(&[]).unwrap();
@@ -334,6 +338,7 @@ fn free_tx_counters(auth: &AuthUnicast) -> usize {
     held.len()
 }
 
+/// Checks that the declined open syn leaves acceptor tx counters free.
 #[tokio::test]
 async fn declined_open_syn_leaves_acceptor_tx_counters_free() {
     let full = free_tx_counters(&AuthUnicast::new(&[]).unwrap());
@@ -400,9 +405,7 @@ async fn declined_open_syn_leaves_acceptor_tx_counters_free() {
     }
 }
 
-/// A 1.9.0 initiator puts its segment in the InitSyn, so the acceptor maps it. Its OpenSyn
-/// extension has the 1.9.0 format and arrives at the acceptor as no extension. This models what
-/// the acceptor sees, not the 1.9.0 code of the initiator.
+/// Checks that the initiator without open syn extension keeps acceptor plain.
 #[tokio::test]
 async fn initiator_without_open_syn_extension_keeps_acceptor_plain() {
     let full = free_tx_counters(&AuthUnicast::new(&[]).unwrap());

@@ -32,14 +32,12 @@ mod tests {
     use super::*;
 
     /// Verifies that the example can fill its nonce buffer.
-    /// Runs the getrandom example example through its entry point.
     #[test]
     fn test_getrandom_example_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 
-    /// # Errors
-    /// An error is returned if fill fails.
+    /// Verifies that the fills distinct nonzero buffers.
     #[test]
     fn fills_distinct_nonzero_buffers() -> anyhow::Result<()> {
         let mut a = [0_u8; 32];
@@ -52,6 +50,7 @@ mod tests {
         Ok(())
     }
 
+    /// Confirms that the hex encoding of a nonce has twice the length.
     #[test]
     fn hex_encoding_of_a_nonce_has_twice_the_length() {
         assert_eq!(hex::encode([0xab, 0x01]), "ab01");

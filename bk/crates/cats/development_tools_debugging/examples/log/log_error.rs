@@ -44,6 +44,7 @@ mod tests {
         });
     }
 
+    /// Checks that execute query always fails with the documented message.
     #[test]
     fn execute_query_always_fails_with_the_documented_message() {
         assert_eq!(

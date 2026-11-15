@@ -55,7 +55,6 @@ mod tests {
     use super::*;
 
     /// Verifies that the tracing span entered example's main path succeeds.
-    /// Runs the tracing span entered example through its entry point.
     #[test]
     fn test_tracing_span_entered_example_entry_point() {
         let _ = tracing_subscriber::fmt()
@@ -118,6 +117,7 @@ mod tests {
         String::from_utf8(output).expect("tracing output should be valid UTF-8")
     }
 
+    /// Confirms that the events are inside the span only while it is entered.
     #[test]
     fn events_are_inside_the_span_only_while_it_is_entered() {
         let out = capture(main);

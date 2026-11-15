@@ -52,6 +52,7 @@ mod tests {
         main();
     }
 
+    /// Returns the compile time shell or the default for the env extract.
     #[test]
     fn env_extract_returns_the_compile_time_shell_or_the_default() {
         let expected = option_env!("SHELL").unwrap_or("no shell set");

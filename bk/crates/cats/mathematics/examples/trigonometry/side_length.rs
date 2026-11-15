@@ -45,8 +45,7 @@ mod tests {
         main();
     }
 
-    /// Known triangles: 30 degrees halves the hypotenuse; 90 degrees equals
-    /// the side. A zero angle degenerates to infinity.
+    /// Known triangles: 30 degrees halves the hypotenuse; 90 degrees equals the side.
     #[test]
     fn computes_known_triangles() {
         assert!((hypotenuse(std::f64::consts::FRAC_PI_6, 5.0) - 10.0).abs() < 1e-12);

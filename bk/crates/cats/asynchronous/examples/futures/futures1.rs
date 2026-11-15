@@ -63,6 +63,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that the select completes when a task is ready.
     #[tokio::test]
     async fn select_completes_when_a_task_is_ready() {
         race_tasks().await;

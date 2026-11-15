@@ -82,10 +82,10 @@ impl<'a, T: ToSql + Sync + 'a, A: ArraySql<Item = T>> ToSql for DomainArray<'a, 
     }
 }
 /// # Errors
-/// An error is returned if downcast, array_to_sql fails.
+/// Returns an error if the array length cannot be represented or an element cannot be serialized.
 ///
 /// # Panics
-/// Panics if the guarded invariant is violated.
+/// Panics if `ty` is not an array type.
 pub fn escape_domain_to_sql<T: ToSql>(
     ty: &Type,
     w: &mut BytesMut,

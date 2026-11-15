@@ -59,8 +59,7 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    /// Verifies wav encode roundtrip.
-
+    /// Encodes and decodes WAV audio without changing its contents.
     #[test]
     fn test_wav_encode_roundtrip() {
         main().expect("WAV encoding example should succeed");

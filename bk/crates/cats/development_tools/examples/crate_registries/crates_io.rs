@@ -28,7 +28,7 @@ fn get_client() -> Result<SyncClient> {
 /// Retrieve information for a given crate.
 ///
 /// # Errors
-/// Returns an error if the get info for crate operation cannot satisfy its required invariants.
+/// Returns an error if the HTTP request fails or the crates.io response cannot be parsed.
 #[tracing::instrument(err)]
 fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
     let client = get_client()?;
@@ -143,8 +143,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if client_is_built_without_network_access fails.
+    /// Confirms that the client is built without network access.
     #[test]
     fn client_is_built_without_network_access() -> Result<()> {
         // Constructing the client does not contact crates.io.
@@ -152,6 +151,7 @@ mod tests {
         Ok(())
     }
 
+    /// Rejects an invalid user agent for the HTTP client.
     #[test]
     fn client_rejects_an_invalid_user_agent() {
         let result = SyncClient::new("bad\nagent", std::time::Duration::from_millis(1));

@@ -64,7 +64,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies mongodb subcommand parses.
+    /// Parses the MongoDB subcommand when its feature is enabled.
     #[cfg(feature = "mongodb")]
     #[test]
     fn test_mongodb_subcommand_parses() {

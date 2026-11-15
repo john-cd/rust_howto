@@ -98,6 +98,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Preserves message fields in the Cap’n Proto round trip.
     #[test]
     fn capnp_round_trip_preserves_the_message() -> anyhow::Result<()> {
         main()

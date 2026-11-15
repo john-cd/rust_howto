@@ -84,8 +84,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that both flex-row children have the expected positions and
-    /// sizes.
+    /// Computes the expected positions and sizes for both children in a flex row.
     #[test]
     fn flex_row_computes_positions_and_sizes() -> anyhow::Result<()> {
         let [

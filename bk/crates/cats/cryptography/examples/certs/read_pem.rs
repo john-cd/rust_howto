@@ -81,8 +81,7 @@ mod tests {
         main()
     }
 
-    /// # Errors
-    /// An error is returned if reads_the_der_bytes_of_a_certificate_file, create_dir_all fails.
+    /// Reads the der bytes of a certificate file.
     #[test]
     fn reads_the_der_bytes_of_a_certificate_file() -> anyhow::Result<()> {
         let key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
@@ -96,8 +95,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Panics
-    /// Panics if the guarded invariant is violated.
+    /// Checks that other pem labels are rejected.
     #[test]
     fn other_pem_labels_are_rejected() -> anyhow::Result<()> {
         let key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
@@ -113,8 +111,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if create_dir_all, write fails.
+    /// Checks that missing and malformed files are errors.
     #[test]
     fn missing_and_malformed_files_are_errors() -> anyhow::Result<()> {
         assert!(read_pem_certificate("/definitely/not/here.pem").is_err());

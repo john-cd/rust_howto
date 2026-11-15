@@ -116,8 +116,7 @@ mod tests {
 
     use super::*;
 
-    /// Verifies a password hash accepts the original password and rejects a
-    /// guess.
+    /// Verifies a password hash accepts the original password and rejects a guess.
     #[test]
     fn argon2_verification_rejects_wrong_password() -> Result<(), Error> {
         let params = Params::new(32, 1, 1, None)?;
@@ -139,8 +138,7 @@ mod tests {
         Ok(())
     }
 
-    /// Hashing the same password twice yields different PHC strings (random
-    /// salts), and both verify.
+    /// Produces a different salted hash for each use of the same password.
     #[test]
     fn argon2_same_password_gets_different_hashes() -> Result<(), Error> {
         let params = Params::new(32, 1, 1, None)?;
@@ -168,6 +166,7 @@ mod tests {
         assert!(password_verification(b"password", "not a PHC string").is_err());
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

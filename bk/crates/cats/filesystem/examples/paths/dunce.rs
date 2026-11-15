@@ -17,7 +17,7 @@ use std::path::PathBuf;
 /// * `path` - Filesystem location the operation reads, updates, or uses as its scope.
 ///
 /// # Errors
-/// Returns an error if the canonical path operation cannot satisfy its required invariants.
+/// Returns an error if the path cannot be canonicalized.
 fn canonical_path(path: &Path) -> std::io::Result<PathBuf> {
     // `dunce::canonicalize` calls `std::fs::canonicalize`, then removes the
     // "verbatim" prefix when the shorter path is equivalent. On Unix it is
@@ -54,13 +54,12 @@ pub fn run() -> std::io::Result<()> {
     example_body()
 }
 
-/// An error is returned if dunce_result_has_no_verbatim_prefix, canonical_path fails.
+/// Tests canonical path handling, including removal of Windows verbatim prefixes.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// An error is returned if dunce_result_has_no_verbatim_prefix, canonical_path fails.
+    /// Confirms that the dunce result has no verbatim prefix.
     #[test]
     fn dunce_result_has_no_verbatim_prefix() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
@@ -70,9 +69,6 @@ mod tests {
     }
 
     /// Runs the path example using a temporary directory.
-    ///
-    /// # Errors
-    /// Returns an error if the directory cannot be created or resolved.
     #[test]
     fn run_succeeds() -> anyhow::Result<()> {
         run()?;

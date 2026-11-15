@@ -94,7 +94,6 @@ mod tests {
     use super::*;
 
     /// Checks the supervisor restarts a failed worker and observes shutdown.
-    /// Runs the supervisor example through its entry point.
     #[test]
     fn test_supervisor_example_entry_point() {
         main();

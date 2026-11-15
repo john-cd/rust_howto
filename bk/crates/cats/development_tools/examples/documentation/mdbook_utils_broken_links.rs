@@ -63,8 +63,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies that only the undefined reference is reported; ignored when the
-    /// tool is not installed.
+    /// Reports only the undefined reference.
     #[test]
     #[ignore = "needs `mdbook-utils` on the PATH (cargo install mdbook-utils)"]
     fn reports_only_the_undefined_reference() -> Result<()> {
@@ -79,12 +78,14 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     #[ignore = "needs `mdbook-utils` on the PATH (cargo install mdbook-utils)"]
     fn test_main_entry_point() -> Result<()> {
         main()
     }
 
+    /// Confirms that missing tool or directory is reported as an error.
     #[test]
     fn missing_tool_or_directory_is_reported_as_an_error() {
         let dir = tempfile::tempdir().expect("temporary directory should be created");

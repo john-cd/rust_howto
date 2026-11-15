@@ -63,15 +63,13 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the call async from blocking tokio runtime example through its
-    /// entry point.
+    /// Runs the call async from blocking tokio runtime example through its entry point.
     #[test]
     fn test_call_async_from_blocking_tokio_runtime_example_entry_point() {
         main();
     }
 
-    /// # Errors
-    /// An error is returned if background_task_runs_on_the_runtime fails.
+    /// Checks that the background task runs on the runtime.
     #[test]
     fn background_task_runs_on_the_runtime() -> Result<(), Box<dyn std::error::Error>> {
         let runtime = tokio::runtime::Builder::new_current_thread()
@@ -82,8 +80,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if spawned_tasks_finish_even_with_one_worker, block_on fails.
+    /// Verifies that the spawned tasks finish even with one worker.
     #[test]
     fn spawned_tasks_finish_even_with_one_worker() -> Result<(), Box<dyn std::error::Error>> {
         let runtime = tokio::runtime::Builder::new_multi_thread()

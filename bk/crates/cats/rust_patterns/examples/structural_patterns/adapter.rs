@@ -63,6 +63,7 @@ mod tests {
     use super::CsvRows;
     use super::main;
 
+    /// Verifies that the buffered lines become rows.
     #[test]
     fn buffered_lines_become_rows() {
         let input = Cursor::new("name,role\nAda,engineer\n");
@@ -73,6 +74,7 @@ mod tests {
         assert_eq!(rows, vec![vec!["name", "role"], vec!["Ada", "engineer"]]);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

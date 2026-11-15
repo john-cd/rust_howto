@@ -69,8 +69,7 @@ mod tests {
         }
     }
 
-    /// A boxed trait object can be cloned, and the clone is usable after the
-    /// original is dropped.
+    /// A boxed trait object can be cloned, and the clone is usable after the original is dropped.
     #[test]
     fn boxed_trait_objects_can_be_cloned() {
         let count = std::rc::Rc::new(std::cell::Cell::new(0));

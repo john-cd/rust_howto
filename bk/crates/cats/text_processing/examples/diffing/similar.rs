@@ -83,8 +83,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies that the diff example runs.
-    /// Runs the similar example through its entry point.
+    /// Verifies that the diff example runs. Runs the similar example through its entry point.
     #[test]
     fn test_similar_example_entry_point() {
         main();

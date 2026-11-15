@@ -16,6 +16,7 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Verifies that the graph dispatcher runs.
     #[test]
     fn graph_dispatcher_runs() {
         assert!(std::panic::catch_unwind(main).is_ok());

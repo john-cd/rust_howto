@@ -652,8 +652,7 @@ mod tests {
             panic!("expected `Err(_)`, got `Ok(())`")
         }
     }
-    /// Verifies priority range negotiation scenario 1.
-
+    /// Negotiates successfully when neither peer sets a priority range.
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_1() {
         test_negotiation_ok(
@@ -672,8 +671,7 @@ mod tests {
         )
         .await
     }
-    /// Verifies priority range negotiation scenario 2.
-
+    /// Adopts the acceptor's priority range when the opener leaves it unset.
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_2() {
         test_negotiation_ok(
@@ -692,8 +690,7 @@ mod tests {
         )
         .await
     }
-    /// Verifies priority range negotiation scenario 3.
-
+    /// Adopts the opener's priority range when the acceptor leaves it unset.
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_3() {
         test_negotiation_ok(
@@ -712,8 +709,7 @@ mod tests {
         )
         .await
     }
-    /// Verifies priority range negotiation scenario 4.
-
+    /// Keeps matching priority ranges after negotiation.
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_4() {
         test_negotiation_ok(
@@ -732,8 +728,7 @@ mod tests {
         )
         .await
     }
-    /// Verifies priority range negotiation scenario 5.
-
+    /// Uses the narrower range when both peers offer overlapping priority ranges.
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_5() {
         test_negotiation_ok(
@@ -752,8 +747,7 @@ mod tests {
         )
         .await
     }
-    /// Verifies priority range negotiation scenario 6.
-
+    /// Rejects negotiation when the peers' priority ranges cannot be reconciled.
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_6() {
         test_negotiation_err(
@@ -768,8 +762,7 @@ mod tests {
         )
         .await
     }
-    /// Verifies reliability negotiation scenario 2.
-
+    /// Adopts the acceptor's reliability when the opener leaves it unset.
     #[tokio::test]
     async fn test_reliability_negotiation_scenario_2() {
         test_negotiation_ok(
@@ -788,8 +781,7 @@ mod tests {
         )
         .await
     }
-    /// Verifies reliability negotiation scenario 3.
-
+    /// Rejects negotiation when peers request different reliability modes.
     #[tokio::test]
     async fn test_reliability_negotiation_scenario_3() {
         test_negotiation_err(
@@ -804,8 +796,7 @@ mod tests {
         )
         .await
     }
-    /// Verifies reliability negotiation scenario 4.
-
+    /// Keeps matching reliability modes after negotiation.
     #[tokio::test]
     async fn test_reliability_negotiation_scenario_4() {
         test_negotiation_ok(
@@ -824,8 +815,7 @@ mod tests {
         )
         .await
     }
-    /// Verifies reliability negotiation scenario 5.
-
+    /// Rejects negotiation when peers request different reliability modes.
     #[tokio::test]
     async fn test_reliability_negotiation_scenario_5() {
         test_negotiation_err(
@@ -840,8 +830,7 @@ mod tests {
         )
         .await
     }
-    /// Verifies priority range and reliability negotiation scenario 1.
-
+    /// Negotiates the common reliability mode and overlapping priority range.
     #[tokio::test]
     async fn test_priority_range_and_reliability_negotiation_scenario_1() {
         test_negotiation_ok(

@@ -58,6 +58,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that the unit square geometry and city distance are valid.
     #[test]
     fn unit_square_geometry_and_city_distance_are_valid() {
         main();

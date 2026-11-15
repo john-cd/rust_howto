@@ -54,6 +54,7 @@ mod tests {
         main();
     }
 
+    /// Checks that the local set runs non send tasks to completion.
     #[tokio::test]
     async fn local_set_runs_non_send_tasks_to_completion() {
         let data = Rc::new(std::cell::Cell::new(0));

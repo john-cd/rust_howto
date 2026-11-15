@@ -59,9 +59,8 @@ mod tests {
     fn test_diverging_functions_example_entry_point() {
         main();
     }
-    /// Verifies foo panics.
+    /// Verifies that the foo panics.
     #[test]
-    /// `foo` never returns: it panics with its message.
     #[should_panic(expected = "This call never returns.")]
     fn test_foo_panics() {
         foo();

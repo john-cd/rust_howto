@@ -101,7 +101,7 @@ pub(crate) async fn send_with_link(
 /// * `buffer` - Buffer used to stage the input or output.
 
 /// # Errors
-/// An error is returned if get_mut fails.
+/// Returns an error if the batch length exceeds `buffer` or reading from the link fails.
 pub(crate) async fn read_with_link(
     link: &TransportLinkUnicastRx,
     buffer: &mut [u8],

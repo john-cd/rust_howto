@@ -63,13 +63,13 @@ mod tests {
     }
 
     /// Converts a non-success HTTP status into an error.
-    /// `main` targets a fixed address, so it needs a service listening there.
     #[test]
     #[ignore = "requires a greeting service on localhost:8080"]
     fn main_greets_through_the_service() {
         assert!(main().is_ok());
     }
 
+    /// Reports a server error.
     #[test]
     fn reports_a_server_error() {
         let server = MockServer::start();

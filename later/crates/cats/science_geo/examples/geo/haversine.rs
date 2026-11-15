@@ -61,6 +61,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that the distance to self is zero.
     #[test]
     fn distance_to_self_is_zero() {
         let here = Location {

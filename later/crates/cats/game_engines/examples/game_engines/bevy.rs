@@ -68,6 +68,7 @@ mod tests {
         main();
     }
 
+    /// Verifies that the movement advances position without a window.
     #[test]
     fn movement_advances_position_without_a_window() {
         let mut app = build_app();

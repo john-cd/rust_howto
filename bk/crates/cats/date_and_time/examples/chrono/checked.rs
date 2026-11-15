@@ -20,7 +20,7 @@ use chrono::Utc;
 /// `Some` when the requested value is available; otherwise returns `None`.
 ///
 /// # Panics
-/// Panics if one day fits in a chrono duration.
+/// Panics if one day cannot be represented as a Chrono duration.
 fn day_earlier(date_time: DateTime<Utc>) -> Option<DateTime<Utc>> {
     date_time.checked_sub_signed(Duration::try_days(1).expect("one day fits in a chrono duration"))
 }
@@ -64,6 +64,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that the checked arithmetic handles fixed date and overflow.
     #[test]
     fn checked_arithmetic_handles_fixed_date_and_overflow() {
         let fixed = Utc
@@ -74,6 +75,7 @@ mod tests {
         assert!(fixed.checked_add_signed(TimeDelta::MAX).is_none());
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

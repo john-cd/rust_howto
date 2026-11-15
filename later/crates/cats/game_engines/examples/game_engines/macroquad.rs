@@ -76,6 +76,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Reflects the ball's velocity after it reaches the left edge.
     #[test]
     fn step_reflects_a_ball_from_the_left_edge() {
         let mut ball = Ball {

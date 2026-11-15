@@ -96,6 +96,7 @@ mod tests {
         "modify_cow_in_place",
     ];
 
+    /// Confirms that the command and its arguments are valid.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

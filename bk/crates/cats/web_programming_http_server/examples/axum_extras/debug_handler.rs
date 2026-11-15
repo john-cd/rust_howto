@@ -42,7 +42,7 @@ pub fn run() -> Router {
     app()
 }
 
-/// An error is returned if greets fails.
+/// Tests the greeting handler and its response.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -52,8 +52,7 @@ mod tests {
 
     use super::*;
 
-    /// # Errors
-    /// An error is returned if greets fails.
+    /// Returns the expected greeting from the root handler.
     #[tokio::test]
     async fn greets() -> anyhow::Result<()> {
         let response = app()

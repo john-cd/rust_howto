@@ -191,12 +191,14 @@ mod tests {
             .status()
     }
 
+    /// Returns 401 for missing bearer token.
     #[tokio::test]
     async fn missing_bearer_token_returns_401() {
         let secret = test_secret();
         assert_eq!(call_admin(None, &secret).await, StatusCode::UNAUTHORIZED);
     }
 
+    /// Returns 401 for invalid bearer token.
     #[tokio::test]
     async fn invalid_bearer_token_returns_401() {
         let secret = test_secret();
@@ -218,6 +220,7 @@ mod tests {
         );
     }
 
+    /// Returns 200 for the admin role.
     #[tokio::test]
     async fn admin_role_returns_200() {
         let secret = test_secret();

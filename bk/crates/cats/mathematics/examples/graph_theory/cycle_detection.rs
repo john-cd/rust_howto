@@ -74,6 +74,7 @@ fn test_cycle_detection_finds_cycle_members() {
 mod tests {
     use super::*;
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

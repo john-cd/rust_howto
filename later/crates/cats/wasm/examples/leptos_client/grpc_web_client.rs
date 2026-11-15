@@ -91,15 +91,14 @@ async fn run() -> Result<String, tonic::Status> {
     say_hello("http://127.0.0.1:50051".to_owned(), "Ada".to_owned()).await
 }
 
-/// An error is returned if decode fails.
+/// Tests decoding of gRPC Web messages.
 #[cfg(test)]
 mod tests {
     use prost::Message;
 
     use super::*;
 
-    /// # Errors
-    /// An error is returned if decode fails.
+    /// Round-trips a `HelloRequest` through Protocol Buffers encoding and decoding.
     #[test]
     fn messages_round_trip() -> anyhow::Result<()> {
         let bytes = HelloRequest { name: "Ann".into() }.encode_to_vec();
@@ -107,6 +106,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports an error when unreachable server occurs.
     #[tokio::test]
     async fn unreachable_server_is_an_error() {
         // Port 1 is not listening: the call fails with a `Status`, not a panic.

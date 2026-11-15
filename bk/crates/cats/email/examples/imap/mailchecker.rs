@@ -38,6 +38,7 @@ mod tests {
         main();
     }
 
+    /// Filters disposable addresses.
     #[test]
     fn filters_disposable_addresses() {
         assert!(!mailchecker::is_valid("user@mailinator.com"));

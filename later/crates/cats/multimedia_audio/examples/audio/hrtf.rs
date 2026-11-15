@@ -85,6 +85,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 mod tests {
     use super::*;
 
+    /// Renders binaural stereo.
     #[test]
     fn renders_binaural_stereo() -> Result<(), Box<dyn Error>> {
         main()

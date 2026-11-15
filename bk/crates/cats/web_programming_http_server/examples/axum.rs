@@ -167,7 +167,7 @@ mod tests {
     /// * `request` - Input data whose fields determine the requested axum operation.
     ///
     /// # Panics
-    /// Panics if infallible.
+    /// Panics if handling the request, collecting its body, or decoding its body as UTF-8 fails.
     async fn send(request: Request<Body>) -> (StatusCode, String) {
         let response = app().oneshot(request).await.expect("infallible");
         let status = response.status();
@@ -243,8 +243,7 @@ mod tests {
         );
     }
 
-    /// # Errors
-    /// An error is returned if json_is_echoed fails.
+    /// Confirms that the JSON is echoed.
     #[tokio::test]
     async fn json_is_echoed() -> Result<(), Box<dyn std::error::Error>> {
         let request = Request::builder()

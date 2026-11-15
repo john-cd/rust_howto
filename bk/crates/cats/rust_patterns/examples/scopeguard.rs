@@ -82,8 +82,7 @@ mod tests {
         Ok(())
     }
 
-    /// The guard runs its closure when it goes out of scope, even on early
-    /// return.
+    /// The guard runs its closure when it goes out of scope, even on early return.
     #[test]
     fn guard_runs_on_drop() {
         let ran = std::cell::Cell::new(false);

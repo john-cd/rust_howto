@@ -76,8 +76,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Checks that options flags and free arguments are extracted.
     #[test]
     fn options_flags_and_free_arguments_are_extracted() -> Result<(), Box<dyn std::error::Error>> {
         let mut args = Arguments::from_vec(
@@ -99,6 +98,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports invalid numbers and leftovers.
     #[test]
     fn invalid_numbers_and_leftovers_are_reported() {
         let mut args = Arguments::from_vec(["--age", "x", "--extra"].map(Into::into).to_vec());

@@ -40,6 +40,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the bundled cpp function multiplies values.
     #[test]
     fn bundled_cpp_function_multiplies_values() {
         assert_eq!(multiply_from_cpp(6, 7), Some(42));
@@ -47,6 +48,7 @@ mod tests {
         assert_eq!(multiply_from_cpp(i32::MAX, 2), None);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

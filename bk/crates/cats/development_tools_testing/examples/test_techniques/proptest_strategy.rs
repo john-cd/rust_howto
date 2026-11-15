@@ -85,6 +85,7 @@ mod tests {
     }
 
     proptest! {
+        /// Checks that the union contains both.
         #[test]
         fn union_contains_both(a in any_span(), b in any_span()) {
             let u = a.union(&b);
@@ -92,16 +93,19 @@ mod tests {
             prop_assert!(u.start <= b.start && b.end <= u.end);
         }
 
+        /// Confirms that the union is commutative.
         #[test]
         fn union_is_commutative(a in any_span(), b in any_span()) {
             prop_assert_eq!(a.union(&b), b.union(&a));
         }
 
+        /// Confirms that the overlap is symmetric.
         #[test]
         fn overlap_is_symmetric(a in any_span(), b in any_span()) {
             prop_assert_eq!(a.overlaps(&b), b.overlaps(&a));
         }
 
+        /// Confirms that the disjoint union is not smaller.
         #[test]
         fn disjoint_union_is_not_smaller(a in any_span(), b in any_span()) {
             prop_assume!(!a.overlaps(&b));
@@ -116,6 +120,7 @@ mod tests {
         }
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

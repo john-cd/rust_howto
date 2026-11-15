@@ -146,6 +146,7 @@ mod tests {
         assert!((rotated - vec2(0.0, 100.0)).length() < 1e-3);
     }
 
+    /// Checks that the game state initializes with defaults.
     #[test]
     fn game_state_initializes_with_defaults() {
         let state = GameState::new();
@@ -168,8 +169,7 @@ mod tests {
         assert_eq!(state.color, BLUE);
     }
 
-    /// Applies the changes color when space is pressed change to game state and keeps dependent
-    /// state consistent for later operations.
+    /// Changes the game color when the space key is pressed.
     #[test]
     fn update_changes_color_when_space_is_pressed() {
         let mut state = GameState::new();

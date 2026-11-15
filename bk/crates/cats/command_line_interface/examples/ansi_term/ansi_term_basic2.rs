@@ -40,6 +40,7 @@ mod tests {
         main();
     }
 
+    /// Combines color and bold styles in one escape sequence.
     #[test]
     fn color_and_bold_combine_into_one_escape_sequence() {
         assert_eq!(

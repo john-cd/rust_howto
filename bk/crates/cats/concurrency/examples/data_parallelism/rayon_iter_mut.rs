@@ -39,6 +39,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that every element is decremented.
     #[test]
     fn every_element_is_decremented() {
         let mut arr = [0, 7, 9, 11];

@@ -144,6 +144,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::run_example;
 
+    /// Verifies that the host tasks exchange messages in order.
     #[test]
     fn host_tasks_exchange_messages_in_order() {
         let received_values =

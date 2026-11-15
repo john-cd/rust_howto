@@ -72,10 +72,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// Talks to a real drone.
-    ///
-    /// # Panics
-    /// Panics if the size fits.
+    /// Builds a flight-data packet with the supplied height and battery level.
     #[expect(
         clippy::little_endian_bytes,
         reason = "the Tello protocol is little-endian"

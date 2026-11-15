@@ -55,8 +55,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 mod tests {
     use super::*;
 
-    /// Verifies the output frame count shrinks when converting 48 kHz to 44.1
-    /// kHz.
+    /// Produces fewer frames when resampling from 48 kHz to 44.1 kHz without an audio device.
     #[test]
     fn resamples_without_an_audio_device() -> Result<(), Box<dyn Error>> {
         let (input_frames, samples) = resample_chunk()?;
@@ -66,6 +65,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

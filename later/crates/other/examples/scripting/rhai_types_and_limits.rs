@@ -85,6 +85,7 @@ mod tests {
         main()
     }
 
+    /// Rejects disabled eval.
     #[test]
     fn disabled_eval_is_rejected() {
         let mut engine = Engine::new();

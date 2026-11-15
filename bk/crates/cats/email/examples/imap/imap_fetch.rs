@@ -131,6 +131,7 @@ pub async fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Verifies that the summarizes a sample message.
     #[test]
     fn summarizes_a_sample_message() {
         let eml = b"From: Alice <alice@example.com>\r\n\
@@ -145,6 +146,7 @@ Subject: Hello\r\n\r\nBody\r\n";
         );
     }
 
+    /// Rejects garbage.
     #[test]
     fn rejects_garbage() {
         assert_eq!(summarize(b""), None);

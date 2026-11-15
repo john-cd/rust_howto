@@ -68,8 +68,7 @@ mod tests {
         main();
     }
 
-    /// The application directories are absolute and distinct when no
-    /// override is set, and name the application.
+    /// Uses the application name to select the platform-specific data directory.
     #[test]
     fn application_dirs_name_the_app() -> Result<()> {
         if std::env::var_os("APP_DATA_DIR").is_some()

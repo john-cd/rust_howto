@@ -61,16 +61,13 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// Returns an error if archive creation fails.
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_zip_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 
-    /// # Errors
-    /// Returns an error if creating the temporary archive, writing its entries, or reading them
-    /// back fails.
+    /// Preserves names and contents while processing the archive roundtrip.
     #[test]
     fn archive_roundtrip_preserves_names_and_contents() -> anyhow::Result<()> {
         use std::io::Read as _;

@@ -43,7 +43,7 @@ fn create_schema() -> Arc<Schema> {
 /// Combines the sample arrays into a `RecordBatch` according to the schema.
 ///
 /// # Errors
-/// Returns an error if the create record batch operation cannot satisfy its required invariants.
+/// Returns an error if the arrays do not match the schema or cannot be combined into a batch.
 fn create_record_batch(
     schema: Arc<Schema>,
     integers: &Int32Array,

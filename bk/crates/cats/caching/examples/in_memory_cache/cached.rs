@@ -94,6 +94,7 @@ mod tests {
         assert_eq!(fetch_data(123), "Data for key 123");
     }
 
+    /// Verifies that the timed cache serves cached value.
     #[test]
     fn timed_cache_serves_cached_value() {
         let first = short_lived_data("session_1");

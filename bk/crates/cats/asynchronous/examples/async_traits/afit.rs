@@ -68,7 +68,6 @@ mod tests {
     use super::*;
 
     /// Checks that generic code can await the in-memory store.
-    /// Runs the afit example through its entry point.
     #[test]
     fn test_afit_example_entry_point() {
         main();

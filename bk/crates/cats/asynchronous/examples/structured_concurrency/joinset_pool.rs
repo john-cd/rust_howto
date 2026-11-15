@@ -122,18 +122,19 @@ mod tests {
     use super::*;
 
     /// Checks the bounded pool returns each completed task result.
-    /// Runs the joinset pool example through its entry point.
     #[test]
     fn test_joinset_pool_example_entry_point() {
         main();
     }
 
+    /// Checks that the pool handles empty inputs.
     #[tokio::test(start_paused = true)]
     async fn pool_handles_empty_inputs() {
         let outcome = run_pool(vec![]).await;
         assert_eq!(outcome, Outcome::default());
     }
 
+    /// Records panicked tasks and continues processing the remaining pool.
     #[tokio::test(start_paused = true)]
     async fn pool_records_panicked_tasks_and_continues() {
         let outcome = run_pool(vec![13, 10]).await;
@@ -141,6 +142,7 @@ mod tests {
         assert_eq!(outcome.results, vec![100]);
     }
 
+    /// Verifies that the abort demo cancels all spawned tasks.
     #[tokio::test(start_paused = true)]
     async fn abort_demo_cancels_all_spawned_tasks() {
         assert_eq!(abort_demo().await, 3);

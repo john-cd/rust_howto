@@ -50,11 +50,13 @@ mod nif {
         use super::greeting;
         use super::sum;
 
+        /// Returns a personalized message for the greet.
         #[test]
         fn greet_returns_a_personalized_message() {
             assert_eq!(greeting("Rust".to_owned()), "Hello, Rust!");
         }
 
+        /// Returns the sum for the add.
         #[test]
         fn add_returns_the_sum() {
             assert_eq!(sum(20, 22), 42);

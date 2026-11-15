@@ -112,8 +112,7 @@ mod tests {
         main();
     }
 
-    /// Casting preserves bytes in native order; misaligned or mis-sized
-    /// casts fail.
+    /// Casts preserve native-endian bytes and reject misaligned or mis-sized inputs.
     #[expect(
         clippy::host_endian_bytes,
         reason = "bytemuck copies the native-endian in-memory representation"

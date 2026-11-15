@@ -61,8 +61,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 mod tests {
     use super::*;
 
-    /// Converts a feature to a polygon with the expected area, centroid, and
-    /// interior.
+    /// Converts a feature to a polygon with the expected area, centroid, and interior.
     #[test]
     fn parses_a_polygon_from_an_inline_feature_collection() -> Result<(), Box<dyn Error>> {
         main()

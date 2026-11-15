@@ -147,7 +147,6 @@ mod tests {
     use super::*;
 
     /// Verifies the full libc example runs successfully.
-    /// Runs the libc example through its entry point.
     #[test]
     fn test_libc_example_entry_point() {
         main().expect("the libc example should complete successfully");

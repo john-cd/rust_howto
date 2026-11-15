@@ -89,7 +89,7 @@ fn example() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// Garbage is not a module.
+    /// Garbage is not a module. Garbage is not a module.
     #[test]
     fn rejects_invalid_binary() {
         assert!(inspect(b"not wasm").is_err());

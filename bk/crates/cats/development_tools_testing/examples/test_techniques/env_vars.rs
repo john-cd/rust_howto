@@ -133,6 +133,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the child process with only the configured environment variables.
     #[test]
     #[ignore = "spawned by the parent test with a controlled environment"]
     fn child_checks_controlled_environment() {

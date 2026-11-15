@@ -62,6 +62,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs succeeds.
     #[test]
     fn run_succeeds() -> anyhow::Result<()> {
         run()

@@ -57,6 +57,7 @@ mod tests {
         main();
     }
 
+    /// Verifies that the container items iterate in order.
     #[test]
     fn container_items_iterate_in_order() {
         let c = MyContainer {

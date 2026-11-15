@@ -32,7 +32,6 @@ mod tests {
     use super::*;
 
     /// Verifies that the construction example runs without panicking.
-    /// Runs the create complex example through its entry point.
     #[test]
     fn test_create_complex_example_entry_point() {
         main();

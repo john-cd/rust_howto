@@ -30,12 +30,14 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Confirms that the integer output is stable.
     #[test]
     fn integer_output_is_stable() {
         let mut buffer = Buffer::new();
         assert_eq!(buffer.format(1_234_567), "1234567");
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

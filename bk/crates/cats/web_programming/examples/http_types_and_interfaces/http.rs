@@ -130,7 +130,6 @@ mod tests {
     use super::*;
 
     /// Preserves appended values for a repeated header in insertion order.
-    /// Rejects header values that contain invalid bytes.
     #[test]
     fn appends_and_reads_repeated_header_values_in_order() -> anyhow::Result<()> {
         let headers = build_headers()?;

@@ -187,8 +187,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 mod tests {
     use super::*;
 
-    /// value.
-    /// Exercises the complete compute workflow on an available GPU adapter.
+    /// value. Exercises the complete compute workflow on an available GPU adapter.
     #[test]
     fn test_compute_shader_is_valid_wgsl() {
         let module = naga::front::wgsl::parse_str(COMPUTE_SHADER)
@@ -202,12 +201,13 @@ mod tests {
             .expect("the example shader should pass Naga validation");
     }
 
+    /// Doubles each value in the GPU storage buffer.
     #[test]
     #[ignore = "requires a compatible GPU adapter"]
     fn test_compute_doubles_storage_values() -> Result<(), Box<dyn Error>> {
         run()
     }
-    /// Exercises the complete compute workflow on an available GPU adapter.
+    /// Runs the example through its entry point.
     #[test]
     #[ignore = "requires a compatible GPU adapter"]
     fn test_main_entry_point() -> Result<(), Box<dyn Error>> {

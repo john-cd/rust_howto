@@ -65,15 +65,12 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
-/// An error is returned if test_aes_gcm_round_trips_and_rejects_tampering, try_generate_from_rng
-/// fails.
+/// Tests AES-GCM encryption, decryption, and tamper detection.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// An error is returned if test_aes_gcm_round_trips_and_rejects_tampering,
-    /// try_generate_from_rng fails.
+    /// Rejects the tampering when processing the aes gcm round trips and.
     #[test]
     fn test_aes_gcm_round_trips_and_rejects_tampering() -> anyhow::Result<()> {
         main()?;

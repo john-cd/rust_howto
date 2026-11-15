@@ -33,6 +33,7 @@ mod tests {
 
     use super::main;
 
+    /// Confirms that the forced backtrace has a display value.
     #[test]
     fn forced_backtrace_has_a_display_value() {
         let backtrace = Backtrace::force_capture();

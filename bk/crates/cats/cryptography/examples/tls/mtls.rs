@@ -21,7 +21,7 @@ use rustls::crypto::ring;
 /// identity.
 ///
 /// # Errors
-/// Returns an error if the build client operation cannot satisfy its required invariants.
+/// Returns an error if the PEM inputs cannot be parsed or the TLS client cannot be built.
 fn build_client(ca_certificate_pem: &[u8], client_identity_pem: &[u8]) -> anyhow::Result<Client> {
     install_crypto_provider()?;
     let ca_certificate = Certificate::from_pem(ca_certificate_pem)?;
@@ -219,8 +219,7 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies a reqwest client presents its identity to a trusted loopback
-    /// mTLS server.
+    /// Verifies a reqwest client presents its identity to a trusted loopback mTLS server.
     #[tokio::test]
     async fn client_certificate_authenticates_to_loopback_server() -> anyhow::Result<()> {
         let fixtures = local_certificate_fixtures()?;
@@ -258,6 +257,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

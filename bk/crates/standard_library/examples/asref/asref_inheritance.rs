@@ -163,6 +163,7 @@ mod tests {
         }
     }
 
+    /// Reads the embedded media file through its borrowed view.
     #[test]
     fn as_ref_lends_the_embedded_media_file() {
         let image = ImageFile {

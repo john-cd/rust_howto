@@ -139,8 +139,6 @@ mod tests {
     use super::*;
 
     /// Runs the publish, consume, and acknowledgement round trip with RabbitMQ.
-    ///
-    /// Start the broker with the Docker command shown in the chapter first.
     #[test]
     #[ignore = "needs RabbitMQ"]
     fn rabbitmq_round_trip() -> anyhow::Result<()> {

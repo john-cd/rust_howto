@@ -75,20 +75,18 @@ pub fn run() -> Result<()> {
     main()
 }
 
-/// Returns an error if the example fails.
+/// Tests the asynchronous ZIP example behavior.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// Returns an error if the example fails.
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_async_zip_example_entry_point() -> Result<()> {
         main()
     }
 
-    /// # Errors
-    /// An error is returned if cdrs fails.
+    /// Verifies that the archive with several entries lists them in order.
     #[tokio::test]
     async fn archive_with_several_entries_lists_them_in_order() -> Result<()> {
         let mut writer = ZipFileWriter::new(Vec::new().compat_write());
@@ -113,6 +111,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports an error when opening garbage occurs.
     #[tokio::test]
     async fn opening_garbage_is_an_error() {
         let result = ZipArchiveReader::open(Cursor::new(b"not a zip".to_vec())).await;

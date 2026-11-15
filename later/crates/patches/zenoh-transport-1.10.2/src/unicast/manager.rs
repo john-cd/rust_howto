@@ -117,7 +117,7 @@ impl LinkKey {
 
 impl From<&EndPoint> for LinkKey {
     /// # Panics
-    /// Panics if endpoint protocol should be valid.
+    /// Panics if the endpoint protocol is invalid or cannot be inspected.
     fn from(endpoint: &EndPoint) -> Self {
         let protocol = endpoint.protocol().to_string();
         let reliability = Reliability::from(
@@ -442,7 +442,7 @@ impl TransportManagerBuilderUnicast {
     /// * `prng` - Mutable pseudo rng whose state is updated by this operation.
 
     /// # Errors
-    /// An error is returned if new fails.
+    /// Returns an error if QoS and low-latency mode are both enabled.
     pub fn build(
         self,
         #[allow(unused)] prng: &mut PseudoRng, /* Required for #[cfg(feature =

@@ -88,16 +88,19 @@ mod tests {
         main();
     }
 
+    /// Checks that the greeting includes the javascript argument.
     #[test]
     fn greeting_includes_the_javascript_argument() {
         assert_eq!(hello("Ada".to_owned()), "Hello, Ada!");
     }
 
+    /// Verifies that the sum adds two integers.
     #[test]
     fn sum_adds_two_integers() {
         assert_eq!(sum(20, 22), 42);
     }
 
+    /// Preserves both coordinates while processing the point translation.
     #[test]
     fn point_translation_preserves_both_coordinates() {
         assert_eq!(
@@ -106,6 +109,7 @@ mod tests {
         );
     }
 
+    /// Checks that the async greeting includes the javascript argument.
     #[test]
     fn async_greeting_includes_the_javascript_argument() {
         let waker = Waker::noop();

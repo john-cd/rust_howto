@@ -98,6 +98,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Restores document contents after undo and redo operations.
     #[test]
     fn undo_and_redo_restore_the_document() {
         let mut editor = Editor::default();
@@ -109,6 +110,7 @@ mod tests {
         assert_eq!(editor.text, "R");
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

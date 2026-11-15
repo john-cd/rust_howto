@@ -78,6 +78,7 @@ fn test_nelder_mead_finds_rosenbrock_minimum() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

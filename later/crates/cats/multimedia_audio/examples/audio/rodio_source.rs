@@ -122,6 +122,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that the source has a fixed format.
     #[test]
     fn source_has_a_fixed_format() {
         let sine = Sine::new(440.0);

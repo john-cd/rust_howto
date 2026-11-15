@@ -100,7 +100,6 @@ mod tests {
     use crate::isolated;
 
     /// Verifies that the tracing subscriber3b example's main path succeeds.
-    /// Runs the tracing subscriber3b example through its entry point.
     #[test]
     fn test_tracing_subscriber3b_example_entry_point() {
         isolated::run(

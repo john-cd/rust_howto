@@ -68,7 +68,8 @@ fn run_server(connection: Connection) -> anyhow::Result<()> {
 }
 
 /// # Errors
-/// An error is returned if send, Response fails.
+/// Returns an error if sending or receiving an LSP message, parsing the document URI, or decoding
+/// the hover response fails.
 fn main() -> anyhow::Result<()> {
     // Two connected ends: the first for the server, the second for us.
     let (server_side, client) = Connection::memory();

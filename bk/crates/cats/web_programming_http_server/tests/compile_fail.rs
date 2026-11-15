@@ -2,8 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-/// The handler with a body extractor before `State` must fail to compile with
-/// the diagnostic that `#[debug_handler]` produces.
+/// Rejects an Axum handler with a misplaced body extractor.
 #[test]
 fn debug_handler_rejects_a_misplaced_body_extractor() {
     let cases = trybuild::TestCases::new();

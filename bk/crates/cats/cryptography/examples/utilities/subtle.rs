@@ -97,6 +97,7 @@ mod tests {
         main();
     }
 
+    /// Checks constant-time equality and conditional selection.
     #[test]
     fn constant_time_equality_and_selection() {
         assert_eq!(10u8.ct_eq(&10u8).unwrap_u8(), 1);
@@ -105,6 +106,7 @@ mod tests {
         assert_eq!(u32::conditional_select(&5, &10, Choice::from(0)), 5);
     }
 
+    /// Uses the present value and returns the fallback for an empty constant-time option.
     #[test]
     fn ct_option_unwraps_or_falls_back() {
         let some: CtOption<u8> = CtOption::new(10, Choice::from(1));
@@ -115,6 +117,7 @@ mod tests {
         assert_eq!(none.unwrap_or(0), 0);
     }
 
+    /// Verifies that the byte slices compare in constant time.
     #[test]
     fn byte_slices_compare_in_constant_time() {
         assert_eq!(b"abc".ct_eq(b"abc").unwrap_u8(), 1);

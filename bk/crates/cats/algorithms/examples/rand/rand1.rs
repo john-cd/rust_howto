@@ -48,6 +48,7 @@ mod tests {
         main();
     }
 
+    /// Checks that random floats are in the unit interval.
     #[test]
     fn random_floats_are_in_the_unit_interval() {
         for _ in 0..1000 {
@@ -56,6 +57,7 @@ mod tests {
         }
     }
 
+    /// Verifies that the random bools take both values.
     #[test]
     fn random_bools_take_both_values() {
         let samples: Vec<bool> = (0..1000).map(|_| rand::random()).collect();

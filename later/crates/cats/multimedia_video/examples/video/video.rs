@@ -130,6 +130,7 @@ mod tests {
         assert_eq!(packet_count, 5);
     }
 
+    /// Encodes custom dimensions.
     #[test]
     fn encodes_custom_dimensions() {
         let packet_count = encode(80, 48, 2).expect("custom dimensions should encode");

@@ -113,9 +113,7 @@ fn main() {
 pub fn run() {
     main();
 }
-/// Verifies that the seeded swarm gets close to the global minimum and that
-///
-/// the same seed gives the same answer.
+/// Verifies that the seeded swarm gets close to the global minimum and that.
 #[test]
 fn test_particle_swarm_is_reproducible_with_seed() {
     let first = pso(rastrigin, 2, 30, 200, 42);
@@ -127,6 +125,7 @@ fn test_particle_swarm_is_reproducible_with_seed() {
 mod tests {
     use super::*;
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

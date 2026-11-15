@@ -65,9 +65,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies matching results against a temporary fixture from any working
-    /// directory.
-    /// Runs the globset example through its entry point.
+    /// Verifies matching results against a temporary fixture from any working directory.
     #[test]
     fn test_globset_example_entry_point() -> anyhow::Result<()> {
         main()

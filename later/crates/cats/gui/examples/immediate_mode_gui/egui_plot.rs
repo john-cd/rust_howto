@@ -91,6 +91,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that the sine has 101 points.
     #[test]
     fn sine_has_101_points() {
         let points = sine_points();

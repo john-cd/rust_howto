@@ -65,6 +65,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that the custom distribution is reproducible with a seeded rng.
     #[test]
     fn custom_distribution_is_reproducible_with_a_seeded_rng() {
         let mut a = StdRng::seed_from_u64(1);
@@ -74,6 +75,7 @@ mod tests {
         assert_eq!((p.x, p.y), (q.x, q.y));
     }
 
+    /// Produces varied samples from the custom distribution.
     #[test]
     fn custom_distribution_samples_vary() {
         let mut rng = StdRng::seed_from_u64(2);

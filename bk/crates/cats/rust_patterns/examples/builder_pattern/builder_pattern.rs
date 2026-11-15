@@ -136,6 +136,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Applies required and optional settings through the builder.
     #[test]
     fn builder_applies_required_and_optional_configuration() {
         let config = DatabaseConfigBuilder::new("localhost".to_owned(), 5432)

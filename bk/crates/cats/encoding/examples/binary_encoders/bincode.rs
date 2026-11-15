@@ -76,13 +76,11 @@ mod tests {
     }
 
     /// The example's end-to-end encode and decode path succeeds.
-    /// Runs the bincode example through its entry point.
     #[test]
     fn test_bincode_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-    /// Pins the wire format: a varint length, the UTF-8 bytes, a varint age
-    /// and one byte for the boolean.
+    /// Checks that the standard configuration uses varint integers.
     #[test]
     fn standard_config_uses_varint_integers() -> anyhow::Result<()> {
         let encoded = encode_to_vec(sample(), standard())?;

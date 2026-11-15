@@ -63,8 +63,7 @@ mod tests {
         main()
     }
 
-    /// # Errors
-    /// An error is returned if create_dir_all, generate_to fails.
+    /// Includes the command and option in the generated bash script.
     #[test]
     fn generated_bash_script_mentions_the_command_and_option() -> std::io::Result<()> {
         let dir = std::env::temp_dir().join("myapp-completions-test");
@@ -77,6 +76,7 @@ mod tests {
         Ok(())
     }
 
+    /// Confirms that the command and its arguments are valid.
     #[test]
     fn cli_definition_is_valid() {
         build_cli().debug_assert();

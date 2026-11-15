@@ -58,6 +58,7 @@ mod tests {
         main();
     }
 
+    /// Checks that current time components are consistent.
     #[test]
     fn current_time_components_are_consistent() {
         let now = Utc::now();
@@ -74,6 +75,7 @@ mod tests {
         assert!(now.num_days_from_ce() > 739_000);
     }
 
+    /// Checks that the hour12 maps midnight and noon.
     #[test]
     fn hour12_maps_midnight_and_noon() {
         let midnight =

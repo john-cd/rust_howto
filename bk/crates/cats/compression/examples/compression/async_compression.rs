@@ -108,13 +108,12 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
-/// Returns an error if the round trip fails.
+/// Tests asynchronous compression and decompression round trips.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// Returns an error if the round trip fails.
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_async_compression_example_entry_point() -> anyhow::Result<()> {
         main()?;
@@ -122,9 +121,6 @@ mod tests {
     }
 
     /// Compresses a temporary text file and verifies the decompressed content.
-    ///
-    /// # Errors
-    /// Returns an error if temporary file I/O or compression fails.
     #[tokio::test]
     async fn compress_then_decompress_roundtrips_the_file() -> anyhow::Result<()> {
         let dir = tempdir()?;
@@ -144,6 +140,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports an error when missing source occurs.
     #[tokio::test]
     async fn missing_source_is_an_error() -> anyhow::Result<()> {
         let dir = tempdir()?;
@@ -155,9 +152,6 @@ mod tests {
     }
 
     /// Confirms malformed gzip input is reported as an error.
-    ///
-    /// # Errors
-    /// Returns an error if temporary file I/O fails.
     #[tokio::test]
     async fn decompressing_non_gzip_data_fails() -> anyhow::Result<()> {
         let dir = tempdir()?;

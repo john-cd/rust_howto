@@ -168,7 +168,6 @@ fn main() {
     println!("exact value: {:.8}", 1.0 / 3.0);
 }
 /// Runs the example from the book's example workspace.
-/// Verifies the trapezoidal rule converges for a known quadratic integral.
 #[test]
 fn trapezoidal_rule_converges_for_a_quadratic() {
     let coarse = integrate_trapezoidal(|x| x * x, 0.0, 1.0, 8)
@@ -224,6 +223,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

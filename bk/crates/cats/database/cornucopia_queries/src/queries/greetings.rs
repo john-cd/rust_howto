@@ -77,7 +77,8 @@ where
     }
 
     /// # Errors
-    /// An error is returned if map fails.
+    /// Returns an error if opening the query stream fails. Items in the returned stream can also
+    /// report database or row-extraction errors.
     pub async fn iter(
         self,
     ) -> Result<

@@ -79,7 +79,7 @@ fn open_validated_uri(
 /// The function returns only when the process exits.
 
 /// # Errors
-/// Returns an error if the show window operation cannot satisfy its required invariants.
+/// Returns an error if creating the window or web view, or running the event loop, fails.
 fn show_window(url: Option<&Url>) -> Result<(), Box<dyn Error>> {
     let event_loop = EventLoop::new();
     let window = WindowBuilder::new().with_title("wry").build(&event_loop)?;
@@ -140,12 +140,14 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 mod tests {
     use super::*;
 
+    /// Accepts local files.
     #[test]
     fn accepts_local_files() {
         assert!(validate_local_uri("file:///tmp/report.html").is_ok());
         assert!(validate_local_uri("file://localhost/tmp/report.html").is_ok());
     }
 
+    /// Rejects remote content.
     #[test]
     fn rejects_remote_content() {
         for uri in [
@@ -159,6 +161,7 @@ mod tests {
         assert_eq!(validate_local_uri("not a uri"), Err(UriError::Invalid));
     }
 
+    /// Confirms that the opener is not called for rejected URI.
     #[test]
     fn opener_is_not_called_for_rejected_uri() {
         let mut called = false;
@@ -183,6 +186,7 @@ mod tests {
         Ok(())
     }
 
+    /// Renders the expected window content.
     #[test]
     #[ignore = "requires a display"]
     fn shows_a_window() -> Result<(), Box<dyn Error>> {

@@ -46,6 +46,7 @@ mod tests {
     static SERIAL: Mutex<()> = Mutex::new(());
 
     // Keep all the allocation assertions in a single test.
+    /// Confirms the example uses one allocation without reallocating its output.
     #[test]
     fn allocation_counts() {
         let _guard = SERIAL
@@ -66,6 +67,7 @@ mod tests {
         dhat::assert_eq!(after.curr_blocks - before.curr_blocks, 1);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         let _guard = SERIAL

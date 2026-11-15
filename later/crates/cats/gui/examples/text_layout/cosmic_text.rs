@@ -70,6 +70,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Wraps long text to fit the specified width.
     #[test]
     fn wraps_text_at_narrow_width() {
         let mut font_system = new_font_system();

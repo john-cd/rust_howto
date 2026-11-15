@@ -45,8 +45,7 @@ mod tests {
         main();
     }
 
-    /// The closure destructures a `&mut` argument and returns its incremented
-    /// copy.
+    /// The closure destructures a `&mut` argument and returns its incremented copy.
     #[test]
     fn test_closure_pattern_arguments() {
         let add_one = |&mut mut x| -> i32 {

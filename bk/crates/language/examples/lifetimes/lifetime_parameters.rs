@@ -137,8 +137,6 @@ mod tests {
         assert_eq!(longest("abc", "de"), "abc");
     }
     /// Verifies ref holder.
-    ///
-    /// `RefHolder` displays and describes the referenced value.
     #[test]
     fn test_ref_holder() {
         let num = 42;

@@ -79,6 +79,7 @@ mod tests {
         main()
     }
 
+    /// Checks that the dependencies include the crate itself and are sorted and unique.
     #[test]
     fn dependencies_include_the_crate_itself_and_are_sorted_and_unique() {
         let info = build_info();
@@ -93,6 +94,7 @@ mod tests {
         assert!(names.windows(2).all(|w| w[0] < w[1]));
     }
 
+    /// Verifies that the collecting a single crate adds exactly one entry.
     #[test]
     fn collecting_a_single_crate_adds_exactly_one_entry() {
         let mut crate_info = build_info().crate_info.clone();

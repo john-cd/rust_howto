@@ -139,14 +139,12 @@ mod tests {
     use super::*;
 
     /// Verifies that the clap example's main path succeeds.
-    /// Runs the clap example through its entry point.
     #[test]
     fn test_clap_example_entry_point() {
         println!("{:?}", main());
     }
 
-    /// # Errors
-    /// Returns an error if the command-line arguments cannot be parsed.
+    /// Confirms that the defaults apply when only a pattern is given.
     #[test]
     fn defaults_apply_when_only_a_pattern_is_given() -> Result<(), Box<dyn std::error::Error>> {
         let cli = Cli::try_parse_from(["app", "needle"])?;
@@ -158,8 +156,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if try_parse_from fails.
+    /// Checks that repeated debug flags are counted and options parsed.
     #[test]
     fn repeated_debug_flags_are_counted_and_options_parsed()
     -> Result<(), Box<dyn std::error::Error>> {
@@ -170,6 +167,7 @@ mod tests {
         Ok(())
     }
 
+    /// Checks that port zero and non numbers are rejected.
     #[test]
     fn port_zero_and_non_numbers_are_rejected() {
         assert!(Cli::try_parse_from(["app", "p", "0"]).is_err());
@@ -177,14 +175,7 @@ mod tests {
         assert!(Cli::try_parse_from(["app", "p", "70000"]).is_err());
     }
 
-    /// Loads the subcommand requires files required by the clap workflow and reports failures from
-    /// the underlying source.
-    ///
-    /// # Errors
-    /// Returns an error if a command-line fixture cannot be parsed.
-    ///
-    /// # Panics
-    /// Panics if the guarded invariant is violated.
+    /// Parses the `read` subcommand with required files and checks the parsed values.
     #[test]
     fn read_subcommand_requires_files() -> Result<(), Box<dyn std::error::Error>> {
         let cli = Cli::try_parse_from(["app", "read", "-a", "f1", "f2"])?;
@@ -203,6 +194,7 @@ mod tests {
         Ok(())
     }
 
+    /// Handles the absence of arguments shows help instead of running.
     #[test]
     fn no_arguments_shows_help_instead_of_running() {
         let Err(err) = Cli::try_parse_from(["app"]) else {

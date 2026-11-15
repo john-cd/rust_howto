@@ -87,8 +87,6 @@ mod tests {
         main();
     }
     /// Verifies display.
-    ///
-    /// `Display` uses the custom serialization.
     #[test]
     fn test_display() {
         assert_eq!(Direction::North.to_string(), "N");

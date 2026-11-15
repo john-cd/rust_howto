@@ -57,19 +57,19 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
-/// An error is returned if connector_builds_without_network_access fails.
+/// Tests construction of a native TLS connector without network access.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// An error is returned if connector_builds_without_network_access fails.
+    /// Verifies that the connector builds without network access.
     #[test]
     fn connector_builds_without_network_access() -> anyhow::Result<()> {
         build_connector()?;
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {
@@ -77,8 +77,7 @@ mod tests {
         }
     }
 
-    /// # Errors
-    /// An error is returned if connecting_to_a_host_without_tls_port_fails_with_context fails.
+    /// Checks that the connecting to a host without TLS port fails with context.
     #[test]
     fn connecting_to_a_host_without_tls_port_fails_with_context() -> anyhow::Result<()> {
         let connector = build_connector()?;

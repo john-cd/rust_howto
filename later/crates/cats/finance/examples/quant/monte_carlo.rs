@@ -67,11 +67,13 @@ mod tests {
         main();
     }
 
+    /// Verifies that same seed gives the same estimate.
     #[test]
     fn same_seed_gives_the_same_estimate() {
         assert_eq!(estimate_call(0.20, 7), estimate_call(0.20, 7));
     }
 
+    /// Verifies that the higher volatility raises the call value.
     #[test]
     fn higher_volatility_raises_the_call_value() {
         assert!(estimate_call(0.40, 7) > estimate_call(0.20, 7));

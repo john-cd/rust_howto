@@ -35,6 +35,7 @@ fn main() {
 mod tests {
     use super::example_buffer;
 
+    /// Preserves pixel order and alpha when exposing raw bytes.
     #[test]
     fn raw_bytes_preserve_pixel_order_and_alpha() {
         assert_eq!(

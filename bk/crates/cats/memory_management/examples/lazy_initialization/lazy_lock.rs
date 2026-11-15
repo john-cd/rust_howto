@@ -31,6 +31,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Initializes shared global data.
     #[test]
     fn initializes_shared_global_data() {
         main();

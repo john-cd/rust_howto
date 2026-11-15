@@ -45,7 +45,8 @@ use wasm_bindgen::prelude::*;
 /// * `value` - Value the serde wasm bindgen operation validates, transforms, or stores.
 ///
 /// # Errors
-/// Returns an error if the increment visits operation cannot satisfy its required invariants.
+/// Returns an error if the JavaScript value cannot be deserialized as a profile, the visit count
+/// cannot be incremented, or the updated profile cannot be serialized.
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 #[wasm_bindgen]
 pub fn increment_visits(value: JsValue) -> Result<JsValue, JsValue> {
@@ -74,6 +75,7 @@ mod tests {
     use super::Profile;
     use super::increment_profile;
 
+    /// Increments the profile visit count.
     #[test]
     fn increments_profile_visits() {
         let mut profile = Profile {
@@ -85,6 +87,7 @@ mod tests {
         assert_eq!(profile.visits, 4);
     }
 
+    /// Reports profile visit overflow.
     #[test]
     fn reports_profile_visit_overflow() {
         let mut profile = Profile {
@@ -98,6 +101,7 @@ mod tests {
         );
     }
 
+    /// Completes the JavaScript host runner successfully.
     #[test]
     fn host_runner_succeeds() {
         super::main();

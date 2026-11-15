@@ -71,6 +71,7 @@ mod tests {
         main().expect("the Neon example should run successfully");
     }
 
+    /// Checks that the greeting matches the native callback message.
     #[test]
     fn greeting_matches_the_native_callback_message() {
         assert_eq!(super::greeting(), "hello from neon!");

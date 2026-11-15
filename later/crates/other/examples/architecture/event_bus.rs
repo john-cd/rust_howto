@@ -108,6 +108,7 @@ mod tests {
         main();
     }
 
+    /// Reports and removes disconnected subscribers.
     #[test]
     fn reports_and_removes_disconnected_subscribers() {
         let mut bus = EventBus::default();

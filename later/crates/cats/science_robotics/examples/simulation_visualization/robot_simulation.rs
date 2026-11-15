@@ -114,6 +114,7 @@ mod tests {
     use super::main;
     use super::simulate_chassis_landing;
 
+    /// Settles the robot chassis onto the floor after simulation.
     #[test]
     fn chassis_settles_on_the_floor() {
         let state = simulate_chassis_landing();
@@ -122,6 +123,7 @@ mod tests {
         assert!(state.speed < 0.05);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

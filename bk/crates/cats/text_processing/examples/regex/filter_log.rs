@@ -58,8 +58,7 @@ WARNING sunt in culpa qui officia TIMEOUT EXPIRED
 quis nostrud exercitation ullamco
 "#;
 
-    /// Checks that the log is filtered.
-    /// Runs the filter log example through its entry point.
+    /// Checks that the log is filtered. Runs the filter log example through its entry point.
     #[test]
     fn test_filter_log_example_entry_point() -> Result<()> {
         use std::fs;

@@ -41,15 +41,13 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the call blocking from async spawn blocking example through its
-    /// entry point.
+    /// Runs the call blocking from async spawn blocking example through its entry point.
     #[test]
     fn test_call_blocking_from_async_spawn_blocking_example_entry_point() {
         main();
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Returns the closure result for the spawn blocking.
     #[tokio::test]
     async fn spawn_blocking_returns_the_closure_result() -> Result<(), Box<dyn std::error::Error>> {
         let value = tokio::task::spawn_blocking(|| 6 * 7).await?;

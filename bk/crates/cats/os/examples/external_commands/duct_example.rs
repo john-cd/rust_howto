@@ -31,7 +31,6 @@ mod tests {
     use super::*;
 
     /// Verifies that `duct` can run Git and capture its output.
-    /// Runs the duct example through its entry point.
     #[test]
     fn test_duct_example_entry_point() -> anyhow::Result<()> {
         main()

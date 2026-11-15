@@ -41,8 +41,6 @@ mod tests {
         main();
     }
     /// Verifies add.
-    ///
-    /// `add` returns the sum, including with negative numbers.
     #[test]
     fn test_add() {
         assert_eq!(add(1, 2), 3);

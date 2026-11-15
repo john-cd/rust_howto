@@ -60,6 +60,7 @@ mod tests {
         assert_eq!(result, Ok(42));
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() -> std::io::Result<()> {
         main()

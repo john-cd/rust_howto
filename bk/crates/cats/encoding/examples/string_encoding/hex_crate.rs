@@ -45,6 +45,7 @@ pub fn run() -> Result<(), hex::FromHexError> {
 mod tests {
     use super::*;
 
+    /// Runs succeeds.
     #[test]
     fn run_succeeds() -> Result<(), hex::FromHexError> {
         run()

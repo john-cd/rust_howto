@@ -65,7 +65,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies heed subcommand parses.
+    /// Parses the Heed subcommand when its feature is enabled.
     #[cfg(feature = "lmdb")]
     #[test]
     fn test_heed_subcommand_parses() {

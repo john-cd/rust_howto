@@ -118,6 +118,7 @@ mod tests {
 
     use super::*;
 
+    /// Runs the example.
     #[test]
     fn runs_the_example() {
         main();

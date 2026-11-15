@@ -201,8 +201,7 @@ mod tests {
     fn test_lsp_client_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-    /// Drives a real `rust-analyzer` over stdio. Run it with
-    /// `cargo test -- --ignored` when `rust-analyzer` is on the `PATH`.
+    /// Drives a real `rust-analyzer` over stdio.
     #[test]
     #[ignore = "needs rust-analyzer on the PATH"]
     fn test_real_rust_analyzer() -> anyhow::Result<()> {

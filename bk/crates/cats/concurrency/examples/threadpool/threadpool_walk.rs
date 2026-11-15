@@ -101,16 +101,14 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
-    /// Verifies that walking a directory without ISO files completes
-    /// successfully.
+    /// Verifies that walking a directory without ISO files completes successfully.
     #[test]
     fn completes_when_no_iso_files_are_present() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }
 
-    /// Reports whether the threadpool walk meets the iso matches the extension case insensitively
-    /// condition so callers can choose the correct branch.
+    /// Checks that the is iso matches the extension case insensitively.
     #[test]
     fn is_iso_matches_the_extension_case_insensitively() {
         assert!(is_iso(Path::new("disk.iso")));
@@ -119,9 +117,7 @@ mod tests {
         assert!(!is_iso(Path::new("iso")));
     }
 
-    /// # Errors
-    /// Returns an error if creating the temporary directory, writing the fixture, or computing its
-    /// digest fails.
+    /// Checks that the compute digest matches the known sha256.
     #[test]
     fn compute_digest_matches_the_known_sha256() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;

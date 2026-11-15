@@ -58,8 +58,7 @@ mod tests {
         assert_eq!(fib(20), 6765);
     }
 
-    /// # Errors
-    /// An error is returned if custom_pool_has_the_requested_number_of_threads fails.
+    /// Confirms that the custom pool has the requested number of threads.
     #[test]
     fn custom_pool_has_the_requested_number_of_threads() -> Result<(), Box<dyn std::error::Error>> {
         let pool = rayon::ThreadPoolBuilder::new().num_threads(3).build()?;

@@ -162,11 +162,13 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Returns inserted post for the generated graphql query.
     #[test]
     fn generated_graphql_query_returns_inserted_post() -> anyhow::Result<()> {
         run()
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

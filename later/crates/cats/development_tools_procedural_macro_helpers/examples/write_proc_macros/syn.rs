@@ -94,13 +94,12 @@ pub fn run() -> Result<()> {
     main()
 }
 
-/// Returns an error if the generated code cannot be parsed.
+/// Tests parsing and inspection of generated Rust syntax.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// Returns an error if the generated code cannot be parsed.
+    /// Generates a getter for a struct and rejects an enum input.
     #[test]
     fn generates_for_structs_and_rejects_enums() -> SynResult<()> {
         let input = quote! { struct Point { x: i32, y: i32 } };

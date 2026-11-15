@@ -151,8 +151,7 @@ mod tests {
 
     use super::*;
 
-    /// Verifies that rendering preserves the image dimensions in memory and in
-    /// a temporary PNG.
+    /// Verifies that rendering preserves the image dimensions in memory and in a temporary PNG.
     #[test]
     fn threadpool_fractal_renders_requested_dimensions_in_memory_and_in_temporary_png() -> Result<()>
     {
@@ -169,6 +168,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

@@ -96,8 +96,6 @@ mod tests {
         );
     }
     /// Verifies call every variant.
-    ///
-    /// `call` handles every variant.
     #[test]
     fn test_call_every_variant() {
         Message::Quit.call();

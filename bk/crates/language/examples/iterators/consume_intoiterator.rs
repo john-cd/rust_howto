@@ -48,8 +48,6 @@ mod tests {
         main();
     }
     /// Verifies sum all.
-    ///
-    /// `sum_all` accepts any `IntoIterator` of `i32`.
     #[test]
     fn test_sum_all() {
         assert_eq!(sum_all(vec![1, 2, 3, 4, 5]), 15);

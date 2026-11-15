@@ -106,6 +106,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_example_entry_point() -> anyhow::Result<()> {
         run()

@@ -44,6 +44,7 @@ mod tests {
     }
 
     // output-only: the functions only print or carry documentation.
+    /// Checks that documented functions are callable.
     #[test]
     fn documented_functions_are_callable() {
         documented_function();

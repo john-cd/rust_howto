@@ -41,15 +41,11 @@ mod tests {
         main();
     }
     /// Verifies add one.
-    ///
-    /// `add_one` increments its argument.
     #[test]
     fn test_add_one() {
         assert_eq!(add_one(10), 11);
     }
     /// Verifies do twice.
-    ///
-    /// `do_twice` applies the function pointer twice and sums the results.
     #[test]
     fn test_do_twice() {
         assert_eq!(do_twice(add_one, 5), 12);

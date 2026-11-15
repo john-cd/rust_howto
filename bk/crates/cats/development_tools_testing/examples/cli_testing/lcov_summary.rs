@@ -126,13 +126,12 @@ pub fn run() -> anyhow::Result<()> {
     example_body()
 }
 
-/// Returns an error if the inline report cannot be parsed.
+/// Tests parsing and summarizing inline LCOV reports.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// Returns an error if the inline report cannot be parsed.
+    /// Verifies that the computes coverage per file.
     #[test]
     fn computes_coverage_per_file() -> anyhow::Result<()> {
         let files = summarize(REPORT.as_bytes())?;
@@ -143,8 +142,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an error if the inline report cannot be parsed.
+    /// Checks that the gate fails below the threshold.
     #[test]
     fn gate_fails_below_the_threshold() -> anyhow::Result<()> {
         let files = summarize(REPORT.as_bytes())?;
@@ -158,8 +156,7 @@ mod tests {
         assert!(summarize(&b"LF:x\n"[..]).is_err());
     }
 
-    /// # Errors
-    /// Returns an error if the inline report cannot be summarized.
+    /// Runs succeeds.
     #[test]
     fn run_succeeds() -> anyhow::Result<()> {
         run()

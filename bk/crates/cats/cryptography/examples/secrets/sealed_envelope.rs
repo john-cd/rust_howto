@@ -181,13 +181,12 @@ pub fn run() {
     }
 }
 
-/// An error is returned if round_trip, open fails.
+/// Tests envelope round trips and rejection of invalid or tampered input.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// An error is returned if round_trip, open fails.
+    /// Decrypts a sealed envelope and recovers its original secret.
     #[test]
     fn round_trip() -> Result<()> {
         let envelope = SealedEnvelope::seal(b"secret", b"pass", b"ctx")?;
@@ -195,8 +194,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if wrong_passphrase_or_context_fails fails.
+    /// Reports an error for wrong passphrase or context.
     #[test]
     fn wrong_passphrase_or_context_fails() -> Result<()> {
         let envelope = SealedEnvelope::seal(b"secret", b"pass", b"ctx")?;
@@ -205,8 +203,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if tampered_ciphertext_fails, decode fails.
+    /// Reports an error for tampered ciphertext.
     #[test]
     fn tampered_ciphertext_fails() -> Result<()> {
         let mut envelope = SealedEnvelope::seal(b"secret", b"pass", b"ctx")?;
@@ -217,8 +214,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if tampered_version_fails fails.
+    /// Reports an error for tampered version.
     #[test]
     fn tampered_version_fails() -> Result<()> {
         let mut envelope = SealedEnvelope::seal(b"secret", b"pass", b"ctx")?;

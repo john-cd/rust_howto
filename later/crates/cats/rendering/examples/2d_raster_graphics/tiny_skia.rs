@@ -103,6 +103,7 @@ mod tests {
     use super::main;
     use super::pixel_rgba;
 
+    /// Draws shapes into a pixmap without opening a window.
     #[test]
     fn draws_shapes_into_a_headless_pixmap() {
         let pixmap = draw_scene().expect("the sample scene should render");
@@ -112,6 +113,7 @@ mod tests {
         assert_eq!(pixel_rgba(&pixmap, 4, 4), Some([0, 0, 0, 0]));
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

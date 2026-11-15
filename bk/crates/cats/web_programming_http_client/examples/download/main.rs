@@ -67,6 +67,7 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["download", "partial", "post_file"];
 
+    /// Confirms that the command and its arguments are valid.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

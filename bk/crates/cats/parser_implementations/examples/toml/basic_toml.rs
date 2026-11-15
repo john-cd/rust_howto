@@ -110,7 +110,6 @@ mod tests {
     use super::*;
 
     /// Verifies that the basic toml example's main path succeeds.
-    /// Runs the basic toml example through its entry point.
     #[test]
     fn test_basic_toml_example_entry_point() -> anyhow::Result<()> {
         use std::fs;

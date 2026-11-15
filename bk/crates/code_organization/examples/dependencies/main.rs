@@ -47,7 +47,7 @@ fn example() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies error path.
+    /// Returns the expected error message for a failing dependency.
     #[test]
     fn test_error_path() {
         let err = fallible(true).expect_err("should fail");

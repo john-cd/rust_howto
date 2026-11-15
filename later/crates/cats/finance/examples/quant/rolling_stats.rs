@@ -83,6 +83,7 @@ mod tests {
         main();
     }
 
+    /// Returns of a doubling series.
     #[test]
     fn returns_of_a_doubling_series() {
         let r = daily_returns(&[1.0, 2.0, 4.0]);

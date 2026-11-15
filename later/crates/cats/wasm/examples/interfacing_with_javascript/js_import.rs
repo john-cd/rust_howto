@@ -46,6 +46,7 @@ mod tests {
     /// Verifies that the host-side example runner succeeds.
     // output-only: on the host, the example only prints a hint; the wasm32 code
     // needs a browser.
+    /// Completes the JavaScript host runner successfully.
     #[test]
     fn host_runner_succeeds() {
         super::main();

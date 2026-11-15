@@ -120,6 +120,7 @@ mod tests {
         Ok(())
     }
 
+    /// Requires a live network service to run the example.
     #[test]
     #[ignore = "requires a local upstream on 127.0.0.1:8000 and a proxy listener"]
     fn require_network() -> anyhow::Result<()> {

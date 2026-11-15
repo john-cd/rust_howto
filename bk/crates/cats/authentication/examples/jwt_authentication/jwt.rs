@@ -107,7 +107,6 @@ mod tests {
     }
 
     /// Signs and verifies claims without a network service.
-    /// Rejects a correctly signed token whose expiration is in the past.
     #[test]
     fn valid_token_round_trips_claims() -> Result<(), jsonwebtoken::errors::Error> {
         let claims = unexpired_claims();
@@ -118,6 +117,7 @@ mod tests {
         Ok(())
     }
 
+    /// Rejects the expired token.
     #[test]
     fn expired_token_is_rejected() -> Result<(), jsonwebtoken::errors::Error> {
         let claims = Claims {

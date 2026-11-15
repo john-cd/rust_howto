@@ -60,12 +60,12 @@ mod tests {
     use super::*;
 
     /// Verifies that pasted identifiers can be used by the example.
-    /// Runs the paste example through its entry point.
     #[test]
     fn test_paste_example_entry_point() {
         main();
     }
 
+    /// Verifies that the generated structs keep their values.
     #[test]
     fn generated_structs_keep_their_values() {
         assert_eq!(FooStruct::new(10).get_value(), 10);

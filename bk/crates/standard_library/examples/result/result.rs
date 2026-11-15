@@ -240,6 +240,7 @@ mod tests {
         path.to_string_lossy().into_owned()
     }
 
+    /// Returns the expected contents through each supported file-reading method.
     #[test]
     fn test_read_file_variants_return_the_contents() -> Result<(), Box<dyn std::error::Error>> {
         let path = temp_file("contents", "42\n")?;
@@ -259,9 +260,7 @@ mod tests {
         open_file(&p); // Reports the error and returns.
     }
 
-    /// # Errors
-    /// Returns an error if creating the fixture, converting its path to UTF-8, reading or parsing
-    /// the number, or removing the fixture fails.
+    /// Reads and parses a number through each supported file-reading method.
     #[test]
     fn test_read_and_parse_file_variants_parse_a_number() -> Result<(), Box<dyn std::error::Error>>
     {
@@ -275,6 +274,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports an error when input cannot be parsed.
     #[test]
     fn test_parse_errors_are_reported() -> Result<(), Box<dyn std::error::Error>> {
         let path = temp_file("not_a_number", "abc")?;

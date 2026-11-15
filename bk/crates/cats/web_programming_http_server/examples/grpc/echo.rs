@@ -22,6 +22,7 @@ mod tests {
     use super::proto::echo_client::EchoClient;
     use super::proto::echo_server::EchoServer;
 
+    /// Verifies that the generated types exist.
     #[test]
     fn generated_types_exist() {
         let request = EchoRequest {

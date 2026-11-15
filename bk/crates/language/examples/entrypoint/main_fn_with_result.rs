@@ -36,7 +36,6 @@ mod tests {
     use super::*;
 
     /// Verifies that the main fn with result example's main path succeeds.
-    /// Runs the main fn with result example through its entry point.
     #[test]
     fn test_main_fn_with_result_example_entry_point() {
         assert!(main().is_err());

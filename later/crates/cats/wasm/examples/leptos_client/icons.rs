@@ -63,6 +63,7 @@ fn run() -> String {
 mod tests {
     use super::*;
 
+    /// Checks that the toolbar renders labeled svg icons.
     #[test]
     fn toolbar_renders_labeled_svg_icons() {
         let html = run();
@@ -71,6 +72,7 @@ mod tests {
         assert!(html.contains("aria-label=\"Settings\""));
     }
 
+    /// Confirms that the icon data is not empty.
     #[test]
     fn icon_data_is_not_empty() {
         assert!(!icondata::LuHouse.data.is_empty());

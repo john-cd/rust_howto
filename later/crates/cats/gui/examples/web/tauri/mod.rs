@@ -38,6 +38,7 @@ mod tests {
         main();
     }
 
+    /// Includes the caller's name in the greeting.
     #[test]
     fn greets_named_caller() {
         assert_eq!(greet("Ferris"), "Hello, Ferris! Welcome to Tauri.");

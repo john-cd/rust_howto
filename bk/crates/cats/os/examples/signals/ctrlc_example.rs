@@ -67,6 +67,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Confirms that the worker stops when the flag is set.
     #[test]
     fn worker_stops_when_the_flag_is_set() {
         let shutdown = Arc::new(AtomicBool::new(false));
@@ -78,6 +79,7 @@ mod tests {
         assert!(handle.join().is_ok());
     }
 
+    /// Verifies that the worker does nothing if already shut down.
     #[test]
     fn worker_does_nothing_if_already_shut_down() {
         let shutdown = AtomicBool::new(true);

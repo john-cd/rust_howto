@@ -168,9 +168,6 @@ mod entry_tests {
     use super::*;
 
     /// The entry point runs without a collector.
-    ///
-    /// # Panics
-    /// Panics if the in-memory exporter needs no network.
     #[test]
     fn main_runs_offline() {
         run_with_in_memory_exporter().expect("the in-memory exporter needs no network");
@@ -189,7 +186,7 @@ mod tests {
     /// finished spans.
     ///
     /// # Panics
-    /// Panics if flush should succeed.
+    /// Panics if flushing the tracer fails.
     fn collect_spans(body: impl FnOnce()) -> Vec<SpanData> {
         let (provider, exporter) = in_memory_tracing();
         let subscriber = tracing_subscriber::registry().with(

@@ -43,7 +43,7 @@ mod tests {
 
     // One test function expands to one test per `#[case]` row; a failure
     // names the row, e.g. `tests::parses::case_2`.
-    /// Parses valid duration suffixes and rejects unknown or empty input.
+    /// Converts supported duration strings to seconds and rejects invalid suffixes.
     #[rstest]
     #[case("90s", Some(90))]
     #[case("5m", Some(300))]
@@ -68,13 +68,13 @@ mod tests {
     }
 
     // `#[values]` runs every combination.
-    /// # Arguments
-    /// * `input` - Input data whose fields determine the requested rstest cases operation.
+    /// Returns zero seconds for zero with every supported duration suffix.
     #[rstest]
     fn zero_is_zero(#[values("0s", "0m", "0h")] input: &str) {
         assert_eq!(parse_seconds(input), Some(0));
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();
