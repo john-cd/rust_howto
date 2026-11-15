@@ -28,7 +28,6 @@ pub(super) fn subcommand_rbe() -> Command {
 /// # Arguments
 ///
 /// Returns `Some(CmdArgs)` if the `rbe` subcommand was used, `None` otherwise.
-
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
     let mut badge = None;
     if let Some(m) = matches.subcommand_matches("rbe") {

@@ -10,7 +10,6 @@ mod pus_telemetry;
 mod space_protocols;
 /// Runs the example.
 /// Runs the space protocols example.
-
 fn main() {
     space_protocols::run();
 }

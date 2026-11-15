@@ -42,7 +42,6 @@ enum Commands {
 }
 /// Runs the example.
 /// Runs the example selected on the command line.
-
 fn main() {
     dispatch(Cli::parse());
 }

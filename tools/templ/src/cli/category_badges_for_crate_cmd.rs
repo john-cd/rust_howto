@@ -20,7 +20,6 @@ pub(super) fn subcommand_category_badges_for_crate() -> Command {
 ///
 /// # Arguments
 /// * `matches` - The matches from the command line arguments
-
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
     let mut cmdargs = None;
     if let Some(m) = matches.subcommand_matches("categories_badges_for_crate") {

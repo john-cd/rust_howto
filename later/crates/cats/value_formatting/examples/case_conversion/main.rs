@@ -6,7 +6,6 @@
 mod case_conversion;
 /// Runs the example.
 /// Runs the case-conversion example.
-
 fn main() {
     case_conversion::run();
 }

@@ -13,7 +13,6 @@ mod ryu;
 mod standard_and_localized;
 /// Runs the example.
 /// Runs the number formatting example.
-
 fn main() {
     humansize_example::run();
     itoa::run();

@@ -13,7 +13,6 @@ fn run(args: &[&str]) -> Output {
         .expect("the binary should start")
 }
 /// The `rbe` subcommand prints Markdown badges for each concept.
-
 #[test]
 fn test_rbe_prints_badges_for_each_concept() {
     let output = run(&["rbe", "attributes", "traits"]);
@@ -56,7 +55,7 @@ fn test_unknown_subcommand_fails() {
     assert!(!run(&["bogus"]).status.success());
 }
 /// Verifies version flag.
-
+///
 /// `--version` prints the package version.
 #[test]
 fn test_version_flag() {

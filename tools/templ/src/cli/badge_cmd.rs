@@ -10,7 +10,7 @@ use clap_builder::builder::ValueHint;
 
 use crate::CmdArgs2;
 /// Builds the `badge` subcommand of the CLI user interface.
-
+///
 /// This function defines the structure and options for the `badge` subcommand,
 ///
 /// which is used to create markdown for crate badges.
@@ -70,7 +70,6 @@ pub(super) fn subcommand_badge() -> Command {
 /// - `args`: A `Vec<String>` of crate names.
 /// - `file`: An `Option<PathBuf>` representing the path to the reference definition file, if
 ///   provided.
-
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs2> {
     let mut cmdargs = None;
     if let Some(m) = matches.subcommand_matches("badge") {

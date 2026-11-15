@@ -32,7 +32,6 @@ fn main() -> Result<()> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn run() -> Result<()> {
     run_example()
 }

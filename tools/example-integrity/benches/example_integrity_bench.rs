@@ -26,9 +26,9 @@ fn write_fixture(root: &Path, path: &str, contents: &str) {
     fs::write(path, contents).expect("writes fixture file");
 }
 /// Creates a synthetic large book repository tree with multiple packages, chapters,
-
+///
 /// nested fragments, anchors, and module hierarchies.
-
+///
 /// # Panics
 /// Panics if creates temp dir.
 fn create_synthetic_book_tree(num_packages: usize, num_chapters: usize) -> TempDir {
@@ -170,7 +170,6 @@ Another regular section with some markdown prose.\n";
 ///
 /// # Arguments
 /// * `c` - Mutable criterion whose state is updated by this operation.
-
 fn benchmark_anchor_extraction(c: &mut Criterion) {
     let source_text = "\
 // Module documentation header.

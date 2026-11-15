@@ -10,7 +10,7 @@ use spacepackets::ecss::tm::PusTmCreator;
 use spacepackets::ecss::tm::PusTmReader;
 use spacepackets::ecss::tm::PusTmSecondaryHeader;
 /// Serializes a service 17 telemetry response and checks the decoded fields.
-
+///
 /// Telemetry is data flowing from the spacecraft to the ground. This packet is
 /// the spacecraft's answer to the connection-test telecommand (service 17,
 /// subtype 1): service 17, subtype 2 means "connection test report".

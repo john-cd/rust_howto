@@ -10,7 +10,6 @@
 use itoa::Buffer;
 /// Runs the example.
 /// Formats an integer into a reusable stack buffer.
-
 fn main() {
     let mut buffer = Buffer::new();
     let formatted = buffer.format(1_234_567);
@@ -20,7 +19,6 @@ fn main() {
 
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
