@@ -58,6 +58,9 @@ fn recipe_book(fragments: usize, rows: usize) -> TempDir {
 }
 
 /// Measures link extraction over published recipe tables of growing size.
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
 fn bench_recipe_link_extraction(c: &mut Criterion) {
     let mut group = c.benchmark_group("published_recipes");
     for (fragments, rows) in [(2, 25), (10, 50)] {
@@ -77,6 +80,9 @@ fn bench_recipe_link_extraction(c: &mut Criterion) {
 }
 
 /// Measures the directive scan that runs before any network request is needed.
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
 fn bench_crate_block_scanning(c: &mut Criterion) {
     let mut group = c.benchmark_group("crate_block_parsing");
     for paragraphs in [10_usize, 1_000] {
@@ -102,6 +108,9 @@ fn bench_crate_block_scanning(c: &mut Criterion) {
 }
 
 /// Measures markdown template generation and small text helpers.
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
 fn bench_markdown_generation(c: &mut Criterion) {
     let mut group = c.benchmark_group("markdown_templates");
     group.bench_function("category_badge", |b| {

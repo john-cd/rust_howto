@@ -2,7 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Configuration of the `mdbook-scrub` preprocessor.
 mod conf;
+/// Regular expressions that find hidden content, applied outside of code.
 mod regexes;
 
 use std::path::Path;
@@ -63,8 +65,13 @@ impl Preproc {
         }
     }
 
-    /// Removes the hidden sections, hidden includes and wikilinks from the
     /// book.
+
+    /// # Arguments
+    /// * `ctx` - Application state and services required to perform the operation.
+
+    /// # Errors
+    /// Returns an error if the run scrub operation cannot satisfy its required invariants.
     fn run_scrub(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
         let conf = ctx
             .config
@@ -155,6 +162,7 @@ impl Preproc {
 }
 
 impl Default for Preproc {
+    /// Constructs a usable initial preproc value with the defaults required by the lib component.
     fn default() -> Self {
         Self::new()
     }
@@ -169,6 +177,7 @@ impl Preprocessor for Preproc {
     }
 
     /// Preprocesses the book according to the configured stage.
+
     fn run(&self, ctx: &PreprocessorContext, book: Book) -> Result<Book> {
         info!("Running `{}` mdBook preprocessor", self.name());
         match self.stage {
@@ -182,8 +191,8 @@ impl Preprocessor for Preproc {
         Ok(renderer != "not-supported")
     }
 }
-
 /// Returns the Rust snippet that the example `name` refers to, in a code fence.
+
 fn resolve_example(
     book_root: &Path,
     chapter_source: Option<&Path>,
@@ -302,6 +311,10 @@ fn extract_anchor(source: &str, anchor: &str) -> anyhow::Result<String> {
 }
 
 /// Returns a code fence longer than any run of backticks in `source`.
+///
+/// # Arguments
+/// * `source` - Original value used as the starting point for the preproc operation.
+
 fn code_fence(source: &str) -> String {
     let mut longest_run = 0;
     let mut current_run = 0;
@@ -316,11 +329,11 @@ fn code_fence(source: &str) -> String {
     "`".repeat(longest_run.max(2) + 1)
 }
 
+/// wikilinks.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Checks that the marker lines are not part of the snippet.
     #[test]
     fn example_anchor_excludes_marker_lines() {
         let source = "before\n// ANCHOR: example\nfn main() {}\n// ANCHOR_END: example\nafter\n";
@@ -330,7 +343,6 @@ mod tests {
         );
     }
 
-    /// Checks that a missing marker is an error.
     #[test]
     fn example_anchor_reports_missing_markers() {
         let error =
@@ -338,13 +350,11 @@ mod tests {
         assert!(error.to_string().contains("anchor start marker is missing"));
     }
 
-    /// Checks that the fence cannot be closed by the snippet's own backticks.
     #[test]
     fn code_fence_is_longer_than_backticks_in_example() {
         assert_eq!(code_fence("let ticks = ```;"), "````");
     }
 
-    /// Checks that a configuration of the wrong type is reported.
     #[test]
     fn malformed_directive_configuration_is_an_error() {
         use std::str::FromStr as _;
@@ -361,7 +371,6 @@ mod tests {
         assert!(error.to_string().contains("preprocessor.directives"));
     }
 
-    /// Checks that examples that cannot be found are errors.
     #[test]
     fn unresolved_example_paths_are_errors() {
         let root = PathBuf::from("test_book")
@@ -378,7 +387,6 @@ mod tests {
         assert!(format!("{error:#}").contains("failed to resolve example"));
     }
 
-    /// Checks that unknown directives are errors.
     #[test]
     fn unresolved_custom_directives_are_errors() {
         use std::str::FromStr as _;
@@ -403,7 +411,6 @@ mod tests {
         assert!(format!("{error:#}").contains("{{#unknown value}}"));
     }
 
-    /// Checks that both stages support every renderer except `not-supported`.
     #[test]
     fn both_stages_report_renderer_support() {
         assert!(

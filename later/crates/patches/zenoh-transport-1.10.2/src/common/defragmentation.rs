@@ -1,3 +1,7 @@
+//! Reassembles fragmented transport messages and enforces fragment limits.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the

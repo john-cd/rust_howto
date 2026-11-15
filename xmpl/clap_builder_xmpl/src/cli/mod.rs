@@ -8,11 +8,18 @@ use clap::Command;
 use clap::builder::styling;
 use clap::crate_version;
 
+/// The arguments of the command line that apply to the whole application.
 mod args;
+/// The commands of the application.
 mod cmd;
+/// Loads and validates the settings that control cli behavior. Composition code uses this module
+/// before starting services so invalid configuration is reported early.
 mod config;
+/// The `open` subcommand.
 mod opencmd;
+/// The `query` subcommand.
 mod querycmd;
+/// The hidden `test` subcommand.
 mod testcmd;
 
 pub(crate) use cmd::Cmd;
@@ -55,14 +62,16 @@ fn cli() -> Command {
 }
 
 /// Parses the command line of the program, exiting on failure.
+/// caller.
+
 pub(crate) fn get_args() -> (config::Config, Vec<Cmd>) {
     // Parse [env::args_os], exiting on failure.
     let matches = cli().get_matches();
     parse_args(matches)
 }
 
-#[cfg(test)]
 /// Parses the given arguments (the first one is the program name), exiting on failure.
+#[cfg(test)]
 pub(crate) fn get_args_from<I, T>(args: I) -> (config::Config, Vec<Cmd>)
 where
     I: IntoIterator<Item = T>,
@@ -115,6 +124,7 @@ fn parse_args(matches: ArgMatches) -> (config::Config, Vec<Cmd>) {
     (config.build(), commands)
 }
 
+/// Checks that global arguments are parsed without a command.
 #[cfg(test)]
 mod tests {
     use super::*;

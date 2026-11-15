@@ -60,6 +60,9 @@ pub enum GenerationMode {
 ///
 /// * `crate_data` - A reference to the `crates_io_api::Crate` struct containing information about
 ///   the crate.
+///
+/// # Errors
+/// Returns an error if the requested resource or connection cannot be created.
 pub fn create_crate_block_badges_or_refdefs(
     crate_data: &crates_io_api::Crate,
     mode: GenerationMode,
@@ -84,8 +87,8 @@ pub fn create_crate_block_badges_or_refdefs(
         .replace(".git", "");
 
     let (github_detected, github_user, github_repo) = detect_github_url(&repository);
-
     #[derive(Serialize)]
+
     /// Context data used for rendering templates.
     struct Context<'a> {
         /// The name of the crate being described.
@@ -145,9 +148,9 @@ pub fn create_crate_block_badges_or_refdefs(
 /// Capitalizes the first letter of a string if it is not equal to another string.
 ///
 /// # Arguments
-///
 /// * `s` - The string to capitalize.
 /// * `should_not_be` - The string that `s` should not be equal to.
+
 fn capitalize_if_not(s: String, should_not_be: &str) -> String {
     if s == should_not_be {
         s
@@ -174,6 +177,9 @@ fn capitalize_if_not(s: String, should_not_be: &str) -> String {
 /// * `name` - The name of the crate.
 ///
 /// Returns the generated markdown section as a `String`.
+///
+/// # Errors
+/// Returns an error if the requested resource or connection cannot be created.
 pub fn create_crate_page_section(name: &str) -> Result<String> {
     use anyhow::Context as _;
 
@@ -222,6 +228,9 @@ pub fn create_crate_page_section(name: &str) -> Result<String> {
 ///
 /// Returns the crate block as a `String`.
 /// Also return the reference definitions as a separate vector of strings.
+///
+/// # Errors
+/// Returns an error if the requested resource or connection cannot be created.
 pub fn create_crate_block(name: &str) -> Result<(String, Vec<String>)> {
     use anyhow::Context as _;
 
@@ -305,6 +314,9 @@ static CRATE_BLOCK_RE: once_cell::sync::Lazy<regex::Regex> = once_cell::sync::La
 /// - `expanded_content` is the content with directives replaced.
 /// - `refdefs` is a `Vec` of reference definition strings (one per non-empty line from all expanded
 ///   crate blocks), suitable for merging into a `refs` file.
+///
+/// # Errors
+/// Returns an error if the operation cannot be completed.
 pub fn process_crate_block_directives(content: &str) -> Result<(String, Vec<String>)> {
     use std::collections::HashMap;
     use std::collections::HashSet;
@@ -410,6 +422,7 @@ pub fn expand_crate_block_directives_in_directory(
     Ok(())
 }
 
+/// Verifies that simple crate directive.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -424,6 +437,10 @@ mod tests {
     }
 
     /// Helper: test that the regex does NOT match `input`.
+    ///
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested crate block badges or refdefs
+    ///   operation.
     fn assert_no_match(input: &str) {
         let re = &*CRATE_BLOCK_RE;
         assert!(

@@ -1,3 +1,8 @@
+//! Organizes the establishment subsystem and declares its child modules.
+//! Parent components use this module to access the subsystem functionality.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -10,9 +15,13 @@
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
 //
+/// Accepts and validates an incoming unicast transport handshake.
 pub(crate) mod accept;
+/// Creates and validates cookies used to protect incoming transport handshakes.
 pub(super) mod cookie;
+/// Organizes the ext subsystem and declares its child modules.
 pub mod ext;
+/// Opens an outgoing unicast transport and completes its establishment handshake.
 pub(crate) mod open;
 
 use async_trait::async_trait;
@@ -37,6 +46,9 @@ pub trait OpenFsm {
 
     type SendInitSynIn;
     type SendInitSynOut;
+    /// Sends init syn.
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested open fsm operation.
     async fn send_init_syn(
         self,
         input: Self::SendInitSynIn,
@@ -44,6 +56,9 @@ pub trait OpenFsm {
 
     type RecvInitAckIn;
     type RecvInitAckOut;
+    /// Receives init ack.
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested open fsm operation.
     async fn recv_init_ack(
         self,
         input: Self::RecvInitAckIn,
@@ -51,6 +66,9 @@ pub trait OpenFsm {
 
     type SendOpenSynIn;
     type SendOpenSynOut;
+    /// Sends open syn.
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested open fsm operation.
     async fn send_open_syn(
         self,
         input: Self::SendOpenSynIn,
@@ -58,18 +76,25 @@ pub trait OpenFsm {
 
     type RecvOpenAckIn;
     type RecvOpenAckOut;
+    /// Receives open ack.
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested open fsm operation.
     async fn recv_open_ack(
         self,
         input: Self::RecvOpenAckIn,
     ) -> Result<Self::RecvOpenAckOut, Self::Error>;
 }
 
+/// Specifies the operations implementations provide to establishment callers.
 #[async_trait]
 pub trait AcceptFsm {
     type Error;
 
     type RecvInitSynIn;
     type RecvInitSynOut;
+    /// Receives init syn.
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested accept fsm operation.
     async fn recv_init_syn(
         self,
         input: Self::RecvInitSynIn,
@@ -77,6 +102,9 @@ pub trait AcceptFsm {
 
     type SendInitAckIn;
     type SendInitAckOut;
+    /// Sends init ack.
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested accept fsm operation.
     async fn send_init_ack(
         self,
         input: Self::SendInitAckIn,
@@ -84,6 +112,9 @@ pub trait AcceptFsm {
 
     type RecvOpenSynIn;
     type RecvOpenSynOut;
+    /// Receives open syn.
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested accept fsm operation.
     async fn recv_open_syn(
         self,
         input: Self::RecvOpenSynIn,
@@ -91,15 +122,19 @@ pub trait AcceptFsm {
 
     type SendOpenAckIn;
     type SendOpenAckOut;
+    /// Sends open ack.
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested accept fsm operation.
     async fn send_open_ack(
         self,
         input: Self::SendOpenAckIn,
     ) -> Result<Self::SendOpenAckOut, Self::Error>;
 }
-
 /// **********************************
+
 // FUNCTIONS
 /// **********************************
+
 pub(super) fn compute_sn(
     zid1: ZenohIdProto,
     zid2: ZenohIdProto,

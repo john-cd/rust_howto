@@ -14,13 +14,11 @@ const MESSAGE: &str = "Look in the examples folder.";
 mod tests {
     use super::*;
 
-    /// Verifies that the placeholder runs.
     #[test]
     fn main_runs() {
         main();
     }
 
-    /// Verifies that the message points to the examples folder.
     #[test]
     fn message_mentions_examples() {
         assert!(MESSAGE.contains("examples"));

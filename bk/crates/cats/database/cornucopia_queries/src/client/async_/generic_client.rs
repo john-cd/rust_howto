@@ -1,6 +1,6 @@
+//! \ Generic\ asynchronous\ client\ interfaces\ for\ generated\ database\ queries\.
+//!
 //! TODO Reviewed ??-??-2026.
-
-// This file was generated with `cornucopia`. Do not modify.
 
 use std::future::Future;
 
@@ -23,7 +23,13 @@ pub trait GenericClient: Send + Sync {
     fn stmt_cache() -> bool {
         false
     }
+
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     fn prepare(&self, query: &str) -> impl Future<Output = Result<Statement, Error>> + Send;
+
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     fn execute<T>(
         &self,
         query: &T,
@@ -31,6 +37,9 @@ pub trait GenericClient: Send + Sync {
     ) -> impl Future<Output = Result<u64, Error>> + Send
     where
         T: ?Sized + ToStatement + Sync + Send;
+
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     fn query_one<T>(
         &self,
         statement: &T,
@@ -38,6 +47,9 @@ pub trait GenericClient: Send + Sync {
     ) -> impl Future<Output = Result<Row, Error>> + Send
     where
         T: ?Sized + ToStatement + Sync + Send;
+
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     fn query_opt<T>(
         &self,
         statement: &T,
@@ -45,6 +57,9 @@ pub trait GenericClient: Send + Sync {
     ) -> impl Future<Output = Result<Option<Row>, Error>> + Send
     where
         T: ?Sized + ToStatement + Sync + Send;
+
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     fn query<T>(
         &self,
         query: &T,
@@ -52,6 +67,9 @@ pub trait GenericClient: Send + Sync {
     ) -> impl Future<Output = Result<Vec<Row>, Error>> + Send
     where
         T: ?Sized + ToStatement + Sync + Send;
+
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     fn query_raw<T, I>(
         &self,
         statement: &T,

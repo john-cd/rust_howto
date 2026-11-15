@@ -18,8 +18,8 @@ fn run(args: &[&str]) -> Output {
         .output()
         .expect("the binary should start")
 }
-
 /// Writes `contents` to `root/relative`, creating parent folders.
+
 fn write(root: &Path, relative: &str, contents: &str) {
     let path = root.join(relative);
     fs::create_dir_all(path.parent().expect("a parent exists")).expect("dirs should be created");
@@ -44,6 +44,7 @@ fn test_unknown_command_fails() {
     let output = run(&["bogus"]);
     assert!(!output.status.success());
 }
+/// Verifies list crates prints sorted unique dependencies.
 
 /// `list_crates` prints the sorted, deduplicated dependencies of all manifests.
 #[test]
@@ -69,6 +70,7 @@ fn test_list_crates_prints_sorted_unique_dependencies() {
         ["anyhow", "cc", "serde"]
     );
 }
+/// Verifies category page from metadata renders categories.
 
 /// `category_page_from_metadata` renders the page offline from a metadata snapshot.
 #[test]
@@ -121,6 +123,7 @@ fn test_category_page_from_metadata_missing_file_fails() {
     assert!(!output.status.success());
     assert!(String::from_utf8_lossy(&output.stderr).contains("missing.toml"));
 }
+/// Verifies expand crate blocks without directives keeps files.
 
 /// `expand_crate_blocks` leaves Markdown without crate directives untouched.
 #[test]

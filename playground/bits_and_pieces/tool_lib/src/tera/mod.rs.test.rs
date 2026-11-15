@@ -4,6 +4,7 @@
 //! TODO Reviewed ??-??-2026.
 
 use std::collections::HashMap;
+
 use anyhow::anyhow;
 use walkdir::DirEntry;
 use walkdir::WalkDir;
@@ -11,7 +12,8 @@ use walkdir::WalkDir;
 // fn build_table(templ: Tera) -> anyhow::Result<()> {
 /// Walks the templates folder, ignoring hidden entries.
 fn build_table() -> anyhow::Result<()> {
-    let walker = WalkDir::new("./templates").into_iter()
+    let walker = WalkDir::new("./templates")
+        .into_iter()
         .filter_entry(|e| !is_hidden(e)) // no files / directories starting with `.`
         .filter_map(|e| e.ok()); // ignore errors
     let mut h: HashMap<String, String> = HashMap::new();

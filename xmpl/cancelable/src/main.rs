@@ -24,6 +24,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Checks that the demo runs to completion.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -83,7 +84,6 @@ mod tests {
         Ok(())
     }
 
-    /// Checks that a full queue rejects new tasks.
     #[test]
     fn full_queue_rejects_tasks() {
         let worker = Worker::new();

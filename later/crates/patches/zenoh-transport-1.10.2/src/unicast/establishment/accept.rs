@@ -1,3 +1,7 @@
+//! Accepts and validates an incoming unicast transport handshake.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2022 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,7 +13,9 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
+
 use std::time::Duration;
 
 use async_trait::async_trait;
@@ -63,10 +69,13 @@ use crate::unicast::link::TransportLinkUnicast;
 use crate::unicast::link::TransportLinkUnicastConfig;
 use crate::unicast::link::TransportLinkUnicastDirection;
 
+/// Maximum number of messages sent in a batch.
 pub(super) type AcceptError = (zenoh_result::Error, Option<u8>);
 
 struct StateTransport {
+    /// Maximum number of messages sent in a batch.
     batch_size: BatchSize,
+    /// Sequence-number resolution.
     resolution: Resolution,
     ext_qos: ext::qos::StateAccept,
     #[cfg(feature = "transport_multilink")]
@@ -87,67 +96,96 @@ struct StateLink {
 }
 
 struct State {
+    /// Transport value.
     transport: StateTransport,
     #[cfg(any(feature = "transport_auth", feature = "transport_compression"))]
+    /// Transport link associated with this state.
     link: StateLink,
 }
 
 // InitSyn
 struct RecvInitSynIn {
+    /// Protocol version advertised by the local peer.
     mine_version: u8,
 }
 struct RecvInitSynOut {
+    /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
+    /// Role advertised by the remote peer.
     other_whatami: WhatAmI,
 }
 
 // InitAck
 struct SendInitAckIn {
+    /// Protocol version advertised by the local peer.
     mine_version: u8,
+    /// Local Zenoh identifier.
     mine_zid: ZenohIdProto,
+    /// Role advertised by the local peer.
     mine_whatami: WhatAmI,
+    /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
+    /// Role advertised by the remote peer.
     other_whatami: WhatAmI,
 }
 struct SendInitAckOut {
+    /// Nonce included in the cookie.
     cookie_nonce: u64,
 }
 
 // OpenSyn
 struct RecvOpenSynIn {
+    /// Nonce included in the cookie.
     cookie_nonce: u64,
 }
 struct RecvOpenSynOut {
+    /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
+    /// Role advertised by the remote peer.
     other_whatami: WhatAmI,
+    /// Optional other bound used by recv open syn out; `None` means the value is not configured or
+    /// unavailable.
     other_bound: Option<Bound>,
+    /// Lease duration advertised by the remote peer.
     other_lease: Duration,
+    /// Initial sequence number advertised by the remote peer.
     other_initial_sn: TransportSn,
     #[cfg(feature = "auth_usrpwd")]
+    /// Identifier for other auth.
     other_auth_id: UsrPwdId,
 }
 
 // OpenAck
 struct SendOpenAckIn {
+    /// Local Zenoh identifier.
     mine_zid: ZenohIdProto,
+    /// Lease duration advertised by the local peer.
     mine_lease: Duration,
+    /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
+    /// Role advertised by the remote peer.
     other_whatami: WhatAmI,
 }
 struct SendOpenAckOut {
+    /// Open ack value.
     open_ack: OpenAck,
 }
 
 // Fsm
 struct AcceptLink<'a> {
+    /// Transport link associated with this state.
     link: &'a mut TransportLinkUnicast,
+    /// Random number generator used for handshake values.
     prng: &'a Mutex<PseudoRng>,
+    /// Block cipher used to protect the session.
     cipher: &'a BlockCipher,
     ext_qos: ext::qos::QoSFsm<'a>,
     #[cfg(feature = "transport_multilink")]
     ext_mlink: ext::multilink::MultiLinkFsm<'a>,
     #[cfg(feature = "shared-memory")]
     // Will be None if SHM operation is disabled by Config
+    /// Optional ext shm used by accept link; `None` means the value is not configured or
+    /// unavailable.
     ext_shm: Option<ext::shm::auth::ShmFsm<'a>>,
     #[cfg(feature = "transport_auth")]
     ext_auth: ext::auth::AuthFsm<'a>,
@@ -155,6 +193,8 @@ struct AcceptLink<'a> {
     #[cfg(feature = "transport_compression")]
     ext_compression: ext::compression::CompressionFsm<'a>,
     ext_patch: ext::patch::PatchFsm<'a>,
+    /// Optional ext remote bound used by accept link; `None` means the value is not configured or
+    /// unavailable.
     ext_remote_bound: Option<RemoteBoundCallback>,
     ext_region_name: ext::region_name::RegionNameFsm,
 }
@@ -171,6 +211,10 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
     type SendOpenAckIn = (&'a mut State, SendOpenAckIn);
     type SendOpenAckOut = SendOpenAckOut;
 
+    /// Receives init syn.
+
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested accept fsm operation.
     async fn recv_init_syn(
         self,
         input: Self::RecvInitSynIn,
@@ -310,6 +354,11 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
         Ok(output)
     }
 
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested accept fsm operation.
+    ///
+    /// # Errors
+    /// An error is returned if let, cfg fails.
     async fn send_init_ack(
         self,
         input: Self::SendInitAckIn,
@@ -463,6 +512,10 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
         Ok(output)
     }
 
+    /// Receives open syn.
+
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested accept operation.
     async fn recv_open_syn(
         self,
         input: Self::RecvOpenSynIn,
@@ -613,6 +666,11 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
         Ok((state, output))
     }
 
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested accept operation.
+    ///
+    /// # Errors
+    /// An error is returned if send_open_ack, cfg fails.
     async fn send_open_ack(
         self,
         input: Self::SendOpenAckIn,
@@ -730,6 +788,13 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
         Ok(output)
     }
 }
+/// Accepts link.
+///
+/// # Arguments
+/// * `link` - Transport link to add, remove, or use.
+///
+/// # Errors
+/// Returns an error if the requested resource or connection cannot be created.
 
 pub(crate) async fn accept_link(link: LinkUnicast, manager: &TransportManager) -> ZResult<()> {
     let endpoint = link.get_src().to_endpoint();

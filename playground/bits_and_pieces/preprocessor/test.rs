@@ -6,7 +6,6 @@
 mod tests {
     use super::*;
 
-    /// Runs the preprocessor on a sample book.
     #[test]
     fn preprocessor_run() {
         let input_json = r##"[
@@ -46,7 +45,8 @@ mod tests {
         ]"##;
         let input_json = input_json.as_bytes();
 
-        let (ctx, book) = mdbook::preprocess::CmdPreprocessor::parse_input(input_json).expect("valid input JSON");
+        let (ctx, book) =
+            mdbook::preprocess::CmdPreprocessor::parse_input(input_json).expect("valid input JSON");
 
         let result = Preproc::new().run(&ctx, book);
         let actual_book = result.expect("preprocessor failed");

@@ -29,14 +29,24 @@ fn default_repository_root() -> PathBuf {
         .and_then(std::path::Path::parent)
         .map_or_else(|| PathBuf::from("."), std::path::Path::to_path_buf)
 }
-
 /// Scans the repository and writes a stable JSON report to stdout.
+///
+/// # Errors
+/// Returns an error if repository scanning or JSON output fails.
 fn run() -> Result<ExitCode> {
     run_with(Args::parse())
 }
 
-/// Runs the integrity check for the repository using the provided arguments and outputs a JSON
-/// report.
+/// Runs the integrity check with parsed arguments and writes a JSON report.
+///
+/// # Arguments
+/// * `args` - Parsed options selecting the repository root and failure exit behavior.
+///
+/// # Returns
+/// `ExitCode::FAILURE` when `--fail` is set and the report contains errors; otherwise success.
+/// # Errors
+/// Returns an error if repository scanning or JSON output fails.
+
 fn run_with(args: Args) -> Result<ExitCode> {
     let repo_root = args.repo_root.unwrap_or_else(default_repository_root);
     let report = build_report(&repo_root)
@@ -53,6 +63,8 @@ fn run_with(args: Args) -> Result<ExitCode> {
 }
 
 /// Starts the command-line application and reports top-level errors.
+/// # Returns
+/// A process status reflecting the outcome of the command.
 fn main() -> ExitCode {
     match run() {
         Ok(code) => code,
@@ -63,6 +75,7 @@ fn main() -> ExitCode {
     }
 }
 
+/// Scans a repository without chapters and succeeds, even with `--fail`.
 #[cfg(test)]
 mod tests {
     use super::*;

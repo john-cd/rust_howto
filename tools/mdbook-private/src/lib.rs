@@ -1,10 +1,12 @@
-// This Source Code Form is subject to the terms of the Mozilla Public
-// License, v. 2.0. If a copy of the MPL was not distributed with this
-// file, You can obtain one at https://mozilla.org/MPL/2.0/.
-// Adapted from https://github.com/RealAtix/mdbook-private (Razvan Nicolescu).
 //! mdBook 0.5-compatible private chapter and comment filtering.
 //!
 //! TODO Reviewed ??-??-2026.
+
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+//!
+// Adapted from https://github.com/RealAtix/mdbook-private (Razvan Nicolescu).
 
 use std::sync::LazyLock;
 
@@ -33,6 +35,7 @@ struct Config {
 }
 
 impl Default for Config {
+    /// Constructs a usable initial config value with the defaults required by the lib component.
     fn default() -> Self {
         Self {
             remove: false,
@@ -53,6 +56,7 @@ impl Preprocessor for Private {
     }
 
     /// Preprocesses the book by styling or removing private content and chapters.
+
     fn run(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
         // Invalid privacy settings must fail the build rather than expose content.
         let config = ctx
@@ -92,8 +96,8 @@ impl Preprocessor for Private {
         Ok(renderer != "not-supported")
     }
 }
-
 /// Removes the chapters, at any depth, whose file name starts with `prefix`.
+
 fn remove_chapters(items: &mut Vec<BookItem>, prefix: &str) {
     items.retain_mut(|item| {
         if let BookItem::Chapter(chapter) = item {
@@ -113,6 +117,10 @@ fn remove_chapters(items: &mut Vec<BookItem>, prefix: &str) {
 }
 
 /// Renumbers the chapters that have a number, starting at 1 under `parent`.
+///
+/// # Arguments
+/// * `items` - Mutable [book item] whose state is updated by this operation.
+/// * `parent` - Mutable vec whose state is updated by this operation.
 fn renumber(items: &mut [BookItem], parent: &mut Vec<u32>) {
     let mut next = 1;
     for item in items {

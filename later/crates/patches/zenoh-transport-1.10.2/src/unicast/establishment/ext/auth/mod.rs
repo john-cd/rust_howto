@@ -1,3 +1,8 @@
+//! Organizes the auth subsystem and declares its child modules.
+//! Parent components use this module to access the subsystem functionality.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2022 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the

@@ -20,19 +20,25 @@ use criterion::criterion_main;
 
 /// A binary tree node living in a `bumpalo` arena with reference pointers.
 struct ArenaNode<'bump> {
+    /// Value stored by this wrapper.
     val: i32,
+    /// Optional left used by arena node; `None` means the value is not configured or unavailable.
     left: Option<&'bump Self>,
+    /// Optional right used by arena node; `None` means the value is not configured or unavailable.
     right: Option<&'bump Self>,
 }
 
 /// A binary tree node living on the standard heap using `Box`.
 struct BoxNode {
+    /// Value stored by this wrapper.
     val: i32,
+    /// Optional left used by box node; `None` means the value is not configured or unavailable.
     left: Option<Box<Self>>,
+    /// Optional right used by box node; `None` means the value is not configured or unavailable.
     right: Option<Box<Self>>,
 }
-
 /// Inserts a value into an arena-backed binary search tree.
+
 fn insert_arena<'bump>(
     bump: &'bump Bump,
     node: Option<&'bump ArenaNode<'bump>>,
@@ -80,6 +86,9 @@ fn insert_box(node: Option<Box<BoxNode>>, val: i32) -> Box<BoxNode> {
 
 /// Benchmarks building a tree in a `bumpalo` arena versus allocating individual
 /// `Box` nodes.
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
 fn benchmark_tree_construction(c: &mut Criterion) {
     let mut group = c.benchmark_group("tree_construction");
 
@@ -111,6 +120,9 @@ fn benchmark_tree_construction(c: &mut Criterion) {
 }
 
 /// Benchmarks batch allocating small objects in `bumpalo` vs standard `Box`.
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
 fn benchmark_batch_allocations(c: &mut Criterion) {
     let mut group = c.benchmark_group("batch_allocations");
 
@@ -143,6 +155,11 @@ criterion_group!(
 );
 criterion_main!(benches);
 // ANCHOR_END: example
+
+/// Builds one heap-backed tree node as a small allocation example.
+pub fn run() -> Box<BoxNode> {
+    insert_box(None, 1)
+}
 
 #[cfg(test)]
 mod tests {

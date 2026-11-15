@@ -47,6 +47,8 @@ struct CategoryRecord {
 }
 
 /// `Create_category_and_crates`
+///
+/// # Arguments
 /// Returns one line in the "crates organized by category" table:
 /// | <category badge> | <description> | <crate badge> <crate badge>... |
 ///
@@ -55,6 +57,9 @@ struct CategoryRecord {
 /// description: description of the category
 /// `crate_names`: list of the names of the crates to include in the category (per
 /// lib.rs)
+///
+/// # Errors
+/// Returns an error if the requested resource or connection cannot be created.
 pub fn create_category_and_crates(
     category: &str,
     slug: &str,
@@ -69,8 +74,15 @@ pub fn create_category_and_crates(
         &RecipeLinksByCrate::new(),
     )
 }
-
 /// Returns one row of the table, with links to the recipes that use each crate.
+
+/// # Arguments
+/// * `recipe_links` - Recipe links by crate used as the recipe links input to the crates by
+///   category workflow.
+
+/// # Errors
+/// Returns an error if the create category row operation cannot satisfy its required invariants.
+
 fn create_category_row(
     category: &str,
     slug: &str,
@@ -122,9 +134,14 @@ fn create_category_row(
 
 /// Render the external crates.io category index from a checked-in metadata snapshot.
 ///
+/// # Arguments
+///
 /// Crates not listed in the snapshot are added to the uncategorized row. Entries in
 /// the snapshot that are absent from the current inventory are ignored, so crate
 /// renames do not leave stale badges behind.
+///
+/// # Errors
+/// Returns an error if the requested resource or connection cannot be created.
 pub fn create_category_page_from_metadata(
     crate_names: &[String],
     metadata: &str,
@@ -135,8 +152,22 @@ pub fn create_category_page_from_metadata(
         &RecipeLinksByCrate::new(),
     )
 }
-
-/// Render the external crates.io category index and link each crate to its published recipes.
+/// Parses category metadata and renders the external crates.io category index.
+///
+/// Each listed crate links to its published recipes when an entry exists in
+/// `recipe_links`. Crates missing from the metadata appear in the uncategorized
+/// row; stale metadata entries are ignored.
+/// # Arguments
+/// * `crate_names` - Crate names in the current inventory.
+/// * `metadata` - TOML category catalog to parse.
+/// * `recipe_links` - Published recipe links keyed by crate name.
+///
+/// # Returns
+/// The rendered Markdown category index.
+///
+/// # Errors
+/// Returns an error if the TOML is invalid, category records are inconsistent,
+/// or a category row cannot be rendered.
 pub fn create_category_page_from_metadata_with_recipe_links(
     crate_names: &[String],
     metadata: &str,
@@ -228,12 +259,13 @@ pub fn create_category_page_from_metadata_with_recipe_links(
     Ok(markdown)
 }
 
+/// Covers rendering categories from metadata and selecting current crates.
 #[cfg(test)]
 mod tests {
     use super::super::RecipeLink;
     use super::*;
 
-    /// Verifies that create category and crates.
+    /// Keeps only current crate names and puts uncategorized crates in the final row.
     #[test]
     fn test_create_category_and_crates() {
         let category = " Encoding ";
@@ -258,7 +290,7 @@ mod tests {
         assert!(result.contains("{{hi:hex}}"));
     }
 
-    /// Verifies that create category and crates empty.
+    /// Emits the category page header and footer when no crates are present.
     #[test]
     fn test_create_category_and_crates_empty() {
         let category = "Empty";
@@ -277,7 +309,6 @@ mod tests {
         assert!(result.ends_with('|'));
     }
 
-    /// Verifies that category row preserves existing markdown entities.
     #[test]
     fn category_row_preserves_existing_markdown_entities() {
         let row = create_category_and_crates(
@@ -292,8 +323,9 @@ mod tests {
         assert!(!row.contains("&amp;quot;"));
         assert!(!row.contains("&amp;amp;"));
     }
+    /// Performs the category page from metadata handles duplicates renames and missing categories
+    /// operation.
 
-    /// Verifies that category page from metadata handles duplicates renames and missing categories.
     #[test]
     fn category_page_from_metadata_handles_duplicates_renames_and_missing_categories() {
         let inventory = ["shared", "shared", "new-name", "std"].map(str::to_owned);
@@ -325,7 +357,6 @@ mod tests {
         assert!(page.contains("| Uncategorized | No metadata is recorded. |"));
     }
 
-    /// Verifies that category page from metadata nests recipe links under their crates.
     #[test]
     fn category_page_from_metadata_nests_recipe_links_under_their_crates() {
         let inventory = ["glam", "vello"].map(str::to_owned);
@@ -356,7 +387,6 @@ mod tests {
         ));
     }
 
-    /// Verifies that category page from metadata includes crates found only in recipes.
     #[test]
     fn category_page_from_metadata_includes_crates_found_only_in_recipes() {
         let inventory = ["known".to_owned(), "std".to_owned()];
@@ -387,7 +417,6 @@ mod tests {
         ));
     }
 
-    /// Verifies that category page from metadata is deterministic.
     #[test]
     fn category_page_from_metadata_is_deterministic() {
         let metadata = r#"
@@ -406,7 +435,6 @@ mod tests {
         );
     }
 
-    /// Verifies that category page from metadata rejects duplicate slugs.
     #[test]
     fn category_page_from_metadata_rejects_duplicate_slugs() {
         let metadata = r#"

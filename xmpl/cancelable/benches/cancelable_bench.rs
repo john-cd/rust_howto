@@ -1,10 +1,12 @@
 //! Criterion benchmarks for task submission, channel contention, and cancellation latency in
-//! `cancelable`.
 //!
+//! `cancelable`.
 //! Measures:
 //! - Task submission throughput and cancellation token registration across multiple threads.
 //! - Channel contention under concurrent task requests and queue saturation.
 //! - Cancellation latency for targeted task cancellation and broadcast `cancel_all` requests.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::hint::black_box;
 use std::sync::Arc;
@@ -20,6 +22,9 @@ use criterion::criterion_group;
 use criterion::criterion_main;
 
 /// Benchmarks task creation and submission throughput into the worker queue.
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
 fn benchmark_task_submission_throughput(c: &mut Criterion) {
     let mut group = c.benchmark_group("task_submission");
 
@@ -56,6 +61,9 @@ fn submit_worker_tasks(worker: &Worker) {
 
 /// Benchmarks channel contention and queue saturation under concurrent threads attempting to submit
 /// tasks.
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
 fn benchmark_channel_contention(c: &mut Criterion) {
     let mut group = c.benchmark_group("channel_contention");
 
@@ -86,6 +94,9 @@ fn benchmark_channel_contention(c: &mut Criterion) {
 
 /// Benchmarks cancellation latency: token checking, targeted task cancellation, and broadcasting
 /// cancellation.
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
 fn benchmark_cancellation_latency(c: &mut Criterion) {
     let mut group = c.benchmark_group("cancellation_latency");
 

@@ -9,15 +9,20 @@ use std::path::Path;
 use tracing::info;
 
 /// Checks if a directory entry is hidden (starts with a dot).
+/// Reports whether the clean meets the hidden condition so callers can choose the correct branch.
+
 fn is_hidden(entry: &DirEntry) -> bool {
     entry
         .file_name()
         .to_str()
         .is_some_and(|s| s.starts_with('.'))
 }
-
 /// Remove all files (not starting with .) and subfolders in a given folder.
+///
+/// # Arguments
+/// * `dir` - Path to the resource being processed.
 /// BEWARE: destructive.
+
 pub fn clean_folder(dir: &Path) -> anyhow::Result<()> {
     if dir.is_dir() {
         for entry in fs::read_dir(dir)? {
@@ -44,6 +49,7 @@ pub fn clean_folder(dir: &Path) -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Checks that only filenames starting with a dot are considered hidden.
 #[cfg(test)]
 mod tests {
     use std::fs;
@@ -82,6 +88,9 @@ mod tests {
     }
 
     /// Helper to create a nested fixture directory for testing folder cleanup.
+
+    /// # Arguments
+    /// * `root` - Filesystem location the operation reads, updates, or uses as its scope.
     fn create_test_fixtures(root: &Path) {
         fs::create_dir_all(root.join("subdir/nested")).expect("subdirectories should be created");
         fs::File::create(root.join("file1.txt")).expect("file1 should be created");
@@ -118,7 +127,7 @@ mod tests {
         assert!(!target_dir.join("subdir").exists());
     }
 
-    /// Checks that cleaning an already empty folder succeeds without error.
+    /// Verifies clean folder empty dir.
     #[test]
     fn test_clean_folder_empty_dir() {
         let dir = tempdir().expect("temporary directory should be created");
@@ -150,7 +159,6 @@ mod tests {
         assert!(file_path.is_file());
     }
 
-    /// Checks that a symbolic link inside the directory is removed without deleting the link
     /// target.
     #[cfg(unix)]
     #[test]

@@ -31,8 +31,8 @@ use xxhash_rust::xxh3::xxh3_64;
 fn make_test_buffer(len: usize) -> Vec<u8> {
     (0..len).map(|i| (i % 256) as u8).collect()
 }
-
 /// Hashes a byte slice with standard `DefaultHasher` (SipHash 1-3).
+
 fn hash_std(data: &[u8]) -> u64 {
     let mut hasher = std::collections::hash_map::DefaultHasher::new();
     hasher.write(data);
@@ -57,8 +57,11 @@ fn hash_fx(data: &[u8]) -> u64 {
 fn hash_fold(data: &[u8]) -> u64 {
     FixedState::default().hash_one(data)
 }
-
 /// Benchmarks hashing performance on a small buffer (64 bytes).
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
+
 fn benchmark_small_buffer(c: &mut Criterion) {
     let data = make_test_buffer(64);
     let mut group = c.benchmark_group("hashing_64_bytes");
@@ -95,6 +98,9 @@ fn benchmark_small_buffer(c: &mut Criterion) {
 }
 
 /// Benchmarks hashing performance on a medium buffer (64 KB).
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
 fn benchmark_medium_buffer(c: &mut Criterion) {
     let data = make_test_buffer(64 * 1024);
     let mut group = c.benchmark_group("hashing_64KB_buffer");
@@ -133,6 +139,15 @@ fn benchmark_medium_buffer(c: &mut Criterion) {
 criterion_group!(benches, benchmark_small_buffer, benchmark_medium_buffer);
 criterion_main!(benches);
 // ANCHOR_END: example
+
+/// Runs each hash implementation on the same sample byte buffer.
+pub fn run() {
+    let bytes = make_test_buffer(64);
+    let _ = hash_std(&bytes);
+    let _ = hash_ahash(&bytes);
+    let _ = hash_fx(&bytes);
+    let _ = hash_fold(&bytes);
+}
 
 #[cfg(test)]
 mod tests {

@@ -17,8 +17,11 @@ pub(super) fn subcommand_info() -> Command {
         // Add the crate name argument to the subcommand.
         .arg(super::arg_crate_name())
 }
-
 /// "$ myapp info" was run
+
+/// # Returns
+/// `Some` when the requested value is available; otherwise returns `None`.
+
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<crate::CmdArgs> {
     let mut cmdargs = None;
     if let Some(m) = matches.subcommand_matches("info") {
@@ -32,7 +35,6 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<crate::CmdArgs> {
 mod tests {
     use super::*;
 
-    /// Checks that multiple crate names are collected into `CmdArgs`.
     #[test]
     fn parses_multiple_crate_names() {
         let matches = Command::new("templ")
@@ -45,7 +47,6 @@ mod tests {
         assert_eq!(args.args, vec!["serde".to_owned(), "tokio".to_owned()]);
     }
 
-    /// Checks that the visible alias `i` works as an alias for `info`.
     #[test]
     fn alias_i_is_recognized() {
         let matches = Command::new("templ")
@@ -58,7 +59,6 @@ mod tests {
         assert_eq!(args.args, vec!["axum".to_owned()]);
     }
 
-    /// Checks that omitting the required crate argument fails argument parsing.
     #[test]
     fn missing_crate_name_fails() {
         let result = Command::new("templ")
@@ -68,7 +68,6 @@ mod tests {
         assert!(result.is_err(), "missing crate name should fail parsing");
     }
 
-    /// Checks that `get_cmd` returns `None` when the subcommand was not called.
     #[test]
     fn returns_none_when_subcommand_not_invoked() {
         let matches = Command::new("templ")

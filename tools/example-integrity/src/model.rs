@@ -28,7 +28,8 @@ pub struct Report {
 }
 
 impl Report {
-    /// Returns whether the report contains a diagnostic with error severity.
+    /// A Markdown page and its publication, visibility, and example state.
+
     #[must_use]
     pub fn has_errors(&self) -> bool {
         self.diagnostics
@@ -36,8 +37,9 @@ impl Report {
             .any(|diagnostic| diagnostic.severity == "error")
     }
 }
-
+/// Index record describing one mdBook chapter.
 /// A Markdown page and its publication, visibility, and example state.
+
 #[derive(Debug, Serialize)]
 pub struct ChapterRecord {
     /// Canonical repository-relative page path.

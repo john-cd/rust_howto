@@ -65,6 +65,7 @@ fn describe(manifest: &Manifest) -> Result<String, Box<dyn Error>> {
     Ok(out)
 }
 
+/// Verifies core identification metadata in embedded `Cargo.toml`.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -126,6 +127,7 @@ authors.workspace = true
     }
 }
 
+/// Tests the `main` example and its documented behavior.
 #[cfg(test)]
 mod manifest_parsing_tests {
     use cargo_toml::Edition;
@@ -256,7 +258,7 @@ mod manifest_parsing_tests {
         let _err = result.expect_err("malformed TOML must return an error");
     }
 
-    /// Verifies that `needs_workspace_inheritance` detects inherited fields.
+    /// Verifies workspace inheritance detection.
     #[test]
     fn test_workspace_inheritance_detection() {
         let toml_with_inheritance = br#"

@@ -39,12 +39,12 @@ impl Task {
         }
     }
 
-    /// Returns the identifier of the task.
     pub fn task_id(&self) -> u64 {
         self.task_id
     }
 
     /// Runs the task, sending progress and stopping if `cancel_token` says so.
+
     pub(super) fn execute(
         self,
         cancel_token: CancelToken,
@@ -67,6 +67,7 @@ impl Task {
 }
 
 impl Default for Task {
+    /// Constructs a usable initial task value with the defaults required by the task component.
     fn default() -> Self {
         Self::new()
     }

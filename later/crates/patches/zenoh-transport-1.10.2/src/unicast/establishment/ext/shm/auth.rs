@@ -1,3 +1,7 @@
+//! Authenticates access to shared-memory transport resources.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2026 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the

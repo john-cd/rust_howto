@@ -1,3 +1,8 @@
+//! Organizes the shm subsystem and declares its child modules.
+//! Parent components use this module to access the subsystem functionality.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2026 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -10,6 +15,9 @@
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
 //
+/// Authenticates access to shared-memory transport resources.
 pub(crate) mod auth;
+/// Moves eligible unicast messages into the shared-memory handoff path.
 pub mod handoff;
+/// Builds and validates shared-memory segment metadata for a unicast transport.
 pub(crate) mod segment;

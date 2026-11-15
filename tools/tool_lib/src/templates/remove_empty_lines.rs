@@ -3,10 +3,11 @@
 //! TODO Reviewed ??-??-2026.
 
 /// Removes empty lines from a given string slice.
-///
+
 /// This function takes a string slice as input, splits it into lines,
 /// filters out any lines that are empty or contain only whitespace,
 /// and then joins the remaining lines back together with a single newline
+///
 /// character between them.
 ///
 /// # Arguments
@@ -18,7 +19,6 @@
 /// A `Vec` of non-empty lines, and a `String` containing the text with all empty lines removed.
 ///
 /// # Example
-///
 /// ```
 /// use tool_lib::remove_empty_lines;
 /// let input = "Hello, world!\n\nThis is a test.\n   \nAnother line.";
@@ -36,6 +36,7 @@ pub fn remove_empty_lines(text: &str) -> (Vec<String>, String) {
     (lines.clone(), lines.join("\n"))
 }
 
+/// Verifies that empty input produces no lines and an empty output string.
 #[cfg(test)]
 mod tests {
     use super::*;

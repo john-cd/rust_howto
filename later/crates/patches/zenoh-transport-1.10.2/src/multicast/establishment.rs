@@ -1,3 +1,7 @@
+//! Establishes multicast transports and registers newly discovered peers.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,7 +13,9 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
+
 use std::sync::Arc;
 
 use rand::Rng;
@@ -29,6 +35,16 @@ use crate::multicast::TransportMulticast;
 use crate::multicast::link::TransportLinkMulticast;
 use crate::multicast::link::TransportLinkMulticastConfig;
 use crate::multicast::transport::TransportMulticastInner;
+
+/// Loads the link required by the establishment workflow and reports failures from the underlying
+/// source.
+///
+/// # Arguments
+/// * `link` - Transport link to add, remove, or use.
+///
+///
+/// # Errors
+/// Returns an error if the requested resource or connection cannot be created.
 
 pub(crate) async fn open_link(
     manager: &TransportManager,

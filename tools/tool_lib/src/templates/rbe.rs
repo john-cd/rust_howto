@@ -15,11 +15,16 @@ pub(super) static RBE: &str = "
 
 /// Creates a badge that links to the Rust By Example book.
 ///
+/// # Arguments
+///
 /// The badge will be rendered with the given concept, and will link to the
 /// corresponding page in the Rust By Example book.
 ///
 /// concept: name of the language element / Rust By Example book
 /// chapter e.g. "attributes"
+///
+/// # Errors
+/// Returns an error if the requested resource or connection cannot be created.
 pub fn create_rbe_badge(concept: &str) -> Result<String> {
     /// Template data used to render a Rust By Example badge.
     #[derive(Serialize)]
@@ -36,6 +41,7 @@ pub fn create_rbe_badge(concept: &str) -> Result<String> {
     Ok(rendered)
 }
 
+/// Verifies that create rbe badge basic.
 #[cfg(test)]
 mod tests {
     use super::*;

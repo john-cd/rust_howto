@@ -1,3 +1,7 @@
+//! Provides the link operations used by low-latency unicast transport.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,7 +13,9 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
+
 use std::sync::Arc;
 #[cfg(feature = "stats")]
 use std::sync::OnceLock;
@@ -35,6 +41,14 @@ use zenoh_runtime::ZRuntime;
 use super::transport::TransportUnicastLowlatency;
 use crate::unicast::link::TransportLinkUnicast;
 use crate::unicast::link::TransportLinkUnicastRx;
+/// Sends with link.
+///
+/// # Arguments
+/// * `link` - Transport link to add, remove, or use.
+/// * `msg` - Message to schedule or process.
+///
+/// # Errors
+/// Returns an error if the output cannot be written or sent.
 
 pub(crate) async fn send_with_link(
     link: &LinkUnicast,
@@ -79,6 +93,15 @@ pub(crate) async fn send_with_link(
     Ok(())
 }
 
+/// Loads the with link required by the link workflow and reports failures from the underlying
+/// source.
+///
+/// # Arguments
+/// * `link` - Transport link to add, remove, or use.
+/// * `buffer` - Buffer used to stage the input or output.
+
+/// # Errors
+/// An error is returned if get_mut fails.
 pub(crate) async fn read_with_link(
     link: &TransportLinkUnicastRx,
     buffer: &mut [u8],
@@ -101,6 +124,11 @@ pub(crate) async fn read_with_link(
 }
 
 impl TransportUnicastLowlatency {
+    /// # Errors
+    /// An error is returned if as_ref fails.
+    ///
+    /// # Panics
+    /// Panics if an internal `Result` or `Option` has no usable value.
     pub(super) fn send(&self, #[allow(unused_mut)] mut msg: NetworkMessageMut) -> ZResult<()> {
         zenoh_runtime::ZRuntime::TX.block_in_place(async {
             let guard = zasyncwrite!(self.link);
@@ -145,6 +173,14 @@ impl TransportUnicastLowlatency {
         })
     }
 
+    /// Sends async.
+    ///
+    /// # Arguments
+    /// * `msg` - Message to schedule or process.
+    ///
+    /// # Errors
+    /// Returns an error if the output cannot be written or sent.
+
     pub(super) async fn send_async(&self, msg: TransportMessageLowLatencyRef<'_>) -> ZResult<()> {
         let guard = zasyncwrite!(self.link);
         let link = &guard.as_ref().ok_or_else(|| zerror!("No link"))?.link;
@@ -156,6 +192,11 @@ impl TransportUnicastLowlatency {
         )
         .await
     }
+
+    /// Starts keepalive.
+    ///
+    /// # Arguments
+    /// * `keep_alive` - Duration controlling the operation.
 
     pub(super) fn start_keepalive(&self, keep_alive: Duration) {
         let c_transport = self.clone();
@@ -189,6 +230,9 @@ impl TransportUnicastLowlatency {
         };
         self.tracker.spawn_on(task, &ZRuntime::TX);
     }
+
+    /// # Arguments
+    /// * `lease` - Duration controlling the operation.
 
     pub(super) fn internal_start_rx(&self, lease: Duration) {
         let rx_buffer_size = self.manager.config.link_rx_buffer_size;

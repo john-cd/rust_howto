@@ -46,12 +46,13 @@ impl Config {
         }
     }
 
-    /// Returns the verbosity level.
+    ///
     pub(crate) fn get_verbose(&self) -> u8 {
         self.verbose
     }
 
     /// Returns the path of the configuration file, if any.
+
     pub(crate) fn get_config_file(&self) -> Option<PathBuf> {
         self.config_file.clone()
     }

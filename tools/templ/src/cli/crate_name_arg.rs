@@ -13,11 +13,13 @@ pub(super) fn arg_crate_name() -> clap::Arg {
         .action(clap::ArgAction::Append)
         .help("Enter the crate name(s). Multiple crate names can be specified.")
 }
-
 /// Extracts the crate names from the command line arguments.
+///
+/// # Arguments
 ///
 /// This function retrieves the values associated with the "`crate_name`" argument from the
 /// `clap::ArgMatches`.
+
 pub(super) fn get_cmd_arg_crate_name(m: &clap::ArgMatches) -> Vec<String> {
     m.get_many::<String>("crate_name")
         .unwrap_or_default()
@@ -31,7 +33,6 @@ mod tests {
 
     use super::*;
 
-    /// Checks that a single crate name is extracted.
     #[test]
     fn extracts_single_crate_name() {
         let matches = Command::new("test_cmd")
@@ -43,7 +44,6 @@ mod tests {
         assert_eq!(names, vec!["serde".to_owned()]);
     }
 
-    /// Checks that multiple crate names are extracted in order.
     #[test]
     fn extracts_multiple_crate_names() {
         let matches = Command::new("test_cmd")
@@ -58,7 +58,6 @@ mod tests {
         );
     }
 
-    /// Checks that missing crate name fails argument validation.
     #[test]
     fn missing_crate_name_fails() {
         let result = Command::new("test_cmd")
@@ -68,7 +67,6 @@ mod tests {
         assert!(result.is_err(), "missing crate name should fail");
     }
 
-    /// Checks that empty vector is returned when optional crate name argument is not provided.
     #[test]
     fn empty_vector_when_arg_not_present() {
         let matches = Command::new("test_cmd")

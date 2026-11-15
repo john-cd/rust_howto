@@ -3,6 +3,9 @@
 //! TODO Reviewed ??-??-2026.
 
 /// Detect a GitHub URL, returning `(detected, username, repo)`, where `detected` is `true` if it is
+///
+/// # Arguments
+/// * `url` - URL identifying the requested resource.
 /// a proper Github URL, `false` otherwise. In the latter case, `username` and `repo` are empty
 /// string slices.
 pub fn detect_github_url(url: &str) -> (bool, &str, &str) {
@@ -23,11 +26,11 @@ pub fn detect_github_url(url: &str) -> (bool, &str, &str) {
     (false, "", "")
 }
 
+/// name.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that valid GitHub URLs return `true` along with extracted username and repository
     /// name.
     #[test]
     fn test_detect_github_url_valid() {

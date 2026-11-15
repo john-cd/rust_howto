@@ -16,8 +16,8 @@ fn run_clean(dir: &Path) -> Output {
         .output()
         .expect("the clean binary should start")
 }
-
 /// Verifies that a missing root fails with a nonzero status and a path-bearing message.
+
 #[test]
 fn test_missing_root_fails() {
     let dir = tempdir().expect("a temporary directory should be created");

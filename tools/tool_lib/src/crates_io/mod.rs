@@ -3,7 +3,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Looks up crate categories through the crates.io API.
 mod categories_for_crate;
+/// Retrieves crate metadata and retains contextual lookup failures.
 mod info;
 
 use anyhow::Result;
@@ -22,11 +24,11 @@ fn get_client() -> Result<SyncClient> {
 
 // unit tests; cleanup
 
+/// the crates.io API
 #[cfg(test)]
 mod tests {
     use super::get_client;
 
-    /// Verifies that client initializes without making a request.
     #[test]
     fn client_initializes_without_making_a_request() {
         get_client().expect("input should parse");

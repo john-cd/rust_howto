@@ -108,8 +108,9 @@ fn main() {
 }
 // Examples adapted from the tutorial: <https://model-checking.github.io/kani/tutorial-first-steps.html>
 // ANCHOR_END: example
-
+/// Runs the operation.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -4,6 +4,7 @@
 
 #![cfg_attr(not(feature = "std"), no_std)]
 
+/// Wrapping byte arithmetic without allocation or operating-system services.
 mod checksum;
 
 pub use checksum::checksum;

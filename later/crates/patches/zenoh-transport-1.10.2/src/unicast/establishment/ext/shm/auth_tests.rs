@@ -1,3 +1,8 @@
+//! Tests the auth tests behavior and its integration with callers.
+//! These checks protect the expected behavior as the surrounding code changes.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // SPDX-License-Identifier: (EPL-2.0 OR Apache-2.0) AND CC0-1.0
 //
 // AI Disclosure: Generated with assistance from OpenAI Codex.
@@ -7,6 +12,8 @@
 use super::*;
 use crate::common::shm::handoff::PriorityContainer;
 
+/// # Panics
+/// Panics if an internal `Result` or `Option` has no usable value.
 async fn exchange_init(alice: &ShmFsm<'_>, bob: &ShmFsm<'_>) {
     let syn = alice.send_init_syn(&StateOpen::new()).await.unwrap();
     bob.recv_init_syn(syn).await.unwrap();
@@ -21,6 +28,8 @@ fn assert_disabled(fsm: ShmFsm<'_>) {
     assert!(matches!(link.tx.ids(), HandoffCounterIds::Disabled));
 }
 
+/// # Panics
+/// Panics if an internal `Result` or `Option` has no usable value.
 fn ack_with_counters(bob_counters: HandoffCounterIds) -> open::ext::Shm {
     let mut bytes = vec![];
     Zenoh080
@@ -262,6 +271,8 @@ async fn unsolicited_open_ack_rejects_establishment() {
     );
 }
 
+/// Loads the ack without offer is ignored required by the auth tests workflow and reports failures
+/// from the underlying source.
 #[tokio::test]
 async fn open_ack_without_offer_is_ignored() {
     // Every OpenAck below carries an extension that no offer asked for: a valid one,
@@ -292,6 +303,11 @@ async fn open_ack_without_offer_is_ignored() {
     }
 }
 
+/// Loads the ack without local proposal rejects establishment required by the auth tests workflow
+/// and reports failures from the underlying source.
+///
+/// # Panics
+/// Panics if an internal `Result` or `Option` has no usable value.
 #[tokio::test]
 async fn open_ack_without_local_proposal_rejects_establishment() {
     let alice_auth = AuthUnicast::new(&[]).unwrap();

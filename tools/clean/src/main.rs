@@ -102,13 +102,14 @@ fn find_temp_dirs(
 }
 
 /// Checks if a directory entry is hidden (starts with a dot).
+/// Reports whether the main meets the hidden condition so callers can choose the correct branch.
+
 fn is_hidden(entry: &DirEntry) -> bool {
     entry
         .file_name()
         .to_str()
         .is_some_and(|s| s.starts_with('.'))
 }
-
 /// Removes all files (not starting with .) and subfolders in a given folder.
 ///
 /// Deletion boundary: only direct children of `dir` are removed. A symbolic
@@ -118,6 +119,7 @@ fn is_hidden(entry: &DirEntry) -> bool {
 /// # Errors
 ///
 /// Returns an error if `dir` cannot be read or an entry cannot be removed.
+
 fn clean_folder(dir: &Path) -> anyhow::Result<()> {
     if dir.is_dir() {
         for entry in fs::read_dir(dir)? {
@@ -153,6 +155,7 @@ fn remove_non_dir(path: &Path, file_type: fs::FileType) -> std::io::Result<()> {
     fs::remove_file(path)
 }
 
+/// Checks that only names starting with a dot are hidden.
 #[cfg(test)]
 mod tests {
     #[cfg(unix)]

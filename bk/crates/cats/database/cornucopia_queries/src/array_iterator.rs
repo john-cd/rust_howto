@@ -1,6 +1,6 @@
+//! \ Iterators\ over\ array\ values\ returned\ by\ generated\ database\ queries\.
+//!
 //! TODO Reviewed ??-??-2026.
-
-// This file was generated with `cornucopia`. Do not modify.
 
 use std::fmt::Debug;
 use std::marker::PhantomData;
@@ -17,11 +17,15 @@ use super::utils::escape_domain;
 /// working with custom zero-cost type mapping of rows containing PostgreSQL
 /// arrays.
 pub struct ArrayIterator<'a, T: FromSql<'a>> {
+    /// Values yielded by this iterator.
     values: ArrayValues<'a>,
+    /// Runtime type of the array values.
     ty: Type,
+    /// Phantom marker for the element type.
     _type: PhantomData<T>,
 }
 impl<'a, T: FromSql<'a>> Debug for ArrayIterator<'a, T> {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.debug_struct("ArrayIterator")
             .field("values", &"[T]")
@@ -33,6 +37,8 @@ impl<'a, T: FromSql<'a>> Debug for ArrayIterator<'a, T> {
 impl<'a, T: FromSql<'a>> Iterator for ArrayIterator<'a, T> {
     type Item = T;
 
+    /// # Panics
+    /// Panics if an internal `Result` or `Option` has no usable value.
     fn next(&mut self) -> Option<Self::Item> {
         self.values
             .next()
@@ -41,6 +47,8 @@ impl<'a, T: FromSql<'a>> Iterator for ArrayIterator<'a, T> {
     }
 }
 impl<'a, T: FromSql<'a>> FromSql<'a> for ArrayIterator<'a, T> {
+    /// Converts between the array iterator representation and sql while preserving the invariants
+    /// required by callers.
     fn from_sql(
         ty: &Type,
         raw: &'a [u8],

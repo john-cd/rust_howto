@@ -6,10 +6,9 @@ use serde::Serialize;
 
 /// An object that can be rendered with templates.
 pub trait Renderable: Serialize {
-    /// Returns the templates to render and where to write them.
     fn get_what_to_render(&self) -> Vec<RenderInfo>;
-
     /// Returns the objects contained in this one.
+
     fn get_children(&self) -> impl IntoIterator<Item = impl Renderable>;
 }
 

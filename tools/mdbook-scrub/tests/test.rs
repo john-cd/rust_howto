@@ -39,8 +39,8 @@ fn run_directive_protocol(context: PreprocessorContext, book: Book) -> Output {
         .wait_with_output()
         .expect("the mdbook-scrub process should finish")
 }
-
 /// Builds the test book and checks native and custom directive output.
+
 #[test]
 fn mdbook_05_preprocessors_expand_directives_after_native_includes() {
     let book = MDBook::load("test_book").expect("input should parse");
@@ -124,8 +124,8 @@ fn supports_renderer_does_not_require_a_writable_log_destination() {
     assert!(output.stderr.is_empty());
     assert!(log_path.is_dir());
 }
-
 /// Processes valid stdin when the log destination is unavailable and keeps JSON on stdout.
+
 #[test]
 fn preprocessing_falls_back_to_stderr_when_log_destination_is_unavailable() {
     let directory = tempdir().expect("a temporary directory should be available");

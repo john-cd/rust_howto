@@ -5,9 +5,10 @@
 use serde::Serialize;
 
 use super::Category;
+/// Metadata for one Rust crate used to build category indexes.
 
-#[derive(Serialize, Debug)]
 /// Represents a Rust crate with its name, (GitHub) repository URL, and associated categories.
+#[derive(Serialize, Debug)]
 pub struct Crate {
     /// Name of the crate.
     name: String,

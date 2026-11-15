@@ -8,6 +8,7 @@ use std::io::BufRead as _;
 use std::io::IsTerminal as _;
 use std::path::PathBuf;
 
+/// CLI commands
 mod commands;
 
 /// The command that the end user selected
@@ -86,6 +87,9 @@ pub(crate) struct ExpandCrateBlocksCmdArgs {
 }
 
 /// Parses the command line and returns the selected command.
+///
+/// # Errors
+/// Returns an error if the requested data cannot be retrieved.
 pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
     // Parse the specified command-line arguments, exiting on failure.
     let matches = commands::cli().get_matches_from(capture_stdin()?);
@@ -153,41 +157,54 @@ fn get_crate_names(m: &clap::ArgMatches) -> Vec<String> {
         .map(std::convert::Into::into)
         .collect::<Vec<String>>()
 }
-
 /// Get a file path from the command line arguments
+
+/// # Panics
+/// Panics if file_path has a default value.
+
 fn get_file_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("file_path")
         .expect("file_path has a default value")
         .clone()
 }
-
 /// Get the required category metadata path.
+
+/// # Panics
+/// Panics if metadata is required.
+
 fn get_metadata_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("metadata")
         .expect("metadata is required")
         .clone()
 }
-
 /// Get the book root used to find published recipe links.
+
+/// # Panics
+/// Panics if book_root has a default value.
+
 fn get_book_root(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("book_root")
         .expect("book_root has a default value")
         .clone()
 }
-
 /// Get a dir path from the command line arguments
+
+/// # Panics
+/// Panics if directory has a default value.
+
 fn get_dir_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("directory")
         .expect("directory has a default value")
         .clone()
 }
-
 /// Get an optional file path from the command line arguments.
 /// Returns `None` if the argument was not provided.
+
 fn get_optional_file_path(m: &clap::ArgMatches) -> Option<PathBuf> {
     m.get_one::<PathBuf>("file_path").cloned()
 }
 
+/// A CLI invocation without a subcommand selects the no-op command.
 #[cfg(test)]
 mod tests {
     use std::path::Path;

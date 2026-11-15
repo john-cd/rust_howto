@@ -1,3 +1,8 @@
+//! Tests the test helpers behavior and its integration with callers.
+//! These checks protect the expected behavior as the surrounding code changes.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -48,12 +53,16 @@ use crate::unicast::transport_unicast_inner::TransportUnicastTrait;
 /// calls the `on_schedule` callback provided at construction time, allowing tests to observe
 /// every message that the routing layer sends to this face without a real network connection.
 pub struct MockTransportUnicastInner {
+    /// Zenoh identifier of this peer.
     zid: ZenohIdProto,
+    /// Role advertised by this peer.
     whatami: WhatAmI,
+    /// On schedule value.
     on_schedule: Arc<dyn Fn(NetworkMessage) + Send + Sync>,
 }
 
 impl fmt::Debug for MockTransportUnicastInner {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("MockTransportUnicastInner")
             .field("zid", &self.zid)
@@ -65,6 +74,8 @@ impl fmt::Debug for MockTransportUnicastInner {
 
 #[async_trait]
 impl TransportUnicastTrait for MockTransportUnicastInner {
+    /// Changes the callback held by the mock transport unicast inner; subsequent operations use the
+    /// updated value.
     fn set_callback(&self, _callback: Arc<dyn TransportPeerEventHandler>) {}
 
     async fn get_status(&self) -> AsyncMutexGuard<'_, TransportStatus> {
@@ -91,10 +102,16 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
         unimplemented!("MockTransportUnicastInner::get_auth_ids")
     }
 
+    /// Reports whether the mock transport unicast inner meets the shm condition so callers can
+    /// choose the correct branch.
+
     #[cfg(feature = "shared-memory")]
     fn is_shm(&self) -> bool {
         false
     }
+
+    /// Reports whether the mock transport unicast inner meets the qos condition so callers can
+    /// choose the correct branch.
 
     fn is_qos(&self) -> bool {
         false
@@ -116,6 +133,9 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
     fn stats(&self) -> zenoh_stats::TransportStats {
         unimplemented!("MockTransportUnicastInner::stats")
     }
+
+    /// Applies the rules used by test helpers to keep mock transport unicast inner state valid for
+    /// its callers.
 
     async fn add_link(
         &self,
@@ -147,9 +167,14 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
         Ok(())
     }
 
+    /// Closes link.
+
     async fn close_link(&self, _link: Link) -> ZResult<()> {
         Ok(())
     }
+
+    /// Applies the rules used by test helpers to keep mock transport unicast inner state valid for
+    /// its callers.
 
     fn add_debug_fields<'a, 'b: 'a, 'c>(
         &self,
@@ -158,8 +183,9 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
         s
     }
 }
-
 /// Creates a [`TransportUnicast`] backed by a [`MockTransportUnicastInner`].
+///
+/// # Arguments
 ///
 /// Every message that the routing layer sends to this face is converted to an owned
 /// [`NetworkMessage`] and forwarded to `on_schedule`.  The caller can use this callback to
@@ -168,6 +194,7 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
 /// The caller must keep the returned `Arc<MockTransportUnicastInner>` alive for the duration of
 /// any operation that uses the `TransportUnicast`, because `TransportUnicast` only holds a `Weak`
 /// reference.
+
 pub fn mock_transport_unicast(
     zid: ZenohIdProto,
     whatami: WhatAmI,
@@ -183,6 +210,8 @@ pub fn mock_transport_unicast(
     (transport, inner)
 }
 
+/// Assembles the transport manager builder from its component values so callers receive a
+/// ready-to-use result.
 pub fn make_transport_manager_builder(
     #[cfg(feature = "transport_multilink")] max_links: usize,
     lowlatency_transport: bool,
@@ -199,6 +228,8 @@ pub fn make_transport_manager_builder(
     )
 }
 
+/// Assembles the basic transport manager builder from its component values so callers receive a
+/// ready-to-use result.
 pub fn make_basic_transport_manager_builder(
     lowlatency_transport: bool,
 ) -> TransportManagerBuilderUnicast {

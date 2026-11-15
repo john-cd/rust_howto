@@ -12,6 +12,7 @@ use mdbook_preprocessor::errors::Error;
 use mdbook_preprocessor::errors::Result;
 use serde_json::Value;
 
+/// Resolves local Markdown fragments for the mdBook linkcheck adapter.
 mod fragment_resolution;
 
 /// Translates an mdBook 0.5 render context to the 0.4 protocol.
@@ -119,13 +120,13 @@ fn main() {
     process::exit(code);
 }
 
+/// 0.4 protocol.
 #[cfg(test)]
 mod tests {
     use serde_json::json;
 
     use super::*;
 
-    /// Verifies that preserves content and settings while translating the book container.
     #[test]
     fn preserves_content_and_settings_while_translating_the_book_container() {
         let items = json!([{"Chapter":{"content":"[link](chapter.md)","sub_items":[]}}]);
@@ -140,7 +141,6 @@ mod tests {
         assert_eq!(adapted["book"]["__non_exhaustive"], Value::Null);
     }
 
-    /// Verifies that rejects invalid book protocol.
     #[test]
     fn rejects_invalid_book_protocol() {
         legacy_context(json!({})).expect_err("input should be rejected");
@@ -148,7 +148,6 @@ mod tests {
             .expect_err("input should be rejected");
     }
 
-    /// Verifies that omits unset config defaults without changing nullable book fields.
     #[test]
     fn omits_unset_config_defaults_without_changing_nullable_book_fields() {
         let adapted = legacy_context(json!({
@@ -161,7 +160,6 @@ mod tests {
         assert!(adapted["book"]["sections"][0]["Chapter"]["path"].is_null());
     }
 
-    /// Verifies that adapts edition metadata without modifying rust examples.
     #[test]
     fn adapts_edition_metadata_without_modifying_rust_examples() {
         let items = json!([{"Chapter":{"content":"```rust,edition2024\nfn main() {}\n```"}}]);

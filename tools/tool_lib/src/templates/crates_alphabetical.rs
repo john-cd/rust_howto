@@ -36,6 +36,7 @@ pub fn create_alphabetical_crate_page_section<'a>(
     Ok(markdown)
 }
 
+/// Verifies that create alphabetical crate page section empty.
 #[cfg(test)]
 mod tests {
     use super::*;

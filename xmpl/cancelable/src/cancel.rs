@@ -27,10 +27,12 @@ impl CancelTokenSource {
     }
 
     /// Registers a task and creates the token it checks while running.
-    ///
     /// # Errors
-    ///
     /// Returns an error if this ID is already active or the registry lock is poisoned.
+    ///
+    /// # Arguments
+    /// * `id` - Identifier used to select the cancel token source record or cache entry affected by
+    ///   this operation.
     pub fn make_token(&self, id: u64) -> anyhow::Result<CancelToken> {
         let cancelled = Arc::new(AtomicBool::new(false));
         let mut tasks = self
@@ -50,9 +52,7 @@ impl CancelTokenSource {
     }
 
     /// Requests cancellation of every registered task.
-    ///
     /// # Errors
-    ///
     /// Returns an error if the task registry lock is poisoned.
     pub fn cancel_all(&self) -> anyhow::Result<()> {
         let tasks = self
@@ -68,10 +68,12 @@ impl CancelTokenSource {
     }
 
     /// Requests cancellation of the active task with the given ID.
-    ///
     /// # Errors
-    ///
     /// Returns an error if the task ID is not active or the registry lock is poisoned.
+    ///
+    /// # Arguments
+    /// * `id` - Identifier used to select the cancel token source record or cache entry affected by
+    ///   this operation.
     pub fn cancel_task(&self, id: u64) -> anyhow::Result<()> {
         let tasks = self
             .tasks
@@ -134,6 +136,7 @@ impl Drop for CancelToken {
     }
 }
 
+/// Verifies that creating a token sets its initial cancellation state to uncancelled.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -17,6 +17,10 @@ pub fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
 }
 
 /// Fetches metadata with request logging and crate-specific error context.
+
+/// # Errors
+/// Returns an error if the get info for crate with operation cannot satisfy its required
+/// invariants.
 fn get_info_for_crate_with(
     crate_name: &str,
     fetch: impl FnOnce(&str) -> Result<CrateResponse>,
@@ -26,6 +30,7 @@ fn get_info_for_crate_with(
         .with_context(|| format!("Failed to retrieve metadata for crate `{crate_name}`"))
 }
 
+/// Metadata lookup passes the requested name and preserves the response.
 #[cfg(test)]
 mod tests {
     use super::*;

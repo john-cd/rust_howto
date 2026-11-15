@@ -26,6 +26,9 @@ pub struct RecipeLink {
 pub type RecipeLinksByCrate = BTreeMap<String, Vec<RecipeLink>>;
 
 /// Collect crate-to-recipe links from the include fragments used by the published example index.
+///
+/// # Arguments
+/// * `book_root` - Root directory of the book.
 pub fn collect_published_recipe_links(book_root: impl AsRef<Path>) -> Result<RecipeLinksByCrate> {
     let source_root = fs::canonicalize(book_root.as_ref().join("src"))
         .with_context(|| format!("resolve book source under {}", book_root.as_ref().display()))?;
@@ -137,8 +140,8 @@ mod tests {
     use tempfile::tempdir;
 
     use super::*;
+    /// Collects published recipe links deduplicates and maps multiple crates.
 
-    /// Verifies that collect published recipe links deduplicates and maps multiple crates.
     #[test]
     fn collect_published_recipe_links_deduplicates_and_maps_multiple_crates() {
         let directory = tempdir().expect("input should parse");
@@ -183,8 +186,8 @@ mod tests {
         assert_eq!(recipes["crate-a"][1].reference, "ex~sample~one");
         assert_eq!(recipes["crate-c"][0].title, "Directive recipe");
     }
+    /// Collects published recipe links rejects includes outside book source.
 
-    /// Verifies that collect published recipe links rejects includes outside book source.
     #[test]
     fn collect_published_recipe_links_rejects_includes_outside_book_source() {
         let directory = tempdir().expect("input should parse");

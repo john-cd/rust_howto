@@ -1,8 +1,7 @@
-// TODO Reviewed ??-??-2026.
-
-// ANCHOR: attribute_macro
 //! Procedural macros used by the book's examples: an attribute, a derive, a
 //! function-like and a `proc-macro2` macro.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use proc_macro::TokenStream;
 
@@ -48,6 +47,9 @@ pub fn log_calls(_attr: TokenStream, item: TokenStream) -> TokenStream {
 // The input `TokenStream` is the token stream of the struct, enum, or union
 // that has the `derive` attribute.
 /// A derive macro that implements the `DebugPrint` trait.
+///
+/// # Arguments
+/// * `input` - Input value to validate or transform.
 #[proc_macro_derive(DebugPrint, attributes(helper))]
 pub fn debug_print_derive(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     // Parse the input tokens into a syntax tree.
@@ -85,6 +87,9 @@ pub fn debug_print_derive(input: proc_macro::TokenStream) -> proc_macro::TokenSt
 // macro invocation and the output `TokenStream` replaces the entire macro
 // invocation.
 /// A function-like macro that processes a SQL query.
+///
+/// # Arguments
+/// * `input` - Input value to validate or transform.
 #[proc_macro]
 pub fn sql(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     // Here, `input` contains all the tokens passed to the macro call (e.g.,
@@ -139,6 +144,9 @@ fn process_tokens(input: proc_macro2::TokenStream) -> proc_macro2::TokenStream {
 // Then we expose the procedural macro interface which seamlessly converts
 // between `proc_macro::TokenStream` and `proc_macro2::TokenStream`.
 /// A function-like macro that renames an identifier in the tokens it receives.
+///
+/// # Arguments
+/// * `input` - Input value to validate or transform.
 #[proc_macro]
 pub fn replace_ident(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let input2 = proc_macro2::TokenStream::from(input);
@@ -147,6 +155,7 @@ pub fn replace_ident(input: proc_macro::TokenStream) -> proc_macro::TokenStream 
 }
 
 // And we can write unit tests for the core logic directly!
+/// Checks that `old_ident` is replaced.
 #[cfg(test)]
 mod tests {
     use std::str::FromStr as _;

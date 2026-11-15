@@ -34,6 +34,9 @@ fn persist(tmp: NamedTempFile, path: &Path) -> Result<()> {
 
 /// Writes every item to `path` by replacing it atomically.
 ///
+/// # Arguments
+/// * `path` - Path to the file or directory to process.
+///
 /// The data is written to a temporary sibling file and flushed to storage
 /// before the file is renamed over `path`. If any step fails, `path` is left
 /// exactly as it was and the temporary file is removed, so a partially written
@@ -71,6 +74,10 @@ pub(crate) fn write_atomic(
 
 /// Copies `from` to `to`, replacing `to` atomically.
 ///
+/// # Arguments
+/// * `from` - Path to the resource being processed.
+/// * `to` - Path to the resource being processed.
+///
 /// # Errors
 ///
 /// Returns an error naming the path if `from` cannot be copied or `to` cannot be replaced.
@@ -84,6 +91,7 @@ pub(crate) fn copy_atomic(from: &Path, to: &Path) -> Result<()> {
     persist(tmp, to)
 }
 
+/// Verifies that a new file is created with the concatenated items.
 #[cfg(test)]
 mod tests {
     use tempfile::tempdir;

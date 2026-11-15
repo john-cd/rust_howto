@@ -1,3 +1,7 @@
+//! Receives and dispatches messages arriving on a multicast transport.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,7 +13,9 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
+
 use std::sync::MutexGuard;
 
 use zenoh_buffers::ZSlice;
@@ -73,6 +79,16 @@ impl TransportMulticastInner {
         peer.handler.handle_message(msg)
     }
 
+    /// Processes the join from peer input for the rx workflow and applies the resulting state
+    /// changes. It calls `is_some`, `is_qos` to apply the required changes.
+    ///
+    /// # Arguments
+    /// * `peer` - Remote peer associated with this event.
+    ///
+    ///
+    /// # Errors
+    /// Returns an error if the operation cannot be completed.
+
     pub(super) fn handle_join_from_peer(
         &self,
         join: Join,
@@ -97,6 +113,11 @@ impl TransportMulticastInner {
         Ok(())
     }
 
+    /// Processes the join from unknown input for the rx workflow and applies the resulting state
+    /// changes. It calls `len`, `is_some` to apply the required changes.
+
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     pub(super) fn handle_join_from_unknown(
         &self,
         join: Join,
@@ -158,6 +179,11 @@ impl TransportMulticastInner {
         self.new_peer(locator, join)
     }
 
+    /// Processes the frame input for the rx workflow and applies the resulting state changes. It
+    /// calls `priority`, `is_qos` to apply the required changes.
+
+    /// # Errors
+    /// An error is returned if verify_sn, trigger_callback fails.
     fn handle_frame(
         &self,
         frame: FrameReader<ZSlice>,
@@ -192,6 +218,9 @@ impl TransportMulticastInner {
 
         Ok(())
     }
+
+    /// Processes the fragment input for the rx workflow and applies the resulting state changes. It
+    /// calls `handle_fragment`, `priority` to apply the required changes.
 
     fn handle_fragment(&self, fragment: Fragment, peer: &TransportMulticastPeer) -> ZResult<()> {
         let Fragment {
@@ -267,6 +296,8 @@ impl TransportMulticastInner {
         Ok(())
     }
 
+    /// Verifies sn.
+
     fn verify_sn(
         &self,
         message_type: &str,
@@ -292,6 +323,11 @@ impl TransportMulticastInner {
         Ok(true)
     }
 
+    /// Loads the messages required by the rx workflow and reports failures from the underlying
+    /// source.
+
+    /// # Errors
+    /// An error is returned if handle_frame, decode fails.
     pub(super) fn read_messages(
         &self,
         mut batch: RBatch<ZSlice>,

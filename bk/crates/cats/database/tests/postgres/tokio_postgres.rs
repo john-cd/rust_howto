@@ -14,9 +14,6 @@ use tokio_postgres::Client;
 /// - Create a temporary table for this connection.
 /// - Insert, query, update, and delete one row.
 /// - Wait for the connection task to finish after closing the client.
-///
-/// # Errors
-/// Returns an error if the operation fails.
 pub async fn example_body() -> anyhow::Result<()> {
     let database_url =
         std::env::var("DATABASE_URL").context("set DATABASE_URL to connect to PostgreSQL")?;
@@ -27,9 +24,6 @@ pub async fn example_body() -> anyhow::Result<()> {
 ///
 /// # Arguments
 /// * `url` - URL identifying the requested resource.
-///
-/// # Errors
-/// Returns an error if the operation fails.
 pub(crate) async fn run_with_url(url: &str) -> anyhow::Result<()> {
     // The libpq-style connection strings consist of space-separated
     // key-value pairs: <https://docs.rs/tokio-postgres/latest/tokio_postgres/config/struct.Config.html>.
@@ -126,9 +120,6 @@ async fn run_queries(client: &Client) -> anyhow::Result<()> {
 }
 
 /// Runs the tokio postgres example.
-///
-/// # Errors
-/// Returns an error if the operation fails.
 pub fn main() -> anyhow::Result<()> {
     tokio::runtime::Runtime::new()?.block_on(example_body())
 }

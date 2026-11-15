@@ -13,6 +13,7 @@ use tera::Tera;
 use crate::model::book::Renderable;
 use crate::read_write;
 
+/// Tera filters.
 mod filters;
 
 use filters::*;
@@ -29,9 +30,12 @@ static TEMPLATES: LazyLock<Result<Tera, tera::Error>> = LazyLock::new(|| {
     })
 });
 
+/// Shared `empty context` used by this module.
 static EMPTY_CONTEXT: LazyLock<Context> = LazyLock::new(Context::new);
 
 /// Renders all the templates specified in the `Renderable` trait.
+///
+/// # Arguments
 ///
 /// The `Renderable` trait provides the following:
 /// - the list of templates to render

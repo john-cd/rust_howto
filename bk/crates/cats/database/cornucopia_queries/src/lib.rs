@@ -1,6 +1,6 @@
+//! \ Generated\ database\ models,\ query\ bindings,\ and\ client\ helpers\ for\ this\ crate\.
+//!
 //! TODO Reviewed ??-??-2026.
-
-// This file was generated with `cornucopia`. Do not modify.
 
 #![expect(
     clippy::as_underscore,
@@ -12,20 +12,27 @@
     reason = "Cornucopia 1.0 emits these patterns in its checked-in generated output."
 )]
 
+/// This module provides the `array_iterator` implementation used by its parent.
 mod array_iterator;
+/// This module provides the `client` implementation used by its parent.
 pub mod client;
+/// This module provides the `domain` implementation used by its parent.
 mod domain;
 #[allow(clippy::all, clippy::pedantic)]
 #[allow(unused_variables)]
 #[allow(unused_imports)]
+/// This module provides the `queries` implementation used by its parent.
 #[allow(dead_code)]
 pub mod queries;
+/// This module provides the `type_traits` implementation used by its parent.
 mod type_traits;
 #[allow(clippy::all, clippy::pedantic)]
 #[allow(unused_variables)]
 #[allow(unused_imports)]
+/// This module provides the `types` implementation used by its parent.
 #[allow(dead_code)]
 pub mod types;
+/// This module provides the `utils` implementation used by its parent.
 mod utils;
 pub use array_iterator::ArrayIterator;
 #[cfg(feature = "deadpool")]

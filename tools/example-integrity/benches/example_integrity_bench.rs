@@ -5,6 +5,8 @@
 //! - Chapter parsing and include directive extraction across chapters and nested fragments.
 //! - Named anchor regex validation and file scanning.
 //! - Rust module graph traversal and conditional configuration attribute parsing.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::fs;
 use std::hint::black_box;
@@ -23,9 +25,12 @@ fn write_fixture(root: &Path, path: &str, contents: &str) {
         .expect("creates fixture directory");
     fs::write(path, contents).expect("writes fixture file");
 }
-
 /// Creates a synthetic large book repository tree with multiple packages, chapters,
+
 /// nested fragments, anchors, and module hierarchies.
+
+/// # Panics
+/// Panics if creates temp dir.
 fn create_synthetic_book_tree(num_packages: usize, num_chapters: usize) -> TempDir {
     let dir = TempDir::new().expect("creates temp dir");
     let root = dir.path();
@@ -162,6 +167,10 @@ Another regular section with some markdown prose.\n";
 }
 
 /// Benchmarks regex anchor extraction and verification against source files.
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
+
 fn benchmark_anchor_extraction(c: &mut Criterion) {
     let source_text = "\
 // Module documentation header.
@@ -169,6 +178,9 @@ use std::sync::Arc;
 
 // ANCHOR: setup
 /// Initializes sample benchmark state.
+///
+
+
 fn initialize() -> Arc<String> {
     Arc::new(\"state\".to_owned())
 }

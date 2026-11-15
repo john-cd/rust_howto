@@ -8,20 +8,19 @@ use anyhow::Result;
 use super::Category;
 
 /// Recursively parses a TOML table representing categories and their subcategories.
-///
 /// The categories TOML file stores child categories in nested tables like
 /// `[slug.categories.subcategory-slug]`. This function recursively traverses
+///
 /// these tables to extract all categories and their hierarchical relationships.
 ///
 /// Inspired by code in the `crates.io` repository.
 ///
 /// # Arguments:
-///
 /// * `categories` - A reference to the TOML table containing category data.
+///
 /// * `parent` - The enclosing category, if this table contains child categories.
 ///
 /// # Errors
-///
 /// Returns an error when a category entry is not a table, a required name is missing or not a
 /// string, or a child-category entry is not a table.
 pub(super) fn categories_from_toml(
@@ -71,14 +70,13 @@ fn required_string_from_toml<'a>(toml: &'a toml::value::Table, key: &str) -> Res
         .and_then(toml::Value::as_str)
         .with_context(|| format!("Expected category TOML attribute '{key}' to be a String"))
 }
-
 /// Extracts an optional string value from a TOML table.
-///
+
 /// This function retrieves a value associated with a given key from a TOML table.
+///
 /// If the key is missing or the value is not a string, it returns an empty string.
 ///
 /// # Arguments:
-///
 /// * `toml` - A reference to the TOML table.
 /// * `key` - The key to look up in the TOML table.
 fn optional_string_from_toml<'a>(toml: &'a toml::value::Table, key: &str) -> &'a str {
@@ -103,6 +101,7 @@ impl Category {
     }
 }
 
+/// Verifies that a single category preserves its slug, name, and description.
 #[cfg(test)]
 mod tests {
     use super::*;

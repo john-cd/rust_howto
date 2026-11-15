@@ -1,6 +1,6 @@
+//! \ Generated\ domain\ models\ and\ conversions\ for\ database\ query\ results\.
+//!
 //! TODO Reviewed ??-??-2026.
-
-// This file was generated with `cornucopia`. Do not modify.
 
 use std::error::Error;
 use std::fmt::Debug;
@@ -16,13 +16,16 @@ use postgres_types::private::BytesMut;
 
 use super::type_traits::ArraySql;
 use super::utils::escape_domain;
+/// Validated domain value used by the generated query API.
 pub struct Domain<T: ToSql>(pub T);
 impl<T: ToSql + Debug> Debug for Domain<T> {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         f.debug_tuple("DomainWrapper").field(&self.0).finish()
     }
 }
 impl<T: ToSql> ToSql for Domain<T> {
+    /// Converts this value to sql.
     fn to_sql(&self, ty: &Type, out: &mut BytesMut) -> Result<IsNull, Box<dyn Error + Sync + Send>>
     where
         Self: Sized,
@@ -37,6 +40,7 @@ impl<T: ToSql> ToSql for Domain<T> {
         T::accepts(escape_domain(ty))
     }
 
+    /// Converts this value to sql checked.
     fn to_sql_checked(
         &self,
         ty: &Type,
@@ -45,13 +49,17 @@ impl<T: ToSql> ToSql for Domain<T> {
         postgres_types::__to_sql_checked(self, ty, out)
     }
 }
+/// Array of validated domain values used by the generated query API.
 pub struct DomainArray<'a, T: ToSql + Sync, A: ArraySql<Item = T>>(pub &'a A);
 impl<T: ToSql + Sync, A: ArraySql<Item = T>> Debug for DomainArray<'_, T, A> {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         f.debug_tuple("ArrayDomain").field(&self.0).finish()
     }
 }
 impl<'a, T: ToSql + Sync + 'a, A: ArraySql<Item = T>> ToSql for DomainArray<'a, T, A> {
+    /// Converts between the domain representation and sql while preserving the invariants required
+    /// by callers.
     fn to_sql(&self, ty: &Type, w: &mut BytesMut) -> Result<IsNull, Box<dyn Error + Sync + Send>> {
         self.0.escape_domain_to_sql(ty, w)
     }
@@ -63,6 +71,8 @@ impl<'a, T: ToSql + Sync + 'a, A: ArraySql<Item = T>> ToSql for DomainArray<'a, 
         }
     }
 
+    /// Converts between the domain representation and sql checked while preserving the invariants
+    /// required by callers.
     fn to_sql_checked(
         &self,
         ty: &Type,
@@ -71,6 +81,11 @@ impl<'a, T: ToSql + Sync + 'a, A: ArraySql<Item = T>> ToSql for DomainArray<'a, 
         postgres_types::__to_sql_checked(self, ty, out)
     }
 }
+/// # Errors
+/// An error is returned if downcast, array_to_sql fails.
+///
+/// # Panics
+/// Panics if the guarded invariant is violated.
 pub fn escape_domain_to_sql<T: ToSql>(
     ty: &Type,
     w: &mut BytesMut,

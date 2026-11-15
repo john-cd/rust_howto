@@ -1,3 +1,7 @@
+//! Negotiates shared-memory region names during unicast establishment.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2026 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
 
 use zenoh_buffers::ZBuf;
@@ -24,12 +29,17 @@ use zenoh_result::ZResult;
 use crate::RegionName;
 use crate::unicast::establishment::AcceptFsm;
 use crate::unicast::establishment::OpenFsm;
+/// State machine for negotiating shared-memory region names.
 
 pub(crate) struct RegionNameFsm {
+    /// Optional region name used by region name fsm; `None` means the value is not configured or
+    /// unavailable.
     region_name: Option<RegionName>,
 }
 
 impl RegionNameFsm {
+    /// Constructs a usable initial region name fsm value with the defaults required by the region
+    /// name component.
     pub(crate) fn new(region_name: Option<RegionName>) -> Self {
         Self { region_name }
     }
@@ -37,10 +47,14 @@ impl RegionNameFsm {
 
 #[derive(Debug, Clone, PartialEq)]
 struct State {
+    /// Optional other region name used by state; `None` means the value is not configured or
+    /// unavailable.
     other_region_name: Option<RegionName>,
 }
 
 impl State {
+    /// Constructs a usable initial state value with the defaults required by the region name
+    /// component.
     fn new() -> Self {
         Self {
             other_region_name: None,
@@ -58,11 +72,14 @@ impl State {
         }
     }
 }
+/// Authentication state maintained by the initiator during the open handshake.
 
 #[derive(Debug, Clone, PartialEq)]
 pub(crate) struct StateOpen(State);
 
 impl StateOpen {
+    /// Constructs a usable initial state open value with the defaults required by the region name
+    /// component.
     pub(crate) fn new() -> Self {
         Self(State::new())
     }
@@ -84,6 +101,10 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
     type SendOpenSynIn = &'a StateOpen;
     type SendOpenSynOut = Option<RegionName>;
 
+    /// Sends init syn.
+
+    /// # Arguments
+    /// * `_state` - Shared state and services used to complete the region_name workflow.
     async fn send_init_syn(
         self,
         _state: Self::SendInitSynIn,
@@ -91,6 +112,8 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
         Ok(self.region_name.clone().map(name_to_ext))
     }
 
+    /// # Errors
+    /// An error is returned if map fails.
     async fn recv_init_ack(
         self,
         (state, ext): Self::RecvInitAckIn,
@@ -99,6 +122,10 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
         Ok(())
     }
 
+    /// Sends open syn.
+
+    /// # Arguments
+    /// * `state` - Shared state and services used to complete the region_name workflow.
     async fn send_open_syn(
         self,
         state: Self::SendOpenSynIn,
@@ -106,6 +133,8 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
         Ok(state.0.other_region_name.clone())
     }
 
+    /// # Arguments
+    /// * `_input` - Input data whose fields determine the requested open fsm operation.
     async fn recv_open_ack(
         self,
         _input: Self::RecvOpenAckIn,
@@ -114,10 +143,13 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
     }
 }
 
+/// Quality-of-service extension state exchanged during unicast establishment.
 #[derive(Debug, Clone, PartialEq)]
 pub(crate) struct StateAccept(State);
 
 impl StateAccept {
+    /// Constructs a usable initial state accept value with the defaults required by the region name
+    /// component.
     pub(crate) fn new() -> Self {
         Self(State::new())
     }
@@ -153,6 +185,11 @@ where
 {
     type Error = zenoh_result::Error;
 
+    /// # Arguments
+    /// * `reader` - Source that supplies the bytes or records consumed by this operation.
+    ///
+    /// # Errors
+    /// An error is returned if read, is_empty fails.
     fn read(self, reader: &mut R) -> Result<StateAccept, Self::Error> {
         let s: String = self
             .read(&mut *reader)
@@ -181,6 +218,8 @@ impl<'a> AcceptFsm for &'a RegionNameFsm {
     type SendOpenAckIn = &'a StateAccept;
     type SendOpenAckOut = Option<RegionName>;
 
+    /// # Errors
+    /// An error is returned if map fails.
     async fn recv_init_syn(
         self,
         (state, ext): Self::RecvInitSynIn,
@@ -189,6 +228,10 @@ impl<'a> AcceptFsm for &'a RegionNameFsm {
         Ok(())
     }
 
+    /// Sends init ack.
+
+    /// # Arguments
+    /// * `_state` - Shared state and services used to complete the region_name workflow.
     async fn send_init_ack(
         self,
         _state: Self::SendInitAckIn,
@@ -196,12 +239,18 @@ impl<'a> AcceptFsm for &'a RegionNameFsm {
         Ok(self.region_name.clone().map(name_to_ext))
     }
 
+    /// # Arguments
+    /// * `_input` - Input data whose fields determine the requested accept fsm operation.
     async fn recv_open_syn(
         self,
         _input: Self::RecvOpenSynIn,
     ) -> Result<Self::RecvOpenSynOut, Self::Error> {
         Ok(())
     }
+
+    /// Sends open ack.
+    /// # Arguments
+    /// * `state` - Shared state and services used to complete the region_name workflow.
 
     async fn send_open_ack(
         self,
@@ -211,10 +260,14 @@ impl<'a> AcceptFsm for &'a RegionNameFsm {
     }
 }
 
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected accept fsm.
 fn name_to_ext(name: RegionName) -> ext::RegionName {
     ext::RegionName::new(ZBuf::from(name.into_string().into_bytes()))
 }
 
+/// # Errors
+/// An error is returned if ext_to_name, try_from fails.
 fn ext_to_name(ext: ext::RegionName) -> ZResult<RegionName> {
     let s = String::from_utf8(ext.value.to_zslice().to_vec())?;
     let name = RegionName::try_from(s)?;

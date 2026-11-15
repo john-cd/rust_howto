@@ -1,3 +1,8 @@
+//! Organizes the multicast subsystem and declares its child modules.
+//! Parent components use this module to access the subsystem functionality.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,11 +14,17 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+/// Establishes multicast transports and registers newly discovered peers.
 pub(crate) mod establishment;
+/// Represents a multicast link and exposes its transport read and write operations.
 pub(crate) mod link;
+/// Owns multicast transport configuration, peer state, and link lifecycle.
 pub(crate) mod manager;
+/// Receives and dispatches messages arriving on a multicast transport.
 pub(crate) mod rx;
+/// Tracks multicast transport state and coordinates its links, peers, and priority queues.
 pub(crate) mod transport;
+/// Schedules and sends messages over multicast transport links.
 pub(crate) mod tx;
 
 use std::fmt::Write;
@@ -45,10 +56,14 @@ use crate::multicast::link::TransportLinkMulticast;
 /// **********************************
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub(crate) struct TransportConfigMulticast {
+    /// Number of bits used for sequence numbers.
     pub(crate) sn_resolution: Bits,
+    /// Initial sns value.
     pub(crate) initial_sns: Box<[PrioritySn]>,
+    /// Transport link associated with this state.
     pub(crate) link: TransportLinkMulticast,
 }
+/// Multicast transport state shared by its connected peers and links.
 
 #[derive(Clone)]
 pub struct TransportMulticast(Weak<TransportMulticastInner>);
@@ -61,42 +76,61 @@ impl TransportMulticast {
             .ok_or_else(|| zerror!("Transport multicast closed").into())
     }
 
+    /// # Errors
+    /// An error is returned if get_sn_resolution fails.
+    /// Returns an error if the requested data cannot be retrieved.
     #[inline(always)]
     pub fn get_sn_resolution(&self) -> ZResult<Bits> {
         let transport = self.get_transport()?;
         Ok(transport.get_sn_resolution())
     }
 
-    #[cfg(feature = "shared-memory")]
+    /// Reports whether the transport multicast meets the shm condition so callers can choose the
+    /// correct branch.
+
+    /// # Errors
+    /// An error is returned if is_shm fails.
     #[inline(always)]
     pub fn is_shm(&self) -> ZResult<bool> {
         let transport = self.get_transport()?;
         Ok(transport.is_shm())
     }
 
-    #[inline(always)]
+    /// Reports whether the transport multicast meets the qos condition so callers can choose the
+    /// correct branch.
+
+    /// # Errors
+    /// An error is returned if is_qos fails.
     pub fn is_qos(&self) -> ZResult<bool> {
         let transport = self.get_transport()?;
         Ok(transport.is_qos())
     }
 
-    #[inline(always)]
+    /// # Errors
+    /// An error is returned if get_callback fails.
+    /// Returns an error if the requested data cannot be retrieved.
     pub fn get_callback(&self) -> ZResult<Option<Arc<dyn TransportMulticastEventHandler>>> {
         let transport = self.get_transport()?;
         Ok(transport.get_callback())
     }
 
-    #[inline(always)]
+    /// # Errors
+    /// An error is returned if get_link fails.
+    /// Returns an error if the requested data cannot be retrieved.
     pub fn get_link(&self) -> ZResult<Link> {
         let transport = self.get_transport()?;
         Ok(Link::new_multicast(&transport.get_link().link))
     }
 
-    #[inline(always)]
+    /// # Errors
+    /// An error is returned if get_peers fails.
+    /// Returns an error if the requested data cannot be retrieved.
     pub fn get_peers(&self) -> ZResult<Vec<TransportPeer>> {
         let transport = self.get_transport()?;
         Ok(transport.get_peers())
     }
+
+    ///
 
     #[inline(always)]
     pub async fn close(&self) -> ZResult<()> {
@@ -108,13 +142,21 @@ impl TransportMulticast {
     }
 
     /// Returns if the message has successfully been sent.
+    ///
+    /// # Arguments
+    /// * `message` - Message to send or handle.
+    ///
+    /// # Errors
+    /// Returns an error if the operation cannot be completed.
     #[inline(always)]
     pub fn schedule(&self, message: NetworkMessageMut) -> ZResult<bool> {
         let transport = self.get_transport()?;
         transport.schedule(message)
     }
 
-    #[cfg(feature = "stats")]
+    /// # Errors
+    /// An error is returned if get_stats fails.
+    /// Returns an error if the requested data cannot be retrieved.
     pub fn get_stats(&self) -> ZResult<zenoh_stats::TransportStats> {
         Ok(self.get_transport()?.stats.clone())
     }
@@ -135,6 +177,7 @@ impl PartialEq for TransportMulticast {
 }
 
 impl fmt::Debug for TransportMulticast {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self.get_transport() {
             Ok(transport) => {

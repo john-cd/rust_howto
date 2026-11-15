@@ -1,3 +1,7 @@
+//! Represents a unicast link and exposes its transport read and write operations.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,7 +13,9 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
+
 use std::fmt;
 use std::sync::Arc;
 
@@ -42,25 +48,37 @@ use crate::unicast::establishment::ext::shm::handoff::RxHandoffChannel;
 #[cfg(feature = "shared-memory")]
 use crate::unicast::establishment::ext::shm::handoff::TxHandoffStorage;
 
+/// Defines the outcomes available to the unicast workflow, including inbound, outbound.
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub(crate) enum TransportLinkUnicastDirection {
+    /// Inbound direction of the transport link.
     Inbound,
     Outbound,
 }
+/// Configuration for a unicast transport link.
 
 #[derive(Clone, Debug)]
 pub(crate) struct TransportLinkUnicastConfig {
     // Inbound / outbound
+    /// Direction value.
     pub(crate) direction: TransportLinkUnicastDirection,
+    /// Batching configuration for this transport.
     pub(crate) batch: BatchConfig,
+    /// Optional priorities used by transport link unicast config; `None` means the value is not
+    /// configured or unavailable.
     pub(crate) priorities: Option<PriorityRange>,
+    /// Optional reliability used by transport link unicast config; `None` means the value is not
+    /// configured or unavailable.
     pub(crate) reliability: Option<Reliability>,
 }
+/// Shared-memory handoff state associated with a unicast link.
 
 #[cfg(feature = "shared-memory")]
 #[derive(Debug, Clone)]
 pub(crate) struct TransportLinkShmHandoff {
+    /// Tx value.
     pub(crate) tx: TxHandoffStorage,
+    /// Rx value.
     pub(crate) rx: Arc<RxHandoffChannel>,
 }
 
@@ -73,16 +91,26 @@ impl From<LinkShmHandoffConfig> for TransportLinkShmHandoff {
         }
     }
 }
+/// Unicast transport link and its send and receive state.
 
 #[derive(Clone)]
 pub(crate) struct TransportLinkUnicast {
+    /// Transport link associated with this state.
     pub(crate) link: LinkUnicast,
+    /// Settings that control how this transport link unicast is constructed or processed.
     pub(crate) config: TransportLinkUnicastConfig,
     #[cfg(feature = "shared-memory")]
+    /// Shm handoff value.
     pub(crate) shm_handoff: Box<TransportLinkShmHandoff>,
 }
 
 impl TransportLinkUnicast {
+    /// Constructs a usable initial transport link unicast value with the defaults required by the
+    /// link component.
+    ///
+    /// # Arguments
+    /// * `link` - Transport link to add, remove, or use.
+    /// * `config` - Configuration applied to this operation.
     pub(crate) fn new(
         link: LinkUnicast,
         config: TransportLinkUnicastConfig,
@@ -166,15 +194,27 @@ impl TransportLinkUnicast {
         }
     }
 
+    /// Sends the current value.
+    ///
+    /// # Arguments
+    /// * `msg` - Message to schedule or process.
+    ///
+    /// # Errors
+    /// Returns an error if the output cannot be written or sent.
+
     pub(crate) async fn send(&self, msg: &TransportMessage) -> ZResult<usize> {
         let mut link = self.tx();
         link.send(msg, None).await
     }
 
+    /// Receives the current value.
+
     pub(crate) async fn recv(&self) -> ZResult<TransportMessage> {
         let mut link = self.rx();
         link.recv().await
     }
+
+    ///
 
     pub(crate) async fn close(&self, reason: Option<u8>) -> ZResult<()> {
         if let Some(reason) = reason {
@@ -192,12 +232,16 @@ impl TransportLinkUnicast {
 }
 
 impl fmt::Display for TransportLinkUnicast {
+    /// Formats the value for display.
+    /// # Arguments
+    /// * `f` - Mutable formatter whose state is updated by this operation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{}", self.link)
     }
 }
 
 impl fmt::Debug for TransportLinkUnicast {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportLinkUnicast")
             .field("link", &self.link)
@@ -212,18 +256,25 @@ impl PartialEq<Link> for TransportLinkUnicast {
     }
 }
 
+/// State required by `TransportLinkUnicastTx` during transport operations.
 #[derive(Clone)]
 pub(crate) struct TransportLinkUnicastTx {
+    /// Shared internal state.
     pub(crate) inner: TransportLinkUnicast,
+    /// Optional buffer used by transport link unicast tx; `None` means the value is not configured
+    /// or unavailable.
     pub(crate) buffer: Option<BBuf>,
 }
 
 impl TransportLinkUnicastTx {
+    /// # Errors
+    /// An error is returned if finalize, as_slice fails.
     pub(crate) async fn send_batch(
         &mut self,
         batch: &mut WBatch,
         priority: Option<Priority>,
     ) -> ZResult<()> {
+        /// Shared `err` used by this module.
         const ERR: &str = "Write error on link: ";
 
         // tracing::trace!("WBatch: {:?}", batch);
@@ -249,11 +300,16 @@ impl TransportLinkUnicastTx {
         Ok(())
     }
 
+    /// # Arguments
+    /// * `msg` - Message to schedule or process.
+    /// # Errors
+    /// An error is returned if encode fails.
     pub(crate) async fn send(
         &mut self,
         msg: &TransportMessage,
         priority: Option<Priority>,
     ) -> ZResult<usize> {
+        /// Shared `err` used by this module.
         const ERR: &str = "Write error on link: ";
 
         // Create the batch for serializing the message
@@ -266,12 +322,16 @@ impl TransportLinkUnicastTx {
 }
 
 impl fmt::Display for TransportLinkUnicastTx {
+    /// Formats the value for display.
+    /// # Arguments
+    /// * `f` - Mutable formatter whose state is updated by this operation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{}", self.inner)
     }
 }
 
 impl fmt::Debug for TransportLinkUnicastTx {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportLinkUnicastRx")
             .field("link", &self.inner.link)
@@ -280,16 +340,21 @@ impl fmt::Debug for TransportLinkUnicastTx {
             .finish()
     }
 }
+/// Receive-side wrapper for a unicast transport link.
 
 #[derive(Clone)]
 pub(crate) struct TransportLinkUnicastRx {
+    /// Transport link associated with this state.
     pub(crate) link: LinkUnicast,
     pub(crate) config: TransportLinkUnicastConfig,
+    /// Shared memory in `TransportLinkUnicastRx`.
     #[cfg(feature = "shared-memory")]
     pub(crate) shm: Arc<RxHandoffChannel>,
 }
 
 impl TransportLinkUnicastRx {
+    /// # Errors
+    /// An error is returned if as_mut, new fails.
     pub async fn recv_batch<C, T>(
         &mut self,
         buff: C,
@@ -299,6 +364,7 @@ impl TransportLinkUnicastRx {
         C: Fn() -> T + Copy,
         T: AsMut<[u8]> + ZSliceBuffer + 'static,
     {
+        /// Shared `err` used by this module.
         const ERR: &str = "Read error from link: ";
 
         let mut into = (buff)();
@@ -334,6 +400,10 @@ impl TransportLinkUnicastRx {
         Ok(batch)
     }
 
+    ///
+
+    /// # Errors
+    /// An error is returned if decode fails.
     pub async fn recv(&mut self) -> ZResult<TransportMessage> {
         let mtu = self.config.batch.mtu as usize;
         let mut batch = self
@@ -347,12 +417,16 @@ impl TransportLinkUnicastRx {
 }
 
 impl fmt::Display for TransportLinkUnicastRx {
+    /// Formats the value for display.
+    /// # Arguments
+    /// * `f` - Mutable formatter whose state is updated by this operation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{}:{:?}", self.link, self.config)
     }
 }
 
 impl fmt::Debug for TransportLinkUnicastRx {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportLinkUnicastRx")
             .field("link", &self.link)
@@ -361,12 +435,21 @@ impl fmt::Debug for TransportLinkUnicastRx {
     }
 }
 
+/// State required by `MaybeOpenAck` during transport operations.
 pub(crate) struct MaybeOpenAck {
+    /// Transport link associated with this state.
     link: TransportLinkUnicastTx,
+    /// Optional open ack used by maybe open ack; `None` means the value is not configured or
+    /// unavailable.
     open_ack: Option<OpenAck>,
 }
 
 impl MaybeOpenAck {
+    /// Constructs a usable initial maybe open ack value with the defaults required by the link
+    /// component.
+    ///
+    /// # Arguments
+    /// * `link` - Transport link to add, remove, or use.
     pub(crate) fn new(link: &TransportLinkUnicast, open_ack: Option<OpenAck>) -> Self {
         Self {
             link: link.tx(),
@@ -374,6 +457,10 @@ impl MaybeOpenAck {
         }
     }
 
+    ///
+
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     pub(crate) async fn send_open_ack(mut self) -> ZResult<()> {
         if let Some(msg) = self.open_ack {
             zcondfeat!(
@@ -402,13 +489,24 @@ impl MaybeOpenAck {
     }
 }
 
+/// State required by `LinkUnicastWithOpenAck` during transport operations.
 pub(crate) struct LinkUnicastWithOpenAck {
+    /// Transport link associated with this state.
     pub(crate) link: TransportLinkUnicast,
+    /// Optional ack used by link unicast with open ack; `None` means the value is not configured
+    /// or unavailable.
     ack: Option<OpenAck>,
+    /// Optional associated link used by link unicast with open ack; `None` means the value is not
+    /// configured or unavailable.
     pub(crate) associated_link: Option<TransportLinkUnicast>,
 }
 
 impl LinkUnicastWithOpenAck {
+    /// Constructs a usable initial link unicast with open ack value with the defaults required by
+    /// the link component.
+    ///
+    /// # Arguments
+    /// * `link` - Transport link to add, remove, or use.
     pub(crate) fn new(
         link: TransportLinkUnicast,
         ack: Option<OpenAck>,
@@ -442,6 +540,7 @@ impl LinkUnicastWithOpenAck {
 }
 
 impl fmt::Display for LinkUnicastWithOpenAck {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self.ack.as_ref() {
             Some(ack) => write!(f, "{}({:?})", self.link, ack),

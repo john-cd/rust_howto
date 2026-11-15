@@ -1,10 +1,10 @@
 //! NO LONGER IN USE
 //!
+//!
 //! We no longer use `skeptic` to test the code examples in the book.
-//!
 //! All book examples are currently written as tests
-//!  under `crates/**/tests`, which are then included in the markdown.
 //!
+//!  under `crates/**/tests`, which are then included in the markdown.
 //! See <https://crates.io/crates/skeptic> for configuration.
 //!
 //! TODO Reviewed ??-??-2026.
@@ -66,7 +66,12 @@ fn main() -> Result<()> {
     let paths = WalkDir::new(markdown_path)
         .into_iter()
         // convert DirEntry to String
-        .map(|p| p.expect("cannot walk the Markdown directory").path().to_string_lossy().into_owned())
+        .map(|p| {
+            p.expect("cannot walk the Markdown directory")
+                .path()
+                .to_string_lossy()
+                .into_owned()
+        })
         .filter(|p| p.ends_with(".md"))
         .filter(|p| !REMOVED_TESTS.contains(&p.as_ref()))
         .collect::<Vec<_>>();

@@ -1,3 +1,7 @@
+//! Tracks multicast transport state and coordinates its links, peers, and priority queues.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the

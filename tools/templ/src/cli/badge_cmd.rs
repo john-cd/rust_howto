@@ -9,20 +9,19 @@ use clap::Command;
 use clap_builder::builder::ValueHint;
 
 use crate::CmdArgs2;
-
 /// Builds the `badge` subcommand of the CLI user interface.
-///
+
 /// This function defines the structure and options for the `badge` subcommand,
-/// which is used to create markdown for crate badges.
 ///
+/// which is used to create markdown for crate badges.
 /// The subcommand supports the following:
 /// - An alias `b` for quick access.
 /// - A description: "Create the markdown for (a) crate badge(s)".
 /// - A display order of `0` to prioritize its visibility in help messages.
 /// - An argument for specifying the crate name (defined in `super::arg_crate_name()`).
 /// - An optional argument `-a` or `--add` to specify a file to add the generated reference
-///   definitions to.
 ///
+///   definitions to.
 /// The `-a` or `--add` argument has the following characteristics:
 /// - It is optional (`required(false)`).
 /// - It accepts a reference-definition file path with or without an equals sign (`-a /path/to/file`
@@ -32,10 +31,10 @@ use crate::CmdArgs2;
 /// - It provides a file path hint to the shell for autocompletion
 ///   (`value_hint(ValueHint::FilePath)`).
 /// - It has a help message explaining that the generated reference definitions are merged into the
+///
 ///   specified file if they do not exist already.
 ///
 /// # Returns
-///
 /// A `clap::Command` representing the configured `badge` subcommand.
 pub(super) fn subcommand_badge() -> Command {
     Command::new("badge")
@@ -54,26 +53,24 @@ pub(super) fn subcommand_badge() -> Command {
             .value_hint(ValueHint::FilePath)
             .help("Merge newly created reference definitions into this file, if they do not exist already"))
 }
-
-/// Extracts the command arguments for the `badge` subcommand.
-///
 /// This function processes the command-line arguments provided to the `badge`
+///
 /// subcommand and extracts the relevant information.
 ///
 /// # Arguments
-///
 /// * `matches` - A reference to the `clap::ArgMatches` containing the parsed command-line
+///
 ///   arguments.
 ///
 /// # Returns
-///
 /// An `Option<CmdArgs2>` containing the extracted arguments, or `None` if the
-/// `badge` subcommand was not invoked.
 ///
+/// `badge` subcommand was not invoked.
 /// The `CmdArgs2` struct contains:
 /// - `args`: A `Vec<String>` of crate names.
 /// - `file`: An `Option<PathBuf>` representing the path to the reference definition file, if
 ///   provided.
+
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs2> {
     let mut cmdargs = None;
     if let Some(m) = matches.subcommand_matches("badge") {
@@ -88,6 +85,7 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs2> {
     cmdargs
 }
 
+/// The badge command preserves a caller-supplied reference-definition path.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -105,7 +103,6 @@ mod tests {
         assert_eq!(args.file, Some(PathBuf::from("custom/refs.md")));
     }
 
-    /// Verifies short `-a` option correctly propagates the reference file path.
     #[test]
     fn add_short_option_propagates_path() {
         let matches = Command::new("templ")
@@ -119,7 +116,6 @@ mod tests {
         assert_eq!(args.file, Some(PathBuf::from("refs.md")));
     }
 
-    /// Checks that multiple crate names are collected and the add option defaults to None when
     /// omitted.
     #[test]
     fn multiple_crate_names_without_add_option() {
@@ -137,7 +133,6 @@ mod tests {
         assert_eq!(args.file, None);
     }
 
-    /// Checks that the visible alias `b` works as an alias for `badge`.
     #[test]
     fn alias_b_is_recognized() {
         let matches = Command::new("templ")
@@ -151,7 +146,6 @@ mod tests {
         assert_eq!(args.file, None);
     }
 
-    /// Checks that omitting the required crate name argument fails argument parsing.
     #[test]
     fn missing_crate_name_fails() {
         let result = Command::new("templ")
@@ -161,7 +155,6 @@ mod tests {
         assert!(result.is_err(), "missing crate name should fail parsing");
     }
 
-    /// Checks that `get_cmd` returns `None` when the badge subcommand was not called.
     #[test]
     fn returns_none_when_subcommand_not_invoked() {
         let matches = Command::new("templ")
