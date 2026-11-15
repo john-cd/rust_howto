@@ -127,6 +127,7 @@ mod tests {
 
     use super::*;
 
+    /// Preserves content and settings while translating the book container.
     #[test]
     fn preserves_content_and_settings_while_translating_the_book_container() {
         let items = json!([{"Chapter":{"content":"[link](chapter.md)","sub_items":[]}}]);
@@ -141,6 +142,7 @@ mod tests {
         assert_eq!(adapted["book"]["__non_exhaustive"], Value::Null);
     }
 
+    /// Rejects invalid book protocol.
     #[test]
     fn rejects_invalid_book_protocol() {
         legacy_context(json!({})).expect_err("input should be rejected");
@@ -148,6 +150,7 @@ mod tests {
             .expect_err("input should be rejected");
     }
 
+    /// Omits unset defaults while preserving nullable book fields.
     #[test]
     fn omits_unset_config_defaults_without_changing_nullable_book_fields() {
         let adapted = legacy_context(json!({
@@ -160,6 +163,7 @@ mod tests {
         assert!(adapted["book"]["sections"][0]["Chapter"]["path"].is_null());
     }
 
+    /// Adapts edition metadata without rewriting embedded Rust examples.
     #[test]
     fn adapts_edition_metadata_without_modifying_rust_examples() {
         let items = json!([{"Chapter":{"content":"```rust,edition2024\nfn main() {}\n```"}}]);

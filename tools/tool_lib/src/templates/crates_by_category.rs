@@ -314,6 +314,7 @@ mod tests {
         assert!(result.ends_with('|'));
     }
 
+    /// Keeps Markdown entities intact when rendering category rows.
     #[test]
     fn category_row_preserves_existing_markdown_entities() {
         let row = create_category_and_crates(
@@ -331,6 +332,7 @@ mod tests {
     /// Performs the category page from metadata handles duplicates renames and missing categories
     /// operation.
 
+    /// Builds category pages with duplicate, renamed, and uncategorized crates.
     #[test]
     fn category_page_from_metadata_handles_duplicates_renames_and_missing_categories() {
         let inventory = ["shared", "shared", "new-name", "std"].map(str::to_owned);
@@ -362,6 +364,7 @@ mod tests {
         assert!(page.contains("| Uncategorized | No metadata is recorded. |"));
     }
 
+    /// Places each recipe link beneath its owning crate.
     #[test]
     fn category_page_from_metadata_nests_recipe_links_under_their_crates() {
         let inventory = ["glam", "vello"].map(str::to_owned);
@@ -392,6 +395,7 @@ mod tests {
         ));
     }
 
+    /// Includes crates discovered in recipes even when metadata omits them.
     #[test]
     fn category_page_from_metadata_includes_crates_found_only_in_recipes() {
         let inventory = ["known".to_owned(), "std".to_owned()];
@@ -422,6 +426,7 @@ mod tests {
         ));
     }
 
+    /// Produces identical category output from identical metadata.
     #[test]
     fn category_page_from_metadata_is_deterministic() {
         let metadata = r#"
@@ -440,6 +445,7 @@ mod tests {
         );
     }
 
+    /// Rejects duplicate category slugs in generated output.
     #[test]
     fn category_page_from_metadata_rejects_duplicate_slugs() {
         let metadata = r#"

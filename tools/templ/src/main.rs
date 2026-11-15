@@ -146,6 +146,7 @@ mod tests {
         ]
     }
 
+    /// Matches slug variants.
     #[test]
     fn matches_slug_variants() {
         let all = sample();
@@ -153,6 +154,7 @@ mod tests {
         assert_eq!(matching_categories(&all, " Web Programming ").len(), 1);
     }
 
+    /// Matches name and description.
     #[test]
     fn matches_name_and_description() {
         let all = sample();
@@ -163,11 +165,13 @@ mod tests {
         );
     }
 
+    /// Returns no result when the query matches no candidates.
     #[test]
     fn no_match() {
         assert!(matching_categories(&sample(), "zzz").is_empty());
     }
 
+    /// Writes the requested badges when the RBE command is selected.
     #[test]
     fn rbe_command_writes_badges() {
         let mut out = Vec::new();
@@ -180,6 +184,7 @@ mod tests {
         assert!(text.contains("rust-by-example/traits.html"));
     }
 
+    /// Reports an error when no command is selected.
     #[test]
     fn no_command_is_an_error() {
         let mut out = Vec::new();
@@ -208,7 +213,7 @@ mod tests {
         assert!(output.contains("text-processing"));
     }
 
-    /// harness).
+    /// Runs the command-line entry point under the test harness.
     #[test]
     #[ignore = "main() parses the real process arguments, which belong to the test harness"]
     fn main_runs() {

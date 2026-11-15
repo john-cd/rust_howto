@@ -33,6 +33,7 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
 mod tests {
     use super::*;
 
+    /// Parses multiple crate names.
     #[test]
     fn parses_multiple_crate_names() {
         let matches = Command::new("templ")
@@ -46,6 +47,7 @@ mod tests {
         assert_eq!(args.args, vec!["clap".to_owned(), "anyhow".to_owned()]);
     }
 
+    /// Accepts the short alias for the crate-category subcommand.
     #[test]
     fn alias_cc_is_recognized() {
         let matches = Command::new("templ")
@@ -58,6 +60,7 @@ mod tests {
         assert_eq!(args.args, vec!["serde".to_owned()]);
     }
 
+    /// Reports an error when the crate name is missing.
     #[test]
     fn missing_crate_name_fails() {
         let result = Command::new("templ")
@@ -67,6 +70,7 @@ mod tests {
         assert!(result.is_err(), "missing crate name should fail parsing");
     }
 
+    /// Leaves the crate-category command unset when it is not selected.
     #[test]
     fn returns_none_when_subcommand_not_invoked() {
         let matches = Command::new("templ")

@@ -29,6 +29,7 @@ fn get_client() -> Result<SyncClient> {
 mod tests {
     use super::get_client;
 
+    /// Initializes the client without starting a network request.
     #[test]
     fn client_initializes_without_making_a_request() {
         get_client().expect("input should parse");

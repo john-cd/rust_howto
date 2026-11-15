@@ -459,6 +459,7 @@ mod tests {
         assert!(!ids.contains("comment-id"));
     }
 
+    /// Produces heading IDs that match mdBook's HTML output.
     #[test]
     fn heading_ids_match_mdbook_html_output() {
         let ids = identifiers(
@@ -480,6 +481,7 @@ mod tests {
         }
     }
 
+    /// Resolves rendered html and directory index aliases.
     #[test]
     fn resolves_rendered_html_and_directory_index_aliases() {
         let context = json!({
@@ -503,6 +505,7 @@ mod tests {
         assert!(invalid[0].target.ends_with("guide/index.md"));
     }
 
+    /// Finds only missing local markdown fragments.
     #[test]
     fn finds_only_missing_local_markdown_fragments() {
         let context = json!({
@@ -530,6 +533,7 @@ mod tests {
         );
     }
 
+    /// Preserves plus and invalid sequences while processing the percent decode.
     #[test]
     fn percent_decode_preserves_plus_and_invalid_sequences() {
         assert_eq!(percent_decode("a+b%20c%Q1"), "a+b c%Q1");

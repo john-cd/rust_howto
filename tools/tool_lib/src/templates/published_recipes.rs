@@ -142,6 +142,7 @@ mod tests {
     use super::*;
     /// Collects published recipe links deduplicates and maps multiple crates.
 
+    /// Deduplicates recipe links while assigning them to each crate.
     #[test]
     fn collect_published_recipe_links_deduplicates_and_maps_multiple_crates() {
         let directory = tempdir().expect("input should parse");
@@ -188,6 +189,7 @@ mod tests {
     }
     /// Collects published recipe links rejects includes outside book source.
 
+    /// Rejects recipe includes that resolve outside the book source directory.
     #[test]
     fn collect_published_recipe_links_rejects_includes_outside_book_source() {
         let directory = tempdir().expect("input should parse");

@@ -49,13 +49,13 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Rejects unknown arguments.
     #[test]
     fn rejects_unknown_arguments() {
         let error = run_with(&["--bogus".to_owned()]).expect_err("usage error");
         assert!(error.to_string().contains("usage: mdbook-private"));
     }
-    /// Reports whether this value supports without renderer is rejected.
-
+    /// Rejects the `supports` command when no renderer is configured.
     #[test]
     fn supports_without_renderer_is_rejected() {
         assert!(run_with(&["supports".to_owned()]).is_err());

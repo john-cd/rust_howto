@@ -39,6 +39,7 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
 mod tests {
     use super::*;
 
+    /// Parses multiple categories.
     #[test]
     fn parses_multiple_categories() {
         let matches = Command::new("templ")
@@ -54,6 +55,7 @@ mod tests {
         );
     }
 
+    /// Accepts the short alias for the category subcommand.
     #[test]
     fn alias_c_is_recognized() {
         let matches = Command::new("templ")
@@ -67,6 +69,7 @@ mod tests {
         assert_eq!(args.args, vec!["gui".to_owned()]);
     }
 
+    /// Reports an error when the category is missing.
     #[test]
     fn missing_category_fails() {
         let result = Command::new("templ")
@@ -79,6 +82,7 @@ mod tests {
         );
     }
 
+    /// Leaves the category command unset when it is not selected.
     #[test]
     fn returns_none_when_subcommand_not_invoked() {
         let matches = Command::new("templ")
