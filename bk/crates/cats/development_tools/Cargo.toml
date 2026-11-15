@@ -112,6 +112,8 @@ doc-comment = "0.3.4"
 gix = { version = "0.90.0", default-features = false, features = ["revision", "blob-diff", "sha1"] }
 # A minimal `syn` syntax tree pretty-printer
 prettyplease = "0.3.0"
+# Source coordinates from proc-macro2 spans.
+proc-macro2 = { version = "1.0.107", features = ["span-locations"] }
 # Builds Rust token streams with quasi-quoting macros for procedural macros.
 quote = "1.0.47"
 # Parser and evaluator for Cargo's flavor of Semantic Versioning
