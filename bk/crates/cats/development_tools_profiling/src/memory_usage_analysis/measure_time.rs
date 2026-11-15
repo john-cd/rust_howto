@@ -39,6 +39,7 @@ mod tests {
         main();
     }
 
+    /// Verifies that the measured function takes at least the sleep time.
     #[test]
     fn measured_function_takes_at_least_the_sleep_time() {
         let start = std::time::Instant::now();

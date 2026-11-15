@@ -103,6 +103,7 @@ mod tests {
         main();
     }
 
+    /// Updates the view and requests a render after an increment.
     #[test]
     fn increments_update_view_and_request_render() {
         let app = Counter;

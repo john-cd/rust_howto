@@ -52,13 +52,12 @@ pub fn run() -> Result<()> {
     main()
 }
 
-/// Returns an error if the C string is invalid.
+/// Tests that the bundled static C library can be called from Rust.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// Returns an error if the C string is invalid.
+    /// Verifies that the bundled c greeting runs.
     #[test]
     fn bundled_c_greeting_runs() -> Result<()> {
         greet_from_c("workspace")
@@ -69,6 +68,7 @@ mod tests {
         assert!(greet_from_c("not\0a C string").is_err());
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

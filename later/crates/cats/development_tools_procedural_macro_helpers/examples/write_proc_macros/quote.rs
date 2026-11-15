@@ -87,13 +87,12 @@ pub fn run() -> Result<()> {
     main()
 }
 
-/// Returns an error if generated Rust syntax cannot be parsed.
+/// Tests parsing and inspection of generated Rust syntax.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// Returns an error if generated Rust syntax cannot be parsed.
+    /// Generates struct getters.
     #[test]
     fn generates_struct_getters() -> Result<()> {
         let source = generated_source()?;
@@ -102,6 +101,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

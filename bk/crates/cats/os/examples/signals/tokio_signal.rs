@@ -82,11 +82,13 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Confirms that the stops immediately when shutdown is ready.
     #[tokio::test]
     async fn stops_immediately_when_shutdown_is_ready() {
         assert_eq!(serve_until(std::future::ready(())).await, 0);
     }
 
+    /// Keeps serving until shutdown.
     #[tokio::test]
     async fn keeps_serving_until_shutdown() {
         let ticks = serve_until(time::sleep(Duration::from_millis(30))).await;

@@ -48,11 +48,7 @@ mod tests {
 
     use super::main;
 
-    /// Verifies writing and reading text through the system clipboard.
-    ///
-    /// Run manually on a desktop to replace its current clipboard text:
-    /// `cargo test -p gui --example clipboard clipboard_text_round_trip --
-    /// --ignored`.
+    /// Writes text to the system clipboard and reads back the same text.
     #[test]
     #[ignore = "requires a desktop clipboard and overwrites its current text"]
     fn clipboard_text_round_trip() -> anyhow::Result<()> {
@@ -71,6 +67,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     #[ignore = "needs a desktop session with a system clipboard"]
     fn test_main_entry_point() {

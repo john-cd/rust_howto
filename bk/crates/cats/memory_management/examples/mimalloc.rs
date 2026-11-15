@@ -56,6 +56,7 @@ mod tests {
         main();
     }
 
+    /// Verifies that the allocator serves large vectors.
     #[test]
     fn allocator_serves_large_vectors() {
         let v = vec![7_u8; 1024 * 1024];

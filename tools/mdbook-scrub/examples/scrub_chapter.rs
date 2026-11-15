@@ -26,7 +26,7 @@ const SAMPLE: &str = "Visible intro.\n\n<div class=\"hidden\">secret notes</div>
     reason = "Example reports the scrubbed chapter on standard output"
 )]
 /// # Errors
-/// An error is returned if new fails.
+/// Returns an error if chapter preprocessing fails.
 fn main() -> anyhow::Result<()> {
     let mut book = Book::new();
     book.push_item(Chapter::new(

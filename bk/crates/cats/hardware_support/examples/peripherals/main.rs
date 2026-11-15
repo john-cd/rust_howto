@@ -47,10 +47,9 @@ mod tests {
 
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the list
-    /// depends on the machine, so there is nothing portable to assert).
     // output-only: the ports depend on the machine running the test.
 
+    /// Describes a usb port.
     #[test]
     fn describes_a_usb_port() {
         let port = SerialPortInfo {
@@ -66,6 +65,7 @@ mod tests {
         assert_eq!(describe(&port), "/dev/ttyACM0 (USB 2341:0043)");
     }
 
+    /// Describes an unknown port.
     #[test]
     fn describes_an_unknown_port() {
         let port = SerialPortInfo {

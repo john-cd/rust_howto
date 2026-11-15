@@ -75,6 +75,7 @@ mod tests {
         main();
     }
 
+    /// Checks that the events outside the subscriber are not collected.
     #[test]
     fn events_outside_the_subscriber_are_not_collected() {
         let (collector, _subscriber) = new_collector();

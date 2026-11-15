@@ -92,8 +92,7 @@ mod tests {
         Ok((status, body.to_vec()))
     }
 
-    /// Serves a document containing the greeting route through the JSON
-    /// endpoint.
+    /// Serves a document containing the greeting route through the JSON endpoint.
     #[tokio::test]
     async fn serves_the_spec_from_a_route() -> anyhow::Result<()> {
         let (status, body) = get_status_and_body("/api-docs/openapi.json").await?;

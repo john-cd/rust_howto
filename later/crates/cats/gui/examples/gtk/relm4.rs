@@ -116,6 +116,7 @@ mod tests {
         main();
     }
 
+    /// Updates the displayed count for each received message.
     #[test]
     fn messages_update_the_count() {
         let mut model = CounterModel { value: 0 };

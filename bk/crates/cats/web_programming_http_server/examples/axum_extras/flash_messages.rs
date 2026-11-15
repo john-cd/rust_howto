@@ -92,9 +92,7 @@ mod tests {
         Ok(String::from_utf8(bytes.to_vec())?)
     }
 
-    /// # Errors
-    /// Returns an error if request handling fails, the session cookie is missing or invalid, or a
-    /// response body cannot be read.
+    /// Confirms that the message is shown once.
     #[tokio::test]
     async fn message_is_shown_once() -> anyhow::Result<()> {
         let app = app();

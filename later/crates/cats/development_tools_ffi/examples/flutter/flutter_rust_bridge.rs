@@ -126,6 +126,7 @@ mod tests {
         main();
     }
 
+    /// Checks that the greeting includes the supplied name.
     #[test]
     fn greeting_includes_the_supplied_name() {
         assert_eq!(
@@ -134,6 +135,7 @@ mod tests {
         );
     }
 
+    /// Checks that the async greeting includes the supplied name.
     #[test]
     fn async_greeting_includes_the_supplied_name() {
         let waker = Waker::noop();
@@ -146,6 +148,7 @@ mod tests {
         );
     }
 
+    /// Checks that greeting updates are ordered and personalized.
     #[test]
     fn greeting_updates_are_ordered_and_personalized() {
         assert_eq!(

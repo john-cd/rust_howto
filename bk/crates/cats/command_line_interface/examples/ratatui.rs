@@ -255,6 +255,7 @@ mod tests {
             .collect()
     }
 
+    /// Shows the title and quit hint when the terminal UI starts.
     #[test]
     fn running_ui_shows_the_title_and_quit_hint() {
         let text = render(&App::default());
@@ -262,6 +263,7 @@ mod tests {
         assert!(text.contains("Press 'q' to quit"));
     }
 
+    /// Verifies that the exiting ui asks for confirmation.
     #[test]
     fn exiting_ui_asks_for_confirmation() {
         let app = App {
@@ -270,6 +272,7 @@ mod tests {
         assert!(render(&app).contains("Press 'y' to confirm"));
     }
 
+    /// Exits the UI only after the user confirms quitting.
     #[test]
     fn quit_confirmation_flow() {
         let mut app = App::default();
@@ -283,6 +286,7 @@ mod tests {
         assert_eq!(app.mode, Mode::Done);
     }
 
+    /// Checks that the middle widget renders its text.
     #[test]
     fn middle_widget_renders_its_text() {
         let area = Rect::new(0, 0, 20, 3);

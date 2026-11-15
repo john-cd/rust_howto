@@ -57,6 +57,7 @@ mod tests {
         main();
     }
 
+    /// Checks that the vector arithmetic matches hand computation.
     #[test]
     fn vector_arithmetic_matches_hand_computation() {
         assert_eq!(
@@ -70,6 +71,7 @@ mod tests {
         );
     }
 
+    /// Applies scaling, rotation, and translation in order.
     #[test]
     fn transform_scales_rotates_then_translates() {
         let mat = Mat4::from_scale_rotation_translation(

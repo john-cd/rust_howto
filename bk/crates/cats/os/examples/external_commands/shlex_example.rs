@@ -13,7 +13,7 @@ use std::process::Command;
 /// POSIX shell. Use it for display or logs only.
 ///
 /// # Errors
-/// Returns an error if the display command operation cannot satisfy its required invariants.
+/// Returns an error if `program` or an argument cannot be quoted as a POSIX shell word.
 fn display_command(program: &str, args: &[&str]) -> Result<String, shlex::QuoteError> {
     let mut parts = vec![shlex::try_quote(program)?.into_owned()];
     for arg in args {
@@ -70,6 +70,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs succeeds.
     #[test]
     fn run_succeeds() -> anyhow::Result<()> {
         run()

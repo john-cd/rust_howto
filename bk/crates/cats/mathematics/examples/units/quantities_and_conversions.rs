@@ -49,6 +49,7 @@ fn test_quantities_convert_distance_and_speed() {
 mod tests {
     use super::*;
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

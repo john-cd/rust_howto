@@ -26,6 +26,7 @@ mod tests {
     use super::GENERATED_MESSAGE;
     use super::main;
 
+    /// Confirms that the generated message is available to rust code.
     #[test]
     fn generated_message_is_available_to_rust_code() {
         assert_eq!(GENERATED_MESSAGE, "Generated during the Cargo build.");

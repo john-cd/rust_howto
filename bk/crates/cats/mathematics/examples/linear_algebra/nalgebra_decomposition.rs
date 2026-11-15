@@ -61,8 +61,7 @@ mod tests {
         main();
     }
 
-    /// `U * Sigma * V^T` reconstructs the matrix; the singular values are
-    /// sorted and the determinant/trace are known.
+    /// Verifies that the svd reconstructs matrix.
     #[test]
     fn svd_reconstructs_matrix() {
         let m = Matrix3::new(3.0_f64, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 3.0);

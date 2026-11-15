@@ -82,6 +82,7 @@ mod tests {
         }
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

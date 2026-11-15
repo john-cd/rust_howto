@@ -66,6 +66,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Includes the counter in the server-rendered page.
     #[tokio::test]
     async fn server_render_shows_counter() {
         let html = yew::ServerRenderer::<App>::new().render().await;
@@ -74,6 +75,7 @@ mod tests {
     }
 
     // output-only: on the host, the entry point only prints a hint.
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

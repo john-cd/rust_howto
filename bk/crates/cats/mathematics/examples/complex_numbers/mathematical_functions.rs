@@ -33,7 +33,6 @@ mod tests {
     use super::*;
 
     /// Verifies that the exponential example runs without panicking.
-    /// Runs the mathematical functions example through its entry point.
     #[test]
     fn test_mathematical_functions_example_entry_point() {
         main();

@@ -77,11 +77,13 @@ mod tests {
         main();
     }
 
+    /// Tracks the target value with the PID controller.
     #[test]
     fn controller_tracks_the_setpoint() {
         assert!(simulate() < 0.05);
     }
 
+    /// Confirms that the plant is a first order lag.
     #[test]
     fn plant_is_a_first_order_lag() {
         let mut plant = Plant {

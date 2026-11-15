@@ -138,10 +138,7 @@ mod tests {
         Client::from_conf(config)
     }
 
-    /// Invokes a function that already exists in LocalStack. Name it with
-    /// `LAMBDA_FUNCTION`; it must return `{"message":"Hello, Ada!"}` for the
-    /// request `{"name":"Ada"}`. Start LocalStack with the Docker socket
-    /// mounted so it can run the function.
+    /// Invokes the configured LocalStack Lambda function and checks its response.
     #[tokio::test]
     #[ignore = "requires LocalStack (Lambda) on localhost:4566 and LAMBDA_FUNCTION"]
     async fn function_is_invoked() -> Result<()> {

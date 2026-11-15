@@ -72,8 +72,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the `petgraph` DFS example by calling `main()`.
+/// Demonstrates depth-first graph traversal and branch exploration order.
 pub fn run() {
     main();
 }

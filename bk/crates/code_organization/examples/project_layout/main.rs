@@ -81,7 +81,7 @@ fn main() {
 mod tests {
     use super::*;
 
-    /// Verifies reexports are reachable.
+    /// Imports public re-exports through the crate root.
     #[test]
     fn test_reexports_are_reachable() {
         assert_eq!(public_function(), "public_function");

@@ -52,6 +52,7 @@ mod tests {
     /// Requires AWS credentials and network access, so it is ignored by
     /// default.
     // output-only: the example logs the bucket names of the AWS account.
+    /// Lists buckets when AWS credentials and network access are available.
     #[test]
     #[ignore = "needs AWS credentials and network access"]
     fn list_s3_buckets() -> anyhow::Result<()> {

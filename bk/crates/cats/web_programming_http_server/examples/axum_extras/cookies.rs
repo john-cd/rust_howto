@@ -73,9 +73,7 @@ mod tests {
         Ok(String::from_utf8(bytes.to_vec())?)
     }
 
-    /// # Errors
-    /// Returns an error if building the request, running the router, or reading the response body
-    /// fails.
+    /// Returns the default language when the request has no cookie.
     #[tokio::test]
     async fn default_without_cookie() -> anyhow::Result<()> {
         let response = app()
@@ -85,9 +83,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an error if request handling fails, the `Set-Cookie` header is missing or invalid,
-    /// or a response body cannot be read.
+    /// Persists the selected language in a cookie for the next request.
     #[tokio::test]
     async fn cookie_round_trip() -> anyhow::Result<()> {
         let response = app()

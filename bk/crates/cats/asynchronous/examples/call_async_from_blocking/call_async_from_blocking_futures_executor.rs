@@ -45,6 +45,7 @@ mod tests {
         main();
     }
 
+    /// Returns the future output for the block on.
     #[test]
     fn block_on_returns_the_future_output() {
         assert_eq!(futures::executor::block_on(async { 40 + 2 }), 42);

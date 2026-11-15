@@ -43,8 +43,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Confirms that a measured duration is nonnegative without asserting its
-    /// value.
+    /// Confirms that a measured duration is nonnegative without asserting its value.
     #[test]
     fn elapsed_duration_is_nonnegative() {
         let start = Instant::now();
@@ -52,6 +51,7 @@ mod tests {
         assert!(duration >= Duration::ZERO);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

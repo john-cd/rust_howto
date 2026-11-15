@@ -35,6 +35,7 @@ mod tests {
         main();
     }
 
+    /// Wraps the checksum modulo 256.
     #[test]
     fn checksum_wraps_modulo_256() {
         assert_eq!(checksum(&[255, 1]), 0);

@@ -48,6 +48,7 @@ mod tests {
         main();
     }
 
+    /// Leaves a future pending until it is explicitly awaited.
     #[tokio::test]
     async fn a_future_does_nothing_until_it_is_awaited() {
         use std::future::Future as _;

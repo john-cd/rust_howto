@@ -117,6 +117,7 @@ mod tests {
         assert!(hamming("short", "longer").is_err());
     }
 
+    /// Computes the expected similarity scores for the sample strings.
     #[test]
     fn similarity_scores() {
         assert!((jaro_winkler("rusty", "rusty") - 1.0).abs() < f64::EPSILON);

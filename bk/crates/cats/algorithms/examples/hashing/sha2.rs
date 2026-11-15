@@ -109,6 +109,7 @@ mod tests {
         main().expect("the example should succeed");
     }
 
+    /// Confirms that the sha256 of abc is the known digest.
     #[test]
     fn sha256_of_abc_is_the_known_digest() {
         assert_eq!(
@@ -117,6 +118,7 @@ mod tests {
         );
     }
 
+    /// Produces the same digest from incremental and one-shot updates.
     #[test]
     fn incremental_updates_match_one_shot_digest() {
         let mut hasher = Sha256::new();
@@ -125,6 +127,7 @@ mod tests {
         assert_eq!(hasher.finalize(), Sha256::digest(b"hello world"));
     }
 
+    /// Confirms that the sha512 digest is 64 bytes and base64 roundtrips.
     #[test]
     fn sha512_digest_is_64_bytes_and_base64_roundtrips() {
         let digest = Sha512::new().chain_update(b"abc").finalize();

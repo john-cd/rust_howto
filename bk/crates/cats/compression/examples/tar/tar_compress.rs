@@ -81,9 +81,6 @@ mod tests {
     use super::*;
 
     /// Archives a temporary directory and verifies the finished gzip tarball.
-    /// # Errors
-    /// Returns an I/O error if the fixture cannot be created, archived, or
-    /// extracted for verification.
     #[test]
     fn archives_directory_and_finishes_gzip_stream() -> io::Result<()> {
         let temporary = tempfile::tempdir()?;
@@ -106,6 +103,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         let _guard = SAMPLE_ARCHIVE_LOCK

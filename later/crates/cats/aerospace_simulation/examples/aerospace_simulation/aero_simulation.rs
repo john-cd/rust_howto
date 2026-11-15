@@ -242,6 +242,7 @@ mod tests {
         );
     }
 
+    /// Integrates a constant-gravity trajectory with the fourth-order Runge-Kutta method.
     #[test]
     fn rk4_solves_a_constant_gravity_trajectory() {
         let final_state = solve_ballistic_trajectory();

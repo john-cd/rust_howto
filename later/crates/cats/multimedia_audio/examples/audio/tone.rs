@@ -42,6 +42,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that the generated tone contains finite samples.
     #[test]
     fn generated_tone_contains_finite_samples() {
         let samples = tone_samples();
@@ -49,6 +50,7 @@ mod tests {
         assert!(samples.iter().all(|sample| sample.is_finite()));
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

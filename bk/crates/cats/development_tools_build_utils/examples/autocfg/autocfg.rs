@@ -28,11 +28,13 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that the probe runs outside build script.
     #[test]
     fn probe_runs_outside_build_script() {
         main();
     }
 
+    /// Reports which types the compiler supports for the probing.
     #[test]
     fn probing_reports_which_types_the_compiler_supports() {
         let dir = std::env::temp_dir();

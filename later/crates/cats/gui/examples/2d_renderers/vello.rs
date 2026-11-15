@@ -168,6 +168,7 @@ mod tests {
         assert!(!scene.encoding().is_empty());
     }
 
+    /// Checks that the vello renderer entry point renders with a gpu.
     #[test]
     #[ignore = "requires a compatible GPU adapter"]
     fn vello_renderer_entry_point_renders_with_a_gpu() -> Result<()> {

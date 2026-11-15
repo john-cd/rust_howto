@@ -45,7 +45,6 @@ mod tests {
     use super::*;
 
     /// Verifies that concurrent inserts produce the expected map contents.
-    /// Runs the dashmap example through its entry point.
     #[test]
     fn test_dashmap_example_entry_point() {
         main().expect("dashmap recipe should pass its assertions");

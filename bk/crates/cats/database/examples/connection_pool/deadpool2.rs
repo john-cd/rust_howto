@@ -177,6 +177,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     #[ignore = "needs a running PostgreSQL server"]
     fn test_main_entry_point() {

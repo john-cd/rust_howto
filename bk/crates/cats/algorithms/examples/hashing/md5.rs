@@ -42,6 +42,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that the md5 of hello world is the known digest.
     #[test]
     fn md5_of_hello_world_is_the_known_digest() {
         let digest = Md5::digest(b"hello world");
@@ -51,6 +52,7 @@ mod tests {
         );
     }
 
+    /// Confirms that the md5 of empty input is the known digest.
     #[test]
     fn md5_of_empty_input_is_the_known_digest() {
         let digest = Md5::digest(b"");

@@ -77,8 +77,7 @@ mod tests {
         }
     }
 
-    /// Verifies valid credentials receive 200 and invalid ones receive 401
-    /// without a socket.
+    /// Verifies valid credentials receive 200 and invalid ones receive 401 without a socket.
     #[test]
     fn basic_auth_route_accepts_valid_and_rejects_invalid_credentials() -> anyhow::Result<()> {
         let request = basic_auth_request(
@@ -116,6 +115,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

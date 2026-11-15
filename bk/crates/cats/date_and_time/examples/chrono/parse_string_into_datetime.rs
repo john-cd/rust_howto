@@ -52,19 +52,18 @@ pub fn run() -> Result<(), ParseError> {
     main()
 }
 
-/// An error is returned if parsed_values_have_the_expected_components, parse_from_rfc3339 fails.
+/// Tests RFC 3339 parsing and the resulting date and time components.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Checks that the chrono parses the documented date formats.
     #[test]
     fn chrono_parses_the_documented_date_formats() -> Result<(), ParseError> {
         main()
     }
 
-    /// # Errors
-    /// An error is returned if parsed_values_have_the_expected_components, parse_from_rfc3339
-    /// fails.
+    /// Checks that parsed values have the expected components.
     #[test]
     fn parsed_values_have_the_expected_components() -> Result<(), ParseError> {
         let rfc2822 = DateTime::parse_from_rfc2822("Tue, 1 Jul 2003 10:52:37 +0200")?;
@@ -88,6 +87,7 @@ mod tests {
         Ok(())
     }
 
+    /// Confirms that malformed input is a parse error.
     #[test]
     fn malformed_input_is_a_parse_error() {
         assert!(DateTime::parse_from_rfc3339("not a date").is_err());

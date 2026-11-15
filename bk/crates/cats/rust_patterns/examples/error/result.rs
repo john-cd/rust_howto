@@ -35,12 +35,13 @@ pub fn run() {
     main();
 }
 
-/// Returns an error instead of panicking for a zero denominator.
+/// Tests that division by zero returns an error.
 #[cfg(test)]
 mod tests {
     use super::divide;
     use super::main;
 
+    /// Returns a success value for the division.
     #[test]
     fn division_returns_a_success_value() {
         assert_eq!(divide(12, 3), Ok(4));
@@ -52,6 +53,7 @@ mod tests {
         assert_eq!(divide(12, 0), Err("division by zero"));
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

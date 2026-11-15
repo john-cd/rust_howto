@@ -41,8 +41,7 @@ mod tests {
         main()
     }
 
-    /// # Errors
-    /// An error is returned if certificate_and_key_are_pem_encoded fails.
+    /// Checks that the certificate and key are pem encoded.
     #[test]
     fn certificate_and_key_are_pem_encoded() -> anyhow::Result<()> {
         let key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
@@ -53,9 +52,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if each_generated_certificate_is_unique, generate_simple_self_signed
-    /// fails.
+    /// Confirms that each generated certificate is unique.
     #[test]
     fn each_generated_certificate_is_unique() -> anyhow::Result<()> {
         let a = generate_simple_self_signed(vec!["localhost".to_owned()])?;

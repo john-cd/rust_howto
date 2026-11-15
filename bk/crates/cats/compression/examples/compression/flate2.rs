@@ -102,12 +102,12 @@ mod tests {
     use super::*;
 
     /// Checks the in-memory and temporary-file compression round trips.
-    /// Runs the flate2 example through its entry point.
     #[test]
     fn test_flate2_example_entry_point() -> anyhow::Result<()> {
         run()
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

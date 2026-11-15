@@ -118,7 +118,7 @@ mod tests {
         Ok(())
     }
 
-    /// errors.
+    /// Rejects invalid rgb input without panicking.
     #[test]
     fn rejects_invalid_rgb_input_without_panicking() {
         for input in [

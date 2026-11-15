@@ -72,6 +72,7 @@ fn test_set_operations_return_expected_elements() {
 mod tests {
     use super::*;
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

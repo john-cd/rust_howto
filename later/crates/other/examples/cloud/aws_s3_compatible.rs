@@ -188,8 +188,7 @@ mod tests {
         Ok((port, cert_pem))
     }
 
-    /// Verifies that only a client that trusts the private CA reaches the
-    /// store.
+    /// Checks that the custom trust store accepts the private ca.
     #[tokio::test]
     async fn custom_trust_store_accepts_the_private_ca() -> Result<()> {
         let (port, cert_pem) = start_https_server().await?;
@@ -216,11 +215,7 @@ mod tests {
         Ok(())
     }
 
-    /// Exercises a real store. Start one first, for example MinIO on port 9000
-    /// with the keys `minioadmin` / `minioadmin`, then run
-    /// `cargo test -- --ignored`. Set `S3_ENDPOINT` (and `S3_ACCESS_KEY`,
-    /// `S3_SECRET_KEY`) to use another store, e.g. LocalStack on
-    /// `http://localhost:4566` with the keys `test` / `test`.
+    /// Stores an object in an S3-compatible service and reads back its contents.
     #[tokio::test]
     #[ignore = "requires an S3-compatible server on localhost:9000"]
     async fn stores_and_reads_an_object() -> Result<()> {

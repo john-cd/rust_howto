@@ -48,6 +48,7 @@ fn test_genetic_algorithm_reaches_maximum_fitness() {
 mod tests {
     use super::*;
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

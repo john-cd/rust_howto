@@ -76,7 +76,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies redb subcommand parses.
+    /// Parses the redb subcommand when its feature is enabled.
     #[cfg(feature = "redb")]
     #[test]
     fn test_redb_subcommand_parses() {

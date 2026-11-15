@@ -60,6 +60,7 @@ mod tests {
         main().expect("example entry point should succeed");
     }
 
+    /// Creates an encoding context from the default configuration.
     #[test]
     fn default_config_creates_context() {
         let cfg = Config::default();

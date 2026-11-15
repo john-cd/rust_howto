@@ -80,6 +80,7 @@ mod tests {
         assert_eq!(decoded, Person::default());
     }
 
+    /// Reports an error when truncated input occurs.
     #[test]
     fn truncated_input_is_an_error() {
         let bytes = Person {

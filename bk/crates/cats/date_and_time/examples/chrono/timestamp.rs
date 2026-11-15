@@ -51,11 +51,13 @@ pub fn run() -> Result<(), &'static str> {
 mod tests {
     use super::*;
 
+    /// Verifies that the chrono timestamp conversion runs.
     #[test]
     fn chrono_timestamp_conversion_runs() -> Result<(), &'static str> {
         main()
     }
 
+    /// Verifies that the known timestamps convert in both directions.
     #[test]
     fn known_timestamps_convert_in_both_directions() {
         let dt = NaiveDate::from_ymd_opt(2017, 11, 12)
@@ -74,6 +76,7 @@ mod tests {
         );
     }
 
+    /// Checks that out of range inputs are rejected.
     #[test]
     fn out_of_range_inputs_are_rejected() {
         assert!(NaiveDate::from_ymd_opt(2017, 13, 1).is_none());

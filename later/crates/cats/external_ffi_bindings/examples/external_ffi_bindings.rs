@@ -45,6 +45,7 @@ mod tests {
         main();
     }
 
+    /// Checks that the native process id matches standard library.
     #[cfg(unix)]
     #[test]
     fn native_process_id_matches_standard_library() {

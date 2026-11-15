@@ -62,7 +62,6 @@ mod tests {
     use super::*;
 
     /// Checks case-insensitive parsing and serde-compatible names.
-    /// Runs the strum case example through its entry point.
     #[test]
     fn test_strum_case_example_entry_point() {
         main();

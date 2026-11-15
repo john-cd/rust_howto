@@ -1387,8 +1387,6 @@ mod tests {
         },
     };
 
-    /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
     /// Delivers queued messages through the transmission pipeline on worker threads.
     #[tokio::test(flavor = "multi_thread", worker_threads = 4)]
     async fn tx_pipeline_flow() -> ZResult<()> {
@@ -1515,12 +1513,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an error if creating the transport priority state or waiting for a pipeline task
-    /// times out or fails.
-    ///
-    /// # Panics
-    /// Panics if pushing a message into a pipeline fails.
+    /// Blocks producers when transmission batches are exhausted and resumes them after consumption.
     #[tokio::test(flavor = "multi_thread", worker_threads = 4)]
     async fn tx_pipeline_blocking() -> ZResult<()> {
         fn schedule(queue: TransmissionPipelineProducer, counter: Arc<AtomicUsize>, id: usize) {
@@ -1640,6 +1633,7 @@ mod tests {
         Ok(())
     }
 
+    /// Moves transmission pipeline work to a blocking worker thread.
     #[tokio::test(flavor = "multi_thread", worker_threads = 4)]
     #[ignore]
     async fn tx_pipeline_thr() {

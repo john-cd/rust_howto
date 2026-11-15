@@ -53,6 +53,7 @@ mod tests {
         main();
     }
 
+    /// Keeps generated indexes within the selected character set.
     #[test]
     fn random_range_indexes_stay_inside_the_charset() {
         let mut rng = rand::rng();

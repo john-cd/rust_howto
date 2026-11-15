@@ -86,6 +86,7 @@ mod tests {
     use super::build_schema;
     use super::main;
 
+    /// Returns expected data for the hello query.
     #[tokio::test]
     async fn hello_query_returns_expected_data() {
         let response = build_schema().execute("{ hello }").await;
@@ -107,6 +108,7 @@ mod tests {
         assert!(response.errors[0].message.contains("Unknown field"));
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     #[ignore = "starts a long-running GraphQL server"]
     fn test_main_entry_point() {

@@ -78,8 +78,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the `petgraph` Dijkstra example by calling `main()`.
+/// Demonstrates Dijkstra's single-source shortest paths on a weighted directed graph.
 pub fn run() {
     main();
 }

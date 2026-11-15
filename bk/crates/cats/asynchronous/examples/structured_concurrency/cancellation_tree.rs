@@ -79,7 +79,6 @@ mod tests {
     use super::*;
 
     /// Checks that cancelling the root token reaches all child tasks.
-    /// Runs the cancellation tree example through its entry point.
     #[test]
     fn test_cancellation_tree_example_entry_point() {
         main();

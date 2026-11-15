@@ -114,6 +114,7 @@ fn run() {
 mod tests {
     use super::*;
 
+    /// Confirms that peripherals can be taken once.
     #[test]
     fn peripherals_can_be_taken_once() {
         let taken = AtomicBool::new(false);
@@ -121,6 +122,7 @@ mod tests {
         assert!(Peripherals::take_once(&taken).is_none());
     }
 
+    /// Preserves other pins while processing the modify.
     #[test]
     fn modify_preserves_other_pins() {
         let taken = AtomicBool::new(false);

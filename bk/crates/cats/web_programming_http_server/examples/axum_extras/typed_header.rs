@@ -45,7 +45,7 @@ mod tests {
     use super::*;
 
     /// # Errors
-    /// An error is returned if app fails.
+    /// Returns an error if building the request or handling it with the router fails.
     async fn call(headers: &[(&str, &str)]) -> anyhow::Result<(StatusCode, String)> {
         let mut builder = Request::get("/whoami");
         for (k, v) in headers {
@@ -57,8 +57,7 @@ mod tests {
         Ok((status, String::from_utf8_lossy(&body).into_owned()))
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Accepts well-formed typed headers.
     #[tokio::test]
     async fn valid_headers() -> anyhow::Result<()> {
         let (status, body) = call(&[
@@ -71,8 +70,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Rejects a request when the required header is absent.
     #[tokio::test]
     async fn missing_header() -> anyhow::Result<()> {
         let (status, _) = call(&[("user-agent", "tests/1.0")]).await?;
@@ -80,8 +78,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Rejects malformed authorization header values.
     #[tokio::test]
     async fn malformed_authorization() -> anyhow::Result<()> {
         let (status, _) =

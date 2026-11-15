@@ -62,11 +62,12 @@ fn run() -> Settings {
     parse_settings(None)
 }
 
-/// An error is returned if to_string fails.
+/// Tests serialization and storage of values in browser local storage.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Uses default values when storage is missing or invalid.
     #[test]
     fn missing_or_invalid_gives_defaults() {
         assert_eq!(run(), Settings::default());
@@ -74,8 +75,7 @@ mod tests {
         assert_eq!(parse_settings(Some("not json")), Settings::default());
     }
 
-    /// # Errors
-    /// An error is returned if to_string fails.
+    /// Round-trips settings through JSON and fills in the default for an omitted field.
     #[test]
     fn round_trip_and_partial() -> anyhow::Result<()> {
         let s = Settings {

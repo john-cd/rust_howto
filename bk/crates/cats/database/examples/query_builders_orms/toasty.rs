@@ -58,8 +58,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies a model can be inserted and loaded without an external
-    /// database.
+    /// Verifies a model can be inserted and loaded without an external database.
     #[test]
     fn toasty_round_trips_a_user_with_in_memory_sqlite() -> anyhow::Result<()> {
         main()

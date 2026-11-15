@@ -85,8 +85,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    /// Verifies that the `astar` example runs.
-
+    /// Runs the A* example through its entry point.
     #[test]
     fn test_astar_example_entry_point() {
         main();

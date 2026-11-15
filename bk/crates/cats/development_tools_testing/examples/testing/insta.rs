@@ -48,6 +48,7 @@ mod tests {
         assert_snapshot!(formatted, @"Name: Alice, Age: 30");
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         run();

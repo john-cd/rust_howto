@@ -92,6 +92,7 @@ mod tests {
         main();
     }
 
+    /// Verifies that the second task futures complete.
     #[tokio::test]
     async fn second_task_futures_complete() {
         let s = first_task().await;
@@ -100,6 +101,7 @@ mod tests {
         do_something().await;
     }
 
+    /// Verifies that the joined futures run to completion.
     #[tokio::test]
     async fn joined_futures_run_to_completion() {
         let (a, b) = futures::join!(async { 1 }, async { 2 });

@@ -131,6 +131,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that the countdown takes three ticks.
     #[tokio::test(start_paused = true)]
     async fn countdown_takes_three_ticks() {
         let start = tokio::time::Instant::now();

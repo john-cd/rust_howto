@@ -96,6 +96,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Tracks heap usage while the example builds its output.
     #[test]
     fn heap_usage_testing() {
         // `testing()` allows the use of dhat::assert! and related macros,

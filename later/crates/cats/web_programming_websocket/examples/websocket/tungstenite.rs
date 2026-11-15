@@ -62,6 +62,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     #[ignore = "needs network access to the public echo service"]
     fn test_main_entry_point() {

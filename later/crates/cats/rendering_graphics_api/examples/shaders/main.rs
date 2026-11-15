@@ -64,6 +64,7 @@ mod tests {
         Ok(())
     }
 
+    /// Rejects invalid wgsl.
     #[test]
     fn rejects_invalid_wgsl() {
         assert!(wgsl::parse_str("fn broken( {").is_err());

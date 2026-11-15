@@ -52,6 +52,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Produces the same hash when a fixed seed is reused.
     #[test]
     fn fixed_seed_repeats_the_same_hash() {
         main();

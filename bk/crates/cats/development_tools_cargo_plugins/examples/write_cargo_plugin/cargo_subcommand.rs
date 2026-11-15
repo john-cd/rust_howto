@@ -116,13 +116,12 @@ pub fn run() -> anyhow::Result<()> {
     example_body()
 }
 
-/// Returns an error if the argument parser or metadata command fails.
+/// Tests command-line parsing and Cargo metadata handling.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// Returns an error if the argument parser or metadata command fails.
+    /// Skips the Cargo subcommand name while parsing plugin arguments.
     #[test]
     fn the_subcommand_name_is_skipped() -> anyhow::Result<()> {
         let CargoCli::Hello(args) = CargoCli::try_parse_from([
@@ -139,13 +138,13 @@ mod tests {
         Ok(())
     }
 
+    /// Checks that unknown flags are rejected.
     #[test]
     fn unknown_flags_are_rejected() {
         assert!(CargoCli::try_parse_from(["cargo", "hello", "--nope"]).is_err());
     }
 
-    /// # Errors
-    /// Returns an error if the temporary package cannot be created or queried.
+    /// Selects the default package.
     #[test]
     fn selects_the_default_package() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
@@ -172,8 +171,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an error if the example cannot create or query its package.
+    /// Runs succeeds.
     #[test]
     fn run_succeeds() -> anyhow::Result<()> {
         run()

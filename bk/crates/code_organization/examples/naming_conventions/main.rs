@@ -114,7 +114,7 @@ fn main() {
 mod tests {
     use super::*;
 
-    /// Verifies getters.
+    /// Confirms each getter returns the value of its corresponding field.
     #[test]
     fn test_getters() {
         let mut s = S::new("a");

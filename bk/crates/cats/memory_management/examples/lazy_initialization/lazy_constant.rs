@@ -50,11 +50,13 @@ mod tests {
         assert_eq!(PRIVILEGES.get("Jim"), Some(&vec!["user"]));
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();
     }
 
+    /// Confirms that unknown user has no access.
     #[test]
     fn unknown_user_has_no_access() {
         assert_eq!(PRIVILEGES.get("Nobody"), None);

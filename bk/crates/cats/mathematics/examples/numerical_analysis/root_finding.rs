@@ -24,12 +24,10 @@ impl CostFunction for CosMinusX {
         Ok(x.cos() - x)
     }
 }
-/// Searches the available root data and returns candidates that satisfy the workflow’s matching
-/// rules.
+/// Finds the root of `cos(x) - x` in the interval `[0, 1]`.
 ///
 /// # Panics
-/// Panics if Brent's method should find the bracketed root.
-/// Finds the root of `cos(x) - x` in the interval `[0, 1]`.
+/// Panics if Brent's method does not find a root in the interval.
 fn find_root() -> f64 {
     let result = Executor::new(CosMinusX, BrentRoot::new(0.0, 1.0, 1e-12))
         .configure(|state| state.param(0.5).max_iters(100))
@@ -67,6 +65,7 @@ fn test_brent_method_finds_root() {
 mod tests {
     use super::*;
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

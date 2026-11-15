@@ -47,6 +47,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that every line fits the width.
     #[test]
     fn every_line_fits_the_width() {
         let rendered = build_table().to_string();
@@ -54,6 +55,7 @@ mod tests {
         assert!(rendered.contains("comfy-table"));
     }
 
+    /// Runs succeeds.
     #[test]
     fn run_succeeds() {
         run();

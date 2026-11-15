@@ -67,6 +67,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Computes relative paths for upward and downward traversal.
     #[test]
     fn walks_up_and_down() {
         let root = PathBuf::from(if cfg!(windows) { r"C:\a" } else { "/a" });
@@ -83,6 +84,7 @@ mod tests {
         assert_eq!(relative_to(&path, &path), Some(PathBuf::new()));
     }
 
+    /// Runs succeeds.
     #[test]
     fn run_succeeds() {
         run();

@@ -89,8 +89,7 @@ mod tests {
 
     /// Runs the audio example through its entry point.
     // output-only: the example plays a tone on the default output device.
-    /// Verifies that the `audio` example runs.
-
+    /// Runs the audio example through its entry point without error.
     #[test]
     #[ignore = "requires audio device"]
     fn test_audio_example_entry_point() -> Result<(), Box<dyn Error>> {

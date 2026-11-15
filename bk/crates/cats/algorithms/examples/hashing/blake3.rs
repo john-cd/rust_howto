@@ -107,6 +107,7 @@ mod tests {
         main();
     }
 
+    /// Checks that the incremental hash matches one shot hash.
     #[test]
     fn incremental_hash_matches_one_shot_hash() {
         let mut hasher = Hasher::new();
@@ -119,6 +120,7 @@ mod tests {
         );
     }
 
+    /// Verifies that a keyed hash differs from an unkeyed hash.
     #[test]
     fn keyed_hash_differs_from_unkeyed_hash() {
         let key = [7u8; 32];
@@ -128,6 +130,7 @@ mod tests {
         assert_ne!(keyed, blake3::keyed_hash(&[8u8; 32], b"message"));
     }
 
+    /// Confirms that the hash of empty input is the known value.
     #[test]
     fn hash_of_empty_input_is_the_known_value() {
         assert_eq!(
@@ -136,6 +139,7 @@ mod tests {
         );
     }
 
+    /// Checks that the extendable output starts with the regular hash.
     #[test]
     fn extendable_output_starts_with_the_regular_hash() {
         let mut output = [0u8; 64];
@@ -143,6 +147,7 @@ mod tests {
         assert_eq!(&output[..32], blake3::hash(b"").as_bytes());
     }
 
+    /// Uses the context to derive the expected key.
     #[test]
     fn derived_key_depends_on_the_context() {
         let a = blake3::derive_key("context a", b"material");

@@ -95,6 +95,7 @@ mod tests {
         run().into_view().to_html()
     }
 
+    /// Routes render.
     #[tokio::test]
     async fn routes_render() {
         let local = tokio::task::LocalSet::new();

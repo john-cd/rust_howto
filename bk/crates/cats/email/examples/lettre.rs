@@ -124,8 +124,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Builds an email using reserved example addresses without contacting
-    /// SMTP.
+    /// Builds an email using reserved example addresses without contacting SMTP.
     #[test]
     fn builds_message_without_network_access() -> anyhow::Result<()> {
         build_message("sender@example.invalid", "recipient@example.invalid")?;

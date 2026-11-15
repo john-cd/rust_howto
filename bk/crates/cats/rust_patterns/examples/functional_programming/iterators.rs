@@ -36,6 +36,7 @@ mod tests {
     use super::main;
     use super::summarize_excess;
 
+    /// Verifies that the iterator adapters compose to summarize excess readings.
     #[test]
     fn iterator_adapters_compose_to_summarize_excess_readings() {
         assert_eq!(summarize_excess(&[8, 12, 16, 20], 12), (2, 12));

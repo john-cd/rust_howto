@@ -106,6 +106,7 @@ mod tests {
         assert!(tls_enabled(Some("TRUE")));
     }
 
+    /// Runs the integration against its required external service.
     #[test]
     #[ignore = "needs a reachable Redis server"]
     fn require_external_svc() -> Result<()> {
@@ -114,6 +115,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     #[ignore = "needs a running Redis server"]
     fn test_main_entry_point() {

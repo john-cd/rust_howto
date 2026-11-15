@@ -137,8 +137,7 @@ mod tests {
         full_and_empty();
     }
 
-    /// Drains available samples once and fills the rest of the block with
-    /// silence.
+    /// Drains available samples once and fills the rest of the block with silence.
     #[test]
     fn drains_one_block_and_silences_underruns() {
         let (mut producer, mut consumer) = RingBuffer::new(2);

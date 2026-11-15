@@ -34,8 +34,7 @@ mod tests {
         main();
     }
 
-    /// # Errors
-    /// An error is returned if new_current_thread fails.
+    /// Returns the block on value for the current thread runtime.
     #[test]
     fn current_thread_runtime_returns_the_block_on_value() -> Result<(), Box<dyn std::error::Error>>
     {

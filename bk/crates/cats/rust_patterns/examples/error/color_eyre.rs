@@ -49,7 +49,6 @@ mod tests {
     use super::*;
 
     /// Verifies that the color eyre example's main path succeeds.
-    /// Runs the color eyre example through its entry point.
     #[test]
     fn test_color_eyre_example_entry_point() {
         assert!(main().is_err());

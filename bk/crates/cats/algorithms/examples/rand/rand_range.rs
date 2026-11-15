@@ -40,6 +40,7 @@ mod tests {
         main();
     }
 
+    /// Keeps generated values within each requested range.
     #[test]
     fn samples_stay_within_the_requested_ranges() {
         let mut rng = rand::rng();

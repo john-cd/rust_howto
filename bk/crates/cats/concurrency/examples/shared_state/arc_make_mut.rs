@@ -89,6 +89,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Preserves existing reader snapshots when the shared value is mutated.
     #[test]
     fn clone_on_write_preserves_the_reader_snapshot() {
         let (reader_snapshot, current) = updated_views();
@@ -98,6 +99,7 @@ mod tests {
         assert_eq!(current.max_connections(), 200);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

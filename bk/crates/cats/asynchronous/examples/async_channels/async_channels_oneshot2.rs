@@ -74,6 +74,7 @@ mod tests {
         main();
     }
 
+    /// Returns the file name after two seconds for the download file.
     #[tokio::test(start_paused = true)]
     async fn download_file_returns_the_file_name_after_two_seconds() {
         let start = tokio::time::Instant::now();
@@ -82,9 +83,7 @@ mod tests {
         assert_eq!(start.elapsed(), Duration::from_secs(2));
     }
 
-    /// Processes the file takes one second input for the async channels oneshot2 workflow and
-    /// applies the resulting state changes. It calls `process_file_takes_one_second`, `now` to
-    /// apply the required changes.
+    /// Completes file processing after the expected delay.
     #[tokio::test(start_paused = true)]
     async fn process_file_takes_one_second() {
         let start = tokio::time::Instant::now();
@@ -92,6 +91,7 @@ mod tests {
         assert_eq!(start.elapsed(), Duration::from_secs(1));
     }
 
+    /// Runs the asynchronous entry point successfully.
     #[tokio::test(start_paused = true)]
     async fn async_main_succeeds() {
         async_main().await.expect("the pipeline should succeed");

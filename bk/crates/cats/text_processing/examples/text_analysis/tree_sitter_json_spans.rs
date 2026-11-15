@@ -98,8 +98,7 @@ mod tests {
         assert!(json_spans(r#"{"name": }"#).is_err());
     }
 
-    /// Checks that the complete highlighting example parses and classifies
-    /// JSON.
+    /// Checks that the complete highlighting example parses and classifies JSON.
     #[test]
     fn highlights_json_tokens() -> anyhow::Result<()> {
         main()

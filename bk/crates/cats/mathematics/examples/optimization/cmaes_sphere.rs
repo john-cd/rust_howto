@@ -68,6 +68,7 @@ fn test_cmaes_finds_shifted_sphere_minimum() {
 mod tests {
     use super::*;
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

@@ -26,7 +26,7 @@ impl System<f64, Vector1<f64>> for ExponentialDecay {
 /// Integrates from 0 to 1 and returns the final value.
 ///
 /// # Panics
-/// Panics if the exponential-decay system should integrate.
+/// Panics if the solver cannot integrate the exponential-decay system or returns no final state.
 fn solve_exponential_decay() -> f64 {
     let mut solver = Rk4::new(ExponentialDecay, 0.0, Vector1::new(1.0), 1.0, 0.1);
     solver
@@ -61,6 +61,7 @@ mod tests {
     use super::main;
     use super::solve_exponential_decay;
 
+    /// Checks that the rk4 matches analytic exponential decay.
     #[test]
     fn rk4_matches_analytic_exponential_decay() {
         let actual = solve_exponential_decay();
@@ -69,6 +70,7 @@ mod tests {
         assert!((actual - expected).abs() < 1.0e-5);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

@@ -46,6 +46,7 @@ mod tests {
 
     use super::*;
 
+    /// Checks that the fixed utc time converts to expected offsets.
     #[test]
     fn fixed_utc_time_converts_to_expected_offsets() {
         let utc_time = chrono::NaiveDate::from_ymd_opt(2025, 1, 15)

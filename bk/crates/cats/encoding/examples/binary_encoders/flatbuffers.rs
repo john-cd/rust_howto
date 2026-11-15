@@ -69,6 +69,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Preserves monster fields in the FlatBuffers round trip.
     #[test]
     fn flatbuffer_round_trip_preserves_the_monster() -> anyhow::Result<()> {
         main()
@@ -80,8 +81,7 @@ mod tests {
         assert!(result.is_err());
     }
 
-    /// Optional fields that were never written read back as `None` or as the
-    /// schema default.
+    /// Optional fields that were never written read back as `None` or as the schema default.
     #[test]
     fn unset_fields_read_back_as_defaults() -> anyhow::Result<()> {
         let mut builder = FlatBufferBuilder::new();

@@ -72,13 +72,12 @@ pub fn run() -> Result<()> {
     main()
 }
 
-/// Returns an error if reading C definitions fails.
+/// Tests generated C definitions and build-time configuration.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// Returns an error if reading C definitions fails.
+    /// Builds script defines are visible to c.
     #[test]
     fn build_script_defines_are_visible_to_c() -> Result<()> {
         assert_eq!(
@@ -88,8 +87,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an error if `main` returns an error.
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() -> Result<()> {
         main()

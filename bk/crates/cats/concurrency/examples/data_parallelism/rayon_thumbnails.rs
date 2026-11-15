@@ -115,6 +115,7 @@ mod tests {
         Ok(())
     }
 
+    /// Checks that the main fails cleanly without an images directory.
     #[test]
     fn main_fails_cleanly_without_an_images_directory() {
         if !Path::new("images").exists() {
@@ -123,8 +124,7 @@ mod tests {
         }
     }
 
-    /// # Errors
-    /// An error is returned if empty_input_directory_is_an_error fails.
+    /// Reports an error when empty input directory occurs.
     #[test]
     fn empty_input_directory_is_an_error() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
@@ -135,8 +135,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if corrupt_image_reports_its_path, write fails.
+    /// Reports its path for the corrupt image.
     #[test]
     fn corrupt_image_reports_its_path() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;

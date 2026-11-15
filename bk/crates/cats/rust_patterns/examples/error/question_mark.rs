@@ -56,7 +56,6 @@ mod tests {
     use super::*;
 
     /// Verifies that the question mark example's main path succeeds.
-    /// Runs the question mark example through its entry point.
     #[test]
     fn test_question_mark_example_entry_point() {
         // Make sure the `temp` folder exists.

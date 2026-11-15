@@ -71,6 +71,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Passes the Java caller’s name through the greeting response.
     #[test]
     fn hello_preserves_the_java_caller_name() {
         assert_eq!(hello("World"), "Hello, World!");

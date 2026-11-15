@@ -59,13 +59,13 @@ mod tests {
         Ok(())
     }
 
-    /// Turns the supplied item names rejects invalid source representation into the structured
-    /// value consumed by syn, rejecting malformed input.
+    /// Rejects invalid source when processing parse item names.
     #[test]
     fn parse_item_names_rejects_invalid_source() {
         assert!(parse_item_names("fn broken(").is_err());
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

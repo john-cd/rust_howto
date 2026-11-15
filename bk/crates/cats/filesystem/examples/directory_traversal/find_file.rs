@@ -67,7 +67,6 @@ mod tests {
     use super::*;
 
     /// Verifies the example can traverse the current directory.
-    /// Runs the find file example through its entry point.
     #[test]
     fn test_find_file_example_entry_point() -> anyhow::Result<()> {
         main()?;
@@ -93,6 +92,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports an error when missing root occurs.
     #[test]
     fn missing_root_is_an_error() {
         assert!(recently_modified(Path::new("/definitely/not/here")).is_err());

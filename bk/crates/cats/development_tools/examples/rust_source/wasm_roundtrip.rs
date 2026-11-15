@@ -83,8 +83,7 @@ mod tests {
         main()
     }
 
-    /// # Errors
-    /// An error is returned if invalid_module_fails_validation fails.
+    /// Rejects invalid module during validation.
     #[test]
     fn invalid_module_fails_validation() -> Result<()> {
         // A function that promises an `i32` but leaves the stack empty

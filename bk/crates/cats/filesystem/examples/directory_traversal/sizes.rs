@@ -59,7 +59,6 @@ mod tests {
     use super::*;
 
     /// Verifies the example can traverse the current directory.
-    /// Runs the sizes example through its entry point.
     #[test]
     fn test_sizes_example_entry_point() -> anyhow::Result<()> {
         main()?;

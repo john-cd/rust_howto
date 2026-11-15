@@ -55,10 +55,7 @@ pub fn run() -> LuaResult<()> {
 mod tests {
     use super::*;
 
-    /// Runs the Lua counter example and verifies the incremented value.
-    ///
-    /// # Errors
-    /// Returns an error if a fallible operation cannot complete.
+    /// Calls the registered counter method from Lua and checks the updated value.
     #[test]
     fn lua_calls_counter_method() -> LuaResult<()> {
         main()

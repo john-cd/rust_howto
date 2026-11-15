@@ -85,8 +85,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the `petgraph` BFS example by calling `main()`.
+/// Demonstrates level-order graph traversal with breadth-first search.
 pub fn run() {
     main();
 }

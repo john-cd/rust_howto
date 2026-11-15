@@ -55,12 +55,12 @@ mod tests {
     use super::*;
 
     /// Signs and verifies the original message while rejecting a changed one.
-    /// Runs the ed25519 example through its entry point.
     #[test]
     fn test_ed25519_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 
+    /// Verifies that the signature verifies only for the signed message.
     #[test]
     fn signature_verifies_only_for_the_signed_message() {
         let signing_key = SigningKey::from_bytes(&[7u8; 32]);
@@ -70,6 +70,7 @@ mod tests {
         assert!(verifying_key.verify(b"other", &signature).is_err());
     }
 
+    /// Confirms that the signing is deterministic and keys are distinct.
     #[test]
     fn signing_is_deterministic_and_keys_are_distinct() {
         let a = SigningKey::from_bytes(&[1u8; 32]);

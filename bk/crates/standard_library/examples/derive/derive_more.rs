@@ -145,7 +145,7 @@ pub fn run() {
 
 // Adapted from <https://docs.rs/derive_more/latest/derive_more/>
 
-/// An error is returned if transfer_amount fails.
+/// Tests arithmetic and validation behavior for transfer amounts.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -192,8 +192,7 @@ mod tests {
         assert!(!stack.is_empty());
     }
 
-    /// # Errors
-    /// An error is returned if transfer_amount fails.
+    /// Transfers an amount between balances while preserving their total.
     #[test]
     fn test_transfer_amount() -> Result<(), Box<dyn std::error::Error>> {
         let mut from = Amount(10.0);

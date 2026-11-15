@@ -109,23 +109,21 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Panics if an internal invariant is violated.
+/// Tests retry delays and behavior for HTTP responses.
 #[cfg(test)]
 mod tests {
     use std::time::Instant;
 
     use super::*;
 
+    /// Parses seconds only.
     #[test]
     fn parses_seconds_only() {
         assert_eq!(parse_retry_after(" 3 "), Some(Duration::from_secs(3)));
         assert_eq!(parse_retry_after("Wed, 21 Oct 2026 07:28:00 GMT"), None);
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
-    ///
-    /// # Panics
-    /// Panics if an internal invariant is violated.
+    /// Verifies that the waits for the requested delay.
     #[tokio::test]
     async fn waits_for_the_requested_delay() -> Result<()> {
         let mut server = mockito::Server::new_async().await;
@@ -154,8 +152,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Panics
-    /// Panics if an internal invariant is violated.
+    /// Verifies that the does not retry client errors.
     #[tokio::test]
     async fn does_not_retry_client_errors() -> Result<()> {
         let mut server = mockito::Server::new_async().await;

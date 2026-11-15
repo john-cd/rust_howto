@@ -31,6 +31,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Adds rational values exactly.
     #[test]
     fn adds_rational_values_exactly() {
         main();

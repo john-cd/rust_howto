@@ -21,6 +21,7 @@ use postgres_types::private::BytesMut;
 /// branch.
 fn is_string_sql<T: StringSql>(_: &T) {}
 
+/// Confirms that the string sql is implemented for common string types.
 #[test]
 fn string_sql_is_implemented_for_common_string_types() {
     is_string_sql(&String::new());
@@ -29,8 +30,7 @@ fn string_sql_is_implemented_for_common_string_types() {
     is_string_sql(&Box::<str>::from("boxed"));
 }
 
-/// # Errors
-/// An error is returned if escape_domain_to_sql, from_sql fails.
+/// Checks that the vec serializes as text array and iterator reads it back.
 #[test]
 fn vec_serializes_as_text_array_and_iterator_reads_it_back()
 -> Result<(), Box<dyn std::error::Error + Sync + Send>> {
@@ -44,8 +44,7 @@ fn vec_serializes_as_text_array_and_iterator_reads_it_back()
     Ok(())
 }
 
-/// # Errors
-/// An error is returned if to_sql, from_sql fails.
+/// Encodes and decodes SQL values through the PostgreSQL wire format.
 #[test]
 fn iter_sql_round_trips_through_postgres_wire_format()
 -> Result<(), Box<dyn std::error::Error + Sync + Send>> {
@@ -59,6 +58,7 @@ fn iter_sql_round_trips_through_postgres_wire_format()
     Ok(())
 }
 
+/// Checks that the array iterator accepts only matching array types.
 #[test]
 fn array_iterator_accepts_only_matching_array_types() {
     assert!(<ArrayIterator<'_, i32> as FromSql>::accepts(
@@ -70,8 +70,7 @@ fn array_iterator_accepts_only_matching_array_types() {
     assert!(!<ArrayIterator<'_, i32> as FromSql>::accepts(&Type::INT4));
 }
 
-/// # Errors
-/// An error is returned if Domain fails.
+/// Delegates domain value operations to the wrapped type.
 #[test]
 fn domain_wrapper_delegates_to_inner_type() -> Result<(), Box<dyn std::error::Error + Sync + Send>>
 {
@@ -85,6 +84,7 @@ fn domain_wrapper_delegates_to_inner_type() -> Result<(), Box<dyn std::error::Er
     Ok(())
 }
 
+/// Checks that greeting statements are constructible without a connection.
 #[test]
 fn greeting_statements_are_constructible_without_a_connection() {
     // Constructors only build the (unprepared) statement; nothing is sent.

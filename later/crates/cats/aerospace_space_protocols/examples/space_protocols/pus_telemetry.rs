@@ -38,6 +38,7 @@ pub fn pus_telemetry() {
 
 #[cfg(test)]
 mod tests {
+    /// Encodes and decodes telemetry packets without changing their contents.
     #[test]
     fn telemetry_round_trips() {
         super::pus_telemetry();

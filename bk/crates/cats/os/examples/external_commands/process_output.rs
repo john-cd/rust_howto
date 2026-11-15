@@ -67,15 +67,12 @@ pub fn run() -> Result<()> {
     main()
 }
 
-/// An error is returned if ignore_in_ci fails.
+/// Tests process output handling and the CI-specific ignored case.
 #[cfg(test)]
 mod tests {
     use super::*;
 
     /// Runs the example against the current repository history.
-    ///
-    /// # Errors
-    /// Returns an error if Git cannot be started or the command fails.
     #[test]
     fn ignore_in_ci() -> anyhow::Result<()> {
         main()?;

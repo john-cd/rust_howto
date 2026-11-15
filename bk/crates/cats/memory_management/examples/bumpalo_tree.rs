@@ -123,8 +123,7 @@ mod tests {
         main();
     }
 
-    /// Inserting keeps the keys ordered, ignores duplicates, and shares old
-    /// nodes so the original tree is unchanged.
+    /// Confirms that the insert is persistent and ordered.
     #[test]
     fn insert_is_persistent_and_ordered() {
         let bump = Bump::new();

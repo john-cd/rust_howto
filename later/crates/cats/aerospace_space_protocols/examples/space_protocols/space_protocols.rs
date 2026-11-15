@@ -82,6 +82,7 @@ mod tests {
         assert_eq!(&packet[6..], &[0xCA, 0xFE]);
     }
 
+    /// Preserves service and payload fields through PUS telecommand encoding.
     #[test]
     fn pus_telecommand_round_trips_service_and_payload() {
         crate::pus_telecommand::pus_telecommand();

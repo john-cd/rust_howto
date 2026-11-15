@@ -77,8 +77,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if put_get_and_delete_round_trip, open_default fails.
+    /// Writes, reads, and deletes a database value in one round trip.
     #[test]
     fn put_get_and_delete_round_trip() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
@@ -95,8 +94,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if data_survives_reopening_the_database, open_default fails.
+    /// Verifies that the data survives reopening the database.
     #[test]
     fn data_survives_reopening_the_database() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
@@ -109,12 +107,7 @@ mod tests {
         Ok(())
     }
 
-    /// Loads the only open of a missing database fails required by the rocksdb workflow and reports
-    /// failures from the underlying source.
-    ///
-    /// # Errors
-    /// An error is returned if read_only_open_of_a_missing_database_fails fails.
-    /// Returns an error if the requested data cannot be retrieved.
+    /// Reports an error for read only open of a missing database.
     #[test]
     fn read_only_open_of_a_missing_database_fails() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;

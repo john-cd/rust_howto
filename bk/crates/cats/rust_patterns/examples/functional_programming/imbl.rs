@@ -92,7 +92,6 @@ mod tests {
     use super::*;
 
     /// Runs the collection examples without panicking.
-    /// Runs the imbl example through its entry point.
     #[test]
     fn test_imbl_example_entry_point() {
         main();

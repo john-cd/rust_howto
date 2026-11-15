@@ -25,9 +25,10 @@ impl CostFunction for Quadratic {
         Ok((x - 2.5).powi(2) + 4.0)
     }
 }
-/// # Panics
-/// Panics if Brent's method should minimize the bounded function.
 /// Finds the minimum of the quadratic function within `[-5, 8]`.
+///
+/// # Panics
+/// Panics if Brent's method fails to find a minimum in the interval.
 fn minimize() -> f64 {
     let solver = BrentOpt::new(-5.0, 8.0).set_tolerance(f64::EPSILON.sqrt(), 1e-10);
     let result = Executor::new(Quadratic, solver)
@@ -68,6 +69,7 @@ fn test_brent_method_finds_quadratic_minimum() {
 mod tests {
     use super::*;
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

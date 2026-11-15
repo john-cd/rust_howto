@@ -55,6 +55,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Verifies that the zeroize clears bytes.
     #[test]
     fn zeroize_clears_bytes() {
         let mut key = ApiKey {

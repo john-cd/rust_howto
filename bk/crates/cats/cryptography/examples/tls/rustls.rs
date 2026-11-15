@@ -93,8 +93,7 @@ mod tests {
 
     use super::*;
 
-    /// Verifies that the client validates a local certificate and exchanges
-    /// data.
+    /// Verifies that the client validates a local certificate and exchanges data.
     #[tokio::test]
     async fn client_verifies_certificate_and_round_trips_over_loopback() -> anyhow::Result<()> {
         let rcgen::CertifiedKey { cert, signing_key } =
@@ -131,6 +130,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

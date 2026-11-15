@@ -93,9 +93,6 @@ mod tests {
     }
 
     /// Parses the embedded argument list and returns its name and age values.
-    ///
-    /// # Errors
-    /// Returns an error if the example arguments are invalid.
     #[test]
     fn get_args_parses_the_embedded_argument_list() -> Result<(), Box<dyn std::error::Error>> {
         let args = get_args()?;
@@ -104,8 +101,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an error if the option parser cannot read the next argument or its value.
+    /// Rejects an age argument that cannot be parsed as a number.
     #[test]
     fn lexopt_rejects_a_non_numeric_age_value() -> Result<(), Box<dyn std::error::Error>> {
         use lexopt::ValueExt as _;

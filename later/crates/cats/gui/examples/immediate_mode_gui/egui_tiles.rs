@@ -114,6 +114,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that empty tree has no root.
     #[test]
     fn empty_tree_has_no_root() {
         let mut tree: Tree<Pane> = Tree::empty(egui::Id::unique("empty"));
@@ -121,6 +122,7 @@ mod tests {
         assert_eq!(add_pane(&mut tree, "x"), None);
     }
 
+    /// Verifies that the tab titles come from the behavior.
     #[test]
     fn tab_titles_come_from_the_behavior() {
         let mut behavior = TreeBehavior;

@@ -62,16 +62,11 @@ mod tests {
     use super::*;
 
     /// The example runs end to end.
-    /// # Errors
-    /// Returns an error if key generation, signature parsing, or verification
-    /// fails.
     #[test]
     fn test_ecdsa_example_entry_point() -> anyhow::Result<()> {
         main()
     }
     /// A signature made with one key does not verify under another key.
-    /// # Errors
-    /// Returns an error if secure randomness is unavailable.
     #[test]
     fn wrong_key_is_rejected() -> anyhow::Result<()> {
         let mut rng = SysRng;
@@ -82,10 +77,7 @@ mod tests {
         Ok(())
     }
 
-    /// RFC 6979 makes signing deterministic: same key and message, same
-    /// signature.
-    /// # Errors
-    /// Returns an error if secure randomness is unavailable.
+    /// RFC 6979 makes signing deterministic: same key and message, same signature.
     #[test]
     fn signing_is_deterministic() -> anyhow::Result<()> {
         let key = SigningKey::try_generate_from_rng(&mut SysRng)?;
@@ -96,9 +88,6 @@ mod tests {
     }
 
     /// The compressed SEC1 public key is 33 bytes and parses back.
-    /// # Errors
-    /// Returns an error if secure randomness is unavailable or the encoded key
-    /// cannot be parsed.
     #[test]
     fn public_key_round_trips_through_sec1_bytes() -> anyhow::Result<()> {
         let key = SigningKey::try_generate_from_rng(&mut SysRng)?;

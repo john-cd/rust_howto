@@ -42,6 +42,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that message box strings are nul terminated.
     #[test]
     fn message_box_strings_are_nul_terminated() {
         let message = nul_terminated_wide("Hello");
@@ -59,6 +60,7 @@ mod tests {
         );
     }
 
+    /// Verifies that the displays message box.
     #[test]
     #[ignore = "displays a Windows message box"]
     fn displays_message_box() {

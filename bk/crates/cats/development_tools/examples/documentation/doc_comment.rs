@@ -45,6 +45,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that the documented function is callable.
     #[test]
     fn documented_function_is_callable() {
         // The macro only attaches documentation; the body is left unchanged.

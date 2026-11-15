@@ -36,7 +36,6 @@ mod tests {
     use super::*;
 
     /// Verifies that the example can encode and decode its input.
-    /// Runs the base64 example example through its entry point.
     #[test]
     fn test_base64_example_example_entry_point() -> anyhow::Result<()> {
         main()

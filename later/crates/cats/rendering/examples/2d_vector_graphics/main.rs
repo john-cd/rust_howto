@@ -40,9 +40,7 @@ fn main() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    /// Verifies Lyon emits vertices and indices for a closed fill path.
-
+    /// Produces drawable vertices and indices for a closed triangle fill.
     #[test]
     fn tessellates_a_closed_triangle() -> anyhow::Result<()> {
         let (vertices, indices) = tessellate_triangle()?;

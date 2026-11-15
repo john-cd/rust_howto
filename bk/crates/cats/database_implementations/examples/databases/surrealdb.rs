@@ -95,11 +95,7 @@ mod tests {
         Ok(())
     }
 
-    /// Assembles the select update and delete in memory from its component values so callers
-    /// receive a ready-to-use result.
-    ///
-    /// # Errors
-    /// An error is returned if take fails.
+    /// Creates select update and delete in memory.
     #[tokio::test]
     async fn create_select_update_and_delete_in_memory() -> Result<()> {
         let db = Surreal::new::<Mem>(()).await?;

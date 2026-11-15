@@ -52,8 +52,6 @@ mod tests {
         main();
     }
     /// Verifies apply calls closure.
-    ///
-    /// `apply` calls a `FnOnce` closure exactly once.
     #[test]
     fn test_apply_calls_closure() {
         let mut called = 0;
@@ -61,8 +59,6 @@ mod tests {
         assert_eq!(called, 1);
     }
     /// Verifies apply to 3.
-    ///
-    /// `apply_to_3` passes 3 to the closure and returns its result.
     #[test]
     fn test_apply_to_3() {
         let var = 39;

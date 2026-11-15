@@ -89,8 +89,7 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    /// Verifies mp4 metadata entry point.
-
+    /// Runs the MP4 metadata example through its entry point without error.
     #[test]
     fn test_mp4_metadata_entry_point() {
         main().expect("MP4 metadata entry point should succeed");

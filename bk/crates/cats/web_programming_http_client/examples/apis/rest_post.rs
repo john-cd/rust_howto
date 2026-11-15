@@ -297,8 +297,7 @@ mod tests {
             .join()
             .map_err(|_| anyhow!("local HTTP fixture thread panicked"))?
     }
-    /// Verifies authorization, the gist payload, and the create/delete
-    /// sequence.
+    /// Verifies authorization, the gist payload, and the create/delete sequence.
     #[tokio::test]
     async fn creates_and_deletes_gist_with_authorization_and_json() -> Result<()> {
         let (endpoint, server) = start_server(vec![
@@ -364,8 +363,7 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that a failed create response is returned without a delete
-    /// request.
+    /// Verifies that a failed create response is returned without a delete request.
     #[tokio::test]
     async fn returns_create_status_failure_without_deleting() -> Result<()> {
         let (endpoint, server) = start_server(vec![(500, "{}")])?;

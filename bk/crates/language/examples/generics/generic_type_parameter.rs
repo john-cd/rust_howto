@@ -202,8 +202,6 @@ mod tests {
         main();
     }
     /// Verifies func2.
-    ///
-    /// `func2` unwraps the generic payload, whatever its type.
     #[test]
     fn test_func2() {
         assert_eq!(func2(MyStruct { data: 42 }), 42);

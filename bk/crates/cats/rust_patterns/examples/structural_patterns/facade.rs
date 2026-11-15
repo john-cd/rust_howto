@@ -53,6 +53,7 @@ mod tests {
     use super::UserDirectory;
     use super::main;
 
+    /// Confirms that the registration is visible through lookup.
     #[test]
     fn registration_is_visible_through_lookup() {
         let mut directory = UserDirectory::default();
@@ -61,6 +62,7 @@ mod tests {
         assert_eq!(directory.email_for("ada"), Some("ada@example.test"));
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

@@ -52,6 +52,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Checks that all results are collected.
     #[test]
     fn all_results_are_collected() {
         let mut results = futures_executor::block_on(collect_results());
@@ -60,6 +61,7 @@ mod tests {
         assert_eq!(results, ["cache", "configuration", "database"]);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

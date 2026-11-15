@@ -128,6 +128,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that the icon font is registered.
     #[test]
     fn icon_font_is_registered() {
         let mut fonts = egui::FontDefinitions::default();

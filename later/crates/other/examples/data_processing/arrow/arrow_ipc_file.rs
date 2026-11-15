@@ -117,6 +117,7 @@ mod tests {
         run(&batch)
     }
 
+    /// Checks that invalid bytes are an error.
     #[test]
     fn invalid_bytes_are_an_error() {
         assert!(read_file(b"not arrow".to_vec()).is_err());

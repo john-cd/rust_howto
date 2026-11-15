@@ -138,6 +138,7 @@ mod tests {
 
     use super::main;
 
+    /// Verifies that the generated dag edges follow topological order.
     #[test]
     fn generated_dag_edges_follow_topological_order() {
         let mut runner = TestRunner::default();
@@ -170,6 +171,7 @@ mod tests {
             .expect("generated DAGs must respect topological ordering");
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

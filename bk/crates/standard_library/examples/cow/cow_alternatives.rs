@@ -84,8 +84,7 @@ mod tests {
         assert!(std::ptr::eq(&*s, &*clone));
     }
 
-    /// # Errors
-    /// Returns an error if a worker thread panics or a lock is poisoned.
+    /// Confirms that the rwlock string is mutated by all threads.
     #[test]
     fn test_rwlock_string_is_mutated_by_all_threads() -> Result<(), Box<dyn std::error::Error>> {
         let shared = Arc::new(RwLock::new("String".to_owned()));

@@ -108,9 +108,8 @@ mod tests {
 
     use super::*;
 
+    /// Runs the integration against its required external service.
     #[test]
-    /// # Errors
-    /// An error is returned if var, establish_connection fails.
     #[ignore = "requires external oracle db and oracle client library"]
     fn require_external_svc() -> anyhow::Result<()> {
         dotenv().ok();

@@ -60,7 +60,7 @@ pub fn run() {
     main();
 }
 
-/// An error is returned if ok_or fails.
+/// Tests downcasting values stored in `Any`.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -78,8 +78,7 @@ mod tests {
         assert!(!is_string(&"text"));
     }
 
-    /// # Errors
-    /// An error is returned if ok_or fails.
+    /// Downcasts values through shared and mutable references.
     #[test]
     fn test_downcast_ref_and_mut() -> Result<(), Box<dyn std::error::Error>> {
         let mut value: Box<dyn Any> = Box::new(5_i32);
@@ -90,9 +89,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an error if the boxed value unexpectedly downcasts to `i32` or cannot be downcast to
-    /// `String`.
+    /// Returns the box on failure for the downcast.
     #[test]
     fn test_downcast_returns_the_box_on_failure() -> Result<(), Box<dyn std::error::Error>> {
         let boxed: Box<dyn Any> = Box::new("text".to_owned());

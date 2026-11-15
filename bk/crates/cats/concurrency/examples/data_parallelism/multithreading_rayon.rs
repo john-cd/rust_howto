@@ -51,6 +51,7 @@ mod tests {
         main();
     }
 
+    /// Verifies that the increment then sum of squares.
     #[test]
     fn increment_then_sum_of_squares() {
         let mut v = [1, 2, 3];
@@ -59,12 +60,14 @@ mod tests {
         assert_eq!(sum_of_squares(&v), 4 + 9 + 16);
     }
 
+    /// Handles empty input gives zero input.
     #[test]
     fn empty_input_gives_zero() {
         assert_eq!(sum_of_squares(&[]), 0);
         increment_all(&mut []);
     }
 
+    /// Verifies that the large inputs match the sequential result.
     #[test]
     fn large_inputs_match_the_sequential_result() {
         let v: Vec<i32> = (0..10_000).map(|i| i % 100).collect();

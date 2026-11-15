@@ -109,8 +109,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the `petgraph` A* example by calling `main()`.
+/// Demonstrates A* shortest-path search on a weighted graph with Manhattan distance.
 pub fn run() {
     main();
 }

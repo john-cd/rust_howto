@@ -117,8 +117,7 @@ mod tests {
     async fn main_runs() -> anyhow::Result<()> {
         main().await
     }
-    /// The balance is read from the mocked response and formatted in ether.
-
+    /// Formats a mocked account balance in ether.
     #[tokio::test]
     async fn balance_is_formatted_in_ether() -> anyhow::Result<()> {
         let asserter = Asserter::new();
@@ -129,8 +128,7 @@ mod tests {
         Ok(())
     }
 
-    /// The ERC-20 `balanceOf` call is ABI-encoded by `sol!` and its
-    /// `eth_call` result is decoded from the mocked response.
+    /// ABI-encodes an ERC-20 `balanceOf` call and decodes the mocked `eth_call` response.
     #[tokio::test]
     async fn erc20_balance_is_decoded() -> anyhow::Result<()> {
         let asserter = Asserter::new();

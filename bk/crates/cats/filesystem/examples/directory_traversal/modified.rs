@@ -77,8 +77,7 @@ mod tests {
         Ok(())
     }
 
-    /// A fresh file is described with its size and name; subdirectories are
-    /// skipped.
+    /// A fresh file is described with its size and name; subdirectories are skipped.
     #[test]
     fn describes_fresh_files() -> Result<()> {
         let dir = tempfile::tempdir()?;

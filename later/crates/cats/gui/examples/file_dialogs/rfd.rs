@@ -65,8 +65,7 @@ mod tests {
     fn test_rfd_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-    /// Reads file contents selected in the dialog without opening a dialog.
-
+    /// Returns the selected file's contents without displaying a dialog.
     #[test]
     fn reads_selected_file_contents() -> anyhow::Result<()> {
         let timestamp = SystemTime::now()

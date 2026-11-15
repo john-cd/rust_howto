@@ -116,11 +116,13 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Checks that the client credentials flow uses local servers.
     #[test]
     fn client_credentials_flow_uses_local_servers() -> anyhow::Result<()> {
         main()
     }
 
+    /// Confirms that the token endpoint error is reported.
     #[test]
     fn token_endpoint_error_is_reported() {
         let auth_server = MockServer::start();
@@ -142,6 +144,7 @@ mod tests {
         );
     }
 
+    /// Reports an error when unauthorized resource response occurs.
     #[test]
     fn unauthorized_resource_response_is_an_error() {
         let auth_server = MockServer::start();
@@ -170,8 +173,7 @@ mod tests {
         );
     }
 
-    /// # Errors
-    /// Returns an error if the mocked token or protected-resource request fails.
+    /// Confirms that missing expiry is reported as none.
     #[test]
     fn missing_expiry_is_reported_as_none() -> anyhow::Result<()> {
         let auth_server = MockServer::start();

@@ -141,7 +141,7 @@ pub fn run() -> PyResult<()> {
     main()
 }
 
-/// An error is returned if increment fails.
+/// Tests calls from Python and conversion errors at integer boundaries.
 #[cfg(test)]
 mod tests {
     use std::error::Error;
@@ -160,15 +160,13 @@ mod tests {
     fn test_use_rust_from_python_example_entry_point() -> PyResult<()> {
         main()
     }
-    /// Addition overflow produces a Python error.
-    /// Counter overflow preserves the existing value.
+    /// Reports addition overflow as a Python error.
     #[test]
     fn test_addition_overflow_returns_error() {
         assert!(my_function(i64::MAX, 1).is_err());
     }
 
-    /// # Errors
-    /// An error is returned if increment fails.
+    /// Updates the counter and returns its new value.
     #[test]
     fn counter_increment_updates_value() -> PyResult<()> {
         let mut counter = Counter::new(5);

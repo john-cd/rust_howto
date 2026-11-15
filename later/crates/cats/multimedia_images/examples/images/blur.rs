@@ -31,6 +31,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Spreads a bright pixel across neighboring pixels.
     #[test]
     fn blur_spreads_a_bright_pixel() {
         let mut image = RgbImage::new(9, 9);
@@ -40,6 +41,7 @@ mod tests {
         assert!(blurred.get_pixel(4, 3)[0] > 0);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

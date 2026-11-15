@@ -90,6 +90,7 @@ mod tests {
         main().expect("papaya recipe should pass its assertions");
     }
 
+    /// Checks that the atomic update or insert sets default for new key.
     #[test]
     fn atomic_update_or_insert_sets_default_for_new_key() {
         let map = HashMap::new();
@@ -99,6 +100,7 @@ mod tests {
         assert_eq!(map.pin().get(&'@'), Some(&2));
     }
 
+    /// Verifies that the atomic update increments existing entry.
     #[test]
     fn atomic_update_increments_existing_entry() {
         let map = HashMap::new();
@@ -108,6 +110,7 @@ mod tests {
         assert_eq!(m.get(&'!'), Some(&15));
     }
 
+    /// Verifies that the populate concurrent ranges inserts all expected keys.
     #[test]
     fn populate_concurrent_ranges_inserts_all_expected_keys() {
         let map = HashMap::new();
@@ -122,6 +125,7 @@ mod tests {
         }
     }
 
+    /// Confirms that empty map has zero entries.
     #[test]
     fn empty_map_has_zero_entries() {
         let map = HashMap::<char, i32>::new();

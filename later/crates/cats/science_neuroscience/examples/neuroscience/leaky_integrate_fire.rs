@@ -74,6 +74,7 @@ mod tests {
         assert!(simulate_spike_times(0.5, 100).is_empty());
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

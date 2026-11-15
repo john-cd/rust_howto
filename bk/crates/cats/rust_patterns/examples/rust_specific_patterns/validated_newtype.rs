@@ -145,7 +145,6 @@ mod tests {
     use super::*;
 
     /// Checks validation, parsing, conversion, and JSON round trips.
-    /// Runs the validated newtype example through its entry point.
     #[test]
     fn test_validated_newtype_example_entry_point() -> Result<(), Box<dyn std::error::Error>> {
         main()

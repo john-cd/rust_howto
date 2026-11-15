@@ -48,6 +48,7 @@ pub fn run() -> Result<(), Error> {
 mod tests {
     use super::*;
 
+    /// Verifies that the rust greeting formats the name.
     #[test]
     fn rust_greeting_formats_the_name() {
         assert_eq!(hello_rust("Ada".to_owned()), "Hello, Ada!");
@@ -64,6 +65,7 @@ mod tests {
 
     // output-only: prints the greeting that embedded Ruby returns, which needs
     // Ruby headers and libruby.
+    /// Runs the example through its entry point without error.
     #[test]
     #[ignore = "needs Ruby headers and libruby"]
     fn test_main_entry_point() {

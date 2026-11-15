@@ -81,8 +81,7 @@ mod tests {
     fn test_iced_example_entry_point() -> iced::Result {
         main()
     }
-    /// Applies the changes the counter value change to counter and keeps dependent state consistent
-    /// for later operations.
+    /// Applies counter changes while keeping the dependent application state consistent.
     #[test]
     fn update_changes_the_counter_value() {
         let mut counter = Counter::default();

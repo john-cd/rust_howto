@@ -44,6 +44,7 @@ mod tests {
         main();
     }
 
+    /// Produces fixed-length alphanumeric strings through the iterator API.
     #[test]
     fn sample_iter_yields_alphanumeric_strings_of_the_requested_length() {
         let s: String = rand::rng()
@@ -55,6 +56,7 @@ mod tests {
         assert!(s.chars().all(|c| c.is_ascii_alphanumeric()));
     }
 
+    /// Produces fixed-length alphanumeric strings through the string API.
     #[test]
     fn sample_string_yields_alphanumeric_strings_of_the_requested_length() {
         let s = Alphanumeric.sample_string(&mut rand::rng(), 20);

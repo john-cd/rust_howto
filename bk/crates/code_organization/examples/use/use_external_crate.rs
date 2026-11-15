@@ -53,6 +53,7 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the example's main function.
     #[test]
     fn test_main() -> Result<()> {
         main()

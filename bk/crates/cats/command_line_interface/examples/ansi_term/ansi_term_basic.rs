@@ -37,6 +37,7 @@ mod tests {
         main();
     }
 
+    /// Confirms that the painted text is wrapped in ansi color codes.
     #[test]
     fn painted_text_is_wrapped_in_ansi_color_codes() {
         assert_eq!(

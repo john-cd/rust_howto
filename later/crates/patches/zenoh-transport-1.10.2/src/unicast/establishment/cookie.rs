@@ -211,6 +211,7 @@ impl Cookie {
 }
 
 mod tests {
+    /// Round-trips transport cookies through the binary codec.
     #[test]
     fn codec_cookie() {
         use rand::Rng;

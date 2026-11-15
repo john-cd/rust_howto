@@ -65,7 +65,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies meilisearch subcommand parses.
+    /// Parses the Meilisearch subcommand when its feature is enabled.
     #[cfg(feature = "meilisearch")]
     #[test]
     fn test_meilisearch_subcommand_parses() {

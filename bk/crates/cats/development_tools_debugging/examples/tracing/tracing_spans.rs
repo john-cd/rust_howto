@@ -36,8 +36,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Checks that the span example runs.
-    /// Runs the tracing spans example through its entry point.
+    /// Checks that the span example runs. Runs the tracing spans example through its entry point.
     #[test]
     fn test_tracing_spans_example_entry_point() {
         let _ = tracing_subscriber::fmt()
@@ -100,6 +99,7 @@ mod tests {
         String::from_utf8(output).expect("tracing output should be valid UTF-8")
     }
 
+    /// Checks that events are inside the span only while the guard lives.
     #[test]
     fn events_are_inside_the_span_only_while_the_guard_lives() {
         let out = capture(main);

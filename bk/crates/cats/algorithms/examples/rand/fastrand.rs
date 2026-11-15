@@ -66,6 +66,7 @@ mod tests {
         main();
     }
 
+    /// Produces the same sequence when the seed is reused.
     #[test]
     fn same_seed_gives_the_same_sequence() {
         let mut a = Rng::with_seed(42);
@@ -75,6 +76,7 @@ mod tests {
         assert_eq!(xs, ys);
     }
 
+    /// Keeps generated values within the requested range.
     #[test]
     fn values_stay_in_the_requested_range() {
         let mut rng = Rng::with_seed(42);
@@ -83,6 +85,7 @@ mod tests {
         }
     }
 
+    /// Generates only ASCII letters and digits.
     #[test]
     fn alphanumeric_yields_only_ascii_alphanumerics() {
         let mut rng = Rng::with_seed(1);
@@ -91,6 +94,7 @@ mod tests {
         assert!(s.chars().all(|c| c.is_ascii_alphanumeric()));
     }
 
+    /// Confirms that the shuffle is a permutation and choose multiple is distinct.
     #[test]
     fn shuffle_is_a_permutation_and_choose_multiple_is_distinct() {
         let mut rng = Rng::with_seed(7);

@@ -51,7 +51,6 @@ mod tests {
     use super::*;
 
     /// Checks that rendered Markdown is sanitized before it is returned.
-    /// Runs the markdown to safe html example through its entry point.
     #[test]
     fn test_markdown_to_safe_html_example_entry_point() -> anyhow::Result<()> {
         main()

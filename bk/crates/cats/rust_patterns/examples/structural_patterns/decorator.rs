@@ -68,6 +68,7 @@ mod tests {
     use super::CountingReader;
     use super::main;
 
+    /// Counts bytes read.
     #[test]
     fn counts_bytes_read() {
         let mut reader = CountingReader::new(Cursor::new(b"Rust"));
@@ -80,6 +81,7 @@ mod tests {
         assert_eq!(reader.bytes_read(), 4);
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

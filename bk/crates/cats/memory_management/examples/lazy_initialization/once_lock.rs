@@ -30,6 +30,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Initializes shared value.
     #[test]
     fn initializes_shared_value() {
         main();

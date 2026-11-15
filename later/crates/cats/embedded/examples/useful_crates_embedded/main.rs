@@ -64,9 +64,7 @@ fn main() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    /// Verifies that a full queue rejects new messages and keeps the old ones.
-
+    /// Rejects new messages when the queue is full and preserves queued readings.
     #[test]
     fn a_full_queue_rejects_new_messages() -> anyhow::Result<()> {
         let mut queue = Queue::new();

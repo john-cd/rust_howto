@@ -50,8 +50,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if tempdir fails.
+    /// Returns an error when no env file is found for the dotenv.
     #[test]
     fn dotenv_returns_an_error_when_no_env_file_is_found() -> Result<(), Box<dyn std::error::Error>>
     {
@@ -61,8 +60,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an error if creating the temporary directory or writing the environment file fails.
+    /// Checks that the variables from an env file are parsed.
     #[test]
     fn variables_from_an_env_file_are_parsed() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;

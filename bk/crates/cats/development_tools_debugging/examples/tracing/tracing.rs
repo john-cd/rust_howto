@@ -77,7 +77,6 @@ mod tests {
     use super::*;
 
     /// Verifies that the tracing example's main path succeeds.
-    /// Runs the tracing example through its entry point.
     #[test]
     fn test_tracing_example_entry_point() {
         let _ = tracing_subscriber::fmt()
@@ -140,6 +139,7 @@ mod tests {
         String::from_utf8(output).expect("tracing output should be valid UTF-8")
     }
 
+    /// Preserves event messages, fields, and levels in captured output.
     #[test]
     fn events_carry_their_messages_fields_and_levels() {
         let out = capture(main);

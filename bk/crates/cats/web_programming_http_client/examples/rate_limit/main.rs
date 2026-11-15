@@ -61,11 +61,13 @@ fn check_with_fake_clock() -> (bool, bool, bool, bool) {
 mod tests {
     use super::*;
 
+    /// Verifies that the burst then replenish.
     #[test]
     fn burst_then_replenish() {
         assert_eq!(check_with_fake_clock(), (true, true, false, true));
     }
 
+    /// Verifies that the until ready paces calls.
     #[tokio::test(start_paused = true)]
     async fn until_ready_paces_calls() {
         let start = tokio::time::Instant::now();

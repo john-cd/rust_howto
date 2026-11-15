@@ -42,6 +42,7 @@ mod tests {
         main();
     }
 
+    /// Verifies that a fixed instant formats in every documented style.
     #[test]
     fn a_fixed_instant_formats_in_every_documented_style() {
         use chrono::TimeZone as _;
@@ -59,6 +60,7 @@ mod tests {
         );
     }
 
+    /// Checks that the rfc3339 output parses back to the same instant.
     #[test]
     fn rfc3339_output_parses_back_to_the_same_instant() {
         let now = Utc::now();

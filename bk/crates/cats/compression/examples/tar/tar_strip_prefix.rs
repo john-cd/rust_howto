@@ -182,8 +182,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an error if creating the sample archive fails.
+    /// Checks that the main extracts the sample archive.
     #[test]
     fn main_extracts_the_sample_archive() -> anyhow::Result<()> {
         fs::create_dir_all("temp")?;
@@ -195,6 +194,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports an error when missing archive occurs.
     #[test]
     fn missing_archive_is_an_error() {
         let result = extract_archive("temp/does_not_exist.tar.gz", "temp/does_not_exist_out");

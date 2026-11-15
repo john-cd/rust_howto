@@ -73,6 +73,7 @@ mod tests {
 
     use super::*;
 
+    /// Confirms that the command and its arguments are valid.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

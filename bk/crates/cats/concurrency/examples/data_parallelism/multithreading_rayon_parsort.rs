@@ -33,6 +33,7 @@ mod tests {
         main();
     }
 
+    /// Sorts the values in parallel into ascending order.
     #[test]
     fn par_sort_orders_the_values() {
         let mut v = [-5, 4, 1, -3, 2];
@@ -40,6 +41,7 @@ mod tests {
         assert_eq!(v, [-5, -3, 1, 2, 4]);
     }
 
+    /// Checks that the par sort handles empty and large inputs.
     #[test]
     fn par_sort_handles_empty_and_large_inputs() {
         let mut empty: [i32; 0] = [];

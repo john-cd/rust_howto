@@ -30,6 +30,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::main;
 
+    /// Returns the expression value for the dbg.
     #[test]
     fn dbg_returns_the_expression_value() {
         let value = 2 + 2;

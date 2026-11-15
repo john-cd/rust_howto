@@ -35,6 +35,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Runs succeeds.
     #[test]
     fn run_succeeds() {
         run();

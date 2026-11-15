@@ -112,10 +112,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Activates the application on a display and clicks both buttons.
-    /// Run with a display, for example `xvfb-run -a cargo test --features gtk
-    /// --example gtk -- --ignored --test-threads=1`: GTK must be used from the
-    /// main thread.
+    /// Activates the GTK application and verifies that each button updates the label.
     #[test]
     #[ignore = "requires a GTK display, e.g. xvfb-run"]
     fn buttons_update_the_label() {

@@ -876,7 +876,8 @@ impl TransportManager {
     /// **********************************
 
     /// # Errors
-    /// Returns an error if the add listener operation cannot satisfy its required invariants.
+    /// Returns an error if endpoint inspection or starting the corresponding unicast or multicast
+    /// listener fails.
     pub async fn add_listener(&self, endpoint: EndPoint) -> ZResult<Locator> {
         if self
             .locator_inspector

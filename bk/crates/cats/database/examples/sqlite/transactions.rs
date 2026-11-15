@@ -178,6 +178,7 @@ mod tests {
         Ok(())
     }
 
+    /// Checks that the example handles expected duplicate error.
     #[test]
     fn example_handles_expected_duplicate_error() -> Result<()> {
         main()

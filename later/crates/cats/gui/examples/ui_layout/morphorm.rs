@@ -298,6 +298,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Computes each node's position and size from the layout tree.
     #[test]
     fn computes_positions_and_sizes_for_each_node() {
         let [root, fixed_child, stretch_child] = compute_layout();

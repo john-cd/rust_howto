@@ -103,6 +103,7 @@ mod tests {
       }
     }"#;
 
+    /// Parses a saved response.
     #[test]
     fn parses_a_saved_response() {
         let json: serde_json::Value = serde_json::from_str(SAVED).expect("valid JSON");
@@ -111,6 +112,7 @@ mod tests {
         assert!(bars[0].high >= bars[0].low);
     }
 
+    /// Fetches historical price data for the requested period.
     #[test]
     #[ignore = "needs network access"]
     fn fetches_history() {

@@ -74,8 +74,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the `petgraph` topological sort example by calling `main()`.
+/// Demonstrates topological sorting for task dependency resolution.
 pub fn run() {
     main();
 }

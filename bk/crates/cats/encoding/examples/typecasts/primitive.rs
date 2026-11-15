@@ -17,7 +17,7 @@ use anyhow::Result;
 /// * `value` - Value the primitive operation validates, transforms, or stores.
 ///
 /// # Errors
-/// Returns an error if the narrow to i32 operation cannot satisfy its required invariants.
+/// Returns an error if `value` is outside the range of `i32`.
 fn narrow_to_i32(value: i64) -> Result<i32, std::num::TryFromIntError> {
     i32::try_from(value)
 }
@@ -49,12 +49,14 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Rejects out of range values when processing the narrowing.
     #[test]
     fn narrowing_rejects_out_of_range_values() {
         let too_large = i64::from(i32::MAX) + 1;
         assert!(narrow_to_i32(too_large).is_err());
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

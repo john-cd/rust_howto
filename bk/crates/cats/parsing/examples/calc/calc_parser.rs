@@ -225,6 +225,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Applies operator precedence and associativity when parsing expressions.
     #[test]
     fn precedence_and_associativity() {
         assert_eq!(calculate("1 + 2 * 3"), Ok(7.0));
@@ -234,6 +235,7 @@ mod tests {
         assert_eq!(calculate("10 - 4 - 3"), Ok(3.0));
     }
 
+    /// Verifies that the tokens carry spans.
     #[test]
     fn tokens_carry_spans() {
         let tokens = lex("12 + x").expect("the sample expression should lex");
@@ -241,6 +243,7 @@ mod tests {
         assert_eq!(tokens[2], (Token::Ident("x"), 5..6));
     }
 
+    /// Verifies that the errors report positions.
     #[test]
     fn errors_report_positions() {
         assert_eq!(
@@ -253,6 +256,7 @@ mod tests {
         assert_eq!(calculate("y"), Err("unknown variable `y`".into()));
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         main();

@@ -49,9 +49,7 @@ mod tests {
     use wasmer::TypedFunction;
     use wasmer::imports;
 
-    /// # Errors
-    /// Returns an error if the module cannot be compiled or instantiated, its `add` export cannot
-    /// be retrieved, or calling the export fails.
+    /// Adds two `i32` values with WebAssembly wrapping semantics when the sum overflows.
     #[test]
     fn addition_wraps_on_overflow() -> anyhow::Result<()> {
         let mut store = Store::default();
@@ -68,6 +66,7 @@ mod tests {
         Ok(())
     }
 
+    /// Rejects malformed text module.
     #[test]
     fn malformed_text_module_is_rejected() {
         let store = Store::default();

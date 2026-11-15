@@ -166,6 +166,7 @@ mod tests {
         "tracing_subscriber4",
     ];
 
+    /// Confirms that the command and its arguments are valid.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

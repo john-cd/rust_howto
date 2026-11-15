@@ -186,11 +186,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
-    ///
-    /// # Panics
-    /// Panics if user 1 was created.
+    /// Creates a user, retrieves that user, and confirms an unknown user is absent.
     #[tokio::test]
     async fn created_users_can_be_found_and_others_cannot() -> Result<()> {
         use business::UserService as _;
@@ -209,11 +205,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
-    ///
-    /// # Panics
-    /// Panics if user 1 exists.
+    /// Replaces a user's stored record when another record with the same ID is created.
     #[tokio::test]
     async fn creating_a_user_twice_replaces_it() -> Result<()> {
         use data::UserRepository as _;

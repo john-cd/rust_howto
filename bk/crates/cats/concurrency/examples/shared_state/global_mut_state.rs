@@ -57,15 +57,13 @@ mod tests {
     use super::*;
 
     /// Verifies inserts are visible through the synchronized global list.
-    /// Runs the global mut state example through its entry point.
     #[test]
     fn test_global_mut_state_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if insert_appends_to_the_shared_list, lock fails.
+    /// Verifies that the insert appends to the shared list.
     #[test]
     fn insert_appends_to_the_shared_list() -> Result<()> {
         main()?;
@@ -87,8 +85,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if concurrent_inserts_are_all_recorded, join fails.
+    /// Checks that concurrent inserts are all recorded.
     #[test]
     fn concurrent_inserts_are_all_recorded() -> Result<()> {
         let before = FRUIT

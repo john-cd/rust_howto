@@ -44,8 +44,6 @@ mod tests {
         main();
     }
     /// Verifies sum.
-    ///
-    /// `sum` works on vectors, arrays and sub-slices, including empty ones.
     #[test]
     fn test_sum() {
         assert_eq!(sum(&[1, 2, 3, 4, 5]), 15);

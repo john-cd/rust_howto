@@ -75,6 +75,7 @@ mod tests {
         main();
     }
 
+    /// Checks that short and long options are parsed.
     #[test]
     fn short_and_long_options_are_parsed() {
         let m = cli().get_matches_from(["test_app", "-n", "42", "--file", "README.md"]);
@@ -85,6 +86,7 @@ mod tests {
         );
     }
 
+    /// Checks that options are optional and unknown flags rejected.
     #[test]
     fn options_are_optional_and_unknown_flags_rejected() {
         let m = cli().get_matches_from(["test_app"]);
@@ -94,6 +96,7 @@ mod tests {
         assert!(cli().try_get_matches_from(["test_app", "-n"]).is_err());
     }
 
+    /// Prints the version for the version flag.
     #[test]
     fn version_flag_prints_the_version() {
         let Err(err) = cli().try_get_matches_from(["test_app", "--version"]) else {

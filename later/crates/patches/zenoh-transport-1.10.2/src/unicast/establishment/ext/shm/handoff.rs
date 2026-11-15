@@ -480,6 +480,7 @@ mod race_tests {
     use super::*;
     use crate::unicast::establishment::ext::shm::segment::TXAuthSegment;
 
+    /// Checks that concurrent same priority transactions are isolated.
     #[test]
     fn concurrent_same_priority_transactions_are_isolated() {
         let backend = PosixShmProviderBackendBinaryHeap::builder(4096)

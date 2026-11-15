@@ -50,7 +50,7 @@ pub fn run() -> Result<(), std::io::Error> {
     main()
 }
 
-/// Returns an I/O error if the fixture cannot be created, extracted, or read back.
+/// Tests archive decompression, including missing and malformed input.
 #[cfg(test)]
 mod tests {
     use std::fs;
@@ -63,9 +63,7 @@ mod tests {
 
     use super::*;
 
-    /// # Errors
-    /// Returns an I/O error if the fixture cannot be created, extracted, or
-    /// read back.
+    /// Extracts archive from given path.
     #[test]
     fn extracts_archive_from_given_path() -> io::Result<()> {
         let temporary = tempfile::tempdir()?;
@@ -91,8 +89,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an I/O error if the example cannot decompress its archive.
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() -> io::Result<()> {
         let _guard = crate::tar_compress::SAMPLE_ARCHIVE_LOCK
@@ -108,9 +105,6 @@ mod tests {
     }
 
     /// Confirms a missing archive returns `NotFound` without creating output.
-    ///
-    /// # Errors
-    /// Returns an error if temporary files cannot be created or inspected.
     #[test]
     fn missing_archive_is_an_error() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;

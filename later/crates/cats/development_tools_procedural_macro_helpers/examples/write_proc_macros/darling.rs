@@ -60,13 +60,12 @@ pub fn run() -> Result<()> {
     main()
 }
 
-/// Returns an error if either attribute input cannot be parsed.
+/// Tests parsing and validation of macro attributes.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// Returns an error if either attribute input cannot be parsed.
+    /// Parses prefix and default.
     #[test]
     fn parses_prefix_and_default() -> darling::Result<()> {
         let options = parse_options(quote! {
@@ -93,6 +92,7 @@ mod tests {
         assert!(diagnostic.contains("unknown"));
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

@@ -106,6 +106,7 @@ mod tests {
     fn test_rapier2d_example_entry_point() {
         main();
     }
+    /// Accelerates the ball downward under gravity.
     #[test]
     fn ball_falls_under_gravity() {
         let trace = simulate(10);
@@ -115,6 +116,7 @@ mod tests {
         assert!(trace.iter().all(|s| s.position.0.abs() < 1e-3));
     }
 
+    /// Settles the ball above the ground without penetrating it.
     #[test]
     fn ball_comes_to_rest_above_the_ground() {
         let trace = simulate(600);
@@ -124,6 +126,7 @@ mod tests {
         assert!(last.velocity.1.abs() < 0.5);
     }
 
+    /// Returns an empty trace when the simulation advances zero steps.
     #[test]
     fn zero_steps_produce_an_empty_trace() {
         assert!(simulate(0).is_empty());

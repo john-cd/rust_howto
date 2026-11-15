@@ -40,6 +40,7 @@ mod tests {
     /// Runs the `js-sys` example through its host fallback.
     // output-only: on the host, the example only prints a hint; the wasm32 code
     // needs a browser.
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_js_sys_example_entry_point() {
         main();

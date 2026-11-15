@@ -75,7 +75,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies diesel oci subcommand parses.
+    /// Parses the Diesel OCI subcommand when its feature is enabled.
     #[cfg(feature = "oracle")]
     #[test]
     fn test_diesel_oci_subcommand_parses() {

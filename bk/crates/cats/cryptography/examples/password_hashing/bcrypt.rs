@@ -58,8 +58,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if hash_verifies_only_the_original_password, verify fails.
+    /// Verifies that the hash verifies only the original password.
     #[test]
     fn hash_verifies_only_the_original_password() -> Result<(), Box<dyn Error>> {
         let hashed = hash("correct horse", 4)?;
@@ -69,14 +68,14 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if hashing_is_salted, hash fails.
+    /// Confirms that the hashing is salted.
     #[test]
     fn hashing_is_salted() -> Result<(), Box<dyn Error>> {
         assert_ne!(hash("same", 4)?, hash("same", 4)?);
         Ok(())
     }
 
+    /// Checks that malformed hashes and costs are errors.
     #[test]
     fn malformed_hashes_and_costs_are_errors() {
         assert!(verify("pw", "not a bcrypt hash").is_err());

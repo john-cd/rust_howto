@@ -55,8 +55,7 @@ mod tests {
         main();
     }
 
-    /// Dot, cross and norm of the example vectors; normalizing yields a unit
-    /// vector, but a zero vector cannot be normalized.
+    /// Verifies that the vector operations.
     #[test]
     fn vector_operations() {
         let v1 = Vector3::new(1.0_f64, 2.0, 3.0);

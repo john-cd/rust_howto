@@ -192,11 +192,6 @@ mod tests {
     use super::*;
 
     /// Verifies create, insert, select, update, and delete against Cassandra.
-    ///
-    /// Start Cassandra with
-    /// `docker run --rm -d --name rust-howto-cassandra -p 9042:9042
-    /// cassandra:5.0` and wait for it to become ready before running this
-    /// ignored integration test.
     #[tokio::test]
     #[ignore = "needs Cassandra at 127.0.0.1:9042"]
     async fn require_external_svc() -> anyhow::Result<()> {

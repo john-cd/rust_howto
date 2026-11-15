@@ -84,8 +84,7 @@ mod tests {
         https: 8443,
     };
 
-    /// # Errors
-    /// Returns an error if parsing the input URI or converting it to HTTPS fails.
+    /// Redirects requests to HTTPS and replaces the configured port.
     #[test]
     fn replaces_port_and_scheme() -> anyhow::Result<()> {
         let uri: Uri = "/a/b?c=d".parse()?;
@@ -94,8 +93,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if make_https fails.
+    /// Confirms that the default HTTPS port is omitted.
     #[test]
     fn default_https_port_is_omitted() -> anyhow::Result<()> {
         let ports = Ports {
@@ -107,16 +105,14 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an error if parsing the test URI fails.
+    /// Reports an error when invalid host occurs.
     #[test]
     fn invalid_host_is_an_error() -> anyhow::Result<()> {
         assert!(make_https("bad host", &"/".parse()?, PORTS).is_err());
         Ok(())
     }
 
-    /// # Errors
-    /// Returns an error if building the request or running the router fails.
+    /// Redirects requests to HTTPS on the configured port while preserving the path and query.
     #[tokio::test]
     async fn redirects() -> anyhow::Result<()> {
         let request = Request::get("/login?next=%2F")

@@ -85,6 +85,7 @@ mod tests {
         main();
     }
 
+    /// Checks that the modal advertisement runs to completion.
     #[tokio::test]
     async fn modal_advertisement_runs_to_completion() {
         let ad: &dyn Advertisement = &Modal;

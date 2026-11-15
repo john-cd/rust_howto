@@ -35,6 +35,7 @@ mod tests {
     use super::decode_srgb;
     use super::encode_srgb;
 
+    /// Converts sRGB values to linear light and back without losing precision.
     #[test]
     fn srgb_round_trips_through_linear_light() {
         let stored = Srgb::<u8>::new(128, 64, 32);

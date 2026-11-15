@@ -53,12 +53,14 @@ mod tests {
         main();
     }
 
+    /// Checks that invalid bytes are rejected.
     #[test]
     fn invalid_bytes_are_rejected() {
         let engine = Engine::default();
         assert!(Module::new(&engine, [0x00, 0x01, 0x02]).is_err());
     }
 
+    /// Rejects references to exports that the module does not define.
     #[test]
     fn unknown_export_cannot_be_resolved() {
         let engine = Engine::default();

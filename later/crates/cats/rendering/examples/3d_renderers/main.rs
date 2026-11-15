@@ -78,6 +78,7 @@ fn main() {
 mod tests {
     use super::*;
 
+    /// Projects the origin to the center of the screen.
     #[test]
     fn projects_the_origin_to_the_screen_center() {
         let (pixel, depth) =
@@ -86,6 +87,7 @@ mod tests {
         assert!((0.0..1.0).contains(&depth));
     }
 
+    /// Clips points that fall behind the camera.
     #[test]
     fn clips_points_behind_the_camera() {
         assert!(project(model_view_projection(), Vec3::new(0.0, 0.0, 10.0)).is_none());

@@ -65,7 +65,6 @@ mod tests {
     use super::*;
 
     /// Verifies that the error file example's main path succeeds.
-    /// Runs the error file example through its entry point.
     #[test]
     fn test_error_file_example_entry_point() -> anyhow::Result<()> {
         // Preparation.

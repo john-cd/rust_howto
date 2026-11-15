@@ -82,13 +82,12 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
-/// An error is returned if hash_and_verify fails.
+/// Tests password hashing and verification behavior.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// An error is returned if hash_and_verify fails.
+    /// Hashes passwords and verifies matching credentials.
     #[test]
     fn hash_and_verify() -> anyhow::Result<()> {
         let stored = hash("correct horse")?;
@@ -99,6 +98,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies a password with the alternative authentication backend.
     #[test]
     fn password_auth_alternative() {
         let stored = hash_with_password_auth("pw");

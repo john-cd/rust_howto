@@ -69,14 +69,14 @@ impl UserRepository for InMemoryUserRepository {
     ///   affected by this operation.
     ///
     /// # Panics
-    /// Panics if mutex should not be poisoned.
+    /// Panics if the mutex is poisoned.
     fn get_user(&self, id: i32) -> Option<User> {
         let users = self.users.lock().expect("mutex should not be poisoned");
         users.get(&id).cloned()
     }
 
     /// # Panics
-    /// Panics if mutex should not be poisoned.
+    /// Panics if the mutex is poisoned.
     fn add_user(&self, user: User) {
         let mut users = self.users.lock().expect("mutex should not be poisoned");
         users.insert(user.id, user);
@@ -86,7 +86,7 @@ impl UserRepository for InMemoryUserRepository {
     /// for later operations.
     ///
     /// # Panics
-    /// Panics if mutex should not be poisoned.
+    /// Panics if the mutex is poisoned.
     fn update_user(&self, user: User) {
         let mut users = self.users.lock().expect("mutex should not be poisoned");
         users.insert(user.id, user);
@@ -100,14 +100,14 @@ impl UserRepository for InMemoryUserRepository {
     ///   affected by this operation.
     ///
     /// # Panics
-    /// Panics if mutex should not be poisoned.
+    /// Panics if the mutex is poisoned.
     fn delete_user(&self, id: i32) {
         let mut users = self.users.lock().expect("mutex should not be poisoned");
         users.remove(&id);
     }
 
     /// # Panics
-    /// Panics if mutex should not be poisoned.
+    /// Panics if the mutex is poisoned.
     fn get_all_users(&self) -> Vec<User> {
         let users = self.users.lock().expect("mutex should not be poisoned");
         users.values().cloned().collect()
@@ -192,6 +192,7 @@ mod tests {
         }
     }
 
+    /// Adds get update and delete.
     #[test]
     fn add_get_update_and_delete() {
         let repo = InMemoryUserRepository::new();
@@ -209,8 +210,7 @@ mod tests {
         repo.delete_user(1);
         assert_eq!(repo.get_user(1), None);
     }
-
-    /// Retrieves the all users returns every user for the current in memory user repository from
+    /// Returns every user stored in the in-memory repository.
     #[test]
     fn get_all_users_returns_every_user() {
         let repo = InMemoryUserRepository::new();
@@ -221,6 +221,7 @@ mod tests {
         assert_eq!(all, [user(1, "alice"), user(2, "bob")]);
     }
 
+    /// Confirms that the deleting a missing user is a no op.
     #[test]
     fn deleting_a_missing_user_is_a_no_op() {
         let repo = InMemoryUserRepository::new();

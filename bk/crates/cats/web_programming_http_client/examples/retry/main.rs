@@ -62,15 +62,12 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Panics if an internal invariant is violated.
+/// Tests retrying failed requests and stopping at the configured attempt limit.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
-    ///
-    /// # Panics
-    /// Panics if an internal invariant is violated.
+    /// Retries until success.
     #[tokio::test]
     async fn retries_until_success() -> Result<()> {
         let mut server = mockito::Server::new_async().await;
@@ -96,8 +93,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Panics
-    /// Panics if an internal invariant is violated.
+    /// Verifies that the gives up after max attempts.
     #[tokio::test]
     async fn gives_up_after_max_attempts() -> Result<()> {
         let mut server = mockito::Server::new_async().await;

@@ -88,9 +88,7 @@ mod tests {
     fn borrowed_fields_round_trip() -> anyhow::Result<()> {
         main()
     }
-    /// `to_slice` writes into a caller-provided buffer: no allocation, which
-    /// is useful on `no_std` targets and when the caller owns the output
-    /// buffer.
+    /// Encodes the value into a caller-provided buffer.
     #[test]
     fn to_slice_encodes_into_a_fixed_buffer() -> anyhow::Result<()> {
         let mut buf = [0_u8; 16];

@@ -73,8 +73,7 @@ mod tests {
         assert!(v1.set(3, 0).is_none());
     }
 
-    /// Inserting and removing in a persistent map leaves earlier versions
-    /// unchanged.
+    /// Inserting and removing in a persistent map leaves earlier versions unchanged.
     #[test]
     fn map_is_persistent() {
         let m2 = HashTrieMap::<String, i32>::new()

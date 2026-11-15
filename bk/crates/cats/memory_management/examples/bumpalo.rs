@@ -71,8 +71,7 @@ mod tests {
         main();
     }
 
-    /// Arena allocations are readable, contiguous and tracked in the byte
-    /// count.
+    /// Arena allocations are readable, contiguous and tracked in the byte count.
     #[test]
     fn arena_allocations_hold_their_values() {
         let bump = Bump::new();

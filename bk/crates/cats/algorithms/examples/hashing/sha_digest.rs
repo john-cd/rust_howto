@@ -64,7 +64,7 @@ pub fn run() -> Result<()> {
     main()
 }
 
-/// Panics if reading from memory cannot fail.
+/// Tests the known SHA-256 digests for file and in-memory inputs.
 #[cfg(test)]
 mod tests {
     use std::io::Cursor;
@@ -81,6 +81,7 @@ mod tests {
         assert_eq!(contents, "We will generate a digest of this text");
     }
 
+    /// Confirms that the digest of abc is the known value.
     #[test]
     fn digest_of_abc_is_the_known_value() {
         let digest = sha256_digest(Cursor::new(b"abc")).expect("reading from memory cannot fail");
@@ -90,16 +91,14 @@ mod tests {
         );
     }
 
-    /// # Panics
-    /// Panics if reading from memory cannot fail.
+    /// Confirms that the digest of empty input is the known value.
     #[test]
     fn digest_of_empty_input_is_the_known_value() {
         let digest = sha256_digest(Cursor::new(b"")).expect("reading from memory cannot fail");
         assert_eq!(HEXUPPER.encode(digest.as_ref()), EMPTY_SHA256);
     }
 
-    /// # Panics
-    /// Panics if reading from memory cannot fail.
+    /// Checks that digest spanning several buffers matches one shot.
     #[test]
     fn digest_spanning_several_buffers_matches_one_shot() {
         let data = vec![b'x'; 5000];
@@ -108,8 +107,7 @@ mod tests {
         assert_eq!(streamed.as_ref(), one_shot.as_ref());
     }
 
-    /// Loads the errors are propagated required by the sha digest workflow and reports failures
-    /// from the underlying source.
+    /// Reads errors are propagated.
     #[test]
     fn read_errors_are_propagated() {
         /// Groups the data required by hashing operations.

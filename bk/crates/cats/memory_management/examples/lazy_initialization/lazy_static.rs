@@ -103,15 +103,13 @@ mod tests {
     use super::*;
 
     /// Verifies lazy values and synchronized counter access work together.
-    /// Runs the lazy static example through its entry point.
     #[test]
     fn test_lazy_static_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }
 
-    /// The configuration and derived count are consistent, and the counter
-    /// can be locked.
+    /// The configuration and derived count are consistent, and the counter can be locked.
     #[test]
     fn config_and_counter_are_consistent() -> anyhow::Result<()> {
         assert_eq!(CONFIG.get("host").map(String::as_str), Some("localhost"));

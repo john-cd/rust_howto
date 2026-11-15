@@ -70,6 +70,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Checks that overrides are applied.
     #[tokio::test]
     async fn overrides_are_applied() {
         let config = load_config(Some("eu-west-1"), None).await;
@@ -78,6 +79,7 @@ mod tests {
         assert_eq!(retry.max_attempts(), 5);
     }
 
+    /// Uses the configured region for each AWS service client.
     #[tokio::test]
     async fn clients_share_the_region() {
         let (s3, sqs) = clients().await;

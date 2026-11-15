@@ -84,6 +84,7 @@ fn run_example() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
+    /// Reads temperature from the register bytes.
     #[test]
     fn reads_temperature_from_the_register_bytes() {
         let mut bus = MockI2c;

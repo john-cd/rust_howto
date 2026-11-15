@@ -90,6 +90,7 @@ mod tests {
         assert_eq!(cache.get("key1"), None);
     }
 
+    /// Verifies that the clones share the same cache across threads.
     #[test]
     fn clones_share_the_same_cache_across_threads() {
         let cache: Cache<&str, &str> = Cache::new(10);
@@ -100,6 +101,7 @@ mod tests {
         assert_eq!(cache.get("key2"), Some("value2"));
     }
 
+    /// Confirms that the capacity is bounded.
     #[test]
     fn capacity_is_bounded() {
         let cache: Cache<u32, u32> = Cache::new(5);

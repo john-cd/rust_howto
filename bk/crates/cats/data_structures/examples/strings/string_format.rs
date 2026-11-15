@@ -152,6 +152,7 @@ mod tests {
         main();
     }
 
+    /// Verifies that the formatting macros produce expected text.
     #[test]
     fn formatting_macros_produce_expected_text() {
         let formatted = format!("{0} {1} {0}", "+", "-");

@@ -65,6 +65,7 @@ mod tests {
         main();
     }
 
+    /// Checks that the overlapping ball and cuboid are in contact.
     #[test]
     fn overlapping_ball_and_cuboid_are_in_contact() {
         let ball = Ball::new(1.0);
@@ -83,6 +84,7 @@ mod tests {
         assert!(contact.dist < 0.0, "overlap means a negative distance");
     }
 
+    /// Verifies that the distant shapes do not intersect.
     #[test]
     fn distant_shapes_do_not_intersect() {
         let ball = Ball::new(1.0);

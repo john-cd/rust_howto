@@ -92,15 +92,14 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 mod tests {
     use super::*;
 
-    /// Incrementing and decrementing change the count by one.
-    /// A sequence of events accumulates.
-    /// The count saturates instead of overflowing.
+    /// Increments the count once for each event.
     #[test]
     fn events_change_the_count_by_one() {
         assert_eq!(apply_event(0, &AppEvent::Increment), 1);
         assert_eq!(apply_event(0, &AppEvent::Decrement), -1);
     }
 
+    /// Accumulates the count across multiple events.
     #[test]
     fn events_accumulate() {
         let events = [
@@ -112,6 +111,7 @@ mod tests {
         assert_eq!(total, 1);
     }
 
+    /// Counts saturates at the limits.
     #[test]
     fn count_saturates_at_the_limits() {
         assert_eq!(apply_event(i32::MAX, &AppEvent::Increment), i32::MAX);

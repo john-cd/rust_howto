@@ -81,14 +81,12 @@ mod tests {
     use super::*;
 
     /// Verifies that the pbkdf2 example's main path succeeds.
-    /// Runs the pbkdf2 example through its entry point.
     #[test]
     fn test_pbkdf2_example_entry_point() {
         assert!(main().is_ok());
     }
 
-    /// and rejects incorrect attempts.
-    /// Defines the credential len constant.
+    /// and rejects incorrect attempts. Defines the credential len constant.
     #[test]
     fn test_pbkdf2_verification_rejects_wrong_password() {
         /// Shared `credential len` used by this module.

@@ -51,6 +51,7 @@ mod tests {
         main();
     }
 
+    /// Returns a greeting from the Shuttle handler.
     #[tokio::test]
     async fn handler_says_hello() {
         assert_eq!(hello_world().await, "Hello, Shuttle!");

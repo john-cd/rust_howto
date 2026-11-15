@@ -92,8 +92,7 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    /// Verifies audio decode entry point.
-
+    /// Runs the audio decode example through its entry point without error.
     #[test]
     fn test_audio_decode_entry_point() {
         main().expect("Audio decoding entry point should succeed");

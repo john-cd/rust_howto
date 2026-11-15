@@ -111,8 +111,7 @@ pub fn run() -> ExampleResult<()> {
 mod tests {
     use super::*;
 
-    /// Verifies translated greetings and singular and plural forms in both
-    /// locales.
+    /// Formats English and French greetings and singular and plural messages.
     #[test]
     fn formats_english_and_french_messages() -> ExampleResult<()> {
         let english = new_bundle("en-US", EN_US)?;
@@ -153,11 +152,13 @@ mod tests {
         run()
     }
 
+    /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() -> ExampleResult<()> {
         main()
     }
 
+    /// Confirms that unknown message is a not found error.
     #[test]
     fn unknown_message_is_a_not_found_error() -> ExampleResult<()> {
         let english = new_bundle("en-US", EN_US)?;
@@ -170,6 +171,7 @@ mod tests {
         Ok(())
     }
 
+    /// Confirms that missing argument is reported.
     #[test]
     fn missing_argument_is_reported() -> ExampleResult<()> {
         let english = new_bundle("en-US", EN_US)?;
@@ -177,6 +179,7 @@ mod tests {
         Ok(())
     }
 
+    /// Checks that invalid resource and locale are rejected.
     #[test]
     fn invalid_resource_and_locale_are_rejected() {
         assert!(new_bundle("en-US", "greeting = { $name").is_err());

@@ -200,10 +200,7 @@ mod tests {
     fn test_kubernetes_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-    /// Compares the generated CRD with the committed snapshot.
-    ///
-    /// Set `UPDATE_SNAPSHOTS=1` to rewrite `kubernetes_crd.snapshot.json`
-    /// after an intentional change to the `Echo` resource.
+    /// Matches the generated custom-resource definition to the committed snapshot.
     #[test]
     fn crd_matches_the_committed_snapshot() -> anyhow::Result<()> {
         let snapshot_path = concat!(
@@ -220,6 +217,7 @@ mod tests {
         Ok(())
     }
 
+    /// Confirms that the crd has expected identity.
     #[test]
     fn crd_has_expected_identity() {
         let crd = Echo::crd();
@@ -228,10 +226,7 @@ mod tests {
         assert!(crd.spec.versions[0].subresources.is_some()); // status
     }
 
-    /// # Errors
-    /// An error is returned if desired_deployment_follows_the_spec fails.
-    /// # Panics
-    /// Panics if owner.
+    /// Builds a deployment that matches the desired specification.
     #[test]
     fn desired_deployment_follows_the_spec() -> Result<(), ReconcileError> {
         let deployment = desired_deployment(&echo())?;
@@ -242,6 +237,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports an error when missing uid occurs.
     #[test]
     fn missing_uid_is_an_error() {
         let mut echo = echo();
@@ -252,6 +248,7 @@ mod tests {
         ));
     }
 
+    /// Starts the Kubernetes controller with its configured reconciler.
     #[tokio::test]
     #[ignore = "needs a cluster (kind or k3d)"]
     async fn controller_starts() {

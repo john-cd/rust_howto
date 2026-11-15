@@ -107,6 +107,7 @@ mod tests {
         main();
     }
 
+    /// Encodes a note-off MIDI message with the expected fields.
     #[test]
     fn note_off_message() {
         assert_eq!(

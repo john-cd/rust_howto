@@ -100,7 +100,7 @@ mod my {
     /// This increments the reference count.
     impl<T> Clone for Arc<T> {
         /// # Panics
-        /// Panics if the guarded invariant is violated.
+        /// Panics if incrementing the strong reference count would overflow.
         fn clone(&self) -> Self {
             // Increase the count only if it will not wrap and invalidate the
             // ownership guarantee. `fetch_update` leaves the count unchanged
@@ -177,6 +177,7 @@ mod my {
             }
         }
 
+        /// Verifies that the final owner drops value once on another thread.
         #[test]
         fn final_owner_drops_value_once_on_another_thread() {
             let drops = StdArc::new(AtomicUsize::new(0));
@@ -191,6 +192,7 @@ mod my {
             assert_eq!(drops.load(Ordering::Relaxed), 1);
         }
 
+        /// Verifies that the clone panics before strong count overflow.
         #[test]
         fn clone_panics_before_strong_count_overflow() {
             let value = Arc::new(());

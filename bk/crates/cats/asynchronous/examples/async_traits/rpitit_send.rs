@@ -108,7 +108,6 @@ mod tests {
     use super::*;
 
     /// Checks both `Send` trait styles on a multi-threaded runtime.
-    /// Runs the rpitit send example through its entry point.
     #[test]
     fn test_rpitit_send_example_entry_point() {
         main();

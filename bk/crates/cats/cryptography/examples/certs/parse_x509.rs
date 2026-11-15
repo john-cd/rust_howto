@@ -39,8 +39,7 @@ mod tests {
         main()
     }
 
-    /// # Errors
-    /// An error is returned if generate_simple_self_signed, from_der fails.
+    /// Verifies that the parsed certificate reencodes to the same der.
     #[test]
     fn parsed_certificate_reencodes_to_the_same_der() -> anyhow::Result<()> {
         use x509_cert::der::Encode as _;
@@ -56,6 +55,7 @@ mod tests {
         Ok(())
     }
 
+    /// Confirms that the garbage is not a certificate.
     #[test]
     fn garbage_is_not_a_certificate() {
         assert!(Certificate::from_der(b"not a certificate").is_err());

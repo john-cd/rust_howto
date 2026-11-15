@@ -171,8 +171,7 @@ mod tests {
         Ok(app.clone().oneshot(request).await?)
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Confirms that valid token is accepted.
     #[tokio::test]
     async fn valid_token_is_accepted() -> anyhow::Result<()> {
         let app = app();
@@ -182,8 +181,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Rejects the wrong token.
     #[tokio::test]
     async fn wrong_token_is_rejected() -> anyhow::Result<()> {
         let app = app();
@@ -193,8 +191,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Rejects the token from another session.
     #[tokio::test]
     async fn token_from_another_session_is_rejected() -> anyhow::Result<()> {
         let app = app();

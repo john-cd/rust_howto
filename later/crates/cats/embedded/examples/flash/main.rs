@@ -139,9 +139,7 @@ fn run_example() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    /// erased.
-
+    /// Rejects writes that set flash bits from zero back to one until the block is erased.
     #[test]
     fn requires_erase_before_zero_to_one_write() {
         let mut flash = RamNorFlash::default();

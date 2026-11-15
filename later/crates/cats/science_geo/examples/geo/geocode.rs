@@ -135,8 +135,7 @@ mod tests {
     fn test_geocode_example_entry_point() -> Result<(), GeocodingError> {
         main()
     }
-    /// Normalizes collapses spaces and case.
-
+    /// Collapses repeated spaces and ignores differences in letter case.
     #[test]
     fn normalize_collapses_spaces_and_case() {
         assert_eq!(normalize("  Paris ,   FRANCE "), "paris , france");

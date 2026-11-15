@@ -344,6 +344,7 @@ mod tests {
         Ok(())
     }
 
+    /// Verifies that the login then access.
     #[tokio::test]
     async fn login_then_access() -> anyhow::Result<()> {
         let app = test_app()?;
@@ -358,6 +359,7 @@ mod tests {
         Ok(())
     }
 
+    /// Confirms that the permission is required for admin.
     #[tokio::test]
     async fn permission_is_required_for_admin() -> anyhow::Result<()> {
         let app = test_app()?;

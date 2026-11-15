@@ -84,7 +84,7 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Verifies diesel1 subcommand parses.
+    /// Parses the Diesel subcommand when its feature is enabled.
     #[cfg(feature = "diesel")]
     #[test]
     fn test_diesel1_subcommand_parses() {

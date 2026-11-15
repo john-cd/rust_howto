@@ -60,11 +60,13 @@ mod tests {
         main();
     }
 
+    /// Verifies that some computation formats the input.
     #[tokio::test]
     async fn some_computation_formats_the_input() {
         assert_eq!(some_computation(7).await, "The result of computation is 7");
     }
 
+    /// Delivers messages in order and closes the channel after senders are dropped.
     #[tokio::test]
     async fn channel_delivers_messages_in_order_and_closes() {
         let (tx, mut rx) = mpsc::channel(4);

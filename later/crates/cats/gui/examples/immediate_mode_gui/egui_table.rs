@@ -115,6 +115,7 @@ mod tests {
         main();
     }
 
+    /// Builds every requested row in the compact table layout.
     #[test]
     fn short_table_builds_every_row() {
         let ctx = egui::Context::default();

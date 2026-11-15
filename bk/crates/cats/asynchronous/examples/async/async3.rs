@@ -32,11 +32,13 @@ pub fn run() {
 mod tests {
     use super::*;
 
+    /// Returns its result for the spawned task.
     #[test]
     fn spawned_task_returns_its_result() {
         main();
     }
 
+    /// Confirms that the join error is reported when the task panics.
     #[tokio::test]
     async fn join_error_is_reported_when_the_task_panics() {
         let handle = tokio::spawn(async {
@@ -46,6 +48,7 @@ mod tests {
         assert!(err.is_panic());
     }
 
+    /// Confirms that the aborted task is reported as cancelled.
     #[tokio::test]
     async fn aborted_task_is_reported_as_cancelled() {
         let handle = tokio::spawn(std::future::pending::<()>());

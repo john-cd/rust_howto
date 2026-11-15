@@ -79,6 +79,7 @@ mod tests {
         run_app()
     }
 
+    /// Updates the counter for both increment and decrement actions.
     #[test]
     fn counter_increments_and_decrements() {
         let mut counter = Counter::default();

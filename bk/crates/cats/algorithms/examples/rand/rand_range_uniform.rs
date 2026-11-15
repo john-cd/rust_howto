@@ -46,6 +46,7 @@ mod tests {
         main();
     }
 
+    /// Keeps die rolls in range and samples every face.
     #[test]
     fn uniform_die_rolls_stay_in_range_and_cover_all_faces() {
         let mut rng = rand::rng();
@@ -57,6 +58,7 @@ mod tests {
         }
     }
 
+    /// Rejects empty range.
     #[test]
     fn empty_range_is_rejected() {
         assert!(Uniform::try_from(5..5).is_err());

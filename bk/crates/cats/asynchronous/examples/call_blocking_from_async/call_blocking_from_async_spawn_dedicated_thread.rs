@@ -52,6 +52,7 @@ mod tests {
         main();
     }
 
+    /// Verifies that the parallel sum adds all numbers.
     #[tokio::test]
     async fn parallel_sum_adds_all_numbers() {
         assert_eq!(parallel_sum(vec![1; 1024 * 1024]).await, 1024 * 1024);

@@ -53,6 +53,7 @@ mod tests {
         main();
     }
 
+    /// Recovers the volatility used to price a put option.
     #[test]
     fn put_implied_volatility_round_trips() {
         let put = black_scholes::put(100.0, 95.0, 0.02, 0.3, 1.0);

@@ -30,7 +30,7 @@ fn main() -> Result<()> {
 /// * `root` - Filesystem location the operation reads, updates, or uses as its scope.
 ///
 /// # Errors
-/// Returns an error if the duplicate names operation cannot satisfy its required invariants.
+/// Returns an error if walking the directory tree fails.
 fn duplicate_names(root: &Path) -> Result<Vec<OsString>> {
     let mut filenames = HashMap::<OsString, usize>::new();
     let mut duplicates = Vec::new();
@@ -67,7 +67,6 @@ mod tests {
     use super::*;
 
     /// Verifies the example can traverse the current directory.
-    /// Runs the duplicate name example through its entry point.
     #[test]
     fn test_duplicate_name_example_entry_point() -> anyhow::Result<()> {
         main()?;

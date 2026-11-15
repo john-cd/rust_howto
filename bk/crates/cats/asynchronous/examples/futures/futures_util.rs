@@ -137,8 +137,7 @@ mod tests {
         assert!(fetch_data(0).await.is_err());
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Transforms future results and recovers from errors with combinators.
     #[tokio::test(start_paused = true)]
     async fn combinators_transform_and_recover() -> Result<(), Box<dyn std::error::Error>> {
         let mapped = fetch_data(1).map(|r| r.map(|d| format!("Processed: {d}")));
