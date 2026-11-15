@@ -25,6 +25,14 @@ async fn greet() -> impl Responder {
 /// Binds to localhost on port 8080.
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    example_async().await
+}
+
+/// Starts the Actix server on loopback until it is shut down.
+///
+/// # Errors
+/// Returns an error if binding or running the server fails.
+async fn example_async() -> std::io::Result<()> {
     println!("Starting server at http://127.0.0.1:8080");
 
     HttpServer::new(|| App::new().service(greet))
@@ -39,7 +47,7 @@ async fn main() -> std::io::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> std::io::Result<()> {
-    main()
+    actix_web::rt::System::new().block_on(example_async())
 }
 
 /// Serves the example until it is stopped.

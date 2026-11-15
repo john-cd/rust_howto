@@ -115,6 +115,14 @@ fn app() -> Router {
 /// An error is returned if main, local_addr fails.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+    example_async().await
+}
+
+/// Binds the example server on loopback and serves routes until it stops.
+///
+/// # Errors
+/// Returns an error if logging, binding, or serving fails.
+async fn example_async() -> anyhow::Result<()> {
     tracing_subscriber::registry()
         .with(
             tracing_subscriber::EnvFilter::try_from_default_env()
@@ -135,7 +143,10 @@ async fn main() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()?
+        .block_on(example_async())
 }
 
 /// This module demonstrates basic usage of axum.
@@ -236,6 +247,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if json_is_echoed fails.
+    #[tokio::test]
     async fn json_is_echoed() -> Result<(), Box<dyn std::error::Error>> {
         let request = Request::builder()
             .method(Method::POST)

@@ -20,12 +20,27 @@ fn build_rocket() -> rocket::Rocket<rocket::Build> {
 #[cfg(feature = "rocket-support")]
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+    example_async().await
+}
+
+/// Launches the sample Rocket application.
+///
+/// # Errors
+/// Returns an error if the server cannot launch.
+#[cfg(feature = "rocket-support")]
+async fn example_async() -> anyhow::Result<()> {
     build_rocket().launch().await?;
     Ok(())
 }
 /// Runs the example.
 #[cfg(not(feature = "rocket-support"))]
 fn main() {
+    example_without_feature();
+}
+
+/// Prints the feature required to run the Rocket application.
+#[cfg(not(feature = "rocket-support"))]
+fn example_without_feature() {
     eprintln!("Enable the `rocket-support` feature to run this example.");
 }
 // ANCHOR_END: example
@@ -35,7 +50,19 @@ fn main() {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    #[cfg(feature = "rocket-support")]
+    {
+        tokio::runtime::Builder::new_current_thread()
+            .enable_all()
+            .build()?
+            .block_on(example_async())
+    }
+
+    #[cfg(not(feature = "rocket-support"))]
+    {
+        example_without_feature();
+        Ok(())
+    }
 }
 
 /// Tests the route using Rocket's local client without opening a network port.

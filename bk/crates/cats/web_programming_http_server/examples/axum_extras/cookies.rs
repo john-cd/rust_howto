@@ -75,6 +75,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if default_without_cookie fails.
+    #[tokio::test]
     async fn default_without_cookie() -> anyhow::Result<()> {
         let response = app()
             .oneshot(Request::get("/get").body(Body::empty())?)

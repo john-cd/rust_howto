@@ -46,23 +46,31 @@ fn App() -> impl IntoView {
 /// Mounts the app in the body of the page.
 #[cfg(feature = "leptos-support")]
 fn main() {
-    mount_to_body(|| view! { <App/> });
+    example();
 }
 
-/// Prints a message when the `leptos-support` feature is not enabled.
+/// Prints a feature hint when browser support is disabled.
 #[cfg(not(feature = "leptos-support"))]
 fn main() {
-    // Mounting the application requires browser DOM support or the
-    // `leptos-support` feature.
+    example();
+}
+
+/// Mounts the Leptos component when enabled, or prints the feature hint.
+fn example() {
+    #[cfg(feature = "leptos-support")]
+    mount_to_body(|| view! { <App/> });
+
+    #[cfg(not(feature = "leptos-support"))]
     println!(
         "leptos example: a reactive web framework for building web UIs (see full implementation in the book)"
     );
 }
+
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
+/// Runs the example.
 pub fn run() {
-    main();
+    example();
 }
 
 /// Verifies that the leptos example's main path succeeds.

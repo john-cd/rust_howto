@@ -54,6 +54,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if greets fails.
+    #[tokio::test]
     async fn greets() -> anyhow::Result<()> {
         let response = app()
             .oneshot(Request::get("/").body(Body::empty())?)

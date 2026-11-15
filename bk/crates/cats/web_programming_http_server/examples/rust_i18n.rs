@@ -30,6 +30,11 @@ fn missing_user(header: &str, user_id: u64) -> String {
 
 /// Prints one localized API error using the client's preferred language.
 fn main() {
+    example();
+}
+
+/// Prints a French translation selected from a sample language preference.
+fn example() {
     println!("{}", missing_user("fr-CA,fr;q=0.9,en;q=0.8", 42));
 }
 
@@ -37,7 +42,7 @@ fn main() {
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    example();
 }
 
 /// Selects the best supported language and falls back for unknown ones.
