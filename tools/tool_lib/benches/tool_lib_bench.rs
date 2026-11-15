@@ -4,14 +4,8 @@
 //! - Published recipe link extraction regex scanning across table rows.
 //! - Crate block parsing and rendering via `TinyTemplate` across modes.
 //! - Markdown template generation (alphabetical sections, category badges, index anchors).
-#![allow(
-//!
 //!
 //! TODO Reviewed ??-??-2026.
-
-    deprecated,
-    reason = "crates_io_api::Crate uses deprecated license field"
-)]
 
 use std::collections::BTreeMap;
 use std::hint::black_box;
@@ -35,6 +29,10 @@ const SAMPLE_RECIPE_ROW: &str = "\
 [![serde][c~serde~docs~badge]][c~serde~docs] |";
 
 /// Constructs mock `crates_io_api::Crate` data for testing crate block parsing.
+#[expect(
+    deprecated,
+    reason = "crates_io_api::Crate requires this legacy field in struct literals"
+)]
 fn mock_crate_data(name: &str) -> crates_io_api::Crate {
     crates_io_api::Crate {
         name: name.to_owned(),

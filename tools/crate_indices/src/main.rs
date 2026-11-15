@@ -304,7 +304,6 @@ mod tests {
         strip_review_marker(contents).replace("\r\n", "\n")
     }
     /// Extracts crate names from badge links in a generated category index.
-
     fn category_index_crates(contents: &str) -> BTreeSet<&str> {
         contents
             .lines()

@@ -138,8 +138,7 @@ mod tests {
         }
     }
 
-    ///
-
+    /// Returns representative categories used by the filter tests.
     fn sample() -> Vec<Category> {
         vec![
             category("Encoding", "encoding", "Encoding and decoding data"),
