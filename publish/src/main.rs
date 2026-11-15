@@ -93,6 +93,7 @@ description.workspace = true
 authors.workspace = true
 "#;
 
+    /// Renders package metadata from a fully resolved manifest.
     #[test]
     fn describes_resolved_manifest() {
         let manifest = Manifest::from_slice(RESOLVED.as_bytes()).expect("manifest parses");
@@ -104,6 +105,7 @@ authors.workspace = true
         assert!(text.contains("Categories: [\"development-tools\"]"));
     }
 
+    /// Limits inherited workspace metadata output to the package name.
     #[test]
     fn workspace_inheritance_reports_only_the_name() {
         let manifest = Manifest::from_slice(INHERITED.as_bytes()).expect("manifest parses");
@@ -112,12 +114,14 @@ authors.workspace = true
         assert_eq!(text, "Name: demo\n\n");
     }
 
+    /// Produces no output when the manifest has no package.
     #[test]
     fn manifest_without_package_yields_empty_output() {
         let manifest = Manifest::from_slice(b"[workspace]\nmembers = []\n").expect("parses");
         assert_eq!(describe(&manifest).expect("no package"), "");
     }
 
+    /// Loads the bundled manifest as valid TOML.
     #[test]
     fn bundled_manifest_parses() {
         let manifest =
