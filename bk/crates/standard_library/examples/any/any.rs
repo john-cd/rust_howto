@@ -56,9 +56,6 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -94,7 +91,8 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if err, map_err fails.
+    /// Returns an error if the boxed value unexpectedly downcasts to `i32` or cannot be downcast to
+    /// `String`.
     #[test]
     fn test_downcast_returns_the_box_on_failure() -> Result<(), Box<dyn std::error::Error>> {
         let boxed: Box<dyn Any> = Box::new("text".to_owned());

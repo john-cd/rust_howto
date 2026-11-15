@@ -50,7 +50,7 @@ fn count_items(source: &str) -> syn::Result<(usize, usize)> {
 }
 
 /// # Errors
-/// An error is returned if let fails.
+/// Returns an error if the embedded Rust source cannot be parsed.
 fn main() -> syn::Result<()> {
     let source = "
         /// Groups the data required by rust source operations.

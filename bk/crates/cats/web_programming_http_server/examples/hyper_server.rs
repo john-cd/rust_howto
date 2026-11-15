@@ -80,10 +80,6 @@ pub fn run() -> anyhow::Result<()> {
 
 /// A small HTTP/1 server built directly with Hyper and Tokio.
 ///
-/// # Errors
-/// Returns an error if an operation in the example fails.
-/// Returns an error if a step of the example fails.
-///
 /// Returns a greeting for a GET request to the root path.
 #[cfg(test)]
 mod tests {

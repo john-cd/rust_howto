@@ -171,8 +171,7 @@ mod tests {
         assert_eq!(UserId(67890).to_string(), "67890");
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Builds a user with the supplied field values.
     #[test]
     fn test_constructor() {
         let user = User::new(UserId(1), "Alice".to_owned(), true);

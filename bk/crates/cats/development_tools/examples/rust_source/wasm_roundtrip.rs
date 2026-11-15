@@ -29,7 +29,8 @@ fn exported_functions(binary: &[u8]) -> Result<Vec<String>> {
 }
 
 /// # Errors
-/// An error is returned if main, exported_functions fails.
+/// Returns an error if parsing the WAT, reading the module exports, or printing the binary as WAT
+/// fails.
 fn main() -> Result<()> {
     // Text format to binary format.
     let binary = wat::parse_str(

@@ -10,7 +10,7 @@ mod csrf;
 mod hashing;
 
 /// # Errors
-/// An error is returned if main, run fails.
+/// Returns an error if the password-hashing or Axum session-login example fails.
 fn main() -> anyhow::Result<()> {
     hashing::run()?;
     csrf::run();

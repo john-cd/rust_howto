@@ -151,7 +151,6 @@ pub mod my_game {
             }
         }
 
-        ///
         #[inline]
         pub fn finish(self) -> ::flatbuffers::WIPOffset<Monster<'a>> {
             let o = self.fbb_.end_table(self.start_);

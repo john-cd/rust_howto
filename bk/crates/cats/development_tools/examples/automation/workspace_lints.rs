@@ -80,6 +80,7 @@ mod tests {
     fn test_workspace_lints_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// Checks that a candidate fix preserves comments and enables workspace
     /// lints.
     #[test]

@@ -12,7 +12,7 @@ use std::path::Path;
 use cargo_metadata::MetadataCommand;
 
 /// # Errors
-/// An error is returned if new fails.
+/// Returns an error if Cargo cannot provide metadata for this workspace.
 fn main() -> anyhow::Result<()> {
     // Point at this crate's own manifest. `no_deps` skips resolving
     // dependencies, which is faster and works offline.

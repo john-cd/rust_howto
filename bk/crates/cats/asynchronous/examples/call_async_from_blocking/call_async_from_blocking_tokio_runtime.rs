@@ -40,7 +40,7 @@ fn main() {
     }
 }
 
-// Example async code to execute
+/// Example async code to execute:
 /// A background task that prints its number `i`.
 async fn my_bg_task(i: u64) {
     // By subtracting, the tasks with larger values of i sleep for a
@@ -55,9 +55,6 @@ async fn my_bg_task(i: u64) {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }

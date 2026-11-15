@@ -80,9 +80,6 @@ async fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -97,8 +94,7 @@ mod tests {
         main();
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Delivers each broadcast message to every subscriber.
     #[tokio::test]
     async fn every_subscriber_receives_the_broadcast_messages()
     -> Result<(), Box<dyn std::error::Error>> {
@@ -114,8 +110,7 @@ mod tests {
         Ok(())
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Ends the receiver stream after all senders are dropped.
     #[tokio::test]
     async fn receiver_stream_ends_when_all_senders_are_dropped()
     -> Result<(), Box<dyn std::error::Error>> {

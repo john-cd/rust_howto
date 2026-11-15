@@ -58,9 +58,6 @@ async fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -75,11 +72,7 @@ mod tests {
         main();
     }
 
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
-    ///
-    /// # Panics
-    /// Panics if receiver open.
+    /// Sends a computation result through the one-shot channel and receives it.
     #[tokio::test]
     async fn oneshot_carries_the_computation_result() -> Result<(), Box<dyn std::error::Error>> {
         let (tx, rx) = oneshot::channel();
@@ -90,6 +83,7 @@ mod tests {
         Ok(())
     }
 
+    /// Reports a receive error after the sender is dropped.
     #[tokio::test]
     async fn receiving_fails_if_the_sender_is_dropped() {
         let (tx, rx) = oneshot::channel::<String>();

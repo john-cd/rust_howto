@@ -34,9 +34,6 @@ fn fib(n: usize) -> usize {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -51,6 +48,7 @@ mod tests {
         main();
     }
 
+    /// Matches representative inputs to their known Fibonacci values.
     #[test]
     fn fib_matches_known_values() {
         let known = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55];

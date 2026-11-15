@@ -11,11 +11,12 @@ mod actix;
 mod actors;
 /// An actor with the `ractor` crate: a greeter that counts the greetings it
 mod ractor;
+
 // Disabled with the `riker` Cargo feature while its dependency chain is
 // vulnerable.
-
 // #[cfg(feature = "riker")]
 // mod riker;
+
 /// An actor with the `stakker` crate: a counter that processes messages.
 #[cfg(feature = "stakker")]
 mod stakker;
@@ -42,7 +43,6 @@ enum Commands {
     Ractor,
     // Disabled with the `riker` Cargo feature while its dependency chain is
     // vulnerable.
-
     // /// Runs the `riker` example.
     // #[cfg(feature = "riker")]
     // #[command(name = "riker")]
@@ -52,6 +52,7 @@ enum Commands {
     #[command(name = "stakker")]
     Stakker,
 }
+
 /// Runs the example selected on the command line.
 ///
 /// # Errors
@@ -100,6 +101,7 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["actix", "actors", "ractor", "stakker"];
 
+    /// Checks that the configured command line definition parses.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();
