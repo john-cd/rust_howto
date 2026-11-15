@@ -48,7 +48,6 @@ fn main() {
     notify2(&a);
     notify3(&a);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

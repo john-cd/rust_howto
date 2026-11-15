@@ -77,7 +77,6 @@ fn main() -> Result<(), io::Error> {
     read_from_file()?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

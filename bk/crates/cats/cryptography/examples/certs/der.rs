@@ -46,7 +46,6 @@ fn main() {
     // Verify that the decoded struct matches the original:
     assert_eq!(my_struct, decoded_struct);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

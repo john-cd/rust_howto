@@ -39,7 +39,6 @@ fn main() {
     let [start, middle @ .., end] = arr;
     println!("start: {start}, middle: {middle:?}, end: {end}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

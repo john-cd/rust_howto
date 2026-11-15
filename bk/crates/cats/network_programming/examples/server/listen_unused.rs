@@ -48,7 +48,6 @@ fn main() -> Result<(), Error> {
     println!("Received: {input}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

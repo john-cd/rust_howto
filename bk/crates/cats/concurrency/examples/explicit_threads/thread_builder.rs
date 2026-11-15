@@ -38,7 +38,6 @@ fn main() -> anyhow::Result<()> {
     println!("Worker {worker}; available parallelism: {parallelism}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the thread-builder example.

@@ -21,7 +21,6 @@ fn main() {
     assert_eq!(value, "Hello, World!");
     assert!(cell.get().is_some());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

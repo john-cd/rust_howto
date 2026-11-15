@@ -34,7 +34,6 @@ fn env_extract() -> String {
 fn main() {
     println!("SHELL: {}", env_extract());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -44,7 +44,6 @@ async fn main() -> Result<()> {
     println!("Response from httpbin: {response_text}");
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the file upload example.
 ///

@@ -14,7 +14,6 @@ fn main() {
     // `val` falls out of scope at the end of the block.
     // println!("{val}"); // ERROR: cannot find value `val` in this scope.
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

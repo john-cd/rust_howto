@@ -42,7 +42,6 @@ fn main() {
         tracing::info!("Within the span.");
     }
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

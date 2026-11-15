@@ -28,7 +28,6 @@ fn main() {
 fn example() {
     println!("Random f64: {}", random_f64());
 }
-
 // ANCHOR_END: example
 
 /// Generates a random `f64` with the `rand` crate.

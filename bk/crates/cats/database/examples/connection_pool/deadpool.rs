@@ -92,7 +92,6 @@ async fn main() -> anyhow::Result<()> {
     println!("The answer is {answer}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

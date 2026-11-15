@@ -18,7 +18,6 @@ fn main() -> Result<()> {
     println!("The current directory is {}", cwd.display());
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

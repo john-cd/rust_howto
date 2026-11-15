@@ -60,7 +60,6 @@ fn main() {
     let msg = Message::Write(String::from("hello"));
     msg.call();
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

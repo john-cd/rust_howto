@@ -41,7 +41,6 @@ fn main() -> Result<(), csv::Error> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

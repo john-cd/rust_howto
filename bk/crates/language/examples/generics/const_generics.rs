@@ -33,7 +33,6 @@ fn main() {
     // Expected output: Array length: 3
     assert_eq!(len, 3);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

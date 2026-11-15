@@ -41,7 +41,6 @@ fn main() {
         Wrapper(vec!["example".to_owned(), "example 2".to_owned()])
     );
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

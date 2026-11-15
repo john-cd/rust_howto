@@ -33,7 +33,6 @@ fn main() {
     assert!(tags.contains("#dog") && tags.contains("#forever") && tags.contains("#world"));
     assert_eq!(tags.len(), 3);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

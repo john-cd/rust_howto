@@ -76,7 +76,6 @@ fn main() {
     assert_eq!(zip_iter.next(), None);
     println!("Iterator examples passed!");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

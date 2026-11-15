@@ -141,7 +141,6 @@ fn main() {
     do_instead();
     or_do_that();
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

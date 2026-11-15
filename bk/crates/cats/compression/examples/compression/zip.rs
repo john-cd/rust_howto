@@ -48,7 +48,6 @@ fn main() -> anyhow::Result<()> {
     println!("Successfully created '{}'", path.display());
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// # Errors

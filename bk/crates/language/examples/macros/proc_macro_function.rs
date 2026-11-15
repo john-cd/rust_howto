@@ -20,7 +20,6 @@ fn main() {
     let product_query = sql!(INSERT INTO products (name, price) VALUES ("Widget", 9.99));
     println!("Query result: {product_query}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

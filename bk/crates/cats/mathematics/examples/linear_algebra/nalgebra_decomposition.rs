@@ -43,7 +43,6 @@ fn main() {
     println!("Determinant of M: {}", m.determinant());
     println!("Trace of M: {}", m.trace());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -43,7 +43,6 @@ fn main() -> Result<(), Unspecified> {
     println!("Message verified.");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

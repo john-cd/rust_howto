@@ -172,7 +172,6 @@ fn main() -> anyhow::Result<()> {
     aad()?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

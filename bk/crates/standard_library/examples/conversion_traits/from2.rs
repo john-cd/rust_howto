@@ -61,7 +61,6 @@ fn main() -> Result<(), MyError> {
     println!("{message_error}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

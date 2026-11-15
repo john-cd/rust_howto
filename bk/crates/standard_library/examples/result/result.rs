@@ -201,7 +201,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _ = unit_return_value(file_path);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

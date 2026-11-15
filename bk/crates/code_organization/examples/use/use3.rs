@@ -27,7 +27,6 @@ fn main() {
     let mymap = build_map();
     println!("{mymap:?}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

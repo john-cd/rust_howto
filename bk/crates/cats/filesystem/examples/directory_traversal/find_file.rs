@@ -51,7 +51,6 @@ fn recently_modified(root: &Path) -> Result<Vec<PathBuf>> {
 
     Ok(found)
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

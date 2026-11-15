@@ -57,7 +57,6 @@ fn main() {
         println!("Value for file: {}", file_path.display());
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

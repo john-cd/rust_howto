@@ -21,7 +21,6 @@ fn main() -> Result<(), ParseError> {
     println!("`cleaned`: {cleaned}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

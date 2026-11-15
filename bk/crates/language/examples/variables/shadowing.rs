@@ -40,7 +40,6 @@ fn main() {
     // y = "hello"; // ERROR: cannot change the type of `y`
     println!("y: {y}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

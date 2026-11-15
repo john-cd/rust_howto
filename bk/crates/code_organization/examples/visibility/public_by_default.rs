@@ -74,7 +74,6 @@ fn main() {
     println!("method = {}", p.method());
     println!("public_by_default example: enum variants and trait items are public by default");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 ///

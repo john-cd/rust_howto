@@ -75,7 +75,6 @@ async fn main() -> Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// # Errors

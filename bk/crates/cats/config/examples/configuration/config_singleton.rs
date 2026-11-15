@@ -59,7 +59,6 @@ fn main() -> anyhow::Result<()> {
     println!("Service port: {port}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the singleton configuration example.

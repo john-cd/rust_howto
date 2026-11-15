@@ -73,7 +73,6 @@ async fn main() -> anyhow::Result<()> {
     axum::serve(listener, app()).await?;
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the example server.
 ///

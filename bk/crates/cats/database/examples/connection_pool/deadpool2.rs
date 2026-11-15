@@ -103,7 +103,6 @@ async fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// # Errors

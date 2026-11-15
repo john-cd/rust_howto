@@ -184,7 +184,6 @@ fn main() {
     let _hasher: &RandomState = my_map.hasher();
     println!("{} entries", my_map.inner.len());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

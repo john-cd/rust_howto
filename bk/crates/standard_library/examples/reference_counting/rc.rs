@@ -42,7 +42,6 @@ fn main() {
     let x = Rc::new(6);
     assert_eq!(Rc::try_unwrap(x), Ok(6));
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

@@ -52,7 +52,6 @@ fn main() -> anyhow::Result<()> {
     println!("Ed25519 signature verified successfully!");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

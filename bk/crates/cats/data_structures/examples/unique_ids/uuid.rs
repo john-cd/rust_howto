@@ -44,7 +44,6 @@ fn main() {
         println!("The UUIDs are different.");
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

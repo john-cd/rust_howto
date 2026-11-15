@@ -55,7 +55,6 @@ fn main() {
         println!("File name is: {file_name}");
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

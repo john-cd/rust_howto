@@ -159,7 +159,6 @@ fn main() {
     concatenate_with_write_macro();
     concatenate_with_chain();
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

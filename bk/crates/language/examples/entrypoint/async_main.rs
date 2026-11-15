@@ -26,7 +26,6 @@ async fn main() -> Result<()> {
     // You can .await futures here.
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

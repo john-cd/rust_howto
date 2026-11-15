@@ -29,7 +29,6 @@ fn main() -> anyhow::Result<()> {
     assert_eq!(map.get(&(3, 99)).map(|value| *value), Some(99));
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

@@ -31,7 +31,6 @@ async fn main() -> reqwest::Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

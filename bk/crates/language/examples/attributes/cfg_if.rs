@@ -67,7 +67,6 @@ fn main() {
         }
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

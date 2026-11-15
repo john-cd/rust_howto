@@ -59,7 +59,6 @@ fn main() {
     let boxed_string: Box<str> = "Hello, Rust!".into();
     println!("{boxed_string}");
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

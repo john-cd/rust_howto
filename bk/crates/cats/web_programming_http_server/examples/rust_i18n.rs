@@ -37,7 +37,6 @@ fn main() {
 fn example() {
     println!("{}", missing_user("fr-CA,fr;q=0.9,en;q=0.8", 42));
 }
-
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.

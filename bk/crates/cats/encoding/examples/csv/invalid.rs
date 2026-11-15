@@ -43,7 +43,6 @@ alisha,colombo,xyz";
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

@@ -115,7 +115,6 @@ fn main() -> Result<()> {
     println!("Logging level: {}", settings.logging.level);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the layered configuration example.

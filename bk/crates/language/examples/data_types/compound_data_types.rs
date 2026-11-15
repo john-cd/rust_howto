@@ -130,7 +130,6 @@ fn demo_arrays() {
     mutable_array[2] = 99;
     println!("Mutated array: {mutable_array:?}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -30,7 +30,6 @@ fn main() {
     show_access("James");
     show_access("Jim");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -25,7 +25,6 @@ fn main() {
         _ => println!("outside the range"),
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

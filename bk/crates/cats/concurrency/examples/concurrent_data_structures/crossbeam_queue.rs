@@ -23,7 +23,6 @@ fn main() -> anyhow::Result<()> {
     assert_eq!(q.pop(), None);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

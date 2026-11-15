@@ -113,7 +113,6 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the HTTP types and interfaces example.
 ///

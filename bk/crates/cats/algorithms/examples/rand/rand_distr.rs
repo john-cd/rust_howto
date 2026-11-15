@@ -19,7 +19,6 @@ fn main() -> Result<(), NormalError> {
     println!("{v} is from a N(2, 3) distribution");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

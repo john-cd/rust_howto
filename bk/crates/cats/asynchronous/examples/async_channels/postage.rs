@@ -77,7 +77,6 @@ async fn main() {
     // Wait for all the receivers to print:
     tokio::time::sleep(Duration::from_millis(25)).await;
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

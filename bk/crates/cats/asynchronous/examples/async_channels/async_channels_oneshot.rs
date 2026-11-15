@@ -55,7 +55,6 @@ async fn one_shot() {
 async fn main() {
     one_shot().await;
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

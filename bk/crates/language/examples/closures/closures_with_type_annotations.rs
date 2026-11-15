@@ -17,7 +17,6 @@ fn main() {
     };
     println!("Return value: {}", expensive_closure(1));
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

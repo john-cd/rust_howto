@@ -28,7 +28,6 @@ fn main() {
     let half = parse_even_half("24").unwrap_or(0);
     println!("Half of the even number is {half}.");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -26,7 +26,6 @@ fn main() {
 pub fn example_body() {
     println!("{}", with_capacity(&["a", "b", "c"]));
 }
-
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.

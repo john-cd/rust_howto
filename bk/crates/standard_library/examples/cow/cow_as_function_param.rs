@@ -33,7 +33,6 @@ fn main() {
     let direct_string = String::from("Another example");
     process_text(direct_string.into());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

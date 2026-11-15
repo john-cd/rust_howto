@@ -52,7 +52,6 @@ async fn main() -> Result<()> {
     println!("downloaded {downloaded} bytes to {destination:?}");
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the asynchronous binary download example.
 ///

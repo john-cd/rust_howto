@@ -37,7 +37,6 @@ fn main() {
 
     println!("Stack is empty: {}", stack.is_empty());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

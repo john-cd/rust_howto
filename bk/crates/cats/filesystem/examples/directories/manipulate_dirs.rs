@@ -72,7 +72,6 @@ fn manipulate_dirs(base: &Path) -> std::io::Result<()> {
     fs::remove_dir_all(base.join("temp/my_files"))?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

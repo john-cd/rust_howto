@@ -48,7 +48,6 @@ fn main() -> anyhow::Result<()> {
     anyhow::ensure!(person == parsed, "YAML round-trip changed the person");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the YAML serialization example.

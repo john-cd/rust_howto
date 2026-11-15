@@ -35,7 +35,6 @@ fn main() -> Result<()> {
     assert_eq!(selected_messages()?, vec!["left", "right"]);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the channel selection example.

@@ -27,7 +27,6 @@ fn main() {
     assert_eq!(find_score(&scores, name), Some(30));
     println!("eve's score: {:?}", find_score(&scores, "eve"));
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

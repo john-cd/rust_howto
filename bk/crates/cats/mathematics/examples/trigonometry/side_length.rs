@@ -27,7 +27,6 @@ fn main() {
 
     println!("Hypotenuse: {hypotenuse}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -35,7 +35,6 @@ fn main() {
 
     println!("use_shortcuts example: glob imports, combined imports, and aliases");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -93,7 +93,6 @@ fn main() {
     println!("Map is empty: {}", book_ratings.is_empty());
     assert!(book_ratings.is_empty());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

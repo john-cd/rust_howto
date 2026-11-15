@@ -23,7 +23,6 @@ fn main() {
     println!("a: {a}, b: {b}");
     assert!((a - b).abs() < 1e-10, "tan(x)={a}, sin(x)/cos(x)={b}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

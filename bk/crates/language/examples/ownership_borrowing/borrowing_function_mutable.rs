@@ -39,7 +39,6 @@ fn main() {
     // has been used for the last time.
     let _ref2 = &s;
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

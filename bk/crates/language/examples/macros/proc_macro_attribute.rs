@@ -22,7 +22,6 @@ fn main() {
     let sum = add(5, 7);
     println!("Sum: {sum}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

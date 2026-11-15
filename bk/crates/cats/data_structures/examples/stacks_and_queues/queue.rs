@@ -41,7 +41,6 @@ fn main() {
     queue.push_front(-2);
     assert_eq!(queue.back(), Some(&-1));
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

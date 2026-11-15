@@ -38,7 +38,6 @@ fn main() -> anyhow::Result<()> {
     println!("Scoped results: {results:?}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the scoped-thread example.

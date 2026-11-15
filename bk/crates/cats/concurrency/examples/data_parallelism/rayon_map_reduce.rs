@@ -47,7 +47,6 @@ fn main() {
     assert!((avg_over_30 - alt_avg_over_30).abs() < f32::EPSILON);
     println!("The average age of people older than 30 is {avg_over_30}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

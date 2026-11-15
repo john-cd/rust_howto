@@ -61,7 +61,6 @@ fn main() {
     // Reject input buffers that are too short to contain a valid checksum tag.
     assert_eq!(open(b"short"), None);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the XXH3 checksum example by calling `main()`.

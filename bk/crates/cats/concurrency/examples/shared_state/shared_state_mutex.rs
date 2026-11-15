@@ -50,7 +50,6 @@ fn main() -> anyhow::Result<()> {
     println!("Final counter: {total}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

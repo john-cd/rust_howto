@@ -49,7 +49,6 @@ fn main() {
     };
     print_hash(&p);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 ///

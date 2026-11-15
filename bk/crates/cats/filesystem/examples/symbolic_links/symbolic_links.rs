@@ -97,7 +97,6 @@ fn demo(dir: &Path) -> anyhow::Result<()> {
     inspect_path(link)?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

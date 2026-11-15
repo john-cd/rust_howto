@@ -85,7 +85,6 @@ async fn main() {
 
     println!("Filtered stream results: {filtered:?}");
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

@@ -32,7 +32,6 @@ fn main() {
         Point { x, y } => println!("On neither axis: ({x}, {y})"),
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

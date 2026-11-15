@@ -40,7 +40,6 @@ fn main() {
     assert_eq!(received, expected);
     println!("{received:?}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

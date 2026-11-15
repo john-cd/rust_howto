@@ -125,7 +125,6 @@ fn main() -> Result<()> {
     mylib::this_fails()?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

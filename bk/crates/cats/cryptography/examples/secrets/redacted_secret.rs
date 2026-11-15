@@ -87,7 +87,6 @@ fn main() -> Result<(), Infallible> {
     assert_eq!(secret.expose_secret(), "sk-live-1234");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

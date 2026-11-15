@@ -37,7 +37,6 @@ fn main() -> Result<(), &'static str> {
     );
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// # Errors

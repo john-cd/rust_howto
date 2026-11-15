@@ -69,7 +69,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     return Err(DataStoreError::Unknown.into());
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

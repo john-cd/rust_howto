@@ -94,7 +94,6 @@ fn main() {
     cast_complex_type();
     to_from_bytes();
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

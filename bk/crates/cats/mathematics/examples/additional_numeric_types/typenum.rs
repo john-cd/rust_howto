@@ -69,7 +69,6 @@ fn main() {
     assert_eq!(Six::USIZE, 6);
     assert_eq!(buf1.capacity(), buf2.capacity());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

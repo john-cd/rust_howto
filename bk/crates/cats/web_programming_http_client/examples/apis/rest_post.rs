@@ -106,7 +106,6 @@ async fn main() -> Result<()> {
 
     create_and_delete_gist(&Client::new(), GISTS_ENDPOINT, &token, &gist_body).await
 }
-
 // ANCHOR_END: example
 
 /// Runs the example from the APIs command-line dispatcher.

@@ -42,7 +42,6 @@ fn main() {
     u.debug_print();
     println!("id: {}, name: {}, active: {}", u.id, u.name, u.active);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

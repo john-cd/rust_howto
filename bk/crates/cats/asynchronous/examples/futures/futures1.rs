@@ -45,7 +45,6 @@ async fn race_tasks() {
 async fn main() {
     race_tasks().await;
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

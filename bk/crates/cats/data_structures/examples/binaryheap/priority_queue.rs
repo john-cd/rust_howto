@@ -146,7 +146,6 @@ fn main() {
     custom_type_usage();
     advanced_usage();
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

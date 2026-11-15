@@ -56,7 +56,6 @@ fn example() -> Result<(), String> {
     println!("Log level: {}", config.log_level);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.

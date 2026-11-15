@@ -27,7 +27,6 @@ fn main() -> Result<(), DecodeError> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

@@ -40,7 +40,6 @@ fn main() {
     // already owned.
     println!("{}", example.into_owned());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

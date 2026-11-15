@@ -30,7 +30,6 @@ fn main() {
     let another_boxed_str: Box<str> = Box::from("Another string slice");
     println!("Another boxed string: {another_boxed_str}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -83,7 +83,6 @@ path = "src/main.rs"
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

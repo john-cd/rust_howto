@@ -96,7 +96,6 @@ magenta,#ff00ff";
     println!("{written}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

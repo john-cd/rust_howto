@@ -32,7 +32,6 @@ fn main() {
     let value = parse_number("42");
     println!("Parsed value: {value}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

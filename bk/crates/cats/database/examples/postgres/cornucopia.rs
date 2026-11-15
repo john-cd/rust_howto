@@ -64,7 +64,6 @@ async fn main() -> anyhow::Result<()> {
         .context("join the PostgreSQL connection task")??;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// # Errors

@@ -43,7 +43,6 @@ fn main() {
     // `buffer` never reallocates: 5 bytes fit in the 32 reserved.
     assert!(buffer.capacity() >= 32);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

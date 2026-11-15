@@ -53,7 +53,6 @@ fn main() {
     // We can also consume the `RefCell`, returning the wrapped value.
     let _data = data.into_inner();
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

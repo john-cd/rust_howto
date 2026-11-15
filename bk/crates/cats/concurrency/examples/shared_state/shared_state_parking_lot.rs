@@ -53,7 +53,6 @@ fn main() {
         assert_eq!(get_cached_val(), 42);
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

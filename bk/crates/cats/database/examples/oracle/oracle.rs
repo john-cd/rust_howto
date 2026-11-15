@@ -40,7 +40,6 @@ fn main() -> anyhow::Result<()> {
     connection.close()?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example and reports missing configuration or Oracle errors.

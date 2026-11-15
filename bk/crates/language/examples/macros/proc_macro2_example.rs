@@ -16,7 +16,6 @@ fn main() {
         assert_eq!(new_ident, "Hello, proc-macro2!");
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

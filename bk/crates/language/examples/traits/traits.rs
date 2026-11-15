@@ -50,7 +50,6 @@ fn main() {
     // Or, if we needed to fully disambiguate:
     <NewsArticle as Summary>::summarize(&na);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

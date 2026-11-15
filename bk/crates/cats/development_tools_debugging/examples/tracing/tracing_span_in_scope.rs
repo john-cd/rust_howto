@@ -70,7 +70,6 @@ async fn main() {
         .init();
     my_async_function().await;
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

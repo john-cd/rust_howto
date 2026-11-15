@@ -21,7 +21,6 @@ macro_rules! say_hello {
 fn main() {
     say_hello!();
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

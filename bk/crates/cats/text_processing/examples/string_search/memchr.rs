@@ -26,7 +26,6 @@ fn main() {
     let all_l_positions: Vec<usize> = memchr_iter(b'l', haystack).collect();
     println!("All 'l' positions: {all_l_positions:?}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

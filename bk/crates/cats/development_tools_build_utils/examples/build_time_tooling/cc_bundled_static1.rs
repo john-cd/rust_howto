@@ -42,7 +42,6 @@ fn main() -> Result<()> {
     hello_from_c();
     greet_from_c("Rust")
 }
-
 // ANCHOR_END: example
 
 /// Runs the bundled C greeting example.

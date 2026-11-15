@@ -41,7 +41,6 @@ fn main() {
     // You may also use `unwrap`, which panics if there is an error but does not
     // display a custom message: `result.unwrap();`
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

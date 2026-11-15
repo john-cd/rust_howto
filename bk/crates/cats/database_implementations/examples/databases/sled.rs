@@ -88,7 +88,6 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

@@ -39,7 +39,6 @@ fn visible_paths(root: &Path) -> Result<Vec<PathBuf>> {
     }
     Ok(paths)
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

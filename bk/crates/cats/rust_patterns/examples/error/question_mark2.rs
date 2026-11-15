@@ -46,7 +46,6 @@ fn main() {
     //     Err(err) => panic!("{err}"),
     // }
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

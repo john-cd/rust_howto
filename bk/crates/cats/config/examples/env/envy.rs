@@ -33,7 +33,6 @@ fn main() {
     println!("c: {c:?} c2: {c2:?}");
     println!("ports: {} and {}", c.port, c2.port);
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

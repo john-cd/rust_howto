@@ -65,7 +65,6 @@ fn example() {
         "leptos example: a reactive web framework for building web UIs (see full implementation in the book)"
     );
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

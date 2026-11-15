@@ -56,7 +56,6 @@ fn main() {
         "Distance between Paris and London on the surface of Earth is {distance:.1} kilometers"
     );
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

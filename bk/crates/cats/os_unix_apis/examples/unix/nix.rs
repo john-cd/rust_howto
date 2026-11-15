@@ -68,7 +68,6 @@ fn main() -> nix::Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

@@ -34,7 +34,6 @@ fn main() {
     println!("a = {a:?}, b = {b:?}");
     println!("a.0 = {}, b.0 = {}", a.0, b.0);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

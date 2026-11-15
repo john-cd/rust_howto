@@ -46,7 +46,6 @@ fn main() {
     println!("my_boxed_string is out of scope.");
     // ERROR: println!("my_boxed_string: {my_boxed_string}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

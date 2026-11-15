@@ -39,7 +39,6 @@ fn main() {
     assert_eq!(first_hash, same_hash);
     println!("Hash: {first_hash}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the `foldhash` example by calling `main()`.

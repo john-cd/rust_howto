@@ -73,7 +73,6 @@ fn main() -> anyhow::Result<()> {
     println!("Totals: {first}, {second}");
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the Actix actor example.
 ///

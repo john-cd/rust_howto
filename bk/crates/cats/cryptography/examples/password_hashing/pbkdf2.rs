@@ -65,7 +65,6 @@ fn main() -> Result<(), Unspecified> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

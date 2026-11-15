@@ -36,7 +36,6 @@ impl OutlinePrint for String {}
 fn main() {
     String::from("test").outline_print();
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

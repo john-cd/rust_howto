@@ -15,7 +15,6 @@ fn main() {
     v.par_sort();
     println!("{v:#?}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -87,7 +87,6 @@ fn main() {
         panic!("No path found!");
     }
 }
-
 // ANCHOR_END: example
 /// Runs the implicit-grid A* pathfinding example.
 pub fn run() {

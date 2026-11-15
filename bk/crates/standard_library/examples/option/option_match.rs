@@ -23,7 +23,6 @@ fn main() {
         None => println!("Cannot divide by zero!"),
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -74,7 +74,6 @@ fn main() {
     // This would cause a compile-time error because x and y must be the same
     // type `T`: let wont_compile = Point { x: 5, y: 4.0 };
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

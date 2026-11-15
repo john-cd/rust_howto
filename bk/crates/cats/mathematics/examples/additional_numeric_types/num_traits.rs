@@ -41,7 +41,6 @@ fn main() {
     println!("Value of y after converting from x: {y}");
     assert_eq!(y, 1.0);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -35,7 +35,6 @@ fn main() {
     modify_string(&mut borrowed_to_owned);
     println!("{borrowed_to_owned}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

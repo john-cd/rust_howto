@@ -27,7 +27,6 @@ fn main() {
     let rand_string2 = Alphanumeric.sample_string(&mut rand::rng(), 20);
     println!("Another random string: {rand_string2}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

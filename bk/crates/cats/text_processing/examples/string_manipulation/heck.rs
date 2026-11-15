@@ -30,7 +30,6 @@ fn main() {
     println!("Camel case: {}", input.to_lower_camel_case()); // helloWorldExampleString
     println!("Title case: {}", input.to_title_case()); // Hello World Example String
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

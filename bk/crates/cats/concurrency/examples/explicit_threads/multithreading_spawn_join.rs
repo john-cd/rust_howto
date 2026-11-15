@@ -33,7 +33,6 @@ fn main() -> anyhow::Result<()> {
     println!("Joined results: {results:?}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the spawn-and-join example.

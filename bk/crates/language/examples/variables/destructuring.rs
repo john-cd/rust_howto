@@ -36,7 +36,6 @@ fn main() {
     // This is equivalent to `let Point { x: x, y: y } = p;`.
     print!("x and y: {:?}", (x, y));
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -75,7 +75,6 @@ fn main() -> anyhow::Result<()> {
     spinner()?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

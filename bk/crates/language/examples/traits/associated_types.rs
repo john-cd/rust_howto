@@ -45,7 +45,6 @@ fn main() {
     let mut it = MyIterator(42);
     println!("{:?}", use_iterator(&mut it));
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

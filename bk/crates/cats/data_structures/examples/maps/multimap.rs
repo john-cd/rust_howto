@@ -48,7 +48,6 @@ fn main() -> Result<()> {
     }
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

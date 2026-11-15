@@ -85,7 +85,6 @@ fn main() {
     let p4 = Point2D::default();
     println!("{p4:?}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -14,7 +14,6 @@ fn main() {
     let absent_number: Option<i32> = None;
     println!("{absent_number:?}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

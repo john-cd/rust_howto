@@ -19,7 +19,6 @@ fn euler() -> Complex<f64> {
 fn main() {
     println!("e^(2i * pi) = {}", euler()); // =~1
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

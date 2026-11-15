@@ -25,7 +25,6 @@ fn main() {
     let backtrace = std::backtrace::Backtrace::capture();
     println!("Backtrace status: {:?}", backtrace.status());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -26,7 +26,6 @@ fn main() -> anyhow::Result<()> {
     log::error!("this is an error!");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

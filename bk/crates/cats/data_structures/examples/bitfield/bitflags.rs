@@ -98,7 +98,6 @@ fn main() {
         _ => println!("The value is not A and B"),
     });
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

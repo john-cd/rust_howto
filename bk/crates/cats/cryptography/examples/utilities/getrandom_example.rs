@@ -16,7 +16,6 @@ fn main() -> anyhow::Result<()> {
     println!("sample nonce: {}", hex::encode(nonce));
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

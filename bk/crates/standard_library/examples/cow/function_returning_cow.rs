@@ -42,7 +42,6 @@ fn main() {
         Cow::Owned(s) => println!("Spaces removed, allocated String: {s}"),
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

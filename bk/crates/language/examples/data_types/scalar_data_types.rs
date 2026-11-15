@@ -72,7 +72,6 @@ fn main() {
     println!("Boolean AND: {p} && {q} = {}", p && q);
     println!("Boolean OR: {p} || {q} = {}", p || q);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

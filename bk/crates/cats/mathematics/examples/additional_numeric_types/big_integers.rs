@@ -27,7 +27,6 @@ fn main() {
     println!("100! equals {}", factorial(100));
     assert_eq!(factorial(100).to_string().len(), 158); // factorial(100) is a 158-digit number
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -70,7 +70,6 @@ fn main() {
     let settings_guard_3 = get_settings().lock().expect("mutex should not be poisoned");
     println!("Config 3: {}", settings_guard_3.get_config());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

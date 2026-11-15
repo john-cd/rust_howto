@@ -21,7 +21,6 @@ fn main() {
     arr.par_iter_mut().for_each(|p| *p -= 1);
     println!("{arr:?}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

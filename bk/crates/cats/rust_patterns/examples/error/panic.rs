@@ -14,7 +14,6 @@ fn main() {
     println!("panic example: calling panic! causes immediate program termination");
     panic!("Crash and burn");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

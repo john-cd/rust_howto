@@ -21,7 +21,6 @@ fn main() {
     println!("{msg:?}");
     println!("{}", msg.0);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

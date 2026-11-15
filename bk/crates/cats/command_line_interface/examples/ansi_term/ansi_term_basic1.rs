@@ -16,7 +16,6 @@ fn main() {
         Style::new().bold().paint("This is Bold")
     );
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -44,7 +44,6 @@ fn file_appender(path: impl AsRef<Path>) -> Result<FileAppender> {
         .build(path)
         .map_err(Into::into)
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

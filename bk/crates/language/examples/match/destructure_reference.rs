@@ -26,7 +26,6 @@ fn main() {
     // let &value = _reference; // Error[E0507]: cannot move out of `*reference`
     // which is behind a shared reference.
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

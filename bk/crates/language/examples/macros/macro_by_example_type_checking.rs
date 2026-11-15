@@ -16,7 +16,6 @@ fn main() {
     // ERROR cannot multiply `&str` by `{integer}`
     // println!("{}", double!("hello"));
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

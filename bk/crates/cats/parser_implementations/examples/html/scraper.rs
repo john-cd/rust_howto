@@ -40,7 +40,6 @@ fn select_text(document: &Html, query: &str) -> anyhow::Result<Vec<String>> {
 
     Ok(text)
 }
-
 // ANCHOR_END: example
 
 /// Runs the example for the command-line dispatcher and test suite.

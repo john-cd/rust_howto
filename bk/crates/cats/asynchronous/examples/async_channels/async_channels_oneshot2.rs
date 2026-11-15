@@ -56,7 +56,6 @@ fn main() {
     rt.block_on(async { async_main().await })
         .expect("the async channels oneshot2 example invariant should hold");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
