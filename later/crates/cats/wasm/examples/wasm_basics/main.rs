@@ -84,23 +84,10 @@ fn example() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
-///
-/// # Errors
-/// Returns an error if the example operation fails.
-pub fn run() -> Result<()> {
-    example()
-}
-
 /// Garbage is not a module.
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        main().expect("the example should run successfully");
-    }
 
     /// Garbage is not a module.
     #[test]

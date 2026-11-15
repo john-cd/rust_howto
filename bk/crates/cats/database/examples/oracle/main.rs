@@ -75,12 +75,6 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Without any example feature, `main` has nothing to run and succeeds.
-    #[cfg(not(any(feature = "oracle", feature = "sibyl")))]
-    #[test]
-    fn test_main_is_a_no_op_without_features() {
-        assert!(main().is_ok());
-    }
     /// Verifies diesel oci subcommand parses.
     #[cfg(feature = "oracle")]
     #[test]

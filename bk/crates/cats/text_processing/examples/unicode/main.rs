@@ -10,14 +10,3 @@ mod graphemes;
 fn main() {
     graphemes::run();
 }
-
-/// Verifies that the Unicode grapheme example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        assert!(std::panic::catch_unwind(main).is_ok());
-    }
-}

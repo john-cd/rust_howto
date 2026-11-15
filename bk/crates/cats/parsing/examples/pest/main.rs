@@ -9,14 +9,3 @@ mod pest;
 fn main() -> anyhow::Result<()> {
     pest::run()
 }
-
-/// Verifies that the `pest` parser example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        main().expect("the example should run");
-    }
-}

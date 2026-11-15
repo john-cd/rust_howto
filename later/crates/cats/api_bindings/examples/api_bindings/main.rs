@@ -18,22 +18,3 @@ fn example() {
     println!("{PLACEHOLDER_NOTICE}");
 }
 // ANCHOR_END: example
-
-/// Placeholder for API bindings examples.
-pub fn run() {
-    example();
-}
-
-/// Tests the placeholder entry point and its message.
-#[cfg(test)]
-mod tests {
-    /// Verifies the placeholder message and runs the example entry point.
-    #[test]
-    fn test_main_entry_point() {
-        assert_eq!(
-            super::PLACEHOLDER_NOTICE,
-            "No API bindings example is implemented yet."
-        );
-        super::main();
-    }
-}

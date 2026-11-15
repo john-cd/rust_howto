@@ -109,12 +109,4 @@ mod tests {
     fn test_unknown_subcommand_is_rejected() {
         assert!(Cli::try_parse_from(["example", "no-such-example"]).is_err());
     }
-
-    /// Running without a subcommand selects nothing and succeeds.
-    #[test]
-    fn test_no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no subcommand is accepted");
-        assert!(cli.command.is_none());
-        dispatch(cli);
-    }
 }

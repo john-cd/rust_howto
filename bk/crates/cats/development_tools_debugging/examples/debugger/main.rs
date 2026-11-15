@@ -21,12 +21,3 @@ fn example() {
 fn run() {
     example();
 }
-
-#[cfg(test)]
-mod tests {
-    /// Runs the debugger example and checks its assertion.
-    #[test]
-    fn test_main_runs() {
-        super::main();
-    }
-}

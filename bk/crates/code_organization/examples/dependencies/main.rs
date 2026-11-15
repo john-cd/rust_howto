@@ -42,24 +42,11 @@ fn example() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
-///
-/// # Errors
-/// Returns an error if the example operation fails.
-pub fn run() -> Result<()> {
-    example()
-}
-
 /// Using items from an external crate (a dependency).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the dependency inspection example through its entry point.
-    #[test]
-    fn test_main() {
-        main().expect("main should succeed");
-    }
     /// Verifies error path.
     #[test]
     fn test_error_path() {

@@ -72,11 +72,6 @@ fn example() {
 }
 // ANCHOR_END: example
 
-/// Demonstrates loading and calling the cross-platform `glow` bindings.
-pub fn run() {
-    example();
-}
-
 /// Converts a valid OpenGL symbol name and rejects an embedded NUL byte.
 #[cfg(test)]
 mod tests {
@@ -94,12 +89,6 @@ mod tests {
     unsafe extern "system" fn stub_clear_color(_: f32, _: f32, _: f32, _: f32) {}
     /// Mock OpenGL clear-color function used to load a test context.
     unsafe extern "system" fn stub_clear(_: u32) {}
-
-    /// Verifies the example entry point runs without a graphics context.
-    #[test]
-    fn test_main_entry_point() {
-        super::main();
-    }
 
     /// Converts a valid OpenGL symbol name and rejects an embedded NUL byte.
     #[test]

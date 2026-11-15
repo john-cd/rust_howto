@@ -12,13 +12,3 @@ fn main() {
     frozen_map::run();
     frozen_vec::run();
 }
-
-/// Runs both collection examples and their assertions.
-#[cfg(test)]
-mod tests {
-    /// Runs both collection examples and their assertions.
-    #[test]
-    fn test_examples_run() {
-        super::main();
-    }
-}

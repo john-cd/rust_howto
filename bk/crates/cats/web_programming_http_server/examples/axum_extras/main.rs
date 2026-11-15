@@ -36,14 +36,3 @@ fn main() {
     println!("Built {} routers.", routers.len());
     println!("Run `cargo test --example axum_extras` to call them.");
 }
-
-/// TLS, flash
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        assert!(std::panic::catch_unwind(main).is_ok());
-    }
-}

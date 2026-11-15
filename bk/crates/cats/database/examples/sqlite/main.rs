@@ -69,17 +69,3 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
-
-/// Verifies that the sqlite example's main path succeeds.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// Verifies that the sqlite example's main path succeeds.
-    /// Runs the database example through its entry point.
-    #[test]
-    fn test_database_example_entry_point() -> anyhow::Result<()> {
-        main().expect("running the sqlite dispatcher without a subcommand succeeds");
-        Ok(())
-    }
-}

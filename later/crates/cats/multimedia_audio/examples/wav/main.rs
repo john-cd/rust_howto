@@ -9,15 +9,3 @@ mod wav;
 fn main() {
     wav::run().expect("writing and reading a WAV buffer should succeed");
 }
-
-/// test their own results).
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// test their own results).
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
-}

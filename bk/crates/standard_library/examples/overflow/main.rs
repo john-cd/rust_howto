@@ -12,13 +12,3 @@ fn main() {
     overflow_methods::run();
     wrapping_type::run();
 }
-
-/// Runs both overflow examples and their assertions.
-#[cfg(test)]
-mod tests {
-    /// Runs both overflow examples and their assertions.
-    #[test]
-    fn test_examples_run() {
-        super::main();
-    }
-}

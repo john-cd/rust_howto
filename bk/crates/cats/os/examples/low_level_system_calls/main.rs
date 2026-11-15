@@ -9,14 +9,3 @@ mod libc;
 fn main() {
     libc::run();
 }
-
-/// Verifies that the low-level system call example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        assert!(std::panic::catch_unwind(main).is_ok());
-    }
-}

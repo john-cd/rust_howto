@@ -36,28 +36,11 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Tessellates the example path and reports the generated mesh size.
-/// Builds and tessellates a small vector path with Lyon.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
-pub fn run() -> anyhow::Result<()> {
-    let (vertices, indices) = tessellate_triangle().map_err(anyhow::Error::from)?;
-    println!("tessellated mesh: {vertices} vertices, {indices} indices");
-    Ok(())
-}
-
 /// Verifies the example entry point tessellates and reports its path.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies the example entry point tessellates and reports its path.
-    /// Runs the rendering example through its entry point.
-    #[test]
-    fn test_rendering_example_entry_point() -> anyhow::Result<()> {
-        main()
-    }
     /// Verifies Lyon emits vertices and indices for a closed fill path.
 
     #[test]

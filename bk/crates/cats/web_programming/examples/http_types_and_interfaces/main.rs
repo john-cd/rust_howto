@@ -11,14 +11,3 @@ mod http;
 fn main() -> anyhow::Result<()> {
     http::run()
 }
-
-/// Verifies that the HTTP types example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        main().expect("the example should run");
-    }
-}

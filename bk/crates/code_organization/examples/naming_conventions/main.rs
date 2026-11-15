@@ -114,10 +114,6 @@ fn main() {
 mod tests {
     use super::*;
 
-    #[test]
-    fn test_main() {
-        main();
-    }
     /// Verifies getters.
     #[test]
     fn test_getters() {

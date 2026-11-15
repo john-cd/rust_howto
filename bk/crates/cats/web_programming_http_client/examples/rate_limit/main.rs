@@ -57,11 +57,6 @@ fn check_with_fake_clock() -> (bool, bool, bool, bool) {
 }
 // ANCHOR_END: example
 
-/// Checks the burst and refill behavior with a deterministic fake clock.
-pub fn run() -> (bool, bool, bool, bool) {
-    check_with_fake_clock()
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;

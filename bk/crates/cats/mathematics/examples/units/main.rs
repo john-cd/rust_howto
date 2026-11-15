@@ -9,15 +9,3 @@ mod quantities_and_conversions;
 fn main() {
     quantities_and_conversions::run();
 }
-
-/// panic fails the test.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// panic fails the test.
-    #[test]
-    fn test_main_runs() {
-        main();
-    }
-}

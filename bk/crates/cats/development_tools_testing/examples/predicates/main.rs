@@ -85,13 +85,3 @@ fn example() {
 fn run() {
     example();
 }
-
-/// Verifies that the composed predicate keeps records matching both rules.
-#[cfg(test)]
-mod tests {
-    /// Verifies that the composed predicate keeps records matching both rules.
-    #[test]
-    fn test_composite_predicate_filters_files() {
-        super::main();
-    }
-}

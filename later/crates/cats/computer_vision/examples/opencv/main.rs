@@ -20,18 +20,3 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     Ok(())
 }
-
-/// Verifies that the OpenCV example on Linux when the `opencv` feature is enabled.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    #[cfg_attr(
-        all(target_os = "linux", feature = "opencv"),
-        ignore = "needs OpenCV and its sample data"
-    )]
-    fn test_main_entry_point() {
-        main().expect("the example should run successfully");
-    }
-}

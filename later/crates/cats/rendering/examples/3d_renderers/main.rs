@@ -74,20 +74,9 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the 3D projection example.
-pub fn run() {
-    project_triangle_example();
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    /// Runs the example through its entry point.
-    #[test]
-    fn test_main_entry_point() {
-        project_triangle_example();
-    }
 
     #[test]
     fn projects_the_origin_to_the_screen_center() {

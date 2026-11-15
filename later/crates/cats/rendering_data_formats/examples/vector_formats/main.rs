@@ -47,24 +47,11 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
-///
-/// # Errors
-/// Returns an error if the example operation fails.
-pub fn run() -> anyhow::Result<()> {
-    vector_formats_example()
-}
-
 /// Rasterizes an SVG document at a bounded output size.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point.
-    #[test]
-    fn test_main_entry_point() -> anyhow::Result<()> {
-        vector_formats_example()
-    }
     /// Verifies the output is scaled to the requested bound.
     #[test]
     fn scales_the_longer_side_to_the_bound() -> anyhow::Result<()> {

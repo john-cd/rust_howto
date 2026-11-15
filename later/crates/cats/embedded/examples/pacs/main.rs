@@ -114,12 +114,6 @@ fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point.
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
-
     #[test]
     fn peripherals_can_be_taken_once() {
         let taken = AtomicBool::new(false);

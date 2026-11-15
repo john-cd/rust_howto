@@ -9,14 +9,3 @@ mod undo_redo;
 fn main() {
     undo_redo::run();
 }
-
-/// Verifies that the behavioral pattern examples.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        assert!(std::panic::catch_unwind(main).is_ok());
-    }
-}

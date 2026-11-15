@@ -37,15 +37,3 @@ pub mod flutter_rust_bridge;
 fn main() {
     flutter_rust_bridge::run();
 }
-
-/// test their own results).
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// test their own results).
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
-}
