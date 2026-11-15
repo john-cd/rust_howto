@@ -59,6 +59,7 @@ mod tests {
         main();
     }
 
+    /// Splits a sample path into its individual components.
     #[test]
     fn splits_sample_path() {
         assert_eq!(
@@ -67,6 +68,7 @@ mod tests {
         );
     }
 
+    /// Preserves empty trailing components when a path has fewer segments.
     #[test]
     fn short_paths_leave_trailing_parts_empty() {
         assert_eq!(split_path(""), ("", "", ""));

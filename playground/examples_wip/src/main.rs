@@ -14,11 +14,13 @@ const MESSAGE: &str = "Look in the examples folder.";
 mod tests {
     use super::*;
 
+    /// Runs the program default command successfully.
     #[test]
     fn main_runs() {
         main();
     }
 
+    /// Includes the available examples in the displayed help message.
     #[test]
     fn message_mentions_examples() {
         assert!(MESSAGE.contains("examples"));

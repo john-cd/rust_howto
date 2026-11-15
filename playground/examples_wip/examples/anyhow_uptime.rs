@@ -62,6 +62,7 @@ mod tests {
         run_example().expect("the uptime example should not fail");
     }
 
+    /// Reads uptime from the Linux system interface.
     #[test]
     #[cfg(target_os = "linux")]
     fn reads_uptime_on_linux() {

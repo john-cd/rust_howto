@@ -6,6 +6,7 @@
 mod tests {
     use super::*;
 
+    /// Runs the preprocessor against the example input.
     #[test]
     fn preprocessor_run() {
         let input_json = r##"[

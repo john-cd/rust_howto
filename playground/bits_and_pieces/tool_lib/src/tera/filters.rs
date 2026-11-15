@@ -48,6 +48,7 @@ pub fn shielded(val: &Value, _context: &HashMap<String, Value>) -> Result<Value>
 mod tests {
     use super::*;
 
+    /// Changes hyphens to underscores in string values.
     #[test]
     fn underscored_replaces_hyphens_with_underscores() {
         let input = Value::String("my-crate-name".to_string());
@@ -56,6 +57,7 @@ mod tests {
         assert_eq!(result, Value::String("my_crate_name".to_string()));
     }
 
+    /// Returns strings unchanged when they contain no hyphens.
     #[test]
     fn underscored_leaves_strings_without_hyphens_unchanged() {
         let input = Value::String("already_underscored".to_string());
@@ -68,6 +70,7 @@ mod tests {
         assert_eq!(empty_result, Value::String(String::new()));
     }
 
+    /// Leaves non-string template values untouched.
     #[test]
     fn underscored_ignores_non_string_values() {
         let context = HashMap::new();
@@ -85,6 +88,7 @@ mod tests {
         assert_eq!(null_result, null_val);
     }
 
+    /// Escapes special characters before generating Shields.io badges.
     #[test]
     fn shielded_escapes_special_characters_for_shields_io() {
         let input = Value::String("badge-name_with spaces-and_chars".to_string());
@@ -96,6 +100,7 @@ mod tests {
         );
     }
 
+    /// Preserves strings that need no escaping.
     #[test]
     fn shielded_leaves_unaffected_strings_unchanged() {
         let input = Value::String("simplebadge".to_string());
@@ -108,6 +113,7 @@ mod tests {
         assert_eq!(empty_result, Value::String(String::new()));
     }
 
+    /// Leaves non-string template values untouched.
     #[test]
     fn shielded_ignores_non_string_values() {
         let context = HashMap::new();
