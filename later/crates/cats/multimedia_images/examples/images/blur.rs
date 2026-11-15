@@ -22,7 +22,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the Gaussian blur example.
-
 pub fn run() {
     main();
 }

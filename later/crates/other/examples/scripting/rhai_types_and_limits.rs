@@ -35,7 +35,6 @@ impl Counter {
     }
 }
 /// Registers a custom type, reuses a `Scope` between runs and limits a script.
-
 fn main() -> Result<(), Box<EvalAltResult>> {
     let mut engine = Engine::new();
 

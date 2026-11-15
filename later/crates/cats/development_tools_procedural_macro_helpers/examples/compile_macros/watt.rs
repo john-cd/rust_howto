@@ -43,7 +43,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 /// Runs the token-transformation example.
-
+///
 /// # Errors
 /// Returns an error if the sample function cannot be parsed or formatted.
 pub fn run() -> anyhow::Result<()> {

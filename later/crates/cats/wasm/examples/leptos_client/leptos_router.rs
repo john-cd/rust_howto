@@ -68,6 +68,13 @@ pub fn App() -> impl IntoView {
 // ANCHOR_END: example
 
 /// Builds the view that demonstrates the nested routes.
+#[cfg_attr(
+    not(test),
+    expect(
+        dead_code,
+        reason = "The aggregate target only advertises tests; the book runner is covered by route rendering tests"
+    )
+)]
 fn run() -> impl IntoView {
     App()
 }
@@ -79,14 +86,13 @@ mod tests {
 
     use super::*;
 
-    /// needed.
-
+    /// Creates a Leptos owner, provides the requested URL, and renders the app.
     fn render(url: &str) -> String {
         let _ = any_spawner::Executor::init_tokio();
         let owner = Owner::new();
         owner.set();
         provide_context(RequestUrl::new(url));
-        App().into_view().to_html()
+        run().into_view().to_html()
     }
 
     #[tokio::test]

@@ -31,24 +31,42 @@ impl std::fmt::Display for ArithmeticError {
 /// Returns a greeting for `name`.
 ///
 /// # Arguments
-/// * `name` - Human-readable value used to identify or display the selected arithmetic error.
-
+/// * `name` - Name included in the greeting.
+///
+/// # Returns
+/// A greeting containing `name`.
 #[uniffi::export]
 pub fn greet(name: String) -> String {
     format!("Hello, {name}!")
 }
 
 /// Adds two numbers, failing instead of wrapping on overflow.
+///
+/// # Arguments
+/// * `a` - First addend.
+/// * `b` - Second addend.
+///
+/// # Returns
+/// The sum when it fits in a `u64`.
+///
+/// # Errors
+/// Returns [`ArithmeticError::IntegerOverflow`] if the sum exceeds `u64::MAX`.
 #[uniffi::export]
 pub fn add(a: u64, b: u64) -> Result<u64, ArithmeticError> {
     a.checked_add(b).ok_or(ArithmeticError::IntegerOverflow)
 }
 /// Prints a greeting and the sum of two numbers.
-
-fn main() -> Result<(), ArithmeticError> {
+fn uniffi_example() -> Result<(), ArithmeticError> {
     println!("{}", greet("UniFFI".to_owned()));
     println!("{}", add(2, 3)?);
     Ok(())
+}
+/// Starts the UniFFI example as a binary.
+///
+/// # Errors
+/// Returns an error if the checked addition overflows.
+fn main() -> Result<(), ArithmeticError> {
+    uniffi_example()
 }
 // ANCHOR_END: example
 
@@ -57,7 +75,7 @@ fn main() -> Result<(), ArithmeticError> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<(), ArithmeticError> {
-    main()
+    uniffi_example()
 }
 
 /// The exported functions can be called directly from Rust.
@@ -81,7 +99,7 @@ mod tests {
     /// Runs the example through its entry point.
     #[test]
     fn test_uniffi_example_entry_point() -> Result<(), ArithmeticError> {
-        main()
+        uniffi_example()
     }
 
     #[test]

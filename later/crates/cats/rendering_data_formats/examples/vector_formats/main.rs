@@ -36,10 +36,14 @@ fn rasterize(svg: &str, max_side: u32) -> anyhow::Result<Pixmap> {
 }
 
 /// Rasterizes the document and reports the output size.
-fn main() -> anyhow::Result<()> {
+fn vector_formats_example() -> anyhow::Result<()> {
     let pixmap = rasterize(SVG, 100)?;
     println!("rendered at {}x{} pixels", pixmap.width(), pixmap.height());
     Ok(())
+}
+/// Runs the vector format example as a binary.
+fn main() -> anyhow::Result<()> {
+    vector_formats_example()
 }
 // ANCHOR_END: example
 
@@ -48,7 +52,7 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    vector_formats_example()
 }
 
 /// Rasterizes an SVG document at a bounded output size.
@@ -56,7 +60,6 @@ pub fn run() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if an operation in the example fails.
 /// Returns an error if a step of the example fails.
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -64,10 +67,9 @@ mod tests {
     /// Runs the example through its entry point.
     #[test]
     fn test_main_entry_point() -> anyhow::Result<()> {
-        main()
+        vector_formats_example()
     }
     /// Verifies the output is scaled to the requested bound.
-
     #[test]
     fn scales_the_longer_side_to_the_bound() -> anyhow::Result<()> {
         let pixmap = rasterize(SVG, 100)?;

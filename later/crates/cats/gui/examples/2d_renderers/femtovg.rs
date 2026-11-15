@@ -29,9 +29,9 @@ use winit::event_loop::EventLoop;
 use winit::window::Window;
 use winit::window::WindowId;
 /// Creates a nonzero surface dimension, clamping minimized windows to one
-
+///
 /// pixel.
-
+///
 /// # Panics
 /// Panics if a positive dimension is nonzero.
 fn nonzero_dimension(dimension: u32) -> NonZeroU32 {
@@ -49,7 +49,6 @@ fn triangle_points() -> [(f32, f32); 4] {
     [(70.0, 70.0), (270.0, 70.0), (230.0, 210.0), (110.0, 210.0)]
 }
 /// Draws one colorful vector shape into a FemtoVG canvas.
-
 fn draw_frame(canvas: &mut Canvas<OpenGl>, width: u32, height: u32, scale: f32) {
     canvas.set_size(width, height, scale);
     canvas.clear_rect(0, 0, width, height, Color::rgb(28, 32, 42));
@@ -81,7 +80,6 @@ impl ApplicationHandler for FemtoVgApp {
     fn resumed(&mut self, _event_loop: &ActiveEventLoop) {}
 
     /// Handles resize, redraw, and close events for the renderer.
-
     fn window_event(
         &mut self,
         event_loop: &ActiveEventLoop,
@@ -191,7 +189,7 @@ pub fn run() -> Result<()> {
     Ok(())
 }
 /// Starts the interactive window example as a Cargo example target.
-
+///
 /// The interactive renderer requires a desktop display and OpenGL context.
 #[cfg(test)]
 mod tests {

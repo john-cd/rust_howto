@@ -18,12 +18,11 @@ pub enum AppEvent {
     /// Decreases the count.
     Decrement,
 }
-/// Returns the count after applying `event`.
-
-/// The logic is a plain function, so it is testable without opening a window.
-
+/// Applies `event` to `count` and returns the updated value.
+///
 /// # Arguments
-/// * `count` - Bound used to limit the amount of work or data accepted by the operation.
+/// * `count` - Current counter value.
+/// * `event` - Increment or decrement action to apply.
 fn apply_event(count: i32, event: &AppEvent) -> i32 {
     match event {
         AppEvent::Increment => count.saturating_add(1),
@@ -32,9 +31,11 @@ fn apply_event(count: i32, event: &AppEvent) -> i32 {
 }
 
 impl Model for AppData {
+    /// Applies a UI event to the counter state.
+    ///
     /// # Arguments
-    /// * `_` - Mutable event context whose state is updated by this operation.
-    /// * `event` - Mutable event whose state is updated by this operation.
+    /// * `_` - Vizia event context, unused by this model.
+    /// * `event` - Event emitted by one of the counter controls.
     fn event(&mut self, _: &mut EventContext, event: &mut Event) {
         event.map(|app_event, _| {
             self.count
@@ -43,10 +44,17 @@ impl Model for AppData {
     }
 }
 /// Runs the Vizia counter window.
-
 /// # Errors
 /// Returns an error if Vizia cannot initialize or run the event loop.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    example()
+}
+
+/// Creates and runs the Vizia counter window.
+///
+/// # Errors
+/// Returns an error if Vizia cannot initialize or run the event loop.
+fn example() -> Result<(), Box<dyn std::error::Error>> {
     Application::new(|cx| {
         let count = Signal::new(0);
         AppData { count }.build(cx);
@@ -76,7 +84,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
-    main()
+    example()
 }
 
 /// Incrementing and decrementing change the count by one.

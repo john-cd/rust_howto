@@ -71,7 +71,6 @@ fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
 /// Runs the example selected in the parsed command line.
-
 fn dispatch(cli: Cli) -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {

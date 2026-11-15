@@ -43,7 +43,6 @@ impl Clock {
 }
 /// Runs a scheduled job until cancellation and returns its simulated start
 /// times.
-
 async fn run_cron<F, Fut>(
     schedule: &Schedule,
     clock: &Clock,

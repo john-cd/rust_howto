@@ -34,14 +34,12 @@ fn counter_view() -> impl IntoView {
 }
 /// Runs the example.
 /// Starts the Floem counter window.
-
 fn main() {
     floem::launch(counter_view);
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the Floem counter example.
-
 pub fn run() {
     main();
 }

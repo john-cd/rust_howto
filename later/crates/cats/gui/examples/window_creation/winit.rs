@@ -55,7 +55,6 @@ fn should_exit(event: &WindowEvent) -> bool {
     matches!(event, WindowEvent::CloseRequested)
 }
 /// Creates the event loop and runs the application.
-
 fn main() -> anyhow::Result<()> {
     let event_loop = EventLoop::new()?;
     event_loop.set_control_flow(ControlFlow::Wait);
@@ -84,7 +83,6 @@ mod tests {
         main().expect("the Winit example should run successfully");
     }
     /// Closes requested asks the application to exit.
-
     #[test]
     fn close_requested_asks_the_application_to_exit() {
         assert!(should_exit(&WindowEvent::CloseRequested));

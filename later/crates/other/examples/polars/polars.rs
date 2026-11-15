@@ -51,7 +51,7 @@ fn summarize_and_join_sales() -> anyhow::Result<(DataFrame, DataFrame)> {
     Ok((summary, joined))
 }
 /// Runs the example and prints the aggregate and joined data frames.
-
+///
 /// # Errors
 /// Returns an error if Polars cannot evaluate the query.
 fn main() -> anyhow::Result<()> {
@@ -61,7 +61,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the Polars example.
-
+///
 /// # Errors
 /// Returns an error if Polars cannot evaluate the query.
 pub fn run() -> anyhow::Result<()> {

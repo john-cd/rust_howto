@@ -12,7 +12,6 @@
 ///
 /// # Arguments
 /// * `name` - Human-readable value used to identify or display the selected mod.
-
 pub fn greet(name: &str) -> String {
     format!("Hello, {name}! Welcome to Tauri.")
 }

@@ -4,8 +4,7 @@
 
 /// Exports a simple Rust function to JavaScript when built for the browser
 mod wasm;
-/// Runs the example.
-
+/// Runs the example through the native host runner.
 fn main() {
     wasm::run();
 }

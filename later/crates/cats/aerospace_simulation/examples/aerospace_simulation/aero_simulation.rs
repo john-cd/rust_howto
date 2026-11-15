@@ -36,7 +36,6 @@ impl Rocket {
     }
 
     /// Advances the simulation by `dt` seconds.
-
     fn update(&mut self, dt: f64) {
         let g = 9.81; // Gravity (m/s^2)
         // Air gets thinner with height. This exponential model starts from the
@@ -168,7 +167,6 @@ fn solve_ballistic_trajectory() -> [f64; 2] {
 // ANCHOR_END: rk4-ballistic-trajectory
 /// Runs the example entry point.
 /// Runs the aerospace simulation examples through the crate entry point.
-
 pub fn run() {
     main();
     let position = propagate_tle_sixty_minutes();

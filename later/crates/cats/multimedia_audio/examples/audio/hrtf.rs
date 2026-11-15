@@ -32,7 +32,6 @@ fn rms(samples: impl Iterator<Item = f32>) -> f32 {
 }
 /// Runs the example.
 /// Spatializes a 440 Hz tone and compares the sound level in both ears.
-
 fn main() -> Result<(), Box<dyn Error>> {
     let sphere = HrirSphere::new(HRIR_FIXTURE_BYTES, SAMPLE_RATE)
         .map_err(|e| format!("invalid HRIR sphere: {e:?}"))?;

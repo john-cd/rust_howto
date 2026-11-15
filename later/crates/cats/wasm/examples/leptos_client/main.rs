@@ -14,7 +14,6 @@ mod icons;
 /// Nested routes, a route parameter and a not-found route with [`leptos_router`].
 mod leptos_router;
 /// Runs the example.
-
 fn main() {
     println!("Run `cargo test --example leptos_client`.");
 }

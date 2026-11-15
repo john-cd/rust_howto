@@ -127,7 +127,6 @@ fn simulate_single_server_queue() -> QueueReport {
 }
 /// Runs the example.
 /// Runs the queue simulation and prints its summary.
-
 fn main() {
     let report = simulate_single_server_queue();
     println!(
@@ -138,7 +137,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the discrete-event queue example through its entry point.
-
 pub fn run() {
     main();
 }

@@ -69,6 +69,7 @@ mod tests {
     /// Verifies the metric name, value, unit and dimension.
     #[test]
     fn datum_carries_dimensions() -> Result<()> {
+        assert_eq!(run()?.metric_name(), Some("RequestLatency"));
         let datum = latency_datum("api", 12.5)?;
         assert_eq!(datum.metric_name(), Some("RequestLatency"));
         assert_eq!(datum.value(), Some(12.5));

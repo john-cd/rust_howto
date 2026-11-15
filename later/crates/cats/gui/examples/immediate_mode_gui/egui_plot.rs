@@ -17,7 +17,6 @@ use egui_plot::PlotPoints;
 use egui_plot::VLine;
 
 /// Samples a sine wave between 0 and 2 pi.
-
 fn sine_points() -> Vec<[f64; 2]> {
     (0..=100)
         .map(|i| {
@@ -77,7 +76,6 @@ fn main() {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

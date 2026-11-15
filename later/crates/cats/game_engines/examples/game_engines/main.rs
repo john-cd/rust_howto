@@ -45,14 +45,13 @@ enum Commands {
     Macroquad,
 }
 /// Runs the example selected on the command line.
-
+///
 /// # Errors
 /// Returns an error if the selected engine's setup or event loop fails.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     dispatch(Cli::parse())
 }
 /// Runs the example selected in the parsed command line.
-
 fn dispatch(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
     if let Some(command) = cli.command {
         match command {

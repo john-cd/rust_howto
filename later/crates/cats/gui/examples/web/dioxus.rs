@@ -31,15 +31,11 @@ fn App() -> Element {
     }
 }
 
-/// Helper function to execute the example entry point.
-pub fn example_body() {
-    main();
-}
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.
-pub fn run() -> Element {
-    main()
+pub fn run() {
+    main();
 }
 
 /// Launches the app: with the `dioxus` feature this opens a window, so it is skipped; without it

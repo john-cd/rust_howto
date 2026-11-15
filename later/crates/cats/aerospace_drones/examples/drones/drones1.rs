@@ -115,7 +115,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the example; it needs a real drone.
-
+///
 /// # Errors
 /// Returns an error if the plan is invalid or the drone rejects a command.
 pub fn run() -> Result<()> {

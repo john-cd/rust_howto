@@ -29,20 +29,18 @@ fn main() {
 }
 /// Runs the example entry point.
 /// Runs the example's host-side runner.
-
 pub fn run() {
     main();
 }
 
+/// Tests the host fallback for the browser-only example.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that the host-side example runner succeeds.
-    /// Runs the web sys example through its entry point.
+    /// Runs the `web-sys` example through its host fallback.
     // output-only: on the host, the example only prints a hint; the wasm32 code
     // needs a browser.
-    /// Verifies that the `web sys` example runs.
     #[test]
     fn test_web_sys_example_entry_point() {
         main();

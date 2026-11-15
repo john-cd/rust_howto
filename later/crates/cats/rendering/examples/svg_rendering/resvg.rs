@@ -33,7 +33,7 @@ fn render_svg() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     Ok(())
 }
 /// Renders the sample SVG to an in-memory pixmap.
-
+///
 /// # Errors
 /// Returns an error if the SVG cannot be parsed or the pixmap cannot be
 /// created.

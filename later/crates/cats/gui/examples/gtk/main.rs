@@ -36,7 +36,6 @@ enum Commands {
 }
 /// Runs the example.
 /// Runs the example selected on the command line.
-
 fn main() {
     run_with_args(std::env::args_os());
 }

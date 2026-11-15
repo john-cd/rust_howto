@@ -18,10 +18,9 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     run_with_output_path(image_output_path_from_args())
 }
 /// Chooses a default output path when none is supplied, then writes the image.
-
+///
 /// # Errors
 /// Returns an error if the run with output path operation cannot satisfy its required invariants.
-
 fn run_with_output_path(output_path: Option<PathBuf>) -> Result<(), Box<dyn Error + Send + Sync>> {
     let output_path = output_path.unwrap_or_else(|| {
         let default = PathBuf::from("generated_image.png");
@@ -72,7 +71,6 @@ fn image_output_path_from_args() -> Option<PathBuf> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }

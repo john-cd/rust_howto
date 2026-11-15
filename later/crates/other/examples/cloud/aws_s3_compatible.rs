@@ -130,7 +130,7 @@ mod tests {
     /// Verifies that the configuration is built without contacting the store.
     #[test]
     fn client_uses_the_endpoint_and_path_style() {
-        let client = s3_compatible_client("http://localhost:9000", "access", "secret");
+        let client = run();
         let config = client.config();
         assert_eq!(config.region().map(Region::as_ref), Some("us-east-1"));
     }

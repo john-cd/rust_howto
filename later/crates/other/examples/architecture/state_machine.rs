@@ -75,7 +75,6 @@ impl StateMachine {
 }
 /// Runs the example.
 /// Sends events to the state machine and prints its state.
-
 fn main() {
     let mut state_machine = StateMachine::new();
 
@@ -125,7 +124,6 @@ fn main() {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

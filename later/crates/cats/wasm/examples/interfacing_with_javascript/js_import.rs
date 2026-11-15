@@ -21,8 +21,7 @@ unsafe extern "C" {
 /// Writes a message through the browser's JavaScript console.
 ///
 /// # Arguments
-/// * `message` - Message to send or handle.
-
+/// * `message` - Text to write to the browser console.
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 #[wasm_bindgen]
 pub fn log_message(message: &str) {
@@ -36,13 +35,12 @@ fn main() {
     #[cfg(not(all(target_arch = "wasm32", target_os = "unknown")))]
     println!("Build for wasm32-unknown-unknown to import console.log.");
 }
-/// Runs the example entry point.
 /// Runs the example's host-side runner.
-
 pub fn run() {
     main();
 }
 
+/// Tests the host fallback for the browser-only example.
 #[cfg(test)]
 mod tests {
     /// Verifies that the host-side example runner succeeds.

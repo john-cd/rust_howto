@@ -8,7 +8,6 @@
 mod accesskit;
 /// Runs the example.
 /// Runs the screen readers example.
-
 fn main() {
     accesskit::run();
 }

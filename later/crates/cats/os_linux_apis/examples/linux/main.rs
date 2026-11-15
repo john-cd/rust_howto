@@ -14,7 +14,6 @@ fn main() -> std::io::Result<()> {
     statx_metadata::run()
 }
 /// Reports that the extended metadata query requires Linux.
-
 #[cfg(not(target_os = "linux"))]
 fn main() {
     println!("This statx example requires Linux.");

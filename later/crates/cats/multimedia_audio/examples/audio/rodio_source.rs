@@ -66,7 +66,6 @@ impl Source for Sine {
     }
 
     /// `None`: the sound never ends.
-
     fn total_duration(&self) -> Option<Duration> {
         None
     }
@@ -75,7 +74,6 @@ impl Source for Sine {
 ///
 /// # Errors
 /// Returns an error if a fallible operation cannot complete.
-
 #[expect(
     dead_code,
     reason = "this optional playback helper requires a device; the example stays device-free"
@@ -109,7 +107,6 @@ fn main() {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

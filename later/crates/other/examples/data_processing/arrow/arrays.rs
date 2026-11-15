@@ -25,7 +25,6 @@ use arrow::util::pretty::print_batches;
 
 /// Creates the sample typed Arrow arrays.
 /// Assembles the arrays from its component values so callers receive a ready-to-use result.
-
 fn create_arrays() -> (Int32Array, Float64Array, StringArray) {
     let integers = Int32Array::from(vec![1, 2, 3, 4, 5]);
     let floats = Float64Array::from(vec![5.0, 4.0, 3.0, 2.0, 1.0]);
@@ -42,10 +41,9 @@ fn create_schema() -> Arc<Schema> {
     ]))
 }
 /// Combines the sample arrays into a `RecordBatch` according to the schema.
-
+///
 /// # Errors
 /// Returns an error if the create record batch operation cannot satisfy its required invariants.
-
 fn create_record_batch(
     schema: Arc<Schema>,
     integers: &Int32Array,
@@ -65,7 +63,6 @@ fn create_record_batch(
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn example_body() -> Result<(Arc<Schema>, Int32Array, Float64Array, RecordBatch)> {
     let (integers, floats, strings) = create_arrays();
     let schema = create_schema();

@@ -14,13 +14,11 @@ fn main() -> std::io::Result<()> {
     macos::run()
 }
 /// Reports that the Foundation system-information query requires macOS.
-
 #[cfg(not(target_os = "macos"))]
 fn main() -> std::io::Result<()> {
     run()
 }
 /// Provides a message-only fallback without linking Apple's frameworks.
-
 #[cfg(not(target_os = "macos"))]
 fn run() -> std::io::Result<()> {
     println!("This Foundation example requires macOS.");

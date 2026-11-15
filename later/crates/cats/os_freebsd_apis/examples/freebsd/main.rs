@@ -14,13 +14,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(freebsd::run()?)
 }
 /// Reports that the kernel query requires FreeBSD.
-
 #[cfg(not(target_os = "freebsd"))]
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     run()
 }
 /// Provides a harmless fallback on hosts without the FreeBSD sysctl interface.
-
 #[cfg(not(target_os = "freebsd"))]
 fn run() -> Result<(), Box<dyn std::error::Error>> {
     println!("This sysctl example requires FreeBSD.");

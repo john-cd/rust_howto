@@ -44,9 +44,7 @@ enum Commands {
     #[command(name = "web_sys")]
     WebSys,
 }
-/// Runs the example.
 /// Runs the example selected on the command line.
-
 fn main() {
     dispatch(Cli::parse());
 }

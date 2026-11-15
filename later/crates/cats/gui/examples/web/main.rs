@@ -34,7 +34,6 @@ enum Commands {
 }
 /// Runs the example.
 /// Runs the example selected on the command line.
-
 fn main() {
     let cli = Cli::parse();
 

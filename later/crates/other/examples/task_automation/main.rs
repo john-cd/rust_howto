@@ -59,6 +59,14 @@ impl Task {
 
 /// Schedules a task and runs it once.
 fn main() -> Result<()> {
+    example()
+}
+
+/// Computes the next scheduled run and executes the configured command once.
+///
+/// # Errors
+/// Returns an error if the schedule, command, or command output is invalid.
+fn example() -> Result<()> {
     // Every day at 02:30:00 UTC.
     let task = Task::new("0 30 2 * * *", "rustc --print $WHAT")?;
     let now = Utc
@@ -84,7 +92,7 @@ fn main() -> Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<()> {
-    main()
+    example()
 }
 
 /// Variables come from the supplied lookup, and quotes group words.

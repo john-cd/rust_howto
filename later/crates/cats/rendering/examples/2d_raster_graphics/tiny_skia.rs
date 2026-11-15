@@ -68,7 +68,6 @@ fn pixel_rgba(pixmap: &Pixmap, x: u32, y: u32) -> Option<[u8; 4]> {
         .map(|pixel| [pixel.red(), pixel.green(), pixel.blue(), pixel.alpha()])
 }
 /// Renders the scene and encodes its PNG bytes in memory.
-
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let pixmap = draw_scene()?;
     let png = pixmap.encode_png()?;

@@ -84,7 +84,7 @@ fn negotiate() -> Result<String> {
 }
 
 /// Prints the offer and timing metadata that a signaling service would forward.
-fn main() -> Result<()> {
+fn streaming_example() -> Result<()> {
     let offer_sdp = negotiate()?;
     println!("{offer_sdp}");
     let payloads = [vec![0x10, 0x20], vec![0x30, 0x40]];
@@ -93,6 +93,10 @@ fn main() -> Result<()> {
     }
     Ok(())
 }
+/// Starts the streaming example when this file is built as a binary.
+fn main() -> Result<()> {
+    streaming_example()
+}
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.
@@ -100,7 +104,7 @@ fn main() -> Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<()> {
-    main()
+    streaming_example()
 }
 
 #[cfg(test)]
@@ -110,7 +114,7 @@ mod tests {
     /// Runs the offer and timing metadata demonstration.
     #[test]
     fn test_main_entry_point() {
-        main().expect("the example should run successfully");
+        streaming_example().expect("the example should run successfully");
     }
 
     /// The offer advertises one send-only audio line and the local candidate.

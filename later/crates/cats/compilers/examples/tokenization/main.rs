@@ -6,7 +6,6 @@
 mod tokenization;
 /// Runs the example.
 /// Runs the lexer example.
-
 fn main() {
     tokenization::run();
 }

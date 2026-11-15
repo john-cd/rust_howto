@@ -38,12 +38,12 @@ fn increment_profile(profile: &mut Profile) -> Result<(), &'static str> {
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use wasm_bindgen::prelude::*;
 /// Deserializes a JavaScript profile, increments its visit count, and returns
-
+///
 /// it.
-
+///
 /// # Arguments
 /// * `value` - Value the serde wasm bindgen operation validates, transforms, or stores.
-
+///
 /// # Errors
 /// Returns an error if the increment visits operation cannot satisfy its required invariants.
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]

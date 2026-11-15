@@ -42,7 +42,7 @@ impl UserRepository for InMemoryRepository {
     }
 
     /// Finds the current value.
-
+    ///
     /// # Arguments
     /// * `id` - Identifier used to select the in memory repository record or cache entry affected
     ///   by this operation.
@@ -69,7 +69,7 @@ impl UserRepository for LoggingRepository {
     }
 
     /// Finds the current value.
-
+    ///
     /// # Arguments
     /// * `id` - Identifier used to select the logging repository record or cache entry affected by
     ///   this operation.
@@ -90,7 +90,6 @@ impl<R: UserRepository> UserService<R> {
     /// * `id` - Identifier used to select the user service record or cache entry affected by this
     ///   operation.
     /// * `name` - Human-readable value used to identify or display the selected user service.
-
     fn register(&mut self, id: u32, name: &str) {
         self.repository.save(id, &name.trim().to_uppercase());
     }
@@ -98,7 +97,6 @@ impl<R: UserRepository> UserService<R> {
     /// # Arguments
     /// * `id` - Identifier used to select the user service record or cache entry affected by this
     ///   operation.
-
     fn display_name(&self, id: u32) -> String {
         self.repository
             .find(id)
@@ -107,7 +105,6 @@ impl<R: UserRepository> UserService<R> {
 }
 /// Runs the example.
 /// Runs the same core logic with two different adapters.
-
 fn main() {
     let mut service = UserService {
         repository: InMemoryRepository::default(),
@@ -126,7 +123,6 @@ fn main() {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

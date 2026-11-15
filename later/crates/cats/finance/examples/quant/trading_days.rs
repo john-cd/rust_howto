@@ -85,7 +85,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 /// Runs the trading days example through its entry point.
-
+///
 /// # Errors
 /// Returns an error if the calendar rejects a date.
 pub fn run() -> Result<()> {
@@ -102,7 +102,6 @@ mod tests {
         main()
     }
     /// Verifies that the calendar knows Independence Day 2025 (a Friday).
-
     #[test]
     fn independence_day_is_not_a_trading_day() -> Result<()> {
         let calendar = TradingCalendar::new(Market::NYSE)?;

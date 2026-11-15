@@ -20,7 +20,7 @@ impl LuaUserData for Counter {
     ///
     /// # Arguments
     /// * `methods` - Mutable m whose state is updated by this operation.
-
+    ///
     /// # Errors
     /// Returns an error if a fallible operation cannot complete.
     fn add_methods<M: LuaUserDataMethods<Self>>(methods: &mut M) {
@@ -32,7 +32,7 @@ impl LuaUserData for Counter {
 }
 
 /// Creates userdata and calls its method from Lua.
-
+///
 /// # Errors
 /// An error is returned if create_userdata, globals fails.
 fn main() -> LuaResult<()> {
@@ -57,10 +57,11 @@ pub fn run() -> LuaResult<()> {
 mod tests {
     use super::*;
 
-    /// value.
-
+    /// Runs the Lua counter example and verifies the incremented value.
+    ///
     /// # Errors
     /// Returns an error if a fallible operation cannot complete.
+    #[test]
     fn lua_calls_counter_method() -> LuaResult<()> {
         main()
     }

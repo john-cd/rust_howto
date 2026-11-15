@@ -13,7 +13,6 @@ use js_sys::Date;
 use wasm_bindgen::prelude::*;
 
 /// Returns the current JavaScript date as a string on the browser target.
-
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 #[wasm_bindgen]
 pub fn get_current_time() -> String {
@@ -29,20 +28,18 @@ fn main() {
 }
 /// Runs the example entry point.
 /// Runs the example's host-side runner.
-
 pub fn run() {
     main();
 }
 
+/// Tests the host fallback for the browser-only example.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that the host-side example runner succeeds.
-    /// Runs the js sys example through its entry point.
+    /// Runs the `js-sys` example through its host fallback.
     // output-only: on the host, the example only prints a hint; the wasm32 code
     // needs a browser.
-    /// Verifies that the `js sys` example runs.
     #[test]
     fn test_js_sys_example_entry_point() {
         main();

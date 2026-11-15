@@ -40,7 +40,6 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 /// Requests a headless device, doubles the storage-buffer values, and reads
 /// them back.
-
 #[expect(
     clippy::little_endian_bytes,
     reason = "WGSL u32 storage buffers use little-endian byte order"
@@ -136,7 +135,7 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
 }
 // ANCHOR_END: example
 /// Maps a staging buffer and converts its little-endian words to `u32` values.
-
+///
 /// # Errors
 ///
 /// Returns an error if mapping, device polling, callback delivery, or byte
@@ -208,7 +207,6 @@ mod tests {
         run()
     }
     /// Exercises the complete compute workflow on an available GPU adapter.
-
     #[test]
     #[ignore = "requires a compatible GPU adapter"]
     fn test_main_entry_point() -> Result<(), Box<dyn Error>> {

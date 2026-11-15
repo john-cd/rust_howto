@@ -45,7 +45,6 @@ fn App() -> Html {
 }
 /// Runs the example.
 /// Runs the Yew example in the browser target.
-
 fn main() {
     #[cfg(target_arch = "wasm32")]
     yew::Renderer::<App>::new().render();
@@ -56,7 +55,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the Yew example for the crate's example harness.
-
 pub fn run() {
     main();
 }

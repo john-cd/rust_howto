@@ -13,9 +13,6 @@ use pyo3::prelude::*;
 use pyo3::types::PyTuple;
 
 /// Calls a Python function with and without arguments.
-
-///
-
 fn test_my_function() -> PyResult<()> {
     Python::attach(|py| {
         let fun: Py<PyAny> = PyModule::from_code(
@@ -48,7 +45,7 @@ fn test_my_function() -> PyResult<()> {
     })
 }
 /// Runs a Python script and calls a Python function.
-
+///
 /// # Errors
 /// Returns a Python error if interpreter initialization or a Python operation
 /// fails.
@@ -80,7 +77,6 @@ mod tests {
     use super::*;
 
     ///
-
     #[test]
     #[cfg_attr(
         target_os = "windows",

@@ -87,7 +87,7 @@ impl MainState {
 
 impl EventHandler for MainState {
     /// Advances the ball for one frame.
-
+    ///
     /// # Arguments
     /// * `context` - Application state and services required to perform the operation.
     fn update(&mut self, context: &mut Context) -> GameResult {
@@ -110,14 +110,14 @@ impl EventHandler for MainState {
     }
 }
 /// Builds the game context and starts the ggez event loop.
-
+///
 /// # Errors
 /// Returns a ggez error if context or graphics initialization fails.
 pub fn example_body() -> GameResult {
     let (context, event_loop) = ContextBuilder::new("rust_howto_ggez", "rust_howto").build()?;
     let state = MainState::new(&context)?;
 
-    event::example_body(context, event_loop, state)
+    event::run(context, event_loop, state)
 }
 // ANCHOR_END: example
 

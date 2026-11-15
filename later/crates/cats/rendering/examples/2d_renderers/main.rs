@@ -70,7 +70,7 @@ fn rasterize(mesh: &VertexBuffers<[f32; 2], u16>) -> anyhow::Result<Pixmap> {
 }
 
 /// Runs the tessellation-then-raster pipeline and reports the result.
-fn main() -> anyhow::Result<()> {
+fn two_d_rendering_example() -> anyhow::Result<()> {
     let mesh = tessellate()?;
     let pixmap = rasterize(&mesh)?;
     let painted = pixmap
@@ -85,6 +85,13 @@ fn main() -> anyhow::Result<()> {
     );
     Ok(())
 }
+/// Starts the 2D rendering example as a binary.
+///
+/// # Errors
+/// Returns an error if tessellation or rasterization fails.
+fn main() -> anyhow::Result<()> {
+    two_d_rendering_example()
+}
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.
@@ -92,7 +99,7 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    two_d_rendering_example()
 }
 
 /// Tessellates a path with Lyon and rasterizes the mesh with tiny-skia.
@@ -100,7 +107,6 @@ pub fn run() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if an operation in the example fails.
 /// Returns an error if a step of the example fails.
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -108,10 +114,9 @@ mod tests {
     /// Runs the example through its entry point.
     #[test]
     fn test_main_entry_point() -> anyhow::Result<()> {
-        main()
+        two_d_rendering_example()
     }
     /// Verifies that the triangle's centroid is painted and a corner is not.
-
     #[test]
     fn rasterizes_the_tessellated_triangle() -> anyhow::Result<()> {
         let pixmap = rasterize(&tessellate()?)?;
