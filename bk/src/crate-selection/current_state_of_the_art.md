@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 # Current State of the Art
 

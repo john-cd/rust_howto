@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 # Global Statics and Lazy Initialization
 

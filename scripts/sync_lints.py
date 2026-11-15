@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# TODO Reviewed ??-??-2026
+
+# TODO Reviewed ??-??-2026.
 
 """Keep the lint tables of every workspace identical to the shared profiles.
 

@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Data parallelism applies an operation across independent items or tasks. These recipes use Rayon; there is no separate `multithreading.md` page in the current draft tree, so the Rayon guidance has one home here.
 

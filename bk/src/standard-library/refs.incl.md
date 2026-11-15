@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~standard-library~accept-either-owned-or-borrowed-values]: clone-on-write.md#accept-either-owned-or-borrowed-values
 [ex~standard-library~adapters-for-working-with-references]: optional_values.md#adapters-for-working-with-references

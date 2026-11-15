@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [postgresql~read-only-transactions]: https://www.postgresql.org/docs/current/sql-set-transaction.html
 [postgresql~sequence-functions]: https://www.postgresql.org/docs/current/functions-sequence.html

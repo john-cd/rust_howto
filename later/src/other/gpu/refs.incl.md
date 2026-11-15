@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~gpu~rust-gpu]: gpu.md#rust-gpu
 [rust-gpu~shader-guide]: https://github.com/Rust-GPU/rust-gpu/blob/main/docs/src/writing-shader-crates.md

@@ -1,4 +1,5 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
+
 <!-- markdownlint-disable MD057 -->
 
 [ex~science_robotics~astar]: artificial_intelligence.md#astar

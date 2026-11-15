@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~config~config]: configuration.md#config
 [ex~config~confy]: configuration.md#confy

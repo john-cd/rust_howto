@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~template-engine~create-html-from-template]: tera.md#create-html-from-template
 [ex~template-engine~sanitize-vs-escape]: tera.md#sanitize-vs-escape

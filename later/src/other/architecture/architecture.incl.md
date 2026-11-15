@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 This section connects architectural choices to the Rust code and systems that use
 them. In Rust, architecture includes deployable processes and external interfaces as

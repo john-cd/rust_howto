@@ -1,4 +1,4 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 # Purpose: Generate book indexes and a sitemap with mdbook-utils.
 # Usage: Run with bash bk/crates/cats/development_tools_documentation/examples/mdbook_utils/indexes_and_sitemap.sh from the example workspace, as described in the book.

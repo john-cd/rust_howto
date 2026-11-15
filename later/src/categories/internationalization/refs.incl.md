@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [c~whoami~docs]: https://docs.rs/whoami
 [c~unic-langid~docs]: https://docs.rs/unic-langid

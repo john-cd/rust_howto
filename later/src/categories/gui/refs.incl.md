@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [c~clipboard-win~docs]: https://docs.rs/clipboard-win
 [navigator~clipboard~mdn]: https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API

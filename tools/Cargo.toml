@@ -16,7 +16,7 @@ members = [
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # A unified CLI for book tooling
-book_tool = { git = "https://github.com/john-cd/book_tooling", rev = "1e9cc3458f19d53c102aca5da36bc7e8baeac2d3", default-features = false, features = [
+book_tool = { git = "https://github.com/john-cd/book_tooling", rev = "f350d220d567a5d5c905a061730ab761c185ddc1", default-features = false, features = [
     "directives",
 ] }
 # `Cargo.toml` struct definitions for parsing with Serde
@@ -46,7 +46,7 @@ mockito = "1.7.2"
 # Single assignment cells and lazy values.
 once_cell = "1.21.4"
 # A collection of Rust-based tools for processing Markdown files, particularly for books and documentation projects.
-parse_lib = { git = "https://github.com/john-cd/book_tooling", rev = "1e9cc3458f19d53c102aca5da36bc7e8baeac2d3" }
+parse_lib = { git = "https://github.com/john-cd/book_tooling", rev = "f350d220d567a5d5c905a061730ab761c185ddc1" }
 # A lightweight regex engine that optimizes for binary size and compilation time.
 regex = "1.13.1"
 # higher level HTTP client library

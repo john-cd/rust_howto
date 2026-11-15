@@ -1,4 +1,4 @@
-# TODO Reviewed ??-??-2026
+# TODO Reviewed ??-??-2026.
 
 # Purpose: Generate link reports with mdbook-utils.
 # Usage: Run with bash bk/crates/cats/development_tools_documentation/examples/mdbook_utils/link_reports.sh from the example workspace, as described in the book.

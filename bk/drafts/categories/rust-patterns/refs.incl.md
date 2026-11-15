@@ -1,4 +1,5 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
+
 <!-- markdownlint-disable MD057 -->
 
 [ex~rust-patterns~abstract-factory]: creational_patterns.md#abstract-factory

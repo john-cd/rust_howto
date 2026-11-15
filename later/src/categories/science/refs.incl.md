@@ -1,4 +1,5 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
+
 <!-- markdownlint-disable MD057 -->
 
 [ex~science~classical-ml]: classical_machine_learning.md#classical-ml

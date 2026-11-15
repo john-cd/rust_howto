@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~cryptography_cryptocurrencies~cryptocurrencies]: cryptocurrencies.md#cryptocurrencies
 [ethers-rs~repo]: https://github.com/gakonst/ethers-rs

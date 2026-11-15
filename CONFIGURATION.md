@@ -1,8 +1,8 @@
+<!-- TODO Reviewed ??-??-2026. -->
+
 # Repository configuration
 
 Reviewed 2026-11-01. This is the consistency plan and reference for `rust_howto`.
-
-<!-- TODO Reviewed ??-??-2026 -->
 
 Keep this file, README, contributor guidance, and configuration comments synchronized.
 
@@ -73,13 +73,13 @@ config discovery starts at the command's working directory; run from the owning 
 especially when that workspace has a child config. Config values override manifest profiles,
 and environment/command-line overrides take precedence over config values.
 
-| Profile                                | Workspace code                                           | Dependencies and build tools                                                                                                              |
-| -------------------------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `dev` / `test` | Level 0, no symbols, incremental disabled | Level 1 by default, selected compute-heavy dependencies at level 3, no symbols. |
-| `debug` | Level 2 symbols for workspace crates | Same optimized dependency settings as `dev`, with dependency symbols disabled. |
-| `ci`                                   | Inherits `dev`, incremental disabled                     | Same flags as `dev` for dependency cache reuse. Use release jobs for performance validation.                                              |
-| `tools` | Level 2 for repository tools | Same dependency settings as `dev`. |
-| `release` / other specialized profiles | Preserve existing shipping/profiling choices             | Preserve existing shipping/profiling choices.                                                                                             |
+| Profile                                | Workspace code                               | Dependencies and build tools                                                                 |
+| -------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `dev` / `test`                         | Level 0, no symbols, incremental disabled    | Level 1 by default, selected compute-heavy dependencies at level 3, no symbols.              |
+| `debug`                                | Level 2 symbols for workspace crates         | Same optimized dependency settings as `dev`, with dependency symbols disabled.               |
+| `ci`                                   | Inherits `dev`, incremental disabled         | Same flags as `dev` for dependency cache reuse. Use release jobs for performance validation. |
+| `tools`                                | Level 2 for repository tools                 | Same dependency settings as `dev`.                                                           |
+| `release` / other specialized profiles | Preserve existing shipping/profiling choices | Preserve existing shipping/profiling choices.                                                |
 
 `test`, `ci`, `debug`, and `tools` inherit `dev`. Cargo checks an exact package override first, then
 the wildcard package override, then the build override. Independent `bk/crates`, `later/crates`,

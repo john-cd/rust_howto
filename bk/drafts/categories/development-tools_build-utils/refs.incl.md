@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~development-tools_build-utils~autocfg]: autocfg.md#autocfg
 [ex~development-tools_build-utils~build-info]: build_time_tooling.md#build-info

@@ -7,6 +7,7 @@ name = "mdbook-scrub"
 version = "0.2.0"
 description = "A mdbook preprocessor"
 edition = "2024"
+rust-version.workspace = true
 license-file.workspace = true
 readme = "README.md"
 homepage = "https://github.com/john-cd/rust_howto/"

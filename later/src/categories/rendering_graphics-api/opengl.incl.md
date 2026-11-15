@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 | [`gl`][ex~rendering_graphics-api~gl] | [![gl][c~gl~docs~badge]][c~gl~docs]{{hi:gl}} | {{#categories rendering}} |
 | [`glium`][ex~rendering_graphics-api~glium] | [![glium][c~glium~docs~badge]][c~glium~docs]{{hi:glium}} | {{#categories rendering}} |

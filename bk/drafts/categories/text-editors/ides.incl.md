@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Most Rust editors use [`rust-analyzer`][rust-analyzer~website]↗, a language server that provides code completion, navigation, refactoring, and diagnostics through the Language Server Protocol. RustRover instead has a Rust analysis engine maintained by JetBrains. VS Code, RustRover, Zed, Helix, Neovim, and Emacs all support Rust; their setup and debugging workflows differ.
 

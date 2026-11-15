@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 The WebAssembly target and the host runtime must agree on the module's imports and supported features.
 

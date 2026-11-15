@@ -90,6 +90,8 @@ jobs:
             RUSTFMT_TOOLCHAIN="$(sed -n "s/^channel *= *\"\([^\"]*\)\".*/\1/p" "$RUSTFMT_TOOLCHAIN_FILE")"
             cd /code/tools
             cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
+            rustup toolchain install 1.98.1 --profile minimal
+            cargo +1.98.1 check --workspace --all-targets --locked
             cargo build --workspace --all-targets --locked --all-features
             cargo clippy --workspace --all-targets --locked --all-features -- --deny warnings
             cargo test --workspace --all-targets --locked --all-features

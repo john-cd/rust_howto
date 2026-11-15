@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~aerospace_protocols~aerospace_protocols]: aerospace_protocols.md#aerospace_protocols
 [c~embedded-can~docs]: https://docs.rs/embedded-can/latest/embedded_can/

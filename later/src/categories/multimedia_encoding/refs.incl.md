@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~multimedia_encoding~encoding]: encoding.md#encoding
 [ex~multimedia_encoding~decode]: encoding.md#decode-audio

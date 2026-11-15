@@ -1,4 +1,4 @@
-// TODO Reviewed ??-??-2026
+// TODO Reviewed ??-??-2026.
 
 // markdownlint-cli2 configuration for the book content.
 // Run `just lint-md` from bk/ (`just mdlint` remains an alias).

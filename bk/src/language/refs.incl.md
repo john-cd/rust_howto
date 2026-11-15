@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~language~accept-various-iterable-types]: iterators.md#accept-various-iterable-types
 [ex~language~adapters]: iterators.md#adapters

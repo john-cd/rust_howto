@@ -190,7 +190,6 @@ xxhash-rust = { opt-level = 3, debug = 0 }
 zstd = { opt-level = 3, debug = 0 }
 zstd-sys = { opt-level = 3, debug = 0 }
 
-
 # Cargo defaults reference (Cargo 1.100.0). Comments only.
 #
 # [build]

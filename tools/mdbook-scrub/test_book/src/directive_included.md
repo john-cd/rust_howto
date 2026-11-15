@@ -1,3 +1,3 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Included crate directive: {{#crate serde}}

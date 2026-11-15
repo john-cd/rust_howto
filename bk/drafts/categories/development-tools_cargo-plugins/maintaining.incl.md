@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Use maintenance plugins when Cargo's built-in release, feature-testing, and cache commands do not cover the workflow. Review the tool's supported Rust versions, platforms, license, and permissions before adopting it.
 

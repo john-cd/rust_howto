@@ -1,4 +1,5 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
+
 <!-- markdownlint-disable MD057 -->
 
 [debugger~codelldb]: https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb

@@ -1,4 +1,5 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
+
 <!-- markdownlint-disable MD057 -->
 [arc42~decisions]: https://docs.arc42.org/section-9/
 [arc42~quality~requirements]: https://docs.arc42.org/section-10/

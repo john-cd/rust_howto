@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [c~fluent-bundle~docs]: https://docs.rs/fluent-bundle
 [c~fluent-langneg~docs]: https://docs.rs/fluent-langneg

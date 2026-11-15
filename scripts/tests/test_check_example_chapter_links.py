@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# TODO Reviewed ??-??-2026
+
+# TODO Reviewed ??-??-2026.
 
 """Regression tests for the unfenced-include audit.
 

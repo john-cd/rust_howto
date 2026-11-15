@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Digital signatures let a private-key holder sign data so that a verifier can check its integrity and confirm that the signature was made by someone holding the corresponding key. A signature does not encrypt data or identify a real-world person; applications must establish trust in public keys separately.
 

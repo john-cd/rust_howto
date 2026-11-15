@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~automation~find-unwraps]: xtask.md#find-unwraps
 [ex~automation~git-churn]: git.md#git-churn

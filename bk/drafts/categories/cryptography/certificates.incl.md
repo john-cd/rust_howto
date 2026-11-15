@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 An [X.509 certificate][rfc~5280] binds a subject's public key to identity and
 usage claims. It contains an issuer, a validity interval, a signature, and

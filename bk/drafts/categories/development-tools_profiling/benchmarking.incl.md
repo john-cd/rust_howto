@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Benchmark first to establish a repeatable baseline; profile when you need to
 find where the time or memory goes. Use representative inputs, keep the

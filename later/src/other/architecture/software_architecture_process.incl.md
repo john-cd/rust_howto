@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 Architecture is the set of important choices about a system's structure, boundaries,
 runtime behavior, and the qualities it must provide. It is not a one-time diagramming

@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~game-engines~bevy]: game_engines.md#bevy
 [ex~game-engines~fyrox]: game_engines.md#fyrox

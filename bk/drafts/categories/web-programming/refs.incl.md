@@ -1,4 +1,5 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
+
 [ex~web-programming~ammonia]: html_sanitization.md#ammonia
 [ex~web-programming~check-a-webpage-for-broken-links]: scraping.md#check-a-webpage-for-broken-links
 [ex~web-programming~create-a-base-url-by-removing-path-segments]: url.md#create-a-base-url-by-removing-path-segments

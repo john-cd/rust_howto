@@ -1,4 +1,5 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
+
 <!-- markdownlint-disable MD057 -->
 [actions-checkout~repo]: https://github.com/actions/checkout
 [cargo-audit~repo]: https://github.com/rustsec/rustsec/tree/main/cargo-audit

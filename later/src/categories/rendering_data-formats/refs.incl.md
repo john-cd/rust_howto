@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~rendering_data-formats~gltf-triangle]: 3d_model_formats.md#gltf-triangle
 [c~basis-universal~docs]: https://docs.rs/basis-universal

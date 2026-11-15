@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~documentation~badges]: badges.md#badges
 [ex~documentation~cd-ci]: mdbook.md#cd-ci

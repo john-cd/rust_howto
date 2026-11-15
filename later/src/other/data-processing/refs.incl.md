@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~data-processing~arrow]: data_engineering.md#arrow
 [ex~data-processing~arrow-ipc]: data_engineering.md#arrow-ipc

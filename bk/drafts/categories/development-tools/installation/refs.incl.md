@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026 -->
+<!-- TODO Reviewed ??-??-2026. -->
 
 [ex~installation~cargo-binstall]: install.md#cargo-binstall
 [ex~installation~cargo-install]: install.md#cargo-install
