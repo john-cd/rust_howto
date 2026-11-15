@@ -148,8 +148,7 @@ fn test_cli_invalid_arguments() {
     let stderr_unknown = String::from_utf8_lossy(&output_unknown_flag.stderr);
     assert!(stderr_unknown.contains("unexpected argument"));
 }
-/// Verifies short and long help, as well as `--version`, display expected information with success
-/// status.
+/// Displays the expected help and version text for supported flags.
 #[test]
 fn test_cli_help_and_version() {
     let output_short_help = run_cli(&["-h"], &[]);

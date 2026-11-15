@@ -53,12 +53,14 @@ mod tests {
     }
     /// valid for the demo CLI, so it only works when they are ignored.
 
+    /// Runs the program default command successfully.
     #[test]
     #[ignore = "main() parses the real process arguments, which belong to the test harness"]
     fn main_runs() {
         main();
     }
 
+    /// Runs successfully when no command-line arguments are supplied.
     #[test]
     fn no_arguments() {
         assert_eq!(
@@ -67,6 +69,7 @@ mod tests {
         );
     }
 
+    /// Maps verbosity flags to their expected levels.
     #[test]
     fn verbosity_levels() {
         assert_eq!(
@@ -77,6 +80,7 @@ mod tests {
         assert_eq!(describe_args(&["demo", "-vvv"])[0], "Don't be crazy");
     }
 
+    /// Parses configuration and file-opening command arguments.
     #[test]
     fn config_and_open() {
         let lines = describe_args(&["demo", "-c", "a.toml", "open", "x.csv"]);
@@ -85,6 +89,7 @@ mod tests {
     }
     /// Queries and test.
 
+    /// Parses the query and test subcommands.
     #[test]
     fn query_and_test() {
         assert_eq!(

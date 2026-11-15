@@ -153,6 +153,7 @@ mod tests {
         check_environment(Some("config.toml"), None)
     }
 
+    /// Runs the child process with only the configured environment variables.
     #[test]
     #[ignore = "needs a parent-controlled CLI environment"]
     fn child_checks_controlled_environment() {
@@ -216,6 +217,7 @@ mod tests {
     }
     /// Checks that repeated `-v` flags raise the verbosity.
 
+    /// Accepts repeated verbose flags.
     #[test]
     fn test_arg_verbose_multiple() {
         let m = cli().get_matches_from(vec!["prog", "-vvv"]);
