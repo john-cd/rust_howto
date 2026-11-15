@@ -21,7 +21,7 @@ use anyhow::Result;
 use anyhow::bail;
 use tello::Drone;
 
-/// The longest total hover time the plan may contain.
+// The longest total hover time the plan may contain.
 // Safety limit: a small drone has only a few minutes of battery.
 
 /// Shared `max hover` used by this module.

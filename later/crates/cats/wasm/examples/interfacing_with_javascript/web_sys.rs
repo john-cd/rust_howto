@@ -39,7 +39,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the `web-sys` example through its host fallback.
+    // Runs the `web-sys` example through its host fallback.
     // output-only: on the host, the example only prints a hint; the wasm32 code
     // needs a browser.
 

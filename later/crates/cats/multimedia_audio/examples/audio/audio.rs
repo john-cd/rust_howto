@@ -89,7 +89,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 mod tests {
     use super::*;
 
-    /// Runs the audio example through its entry point.
+    // Runs the audio example through its entry point.
     // output-only: the example plays a tone on the default output device.
 
     /// Runs the audio example through its entry point without error.

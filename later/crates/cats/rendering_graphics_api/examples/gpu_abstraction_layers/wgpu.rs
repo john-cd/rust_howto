@@ -51,7 +51,6 @@ fn main() -> Result<(), Box<dyn Error>> {
     clippy::little_endian_bytes,
     reason = "WGSL u32 storage buffers use little-endian byte order"
 )]
-
 /// Runs compute.
 async fn run_compute() -> Result<(), Box<dyn Error>> {
     let mut instance_desc = wgpu::InstanceDescriptor::new_without_display_handle();
@@ -153,7 +152,6 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
     clippy::little_endian_bytes,
     reason = "WGSL u32 storage buffers use little-endian byte order"
 )]
-
 /// Reads u32 values.
 fn read_u32_values(
     device: &wgpu::Device,

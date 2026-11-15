@@ -61,7 +61,6 @@ pub fn run() {
 }
 
 #[cfg(test)]
-
 /// Tests the `yew` example and its documented behavior.
 #[cfg(not(target_arch = "wasm32"))]
 mod tests {

@@ -209,7 +209,7 @@ fn sign(claims: &serde_json::Value, secret: &str) -> anyhow::Result<String> {
     Ok(jsonwebtoken::encode(
         &Header::new(jsonwebtoken::Algorithm::HS256),
         claims,
-        &EncodingKey::from_secret(secret.as_bytes()),
+        &EncodingKey::from_secret(secret.as_bytes())?,
     )?)
 }
 

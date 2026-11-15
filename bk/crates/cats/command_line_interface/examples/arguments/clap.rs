@@ -23,7 +23,6 @@ use clap::Subcommand;
 // Alternatively, use `#[command(name = "MyApp")]`, etc...
 #[command(author, version, about, long_about = None)]
 // Displays Help if no arguments are provided:
-
 /// Stores the command-line options accepted by the example.
 /// State required by `Cli` during transport operations.
 #[command(arg_required_else_help = true)]

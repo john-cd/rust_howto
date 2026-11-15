@@ -77,7 +77,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the async traits3 example through its entry point.
+    // Runs the async traits3 example through its entry point.
     // output-only: the example only prints its steps; the other tests
     // check that each step completes.
 

@@ -63,7 +63,7 @@ mod tests {
         Ok(())
     }
 
-    /// The `record` example runs offline.
+    // The `record` example runs offline.
     // Prometheus and Route install a global recorder, so they run in their
     // own modules' tests.
 

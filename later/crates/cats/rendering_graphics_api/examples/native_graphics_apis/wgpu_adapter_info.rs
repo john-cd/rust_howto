@@ -54,7 +54,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 mod tests {
     use super::*;
 
-    /// Queries the graphics backend when a compatible GPU adapter is present.
+    // Queries the graphics backend when a compatible GPU adapter is present.
     // output-only: prints the adapter that the machine provides.
 
     /// Verifies graphics example entry point.

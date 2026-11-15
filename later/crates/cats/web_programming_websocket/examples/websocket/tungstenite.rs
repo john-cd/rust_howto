@@ -16,7 +16,7 @@ use tungstenite::client::IntoClientRequest;
 use tungstenite::connect;
 use tungstenite::http::Request;
 
-/// WebSocket echo service endpoint used by this example.
+// WebSocket echo service endpoint used by this example.
 // `wss://` is WebSocket over TLS (encrypted), like `https://`; `ws://` is
 // unencrypted. An echo service sends back whatever it receives.
 

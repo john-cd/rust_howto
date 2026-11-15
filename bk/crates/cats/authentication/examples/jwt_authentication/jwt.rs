@@ -48,7 +48,7 @@ pub fn create_jwt(claims: &Claims, secret: &[u8]) -> Result<String, jsonwebtoken
     encode(
         &Header::new(Algorithm::HS256),
         claims,
-        &EncodingKey::from_secret(secret),
+        &EncodingKey::from_secret(secret)?,
     )
 }
 
@@ -64,7 +64,7 @@ pub fn create_jwt(claims: &Claims, secret: &[u8]) -> Result<String, jsonwebtoken
 /// key.
 pub fn verify_jwt(token: &str, secret: &[u8]) -> Result<Claims, jsonwebtoken::errors::Error> {
     let validation = Validation::new(Algorithm::HS256);
-    decode::<Claims>(token, &DecodingKey::from_secret(secret), &validation).map(|data| data.claims)
+    decode::<Claims>(token, &DecodingKey::from_secret(secret)?, &validation).map(|data| data.claims)
 }
 // ANCHOR_END: example
 

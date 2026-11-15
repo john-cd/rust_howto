@@ -7,7 +7,7 @@
 use std::fmt::Debug;
 use std::fmt::Display;
 
-/// Generic functions can accept trait bounds.
+// Generic functions can accept trait bounds.
 // Here we define a generic function `print_value` that takes one argument
 // `value` of any type `T`. The `T: std::fmt::Debug` part is a trait bound,
 // meaning `T` must implement the `Debug` trait, so that it can be printed using

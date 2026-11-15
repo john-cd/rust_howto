@@ -88,6 +88,11 @@ broken_intra_doc_links = "warn"
 # Detect crates missing crate-level module documentation
 missing_crate_level_docs = "warn"
 
+# Optional dependencies used only by custom `[[example]]` targets are not
+# detected by Cargo's unused-dependency analysis.
+[workspace.lints.cargo]
+unused_dependencies = "allow"
+
 # See also clippy.toml
 [workspace.lints.clippy]
 # Relaxed: Examples nest closures as in the documentation.

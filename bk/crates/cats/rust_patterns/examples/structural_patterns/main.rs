@@ -66,8 +66,6 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
 /// Every subcommand is parsed and runs its example.
 #[cfg(test)]
 mod tests {
-    use clap::CommandFactory as _;
-
     use super::*;
 
     /// An unknown subcommand is rejected by the parser.

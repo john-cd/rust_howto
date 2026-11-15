@@ -48,13 +48,12 @@ pub fn run() -> anyhow::Result<()> {
 }
 
 #[cfg(test)]
-
 /// Tests the AWS example entry point when credentials are available.
 mod tests {
     use super::*;
 
-    /// Requires AWS credentials and network access, so it is ignored by
-    /// default.
+    // Requires AWS credentials and network access, so it is ignored by
+    // default.
     // output-only: the example logs the bucket names of the AWS account.
 
     /// Lists buckets when AWS credentials and network access are available.

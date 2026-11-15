@@ -118,7 +118,6 @@ fn example() -> anyhow::Result<()> {
 
 /// Verifies the example identifies its Loco application by crate name.
 #[cfg(test)]
-
 /// Tests the `main` example and its documented behavior.
 #[cfg(feature = "loco-support")]
 mod tests {

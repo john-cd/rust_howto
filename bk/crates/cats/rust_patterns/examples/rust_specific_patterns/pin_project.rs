@@ -26,8 +26,6 @@ use pin_project::pinned_drop;
 
 /// The `#[pin_project]` attribute creates a projection type covering all the
 /// fields of struct or enum.
-// ///
-
 /// - For the fields that use #[pin] attribute, it creates the pinned reference to the field.
 /// - For the other fields, it creates a normal reference to the field.
 ///
@@ -260,9 +258,8 @@ impl<T: Debug> PinnedDrop for PinnedWithDrop<T> {
     }
 }
 
-/// Creates a value with a custom `drop` implementation, which runs at the end
 // Example 4: Custom `drop`.
-
+/// Creates a value with a custom `drop` implementation, which runs at the end
 /// of the scope.
 fn example4() {
     let _pinned_drop = PinnedWithDrop {

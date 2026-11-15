@@ -35,7 +35,6 @@ mod log_syslog;
 mod log_timestamp;
 
 #[cfg(test)]
-
 /// This module provides the `isolated` implementation used by its parent.
 #[path = "../support/isolated.rs"]
 mod isolated;

@@ -75,7 +75,7 @@ mod mylib {
         #[error(transparent)]
         // Forward the source and `Display` methods
 
-        /// I/o error variant of `MyLibError`.
+        // I/O error variant of `MyLibError`.
         // straight through to the underlying error.
 
         /// An I/O error.
@@ -84,9 +84,8 @@ mod mylib {
 
         // Wrap another `Diagnostic`.
         // Use `#[diagnostic(transparent)]` to wrap another `[Diagnostic]`
-        /// Another error variant of `MyLibError`.
+        // Another error variant of `MyLibError`.
         // You won't see labels otherwise.
-
         /// Another error, which is itself a diagnostic.
         #[error(transparent)]
         #[diagnostic(transparent)]
