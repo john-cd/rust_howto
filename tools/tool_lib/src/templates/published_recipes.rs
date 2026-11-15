@@ -140,8 +140,6 @@ mod tests {
     use tempfile::tempdir;
 
     use super::*;
-    /// Collects published recipe links deduplicates and maps multiple crates.
-
     /// Deduplicates recipe links while assigning them to each crate.
     #[test]
     fn collect_published_recipe_links_deduplicates_and_maps_multiple_crates() {
@@ -187,8 +185,6 @@ mod tests {
         assert_eq!(recipes["crate-a"][1].reference, "ex~sample~one");
         assert_eq!(recipes["crate-c"][0].title, "Directive recipe");
     }
-    /// Collects published recipe links rejects includes outside book source.
-
     /// Rejects recipe includes that resolve outside the book source directory.
     #[test]
     fn collect_published_recipe_links_rejects_includes_outside_book_source() {

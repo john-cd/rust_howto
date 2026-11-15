@@ -284,6 +284,7 @@ mod tests {
         assert_eq!(matches_e.subcommand_name(), Some("expand_crate_blocks"));
     }
 
+    /// Reports an error for invalid command-line arguments.
     #[test]
     fn test_invalid_argument_errors() {
         // Missing required crate name in category_page.
