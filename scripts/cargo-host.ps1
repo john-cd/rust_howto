@@ -1,6 +1,6 @@
 # TODO Reviewed ??-??-2026.
 
-# Validate host storage and optionally configure shared Cargo compiler defaults.
+# Configure shared Cargo compiler defaults and checkout-local Cargo output links.
 param(
     [Parameter(Mandatory)][string]$BuildRoot,
     [switch]$ConfigureHost,
@@ -8,29 +8,6 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $fullBuildRoot = [IO.Path]::GetFullPath($BuildRoot)
-if ($IsWindows) {
-    $existing = $fullBuildRoot
-    while (-not (Test-Path -LiteralPath $existing)) {
-        $parent = Split-Path -Parent $existing
-        if (-not $parent -or $parent -eq $existing) { throw "Cannot resolve build volume: $BuildRoot" }
-        $existing = $parent
-    }
-    # Native drive information avoids starting a CIM query on every runner call.
-    # Resolve mount points/junctions through the volume API when a parent is a link.
-    $driveRoot = [IO.Path]::GetPathRoot($existing)
-    $fileSystem = [IO.DriveInfo]::new($driveRoot).DriveFormat
-    $ancestor = $existing
-    while ($ancestor -and $ancestor -ne $driveRoot) {
-        if ((Get-Item -LiteralPath $ancestor -Force).Attributes -band [IO.FileAttributes]::ReparsePoint) {
-            $fileSystem = (Get-Volume -FilePath $existing -ErrorAction Stop).FileSystem
-            break
-        }
-        $ancestor = Split-Path -Parent $ancestor
-    }
-    if ($fileSystem -notin @('NTFS', 'ReFS')) {
-        throw "Cargo intermediate builds require NTFS or ReFS with Rust 1.100.0 or newer; $BuildRoot uses $fileSystem. Set CODE_BUILD_ROOT to an NTFS or ReFS directory with Rust 1.100.0 or newer."
-    }
-}
 
 # Connect checkout-local Cargo/IDE paths to this checkout's central output slot.
 if ($LinkOutputs) {

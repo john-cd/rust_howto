@@ -71,8 +71,7 @@ slot is `main`, regardless of its branch name.
 | `CODE_SCCACHE_ROOT` | `D:/sccache`    | `$XDG_CACHE_HOME/sccache` or `~/.cache/sccache`           |
 | `CODE_TEMP_ROOT`    | `D:/temp`       | Existing native `TMPDIR` or `/tmp`                        |
 
-Set roots to absolute paths and create the directories before building. Keep
-Windows intermediate builds on NTFS. Targets use
+Set roots to absolute paths and create the directories before building. Targets use
 `CODE_TARGET_ROOT/rust_howto/<slot>` and intermediate files use
 `CODE_BUILD_ROOT/rust_howto/<slot>`. The runner exports these as
 `CARGO_TARGET_DIR`, `CARGO_BUILD_TARGET_DIR`, and `CARGO_BUILD_BUILD_DIR`.
@@ -158,7 +157,7 @@ it does not move existing installations. Tool-specific overrides such as
 `CARGO_HOME`, `npm_config_cache`, and `NUGET_PACKAGES` remain independent.
 Rust builds also read `CODE_BUILD_ROOT`, `CODE_TARGET_ROOT`, and
 `CODE_SCCACHE_ROOT`. Their Windows defaults are `D:/code_build`, `D:/target`,
-and `D:/sccache`. The runner rejects non-NTFS intermediate build roots.
+and `D:/sccache`.
 Run `just configure-cargo-host` once per host (PowerShell 7 is required), and rerun it after changing roots. It preserves other Cargo settings, keeps the shared sccache and incremental defaults in `CARGO_HOME/config.toml`, and removes global output-directory overrides. Each checkout's Cargo config routes `target` and `build` through checkout-local links to `D:/target/<repo>/<slot>` and `D:/code_build/<repo>/<slot>`. Run the build-setup recipe once per checkout before using plain Cargo or rust-analyzer; task-runner Cargo commands supply the same per-slot paths and repository sccache settings.
 
 ## Repository configuration
