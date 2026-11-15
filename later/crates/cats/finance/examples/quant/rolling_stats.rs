@@ -66,7 +66,6 @@ fn main() {
         annualized.last().copied().unwrap_or_default() * 100.0
     );
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 pub fn run() {

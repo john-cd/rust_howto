@@ -36,7 +36,6 @@ fn main() {
     println!("implied volatility = {iv:.4}");
     assert!((iv - sigma).abs() < 1e-4);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 pub fn run() {

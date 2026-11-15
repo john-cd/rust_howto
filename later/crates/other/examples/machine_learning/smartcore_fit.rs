@@ -34,7 +34,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     assert!(score > 0.9);
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 ///

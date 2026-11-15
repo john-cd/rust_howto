@@ -39,7 +39,6 @@ fn module_exports(lua: &Lua) -> LuaResult<LuaTable> {
 fn lua_module(lua: &Lua) -> LuaResult<LuaTable> {
     module_exports(lua)
 }
-
 // ANCHOR_END: example
 
 /// Creates the Lua module table returned by the loadable module.

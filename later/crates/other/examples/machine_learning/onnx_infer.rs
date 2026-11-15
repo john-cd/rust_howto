@@ -99,7 +99,6 @@ fn main() -> Result<()> {
     assert!((p - 0.058).abs() < 0.01);
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 ///

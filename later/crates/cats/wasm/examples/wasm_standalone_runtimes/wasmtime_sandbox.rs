@@ -150,7 +150,6 @@ fn main() -> Result<()> {
     assert_eq!(sandbox.call(WAT, "grow", 5)?, -1); // Too big: denied.
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the Wasmtime sandbox example.

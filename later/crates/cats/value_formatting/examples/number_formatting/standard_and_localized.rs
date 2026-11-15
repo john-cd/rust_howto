@@ -30,7 +30,6 @@ fn main() {
     println!("hex={hexadecimal}, binary={binary}");
     println!("English={english}, German={german}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 pub fn run() {
