@@ -6,8 +6,8 @@
 # Storage-root overrides: CODE_REPOS_ROOT names the canonical checkout root for tools;
 # CODE_TEMP_ROOT holds temporary files;
 # CODE_PACKAGES_ROOT stores package-manager data; CODE_TOOLS_ROOT stores portable tools.
-# CODE_TARGET_ROOT stores compiled artifacts, CODE_BUILD_ROOT stores intermediate Cargo files
-# (required to be on NTFS on Windows), and CODE_SCCACHE_ROOT selects the compiler cache.
+# CODE_TARGET_ROOT stores compiled artifacts, CODE_BUILD_ROOT stores intermediate Cargo files,
+# and CODE_SCCACHE_ROOT selects the compiler cache.
 # SCCACHE_DIR is retained as a fallback when CODE_SCCACHE_ROOT is unset.
 build_repo := parent_directory(source_directory())
 build_parent := parent_directory(build_repo)
@@ -49,8 +49,7 @@ done
 export CARGO_TARGET_DIR := build_target_dir
 export CARGO_BUILD_TARGET_DIR := build_target_dir
 export CARGO_TERM_QUIET := env("CARGO_TERM_QUIET", "true")
-host_build_volume := if os() == "windows" { trim(shell('pwsh.exe -NoLogo -NoProfile -File "$1" -BuildRoot "$2"', join(build_repo, "scripts/cargo-host.ps1"), build_code_build_root)) } else { "ok" }
-export CARGO_BUILD_BUILD_DIR := if host_build_volume == "ok" { build_intermediate_dir } else { error("Cargo build root must use NTFS or ReFS (Rust 1.100.0 or newer)") }
+export CARGO_BUILD_BUILD_DIR := build_intermediate_dir
 export RUSTC_WRAPPER := env("RUSTC_WRAPPER", "sccache")
 export CARGO_BUILD_RUSTC_WRAPPER := env("CARGO_BUILD_RUSTC_WRAPPER", "sccache")
 export CARGO_INCREMENTAL := "0"

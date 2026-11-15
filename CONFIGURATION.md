@@ -119,8 +119,8 @@ measurements unsuitable for claiming a general performance improvement.
 
 Run `just build-setup` once per checkout. It creates ignored `target`, `build`, and `.sccache`
 links and refuses to replace existing files, directories, or links to another slot. PowerShell 7
-is required by `scripts/cargo-host.ps1`. Windows uses junctions and NTFS intermediates; Unix
-uses native cache roots and symlinks. Existing Rust How-To setup recipes also provide native
+is required by `scripts/cargo-host.ps1`. Windows uses junctions; Unix uses native cache roots
+and symlinks. Existing Rust How-To setup recipes also provide native
 shell setup. Do not copy platform-specific links between Windows and Linux checkouts.
 
 The existing `just cargo <subcommand> ...` runner sets absolute `CODE_TARGET_ROOT/<repo>/<slot>`
@@ -139,8 +139,7 @@ artifacts.
 Multiple independent workspaces share a checkout's output slot and Cargo locking. On Windows,
 slot `b` setup ran twice successfully; its `target`, `build`, and `.sccache` junctions resolved to
 the configured central paths. A mismatched target override was rejected without changing the
-junction. The build root was confirmed as NTFS (the target root is ReFS, which is allowed). The
-direct Cargo `ci` build above wrote into those central paths. With elevated process access, the Just
+junction. The direct Cargo `ci` build above wrote into those central paths. With elevated process access, the Just
 base-directory probe and `build-setup` passed, and evaluation confirmed that `CODE_TARGET_ROOT` and
 `CODE_BUILD_ROOT` overrides select the requested slot paths. `just cache-setup` correctly refused
 to restart sccache while other Cargo/rustc processes were active; retry only after those builds end.
@@ -188,8 +187,8 @@ configuration files.
 
 On Windows slot `b`, `scripts/setup-build.ps1` reused the expected target/build/cache junctions
 and refused an alternate `CODE_TARGET_ROOT` because the existing target junction points elsewhere.
-`scripts/cargo-host.ps1 -BuildRoot D:/code_build -LinkOutputs` accepted the NTFS build volume and
-existing checkout links. With elevated process access, the Just base-directory probe, `build-setup`,
+`scripts/cargo-host.ps1 -BuildRoot D:/code_build -LinkOutputs` reused the expected build-output
+links and existing checkout links. With elevated process access, the Just base-directory probe, `build-setup`,
 and custom `CODE_TARGET_ROOT`/`CODE_BUILD_ROOT` evaluation passed. `just deny` passed all 13 configured
 Cargo dependency-policy roots after the `pulldown-cmark` security update and scoped zip exceptions.
 `just all ca` passed the Windows Clippy matrix for the initialized workspaces; the optional
