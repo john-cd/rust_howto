@@ -36,10 +36,10 @@ linfa-clustering = "0.8.1"
 # A Machine Learning framework for Rust
 linfa-linear = "0.8.1"
 # An n-dimensional array for general elements and for numerics. Lightweight array views and slicing; views support chunking and splitting.
-ndarray = "0.17.2"
+# ndarray = "0.17.2"
 # Linfa 0.8.1 uses ndarray 0.16 types; keep this alias on 0.16 so arrays compose with Linfa APIs.
 # An n-dimensional array for general elements and for numerics. Lightweight array views and slicing; views support chunking and splitting.
-ndarray_016 = { package = "ndarray", version = "0.16.1" }
+ndarray_016 = { package = "ndarray", version = "=0.16.1" }
 # Linfa 0.8 uses rand 0.8 traits for seeded K-means; keep its RNG on that API line.
 # Random number generators and other randomness functionality.
 rand_08 = { package = "rand", version = "0.8.8", features = ["std", "std_rng"] }

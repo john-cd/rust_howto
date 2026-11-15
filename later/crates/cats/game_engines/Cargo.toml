@@ -23,8 +23,6 @@ path = "examples/game_engines/main.rs"
 test = true
 
 [dependencies]
-# Flexible concrete Error type built on std::error::Error
-anyhow = { version = "1.0.104", optional = true }
 # A refreshingly simple data-driven game engine and app framework
 bevy = { version = "0.20.1", default-features = false, features = ["default_app"], optional = true ,
 }
@@ -40,7 +38,7 @@ macroquad = "0.4.16"
 [features]
 default = []
 bevy = ["dep:bevy"]
-fyrox = ["dep:fyrox", "dep:anyhow"]
+fyrox = ["dep:fyrox"]
 ggez = ["dep:ggez"]
 
 [lints]

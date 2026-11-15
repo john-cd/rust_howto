@@ -30,9 +30,9 @@ test = true
 # UI accessibility infrastructure across platforms
 accesskit = "0.25.2"
 # AccessKit UI accessibility infrastructure: winit adapter
-accesskit_winit = "0.34.2"
+# accesskit_winit = "0.34.2"
 # Cross-platform window creation library.
-winit = "0.30.13"
+# winit = "0.30.13"
 
 [lints]
 workspace = true
