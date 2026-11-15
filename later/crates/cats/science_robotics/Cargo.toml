@@ -69,7 +69,7 @@ futures = { version = "0.3.34", optional = true }
 # k is for kinematics
 k = "0.32.0" # Kinematics (the library underneath OpenRR).
 # A high-performance, flexible, ergonomic k-d tree library. Ideal for geo- and astro- nearest-neighbour and k-nearest-neighbor queries
-kiddo.workspace = true
+kiddo = { version = "6.3.0", default-features = false }
 # Pathfinding, flow, and graph algorithms
 pathfinding = "4.16.0"
 # Calculates proportional-integral-derivative control outputs for feedback systems.
@@ -85,13 +85,13 @@ tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 # Utilities for implementing and composing `tracing` subscribers.
 # tracing-subscriber = "0.3.23"
 # Parses and serializes robot descriptions in the URDF XML format.
-urdf-rs = "0.9.1" # Matches `k`'s URDF model type for conversions.
+urdf-rs = "=0.9.1" # Matches `k`'s URDF model type for conversions.
 # Zenoh: The Zero Overhead Pub/Sub/Query Protocol.
 zenoh = { version = "1.10.2", default-features = false, features = ["transport_tcp"], optional = true } # No compression, auth or shared memory: the local example needs only TCP.
 
 [dev-dependencies]
 # A collection of mocked devices that implement the embedded-hal traits
-embedded-hal-mock.workspace = true
+embedded-hal-mock = { version = "0.11.1", default-features = false, features = ["eh1"] }
 
 [features]
 # Requires a sourced ROS 2 installation and libclang; disabled by default.

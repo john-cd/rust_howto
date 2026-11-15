@@ -29,7 +29,7 @@ test = true
 
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
-anyhow.workspace = true
+anyhow = "1.0.104"
 # Keep rodio on 0.22: 0.23 selects cpal 0.18 and alsa-sys 0.4, which conflict with the 0.3 line used by Bevy and Fyrox.
 # Audio playback and recording library
 rodio = "0.22.2"

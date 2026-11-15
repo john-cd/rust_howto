@@ -104,11 +104,11 @@ wasmtime = ["dep:wasmtime", "dep:wasmtime-wasi", "dep:blake3"]
 
 [target.'cfg(target_os = "windows")'.dependencies]
 # Executes WebAssembly modules in an embeddable, configurable runtime.
-wasmer = { workspace = true, features = ["v8-default"], optional = true }
+wasmer = { version = "7.5.0", default-features = false, features = ["wat", "v8-default"], optional = true }
 
 [target.'cfg(not(target_os = "windows"))'.dependencies]
 # Executes WebAssembly modules in an embeddable, configurable runtime.
-wasmer = { workspace = true, features = ["singlepass"], optional = true }
+wasmer = { version = "7.5.0", default-features = false, features = ["wat", "singlepass"], optional = true }
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 # Native Serde adapter for wasm-bindgen

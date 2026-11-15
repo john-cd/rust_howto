@@ -38,7 +38,7 @@ gltf = "1.4.1"
 
 [dev-dependencies]
 # Flexible concrete Error type built on std::error::Error
-anyhow.workspace = true # Provides consistent fallible example entry points.
+anyhow = "1.0.104" # Provides consistent fallible example entry points.
 # DirectDraw Surface file format parser/composer
 ddsfile = "0.6.0" # Reads and writes DDS texture containers.
 # Parser for the ktx2 texture container format
