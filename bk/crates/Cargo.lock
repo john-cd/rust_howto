@@ -5229,6 +5229,7 @@ dependencies = [
  "doc-comment",
  "gix",
  "prettyplease 0.3.0",
+ "proc-macro2",
  "quote",
  "semver",
  "syn 3.0.10",
