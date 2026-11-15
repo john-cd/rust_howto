@@ -22,6 +22,8 @@ pub(crate) struct PreprocConfig {
 }
 
 impl Default for PreprocConfig {
+    /// Constructs a usable initial preproc config value with the defaults required by the conf
+    /// component.
     fn default() -> Self {
         Self {
             remove_hidden_sections: true,

@@ -1,10 +1,12 @@
+//! \ Async\ client\ interfaces\ and\ implementations\ for\ generated\ database\ queries\.
+//!
 //! TODO Reviewed ??-??-2026.
 
-// This file was generated with `cornucopia`. Do not modify.
-
 pub use generic_client::GenericClient;
+/// This module provides the `deadpool` implementation used by its parent.
 #[cfg(feature = "deadpool")]
 mod deadpool;
+/// This module provides the `generic_client` implementation used by its parent.
 mod generic_client;
 use tokio_postgres::Error;
 use tokio_postgres::Row;
@@ -17,6 +19,8 @@ use tokio_postgres::types::ToSql;
 pub trait Params<'c, 'a, 's, P, O, C> {
     fn params(&'s self, client: &'c C, params: &'a P) -> O;
 }
+/// # Errors
+/// An error is returned if a fallible operation fails.
 pub async fn one<C: GenericClient>(
     client: &C,
     query: &str,
@@ -32,6 +36,8 @@ pub async fn one<C: GenericClient>(
         client.query_one(query, params).await
     }
 }
+/// # Errors
+/// An error is returned if a fallible operation fails.
 pub async fn opt<C: GenericClient>(
     client: &C,
     query: &str,
@@ -47,6 +53,8 @@ pub async fn opt<C: GenericClient>(
         client.query_opt(query, params).await
     }
 }
+/// # Errors
+/// An error is returned if a fallible operation fails.
 pub async fn raw<C: GenericClient, P, I>(
     client: &C,
     query: &str,

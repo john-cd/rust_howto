@@ -11,7 +11,10 @@ use tool_lib::create_crate_block;
 use tool_lib::create_rbe_badge;
 use tool_lib::get_info_for_crate;
 
+/// The `cli` module is the command line argument parser for the application
 mod cli;
+/// Loads and validates the settings that control templ behavior. Composition code uses this module
+/// before starting services so invalid configuration is reported early.
 mod config_cmd;
 
 pub(crate) use config_cmd::Cmd;
@@ -36,8 +39,8 @@ fn main() -> anyhow::Result<()> {
 
     dispatch(cmd, &mut std::io::stdout())
 }
-
 /// Returns the categories whose slug, name or description match a word.
+
 fn matching_categories<'a>(all_categories: &'a [Category], word: &str) -> Vec<&'a Category> {
     let possible_cat_name = word.trim().to_lowercase();
     let possible_slug = possible_cat_name.replace([' ', '_'], "-");
@@ -55,8 +58,8 @@ fn matching_categories<'a>(all_categories: &'a [Category], word: &str) -> Vec<&'
 fn dispatch(cmd: Cmd, out: &mut impl Write) -> anyhow::Result<()> {
     dispatch_with_categories(cmd, out, tool_lib::get_all_categories)
 }
-
 /// Runs a command with an injected category catalog loader.
+
 fn dispatch_with_categories(
     cmd: Cmd,
     out: &mut impl Write,
@@ -123,6 +126,7 @@ fn dispatch_with_categories(
     Ok(())
 }
 
+/// Category dispatch accepts an injected catalog and does not fetch it in the test.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -136,7 +140,8 @@ mod tests {
         }
     }
 
-    /// Builds the categories used by the tests.
+    ///
+
     fn sample() -> Vec<Category> {
         vec![
             category("Encoding", "encoding", "Encoding and decoding data"),
@@ -144,7 +149,6 @@ mod tests {
         ]
     }
 
-    /// Checks the match by slug, with underscores or spaces.
     #[test]
     fn matches_slug_variants() {
         let all = sample();
@@ -152,7 +156,6 @@ mod tests {
         assert_eq!(matching_categories(&all, " Web Programming ").len(), 1);
     }
 
-    /// Checks the match by a word of the name or the description.
     #[test]
     fn matches_name_and_description() {
         let all = sample();
@@ -163,13 +166,11 @@ mod tests {
         );
     }
 
-    /// Checks that unknown words match nothing.
     #[test]
     fn no_match() {
         assert!(matching_categories(&sample(), "zzz").is_empty());
     }
 
-    /// Checks that the offline `rbe` command writes a badge for each concept.
     #[test]
     fn rbe_command_writes_badges() {
         let mut out = Vec::new();
@@ -182,7 +183,6 @@ mod tests {
         assert!(text.contains("rust-by-example/traits.html"));
     }
 
-    /// Checks that a missing command is an error.
     #[test]
     fn no_command_is_an_error() {
         let mut out = Vec::new();
@@ -211,7 +211,6 @@ mod tests {
         assert!(output.contains("text-processing"));
     }
 
-    /// Runs `main`, which parses the real process arguments (not valid for this CLI under the test
     /// harness).
     #[test]
     #[ignore = "main() parses the real process arguments, which belong to the test harness"]

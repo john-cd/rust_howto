@@ -32,8 +32,6 @@ mod bench {
     use super::*;
 
     /// Register the function above for benchmarking.
-    ///
-    /// # Returns
     #[divan::bench]
     fn fibonacci() -> u64 {
         compute_fibonacci(divan::black_box(20))

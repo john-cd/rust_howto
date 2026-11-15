@@ -33,8 +33,8 @@ fn make_app() -> Command {
                 .about("Check whether a renderer is supported by this preprocessor"),
         )
 }
-
 /// Selects the stage from the command line and runs it.
+
 fn main() {
     let matches = make_app().get_matches();
 
@@ -54,8 +54,8 @@ fn main() {
         process::exit(1);
     }
 }
-
 /// Initializes structured logging, falling back to stderr when the log file is unavailable.
+
 fn initialize_logging() {
     let log_file = std::fs::OpenOptions::new()
         .append(true)
@@ -96,19 +96,18 @@ fn initialize_stderr_logging() {
         report_logging_failure(format_args!("could not initialize stderr logging: {error}"));
     }
 }
-
 /// Writes a best-effort logging diagnostic without panicking if stderr is unavailable.
+
 fn report_logging_failure(message: std::fmt::Arguments<'_>) {
     let _ = writeln!(io::stderr().lock(), "mdbook-scrub: {message}");
 }
 
-// If the preprocessor supports the renderer, then `mdbook` runs it a second
-// time, passing JSON data into `stdin`. The JSON consists of an array of
-// [context, book] where `context` is the serialized object
-// `PreprocessorContext` and `book` is a `Book` object containing the content of
-// the book.
-/// Reads the book from standard input, preprocesses it and writes it to
-/// standard output.
+/// Reads the serialized mdBook context and book from standard input, runs the
+/// preprocessor, and writes the processed book as JSON to standard output.
+///
+/// # Errors
+/// Returns an error if input JSON or version strings are invalid, the
+/// preprocessor fails, or the result cannot be serialized or written.
 fn handle_preprocessing(pre: &dyn Preprocessor) -> mdbook_preprocessor::errors::Result<()> {
     let (ctx, book) = mdbook_preprocessor::parse_input(io::stdin())?;
 
@@ -158,13 +157,11 @@ fn handle_supports(pre: &dyn Preprocessor, sub_args: &ArgMatches) -> ! {
 mod tests {
     use super::*;
 
-    /// Checks that the clap definition is internally consistent.
     #[test]
     fn cli_is_valid() {
         make_app().debug_assert();
     }
 
-    /// Checks that `scrub` is the default stage.
     #[test]
     fn default_stage_is_scrub() {
         let matches = make_app().get_matches_from(["mdbook-scrub"]);
@@ -174,7 +171,6 @@ mod tests {
         );
     }
 
-    /// Checks the `directives` stage and the `supports` subcommand.
     #[test]
     fn parses_stage_and_supports() {
         let matches = make_app().get_matches_from(["mdbook-scrub", "--stage", "directives"]);
@@ -192,7 +188,6 @@ mod tests {
         );
     }
 
-    /// Checks that an unknown stage and a missing renderer are rejected.
     #[test]
     fn rejects_bad_arguments() {
         make_app()

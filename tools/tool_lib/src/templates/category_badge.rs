@@ -8,18 +8,16 @@ use serde::Serialize;
 /// Category badge
 pub(super) static CAT_BADGE: &str =
     r"[![cat~{slug}][cat~{slug}~badge]][cat~{slug}]\{\{hi:{category}}} ";
-
 /// Renders a category badge for the supplied name and crates.io slug.
-///
+
 /// Trims leading and trailing whitespace from both values before rendering.
 ///
 /// # Arguments
-///
 /// * `category` - Display name of the category, such as `Encoding`.
+///
 /// * `slug` - crates.io category slug, such as `encoding`.
 ///
 /// # Errors
-///
 /// Returns an error if the category badge template cannot be loaded or rendered.
 pub fn create_category_badge(category: &str, slug: &str) -> Result<String> {
     /// Template data used to render a crate category badge.
@@ -40,6 +38,7 @@ pub fn create_category_badge(category: &str, slug: &str) -> Result<String> {
     Ok(rendered)
 }
 
+/// Verifies that an ordinary category name and slug produce a badge.
 #[cfg(test)]
 mod tests {
     use super::*;

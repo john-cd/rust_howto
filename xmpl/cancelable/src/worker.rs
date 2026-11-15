@@ -112,6 +112,9 @@ impl Worker {
     }
 
     /// Request a task execution, unless too many of them are already
+    ///
+    /// # Arguments
+    /// * `task` - Task to run or cancel.
     /// queued.
     pub fn start(&self, task: Task) -> anyhow::Result<()> {
         let task_id = task.task_id();
@@ -132,17 +135,20 @@ impl Worker {
     }
 
     /// Requests cancellation of a queued or currently running task.
-    ///
     /// # Errors
-    ///
     /// Returns an error if the task is not queued or running, or if the cancellation registry is
     /// poisoned.
+    ///
+    /// # Arguments
+    /// * `task_id` - Identifier used to select the worker record or cache entry affected by this
+    ///   operation.
     pub fn cancel_task(&self, task_id: u64) -> anyhow::Result<()> {
         self.cancel_source.cancel_task(task_id)
     }
 
     /// Make the worker thread stop
     /// (interrupting the current task if any).
+
     pub fn die(&mut self) -> anyhow::Result<()> {
         let cancel_result = self.cancel_source.cancel_all();
         if let Some(sender) = self.s_die.take()

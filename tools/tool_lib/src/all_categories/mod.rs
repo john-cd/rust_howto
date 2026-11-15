@@ -2,7 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Parses category hierarchy data from TOML.
 mod categories_from_toml;
+/// Downloading the categories file of `crates.io`.
 mod request;
 
 use anyhow::Context as _;
@@ -11,13 +13,12 @@ use anyhow::Result;
 use super::Category;
 
 /// Fetches and parses the categories TOML file from `crates.io`.
-///
 /// This function retrieves the TOML data, parses it, and then
 /// extracts the category information into a vector of `Category` structs.
+///
 /// Returns a list of all categories that exist on `crates.io`.
 ///
 /// # Errors
-///
 /// Returns an error if the request fails, the response is not valid TOML, or a category entry is
 /// invalid.
 pub fn get_all_categories() -> Result<Vec<Category>> {
@@ -50,6 +51,7 @@ fn parse_categories_toml(toml_string: &str) -> Result<Vec<Category>> {
     Ok(categories)
 }
 
+/// Verifies that all categories are fetched and parsed from a successful response.
 #[cfg(test)]
 mod tests {
     use anyhow::Result;

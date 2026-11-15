@@ -1,3 +1,7 @@
+//! Defines sequence-number arithmetic and resolution handling for transport messages.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the

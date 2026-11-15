@@ -4,8 +4,11 @@
 //! - Published recipe link extraction regex scanning across table rows.
 //! - Crate block parsing and rendering via `TinyTemplate` across modes.
 //! - Markdown template generation (alphabetical sections, category badges, index anchors).
-
 #![allow(
+//!
+//!
+//! TODO Reviewed ??-??-2026.
+
     deprecated,
     reason = "crates_io_api::Crate uses deprecated license field"
 )]

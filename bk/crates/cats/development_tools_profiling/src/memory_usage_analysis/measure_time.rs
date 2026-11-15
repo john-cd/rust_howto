@@ -18,14 +18,14 @@ fn measure_execution_time() {
     // Simulate some work:
     thread::sleep(Duration::from_millis(100));
 }
+/// Measures a short sleep with the `print_time!` macro.
 
-/// Runs the measure time example.
 fn main() {
     measure_execution_time();
 }
 // ANCHOR_END: example
+/// Runs the timed execution example.
 
-/// Runs the example.
 pub fn run() {
     main();
 }

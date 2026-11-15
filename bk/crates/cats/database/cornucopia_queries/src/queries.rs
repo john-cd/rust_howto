@@ -1,5 +1,6 @@
+//! \ Generated\ SQL\ query\ definitions\ and\ execution\ helpers\.
+//!
 //! TODO Reviewed ??-??-2026.
 
-// This file was generated with `cornucopia`. Do not modify.
-
+/// This module provides the `greetings` implementation used by its parent.
 pub mod greetings;

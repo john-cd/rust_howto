@@ -10,9 +10,9 @@ pub(super) static INDEX_ANCHORS: &str =
     r"{{ for keyword in keywords }}\{\{hi:{keyword}}}{{ endfor }} ";
 
 /// Generates a string of index anchors for use with `mdbook-indexing`.
-///
 /// This function takes a vector of keywords and returns a string in the format:
 /// `{{hi:keyword1}}{{hi:keyword2}}...`. This format is a pseudo-markdown syntax
+///
 /// recognized by the `mdbook-indexing` preprocessor.
 ///
 /// # Arguments
@@ -20,7 +20,6 @@ pub(super) static INDEX_ANCHORS: &str =
 /// * `keywords` - Keywords to render, in the order they should appear.
 ///
 /// # Errors
-///
 /// Returns an error if the index-anchor template cannot be loaded or rendered.
 pub fn create_index_anchors(keywords: Vec<&str>) -> Result<String> {
     /// Template data used to render anchors for the book index.
@@ -36,6 +35,7 @@ pub fn create_index_anchors(keywords: Vec<&str>) -> Result<String> {
     Ok(rendered)
 }
 
+/// Tests `create_index_anchors` with multiple distinct keyword strings.
 #[cfg(test)]
 mod tests {
     use super::*;

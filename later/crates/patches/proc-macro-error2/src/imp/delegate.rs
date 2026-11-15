@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026.
-
 //! This implementation uses [`proc_macro::Diagnostic`], nightly only.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::cell::Cell;
 
@@ -13,12 +13,16 @@ use crate::diagnostic::Diagnostic;
 use crate::diagnostic::Level;
 use crate::diagnostic::SuggestionKind;
 
+///
+
 pub fn abort_if_dirty() {
     check_correctness();
     if IS_DIRTY.with(|c| c.get()) {
         abort_now()
     }
 }
+
+///
 
 pub(crate) fn cleanup() -> Vec<Diagnostic> {
     IS_DIRTY.with(|c| c.set(false));
@@ -68,5 +72,6 @@ pub(crate) fn emit_diagnostic(diag: Diagnostic) {
 }
 
 thread_local! {
+    /// Shared `is dirty` used by this module.
     static IS_DIRTY: Cell<bool> = Cell::new(false);
 }

@@ -1,3 +1,7 @@
+//! Represents a multicast link and exposes its transport read and write operations.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,7 +13,9 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
+
 use std::convert::TryInto;
 use std::fmt;
 use std::sync::Arc;
@@ -60,16 +66,26 @@ use crate::multicast::transport::TransportMulticastInner;
 /// *************************
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub(crate) struct TransportLinkMulticastConfig {
+    /// Batching configuration for this transport.
     pub(crate) batch: BatchConfig,
 }
+/// Multicast transport link and its send and receive state.
 
 #[derive(Clone, PartialEq, Eq)]
 pub(crate) struct TransportLinkMulticast {
+    /// Transport link associated with this state.
     pub(crate) link: LinkMulticast,
+    /// Settings that control how this transport link multicast is constructed or processed.
     pub(crate) config: TransportLinkMulticastConfig,
 }
 
 impl TransportLinkMulticast {
+    /// Constructs a usable initial transport link multicast value with the defaults required by the
+    /// link component.
+    ///
+    /// # Arguments
+    /// * `link` - Transport link to add, remove, or use.
+    /// * `config` - Configuration applied to this operation.
     pub(crate) fn new(link: LinkMulticast, mut config: TransportLinkMulticastConfig) -> Self {
         config.batch.mtu = link.get_mtu().min(config.batch.mtu);
         config.batch.is_streamed = false;
@@ -98,6 +114,14 @@ impl TransportLinkMulticast {
         }
     }
 
+    /// Sends the current value.
+    ///
+    /// # Arguments
+    /// * `msg` - Message to schedule or process.
+    ///
+    /// # Errors
+    /// Returns an error if the output cannot be written or sent.
+
     pub(crate) async fn send(&self, msg: &TransportMessage) -> ZResult<usize> {
         let mut link = self.tx();
         link.send(msg).await
@@ -107,6 +131,7 @@ impl TransportLinkMulticast {
     //     let mut link = self.rx();
     //     link.recv().await
     // }
+    ///
 
     pub(crate) async fn close(&self, reason: Option<u8>) -> ZResult<()> {
         if let Some(reason) = reason {
@@ -124,12 +149,16 @@ impl TransportLinkMulticast {
 }
 
 impl fmt::Display for TransportLinkMulticast {
+    /// Formats the value for display.
+    /// # Arguments
+    /// * `f` - Mutable formatter whose state is updated by this operation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{}", self.link)
     }
 }
 
 impl fmt::Debug for TransportLinkMulticast {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportLinkMulticast")
             .field("link", &self.link)
@@ -138,13 +167,23 @@ impl fmt::Debug for TransportLinkMulticast {
     }
 }
 
+/// State required by `TransportLinkMulticastTx` during transport operations.
 pub(crate) struct TransportLinkMulticastTx {
+    /// Shared internal state.
     pub(crate) inner: TransportLinkMulticast,
+    /// Optional buffer used by transport link multicast tx; `None` means the value is not
+    /// configured or unavailable.
     pub(crate) buffer: Option<BBuf>,
 }
 
 impl TransportLinkMulticastTx {
+    /// # Arguments
+    /// * `batch` - Mutable wbatch whose state is updated by this operation.
+
+    /// # Errors
+    /// An error is returned if finalize, as_slice fails.
     pub(crate) async fn send_batch(&mut self, batch: &mut WBatch) -> ZResult<()> {
+        /// Shared `err` used by this module.
         const ERR: &str = "Write error on link: ";
 
         let res = batch
@@ -166,7 +205,12 @@ impl TransportLinkMulticastTx {
         Ok(())
     }
 
+    /// # Arguments
+    /// * `msg` - Message to schedule or process.
+    /// # Errors
+    /// An error is returned if encode fails.
     pub(crate) async fn send(&mut self, msg: &TransportMessage) -> ZResult<usize> {
+        /// Shared `err` used by this module.
         const ERR: &str = "Write error on link: ";
 
         // Create the batch for serializing the message
@@ -179,12 +223,16 @@ impl TransportLinkMulticastTx {
 }
 
 impl fmt::Display for TransportLinkMulticastTx {
+    /// Formats the value for display.
+    /// # Arguments
+    /// * `f` - Mutable formatter whose state is updated by this operation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{}", self.inner)
     }
 }
 
 impl fmt::Debug for TransportLinkMulticastTx {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut s = f.debug_struct("TransportLinkMulticastRx");
         s.field("link", &self.inner.link)
@@ -196,8 +244,10 @@ impl fmt::Debug for TransportLinkMulticastTx {
         s.finish()
     }
 }
+/// Receive-side wrapper for a multicast transport link.
 
 pub(crate) struct TransportLinkMulticastRx {
+    /// Shared internal state.
     pub(crate) inner: TransportLinkMulticast,
 }
 
@@ -207,6 +257,7 @@ impl TransportLinkMulticastRx {
         C: Fn() -> T + Copy,
         T: AsMut<[u8]> + ZSliceBuffer + 'static,
     {
+        /// Defines the err constant.
         const ERR: &str = "Read error from link: ";
 
         let mut into = (buff)();
@@ -230,12 +281,16 @@ impl TransportLinkMulticastRx {
 }
 
 impl fmt::Display for TransportLinkMulticastRx {
+    /// Formats the value for display.
+    /// # Arguments
+    /// * `f` - Mutable formatter whose state is updated by this operation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{}", self.inner)
     }
 }
 
 impl fmt::Debug for TransportLinkMulticastRx {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportLinkMulticastRx")
             .field("link", &self.inner.link)
@@ -243,36 +298,61 @@ impl fmt::Debug for TransportLinkMulticastRx {
             .finish()
     }
 }
-
 /// ***********************************
+
 // TRANSPORT MULTICAST LINK UNIVERSAL
 /// ***********************************
 pub(super) struct TransportLinkMulticastConfigUniversal {
+    /// Protocol version.
+    /// Protocol version.
     pub(super) version: u8,
+    /// Zenoh identifier of this peer.
     pub(super) zid: ZenohIdProto,
+    /// Role advertised by this peer.
     pub(super) whatami: WhatAmI,
+    /// Lease duration advertised by the peer.
     pub(super) lease: Duration,
+    /// Interval between background task joins.
     pub(super) join_interval: Duration,
+    /// Number of bits used for sequence numbers.
     pub(super) sn_resolution: Bits,
+    /// Maximum number of messages sent in a batch.
     pub(super) batch_size: BatchSize,
 }
 
 // TODO(yuyuan): Introduce TaskTracker or JoinSet and retire handle_tx, handle_rx, and signal_rx.
+/// Multicast link wrapper using the universal message pipeline.
 #[derive(Clone)]
 pub(super) struct TransportLinkMulticastUniversal {
+    /// Transport link associated with this state.
     // The underlying link
+    /// Transport link associated with this state.
     pub(super) link: TransportLinkMulticast,
     // The transmission pipeline
+    /// Optional pipeline used by transport link multicast universal; `None` means the value is not
+    /// configured or unavailable.
     pub(super) pipeline: Option<TransmissionPipelineProducer>,
     // The transport this link is associated to
+    /// Transport value.
     transport: TransportMulticastInner,
     // The signals to stop TX/RX tasks
+    /// Optional handle tx used by transport link multicast universal; `None` means the value is
+    /// not configured or unavailable.
     handle_tx: Option<Arc<JoinHandle<()>>>,
+    /// Signal rx value.
     signal_rx: Signal,
+    /// Optional handle rx used by transport link multicast universal; `None` means the value is
+    /// not configured or unavailable.
     handle_rx: Option<Arc<JoinHandle<()>>>,
 }
 
 impl TransportLinkMulticastUniversal {
+    /// Constructs a usable initial transport link multicast universal value with the defaults
+    /// required by the link component.
+    ///
+    /// # Arguments
+    /// * `transport` - Transport used for the operation.
+    /// * `link` - Transport link to add, remove, or use.
     pub(super) fn new(
         transport: TransportMulticastInner,
         link: TransportLinkMulticast,
@@ -289,6 +369,10 @@ impl TransportLinkMulticastUniversal {
 }
 
 impl TransportLinkMulticastUniversal {
+    /// Starts tx.
+    ///
+    /// # Arguments
+    /// * `config` - Configuration applied to this operation.
     pub(super) fn start_tx(
         &mut self,
         config: TransportLinkMulticastConfigUniversal,
@@ -360,11 +444,15 @@ impl TransportLinkMulticastUniversal {
         }
     }
 
+    /// Stops tx.
+
     pub(super) fn stop_tx(&mut self) {
         if let Some(pipeline) = self.pipeline.as_ref() {
             pipeline.disable();
         }
     }
+
+    /// Starts rx.
 
     pub(super) fn start_rx(&mut self, batch_size: BatchSize) {
         if self.handle_rx.is_none() {
@@ -396,10 +484,19 @@ impl TransportLinkMulticastUniversal {
         }
     }
 
+    /// Stops rx.
+
     pub(super) fn stop_rx(&mut self) {
         self.signal_rx.trigger();
     }
 
+    ///
+
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
+    ///
+    /// # Panics
+    /// Panics if an internal `Result` or `Option` has no usable value.
     pub(super) async fn close(mut self) -> ZResult<()> {
         tracing::trace!("{}: closing", self.link);
         self.stop_rx();
@@ -534,6 +631,8 @@ async fn tx_task(
     Ok(())
 }
 
+/// # Errors
+/// An error is returned if read_messages fails.
 async fn rx_task(
     mut link: TransportLinkMulticastRx,
     transport: TransportMulticastInner,
@@ -541,6 +640,8 @@ async fn rx_task(
     rx_buffer_size: usize,
     batch_size: BatchSize,
 ) -> ZResult<()> {
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     async fn read<T, F>(
         link: &mut TransportLinkMulticastRx,
         pool: &RecyclingObjectPool<T, F>,

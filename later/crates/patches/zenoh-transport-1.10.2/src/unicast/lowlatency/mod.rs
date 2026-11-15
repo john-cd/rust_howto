@@ -1,3 +1,8 @@
+//! Organizes the lowlatency subsystem and declares its child modules.
+//! Parent components use this module to access the subsystem functionality.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -10,7 +15,10 @@
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
 //
+/// Tracks state and schedules messages for low-latency unicast transport.
 pub(crate) mod transport;
 
+/// Provides the link operations used by low-latency unicast transport.
 mod link;
+/// Receives and dispatches messages for low-latency unicast transport.
 mod rx;

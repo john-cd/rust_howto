@@ -1,8 +1,8 @@
-// TODO Reviewed ??-??-2026.
-
 //! Build script examples for `development_tools_build_utils`.
 //!
 //! See <https://doc.rust-lang.org/cargo/reference/build-scripts.html>.
+//!
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: C
 /// Compile a C file into a static library.
@@ -49,6 +49,7 @@ fn out_dir_codegen() -> Result<(), Box<dyn std::error::Error>> {
     use std::io;
     use std::path::PathBuf;
 
+    /// Shared `input` used by this module.
     const INPUT: &str = "examples/build_time_tooling/message.txt";
 
     println!("cargo::rerun-if-changed={INPUT}");
@@ -70,7 +71,6 @@ fn out_dir_codegen() -> Result<(), Box<dyn std::error::Error>> {
 /// Entry point for the build script.
 ///
 /// # Errors
-///
 /// Returns an error if generated source cannot be written to Cargo's output
 /// directory.
 fn main() -> Result<(), Box<dyn std::error::Error>> {

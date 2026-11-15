@@ -1,6 +1,6 @@
-//! TODO Reviewed ??-??-2026.
-
 //! This implementation uses self-written stable facilities.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::cell::RefCell;
 
@@ -8,6 +8,8 @@ use crate::abort_now;
 use crate::check_correctness;
 use crate::diagnostic::Diagnostic;
 use crate::diagnostic::Level;
+
+///
 
 pub fn abort_if_dirty() {
     check_correctness();
@@ -17,6 +19,8 @@ pub fn abort_if_dirty() {
         }
     });
 }
+
+///
 
 pub(crate) fn cleanup() -> Vec<Diagnostic> {
     ERR_STORAGE.with(|storage| storage.replace(Vec::new()))
@@ -29,5 +33,6 @@ pub(crate) fn emit_diagnostic(diag: Diagnostic) {
 }
 
 thread_local! {
+    /// Shared `err storage` used by this module.
     static ERR_STORAGE: RefCell<Vec<Diagnostic>> = const { RefCell::new(Vec::new()) };
 }

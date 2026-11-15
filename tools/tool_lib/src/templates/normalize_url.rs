@@ -6,6 +6,9 @@ use regex::Regex;
 
 /// Normalizes a documentation URL from `docs.rs`.
 ///
+/// # Arguments
+/// * `url` - URL identifying the requested resource.
+///
 /// This function cleans up and standardizes URLs from `docs.rs`. It handles various formats,
 /// including those with version numbers, crate prefixes, and function paths.
 ///
@@ -20,6 +23,7 @@ pub fn normalize_docs_url(url: &str) -> std::borrow::Cow<'_, str> {
     re1.replace(url, "https://docs.rs/${crt}")
 }
 
+/// Verifies that normalize docs url.
 #[cfg(test)]
 mod tests {
     use super::*;

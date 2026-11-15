@@ -4,22 +4,24 @@
 
 /// Examples that analyze memory usage and measure time.
 mod memory_usage_analysis {
+    /// This module provides the `dhat` implementation used by its parent.
     pub mod dhat;
+    /// This module provides the `measure_time` implementation used by its parent.
     pub mod measure_time;
 }
+/// Runs both the heap profiling and execution-time demonstrations.
 
-/// Runs the `dhat` and the time measurement examples.
 fn main() {
     memory_usage_analysis::dhat::run();
     memory_usage_analysis::measure_time::run();
 }
 
+/// Calls both profiling demonstrations through the entry point.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example; each module's `run()` asserts its own results, so a
-    /// panic fails the test.
+    /// Verifies that both demonstrations return control to the entry point.
     #[test]
     fn test_main_runs() {
         main();

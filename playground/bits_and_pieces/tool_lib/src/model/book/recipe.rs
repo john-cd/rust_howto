@@ -5,8 +5,8 @@
 use serde::Serialize;
 
 use crate::Crate;
-
 #[derive(Serialize, Debug)]
+
 /// A recipe.
 pub struct Recipe {
     /// Name of the recipe.

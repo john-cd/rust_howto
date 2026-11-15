@@ -1,3 +1,5 @@
+//! Compile-fail fixture for an exclusive reborrow while a shared borrow remains active.
+//!
 //! TODO Reviewed ??-??-2026.
 
 fn main() {

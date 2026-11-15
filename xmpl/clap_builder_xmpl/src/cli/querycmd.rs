@@ -20,11 +20,10 @@ pub(super) fn cmd() -> Command {
                 .allow_negative_numbers(true),
         )
 }
-// See: <https://docs.rs/clap/latest/clap/struct.Arg.html#method.trailing_var_arg>
-
 /// Returns the words supplied to the `query` subcommand.
-///
+// See: <https://docs.rs/clap/latest/clap/struct.Arg.html#method.trailing_var_arg>
 /// Returns an empty vector if the subcommand was not present.
+
 pub(super) fn get_args(matches: &ArgMatches) -> Vec<String> {
     if let Some(sub_m) = matches.subcommand_matches("query") {
         sub_m
@@ -37,6 +36,7 @@ pub(super) fn get_args(matches: &ArgMatches) -> Vec<String> {
     }
 }
 
+/// Lets clap check the command definition for mistakes.
 #[cfg(test)]
 mod tests {
     use super::*;

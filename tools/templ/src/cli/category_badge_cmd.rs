@@ -21,8 +21,8 @@ pub(super) fn subcommand_category_badge() -> Command {
                 .help("Enter the category name(s)"),
         )
 }
-
 /// Returns the command line arguments for the `category_badge` subcommand
+
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
     let mut cmdargs = None;
     if let Some(m) = matches.subcommand_matches("category_badge") {
@@ -40,7 +40,6 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
 mod tests {
     use super::*;
 
-    /// Checks that multiple category arguments are collected into `CmdArgs`.
     #[test]
     fn parses_multiple_categories() {
         let matches = Command::new("templ")
@@ -56,7 +55,6 @@ mod tests {
         );
     }
 
-    /// Checks that the visible alias `c` works as an alias for `category_badge`.
     #[test]
     fn alias_c_is_recognized() {
         let matches = Command::new("templ")
@@ -70,7 +68,6 @@ mod tests {
         assert_eq!(args.args, vec!["gui".to_owned()]);
     }
 
-    /// Checks that omitting the required category argument fails argument parsing.
     #[test]
     fn missing_category_fails() {
         let result = Command::new("templ")
@@ -83,7 +80,6 @@ mod tests {
         );
     }
 
-    /// Checks that `get_cmd` returns `None` when the subcommand was not called.
     #[test]
     fn returns_none_when_subcommand_not_invoked() {
         let matches = Command::new("templ")

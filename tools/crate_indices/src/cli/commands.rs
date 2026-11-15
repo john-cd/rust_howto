@@ -23,16 +23,16 @@ pub(super) fn cli() -> Command {
         .subcommand(subcommand_update_refdefs())
         .subcommand(subcommand_expand_crate_blocks())
 }
-
 /// Builds the `category_page` subcommand of the CLI user interface
+
 fn subcommand_category_page() -> Command {
     Command::new("category_page")
         .visible_alias("c")
         .about("Returns the markdown for the category page, given a list of crates")
         .arg(arg_crate_name())
 }
-
 /// Builds the offline `category_page_from_metadata` subcommand.
+
 fn subcommand_category_page_from_metadata() -> Command {
     Command::new("category_page_from_metadata")
         .about("Returns the category page from metadata and published recipe links")
@@ -40,8 +40,8 @@ fn subcommand_category_page_from_metadata() -> Command {
         .arg(arg_book_root())
         .arg(arg_crate_name())
 }
-
 /// Builds the `alphabetical_page` subcommand of the CLI user interface
+
 fn subcommand_alphabetical_page() -> Command {
     Command::new("alphabetical_page")
         .visible_alias("a")
@@ -49,24 +49,24 @@ fn subcommand_alphabetical_page() -> Command {
         .arg(arg_book_root())
         .arg(arg_crate_name())
 }
-
 /// Builds the `crate_page` subcommand of the CLI user interface
+
 fn subcommand_crate_page() -> Command {
     Command::new("crate_page")
         .visible_alias("p")
         .about("Returns the markdown for individual crate sections in crates_and_examples.md, given a list of crates")
         .arg(arg_crate_name())
 }
-
 /// Builds the `list_crates` subcommand of the CLI user interface
+
 fn subcommand_list_crates() -> Command {
     Command::new("list_crates")
         .visible_alias("l")
         .about("Returns the list of crates used in the book")
         .arg(arg_directory())
 }
-
 /// Builds the `update_refdefs` subcommand of the CLI user interface
+
 fn subcommand_update_refdefs() -> Command {
     Command::new("update_refdefs")
         .visible_alias("u")
@@ -74,8 +74,8 @@ fn subcommand_update_refdefs() -> Command {
         .arg(arg_crate_name())
         .arg(arg_file_path_with_default())
 }
-
 /// Builds the `expand_crate_blocks` subcommand of the CLI user interface
+
 fn subcommand_expand_crate_blocks() -> Command {
     Command::new("expand_crate_blocks")
         .visible_alias("e")
@@ -98,8 +98,8 @@ fn arg_crate_name() -> clap::Arg {
         .action(clap::ArgAction::Append)
         .help("Crate name(s)")
 }
-
 /// Builds the `file_path` argument with a default value (used by `update_refdefs`).
+
 fn arg_file_path_with_default() -> clap::Arg {
     Arg::new("file_path")
         .long("file")
@@ -112,8 +112,8 @@ fn arg_file_path_with_default() -> clap::Arg {
         .default_value("./src/refs/crate-refs.md")
         .help("File path")
 }
-
 /// Builds the required metadata file argument.
+
 fn arg_metadata_file() -> clap::Arg {
     Arg::new("metadata")
         .long("metadata")
@@ -124,8 +124,8 @@ fn arg_metadata_file() -> clap::Arg {
         .value_hint(ValueHint::FilePath)
         .help("TOML category metadata snapshot")
 }
-
 /// Builds the book root argument used to discover published recipe links.
+
 fn arg_book_root() -> clap::Arg {
     Arg::new("book_root")
         .long("book-root")
@@ -137,9 +137,9 @@ fn arg_book_root() -> clap::Arg {
         .default_value(".")
         .help("Book root containing src/indices/examples_index.md")
 }
-
 /// Builds the `file_path` argument without a default value (used by `expand_crate_blocks`).
 /// The refdefs file is optional: when not provided, reference definitions are not merged.
+
 fn arg_optional_file_path() -> clap::Arg {
     Arg::new("file_path")
         .long("file")
@@ -151,8 +151,8 @@ fn arg_optional_file_path() -> clap::Arg {
         .value_hint(ValueHint::FilePath)
         .help("Optional path to a refdefs file where reference definitions will be merged")
 }
-
 /// Builds the `directory` argument of the CLI user interface
+
 fn arg_directory() -> clap::Arg {
     Arg::new("directory")
         .long("directory")
@@ -166,11 +166,12 @@ fn arg_directory() -> clap::Arg {
         .help("Path of the directory to search for Cargo.toml files")
 }
 
+/// Verifies that `--book-root` defaults to `.` when omitted in subcommands.
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies CLI.
 
-    /// Verifies that the clap command configuration contains no internal errors.
     #[test]
     fn verify_cli() {
         cli().debug_assert();
@@ -262,7 +263,7 @@ mod tests {
         );
     }
 
-    /// Verifies all single-letter visible aliases (`c`, `a`, `p`, `l`, `u`, `e`).
+    /// Verifies subcommand aliases.
     #[test]
     fn test_subcommand_aliases() {
         let matches_c = cli()
@@ -296,8 +297,6 @@ mod tests {
         assert_eq!(matches_e.subcommand_name(), Some("expand_crate_blocks"));
     }
 
-    /// Verifies error handling when required arguments are missing or invalid combinations are
-    /// given.
     #[test]
     fn test_invalid_argument_errors() {
         // Missing required crate name in category_page.

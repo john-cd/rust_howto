@@ -26,6 +26,9 @@ pub fn backup_then_write_to<P: AsRef<Path>>(filepath: P, contents: String) -> Re
 
 /// Returns the backup path of `filepath`: the full file name plus `.bak`.
 ///
+/// # Arguments
+/// * `filepath` - Path to the resource being processed.
+///
 /// Appending (instead of replacing the extension) keeps `a.md` and `a.toml`
 /// from sharing `a.bak`, and an input that already ends in `.bak` maps to a
 /// different file (`a.bak.bak`) instead of itself.
@@ -52,6 +55,7 @@ pub(crate) fn backup<P: AsRef<Path>>(filepath: P) -> Result<()> {
     Ok(())
 }
 
+/// Checks that the file is copied to a `.bak` file.
 #[cfg(test)]
 mod tests {
     use std::fs;

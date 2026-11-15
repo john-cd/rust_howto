@@ -1,3 +1,7 @@
+//! Uses Linux io_uring to drive supported transport operations.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2026 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the

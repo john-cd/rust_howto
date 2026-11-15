@@ -15,12 +15,12 @@ fn add(left: i64, right: i64) -> PyResult<i64> {
     left.checked_add(right)
         .ok_or_else(|| PyOverflowError::new_err("sum does not fit in a signed 64-bit integer"))
 }
-
 /// Registers the example function in the importable Python module.
 ///
 /// # Errors
 ///
 /// Returns a Python error if adding the function to the module fails.
+
 #[pymodule]
 fn rust_howto_python_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
     module.add_function(wrap_pyfunction!(add, module)?)

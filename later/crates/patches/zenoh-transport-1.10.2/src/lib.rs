@@ -1,3 +1,10 @@
+//! ⚠️ WARNING ⚠️
+//! Transport types and event callbacks shared by Zenoh unicast and multicast links.
+//! This crate is intended for Zenoh's internal use.
+//! [Click here for Zenoh's documentation](https://docs.rs/zenoh/latest/zenoh)
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,7 +16,6 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
-//
 
 //! ⚠️ WARNING ⚠️
 //!

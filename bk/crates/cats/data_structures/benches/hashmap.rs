@@ -143,7 +143,6 @@ pub fn run() {
     main();
 }
 
-/// Verifies the `hashmap` example by running its entry point.
 #[cfg(test)]
 mod tests {
     /// Runs the hash map benchmark through its entry point.

@@ -1,3 +1,7 @@
+//! Receives, orders, and dispatches messages for universal unicast transport.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,7 +13,9 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
+
 use std::fmt::Debug;
 use std::sync::MutexGuard;
 
@@ -71,6 +77,9 @@ impl TransportUnicastUniversal {
         callback.handle_message(msg)
     }
 
+    /// Processes the close input for the rx workflow and applies the resulting state changes. It
+    /// calls `handle_close`, `clone` to apply the required changes.
+
     fn handle_close(&self, link: &Link, _reason: u8, session: bool) -> ZResult<()> {
         // Delete and clean up
         let c_transport = self.clone();
@@ -88,6 +97,11 @@ impl TransportUnicastUniversal {
         Ok(())
     }
 
+    /// Processes the frame input for the rx workflow and applies the resulting state changes. It
+    /// calls `priority`, `is_qos` to apply the required changes.
+
+    /// # Errors
+    /// An error is returned if verify_sn, Some fails.
     fn handle_frame<R: BacktrackableReader>(
         &self,
         frame: FrameReader<R>,
@@ -136,6 +150,9 @@ impl TransportUnicastUniversal {
 
         Ok(())
     }
+
+    /// Processes the fragment input for the rx workflow and applies the resulting state changes. It
+    /// calls `is_qos`, `priority` to apply the required changes.
 
     fn handle_fragment(
         &self,
@@ -224,6 +241,8 @@ impl TransportUnicastUniversal {
         Ok(())
     }
 
+    /// Verifies sn.
+
     fn verify_sn(
         &self,
         message_type: &str,
@@ -245,6 +264,11 @@ impl TransportUnicastUniversal {
         Ok(true)
     }
 
+    /// Loads the messages required by the rx workflow and reports failures from the underlying
+    /// source.
+
+    /// # Errors
+    /// An error is returned if handle_frame, decode fails.
     pub(super) fn read_messages<TBuffer: BacktrackableReader + Buffer + Debug>(
         &self,
         mut batch: RBatch<TBuffer>,

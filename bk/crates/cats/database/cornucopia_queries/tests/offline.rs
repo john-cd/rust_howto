@@ -17,6 +17,8 @@ use postgres_types::ToSql;
 use postgres_types::Type;
 use postgres_types::private::BytesMut;
 
+/// Reports whether the offline meets the string sql condition so callers can choose the correct
+/// branch.
 fn is_string_sql<T: StringSql>(_: &T) {}
 
 #[test]
@@ -27,6 +29,8 @@ fn string_sql_is_implemented_for_common_string_types() {
     is_string_sql(&Box::<str>::from("boxed"));
 }
 
+/// # Errors
+/// An error is returned if escape_domain_to_sql, from_sql fails.
 #[test]
 fn vec_serializes_as_text_array_and_iterator_reads_it_back()
 -> Result<(), Box<dyn std::error::Error + Sync + Send>> {
@@ -40,6 +44,8 @@ fn vec_serializes_as_text_array_and_iterator_reads_it_back()
     Ok(())
 }
 
+/// # Errors
+/// An error is returned if to_sql, from_sql fails.
 #[test]
 fn iter_sql_round_trips_through_postgres_wire_format()
 -> Result<(), Box<dyn std::error::Error + Sync + Send>> {
@@ -64,6 +70,8 @@ fn array_iterator_accepts_only_matching_array_types() {
     assert!(!<ArrayIterator<'_, i32> as FromSql>::accepts(&Type::INT4));
 }
 
+/// # Errors
+/// An error is returned if Domain fails.
 #[test]
 fn domain_wrapper_delegates_to_inner_type() -> Result<(), Box<dyn std::error::Error + Sync + Send>>
 {

@@ -1,3 +1,7 @@
+//! Negotiates quality-of-service settings during unicast establishment.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2022 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,7 +13,9 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
+
 use core::marker::PhantomData;
 use std::str::FromStr;
 
@@ -36,26 +42,38 @@ use crate::unicast::establishment::AcceptFsm;
 use crate::unicast::establishment::OpenFsm;
 
 // Extension Fsm
+/// State machine for negotiating quality-of-service settings.
 pub(crate) struct QoSFsm<'a> {
+    /// First value in the pair.
     _a: PhantomData<&'a ()>,
 }
 
 impl QoSFsm<'_> {
+    /// Constructs a usable initial qo sfsm value with the defaults required by the qos component.
     pub(crate) const fn new() -> Self {
         Self { _a: PhantomData }
     }
 }
 
+/// Defines the outcomes available to the ext workflow, including no qo s.
 #[derive(Clone, Debug, PartialEq, Eq)]
 enum State {
     NoQoS,
     QoS {
+        /// Optional reliability used by qo sfsm; `None` means the value is not configured or
+        /// unavailable.
         reliability: Option<Reliability>,
+        /// Optional priorities used by qo sfsm; `None` means the value is not configured or
+        /// unavailable.
         priorities: Option<PriorityRange>,
     },
 }
 
 impl State {
+    /// Constructs a usable initial state value with the defaults required by the qos component.
+
+    /// # Errors
+    /// An error is returned if get fails.
     fn new(is_qos: bool, endpoint: &EndPoint) -> ZResult<Self> {
         if !is_qos {
             Ok(State::NoQoS)
@@ -78,6 +96,8 @@ impl State {
             })
         }
     }
+
+    /// Attempts to from u64 and reports failure to the caller.
 
     fn try_from_u64(value: u64) -> ZResult<Self> {
         match value {
@@ -116,13 +136,10 @@ impl State {
     }
 
     /// Encodes [`QoS`] as a [`u64`].
-    ///
     /// This function is used for encoding both of [`StateAccept`] in
     /// [`establishment::cookie::Cookie::ext_qos`](crate::unicast::establishment::cookie::Cookie::ext_qos) and
     /// [`zenoh_protocol::transport::init::ext::QoS`].
-    ///
     /// The three least significant bits are used to discrimnate five states:
-    ///
     /// 1. QoS is disabled
     /// 2. QoS is enabled but no priority range and no reliability setting are available
     /// 3. QoS is enabled and priority range is available but reliability is unavailable
@@ -157,6 +174,8 @@ impl State {
         }
     }
 
+    /// Converts between the state representation and exts while preserving the invariants required
+    /// by callers.
     fn to_exts(&self) -> (Option<init::ext::QoS>, Option<init::ext::QoSLink>) {
         match self {
             State::NoQoS => (None, None),
@@ -191,6 +210,8 @@ impl State {
             (None, None) => Ok(State::NoQoS),
         }
     }
+
+    /// Reports whether the state meets the qos condition so callers can choose the correct branch.
 
     fn is_qos(&self) -> bool {
         matches!(self, State::QoS { .. })
@@ -241,6 +262,7 @@ impl State {
         }
     }
 }
+/// Authentication state maintained by the initiator during the open handshake.
 
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub(crate) struct StateOpen(State);
@@ -252,9 +274,18 @@ impl From<State> for StateOpen {
 }
 
 impl StateOpen {
+    /// Constructs a usable initial state open value with the defaults required by the qos
+    /// component.
+    ///
+    /// # Errors
+    /// Returns an error if the requested resource or connection cannot be created.
+
     pub(crate) fn new(is_qos: bool, endpoint: &EndPoint) -> ZResult<Self> {
         State::new(is_qos, endpoint).map(StateOpen)
     }
+
+    /// Reports whether the state open meets the qos condition so callers can choose the correct
+    /// branch.
 
     pub(crate) fn is_qos(&self) -> bool {
         self.0.is_qos()
@@ -284,12 +315,18 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
     type SendOpenSynIn = &'a StateOpen;
     type SendOpenSynOut = Option<open::ext::QoS>;
 
+    /// Sends init syn.
+
+    /// # Arguments
+    /// * `state` - Shared state and services used to complete the qos workflow.
     async fn send_init_syn(
         self,
         state: Self::SendInitSynIn,
     ) -> Result<Self::SendInitSynOut, Self::Error> {
         Ok(state.0.to_exts())
     }
+
+    /// Receives init ack.
 
     async fn recv_init_ack(
         self,
@@ -351,6 +388,8 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
         Ok(())
     }
 
+    /// # Arguments
+    /// * `_state` - Shared state and services used to complete the qos workflow.
     async fn send_open_syn(
         self,
         _state: Self::SendOpenSynIn,
@@ -358,6 +397,8 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
         Ok(None)
     }
 
+    /// # Arguments
+    /// * `_state` - Shared state and services used to complete the qos workflow.
     async fn recv_open_ack(
         self,
         _state: Self::RecvOpenAckIn,
@@ -366,6 +407,7 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
     }
 }
 
+/// Quality-of-service extension state exchanged during unicast establishment.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub(crate) struct StateAccept(State);
 
@@ -376,9 +418,18 @@ impl From<State> for StateAccept {
 }
 
 impl StateAccept {
+    /// Constructs a usable initial state accept value with the defaults required by the qos
+    /// component.
+    ///
+    /// # Errors
+    /// Returns an error if the requested resource or connection cannot be created.
+
     pub(crate) fn new(is_qos: bool, endpoint: &EndPoint) -> ZResult<Self> {
         State::new(is_qos, endpoint).map(StateAccept::from)
     }
+
+    /// Reports whether the state accept meets the qos condition so callers can choose the correct
+    /// branch.
 
     pub(crate) fn is_qos(&self) -> bool {
         self.0.is_qos()
@@ -416,6 +467,11 @@ where
 {
     type Error = DidntRead;
 
+    /// # Arguments
+    /// * `reader` - Source that supplies the bytes or records consumed by this operation.
+    ///
+    /// # Errors
+    /// An error is returned if read, map_err fails.
     fn read(self, reader: &mut R) -> Result<StateAccept, Self::Error> {
         Ok(State::try_from_u64(self.read(reader)?)
             .map_err(|_| DidntRead)?
@@ -437,6 +493,8 @@ impl<'a> AcceptFsm for &'a QoSFsm<'a> {
     type SendInitAckOut = (Option<init::ext::QoS>, Option<init::ext::QoSLink>);
     type SendOpenAckIn = &'a StateAccept;
     type SendOpenAckOut = Option<open::ext::QoS>;
+
+    /// Receives init syn.
 
     async fn recv_init_syn(
         self,
@@ -498,6 +556,10 @@ impl<'a> AcceptFsm for &'a QoSFsm<'a> {
         Ok(())
     }
 
+    /// Sends init ack.
+
+    /// # Arguments
+    /// * `state` - Shared state and services used to complete the qos workflow.
     async fn send_init_ack(
         self,
         state: Self::SendInitAckIn,
@@ -505,12 +567,17 @@ impl<'a> AcceptFsm for &'a QoSFsm<'a> {
         Ok(state.0.to_exts())
     }
 
+    /// # Arguments
+    /// * `_state` - Shared state and services used to complete the qos workflow.
     async fn recv_open_syn(
         self,
         _state: Self::RecvOpenSynIn,
     ) -> Result<Self::RecvOpenSynOut, Self::Error> {
         Ok(())
     }
+
+    /// # Arguments
+    /// * `_state` - Shared state and services used to complete the qos workflow.
 
     async fn send_open_ack(
         self,
@@ -520,6 +587,8 @@ impl<'a> AcceptFsm for &'a QoSFsm<'a> {
     }
 }
 
+/// Tests the `qos` behavior and its boundary cases.
+/// behavior.
 #[cfg(test)]
 mod tests {
     use zenoh_protocol::core::PriorityRange;
@@ -539,6 +608,12 @@ mod tests {
         };
     }
 
+    /// # Arguments
+    /// * `state_open` - Mutable state open whose state is updated by this operation.
+    /// * `state_accept` - Mutable state accept whose state is updated by this operation.
+
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     async fn test_negotiation(
         state_open: &mut StateOpen,
         state_accept: &mut StateAccept,
@@ -553,6 +628,7 @@ mod tests {
 
         Ok(())
     }
+    /// Verifies negotiation ok.
 
     async fn test_negotiation_ok(state_open: State, state_accept: State, state_expected: State) {
         let mut state_open = state_open.into();
@@ -566,6 +642,7 @@ mod tests {
             }
         };
     }
+    /// Verifies negotiation err.
 
     async fn test_negotiation_err(state_open: State, state_accept: State) {
         let mut state_open = state_open.into();
@@ -575,6 +652,7 @@ mod tests {
             panic!("expected `Err(_)`, got `Ok(())`")
         }
     }
+    /// Verifies priority range negotiation scenario 1.
 
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_1() {
@@ -594,6 +672,7 @@ mod tests {
         )
         .await
     }
+    /// Verifies priority range negotiation scenario 2.
 
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_2() {
@@ -613,6 +692,7 @@ mod tests {
         )
         .await
     }
+    /// Verifies priority range negotiation scenario 3.
 
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_3() {
@@ -632,6 +712,7 @@ mod tests {
         )
         .await
     }
+    /// Verifies priority range negotiation scenario 4.
 
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_4() {
@@ -651,6 +732,7 @@ mod tests {
         )
         .await
     }
+    /// Verifies priority range negotiation scenario 5.
 
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_5() {
@@ -670,6 +752,7 @@ mod tests {
         )
         .await
     }
+    /// Verifies priority range negotiation scenario 6.
 
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_6() {
@@ -685,6 +768,7 @@ mod tests {
         )
         .await
     }
+    /// Verifies reliability negotiation scenario 2.
 
     #[tokio::test]
     async fn test_reliability_negotiation_scenario_2() {
@@ -704,6 +788,7 @@ mod tests {
         )
         .await
     }
+    /// Verifies reliability negotiation scenario 3.
 
     #[tokio::test]
     async fn test_reliability_negotiation_scenario_3() {
@@ -719,6 +804,7 @@ mod tests {
         )
         .await
     }
+    /// Verifies reliability negotiation scenario 4.
 
     #[tokio::test]
     async fn test_reliability_negotiation_scenario_4() {
@@ -738,6 +824,7 @@ mod tests {
         )
         .await
     }
+    /// Verifies reliability negotiation scenario 5.
 
     #[tokio::test]
     async fn test_reliability_negotiation_scenario_5() {
@@ -753,6 +840,7 @@ mod tests {
         )
         .await
     }
+    /// Verifies priority range and reliability negotiation scenario 1.
 
     #[tokio::test]
     async fn test_priority_range_and_reliability_negotiation_scenario_1() {

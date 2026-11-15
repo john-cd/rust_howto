@@ -1,3 +1,7 @@
+//! Receives and dispatches messages for low-latency unicast transport.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,7 +13,9 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
+
 use zenoh_buffers::ZSlice;
 use zenoh_buffers::reader::HasReader;
 use zenoh_buffers::reader::Reader;
@@ -67,6 +73,14 @@ impl TransportUnicastLowlatency {
         }
     }
 
+    /// Loads the messages required by the rx workflow and reports failures from the underlying
+    /// source.
+    ///
+    /// # Arguments
+    /// * `link` - Transport link to add, remove, or use.
+
+    /// # Errors
+    /// An error is returned if can_read fails.
     pub(super) async fn read_messages(
         &self,
         mut zslice: ZSlice,

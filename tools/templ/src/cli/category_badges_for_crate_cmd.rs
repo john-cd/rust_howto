@@ -16,11 +16,11 @@ pub(super) fn subcommand_category_badges_for_crate() -> Command {
         .display_order(1)
         .arg(super::arg_crate_name())
 }
-
 /// Get the command-line arguments for the `categories_badges_for_crate` subcommand
 ///
 /// # Arguments
 /// * `matches` - The matches from the command line arguments
+
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
     let mut cmdargs = None;
     if let Some(m) = matches.subcommand_matches("categories_badges_for_crate") {
@@ -34,7 +34,6 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
 mod tests {
     use super::*;
 
-    /// Checks that multiple crate names are collected into `CmdArgs`.
     #[test]
     fn parses_multiple_crate_names() {
         let matches = Command::new("templ")
@@ -48,7 +47,6 @@ mod tests {
         assert_eq!(args.args, vec!["clap".to_owned(), "anyhow".to_owned()]);
     }
 
-    /// Checks that the visible alias `cc` works as an alias for `categories_badges_for_crate`.
     #[test]
     fn alias_cc_is_recognized() {
         let matches = Command::new("templ")
@@ -61,7 +59,6 @@ mod tests {
         assert_eq!(args.args, vec!["serde".to_owned()]);
     }
 
-    /// Checks that omitting the required crate argument fails argument parsing.
     #[test]
     fn missing_crate_name_fails() {
         let result = Command::new("templ")
@@ -71,7 +68,6 @@ mod tests {
         assert!(result.is_err(), "missing crate name should fail parsing");
     }
 
-    /// Checks that `get_cmd` returns `None` when the subcommand was not called.
     #[test]
     fn returns_none_when_subcommand_not_invoked() {
         let matches = Command::new("templ")

@@ -1,3 +1,7 @@
+//! Tracks acknowledgements and retransmission state for reliable unicast delivery.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,7 +13,9 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
+
 use std::convert::TryInto;
 use std::fmt;
 
@@ -20,15 +26,23 @@ use zenoh_util::zerror;
 
 use super::common::seq_num::SeqNum;
 use super::core::u64;
+/// Tracks messages awaiting acknowledgement or retransmission.
 
 pub(super) struct ReliabilityQueue<T> {
+    /// Current sequence number.
     sn: SeqNum,
+    /// Index value.
     index: usize,
+    /// Length of the input.
     len: usize,
+    /// Optional inner used by reliability queue; `None` means the value is not configured or
+    /// unavailable.
     inner: Vec<Option<T>>,
 }
 
 impl<T> ReliabilityQueue<T> {
+    /// Constructs a usable initial reliability queue value with the defaults required by the
+    /// reliability component.
     pub(super) fn new(capacity: usize, initial_sn: u64, sn_resolution: u64) -> ReliabilityQueue<T> {
         let mut inner = Vec::with_capacity(capacity);
         for _ in 0..capacity {
@@ -53,20 +67,30 @@ impl<T> ReliabilityQueue<T> {
         self.len
     }
 
+    /// Reports whether the reliability queue meets the empty condition so callers can choose the
+    /// correct branch.
+
     #[inline]
     pub(super) fn is_empty(&self) -> bool {
         self.len() == 0
     }
+
+    /// Reports whether the reliability queue meets the full condition so callers can choose the
+    /// correct branch.
 
     #[inline]
     pub(super) fn is_full(&self) -> bool {
         self.len() == self.capacity()
     }
 
+    ///
+
     #[inline]
     pub(super) fn get_base(&self) -> u64 {
         self.sn.get()
     }
+
+    /// Changes the base held by the reliability queue; subsequent operations use the updated value.
 
     pub(super) fn set_base(&mut self, sn: u64) -> ZResult<()> {
         let gap: usize = match self.sn.gap(sn) {
@@ -100,6 +124,8 @@ impl<T> ReliabilityQueue<T> {
         Ok(())
     }
 
+    /// Inserts the current value.
+
     pub(super) fn insert(&mut self, t: T, sn: u64) -> ZResult<()> {
         let gap: usize = match self.sn.gap(sn) {
             Ok(gap) => match gap.try_into() {
@@ -131,6 +157,8 @@ impl<T> ReliabilityQueue<T> {
 
         Ok(())
     }
+
+    /// Removes the current value.
 
     pub(super) fn remove(&mut self, sn: u64) -> ZResult<T> {
         let gap: usize = match self.sn.gap(sn) {
@@ -202,6 +230,9 @@ impl<T> ReliabilityQueue<T> {
 }
 
 impl<T: Clone> ReliabilityQueue<T> {
+    /// # Errors
+    /// Returns an error if the requested data cannot be retrieved.
+
     pub(super) fn get(&mut self, sn: u64) -> ZResult<T> {
         let gap: usize = match self.sn.gap(sn) {
             Ok(gap) => match gap.try_into() {
@@ -240,6 +271,7 @@ impl<T: Clone> ReliabilityQueue<T> {
 }
 
 impl<T: fmt::Debug> fmt::Debug for ReliabilityQueue<T> {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("ReliabilityQueue")
             .field("base", &self.sn.get())
@@ -248,6 +280,8 @@ impl<T: fmt::Debug> fmt::Debug for ReliabilityQueue<T> {
     }
 }
 
+/// Tests the `reliability` behavior and its boundary cases.
+/// behavior.
 #[cfg(test)]
 mod tests {
     use rand::Rng;

@@ -5,6 +5,7 @@
 #[cfg(all(feature = "postgres", test))]
 use anyhow::Context as _;
 
+/// Connecting to PostgreSQL with `tokio-postgres`.
 #[cfg(feature = "postgres")]
 mod tokio_postgres;
 

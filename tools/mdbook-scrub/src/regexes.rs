@@ -48,8 +48,8 @@ pub(crate) fn get_regexes(conf: &PreprocConfig) -> ScrubRegexes {
 pub(crate) fn wikilink_regex() -> Regex {
     Regex::new(r"\[\[\s*([^|\]]*?)\s*(?:\|\s*([^\]]*?)\s*)?\]\]").expect("Invalid wikilink regex")
 }
-
 /// Apply a replacement outside code spans, fenced code blocks and HTML comments.
+
 pub(crate) fn replace_outside_protected_spans<F>(
     markdown: &str,
     regex: &Regex,
@@ -136,6 +136,7 @@ impl<'a> Visitor<'a> for ProtectedSpanCollector {
     }
 }
 
+/// Verifies that the default configuration builds both hidden-content patterns.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -212,7 +213,6 @@ mod tests {
         assert!(result.contains("[[hidden-comment]]"));
     }
 
-    /// Verifies that wikilinks use the book's page-reference namespace and keep their title.
     #[test]
     fn wikilinks_use_page_references_and_keep_their_title() {
         let regex = wikilink_regex();
@@ -228,7 +228,6 @@ mod tests {
         assert_eq!(result, "[title][p~file]");
     }
 
-    /// Verifies that an untitled wikilink uses its target as its display text.
     #[test]
     fn wikilinks_without_a_title_keep_the_target_as_display_text() {
         let regex = wikilink_regex();
@@ -244,7 +243,6 @@ mod tests {
         assert_eq!(result, "[file-name][p~file-name]");
     }
 
-    /// Verifies malformed wikilinks with no target are reduced to their title.
     #[test]
     fn wikilinks_without_a_target_are_scrubbed() {
         let regex = wikilink_regex();

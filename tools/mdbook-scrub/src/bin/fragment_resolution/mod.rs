@@ -43,6 +43,12 @@ struct ChapterFragments {
 }
 
 /// Finds local links to Markdown chapters whose fragments do not exist.
+///
+/// # Arguments
+/// * `context` - Context used to resolve configuration and services.
+///
+/// # Errors
+/// Returns an error if the requested data cannot be retrieved.
 pub(super) fn find_invalid_fragments(context: &Value) -> Result<Vec<InvalidFragment>> {
     let source_root = source_root(context)?;
     let items = context
@@ -269,6 +275,7 @@ fn tag_identifiers(tag: &str) -> Vec<String> {
 
 /// Returns an expression matching HTML comments and start tags.
 fn html_tag_regex() -> &'static Regex {
+    /// Shared `html tag` used by this module.
     static HTML_TAG: OnceLock<Regex> = OnceLock::new();
     HTML_TAG.get_or_init(|| {
         Regex::new("(?is)<!--.*?-->|<[a-z][^>]*>").expect("the fixed HTML tag expression is valid")
@@ -300,6 +307,7 @@ fn links(content: &str) -> Vec<String> {
 
 /// Returns the compiled expression used to read HTML `href` attributes.
 fn html_href_regex() -> &'static Regex {
+    /// Shared `html href` used by this module.
     static HTML_HREF: OnceLock<Regex> = OnceLock::new();
     HTML_HREF.get_or_init(|| {
         Regex::new(r#"(?is)\bhref\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))"#)
@@ -336,8 +344,8 @@ fn is_external_url(path: &str) -> bool {
             .split_once(':')
             .is_some_and(|(scheme, _)| !scheme.contains('/') && !scheme.contains('\\'))
 }
-
 /// Decodes valid percent escapes while preserving plus signs and malformed escapes.
+
 fn percent_decode(value: &str) -> String {
     let bytes = value.as_bytes();
     let mut decoded = Vec::with_capacity(bytes.len());
@@ -387,6 +395,10 @@ fn slug(text: &str) -> String {
 }
 
 /// Adds the numeric suffix used by mdBook when a generated heading ID repeats.
+/// # Arguments
+/// * `id` - Identifier used to select the mod record or cache entry affected by this operation.
+/// * `used` - Mutable hash set whose state is updated by this operation.
+
 fn unique_id(id: &str, used: &mut HashSet<String>) -> String {
     if used.insert(id.to_owned()) {
         return id.to_owned();
@@ -427,6 +439,7 @@ fn path_key(path: &Path) -> String {
     }
 }
 
+/// Verifies generated, explicit, duplicate, and HTML identifiers are recognized.
 #[cfg(test)]
 mod tests {
     use serde_json::json;
@@ -448,7 +461,6 @@ mod tests {
         assert!(!ids.contains("comment-id"));
     }
 
-    /// Verifies heading IDs against output rendered by mdBook 0.5.4.
     #[test]
     fn heading_ids_match_mdbook_html_output() {
         let ids = identifiers(
@@ -470,7 +482,6 @@ mod tests {
         }
     }
 
-    /// Verifies rendered `.html` and directory links resolve to index chapters.
     #[test]
     fn resolves_rendered_html_and_directory_index_aliases() {
         let context = json!({
@@ -494,7 +505,6 @@ mod tests {
         assert!(invalid[0].target.ends_with("guide/index.md"));
     }
 
-    /// Verifies local links resolve while unknown, encoded, and external fragments are handled.
     #[test]
     fn finds_only_missing_local_markdown_fragments() {
         let context = json!({
@@ -522,7 +532,6 @@ mod tests {
         );
     }
 
-    /// Verifies URL decoding preserves `+` and safely handles malformed escapes.
     #[test]
     fn percent_decode_preserves_plus_and_invalid_sequences() {
         assert_eq!(percent_decode("a+b%20c%Q1"), "a+b c%Q1");

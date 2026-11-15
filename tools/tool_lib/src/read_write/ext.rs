@@ -61,6 +61,7 @@ pub fn extend_extension<P: AsRef<Path>>(filepath: &P, insert: &str) -> PathBuf {
 // everything before the last `.` (`a.tar.gz` -> `a.tar`), which is what
 // `extend_extension` needs to preserve inner dots.
 
+/// Verifies that replacing an extension preserves earlier file-name dots.
 #[cfg(test)]
 mod tests {
     use super::*;

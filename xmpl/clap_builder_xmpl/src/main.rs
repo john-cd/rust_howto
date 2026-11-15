@@ -4,9 +4,9 @@
 
 #![warn(clippy::all, rust_2018_idioms)]
 
+/// The command-line interface: arguments, subcommands and their parsing.
 mod cli;
-
-/// Parses the command line and prints the configuration and the commands.
+/// Parses the command line and prints the selected configuration and commands.
 fn main() {
     env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init(); // Log to stderr.
 
@@ -51,16 +51,14 @@ mod tests {
     fn describe_args(args: &[&str]) -> Vec<String> {
         describe(cli::get_args_from(args))
     }
-
-    /// Checks that `main` runs: the test harness's own arguments are not
     /// valid for the demo CLI, so it only works when they are ignored.
+
     #[test]
     #[ignore = "main() parses the real process arguments, which belong to the test harness"]
     fn main_runs() {
         main();
     }
 
-    /// Checks the output without arguments.
     #[test]
     fn no_arguments() {
         assert_eq!(
@@ -69,7 +67,6 @@ mod tests {
         );
     }
 
-    /// Checks the verbosity levels.
     #[test]
     fn verbosity_levels() {
         assert_eq!(
@@ -80,15 +77,14 @@ mod tests {
         assert_eq!(describe_args(&["demo", "-vvv"])[0], "Don't be crazy");
     }
 
-    /// Checks the config file and the `open` command.
     #[test]
     fn config_and_open() {
         let lines = describe_args(&["demo", "-c", "a.toml", "open", "x.csv"]);
         assert_eq!(lines[1], "Value for config file: a.toml");
         assert_eq!(lines[2], r#"Command: open ["x.csv"]"#);
     }
+    /// Queries and test.
 
-    /// Checks the `query` and `test` commands.
     #[test]
     fn query_and_test() {
         assert_eq!(

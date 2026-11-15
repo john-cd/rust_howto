@@ -1,3 +1,7 @@
+//! Owns multicast transport configuration, peer state, and link lifecycle.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2023 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,7 +13,9 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
+
 use std::collections::HashMap;
 use std::fmt;
 use std::sync::Arc;
@@ -32,29 +38,48 @@ use zenoh_result::zerror;
 use crate::TransportManager;
 use crate::multicast::TransportMulticast;
 use crate::multicast::transport::TransportMulticastInner;
+/// Configuration applied when creating a multicast transport manager.
 
 #[derive(Debug)]
 pub struct TransportManagerConfigMulticast {
+    /// Lease duration advertised by the peer.
     pub lease: Duration,
+    /// Maximum missed keep-alive intervals before closing.
     pub keep_alive: usize,
+    /// Interval between background task joins.
     pub join_interval: Duration,
+    /// Maximum concurrent sessions.
     pub max_sessions: usize,
+    /// Whether the peer negotiated QoS support.
     pub is_qos: bool,
     #[cfg(feature = "transport_compression")]
+    /// Whether compression is enabled for this batch.
     pub is_compression: bool,
 }
+/// Builder for a multicast transport manager.
 
 pub struct TransportManagerBuilderMulticast {
+    /// Lease duration advertised by the peer.
     lease: Duration,
+    /// Maximum missed keep-alive intervals before closing.
     keep_alive: usize,
+    /// Interval between background task joins.
     join_interval: Duration,
+    /// Maximum concurrent sessions.
     max_sessions: usize,
+    /// Flag indicating whether the transport manager builder multicast satisfies the is qos
+    /// condition.
     is_qos: bool,
     #[cfg(feature = "transport_compression")]
+    /// Flag indicating whether the transport manager builder multicast satisfies the is
+    /// compression condition.
     is_compression: bool,
 }
 
 impl fmt::Debug for TransportManagerBuilderMulticast {
+    /// Formats the value for display.
+    /// # Arguments
+    /// * `f` - Mutable formatter whose state is updated by this operation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut debug = f.debug_struct("TransportManagerBuilderMulticast");
         debug
@@ -68,15 +93,22 @@ impl fmt::Debug for TransportManagerBuilderMulticast {
         debug.finish()
     }
 }
+/// Runtime state owned by a multicast transport manager.
 
 pub struct TransportManagerStateMulticast {
     // Established listeners
+    /// Collection of link managers values consumed by transport manager state multicast
+    /// operations.
     pub(crate) link_managers: Arc<Mutex<HashMap<LinkKind, LinkManagerMulticast>>>,
     // Established transports
+    /// Collection of transports values consumed by transport manager state multicast operations.
     pub(crate) transports: Arc<Mutex<HashMap<Locator, Arc<TransportMulticastInner>>>>,
 }
 
 impl fmt::Debug for TransportManagerStateMulticast {
+    /// Formats the value for display.
+    /// # Arguments
+    /// * `f` - Mutable formatter whose state is updated by this operation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportManagerStateMulticast")
             .field("link_managers", &"..")
@@ -85,12 +117,18 @@ impl fmt::Debug for TransportManagerStateMulticast {
     }
 }
 
+/// State required by `TransportManagerParamsMulticast` during transport operations.
 pub struct TransportManagerParamsMulticast {
+    /// Settings that control how this transport manager params multicast is constructed or
+    /// processed.
     pub config: TransportManagerConfigMulticast,
+    /// Current lifecycle value used to decide which transport manager params multicast operations
+    /// are valid.
     pub state: TransportManagerStateMulticast,
 }
 
 impl fmt::Debug for TransportManagerParamsMulticast {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportManagerParamsMulticast")
             .field("config", &self.config)
@@ -100,6 +138,8 @@ impl fmt::Debug for TransportManagerParamsMulticast {
 }
 
 impl TransportManagerBuilderMulticast {
+    /// # Arguments
+    /// * `lease` - Duration controlling the operation.
     pub fn lease(mut self, lease: Duration) -> Self {
         self.lease = lease;
         self
@@ -109,6 +149,9 @@ impl TransportManagerBuilderMulticast {
         self.keep_alive = keep_alive;
         self
     }
+
+    /// # Arguments
+    /// * `join_interval` - Duration controlling the operation.
 
     pub fn join_interval(mut self, join_interval: Duration) -> Self {
         self.join_interval = join_interval;
@@ -131,6 +174,15 @@ impl TransportManagerBuilderMulticast {
         self
     }
 
+    /// Converts between the transport manager builder multicast representation and config while
+    /// preserving the invariants required by callers.
+    ///
+    /// # Arguments
+    /// * `config` - Settings that control the behavior and limits of this transport manager builder
+    ///   multicast workflow.
+
+    /// # Panics
+    /// Panics if an internal `Result` or `Option` has no usable value.
     pub fn from_config(mut self, config: &Config) -> ZResult<TransportManagerBuilderMulticast> {
         self = self.lease(Duration::from_millis(
             *config.transport().link().tx().lease(),
@@ -148,6 +200,11 @@ impl TransportManagerBuilderMulticast {
 
         Ok(self)
     }
+
+    /// Builds the current value.
+    ///
+    /// # Errors
+    /// Returns an error if the requested resource or connection cannot be created.
 
     pub fn build(self) -> ZResult<TransportManagerParamsMulticast> {
         let config = TransportManagerConfigMulticast {
@@ -172,6 +229,11 @@ impl TransportManagerBuilderMulticast {
 }
 
 impl Default for TransportManagerBuilderMulticast {
+    /// Constructs a usable initial transport manager builder multicast value with the defaults
+    /// required by the manager component.
+    ///
+    /// # Panics
+    /// Panics if an internal `Result` or `Option` has no usable value.
     fn default() -> TransportManagerBuilderMulticast {
         let link_tx = LinkTxConf::default();
         #[cfg(feature = "transport_compression")]
@@ -195,6 +257,8 @@ impl TransportManager {
         TransportManagerBuilderMulticast::default()
     }
 
+    /// Closes multicast.
+
     pub async fn close_multicast(&self) {
         tracing::trace!("TransportManagerMulticast::clear()");
 
@@ -210,6 +274,7 @@ impl TransportManager {
 
     /// **********************************
     // LINK MANAGER
+    /// Creates link manager multicast.
     /// **********************************
     async fn new_link_manager_multicast(
         &self,
@@ -235,6 +300,8 @@ impl TransportManager {
         }
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     async fn del_link_manager_multicast(&self, link_kind: LinkKind) -> ZResult<()> {
         match zasynclock!(self.state.multicast.link_managers).remove(&link_kind) {
             Some(_) => Ok(()),
@@ -246,7 +313,13 @@ impl TransportManager {
 
     /// **********************************
     // TRANSPORT
+    /// Opens transport multicast.
+    ///
+    /// # Arguments
     /// **********************************
+    ///
+    /// # Errors
+    /// Returns an error if the requested resource or connection cannot be created.
     pub async fn open_transport_multicast(
         &self,
         mut endpoint: EndPoint,
@@ -295,6 +368,7 @@ impl TransportManager {
         super::establishment::open_link(self, link).await
     }
 
+    ///
     pub async fn get_transport_multicast(&self, zid: &ZenohIdProto) -> Option<TransportMulticast> {
         for t in zasynclock!(self.state.multicast.transports).values() {
             if t.get_peers().iter().any(|p| p.zid == *zid) {
@@ -311,6 +385,8 @@ impl TransportManager {
             .collect()
     }
 
+    /// Retrieves the transports multicast blocking for the current transport manager from its
+
     pub fn get_transports_multicast_blocking(&self) -> Vec<TransportMulticast> {
         self.state
             .multicast
@@ -321,6 +397,8 @@ impl TransportManager {
             .collect()
     }
 
+    /// # Errors
+    /// An error is returned if try_from fails.
     pub(super) async fn del_transport_multicast(&self, locator: &Locator) -> ZResult<()> {
         let mut guard = zasynclock!(self.state.multicast.transports);
         let res = guard.remove(locator);
@@ -342,6 +420,7 @@ impl TransportManager {
 
     /// **********************************
     // LISTENER
+    /// # Arguments
     /// **********************************
     pub async fn add_listener_multicast(&self, endpoint: EndPoint) -> ZResult<Locator> {
         let locator = endpoint.to_locator().to_owned();
@@ -349,6 +428,8 @@ impl TransportManager {
         Ok(locator)
     }
 
+    /// # Errors
+    /// An error is returned if try_from fails.
     pub async fn del_listener_multicast(&self, endpoint: &EndPoint) -> ZResult<()> {
         let locator = endpoint.to_locator();
 

@@ -1,6 +1,6 @@
-// TODO Reviewed ??-??-2026.
-
 //! Generates the bindings and headers used by the C FFI examples.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::env;
 use std::error::Error;
@@ -66,11 +66,9 @@ fn cxx() {
 //     uniffi::generate_bindings("examples/uniffi.rs", "my_library").unwrap();
 // }
 // ANCHOR_END: UNIFFI
-
 /// Runs the FFI code generators for the C examples.
-///
+
 /// # Errors
-///
 /// Returns an error if Cargo does not provide its manifest or output
 /// directory, or either generator fails.
 fn main() -> Result<(), Box<dyn Error>> {

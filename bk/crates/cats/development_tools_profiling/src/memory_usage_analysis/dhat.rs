@@ -32,7 +32,6 @@ static ALLOC: dhat::Alloc = dhat::Alloc;
 /// When we run the code below with:
 ///
 /// cargo run --features dhat-heap
-///
 /// `dhat` will collect heap profiling information.
 /// The profiling data will be saved in a file named `dhat-heap.json`
 /// in the current directory. You can then use e.g.
@@ -77,8 +76,8 @@ fn adhoc_profiling() {
         hot_function();
     }
 }
+/// Runs the heap and ad hoc allocation profiling demonstrations.
 
-/// Runs the heap profiling and ad hoc profiling examples.
 fn main() {
     heap_profiling();
     adhoc_profiling();
@@ -88,8 +87,8 @@ fn main() {
 // check that they allocated as much heap memory as we expected.
 // Example adapted from <https://docs.rs/dhat/latest/dhat/>
 // ANCHOR_END: example
+/// Runs both `dhat` profiling demonstrations.
 
-/// Runs the example.
 pub fn run() {
     main();
 }
@@ -98,7 +97,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies that heap usage testing.
     #[test]
     fn heap_usage_testing() {
         // `testing()` allows the use of dhat::assert! and related macros,

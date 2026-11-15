@@ -1,44 +1,43 @@
-//! TODO Reviewed ??-??-2026.
-
 //! Facility to emit dummy implementations (or whatever) in case
-//! an error happen.
 //!
+//! an error happen.
 //! `compile_error!` does not abort a compilation right away. This means
 //! `rustc` doesn't just show you the error and abort, it carries on the
+//!
 //! compilation process looking for other errors to report.
 //!
-//! Let's consider an example:
 //!
+//! Let's consider an example:
 //! ```rust,ignore
 //! use proc_macro::TokenStream;
-//! use proc_macro_error2::*;
 //!
+//! use proc_macro_error2::*;
 //! trait MyTrait {
 //!     fn do_thing();
-//! }
 //!
+//! }
 //! // this proc macro is supposed to generate MyTrait impl
 //! #[proc_macro_derive(MyTrait)]
 //! #[proc_macro_error]
 //! fn example(input: TokenStream) -> TokenStream {
 //!     // somewhere deep inside
-//!     abort!(span, "something's wrong");
 //!
+//!     abort!(span, "something's wrong");
 //!     // this implementation will be generated if no error happened
 //!     quote! {
 //!         impl MyTrait for #name {
 //!             fn do_thing() {/* whatever */}
 //!         }
 //!     }
+//!
 //! }
-//!
 //! // ================
-//! // in main.rs
 //!
+//! // in main.rs
 //! // this derive triggers an error
 //! #[derive(MyTrait)] // first BOOM!
-//! struct Foo;
 //!
+//! struct Foo;
 //! fn main() {
 //!     Foo::do_thing(); // second BOOM!
 //! }
@@ -46,15 +45,15 @@
 //!
 //! The problem is: the generated token stream contains only `compile_error!`
 //! invocation, the impl was not generated. That means user will see two compilation
-//! errors:
 //!
+//! errors:
 //! ```text
 //! error: something's wrong
 //!  --> $DIR/probe.rs:9:10
 //!   |
 //! 9 |#[proc_macro_derive(MyTrait)]
-//!   |                    ^^^^^^^
 //!
+//!   |                    ^^^^^^^
 //! error[E0599]: no function or associated item named `do_thing` found for type `Foo` in the current scope
 //!  --> src\main.rs:3:10
 //!   |
@@ -65,21 +64,22 @@
 //!   |          ^^^^^^^^ function or associated item not found in `Foo`
 //! ```
 //!
-//! But the second error is meaningless! We definitely need to fix this.
 //!
+//! But the second error is meaningless! We definitely need to fix this.
 //! Most used approach in cases like this is "dummy implementation" -
+//!
 //! omit `impl MyTrait for #name` and fill functions bodies with `unimplemented!()`.
 //!
-//! This is how you do it:
 //!
+//! This is how you do it:
 //! ```rust,ignore
 //! use proc_macro::TokenStream;
-//! use proc_macro_error2::*;
 //!
+//! use proc_macro_error2::*;
 //!  trait MyTrait {
 //!      fn do_thing();
-//!  }
 //!
+//!  }
 //!  // this proc macro is supposed to generate MyTrait impl
 //!  #[proc_macro_derive(MyTrait)]
 //!  #[proc_macro_error]
@@ -90,30 +90,32 @@
 //!          impl MyTrait for #name {
 //!              fn do_thing() { unimplemented!() }
 //!          }
+//!
 //!      });
-//!
 //!      // somewhere deep inside
-//!      abort!(span, "something's wrong");
 //!
+//!      abort!(span, "something's wrong");
 //!      // this implementation will be generated if no error happened
 //!      quote! {
 //!          impl MyTrait for #name {
 //!              fn do_thing() {/* whatever */}
 //!          }
 //!      }
+//!
 //!  }
-//!
 //!  // ================
-//!  // in main.rs
 //!
+//!  // in main.rs
 //!  // this derive triggers an error
 //!  #[derive(MyTrait)] // first BOOM!
-//!  struct Foo;
 //!
+//!  struct Foo;
 //!  fn main() {
 //!      Foo::do_thing(); // no more errors!
 //!  }
 //! ```
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::cell::RefCell;
 
@@ -122,10 +124,13 @@ use proc_macro2::TokenStream;
 use crate::check_correctness;
 
 thread_local! {
+    /// Shared `dummy impl` used by this module.
     static DUMMY_IMPL: RefCell<Option<TokenStream>> = const { RefCell::new(None) };
 }
 
 /// Sets dummy token stream which will be appended to `compile_error!(msg);...`
+///
+/// # Arguments
 /// invocations in case you'll emit any errors.
 ///
 /// See [guide](../index.html#guide).
@@ -136,6 +141,8 @@ pub fn set_dummy(dummy: TokenStream) -> Option<TokenStream> {
 }
 
 /// Same as [`set_dummy`] but, instead of resetting, appends tokens to the
+///
+/// # Arguments
 /// existing dummy (if any). Behaves as `set_dummy` if no dummy is present.
 pub fn append_dummy(dummy: TokenStream) {
     check_correctness();

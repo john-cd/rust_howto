@@ -31,25 +31,30 @@ pub(super) fn arg_config() -> Arg {
         .env("TOOL_CONFIG_FILE") // Read from the environment variable when the argument is not present.
         .global(true) // Make the --config flag available to all subcommands.
 }
-
 /// Returns the path given with `--config`, if any.
+
 pub(super) fn get_arg_config(matches: &ArgMatches) -> Option<PathBuf> {
     matches.get_one::<PathBuf>("config").cloned()
 }
-
 /// Positional argument for one or more file paths.
 ///
 /// Example: `cargo r -- file1.csv file2.csv`
+
 pub(super) fn arg_filepaths() -> Arg {
     Arg::new("filepaths")
         .value_parser(value_parser!(PathBuf))
         .help("File names or paths")
         .action(ArgAction::Append) // Allow passing multiple filepaths.
 }
+/// Returns `None` if the argument(s) are not present.
 
 /// Returns the paths of the files to open.
+/// # Arguments
 ///
 /// Returns `None` if the argument(s) are not present.
+/// # Returns
+/// `Some` when the requested value is available; otherwise returns `None`.
+
 pub(super) fn get_arg_filepaths(matches: &ArgMatches) -> Option<Vec<PathBuf>> {
     let m = matches
         .get_many::<PathBuf>("filepaths")?
@@ -71,14 +76,18 @@ pub(super) fn arg_verbose() -> Arg {
         .env("TOOL_VERBOSE") // example: TOOL_VERBOSE=2 cargo run
         .global(true)
 }
+/// Returns zero if the flag is not present.
 
 /// Returns the count of verbose flags i.e. the verbosity level.
+/// # Arguments
 ///
 /// Returns zero if the flag is not present.
+
 pub(super) fn get_arg_verbose(matches: &ArgMatches) -> u8 {
     matches.get_count("verbose")
 }
 
+/// Verify that the global argument "config" requires a value.
 #[cfg(test)]
 mod tests {
     use std::process::Command;
@@ -154,7 +163,6 @@ mod tests {
         check_environment(Some("config.toml"), None)
     }
 
-    /// Verifies the child reads the environment values supplied by its parent.
     #[test]
     #[ignore = "needs a parent-controlled CLI environment"]
     fn child_checks_controlled_environment() {
@@ -216,8 +224,8 @@ mod tests {
     fn test_arg_verbose_none() -> std::io::Result<()> {
         check_environment(None, None)
     }
-
     /// Checks that repeated `-v` flags raise the verbosity.
+
     #[test]
     fn test_arg_verbose_multiple() {
         let m = cli().get_matches_from(vec!["prog", "-vvv"]);

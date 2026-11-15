@@ -71,6 +71,7 @@ fn extract_crate_names(depset: &DepsSet) -> Vec<String> {
         .collect()
 }
 
+/// Verifies that extract empty.
 #[cfg(test)]
 mod tests {
     use std::fs;

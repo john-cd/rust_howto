@@ -16,8 +16,8 @@ pub(super) fn arg_verbose() -> Arg {
         .help("Use verbose output")
         .global(true)
 }
-
 /// Returns the configuration given by the global flags.
+
 pub(super) fn get_config(matches: &ArgMatches) -> Config {
     Config {
         verbose: matches.get_flag("verbose"),
@@ -30,7 +30,6 @@ mod tests {
 
     use super::*;
 
-    /// Checks that the verbose flag defaults to false when omitted.
     #[test]
     fn verbose_flag_defaults_to_false() {
         let matches = Command::new("templ")
@@ -42,7 +41,6 @@ mod tests {
         assert!(!config.verbose);
     }
 
-    /// Checks that the short `-v` flag sets verbose to true.
     #[test]
     fn verbose_short_flag_enables_verbose() {
         let matches = Command::new("templ")
@@ -54,7 +52,6 @@ mod tests {
         assert!(config.verbose);
     }
 
-    /// Checks that the long `--verbose` flag sets verbose to true.
     #[test]
     fn verbose_long_flag_enables_verbose() {
         let matches = Command::new("templ")
@@ -66,7 +63,6 @@ mod tests {
         assert!(config.verbose);
     }
 
-    /// Checks that the global verbose flag propagates across subcommands.
     #[test]
     fn verbose_flag_propagates_globally_with_subcommand() {
         let matches = Command::new("templ")

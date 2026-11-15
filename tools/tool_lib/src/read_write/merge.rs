@@ -55,6 +55,7 @@ fn write_each(
     super::atomic::write_atomic(path, items)
 }
 
+/// Verifies that write each empty.
 #[cfg(test)]
 mod tests {
     use std::fs;

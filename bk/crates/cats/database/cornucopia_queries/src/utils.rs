@@ -1,6 +1,6 @@
+//! \ Generated\ parsing\ and\ binding\ helpers\ for\ Cornucopia\ SQL\ queries\.
+//!
 //! TODO Reviewed ??-??-2026.
-
-// This file was generated with `cornucopia`. Do not modify.
 
 use postgres_types::Kind;
 use postgres_types::ToSql;

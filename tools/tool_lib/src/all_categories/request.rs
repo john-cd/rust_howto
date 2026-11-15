@@ -9,16 +9,19 @@ use anyhow::Result;
 static CATEGORIES_URL: &str = "https://raw.githubusercontent.com/rust-lang/crates.io/refs/heads/main/src/boot/categories.toml";
 
 /// Downloads the categories TOML file from the canonical upstream URL.
+///
+/// # Errors
+/// Returns an error if the requested data cannot be retrieved.
 pub(super) fn get_categories_toml_string() -> Result<String> {
     get_categories_toml_string_from_url(CATEGORIES_URL)
 }
-
 /// Downloads and validates the response from the supplied URL.
 ///
 /// # Errors
 ///
 /// Returns an error if the URL is invalid, the request fails, or the response
 /// has a non-success status.
+
 pub(super) fn get_categories_toml_string_from_url(url_str: &str) -> Result<String> {
     let url = reqwest::Url::parse(url_str)?;
 
@@ -40,6 +43,7 @@ pub(super) fn get_categories_toml_string_from_url(url_str: &str) -> Result<Strin
     Ok(body)
 }
 
+/// Verifies that the category TOML request returns the server response.
 #[cfg(test)]
 mod tests {
     use anyhow::Result;

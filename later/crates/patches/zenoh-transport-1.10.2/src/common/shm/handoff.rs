@@ -1,3 +1,8 @@
+//! Transfers shared-memory payloads between transport and application without copying their
+//! contents.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2026 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the
@@ -9,12 +14,14 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+//!
 //
 
 use std::ops::Index;
 use std::ops::IndexMut;
 
 use zenoh_protocol::core::Priority;
+/// Container that groups messages by priority for shared-memory handoff.
 
 #[derive(Debug)]
 pub struct PriorityContainer<T: Sized> {
@@ -22,10 +29,17 @@ pub struct PriorityContainer<T: Sized> {
 }
 
 impl<T: Sized> PriorityContainer<T> {
+    /// Constructs a usable initial priority container value with the defaults required by the
+    /// handoff component.
     pub fn new(per_prio_objects: [T; Priority::NUM]) -> Self {
         Self { per_prio_objects }
     }
 
+    /// Converts between the priority container representation and fn while preserving the
+    /// invariants required by callers.
+    ///
+    /// # Errors
+    /// An error is returned if FnMut, ctor_fn fails.
     pub fn from_fn<E>(mut ctor_fn: impl FnMut(Priority) -> Result<T, E>) -> Result<Self, E> {
         // TODO: std::array::try_from_fn is unstable yet...
         let per_prio_objects = [
@@ -41,6 +55,8 @@ impl<T: Sized> PriorityContainer<T> {
         Ok(Self { per_prio_objects })
     }
 
+    /// Converts between the priority container representation and fn infallible while preserving
+    /// the invariants required by callers.
     pub fn from_fn_infallible(ctor_fn: impl Fn(Priority) -> T) -> Self {
         let per_prio_objects = std::array::from_fn(|prio| {
             // SAFETY: `Priority` is guaranteed to be in the range 0..=7, so this conversion is
@@ -53,6 +69,9 @@ impl<T: Sized> PriorityContainer<T> {
     pub fn map<Tother: Sized>(self, map_fn: impl FnMut(T) -> Tother) -> PriorityContainer<Tother> {
         PriorityContainer::new(self.per_prio_objects.map(map_fn))
     }
+
+    /// # Errors
+    /// An error is returned if map_fn fails.
 
     pub fn map_fallable<Tother: Sized, E>(
         self,
@@ -86,6 +105,8 @@ impl<'a, T: Sized> IntoIterator for &'a PriorityContainer<T> {
     type IntoIter = core::slice::Iter<'a, T>;
     type Item = &'a T;
 
+    /// Converts between the into iterator representation and iter while preserving the invariants
+    /// required by callers.
     fn into_iter(self) -> Self::IntoIter {
         self.per_prio_objects.iter()
     }
@@ -94,18 +115,26 @@ impl<'a, T: Sized> IntoIterator for &'a PriorityContainer<T> {
 impl<T: Sized> Index<Priority> for PriorityContainer<T> {
     type Output = T;
 
+    /// # Arguments
+    /// * `index` - Position used to identify the element affected in the current ordered
+    ///   collection.
     fn index(&self, index: Priority) -> &Self::Output {
         &self.per_prio_objects[index as usize]
     }
 }
 
 impl<T: Sized> IndexMut<Priority> for PriorityContainer<T> {
+    /// Indexes mut.
+    /// # Arguments
+    /// * `index` - Position used to identify the element affected in the current ordered
+    ///   collection.
     fn index_mut(&mut self, index: Priority) -> &mut Self::Output {
         &mut self.per_prio_objects[index as usize]
     }
 }
 
 impl<T: Sized + Clone> Clone for PriorityContainer<T> {
+    /// Creates a copy of this value.
     fn clone(&self) -> Self {
         Self {
             per_prio_objects: self.per_prio_objects.clone(),

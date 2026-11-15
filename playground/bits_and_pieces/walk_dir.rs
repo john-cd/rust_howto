@@ -35,7 +35,6 @@ pub(crate) struct Args {
 /// # Arguments
 ///
 /// * `dir` - The directory to walk through.
-///
 /// # Errors
 /// Returns an error if traversal, reading, or atomic replacement fails.
 pub fn walk_directory(dir: &Path) -> Result<()> {
@@ -67,7 +66,8 @@ pub fn walk_directory(dir: &Path) -> Result<()> {
 
 /// Expands complete crate markers and preserves malformed or unfinished markers.
 fn replace_crate_markers(contents: &str) -> String {
-/// Prefix used to recognize crate include directives in book content.
+    /// Prefix used to recognize crate include directives in book content.
+    /// Prefix used to recognize crate include directives in book content.
     const PREFIX: &str = "{{!crate ";
 
     let mut output = String::with_capacity(contents.len());
@@ -95,7 +95,8 @@ fn replace_crate_markers(contents: &str) -> String {
 
 /// Parses the directory argument and expands markers in its Markdown files.
 fn main() -> Result<()> {
-    // Install a global tracing subscriber that listens for events and filters based on the value of the RUST_LOG environment variable.
+    // Install a global tracing subscriber that listens for events and filters based on the value of
+    // the RUST_LOG environment variable.
     tracing_subscriber::fmt::init();
 
     let args = Args::parse();
@@ -103,6 +104,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+/// Markdown files are rewritten while other files and Markdown-named directories survive.
 #[cfg(test)]
 mod tests {
     use std::fs::File;

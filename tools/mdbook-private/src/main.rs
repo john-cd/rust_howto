@@ -36,8 +36,9 @@ fn run_with(arguments: &[String]) -> mdbook_preprocessor::errors::Result<()> {
     }
     Ok(())
 }
+/// Runs the mdBook private-block preprocessor on standard input.
+/// Reports processing errors to standard error and exits with a nonzero status.
 
-/// Runs the preprocessor and reports its error, if any.
 fn main() {
     if let Err(error) = run() {
         eprintln!("mdbook-private: {error:#}");
@@ -49,14 +50,13 @@ fn main() {
 mod tests {
     use super::*;
 
-    /// Checks that unexpected arguments are rejected with a usage message.
     #[test]
     fn rejects_unknown_arguments() {
         let error = run_with(&["--bogus".to_owned()]).expect_err("usage error");
         assert!(error.to_string().contains("usage: mdbook-private"));
     }
+    /// Reports whether this value supports without renderer is rejected.
 
-    /// Checks that `supports` needs a renderer.
     #[test]
     fn supports_without_renderer_is_rejected() {
         assert!(run_with(&["supports".to_owned()]).is_err());

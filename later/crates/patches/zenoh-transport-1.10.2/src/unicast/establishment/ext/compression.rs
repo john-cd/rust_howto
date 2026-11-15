@@ -1,3 +1,7 @@
+//! Negotiates compression settings for a unicast transport.
+//!
+//! TODO Reviewed ??-??-2026.
+
 // Copyright (c) 2022 ZettaScale Technology
 //
 // This program and the accompanying materials are made available under the

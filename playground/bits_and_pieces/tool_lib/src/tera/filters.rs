@@ -17,6 +17,9 @@ use tera::Value;
 
 /// Replaces all `-` characters with `_` in a string.
 ///
+/// # Arguments
+/// * `_context` - Context used to resolve configuration and services.
+///
 /// If the input is not a string, it is returned unchanged.
 pub fn underscored(val: &Value, _context: &HashMap<String, Value>) -> Result<Value> {
     match val {
@@ -26,6 +29,9 @@ pub fn underscored(val: &Value, _context: &HashMap<String, Value>) -> Result<Val
 }
 
 /// Replaces `-` with `--`, `_` with `__`, and ` ` with `_` in a string.
+///
+/// # Arguments
+/// * `_context` - Context used to resolve configuration and services.
 ///
 /// If the input is not a string, it is returned unchanged.
 pub fn shielded(val: &Value, _context: &HashMap<String, Value>) -> Result<Value> {
@@ -42,7 +48,6 @@ pub fn shielded(val: &Value, _context: &HashMap<String, Value>) -> Result<Value>
 mod tests {
     use super::*;
 
-    /// Verifies that the `underscored` filter replaces all hyphens with underscores.
     #[test]
     fn underscored_replaces_hyphens_with_underscores() {
         let input = Value::String("my-crate-name".to_string());
@@ -51,7 +56,6 @@ mod tests {
         assert_eq!(result, Value::String("my_crate_name".to_string()));
     }
 
-    /// Verifies that the `underscored` filter leaves strings without hyphens unchanged.
     #[test]
     fn underscored_leaves_strings_without_hyphens_unchanged() {
         let input = Value::String("already_underscored".to_string());
@@ -64,7 +68,6 @@ mod tests {
         assert_eq!(empty_result, Value::String(String::new()));
     }
 
-    /// Verifies that the `underscored` filter leaves non-string values unchanged.
     #[test]
     fn underscored_ignores_non_string_values() {
         let context = HashMap::new();
@@ -82,7 +85,6 @@ mod tests {
         assert_eq!(null_result, null_val);
     }
 
-    /// Verifies that the `shielded` filter escapes hyphens, underscores, and spaces.
     #[test]
     fn shielded_escapes_special_characters_for_shields_io() {
         let input = Value::String("badge-name_with spaces-and_chars".to_string());
@@ -94,7 +96,6 @@ mod tests {
         );
     }
 
-    /// Verifies that the `shielded` filter leaves strings without special characters unchanged.
     #[test]
     fn shielded_leaves_unaffected_strings_unchanged() {
         let input = Value::String("simplebadge".to_string());
@@ -107,7 +108,6 @@ mod tests {
         assert_eq!(empty_result, Value::String(String::new()));
     }
 
-    /// Verifies that the `shielded` filter leaves non-string values unchanged.
     #[test]
     fn shielded_ignores_non_string_values() {
         let context = HashMap::new();

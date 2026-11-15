@@ -34,10 +34,15 @@ impl model::Category {
 
 /// Retrieves the categories associated with a given crate name from `crates.io`.
 ///
+/// # Arguments
+///
 /// This function queries the `crates.io` API to fetch the category information for the specified
 /// crate.
 ///
 /// Returns a list of categories for a crate, given its name
+///
+/// # Errors
+/// Returns an error if the requested data cannot be retrieved.
 pub fn get_categories_for_crate(crate_name: &str) -> Result<Vec<model::Category>> {
     if let Ok(cache) = CATEGORY_CACHE.lock()
         && let Some(cats) = cache.get(crate_name)
@@ -69,6 +74,7 @@ pub fn clear_category_cache() {
     }
 }
 
+/// Verifies that the API category fields are copied into the local model.
 #[cfg(test)]
 mod tests {
     use anyhow::Result;

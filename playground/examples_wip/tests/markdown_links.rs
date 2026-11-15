@@ -1,4 +1,6 @@
 //! Behavior tests for the standalone Pest Markdown link grammar.
+//!
+//! TODO Reviewed ??-??-2026.
 
 #![expect(
     clippy::exhaustive_enums,
@@ -23,6 +25,12 @@ fn matches(rule: Rule, source: &str) -> bool {
 }
 
 /// Return every named rule emitted by the document scanner.
+///
+/// # Arguments
+/// * `source` - Original value used as the starting point for the markdown links operation.
+
+/// # Panics
+/// Panics if the document scanner should consume all source.
 fn document_rules(source: &str) -> Vec<Rule> {
     MarkdownLinkParser::parse(Rule::document, source)
         .expect("the document scanner should consume all source")
@@ -30,8 +38,8 @@ fn document_rules(source: &str) -> Vec<Rule> {
         .map(|pair| pair.as_rule())
         .collect()
 }
-
 /// Parse inline links, images, balanced brackets, destinations, and titles.
+
 #[test]
 fn recognizes_inline_links_images_and_titles() {
     assert!(matches(Rule::inline_link, "[label](url)"));
