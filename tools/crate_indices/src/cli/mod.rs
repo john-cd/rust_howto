@@ -150,47 +150,47 @@ fn capture_stdin() -> anyhow::Result<Vec<OsString>> {
     Ok(args)
 }
 
-/// Get the list of crate names from the command line arguments
+/// Gets the crate names from the parsed command-line arguments.
 fn get_crate_names(m: &clap::ArgMatches) -> Vec<String> {
     m.get_many::<String>("crate_name")
         .unwrap_or_default()
         .map(std::convert::Into::into)
         .collect::<Vec<String>>()
 }
-/// Get a file path from the command line arguments
+/// Gets the required output file path from the parsed command-line arguments.
 ///
 /// # Panics
-/// Panics if file_path has a default value.
+/// Panics if the required `file_path` argument is missing.
 fn get_file_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("file_path")
-        .expect("file_path has a default value")
+        .expect("file_path is required")
         .clone()
 }
-/// Get the required category metadata path.
+/// Gets the required category metadata path from the parsed arguments.
 ///
 /// # Panics
-/// Panics if metadata is required.
+/// Panics if the required `metadata` argument is missing.
 fn get_metadata_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("metadata")
         .expect("metadata is required")
         .clone()
 }
-/// Get the book root used to find published recipe links.
+/// Gets the book root used to find published recipe links.
 ///
 /// # Panics
-/// Panics if book_root has a default value.
+/// Panics if the parsed arguments contain no book root value.
 fn get_book_root(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("book_root")
-        .expect("book_root has a default value")
+        .expect("book_root has a value")
         .clone()
 }
-/// Get a dir path from the command line arguments
+/// Gets the required directory path from the parsed command-line arguments.
 ///
 /// # Panics
-/// Panics if directory has a default value.
+/// Panics if the required `directory` argument is missing.
 fn get_dir_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("directory")
-        .expect("directory has a default value")
+        .expect("directory has a value")
         .clone()
 }
 /// Get an optional file path from the command line arguments.
