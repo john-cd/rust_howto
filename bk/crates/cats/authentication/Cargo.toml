@@ -57,14 +57,14 @@ anyhow = "1.0.104"
 argon2 = "0.6.0"
 # HTTP routing and request handling library that focuses on ergonomics and modularity
 axum = { version = "0.8.9", features = ["form"] }
-# 🪪 User identification, authentication, and authorization for Axum.
+# User identification, authentication, and authorization for Axum.
 axum-login = "0.18.0"
 # A small cross-platform library for retrieving random data from system source
 getrandom = "0.4.3" # Generate random CSRF tokens.
 # Combinators and adapters for HTTP request or response bodies.
 http-body-util = "0.1.5"
 # Create and decode JWTs in a strongly typed way.
-jsonwebtoken = { version = "11.1.0", features = [
+jsonwebtoken = { version = "12.0.0", features = [
     "rust_crypto",
 ] } # Sign and validate HS256 JSON Web Tokens with RustCrypto.
 # An extensible, strongly-typed implementation of OAuth2
@@ -73,7 +73,7 @@ oauth2 = { version = "5.0.0", features = ["reqwest-blocking"] }
 openidconnect = { version = "4.1.0", default-features = false } # OpenID Connect relying party; the example supplies its own HTTP client.
 # Password authentication library with a focus on simplicity and ease-of-use, including support for Argon2, PBKDF2, and scrypt password hashing...
 password-auth = "2.0.0"
-# higher level HTTP client library
+# Higher level HTTP client library
 reqwest = { version = "0.13.5", features = ["blocking"] }
 # A generic serialization/deserialization framework
 serde = "1.0.229"
@@ -87,9 +87,9 @@ tower = { version = "0.5.3", features = ["util"] } # Exercise routes without ope
 tower-sessions = { version = "=0.14.0", features = ["memory-store"] }
 # Pinned to the stable 0.5 line; 0.6 is published only as a development pre-release.
 # Webauthn Authenticator Client Library
-webauthn-authenticator-rs = { version = "0.5.5", features = ["softpasskey"] } # Software authenticator that stands in for a real device in tests.
+webauthn-authenticator-rs = { version = "0.6.2", features = ["softpasskey"] } # Software authenticator that stands in for a real device in tests.
 # Webauthn Framework for Rust Web Servers
-webauthn-rs = "0.5.5"
+webauthn-rs = "0.6.2"
 
 [dev-dependencies]
 # HTTP mocking library for Rust

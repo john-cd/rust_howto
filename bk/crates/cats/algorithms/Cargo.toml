@@ -67,7 +67,7 @@ pathfinding = "4.16.0"
 # Graph data structure library. Provides graph types and graph algorithms.
 petgraph = "0.8.3"
 # Random number generators and other randomness functionality.
-rand = "0.10.3"
+rand = "0.10.4"
 # Sampling from random number distributions
 rand_distr = "0.6.0"
 # Provides cryptographic primitives and TLS building blocks for networked applications.
@@ -79,7 +79,7 @@ sha2 = "0.11.1"
 # A library for managing temporary files and directories.
 tempfile = "3.27.0"
 # Computes fast non-cryptographic xxHash checksums.
-xxhash-rust = { version = "0.8.19", features = ["xxh3"] }
+xxhash-rust = { version = "0.8.21", features = ["xxh3"] }
 
 [dev-dependencies]
 # A non-cryptographic hash function using AES-NI for high performance
