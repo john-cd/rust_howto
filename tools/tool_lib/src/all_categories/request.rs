@@ -21,7 +21,6 @@ pub(super) fn get_categories_toml_string() -> Result<String> {
 ///
 /// Returns an error if the URL is invalid, the request fails, or the response
 /// has a non-success status.
-
 pub(super) fn get_categories_toml_string_from_url(url_str: &str) -> Result<String> {
     let url = reqwest::Url::parse(url_str)?;
 

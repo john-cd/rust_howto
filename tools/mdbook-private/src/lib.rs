@@ -56,7 +56,6 @@ impl Preprocessor for Private {
     }
 
     /// Preprocesses the book by styling or removing private content and chapters.
-
     fn run(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
         // Invalid privacy settings must fail the build rather than expose content.
         let config = ctx
@@ -97,7 +96,6 @@ impl Preprocessor for Private {
     }
 }
 /// Removes the chapters, at any depth, whose file name starts with `prefix`.
-
 fn remove_chapters(items: &mut Vec<BookItem>, prefix: &str) {
     items.retain_mut(|item| {
         if let BookItem::Chapter(chapter) = item {

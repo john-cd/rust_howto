@@ -1304,7 +1304,6 @@ fn is_hidden_chapter(path: &str) -> bool {
         .is_some_and(|name| name.starts_with('_'))
 }
 /// Converts absolute or relative paths into normalized slash-separated repository paths.
-
 fn path_to_slashes(path: &Path) -> String {
     path.components()
         .filter_map(|component| match component {
@@ -1634,11 +1633,15 @@ mod tests {
         assert_eq!(exceptions[2].reason, "Another reason.");
     }
 
-    /// The fixture helper creates parent directories before writing UTF-8 test files.
-
+    /// Creates parent directories and writes a UTF-8 test fixture.
+    ///
     /// # Arguments
-    /// * `root` - Filesystem location the operation reads, updates, or uses as its scope.
-    /// * `path` - Filesystem location the operation reads, updates, or uses as its scope.
+    /// * `root` - Temporary root directory for the fixture.
+    /// * `path` - Relative fixture path beneath `root`.
+    /// * `contents` - Text written to the fixture file.
+    ///
+    /// # Panics
+    /// Panics if the parent directory cannot be created or the file cannot be written.
     fn write_fixture(root: &Path, path: &str, contents: &str) {
         let path = root.join(path);
         fs::create_dir_all(path.parent().expect("fixture has a parent directory"))

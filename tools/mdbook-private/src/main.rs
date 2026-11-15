@@ -38,7 +38,6 @@ fn run_with(arguments: &[String]) -> mdbook_preprocessor::errors::Result<()> {
 }
 /// Runs the mdBook private-block preprocessor on standard input.
 /// Reports processing errors to standard error and exits with a nonzero status.
-
 fn main() {
     if let Err(error) = run() {
         eprintln!("mdbook-private: {error:#}");

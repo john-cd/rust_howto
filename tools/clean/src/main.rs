@@ -101,25 +101,31 @@ fn find_temp_dirs(
     Ok(found)
 }
 
-/// Checks if a directory entry is hidden (starts with a dot).
-/// Reports whether the main meets the hidden condition so callers can choose the correct branch.
-
+/// Reports whether an entry's UTF-8 file name starts with a dot.
+///
+/// # Arguments
+/// * `entry` - Directory entry whose file name is checked.
+///
+/// # Returns
+/// `true` if the name starts with `.`; non-UTF-8 names return `false`.
 fn is_hidden(entry: &DirEntry) -> bool {
     entry
         .file_name()
         .to_str()
         .is_some_and(|s| s.starts_with('.'))
 }
-/// Removes all files (not starting with .) and subfolders in a given folder.
+/// Removes each non-hidden direct child of `dir`.
 ///
-/// Deletion boundary: only direct children of `dir` are removed. A symbolic
-/// link is removed as a link; its target is never followed or modified.
-/// BEWARE: destructive.
+/// Hidden entries are retained. Directories are removed recursively, while file
+/// and symbolic-link entries are removed without following links.
+///
+/// # Arguments
+/// * `dir` - Folder whose direct children are cleaned.
 ///
 /// # Errors
 ///
-/// Returns an error if `dir` cannot be read or an entry cannot be removed.
-
+/// Returns an error if a child entry cannot be read or a selected entry cannot
+/// be removed. A path that is not a directory is left unchanged.
 fn clean_folder(dir: &Path) -> anyhow::Result<()> {
     if dir.is_dir() {
         for entry in fs::read_dir(dir)? {

@@ -94,9 +94,8 @@ fn test_cancellation_under_high_queue_load() -> anyhow::Result<()> {
 
     Ok(())
 }
-/// Verifies that independent process invocations of the binary cleanly start,
-
-/// cancel background workers, and terminate all threads without hanging.
+/// Verifies independent process invocations start cleanly, stop background workers,
+/// and terminate all threads without hanging.
 #[test]
 fn test_thread_termination_across_independent_process_invocations() {
     let binary_path = env!("CARGO_BIN_EXE_cancelable");

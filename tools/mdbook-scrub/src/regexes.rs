@@ -48,8 +48,18 @@ pub(crate) fn get_regexes(conf: &PreprocConfig) -> ScrubRegexes {
 pub(crate) fn wikilink_regex() -> Regex {
     Regex::new(r"\[\[\s*([^|\]]*?)\s*(?:\|\s*([^\]]*?)\s*)?\]\]").expect("Invalid wikilink regex")
 }
-/// Apply a replacement outside code spans, fenced code blocks and HTML comments.
-
+/// Applies a replacement outside code spans, fenced code blocks, and HTML comments.
+///
+/// # Arguments
+/// * `markdown` - Markdown source to transform.
+/// * `regex` - Pattern applied to unprotected text.
+/// * `replacement` - Replacement produced for each match.
+///
+/// # Returns
+/// The transformed Markdown.
+///
+/// # Errors
+/// Returns an error if the Markdown source cannot be parsed.
 pub(crate) fn replace_outside_protected_spans<F>(
     markdown: &str,
     regex: &Regex,

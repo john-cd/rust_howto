@@ -65,13 +65,17 @@ impl Preproc {
         }
     }
 
-    /// book.
-
+    /// Removes configured hidden sections and hidden chapter includes from the book.
+    ///
     /// # Arguments
-    /// * `ctx` - Application state and services required to perform the operation.
-
+    /// * `ctx` - mdBook context containing the scrub configuration.
+    /// * `book` - Book whose chapter content is updated.
+    ///
+    /// # Returns
+    /// The book with matching hidden content removed.
+    ///
     /// # Errors
-    /// Returns an error if the run scrub operation cannot satisfy its required invariants.
+    /// Returns an error if the scrub configuration cannot be read.
     fn run_scrub(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
         let conf = ctx
             .config
@@ -177,7 +181,16 @@ impl Preprocessor for Preproc {
     }
 
     /// Preprocesses the book according to the configured stage.
-
+    ///
+    /// # Arguments
+    /// * `ctx` - mdBook context for the active preprocessor stage.
+    /// * `book` - Book to preprocess.
+    ///
+    /// # Returns
+    /// The preprocessed book.
+    ///
+    /// # Errors
+    /// Returns an error if stage configuration or directive processing fails.
     fn run(&self, ctx: &PreprocessorContext, book: Book) -> Result<Book> {
         info!("Running `{}` mdBook preprocessor", self.name());
         match self.stage {
@@ -191,8 +204,19 @@ impl Preprocessor for Preproc {
         Ok(renderer != "not-supported")
     }
 }
-/// Returns the Rust snippet that the example `name` refers to, in a code fence.
-
+/// Resolves an example reference to its anchored Rust snippet in a code fence.
+///
+/// # Arguments
+/// * `book_root` - Root directory that contains the book sources.
+/// * `chapter_source` - Source path of the chapter containing the reference.
+/// * `name` - Relative Rust path, optionally followed by an anchor name.
+///
+/// # Returns
+/// A Rust code fence containing the selected source lines.
+///
+/// # Errors
+/// Returns an error if the reference is invalid, escapes the book root, points
+/// to an unreadable file, or names a missing anchor.
 fn resolve_example(
     book_root: &Path,
     chapter_source: Option<&Path>,
@@ -313,8 +337,11 @@ fn extract_anchor(source: &str, anchor: &str) -> anyhow::Result<String> {
 /// Returns a code fence longer than any run of backticks in `source`.
 ///
 /// # Arguments
-/// * `source` - Original value used as the starting point for the preproc operation.
-
+/// * `source` - Source text whose backtick runs determine the fence length.
+///
+/// # Returns
+/// A backtick string longer than any consecutive run in `source`, with a
+/// minimum length of three.
 fn code_fence(source: &str) -> String {
     let mut longest_run = 0;
     let mut current_run = 0;

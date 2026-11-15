@@ -62,7 +62,7 @@ fn prost() -> Result<(), Box<dyn std::error::Error>> {
 }
 // ANCHOR_END: prost
 /// Runs the schema compilers needed by this crate's examples.
-
+///
 /// # Errors
 /// Returns an error if Protocol Buffers code generation fails.
 fn main() -> Result<(), Box<dyn std::error::Error>> {

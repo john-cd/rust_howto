@@ -61,9 +61,9 @@ fn cli() -> Command {
         .subcommand(testcmd::cmd())
 }
 
-/// Parses the command line of the program, exiting on failure.
-/// caller.
-
+/// Parses process arguments into the application configuration and command list.
+///
+/// Exits with an error message if argument parsing fails.
 pub(crate) fn get_args() -> (config::Config, Vec<Cmd>) {
     // Parse [env::args_os], exiting on failure.
     let matches = cli().get_matches();

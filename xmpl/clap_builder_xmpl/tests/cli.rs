@@ -149,7 +149,6 @@ fn test_cli_invalid_arguments() {
     assert!(stderr_unknown.contains("unexpected argument"));
 }
 /// Verifies short and long help, as well as `--version`, display expected information with success
-
 /// status.
 #[test]
 fn test_cli_help_and_version() {

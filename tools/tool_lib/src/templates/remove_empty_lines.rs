@@ -2,13 +2,10 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-/// Removes empty lines from a given string slice.
-
-/// This function takes a string slice as input, splits it into lines,
-/// filters out any lines that are empty or contain only whitespace,
-/// and then joins the remaining lines back together with a single newline
+/// Removes blank or whitespace-only lines from a string slice.
 ///
-/// character between them.
+/// The returned vector contains the remaining lines, and the returned string
+/// joins those lines with a single newline.
 ///
 /// # Arguments
 ///
@@ -16,7 +13,7 @@
 ///
 /// # Returns
 ///
-/// A `Vec` of non-empty lines, and a `String` containing the text with all empty lines removed.
+/// A vector of non-empty lines and the same lines joined into one string.
 ///
 /// # Example
 /// ```

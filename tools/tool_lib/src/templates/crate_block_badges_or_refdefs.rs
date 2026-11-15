@@ -150,7 +150,6 @@ pub fn create_crate_block_badges_or_refdefs(
 /// # Arguments
 /// * `s` - The string to capitalize.
 /// * `should_not_be` - The string that `s` should not be equal to.
-
 fn capitalize_if_not(s: String, should_not_be: &str) -> String {
     if s == should_not_be {
         s

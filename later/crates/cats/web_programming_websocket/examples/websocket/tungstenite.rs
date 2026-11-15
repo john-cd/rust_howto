@@ -26,7 +26,6 @@ fn echo_request() -> anyhow::Result<Request<()>> {
     Ok(ECHO_ENDPOINT.into_client_request()?)
 }
 /// Connects, sends one message, prints the reply, and closes the connection.
-
 fn main() -> anyhow::Result<()> {
     let (mut socket, response) = connect(echo_request()?)?;
     // Status 101 (Switching Protocols) means the server accepted the upgrade.
@@ -45,7 +44,6 @@ fn main() -> anyhow::Result<()> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn run() -> anyhow::Result<()> {
     main()
 }

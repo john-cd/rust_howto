@@ -67,10 +67,10 @@ fn cxx() {
 // }
 // ANCHOR_END: UNIFFI
 /// Runs the FFI code generators for the C examples.
-
+///
 /// # Errors
 /// Returns an error if Cargo does not provide its manifest or output
-/// directory, or either generator fails.
+/// directory, or binding generation or output writing fails.
 fn main() -> Result<(), Box<dyn Error>> {
     let manifest_dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR")?);
     let out_dir = PathBuf::from(env::var("OUT_DIR")?);
