@@ -94,7 +94,7 @@ data-encoding = "2.11.1"
 # Official FlatBuffers Rust runtime library.
 flatbuffers = "25.12.19"
 # `static` friendly data structures that don't require dynamic memory allocation
-heapless = "0.9.3"
+# heapless = "0.9.3"
 # Fast byte array to hex string conversion
 hex = "0.4.3" # Hexadecimal encoding and decoding.
 # Type that deserializes only from one specific value

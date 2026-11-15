@@ -53,13 +53,13 @@ ammonia = "4.2.4"
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # Types and traits for working with bytes
-bytes = "1.12.1"
+# bytes = "1.12.1"
 # A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
 # A set of types for representing HTTP requests and responses.
 http = "1.5.0"
 # Combinators and adapters for HTTP request or response bodies.
-http-body-util = "0.1.5"
+# http-body-util = "0.1.5"
 # A macro for declaring lazily evaluated statics in Rust.
 lazy_static = "1.5.1"
 # Provides strongly typed MIME media types and parsing.
