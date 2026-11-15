@@ -51,12 +51,12 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// # Errors
-/// Returns an error if archive creation fails.
+/// Returns an error if creating, writing, or finalizing the ZIP archive fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
-/// Returns an error if archive creation fails.
+/// Tests creation and round-trip reading of ZIP archives.
 #[cfg(test)]
 mod tests {
     use super::*;

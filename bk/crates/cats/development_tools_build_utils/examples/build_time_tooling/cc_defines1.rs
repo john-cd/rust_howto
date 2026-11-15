@@ -51,7 +51,7 @@ fn read_app_info() -> Result<(String, String, bool)> {
 /// Prints the C preprocessor values supplied by the build script.
 ///
 /// # Errors
-/// Returns an error if reading C definitions fails.
+/// Returns an error if build-time metadata cannot be read or the version is not valid UTF-8.
 fn main() -> Result<()> {
     let (app_name, version, welcome) = read_app_info()?;
     let greeting = if welcome {
