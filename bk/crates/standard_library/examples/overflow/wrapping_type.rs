@@ -6,7 +6,6 @@
 use std::num::Wrapping;
 /// Demonstrates wrapping arithmetic with `std::num::Wrapping`.
 /// Adds two wrapped values and checks the result.
-
 fn main() {
     let x = Wrapping(255_u8);
     let y = x + Wrapping(1);

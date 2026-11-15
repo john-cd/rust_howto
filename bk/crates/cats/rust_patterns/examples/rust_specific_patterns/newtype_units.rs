@@ -50,7 +50,6 @@ impl SubAssign for Meters {
     }
 }
 /// Scaling by a plain number is fine: meters * 2.0 is still meters.
-
 impl Mul<f64> for Meters {
     type Output = Self;
 
@@ -60,7 +59,6 @@ impl Mul<f64> for Meters {
     }
 }
 /// Dividing two lengths gives a dimensionless ratio.
-
 impl Div for Meters {
     type Output = f64;
 
@@ -99,7 +97,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

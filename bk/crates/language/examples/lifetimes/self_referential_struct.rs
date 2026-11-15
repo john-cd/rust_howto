@@ -64,13 +64,11 @@ impl SelfRefRc {
     }
 }
 /// Builds and prints a [`SelfRefRc`].
-
 fn rc() {
     let self_ref = SelfRefRc::new("Hello, Rust!".to_owned());
     println!("Data: {} and {}", self_ref.data, self_ref.reference);
 }
 /// Builds the anti-pattern, which can only be created with empty `fields`.
-
 fn tricky() {
     let record = CsvRecordTricky {
         line: "Joe,Doe".to_owned(),
@@ -80,7 +78,6 @@ fn tricky() {
 }
 /// Alternatives to self-referential structs.
 /// Runs both alternatives.
-
 fn main() {
     tricky();
     outside();

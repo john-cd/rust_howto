@@ -6,7 +6,6 @@
 mod builder_pattern;
 /// Runs the example.
 /// Runs the builder pattern example.
-
 fn main() {
     builder_pattern::run();
 }

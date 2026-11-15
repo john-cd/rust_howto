@@ -17,7 +17,6 @@ fn do_something() -> Result<()> {
 }
 /// Runs the example.
 /// Adds context to errors with `anyhow`.
-
 fn main() -> anyhow::Result<()> {
     // Provide context to the error:
     do_something().context("Failed to do the important thing")?;

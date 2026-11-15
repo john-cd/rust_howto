@@ -21,13 +21,19 @@ fn random_f64() -> f64 {
 
 /// Generates a random `f64` with the `rand` crate.
 fn main() {
+    run();
+}
+
+/// Generates and prints a random floating-point value.
+fn example() {
     println!("Random f64: {}", random_f64());
 }
+
 // ANCHOR_END: example
 
 /// Generates a random `f64` with the `rand` crate.
 fn run() {
-    main();
+    example();
 }
 
 #[cfg(test)]
@@ -39,7 +45,6 @@ mod tests {
         main();
     }
     /// Verifies random f64 is in unit interval.
-
     #[test]
     fn test_random_f64_is_in_unit_interval() {
         for _ in 0..1000 {

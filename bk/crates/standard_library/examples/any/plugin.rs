@@ -17,7 +17,6 @@ pub trait Plugin: Send + Sync + 'static {
     /// Returns the name of the plugin.
     fn name(&self) -> &'static str;
     /// Runs the plugin with access to the shared context.
-
     fn execute(&mut self, context: &mut Context);
 }
 
@@ -37,7 +36,6 @@ impl Context {
     }
 
     /// Returns a mutable reference to the service of type `T`, if registered.
-
     pub fn get_mut<T: Any + Send + Sync>(&mut self) -> Option<&mut T> {
         self.shared_data
             .get_mut(&TypeId::of::<T>())
@@ -45,7 +43,6 @@ impl Context {
     }
 
     /// Registers a service of type `T`, replacing any existing one.
-
     pub fn register<T: Any + Send + Sync>(&mut self, service: T) {
         self.shared_data
             .insert(TypeId::of::<T>(), Box::new(service));
@@ -184,7 +181,6 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `plugin` example runs.
-
     #[test]
     fn test_plugin_example_entry_point() {
         main();
@@ -236,7 +232,6 @@ mod tests {
         Ok(())
     }
     /// Verifies plugin names.
-
     #[test]
     fn test_plugin_names() {
         assert_eq!(MyCounterPlugin.name(), "MyCounterPlugin");
@@ -244,7 +239,6 @@ mod tests {
         assert_eq!(MyServiceConsumerPlugin.name(), "MyServiceConsumerPlugin");
     }
     /// Verifies plugin without its state does nothing.
-
     #[test]
     fn test_plugin_without_its_state_does_nothing() {
         let mut ctx = Context::default();

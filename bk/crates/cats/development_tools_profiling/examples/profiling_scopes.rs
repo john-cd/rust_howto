@@ -8,9 +8,8 @@
 //! expand to nothing and cost nothing.
 
 /// Adds the squares of the numbers up to `n`.
-
+///
 /// `#[profiling::function]` creates a scope named after the function.
-
 #[profiling::function]
 fn sum_of_squares(n: u64) -> u64 {
     (1..=n).map(|i| i * i).sum()
@@ -39,7 +38,6 @@ fn run_frame() -> u64 {
 }
 /// Runs the example.
 /// Runs a few frames.
-
 fn main() {
     let mut checksum = 0;
     for _ in 0..3 {
@@ -51,7 +49,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

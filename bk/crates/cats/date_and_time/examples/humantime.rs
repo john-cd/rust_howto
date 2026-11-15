@@ -11,7 +11,7 @@
 
 use std::time::Duration;
 /// Parses a human-readable duration and formats it again.
-
+///
 /// # Errors
 /// Returns an error if the sample duration is invalid.
 fn main() -> anyhow::Result<()> {

@@ -59,7 +59,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -74,14 +73,12 @@ mod tests {
         main();
     }
     /// Verifies full and shortened paths agree.
-
     #[test]
     fn test_full_and_shortened_paths_agree() {
         assert_eq!(a::b::fn_in_b(), "in b!");
         assert_eq!(b::fn_in_b(), a::b::fn_in_b());
     }
     /// Verifies use for constants and type aliases.
-
     #[test]
     fn test_use_for_constants_and_type_aliases() {
         use a::CONST_IN_A;

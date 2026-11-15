@@ -65,7 +65,7 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 /// Runs the C preprocessor definitions example.
-
+///
 /// # Errors
 /// Returns an error if reading C definitions fails.
 pub fn run() -> Result<()> {

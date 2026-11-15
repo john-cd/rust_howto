@@ -50,7 +50,6 @@ impl Config {
 ///
 /// Returns an error if configuration cannot be read or the pool cannot be
 /// built. When `max_size` is set, it overrides the environment configuration.
-
 fn create_pool_with_max_size(max_size: Option<usize>) -> anyhow::Result<deadpool_postgres::Pool> {
     // Loads the `.env` file from the current directory or parents.
     dotenv().ok();
@@ -70,7 +69,7 @@ fn create_pool_with_max_size(max_size: Option<usize>) -> anyhow::Result<deadpool
     Ok(cfg.pg.create_pool(Some(Runtime::Tokio1), NoTls)?)
 }
 /// Creates a PostgreSQL connection pool using its configured maximum size.
-
+///
 /// # Errors
 /// Returns an error if environment configuration cannot be read or the pool
 /// cannot be built.

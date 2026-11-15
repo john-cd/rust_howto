@@ -21,7 +21,6 @@ fn backoff(attempt: u32, base: Duration, cap: Duration) -> Duration {
 }
 /// Runs `task` until it succeeds or `token` is cancelled. Returns the delays
 /// that were waited between attempts.
-
 async fn supervise<F, Fut>(token: CancellationToken, mut task: F) -> Vec<Duration>
 where
     F: FnMut(u32) -> Fut,
@@ -71,7 +70,6 @@ async fn demo() {
 }
 /// Runs the example.
 /// Runs the demonstration on a paused-clock runtime.
-
 fn main() {
     match tokio::runtime::Builder::new_current_thread()
         .enable_time()
@@ -85,7 +83,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

@@ -13,7 +13,6 @@ use std::collections::HashMap;
 
 /// Builds a map with the imported `HashMap`.
 /// Uses an imported `HashMap`.
-
 fn build_map() -> HashMap<u32, String> {
     // We now refer to `HashMap` by its name.
     let mut mymap: HashMap<u32, String> = HashMap::new();
@@ -24,7 +23,6 @@ fn build_map() -> HashMap<u32, String> {
 }
 /// Runs the example.
 /// Uses an imported `HashMap`.
-
 fn main() {
     let mymap = build_map();
     println!("{mymap:?}");
@@ -33,7 +31,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -48,7 +45,6 @@ mod tests {
         main();
     }
     /// Verifies build map.
-
     #[test]
     fn test_build_map() {
         let map = build_map();

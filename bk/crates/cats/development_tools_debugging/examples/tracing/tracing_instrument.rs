@@ -100,7 +100,6 @@ mod tests {
         }
 
         /// Flushes the current value.
-
         fn flush(&mut self) -> std::io::Result<()> {
             Ok(())
         }
@@ -115,7 +114,6 @@ mod tests {
         }
     }
     /// Runs `f` with a thread-local subscriber and returns what it logged.
-
     fn capture(f: impl FnOnce()) -> String {
         let buf = Buf::default();
         let subscriber = tracing_subscriber::fmt()

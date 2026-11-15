@@ -29,6 +29,11 @@ static GLOBAL: MiMalloc = MiMalloc;
 
 /// Allocates a large vector with the `mimalloc` allocator.
 fn main() {
+    example();
+}
+
+/// Allocates a large vector using the configured global allocator.
+fn example() {
     // Allocate a large vector.
     let _v = vec![0; 1024 * 1024];
     println!("Allocated 1 MiB using the mimalloc allocator");
@@ -37,7 +42,7 @@ fn main() {
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    example();
 }
 
 /// Allocations through the global allocator behave normally.

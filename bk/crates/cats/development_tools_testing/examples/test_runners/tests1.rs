@@ -9,10 +9,8 @@
 //! check results.
 
 /// Runs the example.
-
 // This example demonstrates how to write unit tests.
 /// Represents a rectangle with a width and height.
-
 struct Rectangle {
     /// Width of the rectangle.
     width: u32,
@@ -28,7 +26,6 @@ impl Rectangle {
 }
 /// Writing tests that pass, fail, return a `Result` or are ignored.
 /// Checks whether a larger rectangle can hold a smaller one.
-
 fn main() {
     let larger = Rectangle {
         width: 8,

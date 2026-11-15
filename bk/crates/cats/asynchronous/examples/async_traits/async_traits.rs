@@ -13,20 +13,17 @@ struct MyHealthChecker;
 /// A trait for checking the health of a system.
 trait HealthCheck {
     /// Returns `true` if the system is healthy, `false` otherwise.
-
     async fn check(&mut self) -> bool;
 }
 
 impl HealthCheck for MyHealthChecker {
     // `async fn` implementation in the associated `impl` block.
     /// Checks the current value.
-
     async fn check(&mut self) -> bool {
         do_async_op().await
     }
 }
 /// Checks the health of `hc` and logs a failure if it is unhealthy.
-
 async fn do_health_check(mut hc: impl HealthCheck) {
     if hc.check().await {
         println!("Health check was normal");
@@ -37,19 +34,16 @@ async fn do_health_check(mut hc: impl HealthCheck) {
 }
 
 /// Simulates an asynchronous operation and returns whether it succeeded.
-
 async fn do_async_op() -> bool {
     true
 }
 /// Logs a failed health check.
-
 async fn log_health_check_failure() {
     println!("Health check failure");
 }
 /// Runs the example.
-
+///
 /// Runs a health check on the Tokio runtime.
-
 #[tokio::main]
 async fn main() {
     let hc = MyHealthChecker;
@@ -57,9 +51,8 @@ async fn main() {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
+///
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -74,22 +67,19 @@ mod tests {
         main();
     }
 
-    ///
-
+    /// Returns `true` when the built-in health checker reports healthy.
     #[tokio::test]
     async fn health_checker_reports_healthy() {
         assert!(MyHealthChecker.check().await);
     }
 
-    ///
-
+    /// Confirms that a failing implementation is handled by the check routine.
     #[tokio::test]
     async fn health_check_runs_with_a_failing_checker() {
         /// Groups the data required by async traits operations.
         struct Failing;
         impl HealthCheck for Failing {
             /// Checks the current value.
-
             async fn check(&mut self) -> bool {
                 false
             }

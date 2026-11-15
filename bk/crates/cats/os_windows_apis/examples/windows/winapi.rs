@@ -16,12 +16,10 @@ use winapi::um::winuser::MB_OK;
 use winapi::um::winuser::MessageBoxW;
 
 /// Encodes a string as UTF-16 and appends the NUL required by Win32 APIs.
-
 fn nul_terminated_wide(value: &str) -> Vec<u16> {
     value.encode_utf16().chain(std::iter::once(0)).collect()
 }
 /// Displays a message box using NUL-terminated UTF-16 strings.
-
 fn main() {
     let message = nul_terminated_wide("Hello from winapi!");
     let caption = nul_terminated_wide("Windows API example");
@@ -35,7 +33,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the message-box example.
-
 pub fn run() {
     main();
 }

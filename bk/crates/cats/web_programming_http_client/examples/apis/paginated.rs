@@ -54,7 +54,6 @@ struct Meta {
 impl Page {
     /// The `dependencies` entries no longer carry the dependent crate's name:
     /// look it up through `version_id` in the `versions` array.
-
     fn dependent_names(&self) -> Vec<&str> {
         let names: HashMap<u64, &str> = self
             .versions
@@ -192,7 +191,6 @@ mod tests {
         main()
     }
     /// All pages are walked, in order, and the walk stops at the total.
-
     #[test]
     fn walks_every_page() -> Result<()> {
         let mut requested = Vec::new();

@@ -42,7 +42,6 @@ impl ProxyHttp for LocalProxy {
     fn new_ctx(&self) -> Self::CTX {}
 
     /// Returns the fixed plain-HTTP upstream peer.
-
     async fn upstream_peer(
         &self,
         /// Session value.
@@ -57,7 +56,6 @@ impl ProxyHttp for LocalProxy {
     }
 
     /// Adds the example response header after receiving an upstream response.
-
     async fn response_filter(
         &self,
         /// Session value.
@@ -70,7 +68,6 @@ impl ProxyHttp for LocalProxy {
     }
 }
 /// Adds the identifying header to a Pingora response without starting a server.
-
 fn add_example_response_header(response: &mut ResponseHeader) -> Result<()> {
     response.insert_header(RESPONSE_HEADER_NAME, RESPONSE_HEADER_VALUE)?;
     Ok(())

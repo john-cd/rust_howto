@@ -79,7 +79,6 @@ mod tests {
     }
     /// Reports a clear failure for a temporary directory outside any
     /// repository.
-
     #[test]
     fn not_a_repository_is_an_error() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;

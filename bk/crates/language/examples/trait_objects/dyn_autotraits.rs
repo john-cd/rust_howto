@@ -36,7 +36,6 @@ fn process_message(messenger: Box<dyn Message + Send>) {
 }
 /// Runs the example.
 /// Sends a message through a `Box<dyn Message + Send>`.
-
 fn main() {
     let worker = Worker {
         id: 1,
@@ -60,7 +59,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

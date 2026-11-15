@@ -9,7 +9,7 @@
 
 use slug::slugify;
 /// Runs the example entry point.
-
+///
 /// Converts titles to lowercase ASCII slugs.
 pub fn example_body() {
     // Punctuation is dropped, spaces become hyphens, and accented characters

@@ -40,18 +40,15 @@ async fn graphql_handler(
     schema.execute(request.into_inner()).await.into()
 }
 /// Creates the schema shared by the server and deterministic tests.
-
 fn build_schema() -> HelloSchema {
     Schema::build(QueryRoot, EmptyMutation, EmptySubscription).finish()
 }
 /// Starts the GraphQL HTTP endpoint on the loopback interface.
-
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     serve().await
 }
 /// Builds the GraphQL schema and serves it until the listener stops.
-
 async fn serve() -> anyhow::Result<()> {
     let schema = build_schema();
     let app = Router::new()

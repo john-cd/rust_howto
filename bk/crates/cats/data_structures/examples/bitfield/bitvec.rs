@@ -72,7 +72,7 @@ fn bit_iteration(bv: &BitVec<u8, Msb0>) {
     println!();
 }
 /// Creates a bit vector and demonstrates access, mutation, queries, and
-
+///
 /// iteration.
 fn basic_operations() {
     // Create a new `BitVec` with default parameters:
@@ -205,7 +205,6 @@ fn practical_applications() {
 }
 /// Runs the example.
 /// Runs each bit-vector demonstration in sequence.
-
 fn main() {
     basic_operations();
     endianness_and_storage();
@@ -217,7 +216,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the bit-vector example.
-
 pub fn run() {
     main();
 }

@@ -115,7 +115,6 @@ pub fn admin_router(secret: JwtSecret) -> Router {
         .layer(Extension(secret))
 }
 /// Returns 200 for an admin token and 403 for a valid token without that role.
-
 async fn admin_route(AuthClaims(claims): AuthClaims) -> StatusCode {
     if role_allowed(&claims, "admin") {
         StatusCode::OK

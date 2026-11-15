@@ -40,7 +40,6 @@ mod tests {
         main()
     }
     /// The captured output is the compiler version.
-
     #[test]
     fn captures_the_compiler_version() -> anyhow::Result<()> {
         let shell = Shell::new()?;

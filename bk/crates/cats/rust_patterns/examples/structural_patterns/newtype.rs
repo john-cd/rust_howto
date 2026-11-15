@@ -24,7 +24,6 @@ impl UserId {
     }
 }
 /// Prints a user identifier constructed through its invariant-checking API.
-
 fn main() -> anyhow::Result<()> {
     let user_id = UserId::new(42)?;
     println!("User id: {}", user_id.get());

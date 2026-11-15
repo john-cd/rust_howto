@@ -31,7 +31,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -40,13 +39,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `borrow2` example runs.
-
     #[test]
     fn test_borrow2_example_entry_point() {
         main();
     }
     /// Verifies find score accepts str and string.
-
     #[test]
     fn test_find_score_accepts_str_and_string() {
         let scores = HashMap::from([("eve".to_owned(), 30)]);
@@ -54,7 +51,6 @@ mod tests {
         assert_eq!(find_score(&scores, "eve".to_owned()), Some(30));
     }
     /// Verifies find score missing key.
-
     #[test]
     fn test_find_score_missing_key() {
         let scores = HashMap::from([("eve".to_owned(), 30)]);

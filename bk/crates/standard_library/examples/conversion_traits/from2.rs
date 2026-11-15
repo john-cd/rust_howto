@@ -41,12 +41,10 @@ impl From<&str> for MyError {
     }
 }
 /// Returns a sample I/O error to demonstrate conversion with `?`.
-
 fn io_operation() -> Result<(), io::Error> {
     Err(io::Error::other("sample I/O failure"))
 }
 /// Converts the I/O error into `MyError` with the `?` operator.
-
 fn io_operation_with_custom_error() -> Result<(), MyError> {
     io_operation()?;
     Ok(())

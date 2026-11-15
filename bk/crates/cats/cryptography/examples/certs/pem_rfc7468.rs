@@ -48,7 +48,6 @@ mod tests {
         main()
     }
     /// The document has the RFC 7468 boundary lines and a base64 body.
-
     #[test]
     fn encoded_document_has_boundary_lines() -> Result<(), Box<dyn std::error::Error>> {
         let pem = encode_string("TEST DATA", LineEnding::LF, &[0x30, 0x03, 0x02, 0x01, 0x2a])?;

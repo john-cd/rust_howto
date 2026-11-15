@@ -38,7 +38,6 @@ mod tests {
         main()
     }
     /// `duct` captures the standard output of a command.
-
     #[test]
     fn duct_captures_output() -> anyhow::Result<()> {
         let output = cmd!("git", "--version").read()?;

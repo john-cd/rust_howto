@@ -15,7 +15,6 @@ use http::header::InvalidHeaderValue;
 use mime::Mime;
 
 /// Guesses the MIME type from a file name's extension.
-
 fn find_mimetype(filename: &str) -> Mime {
     mime_guess::from_path(filename).first_or_octet_stream()
 }
@@ -25,7 +24,6 @@ fn find_mimetype(filename: &str) -> Mime {
 ///
 /// Returns an error if the guessed MIME type cannot be represented as a header
 /// value.
-
 fn set_content_type(filename: &str, headers: &mut HeaderMap) -> Result<(), InvalidHeaderValue> {
     let mime = find_mimetype(filename);
     headers.insert(CONTENT_TYPE, HeaderValue::try_from(mime.as_ref())?);
@@ -52,7 +50,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 /// Runs the example.
-
+///
 /// # Errors
 /// Returns an error if the example cannot create or read a `Content-Type`
 /// header.

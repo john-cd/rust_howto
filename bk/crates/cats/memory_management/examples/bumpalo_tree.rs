@@ -75,7 +75,6 @@ impl Drop for Noisy {
 }
 /// Runs the example.
 /// Builds a tree in an arena, then shows what happens to destructors.
-
 fn main() {
     let bump = Bump::new();
     let mut root = None;
@@ -106,7 +105,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

@@ -25,13 +25,11 @@ struct AppState {
 ///
 /// # Arguments
 /// * `state` - Application state containing the repositories and services needed by this workflow.
-
 #[debug_handler]
 async fn greet(State(state): State<AppState>) -> String {
     state.greeting.to_owned()
 }
 /// Builds the router.
-
 pub fn app() -> Router {
     Router::new()
         .route("/", get(greet))

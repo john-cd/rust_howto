@@ -42,7 +42,6 @@ impl<T: Default + Clone, N: Unsigned> FixedBuffer<T, N> {
 }
 /// Runs the example.
 /// Computes with type-level numbers and creates a fixed-size buffer.
-
 fn main() {
     // `typenum` provides type-level numbers evaluated at compile time.
     // U2 and U3 are type aliases for the compile-time unsigned integers 2 and
@@ -74,7 +73,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

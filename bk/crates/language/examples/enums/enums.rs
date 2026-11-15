@@ -45,7 +45,6 @@ impl Message {
 }
 /// Runs the example.
 /// Creates a message of each kind and calls it.
-
 fn main() {
     // `msg` is assigned one of the variants.
     // Note the :: between the name of the type and the name of the variant.
@@ -65,7 +64,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -98,7 +96,7 @@ mod tests {
         );
     }
     /// Verifies call every variant.
-
+    ///
     /// `call` handles every variant.
     #[test]
     fn test_call_every_variant() {

@@ -75,7 +75,6 @@ mod tests {
     /// Shared `empty sha256` used by this module.
     const EMPTY_SHA256: &str = "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855";
     /// Verifies that the `sha digest` example runs.
-
     #[test]
     fn test_sha_digest_example_entry_point() {
         main().expect("the example should succeed");

@@ -44,7 +44,6 @@ fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
 /// Runs the example selected on the command line.
-
 fn dispatch(cli: Cli) -> anyhow::Result<()> {
     match cli.command {
         Commands::Newtype => newtype::run(),

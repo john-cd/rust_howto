@@ -41,7 +41,6 @@ impl Fn<(i32,)> for Adder {
     }
 }
 /// Calls an `Adder` like a function.
-
 fn main() {
     let add_five = Adder { offset: 5 };
 
@@ -60,13 +59,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `callable` example runs.
-
     #[test]
     fn test_callable_example_entry_point() {
         main();
     }
     /// Verifies adder is callable like a function.
-
     #[test]
     fn test_adder_is_callable_like_a_function() {
         let add_five = Adder { offset: 5 };
@@ -76,7 +73,6 @@ mod tests {
         assert_eq!(add_five(3), add_five(3));
     }
     /// Verifies adder as fn trait bounds.
-
     #[test]
     fn test_adder_as_fn_trait_bounds() {
         fn call_fn(f: impl Fn(i32) -> i32) -> i32 {

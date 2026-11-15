@@ -30,7 +30,6 @@ impl CostFunction for CosMinusX {
 /// # Panics
 /// Panics if Brent's method should find the bracketed root.
 /// Finds the root of `cos(x) - x` in the interval `[0, 1]`.
-
 fn find_root() -> f64 {
     let result = Executor::new(CosMinusX, BrentRoot::new(0.0, 1.0, 1e-12))
         .configure(|state| state.param(0.5).max_iters(100))
@@ -52,7 +51,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
-
 pub fn run() {
     main();
 }

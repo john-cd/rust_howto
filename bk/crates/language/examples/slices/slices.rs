@@ -38,7 +38,6 @@ fn slice_from_vector() {
 }
 /// Runs the example.
 /// Creates slices from an array and from a vector.
-
 fn main() {
     slice_from_array();
     slice_from_vector();
@@ -47,7 +46,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

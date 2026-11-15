@@ -38,7 +38,6 @@ impl Add for Point {
 }
 /// Runs the example.
 /// Adds two points.
-
 fn main() {
     let p1 = Point { x: 1, y: 5 };
     let p2 = Point { x: 2, y: 3 };
@@ -55,7 +54,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -64,20 +62,17 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `ops` example runs.
-
     #[test]
     fn test_ops_example_entry_point() {
         main();
     }
     /// Verifies add.
-
     #[test]
     fn test_add() {
         let p = Point { x: 1, y: 5 } + Point { x: 2, y: 3 };
         assert_eq!(p, Point { x: 3, y: 8 });
     }
     /// Verifies add with negatives and zero.
-
     #[test]
     fn test_add_with_negatives_and_zero() {
         let zero = Point { x: 0, y: 0 };
@@ -86,7 +81,6 @@ mod tests {
         assert_eq!(p + Point { x: 1, y: -4 }, zero);
     }
     /// Verifies add overflow panics in debug builds.
-
     #[test]
     #[should_panic(expected = "overflow")]
     fn test_add_overflow_panics_in_debug_builds() {

@@ -88,25 +88,19 @@ trait TraitMethods {
     fn by_ref(&self) {} // Equivalent to self: &Self.
     fn by_ref_mut(&mut self) {} // Equivalent to self: &mut Self.
     /// Takes `self` by mutable reference.
-
     fn by_box(self: Box<Self>) {}
     /// Takes `self` in a `Box`.
-
     fn by_rc(self: Rc<Self>) {}
     /// Takes `self` in an `Rc`.
-
     fn by_arc(self: Arc<Self>) {}
     /// Takes `self` in an `Arc`.
-
     fn by_pin(self: Pin<&Self>) {}
     /// Takes `self` in a `Pin`.
-
+    ///
     /// Takes `self` by reference with an explicit lifetime.
-
     #[allow(clippy::needless_lifetimes)]
     fn with_lifetime<'a>(&'a self) {} // Equivalent to self: &'a Self.
     /// Takes `self` in a `Pin<Arc<Self>>`.
-
     fn nested_pin(self: Pin<Arc<Self>>) {}
 
     // You can also constrain functions that otherwise could not be included in
@@ -243,7 +237,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

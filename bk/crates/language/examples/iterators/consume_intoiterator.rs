@@ -34,7 +34,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -49,7 +48,7 @@ mod tests {
         main();
     }
     /// Verifies sum all.
-
+    ///
     /// `sum_all` accepts any `IntoIterator` of `i32`.
     #[test]
     fn test_sum_all() {

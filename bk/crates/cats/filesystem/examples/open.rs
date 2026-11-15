@@ -9,8 +9,13 @@
 //! `xdg-open`, on macOS `open`, and on Windows `start`.
 
 /// Opens a file with the default application.
-
 fn main() {
+    example();
+}
+
+/// Opens a file and a URL with the platform's default applications and prints
+/// the commands selected by the `open` crate.
+fn example() {
     //  The `that` function attempts to open the specified path with the
     // appropriate application. If an error occurs during the opening
     // process, it will be printed to the standard error stream.
@@ -38,7 +43,7 @@ fn main() {
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    example();
 }
 
 #[cfg(test)]

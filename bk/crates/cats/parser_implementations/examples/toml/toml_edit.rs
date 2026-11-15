@@ -12,7 +12,7 @@ use toml_edit::DocumentMut;
 use toml_edit::Item;
 use toml_edit::value;
 /// Parses a TOML document, edits it while preserving its formatting, and prints
-
+///
 /// it.
 ///
 /// # Errors

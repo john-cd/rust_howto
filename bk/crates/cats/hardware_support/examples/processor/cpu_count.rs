@@ -13,7 +13,6 @@ fn logical_cores() -> usize {
     num_cpus::get()
 }
 /// Prints the number of logical cores on the system.
-
 fn main() {
     println!("Number of logical cores is {}", logical_cores());
 }
@@ -21,7 +20,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

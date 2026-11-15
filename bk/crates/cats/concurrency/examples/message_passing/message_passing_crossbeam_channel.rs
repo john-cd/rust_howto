@@ -28,14 +28,12 @@ fn spawn_producer(sender: Sender<&'static str>, message: &'static str) -> JoinHa
     })
 }
 /// Receives every message currently in the channel without blocking.
-
 fn drain_without_blocking(receiver: &Receiver<&'static str>) -> Vec<&'static str> {
     receiver.try_iter().collect()
 }
 /// Disconnects the channel after sending one last message, then receives what remains.
 /// Dropping the only sender disconnects the channel, so iterating over the receiver ends instead
 /// of blocking forever.
-
 fn send_then_disconnect(
     sender: Sender<&'static str>,
     receiver: &Receiver<&'static str>,
@@ -109,7 +107,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

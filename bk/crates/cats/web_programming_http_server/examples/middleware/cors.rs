@@ -28,7 +28,6 @@ async fn handle(_request: Request<Full<Bytes>>) -> Result<Response<Full<Bytes>>,
     Ok(Response::new(Full::default()))
 }
 /// Main function that sets up a service with CORS middleware.
-
 #[tokio::main]
 async fn main() -> Result<()> {
     let cors = CorsLayer::new()

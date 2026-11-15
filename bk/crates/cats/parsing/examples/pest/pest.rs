@@ -43,7 +43,6 @@ fn parse_expression(input: &str) -> anyhow::Result<Vec<String>> {
 }
 /// Runs the example.
 /// Parses an arithmetic expression and prints its tokens.
-
 fn main() -> anyhow::Result<()> {
     let input = "3 + 5 * 2 - 8 / 4";
     for token in parse_expression(input)? {

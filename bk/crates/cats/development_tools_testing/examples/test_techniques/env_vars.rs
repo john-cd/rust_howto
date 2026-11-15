@@ -44,6 +44,14 @@ impl Config {
 
 /// Prints the configured log level.
 fn main() -> Result<(), String> {
+    example()
+}
+
+/// Reads the process configuration and prints its selected log level.
+///
+/// # Errors
+/// Returns an error if `APP_LOG` is invalid or contains non-Unicode text.
+fn example() -> Result<(), String> {
     let config = Config::from_process_env()?;
     println!("Log level: {}", config.log_level);
     Ok(())
@@ -56,7 +64,7 @@ fn main() -> Result<(), String> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<(), String> {
-    main()
+    example()
 }
 
 /// Runs this test in child processes with controlled environment values.

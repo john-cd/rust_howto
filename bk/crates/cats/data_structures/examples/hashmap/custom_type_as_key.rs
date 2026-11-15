@@ -34,7 +34,7 @@ impl Hash for Student {
     }
 }
 /// Runs the example.
-
+///
 /// Stores grades in a `HashMap` keyed by `Student`.
 fn main() {
     // Create a new HashMap to store student grades.
@@ -71,7 +71,6 @@ fn calculate_hash<T: Hash>(t: &T) -> u64 {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

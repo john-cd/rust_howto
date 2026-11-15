@@ -105,6 +105,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if debug_and_display_never_contain_the_secret fails.
+    #[test]
     fn debug_and_display_never_contain_the_secret() -> Result<(), Infallible> {
         let secret: RedactedSecret = "hunter2".parse()?;
         assert!(!format!("{secret:?}").contains("hunter2"));

@@ -75,6 +75,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if background_task_runs_on_the_runtime fails.
+    #[test]
     fn background_task_runs_on_the_runtime() -> Result<(), Box<dyn std::error::Error>> {
         let runtime = tokio::runtime::Builder::new_current_thread()
             .enable_all()

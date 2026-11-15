@@ -71,7 +71,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the `petgraph` Minimum Spanning Tree example by calling `main()`.
-
 pub fn run() {
     main();
 }
@@ -81,7 +80,6 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies petgraph minimum spanning tree example.
-
     #[test]
     fn test_petgraph_minimum_spanning_tree_example() {
         main();

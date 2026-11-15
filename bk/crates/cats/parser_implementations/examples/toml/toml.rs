@@ -82,7 +82,6 @@ mod tests {
         main()
     }
     /// The sample document is parsed into the typed structure.
-
     #[test]
     fn parses_the_sample() {
         let config: Config = toml::from_str(

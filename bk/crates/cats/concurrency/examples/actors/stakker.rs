@@ -32,7 +32,7 @@ impl Counter {
     }
 }
 /// Sends two increments and returns the replies from the counter actor.
-
+///
 /// # Errors
 /// Returns an error if the actor does not reply to either increment.
 ///
@@ -82,7 +82,7 @@ fn run_actor() -> anyhow::Result<(u32, u32)> {
     Ok((first, second))
 }
 /// Runs the Stakker counter example.
-
+///
 /// # Errors
 /// Returns an error if the actor does not reply to either increment.
 fn main() -> anyhow::Result<(u32, u32)> {
@@ -92,7 +92,7 @@ fn main() -> anyhow::Result<(u32, u32)> {
 }
 // ANCHOR_END: example
 /// Runs the Stakker actor example.
-
+///
 /// # Errors
 /// Returns an error if the actor does not reply to either increment.
 pub fn run() -> anyhow::Result<()> {

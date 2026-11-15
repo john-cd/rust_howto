@@ -30,7 +30,6 @@ mod cis {
     }
 }
 /// Returns the hash of `t`.
-
 fn calculate_hash<T: std::hash::Hash>(t: &T) -> u64 {
     use std::hash::Hasher as _;
     let mut s = std::hash::DefaultHasher::new();
@@ -80,7 +79,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -89,13 +87,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `borrow3` example runs.
-
     #[test]
     fn test_borrow3_example_entry_point() {
         main();
     }
     /// Verifies case insensitive equality.
-
     #[test]
     fn test_case_insensitive_equality() {
         let a = cis::CaseInsensitiveString::from("Rust".to_owned());
@@ -104,7 +100,6 @@ mod tests {
         assert_ne!(a, cis::CaseInsensitiveString::from("Go".to_owned()));
     }
     /// Verifies hash matches between owned and borrowed.
-
     #[test]
     fn test_hash_matches_between_owned_and_borrowed() {
         use std::borrow::Borrow as _;
@@ -114,7 +109,6 @@ mod tests {
         assert_eq!(calculate_hash(&a), calculate_hash(&s));
     }
     /// Verifies hash differs for different values.
-
     #[test]
     fn test_hash_differs_for_different_values() {
         assert_ne!(calculate_hash(&"a"), calculate_hash(&"b"));

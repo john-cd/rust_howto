@@ -8,7 +8,6 @@ mod module_paths;
 mod module_visibility;
 /// Runs the example.
 /// Runs the modules example.
-
 fn main() {
     module_paths::run();
     module_visibility::run();

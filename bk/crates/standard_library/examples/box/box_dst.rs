@@ -8,7 +8,6 @@
 //! the owning pointer for them.
 
 /// Creates boxes of a slice and a string.
-
 fn main() {
     // Creating a Box containing a slice.
     let boxed_slice: Box<[i32]> = Box::new([1, 2, 3]);
@@ -35,7 +34,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -44,13 +42,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `box dst` example runs.
-
     #[test]
     fn test_box_dst_example_entry_point() {
         main();
     }
     /// Verifies boxed slice.
-
     #[test]
     fn test_boxed_slice() {
         let boxed_slice: Box<[i32]> = Box::new([1, 2, 3]);
@@ -58,7 +54,6 @@ mod tests {
         assert_eq!(&*boxed_slice, &[1, 2, 3]);
     }
     /// Verifies vec into boxed slice and back.
-
     #[test]
     fn test_vec_into_boxed_slice_and_back() {
         let boxed: Box<[i32]> = vec![4, 5, 6, 7].into_boxed_slice();
@@ -66,7 +61,6 @@ mod tests {
         assert_eq!(boxed.into_vec(), vec![4, 5, 6, 7]);
     }
     /// Verifies boxed str.
-
     #[test]
     fn test_boxed_str() {
         let boxed_str: Box<str> = "Hello, Rust!".to_owned().into_boxed_str();

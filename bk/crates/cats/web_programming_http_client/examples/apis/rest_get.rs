@@ -13,7 +13,6 @@ use reqwest::Client;
 use reqwest::Error;
 use serde::Deserialize;
 /// Represents a GitHub user with their login and ID.
-
 #[derive(Deserialize, Debug, Eq, PartialEq)]
 struct User {
     /// The user's login name on GitHub.
@@ -60,7 +59,6 @@ async fn get_users(client: &Client, request_url: &str) -> Result<Vec<User>, Erro
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn run() -> Result<(), Error> {
     main()
 }
@@ -106,7 +104,6 @@ mod tests {
         main()
     }
     /// An HTTP error status is reported as an error.
-
     #[tokio::test]
     async fn error_status_is_an_error() -> anyhow::Result<()> {
         let mut server = mockito::Server::new_async().await;

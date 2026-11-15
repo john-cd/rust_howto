@@ -75,7 +75,6 @@ mod tests {
         run()
     }
     /// Preserves the output of a command that finishes before its deadline.
-
     #[test]
     fn fast_command_completes() -> anyhow::Result<()> {
         let mut child = sleep_command(0).spawn()?;

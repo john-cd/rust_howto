@@ -6,7 +6,6 @@
 mod send_sync_impl;
 /// Runs the example.
 /// Runs the send sync example.
-
 fn main() {
     send_sync_impl::run();
 }

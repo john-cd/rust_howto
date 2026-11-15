@@ -49,7 +49,7 @@ pub fn app() -> Router {
         .merge(SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", ApiDoc::openapi()))
 }
 /// Renders the document as pretty-printed JSON.
-
+///
 /// # Errors
 /// Returns an error if the OpenAPI document cannot be serialized as JSON.
 pub fn openapi_json() -> anyhow::Result<String> {

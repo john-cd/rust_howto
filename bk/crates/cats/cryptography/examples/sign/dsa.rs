@@ -51,7 +51,7 @@ fn main() -> anyhow::Result<()> {
 
 // ANCHOR_END: example
 /// Runs the P-256 signature example.
-
+///
 /// # Errors
 /// Returns an error if the operating system cannot provide secure randomness.
 pub fn run() -> anyhow::Result<()> {

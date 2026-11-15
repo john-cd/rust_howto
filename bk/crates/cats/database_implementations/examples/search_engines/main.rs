@@ -72,14 +72,12 @@ mod tests {
         assert!(main().is_ok());
     }
     /// Verifies meilisearch subcommand parses.
-
     #[cfg(feature = "meilisearch")]
     #[test]
     fn test_meilisearch_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "meilisearch"]).is_ok());
     }
     /// Verifies tantivy subcommand parses.
-
     #[cfg(feature = "tantivy")]
     #[test]
     fn test_tantivy_subcommand_parses() {

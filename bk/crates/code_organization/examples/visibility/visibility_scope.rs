@@ -13,7 +13,6 @@ mod a {
             "visible_in_crate"
         }
         /// A function visible in the parent module only.
-
         pub(super) fn visible_in_parent_module() {}
 
         /// A public nested module.
@@ -23,7 +22,6 @@ mod a {
         }
     }
     /// Calls the functions visible in `a`.
-
     pub fn use_in_a() {
         b::visible_in_crate();
         b::visible_in_parent_module();
@@ -55,7 +53,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -70,7 +67,6 @@ mod tests {
         main();
     }
     /// Verifies pub crate visible from other modules.
-
     #[test]
     fn test_pub_crate_visible_from_other_modules() {
         assert_eq!(a::b::visible_in_crate(), "visible_in_crate");

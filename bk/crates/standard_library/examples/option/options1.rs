@@ -4,7 +4,6 @@
 //! Creating and unwrapping `Option` values.
 
 /// Creates `Some` and `None` values and unwraps them.
-
 fn main() {
     // `Some` is a variant of the `Option` enum that represents a value.
     let some_number = Some(5);
@@ -19,7 +18,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -28,13 +26,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `options1` example runs.
-
     #[test]
     fn test_options1_example_entry_point() {
         main();
     }
     /// Verifies some and none.
-
     #[test]
     fn test_some_and_none() {
         let some_number = Some(5);

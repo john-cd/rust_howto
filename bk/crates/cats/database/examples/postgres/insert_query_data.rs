@@ -17,7 +17,6 @@ use postgres::Client;
 use postgres::NoTls;
 use postgres::types::ToSql;
 /// Represents an author with an ID, name, and country.
-
 struct Author {
     /// The identifier.
     _id: i32,
@@ -27,7 +26,7 @@ struct Author {
     country: String,
 }
 /// Inserts sample authors into a temporary table, then queries them back.
-
+///
 /// # Errors
 /// Returns an error if `DATABASE_URL` is missing, PostgreSQL cannot be reached,
 /// or an insert or query fails.

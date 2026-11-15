@@ -43,7 +43,7 @@ const RULES: &str = r#"{
   ]
 }"#;
 /// Evaluates one context and rejects missing inputs or an unmatched rule.
-
+///
 /// # Errors
 /// Returns an error when a required input is absent, engine evaluation fails,
 /// or the decision table produces no preferred account.

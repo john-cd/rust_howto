@@ -13,7 +13,6 @@ use rake::KeywordScore;
 use rake::Rake;
 use rake::StopWords;
 /// Runs the example.
-
 fn main() -> anyhow::Result<()> {
     // RAKE splits the text at stop words and punctuation. Real applications
     // load a full list for their language, e.g. with `StopWords::from_file`.

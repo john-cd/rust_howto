@@ -125,6 +125,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if empty_input_directory_is_an_error fails.
+    #[test]
     fn empty_input_directory_is_an_error() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
         let err =

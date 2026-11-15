@@ -11,9 +11,14 @@ use std::time::Duration;
 
 use smol::Timer;
 /// Runs several asynchronous tasks on the `smol` runtime and waits for their
-
+///
 /// results.
 fn main() {
+    example();
+}
+
+/// Spawns two tasks on `smol` and prints the sum of their results.
+fn example() {
     // Run the async block on the smol runtime.
     smol::block_on(async {
         // Spawn a background task that waits and then returns a value.
@@ -39,7 +44,7 @@ fn main() {
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    example();
 }
 
 #[cfg(test)]

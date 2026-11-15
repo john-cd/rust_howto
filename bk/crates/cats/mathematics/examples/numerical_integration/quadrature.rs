@@ -169,7 +169,6 @@ fn main() {
 }
 /// Runs the example from the book's example workspace.
 /// Verifies the trapezoidal rule converges for a known quadratic integral.
-
 #[test]
 fn trapezoidal_rule_converges_for_a_quadratic() {
     let coarse = integrate_trapezoidal(|x| x * x, 0.0, 1.0, 8)
@@ -181,7 +180,6 @@ fn trapezoidal_rule_converges_for_a_quadratic() {
     assert!((fine - exact).abs() < (coarse - exact).abs() / 3.9);
 }
 /// Verifies Simpson's rule integrates a quadratic to floating-point precision.
-
 #[test]
 fn simpson_rule_integrates_a_quadratic() {
     let estimate = integrate_simpson(|x| x * x, 0.0, 1.0, 8)
@@ -190,7 +188,6 @@ fn simpson_rule_integrates_a_quadratic() {
     assert!((estimate - 1.0 / 3.0).abs() < 1e-14);
 }
 /// Verifies Simpson's rule rejects an odd subinterval count.
-
 #[test]
 fn simpson_rule_requires_an_even_partition() {
     let result = integrate_simpson(|x| x, 0.0, 1.0, 3);
@@ -198,7 +195,6 @@ fn simpson_rule_requires_an_even_partition() {
     assert_eq!(result, Err(IntegrationError::OddSimpsonSubintervalCount));
 }
 /// Verifies the methods reject non-finite input bounds and samples.
-
 #[test]
 fn integration_rejects_non_finite_bounds_and_samples() {
     let invalid_bounds = integrate_trapezoidal(|x| x, f64::NAN, 1.0, 2);
@@ -208,7 +204,6 @@ fn integration_rejects_non_finite_bounds_and_samples() {
     assert_eq!(invalid_sample, Err(IntegrationError::NonFiniteSample));
 }
 /// Verifies swapping finite bounds negates the integral estimate.
-
 #[test]
 fn integration_preserves_orientation_of_bounds() {
     let forward =

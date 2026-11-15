@@ -34,7 +34,6 @@ fn process_optional_string(maybe_name: Option<String>) {
 }
 /// Runs the example.
 /// Processes a present and a missing name.
-
 fn main() {
     process_optional_string(Some("Alice".to_owned()));
     process_optional_string(None);
@@ -43,7 +42,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -52,13 +50,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `option asref` example runs.
-
     #[test]
     fn test_option_asref_example_entry_point() {
         main();
     }
     /// Verifies as ref and as deref do not consume the option.
-
     #[test]
     fn test_as_ref_and_as_deref_do_not_consume_the_option() {
         let name = Some("Alice".to_owned());
@@ -70,7 +66,6 @@ mod tests {
         assert_eq!(name, Some("Alice".to_owned()));
     }
     /// Verifies none stays none.
-
     #[test]
     fn test_none_stays_none() {
         let none: Option<String> = None;

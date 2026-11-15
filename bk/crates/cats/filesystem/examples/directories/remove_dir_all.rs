@@ -16,7 +16,6 @@ fn main() -> io::Result<()> {
     remove_tree(Path::new("temp"))
 }
 /// Creates a directory tree under `base`, then removes a subdirectory.
-
 fn remove_tree(base: &Path) -> io::Result<()> {
     // Create a directory structure for demonstration purposes
     // (if it doesn't exist already).

@@ -19,7 +19,6 @@ enum Command {
 }
 /// Runs the example.
 /// Reads the properties.
-
 fn main() {
     assert_eq!(Command::Save.get_str("icon"), Some("save"));
     assert_eq!(Command::Delete.get_str("shortcut"), Some("Ctrl+D"));
@@ -39,7 +38,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

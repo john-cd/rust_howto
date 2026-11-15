@@ -4,13 +4,11 @@
 //! Returning references and owned values from functions.
 
 /// Return an owned type instead of a reference.
-
 fn return_string() -> String {
     String::new()
 }
 /// Pass a mutable reference,
 /// and modify in the function.
-
 fn use_mut_ref(v: &mut Vec<i32>) {
     *v = vec![0; 3];
 }
@@ -71,7 +69,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

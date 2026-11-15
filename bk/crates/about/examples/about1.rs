@@ -71,7 +71,6 @@ mod tests {
         main().expect("main failed");
     }
     /// Verifies example parses ipv6 address.
-
     #[test]
     fn test_example_parses_ipv6_address() -> Result<(), Box<dyn std::error::Error>> {
         let addr = example()?;
@@ -80,14 +79,12 @@ mod tests {
         Ok(())
     }
     /// Verifies invalid UTF-8 is an error.
-
     #[test]
     fn test_invalid_utf8_is_an_error() {
         let bytes = vec![0xff, 0xfe];
         assert!(str::from_utf8(&bytes).is_err());
     }
     /// Verifies invalid address is an error.
-
     #[test]
     fn test_invalid_address_is_an_error() {
         assert!("not an address".parse::<IpAddr>().is_err());

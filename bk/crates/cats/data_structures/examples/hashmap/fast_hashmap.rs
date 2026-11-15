@@ -48,7 +48,6 @@ fn count_fx(text: &str) -> FxHashMap<&str, usize> {
 }
 /// Runs the example.
 /// Checks that the three maps agree.
-
 fn main() {
     let text = "the quick brown fox jumps over the lazy dog the end";
 
@@ -76,7 +75,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

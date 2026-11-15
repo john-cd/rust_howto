@@ -74,7 +74,6 @@ mod tests {
         main()
     }
     /// `root` verifies offsets and bounds, so arbitrary bytes are rejected.
-
     #[test]
     fn garbage_bytes_are_rejected() {
         let result = flatbuffers::root::<my_game_generated::my_game::Monster>(&[0xff; 8]);

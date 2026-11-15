@@ -44,7 +44,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -53,13 +52,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `cow to borrowed owned` example runs.
-
     #[test]
     fn test_cow_to_borrowed_owned_example_entry_point() {
         main();
     }
     /// Verifies borrowing from a cow.
-
     #[test]
     fn test_borrowing_from_a_cow() {
         let example: Cow<str> = Cow::from("Example ");
@@ -72,7 +69,6 @@ mod tests {
         assert!(matches!(example, Cow::Borrowed(_)));
     }
     /// Verifies converting to owned.
-
     #[test]
     fn test_converting_to_owned() {
         let example: Cow<str> = Cow::from("Example ");

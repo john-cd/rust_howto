@@ -147,7 +147,8 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if defaults_apply_when_only_a_pattern_is_given fails.
+    /// Returns an error if the command-line arguments cannot be parsed.
+    #[test]
     fn defaults_apply_when_only_a_pattern_is_given() -> Result<(), Box<dyn std::error::Error>> {
         let cli = Cli::try_parse_from(["app", "needle"])?;
         assert_eq!(cli.pattern.as_deref(), Some("needle"));

@@ -36,7 +36,6 @@ fn dispatch(cli: Cli) {
     }
 }
 /// Runs the example.
-
 fn main() {
     dispatch(Cli::parse());
 }

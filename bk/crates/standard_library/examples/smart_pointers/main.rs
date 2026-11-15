@@ -6,7 +6,6 @@
 mod deref;
 /// Runs the example.
 /// Runs the smart pointers example.
-
 fn main() {
     deref::run();
 }

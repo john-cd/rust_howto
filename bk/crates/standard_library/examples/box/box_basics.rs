@@ -50,7 +50,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -59,13 +58,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `box basics` example runs.
-
     #[test]
     fn test_box_basics_example_entry_point() {
         main();
     }
     /// Verifies move value to heap and back.
-
     #[test]
     fn test_move_value_to_heap_and_back() {
         let in_heap: Box<MyStruct> = Box::new(MyStruct(5));
@@ -75,7 +72,6 @@ mod tests {
         assert_eq!(format!("{in_stack:?}"), "MyStruct(5)");
     }
     /// Verifies box of copy type does not move original.
-
     #[test]
     fn test_box_of_copy_type_does_not_move_original() {
         let x: u32 = 7;

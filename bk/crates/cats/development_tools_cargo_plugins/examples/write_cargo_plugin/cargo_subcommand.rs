@@ -111,6 +111,7 @@ pub fn example_body() -> anyhow::Result<()> {
 ///
 /// # Errors
 /// Returns an error if the example operation fails.
+#[cfg(test)]
 pub fn run() -> anyhow::Result<()> {
     example_body()
 }

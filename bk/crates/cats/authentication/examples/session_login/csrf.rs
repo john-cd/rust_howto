@@ -61,7 +61,6 @@ fn constant_time_eq(a: &str, b: &str) -> bool {
             == 0
 }
 /// Renders the form with the hidden token field.
-
 async fn show_form(session: Session) -> Result<Html<String>, StatusCode> {
     let token = csrf_token(&session).await?;
     Ok(Html(format!(
@@ -216,7 +215,6 @@ mod tests {
         assert!(!constant_time_eq("abc", "ab"));
     }
     /// Verifies that the `csrf` example runs.
-
     #[test]
     fn test_csrf_example_entry_point() {
         main();

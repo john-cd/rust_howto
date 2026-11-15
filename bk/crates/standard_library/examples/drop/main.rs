@@ -6,7 +6,6 @@
 mod drop;
 /// Runs the example.
 /// Runs the drop example.
-
 fn main() {
     drop::run();
 }

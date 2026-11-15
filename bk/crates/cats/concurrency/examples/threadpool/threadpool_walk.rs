@@ -24,7 +24,6 @@ fn is_iso(entry: &Path) -> bool {
     matches!(entry.extension(), Some(e) if e.to_string_lossy().to_lowercase() == "iso")
 }
 /// Computes a file's SHA-256 digest and returns it with the input path.
-
 fn compute_digest<P: AsRef<Path>>(filepath: P) -> Result<([u8; 32], P), Error> {
     let mut buf_reader = BufReader::new(File::open(&filepath)?);
     let mut hasher = Sha256::new();
@@ -135,7 +134,6 @@ mod tests {
         Ok(())
     }
     /// Computes digest of a missing file is an error.
-
     #[test]
     fn compute_digest_of_a_missing_file_is_an_error() {
         let Err(err) = compute_digest("/definitely/not/here.iso") else {

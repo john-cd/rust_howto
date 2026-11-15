@@ -25,7 +25,7 @@ struct Server;
 
 impl Server {
     // Represents a connection to a server.
-    ///
+    /// Returns the sample answer produced by this server.
     async fn get_answer(&self) -> i32 {
         42
     }

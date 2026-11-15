@@ -6,7 +6,6 @@
 mod default;
 /// Runs the example.
 /// Runs the `default` example.
-
 fn main() {
     default::run();
 }

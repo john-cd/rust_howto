@@ -38,13 +38,11 @@ impl Hooks for App {
     }
 
     /// Registers the application routes.
-
     fn routes(_ctx: &AppContext) -> AppRoutes {
         AppRoutes::with_default_routes().add_route(home::routes())
     }
 
     /// Creates the application without enabling database support.
-
     async fn boot(
         /// Mode used to start the process.
         mode: StartMode,
@@ -56,13 +54,11 @@ impl Hooks for App {
     }
 
     /// Leaves background worker registration empty for this HTTP-only example.
-
     async fn connect_workers(_ctx: &AppContext, _queue: &Queue) -> Result<()> {
         Ok(())
     }
 
     /// Registers no scheduled or one-off tasks for this example.
-
     fn register_tasks(_tasks: &mut Tasks) {}
 }
 
@@ -89,13 +85,11 @@ mod home {
         format::text("Hello, Loco!")
     }
     /// Defines the routes for this controller.
-
     pub fn routes() -> Routes {
         Routes::new().prefix("home").add("/hello", get(hello))
     }
 }
 /// Prints the command needed to run this example as a Loco application.
-
 fn main() -> anyhow::Result<()> {
     #[cfg(feature = "loco-support")]
     println!("Run with `cargo loco start` from a Loco application directory.");

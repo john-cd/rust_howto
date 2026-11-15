@@ -11,7 +11,7 @@ use std::fs::File;
 use std::io;
 use std::io::Read as _;
 /// Reads the username from the file "temp/hello.txt".
-
+///
 /// # Returns
 /// Returns `Ok(String)` containing the username if successful, or
 /// `Err(io::Error)` if an error occurs.
@@ -46,7 +46,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

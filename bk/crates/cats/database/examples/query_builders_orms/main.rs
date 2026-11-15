@@ -91,28 +91,24 @@ mod tests {
         assert!(main().is_ok());
     }
     /// Verifies diesel1 subcommand parses.
-
     #[cfg(feature = "diesel")]
     #[test]
     fn test_diesel1_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "diesel1"]).is_ok());
     }
     /// Verifies sea orm subcommand parses.
-
     #[cfg(feature = "sea_orm")]
     #[test]
     fn test_sea_orm_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "sea_orm"]).is_ok());
     }
     /// Verifies seaography subcommand parses.
-
     #[cfg(feature = "sea_orm")]
     #[test]
     fn test_seaography_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "seaography"]).is_ok());
     }
     /// Verifies sqlx subcommand parses.
-
     #[cfg(feature = "sqlx")]
     #[test]
     fn test_sqlx_subcommand_parses() {

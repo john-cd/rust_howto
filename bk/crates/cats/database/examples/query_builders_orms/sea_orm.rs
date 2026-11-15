@@ -54,7 +54,6 @@ fn main() -> Result<(), DbErr> {
 
 /// Builds representative insert and filtered select SQL for the posts entity.
 /// Assembles the queries from its component values so callers receive a ready-to-use result.
-
 fn build_queries() -> (String, String) {
     let insert_sql = post::Entity::insert(post::ActiveModel {
         id: NotSet,
@@ -87,7 +86,6 @@ pub fn run() -> Result<(), DbErr> {
 mod tests {
     use super::*;
     /// Inserts query contains post fields and values.
-
     #[test]
     fn insert_query_contains_post_fields_and_values() {
         let (insert_sql, _) = build_queries();

@@ -25,9 +25,9 @@ use flume::unbounded;
 // - `select`-like interface.
 // - No `unsafe` code.
 /// Sends messages through a bounded `flume` channel and selects between
-
+///
 /// channels.
-
+///
 /// # Panics
 /// Panics if receiver remains alive.
 fn main() {
@@ -50,7 +50,7 @@ fn main() {
 }
 
 /// Selects between two ready channels and returns both received values.
-
+///
 /// # Panics
 /// Panics if receiver remains alive.
 fn select() -> (bool, i32) {
@@ -87,7 +87,6 @@ fn select() -> (bool, i32) {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

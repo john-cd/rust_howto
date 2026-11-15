@@ -21,7 +21,6 @@ fn redactor(words: &[&str]) -> Result<AhoCorasick, aho_corasick::BuildError> {
         .build(words)
 }
 /// Replaces every match with `***`.
-
 fn redact(ac: &AhoCorasick, text: &str) -> String {
     let replacements = vec!["***"; ac.patterns_len()];
     ac.replace_all(text, &replacements)

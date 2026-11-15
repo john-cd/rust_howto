@@ -80,7 +80,6 @@ async fn json(Json(payload): Json<serde_json::Value>) -> Json<serde_json::Value>
 /// Returns the application name from the shared state.
 /// # Arguments
 /// * `state` - Application state containing the repositories and services needed by this workflow.
-
 async fn state(State(state): State<Arc<AppState>>) -> String {
     format!("Application: {}", state.app_name)
 }
@@ -144,7 +143,7 @@ pub fn run() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if an operation in the example fails.
 /// Returns an error if a step of the example fails.
-
+///
 /// A non-numeric id is rejected by the extractor.
 #[cfg(test)]
 mod tests {
@@ -158,7 +157,7 @@ mod tests {
 
     /// # Arguments
     /// * `request` - Input data whose fields determine the requested axum operation.
-
+    ///
     /// # Panics
     /// Panics if infallible.
     async fn send(request: Request<Body>) -> (StatusCode, String) {
@@ -188,7 +187,6 @@ mod tests {
         .await
     }
     /// Serves the example until it is stopped.
-
     #[test]
     #[ignore = "binds 127.0.0.1:3000 and serves until stopped"]
     fn main_serves() -> anyhow::Result<()> {

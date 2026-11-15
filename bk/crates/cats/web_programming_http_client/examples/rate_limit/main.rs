@@ -22,7 +22,6 @@ fn quota() -> Quota {
 ///
 /// # Arguments
 /// * `count` - Bound used to limit accepted data or the amount of work performed.
-
 async fn rate_limited_calls(count: u32) -> Vec<u32> {
     let limiter = RateLimiter::direct(quota());
     let mut done = Vec::new();
@@ -34,10 +33,7 @@ async fn rate_limited_calls(count: u32) -> Vec<u32> {
     }
     done
 }
-/// Runs the example.
-
-///
-
+/// Runs the rate-limited calls and prints the deterministic fake-clock result.
 #[tokio::main]
 async fn main() {
     let done = rate_limited_calls(4).await;
@@ -47,7 +43,6 @@ async fn main() {
 
 /// The quota can be checked deterministically with a fake clock,
 /// so the test does not sleep.
-
 fn check_with_fake_clock() -> (bool, bool, bool, bool) {
     let clock = FakeRelativeClock::default();
     let limiter = RateLimiter::direct_with_clock(quota(), clock.clone());
@@ -62,9 +57,9 @@ fn check_with_fake_clock() -> (bool, bool, bool, bool) {
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
+/// Checks the burst and refill behavior with a deterministic fake clock.
 pub fn run() -> (bool, bool, bool, bool) {
-    main()
+    check_with_fake_clock()
 }
 
 #[cfg(test)]

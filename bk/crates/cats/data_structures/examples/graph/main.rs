@@ -7,7 +7,6 @@
 mod petgraph;
 /// Runs the example.
 /// Runs the graph example.
-
 fn main() {
     petgraph::run();
 }

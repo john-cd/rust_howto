@@ -11,14 +11,12 @@ fn hello() -> &'static str {
     "Hello, world!"
 }
 /// Assembles the rocket from its component values so callers receive a ready-to-use result.
-
 #[cfg(feature = "rocket-support")]
 fn build_rocket() -> rocket::Rocket<rocket::Build> {
     rocket::build().mount("/", rocket::routes![hello])
 }
 /// # Errors
 /// An error is returned if a fallible operation fails.
-
 #[cfg(feature = "rocket-support")]
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -26,7 +24,6 @@ async fn main() -> anyhow::Result<()> {
     Ok(())
 }
 /// Runs the example.
-
 #[cfg(not(feature = "rocket-support"))]
 fn main() {
     eprintln!("Enable the `rocket-support` feature to run this example.");

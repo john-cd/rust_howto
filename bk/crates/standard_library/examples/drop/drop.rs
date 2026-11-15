@@ -25,7 +25,6 @@ impl Drop for CustomStruct {
 }
 /// Runs the example.
 /// Creates and drops values.
-
 fn main() {
     let _c = CustomStruct {
         data: String::from("my data"),
@@ -54,7 +53,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -66,7 +64,6 @@ mod tests {
 
     use super::*;
     /// Verifies that the `drop` example runs.
-
     #[test]
     fn test_drop_example_entry_point() {
         main();
@@ -87,7 +84,6 @@ mod tests {
         }
     }
     /// Verifies values are dropped in reverse order of declaration.
-
     #[test]
     fn test_values_are_dropped_in_reverse_order_of_declaration() {
         let log = Rc::new(RefCell::new(Vec::new()));
@@ -105,7 +101,6 @@ mod tests {
         assert_eq!(*log.borrow(), vec!["d", "c"]);
     }
     /// Verifies explicit drop runs destructor immediately.
-
     #[test]
     fn test_explicit_drop_runs_destructor_immediately() {
         let log = Rc::new(RefCell::new(Vec::new()));
@@ -118,7 +113,6 @@ mod tests {
         assert_eq!(*log.borrow(), vec!["e"]);
     }
     /// Verifies custom struct can be created and dropped.
-
     #[test]
     fn test_custom_struct_can_be_created_and_dropped() {
         let c = CustomStruct {

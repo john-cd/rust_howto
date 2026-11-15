@@ -6,7 +6,6 @@
 mod rangemap;
 /// Runs the example.
 /// Runs the rangemap example.
-
 fn main() {
     rangemap::run();
 }

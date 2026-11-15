@@ -94,13 +94,12 @@ pub struct Backend {
 
 impl Backend {
     /// Constructs a new in-memory authentication and authorization backend.
+    /// Computes a dummy password hash in advance so unknown usernames incur
+    /// comparable password-verification work, reducing timing-based username
+    /// enumeration.
     ///
     /// # Arguments
-    /// * `users` - Initial user records indexed by each user's identifier.
-    /// Accepts a list of `User` instances to populate the initial user store.
-    /// Computes a dummy password hash so that authentication attempts with
-    /// non-existent usernames incur identical processing time, preventing
-    /// timing side-channel username enumeration.
+    /// * `users` - Initial user records, indexed by each user's identifier.
     ///
     /// # Errors
     /// Returns an error if hashing the dummy password fails.
@@ -214,7 +213,6 @@ async fn admin() -> &'static str {
 /// Accepts the initialized `backend` and registers the session manager layer along
 /// with authentication and authorization route layers.
 /// The resulting `Router` is safe to share and clone across concurrent request worker threads.
-
 pub fn app(backend: Backend) -> Router {
     // In-memory sessions: lost on restart. Use a database-backed store in
     // production, e.g. `tower-sessions-sqlx-store`.
@@ -322,6 +320,8 @@ mod tests {
         Ok(app.clone().oneshot(builder.body(Body::empty())?).await?)
     }
 
+    /// Confirms unauthenticated requests are redirected to the login route.
+    #[tokio::test]
     async fn unauthenticated_is_redirected() -> anyhow::Result<()> {
         let app = test_app()?;
         let response = get_with(&app, "/protected", None).await?;
@@ -329,6 +329,8 @@ mod tests {
         Ok(())
     }
 
+    /// Confirms invalid and unknown credentials receive the same rejection.
+    #[tokio::test]
     async fn wrong_or_unknown_credentials_are_rejected() -> anyhow::Result<()> {
         let app = test_app()?;
         assert_eq!(
@@ -375,7 +377,6 @@ mod tests {
         Ok(())
     }
     /// Verifies axum login entry point.
-
     #[test]
     fn test_axum_login_entry_point() -> anyhow::Result<()> {
         main()

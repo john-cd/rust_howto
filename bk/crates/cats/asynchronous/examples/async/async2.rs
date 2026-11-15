@@ -43,7 +43,6 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `async2` example runs.
-
     #[test]
     fn test_async2_example_entry_point() {
         main();

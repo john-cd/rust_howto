@@ -86,7 +86,7 @@ async fn check_link(client: &Client, url: &Url) -> Result<bool> {
     bail!("unexpected HTTP status {status} while checking {url}");
 }
 /// Checks links on a web page one at a time and prints their status.
-
+///
 /// # Errors
 /// Returns an error if fetching the page, parsing links, building the client,
 /// or checking a link fails.

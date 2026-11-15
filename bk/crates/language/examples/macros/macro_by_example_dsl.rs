@@ -118,7 +118,6 @@ macro_rules! config {
 }
 /// Runs the example.
 /// Builds a nested configuration with the `config!` macro and prints it.
-
 fn main() {
     // Example usage of the `config!` macro to set up application settings in a
     // declarative way.
@@ -186,7 +185,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

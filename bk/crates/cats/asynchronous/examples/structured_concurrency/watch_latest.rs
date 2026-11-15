@@ -63,7 +63,6 @@ async fn work_queue() {
 }
 /// Runs the example.
 /// Runs the three demonstrations.
-
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
     watch_latest().await;
@@ -73,7 +72,6 @@ async fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

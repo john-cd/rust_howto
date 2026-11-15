@@ -138,7 +138,6 @@ fn transfer_amount(from: &mut Amount, to: &mut Amount, value: Amount) -> Result<
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -150,13 +149,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `derive more` example runs.
-
     #[test]
     fn test_derive_more_example_entry_point() {
         main();
     }
     /// Verifies point add and add assign.
-
     #[test]
     fn test_point_add_and_add_assign() {
         let sum = Point { x: 1, y: 2 } + Point { x: 3, y: 4 };
@@ -166,7 +163,6 @@ mod tests {
         assert_eq!(p, Point { x: 6, y: 7 });
     }
     /// Verifies user id conversions and display.
-
     #[test]
     fn test_user_id_conversions_and_display() {
         let id = UserId::from(12345);
@@ -187,7 +183,6 @@ mod tests {
         );
     }
     /// Verifies deref and deref mut expose vec methods.
-
     #[test]
     fn test_deref_and_deref_mut_expose_vec_methods() {
         let mut stack = Stack { items: vec![1, 2] };
@@ -209,7 +204,6 @@ mod tests {
         Ok(())
     }
     /// Verifies transfer amount with insufficient funds changes nothing.
-
     #[test]
     fn test_transfer_amount_with_insufficient_funds_changes_nothing() {
         let mut from = Amount(1.0);
@@ -223,7 +217,6 @@ mod tests {
         assert!((to.0 - 2.0).abs() < f64::EPSILON);
     }
     /// Verifies error display.
-
     #[test]
     fn test_error_display() {
         assert_eq!(AppError::DatabaseError.to_string(), "Database error");

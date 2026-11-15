@@ -24,14 +24,12 @@ impl<const N: usize> FixedSizeBuffer for [u8; N] {
     }
 }
 /// Prints the capacity and content of the buffer.
-
 fn process_buffer<T: FixedSizeBuffer>(buffer_provider: T) {
     println!("Processing buffer with capacity: {}", T::CAPACITY);
     println!("Buffer content: {:?}", buffer_provider.get_buffer());
 }
 /// Runs the example.
 /// Processes buffers of different sizes.
-
 fn main() {
     let buf1 = [10, 20, 30];
     let buf2 = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -43,7 +41,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

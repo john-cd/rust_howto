@@ -61,7 +61,7 @@ fn drain_block(consumer: &mut Consumer<f32>, block: &mut [f32; BLOCK_SIZE]) -> u
     filled
 }
 /// Sends `TOTAL` samples and drives the block consumer from an ordinary thread.
-
+///
 /// # Errors
 /// Returns an error if the producer thread panics.
 fn main() -> Result<()> {
@@ -114,7 +114,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the SPSC transfer example and reports producer thread failures.
-
+///
 /// # Errors
 /// Returns an error if the producer thread panics.
 pub fn run() -> Result<()> {
@@ -131,7 +131,6 @@ mod tests {
         main()
     }
     /// Returns full/empty errors without blocking or losing buffered values.
-
     #[test]
     fn test_full_and_empty() {
         full_and_empty();

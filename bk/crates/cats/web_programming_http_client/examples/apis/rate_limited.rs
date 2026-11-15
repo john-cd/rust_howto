@@ -33,7 +33,6 @@ fn header_u64(headers: &HeaderMap, name: &str) -> Result<Option<u64>> {
 ///
 /// A bare `403` without rate-limit headers is ambiguous, so this helper does
 /// not classify it as a rate limit; callers can inspect the response body.
-
 fn rate_limit_wait(
     status: StatusCode,
     headers: &HeaderMap,
@@ -101,13 +100,11 @@ mod tests {
         UNIX_EPOCH + Duration::from_secs(NOW)
     }
     /// Runs the rate limited example through its entry point.
-
     #[test]
     fn test_rate_limited_example_entry_point() -> Result<()> {
         main()
     }
     /// Verifies that success does not wait.
-
     #[test]
     fn success_does_not_wait() -> Result<()> {
         assert_eq!(

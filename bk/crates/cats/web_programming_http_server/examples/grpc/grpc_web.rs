@@ -34,7 +34,6 @@ pub fn cors() -> CorsLayer {
 /// Serves the `Greeter` service over gRPC and gRPC-Web on a bound listener.
 /// # Errors
 /// Returns an error if the server cannot serve the listener.
-
 #[cfg_attr(
     not(test),
     expect(dead_code, reason = "serves until its shutdown signal is received")

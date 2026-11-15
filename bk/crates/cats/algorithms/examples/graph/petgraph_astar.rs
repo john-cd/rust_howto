@@ -110,7 +110,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the `petgraph` A* example by calling `main()`.
-
 pub fn run() {
     main();
 }
@@ -119,7 +118,6 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `petgraph astar` example runs.
-
     #[test]
     fn test_petgraph_astar_example_entry_point() {
         main();

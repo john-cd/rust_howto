@@ -90,7 +90,6 @@ mod tests {
         main()
     }
     /// A client that sends nothing yields an empty string.
-
     #[test]
     fn empty_connection_yields_empty_input() -> Result<(), Error> {
         let listener = TcpListener::bind((Ipv4Addr::LOCALHOST, 0))?;

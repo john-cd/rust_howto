@@ -10,7 +10,6 @@
 use rangemap::RangeMap;
 /// Runs the example.
 /// Maps two ranges to values and looks up keys.
-
 fn main() {
     let mut rm = RangeMap::new();
 
@@ -24,7 +23,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

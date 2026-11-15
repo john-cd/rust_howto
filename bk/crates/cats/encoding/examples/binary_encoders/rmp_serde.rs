@@ -66,7 +66,6 @@ mod tests {
     }
     /// `to_vec` writes a positional array, which is smaller than the map
     /// written by `to_vec_named` but depends on the field order.
-
     #[test]
     fn compact_encoding_is_an_array_and_smaller_than_named() -> anyhow::Result<()> {
         let compact = rmp_serde::to_vec(&sample())?;
@@ -94,6 +93,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if truncated_input_is_an_error fails.
+    #[test]
     fn truncated_input_is_an_error() -> anyhow::Result<()> {
         let encoded = rmp_serde::to_vec_named(&sample())?;
         let truncated = &encoded[..encoded.len() - 2];

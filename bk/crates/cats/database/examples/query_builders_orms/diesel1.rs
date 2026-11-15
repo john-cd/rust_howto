@@ -79,7 +79,7 @@ fn run_example() -> anyhow::Result<User> {
         .context("read the inserted user")
 }
 /// Runs the migrated SQLite example and prints the inserted row.
-
+///
 /// # Errors
 /// Returns an error if migration, insertion, or query execution fails.
 fn main() -> anyhow::Result<()> {
@@ -89,7 +89,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the Diesel SQLite example.
-
+///
 /// # Errors
 /// Returns an error if migration, insertion, or query execution fails.
 pub fn run() -> anyhow::Result<()> {

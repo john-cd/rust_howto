@@ -34,7 +34,6 @@ struct ComplexStruct<'a> {
 }
 /// Runs the example.
 /// Creates and prints the struct.
-
 fn main() {
     let complex = ComplexStruct {
         primitive: 10,
@@ -63,7 +62,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

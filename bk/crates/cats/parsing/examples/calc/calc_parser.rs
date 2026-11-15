@@ -36,7 +36,6 @@ type Spanned<'a> = (Token<'a>, Range<usize>);
 
 type Input<'a> = LocatingSlice<&'a str>;
 /// Parses one token.
-
 fn token<'a>(input: &mut Input<'a>) -> ModalResult<Token<'a>, ContextError> {
     alt((
         (digit1, opt(('.', digit1)))
@@ -51,7 +50,6 @@ fn token<'a>(input: &mut Input<'a>) -> ModalResult<Token<'a>, ContextError> {
     .parse_next(input)
 }
 /// Splits `source` into tokens, skipping whitespace.
-
 fn lex(source: &str) -> Result<Vec<Spanned<'_>>, String> {
     let mut input = LocatingSlice::new(source);
     let (tokens, _): (Vec<_>, _) = repeat_till(
@@ -108,14 +106,12 @@ impl<'a> ExprParser<'a> {
     }
 
     /// Byte offset of the next token, or the end of the input.
-
     fn offset(&self) -> usize {
         self.peek().map_or(self.end, |(_, span)| span.start)
     }
 
     /// Binding power: (left, right). Right-associative operators have a
     /// lower right power.
-
     fn binding_power(op: char) -> (u8, u8) {
         match op {
             '+' | '-' => (1, 2),
@@ -178,7 +174,6 @@ fn parse(source: &str) -> Result<Expr<'_>, String> {
     Ok(expr)
 }
 /// Evaluates an expression; `pi` is the only variable.
-
 fn eval(expr: &Expr<'_>) -> Result<f64, String> {
     Ok(match expr {
         Expr::Number(n) => *n,
@@ -205,7 +200,6 @@ fn calculate(source: &str) -> Result<f64, String> {
 }
 /// Runs the example.
 /// Runs representative valid and invalid calculator expressions.
-
 fn main() {
     for source in ["1 + 2 * 3", "2 ^ 3 ^ 2", "-2 ^ 2", "(1 + 2) * 3", "1 +"] {
         match calculate(source) {
@@ -217,7 +211,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

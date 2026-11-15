@@ -26,7 +26,6 @@ fn divide_by_three(value: i32) -> Result<i32, &'static str> {
 }
 /// Runs the example.
 /// Runs two fallible divisions in sequence.
-
 fn main() {
     let divisible = divide_by_two(12).and_then(divide_by_three);
     let not_divisible = divide_by_two(5).and_then(divide_by_three);
@@ -37,7 +36,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

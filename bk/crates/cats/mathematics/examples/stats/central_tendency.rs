@@ -7,7 +7,6 @@
 //! (extreme values), so a few huge values pull it up.
 
 /// Calculates the mean of a set of numbers.
-
 fn main() {
     // Sample data set.
     let data = [3, 1, 6, 1, 5, 8, 1, 8, 10, 11];
@@ -29,7 +28,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

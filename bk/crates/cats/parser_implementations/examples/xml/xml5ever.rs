@@ -162,7 +162,6 @@ impl TreeSink for XmlTree {
 
     /// Turns the supplied error representation into the structured value consumed by xml tree,
     /// rejecting malformed input.
-
     fn parse_error(&self, msg: Cow<'static, str>) {
         self.errors.borrow_mut().push(msg);
     }
@@ -178,7 +177,6 @@ impl TreeSink for XmlTree {
     }
 
     /// Assembles the element from its component values so callers receive a ready-to-use result.
-
     fn create_element(
         &self,
         name: QualName,
@@ -207,7 +205,6 @@ impl TreeSink for XmlTree {
     ///
     /// # Arguments
     /// * `target` - Target value or destination produced by the xml tree operation.
-
     fn create_pi(&self, target: StrTendril, data: StrTendril) -> Self::Handle {
         unnamed_node(NodeKind::ProcessingInstruction {
             target: target.to_string(),
@@ -286,7 +283,6 @@ impl TreeSink for XmlTree {
     }
 
     /// Changes the quirks mode held by the xml tree; subsequent operations use the updated value.
-
     fn set_quirks_mode(&self, mode: QuirksMode) {
         self.quirks_mode.set(mode);
     }
@@ -338,7 +334,6 @@ impl TreeSink for XmlTree {
     ///
     /// # Arguments
     /// * `target` - Target value or destination produced by the xml5ever operation.
-
     fn remove_from_parent(&self, target: &Self::Handle) {
         let Some(parent) = target
             .parent
@@ -391,7 +386,7 @@ fn describe(node: &Node) -> String {
     }
 }
 /// Parses a small XML document and prints the library and book nodes.
-
+///
 /// # Errors
 /// Returns an error if parsing reports errors or the expected nodes are
 /// missing from the resulting tree.
@@ -438,7 +433,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the XML DOM parsing example.
-
+///
 /// # Errors
 /// Returns an error if XML parsing fails or produces an unexpected tree.
 pub fn run() -> anyhow::Result<()> {
@@ -457,7 +452,6 @@ mod tests {
         main()
     }
     /// Parsing well-formed XML builds the expected tree without errors.
-
     #[test]
     fn builds_the_tree() -> Result<(), Box<dyn std::error::Error>> {
         let dom =

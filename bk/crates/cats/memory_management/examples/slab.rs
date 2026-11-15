@@ -15,8 +15,12 @@
 use slab::Slab;
 /// Runs the example.
 /// Stores values in a slab and accesses them by key.
-
 fn main() {
+    example();
+}
+
+/// Stores and removes values in a slab to demonstrate key reuse.
+fn example() {
     // Create a new slab with no pre-allocated storage.
     let mut slab: Slab<String> = Slab::new();
 
@@ -57,7 +61,7 @@ fn main() {
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    example();
 }
 
 #[cfg(test)]

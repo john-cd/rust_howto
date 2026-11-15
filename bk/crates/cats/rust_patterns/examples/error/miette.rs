@@ -38,7 +38,7 @@ mod mylib {
         )]
         BadThingHappened,
         /// Something went wrong variant of `MyLibError`.
-
+        ///
         /// Something went wrong at a location in the source code.
         #[error("Something went wrong!")]
         SomethingWentWrong {

@@ -22,12 +22,10 @@ use percent_encoding::percent_encode;
 ///
 /// # Arguments
 /// * `input` - Input data whose fields determine the requested percent encoding operation.
-
 fn encode_url_component(input: &str) -> String {
     percent_encode(input.as_bytes(), NON_ALPHANUMERIC).to_string()
 }
 /// Decodes a percent-encoded string.
-
 fn decode_url_component(encoded: &str) -> Result<String> {
     // Decode the percent-encoded string and convert it to UTF-8.
     let decoded = percent_decode_str(encoded).decode_utf8()?.to_string();

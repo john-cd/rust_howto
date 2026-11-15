@@ -140,7 +140,9 @@ criterion_main!(benches);
 
 /// Runs Criterion's generated benchmark entry point.
 pub fn run() {
-    main();
+    let mut criterion = Criterion::default();
+    benchmark_word_counting(&mut criterion);
+    benchmark_integer_keys(&mut criterion);
 }
 
 #[cfg(test)]

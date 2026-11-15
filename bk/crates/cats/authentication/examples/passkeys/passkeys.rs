@@ -78,7 +78,7 @@ struct RelyingParty {
 
 impl RelyingParty {
     /// effective domain (or a registrable suffix of it).
-
+    ///
     /// # Errors
     /// Returns an error if the new operation cannot satisfy its required invariants.
     fn new(rp_id: &str, origin: &Url) -> Result<Self> {
@@ -94,7 +94,7 @@ impl RelyingParty {
     }
 
     /// browser sends back and the options for `navigator.credentials.create`.
-
+    ///
     /// # Errors
     /// Returns an error if the start registration operation cannot satisfy its required invariants.
     fn start_registration(
@@ -155,7 +155,7 @@ impl RelyingParty {
     }
 
     /// `navigator.credentials.get`.
-
+    ///
     /// # Errors
     /// Returns an error if the start authentication operation cannot satisfy its required
     /// invariants.

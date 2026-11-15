@@ -9,7 +9,6 @@
 trait SomeBehavior {
     // Method declaration (signature only, no body):
     /// Does something and returns a description.
-
     fn do_something(&self) -> String;
 
     // Method with default implementation:
@@ -76,7 +75,6 @@ impl SomeBehavior for MyStruct {
     }
 }
 /// Uses the trait implementation.
-
 fn main() {
     let m = MyStruct {
         data: 42,
@@ -93,9 +91,8 @@ fn main() {
 
 // ANCHOR_END: example
 /// Runs the example entry point.
-
+///
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -111,7 +108,6 @@ mod tests {
     }
 
     /// The implementation overrides the trait's default method and constant.
-
     #[test]
     fn test_implementation() {
         let m = MyStruct {
@@ -126,7 +122,6 @@ mod tests {
     }
 
     /// A type that keeps the defaults gets the trait's default constant.
-
     #[test]
     fn test_default_constant() {
         /// Groups the data required by structs operations.
@@ -138,8 +133,7 @@ mod tests {
             /// Shared `another const` used by this module.
             const ANOTHER_CONST: &str = "x";
 
-            ///
-
+            /// Returns a description of the example action.
             fn do_something(&self) -> String {
                 String::new()
             }

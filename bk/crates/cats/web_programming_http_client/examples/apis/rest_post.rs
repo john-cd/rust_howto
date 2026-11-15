@@ -277,7 +277,6 @@ mod tests {
         bytes.windows(4).position(|window| window == b"\r\n\r\n")
     }
     /// Builds the deterministic gist payload used by the local server tests.
-
     fn test_gist_body() -> Post<'static> {
         Post {
             description: "test gist",
@@ -301,7 +300,6 @@ mod tests {
     }
     /// Verifies authorization, the gist payload, and the create/delete
     /// sequence.
-
     #[tokio::test]
     async fn creates_and_deletes_gist_with_authorization_and_json() -> Result<()> {
         let (endpoint, server) = start_server(vec![

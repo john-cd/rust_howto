@@ -24,7 +24,7 @@ use lettre::transport::smtp::client::Certificate;
 use lettre::transport::smtp::client::Tls;
 use lettre::transport::smtp::client::TlsParameters;
 /// Builds a plain-text message from the supplied mailbox addresses.
-
+///
 /// # Errors
 /// Returns an error if either address or the completed message is invalid.
 ///
@@ -45,7 +45,7 @@ fn build_message(from: &str, to: &str) -> anyhow::Result<Message> {
     Ok(message)
 }
 /// Runs the standalone SMTP delivery example.
-
+///
 /// # Errors
 /// Returns an error if SMTP configuration is missing or delivery fails.
 fn main() -> anyhow::Result<()> {
@@ -111,7 +111,7 @@ fn build_tls_parameters(domain: String) -> anyhow::Result<TlsParameters> {
 }
 // ANCHOR_END: example
 /// Runs the SMTP delivery example.
-
+///
 /// # Errors
 /// Returns an error if SMTP configuration is missing or delivery fails.
 pub fn run() -> anyhow::Result<()> {

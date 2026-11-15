@@ -28,7 +28,6 @@ struct MyStruct {
 }
 /// Runs the example.
 /// Deserializes JSON and collects the fields that are ignored.
-
 fn main() {
     let json_data = r#"
     {

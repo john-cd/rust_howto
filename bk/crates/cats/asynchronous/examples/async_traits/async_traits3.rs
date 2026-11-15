@@ -58,7 +58,6 @@ async fn remind_user_to_join_mailing_list() {
 }
 /// Runs the example.
 /// Runs an advertisement on the Tokio runtime.
-
 #[tokio::main]
 async fn main() {
     // Create an instance of `Modal` and call the `run` method, awaiting its
@@ -68,7 +67,6 @@ async fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

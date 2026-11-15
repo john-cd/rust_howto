@@ -13,7 +13,6 @@ fn execute_query(query: &str) {
 }
 /// Runs the example.
 /// Initializes `env_logger` and runs a query, which logs a debug message.
-
 fn main() {
     // `env_logger` is a simple logger that can be configured via environment
     // variables. Example: `RUST_LOG=info ./app`.
@@ -26,7 +25,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

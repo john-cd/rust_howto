@@ -18,7 +18,7 @@ fn extract_hashtags(text: &str) -> HashSet<&str> {
         static ref HASHTAG_REGEX: Regex =
             Regex::new(r"\#[a-zA-Z][0-9a-zA-Z_]*").expect("regular expression should be valid");
     }
-    /// Matches hashtags that start with a letter and continue with letters, digits, or underscores.
+    // Matches hashtags that start with a letter and continue with letters, digits, or underscores.
     HASHTAG_REGEX
         .find_iter(text)
         .map(|mat| mat.as_str())
@@ -26,7 +26,6 @@ fn extract_hashtags(text: &str) -> HashSet<&str> {
 }
 /// Runs the example.
 /// Extracts the hashtags of a sample tweet.
-
 fn main() {
     let tweet = "Hey #world, I just got my new #dog, say hello to Till. #dog #forever #2 #_ ";
     let tags = extract_hashtags(tweet);
@@ -38,7 +37,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

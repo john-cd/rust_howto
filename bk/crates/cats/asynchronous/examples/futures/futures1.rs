@@ -19,7 +19,6 @@ async fn task_one() {
     // ...
 }
 /// Another example task.
-
 async fn task_two() {
     // ...
 }
@@ -42,7 +41,6 @@ async fn race_tasks() {
 }
 /// Runs the example.
 /// Runs the futures1 example.
-
 #[tokio::main]
 async fn main() {
     race_tasks().await;
@@ -51,7 +49,6 @@ async fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

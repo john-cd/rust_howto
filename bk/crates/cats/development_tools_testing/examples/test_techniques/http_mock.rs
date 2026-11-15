@@ -30,7 +30,6 @@ fn main() -> anyhow::Result<()> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 #[allow(clippy::items_after_test_module)]
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips

@@ -8,7 +8,6 @@ mod a_module {
     /// A private function.
     fn private() {}
     /// A public function.
-
     pub fn public() -> &'static str {
         private();
         private_nested_module::public();
@@ -20,7 +19,6 @@ mod a_module {
         /// A private function.
         fn private() {}
         /// A public function.
-
         pub fn public() -> &'static str {
             private();
             "public_nested_module::public"
@@ -32,7 +30,6 @@ mod a_module {
         /// A private function.
         fn private() {}
         /// A public function.
-
         pub fn public() {
             private();
         }
@@ -81,7 +78,6 @@ fn call_sibling() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -96,7 +92,6 @@ mod tests {
         main();
     }
     /// Verifies public items in public modules.
-
     #[test]
     fn test_public_items_in_public_modules() {
         assert_eq!(a_module::public(), "a_module::public");

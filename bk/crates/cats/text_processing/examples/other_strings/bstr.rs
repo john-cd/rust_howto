@@ -27,7 +27,6 @@ use bstr::ByteSlice;
 use bstr::ByteVec;
 /// Runs the example.
 /// Creates and manipulates byte strings, which may not be valid UTF-8.
-
 fn main() {
     // Basic usage:
     let _bstring = BString::from("Hello, world!");
@@ -64,7 +63,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

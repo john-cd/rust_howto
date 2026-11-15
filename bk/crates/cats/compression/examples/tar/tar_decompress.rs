@@ -42,7 +42,7 @@ fn decompress_archive(archive_path: &Path, destination: &Path) -> io::Result<()>
 }
 // ANCHOR_END: example
 /// Extracts the archive created by the compression example.
-
+///
 /// # Errors
 /// Returns an I/O error if the archive cannot be read or extracted.
 pub fn run() -> Result<(), std::io::Error> {
@@ -106,8 +106,11 @@ mod tests {
         Ok(())
     }
 
+    /// Confirms a missing archive returns `NotFound` without creating output.
+    ///
     /// # Errors
-    /// An error is returned if missing_archive_is_an_error fails.
+    /// Returns an error if temporary files cannot be created or inspected.
+    #[test]
     fn missing_archive_is_an_error() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;
         let err = decompress_archive(&dir.path().join("missing.tar.gz"), &dir.path().join("out"))

@@ -42,7 +42,6 @@ trait UserRepository {
     /// Finds the user with the given `id`.
     fn find_by_id(&self, id: u64) -> Option<User>;
     /// Saves the `user`; returns an error message on failure.
-
     fn save(&self, user: User) -> Result<(), String>;
 }
 
@@ -118,7 +117,6 @@ impl UserRepository for ActualRepository {
 }
 /// Mocking a trait with `mockall`.
 /// Updates a user's email through the service.
-
 fn main() {
     let service = UserService::new(ActualRepository);
     let updated = service

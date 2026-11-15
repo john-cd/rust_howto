@@ -6,7 +6,6 @@
 mod pin;
 /// Runs the example.
 /// Runs the pin example.
-
 fn main() {
     pin::run();
 }

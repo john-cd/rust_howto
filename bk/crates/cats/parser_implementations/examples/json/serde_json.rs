@@ -12,7 +12,6 @@ use serde::Serialize;
 use serde_json::Result;
 use serde_json::Value;
 /// Represents a user with a name, age, and a list of phone numbers.
-
 #[derive(Deserialize, Serialize, Debug)]
 struct User {
     /// The name of the user.

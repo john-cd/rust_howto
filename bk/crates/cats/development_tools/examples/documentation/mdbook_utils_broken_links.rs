@@ -47,7 +47,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the `mdbook-utils` broken-links example.
-
+///
 /// # Errors
 /// Returns an error if the tool is missing or fails.
 pub fn run() -> Result<()> {

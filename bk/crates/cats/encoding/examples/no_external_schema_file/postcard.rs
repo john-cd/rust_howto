@@ -33,7 +33,7 @@ struct RefStruct<'a> {
     str_s: &'a str,
 }
 /// Serializes and deserializes a borrowed structure with `postcard`.
-
+///
 /// # Errors
 /// Returns an error if serialization or deserialization fails.
 fn main() -> anyhow::Result<()> {
@@ -92,7 +92,6 @@ mod tests {
     /// `to_slice` writes into a caller-provided buffer: no allocation, which
     /// is useful on `no_std` targets and when the caller owns the output
     /// buffer.
-
     #[test]
     fn to_slice_encodes_into_a_fixed_buffer() -> anyhow::Result<()> {
         let mut buf = [0_u8; 16];

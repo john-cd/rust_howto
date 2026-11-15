@@ -11,7 +11,6 @@
 use std::cell::OnceCell;
 /// Runs the example.
 /// Initializes a `OnceCell` once and reads it.
-
 fn main() {
     let cell = OnceCell::new();
 
@@ -51,7 +50,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -60,13 +58,11 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `once cell` example runs.
-
     #[test]
     fn test_once_cell_example_entry_point() {
         main();
     }
     /// Verifies get or init runs the closure once.
-
     #[test]
     fn test_get_or_init_runs_the_closure_once() {
         let cell = OnceCell::new();
@@ -89,7 +85,6 @@ mod tests {
         assert_eq!(calls, 1);
     }
     /// Verifies set fails once initialized.
-
     #[test]
     fn test_set_fails_once_initialized() {
         let cell = OnceCell::new();

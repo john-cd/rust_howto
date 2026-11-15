@@ -16,5 +16,4 @@ async fn bad(body: String, State(state): State<AppState>) -> String {
     format!("{body}{}", state.greeting)
 }
 /// Provides the entry point required by this compile-fail fixture.
-
 fn main() {}

@@ -24,7 +24,6 @@ fn main() {
 
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 #[allow(clippy::items_after_test_module)]
 pub fn run() {
     // Call through a binding: calling `main` directly trips

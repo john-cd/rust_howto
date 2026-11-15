@@ -32,7 +32,6 @@ mod a_module {
         }
     }
     /// Public struct used to demonstrate the default visibility of struct fields.
-
     pub struct PublicStructPublicField {
         /// A public field.
         pub public_val: bool,
@@ -59,7 +58,6 @@ mod a_module {
 }
 /// Runs the example.
 /// Uses the public items of the module.
-
 fn main() {
     let _ = a_module::Enum::Variant;
     let s = a_module::PublicStructPublicField { public_val: true };
@@ -79,7 +77,7 @@ fn main() {
 
 // ANCHOR_END: example
 /// Runs the example entry point.
-
+///
 /// Runs the example.
 pub fn run() {
     main();
@@ -95,7 +93,6 @@ mod tests {
         main();
     }
     /// Verifies enum variants and pub fields are public.
-
     #[test]
     fn test_enum_variants_and_pub_fields_are_public() {
         let e = a_module::Enum::Variant;
@@ -104,7 +101,6 @@ mod tests {
         assert!(s.public_val);
     }
     /// Verifies trait items are public.
-
     #[test]
     fn test_trait_items_are_public() {
         /// Groups the data required by visibility operations.
@@ -119,7 +115,6 @@ mod tests {
         assert_eq!(a_module::Trait::method(&Doubler), 2);
     }
     /// Verifies constructor with private field.
-
     #[test]
     fn test_constructor_with_private_field() {
         let _ = a_module::PublicStruct::new(true);

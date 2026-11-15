@@ -58,7 +58,6 @@ mod tests {
         main()
     }
     /// Verifies items from external crates.
-
     #[test]
     fn test_items_from_external_crates() {
         assert_eq!(array::from_ref(&1), &[1]);

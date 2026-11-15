@@ -32,7 +32,6 @@ async fn show(messages: Messages) -> String {
 }
 /// Builds the router. Messages are kept in the session, so the session layer
 /// must wrap the messages layer.
-
 pub fn app() -> Router {
     let session_layer = SessionManagerLayer::new(MemoryStore::default()).with_secure(false);
     Router::new()

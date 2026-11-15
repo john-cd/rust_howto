@@ -165,7 +165,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the partial-download example.
-
+///
 /// # Errors
 /// Returns any error from the example's file or HTTP operations.
 pub fn run() -> Result<()> {
@@ -354,7 +354,6 @@ mod tests {
             .context("local range server failed")
     }
     /// Returns the value of a request's Range header, if present.
-
     fn range_header(request: &str) -> Option<&str> {
         request.lines().find_map(|line| {
             let (name, value) = line.split_once(':')?;

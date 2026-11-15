@@ -11,7 +11,6 @@ use approx::assert_abs_diff_eq;
 use ndarray::Array;
 /// Runs the example.
 /// Adds vectors and compares the results approximately.
-
 fn main() {
     // Create vectors.
     let a = Array::from(vec![1., 2., 3., 4., 5.]);
@@ -38,7 +37,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

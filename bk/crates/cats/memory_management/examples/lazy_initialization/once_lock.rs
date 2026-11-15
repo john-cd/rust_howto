@@ -13,7 +13,6 @@ use std::sync::OnceLock;
 static GREETING: OnceLock<String> = OnceLock::new();
 /// Runs the example.
 /// Initializes and reads the shared value.
-
 fn main() {
     let greeting = GREETING.get_or_init(|| String::from("Hello, Rust!"));
     assert_eq!(greeting, "Hello, Rust!");
@@ -22,7 +21,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

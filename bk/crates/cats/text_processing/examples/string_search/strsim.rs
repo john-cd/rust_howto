@@ -26,7 +26,6 @@ fn accent_insensitive_key(text: &str) -> String {
         .collect()
 }
 /// Prints several string distances and similarities.
-
 fn main() {
     let s1 = "aleksandr";
     let s2 = "alexander";
@@ -87,7 +86,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

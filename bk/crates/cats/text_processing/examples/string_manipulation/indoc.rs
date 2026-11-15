@@ -10,7 +10,6 @@
 use indoc::indoc;
 /// Runs the example.
 /// Compares multi-line strings with and without `indoc`.
-
 fn main() {
     // Without `indoc`, multi-line strings preserve indentation from source
     // code.
@@ -58,7 +57,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

@@ -42,7 +42,6 @@ async fn handle_request(request: Request<Incoming>) -> Result<Response<Full<Byte
     Ok(response_for(request.method(), request.uri().path()))
 }
 /// Returns a response for a method and path in the example API.
-
 fn response_for(method: &Method, path: &str) -> Response<Full<Bytes>> {
     let (status, body) = if method == Method::GET {
         match path {
@@ -73,7 +72,7 @@ pub fn run() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if an operation in the example fails.
 /// Returns an error if a step of the example fails.
-
+///
 /// Returns a greeting for a GET request to the root path.
 #[cfg(test)]
 mod tests {

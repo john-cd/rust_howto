@@ -11,7 +11,6 @@ use tracing::Level;
 use tracing::span;
 /// Runs the example.
 /// Creates a span, enters it and emits events inside.
-
 fn main() {
     // Create a new span named "my_span" with the TRACE level.
     // Spans are used to represent a period of time in the execution of a
@@ -71,7 +70,6 @@ mod tests {
         }
 
         /// Flushes the current value.
-
         fn flush(&mut self) -> std::io::Result<()> {
             Ok(())
         }
@@ -87,7 +85,6 @@ mod tests {
         }
     }
     /// Runs `f` with a thread-local subscriber and returns what it logged.
-
     fn capture(f: impl FnOnce()) -> String {
         let buf = Buf::default();
         let subscriber = tracing_subscriber::fmt()

@@ -15,7 +15,6 @@ fn main() -> std::io::Result<()> {
     manipulate_dirs(Path::new("."))
 }
 /// Creates, lists and removes directories under `base`.
-
 fn manipulate_dirs(base: &Path) -> std::io::Result<()> {
     // 1. Create a directory:
     let path = base.join("example_dir");

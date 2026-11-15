@@ -15,7 +15,6 @@ static CONFIG: LazyLock<HashMap<&str, &str>> =
     LazyLock::new(|| HashMap::from([("host", "localhost"), ("port", "8080")]));
 /// Runs the example.
 /// Reads a value from the lazily initialized global map.
-
 fn main() {
     assert_eq!(CONFIG.get("host"), Some(&"localhost"));
 }
@@ -23,7 +22,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

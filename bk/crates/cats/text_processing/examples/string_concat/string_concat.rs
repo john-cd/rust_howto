@@ -142,7 +142,6 @@ fn concatenate_with_chain() {
 }
 /// Runs the example.
 /// Runs each of the concatenation examples.
-
 fn main() {
     concatenate_with_plus();
     concatenate_with_format();
@@ -164,7 +163,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

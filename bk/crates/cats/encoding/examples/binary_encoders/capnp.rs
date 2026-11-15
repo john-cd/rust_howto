@@ -103,7 +103,6 @@ mod tests {
         main()
     }
     /// Reading a message that is cut short must fail rather than panic.
-
     #[test]
     fn truncated_message_is_an_error() -> anyhow::Result<()> {
         let mut message = Builder::new_default();

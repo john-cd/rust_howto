@@ -78,7 +78,6 @@ fn main() -> anyhow::Result<()> {
     demo(Path::new("temp"))
 }
 /// Creates `source.txt` and `my_link.txt` in `dir`, then inspects both.
-
 fn demo(dir: &Path) -> anyhow::Result<()> {
     fs::create_dir_all(dir)?;
     let original = dir.join("source.txt");

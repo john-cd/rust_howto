@@ -20,7 +20,6 @@ fn check_name(name: &str) {
 }
 /// Runs the example.
 /// Checks a name that does not contain "Carol", so that the assertion fails.
-
 fn main() {
     println!("Checking if 'Carl' contains 'Carol'...");
     check_name("Carl");
@@ -29,7 +28,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

@@ -11,7 +11,6 @@
 use serde_json::Value;
 /// Runs the example.
 /// Parses a JSON5 string and prints the result.
-
 fn main() {
     let json5_str = r#"{
         // Comments are allowed.

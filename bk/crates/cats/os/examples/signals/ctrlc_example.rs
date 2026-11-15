@@ -84,7 +84,6 @@ mod tests {
         assert_eq!(worker(&shutdown), 0);
     }
     /// Runs completes.
-
     #[test]
     fn run_completes() -> anyhow::Result<()> {
         run()

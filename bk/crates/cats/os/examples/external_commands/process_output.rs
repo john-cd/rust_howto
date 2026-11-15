@@ -14,7 +14,6 @@ use anyhow::Result;
 use anyhow::bail;
 use regex::Regex;
 /// Represents a Git commit with its hash and message.
-
 #[derive(PartialEq, Default, Clone, Debug)]
 struct Commit {
     /// The abbreviated hash of the commit.
@@ -74,8 +73,11 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
+    /// Runs the example against the current repository history.
+    ///
     /// # Errors
-    /// An error is returned if ignore_in_ci fails.
+    /// Returns an error if Git cannot be started or the command fails.
+    #[test]
     fn ignore_in_ci() -> anyhow::Result<()> {
         main()?;
         Ok(())

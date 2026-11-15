@@ -67,7 +67,7 @@ fn render_julia(
         .context("rendered pixel buffer has an unexpected length")
 }
 /// Renders and saves a sample Julia set image.
-
+///
 /// # Errors
 /// Returns an error if the image cannot be rendered, the output directory
 /// cannot be created, or the PNG file cannot be written.

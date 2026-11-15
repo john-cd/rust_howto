@@ -34,7 +34,6 @@ pub fn run() -> Result<(), NormalError> {
 mod tests {
     use super::*;
     /// Verifies that the `rand distr` example runs.
-
     #[test]
     fn test_rand_distr_example_entry_point() {
         main().expect("the example should succeed");

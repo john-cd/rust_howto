@@ -23,12 +23,12 @@ fn main() -> Result<()> {
     Ok(())
 }
 /// Returns the file names that appear more than once under `root`, in the
-
+///
 /// order the second occurrence is found.
-
+///
 /// # Arguments
 /// * `root` - Filesystem location the operation reads, updates, or uses as its scope.
-
+///
 /// # Errors
 /// Returns an error if the duplicate names operation cannot satisfy its required invariants.
 fn duplicate_names(root: &Path) -> Result<Vec<OsString>> {

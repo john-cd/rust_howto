@@ -13,7 +13,6 @@ trait Test<T> {
 /// A type that implements `Test` for any type.
 struct SomeStruct;
 /// Generic implementation of a generic trait for a `struct`.
-
 // Note that the `<>` brackets appear in two places.
 impl<T> Test<T> for SomeStruct {
     fn test(_t: T) {
@@ -32,7 +31,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

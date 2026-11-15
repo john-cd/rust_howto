@@ -72,7 +72,6 @@ mod tests {
     /// A signature made with one key does not verify under another key.
     /// # Errors
     /// Returns an error if secure randomness is unavailable.
-
     #[test]
     fn wrong_key_is_rejected() -> anyhow::Result<()> {
         let mut rng = SysRng;

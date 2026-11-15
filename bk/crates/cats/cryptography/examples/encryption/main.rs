@@ -12,7 +12,6 @@ fn main() -> anyhow::Result<()> {
     run_examples()
 }
 /// Runs each authenticated-encryption recipe in sequence.
-
 fn run_examples() -> anyhow::Result<()> {
     aes_gcm::run()?;
     chacha20poly1305::run()?;

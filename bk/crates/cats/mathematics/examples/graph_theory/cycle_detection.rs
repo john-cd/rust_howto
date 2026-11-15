@@ -24,7 +24,6 @@ fn dependency_graph() -> DiGraph<&'static str, ()> {
     graph
 }
 /// Returns the graph's cyclic strongly connected components as task names.
-
 fn cyclic_components(graph: &DiGraph<&'static str, ()>) -> Vec<Vec<&'static str>> {
     let mut cycles = tarjan_scc(graph)
         .into_iter()
@@ -58,7 +57,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
-
 pub fn run() {
     main();
 }

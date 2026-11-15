@@ -61,7 +61,6 @@ fn dispatch(cli: Cli) {
 }
 /// Runs the example.
 /// Parses the command line and runs the selected example.
-
 fn main() {
     dispatch(Cli::parse());
 }

@@ -30,7 +30,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -45,7 +44,7 @@ mod tests {
         main();
     }
     /// Verifies sum.
-
+    ///
     /// `sum` works on vectors, arrays and sub-slices, including empty ones.
     #[test]
     fn test_sum() {

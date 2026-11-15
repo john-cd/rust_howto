@@ -130,7 +130,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -144,13 +143,11 @@ mod tests {
 
     use super::*;
     /// Verifies that the `pin` example runs.
-
     #[test]
     fn test_pin_example_entry_point() {
         main();
     }
     /// Verifies pin new for unpin types.
-
     #[test]
     fn test_pin_new_for_unpin_types() {
         let mut x = 42;
@@ -160,7 +157,6 @@ mod tests {
         assert_eq!(*Pin::into_inner(pinned), 44);
     }
     /// Verifies pinned parent projects to its field.
-
     #[test]
     fn test_pinned_parent_projects_to_its_field() {
         let mut parent = Box::pin(PinnedParent {
@@ -174,7 +170,6 @@ mod tests {
         assert!(std::ptr::eq(&raw const *projected, field_ptr));
     }
     /// Verifies pinned future can be polled.
-
     #[test]
     fn test_pinned_future_can_be_polled() {
         async fn add_one(x: u32) -> u32 {

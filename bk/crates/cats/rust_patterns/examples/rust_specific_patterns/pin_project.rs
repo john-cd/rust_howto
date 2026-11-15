@@ -116,8 +116,7 @@ impl SelfReferential {
         }
     }
 
-    ///
-
+    /// Initializes the self-reference after the value has been pinned.
     fn init(self: Pin<&mut Self>) {
         let this = self.project();
         *this.pointer = std::ptr::from_ref(this.value.as_ref().get_ref());
@@ -259,7 +258,6 @@ fn example4() {
 }
 /// Runs the example.
 /// Runs the `pin_project` examples.
-
 fn main() {
     example1();
     example2();
@@ -271,7 +269,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

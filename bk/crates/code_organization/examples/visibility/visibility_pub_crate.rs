@@ -24,7 +24,6 @@ pub(crate) mod b_module {
     }
 }
 /// Calls the functions that are visible in the crate.
-
 fn main() {
     println!("{}", a_module::visible_in_crate_only());
     println!("{}", b_module::visible_in_crate_only());
@@ -33,7 +32,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }
@@ -47,7 +45,6 @@ mod tests {
         main();
     }
     /// Verifies pub crate items visible in crate.
-
     #[test]
     fn test_pub_crate_items_visible_in_crate() {
         assert_eq!(a_module::visible_in_crate_only(), "a_module");

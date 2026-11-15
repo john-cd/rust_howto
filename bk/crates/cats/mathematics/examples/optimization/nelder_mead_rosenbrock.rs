@@ -50,7 +50,6 @@ fn minimize() -> Result<(Vec<f64>, f64), Error> {
 }
 /// Runs the example.
 /// Prints the minimum found.
-
 fn main() -> Result<(), Error> {
     let (best, cost) = minimize()?;
     println!("minimum at {best:.5?}, f = {cost:.3e}");
@@ -66,7 +65,6 @@ pub fn run() -> Result<(), Error> {
     main()
 }
 /// Verifies that Nelder-Mead converges to the Rosenbrock minimum `(1, 1)`.
-
 #[test]
 fn test_nelder_mead_finds_rosenbrock_minimum() -> Result<(), Error> {
     let (best, cost) = minimize()?;

@@ -55,7 +55,6 @@ async fn demo() {
 }
 /// Runs the example.
 /// Runs the demonstration on a paused-clock runtime.
-
 fn main() {
     match tokio::runtime::Builder::new_current_thread()
         .enable_time()
@@ -69,7 +68,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

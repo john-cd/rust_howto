@@ -157,7 +157,6 @@ pub mod structural_pinning {
 }
 /// Runs the example.
 /// Creates a pinned self-referential struct and checks its pointer.
-
 fn main() {
     use std::pin::Pin;
 
@@ -203,7 +202,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

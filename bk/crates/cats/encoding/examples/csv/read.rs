@@ -16,7 +16,6 @@ fn read_records(data: &str) -> Result<Vec<csv::StringRecord>, Error> {
         .collect()
 }
 /// Reads CSV records and prints their fields.
-
 fn main() -> Result<(), Error> {
     let data = "year,make,model,description
 1948,Porsche,356,Luxury sports car

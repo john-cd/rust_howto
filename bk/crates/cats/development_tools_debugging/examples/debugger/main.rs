@@ -6,6 +6,11 @@
 /// Computes and prints a value that can be inspected in a debugger.
 /// A minimal program for stepping through with a debugger.
 fn main() {
+    run();
+}
+
+/// Runs the debugger example's calculation and assertion.
+fn example() {
     let answer = 40 + 2;
     assert_eq!(answer, 42);
     println!("{answer}");
@@ -14,7 +19,7 @@ fn main() {
 
 /// A minimal program for stepping through with a debugger.
 fn run() {
-    main();
+    example();
 }
 
 #[cfg(test)]

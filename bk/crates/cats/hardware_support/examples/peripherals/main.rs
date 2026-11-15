@@ -24,6 +24,11 @@ fn describe(port: &SerialPortInfo) -> String {
 /// enumeration support, or a missing permission, yields an error that the
 /// application should report rather than treat as fatal.
 fn main() {
+    example();
+}
+
+/// Enumerates the available serial ports and prints their connection types.
+fn example() {
     match serialport::available_ports() {
         Ok(ports) if ports.is_empty() => println!("no serial ports found"),
         Ok(ports) => {
@@ -37,8 +42,8 @@ fn main() {
 // ANCHOR_END: example
 
 /// Lists the serial ports that the operating system reports.
-fn run() {
-    main();
+pub fn run() {
+    example();
 }
 
 #[cfg(test)]

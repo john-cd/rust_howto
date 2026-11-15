@@ -17,7 +17,6 @@ unsafe extern "C" {
     fn greet(name: *const c_char);
 }
 /// Calls the no-argument C greeting function.
-
 fn hello_from_c() {
     // SAFETY: `build.rs` links the matching no-argument `hello` function.
     unsafe { hello() };
@@ -66,7 +65,6 @@ mod tests {
         greet_from_c("workspace")
     }
     /// Rejects a name that cannot be represented as a C string.
-
     #[test]
     fn rejects_interior_nul() {
         assert!(greet_from_c("not\0a C string").is_err());

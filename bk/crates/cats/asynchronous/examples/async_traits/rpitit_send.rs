@@ -58,7 +58,6 @@ impl SendStore for MemoryStore {
     }
 
     /// Stores a cloned key and owned value.
-
     async fn put(&mut self, key: &str, value: String) {
         self.0.insert(key.to_owned(), value);
     }
@@ -98,7 +97,6 @@ async fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

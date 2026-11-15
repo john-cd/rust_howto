@@ -21,7 +21,6 @@ struct ApiKey {
     bytes: Vec<u8>,
 }
 /// Runs the example.
-
 fn main() {
     // Explicit wipe: the buffer is emptied.
     let mut key = ApiKey {
@@ -48,7 +47,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

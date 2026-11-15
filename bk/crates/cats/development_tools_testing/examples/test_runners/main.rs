@@ -6,7 +6,6 @@
 mod tests1;
 /// Runs the example.
 /// Runs the test runners example.
-
 fn main() {
     tests1::run();
 }

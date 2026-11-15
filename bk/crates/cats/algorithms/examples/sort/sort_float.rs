@@ -34,7 +34,6 @@ pub fn run() {
 mod tests {
     use super::*;
     /// Verifies that the `sort float` example runs.
-
     #[test]
     fn test_sort_float_example_entry_point() {
         main();
