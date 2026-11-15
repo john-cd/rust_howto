@@ -100,6 +100,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the thread priority example.
 ///
 /// # Errors

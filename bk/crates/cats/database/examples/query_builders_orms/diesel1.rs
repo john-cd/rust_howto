@@ -88,6 +88,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the Diesel SQLite example.
 ///
 /// # Errors

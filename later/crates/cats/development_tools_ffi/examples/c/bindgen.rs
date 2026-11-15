@@ -16,6 +16,7 @@ fn main() {
     println!("20 + 22 = {result}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

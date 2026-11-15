@@ -42,6 +42,7 @@ fn run_example() {
     println!("Third segment: {third}");
 }
 // ANCHOR_END: example
+
 /// Runs the path splitting example for the workspace test harness.
 pub fn run() {
     run_example();

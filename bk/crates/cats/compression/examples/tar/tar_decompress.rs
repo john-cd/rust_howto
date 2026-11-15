@@ -41,6 +41,7 @@ fn decompress_archive(archive_path: &Path, destination: &Path) -> io::Result<()>
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Extracts the archive created by the compression example.
 ///
 /// # Errors

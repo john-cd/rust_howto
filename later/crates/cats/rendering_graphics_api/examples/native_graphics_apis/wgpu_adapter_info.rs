@@ -37,6 +37,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the adapter query from the example target.
 ///
 /// # Errors

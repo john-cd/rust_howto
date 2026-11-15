@@ -75,6 +75,7 @@ fn main() {
     // type `T`: let wont_compile = Point { x: 5, y: 4.0 };
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

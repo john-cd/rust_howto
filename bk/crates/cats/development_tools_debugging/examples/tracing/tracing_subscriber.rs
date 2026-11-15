@@ -44,6 +44,7 @@ fn main() {
     tracing::error!("tracing configured!");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

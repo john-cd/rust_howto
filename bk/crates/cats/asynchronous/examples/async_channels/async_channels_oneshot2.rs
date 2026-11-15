@@ -57,6 +57,7 @@ fn main() {
         .expect("the async channels oneshot2 example invariant should hold");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

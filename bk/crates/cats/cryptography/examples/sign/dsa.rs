@@ -49,6 +49,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the P-256 signature example.
 ///
 /// # Errors

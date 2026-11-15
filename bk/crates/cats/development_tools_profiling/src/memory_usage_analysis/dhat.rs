@@ -86,6 +86,7 @@ fn main() {
 // check that they allocated as much heap memory as we expected.
 // Example adapted from <https://docs.rs/dhat/latest/dhat/>
 // ANCHOR_END: example
+
 /// Runs both `dhat` profiling demonstrations.
 pub fn run() {
     main();

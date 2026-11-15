@@ -56,6 +56,7 @@ fn init_logger() {
     // env_logger::init_from_env(env);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

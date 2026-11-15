@@ -21,6 +21,7 @@ fn main() {
     println!("Query result: {product_query}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

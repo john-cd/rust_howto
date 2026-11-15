@@ -41,6 +41,7 @@ fn main() {
     assert_eq!(extract_login("Not an email@email"), None);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

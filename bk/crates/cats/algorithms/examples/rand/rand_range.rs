@@ -23,6 +23,7 @@ fn main() {
     println!("Float: {}", rng.random_range(0.0..10.0));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

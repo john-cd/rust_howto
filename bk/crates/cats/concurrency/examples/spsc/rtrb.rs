@@ -113,6 +113,7 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the SPSC transfer example and reports producer thread failures.
 ///
 /// # Errors

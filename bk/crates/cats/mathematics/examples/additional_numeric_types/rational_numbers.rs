@@ -19,6 +19,7 @@ fn main() {
     assert_eq!(half, Ratio::new(1_i64, 2));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the rational-number example.
 pub fn run() {

@@ -199,6 +199,7 @@ fn main() {
     assert_eq!(*pinned_struct.as_mut().unpinned_field(), 20);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

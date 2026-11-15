@@ -91,6 +91,7 @@ fn main() {
     println!("Output: {output:x?}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the BLAKE3 example by delegating to `main()`.
 pub fn run() {

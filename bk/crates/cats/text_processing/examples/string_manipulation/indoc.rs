@@ -54,6 +54,7 @@ fn main() {
     println!("\nSQL query:\n{sql_query}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

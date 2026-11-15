@@ -53,6 +53,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     });
 }
 // ANCHOR_END: example
+
 /// Runs the Tao window example.
 
 /// # Errors

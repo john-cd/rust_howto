@@ -60,6 +60,7 @@ fn main() {
     assert!(error < 0.05);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 
 pub fn run() {

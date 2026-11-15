@@ -15,6 +15,7 @@ fn main() {
     assert_eq!(&*message, "initialized on first access");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

@@ -66,6 +66,7 @@ fn main() {
     println!("{} + {} = {}", 2, 3, sum(2, 3));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the pure Rust N-API example without loading a Node runtime.
 pub fn run() {

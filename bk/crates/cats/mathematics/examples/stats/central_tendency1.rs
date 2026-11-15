@@ -126,6 +126,7 @@ fn main() {
     assert_eq!(median(&[i32::MAX, i32::MAX]), Some(f64::from(i32::MAX)));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

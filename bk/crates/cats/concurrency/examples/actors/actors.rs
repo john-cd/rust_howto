@@ -85,6 +85,7 @@ fn main() -> anyhow::Result<()> {
 }
 /// Runs the Tokio actor example.
 // ANCHOR_END: example
+
 /// # Errors
 /// Returns an error if the runtime cannot be created or the actor task fails.
 pub fn run() -> anyhow::Result<()> {

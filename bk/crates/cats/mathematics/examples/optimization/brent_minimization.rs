@@ -49,6 +49,7 @@ fn main() {
     println!("minimum at x = {minimum:.8}, f(x) = {value:.8}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {

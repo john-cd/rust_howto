@@ -32,6 +32,7 @@ fn main() {
     println!("Uppercase: {}", (*wrapped).to_uppercase());
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// Runs the example.

@@ -30,6 +30,7 @@ fn main() {
     assert_relative_eq!(sum, expected, epsilon = f64::EPSILON);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

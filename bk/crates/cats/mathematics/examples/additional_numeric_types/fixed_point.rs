@@ -18,6 +18,7 @@ fn main() {
     assert_eq!(quotient.to_string(), "6.3333");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the fixed-point example.
 pub fn run() {

@@ -97,6 +97,7 @@ fn main() {
     app.run::<CounterModel>(0);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Opens the Relm4 counter application.
 

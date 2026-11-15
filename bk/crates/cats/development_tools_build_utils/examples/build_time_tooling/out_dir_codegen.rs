@@ -14,6 +14,7 @@ fn main() {
     println!("{GENERATED_MESSAGE}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the generated-source example.
 pub fn run() {

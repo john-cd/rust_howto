@@ -36,6 +36,7 @@ fn main() {
     assert!(timeout_fired);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

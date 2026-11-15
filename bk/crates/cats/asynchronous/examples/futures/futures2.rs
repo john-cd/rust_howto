@@ -29,6 +29,7 @@ async fn main() {
     assert_eq!(futures::future::join_all(futures).await, [1, 2, 3]);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

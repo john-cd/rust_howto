@@ -44,6 +44,7 @@ fn main() {
     assert!((km - geo_km).abs() < 5.0);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 
 pub fn run() {

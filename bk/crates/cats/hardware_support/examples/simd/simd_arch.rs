@@ -123,6 +123,7 @@ fn main() {
     println!("dot = {expected}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Compares scalar, runtime-dispatched, and portable SIMD on fixed inputs.
 pub fn run() {

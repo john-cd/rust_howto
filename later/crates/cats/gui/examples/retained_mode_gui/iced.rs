@@ -65,6 +65,7 @@ impl Counter {
     }
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() -> iced::Result {
     main()

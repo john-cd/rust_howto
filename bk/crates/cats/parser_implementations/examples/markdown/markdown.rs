@@ -32,6 +32,7 @@ This is a simple paragraph with **bold** and *italic* text.
     println!("{html_output}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

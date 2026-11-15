@@ -24,6 +24,7 @@ fn main() {
 // where two variables might try to deallocate the same memory when they go out
 // of scope.
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

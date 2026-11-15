@@ -28,6 +28,7 @@ fn main() {
     println!("6 * 7 = {product:?}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the bundled C++ multiplication example.
 pub fn run() {

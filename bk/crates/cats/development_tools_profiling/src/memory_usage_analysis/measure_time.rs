@@ -23,6 +23,7 @@ fn main() {
     measure_execution_time();
 }
 // ANCHOR_END: example
+
 /// Runs the timed execution example.
 pub fn run() {
     main();

@@ -80,6 +80,7 @@ fn main() {
     println!("Unwrapped default value: {default_val}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

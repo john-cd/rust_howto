@@ -63,6 +63,7 @@ fn call_cpp(name: &CxxString) {
     ffi::hello(name);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

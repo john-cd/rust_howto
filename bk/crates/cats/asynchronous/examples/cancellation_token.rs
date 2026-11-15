@@ -36,6 +36,7 @@ fn main() -> anyhow::Result<()> {
     run_example()
 }
 // ANCHOR_END: example
+
 /// Runs the example.
 ///
 /// # Errors

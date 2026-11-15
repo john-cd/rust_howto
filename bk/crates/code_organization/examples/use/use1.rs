@@ -56,6 +56,7 @@ fn main() {
     let _p: Point = (1, 2);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

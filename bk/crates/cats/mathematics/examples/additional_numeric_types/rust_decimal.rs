@@ -50,6 +50,7 @@ fn main() {
     assert_eq!(number_to_str, "98.76");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

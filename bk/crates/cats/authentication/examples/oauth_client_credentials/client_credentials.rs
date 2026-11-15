@@ -102,6 +102,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the client-credentials example with its local mock servers.
 ///
 /// # Errors

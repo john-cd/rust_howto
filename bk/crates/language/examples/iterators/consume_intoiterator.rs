@@ -31,6 +31,7 @@ fn main() {
     println!("Sum of iterator: {}", sum_all(std::iter::repeat_n(5, 2))); // Output: Sum of iterator: 10.
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

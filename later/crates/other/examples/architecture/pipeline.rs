@@ -55,6 +55,7 @@ fn main() {
     println!("{results:?}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the bounded-channel pipeline example.
 pub fn run() {

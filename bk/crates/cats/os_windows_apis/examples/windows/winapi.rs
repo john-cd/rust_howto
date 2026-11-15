@@ -31,6 +31,7 @@ fn main() {
     }
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the message-box example.
 pub fn run() {

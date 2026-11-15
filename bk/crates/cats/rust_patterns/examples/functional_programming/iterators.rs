@@ -24,6 +24,7 @@ fn main() {
     println!("{count} readings are above 12, with total excess {total}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

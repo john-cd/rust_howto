@@ -51,6 +51,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the offline frame encoding and decoding example.
 ///
 /// # Errors

@@ -62,6 +62,7 @@ fn main() {
     assert_eq!(open(b"short"), None);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the XXH3 checksum example by calling `main()`.
 pub fn run() {

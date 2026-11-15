@@ -17,6 +17,7 @@ pub fn add(left: i32, right: i32) -> i32 {
     left + right
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example on a native host.
 pub fn run() {

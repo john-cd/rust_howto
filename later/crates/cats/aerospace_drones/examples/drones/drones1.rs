@@ -114,6 +114,7 @@ fn main() -> Result<()> {
     fly(&mut drone, &plan)
 }
 // ANCHOR_END: example
+
 /// Runs the example; it needs a real drone.
 ///
 /// # Errors

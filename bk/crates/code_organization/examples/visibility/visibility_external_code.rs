@@ -38,6 +38,7 @@ fn main() {
     println!("visibility_external_code example: public and private visibility in a crate");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

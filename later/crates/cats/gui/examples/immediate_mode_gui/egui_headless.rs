@@ -43,6 +43,7 @@ fn main() {
     assert!(!output.shapes.is_empty());
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

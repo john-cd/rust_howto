@@ -38,6 +38,7 @@ fn main() {
     println!("||v1 normalized|| = {}", unit.norm());
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

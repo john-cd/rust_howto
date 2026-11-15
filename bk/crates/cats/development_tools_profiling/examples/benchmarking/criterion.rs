@@ -41,6 +41,7 @@ criterion_group!(benches, benchmark_fibonacci);
 
 criterion_main!(benches);
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the benchmark with the default `Criterion` configuration.
 pub fn run() {

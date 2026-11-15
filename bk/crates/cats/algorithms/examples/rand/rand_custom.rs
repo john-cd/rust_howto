@@ -46,6 +46,7 @@ fn main() {
     println!("x = {}, y = {}", rand_point.x, rand_point.y);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

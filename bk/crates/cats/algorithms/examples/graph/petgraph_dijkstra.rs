@@ -77,6 +77,7 @@ fn main() {
     assert_eq!(distances[&e], 10);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the `petgraph` Dijkstra example by calling `main()`.
 pub fn run() {

@@ -22,6 +22,7 @@ fn main() {
     println!("Is 4 even? {}", is_even(4));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 #[allow(clippy::items_after_test_module)]
 pub fn run() {

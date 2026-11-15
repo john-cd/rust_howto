@@ -31,6 +31,7 @@ fn main() {
     println!("English={english}, German={german}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     // Call through a binding: calling `main` directly trips

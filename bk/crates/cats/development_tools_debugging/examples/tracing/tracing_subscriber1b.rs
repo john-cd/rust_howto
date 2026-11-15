@@ -53,6 +53,7 @@ fn a_function() {
     tracing::debug!("In a_function.");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

@@ -24,6 +24,7 @@ fn main() {
     println!("log_error example: set RUST_LOG=error to see the error log above");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

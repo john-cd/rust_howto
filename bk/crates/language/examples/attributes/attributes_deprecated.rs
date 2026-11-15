@@ -28,6 +28,7 @@ fn main() {
     // (first line of the example) suppresses the warning.
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

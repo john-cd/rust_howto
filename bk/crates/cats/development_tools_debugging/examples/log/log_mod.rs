@@ -41,6 +41,7 @@ fn main() {
     println!("log_mod example: set RUST_LOG=debug to see all module-specific log output above");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

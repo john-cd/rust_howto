@@ -23,6 +23,7 @@ fn main() {
     // ERROR: println!("{s}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

@@ -41,6 +41,7 @@ fn main() {
     println!("Transformed vector: {transformed_vector:?}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

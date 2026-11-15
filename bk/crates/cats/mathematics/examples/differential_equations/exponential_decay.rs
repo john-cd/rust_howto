@@ -44,6 +44,7 @@ fn main() {
     println!("y(1) ≈ {final_value:.6}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {

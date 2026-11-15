@@ -36,6 +36,7 @@ fn main() {
     println!("{}", ref_s1.0);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

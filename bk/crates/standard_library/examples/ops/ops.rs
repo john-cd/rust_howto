@@ -51,6 +51,7 @@ fn main() {
     // Point { x: 1, y: 5 } + Point { x: 2, y: 3 } = Point { x: 3, y: 8 }
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

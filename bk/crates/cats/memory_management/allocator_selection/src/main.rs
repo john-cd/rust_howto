@@ -46,6 +46,7 @@ fn main() {
     );
 }
 // ANCHOR_END: example
+
 /// Runs the operation.
 /// Runs the example.
 pub fn run() {

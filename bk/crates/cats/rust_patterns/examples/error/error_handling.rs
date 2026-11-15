@@ -33,6 +33,7 @@ fn main() {
     assert_eq!(my_string, "foo\n");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

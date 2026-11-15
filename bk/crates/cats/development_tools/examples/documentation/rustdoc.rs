@@ -26,6 +26,7 @@ fn main() {
     function_including_external_file_as_documentation();
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

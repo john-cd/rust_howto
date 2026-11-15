@@ -25,6 +25,7 @@ fn main() {
     assert!(std::ptr::eq(whole_slice.as_ptr(), s.as_ptr()));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

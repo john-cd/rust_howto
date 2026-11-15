@@ -50,6 +50,7 @@ async fn main() {
     do_health_check(hc).await;
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// Runs the example.

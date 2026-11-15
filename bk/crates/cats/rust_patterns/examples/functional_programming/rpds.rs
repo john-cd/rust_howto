@@ -46,6 +46,7 @@ fn main() {
     println!("m3 is unchanged: {m3}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

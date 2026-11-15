@@ -27,6 +27,7 @@ fn main() {
     println!("Foundation example needs an Apple target and the objc feature.");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the Foundation example or its platform fallback.
 pub fn run() {

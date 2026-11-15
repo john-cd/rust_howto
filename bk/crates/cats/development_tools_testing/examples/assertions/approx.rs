@@ -40,6 +40,7 @@ fn main() {
     assert_ulps_eq!(1.0, 1.0);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

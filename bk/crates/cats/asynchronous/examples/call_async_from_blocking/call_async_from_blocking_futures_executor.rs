@@ -27,6 +27,7 @@ fn main() {
     // `future` is run and "hello, world!" is printed.
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

@@ -76,6 +76,7 @@ fn create_sample_mp4() -> Result<Vec<u8>, Box<dyn Error + Send + Sync>> {
     Ok(buf)
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// # Errors

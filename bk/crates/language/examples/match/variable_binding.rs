@@ -15,6 +15,7 @@ fn main() {
     // println!("{val}"); // ERROR: cannot find value `val` in this scope.
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

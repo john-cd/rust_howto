@@ -21,6 +21,7 @@ fn main() {
     assert_eq!(rm.get(&100), None);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

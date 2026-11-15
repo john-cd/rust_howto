@@ -29,6 +29,7 @@ fn main() {
     println!("Half of the even number is {half}.");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

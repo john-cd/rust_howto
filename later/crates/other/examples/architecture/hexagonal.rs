@@ -122,6 +122,7 @@ fn main() {
     println!("{}", service.display_name(7));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

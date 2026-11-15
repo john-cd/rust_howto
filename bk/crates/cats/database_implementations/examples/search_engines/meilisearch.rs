@@ -103,6 +103,7 @@ async fn run_with_config(
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the Meilisearch example.
 ///
 /// # Errors

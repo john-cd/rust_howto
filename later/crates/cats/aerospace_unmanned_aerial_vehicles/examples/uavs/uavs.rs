@@ -60,6 +60,7 @@ fn main() -> Result<()> {
 }
 /// Runs the example; it needs a real drone.
 // ANCHOR_END: example
+
 /// # Errors
 /// Returns an error if the drone rejects a command.
 pub fn run() -> Result<()> {

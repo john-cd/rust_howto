@@ -30,6 +30,7 @@ fn main() {
     println!("speed = {speed_in_meters_per_second:.3} m/s");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {

@@ -83,6 +83,7 @@ fn main() {
     assert_eq!(product.to_string(), "2.8465780742245217");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

@@ -55,6 +55,7 @@ fn main() {
     println!("{:?}", Account::replay(&log));
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     main();

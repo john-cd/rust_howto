@@ -77,6 +77,7 @@ fn main() -> Result<()> {
     run_example()
 }
 // ANCHOR_END: example
+
 /// Runs the parse published recipes example for programmatic execution.
 ///
 /// # Errors

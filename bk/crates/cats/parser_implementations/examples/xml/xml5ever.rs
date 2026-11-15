@@ -432,6 +432,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the XML DOM parsing example.
 ///
 /// # Errors

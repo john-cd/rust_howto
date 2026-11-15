@@ -48,6 +48,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
 /// Runs the Sibyl Oracle example.
 ///
 /// # Errors

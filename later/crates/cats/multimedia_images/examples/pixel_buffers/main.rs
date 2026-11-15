@@ -29,6 +29,7 @@ fn main() {
     print_example();
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the pixel-buffer example.
 pub fn run() {

@@ -17,6 +17,7 @@ fn main() {
     println!("{formatted}");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 pub fn run() {
     // Call through a binding: calling `main` directly trips

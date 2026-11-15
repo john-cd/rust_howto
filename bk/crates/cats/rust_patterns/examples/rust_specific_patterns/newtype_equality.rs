@@ -79,6 +79,7 @@ fn main() {
     assert_eq!(set.len(), 1);
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {

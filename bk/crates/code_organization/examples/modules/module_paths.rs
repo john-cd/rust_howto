@@ -40,6 +40,7 @@ fn main() {
     println!("{}", f::try_that());
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the module path example.
 pub fn run() {

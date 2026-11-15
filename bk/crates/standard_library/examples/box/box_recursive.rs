@@ -58,6 +58,7 @@ fn main() {
     head.print(); // Output: 1 -> 2 -> 3 -> 4.
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 ///
 /// Runs the example.

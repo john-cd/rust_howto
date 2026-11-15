@@ -53,6 +53,7 @@ fn main() {
     println!("Build for wasm32-unknown-unknown and serve with Trunk.");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the Yew example for the crate's example harness.
 pub fn run() {

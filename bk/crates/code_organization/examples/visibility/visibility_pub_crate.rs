@@ -30,6 +30,7 @@ fn main() {
     println!("visibility_pub_crate example: pub(crate) restricts visibility to the current crate");
 }
 // ANCHOR_END: example
+
 /// Runs the example entry point.
 /// Runs the example.
 pub fn run() {
