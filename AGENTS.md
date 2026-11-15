@@ -120,7 +120,7 @@ This repo is primarily an mdBook publishing repo with Rust workspaces attached t
 - Keep Rustdoc specific to the item. Put doc comments before attributes; avoid generic placeholder text and document fallible APIs with meaningful `# Errors` sections.
 - Add focused behavior tests for new code and bug fixes, integration tests for CLI/file effects, and benchmarks when performance-sensitive behavior warrants them.
 - Keep unit tests near their code in an inline `#[cfg(test)] mod tests` at the bottom of the file. Do not wrap integration-test files in `#[cfg(test)]`.
-- Give tests descriptive names and a concise doc comment stating the behavior they verify. Construct concrete fixtures and meaningful identifiers; review snapshots before accepting changes.
+- Give each test function a one-line doc comment that explains the behavior it verifies. Put the comment before the test attributes, and do not repeat the function name or signature. Construct concrete fixtures and meaningful identifiers; review snapshots before accepting changes.
 - Keep README files, user guides, command examples, and configuration documentation synchronized with changed behavior.
 - Use American spelling, LF line endings, and CommonMark. Leave blank lines after headings and specify a language on fenced code blocks.
 - Prefer ASCII in tooling code and agent instructions; preserve intentional Unicode in book content, examples, and fixtures.
