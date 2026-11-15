@@ -85,8 +85,6 @@ test = true
 [dependencies]
 # Actor framework for Rust
 actix = "0.13.6"
-
-## General
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # Generate accurate and informative tree dumps of asynchronous tasks.
@@ -128,11 +126,12 @@ parking_lot = "0.13.0"
 # A actor framework for Rust
 ractor = "0.16.6"
 # Random number generators and other randomness functionality.
-rand = { version = "0.10.3", features = ["thread_rng"] }
+rand = { version = "0.10.4", features = ["thread_rng"] }
 # Either acts as rayon or creates a single-threaded facade
 rayon = "1.12.0"
 # Disabled: Riker has no compatible update for its vulnerable transitive dependencies.
 # riker = { version = "0.4.2", optional = true }
+# A lock-free ring buffer for single-producer single-consumer scenarios.
 ringbuf = "0.6.0"
 # A realtime-safe single-producer single-consumer ring buffer
 rtrb = "0.4.1"
@@ -144,8 +143,6 @@ stakker = { version = "0.2.16", optional = true, features = ["multi-thread"] }
 thread-priority = "3.1.1"
 # A thread pool for running a number of jobs on a fixed set of worker threads.
 threadpool = "1.8.1"
-# Date and time library. Fully interoperable with the standard library. Mostly compatible with #![no_std].
-# time = "0.3.55"
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 # Recursively walk a directory.

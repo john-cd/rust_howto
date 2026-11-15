@@ -42,7 +42,7 @@ linfa-linear = "0.8.1"
 ndarray_016 = { package = "ndarray", version = "=0.16.1" }
 # Linfa 0.8 uses rand 0.8 traits for seeded K-means; keep its RNG on that API line.
 # Random number generators and other randomness functionality.
-rand_08 = { package = "rand", version = "0.8.8", features = ["std", "std_rng"] }
+rand_08 = { package = "rand", version = "=0.8.8", features = ["std", "std_rng"] }
 # Machine Learning in Rust.
 smartcore = "0.7.0"
 
