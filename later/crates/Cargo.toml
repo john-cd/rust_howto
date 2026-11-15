@@ -29,7 +29,7 @@ kiddo = { version = "6.3.0", default-features = false }
 # A lossless PNG compression optimizer
 oxipng = { version = "10.2.1", default-features = false }
 # Random number generators and other randomness functionality.
-rand = "0.10.3"
+rand = "0.10.4"
 # Sampling from random number distributions
 rand_distr = "0.6.0"
 # An R*-tree spatial index
@@ -121,6 +121,11 @@ broken_intra_doc_links = "warn"
 
 # Detect crates missing crate-level module documentation
 missing_crate_level_docs = "warn"
+
+[workspace.lints.cargo]
+# Cargo 1.100 reports optional dependencies used only by the feature-gated
+# development_tools_ffi examples as unused during the workspace lint pass.
+unused_dependencies = "allow"
 
 # See also clippy.toml
 [workspace.lints.clippy]
