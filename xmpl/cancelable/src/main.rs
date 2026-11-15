@@ -84,6 +84,7 @@ mod tests {
         Ok(())
     }
 
+    /// Rejects additional tasks when the bounded queue is full.
     #[test]
     fn full_queue_rejects_tasks() {
         let worker = Worker::new();

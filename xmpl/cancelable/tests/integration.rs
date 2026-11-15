@@ -12,8 +12,7 @@ use std::time::Duration;
 use cancelable::Task;
 use cancelable::Worker;
 
-/// Verifies worker initialization, task submission, response draining,
-/// and graceful thread shutdown via both explicit termination and drop.
+/// Exercises worker startup, task handling, response draining, and shutdown.
 #[test]
 fn test_worker_lifecycle() -> anyhow::Result<()> {
     // Test explicit shutdown lifecycle.
@@ -45,8 +44,7 @@ fn test_worker_lifecycle() -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Verifies task submission up to maximum queue capacity, rejection of excess tasks,
-/// targeted cancellation under saturation, and graceful drain and shutdown.
+/// Rejects excess work and cancels targeted tasks under queue pressure.
 #[test]
 fn test_cancellation_under_high_queue_load() -> anyhow::Result<()> {
     let mut worker = Worker::new();
@@ -94,8 +92,7 @@ fn test_cancellation_under_high_queue_load() -> anyhow::Result<()> {
 
     Ok(())
 }
-/// Verifies independent process invocations start cleanly, stop background workers,
-/// and terminate all threads without hanging.
+/// Stops worker threads on repeated runs without hanging.
 #[test]
 fn test_thread_termination_across_independent_process_invocations() {
     let binary_path = env!("CARGO_BIN_EXE_cancelable");
