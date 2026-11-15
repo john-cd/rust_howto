@@ -16,7 +16,6 @@ fn main() {
 mod tests {
     use super::*;
 
-    // output-only: the JNI example needs a JVM and the `java` feature.
     #[test]
     fn test_main_entry_point() {
         main();

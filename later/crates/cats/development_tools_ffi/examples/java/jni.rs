@@ -67,12 +67,10 @@ pub fn run() {
     println!("{msg}");
 }
 
-/// starting a JVM.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// starting a JVM.
     #[test]
     fn hello_preserves_the_java_caller_name() {
         assert_eq!(hello("World"), "Hello, World!");
