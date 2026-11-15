@@ -6,13 +6,11 @@
 
 /// A wrapper type with a getter and a mutating getter.
 pub struct S {
-
     /// First item in the collection.
     first: String,
 }
 
 impl S {
-
     /// Constructs a new instance of `S` from any type convertible into a `String`.
     ///
     /// # Arguments
@@ -20,7 +18,7 @@ impl S {
     /// Following the Rust API Guidelines (C-CTOR), the primary constructor is named `new`.
     ///
     /// # Parameters
-///
+    ///
     /// - `first`: The initial string value, converted into an owned `String`.
     pub fn new(first: impl Into<String>) -> Self {
         Self {
@@ -51,13 +49,11 @@ impl S {
 
 /// A container of `u32`s.
 pub struct Container {
-
     /// Collection consumed by container while preserving its ordering and relationships.
     items: Vec<u32>,
 }
 
 impl Container {
-
     /// The `Iter` type implements `Iterator<Item = &u32>`.
     pub fn iter(&self) -> std::slice::Iter<'_, u32> {
         self.items.iter()

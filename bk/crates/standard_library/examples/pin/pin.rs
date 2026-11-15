@@ -13,14 +13,12 @@ use std::pin::Pin;
 
 /// A type that cannot be moved once pinned.
 struct PinnedField {
-
     /// Marker that makes the type `!Unpin`.
     _pin: PhantomPinned,
 }
 
 /// A struct with a pinned field.
 struct PinnedParent {
-
     /// The structurally pinned field.
     field: PinnedField,
 
@@ -29,7 +27,6 @@ struct PinnedParent {
 }
 
 impl PinnedParent {
-
     /// Returns a pinned mutable reference to the field.
     fn field(self: Pin<&mut Self>) -> Pin<&mut PinnedField> {
         // SAFETY: `field` is structurally pinned: this API never exposes it as
@@ -66,11 +63,9 @@ fn main() {
     // does not move in the `unsafe` code. Here, we have exclusive control of
     // `y`.
     {
-
         /// Demonstrates a type that does not implement `Unpin`.
         struct NotUnpin {
             // The `PhantomPinned` field makes the struct `!Unpin`.
-
             /// Pinning marker used by the example.
             _pin: PhantomPinned,
         }
@@ -126,7 +121,7 @@ fn main() {
     /// Accepts a pinned mutable reference to a `Foo` value.
     ///
     /// # Arguments
-///
+    ///
     /// * `_foo` - Pinned mutable reference passed to demonstrate the `Pin` requirement.
     fn stuff(_foo: Pin<&mut Foo>) {
         // ...

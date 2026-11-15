@@ -6,7 +6,6 @@
 
 /// A trait for types that can be hashed to a `u64`.
 trait MyHash {
-
     /// Returns a hash of the object.
     /// Implement the `MyHash` trait for preexisting type `i64`,
     /// which is defined in the standard library.

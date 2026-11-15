@@ -8,7 +8,6 @@
 
 /// A trait with a default method.
 trait Tr {
-
     /// Does nothing.
     fn foo(&self) {
         println!("foo");
@@ -17,7 +16,6 @@ trait Tr {
 
 /// An enum.
 enum MyEnum {
-
     /// The first variant.
     A,
 
@@ -31,7 +29,6 @@ impl Tr for MyEnum {}
 /// A union.
 #[repr(C)]
 union MyUnion {
-
     /// A 32-bit unsigned integer.
     f1: u32,
 

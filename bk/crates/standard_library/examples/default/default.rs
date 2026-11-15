@@ -14,7 +14,6 @@
 /// A configuration, with the default values of each type.
 #[derive(Default, Debug)]
 struct Config {
-
     /// The timeout.
     timeout: u32, // defaults to `0`.
 
@@ -33,7 +32,6 @@ struct Config {
 /// A configuration, with custom default values.
 #[derive(Debug)]
 struct Config2 {
-
     /// The timeout.
     timeout: u32,
 
@@ -48,7 +46,6 @@ struct Config2 {
 }
 
 impl Default for Config2 {
-
     /// Returns the example configuration with its documented default values.
     fn default() -> Self {
         Self {

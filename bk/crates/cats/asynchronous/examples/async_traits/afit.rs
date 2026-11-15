@@ -17,7 +17,6 @@ use std::collections::HashMap;
 
 /// A key-value store with an asynchronous API.
 trait Store {
-
     /// Looks up a key.
     async fn get(&self, key: &str) -> Option<String>;
 }
@@ -26,7 +25,6 @@ trait Store {
 struct MemoryStore(HashMap<String, String>);
 
 impl Store for MemoryStore {
-
     /// Returns the value associated with `key`, if any.
     async fn get(&self, key: &str) -> Option<String> {
         self.0.get(key).cloned()

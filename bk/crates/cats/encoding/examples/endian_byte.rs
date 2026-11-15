@@ -21,7 +21,6 @@ use byteorder::WriteBytesExt;
 /// The data to encode.
 #[derive(Default, PartialEq, Debug)]
 struct Payload {
-
     /// Kind of payload.
     kind: u8,
 

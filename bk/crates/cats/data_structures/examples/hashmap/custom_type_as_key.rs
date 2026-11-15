@@ -20,7 +20,6 @@ use std::hash::Hasher;
 /// A student, used as a `HashMap` key.
 #[derive(Debug, PartialEq, Eq)]
 struct Student {
-
     /// The identifier of the student, which determines equality and hash.
     id: u32,
 }
@@ -30,11 +29,10 @@ struct Student {
 // This is a fundamental requirement for hash-based collections.
 // k1 == k2 -> hash(k1) == hash(k2).
 impl Hash for Student {
-
     /// Feeds the custom key ID into the supplied hasher.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `state` - Shared state and services used to complete the custom_type_as_key workflow.
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.id.hash(state);

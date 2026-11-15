@@ -20,7 +20,6 @@ mod cdrs_tokio;
 #[derive(Parser)]
 #[command(arg_required_else_help = true)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Commands,
@@ -30,7 +29,6 @@ struct Cli {
 #[cfg(feature = "cassandra")]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `cassandra_protocol` example.
     #[cfg(feature = "cassandra")]
     #[command(name = "cassandra_protocol")]

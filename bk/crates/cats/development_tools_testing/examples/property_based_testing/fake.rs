@@ -32,7 +32,6 @@ use fake::faker::name::en::LastName;
 /// A user.
 #[derive(Debug)]
 struct User {
-
     /// The identifier of the user.
     id: u64,
 
@@ -61,7 +60,6 @@ struct User {
 /// An order, for which fake values can be generated.
 #[derive(Debug, Dummy)]
 struct Order {
-
     /// The identifier of the order.
     #[dummy(faker = "1000..2000")]
     id: u64,
@@ -87,7 +85,6 @@ struct Order {
 /// A postal address.
 #[derive(Debug, Dummy)]
 struct Address {
-
     /// The street.
     street: String,
 

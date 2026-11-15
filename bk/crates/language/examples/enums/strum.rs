@@ -26,7 +26,6 @@ use strum::IntoEnumIterator as _; // Import the trait to use .iter().
 /// The cardinal directions, with `strum` derive macros.
 #[derive(Debug, Display, EnumString, EnumIter, PartialEq)]
 enum Direction {
-
     /// North, displayed as `N`.
     #[strum(serialize = "N")] // Customize the `Display` representation.
     North,

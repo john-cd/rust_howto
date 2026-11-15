@@ -15,7 +15,6 @@ use serde::Deserialize;
 /// Represents a record to import.
 #[derive(Debug, Deserialize, PartialEq)]
 struct Record {
-
     /// The name.
     name: String,
 

@@ -17,7 +17,6 @@ use bumpalo::Bump;
 
 /// A tree node. The references point into the same arena.
 struct Node<'bump> {
-
     /// Key used to find or update the cached value.
     key: i32,
 
@@ -73,7 +72,6 @@ thread_local! {
 struct Noisy;
 
 impl Drop for Noisy {
-
     /// Releases the resources owned by this value.
     fn drop(&mut self) {
         DROPS.with(|d| d.set(d.get() + 1));

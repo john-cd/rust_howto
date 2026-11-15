@@ -17,7 +17,6 @@
 /// A point whose equality is derived.
 #[derive(Debug, PartialEq, Eq)]
 struct Point {
-
     /// The x coordinate.
     x: i32,
 
@@ -38,7 +37,6 @@ fn points() {
 /// A person who is identified by an ID.
 #[derive(Debug)]
 struct Person {
-
     /// Unique identifier; the only field compared.
     id: u64,
 

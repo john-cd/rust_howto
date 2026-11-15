@@ -16,7 +16,6 @@ use clap::Parser;
 #[derive(Debug, Parser)]
 #[command(name = "cli-demo")]
 struct Args {
-
     /// Name to greet.
     #[arg(long, default_value = "world")]
     name: String,

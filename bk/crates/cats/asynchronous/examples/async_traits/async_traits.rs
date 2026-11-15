@@ -13,7 +13,6 @@ struct MyHealthChecker;
 
 /// A trait for checking the health of a system.
 trait HealthCheck {
-
     /// Returns `true` if the system is healthy, `false` otherwise.
     async fn check(&mut self) -> bool;
 }
@@ -79,11 +78,9 @@ mod tests {
     /// Confirms that a failing implementation is handled by the check routine.
     #[tokio::test]
     async fn health_check_runs_with_a_failing_checker() {
-
         /// Groups the data required by async traits operations.
         struct Failing;
         impl HealthCheck for Failing {
-
             /// Checks the current value.
             async fn check(&mut self) -> bool {
                 false

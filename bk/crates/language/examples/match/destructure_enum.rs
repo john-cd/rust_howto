@@ -6,13 +6,11 @@
 
 /// A message of different kinds.
 enum Message {
-
     /// A message without data.
     Quit,
 
     /// A message with coordinates.
     Move {
-
         /// The x coordinate.
         x: i32,
 

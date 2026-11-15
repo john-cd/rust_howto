@@ -23,7 +23,6 @@ mod surrealdb;
 #[cfg(any(feature = "sled", feature = "surrealdb", feature = "redb"))]
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -33,7 +32,6 @@ struct Cli {
 #[cfg(any(feature = "sled", feature = "surrealdb", feature = "redb"))]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `redb` example.
     #[cfg(feature = "redb")]
     #[command(name = "redb")]

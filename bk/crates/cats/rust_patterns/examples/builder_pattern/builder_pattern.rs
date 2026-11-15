@@ -11,7 +11,6 @@
 /// The object to build.
 #[derive(Debug)]
 struct DatabaseConfig {
-
     /// The host name or address.
     host: String,
 
@@ -33,7 +32,6 @@ struct DatabaseConfig {
 }
 
 impl DatabaseConfig {
-
     /// Optional: provide a method that returns a builder.
     fn build(host: String, port: u16) -> DatabaseConfigBuilder {
         DatabaseConfigBuilder::new(host, port)
@@ -43,7 +41,6 @@ impl DatabaseConfig {
 
 /// The builder object.
 struct DatabaseConfigBuilder {
-
     /// The host name or address.
     host: String,
 
@@ -64,7 +61,6 @@ struct DatabaseConfigBuilder {
 }
 
 impl DatabaseConfigBuilder {
-
     /// The builder's constructor (with required fields, if necessary).
     fn new(host: String, port: u16) -> Self {
         Self {

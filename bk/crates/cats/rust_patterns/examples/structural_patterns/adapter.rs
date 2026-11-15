@@ -14,13 +14,11 @@ use std::io::Lines;
 
 /// An iterator adapter that turns each input line into a row of fields.
 struct CsvRows<R> {
-
     /// Lines value.
     lines: Lines<R>,
 }
 
 impl<R: BufRead> CsvRows<R> {
-
     /// Creates a row iterator over a buffered reader.
     fn new(reader: R) -> Self {
         Self {

@@ -45,7 +45,6 @@ pub(super) static CRATE_BLOCK_REFDEFS: &str = "\
 /// This enum defines the different types of content that can be generated for a crate, such as
 /// badges, description, and reference definitions.
 pub enum GenerationMode {
-
     /// The full crate block: badges, description and reference definitions.
     CrateBlock,
 
@@ -67,7 +66,8 @@ pub enum GenerationMode {
 ///
 /// # Errors
 ///
-/// Returns an error if the template engine cannot be loaded or the selected template fails to render.
+/// Returns an error if the template engine cannot be loaded or the selected template fails to
+/// render.
 pub fn create_crate_block_badges_or_refdefs(
     crate_data: &crates_io_api::Crate,
     mode: GenerationMode,
@@ -96,7 +96,6 @@ pub fn create_crate_block_badges_or_refdefs(
 
     /// Context data used for rendering templates.
     struct Context<'a> {
-
         /// The name of the crate being described.
         crate_name: &'a str,
 
@@ -199,7 +198,8 @@ fn capitalize_if_not(s: String, should_not_be: &str) -> String {
 ///
 /// # Errors
 ///
-/// Returns an error if the crate is unknown or its badges, index anchors, or category badges cannot be rendered.
+/// Returns an error if the crate is unknown or its badges, index anchors, or category badges cannot
+/// be rendered.
 pub fn create_crate_page_section(name: &str) -> Result<String> {
     use anyhow::Context as _;
 
@@ -252,7 +252,8 @@ pub fn create_crate_page_section(name: &str) -> Result<String> {
 ///
 /// # Errors
 ///
-/// Returns an error if the crate is unknown or any badges, index anchors, or reference definitions cannot be generated.
+/// Returns an error if the crate is unknown or any badges, index anchors, or reference definitions
+/// cannot be generated.
 pub fn create_crate_block(name: &str) -> Result<(String, Vec<String>)> {
     use anyhow::Context as _;
 
@@ -462,7 +463,7 @@ mod tests {
     /// Helper: test that the regex does NOT match `input`.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Candidate text that must not match the crate block pattern.
     fn assert_no_match(input: &str) {
         let re = &*CRATE_BLOCK_RE;

@@ -93,7 +93,6 @@ pub struct IterSql<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() 
 impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> std::fmt::Debug
     for IterSql<T, I, F>
 {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.debug_tuple("ArrayFn").finish()
@@ -108,12 +107,12 @@ impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> T
     /// required by callers.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the iterator length cannot be represented or an element cannot be
     /// serialized.
     ///
     /// # Panics
-///
+    ///
     /// Panics if `ty` is not an array type.
     fn to_sql(
         &self,

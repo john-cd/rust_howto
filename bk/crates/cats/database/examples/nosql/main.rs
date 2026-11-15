@@ -19,7 +19,6 @@ mod redis;
 #[cfg(any(feature = "mongodb", feature = "redis"))]
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -29,7 +28,6 @@ struct Cli {
 #[cfg(any(feature = "mongodb", feature = "redis"))]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `mongodb` example.
     #[cfg(feature = "mongodb")]
     #[command(name = "mongodb")]

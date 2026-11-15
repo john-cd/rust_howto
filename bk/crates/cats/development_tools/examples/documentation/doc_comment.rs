@@ -17,7 +17,6 @@ doc_comment!(
         "\n\n",
         "The macro is useful when documentation text is generated from a string."
     ),
-
     /// Prints a confirmation when the documentation example runs.
     pub fn documented_function() {
         println!("doc-comment example executed");

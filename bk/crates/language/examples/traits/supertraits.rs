@@ -20,7 +20,6 @@ use std::fmt;
 
 /// A trait that requires `Display`.
 trait OutlinePrint: fmt::Display {
-
     /// Prints `self` in a box of asterisks.
     fn outline_print(&self) {
         println!("* {self} *");

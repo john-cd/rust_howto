@@ -24,7 +24,6 @@ fn main() {
 
     /// Struct used to demonstrate immutable borrowing through dereferencing.
     struct S {
-
         /// The value stored in this field.
         field: u32,
     }

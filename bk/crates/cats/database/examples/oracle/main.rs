@@ -23,7 +23,6 @@ mod sibyl;
 #[cfg(any(feature = "oracle", feature = "sibyl"))]
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -33,7 +32,6 @@ struct Cli {
 #[cfg(any(feature = "oracle", feature = "sibyl"))]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `diesel_oci` example.
     #[cfg(feature = "oracle")]
     #[command(name = "diesel_oci")]

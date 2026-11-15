@@ -18,7 +18,6 @@ fn main() {
 
     // Destructuring with structs:
     struct Point {
-
         /// The horizontal coordinate.
         x: i32,
 

@@ -14,7 +14,6 @@ use example_integrity::build_report;
 #[derive(Debug, Parser)]
 #[command(version, about)]
 struct Args {
-
     /// Repository root to scan. Defaults to the repository containing this tool.
     #[arg(long)]
     repo_root: Option<PathBuf>,

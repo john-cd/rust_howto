@@ -96,7 +96,7 @@ mod tests {
     /// Helper to create a nested fixture directory for testing folder cleanup.
     ///
     /// # Arguments
-///
+    ///
     /// * `root` - Filesystem location the operation reads, updates, or uses as its scope.
     fn create_test_fixtures(root: &Path) {
         fs::create_dir_all(root.join("subdir/nested")).expect("subdirectories should be created");

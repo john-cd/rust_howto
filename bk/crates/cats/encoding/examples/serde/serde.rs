@@ -18,7 +18,6 @@ use serde::Serialize;
 #[derive(Serialize, Deserialize, Debug, PartialEq, Eq)]
 struct Person {
     // Rename the fields during serialization and deserialization.
-
     /// The first name.
     #[serde(rename = "first_name")]
     first: String,
@@ -27,7 +26,6 @@ struct Person {
     #[serde(rename = "last_name")]
     last: String,
     // Skip serializing the `age` field if it is None.
-
     /// The age, if known.
     #[serde(skip_serializing_if = "Option::is_none")]
     age: Option<u8>,

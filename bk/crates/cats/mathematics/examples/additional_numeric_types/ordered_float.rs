@@ -46,7 +46,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// The `ordered-float` crate provides a wrapper type `OrderedFloat` for floating-point numbers that can be used as keys in ordered collections
+/// The `ordered-float` crate provides a wrapper type `OrderedFloat` for floating-point numbers that
+/// can be used as keys in ordered collections
 pub fn run() {
     main();
 }

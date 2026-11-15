@@ -15,7 +15,6 @@
 struct InnerArray<T, const N: usize>([T; N]);
 
 impl<T: std::marker::Copy, const N: usize> InnerArray<T, N> {
-
     /// Creates an array of `N` copies of `val`.
     fn new(val: T) -> Self {
         Self([val; N])

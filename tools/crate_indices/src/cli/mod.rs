@@ -14,7 +14,6 @@ mod commands;
 /// The command that the end user selected
 #[derive(Default, Debug)]
 pub(crate) enum Cmd {
-
     /// No command was selected.
     #[default]
     None,
@@ -45,7 +44,6 @@ pub(crate) enum Cmd {
 /// for `category_page` and `alphabetical_page`
 #[derive(Debug)]
 pub(crate) struct CmdArgs {
-
     /// Names of the crates.
     pub crate_names: Vec<String>,
 }
@@ -53,7 +51,6 @@ pub(crate) struct CmdArgs {
 /// The command arguments for `update_refdefs`
 #[derive(Debug)]
 pub(crate) struct CmdArgs2 {
-
     /// Names of the crates.
     pub crate_names: Vec<String>,
 
@@ -64,7 +61,6 @@ pub(crate) struct CmdArgs2 {
 /// Arguments for generating a category page from a local metadata snapshot.
 #[derive(Debug)]
 pub(crate) struct CategoryPageFromMetadataCmdArgs {
-
     /// Names of the crates.
     pub crate_names: Vec<String>,
 
@@ -78,7 +74,6 @@ pub(crate) struct CategoryPageFromMetadataCmdArgs {
 /// Arguments for generating an alphabetical index with published recipe links.
 #[derive(Debug)]
 pub(crate) struct AlphabeticalCratePageCmdArgs {
-
     /// Names of the crates.
     pub crate_names: Vec<String>,
 
@@ -89,7 +84,6 @@ pub(crate) struct AlphabeticalCratePageCmdArgs {
 /// Command arguments with a directory
 #[derive(Debug)]
 pub(crate) struct DirectoryCmdArgs {
-
     /// Directory to process.
     pub dirpathbuf: PathBuf,
 }
@@ -97,7 +91,6 @@ pub(crate) struct DirectoryCmdArgs {
 /// Command arguments for `expand_crate_blocks`
 #[derive(Debug)]
 pub(crate) struct ExpandCrateBlocksCmdArgs {
-
     /// Directory to process.
     pub dirpathbuf: PathBuf,
 

@@ -27,7 +27,6 @@ use windows_sys::Win32::System::JobObjects::SetInformationJobObject;
 struct KillOnCloseJob(HANDLE);
 
 impl KillOnCloseJob {
-
     /// Creates an unnamed job with the "kill on close" limit.
     fn new() -> std::io::Result<Self> {
         // SAFETY: both arguments may be null; the call returns a new handle.
@@ -69,7 +68,6 @@ impl KillOnCloseJob {
 }
 
 impl Drop for KillOnCloseJob {
-
     /// Closing the last handle to the job kills all of its processes.
     fn drop(&mut self) {
         // SAFETY: the handle is owned by `self` and closed exactly once.

@@ -16,7 +16,6 @@ use regex::Regex;
 /// A published recipe link associated with a crate.
 #[derive(Clone, Debug, Eq, Ord, PartialEq, PartialOrd)]
 pub struct RecipeLink {
-
     /// The title of the recipe.
     pub title: String,
 

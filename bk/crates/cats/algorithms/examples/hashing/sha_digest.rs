@@ -113,16 +113,15 @@ mod tests {
     /// Reads errors are propagated.
     #[test]
     fn read_errors_are_propagated() {
-
         /// Groups the data required by hashing operations.
         struct Failing;
         impl Read for Failing {
-
             /// Always returns an I/O error to demonstrate digest failure handling.
-///
+            ///
             /// # Arguments
-///
-            /// * `_buf` - Read buffer supplied by the caller; ignored because this reader always fails.
+            ///
+            /// * `_buf` - Read buffer supplied by the caller; ignored because this reader always
+            ///   fails.
             fn read(&mut self, _buf: &mut [u8]) -> std::io::Result<usize> {
                 Err(std::io::Error::other("boom"))
             }

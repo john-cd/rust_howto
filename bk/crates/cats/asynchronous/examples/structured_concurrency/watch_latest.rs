@@ -16,7 +16,6 @@ use tokio::sync::watch;
 /// A configuration published to subscribers.
 #[derive(Debug, PartialEq)]
 struct Config {
-
     /// Protocol version.
     version: u32,
 }

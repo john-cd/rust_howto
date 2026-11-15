@@ -58,7 +58,8 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Parses the optional `--name` and `--age` values, the `--verbose` flag and a free argument, then prints them.
+/// Parses the optional `--name` and `--age` values, the `--verbose` flag and a free argument, then
+/// prints them.
 ///
 /// # Errors
 ///

@@ -40,7 +40,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// This example demonstrates vector operations using the `nalgebra` crate: creating vectors, computing dot and cross products, norm, and normalization.
+/// This example demonstrates vector operations using the `nalgebra` crate: creating vectors,
+/// computing dot and cross products, norm, and normalization.
 pub fn run() {
     main();
 }

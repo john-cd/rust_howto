@@ -9,7 +9,6 @@ use predicates::prelude::*;
 /// A small file record used to demonstrate runtime filtering.
 #[derive(Debug)]
 struct File {
-
     /// The file's name.
     name: String,
 

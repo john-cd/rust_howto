@@ -10,14 +10,12 @@
 
 /// A struct that holds a reference to a string slice.
 struct Excerpt<'a> {
-
     /// The excerpt, borrowed from a longer text.
     part: &'a str,
 }
 
 /// An implementation only defined for the `'static` lifetime.
 impl Excerpt<'static> {
-
     /// A method that exists only when the lifetime is `'static`.
     /// An implementation block for the struct.
     /// The `'_` notation indicates that the struct takes a lifetime parameter,
@@ -31,7 +29,6 @@ impl Excerpt<'static> {
 /// but it does not matter which, because the lifetime is not referenced in the
 /// block.
 impl Excerpt<'_> {
-
     /// Returns a constant level, whatever the lifetime.
     /// A generic implementation block.
     /// Note the lifetime parameter `'a` after `impl`.
@@ -43,7 +40,6 @@ impl Excerpt<'_> {
 /// A generic implementation block.
 /// Note the lifetime parameter `'a` after `impl`.
 impl<'a> Excerpt<'a> {
-
     /// Returns the excerpt with its original lifetime.
     fn part(&self) -> &'a str {
         self.part

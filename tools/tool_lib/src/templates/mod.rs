@@ -104,7 +104,6 @@ mod tests {
     /// Context holding a single string value for formatter tests.
     #[derive(Serialize)]
     struct Value {
-
         /// The vector value stored by this example.
         v: &'static str,
     }

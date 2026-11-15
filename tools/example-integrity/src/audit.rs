@@ -73,14 +73,12 @@ static RUST_FENCE: LazyLock<Regex> = LazyLock::new(|| {
 
 #[derive(Debug, Deserialize)]
 struct CargoMetadata {
-
     /// Collection of packages values consumed by cargo metadata operations.
     packages: Vec<CargoPackage>,
 }
 
 #[derive(Debug, Deserialize)]
 struct CargoPackage {
-
     /// Display label used to distinguish this cargo package from other entries.
     name: String,
 
@@ -93,7 +91,6 @@ struct CargoPackage {
 
 #[derive(Debug, Deserialize)]
 struct CargoTarget {
-
     /// Display label used to distinguish this cargo target from other entries.
     name: String,
 
@@ -114,7 +111,6 @@ struct CargoTarget {
 
 #[derive(Clone, Debug)]
 struct TargetIndex {
-
     /// Record value.
     record: CargoTargetRecord,
 
@@ -124,7 +120,6 @@ struct TargetIndex {
 
 #[derive(Clone, Debug)]
 struct ModuleVisitContext {
-
     /// Source path value.
     source_path: String,
 
@@ -143,7 +138,6 @@ struct ModuleVisitContext {
 
 #[derive(Debug)]
 struct ScanState {
-
     /// Repo root value.
     repo_root: PathBuf,
 
@@ -177,7 +171,6 @@ struct ScanState {
 
 #[derive(Debug)]
 struct IncludeOptions<'a> {
-
     /// Chapter path value.
     chapter_path: &'a str,
 
@@ -286,7 +279,6 @@ pub fn build_report(repo_root: &Path) -> Result<Report> {
 }
 
 impl ScanState {
-
     /// Loads testable Cargo examples and their reachable Rust module graphs.
     fn load_cargo_targets(&mut self) -> Result<()> {
         for workspace in find_workspace_manifests(&self.repo_root)? {
@@ -1675,13 +1667,13 @@ mod tests {
     /// Creates parent directories and writes a UTF-8 test fixture.
     ///
     /// # Arguments
-///
+    ///
     /// * `root` - Temporary root directory for the fixture.
     /// * `path` - Relative fixture path beneath `root`.
     /// * `contents` - Text written to the fixture file.
     ///
     /// # Panics
-///
+    ///
     /// Panics if the parent directory cannot be created or the file cannot be written.
     fn write_fixture(root: &Path, path: &str, contents: &str) {
         let path = root.join(path);

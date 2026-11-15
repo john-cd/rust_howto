@@ -24,7 +24,6 @@ struct QueryRoot;
 
 #[Object]
 impl QueryRoot {
-
     /// Returns a greeting from the GraphQL endpoint.
     async fn hello(&self) -> &'static str {
         "Hello, world!"

@@ -62,7 +62,6 @@ mod my_library {
         /// A type that most clients need.
         #[derive(Debug, Default)]
         pub struct SuperCommonType {
-
             /// Value stored by this wrapper.
             pub value: u32,
         }

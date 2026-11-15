@@ -8,7 +8,6 @@ use serde::Serialize;
 /// A category returned by the crates.io API.
 #[derive(Clone, Eq, PartialEq, PartialOrd, Ord, Hash, Serialize, Debug)]
 pub struct Category {
-
     /// The name of the category.
     pub category: String,
 

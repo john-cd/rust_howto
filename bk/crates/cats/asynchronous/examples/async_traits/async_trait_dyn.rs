@@ -14,7 +14,6 @@ use async_trait::async_trait;
 /// A storage backend, usable as `dyn Store`.
 #[async_trait]
 trait Store: Send + Sync {
-
     /// The name of the backend.
     fn name(&self) -> &'static str;
 
@@ -27,7 +26,6 @@ struct Constant(&'static str);
 
 #[async_trait]
 impl Store for Constant {
-
     /// Names this backend for display in the results.
     fn name(&self) -> &'static str {
         "constant"
@@ -44,7 +42,6 @@ struct Empty;
 
 #[async_trait]
 impl Store for Empty {
-
     /// Names this backend for display in the results.
     fn name(&self) -> &'static str {
         "empty"

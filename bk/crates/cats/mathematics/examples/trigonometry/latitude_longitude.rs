@@ -19,7 +19,6 @@ fn haversine_distance_kilometers(
     latitude2_degrees: f64,
     longitude2_degrees: f64,
 ) -> f64 {
-
     /// Mean radius of Earth in kilometers.
     const EARTH_RADIUS_KILOMETERS: f64 = 6371.0;
 

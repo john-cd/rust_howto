@@ -23,7 +23,8 @@ fn main() -> std::io::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Example of a `main` function returning a `Result`, in this case a specialized `Result` type for I/O operations.
+/// Example of a `main` function returning a `Result`, in this case a specialized `Result` type for
+/// I/O operations.
 ///
 /// # Errors
 ///

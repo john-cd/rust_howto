@@ -23,7 +23,6 @@ mod mylib {
     /// The errors of the library.
     #[derive(Error, Diagnostic, Debug)]
     pub enum MyLibError {
-
         /// A bad thing happened.
         #[error("A bad thing happened!")]
         // Provided by `thisError`.
@@ -49,7 +48,6 @@ mod mylib {
             // The `Source` that we're gonna be printing snippets out of.
             // This can be a `String` if we don't have or care about file
             // names.
-
             /// The source code to print snippets from.
             #[source_code]
             src: NamedSource<String>,
@@ -58,19 +56,16 @@ mod mylib {
             // You may also use `(usize, usize)`, the byte-offset and length
             // into an associated `SourceCode` or
             // `Option<SourceSpan>`.
-
             /// The part of the source code that is highlighted.
             #[label("This bit highlighted here is the problem")]
             bad_bit: SourceSpan,
 
             // Programmatically supply the help text.
-
             /// Help text supplied at run time.
             #[help]
             advice: Option<String>, // Can also be `String`.
 
             // Related errors.
-
             /// Related errors.
             #[related]
             others: Vec<Self>,
@@ -89,7 +84,6 @@ mod mylib {
 
         // Wrap another `Diagnostic`.
         // Use `#[diagnostic(transparent)]` to wrap another `[Diagnostic]`
-
         /// Another error variant of `MyLibError`.
         // You won't see labels otherwise.
 
@@ -103,7 +97,6 @@ mod mylib {
     #[derive(Error, Diagnostic, Debug)]
     #[error("another error")]
     pub struct AnotherError {
-
         /// The location of the error in the source code.
         #[label("here")]
         pub at: SourceSpan,

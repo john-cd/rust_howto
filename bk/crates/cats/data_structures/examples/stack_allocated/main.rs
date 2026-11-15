@@ -20,7 +20,6 @@ mod tinyvec;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -30,7 +29,6 @@ struct Cli {
 #[allow(clippy::enum_variant_names)]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `arrayvec` example.
     #[command(name = "arrayvec")]
     Arrayvec,

@@ -18,7 +18,6 @@ use zeroize::Zeroizing;
 /// `ZeroizeOnDrop` implements `Drop`; `Zeroize` allows an explicit wipe.
 #[derive(Zeroize, ZeroizeOnDrop)]
 struct ApiKey {
-
     /// The raw key bytes.
     bytes: Vec<u8>,
 }

@@ -31,7 +31,6 @@ use tracing_subscriber::util::SubscriberInitExt as _;
 /// The state shared by all the handlers.
 #[derive(Clone)]
 struct AppState {
-
     /// The name displayed by the state example route.
     app_name: &'static str,
 }
@@ -182,13 +181,13 @@ mod tests {
     use super::*;
 
     /// Routes an HTTP request through the example application and returns its status and body.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `request` - HTTP request to send through the example application.
     ///
     /// # Panics
-///
+    ///
     /// Panics if handling the request, collecting its body, or decoding its body as UTF-8 fails.
     async fn send(request: Request<Body>) -> (StatusCode, String) {
         let response = app().oneshot(request).await.expect("infallible");

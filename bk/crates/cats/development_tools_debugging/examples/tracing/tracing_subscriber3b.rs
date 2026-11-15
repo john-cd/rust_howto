@@ -19,7 +19,6 @@ use tracing_subscriber::reload::Handle;
 
 /// Configuration of the logging outputs.
 struct Config {
-
     /// Whether to log to a file.
     enable_log_file: bool,
 
@@ -89,7 +88,8 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Demonstrates how to configure tracing at runtime, - dealing with a variable number of `Layer`s of different types. - reloading the tracing configuration at runtime.
+/// Demonstrates how to configure tracing at runtime, - dealing with a variable number of `Layer`s
+/// of different types. - reloading the tracing configuration at runtime.
 ///
 /// # Errors
 ///

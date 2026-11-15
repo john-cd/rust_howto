@@ -10,7 +10,6 @@
 
 /// Represents a single element in a (highly simplified) linked list.
 struct Node {
-
     /// The value stored in this node.
     value: i32,
 
@@ -20,7 +19,6 @@ struct Node {
 }
 
 impl Node {
-
     /// Creates a node without a successor.
     fn new(value: i32) -> Self {
         Self { value, next: None }

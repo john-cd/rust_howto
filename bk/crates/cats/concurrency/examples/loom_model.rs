@@ -26,7 +26,6 @@ use loom::thread;
 
 /// Shared state of the protocol.
 struct Slot {
-
     /// The published payload (0 means "not published yet").
     value: AtomicU32,
 
@@ -44,7 +43,6 @@ struct Slot {
 }
 
 impl Slot {
-
     /// orderings.
     fn new(publish_order: Ordering, read_order: Ordering) -> Self {
         Self {

@@ -100,19 +100,18 @@ mod tests {
     struct Buf(std::sync::Arc<std::sync::Mutex<Vec<u8>>>);
 
     impl std::io::Write for Buf {
-
         /// Appends formatted tracing bytes to the shared capture buffer.
         ///
         /// # Arguments
-///
+        ///
         /// * `data` - Bytes produced by the formatter.
         ///
         /// # Returns
-///
+        ///
         /// The number of bytes appended.
         ///
         /// # Errors
-///
+        ///
         /// Returns an I/O error if the buffer lock is poisoned.
         fn write(&mut self, data: &[u8]) -> std::io::Result<usize> {
             self.0
@@ -129,7 +128,6 @@ mod tests {
     }
 
     impl<'a> tracing_subscriber::fmt::MakeWriter<'a> for Buf {
-
         /// Writer type returned by this factory.
         type Writer = Self;
 

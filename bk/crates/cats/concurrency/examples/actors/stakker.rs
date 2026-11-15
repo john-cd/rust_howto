@@ -16,13 +16,11 @@ use stakker::*;
 
 /// An actor that holds a running total.
 struct Counter {
-
     /// The running total.
     count: u32,
 }
 
 impl Counter {
-
     /// Creates a counter actor with an initial value of zero.
     fn init(_cx: CX![]) -> Option<Self> {
         Some(Self { count: 0 })

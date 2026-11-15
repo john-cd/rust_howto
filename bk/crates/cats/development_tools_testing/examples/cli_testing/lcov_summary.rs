@@ -16,7 +16,6 @@ use lcov::Record;
 /// Line coverage of one source file.
 #[derive(Debug, PartialEq)]
 struct FileCoverage {
-
     /// Path of the source file.
     path: String,
 

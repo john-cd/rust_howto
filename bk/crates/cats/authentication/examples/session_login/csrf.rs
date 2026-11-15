@@ -77,7 +77,6 @@ async fn show_form(session: Session) -> Result<Html<String>, StatusCode> {
 
 #[derive(Deserialize)]
 struct ChangeEmail {
-
     /// CSRF token checked for this request.
     csrf_token: String,
 
@@ -130,11 +129,11 @@ mod tests {
     /// Collects a response body and decodes it as UTF-8.
     ///
     /// # Arguments
-///
+    ///
     /// * `response` - Response whose body should be read.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if body collection or UTF-8 decoding fails.
     async fn body_of(response: Response<Body>) -> anyhow::Result<String> {
         let bytes = response.into_body().collect().await?.to_bytes();
@@ -167,7 +166,7 @@ mod tests {
     /// Posts a change-email form with its session cookie and CSRF token.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the request cannot be built or sent.
     async fn post(app: &Router, cookie: &str, token: &str) -> anyhow::Result<Response<Body>> {
         let request = Request::post("/change-email")

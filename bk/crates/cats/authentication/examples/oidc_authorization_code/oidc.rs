@@ -72,7 +72,6 @@ const REDIRECT: &str = "https://app.example.test/callback";
 /// Secrets that must survive between the redirect and the callback, and be
 /// used for that single login only.
 struct PendingLogin {
-
     /// Binds the callback to this browser session.
     csrf: CsrfToken,
 
@@ -86,7 +85,6 @@ struct PendingLogin {
 /// What the application learns about the signed-in user.
 #[derive(Debug, PartialEq, Eq)]
 struct Identity {
-
     /// The provider-scoped, stable user identifier (`sub`).
     subject: String,
 
@@ -298,7 +296,6 @@ mod tests {
     /// A login attempt prepared like `main` does, with the fixture pieces
     /// that tests tweak.
     struct Attempt {
-
         /// The client.
         client: Client,
 

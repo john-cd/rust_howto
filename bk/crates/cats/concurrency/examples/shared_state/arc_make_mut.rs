@@ -19,7 +19,6 @@ mod cfg {
     /// A configuration struct to be shared among threads.
     #[derive(Debug, Clone)]
     pub struct Configuration {
-
         /// Address of the server.
         server_address: String,
 
@@ -28,7 +27,6 @@ mod cfg {
     }
 
     impl Configuration {
-
         /// Creates a shared configuration.
         pub fn new(server_address: String, max_connections: u8) -> Arc<Self> {
             Arc::new(Self {
@@ -49,7 +47,7 @@ mod cfg {
         /// Updates the configuration, cloning it first if other `Arc` pointers
         ///
         /// # Arguments
-///
+        ///
         /// to it exist (clone-on-write).
         pub fn update(self: &mut Arc<Self>, server_address: String, max_connections: u8) {
             // If there are other `Arc` pointers to the same allocation,

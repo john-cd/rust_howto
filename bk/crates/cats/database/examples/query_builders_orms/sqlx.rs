@@ -19,7 +19,6 @@ use sqlx::sqlite::SqlitePoolOptions;
 /// A row of the `users` table.
 #[derive(sqlx::FromRow, Debug, PartialEq, Eq)] // Derive FromRow to map database rows to this struct
 struct User {
-
     /// The identifier.
     id: i32,
 

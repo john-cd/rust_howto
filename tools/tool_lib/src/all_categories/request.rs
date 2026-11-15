@@ -13,7 +13,8 @@ static CATEGORIES_URL: &str = "https://raw.githubusercontent.com/rust-lang/crate
 ///
 /// # Errors
 ///
-/// Returns an error if the categories URL is invalid, the request or response read fails, or the server returns an unsuccessful status.
+/// Returns an error if the categories URL is invalid, the request or response read fails, or the
+/// server returns an unsuccessful status.
 pub(super) fn get_categories_toml_string() -> Result<String> {
     get_categories_toml_string_from_url(CATEGORIES_URL)
 }

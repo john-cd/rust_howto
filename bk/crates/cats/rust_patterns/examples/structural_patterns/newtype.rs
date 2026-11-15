@@ -14,7 +14,6 @@
 struct UserId(u64);
 
 impl UserId {
-
     /// Creates an identifier and rejects the reserved zero value.
     fn new(value: u64) -> anyhow::Result<Self> {
         anyhow::ensure!(value != 0, "user identifiers must be nonzero");

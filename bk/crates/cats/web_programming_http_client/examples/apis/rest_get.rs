@@ -17,7 +17,6 @@ use serde::Deserialize;
 /// Represents a GitHub user with their login and ID.
 #[derive(Deserialize, Debug, Eq, PartialEq)]
 struct User {
-
     /// The user's login name on GitHub.
     login: String,
 

@@ -19,7 +19,6 @@ use url::Url;
 ///
 /// Returns the joined `Url`, or a parse error if the base or path is invalid.
 fn build_github_url(path: &str) -> Result<Url, ParseError> {
-
     /// GitHub base URL used to demonstrate URL parsing and joining.
     const GITHUB: &str = "https://github.com/";
 

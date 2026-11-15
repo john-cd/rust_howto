@@ -10,7 +10,6 @@
 
 /// A tree whose leaves are values and whose groups sum child expressions.
 enum Expression {
-
     /// A numeric leaf value.
     Value(i64),
 

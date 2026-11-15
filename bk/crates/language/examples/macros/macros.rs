@@ -64,7 +64,6 @@ fn use_thread_local() {
 /// Defines a constant `CONST` of the given type and value.
 macro_rules! const_maker {
     ($t:ty, $v:tt) => {
-
         /// Constant emitted by the macro with the caller-supplied type and
         /// value.
         const CONST: $t = $v;

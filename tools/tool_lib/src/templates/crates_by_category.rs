@@ -28,7 +28,6 @@ const CATEGORY_PAGE_FOOTER: &str = "\n[All Valid Categories][crates.io~category_
 /// The categories file.
 #[derive(Deserialize)]
 struct CategoryCatalog {
-
     /// The categories.
     categories: Vec<CategoryRecord>,
 }
@@ -36,7 +35,6 @@ struct CategoryCatalog {
 /// A category and its crates.
 #[derive(Deserialize)]
 struct CategoryRecord {
-
     /// Name of the category.
     category: String,
 

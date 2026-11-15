@@ -25,18 +25,16 @@ use html5ever::tokenizer::Tokenizer;
 /// A token sink that prints the tokens of an HTML document.
 #[derive(Clone)]
 struct TokenPrinter {
-
     /// Whether the previous token was a character, so that consecutive
     /// characters are printed as one text.
     in_char_run: Cell<bool>,
 }
 
 impl TokenPrinter {
-
     /// Updates text-run output when the next token changes character kind.
     ///
     /// # Arguments
-///
+    ///
     /// * `is_char` - Whether the next token contains character data.
     fn is_char(&self, is_char: bool) {
         match (self.in_char_run.get(), is_char) {
@@ -49,7 +47,6 @@ impl TokenPrinter {
 }
 
 impl TokenSink for TokenPrinter {
-
     /// Handle value returned after each token is processed.
     type Handle = ();
 

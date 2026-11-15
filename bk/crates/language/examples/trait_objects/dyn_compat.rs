@@ -17,7 +17,6 @@ use std::sync::Arc;
 
 /// A trait that is not dyn compatible, because it has an associated constant.
 trait NotObjectSafe {
-
     /// An associated constant.
     const CONST: usize = 10;
 }
@@ -27,7 +26,6 @@ trait NotObjectSafe {
 /// A trait that is not dyn compatible, because it has a generic associated
 /// type.
 trait NotObjectSafe2 {
-
     /// A generic associated type.
     type Item<T>;
 }
@@ -54,7 +52,6 @@ trait NotObjectSafe4 {
 
 /// A trait that is not dyn compatible, because a method returns `Self`.
 trait NotObjectSafe5 {
-
     /// Returns a copy of `self`.
     fn clone_me(&self) -> Self; // Returns `Self`, not object-safe if `Self` is not `Sized`.
 }
@@ -63,7 +60,6 @@ trait NotObjectSafe5 {
 
 /// A trait that is not dyn compatible, because a method returns `Box<Self>`.
 trait NotObjectSafe6 {
-
     /// Returns a boxed copy of `self`.
     fn clone_boxed(&self) -> Box<Self>;
 }
@@ -73,7 +69,6 @@ trait NotObjectSafe6 {
 
 /// A dyn-compatible trait that can clone itself.
 trait ObjectSafeClone {
-
     /// Returns a boxed copy of `self`, as a trait object.
     fn clone_boxed(&self) -> Box<dyn ObjectSafeClone>;
 }
@@ -82,7 +77,6 @@ trait ObjectSafeClone {
 
 /// A circle.
 struct Circle {
-
     /// The radius of the circle.
     radius: f64,
 }
@@ -302,7 +296,6 @@ mod tests {
     /// The associated constant has its default.
     #[test]
     fn test_const_default() {
-
         /// Groups the data required by trait objects operations.
         struct S;
         impl NotObjectSafe for S {}

@@ -44,7 +44,6 @@ const CHALLENGE_LIFETIME: Duration = Duration::from_mins(2);
 /// The user handle (`id`) is what authenticators store. It must not reveal
 /// the user name or e-mail address.
 struct Account {
-
     /// The user handle: random and never reused.
     id: Uuid,
 
@@ -54,7 +53,6 @@ struct Account {
 
 /// A challenge in flight, usable once before `expires`.
 struct Pending<T> {
-
     /// The account the ceremony belongs to.
     user: String,
 
@@ -72,7 +70,6 @@ struct Pending<T> {
 /// `danger-allow-state-serialisation` feature, because the state contains
 /// the secret challenge and must never reach the client).
 struct RelyingParty {
-
     /// The library verifier, fixed to one RP ID and one origin.
     webauthn: Webauthn,
 
@@ -87,11 +84,10 @@ struct RelyingParty {
 }
 
 impl RelyingParty {
-
     /// Creates a relying party for the given RP ID and origin.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the relying-party ID or origin is invalid for WebAuthn configuration.
     fn new(rp_id: &str, origin: &Url) -> Result<Self> {
         let webauthn = WebauthnBuilder::new(rp_id, origin)?
@@ -108,7 +104,7 @@ impl RelyingParty {
     /// Starts a registration ceremony and returns its ticket and browser-facing options.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if WebAuthn cannot create registration options for the user.
     fn start_registration(
         &mut self,
@@ -170,7 +166,7 @@ impl RelyingParty {
     /// `navigator.credentials.get`.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the start authentication operation cannot satisfy its required
     /// invariants.
     fn start_authentication(
@@ -228,7 +224,7 @@ impl RelyingParty {
 fn main() -> Result<()> {
     let origin = Url::parse("https://example.com")?;
     let mut rp = RelyingParty::new("example.com", &origin)?;
-    let mut device = WebauthnAuthenticator::new(SoftPasskey::new(true));
+    let mut device = SoftPasskey::new(true);
     let now = Instant::now();
 
     let (ticket, options) = rp.start_registration("alice", now)?;
@@ -265,12 +261,11 @@ mod tests {
 
     /// A relying party, a software device and the origin they share.
     struct Setup {
-
         /// Relying party that validates the passkey.
         rp: RelyingParty,
 
         /// Authenticator used for the passkey exchange.
-        device: WebauthnAuthenticator<SoftPasskey>,
+        device: SoftPasskey,
 
         /// Expected origin for authentication requests.
         origin: Url,
@@ -284,7 +279,7 @@ mod tests {
         let origin = Url::parse("https://example.com").expect("valid URL");
         Setup {
             rp: RelyingParty::new("example.com", &origin).expect("valid RP"),
-            device: WebauthnAuthenticator::new(SoftPasskey::new(true)),
+            device: SoftPasskey::new(true),
             origin,
             now: Instant::now(),
         }

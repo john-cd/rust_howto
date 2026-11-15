@@ -29,7 +29,6 @@ use tokio_postgres::NoTls;
 /// Configuration for the application.
 #[derive(Debug, serde::Deserialize)]
 struct Config {
-
     /// The settings of the PostgreSQL connection pool.
     #[serde(default)]
     pub pg: deadpool_postgres::Config,
@@ -136,7 +135,6 @@ mod tests {
     #[tokio::test]
     #[ignore = "requires a reachable PostgreSQL service and PG__* environment variables"]
     async fn serves_concurrent_queries_through_the_pool() -> anyhow::Result<()> {
-
         /// Maximum number of PostgreSQL connections in the test pool.
         const MAX_POOL_SIZE: usize = 8;
 

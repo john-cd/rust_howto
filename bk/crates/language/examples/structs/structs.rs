@@ -10,7 +10,6 @@
 /// `sign_in_count`.
 #[derive(Debug)]
 struct User {
-
     /// Whether the user is active.
     active: bool,
 
@@ -47,7 +46,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// The `main` function creates an instance of the `User` struct. It then prints the struct to the console.
+/// The `main` function creates an instance of the `User` struct. It then prints the struct to the
+/// console.
 pub fn run() {
     main();
 }

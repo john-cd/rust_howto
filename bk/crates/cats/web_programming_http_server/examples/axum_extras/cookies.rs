@@ -67,11 +67,11 @@ mod tests {
     /// Reads an Axum response body as UTF-8 text.
     ///
     /// # Arguments
-///
+    ///
     /// * `response` - Response whose body should be collected.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if collecting the body or decoding UTF-8 fails.
     async fn body(response: axum::response::Response) -> anyhow::Result<String> {
         let bytes = response.into_body().collect().await?.to_bytes();

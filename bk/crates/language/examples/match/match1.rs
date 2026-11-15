@@ -11,7 +11,6 @@
 /// Each variant represents a type of US coin.
 enum Coin {
     // Unit-like variants (no fields):
-
     /// A penny.
     Penny,
 

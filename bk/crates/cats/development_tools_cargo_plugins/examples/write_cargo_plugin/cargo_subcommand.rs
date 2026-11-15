@@ -16,7 +16,6 @@ use clap::Parser;
 #[derive(Parser)]
 #[command(name = "cargo", bin_name = "cargo")]
 enum CargoCli {
-
     /// Say hello to the selected packages.
     Hello(HelloArgs),
 }
@@ -24,7 +23,6 @@ enum CargoCli {
 /// The arguments of `cargo hello`.
 #[derive(Args)]
 struct HelloArgs {
-
     /// `-p`, `--workspace` and `--exclude`, as in cargo itself.
     #[command(flatten)]
     workspace: clap_cargo::Workspace,

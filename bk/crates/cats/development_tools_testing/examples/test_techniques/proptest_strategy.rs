@@ -10,7 +10,6 @@
 /// A closed range of whole numbers with `start <= end`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 struct Span {
-
     /// Start of the selected range.
     start: i32,
 
@@ -19,16 +18,15 @@ struct Span {
 }
 
 impl Span {
-
     /// Returns `None` when `start > end`.
     fn new(start: i32, end: i32) -> Option<Self> {
         (start <= end).then_some(Self { start, end })
     }
 
     /// Returns the inclusive number of integers in the range.
-///
+    ///
     /// # Panics
-///
+    ///
     /// Panics if `start <= end` guarantees a positive length.
     fn len(&self) -> u64 {
         u64::try_from(i64::from(self.end) - i64::from(self.start) + 1)

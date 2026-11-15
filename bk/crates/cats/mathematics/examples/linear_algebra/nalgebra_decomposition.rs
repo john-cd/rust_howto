@@ -46,7 +46,10 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// This example demonstrates matrix decompositions using the `nalgebra` crate. Singular Value Decomposition (SVD) factorizes a matrix M into U * Σ * Vᵀ, where U and V are orthogonal matrices and Σ is a diagonal matrix of singular values. SVD has applications in dimensionality reduction, pseudoinverse computation, and solving least-squares problems.
+/// This example demonstrates matrix decompositions using the `nalgebra` crate. Singular Value
+/// Decomposition (SVD) factorizes a matrix M into U * Σ * Vᵀ, where U and V are orthogonal matrices
+/// and Σ is a diagonal matrix of singular values. SVD has applications in dimensionality reduction,
+/// pseudoinverse computation, and solving least-squares problems.
 pub fn run() {
     main();
 }

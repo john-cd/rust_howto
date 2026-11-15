@@ -11,13 +11,11 @@
 /// In this example, we simply wrap a `Vec`.
 #[derive(Debug)]
 struct MyVec<T> {
-
     /// The items of the collection.
     data: Vec<T>,
 }
 
 impl<T> MyVec<T> {
-
     /// Constructor.
     fn new() -> Self {
         Self { data: Vec::new() }
@@ -31,10 +29,8 @@ impl<T> MyVec<T> {
 
 /// Implementation of `IntoIterator`.
 impl<T> IntoIterator for MyVec<T> {
-
     /// Associated type for the iterator.
     type IntoIter = MyVecIntoIterator<T>;
-
     /// Type of the elements that the iterator will yield.
     type Item = T;
 
@@ -49,7 +45,6 @@ impl<T> IntoIterator for MyVec<T> {
 /// It must implement the `Iterator` trait.
 #[derive(Debug)]
 struct MyVecIntoIterator<T> {
-
     /// The remaining items.
     data: Vec<T>,
     // Iterator types often store indices to track the progress of the

@@ -88,7 +88,6 @@ fn read_and_parse_file(file_path: &str) -> Result<i32, MyError> {
 /// An error that wraps I/O and parsing errors.
 #[derive(Debug)]
 enum MyError {
-
     /// An I/O error.
     Io(io::Error),
 
@@ -101,7 +100,6 @@ impl std::error::Error for MyError {}
 // Implementing the `Error` trait requires that `Debug` and `Display` are
 // implemented too.
 impl std::fmt::Display for MyError {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -113,11 +111,10 @@ impl std::fmt::Display for MyError {
 
 // We should also implement the `From` trait:
 impl From<io::Error> for MyError {
-
     /// Wraps an I/O error in the example error type.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `err` - Underlying failure whose details are preserved or converted into the returned
     ///   error.
     fn from(err: io::Error) -> Self {
@@ -126,11 +123,10 @@ impl From<io::Error> for MyError {
 }
 
 impl From<ParseIntError> for MyError {
-
     /// Wraps a parse-integer error in the example error type.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `err` - Underlying failure whose details are preserved or converted into the returned
     ///   error.
     fn from(err: ParseIntError) -> Self {
@@ -147,7 +143,6 @@ impl From<ParseIntError> for MyError {
 /// An error that wraps I/O and parsing errors, defined with `thiserror`.
 #[derive(thiserror::Error, Debug)]
 enum MyError2 {
-
     /// An I/O error.
     #[error("Io error")]
     Io(#[from] io::Error),

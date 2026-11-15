@@ -13,7 +13,6 @@ use serde::Serialize;
 /// A struct that is serialized to and deserialized from MessagePack.
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 struct MyData {
-
     /// The name.
     name: String,
 

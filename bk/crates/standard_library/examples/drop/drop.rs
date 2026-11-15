@@ -11,7 +11,6 @@
 
 /// A struct that prints a message when it is dropped.
 struct CustomStruct {
-
     /// Some data.
     data: String,
 }
@@ -74,7 +73,6 @@ mod tests {
 
     /// Same shape as `CustomStruct`, but records when it is dropped.
     struct Recorder {
-
         /// Display label used to distinguish this recorder from other entries.
         name: &'static str,
 
@@ -83,7 +81,6 @@ mod tests {
     }
 
     impl Drop for Recorder {
-
         /// Releases the resources owned by this value.
         fn drop(&mut self) {
             self.log.borrow_mut().push(self.name);

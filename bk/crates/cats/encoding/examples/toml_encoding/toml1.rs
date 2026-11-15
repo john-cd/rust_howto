@@ -16,7 +16,6 @@ use toml::de::Error;
 /// The configuration.
 #[derive(Deserialize, Debug)]
 struct Config {
-
     /// The package settings.
     package: Package,
 
@@ -27,7 +26,6 @@ struct Config {
 /// The settings of a package.
 #[derive(Deserialize, Debug)]
 struct Package {
-
     /// The name of the package.
     name: String,
 

@@ -120,7 +120,9 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// This example demonstrates the basic usage of the `flurry::HashMap` for concurrent data access. It showcases how to insert, read, remove, and iterate over the map, both sequentially and concurrently.
+/// This example demonstrates the basic usage of the `flurry::HashMap` for concurrent data access.
+/// It showcases how to insert, read, remove, and iterate over the map, both sequentially and
+/// concurrently.
 ///
 /// # Errors
 ///

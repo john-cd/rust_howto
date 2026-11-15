@@ -45,7 +45,6 @@ fn main() {
 /// A struct with a flag.
 #[derive(Debug)]
 struct MyStruct {
-
     /// The flag.
     flag: bool,
 }

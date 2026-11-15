@@ -74,7 +74,6 @@ mod tests {
 
     #[derive(serde::Serialize)]
     struct Context {
-
         /// Display label used to distinguish this context from other entries.
         name: &'static str,
 
@@ -86,9 +85,9 @@ mod tests {
     }
 
     /// Renders the greeting template using the supplied flag value.
-///
+    ///
     /// # Panics
-///
+    ///
     /// Panics if valid template.
     fn render(flag: bool) -> String {
         let mut tt = TinyTemplate::new();

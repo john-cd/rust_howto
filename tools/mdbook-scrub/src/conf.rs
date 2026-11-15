@@ -13,7 +13,6 @@ use serde::Serialize;
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(default, rename_all = "kebab-case")]
 pub(crate) struct PreprocConfig {
-
     /// Whether HTML elements with the `hidden` class are removed from the book.
     pub remove_hidden_sections: bool,
 
@@ -25,7 +24,6 @@ pub(crate) struct PreprocConfig {
 }
 
 impl Default for PreprocConfig {
-
     /// Returns settings that remove hidden sections and omit hidden chapters by default.
     fn default() -> Self {
         Self {
@@ -40,7 +38,6 @@ impl Default for PreprocConfig {
 #[derive(Debug, Clone, Default, Serialize, Deserialize, PartialEq)]
 #[serde(default)]
 pub(crate) struct DirectivePreprocConfig {
-
     /// Directive values parsed from the preprocessor configuration table.
     #[serde(flatten)]
     pub directives: book_tool::directives::Config,

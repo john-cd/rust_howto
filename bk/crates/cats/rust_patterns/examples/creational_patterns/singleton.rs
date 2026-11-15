@@ -13,13 +13,11 @@ use std::sync::OnceLock;
 
 /// Application settings, shared as a singleton.
 struct Settings {
-
     /// The configuration value.
     config_value: String,
 }
 
 impl Settings {
-
     /// Creates settings with the given configuration value.
     fn new(value: String) -> Self {
         Self {

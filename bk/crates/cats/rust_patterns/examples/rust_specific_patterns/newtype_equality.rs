@@ -15,7 +15,6 @@ use std::hash::Hasher;
 /// How a phone number is displayed.
 #[derive(Debug, Clone, Copy)]
 enum Style {
-
     /// `+1 555 0100`
     International,
 
@@ -26,7 +25,6 @@ enum Style {
 /// A phone number: the digits matter, the display style does not.
 #[derive(Debug, Clone)]
 struct PhoneNumber {
-
     /// Country calling code.
     country_code: u8,
 
@@ -46,11 +44,10 @@ impl PartialEq for PhoneNumber {
 impl Eq for PhoneNumber {}
 
 impl Hash for PhoneNumber {
-
     /// Feeds the phone number fields into the supplied hasher.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `state` - Shared state and services used to complete the newtype_equality workflow.
     fn hash<H: Hasher>(&self, state: &mut H) {
         // Hash exactly the fields used by `eq`.
@@ -60,7 +57,6 @@ impl Hash for PhoneNumber {
 }
 
 impl fmt::Display for PhoneNumber {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self.style {

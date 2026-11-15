@@ -23,7 +23,6 @@ use der::Sequence;
 /// A sequence of two fields, encoded as a DER `SEQUENCE`.
 #[derive(Debug, PartialEq, Sequence)]
 struct MyStruct {
-
     /// The first field.
     field1: u32,
 

@@ -12,7 +12,6 @@
 
 /// A thing that can speak.
 trait Speak {
-
     /// Returns what the animal says.
     fn speak(&self) -> String;
 }

@@ -14,7 +14,6 @@
 /// and `PartialEq` and `Eq` for equality comparisons.
 #[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
 struct Person {
-
     /// The person's name.
     name: String,
 
@@ -23,7 +22,6 @@ struct Person {
 }
 
 impl Person {
-
     /// Constructor for creating a new `Person` instance.
     fn new(name: String, age: u32) -> Self {
         Self { name, age }

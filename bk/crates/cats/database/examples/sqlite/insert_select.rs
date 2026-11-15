@@ -19,7 +19,6 @@ use rusqlite::Result;
 /// A cat.
 #[derive(Debug)]
 struct Cat {
-
     /// The name of the cat.
     name: String,
 

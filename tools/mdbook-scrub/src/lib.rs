@@ -28,7 +28,6 @@ use tracing::info;
 /// The stage of the preprocessor.
 #[derive(Clone, Copy)]
 enum Stage {
-
     /// Removes hidden sections and includes of hidden chapters, before mdBook
     /// links the chapters.
     Scrub,
@@ -39,13 +38,11 @@ enum Stage {
 
 /// The book preprocessor, configured for either its pre-link scrub or directive stage.
 pub struct Preproc {
-
     /// The stage to run.
     stage: Stage,
 }
 
 impl Preproc {
-
     /// Create the pre-link stage that removes hidden includes and sections.
     #[must_use]
     pub fn new() -> Self {
@@ -73,16 +70,16 @@ impl Preproc {
     /// Removes configured hidden sections and hidden chapter includes from the book.
     ///
     /// # Arguments
-///
+    ///
     /// * `ctx` - mdBook context containing the scrub configuration.
     /// * `book` - Book whose chapter content is updated.
     ///
     /// # Returns
-///
+    ///
     /// The book with matching hidden content removed.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the scrub configuration cannot be read.
     fn run_scrub(&self, ctx: &PreprocessorContext, mut book: Book) -> Result<Book> {
         let conf = ctx
@@ -174,7 +171,6 @@ impl Preproc {
 }
 
 impl Default for Preproc {
-
     /// Returns a preprocessor with its default configuration.
     fn default() -> Self {
         Self::new()
@@ -182,7 +178,6 @@ impl Default for Preproc {
 }
 
 impl Preprocessor for Preproc {
-
     /// Returns the preprocessor stage name.
     fn name(&self) -> &str {
         self.config_key()
@@ -193,16 +188,16 @@ impl Preprocessor for Preproc {
     /// Preprocesses the book according to the configured stage.
     ///
     /// # Arguments
-///
+    ///
     /// * `ctx` - mdBook context for the active preprocessor stage.
     /// * `book` - Book to preprocess.
     ///
     /// # Returns
-///
+    ///
     /// The preprocessed book.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if stage configuration or directive processing fails.
     fn run(&self, ctx: &PreprocessorContext, book: Book) -> Result<Book> {
         info!("Running `{}` mdBook preprocessor", self.name());

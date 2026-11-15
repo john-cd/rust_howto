@@ -134,7 +134,8 @@ fn demo_arrays() {
 }
 // ANCHOR_END: example
 
-/// Demonstrates the use of tuples and arrays in Rust, including their declaration, access, destructuring, iteration, and mutation.
+/// Demonstrates the use of tuples and arrays in Rust, including their declaration, access,
+/// destructuring, iteration, and mutation.
 pub fn run() {
     main();
 }

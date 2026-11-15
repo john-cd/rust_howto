@@ -24,11 +24,11 @@ impl CostFunction for Rosenbrock {
     /// Evaluates the Rosenbrock objective at the supplied point.
     ///
     /// # Arguments
-///
+    ///
     /// * `p` - Two-dimensional point `[x, y]` to evaluate.
     ///
     /// # Returns
-///
+    ///
     /// The Rosenbrock objective value at `p`.
     fn cost(&self, p: &Self::Param) -> Result<Self::Output, Error> {
         let (x, y) = (p[0], p[1]);

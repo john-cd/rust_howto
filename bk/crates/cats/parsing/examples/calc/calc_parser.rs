@@ -84,7 +84,6 @@ enum Expr<'a> {
 
 /// Parser over a token vector; `pos` is the next token to read.
 struct ExprParser<'a> {
-
     /// Collection of tokens values consumed by expr parser operations.
     tokens: Vec<Spanned<'a>>,
 
@@ -96,11 +95,10 @@ struct ExprParser<'a> {
 }
 
 impl<'a> ExprParser<'a> {
-
     /// Creates a parser positioned at the first token and limited by the supplied end index.
     ///
     /// # Arguments
-///
+    ///
     /// * `tokens` - Spanned tokens to parse.
     /// * `end` - Exclusive end index for the parser's token range.
     fn new(tokens: Vec<Spanned<'a>>, end: usize) -> Self {

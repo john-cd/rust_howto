@@ -23,11 +23,9 @@ pub(super) static RBE: &str = "
 ///
 /// Returns an error if the badge template cannot be loaded or rendered.
 pub fn create_rbe_badge(concept: &str) -> Result<String> {
-
     /// Template data used to render a Rust By Example badge.
     #[derive(Serialize)]
     struct RbeContext {
-
         /// The concept demonstrated by the example.
         concept: String,
     }

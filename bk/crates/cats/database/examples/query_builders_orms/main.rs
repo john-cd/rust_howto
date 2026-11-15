@@ -23,7 +23,6 @@ mod sqlx;
 #[cfg(any(feature = "diesel", feature = "sea_orm", feature = "sqlx"))]
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -33,7 +32,6 @@ struct Cli {
 #[cfg(any(feature = "diesel", feature = "sea_orm", feature = "sqlx"))]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `diesel1` example.
     #[cfg(feature = "diesel")]
     #[command(name = "diesel1")]

@@ -14,7 +14,6 @@ use syn::visit::Visit;
 /// A call to `unwrap` or `expect`.
 #[derive(Debug, PartialEq)]
 struct Finding {
-
     /// Name of the method call (`unwrap` or `expect`).
     method: String,
 
@@ -24,7 +23,6 @@ struct Finding {
 
 #[derive(Default)]
 struct UnwrapFinder {
-
     /// Calls to `unwrap` and `expect` found in the parsed source.
     findings: Vec<Finding>,
 }

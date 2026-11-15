@@ -12,7 +12,6 @@ use std::collections::BTreeSet;
 
 /// The set operation results for the two topic sets.
 struct SetComparison {
-
     /// Elements present in both sets.
     shared: BTreeSet<&'static str>,
 

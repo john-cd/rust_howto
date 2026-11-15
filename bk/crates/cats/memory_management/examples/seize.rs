@@ -110,7 +110,6 @@ mod tests {
         static DROPPED: AtomicUsize = AtomicUsize::new(0);
         struct Tracked(i32);
         impl Drop for Tracked {
-
             /// Releases the resources owned by this value.
             fn drop(&mut self) {
                 DROPPED.fetch_add(1, Ordering::SeqCst);

@@ -29,7 +29,6 @@ mod return_reference;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -38,7 +37,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `diverging_functions` example.
     #[command(name = "diverging_functions")]
     DivergingFunctions,

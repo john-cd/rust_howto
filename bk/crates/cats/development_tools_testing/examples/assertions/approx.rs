@@ -42,7 +42,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// `approx` provides facilities for testing the approximate equality of floating-point based types, which are subject to rounding errors. It is commonly used in tests.
+/// `approx` provides facilities for testing the approximate equality of floating-point based types,
+/// which are subject to rounding errors. It is commonly used in tests.
 pub fn run() {
     main();
 }

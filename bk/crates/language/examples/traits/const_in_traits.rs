@@ -6,7 +6,6 @@
 
 /// A trait demonstrating the use of associated constants.
 trait Example {
-
     /// An associated constant without a default value.
     ///
     /// Implementors of this trait must provide a value for this constant.
@@ -22,7 +21,6 @@ trait Example {
 struct S;
 
 impl Example for S {
-
     /// Shared `const no default` used by this module.
     const CONST_NO_DEFAULT: i32 = 0;
 }

@@ -25,7 +25,6 @@ impl Message for Add {
 
 /// An actor that owns a running total.
 struct Counter {
-
     /// The total after processing the last message.
     total: u64,
 }

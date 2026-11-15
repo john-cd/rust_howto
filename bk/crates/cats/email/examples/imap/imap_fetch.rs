@@ -26,7 +26,6 @@ use tokio_native_tls::TlsConnector;
 /// A message reduced to the fields we care about.
 #[derive(Debug, PartialEq, Eq)]
 pub struct Summary {
-
     /// Subject name from the certificate.
     pub subject: String,
 

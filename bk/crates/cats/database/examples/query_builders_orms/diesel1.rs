@@ -33,7 +33,6 @@ table! {
 #[diesel(table_name = users)]
 #[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 struct User {
-
     /// The database-generated identifier.
     id: i32,
 
@@ -48,7 +47,6 @@ struct User {
 #[derive(Insertable)]
 #[diesel(table_name = users)]
 struct NewUser<'a> {
-
     /// The user's display name.
     name: &'a str,
 

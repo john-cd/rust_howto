@@ -50,7 +50,6 @@ fn cast() {
 #[repr(C)]
 #[derive(Debug, Clone, Copy, NoUninit, AnyBitPattern)]
 struct MyStruct {
-
     /// A number.
     x: i32,
 

@@ -31,7 +31,8 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Builds the subject, serial number and validity of an X.509 certificate and prints their DER lengths.
+/// Builds the subject, serial number and validity of an X.509 certificate and prints their DER
+/// lengths.
 ///
 /// # Errors
 ///

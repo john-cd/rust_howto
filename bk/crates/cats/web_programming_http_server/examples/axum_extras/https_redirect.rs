@@ -18,7 +18,6 @@ use axum_extra::headers::Host as HostHeader;
 /// Ports of the plain HTTP and HTTPS listeners.
 #[derive(Clone, Copy, Debug)]
 pub struct Ports {
-
     /// HTTP port used by the local endpoint.
     pub http: u16,
 

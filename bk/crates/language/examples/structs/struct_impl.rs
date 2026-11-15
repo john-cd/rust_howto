@@ -6,7 +6,6 @@
 
 /// A struct representing a rectangle with a width and height.
 struct Rectangle {
-
     /// Width of the rectangle.
     width: u32,
 
@@ -16,7 +15,6 @@ struct Rectangle {
 
 /// Implementation block (multiple blocks are allowed for a given struct).
 impl Rectangle {
-
     /// Method: note the parameter that references `Self`, an alias
     /// for the type that the `impl` block is for, in this case `Rectangle`.
     /// Associated Function.

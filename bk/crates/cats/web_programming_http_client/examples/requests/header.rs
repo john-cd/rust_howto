@@ -18,7 +18,6 @@ use serde::Deserialize;
 /// State required by `HeadersEcho` during transport operations.
 #[derive(Deserialize, Debug)]
 pub struct HeadersEcho {
-
     /// A map of header names to their values.
     pub headers: HashMap<String, String>,
 }

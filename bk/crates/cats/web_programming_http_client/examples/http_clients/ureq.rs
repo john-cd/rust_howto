@@ -29,7 +29,8 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// This example demonstrates a simple HTTP GET request using the `ureq` crate. It fetches data from a public API endpoint and prints the response.
+/// This example demonstrates a simple HTTP GET request using the `ureq` crate. It fetches data from
+/// a public API endpoint and prints the response.
 ///
 /// # Errors
 ///

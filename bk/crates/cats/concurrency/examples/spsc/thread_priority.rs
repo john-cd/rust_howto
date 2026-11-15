@@ -27,7 +27,6 @@ const TOTAL: usize = 500;
 /// What the consumer thread reports back.
 #[derive(Debug)]
 struct Report {
-
     /// Whether the operating system accepted the requested priority.
     priority_granted: bool,
 

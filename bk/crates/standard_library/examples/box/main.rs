@@ -23,7 +23,6 @@ mod box_trait_objects;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -33,7 +32,6 @@ struct Cli {
 #[allow(clippy::enum_variant_names)]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `box_basics` example.
     #[command(name = "box_basics")]
     BoxBasics,

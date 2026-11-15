@@ -18,7 +18,6 @@ use serde::Serialize;
 /// A person, serialized to and from JSON.
 #[derive(Serialize, Deserialize, Debug, PartialEq, Eq)]
 struct Person {
-
     /// Name of the person.
     name: String,
 

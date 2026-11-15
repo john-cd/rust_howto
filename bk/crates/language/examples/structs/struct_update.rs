@@ -7,7 +7,6 @@
 /// Represents a user with their active status and username.
 #[derive(Debug)]
 struct User {
-
     /// Whether the user is active.
     active: bool,
 

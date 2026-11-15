@@ -20,7 +20,6 @@ use postgres::types::ToSql;
 
 /// Represents an author with an ID, name, and country.
 struct Author {
-
     /// The identifier.
     _id: i32,
 

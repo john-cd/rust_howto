@@ -14,7 +14,6 @@
 #[macro_export]
 macro_rules! regex {
     ($re:literal $(,)?) => {{
-
         /// Lazily compiled regular expression shared by the utility functions.
         static RE: once_cell::sync::OnceCell<regex::Regex> = once_cell::sync::OnceCell::new();
         RE.get_or_init(|| regex::Regex::new($re).expect("regex! requires a valid pattern"))

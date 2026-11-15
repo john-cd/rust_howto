@@ -11,7 +11,6 @@ use thiserror::Error;
 /// A custom error type that wraps an underlying `std::io::Error`.
 #[derive(Error, Debug)]
 pub struct MyError {
-
     /// A message that describes the error.
     msg: String,
 
@@ -21,7 +20,6 @@ pub struct MyError {
     // error. `#[from]` implies `#[source]`. Any error type that implements
     // `std::error::Error` or dereferences to `dyn std::error::Error` will work
     // as a source.
-
     /// The underlying I/O error.
     #[source]
     source: std::io::Error,
@@ -32,7 +30,6 @@ pub struct MyError {
 /// Implement the `Display` trait for `MyError` to customize its string
 /// representation.
 impl std::fmt::Display for MyError {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
         write!(f, "{}", self.msg)

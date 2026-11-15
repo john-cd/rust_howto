@@ -20,7 +20,6 @@ use walkdir::WalkDir;
 #[derive(Parser, Debug)]
 #[clap(version)]
 struct Args {
-
     /// Root of the directory tree to search for `temp` folders.
     #[clap(help = "Path to the directory to clean.")]
     directory: PathBuf,

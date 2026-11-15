@@ -21,7 +21,6 @@ pub(crate) struct Symbol(u32);
 /// Owns the interned strings.
 #[derive(Default)]
 pub(crate) struct Interner {
-
     /// Collection of ids values consumed by interner operations.
     ids: HashMap<String, u32>,
 
@@ -30,7 +29,6 @@ pub(crate) struct Interner {
 }
 
 impl Interner {
-
     /// Returns the symbol for `s`, adding it on first use.
     pub(crate) fn intern(&mut self, s: &str) -> Symbol {
         if let Some(&id) = self.ids.get(s) {

@@ -103,7 +103,7 @@ mod tests {
     /// Reads an HTTP request from `stream` through its declared body length.
     ///
     /// # Errors
-///
+    ///
     /// Returns an I/O error if reading fails or a header or body length is invalid.
     fn read_request(stream: &mut TcpStream) -> io::Result<Vec<u8>> {
         let mut request = Vec::new();

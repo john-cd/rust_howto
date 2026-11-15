@@ -86,7 +86,6 @@ fn optional_string_from_toml<'a>(toml: &'a toml::value::Table, key: &str) -> &'a
 }
 
 impl Category {
-
     /// Format a child category as "`parent::child`".
     fn from_parent(slug: &str, category: &str, description: &str, parent: Option<&Self>) -> Self {
         match parent {

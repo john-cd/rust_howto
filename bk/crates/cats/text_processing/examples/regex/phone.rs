@@ -18,7 +18,6 @@ use regex::Regex;
 /// with its area code, exchange code,
 /// and subscriber number.
 struct PhoneNumber<'a> {
-
     /// The area code.
     area: &'a str,
 
@@ -31,7 +30,6 @@ struct PhoneNumber<'a> {
 
 /// Formats the phone number as "1 (area) exchange-subscriber".
 impl fmt::Display for PhoneNumber<'_> {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "1 ({}) {}-{}", self.area, self.exchange, self.subscriber)

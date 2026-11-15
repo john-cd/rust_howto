@@ -56,7 +56,9 @@ async fn consumer(rx: AsyncReceiver<i32>) -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// The `kanal` crate is used for inter-thread communication, similar to Rust's standard `std::sync::mpsc` module but with additional features and capabilities. It provides channels for sending messages between threads.
+/// The `kanal` crate is used for inter-thread communication, similar to Rust's standard
+/// `std::sync::mpsc` module but with additional features and capabilities. It provides channels for
+/// sending messages between threads.
 ///
 /// # Errors
 ///

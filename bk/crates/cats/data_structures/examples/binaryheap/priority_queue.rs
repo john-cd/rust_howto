@@ -15,7 +15,6 @@ use priority_queue::PriorityQueue;
 /// A task in the priority queue.
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
 struct Task {
-
     /// The identifier of the task.
     id: u32,
 
@@ -24,7 +23,6 @@ struct Task {
 }
 
 impl Task {
-
     /// Creates a new `Task` instance.
     fn new(id: u32, name: &str) -> Self {
         Self {

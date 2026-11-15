@@ -13,13 +13,11 @@ use std::collections::HashMap;
 /// A small user directory facade over an internal hash map.
 #[derive(Default)]
 struct UserDirectory {
-
     /// Collection of users by name values consumed by user directory operations.
     users_by_name: HashMap<String, String>,
 }
 
 impl UserDirectory {
-
     /// Registers or replaces the email address for a user name.
     fn register(&mut self, name: impl Into<String>, email: impl Into<String>) {
         self.users_by_name.insert(name.into(), email.into());

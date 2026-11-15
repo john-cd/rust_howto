@@ -14,7 +14,6 @@ use rand::rngs::StdRng;
 
 /// A candidate solution that remembers the best position it has visited.
 struct Particle {
-
     /// Collection of position values consumed by particle operations.
     position: Vec<f64>,
 
@@ -48,7 +47,6 @@ fn pso(
     iterations: usize,
     seed: u64,
 ) -> (Vec<f64>, f64) {
-
     /// Shared `bound` used by this module.
     const BOUND: f64 = 5.12;
 

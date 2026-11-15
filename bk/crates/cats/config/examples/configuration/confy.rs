@@ -14,7 +14,6 @@ use serde::Serialize;
 /// Application settings stored by confy.
 #[derive(Serialize, Deserialize, Debug, Default)]
 struct MyConfig {
-
     /// The configuration schema version.
     version: u8,
 

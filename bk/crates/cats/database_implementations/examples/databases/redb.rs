@@ -54,7 +54,8 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Opens a `redb` database, inserts a key-value pair in a write transaction, and reads it back in a read transaction.
+/// Opens a `redb` database, inserts a key-value pair in a write transaction, and reads it back in a
+/// read transaction.
 ///
 /// # Errors
 ///

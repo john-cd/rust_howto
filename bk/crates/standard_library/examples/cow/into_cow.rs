@@ -12,7 +12,6 @@ use std::borrow::Cow;
 
 /// An HTTP status.
 enum HttpStatus {
-
     /// The request succeeded.
     Ok,
 

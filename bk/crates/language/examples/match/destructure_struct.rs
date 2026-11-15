@@ -7,7 +7,6 @@
 /// A point in two dimensions.
 #[derive(Clone, Copy)]
 struct Point {
-
     /// The x coordinate.
     x: i32,
 

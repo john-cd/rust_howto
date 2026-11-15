@@ -10,7 +10,6 @@ use std::io;
 /// An error that wraps errors of several types.
 #[derive(Debug)]
 pub(crate) enum MyError {
-
     /// An I/O error.
     Io(io::Error),
 
@@ -19,7 +18,6 @@ pub(crate) enum MyError {
 }
 
 impl fmt::Display for MyError {
-
     /// Formats the value for display.
     fn fmt(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
@@ -32,7 +30,6 @@ impl fmt::Display for MyError {
 impl std::error::Error for MyError {}
 
 impl From<io::Error> for MyError {
-
     /// Wraps an I/O error.
     fn from(error: io::Error) -> Self {
         Self::Io(error)
@@ -40,7 +37,6 @@ impl From<io::Error> for MyError {
 }
 
 impl From<&str> for MyError {
-
     /// Wraps a string slice as an owned message.
     fn from(message: &str) -> Self {
         Self::Message(message.to_owned())

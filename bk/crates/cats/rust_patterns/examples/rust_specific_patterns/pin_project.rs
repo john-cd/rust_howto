@@ -38,7 +38,6 @@ where
     T: Debug,
     U: Clone,
 {
-
     /// A field that is structurally pinned.
     #[pin]
     pinned: T,
@@ -51,7 +50,6 @@ where
 /// `fn project(self: Pin<&mut Self>) -> Projection<'_>;`
 /// `fn project_ref(self: Pin<&Self>) -> ProjectionRef<'_>;`
 impl<T: Debug, U: Clone> BasicPinned<T, U> {
-
     /// Projects the pinned value to references to its fields.
     fn method(self: Pin<&mut Self>) {
         // Return the projection type:
@@ -92,13 +90,11 @@ fn example1() {
 /// Linked Lists, Trees with Parent Pointers
 #[pin_project]
 struct SelfReferential {
-
     /// The string that `pointer` refers to.
     #[pin]
     value: String,
     // `pointer` will refer to the `value` above, making this type
     // self-referential.
-
     /// A pointer to `value`.
     pointer: *const String,
 
@@ -108,7 +104,6 @@ struct SelfReferential {
     // In this example, we rely upon pinning for soundness and must ensure
     // that the type is not automatically marked as `Unpin`. We do so by
     // adding a `PhantomPinned` marker field.
-
     /// A marker that makes the type `!Unpin`.
     #[pin]
     // <------ This `#[pin]` is required to make `Struct` to `!Unpin`.
@@ -119,7 +114,6 @@ struct SelfReferential {
 }
 
 impl SelfReferential {
-
     /// Creates a value, whose pointer is not set yet.
     fn new(value: String) -> Self {
         Self {
@@ -161,7 +155,6 @@ fn example2() {
 /// A future wrapper that pins its inner future and keeps movable poll state.
 #[pin_project]
 struct PollCounter<F> {
-
     /// The inner future may be address-sensitive and must remain pinned.
     #[pin]
     future: F,
@@ -206,13 +199,11 @@ fn future_projection_example() {
 /// types.
 #[pin_project(project = EnumProj)]
 enum PinnedEnum<T, U> {
-
     /// A variant with a pinned field and an unpinned field.
     Variant1(#[pin] T, U),
 }
 
 impl<T: Debug, U: Debug> PinnedEnum<T, U> {
-
     /// Matches on the projection of the pinned enum.
     fn process(self: Pin<&mut Self>) {
         match self.project() {
@@ -247,7 +238,6 @@ fn example3() {
 /// create a struct with a custom `drop` implementation.
 #[pin_project(PinnedDrop)]
 struct PinnedWithDrop<T: Debug> {
-
     /// A field that is structurally pinned.
     #[pin]
     pinned_field: T,
@@ -260,7 +250,6 @@ struct PinnedWithDrop<T: Debug> {
 /// based on your implementation of the `PinnedDrop` trait:
 #[pinned_drop]
 impl<T: Debug> PinnedDrop for PinnedWithDrop<T> {
-
     /// Releases the resources owned by this value.
     fn drop(self: Pin<&mut Self>) {
         // this method takes `Pin<&mut Self>`.

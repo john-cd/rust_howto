@@ -25,17 +25,14 @@ use serde::Deserialize;
 #[derive(Deserialize)]
 #[serde(untagged)]
 pub enum ApiResponse {
-
     /// A successful response.
     Success {
-
         /// Always `true`.
         success: MustBe!(true),
     },
 
     /// An error response.
     Error {
-
         /// Always `false`.
         success: MustBe!(false),
 

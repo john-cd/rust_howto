@@ -15,7 +15,6 @@ use sqlparser::parser::Parser;
 /// Why a query was rejected.
 #[derive(Debug, PartialEq)]
 enum Rejection {
-
     /// The text is not valid SQL.
     Syntax(String),
 

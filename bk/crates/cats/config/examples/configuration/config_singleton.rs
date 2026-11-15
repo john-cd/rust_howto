@@ -33,7 +33,6 @@ mod settings {
 
     /// Returns the process configuration, initializing it on first access.
     fn config() -> anyhow::Result<&'static Config> {
-
         /// Shared `config` used by this module.
         static CONFIG: OnceLock<Result<Config, String>> = OnceLock::new();
 

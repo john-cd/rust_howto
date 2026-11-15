@@ -20,7 +20,6 @@ use utoipa_swagger_ui::SwaggerUi;
 /// A greeting.
 #[derive(Serialize, ToSchema)]
 pub struct Greeting {
-
     /// The text of the greeting.
     message: String,
 }

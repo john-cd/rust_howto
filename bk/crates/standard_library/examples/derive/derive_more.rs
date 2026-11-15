@@ -25,7 +25,6 @@ use derive_more::SubAssign;
 /// Basic numeric type with arithmetic operations.
 #[derive(Add, AddAssign, PartialEq, Debug)]
 struct Point {
-
     /// The horizontal coordinate.
     x: i32,
 
@@ -44,7 +43,6 @@ struct UserId(u64);
 )]
 #[derive(Constructor, Debug)]
 struct User {
-
     /// The identifier of the user.
     id: UserId,
 
@@ -60,7 +58,6 @@ struct User {
 /// A stack, which dereferences to its items.
 #[derive(Deref, DerefMut, Debug)]
 struct Stack<T> {
-
     /// The items of the stack.
     #[deref]
     #[deref_mut]
@@ -124,7 +121,6 @@ struct Amount(f64);
 /// The errors of the application.
 #[derive(Debug, derive_more::Error, Display, From)]
 enum AppError {
-
     /// A database error.
     #[display("Database error")]
     DatabaseError,

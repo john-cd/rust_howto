@@ -17,7 +17,6 @@ use serde::Serialize;
 /// A form with a few fields.
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
 struct Search {
-
     /// The search terms.
     q: String,
 

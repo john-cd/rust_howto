@@ -17,7 +17,6 @@ use std::str::FromStr;
 /// A color in RGB form.
 #[derive(Debug, PartialEq)]
 struct Rgb {
-
     /// The red component.
     r: u8,
 
@@ -31,7 +30,6 @@ struct Rgb {
 /// Describes why a string could not be parsed as an RGB hex color.
 #[derive(Debug)]
 enum RgbParseError {
-
     /// The input was not exactly seven ASCII bytes beginning with `#`.
     InvalidFormat,
 
@@ -40,7 +38,6 @@ enum RgbParseError {
 }
 
 impl Display for RgbParseError {
-
     /// Formats an RGB parsing error for a user-facing diagnostic.
     fn fmt(&self, formatter: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -53,7 +50,6 @@ impl Display for RgbParseError {
 }
 
 impl Error for RgbParseError {
-
     /// Returns the underlying integer parsing error when a component is
     /// invalid.
     fn source(&self) -> Option<&(dyn Error + 'static)> {

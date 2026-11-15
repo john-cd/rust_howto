@@ -47,7 +47,6 @@ pub fn underscored(val: &str, _kwargs: tera::Kwargs, _state: &tera::State) -> St
 /// A simple page struct to be used as context for the template.
 #[derive(Serialize, Debug)]
 struct Page {
-
     /// The title of the page.
     title: String,
 
@@ -61,7 +60,6 @@ struct Page {
 /// Crate metadata used to render a Markdown badge like the book tooling emits.
 #[derive(Serialize)]
 struct CrateBadge {
-
     /// The crates.io package name.
     crate_name: String,
 }

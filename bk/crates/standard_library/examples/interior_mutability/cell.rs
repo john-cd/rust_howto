@@ -11,13 +11,11 @@ use std::cell::Cell;
 
 /// A struct with a field that can be modified through a shared reference.
 struct MyStruct<T> {
-
     /// The value, which can be replaced with a shared reference.
     value: Cell<T>,
 }
 
 impl<T> MyStruct<T> {
-
     /// Creates a struct that holds `value`.
     fn new(value: T) -> Self {
         Self {
@@ -34,7 +32,6 @@ impl<T> MyStruct<T> {
 }
 
 impl<T: Copy> MyStruct<T> {
-
     /// Returns a copy of the value.
     fn get_value(&self) -> T {
         // For types that implement `Copy`, the `get` method
@@ -46,7 +43,6 @@ impl<T: Copy> MyStruct<T> {
 // For types that implement `Default`, the take method replaces the current
 // interior value with `Default::default()` and returns the replaced value.
 impl<T: Default> MyStruct<T> {
-
     /// Takes the value, leaving the default value in its place.
     fn take_value(&self) -> T {
         self.value.take()

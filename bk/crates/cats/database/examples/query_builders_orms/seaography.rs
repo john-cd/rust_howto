@@ -49,7 +49,6 @@ mod post {
     #[derive(Clone, Debug, PartialEq, Eq, DeriveEntityModel)]
     #[sea_orm(table_name = "posts")]
     pub struct Model {
-
         /// The primary key.
         #[sea_orm(primary_key)]
         pub id: i32,
@@ -66,7 +65,6 @@ mod post {
     pub enum Relation {}
 
     impl seaography::RelationBuilder for Relation {
-
         /// Returns no relation name because this enum has no variants.
         fn get_relation_name(&self, _: &'static BuilderContext) -> String {
             unreachable!("the posts entity defines no relations")

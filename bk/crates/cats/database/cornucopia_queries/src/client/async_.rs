@@ -27,7 +27,8 @@ pub trait Params<'c, 'a, 's, P, O, C> {
 ///
 /// # Errors
 ///
-/// Returns a database error if preparing the statement or executing it does not return exactly one row.
+/// Returns a database error if preparing the statement or executing it does not return exactly one
+/// row.
 pub async fn one<C: GenericClient>(
     client: &C,
     query: &str,
@@ -48,7 +49,8 @@ pub async fn one<C: GenericClient>(
 ///
 /// # Errors
 ///
-/// Returns a database error if preparing the statement or executing it fails or returns multiple rows.
+/// Returns a database error if preparing the statement or executing it fails or returns multiple
+/// rows.
 pub async fn opt<C: GenericClient>(
     client: &C,
     query: &str,

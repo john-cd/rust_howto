@@ -22,7 +22,6 @@ use serde::Deserialize;
 /// A struct, whose JSON representation may contain unknown fields.
 #[derive(Deserialize, Debug)]
 struct MyStruct {
-
     /// A number.
     field1: i32,
 

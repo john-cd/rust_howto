@@ -16,7 +16,6 @@ use std::cmp::Ordering;
 /// A semantic version number.
 #[derive(Debug, Eq)]
 struct Version {
-
     /// Major version; compared first.
     major: u32,
 

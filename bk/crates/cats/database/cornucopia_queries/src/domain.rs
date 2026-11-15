@@ -20,14 +20,12 @@ use super::utils::escape_domain;
 /// Validated domain value used by the generated query API.
 pub struct Domain<T: ToSql>(pub T);
 impl<T: ToSql + Debug> Debug for Domain<T> {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         f.debug_tuple("DomainWrapper").field(&self.0).finish()
     }
 }
 impl<T: ToSql> ToSql for Domain<T> {
-
     /// Converts this value to sql.
     fn to_sql(&self, ty: &Type, out: &mut BytesMut) -> Result<IsNull, Box<dyn Error + Sync + Send>>
     where
@@ -56,14 +54,12 @@ impl<T: ToSql> ToSql for Domain<T> {
 /// Array of validated domain values used by the generated query API.
 pub struct DomainArray<'a, T: ToSql + Sync, A: ArraySql<Item = T>>(pub &'a A);
 impl<T: ToSql + Sync, A: ArraySql<Item = T>> Debug for DomainArray<'_, T, A> {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         f.debug_tuple("ArrayDomain").field(&self.0).finish()
     }
 }
 impl<'a, T: ToSql + Sync + 'a, A: ArraySql<Item = T>> ToSql for DomainArray<'a, T, A> {
-
     /// Converts between the domain representation and sql while preserving the invariants required
     /// by callers.
     fn to_sql(&self, ty: &Type, w: &mut BytesMut) -> Result<IsNull, Box<dyn Error + Sync + Send>> {

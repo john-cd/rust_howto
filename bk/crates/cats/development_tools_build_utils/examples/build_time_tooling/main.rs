@@ -20,7 +20,6 @@ mod out_dir_codegen;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -29,7 +28,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `cc_bundled_cpp1` example.
     #[command(name = "cc_bundled_cpp1")]
     CcBundledCpp1,

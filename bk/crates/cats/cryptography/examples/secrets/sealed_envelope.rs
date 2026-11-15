@@ -52,7 +52,6 @@ const PARALLELISM: u32 = 1;
 /// never stored.
 #[derive(Debug, Serialize, Deserialize)]
 struct SealedEnvelope {
-
     /// Envelope format version, authenticated as part of the AAD.
     version: u32,
 
@@ -108,7 +107,6 @@ fn associated_data(version: u32, context: &[u8]) -> Vec<u8> {
 }
 
 impl SealedEnvelope {
-
     /// Encrypts `secret` under `passphrase`, bound to `context`.
     fn seal(secret: &[u8], passphrase: &[u8], context: &[u8]) -> Result<Self> {
         let mut rng = SysRng;

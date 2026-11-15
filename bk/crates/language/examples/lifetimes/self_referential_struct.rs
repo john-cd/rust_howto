@@ -7,7 +7,6 @@
 /// 1. Avoid self-referential structs. Note how each field points to a portion of the `String` owned
 ///    by the struct.
 struct CsvRecordTricky<'a> {
-
     /// The line, owned by the struct.
     line: String,
 
@@ -19,7 +18,6 @@ struct CsvRecordTricky<'a> {
 ///    and each field have the same lifetime.
 #[derive(Debug)]
 struct CsvRecord<'a> {
-
     /// The line, borrowed from outside the struct.
     line: &'a str,
 
@@ -52,7 +50,6 @@ use std::rc::Rc;
 
 /// A struct whose fields share ownership of the same string with `Rc`.
 struct SelfRefRc {
-
     /// The shared string.
     data: Rc<String>,
 
@@ -61,7 +58,6 @@ struct SelfRefRc {
 }
 
 impl SelfRefRc {
-
     /// Creates a struct whose two fields share `data`.
     fn new(data: String) -> Self {
         let shared_data = Rc::new(data);

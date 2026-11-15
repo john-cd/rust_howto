@@ -27,7 +27,6 @@ pub(crate) use cli::parse_command_line_args;
 /// Application settings loaded from several sources.
 #[derive(Debug, Deserialize)]
 pub(crate) struct Settings {
-
     /// Settings for the service.
     pub service: ServiceSettings,
 
@@ -41,7 +40,6 @@ pub(crate) struct Settings {
 /// Service settings.
 #[derive(Debug, Deserialize)]
 pub(crate) struct ServiceSettings {
-
     /// The application name.
     pub name: String,
 
@@ -52,7 +50,6 @@ pub(crate) struct ServiceSettings {
 /// Database settings.
 #[derive(Debug, Deserialize)]
 pub(crate) struct DatabaseSettings {
-
     /// The connection URL.
     pub url: String,
 
@@ -63,7 +60,6 @@ pub(crate) struct DatabaseSettings {
 /// Logging settings.
 #[derive(Debug, Deserialize)]
 pub(crate) struct LoggingSettings {
-
     /// The logging level.
     pub level: String,
 }
@@ -71,7 +67,6 @@ pub(crate) struct LoggingSettings {
 /// Command-line options that override configuration sources.
 #[derive(Debug)]
 pub(crate) struct CommandLineArgs {
-
     /// The selected configuration profile.
     pub run_mode: String,
 

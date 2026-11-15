@@ -6,7 +6,6 @@
 
 /// Something that can be summarized.
 trait Summary {
-
     /// Returns a summary.
     fn summarize(&self) -> String;
 }
@@ -34,7 +33,6 @@ fn notify3(_item: &impl Summary) {}
 
 /// A struct that implements the `Summary` trait.
 struct Article {
-
     /// The text of the article.
     txt: String,
 }
