@@ -49,7 +49,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
 
-    /// Verifies that the host-side example runner succeeds.
+    // Verifies that the host-side example runner succeeds.
     // output-only: on the host, the example only prints a hint; the wasm32 code
     // needs a browser.
 

@@ -112,7 +112,6 @@ pub fn run() -> ExampleResult<()> {
 }
 
 #[cfg(test)]
-
 /// Verifies formatting for both configured locales.
 mod tests {
     use super::*;

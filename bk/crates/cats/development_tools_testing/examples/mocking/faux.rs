@@ -8,7 +8,7 @@
 //! with controlled answers, so the test is fast and deterministic. `faux` mocks
 //! the methods of a struct without requiring a trait.
 
-/// Runs the example.
+// Runs the example.
 // `faux` mocks the methods of structs for testing without
 // complicating or polluting our code.
 

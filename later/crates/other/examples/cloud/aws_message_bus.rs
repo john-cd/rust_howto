@@ -346,7 +346,6 @@ pub fn run() -> Result<()> {
 }
 
 #[cfg(test)]
-
 /// Checks message encoding, delivery, acknowledgements, and entry-point behavior.
 mod tests {
     use super::*;

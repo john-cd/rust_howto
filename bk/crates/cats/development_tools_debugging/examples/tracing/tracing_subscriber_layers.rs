@@ -61,7 +61,6 @@ fn layers() {
         reason = "alternative global-subscriber setup; only one subscriber can be installed per process"
     )
 )]
-
 /// Filters the current value.
 fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     // 1. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment variable, ignoring

@@ -98,7 +98,6 @@ fn manipulate_zero_bytes() {
 // It means that their layout is exactly that C or C++ expect.
 #[repr(C)]
 // We derive the Zerocopy traits that are required to convert from / to bytes.
-
 /// The header of a packet.
 #[derive(FromBytes, IntoBytes, Immutable, KnownLayout, PartialEq, Debug)]
 struct PacketHeader {

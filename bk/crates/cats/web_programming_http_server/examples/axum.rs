@@ -120,9 +120,8 @@ fn app() -> Router {
         .with_state(shared_state)
 }
 
-/// Builds the router and serves it on a local TCP listener.
 // `tokio` macros and rt-multi-thread features should be enabled.
-
+/// Builds the router and serves it on a local TCP listener.
 /// Starts the Axum server for the HTTP routing example.
 ///
 /// # Errors

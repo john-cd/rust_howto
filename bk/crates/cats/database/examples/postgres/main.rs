@@ -83,7 +83,6 @@ fn main() -> anyhow::Result<()> {
 
 /// Rejects invocations that do not select a PostgreSQL example.
 #[cfg(test)]
-
 /// Tests the `main` example and its documented behavior.
 #[cfg(feature = "postgres")]
 mod tests {

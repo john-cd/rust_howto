@@ -25,7 +25,6 @@ fn main() {
 
 /// Initializes the logger for the application.
 //#[cfg(not(test))]
-
 /// This function configures the logger to filter log messages based on
 /// environment variables. It first sets the default log level to `Off`,
 /// meaning no logs will be displayed by default. Then, it attempts to

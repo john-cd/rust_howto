@@ -27,9 +27,8 @@ fn simple() {
     }
 }
 
-/// Returns the double of `value` on the right, or an error message on the left
 // Function that can return two different types.
-
+/// Returns the double of `value` on the right, or an error message on the left
 /// if `value` is not positive.
 ///
 /// # Arguments

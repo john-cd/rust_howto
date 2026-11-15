@@ -9,7 +9,7 @@
 //! reports failures. A test passes unless it panics, so assertions are how you
 //! check results.
 
-/// Runs the example.
+// Runs the example.
 // This example demonstrates how to write unit tests.
 
 /// Represents a rectangle with a width and height.
