@@ -30,8 +30,6 @@ name = "accessibility"
 version = "0.1.2"
 dependencies = [
  "accesskit 0.25.2",
- "accesskit_winit 0.34.2",
- "winit",
 ]
 
 [[package]]
@@ -11698,7 +11696,6 @@ dependencies = [
 name = "game_engines"
 version = "0.1.2"
 dependencies = [
- "anyhow",
  "bevy",
  "clap",
  "fyrox",
@@ -12281,15 +12278,6 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.119",
-]
-
-[[package]]
-name = "gl"
-version = "0.14.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a94edab108827d67608095e269cf862e60d920f144a5026d3dbcfd8b877fb404"
-dependencies = [
- "gl_generator",
 ]
 
 [[package]]
@@ -12976,7 +12964,7 @@ dependencies = [
  "glyph_brush_layout",
  "ordered-float 5.5.1",
  "rustc-hash 2.1.3",
- "twox-hash 2.1.5",
+ "twox-hash",
 ]
 
 [[package]]
@@ -13307,7 +13295,6 @@ dependencies = [
  "floem",
  "fontique 0.12.0",
  "fontique 0.8.0",
- "gl",
  "glutin",
  "glutin-winit",
  "gtk4",
@@ -13321,7 +13308,6 @@ dependencies = [
  "pollster 1.0.1",
  "raw-window-handle 0.6.2",
  "relm4",
- "relm4-components",
  "rfd",
  "skia-safe",
  "slint",
@@ -17198,11 +17184,11 @@ dependencies = [
 
 [[package]]
 name = "lz4_flex"
-version = "0.10.0"
+version = "0.11.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8b8c72594ac26bfd34f2d99dfced2edfaddfe8a476e3ff2ca0eb293d925c4f83"
+checksum = "13591d77a9b6d941f7e6fcade7f9dfd9e801308752bde50c0a9bb5852778c22c"
 dependencies = [
- "twox-hash 1.6.3",
+ "twox-hash",
 ]
 
 [[package]]
@@ -17211,7 +17197,7 @@ version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ecbdfe44b1bd960b68170b417450a628c43f7cf56bb3c5317e61cb230ee7f226"
 dependencies = [
- "twox-hash 2.1.5",
+ "twox-hash",
 ]
 
 [[package]]
@@ -22917,17 +22903,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "relm4-components"
-version = "0.11.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "62088215be530760481537aa8add43fdbe4b3794bf6cb4673a39083eb993307b"
-dependencies = [
- "once_cell",
- "relm4",
- "tracker",
-]
-
-[[package]]
 name = "relm4-css"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -23895,7 +23870,7 @@ version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "69e4ce4a039f42bf25920b95667e4d789e98749ab11bbb8d2c2936f788421bb5"
 dependencies = [
- "twox-hash 2.1.5",
+ "twox-hash",
 ]
 
 [[package]]
@@ -24045,7 +24020,6 @@ dependencies = [
  "linfa-clustering",
  "linfa-linear",
  "ndarray 0.16.1",
- "ndarray 0.17.2",
  "rand 0.8.8",
  "smartcore",
 ]
@@ -24076,7 +24050,6 @@ name = "science_robotics"
 version = "0.1.2"
 dependencies = [
  "anyhow",
- "async-trait",
  "bonsai-bt",
  "clap",
  "embedded-hal",
@@ -24089,8 +24062,6 @@ dependencies = [
  "r2r",
  "rapier2d 0.36.1",
  "tokio",
- "tracing",
- "tracing-subscriber",
  "urdf-rs",
  "zenoh",
 ]
@@ -27698,26 +27669,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "tracker"
-version = "0.2.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c9e91c5c9cfc2fc187ef95f2be219e0b057037afaa48496f0ce873cd7e06a87c"
-dependencies = [
- "tracker-macros",
-]
-
-[[package]]
-name = "tracker-macros"
-version = "0.2.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "12a42d0cae5c1dce306bbb8f86afba7abd15e4023911e7bfcf353f4c03de35d7"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 2.0.119",
-]
-
-[[package]]
 name = "trading-calendar"
 version = "0.2.3"
 source = "git+https://github.com/danjloveless/trading-calendar.git?rev=7b03202e8e6b02f6f433e5f1adaedef053c2cf6f#7b03202e8e6b02f6f433e5f1adaedef053c2cf6f"
@@ -27846,16 +27797,6 @@ dependencies = [
  "rand 0.10.4",
  "sha1 0.11.0",
  "thiserror 2.0.21",
-]
-
-[[package]]
-name = "twox-hash"
-version = "1.6.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
-dependencies = [
- "cfg-if",
- "static_assertions",
 ]
 
 [[package]]
@@ -32584,7 +32525,7 @@ dependencies = [
  "flume 0.12.0",
  "futures",
  "lazy_static",
- "lz4_flex 0.10.0",
+ "lz4_flex 0.11.7",
  "rand 0.9.5",
  "ringbuffer-spsc",
  "serde",
