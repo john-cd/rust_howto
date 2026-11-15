@@ -21,7 +21,6 @@ use serde::Serialize;
 /// A small profile value exchanged with JavaScript.
 #[derive(Debug, Deserialize, PartialEq, Serialize)]
 struct Profile {
-
     /// The profile's display name.
     name: String,
 

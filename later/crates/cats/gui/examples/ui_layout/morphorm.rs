@@ -63,7 +63,6 @@ pub struct Entity(u32);
 /// The sizes of the nodes.
 #[derive(Default)]
 pub struct SimpleStore {
-
     /// The width of each node.
     pub width: std::collections::HashMap<Entity, Units>,
 
@@ -74,7 +73,6 @@ pub struct SimpleStore {
 /// The computed positions and sizes.
 #[derive(Default)]
 pub struct SimpleCache {
-
     /// The computed rectangle of each node.
     pub rects: std::collections::HashMap<Entity, (f32, f32, f32, f32)>,
 }
@@ -107,7 +105,6 @@ impl Cache for SimpleCache {
 /// The tree of nodes.
 #[derive(Default)]
 pub struct SimpleTree {
-
     /// The children of each node.
     pub children: std::collections::HashMap<Entity, Vec<Entity>>,
 
@@ -116,7 +113,6 @@ pub struct SimpleTree {
 }
 
 impl SimpleTree {
-
     /// Adds `entity` to the tree, as a child of `parent` if there is one.
     pub fn add(&mut self, entity: Entity, parent: Option<Entity>) {
         if let Some(p) = parent {
@@ -128,7 +124,6 @@ impl SimpleTree {
 
 /// An iterator over the children of a node.
 pub struct ChildIter<'a> {
-
     /// The underlying iterator.
     pub iter: std::slice::Iter<'a, Entity>,
 }
@@ -153,7 +148,6 @@ impl Node for Entity {
     }
 
     fn children<'t>(&self, tree: &'t Self::Tree) -> Self::ChildIter<'t> {
-
         /// Empty child list shared by nodes with no children.
         static EMPTY: Vec<Entity> = Vec::new();
         ChildIter {

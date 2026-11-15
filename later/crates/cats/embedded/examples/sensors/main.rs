@@ -16,7 +16,6 @@ enum BusError {
 }
 
 impl core::fmt::Display for BusError {
-
     /// Formats the simulated bus error for diagnostics.
     fn fmt(&self, formatter: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(formatter, "the simulated sensor rejected the transaction")
@@ -26,7 +25,6 @@ impl core::fmt::Display for BusError {
 impl std::error::Error for BusError {}
 
 impl embedded_hal::i2c::Error for BusError {
-
     /// Maps this example's error to the portable I2C error category.
     fn kind(&self) -> embedded_hal::i2c::ErrorKind {
         embedded_hal::i2c::ErrorKind::Other
@@ -42,7 +40,6 @@ impl ErrorType for MockI2c {
 }
 
 impl I2c for MockI2c {
-
     /// Serves the simulated temperature register in a combined I2C transaction.
     fn transaction(
         &mut self,

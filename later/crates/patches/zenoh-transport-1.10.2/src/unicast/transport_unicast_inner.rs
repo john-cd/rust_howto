@@ -48,7 +48,6 @@ pub(crate) type TransportError = (zenoh_result::Error, Arc<dyn TransportUnicastT
 
 /// Defines the outcomes available to the unicast workflow, including link, transport.
 pub(crate) enum InitTransportError {
-
     /// Link variant of `InitTransportError`.
     Link(Box<LinkError>),
     Transport(TransportError),
@@ -67,7 +66,6 @@ pub(crate) type InitTransportResult = Result<Arc<dyn TransportUnicastTrait>, Ini
 
 /// Defines the outcomes available to the unicast workflow, including uninitialized, alive, closed.
 pub(crate) enum TransportStatus {
-
     /// Alive lifecycle state of the transport.
     Uninitialized,
     Alive,
@@ -80,7 +78,6 @@ pub(crate) enum TransportStatus {
 /// **********************************
 #[async_trait]
 pub(crate) trait TransportUnicastTrait: Send + Sync {
-
     /// **********************************
     // ACCESSORS
 
@@ -121,13 +118,13 @@ pub(crate) trait TransportUnicastTrait: Send + Sync {
     /// Registers a peer link and starts transport synchronization for that link.
     ///
     /// # Arguments
-///
+    ///
     /// * `link` - Accepted unicast link and its optional OpenAck response.
     /// * `other_initial_sn` - Peer sequence number used to synchronize transport state.
     /// * `other_lease` - Peer lease duration used to start the receive keep-alive timer.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if synchronization fails or the peer link cannot be registered.
     async fn add_link(
         &self,

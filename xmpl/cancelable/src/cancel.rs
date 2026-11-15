@@ -14,13 +14,11 @@ use super::errors::TaskError;
 /// Sends cancellation requests and creates one token for each active task.
 #[derive(Debug, Clone)]
 pub struct CancelTokenSource {
-
     /// Active task flags, shared with their tokens.
     tasks: Arc<Mutex<BTreeMap<u64, Arc<AtomicBool>>>>,
 }
 
 impl CancelTokenSource {
-
     /// Creates a source with no active tasks.
     pub fn new() -> Self {
         Self {
@@ -29,13 +27,13 @@ impl CancelTokenSource {
     }
 
     /// Registers a task and creates the token it checks while running.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns an error if this ID is already active or the registry lock is poisoned.
     ///
     /// # Arguments
-///
+    ///
     /// * `id` - Identifier used to select the cancel token source record or cache entry affected by
     ///   this operation.
     pub fn make_token(&self, id: u64) -> anyhow::Result<CancelToken> {
@@ -57,9 +55,9 @@ impl CancelTokenSource {
     }
 
     /// Requests cancellation of every registered task.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns an error if the task registry lock is poisoned.
     pub fn cancel_all(&self) -> anyhow::Result<()> {
         let tasks = self
@@ -75,13 +73,13 @@ impl CancelTokenSource {
     }
 
     /// Requests cancellation of the active task with the given ID.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns an error if the task ID is not active or the registry lock is poisoned.
     ///
     /// # Arguments
-///
+    ///
     /// * `id` - Identifier used to select the cancel token source record or cache entry affected by
     ///   this operation.
     pub fn cancel_task(&self, id: u64) -> anyhow::Result<()> {
@@ -100,7 +98,6 @@ impl CancelTokenSource {
 }
 
 impl Default for CancelTokenSource {
-
     /// Creates a source with no active tasks.
     fn default() -> Self {
         Self::new()
@@ -109,7 +106,6 @@ impl Default for CancelTokenSource {
 
 /// A task's cooperative signal to stop running.
 pub struct CancelToken {
-
     /// Identifier of the task.
     id: u64,
 
@@ -121,7 +117,6 @@ pub struct CancelToken {
 }
 
 impl CancelToken {
-
     /// Returns an interruption error after cancellation has been requested.
     pub fn check(&self) -> Result<(), TaskError> {
         if self.cancelled.load(Ordering::Acquire) {
@@ -133,7 +128,6 @@ impl CancelToken {
 }
 
 impl Drop for CancelToken {
-
     /// Unregisters the task from the cancellation registry when its token is dropped.
     fn drop(&mut self) {
         let Some(tasks) = self.tasks.upgrade() else {

@@ -67,25 +67,20 @@ use crate::unicast::transport_unicast_inner::TransportUnicastTrait;
 #[derive(Clone)]
 pub(crate) struct TransportUnicastLowlatency {
     // Transport Manager
-
     /// Transport manager that owns this state.
     pub(super) manager: TransportManager,
     // Transport config
-
     /// Settings that control how this transport unicast lowlatency is constructed or processed.
     pub(super) config: TransportConfigUnicast,
     // The link associated to the transport
-
     /// Optional link used by transport unicast lowlatency; `None` means the value is not
     /// configured or unavailable.
     pub(super) link: Arc<RwLock<Option<TransportLinkUnicast>>>,
     // The callback
-
     /// Optional callback used by transport unicast lowlatency; `None` means the value is not
     /// configured or unavailable.
     pub(super) callback: Arc<SyncRwLock<Option<Arc<dyn TransportPeerEventHandler>>>>,
     // Mutex for notification
-
     /// Current lifecycle value used to decide which transport unicast lowlatency operations are
     /// valid.
     status: Arc<AsyncMutex<TransportStatus>>,
@@ -118,11 +113,11 @@ pub(crate) struct TransportUnicastLowlatency {
 }
 
 impl TransportUnicastLowlatency {
-
-    /// Creates a low-latency unicast transport with the supplied manager and optional feature state.
-///
+    /// Creates a low-latency unicast transport with the supplied manager and optional feature
+    /// state.
+    ///
     /// # Arguments
-///
+    ///
     /// * `config` - Configuration applied to this operation.
     pub fn make(
         manager: TransportManager,
@@ -151,9 +146,9 @@ impl TransportUnicastLowlatency {
     // TERMINATION
 
     /// Finalizes the low-latency transport and stops its tracked tasks.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// **********************************
     pub(super) async fn finalize(&self, reason: u8) -> ZResult<()> {
         tracing::debug!(
@@ -234,7 +229,6 @@ impl TransportUnicastLowlatency {
 
 #[async_trait]
 impl TransportUnicastTrait for TransportUnicastLowlatency {
-
     /// **********************************
     // ACCESSORS
 
@@ -322,22 +316,22 @@ impl TransportUnicastTrait for TransportUnicastLowlatency {
     // LINK
 
     /// **********************************
-///
+    ///
     /// Adds the peer's link after synchronizing sequence numbers and checking low-latency limits.
     ///
     /// # Arguments
-///
+    ///
     /// * `link` - Accepted unicast link and its optional OpenAck response.
     /// * `other_initial_sn` - Peer sequence number used to synchronize transport state.
     /// * `other_lease` - Peer lease duration used to start the receive keep-alive timer.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if synchronization fails, a link is already active, or the accepted link
     /// uses mixed reliability.
     ///
     /// # Panics
-///
+    ///
     /// Panics if link statistics were already initialized when the new link is registered.
     async fn add_link(
         &self,

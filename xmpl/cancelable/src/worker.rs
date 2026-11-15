@@ -25,7 +25,6 @@ const MAX_QUEUED_TASKS: usize = 5;
 
 /// A task together with its registered cancellation token.
 struct QueuedTask {
-
     /// The work to execute.
     task: Task,
 
@@ -35,7 +34,6 @@ struct QueuedTask {
 
 /// Manage a thread to execute tasks.
 pub struct Worker {
-
     /// The worker thread.
     thread: Option<thread::JoinHandle<()>>,
 
@@ -53,7 +51,6 @@ pub struct Worker {
 }
 
 impl Default for Worker {
-
     /// Starts a new worker thread ready to execute tasks.
     fn default() -> Self {
         Self::new()
@@ -61,7 +58,6 @@ impl Default for Worker {
 }
 
 impl Worker {
-
     /// Starts the worker thread.
     pub fn new() -> Self {
         let (s_task, r_task) = channel::bounded::<QueuedTask>(MAX_QUEUED_TASKS);
@@ -124,11 +120,11 @@ impl Worker {
     /// Queues a task unless cancellation setup fails or the worker queue is full.
     ///
     /// # Arguments
-///
+    ///
     /// * `task` - Task that the worker should execute.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if cancellation setup fails or the queue is full or disconnected.
     pub fn start(&self, task: Task) -> anyhow::Result<()> {
         let task_id = task.task_id();
@@ -149,14 +145,14 @@ impl Worker {
     }
 
     /// Requests cancellation of a queued or currently running task.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns an error if the task is not queued or running, or if the cancellation registry is
     /// poisoned.
     ///
     /// # Arguments
-///
+    ///
     /// * `task_id` - Identifier used to select the worker record or cache entry affected by this
     ///   operation.
     pub fn cancel_task(&self, task_id: u64) -> anyhow::Result<()> {
@@ -166,7 +162,7 @@ impl Worker {
     /// Stops the worker thread, cancelling the current task if one is running.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if cancelling tasks fails or the worker thread panics while joining.
     pub fn die(&mut self) -> anyhow::Result<()> {
         let cancel_result = self.cancel_source.cancel_all();
@@ -200,7 +196,6 @@ impl Worker {
 }
 
 impl Drop for Worker {
-
     /// Signals the worker thread to stop and waits for it to finish.
     fn drop(&mut self) {
         let _ = self.die();

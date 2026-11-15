@@ -18,7 +18,6 @@ use serde::Serialize;
 /// The counter's internal state.
 #[derive(Default)]
 pub struct Model {
-
     /// The current count.
     count: isize,
 }
@@ -26,7 +25,6 @@ pub struct Model {
 /// The state that a platform shell displays.
 #[derive(Serialize, Deserialize, Clone, Default)]
 pub struct ViewModel {
-
     /// The count formatted for display.
     pub count: String,
 }
@@ -34,7 +32,6 @@ pub struct ViewModel {
 /// Events that the counter core can process.
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub enum Event {
-
     /// Increments the count by one.
     Increment,
 
@@ -48,7 +45,6 @@ pub enum Event {
 /// Effects that the shell must handle for the core.
 #[crux_core::macros::effect(typegen)]
 pub enum Effect {
-
     /// Requests that the shell render the updated view model.
     Render(crux_core::render::RenderOperation),
 }

@@ -78,7 +78,6 @@ type Password = Vec<u8>;
 
 /// Configured credentials and user dictionary for unicast authentication.
 pub struct AuthUsrPwd {
-
     /// Maps accepted usernames to their password bytes.
     lookup: HashMap<User, Password>,
 
@@ -87,15 +86,14 @@ pub struct AuthUsrPwd {
 }
 
 impl AuthUsrPwd {
-
     /// Creates authentication state with the supplied local credentials.
     ///
     /// # Arguments
-///
+    ///
     /// * `credentials` - Optional username and password used when opening a connection.
     ///
     /// # Returns
-///
+    ///
     /// Authentication state with an empty accepted-user dictionary.
     pub fn new(credentials: Option<(User, Password)>) -> Self {
         Self {
@@ -107,16 +105,16 @@ impl AuthUsrPwd {
     /// Adds or replaces a username and password accepted by this authenticator.
     ///
     /// # Arguments
-///
+    ///
     /// * `user` - Username bytes to accept.
     /// * `password` - Password bytes associated with `user`.
     ///
     /// # Returns
-///
+    ///
     /// `Ok(())` after the credential is inserted.
     ///
     /// # Errors
-///
+    ///
     /// This implementation currently has no failure path and returns `Ok(())`.
     pub async fn add_user(&mut self, user: User, password: Password) -> ZResult<()> {
         self.lookup.insert(user, password);
@@ -126,15 +124,15 @@ impl AuthUsrPwd {
     /// Removes a username from the accepted-user dictionary if it exists.
     ///
     /// # Arguments
-///
+    ///
     /// * `user` - Username bytes to remove.
     ///
     /// # Returns
-///
+    ///
     /// `Ok(())` whether or not the username was present.
     ///
     /// # Errors
-///
+    ///
     /// This implementation currently has no failure path and returns `Ok(())`.
     pub async fn del_user(&mut self, user: &User) -> ZResult<()> {
         self.lookup.remove(user);
@@ -144,16 +142,16 @@ impl AuthUsrPwd {
     /// Loads credentials and an optional user dictionary from configuration.
     ///
     /// # Arguments
-///
+    ///
     /// * `config` - Username, password, and dictionary-file settings.
     ///
     /// # Returns
-///
+    ///
     /// `Some` when local credentials or dictionary users enable authentication;
     /// otherwise `None`.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the dictionary cannot be read, or contains a malformed
     /// line, an empty username, or an empty password.
     pub async fn from_config(config: &UsrPwdConf) -> ZResult<Option<Self>> {
@@ -238,21 +236,19 @@ impl fmt::Debug for AuthUsrPwd {
 /// Nonce retained by the peer opening a unicast connection.
 #[derive(Debug, PartialEq, Eq)]
 pub(crate) struct StateOpen {
-
     /// Challenge received from the accepting peer.
     nonce: u64,
 }
 
 impl StateOpen {
-
     /// Creates initiator state with a cryptographically random nonce.
     ///
     /// # Arguments
-///
+    ///
     /// * `prng` - Cryptographic random number generator used for the nonce.
     ///
     /// # Returns
-///
+    ///
     /// State containing a newly generated nonce.
     pub(crate) fn new<R>(prng: &mut R) -> Self
     where
@@ -267,7 +263,6 @@ impl StateOpen {
 /// Nonce retained by the peer accepting a unicast connection.
 #[derive(Debug, PartialEq, Eq)]
 pub(crate) struct StateAccept {
-
     /// Challenge sent to the initiating peer.
     nonce: u64,
 }
@@ -275,21 +270,19 @@ pub(crate) struct StateAccept {
 /// Optional username returned after a successful username/password handshake.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub(crate) struct UsrPwdId(
-
     /// Authenticated username bytes, or `None` when the extension is absent.
     pub Option<Vec<u8>>,
 );
 
 impl StateAccept {
-
     /// Creates acceptor state with a cryptographically random nonce.
     ///
     /// # Arguments
-///
+    ///
     /// * `prng` - Cryptographic random number generator used for the nonce.
     ///
     /// # Returns
-///
+    ///
     /// State containing a newly generated nonce.
     pub(crate) fn new<R>(prng: &mut R) -> Self
     where
@@ -303,7 +296,7 @@ impl StateAccept {
     /// Creates acceptor state with the thread-local random generator for tests.
     ///
     /// # Returns
-///
+    ///
     /// State containing a newly generated nonce.
     #[cfg(all(test, feature = "test"))]
     pub(crate) fn rand() -> Self {
@@ -324,12 +317,12 @@ where
     /// Writes the nonce to the provided writer.
     ///
     /// # Arguments
-///
+    ///
     /// * `writer` - Destination writer for the encoded nonce.
     /// * `x` - Acceptor state containing the nonce.
     ///
     /// # Returns
-///
+    ///
     /// The codec write result.
     fn write(self, writer: &mut W, x: &StateAccept) -> Self::Output {
         self.write(&mut *writer, x.nonce)
@@ -346,15 +339,15 @@ where
     /// Reads a nonce and constructs acceptor state from it.
     ///
     /// # Arguments
-///
+    ///
     /// * `reader` - Source of the encoded nonce.
     ///
     /// # Returns
-///
+    ///
     /// State containing the decoded nonce.
     ///
     /// # Errors
-///
+    ///
     /// Returns the reader error if the nonce cannot be decoded.
     fn read(self, reader: &mut R) -> Result<StateAccept, Self::Error> {
         let nonce: u64 = self.read(&mut *reader)?;
@@ -364,21 +357,19 @@ where
 
 /// Shared authenticator state used by the open and accept handshake machines.
 pub(crate) struct AuthUsrPwdFsm<'a> {
-
     /// Locked credential configuration shared across handshake steps.
     inner: &'a RwLock<AuthUsrPwd>,
 }
 
 impl<'a> AuthUsrPwdFsm<'a> {
-
     /// Creates a handshake adapter over shared username/password state.
     ///
     /// # Arguments
-///
+    ///
     /// * `inner` - Shared authenticator configuration.
     ///
     /// # Returns
-///
+    ///
     /// An adapter implementing the initiator and acceptor state-machine traits.
     pub(super) const fn new(inner: &'a RwLock<AuthUsrPwd>) -> Self {
         Self { inner }
@@ -401,7 +392,6 @@ impl<'a> AuthUsrPwdFsm<'a> {
 /// ```
 /// Username and challenge response encoded in the open handshake message.
 struct OpenSyn {
-
     /// Username whose password proof is being checked.
     user: Vec<u8>,
 
@@ -419,12 +409,12 @@ where
     /// Writes both fields in wire order.
     ///
     /// # Arguments
-///
+    ///
     /// * `writer` - Destination for the encoded fields.
     /// * `x` - Username and HMAC payload to encode.
     ///
     /// # Returns
-///
+    ///
     /// The codec write result.
     fn write(self, writer: &mut W, x: &OpenSyn) -> Self::Output {
         self.write(&mut *writer, x.user.as_slice())?;
@@ -443,15 +433,15 @@ where
     /// Reads both fields in wire order.
     ///
     /// # Arguments
-///
+    ///
     /// * `reader` - Source of the encoded fields.
     ///
     /// # Returns
-///
+    ///
     /// The decoded username and HMAC payload.
     ///
     /// # Errors
-///
+    ///
     /// Returns the reader error if either field cannot be decoded.
     fn read(self, reader: &mut R) -> Result<OpenSyn, Self::Error> {
         let user: Vec<u8> = self.read(&mut *reader)?;
@@ -486,11 +476,11 @@ impl<'a> OpenFsm for &'a AuthUsrPwdFsm<'a> {
     /// Announces that the initiator supports username/password authentication.
     ///
     /// # Arguments
-///
+    ///
     /// * `_input` - Initiator nonce state, unused until the challenge arrives.
     ///
     /// # Returns
-///
+    ///
     /// An initial authentication extension when local credentials are configured.
     async fn send_init_syn(
         self,
@@ -506,11 +496,11 @@ impl<'a> OpenFsm for &'a AuthUsrPwdFsm<'a> {
     /// Stores the nonce challenge received from the acceptor.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Initiator state and optional decoded challenge.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error when credentials are configured but the challenge is absent.
     async fn recv_init_ack(
         self,
@@ -534,15 +524,15 @@ impl<'a> OpenFsm for &'a AuthUsrPwdFsm<'a> {
     /// Encodes the configured username and its nonce-based password proof.
     ///
     /// # Arguments
-///
+    ///
     /// * `state` - Initiator state containing the challenge nonce.
     ///
     /// # Returns
-///
+    ///
     /// An open-request extension when credentials are configured.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if HMAC generation or extension encoding fails.
     async fn send_open_syn(
         self,
@@ -581,11 +571,11 @@ impl<'a> OpenFsm for &'a AuthUsrPwdFsm<'a> {
     /// Checks that the acceptor returned the expected authentication response.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Initiator state and optional decoded response extension.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if configured authentication has no response extension.
     async fn recv_open_ack(
         self,
@@ -621,11 +611,11 @@ impl<'a> AcceptFsm for &'a AuthUsrPwdFsm<'a> {
     /// Requires an initial authentication request from the initiator.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Acceptor state and optional decoded request extension.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the request extension is absent.
     async fn recv_init_syn(
         self,
@@ -644,11 +634,11 @@ impl<'a> AcceptFsm for &'a AuthUsrPwdFsm<'a> {
     /// Sends the acceptor's nonce challenge to the initiator.
     ///
     /// # Arguments
-///
+    ///
     /// * `state` - Acceptor state containing the challenge nonce.
     ///
     /// # Returns
-///
+    ///
     /// The encoded nonce challenge extension.
     async fn send_init_ack(
         self,
@@ -662,15 +652,15 @@ impl<'a> AcceptFsm for &'a AuthUsrPwdFsm<'a> {
     /// Verifies the initiator's HMAC and returns the authenticated username.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Acceptor state and optional decoded open-request extension.
     ///
     /// # Returns
-///
+    ///
     /// The username whose password proof matched the configured dictionary.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the extension is missing or malformed, the user is
     /// unknown, or the password proof is invalid.
     async fn recv_open_syn(
@@ -709,11 +699,11 @@ impl<'a> AcceptFsm for &'a AuthUsrPwdFsm<'a> {
     /// Acknowledges a successfully verified username/password exchange.
     ///
     /// # Arguments
-///
+    ///
     /// * `_input` - Acceptor state used by the handshake implementation.
     ///
     /// # Returns
-///
+    ///
     /// The unit acknowledgement extension.
     async fn send_open_ack(
         self,

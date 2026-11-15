@@ -26,7 +26,6 @@ use super::establishment::ext::auth::UsrPwdId;
 /// Authentication identity associated with a unicast transport.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct TransportAuthId {
-
     /// Optional username used by transport auth id; `None` means the value is not configured or
     /// unavailable.
     username: Option<String>,
@@ -39,11 +38,10 @@ pub struct TransportAuthId {
 }
 
 impl TransportAuthId {
-
     /// Creates an authentication identity for the peer with no username or link credentials set.
     ///
     /// # Arguments
-///
+    ///
     /// * `zid` - Zenoh identifier of the peer associated with this identity.
     pub(crate) fn new(zid: ZenohIdProto) -> Self {
         Self {
@@ -57,7 +55,7 @@ impl TransportAuthId {
     /// value.
     ///
     /// # Arguments
-///
+    ///
     /// * `user_pwd_id` - Identifier of the user pwd.
     #[cfg(feature = "auth_usrpwd")]
     pub(crate) fn set_username(&mut self, user_pwd_id: &UsrPwdId) {
@@ -78,7 +76,7 @@ impl TransportAuthId {
     /// Adds link auth id.
     ///
     /// # Arguments
-///
+    ///
     /// * `link_auth_id` - Identifier of the link auth.
     pub(crate) fn push_link_auth_id(&mut self, link_auth_id: LinkAuthId) {
         self.link_auth_ids.push(link_auth_id);

@@ -17,13 +17,11 @@ use egui_tiles::UiResponse;
 /// The content of a pane.
 #[derive(Debug, PartialEq, Eq)]
 struct Pane {
-
     /// The title shown on the tab.
     title: String,
 }
 
 impl Pane {
-
     /// Creates a pane.
     fn new(title: &str) -> Self {
         Self {

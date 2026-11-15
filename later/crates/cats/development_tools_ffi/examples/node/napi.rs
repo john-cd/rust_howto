@@ -31,7 +31,6 @@ pub fn sum(a: i32, b: i32) -> i32 {
 #[derive(Debug, PartialEq)]
 #[cfg_attr(feature = "node", napi(object))]
 pub struct Point {
-
     /// Horizontal coordinate.
     pub x: f64,
 

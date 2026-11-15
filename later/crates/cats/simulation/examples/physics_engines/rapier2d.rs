@@ -13,7 +13,6 @@ use rapier2d::prelude::*;
 
 /// The position and velocity of the ball after one simulation step.
 struct Snapshot {
-
     /// The ball's position.
     position: (f32, f32),
 

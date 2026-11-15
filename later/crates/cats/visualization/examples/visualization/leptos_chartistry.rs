@@ -25,7 +25,6 @@ use leptos_chartistry::Tooltip;
 /// One timestamp-free sample for the response-time chart.
 #[derive(Clone, Copy, Debug)]
 struct Measurement {
-
     /// Request value.
     request: f64,
 

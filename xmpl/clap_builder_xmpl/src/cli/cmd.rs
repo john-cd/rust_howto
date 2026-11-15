@@ -8,7 +8,6 @@ use std::path::PathBuf;
 /// command-line.
 #[derive(Default, Clone, Debug, PartialEq, Eq)]
 pub enum Cmd {
-
     /// No (implicit or explicit) command was given.
     #[default]
     None,

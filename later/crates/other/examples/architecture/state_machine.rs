@@ -14,7 +14,6 @@
 /// completed, error.
 #[derive(Debug, PartialEq, Clone, Copy)]
 enum State {
-
     /// The initial state, indicating that the state machine is ready to start.
     Idle,
 
@@ -32,7 +31,6 @@ enum State {
 /// Represents the state machine itself, holding the current state.
 /// State required by `StateMachine` during transport operations.
 struct StateMachine {
-
     /// The current state.
     state: State,
 }
@@ -42,7 +40,6 @@ struct StateMachine {
 /// reset.
 #[derive(Debug)]
 enum Event {
-
     /// Starts processing.
     Start,
 
@@ -59,7 +56,6 @@ enum Event {
 /// Implementation of the `StateMachine`, including state transitions and state
 /// retrieval.
 impl StateMachine {
-
     /// Creates a new `StateMachine` in the Idle state.
     fn new() -> Self {
         Self { state: State::Idle }

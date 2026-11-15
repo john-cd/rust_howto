@@ -9,7 +9,6 @@ use super::*;
 /// A subchapter, made of recipes.
 #[derive(Serialize, Debug)]
 pub struct Subchapter {
-
     /// The recipes of the subchapter.
     recipes: Vec<Recipe>,
 }
@@ -29,7 +28,6 @@ impl Renderable for Subchapter {
 }
 
 impl Subchapter {
-
     /// Creates a new subchapter.
     fn new(recipes: Vec<Recipe>) -> Self {
         Self { recipes }

@@ -16,13 +16,11 @@ use rhai::Scope;
 /// A Rust type that scripts can create and modify.
 #[derive(Debug, Clone)]
 struct Counter {
-
     /// Value stored by this wrapper.
     value: i64,
 }
 
 impl Counter {
-
     /// Creates a counter starting at zero.
     fn new() -> Self {
         Self { value: 0 }

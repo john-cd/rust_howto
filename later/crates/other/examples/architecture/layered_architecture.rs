@@ -15,7 +15,6 @@ use anyhow::Result;
 /// Represents a user in the system.
 #[derive(Debug, Clone)]
 pub struct User {
-
     /// The identifier of the user.
     pub id: u32,
 
@@ -38,7 +37,6 @@ mod data {
     /// Specifies the operations implementations provide to architecture callers.
     #[async_trait]
     pub trait UserRepository {
-
         /// Returns the user with the given identifier, if any.
         async fn get_user(&self, id: u32) -> Result<Option<User>>;
 
@@ -49,13 +47,11 @@ mod data {
     /// An in-memory implementation of `UserRepository` for testing and
     /// demonstration purposes.
     pub struct InMemoryUserRepository {
-
         /// The users, by identifier.
         users: Mutex<HashMap<u32, User>>,
     }
 
     impl InMemoryUserRepository {
-
         /// Creates an empty repository.
         pub fn new() -> Self {
             Self {
@@ -66,12 +62,11 @@ mod data {
 
     #[async_trait]
     impl UserRepository for InMemoryUserRepository {
-
-/// Returns the user with the requested ID from the repository.
-///
-/// # Arguments
-///
-/// * `id` - ID of the user to retrieve.
+        /// Returns the user with the requested ID from the repository.
+        ///
+        /// # Arguments
+        ///
+        /// * `id` - ID of the user to retrieve.
         async fn get_user(&self, id: u32) -> Result<Option<User>> {
             let users = self.users.lock().await;
             Ok(users.get(&id).cloned())
@@ -99,7 +94,6 @@ mod business {
 
     /// Specifies the operations implementations provide to architecture callers.
     pub trait UserService {
-
         /// Returns the user with the given identifier, if any.
         async fn get_user(&self, id: u32) -> Result<Option<User>>;
 
@@ -110,13 +104,11 @@ mod business {
     /// A simple implementation of `UserService` that delegates to a
     /// `UserRepository`.
     pub struct SimpleUserService<R: UserRepository + Send + Sync> {
-
         /// The repository that stores the users.
         repo: Arc<R>,
     }
 
     impl<R: UserRepository + Send + Sync> SimpleUserService<R> {
-
         /// Creates a service that uses `repo`.
         pub fn new(repo: Arc<R>) -> Self {
             Self { repo }
@@ -124,12 +116,11 @@ mod business {
     }
 
     impl<R: UserRepository + Send + Sync> UserService for SimpleUserService<R> {
-
-/// Looks up a user by ID through the service's repository layer.
-///
-/// # Arguments
-///
-/// * `id` - ID of the user to retrieve.
+        /// Looks up a user by ID through the service's repository layer.
+        ///
+        /// # Arguments
+        ///
+        /// * `id` - ID of the user to retrieve.
         async fn get_user(&self, id: u32) -> Result<Option<User>> {
             // Business logic goes here.
             self.repo.get_user(id).await

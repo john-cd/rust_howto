@@ -19,7 +19,6 @@ use rodio::nz;
 
 /// A mono sine wave.
 struct Sine {
-
     /// Frequency in hertz. Whole numbers loop cleanly every second.
     frequency: f32,
 
@@ -31,7 +30,6 @@ struct Sine {
 }
 
 impl Sine {
-
     /// Creates a sine wave at the CD sample rate.
     fn new(frequency: f32) -> Self {
         Self {
@@ -57,7 +55,6 @@ impl Iterator for Sine {
 }
 
 impl Source for Sine {
-
     /// `None`: the format never changes.
     fn current_span_len(&self) -> Option<usize> {
         None

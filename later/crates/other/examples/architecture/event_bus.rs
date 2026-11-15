@@ -25,13 +25,11 @@ enum Event {
 /// A minimal in-process bus with bounded subscriber queues.
 #[derive(Default)]
 struct EventBus {
-
     /// Collection of subscribers values consumed by event bus operations.
     subscribers: Vec<SyncSender<Event>>,
 }
 
 impl EventBus {
-
     /// Adds a subscriber and returns its event receiver.
     fn subscribe(&mut self) -> Receiver<Event> {
         let (tx, rx) = mpsc::sync_channel(16);

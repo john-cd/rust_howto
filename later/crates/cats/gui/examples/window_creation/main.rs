@@ -23,7 +23,6 @@ mod winit;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -32,7 +31,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Draws a software pixel buffer in a Winit window.
     #[cfg(feature = "softbuffer")]
     SoftwarePixels,

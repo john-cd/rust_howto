@@ -102,13 +102,13 @@ impl TransportUnicastUniversal {
     /// messages to the registered callback.
     ///
     /// # Arguments
-///
+    ///
     /// * `frame` - Decoded frame received from the peer.
     /// * `stats` - Optional link statistics updated for delivered transport messages.
     /// * `link` - Receive link used for shared-memory handoff when that feature is enabled.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if QoS is disabled and the frame uses a non-default priority, sequence
     /// number verification fails, or the callback fails.
     fn handle_frame<R: BacktrackableReader>(
@@ -274,13 +274,13 @@ impl TransportUnicastUniversal {
     /// Decodes frames and transport messages from a received batch and dispatches them.
     ///
     /// # Arguments
-///
+    ///
     /// * `batch` - Received batch to decode and process.
     /// * `link` - Receive link associated with the batch.
     /// * `stats` - Optional statistics updated for each decoded message.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if decoding fails, frame or fragment validation fails, or callback handling
     /// fails.
     pub(super) fn read_messages<TBuffer: BacktrackableReader + Buffer + Debug>(

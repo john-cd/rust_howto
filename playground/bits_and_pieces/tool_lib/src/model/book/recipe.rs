@@ -9,7 +9,6 @@ use crate::Crate;
 
 /// A recipe.
 pub struct Recipe {
-
     /// Name of the recipe.
     name: String,
 
@@ -18,7 +17,6 @@ pub struct Recipe {
 }
 
 impl Recipe {
-
     /// Creates a new recipe.
     fn new(name: String, crates: Vec<Crate>) -> Self {
         Self { name, crates }
@@ -37,13 +35,11 @@ impl Recipe {
 
 /// A builder for a recipe.
 struct RecipeBuilder {
-
     /// The recipe being built.
     inner: Recipe,
 }
 
 impl RecipeBuilder {
-
     /// Sets the name of the recipe.
     fn name(mut self, name: String) -> Self {
         self.inner.name = name;

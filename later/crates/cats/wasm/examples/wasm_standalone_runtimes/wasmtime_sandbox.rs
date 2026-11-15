@@ -36,7 +36,6 @@ const WAT: &str = r#"(module
 
 /// Resource limits for one evaluation.
 struct SandboxConfig {
-
     /// Maximum number of units of "fuel" (roughly, Wasm instructions).
     fuel: u64,
 
@@ -46,7 +45,6 @@ struct SandboxConfig {
 
 /// An engine that meters fuel, plus a cache of compiled modules.
 struct Sandbox {
-
     /// Wasmtime engine configured to meter guest execution.
     engine: Engine,
 
@@ -58,15 +56,14 @@ struct Sandbox {
 }
 
 impl Sandbox {
-
     /// Creates an engine configured for fuel metering and an empty module cache.
     ///
     /// # Arguments
-///
+    ///
     /// * `config` - Fuel and linear-memory limits applied to guest executions.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if Wasmtime cannot create the configured engine.
     fn new(config: SandboxConfig) -> Result<Self> {
         let mut engine_config = Config::new();
@@ -104,7 +101,7 @@ impl Sandbox {
     /// Calls an exported `(i32) -> i32` function with one integer argument.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if compilation, linking, instantiation, or the guest call fails.
     fn call(&mut self, wat: &str, export: &str, arg: i32) -> Result<i32> {
         let module = self.module(wat)?;
@@ -120,7 +117,7 @@ impl Sandbox {
     /// Calls an exported `() -> ()` function.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if compilation, linking, instantiation, or the guest call fails.
     fn call_unit(&mut self, wat: &str, export: &str) -> Result<()> {
         let module = self.module(wat)?;

@@ -24,7 +24,6 @@ use serde::Serialize;
 /// The request that the function receives.
 #[derive(Deserialize)]
 struct Request {
-
     /// The name of the person to greet.
     name: String,
 }
@@ -32,7 +31,6 @@ struct Request {
 /// The response that the function returns.
 #[derive(PartialEq, Serialize)]
 struct Response {
-
     /// The greeting.
     message: String,
 }

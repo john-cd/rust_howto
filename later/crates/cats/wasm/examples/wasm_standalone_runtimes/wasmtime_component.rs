@@ -41,7 +41,6 @@ use exports::howto::greeter::greeting::GreetError;
 
 /// Host state: what the guest's `logger` import writes to, plus limits.
 struct State {
-
     /// Messages the guest logged.
     log: Vec<String>,
 
@@ -66,7 +65,6 @@ impl WasiView for State {
 
 /// The host implementation of the `logger` import.
 impl howto::greeter::logger::Host for State {
-
     /// Instantiates `component` with a fuel budget and a memory limit.
     ///
     /// A component built for `wasm32-wasip2` imports a few WASI interfaces for

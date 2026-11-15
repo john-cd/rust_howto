@@ -29,7 +29,6 @@ const MAX_BODY_BYTES: usize = 256 * 1024;
 /// A message published when an order is placed.
 #[derive(Clone, PartialEq, Eq, Message)]
 pub struct OrderPlaced {
-
     /// The order identifier.
     #[prost(string, tag = "1")]
     pub order_id: String,
@@ -42,7 +41,6 @@ pub struct OrderPlaced {
 /// A message received from a queue, with the handle needed to acknowledge it.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Received {
-
     /// The base64-encoded Protobuf payload.
     pub body: String,
 
@@ -53,15 +51,14 @@ pub struct Received {
 /// Publishes encoded messages to a queue or topic.
 #[async_trait]
 pub trait MessagePublisher: Send + Sync {
-
     /// Sends one already encoded text body to the destination.
     ///
     /// # Arguments
-///
+    ///
     /// * `body` - Message text to publish.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the destination rejects or cannot accept the body.
     async fn publish_body(&self, body: String) -> Result<()>;
 }
@@ -69,22 +66,21 @@ pub trait MessagePublisher: Send + Sync {
 /// Receives messages from a queue.
 #[async_trait]
 pub trait MessageSubscriber: Send + Sync {
-
     /// Returns the messages that are currently visible, if any.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the queue cannot be read.
     async fn receive(&self) -> Result<Vec<Received>>;
 
     /// Removes a processed message so that it is not delivered again.
     ///
     /// # Arguments
-///
+    ///
     /// * `receipt` - Receipt handle returned with the message.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the receipt cannot be acknowledged.
     async fn ack(&self, receipt: &str) -> Result<()>;
 }
@@ -179,7 +175,6 @@ where
 /// An in-memory queue used by tests instead of AWS.
 #[derive(Default)]
 pub struct InMemoryBus {
-
     /// Messages that have not been acknowledged.
     messages: Mutex<Vec<Received>>,
 }
@@ -211,7 +206,6 @@ impl MessageSubscriber for InMemoryBus {
 
 /// An SQS queue. Requires AWS credentials and an existing queue.
 pub struct SqsBus {
-
     /// The shared SQS client.
     client: aws_sdk_sqs::Client,
 
@@ -220,7 +214,6 @@ pub struct SqsBus {
 }
 
 impl SqsBus {
-
     /// Creates a bus from a client built from a shared `SdkConfig`.
     pub fn new(client: aws_sdk_sqs::Client, queue_url: String) -> Self {
         Self { client, queue_url }
@@ -282,7 +275,6 @@ impl MessageSubscriber for SqsBus {
 
 /// An SNS topic, which fans a message out to every subscribed queue.
 pub struct SnsTopic {
-
     /// The shared SNS client.
     client: aws_sdk_sns::Client,
 
@@ -291,7 +283,6 @@ pub struct SnsTopic {
 }
 
 impl SnsTopic {
-
     /// Creates a publisher for the given topic.
     pub fn new(client: aws_sdk_sns::Client, topic_arn: String) -> Self {
         Self { client, topic_arn }

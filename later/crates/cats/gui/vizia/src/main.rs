@@ -8,14 +8,12 @@ use vizia::prelude::*;
 
 /// The data of the application.
 pub struct AppData {
-
     /// The current count.
     count: Signal<i32>,
 }
 
 /// The events that the application handles.
 pub enum AppEvent {
-
     /// Increases the count.
     Increment,
 
@@ -37,11 +35,10 @@ fn apply_event(count: i32, event: &AppEvent) -> i32 {
 }
 
 impl Model for AppData {
-
     /// Applies a UI event to the counter state.
     ///
     /// # Arguments
-///
+    ///
     /// * `_` - Vizia event context, unused by this model.
     /// * `event` - Event emitted by one of the counter controls.
     fn event(&mut self, _: &mut EventContext, event: &mut Event) {

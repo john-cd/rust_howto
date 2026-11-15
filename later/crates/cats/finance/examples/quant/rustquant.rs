@@ -15,7 +15,6 @@ use statrs::distribution::Normal;
 
 /// The inputs of the Black-Scholes model.
 struct Inputs {
-
     /// Price of the underlying asset.
     spot: f64,
 

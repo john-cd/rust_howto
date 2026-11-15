@@ -19,13 +19,11 @@ enum AccountEvent {
 /// The current state, derived from the events.
 #[derive(Debug, Default, PartialEq)]
 struct Account {
-
     /// Balance value.
     balance: i64,
 }
 
 impl Account {
-
     /// Applies the current value.
     fn apply(&mut self, event: &AccountEvent) {
         match event {

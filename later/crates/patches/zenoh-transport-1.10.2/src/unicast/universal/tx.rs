@@ -29,7 +29,6 @@ use super::transport::TransportUnicastUniversal;
 use crate::unicast::transport_unicast_inner::TransportUnicastTrait;
 
 impl TransportUnicastUniversal {
-
     /// Returns the index of the best matching [`Reliability`]-[`PriorityRange`] pair.
     ///
     /// The result is either:

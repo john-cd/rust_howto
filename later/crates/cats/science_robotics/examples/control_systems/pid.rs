@@ -18,7 +18,6 @@ use pid::Pid;
 /// A first-order plant, such as a motor speed or a heater temperature:
 /// `tau * dy/dt = -y + u`.
 struct Plant {
-
     /// Output value.
     output: f32,
 
@@ -27,7 +26,6 @@ struct Plant {
 }
 
 impl Plant {
-
     /// Advances the simulation by `dt` seconds.
     fn step(&mut self, input: f32, dt: f32) -> f32 {
         self.output += dt * (input - self.output) / self.tau;

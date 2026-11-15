@@ -169,7 +169,7 @@ impl TransportUnicast {
     /// link, the entire transport is closed.
     ///
     /// # Example
-///
+    ///
     /// ```no_run
     /// # async fn example(transport: zenoh_transport::unicast::TransportUnicast) {
     /// // Close a specific link while keeping the transport alive

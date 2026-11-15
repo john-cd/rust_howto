@@ -11,7 +11,6 @@
 
 /// A callable that adds an offset.
 struct Adder {
-
     /// The number to add.
     offset: i32,
 }

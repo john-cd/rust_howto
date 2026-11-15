@@ -24,7 +24,6 @@ fn install_icons(ctx: &egui::Context) {
 
 /// The application state.
 struct App {
-
     /// The pending notifications.
     toasts: Toasts,
 
@@ -33,7 +32,6 @@ struct App {
 }
 
 impl App {
-
     /// Creates an app with two items.
     fn new() -> Self {
         Self {
@@ -46,7 +44,7 @@ impl App {
     /// of the text of the buttons.
     ///
     /// # Arguments
-///
+    ///
     /// * `ui` - egui interface used to display the toast controls.
     fn show(&mut self, ui: &mut egui::Ui) {
         if ui

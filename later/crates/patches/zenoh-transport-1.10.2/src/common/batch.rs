@@ -100,7 +100,6 @@ macro_rules! zsplit_mut {
 /// Configuration that controls when transport batches are flushed and which headers they carry.
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 pub struct BatchConfig {
-
     /// Maximum transmission unit used for each batch.
     pub mtu: BatchSize,
 
@@ -113,7 +112,6 @@ pub struct BatchConfig {
 }
 
 impl Default for BatchConfig {
-
     /// Returns settings for an uncompressed batch with the maximum batch size.
     fn default() -> Self {
         BatchConfig {
@@ -126,7 +124,6 @@ impl Default for BatchConfig {
 }
 
 impl BatchConfig {
-
     /// Reports whether the batch config meets the header condition so callers can choose the
     /// correct branch.
     const fn has_header(&self) -> bool {
@@ -161,11 +158,9 @@ impl BatchConfig {
 pub struct BatchHeader(u8);
 
 impl BatchHeader {
-
     /// Shared `compression` used by this module.
     #[cfg(feature = "transport_compression")]
     const COMPRESSION: u8 = 1;
-
     /// Shared `size` used by this module.
     const SIZE: usize = 1;
 
@@ -198,7 +193,6 @@ impl BatchHeader {
 /// State required by `WBatchStats` during transport operations.
 #[derive(Clone, Copy, Debug, Default)]
 pub struct WBatchStats {
-
     /// T msgs value.
     pub t_msgs: usize,
 }
@@ -215,7 +209,6 @@ impl WBatchStats {
 /// Defines the outcomes available to the common workflow, including batch, buffer.
 #[derive(Debug)]
 pub enum Finalize {
-
     /// Batch variant of `Finalize`.
     Batch,
     Buffer,
@@ -244,15 +237,12 @@ pub enum Finalize {
 #[derive(Clone, Debug)]
 pub struct WBatch {
     // The buffer to perform the batching on
-
     /// Buffer used to stage incoming or outgoing data.
     pub buffer: BBuf,
     // The batch codec
-
     /// Codec value.
     pub codec: Zenoh080Batch,
     // It contains 1 byte as additional header, e.g. to signal the batch is compressed
-
     /// Settings that control how this wbatch is constructed or processed.
     pub config: BatchConfig,
     // Statistics related to this batch
@@ -262,17 +252,15 @@ pub struct WBatch {
     pub stats: WBatchStats,
     // an ephemeral batch will not be recycled in the pipeline
     // it can be used to push a stop fragment when no batch are available
-
     /// Flag indicating whether the wbatch satisfies the ephemeral condition.
     pub ephemeral: bool,
 }
 
 impl WBatch {
-
     /// Creates an empty write batch using the supplied batch configuration.
     ///
     /// # Arguments
-///
+    ///
     /// * `config` - Batch size and encoding settings used to initialize the writer.
     pub fn new(config: BatchConfig) -> Self {
         let mut batch = Self {
@@ -343,7 +331,7 @@ impl WBatch {
     /// Initializes a batch buffer with the length prefix and header required by its configuration.
     ///
     /// # Arguments
-///
+    ///
     /// * `buffer` - Buffer that receives the configured batch prefix and header.
     /// * `config` - Batch settings that determine which prefix and header to write.
     fn init(buffer: &mut BBuf, config: &BatchConfig) {
@@ -367,7 +355,7 @@ impl WBatch {
     /// Splits a batch buffer into its length-prefix, header, and payload regions.
     ///
     /// # Arguments
-///
+    ///
     /// * `buffer` - Mutable batch storage to split into regions.
     /// * `config` - Settings that determine the length-prefix and header sizes.
     #[inline(always)]
@@ -381,11 +369,11 @@ impl WBatch {
     /// Finalizes a batch, compressing it when configured and preparing its header for transmission.
     ///
     /// # Arguments
-///
+    ///
     /// * `buffer` - Optional scratch buffer used when compression needs separate output storage.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if compression is enabled but no support buffer is provided, compression
     /// fails, or the batch header is missing when its compression flag must be cleared.
     pub fn finalize(&mut self, mut buffer: Option<&mut BBuf>) -> ZResult<Finalize> {
@@ -421,11 +409,11 @@ impl WBatch {
     /// Compresses the batch into the supplied support buffer and updates its header.
     ///
     /// # Arguments
-///
+    ///
     /// * `support` - Scratch buffer that receives the compressed batch.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if writing the compressed data fails or the batch header is missing.
     #[cfg(feature = "transport_compression")]
     fn compress(&mut self, support: &mut BBuf) -> ZResult<Finalize> {
@@ -529,25 +517,21 @@ impl Encode<(&mut ZBufReader<'_>, &mut FragmentHeader)> for &mut WBatch {
 #[derive(Debug)]
 pub struct RBatch<TBuffer: BacktrackableReader + Buffer> {
     // The buffer to perform deserializationn from
-
     /// Buffer used to stage incoming or outgoing data.
     buffer: TBuffer,
     // The batch codec
-
     /// Codec value.
     codec: Zenoh080Batch,
     // The batch config
-
     /// Settings that control how this rbatch is constructed or processed.
     config: BatchConfig,
 }
 
 impl<TBuffer: BacktrackableReader + Buffer> RBatch<TBuffer> {
-
     /// Creates a readable batch over the supplied buffer using the given batch configuration.
     ///
     /// # Arguments
-///
+    ///
     /// * `config` - Batch encoding settings used to decode the buffer.
     /// * `buffer` - Received bytes containing the batch data.
     pub fn new(config: BatchConfig, buffer: TBuffer) -> Self {
@@ -570,9 +554,9 @@ impl<TBuffer: BacktrackableReader + Buffer> RBatch<TBuffer> {
     }
 
     /// Decompresses a batch payload into a reusable slice buffer.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns an error if decompression fails or the decompressed data does not fit in a `ZSlice`.
     #[cfg(feature = "transport_compression")]
     fn decompress<T>(&self, payload: &[u8], mut buff: impl FnMut() -> T) -> ZResult<ZSlice>
@@ -606,9 +590,9 @@ where
     // Split (length, header, payload) internal buffer slice
 
     /// Reads the batch header needed to prepare a batch for io_uring.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns an error if the batch header cannot be read from the buffer.
     fn split_uring(&mut self) -> ZResult<Option<BatchHeader>> {
         if self.config.has_header() {
@@ -619,9 +603,9 @@ where
     }
 
     /// Initializes a received batch and prepares its decompression result for io_uring.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns an error if reading the batch header, decompressing the payload, or validating the
     /// batch length fails.
     pub fn initialize_uring<C, T>(
@@ -687,9 +671,9 @@ impl RBatch<ZSlice> {
     }
 
     /// Initializes a received batch from its header and payload.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns an error if the batch header or payload is invalid, or decompression fails.
     pub fn initialize<C, T>(&mut self, #[allow(unused_variables)] buff: C) -> ZResult<()>
     where

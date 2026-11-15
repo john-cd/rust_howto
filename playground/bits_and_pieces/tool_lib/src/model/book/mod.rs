@@ -28,7 +28,6 @@ pub use subchapter::*;
 /// Defines the outcomes available to the book workflow, including chapter, subchapter, example
 /// index.
 pub enum RenderableObjects {
-
     /// A chapter.
     Chapter(Chapter),
 

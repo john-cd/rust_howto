@@ -66,7 +66,6 @@ use crate::unicast::link::TransportLinkUnicastDirection;
 type OpenError = (zenoh_result::Error, Option<u8>);
 
 struct StateTransport {
-
     /// Maximum number of messages sent in a batch.
     batch_size: BatchSize,
 
@@ -91,7 +90,6 @@ struct StateLink {
 }
 
 struct State {
-
     /// Transport value.
     transport: StateTransport,
     #[cfg(any(feature = "transport_auth", feature = "transport_compression"))]
@@ -102,7 +100,6 @@ struct State {
 
 // InitSyn
 struct SendInitSynIn {
-
     /// Protocol version advertised by the local peer.
     mine_version: u8,
 
@@ -115,7 +112,6 @@ struct SendInitSynIn {
 
 // InitAck
 struct RecvInitAckOut {
-
     /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
 
@@ -128,7 +124,6 @@ struct RecvInitAckOut {
 
 // OpenSyn
 struct SendOpenSynIn {
-
     /// Local Zenoh identifier.
     mine_zid: ZenohIdProto,
 
@@ -146,14 +141,12 @@ struct SendOpenSynIn {
 }
 
 struct SendOpenSynOut {
-
     /// Initial sequence number advertised by the local peer.
     mine_initial_sn: TransportSn,
 }
 
 // OpenAck
 struct RecvOpenAckOut {
-
     /// Optional other bound used by recv open ack out; `None` means the value is not configured or
     /// unavailable.
     other_bound: Option<Bound>,
@@ -183,7 +176,6 @@ struct OpenLink<'a> {
     ext_patch: ext::patch::PatchFsm<'a>,
     ext_region_name: ext::region_name::RegionNameFsm,
     // TODO(regions): move this into `ext::region::RegionFsm` (?)
-
     /// Optional ext remote bound used by open link; `None` means the value is not configured or
     /// unavailable.
     ext_remote_bound: Option<RemoteBoundCallback>,
@@ -204,11 +196,11 @@ impl<'a, 'b: 'a> OpenFsm for &'a mut OpenLink<'b> {
     /// Builds an InitSyn and its negotiated extensions for the opening peer.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Link, opening state, and local settings used to construct InitSyn.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if constructing any negotiated extension for the init SYN fails.
     async fn send_init_syn(
         self,
@@ -316,11 +308,11 @@ impl<'a, 'b: 'a> OpenFsm for &'a mut OpenLink<'b> {
     /// Receives the peer's InitAck, validates its negotiated settings, and updates open state.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Link receiving InitAck and opening state to update.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the message is not a valid InitAck or its negotiated extensions are
     /// invalid.
     async fn recv_init_ack(
@@ -473,11 +465,11 @@ impl<'a, 'b: 'a> OpenFsm for &'a mut OpenLink<'b> {
     /// Builds an OpenSyn and its negotiated extensions for the opening peer.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Link, negotiated opening state, and local OpenSyn settings.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if constructing any negotiated extension for the open SYN fails.
     async fn send_open_syn(
         self,
@@ -601,11 +593,11 @@ impl<'a, 'b: 'a> OpenFsm for &'a mut OpenLink<'b> {
     /// Receives the peer's OpenAck and completes open-side extension negotiation.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Link receiving OpenAck and opening state to update.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the message is not a valid OpenAck or its negotiated extensions are
     /// invalid.
     async fn recv_open_ack(

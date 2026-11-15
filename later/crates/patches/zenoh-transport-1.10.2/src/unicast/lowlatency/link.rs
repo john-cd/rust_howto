@@ -130,15 +130,14 @@ pub(crate) async fn read_with_link(
 }
 
 impl TransportUnicastLowlatency {
-
     /// Sends a network message through the low-latency link.
     ///
     /// # Arguments
-///
+    ///
     /// * `msg` - Network message to send.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if no link is available or sending the message fails.
     pub(super) fn send(&self, #[allow(unused_mut)] mut msg: NetworkMessageMut) -> ZResult<()> {
         zenoh_runtime::ZRuntime::TX.block_in_place(async {
@@ -187,11 +186,11 @@ impl TransportUnicastLowlatency {
     /// Sends async.
     ///
     /// # Arguments
-///
+    ///
     /// * `msg` - Message to schedule or process.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the output cannot be written or sent.
     pub(super) async fn send_async(&self, msg: TransportMessageLowLatencyRef<'_>) -> ZResult<()> {
         let guard = zasyncwrite!(self.link);
@@ -208,7 +207,7 @@ impl TransportUnicastLowlatency {
     /// Starts keepalive.
     ///
     /// # Arguments
-///
+    ///
     /// * `keep_alive` - Duration controlling the operation.
     pub(super) fn start_keepalive(&self, keep_alive: Duration) {
         let c_transport = self.clone();
@@ -246,7 +245,7 @@ impl TransportUnicastLowlatency {
     /// Starts the low-latency receive task with the given lease duration.
     ///
     /// # Arguments
-///
+    ///
     /// * `lease` - Maximum time the receive task waits for a message before checking its lease.
     pub(super) fn internal_start_rx(&self, lease: Duration) {
         let rx_buffer_size = self.manager.config.link_rx_buffer_size;

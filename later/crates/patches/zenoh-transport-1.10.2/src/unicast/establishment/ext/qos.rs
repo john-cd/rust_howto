@@ -46,13 +46,11 @@ use crate::unicast::establishment::OpenFsm;
 
 /// State machine for negotiating quality-of-service settings.
 pub(crate) struct QoSFsm<'a> {
-
     /// First value in the pair.
     _a: PhantomData<&'a ()>,
 }
 
 impl QoSFsm<'_> {
-
     /// Creates the stateless state machine used to negotiate QoS extensions.
     pub(crate) const fn new() -> Self {
         Self { _a: PhantomData }
@@ -64,7 +62,6 @@ impl QoSFsm<'_> {
 enum State {
     NoQoS,
     QoS {
-
         /// Optional reliability used by qo sfsm; `None` means the value is not configured or
         /// unavailable.
         reliability: Option<Reliability>,
@@ -76,16 +73,15 @@ enum State {
 }
 
 impl State {
-
     /// Creates no-QoS state or reads the endpoint's QoS settings for negotiation.
     ///
     /// # Arguments
-///
+    ///
     /// * `is_qos` - Whether QoS negotiation is enabled for the transport.
     /// * `endpoint` - Endpoint metadata containing optional reliability and priority settings.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the configured reliability or priority metadata is invalid.
     fn new(is_qos: bool, endpoint: &EndPoint) -> ZResult<Self> {
         if !is_qos {
@@ -285,16 +281,15 @@ impl From<State> for StateOpen {
 }
 
 impl StateOpen {
-
     /// Creates opening-side QoS state from the endpoint's reliability and priority settings.
     ///
     /// # Arguments
-///
+    ///
     /// * `is_qos` - Whether QoS negotiation is enabled for the transport.
     /// * `endpoint` - Endpoint metadata containing optional reliability and priority settings.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the endpoint contains invalid reliability or priority metadata.
     pub(crate) fn new(is_qos: bool, endpoint: &EndPoint) -> ZResult<Self> {
         State::new(is_qos, endpoint).map(StateOpen)
@@ -331,9 +326,9 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
     type SendOpenSynOut = Option<open::ext::QoS>;
 
     /// Adds the opening peer's QoS state extensions to its InitSyn message.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `state` - Opening-side state containing the configured QoS settings.
     async fn send_init_syn(
         self,
@@ -345,11 +340,11 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
     /// Validates and stores the QoS settings advertised in the peer's InitAck.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Opening-side state and optional QoS extensions received in InitAck.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the peer advertises invalid QoS extensions or incompatible settings.
     async fn recv_init_ack(
         self,
@@ -412,9 +407,9 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
     }
 
     /// Omits a QoS extension from OpenSyn because QoS is negotiated in the earlier handshake step.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `_state` - Opening-side QoS state; no extension is sent at this handshake step.
     async fn send_open_syn(
         self,
@@ -424,9 +419,9 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
     }
 
     /// Completes the QoS OpenAck step without changing the negotiated state.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `_state` - Opening-side state and optional OpenAck QoS extension; neither changes state.
     async fn recv_open_ack(
         self,
@@ -447,16 +442,15 @@ impl From<State> for StateAccept {
 }
 
 impl StateAccept {
-
     /// Creates accept-side QoS state from the endpoint's reliability and priority settings.
     ///
     /// # Arguments
-///
+    ///
     /// * `is_qos` - Whether QoS negotiation is enabled for the transport.
     /// * `endpoint` - Endpoint metadata containing optional reliability and priority settings.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the endpoint contains invalid reliability or priority metadata.
     pub(crate) fn new(is_qos: bool, endpoint: &EndPoint) -> ZResult<Self> {
         State::new(is_qos, endpoint).map(StateAccept::from)
@@ -501,13 +495,13 @@ where
     type Error = DidntRead;
 
     /// Reads and validates a QoS state value from the input stream.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `reader` - Source that supplies the bytes or records consumed by this operation.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the value cannot be decoded or does not represent a valid QoS state.
     fn read(self, reader: &mut R) -> Result<StateAccept, Self::Error> {
         Ok(State::try_from_u64(self.read(reader)?)
@@ -534,11 +528,11 @@ impl<'a> AcceptFsm for &'a QoSFsm<'a> {
     /// Validates and stores the QoS settings advertised in the peer's InitSyn.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Accept-side state and optional QoS extensions received in InitSyn.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the peer's priority range or reliability conflicts with local settings.
     async fn recv_init_syn(
         self,
@@ -601,9 +595,9 @@ impl<'a> AcceptFsm for &'a QoSFsm<'a> {
     }
 
     /// Adds the acceptor's negotiated QoS state extensions to its InitAck message.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `state` - Accept-side state containing the negotiated QoS settings.
     async fn send_init_ack(
         self,
@@ -613,9 +607,9 @@ impl<'a> AcceptFsm for &'a QoSFsm<'a> {
     }
 
     /// Accepts the OpenSyn without additional QoS state changes.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `_state` - Accept-side state and optional OpenSyn extension, which are not changed here.
     async fn recv_open_syn(
         self,
@@ -627,7 +621,7 @@ impl<'a> AcceptFsm for &'a QoSFsm<'a> {
     /// Omits a QoS extension from OpenAck because no additional QoS data is sent at this step.
     ///
     /// # Arguments
-///
+    ///
     /// * `_state` - Accept-side negotiated state; no extension is emitted at this step.
     async fn send_open_ack(
         self,

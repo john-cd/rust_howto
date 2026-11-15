@@ -19,7 +19,6 @@ pub mod my_game {
     #[derive(Copy, Clone, PartialEq)]
 
     pub struct Monster<'a> {
-
         /// Tab in `Monster`.
         pub _tab: ::flatbuffers::Table<'a>,
     }
@@ -36,10 +35,8 @@ pub mod my_game {
     }
 
     impl<'a> Monster<'a> {
-
         /// Shared `vt hp` used by this module.
         pub const VT_HP: ::flatbuffers::VOffsetT = 6;
-
         /// Shared `vt name` used by this module.
         pub const VT_NAME: ::flatbuffers::VOffsetT = 4;
 
@@ -78,9 +75,9 @@ pub mod my_game {
         }
 
         /// Returns the monster hit-point value, defaulting to zero when it is absent.
-///
+        ///
         /// # Panics
-///
+        ///
         /// Panics if an internal `Result` or `Option` has no usable value.
         #[inline]
         pub fn hp(&self) -> i32 {
@@ -92,11 +89,10 @@ pub mod my_game {
     }
 
     impl ::flatbuffers::Verifiable for Monster<'_> {
-
         /// Verifies the FlatBuffers monster table and its required fields.
-///
+        ///
         /// # Errors
-///
+        ///
         /// Returns an error if the table or either field fails FlatBuffers verification.
         #[inline]
         fn run_verifier(
@@ -113,7 +109,6 @@ pub mod my_game {
 
     /// Values accepted when building a FlatBuffers monster record.
     pub struct MonsterArgs<'a> {
-
         /// Name in `MonsterArgs`.
         /// Display label used to distinguish this monster args from other entries.
         pub name: Option<::flatbuffers::WIPOffset<&'a str>>,
@@ -122,7 +117,6 @@ pub mod my_game {
         pub hp: i32,
     }
     impl<'a> Default for MonsterArgs<'a> {
-
         /// Returns default monster arguments with no name and zero hit points.
         #[inline]
         fn default() -> Self {
@@ -136,11 +130,10 @@ pub mod my_game {
         start_: ::flatbuffers::WIPOffset<::flatbuffers::TableUnfinishedWIPOffset>,
     }
     impl<'a: 'b, 'b, A: ::flatbuffers::Allocator + 'a> MonsterBuilder<'a, 'b, A> {
-
         /// Adds the monster name offset to the FlatBuffers table builder.
-///
+        ///
         /// # Arguments
-///
+        ///
         /// * `name` - Human-readable value used to identify or display the selected monster
         ///   builder.
         #[inline]
@@ -157,7 +150,7 @@ pub mod my_game {
         /// Creates a builder that writes a monster record into the supplied FlatBuffer builder.
         ///
         /// # Arguments
-///
+        ///
         /// * `_fbb` - FlatBuffer builder that receives the monster record fields.
         #[inline]
         pub fn new(
@@ -178,7 +171,6 @@ pub mod my_game {
     }
 
     impl ::core::fmt::Debug for Monster<'_> {
-
         /// Formats the value for display.
         fn fmt(&self, f: &mut ::core::fmt::Formatter<'_>) -> ::core::fmt::Result {
             let mut ds = f.debug_struct("Monster");

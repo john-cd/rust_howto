@@ -30,7 +30,6 @@ const DEVICE_ID: u8 = 0xA5;
 
 /// Driver for the fictional sensor, generic over an `embedded-hal` I2C bus.
 pub struct TemperatureSensor<I2C> {
-
     /// I2c value.
     i2c: I2C,
 }
@@ -39,7 +38,6 @@ impl<I2C, E> TemperatureSensor<I2C>
 where
     I2C: I2c<Error = E>,
 {
-
     /// Creates a sensor driver around an I2C bus implementation.
     pub const fn new(i2c: I2C) -> Self {
         Self { i2c }
@@ -48,7 +46,7 @@ where
     /// Reads the fictional sensor's device identification byte.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the I2C bus cannot read the device identification register.
     pub fn read_device_id(&mut self) -> Result<u8, E> {
         let mut buffer = [0_u8; 1];
@@ -60,7 +58,7 @@ where
     /// Reads signed, big-endian temperature data in degrees Celsius.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the I2C bus cannot read the temperature register.
     pub fn read_temperature(&mut self) -> Result<f32, E> {
         let mut buffer = [0_u8; 2];

@@ -7,7 +7,6 @@
 
 #[derive(Clone, Copy)]
 struct Job {
-
     /// Display label used to distinguish this job from other entries.
     name: &'static str,
 

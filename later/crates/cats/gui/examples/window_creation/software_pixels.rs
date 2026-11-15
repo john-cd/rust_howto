@@ -23,7 +23,6 @@ use winit::window::WindowId;
 /// Owns the window surface and propagates event-handler errors to the caller.
 #[derive(Default)]
 struct App {
-
     /// Optional surface used by app; `None` means the value is not configured or unavailable.
     surface: Option<Surface<Rc<Window>, Rc<Window>>>,
 

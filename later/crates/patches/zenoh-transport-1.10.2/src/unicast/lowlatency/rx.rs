@@ -78,13 +78,13 @@ impl TransportUnicastLowlatency {
     /// Decodes low-latency transport messages from a slice and handles each message body.
     ///
     /// # Arguments
-///
+    ///
     /// * `zslice` - Received bytes containing one or more encoded transport messages.
     /// * `link` - Receive link used for callbacks and shared-memory handoff.
     /// * `stats` - Optional statistics updated for each decoded message.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if a transport message cannot be decoded.
     pub(super) async fn read_messages(
         &self,

@@ -23,14 +23,12 @@ use tokio_util::sync::CancellationToken;
 
 /// A clock that follows Tokio's (pausable) time: `start` plus elapsed time.
 struct Clock {
-
     /// Start of the selected range.
     start: DateTime<Utc>,
     origin: tokio::time::Instant,
 }
 
 impl Clock {
-
     /// Associates an absolute start time with Tokio's pausable monotonic clock.
     fn new(start: DateTime<Utc>) -> Self {
         Self {

@@ -55,7 +55,7 @@ pub trait OpenFsm {
     /// Builds the opening peer's initial SYN message and extension values.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Opening state and local settings needed to construct InitSyn.
     async fn send_init_syn(
         self,
@@ -68,7 +68,7 @@ pub trait OpenFsm {
     /// Validates the peer's InitAck and updates the opening handshake state.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Link and opening state to update from the received InitAck.
     async fn recv_init_ack(
         self,
@@ -81,7 +81,7 @@ pub trait OpenFsm {
     /// Builds the opening peer's OpenSyn message and extension values.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Link, negotiated opening state, and local OpenSyn settings.
     async fn send_open_syn(
         self,
@@ -94,7 +94,7 @@ pub trait OpenFsm {
     /// Validates the peer's OpenAck and completes opening-side negotiation.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Link and opening state to update from the received OpenAck.
     async fn recv_open_ack(
         self,
@@ -113,7 +113,7 @@ pub trait AcceptFsm {
     /// Validates the opening peer's InitSyn and records its negotiated settings.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Accepting state and received InitSyn fields to process.
     async fn recv_init_syn(
         self,
@@ -126,7 +126,7 @@ pub trait AcceptFsm {
     /// Builds the accepting peer's InitAck message and extension values.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Accepting state and local InitAck settings.
     async fn send_init_ack(
         self,
@@ -139,7 +139,7 @@ pub trait AcceptFsm {
     /// Validates the opening peer's OpenSyn and completes accept-side negotiation.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Accepting state and received OpenSyn fields to process.
     async fn recv_open_syn(
         self,
@@ -152,7 +152,7 @@ pub trait AcceptFsm {
     /// Builds the accepting peer's OpenAck message and extension values.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Accepting state and local OpenAck settings.
     async fn send_open_ack(
         self,

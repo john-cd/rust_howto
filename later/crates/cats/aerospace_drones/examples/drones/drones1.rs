@@ -30,7 +30,6 @@ const MAX_HOVER: Duration = Duration::from_secs(30);
 /// One step of a flight plan.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 enum Step {
-
     /// Leave the ground.
     TakeOff,
 
@@ -43,7 +42,6 @@ enum Step {
 
 /// Something that accepts flight commands.
 trait Flyer {
-
     /// Takes off.
     fn take_off(&mut self) -> Result<()>;
 

@@ -20,7 +20,6 @@ mod use_rust_from_python;
 #[cfg(any(target_os = "linux", target_os = "windows"))]
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -30,7 +29,6 @@ struct Cli {
 #[cfg(any(target_os = "linux", target_os = "windows"))]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `pyo3` example.
     #[cfg(any(target_os = "linux", target_os = "windows"))]
     #[command(name = "pyo3")]

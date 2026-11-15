@@ -15,11 +15,10 @@ use core::sync::atomic::Ordering;
 struct Register(UnsafeCell<u32>);
 
 impl Register {
-
     /// Initializes the register cell with its reset value.
     ///
     /// # Arguments
-///
+    ///
     /// * `reset_value` - Value returned by the register before any writes.
     const fn new(reset_value: u32) -> Self {
         Self(UnsafeCell::new(reset_value))
@@ -46,7 +45,6 @@ impl Register {
 /// The GPIO port's registers, in the order and width the manual lists them.
 #[repr(C)]
 struct GpioRegisters {
-
     /// Mode register: two bits per pin; `0b01` selects output.
     mode: Register,
 
@@ -56,23 +54,19 @@ struct GpioRegisters {
 
 /// Ownership token for the GPIO port. Only one can exist.
 struct Gpio {
-
     /// Memory-mapped registers for the GPIO device.
     registers: GpioRegisters,
 }
 
 /// All peripherals of the chip, handed out once, like a PAC's `Peripherals`.
 struct Peripherals {
-
     /// GPIO device controlled by these registers.
     gpio: Gpio,
 }
 
 impl Peripherals {
-
     /// Returns the peripherals the first time it is called, then `None`.
     fn take() -> Option<Self> {
-
         /// Shared `taken` used by this module.
         static TAKEN: AtomicBool = AtomicBool::new(false);
         Self::take_once(&TAKEN)

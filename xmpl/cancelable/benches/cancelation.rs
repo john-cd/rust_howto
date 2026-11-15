@@ -85,7 +85,6 @@ fn bench_cancellation_signal(c: &mut Criterion) {
 ///
 /// * `c` - Criterion benchmark group used to register this benchmark.
 fn bench_registry_contention(c: &mut Criterion) {
-
     /// Shared `tokens per thread` used by this module.
     const TOKENS_PER_THREAD: u64 = 200;
     let mut group = c.benchmark_group("registry_contention");

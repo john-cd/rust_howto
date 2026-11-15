@@ -25,7 +25,6 @@ mod mlua_userdata;
 #[cfg(feature = "lua")]
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -35,7 +34,6 @@ struct Cli {
 #[cfg(feature = "lua")]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `mlua` example.
     #[cfg(feature = "lua")]
     #[command(name = "mlua")]

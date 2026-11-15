@@ -13,7 +13,6 @@ use relm4::prelude::*;
 
 /// The model of the counter.
 struct CounterModel {
-
     /// The current count.
     value: i32,
 }
@@ -21,7 +20,6 @@ struct CounterModel {
 /// The messages that the counter handles.
 #[derive(Debug)]
 enum CounterInput {
-
     /// Increases the count.
     Increment,
 
@@ -85,7 +83,6 @@ impl SimpleComponent for CounterModel {
 }
 
 impl CounterModel {
-
     /// Updates the count for a message.
     fn apply(&mut self, message: CounterInput) {
         match message {

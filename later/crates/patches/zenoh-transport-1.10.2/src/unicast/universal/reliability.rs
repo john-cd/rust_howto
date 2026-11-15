@@ -30,7 +30,6 @@ use super::core::u64;
 
 /// Tracks messages awaiting acknowledgement or retransmission.
 pub(super) struct ReliabilityQueue<T> {
-
     /// Current sequence number.
     sn: SeqNum,
 
@@ -46,11 +45,10 @@ pub(super) struct ReliabilityQueue<T> {
 }
 
 impl<T> ReliabilityQueue<T> {
-
     /// Creates an empty reliability queue with sequence tracking initialized for the peer.
     ///
     /// # Arguments
-///
+    ///
     /// * `capacity` - Number of sequence-number slots available in the queue.
     /// * `initial_sn` - First sequence number expected from the peer.
     /// * `sn_resolution` - Sequence-number resolution used for wraparound comparisons.
@@ -234,15 +232,14 @@ impl<T> ReliabilityQueue<T> {
 }
 
 impl<T: Clone> ReliabilityQueue<T> {
-
     /// Returns the buffered value associated with a peer sequence number.
     ///
     /// # Arguments
-///
+    ///
     /// * `sn` - Sequence number of the buffered value to retrieve.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if `sn` cannot be represented at the current resolution, falls outside the
     /// tracked window, or has no buffered value.
     pub(super) fn get(&mut self, sn: u64) -> ZResult<T> {
@@ -283,7 +280,6 @@ impl<T: Clone> ReliabilityQueue<T> {
 }
 
 impl<T: fmt::Debug> fmt::Debug for ReliabilityQueue<T> {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("ReliabilityQueue")
