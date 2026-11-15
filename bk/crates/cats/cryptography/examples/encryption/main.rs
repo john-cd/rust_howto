@@ -10,5 +10,7 @@ mod chacha20poly1305;
 
 /// Runs both authenticated-encryption examples.
 fn main() -> anyhow::Result<()> {
-    run_examples()
+    aes_gcm::run()?;
+    chacha20poly1305::run()?;
+    Ok(())
 }
