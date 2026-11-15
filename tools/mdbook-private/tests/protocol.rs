@@ -56,6 +56,7 @@ fn invoke(settings: serde_json::Value, book: Book) -> Output {
 }
 /// Checks that private chapters are removed and the rest renumbered.
 
+/// Removes private subtrees and renumbers visible chapters.
 #[test]
 fn removes_private_subtrees_and_renumbers_visible_chapters() {
     let mut public = chapter("Public", "public.md", Some(vec![2]));
@@ -98,6 +99,7 @@ fn removes_private_subtrees_and_renumbers_visible_chapters() {
 }
 /// Checks that private content is kept and styled when requested.
 
+/// Retains private chapters and applies their configured styling when requested.
 #[test]
 fn retains_and_styles_private_content_when_requested() {
     let mut book = Book::new();
@@ -116,6 +118,7 @@ fn retains_and_styles_private_content_when_requested() {
 /// Reports whether this value supports custom prefix and unstyled retention.
 /// Checks that a custom prefix and unstyled retention are honored.
 
+/// Supports custom prefix and unstyled retention.
 #[test]
 fn supports_custom_prefix_and_unstyled_retention() {
     let mut book = Book::new();
@@ -136,6 +139,7 @@ fn supports_custom_prefix_and_unstyled_retention() {
 }
 /// Checks that invalid settings produce an error and no book.
 
+/// Checks that invalid privacy configuration fails without emitting a book.
 #[test]
 fn invalid_privacy_configuration_fails_without_emitting_a_book() {
     let output = invoke(json!({"remove":"true"}), Book::new());
@@ -145,6 +149,7 @@ fn invalid_privacy_configuration_fails_without_emitting_a_book() {
 }
 /// Checks that the `supports` query is answered by the exit status only.
 
+/// Treats the renderer exit status as the protocol support result.
 #[test]
 fn renderer_support_uses_only_exit_status() {
     for (renderer, supported) in [("html", true), ("not-supported", false)] {

@@ -72,7 +72,7 @@ fn test_clean_repository_reports_json_schema() {
     }
 }
 
-/// Errors are reported in the JSON, but only `--fail` changes the exit status.
+/// Fails on reported errors only when the strict flag is enabled.
 #[test]
 fn test_fail_flag_controls_exit_status() {
     let dir = tempdir().expect("a temporary directory should be created");

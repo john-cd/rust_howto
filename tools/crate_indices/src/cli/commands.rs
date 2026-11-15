@@ -158,8 +158,7 @@ fn arg_directory() -> clap::Arg {
 #[cfg(test)]
 mod tests {
     use super::*;
-    /// Verifies CLI.
-
+    /// Builds the command-line interface without invalid argument definitions.
     #[test]
     fn verify_cli() {
         cli().debug_assert();

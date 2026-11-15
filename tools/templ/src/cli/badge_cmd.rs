@@ -82,6 +82,7 @@ mod tests {
         assert_eq!(args.file, Some(PathBuf::from("custom/refs.md")));
     }
 
+    /// Carries the caller-provided path through the short option.
     #[test]
     fn add_short_option_propagates_path() {
         let matches = Command::new("templ")
@@ -112,6 +113,7 @@ mod tests {
         assert_eq!(args.file, None);
     }
 
+    /// Accepts the short alias for the badge subcommand.
     #[test]
     fn alias_b_is_recognized() {
         let matches = Command::new("templ")
@@ -125,6 +127,7 @@ mod tests {
         assert_eq!(args.file, None);
     }
 
+    /// Reports an error when the crate name is missing.
     #[test]
     fn missing_crate_name_fails() {
         let result = Command::new("templ")
@@ -134,6 +137,7 @@ mod tests {
         assert!(result.is_err(), "missing crate name should fail parsing");
     }
 
+    /// Leaves the badge command unset when it is not selected.
     #[test]
     fn returns_none_when_subcommand_not_invoked() {
         let matches = Command::new("templ")

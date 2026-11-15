@@ -361,6 +361,7 @@ fn code_fence(source: &str) -> String {
 mod tests {
     use super::*;
 
+    /// Extracts only the example content between marker lines.
     #[test]
     fn example_anchor_excludes_marker_lines() {
         let source = "before\n// ANCHOR: example\nfn main() {}\n// ANCHOR_END: example\nafter\n";
@@ -370,6 +371,7 @@ mod tests {
         );
     }
 
+    /// Reports missing markers for the example anchor.
     #[test]
     fn example_anchor_reports_missing_markers() {
         let error =
@@ -377,11 +379,13 @@ mod tests {
         assert!(error.to_string().contains("anchor start marker is missing"));
     }
 
+    /// Confirms that the code fence is longer than backticks in example.
     #[test]
     fn code_fence_is_longer_than_backticks_in_example() {
         assert_eq!(code_fence("let ticks = ```;"), "````");
     }
 
+    /// Reports an error when malformed directive configuration occurs.
     #[test]
     fn malformed_directive_configuration_is_an_error() {
         use std::str::FromStr as _;
@@ -398,6 +402,7 @@ mod tests {
         assert!(error.to_string().contains("preprocessor.directives"));
     }
 
+    /// Checks that unresolved example paths are errors.
     #[test]
     fn unresolved_example_paths_are_errors() {
         let root = PathBuf::from("test_book")
@@ -414,6 +419,7 @@ mod tests {
         assert!(format!("{error:#}").contains("failed to resolve example"));
     }
 
+    /// Checks that unresolved custom directives are errors.
     #[test]
     fn unresolved_custom_directives_are_errors() {
         use std::str::FromStr as _;
@@ -438,6 +444,7 @@ mod tests {
         assert!(format!("{error:#}").contains("{{#unknown value}}"));
     }
 
+    /// Reports renderer support for both preprocessing stages.
     #[test]
     fn both_stages_report_renderer_support() {
         assert!(

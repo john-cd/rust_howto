@@ -154,11 +154,13 @@ fn handle_supports(pre: &dyn Preprocessor, sub_args: &ArgMatches) -> ! {
 mod tests {
     use super::*;
 
+    /// Accepts the CLI when its definition is valid.
     #[test]
     fn cli_is_valid() {
         make_app().debug_assert();
     }
 
+    /// Confirms that the default stage is scrub.
     #[test]
     fn default_stage_is_scrub() {
         let matches = make_app().get_matches_from(["mdbook-scrub"]);
@@ -168,6 +170,7 @@ mod tests {
         );
     }
 
+    /// Parses the selected stage and renderer capabilities.
     #[test]
     fn parses_stage_and_supports() {
         let matches = make_app().get_matches_from(["mdbook-scrub", "--stage", "directives"]);
@@ -185,6 +188,7 @@ mod tests {
         );
     }
 
+    /// Rejects bad arguments.
     #[test]
     fn rejects_bad_arguments() {
         make_app()

@@ -177,7 +177,6 @@ use std::sync::Arc;
 
 // ANCHOR: setup
 /// Initializes sample benchmark state.
-///
 
 
 fn initialize() -> Arc<String> {

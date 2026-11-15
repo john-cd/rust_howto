@@ -29,6 +29,7 @@ mod tests {
 
     use super::*;
 
+    /// Leaves verbose mode disabled when no flag is supplied.
     #[test]
     fn verbose_flag_defaults_to_false() {
         let matches = Command::new("templ")
@@ -40,6 +41,7 @@ mod tests {
         assert!(!config.verbose);
     }
 
+    /// Enables verbose mode when the short flag is supplied.
     #[test]
     fn verbose_short_flag_enables_verbose() {
         let matches = Command::new("templ")
@@ -51,6 +53,7 @@ mod tests {
         assert!(config.verbose);
     }
 
+    /// Enables verbose mode when the long flag is supplied.
     #[test]
     fn verbose_long_flag_enables_verbose() {
         let matches = Command::new("templ")
@@ -62,6 +65,7 @@ mod tests {
         assert!(config.verbose);
     }
 
+    /// Applies the global verbose option to nested subcommands.
     #[test]
     fn verbose_flag_propagates_globally_with_subcommand() {
         let matches = Command::new("templ")

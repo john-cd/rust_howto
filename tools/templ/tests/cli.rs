@@ -54,9 +54,7 @@ fn test_missing_argument_reports_usage() {
 fn test_unknown_subcommand_fails() {
     assert!(!run(&["bogus"]).status.success());
 }
-/// Verifies version flag.
-///
-/// `--version` prints the package version.
+/// Displays the package version when `--version` is supplied.
 #[test]
 fn test_version_flag() {
     let output = run(&["--version"]);

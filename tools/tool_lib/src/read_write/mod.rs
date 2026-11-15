@@ -148,8 +148,7 @@ mod tests {
         Ok(())
     }
 
-    /// Tests that when `file.txt`, `file.new.txt`, `file.new.new.txt`, and `file.new.new.new.txt`
-    /// all exist, the function exceeds 3 attempts and returns an error.
+    /// Stops retrying after all candidate output names are occupied.
     #[test]
     fn test_write_if_not_exists_exceeds_max_attempts() -> Result<()> {
         let dir = tempdir()?;

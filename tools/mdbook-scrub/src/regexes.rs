@@ -223,6 +223,7 @@ mod tests {
         assert!(result.contains("[[hidden-comment]]"));
     }
 
+    /// Resolves wiki links through page references while preserving their titles.
     #[test]
     fn wikilinks_use_page_references_and_keep_their_title() {
         let regex = wikilink_regex();
@@ -238,6 +239,7 @@ mod tests {
         assert_eq!(result, "[title][p~file]");
     }
 
+    /// Uses the target as display text when a wiki link has no title.
     #[test]
     fn wikilinks_without_a_title_keep_the_target_as_display_text() {
         let regex = wikilink_regex();
@@ -253,6 +255,7 @@ mod tests {
         assert_eq!(result, "[file-name][p~file-name]");
     }
 
+    /// Removes wiki links that have no target.
     #[test]
     fn wikilinks_without_a_target_are_scrubbed() {
         let regex = wikilink_regex();

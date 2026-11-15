@@ -32,6 +32,7 @@ mod tests {
 
     use super::*;
 
+    /// Extracts single crate name.
     #[test]
     fn extracts_single_crate_name() {
         let matches = Command::new("test_cmd")
@@ -43,6 +44,7 @@ mod tests {
         assert_eq!(names, vec!["serde".to_owned()]);
     }
 
+    /// Extracts multiple crate names.
     #[test]
     fn extracts_multiple_crate_names() {
         let matches = Command::new("test_cmd")
@@ -57,6 +59,7 @@ mod tests {
         );
     }
 
+    /// Reports an error when the crate name is missing.
     #[test]
     fn missing_crate_name_fails() {
         let result = Command::new("test_cmd")
@@ -66,6 +69,7 @@ mod tests {
         assert!(result.is_err(), "missing crate name should fail");
     }
 
+    /// Returns an empty argument list when the option is omitted.
     #[test]
     fn empty_vector_when_arg_not_present() {
         let matches = Command::new("test_cmd")

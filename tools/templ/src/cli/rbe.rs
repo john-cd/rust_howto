@@ -46,6 +46,7 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
 mod tests {
     use super::*;
 
+    /// Parses multiple concepts.
     #[test]
     fn parses_multiple_concepts() {
         let matches = Command::new("templ")
@@ -65,6 +66,7 @@ mod tests {
         );
     }
 
+    /// Parses single concept.
     #[test]
     fn parses_single_concept() {
         let matches = Command::new("templ")
@@ -77,6 +79,7 @@ mod tests {
         assert_eq!(args.args, vec!["error_handling".to_owned()]);
     }
 
+    /// Reports an error when the concept is missing.
     #[test]
     fn missing_concept_fails() {
         let result = Command::new("templ")
@@ -86,6 +89,7 @@ mod tests {
         assert!(result.is_err(), "missing concept should fail parsing");
     }
 
+    /// Leaves the RBE command unset when it is not selected.
     #[test]
     fn returns_none_when_subcommand_not_invoked() {
         let matches = Command::new("templ")
