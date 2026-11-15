@@ -29,7 +29,6 @@ use clap::Subcommand;
 #[command(arg_required_else_help = true)]
 pub struct Cli {
     // Positional argument example.
-
     /// The pattern to look for (the doc comment appears in the help):
     pattern: Option<String>,
 
@@ -39,7 +38,6 @@ pub struct Cli {
     port: u16,
 
     // Named argument example: the path to the file to look into:
-
     /// Named argument: the path to the file to look into.
     #[arg(short, long)]
     path: Option<PathBuf>,
@@ -61,7 +59,6 @@ pub struct Cli {
     // verbose: clap_verbosity_flag::Verbosity,
 
     // Subcommands:
-
     /// The example to run.
     #[command(subcommand)]
     pub command: Option<Commands>,
@@ -70,11 +67,9 @@ pub struct Cli {
 /// The subcommands that can be used with the CLI.
 #[derive(Subcommand, Debug)]
 pub enum Commands {
-
     /// Read something:
     #[command(arg_required_else_help = true)]
     Read {
-
         /// A boolean flag:
         #[arg(short, long)]
         all: bool,

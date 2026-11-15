@@ -28,7 +28,6 @@ use strum::VariantNames;
     AsRefStr,
 )]
 enum BoolDisplayMode {
-
     /// `message` is a short label; `detailed_message` is a tooltip.
     #[strum(
         message = "True / False",

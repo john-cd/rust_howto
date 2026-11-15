@@ -17,7 +17,6 @@ use rkyv::rancor::Error;
 /// A struct that can be archived.
 #[derive(Archive, Deserialize, Serialize, Debug, PartialEq, Eq)]
 struct MyStruct {
-
     /// A string.
     field1: String,
 

@@ -22,7 +22,6 @@ type StrRef<'a> = &'a str;
 
 /// A struct that holds a reference.
 struct RefHolder<'a, T> {
-
     /// The reference held.
     reference: &'a T,
 }
@@ -30,11 +29,10 @@ struct RefHolder<'a, T> {
 // Implementation for the struct, with lifetime and type parameters.
 // Note how the lifetime parameter appears directly after `impl`.
 impl<'a, T> RefHolder<'a, T> {
-
     /// Stores a reference in a holder with the same lifetime as the referent.
     ///
     /// # Arguments
-///
+    ///
     /// * `reference` - Value borrowed for the lifetime of this holder.
     fn new(reference: &'a T) -> Self {
         Self { reference }
@@ -45,7 +43,6 @@ impl<'a, T> RefHolder<'a, T> {
 
 /// An enum whose variants hold references.
 enum Either<'a, T, U> {
-
     /// A reference to a value of the first type.
     Left(&'a T),
 
@@ -57,7 +54,6 @@ enum Either<'a, T, U> {
 
 /// A union of references.
 union MyUnion<'a> {
-
     /// A reference to an integer.
     int_ref: &'a i32,
 
@@ -69,7 +65,6 @@ union MyUnion<'a> {
 
 /// A trait with a lifetime parameter.
 trait Describable<'a> {
-
     /// Returns a description that lives for `'a`.
     fn describe(&self) -> &'a str;
 }
@@ -86,7 +81,6 @@ use std::fmt::Display;
 // Implementation of a trait for a generic type.
 // Note the trait bound.
 impl<T: Display> Display for RefHolder<'_, T> {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RefHolder: {}", self.reference)

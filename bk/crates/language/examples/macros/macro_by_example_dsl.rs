@@ -14,7 +14,6 @@ use std::collections::HashMap;
 /// A configuration value.
 #[derive(Debug, PartialEq, Clone)]
 pub enum ConfigValue {
-
     /// A string.
     String(String),
 

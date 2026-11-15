@@ -18,7 +18,6 @@ use super::conf::PreprocConfig;
 /// Compiled patterns used to remove hidden content and includes.
 #[derive(Default)]
 pub(crate) struct ScrubRegexes {
-
     /// Pattern for HTML sections marked as hidden, when enabled.
     pub hidden_sections: Option<Regex>,
 
@@ -108,7 +107,6 @@ where
 
 /// Collects byte ranges occupied by Markdown constructs where replacements are skipped.
 struct ProtectedSpanCollector {
-
     /// Address of the source buffer's first byte.
     source_base: usize,
 
@@ -120,7 +118,6 @@ struct ProtectedSpanCollector {
 }
 
 impl ProtectedSpanCollector {
-
     /// Adds the source range for a protected Markdown span when it belongs to the input buffer.
     fn add_span(&mut self, text: &str) {
         let Some(start) = text.as_ptr().addr().checked_sub(self.source_base) else {
@@ -136,7 +133,6 @@ impl ProtectedSpanCollector {
 }
 
 impl<'a> Visitor<'a> for ProtectedSpanCollector {
-
     /// Collects protected spans for each line in a fenced code block.
     fn visit_fenced_code_block(&mut self, data: &'a FencedCodeBlockData<'a>) {
         for line in &data.lines {

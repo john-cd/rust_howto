@@ -70,7 +70,6 @@ fn main() {
 
     #[derive(Generic, Debug, PartialEq)]
     struct Point {
-
         /// The horizontal coordinate.
         x: f64,
 
@@ -92,7 +91,6 @@ fn main() {
     // Convert between two structurally identical types using `convert_from`.
     #[derive(Generic)]
     struct Point3D {
-
         /// The horizontal coordinate.
         x: f64,
 
@@ -105,7 +103,6 @@ fn main() {
 
     #[derive(Generic, Debug, PartialEq)]
     struct Vec3 {
-
         /// The horizontal coordinate.
         x: f64,
 
@@ -139,7 +136,6 @@ fn main() {
 
     #[derive(LabelledGeneric)]
     struct NewUser<'a> {
-
         /// The first name.
         first_name: &'a str,
 
@@ -152,7 +148,6 @@ fn main() {
 
     #[derive(LabelledGeneric, Debug, PartialEq)]
     struct SavedUser<'a> {
-
         /// The first name.
         first_name: &'a str,
 
@@ -178,7 +173,6 @@ fn main() {
     // `transform_from` additionally handles reordered fields via `Sculptor`.
     #[derive(LabelledGeneric, Debug, PartialEq)]
     struct ArchivedUser<'a> {
-
         /// Age in years.
         age: usize, // fields in a different order
 

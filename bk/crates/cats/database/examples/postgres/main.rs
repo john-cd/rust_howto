@@ -27,7 +27,6 @@ mod insert_query_data;
 #[cfg(feature = "postgres")]
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Commands,
@@ -37,7 +36,6 @@ struct Cli {
 #[cfg(feature = "postgres")]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `aggregate_data` example.
     #[cfg(feature = "postgres")]
     #[command(name = "aggregate_data")]

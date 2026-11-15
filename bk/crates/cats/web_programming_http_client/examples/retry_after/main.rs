@@ -28,7 +28,6 @@ use reqwest::header::RETRY_AFTER;
 /// A transient failure, with the delay requested by the server, if any.
 #[derive(Debug)]
 struct Throttled {
-
     /// Current lifecycle value used to decide which throttled operations are valid.
     status: StatusCode,
 
@@ -38,7 +37,6 @@ struct Throttled {
 }
 
 impl fmt::Display for Throttled {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "transient failure: {}", self.status)

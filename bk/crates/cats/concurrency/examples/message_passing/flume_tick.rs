@@ -19,7 +19,6 @@ use flume::bounded;
 /// A command sent to the loop.
 #[derive(Debug, PartialEq)]
 enum Command {
-
     /// Adds a value to the running total.
     Add(i32),
 

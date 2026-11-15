@@ -25,7 +25,6 @@ use serde::Deserialize;
 #[derive(Deserialize)]
 #[serde(default, rename_all = "kebab-case")]
 struct Config {
-
     /// Whether to remove private chapters instead of keeping them.
     remove: bool,
 
@@ -40,7 +39,6 @@ struct Config {
 }
 
 impl Default for Config {
-
     /// Returns the default settings for removing and styling private book content.
     fn default() -> Self {
         Self {
@@ -56,7 +54,6 @@ impl Default for Config {
 pub struct Private;
 
 impl Preprocessor for Private {
-
     /// Returns the preprocessor name.
     fn name(&self) -> &'static str {
         "private"

@@ -64,11 +64,10 @@ impl MyFlags {
 // Implement the `Display` trait for `MyFlags` to customize its string
 // representation:
 impl fmt::Display for MyFlags {
-
     /// Formats the value for display.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `f` - Formatter used to write the formatted representation.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{:032b}", self.bits())

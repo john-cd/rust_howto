@@ -15,7 +15,6 @@ mod call_async_from_blocking_tokio_runtime;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -24,7 +23,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `call_async_from_blocking_futures_executor` example.
     #[command(name = "call_async_from_blocking_futures_executor")]
     CallAsyncFromBlockingFuturesExecutor,

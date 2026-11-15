@@ -15,7 +15,6 @@ use std::process::Command;
 struct KillOnDrop(Option<Child>);
 
 impl KillOnDrop {
-
     /// Starts guarding `child`.
     fn new(child: Child) -> Self {
         Self(Some(child))
@@ -33,7 +32,6 @@ impl KillOnDrop {
 }
 
 impl Drop for KillOnDrop {
-
     /// Kills and reaps the child, ignoring errors (for example if it already
     /// exited): `drop` cannot return them.
     fn drop(&mut self) {

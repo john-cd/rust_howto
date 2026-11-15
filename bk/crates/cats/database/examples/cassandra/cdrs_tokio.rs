@@ -47,7 +47,6 @@ type CurrentSession = Session<
 /// A row of the example table.
 #[derive(Clone, Debug, IntoCdrsValue, cdrs_tokio::TryFromRow, PartialEq)]
 struct RowStruct {
-
     /// Unique identifier of the row.
     id: Uuid,
 
@@ -59,7 +58,6 @@ struct RowStruct {
 }
 
 impl RowStruct {
-
     /// Converts the row into the values bound to an insert query.
     fn into_query_values(self) -> QueryValues {
         // Transforms arguments to values consumed by queries

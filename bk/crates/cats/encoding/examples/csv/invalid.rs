@@ -17,7 +17,6 @@ use serde::Deserialize;
 /// to handle cases where the ID might not be a valid u64.
 #[derive(Debug, Deserialize, PartialEq)]
 struct Record {
-
     /// The name.
     name: String,
 

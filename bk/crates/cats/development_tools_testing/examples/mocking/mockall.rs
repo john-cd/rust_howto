@@ -26,7 +26,6 @@ use mockall::*;
 /// Define our data model.
 #[derive(Debug, Clone, PartialEq)]
 struct User {
-
     /// Unique identifier of the user.
     id: u64,
 
@@ -43,7 +42,6 @@ struct User {
 /// a `MockUserRepository`.
 #[automock]
 trait UserRepository {
-
     /// Finds the user with the given `id`.
     fn find_by_id(&self, id: u64) -> Option<User>;
 
@@ -53,13 +51,11 @@ trait UserRepository {
 
 /// The service that uses the repository.
 struct UserService<T: UserRepository> {
-
     /// The repository used to load and store users.
     repository: T,
 }
 
 impl<T: UserRepository> UserService<T> {
-
     /// Creates a service backed by `repository`.
     fn new(repository: T) -> Self {
         Self { repository }
@@ -100,12 +96,11 @@ impl<T: UserRepository> UserService<T> {
 struct ActualRepository;
 
 impl UserRepository for ActualRepository {
-
     /// Searches the available by id data and returns candidates that satisfy the workflow’s
     /// matching rules.
     ///
     /// # Arguments
-///
+    ///
     /// * `id` - Identifier used to select the actual repository record or cache entry affected by
     ///   this operation.
     fn find_by_id(&self, id: u64) -> Option<User> {

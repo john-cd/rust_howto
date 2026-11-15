@@ -15,7 +15,6 @@ use std::collections::HashMap;
 
 /// A plugin that the host can run.
 pub trait Plugin: Send + Sync + 'static {
-
     /// Returns the name of the plugin.
     fn name(&self) -> &'static str;
 
@@ -26,13 +25,11 @@ pub trait Plugin: Send + Sync + 'static {
 /// The services shared between the host and the plugins, indexed by type.
 #[derive(Default)]
 pub struct Context {
-
     /// The services, by type.
     shared_data: HashMap<TypeId, Box<dyn Any + Send + Sync>>,
 }
 
 impl Context {
-
     /// Returns the service of type `T`, if registered.
     pub fn get<T: Any + Send + Sync>(&self) -> Option<&T> {
         self.shared_data
@@ -56,7 +53,6 @@ impl Context {
 
 /// State owned by the host.
 struct AppState {
-
     /// A counter that plugins can increase.
     counter: u32,
 }
@@ -106,7 +102,6 @@ impl Plugin for MyStringPlugin {
 /// A service registered by a plugin.
 #[derive(Debug)]
 pub struct CustomPluginService {
-
     /// A value.
     pub value: u64,
 }
@@ -135,7 +130,6 @@ impl Plugin for MyServiceConsumerPlugin {
 /// Owns the plugins and their context.
 #[derive(Default)]
 struct PluginManager {
-
     /// The registered plugins.
     plugins: Vec<Box<dyn Plugin>>,
 
@@ -144,7 +138,6 @@ struct PluginManager {
 }
 
 impl PluginManager {
-
     /// Adds a plugin.
     fn add_plugin(&mut self, plugin: Box<dyn Plugin>) {
         self.plugins.push(plugin);

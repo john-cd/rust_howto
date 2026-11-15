@@ -31,7 +31,6 @@ fn new(name: &str) -> Person {
 /// A person with a name.
 #[derive(Debug)]
 struct Person {
-
     /// Name of the person.
     name: String,
 }

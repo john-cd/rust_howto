@@ -36,7 +36,6 @@ macro_rules! must_be_string {
     ($lit:literal) => {
         // This block acts as a compile-time gate.
         {
-
             /// Shared `` used by this module.
             const _: () = {
                 // This helper function *only* accepts a string slice.
@@ -60,7 +59,6 @@ macro_rules! must_be_string {
 
 /// A trait implemented only for the types that the macro accepts.
 trait Processable {
-
     /// Implements the `Processable` trait for the given integer types.
     fn process(&self) {}
 }

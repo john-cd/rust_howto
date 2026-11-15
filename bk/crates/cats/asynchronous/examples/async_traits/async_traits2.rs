@@ -15,14 +15,12 @@
 /// specified in the trait definition, but is instead left to the implementor
 /// to decide.
 trait Container {
-
     /// Returns an iterator over the items in the container.
     fn items(&self) -> impl Iterator<Item = u8>;
 }
 
 /// A concrete implementation of the `Container` trait.
 struct MyContainer {
-
     /// The values that the container yields.
     items: Vec<u8>,
 }

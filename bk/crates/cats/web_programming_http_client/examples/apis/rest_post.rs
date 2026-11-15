@@ -24,7 +24,6 @@ const GISTS_ENDPOINT: &str = "https://api.github.com/gists";
 /// State required by `Post` during transport operations.
 #[derive(Serialize, Debug)]
 struct Post<'a> {
-
     /// The description of the gist.
     description: &'a str,
 
@@ -39,7 +38,6 @@ struct Post<'a> {
 /// State required by `Content` during transport operations.
 #[derive(Serialize, Debug)]
 struct Content<'a> {
-
     /// The text of the file.
     content: &'a str,
 }
@@ -48,7 +46,6 @@ struct Content<'a> {
 /// State required by `Gist` during transport operations.
 #[derive(Deserialize, Debug)]
 struct Gist {
-
     /// The identifier of the gist.
     id: String,
 
@@ -146,7 +143,6 @@ mod tests {
 
     /// Holds one request captured by the local HTTP server.
     struct RecordedRequest {
-
         /// The first line of the HTTP request.
         request_line: String,
 
@@ -160,7 +156,7 @@ mod tests {
     /// Starts a loopback server that sends one configured response per request.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the server cannot bind to an ephemeral loopback port
     /// or read its local address. Request-handling errors are reported by the
     /// returned `JoinHandle`.

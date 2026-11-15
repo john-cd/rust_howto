@@ -16,7 +16,6 @@ use axum::routing::get;
 /// Shared state.
 #[derive(Clone)]
 struct AppState {
-
     /// Greeting returned by the server.
     greeting: &'static str,
 }

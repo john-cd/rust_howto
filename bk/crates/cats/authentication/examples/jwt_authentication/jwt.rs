@@ -28,7 +28,6 @@ use serde::Serialize;
 /// - `roles`: Custom claim specifying access roles assigned to the user for authorization checks.
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 pub struct Claims {
-
     /// The subject identifier for the authenticated user.
     pub sub: String,
 

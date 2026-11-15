@@ -14,7 +14,6 @@ mod my {
 
     /// A trait implemented for every type that implements `Display`.
     pub trait VeryUsefulTrait {
-
         /// Returns a description of `self`.
         fn my_method(&self) -> String;
     }

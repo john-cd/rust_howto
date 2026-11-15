@@ -25,11 +25,10 @@ struct Wrapper(Vec<String>);
 
 /// Implement a (non-local) trait on the (local) `Wrapper` type:
 impl fmt::Display for Wrapper {
-
     /// Formats the value for display.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `f` - Formatter used to write the formatted representation.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "[{}]", self.0.join(", "))

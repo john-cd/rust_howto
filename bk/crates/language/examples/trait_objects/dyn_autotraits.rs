@@ -18,7 +18,6 @@ trait Message {
 
 /// A worker that sends a message.
 struct Worker {
-
     /// Identifier of the worker.
     id: u32,
 
@@ -28,7 +27,6 @@ struct Worker {
 
 // Implement the trait:
 impl Message for Worker {
-
     /// Sends message.
     fn send_message(&self) {
         println!("Worker {}: {}", self.id, self.msg);

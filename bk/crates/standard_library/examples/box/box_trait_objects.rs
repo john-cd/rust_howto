@@ -10,14 +10,12 @@
 
 /// A shape with an area.
 trait Shape {
-
     /// Returns the area of this shape in square units.
     fn area(&self) -> f64;
 }
 
 /// A circle.
 struct Circle {
-
     /// The radius of the circle.
     radius: f64,
 }
@@ -30,7 +28,6 @@ impl Shape for Circle {
 
 /// A rectangle.
 struct Rectangle {
-
     /// The width of the rectangle.
     width: f64,
 

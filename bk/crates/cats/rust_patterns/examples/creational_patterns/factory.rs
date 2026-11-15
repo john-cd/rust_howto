@@ -12,7 +12,6 @@
 
 /// A shape that can be drawn.
 trait Shape {
-
     /// Draws the shape.
     fn draw(&self);
 }
@@ -21,7 +20,6 @@ trait Shape {
 
 /// A circle.
 struct Circle {
-
     /// The radius of the circle.
     radius: f64,
 }
@@ -36,7 +34,6 @@ impl Shape for Circle {
 
 /// A square.
 struct Square {
-
     /// The length of a side of the square.
     side: f64,
 }
@@ -51,7 +48,6 @@ impl Shape for Square {
 
 /// The kinds of shapes that the factory can create.
 enum ShapeType {
-
     /// A circle.
     Circle,
 
@@ -70,7 +66,7 @@ impl ShapeFactory {
     /// the side of a square.
     ///
     /// # Arguments
-///
+    ///
     /// * `size` - Bound used to limit the amount of work or data accepted by the operation.
     fn create_shape(shape_type: ShapeType, size: f64) -> Box<dyn Shape> {
         match shape_type {

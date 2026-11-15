@@ -38,11 +38,10 @@ pub struct MyGreeter {}
 
 #[tonic::async_trait]
 impl Greeter for MyGreeter {
-
     /// Builds a greeting reply from the incoming gRPC request.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `request` - Greeting request containing the name to include in the reply.
     async fn say_hello(
         &self,

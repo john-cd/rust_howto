@@ -54,7 +54,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Generates random booleans, numbers and strings with `fastrand`, then samples and shuffles values.
+/// Generates random booleans, numbers and strings with `fastrand`, then samples and shuffles
+/// values.
 pub fn run() {
     main();
 }

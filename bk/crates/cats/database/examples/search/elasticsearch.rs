@@ -32,7 +32,6 @@ use url::Url;
 /// Represents a document that can be indexed in Elasticsearch.
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
-
     /// The identifier of the document.
     id: i32,
 

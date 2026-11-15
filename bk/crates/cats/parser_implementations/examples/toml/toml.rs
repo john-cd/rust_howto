@@ -14,7 +14,6 @@ use toml::value::Datetime;
 /// The configuration.
 #[derive(Deserialize, Debug)]
 struct Config {
-
     /// The title of the configuration.
     title: String,
 
@@ -25,7 +24,6 @@ struct Config {
 /// The settings of the database.
 #[derive(Deserialize, Debug)]
 struct Database {
-
     /// The address of the database server.
     server: String,
 

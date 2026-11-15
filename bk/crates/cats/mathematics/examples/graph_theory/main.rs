@@ -14,7 +14,6 @@ mod topological_levels;
 /// Command-line arguments for the graph theory examples.
 #[derive(Parser)]
 struct Cli {
-
     /// The graph example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,7 +22,6 @@ struct Cli {
 /// Graph examples available from this executable.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Reports strongly connected components that contain a cycle.
     CycleDetection,
 

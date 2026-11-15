@@ -53,7 +53,6 @@ fn main() {
     /// Holds a value of any type to demonstrate generic struct implementations.
     #[derive(Debug)]
     struct MyStruct {
-
         /// The value stored by this wrapper.
         value: i32,
     }

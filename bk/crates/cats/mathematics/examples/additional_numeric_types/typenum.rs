@@ -22,7 +22,6 @@ use typenum::Unsigned;
 /// The size `N` is a type-level unsigned integer from `typenum`, so
 /// mismatched sizes are caught at compile time rather than at runtime.
 struct FixedBuffer<T, N: Unsigned> {
-
     /// The elements of the buffer.
     data: Vec<T>,
 
@@ -31,7 +30,6 @@ struct FixedBuffer<T, N: Unsigned> {
 }
 
 impl<T: Default + Clone, N: Unsigned> FixedBuffer<T, N> {
-
     /// Creates a buffer of `N` default elements.
     fn new() -> Self {
         Self {

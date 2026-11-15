@@ -14,13 +14,11 @@ const SERVICE: &str = "rust-howto-example";
 
 /// A thin wrapper over one credential store entry.
 struct Vault {
-
     /// The entry in the credential store.
     entry: Entry,
 }
 
 impl Vault {
-
     /// Opens the entry for `user`.
     fn new(user: &str) -> Result<Self, Error> {
         Ok(Self {

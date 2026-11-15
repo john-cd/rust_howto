@@ -100,7 +100,6 @@ fn format() {
     /// An example struct that implements the `Debug` trait.
     #[derive(Debug)]
     struct Point {
-
         /// The horizontal coordinate.
         x: i32,
 

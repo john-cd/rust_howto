@@ -14,7 +14,6 @@ use syn::visit::Visit;
 /// Counts functions (free functions and methods) and structs.
 #[derive(Default)]
 struct ItemCounter {
-
     /// Number of functions discovered.
     functions: usize,
 
@@ -23,7 +22,6 @@ struct ItemCounter {
 }
 
 impl<'ast> Visit<'ast> for ItemCounter {
-
     /// Counts a free function in the syntax tree and continues visiting its child items.
     ///
     /// # Arguments

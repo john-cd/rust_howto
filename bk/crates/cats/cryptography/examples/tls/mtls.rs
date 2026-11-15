@@ -122,7 +122,6 @@ mod tests {
 
     /// Holds in-memory certificates and keys for a local mutual TLS exchange.
     struct LocalCertificateFixtures {
-
         /// DER-encoded certificate authority certificate.
         ca_certificate_der: CertificateDer<'static>,
 

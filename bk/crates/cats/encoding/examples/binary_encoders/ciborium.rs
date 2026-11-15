@@ -23,7 +23,6 @@ use serde::Serialize;
 /// A struct that is serialized to and deserialized from CBOR.
 #[derive(Serialize, Deserialize, Debug, PartialEq, Eq)]
 struct MyData {
-
     /// The name.
     name: String,
 

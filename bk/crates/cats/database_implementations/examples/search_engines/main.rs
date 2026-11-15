@@ -19,7 +19,6 @@ mod tantivy;
 #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -29,7 +28,6 @@ struct Cli {
 #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `meilisearch` example.
     #[cfg(feature = "meilisearch")]
     #[command(name = "meilisearch")]

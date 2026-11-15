@@ -45,7 +45,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// This example demonstrates transformations in 3D using the `nalgebra` crate: rotations, translations, and composing them into isometries.
+/// This example demonstrates transformations in 3D using the `nalgebra` crate: rotations,
+/// translations, and composing them into isometries.
 pub fn run() {
     main();
 }

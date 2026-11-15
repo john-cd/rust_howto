@@ -14,7 +14,6 @@ mod dbg_macro;
 /// Command-line arguments for the debugging examples.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Commands,
@@ -23,7 +22,6 @@ struct Cli {
 /// The debugging examples available from this target.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Prints and returns a value with `dbg!`.
     DbgMacro,
 

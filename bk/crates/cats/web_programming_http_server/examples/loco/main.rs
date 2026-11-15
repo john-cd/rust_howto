@@ -33,7 +33,6 @@ pub struct App;
 #[cfg(feature = "loco-support")]
 #[async_trait]
 impl Hooks for App {
-
     /// Sets the application name.
     fn app_name() -> &'static str {
         env!("CARGO_CRATE_NAME")
@@ -47,7 +46,7 @@ impl Hooks for App {
     /// Creates the application without enabling database support.
     ///
     /// # Arguments
-///
+    ///
     /// * `mode` - Startup mode selected for the application.
     /// * `environment` - Runtime environment and configuration profile.
     async fn boot(
@@ -77,12 +76,12 @@ mod home {
     /// not use.
     ///
     /// # Arguments
-///
+    ///
     /// * `_ctx` - Application state containing the repositories and services needed by this
     ///   workflow.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if a fallible operation cannot complete.
     #[allow(
         clippy::result_large_err,

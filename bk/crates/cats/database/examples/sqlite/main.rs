@@ -23,7 +23,6 @@ mod transactions;
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -33,7 +32,6 @@ struct Cli {
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `initialization` example.
     #[cfg(all(target_os = "linux", feature = "sqlite"))]
     #[command(name = "initialization")]

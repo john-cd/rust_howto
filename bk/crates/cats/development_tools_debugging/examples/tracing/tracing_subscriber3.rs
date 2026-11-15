@@ -19,7 +19,6 @@ use tracing_subscriber::prelude::*;
 /// Configuration struct.
 #[derive(Debug, Deserialize)]
 struct Config {
-
     /// Whether the application runs in production.
     is_prod: bool,
 

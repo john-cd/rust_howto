@@ -26,21 +26,19 @@ use super::jwt::Claims;
 /// Holds the HS256 key shared by the router's request extractors.
 #[derive(Clone)]
 pub struct JwtSecret(
-
     /// Secret bytes used to verify HS256 signatures.
     Arc<[u8]>,
 );
 
 impl JwtSecret {
-
     /// Creates a key after checking the minimum HS256 key size.
     ///
     /// # Arguments
-///
+    ///
     /// * `secret` - At least 32 bytes of key material used to sign and verify HS256 tokens.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns an error when `secret` is shorter than 32 bytes.
     pub fn new(secret: impl AsRef<[u8]>) -> anyhow::Result<Self> {
         let secret = secret.as_ref();
@@ -59,7 +57,6 @@ impl JwtSecret {
 
 /// Claims extracted from a valid bearer token.
 pub struct AuthClaims(
-
     /// Verified JWT claims attached to the request.
     Claims,
 );
@@ -68,7 +65,6 @@ impl<S> FromRequestParts<S> for AuthClaims
 where
     S: Send + Sync,
 {
-
     /// HTTP status and message returned when extracting claims fails.
     type Rejection = (StatusCode, &'static str);
 

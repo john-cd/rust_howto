@@ -23,11 +23,9 @@ pub(super) static INDEX_ANCHORS: &str =
 ///
 /// Returns an error if the index-anchor template cannot be loaded or rendered.
 pub fn create_index_anchors(keywords: Vec<&str>) -> Result<String> {
-
     /// Template data used to render anchors for the book index.
     #[derive(Serialize)]
     struct Context<'a> {
-
         /// Keywords associated with the example.
         keywords: Vec<&'a str>,
     }

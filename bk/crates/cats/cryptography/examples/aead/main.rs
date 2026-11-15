@@ -12,7 +12,6 @@ mod aes_gcm_siv;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,7 +20,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `aes_gcm_siv` example.
     #[command(name = "aes_gcm_siv")]
     AesGcmSiv,

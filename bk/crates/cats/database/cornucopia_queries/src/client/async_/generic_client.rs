@@ -26,17 +26,18 @@ pub trait GenericClient: Send + Sync {
     }
 
     /// Prepares a SQL query and returns its reusable statement.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns a database error if PostgreSQL cannot prepare `query`.
     fn prepare(&self, query: &str) -> impl Future<Output = Result<Statement, Error>> + Send;
 
     /// Executes a statement and returns the number of rows affected.
-///
+    ///
     /// # Errors
-///
-    /// Returns a database error if PostgreSQL cannot execute the statement or encode its parameters.
+    ///
+    /// Returns a database error if PostgreSQL cannot execute the statement or encode its
+    /// parameters.
     fn execute<T>(
         &self,
         query: &T,
@@ -46,9 +47,9 @@ pub trait GenericClient: Send + Sync {
         T: ?Sized + ToStatement + Sync + Send;
 
     /// Executes a query that must return exactly one row.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns a database error if execution fails or the query does not return exactly one row.
     fn query_one<T>(
         &self,
@@ -59,9 +60,9 @@ pub trait GenericClient: Send + Sync {
         T: ?Sized + ToStatement + Sync + Send;
 
     /// Executes a query that may return zero or one row.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns a database error if execution fails or the query returns more than one row.
     fn query_opt<T>(
         &self,
@@ -72,9 +73,9 @@ pub trait GenericClient: Send + Sync {
         T: ?Sized + ToStatement + Sync + Send;
 
     /// Executes a query and collects all returned rows.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns a database error if PostgreSQL cannot execute the query or decode its rows.
     fn query<T>(
         &self,
@@ -85,9 +86,9 @@ pub trait GenericClient: Send + Sync {
         T: ?Sized + ToStatement + Sync + Send;
 
     /// Executes a query and returns its rows as a stream.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns a database error if PostgreSQL cannot start the row query.
     fn query_raw<T, I>(
         &self,

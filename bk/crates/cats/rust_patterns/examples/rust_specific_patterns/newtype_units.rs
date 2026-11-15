@@ -45,7 +45,6 @@ impl Sub for Meters {
 }
 
 impl SubAssign for Meters {
-
     /// Scaling by a plain number is fine: meters * 2.0 is still meters.
     fn sub_assign(&mut self, rhs: Self) {
         self.0 -= rhs.0;
@@ -80,7 +79,6 @@ impl Div for Meters {
 // Neither does adding a bare number: `Meters(2.0) + 3.0`.
 
 impl fmt::Display for Meters {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{} m", self.0)

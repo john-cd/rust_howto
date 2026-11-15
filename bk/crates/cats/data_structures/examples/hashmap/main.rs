@@ -23,7 +23,6 @@ mod hashset;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -32,7 +31,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `custom_hash_function` example.
     #[command(name = "custom_hash_function")]
     CustomHashFunction,

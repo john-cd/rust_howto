@@ -47,7 +47,6 @@ trait SomeBehavior {
 
 /// A struct that implements [`SomeBehavior`].
 struct MyStruct {
-
     /// A number.
     data: i32,
 
@@ -136,11 +135,9 @@ mod tests {
     /// A type that keeps the defaults gets the trait's default constant.
     #[test]
     fn test_default_constant() {
-
         /// Groups the data required by structs operations.
         struct Defaults;
         impl SomeBehavior for Defaults {
-
             /// Shared `another const` used by this module.
             type Output = ();
 

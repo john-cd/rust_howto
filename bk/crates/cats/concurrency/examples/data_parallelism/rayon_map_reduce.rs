@@ -12,7 +12,6 @@ use rayon::prelude::*;
 
 /// A person, reduced to an age.
 struct Person {
-
     /// Age in years.
     age: u32,
 }

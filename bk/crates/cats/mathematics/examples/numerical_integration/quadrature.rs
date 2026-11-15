@@ -7,7 +7,6 @@
 /// Errors returned by the composite integration methods.
 #[derive(Debug, PartialEq, Eq)]
 enum IntegrationError {
-
     /// The lower or upper integration bound is not finite.
     NonFiniteBounds,
 
@@ -29,7 +28,6 @@ enum IntegrationError {
 }
 
 impl std::fmt::Display for IntegrationError {
-
     /// Formats the value for display.
     fn fmt(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let message = match self {

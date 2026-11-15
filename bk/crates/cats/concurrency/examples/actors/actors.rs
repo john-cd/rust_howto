@@ -15,10 +15,8 @@ use tokio::sync::oneshot;
 
 /// A command that the counter actor processes.
 enum Message {
-
     /// Adds an amount and returns the updated total through the reply channel.
     Add {
-
         /// The amount to add to the actor's state.
         amount: u64,
 
@@ -34,11 +32,10 @@ struct CounterHandle {
 }
 
 impl CounterHandle {
-
     /// Adds an amount and waits for the actor's updated total.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the actor has stopped before receiving or replying
     /// to the command.
     async fn add(&self, amount: u64) -> anyhow::Result<u64> {

@@ -27,7 +27,6 @@ use reqwest::header::RANGE;
 
 /// An iterator that yields adjacent, inclusive byte ranges.
 struct PartialRangeIter {
-
     /// The first byte of the next range.
     start: u64,
 
@@ -42,11 +41,10 @@ struct PartialRangeIter {
 }
 
 impl PartialRangeIter {
-
     /// Creates a range iterator for the inclusive interval from `start` to
     ///
     /// # Arguments
-///
+    ///
     /// `end`.
     ///
     /// An interval with `start > end` is empty.
@@ -159,7 +157,6 @@ fn download_to<W: Write>(url: &str, chunk_size: u32, output: &mut W) -> Result<(
 ///
 /// Returns any directory, file, network, response, or write error.
 fn main() -> Result<()> {
-
     /// Maximum number of bytes requested in each download chunk.
     const CHUNK_SIZE: u32 = 10_240;
     let url = "https://httpbin.org/range/102400?duration=2";
@@ -205,13 +202,13 @@ mod tests {
     /// Starts a loopback server that serves the requested content and records requests.
     ///
     /// # Arguments
-///
+    ///
     /// * `content` - Bytes returned for the requested ranges.
     /// * `range_status` - Status code sent for range requests.
     /// * `request_count` - Number of client requests the server accepts.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the loopback listener cannot bind or its address
     /// cannot be read. Errors inside the server thread are returned by its
     /// `JoinHandle`.

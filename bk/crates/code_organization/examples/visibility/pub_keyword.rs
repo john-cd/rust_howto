@@ -20,7 +20,6 @@ mod m {
     pub struct Struct;
 
     impl Struct {
-
         /// Public method.
         pub fn method(&self) -> &'static str {
             "method"

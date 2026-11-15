@@ -10,7 +10,6 @@
 
 /// A trait with one method.
 pub trait Summary {
-
     /// Returns a string that summarizes the item.
     /// Note that it can be just a method signature (no function body).
     fn summarize(&self) -> String;
@@ -18,7 +17,6 @@ pub trait Summary {
 
 /// A news article, which can be summarized.
 pub struct NewsArticle {
-
     /// The headline.
     pub headline: String,
 

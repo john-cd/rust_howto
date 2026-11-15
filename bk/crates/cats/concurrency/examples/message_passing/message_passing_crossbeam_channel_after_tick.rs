@@ -38,7 +38,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// This example demonstrates the use of `crossbeam_channel`'s `tick` and `after` functions to create channels that deliver messages periodically and after a certain duration, respectively.
+/// This example demonstrates the use of `crossbeam_channel`'s `tick` and `after` functions to
+/// create channels that deliver messages periodically and after a certain duration, respectively.
 pub fn run() {
     main();
 }

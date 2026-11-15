@@ -23,7 +23,6 @@ use surrealdb::types::SurrealValue;
 /// A person, stored in the database.
 #[derive(Debug, SurrealValue)]
 struct Person {
-
     /// The name of the person.
     name: String, // or: Cow<'static, str>
 

@@ -22,7 +22,6 @@ use serde::Serialize;
 /// A document that can be indexed in `MeiliSearch`.
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
-
     /// The identifier of the document.
     id: usize,
 

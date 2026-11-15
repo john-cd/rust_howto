@@ -25,7 +25,6 @@ use secrecy::SecretString;
 struct RedactedSecret(String);
 
 impl RedactedSecret {
-
     /// Returns the secret value. Call sites mark where the secret is used.
     fn expose_secret(&self) -> &str {
         &self.0
@@ -33,11 +32,10 @@ impl RedactedSecret {
 }
 
 impl fmt::Debug for RedactedSecret {
-
     /// Formats the value for display.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `f` - Formatter used to write the formatted representation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str("RedactedSecret(***)")
@@ -45,7 +43,6 @@ impl fmt::Debug for RedactedSecret {
 }
 
 impl fmt::Display for RedactedSecret {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str("***")
@@ -65,7 +62,6 @@ impl FromStr for RedactedSecret {
 /// redacted.
 #[derive(Debug)]
 struct Config {
-
     /// Where to send requests.
     endpoint: String,
 

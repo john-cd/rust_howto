@@ -17,7 +17,6 @@ use std::ops::Add;
 /// A point in two dimensions.
 #[derive(Debug, Copy, Clone, PartialEq, Eq)]
 struct Point {
-
     /// The x coordinate.
     x: i32,
 

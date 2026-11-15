@@ -18,7 +18,6 @@ use thiserror::Error;
 pub enum DataStoreError {
     // A `Display` impl is generated for your error if we provide
     // #[error("...")] messages on the struct or each variant of your enum.
-
     /// The data store disconnected.
     #[error("data store disconnected")]
     Disconnect(#[from] std::io::Error), /* A `From` impl is generated for
@@ -32,7 +31,6 @@ pub enum DataStoreError {
     /// A header does not have the expected content.
     #[error("invalid header (expected {expected:?}, found {found:?})")]
     InvalidHeader {
-
         /// The expected header.
         expected: String,
 

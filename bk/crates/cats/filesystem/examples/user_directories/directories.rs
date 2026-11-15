@@ -20,7 +20,8 @@ use directories::ProjectDirs;
 ///
 /// # Errors
 ///
-/// Returns an error if the platform cannot determine the application data directory and `APP_DATA_DIR` is unset.
+/// Returns an error if the platform cannot determine the application data directory and
+/// `APP_DATA_DIR` is unset.
 pub fn get_data_dir() -> Result<PathBuf> {
     let directory = if let Ok(s) = std::env::var("APP_DATA_DIR") {
         PathBuf::from(s)
@@ -36,7 +37,8 @@ pub fn get_data_dir() -> Result<PathBuf> {
 ///
 /// # Errors
 ///
-/// Returns an error if the platform cannot determine the application config directory and `APP_CONFIG_DIR` is unset.
+/// Returns an error if the platform cannot determine the application config directory and
+/// `APP_CONFIG_DIR` is unset.
 pub fn get_config_dir() -> Result<PathBuf> {
     let directory = if let Ok(s) = std::env::var("APP_CONFIG_DIR") {
         PathBuf::from(s)

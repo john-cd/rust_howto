@@ -19,7 +19,6 @@ use serde::de;
 /// A row of CSV data.
 #[derive(Debug, Deserialize)]
 struct Row {
-
     /// The name of the color.
     color_name: String,
 
@@ -30,7 +29,6 @@ struct Row {
 
 /// A color represented as a hex triplet.
 struct HexColor {
-
     /// The red component.
     red: u8,
 
@@ -60,7 +58,6 @@ impl FromStr for HexColor {
 }
 
 impl<'de> Deserialize<'de> for HexColor {
-
     /// Deserialize a hex color string into a `HexColor`.
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where

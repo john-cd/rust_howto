@@ -65,7 +65,6 @@ use zerocopy::KnownLayout;
 /// A struct that can be created from zeroed bytes.
 #[derive(FromZeros, Debug)]
 struct MyZeroableStruct {
-
     /// Eight bytes.
     field: [u8; 8],
 }
@@ -103,7 +102,6 @@ fn manipulate_zero_bytes() {
 /// The header of a packet.
 #[derive(FromBytes, IntoBytes, Immutable, KnownLayout, PartialEq, Debug)]
 struct PacketHeader {
-
     /// The source port.
     src_port: [u8; 2],
 
@@ -125,7 +123,6 @@ struct PacketHeader {
 #[repr(C)]
 #[derive(FromBytes, Immutable, KnownLayout)]
 struct Packet {
-
     /// The header of the packet.
     header: PacketHeader,
 
@@ -200,7 +197,6 @@ fn from_bytes() -> anyhow::Result<()> {
 #[repr(u8)]
 #[derive(IntoBytes, Immutable)]
 enum MyEnum {
-
     /// The first variant, stored as 0.
     A,
 

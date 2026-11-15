@@ -46,7 +46,9 @@ fn main() -> Result<(), Unspecified> {
 }
 // ANCHOR_END: example
 
-/// This example demonstrates how to use the `ring` crate to generate an HMAC (Hash-based Message Authentication Code) signature for a message and then verify the signature. It uses SHA256 as the underlying hash function.
+/// This example demonstrates how to use the `ring` crate to generate an HMAC (Hash-based Message
+/// Authentication Code) signature for a message and then verify the signature. It uses SHA256 as
+/// the underlying hash function.
 ///
 /// # Errors
 ///

@@ -23,7 +23,6 @@
 /// A "base type" that stores the common data of media files.
 #[derive(Debug)]
 struct MediaFile {
-
     /// The identifier.
     id: String,
 
@@ -44,7 +43,6 @@ struct MediaFile {
 struct ImageFile {
     // There is no 'is-a' inheritance in Rust. Use composition ('has-a').
     // The "base type" is simply embedded into the "derived type".
-
     /// The embedded media file.
     media: MediaFile,
 
@@ -82,7 +80,6 @@ impl ImageFile {
 // consider implementing `AsRef` to let `ImageFile` lend a `&MediaFile`.
 // This is a reference conversion, not an 'is-a' relationship.
 impl AsRef<MediaFile> for ImageFile {
-
     /// Views this value as ref.
     fn as_ref(&self) -> &MediaFile {
         &self.media
@@ -91,7 +88,6 @@ impl AsRef<MediaFile> for ImageFile {
 
 // We also need to implement `AsRef` for the "base type":
 impl AsRef<Self> for MediaFile {
-
     /// Views this value as ref.
     fn as_ref(&self) -> &Self {
         self

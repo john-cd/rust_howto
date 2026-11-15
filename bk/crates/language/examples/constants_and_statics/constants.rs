@@ -80,7 +80,6 @@ fn main() {
     struct PrintOnDrop(&'static str);
 
     impl Drop for PrintOnDrop {
-
         /// Releases the resources owned by this value.
         fn drop(&mut self) {
             // Print the inner string slice.

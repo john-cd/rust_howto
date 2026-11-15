@@ -7,13 +7,11 @@
 /// An enum to represent different types of messages.
 #[derive(Debug)]
 enum Message {
-
     /// A variant without data.
     Quit, // Unit-like variant (no fields).
 
     /// A variant with named fields.
     Move {
-
         /// Distance to move in the x direction.
         x: i32,
 
@@ -30,7 +28,6 @@ enum Message {
 
 /// Define methods on enums.
 impl Message {
-
     /// Prints a description of the message.
     fn call(&self) {
         // The `match` keyword allows us to compare a value against a series of

@@ -14,7 +14,6 @@
 
 /// Represents a rectangle with a width and height.
 struct Rectangle {
-
     /// Width of the rectangle.
     width: u32,
 
@@ -23,7 +22,6 @@ struct Rectangle {
 }
 
 impl Rectangle {
-
     /// Checks if this rectangle can hold another rectangle.
     fn can_hold(&self, another: &Self) -> bool {
         self.width > another.width && self.height > another.height

@@ -16,7 +16,6 @@ fn main() {
     println!("x: {x}, y: {y}");
 
     struct Point {
-
         /// The horizontal coordinate.
         x: i32,
 

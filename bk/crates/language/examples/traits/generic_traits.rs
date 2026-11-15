@@ -7,7 +7,6 @@
 /// A generic trait that can be implemented for different types.
 /// `T` between angle brackets is a generic type parameter:
 trait Test<T> {
-
     /// A function that takes a value of generic type `T` as its input.
     fn test(_t: T);
 }

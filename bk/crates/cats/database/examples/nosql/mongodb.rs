@@ -21,7 +21,6 @@ use serde::Serialize;
 /// Represents a user with a name and age.
 #[derive(Debug, Serialize, Deserialize)]
 struct User {
-
     /// Name of the user.
     name: String,
 

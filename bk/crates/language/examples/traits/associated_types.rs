@@ -11,7 +11,6 @@
 /// A trait that represents an iterator (similar to what is in the standard
 /// library).
 trait Iterator {
-
     /// This associated type is the type of the elements yielded by the
     /// iterator. You can't provide a default implementation at this point.
     type Item;

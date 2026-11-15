@@ -10,20 +10,17 @@ mod a_module {
     /// Public enum.
     pub enum Enum {
         // Public-by-default variant.
-
         /// A variant, public like its enum.
         Variant,
     }
 
     /// Public struct with a private field.
     pub struct PublicStruct {
-
         /// A private field.
         private_val: bool,
     }
 
     impl PublicStruct {
-
         /// Public associated function ("constructor").
         pub fn new(val: bool) -> Self {
             Self { private_val: val }
@@ -38,14 +35,12 @@ mod a_module {
 
     /// Public struct used to demonstrate the default visibility of struct fields.
     pub struct PublicStructPublicField {
-
         /// A public field.
         pub public_val: bool,
     }
 
     /// Public trait.
     pub trait Trait {
-
         /// An associated type, public like the trait.
         type Out; // Public-by-default associated type.
 
@@ -112,7 +107,6 @@ mod tests {
     /// Verifies trait items are public.
     #[test]
     fn test_trait_items_are_public() {
-
         /// Groups the data required by visibility operations.
         struct Doubler;
         impl a_module::Trait for Doubler {

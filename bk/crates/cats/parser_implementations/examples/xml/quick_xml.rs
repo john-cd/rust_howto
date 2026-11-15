@@ -24,7 +24,6 @@ use serde::Deserialize;
 #[derive(Debug, Deserialize, PartialEq)]
 #[serde(rename = "person")]
 struct Person {
-
     /// The name of the person.
     name: String,
 

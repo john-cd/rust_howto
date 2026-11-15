@@ -17,7 +17,6 @@ use deadpool::managed;
 /// The errors of the connection manager.
 #[derive(Debug)]
 enum Error {
-
     /// A failure in the connection or in the manager.
     Fail, // Represents a failure in the connection or manager.
 }
@@ -36,7 +35,6 @@ impl Server {
 
 /// Creates and recycles the `Server` connections of the pool.
 struct Manager {
-
     /// Whether `create` should fail, to show how errors surface.
     fail: bool,
 }

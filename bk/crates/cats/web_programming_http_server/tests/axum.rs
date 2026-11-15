@@ -31,7 +31,6 @@ use axum::routing::get;
 /// Application state shared across all handlers.
 #[derive(Clone)]
 struct AppState {
-
     /// The greeting that the root handler returns.
     greeting: String,
 }

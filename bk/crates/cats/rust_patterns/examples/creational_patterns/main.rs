@@ -18,7 +18,6 @@ mod singleton;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,7 +26,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `abstract_factory` example.
     #[command(name = "abstract_factory")]
     AbstractFactory,

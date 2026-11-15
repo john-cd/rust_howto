@@ -17,7 +17,6 @@ use serde::Serialize;
 /// A simple struct representing a record with a name, place, and ID.
 #[derive(Serialize)]
 struct Record<'a> {
-
     /// The name.
     name: &'a str,
 

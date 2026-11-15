@@ -6,7 +6,6 @@
 
 /// A trait.
 trait Summary {
-
     /// Method signature.
     /// Types that implement the `Summary` trait must implement a method with
     /// the exact signature.
@@ -26,14 +25,12 @@ trait Summary {
 
 /// Let's define a `Blog` struct...
 struct Blog {
-
     /// The author of the blog post.
     author: String,
 }
 
 /// ...that implements the `Summary` trait.
 impl Summary for Blog {
-
     /// All non-default-implemented methods must be implemented for the struct.
     fn summarize_author(&self) -> String {
         self.author.clone()

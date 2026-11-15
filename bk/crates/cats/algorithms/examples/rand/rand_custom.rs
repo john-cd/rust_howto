@@ -16,7 +16,6 @@ use rand::distr::StandardUniform;
 /// A simple struct representing a point in 2D space.
 #[derive(Debug)]
 struct Point {
-
     /// The horizontal coordinate.
     x: i32,
 
@@ -26,11 +25,10 @@ struct Point {
 
 // This implementation allows generating random `Point` instances.
 impl Distribution<Point> for StandardUniform {
-
     /// Samples a random point using the supplied random-number generator.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `rng` - Random-number generator used to choose the point's coordinates.
     fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> Point {
         let (x, y) = rng.random::<(i32, i32)>();

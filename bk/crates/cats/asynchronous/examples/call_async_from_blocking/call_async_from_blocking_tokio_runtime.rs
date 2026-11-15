@@ -55,7 +55,8 @@ async fn my_bg_task(i: u64) {
 }
 // ANCHOR_END: example
 
-/// Spawns background tasks on a one-thread runtime, works on the main thread meanwhile, then waits for the tasks.
+/// Spawns background tasks on a one-thread runtime, works on the main thread meanwhile, then waits
+/// for the tasks.
 pub fn run() {
     main();
 }

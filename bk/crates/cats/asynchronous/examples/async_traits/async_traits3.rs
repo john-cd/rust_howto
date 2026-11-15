@@ -15,7 +15,6 @@ use async_trait::async_trait;
 /// An advertisement that can be run asynchronously.
 #[async_trait]
 trait Advertisement {
-
     /// Shows the advertisement.
     async fn run(&self);
 }
@@ -26,7 +25,6 @@ struct Modal;
 // Implement the `Advertisement` trait for the `Modal` struct:
 #[async_trait]
 impl Advertisement for Modal {
-
     /// Shows the modal, repeats the signup reminder four times, then hides it.
     async fn run(&self) {
         // Call the `render_fullscreen` method on `self` and await its
@@ -45,7 +43,6 @@ impl Advertisement for Modal {
 
 // Implement methods for the `Modal` struct.
 impl Modal {
-
     /// Shows the modal in full screen.
     async fn render_fullscreen(&self) {
         println!("Render fullscreen");

@@ -11,7 +11,6 @@
 
 /// A trait for types that can be drawn.
 trait Draw {
-
     /// Draws the object.
     fn draw(&self);
 }
@@ -21,7 +20,6 @@ struct Button;
 
 /// Dummy implementation of the trait for `Button`.
 impl Draw for Button {
-
     /// Dummy implementation.
     fn draw(&self) {
         println!("Button");
@@ -40,7 +38,6 @@ impl Draw for Text {
 
 /// A struct representing a screen that can display multiple components.
 struct Screen {
-
     /// A vector of trait objects that can be drawn.
     /// Note the `dyn` keyword. Trait objects are dynamically sized types.
     /// Like all DSTs, trait objects must be used behind some type of pointer -
@@ -54,7 +51,6 @@ struct Screen {
 }
 
 impl Screen {
-
     /// Creates a new screen with some components. The list below
     /// could be dynamically generated at run time.
     fn new() -> Self {

@@ -35,7 +35,6 @@ use tokio::sync::oneshot;
 
 /// A message that asks the greeter to greet someone and return a reply.
 struct Greet {
-
     /// Name to include in the greeting.
     name: String,
 
@@ -55,7 +54,6 @@ struct Greeter;
 
 /// The state of a [`Greeter`].
 struct GreeterState {
-
     /// Number of greetings handled so far.
     count: u64,
 }

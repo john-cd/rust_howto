@@ -16,7 +16,6 @@ use serde::Deserialize;
 /// Settings deserialized from environment variables.
 #[derive(Deserialize, Debug)]
 struct Configuration {
-
     /// The port to listen on, from the `PORT` environment variable.
     port: u16,
 }

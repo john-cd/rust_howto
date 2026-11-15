@@ -14,7 +14,6 @@
 /// A point that derives `Debug`.
 #[derive(Debug)]
 struct Point {
-
     /// The x coordinate.
     x: i32,
 

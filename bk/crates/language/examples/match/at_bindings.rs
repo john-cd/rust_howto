@@ -6,10 +6,8 @@
 
 /// A message with an identifier.
 enum Message {
-
     /// A greeting.
     Hello {
-
         /// The identifier.
         id: i32,
     },
@@ -52,11 +50,10 @@ mod tests {
     /// Each range selects the matching arm.
     #[test]
     fn test_at_binding_arms() {
-
         /// Classifies an integer according to the message ID match ranges.
-///
+        ///
         /// # Arguments
-///
+        ///
         /// * `id` - Identifier used to select the at bindings record or cache entry affected by
         ///   this operation.
         fn classify(id: i32) -> &'static str {

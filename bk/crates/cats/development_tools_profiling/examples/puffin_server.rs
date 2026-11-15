@@ -15,7 +15,6 @@ const ADDRESS: &str = "127.0.0.1:8585";
 
 /// The state of the profiler.
 enum ProfilerStatus {
-
     /// The server is listening. Dropping it stops the server.
     Active(#[expect(dead_code, reason = "held only to keep the server running")] Server),
 

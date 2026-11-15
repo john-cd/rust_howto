@@ -17,13 +17,11 @@ const DEFAULT_LOG_LEVEL: &str = "info";
 /// Typed configuration parsed from an injected environment value.
 #[derive(Debug, PartialEq, Eq)]
 struct Config {
-
     /// The selected logging verbosity.
     log_level: String,
 }
 
 impl Config {
-
     /// Parses an optional `APP_LOG` value, defaulting to `info`.
     fn from_value(value: Option<&str>) -> Result<Self, &'static str> {
         let log_level = value.unwrap_or(DEFAULT_LOG_LEVEL);

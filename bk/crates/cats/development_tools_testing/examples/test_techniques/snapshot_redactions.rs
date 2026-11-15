@@ -14,7 +14,6 @@ use serde::Serialize;
 /// An order as returned by an API.
 #[derive(Debug, Serialize)]
 struct Order {
-
     /// Random: differs on every run.
     id: u64,
 

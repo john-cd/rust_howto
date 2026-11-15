@@ -45,7 +45,6 @@ diesel::table! {
 #[derive(QueryableByName, Queryable, PartialEq, Debug)]
 #[diesel(table_name = users)]
 struct User {
-
     /// The user name.
     username: String,
 

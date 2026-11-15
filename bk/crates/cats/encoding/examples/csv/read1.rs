@@ -13,7 +13,6 @@ use serde::Deserialize;
 /// Represents a record from the CSV data.
 #[derive(Debug, Deserialize, PartialEq)]
 struct Record {
-
     /// The year the car was built.
     year: u16,
 

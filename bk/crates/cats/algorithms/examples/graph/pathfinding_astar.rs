@@ -30,21 +30,19 @@ use pathfinding::prelude::astar;
 ///
 /// Panics if no route exists or the computed path does not have the expected cost.
 fn main() {
-
     /// Coordinate in the 5x5 grid searched by A*.
     #[derive(Clone, Debug, Eq, Hash, Ord, PartialEq, PartialOrd)]
     struct Pos(i32, i32);
 
     impl Pos {
-
         /// Returns the Manhattan distance to another grid coordinate.
         ///
         /// # Arguments
-///
+        ///
         /// * `other` - Coordinate whose distance from `self` is measured.
         ///
         /// # Returns
-///
+        ///
         /// The sum of the horizontal and vertical coordinate differences.
         fn distance(&self, other: &Self) -> u32 {
             self.0.abs_diff(other.0) + self.1.abs_diff(other.1)
@@ -56,7 +54,7 @@ fn main() {
         /// assigns step cost 1.
         ///
         /// # Returns
-///
+        ///
         /// Neighbor coordinates paired with their uniform movement cost.
         fn successors(&self) -> Vec<(Self, u32)> {
             let &Self(x, y) = self;

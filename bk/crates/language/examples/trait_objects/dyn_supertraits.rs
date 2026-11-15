@@ -8,7 +8,6 @@
 
 /// A thing that can format a message.
 trait Message {
-
     /// Returns `msg` decorated by the implementor.
     fn message(&self, msg: &str) -> String;
 }
@@ -17,7 +16,6 @@ trait Message {
 
 /// A thing that greets; requires [`Message`].
 trait Greet: Message {
-
     /// Returns a greeting.
     fn greet(&self) -> String {
         self.message("Hello.")
@@ -28,7 +26,6 @@ trait Greet: Message {
 
 /// A person.
 struct Person {
-
     /// Name of the person.
     name: String,
 }

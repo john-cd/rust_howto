@@ -31,7 +31,6 @@ mod petgraph_toposort;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -40,7 +39,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Finds a route through a grid with A* pathfinding.
     #[command(name = "pathfinding_astar")]
     PathfindingAstar,

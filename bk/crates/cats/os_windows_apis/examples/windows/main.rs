@@ -20,7 +20,6 @@ mod windows;
 #[cfg(target_os = "windows")]
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -30,7 +29,6 @@ struct Cli {
 #[cfg(target_os = "windows")]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `winapi` example.
     #[command(name = "winapi")]
     Winapi,

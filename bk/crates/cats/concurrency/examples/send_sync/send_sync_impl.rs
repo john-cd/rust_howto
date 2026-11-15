@@ -25,7 +25,6 @@ mod my {
     /// It holds the actual data and the reference count.
     /// One instance is shared by / pointed to by multiple `Arc` clones.
     struct ArcInner<T> {
-
         /// The number of references.
         count: AtomicUsize,
 
@@ -37,12 +36,10 @@ mod my {
     /// The fields are private and unreachable outside of the module.
     pub struct Arc<T> {
         // Pointer to the inner data structure.
-
         /// A pointer to the shared data and reference count.
         ptr: *mut ArcInner<T>,
         // We want `Arc` to behave like a `ArcInner<T>`, despite the fact that
         // it does not own one, thus we use `PhantomData`.
-
         /// A marker that tells the compiler that `Arc` behaves like an owner
         /// of the inner data.
         phantom: PhantomData<ArcInner<T>>,
@@ -55,7 +52,6 @@ mod my {
     unsafe impl<T: Sync + Send> Sync for Arc<T> {}
 
     impl<T> Arc<T> {
-
         /// Creates a new `Arc` instance.
         ///
         /// # Arguments
@@ -105,11 +101,10 @@ mod my {
     ///
     /// This increments the reference count.
     impl<T> Clone for Arc<T> {
-
         /// Creates another shared handle and increments the strong reference count.
-///
+        ///
         /// # Panics
-///
+        ///
         /// Panics if incrementing the strong reference count would overflow.
         fn clone(&self) -> Self {
             // Increase the count only if it will not wrap and invalidate the
@@ -146,7 +141,6 @@ mod my {
     /// This decrements the reference count and deallocates the data when the
     /// count reaches zero.
     impl<T> Drop for Arc<T> {
-
         /// Releases the resources owned by this value.
         fn drop(&mut self) {
             // Subtracts from the current value, returning the previous value.
@@ -182,7 +176,6 @@ mod my {
         struct DropCounter(StdArc<AtomicUsize>);
 
         impl Drop for DropCounter {
-
             /// Releases the resources owned by this value.
             fn drop(&mut self) {
                 self.0.fetch_add(1, Ordering::Relaxed);
@@ -227,7 +220,6 @@ mod my {
 struct Droppable(i32);
 
 impl Drop for Droppable {
-
     /// Releases the resources owned by this value.
     fn drop(&mut self) {
         println!("`Droppable` drop called - its value was {}", self.0);
@@ -267,7 +259,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Demonstrate the usage of `my::Arc`. This function creates an `my::Arc` instance, spawns multiple threads that access the shared data, and then waits for all threads to finish.
+/// Demonstrate the usage of `my::Arc`. This function creates an `my::Arc` instance, spawns multiple
+/// threads that access the shared data, and then waits for all threads to finish.
 pub fn run() {
     main();
 }

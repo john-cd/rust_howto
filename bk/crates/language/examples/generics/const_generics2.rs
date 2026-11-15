@@ -8,7 +8,6 @@
 
 /// A buffer of fixed capacity.
 trait FixedSizeBuffer {
-
     /// The capacity of the buffer.
     const CAPACITY: usize;
 

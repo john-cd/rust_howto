@@ -25,7 +25,6 @@ fn print_hash<T: Hash>(t: &T) {
 ///
 /// It is generic over the types of the two values.
 struct Pair<A, B> {
-
     /// The first value.
     first: A,
 
@@ -36,11 +35,10 @@ struct Pair<A, B> {
 // Generics and trait bounds make it possible to implement a trait
 // conditionally. Here, the `Pair` type implements `Hash` if its components do.
 impl<A: Hash, B: Hash> Hash for Pair<A, B> {
-
     /// Feeds both fields into the supplied hasher.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `state` - Shared state and services used to complete the trait_bounds workflow.
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.first.hash(state);

@@ -19,14 +19,12 @@
 
 /// A button, which can be rendered.
 trait Button {
-
     /// Renders the button.
     fn render(&self);
 }
 
 /// A text box, which can display text.
 trait TextBox {
-
     /// Displays `text` in the text box.
     fn display_text(&self, text: &str);
 }
@@ -35,7 +33,6 @@ trait TextBox {
 
 /// A factory of the GUI elements of a theme.
 trait GUIFactory {
-
     /// Creates a button of the theme.
     fn create_button(&self) -> Box<dyn Button>;
 
@@ -53,7 +50,6 @@ mod light {
     struct LightButton;
 
     impl Button for LightButton {
-
         /// Renders the current value.
         fn render(&self) {
             println!("Rendering a light button.");
@@ -76,7 +72,6 @@ mod light {
     pub struct LightGUIFactory;
 
     impl GUIFactory for LightGUIFactory {
-
         /// Assembles the button from its component values so callers receive a ready-to-use result.
         fn create_button(&self) -> Box<dyn Button> {
             Box::new(LightButton)
@@ -101,7 +96,6 @@ mod dark {
     struct DarkButton;
 
     impl Button for DarkButton {
-
         /// Renders the current value.
         fn render(&self) {
             println!("Rendering a dark button.");
@@ -123,7 +117,6 @@ mod dark {
     pub struct DarkGUIFactory;
 
     impl GUIFactory for DarkGUIFactory {
-
         /// Assembles the button from its component values so callers receive a ready-to-use result.
         fn create_button(&self) -> Box<dyn Button> {
             Box::new(DarkButton)

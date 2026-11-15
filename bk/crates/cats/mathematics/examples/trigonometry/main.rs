@@ -17,7 +17,6 @@ mod tan_sin_cos;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -26,7 +25,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `latitude_longitude` example.
     #[command(name = "latitude_longitude")]
     LatitudeLongitude,

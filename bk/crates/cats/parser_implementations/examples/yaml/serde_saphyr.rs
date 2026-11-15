@@ -16,7 +16,6 @@ use serde::Serialize;
 /// A person represented in a YAML document.
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
 struct Person {
-
     /// The person's name.
     name: String,
 

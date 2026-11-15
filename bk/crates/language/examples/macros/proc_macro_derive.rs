@@ -15,7 +15,6 @@ use proc_macros::DebugPrint;
 
 /// A trait that prints a debug representation.
 pub trait DebugPrint {
-
     /// Prints a debug representation of `self`.
     fn debug_print(&self);
 }
@@ -27,7 +26,6 @@ pub trait DebugPrint {
 /// A user, with a derived [`DebugPrint`] implementation.
 #[derive(DebugPrint, Debug)]
 struct User {
-
     /// Unique identifier of the user.
     id: u64,
 

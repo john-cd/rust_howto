@@ -37,7 +37,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Demonstrates how to write logs to multiple destinations (in this instance, stdout and a file) simultaneously.
+/// Demonstrates how to write logs to multiple destinations (in this instance, stdout and a file)
+/// simultaneously.
 pub fn run() {
     main();
 }

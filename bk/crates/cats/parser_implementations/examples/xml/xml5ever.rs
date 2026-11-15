@@ -49,7 +49,6 @@ impl ElemName for NameRef<'_> {
 
 /// The kinds of nodes stored in the small example tree.
 enum NodeKind {
-
     /// The document node and its ordered children.
     Document(RefCell<Vec<Handle>>),
 
@@ -58,7 +57,6 @@ enum NodeKind {
 
     /// An element with attributes, children, and optional template contents.
     Element {
-
         /// The element attributes.
         attrs: RefCell<Vec<Attribute>>,
 
@@ -77,7 +75,6 @@ enum NodeKind {
 
     /// A processing instruction node.
     ProcessingInstruction {
-
         /// The processing instruction target.
         target: String,
 
@@ -87,7 +84,6 @@ enum NodeKind {
 
     /// A document type node.
     Doctype {
-
         /// The public identifier.
         public_id: String,
 
@@ -98,7 +94,6 @@ enum NodeKind {
 
 /// One XML node with its qualified name, kind, and optional parent.
 struct Node {
-
     /// Qualified name used by the tree builder for elements.
     name: QualName,
 
@@ -111,7 +106,6 @@ struct Node {
 
 /// A small DOM implementation used as `xml5ever`'s tree sink.
 struct XmlTree {
-
     /// The document node that owns the parsed tree.
     document: Handle,
 
@@ -123,7 +117,6 @@ struct XmlTree {
 }
 
 impl Default for XmlTree {
-
     /// Returns an empty XML document tree with no quirks mode set.
     fn default() -> Self {
         Self {
@@ -192,9 +185,9 @@ impl TreeSink for XmlTree {
     }
 
     /// Returns the element name stored in the target node.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `target` - Target value or destination produced by the xml tree operation.
     fn elem_name<'a>(&'a self, target: &'a Self::Handle) -> Self::ElemName<'a> {
         NameRef(&target.name)
@@ -228,7 +221,7 @@ impl TreeSink for XmlTree {
     /// Assembles the pi from its component values so callers receive a ready-to-use result.
     ///
     /// # Arguments
-///
+    ///
     /// * `target` - Target value or destination produced by the xml tree operation.
     fn create_pi(&self, target: StrTendril, data: StrTendril) -> Self::Handle {
         unnamed_node(NodeKind::ProcessingInstruction {
@@ -292,9 +285,9 @@ impl TreeSink for XmlTree {
     }
 
     /// Returns the template contents node associated with the target element.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `target` - Target value or destination produced by the xml tree operation.
     fn get_template_contents(&self, target: &Self::Handle) -> Self::Handle {
         match &target.kind {
@@ -361,7 +354,7 @@ impl TreeSink for XmlTree {
     /// affecting later work.
     ///
     /// # Arguments
-///
+    ///
     /// * `target` - Target value or destination produced by the xml5ever operation.
     fn remove_from_parent(&self, target: &Self::Handle) {
         let Some(parent) = target

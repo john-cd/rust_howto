@@ -6,7 +6,6 @@ use std::path::PathBuf;
 
 /// The configuration of the application
 pub(crate) struct Config {
-
     /// If true, the application will be more verbose
     pub verbose: bool,
 }
@@ -14,7 +13,6 @@ pub(crate) struct Config {
 /// The command that the end user selected.
 #[derive(Default, Debug)]
 pub(crate) enum Cmd {
-
     /// No command was selected.
     #[default]
     None,
@@ -40,7 +38,6 @@ pub(crate) enum Cmd {
 /// Contains the list of strings passed as arguments.
 #[derive(Debug)]
 pub(crate) struct CmdArgs {
-
     /// The arguments.
     pub args: Vec<String>,
 }
@@ -48,7 +45,6 @@ pub(crate) struct CmdArgs {
 /// The command arguments for the `Badges` command.
 #[derive(Debug)]
 pub(crate) struct CmdArgs2 {
-
     /// The arguments.
     pub args: Vec<String>,
 

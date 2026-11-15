@@ -10,7 +10,6 @@
 
 /// A point in three dimensions.
 struct Point {
-
     /// The x coordinate.
     x: i32,
 

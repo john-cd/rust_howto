@@ -21,7 +21,6 @@ use criterion::criterion_main;
 
 /// A binary tree node living in a `bumpalo` arena with reference pointers.
 struct ArenaNode<'bump> {
-
     /// Value stored by this wrapper.
     val: i32,
 
@@ -34,7 +33,6 @@ struct ArenaNode<'bump> {
 
 /// A binary tree node living on the standard heap using `Box`.
 struct BoxNode {
-
     /// Value stored by this wrapper.
     val: i32,
 

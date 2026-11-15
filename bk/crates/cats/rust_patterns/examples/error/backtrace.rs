@@ -17,7 +17,6 @@ use serde::Deserialize;
 /// An RGB color.
 #[derive(Debug, Deserialize)]
 struct Rgb {
-
     /// The red component.
     red: u8,
 
@@ -29,7 +28,6 @@ struct Rgb {
 }
 
 impl Rgb {
-
     /// The `Rgb::from_csv` function parses a CSV string and returns an `Rgb`
     /// struct.
     fn from_csv(csv_data: &[u8]) -> Result<Self> {
@@ -45,7 +43,6 @@ impl Rgb {
 // The `UpperHex` trait is used to format the `Rgb` struct as a hexadecimal
 // string.
 impl fmt::UpperHex for Rgb {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let hexa =

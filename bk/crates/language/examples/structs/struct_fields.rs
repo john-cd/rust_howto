@@ -7,7 +7,6 @@
 /// A status.
 #[derive(Debug)]
 enum Status {
-
     /// The item is active.
     Active,
 
@@ -22,7 +21,6 @@ struct InnerStruct(i32);
 /// A struct with a field of each kind of type.
 #[derive(Debug)]
 struct ComplexStruct<'a> {
-
     /// A primitive.
     primitive: u32, // Primitive type.
 

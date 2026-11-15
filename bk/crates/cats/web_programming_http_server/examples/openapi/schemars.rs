@@ -16,7 +16,6 @@ use serde::Deserialize;
 /// Application configuration.
 #[derive(Debug, Deserialize, JsonSchema)]
 pub struct Config {
-
     /// The port to listen on.
     pub port: u16,
 

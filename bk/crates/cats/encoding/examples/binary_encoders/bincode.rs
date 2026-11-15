@@ -21,7 +21,6 @@ use serde::Serialize;
 /// using bincode.
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 struct MyData {
-
     /// The name.
     name: String,
 

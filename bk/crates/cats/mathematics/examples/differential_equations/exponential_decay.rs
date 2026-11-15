@@ -20,7 +20,6 @@ use ode_solvers::System;
 struct ExponentialDecay;
 
 impl System<f64, Vector1<f64>> for ExponentialDecay {
-
     /// Computes the derivative of the state at the given time.
     fn system(&self, _time: f64, state: &Vector1<f64>, derivative: &mut Vector1<f64>) {
         derivative[0] = -2.0 * state[0];

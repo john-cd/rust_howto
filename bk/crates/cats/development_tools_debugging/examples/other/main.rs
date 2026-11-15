@@ -23,7 +23,6 @@ mod type_name_of_val;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -32,7 +31,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `open_observe` example.
     #[command(name = "open_observe")]
     OpenObserve,

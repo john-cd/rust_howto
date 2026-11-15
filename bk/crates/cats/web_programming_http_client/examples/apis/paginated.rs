@@ -19,7 +19,6 @@ use serde::Deserialize;
 /// `GET /api/v1/crates/{name}/reverse_dependencies`.
 #[derive(Debug, Deserialize)]
 struct Page {
-
     /// The dependency edges. `crate_id` is the crate being depended upon (the
     /// one queried), NOT the dependent crate.
     dependencies: Vec<Dependency>,
@@ -34,7 +33,6 @@ struct Page {
 /// A dependency edge.
 #[derive(Debug, Deserialize)]
 struct Dependency {
-
     /// The id of the version of the dependent crate that declares this edge.
     version_id: u64,
 }
@@ -42,7 +40,6 @@ struct Dependency {
 /// A version of a dependent crate.
 #[derive(Debug, Deserialize)]
 struct Version {
-
     /// The id of the version.
     id: u64,
 
@@ -54,13 +51,11 @@ struct Version {
 /// Pagination metadata.
 #[derive(Debug, Deserialize)]
 struct Meta {
-
     /// The total number of items, across all pages.
     total: u64,
 }
 
 impl Page {
-
     /// The `dependencies` entries no longer carry the dependent crate's name:
     /// look it up through `version_id` in the `versions` array.
     fn dependent_names(&self) -> Vec<&str> {
@@ -104,7 +99,6 @@ fn fetch_page(client: &Client, name: &str, page: u64) -> Result<Page> {
 
 /// Iterates over every dependent crate, fetching pages lazily with `fetch`.
 struct ReverseDependencies<F: FnMut(u64) -> Result<Page>> {
-
     /// Fetches the page with the given number.
     fetch: F,
 
@@ -122,7 +116,6 @@ struct ReverseDependencies<F: FnMut(u64) -> Result<Page>> {
 }
 
 impl<F: FnMut(u64) -> Result<Page>> ReverseDependencies<F> {
-
     /// Creates the iterator.
     fn new(fetch: F) -> Self {
         Self {

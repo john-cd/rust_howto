@@ -104,7 +104,8 @@ fn function_symbols(uri: &Uri, text: &str) -> Vec<SymbolInformation> {
 ///
 /// # Errors
 ///
-/// Returns an error if a message cannot be sent or received, the server responds with an error, or the response has an unexpected shape.
+/// Returns an error if a message cannot be sent or received, the server responds with an error, or
+/// the response has an unexpected shape.
 fn main() -> anyhow::Result<()> {
     let (server_side, client) = Connection::memory();
     let server = thread::spawn(move || run_server(server_side));

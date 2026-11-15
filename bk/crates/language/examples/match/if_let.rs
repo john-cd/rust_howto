@@ -43,7 +43,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// The `if let` syntax allows you to combine `if` and `let` to handle values that match a specific pattern, while ignoring others.
+/// The `if let` syntax allows you to combine `if` and `let` to handle values that match a specific
+/// pattern, while ignoring others.
 pub fn run() {
     main();
 }

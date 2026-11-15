@@ -11,7 +11,6 @@
 /// A reversible insertion at a character index.
 #[derive(Clone, Copy, Debug)]
 struct InsertChar {
-
     /// Character position at which to insert the value.
     index: usize,
 
@@ -22,7 +21,6 @@ struct InsertChar {
 /// Text plus command stacks that support undoing and redoing edits.
 #[derive(Debug, Default)]
 struct Editor {
-
     /// Current document contents.
     text: String,
 
@@ -34,11 +32,10 @@ struct Editor {
 }
 
 impl Editor {
-
     /// Inserts the current value.
     ///
     /// # Arguments
-///
+    ///
     /// * `index` - Position used to identify the element affected in the current ordered
     ///   collection.
     fn insert(&mut self, index: usize, value: char) {

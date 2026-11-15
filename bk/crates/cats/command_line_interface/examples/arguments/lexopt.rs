@@ -11,7 +11,6 @@
 
 /// The parsed command-line arguments.
 struct Args {
-
     /// The value of the `--name` option, or the positional argument.
     name: String,
 

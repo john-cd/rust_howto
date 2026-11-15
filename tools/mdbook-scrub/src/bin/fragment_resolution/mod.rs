@@ -22,7 +22,6 @@ use serde_json::Value;
 /// A local Markdown link whose target chapter does not define its fragment.
 #[derive(Debug, PartialEq, Eq)]
 pub(super) struct InvalidFragment {
-
     /// The source chapter containing the link.
     pub(super) source: PathBuf,
 
@@ -35,7 +34,6 @@ pub(super) struct InvalidFragment {
 
 /// Markdown chapter data needed to resolve local fragment links.
 struct ChapterFragments {
-
     /// The path used to resolve links in this chapter.
     path: PathBuf,
 
@@ -284,7 +282,6 @@ fn tag_identifiers(tag: &str) -> Vec<String> {
 
 /// Returns an expression matching HTML comments and start tags.
 fn html_tag_regex() -> &'static Regex {
-
     /// Shared `html tag` used by this module.
     static HTML_TAG: OnceLock<Regex> = OnceLock::new();
     HTML_TAG.get_or_init(|| {
@@ -317,7 +314,6 @@ fn links(content: &str) -> Vec<String> {
 
 /// Returns the compiled expression used to read HTML `href` attributes.
 fn html_href_regex() -> &'static Regex {
-
     /// Shared `html href` used by this module.
     static HTML_HREF: OnceLock<Regex> = OnceLock::new();
     HTML_HREF.get_or_init(|| {

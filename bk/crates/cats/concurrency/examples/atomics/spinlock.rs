@@ -21,7 +21,6 @@ use std::thread;
 
 /// A simple spinlock implementation.
 pub struct Spinlock<T> {
-
     /// Whether the lock is currently held.
     locked: AtomicBool,
 
@@ -30,11 +29,10 @@ pub struct Spinlock<T> {
 }
 
 impl<T> Spinlock<T> {
-
     /// Creates a new spinlock wrapping the given data.
     ///
     /// # Arguments
-///
+    ///
     /// * `data` - Data to process.
     pub const fn new(data: T) -> Self {
         Self {
@@ -98,7 +96,6 @@ unsafe impl<T: Send> Sync for Spinlock<T> {}
 /// The `must_use` attribute helps prevent this mistake.
 #[must_use = "if unused, the spinlock will immediately unlock"]
 pub struct SpinlockGuard<'a, T> {
-
     /// The spinlock that this guard holds.
     lock: &'a Spinlock<T>,
 
@@ -107,7 +104,6 @@ pub struct SpinlockGuard<'a, T> {
 }
 
 impl<T> Drop for SpinlockGuard<'_, T> {
-
     /// Releases the lock when the guard goes out of scope.
     #[inline]
     fn drop(&mut self) {
@@ -129,7 +125,6 @@ impl<T> Deref for SpinlockGuard<'_, T> {
 }
 
 impl<T> DerefMut for SpinlockGuard<'_, T> {
-
     /// Allows mutable access to the protected data.
     #[inline]
     fn deref_mut(&mut self) -> &mut Self::Target {

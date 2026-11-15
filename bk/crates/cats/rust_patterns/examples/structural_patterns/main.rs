@@ -23,7 +23,6 @@ mod newtype;
 /// Command-line arguments for the structural pattern examples.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Commands,
@@ -32,7 +31,6 @@ struct Cli {
 /// The structural pattern examples available from this target.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Demonstrates a newtype domain identifier.
     Newtype,
 

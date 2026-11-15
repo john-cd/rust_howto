@@ -20,7 +20,6 @@ mod rocksdb;
 #[cfg(any(feature = "lmdb", feature = "rocksdb"))]
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -30,7 +29,6 @@ struct Cli {
 #[cfg(any(feature = "lmdb", feature = "rocksdb"))]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `heed` example.
     #[cfg(feature = "lmdb")]
     #[command(name = "heed")]

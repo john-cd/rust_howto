@@ -26,11 +26,9 @@ pub(super) static CAT_BADGE: &str =
 ///
 /// The rendered Markdown badge.
 pub fn create_category_badge(category: &str, slug: &str) -> Result<String> {
-
     /// Template data used to render a crate category badge.
     #[derive(Serialize)]
     struct Context<'a> {
-
         /// The category name.
         category: &'a str,
 

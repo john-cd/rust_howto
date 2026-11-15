@@ -64,7 +64,8 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// This example demonstrates how to pipe the output of one external command to the input of another.
+/// This example demonstrates how to pipe the output of one external command to the input of
+/// another.
 ///
 /// # Errors
 ///

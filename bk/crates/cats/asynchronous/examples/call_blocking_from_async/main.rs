@@ -18,7 +18,6 @@ mod call_blocking_from_async_spawn_dedicated_thread;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -28,7 +27,6 @@ struct Cli {
 #[allow(clippy::enum_variant_names)]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `call_blocking_from_async_rayon` example.
     #[command(name = "call_blocking_from_async_rayon")]
     CallBlockingFromAsyncRayon,

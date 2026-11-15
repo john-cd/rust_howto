@@ -188,7 +188,7 @@ mod tests {
     /// finished spans.
     ///
     /// # Panics
-///
+    ///
     /// Panics if flushing the tracer fails.
     fn collect_spans(body: impl FnOnce()) -> Vec<SpanData> {
         let (provider, exporter) = in_memory_tracing();

@@ -15,7 +15,6 @@ use postgres::NoTls;
 /// A nationality and the number of artists in its group.
 #[derive(Debug, PartialEq, Eq)]
 struct Nation {
-
     /// Nationality name, or `Unknown` for rows without one.
     nationality: String,
 

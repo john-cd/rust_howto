@@ -21,7 +21,6 @@ const LIMIT: usize = 2;
 /// What happened to the tasks.
 #[derive(Debug, Default, PartialEq)]
 struct Outcome {
-
     /// Results, in the order the tasks finished.
     results: Vec<u64>,
 

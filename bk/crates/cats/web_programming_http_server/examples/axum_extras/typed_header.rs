@@ -46,9 +46,9 @@ mod tests {
     use super::*;
 
     /// Builds a request with the supplied headers and handles it through the example router.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns an error if building the request or handling it with the router fails.
     async fn call(headers: &[(&str, &str)]) -> anyhow::Result<(StatusCode, String)> {
         let mut builder = Request::get("/whoami");

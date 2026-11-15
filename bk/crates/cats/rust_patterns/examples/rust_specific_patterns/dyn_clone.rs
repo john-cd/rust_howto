@@ -15,7 +15,6 @@ use dyn_clone::DynClone;
 
 /// A trait whose trait objects can be cloned.
 trait MyTrait: DynClone {
-
     /// Prints the value.
     fn recite(&self);
 }
