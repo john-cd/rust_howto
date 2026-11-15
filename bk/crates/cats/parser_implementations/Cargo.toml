@@ -91,7 +91,7 @@ json5 = "1.3.7"
 # CommonMark compliant markdown parser in Rust with ASTs and extensions
 markdown = "1.0.0"
 # Common code for xml5ever and html5ever
-markup5ever = "0.40.0"
+# markup5ever = "0.40.0"
 # A pull parser for CommonMark
 pulldown-cmark = "0.13.6"
 # High performance xml reader and writer

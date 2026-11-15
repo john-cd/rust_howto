@@ -123,7 +123,7 @@ tokio = { version = "1.54.1", features = ["macros", "rt", "time", "test-util"] }
 # Approximate floating point equality comparisons and assertions.
 approx = "0.5.1" # was pinned at 0.4.0
 # The trait for generating structured data from unstructured data
-arbitrary = { version = "1.5.0", features = ["derive"] }
+# arbitrary = { version = "1.5.0", features = ["derive"] }
 # Runs command-line applications in tests and asserts on their output and exit status.
 assert_cmd = "2.2.2" # Test command-line programs.
 # fuzz and property testing front-end

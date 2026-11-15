@@ -94,7 +94,7 @@ await-tree = { version = "0.3.1", features = ["tokio"] }
 # A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
 # Tools for concurrent programming
-crossbeam = "0.8.5"
+# crossbeam = "0.8.5"
 # Multi-producer multi-consumer channels for message passing
 crossbeam-channel = "0.5.17"
 # Provides lock-free queues for passing data between concurrent threads.
@@ -116,7 +116,7 @@ image = { version = "0.25.10", default-features = false, features = ["jpeg", "pn
 # Extra iterator adaptors, iterator methods, free functions, and macros.
 itertools = "0.15.0"
 # A macro for declaring lazily evaluated statics in Rust.
-lazy_static = "1.5.1"
+# lazy_static = "1.5.1"
 # A collection of numeric types and traits for Rust, including bigint, complex, rational, range iterators, generic integers, and more!
 num = "0.4.3"
 # Get the number of CPUs on a machine.
@@ -145,7 +145,7 @@ thread-priority = "3.1.1"
 # A thread pool for running a number of jobs on a fixed set of worker threads.
 threadpool = "1.8.1"
 # Date and time library. Fully interoperable with the standard library. Mostly compatible with #![no_std].
-time = "0.3.55"
+# time = "0.3.55"
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 # Recursively walk a directory.

@@ -75,7 +75,7 @@ argon2 = "0.6.0"
 # encodes and decodes base64 as bytes or utf8
 base64 = "0.23.1"
 # Pure Rust implementation of Base64 (RFC 4648) which avoids any usages of data-dependent branches/LUTs and thereby provides portable "best effort"...
-base64ct = "1.8.3"
+# base64ct = "1.8.3"
 # Easily hash and verify passwords using bcrypt
 bcrypt = "0.19.3"
 # Pure Rust implementation of the ChaCha20Poly1305 Authenticated Encryption with Additional Data Cipher (RFC 8439) with optional...
@@ -101,9 +101,9 @@ getrandom = "0.4.3"
 # Fast byte array to hex string conversion
 hex = "0.4.3"
 # A protective and efficient HTTP library for all.
-hyper = { version = "1.12.0", features = ["client"] }
+# hyper = { version = "1.12.0", features = ["client"] }
 # Default TLS implementation for use with hyper
-hyper-tls = "0.6.0"
+# hyper-tls = "0.6.0"
 # Reads and writes secrets through the operating system's credential store.
 keyring = "4.2.0"
 # A wrapper over a platform's native TLS implementation
@@ -136,7 +136,7 @@ serde = { version = "1.0.229", features = ["derive"] }
 # A JSON serialization file format
 serde_json = "1.0.154"
 # Computes SHA-1 digests for protocol compatibility and data identification.
-sha1 = "0.11.0"
+# sha1 = "0.11.0"
 # Traits for cryptographic signature algorithms (e.g. ECDSA, Ed25519)
 signature = "3.0.0"
 # Pure-Rust traits and utilities for constant-time cryptographic implementations.
