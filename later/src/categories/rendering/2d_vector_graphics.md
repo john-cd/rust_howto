@@ -11,7 +11,7 @@ Vector graphics describe shapes and paths with coordinates, lines, and curves in
 A path is an ordered set of subpaths. A subpath starts at a point, adds straight or curved segments, and ends open or closed. This host-buildable example creates a closed path and tessellates it into vertices and indices:
 
 ```rust,editable
-{{#include ../../../crates/cats/rendering/examples/2d_vector_graphics/main.rs:example}}
+{{#include ../../../crates/cats/rendering/examples/2d_vector_graphics/vector_graphics_2d.rs:example}}
 ```
 
 The path is geometry, not a colored image. A drawing operation also needs a fill or stroke style, a transform, and a renderer that turns the geometry into pixels.
