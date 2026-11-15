@@ -45,7 +45,7 @@ where
     Server::builder()
         // Required: gRPC-Web may arrive over HTTP/1.1.
         .accept_http1(true)
-        .layer(cors())
+        .layer(run())
         .layer(GrpcWebLayer::new())
         .add_service(GreeterServer::new(MyGreeter::default()))
         .serve_with_incoming_shutdown(TcpListenerStream::new(listener), shutdown)

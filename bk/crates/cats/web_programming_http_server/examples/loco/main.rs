@@ -43,10 +43,12 @@ impl Hooks for App {
     }
 
     /// Creates the application without enabling database support.
+    ///
+    /// # Arguments
+    /// * `mode` - Startup mode selected for the application.
+    /// * `environment` - Runtime environment and configuration profile.
     async fn boot(
-        /// Mode used to start the process.
         mode: StartMode,
-        /// Environment variables and configuration used by the process.
         environment: &Environment,
         config: loco_rs::config::Config,
     ) -> Result<BootResult> {
@@ -91,6 +93,14 @@ mod home {
 }
 /// Prints the command needed to run this example as a Loco application.
 fn main() -> anyhow::Result<()> {
+    example()
+}
+
+/// Prints how to start the Loco application for the selected feature state.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+fn example() -> anyhow::Result<()> {
     #[cfg(feature = "loco-support")]
     println!("Run with `cargo loco start` from a Loco application directory.");
     #[cfg(not(feature = "loco-support"))]
@@ -104,7 +114,7 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    example()
 }
 
 /// Verifies the example identifies its Loco application by crate name.

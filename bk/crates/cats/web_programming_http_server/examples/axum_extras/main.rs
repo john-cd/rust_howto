@@ -26,15 +26,12 @@ mod typed_header;
 fn main() {
     // Build the routers; serving them is shown in the tests.
     let routers = [
-        cookies::app(),
-        debug_handler::app(),
-        flash_messages::app(),
-        typed_header::app(),
-        axum_server_tls::app(),
-        https_redirect::app(https_redirect::Ports {
-            http: 8080,
-            https: 8443,
-        }),
+        cookies::run(),
+        debug_handler::run(),
+        flash_messages::run(),
+        typed_header::run(),
+        axum_server_tls::run(),
+        https_redirect::run(),
     ];
     println!("Built {} routers.", routers.len());
     println!("Run `cargo test --example axum_extras` to call them.");

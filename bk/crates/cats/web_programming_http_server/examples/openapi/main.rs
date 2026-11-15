@@ -18,10 +18,11 @@ fn main() -> anyhow::Result<()> {
     println!("{}", utoipa::openapi_json()?);
 
     // The router that would serve the API and its Swagger UI:
-    let _router = utoipa::app();
+    let _router = utoipa::run();
 
     // A JSON Schema of the configuration, and a validation against it:
-    println!("{}", schemars::config_schema()?);
+    let schema = schemars::run()?;
+    println!("{schema}");
     let valid = schemars::is_valid(&serde_json::json!({ "port": 8080 }))?;
     let invalid = schemars::is_valid(&serde_json::json!({ "port": "text" }))?;
     println!("valid: {valid}, invalid: {invalid}");

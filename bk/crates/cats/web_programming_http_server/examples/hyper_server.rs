@@ -20,6 +20,14 @@ use tokio::net::TcpListener;
 /// Runs the HTTP/1 server on loopback port 3000.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+    example_async().await
+}
+
+/// Accepts loopback connections and serves each one as an HTTP/1 connection.
+///
+/// # Errors
+/// Returns an error if binding the listener or accepting a connection fails.
+async fn example_async() -> anyhow::Result<()> {
     let listener = TcpListener::bind(("127.0.0.1", 3000)).await?;
     println!("Listening on http://127.0.0.1:3000");
 
@@ -64,7 +72,10 @@ fn response_for(method: &Method, path: &str) -> Response<Full<Bytes>> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()?
+        .block_on(example_async())
 }
 
 /// A small HTTP/1 server built directly with Hyper and Tokio.

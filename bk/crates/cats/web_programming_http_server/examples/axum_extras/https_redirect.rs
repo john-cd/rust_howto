@@ -109,6 +109,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if invalid_host_is_an_error fails.
+    #[test]
     fn invalid_host_is_an_error() -> anyhow::Result<()> {
         assert!(make_https("bad host", &"/".parse()?, PORTS).is_err());
         Ok(())
@@ -116,6 +117,7 @@ mod tests {
 
     /// # Errors
     /// An error is returned if redirects fails.
+    #[tokio::test]
     async fn redirects() -> anyhow::Result<()> {
         let request = Request::get("/login?next=%2F")
             .header("host", "example.com:8080")
