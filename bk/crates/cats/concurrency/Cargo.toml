@@ -91,8 +91,6 @@ anyhow = "1.0.104"
 await-tree = { version = "0.3.1", features = ["tokio"] }
 # A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
-# Tools for concurrent programming
-# crossbeam = "0.8.5"
 # Multi-producer multi-consumer channels for message passing
 crossbeam-channel = "0.5.17"
 # Provides lock-free queues for passing data between concurrent threads.
@@ -113,8 +111,6 @@ glob = "0.3.4"
 image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
 # Extra iterator adaptors, iterator methods, free functions, and macros.
 itertools = "0.15.0"
-# A macro for declaring lazily evaluated statics in Rust.
-# lazy_static = "1.5.1"
 # A collection of numeric types and traits for Rust, including bigint, complex, rational, range iterators, generic integers, and more!
 num = "0.4.3"
 # Get the number of CPUs on a machine.

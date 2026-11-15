@@ -26,6 +26,14 @@ The [`base64`][c~base64~docs]↗ crate converts arbitrary bytes into Base64 text
 {{#include ../../../crates/cats/cryptography/examples/utilities/base64_example.rs:example}}
 ```
 
+### Encode a Token with `base64ct` {#base64ct}
+
+`base64ct` provides Base64 encoding and decoding designed to avoid data-dependent table lookups. It still only encodes bytes; it does not encrypt a token or make a whole application constant-time.
+
+```rust,editable
+{{#include ../../../crates/cats/cryptography/examples/utilities/base64ct_example.rs:example}}
+```
+
 ## Encode Bytes as Hexadecimal {#hex}
 
 [![hex][c~hex~docs~badge]][c~hex~docs] [![hex~crates.io][c~hex~crates.io~badge]][c~hex~crates.io] [![hex~repo][c~hex~repo~badge]][c~hex~repo]{{hi:hexadecimal}}{{hi:text encoding}}

@@ -75,7 +75,7 @@ argon2 = "0.6.0"
 # encodes and decodes base64 as bytes or utf8
 base64 = "0.23.1"
 # Pure Rust implementation of Base64 (RFC 4648) which avoids any usages of data-dependent branches/LUTs and thereby provides portable "best effort"...
-# base64ct = "1.8.3"
+base64ct = { version = "1.8.3", features = ["alloc"] }
 # Easily hash and verify passwords using bcrypt
 bcrypt = "0.19.3"
 # Pure Rust implementation of the ChaCha20Poly1305 Authenticated Encryption with Additional Data Cipher (RFC 8439) with optional...

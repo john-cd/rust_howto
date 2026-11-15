@@ -166,8 +166,6 @@ egui_tracing = { version = "0.3.0", optional = true } # Latest release; depends 
 femtovg = { version = "0.28.0", optional = true }
 # A native Rust UI library with fine-grained reactivity
 floem = { version = "0.2.0", optional = true }
-# Provides Rust function bindings for the OpenGL graphics API.
-# gl = { version = "0.14.0", optional = true }
 # Cross-platform OpenGL context provider.
 glutin = { version = "0.32.3", optional = true }
 # Glutin bootstrapping helpers with winit
@@ -249,8 +247,6 @@ xilem = ["dep:xilem", "dep:naga26"]
 gtk = { package = "gtk4", version = "0.11.5", optional = true }
 # An idiomatic GUI library inspired by Elm and based on gtk4-rs
 relm4 = { version = "0.11.0", optional = true }
-# An idiomatic GUI library inspired by Elm and based on gtk4-rs
-# relm4-components = { version = "0.11.0", optional = true }
 
 # eframe enables Fontconfig dlopen for fontique 0.11; Slint 1.18 and Parley 0.12
 # use fontique 0.8 and 0.12, which share yeslogic-fontconfig-sys 6. Enable the

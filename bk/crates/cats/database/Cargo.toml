@@ -134,8 +134,6 @@ mysql_async = { version = "0.37.1", default-features = false, features = ["defau
 oracle = { version = "0.6.3", optional = true }
 # A native, synchronous PostgreSQL client
 postgres = { version = "0.19.14", optional = true }
-# Conversions between Rust and Postgres values
-# postgres-types = { version = "0.2.14", optional = true }
 # Redis driver for Rust.
 redis = { version = "1.8.2", optional = true }
 # Rust wrapper for Facebook's RocksDB embeddable database

@@ -7,6 +7,8 @@ use clap::Subcommand;
 
 /// Encode and decode bytes with the `base64` crate.
 mod base64_example;
+/// Encode a fixed-size token with the `base64ct` crate.
+mod base64ct_example;
 /// Fill a byte array with randomness from the operating system.
 mod getrandom_example;
 /// Encode and decode bytes as hexadecimal with the `hex` crate.
@@ -37,6 +39,8 @@ enum Commands {
     Getrandom,
     /// Runs the `base64` example.
     Base64,
+    /// Runs the `base64ct` example.
+    Base64ct,
     /// Runs the `hex` example.
     Hex,
 }
@@ -53,6 +57,7 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
             }
             Commands::Getrandom => getrandom_example::run()?,
             Commands::Base64 => base64_example::run()?,
+            Commands::Base64ct => base64ct_example::run()?,
             Commands::Hex => hex_example::run()?,
         }
     }

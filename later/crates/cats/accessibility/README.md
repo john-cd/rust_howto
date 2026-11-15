@@ -7,6 +7,7 @@ Book code examples for Accessibility using AccessKit and Winit. It demonstrates 
 ## Examples Covered
 
 - **Screen Readers** (`examples/screen_readers/`): Demonstrates concepts like `accesskit`.
+- **Winit Accessibility** (`examples/winit_accessibility.rs`): Exposes an AccessKit tree from a native Winit window.
 
 ## Usage
 
