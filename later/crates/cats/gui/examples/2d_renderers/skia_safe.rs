@@ -77,7 +77,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the Skia Safe renderer example.
-
+///
 /// # Errors
 /// Returns an error if rendering fails.
 pub fn run() -> anyhow::Result<()> {

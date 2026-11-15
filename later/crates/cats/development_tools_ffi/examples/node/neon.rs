@@ -21,14 +21,12 @@ fn greeting() -> &'static str {
     "hello from neon!"
 }
 /// A simple function that returns a JavaScript string.
-
 #[cfg(feature = "node")]
 fn hello(mut cx: FunctionContext<'_>) -> JsResult<'_, JsString> {
     // Create a JavaScript string.
     Ok(cx.string(greeting()))
 }
 /// Registers the `hello` function in the exports of the Node.js module.
-
 #[cfg(feature = "node")]
 #[::neon::main]
 fn register(mut cx: ModuleContext<'_>) -> NeonResult<()> {

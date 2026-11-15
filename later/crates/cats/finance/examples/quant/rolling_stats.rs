@@ -20,7 +20,6 @@ fn daily_returns(prices: &[f64]) -> Vec<f64> {
     prices.windows(2).map(|w| w[1] / w[0] - 1.0).collect()
 }
 /// Rolling population standard deviation, written by hand.
-
 fn rolling_std_by_hand(values: &[f64], window: usize) -> Vec<f64> {
     values
         .windows(window)
@@ -47,7 +46,6 @@ fn rolling_std(values: &[f64], window: usize) -> Vec<f64> {
 }
 /// Runs the example.
 /// Computes annualized rolling volatility for a synthetic price series.
-
 fn main() {
     // Deterministic, synthetic prices.
     let prices: Vec<f64> = (0..60)
@@ -71,7 +69,6 @@ fn main() {
 
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

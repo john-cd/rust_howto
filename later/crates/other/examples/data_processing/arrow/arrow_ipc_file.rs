@@ -34,7 +34,7 @@ pub fn write_file(batch: &RecordBatch) -> Result<Vec<u8>> {
 }
 
 /// Decodes every batch of an IPC file held in memory.
-
+///
 /// # Errors
 /// Returns an error if `bytes` is not a valid IPC file or a batch cannot be decoded.
 pub fn read_file(bytes: Vec<u8>) -> Result<Vec<RecordBatch>> {
@@ -45,7 +45,7 @@ pub fn read_file(bytes: Vec<u8>) -> Result<Vec<RecordBatch>> {
 }
 
 /// Encodes a batch in the IPC *stream* format, suited to sockets and pipes.
-
+///
 /// # Errors
 /// Returns an error if Arrow cannot create, serialize, or finalize the IPC stream.
 pub fn write_stream(batch: &RecordBatch) -> Result<Vec<u8>> {
@@ -58,7 +58,7 @@ pub fn write_stream(batch: &RecordBatch) -> Result<Vec<u8>> {
 }
 
 /// Decodes every batch of an IPC stream held in memory.
-
+///
 /// # Errors
 /// Returns an error if `bytes` is not a valid IPC stream or a batch cannot be decoded.
 pub fn read_stream(bytes: Vec<u8>) -> Result<Vec<RecordBatch>> {
@@ -82,13 +82,15 @@ pub fn example_body(batch: &RecordBatch) -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Writes and reads back the sample record batch as an Arrow IPC file.
+/// Writes and reads back a record batch using both Arrow IPC formats.
+///
+/// # Arguments
+/// * `batch` - Record batch to encode and decode.
 ///
 /// # Errors
 /// Returns an error if the example operation fails.
-pub fn run() -> Result<()> {
-    let (_, _, _, batch) = arrays::run()?;
-    example_body(&batch)
+pub fn run(batch: &RecordBatch) -> Result<()> {
+    example_body(batch)
 }
 
 /// Verifies that schema, nulls, and values survive an IPC file round trip.
@@ -111,7 +113,8 @@ mod tests {
     /// Verifies that the stream format round-trips the same batch.
     #[test]
     fn ipc_stream_round_trip_preserves_the_batch() -> Result<()> {
-        run(&arrow_build::build_batch()?)
+        let batch = arrow_build::build_batch()?;
+        run(&batch)
     }
 
     #[test]

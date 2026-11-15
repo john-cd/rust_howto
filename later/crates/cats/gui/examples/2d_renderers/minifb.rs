@@ -47,7 +47,7 @@ fn fill_gradient(buffer: &mut [u32], offset: u32) {
     }
 }
 /// Creates and configures the native window for the example.
-
+///
 /// # Errors
 /// Returns an error if the window cannot be created.
 fn create_window() -> Result<Window> {
@@ -67,7 +67,6 @@ fn create_window() -> Result<Window> {
 /// * `window` - Window that receives the rendered pixels and input updates.
 /// * `buffer` - Pixel buffer filled with the current gradient frame.
 /// * `offset` - Animation offset, advanced after the frame is displayed.
-
 fn render_frame(window: &mut Window, buffer: &mut [u32], offset: &mut u32) -> Result<()> {
     fill_gradient(buffer, *offset);
 
@@ -118,7 +117,6 @@ fn main() -> Result<()> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn run() -> Result<()> {
     run_window()
 }

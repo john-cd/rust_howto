@@ -34,7 +34,6 @@ pub mod frb_generated {
 pub mod flutter_rust_bridge;
 /// Runs the example.
 /// Runs the flutter example.
-
 fn main() {
     flutter_rust_bridge::run();
 }

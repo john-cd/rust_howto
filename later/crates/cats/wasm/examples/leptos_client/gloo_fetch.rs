@@ -18,17 +18,18 @@
 /// natively.
 #[derive(Debug, PartialEq, Eq)]
 pub struct RequestSpec {
-    /// URL in `RequestSpec`.
+    /// Fully qualified endpoint URL after joining the base and request path.
     pub url: String,
+    /// Optional bearer token formatted for the `Authorization` header.
     pub authorization: Option<String>,
 }
 
-/// Builds the request for `path`, with a bearer token when the user is
+/// Builds the request for `path`, attaching a bearer token when supplied.
 ///
 /// # Arguments
-/// * `path` - Path to the file or directory to process.
-/// * `token` - Token to validate or use for the request.
-/// logged in.
+/// * `base` - API base URL, with or without a trailing slash.
+/// * `path` - Relative endpoint path, with or without a leading slash.
+/// * `token` - Optional access token used for bearer authorization.
 pub fn build_request(base: &str, path: &str, token: Option<&str>) -> RequestSpec {
     RequestSpec {
         url: format!(
@@ -66,6 +67,8 @@ mod tests {
 
     #[test]
     fn joins_url_and_adds_token() {
+        let sample = run();
+        assert_eq!(sample.url, "https://api.example.com/items");
         let spec = build_request("https://api.example.com/", "/items", Some("abc"));
         assert_eq!(spec.url, "https://api.example.com/items");
         assert_eq!(spec.authorization.as_deref(), Some("Bearer abc"));

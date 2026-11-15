@@ -14,7 +14,7 @@ use proc_macro2::Span;
 use proc_macro2::TokenStream;
 use proc_macro2::TokenTree;
 /// Parses Rust source into a token stream.
-
+///
 /// # Errors
 /// Returns an error if the source is malformed.
 ///
@@ -82,7 +82,6 @@ fn build_stream() -> TokenStream {
 /// # Errors
 ///
 /// Returns an error if the example source cannot be parsed.
-
 fn main() -> Result<()> {
     let stream = parse_stream("fn hello() { let answer = 42; }")?;
     let mut descriptions = Vec::new();
@@ -93,7 +92,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the `proc_macro2` token-stream example.
-
+///
 /// # Errors
 /// Returns an error if the example source cannot be parsed.
 pub fn run() -> Result<()> {
@@ -113,7 +112,6 @@ fn rejects_malformed_input() {
     assert!(parse_stream("fn hello( {").is_err());
 }
 /// Verifies that manually constructed token trees form valid Rust tokens.
-
 #[test]
 fn builds_a_token_stream() {
     assert_eq!(build_stream().to_string(), "answer = 42");

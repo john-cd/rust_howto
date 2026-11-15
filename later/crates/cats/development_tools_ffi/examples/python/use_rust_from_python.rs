@@ -11,7 +11,7 @@
 
 use pyo3::prelude::*;
 /// Adds two 64-bit integers and returns their sum.
-
+///
 /// # Arguments
 /// * `a` - The first 64-bit integer.
 ///
@@ -58,7 +58,6 @@ impl Counter {
     /// # Errors
     ///
     /// Returns `PyOverflowError` when the new value does not fit in an `i64`.
-
     fn increment(&mut self, amount: i64) -> PyResult<i64> {
         let next_value = self.value.checked_add(amount).ok_or_else(|| {
             pyo3::exceptions::PyOverflowError::new_err("counter value overflowed i64")
@@ -91,7 +90,7 @@ fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
     Ok(())
 }
 /// Initializes the Python interpreter, registers the Rust module `my_module` in
-
+///
 /// `sys.modules`, and executes Python code that imports and calls its function
 ///
 /// and class.
@@ -151,8 +150,7 @@ mod tests {
 
     use super::*;
 
-    ///
-
+    /// Runs the Python bridge example and verifies its registered APIs.
     #[test]
     #[cfg_attr(
         target_os = "windows",
@@ -162,16 +160,12 @@ mod tests {
     fn test_use_rust_from_python_example_entry_point() -> PyResult<()> {
         main()
     }
-    /// error.
-
-    ///
-
+    /// Addition overflow produces a Python error.
+    /// Counter overflow preserves the existing value.
     #[test]
     fn test_addition_overflow_returns_error() {
         assert!(my_function(i64::MAX, 1).is_err());
     }
-
-    ///
 
     /// # Errors
     /// An error is returned if increment fails.

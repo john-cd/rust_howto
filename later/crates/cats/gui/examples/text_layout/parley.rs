@@ -54,7 +54,6 @@ fn layout_text(
 }
 /// Runs the example.
 /// Builds a layout for a text, breaks it into lines, and prints its glyph runs.
-
 fn main() {
     let text = "Hello, Parley! This is a rich text layout example in Rust.";
     let mut font_cx = font_context().expect("the bundled Roboto font is valid");

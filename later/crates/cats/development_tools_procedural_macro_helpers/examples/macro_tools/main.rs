@@ -21,7 +21,10 @@ use syn::DeriveInput;
 /// Returns an error if `input` is not a valid struct, enum or union.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested main operation.
+/// * `input` - Token stream containing the derive input.
+///
+/// # Returns
+/// Tokens that implement the `Named` trait for the input type.
 fn derive_named(input: TokenStream) -> syn::Result<TokenStream> {
     let DeriveInput {
         ident, generics, ..
@@ -41,7 +44,9 @@ fn derive_named(input: TokenStream) -> syn::Result<TokenStream> {
 /// # Errors
 ///
 /// Returns an error if the tokens are not a valid Rust file.
-
+///
+/// # Returns
+/// The formatted Rust source generated from `tokens`.
 fn expand_to_string(tokens: TokenStream) -> Result<String> {
     let file: syn::File = syn::parse2(tokens)?;
     Ok(prettyplease::unparse(&file))
@@ -58,7 +63,7 @@ impl<T: Clone> Named for Wrapper<T> {
 ";
 
 /// Expands a derive input and checks it against the snapshot.
-fn main() -> Result<()> {
+fn macro_tools_example() -> Result<()> {
     let input = quote! {
         struct Wrapper<T: Clone>(T);
     };
@@ -67,6 +72,10 @@ fn main() -> Result<()> {
     assert_eq!(expanded, EXPECTED);
     Ok(())
 }
+/// Runs the snapshot example as a binary.
+fn main() -> Result<()> {
+    macro_tools_example()
+}
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.
@@ -74,7 +83,7 @@ fn main() -> Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<()> {
-    main()
+    macro_tools_example()
 }
 
 /// Invalid input is reported as an error, not a panic.
@@ -84,7 +93,7 @@ mod tests {
 
     #[test]
     fn test_main_entry_point() {
-        main().expect("the example should run successfully");
+        macro_tools_example().expect("the example should run successfully");
     }
 
     /// Invalid input is reported as an error, not a panic.

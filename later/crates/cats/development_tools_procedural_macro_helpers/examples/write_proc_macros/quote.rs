@@ -58,7 +58,7 @@ fn generate_struct(struct_name: &Ident, fields: &[syn::Field]) -> Result<TokenSt
     Ok(tokens)
 }
 /// Formats the generated `Point` struct and its getter methods.
-
+///
 /// # Errors
 /// Returns an error if generation or Rust syntax parsing fails.
 fn generated_source() -> Result<String> {
@@ -79,7 +79,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the `quote` generation example.
-
+///
 /// # Errors
 /// Returns an error if code generation or parsing fails.
 pub fn run() -> Result<()> {

@@ -8,7 +8,6 @@ mod discrete_event;
 mod ode_solver;
 /// Runs the example.
 /// Runs the discrete-event and ODE simulation examples.
-
 fn main() {
     discrete_event::run();
     ode_solver::run();

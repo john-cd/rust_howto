@@ -6,7 +6,6 @@
 mod objc2;
 /// Runs the example.
 /// Runs the objc example.
-
 fn main() {
     objc2::run();
 }

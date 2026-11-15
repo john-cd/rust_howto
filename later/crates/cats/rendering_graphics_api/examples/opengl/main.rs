@@ -38,7 +38,7 @@ unsafe fn load_context(mut get_proc_address: impl FnMut(&CStr) -> *const c_void)
     }
 }
 /// Clears the current framebuffer to a dark blue color.
-
+///
 /// # Safety
 /// `gl` must belong to the current context, which must remain current for the
 /// duration of both OpenGL calls.
@@ -59,6 +59,11 @@ unsafe fn clear_background(gl: &glow::Context) {
 
 /// Describes the context setup required before using the helpers above.
 fn main() {
+    example();
+}
+
+/// Prints information about the example without requiring an OpenGL context.
+fn example() {
     println!(
         "A GL loader resolves symbols such as {:?}.",
         c_symbol("glClear")
@@ -68,8 +73,8 @@ fn main() {
 // ANCHOR_END: example
 
 /// Demonstrates loading and calling the cross-platform `glow` bindings.
-fn run() {
-    main();
+pub fn run() {
+    example();
 }
 
 /// Converts a valid OpenGL symbol name and rejects an embedded NUL byte.
@@ -81,17 +86,16 @@ mod tests {
     use super::c_symbol;
 
     /// Returns a mock OpenGL version and extension string.
+    /// Returns a mock OpenGL version string for loader tests.
     unsafe extern "system" fn stub_get_string(_: u32) -> *const u8 {
         c"2.1 Mock".as_ptr().cast::<u8>()
     }
+    /// Accepts the clear color requested by the example without changing state.
     unsafe extern "system" fn stub_clear_color(_: f32, _: f32, _: f32, _: f32) {}
     /// Mock OpenGL clear-color function used to load a test context.
-
     unsafe extern "system" fn stub_clear(_: u32) {}
-    /// Mock OpenGL clear function used to load a test context.
 
-    /// window.
-
+    /// Verifies the example entry point runs without a graphics context.
     #[test]
     fn test_main_entry_point() {
         super::main();

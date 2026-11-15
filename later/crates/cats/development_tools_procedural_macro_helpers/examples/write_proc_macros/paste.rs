@@ -24,7 +24,7 @@ macro_rules! create_structs {
                         Self { value }
                     }
 
-                    ///
+                    /// Returns the value stored by the generated struct.
                     fn get_value(&self) -> i32 {
                         self.value
                     }
@@ -47,10 +47,9 @@ fn main() {
     println!("Bar: {}", y.get_value());
     println!("Baz: {}", z.get_value());
 }
-
 // ANCHOR_END: example
-/// Runs the example entry point.
 
+/// Runs the example entry point.
 pub fn run() {
     main();
 }

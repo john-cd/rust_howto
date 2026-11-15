@@ -22,21 +22,19 @@ const KEY: &str = "settings";
 #[derive(Clone, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(default)]
 pub struct Settings {
-    /// Flag indicating whether the settings satisfies the dark mode condition.
+    /// Whether the interface should use its dark color theme.
     pub dark_mode: bool,
-    /// Toast seconds value.
+    /// Number of seconds to keep a toast notification visible.
     pub toast_seconds: u32,
 }
 /// Parses stored JSON, falling back to the defaults when the value is missing
-
+///
 /// or invalid. Kept free of browser APIs so it can be tested natively.
-
 pub fn parse_settings(raw: Option<&str>) -> Settings {
     raw.and_then(|s| serde_json::from_str(s).ok())
         .unwrap_or_default()
 }
 /// Loads the settings from `localStorage` (browser only).
-
 #[cfg(target_arch = "wasm32")]
 pub fn load() -> Settings {
     use gloo_storage::LocalStorage;
@@ -71,6 +69,7 @@ mod tests {
 
     #[test]
     fn missing_or_invalid_gives_defaults() {
+        assert_eq!(run(), Settings::default());
         assert_eq!(parse_settings(None), Settings::default());
         assert_eq!(parse_settings(Some("not json")), Settings::default());
     }

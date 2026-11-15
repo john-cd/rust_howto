@@ -18,7 +18,6 @@ use tonic::client::Grpc;
 use tonic::codegen::http::uri::PathAndQuery;
 use tonic_prost::ProstCodec;
 /// Request message sent to the greeting service.
-
 #[derive(Clone, PartialEq, Eq, prost::Message)]
 pub struct HelloRequest {
     #[prost(string, tag = "1")]
@@ -26,7 +25,6 @@ pub struct HelloRequest {
     pub name: String,
 }
 /// Reply message returned by the greeting service.
-
 #[derive(Clone, PartialEq, Eq, prost::Message)]
 pub struct HelloReply {
     #[prost(string, tag = "1")]
@@ -85,6 +83,10 @@ where
 ///
 /// # Errors
 /// Returns a status error if the service is unavailable or rejects the request.
+#[expect(
+    dead_code,
+    reason = "The book runner targets a local gRPC service; tests use a controlled endpoint"
+)]
 async fn run() -> Result<String, tonic::Status> {
     say_hello("http://127.0.0.1:50051".to_owned(), "Ada".to_owned()).await
 }

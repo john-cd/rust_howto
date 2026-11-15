@@ -14,7 +14,6 @@ fn main() -> Result<(), winit::error::EventLoopError> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn run() -> Result<(), winit::error::EventLoopError> {
     xilem::run()
 }

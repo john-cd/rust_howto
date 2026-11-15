@@ -31,16 +31,15 @@ struct App {
 /// The solid color of the frame, in the 0x00RRGGBB format.
 const BLUE: u32 = 0x0020_60C0;
 /// Returns the size as non-zero numbers, or `None` for a zero-sized
-
+///
 /// (minimized) window.
-
+///
 /// # Returns
 /// `Some` when the requested value is available; otherwise returns `None`.
 fn non_zero_size(width: u32, height: u32) -> Option<(NonZeroU32, NonZeroU32)> {
     Some((NonZeroU32::new(width)?, NonZeroU32::new(height)?))
 }
 /// Presents a solid blue frame, skipping zero-sized minimized windows.
-
 fn draw(surface: &mut Surface<Rc<Window>, Rc<Window>>) -> Result<(), Box<dyn std::error::Error>> {
     let size = surface.window().inner_size();
     let Some((width, height)) = non_zero_size(size.width, size.height) else {

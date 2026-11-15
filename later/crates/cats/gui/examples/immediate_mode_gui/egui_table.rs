@@ -78,7 +78,6 @@ fn run_in_window() -> eframe::Result {
     )
 }
 /// Lays out the table for one frame without a window.
-
 fn main() {
     let ctx = egui::Context::default();
     let mut built = 0;
@@ -101,7 +100,6 @@ fn main() {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

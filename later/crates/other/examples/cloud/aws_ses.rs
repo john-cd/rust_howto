@@ -33,7 +33,6 @@ fn content(text: &str) -> Result<Content> {
 ///
 /// # Errors
 /// Returns an error if the requested resource or connection cannot be created.
-
 pub fn build_email(subject: &str, text: &str, html: &str) -> Result<EmailContent> {
     let body = Body::builder()
         .text(content(text)?)
@@ -90,6 +89,15 @@ mod tests {
     /// Verifies that both bodies and the subject are in the request.
     #[test]
     fn email_has_text_and_html_parts() -> Result<()> {
+        let sample = run()?;
+        assert_eq!(
+            sample
+                .simple()
+                .expect("sample email uses simple content")
+                .subject()
+                .map(Content::data),
+            Some("Example")
+        );
         let email = build_email("Hi", "plain", "<b>html</b>")?;
         let message = email.simple().expect("simple email");
         assert_eq!(message.subject().map(Content::data), Some("Hi"));

@@ -64,6 +64,14 @@ fn inspect(wasm: &[u8]) -> Result<Interface> {
 
 /// Assembles the module and prints its interface.
 fn main() -> Result<()> {
+    example()
+}
+
+/// Assembles the WebAssembly module and prints its imports and exports.
+///
+/// # Errors
+/// Returns an error if the WAT text cannot be assembled or parsed.
+fn example() -> Result<()> {
     let wasm = wat::parse_str(MODULE)?;
     assert_eq!(&wasm[..4], b"\0asm");
     assert_eq!(wasm[4..8], [1, 0, 0, 0]);
@@ -81,7 +89,7 @@ fn main() -> Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<()> {
-    main()
+    example()
 }
 
 /// Garbage is not a module.

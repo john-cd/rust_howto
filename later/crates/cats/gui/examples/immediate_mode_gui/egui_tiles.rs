@@ -43,7 +43,6 @@ impl Behavior<Pane> for TreeBehavior {
     }
 }
 /// Creates a tab container with two panes.
-
 fn new_tree() -> Tree<Pane> {
     Tree::new_tabs(
         egui::Id::unique("main"),
@@ -51,7 +50,6 @@ fn new_tree() -> Tree<Pane> {
     )
 }
 /// Adds a pane next to the existing tabs and makes it the active one.
-
 fn add_pane(tree: &mut Tree<Pane>, title: &str) -> Option<TileId> {
     let root = tree.root()?;
     let pane = tree.tiles.insert_pane(Pane::new(title));
@@ -101,7 +99,6 @@ fn main() {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() {
     run_example();
 }

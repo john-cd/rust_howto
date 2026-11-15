@@ -30,10 +30,8 @@ trait UserRepository {
     /// Returns the user with the given identifier, if any.
     fn get_user(&self, id: i32) -> Option<User>;
     /// Adds a user.
-
     fn add_user(&self, user: User);
     /// Replaces the user that has the same identifier.
-
     fn update_user(&self, user: User);
     /// Removes or resets the user state owned by user repository, preventing stale data from
     /// affecting later work.
@@ -41,10 +39,8 @@ trait UserRepository {
     /// # Arguments
     /// * `id` - Identifier used to select the user repository record or cache entry affected by
     ///   this operation.
-
     fn delete_user(&self, id: i32);
     /// Returns all users.
-
     fn get_all_users(&self) -> Vec<User>;
 }
 
@@ -88,7 +84,7 @@ impl UserRepository for InMemoryUserRepository {
 
     /// Applies the user change to in memory user repository and keeps dependent state consistent
     /// for later operations.
-
+    ///
     /// # Panics
     /// Panics if mutex should not be poisoned.
     fn update_user(&self, user: User) {
@@ -102,7 +98,7 @@ impl UserRepository for InMemoryUserRepository {
     /// # Arguments
     /// * `id` - Identifier used to select the in memory user repository record or cache entry
     ///   affected by this operation.
-
+    ///
     /// # Panics
     /// Panics if mutex should not be poisoned.
     fn delete_user(&self, id: i32) {
@@ -168,7 +164,6 @@ fn main() {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

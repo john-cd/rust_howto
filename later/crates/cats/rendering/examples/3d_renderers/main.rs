@@ -26,12 +26,15 @@ fn model_view_projection() -> Mat4 {
     let projection = directx::perspective(core::f32::consts::FRAC_PI_3, WIDTH / HEIGHT, 0.1, 100.0);
     projection * view * model
 }
-/// Transforms a model-space position into pixel coordinates (origin at the
-
-/// top left) and a depth in `0.0..=1.0`, or `None` when it is clipped.
-
+/// Transforms a model-space position into pixel coordinates and normalized depth.
+///
+/// # Arguments
+/// * `mvp` - Model-view-projection matrix used to transform the position.
+/// * `position` - Position in model space.
+///
 /// # Returns
-/// `Some` when the requested value is available; otherwise returns `None`.
+/// `Some((pixel, depth))` when the position is in front of the camera and inside
+/// the clip volume; otherwise, `None`.
 fn project(mvp: Mat4, position: Vec3) -> Option<(Vec2, f32)> {
     let clip: Vec4 = mvp * position.extend(1.0);
     if clip.w <= 0.0 {
@@ -49,7 +52,7 @@ fn project(mvp: Mat4, position: Vec3) -> Option<(Vec2, f32)> {
 }
 
 /// Projects a triangle and prints its screen-space vertices.
-fn main() {
+fn project_triangle_example() {
     let mvp = model_view_projection();
     let triangle = [
         Vec3::new(-1.0, -1.0, 0.0),
@@ -65,11 +68,15 @@ fn main() {
         }
     }
 }
+/// Starts the 3D projection example as a binary.
+fn main() {
+    project_triangle_example();
+}
 // ANCHOR_END: example
 
-/// Projects a 3D triangle to screen space the way a renderer's vertex stage does.
-fn run() {
-    main();
+/// Runs the 3D projection example.
+pub fn run() {
+    project_triangle_example();
 }
 
 #[cfg(test)]
@@ -79,7 +86,7 @@ mod tests {
     /// Runs the example through its entry point.
     #[test]
     fn test_main_entry_point() {
-        main();
+        project_triangle_example();
     }
 
     #[test]

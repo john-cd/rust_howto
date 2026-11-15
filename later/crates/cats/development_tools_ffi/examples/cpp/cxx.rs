@@ -39,13 +39,11 @@ mod ffi {
     }
 }
 /// Adds two integers in Rust for the generated bridge.
-
 fn rust_add(left: i32, right: i32) -> i32 {
     left + right
 }
 /// Runs the example.
 /// Creates a C++ string and exercises the Rust and C++ functions.
-
 fn main() {
     // Reference the static C++ archive linked by the package build script.
     unsafe { cxx_link_anchor() };
@@ -66,7 +64,6 @@ fn call_cpp(name: &CxxString) {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

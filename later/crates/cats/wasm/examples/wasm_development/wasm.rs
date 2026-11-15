@@ -11,9 +11,7 @@
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use wasm_bindgen::prelude::*;
 /// Adds two integers and exposes the function to JavaScript on the browser
-
 /// target.
-
 #[cfg_attr(all(target_arch = "wasm32", target_os = "unknown"), wasm_bindgen)]
 pub fn add(left: i32, right: i32) -> i32 {
     left + right
@@ -21,7 +19,6 @@ pub fn add(left: i32, right: i32) -> i32 {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example on a native host.
-
 pub fn run() {
     println!("2 + 2 = {}", add(2, 2));
 }

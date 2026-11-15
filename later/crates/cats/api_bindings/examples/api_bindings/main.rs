@@ -10,13 +10,18 @@ const PLACEHOLDER_NOTICE: &str = "No API bindings example is implemented yet.";
 
 /// Prints a notice that this category still needs a bindings example.
 fn main() {
+    example();
+}
+
+/// Prints the placeholder notice for the API bindings category.
+fn example() {
     println!("{PLACEHOLDER_NOTICE}");
 }
 // ANCHOR_END: example
 
 /// Placeholder for API bindings examples.
-fn run() {
-    main();
+pub fn run() {
+    example();
 }
 
 /// Tests the placeholder entry point and its message.

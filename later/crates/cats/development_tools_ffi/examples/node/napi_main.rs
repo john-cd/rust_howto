@@ -6,7 +6,6 @@
 mod napi;
 /// Runs the example.
 /// Runs the N-API example's host-independent path.
-
 fn main() {
     napi::run();
 }

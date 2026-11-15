@@ -6,7 +6,6 @@
 mod virtualization1;
 /// Runs the example.
 /// Runs the virtualization example.
-
 fn main() {
     virtualization1::run();
 }

@@ -4,9 +4,7 @@
 
 /// The main function to render the App component.
 mod yew;
-/// Runs the example.
-/// Runs the yew example.
-
+/// Runs the Yew example through its browser or host entry point.
 fn main() {
     yew::run();
 }

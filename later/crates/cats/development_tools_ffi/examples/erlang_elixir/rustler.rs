@@ -20,7 +20,6 @@ mod nif {
     ///
     /// # Arguments
     /// * `name` - Human-readable value used to identify or display the selected rustler.
-
     pub fn greeting(name: String) -> String {
         format!("Hello, {name}!")
     }
@@ -29,7 +28,6 @@ mod nif {
     ///
     /// # Arguments
     /// * `name` - Human-readable value used to identify or display the selected rustler.
-
     #[cfg(feature = "erlang")]
     #[rustler::nif]
     fn greet(name: String) -> String {
@@ -37,12 +35,10 @@ mod nif {
     }
     /// # Arguments
     /// `add` is a NIF that takes two integers and returns their sum.
-
     pub fn sum(a: i32, b: i32) -> i32 {
         a + b
     }
     /// Returns the sum of `a` and `b`.
-
     #[cfg(feature = "erlang")]
     #[rustler::nif]
     fn add(a: i32, b: i32) -> i32 {
@@ -81,7 +77,6 @@ fn main() {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

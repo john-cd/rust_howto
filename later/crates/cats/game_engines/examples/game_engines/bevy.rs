@@ -28,7 +28,6 @@ fn build_app() -> App {
 }
 
 /// Spawns the entity that the movement system updates.
-
 fn spawn_mover(mut commands: Commands<'_, '_>) {
     commands.spawn((Position(Vec2::ZERO), Velocity(Vec2::new(1.0, 0.0))));
 }
@@ -41,7 +40,6 @@ fn movement(mut query: Query<'_, '_, (&mut Position, &Velocity)>, time: Res<'_, 
 }
 /// Runs the example.
 /// Runs two frames of the headless ECS example.
-
 fn main() {
     let mut app = build_app();
     app.update();
@@ -51,7 +49,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the headless Bevy example.
-
 pub fn run() {
     main();
 }

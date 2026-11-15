@@ -6,7 +6,6 @@
 mod rusty_money;
 /// Runs the example.
 /// Runs the money examples.
-
 fn main() {
     rusty_money::run();
 }

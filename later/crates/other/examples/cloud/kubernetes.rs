@@ -204,7 +204,6 @@ mod tests {
     ///
     /// Set `UPDATE_SNAPSHOTS=1` to rewrite `kubernetes_crd.snapshot.json`
     /// after an intentional change to the `Echo` resource.
-
     #[test]
     fn crd_matches_the_committed_snapshot() -> anyhow::Result<()> {
         let snapshot_path = concat!(

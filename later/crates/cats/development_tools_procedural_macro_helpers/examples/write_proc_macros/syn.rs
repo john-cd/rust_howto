@@ -87,7 +87,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the `syn` derive-helper example.
-
+///
 /// # Errors
 /// Returns an error if parsing or generation fails.
 pub fn run() -> Result<()> {

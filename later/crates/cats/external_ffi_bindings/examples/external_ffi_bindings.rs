@@ -18,6 +18,11 @@ fn native_process_id() -> libc::pid_t {
 
 /// Prints the process ID, comparing the native binding on Unix.
 fn main() {
+    example();
+}
+
+/// Compares the standard library process ID with the Unix C library binding.
+fn example() {
     let process_id = std::process::id();
     #[cfg(unix)]
     assert_eq!(i64::from(native_process_id()), i64::from(process_id));
@@ -27,7 +32,7 @@ fn main() {
 
 /// Runs the example through its program entry point.
 pub fn run() {
-    main();
+    example();
 }
 
 #[cfg(test)]

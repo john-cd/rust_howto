@@ -65,8 +65,8 @@ fn ktx2_header_round_trip() -> anyhow::Result<Header> {
     Ok(Header::from_bytes(&header.as_bytes())?)
 }
 
-/// Prints the metadata that each container reports.
-fn main() -> anyhow::Result<()> {
+/// Prints the metadata reported by each container.
+fn texture_formats_example() -> anyhow::Result<()> {
     let (width, height, levels, format) = dds_round_trip()?;
     println!("DDS: {width}x{height}, {levels} levels, {format:?}");
     let header = ktx2_header_round_trip()?;
@@ -76,6 +76,10 @@ fn main() -> anyhow::Result<()> {
     );
     Ok(())
 }
+/// Runs the texture metadata example as a binary.
+fn main() -> anyhow::Result<()> {
+    texture_formats_example()
+}
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.
@@ -83,7 +87,7 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    texture_formats_example()
 }
 
 /// Round-trips DDS and KTX2 container metadata without a GPU.
@@ -91,7 +95,6 @@ pub fn run() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if an operation in the example fails.
 /// Returns an error if a step of the example fails.
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -99,10 +102,9 @@ mod tests {
     /// Runs the example through its entry point.
     #[test]
     fn test_main_entry_point() -> anyhow::Result<()> {
-        main()
+        texture_formats_example()
     }
     /// Verifies the DDS metadata survives a write and read.
-
     #[test]
     fn dds_metadata_round_trips() -> anyhow::Result<()> {
         assert_eq!(dds_round_trip()?, (64, 64, 7, Some(DxgiFormat::BC7_UNorm)));

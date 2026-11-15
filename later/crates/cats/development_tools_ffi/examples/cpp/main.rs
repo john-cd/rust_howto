@@ -6,7 +6,6 @@
 mod cxx;
 /// Runs the example.
 /// Runs the cpp example.
-
 fn main() {
     cxx::run();
 }

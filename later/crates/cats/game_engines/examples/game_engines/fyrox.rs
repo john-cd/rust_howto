@@ -42,7 +42,6 @@ impl Plugin for Game {
 }
 /// Runs the example.
 /// Creates the plugin the way a game executor would.
-
 fn main() {
     let mut game = Game::default();
     game.tick();
@@ -51,7 +50,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the Fyrox game engine example.
-
 pub fn run() {
     main();
 }

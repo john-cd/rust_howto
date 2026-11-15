@@ -95,7 +95,6 @@ impl Cache for SimpleCache {
     }
 
     /// Changes the bounds held by the simple cache; subsequent operations use the updated value.
-
     fn set_bounds(&mut self, node: &Self::Node, posx: f32, posy: f32, width: f32, height: f32) {
         self.rects.insert(*node, (posx, posy, width, height));
     }
@@ -291,7 +290,6 @@ impl Node for Entity {
 }
 /// Runs the example entry point.
 /// Runs the Morphorm layout example.
-
 pub fn run() {
     main();
 }

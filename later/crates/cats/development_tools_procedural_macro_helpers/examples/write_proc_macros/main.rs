@@ -53,7 +53,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     dispatch(Cli::parse())
 }
 /// Runs the example selected in the parsed command line.
-
 fn dispatch(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
     match cli.command {
         Commands::Darling => {

@@ -64,7 +64,6 @@ fn run_app() -> Result<(), winit::error::EventLoopError> {
 /// # Errors
 /// Returns an error if a step of the example fails.
 /// Runs the counter example as a standalone Cargo target or book test.
-
 pub fn run() -> Result<(), winit::error::EventLoopError> {
     run_app()
 }

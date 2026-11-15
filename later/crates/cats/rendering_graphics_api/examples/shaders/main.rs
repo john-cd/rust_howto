@@ -12,8 +12,7 @@ use naga::valid::Validator;
 /// Shared `shader` used by this module.
 const SHADER: &str = "
 @vertex
-/// # Arguments
-/// * `index` - Position used to identify the element affected in the current ordered collection.
+// Uses the vertex index to select a position in the triangle.
 fn vertex_main(@builtin(vertex_index) index: u32) -> @builtin(position) vec4<f32> {
     let x = f32(i32(index) - 1);
     let y = f32(i32(index & 1u) * 2 - 1);
@@ -39,6 +38,14 @@ fn compile_to_spirv() -> anyhow::Result<Vec<u32>> {
 
 /// Compiles the shader and reports the size of the SPIR-V binary.
 fn main() -> anyhow::Result<()> {
+    example()
+}
+
+/// Compiles the shader and reports the resulting SPIR-V word count.
+///
+/// # Errors
+/// Returns an error if parsing, validation, or SPIR-V encoding fails.
+fn example() -> anyhow::Result<()> {
     let words = compile_to_spirv()?;
     println!("SPIR-V binary: {} words", words.len());
     Ok(())
@@ -50,14 +57,8 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    example()
 }
-
-/// Validates a WGSL shader with `naga` and translates it to SPIR-V.
-///
-/// # Errors
-/// Returns an error if an operation in the example fails.
-/// Returns an error if a step of the example fails.
 
 #[cfg(test)]
 mod tests {
@@ -69,7 +70,6 @@ mod tests {
         main()
     }
     /// Verifies the output starts with the SPIR-V magic number.
-
     #[test]
     fn emits_a_spirv_module() -> anyhow::Result<()> {
         let words = compile_to_spirv()?;

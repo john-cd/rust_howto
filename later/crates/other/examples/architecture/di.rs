@@ -27,7 +27,6 @@ trait Greeter: Interface {
     ///
     /// # Arguments
     /// * `name` - Human-readable value used to identify or display the selected greeter.
-
     fn greet(&self, name: &str) -> String;
 }
 
@@ -46,7 +45,6 @@ struct EnglishGreeter;
 impl Greeter for EnglishGreeter {
     /// # Arguments
     /// * `name` - Human-readable value used to identify or display the selected english greeter.
-
     fn greet(&self, name: &str) -> String {
         format!("Hello, {name}!")
     }
@@ -59,11 +57,9 @@ impl Greeter for EnglishGreeter {
 /// A service that starts a conversation.
 trait Conversation: Interface {
     /// Starts the current value.
-
     fn start(&self) -> String;
 }
 /// A conversation in English, which greets using an injected greeter.
-
 #[derive(Component)]
 /// A conversation in English, which greets using an injected greeter.
 #[shaku(interface = Conversation)]
@@ -81,7 +77,6 @@ struct EnglishConversation {
 
 impl Conversation for EnglishConversation {
     /// Starts the current value.
-
     fn start(&self) -> String {
         self.greeter.greet(self.person.as_str())
     }
@@ -99,7 +94,6 @@ module! {
 }
 /// Runs the example.
 /// Resolves components from a module and uses them.
-
 fn main() {
     // Create an instance of the module, which manages the dependencies.
     let module = MyModule::builder().build();
@@ -120,7 +114,6 @@ fn main() {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

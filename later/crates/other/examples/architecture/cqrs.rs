@@ -14,7 +14,6 @@
 /// Domain Model.
 mod domain {
     /// Product record stored and queried by the CQRS example.
-
     #[derive(Debug, Clone)]
     pub struct Product {
         /// The identifier of the product.
@@ -42,7 +41,6 @@ mod domain {
         }
 
         /// Returns the name of the product.
-
         pub fn name(&self) -> &str {
             &self.name
         }
@@ -52,7 +50,6 @@ mod domain {
         }
 
         /// Sets the quantity in stock.
-
         pub fn set_quantity(&mut self, quantity: u32) {
             self.quantity = quantity;
         }
@@ -107,16 +104,14 @@ mod events {
     /// Events are stored in the Event Store.
     pub trait EventRepository {
         /// Stores an event.
-
+        ///
         /// # Arguments
         /// * `limit` - Bound used to limit the amount of work or data accepted by the operation.
-
         fn apply_event(&self, event: ProductEvent);
         /// Returns events.
         fn get_events(&self, limit: Option<usize>) -> Vec<ProductEvent>;
 
         /// Returns all events recorded after the specified version offset.
-
         fn get_events_since(&self, version: usize) -> Vec<ProductEvent>;
 
         fn event_count(&self) -> usize;
@@ -125,7 +120,6 @@ mod events {
     impl EventRepository for SimpleEventStore {
         /// Applies the event change to simple event store and keeps dependent state consistent for
         /// later operations.
-
         fn apply_event(&self, event: ProductEvent) {
             let mut events = self
                 .events
@@ -137,7 +131,6 @@ mod events {
         // Get a snapshot of the events
         /// # Arguments
         /// * `limit` - Bound used to limit accepted data or the amount of work performed.
-
         fn get_events(&self, limit: Option<usize>) -> Vec<ProductEvent> {
             let events = self
                 .events
@@ -333,7 +326,6 @@ mod read_store {
         /// Returns the product with the given identifier, if any.
         fn get_product(&self, id: u32) -> Option<Product>;
         /// Returns all products.
-
         fn get_all_products(&self) -> Vec<Product>;
     }
 
@@ -449,9 +441,10 @@ mod query {
     ///
     /// Query Handler:
     /// - Handles read requests.
-    // - Maintains a read-optimized representation of the data.
-    // - Is updated by processing events from the Event Store.
-    // - Uses a hashmap as an in-memory database for the read model.
+    /// - Maintains a read-optimized representation of the data.
+    /// - Is updated by processing events from the Event Store.
+    /// - Uses a hashmap as an in-memory database for the read model.
+    ///
     /// CQRS read handler that returns the current product state.
     pub struct QueryHandler<R: ProductRepository> {
         /// The repository of products to read from.
@@ -559,7 +552,6 @@ fn main() -> anyhow::Result<()> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn run() -> anyhow::Result<()> {
     main()
 }

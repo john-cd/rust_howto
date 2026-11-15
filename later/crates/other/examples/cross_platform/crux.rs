@@ -72,7 +72,6 @@ impl App for Counter {
 /// Runs the example.
 /// # Crux Core Example
 /// Runs two increments through Crux's in-process core and prints its view.
-
 fn main() {
     let core = crux_core::Core::<Counter>::new();
     core.process_event(Event::Increment);
@@ -81,7 +80,7 @@ fn main() {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
+///
 /// Exposes this example to the crate's dispatcher.
 /// # Crux Core Example
 pub fn run() {

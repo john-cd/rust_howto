@@ -13,9 +13,8 @@ use macroquad::prelude::*;
 /// The distance in pixels from the center of the screen to each corner.
 const TRIANGLE_RADIUS: f32 = 120.0;
 /// Returns the corners of an equilateral triangle centered on `center`,
-
+///
 /// rotated by `angle` radians.
-
 fn triangle_points(center: Vec2, radius: f32, angle: f32) -> [Vec2; 3] {
     [0.0, 2.0 * PI / 3.0, 4.0 * PI / 3.0].map(|offset| {
         let theta = angle + offset;
@@ -24,7 +23,7 @@ fn triangle_points(center: Vec2, radius: f32, angle: f32) -> [Vec2; 3] {
 }
 
 /// Represents the dynamic visual state of the game.
-/// State required by `GameState` during transport operations.
+/// Visual state updated by the render loop.
 #[derive(Debug, Clone, Copy, PartialEq)]
 struct GameState {
     /// The current rotation angle of the triangle in radians.
@@ -65,10 +64,10 @@ fn random_color() -> Color {
         1.0,
     )
 }
-/// # Arguments
-/// * `state` - Shared state and services used to complete the games workflow.
 /// Renders a single frame displaying the triangle and instruction overlay.
-
+///
+/// # Arguments
+/// * `state` - Current rotation and color displayed in the frame.
 fn draw_frame(state: &GameState) {
     clear_background(BLACK);
 
@@ -106,8 +105,15 @@ async fn main() {
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.
-pub async fn run() {
-    main().await;
+#[cfg_attr(
+    not(test),
+    expect(
+        clippy::main_recursion,
+        reason = "The book runner invokes Macroquad's generated entry point to initialize its window"
+    )
+)]
+pub fn run() {
+    main();
 }
 
 /// Every corner lies on the circle around the center.

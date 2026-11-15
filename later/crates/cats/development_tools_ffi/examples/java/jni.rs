@@ -32,7 +32,6 @@ use jni::sys::jstring;
 /// Formats the greeting independently of the JVM.
 /// # Arguments
 /// * `input` - Input data whose fields determine the requested jni operation.
-
 pub fn hello(input: &str) -> String {
     format!("Hello, {input}!")
 }
@@ -62,7 +61,6 @@ pub extern "system" fn Java_HelloWorld_hello<'a>(
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the JNI example logic without starting a JVM.
-
 pub fn run() {
     let msg = hello("World");
     println!("{msg}");

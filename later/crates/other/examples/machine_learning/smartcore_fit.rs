@@ -40,7 +40,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn run() -> anyhow::Result<()> {
     main().map_err(|e| anyhow::anyhow!("{e}"))
 }

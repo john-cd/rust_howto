@@ -37,7 +37,6 @@ impl EventBus {
     }
 
     /// A full subscriber queue blocks until it has space or disconnects.
-
     fn publish(&mut self, event: &Event) -> usize {
         let before = self.subscribers.len();
         self.subscribers
@@ -94,7 +93,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the event-bus example.
-
 pub fn run() {
     main();
 }

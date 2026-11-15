@@ -54,14 +54,13 @@ struct Config {
 /// methods, among other [restrictions](https://docs.rs/comemo/0.4.0/comemo/attr.track.html).
 #[track]
 impl Config {
-    ///
+    /// Returns the current tracked configuration value.
     fn get_value(&self) -> i32 {
         self.value
     }
 }
 /// Calls a memoized function twice with the same tracked argument, then after a
 /// change.
-
 fn main() {
     let mut config = Config {
         value: 5,
@@ -97,7 +96,6 @@ fn main() {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn run() {
     main();
 }

@@ -25,7 +25,6 @@ fn tone() -> impl Source {
     SineWave::new(FREQUENCY_HZ).take_duration(DURATION)
 }
 /// Plays a 440 Hz sine tone for two seconds on the default output device.
-
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     // Keep the sink alive: dropping it stops the audio.
     let sink = DeviceSinkBuilder::open_default_sink()?;

@@ -23,6 +23,10 @@ use icondata::Icon as IconData;
 use leptos::prelude::*;
 
 /// Renders `icon` as an inline `<svg>` that follows the surrounding text color.
+///
+/// # Arguments
+/// * `icon` - Icon path data and view box to render.
+/// * `label` - Accessible text announced by assistive technology.
 #[component]
 pub fn Icon(icon: IconData, #[prop(into)] label: String) -> impl IntoView {
     view! {
@@ -39,7 +43,6 @@ pub fn Icon(icon: IconData, #[prop(into)] label: String) -> impl IntoView {
 }
 
 /// Renders a small toolbar to a string, as a server would.
-
 pub fn toolbar_html() -> String {
     view! {
         <nav>
@@ -62,7 +65,7 @@ mod tests {
 
     #[test]
     fn toolbar_renders_labeled_svg_icons() {
-        let html = toolbar_html();
+        let html = run();
         assert_eq!(html.matches("<svg").count(), 2);
         assert!(html.contains("aria-label=\"Home\""));
         assert!(html.contains("aria-label=\"Settings\""));

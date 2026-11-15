@@ -9,7 +9,7 @@ use std::sync::Arc;
 
 use anyhow::Result;
 /// Account record used by the layered architecture example.
-
+///
 /// Represents a user in the system.
 #[derive(Debug, Clone)]
 pub struct User {
@@ -36,7 +36,6 @@ mod data {
         /// Returns the user with the given identifier, if any.
         async fn get_user(&self, id: u32) -> Result<Option<User>>;
         /// Stores a new user.
-
         async fn create_user(&self, user: User) -> Result<()>;
     }
 
@@ -90,7 +89,6 @@ mod business {
         /// Returns the user with the given identifier, if any.
         async fn get_user(&self, id: u32) -> Result<Option<User>>;
         /// Creates a user.
-
         async fn create_user(&self, user: User) -> Result<()>;
     }
 
@@ -118,7 +116,6 @@ mod business {
         }
 
         /// Assembles the user from its component values so callers receive a ready-to-use result.
-
         async fn create_user(&self, user: User) -> Result<()> {
             // Business logic goes here.
             self.repo.create_user(user).await
@@ -173,7 +170,6 @@ async fn main() -> Result<()> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn run() -> Result<()> {
     main()
 }

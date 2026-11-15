@@ -11,12 +11,10 @@ fn decode_srgb(color: Srgb<u8>) -> LinSrgb<f32> {
     color.into_linear()
 }
 /// Encodes linear-light values as 8-bit sRGB.
-
 fn encode_srgb(color: LinSrgb<f32>) -> Srgb<u8> {
     Srgb::from_linear(color)
 }
 /// Prints the stored, linear, and display color values.
-
 fn print_example() {
     let stored = Srgb::<u8>::new(128, 64, 32);
     let linear = decode_srgb(stored);
@@ -25,14 +23,12 @@ fn print_example() {
 }
 /// Runs the example.
 /// Runs the color conversion from a standalone entry point.
-
 fn main() {
     print_example();
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the sRGB conversion example.
-
 pub fn run() {
     print_example();
 }

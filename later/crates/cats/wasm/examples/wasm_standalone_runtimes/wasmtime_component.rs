@@ -79,7 +79,6 @@ impl howto::greeter::logger::Host for State {
 /// preopened directories, environment variables, arguments, network or
 /// inherited standard streams. Add capabilities with `WasiCtxBuilder` only
 /// when the guest needs them.
-
 fn instantiate(engine: &Engine, component: &Component) -> Result<(Store<State>, Greeter)> {
     let mut linker = Linker::new(engine);
     wasmtime_wasi::p2::add_to_linker_sync(&mut linker)?;
@@ -200,7 +199,6 @@ mod tests {
         main()
     }
     /// Valid and invalid names produce the typed results.
-
     #[test]
     fn typed_results_cross_the_boundary() -> Result<()> {
         let Some((engine, component)) = engine_and_component()? else {

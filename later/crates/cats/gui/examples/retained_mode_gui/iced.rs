@@ -66,7 +66,6 @@ impl Counter {
 }
 // ANCHOR_END: example
 /// Runs the example entry point.
-
 pub fn run() -> iced::Result {
     main()
 }
@@ -83,7 +82,6 @@ mod tests {
     }
     /// Applies the changes the counter value change to counter and keeps dependent state consistent
     /// for later operations.
-
     #[test]
     fn update_changes_the_counter_value() {
         let mut counter = Counter::default();

@@ -23,7 +23,7 @@ struct BuilderOptions {
     prefix: Option<String>,
 }
 /// Parses builder options from derive input.
-
+///
 /// # Errors
 /// Returns a Darling error for malformed input or unknown attributes.
 ///
@@ -52,7 +52,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 /// Runs the `darling` attribute-parsing example.
-
+///
 /// # Errors
 /// Returns an error if the valid example input cannot be parsed.
 pub fn run() -> Result<()> {

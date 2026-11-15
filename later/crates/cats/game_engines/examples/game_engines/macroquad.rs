@@ -67,7 +67,6 @@ async fn async_main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Starts the Macroquad window and game loop.
-
 pub fn run() {
     macroquad::Window::new("Bouncing Ball", async_main());
 }

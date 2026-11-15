@@ -45,11 +45,14 @@ fn round_trip(schema: Arc<Schema>, batch: &RecordBatch) -> Result<RecordBatch> {
 
 /// Writes the sample record batch as JSON.
 ///
+/// # Arguments
+/// * `schema` - Schema used to decode the JSON columns.
+/// * `batch` - Record batch to serialize and read back.
+///
 /// # Errors
 /// Returns an error if the example operation fails.
-pub fn run() -> Result<()> {
-    let (schema, _, _, batch) = arrays::run()?;
-    example_body(schema, &batch)
+pub fn run(schema: Arc<Schema>, batch: &RecordBatch) -> Result<()> {
+    example_body(schema, batch)
 }
 
 /// Verifies that JSON output preserves all record batch values.

@@ -31,12 +31,19 @@ fn read_design_metrics() -> anyhow::Result<(u16, u16)> {
 }
 
 /// Prints the rasterized glyph size and the font's design metrics.
-fn main() -> anyhow::Result<()> {
+fn text_rendering_example() -> anyhow::Result<()> {
     let (width, height, ink) = rasterize_glyph()?;
     println!("'A' is {width}x{height} pixels with {ink} total coverage");
     let (units_per_em, advance) = read_design_metrics()?;
     println!("{advance} of {units_per_em} font units advance");
     Ok(())
+}
+/// Starts the text rendering example as a binary.
+///
+/// # Errors
+/// Returns an error if the bundled font cannot be parsed.
+fn main() -> anyhow::Result<()> {
+    text_rendering_example()
 }
 // ANCHOR_END: example
 
@@ -45,7 +52,7 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    text_rendering_example()
 }
 
 /// Rasterizes a glyph with `fontdue` and reads metrics with `ttf-parser`.
@@ -53,7 +60,6 @@ pub fn run() -> anyhow::Result<()> {
 /// # Errors
 /// Returns an error if an operation in the example fails.
 /// Returns an error if a step of the example fails.
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -61,10 +67,9 @@ mod tests {
     /// Runs the example through its entry point.
     #[test]
     fn test_main_entry_point() -> anyhow::Result<()> {
-        main()
+        text_rendering_example()
     }
     /// Verifies the glyph bitmap has area and visible ink.
-
     #[test]
     fn rasterizes_a_non_empty_glyph() -> anyhow::Result<()> {
         let (width, height, ink) = rasterize_glyph()?;

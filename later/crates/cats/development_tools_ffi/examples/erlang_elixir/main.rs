@@ -6,7 +6,6 @@
 mod rustler;
 /// Runs the example.
 /// Runs the erlang elixir example.
-
 fn main() {
     rustler::run();
 }
