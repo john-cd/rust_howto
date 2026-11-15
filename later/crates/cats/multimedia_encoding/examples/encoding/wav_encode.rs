@@ -51,7 +51,6 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }

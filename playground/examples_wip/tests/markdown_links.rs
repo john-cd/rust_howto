@@ -28,7 +28,7 @@ fn matches(rule: Rule, source: &str) -> bool {
 ///
 /// # Arguments
 /// * `source` - Original value used as the starting point for the markdown links operation.
-
+///
 /// # Panics
 /// Panics if the document scanner should consume all source.
 fn document_rules(source: &str) -> Vec<Rule> {

@@ -8,9 +8,8 @@ use serde::Serialize;
 /// Category badge
 pub(super) static CAT_BADGE: &str =
     r"[![cat~{slug}][cat~{slug}~badge]][cat~{slug}]\{\{hi:{category}}} ";
-/// Renders a category badge for the supplied name and crates.io slug.
-
-/// Trims leading and trailing whitespace from both values before rendering.
+/// Renders a category badge for the supplied name and crates.io slug after
+/// trimming leading and trailing whitespace from both values.
 ///
 /// # Arguments
 /// * `category` - Display name of the category, such as `Encoding`.
@@ -19,6 +18,9 @@ pub(super) static CAT_BADGE: &str =
 ///
 /// # Errors
 /// Returns an error if the category badge template cannot be loaded or rendered.
+///
+/// # Returns
+/// The rendered Markdown badge.
 pub fn create_category_badge(category: &str, slug: &str) -> Result<String> {
     /// Template data used to render a crate category badge.
     #[derive(Serialize)]

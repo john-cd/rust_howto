@@ -44,7 +44,6 @@ impl Task {
     }
 
     /// Runs the task, sending progress and stopping if `cancel_token` says so.
-
     pub(super) fn execute(
         self,
         cancel_token: CancelToken,

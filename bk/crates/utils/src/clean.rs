@@ -8,21 +8,23 @@ use std::path::Path;
 
 use tracing::info;
 
-/// Checks if a directory entry is hidden (starts with a dot).
-/// Reports whether the clean meets the hidden condition so callers can choose the correct branch.
-
+/// Returns whether a directory entry's name starts with a dot.
 fn is_hidden(entry: &DirEntry) -> bool {
     entry
         .file_name()
         .to_str()
         .is_some_and(|s| s.starts_with('.'))
 }
-/// Remove all files (not starting with .) and subfolders in a given folder.
+/// Removes visible files and all child directories from the given folder.
 ///
 /// # Arguments
 /// * `dir` - Path to the resource being processed.
-/// BEWARE: destructive.
-
+///
+/// # Errors
+/// Returns an error if the directory cannot be read or an entry cannot be removed.
+///
+/// # Warning
+/// This operation permanently deletes visible files and child directories.
 pub fn clean_folder(dir: &Path) -> anyhow::Result<()> {
     if dir.is_dir() {
         for entry in fs::read_dir(dir)? {

@@ -11,7 +11,6 @@ pub(super) fn cmd() -> Command {
     // not displayed in the help message.
 }
 /// Returns whether the `test` command was run.
-
 pub(super) fn is_present(matches: &ArgMatches) -> bool {
     matches.subcommand_name() == Some("test")
 }

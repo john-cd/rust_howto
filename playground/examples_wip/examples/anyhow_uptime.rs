@@ -32,8 +32,7 @@ fn main() -> Result<()> {
 /// Reads the system uptime.
 ///
 /// Returns the uptime in seconds as a `u64`.
-/// Returns an error if the file cannot be read or the data cannot be parsed.
-
+/// Reports read or parse failures to stderr and returns success after handling them.
 fn run_example() -> Result<()> {
     match read_uptime() {
         Ok(uptime) => println!("uptime: {uptime} seconds"),

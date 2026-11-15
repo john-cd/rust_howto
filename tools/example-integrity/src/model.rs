@@ -28,8 +28,10 @@ pub struct Report {
 }
 
 impl Report {
-    /// A Markdown page and its publication, visibility, and example state.
-
+    /// Reports whether the inventory contains an error-severity diagnostic.
+    ///
+    /// # Returns
+    /// `true` if any diagnostic has severity `"error"`; otherwise, `false`.
     #[must_use]
     pub fn has_errors(&self) -> bool {
         self.diagnostics
@@ -37,8 +39,8 @@ impl Report {
             .any(|diagnostic| diagnostic.severity == "error")
     }
 }
-/// Index record describing one mdBook chapter.
-/// A Markdown page and its publication, visibility, and example state.
+/// Index record describing one Markdown chapter and its publication,
+/// visibility, and example state.
 
 #[derive(Debug, Serialize)]
 pub struct ChapterRecord {

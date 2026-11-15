@@ -128,6 +128,6 @@ pub fn watt_macro(input: TokenStream) -> TokenStream {
             println!("Watt macro received: {}", #input_str);
         }
     };
-    /// Prints the token stream passed to the procedural macro.
+    // Return the generated token stream to the compiler.
     TokenStream::from(expanded)
 }

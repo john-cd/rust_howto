@@ -46,20 +46,20 @@ struct CategoryRecord {
     crates: Vec<String>,
 }
 
-/// `Create_category_and_crates`
+/// Creates one Markdown table row for a category and its crates.
 ///
 /// # Arguments
-/// Returns one line in the "crates organized by category" table:
-/// | <category badge> | <description> | <crate badge> <crate badge>... |
-///
-/// category: category name e.g. Encoding
-/// slug: category slug used by the crates.io website e.g. encoding
-/// description: description of the category
-/// `crate_names`: list of the names of the crates to include in the category (per
-/// lib.rs)
+/// * `category` - Display name of the category.
+/// * `slug` - crates.io slug used to construct the category badge.
+/// * `description` - Text shown in the category description cell.
+/// * `crate_names` - Crate names shown in the category row.
 ///
 /// # Errors
-/// Returns an error if the requested resource or connection cannot be created.
+/// This wrapper currently performs no fallible work, but preserves the shared
+/// row renderer's result type.
+///
+/// # Returns
+/// The rendered Markdown table row.
 pub fn create_category_and_crates(
     category: &str,
     slug: &str,
@@ -74,15 +74,20 @@ pub fn create_category_and_crates(
         &RecipeLinksByCrate::new(),
     )
 }
-/// Returns one row of the table, with links to the recipes that use each crate.
-
+/// Returns one Markdown category row and links to recipes that use its crates.
+///
 /// # Arguments
-/// * `recipe_links` - Recipe links by crate used as the recipe links input to the crates by
-///   category workflow.
-
+/// * `category` - Display name of the category.
+/// * `slug` - crates.io slug used to construct the category badge.
+/// * `description` - Description shown in the category row.
+/// * `crate_names` - Crates listed in the row.
+/// * `recipe_links` - Recipe links grouped by crate name.
+///
+/// # Returns
+/// The rendered Markdown table row.
+///
 /// # Errors
-/// Returns an error if the create category row operation cannot satisfy its required invariants.
-
+/// This function currently performs only infallible string formatting.
 fn create_category_row(
     category: &str,
     slug: &str,

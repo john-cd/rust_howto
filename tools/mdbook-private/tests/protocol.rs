@@ -26,15 +26,14 @@ fn chapter(name: &str, path: &str, number: Option<Vec<u32>>) -> Chapter {
     chapter.number = number.map(SectionNumber::new);
     chapter
 }
-/// Runs the executable with the given settings and book, and returns its
-
-/// output.
-
+/// Runs the executable with the given settings and book and returns its output.
+///
 /// # Arguments
-/// * `settings` - Settings that control how the protocol operation is performed.
+/// * settings - Configuration passed to the preprocessor.
+/// * book - Input book sent to the executable.
 ///
 /// # Panics
-/// Panics if input should parse.
+/// Panics if the preprocessor settings cannot be parsed.
 fn invoke(settings: serde_json::Value, book: Book) -> Output {
     let mut config = Config::default();
     config

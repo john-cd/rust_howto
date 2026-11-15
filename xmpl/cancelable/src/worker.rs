@@ -111,11 +111,13 @@ impl Worker {
         }
     }
 
-    /// Request a task execution, unless too many of them are already
+    /// Queues a task unless cancellation setup fails or the worker queue is full.
     ///
     /// # Arguments
-    /// * `task` - Task to run or cancel.
-    /// queued.
+    /// * `task` - Task that the worker should execute.
+    ///
+    /// # Errors
+    /// Returns an error if cancellation setup fails or the queue is full or disconnected.
     pub fn start(&self, task: Task) -> anyhow::Result<()> {
         let task_id = task.task_id();
         let cancel_token = self.cancel_source.make_token(task_id)?;
@@ -146,9 +148,10 @@ impl Worker {
         self.cancel_source.cancel_task(task_id)
     }
 
-    /// Make the worker thread stop
-    /// (interrupting the current task if any).
-
+    /// Stops the worker thread, cancelling the current task if one is running.
+    ///
+    /// # Errors
+    /// Returns an error if cancelling tasks fails or the worker thread panics while joining.
     pub fn die(&mut self) -> anyhow::Result<()> {
         let cancel_result = self.cancel_source.cancel_all();
         if let Some(sender) = self.s_die.take()

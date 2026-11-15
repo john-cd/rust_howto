@@ -2,12 +2,19 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-/// Detect a GitHub URL, returning `(detected, username, repo)`, where `detected` is `true` if it is
+/// Detects a GitHub repository URL and returns its owner and repository name.
 ///
 /// # Arguments
-/// * `url` - URL identifying the requested resource.
-/// a proper Github URL, `false` otherwise. In the latter case, `username` and `repo` are empty
-/// string slices.
+/// * `url` - URL to check.
+///
+/// # Returns
+/// A tuple containing whether the URL matched and, on a match, the owner and
+/// repository name. Non-matching URLs return `(false, "", "")`. The name
+/// slices borrow from `url`.
+///
+/// # Panics
+/// Panics only if the fixed regular expression no longer defines its owner or
+/// repository capture group.
 pub fn detect_github_url(url: &str) -> (bool, &str, &str) {
     let re2: &regex::Regex = crate::regex!(
         r"^http(?:s)?://(?:www\.)?github.com/(?<username>[\w_\.\-]+)/(?<repo>[\w_\.\-]+?)(?:/.*|\.git)?$"
