@@ -24,6 +24,7 @@ enum Event {
 /// A minimal in-process bus with bounded subscriber queues.
 #[derive(Default)]
 struct EventBus {
+    /// Collection of subscribers values consumed by event bus operations.
     subscribers: Vec<SyncSender<Event>>,
 }
 
@@ -35,9 +36,8 @@ impl EventBus {
         rx
     }
 
-    /// Sends an event to connected subscribers and returns disconnections.
-    ///
     /// A full subscriber queue blocks until it has space or disconnects.
+
     fn publish(&mut self, event: &Event) -> usize {
         let before = self.subscribers.len();
         self.subscribers
@@ -92,8 +92,9 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the event-bus example.
+
 pub fn run() {
     main();
 }
@@ -108,7 +109,6 @@ mod tests {
         main();
     }
 
-    /// Verifies delivery to connected subscribers and removal of closed ones.
     #[test]
     fn reports_and_removes_disconnected_subscribers() {
         let mut bus = EventBus::default();

@@ -98,10 +98,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that the basic toml example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -118,6 +122,7 @@ mod tests {
         Ok(())
     }
 
+    /// Defines the sample constant.
     const SAMPLE: &str = r#"
         [server]
         host = "127.0.0.1"

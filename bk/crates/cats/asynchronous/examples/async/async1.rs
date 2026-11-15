@@ -67,6 +67,7 @@ async fn do_something() {
 // into a synchronous function that initializes a
 // async runtime instance.
 /// Runs [`do_something`] on the Tokio runtime.
+/// Basics of `async` functions and `Future`s: calling, awaiting and combining them.
 #[tokio::main]
 async fn main() {
     do_something().await;
@@ -76,6 +77,7 @@ async fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+/// Basics of `async` functions and `Future`s: calling, awaiting and combining them.
 pub fn run() {
     main();
 }

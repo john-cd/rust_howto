@@ -12,6 +12,7 @@
 use rake::KeywordScore;
 use rake::Rake;
 use rake::StopWords;
+/// Runs the example.
 
 fn main() -> anyhow::Result<()> {
     // RAKE splits the text at stop words and punctuation. Real applications
@@ -50,6 +51,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

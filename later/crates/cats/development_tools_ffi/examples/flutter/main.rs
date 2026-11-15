@@ -9,6 +9,7 @@ pub mod frb_generated {
     flutter_rust_bridge::frb_generated_stream_sink!(default_stream_sink_codec = SseCodec);
 
     impl SseEncode for String {
+        /// Exposes the Flutter Rust Bridge example API and runner.
         fn sse_encode(self, serializer: &mut flutter_rust_bridge::for_generated::SseSerializer) {
             use std::io::Write as _;
 
@@ -31,17 +32,18 @@ pub mod frb_generated {
 
 /// Exposes the Flutter Rust Bridge example API and runner.
 pub mod flutter_rust_bridge;
-
+/// Runs the example.
 /// Runs the flutter example.
+
 fn main() {
     flutter_rust_bridge::run();
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     fn test_main_entry_point() {

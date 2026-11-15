@@ -18,14 +18,11 @@ unsafe extern "C" {
     fn app_name() -> *const c_char;
     /// Returns the package version defined for the C source.
     fn app_version() -> *const c_char;
-    /// Reports whether the `WELCOME` preprocessor macro was defined.
     fn welcome_is_defined() -> i32;
 }
-
 /// Reads the values compiled into the C library.
 ///
 /// # Errors
-///
 /// Returns an error if a C string cannot be converted to valid UTF-8.
 fn read_app_info() -> Result<(String, String, bool)> {
     // SAFETY: the C functions return null-terminated string literals from
@@ -54,7 +51,6 @@ fn read_app_info() -> Result<(String, String, bool)> {
 /// Prints the C preprocessor values supplied by the build script.
 ///
 /// # Errors
-///
 /// Returns an error if reading C definitions fails.
 fn main() -> Result<()> {
     let (app_name, version, welcome) = read_app_info()?;
@@ -68,24 +64,20 @@ fn main() -> Result<()> {
 }
 
 // ANCHOR_END: example
-
 /// Runs the C preprocessor definitions example.
-///
+
 /// # Errors
-///
 /// Returns an error if reading C definitions fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Returns an error if reading C definitions fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that the C library receives all three build-time definitions.
-    ///
     /// # Errors
-    ///
     /// Returns an error if reading C definitions fails.
     #[test]
     fn build_script_defines_are_visible_to_c() -> Result<()> {
@@ -96,10 +88,7 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that `main` completes successfully.
-    ///
     /// # Errors
-    ///
     /// Returns an error if `main` returns an error.
     #[test]
     fn test_main_entry_point() -> Result<()> {

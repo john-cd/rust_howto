@@ -21,10 +21,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that `xshell` can run a tool and capture its output.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -35,8 +39,8 @@ mod tests {
     fn test_xshell_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// The captured output is the compiler version.
+
     #[test]
     fn captures_the_compiler_version() -> anyhow::Result<()> {
         let shell = Shell::new()?;

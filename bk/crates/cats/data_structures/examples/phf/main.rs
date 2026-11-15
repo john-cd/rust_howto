@@ -1,10 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Demonstrates a compile-time perfect hash map.
 
-// ANCHOR: example
 use phf::phf_map;
 
+/// Shared `keywords` used by this module.
 static KEYWORDS: phf::Map<&'static str, &'static str> = phf_map! {
     "fn" => "function",
     "let" => "variable binding",
@@ -39,9 +40,14 @@ fn main() {
         println!("  {keyword}: {description}");
     }
 }
-
 // ANCHOR_END: example
 
+/// Demonstrates a compile-time perfect hash map.
+fn run() {
+    main();
+}
+
+/// Verifies that the static map has its expected lookup behavior.
 #[cfg(test)]
 mod tests {
     /// Verifies that the static map has its expected lookup behavior.

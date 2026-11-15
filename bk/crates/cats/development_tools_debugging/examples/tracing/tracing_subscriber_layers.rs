@@ -44,6 +44,12 @@ fn layers() {
 // it may be used for both global filtering and per-layer filtering,
 // respectively.
 /// Shows several ways to build an `EnvFilter`.
+///
+/// # Errors
+/// Returns an error if a fallible operation cannot complete.
+///
+/// # Panics
+/// Panics if the condition documented by `expect` is not met.
 #[cfg_attr(
     not(test),
     expect(
@@ -51,6 +57,7 @@ fn layers() {
         reason = "alternative global-subscriber setup; only one subscriber can be installed per process"
     )
 )]
+/// Filters the current value.
 fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     // 1. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment variable, ignoring
     //    any invalid filter directives.
@@ -82,9 +89,11 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 }
 
 /// ## Per-Layer Filtering
-///
 /// This example demonstrates how to add a filter to a specific layer.
 /// This allows different layers to have different filtering rules.
+///
+/// # Errors
+/// Returns an error if a fallible operation cannot complete.
 #[cfg_attr(
     not(test),
     expect(
@@ -128,10 +137,14 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     main()
 }
 
+/// Checks that filters can be built.
 #[cfg(test)]
 mod tests {
     use std::process::Command;
@@ -162,7 +175,6 @@ mod tests {
         Ok(())
     }
 
-    /// Builds the filter in a fresh process with the environment from its
     /// parent.
     #[test]
     #[ignore = "needs a parent-controlled filter environment"]

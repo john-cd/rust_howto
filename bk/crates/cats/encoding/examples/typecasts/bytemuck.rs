@@ -87,8 +87,9 @@ fn to_from_bytes() {
     let recovered: &MyStruct = bytemuck::from_bytes(bytes);
     println!("Recovered: {recovered:?}");
 }
-
+/// Runs the example.
 /// Runs the `bytemuck` examples.
+
 fn main() {
     cast();
     cast_complex_type();
@@ -96,8 +97,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -12,9 +12,10 @@ use macroquad::prelude::*;
 
 /// The distance in pixels from the center of the screen to each corner.
 const TRIANGLE_RADIUS: f32 = 120.0;
-
 /// Returns the corners of an equilateral triangle centered on `center`,
+
 /// rotated by `angle` radians.
+
 fn triangle_points(center: Vec2, radius: f32, angle: f32) -> [Vec2; 3] {
     [0.0, 2.0 * PI / 3.0, 4.0 * PI / 3.0].map(|offset| {
         let theta = angle + offset;
@@ -23,6 +24,7 @@ fn triangle_points(center: Vec2, radius: f32, angle: f32) -> [Vec2; 3] {
 }
 
 /// Represents the dynamic visual state of the game.
+/// State required by `GameState` during transport operations.
 #[derive(Debug, Clone, Copy, PartialEq)]
 struct GameState {
     /// The current rotation angle of the triangle in radians.
@@ -63,8 +65,10 @@ fn random_color() -> Color {
         1.0,
     )
 }
-
+/// # Arguments
+/// * `state` - Shared state and services used to complete the games workflow.
 /// Renders a single frame displaying the triangle and instruction overlay.
+
 fn draw_frame(state: &GameState) {
     clear_background(BLACK);
 
@@ -101,6 +105,12 @@ async fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+pub async fn run() {
+    main().await;
+}
+
+/// Every corner lies on the circle around the center.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -130,7 +140,6 @@ mod tests {
         assert!((rotated - vec2(0.0, 100.0)).length() < 1e-3);
     }
 
-    /// Verifies that `GameState::new` initializes angle to 0.0 and color to BLUE.
     #[test]
     fn game_state_initializes_with_defaults() {
         let state = GameState::new();
@@ -138,7 +147,6 @@ mod tests {
         assert_eq!(state.color, BLUE);
     }
 
-    /// Verifies that `GameState::update` increments the angle by delta_time and preserves color
     /// when space is not pressed.
     #[test]
     fn update_advances_angle_without_changing_color_when_space_not_pressed() {
@@ -154,7 +162,8 @@ mod tests {
         assert_eq!(state.color, BLUE);
     }
 
-    /// Verifies that `GameState::update` updates the color when space key is pressed.
+    /// Applies the changes color when space is pressed change to game state and keeps dependent
+    /// state consistent for later operations.
     #[test]
     fn update_changes_color_when_space_is_pressed() {
         let mut state = GameState::new();
@@ -169,7 +178,6 @@ mod tests {
         assert_eq!(state.color, RED);
     }
 
-    /// Verifies that `random_color` produces valid RGB components between 0 and 1 with an alpha of
     /// 1.
     #[test]
     fn random_color_generates_valid_rgba_bounds() {
@@ -183,6 +191,7 @@ mod tests {
     }
 
     // output-only: the example draws into a window until it is closed.
+    /// Verifies that the `games` example runs.
     #[test]
     #[ignore = "requires interactive example runtime"]
     fn test_games_example_entry_point() {

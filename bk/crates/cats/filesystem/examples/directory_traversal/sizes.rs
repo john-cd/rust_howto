@@ -47,10 +47,14 @@ fn total_size(root: &Path) -> Result<u64> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies the example can traverse the current directory.
 #[cfg(test)]
 mod tests {
     use super::*;

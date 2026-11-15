@@ -17,7 +17,9 @@ use pid::Pid;
 /// A first-order plant, such as a motor speed or a heater temperature:
 /// `tau * dy/dt = -y + u`.
 struct Plant {
+    /// Output value.
     output: f32,
+    /// Tau value.
     tau: f32,
 }
 
@@ -58,6 +60,7 @@ fn main() {
     assert!(error < 0.05);
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

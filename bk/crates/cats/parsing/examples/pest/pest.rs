@@ -41,8 +41,9 @@ fn parse_expression(input: &str) -> anyhow::Result<Vec<String>> {
         .map(|pair| pair.as_str().to_owned())
         .collect())
 }
-
+/// Runs the example.
 /// Parses an arithmetic expression and prints its tokens.
+
 fn main() -> anyhow::Result<()> {
     let input = "3 + 5 * 2 - 8 / 4";
     for token in parse_expression(input)? {
@@ -55,10 +56,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example and propagates parse errors.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies a valid expression becomes alternating tokens.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -73,7 +78,6 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies malformed input returns a parser error.
     #[test]
     fn parser_rejects_an_incomplete_expression() {
         assert!(parse_expression("3 +").is_err());

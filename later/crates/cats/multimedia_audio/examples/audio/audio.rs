@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! A simple example that plays a 440Hz sine wave (A4) for 1 second.
 //!
 //! Sound is stored as samples, numbers that describe the air pressure many
@@ -13,7 +14,6 @@ use cpal::traits::DeviceTrait;
 use cpal::traits::HostTrait;
 use cpal::traits::StreamTrait;
 
-// ANCHOR: example
 /// A simple example that plays a 440Hz sine wave (A4) for 1 second.
 fn main() -> Result<(), Box<dyn Error>> {
     let host = cpal::default_host();
@@ -75,6 +75,10 @@ where
 }
 // ANCHOR_END: example
 
+/// A simple example that plays a 440Hz sine wave (A4) for 1 second.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
@@ -85,6 +89,8 @@ mod tests {
 
     /// Runs the audio example through its entry point.
     // output-only: the example plays a tone on the default output device.
+    /// Verifies that the `audio` example runs.
+
     #[test]
     #[ignore = "requires audio device"]
     fn test_audio_example_entry_point() -> Result<(), Box<dyn Error>> {

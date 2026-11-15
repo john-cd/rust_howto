@@ -1,12 +1,18 @@
 //! Runs one of the `in_memory_cache` examples, chosen on the command line.
 //!
 //! Reviewed 10-27-2026.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates two key uses of the `cached` crate: - Simple function memoization with
+/// `#[cached]`,
 mod cached;
+/// Basic usage of `LruCache` from the `lru` crate.
 mod lru;
+/// Basic usage of the `moka` crate for high-performance concurrent caching.
 mod moka;
 
 /// Command-line arguments.
@@ -47,8 +53,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -62,7 +69,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["cached", "lru", "moka"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

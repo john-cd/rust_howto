@@ -39,17 +39,21 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Persists the lock publishes the updated value produced by the shared state parking lot2 workflow
+/// so later operations can retrieve it.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Checks that the write lock's update remains after its guard is dropped.
+    /// Persists the lock publishes the updated value produced by the shared state parking lot2
+    /// workflow so later operations can retrieve it.
     #[test]
     fn write_lock_publishes_the_updated_value() {
         assert_eq!(value_after_write(), 6);

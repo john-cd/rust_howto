@@ -41,7 +41,6 @@ async fn download_to(url: &str, destination: &Path) -> Result<u64> {
 /// Downloads a sample image into a temporary directory.
 ///
 /// # Errors
-///
 /// Returns any temporary-directory, request, response, or file-write error.
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -55,16 +54,15 @@ async fn main() -> Result<()> {
 }
 
 // ANCHOR_END: example
-
 /// Runs the asynchronous binary download example.
-///
+
 /// # Errors
-///
 /// Returns any error from the asynchronous download.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Marks the live image download as an opt-in network test.
 #[cfg(test)]
 mod tests {
     use anyhow::Result;

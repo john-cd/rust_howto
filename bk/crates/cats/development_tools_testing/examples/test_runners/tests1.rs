@@ -1,22 +1,18 @@
+#![allow(clippy::eq_op)]
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Writing tests that pass, fail, return a `Result` or are ignored.
 //!
 //! `cargo test` runs every function marked `#[test]` in parallel threads, and
 //! reports failures. A test passes unless it panics, so assertions are how you
 //! check results.
 
-#![allow(clippy::eq_op)]
-
 /// Runs the example.
-pub fn run() {
-    main();
-}
 
-// ANCHOR: example
 // This example demonstrates how to write unit tests.
-
 /// Represents a rectangle with a width and height.
+
 struct Rectangle {
     /// Width of the rectangle.
     width: u32,
@@ -30,8 +26,9 @@ impl Rectangle {
         self.width > another.width && self.height > another.height
     }
 }
-
+/// Writing tests that pass, fail, return a `Result` or are ignored.
 /// Checks whether a larger rectangle can hold a smaller one.
+
 fn main() {
     let larger = Rectangle {
         width: 8,
@@ -46,6 +43,12 @@ fn main() {
         "Can the larger rectangle hold the smaller one? {}",
         larger.can_hold(&smaller)
     );
+}
+// ANCHOR_END: example
+
+/// Writing tests that pass, fail, return a `Result` or are ignored.
+pub fn run() {
+    main();
 }
 
 /// This module contains unit tests for the `Rectangle` struct.
@@ -102,4 +105,3 @@ mod tests {
         main();
     }
 }
-// ANCHOR_END: example

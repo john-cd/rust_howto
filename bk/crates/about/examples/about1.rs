@@ -1,4 +1,5 @@
 // Reviewed 10-27-2026.
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates converting a byte slice representing an IPv6
@@ -17,11 +18,10 @@ use std::str;
 // - We have chosen to use the flexible `Result` type alias from the very commonly used `anyhow`
 //   library.
 // - This function does not panic.
-
-/// Converts a byte slice holding an IPv6 address into an `IpAddr`.
+/// Converts the example IPv6 byte string into a typed address.
 ///
 /// # Errors
-/// Returns an error if the bytes are not valid UTF-8 or not a valid address.
+/// Returns an error if the bytes are not valid UTF-8 or do not parse as an IP address.
 fn example() -> anyhow::Result<IpAddr> {
     // A byte slice representing an IPv6 address:
     let bytes: &[u8] = b"2001:db8::1";
@@ -43,12 +43,25 @@ fn example() -> anyhow::Result<IpAddr> {
     Ok(addr)
 }
 
+/// Runs the example and propagates conversion errors.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 fn main() -> anyhow::Result<()> {
     example()?;
     Ok(())
 }
 // ANCHOR_END: example
 
+/// Runs the IPv6 address conversion example.
+///
+/// # Errors
+/// Returns the UTF-8 or address-parsing error produced by `example`.
+pub fn run() -> anyhow::Result<IpAddr> {
+    example()
+}
+
+/// Tests successful IPv6 parsing and rejects invalid UTF-8 and address text.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -57,6 +70,7 @@ mod tests {
     fn test_main_entry_point() {
         main().expect("main failed");
     }
+    /// Verifies example parses ipv6 address.
 
     #[test]
     fn test_example_parses_ipv6_address() -> Result<(), Box<dyn std::error::Error>> {
@@ -65,12 +79,14 @@ mod tests {
         assert!(addr.is_ipv6());
         Ok(())
     }
+    /// Verifies invalid UTF-8 is an error.
 
     #[test]
     fn test_invalid_utf8_is_an_error() {
         let bytes = vec![0xff, 0xfe];
         assert!(str::from_utf8(&bytes).is_err());
     }
+    /// Verifies invalid address is an error.
 
     #[test]
     fn test_invalid_address_is_an_error() {

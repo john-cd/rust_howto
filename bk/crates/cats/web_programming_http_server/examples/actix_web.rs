@@ -20,10 +20,10 @@ use actix_web::get;
 async fn greet() -> impl Responder {
     HttpResponse::Ok().body("Hello, world!")
 }
-
 /// Starts the Actix Web server.
 ///
 /// Binds to localhost on port 8080.
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     println!("Starting server at http://127.0.0.1:8080");
@@ -35,6 +35,15 @@ async fn main() -> std::io::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> std::io::Result<()> {
+    main()
+}
+
+/// Serves the example until it is stopped.
 #[cfg(test)]
 mod tests {
     use actix_web::test as actix_test;

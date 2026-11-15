@@ -136,22 +136,26 @@ fn transfer_amount(from: &mut Amount, to: &mut Amount, value: Amount) -> Result<
     Ok(())
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
 // Adapted from <https://docs.rs/derive_more/latest/derive_more/>
 
+/// An error is returned if transfer_amount fails.
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `derive more` example runs.
 
     #[test]
     fn test_derive_more_example_entry_point() {
         main();
     }
+    /// Verifies point add and add assign.
 
     #[test]
     fn test_point_add_and_add_assign() {
@@ -161,6 +165,7 @@ mod tests {
         p += Point { x: 1, y: 1 };
         assert_eq!(p, Point { x: 6, y: 7 });
     }
+    /// Verifies user id conversions and display.
 
     #[test]
     fn test_user_id_conversions_and_display() {
@@ -169,6 +174,8 @@ mod tests {
         assert_eq!(UserId(67890).to_string(), "67890");
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     #[test]
     fn test_constructor() {
         let user = User::new(UserId(1), "Alice".to_owned(), true);
@@ -179,6 +186,7 @@ mod tests {
             r#"User { id: UserId(1), name: "Alice", active: true }"#
         );
     }
+    /// Verifies deref and deref mut expose vec methods.
 
     #[test]
     fn test_deref_and_deref_mut_expose_vec_methods() {
@@ -189,6 +197,8 @@ mod tests {
         assert!(!stack.is_empty());
     }
 
+    /// # Errors
+    /// An error is returned if transfer_amount fails.
     #[test]
     fn test_transfer_amount() -> Result<(), Box<dyn std::error::Error>> {
         let mut from = Amount(10.0);
@@ -198,6 +208,7 @@ mod tests {
         assert!((to.0 - 5.0).abs() < f64::EPSILON);
         Ok(())
     }
+    /// Verifies transfer amount with insufficient funds changes nothing.
 
     #[test]
     fn test_transfer_amount_with_insufficient_funds_changes_nothing() {
@@ -211,6 +222,7 @@ mod tests {
         assert!((from.0 - 1.0).abs() < f64::EPSILON);
         assert!((to.0 - 2.0).abs() < f64::EPSILON);
     }
+    /// Verifies error display.
 
     #[test]
     fn test_error_display() {

@@ -11,7 +11,10 @@ use anyhow::Result;
 use crate::fixtures::create_fixture;
 
 /// Prints the crate-to-recipe links found in the fixture book.
-pub fn run() -> Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> Result<()> {
     let fixture = create_fixture()?;
     let book_root = fixture.path().join("book");
     let recipes = tool_lib::collect_published_recipe_links(book_root)?;
@@ -20,6 +23,15 @@ pub fn run() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<()> {
+    example_body()
+}
+
+/// Verifies that published recipes are collected from local includes.
 #[cfg(test)]
 mod tests {
     use anyhow::Context as _;

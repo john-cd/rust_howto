@@ -1,18 +1,17 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Read the macOS version through typed Foundation bindings.
 //!
 //! Foundation is Apple's base framework for macOS and iOS apps. The typed
 //! bindings let Rust call it without writing Objective-C. It runs on macOS
 //! only.
 
-// ANCHOR: example
 use std::io;
 
 use objc2_foundation::NSProcessInfo;
-
 /// Reads and prints the operating-system version using safe retained objects.
-///
+
 /// # Errors
 /// Returns `InvalidData` if Foundation unexpectedly returns an empty version.
 fn main() -> io::Result<()> {
@@ -30,9 +29,11 @@ fn main() -> io::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the native macOS Foundation query.
+/// Read the macOS version through typed Foundation bindings.
 ///
 /// # Errors
 /// Propagates an empty system-version response from Foundation.
+/// Returns an error if a step of the example fails.
 pub fn run() -> io::Result<()> {
     main()
 }

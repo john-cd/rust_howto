@@ -31,12 +31,16 @@ impl RedactedSecret {
 }
 
 impl fmt::Debug for RedactedSecret {
+    /// Formats the value for display.
+    /// # Arguments
+    /// * `f` - Mutable formatter whose state is updated by this operation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str("RedactedSecret(***)")
     }
 }
 
 impl fmt::Display for RedactedSecret {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str("***")
     }
@@ -61,6 +65,10 @@ struct Config {
     api_key: RedactedSecret,
 }
 
+/// Builds and prints redacted secret values from both examples.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 fn main() -> Result<(), Infallible> {
     // Hand-written newtype:
     let key: RedactedSecret = "sk-live-1234".parse()?;
@@ -83,15 +91,20 @@ fn main() -> Result<(), Infallible> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     let _ = main();
 }
 
+/// An error is returned if debug_and_display_never_contain_the_secret fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    #[test]
+    /// # Errors
+    /// An error is returned if debug_and_display_never_contain_the_secret fails.
     fn debug_and_display_never_contain_the_secret() -> Result<(), Infallible> {
         let secret: RedactedSecret = "hunter2".parse()?;
         assert!(!format!("{secret:?}").contains("hunter2"));

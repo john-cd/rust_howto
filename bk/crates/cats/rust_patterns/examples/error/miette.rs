@@ -22,18 +22,22 @@ mod mylib {
     /// The errors of the library.
     #[derive(Error, Diagnostic, Debug)]
     pub enum MyLibError {
-        #[error("A bad thing happened!")] // Provided by `thisError`.
-        #[diagnostic(
-            // Use `#[diagnostic(code(...))]` to set the unique code for this error.
-            code(my_lib::bad_thing),
-            // Set the URL that will be displayed as an actual link in supported terminals.
-            // `url(docsrs)` automatically create a link to this diagnostic on docs.rs
-            // or use a custom URL like `url("https://my_website.com/error_codes#{}", self.code)`
-            url(docsrs),
-            // Supply help text:
-            help("try doing it better next time?"))]
         /// A bad thing happened.
+        #[error("A bad thing happened!")]
+        // Provided by `thisError`.
+        // Use `#[diagnostic(code(...))]` to set the unique code for this error.
+        // Set the URL that will be displayed as an actual link in supported terminals.
+        // `url(docsrs)` automatically create a link to this diagnostic on docs.rs
+        // or use a custom URL like `url("https://my_website.com/error_codes#{}", self.code)`
+        // Supply help text:
+        /// Reports a bad thing happened with its diagnostic code and help text.
+        #[diagnostic(
+            code(my_lib::bad_thing),
+            url(docsrs),
+            help("try doing it better next time?")
+        )]
         BadThingHappened,
+        /// Something went wrong variant of `MyLibError`.
 
         /// Something went wrong at a location in the source code.
         #[error("Something went wrong!")]
@@ -67,6 +71,7 @@ mod mylib {
         // Wrap an Error:
         #[error(transparent)]
         // Forward the source and `Display` methods
+        /// I/o error variant of `MyLibError`.
         // straight through to the underlying error.
         /// An I/O error.
         #[diagnostic(code(my_lib::io_error))]
@@ -74,6 +79,7 @@ mod mylib {
 
         // Wrap another `Diagnostic`.
         // Use `#[diagnostic(transparent)]` to wrap another `[Diagnostic]`
+        /// Another error variant of `MyLibError`.
         // You won't see labels otherwise.
         /// Another error, which is itself a diagnostic.
         #[error(transparent)]
@@ -123,10 +129,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies that the miette example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;

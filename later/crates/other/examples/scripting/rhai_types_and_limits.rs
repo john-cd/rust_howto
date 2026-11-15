@@ -15,6 +15,7 @@ use rhai::Scope;
 /// A Rust type that scripts can create and modify.
 #[derive(Debug, Clone)]
 struct Counter {
+    /// Value stored by this wrapper.
     value: i64,
 }
 
@@ -29,13 +30,12 @@ impl Counter {
         self.value += 1;
     }
 
-    /// Returns the count to the script property getter.
     fn value(&mut self) -> i64 {
         self.value
     }
 }
-
 /// Registers a custom type, reuses a `Scope` between runs and limits a script.
+
 fn main() -> Result<(), Box<EvalAltResult>> {
     let mut engine = Engine::new();
 
@@ -69,6 +69,9 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 // ANCHOR_END: example
 
 /// Runs the type registration and limits example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<EvalAltResult>> {
     main()
 }
@@ -83,7 +86,6 @@ mod tests {
         main()
     }
 
-    /// Checks that disabling `eval` rejects a script that invokes it.
     #[test]
     fn disabled_eval_is_rejected() {
         let mut engine = Engine::new();

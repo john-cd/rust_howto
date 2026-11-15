@@ -6,11 +6,20 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates how to use the `Either` enum from the `either`
 mod either;
+/// This example demonstrates the `frunk` crate, a functional programming
 mod frunk;
+/// # Persistent Collections with `imbl` These persistent collections share unchanged structure
+/// between related versions.
 mod imbl;
+/// Demonstrates composing standard iterator adapters with closures.
 mod iterators;
+/// This example demonstrates the usage of the `itertools` crate.
 mod itertools;
+/// # RPDS (Rust Persistent Data Structures) Example This example demonstrates the use of the `rpds`
+/// crate, which provides purely functional (immutable) data structures with structural sharing for
+/// efficiency.
 mod rpds;
 
 /// Command-line arguments.
@@ -69,8 +78,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -84,7 +94,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["either", "frunk", "imbl", "itertools", "iterators", "rpds"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

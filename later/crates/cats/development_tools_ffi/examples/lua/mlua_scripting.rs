@@ -11,6 +11,9 @@
 use mlua::prelude::*;
 
 /// Evaluates a chunk with a Rust callback in a restricted standard library.
+
+/// # Errors
+/// An error is returned if main, create_function fails.
 fn main() -> LuaResult<()> {
     let lua = Lua::new_with(
         LuaStdLib::MATH | LuaStdLib::STRING | LuaStdLib::TABLE,
@@ -48,6 +51,7 @@ pub fn run() -> LuaResult<()> {
     main()
 }
 
+/// Verifies Lua evaluation, Rust callbacks, and the restricted libraries.
 #[cfg(test)]
 mod tests {
     use super::*;

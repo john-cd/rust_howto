@@ -77,8 +77,8 @@ where
 fn main() -> anyhow::Result<()> {
     demo(Path::new("temp"))
 }
-
 /// Creates `source.txt` and `my_link.txt` in `dir`, then inspects both.
+
 fn demo(dir: &Path) -> anyhow::Result<()> {
     fs::create_dir_all(dir)?;
     let original = dir.join("source.txt");
@@ -102,6 +102,9 @@ fn demo(dir: &Path) -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

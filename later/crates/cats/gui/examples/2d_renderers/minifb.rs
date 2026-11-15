@@ -46,11 +46,9 @@ fn fill_gradient(buffer: &mut [u32], offset: u32) {
         }
     }
 }
-
 /// Creates and configures the native window for the example.
-///
+
 /// # Errors
-///
 /// Returns an error if the window cannot be created.
 fn create_window() -> Result<Window> {
     Ok(Window::new(
@@ -60,13 +58,16 @@ fn create_window() -> Result<Window> {
         WindowOptions::default(),
     )?)
 }
-
-/// Renders a single frame: fills the pixel buffer, blits it to the window,
-/// and advances the animation offset.
+/// Renders one frame, updates the window, and advances the animation offset.
 ///
 /// # Errors
-///
 /// Returns an error if blitting the buffer to the window fails.
+///
+/// # Arguments
+/// * `window` - Window that receives the rendered pixels and input updates.
+/// * `buffer` - Pixel buffer filled with the current gradient frame.
+/// * `offset` - Animation offset, advanced after the frame is displayed.
+
 fn render_frame(window: &mut Window, buffer: &mut [u32], offset: &mut u32) -> Result<()> {
     fill_gradient(buffer, *offset);
 
@@ -113,12 +114,16 @@ fn main() -> Result<()> {
 }
 
 // ANCHOR_END: example
-
 /// Opens the minifb window.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+
 pub fn run() -> Result<()> {
     run_window()
 }
 
+/// Checks the color of a few pixels.
 #[cfg(test)]
 mod tests {
     use super::*;

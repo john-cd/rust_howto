@@ -9,13 +9,16 @@
 //! in Rust's `f64` methods are in radians, not degrees.
 
 /// Calculates the hypotenuse of a right triangle given an angle and the length
+
 /// of the side opposite to it.
+
 fn hypotenuse(angle: f64, side_length: f64) -> f64 {
     // Calculate the hypotenuse using the sine function.
     side_length / angle.sin()
 }
-
+/// Runs the example.
 /// Calculates the hypotenuse for a 1 radian angle opposite a side of 80.
+
 fn main() {
     // The angle in radians.
     let angle: f64 = 1.0;
@@ -28,8 +31,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

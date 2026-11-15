@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Basics of `async` functions and `Future`s: calling, awaiting and combining them.
 mod async1;
+/// This is the main asynchronous function.
 mod async2;
+/// Run a task on the Tokio runtime and await its result.
 mod async3;
 
 /// Command-line arguments.
@@ -47,8 +50,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -62,7 +66,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["async1", "async2", "async3"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

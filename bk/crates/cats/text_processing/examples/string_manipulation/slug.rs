@@ -8,9 +8,10 @@
 //! addresses friendly to people and search engines.
 
 use slug::slugify;
+/// Runs the example entry point.
 
 /// Converts titles to lowercase ASCII slugs.
-pub fn run() {
+pub fn example_body() {
     // Punctuation is dropped, spaces become hyphens, and accented characters
     // are transliterated to ASCII.
     assert_eq!(slugify("Hello, Wörld!"), "hello-world");
@@ -19,6 +20,11 @@ pub fn run() {
     println!("{}", slugify("Hello, Wörld!"));
 }
 // ANCHOR_END: example
+
+/// Runs the example function.
+pub fn run() {
+    example_body();
+}
 
 #[cfg(test)]
 mod tests {

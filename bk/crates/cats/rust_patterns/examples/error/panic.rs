@@ -16,8 +16,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -26,8 +27,8 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    #[should_panic]
     /// Runs the panic example through its entry point.
+    #[should_panic]
     #[test]
     fn test_panic_example_entry_point() {
         main();

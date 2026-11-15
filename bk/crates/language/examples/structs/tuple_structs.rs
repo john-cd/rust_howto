@@ -18,8 +18,9 @@ struct Color(pub i32, pub i32, pub i32);
 /// itself.
 #[derive(Debug)]
 struct UnitLike; // Note that there are no fields.
-
+/// Runs the example.
 /// Creates and accesses tuple structs.
+
 fn main() {
     // Initialize the tuple struct:
     let black = Color(0, 0, 0);
@@ -33,8 +34,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

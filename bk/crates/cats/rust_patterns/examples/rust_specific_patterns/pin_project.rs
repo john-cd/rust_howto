@@ -116,13 +116,13 @@ impl SelfReferential {
         }
     }
 
-    /// Sets the pointer to the value.
+    ///
+
     fn init(self: Pin<&mut Self>) {
         let this = self.project();
         *this.pointer = std::ptr::from_ref(this.value.as_ref().get_ref());
     }
 
-    /// Returns the pointer to the value.
     fn get_pointer(self: Pin<&Self>) -> *const String {
         *self.project_ref().pointer
     }
@@ -236,6 +236,7 @@ struct PinnedWithDrop<T: Debug> {
 /// based on your implementation of the `PinnedDrop` trait:
 #[pinned_drop]
 impl<T: Debug> PinnedDrop for PinnedWithDrop<T> {
+    /// Releases the resources owned by this value.
     fn drop(self: Pin<&mut Self>) {
         // this method takes `Pin<&mut Self>`.
         println!(
@@ -245,8 +246,8 @@ impl<T: Debug> PinnedDrop for PinnedWithDrop<T> {
     }
 }
 
-// Example 4: Custom `drop`.
 /// Creates a value with a custom `drop` implementation, which runs at the end
+// Example 4: Custom `drop`.
 /// of the scope.
 fn example4() {
     let _pinned_drop = PinnedWithDrop {
@@ -256,8 +257,9 @@ fn example4() {
 
     println!("Created PinnedWithDrop, will be dropped at end of scope");
 }
-
+/// Runs the example.
 /// Runs the `pin_project` examples.
+
 fn main() {
     example1();
     example2();
@@ -267,8 +269,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -278,7 +281,6 @@ mod tests {
     use super::*;
 
     /// Exercises field, future, self-reference, enum, and drop projections.
-    /// Runs the pin project example through its entry point.
     #[test]
     fn test_pin_project_example_entry_point() {
         main();

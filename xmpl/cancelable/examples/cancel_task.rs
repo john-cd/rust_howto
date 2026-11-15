@@ -23,6 +23,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// The example runs to completion.
 #[cfg(test)]
 mod tests {
     use super::*;

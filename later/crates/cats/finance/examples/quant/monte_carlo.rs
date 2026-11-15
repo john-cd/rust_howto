@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Estimates a European call payoff with a reproducible random stream.
 //!
 //! Monte Carlo simulation estimates a value by averaging many random trials.
@@ -7,7 +8,6 @@
 //! option's payoff, which is max(price - strike, 0). A fixed random seed makes
 //! the result reproducible, which matters for tests.
 
-// ANCHOR: example
 use rand::SeedableRng;
 use rand::rngs::StdRng;
 use rand_distr::Distribution;
@@ -38,15 +38,16 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the seeded simulation without market data or network access.
+/// Estimates a European call payoff with a reproducible random stream.
 pub fn run() {
     main();
 }
 
+/// payoff.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Checks the zero-volatility limit against a deterministic discounted
     /// payoff.
     #[test]
     fn zero_volatility_matches_the_deterministic_payoff() {
@@ -54,7 +55,6 @@ mod tests {
         assert!((estimate_call(0.0, 7) - expected).abs() < 1e-9);
     }
 
-    /// Compares a seeded estimate with the analytic Black-Scholes reference
     /// value.
     #[test]
     fn sampled_price_approximates_the_analytic_price() {

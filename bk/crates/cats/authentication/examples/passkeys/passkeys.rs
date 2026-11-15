@@ -77,8 +77,10 @@ struct RelyingParty {
 }
 
 impl RelyingParty {
-    /// Creates a relying party for `rp_id`, which must be the origin's
     /// effective domain (or a registrable suffix of it).
+
+    /// # Errors
+    /// Returns an error if the new operation cannot satisfy its required invariants.
     fn new(rp_id: &str, origin: &Url) -> Result<Self> {
         let webauthn = WebauthnBuilder::new(rp_id, origin)?
             .rp_name("Rust How-to")
@@ -91,8 +93,10 @@ impl RelyingParty {
         })
     }
 
-    /// Starts registering a passkey for `user`; returns the ticket that the
     /// browser sends back and the options for `navigator.credentials.create`.
+
+    /// # Errors
+    /// Returns an error if the start registration operation cannot satisfy its required invariants.
     fn start_registration(
         &mut self,
         user: &str,
@@ -150,8 +154,11 @@ impl RelyingParty {
         Ok(())
     }
 
-    /// Starts signing `user` in; returns a ticket and the options for
     /// `navigator.credentials.get`.
+
+    /// # Errors
+    /// Returns an error if the start authentication operation cannot satisfy its required
+    /// invariants.
     fn start_authentication(
         &mut self,
         user: &str,
@@ -228,20 +235,28 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     let entry = main;
     entry()
 }
 
+/// Registration followed by sign-in succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;
 
     /// A relying party, a software device and the origin they share.
     struct Setup {
+        /// Relying party that validates the passkey.
         rp: RelyingParty,
+        /// Authenticator used for the passkey exchange.
         device: WebauthnAuthenticator<SoftPasskey>,
+        /// Expected origin for authentication requests.
         origin: Url,
+        /// Current time used for expiry checks.
         now: Instant,
     }
 

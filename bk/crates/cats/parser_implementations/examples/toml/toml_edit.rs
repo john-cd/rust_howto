@@ -11,13 +11,15 @@
 use toml_edit::DocumentMut;
 use toml_edit::Item;
 use toml_edit::value;
-
 /// Parses a TOML document, edits it while preserving its formatting, and prints
+
 /// it.
 ///
 /// # Errors
-///
 /// Returns an error if parsing or document edits fail.
+///
+/// # Panics
+/// Panics if `tokio` features should be an array.
 fn main() -> anyhow::Result<()> {
     // Parse existing TOML, here a `Cargo.toml` file:
     let toml_content = r#"
@@ -85,6 +87,9 @@ path = "src/main.rs"
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

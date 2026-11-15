@@ -11,18 +11,24 @@ use std::path::Path;
 use std::path::PathBuf;
 
 use pathdiff::diff_paths;
-
 /// Returns the path that leads from `base` to `path`, or `None` if no
+
 /// relative path exists (when `path` is relative and `base` is absolute).
+
+/// # Arguments
+/// * `path` - Filesystem location the operation reads, updates, or uses as its scope.
+///
+/// # Returns
+/// `Some` when the requested value is available; otherwise returns `None`.
 fn relative_to(path: &Path, base: &Path) -> Option<PathBuf> {
     // `diff_paths` compares the components lexically. It does not touch the
     // filesystem, so neither path needs to exist and symbolic links are not
     // resolved.
     diff_paths(path, base)
 }
-
 /// Prints a few relative paths.
-pub fn run() {
+
+pub fn example_body() {
     let site = PathBuf::from(if cfg!(windows) {
         r"C:\srv\site"
     } else {
@@ -52,11 +58,16 @@ pub fn run() {
 }
 // ANCHOR_END: example
 
+/// Runs the example function.
+pub fn run() {
+    example_body();
+}
+
+/// Returns an empty path when both paths identify the same location.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Computes a relative path between paths on the current platform.
     #[test]
     fn walks_up_and_down() {
         let root = PathBuf::from(if cfg!(windows) { r"C:\a" } else { "/a" });
@@ -73,7 +84,6 @@ mod tests {
         assert_eq!(relative_to(&path, &path), Some(PathBuf::new()));
     }
 
-    /// Verifies the example's relative paths on the current platform.
     #[test]
     fn run_succeeds() {
         run();

@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Calling Rust from Java with the Java Native Interface.
 #[cfg(feature = "java")]
 mod jni;
 

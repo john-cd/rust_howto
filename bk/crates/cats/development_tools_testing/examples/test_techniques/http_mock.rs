@@ -70,7 +70,6 @@ mod tests {
     fn main_greets_through_the_service() {
         assert!(main().is_ok());
     }
-    /// Performs the reports a server error operation.
 
     #[test]
     fn reports_a_server_error() {

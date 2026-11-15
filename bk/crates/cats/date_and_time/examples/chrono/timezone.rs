@@ -34,8 +34,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -46,7 +47,6 @@ mod tests {
 
     use super::*;
 
-    /// Verifies that fixed offsets produce stable converted clock times.
     #[test]
     fn fixed_utc_time_converts_to_expected_offsets() {
         let utc_time = chrono::NaiveDate::from_ymd_opt(2025, 1, 15)

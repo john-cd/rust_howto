@@ -27,8 +27,8 @@ use serde_json::Value;
 use serde_json::json;
 use url::Host;
 use url::Url;
-
 /// Represents a document that can be indexed in Elasticsearch.
+
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
     /// The identifier of the document.
@@ -241,10 +241,14 @@ async fn cat_indices(client: Elasticsearch) -> anyhow::Result<Response> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Requires HTTPS for remote Elasticsearch endpoints.
 #[cfg(test)]
 mod tests {
     use super::*;

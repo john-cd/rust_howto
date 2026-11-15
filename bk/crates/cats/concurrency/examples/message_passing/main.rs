@@ -5,10 +5,16 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Channels from the `flume` crate: bounded and unbounded, sync and async, and
 mod flume;
+/// A bounded `flume` channel for commands sent to a loop that handles them
 mod flume_tick;
+/// Demonstrates the use of crossbeam channels for message passing between
 mod message_passing_crossbeam_channel;
+/// This example demonstrates the use of `crossbeam_channel`'s `tick` and `after` functions to
+/// create channels that deliver messages periodically and after a certain duration, respectively.
 mod message_passing_crossbeam_channel_after_tick;
+/// This example demonstrates message passing using multiple producers and a single consumer.
 mod message_passing_mpsc;
 
 /// Command-line arguments.
@@ -83,7 +89,6 @@ mod tests {
         "flume_tick",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

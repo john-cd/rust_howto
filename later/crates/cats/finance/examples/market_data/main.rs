@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Fetch daily bars from Yahoo!
 mod yahoo_history;
 
 /// Runs the market data example (requires network access).
@@ -9,11 +10,11 @@ fn main() -> anyhow::Result<()> {
     yahoo_history::run()
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     #[ignore = "needs network access"]

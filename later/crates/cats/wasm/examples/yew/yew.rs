@@ -43,8 +43,9 @@ fn App() -> Html {
         </div>
     }
 }
-
+/// Runs the example.
 /// Runs the Yew example in the browser target.
+
 fn main() {
     #[cfg(target_arch = "wasm32")]
     yew::Renderer::<App>::new().render();
@@ -53,18 +54,19 @@ fn main() {
     println!("Build for wasm32-unknown-unknown and serve with Trunk.");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the Yew example for the crate's example harness.
+
 pub fn run() {
     main();
 }
 
 #[cfg(test)]
+/// Tests the `yew` example and its documented behavior.
 #[cfg(not(target_arch = "wasm32"))]
 mod tests {
     use super::*;
 
-    /// Renders the initial counter state to HTML with Yew's server renderer.
     #[tokio::test]
     async fn server_render_shows_counter() {
         let html = yew::ServerRenderer::<App>::new().render().await;

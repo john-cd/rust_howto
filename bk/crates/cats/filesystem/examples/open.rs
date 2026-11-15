@@ -9,6 +9,7 @@
 //! `xdg-open`, on macOS `open`, and on Windows `start`.
 
 /// Opens a file with the default application.
+
 fn main() {
     //  The `that` function attempts to open the specified path with the
     // appropriate application. If an error occurs during the opening
@@ -35,12 +36,17 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    #[ignore = "Relies on default programs that may not be installed by default."]
     /// Runs the open example through its entry point.
+    #[ignore = "Relies on default programs that may not be installed by default."]
     #[test]
     fn test_open_example_entry_point() {
         main();

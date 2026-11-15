@@ -37,7 +37,6 @@ struct Database {
 /// Demonstrates parsing a TOML string into a `Config` struct.
 ///
 /// # Errors
-///
 /// Returns an error if the example TOML cannot be deserialized.
 fn main() -> anyhow::Result<()> {
     let toml_string = r#"
@@ -66,6 +65,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example and propagates deserialization errors.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -79,8 +81,8 @@ mod tests {
     fn test_toml_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// The sample document is parsed into the typed structure.
+
     #[test]
     fn parses_the_sample() {
         let config: Config = toml::from_str(

@@ -27,6 +27,7 @@ struct PhoneNumber<'a> {
 
 /// Formats the phone number as "1 (area) exchange-subscriber".
 impl fmt::Display for PhoneNumber<'_> {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "1 ({}) {}-{}", self.area, self.exchange, self.subscriber)
     }
@@ -92,6 +93,9 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }

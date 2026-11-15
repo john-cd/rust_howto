@@ -42,10 +42,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the thread-builder example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that the builder applies the name and returns a usable hint.
 #[cfg(test)]
 mod tests {
     use super::*;

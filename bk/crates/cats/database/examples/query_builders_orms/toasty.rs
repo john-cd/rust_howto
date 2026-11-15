@@ -46,10 +46,14 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the Toasty SQLite example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies a model can be inserted and loaded without an external database.
 #[cfg(test)]
 mod tests {
     use super::*;

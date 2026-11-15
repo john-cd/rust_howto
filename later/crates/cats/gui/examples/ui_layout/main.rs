@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Computing a layout with `morphorm`.
 mod morphorm;
+/// Computes and inspects a flexbox layout with taffy.
 mod taffy;
 
 /// Command-line arguments.
@@ -46,7 +48,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

@@ -21,12 +21,14 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Displays a message box when explicitly run on a Windows desktop.
 #[cfg(test)]
 mod tests {
     // output-only: the example displays a message box and is ignored by

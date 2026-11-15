@@ -2,6 +2,8 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// This example demonstrates how to create a simple Neon module that exports a function to
+/// JavaScript.
 mod neon;
 
 /// Runs the Neon example's host-independent path.

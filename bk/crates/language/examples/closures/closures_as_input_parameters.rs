@@ -36,8 +36,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -51,6 +52,7 @@ mod tests {
     fn test_closures_as_input_parameters_example_entry_point() {
         main();
     }
+    /// Verifies apply calls closure.
 
     /// `apply` calls a `FnOnce` closure exactly once.
     #[test]
@@ -59,6 +61,7 @@ mod tests {
         apply(|| called += 1);
         assert_eq!(called, 1);
     }
+    /// Verifies apply to 3.
 
     /// `apply_to_3` passes 3 to the closure and returns its result.
     #[test]

@@ -19,17 +19,18 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the fixed-point example.
+
 pub fn run() {
     main();
 }
 
+/// display.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies fixed-point division produces the expected rounded decimal
     /// display.
     #[test]
     fn divides_with_fixed_fractional_precision() {

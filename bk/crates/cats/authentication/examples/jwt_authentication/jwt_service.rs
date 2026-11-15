@@ -15,8 +15,8 @@ use super::jwt_axum_extractor;
 pub const TEST_JWT_SECRET: &str = "default_test_secret_key_that_is_at_least_32_bytes_long";
 
 /// Signs and verifies an in-memory token using the `JWT_SECRET` environment
-/// variable.
 ///
+/// variable.
 /// # Errors
 /// Returns an error if `JWT_SECRET` is missing, too short, or token creation
 /// or verification fails.
@@ -58,13 +58,17 @@ pub fn run_with_secret(secret: &str) -> anyhow::Result<()> {
 fn main() -> anyhow::Result<()> {
     run_with_secret(TEST_JWT_SECRET)
 }
-
 /// Runs the example with a deterministic test secret without changing the
 /// process environment.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that the example succeeds with its injected test secret and fails on invalid secrets.
 #[cfg(test)]
 mod tests {
     use super::*;

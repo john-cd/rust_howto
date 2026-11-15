@@ -13,6 +13,7 @@ use std::io::Lines;
 
 /// An iterator adapter that turns each input line into a row of fields.
 struct CsvRows<R> {
+    /// Lines value.
     lines: Lines<R>,
 }
 
@@ -35,8 +36,8 @@ impl<R: BufRead> Iterator for CsvRows<R> {
             .map(|line| line.map(|line| line.split(',').map(str::to_owned).collect()))
     }
 }
-
 /// Prints rows using the adapter over an in-memory reader.
+
 fn main() -> anyhow::Result<()> {
     let input = Cursor::new("name,role\nAda,engineer\n");
 
@@ -49,6 +50,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the reader adapter example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -60,8 +64,6 @@ mod tests {
     use super::CsvRows;
     use super::main;
 
-    /// Verifies the adapter yields each input line as a row.
-    /// Runs the adapter example through its entry point.
     #[test]
     fn buffered_lines_become_rows() {
         let input = Cursor::new("name,role\nAda,engineer\n");

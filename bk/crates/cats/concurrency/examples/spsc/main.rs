@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// The `ringbuf` crate as an alternative to `rtrb`: a lock-free SPSC ring
 mod ringbuf;
+/// A wait-free single-producer, single-consumer (SPSC) ring buffer from the
 mod rtrb;
+/// Raise the scheduling priority of a real-time consumer thread with
 mod thread_priority;
 
 /// Command-line arguments.
@@ -63,7 +66,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["ringbuf", "rtrb", "thread_priority"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

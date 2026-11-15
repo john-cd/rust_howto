@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Different ways to concatenate strings.
 mod string_concat;
+/// Concatenates constant string slices at compile time with `constcat`.
 mod string_concat2;
 
 /// Command-line arguments.
@@ -40,8 +42,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -55,7 +58,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["string_concat", "string_concat2"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

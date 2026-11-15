@@ -1,6 +1,6 @@
+#![cfg(feature = "ros2")]
 // TODO Reviewed ??-??-2026.
 
-#![cfg(feature = "ros2")]
 // ANCHOR: example
 //! Publish and receive `std_msgs/String` messages with a ROS 2 node.
 //!
@@ -26,7 +26,6 @@ use r2r::QosProfile;
 use r2r::std_msgs::msg::String as StringMessage;
 
 /// Publishes five greetings and waits for the local subscriber to receive each.
-///
 /// # Errors
 /// Returns initialization or communication failures, a closed subscription, or
 /// a timeout if a greeting is not received within ten seconds.
@@ -74,9 +73,11 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the ROS 2 publisher/subscriber example.
+/// Publish and receive `std_msgs/String` messages with a ROS 2 node.
 ///
 /// # Errors
 /// Returns ROS initialization, communication, or receive timeout failures.
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }

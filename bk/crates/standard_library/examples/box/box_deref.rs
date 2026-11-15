@@ -4,6 +4,7 @@
 //! Dereferencing a `Box`.
 
 /// Reads the value inside a `Box` with `*`.
+
 fn main() {
     // Dereferencing with `*`:
     let boxed: Box<u8> = Box::new(1);
@@ -19,8 +20,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -28,11 +30,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `box deref` example runs.
 
     #[test]
     fn test_box_deref_example_entry_point() {
         main();
     }
+    /// Verifies explicit and auto deref.
 
     #[test]
     fn test_explicit_and_auto_deref() {
@@ -43,6 +47,7 @@ mod tests {
         assert_eq!(boxed.len(), 7);
         assert_eq!(boxed.to_uppercase(), "EXAMPLE");
     }
+    /// Verifies deref mut.
 
     #[test]
     fn test_deref_mut() {

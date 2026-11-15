@@ -31,10 +31,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the confy example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies confy supplies defaults for a new temporary config file.
 #[cfg(test)]
 mod tests {
     use super::*;

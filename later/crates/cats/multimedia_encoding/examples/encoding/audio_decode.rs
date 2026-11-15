@@ -79,14 +79,20 @@ fn create_sample_wav(sample_count: usize) -> Result<Vec<u8>, Box<dyn Error + Sen
     Ok(cursor.into_inner())
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }
 
+/// `symphonia`.
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies audio decode entry point.
 
     #[test]
     fn test_audio_decode_entry_point() {

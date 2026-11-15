@@ -32,11 +32,9 @@ struct RefStruct<'a> {
     /// The string.
     str_s: &'a str,
 }
-
 /// Serializes and deserializes a borrowed structure with `postcard`.
-///
+
 /// # Errors
-///
 /// Returns an error if serialization or deserialization fails.
 fn main() -> anyhow::Result<()> {
     let message = "hElLo";
@@ -76,12 +74,12 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// # Errors
-///
 /// Returns an error if serialization or deserialization fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// The borrowed sample can be serialized and deserialized unchanged.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -91,10 +89,10 @@ mod tests {
     fn borrowed_fields_round_trip() -> anyhow::Result<()> {
         main()
     }
-
     /// `to_slice` writes into a caller-provided buffer: no allocation, which
     /// is useful on `no_std` targets and when the caller owns the output
     /// buffer.
+
     #[test]
     fn to_slice_encodes_into_a_fixed_buffer() -> anyhow::Result<()> {
         let mut buf = [0_u8; 16];

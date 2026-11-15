@@ -12,8 +12,9 @@
 use objc2::rc::Retained;
 #[cfg(all(target_vendor = "apple", feature = "objc"))]
 use objc2_foundation::NSString;
-
+/// Runs the example.
 /// Creates an owned Foundation string and verifies the Rust string round trip.
+
 fn main() {
     #[cfg(all(target_vendor = "apple", feature = "objc"))]
     {
@@ -27,8 +28,9 @@ fn main() {
     println!("Foundation example needs an Apple target and the objc feature.");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the Foundation example or its platform fallback.
+
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

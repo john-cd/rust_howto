@@ -42,13 +42,14 @@ const RULES: &str = r#"{
     { "id": "e2", "sourceId": "table", "targetId": "out" }
   ]
 }"#;
-
 /// Evaluates one context and rejects missing inputs or an unmatched rule.
-///
+
 /// # Errors
-///
 /// Returns an error when a required input is absent, engine evaluation fails,
 /// or the decision table produces no preferred account.
+///
+/// # Arguments
+/// * `context` - Shared state and services used to complete the decision_table workflow.
 fn evaluate(context: serde_json::Value) -> anyhow::Result<serde_json::Value> {
     for field in ["accountType", "assetClass"] {
         if context.get(field).is_none() {
@@ -109,6 +110,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -116,6 +120,7 @@ pub fn run() -> anyhow::Result<()> {
     entry()
 }
 
+/// Verifies that an absent account type produces an actionable error.
 #[cfg(test)]
 mod tests {
     use super::*;

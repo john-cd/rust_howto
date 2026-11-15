@@ -33,6 +33,8 @@ async fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+/// This is the main asynchronous function. It demonstrates that calling an async function does not
+/// execute its body immediately.
 pub fn run() {
     main();
 }
@@ -40,6 +42,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `async2` example runs.
 
     #[test]
     fn test_async2_example_entry_point() {

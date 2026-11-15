@@ -34,9 +34,12 @@ fn seal(payload: &[u8]) -> Vec<u8> {
     out.extend_from_slice(&xxh3_128(payload).to_be_bytes());
     out
 }
-
 /// Opens a sealed buffer, verifies its appended XXH3 checksum tag, and returns
+
 /// the payload slice if valid, or `None` if corrupted.
+
+/// # Returns
+/// `Some` when the requested value is available; otherwise returns `None`.
 fn open(sealed: &[u8]) -> Option<&[u8]> {
     let split = sealed.len().checked_sub(TAG_LEN)?;
     let (payload, tag) = sealed.split_at(split);
@@ -60,8 +63,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the XXH3 checksum example by calling `main()`.
+
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -72,6 +76,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `xxh3 checksum` example runs.
 
     #[test]
     fn test_xxh3_checksum_example_entry_point() {

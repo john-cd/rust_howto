@@ -13,6 +13,7 @@ use nucleo::Matcher;
 use nucleo::pattern::CaseMatching;
 use nucleo::pattern::Normalization;
 use nucleo::pattern::Pattern;
+/// Runs the example.
 
 fn main() -> anyhow::Result<()> {
     let commands = ["save file", "open file", "close window", "open folder"];
@@ -38,6 +39,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

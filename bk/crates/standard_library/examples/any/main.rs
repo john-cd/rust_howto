@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Dynamic typing with the `Any` trait.
 mod any;
+/// A plugin system that stores shared services by their `TypeId`.
 mod plugin;
+/// Comparing types at runtime with `TypeId`.
 mod type_id;
 
 /// Command-line arguments.
@@ -47,8 +50,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -62,7 +66,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["any", "plugin", "type_id"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

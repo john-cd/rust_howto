@@ -24,7 +24,6 @@ struct FileCoverage {
 }
 
 impl FileCoverage {
-    /// Returns the percentage of instrumented lines that were executed.
     fn percent(&self) -> f64 {
         if self.found == 0 {
             100.0
@@ -37,8 +36,10 @@ impl FileCoverage {
 /// Streams the records of an LCOV report and collects per-file line coverage.
 ///
 /// # Errors
-///
 /// Returns an error if the report contains malformed LCOV records.
+///
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested file coverage operation.
 fn summarize(input: impl BufRead) -> anyhow::Result<Vec<FileCoverage>> {
     let mut files = Vec::new();
     let mut current: Option<FileCoverage> = None;
@@ -107,9 +108,8 @@ end_of_record
 /// Summarizes the report, then applies a coverage gate.
 ///
 /// # Errors
-///
 /// Returns an error if the report is invalid or below the coverage threshold.
-pub fn run() -> anyhow::Result<()> {
+pub fn example_body() -> anyhow::Result<()> {
     let files = summarize(REPORT.as_bytes())?;
     for file in &files {
         println!("{}: {:.1}%", file.path, file.percent());
@@ -118,14 +118,20 @@ pub fn run() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    example_body()
+}
+
+/// Returns an error if the inline report cannot be parsed.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that the report yields the expected per-file percentages.
-    ///
     /// # Errors
-    ///
     /// Returns an error if the inline report cannot be parsed.
     #[test]
     fn computes_coverage_per_file() -> anyhow::Result<()> {
@@ -137,10 +143,7 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that the threshold gate rejects under-covered files.
-    ///
     /// # Errors
-    ///
     /// Returns an error if the inline report cannot be parsed.
     #[test]
     fn gate_fails_below_the_threshold() -> anyhow::Result<()> {
@@ -155,10 +158,7 @@ mod tests {
         assert!(summarize(&b"LF:x\n"[..]).is_err());
     }
 
-    /// Verifies that the summary example completes successfully.
-    ///
     /// # Errors
-    ///
     /// Returns an error if the inline report cannot be summarized.
     #[test]
     fn run_succeeds() -> anyhow::Result<()> {

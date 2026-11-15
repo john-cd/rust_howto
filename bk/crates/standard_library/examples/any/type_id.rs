@@ -15,11 +15,15 @@ use std::any::TypeId;
 // The `'static` bound below is necessary,
 // because `TypeId` only works with `'static` types.
 /// Returns whether `T` and `U` are the same type.
+/// Reports whether the type id meets the same type condition so callers can choose the correct
+/// branch.
+
 fn is_same_type<T: 'static, U: 'static>() -> bool {
     TypeId::of::<T>() == TypeId::of::<U>()
 }
-
+/// Runs the example.
 /// Compares several types.
+
 fn main() {
     // Compare types with `TypeId::of`:
     println!("i32 vs i32: {}", is_same_type::<i32, i32>()); // true.
@@ -52,8 +56,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -61,11 +66,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `type id` example runs.
 
     #[test]
     fn test_type_id_example_entry_point() {
         main();
     }
+    /// Verifies is same type.
 
     #[test]
     fn test_is_same_type() {
@@ -74,6 +81,7 @@ mod tests {
         assert!(!is_same_type::<String, &str>());
         assert!(is_same_type::<Vec<u8>, Vec<u8>>());
     }
+    /// Verifies type id of trait object is the concrete type.
 
     #[test]
     fn test_type_id_of_trait_object_is_the_concrete_type() {
@@ -81,6 +89,7 @@ mod tests {
         assert_eq!(value.type_id(), TypeId::of::<&str>());
         assert_ne!(value.type_id(), TypeId::of::<String>());
     }
+    /// Verifies type name.
 
     #[test]
     fn test_type_name() {

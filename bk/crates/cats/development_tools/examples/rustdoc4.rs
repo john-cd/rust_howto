@@ -10,19 +10,24 @@
 #![doc(html_playground_url = "https://playground.example.com/")]
 
 /// Example of a code example embedded into doc comments:
-///
 /// ```rust,editable
 /// println!("{}", return_a_string());
 /// ```
+
 fn return_a_string() -> String {
     "This will be printed.".to_owned()
 }
-
 /// Prints the string returned by a documented function.
+
 fn main() {
     println!("{}", return_a_string());
 }
 // ANCHOR_END: example
+
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

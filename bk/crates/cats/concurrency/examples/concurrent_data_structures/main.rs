@@ -6,9 +6,13 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Demonstrates the basic usage of `ArrayQueue`.
 mod crossbeam_queue;
+/// Demonstrates the use of `DashMap` for concurrent data access and
 mod dashmap;
+/// This example demonstrates the basic usage of the `flurry::HashMap` for concurrent data access.
 mod flurry;
+/// A concurrent hash map from the `papaya` crate, used from several threads.
 mod papaya;
 
 /// Command-line arguments.
@@ -71,7 +75,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["crossbeam_queue", "dashmap", "flurry", "papaya"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

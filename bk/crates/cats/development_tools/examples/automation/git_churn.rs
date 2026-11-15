@@ -57,6 +57,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -64,6 +67,7 @@ pub fn run() -> anyhow::Result<()> {
     entry()
 }
 
+/// Counts recent file changes in the checkout containing this example.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -73,9 +77,9 @@ mod tests {
     fn counts_changes_in_the_example_checkout() -> anyhow::Result<()> {
         main()
     }
-
     /// Reports a clear failure for a temporary directory outside any
     /// repository.
+
     #[test]
     fn not_a_repository_is_an_error() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;

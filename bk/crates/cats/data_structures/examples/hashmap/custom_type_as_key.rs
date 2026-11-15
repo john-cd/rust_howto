@@ -27,10 +27,13 @@ struct Student {
 // This is a fundamental requirement for hash-based collections.
 // k1 == k2 -> hash(k1) == hash(k2).
 impl Hash for Student {
+    /// # Arguments
+    /// * `state` - Shared state and services used to complete the custom_type_as_key workflow.
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.id.hash(state);
     }
 }
+/// Runs the example.
 
 /// Stores grades in a `HashMap` keyed by `Student`.
 fn main() {
@@ -66,8 +69,9 @@ fn calculate_hash<T: Hash>(t: &T) -> u64 {
     s.finish()
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -125,7 +125,6 @@ mod tests {
         }
         Ok(())
     }
-    /// Performs the child checks controlled environment operation.
 
     #[test]
     #[ignore = "spawned by the parent test with a controlled environment"]

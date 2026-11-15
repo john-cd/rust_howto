@@ -23,8 +23,8 @@ use walkdir::WalkDir;
 fn is_iso(entry: &Path) -> bool {
     matches!(entry.extension(), Some(e) if e.to_string_lossy().to_lowercase() == "iso")
 }
-
 /// Computes a file's SHA-256 digest and returns it with the input path.
+
 fn compute_digest<P: AsRef<Path>>(filepath: P) -> Result<([u8; 32], P), Error> {
     let mut buf_reader = BufReader::new(File::open(&filepath)?);
     let mut hasher = Sha256::new();
@@ -44,9 +44,11 @@ fn compute_digest<P: AsRef<Path>>(filepath: P) -> Result<([u8; 32], P), Error> {
 /// Walks the example directory and prints SHA-256 digests for ISO files.
 ///
 /// # Errors
-///
 /// Returns an error if a file cannot be read or a worker result reports an
 /// error.
+///
+/// # Panics
+/// Panics if the receiver remains open until all workers finish.
 fn main() -> Result<(), Error> {
     let pool = ThreadPool::new(num_cpus::get());
 
@@ -89,10 +91,14 @@ fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()
 }
 
+/// Verifies that walking a directory without ISO files completes successfully.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -105,6 +111,8 @@ mod tests {
         Ok(())
     }
 
+    /// Reports whether the threadpool walk meets the iso matches the extension case insensitively
+    /// condition so callers can choose the correct branch.
     #[test]
     fn is_iso_matches_the_extension_case_insensitively() {
         assert!(is_iso(Path::new("disk.iso")));
@@ -113,6 +121,8 @@ mod tests {
         assert!(!is_iso(Path::new("iso")));
     }
 
+    /// # Errors
+    /// An error is returned if compute_digest_matches_the_known_sha256, write fails.
     #[test]
     fn compute_digest_matches_the_known_sha256() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;
@@ -124,6 +134,7 @@ mod tests {
         assert_eq!(digest[28..], [0xf2, 0x00, 0x15, 0xad]);
         Ok(())
     }
+    /// Computes digest of a missing file is an error.
 
     #[test]
     fn compute_digest_of_a_missing_file_is_an_error() {

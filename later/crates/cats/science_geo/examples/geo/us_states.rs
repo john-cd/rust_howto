@@ -8,17 +8,20 @@
 //! can be matched.
 
 use us_state_info::State;
-
 /// Parses a state name or a two-letter abbreviation.
-///
+
 /// The match is case-insensitive and ignores spaces.
+
+/// # Returns
+/// `Some` when the requested value is available; otherwise returns `None`.
 fn parse_state(text: &str) -> Option<State> {
     // `TryFrom<String>` is implemented. The error type does not implement
     // `std::error::Error`, so convert it to an `Option`.
     State::try_from(text.trim().to_owned()).ok()
 }
-
+/// Runs the example.
 /// Checks that names and abbreviations map to the same state.
+
 fn main() {
     assert_eq!(parse_state("CA"), Some(State::California));
     assert_eq!(parse_state("California"), parse_state("ca"));
@@ -31,6 +34,7 @@ fn main() {
     }
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

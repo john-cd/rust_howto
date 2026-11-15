@@ -36,7 +36,6 @@ pub fn run() {
     main();
 }
 
-/// Tests the documented behavior: Asserts on heap allocations in a test with `dhat`.
 #[cfg(test)]
 mod tests {
     use std::sync::Mutex;
@@ -50,7 +49,6 @@ mod tests {
     static SERIAL: Mutex<()> = Mutex::new(());
 
     // Keep all the allocation assertions in a single test.
-    /// Performs the allocation counts operation.
     #[test]
     fn allocation_counts() {
         let _guard = SERIAL
@@ -70,7 +68,6 @@ mod tests {
         // The final block is still alive; nothing else leaked.
         dhat::assert_eq!(after.curr_blocks - before.curr_blocks, 1);
     }
-    /// Verifies main entry point.
 
     #[test]
     fn test_main_entry_point() {

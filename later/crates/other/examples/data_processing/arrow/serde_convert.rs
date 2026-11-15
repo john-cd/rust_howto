@@ -27,7 +27,10 @@ struct Person {
 }
 
 /// Converts rows to Arrow, writes Arrow as JSON, and converts the JSON to rows.
-pub fn run() -> Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> Result<()> {
     let schema = Arc::new(Schema::new(vec![
         Field::new("name", DataType::Utf8, false),
         Field::new("age", DataType::Int32, false),
@@ -58,6 +61,15 @@ pub fn run() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<()> {
+    example_body()
+}
+
+/// Verifies that Serde-compatible rows round-trip through Arrow.
 #[cfg(test)]
 mod tests {
     use super::run;

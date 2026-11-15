@@ -22,7 +22,6 @@ mod person {
 /// Encodes a `Person` message with `prost`, then decodes it.
 ///
 /// # Errors
-///
 /// Returns an error if encoding or decoding the message fails.
 fn main() -> anyhow::Result<()> {
     // Create a `Person` message.
@@ -46,12 +45,12 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// # Errors
-///
 /// Returns an error if encoding or decoding the message fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that the generated Protobuf type preserves its fields.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -61,8 +60,8 @@ mod tests {
     fn prost_round_trip_preserves_the_person_message() -> anyhow::Result<()> {
         main()
     }
-
     /// Pins the wire format: field 1 (a string) then field 2 (a varint).
+
     #[test]
     fn encoding_matches_the_protobuf_wire_format() {
         let person = Person {

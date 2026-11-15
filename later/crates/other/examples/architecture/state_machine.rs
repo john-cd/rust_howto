@@ -9,6 +9,8 @@
 //! write.
 
 /// Represents the possible states of the state machine.
+/// Defines the outcomes available to the architecture workflow, including idle, processing,
+/// completed, error.
 #[derive(Debug, PartialEq, Clone, Copy)]
 enum State {
     /// The initial state, indicating that the state machine is ready to start.
@@ -23,12 +25,15 @@ enum State {
 }
 
 /// Represents the state machine itself, holding the current state.
+/// State required by `StateMachine` during transport operations.
 struct StateMachine {
     /// The current state.
     state: State,
 }
 
 /// Represents the possible events that can trigger state transitions.
+/// Defines the outcomes available to the architecture workflow, including start, finish, fail,
+/// reset.
 #[derive(Debug)]
 enum Event {
     /// Starts processing.
@@ -68,8 +73,9 @@ impl StateMachine {
         &self.state
     }
 }
-
+/// Runs the example.
 /// Sends events to the state machine and prints its state.
+
 fn main() {
     let mut state_machine = StateMachine::new();
 
@@ -118,6 +124,7 @@ fn main() {
     assert_eq!(st, &State::Error);
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

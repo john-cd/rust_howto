@@ -7,8 +7,11 @@ use clap::Parser;
 #[cfg(target_os = "windows")]
 use clap::Subcommand;
 
+/// Displays a message box through the raw `winapi` bindings.
 #[cfg(target_os = "windows")]
 mod winapi;
+/// This example demonstrates how to use the `windows` crate to call the `MessageBoxW` function from
+/// the Windows API.
 #[cfg(target_os = "windows")]
 mod windows;
 
@@ -32,8 +35,9 @@ enum Commands {
     #[command(name = "windows")]
     Windows,
 }
-
+/// Runs the example.
 /// Runs the example selected on the command line.
+
 #[cfg(target_os = "windows")]
 fn main() {
     let cli = Cli::parse();
@@ -56,6 +60,7 @@ fn main() {
     println!("This example requires Windows.");
 }
 
+/// Verifies command-line selection and execution of the documented examples.
 #[cfg(test)]
 mod tests {
     /// Explains that the example requires Windows on other platforms.

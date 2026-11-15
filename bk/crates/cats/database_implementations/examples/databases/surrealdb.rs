@@ -79,12 +79,12 @@ async fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// # Errors
-///
 /// Returns an error if the in-memory engine or any CRUD operation fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Runs CRUD operations against an isolated in-memory database.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -96,6 +96,11 @@ mod tests {
         Ok(())
     }
 
+    /// Assembles the select update and delete in memory from its component values so callers
+    /// receive a ready-to-use result.
+    ///
+    /// # Errors
+    /// An error is returned if take fails.
     #[tokio::test]
     async fn create_select_update_and_delete_in_memory() -> Result<()> {
         let db = Surreal::new::<Mem>(()).await?;

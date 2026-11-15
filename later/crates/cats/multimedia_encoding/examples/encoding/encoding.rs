@@ -41,6 +41,10 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     Ok(())
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
@@ -56,7 +60,6 @@ mod tests {
         main().expect("example entry point should succeed");
     }
 
-    /// Verifies that default config creates context.
     #[test]
     fn default_config_creates_context() {
         let cfg = Config::default();

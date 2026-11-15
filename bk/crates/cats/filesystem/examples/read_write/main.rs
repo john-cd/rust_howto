@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Demonstrates reading from a memory-mapped file.
 mod memmap2;
+/// Demonstrates writing to and reading from a file.
 mod read_file;
+/// Check whether we are reading & writing to the same file.
 mod same_file;
 
 /// Command-line arguments.
@@ -63,7 +66,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["memmap2", "read_file", "same_file"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

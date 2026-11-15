@@ -13,6 +13,7 @@ use js_sys::Date;
 use wasm_bindgen::prelude::*;
 
 /// Returns the current JavaScript date as a string on the browser target.
+
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 #[wasm_bindgen]
 pub fn get_current_time() -> String {
@@ -26,8 +27,9 @@ fn main() {
     #[cfg(not(all(target_arch = "wasm32", target_os = "unknown")))]
     println!("Build for wasm32-unknown-unknown to call JavaScript's Date API.");
 }
-
+/// Runs the example entry point.
 /// Runs the example's host-side runner.
+
 pub fn run() {
     main();
 }
@@ -40,6 +42,7 @@ mod tests {
     /// Runs the js sys example through its entry point.
     // output-only: on the host, the example only prints a hint; the wasm32 code
     // needs a browser.
+    /// Verifies that the `js sys` example runs.
     #[test]
     fn test_js_sys_example_entry_point() {
         main();

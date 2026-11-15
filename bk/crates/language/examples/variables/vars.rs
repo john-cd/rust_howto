@@ -1,6 +1,6 @@
+#![allow(clippy::needless_late_init)]
 // TODO Reviewed ??-??-2026.
 
-#![allow(clippy::needless_late_init)]
 // ANCHOR: example
 //! Variables are used to store values.
 //!
@@ -47,10 +47,10 @@ fn main() {
     // Inner var: 20
     // Outer var outside inner scope: 10
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.
+/// Variables are used to store values.
 pub fn run() {
     main();
 }

@@ -7,8 +7,10 @@ use clap::Parser;
 #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
 use clap::Subcommand;
 
+/// This is an example of how to use the MeiliSearch Rust SDK to index and
 #[cfg(feature = "meilisearch")]
 mod meilisearch;
+/// Create an in-memory Tantivy index and run a simple full-text search.
 #[cfg(feature = "tantivy")]
 mod tantivy;
 
@@ -58,6 +60,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies command-line selection and execution of the documented examples.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -68,12 +71,14 @@ mod tests {
     fn test_main_is_a_no_op_without_features() {
         assert!(main().is_ok());
     }
+    /// Verifies meilisearch subcommand parses.
 
     #[cfg(feature = "meilisearch")]
     #[test]
     fn test_meilisearch_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "meilisearch"]).is_ok());
     }
+    /// Verifies tantivy subcommand parses.
 
     #[cfg(feature = "tantivy")]
     #[test]

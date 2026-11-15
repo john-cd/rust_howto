@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Example of using a single-threaded Tokio runtime.
 mod tokio2;
+/// Demonstrates using `tokio::task::LocalSet` to run non-`Send` tasks.
 mod tokio21;
+/// Graceful shutdown of nested subsystems with `tokio_graceful_shutdown`.
 mod tokio_graceful_shutdown;
 
 /// Command-line arguments.
@@ -63,7 +66,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["tokio2", "tokio21", "tokio_graceful_shutdown"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

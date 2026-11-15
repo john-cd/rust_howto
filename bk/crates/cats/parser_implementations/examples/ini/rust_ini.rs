@@ -66,6 +66,9 @@ key4 = value4
 // ANCHOR_END: example
 
 /// Runs the `rust-ini` example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

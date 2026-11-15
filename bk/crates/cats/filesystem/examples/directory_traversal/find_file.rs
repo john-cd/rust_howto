@@ -55,10 +55,14 @@ fn recently_modified(root: &Path) -> Result<Vec<PathBuf>> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies the example can traverse the current directory.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -90,7 +94,6 @@ mod tests {
         Ok(())
     }
 
-    /// A missing root is an error.
     #[test]
     fn missing_root_is_an_error() {
         assert!(recently_modified(Path::new("/definitely/not/here")).is_err());

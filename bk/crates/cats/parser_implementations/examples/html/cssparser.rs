@@ -15,7 +15,6 @@ use cssparser::Token;
 /// Tokenizes a CSS declaration list and prints each token.
 ///
 /// # Errors
-///
 /// Returns an error if the declaration list contains an invalid token.
 fn main() -> anyhow::Result<()> {
     let css = "color: red; font-size: 16px;";
@@ -39,16 +38,15 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the CSS tokenization example.
-///
+
 /// # Errors
-///
 /// Returns an error if the declaration list contains an invalid token.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Checks that the sample CSS declaration list can be tokenized.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -59,8 +57,8 @@ mod tests {
     fn test_cssparser_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Collects the tokens of a CSS snippet as strings.
+
     fn tokens(css: &str) -> Vec<String> {
         let mut parser = Parser::new(css);
         let mut out = Vec::new();

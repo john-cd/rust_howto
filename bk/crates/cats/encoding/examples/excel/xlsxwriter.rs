@@ -17,6 +17,12 @@ use rust_xlsxwriter::Workbook;
 use rust_xlsxwriter::XlsxError;
 
 /// Writes a small sales report to `path`.
+///
+/// # Arguments
+/// * `path` - Path to the file or directory to process.
+///
+/// # Errors
+/// Returns an error if the output cannot be written or sent.
 pub fn write_report(path: &Path) -> Result<(), XlsxError> {
     let mut workbook = Workbook::new();
 
@@ -77,6 +83,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

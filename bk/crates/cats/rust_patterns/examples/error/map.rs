@@ -18,25 +18,26 @@ fn main() {
     println!("Contextual error: {contextual_error:?}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// `Result`.
 #[cfg(test)]
 mod tests {
     use super::main;
+    /// Maps transforms the success value.
 
-    /// Transforms the success value while keeping it in `Ok`.
-    /// Runs the `map` example through its entry point.
     #[test]
     fn map_transforms_the_success_value() {
         let result: Result<i32, &str> = Ok(10);
         assert_eq!(result.map(|value| value * 2), Ok(20));
     }
+    /// Maps err adds error context.
 
-    /// Transforms the error while keeping it in `Err`.
     #[test]
     fn map_err_adds_error_context() {
         let result: Result<i32, &str> = Err("service unavailable");

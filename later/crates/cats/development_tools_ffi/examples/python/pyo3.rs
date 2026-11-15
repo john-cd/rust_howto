@@ -1,6 +1,6 @@
+#![cfg(any(target_os = "linux", target_os = "windows"))]
 // TODO Reviewed ??-??-2026.
 
-#![cfg(any(target_os = "linux", target_os = "windows"))]
 // ANCHOR: example
 //! Calls embedded Python code and passes it positional arguments with PyO3.
 //!
@@ -13,6 +13,9 @@ use pyo3::prelude::*;
 use pyo3::types::PyTuple;
 
 /// Calls a Python function with and without arguments.
+
+///
+
 fn test_my_function() -> PyResult<()> {
     Python::attach(|py| {
         let fun: Py<PyAny> = PyModule::from_code(
@@ -44,11 +47,9 @@ fn test_my_function() -> PyResult<()> {
         Ok(())
     })
 }
-
 /// Runs a Python script and calls a Python function.
-///
+
 /// # Errors
-///
 /// Returns a Python error if interpreter initialization or a Python operation
 /// fails.
 fn main() -> PyResult<()> {
@@ -69,6 +70,7 @@ fn main() -> PyResult<()> {
 ///
 /// Returns a Python error if interpreter initialization or a Python operation
 /// fails.
+/// Calls embedded Python code and passes it positional arguments with PyO3.
 pub fn run() -> PyResult<()> {
     main()
 }
@@ -77,12 +79,14 @@ pub fn run() -> PyResult<()> {
 mod tests {
     use super::*;
 
-    /// Runs the pyo3 example through its entry point.
+    ///
+
     #[test]
     #[cfg_attr(
         target_os = "windows",
         ignore = "set PYTHONHOME to the Python base prefix and rerun this test"
     )]
+    /// Verifies that the `pyo3` example runs.
     fn test_pyo3_example_entry_point() -> PyResult<()> {
         main()
     }

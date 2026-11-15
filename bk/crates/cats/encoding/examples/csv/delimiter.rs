@@ -10,8 +10,8 @@
 use csv::Error;
 use csv::ReaderBuilder;
 use serde::Deserialize;
-
 /// Represents a record to import.
+
 #[derive(Debug, Deserialize, PartialEq)]
 struct Record {
     /// The name.
@@ -44,10 +44,14 @@ fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()
 }
 
+/// Verifies the configured tab delimiter separates fields into records.
 #[cfg(test)]
 mod tests {
     use super::*;

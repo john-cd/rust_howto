@@ -59,10 +59,14 @@ async fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the SQL Server connection and query workflow.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies an actual parameterized query against a configured SQL Server.
 #[cfg(test)]
 mod tests {
     use super::*;

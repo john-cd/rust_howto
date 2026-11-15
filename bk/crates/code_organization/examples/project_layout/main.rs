@@ -1,15 +1,16 @@
-// TODO Reviewed ??-??-2026.
-
 //! Organizing a library with reexports and a prelude.
 //!
 //! The modules are declared inline so that the example fits in one file. In a
 //! real crate, each would live in its own file.
+//!
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: reexports
 /// A module that keeps its submodules private and reexports the items of
 /// interest, which flattens the module hierarchy.
 mod module1 {
     // Private submodules.
+    /// Demonstrates the `submodule1` child module in this module layout example.
     mod submodule1 {
         /// A public function in a private submodule.
         pub fn public_function() -> &'static str {
@@ -17,6 +18,7 @@ mod module1 {
         }
     }
 
+    /// Demonstrates the `submodule2` child module in this module layout example.
     mod submodule2 {
         /// A public struct in a private submodule.
         #[derive(Debug, Default)]
@@ -36,12 +38,14 @@ use module1::public_function;
 // ANCHOR: prelude
 /// A library with a prelude that reexports its most commonly used items.
 mod my_library {
+    /// Provides the `prelude` implementation used by this module.
     pub mod prelude {
         // Reexport commonly used types, traits, or functions:
         pub use super::a_module::SuperCommonType;
         pub use super::a_module::super_common_function;
     }
 
+    /// Provides the `a_module` implementation used by this module.
     pub mod a_module {
         /// A function that most clients need.
         pub fn super_common_function() -> u32 {
@@ -51,6 +55,7 @@ mod my_library {
         /// A type that most clients need.
         #[derive(Debug, Default)]
         pub struct SuperCommonType {
+            /// Value stored by this wrapper.
             pub value: u32,
         }
     }
@@ -80,6 +85,7 @@ mod tests {
     fn test_main() {
         main();
     }
+    /// Verifies reexports are reachable.
 
     #[test]
     fn test_reexports_are_reachable() {
@@ -87,6 +93,7 @@ mod tests {
         let s1 = Struct1;
         assert_eq!(format!("{s1:?}"), "Struct1");
     }
+    /// Verifies prelude items are reachable.
 
     #[test]
     fn test_prelude_items_are_reachable() {

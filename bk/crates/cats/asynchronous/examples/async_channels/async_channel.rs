@@ -26,10 +26,10 @@ use tokio::task;
 use tokio::time::Duration;
 
 /// This function simulates a producer that sends messages to a channel.
-///
 /// # Arguments
 /// * `id` - The ID of the producer.
 /// * `tx` - The sender side of the channel used to send messages.
+
 async fn producer(id: usize, tx: Sender<String>) {
     // Create messages in a loop, sending them to the channel.
     for i in 0..5 {
@@ -51,9 +51,9 @@ async fn producer(id: usize, tx: Sender<String>) {
 /// This function simulates a consumer that receives messages from a channel.
 ///
 /// # Arguments
-///
 /// * `id` - The ID of the consumer.
 /// * `rx` - The receiver side of the channel used to receive messages.
+
 async fn consumer(id: usize, rx: Receiver<String>) {
     // Receives a message from the channel.
     // If the channel is empty, awaits until there is a message.
@@ -128,8 +128,9 @@ async fn main() {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

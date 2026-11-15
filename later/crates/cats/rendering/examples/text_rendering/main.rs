@@ -1,7 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
-//! Rasterizes a glyph with `fontdue` and reads metrics with `ttf-parser`.
 // ANCHOR: example
+//! Rasterizes a glyph with `fontdue` and reads metrics with `ttf-parser`.
+
 use fontdue::Font;
 use fontdue::FontSettings;
 
@@ -39,6 +40,20 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+/// Rasterizes a glyph with `fontdue` and reads metrics with `ttf-parser`.
+///
+/// # Errors
+/// Returns an error if an operation in the example fails.
+/// Returns an error if a step of the example fails.
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -48,8 +63,8 @@ mod tests {
     fn test_main_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Verifies the glyph bitmap has area and visible ink.
+
     #[test]
     fn rasterizes_a_non_empty_glyph() -> anyhow::Result<()> {
         let (width, height, ink) = rasterize_glyph()?;

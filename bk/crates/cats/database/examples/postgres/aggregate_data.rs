@@ -23,7 +23,6 @@ struct Nation {
 /// Queries an existing `artists` table and prints each nationality count.
 ///
 /// # Errors
-///
 /// Returns an error if `DATABASE_URL` is missing, PostgreSQL cannot be reached,
 /// or the query or its result rows are invalid.
 fn main() -> anyhow::Result<()> {
@@ -42,9 +41,11 @@ fn main() -> anyhow::Result<()> {
 /// Returns artist counts grouped by nationality, including missing values.
 ///
 /// # Errors
-///
 /// Returns an error if PostgreSQL rejects the query or a result column has an
 /// unexpected type.
+///
+/// # Arguments
+/// * `client` - Mutable client whose state is updated by this operation.
 fn artist_counts_by_nationality(client: &mut Client) -> anyhow::Result<Vec<Nation>> {
     let query = "SELECT COALESCE(nationality, 'Unknown') AS nationality, \
                  COUNT(*) AS artist_count \
@@ -65,17 +66,16 @@ fn artist_counts_by_nationality(client: &mut Client) -> anyhow::Result<Vec<Natio
         .collect()
 }
 // ANCHOR_END: example
-
 /// Runs the PostgreSQL aggregation example.
-///
+
 /// # Errors
-///
 /// Returns an error if `DATABASE_URL` is missing or PostgreSQL query execution
 /// fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Aggregates the prepared artists table in a PostgreSQL service.
 #[cfg(test)]
 mod tests {
     use super::*;

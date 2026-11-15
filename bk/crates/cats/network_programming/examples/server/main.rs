@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example serves a small HTTP response with Glommio's Linux `io_uring`
 #[cfg(target_os = "linux")]
 mod glommio;
+/// This example demonstrates a simple TCP server that listens for a single connection, reads data
+/// from the connection, and then prints the received
 mod listen_unused;
 
 /// Command-line arguments.
@@ -64,7 +67,6 @@ mod tests {
         "listen_unused",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

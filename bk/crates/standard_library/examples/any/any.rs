@@ -44,8 +44,9 @@ fn print_if_string(value: Box<dyn Any>) {
         println!("String: {string}");
     }
 }
-
+/// Runs the example.
 /// Checks the type of values at runtime.
+
 fn main() {
     assert!(!is_string(&42));
     let s = "a string".to_owned();
@@ -57,18 +58,24 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
 
+/// An error is returned if ok_or fails.
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `any` example runs.
 
     #[test]
     fn test_any_example_entry_point() {
         main();
     }
+    /// Verifies is string.
 
     #[test]
     fn test_is_string() {
@@ -78,6 +85,8 @@ mod tests {
         assert!(!is_string(&"text"));
     }
 
+    /// # Errors
+    /// An error is returned if ok_or fails.
     #[test]
     fn test_downcast_ref_and_mut() -> Result<(), Box<dyn std::error::Error>> {
         let mut value: Box<dyn Any> = Box::new(5_i32);
@@ -88,6 +97,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if err, map_err fails.
     #[test]
     fn test_downcast_returns_the_box_on_failure() -> Result<(), Box<dyn std::error::Error>> {
         let boxed: Box<dyn Any> = Box::new("text".to_owned());

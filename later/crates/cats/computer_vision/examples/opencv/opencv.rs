@@ -98,10 +98,14 @@ fn detect_edges(grayscale: &Mat) -> opencv::Result<Mat> {
 // ANCHOR_END: example
 
 /// Runs the generated-image grayscale and edge-detection workflow.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()
 }
 
+/// Converts a generated BGR frame without changing its dimensions.
 #[cfg(test)]
 mod tests {
     use opencv::core::CV_8UC1;

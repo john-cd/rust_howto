@@ -41,10 +41,14 @@ mod anyhow {}
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// bring items from external crates into scope, without having to write their full paths.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -53,6 +57,7 @@ mod tests {
     fn test_main() -> Result<()> {
         main()
     }
+    /// Verifies items from external crates.
 
     #[test]
     fn test_items_from_external_crates() {

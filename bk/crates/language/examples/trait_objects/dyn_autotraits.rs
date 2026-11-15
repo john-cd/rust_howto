@@ -9,7 +9,6 @@
 // Define a trait with a method:
 /// A thing that can send a message.
 trait Message {
-    /// Sends the message.
     fn send_message(&self);
 }
 
@@ -24,6 +23,7 @@ struct Worker {
 
 // Implement the trait:
 impl Message for Worker {
+    /// Sends message.
     fn send_message(&self) {
         println!("Worker {}: {}", self.id, self.msg);
     }
@@ -34,8 +34,9 @@ impl Message for Worker {
 fn process_message(messenger: Box<dyn Message + Send>) {
     messenger.send_message();
 }
-
+/// Runs the example.
 /// Sends a message through a `Box<dyn Message + Send>`.
+
 fn main() {
     let worker = Worker {
         id: 1,
@@ -57,8 +58,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -52,8 +52,9 @@ fn layout_text(
     layout.align(Alignment::Start, AlignmentOptions::default());
     layout
 }
-
+/// Runs the example.
 /// Builds a layout for a text, breaks it into lines, and prints its glyph runs.
+
 fn main() {
     let text = "Hello, Parley! This is a rich text layout example in Rust.";
     let mut font_cx = font_context().expect("the bundled Roboto font is valid");
@@ -82,7 +83,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies that Parley wraps text and respects the configured width.
     #[test]
     fn wraps_text_at_narrow_width() {
         let text = "Parley lays out this longer sentence using the bundled Roboto font.";

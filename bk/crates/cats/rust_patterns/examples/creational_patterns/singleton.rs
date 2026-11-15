@@ -30,6 +30,7 @@ impl Settings {
     }
 
     /// Replaces the configuration value.
+
     fn set_config(&mut self, new_value: String) {
         self.config_value = new_value;
     }
@@ -49,8 +50,9 @@ fn get_settings() -> &'static Mutex<Settings> {
     // If SETTINGS hasn't been initialized yet, execute the closure.
     SETTINGS.get_or_init(|| Mutex::new(Settings::new("default_config".to_owned())))
 }
-
+/// Runs the example.
 /// Reads and updates the settings through the singleton.
+
 fn main() {
     // `OnceLock` has not been written to yet.
     assert!(SETTINGS.get().is_none());
@@ -72,8 +74,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

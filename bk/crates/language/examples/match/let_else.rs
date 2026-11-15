@@ -8,6 +8,14 @@
 //! compared with a nested `if let`.
 
 /// Parses `input` as a number, or panics.
+/// Turns the supplied number representation into the structured value consumed by let else,
+/// rejecting malformed input.
+///
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested let else operation.
+///
+/// # Panics
+/// Panics if the guarded invariant is violated.
 fn parse_number(input: &str) -> u32 {
     // Try to parse the input string.
     let Ok(num) = input.parse::<u32>() else {
@@ -18,16 +26,18 @@ fn parse_number(input: &str) -> u32 {
     // If it succeeds, `num` is available in the surrounding scope.
     num
 }
-
+/// Runs the example.
 /// Parses a number with `let ... else`.
+
 fn main() {
     let value = parse_number("42");
     println!("Parsed value: {value}");
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

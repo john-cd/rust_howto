@@ -29,11 +29,11 @@ fn read_uptime() -> Result<u64> {
 fn main() -> Result<()> {
     run_example()
 }
-
 /// Reads the system uptime.
 ///
 /// Returns the uptime in seconds as a `u64`.
 /// Returns an error if the file cannot be read or the data cannot be parsed.
+
 fn run_example() -> Result<()> {
     match read_uptime() {
         Ok(uptime) => println!("uptime: {uptime} seconds"),
@@ -44,10 +44,14 @@ fn run_example() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the uptime example for the workspace test harness.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     run_example()
 }
 
+/// Verifies that the uptime example entry point reports its result.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -59,7 +63,6 @@ mod tests {
         run_example().expect("the uptime example should not fail");
     }
 
-    /// Verifies that the uptime is read where `/proc/uptime` exists.
     #[test]
     #[cfg(target_os = "linux")]
     fn reads_uptime_on_linux() {

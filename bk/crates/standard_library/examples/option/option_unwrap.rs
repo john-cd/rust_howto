@@ -11,8 +11,8 @@
 )]
 
 /// `unwrap()` and `expect()` retrieve the inner value of a `Option`.
-/// BEWARE: if the `Option` is `None`, they will cause your program to panic.
 ///
+/// BEWARE: if the `Option` is `None`, they will cause your program to panic.
 /// You should only use `unwrap()` or `expect()` when we are absolutely certain
 /// that the `Option` will be `Some`.
 fn unwrap_expect() {
@@ -51,16 +51,18 @@ fn unwrap_or_unwrap_or_else() {
         75
     }); // 75.
 }
-
+/// Runs the example.
 /// Runs the `unwrap` examples.
+
 fn main() {
     unwrap_expect();
     unwrap_or_unwrap_or_else();
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -68,17 +70,20 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `option unwrap` example runs.
 
     #[test]
     fn test_option_unwrap_example_entry_point() {
         main();
     }
+    /// Verifies unwrap on some.
 
     #[test]
     fn test_unwrap_on_some() {
         assert_eq!(Some(10).unwrap(), 10);
         assert_eq!(Some("A string").expect("is Some"), "A string");
     }
+    /// Verifies unwrap on none panics.
 
     #[test]
     #[should_panic(expected = "called `Option::unwrap()` on a `None` value")]
@@ -86,6 +91,7 @@ mod tests {
         let x: Option<i32> = None;
         x.unwrap();
     }
+    /// Verifies expect on none panics with message.
 
     #[test]
     #[should_panic(expected = "it was None")]
@@ -93,6 +99,7 @@ mod tests {
         let x: Option<i32> = None;
         x.expect("it was None");
     }
+    /// Verifies unwrap or variants.
 
     #[test]
     fn test_unwrap_or_variants() {

@@ -19,7 +19,6 @@ use mio::Waker;
 const WAKE_TOKEN: Token = Token(0);
 
 /// Wakes up a polling instance and handles the event.
-///
 /// # Errors
 /// Returns an error if polling or waking the instance fails.
 fn main() -> std::io::Result<()> {
@@ -48,6 +47,14 @@ fn main() -> std::io::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> std::io::Result<()> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -58,6 +65,8 @@ mod tests {
         main()
     }
 
+    /// # Errors
+    /// An error is returned if waker_produces_a_readable_event, new fails.
     #[test]
     fn waker_produces_a_readable_event() -> std::io::Result<()> {
         let mut poll = Poll::new()?;
@@ -70,6 +79,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if poll_times_out_without_events, poll fails.
     #[test]
     fn poll_times_out_without_events() -> std::io::Result<()> {
         let mut poll = Poll::new()?;

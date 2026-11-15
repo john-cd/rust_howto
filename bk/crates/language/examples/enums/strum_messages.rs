@@ -43,6 +43,7 @@ enum BoolDisplayMode {
 }
 
 /// Builds the menu entries from the enum itself.
+
 fn menu() -> Vec<(String, &'static str, &'static str)> {
     BoolDisplayMode::iter()
         .map(|mode| {
@@ -71,12 +72,14 @@ fn main() {
     assert_eq!(name, "Digits");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Checks that the menu example builds and prints the enum metadata.
 #[cfg(test)]
 mod tests {
     use super::*;

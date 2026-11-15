@@ -59,8 +59,12 @@ fn run_app() -> Result<(), winit::error::EventLoopError> {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 /// Runs the counter example as a standalone Cargo target or book test.
+
 pub fn run() -> Result<(), winit::error::EventLoopError> {
     run_app()
 }
@@ -76,7 +80,6 @@ mod tests {
         run_app()
     }
 
-    /// Checks the counter logic behind the buttons.
     #[test]
     fn counter_increments_and_decrements() {
         let mut counter = Counter::default();

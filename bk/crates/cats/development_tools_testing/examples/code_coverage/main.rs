@@ -7,6 +7,7 @@
 /// Does nothing yet.
 fn main() {}
 
+/// The example is deferred (#1748); `main` has nothing to run yet.
 #[cfg(test)]
 mod tests {
     use super::*;

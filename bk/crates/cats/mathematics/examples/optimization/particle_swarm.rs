@@ -13,25 +13,30 @@ use rand::rngs::StdRng;
 
 /// A candidate solution that remembers the best position it has visited.
 struct Particle {
+    /// Collection of position values consumed by particle operations.
     position: Vec<f64>,
+    /// Collection of velocity values consumed by particle operations.
     velocity: Vec<f64>,
+    /// Collection of best position values consumed by particle operations.
     best_position: Vec<f64>,
+    /// Best value found during the search.
     best_value: f64,
 }
 
 /// The Rastrigin function: many local minima, global minimum 0 at the origin.
+
 fn rastrigin(x: &[f64]) -> f64 {
     10.0 * x.len() as f64
         + x.iter()
             .map(|v| v * v - 10.0 * (2.0 * std::f64::consts::PI * v).cos())
             .sum::<f64>()
 }
-
 /// Minimizes `f` over `[-5.12, 5.12]^dim` with particle swarm optimization.
 ///
 /// Each velocity blends inertia, a pull toward the particle's own best
 /// position, and a pull toward the swarm's best position. The seed makes the
 /// run reproducible, and `iterations` caps the work.
+
 fn pso(
     f: impl Fn(&[f64]) -> f64,
     dim: usize,
@@ -39,9 +44,13 @@ fn pso(
     iterations: usize,
     seed: u64,
 ) -> (Vec<f64>, f64) {
+    /// Shared `bound` used by this module.
     const BOUND: f64 = 5.12;
+    /// Shared `inertia` used by this module.
     const INERTIA: f64 = 0.72;
+    /// Shared `cognitive` used by this module.
     const COGNITIVE: f64 = 1.49;
+    /// Shared `social` used by this module.
     const SOCIAL: f64 = 1.49;
 
     let mut rng = StdRng::seed_from_u64(seed);
@@ -100,13 +109,14 @@ fn main() {
     println!("minimum near {best:.4?}, f = {value:.4}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
+
 pub fn run() {
     main();
 }
-
 /// Verifies that the seeded swarm gets close to the global minimum and that
+
 /// the same seed gives the same answer.
 #[test]
 fn test_particle_swarm_is_reproducible_with_seed() {

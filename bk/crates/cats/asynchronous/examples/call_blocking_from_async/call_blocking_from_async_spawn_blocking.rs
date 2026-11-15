@@ -9,8 +9,8 @@
 //! separate pool meant for that, and you await the result.
 
 /// This example demonstrates how to call a blocking function from an
-/// asynchronous context using `tokio::task::spawn_blocking`.
 ///
+/// asynchronous context using `tokio::task::spawn_blocking`.
 /// In asynchronous programming, blocking operations can halt the progress of
 /// the entire asynchronous runtime. To avoid this,
 /// `tokio::task::spawn_blocking` allows us to offload blocking tasks to a
@@ -34,6 +34,9 @@ async fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -49,6 +52,8 @@ mod tests {
         main();
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     #[tokio::test]
     async fn spawn_blocking_returns_the_closure_result() -> Result<(), Box<dyn std::error::Error>> {
         let value = tokio::task::spawn_blocking(|| 6 * 7).await?;

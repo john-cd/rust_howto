@@ -14,11 +14,14 @@ use std::error::Error;
 use pollster::block_on;
 use wgpu::util::DeviceExt;
 
+/// Shared `compute shader` used by this module.
 const COMPUTE_SHADER: &str = "
 @group(0) @binding(0)
 var<storage, read_write> values: array<u32>;
 
 @compute @workgroup_size(64)
+/// # Arguments
+/// * `id` - Identifier used to select the wgpu record or cache entry affected by this operation.
 fn double_values(@builtin(global_invocation_id) id: vec3<u32>) {
     if (id.x < arrayLength(&values)) {
         values[id.x] *= 2u;
@@ -26,20 +29,23 @@ fn double_values(@builtin(global_invocation_id) id: vec3<u32>) {
 }
 ";
 
+/// Shared `input` used by this module.
 const INPUT_VALUES: [u32; 8] = [1, 2, 3, 4, 5, 6, 7, 8];
+/// Shared `workgroup size` used by this module.
 const WORKGROUP_SIZE: u32 = 64;
 
 /// Runs the compute example.
 fn main() -> Result<(), Box<dyn Error>> {
     block_on(run_compute())
 }
-
 /// Requests a headless device, doubles the storage-buffer values, and reads
 /// them back.
+
 #[expect(
     clippy::little_endian_bytes,
     reason = "WGSL u32 storage buffers use little-endian byte order"
 )]
+/// Runs compute.
 async fn run_compute() -> Result<(), Box<dyn Error>> {
     let mut instance_desc = wgpu::InstanceDescriptor::new_without_display_handle();
     instance_desc.backends = wgpu::Backends::PRIMARY;
@@ -129,9 +135,8 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Maps a staging buffer and converts its little-endian words to `u32` values.
-///
+
 /// # Errors
 ///
 /// Returns an error if mapping, device polling, callback delivery, or byte
@@ -140,6 +145,7 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
     clippy::little_endian_bytes,
     reason = "WGSL u32 storage buffers use little-endian byte order"
 )]
+/// Reads u32 values.
 fn read_u32_values(
     device: &wgpu::Device,
     buffer: &wgpu::Buffer,
@@ -169,15 +175,20 @@ fn read_u32_values(
 }
 
 /// Runs the example's asynchronous compute workflow on a blocking executor.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
 
+/// value.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies the embedded WGSL shader parses and validates without a GPU.
+    /// value.
+    /// Exercises the complete compute workflow on an available GPU adapter.
     #[test]
     fn test_compute_shader_is_valid_wgsl() {
         let module = naga::front::wgsl::parse_str(COMPUTE_SHADER)
@@ -191,15 +202,13 @@ mod tests {
             .expect("the example shader should pass Naga validation");
     }
 
-    /// Verifies the headless compute pipeline doubles each storage-buffer
-    /// value.
     #[test]
     #[ignore = "requires a compatible GPU adapter"]
     fn test_compute_doubles_storage_values() -> Result<(), Box<dyn Error>> {
         run()
     }
-
     /// Exercises the complete compute workflow on an available GPU adapter.
+
     #[test]
     #[ignore = "requires a compatible GPU adapter"]
     fn test_main_entry_point() -> Result<(), Box<dyn Error>> {

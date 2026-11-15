@@ -18,8 +18,9 @@
 
 use ustr::Ustr;
 use ustr::ustr;
-
+/// Runs the example.
 /// Creates interned strings and compares them.
+
 fn main() {
     // Creating `Ustr` instances.
     // `Ustr` is the main type representing an interned string.
@@ -88,8 +89,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -5,10 +5,17 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Enums with unit-like, struct-like and tuple-like variants.
 mod enums;
+/// `strum` provides derive macros that automatically implement various traits for your enums,
+/// making it easy to convert them to and from strings, iterate
 mod strum;
+/// Parse and print config values with `serialize_all` and
 mod strum_case;
+/// Labels and tooltips for a settings menu with `strum`'s `EnumMessage`, and the variant list with
+/// `IntoEnumIterator`, `VariantNames` and `EnumCount`.
 mod strum_messages;
+/// Attach arbitrary constant properties to variants with `EnumProperty`.
 mod strum_props;
 
 /// Command-line arguments.
@@ -61,8 +68,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -82,7 +90,6 @@ mod tests {
         "strum_case",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

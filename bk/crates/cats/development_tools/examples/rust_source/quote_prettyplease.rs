@@ -10,6 +10,8 @@
 use quote::format_ident;
 use quote::quote;
 
+/// # Errors
+/// An error is returned if parse2 fails.
 fn main() -> syn::Result<()> {
     // Splice values into the generated code with `#name`.
     let name = format_ident!("add_one");
@@ -29,6 +31,9 @@ fn main() -> syn::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> syn::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

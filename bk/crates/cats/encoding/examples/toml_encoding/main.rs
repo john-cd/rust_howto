@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// The following demonstrates TOML decoding.
 mod toml;
+/// This example demonstrates how to deserialize TOML data into Rust structs.
 mod toml1;
 
 /// Command-line arguments.
@@ -56,7 +58,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["toml", "toml1"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

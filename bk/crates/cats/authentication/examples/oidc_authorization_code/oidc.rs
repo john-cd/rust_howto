@@ -94,9 +94,12 @@ type Client = CoreClient<
     EndpointMaybeSet,
     EndpointMaybeSet,
 >;
-
 /// Builds the client from provider metadata that the application configured
+
 /// itself: no discovery request is made.
+
+/// # Errors
+/// Returns an error if the build client operation cannot satisfy its required invariants.
 fn build_client(issuer: &str) -> anyhow::Result<Client> {
     let metadata = CoreProviderMetadata::new(
         IssuerUrl::new(issuer.to_owned())?,
@@ -200,8 +203,8 @@ fn sign(claims: &serde_json::Value, secret: &str) -> anyhow::Result<String> {
         &EncodingKey::from_secret(secret.as_bytes()),
     )?)
 }
-
 /// A token endpoint that checks the PKCE verifier and returns `id_token`.
+
 fn token_endpoint(
     id_token: String,
     expected_verifier: String,
@@ -255,6 +258,9 @@ fn main() -> anyhow::Result<()> {
 }
 
 /// The current Unix time in seconds.
+///
+/// # Panics
+/// Panics if the clock is after 1970.
 fn unix_now() -> i64 {
     let elapsed = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
@@ -264,10 +270,14 @@ fn unix_now() -> i64 {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// The happy path yields the verified identity.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -322,8 +332,8 @@ mod tests {
             unix_now() + 3600,
         )
     }
-
     /// The authorization URL carries state, nonce and an S256 challenge.
+
     #[test]
     fn main_completes_a_simulated_login() {
         assert!(main().is_ok());

@@ -27,13 +27,15 @@ fn split_path(path: &str) -> (&str, &str, &str) {
 
     (first, second, third)
 }
-
+/// Runs the example.
 /// Runs the sample path splitting example.
+
 fn main() {
     run_example();
 }
-
+/// Runs example.
 /// Splits a sample path and prints the parts.
+
 fn run_example() {
     let path = "src/playground/examples/split.rs";
     let (first, second, third) = split_path(path);
@@ -44,12 +46,14 @@ fn run_example() {
     println!("Third segment: {third}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the path splitting example for the workspace test harness.
+
 pub fn run() {
     run_example();
 }
 
+/// Verifies that the path splitting example entry point runs.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -60,7 +64,6 @@ mod tests {
         main();
     }
 
-    /// Verifies the split of a path with at least three separators.
     #[test]
     fn splits_sample_path() {
         assert_eq!(
@@ -69,7 +72,6 @@ mod tests {
         );
     }
 
-    /// Verifies the partial results for short paths.
     #[test]
     fn short_paths_leave_trailing_parts_empty() {
         assert_eq!(split_path(""), ("", "", ""));

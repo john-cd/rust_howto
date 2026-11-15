@@ -47,7 +47,6 @@ fn main() -> anyhow::Result<()> {
 /// Compresses a source file to gzip and restores it to another temporary file.
 ///
 /// # Errors
-///
 /// Returns an error if a temporary file cannot be created or any file
 /// operation or compression step fails.
 fn gzip_file_round_trip() -> anyhow::Result<()> {
@@ -89,11 +88,15 @@ fn gzip_file_round_trip() -> anyhow::Result<()> {
 // ANCHOR_END: gzip-file
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()?;
     gzip_file_round_trip()
 }
 
+/// Checks the in-memory and temporary-file compression round trips.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -28,8 +28,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -43,6 +44,7 @@ mod tests {
     fn test_slice_as_argument_example_entry_point() {
         main();
     }
+    /// Verifies sum.
 
     /// `sum` works on vectors, arrays and sub-slices, including empty ones.
     #[test]

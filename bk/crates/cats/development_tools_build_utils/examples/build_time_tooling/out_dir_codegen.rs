@@ -14,8 +14,9 @@ fn main() {
     println!("{GENERATED_MESSAGE}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the generated-source example.
+
 pub fn run() {
     main();
 }
@@ -25,7 +26,6 @@ mod tests {
     use super::GENERATED_MESSAGE;
     use super::main;
 
-    /// Verifies that generated source is written to `OUT_DIR` and included.
     #[test]
     fn generated_message_is_available_to_rust_code() {
         assert_eq!(GENERATED_MESSAGE, "Generated during the Cargo build.");

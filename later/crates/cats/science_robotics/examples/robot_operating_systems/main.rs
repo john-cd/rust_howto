@@ -2,11 +2,11 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Publish and receive `std_msgs/String` messages with a ROS 2 node.
 #[cfg(feature = "ros2")]
 mod ros2_pubsub;
 
 /// Publishes and receives ROS 2 messages in a sourced ROS 2 environment.
-///
 /// # Errors
 /// Returns ROS initialization, communication, or receive timeout failures.
 fn main() -> anyhow::Result<()> {

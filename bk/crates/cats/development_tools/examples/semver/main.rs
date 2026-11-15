@@ -5,10 +5,18 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Check whether an external command reports a version that meets a
 mod semver_command;
+/// Demonstrates parsing, comparing, and serializing complex semantic version
 mod semver_complex;
+/// This example demonstrates how to find the maximum matching version from a list of versions based
+/// on a given version requirement string, using the `semver` crate.
 mod semver_latest;
+/// Turns semver input into structured syntax data while preserving source locations and reporting
+/// malformed input. Analysis and validation code use these routines before applying domain-specific
+/// rules.
 mod semver_parse;
+/// Demonstrates how to work with pre-release versions using the `semver` crate.
 mod semver_prerelease;
 
 /// Command-line arguments.
@@ -84,7 +92,6 @@ mod tests {
         "semver_prerelease",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

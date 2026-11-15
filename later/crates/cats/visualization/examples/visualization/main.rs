@@ -2,8 +2,11 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Demonstrates a Leptos component that renders a chart with
 mod leptos_chartistry;
+/// This example demonstrates how to create a simple scatter plot using the
 mod plotly;
+/// Demonstrates rendering a 2D line plot into an SVG string using `plotters`.
 mod plotters;
 
 /// Runs the visualization example.
@@ -14,11 +17,11 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     Ok(())
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     fn test_main_entry_point() {

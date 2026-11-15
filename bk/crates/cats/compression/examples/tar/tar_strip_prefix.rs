@@ -88,10 +88,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Strips the shared archive prefix and writes the file beneath a temp dir.
 #[cfg(test)]
 mod tests {
     use std::fs;
@@ -178,6 +182,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if main_extracts_the_sample_archive, create_archive fails.
     #[test]
     fn main_extracts_the_sample_archive() -> anyhow::Result<()> {
         fs::create_dir_all("temp")?;

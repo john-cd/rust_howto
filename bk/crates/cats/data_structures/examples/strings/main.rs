@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates basic usage of the `bytes` crate.
 mod bytes;
+/// Formatting strings with `print!`, `format!` and `write!`.
 mod string_format;
+/// This example demonstrates common string types in Rust.
 mod strings;
 
 /// Command-line arguments.
@@ -47,8 +50,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -62,7 +66,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["bytes", "string_format", "strings"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

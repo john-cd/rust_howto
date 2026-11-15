@@ -9,6 +9,10 @@
 //! like any public API.
 
 /// Greets the caller by name.
+///
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected mod.
+
 pub fn greet(name: &str) -> String {
     format!("Hello, {name}! Welcome to Tauri.")
 }
@@ -35,7 +39,6 @@ mod tests {
         main();
     }
 
-    /// Verifies the command returns a greeting for the supplied name.
     #[test]
     fn greets_named_caller() {
         assert_eq!(greet("Ferris"), "Hello, Ferris! Welcome to Tauri.");

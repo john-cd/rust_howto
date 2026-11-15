@@ -37,10 +37,14 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
 
+/// Verifies the example with environment values isolated in a child process.
 #[cfg(test)]
 mod tests {
     use std::process::Command;
@@ -64,7 +68,6 @@ mod tests {
         Ok(())
     }
 
-    /// Runs the example in the child with values supplied by its parent.
     #[test]
     #[ignore = "needs a parent-controlled environment"]
     fn child_reads_controlled_environment() {

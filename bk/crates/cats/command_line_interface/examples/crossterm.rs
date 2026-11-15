@@ -93,6 +93,14 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -105,6 +113,8 @@ mod tests {
         main()
     }
 
+    /// # Errors
+    /// An error is returned if Clear, from_utf8 fails.
     #[test]
     fn terminal_commands_produce_the_expected_escape_sequences() -> anyhow::Result<()> {
         let mut out: Vec<u8> = Vec::new();

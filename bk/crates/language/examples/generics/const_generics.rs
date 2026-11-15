@@ -19,13 +19,13 @@ impl<T: std::marker::Copy, const N: usize> InnerArray<T, N> {
         Self([val; N])
     }
 
-    /// Returns the length of the array.
     fn len(&self) -> usize {
         N // The size N is known at compile time.
     }
 }
-
+/// Runs the example.
 /// Creates an array with a const generic length and prints it.
+
 fn main() {
     // Use a type with a const generic.
     let array: InnerArray<i32, 3> = InnerArray::new(42);
@@ -36,8 +36,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -9,6 +9,7 @@
 //! defines the rules, which double-click selection and word counting follow.
 
 use unicode_segmentation::UnicodeSegmentation;
+/// Runs the example.
 
 fn main() -> anyhow::Result<()> {
     let text = "Café déjà-vu: naïve 日本語 can't stop, won't stop.";
@@ -35,6 +36,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

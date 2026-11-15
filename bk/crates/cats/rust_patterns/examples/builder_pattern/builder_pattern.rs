@@ -99,8 +99,9 @@ impl DatabaseConfigBuilder {
         }
     }
 }
-
+/// Runs the example.
 /// Builds a configuration with the builder and prints it.
+
 fn main() {
     // Create a builder struct.
     // `DatabaseConfig::build` is a shortcut for `DatabaseConfigBuilder::new`.
@@ -126,8 +127,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

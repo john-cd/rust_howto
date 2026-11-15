@@ -1,7 +1,6 @@
-// TODO Reviewed ??-??-2026.
-
-// ANCHOR: pus-telemetry
 //! Create and read a PUS-C connection-test telemetry packet.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use arbitrary_int::u11;
 use spacepackets::SpHeader;
@@ -10,9 +9,8 @@ use spacepackets::ecss::tm::MessageTypeId;
 use spacepackets::ecss::tm::PusTmCreator;
 use spacepackets::ecss::tm::PusTmReader;
 use spacepackets::ecss::tm::PusTmSecondaryHeader;
-
 /// Serializes a service 17 telemetry response and checks the decoded fields.
-///
+
 /// Telemetry is data flowing from the spacecraft to the ground. This packet is
 /// the spacecraft's answer to the connection-test telecommand (service 17,
 /// subtype 1): service 17, subtype 2 means "connection test report".
@@ -40,7 +38,6 @@ pub fn pus_telemetry() {
 
 #[cfg(test)]
 mod tests {
-    /// Checks a PUS telemetry packet survives serialization and decoding.
     #[test]
     fn telemetry_round_trips() {
         super::pus_telemetry();

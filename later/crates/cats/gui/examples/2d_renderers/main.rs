@@ -5,8 +5,10 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Draw a vector shape in an OpenGL window with FemtoVG.
 #[cfg(feature = "femtovg")]
 mod femtovg;
+/// Draw shapes into an in-memory image with `skia-safe` (CPU raster, no GPU or
 #[cfg(feature = "skia")]
 mod skia_safe;
 
@@ -57,7 +59,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

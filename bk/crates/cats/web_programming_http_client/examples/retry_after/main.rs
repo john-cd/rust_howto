@@ -1,16 +1,16 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Honour `429 Too Many Requests` and `Retry-After`.
 //!
 //!
 //! A server that is overloaded or rate limiting you answers `429 Too Many
 //! Requests`, often with a `Retry-After` header that says how long to wait.
 //! Honouring it, instead of retrying at once, avoids being blocked and gives
-//! the server time to recover.
-
-// ANCHOR: example
-//! Retry after the delay the server asks for, when it asks for one.
 //!
+//! the server time to recover.
+//!
+//! Retry after the delay the server asks for, when it asks for one.
 //! `Retry-After` is either a number of seconds or an HTTP date; this example
 //! parses the seconds form. [`backon`] computes the next delay, and
 //! `adjust` replaces it with the server's value.
@@ -27,11 +27,15 @@ use reqwest::header::RETRY_AFTER;
 /// A transient failure, with the delay requested by the server, if any.
 #[derive(Debug)]
 struct Throttled {
+    /// Current lifecycle value used to decide which throttled operations are valid.
     status: StatusCode,
+    /// Optional retry after used by throttled; `None` means the value is not configured or
+    /// unavailable.
     retry_after: Option<Duration>,
 }
 
 impl fmt::Display for Throttled {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "transient failure: {}", self.status)
     }
@@ -43,7 +47,6 @@ impl std::error::Error for Throttled {}
 fn parse_retry_after(value: &str) -> Option<Duration> {
     value.trim().parse().ok().map(Duration::from_secs)
 }
-
 /// Fetches `url`; fails on `429` and `503`, keeping any `Retry-After`.
 async fn fetch(url: &str) -> Result<String> {
     let response = reqwest::get(url).await?;
@@ -83,6 +86,8 @@ async fn fetch_with_retry_after(url: &str) -> Result<String> {
         .await
 }
 
+/// # Errors
+/// An error is returned if a fallible operation fails.
 #[tokio::main]
 async fn main() -> Result<()> {
     let body = fetch_with_retry_after("https://example.com").await?;
@@ -91,6 +96,15 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<()> {
+    main()
+}
+
+/// Panics if an internal invariant is violated.
 #[cfg(test)]
 mod tests {
     use std::time::Instant;
@@ -103,6 +117,11 @@ mod tests {
         assert_eq!(parse_retry_after("Wed, 21 Oct 2026 07:28:00 GMT"), None);
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
+    ///
+    /// # Panics
+    /// Panics if an internal invariant is violated.
     #[tokio::test]
     async fn waits_for_the_requested_delay() -> Result<()> {
         let mut server = mockito::Server::new_async().await;
@@ -131,6 +150,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Panics
+    /// Panics if an internal invariant is violated.
     #[tokio::test]
     async fn does_not_retry_client_errors() -> Result<()> {
         let mut server = mockito::Server::new_async().await;

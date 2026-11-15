@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates a simple HTTP GET request using the `reqwest`
 mod get;
+/// This example demonstrates a simple HTTP GET request using the `reqwest`
 mod get1;
+/// Demonstrates how to set headers in HTTP requests using the `reqwest` crate.
 mod header;
 
 /// Command-line arguments.
@@ -64,7 +67,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["get", "get1", "header"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

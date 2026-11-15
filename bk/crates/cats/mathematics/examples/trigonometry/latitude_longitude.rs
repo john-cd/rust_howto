@@ -58,8 +58,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -83,7 +84,6 @@ mod tests {
         assert!((distance - std::f64::consts::PI * 6371.0).abs() < 1e-9);
     }
 
-    /// Verifies zero distance for coincident points and about 344 km from Paris
     /// to London.
     #[test]
     fn distance_matches_coincident_points_and_paris_to_london() {

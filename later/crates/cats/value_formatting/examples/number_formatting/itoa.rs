@@ -8,8 +8,9 @@
 //! in code that prints millions of numbers, such as serializers.
 
 use itoa::Buffer;
-
+/// Runs the example.
 /// Formats an integer into a reusable stack buffer.
+
 fn main() {
     let mut buffer = Buffer::new();
     let formatted = buffer.format(1_234_567);
@@ -18,6 +19,7 @@ fn main() {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     // Call through a binding: calling `main` directly trips
@@ -30,7 +32,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies that `itoa` renders an integer without grouping separators.
     #[test]
     fn integer_output_is_stable() {
         let mut buffer = Buffer::new();

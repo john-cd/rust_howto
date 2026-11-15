@@ -5,9 +5,13 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Calculates the mean of a set of numbers.
 mod central_tendency;
+/// Computing the median of a list of integers with quickselect.
 mod central_tendency1;
+/// Calculates the mode of a dataset.
 mod central_tendency2;
+/// Computing the mean and the standard deviation of a list of integers.
 mod standard_deviation;
 
 /// Command-line arguments.
@@ -54,8 +58,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -74,7 +79,6 @@ mod tests {
         "standard_deviation",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

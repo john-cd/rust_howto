@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Example of using the `hyper` low-level HTTP client to fetch a URL.
 mod hyper;
+/// This example demonstrates a simple HTTP GET request using the `ureq` crate.
 mod ureq;
 
 /// Command-line arguments.
@@ -57,7 +59,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["hyper", "ureq"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

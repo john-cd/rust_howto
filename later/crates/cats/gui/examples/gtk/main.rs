@@ -7,8 +7,10 @@ use clap::Parser;
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 use clap::Subcommand;
 
+/// A GTK 4 application with a button and a label.
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 mod gtk4;
+/// A counter application with `relm4`.
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 mod relm4;
 
@@ -32,8 +34,9 @@ enum Commands {
     #[command(name = "relm4")]
     Relm4,
 }
-
+/// Runs the example.
 /// Runs the example selected on the command line.
+
 fn main() {
     run_with_args(std::env::args_os());
 }
@@ -69,13 +72,13 @@ where
     eprintln!("GTK examples are disabled on Windows.");
 }
 
+/// Tests the `main` example and its documented behavior.
 #[cfg(all(test, feature = "gtk", not(target_os = "windows")))]
 mod tests {
     use clap::CommandFactory as _;
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

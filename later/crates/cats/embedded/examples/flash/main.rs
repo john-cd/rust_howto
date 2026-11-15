@@ -1,12 +1,17 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+//! Starts the flash application and connects its top-level components.
+//! The executable uses this module to initialize services and hand control to the application.
+
 use embedded_storage::nor_flash::ErrorType;
 use embedded_storage::nor_flash::NorFlash;
 use embedded_storage::nor_flash::NorFlashError;
 use embedded_storage::nor_flash::NorFlashErrorKind;
 use embedded_storage::nor_flash::ReadNorFlash;
 
+/// Defines the outcomes available to the flash workflow, including out of bounds, unaligned, needs
+/// erase.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum FlashError {
     OutOfBounds,
@@ -15,7 +20,7 @@ enum FlashError {
 }
 
 impl core::fmt::Display for FlashError {
-    /// Formats the simulated NOR flash error for diagnostics.
+    /// Formats the value for display.
     fn fmt(&self, formatter: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(formatter, "NOR flash operation failed: {self:?}")
     }
@@ -30,7 +35,9 @@ impl NorFlashError for FlashError {
     }
 }
 
+/// State required by `RamNorFlash` during transport operations.
 struct RamNorFlash {
+    /// Byte representation of the value.
     bytes: [u8; 16],
 }
 
@@ -42,10 +49,12 @@ impl Default for RamNorFlash {
 }
 
 impl ErrorType for RamNorFlash {
+    /// Shared `read size` used by this module.
     type Error = FlashError;
 }
 
 impl ReadNorFlash for RamNorFlash {
+    /// Shared `read size` used by this module.
     const READ_SIZE: usize = 1;
 
     /// Copies bytes from the in-memory flash region.
@@ -59,14 +68,15 @@ impl ReadNorFlash for RamNorFlash {
         Ok(())
     }
 
-    /// Returns the capacity of the in-memory flash region in bytes.
     fn capacity(&self) -> usize {
         self.bytes.len()
     }
 }
 
 impl NorFlash for RamNorFlash {
+    /// Shared `erase size` used by this module.
     const ERASE_SIZE: usize = 8;
+    /// Shared `write size` used by this module.
     const WRITE_SIZE: usize = 2;
 
     /// Programs bytes only when every bit transition is from one to zero.
@@ -112,8 +122,8 @@ impl NorFlash for RamNorFlash {
 fn main() -> anyhow::Result<()> {
     run_example()
 }
-
 /// Stores and reads a record through the in-memory NOR flash model.
+
 fn run_example() -> anyhow::Result<()> {
     let mut flash = RamNorFlash::default();
     flash.erase(0, 8)?;
@@ -126,10 +136,16 @@ fn run_example() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the book example from the example crate's module runner.
+/// Starts the flash application and connects its top-level components. The executable uses this
+/// module to initialize services and hand control to the application.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     run_example()
 }
 
+/// Verifies the example entry point stores and reads its record.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -140,9 +156,8 @@ mod tests {
     fn test_embedded_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
-    /// Verifies NOR flash rejects zero-to-one programming until the block is
     /// erased.
+
     #[test]
     fn requires_erase_before_zero_to_one_write() {
         let mut flash = RamNorFlash::default();

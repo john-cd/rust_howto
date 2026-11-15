@@ -10,7 +10,10 @@
 use short_uuid::ShortUuid;
 
 /// Generates a short UUID and converts it to and from a regular UUID.
-pub fn run() -> anyhow::Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> anyhow::Result<()> {
     // A random (v4) UUID in a shorter, URL-safe form.
     let short = ShortUuid::generate();
     let text = short.to_string();
@@ -31,6 +34,14 @@ pub fn run() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    example_body()
+}
 
 #[cfg(test)]
 mod tests {

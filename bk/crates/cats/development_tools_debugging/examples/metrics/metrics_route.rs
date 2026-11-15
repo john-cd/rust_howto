@@ -32,10 +32,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the Axum `/metrics` route example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that the `/metrics` route returns the recorded series.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;

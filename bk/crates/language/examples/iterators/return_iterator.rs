@@ -13,8 +13,8 @@ fn count_up_to(max: i32) -> impl Iterator<Item = i32> {
 }
 // You could also return a boxed trait object e.g.,
 // `Box<dyn Iterator<Item = T>>`.
-
 /// Iterates over the numbers returned by `count_up_to`.
+
 fn main() {
     let my_iterator = count_up_to(5);
 
@@ -24,8 +24,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

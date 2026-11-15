@@ -49,12 +49,14 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Checks case-insensitive parsing and serde-compatible names.
 #[cfg(test)]
 mod tests {
     use super::*;

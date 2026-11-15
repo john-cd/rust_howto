@@ -12,8 +12,8 @@ unsafe extern "C" {
     /// Multiplies two integers in the bundled C++ implementation.
     fn multiply(x: i32, y: i32) -> i32;
 }
-
 /// Safely multiplies two integers with the bundled C++ function.
+
 fn multiply_from_cpp(left: i32, right: i32) -> Option<i32> {
     let expected = left.checked_mul(right)?;
     // SAFETY: the build script links the matching implementation, and the
@@ -29,17 +29,18 @@ fn main() {
     println!("6 * 7 = {product:?}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the bundled C++ multiplication example.
+
 pub fn run() {
     main();
 }
 
+/// crate.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies multiplication and rejection of overflowing inputs.
     #[test]
     fn bundled_cpp_function_multiplies_values() {
         assert_eq!(multiply_from_cpp(6, 7), Some(42));

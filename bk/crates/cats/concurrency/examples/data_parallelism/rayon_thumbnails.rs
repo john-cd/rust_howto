@@ -74,10 +74,14 @@ fn make_thumbnail(original: &Path, output_dir: &Path, longest_edge: u32) -> Resu
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Creates sample JPEGs in a temporary directory and verifies each output.
 #[cfg(test)]
 mod tests {
     use std::fs;
@@ -119,7 +123,8 @@ mod tests {
         }
     }
 
-    #[test]
+    /// # Errors
+    /// An error is returned if empty_input_directory_is_an_error fails.
     fn empty_input_directory_is_an_error() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
         let err =
@@ -129,6 +134,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if corrupt_image_reports_its_path, write fails.
     #[test]
     fn corrupt_image_reports_its_path() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;

@@ -66,11 +66,16 @@ fn main() -> Result<(), baseview::Error> {
     window.run_until_closed()
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() -> Result<(), baseview::Error> {
     main()
 }
 
+/// Checks the window defaults.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -60,8 +60,9 @@ impl Ord for Version {
         }
     }
 }
-
+/// Runs the example.
 /// Compares versions with the comparison operators and sorts them.
+
 fn main() {
     let v1 = Version {
         major: 1,
@@ -124,6 +125,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `ord` example runs.
 
     #[test]
     fn test_ord_example_entry_point() {
@@ -137,6 +139,7 @@ mod tests {
             patch,
         }
     }
+    /// Verifies cmp compares fields in order.
 
     #[test]
     fn test_cmp_compares_fields_in_order() {
@@ -145,6 +148,7 @@ mod tests {
         assert_eq!(v(1, 2, 3).cmp(&v(1, 2, 4)), Ordering::Less);
         assert_eq!(v(1, 2, 3).cmp(&v(1, 2, 3)), Ordering::Equal);
     }
+    /// Verifies partial cmp and operators.
 
     #[test]
     fn test_partial_cmp_and_operators() {
@@ -153,6 +157,7 @@ mod tests {
         assert!(v(2, 0, 0) > v(1, 9, 9));
         assert!(v(1, 0, 0) <= v(1, 0, 0));
     }
+    /// Verifies max min and sort.
 
     #[test]
     fn test_max_min_and_sort() {

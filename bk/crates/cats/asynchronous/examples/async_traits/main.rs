@@ -5,11 +5,19 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// A native `async fn` in a trait (AFIT), called through generics.
 mod afit;
+/// `#[async_trait]` for trait objects.
 mod async_trait_dyn;
+/// An `async fn` in a trait, implemented by a health checker.
 mod async_traits;
+/// Return-position `impl Trait` in a trait method.
 mod async_traits2;
+/// Asynchronous trait methods with the `async_trait` crate.
 mod async_traits3;
+/// Making the futures of a trait method `Send` so the trait can be used with `tokio::spawn`: either
+/// declare `-> impl Future<Output = T> + Send`, or let `trait_variant` generate a `Send` version of
+/// the trait.
 mod rpitit_send;
 
 /// Command-line arguments.
@@ -68,8 +76,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -90,7 +99,6 @@ mod tests {
         "async_trait_dyn",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

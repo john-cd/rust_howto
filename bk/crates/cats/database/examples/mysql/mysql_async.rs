@@ -51,10 +51,14 @@ async fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the MySQL connection and query workflow.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies parameterized queries against a configured MySQL server.
 #[cfg(test)]
 mod tests {
     use super::*;

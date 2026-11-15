@@ -5,6 +5,7 @@
 //! accessed through an immutable reference. It is most often used for types
 //! that implement the `Copy` trait, allowing for simple value replacement
 //! without needing to use references or mutable references.
+
 use std::cell::Cell;
 
 /// A struct with a field that can be modified through a shared reference.
@@ -45,8 +46,9 @@ impl<T: Default> MyStruct<T> {
         self.value.take()
     }
 }
-
+/// Runs the example.
 /// Reads and modifies a `Cell` through a shared reference.
+
 fn main() {
     let my_int_struct = MyStruct::new(42);
     let my_int_ref = &my_int_struct;
@@ -79,8 +81,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -88,11 +91,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `cell` example runs.
 
     #[test]
     fn test_cell_example_entry_point() {
         main();
     }
+    /// Verifies set through a shared reference.
 
     #[test]
     fn test_set_through_a_shared_reference() {
@@ -102,6 +107,7 @@ mod tests {
         r.set_value(100);
         assert_eq!(s.get_value(), 100);
     }
+    /// Verifies take leaves the default value.
 
     #[test]
     fn test_take_leaves_the_default_value() {
@@ -109,6 +115,7 @@ mod tests {
         assert_eq!(s.take_value(), "example");
         assert_eq!(s.take_value(), "");
     }
+    /// Verifies replace and into inner.
 
     #[test]
     fn test_replace_and_into_inner() {

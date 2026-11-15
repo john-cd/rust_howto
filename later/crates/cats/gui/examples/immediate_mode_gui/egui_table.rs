@@ -58,6 +58,9 @@ fn show_table(ui: &mut egui::Ui, row_count: usize) -> usize {
 struct TableApp;
 
 impl eframe::App for TableApp {
+    /// # Arguments
+    /// * `ui` - Mutable ui whose state is updated by this operation.
+    /// * `_frame` - Mutable frame whose state is updated by this operation.
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
         egui::CentralPanel::default().show(ui, |ui| {
             show_table(ui, 10_000);
@@ -74,8 +77,8 @@ fn run_in_window() -> eframe::Result {
         Box::new(|_cc| Ok(Box::new(TableApp))),
     )
 }
-
 /// Lays out the table for one frame without a window.
+
 fn main() {
     let ctx = egui::Context::default();
     let mut built = 0;
@@ -97,6 +100,7 @@ fn main() {
     println!("{built} of 10000 rows were built");
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

@@ -45,8 +45,9 @@ fn do_frame_work() -> u64 {
     }
     total
 }
-
+/// Runs the example.
 /// Runs a few frames of an application loop.
+
 fn main() {
     let status = start_profiler(ADDRESS);
     if let ProfilerStatus::Failed(error) = &status {
@@ -64,8 +65,9 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -73,6 +75,7 @@ pub fn run() {
     entry();
 }
 
+/// Checks that the example can run without starting a server.
 #[cfg(test)]
 mod tests {
     use super::*;

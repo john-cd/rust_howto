@@ -42,10 +42,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the file-dialog example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Opens a native file dialog for manual testing.
 #[cfg(test)]
 mod tests {
     use std::fs::OpenOptions;
@@ -61,8 +65,8 @@ mod tests {
     fn test_rfd_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Reads file contents selected in the dialog without opening a dialog.
+
     #[test]
     fn reads_selected_file_contents() -> anyhow::Result<()> {
         let timestamp = SystemTime::now()

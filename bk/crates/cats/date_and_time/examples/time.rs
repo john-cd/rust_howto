@@ -19,7 +19,6 @@ use time::macros::format_description;
 /// Demonstrate various functionalities of the `time` crate.
 ///
 /// # Errors
-///
 /// Returns an error if a date, format description, or formatted value is
 /// invalid.
 fn main() -> anyhow::Result<()> {
@@ -55,6 +54,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the `time` crate example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -62,6 +64,7 @@ pub fn run() -> anyhow::Result<()> {
     entry()
 }
 
+/// Verifies fixed-date parsing, formatting, and arithmetic.
 #[cfg(test)]
 mod tests {
     use super::*;

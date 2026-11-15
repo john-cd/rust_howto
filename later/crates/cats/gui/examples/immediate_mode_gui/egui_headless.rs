@@ -7,11 +7,14 @@
 //! in continuous integration.
 
 use eframe::egui;
-
 /// Runs `add_contents` for one frame on a virtual 800 x 600 screen.
 ///
 /// Returns the output of the frame: the shapes to paint, the platform
+
 /// commands such as the clipboard text, and so on.
+
+/// # Arguments
+/// * `ctx` - Application state and services required to perform the operation.
 pub fn run_frame(ctx: &egui::Context, add_contents: impl FnMut(&mut egui::Ui)) -> egui::FullOutput {
     let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
     let input = egui::RawInput {
@@ -40,6 +43,7 @@ fn main() {
     assert!(!output.shapes.is_empty());
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

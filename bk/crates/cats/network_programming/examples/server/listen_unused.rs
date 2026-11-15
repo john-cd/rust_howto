@@ -52,10 +52,14 @@ fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()
 }
 
+/// Verifies that reads one local connection and returns.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -85,8 +89,8 @@ mod tests {
     fn require_external_client() -> Result<(), Error> {
         main()
     }
-
     /// A client that sends nothing yields an empty string.
+
     #[test]
     fn empty_connection_yields_empty_input() -> Result<(), Error> {
         let listener = TcpListener::bind((Ipv4Addr::LOCALHOST, 0))?;

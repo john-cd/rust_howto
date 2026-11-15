@@ -6,9 +6,12 @@ use anyhow::Result;
 use clap::Parser;
 use clap::Subcommand;
 
+/// Forecast a seasonal time series with `augurs`: MSTL removes the seasonal
 mod forecast;
+/// Run an ONNX model trained elsewhere (here, a scikit-learn logistic
 #[cfg(feature = "onnx")]
 mod onnx_infer;
+/// Train a logistic regression classifier in Rust with `smartcore`.
 mod smartcore_fit;
 
 /// Command-line arguments.
@@ -38,8 +41,8 @@ enum Commands {
 fn main() -> Result<()> {
     dispatch(Cli::parse())
 }
-
 /// Runs the example selected in the parsed command line.
+
 fn dispatch(cli: Cli) -> Result<()> {
     if let Some(command) = cli.command {
         match command {
@@ -59,7 +62,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

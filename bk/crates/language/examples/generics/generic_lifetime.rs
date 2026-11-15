@@ -23,8 +23,9 @@ impl<'a, T> DataHolder<'a, T> {
         self.data
     }
 }
-
+/// Runs the example.
 /// Creates a holder around a reference and reads it back.
+
 fn main() {
     // `T` is `u8`.
     let data = DataHolder { data: &10u8 };
@@ -42,17 +43,18 @@ pub fn run() {
     main();
 }
 
+/// The holder returns the reference it was given, even for unsized types.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the generic lifetime example through its entry point.
+    /// The holder returns the reference it was given, even for unsized types.
     #[test]
     fn test_generic_lifetime_example_entry_point() {
         main();
     }
 
-    /// The holder returns the reference it was given, even for unsized types.
+    /// Verifies data holder.
     #[test]
     fn test_data_holder() {
         let value = 10_u8;

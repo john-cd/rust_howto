@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates a simple HTTP server that can be exposed to the
 mod ngrok;
+/// Run a local HTTP reverse proxy with Pingora.
 #[cfg(target_family = "unix")]
 mod pingora;
 
@@ -64,7 +66,6 @@ mod tests {
         "pingora",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

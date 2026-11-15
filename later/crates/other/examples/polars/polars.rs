@@ -50,11 +50,9 @@ fn summarize_and_join_sales() -> anyhow::Result<(DataFrame, DataFrame)> {
 
     Ok((summary, joined))
 }
-
 /// Runs the example and prints the aggregate and joined data frames.
-///
+
 /// # Errors
-///
 /// Returns an error if Polars cannot evaluate the query.
 fn main() -> anyhow::Result<()> {
     let (summary, joined) = summarize_and_join_sales()?;
@@ -62,16 +60,15 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the Polars example.
-///
+
 /// # Errors
-///
 /// Returns an error if Polars cannot evaluate the query.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies the aggregation values and joined row count for inline data.
 #[cfg(test)]
 mod tests {
     use super::main;

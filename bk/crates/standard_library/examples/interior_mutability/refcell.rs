@@ -55,8 +55,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -64,11 +65,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `refcell` example runs.
 
     #[test]
     fn test_refcell_example_entry_point() {
         main();
     }
+    /// Verifies many immutable borrows are allowed.
 
     #[test]
     fn test_many_immutable_borrows_are_allowed() {
@@ -78,6 +81,7 @@ mod tests {
         assert_eq!(*a, *b);
         assert!(data.try_borrow_mut().is_err());
     }
+    /// Verifies mutable borrow is exclusive.
 
     #[test]
     fn test_mutable_borrow_is_exclusive() {

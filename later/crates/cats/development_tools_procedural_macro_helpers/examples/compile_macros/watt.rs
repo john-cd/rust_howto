@@ -15,8 +15,10 @@ use syn::ItemFn;
 /// Renames a parsed function to show the token transformation a macro performs.
 ///
 /// # Errors
-///
 /// Returns an error when `input` does not contain a valid Rust function.
+///
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested watt operation.
 fn rename_function(input: TokenStream) -> anyhow::Result<TokenStream> {
     let mut function: ItemFn = syn::parse2(input)?;
     function.sig.ident = format_ident!("watt_{}", function.sig.ident);
@@ -26,7 +28,6 @@ fn rename_function(input: TokenStream) -> anyhow::Result<TokenStream> {
 /// Prints the generated function as formatted Rust source.
 ///
 /// # Errors
-///
 /// Returns an error if parsing or formatting the generated function fails.
 fn main() -> anyhow::Result<()> {
     let input = quote! {
@@ -41,16 +42,15 @@ fn main() -> anyhow::Result<()> {
 }
 
 // ANCHOR_END: example
-
 /// Runs the token-transformation example.
-///
+
 /// # Errors
-///
 /// Returns an error if the sample function cannot be parsed or formatted.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that a function is renamed and its body is preserved.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -59,10 +59,12 @@ mod tests {
     #[test]
     fn renames_function_and_preserves_body() -> anyhow::Result<()> {
         let input = quote! {
-            fn calculate() -> u32 {
-                6 * 7
-            }
-        };
+        /// Calculates the current value.
+                    ///
+                    fn calculate() -> u32 {
+                        6 * 7
+                    }
+                };
         let generated = rename_function(input)?;
         let function: ItemFn = syn::parse2(generated)?;
 

@@ -38,6 +38,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Removing drops the secret; styling keeps it.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -155,21 +155,29 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Tests the `trace context` example and its documented behavior.
 #[cfg(all(test, feature = "opentelemetry"))]
 mod entry_tests {
     use super::*;
 
     /// The entry point runs without a collector.
+
+    /// # Panics
+    /// Panics if the in-memory exporter needs no network.
     #[test]
     fn main_runs_offline() {
         run_with_in_memory_exporter().expect("the in-memory exporter needs no network");
     }
 }
 
+/// Tests the `trace context` example and its documented behavior.
 #[cfg(all(test, feature = "opentelemetry"))]
 mod tests {
     use http::HeaderValue;
@@ -178,8 +186,10 @@ mod tests {
 
     use super::*;
 
-    /// Runs `body` with a subscriber that exports to memory, then returns the
     /// finished spans.
+
+    /// # Panics
+    /// Panics if flush should succeed.
     fn collect_spans(body: impl FnOnce()) -> Vec<SpanData> {
         let (provider, exporter) = in_memory_tracing();
         let subscriber = tracing_subscriber::registry().with(
@@ -194,7 +204,6 @@ mod tests {
         spans
     }
 
-    /// Finds a finished span by name.
     fn span_named<'a>(spans: &'a [SpanData], name: &str) -> &'a SpanData {
         spans
             .iter()

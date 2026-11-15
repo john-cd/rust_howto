@@ -5,12 +5,19 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Lazily initializes a single-threaded value with `std::cell::LazyCell`.
 mod lazy_cell;
+/// Demonstrates a lazily initialized global map with `std::sync::LazyLock`.
 mod lazy_constant;
+/// Lazily initializes shared global data with `std::sync::LazyLock`.
 mod lazy_lock;
+/// `lazy_static` defines statically initialized values that are computed lazily at runtime.
 mod lazy_static;
+/// Lazy initialization of a value with `OnceCell`.
 mod once_cell;
+/// Lazily initializes a shared value with the `once_cell` crate.
 mod once_cell2;
+/// Initializes a shared value once with `std::sync::OnceLock`.
 mod once_lock;
 
 /// Command-line arguments.
@@ -94,7 +101,6 @@ mod tests {
         "once_lock",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

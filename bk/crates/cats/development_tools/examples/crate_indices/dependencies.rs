@@ -11,7 +11,10 @@ use anyhow::Result;
 use crate::fixtures::create_fixture;
 
 /// Prints the sorted dependency names found in the local fixture workspace.
-pub fn run() -> Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> Result<()> {
     let fixture = create_fixture()?;
     let workspace = fixture.path().join("workspace");
     let dependencies = tool_lib::get_dependencies(workspace)?;
@@ -20,6 +23,15 @@ pub fn run() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<()> {
+    example_body()
+}
+
+/// Verifies that dependency discovery reads and sorts local manifests.
 #[cfg(test)]
 mod tests {
     use super::*;

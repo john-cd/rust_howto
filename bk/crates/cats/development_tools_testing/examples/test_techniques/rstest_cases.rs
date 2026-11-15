@@ -22,6 +22,13 @@ fn parse_seconds(text: &str) -> Option<u64> {
 // ANCHOR_END: example
 
 /// Parses a few durations; the tests below are parameterized.
+/// Parses a representative duration with the example parser.
+pub fn run() -> Option<u64> {
+    parse_seconds("1m")
+}
+
+/// Runs the example.
+
 fn main() {
     for text in ["90s", "5m", "2h", "5x"] {
         println!("{text:?} -> {:?}", parse_seconds(text));
@@ -50,12 +57,13 @@ mod tests {
 
     // A fixture builds shared test data; tests receive it by argument name.
     /// Supplies representative durations for parameterized tests.
+
     #[fixture]
     fn inputs() -> Vec<&'static str> {
         vec!["1s", "1m", "1h"]
     }
-
     /// Checks that durations increase as the unit gets larger.
+
     #[rstest]
     fn units_increase(inputs: Vec<&str>) {
         let seconds: Vec<u64> = inputs.iter().filter_map(|s| parse_seconds(s)).collect();
@@ -63,7 +71,8 @@ mod tests {
     }
 
     // `#[values]` runs every combination.
-    /// Checks that zero remains zero with each supported unit.
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested rstest cases operation.
     #[rstest]
     fn zero_is_zero(#[values("0s", "0m", "0h")] input: &str) {
         assert_eq!(parse_seconds(input), Some(0));

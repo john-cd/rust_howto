@@ -1,11 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! # Crux Core Example
 //!
 //! This example keeps a counter's state transitions in a platform-independent
 //! core.
 
-// ANCHOR: example
 use crux_core::App;
 use crux_core::Command;
 use crux_core::render::render;
@@ -69,8 +69,10 @@ impl App for Counter {
         }
     }
 }
-
+/// Runs the example.
+/// # Crux Core Example
 /// Runs two increments through Crux's in-process core and prints its view.
+
 fn main() {
     let core = crux_core::Core::<Counter>::new();
     core.process_event(Event::Increment);
@@ -78,8 +80,10 @@ fn main() {
     println!("{}", core.view().count);
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 /// Exposes this example to the crate's dispatcher.
+/// # Crux Core Example
 pub fn run() {
     main();
 }
@@ -99,7 +103,6 @@ mod tests {
         main();
     }
 
-    /// Verifies two increments update the view and request a render each time.
     #[test]
     fn increments_update_view_and_request_render() {
         let app = Counter;

@@ -1,7 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
-//! Lists the serial ports that the operating system reports.
 // ANCHOR: example
+//! Lists the serial ports that the operating system reports.
+
 use serialport::SerialPortInfo;
 use serialport::SerialPortType;
 
@@ -19,7 +20,6 @@ fn describe(port: &SerialPortInfo) -> String {
 }
 
 /// Prints each serial port. Nothing is opened, so no device is disturbed.
-///
 /// A machine without serial ports yields an empty list; a platform without
 /// enumeration support, or a missing permission, yields an error that the
 /// application should report rather than treat as fatal.
@@ -36,6 +36,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Lists the serial ports that the operating system reports.
+fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use serialport::UsbPortInfo;
@@ -50,7 +55,6 @@ mod tests {
         main();
     }
 
-    /// Verifies a USB port is described with its vendor and product ids.
     #[test]
     fn describes_a_usb_port() {
         let port = SerialPortInfo {
@@ -66,7 +70,6 @@ mod tests {
         assert_eq!(describe(&port), "/dev/ttyACM0 (USB 2341:0043)");
     }
 
-    /// Verifies a port of unknown type is still described by name.
     #[test]
     fn describes_an_unknown_port() {
         let port = SerialPortInfo {

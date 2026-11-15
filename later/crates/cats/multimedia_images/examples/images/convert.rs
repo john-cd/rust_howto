@@ -16,6 +16,9 @@ use image::Rgb;
 use image::RgbImage;
 
 /// Encodes a small image in two formats without creating files.
+///
+/// # Errors
+/// Returns an error if either image encoder fails.
 fn main() -> image::ImageResult<()> {
     let image = DynamicImage::ImageRgb8(RgbImage::from_pixel(2, 2, Rgb([40, 80, 120])));
     for format in [ImageFormat::Png, ImageFormat::Jpeg] {
@@ -28,6 +31,9 @@ fn main() -> image::ImageResult<()> {
 // ANCHOR_END: example
 
 /// Runs the in-memory image encoding example.
+///
+/// # Errors
+/// Returns an error if PNG or JPEG encoding fails.
 pub fn run() -> image::ImageResult<()> {
     main()
 }

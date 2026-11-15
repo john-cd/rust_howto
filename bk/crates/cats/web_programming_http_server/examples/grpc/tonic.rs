@@ -37,6 +37,8 @@ pub struct MyGreeter {}
 
 #[tonic::async_trait]
 impl Greeter for MyGreeter {
+    /// # Arguments
+    /// * `request` - Input data whose fields determine the requested my greeter operation.
     async fn say_hello(
         &self,
         request: Request<HelloRequest>,
@@ -68,10 +70,14 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies the greeting returned by the service implementation.
 #[cfg(test)]
 mod tests {
     use super::*;

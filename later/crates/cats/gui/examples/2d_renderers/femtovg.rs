@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Draw a vector shape in an OpenGL window with FemtoVG.
 //!
 //! FemtoVG is a 2D vector graphics library (paths, fills, strokes, text) that
@@ -27,14 +28,16 @@ use winit::event_loop::ControlFlow;
 use winit::event_loop::EventLoop;
 use winit::window::Window;
 use winit::window::WindowId;
-
 /// Creates a nonzero surface dimension, clamping minimized windows to one
+
 /// pixel.
+
+/// # Panics
+/// Panics if a positive dimension is nonzero.
 fn nonzero_dimension(dimension: u32) -> NonZeroU32 {
     NonZeroU32::new(dimension.max(1)).expect("a positive dimension is nonzero")
 }
 
-// ANCHOR: example
 use femtovg::Canvas;
 use femtovg::Color;
 use femtovg::Paint;
@@ -45,8 +48,8 @@ use femtovg::renderer::OpenGl;
 fn triangle_points() -> [(f32, f32); 4] {
     [(70.0, 70.0), (270.0, 70.0), (230.0, 210.0), (110.0, 210.0)]
 }
-
 /// Draws one colorful vector shape into a FemtoVG canvas.
+
 fn draw_frame(canvas: &mut Canvas<OpenGl>, width: u32, height: u32, scale: f32) {
     canvas.set_size(width, height, scale);
     canvas.clear_rect(0, 0, width, height, Color::rgb(28, 32, 42));
@@ -61,12 +64,15 @@ fn draw_frame(canvas: &mut Canvas<OpenGl>, width: u32, height: u32, scale: f32) 
     canvas.fill_path(&path, &Paint::color(Color::rgb(55, 190, 150)));
     canvas.flush();
 }
-// ANCHOR_END: example
 
 struct FemtoVgApp {
+    /// Window value.
     window: Window,
+    /// Surface value.
     surface: Surface<WindowSurface>,
+    /// Context value.
     context: PossiblyCurrentContext,
+    /// Canvas value.
     canvas: Canvas<OpenGl>,
 }
 
@@ -75,6 +81,7 @@ impl ApplicationHandler for FemtoVgApp {
     fn resumed(&mut self, _event_loop: &ActiveEventLoop) {}
 
     /// Handles resize, redraw, and close events for the renderer.
+
     fn window_event(
         &mut self,
         event_loop: &ActiveEventLoop,
@@ -118,6 +125,19 @@ impl ApplicationHandler for FemtoVgApp {
 }
 
 /// Opens an OpenGL window and renders a simple FemtoVG path until it closes.
+/// Starts the interactive window example as a Cargo example target.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn main() -> Result<()> {
+    run()
+}
+// ANCHOR_END: example
+
+/// Draw a vector shape in an OpenGL window with FemtoVG.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     let event_loop = EventLoop::new()?;
     let (window, config) = DisplayBuilder::new()
@@ -170,11 +190,7 @@ pub fn run() -> Result<()> {
     event_loop.run_app(&mut app)?;
     Ok(())
 }
-
 /// Starts the interactive window example as a Cargo example target.
-pub fn main() -> Result<()> {
-    run()
-}
 
 /// The interactive renderer requires a desktop display and OpenGL context.
 #[cfg(test)]

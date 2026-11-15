@@ -1,6 +1,6 @@
 //! Demonstrates how to use `darling`, `proc-macro2`, `syn`, and `quote`
-//! outside of a `proc-macro` crate.
 //!
+//! outside of a `proc-macro` crate.
 //! This example parses a simple struct syntax tree, generates a `Debug`
 //! implementation, and prints the resulting token stream.
 //!
@@ -9,10 +9,15 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Parse derive attributes with a declarative `darling` input model.
 mod darling;
+/// Concatenating identifiers in macros with `paste`.
 mod paste;
+/// `proc_macro2` mirrors the compiler's token API, but works in ordinary Rust crates and tests.
 mod proc_macro2;
+/// Generate a struct and typed getters from field syntax using `quote`.
 mod quote;
+/// `syn` parses a token stream into Rust syntax-tree types such as `DeriveInput`.
 mod syn;
 
 /// Command-line arguments.
@@ -47,8 +52,8 @@ enum Commands {
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     dispatch(Cli::parse())
 }
-
 /// Runs the example selected in the parsed command line.
+
 fn dispatch(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
     match cli.command {
         Commands::Darling => {
@@ -76,7 +81,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

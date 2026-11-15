@@ -80,23 +80,25 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Every kind of type got the default method.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the trait types example through its entry point.
+    /// Every kind of type got the default method.
     #[test]
     fn test_trait_types_example_entry_point() {
         main();
     }
 
-    /// Every kind of type got the default method.
+    /// Verifies default method on each type.
     #[test]
     fn test_default_method_on_each_type() {
         MyEnum::A.foo();

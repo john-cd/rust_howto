@@ -9,16 +9,20 @@
 //! for CPU-bound work on large collections.
 
 use rayon::prelude::*;
-
 /// Calculates the sum of the squares of the elements in the input slice.
-///
+
 /// This function uses Rayon's parallel iterator to efficiently compute the sum
 /// of squares across multiple threads.
+///
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested multithreading rayon operation.
 fn sum_of_squares(input: &[i32]) -> i32 {
     input.par_iter().map(|i| i * i).sum()
 }
-
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested multithreading rayon operation.
 /// Adds one to each element of `input`, in parallel.
+
 fn increment_all(input: &mut [i32]) {
     input.par_iter_mut().for_each(|p| *p += 1);
 }
@@ -31,8 +35,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

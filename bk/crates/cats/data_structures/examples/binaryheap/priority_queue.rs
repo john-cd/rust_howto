@@ -138,8 +138,9 @@ fn advanced_usage() {
         println!("{item}");
     }
 }
-
+/// Runs the example.
 /// Runs the priority queue example.
+
 fn main() {
     basic_usage();
     min_priority_queue();
@@ -148,8 +149,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

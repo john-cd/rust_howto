@@ -81,10 +81,14 @@ fn main() -> Result<(), io::Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), io::Error> {
     main()
 }
 
+/// Verifies that the read file example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;

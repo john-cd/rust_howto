@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Builds and renders a simple Vello 2D scene.
 //!
 //! Vello is a 2D renderer that does most of its work on the GPU, using compute
@@ -91,26 +92,14 @@ async fn render_scene() -> Result<()> {
 
     Ok(())
 }
-
-/// Renders the example scene into a GPU texture.
+/// Runs the Vello renderer example.
 ///
 /// # Errors
-///
-/// Returns an error if GPU setup or rendering fails.
-pub fn run() -> Result<()> {
-    block_on(render_scene())
-}
-
-/// Runs the Vello example through its entry point.
-///
-/// # Errors
-///
 /// Returns an error if GPU setup or rendering fails.
 fn main() -> Result<()> {
     run()
 }
 
-// ANCHOR: example
 /// Builds a scene containing a filled rectangle, a circle, and a stroked path.
 fn build_scene() -> Scene {
     use vello::kurbo::BezPath;
@@ -159,6 +148,15 @@ fn build_scene() -> Scene {
 }
 // ANCHOR_END: example
 
+/// Builds and renders a simple Vello 2D scene.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn run() -> Result<()> {
+    block_on(render_scene())
+}
+
+/// Confirms scene-building encodes drawing commands without creating a GPU.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -170,7 +168,6 @@ mod tests {
         assert!(!scene.encoding().is_empty());
     }
 
-    /// Renders the Vello example when a compatible GPU adapter is available.
     #[test]
     #[ignore = "requires a compatible GPU adapter"]
     fn vello_renderer_entry_point_renders_with_a_gpu() -> Result<()> {

@@ -23,6 +23,9 @@ fn main() -> Result<(), NormalError> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), NormalError> {
     main()
 }
@@ -30,6 +33,7 @@ pub fn run() -> Result<(), NormalError> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `rand distr` example runs.
 
     #[test]
     fn test_rand_distr_example_entry_point() {

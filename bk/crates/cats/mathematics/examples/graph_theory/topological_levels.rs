@@ -60,12 +60,13 @@ fn topological_levels<N, E>(
 
     Ok(levels)
 }
-
 /// Calculates task totals in parallel for each ready DAG level.
-///
+
 /// # Errors
-///
 /// Returns an error if the task graph contains a cycle.
+///
+/// # Panics
+/// Panics if each prerequisite is evaluated in an earlier level.
 fn calculate_task_levels() -> Result<Vec<Vec<u32>>, Cycle<NodeIndex>> {
     let mut graph = DiGraph::<u32, ()>::new();
     let fetch = graph.add_node(2);
@@ -111,8 +112,9 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
+
 pub fn run() {
     main();
 }
@@ -136,8 +138,6 @@ mod tests {
 
     use super::main;
 
-    /// Checks that every edge in a generated DAG points forward in the order.
-    /// Runs the topological-levels example through its entry point.
     #[test]
     fn generated_dag_edges_follow_topological_order() {
         let mut runner = TestRunner::default();

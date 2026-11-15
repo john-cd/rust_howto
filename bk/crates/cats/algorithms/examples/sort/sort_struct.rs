@@ -25,8 +25,9 @@ impl Person {
         Self { name, age }
     }
 }
-
+/// Sorts a vector of structs, by their derived order and by a chosen field.
 /// Sorts a vector of `Person`s in several ways and prints the results.
+
 fn main() {
     let mut people = vec![
         Person::new("Zoe".to_owned(), 25),
@@ -81,10 +82,10 @@ fn main() {
 
     println!("{people:?}");
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.
+/// Sorts a vector of structs, by their derived order and by a chosen field.
 pub fn run() {
     main();
 }

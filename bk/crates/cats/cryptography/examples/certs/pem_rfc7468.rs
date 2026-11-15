@@ -29,10 +29,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()
 }
 
+/// The example runs end to end.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -43,8 +47,8 @@ mod tests {
     fn test_pem_rfc7468_example_entry_point() -> Result<(), Box<dyn std::error::Error>> {
         main()
     }
-
     /// The document has the RFC 7468 boundary lines and a base64 body.
+
     #[test]
     fn encoded_document_has_boundary_lines() -> Result<(), Box<dyn std::error::Error>> {
         let pem = encode_string("TEST DATA", LineEnding::LF, &[0x30, 0x03, 0x02, 0x01, 0x2a])?;

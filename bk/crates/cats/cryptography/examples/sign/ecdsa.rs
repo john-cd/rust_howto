@@ -18,7 +18,6 @@ use rand::rngs::SysRng;
 /// Signs a message with a random P-256 key and verifies the signature.
 ///
 /// # Errors
-///
 /// Returns an error if secure randomness is unavailable or the signature
 /// cannot be parsed or verified.
 fn main() -> anyhow::Result<()> {
@@ -50,30 +49,30 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// The example runs end to end.
 #[cfg(test)]
 mod tests {
     use super::*;
 
     /// The example runs end to end.
-    ///
     /// # Errors
-    ///
     /// Returns an error if key generation, signature parsing, or verification
     /// fails.
     #[test]
     fn test_ecdsa_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// A signature made with one key does not verify under another key.
-    ///
     /// # Errors
-    ///
     /// Returns an error if secure randomness is unavailable.
+
     #[test]
     fn wrong_key_is_rejected() -> anyhow::Result<()> {
         let mut rng = SysRng;
@@ -86,9 +85,7 @@ mod tests {
 
     /// RFC 6979 makes signing deterministic: same key and message, same
     /// signature.
-    ///
     /// # Errors
-    ///
     /// Returns an error if secure randomness is unavailable.
     #[test]
     fn signing_is_deterministic() -> anyhow::Result<()> {
@@ -100,9 +97,7 @@ mod tests {
     }
 
     /// The compressed SEC1 public key is 33 bytes and parses back.
-    ///
     /// # Errors
-    ///
     /// Returns an error if secure randomness is unavailable or the encoded key
     /// cannot be parsed.
     #[test]

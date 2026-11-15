@@ -57,11 +57,9 @@ fn generate_struct(struct_name: &Ident, fields: &[syn::Field]) -> Result<TokenSt
     });
     Ok(tokens)
 }
-
 /// Formats the generated `Point` struct and its getter methods.
-///
+
 /// # Errors
-///
 /// Returns an error if generation or Rust syntax parsing fails.
 fn generated_source() -> Result<String> {
     let struct_name = format_ident!("Point");
@@ -74,31 +72,26 @@ fn generated_source() -> Result<String> {
 /// Prints a readable generated struct and its getters.
 ///
 /// # Errors
-///
 /// Returns an error if code generation or parsing fails.
 fn main() -> Result<()> {
     println!("{}", generated_source()?);
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the `quote` generation example.
-///
+
 /// # Errors
-///
 /// Returns an error if code generation or parsing fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Returns an error if generated Rust syntax cannot be parsed.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that generated code contains a typed getter for each field.
-    ///
     /// # Errors
-    ///
     /// Returns an error if generated Rust syntax cannot be parsed.
     #[test]
     fn generates_struct_getters() -> Result<()> {

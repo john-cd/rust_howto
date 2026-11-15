@@ -21,8 +21,6 @@ impl Span {
         (start <= end).then_some(Self { start, end })
     }
 
-    /// # Returns
-    ///
     /// # Panics
     /// Panics if `start <= end` guarantees a positive length.
     fn len(&self) -> u64 {
@@ -84,41 +82,36 @@ mod tests {
     }
 
     proptest! {
-    /// Performs the union contains both operation.
-            #[test]
-            fn union_contains_both(a in any_span(), b in any_span()) {
-                let u = a.union(&b);
-                prop_assert!(u.start <= a.start && a.end <= u.end);
-                prop_assert!(u.start <= b.start && b.end <= u.end);
-            }
-    /// Performs the union is commutative operation.
-
-            #[test]
-            fn union_is_commutative(a in any_span(), b in any_span()) {
-                prop_assert_eq!(a.union(&b), b.union(&a));
-            }
-    /// Performs the overlap is symmetric operation.
-
-            #[test]
-            fn overlap_is_symmetric(a in any_span(), b in any_span()) {
-                prop_assert_eq!(a.overlaps(&b), b.overlaps(&a));
-            }
-    /// Performs the disjoint union is not smaller operation.
-
-            #[test]
-            fn disjoint_union_is_not_smaller(a in any_span(), b in any_span()) {
-                prop_assume!(!a.overlaps(&b));
-                prop_assert!(a.union(&b).len() >= a.len() + b.len());
-            }
-
-            // `new` rejects exactly the inverted ranges.
-            /// Checks that construction succeeds exactly when endpoints are ordered.
-            #[test]
-            fn new_matches_ordering(start in any::<i32>(), end in any::<i32>()) {
-                prop_assert_eq!(Span::new(start, end).is_some(), start <= end);
-            }
+        #[test]
+        fn union_contains_both(a in any_span(), b in any_span()) {
+            let u = a.union(&b);
+            prop_assert!(u.start <= a.start && a.end <= u.end);
+            prop_assert!(u.start <= b.start && b.end <= u.end);
         }
-    /// Verifies main entry point.
+
+        #[test]
+        fn union_is_commutative(a in any_span(), b in any_span()) {
+            prop_assert_eq!(a.union(&b), b.union(&a));
+        }
+
+        #[test]
+        fn overlap_is_symmetric(a in any_span(), b in any_span()) {
+            prop_assert_eq!(a.overlaps(&b), b.overlaps(&a));
+        }
+
+        #[test]
+        fn disjoint_union_is_not_smaller(a in any_span(), b in any_span()) {
+            prop_assume!(!a.overlaps(&b));
+            prop_assert!(a.union(&b).len() >= a.len() + b.len());
+        }
+
+        // `new` rejects exactly the inverted ranges.
+        /// Checks that construction succeeds exactly when endpoints are ordered.
+        #[test]
+        fn new_matches_ordering(start in any::<i32>(), end in any::<i32>()) {
+            prop_assert_eq!(Span::new(start, end).is_some(), start <= end);
+        }
+    }
 
     #[test]
     fn test_main_entry_point() {

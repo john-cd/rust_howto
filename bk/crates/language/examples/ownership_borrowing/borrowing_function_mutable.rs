@@ -5,6 +5,9 @@
 
 /// This function takes a mutable reference `&mut` to a `String`
 /// and appends ", world" to it.
+///
+/// # Arguments
+/// * `some_string` - Mutable string whose state is updated by this operation.
 fn change(some_string: &mut String) {
     some_string.push_str(", world"); // Modifies the string in place.
     println!("{some_string}");
@@ -38,8 +41,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

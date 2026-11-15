@@ -22,6 +22,7 @@ use tokio_util::sync::CancellationToken;
 
 /// A clock that follows Tokio's (pausable) time: `start` plus elapsed time.
 struct Clock {
+    /// Start of the selected range.
     start: DateTime<Utc>,
     origin: tokio::time::Instant,
 }
@@ -40,9 +41,9 @@ impl Clock {
         self.start + self.origin.elapsed()
     }
 }
-
 /// Runs a scheduled job until cancellation and returns its simulated start
 /// times.
+
 async fn run_cron<F, Fut>(
     schedule: &Schedule,
     clock: &Clock,
@@ -111,10 +112,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// because each
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -131,6 +136,10 @@ mod tests {
         main()
     }
 
+    /// # Errors
+    /// An error is returned if cancelled_token_stops_the_loop_immediately fails.
+    /// # Panics
+    /// Panics if a valid date.
     #[tokio::test(start_paused = true)]
     async fn cancelled_token_stops_the_loop_immediately() -> anyhow::Result<()> {
         let schedule = Schedule::from_str("*/10 * * * * *")?;

@@ -35,10 +35,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies the serialized header and tuple fields are written in order.
 #[cfg(test)]
 mod tests {
     use super::*;

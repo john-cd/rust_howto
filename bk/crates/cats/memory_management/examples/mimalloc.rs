@@ -35,17 +35,22 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
+
+/// Allocations through the global allocator behave normally.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the mimalloc example through its entry point.
+    /// Allocations through the global allocator behave normally.
     #[test]
     fn test_mimalloc_example_entry_point() {
         main();
     }
 
-    /// Allocations through the global allocator behave normally.
     #[test]
     fn allocator_serves_large_vectors() {
         let v = vec![7_u8; 1024 * 1024];

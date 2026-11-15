@@ -5,10 +5,15 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Log telemetry fields for an `OpenObserve` integration.
 mod open_observe;
+/// Create a manual OpenTelemetry span and pair it with regular tracing output.
 mod open_telemetry;
+/// This example demonstrates basic usage of the `slog` logging crate.
 mod slog;
+/// Propagate a W3C trace context from an HTTP client to a handler, so both
 mod trace_context;
+/// Printing the type of a value with `type_name_of_val`.
 mod type_name_of_val;
 
 /// Command-line arguments.
@@ -83,7 +88,6 @@ mod tests {
         "type_name_of_val",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

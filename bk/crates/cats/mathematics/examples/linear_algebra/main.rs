@@ -5,16 +5,29 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates how to add two matrices using the `ndarray` crate.
 mod add_matrices;
+/// This example demonstrates how to serialize and deserialize a `DMatrix` using
 mod deserialize_matrix;
+/// This example demonstrates how to invert a 3x3 matrix using the `nalgebra`
 mod invert_matrix;
+/// This example demonstrates matrix multiplication using the `ndarray` crate.
 mod multiply_matrices;
+/// This example demonstrates how to multiply a scalar by a vector and then
 mod multiply_scalar_vector_matrix;
+/// This example demonstrates matrix decompositions using the `nalgebra` crate.
 mod nalgebra_decomposition;
+/// This example demonstrates transformations in 3D using the `nalgebra` crate:
 mod nalgebra_transformations;
+/// This example demonstrates vector operations using the `nalgebra` crate:
 mod nalgebra_vectors;
+/// Turns linear algebra input into structured syntax data while preserving source locations and
+/// reporting malformed input. Analysis and validation code use these routines before applying
+/// domain-specific rules.
 mod sparse_matrices;
+/// This example demonstrates how to compare vectors using the `approx` crate.
 mod vector_comparison;
+/// Computing the L1 and L2 norms of a vector, and normalizing it, with
 mod vector_norm;
 
 /// Command-line arguments.
@@ -132,7 +145,6 @@ mod tests {
         "vector_norm",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

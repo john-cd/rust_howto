@@ -8,8 +8,9 @@
 //! the overhead of threads makes it slower.
 
 use rayon::prelude::*;
-
+/// Runs the example.
 /// Sorts the vector in parallel using Rayon's `par_sort` method.
+
 fn main() {
     let mut v = [-5, 4, 1, -3, 2];
     v.par_sort();
@@ -17,8 +18,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

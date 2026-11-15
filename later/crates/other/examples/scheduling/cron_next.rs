@@ -59,10 +59,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies deterministic next-fire times and invalid expression handling.
 #[cfg(test)]
 mod tests {
     use super::*;

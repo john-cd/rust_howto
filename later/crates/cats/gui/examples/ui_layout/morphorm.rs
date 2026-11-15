@@ -94,6 +94,8 @@ impl Cache for SimpleCache {
         self.rects.get(node).map_or(0.0, |r| r.1)
     }
 
+    /// Changes the bounds held by the simple cache; subsequent operations use the updated value.
+
     fn set_bounds(&mut self, node: &Self::Node, posx: f32, posy: f32, width: f32, height: f32) {
         self.rects.insert(*node, (posx, posy, width, height));
     }
@@ -168,6 +170,7 @@ impl Node for Entity {
     }
 
     // Required methods with default/stub implementations
+
     fn visible(&self, _: &Self::Store) -> bool {
         true
     }
@@ -286,8 +289,9 @@ impl Node for Entity {
         None
     }
 }
-
+/// Runs the example entry point.
 /// Runs the Morphorm layout example.
+
 pub fn run() {
     main();
 }
@@ -296,7 +300,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies that the root and both children have the expected bounds.
     #[test]
     fn computes_positions_and_sizes_for_each_node() {
         let [root, fixed_child, stretch_child] = compute_layout();

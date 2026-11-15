@@ -1,8 +1,9 @@
-// TODO Reviewed ??-??-2026.
 #![expect(
     clippy::empty_enums,
     reason = "The example intentionally models an entity with no relations."
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Build `SeaORM` queries from an inline entity definition.
 //!
@@ -52,6 +53,8 @@ fn main() -> Result<(), DbErr> {
 }
 
 /// Builds representative insert and filtered select SQL for the posts entity.
+/// Assembles the queries from its component values so callers receive a ready-to-use result.
+
 fn build_queries() -> (String, String) {
     let insert_sql = post::Entity::insert(post::ActiveModel {
         id: NotSet,
@@ -71,6 +74,10 @@ fn build_queries() -> (String, String) {
 // ANCHOR_END: example
 
 /// Runs the example.
+/// Build `SeaORM` queries from an inline entity definition.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), DbErr> {
     main()
 }
@@ -79,8 +86,8 @@ pub fn run() -> Result<(), DbErr> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Inserts query contains post fields and values.
 
-    /// Inserts the configured title and content into the posts table.
     #[test]
     fn insert_query_contains_post_fields_and_values() {
         let (insert_sql, _) = build_queries();

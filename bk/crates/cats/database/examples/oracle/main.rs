@@ -7,10 +7,13 @@ use clap::Parser;
 #[cfg(any(feature = "oracle", feature = "sibyl"))]
 use clap::Subcommand;
 
+/// `diesel_oci` is a Diesel backend and connection implementation for Oracle
 #[cfg(feature = "oracle")]
 mod diesel_oci;
+/// Connect to Oracle, query user tables with bind variables, and print rows.
 #[cfg(feature = "oracle")]
 mod oracle;
+/// Connects to Oracle with Sibyl's blocking API and reads a value from `DUAL`.
 #[cfg(feature = "sibyl")]
 mod sibyl;
 
@@ -67,6 +70,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies command-line selection and execution of the documented examples.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -77,25 +81,27 @@ mod tests {
     fn test_main_is_a_no_op_without_features() {
         assert!(main().is_ok());
     }
+    /// Verifies diesel oci subcommand parses.
 
     #[cfg(feature = "oracle")]
     #[test]
     fn test_diesel_oci_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "diesel_oci"]).is_ok());
     }
+    /// Verifies oracle subcommand parses.
 
     #[cfg(feature = "oracle")]
     #[test]
     fn test_oracle_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "oracle"]).is_ok());
     }
+    /// Verifies sibyl subcommand parses.
 
     #[cfg(feature = "sibyl")]
     #[test]
     fn test_sibyl_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "sibyl"]).is_ok());
     }
-
     /// Unknown subcommands are rejected.
     #[cfg(any(feature = "oracle", feature = "sibyl"))]
     #[test]

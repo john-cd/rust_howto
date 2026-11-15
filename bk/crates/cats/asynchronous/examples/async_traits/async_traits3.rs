@@ -23,6 +23,7 @@ struct Modal;
 // Implement the `Advertisement` trait for the `Modal` struct:
 #[async_trait]
 impl Advertisement for Modal {
+    /// Runs the example entry point.
     async fn run(&self) {
         // Call the `render_fullscreen` method on `self` and await its
         // completion.
@@ -55,8 +56,9 @@ impl Modal {
 async fn remind_user_to_join_mailing_list() {
     println!("Please join our mailing list");
 }
-
+/// Runs the example.
 /// Runs an advertisement on the Tokio runtime.
+
 #[tokio::main]
 async fn main() {
     // Create an instance of `Modal` and call the `run` method, awaiting its
@@ -64,8 +66,9 @@ async fn main() {
     Modal.run().await;
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -77,6 +80,7 @@ mod tests {
     /// Runs the async traits3 example through its entry point.
     // output-only: the example only prints its steps; the other tests
     // check that each step completes.
+    /// Verifies that the `async traits3` example runs.
     #[test]
     fn test_async_traits3_example_entry_point() {
         main();

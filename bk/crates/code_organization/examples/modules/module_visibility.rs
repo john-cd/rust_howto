@@ -93,8 +93,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -108,6 +109,7 @@ mod tests {
     fn test_module_visibility_example_entry_point() {
         main();
     }
+    /// Verifies private items are usable in scope.
 
     #[test]
     fn test_private_items_are_usable_in_scope() {
@@ -118,6 +120,7 @@ mod tests {
             private_in_top_module()
         );
     }
+    /// Verifies public items through path and alias.
 
     #[test]
     fn test_public_items_through_path_and_alias() {

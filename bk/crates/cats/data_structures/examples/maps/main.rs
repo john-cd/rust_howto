@@ -5,9 +5,13 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// An `IndexMap`, a hash map that preserves insertion order.
 mod indexmap;
+/// A `LinkedHashMap`, a hash map that remembers insertion order.
 mod linked_hash_map;
+/// A `MultiMap`, which associates several values with one key.
 mod multimap;
+/// A `SlotMap`, which hands out stable keys on insertion.
 mod slotmap;
 
 /// Command-line arguments.
@@ -70,7 +74,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["indexmap", "linked_hash_map", "multimap", "slotmap"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

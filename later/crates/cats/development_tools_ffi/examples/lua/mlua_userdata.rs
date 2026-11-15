@@ -11,11 +11,18 @@ use mlua::prelude::*;
 
 /// A counter whose value is owned by Rust and exposed to Lua.
 struct Counter {
+    /// Value stored by this wrapper.
     value: i64,
 }
 
 impl LuaUserData for Counter {
     /// Registers methods that Lua scripts can call on the counter.
+    ///
+    /// # Arguments
+    /// * `methods` - Mutable m whose state is updated by this operation.
+
+    /// # Errors
+    /// Returns an error if a fallible operation cannot complete.
     fn add_methods<M: LuaUserDataMethods<Self>>(methods: &mut M) {
         methods.add_method_mut("increment", |_, this, amount: i64| {
             this.value += amount;
@@ -25,6 +32,9 @@ impl LuaUserData for Counter {
 }
 
 /// Creates userdata and calls its method from Lua.
+
+/// # Errors
+/// An error is returned if create_userdata, globals fails.
 fn main() -> LuaResult<()> {
     let lua = Lua::new();
     let counter = lua.create_userdata(Counter { value: 40 })?;
@@ -42,13 +52,15 @@ pub fn run() -> LuaResult<()> {
     main()
 }
 
+/// value.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that Lua can call the Rust userdata method and receive its
     /// value.
-    #[test]
+
+    /// # Errors
+    /// Returns an error if a fallible operation cannot complete.
     fn lua_calls_counter_method() -> LuaResult<()> {
         main()
     }

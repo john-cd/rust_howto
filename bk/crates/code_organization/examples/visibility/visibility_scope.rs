@@ -12,8 +12,8 @@ mod a {
         pub(crate) fn visible_in_crate() -> &'static str {
             "visible_in_crate"
         }
-
         /// A function visible in the parent module only.
+
         pub(super) fn visible_in_parent_module() {}
 
         /// A public nested module.
@@ -22,8 +22,8 @@ mod a {
             pub(in super::super) fn visible_in_a() {}
         }
     }
-
     /// Calls the functions visible in `a`.
+
     pub fn use_in_a() {
         b::visible_in_crate();
         b::visible_in_parent_module();
@@ -53,12 +53,14 @@ fn main() {
     );
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// `pub(super)` and `pub(crate)`.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -67,6 +69,7 @@ mod tests {
     fn test_main() {
         main();
     }
+    /// Verifies pub crate visible from other modules.
 
     #[test]
     fn test_pub_crate_visible_from_other_modules() {

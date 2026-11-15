@@ -30,6 +30,9 @@ use jni::sys::jstring;
 // so the JVM can find `mylib.dll`, `libmylib.so`, or `libmylib.dylib`.
 
 /// Formats the greeting independently of the JVM.
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested jni operation.
+
 pub fn hello(input: &str) -> String {
     format!("Hello, {input}!")
 }
@@ -57,18 +60,19 @@ pub extern "system" fn Java_HelloWorld_hello<'a>(
         .resolve::<ThrowRuntimeExAndDefault>()
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the JNI example logic without starting a JVM.
+
 pub fn run() {
     let msg = hello("World");
     println!("{msg}");
 }
 
+/// starting a JVM.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Checks the text returned by the native greeting function without
     /// starting a JVM.
     #[test]
     fn hello_preserves_the_java_caller_name() {

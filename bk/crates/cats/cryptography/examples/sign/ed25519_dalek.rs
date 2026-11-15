@@ -56,10 +56,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies Ed25519 signatures reject a changed message.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -85,6 +89,8 @@ mod tests {
         assert!(verifying_key.verify(b"Hello, world!", &tampered).is_err());
     }
 
+    /// # Errors
+    /// An error is returned if from_bytes fails.
     #[test]
     fn verifying_key_roundtrips_through_bytes() -> anyhow::Result<()> {
         let key = SigningKey::from_bytes(&[3u8; 32]).verifying_key();

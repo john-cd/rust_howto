@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Example of a slice as a function argument.
 mod slice_as_argument;
+/// A slice is a view into a contiguous sequence of elements in a collection.
 mod slices;
+/// String slice examples.
 mod string_slices;
 
 /// Command-line arguments.
@@ -47,8 +50,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -62,7 +66,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["slice_as_argument", "slices", "string_slices"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

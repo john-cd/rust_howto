@@ -14,8 +14,11 @@ use clap::Subcommand;
 #[cfg(test)]
 static CWD_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
 
+/// This function creates a gzip-compressed tar archive from a directory.
 mod tar_compress;
+/// Unpacking a gzip-compressed tar archive with `flate2` and `tar`.
 mod tar_decompress;
+/// Extract regular files from a gzipped tar archive after removing a shared path prefix.
 mod tar_strip_prefix;
 
 /// Command-line arguments.
@@ -60,6 +63,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies that strip prefix.
 #[cfg(test)]
 mod tests {
     use std::fs::File;

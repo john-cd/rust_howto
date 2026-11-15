@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Examples of use of the 'crates.io' API.
 mod crates_io;
 
 /// Runs the crate registries example.

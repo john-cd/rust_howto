@@ -143,6 +143,7 @@ impl App {
 /// This implementation of the `Widget` trait for `&App` defines how the
 /// application's UI is rendered.
 impl Widget for &App {
+    /// Renders the current value.
     fn render(self, area: Rect, buf: &mut Buffer) {
         // Create a layout with three vertical chunks using `Layout`.
         // Each chunk will hold a different widget.
@@ -205,6 +206,7 @@ impl MiddleWidget {
 
 impl Widget for MiddleWidget {
     // Draw a `Paragraph` widget with some example text.
+    /// Renders the current value.
     fn render(self, area: Rect, buf: &mut Buffer) {
         let text = Text::raw(self.text);
         let paragraph = Paragraph::new(text)
@@ -216,6 +218,12 @@ impl Widget for MiddleWidget {
 
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
+
+/// Verifies that handle key event.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -229,6 +237,10 @@ mod tests {
         // More tests here...
         Ok(())
     }
+    /// Renders the current value.
+
+    /// # Arguments
+    /// * `app` - Shared state and services used to complete the ratatui workflow.
 
     fn render(app: &App) -> String {
         let area = Rect::new(0, 0, 40, 12);
@@ -281,6 +293,7 @@ mod tests {
         assert!(text.contains("hello"));
         assert!(text.contains("Text"));
     }
+    /// Verifies that the `ratatui` example runs.
 
     #[test]
     #[ignore = "requires an interactive terminal and key input"]

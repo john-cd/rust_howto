@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Scoped threads borrow a local string and return values through their
 mod multithreading_scoped_threads;
+/// Spawn threads and collect their results through `JoinHandle::join`.
 mod multithreading_spawn_join;
+/// A named thread created with `std::thread::Builder`.
 mod thread_builder;
 
 /// Command-line arguments.
@@ -64,7 +67,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["scoped_threads", "spawn_join", "thread_builder"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

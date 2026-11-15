@@ -18,8 +18,9 @@
 
 use slog::Drain as _;
 use slog::o;
-
+/// Runs the example.
 /// Builds an asynchronous terminal logger and logs messages with it.
+
 fn main() {
     // Create a terminal decorator.
     let decorator = slog_term::TermDecorator::new().build();
@@ -68,8 +69,9 @@ fn perform_global_logging() {
     slog_scope::info!("Performing global work"; "task" => "global task");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

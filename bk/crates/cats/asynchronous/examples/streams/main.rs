@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Creating and consuming a `Stream` of numbers.
 mod streams;
+/// Demonstrates bounded concurrent processing with a deterministic stream.
 mod streams2;
+/// Processing a `Stream` of fallible asynchronous fetches with `futures_util`.
 mod streams3;
 
 /// Command-line arguments.
@@ -63,7 +66,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["streams", "streams2", "streams3"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

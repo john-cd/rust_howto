@@ -17,8 +17,9 @@ unsafe extern "C" {
     /// Returns the length of a null-terminated C string.
     fn strlen(s: *const c_char) -> usize;
 }
-
+/// Runs the example.
 /// Converts between Rust strings and C strings.
+
 fn main() {
     // 1. Call a FFI function that requires a C string.
 
@@ -57,6 +58,9 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }

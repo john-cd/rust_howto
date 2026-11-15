@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Connects to MySQL or MariaDB through a pool and runs parameterized queries.
 #[cfg(feature = "mysql")]
 mod mysql_async;
 
@@ -14,6 +15,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies that the `mysql_async` MySQL example when the `mysql` feature is enabled.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -25,7 +27,7 @@ mod tests {
         assert!(main().is_ok());
     }
 
-    /// Runs the example against a running MySQL server.
+    /// Connects to the configured MySQL server and runs the sample query.
     #[cfg(feature = "mysql")]
     #[test]
     #[ignore = "requires a running MySQL server"]

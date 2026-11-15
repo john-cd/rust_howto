@@ -47,10 +47,14 @@ fn main() -> Result<(), Unspecified> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Unspecified> {
     main()
 }
 
+/// Verifies that the hmac example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;

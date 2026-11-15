@@ -1,6 +1,6 @@
+#![allow(clippy::match_single_binding)]
 // TODO Reviewed ??-??-2026.
 
-#![allow(clippy::match_single_binding)]
 // ANCHOR: example
 //! Matching a struct against patterns.
 
@@ -39,10 +39,10 @@ fn main() {
     }
     // Note that the expressions after `=>` return `()`.
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.
+/// Matching a struct against patterns.
 pub fn run() {
     main();
 }

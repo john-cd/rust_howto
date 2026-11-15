@@ -19,8 +19,9 @@ use ringbuf::traits::Split;
 const CAPACITY: usize = 32;
 /// The total number of samples sent through the buffer.
 const TOTAL: usize = 500;
-
+/// Runs the example.
 /// Sends `TOTAL` samples through a heap-allocated ring buffer.
+
 fn main() {
     let rb = HeapRb::<f32>::new(CAPACITY);
     let (mut producer, mut consumer) = rb.split();
@@ -59,8 +60,9 @@ fn main() {
     );
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

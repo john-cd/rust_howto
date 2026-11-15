@@ -14,16 +14,15 @@ use tao::event::WindowEvent;
 use tao::event_loop::ControlFlow;
 use tao::event_loop::EventLoop;
 use tao::window::WindowBuilder;
-
+/// Determines whether close.
 /// Returns whether a window event requests that the application exit.
+
 fn should_close(event: &WindowEvent<'_>) -> bool {
     matches!(event, WindowEvent::CloseRequested)
 }
-
-/// Creates a window and runs its event loop.
+/// Creates a window and runs its event loop until the window is closed.
 ///
 /// # Errors
-///
 /// Returns an error if the operating system cannot create the window.
 fn main() -> Result<(), Box<dyn Error>> {
     let event_loop = EventLoop::new();
@@ -54,16 +53,15 @@ fn main() -> Result<(), Box<dyn Error>> {
     });
 }
 // ANCHOR_END: example
-
 /// Runs the Tao window example.
-///
+
 /// # Errors
-///
 /// Returns an error if the operating system cannot create the window.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
 
+/// Verifies that close requests exit while unrelated window events do not.
 #[cfg(test)]
 mod tests {
     use super::*;

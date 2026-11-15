@@ -61,9 +61,8 @@ fn request_protected_resource(
 
     Ok((response.text()?, expires_in))
 }
-
 /// Runs the client against local authorization and resource server mocks.
-///
+
 /// # Errors
 /// Returns an error if the token or resource request fails.
 fn main() -> anyhow::Result<()> {
@@ -103,16 +102,15 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the client-credentials example with its local mock servers.
-///
+
 /// # Errors
-///
 /// Returns an error if the mocked token or resource request fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// An error is returned if let fails.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -171,6 +169,8 @@ mod tests {
         );
     }
 
+    /// # Errors
+    /// An error is returned if let fails.
     #[test]
     fn missing_expiry_is_reported_as_none() -> anyhow::Result<()> {
         let auth_server = MockServer::start();

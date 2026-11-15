@@ -63,18 +63,24 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
 
+/// An error is returned if join, read fails.
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `cow alternatives` example runs.
 
     #[test]
     fn test_cow_alternatives_example_entry_point() {
         main();
     }
+    /// Verifies arc str is shared not copied.
 
     #[test]
     fn test_arc_str_is_shared_not_copied() {
@@ -84,6 +90,8 @@ mod tests {
         assert!(std::ptr::eq(&*s, &*clone));
     }
 
+    /// # Errors
+    /// An error is returned if join, read fails.
     #[test]
     fn test_rwlock_string_is_mutated_by_all_threads() -> Result<(), Box<dyn std::error::Error>> {
         let shared = Arc::new(RwLock::new("String".to_owned()));
@@ -104,6 +112,7 @@ mod tests {
         assert_eq!(*shared.read().map_err(|e| e.to_string())?, "String!!");
         Ok(())
     }
+    /// Verifies rc str and box str.
 
     #[test]
     fn test_rc_str_and_box_str() {

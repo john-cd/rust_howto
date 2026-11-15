@@ -1,8 +1,6 @@
+#![allow(clippy::same_name_method)]
 // TODO Reviewed ??-??-2026.
 
-// Slint's macro emits accessibility methods whose names match framework trait
-// methods.
-#![allow(clippy::same_name_method)]
 // ANCHOR: example
 //! A counter window defined with Slint.
 //!
@@ -10,6 +8,8 @@
 //! is compiled with the program. Properties declared there are bound to Rust
 //! code through callbacks and setters. It targets desktops and embedded
 //! devices.
+
+// methods.
 
 slint::slint! {
     import { Button, VerticalBox } from "std-widgets.slint";
@@ -50,10 +50,15 @@ fn connect_counter_increment(app: &App) {
 // ANCHOR_END: example
 
 /// Opens the counter window and processes GUI events.
+/// A counter window defined with Slint.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that the counter callback updates state without a display server.
 #[cfg(test)]
 mod tests {
     use super::*;

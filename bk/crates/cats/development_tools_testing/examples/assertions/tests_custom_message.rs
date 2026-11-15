@@ -9,22 +9,27 @@
 //! continuous integration can be understood without rerunning it.
 
 /// Asserts that `name` contains "Carol", with a custom failure message.
+///
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected tests custom message.
 fn check_name(name: &str) {
     assert!(
         name.contains("Carol"),
         "Name did not contain 'Carol', value was `{name}`"
     );
 }
-
+/// Runs the example.
 /// Checks a name that does not contain "Carol", so that the assertion fails.
+
 fn main() {
     println!("Checking if 'Carl' contains 'Carol'...");
     check_name("Carl");
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -33,8 +38,8 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    #[should_panic]
     /// Runs the tests custom message example through its entry point.
+    #[should_panic]
     #[test]
     fn test_tests_custom_message_example_entry_point() {
         main();

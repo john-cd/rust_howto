@@ -16,7 +16,7 @@ pub(crate) enum MyError {
 }
 
 impl fmt::Display for MyError {
-    /// Formats the error for user-facing output.
+    /// Formats the value for display.
     fn fmt(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::Io(error) => write!(formatter, "I/O error: {error}"),
@@ -40,13 +40,13 @@ impl From<&str> for MyError {
         Self::Message(message.to_owned())
     }
 }
-
 /// Returns a sample I/O error to demonstrate conversion with `?`.
+
 fn io_operation() -> Result<(), io::Error> {
     Err(io::Error::other("sample I/O failure"))
 }
-
 /// Converts the I/O error into `MyError` with the `?` operator.
+
 fn io_operation_with_custom_error() -> Result<(), MyError> {
     io_operation()?;
     Ok(())
@@ -67,17 +67,19 @@ fn main() -> Result<(), MyError> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), MyError> {
     main()
 }
 
+/// example path.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that both error conversions are exercised by the successful
     /// example path.
-    /// Runs the from2 example through its entry point.
     #[test]
     fn test_from2_example_entry_point() {
         assert!(main().is_ok());

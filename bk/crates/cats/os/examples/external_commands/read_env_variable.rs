@@ -1,6 +1,6 @@
+#![cfg(target_family = "unix")]
 // TODO Reviewed ??-??-2026.
 
-#![cfg(target_family = "unix")]
 // ANCHOR: example
 //! This example demonstrates how to read an environment variable.
 //! If the environment variable is not set, a default value is used.
@@ -11,17 +11,18 @@
 //! `Result`.
 
 use std::env;
-
 /// Reads the `PATH` environment variable, or a default value if the variable is
+
 /// not set.
 fn main() {
     let path = env::var("PATH").unwrap_or("".to_owned());
     println!("Path: {path}");
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.
+/// This example demonstrates how to read an environment variable. If the environment variable is
+/// not set, a default value is used.
 pub fn run() {
     main();
 }

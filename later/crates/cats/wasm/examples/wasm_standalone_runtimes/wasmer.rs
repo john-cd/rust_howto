@@ -1,7 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
-//! Runs an in-memory WebAssembly module with Wasmer.
 // ANCHOR: example
+//! Runs an in-memory WebAssembly module with Wasmer.
+
 use wasmer::Instance;
 use wasmer::Module;
 use wasmer::Store;
@@ -25,10 +26,15 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the Wasmer recipe without files, network, or WASI imports.
+/// Runs an in-memory WebAssembly module with Wasmer.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies compilation and the guest's exported function result.
 #[cfg(test)]
 mod tests {
     /// Verifies compilation and the guest's exported function result.
@@ -43,6 +49,8 @@ mod tests {
     use wasmer::TypedFunction;
     use wasmer::imports;
 
+    /// # Errors
+    /// An error is returned if new, get_typed_function fails.
     #[test]
     fn addition_wraps_on_overflow() -> anyhow::Result<()> {
         let mut store = Store::default();

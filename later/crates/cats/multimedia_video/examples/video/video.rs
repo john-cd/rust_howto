@@ -111,10 +111,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Every frame of a short video is encoded into a packet, offline.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -126,7 +130,6 @@ mod tests {
         assert_eq!(packet_count, 5);
     }
 
-    /// Verifies encoding with non-square custom frame dimensions passed as arguments.
     #[test]
     fn encodes_custom_dimensions() {
         let packet_count = encode(80, 48, 2).expect("custom dimensions should encode");

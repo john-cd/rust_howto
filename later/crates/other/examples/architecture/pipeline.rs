@@ -9,8 +9,9 @@
 
 use std::sync::mpsc;
 use std::thread;
-
+/// Runs pipeline.
 /// Parses and squares input concurrently, returning the collected results.
+
 fn run_pipeline(input: Vec<&'static str>) -> Vec<i64> {
     let (raw_tx, raw_rx) = mpsc::sync_channel::<&str>(8);
     let (num_tx, num_rx) = mpsc::sync_channel::<i64>(8);
@@ -55,8 +56,9 @@ fn main() {
     println!("{results:?}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the bounded-channel pipeline example.
+
 pub fn run() {
     main();
 }
@@ -71,7 +73,6 @@ mod tests {
         main();
     }
 
-    /// Checks that input larger than the buffers completes in order.
     #[test]
     fn processes_more_items_than_channel_capacity() {
         let results = run_pipeline(vec!["2"; 100]);

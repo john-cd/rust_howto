@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Converting between types with `From` and `Into`.
 mod from;
+/// Converting custom errors from different sources.
 mod from2;
+/// Parsing from raw bytes.
 mod from3;
 
 /// Command-line arguments.
@@ -63,7 +66,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["from", "from2", "from3"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

@@ -41,6 +41,7 @@ async fn handle_connection(mut stream: TcpStream) -> anyhow::Result<()> {
 }
 
 /// Formats the HTTP response returned by the example server.
+
 fn http_response() -> String {
     let body = "Hello from Glommio!\n";
     format!(
@@ -87,10 +88,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the Glommio HTTP server.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies the response includes a valid length and a close directive.
 #[cfg(test)]
 mod tests {
     use super::*;

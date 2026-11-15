@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Detecting the collision of two shapes with `parry2d`.
 mod game_development1;
+/// Demonstrates the use of the `glam` crate.
 mod glam;
 
 /// Command-line arguments.
@@ -26,8 +28,9 @@ enum Commands {
     #[command(name = "glam")]
     Glam,
 }
-
+/// Runs the example.
 /// Runs the example selected on the command line.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -52,7 +55,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

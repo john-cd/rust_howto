@@ -1,6 +1,6 @@
+#![allow(clippy::incompatible_msrv)]
 // TODO Reviewed ??-??-2026.
 
-#![allow(clippy::incompatible_msrv)]
 // ANCHOR: example
 //! This function creates a gzip-compressed tar archive from a directory.
 //!
@@ -15,12 +15,11 @@ use std::path::Path;
 
 use flate2::Compression;
 use flate2::write::GzEncoder;
-
 /// Creates a sample input directory and archive under the system temp
+
 /// directory.
 ///
 /// # Errors
-///
 /// Returns an I/O error if the sample directory or archive cannot be written.
 fn main() -> io::Result<()> {
     let work_dir = std::env::temp_dir().join("rust_howto_tar_compress_example");
@@ -51,20 +50,26 @@ fn compress_directory(source_dir: &Path, archive_path: &Path) -> io::Result<()> 
     println!("Archive created at {}", archive_path.display());
     Ok(())
 }
+
+/// Serializes the tests that use the shared sample archive in the system
+/// temporary directory.
+#[cfg(test)]
+pub(crate) static SAMPLE_ARCHIVE_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
 // ANCHOR_END: example
 
 /// # Errors
+/// This function creates a gzip-compressed tar archive from a directory.
 ///
 /// Returns an I/O error if the sample source or archive cannot be written.
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), std::io::Error> {
     main()
 }
 
 /// Serializes the tests that use the shared sample archive in the system
 /// temporary directory.
-#[cfg(test)]
-pub(crate) static SAMPLE_ARCHIVE_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
-
+/// Archives a temporary directory and verifies the finished gzip tarball.
 #[cfg(test)]
 mod tests {
     use std::fs;
@@ -76,9 +81,7 @@ mod tests {
     use super::*;
 
     /// Archives a temporary directory and verifies the finished gzip tarball.
-    ///
     /// # Errors
-    ///
     /// Returns an I/O error if the fixture cannot be created, archived, or
     /// extracted for verification.
     #[test]

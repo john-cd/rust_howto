@@ -29,10 +29,10 @@ struct MyData {
 }
 
 /// Encodes a struct with bincode 2, then decodes it with the same
+///
 /// configuration.
 ///
 /// # Errors
-///
 /// Returns an error if serialization or deserialization fails.
 fn main() -> anyhow::Result<()> {
     let data = MyData {
@@ -56,12 +56,12 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// # Errors
-///
 /// Returns an error if serialization or deserialization fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// The example's end-to-end encode and decode path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -81,9 +81,9 @@ mod tests {
     fn test_bincode_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Pins the wire format: a varint length, the UTF-8 bytes, a varint age
     /// and one byte for the boolean.
+
     #[test]
     fn standard_config_uses_varint_integers() -> anyhow::Result<()> {
         let encoded = encode_to_vec(sample(), standard())?;

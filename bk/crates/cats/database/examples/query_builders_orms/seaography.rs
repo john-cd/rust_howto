@@ -1,8 +1,9 @@
-// TODO Reviewed ??-??-2026.
 #![expect(
     clippy::empty_enums,
     reason = "The example intentionally models an entity with no relations."
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Generating a GraphQL server from a database with Seaography.
 //!
@@ -149,6 +150,10 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+/// Generating a GraphQL server from a database with Seaography.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

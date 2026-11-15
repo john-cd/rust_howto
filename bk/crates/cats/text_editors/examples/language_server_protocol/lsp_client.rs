@@ -99,6 +99,8 @@ fn function_symbols(uri: &Uri, text: &str) -> Vec<SymbolInformation> {
     symbols
 }
 
+/// # Errors
+/// An error is returned if send, recv fails.
 fn main() -> anyhow::Result<()> {
     let (server_side, client) = Connection::memory();
     let server = thread::spawn(move || run_server(server_side));
@@ -180,6 +182,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -196,9 +201,9 @@ mod tests {
     fn test_lsp_client_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Drives a real `rust-analyzer` over stdio. Run it with
     /// `cargo test -- --ignored` when `rust-analyzer` is on the `PATH`.
+
     #[test]
     #[ignore = "needs rust-analyzer on the PATH"]
     fn test_real_rust_analyzer() -> anyhow::Result<()> {

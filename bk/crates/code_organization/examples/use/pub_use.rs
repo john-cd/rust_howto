@@ -42,8 +42,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -56,6 +57,7 @@ mod tests {
     fn test_main() {
         main();
     }
+    /// Verifies reexported names call same function.
 
     #[test]
     fn test_reexported_names_call_same_function() {

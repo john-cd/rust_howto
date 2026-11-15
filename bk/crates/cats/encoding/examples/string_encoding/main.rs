@@ -5,12 +5,19 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates how to encode and decode a string using `base64`.
 mod base64;
+/// Encode and decode forms and path segments.
 mod form_urlencoded;
+/// Example of encoding and decoding a string using hexadecimal encoding.
 mod hex;
+/// Encode and decode hexadecimal with the `hex` crate.
 mod hex_crate;
+/// Example of percent encoding and decoding strings.
 mod percent_encode;
+/// The following demonstrates how to use percent encoding to handle special
 mod percent_encoding;
+/// This example demonstrates how to URL-encode and decode strings using the
 mod url_encode;
 
 /// Command-line arguments.
@@ -99,7 +106,6 @@ mod tests {
         "url_encode",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

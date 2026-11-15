@@ -1,10 +1,11 @@
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Constructing category badges using `tool_lib`.
 //!
 //! This example demonstrates how to use `tool_lib::create_category_badge` to
-//! construct Markdown category badges and index markers for crates.io categories.
 //!
-//! TODO Reviewed ??-??-2026.
+//! construct Markdown category badges and index markers for crates.io categories.
 
 use anyhow::Result;
 
@@ -27,12 +28,16 @@ fn main() -> Result<()> {
     run_example()
 }
 // ANCHOR_END: example
-
 /// Runs the category badge example for programmatic execution.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+
 pub fn run() -> Result<()> {
     run_example()
 }
 
+/// Verifies that the category badge example runs successfully.
 #[cfg(test)]
 mod tests {
     use super::*;

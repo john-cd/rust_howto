@@ -42,10 +42,14 @@ West Hollywood,CA,37031,34.0900000,-118.3608333";
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies filtering preserves the header and only the matching row.
 #[cfg(test)]
 mod tests {
     use super::*;

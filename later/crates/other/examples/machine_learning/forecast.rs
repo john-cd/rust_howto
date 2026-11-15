@@ -15,6 +15,7 @@ use augurs::ets::AutoETS;
 use augurs::mstl::MSTLModel;
 
 /// A synthetic series: a linear trend plus a weekly pattern.
+
 fn series() -> Vec<f64> {
     (0..56)
         .map(|i| {
@@ -49,6 +50,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() -> anyhow::Result<()> {
     main().map_err(|e| anyhow::anyhow!("{e}"))

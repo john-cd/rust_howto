@@ -63,10 +63,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the PEM file-reading example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Reads and decodes a generated PEM certificate file.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -77,6 +81,8 @@ mod tests {
         main()
     }
 
+    /// # Errors
+    /// An error is returned if reads_the_der_bytes_of_a_certificate_file, create_dir_all fails.
     #[test]
     fn reads_the_der_bytes_of_a_certificate_file() -> anyhow::Result<()> {
         let key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
@@ -90,6 +96,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Panics
+    /// Panics if the guarded invariant is violated.
     #[test]
     fn other_pem_labels_are_rejected() -> anyhow::Result<()> {
         let key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
@@ -105,6 +113,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if create_dir_all, write fails.
     #[test]
     fn missing_and_malformed_files_are_errors() -> anyhow::Result<()> {
         assert!(read_pem_certificate("/definitely/not/here.pem").is_err());

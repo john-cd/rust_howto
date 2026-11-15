@@ -1,8 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Demonstrates loading and calling the cross-platform `glow` bindings.
 
-// ANCHOR: example
 use std::ffi::CStr;
 use std::ffi::CString;
 use std::ffi::c_void;
@@ -14,11 +14,9 @@ use glow::HasContext;
 fn c_symbol(name: &str) -> Option<CString> {
     CString::new(name).ok()
 }
-
-/// Creates a `glow` context using function pointers from a current GL context.
+/// Loads `glow` bindings from the function pointers of a current OpenGL context.
 ///
 /// # Safety
-///
 /// The caller must make the intended OpenGL context current before loading its
 /// function pointers and keep that context valid while using the returned API.
 #[cfg_attr(
@@ -39,11 +37,9 @@ unsafe fn load_context(mut get_proc_address: impl FnMut(&CStr) -> *const c_void)
         })
     }
 }
-
 /// Clears the current framebuffer to a dark blue color.
-///
+
 /// # Safety
-///
 /// `gl` must belong to the current context, which must remain current for the
 /// duration of both OpenGL calls.
 #[cfg_attr(
@@ -71,6 +67,12 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Demonstrates loading and calling the cross-platform `glow` bindings.
+fn run() {
+    main();
+}
+
+/// Converts a valid OpenGL symbol name and rejects an embedded NUL byte.
 #[cfg(test)]
 mod tests {
     use std::ffi::c_void;
@@ -82,15 +84,14 @@ mod tests {
     unsafe extern "system" fn stub_get_string(_: u32) -> *const u8 {
         c"2.1 Mock".as_ptr().cast::<u8>()
     }
-
-    /// Mock OpenGL clear-color function used to load a test context.
     unsafe extern "system" fn stub_clear_color(_: f32, _: f32, _: f32, _: f32) {}
+    /// Mock OpenGL clear-color function used to load a test context.
 
-    /// Mock OpenGL clear function used to load a test context.
     unsafe extern "system" fn stub_clear(_: u32) {}
+    /// Mock OpenGL clear function used to load a test context.
 
-    /// Runs the display-free entry point so Cargo tests do not require a
     /// window.
+
     #[test]
     fn test_main_entry_point() {
         super::main();

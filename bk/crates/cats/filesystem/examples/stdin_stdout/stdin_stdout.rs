@@ -45,10 +45,14 @@ fn main() -> io::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> io::Result<()> {
     main()
 }
 
+/// Reads supplied input without blocking on interactive standard input.
 #[cfg(test)]
 mod tests {
     use super::*;

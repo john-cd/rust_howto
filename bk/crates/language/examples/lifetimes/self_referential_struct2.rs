@@ -65,17 +65,17 @@ mod selfref {
 
         /// Overwrites the contents of `self` with `src`, fixing up the
         /// self-pointer in the process.
-        ///
         /// Since `SelfRef` is `!Unpin`, it cannot be moved once pinned.
         /// However, we can still overwrite its data in-place if we have
         /// exclusive access (`&mut Self`). This requires `unsafe` to
         /// bypass the `Pin` protection.
-        ///
         /// Note that the self-referential pointer must be updated to point
         /// to the new data's address within `self`, not the address it had
         /// in `src`.
-        ///
         /// <https://doc.rust-lang.org/std/pin/index.html#assigning-pinned-data>
+        ///
+        /// # Arguments
+        /// * `src` - Mutable pin whose state is updated by this operation.
         pub fn assign(self: Pin<&mut Self>, src: Pin<&mut Self>) {
             unsafe {
                 // Unwraps the `Pin<Ptr>`, returning the underlying `Ptr`.
@@ -101,6 +101,7 @@ mod selfref {
     ///
     /// <https://doc.rust-lang.org/std/pin/index.html#implementing-drop-for-types-with-address-sensitive-states>
     impl Drop for SelfRef {
+        /// Releases the resources owned by this value.
         fn drop(&mut self) {
             // SAFETY: We must ensure that `inner_drop` does not move `self`.
             // Since we are in `drop`, the value will be invalidated anyway
@@ -108,6 +109,8 @@ mod selfref {
             // the pinning invariant.
             inner_drop(unsafe { Pin::new_unchecked(self) });
 
+            /// # Arguments
+            /// * `_this` - Mutable pin whose state is updated by this operation.
             fn inner_drop(_this: Pin<&mut SelfRef>) {
                 // Actual drop code would go here.
             }
@@ -152,8 +155,9 @@ pub mod structural_pinning {
         }
     }
 }
-
+/// Runs the example.
 /// Creates a pinned self-referential struct and checks its pointer.
+
 fn main() {
     use std::pin::Pin;
 
@@ -197,8 +201,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

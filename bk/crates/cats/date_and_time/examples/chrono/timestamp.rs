@@ -10,11 +10,9 @@
 use chrono::DateTime;
 use chrono::NaiveDate;
 use chrono::Utc;
-
 /// Converts a `NaiveDateTime` to a timestamp and back.
-///
+
 /// # Errors
-///
 /// Returns an error if a demonstration date, time, or timestamp is out of
 /// range.
 fn main() -> Result<(), &'static str> {
@@ -43,13 +41,13 @@ fn main() -> Result<(), &'static str> {
 // ANCHOR_END: example
 
 /// # Errors
-///
 /// Returns an error if a demonstration date, time, or timestamp is out of
 /// range.
 pub fn run() -> Result<(), &'static str> {
     main()
 }
 
+/// `chrono`.
 #[cfg(test)]
 mod tests {
     use super::*;

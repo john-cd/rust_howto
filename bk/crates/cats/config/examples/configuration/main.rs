@@ -5,9 +5,16 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Loads and validates the settings that control configuration behavior. Composition code uses this
+/// module before starting services so invalid configuration is reported early.
 mod config_hierarchical;
+/// Loads and validates the settings that control configuration behavior. Composition code uses this
+/// module before starting services so invalid configuration is reported early.
 mod config_singleton;
+/// Loads and validates the settings that control configuration behavior. Composition code uses this
+/// module before starting services so invalid configuration is reported early.
 mod config_testing;
+/// Loads a typed configuration with confy.
 mod confy;
 
 /// Command-line arguments.
@@ -76,7 +83,6 @@ mod tests {
         "confy",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

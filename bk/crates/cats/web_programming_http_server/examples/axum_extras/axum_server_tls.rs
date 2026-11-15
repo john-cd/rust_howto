@@ -24,25 +24,21 @@ pub fn app() -> Router {
     Router::new().route("/", get(|| async { "hello over TLS" }))
 }
 
-/// Serves the Axum application over HTTPS until signaled to shut down.
+/// Serves the example router over HTTPS until the server handle signals shutdown.
 ///
-/// Binds a TLS socket to `addr` using the cryptographic keys in `config`,
-/// registering `handle` to manage shutdown notifications.
-/// In production, load the certificate and key with
-/// `RustlsConfig::from_pem_file("cert.pem", "key.pem")` instead.
+/// In production, load `config` from certificate and key files with
+/// `RustlsConfig::from_pem_file`.
 ///
-/// # Parameters
-/// - `addr`: The socket address on which the HTTPS server will listen.
-/// - `config`: The Rustls configuration containing the TLS certificate and private key.
-/// - `handle`: The server handle used to query listening address and initiate graceful shutdown.
+/// # Arguments
+/// * `addr` - Local socket address on which the HTTPS server listens.
+/// * `config` - TLS certificate and private-key configuration.
+/// * `handle` - Handle used to query or stop the running server.
+///
+/// # Returns
+/// Completes when the server stops serving requests.
 ///
 /// # Errors
-/// Returns an `std::io::Error` if socket binding fails or if an I/O error
-/// occurs during protocol negotiation or request serving.
-///
-/// # Concurrency
-/// Runs concurrently on the asynchronous Tokio runtime, spawning tasks for
-/// incoming TLS client connections until shutdown is signaled.
+/// Returns an I/O error if binding, TLS negotiation, or request serving fails.
 #[cfg_attr(
     not(test),
     expect(dead_code, reason = "binds a TLS socket; exercised by the test")
@@ -57,19 +53,11 @@ pub async fn serve_https(
         .serve(app().into_make_service())
         .await
 }
-
-/// Stops accepting connections and waits up to `grace` for in-flight requests to finish.
+/// Requests graceful shutdown and gives in-flight requests up to `grace` to finish.
 ///
-/// Signals the running server instance identified by `handle` to initiate a
-/// graceful shutdown sequence. In-flight requests will be allowed to complete
-/// until the timeout `grace` period elapses.
-///
-/// # Parameters
-/// - `handle`: The server handle associated with the active TLS server.
-/// - `grace`: Maximum duration allowed for active requests before forcibly closing connections.
-///
-/// # Concurrency
-/// Thread-safe and can be invoked from any thread or asynchronous task.
+/// # Arguments
+/// * `handle` - Handle for the running HTTPS server.
+/// * `grace` - Maximum duration to wait for active requests.
 #[cfg_attr(
     not(test),
     expect(dead_code, reason = "stops the TLS server; exercised by the test")
@@ -79,10 +67,18 @@ pub fn shutdown(handle: &Handle<SocketAddr>, grace: Duration) {
 }
 // ANCHOR_END: example
 
+/// Returns the router used by the HTTPS server.
+pub fn run() -> Router {
+    app()
+}
+
+/// Exercises the HTTPS router and server lifecycle without opening a network listener.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// # Errors
+    /// An error is returned if generate_simple_self_signed, listening fails.
     #[tokio::test]
     async fn serves_and_shuts_down() -> anyhow::Result<()> {
         // Install a process-wide crypto provider (a no-op error if present).

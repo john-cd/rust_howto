@@ -44,8 +44,9 @@ fn main() {
     println!("y(1) ≈ {final_value:.6}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
+
 pub fn run() {
     main();
 }
@@ -57,6 +58,7 @@ fn test_exponential_decay_solver_matches_exact_solution() {
     assert!((final_value - (-2.0_f64).exp()).abs() < 1e-5);
 }
 
+/// the exact
 #[cfg(test)]
 mod tests {
     use super::*;

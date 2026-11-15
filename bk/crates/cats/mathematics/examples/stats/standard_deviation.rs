@@ -9,13 +9,12 @@
 //! version by n.
 
 /// Calculates the mean (average) of a slice of i32 integers.
-///
+
 /// # Arguments
 ///
 /// * `data` - A slice of i32 integers.
 ///
 /// # Returns
-///
 /// Returns `Some(f64)` containing the mean if the slice is not empty, otherwise
 /// returns `None`.
 fn mean(data: &[i32]) -> Option<f64> {
@@ -27,15 +26,13 @@ fn mean(data: &[i32]) -> Option<f64> {
         _ => None,
     }
 }
-
 /// Calculates the standard deviation of a slice of i32 integers.
-///
+
 /// # Arguments
 ///
 /// * `data` - A slice of i32 integers.
 ///
 /// # Returns
-///
 /// Returns `Some(f64)` containing the standard deviation if the slice is not
 /// empty, otherwise returns `None`.
 fn std_deviation(data: &[i32]) -> Option<f64> {
@@ -85,19 +82,19 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// data.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Calculates the mean, standard deviation, and z-score for the example
     /// data.
-    /// Runs the standard deviation example through its entry point.
     #[test]
     fn test_standard_deviation_example_entry_point() {
         main();

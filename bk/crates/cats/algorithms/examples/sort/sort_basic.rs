@@ -1,4 +1,5 @@
 // Reviewed 10-27-2026.
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates the basic usage of the `sort` method on a vector.
@@ -7,6 +8,7 @@
 //! Rust's `sort` is stable, which means equal elements keep their original
 //! relative order, and runs in O(n log n) time.
 
+/// This example demonstrates the basic usage of the `sort` method on a vector.
 fn main() {
     let mut vec = vec![1, 5, 10, 2, 15];
 
@@ -19,6 +21,7 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+/// This example demonstrates the basic usage of the `sort` method on a vector.
 pub fn run() {
     main();
 }

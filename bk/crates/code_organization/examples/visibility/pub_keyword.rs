@@ -7,8 +7,8 @@
 mod m {
     /// Private function.
     fn private_function() {}
-
     /// Public function.
+
     pub fn public_function() -> &'static str {
         private_function(); // A private function is callable from the same module.
         "public_function"
@@ -42,8 +42,8 @@ mod m {
         }
     }
 }
-
 /// Uses the public items of the module `m`.
+
 fn main() {
     // Access the public function within module `m`:
     println!("{}", m::public_function());
@@ -64,8 +64,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -78,6 +79,7 @@ mod tests {
     fn test_main() {
         main();
     }
+    /// Verifies public items accessible.
 
     #[test]
     fn test_public_items_accessible() {

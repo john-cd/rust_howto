@@ -11,13 +11,13 @@
 fn add_one(x: i32) -> i32 {
     x + 1
 }
-
 /// This function takes a function pointer in argument.
+
 fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {
     f(arg) + f(arg)
 }
-
 /// Calls a function through a pointer and passes it to another function.
+
 fn main() {
     let func_ptr: fn(i32) -> i32 = add_one; // Assign a function pointer to a variable.
     println!("Calling via the pointer: {}", func_ptr(10)); // Output: 11.
@@ -27,8 +27,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -42,12 +43,14 @@ mod tests {
     fn test_function_pointers_example_entry_point() {
         main();
     }
+    /// Verifies add one.
 
     /// `add_one` increments its argument.
     #[test]
     fn test_add_one() {
         assert_eq!(add_one(10), 11);
     }
+    /// Verifies do twice.
 
     /// `do_twice` applies the function pointer twice and sums the results.
     #[test]

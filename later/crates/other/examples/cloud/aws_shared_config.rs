@@ -16,6 +16,8 @@ use aws_config::retry::RetryConfig;
 use aws_config::timeout::TimeoutConfig;
 
 /// Loads the configuration with the default credential provider chain
+///
+/// # Arguments
 /// (environment, shared profile, SSO, container and instance roles).
 ///
 /// `region` and `profile` override what the environment provides. Retries and
@@ -50,6 +52,9 @@ pub async fn clients() -> (aws_sdk_s3::Client, aws_sdk_sqs::Client) {
 // ANCHOR_END: example
 
 /// Runs the example: builds the clients and prints their region.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     let (s3, sqs) = tokio::runtime::Builder::new_current_thread()
         .enable_all()
@@ -60,11 +65,11 @@ pub fn run() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// clients.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that explicit settings are applied without calling AWS.
     #[tokio::test]
     async fn overrides_are_applied() {
         let config = load_config(Some("eu-west-1"), None).await;
@@ -73,7 +78,6 @@ mod tests {
         assert_eq!(retry.max_attempts(), 5);
     }
 
-    /// Verifies that clients created from one configuration share its region.
     #[tokio::test]
     async fn clients_share_the_region() {
         let (s3, sqs) = clients().await;

@@ -20,6 +20,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the backtrace example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -30,7 +33,6 @@ mod tests {
 
     use super::main;
 
-    /// Verifies that a forced backtrace can be formatted as text.
     #[test]
     fn forced_backtrace_has_a_display_value() {
         let backtrace = Backtrace::force_capture();

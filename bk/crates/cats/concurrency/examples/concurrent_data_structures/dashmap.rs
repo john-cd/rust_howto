@@ -33,10 +33,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that concurrent inserts produce the expected map contents.
 #[cfg(test)]
 mod tests {
     use super::*;

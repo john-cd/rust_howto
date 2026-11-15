@@ -6,8 +6,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// `const` Example.
 mod constants;
+/// `static mut` Example.
 mod static_mut;
+/// `static` Example.
 mod statics;
 
 /// Command-line arguments.
@@ -48,8 +51,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -63,7 +67,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["constants", "static_mut", "statics"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

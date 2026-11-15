@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Creating temporary files and directories with `tempfile`.
 mod tempfile;
 
 /// Runs the tempfile example.

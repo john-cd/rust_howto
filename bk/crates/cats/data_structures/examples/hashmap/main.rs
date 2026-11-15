@@ -5,10 +5,15 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Demonstrates how to use a custom hash function (FNV) with `HashMap` and
 mod custom_hash_function;
+/// Demonstrate using a custom type as the key in a `HashMap`.
 mod custom_type_as_key;
+/// The same word count with three hash maps: the standard library's, `ahash`'s
 mod fast_hashmap;
+/// This example demonstrates the basic usage of `HashMap` in Rust.
 mod hashmap;
+/// This example demonstrates the basic usage of `HashSet`.
 mod hashset;
 
 /// Command-line arguments.
@@ -61,8 +66,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -82,7 +88,6 @@ mod tests {
         "fast_hashmap",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

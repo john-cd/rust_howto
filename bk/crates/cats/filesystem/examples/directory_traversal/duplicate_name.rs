@@ -22,9 +22,15 @@ fn main() -> Result<()> {
     }
     Ok(())
 }
-
 /// Returns the file names that appear more than once under `root`, in the
+
 /// order the second occurrence is found.
+
+/// # Arguments
+/// * `root` - Filesystem location the operation reads, updates, or uses as its scope.
+
+/// # Errors
+/// Returns an error if the duplicate names operation cannot satisfy its required invariants.
 fn duplicate_names(root: &Path) -> Result<Vec<OsString>> {
     let mut filenames = HashMap::<OsString, usize>::new();
     let mut duplicates = Vec::new();
@@ -49,10 +55,14 @@ fn duplicate_names(root: &Path) -> Result<Vec<OsString>> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies the example can traverse the current directory.
 #[cfg(test)]
 mod tests {
     use super::*;

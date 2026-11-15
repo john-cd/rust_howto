@@ -43,10 +43,14 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 // ANCHOR_END: example
 
 /// Runs the locale-sensitive formatting example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }
 
+/// Verifies that ICU4X applies locale-specific grouping separators.
 #[cfg(test)]
 mod tests {
     use super::*;

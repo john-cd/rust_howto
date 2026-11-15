@@ -19,6 +19,7 @@ fn main() {
 
     // Define the length of the password:
     /// Length of the generated password.
+    /// Defines the password len constant.
     const PASSWORD_LEN: usize = 15;
 
     // Get handle to the local `ThreadRng`, which implements `rand::CryptoRng`.
@@ -37,8 +38,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -46,6 +48,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `rand password` example runs.
 
     #[test]
     fn test_rand_password_example_entry_point() {

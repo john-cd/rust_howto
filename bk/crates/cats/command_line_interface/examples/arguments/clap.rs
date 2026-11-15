@@ -22,6 +22,7 @@ use clap::Subcommand;
 #[command(author, version, about, long_about = None)]
 // Displays Help if no arguments are provided:
 /// Stores the command-line options accepted by the example.
+/// State required by `Cli` during transport operations.
 #[command(arg_required_else_help = true)]
 pub struct Cli {
     // Positional argument example.
@@ -126,10 +127,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies that the clap example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -141,7 +146,8 @@ mod tests {
         println!("{:?}", main());
     }
 
-    #[test]
+    /// # Errors
+    /// An error is returned if defaults_apply_when_only_a_pattern_is_given fails.
     fn defaults_apply_when_only_a_pattern_is_given() -> Result<(), Box<dyn std::error::Error>> {
         let cli = Cli::try_parse_from(["app", "needle"])?;
         assert_eq!(cli.pattern.as_deref(), Some("needle"));
@@ -152,6 +158,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if try_parse_from fails.
     #[test]
     fn repeated_debug_flags_are_counted_and_options_parsed()
     -> Result<(), Box<dyn std::error::Error>> {
@@ -169,6 +177,14 @@ mod tests {
         assert!(Cli::try_parse_from(["app", "p", "70000"]).is_err());
     }
 
+    /// Loads the subcommand requires files required by the clap workflow and reports failures from
+    /// the underlying source.
+    ///
+    /// # Errors
+    /// An error is returned if read_subcommand_requires_files, try_parse_from fails.
+    ///
+    /// # Panics
+    /// Panics if the guarded invariant is violated.
     #[test]
     fn read_subcommand_requires_files() -> Result<(), Box<dyn std::error::Error>> {
         let cli = Cli::try_parse_from(["app", "read", "-a", "f1", "f2"])?;

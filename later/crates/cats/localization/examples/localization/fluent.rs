@@ -72,6 +72,9 @@ fn format_message(
 }
 
 /// Prints English and French greetings and pluralized item counts.
+///
+/// # Errors
+/// Returns an error if either locale bundle cannot be built or a message cannot be formatted.
 fn main() -> ExampleResult<()> {
     let english = new_bundle("en-US", EN_US)?;
     let french = new_bundle("fr", FR)?;
@@ -96,11 +99,15 @@ fn main() -> ExampleResult<()> {
 // ANCHOR_END: example
 
 /// Runs the Fluent localization example.
+///
+/// # Errors
+/// Returns an error if bundle creation or message formatting fails.
 pub fn run() -> ExampleResult<()> {
     main()
 }
 
 #[cfg(test)]
+/// Verifies formatting for both configured locales.
 mod tests {
     use super::*;
 

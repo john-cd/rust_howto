@@ -5,10 +5,17 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates the use of the ECDSA (Elliptic Curve Digital Signature Algorithm) with
+/// the P-256 curve for signing and verifying a
 mod dsa;
+/// Sign and verify a message with ECDSA using the P-256 curve.
 mod ecdsa;
+/// Create and verify an Ed25519 signature using `ed25519-dalek`.
 mod ed25519;
+/// This example demonstrates signing and verifying messages with ed25519-dalek.
 mod ed25519_dalek;
+/// This example demonstrates how to use the `ring` crate to generate an HMAC (Hash-based Message
+/// Authentication Code) signature for a message and then
 mod hmac;
 
 /// Command-line arguments.
@@ -78,7 +85,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["dsa", "ecdsa", "ed25519", "ed25519_dalek", "hmac"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

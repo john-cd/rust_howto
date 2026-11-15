@@ -5,9 +5,13 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Trait objects with auto traits such as `Send`.
 mod dyn_autotraits;
+/// Example of (non-)dyn-compatible traits.
 mod dyn_compat;
+/// Trait objects of a trait with a supertrait.
 mod dyn_supertraits;
+/// Trait object example: a highly simplified GUI.
 mod trait_objects;
 
 /// Command-line arguments.
@@ -54,8 +58,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -74,7 +79,6 @@ mod tests {
         "trait_objects",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

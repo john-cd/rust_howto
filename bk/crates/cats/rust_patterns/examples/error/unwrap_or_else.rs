@@ -48,12 +48,14 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Verifies that the unwrap or else example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;

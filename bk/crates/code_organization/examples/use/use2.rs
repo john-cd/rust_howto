@@ -26,15 +26,17 @@ fn eat_at_restaurant() -> &'static str {
     // IDIOM: import the module, not the function itself.
     hosting::add_to_waitlist()
 }
-
+/// Runs the example.
 /// Runs the use2 example.
+
 fn main() {
     println!("{}", eat_at_restaurant());
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -47,6 +49,7 @@ mod tests {
     fn test_main() {
         main();
     }
+    /// Verifies shortened path calls same function.
 
     #[test]
     fn test_shortened_path_calls_same_function() {

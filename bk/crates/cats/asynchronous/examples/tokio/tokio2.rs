@@ -21,6 +21,9 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -35,6 +38,8 @@ mod tests {
         main();
     }
 
+    /// # Errors
+    /// An error is returned if new_current_thread fails.
     #[test]
     fn current_thread_runtime_returns_the_block_on_value() -> Result<(), Box<dyn std::error::Error>>
     {

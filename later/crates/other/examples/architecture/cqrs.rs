@@ -13,8 +13,8 @@
 
 /// Domain Model.
 mod domain {
+    /// Product record stored and queried by the CQRS example.
 
-    /// Represents a product in the domain.
     #[derive(Debug, Clone)]
     pub struct Product {
         /// The identifier of the product.
@@ -28,27 +28,31 @@ mod domain {
     /// Implementation of the Product struct.
     impl Product {
         /// Creates a product.
+        ///
+        /// # Arguments
+        /// * `id` - Identifier of the item.
+        /// * `name` - Name used to identify the item.
         pub fn new(id: u32, name: String, quantity: u32) -> Self {
             Self { id, name, quantity }
         }
 
         // Getters.
-        /// Returns the identifier of the product.
         pub fn id(&self) -> u32 {
             self.id
         }
 
         /// Returns the name of the product.
+
         pub fn name(&self) -> &str {
             &self.name
         }
 
-        /// Returns the quantity in stock.
         pub fn quantity(&self) -> u32 {
             self.quantity
         }
 
         /// Sets the quantity in stock.
+
         pub fn set_quantity(&mut self, quantity: u32) {
             self.quantity = quantity;
         }
@@ -68,8 +72,6 @@ mod events {
     /// Examples:
     /// - `ProductCreated`.
     /// - `ProductQuantityUpdated`.
-    ///
-    /// Represents events related to products.
     #[derive(Debug, Clone, Serialize, Deserialize)]
     pub enum ProductEvent {
         /// A product was created.
@@ -105,20 +107,25 @@ mod events {
     /// Events are stored in the Event Store.
     pub trait EventRepository {
         /// Stores an event.
-        fn apply_event(&self, event: ProductEvent);
 
-        /// Returns the events, or only the latest `limit` events if a limit is
-        /// given.
+        /// # Arguments
+        /// * `limit` - Bound used to limit the amount of work or data accepted by the operation.
+
+        fn apply_event(&self, event: ProductEvent);
+        /// Returns events.
         fn get_events(&self, limit: Option<usize>) -> Vec<ProductEvent>;
 
         /// Returns all events recorded after the specified version offset.
+
         fn get_events_since(&self, version: usize) -> Vec<ProductEvent>;
 
-        /// Returns the total number of events recorded.
         fn event_count(&self) -> usize;
     }
 
     impl EventRepository for SimpleEventStore {
+        /// Applies the event change to simple event store and keeps dependent state consistent for
+        /// later operations.
+
         fn apply_event(&self, event: ProductEvent) {
             let mut events = self
                 .events
@@ -128,6 +135,9 @@ mod events {
         }
 
         // Get a snapshot of the events
+        /// # Arguments
+        /// * `limit` - Bound used to limit accepted data or the amount of work performed.
+
         fn get_events(&self, limit: Option<usize>) -> Vec<ProductEvent> {
             let events = self
                 .events
@@ -274,6 +284,12 @@ mod commands {
         }
 
         /// Processes a command.
+        ///
+        /// # Arguments
+        /// * `command` - Command selected by the caller.
+        ///
+        /// # Errors
+        /// Returns an error if the operation cannot be completed.
         pub fn process(&self, command: Command) -> anyhow::Result<()> {
             self.validate(&command)?;
             self.handle(command)
@@ -316,8 +332,8 @@ mod read_store {
     pub trait ProductRepository {
         /// Returns the product with the given identifier, if any.
         fn get_product(&self, id: u32) -> Option<Product>;
-
         /// Returns all products.
+
         fn get_all_products(&self) -> Vec<Product>;
     }
 
@@ -331,6 +347,9 @@ mod read_store {
     }
 
     impl ProductRepository for SimpleReadStore {
+        /// # Arguments
+        /// * `id` - Identifier used to select the simple read store record or cache entry affected
+        ///   by this operation.
         fn get_product(&self, id: u32) -> Option<Product> {
             let read_model = self
                 .read_model
@@ -371,6 +390,8 @@ mod read_store {
         }
 
         /// Rebuilds the read model from the event store.
+        ///
+        /// # Arguments
         ///
         /// This is used to re-create the read model from the event store.
         pub fn rebuild_read_model(&self, events: Vec<ProductEvent>) {
@@ -431,6 +452,7 @@ mod query {
     // - Maintains a read-optimized representation of the data.
     // - Is updated by processing events from the Event Store.
     // - Uses a hashmap as an in-memory database for the read model.
+    /// CQRS read handler that returns the current product state.
     pub struct QueryHandler<R: ProductRepository> {
         /// The repository of products to read from.
         read_repo: R,
@@ -445,12 +467,14 @@ mod query {
         }
 
         /// Gets a product by ID.
+        ///
+        /// # Arguments
+        /// * `id` - Identifier of the item.
         pub fn get_product(&self, id: u32) -> Option<Product> {
             // Business logic goes here
             self.read_repo.get_product(id)
         }
 
-        /// Gets all products.
         pub fn get_all_products(&self) -> Vec<Product> {
             self.read_repo.get_all_products()
         }
@@ -531,6 +555,10 @@ fn main() -> anyhow::Result<()> {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -17,8 +17,9 @@ fn sum() -> num::complex::Complex<f64> {
     // Add the two complex numbers.
     complex_num1 + complex_num2
 }
-
+/// Runs the example.
 /// Adds two complex numbers and prints the sum.
+
 fn main() {
     let sum = sum();
 
@@ -26,12 +27,14 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Verifies that the addition example runs without panicking.
 #[cfg(test)]
 mod tests {
     use super::*;

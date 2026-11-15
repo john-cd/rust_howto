@@ -5,9 +5,13 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Destructuring tuples, arrays and structs into variables.
 mod destructuring;
+/// Shadowing a variable with a new binding.
 mod shadowing;
+/// Variables are used to store values.
 mod vars;
+/// Variable immutability and mutability.
 mod vars2;
 
 /// Command-line arguments.
@@ -54,8 +58,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -69,7 +74,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["destructuring", "shadowing", "vars", "vars2"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

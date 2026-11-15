@@ -5,11 +5,19 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Multi-producer, multi-consumer (MPMC) async channel communication.
 mod async_channel;
+/// A Tokio multi-producer, single-consumer (`mpsc`) channel.
 mod async_channels_mpsc;
+/// A Tokio `oneshot` channel that carries a single value between tasks.
 mod async_channels_oneshot;
+/// This example demonstrates the use of `tokio::sync::oneshot` channels to communicate between
+/// asynchronous tasks.
 mod async_channels_oneshot2;
+/// The `kanal` crate is used for inter-thread communication, similar to Rust's standard
+/// `std::sync::mpsc` module but with additional features and capabilities.
 mod kanal;
+/// A broadcast channel from the `postage` crate: several receivers get every
 mod postage;
 
 /// Command-line arguments.
@@ -91,7 +99,6 @@ mod tests {
         "postage",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

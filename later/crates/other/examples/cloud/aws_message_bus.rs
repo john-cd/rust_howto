@@ -1,9 +1,9 @@
-// TODO Reviewed ??-??-2026.
-
 #![expect(
     dead_code,
     reason = "needs an AWS account (SQS and SNS); the tests use mocks"
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! A typed message bus: publish Protobuf messages through a trait, with an
 //! in-memory implementation for tests and AWS SQS / SNS implementations for
@@ -48,7 +48,13 @@ pub struct Received {
 /// Publishes encoded messages to a queue or topic.
 #[async_trait]
 pub trait MessagePublisher: Send + Sync {
-    /// Sends one text body.
+    /// Sends one already encoded text body to the destination.
+    ///
+    /// # Arguments
+    /// * `body` - Message text to publish.
+    ///
+    /// # Errors
+    /// Returns an error if the destination rejects or cannot accept the body.
     async fn publish_body(&self, body: String) -> Result<()>;
 }
 
@@ -56,9 +62,18 @@ pub trait MessagePublisher: Send + Sync {
 #[async_trait]
 pub trait MessageSubscriber: Send + Sync {
     /// Returns the messages that are currently visible, if any.
+    ///
+    /// # Errors
+    /// Returns an error if the queue cannot be read.
     async fn receive(&self) -> Result<Vec<Received>>;
 
     /// Removes a processed message so that it is not delivered again.
+    ///
+    /// # Arguments
+    /// * `receipt` - Receipt handle returned with the message.
+    ///
+    /// # Errors
+    /// Returns an error if the receipt cannot be acknowledged.
     async fn ack(&self, receipt: &str) -> Result<()>;
 }
 
@@ -67,6 +82,12 @@ pub trait MessageSubscriber: Send + Sync {
 /// # Errors
 ///
 /// Fails when the encoded body exceeds the SQS limit.
+///
+/// # Arguments
+/// * `message` - Protobuf value to encode.
+///
+/// # Returns
+/// Base64 text containing the encoded message.
 pub fn encode_body<M: Message>(message: &M) -> Result<String> {
     let body = STANDARD.encode(message.encode_to_vec());
     ensure!(
@@ -82,12 +103,25 @@ pub fn encode_body<M: Message>(message: &M) -> Result<String> {
 /// # Errors
 ///
 /// Fails when the text is not valid base64 or not a valid `M`.
+///
+/// # Arguments
+/// * `body` - Base64 text produced by [`encode_body`].
+///
+/// # Returns
+/// The decoded message value.
 pub fn decode_body<M: Message + Default>(body: &str) -> Result<M> {
     let bytes = STANDARD.decode(body).context("body is not base64")?;
     M::decode(bytes.as_slice()).context("body is not the expected message")
 }
 
 /// Encodes `message` and publishes it.
+///
+/// # Arguments
+/// * `publisher` - Destination that accepts encoded message bodies.
+/// * `message` - Protobuf value to encode and publish.
+///
+/// # Errors
+/// Returns an error if encoding exceeds the body limit or publication fails.
 pub async fn publish<M: Message>(publisher: &dyn MessagePublisher, message: &M) -> Result<()> {
     publisher.publish_body(encode_body(message)?).await
 }
@@ -95,6 +129,16 @@ pub async fn publish<M: Message>(publisher: &dyn MessagePublisher, message: &M) 
 /// Receives messages, runs `handler` on each, and acknowledges only the ones
 /// the handler accepted. Failed messages become visible again after the
 /// visibility timeout, so handlers must be idempotent (at-least-once delivery).
+///
+/// # Arguments
+/// * `subscriber` - Source of visible messages and acknowledgements.
+/// * `handler` - Synchronous operation that returns `Ok` to acknowledge a message.
+///
+/// # Returns
+/// The number of messages handled successfully.
+///
+/// # Errors
+/// Returns an error if receiving, decoding, handling, or acknowledging fails.
 pub async fn consume<M, F>(subscriber: &dyn MessageSubscriber, mut handler: F) -> Result<usize>
 where
     M: Message + Default,
@@ -261,6 +305,10 @@ pub async fn demo() -> Result<()> {
     Ok(())
 }
 
+/// Builds a single-threaded runtime and runs the in-memory demonstration.
+///
+/// # Errors
+/// Returns an error if runtime construction or the demonstration fails.
 fn main() -> Result<()> {
     tokio::runtime::Builder::new_current_thread()
         .build()?
@@ -268,11 +316,16 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the message bus example through its program entry point.
+///
+/// # Errors
+/// Returns an error if runtime construction or the demonstration fails.
 pub fn run() -> Result<()> {
     main()
 }
 
 #[cfg(test)]
+/// Checks message encoding, delivery, acknowledgements, and entry-point behavior.
 mod tests {
     use super::*;
 

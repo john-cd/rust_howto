@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Publishes orders to a NATS JetStream stream and processes them with a
 #[cfg(feature = "nats")]
 mod jetstream;
 
@@ -14,6 +15,8 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// The entry point runs; with the `nats` feature it needs a local server only when `NATS_URL` is
+/// set, and otherwise exits quietly.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -24,8 +24,8 @@ const DURATION: Duration = Duration::from_secs(2);
 fn tone() -> impl Source {
     SineWave::new(FREQUENCY_HZ).take_duration(DURATION)
 }
-
 /// Plays a 440 Hz sine tone for two seconds on the default output device.
+
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     // Keep the sink alive: dropping it stops the audio.
     let sink = DeviceSinkBuilder::open_default_sink()?;
@@ -43,12 +43,12 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 /// Plays the tone.
 ///
 /// # Errors
-///
 /// Returns an error if no audio output device is available.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }
 
+/// The tone is mono and stops after about two seconds of samples, so it needs no device.
 #[cfg(test)]
 mod tests {
     use std::num::NonZeroUsize;

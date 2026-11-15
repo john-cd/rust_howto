@@ -15,16 +15,17 @@ use http::header::InvalidHeaderValue;
 use mime::Mime;
 
 /// Guesses the MIME type from a file name's extension.
+
 fn find_mimetype(filename: &str) -> Mime {
     mime_guess::from_path(filename).first_or_octet_stream()
 }
-
 /// Inserts a guessed MIME type into an HTTP `Content-Type` header.
 ///
 /// # Errors
 ///
 /// Returns an error if the guessed MIME type cannot be represented as a header
 /// value.
+
 fn set_content_type(filename: &str, headers: &mut HeaderMap) -> Result<(), InvalidHeaderValue> {
     let mime = find_mimetype(filename);
     headers.insert(CONTENT_TYPE, HeaderValue::try_from(mime.as_ref())?);
@@ -34,7 +35,6 @@ fn set_content_type(filename: &str, headers: &mut HeaderMap) -> Result<(), Inval
 /// Prints the MIME type of several file names.
 ///
 /// # Errors
-///
 /// Returns an error if a MIME type cannot be inserted into the header map or
 /// read as text.
 fn main() -> anyhow::Result<()> {
@@ -51,17 +51,16 @@ fn main() -> anyhow::Result<()> {
 }
 
 // ANCHOR_END: example
-
 /// Runs the example.
-///
+
 /// # Errors
-///
 /// Returns an error if the example cannot create or read a `Content-Type`
 /// header.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies common file extensions map to their registered MIME types.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Generic I2C driver example using `embedded-hal` 1.0 traits.
 //!
 //! I2C is a two-wire bus that connects a controller (such as a robot's
@@ -9,7 +10,7 @@
 //! defines traits for such buses, so a driver written against them works on
 //! any board. Here a mock bus replaces real hardware, so the example runs on a
 //! normal computer.
-// ANCHOR: example
+
 use embedded_hal::i2c::I2c;
 use embedded_hal_mock::eh1::i2c::Mock;
 use embedded_hal_mock::eh1::i2c::Transaction;
@@ -28,6 +29,7 @@ const DEVICE_ID: u8 = 0xA5;
 
 /// Driver for the fictional sensor, generic over an `embedded-hal` I2C bus.
 pub struct TemperatureSensor<I2C> {
+    /// I2c value.
     i2c: I2C,
 }
 
@@ -41,6 +43,9 @@ where
     }
 
     /// Reads the fictional sensor's device identification byte.
+    ///
+    /// # Errors
+    /// Returns an error if the requested data cannot be retrieved.
     pub fn read_device_id(&mut self) -> Result<u8, E> {
         let mut buffer = [0_u8; 1];
         self.i2c
@@ -49,6 +54,9 @@ where
     }
 
     /// Reads signed, big-endian temperature data in degrees Celsius.
+    ///
+    /// # Errors
+    /// Returns an error if the requested data cannot be retrieved.
     pub fn read_temperature(&mut self) -> Result<f32, E> {
         let mut buffer = [0_u8; 2];
         self.i2c.write_read(SENSOR_ADDR, &[REG_TEMP], &mut buffer)?;
@@ -67,8 +75,9 @@ where
         self.i2c
     }
 }
-
+/// Generic I2C driver example using `embedded-hal` 1.0 traits.
 /// Runs the strict-mock demonstration and checks both expected readings.
+
 fn main() {
     let expectations = [
         Transaction::write_read(SENSOR_ADDR, vec![REG_DEVICE_ID], vec![DEVICE_ID]),
@@ -97,17 +106,18 @@ fn main() {
 // ANCHOR_END: example
 
 /// Provides the example entry point to its parent runner.
+/// Generic I2C driver example using `embedded-hal` 1.0 traits.
 pub fn run() {
     main();
 }
 
+/// Decodes a negative big-endian temperature using the fictional scale.
 #[cfg(test)]
 mod tests {
     use embedded_hal::i2c::ErrorKind;
 
     use super::*;
 
-    /// Runs the example entry point and its strict transaction expectations.
     #[test]
     fn runs_the_example() {
         main();

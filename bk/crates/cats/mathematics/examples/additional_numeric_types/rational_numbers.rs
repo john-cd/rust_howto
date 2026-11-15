@@ -8,8 +8,9 @@
 //! exactness matters more than speed.
 
 use num_rational::Ratio;
-
+/// Runs the example.
 /// Adds one third and one sixth exactly.
+
 fn main() {
     let third = Ratio::new(1_i64, 3);
     let sixth = Ratio::new(1_i64, 6);
@@ -20,17 +21,18 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the rational-number example.
+
 pub fn run() {
     main();
 }
 
+/// values.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that rational addition preserves the exact result.
     #[test]
     fn adds_rational_values_exactly() {
         main();

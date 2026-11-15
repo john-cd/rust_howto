@@ -14,11 +14,9 @@ use std::io::Write as _;
 
 use zip::write::SimpleFileOptions;
 use zip::write::ZipWriter;
-
 /// Creates a zip archive with two files and an empty directory.
-///
+
 /// # Errors
-///
 /// Returns an error if temporary storage or archive writing fails.
 fn main() -> anyhow::Result<()> {
     let temp_dir = tempfile::tempdir()?;
@@ -54,27 +52,25 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// # Errors
-///
 /// Returns an error if archive creation fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Returns an error if archive creation fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that the zip example's main path succeeds.
-    ///
     /// # Errors
-    ///
     /// Returns an error if archive creation fails.
-    /// Runs the zip example through its entry point.
     #[test]
     fn test_zip_example_entry_point() -> anyhow::Result<()> {
         main()
     }
 
+    /// # Errors
+    /// An error is returned if tempdir, new fails.
     #[test]
     fn archive_roundtrip_preserves_names_and_contents() -> anyhow::Result<()> {
         use std::io::Read as _;

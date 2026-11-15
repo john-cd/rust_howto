@@ -51,6 +51,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

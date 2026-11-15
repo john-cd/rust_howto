@@ -8,8 +8,9 @@
 //! evicted.
 
 use linked_hash_map::LinkedHashMap;
-
+/// Runs the example.
 /// Inserts into a `LinkedHashMap` and iterates in insertion order.
+
 fn main() {
     let mut map = LinkedHashMap::new();
     map.insert("one", 1);
@@ -29,8 +30,9 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -5,10 +5,15 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Encode and decode bytes with the `base64` crate.
 mod base64_example;
+/// Fill a byte array with randomness from the operating system.
 mod getrandom_example;
+/// Encode and decode bytes as hexadecimal with the `hex` crate.
 mod hex_example;
+/// This example demonstrates the usage of the `subtle` crate for
 mod subtle;
+/// Demonstrates the use of the `zeroize` crate to securely clear sensitive data
 mod zeroize;
 
 /// Command-line arguments.
@@ -68,7 +73,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["subtle", "zeroize"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

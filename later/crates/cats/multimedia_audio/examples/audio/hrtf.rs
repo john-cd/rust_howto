@@ -16,19 +16,23 @@ use hrtf::HrtfContext;
 use hrtf::HrtfProcessor;
 use hrtf::Vec3;
 
+/// Shared `sample rate` used by this module.
 const SAMPLE_RATE: u32 = 44_100;
+/// Shared `source len` used by this module.
 const SOURCE_LEN: usize = 512;
 
 /// HRIR sphere fixture bytes compiled into the binary.
 const HRIR_FIXTURE_BYTES: &[u8] = include_bytes!("fixture.hrir");
 
 /// Returns the root mean square (RMS) of a signal stream.
+/// Spatializes a 440 Hz tone and compares the sound level in both ears.
 fn rms(samples: impl Iterator<Item = f32>) -> f32 {
     let (sum, count) = samples.fold((0.0, 0), |(sum, count), s| (sum + s * s, count + 1));
     (sum / count as f32).sqrt()
 }
-
+/// Runs the example.
 /// Spatializes a 440 Hz tone and compares the sound level in both ears.
+
 fn main() -> Result<(), Box<dyn Error>> {
     let sphere = HrirSphere::new(HRIR_FIXTURE_BYTES, SAMPLE_RATE)
         .map_err(|e| format!("invalid HRIR sphere: {e:?}"))?;
@@ -71,6 +75,9 @@ fn main() -> Result<(), Box<dyn Error>> {
 // ANCHOR_END: example
 
 /// Runs the device-free HRTF example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }

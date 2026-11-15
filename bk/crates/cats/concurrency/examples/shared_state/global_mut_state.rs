@@ -45,10 +45,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies inserts are visible through the synchronized global list.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -61,6 +65,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if insert_appends_to_the_shared_list, lock fails.
     #[test]
     fn insert_appends_to_the_shared_list() -> Result<()> {
         main()?;
@@ -82,6 +88,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if concurrent_inserts_are_all_recorded, join fails.
     #[test]
     fn concurrent_inserts_are_all_recorded() -> Result<()> {
         let before = FRUIT

@@ -9,6 +9,7 @@
 //! thousands. `#[tokio::main]` creates the runtime that runs them.
 
 /// Runs a task on the Tokio runtime and awaits its result.
+/// Run a task on the Tokio runtime and await its result.
 #[tokio::main]
 async fn main() {
     let handle = tokio::spawn(async { 1 + 2 });
@@ -20,6 +21,7 @@ async fn main() {
 // ANCHOR_END: example
 
 /// Runs the example for the parent module.
+/// Run a task on the Tokio runtime and await its result.
 pub fn run() {
     main();
 }

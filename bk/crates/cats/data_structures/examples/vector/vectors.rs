@@ -1,8 +1,8 @@
-// TODO Reviewed ??-??-2026.
-
 #![allow(clippy::vec_init_then_push)]
 #![allow(clippy::useless_vec)]
 #![allow(clippy::unnecessary_fold)]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! This example demonstrates vector creation, manipulation, iteration, and
 //! slices in Rust.
@@ -12,6 +12,7 @@
 //! in the middle shifts the following elements.
 
 /// Runs the vector creation, manipulation, iteration, and slice demonstrations.
+/// This example demonstrates vector creation, manipulation, iteration, and slices in Rust.
 fn main() {
     demonstrate_creation();
     demonstrate_manipulation();
@@ -178,6 +179,7 @@ fn demonstrate_slices() {
 // ANCHOR_END: example
 
 /// Runs the vector example demonstration.
+/// This example demonstrates vector creation, manipulation, iteration, and slices in Rust.
 pub fn run() {
     main();
 }

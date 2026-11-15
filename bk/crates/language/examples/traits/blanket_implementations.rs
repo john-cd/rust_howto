@@ -14,6 +14,7 @@ mod my {
     /// A trait implemented for every type that implements `Display`.
     pub trait VeryUsefulTrait {
         /// Returns a description of `self`.
+
         fn my_method(&self) -> String;
     }
 
@@ -38,8 +39,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

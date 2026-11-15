@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Snapshot testing with `insta`.
 //!
 //! A snapshot test compares the output with a reference file stored in the
@@ -8,15 +9,14 @@
 //! such as generated text or JSON.
 
 /// Runs the example.
-pub fn run() {
-    main();
-}
 
-// ANCHOR: example
 // Snapshot testing with the `insta` crate keeps track of how your data
 // structures or output change over time.
 
 /// This is a sample function that formats user details.
+
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected insta.
 pub fn format_user(name: &str, age: u32) -> String {
     format!("Name: {name}, Age: {age}")
 }
@@ -24,6 +24,12 @@ pub fn format_user(name: &str, age: u32) -> String {
 /// Prints a formatted user.
 fn main() {
     println!("{}", format_user("Alice", 30));
+}
+// ANCHOR_END: example
+
+/// Snapshot testing with `insta`.
+pub fn run() {
+    main();
 }
 
 /// The following is a test that uses `insta` to snapshot the output.
@@ -49,4 +55,3 @@ mod tests {
         main();
     }
 }
-// ANCHOR_END: example

@@ -1,5 +1,3 @@
-// TODO Reviewed ??-??-2026.
-
 #![cfg_attr(
     not(test),
     expect(
@@ -7,6 +5,8 @@
         reason = "targets the browser (wasm32); native builds cannot call it"
     )
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! A gRPC client that uses gRPC-Web in the browser and HTTP/2 elsewhere.
 //!
@@ -17,20 +17,28 @@
 use tonic::client::Grpc;
 use tonic::codegen::http::uri::PathAndQuery;
 use tonic_prost::ProstCodec;
+/// Request message sent to the greeting service.
 
 #[derive(Clone, PartialEq, Eq, prost::Message)]
 pub struct HelloRequest {
     #[prost(string, tag = "1")]
+    /// Display label used to distinguish this hello request from other entries.
     pub name: String,
 }
+/// Reply message returned by the greeting service.
 
 #[derive(Clone, PartialEq, Eq, prost::Message)]
 pub struct HelloReply {
     #[prost(string, tag = "1")]
+    /// Message value.
     pub message: String,
 }
 
 /// Browser: `tonic-web-wasm-client` speaks gRPC-Web over `fetch`.
+///
+/// # Arguments
+/// * `url` - URL identifying the requested resource.
+/// * `name` - Name used to identify the item.
 #[cfg(target_arch = "wasm32")]
 pub async fn say_hello(url: String, name: String) -> Result<String, tonic::Status> {
     let client = tonic_web_wasm_client::Client::new(url);
@@ -38,6 +46,10 @@ pub async fn say_hello(url: String, name: String) -> Result<String, tonic::Statu
 }
 
 /// Native targets: a regular tonic `Channel`.
+///
+/// # Arguments
+/// * `url` - URL identifying the requested resource.
+/// * `name` - Name used to identify the item.
 #[cfg(not(target_arch = "wasm32"))]
 pub async fn say_hello(url: String, name: String) -> Result<String, tonic::Status> {
     let channel = tonic::transport::Endpoint::from_shared(url)
@@ -69,12 +81,23 @@ where
 }
 // ANCHOR_END: example
 
+/// Sends a greeting to the configured gRPC-Web endpoint.
+///
+/// # Errors
+/// Returns a status error if the service is unavailable or rejects the request.
+async fn run() -> Result<String, tonic::Status> {
+    say_hello("http://127.0.0.1:50051".to_owned(), "Ada".to_owned()).await
+}
+
+/// An error is returned if decode fails.
 #[cfg(test)]
 mod tests {
     use prost::Message;
 
     use super::*;
 
+    /// # Errors
+    /// An error is returned if decode fails.
     #[test]
     fn messages_round_trip() -> anyhow::Result<()> {
         let bytes = HelloRequest { name: "Ann".into() }.encode_to_vec();

@@ -12,7 +12,9 @@ use std::io::Read;
 
 /// A reader decorator that counts the bytes returned by its inner reader.
 struct CountingReader<R> {
+    /// Shared internal state.
     inner: R,
+    /// Number of bytes read so far.
     bytes_read: usize,
 }
 
@@ -25,7 +27,6 @@ impl<R> CountingReader<R> {
         }
     }
 
-    /// Returns the total number of bytes returned by successful reads.
     fn bytes_read(&self) -> usize {
         self.bytes_read
     }
@@ -52,6 +53,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the reader decorator example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -64,8 +68,6 @@ mod tests {
     use super::CountingReader;
     use super::main;
 
-    /// Verifies the decorator preserves the input and tracks bytes returned.
-    /// Runs the decorator example through its entry point.
     #[test]
     fn counts_bytes_read() {
         let mut reader = CountingReader::new(Cursor::new(b"Rust"));

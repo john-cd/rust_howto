@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates how to use the `approx` crate for approximate
 mod approx;
+/// This example demonstrates how to use the `assert!` macro with a custom failure message.
 mod tests_custom_message;
 
 /// Command-line arguments.
@@ -40,8 +42,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -55,7 +58,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["approx", "tests_custom_message"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

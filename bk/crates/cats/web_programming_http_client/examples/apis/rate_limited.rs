@@ -23,7 +23,6 @@ fn header_u64(headers: &HeaderMap, name: &str) -> Result<Option<u64>> {
         .map(|v| Ok(v.to_str()?.parse()?))
         .transpose()
 }
-
 /// Returns how long to wait before retrying a request, or `None` if the
 /// response was not rate limited.
 ///
@@ -34,6 +33,7 @@ fn header_u64(headers: &HeaderMap, name: &str) -> Result<Option<u64>> {
 ///
 /// A bare `403` without rate-limit headers is ambiguous, so this helper does
 /// not classify it as a rate limit; callers can inspect the response body.
+
 fn rate_limit_wait(
     status: StatusCode,
     headers: &HeaderMap,
@@ -81,10 +81,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies that expired window waits zero.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -96,14 +100,14 @@ mod tests {
     fn now() -> SystemTime {
         UNIX_EPOCH + Duration::from_secs(NOW)
     }
-
     /// Runs the rate limited example through its entry point.
+
     #[test]
     fn test_rate_limited_example_entry_point() -> Result<()> {
         main()
     }
-
     /// Verifies that success does not wait.
+
     #[test]
     fn success_does_not_wait() -> Result<()> {
         assert_eq!(

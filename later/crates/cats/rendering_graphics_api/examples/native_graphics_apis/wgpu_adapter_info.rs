@@ -18,7 +18,6 @@ use wgpu::RequestAdapterOptions;
 /// Selects an adapter without creating a window or requesting a device.
 ///
 /// # Errors
-///
 /// Returns an error if the installed drivers expose no compatible adapter.
 fn main() -> Result<(), Box<dyn Error>> {
     let mut descriptor = InstanceDescriptor::new_without_display_handle();
@@ -38,22 +37,22 @@ fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the adapter query from the example target.
-///
+
 /// # Errors
-///
 /// Returns an error when a compatible adapter cannot be selected.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
 
+/// Verifies graphics example entry point.
 #[cfg(test)]
 mod tests {
     use super::*;
 
     /// Queries the graphics backend when a compatible GPU adapter is present.
     // output-only: prints the adapter that the machine provides.
+    /// Verifies graphics example entry point.
     #[test]
     #[ignore = "needs a GPU adapter"]
     fn test_graphics_example_entry_point() -> Result<(), Box<dyn Error>> {

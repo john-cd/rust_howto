@@ -7,6 +7,7 @@
 //! lets Rust functions be called from JavaScript, for example to speed up heavy
 //! computation. The compiled library is a `.node` file that Node loads with
 //! `require`.
+
 #![cfg_attr(
     not(feature = "node"),
     allow(
@@ -23,8 +24,9 @@ use napi_derive::napi;
 pub fn sum(a: i32, b: i32) -> i32 {
     a + b
 }
-
+/// Two-dimensional point represented by horizontal and vertical coordinates.
 /// Represents a point passed between JavaScript and Rust.
+
 #[derive(Debug, PartialEq)]
 #[cfg_attr(feature = "node", napi(object))]
 pub struct Point {
@@ -44,24 +46,33 @@ pub fn translate_point(point: Point, offset_x: f64, offset_y: f64) -> Point {
 }
 
 /// Returns a greeting for `name` as a JavaScript string.
+///
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected napi.
+
 #[cfg_attr(feature = "node", napi)]
 pub fn hello(name: String) -> String {
     format!("Hello, {name}!")
 }
 
 /// Returns an asynchronous greeting that becomes a JavaScript Promise.
+///
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected napi.
+
 #[cfg_attr(feature = "node", napi)]
 pub async fn greet_async(name: String) -> String {
     hello(name)
 }
-
 /// Exercises the pure function before it is wrapped in a generated addon.
+
 fn main() {
     println!("{} + {} = {}", 2, 3, sum(2, 3));
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the pure Rust N-API example without loading a Node runtime.
+
 pub fn run() {
     main();
 }
@@ -81,19 +92,16 @@ mod tests {
         main();
     }
 
-    /// Verifies the same greeting that the JavaScript smoke test expects.
     #[test]
     fn greeting_includes_the_javascript_argument() {
         assert_eq!(hello("Ada".to_owned()), "Hello, Ada!");
     }
 
-    /// Checks that the exported sum has ordinary Rust behavior.
     #[test]
     fn sum_adds_two_integers() {
         assert_eq!(sum(20, 22), 42);
     }
 
-    /// Checks that a JavaScript point maps to a translated Rust value.
     #[test]
     fn point_translation_preserves_both_coordinates() {
         assert_eq!(
@@ -102,7 +110,6 @@ mod tests {
         );
     }
 
-    /// Checks that the async export resolves to the personalized greeting.
     #[test]
     fn async_greeting_includes_the_javascript_argument() {
         let waker = Waker::noop();

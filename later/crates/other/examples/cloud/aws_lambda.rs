@@ -56,11 +56,15 @@ async fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 /// Starts the Lambda runtime for this handler.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main().map_err(|e| anyhow::anyhow!("{e}"))?;
     Ok(())
 }
 
+/// Verifies the handler response without starting the AWS Lambda runtime.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -79,7 +83,6 @@ mod tests {
         Ok(())
     }
 
-    /// Starts the real Lambda runtime, which needs `AWS_LAMBDA_RUNTIME_API`
     /// and the other variables that AWS Lambda (or `cargo lambda watch`) sets.
     #[test]
     #[ignore = "requires the AWS Lambda runtime environment (AWS_LAMBDA_RUNTIME_API)"]

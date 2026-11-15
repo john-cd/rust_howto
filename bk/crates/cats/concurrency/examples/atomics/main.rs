@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Demonstrates the use of `AtomicCell` from the `crossbeam-utils` crate.
 mod atomic_cell;
+/// Demonstrates the use of atomic types.
 mod atomics;
+/// A spinlock built on an atomic flag, with a guard that unlocks it on drop.
 mod spinlock;
 
 /// Command-line arguments.
@@ -47,8 +50,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -62,7 +66,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["atomic_cell", "atomics", "spinlock"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

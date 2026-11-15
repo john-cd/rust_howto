@@ -11,8 +11,9 @@ use std::str::FromStr as _;
 
 use rust_decimal::Decimal;
 use rust_decimal_macros::dec;
-
+/// Runs the example.
 /// Creates decimal numbers and applies arithmetic operations to them.
+
 fn main() {
     // 1. Creating decimals from literals.
     let number1 = Decimal::new(1234, 2); // 12.34
@@ -51,8 +52,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

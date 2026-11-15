@@ -35,8 +35,8 @@ enum Token<'a> {
 type Spanned<'a> = (Token<'a>, Range<usize>);
 
 type Input<'a> = LocatingSlice<&'a str>;
-
 /// Parses one token.
+
 fn token<'a>(input: &mut Input<'a>) -> ModalResult<Token<'a>, ContextError> {
     alt((
         (digit1, opt(('.', digit1)))
@@ -50,8 +50,8 @@ fn token<'a>(input: &mut Input<'a>) -> ModalResult<Token<'a>, ContextError> {
     ))
     .parse_next(input)
 }
-
 /// Splits `source` into tokens, skipping whitespace.
+
 fn lex(source: &str) -> Result<Vec<Spanned<'_>>, String> {
     let mut input = LocatingSlice::new(source);
     let (tokens, _): (Vec<_>, _) = repeat_till(
@@ -83,13 +83,17 @@ enum Expr<'a> {
 
 /// Parser over a token vector; `pos` is the next token to read.
 struct ExprParser<'a> {
+    /// Collection of tokens values consumed by expr parser operations.
     tokens: Vec<Spanned<'a>>,
+    /// Current position in the input.
     pos: usize,
+    /// End of the selected range.
     end: usize,
 }
 
 impl<'a> ExprParser<'a> {
-    /// Creates a parser for spanned tokens and records the input length.
+    /// Constructs a usable initial expr parser value with the defaults required by the calc parser
+    /// component.
     fn new(tokens: Vec<Spanned<'a>>, end: usize) -> Self {
         Self {
             tokens,
@@ -104,12 +108,14 @@ impl<'a> ExprParser<'a> {
     }
 
     /// Byte offset of the next token, or the end of the input.
+
     fn offset(&self) -> usize {
         self.peek().map_or(self.end, |(_, span)| span.start)
     }
 
     /// Binding power: (left, right). Right-associative operators have a
     /// lower right power.
+
     fn binding_power(op: char) -> (u8, u8) {
         match op {
             '+' | '-' => (1, 2),
@@ -171,8 +177,8 @@ fn parse(source: &str) -> Result<Expr<'_>, String> {
     }
     Ok(expr)
 }
-
 /// Evaluates an expression; `pi` is the only variable.
+
 fn eval(expr: &Expr<'_>) -> Result<f64, String> {
     Ok(match expr {
         Expr::Number(n) => *n,
@@ -197,8 +203,9 @@ fn eval(expr: &Expr<'_>) -> Result<f64, String> {
 fn calculate(source: &str) -> Result<f64, String> {
     eval(&parse(source)?)
 }
-
+/// Runs the example.
 /// Runs representative valid and invalid calculator expressions.
+
 fn main() {
     for source in ["1 + 2 * 3", "2 ^ 3 ^ 2", "-2 ^ 2", "(1 + 2) * 3", "1 +"] {
         match calculate(source) {
@@ -208,8 +215,9 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -217,11 +225,12 @@ pub fn run() {
     entry();
 }
 
+/// copy tokens with byte spans, then a hand-written precedence-climbing parser that builds and
+/// evaluates an expression tree.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Evaluates the calculator examples with the expected precedence.
     #[test]
     fn precedence_and_associativity() {
         assert_eq!(calculate("1 + 2 * 3"), Ok(7.0));
@@ -231,7 +240,6 @@ mod tests {
         assert_eq!(calculate("10 - 4 - 3"), Ok(3.0));
     }
 
-    /// Verifies that each lexer token retains its original byte range.
     #[test]
     fn tokens_carry_spans() {
         let tokens = lex("12 + x").expect("the sample expression should lex");
@@ -239,7 +247,6 @@ mod tests {
         assert_eq!(tokens[2], (Token::Ident("x"), 5..6));
     }
 
-    /// Checks that malformed input reports the relevant byte position.
     #[test]
     fn errors_report_positions() {
         assert_eq!(

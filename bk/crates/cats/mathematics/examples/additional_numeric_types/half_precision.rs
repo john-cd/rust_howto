@@ -21,17 +21,18 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the half-precision example.
+
 pub fn run() {
     main();
 }
 
+/// representable.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that binary16 conversion rounds a value that is not
     /// representable.
     #[test]
     fn rounds_when_converting_to_half_precision() {

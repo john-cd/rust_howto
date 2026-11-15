@@ -16,6 +16,9 @@ use anyhow::anyhow;
 use directories::ProjectDirs;
 
 /// Returns the user's data directory.
+///
+/// # Errors
+/// Returns an error if the requested data cannot be retrieved.
 pub fn get_data_dir() -> Result<PathBuf> {
     let directory = if let Ok(s) = std::env::var("APP_DATA_DIR") {
         PathBuf::from(s)
@@ -28,6 +31,9 @@ pub fn get_data_dir() -> Result<PathBuf> {
 }
 
 /// Returns the user's config directory.
+///
+/// # Errors
+/// Returns an error if the requested data cannot be retrieved.
 pub fn get_config_dir() -> Result<PathBuf> {
     let directory = if let Ok(s) = std::env::var("APP_CONFIG_DIR") {
         PathBuf::from(s)
@@ -49,6 +55,9 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }

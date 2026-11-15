@@ -25,7 +25,9 @@ use tokio_native_tls::TlsConnector;
 /// A message reduced to the fields we care about.
 #[derive(Debug, PartialEq, Eq)]
 pub struct Summary {
+    /// Subject name from the certificate.
     pub subject: String,
+    /// Start value of the requested interval.
     pub from: String,
 }
 
@@ -42,10 +44,9 @@ pub fn summarize(raw: &[u8]) -> Option<Summary> {
 /// Connects over TLS (port 993 by default) and summarizes unseen messages.
 ///
 /// # Errors
-///
 /// Returns an error if configuration, TLS setup, IMAP login, search, fetch, or
 /// logout fails.
-pub async fn run() -> Result<()> {
+pub async fn example_body() -> Result<()> {
     for summary in fetch_unseen().await? {
         println!("{summary:?}");
     }
@@ -55,7 +56,6 @@ pub async fn run() -> Result<()> {
 /// Fetches and summarizes all unseen messages in the configured inbox.
 ///
 /// # Errors
-///
 /// Returns an error if configuration, TLS setup, IMAP login, search, fetch, or
 /// logout fails.
 pub async fn fetch_unseen() -> Result<Vec<Summary>> {
@@ -95,11 +95,9 @@ pub async fn fetch_unseen() -> Result<Vec<Summary>> {
     session.logout().await?;
     Ok(summaries)
 }
-
 /// Builds an IMAP TLS connector and optionally adds a PEM root certificate.
-///
+
 /// # Errors
-///
 /// Returns an error if the optional root certificate cannot be read or parsed,
 /// or if the TLS connector cannot be built.
 fn build_tls_connector() -> Result<TlsConnector> {
@@ -120,6 +118,15 @@ fn build_tls_connector() -> Result<TlsConnector> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub async fn run() -> Result<()> {
+    example_body().await
+}
+
+/// [`mail_parser`].
 #[cfg(test)]
 mod tests {
     use super::*;

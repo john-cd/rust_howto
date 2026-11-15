@@ -1,7 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
-//! Round-trips DDS and KTX2 container metadata without a GPU.
 // ANCHOR: example
+//! Round-trips DDS and KTX2 container metadata without a GPU.
+
 use ddsfile::AlphaMode;
 use ddsfile::D3D10ResourceDimension;
 use ddsfile::Dds;
@@ -77,6 +78,20 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+/// Round-trips DDS and KTX2 container metadata without a GPU.
+///
+/// # Errors
+/// Returns an error if an operation in the example fails.
+/// Returns an error if a step of the example fails.
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -86,8 +101,8 @@ mod tests {
     fn test_main_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Verifies the DDS metadata survives a write and read.
+
     #[test]
     fn dds_metadata_round_trips() -> anyhow::Result<()> {
         assert_eq!(dds_round_trip()?, (64, 64, 7, Some(DxgiFormat::BC7_UNorm)));
@@ -103,7 +118,6 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that bytes without the KTX2 magic number are rejected.
     #[test]
     fn ktx2_rejects_bad_magic() {
         assert!(Header::from_bytes(&[0; Header::LENGTH]).is_err());

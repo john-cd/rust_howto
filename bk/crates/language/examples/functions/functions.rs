@@ -9,6 +9,9 @@ fn say_hello() {
 }
 
 /// Function with one parameter called `name` of type `&str` (string slice).
+///
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected functions.
 fn greet(name: &str) {
     println!("Hello, {name}!");
 }
@@ -24,8 +27,8 @@ fn add_and_display(a: i32, b: i32) {
 fn multiply(x: i32, y: i32) -> i32 {
     x * y // No semicolon: this expression's value is returned.
 }
-
 /// Function bodies follow the same rules than blocks:
+
 #[allow(clippy::let_and_return)]
 fn foo(x: i32) -> i32 {
     let y = {
@@ -69,8 +72,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

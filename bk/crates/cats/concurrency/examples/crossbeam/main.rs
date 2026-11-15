@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// A bounded MPMC pipeline distributes messages to worker threads.
 mod crossbeam_complex;
+/// Receives from whichever Crossbeam channel is ready first.
 mod crossbeam_select;
 
 /// Command-line arguments.
@@ -57,7 +59,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["bounded_mpmc", "select_channels"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

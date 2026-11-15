@@ -50,14 +50,17 @@ pub fn run() {
     main();
 }
 
+/// An error is returned if get_mut fails.
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `rc` example runs.
 
     #[test]
     fn test_rc_example_entry_point() {
         main();
     }
+    /// Verifies strong count follows clones and drops.
 
     #[test]
     fn test_strong_count_follows_clones_and_drops() {
@@ -70,6 +73,8 @@ mod tests {
         assert_eq!(Rc::strong_count(&a), 1);
     }
 
+    /// # Errors
+    /// An error is returned if get_mut fails.
     #[test]
     fn test_get_mut_requires_unique_ownership() -> Result<(), Box<dyn std::error::Error>> {
         let mut y = Rc::new(4);
@@ -79,6 +84,7 @@ mod tests {
         assert!(Rc::get_mut(&mut y).is_none());
         Ok(())
     }
+    /// Verifies try unwrap.
 
     #[test]
     fn test_try_unwrap() {
@@ -91,6 +97,7 @@ mod tests {
         assert_eq!(*err, 6);
         drop(other);
     }
+    /// Verifies weak does not keep the value alive.
 
     #[test]
     fn test_weak_does_not_keep_the_value_alive() {

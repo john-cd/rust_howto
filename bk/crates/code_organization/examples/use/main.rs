@@ -5,11 +5,19 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Re-exporting a name with `pub use`.
 mod pub_use;
+/// This example demonstrates how to use the `use` keyword to bring items into scope without having
+/// to write their full path.
 mod use1;
+/// Bringing a function into scope with `use`.
 mod use2;
+/// Importing items from the standard library with `use`.
 mod use3;
+/// This example demonstrates how to write `use` declarations to bring items from external crates
+/// into scope, without having to write their full paths.
 mod use_external_crate;
+/// Shortcuts for `use`: globs, grouped imports, `self` and aliases.
 mod use_shortcuts;
 
 /// Command-line arguments.
@@ -91,7 +99,6 @@ mod tests {
         "use_shortcuts",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

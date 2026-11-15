@@ -22,6 +22,9 @@ use arrow_cast::pretty::pretty_format_batches;
 ///
 /// `try_from_iter` infers each field's type from its array and marks a field
 /// nullable only when the array contains nulls.
+///
+/// # Errors
+/// Returns an error if the requested resource or connection cannot be created.
 pub fn build_batch() -> Result<RecordBatch> {
     let ids = Int32Array::from(vec![1, 2, 3]);
     // `Option` elements become nulls in the validity bitmap.
@@ -37,7 +40,10 @@ pub fn build_batch() -> Result<RecordBatch> {
 }
 
 /// Builds the batch and prints it as an ASCII table.
-pub fn run() -> Result<RecordBatch> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> Result<RecordBatch> {
     let batch = build_batch()?;
     assert_eq!(batch.num_rows(), 3);
     assert_eq!(batch.num_columns(), 3);
@@ -49,6 +55,15 @@ pub fn run() -> Result<RecordBatch> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<RecordBatch> {
+    example_body()
+}
+
+/// Verifies that the nullable float column keeps its null.
 #[cfg(test)]
 mod tests {
     use arrow_array::Array;

@@ -32,6 +32,17 @@ fn main() -> anyhow::Result<()> {
 }
 
 /// Exports a sample span when an endpoint is configured, or prints setup help.
+///
+/// # Arguments
+/// * `endpoint` - OTLP endpoint used for export; when absent, the function only prints setup
+///   guidance.
+///
+/// # Returns
+/// Completes after the configured exporter shuts down, or immediately when no
+/// endpoint is provided.
+///
+/// # Errors
+/// Returns an error if exporter setup or provider shutdown fails.
 #[cfg(feature = "opentelemetry")]
 fn run_with_endpoint(endpoint: Option<&str>) -> anyhow::Result<()> {
     let Some(endpoint) = endpoint else {
@@ -75,10 +86,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies the example stays offline when no endpoint is configured.
 #[cfg(test)]
 mod tests {
     use super::*;

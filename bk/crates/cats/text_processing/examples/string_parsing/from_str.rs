@@ -94,10 +94,14 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
 
+/// Verifies a valid six-digit ASCII color is parsed into RGB components.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -118,7 +122,6 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies malformed lengths, prefixes, Unicode, and hex digits are
     /// errors.
     #[test]
     fn rejects_invalid_rgb_input_without_panicking() {

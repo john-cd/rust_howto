@@ -51,7 +51,10 @@ async fn serve_until(shutdown: impl Future<Output = ()>) -> u32 {
 
 /// Runs the service until a signal arrives; this example stops after a short
 /// timeout so that it terminates without a keyboard.
-pub fn run() -> anyhow::Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> anyhow::Result<()> {
     let runtime = tokio::runtime::Runtime::new()?;
     runtime.block_on(async {
         // Without a signal, waiting for shutdown simply times out:
@@ -67,6 +70,14 @@ pub fn run() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    example_body()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -81,6 +92,7 @@ mod tests {
         let ticks = serve_until(time::sleep(Duration::from_millis(30))).await;
         assert!(ticks >= 1);
     }
+    /// Runs completes.
 
     #[test]
     fn run_completes() -> anyhow::Result<()> {

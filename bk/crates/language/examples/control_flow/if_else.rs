@@ -33,8 +33,9 @@ fn main() {
 
 // All branches of an `if/else` expression must evaluate to the same type.
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

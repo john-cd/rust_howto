@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Connects to SQL Server with explicit credentials and runs a parameterized
 #[cfg(feature = "mssql")]
 mod tiberius;
 
@@ -14,6 +15,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies that the `tiberius` SQL Server example when the `mssql` feature is enabled.
 #[cfg(test)]
 mod tests {
     use super::*;

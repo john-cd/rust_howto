@@ -31,11 +31,13 @@ impl Counter {
         ret!([reply_to], self.count);
     }
 }
-
 /// Sends two increments and returns the replies from the counter actor.
-///
+
 /// # Errors
 /// Returns an error if the actor does not reply to either increment.
+///
+/// # Panics
+/// Panics if the first reply receiver stays open until delivery.
 fn run_actor() -> anyhow::Result<(u32, u32)> {
     let mut system = Stakker::new(Instant::now());
     let stakker = &mut system;
@@ -79,9 +81,8 @@ fn run_actor() -> anyhow::Result<(u32, u32)> {
         .context("counter actor stopped before replying to the second increment")?;
     Ok((first, second))
 }
-
 /// Runs the Stakker counter example.
-///
+
 /// # Errors
 /// Returns an error if the actor does not reply to either increment.
 fn main() -> anyhow::Result<(u32, u32)> {
@@ -90,9 +91,8 @@ fn main() -> anyhow::Result<(u32, u32)> {
     Ok((first, second))
 }
 // ANCHOR_END: example
-
 /// Runs the Stakker actor example.
-///
+
 /// # Errors
 /// Returns an error if the actor does not reply to either increment.
 pub fn run() -> anyhow::Result<()> {
@@ -100,6 +100,7 @@ pub fn run() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies that the entry point receives both expected counter replies.
 #[cfg(test)]
 mod tests {
     use super::*;

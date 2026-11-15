@@ -11,14 +11,19 @@
 
 use rapier2d::prelude::*;
 
+/// Shared `ground half height` used by this module.
 const GROUND_HALF_HEIGHT: f32 = 0.1;
+/// Shared `chassis half height` used by this module.
 const CHASSIS_HALF_HEIGHT: f32 = 0.2;
+/// Shared `simulation steps` used by this module.
 const SIMULATION_STEPS: usize = 600;
 
 /// The robot chassis state after the physics simulation settles.
 #[derive(Debug)]
 struct ChassisState {
+    /// Center height value.
     center_height: f32,
+    /// Speed value.
     speed: f32,
 }
 
@@ -83,8 +88,9 @@ fn simulate_chassis_landing() -> ChassisState {
         speed: chassis.linvel().length(),
     }
 }
-
+/// Runs the example.
 /// Runs the headless chassis simulation and prints the final state.
+
 fn main() {
     let state = simulate_chassis_landing();
     println!(
@@ -93,19 +99,20 @@ fn main() {
     );
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the robot simulation example through its entry point.
+
 pub fn run() {
     main();
 }
 
+/// physics
 #[cfg(test)]
 mod tests {
     use super::CHASSIS_HALF_HEIGHT;
     use super::main;
     use super::simulate_chassis_landing;
 
-    /// Verifies that the chassis settles on the floor with negligible speed.
     #[test]
     fn chassis_settles_on_the_floor() {
         let state = simulate_chassis_landing();

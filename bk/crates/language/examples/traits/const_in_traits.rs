@@ -20,6 +20,7 @@ trait Example {
 struct S;
 
 impl Example for S {
+    /// Shared `const no default` used by this module.
     const CONST_NO_DEFAULT: i32 = 0;
 }
 
@@ -29,8 +30,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

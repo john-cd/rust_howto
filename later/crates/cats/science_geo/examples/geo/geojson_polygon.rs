@@ -1,12 +1,12 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Reads a GeoJSON feature and checks its planar geometry.
 //!
 //! GeoJSON is a JSON format for geographic features such as points and
 //! polygons. Web maps and many APIs exchange it. Coordinates are listed as
 //! [longitude, latitude], in that order, which is easy to get backwards.
 
-// ANCHOR: example
 use std::error::Error;
 use std::io;
 
@@ -48,10 +48,15 @@ fn main() -> Result<(), Box<dyn Error>> {
 // ANCHOR_END: example
 
 /// Runs the in-memory GeoJSON conversion and geometry assertions.
+/// Reads a GeoJSON feature and checks its planar geometry.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
 
+/// Converts a feature to a polygon with the expected area, centroid, and interior.
 #[cfg(test)]
 mod tests {
     use super::*;

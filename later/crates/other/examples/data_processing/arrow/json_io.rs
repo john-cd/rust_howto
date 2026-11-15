@@ -16,14 +16,19 @@ use arrow::json;
 use arrow::record_batch::RecordBatch;
 
 /// Serializes a record batch to JSON, then reads the resulting bytes.
-pub fn run(schema: Arc<Schema>, batch: &RecordBatch) -> Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body(schema: Arc<Schema>, batch: &RecordBatch) -> Result<()> {
     let decoded = round_trip(schema, batch)?;
     assert_eq!(decoded, *batch);
     Ok(())
 }
-
-/// Writes a batch as line-delimited JSON and parses it with the supplied
-/// schema.
+/// Writes `batch` as line-delimited JSON and reads the bytes using `schema`.
+///
+/// # Errors
+/// Returns an error if Arrow cannot serialize the batch or parse the JSON back
+/// into a record batch with `schema`.
 fn round_trip(schema: Arc<Schema>, batch: &RecordBatch) -> Result<RecordBatch> {
     let mut json_bytes = Vec::new();
     let mut writer = json::LineDelimitedWriter::new(&mut json_bytes);
@@ -38,6 +43,16 @@ fn round_trip(schema: Arc<Schema>, batch: &RecordBatch) -> Result<RecordBatch> {
 }
 // ANCHOR_END: example
 
+/// Writes the sample record batch as JSON.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<()> {
+    let (schema, _, _, batch) = arrays::run()?;
+    example_body(schema, &batch)
+}
+
+/// Verifies that JSON output preserves all record batch values.
 #[cfg(test)]
 mod tests {
     use super::*;

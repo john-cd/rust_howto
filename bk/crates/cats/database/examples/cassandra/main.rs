@@ -7,8 +7,10 @@ use clap::Parser;
 #[cfg(feature = "cassandra")]
 use clap::Subcommand;
 
+/// Talking to Cassandra over its native protocol with `cassandra-protocol`.
 #[cfg(feature = "cassandra")]
 mod cassandra_protocol;
+/// Connecting to Cassandra with the `cdrs-tokio` async client.
 #[cfg(feature = "cassandra")]
 mod cdrs_tokio;
 
@@ -40,8 +42,8 @@ enum Commands {
 fn main() -> anyhow::Result<()> {
     run()
 }
-
 /// Runs the example selected on the command line.
+
 fn run() -> anyhow::Result<()> {
     #[cfg(feature = "cassandra")]
     {
@@ -60,6 +62,7 @@ fn run() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Tests the `main` example and its documented behavior.
 #[cfg(all(test, feature = "cassandra"))]
 mod tests {
     use super::*;

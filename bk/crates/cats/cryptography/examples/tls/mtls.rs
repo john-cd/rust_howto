@@ -16,9 +16,12 @@ use reqwest::Client;
 use reqwest::Identity;
 use rustls::crypto::CryptoProvider;
 use rustls::crypto::ring;
-
 /// Builds a client that trusts the supplied server CA and presents a client
+
 /// identity.
+
+/// # Errors
+/// Returns an error if the build client operation cannot satisfy its required invariants.
 fn build_client(ca_certificate_pem: &[u8], client_identity_pem: &[u8]) -> anyhow::Result<Client> {
     install_crypto_provider()?;
     let ca_certificate = Certificate::from_pem(ca_certificate_pem)?;
@@ -45,8 +48,8 @@ fn install_crypto_provider() -> anyhow::Result<()> {
         Err(_) => bail!("could not install a Rustls crypto provider"),
     }
 }
-
 /// Sends a GET request using the configured CA certificate and client identity
+
 /// files.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -74,10 +77,14 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Dispatches this example from the TLS command-line group.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies a reqwest client presents its identity to a trusted loopback mTLS server.
 #[cfg(test)]
 mod tests {
     use std::sync::Arc;
@@ -110,10 +117,15 @@ mod tests {
 
     /// Holds in-memory certificates and keys for a local mutual TLS exchange.
     struct LocalCertificateFixtures {
+        /// DER-encoded certificate authority certificate.
         ca_certificate_der: CertificateDer<'static>,
+        /// PEM-encoded certificate authority certificate.
         ca_certificate_pem: String,
+        /// DER-encoded server certificate.
         server_certificate_der: CertificateDer<'static>,
+        /// Private key associated with the server certificate.
         server_private_key: PrivateKeyDer<'static>,
+        /// PEM-encoded client identity.
         client_identity_pem: String,
     }
 

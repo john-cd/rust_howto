@@ -6,11 +6,11 @@
 //! - Its `Subscriber` trait represents the functionality necessary to collect this trace data.
 //! - The `tracing-subscriber` crate contains tools for composing subscribers out of smaller units
 //!   of behaviour, and batteries-included implementations of common subscriber functionality.
-//! - In particular, the `tracing_subscriber::fmt` module provides a default
-//!   implementation of the `Subscriber` trait that records `Events` and `Spans`
-//!   by formatting them as text and logging them to stdout.
-//!   [(docs.rs)](https://docs.rs/tracing-subscriber/latest/tracing_subscriber/index.html)
+//! - In particular, the `tracing_subscriber::fmt` module provides a default implementation of the
+//!   `Subscriber` trait that records `Events` and `Spans` by formatting them as text and logging
+//!   them to stdout.
 //!
+//!   [(docs.rs)](https://docs.rs/tracing-subscriber/latest/tracing_subscriber/index.html)
 //! Add to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
@@ -45,8 +45,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

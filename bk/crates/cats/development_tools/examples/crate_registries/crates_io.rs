@@ -26,6 +26,9 @@ fn get_client() -> Result<SyncClient> {
 }
 
 /// Retrieve information for a given crate.
+
+/// # Errors
+/// Returns an error if the get info for crate operation cannot satisfy its required invariants.
 #[tracing::instrument(err)]
 fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
     let client = get_client()?;
@@ -122,6 +125,9 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
@@ -138,7 +144,8 @@ mod tests {
         Ok(())
     }
 
-    #[test]
+    /// # Errors
+    /// An error is returned if client_is_built_without_network_access fails.
     fn client_is_built_without_network_access() -> Result<()> {
         // Constructing the client does not contact crates.io.
         get_client()?;

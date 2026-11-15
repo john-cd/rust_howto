@@ -50,6 +50,9 @@ mod tests {
     /// Each range selects the matching arm.
     #[test]
     fn test_at_binding_arms() {
+        /// # Arguments
+        /// * `id` - Identifier used to select the at bindings record or cache entry affected by
+        ///   this operation.
         fn classify(id: i32) -> &'static str {
             match (Message::Hello { id }) {
                 Message::Hello { id: 3..=7 } => "in range",

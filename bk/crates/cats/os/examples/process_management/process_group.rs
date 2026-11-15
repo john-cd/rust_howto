@@ -24,8 +24,8 @@ fn spawn_in_new_group(script: &str) -> std::io::Result<Child> {
         .process_group(0)
         .spawn()
 }
-
 /// Sends `SIGKILL` to every process in the child's group, then reaps the child.
+
 fn kill_group(child: &mut Child) -> anyhow::Result<()> {
     let group = Pid::from_raw(i32::try_from(child.id())?);
     killpg(group, Signal::SIGKILL)?;
@@ -35,13 +35,25 @@ fn kill_group(child: &mut Child) -> anyhow::Result<()> {
 }
 
 /// Starts a shell that spawns a long-running grandchild, then kills the group.
-pub fn run() -> anyhow::Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> anyhow::Result<()> {
     let mut child = spawn_in_new_group("sleep 60 & wait")?;
     kill_group(&mut child)?;
     Ok(())
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    example_body()
+}
+
+/// Confirms that terminating a group also terminates its grandchild.
 #[cfg(test)]
 mod tests {
     use std::io::BufRead as _;

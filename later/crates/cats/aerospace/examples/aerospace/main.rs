@@ -2,18 +2,20 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Sample a satellite's orbit from a fixed two-line element set using `sgp4`.
 mod aero;
-
+/// Runs the example.
 /// Runs the aerospace example.
+
 fn main() {
     aero::run();
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     fn test_main_entry_point() {

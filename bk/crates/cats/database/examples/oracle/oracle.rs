@@ -44,10 +44,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example and reports missing configuration or Oracle errors.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Connects to Oracle and exercises the parameterized table query.
 #[cfg(test)]
 mod tests {
     use super::*;

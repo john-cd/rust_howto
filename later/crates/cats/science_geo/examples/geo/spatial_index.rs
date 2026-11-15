@@ -1,12 +1,12 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Uses an R-tree to find a nearby point without a network lookup.
 //!
 //! Finding the nearest point by checking every point is slow for large data
 //! sets. An R-tree groups nearby points into bounding boxes, so a search skips
 //! whole groups at once. Databases use the same idea for map queries.
 
-// ANCHOR: example
 use rstar::RTree;
 
 /// Bulk-loads planar coordinates and finds the closest point.
@@ -22,10 +22,12 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the in-memory spatial-index lookup.
+/// Uses an R-tree to find a nearby point without a network lookup.
 pub fn run() {
     main();
 }
 
+/// Selects the expected point from an indexed set of planar coordinates.
 #[cfg(test)]
 mod tests {
     /// Selects the expected point from an indexed set of planar coordinates.

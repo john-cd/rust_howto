@@ -19,12 +19,11 @@ fn output_path() -> PathBuf {
         std::process::id()
     ))
 }
-
 /// Creates a synthetic volume of neuroimaging data and prints its location and
+
 /// shape.
 ///
 /// # Errors
-///
 /// Returns an error if the synthetic NIfTI volume cannot be written.
 fn main() -> Result<(), Box<dyn Error>> {
     let shape = (64, 64, 64);
@@ -49,11 +48,16 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
 
+/// Verifies the example writes a NIfTI file to the temporary directory.
 #[cfg(test)]
 mod tests {
     use super::*;

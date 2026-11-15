@@ -52,10 +52,9 @@ struct Meta {
 }
 
 impl Page {
-    /// Returns the names of the dependent crates on this page.
-    ///
     /// The `dependencies` entries no longer carry the dependent crate's name:
     /// look it up through `version_id` in the `versions` array.
+
     fn dependent_names(&self) -> Vec<&str> {
         let names: HashMap<u64, &str> = self
             .versions
@@ -70,6 +69,12 @@ impl Page {
 }
 
 /// Fetches one page (1-based) from crates.io.
+///
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected page.
+///
+/// # Errors
+/// Returns an error if a fallible operation cannot complete.
 #[expect(
     dead_code,
     reason = "makes real network requests; `main` uses canned pages instead"
@@ -170,6 +175,9 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
@@ -183,8 +191,8 @@ mod tests {
     fn test_paginated_example_entry_point() -> Result<()> {
         main()
     }
-
     /// All pages are walked, in order, and the walk stops at the total.
+
     #[test]
     fn walks_every_page() -> Result<()> {
         let mut requested = Vec::new();

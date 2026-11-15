@@ -15,8 +15,9 @@ use geo::Haversine;
 use geo::Point;
 use haversine::Location;
 use haversine::Units;
-
+/// Runs the example.
 /// Computes the distance in kilometers from London to New York two ways.
+
 fn main() {
     // `haversine` takes (latitude, longitude) in degrees.
     let london = Location {
@@ -43,6 +44,7 @@ fn main() {
     assert!((km - geo_km).abs() < 5.0);
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

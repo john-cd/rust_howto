@@ -14,8 +14,9 @@ struct Person {
     /// Age in years.
     age: u32,
 }
-
+/// Runs the example.
 /// Computes the average age of the people older than 30, in parallel.
+
 fn main() {
     // Create a vector of `Person` instances.
     let v: Vec<Person> = vec![
@@ -49,8 +50,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

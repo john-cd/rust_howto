@@ -72,10 +72,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the taffy layout example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that both flex-row children have the expected positions and sizes.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -44,10 +44,14 @@ fn select_text(document: &Html, query: &str) -> anyhow::Result<Vec<String>> {
 // ANCHOR_END: example
 
 /// Runs the example for the command-line dispatcher and test suite.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Selects only matching headings and preserves their document order.
 #[cfg(test)]
 mod tests {
     use ::scraper::Html;

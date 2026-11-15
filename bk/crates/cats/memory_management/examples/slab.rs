@@ -13,8 +13,9 @@
 //! ```
 
 use slab::Slab;
-
+/// Runs the example.
 /// Stores values in a slab and accesses them by key.
+
 fn main() {
     // Create a new slab with no pre-allocated storage.
     let mut slab: Slab<String> = Slab::new();
@@ -53,6 +54,11 @@ fn main() {
     println!("slab2 capacity: {}, len: {}", slab2.capacity(), slab2.len());
 }
 // ANCHOR_END: example
+
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

@@ -2,22 +2,22 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Reports the native graphics API behind a headless `wgpu` adapter.
 mod wgpu_adapter_info;
 
 /// Reports the native backend selected for a headless GPU adapter.
 ///
 /// # Errors
-///
 /// Returns an error when no compatible GPU adapter is available.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     wgpu_adapter_info::run()
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     fn test_main_entry_point() {

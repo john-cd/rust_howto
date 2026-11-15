@@ -35,6 +35,9 @@ fn string_slice() {
 
 /// `AsRef<[T]>` can also be used with slices, arrays, and vectors,
 ///  although it is more common to use `&[T]` than `AsRef<T>`.
+///
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested asref operation.
 fn print_vec<T: AsRef<[i32]>>(input: T) -> usize {
     let input = input.as_ref(); // Convert to a slice.
     println!("{input:?}");
@@ -56,16 +59,18 @@ fn vec_example() {
     let sli: &[i32] = &[1, 2, 3];
     print_vec(sli);
 }
-
+/// Runs the example.
 /// Runs both examples.
+
 fn main() {
     string_slice();
     vec_example();
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -73,11 +78,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `asref` example runs.
 
     #[test]
     fn test_asref_example_entry_point() {
         main();
     }
+    /// Verifies print length accepts string and str.
 
     #[test]
     fn test_print_length_accepts_string_and_str() {
@@ -85,6 +92,7 @@ mod tests {
         assert_eq!(print_length("Hello, Rust!"), 12);
         assert_eq!(print_length(""), 0);
     }
+    /// Verifies print vec accepts vec array and slice.
 
     #[test]
     fn test_print_vec_accepts_vec_array_and_slice() {

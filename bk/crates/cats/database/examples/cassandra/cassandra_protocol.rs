@@ -22,7 +22,6 @@ use cassandra_protocol::frame::Version;
 /// Encodes and decodes a Cassandra startup request without a server.
 ///
 /// # Errors
-///
 /// Returns an error if serialization or frame decoding fails.
 fn round_trip_startup_request() -> anyhow::Result<Envelope> {
     let request = Envelope::new_req_startup(None, Version::V4);
@@ -39,11 +38,9 @@ fn round_trip_startup_request() -> anyhow::Result<Envelope> {
 
     Ok(parsed.envelope)
 }
-
 /// Runs the frame encoding and decoding example without a Cassandra server.
-///
+
 /// # Errors
-///
 /// Returns an error if frame serialization or decoding fails.
 fn main() -> anyhow::Result<()> {
     let decoded = round_trip_startup_request()?;
@@ -54,16 +51,15 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the offline frame encoding and decoding example.
-///
+
 /// # Errors
-///
 /// Returns an error if frame serialization or decoding fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that a STARTUP frame encodes and decodes without a server.
 #[cfg(test)]
 mod tests {
     use super::*;

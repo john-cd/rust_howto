@@ -47,18 +47,37 @@ pub fn create_jwt(claims: &Claims, secret: &[u8]) -> Result<String, jsonwebtoken
         &EncodingKey::from_secret(secret),
     )
 }
-
 /// Verifies the HS256 signature and expiration, then returns the token claims.
+///
+/// # Arguments
+/// * `token` - Token to validate or use for the request.
 ///
 /// # Errors
 /// Returns an error if the token is malformed, expired, or signed with another
 /// key.
+
 pub fn verify_jwt(token: &str, secret: &[u8]) -> Result<Claims, jsonwebtoken::errors::Error> {
     let validation = Validation::new(Algorithm::HS256);
     decode::<Claims>(token, &DecodingKey::from_secret(secret), &validation).map(|data| data.claims)
 }
 // ANCHOR_END: example
 
+/// Creates and verifies a signed HS256 token using deterministic claims.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<Claims, jsonwebtoken::errors::Error> {
+    let claims = Claims {
+        sub: "ada".to_owned(),
+        exp: u64::MAX,
+        roles: vec!["reader".to_owned()],
+    };
+    let secret = [0x42_u8; 32];
+    let token = create_jwt(&claims, &secret)?;
+    verify_jwt(&token, &secret)
+}
+
+/// Signs and verifies claims without a network service.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -89,6 +108,7 @@ mod tests {
     }
 
     /// Signs and verifies claims without a network service.
+    /// Rejects a correctly signed token whose expiration is in the past.
     #[test]
     fn valid_token_round_trips_claims() -> Result<(), jsonwebtoken::errors::Error> {
         let claims = unexpired_claims();
@@ -99,7 +119,6 @@ mod tests {
         Ok(())
     }
 
-    /// Rejects a correctly signed token whose expiration is in the past.
     #[test]
     fn expired_token_is_rejected() -> Result<(), jsonwebtoken::errors::Error> {
         let claims = Claims {

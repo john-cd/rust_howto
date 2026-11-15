@@ -8,8 +8,9 @@
 use glam::Mat4;
 use glam::Vec2;
 use glam::Vec3;
-
+/// Runs the example.
 /// Creates vectors and applies operations to them.
+
 fn main() {
     // Create some vectors.
     let v1 = Vec2::new(1.0, 2.0);
@@ -41,6 +42,7 @@ fn main() {
     println!("Transformed vector: {transformed_vector:?}");
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

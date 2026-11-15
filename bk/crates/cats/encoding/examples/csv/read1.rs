@@ -8,8 +8,8 @@
 //! strings.
 
 use serde::Deserialize;
-
 /// Represents a record from the CSV data.
+
 #[derive(Debug, Deserialize, PartialEq)]
 struct Record {
     /// The year the car was built.
@@ -28,8 +28,8 @@ fn read_records(data: &str) -> Result<Vec<Record>, csv::Error> {
         .deserialize()
         .collect()
 }
-
 /// Deserializes CSV records into a struct and prints them.
+
 fn main() -> Result<(), csv::Error> {
     let data = "year,make,model,description
 1948,Porsche,356,Luxury sports car
@@ -47,10 +47,14 @@ fn main() -> Result<(), csv::Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), csv::Error> {
     main()
 }
 
+/// Verifies that CSV columns deserialize into the corresponding fields.
 #[cfg(test)]
 mod tests {
     use super::*;

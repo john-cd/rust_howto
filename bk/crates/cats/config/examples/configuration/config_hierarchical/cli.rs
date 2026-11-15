@@ -40,7 +40,6 @@ fn cmd() -> clap::Command {
                 .value_parser(value_parser!(u16)),
         )
 }
-
 /// Parses command-line arguments.
 ///
 /// This function parses command-line arguments using the `clap` crate.
@@ -49,6 +48,7 @@ fn cmd() -> clap::Command {
 /// - Optional port number override.
 ///
 /// It can also be used for testing by passing in a custom set of arguments.
+
 pub fn parse_command_line_args<I, T>(opt_args: Option<I>) -> CommandLineArgs
 where
     I: IntoIterator<Item = T>,
@@ -83,8 +83,8 @@ where
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies cmd.
 
-    /// Verifies that verify cmd.
     #[test]
     fn verify_cmd() {
         cmd().debug_assert();

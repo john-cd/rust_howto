@@ -11,8 +11,8 @@ use serde::Deserialize;
 use serde::Serialize;
 use serde_json::Result;
 use serde_json::Value;
-
 /// Represents a user with a name, age, and a list of phone numbers.
+
 #[derive(Deserialize, Serialize, Debug)]
 struct User {
     /// The name of the user.
@@ -77,6 +77,9 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
@@ -92,6 +95,7 @@ mod tests {
         Ok(())
     }
 
+    /// Defines the sample constant.
     const SAMPLE: &str = r#"{"name": "John Doe", "age": 42, "phones": ["+1 123", "+1 234"]}"#;
 
     /// The typed and untyped parses agree.

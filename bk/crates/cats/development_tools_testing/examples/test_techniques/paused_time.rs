@@ -18,6 +18,11 @@ async fn slow_answer(delay: Duration) -> u32 {
 }
 // ANCHOR_END: example
 
+/// Runs the paused-clock example with a short simulated delay.
+pub async fn run() -> u32 {
+    slow_answer(Duration::from_millis(1)).await
+}
+
 /// Waits briefly in real time; the tests below use a paused clock instead.
 fn main() -> std::io::Result<()> {
     let runtime = tokio::runtime::Builder::new_current_thread()

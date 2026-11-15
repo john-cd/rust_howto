@@ -7,10 +7,13 @@ use clap::Parser;
 #[cfg(any(feature = "sled", feature = "surrealdb", feature = "redb"))]
 use clap::Subcommand;
 
+/// Example using the `redb` embedded key-value store.
 #[cfg(feature = "redb")]
 mod redb;
+/// Example using the `sled` embeddable database.
 #[cfg(feature = "sled")]
 mod sled;
+/// Use SurrealDB's embedded in-memory engine for a self-contained CRUD example.
 #[cfg(feature = "surrealdb")]
 mod surrealdb;
 
@@ -68,6 +71,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies command-line selection and execution of the documented examples.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -78,25 +82,27 @@ mod tests {
     fn test_main_is_a_no_op_without_features() {
         assert!(main().is_ok());
     }
+    /// Verifies redb subcommand parses.
 
     #[cfg(feature = "redb")]
     #[test]
     fn test_redb_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "redb"]).is_ok());
     }
+    /// Verifies sled subcommand parses.
 
     #[cfg(feature = "sled")]
     #[test]
     fn test_sled_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "sled"]).is_ok());
     }
+    /// Verifies surrealdb subcommand parses.
 
     #[cfg(feature = "surrealdb")]
     #[test]
     fn test_surrealdb_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "surrealdb"]).is_ok());
     }
-
     /// Unknown subcommands are rejected.
     #[cfg(any(feature = "sled", feature = "surrealdb", feature = "redb"))]
     #[test]

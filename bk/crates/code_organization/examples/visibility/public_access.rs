@@ -7,8 +7,8 @@
 mod a_module {
     /// A private function.
     fn private() {}
-
     /// A public function.
+
     pub fn public() -> &'static str {
         private();
         private_nested_module::public();
@@ -19,8 +19,8 @@ mod a_module {
     pub mod public_nested_module {
         /// A private function.
         fn private() {}
-
         /// A public function.
+
         pub fn public() -> &'static str {
             private();
             "public_nested_module::public"
@@ -31,8 +31,8 @@ mod a_module {
     mod private_nested_module {
         /// A private function.
         fn private() {}
-
         /// A public function.
+
         pub fn public() {
             private();
         }
@@ -79,12 +79,14 @@ fn call_sibling() {
     another_module::call();
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// modules.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -93,6 +95,7 @@ mod tests {
     fn test_main() {
         main();
     }
+    /// Verifies public items in public modules.
 
     #[test]
     fn test_public_items_in_public_modules() {

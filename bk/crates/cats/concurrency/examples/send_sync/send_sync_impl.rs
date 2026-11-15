@@ -99,6 +99,8 @@ mod my {
     ///
     /// This increments the reference count.
     impl<T> Clone for Arc<T> {
+        /// # Panics
+        /// Panics if the guarded invariant is violated.
         fn clone(&self) -> Self {
             // Increase the count only if it will not wrap and invalidate the
             // ownership guarantee. `fetch_update` leaves the count unchanged
@@ -134,6 +136,7 @@ mod my {
     /// This decrements the reference count and deallocates the data when the
     /// count reaches zero.
     impl<T> Drop for Arc<T> {
+        /// Releases the resources owned by this value.
         fn drop(&mut self) {
             // Subtracts from the current value, returning the previous value.
             // `count` is atomic, so this is thread-safe.
@@ -168,12 +171,12 @@ mod my {
         struct DropCounter(StdArc<AtomicUsize>);
 
         impl Drop for DropCounter {
+            /// Releases the resources owned by this value.
             fn drop(&mut self) {
                 self.0.fetch_add(1, Ordering::Relaxed);
             }
         }
 
-        /// Verifies the last owner can drop the value on another thread once.
         #[test]
         fn final_owner_drops_value_once_on_another_thread() {
             let drops = StdArc::new(AtomicUsize::new(0));
@@ -188,7 +191,6 @@ mod my {
             assert_eq!(drops.load(Ordering::Relaxed), 1);
         }
 
-        /// Verifies that a failed clone leaves an overflowing count unchanged.
         #[test]
         fn clone_panics_before_strong_count_overflow() {
             let value = Arc::new(());
@@ -211,13 +213,13 @@ mod my {
 struct Droppable(i32);
 
 impl Drop for Droppable {
+    /// Releases the resources owned by this value.
     fn drop(&mut self) {
         println!("`Droppable` drop called - its value was {}", self.0);
     }
 }
 
 /// Demonstrate the usage of `my::Arc`.
-///
 /// This function creates an `my::Arc` instance, spawns multiple threads that
 /// access the shared data, and then waits for all threads to finish.
 fn main() {
@@ -250,6 +252,7 @@ fn main() {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

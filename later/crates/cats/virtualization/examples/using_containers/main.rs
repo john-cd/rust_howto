@@ -2,7 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Runs a short-lived container with explicit cleanup using Bollard.
 mod docker_client;
+/// Tests a Redis service on a randomly mapped host port.
 mod redis_test;
 
 /// Executes the Docker recipes against the configured daemon.
@@ -12,6 +14,7 @@ async fn main() -> anyhow::Result<()> {
     redis_test::run().await
 }
 
+/// Runs both container examples through the entry point.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -50,6 +50,7 @@ pub fn run() {
     main();
 }
 
+/// Verifies node roles, names, text, and keyboard focus in the tree.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -76,8 +77,13 @@ mod tests {
         assert_eq!(update.focus, button_id);
     }
 
-    /// Finds a node in an accessibility tree and reports a missing fixture
     /// node.
+
+    /// # Arguments
+    /// * `id` - Identifier used to select the accesskit or related record being processed.
+    ///
+    /// # Panics
+    /// Panics if the accessibility tree contains each requested node.
     fn find_node(update: &TreeUpdate, id: NodeId) -> &Node {
         update
             .nodes

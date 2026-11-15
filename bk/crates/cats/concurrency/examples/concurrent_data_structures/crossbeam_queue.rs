@@ -27,17 +27,19 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// order.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that the bounded queue accepts values up to capacity in FIFO
     /// order.
-    /// Runs the crossbeam queue example through its entry point.
     #[test]
     fn test_crossbeam_queue_example_entry_point() {
         main().expect("queue recipe should pass its assertions");

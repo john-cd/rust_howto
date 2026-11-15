@@ -35,8 +35,8 @@ fn connector_with_roots(root_store: RootCertStore) -> anyhow::Result<TlsConnecto
 fn webpki_root_store() -> RootCertStore {
     RootCertStore::from_iter(webpki_roots::TLS_SERVER_ROOTS.iter().cloned())
 }
-
 /// Opens a verified TLS connection to the resolved server address.
+
 async fn connect_to_server(
     server_name: &str,
     address: SocketAddr,
@@ -73,10 +73,14 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that the client validates a local certificate and exchanges data.
 #[cfg(test)]
 mod tests {
     use std::sync::Arc;

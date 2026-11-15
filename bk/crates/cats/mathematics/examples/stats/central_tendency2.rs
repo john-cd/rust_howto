@@ -7,9 +7,8 @@
 //! tendency that works for categories, such as the most common colour.
 
 use std::collections::HashMap;
-
 /// Calculates the mode of a dataset.
-///
+
 /// The mode is the value that appears most frequently in a dataset.
 fn main() {
     let data = [3, 1, 6, 1, 5, 8, 1, 8, 10, 11];
@@ -30,8 +29,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

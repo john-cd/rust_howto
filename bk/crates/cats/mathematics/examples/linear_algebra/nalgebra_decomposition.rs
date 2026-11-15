@@ -10,7 +10,6 @@
 use nalgebra::Matrix3;
 
 /// This example demonstrates matrix decompositions using the `nalgebra` crate.
-///
 /// Singular Value Decomposition (SVD) factorizes a matrix M into U * Σ * Vᵀ,
 /// where U and V are orthogonal matrices and Σ is a diagonal matrix of
 /// singular values. SVD has applications in dimensionality reduction,
@@ -46,8 +45,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -28,6 +28,7 @@ fn build_app() -> App {
 }
 
 /// Spawns the entity that the movement system updates.
+
 fn spawn_mover(mut commands: Commands<'_, '_>) {
     commands.spawn((Position(Vec2::ZERO), Velocity(Vec2::new(1.0, 0.0))));
 }
@@ -38,8 +39,9 @@ fn movement(mut query: Query<'_, '_, (&mut Position, &Velocity)>, time: Res<'_, 
         position.0 += velocity.0 * time.delta_secs();
     }
 }
-
+/// Runs the example.
 /// Runs two frames of the headless ECS example.
+
 fn main() {
     let mut app = build_app();
     app.update();
@@ -47,8 +49,9 @@ fn main() {
     println!("Updated a Bevy ECS app without opening a window.");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the headless Bevy example.
+
 pub fn run() {
     main();
 }
@@ -67,7 +70,6 @@ mod tests {
         main();
     }
 
-    /// Verifies that the movement system advances an entity in headless mode.
     #[test]
     fn movement_advances_position_without_a_window() {
         let mut app = build_app();

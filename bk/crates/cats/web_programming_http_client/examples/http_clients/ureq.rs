@@ -30,10 +30,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// `ureq` crate.
 #[cfg(test)]
 mod tests {
     // output-only: the example fetches a live URL (ignored offline); see the
@@ -41,7 +45,8 @@ mod tests {
     use super::*;
 
     #[test]
-    #[ignore = "needs network"]
+    /// # Errors
+    /// An error is returned if require_network fails.
     fn require_network() -> anyhow::Result<()> {
         main()?;
         Ok(())

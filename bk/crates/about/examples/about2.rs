@@ -1,4 +1,5 @@
 // Reviewed 10-28-2026.
+// TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
 //! This example demonstrates how to parse a URL and extract a portion of it.
@@ -22,11 +23,26 @@ fn example() -> anyhow::Result<String> {
     println!("cleaned: {cleaned}");
     Ok(cleaned.to_owned())
 }
+/// This example demonstrates how to parse a URL and extract a portion of it.
 
 fn main() -> anyhow::Result<()> {
     example().map(|_| ())
 }
 // ANCHOR_END: example
+
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+/// This example demonstrates how to parse a URL and extract a portion of it.
+///
+/// # Errors
+/// Returns an error if an operation in the example fails.
+/// Returns an error if a step of the example fails.
 
 #[cfg(test)]
 mod tests {
@@ -36,12 +52,14 @@ mod tests {
     fn test_main_entry_point() {
         main().expect("main failed");
     }
+    /// Verifies example strips the query.
 
     #[test]
     fn test_example_strips_the_query() -> Result<(), Box<dyn std::error::Error>> {
         assert_eq!(example()?, "https://httpbin.org/cookies/set");
         Ok(())
     }
+    /// Verifies invalid URL is an error.
 
     #[test]
     fn test_invalid_url_is_an_error() {

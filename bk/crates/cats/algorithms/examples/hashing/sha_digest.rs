@@ -58,17 +58,23 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Panics if reading from memory cannot fail.
 #[cfg(test)]
 mod tests {
     use std::io::Cursor;
 
     use super::*;
 
+    /// Shared `empty sha256` used by this module.
     const EMPTY_SHA256: &str = "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855";
+    /// Verifies that the `sha digest` example runs.
 
     #[test]
     fn test_sha_digest_example_entry_point() {
@@ -86,12 +92,16 @@ mod tests {
         );
     }
 
+    /// # Panics
+    /// Panics if reading from memory cannot fail.
     #[test]
     fn digest_of_empty_input_is_the_known_value() {
         let digest = sha256_digest(Cursor::new(b"")).expect("reading from memory cannot fail");
         assert_eq!(HEXUPPER.encode(digest.as_ref()), EMPTY_SHA256);
     }
 
+    /// # Panics
+    /// Panics if reading from memory cannot fail.
     #[test]
     fn digest_spanning_several_buffers_matches_one_shot() {
         let data = vec![b'x'; 5000];
@@ -100,10 +110,15 @@ mod tests {
         assert_eq!(streamed.as_ref(), one_shot.as_ref());
     }
 
+    /// Loads the errors are propagated required by the sha digest workflow and reports failures
+    /// from the underlying source.
     #[test]
     fn read_errors_are_propagated() {
+        /// Groups the data required by hashing operations.
         struct Failing;
         impl Read for Failing {
+            /// # Arguments
+            /// * `_buf` - Mutable [u8] whose state is updated by this operation.
             fn read(&mut self, _buf: &mut [u8]) -> std::io::Result<usize> {
                 Err(std::io::Error::other("boom"))
             }

@@ -13,8 +13,8 @@ use ordered_float::OrderedFloat;
 
 /// The `ordered-float` crate provides a wrapper type `OrderedFloat` for
 /// floating-point numbers that can be used as keys in ordered collections
-/// like `BTreeMap`.
 ///
+/// like `BTreeMap`.
 /// The standard floating-point types (f32, f64) do not implement `Ord` because
 /// NaN (Not-a-Number) values do not have a well-defined ordering.
 /// `OrderedFloat` ensures that comparisons involving NaN values are consistent
@@ -45,8 +45,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

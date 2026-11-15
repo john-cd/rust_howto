@@ -31,12 +31,12 @@ struct Rocket {
 }
 
 impl Rocket {
-    /// Returns the mass of the rocket with its remaining fuel, in kg.
     fn total_mass(&self) -> f64 {
         self.mass_empty + self.fuel_mass
     }
 
     /// Advances the simulation by `dt` seconds.
+
     fn update(&mut self, dt: f64) {
         let g = 9.81; // Gravity (m/s^2)
         // Air gets thinner with height. This exponential model starts from the
@@ -166,8 +166,9 @@ fn solve_ballistic_trajectory() -> [f64; 2] {
     [final_state[0], final_state[1]]
 }
 // ANCHOR_END: rk4-ballistic-trajectory
-
+/// Runs the example entry point.
 /// Runs the aerospace simulation examples through the crate entry point.
+
 pub fn run() {
     main();
     let position = propagate_tle_sixty_minutes();
@@ -226,7 +227,6 @@ mod tests {
         assert!(landed, "rocket should return to the ground");
     }
 
-    /// Checks that a fixed ISS TLE yields a finite position near low Earth
     /// orbit after an hour.
     #[test]
     fn fixed_tle_propagates_to_a_finite_low_earth_orbit_position() {
@@ -244,7 +244,6 @@ mod tests {
         );
     }
 
-    /// Checks that RK4 solves the constant-gravity trajectory within tolerance.
     #[test]
     fn rk4_solves_a_constant_gravity_trajectory() {
         let final_state = solve_ballistic_trajectory();

@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates how to use the `diff` crate to compare two strings
 mod diff;
+/// Diffing lines and words with `similar` and styling the result with
 mod similar;
 
 /// Command-line arguments.
@@ -56,7 +58,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["diff", "similar"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

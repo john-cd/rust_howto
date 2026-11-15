@@ -30,8 +30,9 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -39,6 +40,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `rand range uniform` example runs.
 
     #[test]
     fn test_rand_range_uniform_example_entry_point() {

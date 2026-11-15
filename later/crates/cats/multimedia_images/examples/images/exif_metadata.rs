@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Reads an orientation tag from a generated TIFF/EXIF record.
 //!
 //! EXIF is metadata stored inside photos: camera model, time, GPS position and
@@ -7,7 +8,6 @@
 //! read the same way up, so viewers must rotate the image. Photos you publish
 //! can leak location data, so strip EXIF when privacy matters.
 
-// ANCHOR: example
 use exif::In;
 use exif::Reader;
 use exif::Tag;
@@ -33,10 +33,15 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 // ANCHOR_END: example
 
 /// Runs the in-memory EXIF recipe.
+/// Reads an orientation tag from a generated TIFF/EXIF record.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     main()
 }
 
+/// Reads a known orientation value from a small generated EXIF record.
 #[cfg(test)]
 mod tests {
     /// Reads a known orientation value from a small generated EXIF record.

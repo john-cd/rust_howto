@@ -13,21 +13,22 @@ use regex::Regex;
 /// Returns the login part of the first email address in `input`.
 fn extract_login(input: &str) -> Option<&str> {
     lazy_static! {
-    /// Matches the email address format demonstrated by this example.
-            static ref RE: Regex = Regex::new(
-                r"(?x)
+        static ref RE: Regex = Regex::new(
+            r"(?x)
+        /// Matches the email address format demonstrated by this example.
             ^(?P<login>[^@\s]+)@
             ([[:word:]]+\.)*
             [[:word:]]+$
             "
-            )
-            .expect("the email example invariant should hold");
-        }
+        )
+        .expect("the email example invariant should hold");
+    }
     let cap = RE.captures(input)?;
     cap.name("login").map(|login| login.as_str())
 }
-
+/// Runs the example.
 /// Extracts the login from several strings.
+
 fn main() {
     let login = extract_login("I❤email@example.com");
     println!("{login:?}");
@@ -42,8 +43,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

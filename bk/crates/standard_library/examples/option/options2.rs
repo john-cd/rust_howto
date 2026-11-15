@@ -38,8 +38,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -47,11 +48,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `options2` example runs.
 
     #[test]
     fn test_options2_example_entry_point() {
         main();
     }
+    /// Verifies cake with sprinkles.
 
     #[test]
     fn test_cake_with_sprinkles() {
@@ -60,6 +63,7 @@ mod tests {
             "A delicious cake... with a sprinkle of rainbow nonpareils"
         );
     }
+    /// Verifies cake without sprinkles.
 
     #[test]
     fn test_cake_without_sprinkles() {
@@ -68,6 +72,7 @@ mod tests {
             "A delicious cake... ready for your decorating touch!"
         );
     }
+    /// Verifies cake with empty sprinkle name.
 
     #[test]
     fn test_cake_with_empty_sprinkle_name() {

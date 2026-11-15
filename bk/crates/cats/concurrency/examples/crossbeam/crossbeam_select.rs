@@ -39,10 +39,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the channel selection example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies that `select!` receives all messages without relying on order.
 #[cfg(test)]
 mod tests {
     use super::*;

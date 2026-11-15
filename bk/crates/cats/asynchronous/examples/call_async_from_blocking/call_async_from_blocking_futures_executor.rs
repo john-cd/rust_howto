@@ -28,17 +28,18 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// entry point.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the call async from blocking futures executor example through its
     /// entry point.
     #[test]
     fn test_call_async_from_blocking_futures_executor_example_entry_point() {

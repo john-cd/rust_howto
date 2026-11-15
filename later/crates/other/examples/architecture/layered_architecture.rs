@@ -8,9 +8,10 @@
 use std::sync::Arc;
 
 use anyhow::Result;
+/// Account record used by the layered architecture example.
 
-#[derive(Debug, Clone)]
 /// Represents a user in the system.
+#[derive(Debug, Clone)]
 pub struct User {
     /// The identifier of the user.
     pub id: u32,
@@ -29,13 +30,13 @@ mod data {
 
     use super::User;
 
+    /// Specifies the operations implementations provide to architecture callers.
     #[async_trait]
-    /// Defines the contract for interacting with user data.
     pub trait UserRepository {
         /// Returns the user with the given identifier, if any.
         async fn get_user(&self, id: u32) -> Result<Option<User>>;
-
         /// Stores a new user.
+
         async fn create_user(&self, user: User) -> Result<()>;
     }
 
@@ -57,11 +58,15 @@ mod data {
 
     #[async_trait]
     impl UserRepository for InMemoryUserRepository {
+        /// # Arguments
+        /// * `id` - Identifier used to select the in memory user repository record or cache entry
+        ///   affected by this operation.
         async fn get_user(&self, id: u32) -> Result<Option<User>> {
             let users = self.users.lock().await;
             Ok(users.get(&id).cloned())
         }
 
+        /// Assembles the user from its component values so callers receive a ready-to-use result.
         async fn create_user(&self, user: User) -> Result<()> {
             let mut users = self.users.lock().await;
             users.insert(user.id, user);
@@ -80,12 +85,12 @@ mod business {
     use super::User;
     use super::data::UserRepository;
 
-    /// Defines the contract for user-related business operations.
+    /// Specifies the operations implementations provide to architecture callers.
     pub trait UserService {
         /// Returns the user with the given identifier, if any.
         async fn get_user(&self, id: u32) -> Result<Option<User>>;
-
         /// Creates a user.
+
         async fn create_user(&self, user: User) -> Result<()>;
     }
 
@@ -104,10 +109,15 @@ mod business {
     }
 
     impl<R: UserRepository + Send + Sync> UserService for SimpleUserService<R> {
+        /// # Arguments
+        /// * `id` - Identifier used to select the simple user service record or cache entry
+        ///   affected by this operation.
         async fn get_user(&self, id: u32) -> Result<Option<User>> {
             // Business logic goes here.
             self.repo.get_user(id).await
         }
+
+        /// Assembles the user from its component values so callers receive a ready-to-use result.
 
         async fn create_user(&self, user: User) -> Result<()> {
             // Business logic goes here.
@@ -159,6 +169,10 @@ async fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() -> Result<()> {
     main()
@@ -175,6 +189,11 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
+    ///
+    /// # Panics
+    /// Panics if user 1 was created.
     #[tokio::test]
     async fn created_users_can_be_found_and_others_cannot() -> Result<()> {
         use business::UserService as _;
@@ -193,6 +212,11 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
+    ///
+    /// # Panics
+    /// Panics if user 1 exists.
     #[tokio::test]
     async fn creating_a_user_twice_replaces_it() -> Result<()> {
         use data::UserRepository as _;

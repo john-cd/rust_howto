@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Publishing and consuming a message with the `lapin` AMQP client.
 #[cfg(feature = "lapin")]
 mod lapin;
 
@@ -14,6 +15,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies that the `lapin` AMQP example when the `lapin` feature is enabled.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -25,7 +27,7 @@ mod tests {
         assert!(main().is_ok());
     }
 
-    /// Runs the example against a running RabbitMQ server.
+    /// Connects to RabbitMQ and publishes the example message.
     #[cfg(feature = "lapin")]
     #[test]
     #[ignore = "requires a running RabbitMQ server"]

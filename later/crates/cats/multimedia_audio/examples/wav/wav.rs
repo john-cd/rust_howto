@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Writes and reads a WAV file through an in-memory cursor.
 //!
 //! WAV is an uncompressed audio container: a header describing the sample rate,
@@ -9,7 +10,6 @@
 use std::error::Error;
 use std::io::Cursor;
 
-// ANCHOR: example
 /// Writes one silent sample to an in-memory WAV and reads it back.
 fn main() -> Result<(), Box<dyn Error>> {
     let spec = hound::WavSpec {
@@ -32,10 +32,15 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 // ANCHOR_END: example
 
+/// Writes and reads a WAV file through an in-memory cursor.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
 
+/// Verifies a finalized in-memory WAV contains the sample written to it.
 #[cfg(test)]
 mod tests {
     use super::*;

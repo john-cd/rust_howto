@@ -11,8 +11,8 @@
 pub extern "C" fn add(a: i32, b: i32) -> i32 {
     a + b
 }
-
 /// Subtracts b from a; callable from C.
+
 #[unsafe(no_mangle)]
 pub extern "C" fn subtract(a: i32, b: i32) -> i32 {
     a - b
@@ -32,8 +32,9 @@ pub struct Point {
 pub extern "C" fn create_point(x: f64, y: f64) -> Point {
     Point { x, y }
 }
-
+/// Runs the example.
 /// Checks the exported functions and reports where Cargo wrote the C header.
+
 fn main() {
     assert_eq!(add(20, 22), 42);
     assert_eq!(subtract(44, 2), 42);
@@ -41,17 +42,18 @@ fn main() {
     println!("Generated C header: {}", header.display());
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();
 }
 
+/// Exposes callable C-ABI functions and generates their header.
 #[cfg(test)]
 mod tests {
     use super::*;
 
     /// Exposes callable C-ABI functions and generates their header.
-    /// Runs the cbindgen example through its entry point.
     #[test]
     fn test_cbindgen_example_entry_point() {
         main();

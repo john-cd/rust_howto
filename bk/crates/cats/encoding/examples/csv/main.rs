@@ -5,13 +5,21 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Demonstrates how to use a custom delimiter during CSV deserialization.
 mod delimiter;
+/// This example shows how to filter CSV data based on a query.
 mod filter;
+/// This example demonstrates invalid data handling when reading a CSV file.
 mod invalid;
+/// This example shows how to read a CSV file.
 mod read;
+/// This example demonstrates deserializing CSV records into a struct.
 mod read1;
+/// Demonstrates serializing structs to CSV using `serde`.
 mod serde_serialize;
+/// This example shows how to serialize data to a CSV file.
 mod serialize;
+/// This example shows how to transform CSV data from one format to
 mod transform;
 
 /// Command-line arguments.
@@ -107,7 +115,6 @@ mod tests {
         "transform",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

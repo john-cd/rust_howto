@@ -1,9 +1,9 @@
-// TODO Reviewed ??-??-2026.
-
 #![cfg_attr(
     not(test),
     expect(dead_code, reason = "needs AWS credentials (SES); the tests use mocks")
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Send an HTML and plain-text email with Amazon SES v2.
 //!
@@ -29,8 +29,11 @@ fn content(text: &str) -> Result<Content> {
         .build()
         .context("invalid email content")
 }
-
 /// Builds the message: clients that cannot render HTML fall back to the text.
+///
+/// # Errors
+/// Returns an error if the requested resource or connection cannot be created.
+
 pub fn build_email(subject: &str, text: &str, html: &str) -> Result<EmailContent> {
     let body = Body::builder()
         .text(content(text)?)
@@ -45,8 +48,14 @@ pub fn build_email(subject: &str, text: &str, html: &str) -> Result<EmailContent
 
 /// Sends the email and returns the SES message identifier.
 ///
+/// # Arguments
+/// * `client` - Client used to make the request.
+///
 /// The sender must be a verified identity; in the SES sandbox, so must the
 /// recipient.
+///
+/// # Errors
+/// Returns an error if the output cannot be written or sent.
 pub async fn send_email(
     client: &Client,
     from: &str,
@@ -65,6 +74,15 @@ pub async fn send_email(
 }
 // ANCHOR_END: example
 
+/// Builds a sample email with text and HTML content.
+///
+/// # Errors
+/// Returns an error if the SES SDK rejects the message content.
+fn run() -> Result<EmailContent> {
+    build_email("Example", "Plain text", "<p>HTML</p>")
+}
+
+/// Verifies that both bodies and the subject are in the request.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -61,11 +61,17 @@ impl WasiView for State {
 
 /// The host implementation of the `logger` import.
 impl howto::greeter::logger::Host for State {
+    /// Instantiates `component` with a fuel budget and a memory limit.
+    ///
+    /// A component built for `wasm32-wasip2` imports a few WASI interfaces for
+    /// the Rust standard library. They are linked, but the `WasiCtx` is empty: no
+    /// preopened directories, environment variables, arguments, network or
+    /// inherited standard streams. Add capabilities with `WasiCtxBuilder` only
+    /// when the guest needs them.
     fn log(&mut self, message: String) {
         self.log.push(message);
     }
 }
-
 /// Instantiates `component` with a fuel budget and a memory limit.
 ///
 /// A component built for `wasm32-wasip2` imports a few WASI interfaces for
@@ -73,6 +79,7 @@ impl howto::greeter::logger::Host for State {
 /// preopened directories, environment variables, arguments, network or
 /// inherited standard streams. Add capabilities with `WasiCtxBuilder` only
 /// when the guest needs them.
+
 fn instantiate(engine: &Engine, component: &Component) -> Result<(Store<State>, Greeter)> {
     let mut linker = Linker::new(engine);
     wasmtime_wasi::p2::add_to_linker_sync(&mut linker)?;
@@ -163,6 +170,9 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     let entry = main;
     entry()
@@ -189,8 +199,8 @@ mod tests {
     fn example_succeeds() -> Result<()> {
         main()
     }
-
     /// Valid and invalid names produce the typed results.
+
     #[test]
     fn typed_results_cross_the_boundary() -> Result<()> {
         let Some((engine, component)) = engine_and_component()? else {

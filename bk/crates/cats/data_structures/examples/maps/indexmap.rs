@@ -8,8 +8,9 @@
 //! in configuration files.
 
 use indexmap::IndexMap;
-
+/// Runs the example.
 /// Inserts into an `IndexMap` and iterates in insertion order.
+
 fn main() {
     // Create an IndexMap:
     let mut map = IndexMap::new();
@@ -51,8 +52,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

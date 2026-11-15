@@ -1,7 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
-//! Tessellates a path with Lyon and rasterizes the mesh with tiny-skia.
 // ANCHOR: example
+//! Tessellates a path with Lyon and rasterizes the mesh with tiny-skia.
+
 use lyon::math::point;
 use lyon::path::Path;
 use lyon::tessellation::BuffersBuilder;
@@ -86,6 +87,20 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+/// Tessellates a path with Lyon and rasterizes the mesh with tiny-skia.
+///
+/// # Errors
+/// Returns an error if an operation in the example fails.
+/// Returns an error if a step of the example fails.
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -95,8 +110,8 @@ mod tests {
     fn test_main_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Verifies that the triangle's centroid is painted and a corner is not.
+
     #[test]
     fn rasterizes_the_tessellated_triangle() -> anyhow::Result<()> {
         let pixmap = rasterize(&tessellate()?)?;

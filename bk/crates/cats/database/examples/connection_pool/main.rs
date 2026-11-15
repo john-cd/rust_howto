@@ -5,7 +5,10 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates how to use the `deadpool` crate to manage a pool
 mod deadpool;
+/// This example demonstrates how to use `deadpool-postgres` to manage a pool of PostgreSQL
+/// connections.
 #[cfg(feature = "postgres")]
 mod deadpool2;
 
@@ -59,10 +62,10 @@ mod tests {
     /// Every example is exposed as a subcommand.
     #[cfg(feature = "postgres")]
     const SUBCOMMANDS: &[&str] = &["deadpool", "deadpool2"];
+    /// Shared `subcommands` used by this module.
     #[cfg(not(feature = "postgres"))]
     const SUBCOMMANDS: &[&str] = &["deadpool"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

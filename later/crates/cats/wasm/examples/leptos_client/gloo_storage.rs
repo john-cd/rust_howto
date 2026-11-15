@@ -1,9 +1,9 @@
-// TODO Reviewed ??-??-2026.
-
 #![expect(
     dead_code,
     reason = "targets the browser (wasm32); native builds cannot call it"
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Persist typed settings in the browser's local storage with [`gloo_storage`].
 //!
@@ -22,18 +22,21 @@ const KEY: &str = "settings";
 #[derive(Clone, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(default)]
 pub struct Settings {
+    /// Flag indicating whether the settings satisfies the dark mode condition.
     pub dark_mode: bool,
+    /// Toast seconds value.
     pub toast_seconds: u32,
 }
-
 /// Parses stored JSON, falling back to the defaults when the value is missing
+
 /// or invalid. Kept free of browser APIs so it can be tested natively.
+
 pub fn parse_settings(raw: Option<&str>) -> Settings {
     raw.and_then(|s| serde_json::from_str(s).ok())
         .unwrap_or_default()
 }
-
 /// Loads the settings from `localStorage` (browser only).
+
 #[cfg(target_arch = "wasm32")]
 pub fn load() -> Settings {
     use gloo_storage::LocalStorage;
@@ -42,6 +45,12 @@ pub fn load() -> Settings {
 }
 
 /// Saves the settings to `localStorage` (browser only).
+///
+/// # Arguments
+/// * `settings` - Settings applied to this operation.
+///
+/// # Errors
+/// Returns an error if the output cannot be written or sent.
 #[cfg(target_arch = "wasm32")]
 pub fn save(settings: &Settings) -> Result<(), gloo_storage::errors::StorageError> {
     use gloo_storage::LocalStorage;
@@ -50,6 +59,12 @@ pub fn save(settings: &Settings) -> Result<(), gloo_storage::errors::StorageErro
 }
 // ANCHOR_END: example
 
+/// Parses default settings without accessing browser storage.
+fn run() -> Settings {
+    parse_settings(None)
+}
+
+/// An error is returned if to_string fails.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -60,6 +75,8 @@ mod tests {
         assert_eq!(parse_settings(Some("not json")), Settings::default());
     }
 
+    /// # Errors
+    /// An error is returned if to_string fails.
     #[test]
     fn round_trip_and_partial() -> anyhow::Result<()> {
         let s = Settings {

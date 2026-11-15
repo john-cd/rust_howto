@@ -1,3 +1,5 @@
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Formatting crate sections and crate blocks using `tool_lib`.
 //!
@@ -5,9 +7,8 @@
 //! 1. Alphabetical crate index sections (`create_alphabetical_crate_page_section`).
 //! 2. Crate category rows (`create_category_and_crates`).
 //! 3. Markdown crate badges, descriptions, and reference definitions from crate metadata
-//!    (`create_crate_block_badges_or_refdefs`).
 //!
-//! TODO Reviewed ??-??-2026.
+//!    (`create_crate_block_badges_or_refdefs`).
 
 use std::collections::BTreeMap;
 
@@ -93,12 +94,16 @@ fn main() -> Result<()> {
     run_example()
 }
 // ANCHOR_END: example
-
 /// Runs the crate section formatting example for programmatic execution.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+
 pub fn run() -> Result<()> {
     run_example()
 }
 
+/// Verifies that the crate section formatting example runs successfully.
 #[cfg(test)]
 mod tests {
     use super::*;

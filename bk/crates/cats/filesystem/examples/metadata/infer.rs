@@ -20,14 +20,17 @@ const ZIP_HEADER: &[u8] = b"PK\x03\x04";
 fn detect(bytes: &[u8]) -> Option<&'static str> {
     infer::get(bytes).map(|kind| kind.mime_type())
 }
-
 /// Returns the MIME type detected from the content of the file at `path`.
+
 fn detect_file(path: &Path) -> std::io::Result<Option<&'static str>> {
     Ok(infer::get_from_path(path)?.map(|kind| kind.mime_type()))
 }
-
 /// Shows that the extension of a file can lie.
-pub fn run() -> anyhow::Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+
+pub fn example_body() -> anyhow::Result<()> {
     assert_eq!(detect(PNG_HEADER), Some("image/png"));
     assert_eq!(detect(ZIP_HEADER), Some("application/zip"));
     // Plain text has no magic number.
@@ -46,6 +49,14 @@ pub fn run() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    example_body()
+}
 
 #[cfg(test)]
 mod tests {

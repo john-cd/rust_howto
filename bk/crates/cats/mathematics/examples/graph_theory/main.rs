@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Detect dependency cycles in a directed graph.
 mod cycle_detection;
+/// Group tasks into levels that can run in parallel.
 mod topological_levels;
 
 /// Command-line arguments for the graph theory examples.
@@ -33,11 +35,13 @@ fn dispatch(cli: Cli) {
         None => {}
     }
 }
+/// Runs the example.
 
 fn main() {
     dispatch(Cli::parse());
 }
 
+/// Each example is reachable through its own subcommand and runs.
 #[cfg(test)]
 mod tests {
     use super::*;

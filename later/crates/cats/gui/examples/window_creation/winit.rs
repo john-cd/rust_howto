@@ -54,8 +54,8 @@ impl ApplicationHandler for App {
 fn should_exit(event: &WindowEvent) -> bool {
     matches!(event, WindowEvent::CloseRequested)
 }
-
 /// Creates the event loop and runs the application.
+
 fn main() -> anyhow::Result<()> {
     let event_loop = EventLoop::new()?;
     event_loop.set_control_flow(ControlFlow::Wait);
@@ -65,10 +65,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the window example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Opens a native window for manual testing.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -79,8 +83,8 @@ mod tests {
     fn test_winit_example_entry_point() {
         main().expect("the Winit example should run successfully");
     }
+    /// Closes requested asks the application to exit.
 
-    /// Checks that only a close request asks the application to exit.
     #[test]
     fn close_requested_asks_the_application_to_exit() {
         assert!(should_exit(&WindowEvent::CloseRequested));

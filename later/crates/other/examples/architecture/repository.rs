@@ -11,8 +11,8 @@ use std::collections::HashMap;
 use std::sync::Arc;
 use std::sync::Mutex;
 
-/// Define a simple data model.
 /// Represents a user with an ID, name, and email.
+/// Define a simple data model.
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct User {
     /// The unique identifier for the user.
@@ -29,17 +29,22 @@ struct User {
 trait UserRepository {
     /// Returns the user with the given identifier, if any.
     fn get_user(&self, id: i32) -> Option<User>;
-
     /// Adds a user.
+
     fn add_user(&self, user: User);
-
     /// Replaces the user that has the same identifier.
+
     fn update_user(&self, user: User);
+    /// Removes or resets the user state owned by user repository, preventing stale data from
+    /// affecting later work.
+    ///
+    /// # Arguments
+    /// * `id` - Identifier used to select the user repository record or cache entry affected by
+    ///   this operation.
 
-    /// Deletes the user with the given identifier.
     fn delete_user(&self, id: i32);
-
     /// Returns all users.
+
     fn get_all_users(&self) -> Vec<User>;
 }
 
@@ -63,26 +68,50 @@ impl InMemoryUserRepository {
 
 /// Implementation of the `UserRepository` trait for `InMemoryUserRepository`.
 impl UserRepository for InMemoryUserRepository {
+    /// # Arguments
+    /// * `id` - Identifier used to select the in memory user repository record or cache entry
+    ///   affected by this operation.
+    ///
+    /// # Panics
+    /// Panics if mutex should not be poisoned.
     fn get_user(&self, id: i32) -> Option<User> {
         let users = self.users.lock().expect("mutex should not be poisoned");
         users.get(&id).cloned()
     }
 
+    /// # Panics
+    /// Panics if mutex should not be poisoned.
     fn add_user(&self, user: User) {
         let mut users = self.users.lock().expect("mutex should not be poisoned");
         users.insert(user.id, user);
     }
 
+    /// Applies the user change to in memory user repository and keeps dependent state consistent
+    /// for later operations.
+
+    /// # Panics
+    /// Panics if mutex should not be poisoned.
     fn update_user(&self, user: User) {
         let mut users = self.users.lock().expect("mutex should not be poisoned");
         users.insert(user.id, user);
     }
 
+    /// Removes or resets the user state owned by in memory user repository, preventing stale data
+    /// from affecting later work.
+    ///
+    /// # Arguments
+    /// * `id` - Identifier used to select the in memory user repository record or cache entry
+    ///   affected by this operation.
+
+    /// # Panics
+    /// Panics if mutex should not be poisoned.
     fn delete_user(&self, id: i32) {
         let mut users = self.users.lock().expect("mutex should not be poisoned");
         users.remove(&id);
     }
 
+    /// # Panics
+    /// Panics if mutex should not be poisoned.
     fn get_all_users(&self) -> Vec<User> {
         let users = self.users.lock().expect("mutex should not be poisoned");
         users.values().cloned().collect()
@@ -90,7 +119,6 @@ impl UserRepository for InMemoryUserRepository {
 }
 
 /// Example usage of the `InMemoryUserRepository`.
-///
 /// This function demonstrates how to create a repository, add users, retrieve
 /// users, update users, delete users, and list all users.
 fn main() {
@@ -139,6 +167,7 @@ fn main() {
     }
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();
@@ -154,6 +183,11 @@ mod tests {
         main();
     }
 
+    /// # Arguments
+    /// * `id` - Identifier used to select the in memory user repository record or cache entry
+    ///   affected by this operation.
+    /// * `name` - Human-readable value used to identify or display the selected in memory user
+    ///   repository.
     fn user(id: i32, name: &str) -> User {
         User {
             id,
@@ -180,6 +214,7 @@ mod tests {
         assert_eq!(repo.get_user(1), None);
     }
 
+    /// Retrieves the all users returns every user for the current in memory user repository from
     #[test]
     fn get_all_users_returns_every_user() {
         let repo = InMemoryUserRepository::new();

@@ -1,12 +1,17 @@
 //! Runs one of the `sort` examples, chosen on the command line.
 //!
 //! Reviewed 10-27-2026.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates the basic usage of the `sort` method on a vector.
 mod sort_basic;
+/// Sort floats using their IEEE 754 total ordering, including NaN.
 mod sort_float;
+/// Sorts a vector of structs, by their derived order and by a chosen field.
 mod sort_struct;
 
 /// Command-line arguments.
@@ -47,8 +52,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -62,7 +68,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["sort_basic", "sort_float", "sort_struct"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

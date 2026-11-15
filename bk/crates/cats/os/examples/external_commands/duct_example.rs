@@ -19,10 +19,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that `duct` can run Git and capture its output.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -33,8 +37,8 @@ mod tests {
     fn test_duct_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// `duct` captures the standard output of a command.
+
     #[test]
     fn duct_captures_output() -> anyhow::Result<()> {
         let output = cmd!("git", "--version").read()?;

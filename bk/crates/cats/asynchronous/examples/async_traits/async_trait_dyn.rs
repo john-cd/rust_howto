@@ -30,6 +30,7 @@ impl Store for Constant {
     }
 
     /// Returns the constant value for every key.
+
     async fn read(&self, _key: &str) -> Option<String> {
         Some(self.0.to_owned())
     }
@@ -46,12 +47,19 @@ impl Store for Empty {
     }
 
     /// Reports that the empty backend has no stored values.
+
     async fn read(&self, _key: &str) -> Option<String> {
         None
     }
 }
-
 /// Queries every backend in a heterogeneous list.
+
+/// # Arguments
+/// * `key` - Identifier used to select the empty or related record being processed.
+///
+/// # Returns
+/// `Some` when the requested value is available; otherwise returns `None`.
+
 async fn read_all(stores: &[Box<dyn Store>], key: &str) -> Vec<(&'static str, Option<String>)> {
     let mut out = Vec::new();
     for store in stores {
@@ -59,8 +67,9 @@ async fn read_all(stores: &[Box<dyn Store>], key: &str) -> Vec<(&'static str, Op
     }
     out
 }
-
+/// Runs the example.
 /// Builds a `Vec<Box<dyn Store>>` and queries it.
+
 #[tokio::main]
 async fn main() {
     let stores: Vec<Box<dyn Store>> = vec![Box::new(Constant("hello")), Box::new(Empty)];
@@ -71,12 +80,14 @@ async fn main() {
     );
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Checks heterogeneous async stores through trait objects.
 #[cfg(test)]
 mod tests {
     use super::*;

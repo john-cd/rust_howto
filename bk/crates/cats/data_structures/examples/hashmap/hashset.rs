@@ -7,8 +7,9 @@
 //! scenarios where you need to ensure that no duplicate values are present.
 
 use std::collections::HashSet;
-
+/// Runs the example.
 /// Creates a `HashSet` and checks its elements.
+
 fn main() {
     // Create a new `HashSet`:
     let mut languages = HashSet::new();
@@ -86,8 +87,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

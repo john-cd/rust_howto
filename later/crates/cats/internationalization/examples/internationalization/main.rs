@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Formats numbers and dates with ICU4X using two different locales.
 mod icu_formatting;
 
 /// Runs the internationalization example.
@@ -9,11 +10,11 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     icu_formatting::run()
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     fn test_main_entry_point() {

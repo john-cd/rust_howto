@@ -23,7 +23,10 @@ struct Search {
 }
 
 /// Serializes a struct to a query string or form body, and parses it back.
-pub fn run() -> anyhow::Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> anyhow::Result<()> {
     let form = Search {
         q: "rust & ferris".to_owned(),
         page: 2,
@@ -46,6 +49,14 @@ pub fn run() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    example_body()
+}
 
 #[cfg(test)]
 mod tests {

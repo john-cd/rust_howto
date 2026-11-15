@@ -24,6 +24,8 @@ use arrow::record_batch::RecordBatch;
 use arrow::util::pretty::print_batches;
 
 /// Creates the sample typed Arrow arrays.
+/// Assembles the arrays from its component values so callers receive a ready-to-use result.
+
 fn create_arrays() -> (Int32Array, Float64Array, StringArray) {
     let integers = Int32Array::from(vec![1, 2, 3, 4, 5]);
     let floats = Float64Array::from(vec![5.0, 4.0, 3.0, 2.0, 1.0]);
@@ -39,8 +41,11 @@ fn create_schema() -> Arc<Schema> {
         Field::new("strings", DataType::Utf8, false),
     ]))
 }
-
 /// Combines the sample arrays into a `RecordBatch` according to the schema.
+
+/// # Errors
+/// Returns an error if the create record batch operation cannot satisfy its required invariants.
+
 fn create_record_batch(
     schema: Arc<Schema>,
     integers: &Int32Array,
@@ -56,9 +61,12 @@ fn create_record_batch(
         ],
     )
 }
-
 /// Builds the sample arrays and prints their record batch.
-pub fn run() -> Result<(Arc<Schema>, Int32Array, Float64Array, RecordBatch)> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+
+pub fn example_body() -> Result<(Arc<Schema>, Int32Array, Float64Array, RecordBatch)> {
     let (integers, floats, strings) = create_arrays();
     let schema = create_schema();
     let batch = create_record_batch(schema.clone(), &integers, &floats, &strings)?;
@@ -90,6 +98,15 @@ pub fn sum_primitive_arrays(integers: &Int32Array, floats: &Float64Array) {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<(Arc<Schema>, Int32Array, Float64Array, RecordBatch)> {
+    example_body()
+}
+
+/// Verifies the schema, arrays, and values in the sample record batch.
 #[cfg(test)]
 mod tests {
     use super::*;

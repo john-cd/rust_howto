@@ -50,12 +50,13 @@ struct ImageFile {
 impl ImageFile {
     // The simplest way to access the nested data is, of course,
     // to write simple projection functions:
-    /// Returns the size of the file in bytes.
+    ///
     fn get_file_size_bytes(&self) -> u64 {
         self.media.file_size_bytes
     }
 
     /// Returns a one-line description of the picture.
+
     fn describe(&self) -> String {
         format!(
             "{}x{} pixels, camera: {}",
@@ -70,6 +71,7 @@ impl ImageFile {
 // consider implementing `AsRef` to let `ImageFile` lend a `&MediaFile`.
 // This is a reference conversion, not an 'is-a' relationship.
 impl AsRef<MediaFile> for ImageFile {
+    /// Views this value as ref.
     fn as_ref(&self) -> &MediaFile {
         &self.media
     }
@@ -77,14 +79,15 @@ impl AsRef<MediaFile> for ImageFile {
 
 // We also need to implement `AsRef` for the "base type":
 impl AsRef<Self> for MediaFile {
+    /// Views this value as ref.
     fn as_ref(&self) -> &Self {
         self
     }
 }
-
 /// This function prints basic details of any media item.
 /// It works with anything that can provide a cheap reference to a `MediaFile`.
 /// Note that the conversion is fully _explicit_.
+
 fn print_media_details<M: AsRef<MediaFile>>(item: M) {
     // Get the `&MediaFile` reference.
     let media_ref = item.as_ref();
@@ -94,8 +97,9 @@ fn print_media_details<M: AsRef<MediaFile>>(item: M) {
     println!("Size: {} bytes", media_ref.file_size_bytes);
     println!("Tags: {:?}", media_ref.tags);
 }
-
+/// Runs the example.
 /// Creates an image file and prints the details of its media file.
+
 fn main() {
     // Create an ImageFile.
     let photo = ImageFile {
@@ -141,6 +145,7 @@ pub fn run() {
     main();
 }
 
+/// Verifies that the `AsRef` example entry point runs.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -161,7 +166,6 @@ mod tests {
         }
     }
 
-    /// Verifies that both types lend the same `MediaFile` through `AsRef`.
     #[test]
     fn as_ref_lends_the_embedded_media_file() {
         let image = ImageFile {

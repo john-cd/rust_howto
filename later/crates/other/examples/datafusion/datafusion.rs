@@ -1,6 +1,6 @@
+#![cfg(feature = "datafusion")]
 // TODO Reviewed ??-??-2026.
 
-#![cfg(feature = "datafusion")]
 // ANCHOR: example
 //! This example registers an in-memory Arrow table and groups its rows with
 //! both SQL and DataFusion's `DataFrame` API.
@@ -114,10 +114,16 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example and propagates query or runtime errors.
+/// This example registers an in-memory Arrow table and groups its rows with both SQL and
+/// DataFusion's `DataFrame` API.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies that both DataFusion APIs return the grouped totals.
 #[cfg(test)]
 mod tests {
     use super::*;

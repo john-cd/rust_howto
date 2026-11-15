@@ -15,6 +15,7 @@ use flagset::flags;
 flags! {
     // Flag values can be defined implicitly:
 /// Defines flags stored in a one-byte integer.
+    /// Defines flags stored in a one-byte integer.
     enum FlagsA: u8 { // Note the field-size type.
         Foo, // 0b0001.
         Bar, // 0b0010.
@@ -23,6 +24,7 @@ flags! {
 
     // Flag values can also be defined explicitly...
 /// Defines flags stored in a C `int`.
+    /// Defines flags stored in a C `int`.
     enum FlagsB: c_int {
         Foo = 0x01,
         Bar = 2,
@@ -47,8 +49,9 @@ impl Container {
         Self(flags.into())
     }
 }
-
+/// Runs the example.
 /// Creates containers from flags and checks their bits.
+
 fn main() {
     let container = Container::new(FlagsA::Foo | FlagsA::Bar);
     assert_eq!(container.0.bits(), 0b011);
@@ -59,8 +62,9 @@ fn main() {
 
 // Adapted from <https://docs.rs/flagset>
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

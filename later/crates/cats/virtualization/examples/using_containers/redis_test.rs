@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Tests a Redis service on a randomly mapped host port.
 //!
 //! Integration tests are more realistic against a real service than against a
@@ -7,7 +8,6 @@
 //! and mapping its port to a random free host port avoids clashes with a Redis
 //! already running or with parallel tests. It needs a running Docker daemon.
 
-// ANCHOR: example
 use std::time::Duration;
 
 use testcontainers::GenericImage;
@@ -46,10 +46,15 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the isolated Redis service recipe.
+/// Tests a Redis service on a randomly mapped host port.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub async fn run() -> anyhow::Result<()> {
     main().await
 }
 
+/// Checks Redis readiness, dynamic port discovery, and a real PING/PONG.
 #[cfg(test)]
 mod tests {
     /// Checks Redis readiness, dynamic port discovery, and a real PING/PONG.

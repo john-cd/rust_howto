@@ -5,11 +5,19 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This module demonstrates how to reduce a hierarchical URL to its origin.
 mod base;
+/// This example demonstrates how to parse a URL and extract a portion of it.
 mod fragment;
+/// Demonstrates how to build a URL by joining a base URL with a path.
 mod new;
+/// Demonstrates parsing a URL and extracting its origin components.
 mod origin;
+/// This example demonstrates how to parse a URL and extract its origin.
 mod origin1;
+/// Turns url input into structured syntax data while preserving source locations and reporting
+/// malformed input. Analysis and validation code use these routines before applying domain-specific
+/// rules.
 mod parse;
 
 /// Command-line arguments.
@@ -73,7 +81,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["base", "fragment", "new", "origin", "origin1", "parse"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

@@ -5,16 +5,27 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Find duplicate filenames in the current directory.
 mod duplicate_name;
+/// This example demonstrates how to traverse a directory and find files that
 mod find_file;
+/// This example demonstrates how to use the `globset` crate to match file paths
 mod globset;
+/// This example demonstrates how to use the `ignore` crate to traverse a directory recursively,
+/// respecting `.gitignore` and similar files, and
 mod ignore;
+/// Demonstrates how to ignore case when matching file names.
 mod ignore_case;
+/// This example demonstrates the use of the `same_file` crate.
 #[cfg(target_os = "linux")]
 mod loops;
+/// This example demonstrates how to traverse a directory and check the last
 mod modified;
+/// This example demonstrates how to use the `glob` crate
 mod png;
+/// Calculates the total size of all files within a directory tree
 mod sizes;
+/// This example demonstrates how to skip hidden files and directories during
 mod skip_dot;
 
 /// Command-line arguments.
@@ -128,7 +139,6 @@ mod tests {
         "skip_dot",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

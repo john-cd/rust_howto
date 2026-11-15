@@ -1,17 +1,27 @@
 //! Runs one of the `rand` examples, chosen on the command line.
 //!
 //! Reviewed 10-27-2026.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use clap::Parser;
 use clap::Subcommand;
 
+/// Fast pseudo-random number generation with `fastrand`.
 mod fastrand;
+/// In `Cargo.toml`, add: ```toml [dependencies] rand = "0.10.3" or latest.
 mod rand1;
+/// Generate a random string of 20 alphanumeric characters.
 mod rand_alphanumeric;
+/// Demonstrates how to implement a custom distribution for the `rand` crate.
 mod rand_custom;
+/// This example demonstrates how to sample from a normal distribution.
 mod rand_distr;
+/// Generates a random password from a custom set of characters with `rand`.
 mod rand_password;
+/// Demonstrates generating random numbers within a specified range.
 mod rand_range;
+/// Generates random numbers in ranges with the `rand` crate.
 mod rand_range_uniform;
 
 /// Command-line arguments.
@@ -108,7 +118,6 @@ mod tests {
         "rand_range_uniform",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

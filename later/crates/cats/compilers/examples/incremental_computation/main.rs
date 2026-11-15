@@ -6,7 +6,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates the usage of the `comemo` crate for fine-grained
 mod comemo;
+/// This example demonstrates incremental computation using the `salsa` crate.
 mod salsa;
 
 /// Command-line arguments.
@@ -27,8 +29,9 @@ enum Commands {
     #[command(name = "salsa")]
     Salsa,
 }
-
+/// Runs the example.
 /// Runs the example selected on the command line.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -53,7 +56,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

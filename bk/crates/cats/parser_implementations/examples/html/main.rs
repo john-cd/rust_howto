@@ -5,9 +5,15 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Turns html input into structured syntax data while preserving source locations and reporting
+/// malformed input. Analysis and validation code use these routines before applying domain-specific
+/// rules.
 mod cssparser;
+/// Tokenize HTML with `html5ever` and print the parsed tokens.
 mod html5ever;
+/// Selects HTML elements and extracts their text with CSS selectors.
 mod scraper;
+/// This example demonstrates how to use the `tl` crate to parse HTML.
 mod tl;
 
 /// Command-line arguments.
@@ -70,7 +76,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["cssparser", "html5ever", "scraper", "tl"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();
