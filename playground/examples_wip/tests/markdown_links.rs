@@ -40,6 +40,7 @@ fn document_rules(source: &str) -> Vec<Rule> {
 }
 /// Parse inline links, images, balanced brackets, destinations, and titles.
 
+/// Finds inline links and images, including their optional titles.
 #[test]
 fn recognizes_inline_links_images_and_titles() {
     assert!(matches(Rule::inline_link, "[label](url)"));
