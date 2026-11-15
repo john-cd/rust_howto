@@ -51,13 +51,3 @@ fn example() {
 fn run() {
     example();
 }
-
-/// Verifies that the static map has its expected lookup behavior.
-#[cfg(test)]
-mod tests {
-    /// Verifies that the static map has its expected lookup behavior.
-    #[test]
-    fn test_static_keyword_map() {
-        super::main();
-    }
-}

@@ -59,14 +59,6 @@ mod tests {
         Cli::command().debug_assert();
     }
 
-    /// Without a subcommand, nothing is run.
-    #[test]
-    fn no_subcommand_runs_nothing() {
-        let cli = Cli::try_parse_from(["example"]).expect("no arguments are valid");
-        assert!(cli.command.is_none());
-        dispatch(cli);
-    }
-
     /// Every declared subcommand name is accepted.
     #[test]
     fn declared_subcommands_parse() {

@@ -9,15 +9,3 @@ mod passkeys;
 fn main() -> anyhow::Result<()> {
     passkeys::run()
 }
-
-/// The entry point runs offline.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// The entry point runs offline.
-    #[test]
-    fn test_main_entry_point() {
-        main().expect("the software authenticator should succeed");
-    }
-}

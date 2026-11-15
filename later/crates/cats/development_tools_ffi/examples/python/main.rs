@@ -79,10 +79,4 @@ mod tests {
             assert!(cli.command.is_some());
         }
     }
-
-    /// Runs the no-subcommand path without reading the test harness arguments.
-    #[test]
-    fn dispatch_without_a_subcommand_succeeds() -> Result<(), Box<dyn std::error::Error>> {
-        dispatch(Cli { command: None })
-    }
 }

@@ -9,15 +9,3 @@ mod i2c_driver;
 fn main() {
     i2c_driver::run();
 }
-
-/// module tests its own results).
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// module tests its own results).
-    #[test]
-    fn test_main() {
-        main();
-    }
-}

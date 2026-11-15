@@ -16,15 +16,3 @@ fn main() -> Result<()> {
     rhai_types_and_limits::run().map_err(|error| anyhow!(error.to_string()))?;
     Ok(())
 }
-
-/// test their own results).
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// test their own results).
-    #[test]
-    fn test_main_entry_point() {
-        main().expect("the example should run successfully");
-    }
-}

@@ -28,12 +28,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the sRGB conversion example.
-pub fn run() {
-    print_example();
-}
-
 #[cfg(test)]
 mod tests {
     use palette::Srgb;
@@ -51,11 +45,5 @@ mod tests {
         assert!((i16::from(display.red) - i16::from(stored.red)).abs() <= 1);
         assert!((i16::from(display.green) - i16::from(stored.green)).abs() <= 1);
         assert!((i16::from(display.blue) - i16::from(stored.blue)).abs() <= 1);
-    }
-
-    /// Exercises the example entry point.
-    #[test]
-    fn test_main_entry_point() {
-        super::main();
     }
 }

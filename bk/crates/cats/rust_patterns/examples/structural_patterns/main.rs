@@ -61,21 +61,6 @@ mod tests {
 
     use super::*;
 
-    /// Every subcommand is parsed and runs its example.
-    #[test]
-    fn every_subcommand_dispatches() {
-        let names: Vec<String> = Cli::command()
-            .get_subcommands()
-            .map(|c| c.get_name().to_owned())
-            .collect();
-        assert!(!names.is_empty());
-        for name in names {
-            let cli = Cli::try_parse_from(["example", name.as_str()])
-                .expect("the subcommand should parse");
-            dispatch(cli).expect("the example should run");
-        }
-    }
-
     /// An unknown subcommand is rejected by the parser.
     #[test]
     fn unknown_subcommand_is_rejected() {

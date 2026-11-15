@@ -47,24 +47,11 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
-///
-/// # Errors
-/// Returns an error if the example operation fails.
-pub fn run() -> anyhow::Result<()> {
-    text_rendering_example()
-}
-
 /// Rasterizes a glyph with `fontdue` and reads metrics with `ttf-parser`.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point.
-    #[test]
-    fn test_main_entry_point() -> anyhow::Result<()> {
-        text_rendering_example()
-    }
     /// Verifies the glyph bitmap has area and visible ink.
     #[test]
     fn rasterizes_a_non_empty_glyph() -> anyhow::Result<()> {

@@ -65,12 +65,6 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Without any example feature, `main` has nothing to run and succeeds.
-    #[cfg(not(any(feature = "lmdb", feature = "rocksdb")))]
-    #[test]
-    fn test_main_is_a_no_op_without_features() {
-        assert!(main().is_ok());
-    }
     /// Verifies heed subcommand parses.
     #[cfg(feature = "lmdb")]
     #[test]

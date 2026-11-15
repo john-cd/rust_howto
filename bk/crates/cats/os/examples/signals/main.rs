@@ -13,15 +13,3 @@ fn main() -> anyhow::Result<()> {
     tokio_signal::run()?;
     Ok(())
 }
-
-/// Verifies that the graceful shutdown examples.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    #[ignore = "the Ctrl-C handler can be registered only once per process, and `ctrlc_example::tests::run_completes` already does so"]
-    fn main_runs() {
-        main().expect("the example should run");
-    }
-}

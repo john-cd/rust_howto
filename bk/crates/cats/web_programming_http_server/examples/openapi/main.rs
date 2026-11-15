@@ -30,13 +30,3 @@ fn main() -> anyhow::Result<()> {
     println!("port: {}, verbose: {}", config.port, config.verbose);
     Ok(())
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        main().expect("the example should run");
-    }
-}

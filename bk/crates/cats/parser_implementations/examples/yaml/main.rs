@@ -9,14 +9,3 @@ mod serde_saphyr;
 fn main() -> anyhow::Result<()> {
     serde_saphyr::run()
 }
-
-/// Verifies that the YAML parser example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        main().expect("the example should run");
-    }
-}

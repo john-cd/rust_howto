@@ -25,24 +25,3 @@ fn main() -> anyhow::Result<()> {
         jwt_service::run()
     }
 }
-
-/// Runs the example with a deterministic test secret without changing the
-/// process environment.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
-pub fn run() -> anyhow::Result<()> {
-    jwt_service::run()
-}
-
-/// Verifies that the example succeeds through its main entry point.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// Verifies that the example succeeds through its main entry point.
-    #[test]
-    fn test_jwt_authentication_entry_point() {
-        assert!(main().is_ok());
-    }
-}

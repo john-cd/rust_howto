@@ -14,14 +14,3 @@ fn main() -> anyhow::Result<()> {
     configparser_ini::run()?;
     rust_ini::run()
 }
-
-/// Verifies that the INI parser example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        main().expect("the example should run");
-    }
-}

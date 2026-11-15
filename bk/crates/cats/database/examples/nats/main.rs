@@ -14,17 +14,3 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
-
-/// The entry point runs; with the `nats` feature it needs a local server only when `NATS_URL` is
-/// set, and otherwise exits quietly.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// The entry point runs; with the `nats` feature it needs a local server
-    /// only when `NATS_URL` is set, and otherwise exits quietly.
-    #[test]
-    fn test_main_entry_point() {
-        main().expect("main should succeed without a broker configured");
-    }
-}

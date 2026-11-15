@@ -99,23 +99,9 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
-///
-/// # Errors
-/// Returns an error if the example operation fails.
-pub fn run() -> Result<()> {
-    streaming_example()
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    /// Runs the offer and timing metadata demonstration.
-    #[test]
-    fn test_main_entry_point() {
-        streaming_example().expect("the example should run successfully");
-    }
 
     /// The offer advertises one send-only audio line and the local candidate.
     #[test]

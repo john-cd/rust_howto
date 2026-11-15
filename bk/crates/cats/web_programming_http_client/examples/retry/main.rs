@@ -61,14 +61,6 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
-///
-/// # Errors
-/// Returns an error if the example operation fails.
-pub fn run() -> Result<()> {
-    example()
-}
-
 /// Panics if an internal invariant is violated.
 #[cfg(test)]
 mod tests {

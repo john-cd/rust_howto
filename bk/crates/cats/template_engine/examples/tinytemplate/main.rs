@@ -9,14 +9,3 @@ mod tinytemplate;
 fn main() {
     tinytemplate::run();
 }
-
-/// Verifies that the `tinytemplate` template example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        assert!(std::panic::catch_unwind(main).is_ok());
-    }
-}

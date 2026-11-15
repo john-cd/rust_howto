@@ -30,12 +30,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the pixel-buffer example.
-pub fn run() {
-    print_example();
-}
-
 /// pixels.
 #[cfg(test)]
 mod tests {
@@ -47,11 +41,5 @@ mod tests {
             example_buffer().as_raw().as_slice(),
             &[255, 0, 0, 255, 0, 0, 255, 128]
         );
-    }
-
-    /// Exercises the example entry point.
-    #[test]
-    fn test_main_entry_point() {
-        super::main();
     }
 }

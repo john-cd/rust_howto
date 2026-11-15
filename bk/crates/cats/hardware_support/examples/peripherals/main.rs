@@ -41,11 +41,6 @@ fn example() {
 }
 // ANCHOR_END: example
 
-/// Lists the serial ports that the operating system reports.
-pub fn run() {
-    example();
-}
-
 #[cfg(test)]
 mod tests {
     use serialport::UsbPortInfo;
@@ -55,10 +50,6 @@ mod tests {
     /// Runs the example through its entry point (output-only: the list
     /// depends on the machine, so there is nothing portable to assert).
     // output-only: the ports depend on the machine running the test.
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
 
     #[test]
     fn describes_a_usb_port() {

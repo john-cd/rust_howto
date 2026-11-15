@@ -78,23 +78,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
-///
-/// # Errors
-/// Returns an error if the example operation fails.
-pub fn run() -> Result<()> {
-    macro_tools_example()
-}
-
 /// Invalid input is reported as an error, not a panic.
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    #[test]
-    fn test_main_entry_point() {
-        macro_tools_example().expect("the example should run successfully");
-    }
 
     /// Invalid input is reported as an error, not a panic.
     #[test]

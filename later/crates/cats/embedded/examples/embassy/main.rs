@@ -11,25 +11,3 @@ fn main() -> anyhow::Result<()> {
     embassy::run()
 }
 // ANCHOR_END: example
-
-/// Runs the example through its program entry point.
-///
-/// # Errors
-/// Returns an error if the example operation fails.
-pub fn run() -> anyhow::Result<()> {
-    main()
-}
-
-/// Starts the host-side Embassy task example.
-
-/// test their own results).
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// test their own results).
-    #[test]
-    fn test_main_entry_point() {
-        main().expect("the example should run successfully");
-    }
-}

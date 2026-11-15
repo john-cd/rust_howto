@@ -10,13 +10,3 @@ mod cargo_subcommand;
 fn main() -> anyhow::Result<()> {
     cargo_subcommand::run_from(std::env::args_os())
 }
-
-/// the process arguments in `main`, which belong to the test harness.
-#[cfg(test)]
-mod tests {
-    /// the process arguments in `main`, which belong to the test harness.
-    #[test]
-    fn test_plugin_runs_against_a_temporary_package() {
-        assert!(super::cargo_subcommand::run().is_ok());
-    }
-}

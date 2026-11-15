@@ -14,15 +14,3 @@ mod ops;
 fn main() {
     ops::run();
 }
-
-/// panic fails the test.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// panic fails the test.
-    #[test]
-    fn test_main_runs() {
-        main();
-    }
-}

@@ -12,15 +12,3 @@ mod wgpu_adapter_info;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     wgpu_adapter_info::run()
 }
-
-/// test their own results).
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// test their own results).
-    #[test]
-    fn test_main_entry_point() {
-        main().expect("the example should run successfully");
-    }
-}

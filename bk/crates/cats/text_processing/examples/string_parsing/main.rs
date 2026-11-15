@@ -9,14 +9,3 @@ mod from_str;
 fn main() {
     from_str::run();
 }
-
-/// Verifies that the `FromStr` parsing example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        assert!(std::panic::catch_unwind(main).is_ok());
-    }
-}

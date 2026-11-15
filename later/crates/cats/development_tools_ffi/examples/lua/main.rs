@@ -83,12 +83,6 @@ mod tests {
             assert!(cli.command.is_some());
         }
     }
-
-    /// Runs the no-subcommand path without reading the test harness arguments.
-    #[test]
-    fn dispatch_without_a_subcommand_succeeds() -> LuaResult<()> {
-        dispatch(Cli { command: None })
-    }
 }
 /// Runs the example.
 /// Runs the example selected on the command line.

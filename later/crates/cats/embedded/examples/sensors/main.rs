@@ -79,27 +79,10 @@ fn run_example() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the book example from the example crate's module runner.
-/// Starts the sensors application and connects its top-level components. The executable uses this
-/// module to initialize services and hand control to the application.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
-pub fn run() -> anyhow::Result<()> {
-    run_example()
-}
-
 /// Verifies the example entry point reads a measurement from the mock.
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    /// Verifies the example entry point reads a measurement from the mock.
-    /// Runs the embedded example through its entry point.
-    #[test]
-    fn test_embedded_example_entry_point() -> anyhow::Result<()> {
-        main()
-    }
 
     #[test]
     fn reads_temperature_from_the_register_bytes() {

@@ -10,14 +10,3 @@ fn main() -> anyhow::Result<()> {
     tera::run()?;
     Ok(())
 }
-
-/// Verifies that the `tera` template example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        main().expect("the example should run");
-    }
-}

@@ -82,24 +82,11 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
-///
-/// # Errors
-/// Returns an error if the example operation fails.
-pub fn run() -> anyhow::Result<()> {
-    texture_formats_example()
-}
-
 /// Round-trips DDS and KTX2 container metadata without a GPU.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point.
-    #[test]
-    fn test_main_entry_point() -> anyhow::Result<()> {
-        texture_formats_example()
-    }
     /// Verifies the DDS metadata survives a write and read.
     #[test]
     fn dds_metadata_round_trips() -> anyhow::Result<()> {

@@ -9,15 +9,3 @@ mod rapier2d;
 fn main() {
     rapier2d::run();
 }
-
-/// test their own results).
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// test their own results).
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
-}

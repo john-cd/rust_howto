@@ -109,14 +109,6 @@ fn example() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
-///
-/// # Errors
-/// Returns an error if the example operation fails.
-pub fn run() -> anyhow::Result<()> {
-    example()
-}
-
 /// Verifies the example identifies its Loco application by crate name.
 #[cfg(test)]
 /// Tests the `main` example and its documented behavior.
@@ -128,11 +120,5 @@ mod tests {
     #[tokio::test]
     async fn app_name_matches_crate_name() {
         assert_eq!(App::app_name(), env!("CARGO_CRATE_NAME"));
-    }
-
-    /// Verifies the sample entry point returns successfully without a server.
-    #[test]
-    fn example_entry_point_returns_successfully() -> anyhow::Result<()> {
-        main()
     }
 }

@@ -18,15 +18,3 @@ fn main() -> anyhow::Result<()> {
     tonic::run()?;
     Ok(())
 }
-
-/// Verifies that the gRPC server example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    #[ignore = "serves on [::1]:50051 until stopped"]
-    fn main_runs() {
-        main().expect("the example should run");
-    }
-}

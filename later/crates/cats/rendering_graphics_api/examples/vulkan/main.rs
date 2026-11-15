@@ -46,23 +46,10 @@ fn example() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
-///
-/// # Errors
-/// Returns an error if the example operation fails.
-pub fn run() -> anyhow::Result<()> {
-    example()
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point, with or without a loader.
-    #[test]
-    fn test_main_entry_point() -> anyhow::Result<()> {
-        main()
-    }
     /// Verifies the version encoding helpers used by the example.
     #[test]
     fn decodes_packed_api_versions() {

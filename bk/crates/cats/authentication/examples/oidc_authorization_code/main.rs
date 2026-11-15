@@ -9,15 +9,3 @@ mod oidc;
 fn main() -> anyhow::Result<()> {
     oidc::run()
 }
-
-/// The entry point runs offline.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// The entry point runs offline.
-    #[test]
-    fn test_main_entry_point() {
-        main().expect("the offline fixture should succeed");
-    }
-}

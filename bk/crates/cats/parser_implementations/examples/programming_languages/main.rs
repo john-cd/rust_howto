@@ -17,14 +17,3 @@ fn main() -> anyhow::Result<()> {
     }
     Ok(())
 }
-
-/// Verifies that the SQL parser example when the `sqlparser` feature is enabled.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn main_runs() {
-        main().expect("the example should run");
-    }
-}

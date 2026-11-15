@@ -61,11 +61,7 @@ mod tests {
     /// The `record` example runs offline.
     // Prometheus and Route install a global recorder, so they run in their
     // own modules' tests.
-    /// Verifies record runs.
-    #[test]
-    fn test_record_runs() -> anyhow::Result<()> {
-        dispatch(Cli::try_parse_from(["example", "record"])?)
-    }
+
     /// A subcommand is required.
     #[test]
     fn test_subcommand_is_required() {

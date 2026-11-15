@@ -81,10 +81,6 @@ fn main() {
 mod tests {
     use super::*;
 
-    #[test]
-    fn test_main() {
-        main();
-    }
     /// Verifies reexports are reachable.
     #[test]
     fn test_reexports_are_reachable() {

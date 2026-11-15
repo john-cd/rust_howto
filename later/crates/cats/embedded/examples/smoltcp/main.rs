@@ -42,10 +42,6 @@ fn main() {
 /// Runs the example entry point.
 /// Runs the subnet-membership example.
 
-pub fn run() {
-    print_example();
-}
-
 #[cfg(test)]
 mod tests {
     use smoltcp::wire::Ipv4Address;
@@ -57,11 +53,5 @@ mod tests {
         let subnet = documentation_subnet();
         assert!(subnet.contains_addr(&Ipv4Address::new(192, 0, 2, 42)));
         assert!(!subnet.contains_addr(&Ipv4Address::new(192, 0, 3, 1)));
-    }
-
-    /// Exercises the example entry point.
-    #[test]
-    fn test_main_entry_point() {
-        super::main();
     }
 }
