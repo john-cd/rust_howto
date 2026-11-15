@@ -30,6 +30,12 @@ Future implementations can be `!Unpin`, so a wrapper must poll the inner future 
 {{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/pin_project.rs:example}}
 ```
 
+The smaller `pin-project-lite` macro also projects an inner future as pinned while allowing ordinary bookkeeping to change:
+
+```rust,editable
+{{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/pin_project_lite.rs:example}}
+```
+
 See also:
 
 - [Projections and Structural Pinning][c~std::pin~projections-and-structural-pinning~docs]↗.

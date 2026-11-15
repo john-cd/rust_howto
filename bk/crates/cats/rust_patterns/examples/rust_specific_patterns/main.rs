@@ -14,6 +14,8 @@ mod newtype_equality;
 mod newtype_units;
 /// The following demonstrates the use of the `pin_project` crate for pin
 mod pin_project;
+/// Projects pinned fields with the lightweight macro variant.
+mod pin_project_lite;
 /// A validated newtype: an `EmailAddress` that cannot hold invalid data, even
 mod validated_newtype;
 
@@ -34,6 +36,9 @@ enum Commands {
     /// Runs the `pin_project` example.
     #[command(name = "pin_project")]
     PinProject,
+    /// Runs the `pin_project_lite` example.
+    #[command(name = "pin_project_lite")]
+    PinProjectLite,
     /// Runs the `newtype_equality` example.
     #[command(name = "newtype_equality")]
     NewtypeEquality,
@@ -55,6 +60,7 @@ fn dispatch(cli: Cli) {
             Commands::PinProject => {
                 pin_project::run();
             }
+            Commands::PinProjectLite => pin_project_lite::run(),
             Commands::NewtypeEquality => {
                 newtype_equality::run();
             }
@@ -67,7 +73,6 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());
@@ -83,6 +88,7 @@ mod tests {
     const SUBCOMMANDS: &[&str] = &[
         "dyn_clone",
         "pin_project",
+        "pin_project_lite",
         "newtype_equality",
         "newtype_units",
         "validated_newtype",

@@ -30,6 +30,8 @@ name = "accessibility"
 version = "0.1.2"
 dependencies = [
  "accesskit 0.25.2",
+ "accesskit_winit 0.34.2",
+ "winit",
 ]
 
 [[package]]

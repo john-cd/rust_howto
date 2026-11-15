@@ -13,7 +13,7 @@ Book code examples for Cryptography including AES, RSA, and TLS implementations.
 - **Secrets** (`examples/secrets/`): Demonstrates concepts like `keyring`, `redacted_secret`, `sealed_envelope`, `zeroize`.
 - **Sign** (`examples/sign/`): Demonstrates concepts like `dsa`, `ecdsa`, `ed25519`, `ed25519_dalek`, `hmac`.
 - **Tls** (`examples/tls/`): Demonstrates concepts like `mtls`, `native_tls`, `rustls`, `tokio_rustls`.
-- **Utilities** (`examples/utilities/`): Demonstrates concepts like `base64_example`, `getrandom_example`, `hex_example`, `subtle`, `zeroize`.
+- **Utilities** (`examples/utilities/`): Demonstrates concepts like `base64_example`, `base64ct_example`, `getrandom_example`, `hex_example`, `subtle`, `zeroize`.
 - **Standalone Examples**: `rsa`.
 
 ## Usage

@@ -24,15 +24,20 @@ name = "screen_readers"
 path = "examples/screen_readers/main.rs"
 test = true
 
+[[example]]
+name = "winit_accessibility"
+path = "examples/winit_accessibility.rs"
+test = true
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 # UI accessibility infrastructure across platforms
 accesskit = "0.25.2"
 # AccessKit UI accessibility infrastructure: winit adapter
-# accesskit_winit = "0.34.2"
+accesskit_winit = "0.34.2"
 # Cross-platform window creation library.
-# winit = "0.30.13"
+winit = "0.30.13"
 
 [lints]
 workspace = true

@@ -110,8 +110,6 @@ crates_io_api = "0.12.0"
 doc-comment = "0.3.4"
 # Interact with git repositories just like git would
 gix = { version = "0.90.0", default-features = false, features = ["revision", "blob-diff", "sha1"] }
-# A substitute implementation of the compiler's `proc_macro` API to decouple token-based libraries from the procedural macro use case.
-# proc-macro2 = { version = "1.0.107", features = ["span-locations"] }
 # A minimal `syn` syntax tree pretty-printer
 prettyplease = "0.3.0"
 # Builds Rust token streams with quasi-quoting macros for procedural macros.
