@@ -4,6 +4,7 @@
 
 /// Authenticated encryption and decryption with AES-256-GCM.
 mod aes_gcm;
+
 /// Authenticated encryption with ChaCha20-Poly1305, with and without associated
 mod chacha20poly1305;
 
