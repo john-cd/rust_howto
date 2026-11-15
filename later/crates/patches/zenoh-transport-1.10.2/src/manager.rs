@@ -537,7 +537,8 @@ impl TransportManagerBuilder {
     /// * `config` - Settings that control the behavior and limits of this manager workflow.
 
     /// # Errors
-    /// An error is returned if for, multicast fails.
+    /// Returns an error if protocol configuration reports errors or the unicast or multicast
+    /// settings cannot be built.
     pub async fn from_config(
         mut self,
         config: &ExpandedConfig,
@@ -595,7 +596,7 @@ impl TransportManagerBuilder {
     }
 
     /// # Errors
-    /// An error is returned if cfg, build fails.
+    /// Returns an error if shared-memory, unicast, or multicast manager construction fails.
     pub fn build(
         self,
         handler: Arc<dyn TransportEventHandler>,
@@ -864,8 +865,6 @@ impl TransportManager {
     pub fn get_shm_context(&self) -> &Option<ShmContext> {
         &self.state.shm_context
     }
-
-    ///
 
     pub async fn close(&self) {
         self.close_unicast().await;

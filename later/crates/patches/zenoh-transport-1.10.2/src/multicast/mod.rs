@@ -130,8 +130,6 @@ impl TransportMulticast {
         Ok(transport.get_peers())
     }
 
-    ///
-
     #[inline(always)]
     pub async fn close(&self) -> ZResult<()> {
         // Return Ok if the transport has already been closed

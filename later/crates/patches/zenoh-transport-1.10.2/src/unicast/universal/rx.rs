@@ -97,11 +97,12 @@ impl TransportUnicastUniversal {
         Ok(())
     }
 
-    /// Processes the frame input for the rx workflow and applies the resulting state changes. It
-    /// calls `priority`, `is_qos` to apply the required changes.
+    /// Selects the receive queue for a frame, verifies its sequence number, and delivers its
+    /// messages to the registered callback.
 
     /// # Errors
-    /// An error is returned if verify_sn, Some fails.
+    /// Returns an error if QoS is disabled and the frame uses a non-default priority, sequence
+    /// number verification fails, or the callback fails.
     fn handle_frame<R: BacktrackableReader>(
         &self,
         frame: FrameReader<R>,

@@ -178,8 +178,6 @@ impl BatchHeader {
     /// 2 bytes are reserved to encode the total amount of serialized bytes as 16-bits little
     /// endian.
     #[cfg(feature = "transport_compression")]
-    ///
-
     #[inline(always)]
     pub fn is_compression(&self) -> bool {
         imsg::has_flag(self.as_u8(), Self::COMPRESSION)
@@ -360,7 +358,8 @@ impl WBatch {
     /// * `buffer` - Mutable option whose state is updated by this operation.
 
     /// # Errors
-    /// An error is returned if cfg, compress fails.
+    /// Returns an error if compression is enabled but no support buffer is provided, compression
+    /// fails, or the batch header is missing when its compression flag must be cleared.
     pub fn finalize(&mut self, mut buffer: Option<&mut BBuf>) -> ZResult<Finalize> {
         #[allow(unused_mut)]
         let mut res = Finalize::Batch;
@@ -395,7 +394,7 @@ impl WBatch {
     /// * `support` - Mutable bbuf whose state is updated by this operation.
 
     /// # Errors
-    /// An error is returned if map_err, first_mut fails.
+    /// Returns an error if writing the compressed data fails or the batch header is missing.
     #[cfg(feature = "transport_compression")]
     fn compress(&mut self, support: &mut BBuf) -> ZResult<Finalize> {
         // Write the initial bytes for the batch
@@ -534,7 +533,7 @@ impl<TBuffer: BacktrackableReader + Buffer> RBatch<TBuffer> {
     }
 
     /// # Errors
-    /// An error is returned if decompress_into, new fails.
+    /// Returns an error if decompression fails or the decompressed data does not fit in a `ZSlice`.
     #[cfg(feature = "transport_compression")]
     fn decompress<T>(&self, payload: &[u8], mut buff: impl FnMut() -> T) -> ZResult<ZSlice>
     where
@@ -565,7 +564,6 @@ where
     RBatch<TBuffer>: DecompressUring,
 {
     // Split (length, header, payload) internal buffer slice
-    ///
 
     /// # Errors
     /// An error is returned if split_uring fails.
@@ -578,7 +576,8 @@ where
     }
 
     /// # Errors
-    /// An error is returned if split_uring, cfg fails.
+    /// Returns an error if reading the batch header, decompressing the payload, or validating the
+    /// batch length fails.
     pub fn initialize_uring<C, T>(
         &mut self,
         #[allow(unused_variables)] buff: C,
@@ -642,7 +641,7 @@ impl RBatch<ZSlice> {
     }
 
     /// # Errors
-    /// An error is returned if cfg, is_compression fails.
+    /// Returns an error if the batch header or payload is invalid, or decompression fails.
     pub fn initialize<C, T>(&mut self, #[allow(unused_variables)] buff: C) -> ZResult<()>
     where
         C: Fn() -> T + Copy,
@@ -740,6 +739,7 @@ mod tests {
 
     use super::*;
 
+    /// Round-trips generated transport messages through writer and reader batches.
     #[test]
     fn rw_batch() {
         let mut rng = rand::thread_rng();
@@ -790,6 +790,7 @@ mod tests {
         }
     }
 
+    /// Serializes and reads transport and network messages in one batch.
     #[test]
     fn serialization_batch() {
         let config = BatchConfig {

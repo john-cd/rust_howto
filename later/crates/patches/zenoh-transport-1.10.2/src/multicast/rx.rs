@@ -179,11 +179,12 @@ impl TransportMulticastInner {
         self.new_peer(locator, join)
     }
 
-    /// Processes the frame input for the rx workflow and applies the resulting state changes. It
-    /// calls `priority`, `is_qos` to apply the required changes.
+    /// Selects the peer's receive queue for a frame, verifies its sequence number, and delivers
+    /// its messages to the callback.
 
     /// # Errors
-    /// An error is returned if verify_sn, trigger_callback fails.
+    /// Returns an error if QoS is disabled and the frame uses a non-default priority, sequence
+    /// number verification fails, or callback processing fails.
     fn handle_frame(
         &self,
         frame: FrameReader<ZSlice>,

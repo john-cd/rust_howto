@@ -9,8 +9,6 @@ use crate::check_correctness;
 use crate::diagnostic::Diagnostic;
 use crate::diagnostic::Level;
 
-///
-
 pub fn abort_if_dirty() {
     check_correctness();
     ERR_STORAGE.with(|storage| {
@@ -19,8 +17,6 @@ pub fn abort_if_dirty() {
         }
     });
 }
-
-///
 
 pub(crate) fn cleanup() -> Vec<Diagnostic> {
     ERR_STORAGE.with(|storage| storage.replace(Vec::new()))

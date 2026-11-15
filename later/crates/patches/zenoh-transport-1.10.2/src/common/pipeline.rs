@@ -109,8 +109,6 @@ impl StageInRefill {
 
     /// Waits for the current value.
 
-    ///
-
     fn wait(&self) -> bool {
         self.n_ref_r.wait().is_ok()
     }
@@ -1179,7 +1177,6 @@ pub(crate) trait PipelineConsumer {
     /// # Panics
     /// Panics if an internal `Result` or `Option` has no usable value.
     fn refill(&mut self, batch: BoxedWBatch, priority: Priority);
-    ///
 
     /// # Panics
     /// Panics if an internal `Result` or `Option` has no usable value.
@@ -1217,8 +1214,6 @@ impl PipelineConsumer for TransmissionPipelineConsumer {
         }
     }
 
-    ///
-
     /// # Panics
     /// Panics if an internal `Result` or `Option` has no usable value.
     fn drain(&mut self) -> Vec<(BoxedWBatch, Priority)> {
@@ -1246,8 +1241,6 @@ impl PipelineConsumer for TransmissionPipelineConsumer {
 }
 
 impl TransmissionPipelineConsumer {
-    ///
-
     /// # Panics
     /// Panics if an internal `Result` or `Option` has no usable value.
     pub(crate) fn split(self) -> Vec<SplitTransmissionPipelineConsumer> {
@@ -1307,8 +1300,6 @@ impl PipelineConsumer for SplitTransmissionPipelineConsumer {
             self.status.set_congested(priority, false);
         }
     }
-
-    ///
 
     /// # Panics
     /// Panics if an internal `Result` or `Option` has no usable value.
@@ -1398,6 +1389,7 @@ mod tests {
 
     /// # Panics
     /// Panics if an internal `Result` or `Option` has no usable value.
+    /// Delivers queued messages through the transmission pipeline on worker threads.
     #[tokio::test(flavor = "multi_thread", worker_threads = 4)]
     async fn tx_pipeline_flow() -> ZResult<()> {
         fn schedule(queue: TransmissionPipelineProducer, num_msg: usize, payload_size: usize) {
@@ -1523,13 +1515,12 @@ mod tests {
         Ok(())
     }
 
-    ///
-
     /// # Errors
-    /// An error is returned if make fails.
+    /// Returns an error if creating the transport priority state or waiting for a pipeline task
+    /// times out or fails.
     ///
     /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
+    /// Panics if pushing a message into a pipeline fails.
     #[tokio::test(flavor = "multi_thread", worker_threads = 4)]
     async fn tx_pipeline_blocking() -> ZResult<()> {
         fn schedule(queue: TransmissionPipelineProducer, counter: Arc<AtomicUsize>, id: usize) {
@@ -1713,8 +1704,6 @@ mod tests {
             tokio::time::sleep(Duration::from_millis(500)).await;
         }
     }
-
-    ///
 
     /// # Errors
     /// An error is returned if tx_pipeline_closed fails.

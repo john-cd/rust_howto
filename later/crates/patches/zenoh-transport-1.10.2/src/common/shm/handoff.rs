@@ -35,11 +35,10 @@ impl<T: Sized> PriorityContainer<T> {
         Self { per_prio_objects }
     }
 
-    /// Converts between the priority container representation and fn while preserving the
-    /// invariants required by callers.
+    /// Constructs a priority container by calling `ctor_fn` once for each priority.
     ///
     /// # Errors
-    /// An error is returned if FnMut, ctor_fn fails.
+    /// Returns the first error produced by `ctor_fn`.
     pub fn from_fn<E>(mut ctor_fn: impl FnMut(Priority) -> Result<T, E>) -> Result<Self, E> {
         // TODO: std::array::try_from_fn is unstable yet...
         let per_prio_objects = [
@@ -55,8 +54,8 @@ impl<T: Sized> PriorityContainer<T> {
         Ok(Self { per_prio_objects })
     }
 
-    /// Converts between the priority container representation and fn infallible while preserving
-    /// the invariants required by callers.
+    /// Constructs a priority container by calling the infallible constructor once for each
+    /// priority.
     pub fn from_fn_infallible(ctor_fn: impl Fn(Priority) -> T) -> Self {
         let per_prio_objects = std::array::from_fn(|prio| {
             // SAFETY: `Priority` is guaranteed to be in the range 0..=7, so this conversion is

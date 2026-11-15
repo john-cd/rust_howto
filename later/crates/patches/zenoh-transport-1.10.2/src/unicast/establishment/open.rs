@@ -183,7 +183,7 @@ impl<'a, 'b: 'a> OpenFsm for &'a mut OpenLink<'b> {
     /// * `input` - Input data whose fields determine the requested open fsm operation.
     ///
     /// # Errors
-    /// An error is returned if let, cfg fails.
+    /// Returns an error if constructing any negotiated extension for the init SYN fails.
     async fn send_init_syn(
         self,
         input: Self::SendInitSynIn,
@@ -442,7 +442,7 @@ impl<'a, 'b: 'a> OpenFsm for &'a mut OpenLink<'b> {
     /// * `input` - Input data whose fields determine the requested open operation.
     ///
     /// # Errors
-    /// An error is returned if send_open_syn, cfg fails.
+    /// Returns an error if constructing any negotiated extension for the open SYN fails.
     async fn send_open_syn(
         self,
         input: Self::SendOpenSynIn,

@@ -79,8 +79,6 @@ impl TransportAuthId {
         self.username.as_ref()
     }
 
-    ///
-
     pub fn link_auth_ids(&self) -> &Vec<LinkAuthId> {
         &self.link_auth_ids
     }

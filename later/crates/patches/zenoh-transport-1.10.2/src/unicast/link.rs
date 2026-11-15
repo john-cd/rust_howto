@@ -214,8 +214,6 @@ impl TransportLinkUnicast {
         link.recv().await
     }
 
-    ///
-
     pub(crate) async fn close(&self, reason: Option<u8>) -> ZResult<()> {
         if let Some(reason) = reason {
             // Build the close message
@@ -268,7 +266,7 @@ pub(crate) struct TransportLinkUnicastTx {
 
 impl TransportLinkUnicastTx {
     /// # Errors
-    /// An error is returned if finalize, as_slice fails.
+    /// Returns an error if batch finalization or writing the bytes to the link fails.
     pub(crate) async fn send_batch(
         &mut self,
         batch: &mut WBatch,
@@ -354,7 +352,7 @@ pub(crate) struct TransportLinkUnicastRx {
 
 impl TransportLinkUnicastRx {
     /// # Errors
-    /// An error is returned if as_mut, new fails.
+    /// Returns an error if reading the batch bytes or initializing the received batch fails.
     pub async fn recv_batch<C, T>(
         &mut self,
         buff: C,
@@ -399,8 +397,6 @@ impl TransportLinkUnicastRx {
 
         Ok(batch)
     }
-
-    ///
 
     /// # Errors
     /// An error is returned if decode fails.
@@ -456,8 +452,6 @@ impl MaybeOpenAck {
             open_ack,
         }
     }
-
-    ///
 
     /// # Errors
     /// An error is returned if a fallible operation fails.

@@ -73,7 +73,7 @@ impl State {
     /// Constructs a usable initial state value with the defaults required by the qos component.
 
     /// # Errors
-    /// An error is returned if get fails.
+    /// Returns an error if the configured reliability or priority metadata is invalid.
     fn new(is_qos: bool, endpoint: &EndPoint) -> ZResult<Self> {
         if !is_qos {
             Ok(State::NoQoS)
@@ -471,7 +471,7 @@ where
     /// * `reader` - Source that supplies the bytes or records consumed by this operation.
     ///
     /// # Errors
-    /// An error is returned if read, map_err fails.
+    /// Returns an error if the value cannot be decoded or does not represent a valid QoS state.
     fn read(self, reader: &mut R) -> Result<StateAccept, Self::Error> {
         Ok(State::try_from_u64(self.read(reader)?)
             .map_err(|_| DidntRead)?

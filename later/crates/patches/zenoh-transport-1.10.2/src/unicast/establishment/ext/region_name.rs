@@ -189,7 +189,7 @@ where
     /// * `reader` - Source that supplies the bytes or records consumed by this operation.
     ///
     /// # Errors
-    /// An error is returned if read, is_empty fails.
+    /// Returns an error if the region name cannot be read or parsed.
     fn read(self, reader: &mut R) -> Result<StateAccept, Self::Error> {
         let s: String = self
             .read(&mut *reader)
@@ -267,7 +267,7 @@ fn name_to_ext(name: RegionName) -> ext::RegionName {
 }
 
 /// # Errors
-/// An error is returned if ext_to_name, try_from fails.
+/// Returns an error if the extension contains invalid UTF-8 or an invalid region name.
 fn ext_to_name(ext: ext::RegionName) -> ZResult<RegionName> {
     let s = String::from_utf8(ext.value.to_zslice().to_vec())?;
     let name = RegionName::try_from(s)?;

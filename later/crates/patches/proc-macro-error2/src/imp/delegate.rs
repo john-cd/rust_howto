@@ -13,16 +13,12 @@ use crate::diagnostic::Diagnostic;
 use crate::diagnostic::Level;
 use crate::diagnostic::SuggestionKind;
 
-///
-
 pub fn abort_if_dirty() {
     check_correctness();
     if IS_DIRTY.with(|c| c.get()) {
         abort_now()
     }
 }
-
-///
 
 pub(crate) fn cleanup() -> Vec<Diagnostic> {
     IS_DIRTY.with(|c| c.set(false));
