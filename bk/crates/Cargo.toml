@@ -1423,3 +1423,7 @@ volatile_composites = "warn"
 
 # Checks for while loops comparing floating point values.
 while_float = "warn"
+
+[patch.crates-io]
+# Stable rsa 0.10 removed a feature still requested by crypto-glue 0.2.2.
+crypto-glue = { path = "patches/crypto-glue-0.2.2" }

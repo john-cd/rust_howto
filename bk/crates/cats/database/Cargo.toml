@@ -106,12 +106,12 @@ deadpool = "0.13.1"
 deadpool-postgres = { version = "0.14.2", features = [
     "serde",
 ], optional = true }
-# A safe, extensible ORM and Query Builder for PostgreSQL, SQLite, and MySQL
-diesel = { version = "2.4.0", optional = true }
+# Keep Diesel on 2.3 because diesel-oci 0.5.1 requires the 2.3 release line.
+diesel = { version = "2.3.14", optional = true }
 # A oci database adapter for diesel
 diesel-oci = { version = "0.5.1", optional = true }
 # Migration management for diesel
-diesel_migrations = { version = "2.4.0", features = [
+diesel_migrations = { version = "2.3.2", features = [
     "sqlite",
 ], optional = true }
 # A well-maintained fork of the dotenv crate
@@ -125,7 +125,7 @@ heed = { version = "0.23.1", optional = true }
 # Provides an asynchronous AMQP client for RabbitMQ and compatible brokers.
 lapin = { version = "4.12.3", optional = true }
 # Native bindings to the libsqlite3 library
-libsqlite3-sys = { version = "0.40.0", features = ["bundled"], optional = true }
+libsqlite3-sys = { version = "0.37.0", features = ["bundled"], optional = true }
 # The official MongoDB driver for Rust
 mongodb = { version = "3.10.1", optional = true }
 # Tokio based asynchronous MySql client library.
@@ -140,8 +140,8 @@ redis = { version = "1.8.2", optional = true }
 rocksdb = { version = "0.25.0", optional = true, default-features = false, features = [
     "bindgen-runtime",
 ] }
-# Pin to the newest rusqlite line compatible with sqlx-sqlite 0.9 and Diesel's SQLite bindings.
-rusqlite = { version = "0.43.0", optional = true }
+# Pin to the newest rusqlite line compatible with SQLx 0.9 and Diesel 2.3 SQLite bindings.
+rusqlite = { version = "0.39.0", optional = true }
 # An async & dynamic ORM for Rust
 sea-orm = { version = "2.0.4", optional = true }
 # A GraphQL framework for SeaORM
