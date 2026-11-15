@@ -71,7 +71,6 @@ fn main() -> anyhow::Result<()> {
     println!("Age: {}", args.age);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

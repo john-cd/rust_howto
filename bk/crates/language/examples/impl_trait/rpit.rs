@@ -15,7 +15,6 @@ fn main() {
     let f = returns_closure();
     println!("{}", f(1));
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

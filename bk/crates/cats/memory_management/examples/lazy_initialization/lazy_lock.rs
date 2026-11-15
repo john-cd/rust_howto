@@ -18,7 +18,6 @@ static CONFIG: LazyLock<HashMap<&str, &str>> =
 fn main() {
     assert_eq!(CONFIG.get("host"), Some(&"localhost"));
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

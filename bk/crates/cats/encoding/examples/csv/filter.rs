@@ -38,7 +38,6 @@ West Hollywood,CA,37031,34.0900000,-118.3608333";
     io::stdout().write_all(&filter_csv(data, "CA")?)?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

@@ -53,7 +53,6 @@ fn main() {
 
     print_if_string(Box::new(s));
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

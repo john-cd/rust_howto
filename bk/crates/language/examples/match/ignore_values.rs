@@ -36,7 +36,6 @@ fn main() {
         assert_eq!(rest, &[2, 3, 4]);
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -21,7 +21,6 @@ fn main() {
     println!("Max of 5 and 3: {}", max_of_two(5, 3));
     println!("Is 4 even? {}", is_even(4));
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 #[allow(clippy::items_after_test_module)]

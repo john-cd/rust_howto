@@ -23,7 +23,6 @@ fn main() {
     // "unused return value of `attributes_must_use::add` that must be used"
     // WARNING: add(2, 3);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

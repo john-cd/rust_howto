@@ -16,7 +16,6 @@ fn logical_cores() -> usize {
 fn main() {
     println!("Number of logical cores is {}", logical_cores());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

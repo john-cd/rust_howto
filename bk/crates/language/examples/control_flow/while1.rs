@@ -15,7 +15,6 @@ fn main() {
     }
     // Prints 5 4 3 2 1 with a space after each number.
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -24,7 +24,6 @@ fn main() -> anyhow::Result<()> {
     println!("{}", fetch_greeting("http://localhost:8080", "Ferris")?);
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 ///

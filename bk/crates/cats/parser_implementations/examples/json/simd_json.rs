@@ -84,7 +84,6 @@ fn main() {
 
     println!("Modified Owned JSON: {owned_json}");
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

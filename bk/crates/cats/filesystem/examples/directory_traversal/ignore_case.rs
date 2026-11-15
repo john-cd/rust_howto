@@ -35,7 +35,6 @@ fn find_ignoring_case(pattern: &str) -> Result<Vec<PathBuf>> {
     }
     Ok(paths)
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

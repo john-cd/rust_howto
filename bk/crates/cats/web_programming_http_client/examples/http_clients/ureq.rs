@@ -26,7 +26,6 @@ fn main() -> anyhow::Result<()> {
     println!("Response: {response}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

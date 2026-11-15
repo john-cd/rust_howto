@@ -48,7 +48,6 @@ fn main() {
     println!("One: {one}");
     assert_eq!(one.to_string(), "1");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

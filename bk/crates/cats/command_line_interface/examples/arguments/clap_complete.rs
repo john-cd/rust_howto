@@ -44,7 +44,6 @@ fn main() -> std::io::Result<()> {
     );
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// # Errors

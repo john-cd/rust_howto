@@ -41,7 +41,6 @@ fn main() {
     // Call the `MyTrait` function on the cloned object.
     cloned_trait_object.recite();
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

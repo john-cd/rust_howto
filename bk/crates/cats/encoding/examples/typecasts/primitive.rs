@@ -34,7 +34,6 @@ fn main() -> Result<()> {
     println!("count={count}, port={wide_port}, low byte={low_byte:#04x}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the conversion examples.

@@ -83,7 +83,6 @@ fn main() -> anyhow::Result<()> {
     tracing::info!("This will be logged by all layers.");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

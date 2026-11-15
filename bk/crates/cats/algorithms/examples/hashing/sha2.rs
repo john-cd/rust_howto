@@ -90,7 +90,6 @@ fn main() -> anyhow::Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the `sha2` example by calling `main()`.

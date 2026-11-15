@@ -220,7 +220,6 @@ impl Widget for MiddleWidget {
         paragraph.render(area, buf);
     }
 }
-
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.

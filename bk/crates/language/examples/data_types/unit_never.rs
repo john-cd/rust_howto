@@ -50,7 +50,6 @@ fn main() {
     // b_func was called.
     // n = 1
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -54,7 +54,6 @@ fn main() {
     // `itertools` also offers `all`, `any`, `concat`, `fold`, "join",
     // `partition`, `sorted`, etc.
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

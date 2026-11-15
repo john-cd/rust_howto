@@ -20,7 +20,6 @@ fn main() -> std::io::Result<()> {
     // meaningful return value.
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

@@ -30,7 +30,6 @@ async fn main() {
         .await
         .expect("the call blocking from async spawn blocking example invariant should hold");
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

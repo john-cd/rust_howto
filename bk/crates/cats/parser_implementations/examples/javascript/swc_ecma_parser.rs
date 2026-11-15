@@ -45,7 +45,6 @@ fn main() {
     // Print the parsed program.
     println!("{program:#?}");
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

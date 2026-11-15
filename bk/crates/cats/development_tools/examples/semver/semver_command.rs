@@ -83,7 +83,6 @@ fn main() -> Result<()> {
     println!("{version}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

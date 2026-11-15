@@ -112,7 +112,6 @@ fn main() {
 
     println!("{}", String::new().describe());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

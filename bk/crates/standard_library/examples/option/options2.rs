@@ -36,7 +36,6 @@ fn main() {
     // The absence of a value is noted explicitly with `None`.
     println!("{}", bake_cake(None));
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

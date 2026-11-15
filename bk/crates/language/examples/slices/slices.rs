@@ -42,7 +42,6 @@ fn main() {
     slice_from_array();
     slice_from_vector();
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

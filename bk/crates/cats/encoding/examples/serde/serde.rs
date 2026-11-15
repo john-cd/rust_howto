@@ -46,7 +46,6 @@ fn main() {
         serde_json::from_str(&json).expect("sample input should parse successfully");
     println!("Deserialized: {deserialized_person:?}");
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

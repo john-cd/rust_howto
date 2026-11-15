@@ -36,7 +36,6 @@ fn main() -> anyhow::Result<()> {
     println!("The number is: {n}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

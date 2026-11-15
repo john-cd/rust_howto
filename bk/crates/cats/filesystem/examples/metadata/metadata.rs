@@ -72,7 +72,6 @@ fn inspect_tree(base: &std::path::Path) -> anyhow::Result<()> {
     fs::remove_dir_all(base.join("temp/files"))?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

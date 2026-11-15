@@ -17,7 +17,6 @@ fn main() {
     let greeting = GREETING.get_or_init(|| String::from("Hello, Rust!"));
     assert_eq!(greeting, "Hello, Rust!");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

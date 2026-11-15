@@ -27,7 +27,6 @@ fn main() {
     // Owned string: World
     // String concatenation: Hello + World = HelloWorld
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

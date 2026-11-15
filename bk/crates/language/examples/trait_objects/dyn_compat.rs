@@ -233,7 +233,6 @@ fn main() {
     println!("CONST = {}", static_dispatch(Circle { radius: 1.0 }));
     println!("dyn compatibility examples: dyn-compatible traits demonstrated");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

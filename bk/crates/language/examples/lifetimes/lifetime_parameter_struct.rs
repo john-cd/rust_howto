@@ -62,7 +62,6 @@ fn main() {
     // e2.only_if_static(); // ERROR: argument requires that `another_part` is
     // borrowed for `'static`.
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

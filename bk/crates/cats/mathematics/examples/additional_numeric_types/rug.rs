@@ -82,7 +82,6 @@ fn main() {
     println!("Product of floats: {product}");
     assert_eq!(product.to_string(), "2.8465780742245217");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -69,7 +69,6 @@ fn main() {
     let preserved = fill(indented_text, &options);
     println!("{preserved}");
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

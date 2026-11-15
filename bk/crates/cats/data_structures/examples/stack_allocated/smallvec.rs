@@ -67,7 +67,6 @@ fn main() {
     let expected: SmallVec<[i32; 4]> = smallvec![2, 3, 4, 5];
     assert_eq!(small_vec, expected);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

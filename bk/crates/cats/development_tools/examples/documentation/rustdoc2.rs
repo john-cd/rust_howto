@@ -39,7 +39,6 @@ fn main() {
     let john = new("John");
     println!("{} -> {john:?}", john.name);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

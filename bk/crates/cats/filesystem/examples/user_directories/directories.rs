@@ -51,7 +51,6 @@ fn main() {
     println!("{:?}", get_data_dir());
     println!("{:?}", get_config_dir());
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

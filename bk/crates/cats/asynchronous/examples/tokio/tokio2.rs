@@ -17,7 +17,6 @@ fn main() {
             println!("Hello world");
         });
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

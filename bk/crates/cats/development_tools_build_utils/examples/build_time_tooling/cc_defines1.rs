@@ -62,7 +62,6 @@ fn main() -> Result<()> {
     println!("{greeting} {app_name} - version {version}");
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the C preprocessor definitions example.
 ///

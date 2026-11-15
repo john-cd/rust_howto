@@ -32,7 +32,6 @@ fn main() {
         minus_two.from_utc_datetime(&utc_time)
     );
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

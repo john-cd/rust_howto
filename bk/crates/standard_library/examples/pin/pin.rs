@@ -126,7 +126,6 @@ fn main() {
     let pinned_foo = pin!(Foo { /* ... */ });
     stuff(pinned_foo);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

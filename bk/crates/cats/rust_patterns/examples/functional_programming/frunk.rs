@@ -191,7 +191,6 @@ fn main() {
 
     println!("All frunk assertions passed!");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

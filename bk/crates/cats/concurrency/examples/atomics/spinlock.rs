@@ -163,7 +163,6 @@ fn main() {
 
     assert_eq!(final_value, 5);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

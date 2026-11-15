@@ -26,7 +26,6 @@ fn main() {
         UnicodeSegmentation::graphemes("e\u{301}", true).count()
     );
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

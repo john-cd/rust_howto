@@ -36,7 +36,6 @@ fn main() -> anyhow::Result<()> {
     println!("Updated configuration:\n{}", config.writes());
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the `configparser` example.

@@ -33,7 +33,6 @@ fn capitalize_first_char(input: &str) -> String {
         None => String::new(),
     }
 }
-
 // ANCHOR_END: example
 
 /// Runs the example for the command-line dispatcher and unit tests.

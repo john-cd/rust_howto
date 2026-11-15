@@ -70,7 +70,6 @@ fn main() {
     let a_t = a.transpose_view().to_csr();
     println!("A is symmetric: {}", a_t == a);
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

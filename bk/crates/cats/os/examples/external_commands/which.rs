@@ -29,7 +29,6 @@ fn main() {
         Err(e) => println!("Could not find command: {e}"),
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

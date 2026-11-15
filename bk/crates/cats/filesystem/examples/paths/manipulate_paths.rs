@@ -81,7 +81,6 @@ fn main() {
     let path_buffer: PathBuf = ["/", "home", "user"].iter().collect();
     println!("Another path: {}", path_buffer.display());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

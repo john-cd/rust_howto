@@ -26,7 +26,6 @@ fn main() {
     let new_matrix = matrix.dot(&new_vector);
     println!("{new_matrix}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

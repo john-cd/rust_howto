@@ -75,7 +75,6 @@ fn main() {
     assert_eq!(map.get("hello"), Some(&1));
     assert_eq!(map.get("HELLO"), None);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

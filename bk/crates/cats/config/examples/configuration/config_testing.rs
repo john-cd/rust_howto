@@ -29,7 +29,6 @@ fn main() -> anyhow::Result<()> {
     println!("Host: {}", config["host"]);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the isolated configuration-source example.

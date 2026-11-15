@@ -58,7 +58,6 @@ fn main() -> Result<(), Error> {
     assert_eq!(vault.load()?, None);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

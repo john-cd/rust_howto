@@ -53,7 +53,6 @@ fn main() {
     let owned: CString = CString::from(borrowed);
     println!("Owned: {owned:?}");
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

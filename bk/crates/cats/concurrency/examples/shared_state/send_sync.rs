@@ -53,7 +53,6 @@ fn main() -> anyhow::Result<()> {
     println!("Final shared value: {result}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

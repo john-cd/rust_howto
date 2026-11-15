@@ -30,7 +30,6 @@ fn find_pngs(pattern: &str) -> Result<Vec<PathBuf>> {
     }
     Ok(paths)
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

@@ -100,7 +100,6 @@ fn main() {
     // When each variable goes out of scope, its destructor is run. The above
     // prints `Dropped.` thrice.
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

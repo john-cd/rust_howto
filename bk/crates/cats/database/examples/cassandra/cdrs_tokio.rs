@@ -176,7 +176,6 @@ KEY, name TEXT, age INT);",
 
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the cdrs-tokio CRUD example.
 ///

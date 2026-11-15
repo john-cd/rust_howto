@@ -133,7 +133,6 @@ async fn main() -> anyhow::Result<()> {
     println!("{}", run_actor().await?);
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the Ractor actor example.
 ///

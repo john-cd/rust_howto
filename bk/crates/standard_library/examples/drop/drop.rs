@@ -49,7 +49,6 @@ fn main() {
     // After this statement, `_d` is dropped first, then `_c` (reverse
     // declaration order).
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -19,7 +19,6 @@ fn main() {
     assert_eq!(restored, 1.0);
     assert_ne!(restored, original);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the half-precision example.

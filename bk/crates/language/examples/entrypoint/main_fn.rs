@@ -15,7 +15,6 @@ fn main() {
     println!("Hello, world!");
     // Expected output: Hello, world!
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

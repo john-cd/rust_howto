@@ -55,7 +55,6 @@ fn main() {
     );
     println!("Loop found.");
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

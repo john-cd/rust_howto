@@ -55,7 +55,6 @@ fn main() {
         println!("Shape area: {:.2}", shape.area());
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

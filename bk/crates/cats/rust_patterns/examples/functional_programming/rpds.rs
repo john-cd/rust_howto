@@ -45,7 +45,6 @@ fn main() {
     println!("m4 after removal: {m4}");
     println!("m3 is unchanged: {m3}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

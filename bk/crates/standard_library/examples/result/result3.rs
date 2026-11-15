@@ -36,7 +36,6 @@ fn main() {
 
     // There is also a `as_deref_mut` method.
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

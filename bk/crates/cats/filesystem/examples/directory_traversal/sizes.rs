@@ -43,7 +43,6 @@ fn total_size(root: &Path) -> Result<u64> {
 
     Ok(total_size)
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

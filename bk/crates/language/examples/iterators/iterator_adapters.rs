@@ -53,7 +53,6 @@ fn main() {
         .collect();
     println!("Even numbers doubled: {even_doubled:?}"); // Output: Even numbers doubled: [4, 8]
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

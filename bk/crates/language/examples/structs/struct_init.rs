@@ -60,7 +60,6 @@ fn main() {
         user2.username, user2.email, user2.active
     );
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

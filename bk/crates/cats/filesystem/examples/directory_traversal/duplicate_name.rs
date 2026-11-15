@@ -51,7 +51,6 @@ fn duplicate_names(root: &Path) -> Result<Vec<OsString>> {
     }
     Ok(duplicates)
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

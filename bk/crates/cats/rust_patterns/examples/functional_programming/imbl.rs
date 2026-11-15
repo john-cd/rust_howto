@@ -79,7 +79,6 @@ fn main() {
     println!("Original set: {set1:?}");
     println!("Modified set: {set2:?}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

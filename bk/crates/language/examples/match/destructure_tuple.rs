@@ -12,7 +12,6 @@ fn main() {
         _ => println!("It doesn't matter what they are."),
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -28,7 +28,6 @@ fn main() {
         GLOBAL_DATA.lock().expect("mutex should not be poisoned")
     );
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

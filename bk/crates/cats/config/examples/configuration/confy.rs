@@ -27,7 +27,6 @@ fn main() -> anyhow::Result<()> {
     println!("{config:?}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the confy example.

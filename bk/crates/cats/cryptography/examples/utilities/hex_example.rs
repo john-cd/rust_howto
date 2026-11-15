@@ -17,7 +17,6 @@ fn main() -> anyhow::Result<()> {
     println!("{encoded}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

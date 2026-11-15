@@ -29,7 +29,6 @@ fn main() {
     let s: &S = &S { field: 3 };
     let _field: u32 = s.field;
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

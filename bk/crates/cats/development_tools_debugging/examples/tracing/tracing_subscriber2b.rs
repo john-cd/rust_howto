@@ -34,7 +34,6 @@ fn main() {
     // Test it.
     tracing::debug!("tracing configured!");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -44,7 +44,6 @@ fn main() {
     // The function defined in the macro is available at the invocation site:
     f();
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

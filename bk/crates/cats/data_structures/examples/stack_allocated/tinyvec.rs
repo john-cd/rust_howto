@@ -46,7 +46,6 @@ fn main() {
     println!("TinyVec after popping: {tiny_vec:?}");
     assert_eq!(tiny_vec.as_slice(), &[1, 2, 3, 4]);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

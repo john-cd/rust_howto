@@ -113,7 +113,6 @@ fn write_catalog() -> anyhow::Result<String> {
 
     String::from_utf8(writer.into_inner()).context("XML writer produced invalid UTF-8")
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

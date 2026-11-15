@@ -17,7 +17,6 @@ fn main() {
     let val = boxed.len();
     println!("{val}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

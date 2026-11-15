@@ -22,7 +22,6 @@ fn main() {
         Color::Yellow.bold().paint("this is bold and colored")
     );
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -30,7 +30,6 @@ fn main() {
     println!("{s}");
     assert_eq!(s, 10);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

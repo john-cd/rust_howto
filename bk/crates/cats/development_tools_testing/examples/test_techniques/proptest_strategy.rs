@@ -59,7 +59,6 @@ fn example() -> Span {
     );
     a.union(&b)
 }
-
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.

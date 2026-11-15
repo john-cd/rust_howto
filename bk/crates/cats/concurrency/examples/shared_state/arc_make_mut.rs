@@ -76,7 +76,6 @@ fn main() {
     println!("Reader snapshot: {reader_snapshot:?}");
     println!("Updated configuration: {current:?}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

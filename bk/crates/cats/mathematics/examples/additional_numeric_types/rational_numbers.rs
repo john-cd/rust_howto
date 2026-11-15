@@ -18,7 +18,6 @@ fn main() {
     println!("1/3 + 1/6 = {half}");
     assert_eq!(half, Ratio::new(1_i64, 2));
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the rational-number example.

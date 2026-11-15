@@ -86,7 +86,6 @@ fn main() {
     map.insert(s1, 17);
     assert_eq!(map[&s1], 17);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

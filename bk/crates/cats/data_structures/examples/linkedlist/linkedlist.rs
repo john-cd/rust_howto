@@ -80,7 +80,6 @@ fn main() {
     println!("List is empty: {}", list.is_empty());
     assert!(list.is_empty());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

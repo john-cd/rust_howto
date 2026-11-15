@@ -53,7 +53,6 @@ async fn get_users(client: &Client, request_url: &str) -> Result<Vec<User>, Erro
         .json::<Vec<User>>()
         .await
 }
-
 // ANCHOR_END: example
 /// Runs the example.
 ///

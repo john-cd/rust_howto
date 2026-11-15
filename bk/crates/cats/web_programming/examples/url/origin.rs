@@ -24,7 +24,6 @@ fn main() -> Result<(), ParseError> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

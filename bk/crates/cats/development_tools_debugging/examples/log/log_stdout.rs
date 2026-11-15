@@ -20,7 +20,6 @@ fn main() {
     log::error!("This error has been printed to Stdout");
     println!("log_stdout example: configured env_logger to write to stdout");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

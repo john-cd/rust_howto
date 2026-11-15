@@ -69,7 +69,6 @@ fn main() -> anyhow::Result<()> {
     assert_eq!(map.pin().iter().count(), 53);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

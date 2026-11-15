@@ -43,7 +43,6 @@ fn main() {
     assert!(map.contains_key(&key));
     assert_eq!(map[&key], "e");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -60,7 +60,6 @@ fn main() {
     // ERROR: use m::private_module;
     println!("pub_keyword example: public items accessible, private items not");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

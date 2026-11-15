@@ -19,7 +19,6 @@ fn main() {
     let result = longest("abcd", "xyz");
     println!("The longest string is {result}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

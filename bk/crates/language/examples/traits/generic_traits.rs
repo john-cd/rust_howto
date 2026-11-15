@@ -27,7 +27,6 @@ fn main() {
     // `T` is `bool`:
     SomeStruct::test(true);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

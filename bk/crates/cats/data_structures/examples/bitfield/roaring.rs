@@ -62,7 +62,6 @@ fn main() {
     assert!(online_only.contains(1));
     println!("Online but not subscribed (difference): {online_only:?}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

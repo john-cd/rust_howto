@@ -62,7 +62,6 @@ key4 = value4
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the `rust-ini` example.

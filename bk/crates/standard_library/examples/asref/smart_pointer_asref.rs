@@ -28,7 +28,6 @@ fn main() {
         &**ref_to_contained_string
     );
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

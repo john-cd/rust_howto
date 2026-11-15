@@ -41,7 +41,6 @@ fn main() -> Result<(), SetLoggerError> {
     log::error!("oops");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

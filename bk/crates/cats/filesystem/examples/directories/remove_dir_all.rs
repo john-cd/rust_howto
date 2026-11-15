@@ -50,7 +50,6 @@ fn remove_tree(base: &Path) -> io::Result<()> {
     // dir.remove_dir_contents(None)?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

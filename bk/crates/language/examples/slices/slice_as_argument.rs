@@ -26,7 +26,6 @@ fn main() {
     let slice: &[i32] = &vector;
     let _ = sum(slice);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

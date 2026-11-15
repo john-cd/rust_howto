@@ -42,7 +42,6 @@ fn main() {
     println!("Area: {}", sq.area());
     // This is equivalent to `Rectangle::area(&sq)`.
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

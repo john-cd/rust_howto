@@ -131,7 +131,6 @@ fn main() -> anyhow::Result<()> {
     null_pointer()?;
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

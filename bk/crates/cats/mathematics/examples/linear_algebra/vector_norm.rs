@@ -38,7 +38,6 @@ fn main() {
     println!("||x||_1 = {}", l1_norm(x.view()));
     println!("Normalizing x yields {:?}", normalize(x));
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

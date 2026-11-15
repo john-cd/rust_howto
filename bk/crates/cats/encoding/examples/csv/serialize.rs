@@ -31,7 +31,6 @@ fn main() -> Result<()> {
     io::stdout().write_all(&serialize_records()?)?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

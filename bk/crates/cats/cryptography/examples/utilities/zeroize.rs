@@ -20,7 +20,6 @@ fn main() {
     sensitive_data.zeroize();
     assert_eq!(sensitive_data, [0; 8]);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the zeroization example.

@@ -35,7 +35,6 @@ fn main() {
     // semicolon-separated tokens, etc.
     println!("Token tree examples complete");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

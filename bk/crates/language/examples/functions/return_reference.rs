@@ -65,7 +65,6 @@ fn main() {
     assert_eq!(use_static(), "hello");
     assert_eq!(use_const(), "hello");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

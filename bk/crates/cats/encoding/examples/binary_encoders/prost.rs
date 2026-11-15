@@ -41,7 +41,6 @@ fn main() -> anyhow::Result<()> {
     println!("Name: {}, Age: {}", decoded_person.name, decoded_person.age);
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// # Errors

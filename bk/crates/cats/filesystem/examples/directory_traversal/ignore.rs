@@ -50,7 +50,6 @@ fn walk(root: &std::path::Path, extra: &str) -> Vec<String> {
     }
     lines
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

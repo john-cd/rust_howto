@@ -18,7 +18,6 @@ fn main() {
     println!("Nobody is calling `unused_function`.");
     // Expected output: Nobody is calling `unused_function`.
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

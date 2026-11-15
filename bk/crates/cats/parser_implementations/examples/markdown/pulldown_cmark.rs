@@ -54,7 +54,6 @@ fn example() {
 
     println!("{html_output}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 ///

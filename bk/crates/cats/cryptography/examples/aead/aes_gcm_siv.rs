@@ -61,7 +61,6 @@ fn main() -> anyhow::Result<()> {
     assert_eq!(plaintext, decrypted_ciphertext.as_slice());
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

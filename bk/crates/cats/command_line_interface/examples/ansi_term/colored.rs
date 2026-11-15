@@ -21,7 +21,6 @@ fn main() {
     // Print red, underlined text for emphasis.
     println!("{}", "Error".red().underline());
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

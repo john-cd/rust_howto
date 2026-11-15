@@ -83,7 +83,6 @@ async fn main() -> anyhow::Result<()> {
     println!("\n\nDone!");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

@@ -81,7 +81,6 @@ fn main() -> Result<()> {
     println!("{my_int}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

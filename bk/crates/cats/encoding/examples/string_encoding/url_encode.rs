@@ -26,7 +26,6 @@ fn main() {
     assert_eq!(decoded, [("message".to_owned(), "What is ❤?".to_owned())]);
     println!("decoded: {decoded:?}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

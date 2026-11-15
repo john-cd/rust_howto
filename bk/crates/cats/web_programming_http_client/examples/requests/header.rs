@@ -70,7 +70,6 @@ fn main() -> Result<()> {
     println!("{out:?}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

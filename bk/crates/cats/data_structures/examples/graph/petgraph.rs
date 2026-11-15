@@ -66,7 +66,6 @@ fn main() {
 
     let _undirected_graph = undirected_graph;
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

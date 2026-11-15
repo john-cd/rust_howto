@@ -24,7 +24,6 @@ fn main() {
         base16ct::lower::encode_string(&digest)
     );
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

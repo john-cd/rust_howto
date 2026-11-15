@@ -73,7 +73,6 @@ fn main() -> anyhow::Result<()> {
     println!("Processed results: {results:?}");
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the bounded MPMC pipeline example.

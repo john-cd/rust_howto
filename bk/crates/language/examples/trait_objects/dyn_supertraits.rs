@@ -59,7 +59,6 @@ fn main() {
     let greet_obj: &dyn Greet = &person;
     say_hello_and_goodbye(greet_obj);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

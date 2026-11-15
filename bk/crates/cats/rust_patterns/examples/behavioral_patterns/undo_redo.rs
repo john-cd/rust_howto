@@ -82,7 +82,6 @@ fn main() {
     editor.redo();
     println!("redone: {}", editor.text);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

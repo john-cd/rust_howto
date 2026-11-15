@@ -37,7 +37,6 @@ fn main() {
     println!("x: {x}");
     // x is valid until this line.
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -62,7 +62,6 @@ fn main() {
     assert_eq!(x.as_char_ptr(), y.as_char_ptr());
     assert_eq!(x.as_str(), "foo");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

@@ -38,7 +38,6 @@ fn main() {
     process_optional_string(Some("Alice".to_owned()));
     process_optional_string(None);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

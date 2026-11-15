@@ -110,7 +110,6 @@ async fn main() -> anyhow::Result<()> {
     .await;
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.

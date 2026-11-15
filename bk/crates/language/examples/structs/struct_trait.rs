@@ -88,7 +88,6 @@ fn main() {
     println!("{}", MyStruct::CONSTANT);
     println!("{}", MyStruct::ANOTHER_CONST);
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 ///

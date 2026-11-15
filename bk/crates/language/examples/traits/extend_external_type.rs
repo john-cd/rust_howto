@@ -23,7 +23,6 @@ fn main() {
     // Since `i64` implements the `MyHash` trait, we can call its method.
     println!("{}", x.myhash());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

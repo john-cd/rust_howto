@@ -23,7 +23,6 @@ fn main() {
         std::str::from_utf8(&res).expect("sample plaintext should be valid UTF-8")
     );
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.

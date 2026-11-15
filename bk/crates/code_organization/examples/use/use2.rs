@@ -31,7 +31,6 @@ fn eat_at_restaurant() -> &'static str {
 fn main() {
     println!("{}", eat_at_restaurant());
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
