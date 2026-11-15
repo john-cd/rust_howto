@@ -120,7 +120,8 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if compute_digest_matches_the_known_sha256, write fails.
+    /// Returns an error if creating the temporary directory, writing the fixture, or computing its
+    /// digest fails.
     #[test]
     fn compute_digest_matches_the_known_sha256() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;

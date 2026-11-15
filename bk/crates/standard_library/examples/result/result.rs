@@ -260,7 +260,8 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if temp_file, to_str fails.
+    /// Returns an error if creating the fixture, converting its path to UTF-8, reading or parsing
+    /// the number, or removing the fixture fails.
     #[test]
     fn test_read_and_parse_file_variants_parse_a_number() -> Result<(), Box<dyn std::error::Error>>
     {

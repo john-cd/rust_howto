@@ -78,7 +78,8 @@ mod tests {
     use super::*;
 
     /// # Errors
-    /// An error is returned if generate_simple_self_signed, listening fails.
+    /// Returns an error if certificate generation, TLS configuration, server startup, or the HTTPS
+    /// request fails.
     #[tokio::test]
     async fn serves_and_shuts_down() -> anyhow::Result<()> {
         // Install a process-wide crypto provider (a no-op error if present).

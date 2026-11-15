@@ -62,7 +62,7 @@ mod tests {
     }
 
     /// # Errors
-    /// An error is returned if variables_from_an_env_file_are_parsed, write fails.
+    /// Returns an error if creating the temporary directory or writing the environment file fails.
     #[test]
     fn variables_from_an_env_file_are_parsed() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;
