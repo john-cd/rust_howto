@@ -329,9 +329,6 @@ mod tests {
         assert!(!row.contains("&amp;quot;"));
         assert!(!row.contains("&amp;amp;"));
     }
-    /// Performs the category page from metadata handles duplicates renames and missing categories
-    /// operation.
-
     /// Builds category pages with duplicate, renamed, and uncategorized crates.
     #[test]
     fn category_page_from_metadata_handles_duplicates_renames_and_missing_categories() {

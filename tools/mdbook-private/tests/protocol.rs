@@ -54,8 +54,6 @@ fn invoke(settings: serde_json::Value, book: Book) -> Output {
         .expect("input should parse");
     child.wait_with_output().expect("input should parse")
 }
-/// Checks that private chapters are removed and the rest renumbered.
-
 /// Removes private subtrees and renumbers visible chapters.
 #[test]
 fn removes_private_subtrees_and_renumbers_visible_chapters() {
@@ -97,8 +95,6 @@ fn removes_private_subtrees_and_renumbers_visible_chapters() {
     };
     assert_eq!(draft.name, "Draft");
 }
-/// Checks that private content is kept and styled when requested.
-
 /// Retains private chapters and applies their configured styling when requested.
 #[test]
 fn retains_and_styles_private_content_when_requested() {
@@ -115,9 +111,6 @@ fn retains_and_styles_private_content_when_requested() {
     assert!(chapter.content.contains("SECRET"));
     assert!(!chapter.content.contains("<!--private"));
 }
-/// Reports whether this value supports custom prefix and unstyled retention.
-/// Checks that a custom prefix and unstyled retention are honored.
-
 /// Supports custom prefix and unstyled retention.
 #[test]
 fn supports_custom_prefix_and_unstyled_retention() {
@@ -137,8 +130,6 @@ fn supports_custom_prefix_and_unstyled_retention() {
     assert!(text.contains("SECRET"));
     assert!(!text.contains("blockquote"));
 }
-/// Checks that invalid settings produce an error and no book.
-
 /// Checks that invalid privacy configuration fails without emitting a book.
 #[test]
 fn invalid_privacy_configuration_fails_without_emitting_a_book() {
@@ -147,8 +138,6 @@ fn invalid_privacy_configuration_fails_without_emitting_a_book() {
     assert!(output.stdout.is_empty());
     assert!(String::from_utf8_lossy(&output.stderr).contains("preprocessor.private"));
 }
-/// Checks that the `supports` query is answered by the exit status only.
-
 /// Treats the renderer exit status as the protocol support result.
 #[test]
 fn renderer_support_uses_only_exit_status() {
