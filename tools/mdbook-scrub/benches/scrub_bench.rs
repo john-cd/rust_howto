@@ -42,7 +42,8 @@ fn synthetic_book(chapters: usize) -> Book {
 /// Cloning the owned input book is setup work and remains outside the timed routine.
 ///
 /// # Arguments
-/// * `criterion` - Mutable criterion whose state is updated by this operation.
+///
+/// * `criterion` - Criterion benchmark group used to register this benchmark.
 fn bench_scrub_stage(criterion: &mut Criterion) {
     let context = PreprocessorContext::new(".".into(), Config::default(), "html".into());
     let preprocessor = Preproc::new();

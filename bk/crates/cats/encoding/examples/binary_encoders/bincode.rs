@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Serialize and deserialize a struct with `bincode` 2.x.
 //!
 //! Version 2 changed the API: encode with `bincode::serde::encode_to_vec` and
@@ -20,10 +21,13 @@ use serde::Serialize;
 /// using bincode.
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 struct MyData {
+
     /// The name.
     name: String,
+
     /// The age in years.
     age: u32,
+
     /// Whether the data is active.
     is_active: bool,
 }
@@ -33,6 +37,7 @@ struct MyData {
 /// configuration.
 ///
 /// # Errors
+///
 /// Returns an error if serialization or deserialization fails.
 fn main() -> anyhow::Result<()> {
     let data = MyData {
@@ -55,7 +60,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Serializes and deserializes the example data with Bincode.
+///
 /// # Errors
+///
 /// Returns an error if serialization or deserialization fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -80,6 +88,7 @@ mod tests {
     fn test_bincode_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// Checks that the standard configuration uses varint integers.
     #[test]
     fn standard_config_uses_varint_integers() -> anyhow::Result<()> {

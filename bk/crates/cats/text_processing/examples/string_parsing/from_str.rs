@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parsing a color from a string by implementing `FromStr`.
 //!
 //! The `FromStr` trait defines how a type is created from text, which also
@@ -16,10 +17,13 @@ use std::str::FromStr;
 /// A color in RGB form.
 #[derive(Debug, PartialEq)]
 struct Rgb {
+
     /// The red component.
     r: u8,
+
     /// The green component.
     g: u8,
+
     /// The blue component.
     b: u8,
 }
@@ -27,13 +31,16 @@ struct Rgb {
 /// Describes why a string could not be parsed as an RGB hex color.
 #[derive(Debug)]
 enum RgbParseError {
+
     /// The input was not exactly seven ASCII bytes beginning with `#`.
     InvalidFormat,
+
     /// One of the three hexadecimal components was invalid.
     InvalidComponent(ParseIntError),
 }
 
 impl Display for RgbParseError {
+
     /// Formats an RGB parsing error for a user-facing diagnostic.
     fn fmt(&self, formatter: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -46,6 +53,7 @@ impl Display for RgbParseError {
 }
 
 impl Error for RgbParseError {
+
     /// Returns the underlying integer parsing error when a component is
     /// invalid.
     fn source(&self) -> Option<&(dyn Error + 'static)> {
@@ -92,7 +100,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses a hexadecimal color code.
 pub fn run() {
     main();
 }

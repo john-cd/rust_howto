@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Serves the Prometheus payload from an Axum `/metrics` route.
 mod metrics_route;
+
 /// Renders metrics in Prometheus exposition format without opening a port.
 mod prometheus;
+
 /// Records request counts and durations with the `metrics` facade.
 mod record_metrics;
 
 /// Command-line arguments for the metrics examples.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Commands,
@@ -23,10 +26,13 @@ struct Cli {
 /// The metrics examples available from this target.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Records a counter and a histogram.
     Record,
+
     /// Renders metrics in Prometheus exposition format.
     Prometheus,
+
     /// Serves the payload from an Axum `/metrics` route.
     Route,
 }
@@ -39,6 +45,7 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
         Commands::Route => metrics_route::run(),
     }
 }
+
 /// Runs the example.
 fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Wraps a reader to add byte-counting behavior.
 //!
 //! The decorator pattern wraps an object to add behaviour while keeping the
@@ -12,13 +13,16 @@ use std::io::Read;
 
 /// A reader decorator that counts the bytes returned by its inner reader.
 struct CountingReader<R> {
+
     /// Shared internal state.
     inner: R,
+
     /// Number of bytes read so far.
     bytes_read: usize,
 }
 
 impl<R> CountingReader<R> {
+
     /// Wraps a reader and initializes its byte count to zero.
     fn new(inner: R) -> Self {
         Self {
@@ -33,6 +37,7 @@ impl<R> CountingReader<R> {
 }
 
 impl<R: Read> Read for CountingReader<R> {
+
     /// Reads from the inner reader and records the number of bytes returned.
     fn read(&mut self, buffer: &mut [u8]) -> std::io::Result<usize> {
         let bytes_read = self.inner.read(buffer)?;
@@ -55,6 +60,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the reader decorator example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

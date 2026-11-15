@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Model-checks a publication and cancellation protocol with `loom`.
 //!
 //! One thread publishes a value and then raises a `ready` flag; the other
@@ -25,19 +26,25 @@ use loom::thread;
 
 /// Shared state of the protocol.
 struct Slot {
+
     /// The published payload (0 means "not published yet").
     value: AtomicU32,
+
     /// Raised by the producer after it stored the payload.
     ready: AtomicBool,
+
     /// Raised by the consumer to stop the producer.
     cancelled: AtomicBool,
+
     /// Ordering used by the producer to raise `ready`.
     publish_order: Ordering,
+
     /// Ordering used by the consumer to read `ready`.
     read_order: Ordering,
 }
 
 impl Slot {
+
     /// orderings.
     fn new(publish_order: Ordering, read_order: Ordering) -> Self {
         Self {
@@ -76,6 +83,7 @@ impl Slot {
         self.ready.load(Ordering::Acquire)
     }
 }
+
 /// Explores every bounded interleaving of one producer and one consumer.
 ///
 /// Panics (inside the model) when the protocol invariant is violated.
@@ -100,6 +108,7 @@ fn check_protocol(publish_order: Ordering, read_order: Ordering) {
         assert_eq!(published, slot.is_ready(), "ready is set iff published");
     });
 }
+
 /// Checks the correct protocol: `Release` on publish pairs with `Acquire` on
 ///
 /// read.
@@ -107,14 +116,13 @@ fn run_model() {
     check_protocol(Ordering::Release, Ordering::Acquire);
     println!("Loom explored the publication and cancellation model without a violation.");
 }
-/// Runs the example.
+
 /// Runs the model.
 fn main() {
     run_model();
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the model for the workspace example runner.
 pub fn run() {
     run_model();
@@ -137,6 +145,7 @@ mod tests {
     fn loom_relaxed_publication_is_rejected() {
         check_protocol(Ordering::Relaxed, Ordering::Relaxed);
     }
+
     /// Verifies that the `loom model` example runs.
     #[test]
     fn test_loom_model_example_entry_point() {

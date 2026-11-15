@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Configures and initializes the logging system using log4rs.
 //!
 //! The `log` crate is a facade: libraries call `info!`, `warn!` and so on, and
@@ -46,9 +47,10 @@ fn file_appender(path: impl AsRef<Path>) -> Result<FileAppender> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Configures and initializes the logging system using log4rs.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

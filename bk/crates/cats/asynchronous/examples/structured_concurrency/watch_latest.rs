@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Choosing a Tokio channel: `watch` keeps only the latest value (config,
 //! state), `broadcast` delivers every event but receivers can lag, and `mpsc`
 //! is a work queue where each message goes to one consumer.
@@ -15,6 +16,7 @@ use tokio::sync::watch;
 /// A configuration published to subscribers.
 #[derive(Debug, PartialEq)]
 struct Config {
+
     /// Protocol version.
     version: u32,
 }
@@ -61,7 +63,7 @@ async fn work_queue() {
     }
     assert_eq!(jobs, vec![1, 2, 3]);
 }
-/// Runs the example.
+
 /// Runs the three demonstrations.
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
@@ -71,7 +73,6 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example.
 pub fn run() {
     main();

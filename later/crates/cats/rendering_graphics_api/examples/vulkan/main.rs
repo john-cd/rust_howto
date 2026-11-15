@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Loads the Vulkan library with `ash` and reports the instance version.
 
 use ash::Entry;
@@ -34,6 +35,7 @@ fn main() -> anyhow::Result<()> {
 /// Queries the Vulkan loader and prints its instance version when available.
 ///
 /// # Errors
+///
 /// Returns an error if the loader reports a failed version query.
 fn example() -> anyhow::Result<()> {
     match instance_version()? {

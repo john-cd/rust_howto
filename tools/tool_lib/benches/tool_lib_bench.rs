@@ -197,6 +197,7 @@ criterion_main!(benches);
 
 #[cfg(test)]
 mod tests {
+
     /// Runs the tool_lib benchmark entry point under test harness.
     #[test]
     fn test_tool_lib_bench_entry_point() {

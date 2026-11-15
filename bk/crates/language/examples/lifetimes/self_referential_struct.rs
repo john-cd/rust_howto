@@ -1,13 +1,16 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Alternatives to self-referential structs.
 
 /// 1. Avoid self-referential structs. Note how each field points to a portion of the `String` owned
 ///    by the struct.
 struct CsvRecordTricky<'a> {
+
     /// The line, owned by the struct.
     line: String,
+
     /// The fields, which would borrow from `line`.
     fields: Vec<&'a str>,
 }
@@ -16,8 +19,10 @@ struct CsvRecordTricky<'a> {
 ///    and each field have the same lifetime.
 #[derive(Debug)]
 struct CsvRecord<'a> {
+
     /// The line, borrowed from outside the struct.
     line: &'a str,
+
     /// The fields, borrowed from the same line.
     fields: Vec<&'a str>,
 }
@@ -47,13 +52,16 @@ use std::rc::Rc;
 
 /// A struct whose fields share ownership of the same string with `Rc`.
 struct SelfRefRc {
+
     /// The shared string.
     data: Rc<String>,
+
     /// A second handle to the same string.
     reference: Rc<String>,
 }
 
 impl SelfRefRc {
+
     /// Creates a struct whose two fields share `data`.
     fn new(data: String) -> Self {
         let shared_data = Rc::new(data);
@@ -63,11 +71,13 @@ impl SelfRefRc {
         }
     }
 }
+
 /// Builds and prints a [`SelfRefRc`].
 fn rc() {
     let self_ref = SelfRefRc::new("Hello, Rust!".to_owned());
     println!("Data: {} and {}", self_ref.data, self_ref.reference);
 }
+
 /// Builds the anti-pattern, which can only be created with empty `fields`.
 fn tricky() {
     let record = CsvRecordTricky {
@@ -76,6 +86,7 @@ fn tricky() {
     };
     println!("{} ({} fields)", record.line, record.fields.len());
 }
+
 /// Alternatives to self-referential structs.
 /// Runs both alternatives.
 fn main() {
@@ -85,7 +96,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// Alternatives to self-referential structs.
 pub fn run() {
     main();

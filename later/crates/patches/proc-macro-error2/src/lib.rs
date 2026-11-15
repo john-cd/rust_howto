@@ -1,3 +1,5 @@
+//! A compatibility layer for reporting errors from procedural macros.
+//!
 //! # proc-macro-error2
 //!
 //! This crate aims to make error reporting in proc-macros simple and easy to use.
@@ -17,6 +19,7 @@
 //!
 //!
 //! ## Cargo features
+//!
 //! This crate provides *enabled by default* `syn-error` feature that gates
 //! `impl From<syn::Error> for Diagnostic` conversion. If you don't use `syn` and want
 //!
@@ -32,6 +35,7 @@
 //!
 //!
 //! ## Real world examples
+//!
 //! * [`structopt-derive`](https://github.com/TeXitoi/structopt/tree/master/structopt-derive)
 //!   (abort-like usage)
 //!
@@ -39,6 +43,7 @@
 //!
 //!
 //! ## Limitations
+//!
 //! - Warnings are emitted only on nightly, they are ignored on stable.
 //! - "help" suggestions can't have their own span info on stable, (essentially inheriting the
 //!   parent span).
@@ -48,6 +53,7 @@
 //!
 //!
 //! ### `#[proc_macro_error]` attribute
+//!
 //! **This attribute MUST be present on the top level of your macro** (the function
 //!
 //! annotated with any of `#[proc_macro]`, `#[proc_macro_derive]`, `#[proc_macro_attribute]`).
@@ -60,6 +66,7 @@
 //!
 //!
 //! #### Syntax
+//!
 //! `#[proc_macro_error]` or `#[proc_macro_error(settings...)]`, where `settings...`
 //!
 //! is a comma-separated list of:
@@ -87,6 +94,7 @@
 //!
 //!
 //!     # Note
+//!
 //!     If `proc-macro-hack` was detected (by any means) `allow_not_macro`
 //!
 //!     and `assert_unwind_safe` will be applied automatically.
@@ -226,6 +234,7 @@
 //!
 //!
 //! #### Note attachments
+//!
 //! 3. Every macro can have "note" attachments (only 2 and 3 form).
 //!   ```ignore
 //!
@@ -254,6 +263,7 @@
 //!   ```
 //!
 //! ### Diagnostic type
+//!
 //! [`Diagnostic`] type is intentionally designed to be API compatible with
 //!
 //! [`proc_macro::Diagnostic`]. Not all API is implemented, only the part that can be reasonably
@@ -307,32 +317,39 @@ pub mod dummy;
 
 /// This module provides the `diagnostic` implementation used by its parent.
 mod diagnostic;
+
 /// This module provides the `macros` implementation used by its parent.
 mod macros;
+
 /// This module provides the `sealed` implementation used by its parent.
 mod sealed;
 
 #[cfg(not(feature = "nightly"))]
+
 /// This module provides the `imp` implementation used by its parent.
 #[path = "imp/fallback.rs"]
 mod imp;
 
 #[cfg(feature = "nightly")]
+
 /// This module provides the `imp` implementation used by its parent.
 #[path = "imp/delegate.rs"]
 mod imp;
-/// Pair of source-code spans used to render a diagnostic range.
 
+/// Pair of source-code spans used to render a diagnostic range.
 #[derive(Debug, Clone, Copy)]
 #[must_use = "A SpanRange does nothing unless used"]
 pub struct SpanRange {
+
     /// First item in the collection.
     pub first: Span,
+
     /// Last value.
     pub last: Span,
 }
 
 impl SpanRange {
+
     /// Create a range with the `first` and `last` spans being the same.
     pub fn single_span(span: Span) -> Self {
         SpanRange {
@@ -349,6 +366,7 @@ impl SpanRange {
     /// Construct span range from a `TokenStream`. This method always preserves all the
     ///
     /// # Arguments
+///
     /// range.
     ///
     /// ### Note
@@ -356,7 +374,6 @@ impl SpanRange {
     /// If the stream is empty, the result is `SpanRange::call_site()`. If the stream
     /// consists of only one `TokenTree`, the result is `SpanRange::single_span(tt.span())`
     /// that doesn't lose anything.
-
     pub fn from_tokens(ts: &dyn ToTokens) -> Self {
         let mut spans = ts.to_token_stream().into_iter().map(|tt| tt.span());
         let first = spans.next().unwrap_or_else(Span::call_site);
@@ -368,6 +385,7 @@ impl SpanRange {
     /// Join two span ranges. The resulting range will start at `self.first` and end at
     ///
     /// # Arguments
+///
     /// `other.last`.
     pub fn join_range(self, other: SpanRange) -> Self {
         SpanRange {
@@ -390,10 +408,10 @@ pub trait ResultExt {
     /// Behaves like `Result::unwrap`: if self is `Ok` yield the contained value,
     /// otherwise abort macro execution via `abort!`.
     fn unwrap_or_abort(self) -> Self::Ok;
+
     /// Behaves like `Result::expect`: if self is `Ok` yield the contained value,
     /// otherwise abort macro execution via `abort!`.
     /// If it aborts then resulting error message will be preceded with `message`.
-
     fn expect_or_abort(self, msg: &str) -> Self::Ok;
 }
 
@@ -408,10 +426,10 @@ pub trait OptionExt {
     /// [compl_err]: https://doc.rust-lang.org/std/macro.compile_error.html
     fn expect_or_abort(self, msg: &str) -> Self::Some;
 }
+
 /// Abort macro execution and display all the emitted errors, if any.
 ///
 /// Does nothing if no errors were emitted (warnings do not count).
-
 pub fn abort_if_dirty() {
     imp::abort_if_dirty();
 }
@@ -502,6 +520,7 @@ fn abort_now() -> ! {
 }
 
 thread_local! {
+
     /// Shared `entered entry point` used by this module.
     static ENTERED_ENTRY_POINT: Cell<usize> = const { Cell::new(0) };
 }

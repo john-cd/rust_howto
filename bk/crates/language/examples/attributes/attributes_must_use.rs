@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Warning about an ignored result with `#[must_use]`.
 //!
 //! The `#[must_use]` attribute warns when a function's return value is ignored
@@ -13,6 +14,7 @@
 fn add(a: i32, b: i32) -> i32 {
     a + b
 }
+
 /// Uses the result of a `#[must_use]` function.
 fn main() {
     // Use the return value of the function.
@@ -25,8 +27,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Uses the result of a `#[must_use]` function.
 pub fn run() {
     main();
 }
@@ -40,6 +41,7 @@ mod tests {
     fn test_attributes_must_use_example_entry_point() {
         main();
     }
+
     /// Verifies add.
     #[test]
     fn test_add() {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Computes the great-circle distance between two places with the
 //! `haversine` crate and with `geo`.
 //!
@@ -15,9 +16,8 @@ use geo::Haversine;
 use geo::Point;
 use haversine::Location;
 use haversine::Units;
-/// Runs the example.
-/// Computes the distance in kilometers from London to New York two ways.
 
+/// Computes the distance in kilometers from London to New York two ways.
 fn main() {
     // `haversine` takes (latitude, longitude) in degrees.
     let london = Location {
@@ -46,7 +46,6 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

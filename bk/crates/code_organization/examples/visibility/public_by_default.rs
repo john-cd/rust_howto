@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Enum variants and trait items are public by default; struct fields are not.
 
 /// A module with public types and traits.
@@ -9,17 +10,20 @@ mod a_module {
     /// Public enum.
     pub enum Enum {
         // Public-by-default variant.
+
         /// A variant, public like its enum.
         Variant,
     }
 
     /// Public struct with a private field.
     pub struct PublicStruct {
+
         /// A private field.
         private_val: bool,
     }
 
     impl PublicStruct {
+
         /// Public associated function ("constructor").
         pub fn new(val: bool) -> Self {
             Self { private_val: val }
@@ -31,18 +35,22 @@ mod a_module {
             self.private_val
         }
     }
+
     /// Public struct used to demonstrate the default visibility of struct fields.
     pub struct PublicStructPublicField {
+
         /// A public field.
         pub public_val: bool,
     }
 
     /// Public trait.
     pub trait Trait {
+
         /// An associated type, public like the trait.
         type Out; // Public-by-default associated type.
 
         // Visibility qualifiers are not permitted below:
+
         /// A method, public like the trait.
         fn method(&self) -> Self::Out;
     }
@@ -56,7 +64,7 @@ mod a_module {
         }
     }
 }
-/// Runs the example.
+
 /// Uses the public items of the module.
 fn main() {
     let _ = a_module::Enum::Variant;
@@ -76,9 +84,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-///
-/// Runs the example.
+/// Uses the public items of the module.
 pub fn run() {
     main();
 }
@@ -93,6 +99,7 @@ mod tests {
     fn test_main() {
         main();
     }
+
     /// Verifies enum variants and pub fields are public.
     #[test]
     fn test_enum_variants_and_pub_fields_are_public() {
@@ -101,9 +108,11 @@ mod tests {
         let s = a_module::PublicStructPublicField { public_val: true };
         assert!(s.public_val);
     }
+
     /// Verifies trait items are public.
     #[test]
     fn test_trait_items_are_public() {
+
         /// Groups the data required by visibility operations.
         struct Doubler;
         impl a_module::Trait for Doubler {
@@ -115,6 +124,7 @@ mod tests {
         }
         assert_eq!(a_module::Trait::method(&Doubler), 2);
     }
+
     /// Verifies constructor with private field.
     #[test]
     fn test_constructor_with_private_field() {

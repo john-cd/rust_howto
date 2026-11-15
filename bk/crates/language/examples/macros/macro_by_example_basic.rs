@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A basic declarative macro.
 //!
 //! Declarative macros (defined with `macro_rules!`) perform pattern matching
@@ -23,8 +24,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the macro.
 pub fn run() {
     main();
 }

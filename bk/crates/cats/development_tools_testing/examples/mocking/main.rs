@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// Mocking a struct's methods with `faux`.
 mod faux;
+
 /// Mocking a trait with `mockall`.
 mod mockall;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `faux` example.
     #[command(name = "faux")]
     Faux,
+
     /// Runs the `mockall` example.
     #[command(name = "mockall")]
     Mockall,
@@ -42,7 +46,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

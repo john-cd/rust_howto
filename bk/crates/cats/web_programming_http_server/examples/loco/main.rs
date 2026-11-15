@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates a basic HTTP server using the Loco framework.
 //! It defines a simple application with a controller and routes.
 //!
@@ -32,6 +33,7 @@ pub struct App;
 #[cfg(feature = "loco-support")]
 #[async_trait]
 impl Hooks for App {
+
     /// Sets the application name.
     fn app_name() -> &'static str {
         env!("CARGO_CRATE_NAME")
@@ -45,6 +47,7 @@ impl Hooks for App {
     /// Creates the application without enabling database support.
     ///
     /// # Arguments
+///
     /// * `mode` - Startup mode selected for the application.
     /// * `environment` - Runtime environment and configuration profile.
     async fn boot(
@@ -74,10 +77,12 @@ mod home {
     /// not use.
     ///
     /// # Arguments
+///
     /// * `_ctx` - Application state containing the repositories and services needed by this
     ///   workflow.
     ///
     /// # Errors
+///
     /// Returns an error if a fallible operation cannot complete.
     #[allow(
         clippy::result_large_err,
@@ -86,11 +91,13 @@ mod home {
     async fn hello(State(_ctx): State<AppContext>) -> Result<Response> {
         format::text("Hello, Loco!")
     }
+
     /// Defines the routes for this controller.
     pub fn routes() -> Routes {
         Routes::new().prefix("home").add("/hello", get(hello))
     }
 }
+
 /// Prints the command needed to run this example as a Loco application.
 fn main() -> anyhow::Result<()> {
     example()
@@ -99,6 +106,7 @@ fn main() -> anyhow::Result<()> {
 /// Prints how to start the Loco application for the selected feature state.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 fn example() -> anyhow::Result<()> {
     #[cfg(feature = "loco-support")]
@@ -111,6 +119,7 @@ fn example() -> anyhow::Result<()> {
 
 /// Verifies the example identifies its Loco application by crate name.
 #[cfg(test)]
+
 /// Tests the `main` example and its documented behavior.
 #[cfg(feature = "loco-support")]
 mod tests {

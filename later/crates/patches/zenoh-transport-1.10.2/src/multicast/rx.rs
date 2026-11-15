@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -46,6 +47,7 @@ use crate::common::priority::TransportChannelRx;
 
 /// **********************************
 // TRANSPORT RX
+
 /// **********************************
 // noinspection ALL
 impl TransportMulticastInner {
@@ -79,16 +81,17 @@ impl TransportMulticastInner {
         peer.handler.handle_message(msg)
     }
 
-    /// Processes the join from peer input for the rx workflow and applies the resulting state
-    /// changes. It calls `is_some`, `is_qos` to apply the required changes.
+    /// Validates a join announcement from a peer that is already connected.
     ///
     /// # Arguments
+///
+    /// * `join` - Join announcement received from the peer.
     /// * `peer` - Remote peer associated with this event.
     ///
-    ///
     /// # Errors
-    /// Returns an error if the operation cannot be completed.
-
+///
+    /// Returns an error if the join announcement's identity or negotiated settings differ from the
+    /// peer's established transport state.
     pub(super) fn handle_join_from_peer(
         &self,
         join: Join,
@@ -113,11 +116,17 @@ impl TransportMulticastInner {
         Ok(())
     }
 
-    /// Processes the join from unknown input for the rx workflow and applies the resulting state
-    /// changes. It calls `len`, `is_some` to apply the required changes.
-
+    /// Validates a join from an unknown peer and registers it when it matches local settings.
+    ///
+    /// # Arguments
+///
+    /// * `join` - Join announcement received from the peer.
+    /// * `locator` - Network locator associated with the peer.
+    /// * `batch_size` - Batch size negotiated for the receiving link.
+    ///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+///
+    /// Returns an error if initializing the new peer fails.
     pub(super) fn handle_join_from_unknown(
         &self,
         join: Join,
@@ -181,10 +190,16 @@ impl TransportMulticastInner {
 
     /// Selects the peer's receive queue for a frame, verifies its sequence number, and delivers
     /// its messages to the callback.
-
+    ///
+    /// # Arguments
+///
+    /// * `frame` - Decoded frame received from the peer.
+    /// * `peer` - Peer whose receive sequence and callback state are updated.
+    ///
     /// # Errors
+///
     /// Returns an error if QoS is disabled and the frame uses a non-default priority, sequence
-    /// number verification fails, or callback processing fails.
+    /// verification fails, or callback processing fails.
     fn handle_frame(
         &self,
         frame: FrameReader<ZSlice>,
@@ -222,7 +237,6 @@ impl TransportMulticastInner {
 
     /// Processes the fragment input for the rx workflow and applies the resulting state changes. It
     /// calls `handle_fragment`, `priority` to apply the required changes.
-
     fn handle_fragment(&self, fragment: Fragment, peer: &TransportMulticastPeer) -> ZResult<()> {
         let Fragment {
             reliability,
@@ -298,7 +312,6 @@ impl TransportMulticastInner {
     }
 
     /// Verifies sn.
-
     fn verify_sn(
         &self,
         message_type: &str,
@@ -324,11 +337,19 @@ impl TransportMulticastInner {
         Ok(true)
     }
 
-    /// Loads the messages required by the rx workflow and reports failures from the underlying
-    /// source.
-
+    /// Decodes received frames and transport messages and dispatches them to their handlers.
+    ///
+    /// # Arguments
+///
+    /// * `batch` - Received batch to decode.
+    /// * `locator` - Locator of the peer that sent the batch.
+    /// * `batch_size` - Batch size used to validate join announcements.
+    /// * `stats` - Optional link statistics updated for each decoded transport message.
+    ///
     /// # Errors
-    /// An error is returned if handle_frame, decode fails.
+///
+    /// Returns an error if decoding a message, validating a frame or fragment, or initializing a
+    /// peer from a join fails.
     pub(super) fn read_messages(
         &self,
         mut batch: RBatch<ZSlice>,

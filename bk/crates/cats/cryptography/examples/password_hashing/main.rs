@@ -7,16 +7,20 @@ use clap::Subcommand;
 
 /// Examples of password hashing and key derivation with Argon2.
 mod argon2;
+
 /// This example demonstrates how to use the `bcrypt` crate to hash and verify
 mod bcrypt;
+
 /// Demonstrates the use of PBKDF2 for password hashing and verification.
 mod pbkdf2;
+
 /// Hashing and verifying a password with `scrypt`.
 mod scrypt;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,15 +29,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `argon2` example.
     #[command(name = "argon2")]
     Argon2,
+
     /// Runs the `bcrypt` example.
     #[command(name = "bcrypt")]
     Bcrypt,
+
     /// Runs the `pbkdf2` example.
     #[command(name = "pbkdf2")]
     Pbkdf2,
+
     /// Runs the `scrypt` example.
     #[command(name = "scrypt")]
     Scrypt,

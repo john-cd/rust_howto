@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// A styled progress spinner with `indicatif` and `console`.
 mod indicatif;
+
 /// A progress bar with `indicatif`.
 mod indicatif2;
+
 /// The `inquire` crate is used for creating interactive CLI prompts.
 mod inquire;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `indicatif` example.
     #[command(name = "indicatif")]
     Indicatif,
+
     /// Runs the `indicatif2` example.
     #[command(name = "indicatif2")]
     Indicatif2,
+
     /// Runs the `inquire` example.
     #[command(name = "inquire")]
     Inquire,

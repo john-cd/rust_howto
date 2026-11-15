@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates a basic Actix Web server.
 //!
 //! It defines a simple HTTP server that listens on `127.0.0.1:8080` and
@@ -20,6 +21,7 @@ use actix_web::get;
 async fn greet() -> impl Responder {
     HttpResponse::Ok().body("Hello, world!")
 }
+
 /// Starts the Actix Web server.
 ///
 /// Binds to localhost on port 8080.
@@ -31,6 +33,7 @@ async fn main() -> std::io::Result<()> {
 /// Starts the Actix server on loopback until it is shut down.
 ///
 /// # Errors
+///
 /// Returns an error if binding or running the server fails.
 async fn example_async() -> std::io::Result<()> {
     println!("Starting server at http://127.0.0.1:8080");
@@ -45,6 +48,7 @@ async fn example_async() -> std::io::Result<()> {
 /// Runs the example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> std::io::Result<()> {
     actix_web::rt::System::new().block_on(example_async())

@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// A `BinaryHeap` used as a priority queue.
 mod binaryheap;
+
 /// Add this dependency to your `Cargo.toml`: ```toml [dependencies] priority-queue = "2.7.0" ```
 mod priority_queue;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `binaryheap` example.
     #[command(name = "binaryheap")]
     Binaryheap,
+
     /// Runs the `priority_queue` example.
     #[command(name = "priority_queue")]
     PriorityQueue,
@@ -42,7 +46,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

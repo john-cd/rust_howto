@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Lists the packages and targets of a Cargo workspace with `cargo_metadata`.
 //!
 //! `cargo metadata` prints, as JSON, what Cargo knows about a project: its
@@ -11,7 +12,10 @@ use std::path::Path;
 
 use cargo_metadata::MetadataCommand;
 
+/// Reads and prints Cargo metadata for the example workspace.
+///
 /// # Errors
+///
 /// Returns an error if Cargo cannot provide metadata for this workspace.
 fn main() -> anyhow::Result<()> {
     // Point at this crate's own manifest. `no_deps` skips resolving
@@ -39,9 +43,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Reads and prints Cargo metadata for the example workspace.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips

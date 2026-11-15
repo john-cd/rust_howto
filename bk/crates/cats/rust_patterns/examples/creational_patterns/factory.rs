@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A factory is quite useful when we need to create objects of different types
 //! that share a common interface, without needing to know the exact type at
 //! compile time.
@@ -8,15 +9,19 @@
 // Define a common trait for all shapes.
 // This defines the common interface that all concrete shape types will
 // implement.
+
 /// A shape that can be drawn.
 trait Shape {
+
     /// Draws the shape.
     fn draw(&self);
 }
 
 // A concrete implementation of the Shape trait.
+
 /// A circle.
 struct Circle {
+
     /// The radius of the circle.
     radius: f64,
 }
@@ -28,8 +33,10 @@ impl Shape for Circle {
 }
 
 // Another concrete implementation.
+
 /// A square.
 struct Square {
+
     /// The length of a side of the square.
     side: f64,
 }
@@ -41,23 +48,29 @@ impl Shape for Square {
 }
 
 // A enum that represents the types of shapes we can create.
+
 /// The kinds of shapes that the factory can create.
 enum ShapeType {
+
     /// A circle.
     Circle,
+
     /// A square.
     Square,
 }
 
 // The factory.
+
 /// A factory of shapes.
 struct ShapeFactory;
 
 impl ShapeFactory {
     // The logic for creating different shape objects is centralized.
+
     /// the side of a square.
     ///
     /// # Arguments
+///
     /// * `size` - Bound used to limit the amount of work or data accepted by the operation.
     fn create_shape(shape_type: ShapeType, size: f64) -> Box<dyn Shape> {
         match shape_type {
@@ -66,7 +79,7 @@ impl ShapeFactory {
         }
     }
 }
-/// Runs the example.
+
 /// Creates shapes with the factory and draws them.
 fn main() {
     // Using the factory to create different shapes.
@@ -81,8 +94,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates shapes with the factory and draws them.
 pub fn run() {
     main();
 }

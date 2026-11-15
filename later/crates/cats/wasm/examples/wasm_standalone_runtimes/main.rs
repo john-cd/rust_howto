@@ -9,12 +9,15 @@ use clap::Subcommand;
 /// Contains the wasmer functionality used by this parent module.
 #[cfg(feature = "wasmer")]
 mod wasmer;
+
 /// This example demonstrates how to use the `wasmtime` crate to run WebAssembly
 #[cfg(feature = "wasmtime")]
 mod wasmtime;
+
 /// Calls a typed WebAssembly *component* from Rust with `wasmtime`.
 #[cfg(feature = "wasmtime")]
 mod wasmtime_component;
+
 /// Run untrusted WebAssembly in a `wasmtime` sandbox: a fuel budget bounds the CPU time, a store
 /// limit bounds memory, and the only capability the guest has is one host function (no WASI, no
 /// filesystem, no network).
@@ -24,6 +27,7 @@ mod wasmtime_sandbox;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -32,18 +36,22 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `wasmer` example.
     #[cfg(feature = "wasmer")]
     #[command(name = "wasmer")]
     Wasmer,
+
     /// Runs the `wasmtime` example.
     #[cfg(feature = "wasmtime")]
     #[command(name = "wasmtime")]
     Wasmtime,
+
     /// Runs the `wasmtime_component` example.
     #[cfg(feature = "wasmtime")]
     #[command(name = "wasmtime_component")]
     WasmtimeComponent,
+
     /// Runs the `wasmtime_sandbox` example.
     #[cfg(feature = "wasmtime")]
     #[command(name = "wasmtime_sandbox")]
@@ -54,6 +62,7 @@ enum Commands {
 fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
+
 /// Runs the example selected in the parsed command line.
 fn dispatch(cli: Cli) -> anyhow::Result<()> {
     if let Some(command) = cli.command {

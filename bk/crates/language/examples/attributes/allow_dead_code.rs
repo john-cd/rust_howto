@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Silencing the warning about unused code with `#[allow(dead_code)]`.
 //!
 //! The Rust compiler generates warnings for code that is defined but never
@@ -13,6 +14,7 @@
 /// the attribute below suppresses the `dead_code` compiler warning.
 #[allow(dead_code)]
 fn unused_function() {}
+
 /// Does not call `unused_function`.
 fn main() {
     println!("Nobody is calling `unused_function`.");
@@ -20,8 +22,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Does not call `unused_function`.
 pub fn run() {
     main();
 }

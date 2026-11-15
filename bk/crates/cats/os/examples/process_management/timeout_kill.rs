@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Run a command with a timeout and kill it if it takes too long.
 //!
 //! A program that hangs must not hang its caller. Waiting for a child with a
@@ -47,6 +48,7 @@ fn sleep_command(seconds: u32) -> Command {
 /// Kills a slow command after a timeout.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> anyhow::Result<()> {
     let mut child = sleep_command(30).spawn()?;
@@ -59,6 +61,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example_body()
@@ -74,6 +77,7 @@ mod tests {
     fn slow_command_times_out() -> anyhow::Result<()> {
         run()
     }
+
     /// Preserves the output of a command that finishes before its deadline.
     #[test]
     fn fast_command_completes() -> anyhow::Result<()> {

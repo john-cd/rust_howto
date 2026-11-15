@@ -7,16 +7,20 @@ use clap::Subcommand;
 
 /// Destructuring tuples, arrays and structs into variables.
 mod destructuring;
+
 /// Shadowing a variable with a new binding.
 mod shadowing;
+
 /// Variables are used to store values.
 mod vars;
+
 /// Variable immutability and mutability.
 mod vars2;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,15 +29,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `destructuring` example.
     #[command(name = "destructuring")]
     Destructuring,
+
     /// Runs the `shadowing` example.
     #[command(name = "shadowing")]
     Shadowing,
+
     /// Runs the `vars` example.
     #[command(name = "vars")]
     Vars,
+
     /// Runs the `vars2` example.
     #[command(name = "vars2")]
     Vars2,
@@ -58,7 +66,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

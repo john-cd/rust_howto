@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Adapts buffered input lines into simple comma-separated row values.
 //!
 //! The adapter pattern converts one interface to the one a caller expects, like
@@ -13,11 +14,13 @@ use std::io::Lines;
 
 /// An iterator adapter that turns each input line into a row of fields.
 struct CsvRows<R> {
+
     /// Lines value.
     lines: Lines<R>,
 }
 
 impl<R: BufRead> CsvRows<R> {
+
     /// Creates a row iterator over a buffered reader.
     fn new(reader: R) -> Self {
         Self {
@@ -36,6 +39,7 @@ impl<R: BufRead> Iterator for CsvRows<R> {
             .map(|line| line.map(|line| line.split(',').map(str::to_owned).collect()))
     }
 }
+
 /// Prints rows using the adapter over an in-memory reader.
 fn main() -> anyhow::Result<()> {
     let input = Cursor::new("name,role\nAda,engineer\n");
@@ -51,6 +55,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the reader adapter example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

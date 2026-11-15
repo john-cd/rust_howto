@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Mutating the elements of an array in parallel with `rayon`.
 //!
 //! A mutable parallel iterator hands each thread its own disjoint part of the
@@ -23,8 +24,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Decrements each element of an array in parallel and prints the result.
 pub fn run() {
     main();
 }

@@ -8,18 +8,22 @@ use clap::Subcommand;
 /// Moves an entity with a headless Bevy ECS app.
 #[cfg(feature = "bevy")]
 mod bevy;
+
 /// A minimal `fyrox` plugin: game logic that the engine calls every frame.
 #[cfg(feature = "fyrox")]
 mod fyrox;
+
 /// Moves and draws a bouncing ball with ggez.
 #[cfg(feature = "ggez")]
 mod ggez;
+
 /// A bouncing ball in a Macroquad game loop.
 mod macroquad;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -28,29 +32,36 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `bevy` example.
     #[command(name = "bevy")]
     #[cfg(feature = "bevy")]
     Bevy,
+
     /// Runs the `fyrox` example.
     #[command(name = "fyrox")]
     #[cfg(feature = "fyrox")]
     Fyrox,
+
     /// Runs the `ggez` example.
     #[command(name = "ggez")]
     #[cfg(feature = "ggez")]
     Ggez,
+
     /// Runs the `macroquad` example.
     #[command(name = "macroquad")]
     Macroquad,
 }
+
 /// Runs the example selected on the command line.
 ///
 /// # Errors
+///
 /// Returns an error if the selected engine's setup or event loop fails.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     dispatch(Cli::parse())
 }
+
 /// Runs the example selected in the parsed command line.
 fn dispatch(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
     if let Some(command) = cli.command {

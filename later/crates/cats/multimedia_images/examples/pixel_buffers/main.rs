@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Creates a row-major RGBA pixel buffer with opaque and translucent pixels.
 
 use image::Rgba;
@@ -23,7 +24,7 @@ fn print_example() {
         buffer.as_raw()
     );
 }
-/// Runs the example.
+
 /// Runs the pixel-buffer example from a standalone entry point.
 fn main() {
     print_example();

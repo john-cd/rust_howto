@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates parallel searching using Rayon's `par_iter().find_any()`.
 //!
 //! Searching a large collection can be split into parts that threads search
@@ -25,8 +26,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates parallel searching using Rayon's `par_iter().find_any()`.
 pub fn run() {
     main();
 }

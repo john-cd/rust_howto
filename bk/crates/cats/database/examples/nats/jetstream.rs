@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Publishes orders to a NATS JetStream stream and processes them with a
 //! durable pull consumer.
 //!
@@ -28,18 +29,23 @@ use tokio_util::sync::CancellationToken;
 
 /// Maximum accepted payload size, in bytes.
 const MAX_PAYLOAD: usize = 64 * 1024;
+
 /// Maximum number of messages requested per pull.
 const BATCH_SIZE: usize = 10;
+
 /// How long a pull waits for messages before returning.
 const BATCH_WAIT: Duration = Duration::from_secs(1);
+
 /// Redeliveries stop after this many attempts.
 const MAX_DELIVER: i64 = 5;
 
 /// An order published on the `orders.new` subject.
 #[derive(Debug, Serialize, Deserialize, PartialEq, Eq)]
 struct Order {
+
     /// Business identifier, used to make processing idempotent.
     id: u64,
+
     /// Amount in cents.
     cents: u64,
 }
@@ -47,10 +53,13 @@ struct Order {
 /// What happened to a message.
 #[derive(Debug, PartialEq, Eq)]
 enum Outcome {
+
     /// The order was applied.
     Applied,
+
     /// The order was seen before; nothing was done.
     Duplicate,
+
     /// The payload cannot be processed, now or later.
     Invalid,
 }
@@ -58,14 +67,17 @@ enum Outcome {
 /// Applies orders at most once per identifier.
 #[derive(Default)]
 struct Processor {
+
     /// Identifiers of the orders applied so far. A real service stores this
     /// in the same transaction as the order's effects.
     seen: HashSet<u64>,
+
     /// Total applied, in cents.
     total_cents: u64,
 }
 
 impl Processor {
+
     /// Decodes and applies one payload.
     fn process(&mut self, payload: &[u8]) -> Outcome {
         if payload.len() > MAX_PAYLOAD {
@@ -194,9 +206,10 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the recipe against the server in `NATS_URL`, if any.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `derive_more` crate extends Rust's built-in derive functionality to
 //! provide more automatic implementations for common traits.
 //!
@@ -24,8 +25,10 @@ use derive_more::SubAssign;
 /// Basic numeric type with arithmetic operations.
 #[derive(Add, AddAssign, PartialEq, Debug)]
 struct Point {
+
     /// The horizontal coordinate.
     x: i32,
+
     /// The vertical coordinate.
     y: i32,
 }
@@ -41,18 +44,23 @@ struct UserId(u64);
 )]
 #[derive(Constructor, Debug)]
 struct User {
+
     /// The identifier of the user.
     id: UserId,
+
     /// The name of the user.
     name: String,
+
     /// Whether the user is active.
     active: bool,
 }
 
 // Using `Deref` and `DerefMut`.
+
 /// A stack, which dereferences to its items.
 #[derive(Deref, DerefMut, Debug)]
 struct Stack<T> {
+
     /// The items of the stack.
     #[deref]
     #[deref_mut]
@@ -105,15 +113,18 @@ fn main() {
 }
 
 // More complex example: Multiple derives on a single type.
+
 /// An amount of money.
 #[derive(Add, AddAssign, Sub, SubAssign, From, Into, Display, Debug, Clone, Copy)]
 struct Amount(f64);
 
 // Custom error type with derive_more's `Error` trait.
 // `std::error::Error` requires `std::fmt::Debug` and `std::fmt::Display`.
+
 /// The errors of the application.
 #[derive(Debug, derive_more::Error, Display, From)]
 enum AppError {
+
     /// A database error.
     #[display("Database error")]
     DatabaseError,
@@ -124,6 +135,7 @@ enum AppError {
 }
 
 // Using multiple types with `derive_more`.
+
 /// Moves `value` from one amount to another, unless the balance is too low.
 fn transfer_amount(from: &mut Amount, to: &mut Amount, value: Amount) -> Result<(), AppError> {
     if from.0 < value.0 {
@@ -137,8 +149,7 @@ fn transfer_amount(from: &mut Amount, to: &mut Amount, value: Amount) -> Result<
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Uses the traits derived by `derive_more`.
 pub fn run() {
     main();
 }
@@ -149,11 +160,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `derive more` example runs.
     #[test]
     fn test_derive_more_example_entry_point() {
         main();
     }
+
     /// Verifies point add and add assign.
     #[test]
     fn test_point_add_and_add_assign() {
@@ -163,6 +176,7 @@ mod tests {
         p += Point { x: 1, y: 1 };
         assert_eq!(p, Point { x: 6, y: 7 });
     }
+
     /// Verifies user id conversions and display.
     #[test]
     fn test_user_id_conversions_and_display() {
@@ -182,6 +196,7 @@ mod tests {
             r#"User { id: UserId(1), name: "Alice", active: true }"#
         );
     }
+
     /// Verifies deref and deref mut expose vec methods.
     #[test]
     fn test_deref_and_deref_mut_expose_vec_methods() {
@@ -202,6 +217,7 @@ mod tests {
         assert!((to.0 - 5.0).abs() < f64::EPSILON);
         Ok(())
     }
+
     /// Verifies transfer amount with insufficient funds changes nothing.
     #[test]
     fn test_transfer_amount_with_insufficient_funds_changes_nothing() {
@@ -215,6 +231,7 @@ mod tests {
         assert!((from.0 - 1.0).abs() < f64::EPSILON);
         assert!((to.0 - 2.0).abs() < f64::EPSILON);
     }
+
     /// Verifies error display.
     #[test]
     fn test_error_display() {

@@ -1,19 +1,23 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of using `Box` as a smart pointer for trait objects.
 //!
 //! `Box` can be used to store an owned trait object on the heap.
 
 // Let's define an example trait and implement it on two structs.
+
 /// A shape with an area.
 trait Shape {
+
     /// Returns the area of this shape in square units.
     fn area(&self) -> f64;
 }
 
 /// A circle.
 struct Circle {
+
     /// The radius of the circle.
     radius: f64,
 }
@@ -26,8 +30,10 @@ impl Shape for Circle {
 
 /// A rectangle.
 struct Rectangle {
+
     /// The width of the rectangle.
     width: f64,
+
     /// The height of the rectangle.
     height: f64,
 }
@@ -37,6 +43,7 @@ impl Shape for Rectangle {
         self.width * self.height
     }
 }
+
 /// Stores different shapes in boxed trait objects and prints their areas.
 fn main() {
     // Put different concrete types that implement `Shape` into a `Vec<Box<dyn
@@ -57,8 +64,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Stores different shapes in boxed trait objects and prints their areas.
 pub fn run() {
     main();
 }
@@ -66,11 +72,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `box trait objects` example runs.
     #[test]
     fn test_box_trait_objects_example_entry_point() {
         main();
     }
+
     /// Verifies areas through trait objects.
     #[test]
     fn test_areas_through_trait_objects() {
@@ -85,6 +93,7 @@ mod tests {
         assert!((areas[0] - 78.539_816_339_744_83).abs() < 1e-9);
         assert!((areas[1] - 12.0).abs() < f64::EPSILON);
     }
+
     /// Verifies degenerate shapes have zero area.
     #[test]
     fn test_degenerate_shapes_have_zero_area() {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A GTK 4 application with a button and a label.
 //!
 //! GTK is a widely used toolkit for desktop interfaces on Linux (the base of
@@ -14,9 +15,8 @@ use gtk::Button;
 use gtk::Label;
 use gtk::Orientation;
 use gtk::prelude::*;
-/// Runs the example.
-/// Creates and runs the application.
 
+/// Creates and runs the application.
 fn main() {
     let app = Application::builder()
         .application_id("org.example.gtk4_counter")
@@ -90,6 +90,7 @@ fn build_ui(app: &Application) {
 /// operations.
 ///
 /// # Arguments
+///
 /// * `label` - Human-readable value used to identify or display the selected gtk4.
 fn update_conditional_label(label: &Label, value: i32) {
     if value % 2 == 0 {
@@ -100,9 +101,7 @@ fn update_conditional_label(label: &Label, value: i32) {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Opens the GTK 4 counter application.
-
 pub fn run() {
     main();
 }

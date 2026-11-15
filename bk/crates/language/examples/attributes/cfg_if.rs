@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use `cfg-if` to conditionally compile
 //! code blocks.
 
@@ -36,11 +37,13 @@ fn main() {
     // Another example with feature flags:
     cfg_if! {
             if #[cfg(feature = "full")] {
+
     /// Returns the functionality.
                 fn get_functionality() -> &'static str {
                     "Full functionality enabled"
                 }
             } else {
+
     /// Returns the functionality.
                 fn get_functionality() -> &'static str {
                     "Limited functionality only"
@@ -69,8 +72,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates how to use `cfg-if` to conditionally compile code blocks.
 pub fn run() {
     main();
 }

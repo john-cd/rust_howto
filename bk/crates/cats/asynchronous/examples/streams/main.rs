@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Creating and consuming a `Stream` of numbers.
 mod streams;
+
 /// Demonstrates bounded concurrent processing with a deterministic stream.
 mod streams2;
+
 /// Processing a `Stream` of fallible asynchronous fetches with `futures_util`.
 mod streams3;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `streams` example.
     #[command(name = "streams")]
     Streams,
+
     /// Runs the `streams2` example.
     #[command(name = "streams2")]
     Streams2,
+
     /// Runs the `streams3` example.
     #[command(name = "streams3")]
     Streams3,

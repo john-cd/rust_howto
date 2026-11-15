@@ -57,6 +57,7 @@ use crate::unicast::TransportUnicast;
 
 /// **********************************
 // TRANSPORT
+
 /// **********************************
 pub trait TransportEventHandler: Send + Sync {
     fn new_unicast(
@@ -93,6 +94,7 @@ impl TransportEventHandler for DummyTransportEventHandler {
 
 /// **********************************
 // MULTICAST
+
 /// **********************************
 pub trait TransportMulticastEventHandler: Send + Sync {
     fn new_peer(&self, peer: TransportPeer) -> ZResult<Arc<dyn TransportPeerEventHandler>>;
@@ -118,6 +120,7 @@ impl TransportMulticastEventHandler for DummyTransportMulticastEventHandler {
 
 /// **********************************
 // CALLBACK
+
 /// **********************************
 #[derive(Clone, Debug, Serialize, PartialEq, Eq)]
 #[serde(rename = "Transport")]

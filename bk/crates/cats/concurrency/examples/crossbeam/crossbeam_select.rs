@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Receives from whichever Crossbeam channel is ready first.
 //!
 //! `select!` waits on several channels and runs the branch of whichever has a
@@ -40,6 +41,7 @@ fn main() -> Result<()> {
 /// Runs the channel selection example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

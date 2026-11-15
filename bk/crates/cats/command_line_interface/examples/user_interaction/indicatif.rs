@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A styled progress spinner with `indicatif` and `console`.
 //!
 //! Long-running tasks should show that they are alive. A spinner suits work of
@@ -22,6 +23,7 @@ use indicatif::ProgressStyle;
 // compilation process with a spinner and styled text.
 // `console` is a library for Rust that provides access to
 // terminal features, like styles and colors.
+
 /// Simulates compiler output with styled text and a spinner.
 fn spinner() -> anyhow::Result<()> {
     // The terminal is abstracted through the `console::Term` type.
@@ -77,9 +79,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the indicatif example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

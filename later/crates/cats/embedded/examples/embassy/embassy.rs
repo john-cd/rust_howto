@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Runs a bounded pair of Embassy tasks on the host executor.
 //!
 //! Embassy is an async runtime for microcontrollers: tasks wait on timers and
@@ -81,9 +82,11 @@ fn spawn_tasks(spawner: Spawner) -> anyhow::Result<()> {
     spawner.spawn(timeout);
     Ok(())
 }
-/// Runs the producer and consumer and returns the received readings in order.
 
+/// Runs the producer and consumer and returns the received readings in order.
+///
 /// # Errors
+///
 /// Returns an error if the executor lock is poisoned, a task cannot be spawned,
 /// or the task deadline expires before all readings arrive.
 fn run_example() -> anyhow::Result<Vec<u32>> {
@@ -126,20 +129,18 @@ fn run_example() -> anyhow::Result<Vec<u32>> {
 }
 // ANCHOR_END: example
 
-/// Runs the host Embassy example and prints the values received by its tasks.
-/// Runs a bounded pair of Embassy tasks on the host executor.
+/// Runs bounded Embassy producer and consumer tasks on a host executor and prints their readings.
 ///
 /// # Errors
 ///
 /// Returns an error if the executor cannot start or finish the task sequence.
-/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     let received_values = run_example()?;
     println!("Received sensor values: {received_values:?}");
     Ok(())
 }
 
-/// Verifies that a bounded pair of Embassy tasks on the host executor.
+/// Tests the bounded Embassy task flow on the host executor.
 #[cfg(test)]
 mod tests {
     use super::run_example;

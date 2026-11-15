@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates basic usage of the `sqlx` crate for interacting
 //! with a SQLite database.
 //!
@@ -18,10 +19,13 @@ use sqlx::sqlite::SqlitePoolOptions;
 /// A row of the `users` table.
 #[derive(sqlx::FromRow, Debug, PartialEq, Eq)] // Derive FromRow to map database rows to this struct
 struct User {
+
     /// The identifier.
     id: i32,
+
     /// The name.
     name: String,
+
     /// The email address.
     email: String,
 }
@@ -89,9 +93,10 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Creates an in-memory database, inserts users and queries them.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Working with `OsString` and `OsStr`, the platform-native strings.
 //!
 //! File names and environment variables are not always valid UTF-8, especially
@@ -13,7 +14,7 @@ use std::ffi::OsString;
 use std::path::Path;
 use std::path::PathBuf;
 use std::process::Command;
-/// Runs the example.
+
 /// Builds an `OsString` and converts it to and from other string types.
 fn main() {
     // Create an `OsString` (owned platform-native string):
@@ -67,8 +68,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Builds an `OsString` and converts it to and from other string types.
 pub fn run() {
     main();
 }

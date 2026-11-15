@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Use SurrealDB's embedded in-memory engine for a self-contained CRUD example.
 //!
 //! SurrealDB is a multi-model database: one engine offers documents, tables
@@ -22,8 +23,10 @@ use surrealdb::types::SurrealValue;
 /// A person, stored in the database.
 #[derive(Debug, SurrealValue)]
 struct Person {
+
     /// The name of the person.
     name: String, // or: Cow<'static, str>
+
     /// The age of the person.
     age: u16,
 }
@@ -77,7 +80,10 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the in-memory SurrealDB CRUD example.
+///
 /// # Errors
+///
 /// Returns an error if the in-memory engine or any CRUD operation fails.
 pub fn run() -> Result<()> {
     main()

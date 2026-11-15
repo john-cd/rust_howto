@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Moves an entity with a headless Bevy ECS app.
 //!
 //! Bevy uses an entity component system (ECS). Entities are plain IDs,
@@ -38,7 +39,7 @@ fn movement(mut query: Query<'_, '_, (&mut Position, &Velocity)>, time: Res<'_, 
         position.0 += velocity.0 * time.delta_secs();
     }
 }
-/// Runs the example.
+
 /// Runs two frames of the headless ECS example.
 fn main() {
     let mut app = build_app();
@@ -48,7 +49,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the headless Bevy example.
 pub fn run() {
     main();

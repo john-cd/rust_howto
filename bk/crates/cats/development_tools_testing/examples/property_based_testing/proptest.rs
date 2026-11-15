@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Property-based testing with `proptest`.
 //! Property-based testing checks a rule that must hold for all inputs, such as
 //! "reversing twice gives the original". The tool generates many random inputs
@@ -46,6 +47,7 @@ mod tests {
     // 2. The result is equal to one of the inputs.
     proptest! {
         // Generate random integers in the range -1000 to 1000.
+
     /// Checks that the maximum equals an input and is no smaller than either input.
         #[test]
         fn test_max_of_two(a in -1000..1000, b in -1000..1000) {
@@ -68,6 +70,7 @@ mod tests {
     // 3. `is_even(n * 2)` should always be true.
     proptest! {
         // Generate integers across a wide range.
+
     /// Checks that `is_even` agrees with whether the input has zero remainder modulo two.
         #[test]
         fn test_is_even(n in -1000..1000) {
@@ -87,6 +90,7 @@ mod tests {
     // After sorting a vector, all adjacent pairs of elements should be in
     // non-decreasing order.
     proptest! {
+
         /// Generate a vector of random integers.
         #[test]
         fn test_vec_operations(

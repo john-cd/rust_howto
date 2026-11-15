@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates parsing INI text and using typed getters with
 //! `configparser`.
 //!
@@ -41,6 +42,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the `configparser` example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -56,6 +58,7 @@ mod tests {
     fn test_configparser_ini_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// Keys are case-insensitive and typed getters parse the value.
     #[test]
     fn reads_typed_values() -> anyhow::Result<()> {

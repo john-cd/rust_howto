@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Selects HTML elements and extracts their text with CSS selectors.
 //!
 //! Web scraping extracts data from HTML pages. CSS selectors, such as
@@ -45,6 +46,7 @@ fn select_text(document: &Html, query: &str) -> anyhow::Result<Vec<String>> {
 /// Runs the example for the command-line dispatcher and test suite.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

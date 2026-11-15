@@ -7,16 +7,20 @@ use clap::Subcommand;
 
 /// Races two futures with `select!` from the `futures` crate.
 mod futures1;
+
 /// Polling several futures at once with `join!` and `join_all`.
 mod futures2;
-/// # Futures
+
+/// Demonstrates future combinators from the `futures` crate.
 mod futures3;
+
 /// Combinators from `futures_util`, applied to asynchronous fetches that may
 mod futures_util;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,15 +29,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `futures1` example.
     #[command(name = "futures1")]
     Futures1,
+
     /// Runs the `futures2` example.
     #[command(name = "futures2")]
     Futures2,
+
     /// Runs the `futures3` example.
     #[command(name = "futures3")]
     Futures3,
+
     /// Runs the `futures_util` example.
     #[command(name = "futures_util")]
     FuturesUtil,

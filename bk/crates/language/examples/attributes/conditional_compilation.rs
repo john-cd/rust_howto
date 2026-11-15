@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates conditional compilation using the `#[cfg]`
 //! attribute and `cfg!` macro.
 //!
@@ -36,8 +37,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints messages depending on the target operating system.
 pub fn run() {
     main();
 }

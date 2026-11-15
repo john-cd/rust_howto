@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `wasmtime` crate to run WebAssembly
 //! modules.
 //!
@@ -13,6 +14,7 @@ use wasmtime::*;
 
 // Simple example written in WAT (WebAssembly Text Format).
 // Imports a host function; exports a function as well.
+
 /// A WebAssembly module in text format, which imports and exports a function.
 static WAT: &str = r#"(module
   (import "host" "print_char" (func $print_char (param i32)))
@@ -124,9 +126,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Runs the WebAssembly module with `wasmtime`, linking a host function.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

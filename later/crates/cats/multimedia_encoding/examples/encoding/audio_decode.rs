@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Probe and decode audio formats to linear PCM samples using `symphonia`.
 //!
 //! Audio files come in many formats (MP3, FLAC, Ogg, WAV). A decoder first
@@ -80,9 +81,10 @@ fn create_sample_wav(sample_count: usize) -> Result<Vec<u8>, Box<dyn Error + Sen
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Probes an in-memory WAV byte buffer and decodes audio frames into PCM samples.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
@@ -92,6 +94,7 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Runs the audio decode example through its entry point without error.
     #[test]
     fn test_audio_decode_entry_point() {

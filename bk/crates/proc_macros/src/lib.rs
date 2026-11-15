@@ -7,6 +7,7 @@ use proc_macro::TokenStream;
 
 // Attribute macros are defined by a public function with the
 // `proc_macro_attribute` attribute.
+
 /// An attribute macro that logs the calls of the function it decorates.
 #[proc_macro_attribute]
 pub fn log_calls(_attr: TokenStream, item: TokenStream) -> TokenStream {
@@ -46,9 +47,11 @@ pub fn log_calls(_attr: TokenStream, item: TokenStream) -> TokenStream {
 // `debug_print_derive` as a custom `derive` macro for the `DebugPrint` trait.
 // The input `TokenStream` is the token stream of the struct, enum, or union
 // that has the `derive` attribute.
+
 /// A derive macro that implements the `DebugPrint` trait.
 ///
 /// # Arguments
+///
 /// * `input` - Input value to validate or transform.
 #[proc_macro_derive(DebugPrint, attributes(helper))]
 pub fn debug_print_derive(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
@@ -86,9 +89,11 @@ pub fn debug_print_derive(input: proc_macro::TokenStream) -> proc_macro::TokenSt
 // TokenStream`. The input `TokenStream` is what is inside the delimiters of the
 // macro invocation and the output `TokenStream` replaces the entire macro
 // invocation.
+
 /// A function-like macro that processes a SQL query.
 ///
 /// # Arguments
+///
 /// * `input` - Input value to validate or transform.
 #[proc_macro]
 pub fn sql(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
@@ -121,6 +126,7 @@ pub fn sql(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 // `proc-macro2` allows manipulating TokenStreams outside of a procedural macro
 // context, making it easier to write unit tests for procedural macros.
 // Here we define the core logic using `proc_macro2::TokenStream`.
+
 /// Replaces the identifier `old_ident` with `new_ident` in `input`.
 fn process_tokens(input: proc_macro2::TokenStream) -> proc_macro2::TokenStream {
     input
@@ -143,9 +149,11 @@ fn process_tokens(input: proc_macro2::TokenStream) -> proc_macro2::TokenStream {
 
 // Then we expose the procedural macro interface which seamlessly converts
 // between `proc_macro::TokenStream` and `proc_macro2::TokenStream`.
+
 /// A function-like macro that renames an identifier in the tokens it receives.
 ///
 /// # Arguments
+///
 /// * `input` - Input value to validate or transform.
 #[proc_macro]
 pub fn replace_ident(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
@@ -155,6 +163,7 @@ pub fn replace_ident(input: proc_macro::TokenStream) -> proc_macro::TokenStream 
 }
 
 // And we can write unit tests for the core logic directly!
+
 /// Checks that `old_ident` is replaced.
 #[cfg(test)]
 mod tests {

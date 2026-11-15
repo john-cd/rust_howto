@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Save a `RecordBatch` in the Arrow IPC file and stream formats with the
 //! `arrow-ipc` crate, then read it back.
 //!
@@ -22,6 +23,7 @@ use arrow_ipc::writer::StreamWriter;
 /// Encodes a batch in the IPC *file* format (random access, footer).
 ///
 /// # Errors
+///
 /// Returns an error if Arrow cannot create, serialize, or finalize the IPC file.
 pub fn write_file(batch: &RecordBatch) -> Result<Vec<u8>> {
     let mut buffer = Vec::new();
@@ -36,6 +38,7 @@ pub fn write_file(batch: &RecordBatch) -> Result<Vec<u8>> {
 /// Decodes every batch of an IPC file held in memory.
 ///
 /// # Errors
+///
 /// Returns an error if `bytes` is not a valid IPC file or a batch cannot be decoded.
 pub fn read_file(bytes: Vec<u8>) -> Result<Vec<RecordBatch>> {
     let reader = FileReader::try_new(Cursor::new(bytes), None)?;
@@ -47,6 +50,7 @@ pub fn read_file(bytes: Vec<u8>) -> Result<Vec<RecordBatch>> {
 /// Encodes a batch in the IPC *stream* format, suited to sockets and pipes.
 ///
 /// # Errors
+///
 /// Returns an error if Arrow cannot create, serialize, or finalize the IPC stream.
 pub fn write_stream(batch: &RecordBatch) -> Result<Vec<u8>> {
     let mut buffer = Vec::new();
@@ -60,6 +64,7 @@ pub fn write_stream(batch: &RecordBatch) -> Result<Vec<u8>> {
 /// Decodes every batch of an IPC stream held in memory.
 ///
 /// # Errors
+///
 /// Returns an error if `bytes` is not a valid IPC stream or a batch cannot be decoded.
 pub fn read_stream(bytes: Vec<u8>) -> Result<Vec<RecordBatch>> {
     let reader = StreamReader::try_new(Cursor::new(bytes), None)?;
@@ -71,6 +76,7 @@ pub fn read_stream(bytes: Vec<u8>) -> Result<Vec<RecordBatch>> {
 /// Round-trips a batch through both IPC formats.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body(batch: &RecordBatch) -> Result<()> {
     let from_file = read_file(write_file(batch)?)?;
@@ -85,9 +91,11 @@ pub fn example_body(batch: &RecordBatch) -> Result<()> {
 /// Writes and reads back a record batch using both Arrow IPC formats.
 ///
 /// # Arguments
+///
 /// * `batch` - Record batch to encode and decode.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run(batch: &RecordBatch) -> Result<()> {
     example_body(batch)

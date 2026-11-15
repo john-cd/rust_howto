@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to compare vectors using the `approx` crate.
 //!
 //! Floating-point numbers are rarely exactly equal after calculations (0.1 +
@@ -9,7 +10,7 @@
 
 use approx::assert_abs_diff_eq;
 use ndarray::Array;
-/// Runs the example.
+
 /// Adds vectors and compares the results approximately.
 fn main() {
     // Create vectors.
@@ -35,8 +36,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Adds vectors and compares the results approximately.
 pub fn run() {
     main();
 }

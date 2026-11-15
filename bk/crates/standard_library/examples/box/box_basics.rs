@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Basic `Box` usage.
 //!
 //! `Box<T>` stores a value on the heap and owns it. Use it for large values you
@@ -48,8 +49,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Moves a value from the stack to the heap with a `Box`.
 pub fn run() {
     main();
 }
@@ -57,11 +57,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `box basics` example runs.
     #[test]
     fn test_box_basics_example_entry_point() {
         main();
     }
+
     /// Verifies move value to heap and back.
     #[test]
     fn test_move_value_to_heap_and_back() {
@@ -71,6 +73,7 @@ mod tests {
         let in_stack = *in_heap;
         assert_eq!(format!("{in_stack:?}"), "MyStruct(5)");
     }
+
     /// Verifies box of copy type does not move original.
     #[test]
     fn test_box_of_copy_type_does_not_move_original() {

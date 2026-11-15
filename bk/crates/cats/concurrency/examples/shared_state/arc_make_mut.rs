@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Sharing a configuration between threads with `Arc`, and cloning it on write
 //! with `Arc::make_mut`.
 //!
@@ -18,13 +19,16 @@ mod cfg {
     /// A configuration struct to be shared among threads.
     #[derive(Debug, Clone)]
     pub struct Configuration {
+
         /// Address of the server.
         server_address: String,
+
         /// Maximum number of connections.
         max_connections: u8,
     }
 
     impl Configuration {
+
         /// Creates a shared configuration.
         pub fn new(server_address: String, max_connections: u8) -> Arc<Self> {
             Arc::new(Self {
@@ -45,6 +49,7 @@ mod cfg {
         /// Updates the configuration, cloning it first if other `Arc` pointers
         ///
         /// # Arguments
+///
         /// to it exist (clone-on-write).
         pub fn update(self: &mut Arc<Self>, server_address: String, max_connections: u8) {
             // If there are other `Arc` pointers to the same allocation,
@@ -78,8 +83,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates that clone-on-write preserves an existing reader snapshot.
 pub fn run() {
     main();
 }

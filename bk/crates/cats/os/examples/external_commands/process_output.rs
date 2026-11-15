@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to run an external command, capture its
 //! output, and parse it.
 //!
@@ -13,11 +14,14 @@ use std::process::Command;
 use anyhow::Result;
 use anyhow::bail;
 use regex::Regex;
+
 /// Represents a Git commit with its hash and message.
 #[derive(PartialEq, Default, Clone, Debug)]
 struct Commit {
+
     /// The abbreviated hash of the commit.
     hash: String,
+
     /// The message of the commit.
     message: String,
 }
@@ -27,11 +31,13 @@ struct Commit {
 /// first 5 commits.
 ///
 /// # Returns
+///
 /// Returns `Ok(())` if the command executes successfully and the output is
 /// parsed correctly. Returns an error if the command fails or the output cannot
 /// be parsed.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 fn main() -> Result<()> {
     let output = Command::new("git").arg("log").arg("--oneline").output()?;
@@ -59,9 +65,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Executes the `git log --oneline` command, parses its output, and prints the
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

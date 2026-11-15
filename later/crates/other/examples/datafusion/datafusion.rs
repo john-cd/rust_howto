@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example registers an in-memory Arrow table and groups its rows with
 //! both SQL and DataFusion's `DataFrame` API.
 //!
@@ -118,6 +119,7 @@ fn main() -> Result<()> {
 /// DataFusion's `DataFrame` API.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

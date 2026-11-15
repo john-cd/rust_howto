@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates a small asynchronous workload using `smol`.
 //!
 //! `smol` is a small async runtime, an alternative to Tokio, built from small,
@@ -10,6 +11,7 @@
 use std::time::Duration;
 
 use smol::Timer;
+
 /// Runs several asynchronous tasks on the `smol` runtime and waits for their
 ///
 /// results.

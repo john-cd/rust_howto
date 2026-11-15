@@ -12,22 +12,31 @@ use tracing::info;
 
 /// The template of a category badge.
 mod category_badge;
+
 /// The templates of the badges and reference definitions of a crate block.
 mod crate_block_badges_or_refdefs;
+
 /// The alphabetical index of crates.
 mod crates_alphabetical;
+
 /// The page of crates by category.
 mod crates_by_category;
+
 /// Detecting GitHub URLs.
 mod detect_github_url;
+
 /// Index anchors for `mdbook-indexing`.
 mod index_anchors;
+
 /// Normalizing documentation URLs.
 mod normalize_url;
+
 /// Read the recipe tables included in the published example index.
 mod published_recipes;
+
 /// The Rust By Example badge.
 mod rbe;
+
 /// Removing empty lines from text.
 mod remove_empty_lines;
 
@@ -95,6 +104,7 @@ mod tests {
     /// Context holding a single string value for formatter tests.
     #[derive(Serialize)]
     struct Value {
+
         /// The vector value stored by this example.
         v: &'static str,
     }

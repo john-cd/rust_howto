@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Compute line coverage per file from an LCOV report and enforce a minimum.
 //!
 //! Code coverage reports which lines tests execute. LCOV is a plain-text report
@@ -15,10 +16,13 @@ use lcov::Record;
 /// Line coverage of one source file.
 #[derive(Debug, PartialEq)]
 struct FileCoverage {
+
     /// Path of the source file.
     path: String,
+
     /// Number of instrumented lines.
     found: u32,
+
     /// Number of lines executed at least once.
     hit: u32,
 }
@@ -36,10 +40,12 @@ impl FileCoverage {
 /// Streams the records of an LCOV report and collects per-file line coverage.
 ///
 /// # Errors
+///
 /// Returns an error if the report contains malformed LCOV records.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested file coverage operation.
+///
+/// * `input` - Reader that supplies the LCOV report to parse.
 fn summarize(input: impl BufRead) -> anyhow::Result<Vec<FileCoverage>> {
     let mut files = Vec::new();
     let mut current: Option<FileCoverage> = None;
@@ -108,6 +114,7 @@ end_of_record
 /// Summarizes the report, then applies a coverage gate.
 ///
 /// # Errors
+///
 /// Returns an error if the report is invalid or below the coverage threshold.
 pub fn example_body() -> anyhow::Result<()> {
     let files = summarize(REPORT.as_bytes())?;
@@ -121,6 +128,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example_body()

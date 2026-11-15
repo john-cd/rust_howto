@@ -1,9 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Basic usage of the `moka` crate for high-performance concurrent caching.
 //!
 //! ### Purpose and Architecture of `moka`
+//!
 //! `moka` is a fast, feature-rich, concurrent caching library for Rust inspired
 //! by Java's Caffeine:
 //! - **High Concurrency**: Provides lock-free or highly concurrent read/write operations using lock
@@ -23,6 +25,7 @@
 use std::time::Duration;
 
 use moka::sync::Cache;
+
 /// Builds a `moka` cache with a size limit and an idle timeout, then inserts
 ///
 /// and reads entries.
@@ -61,8 +64,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Builds a `moka` cache with a size limit and an idle timeout, then inserts
 pub fn run() {
     main();
 }
@@ -76,6 +78,7 @@ mod tests {
     fn test_moka_example_entry_point() {
         main();
     }
+
     /// Inserts get and invalidate.
     #[test]
     fn insert_get_and_invalidate() {

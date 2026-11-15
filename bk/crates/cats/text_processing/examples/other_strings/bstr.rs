@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `bstr` crate provides types and traits for working with byte strings,
 //! which are sequences of bytes that may or may not be valid UTF-8.
 //!
@@ -25,7 +26,7 @@ use bstr::ByteSlice;
 // methods. This trait is implemented for `Vec<u8>`, providing methods for
 // pushing, extending, and other operations on byte vectors.
 use bstr::ByteVec;
-/// Runs the example.
+
 /// Creates and manipulates byte strings, which may not be valid UTF-8.
 fn main() {
     // Basic usage:
@@ -62,8 +63,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates and manipulates byte strings, which may not be valid UTF-8.
 pub fn run() {
     main();
 }

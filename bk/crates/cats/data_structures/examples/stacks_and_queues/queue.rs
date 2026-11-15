@@ -1,13 +1,14 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A queue implemented with `VecDeque`.
 //!
 //! A queue is first in, first out (FIFO), like a line at a shop. `VecDeque` is
 //! the standard double-ended queue, with O(1) pushes and pops at both ends.
 
 use std::collections::VecDeque;
-/// Runs the example.
+
 /// Adds elements to a queue and removes them in first-in, first-out order.
 fn main() {
     let mut queue = VecDeque::new();
@@ -43,8 +44,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Adds elements to a queue and removes them in first-in, first-out order.
 pub fn run() {
     main();
 }

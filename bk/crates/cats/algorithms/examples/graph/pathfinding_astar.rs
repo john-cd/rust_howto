@@ -1,10 +1,12 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Implicit grid pathfinding using the A* algorithm and the `pathfinding`
 //! crate.
 //!
 //! ### What is Implicit Graph Pathfinding?
+//!
 //! Unlike explicit graph structures that construct all nodes and edges in
 //! memory upfront, implicit graph pathfinding generates neighboring states on
 //! the fly using a `successors` closure. This is ideal for grid-based maps,
@@ -12,6 +14,7 @@
 //! in advance is impractical.
 //!
 //! ### Algorithm Overview & Heuristic Selection
+//!
 //! - **A* Evaluation**: Uses $f(n) = g(n) + h(n)$ to prioritize search paths.
 //! - **Manhattan Distance**: On a 4-connected grid (moving up, down, left, right), the Manhattan
 //!   distance $|x_1 - x_2| + |y_1 - y_2|$ represents the exact minimum distance without obstacles,
@@ -22,20 +25,26 @@
 use pathfinding::prelude::astar;
 
 /// Finds a lowest-cost path across a 5x5 grid while avoiding fixed obstacles.
+///
 /// # Panics
+///
 /// Panics if no route exists or the computed path does not have the expected cost.
 fn main() {
+
     /// Coordinate in the 5x5 grid searched by A*.
     #[derive(Clone, Debug, Eq, Hash, Ord, PartialEq, PartialOrd)]
     struct Pos(i32, i32);
 
     impl Pos {
+
         /// Returns the Manhattan distance to another grid coordinate.
         ///
         /// # Arguments
+///
         /// * `other` - Coordinate whose distance from `self` is measured.
         ///
         /// # Returns
+///
         /// The sum of the horizontal and vertical coordinate differences.
         fn distance(&self, other: &Self) -> u32 {
             self.0.abs_diff(other.0) + self.1.abs_diff(other.1)
@@ -47,6 +56,7 @@ fn main() {
         /// assigns step cost 1.
         ///
         /// # Returns
+///
         /// Neighbor coordinates paired with their uniform movement cost.
         fn successors(&self) -> Vec<(Self, u32)> {
             let &Self(x, y) = self;
@@ -98,6 +108,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies astar pathfinding example.
     #[test]
     fn test_astar_pathfinding_example() {

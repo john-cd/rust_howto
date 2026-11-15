@@ -15,9 +15,12 @@
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
 //
+
 /// Authenticates access to shared-memory transport resources.
 pub(crate) mod auth;
+
 /// Moves eligible unicast messages into the shared-memory handoff path.
 pub mod handoff;
+
 /// Builds and validates shared-memory segment metadata for a unicast transport.
 pub(crate) mod segment;

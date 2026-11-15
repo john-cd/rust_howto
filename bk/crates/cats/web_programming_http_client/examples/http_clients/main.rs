@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// Example of using the `hyper` low-level HTTP client to fetch a URL.
 mod hyper;
+
 /// This example demonstrates a simple HTTP GET request using the `ureq` crate.
 mod ureq;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `hyper` example.
     #[command(name = "hyper")]
     Hyper,
+
     /// Runs the `ureq` example.
     #[command(name = "ureq")]
     Ureq,

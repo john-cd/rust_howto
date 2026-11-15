@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Computing the L1 and L2 norms of a vector, and normalizing it, with
 //! `ndarray`.
 //!
@@ -11,12 +12,14 @@
 use ndarray::Array1;
 use ndarray::ArrayView1;
 use ndarray::array;
+
 /// Calculates the L1 norm (Manhattan norm) of a vector.
 ///
 /// The L1 norm is the sum of the absolute values of the vector's elements.
 fn l1_norm(x: ArrayView1<f64>) -> f64 {
     x.fold(0., |acc, elem| acc + elem.abs())
 }
+
 /// Calculates the L2 norm (Euclidean norm) of a vector.
 ///
 /// The L2 norm is the square root of the sum of the squares of the vector's
@@ -24,6 +27,7 @@ fn l1_norm(x: ArrayView1<f64>) -> f64 {
 fn l2_norm(x: ArrayView1<f64>) -> f64 {
     x.dot(&x).sqrt()
 }
+
 /// Normalizes a vector to have a unit L2 norm.
 fn normalize(mut x: Array1<f64>) -> Array1<f64> {
     let norm = l2_norm(x.view());
@@ -40,8 +44,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the norms of a vector and its normalization.
 pub fn run() {
     main();
 }

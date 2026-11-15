@@ -8,23 +8,26 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the `Either` enum from the `either`
 mod either;
+
 /// This example demonstrates the `frunk` crate, a functional programming
 mod frunk;
-/// # Persistent Collections with `imbl` These persistent collections share unchanged structure
-/// between related versions.
+
+/// Demonstrates persistent collections with `imbl`.
 mod imbl;
+
 /// Demonstrates composing standard iterator adapters with closures.
 mod iterators;
+
 /// This example demonstrates the usage of the `itertools` crate.
 mod itertools;
-/// # RPDS (Rust Persistent Data Structures) Example This example demonstrates the use of the `rpds`
-/// crate, which provides purely functional (immutable) data structures with structural sharing for
-/// efficiency.
+
+/// Demonstrates persistent data structures with the `rpds` crate.
 mod rpds;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -33,21 +36,27 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `either` example.
     #[command(name = "either")]
     Either,
+
     /// Runs the `frunk` example.
     #[command(name = "frunk")]
     Frunk,
+
     /// Runs the `imbl` example.
     #[command(name = "imbl")]
     Imbl,
+
     /// Runs the `itertools` example.
     #[command(name = "itertools")]
     Itertools,
+
     /// Runs the standard-library iterator adapter example.
     #[command(name = "iterators")]
     Iterators,
+
     /// Runs the `rpds` example.
     #[command(name = "rpds")]
     Rpds,
@@ -78,7 +87,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

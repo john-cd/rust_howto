@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generate and save a simple RGB image using the `image` crate.
 //!
 //! This example builds a gradient image in memory and writes it to a PNG file.
@@ -17,9 +18,11 @@ use image::Rgb;
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     run_with_output_path(image_output_path_from_args())
 }
+
 /// Chooses a default output path when none is supplied, then writes the image.
 ///
 /// # Errors
+///
 /// Returns an error if saving the generated image to the selected output path fails.
 fn run_with_output_path(output_path: Option<PathBuf>) -> Result<(), Box<dyn Error + Send + Sync>> {
     let output_path = output_path.unwrap_or_else(|| {
@@ -68,9 +71,10 @@ fn image_output_path_from_args() -> Option<PathBuf> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Generates a gradient image and saves it to the path given on the command line.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()

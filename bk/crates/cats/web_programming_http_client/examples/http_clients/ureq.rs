@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates a simple HTTP GET request using the `ureq` crate.
 //! It fetches data from a public API endpoint and prints the response.
 //!
@@ -28,9 +29,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// This example demonstrates a simple HTTP GET request using the `ureq` crate. It fetches data from a public API endpoint and prints the response.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

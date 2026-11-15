@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `clap` crate to parse command-line
 //! arguments.
 //!
@@ -15,17 +16,20 @@ use clap::Subcommand;
 
 // The struct declaring the desired command-line arguments and commands:
 // The `derive` feature flag is required (see `Cargo.toml`).
+
 /// Command-line arguments.
 #[derive(Parser, Debug)]
 // Reads the following attributes from the package's `Cargo.toml`
 // Alternatively, use `#[command(name = "MyApp")]`, etc...
 #[command(author, version, about, long_about = None)]
 // Displays Help if no arguments are provided:
+
 /// Stores the command-line options accepted by the example.
 /// State required by `Cli` during transport operations.
 #[command(arg_required_else_help = true)]
 pub struct Cli {
     // Positional argument example.
+
     /// The pattern to look for (the doc comment appears in the help):
     pattern: Option<String>,
 
@@ -35,6 +39,7 @@ pub struct Cli {
     port: u16,
 
     // Named argument example: the path to the file to look into:
+
     /// Named argument: the path to the file to look into.
     #[arg(short, long)]
     path: Option<PathBuf>,
@@ -56,6 +61,7 @@ pub struct Cli {
     // verbose: clap_verbosity_flag::Verbosity,
 
     // Subcommands:
+
     /// The example to run.
     #[command(subcommand)]
     pub command: Option<Commands>,
@@ -64,9 +70,11 @@ pub struct Cli {
 /// The subcommands that can be used with the CLI.
 #[derive(Subcommand, Debug)]
 pub enum Commands {
+
     /// Read something:
     #[command(arg_required_else_help = true)]
     Read {
+
         /// A boolean flag:
         #[arg(short, long)]
         all: bool,
@@ -75,6 +83,7 @@ pub enum Commands {
         #[arg(required = true)]
         file: Vec<PathBuf>,
     },
+
     /// Say something:
     Tell,
 }
@@ -125,9 +134,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the example selected on the command line.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

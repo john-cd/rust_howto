@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A small HTTP/1 server built directly with Hyper and Tokio.
 
 use std::convert::Infallible;
@@ -26,6 +27,7 @@ async fn main() -> anyhow::Result<()> {
 /// Accepts loopback connections and serves each one as an HTTP/1 connection.
 ///
 /// # Errors
+///
 /// Returns an error if binding the listener or accepting a connection fails.
 async fn example_async() -> anyhow::Result<()> {
     let listener = TcpListener::bind(("127.0.0.1", 3000)).await?;
@@ -49,6 +51,7 @@ async fn example_async() -> anyhow::Result<()> {
 async fn handle_request(request: Request<Incoming>) -> Result<Response<Full<Bytes>>, Infallible> {
     Ok(response_for(request.method(), request.uri().path()))
 }
+
 /// Returns a response for a method and path in the example API.
 fn response_for(method: &Method, path: &str) -> Response<Full<Bytes>> {
     let (status, body) = if method == Method::GET {
@@ -70,6 +73,7 @@ fn response_for(method: &Method, path: &str) -> Response<Full<Bytes>> {
 /// Runs the example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     tokio::runtime::Builder::new_current_thread()

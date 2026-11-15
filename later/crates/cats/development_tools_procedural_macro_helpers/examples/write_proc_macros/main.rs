@@ -11,18 +11,23 @@ use clap::Subcommand;
 
 /// Parse derive attributes with a declarative `darling` input model.
 mod darling;
+
 /// Concatenating identifiers in macros with `paste`.
 mod paste;
+
 /// `proc_macro2` mirrors the compiler's token API, but works in ordinary Rust crates and tests.
 mod proc_macro2;
+
 /// Generate a struct and typed getters from field syntax using `quote`.
 mod quote;
+
 /// `syn` parses a token stream into Rust syntax-tree types such as `DeriveInput`.
 mod syn;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Commands,
@@ -31,18 +36,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `darling` example.
     #[command(name = "darling")]
     Darling,
+
     /// Runs the `paste` example.
     #[command(name = "paste")]
     Paste,
+
     /// Runs the `proc_macro2` example.
     #[command(name = "proc_macro2")]
     ProcMacro2,
+
     /// Runs the `quote` example.
     #[command(name = "quote")]
     Quote,
+
     /// Runs the `syn` example.
     #[command(name = "syn")]
     Syn,
@@ -52,6 +62,7 @@ enum Commands {
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     dispatch(Cli::parse())
 }
+
 /// Runs the example selected in the parsed command line.
 fn dispatch(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
     match cli.command {

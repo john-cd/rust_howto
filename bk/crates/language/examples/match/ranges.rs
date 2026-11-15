@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Matching ranges of values.
 
 /// Matches a number against ranges.
@@ -27,8 +28,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Matches a number against ranges.
 pub fn run() {
     main();
 }

@@ -8,19 +8,24 @@ use ::clap::Subcommand;
 /// Main function that parses command line arguments and prints their values: Command-line arguments
 /// are the words typed after a program name.
 mod clap_basic;
+
 /// This example demonstrates generating shell completions with `clap_complete`.
 mod clap_complete;
+
 /// This module provides the `clap_example` implementation used by its parent.
 #[path = "clap.rs"]
 mod clap_example;
+
 /// This example demonstrates how to use the `lexopt` crate to parse command
 mod lexopt;
+
 /// Parsing command-line arguments with `pico-args`.
 mod pico_args;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -29,18 +34,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `clap` example.
     #[command(name = "clap")]
     Clap,
+
     /// Runs the `clap_basic` example.
     #[command(name = "clap_basic")]
     ClapBasic,
+
     /// Runs the `clap_complete` example.
     #[command(name = "clap_complete")]
     ClapComplete,
+
     /// Runs the `lexopt` example.
     #[command(name = "lexopt")]
     Lexopt,
+
     /// Runs the `pico_args` example.
     #[command(name = "pico_args")]
     PicoArgs,

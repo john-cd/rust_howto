@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A `SkipMap`, an ordered map built on a skip list.
 //!
 //! A skip list keeps sorted elements in layered linked lists, where upper
@@ -9,7 +10,7 @@
 //! concurrent than a tree.
 
 use skiplist::SkipMap;
-/// Runs the example.
+
 /// Inserts into a `SkipMap` and iterates in key order.
 fn main() {
     let mut map: SkipMap<i32, &str, 16> = SkipMap::new();
@@ -26,8 +27,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Inserts into a `SkipMap` and iterates in key order.
 pub fn run() {
     main();
 }

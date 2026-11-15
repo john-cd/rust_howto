@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A named thread created with `std::thread::Builder`.
 //!
 //! The thread builder sets a name and stack size before starting a thread. A
@@ -43,6 +44,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the thread-builder example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

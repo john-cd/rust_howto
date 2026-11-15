@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Make a Windows child die with its parent by using a Job Object.
 //!
 //! A Windows Job Object groups processes so the system can manage them
@@ -26,6 +27,7 @@ use windows_sys::Win32::System::JobObjects::SetInformationJobObject;
 struct KillOnCloseJob(HANDLE);
 
 impl KillOnCloseJob {
+
     /// Creates an unnamed job with the "kill on close" limit.
     fn new() -> std::io::Result<Self> {
         // SAFETY: both arguments may be null; the call returns a new handle.
@@ -67,6 +69,7 @@ impl KillOnCloseJob {
 }
 
 impl Drop for KillOnCloseJob {
+
     /// Closing the last handle to the job kills all of its processes.
     fn drop(&mut self) {
         // SAFETY: the handle is owned by `self` and closed exactly once.
@@ -77,6 +80,7 @@ impl Drop for KillOnCloseJob {
 /// Starts a long-running child inside a job, then closes the job.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> anyhow::Result<()> {
     let job = KillOnCloseJob::new()?;
@@ -98,6 +102,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example_body()

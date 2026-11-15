@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Tuple structs and unit-like structs.
 
 /// A tuple struct.
@@ -18,7 +19,7 @@ struct Color(pub i32, pub i32, pub i32);
 /// itself.
 #[derive(Debug)]
 struct UnitLike; // Note that there are no fields.
-/// Runs the example.
+
 /// Creates and accesses tuple structs.
 fn main() {
     // Initialize the tuple struct:
@@ -33,8 +34,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates and accesses tuple structs.
 pub fn run() {
     main();
 }

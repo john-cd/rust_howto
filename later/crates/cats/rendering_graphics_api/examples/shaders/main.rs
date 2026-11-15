@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Validates a WGSL shader with `naga` and translates it to SPIR-V.
 
 use naga::back::spv;
@@ -44,6 +45,7 @@ fn main() -> anyhow::Result<()> {
 /// Compiles the shader and reports the resulting SPIR-V word count.
 ///
 /// # Errors
+///
 /// Returns an error if parsing, validation, or SPIR-V encoding fails.
 fn example() -> anyhow::Result<()> {
     let words = compile_to_spirv()?;

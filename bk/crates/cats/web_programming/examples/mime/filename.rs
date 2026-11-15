@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Finding the MIME type of a file from its name.
 //!
 //! A MIME type (media type) such as `image/png` or `text/html` tells software
@@ -18,6 +19,7 @@ use mime::Mime;
 fn find_mimetype(filename: &str) -> Mime {
     mime_guess::from_path(filename).first_or_octet_stream()
 }
+
 /// Inserts a guessed MIME type into an HTTP `Content-Type` header.
 ///
 /// # Errors
@@ -33,6 +35,7 @@ fn set_content_type(filename: &str, headers: &mut HeaderMap) -> Result<(), Inval
 /// Prints the MIME type of several file names.
 ///
 /// # Errors
+///
 /// Returns an error if a MIME type cannot be inserted into the header map or
 /// read as text.
 fn main() -> anyhow::Result<()> {
@@ -49,9 +52,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints the MIME type of several file names.
 ///
 /// # Errors
+///
 /// Returns an error if the example cannot create or read a `Content-Type`
 /// header.
 pub fn run() -> anyhow::Result<()> {

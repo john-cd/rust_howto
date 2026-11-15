@@ -12,11 +12,13 @@ use similar::TextDiff;
 /// differences are found), and `false` otherwise.
 ///
 /// # Arguments
+///
 /// * `s1` - The first string to compare.
 ///
 /// * `s2` - The second string to compare.
 ///
 /// # Returns
+///
 /// `true` if the strings are identical, `false` otherwise.
 #[must_use]
 pub fn detect_diff(s1: &str, s2: &str) -> bool {
@@ -32,6 +34,7 @@ pub fn detect_diff(s1: &str, s2: &str) -> bool {
 /// (`+`), or unchanged (` `).
 ///
 /// # Arguments
+///
 /// * `s1` - The first string to compare.
 /// * `s2` - The second string to compare.
 pub fn print_diffs(s1: &str, s2: &str) {

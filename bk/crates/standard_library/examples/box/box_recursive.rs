@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example using `Box<T>` for recursive data structures.
 //!
 //! A recursive type such as a linked list or tree would have infinite size if
@@ -9,14 +10,17 @@
 
 /// Represents a single element in a (highly simplified) linked list.
 struct Node {
+
     /// The value stored in this node.
     value: i32,
+
     /// The next node in the list, or `None` if this is the last node.
     /// Note that `Node` is a recursive data type.
     next: Option<Box<Self>>,
 }
 
 impl Node {
+
     /// Creates a node without a successor.
     fn new(value: i32) -> Self {
         Self { value, next: None }
@@ -48,6 +52,7 @@ impl Node {
 // compiler needs to know the size of the data type at compile time.
 // By using `Box`, which has a defined size on the stack, we can create the
 // `head` local variable . The actual `Node` data will be stored on the heap.
+
 /// Builds a linked list and prints it.
 fn main() {
     let mut head = Node::new(1);
@@ -59,9 +64,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-///
-/// Runs the example.
+/// Builds a linked list and prints it.
 pub fn run() {
     main();
 }
@@ -69,6 +72,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `box recursive` example runs.
     #[test]
     fn test_box_recursive_example_entry_point() {
@@ -84,6 +88,7 @@ mod tests {
         }
         out
     }
+
     /// Verifies new node has no successor.
     #[test]
     fn test_new_node_has_no_successor() {
@@ -91,6 +96,7 @@ mod tests {
         assert_eq!(node.value, 1);
         assert!(node.next.is_none());
     }
+
     /// Verifies append adds nodes at the end.
     #[test]
     fn test_append_adds_nodes_at_the_end() {
@@ -100,6 +106,7 @@ mod tests {
         head.append(4);
         assert_eq!(values(&head), vec![1, 2, 3, 4]);
     }
+
     /// Verifies print does not panic on long lists.
     #[test]
     fn test_print_does_not_panic_on_long_lists() {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Counts how often each file changed in the last commits with `gix`,
 //! a pure-Rust implementation of Git (no `git` executable or `libgit2`).
 //!
@@ -56,9 +57,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints the most frequently changed paths in the current checkout.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
@@ -77,6 +79,7 @@ mod tests {
     fn counts_changes_in_the_example_checkout() -> anyhow::Result<()> {
         main()
     }
+
     /// Reports a clear failure for a temporary directory outside any repository.
     #[test]
     fn not_a_repository_is_an_error() -> anyhow::Result<()> {

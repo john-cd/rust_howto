@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! MD5 hashing with the RustCrypto `md-5` crate.
 //!
 //! WARNING: MD5 should be considered cryptographically broken and unsuitable
@@ -26,8 +27,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the MD5 digest of a string.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Starts the hals application and connects its top-level components.
 //! The executable uses this module to initialize services and hand control to the application.
 
@@ -9,8 +10,10 @@ use embedded_hal::digital::OutputPin;
 
 #[derive(Default)]
 struct MockPin {
+
     /// Flag indicating whether the mock pin satisfies the high condition.
     high: bool,
+
     /// Collection of transitions values consumed by mock pin operations.
     transitions: Vec<bool>,
 }
@@ -20,6 +23,7 @@ impl ErrorType for MockPin {
 }
 
 impl OutputPin for MockPin {
+
     /// Drives the simulated pin low and records the transition.
     fn set_low(&mut self) -> Result<(), Self::Error> {
         self.high = false;
@@ -45,8 +49,8 @@ fn blink<P: OutputPin>(pin: &mut P) -> Result<(), P::Error> {
 fn main() -> anyhow::Result<()> {
     run_example()
 }
-/// Performs one host-side LED pulse with the simulated output pin.
 
+/// Performs one host-side LED pulse with the simulated output pin.
 fn run_example() -> anyhow::Result<()> {
     let mut pin = MockPin::default();
     blink(&mut pin)?;

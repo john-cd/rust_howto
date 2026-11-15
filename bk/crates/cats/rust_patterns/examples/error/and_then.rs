@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates chaining fallible operations with `Result::and_then`.
 //!
 //! `and_then` chains fallible steps: if the first succeeded, its value feeds
@@ -24,7 +25,7 @@ fn divide_by_three(value: i32) -> Result<i32, &'static str> {
         Err("not divisible by three")
     }
 }
-/// Runs the example.
+
 /// Runs two fallible divisions in sequence.
 fn main() {
     let divisible = divide_by_two(12).and_then(divide_by_three);
@@ -35,8 +36,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs two fallible divisions in sequence.
 pub fn run() {
     main();
 }

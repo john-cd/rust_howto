@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to add two matrices using the `ndarray` crate.
 //!
 //! A matrix is a rectangular grid of numbers. Matrices are used for graphics
@@ -27,8 +28,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates how to add two matrices using the `ndarray` crate.
 pub fn run() {
     main();
 }

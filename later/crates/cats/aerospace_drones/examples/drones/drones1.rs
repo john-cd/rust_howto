@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Sending a flight plan to a Tello drone.
 //!
 //! The plan is checked before any command is sent. The `tello` crate is bound
@@ -22,24 +23,30 @@ use tello::Drone;
 
 /// The longest total hover time the plan may contain.
 // Safety limit: a small drone has only a few minutes of battery.
+
 /// Shared `max hover` used by this module.
 const MAX_HOVER: Duration = Duration::from_secs(30);
 
 /// One step of a flight plan.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 enum Step {
+
     /// Leave the ground.
     TakeOff,
+
     /// Stay in place for a while.
     Hover(Duration),
+
     /// Return to the ground.
     Land,
 }
 
 /// Something that accepts flight commands.
 trait Flyer {
+
     /// Takes off.
     fn take_off(&mut self) -> Result<()>;
+
     /// Lands.
     fn land(&mut self) -> Result<()>;
 }
@@ -53,10 +60,12 @@ impl Flyer for Drone {
         Self::land(self).map_err(|()| anyhow::anyhow!("the drone rejected `land`"))
     }
 }
+
 /// Checks that a plan starts with take-off, ends with landing, and stays within
 /// the allowed total hover time.
 ///
 /// # Errors
+///
 /// Returns an error if any flight-plan rule is violated.
 fn validate(plan: &[Step]) -> Result<()> {
     if plan.first() != Some(&Step::TakeOff) {
@@ -118,6 +127,7 @@ fn main() -> Result<()> {
 /// Runs the example; it needs a real drone.
 ///
 /// # Errors
+///
 /// Returns an error if the plan is invalid or the drone rejects a command.
 pub fn run() -> Result<()> {
     main()

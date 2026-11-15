@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Using `impl Trait` as an argument type and as a return type.
 //!
 //! `impl Trait` in argument position means "any type implementing the trait".
@@ -8,8 +9,10 @@
 //! and iterators whose real type cannot be written.
 
 // Define an example trait and two structs that implement it:
+
 /// A thing that can speak.
 trait Speak {
+
     /// Returns what the animal says.
     fn speak(&self) -> String;
 }
@@ -33,6 +36,7 @@ impl Speak for Cat {
 }
 
 // Define a function that accepts `impl Trait` in argument position:
+
 /// Prints what the animal says.
 fn print_speak(animal: impl Speak) {
     println!("{}", animal.speak());
@@ -42,6 +46,7 @@ fn print_speak(animal: impl Speak) {
 // This function always returns a `Dog`,
 // even though the caller only sees `impl Speak`, an opaque type that implements
 // `Speak`.
+
 /// Returns some animal that can speak.
 fn get_animal() -> impl Speak {
     Dog
@@ -75,8 +80,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Makes animals speak.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Converts words to common naming conventions and uppercases a Unicode
 //! character.
 //!
@@ -25,7 +26,8 @@ fn main() -> anyhow::Result<()> {
 /// Uppercases the first Unicode scalar value without slicing at a byte offset.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested case conversion operation.
+///
+/// * `input` - Text whose first character is converted to uppercase.
 fn capitalize_first_char(input: &str) -> String {
     let mut chars = input.chars();
     match chars.next() {
@@ -38,6 +40,7 @@ fn capitalize_first_char(input: &str) -> String {
 /// Runs the example for the command-line dispatcher and unit tests.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips

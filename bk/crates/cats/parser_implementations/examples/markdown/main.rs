@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// `comrak` is a `CommonMark` and GitHub-flavored Markdown compatible parser.
 mod comrak;
+
 /// This example demonstrates how to use the `markdown` crate to parse Markdown
 mod markdown;
+
 /// Example demonstrating the use of `pulldown-cmark` to parse Markdown and
 mod pulldown_cmark;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `comrak` example.
     #[command(name = "comrak")]
     Comrak,
+
     /// Runs the `markdown` example.
     #[command(name = "markdown")]
     Markdown,
+
     /// Runs the `pulldown_cmark` example.
     #[command(name = "pulldown_cmark")]
     PulldownCmark,
@@ -50,7 +56,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

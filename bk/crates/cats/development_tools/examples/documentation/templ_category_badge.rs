@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generate a category badge with the shared `templ` renderer.
 //!
 //! A badge is a small label, here showing a category, rendered from a template.
@@ -14,6 +15,7 @@ use tool_lib::create_category_badge;
 fn render_category_badge() -> Result<String> {
     create_category_badge("Encoding", "encoding")
 }
+
 /// Prints the generated category badge.
 fn main() -> Result<()> {
     println!("{}", render_category_badge()?);
@@ -25,6 +27,7 @@ fn main() -> Result<()> {
 /// Generate a category badge with the shared `templ` renderer.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     // Call through a binding: calling `main` directly trips

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calls an embedded Lua chunk and a Rust function while exposing only a
 //! selected subset of Lua's standard libraries.
 //!
@@ -13,6 +14,7 @@ use mlua::prelude::*;
 /// Evaluates a chunk with a Rust callback in a restricted standard library.
 ///
 /// # Errors
+///
 /// Returns an error if creating the Lua state or callback, registering globals, or evaluating the
 /// chunk fails.
 fn main() -> LuaResult<()> {
@@ -47,7 +49,7 @@ fn main() -> LuaResult<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Evaluates a chunk with a Rust callback in a restricted standard library.
 pub fn run() -> LuaResult<()> {
     main()
 }

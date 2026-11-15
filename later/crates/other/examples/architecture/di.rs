@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Dependency Injection (DI) is a design pattern that allows us to decouple
 //! components of our application.
 //!
@@ -20,12 +21,15 @@ use shaku::Interface;
 use shaku::module;
 
 // Define an interface.
+
 /// A service that greets people.
 trait Greeter: Interface {
+
     /// Returns a greeting for `name`.
     /// A greeter that greets in English.
     ///
     /// # Arguments
+///
     /// * `name` - Human-readable value used to identify or display the selected greeter.
     fn greet(&self, name: &str) -> String;
 }
@@ -33,18 +37,24 @@ trait Greeter: Interface {
 // The `#[derive(Component)]` attribute tells Shaku that these structs are
 // components that can be managed by the dependency injection container.
 // `Component` represents a single instance of a service, aka a singleton.
+
 /// A greeter that greets in English.
 // Each time a component is resolved,  will get the same instance.
 #[derive(Component)]
 // The `#[shaku(interface = Greeter)]` attribute associates each component with
 // the `Greeter` interface.
+
 /// Greeter implementation that returns an English greeting.
 #[shaku(interface = Greeter)]
 struct EnglishGreeter;
 
 impl Greeter for EnglishGreeter {
-    /// # Arguments
-    /// * `name` - Human-readable value used to identify or display the selected english greeter.
+
+/// Formats a greeting for the provided name.
+///
+/// # Arguments
+///
+/// * `name` - Name to include in the greeting.
     fn greet(&self, name: &str) -> String {
         format!("Hello, {name}!")
     }
@@ -54,28 +64,35 @@ impl Greeter for EnglishGreeter {
 // `Interface` traits require certain bounds, such as 'static and optionally
 // `Send + Sync` if using the `thread_safe` feature.
 // The `Interface` trait acts as a trait alias for these bounds.
+
 /// A service that starts a conversation.
 trait Conversation: Interface {
+
     /// Starts the current value.
     fn start(&self) -> String;
 }
+
 /// A conversation in English, which greets using an injected greeter.
 #[derive(Component)]
+
 /// A conversation in English, which greets using an injected greeter.
 #[shaku(interface = Conversation)]
 struct EnglishConversation {
     // Components can depend on other components.
     // Make sure the property is declared as a trait object wrapped in an
     // `Arc`.
+
     /// The greeter, which is injected.
     #[shaku(inject)]
     greeter: Arc<dyn Greeter>,
+
     /// The person to talk to.
     #[shaku(default)]
     person: String,
 }
 
 impl Conversation for EnglishConversation {
+
     /// Starts the current value.
     fn start(&self) -> String {
         self.greeter.greet(self.person.as_str())
@@ -92,7 +109,7 @@ module! {
         providers = []
     }
 }
-/// Runs the example.
+
 /// Resolves components from a module and uses them.
 fn main() {
     // Create an instance of the module, which manages the dependencies.
@@ -114,7 +131,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Resolves components from a module and uses them.
 pub fn run() {
     main();
 }

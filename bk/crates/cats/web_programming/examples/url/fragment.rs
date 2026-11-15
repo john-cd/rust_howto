@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to parse a URL and extract a portion of it.
 //!
 //! The `Url::parse` function is used to parse a URL string into a `Url` object.
@@ -23,9 +24,10 @@ fn main() -> Result<(), ParseError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Removes the fragment and the query of a URL.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()?;

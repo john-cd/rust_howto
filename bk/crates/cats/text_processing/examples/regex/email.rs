@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Extracting the login of an email address with a regular expression.
 //!
 //! A regular expression (regex) describes a text pattern. Matching an email
@@ -26,7 +27,7 @@ fn extract_login(input: &str) -> Option<&str> {
     let cap = RE.captures(input)?;
     cap.name("login").map(|login| login.as_str())
 }
-/// Runs the example.
+
 /// Extracts the login from several strings.
 fn main() {
     let login = extract_login("I❤email@example.com");
@@ -42,8 +43,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Extracts the login from several strings.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The newtype pattern: implementing an external trait on an external type.
 //!
 //! The orphan rule forbids implementing an external trait for an external type.
@@ -24,9 +25,12 @@ struct Wrapper(Vec<String>);
 
 /// Implement a (non-local) trait on the (local) `Wrapper` type:
 impl fmt::Display for Wrapper {
+
     /// Formats the value for display.
+///
     /// # Arguments
-    /// * `f` - Mutable formatter whose state is updated by this operation.
+///
+    /// * `f` - Formatter used to write the formatted representation.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "[{}]", self.0.join(", "))
     }
@@ -43,8 +47,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints a wrapped vector with its own `Display`.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Scoped threads borrow a local string and return values through their
 //! handles.
 //!
@@ -43,6 +44,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the scoped-thread example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

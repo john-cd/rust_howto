@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Basics of `async` functions and `Future`s: calling, awaiting and combining
 //! them.
 //!
@@ -18,6 +19,7 @@ struct SomeStruct;
 // Rust transforms the `async fn` at compile time into a state machine
 // that _implicitly_ returns a `Future`. A `Future` represents an
 // asynchronous computation that might not have finished yet.
+
 /// An `async fn` that returns a [`SomeStruct`].
 async fn first_task() -> SomeStruct {
     // ...
@@ -32,6 +34,7 @@ async fn second_task_1(_s: &SomeStruct) {
 }
 
 // `async fn` is really syntactic sugar for a function...
+
 /// Equivalent of an `async fn` written as a function that returns a `Future`.
 #[allow(clippy::manual_async_fn)]
 fn second_task_2() -> impl Future<Output = ()> {
@@ -66,6 +69,7 @@ async fn do_something() {
 // The `#[tokio::main]` attribute is a macro that transforms `async fn main()`
 // into a synchronous function that initializes a
 // async runtime instance.
+
 /// Runs [`do_something`] on the Tokio runtime.
 /// Basics of `async` functions and `Future`s: calling, awaiting and combining them.
 #[tokio::main]
@@ -76,7 +80,6 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// Basics of `async` functions and `Future`s: calling, awaiting and combining them.
 pub fn run() {
     main();

@@ -15,16 +15,22 @@
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
 //
+
 /// Batches transport messages and controls when queued messages are flushed.
 pub mod batch;
+
 /// Reassembles fragmented transport messages and enforces fragment limits.
 pub(crate) mod defragmentation;
+
 /// Coordinates bounded transport read and write stages, including their wakeups and backoff.
 pub(crate) mod pipeline;
+
 /// Tracks sequence numbers and queues for transport priorities.
 pub(crate) mod priority;
+
 /// Defines sequence-number arithmetic and resolution handling for transport messages.
 pub(crate) mod seq_num;
+
 /// Organizes the shm subsystem and declares its child modules.
 #[cfg(feature = "shared-memory")]
 pub mod shm;

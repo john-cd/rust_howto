@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A counter application with `xilem`.
 //!
 //! Xilem builds the interface from a function of the state: it returns a
@@ -19,11 +20,13 @@ use xilem::view::text_button;
 /// The state of the counter.
 #[derive(Default)]
 struct Counter {
+
     /// The current count.
     num: i32,
 }
 
 impl Counter {
+
     /// Adds one to the count.
     fn increment(&mut self) {
         self.num += 1;
@@ -59,11 +62,11 @@ fn run_app() -> Result<(), winit::error::EventLoopError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Runs the counter application as a standalone Cargo target or book test.
 ///
 /// # Errors
-/// Returns an error if a step of the example fails.
-/// Runs the counter example as a standalone Cargo target or book test.
+///
+/// Returns the event-loop error if the Xilem application cannot run.
 pub fn run() -> Result<(), winit::error::EventLoopError> {
     run_app()
 }

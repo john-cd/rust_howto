@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -61,51 +62,67 @@ use crate::unicast::universal::transport::TransportUnicastUniversal;
 
 /// **********************************
 // TRANSPORT CONFIG
+
 /// **********************************
 #[derive(Debug)]
 pub struct TransportManagerConfigUnicast {
+
     /// Lease duration advertised by the peer.
     pub lease: Duration,
+
     /// Maximum missed keep-alive intervals before closing.
     pub keep_alive: usize,
+
     /// Timeout for opening a transport.
     pub open_timeout: Duration,
+
     /// Timeout for accepting a transport.
     pub accept_timeout: Duration,
+
     /// Maximum pending connections accepted at once.
     pub accept_pending: usize,
+
     /// Maximum concurrent sessions.
     pub max_sessions: usize,
+
     /// Whether the peer negotiated QoS support.
     pub is_qos: bool,
+
     /// Flag indicating whether the transport manager config unicast satisfies the is lowlatency
     /// condition.
     pub is_lowlatency: bool,
     #[cfg(feature = "transport_multilink")]
+
     /// Maximum links allowed for this transport.
     pub max_links: usize,
     #[cfg(feature = "transport_compression")]
+
     /// Whether compression is enabled for this batch.
     pub is_compression: bool,
 }
-/// Identity used to find a link in the unicast manager.
 
+/// Identity used to find a link in the unicast manager.
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
 pub struct LinkKey {
+
     /// Protocol value.
     protocol: String,
+
     /// Optional reliability used by link key; `None` means the value is not configured or
     /// unavailable.
     reliability: Option<Reliability>,
 }
 
 impl LinkKey {
+
     /// Creates a link key for a protocol without reliability information.
     ///
     /// # Arguments
+///
     /// * `protocol` - Protocol identifier used to select compatible links.
     ///
     /// # Returns
+///
     /// A key containing `protocol` and no reliability value.
     pub fn with_protocol(protocol: &str) -> Self {
         LinkKey {
@@ -116,7 +133,11 @@ impl LinkKey {
 }
 
 impl From<&EndPoint> for LinkKey {
+
+    /// Builds a unicast link key from an endpoint protocol and its reliability setting.
+///
     /// # Panics
+///
     /// Panics if the endpoint protocol is invalid or cannot be inspected.
     fn from(endpoint: &EndPoint) -> Self {
         let protocol = endpoint.protocol().to_string();
@@ -132,32 +153,40 @@ impl From<&EndPoint> for LinkKey {
         }
     }
 }
-/// Runtime state owned by the unicast transport manager.
 
+/// Runtime state owned by the unicast transport manager.
 pub struct TransportManagerStateUnicast {
     // Incoming uninitialized transports
+
     /// Incoming value.
     pub(super) incoming: Arc<AtomicUsize>,
     // Established listeners
+
     /// Collection of link managers values consumed by transport manager state unicast operations.
     pub(super) link_managers: Arc<AsyncMutex<HashMap<LinkKey, LinkManagerUnicast>>>,
     // Established transports
+
     /// Collection of transports values consumed by transport manager state unicast operations.
     pub(super) transports: Arc<AsyncMutex<HashMap<ZenohIdProto, Arc<dyn TransportUnicastTrait>>>>,
     // Multilink
     #[cfg(feature = "transport_multilink")]
+
     /// Multilink value.
     pub(super) multilink: Arc<MultiLink>,
     // Active authenticators
     #[cfg(feature = "transport_auth")]
+
     /// Authenticator value.
     pub(super) authenticator: Arc<Auth>,
 }
 
 impl fmt::Debug for TransportManagerStateUnicast {
+
     /// Formats the value for display.
+    ///
     /// # Arguments
-    /// * `f` - Mutable formatter whose state is updated by this operation.
+///
+    /// * `f` - Formatter used to write the debug representation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut debug = f.debug_struct("TransportManagerStateUnicast");
         debug
@@ -171,21 +200,26 @@ impl fmt::Debug for TransportManagerStateUnicast {
         debug.finish()
     }
 }
-/// Parameters used to create a unicast transport manager.
 
+/// Parameters used to create a unicast transport manager.
 pub struct TransportManagerParamsUnicast {
+
     /// Settings that control how this transport manager params unicast is constructed or
     /// processed.
     pub config: TransportManagerConfigUnicast,
+
     /// Current lifecycle value used to decide which transport manager params unicast operations
     /// are valid.
     pub state: TransportManagerStateUnicast,
 }
 
 impl fmt::Debug for TransportManagerParamsUnicast {
+
     /// Formats the value for display.
+///
     /// # Arguments
-    /// * `f` - Mutable formatter whose state is updated by this operation.
+///
+    /// * `f` - Formatter used to write the formatted representation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportManagerParamsUnicast")
             .field("config", &self.config)
@@ -201,35 +235,47 @@ pub struct TransportManagerBuilderUnicast {
     //       This is in-line with the ITU-T G.8013/Y.1731 specification on continuous connectivity
     //       check which considers a link as failed when no messages are received in 3.5 times the
     //       target interval.
+
     /// Lease duration advertised by the peer.
     pub(super) lease: Duration,
+
     /// Maximum missed keep-alive intervals before closing.
     pub(super) keep_alive: usize,
+
     /// Timeout for opening a transport.
     pub(super) open_timeout: Duration,
+
     /// Timeout for accepting a transport.
     pub(super) accept_timeout: Duration,
+
     /// Maximum pending connections accepted at once.
     pub(super) accept_pending: usize,
+
     /// Maximum concurrent sessions.
     pub(super) max_sessions: usize,
+
     /// Whether the peer negotiated QoS support.
     pub(super) is_qos: bool,
     #[cfg(feature = "transport_multilink")]
+
     /// Maximum links allowed for this transport.
     pub(super) max_links: usize,
     #[cfg(feature = "transport_auth")]
+
     /// Authenticator value.
     pub(super) authenticator: Auth,
+
     /// Flag indicating whether the transport manager builder unicast satisfies the is lowlatency
     /// condition.
     pub(super) is_lowlatency: bool,
     #[cfg(feature = "transport_compression")]
+
     /// Whether compression is enabled for this batch.
     pub(super) is_compression: bool,
 }
 
 impl fmt::Debug for TransportManagerBuilderUnicast {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut debug = f.debug_struct("TransportManagerBuilderUnicast");
@@ -253,12 +299,15 @@ impl fmt::Debug for TransportManagerBuilderUnicast {
 }
 
 impl TransportManagerBuilderUnicast {
+
     /// Sets the lease duration advertised to peers.
     ///
     /// # Arguments
+///
     /// * `lease` - Duration used as the transport lease.
     ///
     /// # Returns
+///
     /// The updated builder.
     pub fn lease(mut self, lease: Duration) -> Self {
         self.lease = lease;
@@ -268,11 +317,12 @@ impl TransportManagerBuilderUnicast {
     /// Sets the number of missed keep-alive intervals allowed before closure.
     ///
     /// # Arguments
+///
     /// * `keep_alive` - Maximum missed intervals before the peer is considered unavailable.
     ///
     /// # Returns
+///
     /// The updated builder.
-
     pub fn keep_alive(mut self, keep_alive: usize) -> Self {
         self.keep_alive = keep_alive;
         self
@@ -281,9 +331,11 @@ impl TransportManagerBuilderUnicast {
     /// Sets the timeout for opening a transport.
     ///
     /// # Arguments
+///
     /// * `open_timeout` - Maximum time allowed for the opening handshake.
     ///
     /// # Returns
+///
     /// The updated builder.
     pub fn open_timeout(mut self, open_timeout: Duration) -> Self {
         self.open_timeout = open_timeout;
@@ -293,11 +345,12 @@ impl TransportManagerBuilderUnicast {
     /// Sets the timeout for accepting an incoming transport.
     ///
     /// # Arguments
+///
     /// * `accept_timeout` - Maximum time allowed to accept an incoming transport.
     ///
     /// # Returns
+///
     /// The updated builder.
-
     pub fn accept_timeout(mut self, accept_timeout: Duration) -> Self {
         self.accept_timeout = accept_timeout;
         self
@@ -306,11 +359,12 @@ impl TransportManagerBuilderUnicast {
     /// Sets the maximum number of pending incoming connections.
     ///
     /// # Arguments
+///
     /// * `accept_pending` - Number of connections that may wait for acceptance.
     ///
     /// # Returns
+///
     /// The updated builder.
-
     pub fn accept_pending(mut self, accept_pending: usize) -> Self {
         self.accept_pending = accept_pending;
         self
@@ -319,11 +373,12 @@ impl TransportManagerBuilderUnicast {
     /// Sets the maximum number of concurrent transport sessions.
     ///
     /// # Arguments
+///
     /// * `max_sessions` - Maximum number of sessions to allow.
     ///
     /// # Returns
+///
     /// The updated builder.
-
     pub fn max_sessions(mut self, max_sessions: usize) -> Self {
         self.max_sessions = max_sessions;
         self
@@ -332,11 +387,12 @@ impl TransportManagerBuilderUnicast {
     /// Enables or disables negotiated quality-of-service support.
     ///
     /// # Arguments
+///
     /// * `is_qos` - Whether the transport may negotiate QoS.
     ///
     /// # Returns
+///
     /// The updated builder.
-
     pub fn qos(mut self, is_qos: bool) -> Self {
         self.is_qos = is_qos;
         self
@@ -345,11 +401,12 @@ impl TransportManagerBuilderUnicast {
     /// Enables or disables low-latency transport behavior.
     ///
     /// # Arguments
+///
     /// * `is_lowlatency` - Whether the transport should favor low latency.
     ///
     /// # Returns
+///
     /// The updated builder.
-
     pub fn lowlatency(mut self, is_lowlatency: bool) -> Self {
         self.is_lowlatency = is_lowlatency;
         self
@@ -358,11 +415,12 @@ impl TransportManagerBuilderUnicast {
     /// Sets the maximum number of links in a multi-link transport.
     ///
     /// # Arguments
+///
     /// * `max_links` - Maximum links to keep in the transport.
     ///
     /// # Returns
+///
     /// The updated builder.
-
     #[cfg(feature = "transport_multilink")]
     pub fn max_links(mut self, max_links: usize) -> Self {
         self.max_links = max_links;
@@ -372,11 +430,12 @@ impl TransportManagerBuilderUnicast {
     /// Sets the authenticator used during transport establishment.
     ///
     /// # Arguments
+///
     /// * `authenticator` - Authentication implementation used by the handshake.
     ///
     /// # Returns
+///
     /// The updated builder.
-
     #[cfg(feature = "transport_auth")]
     pub fn authenticator(mut self, authenticator: Auth) -> Self {
         self.authenticator = authenticator;
@@ -386,11 +445,12 @@ impl TransportManagerBuilderUnicast {
     /// Enables or disables compression for transport batches.
     ///
     /// # Arguments
+///
     /// * `is_compression` - Whether transport batches should be compressed.
     ///
     /// # Returns
+///
     /// The updated builder.
-
     #[cfg(feature = "transport_compression")]
     pub fn compression(mut self, is_compression: bool) -> Self {
         self.is_compression = is_compression;
@@ -398,14 +458,15 @@ impl TransportManagerBuilderUnicast {
     }
 
     /// Converts between the transport manager builder unicast representation and config while
-    /// preserving the invariants required by callers.
+    /// Applies the configured lease, timeouts, session limits, and enabled transport features.
     ///
     /// # Arguments
-    /// * `config` - Settings that control the behavior and limits of this transport manager builder
-    ///   unicast workflow.
-
+    ///
+    /// * `config` - Transport configuration used to populate this unicast manager builder.
+    ///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+    ///
+    /// Returns an error if the enabled authentication configuration cannot be built.
     pub async fn from_config(mut self, config: &Config) -> ZResult<TransportManagerBuilderUnicast> {
         self = self.lease(Duration::from_millis(
             *config.transport().link().tx().lease(),
@@ -438,10 +499,14 @@ impl TransportManagerBuilderUnicast {
         Ok(self)
     }
 
+    /// Validates the unicast options and produces transport manager parameters.
+    ///
     /// # Arguments
-    /// * `prng` - Mutable pseudo rng whose state is updated by this operation.
-
+///
+    /// * `prng` - Random number generator used to initialize multilink identifiers.
+    ///
     /// # Errors
+///
     /// Returns an error if QoS and low-latency mode are both enabled.
     pub fn build(
         self,
@@ -484,8 +549,8 @@ impl TransportManagerBuilderUnicast {
 }
 
 impl Default for TransportManagerBuilderUnicast {
-    /// Constructs a usable initial transport manager builder unicast value with the defaults
-    /// required by the manager component.
+
+    /// Creates a unicast builder populated with the default link and QoS settings.
     fn default() -> Self {
         let transport = TransportUnicastConf::default();
         let link_tx = LinkTxConf::default();
@@ -514,15 +579,16 @@ impl Default for TransportManagerBuilderUnicast {
 
 /// **********************************
 // TRANSPORT MANAGER
+
 /// **********************************
 impl TransportManager {
+
     /// Returns the default configuration for a unicast transport manager.
     pub fn config_unicast() -> TransportManagerBuilderUnicast {
         TransportManagerBuilderUnicast::default()
     }
 
     /// Closes unicast.
-
     pub async fn close_unicast(&self) {
         tracing::trace!("TransportManagerUnicast::clear()");
 
@@ -548,6 +614,7 @@ impl TransportManager {
 
     /// **********************************
     // LINK MANAGER
+
     /// Creates link manager unicast.
     /// **********************************
     async fn new_link_manager_unicast(&self, endpoint: &EndPoint) -> ZResult<LinkManagerUnicast> {
@@ -595,7 +662,11 @@ impl TransportManager {
 
     /// **********************************
     // LISTENER
+
+    /// Opens a unicast listener for the endpoint and returns its locator.
+///
     /// # Arguments
+///
     /// **********************************
     pub async fn add_listener_unicast(&self, mut endpoint: EndPoint) -> ZResult<Locator> {
         if self
@@ -629,8 +700,11 @@ impl TransportManager {
         manager.new_listener(endpoint).await
     }
 
+    /// Removes the unicast listener and drops its link manager when no listeners remain.
+    ///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+///
+    /// Returns an error if the endpoint has no link manager or removing the listener fails.
     pub async fn del_listener_unicast(&self, endpoint: &EndPoint) -> ZResult<()> {
         let lm = self.get_link_manager_unicast(endpoint).await?;
         lm.del_listener(endpoint).await?;
@@ -657,7 +731,6 @@ impl TransportManager {
     }
 
     /// Retrieves the locators unicast noloopback for the current transport manager from its current
-
     pub async fn get_locators_unicast_noloopback(&self) -> Vec<Locator> {
         let mut vec: Vec<Locator> = vec![];
         for p in zasynclock!(self.state.unicast.link_managers).values() {
@@ -668,6 +741,7 @@ impl TransportManager {
 
     /// **********************************
     // TRANSPORT
+
     /// **********************************
     async fn init_existing_transport_unicast(
         &self,
@@ -725,8 +799,16 @@ impl TransportManager {
         Ok(transport)
     }
 
+    /// Notifies the transport event handler that a unicast link is available.
+    ///
+    /// # Arguments
+///
+    /// * `transport` - Active transport whose event callback is notified.
+    /// * `link` - Newly available link associated with the transport.
+    ///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+///
+    /// Returns an error if the blocking callback task panics while being joined.
     async fn notify_new_link_unicast(
         transport: &Arc<dyn TransportUnicastTrait>,
         link: Link,
@@ -741,8 +823,15 @@ impl TransportManager {
         Ok(())
     }
 
+    /// Notifies the transport event handler that a unicast transport is available.
+    ///
+    /// # Arguments
+///
+    /// * `transport` - Newly created transport to describe to the event handler.
+    ///
     /// # Errors
-    /// An error is returned if new_unicast fails.
+///
+    /// Returns an error if the event handler cannot create a peer callback for the transport.
     fn notify_new_transport_unicast(
         &self,
         transport: &Arc<dyn TransportUnicastTrait>,
@@ -772,11 +861,20 @@ impl TransportManager {
         Ok(())
     }
 
+    /// Completes initialization of a newly negotiated unicast transport.
+    ///
     /// # Arguments
-    /// * `config` - Configuration applied to this operation.
-    /// * `link` - Transport link to add, remove, or use.
-    /// * `other_lease` - Duration controlling the operation.
-
+///
+    /// * `config` - Negotiated transport settings for the peer.
+    /// * `link` - Accepted link and its optional OpenAck response.
+    /// * `other_initial_sn` - Peer sequence number used to synchronize transport state.
+    /// * `other_lease` - Peer lease duration used by the receive keep-alive timer.
+    /// * `guard` - Locked transport registry into which the new transport is inserted.
+    ///
+    /// # Errors
+///
+    /// Returns an error if the peer is this node, the session limit is reached, link setup fails,
+    /// or the new transport callback fails.
     pub(super) async fn init_new_transport_unicast(
         &self,
         config: TransportConfigUnicast,
@@ -972,11 +1070,19 @@ impl TransportManager {
         Ok(t)
     }
 
+    /// Creates a unicast transport from the negotiated link and peer parameters.
+    ///
     /// # Arguments
-    /// * `config` - Configuration applied to this operation.
-    /// * `link` - Transport link to add, remove, or use.
-    /// * `other_lease` - Duration controlling the operation.
-
+///
+    /// * `config` - Negotiated transport settings for the peer.
+    /// * `link` - Accepted link and its optional OpenAck response.
+    /// * `other_initial_sn` - Peer sequence number used to synchronize transport state.
+    /// * `other_lease` - Peer lease duration used by the receive keep-alive timer.
+    ///
+    /// # Errors
+///
+    /// Returns an error if the peer's settings conflict with an existing transport or link setup
+    /// fails.
     pub(super) async fn init_transport_unicast(
         &self,
         config: TransportConfigUnicast,
@@ -1030,22 +1136,31 @@ impl TransportManager {
         }
     }
 
-    /// Loads the transport unicast required by the manager workflow and reports failures from the
-    /// underlying source.
+    /// Opens a unicast transport to the endpoint and completes its handshake.
+    ///
+    /// # Arguments
+///
+    /// * `endpoint` - Remote unicast endpoint to connect to.
     ///
     /// # Errors
-    /// Returns an error if the requested resource or connection cannot be created.
-
+///
+    /// Returns an error if the endpoint is invalid, the link cannot be opened, or the handshake
+    /// fails.
     pub async fn open_transport_unicast(&self, endpoint: EndPoint) -> ZResult<TransportUnicast> {
         self.open_transport_unicast_inner(endpoint, None).await
     }
 
-    /// Loads the transport unicast with zid required by the manager workflow and reports failures
-    /// from the underlying source.
+    /// Opens a unicast transport and verifies that the peer has the expected Zenoh identifier.
+    ///
+    /// # Arguments
+///
+    /// * `endpoint` - Remote unicast endpoint to connect to.
+    /// * `expected_zid` - Peer identifier required for the connection to succeed.
     ///
     /// # Errors
-    /// Returns an error if the requested resource or connection cannot be created.
-
+///
+    /// Returns an error if the endpoint is invalid, the link cannot be opened, the handshake fails,
+    /// or the peer identifier does not match.
     pub async fn open_transport_unicast_with_zid(
         &self,
         endpoint: EndPoint,
@@ -1055,9 +1170,17 @@ impl TransportManager {
             .await
     }
 
-    /// Loads the transport unicast inner required by the manager workflow and reports failures from
-    /// the underlying source.
-
+    /// Opens a unicast endpoint, optionally checking the identifier returned by its peer.
+    ///
+    /// # Arguments
+///
+    /// * `endpoint` - Remote endpoint to connect to.
+    /// * `expected_zid` - Optional peer identifier that the opened transport must match.
+    ///
+    /// # Errors
+///
+    /// Returns an error if the endpoint is multicast or invalid, link setup or negotiation fails,
+    /// or the peer identifier does not match.
     async fn open_transport_unicast_inner(
         &self,
         mut endpoint: EndPoint,
@@ -1106,7 +1229,10 @@ impl TransportManager {
         .map_err(|e| zerror!("{e}"))?
     }
 
+    /// Returns the unicast transport for a peer, if one is active.
+///
     /// # Arguments
+///
     /// * `peer` - Client endpoint used for request attribution and rate limiting.
     pub async fn get_transport_unicast(&self, peer: &ZenohIdProto) -> Option<TransportUnicast> {
         zasynclock!(self.state.unicast.transports)
@@ -1131,11 +1257,15 @@ impl TransportManager {
             .collect()
     }
 
+    /// Removes and shuts down the unicast transport for the specified peer.
+    ///
     /// # Arguments
-    /// * `peer` - Client endpoint used for request attribution and rate limiting.
-
+///
+    /// * `peer` - Zenoh identifier of the peer whose transport is removed.
+    ///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+///
+    /// Returns an error if no transport is registered for `peer`.
     pub(super) async fn del_transport_unicast(&self, peer: &ZenohIdProto) -> ZResult<()> {
         zasynclock!(self.state.unicast.transports)
             .remove(peer)
@@ -1147,11 +1277,11 @@ impl TransportManager {
         Ok(())
     }
 
-    /// Processes the new link unicast input for the manager workflow and applies the resulting
-    /// state changes. It calls `pub`, `handle_new_link_unicast` to apply the required changes.
+    /// Accepts an incoming unicast link unless the configured pending-connection limit is reached.
     ///
     /// # Arguments
-    /// * `link` - Transport link to add, remove, or use.
+///
+    /// * `link` - Incoming unicast link to accept asynchronously.
     pub(crate) async fn handle_new_link_unicast(&self, link: LinkUnicast) {
         let incoming_counter = self.state.unicast.incoming.clone();
         if incoming_counter.load(SeqCst) >= self.config.unicast.accept_pending {

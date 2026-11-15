@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Minimize the sphere function with CMA-ES.
 //!
 //! CMA-ES is an evolutionary optimizer: it samples candidates from a
@@ -48,7 +49,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {
     main();

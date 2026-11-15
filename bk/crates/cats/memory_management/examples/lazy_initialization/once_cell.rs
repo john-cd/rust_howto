@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Lazy initialization of a value with `OnceCell`.
 //!
 //! A `OnceCell` starts empty and can be set exactly once; later reads return
@@ -8,7 +9,7 @@
 //! version is `OnceLock`.
 
 use std::cell::OnceCell;
-/// Runs the example.
+
 /// Initializes a `OnceCell` on first access.
 fn main() {
     // Create a new OnceCell instance.
@@ -23,8 +24,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Initializes a `OnceCell` on first access.
 pub fn run() {
     main();
 }

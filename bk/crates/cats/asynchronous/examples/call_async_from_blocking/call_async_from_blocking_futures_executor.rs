@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calls `async` code from blocking code with `futures::executor::block_on`.
 //!
 //! A normal function cannot `.await`. A small executor can run a future to
@@ -28,8 +29,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Drives [`do_something`] to completion with `block_on`.
 pub fn run() {
     main();
 }

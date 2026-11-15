@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A blocking WebSocket client using tungstenite.
 //!
 //! A WebSocket is a long-lived, two-way connection between a client and a
@@ -18,6 +19,7 @@ use tungstenite::http::Request;
 /// WebSocket echo service endpoint used by this example.
 // `wss://` is WebSocket over TLS (encrypted), like `https://`; `ws://` is
 // unencrypted. An echo service sends back whatever it receives.
+
 /// Shared `echo endpoint` used by this module.
 const ECHO_ENDPOINT: &str = "wss://ws.postman-echo.com/raw";
 
@@ -25,6 +27,7 @@ const ECHO_ENDPOINT: &str = "wss://ws.postman-echo.com/raw";
 fn echo_request() -> anyhow::Result<Request<()>> {
     Ok(ECHO_ENDPOINT.into_client_request()?)
 }
+
 /// Connects, sends one message, prints the reply, and closes the connection.
 fn main() -> anyhow::Result<()> {
     let (mut socket, response) = connect(echo_request()?)?;
@@ -41,9 +44,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Connects, sends one message, prints the reply, and closes the connection.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

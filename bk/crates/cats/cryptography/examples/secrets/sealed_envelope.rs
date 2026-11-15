@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Seals a secret under a passphrase: Argon2id derives a key, and
 //! XChaCha20-Poly1305 encrypts the secret, authenticating a version label and
 //! context as associated data.
@@ -28,16 +29,22 @@ use zeroize::Zeroizing;
 
 /// The only envelope version this code reads and writes.
 const VERSION: u32 = 1;
+
 /// Salt length in bytes.
 const SALT_LEN: usize = 16;
+
 /// Nonce length in bytes for XChaCha20-Poly1305.
 const NONCE_LEN: usize = 24;
+
 /// Derived key length in bytes.
 const KEY_LEN: usize = 32;
+
 /// Argon2 memory cost in KiB (19 MiB: the OWASP minimum for `t = 2, p = 1`).
 const MEMORY_KIB: u32 = 19 * 1024;
+
 /// Argon2 iteration count.
 const ITERATIONS: u32 = 2;
+
 /// Argon2 lane count.
 const PARALLELISM: u32 = 1;
 
@@ -45,18 +52,25 @@ const PARALLELISM: u32 = 1;
 /// never stored.
 #[derive(Debug, Serialize, Deserialize)]
 struct SealedEnvelope {
+
     /// Envelope format version, authenticated as part of the AAD.
     version: u32,
+
     /// Argon2 memory cost in KiB, stored so the cost can be raised later.
     memory_kib: u32,
+
     /// Argon2 iteration count.
     iterations: u32,
+
     /// Argon2 lane count.
     parallelism: u32,
+
     /// Base64 random salt.
     salt: String,
+
     /// Base64 random 24-byte nonce.
     nonce: String,
+
     /// Base64 ciphertext followed by the authentication tag.
     ciphertext: String,
 }
@@ -78,11 +92,13 @@ fn derive_key(
         .map_err(|e| anyhow!("key derivation failed: {e}"))?;
     Ok(key)
 }
+
 /// Builds the associated data: it is authenticated but not encrypted, so
 ///
 /// moving the envelope to another context makes decryption fail.
 ///
 /// # Arguments
+///
 /// * `context` - Application state and services required to perform the operation.
 fn associated_data(version: u32, context: &[u8]) -> Vec<u8> {
     let mut aad = b"example-envelope".to_vec();
@@ -92,6 +108,7 @@ fn associated_data(version: u32, context: &[u8]) -> Vec<u8> {
 }
 
 impl SealedEnvelope {
+
     /// Encrypts `secret` under `passphrase`, bound to `context`.
     fn seal(secret: &[u8], passphrase: &[u8], context: &[u8]) -> Result<Self> {
         let mut rng = SysRng;
@@ -159,7 +176,10 @@ impl SealedEnvelope {
     }
 }
 
+/// Seals a secret, serializes the envelope, and opens it again.
+///
 /// # Errors
+///
 /// Returns an error if sealing, serializing, deserializing, or opening the envelope fails.
 fn main() -> Result<()> {
     let envelope = SealedEnvelope::seal(b"sk-live-1234", b"correct horse", b"source-42")?;
@@ -174,7 +194,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Returns an error if sealing, serializing, deserializing, or opening the envelope fails.
 pub fn run() {
     if let Err(e) = main() {
         eprintln!("{e:#}");

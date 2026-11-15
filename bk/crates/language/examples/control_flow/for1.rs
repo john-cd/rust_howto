@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Examples using `for`.
 
 /// Loops over ranges and collections with `for`.
@@ -74,8 +75,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Loops over ranges and collections with `for`.
 pub fn run() {
     main();
 }

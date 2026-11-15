@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Drive a simulated first-order plant to a setpoint with a PI controller.
 //!
 //! A PID controller keeps a measured value, such as a motor speed, a drone's
@@ -17,13 +18,16 @@ use pid::Pid;
 /// A first-order plant, such as a motor speed or a heater temperature:
 /// `tau * dy/dt = -y + u`.
 struct Plant {
+
     /// Output value.
     output: f32,
+
     /// Tau value.
     tau: f32,
 }
 
 impl Plant {
+
     /// Advances the simulation by `dt` seconds.
     fn step(&mut self, input: f32, dt: f32) -> f32 {
         self.output += dt * (input - self.output) / self.tau;
@@ -62,7 +66,6 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Group tasks into levels that can run in parallel.
 //!
 //! A topological order lists the nodes of a directed acyclic graph so every
@@ -60,12 +61,15 @@ fn topological_levels<N, E>(
 
     Ok(levels)
 }
+
 /// Calculates task totals in parallel for each ready DAG level.
 ///
 /// # Errors
+///
 /// Returns an error if the task graph contains a cycle.
 ///
 /// # Panics
+///
 /// Panics if each prerequisite is evaluated in an earlier level.
 fn calculate_task_levels() -> Result<Vec<Vec<u32>>, Cycle<NodeIndex>> {
     let mut graph = DiGraph::<u32, ()>::new();
@@ -113,7 +117,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {
     main();

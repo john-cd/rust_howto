@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Setting and getting a value in Redis.
 //!
 //! Redis is an in-memory key-value store, very fast and often used as a cache,
@@ -22,11 +23,13 @@ use redis::Connection;
 /// constructs a connection URL and attempts to connect to the server.
 ///
 /// # Returns
+///
 /// A `Result` containing a `Connection` to the Redis server on success, or an
 /// error if the connection fails.
 ///
 /// # Errors
-/// Returns an error if the requested resource or connection cannot be created.
+///
+/// Returns an error if the connection URL is invalid or the Redis server cannot be reached.
 fn connect() -> Result<Connection> {
     let redis_host_name =
         env::var("REDIS_HOSTNAME").unwrap_or_else(|_| "127.0.0.1:6379".to_owned());
@@ -46,25 +49,29 @@ fn connect() -> Result<Connection> {
 /// Enables TLS only for an explicit true value such as `IS_TLS=true`.
 ///
 /// # Arguments
-/// * `value` - Value the redis operation validates, transforms, or stores.
+///
+/// * `value` - Environment variable value used to decide whether TLS is enabled.
 ///
 /// # Returns
+///
 /// `true` when the condition described above holds, and `false` otherwise.
 fn tls_enabled(value: Option<&str>) -> bool {
     value.is_some_and(|value| value.eq_ignore_ascii_case("true"))
 }
+
 /// Fetches an integer value from Redis.
 /// This function connects to a Redis server, sets a key-value pair ("`my_key`",
 ///
 /// 42), and then retrieves the value associated with "`my_key`".
 ///
 /// # Returns
+///
 /// A `Result` containing the integer value retrieved from Redis on success, or
 /// an error if the operation fails.
 ///
 /// # Errors
-/// Returns an error if a fallible operation cannot complete.
-/// Returns an error if the requested data cannot be retrieved.
+///
+/// Returns an error if connecting to Redis, writing the key, or reading it back fails.
 fn fetch_an_integer() -> Result<isize> {
     let mut con = connect()?;
     // Throw away the result, just make sure it does not fail.
@@ -83,9 +90,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints the integer fetched from Redis.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to use a custom hash function (FNV) with `HashMap` and
 //! `HashSet` for better performance with small keys.
 //!
@@ -11,7 +12,7 @@
 
 use std::collections::HashMap;
 use std::collections::HashSet;
-/// Runs the example.
+
 /// Creates a `HashMap` and a `HashSet` that use the FNV hash function.
 fn main() {
     let mut fnv_map = HashMap::with_hasher(fnv::FnvBuildHasher::default());
@@ -45,8 +46,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates a `HashMap` and a `HashSet` that use the FNV hash function.
 pub fn run() {
     main();
 }

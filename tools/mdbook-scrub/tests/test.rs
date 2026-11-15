@@ -39,6 +39,7 @@ fn run_directive_protocol(context: PreprocessorContext, book: Book) -> Output {
         .wait_with_output()
         .expect("the mdbook-scrub process should finish")
 }
+
 /// Builds the book after expanding custom directives and native includes.
 #[test]
 fn mdbook_05_preprocessors_expand_directives_after_native_includes() {
@@ -123,6 +124,7 @@ fn supports_renderer_does_not_require_a_writable_log_destination() {
     assert!(output.stderr.is_empty());
     assert!(log_path.is_dir());
 }
+
 /// Writes diagnostics to stderr when the log file cannot be opened.
 #[test]
 fn preprocessing_falls_back_to_stderr_when_log_destination_is_unavailable() {

@@ -1,21 +1,25 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Single-source shortest path calculation on a weighted graph using Dijkstra's
 //! algorithm in `petgraph`.
 //!
 //! ### What is Dijkstra's Algorithm?
+//!
 //! Dijkstra's algorithm is a fundamental graph search algorithm that calculates
 //! the shortest path from a single source node to all other reachable nodes in
 //! a weighted graph.
 //!
 //! ### How Does It Work?
+//!
 //! The algorithm maintains a priority queue (min-heap) of tentative distance
 //! costs from the source node. At each step, it greedily selects the node with
 //! the smallest tentative distance, explores its outgoing edges, and updates
 //! (relaxes) neighbor distances if a shorter path is found.
 //!
 //! ### Key Invariants & Constraints
+//!
 //! - **Non-Negative Edge Weights**: Dijkstra's algorithm requires all edge weights to be
 //!   non-negative ($\ge 0$). Negative edge weights break greedy relaxation invariants (use
 //!   Bellman-Ford for negative weights).
@@ -24,6 +28,7 @@
 //!   node faster.
 //!
 //! ### Purpose & Use Cases
+//!
 //! - Transportation network routing (e.g., finding shortest driving distances).
 //! - Network packet routing protocols (e.g., OSPF, IS-IS).
 //! - Degree of separation analysis in social networks.
@@ -86,6 +91,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `petgraph dijkstra` example runs.
     #[test]
     fn test_petgraph_dijkstra_example_entry_point() {

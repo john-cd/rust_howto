@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// The `ringbuf` crate as an alternative to `rtrb`: a lock-free SPSC ring
 mod ringbuf;
+
 /// A wait-free single-producer, single-consumer (SPSC) ring buffer from the
 mod rtrb;
+
 /// Raise the scheduling priority of a real-time consumer thread with
 mod thread_priority;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `ringbuf` example.
     #[command(name = "ringbuf")]
     Ringbuf,
+
     /// Runs the `rtrb` example.
     #[command(name = "rtrb")]
     Rtrb,
+
     /// Runs the `thread_priority` example.
     #[command(name = "thread_priority")]
     ThreadPriority,

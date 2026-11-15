@@ -5,7 +5,7 @@
 /// Builds or traverses unicode graph data while preserving relationships needed by downstream
 /// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod graphemes;
-/// Runs the example.
+
 /// Runs the unicode example.
 fn main() {
     graphemes::run();

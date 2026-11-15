@@ -4,7 +4,7 @@
 
 /// A `LinkedList`, a doubly linked list.
 mod linkedlist;
-/// Runs the example.
+
 /// Runs the linkedlist example.
 fn main() {
     linkedlist::run();

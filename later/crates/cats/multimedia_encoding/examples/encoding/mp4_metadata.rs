@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Inspect MP4 container metadata including tracks and duration using `mp4`.
 //!
 //! MP4 is a container: it holds separate tracks (video, audio, subtitles) plus
@@ -77,9 +78,10 @@ fn create_sample_mp4() -> Result<Vec<u8>, Box<dyn Error + Send + Sync>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Reads track and duration information from an MP4 stream using `mp4`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
@@ -89,6 +91,7 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Runs the MP4 metadata example through its entry point without error.
     #[test]
     fn test_mp4_metadata_entry_point() {

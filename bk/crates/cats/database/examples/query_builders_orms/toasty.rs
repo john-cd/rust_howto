@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Create and query a model with Toasty and in-memory SQLite.
 //!
 //! An ORM (object-relational mapper) maps database rows to Rust structs, so you
@@ -10,12 +11,15 @@
 /// A user stored by the example database.
 #[derive(Debug, toasty::Model)]
 struct User {
+
     /// The database-generated identifier.
     #[key]
     #[auto]
     id: u64,
+
     /// The user's display name.
     name: String,
+
     /// The user's unique email address.
     #[unique]
     email: String,
@@ -48,6 +52,7 @@ async fn main() -> anyhow::Result<()> {
 /// Runs the Toasty SQLite example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

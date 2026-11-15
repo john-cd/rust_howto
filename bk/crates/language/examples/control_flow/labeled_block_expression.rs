@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Labeled block expressions, which `break` out with a value.
 
 /// Breaks out of a labeled block with a value.
@@ -30,8 +31,7 @@ fn condition() -> bool {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Breaks out of a labeled block with a value.
 pub fn run() {
     main();
 }

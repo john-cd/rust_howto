@@ -31,10 +31,12 @@ pub(super) fn arg_config() -> Arg {
         .env("TOOL_CONFIG_FILE") // Read from the environment variable when the argument is not present.
         .global(true) // Make the --config flag available to all subcommands.
 }
+
 /// Returns the path given with `--config`, if any.
 pub(super) fn get_arg_config(matches: &ArgMatches) -> Option<PathBuf> {
     matches.get_one::<PathBuf>("config").cloned()
 }
+
 /// Positional argument for one or more file paths.
 ///
 /// Example: `cargo r -- file1.csv file2.csv`
@@ -44,9 +46,11 @@ pub(super) fn arg_filepaths() -> Arg {
         .help("File names or paths")
         .action(ArgAction::Append) // Allow passing multiple filepaths.
 }
+
 /// Returns the positional file paths, or `None` if no path was supplied.
 ///
 /// # Arguments
+///
 /// * `matches` - Parsed command-line arguments.
 pub(super) fn get_arg_filepaths(matches: &ArgMatches) -> Option<Vec<PathBuf>> {
     let m = matches
@@ -69,9 +73,11 @@ pub(super) fn arg_verbose() -> Arg {
         .env("TOOL_VERBOSE") // example: TOOL_VERBOSE=2 cargo run
         .global(true)
 }
+
 /// Returns how many times the global verbosity flag was supplied, or zero if absent.
 ///
 /// # Arguments
+///
 /// * `matches` - Parsed command-line arguments.
 pub(super) fn get_arg_verbose(matches: &ArgMatches) -> u8 {
     matches.get_count("verbose")
@@ -215,6 +221,7 @@ mod tests {
     fn test_arg_verbose_none() -> std::io::Result<()> {
         check_environment(None, None)
     }
+
     /// Raises verbosity according to the number of repeated `-v` flags.
     #[test]
     fn test_arg_verbose_multiple() {

@@ -7,20 +7,26 @@ use clap::Subcommand;
 
 /// Consuming any `IntoIterator` in a generic function.
 mod consume_intoiterator;
+
 /// Example of `IntoIterator` implementation.
 mod implement_intoiterator;
+
 /// Iterator adapters, such as `map`, that transform an iterator lazily.
 mod iterator_adapters;
+
 /// This example demonstrates the difference between `iter()`, `iter_mut()` and
 mod iterators;
+
 /// Returning an iterator from a function with `impl Iterator`.
 mod return_iterator;
+
 /// Simple iterators that are built from a function or a value.
 mod simple_iterators;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -29,21 +35,27 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `consume_intoiterator` example.
     #[command(name = "consume_intoiterator")]
     ConsumeIntoiterator,
+
     /// Runs the `implement_intoiterator` example.
     #[command(name = "implement_intoiterator")]
     ImplementIntoiterator,
+
     /// Runs the `iterator_adapters` example.
     #[command(name = "iterator_adapters")]
     IteratorAdapters,
+
     /// Runs the `iterators` example.
     #[command(name = "iterators")]
     Iterators,
+
     /// Runs the `return_iterator` example.
     #[command(name = "return_iterator")]
     ReturnIterator,
+
     /// Runs the `simple_iterators` example.
     #[command(name = "simple_iterators")]
     SimpleIterators,
@@ -74,7 +86,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

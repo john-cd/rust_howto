@@ -7,22 +7,28 @@ use clap::Subcommand;
 
 /// Re-exporting a name with `pub use`.
 mod pub_use;
+
 /// This example demonstrates how to use the `use` keyword to bring items into scope without having
 /// to write their full path.
 mod use1;
+
 /// Bringing a function into scope with `use`.
 mod use2;
+
 /// Importing items from the standard library with `use`.
 mod use3;
+
 /// This example demonstrates how to write `use` declarations to bring items from external crates
 /// into scope, without having to write their full paths.
 mod use_external_crate;
+
 /// Shortcuts for `use`: globs, grouped imports, `self` and aliases.
 mod use_shortcuts;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -31,21 +37,27 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `pub_use` example.
     #[command(name = "pub_use")]
     PubUse,
+
     /// Runs the `use1` example.
     #[command(name = "use1")]
     Use1,
+
     /// Runs the `use2` example.
     #[command(name = "use2")]
     Use2,
+
     /// Runs the `use3` example.
     #[command(name = "use3")]
     Use3,
+
     /// Runs the `use_external_crate` example.
     #[command(name = "use_external_crate")]
     UseExternalCrate,
+
     /// Runs the `use_shortcuts` example.
     #[command(name = "use_shortcuts")]
     UseShortcuts,

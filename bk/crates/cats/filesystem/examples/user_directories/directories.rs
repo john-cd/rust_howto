@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `directories` crate to find the
 //! user's data and config directories for a specific application.
 //!
@@ -18,7 +19,8 @@ use directories::ProjectDirs;
 /// Returns the user's data directory.
 ///
 /// # Errors
-/// Returns an error if the requested data cannot be retrieved.
+///
+/// Returns an error if the platform cannot determine the application data directory and `APP_DATA_DIR` is unset.
 pub fn get_data_dir() -> Result<PathBuf> {
     let directory = if let Ok(s) = std::env::var("APP_DATA_DIR") {
         PathBuf::from(s)
@@ -33,7 +35,8 @@ pub fn get_data_dir() -> Result<PathBuf> {
 /// Returns the user's config directory.
 ///
 /// # Errors
-/// Returns an error if the requested data cannot be retrieved.
+///
+/// Returns an error if the platform cannot determine the application config directory and `APP_CONFIG_DIR` is unset.
 pub fn get_config_dir() -> Result<PathBuf> {
     let directory = if let Ok(s) = std::env::var("APP_CONFIG_DIR") {
         PathBuf::from(s)
@@ -53,7 +56,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints the data and configuration directories of the application.
 pub fn run() {
     main();
 }

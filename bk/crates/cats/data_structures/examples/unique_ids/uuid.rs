@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generating and parsing UUIDs.
 //!
 //! A UUID is a 128-bit identifier that is unique for practical purposes without
@@ -29,6 +30,7 @@ fn main() {
     }
     // Use a macro to create a UUID from a string literal at compile time.
     // This is useful for defining constant UUIDs:
+
     /// Fixed UUID used to illustrate compile-time UUID construction.
     const ID: Uuid = uuid!("67e55044-10b1-426f-9247-bb680e5fe0c8");
     // Print the UUID as a URN (Uniform Resource Name):
@@ -46,8 +48,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Generates, parses and prints UUIDs.
 pub fn run() {
     main();
 }

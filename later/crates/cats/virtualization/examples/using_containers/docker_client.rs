@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Runs a short-lived container with explicit cleanup using Bollard.
 //!
 //! A container runs a program in an isolated process with its own file system,
@@ -85,6 +86,7 @@ async fn main() -> anyhow::Result<()> {
 /// Runs a short-lived container with explicit cleanup using Bollard.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub async fn run() -> anyhow::Result<()> {
     main().await
@@ -93,6 +95,7 @@ pub async fn run() -> anyhow::Result<()> {
 /// Verifies container execution, exit status, and successful removal.
 #[cfg(test)]
 mod tests {
+
     /// Verifies container execution, exit status, and successful removal.
     #[tokio::test]
     #[ignore = "needs a Docker daemon"]

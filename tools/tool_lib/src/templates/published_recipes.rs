@@ -16,8 +16,10 @@ use regex::Regex;
 /// A published recipe link associated with a crate.
 #[derive(Clone, Debug, Eq, Ord, PartialEq, PartialOrd)]
 pub struct RecipeLink {
+
     /// The title of the recipe.
     pub title: String,
+
     /// The reference (link target) of the recipe.
     pub reference: String,
 }
@@ -28,6 +30,7 @@ pub type RecipeLinksByCrate = BTreeMap<String, Vec<RecipeLink>>;
 /// Collect crate-to-recipe links from the include fragments used by the published example index.
 ///
 /// # Arguments
+///
 /// * `book_root` - Root directory of the book.
 pub fn collect_published_recipe_links(book_root: impl AsRef<Path>) -> Result<RecipeLinksByCrate> {
     let source_root = fs::canonicalize(book_root.as_ref().join("src"))
@@ -140,6 +143,7 @@ mod tests {
     use tempfile::tempdir;
 
     use super::*;
+
     /// Deduplicates recipe links while assigning them to each crate.
     #[test]
     fn collect_published_recipe_links_deduplicates_and_maps_multiple_crates() {
@@ -185,6 +189,7 @@ mod tests {
         assert_eq!(recipes["crate-a"][1].reference, "ex~sample~one");
         assert_eq!(recipes["crate-c"][0].title, "Directive recipe");
     }
+
     /// Rejects recipe includes that resolve outside the book source directory.
     #[test]
     fn collect_published_recipe_links_rejects_includes_outside_book_source() {

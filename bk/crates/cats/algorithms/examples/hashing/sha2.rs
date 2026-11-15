@@ -1,26 +1,31 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Cryptographic hashing with the `sha2` crate: SHA-256 and SHA-512 digests
 //! formatted as hexadecimal or Base64.
 //!
 //! ### What is SHA-2?
+//!
 //! SHA-2 (Secure Hash Algorithm 2) is a family of cryptographic hash functions
 //! standardized by NIST (FIPS PUB 180-4). The most widely used variants are
 //! SHA-256 (256-bit output digest) and SHA-512 (512-bit output digest).
 //!
 //! ### Underlying Architecture
+//!
 //! SHA-2 uses the **Merkle–Damgård construction** with a Davis–Meyer
 //! compression function. It converts arbitrary-length input data into
 //! fixed-size byte arrays.
 //!
 //! ### Core Security Guarantees
+//!
 //! - **Pre-image Resistance**: Given a hash digest $H$, it is computationally infeasible to find
 //!   any input message $M$ such that $\text{hash}(M) = H$.
 //! - **Collision Resistance**: It is computationally infeasible to find two distinct inputs $M_1
 //!   \neq M_2$ such that $\text{hash}(M_1) = \text{hash}(M_2)$.
 //!
 //! ### Purpose & Use Cases
+//!
 //! - Digital signatures, TLS/SSL certificate verification, and Git commit IDs.
 //! - Cryptographic integrity checking for software releases and download packages.
 //! - Proof-of-work algorithms (such as Bitcoin mining).
@@ -95,6 +100,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the `sha2` example by calling `main()`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -103,6 +109,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `sha2` example runs.
     #[test]
     fn test_sha2_example_entry_point() {

@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// This example demonstrates a simple HTTP GET request using the `reqwest`
 mod get;
+
 /// This example demonstrates a simple HTTP GET request using the `reqwest`
 mod get1;
+
 /// Demonstrates how to set headers in HTTP requests using the `reqwest` crate.
 mod header;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `get` example.
     #[command(name = "get")]
     Get,
+
     /// Runs the `get1` example.
     #[command(name = "get1")]
     Get1,
+
     /// Runs the `header` example.
     #[command(name = "header")]
     Header,

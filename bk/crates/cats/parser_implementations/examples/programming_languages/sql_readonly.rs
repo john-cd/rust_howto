@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Accepts only a single top-level query by parsing SQL before execution.
 //!
 //! Query syntax does not prove read-only behavior: a `SELECT` can call a
@@ -14,10 +15,13 @@ use sqlparser::parser::Parser;
 /// Why a query was rejected.
 #[derive(Debug, PartialEq)]
 enum Rejection {
+
     /// The text is not valid SQL.
     Syntax(String),
+
     /// More or fewer than one statement.
     NotOneStatement(usize),
+
     /// A statement other than a query, e.g. `DROP TABLE`.
     NotAQuery,
 }
@@ -66,6 +70,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the syntax-classification example without contacting a database.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
@@ -84,6 +89,7 @@ mod tests {
     fn test_sql_readonly_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// Shows that query classification alone cannot prove read-only behavior.
     #[test]
     fn accepts_query_syntax_with_a_side_effecting_function() {

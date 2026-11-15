@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example shows how to serialize data to a CSV file.
 //!
 //! CSV (comma-separated values) is a plain-text table format that spreadsheets
@@ -33,9 +34,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Writes the serialized records to standard output.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

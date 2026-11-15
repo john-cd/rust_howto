@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use `deadpool-postgres` to manage a pool of
 //! PostgreSQL connections.
 //! `deadpool` is an async pool for connections and objects of any type.
@@ -28,6 +29,7 @@ use tokio_postgres::NoTls;
 /// Configuration for the application.
 #[derive(Debug, serde::Deserialize)]
 struct Config {
+
     /// The settings of the PostgreSQL connection pool.
     #[serde(default)]
     pub pg: deadpool_postgres::Config,
@@ -36,6 +38,7 @@ struct Config {
 impl Config {
     // With the `serde` feature enabled, we can read the configuration using the
     // `config` crate.
+
     /// Reads the configuration from the environment variables.
     pub fn from_env() -> Result<Self, config::ConfigError> {
         config::Config::builder()
@@ -44,6 +47,7 @@ impl Config {
             .try_deserialize()
     }
 }
+
 /// Loads the PostgreSQL settings and creates a Tokio-backed connection pool.
 ///
 /// # Errors
@@ -68,17 +72,21 @@ fn create_pool_with_max_size(max_size: Option<usize>) -> anyhow::Result<deadpool
     // Creates a new `Pool` using the `deadpool_postgres::Config`.
     Ok(cfg.pg.create_pool(Some(Runtime::Tokio1), NoTls)?)
 }
+
 /// Creates a PostgreSQL connection pool using its configured maximum size.
 ///
 /// # Errors
+///
 /// Returns an error if environment configuration cannot be read or the pool
 /// cannot be built.
 fn create_pool() -> anyhow::Result<deadpool_postgres::Pool> {
     create_pool_with_max_size(None)
 }
+
 /// Connects to PostgreSQL, inspects the pool, and queries the server version.
 ///
 /// # Errors
+///
 /// Returns an error if configuration, pool checkout, or the version query
 /// fails.
 #[tokio::main]
@@ -105,7 +113,10 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the PostgreSQL connection-pool example.
+///
 /// # Errors
+///
 /// Returns an error if the PostgreSQL connection or query fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -125,8 +136,10 @@ mod tests {
     #[tokio::test]
     #[ignore = "requires a reachable PostgreSQL service and PG__* environment variables"]
     async fn serves_concurrent_queries_through_the_pool() -> anyhow::Result<()> {
+
         /// Maximum number of PostgreSQL connections in the test pool.
         const MAX_POOL_SIZE: usize = 8;
+
         /// Number of requests submitted to the pool.
         /// Defines the concurrent queries constant.
         const CONCURRENT_QUERIES: usize = 64;

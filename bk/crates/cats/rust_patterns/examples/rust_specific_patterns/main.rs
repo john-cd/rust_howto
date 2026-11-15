@@ -8,20 +8,26 @@ use clap::Subcommand;
 
 /// Demonstrates how to clone trait objects using the `dyn_clone` crate.
 mod dyn_clone;
+
 /// A newtype whose equality ignores a presentation field.
 mod newtype_equality;
+
 /// Newtypes that carry a unit: only the operations that make sense are
 mod newtype_units;
+
 /// The following demonstrates the use of the `pin_project` crate for pin
 mod pin_project;
+
 /// Projects pinned fields with the lightweight macro variant.
 mod pin_project_lite;
+
 /// A validated newtype: an `EmailAddress` that cannot hold invalid data, even
 mod validated_newtype;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -30,21 +36,27 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `dyn_clone` example.
     #[command(name = "dyn_clone")]
     DynClone,
+
     /// Runs the `pin_project` example.
     #[command(name = "pin_project")]
     PinProject,
+
     /// Runs the `pin_project_lite` example.
     #[command(name = "pin_project_lite")]
     PinProjectLite,
+
     /// Runs the `newtype_equality` example.
     #[command(name = "newtype_equality")]
     NewtypeEquality,
+
     /// Runs the `newtype_units` example.
     #[command(name = "newtype_units")]
     NewtypeUnits,
+
     /// Runs the `validated_newtype` example.
     #[command(name = "validated_newtype")]
     ValidatedNewtype,
@@ -73,6 +85,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

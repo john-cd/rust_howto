@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to make a GET request to a REST API and
 //! deserialize the JSON response.
 //!
@@ -12,11 +13,14 @@
 use reqwest::Client;
 use reqwest::Error;
 use serde::Deserialize;
+
 /// Represents a GitHub user with their login and ID.
 #[derive(Deserialize, Debug, Eq, PartialEq)]
 struct User {
+
     /// The user's login name on GitHub.
     login: String,
+
     /// The user's unique ID on GitHub.
     id: u32,
 }
@@ -55,9 +59,10 @@ async fn get_users(client: &Client, request_url: &str) -> Result<Vec<User>, Erro
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// The main function that performs the HTTP GET request and processes the response.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()
@@ -102,6 +107,7 @@ mod tests {
     fn main_fetches_stargazers() -> Result<(), Error> {
         main()
     }
+
     /// An HTTP error status is reported as an error.
     #[tokio::test]
     async fn error_status_is_an_error() -> anyhow::Result<()> {

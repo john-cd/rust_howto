@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calling Rust from Java with the Java Native Interface.
 //!
 //! JNI (Java Native Interface) is how Java calls native code. A Rust function
@@ -30,8 +31,10 @@ use jni::sys::jstring;
 // so the JVM can find `mylib.dll`, `libmylib.so`, or `libmylib.dylib`.
 
 /// Formats the greeting independently of the JVM.
+///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested jni operation.
+///
+/// * `input` - Name to include in the greeting.
 pub fn hello(input: &str) -> String {
     format!("Hello, {input}!")
 }
@@ -60,7 +63,6 @@ pub extern "system" fn Java_HelloWorld_hello<'a>(
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the JNI example logic without starting a JVM.
 pub fn run() {
     let msg = hello("World");

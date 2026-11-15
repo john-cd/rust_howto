@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Functions that never return.
 //!
 //! A diverging function never returns, for example because it exits the program
@@ -14,6 +15,7 @@ fn foo() -> ! {
 }
 
 // This function never returns control.
+
 /// Exits the process with an error code.
 fn exit_program() -> ! {
     println!("Exiting the process...");
@@ -21,6 +23,7 @@ fn exit_program() -> ! {
 }
 
 // This function loops forever.
+
 /// Loops forever.
 fn forever() -> ! {
     loop {
@@ -43,8 +46,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls a function that panics.
 pub fn run() {
     main();
 }
@@ -59,6 +61,7 @@ mod tests {
     fn test_diverging_functions_example_entry_point() {
         main();
     }
+
     /// Verifies that the foo panics.
     #[test]
     #[should_panic(expected = "This call never returns.")]

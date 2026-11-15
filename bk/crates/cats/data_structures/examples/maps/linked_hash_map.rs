@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A `LinkedHashMap`, a hash map that remembers insertion order.
 //!
 //! A linked hash map keeps entries in insertion (or access) order, which makes
@@ -8,7 +9,7 @@
 //! evicted.
 
 use linked_hash_map::LinkedHashMap;
-/// Runs the example.
+
 /// Inserts into a `LinkedHashMap` and iterates in insertion order.
 fn main() {
     let mut map = LinkedHashMap::new();
@@ -30,8 +31,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Inserts into a `LinkedHashMap` and iterates in insertion order.
 pub fn run() {
     main();
 }

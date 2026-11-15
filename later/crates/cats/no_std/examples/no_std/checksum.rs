@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A host binary that calls the library's core-only checksum implementation.
 //!
 //! `no_std` code uses only the `core` library: no operating system and no heap.

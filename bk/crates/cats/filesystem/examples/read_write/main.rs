@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Demonstrates reading from a memory-mapped file.
 mod memmap2;
+
 /// Demonstrates writing to and reading from a file.
 mod read_file;
+
 /// Check whether we are reading & writing to the same file.
 mod same_file;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `memmap2` example.
     #[command(name = "memmap2")]
     Memmap2,
+
     /// Runs the `read_file` example.
     #[command(name = "read_file")]
     ReadFile,
+
     /// Runs the `same_file` example.
     #[command(name = "same_file")]
     SameFile,

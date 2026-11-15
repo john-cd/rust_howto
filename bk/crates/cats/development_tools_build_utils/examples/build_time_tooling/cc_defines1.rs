@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Passing preprocessor definitions to C code compiled with the `cc` crate.
 //!
 //! Preprocessor definitions (`-DNAME=value`) switch parts of C code on or off
@@ -14,15 +15,19 @@ use anyhow::Context;
 use anyhow::Result;
 
 unsafe extern "C" {
+
     /// Returns the application name defined for the C source.
     fn app_name() -> *const c_char;
+
     /// Returns the package version defined for the C source.
     fn app_version() -> *const c_char;
     fn welcome_is_defined() -> i32;
 }
+
 /// Reads the values compiled into the C library.
 ///
 /// # Errors
+///
 /// Returns an error if a C string cannot be converted to valid UTF-8.
 fn read_app_info() -> Result<(String, String, bool)> {
     // SAFETY: the C functions return null-terminated string literals from
@@ -51,6 +56,7 @@ fn read_app_info() -> Result<(String, String, bool)> {
 /// Prints the C preprocessor values supplied by the build script.
 ///
 /// # Errors
+///
 /// Returns an error if build-time metadata cannot be read or the version is not valid UTF-8.
 fn main() -> Result<()> {
     let (app_name, version, welcome) = read_app_info()?;
@@ -67,6 +73,7 @@ fn main() -> Result<()> {
 /// Runs the C preprocessor definitions example.
 ///
 /// # Errors
+///
 /// Returns an error if reading C definitions fails.
 pub fn run() -> Result<()> {
     main()

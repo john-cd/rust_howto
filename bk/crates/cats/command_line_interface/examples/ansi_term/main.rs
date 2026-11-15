@@ -7,18 +7,23 @@ use clap::Subcommand;
 
 /// Demonstrates basic usage of the maintained `nu-ansi-term` crate.
 mod ansi_term_basic;
+
 /// Basic example of using `nu-ansi-term` to print bold text.
 mod ansi_term_basic1;
+
 /// Demonstrates basic usage of the `nu-ansi-term` crate for colored and styled
 mod ansi_term_basic2;
+
 /// This example demonstrates text styling using the `colored` crate.
 mod colored;
+
 /// Print a table whose columns adapt to their content.
 mod comfy_table;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,18 +32,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `ansi_term_basic` example.
     #[command(name = "ansi_term_basic")]
     AnsiTermBasic,
+
     /// Runs the `ansi_term_basic1` example.
     #[command(name = "ansi_term_basic1")]
     AnsiTermBasic1,
+
     /// Runs the `ansi_term_basic2` example.
     #[command(name = "ansi_term_basic2")]
     AnsiTermBasic2,
+
     /// Runs the `colored` example.
     #[command(name = "colored")]
     Colored,
+
     /// Runs the `comfy_table` example.
     #[command(name = "comfy_table")]
     ComfyTable,
@@ -66,7 +76,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

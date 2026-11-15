@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of a sealed trait, preventing external implementations.
 //!
 //! A sealed trait cannot be implemented outside its crate, because it requires
@@ -9,16 +10,19 @@
 
 /// A module that exposes a trait that cannot be implemented outside of it.
 mod a_module {
+
     /// A trait that can be used, but not implemented, outside of the module.
     #[allow(private_bounds)]
     pub trait MySealedTrait: Sealed {
         // Public method accessible to the user.
         // Associated items in a `pub` Trait are public by default.
+
         /// A method that users of the trait can call.
         fn some_public_method(&self);
     }
 
     // A private trait that is only accessible from `a_module`.
+
     /// A private trait that seals `MySealedTrait`.
     trait Sealed {}
 
@@ -50,8 +54,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls a method of the sealed trait.
 pub fn run() {
     main();
 }

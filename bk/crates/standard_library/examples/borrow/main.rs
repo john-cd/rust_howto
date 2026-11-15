@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Looking up a `HashMap` of `String` keys with a `&str`, thanks to `Borrow`.
 mod borrow;
+
 /// A generic lookup that accepts any type that `String` borrows as.
 mod borrow2;
+
 /// Implementing `Borrow` for a string type with canonical lowercase storage.
 mod borrow3;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `borrow` example.
     #[command(name = "borrow")]
     Borrow,
+
     /// Runs the `borrow2` example.
     #[command(name = "borrow2")]
     Borrow2,
+
     /// Runs the `borrow3` example.
     #[command(name = "borrow3")]
     Borrow3,
@@ -50,7 +56,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

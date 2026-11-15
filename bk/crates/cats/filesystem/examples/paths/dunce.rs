@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Canonicalize a path without the Windows `\\?\` prefix.
 //!
 //! On Windows, `canonicalize` returns paths with a `\\?\` prefix that many
@@ -9,14 +10,17 @@
 use std::fs;
 use std::path::Path;
 use std::path::PathBuf;
+
 /// Returns the canonical form of an existing path, without the `\\?\` prefix
 ///
 /// that `std::fs::canonicalize` adds on Windows.
 ///
 /// # Arguments
+///
 /// * `path` - Filesystem location the operation reads, updates, or uses as its scope.
 ///
 /// # Errors
+///
 /// Returns an error if the path cannot be canonicalized.
 fn canonical_path(path: &Path) -> std::io::Result<PathBuf> {
     // `dunce::canonicalize` calls `std::fs::canonicalize`, then removes the
@@ -24,9 +28,11 @@ fn canonical_path(path: &Path) -> std::io::Result<PathBuf> {
     // the same as `std::fs::canonicalize`.
     dunce::canonicalize(path)
 }
+
 /// Compares the standard library and `dunce`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> std::io::Result<()> {
     let dir = tempfile::tempdir()?;
@@ -49,6 +55,7 @@ pub fn example_body() -> std::io::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> std::io::Result<()> {
     example_body()

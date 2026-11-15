@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates incremental computation using the `salsa` crate.
 //!
 //! `salsa` is a framework for writing incremental, on-demand programs: programs
@@ -27,6 +28,7 @@ use salsa::Setter as _;
 /// recompute.
 #[salsa::input]
 struct SourceInput {
+
     /// The text to analyze.
     content: String,
 }
@@ -61,6 +63,7 @@ fn summary(db: &dyn salsa::Database, input: SourceInput) -> String {
 #[salsa::db]
 #[derive(Default)]
 struct MyDatabase {
+
     /// The storage of the memoized results.
     storage: salsa::Storage<Self>,
 }
@@ -98,7 +101,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Runs the queries, then updates the input and runs them again.
 pub fn run() {
     main();
 }

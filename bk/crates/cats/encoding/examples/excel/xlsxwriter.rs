@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Writes an `.xlsx` workbook with `rust_xlsxwriter`: a bold header,
 //! numbers, dates, a formula and a column width.
 //!
@@ -19,9 +20,11 @@ use rust_xlsxwriter::XlsxError;
 /// Writes a small sales report to `path`.
 ///
 /// # Arguments
+///
 /// * `path` - Path to the file or directory to process.
 ///
 /// # Errors
+///
 /// Returns an error if the output cannot be written or sent.
 pub fn write_report(path: &Path) -> Result<(), XlsxError> {
     let mut workbook = Workbook::new();
@@ -82,9 +85,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Writes the report to a temporary directory.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

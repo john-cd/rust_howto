@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates the use of `any` and `all` methods on a parallel
 //! iterator.
 //!
@@ -34,8 +35,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates the use of `any` and `all` methods on a parallel iterator.
 pub fn run() {
     main();
 }

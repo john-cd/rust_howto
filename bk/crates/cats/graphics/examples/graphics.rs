@@ -3,6 +3,7 @@
 //! TODO Reviewed ??-??-2026.
 
 // Deferred (#1748): no graphics example yet.
+
 /// Does nothing yet.
 fn main() {}
 
@@ -13,6 +14,7 @@ mod tests {
 
     // output-only: placeholder without behavior until the graphics example
     // exists (#1748).
+
     /// Verifies the placeholder entry point remains callable.
     #[test]
     fn test_graphics_placeholder_entry_point() {

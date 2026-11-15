@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `assert!` macro with a custom
 //! failure message.
 //!
@@ -11,6 +12,7 @@
 /// Asserts that `name` contains "Carol", with a custom failure message.
 ///
 /// # Arguments
+///
 /// * `name` - Human-readable value used to identify or display the selected tests custom message.
 fn check_name(name: &str) {
     assert!(
@@ -18,7 +20,7 @@ fn check_name(name: &str) {
         "Name did not contain 'Carol', value was `{name}`"
     );
 }
-/// Runs the example.
+
 /// Checks a name that does not contain "Carol", so that the assertion fails.
 fn main() {
     println!("Checking if 'Carl' contains 'Carol'...");
@@ -26,8 +28,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Checks a name that does not contain "Carol", so that the assertion fails.
 pub fn run() {
     main();
 }

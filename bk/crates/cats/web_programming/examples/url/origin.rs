@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates parsing a URL and extracting its origin components.
 //!
 //! A web origin is the scheme, host and port of a URL. Browsers use it for the
@@ -26,9 +27,10 @@ fn main() -> Result<(), ParseError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses a URL and checks its scheme, host and port.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), ParseError> {
     main()

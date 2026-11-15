@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A function-like procedural macro that processes a SQL query.
 //!
 //! A function-like procedural macro, written as `name!(...)`, runs Rust code at
@@ -22,8 +23,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the macro with SQL queries.
 pub fn run() {
     main();
 }

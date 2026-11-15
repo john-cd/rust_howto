@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generating and parsing ULIDs, sortable unique identifiers.
 //!
 //! A ULID is a 128-bit identifier that starts with a timestamp, so IDs created
@@ -42,8 +43,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Generates a ULID and inspects its components.
 pub fn run() {
     main();
 }

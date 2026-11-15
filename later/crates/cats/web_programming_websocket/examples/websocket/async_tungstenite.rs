@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! An asynchronous WebSocket client using async-tungstenite's Tokio adapter.
 //!
 //! A WebSocket is a long-lived, two-way connection that starts as an HTTP
@@ -69,9 +70,10 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Runs one local WebSocket echo round trip and prints the reply.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

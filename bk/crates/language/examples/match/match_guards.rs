@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Match guards, the `if` conditions of match arms.
 
 /// Matches an optional number with guards.
@@ -16,8 +17,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Matches an optional number with guards.
 pub fn run() {
     main();
 }

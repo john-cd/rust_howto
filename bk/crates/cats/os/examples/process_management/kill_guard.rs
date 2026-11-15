@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Kill a child process automatically when its owner goes out of scope.
 //!
 //! A guard is a value whose `Drop` runs when it leaves scope. Wrapping a child
@@ -14,6 +15,7 @@ use std::process::Command;
 struct KillOnDrop(Option<Child>);
 
 impl KillOnDrop {
+
     /// Starts guarding `child`.
     fn new(child: Child) -> Self {
         Self(Some(child))
@@ -31,6 +33,7 @@ impl KillOnDrop {
 }
 
 impl Drop for KillOnDrop {
+
     /// Kills and reaps the child, ignoring errors (for example if it already
     /// exited): `drop` cannot return them.
     fn drop(&mut self) {
@@ -67,6 +70,7 @@ fn fallible_work() -> anyhow::Result<()> {
 /// Runs the failing function; the child does not outlive it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> anyhow::Result<()> {
     assert!(fallible_work().is_err());
@@ -84,6 +88,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example_body()

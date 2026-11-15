@@ -9,6 +9,7 @@
 //! TODO Reviewed ??-??-2026.
 
 // ANCHOR: ccsds-space-packet
+
 /// Serializes a CCSDS packet and checks its primary header and payload.
 ///
 /// CCSDS (Consultative Committee for Space Data Systems) is the standards
@@ -51,7 +52,7 @@ fn ccsds_space_packet() -> [u8; 8] {
     packet
 }
 // ANCHOR_END: ccsds-space-packet
-/// Runs the example.
+
 /// Runs the packet construction examples.
 fn main() {
     let packet = ccsds_space_packet();
@@ -59,7 +60,7 @@ fn main() {
     crate::pus_telecommand::pus_telecommand();
     crate::pus_telemetry::pus_telemetry();
 }
-/// Runs the example entry point.
+
 /// Runs the space protocols examples through the chapter entry point.
 pub fn run() {
     main();

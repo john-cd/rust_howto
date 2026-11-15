@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Importing items from the standard library with `use`.
 
 // This `use` statement allows us to use `HashMap` directly without having to
@@ -21,7 +22,7 @@ fn build_map() -> HashMap<u32, String> {
     mymap.entry(42).or_insert("my favorite number".into());
     mymap
 }
-/// Runs the example.
+
 /// Uses an imported `HashMap`.
 fn main() {
     let mymap = build_map();
@@ -29,8 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Uses an imported `HashMap`.
 pub fn run() {
     main();
 }
@@ -45,6 +45,7 @@ mod tests {
     fn test_main() {
         main();
     }
+
     /// Verifies build map.
     #[test]
     fn test_build_map() {

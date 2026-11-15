@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Send an HTTPS request with a client certificate and private key.
 mod mtls;
+
 /// Build a platform TLS connector with `native-tls`.
 mod native_tls;
+
 /// Connect to a TLS server with `rustls` and verify its certificate.
 mod rustls;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the mutual TLS example.
     #[command(name = "mtls")]
     Mtls,
+
     /// Runs the `native_tls` example.
     #[command(name = "native_tls")]
     NativeTls,
+
     /// Runs the `rustls` example.
     #[command(name = "rustls")]
     Rustls,

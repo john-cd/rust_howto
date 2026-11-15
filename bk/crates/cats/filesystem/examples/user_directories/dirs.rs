@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Locating the standard directories of the current user with `dirs`.
 //!
 //! The `dirs` crate finds the user's well-known folders (home, documents,
@@ -46,8 +47,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the home, configuration, data, cache and executable directories.
 pub fn run() {
     main();
 }

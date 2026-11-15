@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Races two futures with `select!` from the `futures` crate.
 //!
 //! `select!` waits for several futures and returns when the first one
@@ -14,10 +15,12 @@ use futures::{
 };
 
 // Define two asynchronous tasks.
+
 /// An example task.
 async fn task_one() {
     // ...
 }
+
 /// Another example task.
 async fn task_two() {
     // ...
@@ -39,7 +42,7 @@ async fn race_tasks() {
         () = t2 => println!("task two completed first"),
     }
 }
-/// Runs the example.
+
 /// Runs the futures1 example.
 #[tokio::main]
 async fn main() {
@@ -47,7 +50,6 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example.
 pub fn run() {
     main();

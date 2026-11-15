@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A lifetime parameter on a struct and on its `impl` blocks.
 //!
 //! A struct that holds a reference needs a lifetime parameter, which says the
@@ -9,12 +10,14 @@
 
 /// A struct that holds a reference to a string slice.
 struct Excerpt<'a> {
+
     /// The excerpt, borrowed from a longer text.
     part: &'a str,
 }
 
 /// An implementation only defined for the `'static` lifetime.
 impl Excerpt<'static> {
+
     /// A method that exists only when the lifetime is `'static`.
     /// An implementation block for the struct.
     /// The `'_` notation indicates that the struct takes a lifetime parameter,
@@ -22,11 +25,13 @@ impl Excerpt<'static> {
     /// block.
     fn only_if_static(&self) {}
 }
+
 /// An implementation block for the struct.
 /// The `'_` notation indicates that the struct takes a lifetime parameter,
 /// but it does not matter which, because the lifetime is not referenced in the
 /// block.
 impl Excerpt<'_> {
+
     /// Returns a constant level, whatever the lifetime.
     /// A generic implementation block.
     /// Note the lifetime parameter `'a` after `impl`.
@@ -34,15 +39,17 @@ impl Excerpt<'_> {
         3
     }
 }
+
 /// A generic implementation block.
 /// Note the lifetime parameter `'a` after `impl`.
 impl<'a> Excerpt<'a> {
+
     /// Returns the excerpt with its original lifetime.
     fn part(&self) -> &'a str {
         self.part
     }
 }
-/// Runs the example.
+
 /// Creates an excerpt and calls its methods.
 fn main() {
     // Create an instance of the `struct` using a string literal of type
@@ -64,8 +71,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates an excerpt and calls its methods.
 pub fn run() {
     main();
 }

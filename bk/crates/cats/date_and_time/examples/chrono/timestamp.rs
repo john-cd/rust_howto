@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Converting between a date and time and a Unix timestamp with `chrono`.
 //!
 //! A Unix timestamp counts the seconds since 1 January 1970 00:00:00 UTC. It is
@@ -10,9 +11,11 @@
 use chrono::DateTime;
 use chrono::NaiveDate;
 use chrono::Utc;
+
 /// Converts a `NaiveDateTime` to a timestamp and back.
 ///
 /// # Errors
+///
 /// Returns an error if a demonstration date, time, or timestamp is out of
 /// range.
 fn main() -> Result<(), &'static str> {
@@ -39,7 +42,10 @@ fn main() -> Result<(), &'static str> {
 }
 // ANCHOR_END: example
 
+/// Demonstrates creating, formatting, and validating Chrono timestamps.
+///
 /// # Errors
+///
 /// Returns an error if a demonstration date, time, or timestamp is out of
 /// range.
 pub fn run() -> Result<(), &'static str> {

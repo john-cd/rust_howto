@@ -203,6 +203,7 @@ mod tests {
     // --- Tests for `get_dependencies` ---
 
     // Helper to create a `Cargo.toml` file.
+
     /// Creates the cargo toml.
     fn create_cargo_toml(dir: &Path, filename: &str, content: &str) -> Result<()> {
         fs::write(dir.join(filename), content)?;

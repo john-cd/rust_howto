@@ -5,6 +5,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Persist typed settings in the browser's local storage with [`gloo_storage`].
 //!
 //! Local storage is a small key-value store in the browser that survives page
@@ -22,11 +23,14 @@ const KEY: &str = "settings";
 #[derive(Clone, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(default)]
 pub struct Settings {
+
     /// Whether the interface should use its dark color theme.
     pub dark_mode: bool,
+
     /// Number of seconds to keep a toast notification visible.
     pub toast_seconds: u32,
 }
+
 /// Parses stored JSON, falling back to the defaults when the value is missing
 ///
 /// or invalid. Kept free of browser APIs so it can be tested natively.
@@ -34,6 +38,7 @@ pub fn parse_settings(raw: Option<&str>) -> Settings {
     raw.and_then(|s| serde_json::from_str(s).ok())
         .unwrap_or_default()
 }
+
 /// Loads the settings from `localStorage` (browser only).
 #[cfg(target_arch = "wasm32")]
 pub fn load() -> Settings {
@@ -45,9 +50,11 @@ pub fn load() -> Settings {
 /// Saves the settings to `localStorage` (browser only).
 ///
 /// # Arguments
+///
 /// * `settings` - Settings applied to this operation.
 ///
 /// # Errors
+///
 /// Returns an error if the output cannot be written or sent.
 #[cfg(target_arch = "wasm32")]
 pub fn save(settings: &Settings) -> Result<(), gloo_storage::errors::StorageError> {

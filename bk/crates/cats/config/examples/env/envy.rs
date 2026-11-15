@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Examples for working with `.env` files and `envy`.
 //!
 //! `envy` reads environment variables into a typed struct with Serde, so a
@@ -11,9 +12,11 @@ use serde::Deserialize;
 
 // Define a Configuration struct that can be deserialized from environment
 // variables.
+
 /// Settings deserialized from environment variables.
 #[derive(Deserialize, Debug)]
 struct Configuration {
+
     /// The port to listen on, from the `PORT` environment variable.
     port: u16,
 }
@@ -35,7 +38,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Deserializes the settings from the environment and prints them.
 pub fn run() {
     main();
 }

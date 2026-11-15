@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Returning a borrowed or an owned string with `Cow`.
 //!
 //! `Cow` (clone on write) holds either a borrowed or an owned value. Both
@@ -11,10 +12,13 @@ use std::borrow::Cow;
 
 /// An HTTP status.
 enum HttpStatus {
+
     /// The request succeeded.
     Ok,
+
     /// The resource was not found.
     NotFound,
+
     /// A status with a custom message.
     Custom(u16, String),
 }
@@ -47,8 +51,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Describes several statuses.
 pub fn run() {
     main();
 }
@@ -56,11 +59,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `into cow` example runs.
     #[test]
     fn test_into_cow_example_entry_point() {
         main();
     }
+
     /// Verifies static descriptions are borrowed.
     #[test]
     fn test_static_descriptions_are_borrowed() {
@@ -72,6 +77,7 @@ mod tests {
             "Status: 404 Not Found"
         );
     }
+
     /// Verifies custom description is owned.
     #[test]
     fn test_custom_description_is_owned() {

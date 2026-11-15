@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to work with C-style strings (`CString` and
 //! `CStr`) in Rust, which are essential for FFI (Foreign Function Interface)
 //! interactions.
@@ -14,10 +15,11 @@ use std::os::raw::c_char;
 unsafe extern "C" {
     // It accepts a raw pointer to a C-style string,
     // which must be terminated by \0 (`nul`).
+
     /// Returns the length of a null-terminated C string.
     fn strlen(s: *const c_char) -> usize;
 }
-/// Runs the example.
+
 /// Converts between Rust strings and C strings.
 fn main() {
     // 1. Call a FFI function that requires a C string.
@@ -55,7 +57,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Converts between Rust strings and C strings.
 pub fn run() {
     main();
 }

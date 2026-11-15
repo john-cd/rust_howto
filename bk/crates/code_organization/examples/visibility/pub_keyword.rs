@@ -1,12 +1,15 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `pub` keyword on functions, types, traits and modules.
 
 /// Private module.
 mod m {
+
     /// Private function.
     fn private_function() {}
+
     /// Public function.
     pub fn public_function() -> &'static str {
         private_function(); // A private function is callable from the same module.
@@ -17,6 +20,7 @@ mod m {
     pub struct Struct;
 
     impl Struct {
+
         /// Public method.
         pub fn method(&self) -> &'static str {
             "method"
@@ -35,12 +39,14 @@ mod m {
 
     /// Public submodule.
     pub mod public_module {
+
         /// A function in the public submodule.
         pub fn answer() -> u32 {
             42
         }
     }
 }
+
 /// Uses the public items of the module `m`.
 fn main() {
     // Access the public function within module `m`:
@@ -62,8 +68,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Uses the public items of the module `m`.
 pub fn run() {
     main();
 }
@@ -77,6 +82,7 @@ mod tests {
     fn test_main() {
         main();
     }
+
     /// Verifies public items accessible.
     #[test]
     fn test_public_items_accessible() {

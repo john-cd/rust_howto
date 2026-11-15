@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to URL-encode and decode strings using the
 //! `url` crate.
 //!
@@ -28,8 +29,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Encodes bytes in the URL-encoded form format, then decodes them.
 pub fn run() {
     main();
 }

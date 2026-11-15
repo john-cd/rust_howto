@@ -18,6 +18,7 @@ use tera::Value;
 /// Replaces all `-` characters with `_` in a string.
 ///
 /// # Arguments
+///
 /// * `_context` - Context used to resolve configuration and services.
 ///
 /// If the input is not a string, it is returned unchanged.
@@ -31,6 +32,7 @@ pub fn underscored(val: &Value, _context: &HashMap<String, Value>) -> Result<Val
 /// Replaces `-` with `--`, `_` with `__`, and ` ` with `_` in a string.
 ///
 /// # Arguments
+///
 /// * `_context` - Context used to resolve configuration and services.
 ///
 /// If the input is not a string, it is returned unchanged.

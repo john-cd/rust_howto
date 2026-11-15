@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to configure the tracing subscriber
 //! to change the logging level.
 //!
@@ -24,8 +25,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates how to configure the tracing subscriber to change the logging level.
 pub fn run() {
     main();
 }

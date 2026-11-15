@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Checks that every workspace member opts in to the shared
 //! `[workspace.lints]` table, and can fix a manifest with `toml_edit`.
 //!
@@ -58,9 +59,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Checks every workspace package and fails with its missing opt-ins.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips

@@ -7,24 +7,32 @@ use clap::Subcommand;
 
 /// Demonstrates how to use a custom delimiter during CSV deserialization.
 mod delimiter;
+
 /// This example shows how to filter CSV data based on a query.
 mod filter;
+
 /// This example demonstrates invalid data handling when reading a CSV file.
 mod invalid;
+
 /// This example shows how to read a CSV file.
 mod read;
+
 /// This example demonstrates deserializing CSV records into a struct.
 mod read1;
+
 /// Demonstrates serializing structs to CSV using `serde`.
 mod serde_serialize;
+
 /// This example shows how to serialize data to a CSV file.
 mod serialize;
+
 /// This example shows how to transform CSV data from one format to
 mod transform;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -33,27 +41,35 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `delimiter` example.
     #[command(name = "delimiter")]
     Delimiter,
+
     /// Runs the `filter` example.
     #[command(name = "filter")]
     Filter,
+
     /// Runs the `invalid` example.
     #[command(name = "invalid")]
     Invalid,
+
     /// Runs the `read` example.
     #[command(name = "read")]
     Read,
+
     /// Runs the `read1` example.
     #[command(name = "read1")]
     Read1,
+
     /// Runs the `serde_serialize` example.
     #[command(name = "serde_serialize")]
     SerdeSerialize,
+
     /// Runs the `serialize` example.
     #[command(name = "serialize")]
     Serialize,
+
     /// Runs the `transform` example.
     #[command(name = "transform")]
     Transform,

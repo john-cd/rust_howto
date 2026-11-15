@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example using Facebook's `RocksDB` embeddable database.
 //!
 //! Ensure you have the '`RocksDB`' C++ library installed on your system,
@@ -58,9 +59,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Opens a database in a temporary directory, then writes and reads values.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
+//! Controls a counter with timed actions in a `bonsai_bt` behavior tree.
+//!
 //! # Behavior Tree Example
 //!
 //! This example demonstrates the use of a Behavior Tree (BT) to control a
@@ -42,9 +45,11 @@ use bonsai_bt::Wait;
 #[derive(Clone, Debug, Copy)]
 pub enum Actions {
     // Increment accumulator.
+
     /// Increments the accumulator.
     Inc,
     // Decrement accumulator.
+
     /// Decrements the accumulator.
     Dec,
 }
@@ -131,11 +136,11 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Runs the counter behavior tree and checks its final state.
 ///
 /// # Errors
-/// Returns an error if a step of the example fails.
-
+///
+/// Returns an error if ticking the tree fails or its counter is missing.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

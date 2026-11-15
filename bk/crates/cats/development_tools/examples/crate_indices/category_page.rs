@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generate a category page from local TOML metadata and recipe links.
 //!
 //! This book lists crates in generated index pages. A script reads local TOML
@@ -15,6 +16,7 @@ use crate::fixtures::create_fixture;
 /// Prints the generated category index using the checked-in style of metadata.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> Result<()> {
     let fixture = create_fixture()?;
@@ -34,6 +36,7 @@ pub fn example_body() -> Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<()> {
     example_body()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Simulate a single-server bank queue with a timestamp-ordered event heap.
 //!
 //! In a discrete-event simulation the model state changes only at events, such
@@ -16,10 +17,13 @@ use std::collections::VecDeque;
 /// A customer's scheduled arrival and fixed service duration.
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
 struct Customer {
+
     /// Stable identifier used to retrieve and update this customer.
     id: usize,
+
     /// Arrival time value.
     arrival_time: u32,
+
     /// Service duration value.
     service_duration: u32,
 }
@@ -34,12 +38,16 @@ enum EventKind {
 /// A queue arrival or service completion in the event schedule.
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
 struct Event {
+
     /// Time value.
     time: u32,
+
     /// Transmission priority.
     priority: u8,
+
     /// Identifier for customer.
     customer_id: usize,
+
     /// Kind value.
     kind: EventKind,
 }
@@ -47,8 +55,10 @@ struct Event {
 /// The number of customers served and their mean time waiting for service.
 #[derive(Debug, PartialEq)]
 struct QueueReport {
+
     /// Served value.
     served: usize,
+
     /// Average wait seconds value.
     average_wait_seconds: f64,
 }
@@ -56,8 +66,10 @@ struct QueueReport {
 /// Simulates fixed customer arrivals and service times with a min-heap event
 /// queue.
 fn simulate_single_server_queue() -> QueueReport {
+
     /// Shared `arrival times` used by this module.
     const ARRIVAL_TIMES: [u32; 5] = [0, 1, 2, 13, 14];
+
     /// Shared `service durations` used by this module.
     const SERVICE_DURATIONS: [u32; 5] = [3, 2, 1, 1, 1];
 
@@ -125,7 +137,7 @@ fn simulate_single_server_queue() -> QueueReport {
         average_wait_seconds,
     }
 }
-/// Runs the example.
+
 /// Runs the queue simulation and prints its summary.
 fn main() {
     let report = simulate_single_server_queue();
@@ -136,7 +148,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the discrete-event queue example through its entry point.
 pub fn run() {
     main();

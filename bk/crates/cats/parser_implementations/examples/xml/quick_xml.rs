@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parse, deserialize, and write XML with `quick-xml`.
 //!
 //! XML is a text format of nested tags, used in older web services (SOAP),
@@ -23,8 +24,10 @@ use serde::Deserialize;
 #[derive(Debug, Deserialize, PartialEq)]
 #[serde(rename = "person")]
 struct Person {
+
     /// The name of the person.
     name: String,
+
     /// The age of the person.
     age: u8,
 }
@@ -76,9 +79,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Reads XML events, deserializes a struct from XML, and writes XML.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -93,6 +97,7 @@ mod tests {
     fn test_quick_xml_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// XML child elements populate the corresponding person fields.
     #[test]
     fn deserializes_person_fields() -> anyhow::Result<()> {

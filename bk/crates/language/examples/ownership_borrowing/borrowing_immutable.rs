@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Immutable Reference Example.
 
 /// Creates and dereferences a shared reference.
@@ -20,8 +21,10 @@ fn main() {
 
     // The `.` operator used to retrieve a field from a struct or enum also
     // automatically dereferences:
+
     /// Struct used to demonstrate immutable borrowing through dereferencing.
     struct S {
+
         /// The value stored in this field.
         field: u32,
     }
@@ -31,8 +34,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates and dereferences a shared reference.
 pub fn run() {
     main();
 }

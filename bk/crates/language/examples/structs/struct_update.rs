@@ -1,17 +1,20 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Creating a struct from another instance with the struct update syntax.
 
 /// Represents a user with their active status and username.
 #[derive(Debug)]
 struct User {
+
     /// Whether the user is active.
     active: bool,
+
     /// Name of the user.
     username: String,
 }
-/// Runs the example.
+
 /// Creates a user from another one, overriding some fields.
 fn main() {
     // Create a first instance of the struct:
@@ -35,8 +38,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates a user from another one, overriding some fields.
 pub fn run() {
     main();
 }

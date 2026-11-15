@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A `LinkedList`, a doubly linked list.
 //!
 //! A linked list stores each element in a separate node pointing to the next,
@@ -82,8 +83,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Adds, removes and iterates over the elements of a `LinkedList`.
 pub fn run() {
     main();
 }

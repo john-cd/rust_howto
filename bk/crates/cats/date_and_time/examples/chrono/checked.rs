@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates checked arithmetic with `DateTime` and `Duration`.
 //!
 //! Date arithmetic can overflow or produce an invalid date. The checked methods
@@ -12,18 +13,22 @@ use chrono::Duration;
 use chrono::TimeDelta;
 use chrono::TimeZone as _;
 use chrono::Utc;
+
 /// Returns the date and time one day earlier than the given date and time, or
 ///
 /// None if the operation would overflow.
 ///
 /// # Returns
+///
 /// `Some` when the requested value is available; otherwise returns `None`.
 ///
 /// # Panics
+///
 /// Panics if one day cannot be represented as a Chrono duration.
 fn day_earlier(date_time: DateTime<Utc>) -> Option<DateTime<Utc>> {
     date_time.checked_sub_signed(Duration::try_days(1).expect("one day fits in a chrono duration"))
 }
+
 /// Demonstrates checked arithmetic with `DateTime` and `Duration`.
 fn main() {
     let now = Utc
@@ -54,8 +59,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates checked arithmetic with `DateTime` and `Duration`.
 pub fn run() {
     main();
 }

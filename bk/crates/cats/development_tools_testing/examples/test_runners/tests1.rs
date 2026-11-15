@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Writing tests that pass, fail, return a `Result` or are ignored.
 //!
 //! `cargo test` runs every function marked `#[test]` in parallel threads, and
@@ -10,20 +11,25 @@
 
 /// Runs the example.
 // This example demonstrates how to write unit tests.
+
 /// Represents a rectangle with a width and height.
 struct Rectangle {
+
     /// Width of the rectangle.
     width: u32,
+
     /// Height of the rectangle.
     height: u32,
 }
 
 impl Rectangle {
+
     /// Checks if this rectangle can hold another rectangle.
     fn can_hold(&self, another: &Self) -> bool {
         self.width > another.width && self.height > another.height
     }
 }
+
 /// Writing tests that pass, fail, return a `Result` or are ignored.
 /// Checks whether a larger rectangle can hold a smaller one.
 fn main() {

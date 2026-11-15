@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -34,6 +35,7 @@ use crate::unicast::link::TransportLinkUnicastRx;
 
 /// **********************************
 // TRANSPORT RX
+
 /// **********************************
 impl TransportUnicastLowlatency {
     fn trigger_callback(
@@ -73,14 +75,17 @@ impl TransportUnicastLowlatency {
         }
     }
 
-    /// Loads the messages required by the rx workflow and reports failures from the underlying
-    /// source.
+    /// Decodes low-latency transport messages from a slice and handles each message body.
     ///
     /// # Arguments
-    /// * `link` - Transport link to add, remove, or use.
-
+///
+    /// * `zslice` - Received bytes containing one or more encoded transport messages.
+    /// * `link` - Receive link used for callbacks and shared-memory handoff.
+    /// * `stats` - Optional statistics updated for each decoded message.
+    ///
     /// # Errors
-    /// An error is returned if can_read fails.
+///
+    /// Returns an error if a transport message cannot be decoded.
     pub(super) async fn read_messages(
         &self,
         mut zslice: ZSlice,

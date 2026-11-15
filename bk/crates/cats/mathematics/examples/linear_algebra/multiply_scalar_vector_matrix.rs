@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to multiply a scalar by a vector and then
 //! multiply a matrix by the resulting vector.
 //!
@@ -28,8 +29,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Multiplies a vector by a scalar, then multiplies a matrix by the result.
 pub fn run() {
     main();
 }

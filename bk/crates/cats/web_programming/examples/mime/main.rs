@@ -8,14 +8,17 @@ use clap::Subcommand;
 
 /// Finding the MIME type of a file from its name.
 mod filename;
+
 /// This example demonstrates how to retrieve the Content-Type header from a
 mod request;
+
 /// Demonstrates parsing MIME types from strings and handling invalid input.
 mod string;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -24,12 +27,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `filename` example.
     #[command(name = "filename")]
     Filename,
+
     /// Runs the `request` example.
     #[command(name = "request")]
     Request,
+
     /// Runs the `string` example.
     #[command(name = "string")]
     String,

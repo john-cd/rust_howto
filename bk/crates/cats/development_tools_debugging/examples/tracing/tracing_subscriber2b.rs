@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to write logs to multiple destinations (in this instance,
 //! stdout and a file) simultaneously.
 //!
@@ -36,8 +37,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates how to write logs to multiple destinations (in this instance, stdout and a file) simultaneously.
 pub fn run() {
     main();
 }

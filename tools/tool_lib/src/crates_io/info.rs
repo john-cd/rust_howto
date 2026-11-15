@@ -10,6 +10,7 @@ use tracing::debug;
 /// Returns information for a crate, given its name
 ///
 /// # Errors
+///
 /// Returns client initialization or crates.io lookup failures with the requested crate name.
 pub fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
     let client = super::get_client()?;
@@ -19,13 +20,16 @@ pub fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
 /// Fetches crate metadata and adds the crate name to any lookup error.
 ///
 /// # Arguments
+///
 /// * `crate_name` - Name passed to the fetch operation and included in error context.
 /// * `fetch` - Operation that retrieves metadata for the requested crate.
 ///
 /// # Returns
+///
 /// The fetched metadata for `crate_name`.
 ///
 /// # Errors
+///
 /// Returns the fetch error with additional context identifying `crate_name`.
 fn get_info_for_crate_with(
     crate_name: &str,

@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Variables are used to store values.
 //!
 //! In Rust, variables are immutable by default and scoped to the enclosing
@@ -49,7 +50,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// Variables are used to store values.
 pub fn run() {
     main();

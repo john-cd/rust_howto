@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encode and decode PEM data with the `pem_rfc7468` crate.
 //!
 //! This example converts raw DER bytes into a PEM document and parses them
@@ -28,9 +29,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Encodes DER data as PEM, then decodes it back.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()
@@ -46,6 +48,7 @@ mod tests {
     fn test_pem_rfc7468_example_entry_point() -> Result<(), Box<dyn std::error::Error>> {
         main()
     }
+
     /// The document has the RFC 7468 boundary lines and a base64 body.
     #[test]
     fn encoded_document_has_boundary_lines() -> Result<(), Box<dyn std::error::Error>> {

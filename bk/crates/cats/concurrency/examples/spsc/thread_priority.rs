@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Raise the scheduling priority of a real-time consumer thread with
 //! `thread-priority`.
 //!
@@ -19,14 +20,17 @@ use thread_priority::ThreadPriority;
 
 /// The number of samples the ring buffer can hold.
 const CAPACITY: usize = 64;
+
 /// The total number of samples sent through the buffer.
 const TOTAL: usize = 500;
 
 /// What the consumer thread reports back.
 #[derive(Debug)]
 struct Report {
+
     /// Whether the operating system accepted the requested priority.
     priority_granted: bool,
+
     /// The samples received, in order.
     samples: Vec<f32>,
 }
@@ -80,6 +84,7 @@ fn consume_with_priority(priority: ThreadPriority) -> Result<Report> {
 /// Requests the maximum priority and prints whether it was granted.
 ///
 /// # Errors
+///
 /// Returns an error if the consumer thread cannot be spawned or panics.
 fn main() -> Result<()> {
     let report = consume_with_priority(ThreadPriority::Max)?;
@@ -104,6 +109,7 @@ fn main() -> Result<()> {
 /// Runs the thread priority example.
 ///
 /// # Errors
+///
 /// Returns an error if the consumer thread cannot be spawned or panics.
 pub fn run() -> Result<()> {
     main()
@@ -118,6 +124,7 @@ mod tests {
     fn test_thread_priority_example_entry_point() -> Result<()> {
         main()
     }
+
     /// Delivers every sample in order, whether or not the priority is granted.
     #[test]
     fn consumer_receives_all_samples_in_order() -> Result<()> {

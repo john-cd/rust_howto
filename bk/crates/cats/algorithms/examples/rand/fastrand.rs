@@ -1,9 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Fast pseudo-random number generation with `fastrand`.
 //!
 //! ### Advantages of `fastrand`
+//!
 //! - **Performance & Size**: Extremely fast execution with minimal dependency overhead and small
 //!   compiled binary size.
 //! - **Simplicity**: Direct, easy-to-use API for standard random primitives, sampling, shuffling,
@@ -12,6 +14,7 @@
 //!   custom-seeded `Rng` instances.
 //!
 //! ### Limitations & Warnings
+//!
 //! - **Not Cryptographically Secure**: Uses PCG-XSH-RR, which is predictable. Do not use `fastrand`
 //!   for security-sensitive operations such as key generation, nonce creation, or password hashing.
 //!   Use `rand` or `getrandom` instead for cryptographic requirements.
@@ -51,8 +54,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Generates random booleans, numbers and strings with `fastrand`, then samples and shuffles values.
 pub fn run() {
     main();
 }
@@ -60,6 +62,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `fastrand` example runs.
     #[test]
     fn test_fastrand_example_entry_point() {

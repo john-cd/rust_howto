@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Serve an `axum` router over HTTPS with `axum-server` and `rustls`.
 //!
 //! TLS encrypts HTTP so that traffic cannot be read or changed on the network
@@ -30,14 +31,17 @@ pub fn app() -> Router {
 /// `RustlsConfig::from_pem_file`.
 ///
 /// # Arguments
+///
 /// * `addr` - Local socket address on which the HTTPS server listens.
 /// * `config` - TLS certificate and private-key configuration.
 /// * `handle` - Handle used to query or stop the running server.
 ///
 /// # Returns
+///
 /// Completes when the server stops serving requests.
 ///
 /// # Errors
+///
 /// Returns an I/O error if binding, TLS negotiation, or request serving fails.
 #[cfg_attr(
     not(test),
@@ -53,9 +57,11 @@ pub async fn serve_https(
         .serve(app().into_make_service())
         .await
 }
+
 /// Requests graceful shutdown and gives in-flight requests up to `grace` to finish.
 ///
 /// # Arguments
+///
 /// * `handle` - Handle for the running HTTPS server.
 /// * `grace` - Maximum duration to wait for active requests.
 #[cfg_attr(

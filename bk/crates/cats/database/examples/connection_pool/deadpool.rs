@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `deadpool` crate to manage a pool
 //! of connections.
 //!
@@ -16,6 +17,7 @@ use deadpool::managed;
 /// The errors of the connection manager.
 #[derive(Debug)]
 enum Error {
+
     /// A failure in the connection or in the manager.
     Fail, // Represents a failure in the connection or manager.
 }
@@ -25,6 +27,7 @@ struct Server;
 
 impl Server {
     // Represents a connection to a server.
+
     /// Returns the sample answer produced by this server.
     async fn get_answer(&self) -> i32 {
         42
@@ -33,6 +36,7 @@ impl Server {
 
 /// Creates and recycles the `Server` connections of the pool.
 struct Manager {
+
     /// Whether `create` should fail, to show how errors surface.
     fail: bool,
 }
@@ -56,6 +60,7 @@ impl managed::Manager for Manager {
 }
 
 // Type alias for the connection pool.
+
 /// A pool of `Server` connections.
 type Pool = managed::Pool<Manager>;
 
@@ -94,9 +99,10 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Builds a pool, gets a connection from it and queries the server.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

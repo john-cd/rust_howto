@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Find a root of a function numerically.
 //!
 //! A root of a function is an input where it equals zero. Solving equations
@@ -24,9 +25,11 @@ impl CostFunction for CosMinusX {
         Ok(x.cos() - x)
     }
 }
+
 /// Finds the root of `cos(x) - x` in the interval `[0, 1]`.
 ///
 /// # Panics
+///
 /// Panics if Brent's method does not find a root in the interval.
 fn find_root() -> f64 {
     let result = Executor::new(CosMinusX, BrentRoot::new(0.0, 1.0, 1e-12))
@@ -48,7 +51,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {
     main();

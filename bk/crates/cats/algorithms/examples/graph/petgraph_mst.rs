@@ -1,15 +1,18 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Minimum Spanning Tree (MST) computation on an undirected graph using
 //! `petgraph`.
 //!
 //! ### What is a Minimum Spanning Tree (MST)?
+//!
 //! A Minimum Spanning Tree is a subset of edges from a connected, weighted
 //! undirected graph that connects all vertices together with the minimum
 //! possible total edge weight, without introducing any cycles.
 //!
 //! ### Underlying Algorithm (Kruskal's Algorithm)
+//!
 //! `petgraph` uses **Kruskal's algorithm** internally:
 //! 1. Sorts all graph edges in non-decreasing order of their weights.
 //! 2. Iteratively inspects edges from lightest to heaviest.
@@ -17,6 +20,7 @@
 //!    components (using a Disjoint-Set / Union-Find structure), preventing cycle formation.
 //!
 //! ### Purpose & Use Cases
+//!
 //! - **Network Infrastructure Design**: Laying telecommunication cables, electrical grids, or water
 //!   pipelines to connect all locations at minimal construction cost.
 //! - **Approximation Algorithms**: Serving as a building block for TSP (Travelling Salesperson
@@ -77,6 +81,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies petgraph minimum spanning tree example.
     #[test]
     fn test_petgraph_minimum_spanning_tree_example() {

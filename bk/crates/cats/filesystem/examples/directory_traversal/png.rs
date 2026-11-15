@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `glob` crate
 //! to find all PNG files in a directory tree.
 //!
@@ -32,9 +33,10 @@ fn find_pngs(pattern: &str) -> Result<Vec<PathBuf>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints the paths of all the PNG files in the current directory tree.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
@@ -50,6 +52,7 @@ mod tests {
     fn test_png_example_entry_point() -> Result<()> {
         main()
     }
+
     /// Only PNG files at any depth match; an invalid pattern is an error.
     #[test]
     fn finds_png_files_recursively() -> Result<()> {

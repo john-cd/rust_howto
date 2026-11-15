@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A binary search tree whose nodes live in a `bumpalo` arena.
 //!
 //! Nodes refer to each other with plain `&'bump` references: no `Box`, no
@@ -16,10 +17,13 @@ use bumpalo::Bump;
 
 /// A tree node. The references point into the same arena.
 struct Node<'bump> {
+
     /// Key used to find or update the cached value.
     key: i32,
+
     /// Optional left used by node; `None` means the value is not configured or unavailable.
     left: Option<&'bump Self>,
+
     /// Optional right used by node; `None` means the value is not configured or unavailable.
     right: Option<&'bump Self>,
 }
@@ -60,6 +64,7 @@ fn in_order(node: Option<&Node<'_>>, out: &mut Vec<i32>) {
 }
 
 thread_local! {
+
     /// Counts the destructors that ran.
     static DROPS: Cell<u32> = const { Cell::new(0) };
 }
@@ -68,12 +73,13 @@ thread_local! {
 struct Noisy;
 
 impl Drop for Noisy {
+
     /// Releases the resources owned by this value.
     fn drop(&mut self) {
         DROPS.with(|d| d.set(d.get() + 1));
     }
 }
-/// Runs the example.
+
 /// Builds a tree in an arena, then shows what happens to destructors.
 fn main() {
     let bump = Bump::new();
@@ -104,8 +110,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Builds a tree in an arena, then shows what happens to destructors.
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

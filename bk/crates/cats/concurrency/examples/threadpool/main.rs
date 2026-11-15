@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// Renders and saves a Julia set with Rayon and the image crate.
 mod threadpool_fractal;
+
 /// Walk a directory and computes the SHA256 digest of all iso files.
 mod threadpool_walk;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `threadpool_fractal` example.
     #[command(name = "threadpool_fractal")]
     ThreadpoolFractal,
+
     /// Runs the `threadpool_walk` example.
     #[command(name = "threadpool_walk")]
     ThreadpoolWalk,

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! String interning: store each distinct string once and compare, hash and
 //! copy cheap handles instead of strings.
 //!
@@ -20,13 +21,16 @@ pub(crate) struct Symbol(u32);
 /// Owns the interned strings.
 #[derive(Default)]
 pub(crate) struct Interner {
+
     /// Collection of ids values consumed by interner operations.
     ids: HashMap<String, u32>,
+
     /// Collection of strings values consumed by interner operations.
     strings: Vec<String>,
 }
 
 impl Interner {
+
     /// Returns the symbol for `s`, adding it on first use.
     pub(crate) fn intern(&mut self, s: &str) -> Symbol {
         if let Some(&id) = self.ids.get(s) {
@@ -43,6 +47,7 @@ impl Interner {
         self.strings.get(symbol.0 as usize).map(String::as_str)
     }
 }
+
 /// Interns identifiers and compares them by handle.
 fn main() {
     let mut interner = Interner::default();
@@ -64,8 +69,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Interns identifiers and compares them by handle.
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

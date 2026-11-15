@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Train a SmartCore decision-tree classifier on synthetic data and measure its
 //! accuracy on a seeded holdout split.
 //!
@@ -31,9 +32,11 @@ fn synthetic_classification_data() -> (Vec<Vec<f64>>, Vec<u32>) {
 
     (features, labels)
 }
+
 /// Trains the classifier and returns its accuracy on a reproducible test split.
 ///
 /// # Errors
+///
 /// Returns an error if SmartCore cannot build the feature matrix, fit the
 /// classifier, or predict the holdout labels.
 fn holdout_accuracy() -> Result<f64, Box<dyn Error>> {
@@ -60,7 +63,10 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 // ANCHOR_END: example
 
+/// Runs the SmartCore classification example.
+///
 /// # Panics
+///
 /// Panics if the SmartCore classification example failed.
 pub fn run() {
     main().expect("the SmartCore classification example failed");

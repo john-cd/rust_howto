@@ -13,18 +13,23 @@ use postgres_types::Type;
 
 use super::fallible_iterator::FallibleIterator;
 use super::utils::escape_domain;
+
 /// Iterator over the items in a PostgreSQL array. You only need this if you are
 /// working with custom zero-cost type mapping of rows containing PostgreSQL
 /// arrays.
 pub struct ArrayIterator<'a, T: FromSql<'a>> {
+
     /// Values yielded by this iterator.
     values: ArrayValues<'a>,
+
     /// Runtime type of the array values.
     ty: Type,
+
     /// Phantom marker for the element type.
     _type: PhantomData<T>,
 }
 impl<'a, T: FromSql<'a>> Debug for ArrayIterator<'a, T> {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.debug_struct("ArrayIterator")
@@ -37,7 +42,10 @@ impl<'a, T: FromSql<'a>> Debug for ArrayIterator<'a, T> {
 impl<'a, T: FromSql<'a>> Iterator for ArrayIterator<'a, T> {
     type Item = T;
 
+    /// Returns the next value from the array iterator, if one remains.
+///
     /// # Panics
+///
     /// Panics if an internal `Result` or `Option` has no usable value.
     fn next(&mut self) -> Option<Self::Item> {
         self.values
@@ -47,6 +55,7 @@ impl<'a, T: FromSql<'a>> Iterator for ArrayIterator<'a, T> {
     }
 }
 impl<'a, T: FromSql<'a>> FromSql<'a> for ArrayIterator<'a, T> {
+
     /// Converts between the array iterator representation and sql while preserving the invariants
     /// required by callers.
     fn from_sql(

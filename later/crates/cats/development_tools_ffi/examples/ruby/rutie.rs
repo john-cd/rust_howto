@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calling Ruby from Rust with `rutie`.
 //!
 //! Install 64-bit Ruby 4.0.x with development headers and libraries, then run
@@ -45,6 +46,7 @@ fn main() -> Result<String, AnyException> {
 /// Prints the greeting produced by an embedded Ruby interpreter.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), AnyException> {
     println!("{}", main()?);

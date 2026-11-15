@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A newtype whose equality ignores a presentation field.
 //!
 //! `PartialEq` and `Hash` must agree: values that compare equal must hash
@@ -14,8 +15,10 @@ use std::hash::Hasher;
 /// How a phone number is displayed.
 #[derive(Debug, Clone, Copy)]
 enum Style {
+
     /// `+1 555 0100`
     International,
+
     /// `555-0100`
     National,
 }
@@ -23,10 +26,13 @@ enum Style {
 /// A phone number: the digits matter, the display style does not.
 #[derive(Debug, Clone)]
 struct PhoneNumber {
+
     /// Country calling code.
     country_code: u8,
+
     /// Numeric value encoded by this type.
     number: u32,
+
     /// Formatting style selected for the output.
     style: Style,
 }
@@ -40,7 +46,11 @@ impl PartialEq for PhoneNumber {
 impl Eq for PhoneNumber {}
 
 impl Hash for PhoneNumber {
+
+    /// Feeds the phone number fields into the supplied hasher.
+///
     /// # Arguments
+///
     /// * `state` - Shared state and services used to complete the newtype_equality workflow.
     fn hash<H: Hasher>(&self, state: &mut H) {
         // Hash exactly the fields used by `eq`.
@@ -50,6 +60,7 @@ impl Hash for PhoneNumber {
 }
 
 impl fmt::Display for PhoneNumber {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self.style {
@@ -80,8 +91,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Shows that the style does not affect equality or set membership.
 pub fn run() {
     main();
 }

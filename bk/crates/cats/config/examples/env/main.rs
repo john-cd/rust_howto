@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Examples for working with `.env` files using `dotenvy`.
 mod dotenvy;
+
 /// Examples for working with standard environment variables.
 mod env;
+
 /// Examples for working with `.env` files and `envy`.
 mod envy;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `dotenvy` example.
     #[command(name = "dotenvy")]
     Dotenvy,
+
     /// Runs the `env` example.
     #[command(name = "env")]
     Env,
+
     /// Runs the `envy` example.
     #[command(name = "envy")]
     Envy,

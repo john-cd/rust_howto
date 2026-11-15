@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Create an in-memory Tantivy index and run a simple full-text search.
 //!
 //! Full-text search finds documents by the words they contain, not by exact
@@ -57,9 +58,10 @@ fn main() -> tantivy::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Creates an in-memory index, adds documents to it and searches it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> tantivy::Result<()> {
     main()

@@ -4,12 +4,16 @@
 
 /// Minimize a one-variable function with Brent's method.
 mod brent_minimization;
+
 /// Minimize the sphere function with CMA-ES.
 mod cmaes_sphere;
+
 /// Evolve a solution with a genetic algorithm.
 mod genetic_algorithm;
+
 /// Minimize the Rosenbrock function with Nelder-Mead.
 mod nelder_mead_rosenbrock;
+
 /// Minimize a function with particle swarm optimization.
 mod particle_swarm;
 

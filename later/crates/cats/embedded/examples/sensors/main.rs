@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Starts the sensors application and connects its top-level components.
 //! The executable uses this module to initialize services and hand control to the application.
 
@@ -15,6 +16,7 @@ enum BusError {
 }
 
 impl core::fmt::Display for BusError {
+
     /// Formats the simulated bus error for diagnostics.
     fn fmt(&self, formatter: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(formatter, "the simulated sensor rejected the transaction")
@@ -24,6 +26,7 @@ impl core::fmt::Display for BusError {
 impl std::error::Error for BusError {}
 
 impl embedded_hal::i2c::Error for BusError {
+
     /// Maps this example's error to the portable I2C error category.
     fn kind(&self) -> embedded_hal::i2c::ErrorKind {
         embedded_hal::i2c::ErrorKind::Other
@@ -39,6 +42,7 @@ impl ErrorType for MockI2c {
 }
 
 impl I2c for MockI2c {
+
     /// Serves the simulated temperature register in a combined I2C transaction.
     fn transaction(
         &mut self,
@@ -69,8 +73,8 @@ fn read_temperature_c<I2C: I2c>(bus: &mut I2C) -> Result<f32, I2C::Error> {
 fn main() -> anyhow::Result<()> {
     run_example()
 }
-/// Reads and prints one measurement from the mock I2C sensor.
 
+/// Reads and prints one measurement from the mock I2C sensor.
 fn run_example() -> anyhow::Result<()> {
     let mut bus = MockI2c;
     let temperature = read_temperature_c(&mut bus)?;

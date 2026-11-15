@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to configure tracing at runtime,
 //! - dealing with a variable number of `Layer`s of different types.
 //! - reloading the tracing configuration at runtime.
@@ -18,10 +19,13 @@ use tracing_subscriber::reload::Handle;
 
 /// Configuration of the logging outputs.
 struct Config {
+
     /// Whether to log to a file.
     enable_log_file: bool,
+
     /// Whether to log to the standard output.
     enable_stdout: bool,
+
     /// Whether to log to the standard error.
     enable_stderr: bool,
 }
@@ -85,9 +89,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Demonstrates how to configure tracing at runtime, - dealing with a variable number of `Layer`s of different types. - reloading the tracing configuration at runtime.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

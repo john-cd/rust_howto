@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Price European options with the `black_scholes` crate, then recover the
 //! volatility from a price (implied volatility).
 //!
@@ -38,7 +39,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Prices a call and a put, then solves for the volatility that reproduces the call price.
 pub fn run() {
     main();
 }

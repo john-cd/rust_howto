@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A `SlotMap`, which hands out stable keys on insertion.
 //!
 //! A slot map hands out stable keys when you insert, and detects stale keys: a
@@ -10,7 +11,7 @@
 
 use slotmap::SecondaryMap;
 use slotmap::SlotMap;
-/// Runs the example.
+
 /// Inserts into, accesses and removes from a `SlotMap`.
 fn main() {
     // Create a new `SlotMap`:
@@ -61,8 +62,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Inserts into, accesses and removes from a `SlotMap`.
 pub fn run() {
     main();
 }

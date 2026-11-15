@@ -1,26 +1,32 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A counter application using Vizia 0.4's signal-based API.
 
 use vizia::prelude::*;
 
 /// The data of the application.
 pub struct AppData {
+
     /// The current count.
     count: Signal<i32>,
 }
 
 /// The events that the application handles.
 pub enum AppEvent {
+
     /// Increases the count.
     Increment,
+
     /// Decreases the count.
     Decrement,
 }
+
 /// Applies `event` to `count` and returns the updated value.
 ///
 /// # Arguments
+///
 /// * `count` - Current counter value.
 /// * `event` - Increment or decrement action to apply.
 fn apply_event(count: i32, event: &AppEvent) -> i32 {
@@ -31,9 +37,11 @@ fn apply_event(count: i32, event: &AppEvent) -> i32 {
 }
 
 impl Model for AppData {
+
     /// Applies a UI event to the counter state.
     ///
     /// # Arguments
+///
     /// * `_` - Vizia event context, unused by this model.
     /// * `event` - Event emitted by one of the counter controls.
     fn event(&mut self, _: &mut EventContext, event: &mut Event) {
@@ -43,8 +51,11 @@ impl Model for AppData {
         });
     }
 }
+
 /// Runs the Vizia counter window.
+///
 /// # Errors
+///
 /// Returns an error if Vizia cannot initialize or run the event loop.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     example()
@@ -53,6 +64,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 /// Creates and runs the Vizia counter window.
 ///
 /// # Errors
+///
 /// Returns an error if Vizia cannot initialize or run the event loop.
 fn example() -> Result<(), Box<dyn std::error::Error>> {
     Application::new(|cx| {
@@ -82,6 +94,7 @@ fn example() -> Result<(), Box<dyn std::error::Error>> {
 /// Runs the example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     example()

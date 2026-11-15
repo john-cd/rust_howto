@@ -5,8 +5,9 @@
 use anyhow::Result;
 use anyhow::anyhow;
 
-/// # Rhai scripting Rhai is a lightweight, Rust-based scripting language.
+/// Demonstrates embedding Rhai scripts in a Rust application.
 mod rhai;
+
 /// Expose a Rust type to Rhai, keep state in a `Scope` and sandbox scripts.
 mod rhai_types_and_limits;
 

@@ -1,9 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example functions for splitting a path into its components.
 
 // Indices of / in the path
+
 /// Splits `path` into a directory, a file name and an extension.
 fn split_path(path: &str) -> (&str, &str, &str) {
     let mut first = "";
@@ -27,10 +29,12 @@ fn split_path(path: &str) -> (&str, &str, &str) {
 
     (first, second, third)
 }
+
 /// Runs the sample path splitting example.
 fn main() {
     run_example();
 }
+
 /// Splits a sample path into segments and prints the first three.
 fn run_example() {
     let path = "src/playground/examples/split.rs";

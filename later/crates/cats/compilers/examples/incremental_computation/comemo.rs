@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates the usage of the `comemo` crate for fine-grained
 //! memoization.
 //!
@@ -41,8 +42,10 @@ fn compute_derived_value(config: Tracked<'_, Config>) -> i32 {
 /// Define a struct to represent a configuration.
 #[derive(Clone, Debug)]
 struct Config {
+
     /// The value.
     value: i32,
+
     /// A flag.
     a_bool: bool,
 }
@@ -54,11 +57,13 @@ struct Config {
 /// methods, among other [restrictions](https://docs.rs/comemo/0.4.0/comemo/attr.track.html).
 #[track]
 impl Config {
+
     /// Returns the current tracked configuration value.
     fn get_value(&self) -> i32 {
         self.value
     }
 }
+
 /// Calls a memoized function twice with the same tracked argument, then after a
 /// change.
 fn main() {
@@ -93,7 +98,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Calls a memoized function twice with the same tracked argument, then after a change.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This module demonstrates basic usage of axum.
 //!
 //! `axum` is a web application framework designed to work with `tokio`
@@ -26,9 +27,11 @@ use tracing_subscriber::layer::SubscriberExt as _;
 use tracing_subscriber::util::SubscriberInitExt as _;
 
 // Application state.
+
 /// The state shared by all the handlers.
 #[derive(Clone)]
 struct AppState {
+
     /// The name displayed by the state example route.
     app_name: &'static str,
 }
@@ -36,6 +39,7 @@ struct AppState {
 // An Axum "handler" is an async function that accepts zero or more
 // "extractors" as arguments and returns something that can be converted into
 // a response.
+
 /// Returns a greeting.
 async fn root() -> &'static str {
     "Hello, world!"
@@ -46,6 +50,7 @@ async fn root() -> &'static str {
 
 // The `Path` extractor gives us the path parameters (here `id` in
 // `/users/{id}`) and deserializes them.
+
 /// Returns a message that contains the user identifier from the path.
 async fn get_user(Path(id): Path<u64>) -> String {
     format!("User {id}")
@@ -57,12 +62,14 @@ async fn post_user(Path(id): Path<u64>) -> (StatusCode, String) {
 }
 
 // The wildcard e.g. `/assets/{*path}` is passed as a `String`.
+
 /// Returns the path of the requested asset.
 async fn serve_asset(Path(path): Path<String>) -> String {
     path
 }
 
 // `Query` gives the query parameters and deserializes them.
+
 /// Returns the query parameters of the request.
 async fn query(Query(_params): Query<HashMap<String, String>>) -> String {
     format!("Query parameters: {_params:?}")
@@ -71,20 +78,25 @@ async fn query(Query(_params): Query<HashMap<String, String>>) -> String {
 // Buffer the request body and deserialize it as JSON into a
 // `serde_json::Value`. `Json` supports any type that implements
 // `serde::Deserialize`.
+
 /// Returns the JSON body of the request.
 async fn json(Json(payload): Json<serde_json::Value>) -> Json<serde_json::Value> {
     Json(payload)
 }
 
 // Access the application state via the `State` extractor.
+
 /// Returns the application name from the shared state.
+///
 /// # Arguments
+///
 /// * `state` - Application state containing the repositories and services needed by this workflow.
 async fn state(State(state): State<Arc<AppState>>) -> String {
     format!("Application: {}", state.app_name)
 }
 
 // Fallbacks apply to routes that aren't matched by anything in the router.
+
 /// Returns a `404 Not Found` response for the unmatched routes.
 async fn fallback(uri: Uri) -> (StatusCode, String) {
     (StatusCode::NOT_FOUND, format!("No route for {uri}"))
@@ -111,7 +123,11 @@ fn app() -> Router {
 
 /// Builds the router and serves it on a local TCP listener.
 // `tokio` macros and rt-multi-thread features should be enabled.
+
+/// Starts the Axum server for the HTTP routing example.
+///
 /// # Errors
+///
 /// Returns an error if initializing or serving the example server fails.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -121,6 +137,7 @@ async fn main() -> anyhow::Result<()> {
 /// Binds the example server on loopback and serves routes until it stops.
 ///
 /// # Errors
+///
 /// Returns an error if logging, binding, or serving fails.
 async fn example_async() -> anyhow::Result<()> {
     tracing_subscriber::registry()
@@ -141,6 +158,7 @@ async fn example_async() -> anyhow::Result<()> {
 /// Runs the example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     tokio::runtime::Builder::new_current_thread()
@@ -163,10 +181,14 @@ mod tests {
 
     use super::*;
 
+    /// Routes an HTTP request through the example application and returns its status and body.
+///
     /// # Arguments
-    /// * `request` - Input data whose fields determine the requested axum operation.
+///
+    /// * `request` - HTTP request to send through the example application.
     ///
     /// # Panics
+///
     /// Panics if handling the request, collecting its body, or decoding its body as UTF-8 fails.
     async fn send(request: Request<Body>) -> (StatusCode, String) {
         let response = app().oneshot(request).await.expect("infallible");
@@ -194,6 +216,7 @@ mod tests {
         )
         .await
     }
+
     /// Serves the example until it is stopped.
     #[test]
     #[ignore = "binds 127.0.0.1:3000 and serves until stopped"]

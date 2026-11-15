@@ -124,6 +124,7 @@ use proc_macro2::TokenStream;
 use crate::check_correctness;
 
 thread_local! {
+
     /// Shared `dummy impl` used by this module.
     static DUMMY_IMPL: RefCell<Option<TokenStream>> = const { RefCell::new(None) };
 }
@@ -131,6 +132,7 @@ thread_local! {
 /// Sets dummy token stream which will be appended to `compile_error!(msg);...`
 ///
 /// # Arguments
+///
 /// invocations in case you'll emit any errors.
 ///
 /// See [guide](../index.html#guide).
@@ -143,6 +145,7 @@ pub fn set_dummy(dummy: TokenStream) -> Option<TokenStream> {
 /// Same as [`set_dummy`] but, instead of resetting, appends tokens to the
 ///
 /// # Arguments
+///
 /// existing dummy (if any). Behaves as `set_dummy` if no dummy is present.
 pub fn append_dummy(dummy: TokenStream) {
     check_correctness();

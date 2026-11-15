@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generic type parameters on functions, structs, traits and type aliases.
 
 use std::collections::HashMap;
@@ -34,6 +35,7 @@ fn print_debug<T: Debug>(t: T) {
 }
 
 // This could also be written with a `where` clause:
+
 /// Prints a value with its `Debug` representation.
 fn print_debug2<T>(t: T)
 where
@@ -46,6 +48,7 @@ where
 ///
 /// `MyStruct<T>` is a struct that contains a single field `data` of type `T`.
 struct MyStruct<T> {
+
     /// The value held by the struct.
     data: T,
 }
@@ -65,8 +68,10 @@ fn func2<U>(value: MyStruct<U>) -> U {
 /// common hasher type in Rust. This means that if you don't specify a hasher
 /// type when creating a `HashMap`, it will use `RandomState` by default.
 struct MyHashMap<K, V, S = RandomState> {
+
     /// The key-value pairs.
     inner: Vec<(K, V)>,
+
     /// The hasher.
     hasher: S,
 }
@@ -76,6 +81,7 @@ struct MyHashMap<K, V, S = RandomState> {
 /// The type parameters `K`, `V`, and `S` are declared after the `impl` keyword,
 /// indicating that this implementation is generic over these types.
 impl<K, V, S> MyHashMap<K, V, S> {
+
     /// Creates a new `MyHashMap` with the specified hasher.
     fn new(hasher: S) -> Self {
         Self {
@@ -92,6 +98,7 @@ impl<K, V, S> MyHashMap<K, V, S> {
 
 /// Trait with a type parameter.
 trait Processor<T> {
+
     /// Trait type parameters can be used in associated functions, methods, and
     /// other items defined in traits.
     fn process(&self, item: T) -> String;
@@ -106,6 +113,7 @@ struct S;
 // that this implementation is generic over `T`, and used to set the type
 // parameter of the trait.
 impl<T> Processor<T> for S {
+
     /// Processes an item with the generic implementation for `S`.
     fn process(&self, _item: T) -> String {
         String::from("processed by S")
@@ -119,6 +127,7 @@ struct TupleStruct<T>(T, T);
 
 // Generic implementation of a generic trait for a generic struct.
 impl<T> Processor<T> for TupleStruct<T> {
+
     /// Processes an item with the generic implementation for `TupleStruct`.
     fn process(&self, _item: T) -> String {
         String::from("processed by TupleStruct")
@@ -186,8 +195,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the generic functions and uses the generic types.
 pub fn run() {
     main();
 }
@@ -201,6 +209,7 @@ mod tests {
     fn test_generic_type_parameter_example_entry_point() {
         main();
     }
+
     /// Verifies func2.
     #[test]
     fn test_func2() {

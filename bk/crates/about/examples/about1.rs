@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates converting a byte slice representing an IPv6
 //! address to an `IpAddr` type.
 //!
@@ -18,9 +19,11 @@ use std::str;
 // - We have chosen to use the flexible `Result` type alias from the very commonly used `anyhow`
 //   library.
 // - This function does not panic.
+
 /// Converts the example IPv6 byte string into a typed address.
 ///
 /// # Errors
+///
 /// Returns an error if the bytes are not valid UTF-8 or do not parse as an IP address.
 fn example() -> anyhow::Result<IpAddr> {
     // A byte slice representing an IPv6 address:
@@ -46,6 +49,7 @@ fn example() -> anyhow::Result<IpAddr> {
 /// Runs the example and propagates conversion errors.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 fn main() -> anyhow::Result<()> {
     example()?;
@@ -56,6 +60,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the IPv6 address conversion example.
 ///
 /// # Errors
+///
 /// Returns the UTF-8 or address-parsing error produced by `example`.
 pub fn run() -> anyhow::Result<IpAddr> {
     example()
@@ -71,6 +76,7 @@ mod tests {
     fn test_main_entry_point() {
         main().expect("main failed");
     }
+
     /// Verifies example parses ipv6 address.
     #[test]
     fn test_example_parses_ipv6_address() -> Result<(), Box<dyn std::error::Error>> {
@@ -79,12 +85,14 @@ mod tests {
         assert!(addr.is_ipv6());
         Ok(())
     }
+
     /// Verifies invalid UTF-8 is an error.
     #[test]
     fn test_invalid_utf8_is_an_error() {
         let bytes = vec![0xff, 0xfe];
         assert!(str::from_utf8(&bytes).is_err());
     }
+
     /// Verifies invalid address is an error.
     #[test]
     fn test_invalid_address_is_an_error() {

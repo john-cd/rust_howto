@@ -10,6 +10,7 @@ use clap::Subcommand;
 /// Talking to Cassandra over its native protocol with `cassandra-protocol`.
 #[cfg(feature = "cassandra")]
 mod cassandra_protocol;
+
 /// Connecting to Cassandra with the `cdrs-tokio` async client.
 #[cfg(feature = "cassandra")]
 mod cdrs_tokio;
@@ -19,6 +20,7 @@ mod cdrs_tokio;
 #[derive(Parser)]
 #[command(arg_required_else_help = true)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Commands,
@@ -28,10 +30,12 @@ struct Cli {
 #[cfg(feature = "cassandra")]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `cassandra_protocol` example.
     #[cfg(feature = "cassandra")]
     #[command(name = "cassandra_protocol")]
     CassandraProtocol,
+
     /// Runs the `cdrs_tokio` example.
     #[cfg(feature = "cassandra")]
     #[command(name = "cdrs_tokio")]
@@ -42,6 +46,7 @@ enum Commands {
 fn main() -> anyhow::Result<()> {
     run()
 }
+
 /// Runs the example selected on the command line.
 fn run() -> anyhow::Result<()> {
     #[cfg(feature = "cassandra")]

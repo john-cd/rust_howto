@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use backtraces to debug errors.
 //!
 //! The example code defines a struct `Rgb` that represents a color in RGB
@@ -16,15 +17,19 @@ use serde::Deserialize;
 /// An RGB color.
 #[derive(Debug, Deserialize)]
 struct Rgb {
+
     /// The red component.
     red: u8,
+
     /// The blue component.
     blue: u8,
+
     /// The green component.
     green: u8,
 }
 
 impl Rgb {
+
     /// The `Rgb::from_csv` function parses a CSV string and returns an `Rgb`
     /// struct.
     fn from_csv(csv_data: &[u8]) -> Result<Self> {
@@ -40,6 +45,7 @@ impl Rgb {
 // The `UpperHex` trait is used to format the `Rgb` struct as a hexadecimal
 // string.
 impl fmt::UpperHex for Rgb {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let hexa =
@@ -60,9 +66,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// The `main` function parses a CSV string and prints the result.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

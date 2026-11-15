@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Destructuring tuples, arrays and structs into variables.
 
 /// Destructures several kinds of values in `let` statements.
@@ -15,8 +16,10 @@ fn main() {
     println!("x: {x}, y: {y}");
 
     struct Point {
+
         /// The horizontal coordinate.
         x: i32,
+
         /// The vertical coordinate.
         y: i32,
     }
@@ -38,8 +41,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Destructures several kinds of values in `let` statements.
 pub fn run() {
     main();
 }

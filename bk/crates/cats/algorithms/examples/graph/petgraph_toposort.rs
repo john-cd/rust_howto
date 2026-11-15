@@ -1,20 +1,24 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Topological sorting of a Directed Acyclic Graph (DAG) using `petgraph`.
 //!
 //! ### What is Topological Sorting?
+//!
 //! Topological sorting produces a linear sequence of graph nodes such that for
 //! every directed edge $u \to v$, node $u$ appears before node $v$ in the
 //! sequence.
 //!
 //! ### Directed Acyclic Graph (DAG) Requirement
+//!
 //! Topological sorting is **only** defined for Directed Acyclic Graphs (DAGs).
 //! If a graph contains a directed cycle ($A \to B \to C \to A$), no valid
 //! linear dependency ordering exists, and `toposort` returns a cycle detection
 //! error.
 //!
 //! ### Purpose & Use Cases
+//!
 //! - **Build Systems & Compilers**: Resolving compilation order for source modules and crate
 //!   dependencies (e.g., Cargo build graph).
 //! - **Task Schedulers**: Determining valid execution sequences for data workflow pipelines (e.g.,
@@ -82,6 +86,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `petgraph toposort` example runs.
     #[test]
     fn test_petgraph_toposort_example_entry_point() {

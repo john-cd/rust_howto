@@ -4,6 +4,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates vector creation, manipulation, iteration, and
 //! slices in Rust.
 //!
@@ -153,6 +154,7 @@ fn demonstrate_slices() {
 
     // In Rust, it's common to use slices, rather than vectors, as
     // arguments, when we just want to provide read access:
+
     /// Prints each value in an integer slice.
     fn read_vec(v: &[i32]) {
         println!("Inside read_vec: {v:?}");

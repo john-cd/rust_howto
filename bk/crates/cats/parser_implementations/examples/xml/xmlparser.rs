@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Use `xmlparser` when an application needs low-level tokens and control over
 //! XML processing without building a tree. Prefer `roxmltree` for convenient
 //! read-only tree access or `quick-xml` for higher-level streaming APIs.
@@ -49,6 +50,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the example and propagates tokenization errors.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Emitting a debug message with the `log` crate.
 //!
 //! Log levels rank messages: `error`, `warn`, `info`, `debug` and `trace`, from
@@ -11,7 +12,7 @@
 fn execute_query(query: &str) {
     log::debug!("Executing query: {query}");
 }
-/// Runs the example.
+
 /// Initializes `env_logger` and runs a query, which logs a debug message.
 fn main() {
     // `env_logger` is a simple logger that can be configured via environment
@@ -23,8 +24,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Initializes `env_logger` and runs a query, which logs a debug message.
 pub fn run() {
     main();
 }

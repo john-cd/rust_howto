@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Repetitions in declarative macros.
 
 /// Returns the sum of the expressions passed as arguments.
@@ -32,8 +33,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Sums a list of numbers with a macro.
 pub fn run() {
     main();
 }

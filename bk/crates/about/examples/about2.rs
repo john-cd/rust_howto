@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to parse a URL and extract a portion of it.
 //!
 //! A URL has parts: scheme, host, port, path, query and fragment. A parser
@@ -23,6 +24,7 @@ fn example() -> anyhow::Result<String> {
     println!("cleaned: {cleaned}");
     Ok(cleaned.to_owned())
 }
+
 /// This example demonstrates how to parse a URL and extract a portion of it.
 fn main() -> anyhow::Result<()> {
     example().map(|_| ())
@@ -32,6 +34,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example().map(|_| ())
@@ -47,12 +50,14 @@ mod tests {
     fn test_main_entry_point() {
         main().expect("main failed");
     }
+
     /// Verifies example strips the query.
     #[test]
     fn test_example_strips_the_query() -> Result<(), Box<dyn std::error::Error>> {
         assert_eq!(example()?, "https://httpbin.org/cookies/set");
         Ok(())
     }
+
     /// Verifies invalid URL is an error.
     #[test]
     fn test_invalid_url_is_an_error() {

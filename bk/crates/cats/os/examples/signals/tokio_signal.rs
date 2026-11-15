@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Shut an async service down on Ctrl-C or SIGTERM with Tokio.
 //!
 //! Services should shut down gracefully: stop accepting new work, finish what
@@ -53,6 +54,7 @@ async fn serve_until(shutdown: impl Future<Output = ()>) -> u32 {
 /// timeout so that it terminates without a keyboard.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> anyhow::Result<()> {
     let runtime = tokio::runtime::Runtime::new()?;
@@ -73,6 +75,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example_body()
@@ -94,6 +97,7 @@ mod tests {
         let ticks = serve_until(time::sleep(Duration::from_millis(30))).await;
         assert!(ticks >= 1);
     }
+
     /// Runs completes.
     #[test]
     fn run_completes() -> anyhow::Result<()> {

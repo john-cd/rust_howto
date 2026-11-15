@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates the use of crossbeam channels for message passing between
 //! threads.
 //!
@@ -27,10 +28,12 @@ fn spawn_producer(sender: Sender<&'static str>, message: &'static str) -> JoinHa
             .expect("the message passing crossbeam channel example invariant should hold");
     })
 }
+
 /// Receives every message currently in the channel without blocking.
 fn drain_without_blocking(receiver: &Receiver<&'static str>) -> Vec<&'static str> {
     receiver.try_iter().collect()
 }
+
 /// Disconnects the channel after sending one last message, then receives what remains.
 /// Dropping the only sender disconnects the channel, so iterating over the receiver ends instead
 /// of blocking forever.
@@ -105,8 +108,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates the use of crossbeam channels for message passing between threads.
 pub fn run() {
     main();
 }

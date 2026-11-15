@@ -1,14 +1,17 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `use` keyword to bring items into
 //! scope without having to write their full path.
 
 /// Modules are used to organize code into logical units.
 mod a {
+
     /// Nested module.
     /// We prefix `mod b` with `pub` to make it public.
     pub mod b {
+
         /// Public function.
         pub fn fn_in_b() -> &'static str {
             "in b!"
@@ -57,8 +60,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Refers to items with full and shortened paths and with `use` declarations.
 pub fn run() {
     main();
 }
@@ -73,12 +75,14 @@ mod tests {
     fn test_main() {
         main();
     }
+
     /// Verifies full and shortened paths agree.
     #[test]
     fn test_full_and_shortened_paths_agree() {
         assert_eq!(a::b::fn_in_b(), "in b!");
         assert_eq!(b::fn_in_b(), a::b::fn_in_b());
     }
+
     /// Verifies use for constants and type aliases.
     #[test]
     fn test_use_for_constants_and_type_aliases() {

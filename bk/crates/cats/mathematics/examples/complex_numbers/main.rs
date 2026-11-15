@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Demonstrates the manipulation of complex numbers.
 mod add_complex;
+
 /// Creates complex numbers with integer and floating-point components.
 mod create_complex;
+
 /// This example shows how to use the `exp` function on a complex number.
 mod mathematical_functions;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `add_complex` example.
     #[command(name = "add_complex")]
     AddComplex,
+
     /// Runs the `create_complex` example.
     #[command(name = "create_complex")]
     CreateComplex,
+
     /// Runs the `mathematical_functions` example.
     #[command(name = "mathematical_functions")]
     MathematicalFunctions,
@@ -50,7 +56,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

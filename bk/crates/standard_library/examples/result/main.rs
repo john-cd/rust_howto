@@ -8,14 +8,17 @@ use clap::Subcommand;
 /// `Result` is a type that represents either success (`Ok`) or failure (`Err`): ``` pub enum
 /// Result<T, E> { Ok(T), Err(E), } ```
 mod result;
+
 /// Example of `Result` methods for value transformation and control flow.
 mod result2;
+
 /// Demonstrates the use of `as_ref`, `as_deref`, and `as_mut` methods on `Result`.
 mod result3;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -24,12 +27,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `result` example.
     #[command(name = "result")]
     Result,
+
     /// Runs the `result2` example.
     #[command(name = "result2")]
     Result2,
+
     /// Runs the `result3` example.
     #[command(name = "result3")]
     Result3,

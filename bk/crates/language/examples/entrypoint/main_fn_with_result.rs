@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of a `main` function returning a `Result`,
 //! in this case a specialized `Result` type for I/O operations.
 //!
@@ -22,9 +23,10 @@ fn main() -> std::io::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Example of a `main` function returning a `Result`, in this case a specialized `Result` type for I/O operations.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> std::io::Result<()> {
     main()

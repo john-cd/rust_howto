@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A calculator in two stages: a `winnow` lexer that produces zero-copy
 //! tokens with byte spans, then a hand-written precedence-climbing parser
 //! that builds and evaluates an expression tree.
@@ -35,6 +36,7 @@ enum Token<'a> {
 type Spanned<'a> = (Token<'a>, Range<usize>);
 
 type Input<'a> = LocatingSlice<&'a str>;
+
 /// Parses one token.
 fn token<'a>(input: &mut Input<'a>) -> ModalResult<Token<'a>, ContextError> {
     alt((
@@ -49,6 +51,7 @@ fn token<'a>(input: &mut Input<'a>) -> ModalResult<Token<'a>, ContextError> {
     ))
     .parse_next(input)
 }
+
 /// Splits `source` into tokens, skipping whitespace.
 fn lex(source: &str) -> Result<Vec<Spanned<'_>>, String> {
     let mut input = LocatingSlice::new(source);
@@ -81,17 +84,25 @@ enum Expr<'a> {
 
 /// Parser over a token vector; `pos` is the next token to read.
 struct ExprParser<'a> {
+
     /// Collection of tokens values consumed by expr parser operations.
     tokens: Vec<Spanned<'a>>,
+
     /// Current position in the input.
     pos: usize,
+
     /// End of the selected range.
     end: usize,
 }
 
 impl<'a> ExprParser<'a> {
-    /// Constructs a usable initial expr parser value with the defaults required by the calc parser
-    /// component.
+
+    /// Creates a parser positioned at the first token and limited by the supplied end index.
+    ///
+    /// # Arguments
+///
+    /// * `tokens` - Spanned tokens to parse.
+    /// * `end` - Exclusive end index for the parser's token range.
     fn new(tokens: Vec<Spanned<'a>>, end: usize) -> Self {
         Self {
             tokens,
@@ -173,6 +184,7 @@ fn parse(source: &str) -> Result<Expr<'_>, String> {
     }
     Ok(expr)
 }
+
 /// Evaluates an expression; `pi` is the only variable.
 fn eval(expr: &Expr<'_>) -> Result<f64, String> {
     Ok(match expr {
@@ -198,7 +210,7 @@ fn eval(expr: &Expr<'_>) -> Result<f64, String> {
 fn calculate(source: &str) -> Result<f64, String> {
     eval(&parse(source)?)
 }
-/// Runs the example.
+
 /// Runs representative valid and invalid calculator expressions.
 fn main() {
     for source in ["1 + 2 * 3", "2 ^ 3 ^ 2", "-2 ^ 2", "(1 + 2) * 3", "1 +"] {
@@ -210,8 +222,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs representative valid and invalid calculator expressions.
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

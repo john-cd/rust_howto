@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to get the current UTC time and date using the chrono
 //! crate. It prints the time in 12-hour format with AM/PM, seconds since
 //! midnight, and the date in year-month-day format.
@@ -42,8 +43,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates how to get the current UTC time and date using the chrono crate. It prints the time in 12-hour format with AM/PM, seconds since midnight, and the date in year-month-day format.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of using the `flate2` crate.
 //!
 //! `flate2` is a stream compression library that supports DEFLATE, zlib,
@@ -44,9 +45,11 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 // ANCHOR: gzip-file
+
 /// Compresses a source file to gzip and restores it to another temporary file.
 ///
 /// # Errors
+///
 /// Returns an error if a temporary file cannot be created or any file
 /// operation or compression step fails.
 fn gzip_file_round_trip() -> anyhow::Result<()> {
@@ -87,9 +90,10 @@ fn gzip_file_round_trip() -> anyhow::Result<()> {
 }
 // ANCHOR_END: gzip-file
 
-/// Runs the example.
+/// Compresses and decompresses a byte string with zlib and checks the round trip.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()?;

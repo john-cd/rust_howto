@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Selecting the global allocator with Cargo features.
 //!
 //! Enable one of `use-mimalloc` and `use-jemalloc`; with neither, the system
@@ -12,6 +13,7 @@
 compile_error!("select only one global allocator feature");
 
 #[cfg(feature = "use-mimalloc")]
+
 /// Shared `global` used by this module.
 #[global_allocator]
 static GLOBAL: mimalloc::MiMalloc = mimalloc::MiMalloc;
@@ -21,6 +23,7 @@ static GLOBAL: mimalloc::MiMalloc = mimalloc::MiMalloc;
     not(feature = "use-mimalloc"),
     not(target_env = "msvc")
 ))]
+
 /// Shared `global` used by this module.
 #[global_allocator]
 static GLOBAL: tikv_jemallocator::Jemalloc = tikv_jemallocator::Jemalloc;
@@ -48,7 +51,6 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the operation.
-/// Runs the example.
 pub fn run() {
     // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
     let entry = main;

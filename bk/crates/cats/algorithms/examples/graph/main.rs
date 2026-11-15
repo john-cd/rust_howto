@@ -9,22 +9,29 @@ use clap::Subcommand;
 
 /// Implicit grid pathfinding using the A* algorithm and the `pathfinding` crate.
 mod pathfinding_astar;
+
 /// Finds a shortest path on a weighted graph with A* and Manhattan distance.
 mod petgraph_astar;
+
 /// Visits graph nodes level by level from the start node.
 mod petgraph_bfs;
+
 /// Explores a graph depth first to illustrate branch traversal order.
 mod petgraph_dfs;
+
 /// Computes single-source shortest paths in a weighted directed graph.
 mod petgraph_dijkstra;
+
 /// Builds a minimum spanning tree of a weighted undirected graph with Kruskal's algorithm.
 mod petgraph_mst;
+
 /// Orders tasks so each dependency precedes the task that needs it.
 mod petgraph_toposort;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -33,30 +40,37 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Finds a route through a grid with A* pathfinding.
     #[command(name = "pathfinding_astar")]
     PathfindingAstar,
+
     /// Finds a low-cost route through a weighted graph with A*.
     #[command(name = "petgraph_astar")]
     Astar,
+
     /// Traverses an unweighted graph level by level with BFS.
     #[command(name = "petgraph_bfs")]
     Bfs,
+
     /// Traverses a graph depth first with DFS.
     #[command(name = "petgraph_dfs")]
     Dfs,
+
     /// Finds shortest paths from one source in a weighted graph.
     #[command(name = "petgraph_dijkstra")]
     Dijkstra,
+
     /// Orders task dependencies with a topological sort.
     #[command(name = "petgraph_toposort")]
     Toposort,
+
     /// Builds a minimum spanning tree with Kruskal's algorithm.
     #[command(name = "petgraph_mst")]
     Mst,
 }
 
-/// Runs the example selected on the command line.
+/// Invokes the graph module selected by the subcommand.
 fn dispatch(cli: Cli) {
     if let Some(command) = cli.command {
         match command {
@@ -80,7 +94,8 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Parses the command line and dispatches to the selected graph example.
+
+/// Parses the graph subcommand and starts its matching example.
 fn main() {
     dispatch(Cli::parse());
 }

@@ -4,7 +4,7 @@
 
 /// Snapshot testing with `insta`.
 mod insta;
-/// Runs the example.
+
 /// Runs the testing example.
 fn main() {
     insta::run();

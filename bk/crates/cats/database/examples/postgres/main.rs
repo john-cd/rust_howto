@@ -10,12 +10,15 @@ use clap::Subcommand;
 /// Group PostgreSQL rows by artist nationality and count each group.
 #[cfg(feature = "postgres")]
 mod aggregate_data;
+
 /// This example demonstrates using generated, type-safe PostgreSQL queries
 #[cfg(feature = "postgres")]
 mod cornucopia;
+
 /// This example demonstrates creating database tables in PostgreSQL using the
 #[cfg(feature = "postgres")]
 mod create_tables;
+
 /// This example demonstrates inserting rows into PostgreSQL and querying the
 #[cfg(feature = "postgres")]
 mod insert_query_data;
@@ -24,6 +27,7 @@ mod insert_query_data;
 #[cfg(feature = "postgres")]
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Commands,
@@ -33,18 +37,22 @@ struct Cli {
 #[cfg(feature = "postgres")]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `aggregate_data` example.
     #[cfg(feature = "postgres")]
     #[command(name = "aggregate_data")]
     AggregateData,
+
     /// Runs the `cornucopia` example.
     #[cfg(feature = "postgres")]
     #[command(name = "cornucopia")]
     Cornucopia,
+
     /// Runs the `create_tables` example.
     #[cfg(feature = "postgres")]
     #[command(name = "create_tables")]
     CreateTables,
+
     /// Runs the `insert_query_data` example.
     #[cfg(feature = "postgres")]
     #[command(name = "insert_query_data")]
@@ -77,6 +85,7 @@ fn main() -> anyhow::Result<()> {
 
 /// Rejects invocations that do not select a PostgreSQL example.
 #[cfg(test)]
+
 /// Tests the `main` example and its documented behavior.
 #[cfg(feature = "postgres")]
 mod tests {

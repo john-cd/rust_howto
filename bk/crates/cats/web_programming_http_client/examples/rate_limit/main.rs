@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Client-side rate limiting.
 //!
 //! Limit the rate of outgoing calls with a token bucket.
@@ -18,9 +19,11 @@ use governor::clock::FakeRelativeClock;
 fn quota() -> Quota {
     Quota::per_second(NonZeroU32::MIN.saturating_add(1))
 }
+
 /// Calls `call` at most as often as the quota allows, waiting when necessary.
 ///
 /// # Arguments
+///
 /// * `count` - Bound used to limit accepted data or the amount of work performed.
 async fn rate_limited_calls(count: u32) -> Vec<u32> {
     let limiter = RateLimiter::direct(quota());
@@ -33,6 +36,7 @@ async fn rate_limited_calls(count: u32) -> Vec<u32> {
     }
     done
 }
+
 /// Runs the rate-limited calls and prints the deterministic fake-clock result.
 #[tokio::main]
 async fn main() {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `diesel_oci` is a Diesel backend and connection implementation for Oracle
 //! databases.
 //!
@@ -28,6 +29,7 @@ diesel::table! {
 
     /// The table containing all users
     users {
+
         /// The user's unique id
         id -> Integer,
         username -> Text,
@@ -38,12 +40,15 @@ diesel::table! {
 // The `diesel::table!` macro is used to define a table schema in Diesel.
 
 // Define a struct to hold the query results.
+
 /// A row of the `users` table.
 #[derive(QueryableByName, Queryable, PartialEq, Debug)]
 #[diesel(table_name = users)]
 struct User {
+
     /// The user name.
     username: String,
+
     /// The password.
     password: String,
 }
@@ -93,9 +98,10 @@ fn establish_connection(
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Connects to an Oracle database and queries the users.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

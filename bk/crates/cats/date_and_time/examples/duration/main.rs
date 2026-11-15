@@ -4,7 +4,7 @@
 
 /// This example demonstrates how to profile the execution time of a function
 mod profile;
-/// Runs the example.
+
 /// Runs the duration example.
 fn main() {
     profile::run();

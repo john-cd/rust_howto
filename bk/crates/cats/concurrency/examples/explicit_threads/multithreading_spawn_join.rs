@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Spawn threads and collect their results through `JoinHandle::join`.
 //!
 //! A thread runs code concurrently with the rest of the program. `spawn` starts
@@ -38,6 +39,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the spawn-and-join example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

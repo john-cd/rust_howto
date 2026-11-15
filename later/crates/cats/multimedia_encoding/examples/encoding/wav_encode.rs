@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encode PCM audio samples to a WAV buffer using `hound`.
 //!
 //! PCM (pulse-code modulation) samples are plain numbers that describe a sound
@@ -48,9 +49,10 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Encodes generated PCM sine wave samples into a WAV stream in memory.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
@@ -59,6 +61,7 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Encodes and decodes WAV audio without changing its contents.
     #[test]
     fn test_wav_encode_roundtrip() {

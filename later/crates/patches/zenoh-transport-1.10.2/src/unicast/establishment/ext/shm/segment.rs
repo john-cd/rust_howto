@@ -38,6 +38,7 @@ use zenoh_shm::version::SHM_VERSION;
 
 /// **********************************
 // Segment
+
 /// **********************************
 pub(crate) type AuthSegmentID = u32;
 pub(crate) type AuthChallenge = u64;

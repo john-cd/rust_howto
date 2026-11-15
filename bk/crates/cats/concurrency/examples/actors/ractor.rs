@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! An actor with the `ractor` crate: a greeter that counts the greetings it
 //! handles.
 //!
@@ -31,10 +32,13 @@ use tokio::sync::oneshot;
 // ```
 
 // Message type that the actor accepts:
+
 /// A message that asks the greeter to greet someone and return a reply.
 struct Greet {
+
     /// Name to include in the greeting.
     name: String,
+
     /// One-use channel for the greeting reply.
     reply_to: oneshot::Sender<String>,
 }
@@ -43,12 +47,15 @@ struct Greet {
 impl ractor::Message for Greet {}
 
 // Main actor struct:
+
 /// An actor that greets and counts.
 struct Greeter;
 
 // Inner state of the actor:
+
 /// The state of a [`Greeter`].
 struct GreeterState {
+
     /// Number of greetings handled so far.
     count: u64,
 }
@@ -72,6 +79,7 @@ impl ractor::Actor for Greeter {
     }
 
     // Handle incoming messages from the event processing loop.
+
     /// Handles the value.
     async fn handle(
         &self,
@@ -100,9 +108,11 @@ impl ractor::Actor for Greeter {
         Ok(())
     }
 }
+
 /// Sends one greeting request and returns the actor's reply.
 ///
 /// # Errors
+///
 /// Returns an error if the actor cannot start, receive its message, reply, or
 /// join successfully.
 async fn run_actor() -> anyhow::Result<String> {
@@ -124,9 +134,11 @@ async fn run_actor() -> anyhow::Result<String> {
     handle.await.context("joining the greeter actor task")?;
     Ok(reply)
 }
+
 /// Runs the asynchronous Ractor example on a Tokio runtime.
 ///
 /// # Errors
+///
 /// Returns an error if the actor cannot complete its message exchange.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -138,6 +150,7 @@ async fn main() -> anyhow::Result<()> {
 /// Runs the Ractor actor example.
 ///
 /// # Errors
+///
 /// Returns an error if the actor cannot complete its message exchange.
 pub fn run() -> anyhow::Result<()> {
     main()

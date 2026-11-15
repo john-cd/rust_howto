@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Extracts key phrases from a paragraph with RAKE (Rapid Automatic Keyword
 //! Extraction).
 //!
@@ -12,7 +13,12 @@
 use rake::KeywordScore;
 use rake::Rake;
 use rake::StopWords;
-/// Runs the example.
+
+/// Extracts and ranks key phrases from a paragraph with RAKE.
+///
+/// # Panics
+///
+/// Panics if RAKE returns different top phrases than the example expects.
 fn main() -> anyhow::Result<()> {
     // RAKE splits the text at stop words and punctuation. Real applications
     // load a full list for their language, e.g. with `StopWords::from_file`.
@@ -49,10 +55,11 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Extracts and ranks key phrases from a paragraph with RAKE.
 ///
-/// # Errors
-/// Returns an error if a step of the example fails.
+/// # Panics
+///
+/// Panics if RAKE returns different top phrases than the example expects.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

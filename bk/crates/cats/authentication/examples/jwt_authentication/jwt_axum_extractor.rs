@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Extract a JWT from the HTTP `Authorization` header and check a role in Axum.
 //!
 //! A JWT (JSON Web Token) is a signed token that carries claims such as the
@@ -25,16 +26,21 @@ use super::jwt::Claims;
 /// Holds the HS256 key shared by the router's request extractors.
 #[derive(Clone)]
 pub struct JwtSecret(
+
     /// Secret bytes used to verify HS256 signatures.
     Arc<[u8]>,
 );
 
 impl JwtSecret {
+
     /// Creates a key after checking the minimum HS256 key size.
     ///
     /// # Arguments
+///
     /// * `secret` - At least 32 bytes of key material used to sign and verify HS256 tokens.
+///
     /// # Errors
+///
     /// Returns an error when `secret` is shorter than 32 bytes.
     pub fn new(secret: impl AsRef<[u8]>) -> anyhow::Result<Self> {
         let secret = secret.as_ref();
@@ -53,6 +59,7 @@ impl JwtSecret {
 
 /// Claims extracted from a valid bearer token.
 pub struct AuthClaims(
+
     /// Verified JWT claims attached to the request.
     Claims,
 );
@@ -61,6 +68,7 @@ impl<S> FromRequestParts<S> for AuthClaims
 where
     S: Send + Sync,
 {
+
     /// HTTP status and message returned when extracting claims fails.
     type Rejection = (StatusCode, &'static str);
 
@@ -86,9 +94,11 @@ where
 /// Returns the token only when the `Authorization` header uses Bearer syntax.
 ///
 /// # Arguments
+///
 /// * `parts` - Request parts whose `Authorization` header is inspected.
 ///
 /// # Returns
+///
 /// The token when the header contains exactly `Bearer` and one token; otherwise `None`.
 fn bearer_token(parts: &Parts) -> Option<&str> {
     let value = parts.headers.get(AUTHORIZATION)?.to_str().ok()?;
@@ -97,23 +107,28 @@ fn bearer_token(parts: &Parts) -> Option<&str> {
     let token = words.next()?;
     (scheme.eq_ignore_ascii_case("Bearer") && words.next().is_none()).then_some(token)
 }
+
 /// Checks whether a verified token grants the requested role.
 ///
 /// # Arguments
+///
 /// * `claims` - Verified claims whose role list is checked.
 /// * `required_role` - Role name that must be present in `claims`.
 pub fn role_allowed(claims: &Claims, required_role: &str) -> bool {
     claims.roles.iter().any(|role| role == required_role)
 }
+
 /// Builds a router whose admin endpoint requires a valid bearer token and the admin role.
 ///
 /// # Arguments
+///
 /// * `secret` - HS256 key used by the request extractor.
 pub fn admin_router(secret: JwtSecret) -> Router {
     Router::new()
         .route("/admin", get(admin_route))
         .layer(Extension(secret))
 }
+
 /// Returns 200 for an admin token and 403 for a valid token without that role.
 async fn admin_route(AuthClaims(claims): AuthClaims) -> StatusCode {
     if role_allowed(&claims, "admin") {
@@ -127,6 +142,7 @@ async fn admin_route(AuthClaims(claims): AuthClaims) -> StatusCode {
 /// Builds the protected Axum router with a valid test signing key.
 ///
 /// # Errors
+///
 /// Returns an error if the test signing key cannot be constructed.
 pub fn run() -> anyhow::Result<Router> {
     let secret = JwtSecret::new([0x42_u8; 32])?;

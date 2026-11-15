@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates parsing and serializing JSON data using the `serde_json` crate.
 //!
 //! JSON is the most common text format for web APIs. `serde_json` parses it
@@ -11,13 +12,17 @@ use serde::Deserialize;
 use serde::Serialize;
 use serde_json::Result;
 use serde_json::Value;
+
 /// Represents a user with a name, age, and a list of phone numbers.
 #[derive(Deserialize, Serialize, Debug)]
 struct User {
+
     /// The name of the user.
     name: String,
+
     /// The age of the user.
     age: u8,
+
     /// The phone numbers of the user.
     phones: Vec<String>,
 }
@@ -74,9 +79,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Demonstrates parsing and serializing JSON data using the `serde_json` crate.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

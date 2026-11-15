@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Snapshot-test the code that a derive helper generates.
 //!
 //! `cargo expand` shows the code produced by a macro, and `macrotest` compares
@@ -18,12 +19,15 @@ use syn::DeriveInput;
 /// Generates `impl Named for <type>` returning the type's name.
 ///
 /// # Errors
+///
 /// Returns an error if `input` is not a valid struct, enum or union.
 ///
 /// # Arguments
+///
 /// * `input` - Token stream containing the derive input.
 ///
 /// # Returns
+///
 /// Tokens that implement the `Named` trait for the input type.
 fn derive_named(input: TokenStream) -> syn::Result<TokenStream> {
     let DeriveInput {
@@ -39,6 +43,7 @@ fn derive_named(input: TokenStream) -> syn::Result<TokenStream> {
         }
     })
 }
+
 /// Formats generated tokens as readable Rust source, like `cargo expand`.
 ///
 /// # Errors
@@ -46,6 +51,7 @@ fn derive_named(input: TokenStream) -> syn::Result<TokenStream> {
 /// Returns an error if the tokens are not a valid Rust file.
 ///
 /// # Returns
+///
 /// The formatted Rust source generated from `tokens`.
 fn expand_to_string(tokens: TokenStream) -> Result<String> {
     let file: syn::File = syn::parse2(tokens)?;
@@ -72,6 +78,7 @@ fn macro_tools_example() -> Result<()> {
     assert_eq!(expanded, EXPECTED);
     Ok(())
 }
+
 /// Runs the snapshot example as a binary.
 fn main() -> Result<()> {
     macro_tools_example()

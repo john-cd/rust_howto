@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Assemble a WebAssembly module and inspect what it asks of its host.
 //!
 //! A `.wasm` file is a portable binary: it starts with the magic bytes
@@ -27,8 +28,10 @@ const MODULE: &str = r#"
 /// What a module requires from, and offers to, its host.
 #[derive(Debug, Default, PartialEq, Eq)]
 struct Interface {
+
     /// Imported functions as `module.name`, which the host must provide.
     imports: Vec<String>,
+
     /// Exported functions, which the host can call.
     exports: Vec<String>,
 }
@@ -70,6 +73,7 @@ fn main() -> Result<()> {
 /// Assembles the WebAssembly module and prints its imports and exports.
 ///
 /// # Errors
+///
 /// Returns an error if the WAT text cannot be assembled or parsed.
 fn example() -> Result<()> {
     let wasm = wat::parse_str(MODULE)?;

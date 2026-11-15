@@ -8,18 +8,22 @@ use clap::Subcommand;
 /// Loads and validates the settings that control configuration behavior. Composition code uses this
 /// module before starting services so invalid configuration is reported early.
 mod config_hierarchical;
+
 /// Loads and validates the settings that control configuration behavior. Composition code uses this
 /// module before starting services so invalid configuration is reported early.
 mod config_singleton;
+
 /// Loads and validates the settings that control configuration behavior. Composition code uses this
 /// module before starting services so invalid configuration is reported early.
 mod config_testing;
+
 /// Loads a typed configuration with confy.
 mod confy;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -28,15 +32,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `config_hierarchical` example.
     #[command(name = "config_hierarchical")]
     ConfigHierarchical,
+
     /// Runs the `config_singleton` example.
     #[command(name = "config_singleton")]
     ConfigSingleton,
+
     /// Runs the `config_testing` example.
     #[command(name = "config_testing")]
     ConfigTesting,
+
     /// Runs the `confy` example.
     #[command(name = "confy")]
     Confy,

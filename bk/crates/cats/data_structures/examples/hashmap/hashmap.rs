@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates the basic usage of `HashMap` in Rust.
 //!
 //! `HashMap` is a collection that stores key-value pairs, where each key is
@@ -74,8 +75,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Inserts, reads, updates and iterates over the entries of a `HashMap`.
 pub fn run() {
     main();
 }

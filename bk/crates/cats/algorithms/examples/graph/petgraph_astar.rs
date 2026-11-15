@@ -1,10 +1,12 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Shortest path search on a weighted graph using the A* algorithm with
 //! `petgraph`.
 //!
 //! ### Graph Structure and Search Setup
+//!
 //! In this example, nodes are represented as 2D coordinate positions `(x, y)`
 //! on a plane, and directed edges represent valid travel segments between nodes
 //! with associated numerical costs:
@@ -14,6 +16,7 @@
 //! - Node `D` `(1, 1)` connects to `E` `(2, 1)` (cost 1).
 //!
 //! ### Heuristic Function & Path Finding
+//!
 //! The heuristic function estimates the remaining distance from any node to the
 //! target goal `E` `(2, 1)` using Manhattan distance (`|x1 - x2| + |y1 - y2|`).
 //! Because Manhattan distance never overestimates true grid movement cost, it
@@ -22,11 +25,13 @@
 //! with total cost 3 (`A` -> `D` -> `E` or `A` -> `B` -> `C` -> `E`).
 //!
 //! ### What is the A* Search Algorithm?
+//!
 //! A* (pronounced "A-star") is an informed graph traversal and pathfinding
 //! algorithm that computes the shortest path between a starting node and a
 //! target goal node.
 //!
 //! ### How Does A* Work?
+//!
 //! A* extends Dijkstra's algorithm by using a heuristic function $h(n)$ to
 //! guide its search toward the target. It evaluates candidate nodes using the
 //! cost function:
@@ -36,6 +41,7 @@
 //! - **$f(n)$**: The estimated total cost of a path passing through node $n$.
 //!
 //! ### Heuristic Admissibility
+//!
 //! For A* to guarantee finding the optimal (shortest) path, the heuristic
 //! function $h(n)$ must be **admissible**. An admissible heuristic never
 //! overestimates the true remaining cost to reach the goal. Common admissible
@@ -43,11 +49,13 @@
 //! straight-line distance.
 //!
 //! ### Comparison with Dijkstra's Algorithm
+//!
 //! Dijkstra's algorithm searches blindly in all directions ($h(n) = 0$). By
 //! contrast, A* uses $h(n)$ to prioritize exploring nodes closest to the
 //! goal, dramatically reducing search effort on large graphs.
 //!
 //! ### Typical Use Cases
+//!
 //! - Game development for non-player character (NPC) pathfinding.
 //! - GPS and map routing for vehicles and pedestrians.
 //! - Robot motion planning and spatial navigation.
@@ -117,6 +125,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `petgraph astar` example runs.
     #[test]
     fn test_petgraph_astar_example_entry_point() {

@@ -10,12 +10,15 @@ use clap::Subcommand;
 /// A reactive counter application with Floem.
 #[cfg(feature = "floem")]
 mod floem;
+
 /// A counter application with `iced`.
 #[cfg(feature = "iced")]
 mod iced;
+
 /// A counter window defined with Slint.
 #[cfg(feature = "slint")]
 mod slint;
+
 /// A counter application with `xilem`.
 #[cfg(feature = "xilem")]
 mod xilem;
@@ -23,6 +26,7 @@ mod xilem;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -31,18 +35,22 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `floem` example.
     #[cfg(feature = "floem")]
     #[command(name = "floem")]
     Floem,
+
     /// Runs the `iced` example.
     #[cfg(feature = "iced")]
     #[command(name = "iced")]
     Iced,
+
     /// Runs the `slint` example.
     #[cfg(feature = "slint")]
     #[command(name = "slint")]
     Slint,
+
     /// Runs the `xilem` example.
     #[cfg(feature = "xilem")]
     #[command(name = "xilem")]

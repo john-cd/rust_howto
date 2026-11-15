@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the `directories` crate to find the
 mod directories;
+
 /// Locating the standard directories of the current user with `dirs`.
 mod dirs;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `directories` example.
     #[command(name = "directories")]
     Directories,
+
     /// Runs the `dirs` example.
     #[command(name = "dirs")]
     Dirs,
@@ -42,7 +46,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

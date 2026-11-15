@@ -7,18 +7,23 @@ use clap::Subcommand;
 
 /// This example demonstrates parsing a JSON string into a `serde_json::Value`
 mod json;
+
 /// This example demonstrates how to use the `monostate` crate with `serde` to
 mod monostate;
+
 /// Demonstrates basic serialization and deserialization using `serde`.
 mod serde;
+
 /// `serde_ignored` is a crate that helps handle unknown fields when deserializing with `serde`.
 mod serde_ignored;
+
 /// Serializing and deserializing a struct to and from JSON with `serde_json`.
 mod serde_json;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,18 +32,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `json` example.
     #[command(name = "json")]
     Json,
+
     /// Runs the `monostate` example.
     #[command(name = "monostate")]
     Monostate,
+
     /// Runs the `serde` example.
     #[command(name = "serde")]
     Serde,
+
     /// Runs the `serde_ignored` example.
     #[command(name = "serde_ignored")]
     SerdeIgnored,
+
     /// Runs the `serde_json` example.
     #[command(name = "serde_json")]
     SerdeJson,

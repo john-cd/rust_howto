@@ -5,6 +5,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Send an HTML and plain-text email with Amazon SES v2.
 //!
 //! Amazon SES is a service for sending email at scale. A message has a
@@ -29,10 +30,12 @@ fn content(text: &str) -> Result<Content> {
         .build()
         .context("invalid email content")
 }
+
 /// Builds the message: clients that cannot render HTML fall back to the text.
 ///
 /// # Errors
-/// Returns an error if the requested resource or connection cannot be created.
+///
+/// Returns an error if the subject or either body part cannot be built as UTF-8 content.
 pub fn build_email(subject: &str, text: &str, html: &str) -> Result<EmailContent> {
     let body = Body::builder()
         .text(content(text)?)
@@ -48,12 +51,14 @@ pub fn build_email(subject: &str, text: &str, html: &str) -> Result<EmailContent
 /// Sends the email and returns the SES message identifier.
 ///
 /// # Arguments
+///
 /// * `client` - Client used to make the request.
 ///
 /// The sender must be a verified identity; in the SES sandbox, so must the
 /// recipient.
 ///
 /// # Errors
+///
 /// Returns an error if the output cannot be written or sent.
 pub async fn send_email(
     client: &Client,
@@ -76,6 +81,7 @@ pub async fn send_email(
 /// Builds a sample email with text and HTML content.
 ///
 /// # Errors
+///
 /// Returns an error if the SES SDK rejects the message content.
 fn run() -> Result<EmailContent> {
     build_email("Example", "Plain text", "<p>HTML</p>")

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates the usage of `BigInt` for large integer arithmetic.
 //!
 //! A normal integer overflows beyond 64 bits. `BigInt` grows as needed, which
@@ -50,8 +51,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates the usage of `BigInt` for large integer arithmetic.
 pub fn run() {
     main();
 }

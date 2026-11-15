@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parse derive attributes with a declarative `darling` input model.
 //!
 //! `FromDeriveInput` reads the `builder` attribute and can turn invalid keys
@@ -16,19 +17,24 @@ use syn::DeriveInput;
 #[derive(Debug, FromDeriveInput)]
 #[darling(attributes(builder))]
 struct BuilderOptions {
+
     /// The name of the struct that carried the attribute.
     ident: syn::Ident,
+
     /// Optional prefix used to name generated builder methods.
     #[darling(default)]
     prefix: Option<String>,
 }
+
 /// Parses builder options from derive input.
 ///
 /// # Errors
+///
 /// Returns a Darling error for malformed input or unknown attributes.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested darling operation.
+///
+/// * `input` - Token stream containing a derive input with builder attributes.
 fn parse_options(input: TokenStream) -> darling::Result<BuilderOptions> {
     let input: DeriveInput = syn::parse2(input).map_err(darling::Error::from)?;
     BuilderOptions::from_derive_input(&input)
@@ -37,6 +43,7 @@ fn parse_options(input: TokenStream) -> darling::Result<BuilderOptions> {
 /// Prints parsed options and a compiler-style diagnostic for an invalid key.
 ///
 /// # Errors
+///
 /// Returns an error if the valid example input cannot be parsed.
 fn main() -> Result<()> {
     let valid = quote! { #[builder(prefix = "with_")] struct Foo; };
@@ -55,6 +62,7 @@ fn main() -> Result<()> {
 /// Runs the `darling` attribute-parsing example.
 ///
 /// # Errors
+///
 /// Returns an error if the valid example input cannot be parsed.
 pub fn run() -> Result<()> {
     main()

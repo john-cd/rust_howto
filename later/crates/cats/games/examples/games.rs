@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A minimal game example using the `macroquad` rendering engine.
 //!
 //! This example creates a window, animates a rotating triangle, and responds to
@@ -12,6 +13,7 @@ use macroquad::prelude::*;
 
 /// The distance in pixels from the center of the screen to each corner.
 const TRIANGLE_RADIUS: f32 = 120.0;
+
 /// Returns the corners of an equilateral triangle centered on `center`,
 ///
 /// rotated by `angle` radians.
@@ -26,13 +28,16 @@ fn triangle_points(center: Vec2, radius: f32, angle: f32) -> [Vec2; 3] {
 /// Visual state updated by the render loop.
 #[derive(Debug, Clone, Copy, PartialEq)]
 struct GameState {
+
     /// The current rotation angle of the triangle in radians.
     angle: f32,
+
     /// The fill color of the rotating triangle.
     color: Color,
 }
 
 impl GameState {
+
     /// Creates a new default game state with zero rotation and blue color.
     fn new() -> Self {
         Self {
@@ -64,9 +69,11 @@ fn random_color() -> Color {
         1.0,
     )
 }
+
 /// Renders a single frame displaying the triangle and instruction overlay.
 ///
 /// # Arguments
+///
 /// * `state` - Current rotation and color displayed in the frame.
 fn draw_frame(state: &GameState) {
     clear_background(BLACK);
@@ -197,6 +204,7 @@ mod tests {
     }
 
     // output-only: the example draws into a window until it is closed.
+
     /// Verifies that the `games` example runs.
     #[test]
     #[ignore = "requires interactive example runtime"]

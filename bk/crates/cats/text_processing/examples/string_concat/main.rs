@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// Different ways to concatenate strings.
 mod string_concat;
+
 /// Concatenates constant string slices at compile time with `constcat`.
 mod string_concat2;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `string_concat` example.
     #[command(name = "string_concat")]
     StringConcat,
+
     /// Runs the `string_concat2` example.
     #[command(name = "string_concat2")]
     StringConcat2,
@@ -42,7 +46,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

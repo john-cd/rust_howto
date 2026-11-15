@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Iterator adapters, such as `map`, that transform an iterator lazily.
 //!
 //! Iterator adapters take an existing iterator and produce a new one with
@@ -55,8 +56,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Chains iterator adapters and collects the result.
 pub fn run() {
     main();
 }

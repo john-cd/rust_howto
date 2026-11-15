@@ -10,6 +10,7 @@ use clap::Subcommand;
 /// This is an example of how to use the MeiliSearch Rust SDK to index and
 #[cfg(feature = "meilisearch")]
 mod meilisearch;
+
 /// Create an in-memory Tantivy index and run a simple full-text search.
 #[cfg(feature = "tantivy")]
 mod tantivy;
@@ -18,6 +19,7 @@ mod tantivy;
 #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,10 +29,12 @@ struct Cli {
 #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `meilisearch` example.
     #[cfg(feature = "meilisearch")]
     #[command(name = "meilisearch")]
     Meilisearch,
+
     /// Runs the `tantivy` example.
     #[cfg(feature = "tantivy")]
     #[command(name = "tantivy")]
@@ -71,6 +75,7 @@ mod tests {
     fn test_meilisearch_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "meilisearch"]).is_ok());
     }
+
     /// Verifies tantivy subcommand parses.
     #[cfg(feature = "tantivy")]
     #[test]

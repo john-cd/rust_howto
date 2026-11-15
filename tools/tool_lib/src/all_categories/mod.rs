@@ -4,6 +4,7 @@
 
 /// Parses category hierarchy data from TOML.
 mod categories_from_toml;
+
 /// Downloading the categories file of `crates.io`.
 mod request;
 
@@ -19,6 +20,7 @@ use super::Category;
 /// Returns a list of all categories that exist on `crates.io`.
 ///
 /// # Errors
+///
 /// Returns an error if the request fails, the response is not valid TOML, or a category entry is
 /// invalid.
 pub fn get_all_categories() -> Result<Vec<Category>> {

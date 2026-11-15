@@ -29,6 +29,7 @@ pub(crate) fn emit_diagnostic(diag: Diagnostic) {
 }
 
 thread_local! {
+
     /// Shared `err storage` used by this module.
     static ERR_STORAGE: RefCell<Vec<Diagnostic>> = const { RefCell::new(Vec::new()) };
 }

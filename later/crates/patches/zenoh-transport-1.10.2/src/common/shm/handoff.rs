@@ -14,6 +14,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -21,16 +22,20 @@ use std::ops::Index;
 use std::ops::IndexMut;
 
 use zenoh_protocol::core::Priority;
-/// Container that groups messages by priority for shared-memory handoff.
 
+/// Container that groups messages by priority for shared-memory handoff.
 #[derive(Debug)]
 pub struct PriorityContainer<T: Sized> {
     per_prio_objects: [T; Priority::NUM],
 }
 
 impl<T: Sized> PriorityContainer<T> {
-    /// Constructs a usable initial priority container value with the defaults required by the
-    /// handoff component.
+
+    /// Wraps one value for each transport priority.
+    ///
+    /// # Arguments
+///
+    /// * `per_prio_objects` - Values ordered by the transport priority index.
     pub fn new(per_prio_objects: [T; Priority::NUM]) -> Self {
         Self { per_prio_objects }
     }
@@ -38,6 +43,7 @@ impl<T: Sized> PriorityContainer<T> {
     /// Constructs a priority container by calling `ctor_fn` once for each priority.
     ///
     /// # Errors
+///
     /// Returns the first error produced by `ctor_fn`.
     pub fn from_fn<E>(mut ctor_fn: impl FnMut(Priority) -> Result<T, E>) -> Result<Self, E> {
         // TODO: std::array::try_from_fn is unstable yet...
@@ -69,9 +75,15 @@ impl<T: Sized> PriorityContainer<T> {
         PriorityContainer::new(self.per_prio_objects.map(map_fn))
     }
 
+    /// Maps each priority value into a new container, returning the first mapping error.
+    ///
+    /// # Arguments
+///
+    /// * `map_fn` - Fallible conversion applied to each stored priority value.
+    ///
     /// # Errors
-    /// An error is returned if map_fn fails.
-
+///
+    /// Returns the first error produced while converting a priority value.
     pub fn map_fallable<Tother: Sized, E>(
         self,
         mut map_fn: impl FnMut(&T) -> Result<Tother, E>,
@@ -114,7 +126,10 @@ impl<'a, T: Sized> IntoIterator for &'a PriorityContainer<T> {
 impl<T: Sized> Index<Priority> for PriorityContainer<T> {
     type Output = T;
 
+    /// Returns the value stored for the requested priority.
+///
     /// # Arguments
+///
     /// * `index` - Position used to identify the element affected in the current ordered
     ///   collection.
     fn index(&self, index: Priority) -> &Self::Output {
@@ -123,8 +138,11 @@ impl<T: Sized> Index<Priority> for PriorityContainer<T> {
 }
 
 impl<T: Sized> IndexMut<Priority> for PriorityContainer<T> {
+
     /// Indexes mut.
+///
     /// # Arguments
+///
     /// * `index` - Position used to identify the element affected in the current ordered
     ///   collection.
     fn index_mut(&mut self, index: Priority) -> &mut Self::Output {
@@ -133,6 +151,7 @@ impl<T: Sized> IndexMut<Priority> for PriorityContainer<T> {
 }
 
 impl<T: Sized + Clone> Clone for PriorityContainer<T> {
+
     /// Creates a copy of this value.
     fn clone(&self) -> Self {
         Self {

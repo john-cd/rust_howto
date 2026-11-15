@@ -45,6 +45,7 @@ impl PatchFsm<'_> {
 
 /// **********************************
 // OPEN
+
 /// **********************************
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub(crate) struct StateOpen {
@@ -115,6 +116,7 @@ impl<'a> OpenFsm for &'a PatchFsm<'a> {
 
 /// **********************************
 // ACCEPT
+
 /// **********************************
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub(crate) struct StateAccept {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Extracting hashtags from a text with a regular expression.
 //!
 //! A regular expression (regex) describes a text pattern. Capture groups pick
@@ -24,7 +25,7 @@ fn extract_hashtags(text: &str) -> HashSet<&str> {
         .map(|mat| mat.as_str())
         .collect()
 }
-/// Runs the example.
+
 /// Extracts the hashtags of a sample tweet.
 fn main() {
     let tweet = "Hey #world, I just got my new #dog, say hello to Till. #dog #forever #2 #_ ";
@@ -35,8 +36,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Extracts the hashtags of a sample tweet.
 pub fn run() {
     main();
 }

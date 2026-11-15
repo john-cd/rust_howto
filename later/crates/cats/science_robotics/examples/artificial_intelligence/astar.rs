@@ -1,14 +1,17 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Robot path planning on an occupancy grid using the A* algorithm.
 //!
 //! ### Occupancy Grids in Robotics
+//!
 //! An occupancy grid discretizes a continuous 2D environment into a matrix of
 //! uniform cells, where each cell is either free space or occupied by an
 //! obstacle (such as a wall or equipment).
 //!
 //! ### Path Planning Algorithm & Heuristic
+//!
 //! - **A* Optimization**: Computes the collision-free path with minimal total cost from start
 //!   position `(0, 0)` to target destination `(4, 4)`.
 //! - **Admissible Heuristic**: Uses Manhattan distance $|x_{\text{goal}} - x| + |y_{\text{goal}} -
@@ -76,6 +79,7 @@ fn main() {
 /// Runs the robotics pathfinding example by calling `main()`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main();
@@ -85,6 +89,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Runs the A* example through its entry point.
     #[test]
     fn test_astar_example_entry_point() {

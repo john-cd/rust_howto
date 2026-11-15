@@ -10,9 +10,11 @@ use syn::ItemFn;
 use syn::parse_macro_input;
 
 // Retain the macro used by the existing `compile_macros` example.
+
 /// A derive macro that adds a `hello_world` function to the type.
 ///
 /// # Arguments
+///
 /// * `input` - Input value to validate or transform.
 #[proc_macro_derive(MyMacro)]
 pub fn my_macro(input: TokenStream) -> TokenStream {
@@ -20,6 +22,7 @@ pub fn my_macro(input: TokenStream) -> TokenStream {
     let name = input.ident;
     let expanded = quote! {
             impl #name {
+
     /// Prints a greeting that includes the type name.
                 fn hello_world() {
                     println!("Hello, World! I am {}", stringify!(#name));
@@ -30,6 +33,7 @@ pub fn my_macro(input: TokenStream) -> TokenStream {
 }
 
 // ANCHOR: attribute_macro
+
 /// This is an attribute macro example.
 ///
 /// # Arguments
@@ -59,10 +63,12 @@ pub fn log_fn(_attr: TokenStream, item: TokenStream) -> TokenStream {
 // ANCHOR_END: attribute_macro
 
 // ANCHOR: darling_example
+
 /// Options for the `MyDarlingMacro` derive macro.
 #[derive(Debug, FromDeriveInput)]
 #[darling(attributes(my_macro))]
 struct MyMacroOpts {
+
     /// The name given in the `my_macro` attribute.
     name: String,
 }
@@ -70,6 +76,7 @@ struct MyMacroOpts {
 /// A derive macro that uses `darling` to parse its options.
 ///
 /// # Arguments
+///
 /// * `input` - Input value to validate or transform.
 #[proc_macro_derive(MyDarlingMacro, attributes(my_macro))]
 pub fn my_darling_macro_derive(input: TokenStream) -> TokenStream {
@@ -95,9 +102,11 @@ pub fn my_darling_macro_derive(input: TokenStream) -> TokenStream {
 // ANCHOR_END: darling_example
 
 // ANCHOR: proc_macro2_example
+
 /// A derive macro, written with `proc-macro2`, that implements `Debug`.
 ///
 /// # Arguments
+///
 /// * `input` - Input value to validate or transform.
 #[proc_macro_derive(MyDebug)]
 pub fn derive_debug(input: TokenStream) -> TokenStream {
@@ -105,6 +114,7 @@ pub fn derive_debug(input: TokenStream) -> TokenStream {
     let name = &input.ident;
     let expanded = quote! {
             impl std::fmt::Debug for #name {
+
     /// Formats the value for display.
                 fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
                     write!(f, "{} {{ ... }}", stringify!(#name))
@@ -116,9 +126,11 @@ pub fn derive_debug(input: TokenStream) -> TokenStream {
 // ANCHOR_END: proc_macro2_example
 
 // Retain the shim imported by the existing `compile_macros` Watt example.
+
 /// A function-like macro used by the `watt` example.
 ///
 /// # Arguments
+///
 /// * `input` - Input value to validate or transform.
 #[proc_macro]
 pub fn watt_macro(input: TokenStream) -> TokenStream {

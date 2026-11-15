@@ -8,6 +8,7 @@ use clap::Subcommand;
 /// A web application with `dioxus`.
 #[cfg(feature = "dioxus")]
 mod dioxus;
+
 /// A plain Rust command function that a Tauri app can expose to its frontend.
 #[cfg(feature = "tauri")]
 mod tauri;
@@ -15,6 +16,7 @@ mod tauri;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,16 +25,18 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `dioxus` example.
     #[command(name = "dioxus")]
     #[cfg(feature = "dioxus")]
     Dioxus,
+
     /// Runs the plain Rust command example used by a Tauri backend.
     #[cfg(feature = "tauri")]
     #[command(name = "tauri")]
     Tauri,
 }
-/// Runs the example.
+
 /// Runs the example selected on the command line.
 fn main() {
     let cli = Cli::parse();

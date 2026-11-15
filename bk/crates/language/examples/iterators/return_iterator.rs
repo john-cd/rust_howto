@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Returning an iterator from a function with `impl Iterator`.
 
 /// Return an iterator from a function using the `impl Iterator<Item = T>`
@@ -13,6 +14,7 @@ fn count_up_to(max: i32) -> impl Iterator<Item = i32> {
 }
 // You could also return a boxed trait object e.g.,
 // `Box<dyn Iterator<Item = T>>`.
+
 /// Iterates over the numbers returned by `count_up_to`.
 fn main() {
     let my_iterator = count_up_to(5);
@@ -23,8 +25,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Iterates over the numbers returned by `count_up_to`.
 pub fn run() {
     main();
 }

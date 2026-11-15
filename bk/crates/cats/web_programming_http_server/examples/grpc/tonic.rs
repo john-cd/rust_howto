@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example shows how to create a simple gRPC server using the `tonic`
 //! crate.
 //!
@@ -37,8 +38,12 @@ pub struct MyGreeter {}
 
 #[tonic::async_trait]
 impl Greeter for MyGreeter {
+
+    /// Builds a greeting reply from the incoming gRPC request.
+///
     /// # Arguments
-    /// * `request` - Input data whose fields determine the requested my greeter operation.
+///
+    /// * `request` - Greeting request containing the name to include in the reply.
     async fn say_hello(
         &self,
         request: Request<HelloRequest>,
@@ -69,9 +74,10 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Starts the gRPC server.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

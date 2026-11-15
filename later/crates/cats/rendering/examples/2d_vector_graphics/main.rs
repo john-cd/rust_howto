@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Builds and tessellates a small vector path with Lyon.
 
 use lyon::math::point;
@@ -40,6 +41,7 @@ fn main() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Produces drawable vertices and indices for a closed triangle fill.
     #[test]
     fn tessellates_a_closed_triangle() -> anyhow::Result<()> {

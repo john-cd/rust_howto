@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This is the main asynchronous function.
 //! It demonstrates that calling an async function does not execute its body
 //! immediately.
@@ -32,7 +33,6 @@ async fn main() {
 // Example from <https://tokio.rs/tokio/tutorial/hello-tokio>.
 // ANCHOR_END: example
 
-/// Runs the example.
 /// This is the main asynchronous function. It demonstrates that calling an async function does not
 /// execute its body immediately.
 pub fn run() {
@@ -42,6 +42,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `async2` example runs.
     #[test]
     fn test_async2_example_entry_point() {

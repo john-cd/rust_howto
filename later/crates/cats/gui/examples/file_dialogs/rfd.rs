@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates opening a file dialog using the rfd crate.
 //!
 //! A file dialog is the operating system's own "open" or "save" window. Using
@@ -44,6 +45,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the file-dialog example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -65,6 +67,7 @@ mod tests {
     fn test_rfd_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// Returns the selected file's contents without displaying a dialog.
     #[test]
     fn reads_selected_file_contents() -> anyhow::Result<()> {

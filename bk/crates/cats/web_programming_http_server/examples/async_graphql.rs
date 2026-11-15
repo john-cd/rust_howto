@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A small GraphQL endpoint using `async-graphql` with Axum.
 //!
 //! The `/graphql` route accepts GraphQL requests and runs them against a schema
@@ -23,6 +24,7 @@ struct QueryRoot;
 
 #[Object]
 impl QueryRoot {
+
     /// Returns a greeting from the GraphQL endpoint.
     async fn hello(&self) -> &'static str {
         "Hello, world!"
@@ -39,15 +41,18 @@ async fn graphql_handler(
 ) -> GraphQLResponse {
     schema.execute(request.into_inner()).await.into()
 }
+
 /// Creates the schema shared by the server and deterministic tests.
 fn build_schema() -> HelloSchema {
     Schema::build(QueryRoot, EmptyMutation, EmptySubscription).finish()
 }
+
 /// Starts the GraphQL HTTP endpoint on the loopback interface.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     serve().await
 }
+
 /// Builds the GraphQL schema and serves it until the listener stops.
 async fn serve() -> anyhow::Result<()> {
     let schema = build_schema();
@@ -65,10 +70,10 @@ async fn serve() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// A small GraphQL endpoint using `async-graphql` with Axum.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     tokio::runtime::Builder::new_multi_thread()

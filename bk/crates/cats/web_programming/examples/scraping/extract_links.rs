@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Extracts anchor links from an HTML document with CSS selectors.
 //!
 //! Web scraping extracts data from HTML pages. Links are `<a href>` elements,
@@ -31,6 +32,7 @@ fn extract_links(html: &str) -> Result<Vec<String>> {
 /// Prints the links found on the Rust website.
 ///
 /// # Errors
+///
 /// Returns an error if the request fails, the server returns an unsuccessful
 /// status, or the selector cannot be parsed.
 #[tokio::main]
@@ -49,7 +51,10 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example that extracts links from a web page.
+///
 /// # Errors
+///
 /// Returns any request or HTML parsing error from the example.
 pub fn run() -> Result<()> {
     main()

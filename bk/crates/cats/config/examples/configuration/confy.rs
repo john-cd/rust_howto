@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Loads a typed configuration with confy.
 //!
 //! `confy` stores a settings struct in the user's configuration directory (for
@@ -13,8 +14,10 @@ use serde::Serialize;
 /// Application settings stored by confy.
 #[derive(Serialize, Deserialize, Debug, Default)]
 struct MyConfig {
+
     /// The configuration schema version.
     version: u8,
+
     /// The API key.
     api_key: String,
 }
@@ -32,6 +35,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the confy example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

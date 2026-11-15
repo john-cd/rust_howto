@@ -7,6 +7,7 @@ use clap::Subcommand;
 
 /// This example demonstrates a simple HTTP server that can be exposed to the
 mod ngrok;
+
 /// Run a local HTTP reverse proxy with Pingora.
 #[cfg(target_family = "unix")]
 mod pingora;
@@ -14,6 +15,7 @@ mod pingora;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -22,9 +24,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `ngrok` example.
     #[command(name = "ngrok")]
     Ngrok,
+
     /// Runs the `pingora` example.
     #[cfg(target_family = "unix")]
     #[command(name = "pingora")]

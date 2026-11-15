@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The same word count with three hash maps: the standard library's, `ahash`'s
 //! and `rustc-hash`'s.
 //!
@@ -46,7 +47,7 @@ fn count_fx(text: &str) -> FxHashMap<&str, usize> {
     }
     counts
 }
-/// Runs the example.
+
 /// Checks that the three maps agree.
 fn main() {
     let text = "the quick brown fox jumps over the lazy dog the end";
@@ -74,8 +75,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Checks that the three maps agree.
 pub fn run() {
     main();
 }

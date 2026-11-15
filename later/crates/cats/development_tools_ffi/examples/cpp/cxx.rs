@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calling C++ from Rust with the `cxx` crate.
 //!
 //! FFI (foreign function interface) lets code in one language call another.
@@ -27,7 +28,10 @@ mod ffi {
     unsafe extern "C++" {
         include!("development_tools_ffi/examples/cpp/hello.h");
 
+        /// Converts the C++ string argument into a Rust greeting.
+///
         /// # Arguments
+///
         /// * `name` - Human-readable value used to identify or display the selected cxx.
         fn hello(name: &CxxString);
         fn cpp_multiply(left: i32, right: i32) -> i32;
@@ -38,11 +42,12 @@ mod ffi {
         fn rust_add(left: i32, right: i32) -> i32;
     }
 }
+
 /// Adds two integers in Rust for the generated bridge.
 fn rust_add(left: i32, right: i32) -> i32 {
     left + right
 }
-/// Runs the example.
+
 /// Creates a C++ string and exercises the Rust and C++ functions.
 fn main() {
     // Reference the static C++ archive linked by the package build script.
@@ -58,13 +63,14 @@ fn main() {
 /// Passes a C++ string through the generated bridge.
 ///
 /// # Arguments
+///
 /// * `name` - Human-readable value used to identify or display the selected cxx.
 fn call_cpp(name: &CxxString) {
     ffi::hello(name);
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Creates a C++ string and exercises the Rust and C++ functions.
 pub fn run() {
     main();
 }

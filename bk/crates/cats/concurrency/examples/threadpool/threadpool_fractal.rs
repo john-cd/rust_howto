@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Renders and saves a Julia set with Rayon and the image crate.
 //!
 //! A thread pool starts a fixed number of worker threads and feeds them jobs,
@@ -66,9 +67,11 @@ fn render_julia(
     ImageBuffer::from_raw(width, height, pixels)
         .context("rendered pixel buffer has an unexpected length")
 }
+
 /// Renders and saves a sample Julia set image.
 ///
 /// # Errors
+///
 /// Returns an error if the image cannot be rendered, the output directory
 /// cannot be created, or the PNG file cannot be written.
 fn main() -> Result<()> {
@@ -139,6 +142,7 @@ fn normalize_color_component(component: f32, factor: f32) -> u8 {
 /// Renders and saves a Julia set with Rayon and the image crate.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

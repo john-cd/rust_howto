@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Attach arbitrary constant properties to variants with `EnumProperty`.
 
 use strum::EnumIter;
@@ -17,7 +18,7 @@ enum Command {
     // A variant without properties.
     Noop,
 }
-/// Runs the example.
+
 /// Reads the properties.
 fn main() {
     assert_eq!(Command::Save.get_str("icon"), Some("save"));
@@ -37,8 +38,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Reads the properties.
 pub fn run() {
     main();
 }

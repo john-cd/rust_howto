@@ -8,14 +8,17 @@ use clap::Subcommand;
 /// The `bytemuck` crate provides functions for reinterpreting one type as another without use of
 /// `unsafe`, whenever this is safe e.g.
 mod bytemuck;
+
 /// Demonstrates explicit primitive casts, checked numeric conversions, and
 mod primitive;
+
 /// This example demonstrates zero-cost memory manipulation with `zerocopy`.
 mod zerocopy;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -24,12 +27,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `bytemuck` example.
     #[command(name = "bytemuck")]
     Bytemuck,
+
     /// Runs the primitive conversion example.
     #[command(name = "primitive")]
     Primitive,
+
     /// Runs the `zerocopy` example.
     #[command(name = "zerocopy")]
     Zerocopy,

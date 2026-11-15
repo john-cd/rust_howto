@@ -1,15 +1,18 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Adding a method to an external type with a trait.
 
 /// A trait for types that can be hashed to a `u64`.
 trait MyHash {
+
     /// Returns a hash of the object.
     /// Implement the `MyHash` trait for preexisting type `i64`,
     /// which is defined in the standard library.
     fn myhash(&self) -> u64;
 }
+
 /// Implement the `MyHash` trait for preexisting type `i64`,
 /// which is defined in the standard library.
 impl MyHash for i64 {
@@ -17,6 +20,7 @@ impl MyHash for i64 {
         *self as u64
     }
 }
+
 /// Calls the method that the trait adds to `i64`.
 fn main() {
     let x = 1i64;
@@ -25,8 +29,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the method that the trait adds to `i64`.
 pub fn run() {
     main();
 }

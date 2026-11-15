@@ -1,24 +1,29 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Starts the rtos application and connects its top-level components.
 //! The executable uses this module to initialize services and hand control to the application.
 
 #[derive(Clone, Copy)]
 struct Job {
+
     /// Display label used to distinguish this job from other entries.
     name: &'static str,
+
     /// Transmission priority.
     priority: u8,
+
     /// Tick at which the resource is released.
     release_tick: u8,
+
     /// Number of timer ticks remaining.
     remaining_ticks: u8,
 }
+
 /// Runs one discrete tick per job, always choosing the highest-priority ready
-
+///
 /// job.
-
 fn fixed_priority_schedule(jobs: &mut [Job], horizon: u8) -> Vec<(u8, &'static str)> {
     let mut schedule = Vec::new();
 
@@ -40,8 +45,8 @@ fn fixed_priority_schedule(jobs: &mut [Job], horizon: u8) -> Vec<(u8, &'static s
 fn main() -> anyhow::Result<()> {
     run_example()
 }
-/// Simulates and prints the fixed-priority schedule for two example tasks.
 
+/// Simulates and prints the fixed-priority schedule for two example tasks.
 fn run_example() -> anyhow::Result<()> {
     let mut jobs = [
         Job {
@@ -69,6 +74,7 @@ fn run_example() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Schedules higher-priority work before lower-priority work when it becomes ready.
     #[test]
     fn higher_priority_job_runs_first_when_released() {

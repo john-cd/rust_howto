@@ -8,12 +8,14 @@ use clap::Subcommand;
 
 /// Calls `async` code from blocking code with `futures::executor::block_on`.
 mod call_async_from_blocking_futures_executor;
+
 /// Calls `async` code from blocking code by building a Tokio runtime by hand.
 mod call_async_from_blocking_tokio_runtime;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -22,9 +24,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `call_async_from_blocking_futures_executor` example.
     #[command(name = "call_async_from_blocking_futures_executor")]
     CallAsyncFromBlockingFuturesExecutor,
+
     /// Runs the `call_async_from_blocking_tokio_runtime` example.
     #[command(name = "call_async_from_blocking_tokio_runtime")]
     CallAsyncFromBlockingTokioRuntime,
@@ -43,7 +47,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

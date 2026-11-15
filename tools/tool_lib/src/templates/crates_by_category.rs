@@ -28,6 +28,7 @@ const CATEGORY_PAGE_FOOTER: &str = "\n[All Valid Categories][crates.io~category_
 /// The categories file.
 #[derive(Deserialize)]
 struct CategoryCatalog {
+
     /// The categories.
     categories: Vec<CategoryRecord>,
 }
@@ -35,12 +36,16 @@ struct CategoryCatalog {
 /// A category and its crates.
 #[derive(Deserialize)]
 struct CategoryRecord {
+
     /// Name of the category.
     category: String,
+
     /// Slug of the category on `crates.io`.
     slug: String,
+
     /// Description of the category.
     description: String,
+
     /// Names of the crates in the category.
     #[serde(default)]
     crates: Vec<String>,
@@ -49,16 +54,19 @@ struct CategoryRecord {
 /// Creates one Markdown table row for a category and its crates.
 ///
 /// # Arguments
+///
 /// * `category` - Display name of the category.
 /// * `slug` - crates.io slug used to construct the category badge.
 /// * `description` - Text shown in the category description cell.
 /// * `crate_names` - Crate names shown in the category row.
 ///
 /// # Errors
+///
 /// This wrapper currently performs no fallible work, but preserves the shared
 /// row renderer's result type.
 ///
 /// # Returns
+///
 /// The rendered Markdown table row.
 pub fn create_category_and_crates(
     category: &str,
@@ -74,9 +82,11 @@ pub fn create_category_and_crates(
         &RecipeLinksByCrate::new(),
     )
 }
+
 /// Returns one Markdown category row and links to recipes that use its crates.
 ///
 /// # Arguments
+///
 /// * `category` - Display name of the category.
 /// * `slug` - crates.io slug used to construct the category badge.
 /// * `description` - Description shown in the category row.
@@ -84,9 +94,11 @@ pub fn create_category_and_crates(
 /// * `recipe_links` - Recipe links grouped by crate name.
 ///
 /// # Returns
+///
 /// The rendered Markdown table row.
 ///
 /// # Errors
+///
 /// This function currently performs only infallible string formatting.
 fn create_category_row(
     category: &str,
@@ -141,12 +153,12 @@ fn create_category_row(
 ///
 /// # Arguments
 ///
-/// Crates not listed in the snapshot are added to the uncategorized row. Entries in
-/// the snapshot that are absent from the current inventory are ignored, so crate
-/// renames do not leave stale badges behind.
+/// * `crate_names` - Crates in the current inventory.
+/// * `metadata` - TOML snapshot assigning crates to categories.
 ///
 /// # Errors
-/// Returns an error if the requested resource or connection cannot be created.
+///
+/// Returns an error if the metadata cannot be parsed or a category row cannot be rendered.
 pub fn create_category_page_from_metadata(
     crate_names: &[String],
     metadata: &str,
@@ -157,20 +169,25 @@ pub fn create_category_page_from_metadata(
         &RecipeLinksByCrate::new(),
     )
 }
+
 /// Parses category metadata and renders the external crates.io category index.
 ///
 /// Each listed crate links to its published recipes when an entry exists in
 /// `recipe_links`. Crates missing from the metadata appear in the uncategorized
 /// row; stale metadata entries are ignored.
+///
 /// # Arguments
+///
 /// * `crate_names` - Crate names in the current inventory.
 /// * `metadata` - TOML category catalog to parse.
 /// * `recipe_links` - Published recipe links keyed by crate name.
 ///
 /// # Returns
+///
 /// The rendered Markdown category index.
 ///
 /// # Errors
+///
 /// Returns an error if the TOML is invalid, category records are inconsistent,
 /// or a category row cannot be rendered.
 pub fn create_category_page_from_metadata_with_recipe_links(
@@ -329,6 +346,7 @@ mod tests {
         assert!(!row.contains("&amp;quot;"));
         assert!(!row.contains("&amp;amp;"));
     }
+
     /// Builds category pages with duplicate, renamed, and uncategorized crates.
     #[test]
     fn category_page_from_metadata_handles_duplicates_renames_and_missing_categories() {

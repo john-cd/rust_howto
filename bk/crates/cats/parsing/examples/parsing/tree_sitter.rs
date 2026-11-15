@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parse Rust source code and query its syntax tree with Tree-sitter.
 //!
 //! Tree-sitter builds a concrete syntax tree from source code, quickly and
@@ -16,6 +17,14 @@ use tree_sitter::QueryCursor;
 use tree_sitter::StreamingIterator as _;
 
 /// Parses Rust source code and returns the names captured by the example query.
+///
+/// # Arguments
+///
+/// * `source` - Rust source text to parse and query.
+///
+/// # Errors
+///
+/// Returns an error if the parser, query, or source text cannot be processed.
 fn query_rust(source: &str) -> anyhow::Result<Vec<(String, String)>> {
     let language: Language = tree_sitter_rust::LANGUAGE.into();
     let mut parser = Parser::new();
@@ -51,6 +60,7 @@ fn query_rust(source: &str) -> anyhow::Result<Vec<(String, String)>> {
 /// Parses Rust source code, prints its syntax tree and query captures.
 ///
 /// # Errors
+///
 /// Returns an error if the parser or query cannot process the source.
 fn example() -> anyhow::Result<()> {
     let source = r#"
@@ -76,10 +86,11 @@ fn greet() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses Rust source, prints its syntax tree, and displays query captures.
 ///
 /// # Errors
-/// Returns an error if a step of the example fails.
+///
+/// Returns an error if the parser, query, or source text cannot be processed.
 pub fn run() -> anyhow::Result<()> {
     example()
 }

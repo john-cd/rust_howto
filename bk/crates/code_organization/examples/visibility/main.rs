@@ -7,22 +7,29 @@ use clap::Subcommand;
 
 /// Accessing private items from the same module and its children.
 mod private_access;
+
 /// The `pub` keyword on functions, types, traits and modules.
 mod pub_keyword;
+
 /// Which items are accessible through nested public and private modules.
 mod public_access;
+
 /// Enum variants and trait items are public by default; struct fields are not.
 mod public_by_default;
+
 /// In the crate root:
 mod visibility_external_code;
+
 /// Restricting visibility to the current crate with `pub(crate)`.
 mod visibility_pub_crate;
+
 /// Restricting visibility to a scope with `pub(in path)`, `pub(super)` and `pub(crate)`.
 mod visibility_scope;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -31,24 +38,31 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `private_access` example.
     #[command(name = "private_access")]
     PrivateAccess,
+
     /// Runs the `pub_keyword` example.
     #[command(name = "pub_keyword")]
     PubKeyword,
+
     /// Runs the `public_access` example.
     #[command(name = "public_access")]
     PublicAccess,
+
     /// Runs the `public_by_default` example.
     #[command(name = "public_by_default")]
     PublicByDefault,
+
     /// Runs the `visibility_external_code` example.
     #[command(name = "visibility_external_code")]
     VisibilityExternalCode,
+
     /// Runs the `visibility_pub_crate` example.
     #[command(name = "visibility_pub_crate")]
     VisibilityPubCrate,
+
     /// Runs the `visibility_scope` example.
     #[command(name = "visibility_scope")]
     VisibilityScope,
@@ -82,7 +96,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

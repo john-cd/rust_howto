@@ -4,6 +4,7 @@
 
 /// Repository-wide chapter, include, and Rust target integrity checks.
 mod audit;
+
 /// Stable, path-aware report records for the integrity inventory.
 mod model;
 

@@ -7,17 +7,21 @@ use clap::Subcommand;
 
 /// The `bstr` crate provides types and traits for working with byte strings,
 mod bstr;
+
 /// This example demonstrates how to work with C-style strings (`CString` and `CStr`) in Rust, which
 /// are essential for FFI (Foreign Function Interface) interactions.
 mod cstring;
+
 /// Working with `OsString` and `OsStr`, the platform-native strings.
 mod osstring;
+
 /// String interning example.
 mod ustr;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -26,15 +30,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `bstr` example.
     #[command(name = "bstr")]
     Bstr,
+
     /// Runs the `cstring` example.
     #[command(name = "cstring")]
     Cstring,
+
     /// Runs the `osstring` example.
     #[command(name = "osstring")]
     Osstring,
+
     /// Runs the `ustr` example.
     #[command(name = "ustr")]
     Ustr,

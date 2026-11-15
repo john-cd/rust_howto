@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `divan` is a Rust benchmarking framework.
 //!
 //!
@@ -37,6 +38,7 @@ mod bench {
         compute_fibonacci(divan::black_box(20))
     }
 }
+
 /// When `harness` is set to false, we are responsible for defining a `main()`
 /// function to run tests and benchmarks.
 fn main() {
@@ -60,6 +62,7 @@ pub fn run() {
 /// Checks that the benchmark entry point is available in test mode.
 #[cfg(test)]
 mod tests {
+
     /// The benchmark entry point compiles when the harness is built for tests.
     #[test]
     fn test_divan_example_entry_point() {

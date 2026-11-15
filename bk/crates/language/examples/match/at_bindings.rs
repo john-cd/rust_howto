@@ -1,12 +1,15 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Binding a value to a name while matching a pattern with `@`.
 
 /// A message with an identifier.
 enum Message {
+
     /// A greeting.
     Hello {
+
         /// The identifier.
         id: i32,
     },
@@ -31,7 +34,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Matches an identifier against a range and binds it.
 pub fn run() {
     main();
 }
@@ -49,7 +52,11 @@ mod tests {
     /// Each range selects the matching arm.
     #[test]
     fn test_at_binding_arms() {
+
+        /// Classifies an integer according to the message ID match ranges.
+///
         /// # Arguments
+///
         /// * `id` - Identifier used to select the at bindings record or cache entry affected by
         ///   this operation.
         fn classify(id: i32) -> &'static str {

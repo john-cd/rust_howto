@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Processing a `Stream` of fallible asynchronous fetches with `futures_util`.
 //!
 //! A stream of fallible fetches yields `Result` items. You decide what an error
@@ -24,6 +25,7 @@ use tokio::time;
 // ```
 
 // Simulated async function that returns a `Result`:
+
 /// Simulates fetching the data of `id`; fails for some ids.
 async fn fetch_data(id: u32) -> Result<String, String> {
     // Simulate network delay:
@@ -127,6 +129,7 @@ mod tests {
         assert_eq!(results.iter().filter(|r| r.is_err()).count(), 1);
         Ok(())
     }
+
     /// Filters map drops the errors.
     #[tokio::test]
     async fn filter_map_drops_the_errors() {

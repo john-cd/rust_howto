@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use `libc` to call into the C standard
 //! library from Rust.
 //!
@@ -33,6 +34,7 @@ use libc::c_int; // C int.
 
 // 1. Using `puts` to print a string.
 // In real life, use the Rust `print!` macro, of course.
+
 /// Prints a message by calling the C function `puts`.
 fn print() -> anyhow::Result<()> {
     // C strings (nul-terminated array of bytes) are different from Rust
@@ -55,6 +57,7 @@ fn print() -> anyhow::Result<()> {
 }
 
 /// Helper function to convert a C string to a Rust String.
+///
 /// # Safety
 ///
 /// If non-null, `cstr_ptr` must point to a readable allocation containing a
@@ -133,8 +136,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the `libc` examples in turn.
 pub fn run() {
     if let Err(error) = main() {
         eprintln!("libc example failed: {error:#}");

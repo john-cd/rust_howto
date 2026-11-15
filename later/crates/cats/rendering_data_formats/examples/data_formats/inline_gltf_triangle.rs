@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parses an inline glTF triangle and reports its vertex and index counts.
 //!
 //! glTF is the "JPEG of 3D": an open format for 3D models used by engines and
@@ -60,9 +61,10 @@ fn main() -> Result<(), ::gltf::Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the example and prints the parsed geometry counts.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), ::gltf::Error> {
     main()

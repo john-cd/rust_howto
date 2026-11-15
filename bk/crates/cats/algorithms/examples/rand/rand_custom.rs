@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to implement a custom distribution for the `rand` crate.
 //!
 //! A distribution describes how random values are spread, for example uniformly
@@ -15,16 +16,22 @@ use rand::distr::StandardUniform;
 /// A simple struct representing a point in 2D space.
 #[derive(Debug)]
 struct Point {
+
     /// The horizontal coordinate.
     x: i32,
+
     /// The vertical coordinate.
     y: i32,
 }
 
 // This implementation allows generating random `Point` instances.
 impl Distribution<Point> for StandardUniform {
+
+    /// Samples a random point using the supplied random-number generator.
+///
     /// # Arguments
-    /// * `rng` - Mutable r whose state is updated by this operation.
+///
+    /// * `rng` - Random-number generator used to choose the point's coordinates.
     fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> Point {
         let (x, y) = rng.random::<(i32, i32)>();
         Point { x, y }
@@ -47,8 +54,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Generates and prints random values, including a custom `Point`.
 pub fn run() {
     main();
 }
@@ -59,6 +65,7 @@ mod tests {
     use rand::rngs::StdRng;
 
     use super::*;
+
     /// Verifies that the `rand custom` example runs.
     #[test]
     fn test_rand_custom_example_entry_point() {

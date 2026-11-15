@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Fixture source for a book example that declares a static value.
 //!
 //! The fixture keeps setup code outside the extracted example.

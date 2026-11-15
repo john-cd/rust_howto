@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Keeps business rules as data: a decision table in the JSON Decision Model
 //! (JDM) format, evaluated with `zen-engine`.
 //!
@@ -42,13 +43,16 @@ const RULES: &str = r#"{
     { "id": "e2", "sourceId": "table", "targetId": "out" }
   ]
 }"#;
+
 /// Evaluates one context and rejects missing inputs or an unmatched rule.
 ///
 /// # Errors
+///
 /// Returns an error when a required input is absent, engine evaluation fails,
 /// or the decision table produces no preferred account.
 ///
 /// # Arguments
+///
 /// * `context` - Shared state and services used to complete the decision_table workflow.
 fn evaluate(context: serde_json::Value) -> anyhow::Result<serde_json::Value> {
     for field in ["accountType", "assetClass"] {
@@ -109,9 +113,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Demonstrates successful matches and clear errors for invalid inputs.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips

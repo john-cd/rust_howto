@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates the use of atomic types.
 //!
 //! This example uses `AtomicUsize` to maintain a global counter of threads.
@@ -12,6 +13,7 @@ use std::sync::atomic::Ordering;
 
 // Declare a static atomic counter.
 // Atomic variables are safe to share between threads (they implement `Sync`).
+
 /// Counts the number of threads, shared by all threads.
 static GLOBAL_THREAD_COUNT: AtomicUsize = AtomicUsize::new(0);
 
@@ -45,8 +47,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Spawns threads that increment an atomic counter, then prints its final value.
 pub fn run() {
     main();
 }

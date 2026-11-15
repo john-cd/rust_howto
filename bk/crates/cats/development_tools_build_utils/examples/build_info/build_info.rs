@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Embedding build details, such as the version, Git commit and build time, in
 //! the binary helps with support: a bug report can state exactly which build
 //! produced it.
@@ -58,11 +59,11 @@ fn collect_dependencies(crate_info: &CrateInfo, dependencies: &mut BTreeSet<(Str
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// Embedding build details, such as the version, Git commit and build time, in the binary helps
 /// with support: a bug report can state exactly which build produced it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

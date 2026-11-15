@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates the manipulation of complex numbers.
 //!
 //! A complex number has a real part and an imaginary part, written a + bi,
@@ -17,7 +18,7 @@ fn sum() -> num::complex::Complex<f64> {
     // Add the two complex numbers.
     complex_num1 + complex_num2
 }
-/// Runs the example.
+
 /// Adds two complex numbers and prints the sum.
 fn main() {
     let sum = sum();
@@ -26,8 +27,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Adds two complex numbers and prints the sum.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A minimal native graphics example using `minifb`.
 //!
 //! `minifb` opens a native window and gives you a plain `u32` pixel buffer to
@@ -46,9 +47,11 @@ fn fill_gradient(buffer: &mut [u32], offset: u32) {
         }
     }
 }
+
 /// Creates and configures the native window for the example.
 ///
 /// # Errors
+///
 /// Returns an error if the window cannot be created.
 fn create_window() -> Result<Window> {
     Ok(Window::new(
@@ -58,12 +61,15 @@ fn create_window() -> Result<Window> {
         WindowOptions::default(),
     )?)
 }
+
 /// Renders one frame, updates the window, and advances the animation offset.
 ///
 /// # Errors
+///
 /// Returns an error if blitting the buffer to the window fails.
 ///
 /// # Arguments
+///
 /// * `window` - Window that receives the rendered pixels and input updates.
 /// * `buffer` - Pixel buffer filled with the current gradient frame.
 /// * `offset` - Animation offset, advanced after the frame is displayed.
@@ -116,6 +122,7 @@ fn main() -> Result<()> {
 /// Opens the minifb window.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     run_window()

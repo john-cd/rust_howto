@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Writes one second of a 440 Hz sine wave to an in-memory WAV file with
 //! `hound`, then reads it back.
 //!
@@ -64,9 +65,10 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Writes the WAV file, reads it back and checks the format and content.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()

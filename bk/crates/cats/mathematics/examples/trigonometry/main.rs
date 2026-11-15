@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Prints the great-circle distance between Paris and London.
 mod latitude_longitude;
+
 /// Calculates the hypotenuse of a right triangle given an angle and the length
 mod side_length;
+
 /// This example demonstrates that the tangent of a number is equal to the sine
 mod tan_sin_cos;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `latitude_longitude` example.
     #[command(name = "latitude_longitude")]
     LatitudeLongitude,
+
     /// Runs the `side_length` example.
     #[command(name = "side_length")]
     SideLength,
+
     /// Runs the `tan_sin_cos` example.
     #[command(name = "tan_sin_cos")]
     TanSinCos,
@@ -50,7 +56,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

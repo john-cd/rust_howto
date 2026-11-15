@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to ignore case when matching file names.
 //!
 //! File name case sensitivity differs: Linux is case sensitive, while Windows
@@ -37,9 +38,10 @@ fn find_ignoring_case(pattern: &str) -> Result<Vec<PathBuf>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints the paths that match a glob pattern, ignoring case.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

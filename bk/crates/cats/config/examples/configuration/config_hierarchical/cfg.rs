@@ -17,9 +17,11 @@ use config::File;
 
 use super::CommandLineArgs;
 use super::Settings;
+
 /// Reads settings with precedence from defaults, files, environment, then CLI.
 ///
 /// # Arguments
+///
 /// * `cli_args` - Command-line values, including the selected run mode and any required custom
 ///   configuration file.
 /// * `config_dir` - Directory containing the default and run-mode TOML files.
@@ -27,9 +29,11 @@ use super::Settings;
 ///   control configuration input.
 ///
 /// # Returns
+///
 /// The merged application settings.
 ///
 /// # Errors
+///
 /// Returns an error if a required configuration source cannot be read, the
 /// values cannot be deserialized, or a setting has an invalid type.
 pub(crate) fn read_settings(

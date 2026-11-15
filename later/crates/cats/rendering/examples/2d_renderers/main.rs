@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Tessellates a path with Lyon and rasterizes the mesh with tiny-skia.
 
 use lyon::math::point;
@@ -85,9 +86,11 @@ fn two_d_rendering_example() -> anyhow::Result<()> {
     );
     Ok(())
 }
+
 /// Starts the 2D rendering example as a binary.
 ///
 /// # Errors
+///
 /// Returns an error if tessellation or rasterization fails.
 fn main() -> anyhow::Result<()> {
     two_d_rendering_example()

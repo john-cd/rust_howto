@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to profile the execution time of a function
 //! using `Instant` and `Duration`.
 //!
@@ -32,8 +33,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Measures the time spent in [`expensive_function`].
 pub fn run() {
     main();
 }

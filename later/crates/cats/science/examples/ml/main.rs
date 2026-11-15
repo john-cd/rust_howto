@@ -8,16 +8,20 @@ use clap::Subcommand;
 /// Train a linear model on synthetic data with Candle on the CPU.
 #[cfg(feature = "candle")]
 mod candle;
+
 /// Cluster two groups of synthetic points with seeded Linfa K-means.
 mod kmeans;
+
 /// Predict numeric values with a linear regression model from `linfa-linear`.
 mod linfa;
+
 /// Train a SmartCore decision-tree classifier on synthetic data and measure its
 mod smartcore;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -26,21 +30,25 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `candle` example.
     #[cfg(feature = "candle")]
     #[command(name = "candle")]
     Candle,
+
     /// Runs the `kmeans` example.
     #[command(name = "kmeans")]
     Kmeans,
+
     /// Runs the `linfa` regression example.
     #[command(name = "linfa")]
     Linfa,
+
     /// Runs the `smartcore` example.
     #[command(name = "smartcore")]
     Smartcore,
 }
-/// Runs the example.
+
 /// Runs the example selected on the command line.
 fn main() {
     dispatch(Cli::parse());

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Ignoring values in patterns with `_` and `..`.
 
 /// Ignores parts of a value when destructuring.
@@ -16,6 +17,7 @@ fn main() {
     println!("Some numbers: first = {first}, last = {last}");
 
     // Use `_` to ignore a value completely:
+
     /// Prints the second argument while ignoring the first.
     fn foo(_: i32, y: i32) {
         // The first parameter is ignored.
@@ -38,8 +40,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Ignores parts of a value when destructuring.
 pub fn run() {
     main();
 }

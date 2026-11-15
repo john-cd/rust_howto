@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -29,17 +30,22 @@ use zenoh_result::ZResult;
 use crate::RegionName;
 use crate::unicast::establishment::AcceptFsm;
 use crate::unicast::establishment::OpenFsm;
-/// State machine for negotiating shared-memory region names.
 
+/// State machine for negotiating region names during unicast establishment.
 pub(crate) struct RegionNameFsm {
+
     /// Optional region name used by region name fsm; `None` means the value is not configured or
     /// unavailable.
     region_name: Option<RegionName>,
 }
 
 impl RegionNameFsm {
-    /// Constructs a usable initial region name fsm value with the defaults required by the region
-    /// name component.
+
+    /// Creates a negotiator with the optional local region name to advertise.
+    ///
+    /// # Arguments
+///
+    /// * `region_name` - Local region name advertised during the handshake, if configured.
     pub(crate) fn new(region_name: Option<RegionName>) -> Self {
         Self { region_name }
     }
@@ -47,14 +53,15 @@ impl RegionNameFsm {
 
 #[derive(Debug, Clone, PartialEq)]
 struct State {
+
     /// Optional other region name used by state; `None` means the value is not configured or
     /// unavailable.
     other_region_name: Option<RegionName>,
 }
 
 impl State {
-    /// Constructs a usable initial state value with the defaults required by the region name
-    /// component.
+
+    /// Creates empty negotiation state before the peer's region name is received.
     fn new() -> Self {
         Self {
             other_region_name: None,
@@ -72,14 +79,14 @@ impl State {
         }
     }
 }
-/// Authentication state maintained by the initiator during the open handshake.
 
+/// Region-name negotiation state maintained by the opening peer.
 #[derive(Debug, Clone, PartialEq)]
 pub(crate) struct StateOpen(State);
 
 impl StateOpen {
-    /// Constructs a usable initial state open value with the defaults required by the region name
-    /// component.
+
+    /// Creates opening-side state with no peer region name recorded yet.
     pub(crate) fn new() -> Self {
         Self(State::new())
     }
@@ -101,10 +108,12 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
     type SendOpenSynIn = &'a StateOpen;
     type SendOpenSynOut = Option<RegionName>;
 
-    /// Sends init syn.
-
+    /// Advertises the local region name in the InitSyn extension when configured.
+    ///
     /// # Arguments
-    /// * `_state` - Shared state and services used to complete the region_name workflow.
+///
+    /// * `_state` - Opening-side state required by the handshake trait; the local name is held by
+    ///   this negotiator.
     async fn send_init_syn(
         self,
         _state: Self::SendInitSynIn,
@@ -112,8 +121,16 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
         Ok(self.region_name.clone().map(name_to_ext))
     }
 
+    /// Records the peer region name advertised in the InitAck.
+    ///
+    /// # Arguments
+///
+    /// * `state` - Opening-side negotiation state updated with the peer name.
+    /// * `ext` - Optional region-name extension received in InitAck.
+    ///
     /// # Errors
-    /// An error is returned if map fails.
+///
+    /// Returns an error if the extension cannot be decoded as a valid region name.
     async fn recv_init_ack(
         self,
         (state, ext): Self::RecvInitAckIn,
@@ -122,10 +139,11 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
         Ok(())
     }
 
-    /// Sends open syn.
-
+    /// Returns the peer region name recorded from InitAck for the OpenSyn step.
+    ///
     /// # Arguments
-    /// * `state` - Shared state and services used to complete the region_name workflow.
+///
+    /// * `state` - Opening-side state containing the peer's negotiated region name.
     async fn send_open_syn(
         self,
         state: Self::SendOpenSynIn,
@@ -133,8 +151,7 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
         Ok(state.0.other_region_name.clone())
     }
 
-    /// # Arguments
-    /// * `_input` - Input data whose fields determine the requested open fsm operation.
+    /// Completes the open-side region-name step without consuming an OpenAck extension.
     async fn recv_open_ack(
         self,
         _input: Self::RecvOpenAckIn,
@@ -143,13 +160,13 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
     }
 }
 
-/// Quality-of-service extension state exchanged during unicast establishment.
+/// Region-name negotiation state maintained by the accepting peer.
 #[derive(Debug, Clone, PartialEq)]
 pub(crate) struct StateAccept(State);
 
 impl StateAccept {
-    /// Constructs a usable initial state accept value with the defaults required by the region name
-    /// component.
+
+    /// Creates accept-side state with no peer region name recorded yet.
     pub(crate) fn new() -> Self {
         Self(State::new())
     }
@@ -185,10 +202,14 @@ where
 {
     type Error = zenoh_result::Error;
 
+    /// Reads and decodes the peer region-name extension from the input stream.
+///
     /// # Arguments
+///
     /// * `reader` - Source that supplies the bytes or records consumed by this operation.
     ///
     /// # Errors
+///
     /// Returns an error if the region name cannot be read or parsed.
     fn read(self, reader: &mut R) -> Result<StateAccept, Self::Error> {
         let s: String = self
@@ -218,8 +239,16 @@ impl<'a> AcceptFsm for &'a RegionNameFsm {
     type SendOpenAckIn = &'a StateAccept;
     type SendOpenAckOut = Option<RegionName>;
 
+    /// Records the peer region name advertised in the InitSyn.
+    ///
+    /// # Arguments
+///
+    /// * `state` - Accept-side negotiation state updated with the peer name.
+    /// * `ext` - Optional region-name extension received in InitSyn.
+    ///
     /// # Errors
-    /// An error is returned if map fails.
+///
+    /// Returns an error if the extension cannot be decoded as a valid region name.
     async fn recv_init_syn(
         self,
         (state, ext): Self::RecvInitSynIn,
@@ -228,10 +257,12 @@ impl<'a> AcceptFsm for &'a RegionNameFsm {
         Ok(())
     }
 
-    /// Sends init ack.
-
+    /// Advertises the local region name in the InitAck extension when configured.
+    ///
     /// # Arguments
-    /// * `_state` - Shared state and services used to complete the region_name workflow.
+///
+    /// * `_state` - Accept-side state required by the handshake trait; the local name is held by
+    ///   this negotiator.
     async fn send_init_ack(
         self,
         _state: Self::SendInitAckIn,
@@ -239,8 +270,7 @@ impl<'a> AcceptFsm for &'a RegionNameFsm {
         Ok(self.region_name.clone().map(name_to_ext))
     }
 
-    /// # Arguments
-    /// * `_input` - Input data whose fields determine the requested accept fsm operation.
+    /// Completes the accept-side region-name step without consuming an OpenSyn extension.
     async fn recv_open_syn(
         self,
         _input: Self::RecvOpenSynIn,
@@ -248,10 +278,11 @@ impl<'a> AcceptFsm for &'a RegionNameFsm {
         Ok(())
     }
 
-    /// Sends open ack.
+    /// Returns the peer region name recorded from InitSyn for the completed transport.
+    ///
     /// # Arguments
-    /// * `state` - Shared state and services used to complete the region_name workflow.
-
+///
+    /// * `state` - Accept-side state containing the peer's negotiated region name.
     async fn send_open_ack(
         self,
         state: Self::SendOpenAckIn,
@@ -260,13 +291,23 @@ impl<'a> AcceptFsm for &'a RegionNameFsm {
     }
 }
 
+/// Encodes a region name as a Zenoh handshake extension.
+///
 /// # Arguments
-/// * `name` - Human-readable value used to identify or display the selected accept fsm.
+///
+/// * `name` - Region name to encode in the handshake extension.
 fn name_to_ext(name: RegionName) -> ext::RegionName {
     ext::RegionName::new(ZBuf::from(name.into_string().into_bytes()))
 }
 
+/// Decodes a region name from its Zenoh handshake extension.
+///
+/// # Arguments
+///
+/// * `ext` - Region-name extension received during establishment.
+///
 /// # Errors
+///
 /// Returns an error if the extension contains invalid UTF-8 or an invalid region name.
 fn ext_to_name(ext: ext::RegionName) -> ZResult<RegionName> {
     let s = String::from_utf8(ext.value.to_zslice().to_vec())?;

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A `MultiMap`, which associates several values with one key.
 //!
 //! A multimap associates several values with one key, for example the tags of a
@@ -12,6 +13,7 @@ use crates_io_api::SyncClient;
 use multimap::MultiMap;
 
 // Calls the crates.io API client and retrieves the categories for a crate.
+
 /// Returns the categories of the crate `crate_name`, as listed on `crates.io`.
 fn get_categories_for_crate(crate_name: &str) -> Result<Vec<Category>> {
     let client = SyncClient::new(
@@ -50,9 +52,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Groups crates by category in a `MultiMap`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

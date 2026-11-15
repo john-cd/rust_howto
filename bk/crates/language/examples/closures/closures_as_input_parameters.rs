@@ -1,11 +1,13 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Closures as function arguments.
 
 // This function demonstrates how to accept a closure as an input parameter.
 // The `F` in `fn apply<F>(f: F)` is a generic type parameter, allowing
 // the function to accept any type that satisfies the specified trait bounds.
+
 /// Calls the closure `f`.
 fn apply<F>(f: F)
 where
@@ -16,6 +18,7 @@ where
 
 // This function demonstrates how to accept a closure that takes an input
 // and returns a value.
+
 /// Calls the closure `f` with 3 and returns its result.
 fn apply_to_3<F>(f: F) -> i32
 where
@@ -36,8 +39,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Passes closures to the functions.
 pub fn run() {
     main();
 }
@@ -51,6 +53,7 @@ mod tests {
     fn test_closures_as_input_parameters_example_entry_point() {
         main();
     }
+
     /// Verifies apply calls closure.
     #[test]
     fn test_apply_calls_closure() {
@@ -58,6 +61,7 @@ mod tests {
         apply(|| called += 1);
         assert_eq!(called, 1);
     }
+
     /// Verifies apply to 3.
     #[test]
     fn test_apply_to_3() {

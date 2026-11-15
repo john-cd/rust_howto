@@ -1,6 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
+//! Formats floating-point values as decimal strings with the `ryu` crate.
+//!
 //! # Ryū Example
 //!
 //! This example demonstrates the usage of the `ryu` crate, a pure Rust
@@ -41,7 +44,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Prints floating-point numbers with `ryu`.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates basic usage of the `nu-ansi-term` crate for colored and styled
 //! terminal output.
 //!
@@ -24,8 +25,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates basic usage of the `nu-ansi-term` crate for colored and styled terminal output.
 pub fn run() {
     main();
 }

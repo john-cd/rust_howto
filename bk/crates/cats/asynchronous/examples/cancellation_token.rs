@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Cancels a group of asynchronous tasks with `CancellationToken`.
 //!
 //! A cancellation token is a shared signal for asking tasks to stop, for
@@ -37,9 +38,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the cancellation-token example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     run_example()

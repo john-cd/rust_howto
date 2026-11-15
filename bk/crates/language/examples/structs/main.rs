@@ -7,28 +7,38 @@ use clap::Subcommand;
 
 /// Implementation of Common Traits on a `struct`.
 mod common_traits;
+
 /// A generic struct and its `impl` blocks.
 mod generic_structs;
+
 /// An associated constant on a struct.
 mod struct_constant;
+
 /// A struct with fields of many types.
 mod struct_fields;
+
 /// Methods and associated functions on a struct.
 mod struct_impl;
+
 /// Creating instances of a struct.
 mod struct_init;
+
 /// Implementing a trait with methods, an associated type and associated constants.
 mod struct_trait;
+
 /// Creating a struct from another instance with the struct update syntax.
 mod struct_update;
+
 /// The `main` function creates an instance of the `User` struct.
 mod structs;
+
 /// Tuple structs and unit-like structs.
 mod tuple_structs;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -37,33 +47,43 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `common_traits` example.
     #[command(name = "common_traits")]
     CommonTraits,
+
     /// Runs the `generic_structs` example.
     #[command(name = "generic_structs")]
     GenericStructs,
+
     /// Runs the `struct_constant` example.
     #[command(name = "struct_constant")]
     StructConstant,
+
     /// Runs the `struct_fields` example.
     #[command(name = "struct_fields")]
     StructFields,
+
     /// Runs the `struct_impl` example.
     #[command(name = "struct_impl")]
     StructImpl,
+
     /// Runs the `struct_init` example.
     #[command(name = "struct_init")]
     StructInit,
+
     /// Runs the `struct_trait` example.
     #[command(name = "struct_trait")]
     StructTrait,
+
     /// Runs the `struct_update` example.
     #[command(name = "struct_update")]
     StructUpdate,
+
     /// Runs the `structs` example.
     #[command(name = "structs")]
     Structs,
+
     /// Runs the `tuple_structs` example.
     #[command(name = "tuple_structs")]
     TupleStructs,
@@ -106,7 +126,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

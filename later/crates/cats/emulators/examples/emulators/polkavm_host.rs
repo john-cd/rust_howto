@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A simple `PolkaVM` host example.
 //!
 //! This example loads a compiled `.polkavm` guest blob from the command line,
@@ -36,6 +37,7 @@ type ExampleResult<T> = Result<T, Box<dyn Error + Send + Sync>>;
 /// The state of the host, shared with the guest program.
 #[derive(Debug, Default)]
 struct HostState {
+
     /// The number of calls to the host function.
     counter: u32,
 }
@@ -43,6 +45,7 @@ struct HostState {
 /// Runs the emulator example.
 ///
 /// # Errors
+///
 /// Returns an error if the guest path is invalid or the guest cannot be loaded.
 fn main() -> ExampleResult<()> {
     run_with_args(std::env::args_os().skip(1))
@@ -51,9 +54,11 @@ fn main() -> ExampleResult<()> {
 /// Runs the example with command-line arguments supplied by the caller.
 ///
 /// # Arguments
+///
 /// * `args` - Arguments after the executable name; the first is the guest blob path.
 ///
 /// # Errors
+///
 /// Returns an error if the supplied guest blob cannot be loaded or executed.
 fn run_with_args(mut args: impl Iterator<Item = std::ffi::OsString>) -> ExampleResult<()> {
     run_guest(args.next().map(PathBuf::from))
@@ -63,9 +68,11 @@ fn run_with_args(mut args: impl Iterator<Item = std::ffi::OsString>) -> ExampleR
 /// the guest function. Prints the usage if no path is given.
 ///
 /// # Arguments
+///
 /// * `guest_path` - Optional path to the compiled guest blob.
 ///
 /// # Errors
+///
 /// Returns an error if reading or parsing the blob, loading the module, or calling the guest fails.
 fn run_guest(guest_path: Option<PathBuf>) -> ExampleResult<()> {
     let guest_path = if let Some(path) = guest_path {
@@ -140,9 +147,11 @@ fn print_usage() {
 /// Documents the contract that the guest program must fulfill.
 ///
 /// # Arguments
+///
 /// * `_path` - Reserved for the guest blob path in the extension exercise.
 ///
 /// # Errors
+///
 /// This placeholder always succeeds; it is kept to show a fallible helper signature.
 #[allow(clippy::unnecessary_wraps)]
 fn _guest_contract(_path: &Path) -> ExampleResult<()> {
@@ -153,6 +162,7 @@ fn _guest_contract(_path: &Path) -> ExampleResult<()> {
 /// Runs the optional PolkaVM guest supplied on the command line.
 ///
 /// # Errors
+///
 /// Returns an error if a guest path is supplied but its blob cannot be loaded or executed.
 pub fn run() -> ExampleResult<()> {
     main()

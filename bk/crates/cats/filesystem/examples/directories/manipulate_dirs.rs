@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Creating, listing and removing directories.
 //!
 //! `create_dir_all` creates a directory and any missing parents, like `mkdir
@@ -14,6 +15,7 @@ use std::path::Path;
 fn main() -> std::io::Result<()> {
     manipulate_dirs(Path::new("."))
 }
+
 /// Creates, lists and removes directories under `base`.
 fn manipulate_dirs(base: &Path) -> std::io::Result<()> {
     // 1. Create a directory:
@@ -74,9 +76,10 @@ fn manipulate_dirs(base: &Path) -> std::io::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Creates, lists and removes directories under the current directory.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> std::io::Result<()> {
     main()

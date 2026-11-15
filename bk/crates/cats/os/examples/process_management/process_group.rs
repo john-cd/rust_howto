@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Kill a child and all of its descendants with a Unix process group.
 //!
 //! A process group collects a process and the children it starts. Killing the
@@ -24,6 +25,7 @@ fn spawn_in_new_group(script: &str) -> std::io::Result<Child> {
         .process_group(0)
         .spawn()
 }
+
 /// Sends `SIGKILL` to every process in the child's group, then reaps the child.
 fn kill_group(child: &mut Child) -> anyhow::Result<()> {
     let group = Pid::from_raw(i32::try_from(child.id())?);
@@ -36,6 +38,7 @@ fn kill_group(child: &mut Child) -> anyhow::Result<()> {
 /// Starts a shell that spawns a long-running grandchild, then kills the group.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> anyhow::Result<()> {
     let mut child = spawn_in_new_group("sleep 60 & wait")?;
@@ -47,6 +50,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example_body()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parses a function and renames it using `proc_macro2`, `syn`, and `quote`.
 //!
 //! Procedural macros are programs that rewrite code at compile time. `syn`
@@ -15,10 +16,12 @@ use syn::ItemFn;
 /// Renames a parsed function to show the token transformation a macro performs.
 ///
 /// # Errors
+///
 /// Returns an error when `input` does not contain a valid Rust function.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested watt operation.
+///
+/// * `input` - Token stream containing the function to rename.
 fn rename_function(input: TokenStream) -> anyhow::Result<TokenStream> {
     let mut function: ItemFn = syn::parse2(input)?;
     function.sig.ident = format_ident!("watt_{}", function.sig.ident);
@@ -28,6 +31,7 @@ fn rename_function(input: TokenStream) -> anyhow::Result<TokenStream> {
 /// Prints the generated function as formatted Rust source.
 ///
 /// # Errors
+///
 /// Returns an error if parsing or formatting the generated function fails.
 fn main() -> anyhow::Result<()> {
     let input = quote! {
@@ -45,6 +49,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the token-transformation example.
 ///
 /// # Errors
+///
 /// Returns an error if the sample function cannot be parsed or formatted.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -59,6 +64,7 @@ mod tests {
     #[test]
     fn renames_function_and_preserves_body() -> anyhow::Result<()> {
         let input = quote! {
+
         /// Calculates the current value.
                     fn calculate() -> u32 {
                         6 * 7

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Connects to Oracle with Sibyl's blocking API and reads a value from `DUAL`.
 //!
 //! Oracle Database is a commercial relational database. `DUAL` is a built-in
@@ -14,6 +15,7 @@
 /// `host:1521/FREEPDB1` for Oracle Free.
 ///
 /// # Errors
+///
 /// Returns an error if required settings are missing, the client cannot load,
 /// or connecting to and querying the database fails.
 fn main() -> anyhow::Result<()> {
@@ -52,6 +54,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the Sibyl Oracle example.
 ///
 /// # Errors
+///
 /// Returns an error when client setup, connection, or query execution fails.
 pub fn run() -> anyhow::Result<()> {
     main()

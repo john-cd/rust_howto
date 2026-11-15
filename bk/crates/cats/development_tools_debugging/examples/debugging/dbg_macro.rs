@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Prints an expression with `dbg!` and continues with its value.
 //!
 //! `dbg!` prints the expression, its value and the file and line to standard
@@ -21,6 +22,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the `dbg!` example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

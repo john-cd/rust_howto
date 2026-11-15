@@ -27,6 +27,7 @@ pub fn backup_then_write_to<P: AsRef<Path>>(filepath: P, contents: String) -> Re
 /// Returns the backup path of `filepath`: the full file name plus `.bak`.
 ///
 /// # Arguments
+///
 /// * `filepath` - Path to the resource being processed.
 ///
 /// Appending (instead of replacing the extension) keeps `a.md` and `a.toml`
@@ -67,6 +68,7 @@ mod tests {
     use super::*;
 
     // Helper function to read file content.
+
     /// Reads UTF-8 text from `path`.
     ///
     /// # Errors

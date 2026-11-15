@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Simple Rust example using the `nix` crate to handle Unix-like operating
 //! system tasks: create a file, write to it, read from it, and delete it.
 //!
@@ -70,9 +71,10 @@ fn main() -> nix::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Creates a file, writes to it and reads it back using `nix`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> nix::Result<()> {
     main()

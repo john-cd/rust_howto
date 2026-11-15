@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Type checking of the expressions a declarative macro expands to.
 
 /// Returns twice the expression `x`, whose type is not checked by the macro.
@@ -18,8 +19,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls a macro that doubles its argument.
 pub fn run() {
     main();
 }

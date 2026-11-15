@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Sleep until the next cron time, run the job, repeat: no drift, because each
 //! wake-up is computed from the schedule rather than from "now plus a period".
 //!
@@ -22,12 +23,14 @@ use tokio_util::sync::CancellationToken;
 
 /// A clock that follows Tokio's (pausable) time: `start` plus elapsed time.
 struct Clock {
+
     /// Start of the selected range.
     start: DateTime<Utc>,
     origin: tokio::time::Instant,
 }
 
 impl Clock {
+
     /// Associates an absolute start time with Tokio's pausable monotonic clock.
     fn new(start: DateTime<Utc>) -> Self {
         Self {
@@ -41,6 +44,7 @@ impl Clock {
         self.start + self.origin.elapsed()
     }
 }
+
 /// Runs a scheduled job until cancellation and returns its simulated start
 /// times.
 async fn run_cron<F, Fut>(
@@ -110,9 +114,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the demonstration on a paused-clock runtime and reports setup errors.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

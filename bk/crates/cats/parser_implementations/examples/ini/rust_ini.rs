@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use `rust-ini` to parse and manipulate INI
 //! files.
 //!
@@ -67,6 +68,7 @@ key4 = value4
 /// Runs the `rust-ini` example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

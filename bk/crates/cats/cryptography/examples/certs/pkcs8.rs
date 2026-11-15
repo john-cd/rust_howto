@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encoding and decoding private keys in PKCS#8 format.
 //!
 //! PKCS#8 is the standard container for private keys, which records the key
@@ -59,9 +60,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Encoding and decoding private keys in PKCS#8 format.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

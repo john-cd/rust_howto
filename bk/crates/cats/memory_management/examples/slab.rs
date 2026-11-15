@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates using `slab` for pre-allocated storage.
 //!
 //! `slab` provides a slab allocator - a pre-allocated pool of memory
@@ -13,7 +14,7 @@
 //! ```
 
 use slab::Slab;
-/// Runs the example.
+
 /// Stores values in a slab and accesses them by key.
 fn main() {
     example();

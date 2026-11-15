@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encodes messages with `postcard` into a bounded `heapless` queue.
 
 use heapless::Deque;
@@ -11,8 +12,10 @@ use serde::Serialize;
 /// A message with a stable wire format.
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
 struct Reading {
+
     /// Sensor value.
     sensor: u8,
+
     /// Millidegrees value.
     millidegrees: i32,
 }
@@ -31,17 +34,17 @@ fn enqueue(queue: &mut Queue, reading: &Reading) -> anyhow::Result<bool> {
         Vec::from_slice(encoded).map_err(|_| anyhow::anyhow!("message exceeds the buffer"))?;
     Ok(queue.push_back(message).is_ok())
 }
-/// Decodes the oldest queued message.
 
+/// Decodes the oldest queued message.
 fn dequeue(queue: &mut Queue) -> anyhow::Result<Option<Reading>> {
     queue
         .pop_front()
         .map(|bytes| Ok(postcard::from_bytes(&bytes)?))
         .transpose()
 }
+
 /// Encodes messages with `postcard` into a bounded `heapless` queue.
 /// Queues six readings into a four-slot queue and drains it.
-
 fn main() -> anyhow::Result<()> {
     let mut queue = Queue::new();
     for sensor in 0..6 {
@@ -60,10 +63,10 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Encodes messages with `postcard` into a bounded `heapless` queue.
-
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Rejects new messages when the queue is full and preserves queued readings.
     #[test]
     fn a_full_queue_rejects_new_messages() -> anyhow::Result<()> {

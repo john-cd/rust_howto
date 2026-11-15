@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Implementation of Common Traits on a `struct`.
 
 use std::fmt;
@@ -26,8 +27,10 @@ use std::hash::Hash;
 ///   representing a zeroed, empty, or baseline state.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
 struct Point2D {
+
     /// The horizontal coordinate.
     x: i32,
+
     /// The vertical coordinate.
     y: i32,
 }
@@ -45,6 +48,7 @@ struct Point2D {
 // The `Display` trait allows your struct to be printed using the `{}` format
 // specifier, for user-friendly output.
 impl fmt::Display for Point2D {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "Point2D: ({}, {})", self.x, self.y)
@@ -87,8 +91,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Uses the traits implemented by the struct.
 pub fn run() {
     main();
 }

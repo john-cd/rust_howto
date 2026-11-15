@@ -7,26 +7,35 @@ use clap::Subcommand;
 
 /// Parallel iterators with `rayon`: a sum of squares and an in-place update.
 mod multithreading_rayon;
+
 /// Running `rayon` work on a custom thread pool.
 mod multithreading_rayon_custom;
+
 /// Sorts the vector in parallel using Rayon's `par_sort` method.
 mod multithreading_rayon_parsort;
+
 /// This example demonstrates the use of `any` and `all` methods on a parallel
 mod rayon_any_all;
+
 /// Mutating the elements of an array in parallel with `rayon`.
 mod rayon_iter_mut;
+
 /// Parallel `filter`, `map` and `reduce` over a vector with `rayon`.
 mod rayon_map_reduce;
+
 /// Demonstrates parallel searching using Rayon's `par_iter().find_any()`.
 mod rayon_parallel_search;
+
 /// This example demonstrates parallel sorting of a vector of strings using
 mod rayon_parallel_sort;
+
 /// Generating thumbnails of images in parallel with `rayon` and `image`.
 mod rayon_thumbnails;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -35,30 +44,39 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `multithreading_rayon` example.
     #[command(name = "multithreading_rayon")]
     MultithreadingRayon,
+
     /// Runs the `multithreading_rayon_custom` example.
     #[command(name = "multithreading_rayon_custom")]
     MultithreadingRayonCustom,
+
     /// Runs the `multithreading_rayon_parsort` example.
     #[command(name = "multithreading_rayon_parsort")]
     MultithreadingRayonParsort,
+
     /// Runs the `rayon_any_all` example.
     #[command(name = "rayon_any_all")]
     RayonAnyAll,
+
     /// Runs the `rayon_iter_mut` example.
     #[command(name = "rayon_iter_mut")]
     RayonIterMut,
+
     /// Runs the `rayon_map_reduce` example.
     #[command(name = "rayon_map_reduce")]
     RayonMapReduce,
+
     /// Runs the `rayon_parallel_search` example.
     #[command(name = "rayon_parallel_search")]
     RayonParallelSearch,
+
     /// Runs the `rayon_parallel_sort` example.
     #[command(name = "rayon_parallel_sort")]
     RayonParallelSort,
+
     /// Runs the `rayon_thumbnails` example.
     #[command(name = "rayon_thumbnails")]
     RayonThumbnails,

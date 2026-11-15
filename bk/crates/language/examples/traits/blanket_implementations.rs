@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A blanket implementation of a trait for all types that implement another.
 //!
 //! A blanket implementation implements a trait for every type that meets a
@@ -13,6 +14,7 @@ mod my {
 
     /// A trait implemented for every type that implements `Display`.
     pub trait VeryUsefulTrait {
+
         /// Returns a description of `self`.
         fn my_method(&self) -> String;
     }
@@ -38,8 +40,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the blanket implementation on a string.
 pub fn run() {
     main();
 }

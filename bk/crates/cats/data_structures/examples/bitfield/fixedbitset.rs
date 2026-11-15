@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A fixed-size bit set with `fixedbitset`: a visited set for a graph walk.
 //!
 //! `FixedBitSet` uses one bit per element (a `Vec<bool>` uses a byte) and
@@ -52,8 +53,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Walks a small graph with two components.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Stores, loads and deletes a secret in the operating-system credential store
 //! (Windows Credential Manager, macOS Keychain or the Secret Service) with
 //! `keyring`.
@@ -13,11 +14,13 @@ const SERVICE: &str = "rust-howto-example";
 
 /// A thin wrapper over one credential store entry.
 struct Vault {
+
     /// The entry in the credential store.
     entry: Entry,
 }
 
 impl Vault {
+
     /// Opens the entry for `user`.
     fn new(user: &str) -> Result<Self, Error> {
         Ok(Self {
@@ -48,7 +51,10 @@ impl Vault {
     }
 }
 
+/// Creates a secret vault and demonstrates storing, loading, and deleting a secret.
+///
 /// # Errors
+///
 /// Returns an error if creating the vault or storing, loading, or deleting the secret fails.
 fn main() -> Result<(), Error> {
     let vault = Vault::new("alice")?;
@@ -60,7 +66,7 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Returns an error if creating the vault or storing, loading, or deleting the secret fails.
 pub fn run() {
     if let Err(e) = main() {
         eprintln!("credential store unavailable: {e}");

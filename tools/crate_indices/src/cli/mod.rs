@@ -14,21 +14,29 @@ mod commands;
 /// The command that the end user selected
 #[derive(Default, Debug)]
 pub(crate) enum Cmd {
+
     /// No command was selected.
     #[default]
     None,
+
     /// Generate the page of a category.
     CategoryPage(CmdArgs),
+
     /// Generate the page of a category from a local metadata snapshot.
     CategoryPageFromMetadata(CategoryPageFromMetadataCmdArgs),
+
     /// Generate the alphabetical index of crates.
     AlphabeticalCratePage(AlphabeticalCratePageCmdArgs),
+
     /// Generate the page of a crate.
     CratePage(CmdArgs),
+
     /// List the crates used in a directory.
     ListCrates(DirectoryCmdArgs),
+
     /// Update the reference definitions of a file.
     UpdateRefDefs(CmdArgs2),
+
     /// Expand the crate blocks in a directory.
     ExpandCrateBlocks(ExpandCrateBlocksCmdArgs),
 }
@@ -37,6 +45,7 @@ pub(crate) enum Cmd {
 /// for `category_page` and `alphabetical_page`
 #[derive(Debug)]
 pub(crate) struct CmdArgs {
+
     /// Names of the crates.
     pub crate_names: Vec<String>,
 }
@@ -44,8 +53,10 @@ pub(crate) struct CmdArgs {
 /// The command arguments for `update_refdefs`
 #[derive(Debug)]
 pub(crate) struct CmdArgs2 {
+
     /// Names of the crates.
     pub crate_names: Vec<String>,
+
     /// File that contains the reference definitions.
     pub filepathbuf: PathBuf,
 }
@@ -53,10 +64,13 @@ pub(crate) struct CmdArgs2 {
 /// Arguments for generating a category page from a local metadata snapshot.
 #[derive(Debug)]
 pub(crate) struct CategoryPageFromMetadataCmdArgs {
+
     /// Names of the crates.
     pub crate_names: Vec<String>,
+
     /// Path of the metadata snapshot.
     pub metadata_path: PathBuf,
+
     /// Root folder of the book.
     pub book_root: PathBuf,
 }
@@ -64,8 +78,10 @@ pub(crate) struct CategoryPageFromMetadataCmdArgs {
 /// Arguments for generating an alphabetical index with published recipe links.
 #[derive(Debug)]
 pub(crate) struct AlphabeticalCratePageCmdArgs {
+
     /// Names of the crates.
     pub crate_names: Vec<String>,
+
     /// Root folder of the book.
     pub book_root: PathBuf,
 }
@@ -73,6 +89,7 @@ pub(crate) struct AlphabeticalCratePageCmdArgs {
 /// Command arguments with a directory
 #[derive(Debug)]
 pub(crate) struct DirectoryCmdArgs {
+
     /// Directory to process.
     pub dirpathbuf: PathBuf,
 }
@@ -80,8 +97,10 @@ pub(crate) struct DirectoryCmdArgs {
 /// Command arguments for `expand_crate_blocks`
 #[derive(Debug)]
 pub(crate) struct ExpandCrateBlocksCmdArgs {
+
     /// Directory to process.
     pub dirpathbuf: PathBuf,
+
     /// File that contains the reference definitions, if any.
     pub refdefs_filepathbuf: Option<PathBuf>,
 }
@@ -89,7 +108,8 @@ pub(crate) struct ExpandCrateBlocksCmdArgs {
 /// Parses the command line and returns the selected command.
 ///
 /// # Errors
-/// Returns an error if the requested data cannot be retrieved.
+///
+/// Returns an error if standard input cannot be read while collecting command-line arguments.
 pub(super) fn get_cmd() -> anyhow::Result<Cmd> {
     // Parse the specified command-line arguments, exiting on failure.
     let matches = commands::cli().get_matches_from(capture_stdin()?);
@@ -157,42 +177,51 @@ fn get_crate_names(m: &clap::ArgMatches) -> Vec<String> {
         .map(std::convert::Into::into)
         .collect::<Vec<String>>()
 }
+
 /// Gets the required output file path from the parsed command-line arguments.
 ///
 /// # Panics
+///
 /// Panics if the required `file_path` argument is missing.
 fn get_file_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("file_path")
         .expect("file_path is required")
         .clone()
 }
+
 /// Gets the required category metadata path from the parsed arguments.
 ///
 /// # Panics
+///
 /// Panics if the required `metadata` argument is missing.
 fn get_metadata_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("metadata")
         .expect("metadata is required")
         .clone()
 }
+
 /// Gets the book root used to find published recipe links.
 ///
 /// # Panics
+///
 /// Panics if the parsed arguments contain no book root value.
 fn get_book_root(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("book_root")
         .expect("book_root has a value")
         .clone()
 }
+
 /// Gets the required directory path from the parsed command-line arguments.
 ///
 /// # Panics
+///
 /// Panics if the required `directory` argument is missing.
 fn get_dir_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("directory")
         .expect("directory has a value")
         .clone()
 }
+
 /// Get an optional file path from the command line arguments.
 /// Returns `None` if the argument was not provided.
 fn get_optional_file_path(m: &clap::ArgMatches) -> Option<PathBuf> {

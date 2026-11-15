@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Records request counts and durations with the `metrics` facade.
 //!
 //! The `metrics` crate is a facade like `log`: code records counters, gauges
@@ -24,6 +25,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the metrics recording example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Converting between types with `From` and `Into`.
 mod from;
+
 /// Converting custom errors from different sources.
 mod from2;
+
 /// Parsing from raw bytes.
 mod from3;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `from` example.
     #[command(name = "from")]
     From,
+
     /// Runs the `from2` example.
     #[command(name = "from2")]
     From2,
+
     /// Runs the `from3` example.
     #[command(name = "from3")]
     From3,

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Main function that parses command line arguments and prints their values:
 //!
 //! Command-line arguments are the words typed after a program name. A parser
@@ -43,6 +44,7 @@ fn cli() -> Command {
     // `.arg(clap::arg!(-c --config <CONFIG> "Optionally sets a config file to
     // use"))`.
 }
+
 /// Main function that parses command line arguments and prints their values:
 fn main() {
     let matches = cli().get_matches_from(["test_app", "-n", "42", "--file", "README.md"]);
@@ -59,8 +61,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Main function that parses command line arguments and prints their values:
 pub fn run() {
     main();
 }

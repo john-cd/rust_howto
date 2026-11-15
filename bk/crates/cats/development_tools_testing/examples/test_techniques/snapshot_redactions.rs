@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Snapshots of structured data with `insta`: JSON, redactions and
 //!
 //! `Debug` output.
@@ -13,10 +14,13 @@ use serde::Serialize;
 /// An order as returned by an API.
 #[derive(Debug, Serialize)]
 struct Order {
+
     /// Random: differs on every run.
     id: u64,
+
     /// Customer name associated with the record.
     customer: String,
+
     /// Collection consumed by order while preserving its ordering and relationships.
     items: Vec<String>,
 }

@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to define a PyO3 Python module in Rust, register it with
 //! `sys.modules`, and invoke its Rust function and class from embedded Python.
 //!
@@ -10,9 +11,11 @@
 //! Python installs with `pip`.
 
 use pyo3::prelude::*;
+
 /// Adds two 64-bit integers and returns their sum.
 ///
 /// # Arguments
+///
 /// * `a` - The first 64-bit integer.
 ///
 /// * `b` - The second 64-bit integer.
@@ -22,6 +25,7 @@ use pyo3::prelude::*;
 /// Returns `PyOverflowError` when the sum does not fit in an `i64`.
 ///
 /// # Example
+///
 /// ```python
 /// result = my_module.my_function(10, 20)  # result will be 30
 /// ```
@@ -35,6 +39,7 @@ fn my_function(a: i64, b: i64) -> PyResult<i64> {
 /// A Python-visible counter backed by a Rust integer.
 #[pyclass]
 struct Counter {
+
     /// Current counter value.
     value: i64,
 }
@@ -42,6 +47,7 @@ struct Counter {
 /// Methods exposed on Python's `Counter` class.
 #[pymethods]
 impl Counter {
+
     /// Creates a counter initialized to `value`.
     #[new]
     fn new(value: i64) -> Self {
@@ -80,6 +86,7 @@ impl Counter {
 /// Returns a Python error if registration of the function or class fails.
 ///
 /// # Example
+///
 /// ```python
 /// import my_module
 /// ```
@@ -89,6 +96,7 @@ fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
     module.add_class::<Counter>()?;
     Ok(())
 }
+
 /// Initializes the Python interpreter, registers the Rust module `my_module` in
 ///
 /// `sys.modules`, and executes Python code that imports and calls its function
@@ -96,6 +104,7 @@ fn my_module(module: &Bound<'_, PyModule>) -> PyResult<()> {
 /// and class.
 ///
 /// # Errors
+///
 /// Returns a `pyo3::PyErr` if Python initialization, module creation, or Python
 /// script execution fails.
 fn main() -> PyResult<()> {
@@ -156,10 +165,12 @@ mod tests {
         target_os = "windows",
         ignore = "set PYTHONHOME to the Python base prefix and rerun this test"
     )]
+
     /// Verifies that the `use rust from python` example runs.
     fn test_use_rust_from_python_example_entry_point() -> PyResult<()> {
         main()
     }
+
     /// Reports addition overflow as a Python error.
     #[test]
     fn test_addition_overflow_returns_error() {

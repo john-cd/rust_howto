@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `Rc` is a smart pointer that allows multiple owners of the same data.
 //!
 //! `Rc` stands for "Reference Counted". It keeps track of the number of owners
@@ -44,7 +45,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Shares a vector between several owners with `Rc` and counts the references.
 pub fn run() {
     main();
 }
@@ -53,11 +54,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `rc` example runs.
     #[test]
     fn test_rc_example_entry_point() {
         main();
     }
+
     /// Verifies strong count follows clones and drops.
     #[test]
     fn test_strong_count_follows_clones_and_drops() {
@@ -80,6 +83,7 @@ mod tests {
         assert!(Rc::get_mut(&mut y).is_none());
         Ok(())
     }
+
     /// Verifies try unwrap.
     #[test]
     fn test_try_unwrap() {
@@ -92,6 +96,7 @@ mod tests {
         assert_eq!(*err, 6);
         drop(other);
     }
+
     /// Verifies weak does not keep the value alive.
     #[test]
     fn test_weak_does_not_keep_the_value_alive() {

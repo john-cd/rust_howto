@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Create a manual OpenTelemetry span and pair it with regular tracing output.
 //!
 //! OpenTelemetry is a vendor-neutral standard for traces, metrics and logs. A
@@ -56,9 +57,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints a message when the `opentelemetry` feature is not enabled.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -12,16 +12,22 @@
 
 /// Serve an `axum` router over HTTPS with `axum-server` and `rustls`.
 mod axum_server_tls;
+
 /// Set and read cookies with `tower-cookies`.
 mod cookies;
+
 /// Get readable compiler errors for handlers with `#[debug_handler]`.
 mod debug_handler;
+
 /// One-time "flash" messages with `axum-messages` and `tower-sessions`.
 mod flash_messages;
+
 /// Redirect HTTP requests to HTTPS.
 mod https_redirect;
+
 /// Extract strongly typed headers with [`axum_extra::TypedHeader`].
 mod typed_header;
+
 /// Runs the example.
 fn main() {
     // Build the routers; serving them is shown in the tests.

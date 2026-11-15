@@ -7,29 +7,41 @@ use clap::Subcommand;
 
 /// A basic declarative macro.
 mod macro_by_example_basic;
+
 /// This macro provides a domain-specific language (DSL) for defining configuration for an
 /// application.
 mod macro_by_example_dsl;
+
 /// Macro hygiene: variables in a macro do not clash with variables outside it.
 mod macro_by_example_hygiene;
+
 /// Metavariables in declarative macros.
 mod macro_by_example_metavariables;
+
 /// Repetitions in declarative macros.
 mod macro_by_example_repetitions;
+
 /// Type checking of the expressions a declarative macro expands to.
 mod macro_by_example_type_checking;
+
 /// Restricting the types a declarative macro accepts.
 mod macro_by_example_type_checking2;
+
 /// Ways to use function-like macros: as expressions, statements, items and types.
 mod macros;
+
 /// Rewriting tokens with a procedural macro built on `proc-macro2`.
 mod proc_macro2_example;
+
 /// An attribute procedural macro that logs function calls.
 mod proc_macro_attribute;
+
 /// A derive procedural macro that implements a trait.
 mod proc_macro_derive;
+
 /// A function-like procedural macro that processes a SQL query.
 mod proc_macro_function;
+
 /// Builds or traverses macros graph data while preserving relationships needed by downstream
 /// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod token_tree;
@@ -37,6 +49,7 @@ mod token_tree;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -45,42 +58,55 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `macro_by_example_basic` example.
     #[command(name = "macro_by_example_basic")]
     MacroByExampleBasic,
+
     /// Runs the `macro_by_example_dsl` example.
     #[command(name = "macro_by_example_dsl")]
     MacroByExampleDsl,
+
     /// Runs the `macro_by_example_hygiene` example.
     #[command(name = "macro_by_example_hygiene")]
     MacroByExampleHygiene,
+
     /// Runs the `macro_by_example_metavariables` example.
     #[command(name = "macro_by_example_metavariables")]
     MacroByExampleMetavariables,
+
     /// Runs the `macro_by_example_repetitions` example.
     #[command(name = "macro_by_example_repetitions")]
     MacroByExampleRepetitions,
+
     /// Runs the `macro_by_example_type_checking` example.
     #[command(name = "macro_by_example_type_checking")]
     MacroByExampleTypeChecking,
+
     /// Runs the `macro_by_example_type_checking2` example.
     #[command(name = "macro_by_example_type_checking2")]
     MacroByExampleTypeChecking2,
+
     /// Runs the `macros` example.
     #[command(name = "macros")]
     Macros,
+
     /// Runs the `proc_macro2_example` example.
     #[command(name = "proc_macro2_example")]
     ProcMacro2Example,
+
     /// Runs the `proc_macro_attribute` example.
     #[command(name = "proc_macro_attribute")]
     ProcMacroAttribute,
+
     /// Runs the `proc_macro_derive` example.
     #[command(name = "proc_macro_derive")]
     ProcMacroDerive,
+
     /// Runs the `proc_macro_function` example.
     #[command(name = "proc_macro_function")]
     ProcMacroFunction,
+
     /// Runs the `token_tree` example.
     #[command(name = "token_tree")]
     TokenTree,
@@ -132,7 +158,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

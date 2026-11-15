@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A basic one-dimensional rocket launch simulation.
 //!
 //! Simulations like this one let engineers test a design before building it.
@@ -12,20 +13,28 @@
 
 /// A basic 1D rocket launch simulation.
 struct Rocket {
+
     /// Mass of the rocket without fuel, in kg.
     mass_empty: f64, // kg
+
     /// Mass of the fuel, in kg.
     fuel_mass: f64, // kg
+
     /// Thrust of the engine, in N.
     thrust: f64, // N
+
     /// Fuel burn rate, in kg/s.
     burn_rate: f64, // kg/s
+
     /// Drag coefficient; dimensionless.
     drag_coeff: f64, // dimensionless
+
     /// Cross-section area, in m^2.
     area: f64, // m^2
+
     /// Vertical velocity, in m/s.
     velocity: f64, // m/s
+
     /// Altitude, in m.
     altitude: f64, // m
 }
@@ -105,6 +114,7 @@ fn main() {
 // ANCHOR_END: example
 
 // ANCHOR: sgp4-tle-propagation
+
 /// Propagates a fixed ISS two-line element set sixty minutes from its epoch.
 ///
 /// A two-line element set (TLE) describes a satellite's orbit; SGP4 predicts
@@ -165,7 +175,7 @@ fn solve_ballistic_trajectory() -> [f64; 2] {
     [final_state[0], final_state[1]]
 }
 // ANCHOR_END: rk4-ballistic-trajectory
-/// Runs the example entry point.
+
 /// Runs the aerospace simulation examples through the crate entry point.
 pub fn run() {
     main();

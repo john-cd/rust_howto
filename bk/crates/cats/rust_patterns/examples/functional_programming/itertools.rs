@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates the usage of the `itertools` crate.
 //!
 //! `itertools` provides extra iterator adaptors, functions and macros that
@@ -56,8 +57,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Applies `itertools` functions and adaptors to iterators.
 pub fn run() {
     main();
 }

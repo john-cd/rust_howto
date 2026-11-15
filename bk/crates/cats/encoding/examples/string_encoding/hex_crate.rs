@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encode and decode hexadecimal with the `hex` crate.
 //!
 //! Hexadecimal writes each byte as two characters from 0-9 and a-f. It is the
@@ -10,6 +11,7 @@
 /// Encodes bytes as lowercase hexadecimal and decodes them back.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> Result<(), hex::FromHexError> {
     let encoded = hex::encode("Hello world!");
@@ -36,6 +38,7 @@ pub fn example_body() -> Result<(), hex::FromHexError> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<(), hex::FromHexError> {
     example_body()

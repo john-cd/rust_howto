@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `num_traits` crate provides numeric traits for generic mathematics.
 //!
 //! A trait describes behaviour that several types share. The numeric traits let
@@ -19,6 +20,7 @@ fn sum_values<T: Num + Copy>(values: &[T]) -> T {
         .copied()
         .fold(T::zero(), |sum, value| sum + value)
 }
+
 /// Uses the `Zero`, `One` and `NumCast` traits on a number.
 fn main() {
     let integer_sum = sum_values(&[1_i32, 2, 3]);
@@ -43,8 +45,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Uses the `Zero`, `One` and `NumCast` traits on a number.
 pub fn run() {
     main();
 }

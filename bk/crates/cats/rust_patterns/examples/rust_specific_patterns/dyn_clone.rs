@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to clone trait objects using the `dyn_clone` crate.
 //!
 //! A trait object (`Box<dyn Trait>`) cannot be cloned directly, because `Clone`
@@ -11,8 +12,10 @@ use dyn_clone::DynClone;
 
 // Define a trait named `MyTrait` that requires implementors to also implement
 // `DynClone`.
+
 /// A trait whose trait objects can be cloned.
 trait MyTrait: DynClone {
+
     /// Prints the value.
     fn recite(&self);
 }
@@ -43,8 +46,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Clones a boxed trait object and calls a method on both objects.
 pub fn run() {
     main();
 }

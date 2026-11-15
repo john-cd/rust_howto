@@ -5,16 +5,19 @@
 use anyhow::Result;
 
 // The master list of categories is a TOML file in the `crates.io` repo:
+
 /// URL of the categories TOML file.
 static CATEGORIES_URL: &str = "https://raw.githubusercontent.com/rust-lang/crates.io/refs/heads/main/src/boot/categories.toml";
 
 /// Downloads the categories TOML file from the canonical upstream URL.
 ///
 /// # Errors
-/// Returns an error if the requested data cannot be retrieved.
+///
+/// Returns an error if the categories URL is invalid, the request or response read fails, or the server returns an unsuccessful status.
 pub(super) fn get_categories_toml_string() -> Result<String> {
     get_categories_toml_string_from_url(CATEGORIES_URL)
 }
+
 /// Downloads and validates the response from the supplied URL.
 ///
 /// # Errors

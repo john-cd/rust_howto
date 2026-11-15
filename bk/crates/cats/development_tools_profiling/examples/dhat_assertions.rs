@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Asserts on heap allocations in a test with `dhat`.
 //! A heap profiler such as DHAT records every allocation. Asserting on the
 //! counts in a test turns "this function should not allocate" into a regression
@@ -18,10 +19,12 @@ fn with_capacity(parts: &[&str]) -> String {
     }
     s
 }
+
 /// Runs the example.
 fn main() {
     example_body();
 }
+
 /// Runs the example entry point.
 pub fn example_body() {
     println!("{}", with_capacity(&["a", "b", "c"]));
@@ -46,6 +49,7 @@ mod tests {
     static SERIAL: Mutex<()> = Mutex::new(());
 
     // Keep all the allocation assertions in a single test.
+
     /// Confirms the example uses one allocation without reallocating its output.
     #[test]
     fn allocation_counts() {

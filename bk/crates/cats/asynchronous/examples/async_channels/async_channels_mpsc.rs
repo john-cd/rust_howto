@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A Tokio multi-producer, single-consumer (`mpsc`) channel.
 //!
 //! A channel passes values between tasks so that they need not share memory.
@@ -13,7 +14,8 @@ use tokio::sync::mpsc;
 /// Simulates some computation that takes a `u32` and returns a `String`.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested async channels mpsc operation.
+///
+/// * `input` - Value included in the returned message.
 async fn some_computation(input: u32) -> String {
     format!("The result of computation is {input}")
 }
@@ -36,7 +38,7 @@ pub async fn multi_producer_single_receiver() {
         println!("{res}");
     }
 }
-/// Runs the example.
+
 /// Runs the async channels mpsc example.
 #[tokio::main]
 async fn main() {
@@ -44,7 +46,6 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example.
 pub fn run() {
     main();
@@ -90,6 +91,7 @@ mod tests {
             ]
         );
     }
+
     /// Sends fails once the receiver is dropped.
     #[tokio::test]
     async fn send_fails_once_the_receiver_is_dropped() {

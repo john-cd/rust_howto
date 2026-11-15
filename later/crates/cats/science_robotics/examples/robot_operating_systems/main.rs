@@ -7,7 +7,9 @@
 mod ros2_pubsub;
 
 /// Publishes and receives ROS 2 messages in a sourced ROS 2 environment.
+///
 /// # Errors
+///
 /// Returns ROS initialization, communication, or receive timeout failures.
 fn main() -> anyhow::Result<()> {
     #[cfg(feature = "ros2")]

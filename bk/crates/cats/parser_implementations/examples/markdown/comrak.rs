@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `comrak` is a `CommonMark` and GitHub-flavored Markdown compatible parser.
 //!
 //! CommonMark is a precise specification of Markdown, which has many ambiguous
@@ -28,11 +29,14 @@ fn to_html() {
 /// Replaces all instances of `orig_string` with `replacement` in the
 ///
 /// markdown document.
+///
 /// # Arguments
+///
 /// * `document` - The markdown document to modify.
 /// * `orig_string` - The string to replace.
 ///
 /// # Panics
+///
 /// Panics if failed to format HTML.
 fn replace_text(document: &str, orig_string: &str, replacement: &str) -> String {
     // The returned nodes are created in the supplied `Arena`, and are bound by
@@ -55,7 +59,7 @@ fn replace_text(document: &str, orig_string: &str, replacement: &str) -> String 
 
     html
 }
-/// Runs the example.
+
 /// Converts Markdown to HTML and replaces text in a Markdown document.
 fn main() {
     to_html();
@@ -69,8 +73,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Converts Markdown to HTML and replaces text in a Markdown document.
 pub fn run() {
     main();
 }

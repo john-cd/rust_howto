@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Signs a user in with the OpenID Connect authorization-code flow and PKCE,
 //! using a deterministic in-process identity provider.
 //!
@@ -58,20 +59,26 @@ use serde_json::json;
 
 /// The provider's issuer identifier.
 const ISSUER: &str = "https://idp.example.test";
+
 /// The identifier registered for this application.
 const CLIENT_ID: &str = "demo-client";
+
 /// A demo secret; real secrets come from a secret store.
 const CLIENT_SECRET: &str = "demo-secret-demo-secret-demo-secret";
+
 /// Where the provider sends the browser back.
 const REDIRECT: &str = "https://app.example.test/callback";
 
 /// Secrets that must survive between the redirect and the callback, and be
 /// used for that single login only.
 struct PendingLogin {
+
     /// Binds the callback to this browser session.
     csrf: CsrfToken,
+
     /// Binds the ID token to this authorization request.
     nonce: Nonce,
+
     /// Proves the code is redeemed by the party that asked for it.
     pkce_verifier: PkceCodeVerifier,
 }
@@ -79,8 +86,10 @@ struct PendingLogin {
 /// What the application learns about the signed-in user.
 #[derive(Debug, PartialEq, Eq)]
 struct Identity {
+
     /// The provider-scoped, stable user identifier (`sub`).
     subject: String,
+
     /// The user's email, if the provider released it.
     email: Option<String>,
 }
@@ -94,11 +103,13 @@ type Client = CoreClient<
     EndpointMaybeSet,
     EndpointMaybeSet,
 >;
+
 /// Builds the client from provider metadata that the application configured
 ///
 /// itself: no discovery request is made.
 ///
 /// # Errors
+///
 /// Returns an error if any provider, token, or redirect URL is invalid.
 fn build_client(issuer: &str) -> anyhow::Result<Client> {
     let metadata = CoreProviderMetadata::new(
@@ -203,6 +214,7 @@ fn sign(claims: &serde_json::Value, secret: &str) -> anyhow::Result<String> {
         &EncodingKey::from_secret(secret.as_bytes()),
     )?)
 }
+
 /// A token endpoint that checks the PKCE verifier and returns `id_token`.
 fn token_endpoint(
     id_token: String,
@@ -259,6 +271,7 @@ fn main() -> anyhow::Result<()> {
 /// The current Unix time in seconds.
 ///
 /// # Panics
+///
 /// Panics if the clock is after 1970.
 fn unix_now() -> i64 {
     let elapsed = std::time::SystemTime::now()
@@ -268,9 +281,10 @@ fn unix_now() -> i64 {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs a complete login against the fixture provider.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -284,10 +298,13 @@ mod tests {
     /// A login attempt prepared like `main` does, with the fixture pieces
     /// that tests tweak.
     struct Attempt {
+
         /// The client.
         client: Client,
+
         /// The pending login.
         pending: PendingLogin,
+
         /// The state the provider will return.
         state: String,
     }
@@ -331,6 +348,7 @@ mod tests {
             unix_now() + 3600,
         )
     }
+
     /// The authorization URL carries state, nonce and an S256 challenge.
     #[test]
     fn main_completes_a_simulated_login() {

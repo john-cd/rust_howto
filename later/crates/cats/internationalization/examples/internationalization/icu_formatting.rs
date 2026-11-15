@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Formats numbers and dates with ICU4X using two different locales.
 //!
 //! Numbers and dates are written differently around the world (1,234.5 or
@@ -45,6 +46,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 /// Runs the locale-sensitive formatting example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()

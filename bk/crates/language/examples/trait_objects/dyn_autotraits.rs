@@ -1,28 +1,34 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Trait objects with auto traits such as `Send`.
 //!
 //! A `Box<dyn Trait>` is not `Send` unless you say so: `Box<dyn Trait + Send>`.
 //! Spawning threads and async tasks needs the `Send` form.
 
 // Define a trait with a method:
+
 /// A thing that can send a message.
 trait Message {
     fn send_message(&self);
 }
 
 // Create a struct that will implement our trait.
+
 /// A worker that sends a message.
 struct Worker {
+
     /// Identifier of the worker.
     id: u32,
+
     /// The message to send.
     msg: String,
 }
 
 // Implement the trait:
 impl Message for Worker {
+
     /// Sends message.
     fn send_message(&self) {
         println!("Worker {}: {}", self.id, self.msg);
@@ -30,11 +36,12 @@ impl Message for Worker {
 }
 
 // A function that takes a trait object with an autotrait:
+
 /// Sends the message of a trait object that is `Send`.
 fn process_message(messenger: Box<dyn Message + Send>) {
     messenger.send_message();
 }
-/// Runs the example.
+
 /// Sends a message through a `Box<dyn Message + Send>`.
 fn main() {
     let worker = Worker {
@@ -57,8 +64,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Sends a message through a `Box<dyn Message + Send>`.
 pub fn run() {
     main();
 }

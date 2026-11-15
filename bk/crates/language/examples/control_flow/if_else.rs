@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `if`, `else if` and `else` expressions.
 
 /// Branches on numbers and on a boolean condition.
@@ -34,8 +35,7 @@ fn main() {
 // All branches of an `if/else` expression must evaluate to the same type.
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Branches on numbers and on a boolean condition.
 pub fn run() {
     main();
 }

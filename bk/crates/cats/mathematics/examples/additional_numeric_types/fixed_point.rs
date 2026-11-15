@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Divides with a fixed-point type whose fractional precision is set in its
 //! type.
 //!
@@ -19,7 +20,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the fixed-point example.
 pub fn run() {
     main();

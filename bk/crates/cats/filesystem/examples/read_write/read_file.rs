@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates writing to and reading from a file.
 //!
 //! Reading a file line by line with a buffered reader keeps memory use low,
@@ -79,9 +80,10 @@ fn main() -> Result<(), io::Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Writes a file, then reads it back.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), io::Error> {
     main()

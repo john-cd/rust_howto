@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A passkey (WebAuthn) relying party built on `webauthn-rs`.
 //!
 //! The server never verifies signatures itself: `webauthn-rs` checks the
@@ -43,18 +44,23 @@ const CHALLENGE_LIFETIME: Duration = Duration::from_mins(2);
 /// The user handle (`id`) is what authenticators store. It must not reveal
 /// the user name or e-mail address.
 struct Account {
+
     /// The user handle: random and never reused.
     id: Uuid,
+
     /// The credentials this account can sign in with.
     passkeys: Vec<Passkey>,
 }
 
 /// A challenge in flight, usable once before `expires`.
 struct Pending<T> {
+
     /// The account the ceremony belongs to.
     user: String,
+
     /// The library state that binds the challenge to this request.
     state: T,
+
     /// When the challenge stops being valid.
     expires: Instant,
 }
@@ -66,20 +72,26 @@ struct Pending<T> {
 /// `danger-allow-state-serialisation` feature, because the state contains
 /// the secret challenge and must never reach the client).
 struct RelyingParty {
+
     /// The library verifier, fixed to one RP ID and one origin.
     webauthn: Webauthn,
+
     /// Registered accounts by user name.
     accounts: HashMap<String, Account>,
+
     /// Registration ceremonies in flight, by ticket.
     registrations: HashMap<Uuid, Pending<(Uuid, PasskeyRegistration)>>,
+
     /// Authentication ceremonies in flight, by ticket.
     authentications: HashMap<Uuid, Pending<PasskeyAuthentication>>,
 }
 
 impl RelyingParty {
+
     /// Creates a relying party for the given RP ID and origin.
     ///
     /// # Errors
+///
     /// Returns an error if the relying-party ID or origin is invalid for WebAuthn configuration.
     fn new(rp_id: &str, origin: &Url) -> Result<Self> {
         let webauthn = WebauthnBuilder::new(rp_id, origin)?
@@ -96,6 +108,7 @@ impl RelyingParty {
     /// Starts a registration ceremony and returns its ticket and browser-facing options.
     ///
     /// # Errors
+///
     /// Returns an error if WebAuthn cannot create registration options for the user.
     fn start_registration(
         &mut self,
@@ -157,6 +170,7 @@ impl RelyingParty {
     /// `navigator.credentials.get`.
     ///
     /// # Errors
+///
     /// Returns an error if the start authentication operation cannot satisfy its required
     /// invariants.
     fn start_authentication(
@@ -234,9 +248,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Registers a passkey and signs in with it, using a software authenticator.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     let entry = main;
@@ -250,12 +265,16 @@ mod tests {
 
     /// A relying party, a software device and the origin they share.
     struct Setup {
+
         /// Relying party that validates the passkey.
         rp: RelyingParty,
+
         /// Authenticator used for the passkey exchange.
         device: WebauthnAuthenticator<SoftPasskey>,
+
         /// Expected origin for authentication requests.
         origin: Url,
+
         /// Current time used for expiry checks.
         now: Instant,
     }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Creating and consuming a `Stream` of numbers.
 //!
 //! A stream is the asynchronous version of an iterator: it yields many values
@@ -15,6 +16,7 @@ use futures::stream::StreamExt as _;
 async fn count_to_five() -> impl Stream<Item = u32> {
     stream::iter(1..=5)
 }
+
 /// Prints each number of the stream.
 #[tokio::main]
 async fn main() {
@@ -27,7 +29,6 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example.
 pub fn run() {
     main();

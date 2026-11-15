@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Forecast a seasonal time series with `augurs`: MSTL removes the seasonal
 //! component, and an exponential smoothing (ETS) model forecasts the trend.
 //!
@@ -49,9 +50,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Fits the model and forecasts two weeks ahead, with a 95% interval.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main().map_err(|e| anyhow::anyhow!("{e}"))

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! An `IndexMap`, a hash map that preserves insertion order.
 //!
 //! An `IndexMap` is a hash map that remembers insertion order and lets you
@@ -8,7 +9,7 @@
 //! in configuration files.
 
 use indexmap::IndexMap;
-/// Runs the example.
+
 /// Inserts into an `IndexMap` and iterates in insertion order.
 fn main() {
     // Create an IndexMap:
@@ -51,8 +52,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Inserts into an `IndexMap` and iterates in insertion order.
 pub fn run() {
     main();
 }

@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -44,8 +45,10 @@ pub(crate) type LinkError = (
     u8,
 );
 pub(crate) type TransportError = (zenoh_result::Error, Arc<dyn TransportUnicastTrait>, u8);
+
 /// Defines the outcomes available to the unicast workflow, including link, transport.
 pub(crate) enum InitTransportError {
+
     /// Link variant of `InitTransportError`.
     Link(Box<LinkError>),
     Transport(TransportError),
@@ -64,6 +67,7 @@ pub(crate) type InitTransportResult = Result<Arc<dyn TransportUnicastTrait>, Ini
 
 /// Defines the outcomes available to the unicast workflow, including uninitialized, alive, closed.
 pub(crate) enum TransportStatus {
+
     /// Alive lifecycle state of the transport.
     Uninitialized,
     Alive,
@@ -72,11 +76,14 @@ pub(crate) enum TransportStatus {
 
 /// **********************************
 // UNICAST TRANSPORT TRAIT
+
 /// **********************************
 #[async_trait]
 pub(crate) trait TransportUnicastTrait: Send + Sync {
+
     /// **********************************
     // ACCESSORS
+
     /// Sets callback.
     /// **********************************
     fn set_callback(&self, callback: Arc<dyn TransportPeerEventHandler>);
@@ -88,35 +95,40 @@ pub(crate) trait TransportUnicastTrait: Send + Sync {
 
     fn get_links(&self) -> Vec<Link>;
     fn get_auth_ids(&self) -> super::authentication::TransportAuthId;
+
     /// Reports whether the transport unicast trait meets the shm condition so callers can choose
     /// the correct branch.
-
     #[cfg(feature = "shared-memory")]
     fn is_shm(&self) -> bool;
+
     /// Reports whether the transport unicast trait meets the qos condition so callers can choose
     /// the correct branch.
-
     fn is_qos(&self) -> bool;
+
     /// Applies the rules used by transport unicast inner to keep transport unicast trait state
     /// valid for its callers.
     fn region_name(&self) -> Option<RegionName>;
     fn get_bound(&self) -> Option<Bound>;
     fn get_config(&self) -> &TransportConfigUnicast;
+
     /// Applies the rules used by transport unicast inner to keep transport unicast trait state
     /// valid for its callers.
     #[cfg(feature = "stats")]
     fn stats(&self) -> zenoh_stats::TransportStats;
 
     // LINK
-    /// **********************************
 
+    /// Registers a peer link and starts transport synchronization for that link.
+    ///
     /// # Arguments
-    /// * `link` - Link unicast with open ack used as the link input to the transport unicast inner
-    ///   workflow.
-    /// * `other_initial_sn` - Transport sn used as the other initial sn input to the transport
-    ///   unicast inner workflow.
-    /// * `other_lease` - Duration used as the other lease input to the transport unicast inner
-    ///   workflow.
+///
+    /// * `link` - Accepted unicast link and its optional OpenAck response.
+    /// * `other_initial_sn` - Peer sequence number used to synchronize transport state.
+    /// * `other_lease` - Peer lease duration used to start the receive keep-alive timer.
+    ///
+    /// # Errors
+///
+    /// Returns an error if synchronization fails or the peer link cannot be registered.
     async fn add_link(
         &self,
         link: LinkUnicastWithOpenAck,
@@ -125,23 +137,25 @@ pub(crate) trait TransportUnicastTrait: Send + Sync {
     ) -> AddLinkResult;
 
     // TX
+
     /// **********************************
-    /// Returns if the message has successfully been sent.
+    /// Schedules a network message for transmission on the unicast transport.
     fn schedule(&self, msg: NetworkMessageMut) -> ZResult<bool>;
 
     // TERMINATION
+
     /// **********************************
     async fn close(&self, reason: u8) -> ZResult<()>;
+
     /// Close a specific link within this transport.
     ///
     /// If the transport has multiple links (multilink), only the specified
     /// link is closed and the transport remains alive. If this is the last
     /// link, the entire transport is closed.
-
     async fn close_link(&self, link: Link) -> ZResult<()>;
+
     /// Applies the rules used by transport unicast inner to keep transport unicast trait state
     /// valid for its callers.
-
     fn add_debug_fields<'a, 'b: 'a, 'c>(
         &self,
         s: &'c mut DebugStruct<'a, 'b>,

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Inserting and querying documents in MongoDB.
 //!
 //! MongoDB is a document database: it stores flexible JSON-like documents in
@@ -16,11 +17,14 @@ use mongodb::Client;
 use mongodb::bson::doc;
 use serde::Deserialize;
 use serde::Serialize;
+
 /// Represents a user with a name and age.
 #[derive(Debug, Serialize, Deserialize)]
 struct User {
+
     /// Name of the user.
     name: String,
+
     /// Age of the user, in years.
     age: i32,
 }
@@ -69,9 +73,10 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Connects to MongoDB and inserts a user into a collection.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

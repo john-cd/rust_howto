@@ -7,24 +7,31 @@ use clap::Subcommand;
 
 /// Encoding a struct to DER and decoding it back with the `der` crate.
 mod der;
+
 /// Turns certs input into structured syntax data while preserving source locations and reporting
 /// malformed input. Analysis and validation code use these routines before applying domain-specific
 /// rules.
 mod parse_x509;
+
 /// Encode and decode PEM data with the `pem_rfc7468` crate.
 mod pem_rfc7468;
+
 /// Encoding and decoding private keys in PKCS#8 format.
 mod pkcs8;
+
 /// Generate a self-signed certificate for local development with `rcgen`.
 mod rcgen;
+
 /// Read a PEM certificate file and decode its DER bytes.
 mod read_pem;
+
 /// Build and inspect X.509 certificate fields with the `x509_cert` crate.
 mod x509_cert;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -33,24 +40,31 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `der` example.
     #[command(name = "der")]
     Der,
+
     /// Parses a locally generated X.509 certificate.
     #[command(name = "parse_x509")]
     ParseX509,
+
     /// Runs the `pem_rfc7468` example.
     #[command(name = "pem_rfc7468")]
     PemRfc7468,
+
     /// Runs the `pkcs8` example.
     #[command(name = "pkcs8")]
     Pkcs8,
+
     /// Creates a self-signed development certificate.
     #[command(name = "rcgen")]
     Rcgen,
+
     /// Reads and decodes a PEM certificate file.
     #[command(name = "read_pem")]
     ReadPem,
+
     /// Runs the `x509_cert` example.
     #[command(name = "x509_cert")]
     X509Cert,

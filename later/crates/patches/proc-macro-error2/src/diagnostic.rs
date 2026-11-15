@@ -20,8 +20,10 @@ use crate::sealed::Sealed;
 #[derive(Debug, PartialEq)]
 #[non_exhaustive]
 pub enum Level {
+
     /// Marks the proc-macro-error2 operation as unsuccessful after recovery options are exhausted.
     Error,
+
     /// Warning diagnostic emitted by the macro.
     Warning,
 }
@@ -30,14 +32,19 @@ pub enum Level {
 #[derive(Debug)]
 #[must_use = "A diagnostic does nothing unless emitted"]
 pub struct Diagnostic {
+
     /// Level value.
     pub(crate) level: Level,
+
     /// Span range value.
     pub(crate) span_range: SpanRange,
+
     /// Msg value.
     pub(crate) msg: String,
+
     /// Collection of suggestions values consumed by diagnostic operations.
     pub(crate) suggestions: Vec<(SuggestionKind, String, Option<SpanRange>)>,
+
     /// Collection consumed by diagnostic while preserving its ordering and relationships.
     pub(crate) children: Vec<(SpanRange, String)>,
 }
@@ -47,19 +54,21 @@ pub struct Diagnostic {
 ///
 /// This trait is sealed and cannot be implemented outside of `proc_macro_error`.
 pub trait DiagnosticExt: Sealed {
+
     /// Create a new diagnostic message that points to the `span_range`.
     ///
     /// This function is the same as `Diagnostic::spanned` but produces considerably
     /// better error messages for multi-token spans on stable.
     fn spanned_range(span_range: SpanRange, level: Level, message: String) -> Self;
+
     /// Add another error message to self such that it will be emitted right after
     /// the main message.
     ///
     /// This function is the same as `Diagnostic::span_error` but produces considerably
     /// better error messages for multi-token spans on stable.
-
     #[must_use]
     fn span_range_error(self, span_range: SpanRange, msg: String) -> Self;
+
     /// Attach a "help" note to your main message, the note will have it's own span on nightly.
     ///
     /// This function is the same as `Diagnostic::span_help` but produces considerably
@@ -69,9 +78,9 @@ pub trait DiagnosticExt: Sealed {
     ///
     /// The span is ignored on stable, the note effectively inherits its parent's (main message)
     /// span
-
     #[must_use]
     fn span_range_help(self, span_range: SpanRange, msg: String) -> Self;
+
     /// Attach a note to your main message, the note will have it's own span on nightly.
     ///
     /// This function is the same as `Diagnostic::span_note` but produces considerably
@@ -81,7 +90,6 @@ pub trait DiagnosticExt: Sealed {
     ///
     /// The span is ignored on stable, the note effectively inherits its parent's (main message)
     /// span
-
     #[must_use]
     fn span_range_note(self, span_range: SpanRange, msg: String) -> Self;
 }
@@ -116,9 +124,11 @@ impl DiagnosticExt for Diagnostic {
 }
 
 impl Diagnostic {
+
     /// Create a new diagnostic message that points to `Span::call_site()`
     ///
     /// # Arguments
+///
     /// * `message` - Message to send or handle.
     pub fn new(level: Level, message: String) -> Self {
         Diagnostic::spanned(Span::call_site(), level, message)
@@ -127,8 +137,8 @@ impl Diagnostic {
     /// Create a new diagnostic message that points to the `span`
     ///
     /// # Arguments
+///
     /// * `message` - Message to send or handle.
-
     pub fn spanned(span: Span, level: Level, message: String) -> Self {
         Diagnostic::spanned_range(
             SpanRange {
@@ -143,6 +153,7 @@ impl Diagnostic {
     /// Add another error message to self such that it will be emitted right after
     ///
     /// # Arguments
+///
     /// * `msg` - Message to schedule or process.
     /// the main message.
     pub fn span_error(self, span: Span, msg: String) -> Self {
@@ -158,6 +169,7 @@ impl Diagnostic {
     /// Attach a "help" note to your main message, the note will have it's own span on nightly.
     ///
     /// # Arguments
+///
     /// * `msg` - Message to schedule or process.
     ///
     /// # Span
@@ -175,7 +187,6 @@ impl Diagnostic {
     }
 
     /// Attach a "help" note to your main message.
-
     pub fn help(mut self, msg: String) -> Self {
         self.suggestions.push((SuggestionKind::Help, msg, None));
         self
@@ -184,6 +195,7 @@ impl Diagnostic {
     /// Attach a note to your main message, the note will have it's own span on nightly.
     ///
     /// # Arguments
+///
     /// * `msg` - Message to schedule or process.
     ///
     /// # Span
@@ -203,6 +215,7 @@ impl Diagnostic {
     /// Attach a note to your main message
     ///
     /// # Arguments
+///
     /// * `msg` - Message to schedule or process.
     pub fn note(mut self, msg: String) -> Self {
         self.suggestions.push((SuggestionKind::Note, msg, None));
@@ -216,9 +229,10 @@ impl Diagnostic {
     }
 
     /// Abort the proc-macro's execution and display the diagnostic.
+///
     /// # Warnings
+///
     /// Warnings are not emitted on stable and beta, but this function will abort anyway.
-
     pub fn abort(self) -> ! {
         self.emit();
         abort_now()
@@ -234,11 +248,15 @@ impl Diagnostic {
         crate::imp::emit_diagnostic(self);
     }
 }
-/// **NOT PUBLIC API! NOTHING TO SEE HERE!!!**
 
+/// **NOT PUBLIC API! NOTHING TO SEE HERE!!!**
 #[doc(hidden)]
 impl Diagnostic {
+
+    /// Adds a suggestion with an associated span and message.
+///
     /// # Arguments
+///
     /// * `msg` - Message to schedule or process.
     pub fn span_suggestion(self, span: Span, suggestion: &str, msg: String) -> Self {
         match suggestion {
@@ -247,9 +265,12 @@ impl Diagnostic {
         }
     }
 
+    /// Adds a suggestion with a message and no explicit span.
+    ///
     /// # Arguments
-    /// * `msg` - Message to schedule or process.
-
+///
+    /// * `suggestion` - Kind of suggestion, such as `help` or `hint`.
+    /// * `msg` - Text to use for the suggestion.
     pub fn suggestion(self, suggestion: &str, msg: String) -> Self {
         match suggestion {
             "help" | "hint" => self.help(msg),
@@ -259,15 +280,16 @@ impl Diagnostic {
 }
 
 impl ToTokens for Diagnostic {
-    /// Converts between the diagnostic representation and tokens while preserving the invariants
-    /// required by callers.
+
+    /// Appends this diagnostic's token representation to the supplied stream.
     ///
     /// # Arguments
-    /// * `ts` - Mutable token stream whose state is updated by this operation.
+///
+    /// * `ts` - Token stream that receives the diagnostic representation.
     fn to_tokens(&self, ts: &mut TokenStream) {
         use std::borrow::Cow;
-        /// Ensures lf.
 
+        /// Ensures lf.
         fn ensure_lf(buf: &mut String, s: &str) {
             if s.ends_with('\n') {
                 buf.push_str(s);
@@ -328,6 +350,7 @@ impl ToTokens for Diagnostic {
 /// Defines the outcomes available to the proc-macro-error2 workflow, including help, note.
 #[derive(Debug)]
 pub(crate) enum SuggestionKind {
+
     /// Note diagnostic emitted by the macro.
     Help,
     Note,
@@ -344,6 +367,7 @@ impl SuggestionKind {
 
 #[cfg(feature = "syn-error")]
 impl From<syn::Error> for Diagnostic {
+
     /// Creates this value from the value.
     fn from(err: syn::Error) -> Self {
         use proc_macro2::Delimiter;

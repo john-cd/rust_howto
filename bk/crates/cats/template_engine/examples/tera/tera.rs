@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of using the Tera template engine.
 //!
 //! A template engine fills placeholders in a text file with data, to generate
@@ -31,22 +32,28 @@ static TEMPLATES: LazyLock<tera::TeraResult<tera::Tera>> = LazyLock::new(|| {
 /// Replaces dashes with underscores using Tera's custom-filter signature.
 ///
 /// # Arguments
+///
 /// * `val` - Input string to transform.
 /// * `_kwargs` - Unused named filter arguments required by Tera's signature.
 /// * `_state` - Unused template state required by Tera's signature.
 ///
 /// # Returns
+///
 /// A new string with each dash replaced by an underscore.
 pub fn underscored(val: &str, _kwargs: tera::Kwargs, _state: &tera::State) -> String {
     val.replace('-', "_")
 }
+
 /// A simple page struct to be used as context for the template.
 #[derive(Serialize, Debug)]
 struct Page {
+
     /// The title of the page.
     title: String,
+
     /// The heading of the page.
     heading: String,
+
     /// The content of the page.
     content: String,
 }
@@ -54,6 +61,7 @@ struct Page {
 /// Crate metadata used to render a Markdown badge like the book tooling emits.
 #[derive(Serialize)]
 struct CrateBadge {
+
     /// The crates.io package name.
     crate_name: String,
 }
@@ -94,9 +102,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Renders a template with values from a context and prints the result.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Fuzzy matching of strings with `fuzzy-matcher`.
 //!
 //! Fuzzy matching finds approximate matches and ranks them, like the Ctrl-P
@@ -9,7 +10,7 @@
 
 use fuzzy_matcher::FuzzyMatcher as _;
 use fuzzy_matcher::skim::SkimMatcherV2;
-/// Runs the example.
+
 /// Scores and ranks strings against a pattern.
 fn main() {
     // Create a matcher that scores similar strings.
@@ -65,7 +66,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Scores and ranks strings against a pattern.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Imports a JavaScript function into Rust through `wasm-bindgen`.
 //!
 //! WebAssembly (Wasm) is a compact binary format that browsers run at
@@ -14,13 +15,16 @@ use wasm_bindgen::prelude::*;
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 #[wasm_bindgen]
 unsafe extern "C" {
+
     /// Writes a message to the JavaScript console.
     #[wasm_bindgen(js_namespace = console)]
     fn log(message: &str);
 }
+
 /// Writes a message through the browser's JavaScript console.
 ///
 /// # Arguments
+///
 /// * `message` - Text to write to the browser console.
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 #[wasm_bindgen]
@@ -35,6 +39,7 @@ fn main() {
     #[cfg(not(all(target_arch = "wasm32", target_os = "unknown")))]
     println!("Build for wasm32-unknown-unknown to import console.log.");
 }
+
 /// Runs the example's host-side runner.
 pub fn run() {
     main();
@@ -43,9 +48,11 @@ pub fn run() {
 /// Tests the host fallback for the browser-only example.
 #[cfg(test)]
 mod tests {
+
     /// Verifies that the host-side example runner succeeds.
     // output-only: on the host, the example only prints a hint; the wasm32 code
     // needs a browser.
+
     /// Completes the JavaScript host runner successfully.
     #[test]
     fn host_runner_succeeds() {

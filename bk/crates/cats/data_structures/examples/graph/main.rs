@@ -2,16 +2,15 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-/// Builds or traverses graph graph data while preserving relationships needed by downstream
-/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
+/// Exercises graph traversal and shortest-path algorithms with `petgraph`.
 mod petgraph;
-/// Runs the example.
-/// Runs the graph example.
+
+/// Runs the graph traversal example.
 fn main() {
     petgraph::run();
 }
 
-/// Verifies that the `petgraph` example.
+/// Confirms that the graph example completes without panicking.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Binding the content of an `Option` to a variable with `if let`.
 
 /// Binds the value inside an `Option`.
@@ -16,8 +17,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Binds the value inside an `Option`.
 pub fn run() {
     main();
 }

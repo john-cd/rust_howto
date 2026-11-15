@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A trait that requires another trait.
 
 use std::fmt;
@@ -19,6 +20,7 @@ use std::fmt;
 
 /// A trait that requires `Display`.
 trait OutlinePrint: fmt::Display {
+
     /// Prints `self` in a box of asterisks.
     fn outline_print(&self) {
         println!("* {self} *");
@@ -31,15 +33,14 @@ trait OutlinePrint: fmt::Display {
 /// `String` already implements the `Display` supertrait. That would not work
 /// otherwise.
 impl OutlinePrint for String {}
-/// Runs the example.
+
 /// Runs the supertraits example.
 fn main() {
     String::from("test").outline_print();
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs the supertraits example.
 pub fn run() {
     main();
 }

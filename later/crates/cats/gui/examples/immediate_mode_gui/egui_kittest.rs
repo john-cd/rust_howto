@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Finds a button by its label and clicks it with `egui_kittest`.
 //!
 //! `egui_kittest` runs the UI headless, like the previous recipe, and adds
@@ -14,8 +15,9 @@ use egui_kittest::kittest::Queryable;
 /// Draws a counter with an `Increment` button.
 ///
 /// # Arguments
-/// * `ui` - Mutable ui whose state is updated by this operation.
-/// * `count` - Bound used to limit accepted data or the amount of work performed.
+///
+/// * `ui` - egui interface used to draw the label and button.
+/// * `count` - Counter incremented when the button is clicked.
 fn counter_ui(ui: &mut egui::Ui, count: &mut u32) {
     ui.label(format!("Count: {count}"));
     if ui.button("Increment").clicked() {
@@ -42,7 +44,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Clicks the button twice and checks the label.
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

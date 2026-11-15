@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Authenticated encryption and decryption with AES-256-GCM.
 //!
 //! AES is the standard symmetric cipher, meaning one secret key both encrypts
@@ -57,9 +58,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Encrypts a message with a random key and decrypts it again.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

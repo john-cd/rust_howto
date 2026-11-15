@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A `BTreeSet`, an ordered set of unique names.
 //!
 //! A `BTreeSet` is a set that keeps its elements sorted, so you can iterate in
@@ -109,8 +110,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates, fills and queries a `BTreeSet`.
 pub fn run() {
     main();
 }

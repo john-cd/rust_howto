@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generate Rust declarations for a C library with bindgen.
 //!
 //! The package build script compiles example.c, runs bindgen on example.h, and
@@ -17,7 +18,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Calls the function bound with bindgen.
 pub fn run() {
     main();
 }

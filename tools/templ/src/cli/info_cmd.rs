@@ -17,9 +17,11 @@ pub(super) fn subcommand_info() -> Command {
         // Add the crate name argument to the subcommand.
         .arg(super::arg_crate_name())
 }
+
 /// "$ myapp info" was run
 ///
 /// # Returns
+///
 /// `Some` when the requested value is available; otherwise returns `None`.
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<crate::CmdArgs> {
     let mut cmdargs = None;

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `markdown` crate to parse Markdown
 //! text and convert it to HTML.
 //!
@@ -14,7 +15,7 @@
 //! ```
 
 use markdown::to_html;
-/// Runs the example.
+
 /// Converts a Markdown string to HTML and prints it.
 fn main() {
     let markdown_text = "
@@ -33,8 +34,7 @@ This is a simple paragraph with **bold** and *italic* text.
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Converts a Markdown string to HTML and prints it.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Shut a worker thread down cleanly when the user presses Ctrl-C.
 //!
 //! A signal is a notification the operating system sends to a process. Ctrl-C
@@ -29,6 +30,7 @@ fn worker(shutdown: &AtomicBool) -> u32 {
 /// Installs the Ctrl-C handler, starts a worker, and joins it after shutdown.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> anyhow::Result<()> {
     let shutdown = Arc::new(AtomicBool::new(false));
@@ -58,6 +60,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example_body()
@@ -85,6 +88,7 @@ mod tests {
         let shutdown = AtomicBool::new(true);
         assert_eq!(worker(&shutdown), 0);
     }
+
     /// Runs completes.
     #[test]
     fn run_completes() -> anyhow::Result<()> {

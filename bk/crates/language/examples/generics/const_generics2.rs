@@ -1,11 +1,14 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A trait with an associated constant, implemented for arrays of any length.
 
 // Trait for a fixed-size buffer.
+
 /// A buffer of fixed capacity.
 trait FixedSizeBuffer {
+
     /// The capacity of the buffer.
     const CAPACITY: usize;
 
@@ -16,6 +19,7 @@ trait FixedSizeBuffer {
 // With const generics, we can implement this for any array of bytes:
 impl<const N: usize> FixedSizeBuffer for [u8; N] {
     // The capacity is the array size.
+
     /// Capacity of the array implementing this trait.
     const CAPACITY: usize = N;
 
@@ -23,12 +27,13 @@ impl<const N: usize> FixedSizeBuffer for [u8; N] {
         self
     }
 }
+
 /// Prints the capacity and content of the buffer.
 fn process_buffer<T: FixedSizeBuffer>(buffer_provider: T) {
     println!("Processing buffer with capacity: {}", T::CAPACITY);
     println!("Buffer content: {:?}", buffer_provider.get_buffer());
 }
-/// Runs the example.
+
 /// Processes buffers of different sizes.
 fn main() {
     let buf1 = [10, 20, 30];
@@ -39,8 +44,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Processes buffers of different sizes.
 pub fn run() {
     main();
 }

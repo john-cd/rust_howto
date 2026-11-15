@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of sending an email using the `lettre` crate.
 //!
 //! Set `SMTP_SERVER`, `SMTP_USERNAME`, and `SMTP_PASSWORD` to the relay
@@ -23,12 +24,15 @@ use lettre::transport::smtp::authentication::Credentials;
 use lettre::transport::smtp::client::Certificate;
 use lettre::transport::smtp::client::Tls;
 use lettre::transport::smtp::client::TlsParameters;
+
 /// Builds a plain-text message from the supplied mailbox addresses.
 ///
 /// # Errors
+///
 /// Returns an error if either address or the completed message is invalid.
 ///
 /// # Arguments
+///
 /// * `from` - Original value used as the starting point for the lettre operation.
 /// * `to` - Target value or destination produced by the lettre operation.
 fn build_message(from: &str, to: &str) -> anyhow::Result<Message> {
@@ -44,16 +48,20 @@ fn build_message(from: &str, to: &str) -> anyhow::Result<Message> {
 
     Ok(message)
 }
+
 /// Runs the standalone SMTP delivery example.
 ///
 /// # Errors
+///
 /// Returns an error if SMTP configuration is missing or delivery fails.
 fn main() -> anyhow::Result<()> {
     send_email()
 }
+
 /// Builds a message and sends it through an authenticated SMTP relay.
 ///
 /// # Errors
+///
 /// Returns an error if required environment variables are missing, the relay
 /// configuration is invalid, or message delivery fails.
 fn send_email() -> anyhow::Result<()> {
@@ -114,6 +122,7 @@ fn build_tls_parameters(domain: String) -> anyhow::Result<TlsParameters> {
 /// Runs the SMTP delivery example.
 ///
 /// # Errors
+///
 /// Returns an error if SMTP configuration is missing or delivery fails.
 pub fn run() -> anyhow::Result<()> {
     send_email()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Captures and prints a stack trace using the standard library.
 //!
 //! A backtrace lists the chain of function calls that led to a point in the
@@ -22,6 +23,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the backtrace example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

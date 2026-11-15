@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A `SmallVec`, which stores a few elements inline before moving to the heap.
 //!
 //! `SmallVec` stores up to N items inline (on the stack) and moves to the heap
@@ -69,8 +70,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Grows a `SmallVec` past its inline capacity.
 pub fn run() {
     main();
 }

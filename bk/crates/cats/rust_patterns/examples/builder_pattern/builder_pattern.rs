@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example builder pattern.
 //!
 //! The builder pattern constructs a complex value step by step with chained
@@ -10,22 +11,29 @@
 /// The object to build.
 #[derive(Debug)]
 struct DatabaseConfig {
+
     /// The host name or address.
     host: String,
+
     /// The port.
     port: u16,
+
     /// The user name, if any.
     username: Option<String>,
+
     /// The password, if any.
     password: Option<String>,
+
     /// The size of the connection pool.
     pool_size: u32,
+
     /// The connection timeout in seconds.
     connection_timeout_seconds: u64,
     // More fields...
 }
 
 impl DatabaseConfig {
+
     /// Optional: provide a method that returns a builder.
     fn build(host: String, port: u16) -> DatabaseConfigBuilder {
         DatabaseConfigBuilder::new(host, port)
@@ -35,21 +43,28 @@ impl DatabaseConfig {
 
 /// The builder object.
 struct DatabaseConfigBuilder {
+
     /// The host name or address.
     host: String,
+
     /// The port.
     port: u16,
+
     /// The user name, if any.
     username: Option<String>,
+
     /// The password, if any.
     password: Option<String>,
+
     /// The size of the connection pool.
     pool_size: u32,
+
     /// The connection timeout in seconds.
     connection_timeout_seconds: u64,
 }
 
 impl DatabaseConfigBuilder {
+
     /// The builder's constructor (with required fields, if necessary).
     fn new(host: String, port: u16) -> Self {
         Self {
@@ -99,7 +114,7 @@ impl DatabaseConfigBuilder {
         }
     }
 }
-/// Runs the example.
+
 /// Builds a configuration with the builder and prints it.
 fn main() {
     // Create a builder struct.
@@ -126,8 +141,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Builds a configuration with the builder and prints it.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `postcard` crate for serialization
 //! and deserialization without an external schema file.
 //!
@@ -26,15 +27,19 @@ use serde::Serialize;
 /// A struct that borrows its data.
 #[derive(Serialize, Deserialize, Debug, Eq, PartialEq)]
 struct RefStruct<'a> {
+
     /// The bytes.
     bytes: &'a [u8], /* NOTE: postcard handles `&[u8]` and `&[u8; N]`
                       * differently. */
+
     /// The string.
     str_s: &'a str,
 }
+
 /// Serializes and deserializes a borrowed structure with `postcard`.
 ///
 /// # Errors
+///
 /// Returns an error if serialization or deserialization fails.
 fn main() -> anyhow::Result<()> {
     let message = "hElLo";
@@ -72,7 +77,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Serializes and deserializes the example data with Postcard.
+///
 /// # Errors
+///
 /// Returns an error if serialization or deserialization fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -88,6 +96,7 @@ mod tests {
     fn borrowed_fields_round_trip() -> anyhow::Result<()> {
         main()
     }
+
     /// Encodes the value into a caller-provided buffer.
     #[test]
     fn to_slice_encodes_into_a_fixed_buffer() -> anyhow::Result<()> {

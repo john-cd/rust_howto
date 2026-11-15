@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -61,52 +62,67 @@ use crate::unicast::transport_unicast_inner::TransportUnicastTrait;
 
 /// **********************************
 // LOW-LATENCY TRANSPORT
+
 /// **********************************
 #[derive(Clone)]
 pub(crate) struct TransportUnicastLowlatency {
     // Transport Manager
+
     /// Transport manager that owns this state.
     pub(super) manager: TransportManager,
     // Transport config
+
     /// Settings that control how this transport unicast lowlatency is constructed or processed.
     pub(super) config: TransportConfigUnicast,
     // The link associated to the transport
+
     /// Optional link used by transport unicast lowlatency; `None` means the value is not
     /// configured or unavailable.
     pub(super) link: Arc<RwLock<Option<TransportLinkUnicast>>>,
     // The callback
+
     /// Optional callback used by transport unicast lowlatency; `None` means the value is not
     /// configured or unavailable.
     pub(super) callback: Arc<SyncRwLock<Option<Arc<dyn TransportPeerEventHandler>>>>,
     // Mutex for notification
+
     /// Current lifecycle value used to decide which transport unicast lowlatency operations are
     /// valid.
     status: Arc<AsyncMutex<TransportStatus>>,
     // Transport statistics
     #[cfg(feature = "stats")]
+
     /// Stats in `TransportUnicastLowlatency`.
     pub(super) stats: zenoh_stats::TransportStats,
     #[cfg(feature = "stats")]
+
     /// Link stats in `TransportUnicastLowlatency`.
     /// Link stats value.
     pub(super) link_stats: Arc<OnceLock<zenoh_stats::LinkStats>>,
 
     /// Cancellation token for the running task.
     // The handles for TX/RX tasks
+
     /// Tracker in `TransportUnicastLowlatency`.
     /// Cancellation token for the running task.
     pub(crate) token: CancellationToken,
+
     /// Tracker value.
     pub(crate) tracker: TaskTracker,
 
     #[cfg(feature = "shared-memory")]
+
     /// Optional shm context used by transport unicast lowlatency; `None` means the value is not
     /// configured or unavailable.
     pub(super) shm_context: Option<UnicastTransportShmContext>,
 }
 
 impl TransportUnicastLowlatency {
+
+    /// Creates a low-latency unicast transport with the supplied manager and optional feature state.
+///
     /// # Arguments
+///
     /// * `config` - Configuration applied to this operation.
     pub fn make(
         manager: TransportManager,
@@ -133,7 +149,11 @@ impl TransportUnicastLowlatency {
 
     /// **********************************
     // TERMINATION
+
+    /// Finalizes the low-latency transport and stops its tracked tasks.
+///
     /// # Arguments
+///
     /// **********************************
     pub(super) async fn finalize(&self, reason: u8) -> ZResult<()> {
         tracing::debug!(
@@ -156,7 +176,6 @@ impl TransportUnicastLowlatency {
     }
 
     /// Deletes the current value.
-
     pub(super) async fn delete(&self) -> ZResult<()> {
         tracing::debug!(
             "[{}] Deleting transport with peer: {}",
@@ -215,8 +234,10 @@ impl TransportUnicastLowlatency {
 
 #[async_trait]
 impl TransportUnicastTrait for TransportUnicastLowlatency {
+
     /// **********************************
     // ACCESSORS
+
     /// Sets callback.
     /// **********************************
     fn set_callback(&self, callback: Arc<dyn TransportPeerEventHandler>) {
@@ -259,7 +280,6 @@ impl TransportUnicastTrait for TransportUnicastLowlatency {
 
     /// Reports whether the transport unicast lowlatency meets the shm condition so callers can
     /// choose the correct branch.
-
     #[cfg(feature = "shared-memory")]
     fn is_shm(&self) -> bool {
         self.config.shm.is_some()
@@ -267,7 +287,6 @@ impl TransportUnicastTrait for TransportUnicastLowlatency {
 
     /// Reports whether the transport unicast lowlatency meets the qos condition so callers can
     /// choose the correct branch.
-
     fn is_qos(&self) -> bool {
         self.config.is_qos
     }
@@ -294,24 +313,32 @@ impl TransportUnicastTrait for TransportUnicastLowlatency {
     }
 
     // TX
+
     /// **********************************
     fn schedule(&self, msg: NetworkMessageMut) -> ZResult<bool> {
         self.send(msg).map(|_| true)
     }
 
     // LINK
-    /// **********************************
 
+    /// **********************************
+///
+    /// Adds the peer's link after synchronizing sequence numbers and checking low-latency limits.
+    ///
     /// # Arguments
-    /// * `link` - Link unicast with open ack used as the link input to the transport unicast
-    ///   lowlatency workflow.
-    /// * `other_initial_sn` - Transport sn used as the other initial sn input to the transport
-    ///   unicast lowlatency workflow.
-    /// * `other_lease` - Duration used as the other lease input to the transport unicast lowlatency
-    ///   workflow.
+///
+    /// * `link` - Accepted unicast link and its optional OpenAck response.
+    /// * `other_initial_sn` - Peer sequence number used to synchronize transport state.
+    /// * `other_lease` - Peer lease duration used to start the receive keep-alive timer.
+    ///
+    /// # Errors
+///
+    /// Returns an error if synchronization fails, a link is already active, or the accepted link
+    /// uses mixed reliability.
     ///
     /// # Panics
-    /// Panics if an internal `Result` or `Option` unexpectedly contains no usable value.
+///
+    /// Panics if link statistics were already initialized when the new link is registered.
     async fn add_link(
         &self,
         link: LinkUnicastWithOpenAck,
@@ -381,6 +408,7 @@ impl TransportUnicastTrait for TransportUnicastLowlatency {
 
     /// **********************************
     // TERMINATION
+
     /// **********************************
     async fn close(&self, reason: u8) -> ZResult<()> {
         tracing::trace!("Closing transport with peer: {}", self.config.zid);
@@ -388,7 +416,6 @@ impl TransportUnicastTrait for TransportUnicastLowlatency {
     }
 
     /// Closes link.
-
     async fn close_link(&self, link: Link) -> ZResult<()> {
         // Lowlatency transport has at most one link, so closing the link
         // is equivalent to closing the entire transport.

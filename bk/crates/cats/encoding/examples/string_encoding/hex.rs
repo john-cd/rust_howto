@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of encoding and decoding a string using hexadecimal encoding.
 //!
 //! Hexadecimal writes each byte as two characters from 0-9 and a-f. It is the
@@ -29,9 +30,10 @@ fn main() -> Result<(), DecodeError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Encodes bytes as hexadecimal, then decodes them.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), DecodeError> {
     main()

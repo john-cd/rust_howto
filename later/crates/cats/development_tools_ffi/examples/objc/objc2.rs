@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Convert a Rust string with the typed Objective-C Foundation bindings.
 //!
 //! Objective-C is the primary native object-oriented language for Apple's
@@ -12,7 +13,7 @@
 use objc2::rc::Retained;
 #[cfg(all(target_vendor = "apple", feature = "objc"))]
 use objc2_foundation::NSString;
-/// Runs the example.
+
 /// Creates an owned Foundation string and verifies the Rust string round trip.
 fn main() {
     #[cfg(all(target_vendor = "apple", feature = "objc"))]
@@ -28,7 +29,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the Foundation example or its platform fallback.
 pub fn run() {
     // Call through a binding: calling `main` directly trips

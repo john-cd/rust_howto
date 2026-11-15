@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A `RangeMap`, which maps ranges of keys to values.
 //!
 //! A range map associates values with ranges of keys, for example IP address
@@ -8,7 +9,7 @@
 //! split automatically.
 
 use rangemap::RangeMap;
-/// Runs the example.
+
 /// Maps two ranges to values and looks up keys.
 fn main() {
     let mut rm = RangeMap::new();
@@ -22,8 +23,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Maps two ranges to values and looks up keys.
 pub fn run() {
     main();
 }

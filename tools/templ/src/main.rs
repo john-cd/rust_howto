@@ -13,6 +13,7 @@ use tool_lib::get_info_for_crate;
 
 /// The `cli` module is the command line argument parser for the application
 mod cli;
+
 /// Loads and validates the settings that control templ behavior. Composition code uses this module
 /// before starting services so invalid configuration is reported early.
 mod config_cmd;
@@ -39,6 +40,7 @@ fn main() -> anyhow::Result<()> {
 
     dispatch(cmd, &mut std::io::stdout())
 }
+
 /// Returns the categories whose slug, name or description match a word.
 fn matching_categories<'a>(all_categories: &'a [Category], word: &str) -> Vec<&'a Category> {
     let possible_cat_name = word.trim().to_lowercase();
@@ -57,6 +59,7 @@ fn matching_categories<'a>(all_categories: &'a [Category], word: &str) -> Vec<&'
 fn dispatch(cmd: Cmd, out: &mut impl Write) -> anyhow::Result<()> {
     dispatch_with_categories(cmd, out, tool_lib::get_all_categories)
 }
+
 /// Runs a command with an injected category catalog loader.
 fn dispatch_with_categories(
     cmd: Cmd,

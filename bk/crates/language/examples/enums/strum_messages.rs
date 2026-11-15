@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Labels and tooltips for a settings menu with `strum`'s `EnumMessage`, and
 //! the variant list with `IntoEnumIterator`, `VariantNames` and `EnumCount`.
 
@@ -27,6 +28,7 @@ use strum::VariantNames;
     AsRefStr,
 )]
 enum BoolDisplayMode {
+
     /// `message` is a short label; `detailed_message` is a tooltip.
     #[strum(
         message = "True / False",
@@ -72,8 +74,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the menu.
 pub fn run() {
     main();
 }

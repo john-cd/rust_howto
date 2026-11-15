@@ -4,7 +4,7 @@
 
 /// Solve an exponential decay equation numerically and compare with the exact
 mod exponential_decay;
-/// Runs the example.
+
 /// Runs the exponential decay example.
 fn main() {
     exponential_decay::run();

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! String interning example.
 //!
 //! A `Ustr` (Unique str) is a lightweight handle representing a static,
@@ -18,7 +19,7 @@
 
 use ustr::Ustr;
 use ustr::ustr;
-/// Runs the example.
+
 /// Creates interned strings and compares them.
 fn main() {
     // Creating `Ustr` instances.
@@ -88,8 +89,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates interned strings and compares them.
 pub fn run() {
     main();
 }

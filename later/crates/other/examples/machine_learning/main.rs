@@ -8,15 +8,18 @@ use clap::Subcommand;
 
 /// Forecast a seasonal time series with `augurs`: MSTL removes the seasonal
 mod forecast;
+
 /// Run an ONNX model trained elsewhere (here, a scikit-learn logistic
 #[cfg(feature = "onnx")]
 mod onnx_infer;
+
 /// Train a logistic regression classifier in Rust with `smartcore`.
 mod smartcore_fit;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,13 +28,16 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `forecast` example.
     #[command(name = "forecast")]
     Forecast,
+
     /// Runs the `onnx_infer` example.
     #[cfg(feature = "onnx")]
     #[command(name = "onnx_infer")]
     OnnxInfer,
+
     /// Runs the `smartcore_fit` example.
     #[command(name = "smartcore_fit")]
     SmartcoreFit,
@@ -41,6 +47,7 @@ enum Commands {
 fn main() -> Result<()> {
     dispatch(Cli::parse())
 }
+
 /// Runs the example selected in the parsed command line.
 fn dispatch(cli: Cli) -> Result<()> {
     if let Some(command) = cli.command {

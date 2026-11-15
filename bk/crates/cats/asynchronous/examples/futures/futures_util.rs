@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Combinators from `futures_util`, applied to asynchronous fetches that may
 //! fail.
 //!

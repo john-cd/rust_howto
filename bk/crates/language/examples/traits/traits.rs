@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Defining and implementing traits in Rust.
 //!
 //! Traits define shared behavior that multiple types can implement, similar
@@ -9,6 +10,7 @@
 
 /// A trait with one method.
 pub trait Summary {
+
     /// Returns a string that summarizes the item.
     /// Note that it can be just a method signature (no function body).
     fn summarize(&self) -> String;
@@ -16,12 +18,16 @@ pub trait Summary {
 
 /// A news article, which can be summarized.
 pub struct NewsArticle {
+
     /// The headline.
     pub headline: String,
+
     /// The location where the news happened.
     pub location: String,
+
     /// The author.
     pub author: String,
+
     /// The text of the article.
     pub content: String,
 }
@@ -32,7 +38,7 @@ impl Summary for NewsArticle {
         format!("{}, by {} ({})", self.headline, self.author, self.location)
     }
 }
-/// Runs the example.
+
 /// Creates an article and calls the method of the trait.
 fn main() {
     let na = NewsArticle {
@@ -52,8 +58,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates an article and calls the method of the trait.
 pub fn run() {
     main();
 }

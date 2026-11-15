@@ -10,11 +10,14 @@ use clap::Subcommand;
 /// downstream analysis. Workspace and rendering code use this module to obtain a consistent view of
 /// the graph.
 mod cancellation_tree;
+
 /// A bounded worker pool with `JoinSet`: keep at most `LIMIT` tasks running, refill as tasks
 /// finish, collect results in completion order, and tell a
 mod joinset_pool;
+
 /// A supervisor that restarts a failing task with capped exponential backoff
 mod supervisor;
+
 /// Choosing a Tokio channel: `watch` keeps only the latest value (config, state), `broadcast`
 /// delivers every event but receivers can lag, and `mpsc` is a work queue where each message goes
 /// to one consumer.
@@ -23,6 +26,7 @@ mod watch_latest;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -31,15 +35,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `cancellation_tree` example.
     #[command(name = "cancellation_tree")]
     CancellationTree,
+
     /// Runs the `joinset_pool` example.
     #[command(name = "joinset_pool")]
     JoinsetPool,
+
     /// Runs the `supervisor` example.
     #[command(name = "supervisor")]
     Supervisor,
+
     /// Runs the `watch_latest` example.
     #[command(name = "watch_latest")]
     WatchLatest,
@@ -64,7 +72,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

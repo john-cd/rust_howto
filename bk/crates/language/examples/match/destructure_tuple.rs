@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Destructuring a tuple in a `match`.
 
 /// Matches a pair against several patterns.
@@ -14,8 +15,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Matches a pair against several patterns.
 pub fn run() {
     main();
 }

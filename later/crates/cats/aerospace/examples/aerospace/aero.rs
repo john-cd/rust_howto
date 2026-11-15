@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Sample a satellite's orbit from a fixed two-line element set using `sgp4`.
 //!
 //! A two-line element set (TLE) is a compact text format that space agencies
@@ -38,6 +39,7 @@ fn predict(constants: &Constants, minutes: f64) -> Prediction {
         .propagate(MinutesSinceEpoch(minutes))
         .expect("the fixed ISS elements should propagate over one orbit")
 }
+
 /// Samples roughly one orbit at ten-minute intervals.
 fn main() {
     let constants = iss_constants();
@@ -50,7 +52,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the orbit sampling example.
 pub fn run() {
     main();

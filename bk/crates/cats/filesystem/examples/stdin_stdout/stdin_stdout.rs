@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Reading from standard input and writing to standard output.
 //!
 //! Standard input and output are the streams connected to the terminal or to
@@ -43,9 +44,10 @@ fn main() -> io::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Writes to a locked standard output and reads a line.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> io::Result<()> {
     main()

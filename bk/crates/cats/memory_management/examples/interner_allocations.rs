@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Counts allocation calls made by the hand-written string interner.
 //!
 //! A string interner stores each distinct string once and hands out a small ID.
@@ -13,6 +14,7 @@ use std::alloc::System;
 use std::cell::Cell;
 
 // This module is the same implementation used in the interning example.
+
 /// String interning: store each distinct string once and compare, hash and
 mod interning;
 
@@ -21,6 +23,7 @@ struct CountingAllocator;
 thread_local! {
     // Counts per thread, so that other threads (such as a test harness) do
     // not disturb the measurement. A `const` initializer never allocates.
+
     /// Shared `allocations` used by this module.
     static ALLOCATIONS: Cell<usize> = const { Cell::new(0) };
 }

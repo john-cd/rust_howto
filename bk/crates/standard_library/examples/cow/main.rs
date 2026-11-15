@@ -7,20 +7,26 @@ use clap::Subcommand;
 
 /// Alternatives to `Cow`.
 mod cow_alternatives;
+
 /// Example of a function accepting either owned or borrowed values
 mod cow_as_function_param;
+
 /// Demonstrates various uses and conversions of `Cow` (Clone-on-Write).
 mod cow_to_borrowed_owned;
+
 /// Example of a function returning a `Cow`.
 mod function_returning_cow;
+
 /// Returning a borrowed or an owned string with `Cow`.
 mod into_cow;
+
 /// Modifying a `Cow` in place, cloning it on write.
 mod modify_cow_in_place;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -29,21 +35,27 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `cow_alternatives` example.
     #[command(name = "cow_alternatives")]
     CowAlternatives,
+
     /// Runs the `cow_as_function_param` example.
     #[command(name = "cow_as_function_param")]
     CowAsFunctionParam,
+
     /// Runs the `cow_to_borrowed_owned` example.
     #[command(name = "cow_to_borrowed_owned")]
     CowToBorrowedOwned,
+
     /// Runs the `function_returning_cow` example.
     #[command(name = "function_returning_cow")]
     FunctionReturningCow,
+
     /// Runs the `into_cow` example.
     #[command(name = "into_cow")]
     IntoCow,
+
     /// Runs the `modify_cow_in_place` example.
     #[command(name = "modify_cow_in_place")]
     ModifyCowInPlace,
@@ -74,7 +86,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

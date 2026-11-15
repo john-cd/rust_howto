@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Laying out rich text with `parley`.
 //!
 //! Rich text mixes fonts, sizes and colours within one paragraph. Layout turns
@@ -52,7 +53,7 @@ fn layout_text(
     layout.align(Alignment::Start, AlignmentOptions::default());
     layout
 }
-/// Runs the example.
+
 /// Builds a layout for a text, breaks it into lines, and prints its glyph runs.
 fn main() {
     let text = "Hello, Parley! This is a rich text layout example in Rust.";

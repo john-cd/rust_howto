@@ -7,16 +7,20 @@ use clap::Subcommand;
 
 /// Searching a text for several patterns at once with the Aho-Corasick
 mod aho_corasick;
+
 /// Fuzzy matching of strings with `fuzzy-matcher`.
 mod fuzzy_matcher;
+
 /// Searching bytes quickly with `memchr`.
 mod memchr;
+
 /// Measuring the similarity of strings with `strsim`.
 mod strsim;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,15 +29,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `aho_corasick` example.
     #[command(name = "aho_corasick")]
     AhoCorasick,
+
     /// Runs the `fuzzy_matcher` example.
     #[command(name = "fuzzy_matcher")]
     FuzzyMatcher,
+
     /// Runs the `memchr` example.
     #[command(name = "memchr")]
     Memchr,
+
     /// Runs the `strsim` example.
     #[command(name = "strsim")]
     Strsim,

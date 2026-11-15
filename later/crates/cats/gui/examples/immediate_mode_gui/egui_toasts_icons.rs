@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Toast notifications with `egui-notify` and icons with `egui-phosphor`.
 //!
 //! A toast is a short notification that appears over the interface and fades
@@ -23,13 +24,16 @@ fn install_icons(ctx: &egui::Context) {
 
 /// The application state.
 struct App {
+
     /// The pending notifications.
     toasts: Toasts,
+
     /// The items of the list.
     items: Vec<String>,
 }
 
 impl App {
+
     /// Creates an app with two items.
     fn new() -> Self {
         Self {
@@ -42,7 +46,8 @@ impl App {
     /// of the text of the buttons.
     ///
     /// # Arguments
-    /// * `ui` - Mutable ui whose state is updated by this operation.
+///
+    /// * `ui` - egui interface used to display the toast controls.
     fn show(&mut self, ui: &mut egui::Ui) {
         if ui
             .button(format!("{} Add", egui_phosphor::regular::PLUS))
@@ -107,6 +112,7 @@ fn run_example() {
     // A renderer would upload the textures; drop them on purpose.
     output.textures_delta.clear();
 }
+
 /// Runs the example.
 fn main() {
     run_example();

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Variable immutability and mutability.
 //!
 //! Immutability by default helps prevent accidental changes. Use `mut` on a
@@ -44,13 +45,13 @@ fn main() {
 /// A struct with a flag.
 #[derive(Debug)]
 struct MyStruct {
+
     /// The flag.
     flag: bool,
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Declares and modifies variables.
 pub fn run() {
     main();
 }

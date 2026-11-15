@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encoding and decoding a struct in little-endian byte order with `byteorder`.
 //!
 //! Endianness is the order in which the bytes of a multi-byte number are
@@ -16,11 +17,14 @@ use byteorder::ReadBytesExt;
 use byteorder::WriteBytesExt;
 
 // Define a struct `Payload` to represent the data we want to encode/decode.
+
 /// The data to encode.
 #[derive(Default, PartialEq, Debug)]
 struct Payload {
+
     /// Kind of payload.
     kind: u8,
+
     /// Value of the payload.
     value: u16,
 }
@@ -71,6 +75,7 @@ fn example() -> Result<(), Error> {
 /// Runs the example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<(), Error> {
     example()

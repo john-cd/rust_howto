@@ -1,15 +1,18 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Cryptographic hashing with `blake3`: one-shot, incremental, keyed, key
 //! derivation, and extensible output.
 //!
 //! ### What is BLAKE3?
+//!
 //! BLAKE3 is a modern cryptographic hash function that is significantly faster
 //! than MD5, SHA-1, SHA-2, SHA-3, and BLAKE2, while providing 128 bits of
 //! cryptographic security against all known attacks.
 //!
 //! ### Underlying Technology & Architecture
+//!
 //! - **Tree Hashing**: Internally, BLAKE3 structures the input into a binary Merkle tree of
 //!   1024-byte chunks. This architecture allows computations to be split across multiple CPU cores
 //!   or parallelized using SIMD vector instructions (such as AVX-512 or NEON).
@@ -17,6 +20,7 @@
 //!   function and the Bao tree hashing scheme.
 //!
 //! ### Purpose & Use Cases
+//!
 //! - **Integrity Checking**: Computing hash digests for file verification, caching, and
 //!   content-addressable storage systems.
 //! - **Streaming & Incremental Hashing**: Processing large files or network streams in chunks
@@ -29,6 +33,7 @@
 //!   arbitrary byte length.
 //!
 //! ### Password Hashing Warning
+//!
 //! BLAKE3 is designed for maximum speed and efficiency. It is **not** suitable
 //! for password hashing or password storage, because fast algorithms allow
 //! attackers to run rapid brute-force dictionary attacks. Use a slow,
@@ -92,7 +97,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the BLAKE3 example by delegating to `main()`.
 pub fn run() {
     main();
@@ -101,6 +105,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `blake3` example runs.
     #[test]
     fn test_blake3_example_entry_point() {

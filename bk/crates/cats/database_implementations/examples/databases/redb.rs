@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example using the `redb` embedded key-value store.
 //!
 //! `redb` is a pure-Rust, ACID-compliant embedded key-value database with a
@@ -53,9 +54,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Opens a `redb` database, inserts a key-value pair in a write transaction, and reads it back in a read transaction.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

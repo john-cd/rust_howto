@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Writes and reads a WAV file through an in-memory cursor.
 //!
 //! WAV is an uncompressed audio container: a header describing the sample rate,
@@ -35,6 +36,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 /// Writes and reads a WAV file through an in-memory cursor.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()

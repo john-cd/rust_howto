@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A counter application with `iced`.
 //!
 //! Iced follows the Elm architecture: the state is a struct, user actions
@@ -25,6 +26,7 @@ fn main() -> iced::Result {
 /// The state of the counter.
 #[derive(Default)]
 struct Counter {
+
     /// The current count.
     value: i64,
 }
@@ -32,13 +34,16 @@ struct Counter {
 /// The messages that the counter handles.
 #[derive(Debug, Clone, Copy)]
 enum Message {
+
     /// Increases the count.
     Increment,
+
     /// Decreases the count.
     Decrement,
 }
 
 impl Counter {
+
     /// Updates the count according to `message`.
     fn update(&mut self, message: Message) {
         match message {
@@ -66,7 +71,7 @@ impl Counter {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Runs the iced example.
 pub fn run() -> iced::Result {
     main()
 }
@@ -81,6 +86,7 @@ mod tests {
     fn test_iced_example_entry_point() -> iced::Result {
         main()
     }
+
     /// Applies counter changes while keeping the dependent application state consistent.
     #[test]
     fn update_changes_the_counter_value() {

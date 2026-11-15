@@ -53,15 +53,19 @@ use crate::unicast::transport_unicast_inner::TransportUnicastTrait;
 /// calls the `on_schedule` callback provided at construction time, allowing tests to observe
 /// every message that the routing layer sends to this face without a real network connection.
 pub struct MockTransportUnicastInner {
+
     /// Zenoh identifier of this peer.
     zid: ZenohIdProto,
+
     /// Role advertised by this peer.
     whatami: WhatAmI,
+
     /// On schedule value.
     on_schedule: Arc<dyn Fn(NetworkMessage) + Send + Sync>,
 }
 
 impl fmt::Debug for MockTransportUnicastInner {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("MockTransportUnicastInner")
@@ -74,6 +78,7 @@ impl fmt::Debug for MockTransportUnicastInner {
 
 #[async_trait]
 impl TransportUnicastTrait for MockTransportUnicastInner {
+
     /// Changes the callback held by the mock transport unicast inner; subsequent operations use the
     /// updated value.
     fn set_callback(&self, _callback: Arc<dyn TransportPeerEventHandler>) {}
@@ -104,7 +109,6 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
 
     /// Reports whether the mock transport unicast inner meets the shm condition so callers can
     /// choose the correct branch.
-
     #[cfg(feature = "shared-memory")]
     fn is_shm(&self) -> bool {
         false
@@ -112,7 +116,6 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
 
     /// Reports whether the mock transport unicast inner meets the qos condition so callers can
     /// choose the correct branch.
-
     fn is_qos(&self) -> bool {
         false
     }
@@ -136,7 +139,6 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
 
     /// Applies the rules used by test helpers to keep mock transport unicast inner state valid for
     /// its callers.
-
     async fn add_link(
         &self,
         _link: LinkUnicastWithOpenAck,
@@ -168,14 +170,12 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
     }
 
     /// Closes link.
-
     async fn close_link(&self, _link: Link) -> ZResult<()> {
         Ok(())
     }
 
     /// Applies the rules used by test helpers to keep mock transport unicast inner state valid for
     /// its callers.
-
     fn add_debug_fields<'a, 'b: 'a, 'c>(
         &self,
         s: &'c mut DebugStruct<'a, 'b>,
@@ -183,6 +183,7 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
         s
     }
 }
+
 /// Creates a [`TransportUnicast`] backed by a [`MockTransportUnicastInner`].
 ///
 /// # Arguments
@@ -194,7 +195,6 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
 /// The caller must keep the returned `Arc<MockTransportUnicastInner>` alive for the duration of
 /// any operation that uses the `TransportUnicast`, because `TransportUnicast` only holds a `Weak`
 /// reference.
-
 pub fn mock_transport_unicast(
     zid: ZenohIdProto,
     whatami: WhatAmI,

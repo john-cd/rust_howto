@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Extracting links from Markdown with several regular expressions.
 //!
 //! A regular expression (regex) describes a text pattern. Compile it once and
@@ -114,7 +115,7 @@ fn search_with_all_regexes(contents: &str) {
         }
     }
 }
-/// Runs the example.
+
 /// Extracts the inline links of a sample Markdown text.
 fn main() {
     // Example Markdown links to process:
@@ -148,7 +149,7 @@ image_lbl6: image_url6
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Extracts the inline links of a sample Markdown text.
 pub fn run() {
     main();
 }

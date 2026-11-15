@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Return-position `impl Trait` in a trait method.
 //!
 //! A trait method can return `impl Future` (return-position `impl Trait`),
@@ -14,12 +15,14 @@
 /// specified in the trait definition, but is instead left to the implementor
 /// to decide.
 trait Container {
+
     /// Returns an iterator over the items in the container.
     fn items(&self) -> impl Iterator<Item = u8>;
 }
 
 /// A concrete implementation of the `Container` trait.
 struct MyContainer {
+
     /// The values that the container yields.
     items: Vec<u8>,
 }
@@ -30,6 +33,7 @@ impl Container for MyContainer {
         self.items.iter().copied()
     }
 }
+
 /// Iterates over the items of a [`MyContainer`].
 fn main() {
     let c = MyContainer {
@@ -41,8 +45,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Iterates over the items of a [`MyContainer`].
 pub fn run() {
     main();
 }

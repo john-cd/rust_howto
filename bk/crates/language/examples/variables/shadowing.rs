@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Shadowing a variable with a new binding.
 
 /// Shadows a variable in the same and in an inner scope.
@@ -42,8 +43,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Shadows a variable in the same and in an inner scope.
 pub fn run() {
     main();
 }

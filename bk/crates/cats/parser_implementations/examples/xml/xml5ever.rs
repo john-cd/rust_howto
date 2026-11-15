@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parse a small XML document with `xml5ever` and inspect its DOM tree.
 //!
 //! XML is a text format of nested tags. A DOM (document object model) is the
@@ -48,34 +49,48 @@ impl ElemName for NameRef<'_> {
 
 /// The kinds of nodes stored in the small example tree.
 enum NodeKind {
+
     /// The document node and its ordered children.
     Document(RefCell<Vec<Handle>>),
+
     /// A document fragment and its ordered children.
     Fragment(RefCell<Vec<Handle>>),
+
     /// An element with attributes, children, and optional template contents.
     Element {
+
         /// The element attributes.
         attrs: RefCell<Vec<Attribute>>,
+
         /// The element's ordered children.
         children: RefCell<Vec<Handle>>,
+
         /// The fragment associated with a template element.
         template_contents: Option<Handle>,
     },
+
     /// Text content accumulated from XML character tokens.
     Text(RefCell<String>),
+
     /// A comment node.
     Comment(String),
+
     /// A processing instruction node.
     ProcessingInstruction {
+
         /// The processing instruction target.
         target: String,
+
         /// The processing instruction body.
         data: String,
     },
+
     /// A document type node.
     Doctype {
+
         /// The public identifier.
         public_id: String,
+
         /// The system identifier.
         system_id: String,
     },
@@ -83,27 +98,33 @@ enum NodeKind {
 
 /// One XML node with its qualified name, kind, and optional parent.
 struct Node {
+
     /// Qualified name used by the tree builder for elements.
     name: QualName,
+
     /// Content and child nodes for this node.
     kind: NodeKind,
+
     /// Weak parent pointer used for detach and reparent operations.
     parent: RefCell<Option<Weak<Self>>>,
 }
 
 /// A small DOM implementation used as `xml5ever`'s tree sink.
 struct XmlTree {
+
     /// The document node that owns the parsed tree.
     document: Handle,
+
     /// Errors reported by the XML parser.
     errors: RefCell<Vec<Cow<'static, str>>>,
+
     /// Quirks mode selected by the tree builder.
     quirks_mode: Cell<QuirksMode>,
 }
 
 impl Default for XmlTree {
-    /// Constructs a usable initial xml tree value with the defaults required by the xml5ever
-    /// component.
+
+    /// Returns an empty XML document tree with no quirks mode set.
     fn default() -> Self {
         Self {
             document: Rc::new(Node {
@@ -170,7 +191,10 @@ impl TreeSink for XmlTree {
         Rc::clone(&self.document)
     }
 
+    /// Returns the element name stored in the target node.
+///
     /// # Arguments
+///
     /// * `target` - Target value or destination produced by the xml tree operation.
     fn elem_name<'a>(&'a self, target: &'a Self::Handle) -> Self::ElemName<'a> {
         NameRef(&target.name)
@@ -204,6 +228,7 @@ impl TreeSink for XmlTree {
     /// Assembles the pi from its component values so callers receive a ready-to-use result.
     ///
     /// # Arguments
+///
     /// * `target` - Target value or destination produced by the xml tree operation.
     fn create_pi(&self, target: StrTendril, data: StrTendril) -> Self::Handle {
         unnamed_node(NodeKind::ProcessingInstruction {
@@ -266,7 +291,10 @@ impl TreeSink for XmlTree {
         append_child(&self.document, doctype);
     }
 
+    /// Returns the template contents node associated with the target element.
+///
     /// # Arguments
+///
     /// * `target` - Target value or destination produced by the xml tree operation.
     fn get_template_contents(&self, target: &Self::Handle) -> Self::Handle {
         match &target.kind {
@@ -333,6 +361,7 @@ impl TreeSink for XmlTree {
     /// affecting later work.
     ///
     /// # Arguments
+///
     /// * `target` - Target value or destination produced by the xml5ever operation.
     fn remove_from_parent(&self, target: &Self::Handle) {
         let Some(parent) = target
@@ -385,9 +414,11 @@ fn describe(node: &Node) -> String {
         } => format!("doctype {public_id:?} {system_id:?}"),
     }
 }
+
 /// Parses a small XML document and prints the library and book nodes.
 ///
 /// # Errors
+///
 /// Returns an error if parsing reports errors or the expected nodes are
 /// missing from the resulting tree.
 fn main() -> anyhow::Result<()> {
@@ -436,6 +467,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the XML DOM parsing example.
 ///
 /// # Errors
+///
 /// Returns an error if XML parsing fails or produces an unexpected tree.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -451,6 +483,7 @@ mod tests {
     fn test_xml5ever_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// Parsing well-formed XML builds the expected tree without errors.
     #[test]
     fn builds_the_tree() -> Result<(), Box<dyn std::error::Error>> {

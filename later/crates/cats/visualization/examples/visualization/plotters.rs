@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates rendering a 2D line plot into an SVG string using `plotters`.
 //!
 //! Plotters draws charts into many backends; SVG is a text format for vector
@@ -51,6 +52,7 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 /// Runs the in-memory SVG rendering example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     main()

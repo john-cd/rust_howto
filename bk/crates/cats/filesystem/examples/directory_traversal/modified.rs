@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to traverse a directory and check the last
 //! modified time of each file.
 //!
@@ -58,9 +59,10 @@ fn recent_entries(dir: &Path) -> Result<Vec<String>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Checks whether the files in the current directory were modified in the last 24 hours.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

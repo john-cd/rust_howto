@@ -59,6 +59,7 @@ use crate::multicast::link::TransportLinkMulticast;
 
 /// **********************************
 // TRANSPORT
+
 /// **********************************
 #[derive(Clone)]
 pub(super) struct TransportMulticastPeer {
@@ -169,6 +170,7 @@ impl TransportMulticastInner {
 
     /// **********************************
     // ACCESSORS
+
     /// **********************************
     pub(crate) fn get_sn_resolution(&self) -> Bits {
         self.manager.config.resolution.get(Field::FrameSN)
@@ -193,6 +195,7 @@ impl TransportMulticastInner {
 
     /// **********************************
     // TERMINATION
+
     /// **********************************
     pub(super) async fn delete(&self) -> ZResult<()> {
         tracing::debug!("Closing multicast transport on {:?}", self.locator);
@@ -248,6 +251,7 @@ impl TransportMulticastInner {
 
     /// **********************************
     // LINK
+
     /// **********************************
     pub(super) fn start_tx(&self) -> ZResult<()> {
         let mut guard = zwrite!(self.link);
@@ -344,6 +348,7 @@ impl TransportMulticastInner {
 
     /// **********************************
     // PEER
+
     /// **********************************
     pub(super) fn new_peer(&self, locator: &Locator, join: Join) -> ZResult<()> {
         let mut link = Link::new_multicast(&self.get_link().link);

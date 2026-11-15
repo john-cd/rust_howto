@@ -8,16 +8,20 @@ use clap::Subcommand;
 /// Demonstrates the use of tuples and arrays in Rust, including their declaration, access,
 /// destructuring, iteration, and mutation.
 mod compound_data_types;
+
 /// Scalar data types: integers, floating-point numbers, booleans and characters.
 mod scalar_data_types;
+
 /// String data types: `&str`, `String` and string literals.
 mod string_data_types;
+
 /// The unit type `()` and the never type `!`.
 mod unit_never;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -26,15 +30,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `compound_data_types` example.
     #[command(name = "compound_data_types")]
     CompoundDataTypes,
+
     /// Runs the `scalar_data_types` example.
     #[command(name = "scalar_data_types")]
     ScalarDataTypes,
+
     /// Runs the `string_data_types` example.
     #[command(name = "string_data_types")]
     StringDataTypes,
+
     /// Runs the `unit_never` example.
     #[command(name = "unit_never")]
     UnitNever,

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Ranks candidates against a partial query with `nucleo`, the matcher used
 //! by the Helix editor.
 //!
@@ -13,7 +14,16 @@ use nucleo::Matcher;
 use nucleo::pattern::CaseMatching;
 use nucleo::pattern::Normalization;
 use nucleo::pattern::Pattern;
-/// Runs the example.
+
+/// Ranks matching commands against a partial query with the `nucleo` matcher.
+///
+/// # Errors
+///
+/// Returns an error if the query matches no command.
+///
+/// # Panics
+///
+/// Panics if matching results are not ranked in the expected order.
 fn main() -> anyhow::Result<()> {
     let commands = ["save file", "open file", "close window", "open folder"];
 
@@ -37,10 +47,15 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Ranks matching commands against a partial query with the `nucleo` matcher.
 ///
 /// # Errors
-/// Returns an error if a step of the example fails.
+///
+/// Returns an error if the query matches no command.
+///
+/// # Panics
+///
+/// Panics if matching results are not ranked in the expected order.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

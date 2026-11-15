@@ -1,18 +1,22 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Methods and associated functions on a struct.
 
 /// A struct representing a rectangle with a width and height.
 struct Rectangle {
+
     /// Width of the rectangle.
     width: u32,
+
     /// Height of the rectangle.
     height: u32,
 }
 
 /// Implementation block (multiple blocks are allowed for a given struct).
 impl Rectangle {
+
     /// Method: note the parameter that references `Self`, an alias
     /// for the type that the `impl` block is for, in this case `Rectangle`.
     /// Associated Function.
@@ -44,8 +48,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates rectangles and calls their methods.
 pub fn run() {
     main();
 }

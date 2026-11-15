@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Compute with quantities that carry units.
 //!
 //! Mixing units, such as metres and feet, has crashed spacecraft (the Mars
@@ -31,7 +32,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {
     main();

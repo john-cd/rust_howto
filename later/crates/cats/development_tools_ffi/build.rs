@@ -8,6 +8,7 @@ use std::path::Path;
 use std::path::PathBuf;
 
 // ANCHOR: BINDGEN
+
 /// Compiles the sample C library and generates Rust bindings for its header.
 ///
 /// # Errors
@@ -29,6 +30,7 @@ fn bindgen(manifest_dir: &Path, out_dir: &Path) -> Result<(), Box<dyn Error>> {
 // ANCHOR_END: BINDGEN
 
 // ANCHOR: CBINDGEN
+
 /// Generates a C header from the Rust C-ABI library example.
 ///
 /// # Errors
@@ -47,6 +49,7 @@ fn cbindgen(manifest_dir: &Path, out_dir: &Path) -> Result<(), Box<dyn Error>> {
 // ANCHOR_END: CBINDGEN
 
 // ANCHOR: CXX
+
 /// Compiles the C++ bridge example when its optional feature is enabled.
 #[cfg(feature = "cpp")]
 fn cxx() {
@@ -66,9 +69,11 @@ fn cxx() {
 //     uniffi::generate_bindings("examples/uniffi.rs", "my_library").unwrap();
 // }
 // ANCHOR_END: UNIFFI
+
 /// Runs the FFI code generators for the C examples.
 ///
 /// # Errors
+///
 /// Returns an error if Cargo does not provide its manifest or output
 /// directory, or binding generation or output writing fails.
 fn main() -> Result<(), Box<dyn Error>> {

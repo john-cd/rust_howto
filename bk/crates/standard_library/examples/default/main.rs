@@ -4,7 +4,7 @@
 
 /// The `Default` trait provides a way to create a default value for a type.
 mod default;
-/// Runs the example.
+
 /// Runs the `default` example.
 fn main() {
     default::run();

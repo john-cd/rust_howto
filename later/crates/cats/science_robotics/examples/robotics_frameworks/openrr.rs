@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Forward and inverse kinematics of a planar arm with `k`, the kinematics
 //! library underneath OpenRR. No robot, simulator or GUI is needed.
 //!
@@ -115,8 +116,11 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the kinematics example.
-
+///
+/// Prints the tip position for a pose, then solves for a new target.
+///
 /// # Errors
+///
 /// Returns an error if the kinematics computation fails.
 pub fn run() -> anyhow::Result<()> {
     main()

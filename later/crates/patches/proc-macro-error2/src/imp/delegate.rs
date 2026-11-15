@@ -68,6 +68,7 @@ pub(crate) fn emit_diagnostic(diag: Diagnostic) {
 }
 
 thread_local! {
+
     /// Shared `is dirty` used by this module.
     static IS_DIRTY: Cell<bool> = Cell::new(false);
 }

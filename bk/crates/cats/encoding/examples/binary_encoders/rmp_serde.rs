@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Serialize and deserialize a struct with MessagePack via `rmp-serde`.
 //!
 //! `to_vec_named` encodes a struct as a map with field names. The compact
@@ -12,10 +13,13 @@ use serde::Serialize;
 /// A struct that is serialized to and deserialized from MessagePack.
 #[derive(Debug, Serialize, Deserialize, PartialEq)]
 struct MyData {
+
     /// The name.
     name: String,
+
     /// The age in years.
     age: u32,
+
     /// Whether the data is active.
     is_active: bool,
 }
@@ -38,9 +42,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Encodes a struct as MessagePack, then decodes it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -65,6 +70,7 @@ mod tests {
     fn named_messagepack_round_trip_preserves_the_struct() -> anyhow::Result<()> {
         main()
     }
+
     /// Confirms that the compact encoding is an array and smaller than named.
     #[test]
     fn compact_encoding_is_an_array_and_smaller_than_named() -> anyhow::Result<()> {

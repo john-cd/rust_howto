@@ -4,7 +4,7 @@
 
 /// `autocfg` probes compiler support for use in Cargo build scripts.
 mod autocfg;
-/// Runs the example.
+
 /// Runs the autocfg example.
 fn main() {
     autocfg::run();

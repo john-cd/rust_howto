@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Boxing dynamically sized types.
 //!
 //! Dynamically sized types (DSTs), such as `str`, slices and `dyn Trait`, have
@@ -32,8 +33,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates boxes of a slice and a string.
 pub fn run() {
     main();
 }
@@ -41,11 +41,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `box dst` example runs.
     #[test]
     fn test_box_dst_example_entry_point() {
         main();
     }
+
     /// Verifies boxed slice.
     #[test]
     fn test_boxed_slice() {
@@ -53,6 +55,7 @@ mod tests {
         assert_eq!(boxed_slice.len(), 3);
         assert_eq!(&*boxed_slice, &[1, 2, 3]);
     }
+
     /// Verifies vec into boxed slice and back.
     #[test]
     fn test_vec_into_boxed_slice_and_back() {
@@ -60,6 +63,7 @@ mod tests {
         assert_eq!(boxed.len(), 4);
         assert_eq!(boxed.into_vec(), vec![4, 5, 6, 7]);
     }
+
     /// Verifies boxed str.
     #[test]
     fn test_boxed_str() {

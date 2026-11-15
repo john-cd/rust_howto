@@ -26,13 +26,16 @@ fn chapter(name: &str, path: &str, number: Option<Vec<u32>>) -> Chapter {
     chapter.number = number.map(SectionNumber::new);
     chapter
 }
+
 /// Runs the executable with the given settings and book and returns its output.
 ///
 /// # Arguments
+///
 /// * settings - Configuration passed to the preprocessor.
 /// * book - Input book sent to the executable.
 ///
 /// # Panics
+///
 /// Panics if the preprocessor settings cannot be parsed.
 fn invoke(settings: serde_json::Value, book: Book) -> Output {
     let mut config = Config::default();
@@ -54,6 +57,7 @@ fn invoke(settings: serde_json::Value, book: Book) -> Output {
         .expect("input should parse");
     child.wait_with_output().expect("input should parse")
 }
+
 /// Removes private subtrees and renumbers visible chapters.
 #[test]
 fn removes_private_subtrees_and_renumbers_visible_chapters() {
@@ -95,6 +99,7 @@ fn removes_private_subtrees_and_renumbers_visible_chapters() {
     };
     assert_eq!(draft.name, "Draft");
 }
+
 /// Retains private chapters and applies their configured styling when requested.
 #[test]
 fn retains_and_styles_private_content_when_requested() {
@@ -111,6 +116,7 @@ fn retains_and_styles_private_content_when_requested() {
     assert!(chapter.content.contains("SECRET"));
     assert!(!chapter.content.contains("<!--private"));
 }
+
 /// Supports custom prefix and unstyled retention.
 #[test]
 fn supports_custom_prefix_and_unstyled_retention() {
@@ -130,6 +136,7 @@ fn supports_custom_prefix_and_unstyled_retention() {
     assert!(text.contains("SECRET"));
     assert!(!text.contains("blockquote"));
 }
+
 /// Checks that invalid privacy configuration fails without emitting a book.
 #[test]
 fn invalid_privacy_configuration_fails_without_emitting_a_book() {
@@ -138,6 +145,7 @@ fn invalid_privacy_configuration_fails_without_emitting_a_book() {
     assert!(output.stdout.is_empty());
     assert!(String::from_utf8_lossy(&output.stderr).contains("preprocessor.private"));
 }
+
 /// Treats the renderer exit status as the protocol support result.
 #[test]
 fn renderer_support_uses_only_exit_status() {

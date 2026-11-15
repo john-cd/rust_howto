@@ -5,6 +5,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Invoke an AWS Lambda function synchronously and asynchronously.
 //!
 //! AWS Lambda runs your function on demand without servers to manage. A
@@ -24,6 +25,7 @@ use serde::Serialize;
 /// The request understood by the function (see the Lambda example).
 #[derive(Serialize)]
 pub struct Request {
+
     /// The name to greet.
     pub name: String,
 }
@@ -31,6 +33,7 @@ pub struct Request {
 /// The response returned by the function.
 #[derive(Debug, Deserialize, PartialEq, Eq)]
 pub struct Response {
+
     /// The greeting.
     pub message: String,
 }
@@ -38,6 +41,7 @@ pub struct Response {
 /// Calls the function and waits for its JSON response.
 ///
 /// # Arguments
+///
 /// * `client` - Client used to make the request.
 /// * `request` - Request to send or process.
 pub async fn invoke_sync(
@@ -64,6 +68,7 @@ pub async fn invoke_sync(
 /// Queues an invocation and returns immediately (HTTP 202).
 ///
 /// # Arguments
+///
 /// * `client` - Client used to make the request.
 /// * `request` - Request to send or process.
 pub async fn invoke_async(client: &Client, function_name: &str, request: &Request) -> Result<i32> {
@@ -81,9 +86,11 @@ pub async fn invoke_async(client: &Client, function_name: &str, request: &Reques
 /// Parses the JSON bytes returned by the function.
 ///
 /// # Arguments
+///
 /// * `bytes` - Input bytes to decode or write.
 ///
 /// # Errors
+///
 /// Returns an error if the supplied input is invalid.
 pub fn parse_response(bytes: &[u8]) -> Result<Response> {
     serde_json::from_slice(bytes).context("unexpected function response")
@@ -93,6 +100,7 @@ pub fn parse_response(bytes: &[u8]) -> Result<Response> {
 /// Parses a representative response from a Lambda function.
 ///
 /// # Errors
+///
 /// Returns an error if the response bytes are not valid JSON for `Response`.
 fn run() -> Result<Response> {
     parse_response(br#"{"message":"Hello, Ada!"}"#)

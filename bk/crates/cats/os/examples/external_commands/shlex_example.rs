@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Split and quote command lines with `shlex`.
 //!
 //! Shells split a command line into words using quoting rules. `shlex` applies
@@ -8,11 +9,13 @@
 //! safely when you build a command line.
 
 use std::process::Command;
+
 /// Formats a program and its arguments as a line that can be pasted into a
 ///
 /// POSIX shell. Use it for display or logs only.
 ///
 /// # Errors
+///
 /// Returns an error if `program` or an argument cannot be quoted as a POSIX shell word.
 fn display_command(program: &str, args: &[&str]) -> Result<String, shlex::QuoteError> {
     let mut parts = vec![shlex::try_quote(program)?.into_owned()];
@@ -25,6 +28,7 @@ fn display_command(program: &str, args: &[&str]) -> Result<String, shlex::QuoteE
 /// Splits a command string and quotes arguments.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> anyhow::Result<()> {
     // Split a string the way a POSIX shell would, honoring quotes.
@@ -61,6 +65,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example_body()

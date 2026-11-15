@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Basic example of using `nu-ansi-term` to print bold text.
 //!
 //! ANSI escape sequences are special characters that terminals interpret as
@@ -18,8 +19,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Basic example of using `nu-ansi-term` to print bold text.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates matrix decompositions using the `nalgebra` crate.
 //!
 //! A decomposition splits a matrix into simpler ones (such as LU, QR or SVD).
@@ -45,8 +46,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates matrix decompositions using the `nalgebra` crate. Singular Value Decomposition (SVD) factorizes a matrix M into U * Σ * Vᵀ, where U and V are orthogonal matrices and Σ is a diagonal matrix of singular values. SVD has applications in dimensionality reduction, pseudoinverse computation, and solving least-squares problems.
 pub fn run() {
     main();
 }

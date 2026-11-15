@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Shows a web page in a native window with `tao` and `wry`.
 //!
 //! `tao` creates the window and runs the event loop, `wry` puts the
@@ -33,13 +34,16 @@ const HTML: &str = r#"<!doctype html>
 /// The reasons for rejecting a URI.
 #[derive(Debug, PartialEq, Eq)]
 enum UriError {
+
     /// The text is not a valid URI.
     Invalid,
+
     /// The URI does not point to a file on this computer.
     NotLocal,
 }
 
 impl fmt::Display for UriError {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
@@ -74,11 +78,19 @@ fn open_validated_uri(
     let url = validate_local_uri(uri)?;
     open(&url)
 }
+
 /// Opens a window that shows `url`, or `HTML` when there is no URL.
-
+///
 /// The function returns only when the process exits.
-
+///
+/// Opens a native window with the supplied URL or the example's built-in page.
+///
+/// # Arguments
+///
+/// * `url` - Page to load, or `None` to display the embedded HTML.
+///
 /// # Errors
+///
 /// Returns an error if creating the window or web view, or running the event loop, fails.
 fn show_window(url: Option<&Url>) -> Result<(), Box<dyn Error>> {
     let event_loop = EventLoop::new();
@@ -129,6 +141,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 /// Shows a web page in a native window with `tao` and `wry`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     // Call through a binding: calling `main` directly trips `clippy::main_recursion`.

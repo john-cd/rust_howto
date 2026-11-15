@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// This example demonstrates basic usage of the `bytes` crate.
 mod bytes;
+
 /// Formatting strings with `print!`, `format!` and `write!`.
 mod string_format;
+
 /// This example demonstrates common string types in Rust.
 mod strings;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `bytes` example.
     #[command(name = "bytes")]
     Bytes,
+
     /// Runs the `string_format` example.
     #[command(name = "string_format")]
     StringFormat,
+
     /// Runs the `strings` example.
     #[command(name = "strings")]
     Strings,
@@ -50,7 +56,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

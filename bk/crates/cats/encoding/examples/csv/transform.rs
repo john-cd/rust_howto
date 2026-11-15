@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example shows how to transform CSV data from one format to
 //! another.
 //!
@@ -18,8 +19,10 @@ use serde::de;
 /// A row of CSV data.
 #[derive(Debug, Deserialize)]
 struct Row {
+
     /// The name of the color.
     color_name: String,
+
     /// The color.
     color: HexColor,
 }
@@ -27,10 +30,13 @@ struct Row {
 
 /// A color represented as a hex triplet.
 struct HexColor {
+
     /// The red component.
     red: u8,
+
     /// The green component.
     green: u8,
+
     /// The blue component.
     blue: u8,
 }
@@ -54,6 +60,7 @@ impl FromStr for HexColor {
 }
 
 impl<'de> Deserialize<'de> for HexColor {
+
     /// Deserialize a hex color string into a `HexColor`.
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
@@ -98,9 +105,10 @@ magenta,#ff00ff";
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Transforms and prints the inline color CSV data.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

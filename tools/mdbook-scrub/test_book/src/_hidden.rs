@@ -22,8 +22,10 @@
 // aute irure dolor in reprehenderit
 
 // ANCHOR: component
+
 /// Component fixture containing the float field used by the scrubber example.
 struct Paddle {
+
     /// The greeting displayed by the hidden fixture.
     hello: f32,
 }

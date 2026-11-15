@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This function demonstrates basic usage of the `heed` crate for interacting
 //! with an LMDB database. It covers opening a database, creating a write
 //! transaction, writing data, committing the transaction, opening a read
@@ -66,9 +67,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// This function demonstrates basic usage of the `heed` crate for interacting with an LMDB database. It covers opening a database, creating a write transaction, writing data, committing the transaction, opening a read transaction, and reading data.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

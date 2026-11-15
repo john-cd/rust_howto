@@ -35,6 +35,7 @@ fn persist(tmp: NamedTempFile, path: &Path) -> Result<()> {
 /// Writes every item to `path` by replacing it atomically.
 ///
 /// # Arguments
+///
 /// * `path` - Path to the file or directory to process.
 ///
 /// The data is written to a temporary sibling file and flushed to storage
@@ -75,6 +76,7 @@ pub(crate) fn write_atomic(
 /// Copies `from` to `to`, replacing `to` atomically.
 ///
 /// # Arguments
+///
 /// * `from` - Path to the resource being processed.
 /// * `to` - Path to the resource being processed.
 ///

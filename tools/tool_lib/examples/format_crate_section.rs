@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Formatting crate sections and crate blocks using `tool_lib`.
 //!
 //! This example demonstrates how to use `tool_lib` to format:
@@ -98,6 +99,7 @@ fn main() -> Result<()> {
 /// Runs the crate section formatting example for programmatic execution.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     run_example()

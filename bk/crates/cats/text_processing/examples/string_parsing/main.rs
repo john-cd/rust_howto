@@ -4,7 +4,7 @@
 
 /// Parsing a color from a string by implementing `FromStr`.
 mod from_str;
-/// Runs the example.
+
 /// Runs the string parsing example.
 fn main() {
     from_str::run();

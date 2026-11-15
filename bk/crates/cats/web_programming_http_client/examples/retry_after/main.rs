@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Honour `429 Too Many Requests` and `Retry-After`.
 //!
 //!
@@ -27,14 +28,17 @@ use reqwest::header::RETRY_AFTER;
 /// A transient failure, with the delay requested by the server, if any.
 #[derive(Debug)]
 struct Throttled {
+
     /// Current lifecycle value used to decide which throttled operations are valid.
     status: StatusCode,
+
     /// Optional retry after used by throttled; `None` means the value is not configured or
     /// unavailable.
     retry_after: Option<Duration>,
 }
 
 impl fmt::Display for Throttled {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "transient failure: {}", self.status)
@@ -47,6 +51,7 @@ impl std::error::Error for Throttled {}
 fn parse_retry_after(value: &str) -> Option<Duration> {
     value.trim().parse().ok().map(Duration::from_secs)
 }
+
 /// Fetches `url`; fails on `429` and `503`, keeping any `Retry-After`.
 async fn fetch(url: &str) -> Result<String> {
     let response = reqwest::get(url).await?;
@@ -86,8 +91,11 @@ async fn fetch_with_retry_after(url: &str) -> Result<String> {
         .await
 }
 
+/// Fetches a page using the Retry-After policy and prints the response size.
+///
 /// # Errors
-/// An error is returned if a fallible operation fails.
+///
+/// Returns an error if the HTTP request still fails after all three retry attempts.
 async fn example_async() -> Result<()> {
     let body = fetch_with_retry_after("https://example.com").await?;
     println!("Received {} bytes", body.len());

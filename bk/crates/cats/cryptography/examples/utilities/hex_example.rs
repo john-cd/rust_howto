@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encode and decode bytes as hexadecimal with the `hex` crate.
 //!
 //! Hexadecimal writes each byte as two characters from 0-9 and a-f. It is the
@@ -19,9 +20,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Encodes a byte string as hexadecimal and decodes it again.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

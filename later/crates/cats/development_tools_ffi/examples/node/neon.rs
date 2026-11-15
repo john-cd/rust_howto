@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to create a simple Neon module that exports
 //! a function to JavaScript.
 //!
@@ -9,6 +10,7 @@
 //! Its context API manages access to JavaScript values.
 //!
 //! # Steps
+//!
 //! - Create a new Neon project with the upstream npm initializer.
 //! - Build the native module with the generated package's npm build script.
 //! - Run the JavaScript file: `node index.js`
@@ -20,12 +22,14 @@ use neon::prelude::*;
 fn greeting() -> &'static str {
     "hello from neon!"
 }
+
 /// A simple function that returns a JavaScript string.
 #[cfg(feature = "node")]
 fn hello(mut cx: FunctionContext<'_>) -> JsResult<'_, JsString> {
     // Create a JavaScript string.
     Ok(cx.string(greeting()))
 }
+
 /// Registers the `hello` function in the exports of the Node.js module.
 #[cfg(feature = "node")]
 #[::neon::main]
@@ -47,6 +51,7 @@ fn main() -> anyhow::Result<()> {
 /// JavaScript.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

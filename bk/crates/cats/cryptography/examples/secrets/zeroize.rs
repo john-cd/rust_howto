@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Wipes a secret from memory when it is dropped, using `zeroize`'s derive
 //! macros.
 //!
@@ -17,9 +18,11 @@ use zeroize::Zeroizing;
 /// `ZeroizeOnDrop` implements `Drop`; `Zeroize` allows an explicit wipe.
 #[derive(Zeroize, ZeroizeOnDrop)]
 struct ApiKey {
+
     /// The raw key bytes.
     bytes: Vec<u8>,
 }
+
 /// Runs the example.
 fn main() {
     // Explicit wipe: the buffer is emptied.
@@ -45,7 +48,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example.
 pub fn run() {
     main();

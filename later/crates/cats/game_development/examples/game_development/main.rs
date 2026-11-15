@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// Detecting the collision of two shapes with `parry2d`.
 mod game_development1;
+
 /// Demonstrates the use of the `glam` crate.
 mod glam;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,14 +23,16 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `game_development1` example.
     #[command(name = "game_development1")]
     GameDevelopment1,
+
     /// Runs the `glam` example.
     #[command(name = "glam")]
     Glam,
 }
-/// Runs the example.
+
 /// Runs the example selected on the command line.
 fn main() {
     dispatch(Cli::parse());

@@ -1,14 +1,17 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A `BinaryHeap` used as a priority queue.
 //!
 //! ### Priority Queue & `BinaryHeap` Fundamentals
+//!
 //! A priority queue is an abstract data structure where each element has an
 //! associated priority. Unlike standard FIFO queues, popping an element from a
 //! priority queue always yields the element with the highest priority.
 //!
 //! ### Ordering and Max-Heap Behavior
+//!
 //! - **Max-Heap by Default**: In Rust, `std::collections::BinaryHeap` is structured as a max-heap.
 //!   Elements implementing `Ord` are popped in descending order (greatest element first).
 //! - **Min-Heap with `Reverse`**: Wrapping elements in `std::cmp::Reverse` inverts the comparison
@@ -73,8 +76,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Pushes values into a binary heap and pops them in priority order.
 pub fn run() {
     main();
 }

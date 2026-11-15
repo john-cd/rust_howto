@@ -8,14 +8,17 @@ use clap::Subcommand;
 
 /// Runs CPU-bound work from `async` code on the Rayon thread pool.
 mod call_blocking_from_async_rayon;
+
 /// This example demonstrates how to call a blocking function from an
 mod call_blocking_from_async_spawn_blocking;
+
 /// Runs CPU-bound work from `async` code on a dedicated thread.
 mod call_blocking_from_async_spawn_dedicated_thread;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,12 +28,15 @@ struct Cli {
 #[allow(clippy::enum_variant_names)]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `call_blocking_from_async_rayon` example.
     #[command(name = "call_blocking_from_async_rayon")]
     CallBlockingFromAsyncRayon,
+
     /// Runs the `call_blocking_from_async_spawn_blocking` example.
     #[command(name = "call_blocking_from_async_spawn_blocking")]
     CallBlockingFromAsyncSpawnBlocking,
+
     /// Runs the `call_blocking_from_async_spawn_dedicated_thread` example.
     #[command(name = "call_blocking_from_async_spawn_dedicated_thread")]
     CallBlockingFromAsyncSpawnDedicatedThread,
@@ -52,7 +58,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

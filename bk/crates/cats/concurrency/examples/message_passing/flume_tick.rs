@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A bounded `flume` channel for commands sent to a loop that handles them
 //! once per "tick" (a UI frame, a game loop iteration, a control cycle).
 //!
@@ -18,16 +19,20 @@ use flume::bounded;
 /// A command sent to the loop.
 #[derive(Debug, PartialEq)]
 enum Command {
+
     /// Adds a value to the running total.
     Add(i32),
+
     /// Stops the loop.
     Quit,
 }
+
 /// Handles all pending commands without blocking.
 ///
 /// Returns `true` if the loop should stop.
 ///
 /// # Returns
+///
 /// `true` when the condition described above holds, and `false` otherwise.
 fn drain_commands(rx: &flume::Receiver<Command>, total: &mut i32) -> bool {
     // `try_iter` yields only the messages already in the channel.
@@ -39,9 +44,11 @@ fn drain_commands(rx: &flume::Receiver<Command>, total: &mut i32) -> bool {
     }
     false
 }
+
 /// Runs a controller thread and a tick loop connected by a bounded channel.
 ///
 /// # Errors
+///
 /// Returns an error if the controller panics or the command receiver closes.
 fn main() -> Result<()> {
     // A bounded MPMC channel: `send` blocks when it is full.
@@ -92,6 +99,7 @@ fn timeout_on_empty() {
 /// Runs the command loop and reports controller failures.
 ///
 /// # Errors
+///
 /// Returns an error if the controller panics or cannot send its commands.
 pub fn run() -> Result<()> {
     main()
@@ -106,6 +114,7 @@ mod tests {
     fn test_flume_tick_example_entry_point() -> Result<()> {
         main()
     }
+
     /// Reports a timeout immediately when an open channel has no command.
     #[test]
     fn test_timeout_on_empty() {

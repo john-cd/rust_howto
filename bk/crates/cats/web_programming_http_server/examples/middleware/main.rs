@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// Example showing how to add CORS headers to responses.
 mod cors;
+
 /// Serves an Axum route with common `tower-http` middleware.
 mod tower_http;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `cors` example.
     #[command(name = "cors")]
     Cors,
+
     /// Runs the `tower_http` example.
     #[command(name = "tower_http")]
     TowerHttp,

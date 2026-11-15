@@ -7,18 +7,23 @@ use clap::Subcommand;
 
 /// Wrap a paginated API (crates.io reverse dependencies) in an iterator.
 mod paginated;
+
 /// Calculate how long to wait after hitting a GitHub REST API rate limit.
 mod rate_limited;
+
 /// This example demonstrates how to make a GET request to a REST API and
 mod rest_get;
+
 /// This example demonstrates how to use the `HEAD` method to check if a
 mod rest_head;
+
 /// Example of using the `reqwest` crate to create and delete a GitHub Gist.
 mod rest_post;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,18 +32,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `paginated` example.
     #[command(name = "paginated")]
     Paginated,
+
     /// Runs the `rate_limited` example.
     #[command(name = "rate_limited")]
     RateLimited,
+
     /// Runs the `rest_get` example.
     #[command(name = "rest_get")]
     RestGet,
+
     /// Runs the `rest_head` example.
     #[command(name = "rest_head")]
     RestHead,
+
     /// Runs the `rest_post` example.
     #[command(name = "rest_post")]
     RestPost,

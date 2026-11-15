@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! One-time "flash" messages with `axum-messages` and `tower-sessions`.
 //!
 //! A flash message is a one-time notice, such as "Saved", stored in the user's
@@ -30,6 +31,7 @@ async fn show(messages: Messages) -> String {
         .collect::<Vec<_>>()
         .join("\n")
 }
+
 /// Builds the router. Messages are kept in the session, so the session layer
 /// must wrap the messages layer.
 pub fn app() -> Router {
@@ -62,11 +64,13 @@ mod tests {
     /// Sends a request with an optional session cookie.
     ///
     /// # Arguments
+///
     /// * `app` - Router that handles the request.
     /// * `uri` - Request path to call.
     /// * `cookie` - Optional session cookie header value.
     ///
     /// # Errors
+///
     /// Returns an error if the request cannot be built or the router fails.
     async fn get_with(
         app: &Router,
@@ -83,9 +87,11 @@ mod tests {
     /// Collects a response body and decodes it as UTF-8.
     ///
     /// # Arguments
+///
     /// * `response` - Response whose body should be read.
     ///
     /// # Errors
+///
     /// Returns an error if body collection or UTF-8 decoding fails.
     async fn text(response: axum::response::Response) -> anyhow::Result<String> {
         let bytes = response.into_body().collect().await?.to_bytes();

@@ -8,6 +8,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Point the S3 client at an S3-compatible store (MinIO, RustFS, LocalStack),
 //! optionally over HTTPS with a private certificate authority.
 //!
@@ -53,6 +54,7 @@ pub fn s3_compatible_client(endpoint: &str, access_key: &str, secret_key: &str) 
 /// Builds a client for an HTTPS `endpoint` signed by a private certificate
 ///
 /// # Arguments
+///
 /// authority, for example a MinIO server behind an internal CA.
 ///
 /// `ca_pem` holds the PEM-encoded CA certificate. [`TrustStore::empty`] drops
@@ -90,6 +92,7 @@ pub fn s3_compatible_tls_client(
 /// Creates a bucket and stores an object, then reads it back.
 ///
 /// # Arguments
+///
 /// * `client` - Client used to make the request.
 pub async fn round_trip(client: &Client, bucket: &str) -> Result<Vec<u8>> {
     client

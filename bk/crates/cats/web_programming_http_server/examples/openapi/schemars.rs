@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Derive a JSON Schema with [`schemars`] and validate data against it with
 //! [`jsonschema`].
 //!
@@ -15,8 +16,10 @@ use serde::Deserialize;
 /// Application configuration.
 #[derive(Debug, Deserialize, JsonSchema)]
 pub struct Config {
+
     /// The port to listen on.
     pub port: u16,
+
     /// Enables verbose logging.
     #[serde(default)]
     pub verbose: bool,
@@ -25,10 +28,12 @@ pub struct Config {
 /// The JSON Schema of `Config`.
 ///
 /// # Errors
+///
 /// Returns an error if the generated schema cannot be serialized as JSON.
 pub fn config_schema() -> anyhow::Result<serde_json::Value> {
     Ok(serde_json::to_value(schema_for!(Config))?)
 }
+
 /// Validates `instance` against the schema.
 ///
 /// # Errors
@@ -43,6 +48,7 @@ pub fn is_valid(instance: &serde_json::Value) -> anyhow::Result<bool> {
 /// Generates the configuration schema shown in the example.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<serde_json::Value> {
     config_schema()

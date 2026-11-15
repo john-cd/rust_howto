@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Round-trips DDS and KTX2 container metadata without a GPU.
 
 use ddsfile::AlphaMode;
@@ -76,6 +77,7 @@ fn texture_formats_example() -> anyhow::Result<()> {
     );
     Ok(())
 }
+
 /// Runs the texture metadata example.
 fn main() -> anyhow::Result<()> {
     texture_formats_example()

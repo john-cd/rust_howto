@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Assembles WebAssembly text (`wat`) into a binary module, lists its exports
 //! with `wasmparser` and prints it back as text with `wasmprinter`.
 //!
@@ -28,7 +29,10 @@ fn exported_functions(binary: &[u8]) -> Result<Vec<String>> {
     Ok(names)
 }
 
+/// Compiles a WAT module to WebAssembly and prints its textual round trip.
+///
 /// # Errors
+///
 /// Returns an error if parsing the WAT, reading the module exports, or printing the binary as WAT
 /// fails.
 fn main() -> Result<()> {
@@ -62,9 +66,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Compiles a WAT module to WebAssembly and prints its textual round trip.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     // Call through a binding: calling `main` directly trips

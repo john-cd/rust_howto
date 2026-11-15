@@ -45,10 +45,13 @@ pub(super) static CRATE_BLOCK_REFDEFS: &str = "\
 /// This enum defines the different types of content that can be generated for a crate, such as
 /// badges, description, and reference definitions.
 pub enum GenerationMode {
+
     /// The full crate block: badges, description and reference definitions.
     CrateBlock,
+
     /// The crate description only.
     CrateDescription,
+
     /// The reference definitions only.
     CrateBlockRefdefs,
 }
@@ -60,9 +63,11 @@ pub enum GenerationMode {
 ///
 /// * `crate_data` - A reference to the `crates_io_api::Crate` struct containing information about
 ///   the crate.
+/// * `mode` - Which crate content to render.
 ///
 /// # Errors
-/// Returns an error if the requested resource or connection cannot be created.
+///
+/// Returns an error if the template engine cannot be loaded or the selected template fails to render.
 pub fn create_crate_block_badges_or_refdefs(
     crate_data: &crates_io_api::Crate,
     mode: GenerationMode,
@@ -91,28 +96,40 @@ pub fn create_crate_block_badges_or_refdefs(
 
     /// Context data used for rendering templates.
     struct Context<'a> {
+
         /// The name of the crate being described.
         crate_name: &'a str,
+
         /// Whether a description was provided.
         description_defined: bool,
+
         /// The crate description, if one was provided.
         description: &'a str,
+
         /// Whether a documentation URL was provided.
         documentation_defined: bool,
+
         /// The documentation URL, if one was provided.
         documentation: &'a str, // URL e.g. https://docs.rs/{crate}
+
         /// Whether a homepage URL was provided.
         homepage_defined: bool,
+
         /// The homepage URL, if one was provided.
         homepage: &'a str, // URL e.g. https://github.com/sollimann/bonsai, https://serde.rs
+
         /// Whether a source repository URL was provided.
         repository_defined: bool,
+
         /// The source repository URL, if one was provided.
         repository: &'a str, // URL e.g. https://github.com/serde-rs/serde
+
         /// Whether a GitHub repository was detected.
         github_detected: bool, // The repository is hosted on GitHub.
+
         /// The GitHub account that owns the repository.
         github_user: &'a str,
+
         /// The GitHub repository name.
         github_repo: &'a str,
     }
@@ -148,6 +165,7 @@ pub fn create_crate_block_badges_or_refdefs(
 /// Capitalizes the first letter of a string if it is not equal to another string.
 ///
 /// # Arguments
+///
 /// * `s` - The string to capitalize.
 /// * `should_not_be` - The string that `s` should not be equal to.
 fn capitalize_if_not(s: String, should_not_be: &str) -> String {
@@ -175,10 +193,13 @@ fn capitalize_if_not(s: String, should_not_be: &str) -> String {
 ///
 /// * `name` - The name of the crate.
 ///
-/// Returns the generated markdown section as a `String`.
+/// # Returns
+///
+/// The generated Markdown section.
 ///
 /// # Errors
-/// Returns an error if the requested resource or connection cannot be created.
+///
+/// Returns an error if the crate is unknown or its badges, index anchors, or category badges cannot be rendered.
 pub fn create_crate_page_section(name: &str) -> Result<String> {
     use anyhow::Context as _;
 
@@ -225,11 +246,13 @@ pub fn create_crate_page_section(name: &str) -> Result<String> {
 ///
 /// * `name` - The name of the crate.
 ///
-/// Returns the crate block as a `String`.
-/// Also return the reference definitions as a separate vector of strings.
+/// # Returns
+///
+/// The generated crate block and its link reference definitions.
 ///
 /// # Errors
-/// Returns an error if the requested resource or connection cannot be created.
+///
+/// Returns an error if the crate is unknown or any badges, index anchors, or reference definitions cannot be generated.
 pub fn create_crate_block(name: &str) -> Result<(String, Vec<String>)> {
     use anyhow::Context as _;
 
@@ -315,6 +338,7 @@ static CRATE_BLOCK_RE: once_cell::sync::Lazy<regex::Regex> = once_cell::sync::La
 ///   crate blocks), suitable for merging into a `refs` file.
 ///
 /// # Errors
+///
 /// Returns an error if the operation cannot be completed.
 pub fn process_crate_block_directives(content: &str) -> Result<(String, Vec<String>)> {
     use std::collections::HashMap;
@@ -438,8 +462,8 @@ mod tests {
     /// Helper: test that the regex does NOT match `input`.
     ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested crate block badges or refdefs
-    ///   operation.
+///
+    /// * `input` - Candidate text that must not match the crate block pattern.
     fn assert_no_match(input: &str) {
         let re = &*CRATE_BLOCK_RE;
         assert!(

@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// A queue implemented with `VecDeque`.
 mod queue;
+
 /// A stack implemented with `Vec`.
 mod stack;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `queue` example.
     #[command(name = "queue")]
     Queue,
+
     /// Runs the `stack` example.
     #[command(name = "stack")]
     Stack,
@@ -42,7 +46,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

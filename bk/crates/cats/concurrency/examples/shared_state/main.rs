@@ -7,20 +7,26 @@ use clap::Subcommand;
 
 /// Sharing a configuration between threads with `Arc`, and cloning it on write
 mod arc_make_mut;
+
 /// Demonstrates the use of a global mutable state protected by a `Mutex`.
 mod global_mut_state;
+
 /// Demonstrates safe concurrent access to shared data
 mod send_sync;
+
 /// Demonstrates using a `Mutex` to safely share mutable state between threads.
 mod shared_state_mutex;
+
 /// One-time initialization with `parking_lot::Once`.
 mod shared_state_parking_lot;
+
 /// A reader-writer lock from `parking_lot`.
 mod shared_state_parking_lot2;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -29,21 +35,27 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `arc_make_mut` example.
     #[command(name = "arc_make_mut")]
     ArcMakeMut,
+
     /// Runs the `global_mut_state` example.
     #[command(name = "global_mut_state")]
     GlobalMutState,
+
     /// Runs the `send_sync` example.
     #[command(name = "send_sync")]
     SendSync,
+
     /// Runs the `shared_state_mutex` example.
     #[command(name = "shared_state_mutex")]
     SharedStateMutex,
+
     /// Runs the `shared_state_parking_lot` example.
     #[command(name = "shared_state_parking_lot")]
     SharedStateParkingLot,
+
     /// Runs the `shared_state_parking_lot2` example.
     #[command(name = "shared_state_parking_lot2")]
     SharedStateParkingLot2,

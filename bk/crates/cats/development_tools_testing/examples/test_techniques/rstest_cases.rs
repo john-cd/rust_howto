@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parameterized tests and fixtures with `rstest`.
 //!
 //! Table-driven tests run one test body with many input/expected pairs.
@@ -43,6 +44,7 @@ mod tests {
 
     // One test function expands to one test per `#[case]` row; a failure
     // names the row, e.g. `tests::parses::case_2`.
+
     /// Converts supported duration strings to seconds and rejects invalid suffixes.
     #[rstest]
     #[case("90s", Some(90))]
@@ -55,11 +57,13 @@ mod tests {
     }
 
     // A fixture builds shared test data; tests receive it by argument name.
+
     /// Supplies representative durations for parameterized tests.
     #[fixture]
     fn inputs() -> Vec<&'static str> {
         vec!["1s", "1m", "1h"]
     }
+
     /// Checks that durations increase as the unit gets larger.
     #[rstest]
     fn units_increase(inputs: Vec<&str>) {
@@ -68,6 +72,7 @@ mod tests {
     }
 
     // `#[values]` runs every combination.
+
     /// Returns zero seconds for zero with every supported duration suffix.
     #[rstest]
     fn zero_is_zero(#[values("0s", "0m", "0h")] input: &str) {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Accessing private items from the same module and its children.
 
 /// A function private to the parent module.
@@ -10,6 +11,7 @@ fn private_in_parent() -> &'static str {
 
 /// A private module.
 mod private_module {
+
     /// A function private to `private_module`.
     fn also_private() {
         // `private_in_parent` is accessible,
@@ -47,8 +49,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the private items that are accessible from here.
 pub fn run() {
     main();
 }
@@ -62,6 +63,7 @@ mod tests {
     fn test_main() {
         main();
     }
+
     /// Verifies private item reachable from same module.
     #[test]
     fn test_private_item_reachable_from_same_module() {

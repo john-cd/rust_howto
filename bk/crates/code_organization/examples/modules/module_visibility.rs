@@ -1,11 +1,13 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Visibility of items in modules.
 
 // This file is an (implicit) module.
 
 // A private function in this top module.
+
 /// A private function in the top-level module.
 fn private_in_top_module() -> &'static str {
     "Called private_in_top_module."
@@ -13,15 +15,18 @@ fn private_in_top_module() -> &'static str {
 
 // Let's define an inner module inline with the `mod` keyword.
 // Modules are private by default.
+
 /// A private module.
 mod my_module {
     // Items defined inside the module are also private by default.
+
     /// A private function; visible in this module and its descendants.
     fn private_function() {
         println!("Called private_function inside my_module.");
     }
 
     // Use `pub` to make items public.
+
     /// A public function.
     pub fn public_function() -> &'static str {
         "Called public_function inside my_module."
@@ -29,8 +34,10 @@ mod my_module {
 
     // Define a public nested module with the `pub` keyword.
     // We make both the module and its inner function public.
+
     /// A public nested module.
     pub mod nested_public_module {
+
         /// A public function of a public nested module.
         pub fn nested_public() -> &'static str {
             "Called nested_public inside nested_module."
@@ -38,8 +45,10 @@ mod my_module {
     }
 
     // Private nested module.
+
     /// A private nested module.
     mod nested_private_module {
+
         /// A public function of a private module; not reachable from outside
         /// it.
         pub fn nested_public_in_private_module() {
@@ -49,6 +58,7 @@ mod my_module {
 
     // This function calls another in its parent module.
     // This is always allowed, even if private.
+
     /// Calls a private function of the parent module.
     pub fn call_func_in_parent_module() -> &'static str {
         // Private items are usable from the module itself and its children:
@@ -93,8 +103,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls items of the modules, according to their visibility.
 pub fn run() {
     main();
 }
@@ -108,6 +117,7 @@ mod tests {
     fn test_module_visibility_example_entry_point() {
         main();
     }
+
     /// Verifies private items are usable in scope.
     #[test]
     fn test_private_items_are_usable_in_scope() {
@@ -118,6 +128,7 @@ mod tests {
             private_in_top_module()
         );
     }
+
     /// Verifies public items through path and alias.
     #[test]
     fn test_public_items_through_path_and_alias() {

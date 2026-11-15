@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Compute a relative path between two paths.
 //!
 //! A relative path describes how to get from one directory to another, for
@@ -11,14 +12,17 @@ use std::path::Path;
 use std::path::PathBuf;
 
 use pathdiff::diff_paths;
+
 /// Returns the path that leads from `base` to `path`, or `None` if no
 ///
 /// relative path exists (when `path` is relative and `base` is absolute).
 ///
 /// # Arguments
+///
 /// * `path` - Filesystem location the operation reads, updates, or uses as its scope.
 ///
 /// # Returns
+///
 /// `Some` when the requested value is available; otherwise returns `None`.
 fn relative_to(path: &Path, base: &Path) -> Option<PathBuf> {
     // `diff_paths` compares the components lexically. It does not touch the
@@ -26,6 +30,7 @@ fn relative_to(path: &Path, base: &Path) -> Option<PathBuf> {
     // resolved.
     diff_paths(path, base)
 }
+
 /// Prints a few relative paths.
 pub fn example_body() {
     let site = PathBuf::from(if cfg!(windows) {

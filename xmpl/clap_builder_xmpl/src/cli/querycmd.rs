@@ -20,6 +20,7 @@ pub(super) fn cmd() -> Command {
                 .allow_negative_numbers(true),
         )
 }
+
 /// Returns the words supplied to the `query` subcommand.
 /// See: <https://docs.rs/clap/latest/clap/struct.Arg.html#method.trailing_var_arg>
 /// Returns an empty vector if the subcommand was not present.
@@ -67,6 +68,7 @@ mod tests {
 
     // Verify that we don't get confused by negative numbers (that look
     // like flags).
+
     /// Checks that negative numbers are accepted as words.
     #[test]
     fn test_cmd_query_neg_numbers() {

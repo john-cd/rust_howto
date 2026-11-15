@@ -9,12 +9,14 @@ use clap::Command;
 use clap_builder::builder::ValueHint;
 
 use crate::CmdArgs2;
+
 /// Builds the `badge` subcommand.
 ///
 /// The command renders crate badge Markdown and can optionally merge the
 /// generated reference definitions into a file with `--add`.
 ///
 /// # Returns
+///
 /// A `clap::Command` representing the configured `badge` subcommand.
 pub(super) fn subcommand_badge() -> Command {
     Command::new("badge")
@@ -33,16 +35,19 @@ pub(super) fn subcommand_badge() -> Command {
             .value_hint(ValueHint::FilePath)
             .help("Merge newly created reference definitions into this file, if they do not exist already"))
 }
+
 /// This function processes the command-line arguments provided to the `badge`
 ///
 /// subcommand and extracts the relevant information.
 ///
 /// # Arguments
+///
 /// * `matches` - A reference to the `clap::ArgMatches` containing the parsed command-line
 ///
 ///   arguments.
 ///
 /// # Returns
+///
 /// An `Option<CmdArgs2>` containing the extracted arguments, or `None` if the
 ///
 /// `badge` subcommand was not invoked.

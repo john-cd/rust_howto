@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A state machine whose transitions are triggered by events.
 //!
 //! A state machine has a finite set of states and rules for moving between them
@@ -13,13 +14,17 @@
 /// completed, error.
 #[derive(Debug, PartialEq, Clone, Copy)]
 enum State {
+
     /// The initial state, indicating that the state machine is ready to start.
     Idle,
+
     /// The state indicating that the state machine is currently processing.
     Processing,
+
     /// The state indicating that the processing has been completed
     /// successfully.
     Completed,
+
     /// The state indicating that an error occurred during processing.
     Error,
 }
@@ -27,6 +32,7 @@ enum State {
 /// Represents the state machine itself, holding the current state.
 /// State required by `StateMachine` during transport operations.
 struct StateMachine {
+
     /// The current state.
     state: State,
 }
@@ -36,12 +42,16 @@ struct StateMachine {
 /// reset.
 #[derive(Debug)]
 enum Event {
+
     /// Starts processing.
     Start,
+
     /// Finishes processing successfully.
     Finish,
+
     /// Signals an error.
     Fail,
+
     /// Resets the state machine to idle.
     Reset,
 }
@@ -49,6 +59,7 @@ enum Event {
 /// Implementation of the `StateMachine`, including state transitions and state
 /// retrieval.
 impl StateMachine {
+
     /// Creates a new `StateMachine` in the Idle state.
     fn new() -> Self {
         Self { state: State::Idle }
@@ -73,7 +84,7 @@ impl StateMachine {
         &self.state
     }
 }
-/// Runs the example.
+
 /// Sends events to the state machine and prints its state.
 fn main() {
     let mut state_machine = StateMachine::new();
@@ -124,7 +135,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Sends events to the state machine and prints its state.
 pub fn run() {
     main();
 }

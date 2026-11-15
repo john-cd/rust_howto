@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Defining an error type with `thiserror`.
 //!
 //! `thiserror` derives the boilerplate of an error type: `Display` messages and
@@ -17,6 +18,7 @@ use thiserror::Error;
 pub enum DataStoreError {
     // A `Display` impl is generated for your error if we provide
     // #[error("...")] messages on the struct or each variant of your enum.
+
     /// The data store disconnected.
     #[error("data store disconnected")]
     Disconnect(#[from] std::io::Error), /* A `From` impl is generated for
@@ -30,8 +32,10 @@ pub enum DataStoreError {
     /// A header does not have the expected content.
     #[error("invalid header (expected {expected:?}, found {found:?})")]
     InvalidHeader {
+
         /// The expected header.
         expected: String,
+
         /// The header that was found.
         found: String,
     },
@@ -44,6 +48,7 @@ pub enum DataStoreError {
     #[error(transparent)]
     // Forward the source and Display methods straight through to an
     // underlying error without adding an additional message.
+
     /// Other variant of `DataStoreError`.
     Other(#[from] anyhow::Error),
 }
@@ -71,9 +76,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Returns a `DataStoreError` on purpose.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates the use of the `zeroize` crate to securely clear sensitive data
 //! from memory.
 //!
@@ -22,7 +23,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the zeroization example.
 pub fn run() {
     main();

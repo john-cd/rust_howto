@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encode and decode forms and path segments.
 //!
 //! Web forms and URLs can only carry a limited set of characters.
@@ -16,8 +17,10 @@ use serde::Serialize;
 /// A form with a few fields.
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
 struct Search {
+
     /// The search terms.
     q: String,
+
     /// The page number.
     page: u32,
 }
@@ -25,6 +28,7 @@ struct Search {
 /// Serializes a struct to a query string or form body, and parses it back.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> anyhow::Result<()> {
     let form = Search {
@@ -53,6 +57,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example_body()

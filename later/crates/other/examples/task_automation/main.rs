@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Describe a task as data, then schedule, expand, parse and run it.
 //!
 //! - `cron` computes when the task is due.
@@ -22,13 +23,16 @@ use cron::Schedule;
 
 /// A task to run on a schedule.
 struct Task {
+
     /// A `cron` expression (seconds first).
     schedule: Schedule,
+
     /// A command line that may contain `$VARIABLE` references.
     command: String,
 }
 
 impl Task {
+
     /// Creates a task from a schedule expression and a command template.
     fn new(schedule: &str, command: &str) -> Result<Self> {
         Ok(Self {
@@ -45,6 +49,7 @@ impl Task {
     /// Expands `$WHAT`, tokenizes the configured command, runs it, and returns stdout.
     ///
     /// # Errors
+///
     /// Returns an error if the command is empty, cannot be started, or exits unsuccessfully.
     fn run(&self, what: &str) -> Result<String> {
         let line = shellexpand::env_with_context_no_errors(&self.command, |name: &str| {
@@ -65,6 +70,7 @@ fn main() -> Result<()> {
 /// Computes the next scheduled run and executes the configured command once.
 ///
 /// # Errors
+///
 /// Returns an error if the schedule, command, or command output is invalid.
 fn example() -> Result<()> {
     // Every day at 02:30:00 UTC.

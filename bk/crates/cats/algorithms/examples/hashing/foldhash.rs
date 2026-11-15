@@ -1,25 +1,30 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Fast, reproducible non-cryptographic hashing using `foldhash` with a fixed
 //! seed.
 //!
 //! ### What is FoldHash?
+//!
 //! `foldhash` is an extremely fast, non-cryptographic hash function optimized
 //! for in-memory lookup tables such as `HashMap` and `HashSet`.
 //!
 //! ### How Does It Work?
+//!
 //! FoldHash uses hardware-accelerated 64-bit integer multiplication and folding
 //! arithmetic operations to process byte chunks quickly while maintaining high
 //! bit dispersion and low collision rates.
 //!
 //! ### Fixed Seed vs. Random Seed
+//!
 //! - **Default HashMap (SipHash-1/3)**: Uses randomized per-process seeds to defend against HashDoS
 //!   (Hash Denial of Service) collision attacks.
 //! - **Fixed Seed (`FixedState`)**: Using a explicit, fixed 64-bit seed guarantees that identical
 //!   inputs generate the exact same 64-bit hash code across multiple runs or program restarts.
 //!
 //! ### Purpose & Use Cases
+//!
 //! - Fast hash table keys when resistance to external HashDoS attacks is not needed.
 //! - Reproducible test fixtures, deterministic caching, and compiler symbol tables.
 
@@ -41,7 +46,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the `foldhash` example by calling `main()`.
 pub fn run() {
     main();

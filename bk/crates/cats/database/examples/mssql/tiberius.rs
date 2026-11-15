@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Connects to SQL Server with explicit credentials and runs a parameterized
 //! query.
 //!
@@ -61,6 +62,7 @@ async fn main() -> Result<()> {
 /// Runs the SQL Server connection and query workflow.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

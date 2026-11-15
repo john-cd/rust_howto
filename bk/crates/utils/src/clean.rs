@@ -15,15 +15,19 @@ fn is_hidden(entry: &DirEntry) -> bool {
         .to_str()
         .is_some_and(|s| s.starts_with('.'))
 }
+
 /// Removes visible files and all child directories from the given folder.
 ///
 /// # Arguments
+///
 /// * `dir` - Path to the resource being processed.
 ///
 /// # Errors
+///
 /// Returns an error if the directory cannot be read or an entry cannot be removed.
 ///
 /// # Warning
+///
 /// This operation permanently deletes visible files and child directories.
 pub fn clean_folder(dir: &Path) -> anyhow::Result<()> {
     if dir.is_dir() {
@@ -92,6 +96,7 @@ mod tests {
     /// Helper to create a nested fixture directory for testing folder cleanup.
     ///
     /// # Arguments
+///
     /// * `root` - Filesystem location the operation reads, updates, or uses as its scope.
     fn create_test_fixtures(root: &Path) {
         fs::create_dir_all(root.join("subdir/nested")).expect("subdirectories should be created");

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example shows how to filter CSV data based on a query.
 //! It reads CSV data from a string, filters rows where any field matches the
 //! query, and writes the filtered data to standard output.
@@ -40,9 +41,10 @@ West Hollywood,CA,37031,34.0900000,-118.3608333";
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Filters the inline CSV data and writes matching records to standard output.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

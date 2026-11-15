@@ -44,6 +44,7 @@ impl LowLatencyFsm<'_> {
 
 /// **********************************
 // OPEN
+
 /// **********************************
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub(crate) struct StateOpen {
@@ -106,6 +107,7 @@ impl<'a> OpenFsm for &'a LowLatencyFsm<'a> {
 
 /// **********************************
 // ACCEPT
+
 /// **********************************
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub(crate) struct StateAccept {

@@ -4,6 +4,7 @@
 
 /// The data model of the book and its crates.
 mod model;
+
 /// Rendering objects with the Tera template engine.
 mod tera;
 

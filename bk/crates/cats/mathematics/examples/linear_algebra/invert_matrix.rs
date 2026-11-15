@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to invert a 3x3 matrix using the `nalgebra`
 //! crate.
 //!
@@ -30,8 +31,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates how to invert a 3x3 matrix using the `nalgebra` crate.
 pub fn run() {
     main();
 }

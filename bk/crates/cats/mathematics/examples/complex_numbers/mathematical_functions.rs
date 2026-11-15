@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example shows how to use the `exp` function on a complex number.
 //!
 //! Euler's formula links the exponential function with rotation:
@@ -15,14 +16,14 @@ use num::complex::Complex;
 fn euler() -> Complex<f64> {
     Complex::new(0.0, 2.0 * PI).exp()
 }
+
 /// This example shows how to use the `exp` function on a complex number.
 fn main() {
     println!("e^(2i * pi) = {}", euler()); // =~1
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example shows how to use the `exp` function on a complex number.
 pub fn run() {
     main();
 }

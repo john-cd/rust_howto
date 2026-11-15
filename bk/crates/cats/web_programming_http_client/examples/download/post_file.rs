@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example shows how to POST a file to a server.
 //!
 //! A file can be uploaded as the body of a `POST` request. The `Content-Type`
@@ -36,6 +37,7 @@ async fn post_file(path: impl AsRef<Path>, endpoint: &str) -> Result<String> {
 /// Uploads the sample file to httpbin and prints its response.
 ///
 /// # Errors
+///
 /// Returns any file, request, HTTP status, or response body error from
 /// `post_file`.
 #[tokio::main]
@@ -49,6 +51,7 @@ async fn main() -> Result<()> {
 /// Runs the file upload example.
 ///
 /// # Errors
+///
 /// Returns any error from the example's asynchronous entry point.
 pub fn run() -> Result<()> {
     main()
@@ -71,6 +74,7 @@ mod tests {
     use reqwest::StatusCode;
 
     use super::post_file;
+
     /// Starts server.
     fn start_server(
         response: &'static [u8],
@@ -95,9 +99,11 @@ mod tests {
             .map_err(|_| anyhow::anyhow!("HTTP test server panicked"))?
             .context("HTTP test server failed")
     }
+
     /// Reads an HTTP request from `stream` through its declared body length.
     ///
     /// # Errors
+///
     /// Returns an I/O error if reading fails or a header or body length is invalid.
     fn read_request(stream: &mut TcpStream) -> io::Result<Vec<u8>> {
         let mut request = Vec::new();

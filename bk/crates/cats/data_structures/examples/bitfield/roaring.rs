@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Compressed bitmaps with the `roaring` crate.
 //!
 //! A roaring bitmap stores a set of integers compactly and supports fast union
@@ -8,7 +9,7 @@
 //! documents or rows that match a condition.
 
 use roaring::RoaringBitmap;
-/// Runs the example.
+
 /// Builds roaring bitmaps and combines and queries them.
 fn main() {
     // Create two bitmaps representing two sets of user IDs:
@@ -64,8 +65,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Builds roaring bitmaps and combines and queries them.
 pub fn run() {
     main();
 }

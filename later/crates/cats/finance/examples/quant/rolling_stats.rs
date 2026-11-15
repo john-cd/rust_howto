@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Daily returns and a 20-day rolling standard deviation, annualized with
 //! the square root of 252 trading days.
 //!
@@ -19,6 +20,7 @@ const TRADING_DAYS: f64 = 252.0;
 fn daily_returns(prices: &[f64]) -> Vec<f64> {
     prices.windows(2).map(|w| w[1] / w[0] - 1.0).collect()
 }
+
 /// Rolling population standard deviation, written by hand.
 fn rolling_std_by_hand(values: &[f64], window: usize) -> Vec<f64> {
     values
@@ -44,7 +46,7 @@ fn rolling_std(values: &[f64], window: usize) -> Vec<f64> {
     }
     out
 }
-/// Runs the example.
+
 /// Computes annualized rolling volatility for a synthetic price series.
 fn main() {
     // Deterministic, synthetic prices.
@@ -68,7 +70,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Computes annualized rolling volatility for a synthetic price series.
 pub fn run() {
     main();
 }

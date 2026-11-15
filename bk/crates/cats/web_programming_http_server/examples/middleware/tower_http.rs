@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Serves an Axum route with common `tower-http` middleware.
 //!
 //! Middleware wraps a handler to add behaviour for every request, such as
@@ -29,6 +30,7 @@ use tower_http::trace::TraceLayer;
 async fn handler() -> &'static str {
     "tower-http applies tracing, compression, cross-origin headers, and a request timeout to this response."
 }
+
 /// Adds a response header with application-specific Axum middleware.
 async fn add_example_header(request: Request, next: Next) -> Response {
     let mut response = next.run(request).await;
@@ -61,9 +63,11 @@ fn app() -> Router {
         )
         .layer(middleware::from_fn(add_example_header))
 }
+
 /// Binds the example server and serves requests until the process is stopped.
 ///
 /// # Errors
+///
 /// Returns an error if the listener cannot be bound or the server fails.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -78,6 +82,7 @@ async fn main() -> anyhow::Result<()> {
 /// Runs the example server.
 ///
 /// # Errors
+///
 /// Returns an error if the listener cannot be bound or the server fails.
 pub fn run() -> anyhow::Result<()> {
     main()

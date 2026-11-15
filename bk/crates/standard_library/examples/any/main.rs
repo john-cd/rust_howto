@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Dynamic typing with the `Any` trait.
 mod any;
+
 /// A plugin system that stores shared services by their `TypeId`.
 mod plugin;
+
 /// Comparing types at runtime with `TypeId`.
 mod type_id;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `any` example.
     #[command(name = "any")]
     Any,
+
     /// Runs the `plugin` example.
     #[command(name = "plugin")]
     Plugin,
+
     /// Runs the `type_id` example.
     #[command(name = "type_id")]
     TypeId,
@@ -50,7 +56,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

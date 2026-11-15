@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parsing published recipes using `tool_lib`.
 //!
 //! This example demonstrates how to use `tool_lib::collect_published_recipe_links`
@@ -81,6 +82,7 @@ fn main() -> Result<()> {
 /// Runs the parse published recipes example for programmatic execution.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     run_example()

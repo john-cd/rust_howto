@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generate an alphabetical crate section with published recipe links.
 //!
 //! This book lists crates in generated index pages. A script reads local
@@ -14,6 +15,7 @@ use crate::fixtures::create_fixture;
 /// Prints one alphabetical index section from the local recipe index.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> Result<()> {
     let fixture = create_fixture()?;
@@ -32,6 +34,7 @@ pub fn example_body() -> Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<()> {
     example_body()

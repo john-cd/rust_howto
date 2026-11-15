@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Measuring the similarity of strings with `strsim`.
 //!
 //! String similarity metrics measure how close two strings are. Levenshtein
@@ -25,6 +26,7 @@ fn accent_insensitive_key(text: &str) -> String {
         .flat_map(char::to_lowercase)
         .collect()
 }
+
 /// Prints several string distances and similarities.
 fn main() {
     let s1 = "aleksandr";
@@ -84,8 +86,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints several string distances and similarities.
 pub fn run() {
     main();
 }

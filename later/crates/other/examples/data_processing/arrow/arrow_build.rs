@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Build Arrow columns by hand with the `arrow-array` crate, combine them
 //! into a `RecordBatch`, and print it with `arrow-cast`.
 //!
@@ -24,7 +25,8 @@ use arrow_cast::pretty::pretty_format_batches;
 /// nullable only when the array contains nulls.
 ///
 /// # Errors
-/// Returns an error if the requested resource or connection cannot be created.
+///
+/// Returns an error if the columns cannot be combined into a record batch.
 pub fn build_batch() -> Result<RecordBatch> {
     let ids = Int32Array::from(vec![1, 2, 3]);
     // `Option` elements become nulls in the validity bitmap.
@@ -42,6 +44,7 @@ pub fn build_batch() -> Result<RecordBatch> {
 /// Builds the batch and prints it as an ASCII table.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> Result<RecordBatch> {
     let batch = build_batch()?;
@@ -58,6 +61,7 @@ pub fn example_body() -> Result<RecordBatch> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<RecordBatch> {
     example_body()

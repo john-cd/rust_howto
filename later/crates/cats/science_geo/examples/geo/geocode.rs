@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Turns an address into coordinates with the `geocoding` crate.
 //!
 //! The provider sits behind the `Forward` trait, so a cache and a fake
@@ -15,13 +16,16 @@ use geocoding::Point;
 
 /// Wraps any forward geocoder and remembers its answers.
 struct CachedGeocoder<G> {
+
     /// The provider to ask on a cache miss.
     inner: G,
+
     /// The first match for each normalized query. `None` records "not found".
     cache: HashMap<String, Option<Point<f64>>>,
 }
 
 impl<G: Forward<f64>> CachedGeocoder<G> {
+
     /// Creates an empty cache around `inner`.
     fn new(inner: G) -> Self {
         Self {
@@ -50,18 +54,22 @@ fn normalize(query: &str) -> String {
         .join(" ")
         .to_lowercase()
 }
+
 /// Queries OpenStreetMap Nominatim for an address that is not covered by the
 /// local test gazetteer.
 /// This function is not called by the tests: it needs the network and is
 /// subject to the Nominatim usage policy (at most one request per second).
 ///
 /// # Arguments
+///
 /// * `address` - Human-readable place or address query to send to Nominatim.
 ///
 /// # Returns
+///
 /// The first matching point, or `None` if Nominatim finds no result.
 ///
 /// # Errors
+///
 /// Returns a `GeocodingError` if the provider request or response processing fails.
 #[expect(
     dead_code,
@@ -74,17 +82,21 @@ fn locate_online(address: &str) -> Result<Option<Point<f64>>, GeocodingError> {
 
 /// A geocoder that knows one place and counts the questions it is asked.
 struct Gazetteer {
+
     /// The number of calls to `forward`.
     calls: std::cell::Cell<usize>,
 }
 
 impl Forward<f64> for Gazetteer {
+
     /// Returns the coordinates for its one supported place query.
     ///
     /// # Arguments
+///
     /// * `address` - Normalized place query received by the cache.
     ///
     /// # Returns
+///
     /// One point for the Eiffel Tower query, or an empty list for other queries.
     fn forward(&self, address: &str) -> Result<Vec<Point<f64>>, GeocodingError> {
         self.calls.set(self.calls.get() + 1);
@@ -117,11 +129,11 @@ fn main() -> Result<(), GeocodingError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Runs the cached geocoder example against its sample address.
 ///
 /// # Errors
-/// Returns an error if a step of the example fails.
-
+///
+/// Returns a geocoding error if the sample lookup fails.
 pub fn run() -> Result<(), GeocodingError> {
     main()
 }
@@ -135,6 +147,7 @@ mod tests {
     fn test_geocode_example_entry_point() -> Result<(), GeocodingError> {
         main()
     }
+
     /// Collapses repeated spaces and ignores differences in letter case.
     #[test]
     fn normalize_collapses_spaces_and_case() {

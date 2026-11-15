@@ -300,6 +300,7 @@ macro_rules! ztake {
 
 /// **********************************
 // OPEN
+
 /// **********************************
 #[async_trait]
 impl<'a> OpenFsm for &'a AuthFsm<'a> {
@@ -490,6 +491,7 @@ impl<'a> OpenFsm for &'a AuthFsm<'a> {
 
 /// **********************************
 // ACCEPT
+
 /// **********************************
 pub(crate) struct RecvOpenSynOut {
     #[cfg(feature = "auth_usrpwd")]

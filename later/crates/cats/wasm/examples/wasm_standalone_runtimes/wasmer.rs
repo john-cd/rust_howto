@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Runs an in-memory WebAssembly module with Wasmer.
 
 use wasmer::Instance;
@@ -29,6 +30,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs an in-memory WebAssembly module with Wasmer.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -37,6 +39,7 @@ pub fn run() -> anyhow::Result<()> {
 /// Verifies compilation and the guest's exported function result.
 #[cfg(test)]
 mod tests {
+
     /// Verifies compilation and the guest's exported function result.
     #[test]
     fn inline_module_adds_two_numbers() -> anyhow::Result<()> {

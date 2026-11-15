@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Solve an exponential decay equation numerically and compare with the exact
 //! solution.
 //!
@@ -19,6 +20,7 @@ use ode_solvers::System;
 struct ExponentialDecay;
 
 impl System<f64, Vector1<f64>> for ExponentialDecay {
+
     /// Computes the derivative of the state at the given time.
     fn system(&self, _time: f64, state: &Vector1<f64>, derivative: &mut Vector1<f64>) {
         derivative[0] = -2.0 * state[0];
@@ -45,7 +47,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {
     main();

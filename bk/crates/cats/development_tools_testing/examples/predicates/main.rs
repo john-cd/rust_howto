@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates building and applying a composite predicate.
 
 use predicates::prelude::*;
@@ -8,11 +9,14 @@ use predicates::prelude::*;
 /// A small file record used to demonstrate runtime filtering.
 #[derive(Debug)]
 struct File {
+
     /// The file's name.
     name: String,
+
     /// The file's size in kibibytes.
     size_kb: u64,
 }
+
 /// Demonstrates building and applying a composite predicate.
 /// Filters files by a name substring and a minimum size.
 fn main() {

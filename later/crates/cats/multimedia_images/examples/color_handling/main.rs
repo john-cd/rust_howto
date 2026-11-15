@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Converts an encoded sRGB color to linear light and back.
 
 use palette::LinSrgb;
@@ -10,10 +11,12 @@ use palette::Srgb;
 fn decode_srgb(color: Srgb<u8>) -> LinSrgb<f32> {
     color.into_linear()
 }
+
 /// Encodes linear-light values as 8-bit sRGB.
 fn encode_srgb(color: LinSrgb<f32>) -> Srgb<u8> {
     Srgb::from_linear(color)
 }
+
 /// Prints the stored, linear, and display color values.
 fn print_example() {
     let stored = Srgb::<u8>::new(128, 64, 32);
@@ -21,7 +24,7 @@ fn print_example() {
     let display = encode_srgb(linear);
     println!("stored={stored:?}, linear={linear:?}, display={display:?}");
 }
-/// Runs the example.
+
 /// Runs the color conversion from a standalone entry point.
 fn main() {
     print_example();

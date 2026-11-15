@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Demonstrates the use of `AtomicCell` from the `crossbeam-utils` crate.
 mod atomic_cell;
+
 /// Demonstrates the use of atomic types.
 mod atomics;
+
 /// A spinlock built on an atomic flag, with a guard that unlocks it on drop.
 mod spinlock;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `atomic_cell` example.
     #[command(name = "atomic_cell")]
     AtomicCell,
+
     /// Runs the `atomics` example.
     #[command(name = "atomics")]
     Atomics,
+
     /// Runs the `spinlock` example.
     #[command(name = "spinlock")]
     Spinlock,
@@ -50,7 +56,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

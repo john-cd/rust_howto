@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates creating database tables in PostgreSQL using the
 //! `postgres` crate.
 //!
@@ -22,6 +23,7 @@ use postgres::NoTls;
 /// key referencing the `author` table).
 ///
 /// # Errors
+///
 /// Returns an error if `DATABASE_URL` is missing, PostgreSQL cannot be reached,
 /// or either table cannot be created.
 fn main() -> anyhow::Result<()> {
@@ -57,7 +59,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Connects to PostgreSQL and creates the example tables.
+///
 /// # Errors
+///
 /// Returns an error if PostgreSQL cannot be reached or the tables cannot be
 /// created.
 pub fn run() -> anyhow::Result<()> {

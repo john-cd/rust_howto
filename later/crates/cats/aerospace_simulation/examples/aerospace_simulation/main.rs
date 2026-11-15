@@ -4,7 +4,7 @@
 
 /// A basic one-dimensional rocket launch simulation.
 mod aero_simulation;
-/// Runs the example.
+
 /// Runs the aerospace simulation example.
 fn main() {
     aero_simulation::run();

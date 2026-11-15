@@ -103,6 +103,7 @@ pub(crate) struct MultiLinkFsm<'a> {
 
 /// **********************************
 // OPEN
+
 /// **********************************
 pub(crate) struct StateOpen {
     pubkey: Option<(pubkey::StateOpen, ZPublicKey)>,
@@ -210,6 +211,7 @@ impl<'a> OpenFsm for &'a MultiLinkFsm<'a> {
 
 /// **********************************
 // ACCEPT
+
 /// **********************************
 #[derive(Debug, PartialEq)]
 pub(crate) struct StateAccept {

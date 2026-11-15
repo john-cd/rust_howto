@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Requiring several traits with `+`.
 
 use std::clone::Clone;
@@ -44,8 +45,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the functions that require both traits.
 pub fn run() {
     main();
 }
@@ -61,6 +61,7 @@ mod tests {
     }
 
     // Output-only example: the functions only print a clone.
+
     /// The functions accept any `Debug + Clone` type.
     #[test]
     fn test_other_types() {

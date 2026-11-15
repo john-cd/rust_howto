@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to use the `color-eyre` crate for enhanced error reporting.
 //!
 //! `color_eyre` provides beautiful error reporting and backtraces with colors,
@@ -35,9 +36,10 @@ fn divide(a: i32, b: i32) -> Result<i32> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Installs the `color-eyre` hook, then fails with a division by zero error.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

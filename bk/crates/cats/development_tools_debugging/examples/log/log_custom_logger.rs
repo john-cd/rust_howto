@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to create a custom logger.
 //!
 //! The custom logger will print log messages to the console.
@@ -31,6 +32,7 @@ impl log::Log for ConsoleLogger {
     /// Flushes the current value.
     fn flush(&self) {}
 }
+
 /// Installs the custom logger and emits log messages at several levels.
 fn main() -> Result<(), SetLoggerError> {
     log::set_logger(&CONSOLE_LOGGER)?;
@@ -43,9 +45,10 @@ fn main() -> Result<(), SetLoggerError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Installs the custom logger and emits log messages at several levels.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), SetLoggerError> {
     main()

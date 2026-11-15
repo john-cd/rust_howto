@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A slice is a view into a contiguous sequence of elements in a collection.
 //!
 //! A slice (`&[T]`) consists of a pointer and a length. It allows safe,
@@ -36,7 +37,7 @@ fn slice_from_vector() {
     mutable_slice[0] = 10; // Modifies the original vector.
     println!("{mutable_slice:?}"); // Output: [10, 4, 5].
 }
-/// Runs the example.
+
 /// Creates slices from an array and from a vector.
 fn main() {
     slice_from_array();
@@ -44,8 +45,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates slices from an array and from a vector.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A ball falling onto the ground in a 2D physics simulation with `rapier2d`.
 //!
 //! A physics engine advances bodies in small time steps, applying gravity and
@@ -12,8 +13,10 @@ use rapier2d::prelude::*;
 
 /// The position and velocity of the ball after one simulation step.
 struct Snapshot {
+
     /// The ball's position.
     position: (f32, f32),
+
     /// The ball's linear velocity.
     velocity: (f32, f32),
 }
@@ -92,7 +95,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Simulates the ball and prints its position at each step.
 pub fn run() {
     main();
 }
@@ -106,6 +109,7 @@ mod tests {
     fn test_rapier2d_example_entry_point() {
         main();
     }
+
     /// Accelerates the ball downward under gravity.
     #[test]
     fn ball_falls_under_gravity() {

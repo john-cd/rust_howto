@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Destructuring references.
 
 /// Destructures references with `&` and `ref`.
@@ -20,6 +21,7 @@ fn main() {
     let _value: i32 = *reference;
 
     // Note that it won't work if the underlying type is not `Copy`:
+
     /// A value type that does not implement `Copy`.
     struct NotCopyStruct;
     let _reference = &NotCopyStruct;
@@ -28,8 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Destructures references with `&` and `ref`.
 pub fn run() {
     main();
 }

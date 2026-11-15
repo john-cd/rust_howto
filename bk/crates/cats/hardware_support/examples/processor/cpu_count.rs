@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to get the number of logical cores on the
 //! system. It uses the `num_cpus` crate.
 //!
@@ -12,14 +13,14 @@
 fn logical_cores() -> usize {
     num_cpus::get()
 }
+
 /// Prints the number of logical cores on the system.
 fn main() {
     println!("Number of logical cores is {}", logical_cores());
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the number of logical cores on the system.
 pub fn run() {
     main();
 }

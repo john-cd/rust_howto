@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Criterion benchmark comparing non-cryptographic and cryptographic hash
 //! functions on byte buffers.
 //!
@@ -31,6 +32,7 @@ use xxhash_rust::xxh3::xxh3_64;
 fn make_test_buffer(len: usize) -> Vec<u8> {
     (0..len).map(|i| (i % 256) as u8).collect()
 }
+
 /// Hashes a byte slice with standard `DefaultHasher` (SipHash 1-3).
 fn hash_std(data: &[u8]) -> u64 {
     let mut hasher = std::collections::hash_map::DefaultHasher::new();
@@ -56,10 +58,12 @@ fn hash_fx(data: &[u8]) -> u64 {
 fn hash_fold(data: &[u8]) -> u64 {
     FixedState::default().hash_one(data)
 }
+
 /// Benchmarks hashing performance on a small buffer (64 bytes).
 ///
 /// # Arguments
-/// * `c` - Mutable criterion whose state is updated by this operation.
+///
+/// * `c` - Criterion benchmark group used to register this benchmark.
 fn benchmark_small_buffer(c: &mut Criterion) {
     let data = make_test_buffer(64);
     let mut group = c.benchmark_group("hashing_64_bytes");
@@ -98,7 +102,8 @@ fn benchmark_small_buffer(c: &mut Criterion) {
 /// Benchmarks hashing performance on a medium buffer (64 KB).
 ///
 /// # Arguments
-/// * `c` - Mutable criterion whose state is updated by this operation.
+///
+/// * `c` - Criterion benchmark group used to register this benchmark.
 fn benchmark_medium_buffer(c: &mut Criterion) {
     let data = make_test_buffer(64 * 1024);
     let mut group = c.benchmark_group("hashing_64KB_buffer");
@@ -149,6 +154,7 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+
     /// Runs the hashing benchmark through its entry point.
     #[test]
     fn test_hashing_bench_entry_point() {

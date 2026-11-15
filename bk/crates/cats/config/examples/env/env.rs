@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Examples for working with standard environment variables.
 //!
 //! Environment variables are named text values that the operating system hands
@@ -9,6 +10,7 @@
 //! in development and production.
 
 use std::env;
+
 /// Returns `RUST_LOG` and the optional compile-time `SHELL` value.
 ///
 /// `RUST_LOG` defaults to `debug` when absent. `SHELL` defaults to `no shell
@@ -36,8 +38,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the content of a standard environment variable.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Models the register block and ownership token of a peripheral access crate.
 
 use core::cell::UnsafeCell;
@@ -14,13 +15,17 @@ use core::sync::atomic::Ordering;
 struct Register(UnsafeCell<u32>);
 
 impl Register {
-    /// Constructs a usable initial register value with the defaults required by the main component.
+
+    /// Initializes the register cell with its reset value.
+    ///
+    /// # Arguments
+///
+    /// * `reset_value` - Value returned by the register before any writes.
     const fn new(reset_value: u32) -> Self {
         Self(UnsafeCell::new(reset_value))
     }
 
     /// or removing reads of hardware state.
-
     fn read(&self) -> u32 {
         // SAFETY: the pointer comes from a live `UnsafeCell<u32>`.
         unsafe { self.0.get().read_volatile() }
@@ -41,27 +46,33 @@ impl Register {
 /// The GPIO port's registers, in the order and width the manual lists them.
 #[repr(C)]
 struct GpioRegisters {
+
     /// Mode register: two bits per pin; `0b01` selects output.
     mode: Register,
+
     /// Output data register: one bit per pin.
     output: Register,
 }
 
 /// Ownership token for the GPIO port. Only one can exist.
 struct Gpio {
+
     /// Memory-mapped registers for the GPIO device.
     registers: GpioRegisters,
 }
 
 /// All peripherals of the chip, handed out once, like a PAC's `Peripherals`.
 struct Peripherals {
+
     /// GPIO device controlled by these registers.
     gpio: Gpio,
 }
 
 impl Peripherals {
+
     /// Returns the peripherals the first time it is called, then `None`.
     fn take() -> Option<Self> {
+
         /// Shared `taken` used by this module.
         static TAKEN: AtomicBool = AtomicBool::new(false);
         Self::take_once(&TAKEN)

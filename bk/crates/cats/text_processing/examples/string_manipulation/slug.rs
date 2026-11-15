@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Turn a title into a URL-friendly slug.
 //!
 //! A slug is the readable part of a URL derived from a title: lowercase, words
@@ -8,8 +9,7 @@
 //! addresses friendly to people and search engines.
 
 use slug::slugify;
-/// Runs the example entry point.
-///
+
 /// Converts titles to lowercase ASCII slugs.
 pub fn example_body() {
     // Punctuation is dropped, spaces become hyphens, and accented characters

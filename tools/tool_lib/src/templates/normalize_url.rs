@@ -7,6 +7,7 @@ use regex::Regex;
 /// Normalizes a documentation URL from `docs.rs`.
 ///
 /// # Arguments
+///
 /// * `url` - URL identifying the requested resource.
 ///
 /// This function cleans up and standardizes URLs from `docs.rs`. It handles various formats,

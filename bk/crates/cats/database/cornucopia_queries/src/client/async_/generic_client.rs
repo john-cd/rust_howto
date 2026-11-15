@@ -13,6 +13,7 @@ use tokio_postgres::ToStatement;
 use tokio_postgres::Transaction;
 use tokio_postgres::types::BorrowToSql;
 use tokio_postgres::types::ToSql;
+
 /// Abstraction over multiple types of asynchronous clients.
 /// This allows you to use tokio_postgres clients and transactions
 /// interchangeably.
@@ -24,12 +25,18 @@ pub trait GenericClient: Send + Sync {
         false
     }
 
+    /// Prepares a SQL query and returns its reusable statement.
+///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+///
+    /// Returns a database error if PostgreSQL cannot prepare `query`.
     fn prepare(&self, query: &str) -> impl Future<Output = Result<Statement, Error>> + Send;
 
+    /// Executes a statement and returns the number of rows affected.
+///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+///
+    /// Returns a database error if PostgreSQL cannot execute the statement or encode its parameters.
     fn execute<T>(
         &self,
         query: &T,
@@ -38,8 +45,11 @@ pub trait GenericClient: Send + Sync {
     where
         T: ?Sized + ToStatement + Sync + Send;
 
+    /// Executes a query that must return exactly one row.
+///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+///
+    /// Returns a database error if execution fails or the query does not return exactly one row.
     fn query_one<T>(
         &self,
         statement: &T,
@@ -48,8 +58,11 @@ pub trait GenericClient: Send + Sync {
     where
         T: ?Sized + ToStatement + Sync + Send;
 
+    /// Executes a query that may return zero or one row.
+///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+///
+    /// Returns a database error if execution fails or the query returns more than one row.
     fn query_opt<T>(
         &self,
         statement: &T,
@@ -58,8 +71,11 @@ pub trait GenericClient: Send + Sync {
     where
         T: ?Sized + ToStatement + Sync + Send;
 
+    /// Executes a query and collects all returned rows.
+///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+///
+    /// Returns a database error if PostgreSQL cannot execute the query or decode its rows.
     fn query<T>(
         &self,
         query: &T,
@@ -68,8 +84,11 @@ pub trait GenericClient: Send + Sync {
     where
         T: ?Sized + ToStatement + Sync + Send;
 
+    /// Executes a query and returns its rows as a stream.
+///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+///
+    /// Returns a database error if PostgreSQL cannot start the row query.
     fn query_raw<T, I>(
         &self,
         statement: &T,

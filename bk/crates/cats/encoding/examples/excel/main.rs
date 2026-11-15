@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// Reads an `.xlsx` workbook with `calamine`.
 mod calamine;
+
 /// Writes an `.xlsx` workbook with `rust_xlsxwriter`: a bold header,
 mod xlsxwriter;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `calamine` example.
     #[command(name = "calamine")]
     Calamine,
+
     /// Runs the `xlsxwriter` example.
     #[command(name = "xlsxwriter")]
     Xlsxwriter,

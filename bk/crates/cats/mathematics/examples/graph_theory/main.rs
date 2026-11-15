@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// Detect dependency cycles in a directed graph.
 mod cycle_detection;
+
 /// Group tasks into levels that can run in parallel.
 mod topological_levels;
 
 /// Command-line arguments for the graph theory examples.
 #[derive(Parser)]
 struct Cli {
+
     /// The graph example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,8 +23,10 @@ struct Cli {
 /// Graph examples available from this executable.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Reports strongly connected components that contain a cycle.
     CycleDetection,
+
     /// Evaluates DAG tasks in parallel, one ready level at a time.
     TopologicalLevels,
 }
@@ -35,6 +39,7 @@ fn dispatch(cli: Cli) {
         None => {}
     }
 }
+
 /// Runs the example.
 fn main() {
     dispatch(Cli::parse());

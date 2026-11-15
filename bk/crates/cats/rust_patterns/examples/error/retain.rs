@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to avoid discarding errors during error
 //! conversions using the `anyhow` crate.
 //!
@@ -11,6 +12,7 @@
 /// Trims `s` and parses it as a `u32`, propagating parse failures with `?`.
 ///
 /// # Errors
+///
 /// Returns an error if the trimmed string is not a valid unsigned integer.
 fn parse_value(s: &str) -> anyhow::Result<u32> {
     let n = s.trim().parse::<u32>()?;
@@ -30,6 +32,7 @@ fn read_number_from_file(path: &str) -> anyhow::Result<u32> {
 // The `main` function may return a `Result` itself.
 // We return `anyhow::Result<()>` but could also use
 // `Result<(), Box<dyn Error>>` as the return type.
+
 /// Reads a number from a file and prints it.
 fn main() -> anyhow::Result<()> {
     let n = read_number_from_file("temp/number.txt")?;
@@ -38,9 +41,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Reads a number from a file and prints it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

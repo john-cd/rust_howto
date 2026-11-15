@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Reports the native graphics API behind a headless `wgpu` adapter.
 //!
 //! An adapter represents a physical or software GPU. Vulkan, Metal and DirectX
@@ -18,6 +19,7 @@ use wgpu::RequestAdapterOptions;
 /// Selects an adapter without creating a window or requesting a device.
 ///
 /// # Errors
+///
 /// Returns an error if the installed drivers expose no compatible adapter.
 fn main() -> Result<(), Box<dyn Error>> {
     let mut descriptor = InstanceDescriptor::new_without_display_handle();
@@ -41,6 +43,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 /// Runs the adapter query from the example target.
 ///
 /// # Errors
+///
 /// Returns an error when a compatible adapter cannot be selected.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
@@ -53,6 +56,7 @@ mod tests {
 
     /// Queries the graphics backend when a compatible GPU adapter is present.
     // output-only: prints the adapter that the machine provides.
+
     /// Verifies graphics example entry point.
     #[test]
     #[ignore = "needs a GPU adapter"]

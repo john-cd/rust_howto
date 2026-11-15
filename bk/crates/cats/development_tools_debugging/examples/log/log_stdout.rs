@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to configure the `env_logger` to output logs
 //! to `Stdout`.
 //!
@@ -22,8 +23,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates how to configure the `env_logger` to output logs to `Stdout`.
 pub fn run() {
     main();
 }

@@ -8,14 +8,17 @@ use clap::Subcommand;
 
 /// `const` Example.
 mod constants;
+
 /// `static mut` Example.
 mod static_mut;
+
 /// `static` Example.
 mod statics;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -24,12 +27,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `constants` example.
     #[command(name = "constants")]
     Constants,
+
     /// Runs the `static_mut` example.
     #[command(name = "static_mut")]
     StaticMut,
+
     /// Runs the `statics` example.
     #[command(name = "statics")]
     Statics,
@@ -51,7 +57,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

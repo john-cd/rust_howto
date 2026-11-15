@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Initializes a shared value once with `std::sync::OnceLock`.
 //!
 //! A `OnceLock` starts empty and can be set exactly once, even when several
@@ -11,7 +12,7 @@ use std::sync::OnceLock;
 
 /// A process-wide value initialized when first requested.
 static GREETING: OnceLock<String> = OnceLock::new();
-/// Runs the example.
+
 /// Initializes and reads the shared value.
 fn main() {
     let greeting = GREETING.get_or_init(|| String::from("Hello, Rust!"));
@@ -19,8 +20,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Initializes and reads the shared value.
 pub fn run() {
     main();
 }

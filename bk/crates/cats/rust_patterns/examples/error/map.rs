@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates transforming successful values and errors with `Result`.
 //!
 //! `map` transforms the success value of a `Result` and leaves an error
@@ -19,8 +20,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Shows that `map` and `map_err` transform opposite variants of a result.
 pub fn run() {
     main();
 }
@@ -29,12 +29,14 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::main;
+
     /// Maps transforms the success value.
     #[test]
     fn map_transforms_the_success_value() {
         let result: Result<i32, &str> = Ok(10);
         assert_eq!(result.map(|value| value * 2), Ok(20));
     }
+
     /// Maps err adds error context.
     #[test]
     fn map_err_adds_error_context() {

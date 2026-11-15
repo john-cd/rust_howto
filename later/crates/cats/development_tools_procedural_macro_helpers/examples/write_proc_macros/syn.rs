@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `syn` parses a token stream into Rust syntax-tree types such as
 //! `DeriveInput`. A derive helper can inspect the input shape, reject
 //! unsupported data with a spanned error, and return generated tokens for a
@@ -18,10 +19,12 @@ use syn::Result as SynResult;
 /// Generates a `describe` method for a struct with named fields.
 ///
 /// # Errors
+///
 /// Returns a spanned error for invalid syntax or unsupported input.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested syn operation.
+///
+/// * `input` - Token stream containing a derive input to describe.
 fn derive_describe(input: TokenStream) -> SynResult<TokenStream> {
     let input: DeriveInput = syn::parse2(input)?;
     let ident = input.ident;
@@ -56,9 +59,8 @@ fn derive_describe(input: TokenStream) -> SynResult<TokenStream> {
     let (impl_generics, ty_generics, where_clause) = generics.split_for_impl();
     Ok(quote! {
         impl #impl_generics #ident #ty_generics #where_clause {
+
             /// Returns a formatted description of the struct fields.
-
-
             pub fn describe(&self) -> String {
                 let mut fields = Vec::new();
                 #(
@@ -76,6 +78,7 @@ fn derive_describe(input: TokenStream) -> SynResult<TokenStream> {
 /// Generates and pretty-prints the method for a named struct.
 ///
 /// # Errors
+///
 /// Returns an error if generation or Rust syntax parsing fails.
 fn main() -> Result<()> {
     let input = quote! { struct Point { x: i32, y: i32 } };
@@ -89,6 +92,7 @@ fn main() -> Result<()> {
 /// Runs the `syn` derive-helper example.
 ///
 /// # Errors
+///
 /// Returns an error if parsing or generation fails.
 pub fn run() -> Result<()> {
     main()

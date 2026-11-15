@@ -40,6 +40,7 @@ fn cmd() -> clap::Command {
                 .value_parser(value_parser!(u16)),
         )
 }
+
 /// Parses command-line arguments.
 ///
 /// This function parses command-line arguments using the `clap` crate.
@@ -82,6 +83,7 @@ where
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies cmd.
     #[test]
     fn verify_cmd() {

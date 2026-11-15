@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A wait-free single-producer, single-consumer (SPSC) ring buffer from the
 //! `rtrb` crate.
 //!
@@ -18,8 +19,10 @@ use rtrb::RingBuffer;
 
 /// The number of samples the ring buffer can hold.
 const CAPACITY: usize = 64;
+
 /// The number of samples the consumer drains at a time.
 const BLOCK_SIZE: usize = 16;
+
 /// The total number of samples sent through the buffer.
 const TOTAL: usize = 1_000;
 
@@ -44,8 +47,9 @@ fn full_and_empty() {
 /// portion of a real-time callback.
 ///
 /// # Arguments
-/// * `consumer` - Mutable consumer whose state is updated by this operation.
-/// * `block` - Mutable [f32; block size] whose state is updated by this operation.
+///
+/// * `consumer` - Ring-buffer consumer that supplies the available audio samples.
+/// * `block` - Output sample block, which is zero-filled before available samples are copied in.
 fn drain_block(consumer: &mut Consumer<f32>, block: &mut [f32; BLOCK_SIZE]) -> usize {
     block.fill(0.0);
     let mut filled = 0;
@@ -60,9 +64,11 @@ fn drain_block(consumer: &mut Consumer<f32>, block: &mut [f32; BLOCK_SIZE]) -> u
     }
     filled
 }
+
 /// Sends `TOTAL` samples and drives the block consumer from an ordinary thread.
 ///
 /// # Errors
+///
 /// Returns an error if the producer thread panics.
 fn main() -> Result<()> {
     full_and_empty();
@@ -117,6 +123,7 @@ fn main() -> Result<()> {
 /// Runs the SPSC transfer example and reports producer thread failures.
 ///
 /// # Errors
+///
 /// Returns an error if the producer thread panics.
 pub fn run() -> Result<()> {
     main()
@@ -131,6 +138,7 @@ mod tests {
     fn test_rtrb_example_entry_point() -> Result<()> {
         main()
     }
+
     /// Returns full/empty errors without blocking or losing buffered values.
     #[test]
     fn test_full_and_empty() {

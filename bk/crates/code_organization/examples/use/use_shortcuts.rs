@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Shortcuts for `use`: globs, grouped imports, `self` and aliases.
 
 // Use a glob (the `*`) to bring all public objects within a module
@@ -37,8 +38,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Uses items imported with the shortcuts.
 pub fn run() {
     main();
 }
@@ -52,6 +52,7 @@ mod tests {
     fn test_main() {
         main();
     }
+
     /// Verifies glob import of default.
     #[test]
     fn test_glob_import_of_default() {
@@ -59,6 +60,7 @@ mod tests {
         assert!(v.is_empty());
         destruct(v);
     }
+
     /// Verifies self import and group.
     #[test]
     fn test_self_import_and_group() {

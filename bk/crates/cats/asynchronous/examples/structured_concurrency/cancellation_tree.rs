@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A tree of `CancellationToken`s: cancelling a parent cancels its children,
 //! but not the other way around. Workers check the token in a `select!`.
 //!
@@ -53,7 +54,7 @@ async fn demo() {
     assert_eq!(handle.await.ok(), Some("cancelled"));
     assert_eq!(handle_a.await.ok(), Some("cancelled"));
 }
-/// Runs the example.
+
 /// Runs the demonstration on a paused-clock runtime.
 fn main() {
     match tokio::runtime::Builder::new_current_thread()
@@ -67,8 +68,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs the demonstration on a paused-clock runtime.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Sorts a vector of structs, by their derived order and by a chosen field.
 //!
 //! Structs can be sorted by their derived ordering (field by field, in
@@ -13,18 +14,22 @@
 /// and `PartialEq` and `Eq` for equality comparisons.
 #[derive(Debug, Eq, Ord, PartialEq, PartialOrd)]
 struct Person {
+
     /// The person's name.
     name: String,
+
     /// The person's age in years.
     age: u32,
 }
 
 impl Person {
+
     /// Constructor for creating a new `Person` instance.
     fn new(name: String, age: u32) -> Self {
         Self { name, age }
     }
 }
+
 /// Sorts a vector of structs, by their derived order and by a chosen field.
 /// Sorts a vector of `Person`s in several ways and prints the results.
 fn main() {
@@ -83,7 +88,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// Sorts a vector of structs, by their derived order and by a chosen field.
 pub fn run() {
     main();

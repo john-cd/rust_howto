@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Matching literals.
 
 /// Matches a number against literals.
@@ -14,8 +15,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Matches a number against literals.
 pub fn run() {
     main();
 }

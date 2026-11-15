@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Receiving telemetry from a Tello drone.
 //!
 //! Decoding a message into text is a pure function, so it can be tested
@@ -61,7 +62,9 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example; it needs a real drone.
+///
 /// # Errors
+///
 /// Returns an error if the drone rejects a command.
 pub fn run() -> Result<()> {
     main()
@@ -122,6 +125,7 @@ mod tests {
     }
 
     // output-only: the example talks to a real drone.
+
     /// Verifies that the `uavs` example runs.
     #[test]
     #[ignore = "requires real drone"]

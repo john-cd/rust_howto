@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Building and inspecting paths with `Path` and `PathBuf`.
 //!
 //! `Path` and `PathBuf` handle path parts portably: `join` appends a component
@@ -63,7 +64,7 @@ fn build_archive_path() -> PathBuf {
     println!("Changed extension: {}", path_buffer.display());
     path_buffer
 }
-/// Runs the example.
+
 /// Builds paths and inspects their components.
 fn main() {
     // Create a `Path` from a string literal:
@@ -83,8 +84,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Builds paths and inspects their components.
 pub fn run() {
     main();
 }

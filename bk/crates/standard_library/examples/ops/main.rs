@@ -9,7 +9,7 @@
 
 /// Overloading the `+` operator with `Add`.
 mod ops;
-/// Runs the example.
+
 /// Runs the ops example.
 fn main() {
     ops::run();

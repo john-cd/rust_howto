@@ -1,9 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generates random numbers in ranges with the `rand` crate.
 //!
 //! ### Performance Advantage of `Uniform` Distribution
+//!
 //! When sampling multiple random values from the same range repeatedly (such as
 //! in loops or simulations), pre-computing a `rand::distr::Uniform`
 //! distribution avoids repeating initialization and pre-computation costs. This
@@ -31,8 +33,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints random numbers drawn from several ranges.
 pub fn run() {
     main();
 }
@@ -40,6 +41,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `rand range uniform` example runs.
     #[test]
     fn test_rand_range_uniform_example_entry_point() {

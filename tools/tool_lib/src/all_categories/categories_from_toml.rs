@@ -15,10 +15,12 @@ use super::Category;
 /// Inspired by code in the `crates.io` repository.
 ///
 /// # Arguments
+///
 /// * `categories` - A reference to the TOML table containing category data.
 /// * `parent` - The enclosing category, if this table contains child categories.
 ///
 /// # Errors
+///
 /// Returns an error when a category entry is not a table, a required name is missing or not a
 /// string, or a child-category entry is not a table.
 pub(super) fn categories_from_toml(
@@ -68,19 +70,23 @@ fn required_string_from_toml<'a>(toml: &'a toml::value::Table, key: &str) -> Res
         .and_then(toml::Value::as_str)
         .with_context(|| format!("Expected category TOML attribute '{key}' to be a String"))
 }
+
 /// Extracts an optional string value from a TOML table.
 ///
 /// # Arguments
+///
 /// * `toml` - TOML table that may contain the value.
 /// * `key` - Name of the value to retrieve.
 ///
 /// # Returns
+///
 /// The string value when it exists and is a string; otherwise, an empty string.
 fn optional_string_from_toml<'a>(toml: &'a toml::value::Table, key: &str) -> &'a str {
     toml.get(key).and_then(toml::Value::as_str).unwrap_or("")
 }
 
 impl Category {
+
     /// Format a child category as "`parent::child`".
     fn from_parent(slug: &str, category: &str, description: &str, parent: Option<&Self>) -> Self {
         match parent {

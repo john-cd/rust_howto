@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example demonstrating TOML parsing and deserialization.
 //!
 //! TOML is a configuration file format designed to be easy for people to read
@@ -13,8 +14,10 @@ use toml::value::Datetime;
 /// The configuration.
 #[derive(Deserialize, Debug)]
 struct Config {
+
     /// The title of the configuration.
     title: String,
+
     /// The database settings.
     database: Database,
 }
@@ -22,14 +25,19 @@ struct Config {
 /// The settings of the database.
 #[derive(Deserialize, Debug)]
 struct Database {
+
     /// The address of the database server.
     server: String,
+
     /// The ports of the database server.
     ports: Vec<u32>,
+
     /// The maximum number of connections.
     connection_max: u32,
+
     /// Whether the database is enabled.
     enabled: bool,
+
     /// The date and time of the last update.
     date: Datetime,
 }
@@ -37,6 +45,7 @@ struct Database {
 /// Demonstrates parsing a TOML string into a `Config` struct.
 ///
 /// # Errors
+///
 /// Returns an error if the example TOML cannot be deserialized.
 fn main() -> anyhow::Result<()> {
     let toml_string = r#"
@@ -66,6 +75,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the example and propagates deserialization errors.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -80,6 +90,7 @@ mod tests {
     fn test_toml_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// The sample document is parsed into the typed structure.
     #[test]
     fn parses_the_sample() {

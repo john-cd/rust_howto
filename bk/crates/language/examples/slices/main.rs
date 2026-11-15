@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Example of a slice as a function argument.
 mod slice_as_argument;
+
 /// A slice is a view into a contiguous sequence of elements in a collection.
 mod slices;
+
 /// String slice examples.
 mod string_slices;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `slice_as_argument` example.
     #[command(name = "slice_as_argument")]
     SliceAsArgument,
+
     /// Runs the `slices` example.
     #[command(name = "slices")]
     Slices,
+
     /// Runs the `string_slices` example.
     #[command(name = "string_slices")]
     StringSlices,
@@ -50,7 +56,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

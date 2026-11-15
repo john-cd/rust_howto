@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates reading system uptime using `anyhow` for error handling.
 
 use std::fs::File;
@@ -29,6 +30,7 @@ fn read_uptime() -> Result<u64> {
 fn main() -> Result<()> {
     run_example()
 }
+
 /// Reads the system uptime.
 ///
 /// Returns the uptime in seconds as a `u64`.
@@ -45,6 +47,7 @@ fn run_example() -> Result<()> {
 /// Runs the uptime example for the workspace test harness.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     run_example()

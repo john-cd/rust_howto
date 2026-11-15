@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Group PostgreSQL rows by artist nationality and count each group.
 //!
 //! An aggregate query combines rows. `GROUP BY` puts rows with the same value
@@ -14,8 +15,10 @@ use postgres::NoTls;
 /// A nationality and the number of artists in its group.
 #[derive(Debug, PartialEq, Eq)]
 struct Nation {
+
     /// Nationality name, or `Unknown` for rows without one.
     nationality: String,
+
     /// Number of artist rows in the group.
     artist_count: i64,
 }
@@ -23,6 +26,7 @@ struct Nation {
 /// Queries an existing `artists` table and prints each nationality count.
 ///
 /// # Errors
+///
 /// Returns an error if `DATABASE_URL` is missing, PostgreSQL cannot be reached,
 /// or the query or its result rows are invalid.
 fn main() -> anyhow::Result<()> {
@@ -41,11 +45,13 @@ fn main() -> anyhow::Result<()> {
 /// Returns artist counts grouped by nationality, including missing values.
 ///
 /// # Errors
+///
 /// Returns an error if PostgreSQL rejects the query or a result column has an
 /// unexpected type.
 ///
 /// # Arguments
-/// * `client` - Mutable client whose state is updated by this operation.
+///
+/// * `client` - PostgreSQL client used to run the aggregation query.
 fn artist_counts_by_nationality(client: &mut Client) -> anyhow::Result<Vec<Nation>> {
     let query = "SELECT COALESCE(nationality, 'Unknown') AS nationality, \
                  COUNT(*) AS artist_count \
@@ -70,6 +76,7 @@ fn artist_counts_by_nationality(client: &mut Client) -> anyhow::Result<Vec<Natio
 /// Runs the PostgreSQL aggregation example.
 ///
 /// # Errors
+///
 /// Returns an error if `DATABASE_URL` is missing or PostgreSQL query execution
 /// fails.
 pub fn run() -> anyhow::Result<()> {

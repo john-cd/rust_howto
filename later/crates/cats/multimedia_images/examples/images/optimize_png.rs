@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Optimizes a generated PNG and verifies its decoded pixels.
 //!
 //! PNG optimizers try many compression settings and filters to produce a
@@ -36,6 +37,7 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 /// Optimizes a generated PNG and verifies its decoded pixels.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     main()
@@ -44,6 +46,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 /// Verifies lossless recompression by comparing every decoded pixel.
 #[cfg(test)]
 mod tests {
+
     /// Verifies lossless recompression by comparing every decoded pixel.
     #[test]
     fn optimization_preserves_generated_pixels()

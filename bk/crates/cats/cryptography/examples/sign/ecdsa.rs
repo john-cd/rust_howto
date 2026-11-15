@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Sign and verify a message with ECDSA using the P-256 curve.
 //!
 //! This example uses `p256` and the `Signer`/`Verifier` traits. The signature
@@ -18,6 +19,7 @@ use rand::rngs::SysRng;
 /// Signs a message with a random P-256 key and verifies the signature.
 ///
 /// # Errors
+///
 /// Returns an error if secure randomness is unavailable or the signature
 /// cannot be parsed or verified.
 fn main() -> anyhow::Result<()> {
@@ -48,9 +50,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Signs a message with a random P-256 key and verifies the signature.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -66,6 +69,7 @@ mod tests {
     fn test_ecdsa_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// A signature made with one key does not verify under another key.
     #[test]
     fn wrong_key_is_rejected() -> anyhow::Result<()> {

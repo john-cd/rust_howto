@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Build typed Arrow arrays, a schema, and a record batch.
 //!
 //! Apache Arrow is a columnar in-memory format: each column of a table is
@@ -40,9 +41,11 @@ fn create_schema() -> Arc<Schema> {
         Field::new("strings", DataType::Utf8, false),
     ]))
 }
+
 /// Combines the sample arrays into a `RecordBatch` according to the schema.
 ///
 /// # Errors
+///
 /// Returns an error if the arrays do not match the schema or cannot be combined into a batch.
 fn create_record_batch(
     schema: Arc<Schema>,
@@ -59,9 +62,11 @@ fn create_record_batch(
         ],
     )
 }
+
 /// Builds the sample arrays and prints their record batch.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> Result<(Arc<Schema>, Int32Array, Float64Array, RecordBatch)> {
     let (integers, floats, strings) = create_arrays();
@@ -98,6 +103,7 @@ pub fn sum_primitive_arrays(integers: &Int32Array, floats: &Float64Array) {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<(Arc<Schema>, Int32Array, Float64Array, RecordBatch)> {
     example_body()

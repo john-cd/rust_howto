@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Looping with `while let`.
 
 /// Pops the elements of a vector with `while let`.
@@ -17,8 +18,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Pops the elements of a vector with `while let`.
 pub fn run() {
     main();
 }

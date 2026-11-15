@@ -1,27 +1,33 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A generic struct and its `impl` blocks.
 
 use std::fmt::Display;
 
 /// A generic struct `Point` that can hold two values of the same type `T`:
 struct Point<T> {
+
     /// The x coordinate.
     x: T,
+
     /// The y coordinate.
     y: T,
 }
 
 /// Generic implementation block for `Point<T>` where `T` can be any type:
 impl<T> Point<T> {
+
     /// Returns a reference to the x coordinate.
     fn x(&self) -> &T {
         &self.x
     }
 }
+
 /// Implementation block for `Point<f32>` only:
 impl Point<f32> {
+
     /// A method specific to `Point<f32>`:
     /// You may also use Trait Bounds to conditionally implement methods.
     /// The following is only implemented for `Point<T>` when `T` implements both
@@ -30,10 +36,12 @@ impl Point<f32> {
         self.x.hypot(self.y)
     }
 }
+
 /// You may also use Trait Bounds to conditionally implement methods.
 /// The following is only implemented for `Point<T>` when `T` implements both
 /// the `Display` and `PartialOrd` traits.
 impl<T: Display + PartialOrd> Point<T> {
+
     /// Prints the larger coordinate.
     fn cmp_display(&self) {
         if self.x >= self.y {
@@ -43,7 +51,7 @@ impl<T: Display + PartialOrd> Point<T> {
         }
     }
 }
-/// Runs the example.
+
 /// Creates points with several types and calls their methods.
 fn main() {
     // Instantiate `Point` with integer coordinates (type `i32`).
@@ -76,8 +84,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates points with several types and calls their methods.
 pub fn run() {
     main();
 }

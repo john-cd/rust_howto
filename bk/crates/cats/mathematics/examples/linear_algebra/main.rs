@@ -7,32 +7,43 @@ use clap::Subcommand;
 
 /// This example demonstrates how to add two matrices using the `ndarray` crate.
 mod add_matrices;
+
 /// This example demonstrates how to serialize and deserialize a `DMatrix` using
 mod deserialize_matrix;
+
 /// This example demonstrates how to invert a 3x3 matrix using the `nalgebra`
 mod invert_matrix;
+
 /// This example demonstrates matrix multiplication using the `ndarray` crate.
 mod multiply_matrices;
+
 /// This example demonstrates how to multiply a scalar by a vector and then
 mod multiply_scalar_vector_matrix;
+
 /// This example demonstrates matrix decompositions using the `nalgebra` crate.
 mod nalgebra_decomposition;
+
 /// This example demonstrates transformations in 3D using the `nalgebra` crate:
 mod nalgebra_transformations;
+
 /// This example demonstrates vector operations using the `nalgebra` crate:
 mod nalgebra_vectors;
+
 /// Turns linear algebra input into structured syntax data while preserving source locations and
 /// reporting malformed input. Analysis and validation code use these routines before applying
 /// domain-specific rules.
 mod sparse_matrices;
+
 /// This example demonstrates how to compare vectors using the `approx` crate.
 mod vector_comparison;
+
 /// Computing the L1 and L2 norms of a vector, and normalizing it, with
 mod vector_norm;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -41,36 +52,47 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `add_matrices` example.
     #[command(name = "add_matrices")]
     AddMatrices,
+
     /// Runs the `deserialize_matrix` example.
     #[command(name = "deserialize_matrix")]
     DeserializeMatrix,
+
     /// Runs the `invert_matrix` example.
     #[command(name = "invert_matrix")]
     InvertMatrix,
+
     /// Runs the `multiply_matrices` example.
     #[command(name = "multiply_matrices")]
     MultiplyMatrices,
+
     /// Runs the `multiply_scalar_vector_matrix` example.
     #[command(name = "multiply_scalar_vector_matrix")]
     MultiplyScalarVectorMatrix,
+
     /// Runs the `nalgebra_decomposition` example.
     #[command(name = "nalgebra_decomposition")]
     NalgebraDecomposition,
+
     /// Runs the `nalgebra_transformations` example.
     #[command(name = "nalgebra_transformations")]
     NalgebraTransformations,
+
     /// Runs the `nalgebra_vectors` example.
     #[command(name = "nalgebra_vectors")]
     NalgebraVectors,
+
     /// Runs the `sparse_matrices` example.
     #[command(name = "sparse_matrices")]
     SparseMatrices,
+
     /// Runs the `vector_comparison` example.
     #[command(name = "vector_comparison")]
     VectorComparison,
+
     /// Runs the `vector_norm` example.
     #[command(name = "vector_norm")]
     VectorNorm,

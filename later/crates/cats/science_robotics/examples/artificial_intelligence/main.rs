@@ -4,8 +4,8 @@
 
 /// Robot path planning on an occupancy grid using the A* algorithm.
 mod astar;
-/// # Behavior Tree Example This example demonstrates the use of a Behavior Tree (BT) to control a
-/// simple counter.
+
+/// Controls a counter with a behavior tree built using `bonsai_bt`.
 mod bonsai_bt;
 
 /// Runs the artificial intelligence examples.

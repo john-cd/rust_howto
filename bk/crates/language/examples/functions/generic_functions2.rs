@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generic functions with trait bounds.
 
 use std::fmt::Debug;
@@ -11,6 +12,7 @@ use std::fmt::Display;
 // `value` of any type `T`. The `T: std::fmt::Debug` part is a trait bound,
 // meaning `T` must implement the `Debug` trait, so that it can be printed using
 // the `{:?}` format specifier.
+
 /// Prints `value` using its `Debug` representation.
 fn print_value<T: Debug>(value: T) {
     println!("The value is: {value:?}"); // `{:?}` can be used, because `value` implements `Debug`.
@@ -47,9 +49,11 @@ fn main() {
     print_value("hello");
 
     // Call the generic function with a custom struct that implements `Debug`.
+
     /// Holds a value of any type to demonstrate generic struct implementations.
     #[derive(Debug)]
     struct MyStruct {
+
         /// The value stored by this wrapper.
         value: i32,
     }
@@ -66,8 +70,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the generic functions with several types.
 pub fn run() {
     main();
 }

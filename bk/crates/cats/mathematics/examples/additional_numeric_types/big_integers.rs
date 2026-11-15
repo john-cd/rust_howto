@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates big integer manipulation.
 //!
 //! A normal integer overflows beyond 64 bits. Big integers grow as needed,
@@ -29,8 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the factorial of 100.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Writing and reading a ZIP archive asynchronously with `async_zip`.
 
 use anyhow::Context as _;
@@ -14,9 +15,11 @@ use futures_lite::io::Cursor;
 use tokio::fs::File;
 use tokio::io::AsyncReadExt as _;
 use tokio_util::compat::TokioAsyncWriteCompatExt as _;
+
 /// Writes a ZIP archive with one entry, reads it back, and checks its content.
 ///
 /// # Errors
+///
 /// Returns an error if temporary storage, async file I/O, or ZIP processing
 /// fails, or if the restored entry differs from the original.
 #[tokio::main]

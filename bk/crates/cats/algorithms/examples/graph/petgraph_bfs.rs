@@ -1,19 +1,23 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Breadth-First Search (BFS) traversal of a graph using `petgraph`.
 //!
 //! ### What is Breadth-First Search (BFS)?
+//!
 //! Breadth-First Search is an unweighted graph traversal algorithm that
 //! explores vertices layer by layer (level order) outward from a starting
 //! source node.
 //!
 //! ### How Does It Work?
+//!
 //! BFS uses a First-In, First-Out (FIFO) queue data structure to track frontier
 //! nodes. It visits all immediate 1-hop neighbors of the current node before
 //! moving on to 2-hop neighbors, 3-hop neighbors, and so on.
 //!
 //! ### Key Properties & Shortest Path Guarantee
+//!
 //! - **Unweighted Shortest Path**: On unweighted graphs (where all edge costs are equal), BFS is
 //!   guaranteed to discover the path with the minimum number of edges from the source to any
 //!   reachable destination.
@@ -21,6 +25,7 @@
 //!   nodes.
 //!
 //! ### Typical Use Cases
+//!
 //! - Finding shortest paths in unweighted networks or mazes.
 //! - Web crawlers discovering pages level-by-level from a seed URL.
 //! - Identifying degrees of separation in social media graphs.
@@ -93,6 +98,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `petgraph bfs` example runs.
     #[test]
     fn test_petgraph_bfs_example_entry_point() {

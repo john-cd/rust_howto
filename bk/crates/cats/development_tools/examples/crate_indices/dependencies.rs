@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! List dependencies declared in local Cargo manifests.
 //!
 //! A `Cargo.toml` manifest lists a crate's dependencies. Reading manifests as
@@ -13,6 +14,7 @@ use crate::fixtures::create_fixture;
 /// Prints the sorted dependency names found in the local fixture workspace.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> Result<()> {
     let fixture = create_fixture()?;
@@ -26,6 +28,7 @@ pub fn example_body() -> Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<()> {
     example_body()

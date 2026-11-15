@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates the use of the `anyhow` crate for error handling.
 //!
 //! `anyhow` is for applications: one `anyhow::Error` type holds any error and
@@ -15,7 +16,7 @@ use anyhow::Result;
 fn do_something() -> Result<()> {
     Err(anyhow::Error::msg("Some Error"))
 }
-/// Runs the example.
+
 /// Adds context to errors with `anyhow`.
 fn main() -> anyhow::Result<()> {
     // Provide context to the error:
@@ -30,9 +31,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Adds context to errors with `anyhow`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

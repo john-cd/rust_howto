@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -26,23 +27,33 @@ use zenoh_util::zerror;
 
 use super::common::seq_num::SeqNum;
 use super::core::u64;
-/// Tracks messages awaiting acknowledgement or retransmission.
 
+/// Tracks messages awaiting acknowledgement or retransmission.
 pub(super) struct ReliabilityQueue<T> {
+
     /// Current sequence number.
     sn: SeqNum,
+
     /// Index value.
     index: usize,
+
     /// Length of the input.
     len: usize,
+
     /// Optional inner used by reliability queue; `None` means the value is not configured or
     /// unavailable.
     inner: Vec<Option<T>>,
 }
 
 impl<T> ReliabilityQueue<T> {
-    /// Constructs a usable initial reliability queue value with the defaults required by the
-    /// reliability component.
+
+    /// Creates an empty reliability queue with sequence tracking initialized for the peer.
+    ///
+    /// # Arguments
+///
+    /// * `capacity` - Number of sequence-number slots available in the queue.
+    /// * `initial_sn` - First sequence number expected from the peer.
+    /// * `sn_resolution` - Sequence-number resolution used for wraparound comparisons.
     pub(super) fn new(capacity: usize, initial_sn: u64, sn_resolution: u64) -> ReliabilityQueue<T> {
         let mut inner = Vec::with_capacity(capacity);
         for _ in 0..capacity {
@@ -69,7 +80,6 @@ impl<T> ReliabilityQueue<T> {
 
     /// Reports whether the reliability queue meets the empty condition so callers can choose the
     /// correct branch.
-
     #[inline]
     pub(super) fn is_empty(&self) -> bool {
         self.len() == 0
@@ -77,7 +87,6 @@ impl<T> ReliabilityQueue<T> {
 
     /// Reports whether the reliability queue meets the full condition so callers can choose the
     /// correct branch.
-
     #[inline]
     pub(super) fn is_full(&self) -> bool {
         self.len() == self.capacity()
@@ -89,7 +98,6 @@ impl<T> ReliabilityQueue<T> {
     }
 
     /// Changes the base held by the reliability queue; subsequent operations use the updated value.
-
     pub(super) fn set_base(&mut self, sn: u64) -> ZResult<()> {
         let gap: usize = match self.sn.gap(sn) {
             Ok(gap) => match gap.try_into() {
@@ -123,7 +131,6 @@ impl<T> ReliabilityQueue<T> {
     }
 
     /// Inserts the current value.
-
     pub(super) fn insert(&mut self, t: T, sn: u64) -> ZResult<()> {
         let gap: usize = match self.sn.gap(sn) {
             Ok(gap) => match gap.try_into() {
@@ -157,7 +164,6 @@ impl<T> ReliabilityQueue<T> {
     }
 
     /// Removes the current value.
-
     pub(super) fn remove(&mut self, sn: u64) -> ZResult<T> {
         let gap: usize = match self.sn.gap(sn) {
             Ok(gap) => match gap.try_into() {
@@ -228,9 +234,17 @@ impl<T> ReliabilityQueue<T> {
 }
 
 impl<T: Clone> ReliabilityQueue<T> {
-    /// # Errors
-    /// Returns an error if the requested data cannot be retrieved.
 
+    /// Returns the buffered value associated with a peer sequence number.
+    ///
+    /// # Arguments
+///
+    /// * `sn` - Sequence number of the buffered value to retrieve.
+    ///
+    /// # Errors
+///
+    /// Returns an error if `sn` cannot be represented at the current resolution, falls outside the
+    /// tracked window, or has no buffered value.
     pub(super) fn get(&mut self, sn: u64) -> ZResult<T> {
         let gap: usize = match self.sn.gap(sn) {
             Ok(gap) => match gap.try_into() {
@@ -269,6 +283,7 @@ impl<T: Clone> ReliabilityQueue<T> {
 }
 
 impl<T: fmt::Debug> fmt::Debug for ReliabilityQueue<T> {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("ReliabilityQueue")

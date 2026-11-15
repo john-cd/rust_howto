@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates the use of the `same_file` crate.
 //!
 //! Symbolic links can point back to a parent directory, so naively following
@@ -57,7 +58,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Checks that two paths refer to the same file and detects a loop in a directory path.
 pub fn run() {
     main();
 }

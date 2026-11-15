@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calls embedded Python code and passes it positional arguments with PyO3.
 //!
 //! PyO3 connects Rust and Python. Embedding runs a Python interpreter inside a
@@ -44,9 +45,11 @@ fn test_my_function() -> PyResult<()> {
         Ok(())
     })
 }
+
 /// Runs a Python script and calls a Python function.
 ///
 /// # Errors
+///
 /// Returns a Python error if interpreter initialization or a Python operation
 /// fails.
 fn main() -> PyResult<()> {

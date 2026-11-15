@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Redirect HTTP requests to HTTPS.
 //!
 //! The URI rewriting is a pure function, which makes it easy to test.
@@ -17,8 +18,10 @@ use axum_extra::headers::Host as HostHeader;
 /// Ports of the plain HTTP and HTTPS listeners.
 #[derive(Clone, Copy, Debug)]
 pub struct Ports {
+
     /// HTTP port used by the local endpoint.
     pub http: u16,
+
     /// HTTPS port used by the local endpoint.
     pub https: u16,
 }
@@ -26,6 +29,7 @@ pub struct Ports {
 /// Rewrites `uri` to use `https`, replacing the HTTP port in `host`.
 ///
 /// # Arguments
+///
 /// * `uri` - URI identifying the requested resource.
 pub fn make_https(host: &str, uri: &Uri, ports: Ports) -> anyhow::Result<Uri> {
     let mut parts = uri.clone().into_parts();

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Represents and evaluates a tree with leaf and group nodes.
 //!
 //! The composite pattern treats single objects and groups of them uniformly, as
@@ -9,8 +10,10 @@
 
 /// A tree whose leaves are values and whose groups sum child expressions.
 enum Expression {
+
     /// A numeric leaf value.
     Value(i64),
+
     /// A group that adds its child expressions.
     Sum(Vec<Self>),
 }
@@ -39,6 +42,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the composite tree example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

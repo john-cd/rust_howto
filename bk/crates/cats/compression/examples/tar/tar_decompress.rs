@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Unpacking a gzip-compressed tar archive with `flate2` and `tar`.
 //!
 //! Unpacking an archive from an untrusted source can overwrite files outside
@@ -17,6 +18,7 @@ use tar::Archive;
 /// Unpacks the sample archive created by the compression example.
 ///
 /// # Errors
+///
 /// Returns an I/O error if the archive cannot be opened or its entries cannot
 /// be extracted.
 fn main() -> io::Result<()> {
@@ -45,6 +47,7 @@ fn decompress_archive(archive_path: &Path, destination: &Path) -> io::Result<()>
 /// Extracts the archive created by the compression example.
 ///
 /// # Errors
+///
 /// Returns an I/O error if the archive cannot be read or extracted.
 pub fn run() -> Result<(), std::io::Error> {
     main()

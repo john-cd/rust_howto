@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -38,48 +39,63 @@ use zenoh_result::zerror;
 use crate::TransportManager;
 use crate::multicast::TransportMulticast;
 use crate::multicast::transport::TransportMulticastInner;
-/// Configuration applied when creating a multicast transport manager.
 
+/// Configuration applied when creating a multicast transport manager.
 #[derive(Debug)]
 pub struct TransportManagerConfigMulticast {
+
     /// Lease duration advertised by the peer.
     pub lease: Duration,
+
     /// Maximum missed keep-alive intervals before closing.
     pub keep_alive: usize,
+
     /// Interval between background task joins.
     pub join_interval: Duration,
+
     /// Maximum concurrent sessions.
     pub max_sessions: usize,
+
     /// Whether the peer negotiated QoS support.
     pub is_qos: bool,
     #[cfg(feature = "transport_compression")]
+
     /// Whether compression is enabled for this batch.
     pub is_compression: bool,
 }
-/// Builder for a multicast transport manager.
 
+/// Builder for a multicast transport manager.
 pub struct TransportManagerBuilderMulticast {
+
     /// Lease duration advertised by the peer.
     lease: Duration,
+
     /// Maximum missed keep-alive intervals before closing.
     keep_alive: usize,
+
     /// Interval between background task joins.
     join_interval: Duration,
+
     /// Maximum concurrent sessions.
     max_sessions: usize,
+
     /// Flag indicating whether the transport manager builder multicast satisfies the is qos
     /// condition.
     is_qos: bool,
     #[cfg(feature = "transport_compression")]
+
     /// Flag indicating whether the transport manager builder multicast satisfies the is
     /// compression condition.
     is_compression: bool,
 }
 
 impl fmt::Debug for TransportManagerBuilderMulticast {
+
     /// Formats the value for display.
+    ///
     /// # Arguments
-    /// * `f` - Mutable formatter whose state is updated by this operation.
+///
+    /// * `f` - Formatter used to write the debug representation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut debug = f.debug_struct("TransportManagerBuilderMulticast");
         debug
@@ -93,22 +109,27 @@ impl fmt::Debug for TransportManagerBuilderMulticast {
         debug.finish()
     }
 }
-/// Runtime state owned by a multicast transport manager.
 
+/// Runtime state owned by a multicast transport manager.
 pub struct TransportManagerStateMulticast {
     // Established listeners
+
     /// Collection of link managers values consumed by transport manager state multicast
     /// operations.
     pub(crate) link_managers: Arc<Mutex<HashMap<LinkKind, LinkManagerMulticast>>>,
     // Established transports
+
     /// Collection of transports values consumed by transport manager state multicast operations.
     pub(crate) transports: Arc<Mutex<HashMap<Locator, Arc<TransportMulticastInner>>>>,
 }
 
 impl fmt::Debug for TransportManagerStateMulticast {
+
     /// Formats the value for display.
+///
     /// # Arguments
-    /// * `f` - Mutable formatter whose state is updated by this operation.
+///
+    /// * `f` - Formatter used to write the formatted representation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportManagerStateMulticast")
             .field("link_managers", &"..")
@@ -119,15 +140,18 @@ impl fmt::Debug for TransportManagerStateMulticast {
 
 /// State required by `TransportManagerParamsMulticast` during transport operations.
 pub struct TransportManagerParamsMulticast {
+
     /// Settings that control how this transport manager params multicast is constructed or
     /// processed.
     pub config: TransportManagerConfigMulticast,
+
     /// Current lifecycle value used to decide which transport manager params multicast operations
     /// are valid.
     pub state: TransportManagerStateMulticast,
 }
 
 impl fmt::Debug for TransportManagerParamsMulticast {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportManagerParamsMulticast")
@@ -138,7 +162,11 @@ impl fmt::Debug for TransportManagerParamsMulticast {
 }
 
 impl TransportManagerBuilderMulticast {
+
+    /// Sets the lease duration advertised by the multicast transport.
+///
     /// # Arguments
+///
     /// * `lease` - Duration controlling the operation.
     pub fn lease(mut self, lease: Duration) -> Self {
         self.lease = lease;
@@ -150,9 +178,11 @@ impl TransportManagerBuilderMulticast {
         self
     }
 
+    /// Sets how often the multicast transport announces that it has joined.
+    ///
     /// # Arguments
-    /// * `join_interval` - Duration controlling the operation.
-
+///
+    /// * `join_interval` - Time between multicast join announcements.
     pub fn join_interval(mut self, join_interval: Duration) -> Self {
         self.join_interval = join_interval;
         self
@@ -175,14 +205,15 @@ impl TransportManagerBuilderMulticast {
     }
 
     /// Converts between the transport manager builder multicast representation and config while
-    /// preserving the invariants required by callers.
+    /// Applies the configured lease, join interval, session limit, and enabled transport features.
     ///
     /// # Arguments
-    /// * `config` - Settings that control the behavior and limits of this transport manager builder
-    ///   multicast workflow.
-
+    ///
+    /// * `config` - Transport configuration used to populate this multicast manager builder.
+    ///
     /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
+    ///
+    /// Panics if the multicast join interval or session limit is absent from the configuration.
     pub fn from_config(mut self, config: &Config) -> ZResult<TransportManagerBuilderMulticast> {
         self = self.lease(Duration::from_millis(
             *config.transport().link().tx().lease(),
@@ -201,11 +232,7 @@ impl TransportManagerBuilderMulticast {
         Ok(self)
     }
 
-    /// Builds the current value.
-    ///
-    /// # Errors
-    /// Returns an error if the requested resource or connection cannot be created.
-
+    /// Combines the multicast transport settings and empty runtime state into manager parameters.
     pub fn build(self) -> ZResult<TransportManagerParamsMulticast> {
         let config = TransportManagerConfigMulticast {
             lease: self.lease,
@@ -229,11 +256,12 @@ impl TransportManagerBuilderMulticast {
 }
 
 impl Default for TransportManagerBuilderMulticast {
-    /// Constructs a usable initial transport manager builder multicast value with the defaults
-    /// required by the manager component.
+
+    /// Creates a multicast builder populated from the default transport configuration.
     ///
     /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
+///
+    /// Panics if the default transport configuration cannot be applied.
     fn default() -> TransportManagerBuilderMulticast {
         let link_tx = LinkTxConf::default();
         #[cfg(feature = "transport_compression")]
@@ -258,7 +286,6 @@ impl TransportManager {
     }
 
     /// Closes multicast.
-
     pub async fn close_multicast(&self) {
         tracing::trace!("TransportManagerMulticast::clear()");
 
@@ -274,6 +301,7 @@ impl TransportManager {
 
     /// **********************************
     // LINK MANAGER
+
     /// Creates link manager multicast.
     /// **********************************
     async fn new_link_manager_multicast(
@@ -300,8 +328,11 @@ impl TransportManager {
         }
     }
 
+    /// Removes the multicast link manager for the specified link kind.
+    ///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+///
+    /// Returns an error if no link manager is registered for `link_kind`.
     async fn del_link_manager_multicast(&self, link_kind: LinkKind) -> ZResult<()> {
         match zasynclock!(self.state.multicast.link_managers).remove(&link_kind) {
             Some(_) => Ok(()),
@@ -311,15 +342,18 @@ impl TransportManager {
         }
     }
 
-    /// **********************************
     // TRANSPORT
-    /// Opens transport multicast.
+
+    /// Opens a multicast transport on the supplied endpoint.
     ///
     /// # Arguments
-    /// **********************************
+///
+    /// * `endpoint` - Multicast endpoint used to create the transport.
     ///
     /// # Errors
-    /// Returns an error if the requested resource or connection cannot be created.
+///
+    /// Returns an error if the endpoint protocol is unsupported, the endpoint is not multicast, or
+    /// the link manager or transport cannot be opened.
     pub async fn open_transport_multicast(
         &self,
         mut endpoint: EndPoint,
@@ -384,8 +418,7 @@ impl TransportManager {
             .collect()
     }
 
-    /// Retrieves the transports multicast blocking for the current transport manager from its
-
+    /// Returns wrappers for all multicast transports registered with this manager.
     pub fn get_transports_multicast_blocking(&self) -> Vec<TransportMulticast> {
         self.state
             .multicast
@@ -396,8 +429,16 @@ impl TransportManager {
             .collect()
     }
 
+    /// Removes the multicast transport registered for the locator.
+    ///
+    /// # Arguments
+///
+    /// * `locator` - Locator identifying the multicast transport to remove.
+    ///
     /// # Errors
-    /// An error is returned if try_from fails.
+///
+    /// Returns an error if the locator has an unsupported protocol or no transport is registered
+    /// for it.
     pub(super) async fn del_transport_multicast(&self, locator: &Locator) -> ZResult<()> {
         let mut guard = zasynclock!(self.state.multicast.transports);
         let res = guard.remove(locator);
@@ -419,7 +460,11 @@ impl TransportManager {
 
     /// **********************************
     // LISTENER
+
+    /// Opens a multicast listener and returns its locator.
+///
     /// # Arguments
+///
     /// **********************************
     pub async fn add_listener_multicast(&self, endpoint: EndPoint) -> ZResult<Locator> {
         let locator = endpoint.to_locator().to_owned();
@@ -427,8 +472,16 @@ impl TransportManager {
         Ok(locator)
     }
 
+    /// Removes the multicast listener and its transport when no longer needed.
+    ///
+    /// # Arguments
+///
+    /// * `endpoint` - Endpoint identifying the listener to remove.
+    ///
     /// # Errors
-    /// An error is returned if try_from fails.
+///
+    /// Returns an error if the endpoint protocol is unsupported or no transport is registered for
+    /// its locator.
     pub async fn del_listener_multicast(&self, endpoint: &EndPoint) -> ZResult<()> {
         let locator = endpoint.to_locator();
 

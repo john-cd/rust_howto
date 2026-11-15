@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Reads an `.xlsx` workbook with `calamine`.
 //!
 //! The workbook is the one written by the `rust_xlsxwriter` recipe,
@@ -67,9 +68,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Reads the report and checks the type and value of each cell.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of a self-referential struct using pinning.
 //!
 //! A self-referential struct holds a pointer to its own data. Moving the struct
@@ -18,22 +19,27 @@ mod selfref {
     // To create a `!Unpin` type on stable Rust,
     // embed `std::marker::PhantomPinned`.
     // This marker tells the compiler your type must never move once pinned.
+
     /// A struct whose pointer refers to its own data.
     #[derive(Debug)]
     pub struct SelfRef {
+
         /// The data.
         pub data: String,
         // Raw pointer to the field above.
         // You will often use `NotNull` as well.
+
         /// A pointer to `data`.
         pub ptr: *const String,
         // The `PhantomPinned` field makes `SelfRef: !Unpin`.
+
         /// A marker that prevents the struct from being moved once it is
         /// pinned.
         _pin: PhantomPinned,
     }
 
     impl SelfRef {
+
         /// Creates a pinned struct, with `ptr` pointing to `data`.
         pub fn new(txt: &str) -> Pin<Box<Self>> {
             // Allocate on heap and construct a new `Pin<Box<T>>`.
@@ -75,7 +81,8 @@ mod selfref {
         /// <https://doc.rust-lang.org/std/pin/index.html#assigning-pinned-data>
         ///
         /// # Arguments
-        /// * `src` - Mutable pin whose state is updated by this operation.
+///
+        /// * `src` - Pinned source whose data is cloned while rebuilding this value's self-reference.
         pub fn assign(self: Pin<&mut Self>, src: Pin<&mut Self>) {
             unsafe {
                 // Unwraps the `Pin<Ptr>`, returning the underlying `Ptr`.
@@ -101,6 +108,7 @@ mod selfref {
     ///
     /// <https://doc.rust-lang.org/std/pin/index.html#implementing-drop-for-types-with-address-sensitive-states>
     impl Drop for SelfRef {
+
         /// Releases the resources owned by this value.
         fn drop(&mut self) {
             // SAFETY: We must ensure that `inner_drop` does not move `self`.
@@ -109,8 +117,11 @@ mod selfref {
             // the pinning invariant.
             inner_drop(unsafe { Pin::new_unchecked(self) });
 
+            /// Accepts a pinned mutable reference so the pin remains alive through the inner drop operation.
+///
             /// # Arguments
-            /// * `_this` - Mutable pin whose state is updated by this operation.
+///
+            /// * `_this` - Pinned value kept alive while the inner drop hook runs.
             fn inner_drop(_this: Pin<&mut SelfRef>) {
                 // Actual drop code would go here.
             }
@@ -125,8 +136,10 @@ pub mod structural_pinning {
     /// A struct with a structurally pinned field and a field that is not
     /// pinned.
     pub struct Struct {
+
         /// A field that is pinned when the struct is.
         pub structural_field: i32,
+
         /// A field that is never pinned.
         pub unpinned_field: i32,
     }
@@ -135,6 +148,7 @@ pub mod structural_pinning {
         // Structural Pinning: Pinning is "structural" for this field, meaning
         // that if the struct is pinned, then so is the field.
         // It allows writing a projection that creates a `Pin<&mut Field>`.
+
         /// Returns a pinned mutable reference to `structural_field`.
         pub fn structural_field(self: Pin<&mut Self>) -> Pin<&mut i32> {
             // SAFETY: This is okay because `structural_field` is pinned when
@@ -146,6 +160,7 @@ pub mod structural_pinning {
         // `Pin<&mut Field>`, so we don't need to be careful about other
         // code moving out of that field. It provides a projection
         // method that turns `Pin<&mut Struct>` into `&mut Field`.
+
         /// Returns a mutable reference to `unpinned_field`.
         pub fn unpinned_field(self: Pin<&mut Self>) -> &mut i32 {
             // SAFETY: This is okay because `unpinned_field` is never considered
@@ -155,7 +170,7 @@ pub mod structural_pinning {
         }
     }
 }
-/// Runs the example.
+
 /// Creates a pinned self-referential struct and checks its pointer.
 fn main() {
     use std::pin::Pin;
@@ -200,8 +215,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates a pinned self-referential struct and checks its pointer.
 pub fn run() {
     main();
 }

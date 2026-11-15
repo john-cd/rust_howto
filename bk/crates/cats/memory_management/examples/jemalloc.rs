@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates using a custom global allocator.
 //!
 //! Add to your `Cargo.toml`:
@@ -18,6 +19,7 @@ mod example {
 
     // Once you've defined the following static, jemalloc will be used for all
     // allocations requested by Rust code in the same program.
+
     /// The global allocator, which handles all allocations requested by Rust
     /// code.
     #[global_allocator]
@@ -71,6 +73,7 @@ fn example() -> anyhow::Result<()> {
 /// Runs the example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example()

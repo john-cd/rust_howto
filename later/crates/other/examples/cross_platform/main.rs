@@ -6,12 +6,13 @@ use anyhow::Result;
 use clap::Parser;
 use clap::Subcommand;
 
-/// # Crux Core Example
+/// Implements the platform-independent counter core with Crux Core.
 mod crux;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -20,6 +21,7 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `crux` example.
     #[command(name = "crux")]
     Crux,
@@ -29,6 +31,7 @@ enum Commands {
 fn main() -> Result<()> {
     dispatch(Cli::parse())
 }
+
 /// Runs the example selected in the parsed command line.
 fn dispatch(cli: Cli) -> Result<()> {
     if let Some(command) = cli.command {

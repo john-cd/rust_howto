@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calling Rust from Node.js with `napi`.
 //!
 //! N-API is Node.js's stable interface for native add-ons. The `napi` crate
@@ -24,13 +25,16 @@ use napi_derive::napi;
 pub fn sum(a: i32, b: i32) -> i32 {
     a + b
 }
+
 /// Two-dimensional point represented by horizontal and vertical coordinates.
 /// Represents a point passed between JavaScript and Rust.
 #[derive(Debug, PartialEq)]
 #[cfg_attr(feature = "node", napi(object))]
 pub struct Point {
+
     /// Horizontal coordinate.
     pub x: f64,
+
     /// Vertical coordinate.
     pub y: f64,
 }
@@ -47,6 +51,7 @@ pub fn translate_point(point: Point, offset_x: f64, offset_y: f64) -> Point {
 /// Returns a greeting for `name` as a JavaScript string.
 ///
 /// # Arguments
+///
 /// * `name` - Human-readable value used to identify or display the selected napi.
 #[cfg_attr(feature = "node", napi)]
 pub fn hello(name: String) -> String {
@@ -56,18 +61,19 @@ pub fn hello(name: String) -> String {
 /// Returns an asynchronous greeting that becomes a JavaScript Promise.
 ///
 /// # Arguments
+///
 /// * `name` - Human-readable value used to identify or display the selected napi.
 #[cfg_attr(feature = "node", napi)]
 pub async fn greet_async(name: String) -> String {
     hello(name)
 }
+
 /// Exercises the pure function before it is wrapped in a generated addon.
 fn main() {
     println!("{} + {} = {}", 2, 3, sum(2, 3));
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the pure Rust N-API example without loading a Node runtime.
 pub fn run() {
     main();

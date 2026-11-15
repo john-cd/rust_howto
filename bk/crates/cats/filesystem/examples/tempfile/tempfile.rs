@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Creating temporary files and directories with `tempfile`.
 //!
 //! Temporary files are for scratch data. The `tempfile` crate creates them with
@@ -114,9 +115,10 @@ fn main() -> std::io::Result<()> {
 // Examples adapted from <https://docs.rs/tempfile>.
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Creates temporary files and directories.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> std::io::Result<()> {
     main()

@@ -7,6 +7,7 @@ use axum::extract::State;
 
 #[derive(Clone)]
 struct AppState {
+
     /// Greeting returned by the server.
     greeting: &'static str,
 }
@@ -15,5 +16,6 @@ struct AppState {
 async fn bad(body: String, State(state): State<AppState>) -> String {
     format!("{body}{}", state.greeting)
 }
+
 /// Provides the entry point required by this compile-fail fixture.
 fn main() {}

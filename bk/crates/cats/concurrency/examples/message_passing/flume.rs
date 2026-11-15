@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Channels from the `flume` crate: bounded and unbounded, sync and async, and
 //! `select`.
 //!
@@ -24,11 +25,13 @@ use flume::unbounded;
 // - Asynchronous support, including mix and match with sync code.
 // - `select`-like interface.
 // - No `unsafe` code.
+
 /// Sends messages through a bounded `flume` channel and selects between
 ///
 /// channels.
 ///
 /// # Panics
+///
 /// Panics if receiver remains alive.
 fn main() {
     // A bounded channel applies back-pressure when its two slots are full.
@@ -52,6 +55,7 @@ fn main() {
 /// Selects between two ready channels and returns both received values.
 ///
 /// # Panics
+///
 /// Panics if receiver remains alive.
 fn select() -> (bool, i32) {
     let (tx0, rx0) = unbounded();
@@ -86,8 +90,7 @@ fn select() -> (bool, i32) {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Sends messages through a bounded `flume` channel and selects between
 pub fn run() {
     main();
 }

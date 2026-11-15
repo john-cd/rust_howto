@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Draw shapes into an in-memory image with `skia-safe` (CPU raster, no GPU or
 //! window) and encode it as PNG.
 //!
@@ -23,6 +24,7 @@ const SIZE: i32 = 256;
 /// Draws a filled circle and a stroked triangle on a white background.
 ///
 /// # Errors
+///
 /// Returns an error if Skia cannot allocate the surface.
 fn draw() -> anyhow::Result<Surface> {
     // A raster surface renders on the CPU into its own pixel buffer.
@@ -54,6 +56,7 @@ fn draw() -> anyhow::Result<Surface> {
 /// Draws the image and returns it encoded as PNG bytes.
 ///
 /// # Errors
+///
 /// Returns an error if the surface cannot be created or encoded.
 fn render_png() -> anyhow::Result<Vec<u8>> {
     let mut surface = draw()?;
@@ -80,6 +83,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the Skia Safe renderer example.
 ///
 /// # Errors
+///
 /// Returns an error if rendering fails.
 pub fn run() -> anyhow::Result<()> {
     main()

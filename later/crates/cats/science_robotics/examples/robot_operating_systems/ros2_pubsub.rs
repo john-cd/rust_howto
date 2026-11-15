@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Publish and receive `std_msgs/String` messages with a ROS 2 node.
 //!
 //! ROS 2 (Robot Operating System) is a middleware: it lets the separate
@@ -26,7 +27,9 @@ use r2r::QosProfile;
 use r2r::std_msgs::msg::String as StringMessage;
 
 /// Publishes five greetings and waits for the local subscriber to receive each.
+///
 /// # Errors
+///
 /// Returns initialization or communication failures, a closed subscription, or
 /// a timeout if a greeting is not received within ten seconds.
 fn main() -> Result<()> {
@@ -76,6 +79,7 @@ fn main() -> Result<()> {
 /// Publish and receive `std_msgs/String` messages with a ROS 2 node.
 ///
 /// # Errors
+///
 /// Returns ROS initialization, communication, or receive timeout failures.
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
@@ -84,6 +88,7 @@ pub fn run() -> Result<()> {
 
 #[cfg(test)]
 mod tests {
+
     /// Runs the example only when an operator supplies a ROS 2 environment.
     #[test]
     #[ignore = "needs a ROS 2 environment"]

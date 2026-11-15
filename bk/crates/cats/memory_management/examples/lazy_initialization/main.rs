@@ -7,22 +7,29 @@ use clap::Subcommand;
 
 /// Lazily initializes a single-threaded value with `std::cell::LazyCell`.
 mod lazy_cell;
+
 /// Demonstrates a lazily initialized global map with `std::sync::LazyLock`.
 mod lazy_constant;
+
 /// Lazily initializes shared global data with `std::sync::LazyLock`.
 mod lazy_lock;
+
 /// `lazy_static` defines statically initialized values that are computed lazily at runtime.
 mod lazy_static;
+
 /// Lazy initialization of a value with `OnceCell`.
 mod once_cell;
+
 /// Lazily initializes a shared value with the `once_cell` crate.
 mod once_cell2;
+
 /// Initializes a shared value once with `std::sync::OnceLock`.
 mod once_lock;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -31,24 +38,31 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `lazy_cell` example.
     #[command(name = "lazy_cell")]
     LazyCell,
+
     /// Runs the `lazy_lock` example.
     #[command(name = "lazy_lock")]
     LazyLock,
+
     /// Runs the `lazy_constant` example.
     #[command(name = "lazy_constant")]
     LazyConstant,
+
     /// Runs the `lazy_static` example.
     #[command(name = "lazy_static")]
     LazyStatic,
+
     /// Runs the `once_cell` example.
     #[command(name = "once_cell")]
     OnceCell,
+
     /// Runs the `once_cell2` example.
     #[command(name = "once_cell2")]
     OnceCell2,
+
     /// Runs the `once_lock` example.
     #[command(name = "once_lock")]
     OnceLock,

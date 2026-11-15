@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Lazily initializes shared global data with `std::sync::LazyLock`.
 //!
 //! A global value shared by many threads must be initialized exactly once, even
@@ -13,15 +14,14 @@ use std::sync::LazyLock;
 /// A process-wide map initialized on its first access.
 static CONFIG: LazyLock<HashMap<&str, &str>> =
     LazyLock::new(|| HashMap::from([("host", "localhost"), ("port", "8080")]));
-/// Runs the example.
+
 /// Reads a value from the lazily initialized global map.
 fn main() {
     assert_eq!(CONFIG.get("host"), Some(&"localhost"));
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Reads a value from the lazily initialized global map.
 pub fn run() {
     main();
 }

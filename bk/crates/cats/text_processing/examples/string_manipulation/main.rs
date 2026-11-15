@@ -7,18 +7,23 @@ use clap::Subcommand;
 
 /// Converts words to common naming conventions and uppercases a Unicode
 mod case_conversion;
+
 /// This example demonstrates how to use the `heck` crate to convert strings
 mod heck;
+
 /// Removing the common indentation of multi-line strings with `indoc`.
 mod indoc;
+
 /// Turn a title into a URL-friendly slug.
 mod slug;
+
 /// Wrapping, filling and indenting text with `textwrap`.
 mod textwrap;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,18 +32,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the Unicode-aware case conversion example.
     #[command(name = "case-conversion")]
     CaseConversion,
+
     /// Runs the `heck` example.
     #[command(name = "heck")]
     Heck,
+
     /// Runs the `indoc` example.
     #[command(name = "indoc")]
     Indoc,
+
     /// Runs the `slug` example.
     #[command(name = "slug")]
     Slug,
+
     /// Runs the `textwrap` example.
     #[command(name = "textwrap")]
     Textwrap,

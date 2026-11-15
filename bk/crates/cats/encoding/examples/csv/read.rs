@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example shows how to read a CSV file.
 //!
 //! CSV (comma-separated values) is a plain-text table format, with one record
@@ -15,6 +16,7 @@ fn read_records(data: &str) -> Result<Vec<csv::StringRecord>, Error> {
         .records()
         .collect()
 }
+
 /// Reads CSV records and prints their fields.
 fn main() -> Result<(), Error> {
     let data = "year,make,model,description
@@ -31,9 +33,10 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Reads CSV records and prints their fields.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()

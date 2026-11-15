@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Creating a window with `winit`.
 //!
 //! A window is how a program receives input and shows pixels. `winit` creates
@@ -18,6 +19,7 @@ use winit::window::WindowId;
 /// Application state for the example window.
 #[derive(Default)]
 struct App {
+
     /// The window created after the event loop resumes.
     window: Option<Window>,
 }
@@ -54,6 +56,7 @@ impl ApplicationHandler for App {
 fn should_exit(event: &WindowEvent) -> bool {
     matches!(event, WindowEvent::CloseRequested)
 }
+
 /// Creates the event loop and runs the application.
 fn main() -> anyhow::Result<()> {
     let event_loop = EventLoop::new()?;
@@ -66,6 +69,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the window example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -82,6 +86,7 @@ mod tests {
     fn test_winit_example_entry_point() {
         main().expect("the Winit example should run successfully");
     }
+
     /// Closes requested asks the application to exit.
     #[test]
     fn close_requested_asks_the_application_to_exit() {

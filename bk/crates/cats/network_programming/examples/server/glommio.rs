@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example serves a small HTTP response with Glommio's Linux `io_uring`
 //! runtime.
 //!
@@ -89,6 +90,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the Glommio HTTP server.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Configuring `env_logger` with an environment variable.
 //!
 //! `env_logger` reads the `RUST_LOG` environment variable to choose log levels,
@@ -24,6 +25,7 @@ fn main() {
 
 /// Initializes the logger for the application.
 //#[cfg(not(test))]
+
 /// This function configures the logger to filter log messages based on
 /// environment variables. It first sets the default log level to `Off`,
 /// meaning no logs will be displayed by default. Then, it attempts to
@@ -57,8 +59,7 @@ fn init_logger() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Initializes the logger and emits a message at each level.
 pub fn run() {
     main();
 }

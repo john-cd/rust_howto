@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Lazily initializes a shared value with the `once_cell` crate.
 //!
 //! The `once_cell` crate pioneered lazy values that the standard library later
@@ -30,8 +31,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the lazily initialized global data.
 pub fn run() {
     main();
 }

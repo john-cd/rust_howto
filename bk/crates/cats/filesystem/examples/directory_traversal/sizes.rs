@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calculates the total size of all files within a directory tree
 //! (within a given depth).
 //!
@@ -45,9 +46,10 @@ fn total_size(root: &Path) -> Result<u64> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Calculates the total size of all files within a directory tree (within a given depth).
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

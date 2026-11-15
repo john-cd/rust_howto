@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `allow` attributes suppress specific warnings.
 //!
 //! These attributes are typically used during early development to temporarily
@@ -18,16 +19,19 @@
 use std::thread;
 
 // This struct is public but is not documented:
+
 /// Public unit struct used in the early-development attribute example.
 pub struct S;
 
 /// This function is defined but never called.
 fn dead_code() {}
+
 /// The return value of this function should be used.
 #[must_use]
 fn required() -> u32 {
     42
 }
+
 /// Defines variables that are not used, to show the effect of lint attributes.
 fn main() {
     dead_code();
@@ -43,8 +47,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Defines variables that are not used, to show the effect of lint attributes.
 pub fn run() {
     main();
 }

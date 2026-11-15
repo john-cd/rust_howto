@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Checks HTTP links from an HTML page against their resolved URLs.
 mod broken;
+
 /// Extracts anchor links from an HTML document with CSS selectors.
 mod extract_links;
+
 /// This example demonstrates how to extract unique links from a Wikipedia page.
 mod unique;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `broken` example.
     #[command(name = "broken")]
     Broken,
+
     /// Runs the `extract_links` example.
     #[command(name = "extract_links")]
     ExtractLinks,
+
     /// Runs the `unique` example.
     #[command(name = "unique")]
     Unique,
