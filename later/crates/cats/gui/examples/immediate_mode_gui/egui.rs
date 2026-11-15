@@ -20,8 +20,8 @@ fn main() -> Result<(), eframe::Error> {
         Box::new(|_cc| Ok(Box::new(MyApp::default()))),
     )
 }
-
 /// An app with a counter.
+
 #[derive(Default)]
 struct MyApp {
     /// The number of clicks on the button.
@@ -58,14 +58,18 @@ impl eframe::App for MyApp {
     }
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() -> Result<(), eframe::Error> {
     main()
 }
 
 // eframe's native runner is deliberately covered by the ignored window test.
-
 /// Builds pointer input for the headless UI test.
+
 #[cfg(test)]
 fn raw_input(events: Vec<egui::Event>) -> egui::RawInput {
     egui::RawInput {
@@ -78,6 +82,7 @@ fn raw_input(events: Vec<egui::Event>) -> egui::RawInput {
     }
 }
 
+/// Verifies the counter button responds to a simulated headless click.
 #[cfg(test)]
 mod tests {
     use super::*;

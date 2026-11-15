@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Examples for working with `.env` files using `dotenvy`.
 mod dotenvy;
+/// Examples for working with standard environment variables.
 mod env;
+/// Examples for working with `.env` files and `envy`.
 mod envy;
 
 /// Command-line arguments.
@@ -64,7 +67,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["dotenvy", "env", "envy"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

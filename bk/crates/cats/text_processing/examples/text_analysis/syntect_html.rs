@@ -19,11 +19,16 @@ use syntect::util::LinesWithEndings;
 use syntect::util::as_24_bit_terminal_escaped;
 
 // Loading the bundled grammars and themes is slow: do it once.
+/// Shared `syntaxes` used by this module.
 static SYNTAXES: LazyLock<SyntaxSet> = LazyLock::new(SyntaxSet::load_defaults_newlines);
+/// Shared `themes` used by this module.
 static THEMES: LazyLock<ThemeSet> = LazyLock::new(ThemeSet::load_defaults);
 
+/// Shared `theme` used by this module.
 const THEME: &str = "base16-ocean.dark";
 
+/// # Errors
+/// An error is returned if find_syntax_by_extension, get fails.
 fn main() -> anyhow::Result<()> {
     let code = "fn main() {\n    println!(\"hello\");\n}\n";
 
@@ -54,6 +59,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

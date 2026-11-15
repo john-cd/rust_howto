@@ -29,8 +29,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -38,11 +39,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `borrow` example runs.
 
     #[test]
     fn test_borrow_example_entry_point() {
         main();
     }
+    /// Verifies lookup with borrowed key.
 
     #[test]
     fn test_lookup_with_borrowed_key() {

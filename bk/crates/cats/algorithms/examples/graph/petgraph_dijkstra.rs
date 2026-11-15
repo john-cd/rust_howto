@@ -78,8 +78,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the `petgraph` Dijkstra example by calling `main()`.
+
 pub fn run() {
     main();
 }
@@ -87,6 +88,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `petgraph dijkstra` example runs.
 
     #[test]
     fn test_petgraph_dijkstra_example_entry_point() {

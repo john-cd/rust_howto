@@ -24,6 +24,9 @@ use argon2::password_hash::PasswordVerifier;
 use argon2::password_hash::phc::PasswordHash;
 
 /// Hashes `password` with a random salt. The result is a self-describing PHC
+///
+/// # Arguments
+/// * `password` - Password to verify.
 /// string (algorithm, parameters, salt and hash) that is safe to store.
 pub fn hash(password: &str) -> anyhow::Result<String> {
     let hash = Argon2::default()
@@ -31,9 +34,12 @@ pub fn hash(password: &str) -> anyhow::Result<String> {
         .map_err(|e| anyhow::anyhow!("hashing failed: {e}"))?;
     Ok(hash.to_string())
 }
-
 /// Verifies `password` against a stored PHC string. The comparison is done by
+
 /// the library in constant time.
+
+/// # Returns
+/// `true` when the condition described above holds, and `false` otherwise.
 pub fn verify(password: &str, stored: &str) -> bool {
     let Ok(parsed) = PasswordHash::new(stored) else {
         return false;
@@ -45,12 +51,16 @@ pub fn verify(password: &str, stored: &str) -> bool {
 
 /// The one-line alternative: the `password-auth` crate wraps Argon2 with safe
 /// defaults.
+///
+/// # Arguments
+/// * `password` - Credential checked against the account record before a session is issued.
+
 pub fn hash_with_password_auth(password: &str) -> String {
     password_auth::generate_hash(password)
 }
 // ANCHOR_END: example
-
 /// Hashes and verifies a sample password.
+
 fn main() -> anyhow::Result<()> {
     let password = "correct horse battery staple";
     let stored_hash = hash(password)?;
@@ -64,15 +74,20 @@ fn main() -> anyhow::Result<()> {
 }
 
 /// Runs the hashing example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// An error is returned if hash_and_verify fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    #[test]
+    /// # Errors
+    /// An error is returned if hash_and_verify fails.
     fn hash_and_verify() -> anyhow::Result<()> {
         let stored = hash("correct horse")?;
         assert!(stored.starts_with("$argon2id$"));
@@ -87,6 +102,7 @@ mod tests {
         let stored = hash_with_password_auth("pw");
         assert!(password_auth::verify_password("pw", &stored).is_ok());
     }
+    /// Verifies that the `hashing` example runs.
 
     #[test]
     fn test_hashing_example_entry_point() -> anyhow::Result<()> {

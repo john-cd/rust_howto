@@ -8,6 +8,7 @@
 //! electronics and graphics.
 
 /// Creates complex numbers with integer and floating-point components.
+
 fn main() {
     // Create a complex number with integer components.
     let complex_integer = num::complex::Complex::new(10, 20);
@@ -20,12 +21,14 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Verifies that the construction example runs without panicking.
 #[cfg(test)]
 mod tests {
     use super::*;

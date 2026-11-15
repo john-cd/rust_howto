@@ -2,12 +2,15 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Exports a simple Rust function to JavaScript when built for the browser
 mod wasm;
+/// Runs the example.
 
 fn main() {
     wasm::run();
 }
 
+/// Verifies that the host-side part of the WebAssembly development example.
 #[cfg(test)]
 mod tests {
     use super::*;

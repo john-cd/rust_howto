@@ -64,6 +64,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the syntax-classification example without contacting a database.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -71,6 +74,7 @@ pub fn run() -> anyhow::Result<()> {
     entry()
 }
 
+/// Rejects invalid syntax, non-query statements, and multiple statements.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -80,8 +84,8 @@ mod tests {
     fn test_sql_readonly_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Shows that query classification alone cannot prove read-only behavior.
+
     #[test]
     fn accepts_query_syntax_with_a_side_effecting_function() {
         assert_eq!(

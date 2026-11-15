@@ -29,6 +29,11 @@ pub fn app() -> Router {
 }
 // ANCHOR_END: example
 
+/// Builds the router with the typed-header extractor.
+pub fn run() -> Router {
+    app()
+}
+
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -39,6 +44,8 @@ mod tests {
 
     use super::*;
 
+    /// # Errors
+    /// An error is returned if app fails.
     async fn call(headers: &[(&str, &str)]) -> anyhow::Result<(StatusCode, String)> {
         let mut builder = Request::get("/whoami");
         for (k, v) in headers {
@@ -50,6 +57,8 @@ mod tests {
         Ok((status, String::from_utf8_lossy(&body).into_owned()))
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     #[tokio::test]
     async fn valid_headers() -> anyhow::Result<()> {
         let (status, body) = call(&[
@@ -62,6 +71,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     #[tokio::test]
     async fn missing_header() -> anyhow::Result<()> {
         let (status, _) = call(&[("user-agent", "tests/1.0")]).await?;
@@ -69,6 +80,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     #[tokio::test]
     async fn malformed_authorization() -> anyhow::Result<()> {
         let (status, _) =

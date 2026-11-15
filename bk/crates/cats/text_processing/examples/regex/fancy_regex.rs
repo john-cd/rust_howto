@@ -24,8 +24,8 @@ fn match_two_identical_words(s: &str) {
         Err(err) => eprintln!("Regex error: {err}"),
     }
 }
-
 /// Extracts capture groups from a text.
+
 fn capture_groups() {
     let text = "Lorem ipsum dolor sit amet";
 
@@ -55,8 +55,8 @@ fn capture_groups() {
         Err(err) => eprintln!("Regex error: {err}"),
     }
 }
-
 /// Splits a text on runs of whitespace.
+
 fn split_text() {
     let re = Regex::new(r"[ \t]+").expect("regular expression should be valid");
     let target = "Lorem ipsum\t dolor sit amet";
@@ -66,8 +66,9 @@ fn split_text() {
         .collect();
     assert_eq!(fields, vec!["Lorem", "ipsum", "dolor", "sit", "amet"]);
 }
-
+/// Runs the example.
 /// Runs each of the examples.
+
 fn main() {
     match_two_identical_words("foo foo");
     capture_groups();
@@ -75,8 +76,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

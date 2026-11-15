@@ -80,7 +80,6 @@ fn consume_with_priority(priority: ThreadPriority) -> Result<Report> {
 /// Requests the maximum priority and prints whether it was granted.
 ///
 /// # Errors
-///
 /// Returns an error if the consumer thread cannot be spawned or panics.
 fn main() -> Result<()> {
     let report = consume_with_priority(ThreadPriority::Max)?;
@@ -101,11 +100,9 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the thread priority example.
-///
+
 /// # Errors
-///
 /// Returns an error if the consumer thread cannot be spawned or panics.
 pub fn run() -> Result<()> {
     main()
@@ -120,8 +117,8 @@ mod tests {
     fn test_thread_priority_example_entry_point() -> Result<()> {
         main()
     }
-
     /// Delivers every sample in order, whether or not the priority is granted.
+
     #[test]
     fn consumer_receives_all_samples_in_order() -> Result<()> {
         let report = consume_with_priority(ThreadPriority::Min)?;

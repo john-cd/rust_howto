@@ -12,14 +12,20 @@ use chrono::Duration;
 use chrono::TimeDelta;
 use chrono::TimeZone as _;
 use chrono::Utc;
-
 /// Returns the date and time one day earlier than the given date and time, or
+
 /// None if the operation would overflow.
+
+/// # Returns
+/// `Some` when the requested value is available; otherwise returns `None`.
+///
+/// # Panics
+/// Panics if one day fits in a chrono duration.
 fn day_earlier(date_time: DateTime<Utc>) -> Option<DateTime<Utc>> {
     date_time.checked_sub_signed(Duration::try_days(1).expect("one day fits in a chrono duration"))
 }
-
 /// Demonstrates checked arithmetic with `DateTime` and `Duration`.
+
 fn main() {
     let now = Utc
         .with_ymd_and_hms(2025, 1, 15, 12, 0, 0)
@@ -49,8 +55,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -2,9 +2,13 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Probe and decode audio formats to linear PCM samples using `symphonia`.
 mod audio_decode;
+/// Encode a blank AV1 frame using the `rav1e` crate.
 mod encoding;
+/// Inspect MP4 container metadata including tracks and duration using `mp4`.
 mod mp4_metadata;
+/// Encode PCM audio samples to a WAV buffer using `hound`.
 mod wav_encode;
 
 /// Runs all encoding examples.
@@ -16,11 +20,11 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     Ok(())
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     fn test_main_entry_point() {

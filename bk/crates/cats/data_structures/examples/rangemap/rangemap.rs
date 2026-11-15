@@ -8,8 +8,9 @@
 //! split automatically.
 
 use rangemap::RangeMap;
-
+/// Runs the example.
 /// Maps two ranges to values and looks up keys.
+
 fn main() {
     let mut rm = RangeMap::new();
 
@@ -21,8 +22,9 @@ fn main() {
     assert_eq!(rm.get(&100), None);
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

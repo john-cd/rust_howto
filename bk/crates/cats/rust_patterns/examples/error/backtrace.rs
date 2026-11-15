@@ -40,6 +40,7 @@ impl Rgb {
 // The `UpperHex` trait is used to format the `Rgb` struct as a hexadecimal
 // string.
 impl fmt::UpperHex for Rgb {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         let hexa =
             (u32::from(self.red) << 16) | (u32::from(self.blue) << 8) | u32::from(self.green);
@@ -61,10 +62,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies that invalid CSV data returns an error from the example.
 #[cfg(test)]
 mod tests {
     use super::*;

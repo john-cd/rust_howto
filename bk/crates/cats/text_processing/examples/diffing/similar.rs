@@ -72,12 +72,14 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Verifies that the diff example runs.
 #[cfg(test)]
 mod tests {
     use super::*;

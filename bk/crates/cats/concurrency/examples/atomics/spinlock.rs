@@ -28,6 +28,9 @@ pub struct Spinlock<T> {
 
 impl<T> Spinlock<T> {
     /// Creates a new spinlock wrapping the given data.
+    ///
+    /// # Arguments
+    /// * `data` - Data to process.
     pub const fn new(data: T) -> Self {
         Self {
             locked: AtomicBool::new(false), // Start unlocked.
@@ -162,8 +165,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -182,11 +186,10 @@ mod tests {
 
     /// Requires a type to implement `Send` at compile time.
     fn assert_send<T: Send>() {}
-
     /// Requires a type to implement `Sync` at compile time.
+
     fn assert_sync<T: Sync>() {}
 
-    /// Checks that the guard is shareable only when its payload is `Sync`.
     #[test]
     fn guard_auto_traits_follow_payload_bounds() {
         assert_send::<SpinlockGuard<'static, Cell<u8>>>();
@@ -194,7 +197,6 @@ mod tests {
         assert_sync::<SpinlockGuard<'static, u8>>();
     }
 
-    /// Verifies unwinding drops the guard and releases the lock.
     #[test]
     fn guard_unlocks_during_unwind() {
         let lock = Spinlock::new(0);

@@ -10,8 +10,8 @@
 use std::time::Duration;
 
 use smol::Timer;
-
 /// Runs several asynchronous tasks on the `smol` runtime and waits for their
+
 /// results.
 fn main() {
     // Run the async block on the smol runtime.
@@ -36,6 +36,11 @@ fn main() {
     });
 }
 // ANCHOR_END: example
+
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
 
 #[cfg(test)]
 mod tests {

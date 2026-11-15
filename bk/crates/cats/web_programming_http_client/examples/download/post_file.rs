@@ -36,7 +36,6 @@ async fn post_file(path: impl AsRef<Path>, endpoint: &str) -> Result<String> {
 /// Uploads the sample file to httpbin and prints its response.
 ///
 /// # Errors
-///
 /// Returns any file, request, HTTP status, or response body error from
 /// `post_file`.
 #[tokio::main]
@@ -47,16 +46,15 @@ async fn main() -> Result<()> {
 }
 
 // ANCHOR_END: example
-
 /// Runs the file upload example.
-///
+
 /// # Errors
-///
 /// Returns any error from the example's asynchronous entry point.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies that the server receives the file bytes and returns success.
 #[cfg(test)]
 mod tests {
     use std::io;
@@ -73,8 +71,8 @@ mod tests {
     use reqwest::StatusCode;
 
     use super::post_file;
+    /// Starts server.
 
-    /// Starts one local HTTP server response and captures the request bytes.
     fn start_server(
         response: &'static [u8],
     ) -> Result<(SocketAddr, JoinHandle<io::Result<Vec<u8>>>)> {
@@ -98,9 +96,10 @@ mod tests {
             .map_err(|_| anyhow::anyhow!("HTTP test server panicked"))?
             .context("HTTP test server failed")
     }
-
-    /// Reads one complete HTTP request, including a length-delimited or chunked
-    /// body.
+    /// Reads an HTTP request from `stream` through its declared body length.
+    ///
+    /// # Errors
+    /// Returns an I/O error if reading fails or a header or body length is invalid.
     fn read_request(stream: &mut TcpStream) -> io::Result<Vec<u8>> {
         let mut request = Vec::new();
         let mut buffer = [0; 1024];

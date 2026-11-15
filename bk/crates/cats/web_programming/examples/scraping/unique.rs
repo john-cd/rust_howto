@@ -12,21 +12,24 @@ use std::collections::HashSet;
 use anyhow::Result;
 use lazy_static::lazy_static;
 use regex::Regex;
-
 /// Returns the unique internal and external links found in the wiki markup
+
 /// `content`.
+
+/// # Panics
+/// Panics if the fixed MediaWiki link regex is valid.
 fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
     lazy_static! {
-    /// Matches Wikipedia article URLs in scraped text.
-            static ref WIKI_REGEX: Regex = Regex::new(
-                r"(?x)
+        static ref WIKI_REGEX: Regex = Regex::new(
+            r"(?x)
+        /// Matches Wikipedia article URLs in scraped text.
                 \[\[(?P<internal>[^\[\]|]*)[^\[\]]*\]\]    # internal links
                 |
                 (url=|URL\||\[)(?P<external>http.*?)[\x20|}] # external links
             "
-            )
-            .expect("the fixed MediaWiki link regex is valid");
-        }
+        )
+        .expect("the fixed MediaWiki link regex is valid");
+    }
 
     let links: HashSet<_> = WIKI_REGEX
         .captures_iter(content)
@@ -59,10 +62,14 @@ async fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies MediaWiki links are deduplicated and internal links normalized.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -73,23 +73,24 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// entries.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies concurrent inserts and atomic updates leave the expected
     /// entries.
-    /// Runs the papaya example through its entry point.
     #[test]
     fn test_papaya_example_entry_point() {
         main().expect("papaya recipe should pass its assertions");
     }
 
-    /// Verifies that atomic updates on a missing key insert the default value.
     #[test]
     fn atomic_update_or_insert_sets_default_for_new_key() {
         let map = HashMap::new();
@@ -99,7 +100,6 @@ mod tests {
         assert_eq!(map.pin().get(&'@'), Some(&2));
     }
 
-    /// Verifies that updating an existing key increments its value.
     #[test]
     fn atomic_update_increments_existing_entry() {
         let map = HashMap::new();
@@ -109,7 +109,6 @@ mod tests {
         assert_eq!(m.get(&'!'), Some(&15));
     }
 
-    /// Verifies that populating concurrent ranges inserts all 52 letters.
     #[test]
     fn populate_concurrent_ranges_inserts_all_expected_keys() {
         let map = HashMap::new();
@@ -124,7 +123,6 @@ mod tests {
         }
     }
 
-    /// Verifies that an empty papaya map reports zero length and empty iterator.
     #[test]
     fn empty_map_has_zero_entries() {
         let map = HashMap::<char, i32>::new();

@@ -15,18 +15,23 @@ use axum::routing::get;
 /// Shared state.
 #[derive(Clone)]
 struct AppState {
+    /// Greeting returned by the server.
     greeting: &'static str,
 }
 
 /// A correct handler. Try changing `State<AppState>` to an argument that is
 /// not an extractor, or putting `State` *before* a body extractor such as
 /// `String`: the error message names the argument.
+///
+/// # Arguments
+/// * `state` - Application state containing the repositories and services needed by this workflow.
+
 #[debug_handler]
 async fn greet(State(state): State<AppState>) -> String {
     state.greeting.to_owned()
 }
-
 /// Builds the router.
+
 pub fn app() -> Router {
     Router::new()
         .route("/", get(greet))
@@ -34,6 +39,12 @@ pub fn app() -> Router {
 }
 // ANCHOR_END: example
 
+/// Builds the router with the annotated handler.
+pub fn run() -> Router {
+    app()
+}
+
+/// An error is returned if greets fails.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -43,7 +54,8 @@ mod tests {
 
     use super::*;
 
-    #[tokio::test]
+    /// # Errors
+    /// An error is returned if greets fails.
     async fn greets() -> anyhow::Result<()> {
         let response = app()
             .oneshot(Request::get("/").body(Body::empty())?)

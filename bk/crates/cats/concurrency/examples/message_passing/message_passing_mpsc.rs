@@ -9,6 +9,7 @@
 use std::sync::mpsc;
 use std::thread;
 /// Sends messages from several producer threads to a single consumer through an
+/// Runs the example.
 /// `mpsc` channel.
 fn main() {
     let (tx, rx) = mpsc::channel();
@@ -41,8 +42,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

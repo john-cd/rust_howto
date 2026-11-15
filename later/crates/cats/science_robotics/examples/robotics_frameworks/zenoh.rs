@@ -1,8 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-// Enabled by the `zenoh` Cargo feature. The workspace pins Zenoh's transport
-// to the upstream fix for `lz4_flex`.
-
 // ANCHOR: example
 //! Publishes and receives several local telemetry values with `zenoh`.
 //!
@@ -12,18 +9,20 @@
 //! needed. It also supports queries, so one program can ask another for the
 //! latest value.
 
+// to the upstream fix for `lz4_flex`.
+
 use std::time::Duration;
 
 use anyhow::Result;
 use zenoh::Config;
 
+/// Shared `key expr` used by this module.
 const KEY_EXPR: &str = "science/robotics/telemetry";
+/// Shared `telemetry` used by this module.
 const TELEMETRY: [&str; 3] = ["temperature=21.5", "temperature=21.7", "temperature=21.9"];
-
 /// Opens a Zenoh session and prints the received telemetry values.
-///
+
 /// # Errors
-///
 /// Returns an error if the session cannot open or any telemetry message fails.
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -37,8 +36,10 @@ async fn main() -> Result<()> {
 /// Publishes telemetry and collects each matching sample from one session.
 ///
 /// # Errors
-///
 /// Returns an error if Zenoh setup, publication, reception, or cleanup fails.
+///
+/// # Arguments
+/// * `config` - Settings that control the behavior and limits of this zenoh workflow.
 async fn publish_and_receive(config: Config) -> Result<Vec<String>> {
     let session = zenoh::open(config).await.map_err(zenoh_error)?;
     let subscriber = session
@@ -77,10 +78,10 @@ async fn publish_and_receive(config: Config) -> Result<Vec<String>> {
 }
 
 /// Returns a configuration that keeps the session on this machine: no
+///
 /// multicast scouting, and a listener on the IPv4 loopback address only.
 ///
 /// # Errors
-///
 /// Returns an error if a configuration key is rejected.
 fn local_config() -> Result<Config> {
     let mut config = Config::default();
@@ -100,10 +101,12 @@ fn zenoh_error(error: impl std::fmt::Display) -> anyhow::Error {
 // ANCHOR_END: example
 
 /// Runs the Zenoh pub/sub example.
+/// Publishes and receives several local telemetry values with `zenoh`.
 ///
 /// # Errors
 ///
 /// Returns an error if publishing or receiving telemetry fails.
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

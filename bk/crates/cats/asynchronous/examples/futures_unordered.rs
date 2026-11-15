@@ -11,13 +11,14 @@
 
 use futures::stream::FuturesUnordered;
 use futures::stream::StreamExt;
-
 /// Represents one independently completing task.
+
 async fn complete_task(name: &'static str) -> &'static str {
     name
 }
-
+/// Collects results.
 /// Runs three independent futures and collects each result as it completes.
+
 async fn collect_results() -> Vec<&'static str> {
     let mut tasks = FuturesUnordered::new();
     tasks.push(complete_task("database"));
@@ -30,21 +31,24 @@ async fn collect_results() -> Vec<&'static str> {
     }
     results
 }
-
+/// Runs example.
 /// Runs the futures collection example's behavior.
+
 fn run_example() {
     let results = futures_executor::block_on(collect_results());
     println!("Completed tasks: {results:?}");
 }
-
+/// Runs the example.
 /// Runs the futures collection example.
+
 fn main() {
     run_example();
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     run_example();
 }
@@ -53,7 +57,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies each submitted future is polled to completion.
     #[test]
     fn all_results_are_collected() {
         let mut results = futures_executor::block_on(collect_results());

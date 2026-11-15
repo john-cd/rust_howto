@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Runs GEOS spatial predicates and operations through the `geos` crate.
 //!
 //! GEOS is the C++ geometry engine behind PostGIS and QGIS. Spatial predicates
@@ -7,13 +8,15 @@
 //! another; operations build new shapes, such as buffers and unions. It needs
 //! the GEOS library installed.
 
-// ANCHOR: example
 #[cfg(feature = "geos")]
 use geos::Geom;
 #[cfg(feature = "geos")]
 use geos::Geometry;
 
 /// Parses two polygons from WKT, tests them and measures their overlap.
+
+/// # Errors
+/// An error is returned if main, new_from_wkt fails.
 #[cfg(feature = "geos")]
 fn main() -> geos::GResult<()> {
     let square = Geometry::new_from_wkt("POLYGON((0 0, 4 0, 4 4, 0 4, 0 0))")?;
@@ -47,11 +50,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 // ANCHOR_END: example
 
 /// Runs the example.
+/// Runs GEOS spatial predicates and operations through the `geos` crate.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()?;
     Ok(())
 }
 
+/// Verifies that GEOS spatial predicates and operations through the `geos` crate.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -2,20 +2,24 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Create and parse a PUS-C telecommand.
 mod pus_telecommand;
+/// Create and read a PUS-C connection-test telemetry packet.
 mod pus_telemetry;
+/// Build and parse CCSDS space packets and ECSS PUS packets.
 mod space_protocols;
-
+/// Runs the example.
 /// Runs the space protocols example.
+
 fn main() {
     space_protocols::run();
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     fn test_main_entry_point() {

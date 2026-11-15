@@ -2,18 +2,20 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// `autocfg` probes compiler support for use in Cargo build scripts.
 mod autocfg;
-
+/// Runs the example.
 /// Runs the autocfg example.
+
 fn main() {
     autocfg::run();
 }
 
+/// panic fails the test.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example; each module's `run()` asserts its own results, so a
     /// panic fails the test.
     #[test]
     fn test_main_runs() {

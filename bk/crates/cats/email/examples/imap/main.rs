@@ -2,15 +2,18 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Fetch unread messages over IMAP and parse them with [`mail_parser`].
 mod imap_fetch;
+/// Reject syntactically invalid and disposable addresses with [`mailchecker`].
 mod mailchecker;
+/// Runs the example.
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     run().await
 }
-
 /// Fetches unread mail from the configured IMAP server.
+
 async fn run() -> anyhow::Result<()> {
     mailchecker::run();
     imap_fetch::run().await

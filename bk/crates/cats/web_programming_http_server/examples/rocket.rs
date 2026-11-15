@@ -10,11 +10,14 @@
 fn hello() -> &'static str {
     "Hello, world!"
 }
+/// Assembles the rocket from its component values so callers receive a ready-to-use result.
 
 #[cfg(feature = "rocket-support")]
 fn build_rocket() -> rocket::Rocket<rocket::Build> {
     rocket::build().mount("/", rocket::routes![hello])
 }
+/// # Errors
+/// An error is returned if a fallible operation fails.
 
 #[cfg(feature = "rocket-support")]
 #[tokio::main]
@@ -22,12 +25,21 @@ async fn main() -> anyhow::Result<()> {
     build_rocket().launch().await?;
     Ok(())
 }
+/// Runs the example.
 
 #[cfg(not(feature = "rocket-support"))]
 fn main() {
     eprintln!("Enable the `rocket-support` feature to run this example.");
 }
 // ANCHOR_END: example
+
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
 
 /// Tests the route using Rocket's local client without opening a network port.
 #[cfg(all(test, feature = "rocket-support"))]
@@ -53,6 +65,7 @@ mod tests {
 }
 // Implement Rocket Hello World and route mounting
 
+/// Tests the `rocket` example and its documented behavior.
 #[cfg(test)]
 mod entry_point_tests {
     /// Verifies the no-feature entry point explains how to enable Rocket.

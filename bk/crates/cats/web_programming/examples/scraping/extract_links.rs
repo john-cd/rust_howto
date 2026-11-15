@@ -31,7 +31,6 @@ fn extract_links(html: &str) -> Result<Vec<String>> {
 /// Prints the links found on the Rust website.
 ///
 /// # Errors
-///
 /// Returns an error if the request fails, the server returns an unsuccessful
 /// status, or the selector cannot be parsed.
 #[tokio::main]
@@ -52,12 +51,12 @@ async fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// # Errors
-///
 /// Returns any request or HTML parsing error from the example.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies anchor links are selected while anchors without `href` are skipped.
 #[cfg(test)]
 mod tests {
     use anyhow::Result;

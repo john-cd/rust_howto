@@ -17,6 +17,7 @@ use smartcore::model_selection::train_test_split;
 use smartcore::tree::decision_tree_classifier::DecisionTreeClassifier;
 
 /// Creates two linearly separable classes with small, deterministic offsets.
+
 fn synthetic_classification_data() -> (Vec<Vec<f64>>, Vec<u32>) {
     let mut features = Vec::with_capacity(120);
     let mut labels = Vec::with_capacity(120);
@@ -31,11 +32,9 @@ fn synthetic_classification_data() -> (Vec<Vec<f64>>, Vec<u32>) {
 
     (features, labels)
 }
-
 /// Trains the classifier and returns its accuracy on a reproducible test split.
-///
+
 /// # Errors
-///
 /// Returns an error if SmartCore cannot build the feature matrix, fit the
 /// classifier, or predict the holdout labels.
 fn holdout_accuracy() -> Result<f64, Box<dyn Error>> {
@@ -62,10 +61,16 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 // ANCHOR_END: example
 
+/// # Panics
+/// Panics if the SmartCore classification example failed.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main().expect("the SmartCore classification example failed");
 }
 
+/// Verifies that the seeded holdout split yields accurate predictions.
 #[cfg(test)]
 mod tests {
     use super::*;

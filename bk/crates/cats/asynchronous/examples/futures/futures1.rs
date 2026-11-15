@@ -18,14 +18,14 @@ use futures::{
 async fn task_one() {
     // ...
 }
-
 /// Another example task.
+
 async fn task_two() {
     // ...
 }
 
-// Define an asynchronous function that races two tasks.
 /// Runs both tasks and reports which one completes first.
+// Define an asynchronous function that races two tasks.
 async fn race_tasks() {
     // Fuse the two tasks so that they can be used with `select!`.
     let t1 = task_one().fuse();
@@ -40,16 +40,18 @@ async fn race_tasks() {
         () = t2 => println!("task two completed first"),
     }
 }
-
+/// Runs the example.
 /// Runs the futures1 example.
+
 #[tokio::main]
 async fn main() {
     race_tasks().await;
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -38,6 +38,8 @@ struct PartialRangeIter {
 
 impl PartialRangeIter {
     /// Creates a range iterator for the inclusive interval from `start` to
+    ///
+    /// # Arguments
     /// `end`.
     ///
     /// An interval with `start > end` is empty.
@@ -147,7 +149,6 @@ fn download_to<W: Write>(url: &str, chunk_size: u32, output: &mut W) -> Result<(
 /// Downloads a sample file in chunks and writes it under `temp`.
 ///
 /// # Errors
-///
 /// Returns any directory, file, network, response, or write error.
 fn main() -> Result<()> {
     /// Maximum number of bytes requested in each download chunk.
@@ -163,16 +164,15 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the partial-download example.
-///
+
 /// # Errors
-///
 /// Returns any error from the example's file or HTTP operations.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies adjacent inclusive ranges, empty intervals, and the integer boundary.
 #[cfg(test)]
 mod tests {
     use std::io;
@@ -191,8 +191,17 @@ mod tests {
     use super::PartialRangeIter;
     use super::download_to;
 
-    /// Starts a local server that responds to one HEAD and the requested
-    /// ranges.
+    /// Starts a loopback server that serves the requested content and records requests.
+    ///
+    /// # Arguments
+    /// * `content` - Bytes returned for the requested ranges.
+    /// * `range_status` - Status code sent for range requests.
+    /// * `request_count` - Number of client requests the server accepts.
+    ///
+    /// # Errors
+    /// Returns an error if the loopback listener cannot bind or its address
+    /// cannot be read. Errors inside the server thread are returned by its
+    /// `JoinHandle`.
     fn start_range_server(
         content: Vec<u8>,
         range_status: StatusCode,
@@ -344,8 +353,8 @@ mod tests {
             .map_err(|_| anyhow::anyhow!("local range server panicked"))?
             .context("local range server failed")
     }
-
     /// Returns the value of a request's Range header, if present.
+
     fn range_header(request: &str) -> Option<&str> {
         request.lines().find_map(|line| {
             let (name, value) = line.split_once(':')?;

@@ -14,6 +14,7 @@ use tower_cookies::Cookie;
 use tower_cookies::CookieManagerLayer;
 use tower_cookies::Cookies;
 
+/// Shared `cookie name` used by this module.
 const COOKIE_NAME: &str = "lang";
 
 /// Remembers the language choice in a cookie.
@@ -27,13 +28,17 @@ async fn set_language(cookies: Cookies) -> &'static str {
 }
 
 /// Reads the cookie back, with a default when it is absent.
+///
+/// # Arguments
+/// * `cookies` - Cookie state updated with the authenticated session after successful verification.
+
 async fn get_language(cookies: Cookies) -> String {
     cookies
         .get(COOKIE_NAME)
         .map_or_else(|| "en".to_owned(), |c| c.value().to_owned())
 }
-
 /// Builds the router.
+
 pub fn app() -> Router {
     Router::new()
         .route("/set", get(set_language))
@@ -42,6 +47,12 @@ pub fn app() -> Router {
 }
 // ANCHOR_END: example
 
+/// Builds the cookie example router.
+pub fn run() -> Router {
+    app()
+}
+
+/// An error is returned if default_without_cookie fails.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -52,12 +63,20 @@ mod tests {
 
     use super::*;
 
+    /// Reads an Axum response body as UTF-8 text.
+    ///
+    /// # Arguments
+    /// * `response` - Response whose body should be collected.
+    ///
+    /// # Errors
+    /// Returns an error if collecting the body or decoding UTF-8 fails.
     async fn body(response: axum::response::Response) -> anyhow::Result<String> {
         let bytes = response.into_body().collect().await?.to_bytes();
         Ok(String::from_utf8(bytes.to_vec())?)
     }
 
-    #[tokio::test]
+    /// # Errors
+    /// An error is returned if default_without_cookie fails.
     async fn default_without_cookie() -> anyhow::Result<()> {
         let response = app()
             .oneshot(Request::get("/get").body(Body::empty())?)
@@ -66,6 +85,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if cookie_round_trip, headers fails.
     #[tokio::test]
     async fn cookie_round_trip() -> anyhow::Result<()> {
         let response = app()

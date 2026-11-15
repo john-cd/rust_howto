@@ -60,6 +60,12 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
+
+/// Verifies that the leptos example's main path succeeds.
 #[cfg(test)]
 mod tests {
     // output-only: the example only mounts a view or prints a message; see the

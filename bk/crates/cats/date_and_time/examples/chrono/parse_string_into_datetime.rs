@@ -46,10 +46,14 @@ fn main() -> Result<(), ParseError> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), ParseError> {
     main()
 }
 
+/// An error is returned if parsed_values_have_the_expected_components, parse_from_rfc3339 fails.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -59,6 +63,9 @@ mod tests {
         main()
     }
 
+    /// # Errors
+    /// An error is returned if parsed_values_have_the_expected_components, parse_from_rfc3339
+    /// fails.
     #[test]
     fn parsed_values_have_the_expected_components() -> Result<(), ParseError> {
         let rfc2822 = DateTime::parse_from_rfc2822("Tue, 1 Jul 2003 10:52:37 +0200")?;

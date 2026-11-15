@@ -1,8 +1,8 @@
 //! Runs the `mdbook-scrub` pre-link stage on an in-memory book.
 //!
 //! The example needs no files or services: it removes a hidden HTML section and
-//! an include of a hidden chapter file, and prints the scrubbed chapter.
 //!
+//! an include of a hidden chapter file, and prints the scrubbed chapter.
 //! Run with:
 //! ```bash
 //! cargo run -p mdbook-scrub --example scrub_chapter
@@ -25,6 +25,8 @@ const SAMPLE: &str = "Visible intro.\n\n<div class=\"hidden\">secret notes</div>
     clippy::print_stdout,
     reason = "Example reports the scrubbed chapter on standard output"
 )]
+/// # Errors
+/// An error is returned if new fails.
 fn main() -> anyhow::Result<()> {
     let mut book = Book::new();
     book.push_item(Chapter::new(

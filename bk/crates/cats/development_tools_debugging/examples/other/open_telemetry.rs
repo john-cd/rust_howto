@@ -57,15 +57,18 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// tracing output.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies the example installs an exporter and flushes its span.
     #[test]
     fn installs_exporter_and_flushes_span() {
         main().expect("the in-process stdout exporter should flush");

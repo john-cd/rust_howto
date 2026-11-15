@@ -1,8 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Demonstrates stable references in an `elsa::FrozenMap`.
 
-// ANCHOR: example
 use elsa::FrozenMap;
 
 /// Shows that a map value reference remains valid after another insertion.
@@ -18,13 +18,15 @@ fn main() {
     assert_eq!(*one, 1);
     println!("one is still: {one}");
 }
+// ANCHOR_END: example
 
 /// Runs this example for its parent module.
+/// Demonstrates stable references in an `elsa::FrozenMap`.
 pub(super) fn run() {
     main();
 }
-// ANCHOR_END: example
 
+/// Verifies that the example can read a value after another insertion.
 #[cfg(test)]
 mod tests {
     /// Verifies that the example can read a value after another insertion.

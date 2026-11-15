@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Renders and saves a Julia set with Rayon and the image crate.
 mod threadpool_fractal;
+/// Walk a directory and computes the SHA256 digest of all iso files.
 mod threadpool_walk;
 
 /// Command-line arguments.
@@ -56,7 +58,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["threadpool_fractal", "threadpool_walk"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

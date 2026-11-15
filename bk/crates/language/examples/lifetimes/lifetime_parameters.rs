@@ -25,7 +25,8 @@ struct RefHolder<'a, T> {
 // Implementation for the struct, with lifetime and type parameters.
 // Note how the lifetime parameter appears directly after `impl`.
 impl<'a, T> RefHolder<'a, T> {
-    /// Creates a holder for `reference`.
+    /// Constructs a usable initial ref holder value with the defaults required by the lifetime
+    /// parameters component.
     fn new(reference: &'a T) -> Self {
         Self { reference }
     }
@@ -68,6 +69,7 @@ use std::fmt::Display;
 // Implementation of a trait for a generic type.
 // Note the trait bound.
 impl<T: Display> Display for RefHolder<'_, T> {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RefHolder: {}", self.reference)
     }
@@ -79,8 +81,8 @@ impl<'a, T> Describable<'a> for RefHolder<'a, T> {
         "This is a reference holder."
     }
 }
-
 /// Uses lifetime parameters in functions, structs and traits.
+
 fn main() {
     let s1 = "Hello";
     let s2 = "World!";
@@ -113,8 +115,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -135,6 +138,7 @@ mod tests {
         assert_eq!(longest("Hello", "World!"), "World!");
         assert_eq!(longest("abc", "de"), "abc");
     }
+    /// Verifies ref holder.
 
     /// `RefHolder` displays and describes the referenced value.
     #[test]

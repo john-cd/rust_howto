@@ -94,10 +94,14 @@ fn establish_connection(
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// for Oracle
 #[cfg(test)]
 mod tests {
     use diesel::connection::SimpleConnection;
@@ -105,6 +109,8 @@ mod tests {
     use super::*;
 
     #[test]
+    /// # Errors
+    /// An error is returned if var, establish_connection fails.
     #[ignore = "requires external oracle db and oracle client library"]
     fn require_external_svc() -> anyhow::Result<()> {
         dotenv().ok();

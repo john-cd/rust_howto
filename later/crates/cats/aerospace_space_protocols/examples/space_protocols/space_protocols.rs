@@ -1,5 +1,3 @@
-// TODO Reviewed ??-??-2026.
-
 //! Build and parse CCSDS space packets and ECSS PUS packets.
 //!
 //! Spacecraft and ground stations exchange small binary packets over radio
@@ -7,6 +5,8 @@
 //! defines named services, such as a connection test, on top of it. This
 //! example creates each kind of packet, serializes it to bytes and parses it
 //! back.
+//!
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: ccsds-space-packet
 /// Serializes a CCSDS packet and checks its primary header and payload.
@@ -51,16 +51,18 @@ fn ccsds_space_packet() -> [u8; 8] {
     packet
 }
 // ANCHOR_END: ccsds-space-packet
-
+/// Runs the example.
 /// Runs the packet construction examples.
+
 fn main() {
     let packet = ccsds_space_packet();
     println!("CCSDS packet: {packet:02X?}");
     crate::pus_telecommand::pus_telecommand();
     crate::pus_telemetry::pus_telemetry();
 }
-
+/// Runs the example entry point.
 /// Runs the space protocols examples through the chapter entry point.
+
 pub fn run() {
     main();
 }
@@ -75,7 +77,6 @@ mod tests {
         main();
     }
 
-    /// Checks that a CCSDS packet preserves its application identifier and
     /// sequence count.
     #[test]
     fn ccsds_packet_round_trips_header_and_payload() {
@@ -83,7 +84,6 @@ mod tests {
         assert_eq!(&packet[6..], &[0xCA, 0xFE]);
     }
 
-    /// Checks that a PUS telecommand preserves its service and payload fields.
     #[test]
     fn pus_telecommand_round_trips_service_and_payload() {
         crate::pus_telecommand::pus_telecommand();

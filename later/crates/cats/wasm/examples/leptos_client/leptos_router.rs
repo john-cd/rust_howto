@@ -1,6 +1,6 @@
+#![allow(clippy::same_name_method)]
 // TODO Reviewed ??-??-2026.
 
-#![allow(clippy::same_name_method)]
 // ANCHOR: example
 //! Nested routes, a route parameter and a not-found route with
 //! [`leptos_router`].
@@ -67,14 +67,20 @@ pub fn App() -> impl IntoView {
 }
 // ANCHOR_END: example
 
+/// Builds the view that demonstrates the nested routes.
+fn run() -> impl IntoView {
+    App()
+}
+
+/// [`leptos_router`].
 #[cfg(test)]
 mod tests {
     use leptos_router::location::RequestUrl;
 
     use super::*;
 
-    /// Renders the app to HTML as a server would for `url`; no browser is
     /// needed.
+
     fn render(url: &str) -> String {
         let _ = any_spawner::Executor::init_tokio();
         let owner = Owner::new();

@@ -29,8 +29,8 @@ use tower_http::trace::TraceLayer;
 async fn handler() -> &'static str {
     "tower-http applies tracing, compression, cross-origin headers, and a request timeout to this response."
 }
-
 /// Adds a response header with application-specific Axum middleware.
+
 async fn add_example_header(request: Request, next: Next) -> Response {
     let mut response = next.run(request).await;
     response.headers_mut().insert(
@@ -62,12 +62,11 @@ fn app() -> Router {
         )
         .layer(middleware::from_fn(add_example_header))
 }
-
 /// Binds the example server and serves requests until the process is stopped.
 ///
 /// # Errors
-///
 /// Returns an error if the listener cannot be bound or the server fails.
+
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt::init();
@@ -78,16 +77,15 @@ async fn main() -> anyhow::Result<()> {
 }
 
 // ANCHOR_END: example
-
 /// Runs the example server.
-///
+
 /// # Errors
-///
 /// Returns an error if the listener cannot be bound or the server fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies CORS and custom middleware headers on a local request.
 #[cfg(test)]
 mod tests {
     use tokio::io::AsyncReadExt;

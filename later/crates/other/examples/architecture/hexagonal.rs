@@ -12,21 +12,40 @@ use std::collections::HashMap;
 
 /// The port: how the core stores users, whatever the technology.
 trait UserRepository {
+    /// # Arguments
+    /// * `id` - Identifier used to select the user repository record or cache entry affected by
+    ///   this operation.
+    /// * `name` - Human-readable value used to identify or display the selected user repository.
     fn save(&mut self, id: u32, name: &str);
+    /// # Arguments
+    /// * `id` - Identifier used to select the user repository record or cache entry affected by
+    ///   this operation.
     fn find(&self, id: u32) -> Option<String>;
 }
 
 /// An adapter that keeps users in memory (ideal for tests).
 #[derive(Default)]
 struct InMemoryRepository {
+    /// Collection of users values consumed by in memory repository operations.
     users: HashMap<u32, String>,
 }
 
 impl UserRepository for InMemoryRepository {
+    /// Saves the current value.
+    /// # Arguments
+    /// * `id` - Identifier used to select the in memory repository record or cache entry affected
+    ///   by this operation.
+    /// * `name` - Human-readable value used to identify or display the selected in memory
+    ///   repository.
     fn save(&mut self, id: u32, name: &str) {
         self.users.insert(id, name.to_owned());
     }
 
+    /// Finds the current value.
+
+    /// # Arguments
+    /// * `id` - Identifier used to select the in memory repository record or cache entry affected
+    ///   by this operation.
     fn find(&self, id: u32) -> Option<String> {
         self.users.get(&id).cloned()
     }
@@ -34,15 +53,26 @@ impl UserRepository for InMemoryRepository {
 
 /// An adapter that only logs; a real one would call a database.
 struct LoggingRepository {
+    /// Shared internal state.
     inner: InMemoryRepository,
 }
 
 impl UserRepository for LoggingRepository {
+    /// Saves the current value.
+    /// # Arguments
+    /// * `id` - Identifier used to select the logging repository record or cache entry affected by
+    ///   this operation.
+    /// * `name` - Human-readable value used to identify or display the selected logging repository.
     fn save(&mut self, id: u32, name: &str) {
         println!("saving user {id}");
         self.inner.save(id, name);
     }
 
+    /// Finds the current value.
+
+    /// # Arguments
+    /// * `id` - Identifier used to select the logging repository record or cache entry affected by
+    ///   this operation.
     fn find(&self, id: u32) -> Option<String> {
         println!("looking up user {id}");
         self.inner.find(id)
@@ -51,13 +81,23 @@ impl UserRepository for LoggingRepository {
 
 /// The core: business logic that depends only on the port.
 struct UserService<R: UserRepository> {
+    /// Repository value.
     repository: R,
 }
 
 impl<R: UserRepository> UserService<R> {
+    /// # Arguments
+    /// * `id` - Identifier used to select the user service record or cache entry affected by this
+    ///   operation.
+    /// * `name` - Human-readable value used to identify or display the selected user service.
+
     fn register(&mut self, id: u32, name: &str) {
         self.repository.save(id, &name.trim().to_uppercase());
     }
+
+    /// # Arguments
+    /// * `id` - Identifier used to select the user service record or cache entry affected by this
+    ///   operation.
 
     fn display_name(&self, id: u32) -> String {
         self.repository
@@ -65,8 +105,9 @@ impl<R: UserRepository> UserService<R> {
             .unwrap_or_else(|| "UNKNOWN".to_owned())
     }
 }
-
+/// Runs the example.
 /// Runs the same core logic with two different adapters.
+
 fn main() {
     let mut service = UserService {
         repository: InMemoryRepository::default(),
@@ -84,6 +125,7 @@ fn main() {
     println!("{}", service.display_name(7));
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

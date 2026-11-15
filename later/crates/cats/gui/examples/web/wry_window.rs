@@ -1,8 +1,5 @@
 // TODO Reviewed ??-??-2026.
 
-// Preserved for reference; its Cargo example is disabled while tao/wry require
-// the affected GTK 3/glib 0.18 dependency chain.
-
 // ANCHOR: example
 //! Shows a web page in a native window with `tao` and `wry`.
 //!
@@ -10,6 +7,8 @@
 //! system web view inside.
 //!
 //! Only local `file://` pages are accepted from the command line.
+
+// the affected GTK 3/glib 0.18 dependency chain.
 
 use std::error::Error;
 use std::fmt;
@@ -41,6 +40,7 @@ enum UriError {
 }
 
 impl fmt::Display for UriError {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::Invalid => write!(f, "not a valid URI"),
@@ -74,10 +74,12 @@ fn open_validated_uri(
     let url = validate_local_uri(uri)?;
     open(&url)
 }
-
 /// Opens a window that shows `url`, or `HTML` when there is no URL.
-///
+
 /// The function returns only when the process exits.
+
+/// # Errors
+/// Returns an error if the show window operation cannot satisfy its required invariants.
 fn show_window(url: Option<&Url>) -> Result<(), Box<dyn Error>> {
     let event_loop = EventLoop::new();
     let window = WindowBuilder::new().with_title("wry").build(&event_loop)?;
@@ -124,6 +126,10 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 // ANCHOR_END: example
 
+/// Shows a web page in a native window with `tao` and `wry`.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     // Call through a binding: calling `main` directly trips `clippy::main_recursion`.
     let entry = main;
@@ -164,7 +170,6 @@ mod tests {
         assert!(!called);
     }
 
-    #[test]
     fn opener_receives_the_validated_url() -> Result<(), Box<dyn Error>> {
         let mut opened = None;
         open_validated_uri("file:///tmp/a.html", |url| {

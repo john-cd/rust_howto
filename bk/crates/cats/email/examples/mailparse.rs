@@ -61,6 +61,15 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<()> {
+    main()
+}
+
+/// Verifies the sample multipart message parses successfully.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -70,8 +79,8 @@ mod tests {
     fn test_mailparse_example_entry_point() -> Result<()> {
         main()
     }
-
     /// Only the text/plain part is returned, decoded from quoted-printable.
+
     #[test]
     fn extracts_subject_and_decoded_plain_text() -> Result<()> {
         let (subject, bodies) = parse_subject_and_text(RAW_MESSAGE.as_bytes())?;

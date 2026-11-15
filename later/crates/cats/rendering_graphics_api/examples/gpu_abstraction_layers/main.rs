@@ -4,6 +4,7 @@
 
 use std::error::Error;
 
+/// Runs a headless `wgpu` compute shader that doubles each storage-buffer
 #[cfg(feature = "wgpu")]
 mod wgpu;
 

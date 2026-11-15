@@ -5,11 +5,17 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Consuming any `IntoIterator` in a generic function.
 mod consume_intoiterator;
+/// Example of `IntoIterator` implementation.
 mod implement_intoiterator;
+/// Iterator adapters, such as `map`, that transform an iterator lazily.
 mod iterator_adapters;
+/// This example demonstrates the difference between `iter()`, `iter_mut()` and
 mod iterators;
+/// Returning an iterator from a function with `impl Iterator`.
 mod return_iterator;
+/// Simple iterators that are built from a function or a value.
 mod simple_iterators;
 
 /// Command-line arguments.
@@ -68,8 +74,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -90,7 +97,6 @@ mod tests {
         "simple_iterators",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

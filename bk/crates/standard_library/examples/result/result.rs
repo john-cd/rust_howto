@@ -62,9 +62,15 @@ fn read_file2(file_path: &str) -> Result<String, io::Error> {
 // `File::open(file_path)?.read_to_string(&mut contents)?;`.
 
 // You will often need to return one of multiple `Result` types.
-// You could create a custom `MyError` error to do so:
-/// Reads a number from a file, converting I/O and parsing errors into
-/// `MyError`.
+/// Reads a number from a file and maps its I/O and integer-parsing errors to
+/// the custom `MyError` type.
+
+/// # Arguments
+/// * `file_path` - Path to the file containing the integer text.
+
+/// # Errors
+/// Returns an error if the file cannot be opened or read, or its contents are
+/// not a valid `i32`.
 fn read_and_parse_file(file_path: &str) -> Result<i32, MyError> {
     let mut file = File::open(file_path)?;
     let mut contents = String::new();
@@ -87,6 +93,7 @@ impl std::error::Error for MyError {}
 // Implementing the `Error` trait requires that `Debug` and `Display` are
 // implemented too.
 impl std::fmt::Display for MyError {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::Io(err) => write!(f, "IO error: {err}"),
@@ -97,12 +104,18 @@ impl std::fmt::Display for MyError {
 
 // We should also implement the `From` trait:
 impl From<io::Error> for MyError {
+    /// # Arguments
+    /// * `err` - Underlying failure whose details are preserved or converted into the returned
+    ///   error.
     fn from(err: io::Error) -> Self {
         Self::Io(err)
     }
 }
 
 impl From<ParseIntError> for MyError {
+    /// # Arguments
+    /// * `err` - Underlying failure whose details are preserved or converted into the returned
+    ///   error.
     fn from(err: ParseIntError) -> Self {
         Self::Parse(err)
     }
@@ -192,6 +205,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()
 }
@@ -201,6 +217,7 @@ mod tests {
     use std::path::PathBuf;
 
     use super::*;
+    /// Verifies that the `result` example runs.
 
     #[test]
     fn test_result_example_entry_point() -> Result<(), Box<dyn std::error::Error>> {
@@ -218,6 +235,8 @@ mod tests {
         Ok(path)
     }
 
+    ///
+
     fn missing_path() -> String {
         let path =
             std::env::temp_dir().join(format!("result_example_{}_missing", std::process::id()));
@@ -233,6 +252,7 @@ mod tests {
         std::fs::remove_file(path)?;
         Ok(())
     }
+    /// Verifies read file variants fail on missing file.
 
     #[test]
     fn test_read_file_variants_fail_on_missing_file() {
@@ -243,6 +263,8 @@ mod tests {
         open_file(&p); // Reports the error and returns.
     }
 
+    /// # Errors
+    /// An error is returned if temp_file, to_str fails.
     #[test]
     fn test_read_and_parse_file_variants_parse_a_number() -> Result<(), Box<dyn std::error::Error>>
     {
@@ -267,6 +289,7 @@ mod tests {
         std::fs::remove_file(path)?;
         Ok(())
     }
+    /// Verifies I/O errors are converted with from.
 
     #[test]
     fn test_io_errors_are_converted_with_from() {

@@ -16,17 +16,18 @@ fn main() {
     println!("20 + 22 = {result}");
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();
 }
 
+/// Calls the function generated from the C header.
 #[cfg(test)]
 mod tests {
     use super::*;
 
     /// Calls the function generated from the C header.
-    /// Runs the bindgen example through its entry point.
     #[test]
     fn test_bindgen_example_entry_point() {
         main();

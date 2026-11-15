@@ -44,21 +44,23 @@ impl Sub for Meters {
 }
 
 impl SubAssign for Meters {
+    /// Scaling by a plain number is fine: meters * 2.0 is still meters.
     fn sub_assign(&mut self, rhs: Self) {
         self.0 -= rhs.0;
     }
 }
-
 /// Scaling by a plain number is fine: meters * 2.0 is still meters.
+
 impl Mul<f64> for Meters {
     type Output = Self;
 
+    /// Dividing two lengths gives a dimensionless ratio.
     fn mul(self, rhs: f64) -> Self {
         Self(self.0 * rhs)
     }
 }
-
 /// Dividing two lengths gives a dimensionless ratio.
+
 impl Div for Meters {
     type Output = f64;
 
@@ -76,6 +78,7 @@ impl Div for Meters {
 // Neither does adding a bare number: `Meters(2.0) + 3.0`.
 
 impl fmt::Display for Meters {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{} m", self.0)
     }
@@ -94,12 +97,14 @@ fn main() {
     println!("{track} doubled is {doubled}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Checks that the quantity example formats its computed values.
 #[cfg(test)]
 mod tests {
     use super::*;

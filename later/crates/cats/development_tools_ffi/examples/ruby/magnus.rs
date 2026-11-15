@@ -9,6 +9,10 @@
 
 use magnus::Error;
 /// Returns a greeting that can be called from Ruby or tested without Ruby.
+///
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected magnus.
+
 fn hello_rust(name: String) -> String {
     format!("Hello, {name}!")
 }
@@ -32,21 +36,23 @@ fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 /// Runs the Magnus embedding example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()
 }
 
+/// function.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Checks the Rust greeting without starting a Ruby VM.
     #[test]
     fn rust_greeting_formats_the_name() {
         assert_eq!(hello_rust("Ada".to_owned()), "Hello, Ada!");
     }
 
-    /// Checks the value returned when embedded Ruby calls the registered Rust
     /// function.
     #[test]
     #[ignore = "needs Ruby headers and libruby"]

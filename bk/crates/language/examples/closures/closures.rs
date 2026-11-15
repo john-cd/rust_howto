@@ -10,8 +10,9 @@ fn find_emails(list: Vec<String>) -> Vec<String> {
         .filter(|s| s.contains('@')) // Closure with a simple expression as its body. Note the `| |`.
         .collect()
 }
-
+/// Runs the example.
 /// Filters a list of strings with `find_emails`.
+
 fn main() {
     for s in find_emails(vec![
         String::from("example"),
@@ -22,8 +23,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

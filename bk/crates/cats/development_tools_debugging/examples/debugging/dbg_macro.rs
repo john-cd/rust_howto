@@ -19,6 +19,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the `dbg!` example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -27,7 +30,6 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::main;
 
-    /// Verifies that `dbg!` returns the value of its expression.
     #[test]
     fn dbg_returns_the_expression_value() {
         let value = 2 + 2;

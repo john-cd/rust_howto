@@ -37,8 +37,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -46,11 +47,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `rc refcell` example runs.
 
     #[test]
     fn test_rc_refcell_example_entry_point() {
         main();
     }
+    /// Verifies mutation is visible to all owners.
 
     #[test]
     fn test_mutation_is_visible_to_all_owners() {
@@ -62,6 +65,7 @@ mod tests {
         assert_eq!(*shared.borrow(), vec![1, 2, 3]);
         assert_eq!(*other.borrow(), vec![1, 2, 3]);
     }
+    /// Verifies overlapping borrows are detected at runtime.
 
     #[test]
     fn test_overlapping_borrows_are_detected_at_runtime() {
@@ -71,6 +75,7 @@ mod tests {
         drop(reader);
         assert!(shared.try_borrow_mut().is_ok());
     }
+    /// Verifies borrow mut while borrowed panics.
 
     #[test]
     #[should_panic(expected = "already borrowed")]

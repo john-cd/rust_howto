@@ -18,8 +18,10 @@ use syn::DeriveInput;
 /// Generates `impl Named for <type>` returning the type's name.
 ///
 /// # Errors
-///
 /// Returns an error if `input` is not a valid struct, enum or union.
+///
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested main operation.
 fn derive_named(input: TokenStream) -> syn::Result<TokenStream> {
     let DeriveInput {
         ident, generics, ..
@@ -34,18 +36,19 @@ fn derive_named(input: TokenStream) -> syn::Result<TokenStream> {
         }
     })
 }
-
 /// Formats generated tokens as readable Rust source, like `cargo expand`.
 ///
 /// # Errors
 ///
 /// Returns an error if the tokens are not a valid Rust file.
+
 fn expand_to_string(tokens: TokenStream) -> Result<String> {
     let file: syn::File = syn::parse2(tokens)?;
     Ok(prettyplease::unparse(&file))
 }
 
 /// The snapshot to compare against, like a `*.expanded.rs` file.
+/// Defines the expected constant.
 const EXPECTED: &str = "\
 impl<T: Clone> Named for Wrapper<T> {
     fn name() -> &'static str {
@@ -66,6 +69,15 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<()> {
+    main()
+}
+
+/// Invalid input is reported as an error, not a panic.
 #[cfg(test)]
 mod tests {
     use super::*;

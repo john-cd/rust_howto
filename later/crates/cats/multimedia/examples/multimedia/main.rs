@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Play a sine tone on the default audio output with `rodio`.
 mod play_sound;
 
 /// Runs the multimedia example.

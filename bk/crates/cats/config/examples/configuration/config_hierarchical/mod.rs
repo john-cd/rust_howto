@@ -14,7 +14,9 @@ use std::path::PathBuf;
 use anyhow::Result;
 use serde::Deserialize;
 
+/// Builds typed settings from files, environment variables, and CLI overrides.
 mod cfg;
+/// Command-line arguments of the hierarchical configuration example.
 mod cli;
 
 pub(crate) use cfg::read_settings;
@@ -117,10 +119,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the layered configuration example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that defaults, files, environment values, and CLI overrides layer in order.
 #[cfg(test)]
 mod tests {
     use std::collections::HashMap;

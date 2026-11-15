@@ -24,8 +24,9 @@ fn divide_by_three(value: i32) -> Result<i32, &'static str> {
         Err("not divisible by three")
     }
 }
-
+/// Runs the example.
 /// Runs two fallible divisions in sequence.
+
 fn main() {
     let divisible = divide_by_two(12).and_then(divide_by_three);
     let not_divisible = divide_by_two(5).and_then(divide_by_three);
@@ -34,12 +35,14 @@ fn main() {
     println!("5 divided by two and then three: {not_divisible:?}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Passes the first successful value into the next operation.
 #[cfg(test)]
 mod tests {
     use super::divide_by_three;
@@ -47,7 +50,6 @@ mod tests {
     use super::main;
 
     /// Passes the first successful value into the next operation.
-    /// Runs the `and_then` example through its entry point.
     #[test]
     fn and_then_runs_the_next_operation_after_success() {
         assert_eq!(divide_by_two(12).and_then(divide_by_three), Ok(2));

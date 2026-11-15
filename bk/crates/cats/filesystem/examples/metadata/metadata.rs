@@ -50,9 +50,10 @@ fn inspect_file<P: AsRef<std::path::Path>>(path: P) -> anyhow::Result<()> {
 fn main() -> anyhow::Result<()> {
     inspect_tree(std::path::Path::new("."))
 }
-
-/// Creates files and directories under `base`, prints their metadata, and
-/// cleans up.
+/// Creates sample files under `base`, prints their metadata, and removes them.
+///
+/// # Errors
+/// Returns an error if a filesystem operation fails.
 fn inspect_tree(base: &std::path::Path) -> anyhow::Result<()> {
     // Create a few folders and files for the next step.
     let path = base.join("temp/files/subfolder");
@@ -75,6 +76,9 @@ fn inspect_tree(base: &std::path::Path) -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

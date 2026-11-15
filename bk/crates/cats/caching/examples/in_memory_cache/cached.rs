@@ -20,22 +20,27 @@ fn fibonacci(n: u64) -> u64 {
 }
 
 /// Returns simulated data for the requested cache key and caches the result.
-///
 /// The cache stores at most 50 entries and refreshes its 60-second TTL on hits.
-#[cached(
-    // Max cache size:
-    max_size = 50,
-    // Set a time-to-live (TTL) for cached entries:
-    ttl_secs = 60,
-    // Specify whether to refresh the TTL on cache hits:
-    refresh = true,
- )]
+///
+/// # Arguments
+/// * `key` - Identifier used to select the cached record or cache entry affected by this operation.
+
+// Max cache size:
+// Set a time-to-live (TTL) for cached entries:
+// Specify whether to refresh the TTL on cache hits:
+
+/// Returns a cached value for `key`, computing it on a cache miss.
+#[cached(max_size = 50, ttl_secs = 60, refresh = true)]
 fn fetch_data(key: usize) -> String {
     println!("Expensive data fetching simulated here.");
     format!("Data for key {key}")
 }
 
 /// Demonstrates timed TTL caching where cached entries expire after 1 second.
+///
+/// # Arguments
+/// * `key` - Identifier used to select the cached record or cache entry affected by this operation.
+
 #[cached(ttl_secs = 1)]
 fn short_lived_data(key: &str) -> String {
     format!("value for {key}")
@@ -70,8 +75,9 @@ fn main() {
     println!("Cached user data: {cached_fetch}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -95,7 +101,6 @@ mod tests {
         assert_eq!(fetch_data(123), "Data for key 123");
     }
 
-    /// Verifies that entries in a timed TTL cache are returned on hits.
     #[test]
     fn timed_cache_serves_cached_value() {
         let first = short_lived_data("session_1");

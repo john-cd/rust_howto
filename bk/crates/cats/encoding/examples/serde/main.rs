@@ -5,10 +5,15 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates parsing a JSON string into a `serde_json::Value`
 mod json;
+/// This example demonstrates how to use the `monostate` crate with `serde` to
 mod monostate;
+/// Demonstrates basic serialization and deserialization using `serde`.
 mod serde;
+/// `serde_ignored` is a crate that helps handle unknown fields when deserializing with `serde`.
 mod serde_ignored;
+/// Serializing and deserializing a struct to and from JSON with `serde_json`.
 mod serde_json;
 
 /// Command-line arguments.
@@ -77,7 +82,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["json", "monostate", "serde", "serde_ignored", "serde_json"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

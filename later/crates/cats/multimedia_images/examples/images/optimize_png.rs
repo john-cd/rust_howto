@@ -1,12 +1,12 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Optimizes a generated PNG and verifies its decoded pixels.
 //!
 //! PNG optimizers try many compression settings and filters to produce a
 //! smaller file with exactly the same pixels, which saves bandwidth on web
 //! pages. The check at the end proves the result is lossless.
 
-// ANCHOR: example
 use std::io::Cursor;
 
 use image::DynamicImage;
@@ -33,10 +33,15 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 // ANCHOR_END: example
 
 /// Runs the PNG recompression recipe.
+/// Optimizes a generated PNG and verifies its decoded pixels.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     main()
 }
 
+/// Verifies lossless recompression by comparing every decoded pixel.
 #[cfg(test)]
 mod tests {
     /// Verifies lossless recompression by comparing every decoded pixel.

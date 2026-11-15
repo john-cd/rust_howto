@@ -5,9 +5,13 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Compressing and decompressing a file asynchronously with
 mod async_compression;
+/// Writing and reading a ZIP archive asynchronously with `async_zip`.
 mod async_zip;
+/// Example of using the `flate2` crate.
 mod flate2;
+/// Example of using the `zip` crate.
 mod zip;
 
 /// Command-line arguments.
@@ -71,7 +75,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["async_compression", "async_zip", "flate2", "zip"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

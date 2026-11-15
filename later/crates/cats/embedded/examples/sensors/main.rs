@@ -1,10 +1,14 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+//! Starts the sensors application and connects its top-level components.
+//! The executable uses this module to initialize services and hand control to the application.
+
 use embedded_hal::i2c::ErrorType;
 use embedded_hal::i2c::I2c;
 use embedded_hal::i2c::Operation;
 
+/// Defines the outcomes available to the sensors workflow, including unexpected transaction.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum BusError {
     UnexpectedTransaction,
@@ -26,6 +30,7 @@ impl embedded_hal::i2c::Error for BusError {
     }
 }
 
+/// Groups the data required by sensors operations.
 #[derive(Default)]
 struct MockI2c;
 
@@ -64,8 +69,8 @@ fn read_temperature_c<I2C: I2c>(bus: &mut I2C) -> Result<f32, I2C::Error> {
 fn main() -> anyhow::Result<()> {
     run_example()
 }
-
 /// Reads and prints one measurement from the mock I2C sensor.
+
 fn run_example() -> anyhow::Result<()> {
     let mut bus = MockI2c;
     let temperature = read_temperature_c(&mut bus)?;
@@ -75,10 +80,16 @@ fn run_example() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the book example from the example crate's module runner.
+/// Starts the sensors application and connects its top-level components. The executable uses this
+/// module to initialize services and hand control to the application.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     run_example()
 }
 
+/// Verifies the example entry point reads a measurement from the mock.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -90,7 +101,6 @@ mod tests {
         main()
     }
 
-    /// Verifies register decoding without an I2C controller or attached sensor.
     #[test]
     fn reads_temperature_from_the_register_bytes() {
         let mut bus = MockI2c;

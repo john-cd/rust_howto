@@ -1,7 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
-//! Loads the Vulkan library with `ash` and reports the instance version.
 // ANCHOR: example
+//! Loads the Vulkan library with `ash` and reports the instance version.
+
 use ash::Entry;
 use ash::vk;
 
@@ -37,6 +38,20 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+/// Loads the Vulkan library with `ash` and reports the instance version.
+///
+/// # Errors
+/// Returns an error if an operation in the example fails.
+/// Returns an error if a step of the example fails.
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -46,8 +61,8 @@ mod tests {
     fn test_main_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Verifies the version encoding helpers used by the example.
+
     #[test]
     fn decodes_packed_api_versions() {
         let version = vk::make_api_version(0, 1, 3, 250);

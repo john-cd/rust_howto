@@ -13,8 +13,9 @@ impl From<&[u8]> for Message {
         Self(String::from_utf8_lossy(bytes).into())
     }
 }
-
+/// Runs the example.
 /// Converts raw bytes into a `Message`.
+
 fn main() {
     let raw: &[u8] = b"Hello world";
     let msg: Message = raw.into(); // Use `From<&[u8]>`.
@@ -23,8 +24,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -32,23 +34,27 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `from3` example runs.
 
     #[test]
     fn test_from3_example_entry_point() {
         main();
     }
+    /// Verifies from valid UTF-8 bytes.
 
     #[test]
     fn test_from_valid_utf8_bytes() {
         let msg: Message = b"Hello world".as_slice().into();
         assert_eq!(format!("{msg:?}"), r#"Message("Hello world")"#);
     }
+    /// Verifies from empty bytes.
 
     #[test]
     fn test_from_empty_bytes() {
         let msg = Message::from(&b""[..]);
         assert_eq!(format!("{msg:?}"), r#"Message("")"#);
     }
+    /// Verifies invalid UTF-8 is replaced not rejected.
 
     #[test]
     fn test_invalid_utf8_is_replaced_not_rejected() {

@@ -1,12 +1,12 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Query extended metadata through Linux's safe statx wrapper.
 //!
 //! `statx` is the Linux system call that returns file metadata (size, owner,
 //! times, and the creation time that older `stat` calls cannot give). It runs
 //! on Linux only.
 
-// ANCHOR: example
 use std::io;
 use std::io::Write;
 
@@ -16,7 +16,6 @@ use rustix::fs::statx;
 use tempfile::NamedTempFile;
 
 /// Prints the size and, when available, birth time of a temporary file.
-///
 /// # Errors
 /// Propagates temporary-file, write, and statx errors, including unsupported
 /// system calls on older kernels or restricted hosts.
@@ -55,18 +54,20 @@ fn main() -> io::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the Linux-only extended metadata demonstration.
+/// Query extended metadata through Linux's safe statx wrapper.
 ///
 /// # Errors
 /// Propagates file creation, IO, metadata, and explicit cleanup errors.
+/// Returns an error if a step of the example fails.
 pub fn run() -> io::Result<()> {
     main()
 }
 
+/// elsewhere.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies the example runs on Linux and has a harmless fallback
     /// elsewhere.
     #[test]
     fn example_runs_for_the_current_target() {

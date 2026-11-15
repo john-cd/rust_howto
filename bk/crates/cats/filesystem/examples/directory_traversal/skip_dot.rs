@@ -14,17 +14,17 @@ use std::path::PathBuf;
 use anyhow::Result;
 use walkdir::DirEntry;
 use walkdir::WalkDir;
-
 /// Checks if a directory entry should be included in the traversal.
-///
+
 /// This function filters out hidden files and directories (those starting with
 /// a dot) except for the root directory itself.
+
 fn is_not_hidden(entry: &DirEntry) -> bool {
     entry.depth() == 0 || !entry.file_name().to_string_lossy().starts_with('.')
 }
-
 /// Prints the paths of the current directory tree, skipping hidden files and
 /// directories.
+
 fn main() -> Result<()> {
     for path in visible_paths(Path::new("."))? {
         println!("{}", path.display());
@@ -45,10 +45,14 @@ fn visible_paths(root: &Path) -> Result<Vec<PathBuf>> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies the example can traverse the current directory.
 #[cfg(test)]
 mod tests {
     use super::*;

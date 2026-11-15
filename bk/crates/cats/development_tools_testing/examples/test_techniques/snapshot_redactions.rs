@@ -84,7 +84,6 @@ mod tests {
         }
         "#);
     }
-    /// Verifies main entry point.
 
     #[test]
     fn test_main_entry_point() {

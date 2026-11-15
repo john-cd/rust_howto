@@ -8,6 +8,7 @@
 //! `RUST_LOG=my_crate=debug`.
 
 /// Initializes the logger and emits a message at each level.
+
 fn main() {
     // Initialize the logger.
     init_logger();
@@ -22,9 +23,8 @@ fn main() {
     println!("log_env_variable example: set MY_APP_LOG=debug to see log output above");
 }
 
-//#[cfg(not(test))]
 /// Initializes the logger for the application.
-///
+//#[cfg(not(test))]
 /// This function configures the logger to filter log messages based on
 /// environment variables. It first sets the default log level to `Off`,
 /// meaning no logs will be displayed by default. Then, it attempts to
@@ -57,8 +57,9 @@ fn init_logger() {
     // env_logger::init_from_env(env);
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -13,8 +13,9 @@ use petgraph::algo::dijkstra;
 use petgraph::dot::Config;
 use petgraph::dot::Dot;
 use petgraph::graph::Graph;
-
+/// Runs the example.
 /// Builds a small directed graph and queries it.
+
 fn main() {
     // Create a new directed graph:
     let mut graph = Graph::<&str, &str, Directed>::new();
@@ -68,8 +69,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

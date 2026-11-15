@@ -9,16 +9,27 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Demonstrates big integer manipulation.
 mod big_integers;
+/// Divides with a fixed-point type whose fractional precision is set in its
 mod fixed_point;
+/// Converts an `f32` value to the compact IEEE 754 binary16 `f16` type.
 mod half_precision;
+/// Demonstrates the usage of `BigInt` for large integer arithmetic.
 mod num_bigint;
+/// The `num_traits` crate provides numeric traits for generic mathematics.
 mod num_traits;
+/// The `ordered-float` crate provides a wrapper type `OrderedFloat` for floating-point numbers that
+/// can be used as keys in ordered collections like `BTreeMap`.
 mod ordered_float;
+/// Adds rational numbers without converting them to floating-point values.
 mod rational_numbers;
+/// This example demonstrates the use of the `rug` crate for arbitrary precision
 #[cfg(target_os = "linux")]
 mod rug;
+/// Demonstrates the use of the `rust_decimal` crate for high-precision decimal
 mod rust_decimal;
+/// Type-level numbers with `typenum`.
 mod typenum;
 
 /// Command-line arguments.
@@ -103,8 +114,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -130,7 +142,6 @@ mod tests {
         "typenum",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

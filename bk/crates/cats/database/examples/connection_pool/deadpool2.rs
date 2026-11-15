@@ -44,13 +44,13 @@ impl Config {
             .try_deserialize()
     }
 }
-
 /// Loads the PostgreSQL settings and creates a Tokio-backed connection pool.
 ///
 /// # Errors
 ///
 /// Returns an error if configuration cannot be read or the pool cannot be
 /// built. When `max_size` is set, it overrides the environment configuration.
+
 fn create_pool_with_max_size(max_size: Option<usize>) -> anyhow::Result<deadpool_postgres::Pool> {
     // Loads the `.env` file from the current directory or parents.
     dotenv().ok();
@@ -69,21 +69,17 @@ fn create_pool_with_max_size(max_size: Option<usize>) -> anyhow::Result<deadpool
     // Creates a new `Pool` using the `deadpool_postgres::Config`.
     Ok(cfg.pg.create_pool(Some(Runtime::Tokio1), NoTls)?)
 }
-
 /// Creates a PostgreSQL connection pool using its configured maximum size.
-///
+
 /// # Errors
-///
 /// Returns an error if environment configuration cannot be read or the pool
 /// cannot be built.
 fn create_pool() -> anyhow::Result<deadpool_postgres::Pool> {
     create_pool_with_max_size(None)
 }
-
-/// Creates a PostgreSQL connection pool and queries the database.
+/// Connects to PostgreSQL, inspects the pool, and queries the server version.
 ///
 /// # Errors
-///
 /// Returns an error if configuration, pool checkout, or the version query
 /// fails.
 #[tokio::main]
@@ -112,7 +108,6 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// # Errors
-///
 /// Returns an error if the PostgreSQL connection or query fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -135,6 +130,7 @@ mod tests {
         /// Maximum number of PostgreSQL connections in the test pool.
         const MAX_POOL_SIZE: usize = 8;
         /// Number of requests submitted to the pool.
+        /// Defines the concurrent queries constant.
         const CONCURRENT_QUERIES: usize = 64;
 
         let pool = create_pool_with_max_size(Some(MAX_POOL_SIZE))?;

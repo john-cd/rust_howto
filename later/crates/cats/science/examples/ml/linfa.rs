@@ -14,11 +14,9 @@ use linfa::dataset::Dataset;
 use linfa::prelude::Predict as _;
 use linfa::traits::Fit as _;
 use linfa_linear::LinearRegression;
-
 /// Fits a linear model and predicts two values outside the training range.
-///
+
 /// # Errors
-///
 /// Returns an error if fitting the linear model fails.
 fn regression_predictions() -> Result<Vec<f64>, Box<dyn Error>> {
     let features = ndarray_016::array![[1.0], [2.0], [3.0], [4.0], [5.0]];
@@ -38,10 +36,16 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 // ANCHOR_END: example
 
+/// # Panics
+/// Panics if the Linfa regression example failed.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main().expect("the Linfa regression example failed");
 }
 
+/// Verifies that the regression model predicts the expected numeric range.
 #[cfg(test)]
 mod tests {
     use super::*;

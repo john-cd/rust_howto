@@ -29,6 +29,9 @@ static TEMPLATES: LazyLock<tera::TeraResult<tera::Tera>> = LazyLock::new(|| {
 });
 
 /// Filters are functions with the
+///
+/// # Arguments
+/// * `_state` - State to inspect or update.
 /// `fn(Value, Kwargs, &State) -> Result` definition (the value may be any
 /// type that can be extracted from a Tera `Value`, such as `&str`), which can
 /// be used within templates.
@@ -93,6 +96,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

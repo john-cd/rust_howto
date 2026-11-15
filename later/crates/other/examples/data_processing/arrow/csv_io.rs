@@ -16,7 +16,10 @@ use arrow::error::Result;
 use arrow::record_batch::RecordBatch;
 
 /// Serializes a record batch to CSV, then reads the resulting bytes.
-pub fn run(schema: Arc<Schema>, batch: &RecordBatch) -> Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body(schema: Arc<Schema>, batch: &RecordBatch) -> Result<()> {
     let decoded = round_trip(schema, batch)?;
     assert_eq!(decoded, *batch);
     Ok(())
@@ -37,6 +40,16 @@ fn round_trip(schema: Arc<Schema>, batch: &RecordBatch) -> Result<RecordBatch> {
 }
 // ANCHOR_END: example
 
+/// Writes the sample record batch as CSV.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<()> {
+    let (schema, _, _, batch) = arrays::run()?;
+    example_body(schema, &batch)
+}
+
+/// Verifies that CSV output preserves all record batch values.
 #[cfg(test)]
 mod tests {
     use super::*;

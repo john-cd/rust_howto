@@ -50,11 +50,19 @@ fn normalize(query: &str) -> String {
         .join(" ")
         .to_lowercase()
 }
-
-/// Queries OpenStreetMap Nominatim.
-///
+/// Queries OpenStreetMap Nominatim for an address that is not covered by the
+/// local test gazetteer.
 /// This function is not called by the tests: it needs the network and is
 /// subject to the Nominatim usage policy (at most one request per second).
+///
+/// # Arguments
+/// * `address` - Human-readable place or address query to send to Nominatim.
+///
+/// # Returns
+/// The first matching point, or `None` if Nominatim finds no result.
+///
+/// # Errors
+/// Returns a `GeocodingError` if the provider request or response processing fails.
 #[expect(
     dead_code,
     reason = "needs the network and is subject to the Nominatim usage policy"
@@ -71,6 +79,13 @@ struct Gazetteer {
 }
 
 impl Forward<f64> for Gazetteer {
+    /// Returns the coordinates for its one supported place query.
+    ///
+    /// # Arguments
+    /// * `address` - Normalized place query received by the cache.
+    ///
+    /// # Returns
+    /// One point for the Eiffel Tower query, or an empty list for other queries.
     fn forward(&self, address: &str) -> Result<Vec<Point<f64>>, GeocodingError> {
         self.calls.set(self.calls.get() + 1);
         if address == "eiffel tower, paris" {
@@ -101,6 +116,10 @@ fn main() -> Result<(), GeocodingError> {
     Ok(())
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() -> Result<(), GeocodingError> {
     main()
@@ -115,6 +134,7 @@ mod tests {
     fn test_geocode_example_entry_point() -> Result<(), GeocodingError> {
         main()
     }
+    /// Normalizes collapses spaces and case.
 
     #[test]
     fn normalize_collapses_spaces_and_case() {

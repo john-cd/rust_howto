@@ -1,5 +1,3 @@
-// TODO Reviewed ??-??-2026.
-
 #![cfg_attr(
     not(test),
     expect(
@@ -7,6 +5,8 @@
         reason = "targets the browser (wasm32); native builds cannot call it"
     )
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Awaits a JavaScript Promise from Rust.
 //!
@@ -33,19 +33,21 @@ pub async fn await_text(promise: Promise) -> Result<String, JsValue> {
     let value = JsFuture::from(promise).await?;
     resolved_text(value.as_string()).map_err(JsValue::from_str)
 }
-// ANCHOR_END: example
 
 /// Explains how to run the browser-only example on a native host.
 fn main() {
     #[cfg(not(all(target_arch = "wasm32", target_os = "unknown")))]
     println!("Build for wasm32-unknown-unknown to await a JavaScript Promise.");
 }
+// ANCHOR_END: example
 
 /// Runs the example's host-side runner.
+/// Awaits a JavaScript Promise from Rust.
 pub fn run() {
     main();
 }
 
+/// Verifies that a resolved JavaScript string is returned.
 #[cfg(test)]
 mod tests {
     use super::resolved_text;

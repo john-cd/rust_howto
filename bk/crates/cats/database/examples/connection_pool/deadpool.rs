@@ -25,7 +25,7 @@ struct Server;
 
 impl Server {
     // Represents a connection to a server.
-    /// Returns the answer of the server.
+    ///
     async fn get_answer(&self) -> i32 {
         42
     }
@@ -96,10 +96,14 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that dropping and rechecking out a guard reuses the pool slot.
 #[cfg(test)]
 mod tests {
     use super::*;

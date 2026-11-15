@@ -32,17 +32,19 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Unknown users have no privileges.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that the lazy global map contains the configured users.
+    /// Unknown users have no privileges.
     #[test]
     fn lazy_map_contains_configured_users() {
         assert_eq!(PRIVILEGES.get("James"), Some(&vec!["user", "admin"]));
@@ -54,7 +56,6 @@ mod tests {
         main();
     }
 
-    /// Unknown users have no privileges.
     #[test]
     fn unknown_user_has_no_access() {
         assert_eq!(PRIVILEGES.get("Nobody"), None);

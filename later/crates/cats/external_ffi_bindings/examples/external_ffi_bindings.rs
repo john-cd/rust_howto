@@ -25,6 +25,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -35,7 +40,6 @@ mod tests {
         main();
     }
 
-    /// Verifies the native Unix binding identifies this process.
     #[cfg(unix)]
     #[test]
     fn native_process_id_matches_standard_library() {

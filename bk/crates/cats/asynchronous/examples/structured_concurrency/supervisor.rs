@@ -19,9 +19,9 @@ use tokio_util::sync::CancellationToken;
 fn backoff(attempt: u32, base: Duration, cap: Duration) -> Duration {
     base.saturating_mul(2_u32.saturating_pow(attempt)).min(cap)
 }
-
 /// Runs `task` until it succeeds or `token` is cancelled. Returns the delays
 /// that were waited between attempts.
+
 async fn supervise<F, Fut>(token: CancellationToken, mut task: F) -> Vec<Duration>
 where
     F: FnMut(u32) -> Fut,
@@ -69,8 +69,9 @@ async fn demo() {
     let delays = supervise(token, |_| async { Err("always fails".to_owned()) }).await;
     assert!(delays.is_empty());
 }
-
+/// Runs the example.
 /// Runs the demonstration on a paused-clock runtime.
+
 fn main() {
     match tokio::runtime::Builder::new_current_thread()
         .enable_time()
@@ -82,12 +83,14 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Checks the supervisor restarts a failed worker and observes shutdown.
 #[cfg(test)]
 mod tests {
     use super::*;

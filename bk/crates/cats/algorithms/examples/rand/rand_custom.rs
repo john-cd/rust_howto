@@ -23,6 +23,8 @@ struct Point {
 
 // This implementation allows generating random `Point` instances.
 impl Distribution<Point> for StandardUniform {
+    /// # Arguments
+    /// * `rng` - Mutable r whose state is updated by this operation.
     fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> Point {
         let (x, y) = rng.random::<(i32, i32)>();
         Point { x, y }
@@ -44,8 +46,9 @@ fn main() {
     println!("x = {}, y = {}", rand_point.x, rand_point.y);
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -56,6 +59,7 @@ mod tests {
     use rand::rngs::StdRng;
 
     use super::*;
+    /// Verifies that the `rand custom` example runs.
 
     #[test]
     fn test_rand_custom_example_entry_point() {

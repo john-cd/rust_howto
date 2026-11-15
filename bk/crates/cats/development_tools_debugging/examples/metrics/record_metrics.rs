@@ -22,17 +22,20 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the metrics recording example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// recorder.
 #[cfg(test)]
 mod tests {
     use metrics_util::debugging::DebuggingRecorder;
 
     use super::main;
 
-    /// Verifies the facade records the counter and histogram into a local
     /// recorder.
     #[test]
     fn records_request_count_and_duration() {

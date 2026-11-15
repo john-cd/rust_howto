@@ -7,6 +7,7 @@
 //! web viewers. A mesh is stored as vertices (points in space) and indices
 //! (which vertices form each triangle).
 
+/// Defines the inline gltf triangle constant.
 const INLINE_GLTF_TRIANGLE: &[u8] = br#"{
   "asset": {"version": "2.0"},
   "scene": 0,
@@ -60,10 +61,14 @@ fn main() -> Result<(), ::gltf::Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), ::gltf::Error> {
     main()
 }
 
+/// Verifies the inline triangle has three vertices and three indices.
 #[cfg(test)]
 mod tests {
     use super::main;

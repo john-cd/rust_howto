@@ -26,13 +26,15 @@ fn main() {
 struct PrintOnDrop(&'static str);
 
 impl Drop for PrintOnDrop {
+    /// Releases the resources owned by this value.
     fn drop(&mut self) {
         println!("{}", self.0);
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

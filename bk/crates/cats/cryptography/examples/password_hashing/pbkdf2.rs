@@ -69,10 +69,14 @@ fn main() -> Result<(), Unspecified> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Unspecified> {
     main()
 }
 
+/// Verifies that the pbkdf2 example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -84,10 +88,11 @@ mod tests {
         assert!(main().is_ok());
     }
 
-    /// Verifies that PBKDF2 hash verification succeeds for matching passwords
     /// and rejects incorrect attempts.
+    /// Defines the credential len constant.
     #[test]
     fn test_pbkdf2_verification_rejects_wrong_password() {
+        /// Shared `credential len` used by this module.
         const CREDENTIAL_LEN: usize = digest::SHA512_OUTPUT_LEN;
         let n_iter = NonZeroU32::new(10_000).expect("iteration count should be non-zero");
         let rng = rand::SystemRandom::new();

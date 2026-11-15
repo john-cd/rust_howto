@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! A two-register virtual machine with a bounded fetch/decode/execute loop.
 //!
 //! A virtual machine runs programs written for an imaginary processor. Each
@@ -22,6 +23,7 @@ enum EmuError {
 }
 
 impl fmt::Display for EmuError {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::InvalidAddress(pc) => {
@@ -37,7 +39,6 @@ impl fmt::Display for EmuError {
 
 impl core::error::Error for EmuError {}
 
-// ANCHOR: example
 /// CPU state; each instruction is an opcode byte followed by an operand byte.
 struct Cpu<'a> {
     /// Borrowed, read-only program memory.
@@ -52,7 +53,6 @@ struct Cpu<'a> {
 
 impl Cpu<'_> {
     /// Fetches, decodes, and executes one instruction; halted CPUs do nothing.
-    ///
     /// # Errors
     /// Returns an error for an invalid address or unknown instruction.
     fn step(&mut self) -> Result<(), EmuError> {
@@ -86,10 +86,8 @@ impl Cpu<'_> {
         Ok(())
     }
 }
-// ANCHOR_END: example
 
 /// Sums five down to one and stops after at most 64 guest instructions.
-///
 /// # Errors
 /// Propagates malformed instructions, invalid addresses, and budget exhaustion.
 fn main() -> Result<(), EmuError> {
@@ -117,15 +115,19 @@ fn main() -> Result<(), EmuError> {
     }
     Err(EmuError::StepLimit)
 }
+// ANCHOR_END: example
 
 /// Runs the self-contained virtual machine without a guest file.
+/// A two-register virtual machine with a bounded fetch/decode/execute loop.
 ///
 /// # Errors
 /// Propagates guest instruction and execution-budget errors.
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     Ok(main()?)
 }
 
+/// fetch/decode/execute loop.
 #[cfg(test)]
 mod tests {
     use super::*;

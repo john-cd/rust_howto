@@ -100,10 +100,14 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub async fn run() -> anyhow::Result<()> {
     main().await
 }
 
+/// The recipe runs end to end against the mocked node.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -113,8 +117,8 @@ mod tests {
     async fn main_runs() -> anyhow::Result<()> {
         main().await
     }
-
     /// The balance is read from the mocked response and formatted in ether.
+
     #[tokio::test]
     async fn balance_is_formatted_in_ether() -> anyhow::Result<()> {
         let asserter = Asserter::new();

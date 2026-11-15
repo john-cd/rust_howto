@@ -44,6 +44,7 @@ pub enum DataStoreError {
     #[error(transparent)]
     // Forward the source and Display methods straight through to an
     // underlying error without adding an additional message.
+    /// Other variant of `DataStoreError`.
     Other(#[from] anyhow::Error),
 }
 
@@ -72,10 +73,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()
 }
 
+/// Checks that the example returns an error.
 #[cfg(test)]
 mod tests {
     use super::*;

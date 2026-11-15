@@ -1,12 +1,12 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! A no-allocation example using fixed-capacity collections.
 //!
 //! Embedded programs often cannot allocate memory at run time, since allocation
 //! can fail or take unpredictable time. Fixed-capacity collections reserve
 //! their space in advance and return an error when full.
 
-// ANCHOR: example
 use core::fmt;
 use core::fmt::Write as _;
 
@@ -14,7 +14,6 @@ use heapless::String;
 use heapless::Vec;
 
 /// Demonstrates fixed-capacity storage and formatting without heap allocation.
-///
 /// # Errors
 /// Returns a formatting error if the fixed-capacity message is too small.
 fn main() -> fmt::Result {
@@ -39,15 +38,16 @@ fn main() -> fmt::Result {
 ///
 /// # Errors
 /// Propagates a formatting error if the message does not fit its inline buffer.
+/// A no-allocation example using fixed-capacity collections.
 pub fn run() -> fmt::Result {
     main()
 }
 
+/// storage.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that the example rejects excess items and formats into fixed
     /// storage.
     #[test]
     fn fixed_capacity_storage_rejects_overflow_and_formats() {

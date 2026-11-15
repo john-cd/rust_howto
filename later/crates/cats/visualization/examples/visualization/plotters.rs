@@ -49,10 +49,14 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 // ANCHOR_END: example
 
 /// Runs the in-memory SVG rendering example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     main()
 }
 
+/// Tests that the line chart is rendered into an SVG string containing expected elements.
 #[cfg(test)]
 mod tests {
     use super::*;

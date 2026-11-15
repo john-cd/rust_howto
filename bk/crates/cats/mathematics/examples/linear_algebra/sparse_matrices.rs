@@ -18,8 +18,9 @@
 use sprs::CsMat;
 use sprs::TriMat;
 use sprs::prod::mul_acc_mat_vec_csr;
-
+/// Runs the example.
 /// Builds a small sparse matrix and computes with it.
+
 fn main() {
     // Collect `(row, column, value)` triplets in a `TriMat`, which is easy to
     // build up entry by entry. Missing entries are implicitly zero.

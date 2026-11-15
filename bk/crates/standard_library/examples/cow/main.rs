@@ -5,11 +5,17 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Alternatives to `Cow`.
 mod cow_alternatives;
+/// Example of a function accepting either owned or borrowed values
 mod cow_as_function_param;
+/// Demonstrates various uses and conversions of `Cow` (Clone-on-Write).
 mod cow_to_borrowed_owned;
+/// Example of a function returning a `Cow`.
 mod function_returning_cow;
+/// Returning a borrowed or an owned string with `Cow`.
 mod into_cow;
+/// Modifying a `Cow` in place, cloning it on write.
 mod modify_cow_in_place;
 
 /// Command-line arguments.
@@ -68,8 +74,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -90,7 +97,6 @@ mod tests {
         "modify_cow_in_place",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

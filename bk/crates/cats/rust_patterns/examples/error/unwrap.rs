@@ -13,8 +13,9 @@
     clippy::unwrap_used,
     reason = "this example demonstrates `unwrap`"
 )]
-
+/// Runs the example.
 /// Extracts a value with `unwrap` and `expect`, which panic on failure.
+
 fn main() {
     let number_str = "42";
 
@@ -43,8 +44,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

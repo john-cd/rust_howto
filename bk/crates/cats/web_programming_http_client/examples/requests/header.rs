@@ -14,6 +14,7 @@ use reqwest::header;
 use serde::Deserialize;
 
 /// Represents the structure of the JSON response from `httpbin.org/headers`.
+/// State required by `HeadersEcho` during transport operations.
 #[derive(Deserialize, Debug)]
 pub struct HeadersEcho {
     /// A map of header names to their values.
@@ -73,10 +74,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Marks the live HTTP echo example as an opt-in network test.
 #[cfg(test)]
 mod tests {
     use std::io::Read as _;

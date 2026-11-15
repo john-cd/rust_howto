@@ -9,6 +9,7 @@
 
 use macroquad::prelude::*;
 
+/// Shared `ball radius` used by this module.
 const BALL_RADIUS: f32 = 15.0;
 
 /// A ball with a position and velocity in pixels.
@@ -64,8 +65,9 @@ async fn async_main() {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Starts the Macroquad window and game loop.
+
 pub fn run() {
     macroquad::Window::new("Bouncing Ball", async_main());
 }
@@ -74,7 +76,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies that a ball hitting an edge reverses its velocity.
     #[test]
     fn step_reflects_a_ball_from_the_left_edge() {
         let mut ball = Ball {

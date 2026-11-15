@@ -5,10 +5,15 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Basic `Box` usage.
 mod box_basics;
+/// Dereferencing a `Box`.
 mod box_deref;
+/// Boxing dynamically sized types.
 mod box_dst;
+/// Example using `Box<T>` for recursive data structures.
 mod box_recursive;
+/// Example of using `Box` as a smart pointer for trait objects.
 mod box_trait_objects;
 
 /// Command-line arguments.
@@ -62,8 +67,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -83,7 +89,6 @@ mod tests {
         "box_trait_objects",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

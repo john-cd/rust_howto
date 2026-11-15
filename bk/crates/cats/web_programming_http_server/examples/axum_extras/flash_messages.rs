@@ -30,9 +30,9 @@ async fn show(messages: Messages) -> String {
         .collect::<Vec<_>>()
         .join("\n")
 }
-
 /// Builds the router. Messages are kept in the session, so the session layer
 /// must wrap the messages layer.
+
 pub fn app() -> Router {
     let session_layer = SessionManagerLayer::new(MemoryStore::default()).with_secure(false);
     Router::new()
@@ -43,6 +43,12 @@ pub fn app() -> Router {
 }
 // ANCHOR_END: example
 
+/// Builds the router that stores and displays flash messages.
+pub fn run() -> Router {
+    app()
+}
+
+/// An error is returned if headers, to_str fails.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -54,6 +60,15 @@ mod tests {
 
     use super::*;
 
+    /// Sends a request with an optional session cookie.
+    ///
+    /// # Arguments
+    /// * `app` - Router that handles the request.
+    /// * `uri` - Request path to call.
+    /// * `cookie` - Optional session cookie header value.
+    ///
+    /// # Errors
+    /// Returns an error if the request cannot be built or the router fails.
     async fn get_with(
         app: &Router,
         uri: &str,
@@ -66,11 +81,20 @@ mod tests {
         Ok(app.clone().oneshot(request.body(Body::empty())?).await?)
     }
 
+    /// Collects a response body and decodes it as UTF-8.
+    ///
+    /// # Arguments
+    /// * `response` - Response whose body should be read.
+    ///
+    /// # Errors
+    /// Returns an error if body collection or UTF-8 decoding fails.
     async fn text(response: axum::response::Response) -> anyhow::Result<String> {
         let bytes = response.into_body().collect().await?.to_bytes();
         Ok(String::from_utf8(bytes.to_vec())?)
     }
 
+    /// # Errors
+    /// An error is returned if headers, to_str fails.
     #[tokio::test]
     async fn message_is_shown_once() -> anyhow::Result<()> {
         let app = app();

@@ -30,8 +30,9 @@ fn main() {
     assert_relative_eq!(sum, expected, epsilon = f64::EPSILON);
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -43,7 +44,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Checks that ULP and epsilon comparisons accept the same rounded result.
     #[test]
     fn rounded_sum_is_approximately_equal() {
         main();

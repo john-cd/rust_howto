@@ -33,10 +33,15 @@ fn build_table() -> Table {
 }
 
 /// Prints the table.
-pub fn run() {
+pub fn example_body() {
     println!("{}", build_table());
 }
 // ANCHOR_END: example
+
+/// Runs the example function.
+pub fn run() {
+    example_body();
+}
 
 #[cfg(test)]
 mod tests {

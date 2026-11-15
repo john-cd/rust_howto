@@ -1,12 +1,12 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Generate a category badge with the shared `templ` renderer.
 //!
 //! A badge is a small label, here showing a category, rendered from a template.
 //! Rendering through one shared function keeps every badge in the book
 //! identical.
 
-// ANCHOR: example
 use anyhow::Result;
 use tool_lib::create_category_badge;
 
@@ -14,8 +14,8 @@ use tool_lib::create_category_badge;
 fn render_category_badge() -> Result<String> {
     create_category_badge("Encoding", "encoding")
 }
-
 /// Prints the generated category badge.
+
 fn main() -> Result<()> {
     println!("{}", render_category_badge()?);
     Ok(())
@@ -23,6 +23,10 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the category badge example.
+/// Generate a category badge with the shared `templ` renderer.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -30,6 +34,7 @@ pub fn run() -> Result<()> {
     entry()
 }
 
+/// Verifies the category badge output and runs the example entry point.
 #[cfg(test)]
 mod tests {
     use super::*;

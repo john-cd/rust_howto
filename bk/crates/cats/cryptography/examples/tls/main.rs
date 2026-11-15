@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Send an HTTPS request with a client certificate and private key.
 mod mtls;
+/// Build a platform TLS connector with `native-tls`.
 mod native_tls;
+/// Connect to a TLS server with `rustls` and verify its certificate.
 mod rustls;
 
 /// Command-line arguments.
@@ -64,7 +67,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["mtls", "native_tls", "rustls"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

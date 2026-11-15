@@ -13,17 +13,23 @@ use syn::visit::Visit;
 /// Counts functions (free functions and methods) and structs.
 #[derive(Default)]
 struct ItemCounter {
+    /// Number of functions discovered.
     functions: usize,
+    /// Number of structs discovered.
     structs: usize,
 }
 
 impl<'ast> Visit<'ast> for ItemCounter {
+    /// # Arguments
+    /// * `node` - Mutable impl item fn whose state is updated by this operation.
     fn visit_item_fn(&mut self, node: &'ast syn::ItemFn) {
         self.functions += 1;
         // Keep walking so nested items are counted too.
         syn::visit::visit_item_fn(self, node);
     }
 
+    /// # Arguments
+    /// * `node` - Mutable item struct whose state is updated by this operation.
     fn visit_impl_item_fn(&mut self, node: &'ast syn::ImplItemFn) {
         self.functions += 1;
         syn::visit::visit_impl_item_fn(self, node);
@@ -43,13 +49,18 @@ fn count_items(source: &str) -> syn::Result<(usize, usize)> {
     Ok((counter.functions, counter.structs))
 }
 
+/// # Errors
+/// An error is returned if let fails.
 fn main() -> syn::Result<()> {
     let source = "
+        /// Groups the data required by rust source operations.
         struct Point { x: f64, y: f64 }
 
         impl Point {
+            ///
             fn norm(&self) -> f64 { (self.x * self.x + self.y * self.y).sqrt() }
         }
+/// Runs the example.
 
         fn main() {
             fn helper() {}
@@ -67,6 +78,9 @@ fn main() -> syn::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> syn::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

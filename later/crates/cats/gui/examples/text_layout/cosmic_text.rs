@@ -70,7 +70,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies that a narrow buffer wraps a long string onto multiple lines.
     #[test]
     fn wraps_text_at_narrow_width() {
         let mut font_system = new_font_system();

@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Renders and saves a Julia set with Rayon and the image crate.
 //!
 //! A thread pool starts a fixed number of worker threads and feeds them jobs,
@@ -16,7 +17,6 @@ use image::Rgb;
 use num::complex::Complex;
 use rayon::prelude::*;
 
-// ANCHOR: example
 /// Renders a Julia set into an in-memory RGB image.
 ///
 /// # Errors
@@ -66,11 +66,9 @@ fn render_julia(
     ImageBuffer::from_raw(width, height, pixels)
         .context("rendered pixel buffer has an unexpected length")
 }
-
 /// Renders and saves a sample Julia set image.
-///
+
 /// # Errors
-///
 /// Returns an error if the image cannot be rendered, the output directory
 /// cannot be created, or the PNG file cannot be written.
 fn main() -> Result<()> {
@@ -81,7 +79,6 @@ fn main() -> Result<()> {
         .context("could not save the Julia set image")?;
     Ok(())
 }
-// ANCHOR_END: example
 
 /// Calculates how many iterations a point takes to escape the Julia set.
 fn julia_escape_iterations(
@@ -136,8 +133,13 @@ fn wavelength_to_rgb(wavelength: u32) -> Rgb<u8> {
 fn normalize_color_component(component: f32, factor: f32) -> u8 {
     ((component * factor).powf(0.8) * 255.0) as u8
 }
+// ANCHOR_END: example
 
 /// Runs the fractal example.
+/// Renders and saves a Julia set with Rayon and the image crate.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }

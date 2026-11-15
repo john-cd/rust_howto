@@ -20,12 +20,10 @@ fn basic_auth_request(
 ) -> RequestBuilder {
     client.get(endpoint).basic_auth(user_name, Some(password))
 }
-
-/// Builds a request locally so the example can run without a network service.
+/// Builds an authenticated request locally without contacting a server.
 ///
-/// The credentials are placeholders. Real credentials must be kept secret and
-/// sent only to an HTTPS endpoint.
-///
+/// The example uses placeholder credentials. Real credentials must be kept
+/// secret and sent only over HTTPS.
 /// # Errors
 /// Returns an error if the request cannot be constructed.
 fn main() -> anyhow::Result<()> {
@@ -46,10 +44,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies valid credentials receive 200 and invalid ones receive 401 without a socket.
 #[cfg(test)]
 mod tests {
     use anyhow::Context as _;

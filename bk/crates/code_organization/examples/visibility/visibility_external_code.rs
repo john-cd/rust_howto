@@ -29,8 +29,9 @@ mod crate_helper_module {
         "crate_helper"
     }
 }
-
+/// Runs the example.
 /// Calls the function of the private module.
+
 fn main() {
     println!("{}", public_to_external_crates());
     println!("{}", public_api::also_public_to_external_crates());
@@ -38,8 +39,9 @@ fn main() {
     println!("visibility_external_code example: public and private visibility in a crate");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -52,6 +54,7 @@ mod tests {
     fn test_main() {
         main();
     }
+    /// Verifies public API.
 
     #[test]
     fn test_public_api() {
@@ -61,6 +64,7 @@ mod tests {
             "also_public_to_external_crates"
         );
     }
+    /// Verifies crate helper.
 
     #[test]
     fn test_crate_helper() {

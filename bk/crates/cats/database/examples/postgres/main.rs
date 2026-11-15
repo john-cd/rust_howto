@@ -7,12 +7,16 @@ use clap::Parser;
 #[cfg(feature = "postgres")]
 use clap::Subcommand;
 
+/// Group PostgreSQL rows by artist nationality and count each group.
 #[cfg(feature = "postgres")]
 mod aggregate_data;
+/// This example demonstrates using generated, type-safe PostgreSQL queries
 #[cfg(feature = "postgres")]
 mod cornucopia;
+/// This example demonstrates creating database tables in PostgreSQL using the
 #[cfg(feature = "postgres")]
 mod create_tables;
+/// This example demonstrates inserting rows into PostgreSQL and querying the
 #[cfg(feature = "postgres")]
 mod insert_query_data;
 
@@ -71,7 +75,9 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Rejects invocations that do not select a PostgreSQL example.
 #[cfg(test)]
+/// Tests the `main` example and its documented behavior.
 #[cfg(feature = "postgres")]
 mod tests {
     use super::*;

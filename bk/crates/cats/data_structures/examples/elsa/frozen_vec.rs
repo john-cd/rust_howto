@@ -1,8 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Demonstrates stable references in an `elsa::FrozenVec`.
 
-// ANCHOR: example
 use elsa::FrozenVec;
 
 /// Shows that earlier element references remain valid after more pushes.
@@ -30,13 +30,15 @@ fn main() {
     assert_eq!(frozen[0].as_str(), "first");
     println!("index 0: {}", frozen[0]);
 }
+// ANCHOR_END: example
 
 /// Runs this example for its parent module.
+/// Demonstrates stable references in an `elsa::FrozenVec`.
 pub(super) fn run() {
     main();
 }
-// ANCHOR_END: example
 
+/// Verifies that references and indexing retain the inserted values.
 #[cfg(test)]
 mod tests {
     /// Verifies that references and indexing retain the inserted values.

@@ -17,6 +17,7 @@ use redb::Database;
 use redb::ReadableDatabase;
 use redb::TableDefinition;
 
+/// Shared `table` used by this module.
 const TABLE: TableDefinition<&str, &str> = TableDefinition::new("my_table");
 
 /// Opens a `redb` database, inserts a key-value pair in a write transaction,
@@ -53,6 +54,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

@@ -16,8 +16,9 @@
 use std::collections::HashMap;
 
 use tinytemplate::TinyTemplate;
-
+/// Runs the example.
 /// Renders a template with values from a context and prints the result.
+
 fn main() {
     // Create a new template engine:
     let mut tt = TinyTemplate::new();
@@ -52,8 +53,10 @@ fn main() {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -68,16 +71,22 @@ mod tests {
         main();
     }
 
+    /// Shared `template` used by this module.
     const TEMPLATE: &str =
         "Hello, {name}! {{ if flag }}Welcome to {place}.{{ else }}Welcome home!{{ endif }}";
 
     #[derive(serde::Serialize)]
     struct Context {
+        /// Display label used to distinguish this context from other entries.
         name: &'static str,
+        /// Location label shown to the user.
         place: &'static str,
+        /// Flag indicating whether the context satisfies the flag condition.
         flag: bool,
     }
 
+    /// # Panics
+    /// Panics if valid template.
     fn render(flag: bool) -> String {
         let mut tt = TinyTemplate::new();
         tt.add_template("greeting", TEMPLATE)

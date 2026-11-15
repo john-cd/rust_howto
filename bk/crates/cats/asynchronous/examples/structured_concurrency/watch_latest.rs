@@ -15,6 +15,7 @@ use tokio::sync::watch;
 /// A configuration published to subscribers.
 #[derive(Debug, PartialEq)]
 struct Config {
+    /// Protocol version.
     version: u32,
 }
 
@@ -60,8 +61,9 @@ async fn work_queue() {
     }
     assert_eq!(jobs, vec![1, 2, 3]);
 }
-
+/// Runs the example.
 /// Runs the three demonstrations.
+
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
     watch_latest().await;
@@ -69,12 +71,14 @@ async fn main() {
     work_queue().await;
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Checks watch state, broadcasts, and bounded message delivery.
 #[cfg(test)]
 mod tests {
     use super::*;

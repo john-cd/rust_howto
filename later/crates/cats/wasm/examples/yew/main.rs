@@ -2,13 +2,16 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// The main function to render the App component.
 mod yew;
-
+/// Runs the example.
 /// Runs the yew example.
+
 fn main() {
     yew::run();
 }
 
+/// Verifies that the `yew` web framework example.
 #[cfg(test)]
 mod tests {
     use super::*;

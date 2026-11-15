@@ -8,8 +8,9 @@
 //! documents or rows that match a condition.
 
 use roaring::RoaringBitmap;
-
+/// Runs the example.
 /// Builds roaring bitmaps and combines and queries them.
+
 fn main() {
     // Create two bitmaps representing two sets of user IDs:
     // These are highly optimized data structures for storing sets of 32-bit
@@ -64,8 +65,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

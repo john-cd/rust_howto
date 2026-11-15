@@ -45,6 +45,7 @@ struct Point2D {
 // The `Display` trait allows your struct to be printed using the `{}` format
 // specifier, for user-friendly output.
 impl fmt::Display for Point2D {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "Point2D: ({}, {})", self.x, self.y)
     }
@@ -86,8 +87,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Runs a short-lived container with explicit cleanup using Bollard.
 //!
 //! A container runs a program in an isolated process with its own file system,
@@ -7,7 +8,6 @@
 //! start throwaway services in tests. Always remove the container afterwards,
 //! or stopped containers pile up on the machine.
 
-// ANCHOR: example
 use anyhow::Context;
 use bollard::Docker;
 use bollard::models::ContainerCreateBody;
@@ -82,10 +82,15 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the Bollard recipe against a local Docker daemon.
+/// Runs a short-lived container with explicit cleanup using Bollard.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub async fn run() -> anyhow::Result<()> {
     main().await
 }
 
+/// Verifies container execution, exit status, and successful removal.
 #[cfg(test)]
 mod tests {
     /// Verifies container execution, exit status, and successful removal.

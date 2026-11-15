@@ -5,8 +5,12 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Demonstrates how to get the current working directory.
 mod cwd;
+/// Creating, listing and removing directories.
 mod manipulate_dirs;
+/// Add to `Cargo.toml`: ```toml remove_dir_all = { version = "1.0.0", features = [ "parallel" ] }
+/// ```
 mod remove_dir_all;
 
 /// Command-line arguments.
@@ -63,7 +67,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["cwd", "manipulate_dirs", "remove_dir_all"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

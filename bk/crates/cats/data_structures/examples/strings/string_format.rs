@@ -125,8 +125,9 @@ fn format() {
     // release builds.
     let _q = dbg!(Point { x: 5, y: 5 });
 }
-
+/// Runs the example.
 /// Runs each of the formatting examples.
+
 fn main() {
     print();
     variants();
@@ -134,8 +135,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -152,7 +154,6 @@ mod tests {
         main();
     }
 
-    /// Verifies the exact strings produced by `format!` and `write!`.
     #[test]
     fn formatting_macros_produce_expected_text() {
         let formatted = format!("{0} {1} {0}", "+", "-");

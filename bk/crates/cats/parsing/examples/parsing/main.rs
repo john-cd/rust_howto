@@ -5,8 +5,13 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// `nom` is a parser combinator library, which makes it easy to build parsers from small, reusable
+/// components.
 mod nom;
+/// Builds or traverses parsing graph data while preserving relationships needed by downstream
+/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod tree_sitter;
+/// This example demonstrates basic usage of the `winnow` crate.
 mod winnow;
 
 /// Command-line arguments.
@@ -64,7 +69,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["nom", "tree_sitter", "winnow"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

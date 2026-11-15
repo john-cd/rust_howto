@@ -38,13 +38,15 @@ mod cfg {
             &self.server_address
         }
 
-        /// Returns the maximum number of connections.
         pub fn max_connections(&self) -> u8 {
             self.max_connections
         }
 
         /// Updates the configuration, cloning it first if other `Arc` pointers
+        ///
+        /// # Arguments
         /// to it exist (clone-on-write).
+
         pub fn update(self: &mut Arc<Self>, server_address: String, max_connections: u8) {
             // If there are other `Arc` pointers to the same allocation,
             // then `make_mut` will clone the inner value to a new allocation to
@@ -77,17 +79,18 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// it on write
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies updates clone the inner value while readers retain old data.
     #[test]
     fn clone_on_write_preserves_the_reader_snapshot() {
         let (reader_snapshot, current) = updated_views();

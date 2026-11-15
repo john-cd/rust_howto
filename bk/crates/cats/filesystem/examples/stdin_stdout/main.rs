@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Reading from standard input and writing to standard output.
 mod stdin_stdout;
 
 /// Runs the stdin stdout example.

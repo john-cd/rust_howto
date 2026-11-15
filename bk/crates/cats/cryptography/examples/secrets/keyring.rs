@@ -31,6 +31,7 @@ impl Vault {
     }
 
     /// Loads the secret, or `None` if nothing is stored.
+
     fn load(&self) -> Result<Option<Vec<u8>>, Error> {
         match self.entry.get_secret() {
             Ok(bytes) => Ok(Some(bytes)),
@@ -48,6 +49,8 @@ impl Vault {
     }
 }
 
+/// # Errors
+/// An error is returned if main, store fails.
 fn main() -> Result<(), Error> {
     let vault = Vault::new("alice")?;
     vault.store(b"s3cret")?;
@@ -60,12 +63,16 @@ fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     if let Err(e) = main() {
         eprintln!("credential store unavailable: {e}");
     }
 }
 
+/// Checks that an entry can be created when a store is available.
 #[cfg(test)]
 mod tests {
     use super::*;

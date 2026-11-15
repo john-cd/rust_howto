@@ -23,6 +23,10 @@ fn main() -> anyhow::Result<()> {
 }
 
 /// Uppercases the first Unicode scalar value without slicing at a byte offset.
+///
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested case conversion operation.
+
 fn capitalize_first_char(input: &str) -> String {
     let mut chars = input.chars();
     match chars.next() {
@@ -34,6 +38,9 @@ fn capitalize_first_char(input: &str) -> String {
 // ANCHOR_END: example
 
 /// Runs the example for the command-line dispatcher and unit tests.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -41,6 +48,7 @@ pub fn run() -> anyhow::Result<()> {
     entry()
 }
 
+/// Uppercases a multibyte initial scalar without panicking on UTF-8.
 #[cfg(test)]
 mod tests {
     use super::capitalize_first_char;

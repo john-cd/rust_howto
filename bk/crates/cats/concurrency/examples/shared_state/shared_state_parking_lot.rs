@@ -44,8 +44,9 @@ fn expensive_computation() -> usize {
     // ...
     42
 }
-
+/// Runs the example.
 /// Reads the cached value from several threads.
+
 fn main() {
     // A closure has not been executed yet:
     assert_eq!(INIT.state(), OnceState::New);
@@ -55,8 +56,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

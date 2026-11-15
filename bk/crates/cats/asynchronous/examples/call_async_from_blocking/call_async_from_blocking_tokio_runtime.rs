@@ -55,6 +55,9 @@ async fn my_bg_task(i: u64) {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -70,7 +73,8 @@ mod tests {
         main();
     }
 
-    #[test]
+    /// # Errors
+    /// An error is returned if background_task_runs_on_the_runtime fails.
     fn background_task_runs_on_the_runtime() -> Result<(), Box<dyn std::error::Error>> {
         let runtime = tokio::runtime::Builder::new_current_thread()
             .enable_all()
@@ -80,6 +84,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if spawned_tasks_finish_even_with_one_worker, block_on fails.
     #[test]
     fn spawned_tasks_finish_even_with_one_worker() -> Result<(), Box<dyn std::error::Error>> {
         let runtime = tokio::runtime::Builder::new_multi_thread()

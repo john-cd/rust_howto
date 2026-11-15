@@ -5,12 +5,21 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Encoding a struct to DER and decoding it back with the `der` crate.
 mod der;
+/// Turns certs input into structured syntax data while preserving source locations and reporting
+/// malformed input. Analysis and validation code use these routines before applying domain-specific
+/// rules.
 mod parse_x509;
+/// Encode and decode PEM data with the `pem_rfc7468` crate.
 mod pem_rfc7468;
+/// Encoding and decoding private keys in PKCS#8 format.
 mod pkcs8;
+/// Generate a self-signed certificate for local development with `rcgen`.
 mod rcgen;
+/// Read a PEM certificate file and decode its DER bytes.
 mod read_pem;
+/// Build and inspect X.509 certificate fields with the `x509_cert` crate.
 mod x509_cert;
 
 /// Command-line arguments.
@@ -100,7 +109,6 @@ mod tests {
         "x509_cert",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

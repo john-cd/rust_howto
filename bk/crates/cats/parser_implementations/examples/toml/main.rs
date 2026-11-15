@@ -5,8 +5,12 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates how to use the maintained `toml` crate to parse
 mod basic_toml;
+/// Example demonstrating TOML parsing and deserialization.
 mod toml;
+/// This example demonstrates how to use the `toml_edit` crate to parse, modify, and print TOML
+/// documents while preserving the
 mod toml_edit;
 
 /// Command-line arguments.
@@ -63,7 +67,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["basic_toml", "toml", "toml_edit"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

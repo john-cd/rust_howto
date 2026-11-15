@@ -4,6 +4,7 @@
 //! String slice examples.
 
 /// Creates string slices from a string literal and a `String`.
+
 fn main() {
     // A string literal:
     let string_literal: &'static str = "hello world";
@@ -25,8 +26,9 @@ fn main() {
     assert!(std::ptr::eq(whole_slice.as_ptr(), s.as_ptr()));
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

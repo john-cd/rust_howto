@@ -23,8 +23,8 @@
 use std::time::Duration;
 
 use moka::sync::Cache;
-
 /// Builds a `moka` cache with a size limit and an idle timeout, then inserts
+
 /// and reads entries.
 fn main() {
     // Create a cache with a maximum of 100 entries.
@@ -60,8 +60,9 @@ fn main() {
     handle.join().expect("worker thread should not panic");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -75,6 +76,7 @@ mod tests {
     fn test_moka_example_entry_point() {
         main();
     }
+    /// Inserts get and invalidate.
 
     #[test]
     fn insert_get_and_invalidate() {

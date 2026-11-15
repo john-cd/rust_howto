@@ -48,17 +48,21 @@ pub fn app() -> Router {
         .route("/hello/{name}", get(hello))
         .merge(SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", ApiDoc::openapi()))
 }
-
 /// Renders the document as pretty-printed JSON.
-///
+
 /// # Errors
-///
 /// Returns an error if the OpenAPI document cannot be serialized as JSON.
 pub fn openapi_json() -> anyhow::Result<String> {
     Ok(ApiDoc::openapi().to_pretty_json()?)
 }
 // ANCHOR_END: example
 
+/// Builds the router documented by the generated OpenAPI description.
+pub fn run() -> Router {
+    app()
+}
+
+/// Includes the greeting route and response schema in the document.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;

@@ -6,9 +6,18 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Builds or traverses structured concurrency graph data while preserving relationships needed by
+/// downstream analysis. Workspace and rendering code use this module to obtain a consistent view of
+/// the graph.
 mod cancellation_tree;
+/// A bounded worker pool with `JoinSet`: keep at most `LIMIT` tasks running, refill as tasks
+/// finish, collect results in completion order, and tell a
 mod joinset_pool;
+/// A supervisor that restarts a failing task with capped exponential backoff
 mod supervisor;
+/// Choosing a Tokio channel: `watch` keeps only the latest value (config, state), `broadcast`
+/// delivers every event but receivers can lag, and `mpsc` is a work queue where each message goes
+/// to one consumer.
 mod watch_latest;
 
 /// Command-line arguments.
@@ -55,8 +64,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -75,7 +85,6 @@ mod tests {
         "watch_latest",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

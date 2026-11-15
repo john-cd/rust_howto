@@ -6,7 +6,10 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates how to use the `postcard` crate for serialization
 mod postcard;
+/// `rkyv` (short for "archive") is a high-performance, zero-copy (de)serialization framework that
+/// allows arbitrary field types
 mod rkyv;
 
 /// Command-line arguments.
@@ -57,7 +60,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["postcard", "rkyv"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

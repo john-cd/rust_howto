@@ -10,8 +10,9 @@ use wasmi::Engine;
 use wasmi::Linker;
 use wasmi::Module;
 use wasmi::Store;
-
+/// Runs the example.
 /// Runs a WebAssembly module with `wasmi` and checks the result.
+
 fn main() {
     let wasm_bytes: &[u8] = &[
         0x00, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00, 0x01, 0x05, 0x01, 0x60, 0x00, 0x01, 0x7f,
@@ -37,6 +38,7 @@ fn main() {
     println!("wasmi result: {value}");
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

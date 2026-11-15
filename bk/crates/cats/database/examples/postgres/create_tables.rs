@@ -14,14 +14,14 @@ use postgres::Client;
 use postgres::NoTls;
 
 /// This function creates two tables in a PostgreSQL database: `author` and
-/// `book`.
 ///
+/// `book`.
 /// The `author` table has columns for `id`, `name`, and `country`.
 /// The `book` table has columns for `id`, `title`, and `author_id` (a foreign
+///
 /// key referencing the `author` table).
 ///
 /// # Errors
-///
 /// Returns an error if `DATABASE_URL` is missing, PostgreSQL cannot be reached,
 /// or either table cannot be created.
 fn main() -> anyhow::Result<()> {
@@ -58,13 +58,13 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// # Errors
-///
 /// Returns an error if PostgreSQL cannot be reached or the tables cannot be
 /// created.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// The example creates its tables in the configured PostgreSQL database.
 #[cfg(test)]
 mod tests {
     use super::*;

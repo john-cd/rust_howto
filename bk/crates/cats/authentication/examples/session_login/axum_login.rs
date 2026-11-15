@@ -49,19 +49,25 @@ use super::hashing;
 /// A user. The `AuthUser` hash invalidates sessions when the password changes.
 #[derive(Clone, Debug)]
 pub struct User {
+    /// Stable identifier used to retrieve and update this user.
     id: i64,
+    /// Account username.
     username: String,
+    /// Stored password hash.
     password_hash: String,
+    /// Permissions granted to this user.
     permissions: HashSet<String>,
 }
 
 impl AuthUser for User {
     type Id = i64;
 
+    /// Returns the stable identifier used by the session backend.
     fn id(&self) -> i64 {
         self.id
     }
 
+    /// Returns the password hash used to invalidate sessions after password changes.
     fn session_auth_hash(&self) -> &[u8] {
         self.password_hash.as_bytes()
     }
@@ -70,13 +76,16 @@ impl AuthUser for User {
 /// Credentials posted by the login form.
 #[derive(Clone, Debug, Deserialize)]
 pub struct Credentials {
+    /// Account username.
     username: String,
+    /// Credential checked by the authentication flow before a session is issued.
     password: String,
 }
 
 /// An in-memory user store. Replace with a database in a real application.
 #[derive(Clone)]
 pub struct Backend {
+    /// Users indexed by their stable identifiers for authentication and authorization lookups.
     users: Arc<HashMap<i64, User>>,
     /// Hash verified when the username is unknown, so that the response time
     /// does not reveal which usernames exist.
@@ -86,6 +95,8 @@ pub struct Backend {
 impl Backend {
     /// Constructs a new in-memory authentication and authorization backend.
     ///
+    /// # Arguments
+    /// * `users` - Initial user records indexed by each user's identifier.
     /// Accepts a list of `User` instances to populate the initial user store.
     /// Computes a dummy password hash so that authentication attempts with
     /// non-existent usernames incur identical processing time, preventing
@@ -110,6 +121,13 @@ impl AuthnBackend for Backend {
     type Error = Infallible;
     type User = User;
 
+    /// Checks a submitted username and password against the in-memory user store.
+    ///
+    /// # Arguments
+    /// * `creds` - Username and password submitted by the login form.
+    ///
+    /// # Returns
+    /// The matching user when the password is valid, or `None` for an unknown user or bad password.
     async fn authenticate(&self, creds: Credentials) -> Result<Option<User>, Infallible> {
         let user = self.users.values().find(|u| u.username == creds.username);
         // Always run one verification, whether or not the user exists.
@@ -118,19 +136,35 @@ impl AuthnBackend for Backend {
         Ok(user.filter(|_| ok).cloned())
     }
 
+    /// Looks up a user by the identifier supplied by axum-login.
+    ///
+    /// # Arguments
+    /// * `id` - User identifier to look up.
+    ///
+    /// # Returns
+    /// The matching user, or `None` if the ID is not present in the in-memory store.
     async fn get_user(&self, id: &UserId<Self>) -> Result<Option<User>, Infallible> {
         Ok(self.users.get(id).cloned())
     }
 }
 
 impl AuthzBackend for Backend {
+    /// Permission names stored on a user account.
     type Permission = String;
 
+    /// Returns the permissions assigned to `user`.
+    ///
+    /// # Arguments
+    /// * `user` - User whose permissions are requested.
+    ///
+    /// # Returns
+    /// A copy of the user's permission names.
     async fn get_user_permissions(&self, user: &User) -> Result<HashSet<String>, Infallible> {
         Ok(user.permissions.clone())
     }
 }
 
+/// Axum Login session type backed by the in-memory authentication backend.
 type AuthSession = axum_login::AuthSession<Backend>;
 
 /// Authenticates submitted credentials and logs the user into the active session.
@@ -173,12 +207,14 @@ async fn protected(session: AuthSession) -> String {
 async fn admin() -> &'static str {
     "Admin area"
 }
-
 /// Builds the application router with configured routes and authentication middleware.
+///
+/// # Arguments
 ///
 /// Accepts the initialized `backend` and registers the session manager layer along
 /// with authentication and authorization route layers.
 /// The resulting `Router` is safe to share and clone across concurrent request worker threads.
+
 pub fn app(backend: Backend) -> Router {
     // In-memory sessions: lost on restart. Use a database-backed store in
     // production, e.g. `tower-sessions-sqlx-store`.
@@ -209,6 +245,9 @@ fn main() -> anyhow::Result<()> {
 }
 
 /// Runs the session login example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -239,6 +278,15 @@ mod tests {
         ])?))
     }
 
+    /// Sends a login request and returns the router's response.
+    ///
+    /// # Arguments
+    /// * `app` - Router serving the login endpoint.
+    /// * `name` - Username submitted to the endpoint.
+    /// * `pw` - Password submitted to the endpoint.
+    ///
+    /// # Errors
+    /// Returns an error if the request body cannot be built or the router fails.
     async fn login_as(app: &Router, name: &str, pw: &str) -> anyhow::Result<Response<Body>> {
         let request = Request::post("/login")
             .header(header::CONTENT_TYPE, "application/x-www-form-urlencoded")
@@ -246,11 +294,22 @@ mod tests {
         Ok(app.clone().oneshot(request).await?)
     }
 
+    /// # Arguments
+    /// * `response` - Data produced for the caller by the surrounding axum_login workflow.
     fn cookie(response: &Response<Body>) -> Option<String> {
         let value = response.headers().get(header::SET_COOKIE)?.to_str().ok()?;
         value.split(';').next().map(str::to_owned)
     }
 
+    /// Sends a request with an optional session cookie and returns its response.
+    ///
+    /// # Arguments
+    /// * `app` - Router that handles the request.
+    /// * `uri` - Request path to call.
+    /// * `cookie` - Optional cookie header value.
+    ///
+    /// # Errors
+    /// Returns an error if the request cannot be built or the router fails.
     async fn get_with(
         app: &Router,
         uri: &str,
@@ -263,7 +322,6 @@ mod tests {
         Ok(app.clone().oneshot(builder.body(Body::empty())?).await?)
     }
 
-    #[tokio::test]
     async fn unauthenticated_is_redirected() -> anyhow::Result<()> {
         let app = test_app()?;
         let response = get_with(&app, "/protected", None).await?;
@@ -271,7 +329,6 @@ mod tests {
         Ok(())
     }
 
-    #[tokio::test]
     async fn wrong_or_unknown_credentials_are_rejected() -> anyhow::Result<()> {
         let app = test_app()?;
         assert_eq!(
@@ -317,6 +374,7 @@ mod tests {
         );
         Ok(())
     }
+    /// Verifies axum login entry point.
 
     #[test]
     fn test_axum_login_entry_point() -> anyhow::Result<()> {

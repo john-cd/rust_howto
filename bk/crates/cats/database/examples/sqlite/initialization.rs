@@ -52,10 +52,14 @@ fn create_tables(conn: &Connection) -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies both example tables can be created in an in-memory database.
 #[cfg(test)]
 mod tests {
     use super::*;

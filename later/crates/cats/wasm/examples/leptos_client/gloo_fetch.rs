@@ -1,5 +1,3 @@
-// TODO Reviewed ??-??-2026.
-
 #![cfg_attr(
     not(test),
     expect(
@@ -7,6 +5,8 @@
         reason = "targets the browser (wasm32); native builds cannot call it"
     )
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Call an HTTP API from WebAssembly with [`gloo_net`].
 //!
@@ -18,11 +18,16 @@
 /// natively.
 #[derive(Debug, PartialEq, Eq)]
 pub struct RequestSpec {
+    /// URL in `RequestSpec`.
     pub url: String,
     pub authorization: Option<String>,
 }
 
 /// Builds the request for `path`, with a bearer token when the user is
+///
+/// # Arguments
+/// * `path` - Path to the file or directory to process.
+/// * `token` - Token to validate or use for the request.
 /// logged in.
 pub fn build_request(base: &str, path: &str, token: Option<&str>) -> RequestSpec {
     RequestSpec {
@@ -49,6 +54,11 @@ pub async fn fetch_json<T: serde::de::DeserializeOwned>(
     request.send().await?.json::<T>().await
 }
 // ANCHOR_END: example
+
+/// Builds a representative API request.
+fn run() -> RequestSpec {
+    build_request("https://api.example.com", "/items", None)
+}
 
 #[cfg(test)]
 mod tests {

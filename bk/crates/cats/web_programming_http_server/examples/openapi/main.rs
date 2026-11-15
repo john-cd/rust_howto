@@ -8,7 +8,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Derive a JSON Schema with [`schemars`] and validate data against it with
 mod schemars;
+/// Generate an OpenAPI document from code with [`utoipa`].
 mod utoipa;
 
 /// Prints the generated OpenAPI document, propagating serialization errors.
@@ -32,7 +34,6 @@ fn main() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point.
     #[test]
     fn main_runs() {
         main().expect("the example should run");

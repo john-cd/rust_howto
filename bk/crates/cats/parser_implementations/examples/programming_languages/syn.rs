@@ -37,10 +37,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies top-level Rust declaration names are collected.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -55,7 +59,8 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies invalid Rust source returns a parse error.
+    /// Turns the supplied item names rejects invalid source representation into the structured
+    /// value consumed by syn, rejecting malformed input.
     #[test]
     fn parse_item_names_rejects_invalid_source() {
         assert!(parse_item_names("fn broken(").is_err());

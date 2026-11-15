@@ -15,8 +15,9 @@ fn divide(numerator: i32, denominator: i32) -> Result<i32, &'static str> {
         Ok(numerator / denominator)
     }
 }
-
+/// Runs the example.
 /// Handles both success and failure results from `divide`.
+
 fn main() {
     for (numerator, denominator) in [(12, 3), (12, 0)] {
         match divide(numerator, denominator) {
@@ -28,19 +29,19 @@ fn main() {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Returns an error instead of panicking for a zero denominator.
 #[cfg(test)]
 mod tests {
     use super::divide;
     use super::main;
 
-    /// Returns the quotient for a nonzero denominator.
-    /// Runs the `Result` example through its entry point.
     #[test]
     fn division_returns_a_success_value() {
         assert_eq!(divide(12, 3), Ok(4));

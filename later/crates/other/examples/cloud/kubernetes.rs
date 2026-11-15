@@ -1,9 +1,9 @@
-// TODO Reviewed ??-??-2026.
-
 #![cfg_attr(
     not(test),
     expect(dead_code, reason = "needs a Kubernetes cluster; the tests use mocks")
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! A minimal Kubernetes operator with `kube-rs`: a custom resource (`Echo`),
 //! a pure function that computes the desired `Deployment`, and a controller
@@ -42,6 +42,7 @@ use serde_json::json;
     namespaced,
     status = "EchoStatus"
 )]
+/// Desired state stored in the Kubernetes `Echo` custom resource.
 pub struct EchoSpec {
     /// The message the pods echo.
     pub message: String,
@@ -72,10 +73,13 @@ pub enum ReconcileError {
 
 /// Shared state for the reconciler.
 struct Context {
+    /// Database client used to execute the query.
     client: Client,
 }
 
 /// A pure function from the spec to the desired `Deployment`: it is
+///
+/// # Arguments
 /// idempotent and can be unit-tested without a cluster.
 pub fn desired_deployment(echo: &Echo) -> Result<Deployment, ReconcileError> {
     let name = echo.name_any();
@@ -165,6 +169,11 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// A minimal Kubernetes operator with `kube-rs`: a custom resource (`Echo`), a pure function that
+/// computes the desired `Deployment`, and a controller loop that applies it and reports the status.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -191,11 +200,11 @@ mod tests {
     fn test_kubernetes_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Compares the generated CRD with the committed snapshot.
     ///
     /// Set `UPDATE_SNAPSHOTS=1` to rewrite `kubernetes_crd.snapshot.json`
     /// after an intentional change to the `Echo` resource.
+
     #[test]
     fn crd_matches_the_committed_snapshot() -> anyhow::Result<()> {
         let snapshot_path = concat!(
@@ -220,6 +229,10 @@ mod tests {
         assert!(crd.spec.versions[0].subresources.is_some()); // status
     }
 
+    /// # Errors
+    /// An error is returned if desired_deployment_follows_the_spec fails.
+    /// # Panics
+    /// Panics if owner.
     #[test]
     fn desired_deployment_follows_the_spec() -> Result<(), ReconcileError> {
         let deployment = desired_deployment(&echo())?;

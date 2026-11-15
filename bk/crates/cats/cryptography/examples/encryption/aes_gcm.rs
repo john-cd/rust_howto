@@ -59,14 +59,22 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// An error is returned if test_aes_gcm_round_trips_and_rejects_tampering, try_generate_from_rng
+/// fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// # Errors
+    /// An error is returned if test_aes_gcm_round_trips_and_rejects_tampering,
+    /// try_generate_from_rng fails.
     #[test]
     fn test_aes_gcm_round_trips_and_rejects_tampering() -> anyhow::Result<()> {
         main()?;

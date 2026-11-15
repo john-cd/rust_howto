@@ -5,11 +5,17 @@
 use ::clap::Parser;
 use ::clap::Subcommand;
 
+/// Main function that parses command line arguments and prints their values: Command-line arguments
+/// are the words typed after a program name.
 mod clap_basic;
+/// This example demonstrates generating shell completions with `clap_complete`.
 mod clap_complete;
+/// This module provides the `clap_example` implementation used by its parent.
 #[path = "clap.rs"]
 mod clap_example;
+/// This example demonstrates how to use the `lexopt` crate to parse command
 mod lexopt;
+/// Parsing command-line arguments with `pico-args`.
 mod pico_args;
 
 /// Command-line arguments.
@@ -79,7 +85,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["clap", "clap_basic", "clap_complete", "lexopt", "pico_args"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

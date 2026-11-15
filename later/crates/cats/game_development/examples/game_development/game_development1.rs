@@ -12,8 +12,9 @@ use parry2d::math::Vector;
 use parry2d::query;
 use parry2d::shape::Ball;
 use parry2d::shape::Cuboid;
-
+/// Runs the example.
 /// Creates two shapes and tests whether they intersect.
+
 fn main() {
     // Define shapes.
     let ball = Ball::new(1.0);
@@ -49,6 +50,7 @@ fn main() {
     }
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

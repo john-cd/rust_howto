@@ -6,10 +6,15 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Imports a JavaScript function into Rust through `wasm-bindgen`.
 mod js_import;
+/// Uses a JavaScript built-in from Rust through `js-sys`.
 mod js_sys;
+/// Awaits a JavaScript Promise from Rust.
 mod promises;
+/// Converts structured values between JavaScript and Rust with Serde.
 mod serde_wasm_bindgen;
+/// Calls a browser API from Rust through `web-sys`.
 mod web_sys;
 
 /// Command-line arguments.
@@ -39,8 +44,9 @@ enum Commands {
     #[command(name = "web_sys")]
     WebSys,
 }
-
+/// Runs the example.
 /// Runs the example selected on the command line.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -64,7 +70,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

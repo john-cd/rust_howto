@@ -56,6 +56,9 @@ async fn consumer(rx: AsyncReceiver<i32>) -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -71,6 +74,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     #[tokio::test]
     async fn every_produced_value_is_consumed() -> Result<(), Box<dyn std::error::Error>> {
         let (tx, rx) = kanal::bounded_async::<i32>(0);
@@ -98,6 +103,11 @@ mod tests {
         assert!(producer(tx, 1).await.is_err());
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
+    ///
+    /// # Panics
+    /// Panics if the consumer drains and stops.
     #[tokio::test]
     async fn consumer_ends_when_the_sender_is_gone() -> Result<(), Box<dyn std::error::Error>> {
         let (tx, rx) = kanal::bounded_async::<i32>(1);

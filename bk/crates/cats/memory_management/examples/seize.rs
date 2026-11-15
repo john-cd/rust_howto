@@ -80,6 +80,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -95,9 +100,11 @@ mod tests {
     fn retired_value_is_reclaimed() {
         use std::sync::atomic::AtomicUsize;
 
+        /// Shared `dropped` used by this module.
         static DROPPED: AtomicUsize = AtomicUsize::new(0);
         struct Tracked(i32);
         impl Drop for Tracked {
+            /// Releases the resources owned by this value.
             fn drop(&mut self) {
                 DROPPED.fetch_add(1, Ordering::SeqCst);
             }

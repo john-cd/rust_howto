@@ -1,8 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Using items from an external crate (a dependency).
 
-// ANCHOR: example
 // Bring the following items into scope:
 use anyhow::Error; // A struct.
 use anyhow::Result; // A type alias.
@@ -12,8 +12,8 @@ use anyhow::anyhow; // The `anyhow!` macro.
 fn a_func() -> anyhow::Result<()> {
     Ok(())
 }
-
 /// Refers to `Result` without having to write its full path every time.
+
 fn fallible(fail: bool) -> Result<u32> {
     if fail {
         // Build an `Error` with the `anyhow!` macro.
@@ -23,6 +23,8 @@ fn fallible(fail: bool) -> Result<u32> {
     Ok(1)
 }
 
+/// # Errors
+/// An error is returned if main, fallible fails.
 fn main() -> Result<()> {
     a_func()?;
     let value = fallible(false)?;
@@ -30,6 +32,20 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<()> {
+    main()
+}
+
+/// Using items from an external crate (a dependency).
+///
+/// # Errors
+/// Returns an error if an operation in the example fails.
+/// Returns an error if a step of the example fails.
 
 #[cfg(test)]
 mod tests {
@@ -39,6 +55,7 @@ mod tests {
     fn test_main() {
         main().expect("main should succeed");
     }
+    /// Verifies error path.
 
     #[test]
     fn test_error_path() {

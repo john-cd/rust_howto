@@ -25,8 +25,8 @@ fn accent_insensitive_key(text: &str) -> String {
         .flat_map(char::to_lowercase)
         .collect()
 }
-
 /// Prints several string distances and similarities.
+
 fn main() {
     let s1 = "aleksandr";
     let s2 = "alexander";
@@ -85,8 +85,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -118,7 +119,6 @@ mod tests {
         assert!(hamming("short", "longer").is_err());
     }
 
-    /// Similarity scores are in range, and equal strings score 1.
     #[test]
     fn similarity_scores() {
         assert!((jaro_winkler("rusty", "rusty") - 1.0).abs() < f64::EPSILON);

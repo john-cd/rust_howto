@@ -102,6 +102,8 @@ struct XmlTree {
 }
 
 impl Default for XmlTree {
+    /// Constructs a usable initial xml tree value with the defaults required by the xml5ever
+    /// component.
     fn default() -> Self {
         Self {
             document: Rc::new(Node {
@@ -158,6 +160,9 @@ impl TreeSink for XmlTree {
         self
     }
 
+    /// Turns the supplied error representation into the structured value consumed by xml tree,
+    /// rejecting malformed input.
+
     fn parse_error(&self, msg: Cow<'static, str>) {
         self.errors.borrow_mut().push(msg);
     }
@@ -166,9 +171,13 @@ impl TreeSink for XmlTree {
         Rc::clone(&self.document)
     }
 
+    /// # Arguments
+    /// * `target` - Target value or destination produced by the xml tree operation.
     fn elem_name<'a>(&'a self, target: &'a Self::Handle) -> Self::ElemName<'a> {
         NameRef(&target.name)
     }
+
+    /// Assembles the element from its component values so callers receive a ready-to-use result.
 
     fn create_element(
         &self,
@@ -189,9 +198,15 @@ impl TreeSink for XmlTree {
         )
     }
 
+    /// Assembles the comment from its component values so callers receive a ready-to-use result.
     fn create_comment(&self, text: StrTendril) -> Self::Handle {
         unnamed_node(NodeKind::Comment(text.to_string()))
     }
+
+    /// Assembles the pi from its component values so callers receive a ready-to-use result.
+    ///
+    /// # Arguments
+    /// * `target` - Target value or destination produced by the xml tree operation.
 
     fn create_pi(&self, target: StrTendril, data: StrTendril) -> Self::Handle {
         unnamed_node(NodeKind::ProcessingInstruction {
@@ -254,6 +269,8 @@ impl TreeSink for XmlTree {
         append_child(&self.document, doctype);
     }
 
+    /// # Arguments
+    /// * `target` - Target value or destination produced by the xml tree operation.
     fn get_template_contents(&self, target: &Self::Handle) -> Self::Handle {
         match &target.kind {
             NodeKind::Element {
@@ -267,6 +284,8 @@ impl TreeSink for XmlTree {
     fn same_node(&self, first: &Self::Handle, second: &Self::Handle) -> bool {
         Rc::ptr_eq(first, second)
     }
+
+    /// Changes the quirks mode held by the xml tree; subsequent operations use the updated value.
 
     fn set_quirks_mode(&self, mode: QuirksMode) {
         self.quirks_mode.set(mode);
@@ -313,6 +332,12 @@ impl TreeSink for XmlTree {
             }
         }
     }
+
+    /// Removes or resets the from parent state owned by xml5ever, preventing stale data from
+    /// affecting later work.
+    ///
+    /// # Arguments
+    /// * `target` - Target value or destination produced by the xml5ever operation.
 
     fn remove_from_parent(&self, target: &Self::Handle) {
         let Some(parent) = target
@@ -365,11 +390,9 @@ fn describe(node: &Node) -> String {
         } => format!("doctype {public_id:?} {system_id:?}"),
     }
 }
-
 /// Parses a small XML document and prints the library and book nodes.
-///
+
 /// # Errors
-///
 /// Returns an error if parsing reports errors or the expected nodes are
 /// missing from the resulting tree.
 fn main() -> anyhow::Result<()> {
@@ -414,16 +437,15 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the XML DOM parsing example.
-///
+
 /// # Errors
-///
 /// Returns an error if XML parsing fails or produces an unexpected tree.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Checks the parsed root, child element, attribute, and text node.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -434,8 +456,8 @@ mod tests {
     fn test_xml5ever_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Parsing well-formed XML builds the expected tree without errors.
+
     #[test]
     fn builds_the_tree() -> Result<(), Box<dyn std::error::Error>> {
         let dom =

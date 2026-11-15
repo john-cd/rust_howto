@@ -63,8 +63,8 @@ fn password_hashing(password_to_save: &[u8]) -> Result<String, Error> {
 fn password_verification(password_to_check: &[u8], phc_string: &str) -> Result<bool, Error> {
     password_verification_with(&Argon2::default(), password_to_check, phc_string)
 }
-
 /// Verifies a password using the provided Argon2 configuration.
+
 fn password_verification_with(
     argon2: &Argon2<'_>,
     password_to_check: &[u8],
@@ -101,10 +101,14 @@ fn key_derivation() -> Result<(), Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()
 }
 
+/// Verifies a password hash accepts the original password and rejects a guess.
 #[cfg(test)]
 mod tests {
     use argon2::Algorithm;

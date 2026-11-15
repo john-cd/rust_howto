@@ -22,16 +22,13 @@ struct Args {
     #[arg(long)]
     fail: bool,
 }
-
 /// Parses CLI arguments and prints a greeting.
-///
+
 /// # Errors
-///
 /// Returns an error when parsing fails or when the greeting action fails.
 fn main() -> anyhow::Result<()> {
     run_with_args(std::env::args_os())
 }
-
 /// Parses `args` and prints the resulting greeting.
 ///
 /// Help, version, and usage errors are reported by clap, which exits with the
@@ -40,6 +37,7 @@ fn main() -> anyhow::Result<()> {
 /// # Errors
 ///
 /// Returns an error if greeting creation fails.
+
 fn run_with_args<I, S>(args: I) -> anyhow::Result<()>
 where
     I: IntoIterator<Item = S>,
@@ -67,10 +65,14 @@ fn greet(args: Args) -> anyhow::Result<String> {
 
 /// Runs the demo with fixed arguments: `main` reads the process arguments,
 /// which belong to the test harness under `cargo test`.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     run_with_args(["cli-demo"])
 }
 
+/// Verifies parsed arguments produce the expected greeting.
 #[cfg(test)]
 mod tests {
     use super::*;

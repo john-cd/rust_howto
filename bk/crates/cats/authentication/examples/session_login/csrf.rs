@@ -31,6 +31,7 @@ use tower_sessions::MemoryStore;
 use tower_sessions::Session;
 use tower_sessions::SessionManagerLayer;
 
+/// Shared `token key` used by this module.
 const TOKEN_KEY: &str = "csrf_token";
 
 /// Returns the session's CSRF token, creating one on first use.
@@ -59,8 +60,8 @@ fn constant_time_eq(a: &str, b: &str) -> bool {
             .fold(0, |acc, (x, y)| acc | (x ^ y))
             == 0
 }
-
 /// Renders the form with the hidden token field.
+
 async fn show_form(session: Session) -> Result<Html<String>, StatusCode> {
     let token = csrf_token(&session).await?;
     Ok(Html(format!(
@@ -74,7 +75,9 @@ async fn show_form(session: Session) -> Result<Html<String>, StatusCode> {
 
 #[derive(Deserialize)]
 struct ChangeEmail {
+    /// CSRF token checked for this request.
     csrf_token: String,
+    /// Email address used to identify or contact the change email.
     email: String,
 }
 
@@ -105,6 +108,9 @@ fn main() {
 }
 
 /// Runs the CSRF protection example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -120,6 +126,13 @@ mod tests {
 
     use super::*;
 
+    /// Collects a response body and decodes it as UTF-8.
+    ///
+    /// # Arguments
+    /// * `response` - Response whose body should be read.
+    ///
+    /// # Errors
+    /// Returns an error if body collection or UTF-8 decoding fails.
     async fn body_of(response: Response<Body>) -> anyhow::Result<String> {
         let bytes = response.into_body().collect().await?.to_bytes();
         Ok(String::from_utf8(bytes.to_vec())?)
@@ -148,6 +161,10 @@ mod tests {
         Ok((cookie, token))
     }
 
+    /// Posts a change-email form with its session cookie and CSRF token.
+    ///
+    /// # Errors
+    /// Returns an error if the request cannot be built or sent.
     async fn post(app: &Router, cookie: &str, token: &str) -> anyhow::Result<Response<Body>> {
         let request = Request::post("/change-email")
             .header(header::COOKIE, cookie)
@@ -158,6 +175,8 @@ mod tests {
         Ok(app.clone().oneshot(request).await?)
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     #[tokio::test]
     async fn valid_token_is_accepted() -> anyhow::Result<()> {
         let app = app();
@@ -167,6 +186,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     #[tokio::test]
     async fn wrong_token_is_rejected() -> anyhow::Result<()> {
         let app = app();
@@ -176,6 +197,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     #[tokio::test]
     async fn token_from_another_session_is_rejected() -> anyhow::Result<()> {
         let app = app();
@@ -192,6 +215,7 @@ mod tests {
         assert!(!constant_time_eq("abc", "abd"));
         assert!(!constant_time_eq("abc", "ab"));
     }
+    /// Verifies that the `csrf` example runs.
 
     #[test]
     fn test_csrf_example_entry_point() {

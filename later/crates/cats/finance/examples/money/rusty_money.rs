@@ -10,9 +10,10 @@
 
 use rusty_money::Money;
 use rusty_money::iso;
+/// Runs the example entry point.
 
 /// Builds amounts from minor units, adds them, and formats the result.
-pub fn run() {
+pub fn example_body() {
     // The amount is stored as a decimal; the currency travels with it.
     // 1999 minor units of USD is $19.99.
     let price = Money::from_minor(1999, iso::USD);
@@ -34,6 +35,11 @@ pub fn run() {
     assert!(mixed.is_err());
 }
 // ANCHOR_END: example
+
+/// Runs the example function.
+pub fn run() {
+    example_body();
+}
 
 #[cfg(test)]
 mod tests {

@@ -7,8 +7,10 @@ use clap::Parser;
 #[cfg(any(feature = "mongodb", feature = "redis"))]
 use clap::Subcommand;
 
+/// Inserting and querying documents in MongoDB.
 #[cfg(feature = "mongodb")]
 mod mongodb;
+/// Setting and getting a value in Redis.
 #[cfg(feature = "redis")]
 mod redis;
 
@@ -57,6 +59,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies command-line selection and execution of the documented examples.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -67,12 +70,14 @@ mod tests {
     fn test_main_is_a_no_op_without_features() {
         assert!(main().is_ok());
     }
+    /// Verifies mongodb subcommand parses.
 
     #[cfg(feature = "mongodb")]
     #[test]
     fn test_mongodb_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "mongodb"]).is_ok());
     }
+    /// Verifies redis subcommand parses.
 
     #[cfg(feature = "redis")]
     #[test]

@@ -12,8 +12,9 @@ use image::DynamicImage;
 use image::RgbImage;
 use image::imageops;
 use image::imageops::FilterType;
-
+/// Runs the example.
 /// Builds a 64x32 gradient, shrinks it by half and makes it grayscale.
+
 fn main() {
     // Every pixel gets a color computed from its position.
     let image = RgbImage::from_fn(64, 32, |x, y| {
@@ -32,8 +33,9 @@ fn main() {
     println!("{:?}", gray.dimensions());
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the in-memory resize, crop, and grayscale recipe.
+
 pub fn run() {
     main();
 }

@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Sleep until the next cron time, run the job, repeat: no drift, because each
 mod cron_loop;
+/// Compute the next fire times of a cron expression with the `cron` crate.
 mod cron_next;
+/// A periodic job with `tokio::time::interval`.
 mod interval_job;
 
 /// Command-line arguments.
@@ -35,8 +38,8 @@ enum Commands {
 fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
-
 /// Runs the example selected in the parsed command line.
+
 fn dispatch(cli: Cli) -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
@@ -60,7 +63,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

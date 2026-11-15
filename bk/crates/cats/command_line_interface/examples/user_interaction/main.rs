@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// A styled progress spinner with `indicatif` and `console`.
 mod indicatif;
+/// A progress bar with `indicatif`.
 mod indicatif2;
+/// The `inquire` crate is used for creating interactive CLI prompts.
 mod inquire;
 
 /// Command-line arguments.
@@ -64,7 +67,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["indicatif", "indicatif2", "inquire"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

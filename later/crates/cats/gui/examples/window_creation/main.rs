@@ -5,13 +5,17 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Converts window creation state into the layout and presentation consumed by the user interface.
+/// The view layer calls these routines when it draws or refreshes the component.
 #[cfg(feature = "baseview")]
 mod baseview;
+/// Contains the software pixels functionality used by this parent module.
 #[cfg(feature = "softbuffer")]
 mod software_pixels;
 // Tao's dependency is disabled because its current GTK 3 / glib 0.18 chain is
 // incompatible with the workspace. Keep tao.rs and the book example for a
 // compatible dependency update.
+/// Contains the winit functionality used by this parent module.
 mod winit;
 
 /// Command-line arguments.
@@ -63,7 +67,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

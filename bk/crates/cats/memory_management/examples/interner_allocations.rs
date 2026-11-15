@@ -1,18 +1,19 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Counts allocation calls made by the hand-written string interner.
 //!
 //! A string interner stores each distinct string once and hands out a small ID.
 //! Comparing IDs is faster than comparing strings, and memory use falls when
 //! the same text repeats, as in compilers and parsers.
 
-// ANCHOR: example
 use std::alloc::GlobalAlloc;
 use std::alloc::Layout;
 use std::alloc::System;
 use std::cell::Cell;
 
 // This module is the same implementation used in the interning example.
+/// String interning: store each distinct string once and compare, hash and
 mod interning;
 
 struct CountingAllocator;
@@ -20,6 +21,7 @@ struct CountingAllocator;
 thread_local! {
     // Counts per thread, so that other threads (such as a test harness) do
     // not disturb the measurement. A `const` initializer never allocates.
+    /// Shared `allocations` used by this module.
     static ALLOCATIONS: Cell<usize> = const { Cell::new(0) };
 }
 
@@ -59,6 +61,7 @@ unsafe impl GlobalAlloc for CountingAllocator {
     }
 }
 
+/// Shared `global` used by this module.
 #[global_allocator]
 static GLOBAL: CountingAllocator = CountingAllocator;
 
@@ -86,11 +89,16 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Counts allocation calls made by the hand-written string interner.
+fn run() {
+    main();
+}
+
+/// allocates and that repeated lookups do not.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the measurement; `main` asserts that the first insertion
     /// allocates and that repeated lookups do not. The counting allocator is
     /// per thread, so the test harness does not affect the counts.
     #[test]

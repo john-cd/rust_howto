@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Example: query inline sales data with Polars and join regional targets.
 #[cfg(feature = "polars")]
 mod polars;
 

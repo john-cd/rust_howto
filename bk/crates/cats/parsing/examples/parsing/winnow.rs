@@ -17,8 +17,8 @@ use winnow::prelude::*;
 fn parse_list(input: &mut &str) -> ModalResult<Vec<i32>> {
     separated(1.., digit1.parse_to::<i32>(), ",").parse_next(input)
 }
-
 /// Parses a comma-separated list of numbers with `winnow`.
+
 fn main() -> anyhow::Result<()> {
     let mut input = "1,2,3,4,5";
     let result = parse_list(&mut input).map_err(|e| anyhow::anyhow!("Parsing failed: {e:?}"))?;
@@ -32,6 +32,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }

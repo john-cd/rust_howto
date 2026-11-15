@@ -23,10 +23,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the self-signed certificate example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Generates and prints a self-signed localhost certificate.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -37,7 +41,8 @@ mod tests {
         main()
     }
 
-    #[test]
+    /// # Errors
+    /// An error is returned if certificate_and_key_are_pem_encoded fails.
     fn certificate_and_key_are_pem_encoded() -> anyhow::Result<()> {
         let key = generate_simple_self_signed(vec!["localhost".to_owned()])?;
         let cert = key.cert.pem();
@@ -47,6 +52,9 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if each_generated_certificate_is_unique, generate_simple_self_signed
+    /// fails.
     #[test]
     fn each_generated_certificate_is_unique() -> anyhow::Result<()> {
         let a = generate_simple_self_signed(vec!["localhost".to_owned()])?;

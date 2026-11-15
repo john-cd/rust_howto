@@ -7,6 +7,7 @@
 //! relative units. `usvg` simplifies them into a normalized tree of plain
 //! paths, which makes it easier to render or analyse the drawing.
 
+/// Defines the svg constant.
 const SVG: &str = r##"
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="100" viewBox="0 0 160 100">
   <rect width="160" height="100" fill="#f4f1ea" />
@@ -31,10 +32,14 @@ fn inspect_svg() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 // ANCHOR_END: example
 
 /// Runs the parsing and inspection example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     inspect_svg()
 }
 
+/// Verifies the sample SVG can be parsed and inspected.
 #[cfg(test)]
 mod tests {
     use super::*;

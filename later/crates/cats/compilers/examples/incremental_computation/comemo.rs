@@ -25,7 +25,6 @@ use comemo::track;
 /// Memoized function to compute a derived value based on the configuration.
 ///
 /// Note the `#[memoize]` attribute.
-///
 /// We also wrapped the `config` argument in comemo's `Tracked` container.
 /// It automatically track all config accesses during a memoized call.
 #[memoize]
@@ -55,14 +54,14 @@ struct Config {
 /// methods, among other [restrictions](https://docs.rs/comemo/0.4.0/comemo/attr.track.html).
 #[track]
 impl Config {
-    /// Returns the value.
+    ///
     fn get_value(&self) -> i32 {
         self.value
     }
 }
-
 /// Calls a memoized function twice with the same tracked argument, then after a
 /// change.
+
 fn main() {
     let mut config = Config {
         value: 5,
@@ -94,6 +93,10 @@ fn main() {
     );
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() {
     main();

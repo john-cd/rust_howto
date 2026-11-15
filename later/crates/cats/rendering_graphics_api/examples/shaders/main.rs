@@ -1,15 +1,19 @@
 // TODO Reviewed ??-??-2026.
 
-//! Validates a WGSL shader with `naga` and translates it to SPIR-V.
 // ANCHOR: example
+//! Validates a WGSL shader with `naga` and translates it to SPIR-V.
+
 use naga::back::spv;
 use naga::front::wgsl;
 use naga::valid::Capabilities;
 use naga::valid::ValidationFlags;
 use naga::valid::Validator;
 
+/// Shared `shader` used by this module.
 const SHADER: &str = "
 @vertex
+/// # Arguments
+/// * `index` - Position used to identify the element affected in the current ordered collection.
 fn vertex_main(@builtin(vertex_index) index: u32) -> @builtin(position) vec4<f32> {
     let x = f32(i32(index) - 1);
     let y = f32(i32(index & 1u) * 2 - 1);
@@ -41,6 +45,20 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+/// Validates a WGSL shader with `naga` and translates it to SPIR-V.
+///
+/// # Errors
+/// Returns an error if an operation in the example fails.
+/// Returns an error if a step of the example fails.
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -50,8 +68,8 @@ mod tests {
     fn test_main_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Verifies the output starts with the SPIR-V magic number.
+
     #[test]
     fn emits_a_spirv_module() -> anyhow::Result<()> {
         let words = compile_to_spirv()?;
@@ -59,7 +77,6 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that invalid WGSL is rejected with a diagnostic.
     #[test]
     fn rejects_invalid_wgsl() {
         assert!(wgsl::parse_str("fn broken( {").is_err());

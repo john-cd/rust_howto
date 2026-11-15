@@ -4,6 +4,7 @@
 //! Creating instances of a struct.
 
 /// Represents a user with their active status, username, and email.
+
 #[derive(Debug)]
 struct User {
     /// Whether the user is active.
@@ -40,8 +41,9 @@ impl User {
         }
     }
 }
-
+/// Runs the example.
 /// Creates users with a function and with an associated function.
+
 fn main() {
     // We create an instance of the struct by calling a function:
     let user1: User = build_user("user@example.com".into(), "user".to_owned());
@@ -62,8 +64,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

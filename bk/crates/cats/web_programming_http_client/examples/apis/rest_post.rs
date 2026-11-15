@@ -20,6 +20,7 @@ use serde::Serialize;
 const GISTS_ENDPOINT: &str = "https://api.github.com/gists";
 
 /// Represents the JSON body used to create a gist.
+/// State required by `Post` during transport operations.
 #[derive(Serialize, Debug)]
 struct Post<'a> {
     /// The description of the gist.
@@ -31,6 +32,7 @@ struct Post<'a> {
 }
 
 /// Represents the content of a file within a gist.
+/// State required by `Content` during transport operations.
 #[derive(Serialize, Debug)]
 struct Content<'a> {
     /// The text of the file.
@@ -38,6 +40,7 @@ struct Content<'a> {
 }
 
 /// Represents the identifying fields returned for a created gist.
+/// State required by `Gist` during transport operations.
 #[derive(Deserialize, Debug)]
 struct Gist {
     /// The identifier of the gist.
@@ -47,6 +50,8 @@ struct Gist {
 }
 
 /// Creates and then deletes a public gist using the supplied client and token.
+/// Assembles the and delete gist from its component values so callers receive a ready-to-use
+/// result.
 async fn create_and_delete_gist(
     client: &Client,
     endpoint: &str,
@@ -105,10 +110,14 @@ async fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example from the APIs command-line dispatcher.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// GitHub Gist.
 #[cfg(test)]
 mod tests {
     use std::io::Read as _;
@@ -138,8 +147,12 @@ mod tests {
         body: String,
     }
 
-    /// Starts a local HTTP server that responds to the supplied requests in
-    /// order.
+    /// Starts a loopback server that sends one configured response per request.
+    ///
+    /// # Errors
+    /// Returns an error if the server cannot bind to an ephemeral loopback port
+    /// or read its local address. Request-handling errors are reported by the
+    /// returned `JoinHandle`.
     fn start_server(
         responses: Vec<(u16, &'static str)>,
     ) -> Result<(String, JoinHandle<Result<Vec<RecordedRequest>>>)> {
@@ -263,8 +276,8 @@ mod tests {
     fn find_header_end(bytes: &[u8]) -> Option<usize> {
         bytes.windows(4).position(|window| window == b"\r\n\r\n")
     }
-
     /// Builds the deterministic gist payload used by the local server tests.
+
     fn test_gist_body() -> Post<'static> {
         Post {
             description: "test gist",
@@ -286,9 +299,9 @@ mod tests {
             .join()
             .map_err(|_| anyhow!("local HTTP fixture thread panicked"))?
     }
-
     /// Verifies authorization, the gist payload, and the create/delete
     /// sequence.
+
     #[tokio::test]
     async fn creates_and_deletes_gist_with_authorization_and_json() -> Result<()> {
         let (endpoint, server) = start_server(vec![

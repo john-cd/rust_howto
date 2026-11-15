@@ -9,18 +9,27 @@
 use std::fs;
 use std::path::Path;
 use std::path::PathBuf;
-
 /// Returns the canonical form of an existing path, without the `\\?\` prefix
+
 /// that `std::fs::canonicalize` adds on Windows.
+
+/// # Arguments
+/// * `path` - Filesystem location the operation reads, updates, or uses as its scope.
+
+/// # Errors
+/// Returns an error if the canonical path operation cannot satisfy its required invariants.
 fn canonical_path(path: &Path) -> std::io::Result<PathBuf> {
     // `dunce::canonicalize` calls `std::fs::canonicalize`, then removes the
     // "verbatim" prefix when the shorter path is equivalent. On Unix it is
     // the same as `std::fs::canonicalize`.
     dunce::canonicalize(path)
 }
-
 /// Compares the standard library and `dunce`.
-pub fn run() -> std::io::Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+
+pub fn example_body() -> std::io::Result<()> {
     let dir = tempfile::tempdir()?;
     let std_path = fs::canonicalize(dir.path())?;
     let dunce_path = canonical_path(dir.path())?;
@@ -38,10 +47,21 @@ pub fn run() -> std::io::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> std::io::Result<()> {
+    example_body()
+}
+
+/// An error is returned if dunce_result_has_no_verbatim_prefix, canonical_path fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// # Errors
+    /// An error is returned if dunce_result_has_no_verbatim_prefix, canonical_path fails.
     #[test]
     fn dunce_result_has_no_verbatim_prefix() -> anyhow::Result<()> {
         let dir = tempfile::tempdir()?;
@@ -50,7 +70,8 @@ mod tests {
         Ok(())
     }
 
-    #[test]
+    /// # Errors
+    /// An error is returned if run_succeeds fails.
     fn run_succeeds() -> anyhow::Result<()> {
         run()?;
         Ok(())

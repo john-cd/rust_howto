@@ -116,6 +116,9 @@ fn main() {
     struct Foo;
 
     /// Accepts a pinned mutable reference to a `Foo` value.
+    ///
+    /// # Arguments
+    /// * `_foo` - Mutable pin whose state is updated by this operation.
     fn stuff(_foo: Pin<&mut Foo>) {
         // ...
     }
@@ -125,8 +128,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -139,11 +143,13 @@ mod tests {
     use std::task::Waker;
 
     use super::*;
+    /// Verifies that the `pin` example runs.
 
     #[test]
     fn test_pin_example_entry_point() {
         main();
     }
+    /// Verifies pin new for unpin types.
 
     #[test]
     fn test_pin_new_for_unpin_types() {
@@ -153,6 +159,7 @@ mod tests {
         pinned.set(44);
         assert_eq!(*Pin::into_inner(pinned), 44);
     }
+    /// Verifies pinned parent projects to its field.
 
     #[test]
     fn test_pinned_parent_projects_to_its_field() {
@@ -166,6 +173,7 @@ mod tests {
         let projected = parent.as_mut().field();
         assert!(std::ptr::eq(&raw const *projected, field_ptr));
     }
+    /// Verifies pinned future can be polled.
 
     #[test]
     fn test_pinned_future_can_be_polled() {

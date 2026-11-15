@@ -58,12 +58,14 @@ fn main() {
     println!("European put: {put:.4}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// The call price matches the published value of about 10.4506.
 #[cfg(test)]
 mod tests {
     use super::*;

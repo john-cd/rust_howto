@@ -54,10 +54,12 @@ fn run_example() {
         });
     });
 }
+/// Runs the example.
 fn main() {
     run_example();
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     run_example();

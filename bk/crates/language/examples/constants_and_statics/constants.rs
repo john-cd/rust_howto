@@ -74,6 +74,7 @@ fn main() {
     struct PrintOnDrop(&'static str);
 
     impl Drop for PrintOnDrop {
+        /// Releases the resources owned by this value.
         fn drop(&mut self) {
             // Print the inner string slice.
             println!("{0}", self.0);
@@ -101,8 +102,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

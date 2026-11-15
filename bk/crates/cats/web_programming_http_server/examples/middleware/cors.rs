@@ -27,8 +27,8 @@ use tower_http::cors::CorsLayer;
 async fn handle(_request: Request<Full<Bytes>>) -> Result<Response<Full<Bytes>>, Infallible> {
     Ok(Response::new(Full::default()))
 }
-
 /// Main function that sets up a service with CORS middleware.
+
 #[tokio::main]
 async fn main() -> Result<()> {
     let cors = CorsLayer::new()
@@ -59,10 +59,14 @@ async fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies that the CORS layer allows any origin in this local example.
 #[cfg(test)]
 mod tests {
     use super::*;

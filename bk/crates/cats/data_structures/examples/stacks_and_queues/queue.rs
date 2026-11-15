@@ -7,8 +7,9 @@
 //! the standard double-ended queue, with O(1) pushes and pops at both ends.
 
 use std::collections::VecDeque;
-
+/// Runs the example.
 /// Adds elements to a queue and removes them in first-in, first-out order.
+
 fn main() {
     let mut queue = VecDeque::new();
     // You can also use `with_capacity`.
@@ -43,8 +44,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

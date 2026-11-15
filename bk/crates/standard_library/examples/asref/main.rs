@@ -5,9 +5,13 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Accepting several types through `AsRef`.
 mod asref;
+/// Implement `AsRef` for a composed type, as a last resort.
 mod asref_inheritance;
+/// Borrowing the content of an `Option` with `as_ref`.
 mod option_asref;
+/// Demonstrates the difference between taking a reference to a `Box` and using `as_ref()`.
 mod smart_pointer_asref;
 
 /// Command-line arguments.
@@ -54,8 +58,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -74,7 +79,6 @@ mod tests {
         "smart_pointer_asref",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

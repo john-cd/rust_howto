@@ -5,9 +5,15 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Stores, loads and deletes a secret in the operating-system credential store (Windows Credential
+/// Manager, macOS Keychain or the Secret Service) with `keyring`.
 mod keyring;
+/// Keeps a secret out of logs with a newtype whose `Debug` and `Display`
 mod redacted_secret;
+/// Seals a secret under a passphrase: Argon2id derives a key, and XChaCha20-Poly1305 encrypts the
+/// secret, authenticating a version label and context as associated data.
 mod sealed_envelope;
+/// Wipes a secret from memory when it is dropped, using `zeroize`'s derive
 mod zeroize;
 
 /// Command-line arguments.
@@ -46,8 +52,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -61,7 +68,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["redacted_secret", "zeroize", "keyring", "sealed_envelope"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

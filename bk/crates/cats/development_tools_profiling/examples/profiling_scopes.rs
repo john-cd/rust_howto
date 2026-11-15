@@ -8,15 +8,17 @@
 //! expand to nothing and cost nothing.
 
 /// Adds the squares of the numbers up to `n`.
-///
+
 /// `#[profiling::function]` creates a scope named after the function.
+
 #[profiling::function]
 fn sum_of_squares(n: u64) -> u64 {
     (1..=n).map(|i| i * i).sum()
 }
-
-/// Runs the work of one "frame": one iteration of a game or UI loop,
-/// or one request of a server.
+/// Runs one frame of work and returns its computed total.
+///
+/// A frame is one iteration of a game or UI loop; the same pattern can mark
+/// one request in a server.
 fn run_frame() -> u64 {
     // A named scope that lasts until the end of the enclosing block.
     profiling::scope!("run_frame");
@@ -35,8 +37,9 @@ fn run_frame() -> u64 {
     profiling::finish_frame!();
     total + big
 }
-
+/// Runs the example.
 /// Runs a few frames.
+
 fn main() {
     let mut checksum = 0;
     for _ in 0..3 {
@@ -46,8 +49,9 @@ fn main() {
     println!("checksum: {checksum}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

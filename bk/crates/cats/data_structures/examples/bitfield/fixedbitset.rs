@@ -51,12 +51,14 @@ fn main() {
     assert!(common.is_clear());
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Checks graph traversal and fixed-bit-set operations.
 #[cfg(test)]
 mod tests {
     use super::*;

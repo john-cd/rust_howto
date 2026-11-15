@@ -24,19 +24,19 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the compile-time concatenation example.
+
 pub fn run() {
     main();
 }
 
+/// `constcat`.
 #[cfg(test)]
 mod tests {
     use super::DATETIME;
     use super::main;
 
-    /// Verifies constant slices were concatenated into the expected timestamp.
-    /// Runs the constcat example through its entry point.
     #[test]
     fn concatenates_constant_slices() {
         assert_eq!(DATETIME, "2024-01-15T12:00:09Z");

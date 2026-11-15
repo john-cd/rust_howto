@@ -15,8 +15,8 @@ use remove_dir_all::remove_dir_all;
 fn main() -> io::Result<()> {
     remove_tree(Path::new("temp"))
 }
-
 /// Creates a directory tree under `base`, then removes a subdirectory.
+
 fn remove_tree(base: &Path) -> io::Result<()> {
     // Create a directory structure for demonstration purposes
     // (if it doesn't exist already).
@@ -55,6 +55,9 @@ fn remove_tree(base: &Path) -> io::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> io::Result<()> {
     main()
 }

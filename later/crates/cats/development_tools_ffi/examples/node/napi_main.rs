@@ -2,9 +2,11 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Calling Rust from Node.js with `napi`.
 mod napi;
-
+/// Runs the example.
 /// Runs the N-API example's host-independent path.
+
 fn main() {
     napi::run();
 }

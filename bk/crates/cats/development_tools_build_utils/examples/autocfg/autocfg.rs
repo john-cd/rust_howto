@@ -8,6 +8,7 @@
 //! autocfg = "1"
 
 /// Checks for `i128` support and emits the matching custom `cfg`.
+
 fn main() {
     let out_dir =
         std::env::var_os("OUT_DIR").map_or_else(std::env::temp_dir, std::path::PathBuf::from);
@@ -18,8 +19,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the compiler capability probe.
+
 pub fn run() {
     main();
 }

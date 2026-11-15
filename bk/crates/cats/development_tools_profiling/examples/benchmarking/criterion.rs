@@ -25,6 +25,9 @@ fn fibonacci(n: u64) -> u64 {
 
 /// The `benchmark_fibonacci` function benchmarks the performance of the
 /// fibonacci function with the input `20`.
+///
+/// # Arguments
+/// * `c` - Mutable criterion whose state is updated by this operation.
 fn benchmark_fibonacci(c: &mut Criterion) {
     // Use `bench_function` to define a benchmark for the `fibonacci` function.
     // `black_box` is used to prevent the compiler from optimizing away the
@@ -38,8 +41,9 @@ criterion_group!(benches, benchmark_fibonacci);
 
 criterion_main!(benches);
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the benchmark with the default `Criterion` configuration.
+
 pub fn run() {
     let mut criterion = Criterion::default().configure_from_args();
     benchmark_fibonacci(&mut criterion);

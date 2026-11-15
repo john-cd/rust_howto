@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! This module demonstrates basic usage of axum.
 //!
 //! `axum` is a web application framework designed to work with `tokio`
@@ -8,7 +9,7 @@
 //! authorization, and more, for free.
 //! See the current Axum documentation for its `Router`, extractors, and
 //! server APIs.
-// ANCHOR: example
+
 use std::collections::HashMap;
 use std::sync::Arc;
 
@@ -77,6 +78,9 @@ async fn json(Json(payload): Json<serde_json::Value>) -> Json<serde_json::Value>
 
 // Access the application state via the `State` extractor.
 /// Returns the application name from the shared state.
+/// # Arguments
+/// * `state` - Application state containing the repositories and services needed by this workflow.
+
 async fn state(State(state): State<Arc<AppState>>) -> String {
     format!("Application: {}", state.app_name)
 }
@@ -108,6 +112,8 @@ fn app() -> Router {
 
 /// Builds the router and serves it on a local TCP listener.
 // `tokio` macros and rt-multi-thread features should be enabled.
+/// # Errors
+/// An error is returned if main, local_addr fails.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     tracing_subscriber::registry()
@@ -123,9 +129,23 @@ async fn main() -> anyhow::Result<()> {
     axum::serve(listener, app()).await?;
     Ok(())
 }
-
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+/// This module demonstrates basic usage of axum.
+///
+/// # Errors
+/// Returns an error if an operation in the example fails.
+/// Returns an error if a step of the example fails.
+
+/// A non-numeric id is rejected by the extractor.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -136,7 +156,11 @@ mod tests {
 
     use super::*;
 
-    /// Sends a request to the router and returns the status and body.
+    /// # Arguments
+    /// * `request` - Input data whose fields determine the requested axum operation.
+
+    /// # Panics
+    /// Panics if infallible.
     async fn send(request: Request<Body>) -> (StatusCode, String) {
         let response = app().oneshot(request).await.expect("infallible");
         let status = response.status();
@@ -163,8 +187,8 @@ mod tests {
         )
         .await
     }
-
     /// Serves the example until it is stopped.
+
     #[test]
     #[ignore = "binds 127.0.0.1:3000 and serves until stopped"]
     fn main_serves() -> anyhow::Result<()> {
@@ -196,6 +220,8 @@ mod tests {
         assert_eq!(status, StatusCode::BAD_REQUEST);
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     #[tokio::test]
     async fn query_and_state_are_read() {
         assert!(
@@ -210,7 +236,8 @@ mod tests {
         );
     }
 
-    #[tokio::test]
+    /// # Errors
+    /// An error is returned if json_is_echoed fails.
     async fn json_is_echoed() -> Result<(), Box<dyn std::error::Error>> {
         let request = Request::builder()
             .method(Method::POST)

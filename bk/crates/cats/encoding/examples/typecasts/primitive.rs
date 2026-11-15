@@ -9,14 +9,20 @@
 //! an error instead, which is safer for values from outside the program.
 
 use anyhow::Result;
-
 /// Converts a signed integer to `i32`, returning an error when it is out of
+
 /// range.
+
+/// # Arguments
+/// * `value` - Value the primitive operation validates, transforms, or stores.
+
+/// # Errors
+/// Returns an error if the narrow to i32 operation cannot satisfy its required invariants.
 fn narrow_to_i32(value: i64) -> Result<i32, std::num::TryFromIntError> {
     i32::try_from(value)
 }
-
 /// Runs examples of primitive conversions.
+
 fn main() -> Result<()> {
     let count = narrow_to_i32(42_i64)?;
     let port = "443".parse::<u16>()?;
@@ -33,15 +39,18 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the conversion examples.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// conversions, and
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Checks that narrowing a value outside the destination range fails.
     #[test]
     fn narrowing_rejects_out_of_range_values() {
         let too_large = i64::from(i32::MAX) + 1;

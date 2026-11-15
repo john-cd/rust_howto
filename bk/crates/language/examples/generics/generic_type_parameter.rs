@@ -94,6 +94,7 @@ impl<K, V, S> MyHashMap<K, V, S> {
 trait Processor<T> {
     /// Trait type parameters can be used in associated functions, methods, and
     /// other items defined in traits.
+
     fn process(&self, item: T) -> String;
 }
 
@@ -106,6 +107,8 @@ struct S;
 // that this implementation is generic over `T`, and used to set the type
 // parameter of the trait.
 impl<T> Processor<T> for S {
+    ///
+
     fn process(&self, _item: T) -> String {
         String::from("processed by S")
     }
@@ -118,6 +121,8 @@ struct TupleStruct<T>(T, T);
 
 // Generic implementation of a generic trait for a generic struct.
 impl<T> Processor<T> for TupleStruct<T> {
+    ///
+
     fn process(&self, _item: T) -> String {
         String::from("processed by TupleStruct")
     }
@@ -184,8 +189,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -199,6 +205,7 @@ mod tests {
     fn test_generic_type_parameter_example_entry_point() {
         main();
     }
+    /// Verifies func2.
 
     /// `func2` unwraps the generic payload, whatever its type.
     #[test]

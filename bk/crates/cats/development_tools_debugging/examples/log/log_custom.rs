@@ -48,10 +48,14 @@ fn file_appender(path: impl AsRef<Path>) -> Result<FileAppender> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies that the log custom example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;

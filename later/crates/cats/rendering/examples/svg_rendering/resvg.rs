@@ -7,6 +7,7 @@
 //! pixels, so it scales without blurring. Rasterizing turns it into a pixel
 //! image, such as a PNG, for places that cannot display SVG.
 
+/// Defines the svg constant.
 const SVG: &str = r##"
 <svg xmlns="http://www.w3.org/2000/svg" width="160" height="100" viewBox="0 0 160 100">
   <rect width="160" height="100" fill="#f4f1ea" />
@@ -31,11 +32,9 @@ fn render_svg() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     );
     Ok(())
 }
-
 /// Renders the sample SVG to an in-memory pixmap.
-///
+
 /// # Errors
-///
 /// Returns an error if the SVG cannot be parsed or the pixmap cannot be
 /// created.
 fn render_svg_to_pixmap()
@@ -61,10 +60,14 @@ fn render_svg_to_pixmap()
 // ANCHOR_END: example
 
 /// Runs the rendering example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     render_svg()
 }
 
+/// Verifies the sample scene renders to the expected in-memory size.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -1,5 +1,3 @@
-// TODO Reviewed ??-??-2026.
-
 #![cfg_attr(
     not(test),
     expect(
@@ -7,6 +5,8 @@
         reason = "needs an S3-compatible service; the tests use mocks"
     )
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Point the S3 client at an S3-compatible store (MinIO, RustFS, LocalStack),
 //! optionally over HTTPS with a private certificate authority.
@@ -31,6 +31,8 @@ use aws_smithy_http_client::tls::rustls_provider::CryptoMode;
 
 /// Builds a client for `endpoint`, e.g. `http://localhost:9000`.
 ///
+/// # Arguments
+///
 /// The keys are static here for local development only. In production, use the
 /// credential provider chain (see the shared configuration example) and never
 /// commit keys.
@@ -49,6 +51,8 @@ pub fn s3_compatible_client(endpoint: &str, access_key: &str, secret_key: &str) 
 }
 
 /// Builds a client for an HTTPS `endpoint` signed by a private certificate
+///
+/// # Arguments
 /// authority, for example a MinIO server behind an internal CA.
 ///
 /// `ca_pem` holds the PEM-encoded CA certificate. [`TrustStore::empty`] drops
@@ -84,6 +88,9 @@ pub fn s3_compatible_tls_client(
 }
 
 /// Creates a bucket and stores an object, then reads it back.
+///
+/// # Arguments
+/// * `client` - Client used to make the request.
 pub async fn round_trip(client: &Client, bucket: &str) -> Result<Vec<u8>> {
     client
         .create_bucket()
@@ -110,6 +117,12 @@ pub async fn round_trip(client: &Client, bucket: &str) -> Result<Vec<u8>> {
 }
 // ANCHOR_END: example
 
+/// Builds a client for a local S3-compatible endpoint.
+fn run() -> Client {
+    s3_compatible_client("http://localhost:9000", "example", "example")
+}
+
+/// Verifies that the configuration is built without contacting the store.
 #[cfg(test)]
 mod tests {
     use super::*;

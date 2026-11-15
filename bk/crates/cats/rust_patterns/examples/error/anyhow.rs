@@ -15,8 +15,9 @@ use anyhow::Result;
 fn do_something() -> Result<()> {
     Err(anyhow::Error::msg("Some Error"))
 }
-
+/// Runs the example.
 /// Adds context to errors with `anyhow`.
+
 fn main() -> anyhow::Result<()> {
     // Provide context to the error:
     do_something().context("Failed to do the important thing")?;
@@ -32,10 +33,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that the anyhow example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Looking up a `HashMap` of `String` keys with a `&str`, thanks to `Borrow`.
 mod borrow;
+/// A generic lookup that accepts any type that `String` borrows as.
 mod borrow2;
+/// Implementing `Borrow` for a string type with canonical lowercase storage.
 mod borrow3;
 
 /// Command-line arguments.
@@ -47,8 +50,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -62,7 +66,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["borrow", "borrow2", "borrow3"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

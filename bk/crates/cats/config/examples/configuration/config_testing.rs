@@ -33,10 +33,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the isolated configuration-source example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies a provided environment map is read without process mutation.
 #[cfg(test)]
 mod tests {
     use super::*;

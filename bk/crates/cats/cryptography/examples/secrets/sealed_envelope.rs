@@ -78,9 +78,13 @@ fn derive_key(
         .map_err(|e| anyhow!("key derivation failed: {e}"))?;
     Ok(key)
 }
-
 /// Builds the associated data: it is authenticated but not encrypted, so
+
 /// moving the envelope to another context makes decryption fail.
+
+/// # Arguments
+/// * `context` - Application state and services required to perform the operation.
+
 fn associated_data(version: u32, context: &[u8]) -> Vec<u8> {
     let mut aad = b"example-envelope".to_vec();
     aad.extend_from_slice(&version.to_be_bytes());
@@ -156,6 +160,8 @@ impl SealedEnvelope {
     }
 }
 
+/// # Errors
+/// An error is returned if main, to_string_pretty fails.
 fn main() -> Result<()> {
     let envelope = SealedEnvelope::seal(b"sk-live-1234", b"correct horse", b"source-42")?;
     // The envelope is safe to store or ship as JSON.
@@ -171,16 +177,22 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     if let Err(e) = main() {
         eprintln!("{e:#}");
     }
 }
 
+/// An error is returned if round_trip, open fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// # Errors
+    /// An error is returned if round_trip, open fails.
     #[test]
     fn round_trip() -> Result<()> {
         let envelope = SealedEnvelope::seal(b"secret", b"pass", b"ctx")?;
@@ -188,7 +200,8 @@ mod tests {
         Ok(())
     }
 
-    #[test]
+    /// # Errors
+    /// An error is returned if wrong_passphrase_or_context_fails fails.
     fn wrong_passphrase_or_context_fails() -> Result<()> {
         let envelope = SealedEnvelope::seal(b"secret", b"pass", b"ctx")?;
         assert!(envelope.open(b"other", b"ctx").is_err());
@@ -196,6 +209,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if tampered_ciphertext_fails, decode fails.
     #[test]
     fn tampered_ciphertext_fails() -> Result<()> {
         let mut envelope = SealedEnvelope::seal(b"secret", b"pass", b"ctx")?;
@@ -206,7 +221,8 @@ mod tests {
         Ok(())
     }
 
-    #[test]
+    /// # Errors
+    /// An error is returned if tampered_version_fails fails.
     fn tampered_version_fails() -> Result<()> {
         let mut envelope = SealedEnvelope::seal(b"secret", b"pass", b"ctx")?;
         envelope.version = 2;

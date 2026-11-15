@@ -7,7 +7,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Forward and inverse kinematics of a planar arm with `k`, the kinematics
 mod openrr;
+/// Publishes and receives several local telemetry values with `zenoh`.
 #[cfg(feature = "zenoh")]
 mod zenoh;
 
@@ -35,8 +37,8 @@ enum Commands {
 fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
-
 /// Runs the example selected in the parsed command line.
+
 fn dispatch(cli: Cli) -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
@@ -58,7 +60,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

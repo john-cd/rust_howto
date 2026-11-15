@@ -15,15 +15,15 @@ struct Rectangle {
 impl Rectangle {
     /// Method: note the parameter that references `Self`, an alias
     /// for the type that the `impl` block is for, in this case `Rectangle`.
+    /// Associated Function.
+    /// Note that there are NO `self`, `&self`, or `&mut self`.
+    /// This is often used to define a "constructor": `SomeType::new(...)`.
     fn area(&self) -> u32 {
         // `&self` is short for `self: &Self`, a function parameter that is
         // an immutable reference to `Self`.
         self.width * self.height
     }
 
-    /// Associated Function.
-    /// Note that there are NO `self`, `&self`, or `&mut self`.
-    /// This is often used to define a "constructor": `SomeType::new(...)`.
     fn square(size: u32) -> Self {
         Self {
             width: size,
@@ -44,8 +44,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -21,10 +21,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the X.509 parsing example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Parses the locally generated X.509 certificate.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -35,6 +39,8 @@ mod tests {
         main()
     }
 
+    /// # Errors
+    /// An error is returned if generate_simple_self_signed, from_der fails.
     #[test]
     fn parsed_certificate_reencodes_to_the_same_der() -> anyhow::Result<()> {
         use x509_cert::der::Encode as _;

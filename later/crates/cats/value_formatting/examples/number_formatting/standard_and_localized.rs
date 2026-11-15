@@ -32,6 +32,7 @@ fn main() {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     // Call through a binding: calling `main` directly trips
@@ -40,11 +41,11 @@ pub fn run() {
     entry();
 }
 
+/// grouping.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies stable standard formatting and locale grouping outputs.
     #[test]
     fn standard_and_locale_formats_match_expected_strings() {
         assert_eq!(format!("{:>10.2}", 12.5), "     12.50");

@@ -1,5 +1,3 @@
-// TODO Reviewed ??-??-2026.
-
 #![cfg_attr(
     not(test),
     expect(
@@ -7,6 +5,8 @@
         reason = "needs AWS credentials (CloudWatch); the tests use mocks"
     )
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Publish a custom metric with dimensions to Amazon CloudWatch.
 //!
@@ -23,6 +23,8 @@ use aws_sdk_cloudwatch::types::MetricDatum;
 use aws_sdk_cloudwatch::types::StandardUnit;
 
 /// Builds one data point. Each distinct set of dimensions is a separate metric
+///
+/// # Arguments
 /// (and is billed as one), so keep dimension values low-cardinality.
 pub fn latency_datum(service: &str, millis: f64) -> Result<MetricDatum> {
     let dimension = Dimension::builder().name("Service").value(service).build();
@@ -35,6 +37,10 @@ pub fn latency_datum(service: &str, millis: f64) -> Result<MetricDatum> {
 }
 
 /// Sends the data points under `namespace`.
+///
+/// # Arguments
+/// * `client` - Client used to make the request.
+/// * `data` - Data to process.
 pub async fn put_metrics(client: &Client, namespace: &str, data: Vec<MetricDatum>) -> Result<()> {
     client
         .put_metric_data()
@@ -47,6 +53,15 @@ pub async fn put_metrics(client: &Client, namespace: &str, data: Vec<MetricDatum
 }
 // ANCHOR_END: example
 
+/// Builds a sample CloudWatch latency metric.
+///
+/// # Errors
+/// Returns an error if the CloudWatch SDK rejects the metric datum.
+fn run() -> Result<MetricDatum> {
+    latency_datum("example-service", 42.0)
+}
+
+/// Verifies the metric name, value, unit and dimension.
 #[cfg(test)]
 mod tests {
     use super::*;

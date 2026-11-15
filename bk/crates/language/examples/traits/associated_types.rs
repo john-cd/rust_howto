@@ -36,21 +36,22 @@ impl Iterator for MyIterator {
         Some(self.0)
     }
 }
-
 /// Use the trait. Note how the associated type is specified within < and >.
+
 fn use_iterator(it: &mut impl Iterator<Item = u32>) -> Option<u32> {
     it.next()
 }
-
 /// Uses the iterator through the trait.
+
 fn main() {
     let mut it = MyIterator(42);
     println!("{:?}", use_iterator(&mut it));
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

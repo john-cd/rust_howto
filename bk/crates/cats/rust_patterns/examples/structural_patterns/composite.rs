@@ -16,7 +16,6 @@ enum Expression {
 }
 
 impl Expression {
-    /// Evaluates a leaf or recursively combines a group's children.
     fn evaluate(&self) -> i64 {
         match self {
             Self::Value(value) => *value,
@@ -38,6 +37,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the composite tree example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -47,8 +49,6 @@ mod tests {
     use super::Expression;
     use super::main;
 
-    /// Verifies a composite sums its nested leaf values recursively.
-    /// Runs the composite example through its entry point.
     #[test]
     fn nested_expression_sums_all_values() {
         let expression = Expression::Sum(vec![

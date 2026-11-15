@@ -27,6 +27,7 @@ use flatbuffers::FlatBufferBuilder;
     clippy::nursery,
     reason = "generated code"
 )]
+/// This module provides the `my_game_generated` implementation used by its parent.
 mod my_game_generated {
     include!("my_game_generated.rs");
 }
@@ -56,10 +57,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Optional fields that were never written read back as `None` or as the schema default.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -68,8 +73,8 @@ mod tests {
     fn flatbuffer_round_trip_preserves_the_monster() -> anyhow::Result<()> {
         main()
     }
-
     /// `root` verifies offsets and bounds, so arbitrary bytes are rejected.
+
     #[test]
     fn garbage_bytes_are_rejected() {
         let result = flatbuffers::root::<my_game_generated::my_game::Monster>(&[0xff; 8]);

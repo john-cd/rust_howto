@@ -43,11 +43,15 @@ fn main() -> Result<String, AnyException> {
 // ANCHOR_END: example
 
 /// Prints the greeting produced by an embedded Ruby interpreter.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), AnyException> {
     println!("{}", main()?);
     Ok(())
 }
 
+/// Verifies that Ruby can construct the class and call its Rust method.
 #[cfg(test)]
 mod tests {
     use super::main;

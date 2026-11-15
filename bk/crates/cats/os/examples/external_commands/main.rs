@@ -5,20 +5,33 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates how to continuously read from the standard output of an external
+/// command, filter the output, and print the filtered lines.
 #[cfg(target_os = "linux")]
 mod continuous;
+/// Run a child command with `duct` and capture its output.
 mod duct_example;
+/// Defines failures emitted by external commands operations and conversions used at component
+/// boundaries. Callers match these errors to choose recovery or user-facing diagnostics.
 #[cfg(target_family = "unix")]
 mod error_file;
+/// This example demonstrates how to pipe the output of one external command to
 #[cfg(target_family = "unix")]
 mod piped;
+/// This example demonstrates how to run an external command, capture its
 mod process_output;
+/// This example demonstrates how to read an environment variable.
 #[cfg(target_family = "unix")]
 mod read_env_variable;
+/// This example demonstrates how to send input to an external command's standard input (`stdin`)
+/// and process its standard output (`stdout`) and
 #[cfg(target_family = "unix")]
 mod send_input;
+/// Split and quote command lines with `shlex`.
 mod shlex_example;
+/// Demonstrates how to use the `which` crate to find the location of
 mod which;
+/// Run a Rust tool with `xshell` and capture its output.
 mod xshell_example;
 
 /// Command-line arguments.
@@ -130,7 +143,6 @@ mod tests {
         "xshell",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

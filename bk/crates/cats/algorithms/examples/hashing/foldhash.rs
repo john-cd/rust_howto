@@ -41,12 +41,14 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the `foldhash` example by calling `main()`.
+
 pub fn run() {
     main();
 }
 
+/// with a fixed
 #[cfg(test)]
 mod tests {
     use super::*;

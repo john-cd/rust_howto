@@ -10,13 +10,14 @@
 use std::fs::File;
 use std::io;
 use std::io::Read as _;
-
 /// Reads the username from the file "temp/hello.txt".
-///
+
 /// # Returns
-///
 /// Returns `Ok(String)` containing the username if successful, or
 /// `Err(io::Error)` if an error occurs.
+///
+/// # Errors
+/// Returns an error if the requested data cannot be retrieved.
 fn read_username_from_file() -> Result<String, io::Error> {
     // Note the `?`. If `open` fails, `read_username_from_file` returns its
     // error, short-circuiting the rest of the function. This function does
@@ -31,8 +32,8 @@ fn read_username_from_file() -> Result<String, io::Error> {
 }
 
 /// The main function demonstrates how to use `read_username_from_file` and
-/// handle its result.
 ///
+/// handle its result.
 /// It either prints the username if the file is read successfully, or prints an
 /// error message if an error occurs.
 fn main() {
@@ -43,12 +44,14 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Verifies that the question mark example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;

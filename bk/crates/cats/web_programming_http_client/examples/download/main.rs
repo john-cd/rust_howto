@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Downloads a file as binary response chunks into a temporary directory.
 mod download;
+/// Downloads a file in verified byte ranges.
 mod partial;
+/// This example shows how to POST a file to a server.
 mod post_file;
 
 /// Command-line arguments.
@@ -64,7 +67,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["download", "partial", "post_file"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

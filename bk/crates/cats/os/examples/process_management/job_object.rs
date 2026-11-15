@@ -75,7 +75,10 @@ impl Drop for KillOnCloseJob {
 }
 
 /// Starts a long-running child inside a job, then closes the job.
-pub fn run() -> anyhow::Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> anyhow::Result<()> {
     let job = KillOnCloseJob::new()?;
     let mut child = Command::new("ping")
         .args(["-n", "60", "127.0.0.1"])
@@ -92,6 +95,15 @@ pub fn run() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    example_body()
+}
+
+/// Verifies that a completed command returns its output and exit status.
 #[cfg(test)]
 mod tests {
     use super::*;

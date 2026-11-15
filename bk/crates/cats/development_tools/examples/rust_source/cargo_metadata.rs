@@ -11,6 +11,8 @@ use std::path::Path;
 
 use cargo_metadata::MetadataCommand;
 
+/// # Errors
+/// An error is returned if new fails.
 fn main() -> anyhow::Result<()> {
     // Point at this crate's own manifest. `no_deps` skips resolving
     // dependencies, which is faster and works offline.
@@ -38,6 +40,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

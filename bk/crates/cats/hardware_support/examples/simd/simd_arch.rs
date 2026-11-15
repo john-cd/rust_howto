@@ -20,8 +20,8 @@ use wide::f32x4;
 fn dot_scalar(a: &[f32], b: &[f32]) -> f32 {
     a.iter().zip(b).map(|(x, y)| x * y).sum()
 }
-
 /// SSE2 (always available on `x86_64`): four lanes at a time.
+
 #[cfg(target_arch = "x86_64")]
 #[target_feature(enable = "sse2")]
 fn dot_sse2(a: &[f32], b: &[f32]) -> f32 {
@@ -82,6 +82,8 @@ fn dot_wide(a: &[f32], b: &[f32]) -> f32 {
 
 /// A safe API: picks the best implementation at run time.
 ///
+/// # Arguments
+///
 /// Computes the dot product of the common prefix, ignoring trailing values in
 /// the longer input.
 pub fn dot(a: &[f32], b: &[f32]) -> f32 {
@@ -110,8 +112,9 @@ fn fixture(len: usize, seed: u32) -> Vec<f32> {
         })
         .collect()
 }
-
+/// Runs the example.
 /// Compares the implementations on a fixed input.
+
 fn main() {
     let a = fixture(1_003, 1);
     let b = fixture(1_003, 2);
@@ -122,8 +125,9 @@ fn main() {
     println!("dot = {expected}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Compares scalar, runtime-dispatched, and portable SIMD on fixed inputs.
+
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

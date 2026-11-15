@@ -89,15 +89,17 @@ impl CounterModel {
         }
     }
 }
-
+/// Runs the example.
 /// Runs the application.
+
 fn main() {
     let app = RelmApp::new("relm4.example.counter");
     app.run::<CounterModel>(0);
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Opens the Relm4 counter application.
+
 pub fn run() {
     main();
 }
@@ -113,7 +115,6 @@ mod tests {
         main();
     }
 
-    /// Checks that the messages change the count.
     #[test]
     fn messages_update_the_count() {
         let mut model = CounterModel { value: 0 };

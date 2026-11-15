@@ -24,10 +24,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Marks this live-service demonstration as an opt-in network test.
 #[cfg(test)]
 mod tests {
     // output-only: the example fetches a live URL (ignored offline); see the

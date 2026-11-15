@@ -6,11 +6,12 @@
 /// Something that can be summarized.
 trait Summary {
     /// Returns a summary.
+
     fn summarize(&self) -> String;
 }
-
 /// This function accepts a reference to any type `T` that implements the
 /// `Summary` trait.
+
 fn notify<T: Summary>(item: &T) {
     // Since `item` is guaranteed to implement `Summary`, we can call its
     // `summarize` method.
@@ -27,6 +28,7 @@ where
 // The "impl Trait" syntax is in this case equivalent.
 // `impl Summary` is an opaque type that implements the `Summary` trait:
 /// Accepts any type that implements [`Summary`].
+
 fn notify3(_item: &impl Summary) {}
 
 /// A struct that implements the `Summary` trait.
@@ -40,8 +42,8 @@ impl Summary for Article {
         self.txt.clone()
     }
 }
-
 /// Passes an article to functions that require [`Summary`].
+
 fn main() {
     let a = Article {
         txt: String::from("Some text"),
@@ -52,8 +54,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

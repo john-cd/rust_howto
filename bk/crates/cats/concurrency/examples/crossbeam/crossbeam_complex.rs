@@ -77,10 +77,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the bounded MPMC pipeline example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that every bounded-channel message reaches one worker.
 #[cfg(test)]
 mod tests {
     use super::*;

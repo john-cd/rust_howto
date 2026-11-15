@@ -46,11 +46,9 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the `mdbook-utils` broken-links example.
-///
+
 /// # Errors
-///
 /// Returns an error if the tool is missing or fails.
 pub fn run() -> Result<()> {
     // Call through a binding: calling `main` directly trips
@@ -59,6 +57,7 @@ pub fn run() -> Result<()> {
     entry()
 }
 
+/// Verifies that only the undefined reference is reported; ignored when the tool is not installed.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -42,9 +42,10 @@ impl Task {
         self.schedule.after(&after).next()
     }
 
-    /// Expands variables, splits the command into words and runs it.
+    /// Expands `$WHAT`, tokenizes the configured command, runs it, and returns stdout.
     ///
-    /// Returns the program's standard output.
+    /// # Errors
+    /// Returns an error if the command is empty, cannot be started, or exits unsuccessfully.
     fn run(&self, what: &str) -> Result<String> {
         let line = shellexpand::env_with_context_no_errors(&self.command, |name: &str| {
             (name == "WHAT").then_some(what)
@@ -78,6 +79,15 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<()> {
+    main()
+}
+
+/// Variables come from the supplied lookup, and quotes group words.
 #[cfg(test)]
 mod tests {
     use super::*;

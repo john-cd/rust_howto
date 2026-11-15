@@ -6,12 +6,18 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Contains the wasmer functionality used by this parent module.
 #[cfg(feature = "wasmer")]
 mod wasmer;
+/// This example demonstrates how to use the `wasmtime` crate to run WebAssembly
 #[cfg(feature = "wasmtime")]
 mod wasmtime;
+/// Calls a typed WebAssembly *component* from Rust with `wasmtime`.
 #[cfg(feature = "wasmtime")]
 mod wasmtime_component;
+/// Run untrusted WebAssembly in a `wasmtime` sandbox: a fuel budget bounds the CPU time, a store
+/// limit bounds memory, and the only capability the guest has is one host function (no WASI, no
+/// filesystem, no network).
 #[cfg(feature = "wasmtime")]
 mod wasmtime_sandbox;
 
@@ -48,8 +54,8 @@ enum Commands {
 fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
-
 /// Runs the example selected in the parsed command line.
+
 fn dispatch(cli: Cli) -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {
@@ -80,7 +86,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

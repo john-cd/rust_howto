@@ -38,13 +38,17 @@ impl Hooks for App {
     }
 
     /// Registers the application routes.
+
     fn routes(_ctx: &AppContext) -> AppRoutes {
         AppRoutes::with_default_routes().add_route(home::routes())
     }
 
     /// Creates the application without enabling database support.
+
     async fn boot(
+        /// Mode used to start the process.
         mode: StartMode,
+        /// Environment variables and configuration used by the process.
         environment: &Environment,
         config: loco_rs::config::Config,
     ) -> Result<BootResult> {
@@ -52,11 +56,13 @@ impl Hooks for App {
     }
 
     /// Leaves background worker registration empty for this HTTP-only example.
+
     async fn connect_workers(_ctx: &AppContext, _queue: &Queue) -> Result<()> {
         Ok(())
     }
 
     /// Registers no scheduled or one-off tasks for this example.
+
     fn register_tasks(_tasks: &mut Tasks) {}
 }
 
@@ -66,10 +72,15 @@ mod home {
     use super::*;
 
     /// A basic handler that returns a "Hello, World!" message.
-    /// Returns the plain-text greeting for the Loco route.
-    ///
     /// The framework supplies the application state, which this handler does
     /// not use.
+    ///
+    /// # Arguments
+    /// * `_ctx` - Application state containing the repositories and services needed by this
+    ///   workflow.
+    ///
+    /// # Errors
+    /// Returns an error if a fallible operation cannot complete.
     #[allow(
         clippy::result_large_err,
         reason = "Loco handlers use the framework's Result<Response> error type."
@@ -77,14 +88,14 @@ mod home {
     async fn hello(State(_ctx): State<AppContext>) -> Result<Response> {
         format::text("Hello, Loco!")
     }
-
     /// Defines the routes for this controller.
+
     pub fn routes() -> Routes {
         Routes::new().prefix("home").add("/hello", get(hello))
     }
 }
-
 /// Prints the command needed to run this example as a Loco application.
+
 fn main() -> anyhow::Result<()> {
     #[cfg(feature = "loco-support")]
     println!("Run with `cargo loco start` from a Loco application directory.");
@@ -94,7 +105,17 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+/// Verifies the example identifies its Loco application by crate name.
 #[cfg(test)]
+/// Tests the `main` example and its documented behavior.
 #[cfg(feature = "loco-support")]
 mod tests {
     use super::*;

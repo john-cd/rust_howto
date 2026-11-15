@@ -25,8 +25,8 @@ impl<T> MyVec<T> {
         self.data.push(item);
     }
 }
-
 /// Implementation of `IntoIterator`.
+
 impl<T> IntoIterator for MyVec<T> {
     /// Associated type for the iterator.
     type IntoIter = MyVecIntoIterator<T>;
@@ -61,8 +61,8 @@ impl<T> Iterator for MyVecIntoIterator<T> {
     // The `Iterator` trait implements a large number of default methods, which
     // we get for free.
 }
-
 /// Iterates over a custom collection with a `for` loop.
+
 fn main() {
     let mut my_vec = MyVec::new();
     my_vec.push(1);
@@ -76,8 +76,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -6,7 +6,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Calls `async` code from blocking code with `futures::executor::block_on`.
 mod call_async_from_blocking_futures_executor;
+/// Calls `async` code from blocking code by building a Tokio runtime by hand.
 mod call_async_from_blocking_tokio_runtime;
 
 /// Command-line arguments.
@@ -41,8 +43,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -59,7 +62,6 @@ mod tests {
         "call_async_from_blocking_tokio_runtime",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

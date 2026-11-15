@@ -8,12 +8,13 @@ trait Summary {
     /// Method signature.
     /// Types that implement the `Summary` trait must implement a method with
     /// the exact signature.
-    fn summarize_author(&self) -> String;
 
+    fn summarize_author(&self) -> String;
     /// Traits can also provide _default implementations_ for some or all of
     /// their methods or functions.
     /// - Default implementations have a body.
     /// - Types that implement the trait can override the default implementations, if desired.
+
     fn summarize(&self) -> String {
         // Default implementations can call other methods in the same trait,
         // even if these other methods don't have a default implementation.
@@ -31,12 +32,13 @@ struct Blog {
 /// ...that implements the `Summary` trait.
 impl Summary for Blog {
     /// All non-default-implemented methods must be implemented for the struct.
+
     fn summarize_author(&self) -> String {
         self.author.clone()
     }
 }
-
 /// Calls the default and the overridden methods.
+
 fn main() {
     // Instantiate a Blog struct...
     let blog = Blog {
@@ -51,8 +53,9 @@ fn main() {
 
 // Adapted from <https://doc.rust-lang.org/book/ch10-02-traits.html>.
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

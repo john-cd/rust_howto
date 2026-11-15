@@ -1,8 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Shows that shared reborrows of one mutable reference may overlap.
 
-// ANCHOR: example
 /// Shows overlapping immutable reborrows followed by a mutable access.
 fn main() {
     let mut value = 42;
@@ -20,15 +20,16 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the overlapping shared-reborrow example.
+/// Shows that shared reborrows of one mutable reference may overlap.
 pub fn run() {
     main();
 }
 
+/// resumes.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that shared reborrows can overlap and end before mutation
     /// resumes.
     #[test]
     fn shared_reborrows_can_overlap() {

@@ -114,8 +114,9 @@ fn search_with_all_regexes(contents: &str) {
         }
     }
 }
-
+/// Runs the example.
 /// Extracts the inline links of a sample Markdown text.
+
 fn main() {
     // Example Markdown links to process:
     let md: &'static str = "

@@ -49,10 +49,14 @@ fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()
 }
 
+/// Verifies that the memmap2 example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;

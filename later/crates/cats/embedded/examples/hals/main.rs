@@ -1,12 +1,17 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+//! Starts the hals application and connects its top-level components.
+//! The executable uses this module to initialize services and hand control to the application.
+
 use embedded_hal::digital::ErrorType;
 use embedded_hal::digital::OutputPin;
 
 #[derive(Default)]
 struct MockPin {
+    /// Flag indicating whether the mock pin satisfies the high condition.
     high: bool,
+    /// Collection of transitions values consumed by mock pin operations.
     transitions: Vec<bool>,
 }
 
@@ -40,8 +45,8 @@ fn blink<P: OutputPin>(pin: &mut P) -> Result<(), P::Error> {
 fn main() -> anyhow::Result<()> {
     run_example()
 }
-
 /// Performs one host-side LED pulse with the simulated output pin.
+
 fn run_example() -> anyhow::Result<()> {
     let mut pin = MockPin::default();
     blink(&mut pin)?;
@@ -51,10 +56,16 @@ fn run_example() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the book example from the example crate's module runner.
+/// Starts the hals application and connects its top-level components. The executable uses this
+/// module to initialize services and hand control to the application.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     run_example()
 }
 
+/// Verifies the example entry point succeeds with its simulated pin.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -66,7 +77,6 @@ mod tests {
         main()
     }
 
-    /// Verifies a portable driver can toggle a pin without target hardware.
     #[test]
     fn blink_changes_the_output_level() {
         let mut pin = MockPin::default();

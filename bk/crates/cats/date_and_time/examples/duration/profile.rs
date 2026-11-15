@@ -32,12 +32,14 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Confirms that a measured duration is nonnegative without asserting its value.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -9,6 +9,7 @@
 trait SomeBehavior {
     // Method declaration (signature only, no body):
     /// Does something and returns a description.
+
     fn do_something(&self) -> String;
 
     // Method with default implementation:
@@ -28,9 +29,11 @@ trait SomeBehavior {
 
     // Associated constants with and without default:
     /// A constant with a default value.
+    /// Defines the constant constant.
     const CONSTANT: i32 = 42;
 
     /// A constant without a default value.
+    /// Defines the another const constant.
     const ANOTHER_CONST: &str;
 }
 
@@ -46,14 +49,18 @@ struct MyStruct {
 // Implement the trait for your struct:
 impl SomeBehavior for MyStruct {
     // Define the associated type:
+    /// Shared `another const` used by this module.
     type Output = String;
 
     // Define the const that did not have a default:
+    /// Shared `another const` used by this module.
     const ANOTHER_CONST: &str = "Another constant value";
     // Override the const that did have a default:
+    /// Shared `constant` used by this module.
     const CONSTANT: i32 = 43;
 
     // Concrete implementation of a trait method for this struct:
+
     fn do_something(&self) -> String {
         format!("{} is doing something with data: {}", self.name, self.data)
     }
@@ -68,8 +75,8 @@ impl SomeBehavior for MyStruct {
         "Associated function output".to_owned()
     }
 }
-
 /// Uses the trait implementation.
+
 fn main() {
     let m = MyStruct {
         data: 42,
@@ -85,8 +92,10 @@ fn main() {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -102,6 +111,7 @@ mod tests {
     }
 
     /// The implementation overrides the trait's default method and constant.
+
     #[test]
     fn test_implementation() {
         let m = MyStruct {
@@ -116,13 +126,19 @@ mod tests {
     }
 
     /// A type that keeps the defaults gets the trait's default constant.
+
     #[test]
     fn test_default_constant() {
+        /// Groups the data required by structs operations.
         struct Defaults;
         impl SomeBehavior for Defaults {
+            /// Shared `another const` used by this module.
             type Output = ();
 
+            /// Shared `another const` used by this module.
             const ANOTHER_CONST: &str = "x";
+
+            ///
 
             fn do_something(&self) -> String {
                 String::new()

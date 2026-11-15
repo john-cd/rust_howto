@@ -2,8 +2,11 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Parses an Intel HEX data record and its end-of-file record.
 mod intel_hex;
+/// A simple `PolkaVM` host example.
 mod polkavm_host;
+/// A two-register virtual machine with a bounded fetch/decode/execute loop.
 mod register_vm;
 
 /// Runs the emulators example.
@@ -13,11 +16,11 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     intel_hex::run()
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     fn test_main_entry_point() {

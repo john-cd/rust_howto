@@ -16,10 +16,19 @@ use anyhow::Result;
 use anyhow::bail;
 use semver::Version;
 use semver::VersionReq;
-
-/// Runs a command's `--version` option and parses its final output token.
+/// Runs `command --version` and parses the final token as a semantic version.
 ///
-/// Returns `Ok(None)` when the command is not installed.
+/// # Arguments
+/// * `command` - Program to query for its version.
+///
+/// # Returns
+/// `Ok(None)` if the program is not installed, or `Ok(Some(version))` if it
+/// reports a valid version.
+///
+/// # Errors
+/// Returns an error if the program cannot be started for another reason, exits
+/// unsuccessfully, emits invalid UTF-8, omits a version token, or reports an
+/// invalid version.
 fn command_version(command: &OsStr) -> Result<Option<Version>> {
     let output = match Command::new(command).arg("--version").output() {
         Ok(output) => output,
@@ -78,10 +87,14 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies that a missing executable is reported without an error.
 #[cfg(test)]
 mod tests {
     use super::*;

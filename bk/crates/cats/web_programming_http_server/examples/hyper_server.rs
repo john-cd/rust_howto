@@ -1,7 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
-//! A small HTTP/1 server built directly with Hyper and Tokio.
 // ANCHOR: example
+//! A small HTTP/1 server built directly with Hyper and Tokio.
+
 use std::convert::Infallible;
 
 use bytes::Bytes;
@@ -40,8 +41,8 @@ async fn main() -> anyhow::Result<()> {
 async fn handle_request(request: Request<Incoming>) -> Result<Response<Full<Bytes>>, Infallible> {
     Ok(response_for(request.method(), request.uri().path()))
 }
-
 /// Returns a response for a method and path in the example API.
+
 fn response_for(method: &Method, path: &str) -> Response<Full<Bytes>> {
     let (status, body) = if method == Method::GET {
         match path {
@@ -59,6 +60,21 @@ fn response_for(method: &Method, path: &str) -> Response<Full<Bytes>> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+/// A small HTTP/1 server built directly with Hyper and Tokio.
+///
+/// # Errors
+/// Returns an error if an operation in the example fails.
+/// Returns an error if a step of the example fails.
+
+/// Returns a greeting for a GET request to the root path.
 #[cfg(test)]
 mod tests {
     use http_body_util::BodyExt as _;

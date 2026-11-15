@@ -52,10 +52,14 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 // ANCHOR_END: example
 
 /// Runs the in-memory heartbeat example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }
 
+/// Checks the decoded header and heartbeat fields after serialization.
 #[cfg(test)]
 mod tests {
     use super::*;

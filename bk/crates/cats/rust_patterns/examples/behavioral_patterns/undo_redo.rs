@@ -28,7 +28,11 @@ struct Editor {
 }
 
 impl Editor {
-    /// Inserts a character and records the command for undo.
+    /// Inserts the current value.
+    ///
+    /// # Arguments
+    /// * `index` - Position used to identify the element affected in the current ordered
+    ///   collection.
     fn insert(&mut self, index: usize, value: char) {
         let byte_index = self
             .text
@@ -80,8 +84,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -89,12 +94,11 @@ pub fn run() {
     entry();
 }
 
+/// commands.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that undo removes an edit and redo restores the same text.
-    /// Runs the undo/redo example through its entry point.
     #[test]
     fn undo_and_redo_restore_the_document() {
         let mut editor = Editor::default();

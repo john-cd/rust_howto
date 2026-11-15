@@ -5,21 +5,37 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates the basic usage of the `tracing` crate for logging
 mod tracing;
+/// Instrumenting sync and async functions with `tracing` spans.
 mod tracing_instrument;
+/// Demonstrates entering and exiting a span using `entered()` and `exit()`.
 mod tracing_span_entered;
+/// Demonstrates how to use tracing spans to instrument code,
 mod tracing_span_in_scope;
+/// Creating and entering spans with `tracing`.
 mod tracing_spans;
+/// - `tracing` is a framework for instrumenting Rust programs to collect scoped, structured, and
+/// async-aware diagnostics.
 mod tracing_subscriber;
+/// Demonstrates how to configure the tracing subscriber
 mod tracing_subscriber1;
+/// Demonstrates how to log in JSON format.
 mod tracing_subscriber1b;
+/// Demonstrates how to write logs to multiple destinations (in this instance,
 mod tracing_subscriber2b;
+/// This example demonstrates how to enable or
 mod tracing_subscriber3;
+/// Demonstrates how to configure tracing at runtime, - dealing with a variable number of `Layer`s
+/// of different types.
 mod tracing_subscriber3b;
+/// This example demonstrates customizing the formatting of log lines for spans and events.
 mod tracing_subscriber4;
+/// Composing a `tracing` subscriber from layers and filters.
 mod tracing_subscriber_layers;
 
 #[cfg(test)]
+/// This module provides the `isolated` implementation used by its parent.
 #[path = "../support/isolated.rs"]
 mod isolated;
 
@@ -150,7 +166,6 @@ mod tests {
         "tracing_subscriber4",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

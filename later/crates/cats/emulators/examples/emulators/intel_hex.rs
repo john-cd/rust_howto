@@ -1,12 +1,12 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Parses an Intel HEX data record and its end-of-file record.
 //!
 //! Intel HEX is a text format for firmware images: each line is a record with
 //! an address, data bytes and a checksum. Programmers for microcontrollers and
 //! EEPROM chips read it. An end-of-file record marks the last line.
 
-// ANCHOR: example
 use std::error::Error;
 
 use ihex::Reader;
@@ -21,8 +21,13 @@ fn parse_records() -> Result<Vec<Record>, Box<dyn Error + Send + Sync>> {
         .collect::<Result<Vec<_>, _>>()
         .map_err(Into::into)
 }
+// ANCHOR_END: example
 
 /// Prints the number of records in the example Intel HEX object.
+/// Parses an Intel HEX data record and its end-of-file record.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     let records = parse_records()?;
     assert_eq!(
@@ -35,8 +40,8 @@ pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     println!("Parsed {} Intel HEX records.", records.len());
     Ok(())
 }
-// ANCHOR_END: example
 
+/// Verifies that the reader decodes the data and end-of-file records.
 #[cfg(test)]
 mod tests {
     use std::error::Error;

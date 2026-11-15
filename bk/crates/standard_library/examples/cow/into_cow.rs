@@ -47,8 +47,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -56,11 +57,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `into cow` example runs.
 
     #[test]
     fn test_into_cow_example_entry_point() {
         main();
     }
+    /// Verifies static descriptions are borrowed.
 
     #[test]
     fn test_static_descriptions_are_borrowed() {
@@ -72,6 +75,7 @@ mod tests {
             "Status: 404 Not Found"
         );
     }
+    /// Verifies custom description is owned.
 
     #[test]
     fn test_custom_description_is_owned() {

@@ -109,6 +109,11 @@ async fn baz(n: i32) {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+pub fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -119,7 +124,8 @@ mod tests {
         main();
     }
 
-    #[tokio::test]
+    /// # Errors
+    /// An error is returned if registry_collects_the_registered_trees fails.
     async fn registry_collects_the_registered_trees() -> Result<(), Box<dyn std::error::Error>> {
         let registry = Registry::new(ConfigBuilder::default().verbose(true).build()?);
         for i in 0_i32..2 {

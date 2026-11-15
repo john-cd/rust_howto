@@ -37,12 +37,16 @@ fn main() -> anyhow::Result<()> {
 }
 
 // ANCHOR_END: example
-
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+
 pub fn run() -> anyhow::Result<()> {
     run_example()
 }
 
+/// Verifies cancelling a parent token wakes a child task.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -40,9 +40,12 @@ fn full_and_empty() {
 }
 
 /// Drains at most one block without waiting, filling an underrun with silence.
-///
 /// This function neither allocates nor yields; it handles the sample transfer
 /// portion of a real-time callback.
+///
+/// # Arguments
+/// * `consumer` - Mutable consumer whose state is updated by this operation.
+/// * `block` - Mutable [f32; block size] whose state is updated by this operation.
 fn drain_block(consumer: &mut Consumer<f32>, block: &mut [f32; BLOCK_SIZE]) -> usize {
     block.fill(0.0);
     let mut filled = 0;
@@ -57,11 +60,9 @@ fn drain_block(consumer: &mut Consumer<f32>, block: &mut [f32; BLOCK_SIZE]) -> u
     }
     filled
 }
-
 /// Sends `TOTAL` samples and drives the block consumer from an ordinary thread.
-///
+
 /// # Errors
-///
 /// Returns an error if the producer thread panics.
 fn main() -> Result<()> {
     full_and_empty();
@@ -112,11 +113,9 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the SPSC transfer example and reports producer thread failures.
-///
+
 /// # Errors
-///
 /// Returns an error if the producer thread panics.
 pub fn run() -> Result<()> {
     main()
@@ -131,8 +130,8 @@ mod tests {
     fn test_rtrb_example_entry_point() -> Result<()> {
         main()
     }
-
     /// Returns full/empty errors without blocking or losing buffered values.
+
     #[test]
     fn test_full_and_empty() {
         full_and_empty();

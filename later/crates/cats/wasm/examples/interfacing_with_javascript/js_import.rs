@@ -18,8 +18,11 @@ unsafe extern "C" {
     #[wasm_bindgen(js_namespace = console)]
     fn log(message: &str);
 }
-
 /// Writes a message through the browser's JavaScript console.
+///
+/// # Arguments
+/// * `message` - Message to send or handle.
+
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 #[wasm_bindgen]
 pub fn log_message(message: &str) {
@@ -33,8 +36,9 @@ fn main() {
     #[cfg(not(all(target_arch = "wasm32", target_os = "unknown")))]
     println!("Build for wasm32-unknown-unknown to import console.log.");
 }
-
+/// Runs the example entry point.
 /// Runs the example's host-side runner.
+
 pub fn run() {
     main();
 }

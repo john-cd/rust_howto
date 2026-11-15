@@ -75,6 +75,9 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the robotics pathfinding example by calling `main()`.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main();
     Ok(())
@@ -83,6 +86,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `astar` example runs.
 
     #[test]
     fn test_astar_example_entry_point() {

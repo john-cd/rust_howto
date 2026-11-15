@@ -1,16 +1,31 @@
 //! Runs one of the graph algorithm examples, chosen on the command line.
 //!
 //! Reviewed 10-27-2026.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use clap::Parser;
 use clap::Subcommand;
 
+/// Implicit grid pathfinding using the A* algorithm and the `pathfinding` crate.
 mod pathfinding_astar;
+/// Builds or traverses graph graph data while preserving relationships needed by downstream
+/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod petgraph_astar;
+/// Builds or traverses graph graph data while preserving relationships needed by downstream
+/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod petgraph_bfs;
+/// Builds or traverses graph graph data while preserving relationships needed by downstream
+/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod petgraph_dfs;
+/// Builds or traverses graph graph data while preserving relationships needed by downstream
+/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod petgraph_dijkstra;
+/// Builds or traverses graph graph data while preserving relationships needed by downstream
+/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod petgraph_mst;
+/// Builds or traverses graph graph data while preserving relationships needed by downstream
+/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod petgraph_toposort;
 
 /// Command-line arguments.
@@ -71,8 +86,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -94,7 +110,6 @@ mod tests {
         "petgraph_mst",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

@@ -17,11 +17,9 @@ use linfa::traits::Fit as _;
 use linfa_clustering::KMeans;
 use rand_08::SeedableRng as _;
 use rand_08::rngs::StdRng;
-
 /// Fits K-means to two separated groups and returns one label per point.
-///
+
 /// # Errors
-///
 /// Returns an error if K-means cannot fit the synthetic dataset.
 fn cluster_synthetic_points() -> Result<Vec<usize>, Box<dyn Error>> {
     let records = ndarray_016::array![
@@ -52,10 +50,14 @@ fn main() -> Result<(), Box<dyn Error>> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main().expect("the seeded Linfa K-means example failed");
 }
 
+/// Verifies K-means assigns every point to one of two clusters.
 #[cfg(test)]
 mod tests {
     use super::*;

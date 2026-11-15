@@ -32,8 +32,8 @@ trait TextBox {
 trait GUIFactory {
     /// Creates a button of the theme.
     fn create_button(&self) -> Box<dyn Button>;
-
     /// Creates a text box of the theme.
+
     fn create_text_box(&self) -> Box<dyn TextBox>;
 }
 
@@ -46,6 +46,7 @@ mod light {
     struct LightButton;
 
     impl Button for LightButton {
+        /// Renders the current value.
         fn render(&self) {
             println!("Rendering a light button.");
         }
@@ -66,9 +67,13 @@ mod light {
     pub struct LightGUIFactory;
 
     impl GUIFactory for LightGUIFactory {
+        /// Assembles the button from its component values so callers receive a ready-to-use result.
         fn create_button(&self) -> Box<dyn Button> {
             Box::new(LightButton)
         }
+
+        /// Assembles the text box from its component values so callers receive a ready-to-use
+        /// result.
 
         fn create_text_box(&self) -> Box<dyn TextBox> {
             Box::new(LightTextBox)
@@ -86,6 +91,7 @@ mod dark {
     struct DarkButton;
 
     impl Button for DarkButton {
+        /// Renders the current value.
         fn render(&self) {
             println!("Rendering a dark button.");
         }
@@ -105,25 +111,30 @@ mod dark {
     pub struct DarkGUIFactory;
 
     impl GUIFactory for DarkGUIFactory {
+        /// Assembles the button from its component values so callers receive a ready-to-use result.
         fn create_button(&self) -> Box<dyn Button> {
             Box::new(DarkButton)
         }
+
+        /// Assembles the text box from its component values so callers receive a ready-to-use
+        /// result.
 
         fn create_text_box(&self) -> Box<dyn TextBox> {
             Box::new(DarkTextBox)
         }
     }
 }
-
 /// Renders a button and a text box created by `factory`, displaying `txt`.
+
 fn render(factory: &dyn GUIFactory, txt: &str) {
     let button = factory.create_button();
     let text_box = factory.create_text_box();
     button.render();
     text_box.display_text(txt);
 }
-
+/// Runs the example.
 /// Renders the GUI elements of the light theme, then of the dark theme.
+
 fn main() {
     // Using the Light theme factory.
     render(&light::LightGUIFactory, "Hello from light theme!");
@@ -134,8 +145,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -1,8 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Demonstrates building and applying a composite predicate.
 
-// ANCHOR: example
 use predicates::prelude::*;
 
 /// A small file record used to demonstrate runtime filtering.
@@ -13,8 +13,9 @@ struct File {
     /// The file's size in kibibytes.
     size_kb: u64,
 }
-
+/// Demonstrates building and applying a composite predicate.
 /// Filters files by a name substring and a minimum size.
+
 fn main() {
     // Imagine these values come from user input at runtime.
     let name_contains = "report";
@@ -76,6 +77,12 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Demonstrates building and applying a composite predicate.
+fn run() {
+    main();
+}
+
+/// Verifies that the composed predicate keeps records matching both rules.
 #[cfg(test)]
 mod tests {
     /// Verifies that the composed predicate keeps records matching both rules.

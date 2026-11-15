@@ -95,8 +95,9 @@ fn main() {
     assert!(map.is_empty());
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the `heapless` collection example.
+
 pub fn run() {
     main();
 }

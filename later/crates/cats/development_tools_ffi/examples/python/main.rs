@@ -7,8 +7,11 @@ use clap::Parser;
 #[cfg(any(target_os = "linux", target_os = "windows"))]
 use clap::Subcommand;
 
+/// Calls embedded Python code and passes it positional arguments with PyO3.
 #[cfg(any(target_os = "linux", target_os = "windows"))]
 mod pyo3;
+/// Demonstrates how to define a PyO3 Python module in Rust, register it with `sys.modules`, and
+/// invoke its Rust function and class from embedded Python.
 #[cfg(any(target_os = "linux", target_os = "windows"))]
 mod use_rust_from_python;
 
@@ -58,6 +61,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
 }
 
+/// Tests the `main` example and its documented behavior.
 #[cfg(all(test, any(target_os = "linux", target_os = "windows")))]
 mod tests {
     use clap::CommandFactory;

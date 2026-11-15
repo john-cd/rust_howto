@@ -43,8 +43,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -53,15 +54,16 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    #[should_panic]
     /// Runs the diverging functions example through its entry point.
+    #[should_panic]
     #[test]
     fn test_diverging_functions_example_entry_point() {
         main();
     }
+    /// Verifies foo panics.
 
-    /// `foo` never returns: it panics with its message.
     #[test]
+    /// `foo` never returns: it panics with its message.
     #[should_panic(expected = "This call never returns.")]
     fn test_foo_panics() {
         foo();

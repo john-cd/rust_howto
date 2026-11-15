@@ -17,12 +17,11 @@ use tempfile::tempdir;
 use tokio::fs::File;
 use tokio::io::AsyncWriteExt as _;
 use tokio::io::BufReader;
-
 /// Creates a file, compresses it to gzip, decompresses it and prints the
+
 /// progress.
 ///
 /// # Errors
-///
 /// Returns an error if temporary storage, file I/O, compression, decompression,
 /// or the round-trip comparison fails.
 #[tokio::main]
@@ -104,29 +103,26 @@ async fn decompress_file_async(source_path: &Path, dest_path: &Path) -> IoResult
 // ANCHOR_END: example
 
 /// # Errors
-///
 /// Returns an error if compression or decompression fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Returns an error if the round trip fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Checks that the example succeeds.
-    ///
     /// # Errors
-    ///
     /// Returns an error if the round trip fails.
-    /// Runs the async compression example through its entry point.
     #[test]
     fn test_async_compression_example_entry_point() -> anyhow::Result<()> {
         main()?;
         Ok(())
     }
 
-    #[tokio::test]
+    /// # Errors
+    /// An error is returned if compress_then_decompress_roundtrips_the_file fails.
     async fn compress_then_decompress_roundtrips_the_file() -> anyhow::Result<()> {
         let dir = tempdir()?;
         let input = dir.path().join("in.txt");
@@ -155,7 +151,8 @@ mod tests {
         Ok(())
     }
 
-    #[tokio::test]
+    /// # Errors
+    /// An error is returned if decompressing_non_gzip_data_fails fails.
     async fn decompressing_non_gzip_data_fails() -> anyhow::Result<()> {
         let dir = tempdir()?;
         let bad = dir.path().join("bad.gz");

@@ -20,8 +20,9 @@ fn main() {
     println!("Center after blur: {:?}", blurred.get_pixel(4, 4));
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the Gaussian blur example.
+
 pub fn run() {
     main();
 }
@@ -30,7 +31,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Checks that blur spreads light into neighboring pixels.
     #[test]
     fn blur_spreads_a_bright_pixel() {
         let mut image = RgbImage::new(9, 9);

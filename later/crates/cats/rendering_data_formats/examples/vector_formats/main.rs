@@ -1,10 +1,12 @@
 // TODO Reviewed ??-??-2026.
 
-//! Rasterizes an SVG document at a bounded output size.
 // ANCHOR: example
+//! Rasterizes an SVG document at a bounded output size.
+
 use resvg::tiny_skia::Pixmap;
 use resvg::tiny_skia::Transform;
 
+/// Defines the svg constant.
 const SVG: &str = r##"
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
   <rect width="400" height="200" fill="#ffffff" />
@@ -41,6 +43,20 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+/// Rasterizes an SVG document at a bounded output size.
+///
+/// # Errors
+/// Returns an error if an operation in the example fails.
+/// Returns an error if a step of the example fails.
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -50,8 +66,8 @@ mod tests {
     fn test_main_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// Verifies the output is scaled to the requested bound.
+
     #[test]
     fn scales_the_longer_side_to_the_bound() -> anyhow::Result<()> {
         let pixmap = rasterize(SVG, 100)?;
@@ -70,7 +86,6 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that malformed markup is reported as an error.
     #[test]
     fn rejects_malformed_svg() {
         assert!(rasterize("<svg", 100).is_err());

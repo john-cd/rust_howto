@@ -11,7 +11,10 @@ use std::future::Future;
 /// Style 1: return-position `impl Trait` in a trait (RPITIT) with an explicit
 /// `Send` bound.
 trait Refresh {
-    /// Refreshes the state and returns a new version number.
+    /// Refreshes the state and returns its new version number.
+    ///
+    /// # Errors
+    /// Returns an error if the state cannot be refreshed.
     fn refresh(&mut self) -> impl Future<Output = Result<u32, String>> + Send;
 }
 
@@ -55,6 +58,7 @@ impl SendStore for MemoryStore {
     }
 
     /// Stores a cloned key and owned value.
+
     async fn put(&mut self, key: &str, value: String) {
         self.0.insert(key.to_owned(), value);
     }
@@ -92,12 +96,14 @@ async fn main() {
     );
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Checks both `Send` trait styles on a multi-threaded runtime.
 #[cfg(test)]
 mod tests {
     use super::*;

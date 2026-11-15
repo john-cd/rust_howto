@@ -27,7 +27,10 @@ fn worker(shutdown: &AtomicBool) -> u32 {
 }
 
 /// Installs the Ctrl-C handler, starts a worker, and joins it after shutdown.
-pub fn run() -> anyhow::Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> anyhow::Result<()> {
     let shutdown = Arc::new(AtomicBool::new(false));
 
     // The handler runs on a dedicated thread. Keep it tiny: set a flag (or
@@ -52,6 +55,14 @@ pub fn run() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    example_body()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -72,6 +83,7 @@ mod tests {
         let shutdown = AtomicBool::new(true);
         assert_eq!(worker(&shutdown), 0);
     }
+    /// Runs completes.
 
     #[test]
     fn run_completes() -> anyhow::Result<()> {

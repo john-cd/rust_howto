@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Mocking a trait with `mockall`.
 //!
 //! A mock replaces a real dependency (a database or a web service) in a test.
@@ -7,11 +8,6 @@
 //! return values, and fails the test when the expectations are not met.
 
 /// Runs the example.
-pub fn run() {
-    main();
-}
-
-// ANCHOR: example
 // This example demonstrates how to use the `mockall` crate for mocking.
 //
 // First, add `mockall` to your `Cargo.toml` dependencies:
@@ -23,7 +19,6 @@ pub fn run() {
 // Then define a `UserRepository` trait and a `UserService` struct that uses
 // it. We then use `mockall` to create a mock implementation of
 // `UserRepository` for testing `UserService`.
-
 use mockall::predicate::*;
 use mockall::*;
 
@@ -46,8 +41,8 @@ struct User {
 trait UserRepository {
     /// Finds the user with the given `id`.
     fn find_by_id(&self, id: u64) -> Option<User>;
-
     /// Saves the `user`; returns an error message on failure.
+
     fn save(&self, user: User) -> Result<(), String>;
 }
 
@@ -98,6 +93,12 @@ impl<T: UserRepository> UserService<T> {
 struct ActualRepository;
 
 impl UserRepository for ActualRepository {
+    /// Searches the available by id data and returns candidates that satisfy the workflow’s
+    /// matching rules.
+    ///
+    /// # Arguments
+    /// * `id` - Identifier used to select the actual repository record or cache entry affected by
+    ///   this operation.
     fn find_by_id(&self, id: u64) -> Option<User> {
         // In a real implementation, this would query a database. For this
         // example, we'll just return a dummy user if the ID is 1.
@@ -108,13 +109,16 @@ impl UserRepository for ActualRepository {
         })
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     fn save(&self, user: User) -> Result<(), String> {
         println!("Persisted user: {user:?}");
         Ok(())
     }
 }
-
+/// Mocking a trait with `mockall`.
 /// Updates a user's email through the service.
+
 fn main() {
     let service = UserService::new(ActualRepository);
     let updated = service
@@ -122,6 +126,12 @@ fn main() {
         .expect("Repository should return a user");
 
     println!("Updated user from main(): {updated:?}");
+}
+// ANCHOR_END: example
+
+/// Mocking a trait with `mockall`.
+pub fn run() {
+    main();
 }
 
 /// The `tests` module contains unit tests for `UserService` using the mock
@@ -165,7 +175,6 @@ mod tests {
         assert_eq!(user.email, "john@example.com");
     }
 
-    /// Verifies that `get_user` returns an error when the repository finds no
     /// user.
     #[test]
     fn test_get_user_not_found() {
@@ -190,7 +199,6 @@ mod tests {
         assert_eq!(result.err().as_deref(), Some("User with id 999 not found"));
     }
 
-    /// Verifies that `update_user_email` saves the new address to the
     /// repository.
     #[test]
     fn test_update_user_email() {
@@ -240,4 +248,3 @@ mod tests {
         main();
     }
 }
-// ANCHOR_END: example

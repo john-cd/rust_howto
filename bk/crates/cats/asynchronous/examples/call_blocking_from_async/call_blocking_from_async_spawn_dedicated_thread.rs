@@ -35,17 +35,18 @@ async fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// its entry point.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the call blocking from async spawn dedicated thread example through
     /// its entry point.
     #[test]
     fn test_call_blocking_from_async_spawn_dedicated_thread_example_entry_point() {

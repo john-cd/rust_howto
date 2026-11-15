@@ -9,10 +9,13 @@ use clap::Parser;
 #[cfg(feature = "lua")]
 use clap::Subcommand;
 
+/// Creates a Lua table in Rust and reads it from an embedded Lua 5.4 runtime.
 #[cfg(feature = "lua")]
 mod mlua;
+/// Calls an embedded Lua chunk and a Rust function while exposing only a
 #[cfg(feature = "lua")]
 mod mlua_scripting;
+/// Exposes a Rust counter as Lua userdata with a method, using vendored Lua.
 #[cfg(feature = "lua")]
 mod mlua_userdata;
 
@@ -62,6 +65,7 @@ fn main() -> LuaResult<()> {
     dispatch(Cli::parse())
 }
 
+/// Tests the `main` example and its documented behavior.
 #[cfg(all(test, feature = "lua"))]
 mod tests {
     use clap::CommandFactory;
@@ -86,7 +90,8 @@ mod tests {
         dispatch(Cli { command: None })
     }
 }
-
+/// Runs the example.
 /// Runs the example selected on the command line.
+
 #[cfg(not(feature = "lua"))]
 fn main() {}

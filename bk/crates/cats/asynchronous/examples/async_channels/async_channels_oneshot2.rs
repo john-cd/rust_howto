@@ -48,8 +48,9 @@ async fn async_main() -> Result<(), Box<dyn std::error::Error>> {
 
     Ok(())
 }
-
+/// Runs the example.
 /// Creates a Tokio runtime and runs [`async_main`] on it.
+
 fn main() {
     let rt = tokio::runtime::Runtime::new()
         .expect("the async channels oneshot2 example invariant should hold");
@@ -58,8 +59,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -82,6 +84,9 @@ mod tests {
         assert_eq!(start.elapsed(), Duration::from_secs(2));
     }
 
+    /// Processes the file takes one second input for the async channels oneshot2 workflow and
+    /// applies the resulting state changes. It calls `process_file_takes_one_second`, `now` to
+    /// apply the required changes.
     #[tokio::test(start_paused = true)]
     async fn process_file_takes_one_second() {
         let start = tokio::time::Instant::now();

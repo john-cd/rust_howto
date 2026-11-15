@@ -32,6 +32,7 @@ macro_rules! must_be_string {
     ($lit:literal) => {
         // This block acts as a compile-time gate.
         {
+            /// Shared `` used by this module.
             const _: () = {
                 // This helper function *only* accepts a string slice.
                 /// Accepts a string slice to enforce the macro's literal type
@@ -52,13 +53,13 @@ macro_rules! must_be_string {
 //      for different types to implement.
 /// A trait implemented only for the types that the macro accepts.
 trait Processable {
-    /// Processes the value.
+    /// Implements the `Processable` trait for the given integer types.
     fn process(&self) {}
 }
 
 // B. Create a helper macro to implement our trait for e.g. all integer types at
-//    once. This avoids a lot of repetitive boilerplate code.
 /// Implements the `Processable` trait for the given integer types.
+//    once. This avoids a lot of repetitive boilerplate code.
 macro_rules! impl_processable_for_integer {
     // `$t:ty` matches a type. `$(...),*` means "repeat for zero or more, separated by commas".
     ($($t:ty),*) => {
@@ -102,17 +103,18 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// point.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the macro by example type checking2 example through its entry
     /// point.
     #[test]
     fn test_macro_by_example_type_checking2_example_entry_point() {

@@ -23,14 +23,19 @@ use shaku::module;
 /// A service that greets people.
 trait Greeter: Interface {
     /// Returns a greeting for `name`.
+    /// A greeter that greets in English.
+    ///
+    /// # Arguments
+    /// * `name` - Human-readable value used to identify or display the selected greeter.
+
     fn greet(&self, name: &str) -> String;
 }
 
 // The `#[derive(Component)]` attribute tells Shaku that these structs are
 // components that can be managed by the dependency injection container.
 // `Component` represents a single instance of a service, aka a singleton.
-// Each time a component is resolved,  will get the same instance.
 /// A greeter that greets in English.
+// Each time a component is resolved,  will get the same instance.
 #[derive(Component)]
 // The `#[shaku(interface = Greeter)]` attribute associates each component with
 // the `Greeter` interface.
@@ -39,6 +44,9 @@ trait Greeter: Interface {
 struct EnglishGreeter;
 
 impl Greeter for EnglishGreeter {
+    /// # Arguments
+    /// * `name` - Human-readable value used to identify or display the selected english greeter.
+
     fn greet(&self, name: &str) -> String {
         format!("Hello, {name}!")
     }
@@ -50,12 +58,14 @@ impl Greeter for EnglishGreeter {
 // The `Interface` trait acts as a trait alias for these bounds.
 /// A service that starts a conversation.
 trait Conversation: Interface {
-    /// Returns the first sentence of the conversation.
+    /// Starts the current value.
+
     fn start(&self) -> String;
 }
-
 /// A conversation in English, which greets using an injected greeter.
+
 #[derive(Component)]
+/// A conversation in English, which greets using an injected greeter.
 #[shaku(interface = Conversation)]
 struct EnglishConversation {
     // Components can depend on other components.
@@ -70,6 +80,8 @@ struct EnglishConversation {
 }
 
 impl Conversation for EnglishConversation {
+    /// Starts the current value.
+
     fn start(&self) -> String {
         self.greeter.greet(self.person.as_str())
     }
@@ -85,8 +97,9 @@ module! {
         providers = []
     }
 }
-
+/// Runs the example.
 /// Resolves components from a module and uses them.
+
 fn main() {
     // Create an instance of the module, which manages the dependencies.
     let module = MyModule::builder().build();
@@ -106,6 +119,7 @@ fn main() {
     println!("{}", convo.start());
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

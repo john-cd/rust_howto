@@ -91,8 +91,9 @@ fn main() {
     println!("Output: {output:x?}");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the BLAKE3 example by delegating to `main()`.
+
 pub fn run() {
     main();
 }
@@ -100,6 +101,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `blake3` example runs.
 
     #[test]
     fn test_blake3_example_entry_point() {

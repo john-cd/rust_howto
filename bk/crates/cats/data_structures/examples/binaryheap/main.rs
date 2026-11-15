@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// A `BinaryHeap` used as a priority queue.
 mod binaryheap;
+/// Add this dependency to your `Cargo.toml`: ```toml [dependencies] priority-queue = "2.7.0" ```
 mod priority_queue;
 
 /// Command-line arguments.
@@ -40,8 +42,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -55,7 +58,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["binaryheap", "priority_queue"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

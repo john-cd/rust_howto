@@ -18,14 +18,15 @@ use tungstenite::http::Request;
 /// WebSocket echo service endpoint used by this example.
 // `wss://` is WebSocket over TLS (encrypted), like `https://`; `ws://` is
 // unencrypted. An echo service sends back whatever it receives.
+/// Shared `echo endpoint` used by this module.
 const ECHO_ENDPOINT: &str = "wss://ws.postman-echo.com/raw";
 
 /// Creates a request for Postman's public echo service.
 fn echo_request() -> anyhow::Result<Request<()>> {
     Ok(ECHO_ENDPOINT.into_client_request()?)
 }
-
 /// Connects, sends one message, prints the reply, and closes the connection.
+
 fn main() -> anyhow::Result<()> {
     let (mut socket, response) = connect(echo_request()?)?;
     // Status 101 (Switching Protocols) means the server accepted the upgrade.
@@ -40,11 +41,16 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Builds a secure WebSocket request without network access.
 #[cfg(test)]
 mod tests {
     use super::*;

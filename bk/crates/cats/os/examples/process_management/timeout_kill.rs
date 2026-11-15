@@ -45,7 +45,10 @@ fn sleep_command(seconds: u32) -> Command {
 }
 
 /// Kills a slow command after a timeout.
-pub fn run() -> anyhow::Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> anyhow::Result<()> {
     let mut child = sleep_command(30).spawn()?;
     let outcome = wait_or_kill(&mut child, Duration::from_millis(200))?;
     assert!(outcome.is_none(), "the command should have timed out");
@@ -53,6 +56,15 @@ pub fn run() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    example_body()
+}
+
+/// Terminates and reaps a command that exceeds its deadline.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -62,8 +74,8 @@ mod tests {
     fn slow_command_times_out() -> anyhow::Result<()> {
         run()
     }
-
     /// Preserves the output of a command that finishes before its deadline.
+
     #[test]
     fn fast_command_completes() -> anyhow::Result<()> {
         let mut child = sleep_command(0).spawn()?;

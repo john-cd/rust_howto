@@ -20,6 +20,13 @@ impl CostFunction for Rosenbrock {
     type Output = f64;
     type Param = Vec<f64>;
 
+    /// Evaluates the Rosenbrock objective at the supplied point.
+    ///
+    /// # Arguments
+    /// * `p` - Two-dimensional point `[x, y]` to evaluate.
+    ///
+    /// # Returns
+    /// The Rosenbrock objective value at `p`.
     fn cost(&self, p: &Self::Param) -> Result<Self::Output, Error> {
         let (x, y) = (p[0], p[1]);
         Ok((1.0 - x).powi(2) + 100.0 * (y - x * x).powi(2))
@@ -41,8 +48,9 @@ fn minimize() -> Result<(Vec<f64>, f64), Error> {
         .ok_or_else(|| Error::msg("the solver recorded no best parameter"))?;
     Ok((best, state.get_best_cost()))
 }
-
+/// Runs the example.
 /// Prints the minimum found.
+
 fn main() -> Result<(), Error> {
     let (best, cost) = minimize()?;
     println!("minimum at {best:.5?}, f = {cost:.3e}");
@@ -51,11 +59,14 @@ fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 /// Runs the example from the chapter's example runner.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()
 }
-
 /// Verifies that Nelder-Mead converges to the Rosenbrock minimum `(1, 1)`.
+
 #[test]
 fn test_nelder_mead_finds_rosenbrock_minimum() -> Result<(), Error> {
     let (best, cost) = minimize()?;

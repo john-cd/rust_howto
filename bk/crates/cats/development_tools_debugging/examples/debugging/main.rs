@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Captures and prints a stack trace using the standard library.
 mod backtrace;
+/// Prints an expression with `dbg!` and continues with its value.
 mod dbg_macro;
 
 /// Command-line arguments for the debugging examples.
@@ -32,11 +34,13 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
         Commands::Backtrace => backtrace::run(),
     }
 }
+/// Runs the example.
 
 fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
 
+/// Each example is reachable through its own subcommand and runs.
 #[cfg(test)]
 mod tests {
     use super::*;

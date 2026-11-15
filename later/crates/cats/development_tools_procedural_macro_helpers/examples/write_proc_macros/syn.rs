@@ -18,8 +18,10 @@ use syn::Result as SynResult;
 /// Generates a `describe` method for a struct with named fields.
 ///
 /// # Errors
-///
 /// Returns a spanned error for invalid syntax or unsupported input.
+///
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested syn operation.
 fn derive_describe(input: TokenStream) -> SynResult<TokenStream> {
     let input: DeriveInput = syn::parse2(input)?;
     let ident = input.ident;
@@ -55,6 +57,9 @@ fn derive_describe(input: TokenStream) -> SynResult<TokenStream> {
     Ok(quote! {
         impl #impl_generics #ident #ty_generics #where_clause {
             /// Returns a formatted description of the struct fields.
+            ///
+
+
             pub fn describe(&self) -> String {
                 let mut fields = Vec::new();
                 #(
@@ -72,7 +77,6 @@ fn derive_describe(input: TokenStream) -> SynResult<TokenStream> {
 /// Generates and pretty-prints the method for a named struct.
 ///
 /// # Errors
-///
 /// Returns an error if generation or Rust syntax parsing fails.
 fn main() -> Result<()> {
     let input = quote! { struct Point { x: i32, y: i32 } };
@@ -82,24 +86,20 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the `syn` derive-helper example.
-///
+
 /// # Errors
-///
 /// Returns an error if parsing or generation fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Returns an error if the generated code cannot be parsed.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies the generated method and a useful enum rejection.
-    ///
     /// # Errors
-    ///
     /// Returns an error if the generated code cannot be parsed.
     #[test]
     fn generates_for_structs_and_rejects_enums() -> SynResult<()> {

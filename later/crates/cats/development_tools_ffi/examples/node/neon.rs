@@ -1,6 +1,6 @@
+#![allow(unexpected_cfgs)]
 // TODO Reviewed ??-??-2026.
 
-#![allow(unexpected_cfgs)]
 // ANCHOR: example
 //! This example demonstrates how to create a simple Neon module that exports
 //! a function to JavaScript.
@@ -20,15 +20,15 @@ use neon::prelude::*;
 fn greeting() -> &'static str {
     "hello from neon!"
 }
-
 /// A simple function that returns a JavaScript string.
+
 #[cfg(feature = "node")]
 fn hello(mut cx: FunctionContext<'_>) -> JsResult<'_, JsString> {
     // Create a JavaScript string.
     Ok(cx.string(greeting()))
 }
-
 /// Registers the `hello` function in the exports of the Node.js module.
+
 #[cfg(feature = "node")]
 #[::neon::main]
 fn register(mut cx: ModuleContext<'_>) -> NeonResult<()> {
@@ -45,10 +45,16 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the Neon example without loading its Node.js module.
+/// This example demonstrates how to create a simple Neon module that exports a function to
+/// JavaScript.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that the host-independent entry point succeeds without Node.js.
 #[cfg(test)]
 mod tests {
     use super::*;

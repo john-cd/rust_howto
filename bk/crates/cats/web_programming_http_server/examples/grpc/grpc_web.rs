@@ -31,11 +31,10 @@ pub fn cors() -> CorsLayer {
             http::HeaderName::from_static("grpc-message"),
         ])
 }
-
 /// Serves the `Greeter` service over gRPC and gRPC-Web on a bound listener.
-///
 /// # Errors
 /// Returns an error if the server cannot serve the listener.
+
 #[cfg_attr(
     not(test),
     expect(dead_code, reason = "serves until its shutdown signal is received")
@@ -56,6 +55,12 @@ where
 }
 // ANCHOR_END: example
 
+/// Builds the CORS layer used by the gRPC-Web service.
+pub fn run() -> CorsLayer {
+    cors()
+}
+
+/// Verifies the service handles a gRPC-Web request over a loopback socket.
 #[cfg(test)]
 mod tests {
     use bytes::Bytes;

@@ -12,6 +12,7 @@ use std::collections::HashMap;
 /// A small user directory facade over an internal hash map.
 #[derive(Default)]
 struct UserDirectory {
+    /// Collection of users by name values consumed by user directory operations.
     users_by_name: HashMap<String, String>,
 }
 
@@ -26,8 +27,8 @@ impl UserDirectory {
         self.users_by_name.get(name).map(String::as_str)
     }
 }
-
 /// Registers and looks up a user through the facade.
+
 fn main() -> anyhow::Result<()> {
     let mut directory = UserDirectory::default();
     directory.register("ada", "ada@example.test");
@@ -41,6 +42,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the facade example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -50,8 +54,6 @@ mod tests {
     use super::UserDirectory;
     use super::main;
 
-    /// Verifies callers can register and look up a user through the facade.
-    /// Runs the facade example through its entry point.
     #[test]
     fn registration_is_visible_through_lookup() {
         let mut directory = UserDirectory::default();

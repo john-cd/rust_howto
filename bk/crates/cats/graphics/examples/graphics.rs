@@ -6,6 +6,7 @@
 /// Does nothing yet.
 fn main() {}
 
+/// Verifies the placeholder entry point remains callable.
 #[cfg(test)]
 mod tests {
     use super::*;

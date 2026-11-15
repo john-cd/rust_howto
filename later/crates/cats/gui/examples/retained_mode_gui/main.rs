@@ -7,12 +7,16 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// A reactive counter application with Floem.
 #[cfg(feature = "floem")]
 mod floem;
+/// A counter application with `iced`.
 #[cfg(feature = "iced")]
 mod iced;
+/// A counter window defined with Slint.
 #[cfg(feature = "slint")]
 mod slint;
+/// A counter application with `xilem`.
 #[cfg(feature = "xilem")]
 mod xilem;
 
@@ -78,7 +82,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

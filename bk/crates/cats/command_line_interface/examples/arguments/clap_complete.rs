@@ -24,12 +24,11 @@ fn build_cli() -> Command {
             .value_parser(ValueParser::path_buf()),
     )
 }
-
 /// Generates a Bash completion script for the command-line interface.
-///
 /// # Errors
 /// Returns an error if the directory cannot be created or the script cannot be
 /// written.
+
 fn main() -> std::io::Result<()> {
     // Build the CLI application definition.
     let mut cmd = build_cli();
@@ -66,6 +65,8 @@ mod tests {
         main()
     }
 
+    /// # Errors
+    /// An error is returned if create_dir_all, generate_to fails.
     #[test]
     fn generated_bash_script_mentions_the_command_and_option() -> std::io::Result<()> {
         let dir = std::env::temp_dir().join("myapp-completions-test");

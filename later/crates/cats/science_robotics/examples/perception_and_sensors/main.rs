@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Finds the closest measurement in a small three-dimensional point cloud.
 mod nearest_neighbor;
 
 /// Looks up the nearest point in an in-memory point cloud.
@@ -9,11 +10,11 @@ fn main() -> anyhow::Result<()> {
     nearest_neighbor::run()
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     fn test_main_entry_point() {

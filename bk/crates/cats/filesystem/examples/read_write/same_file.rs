@@ -13,6 +13,9 @@ use std::io::Error;
 use same_file::Handle;
 
 /// Check whether we are reading & writing to the same file.
+//     "You are reading and writing to the same file!",
+// when a request is rejected.
+/// Runs the example.
 fn main() -> Result<(), Error> {
     // Get a `Handle` for the standard input, output, and error:
     let stdin = Handle::stdin()?;
@@ -52,6 +55,9 @@ fn main() -> Result<(), Error> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()
 }

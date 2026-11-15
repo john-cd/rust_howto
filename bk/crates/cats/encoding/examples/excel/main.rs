@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Reads an `.xlsx` workbook with `calamine`.
 mod calamine;
+/// Writes an `.xlsx` workbook with `rust_xlsxwriter`: a bold header,
 mod xlsxwriter;
 
 /// Command-line arguments.
@@ -56,7 +58,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["calamine", "xlsxwriter"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

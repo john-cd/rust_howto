@@ -46,8 +46,9 @@ fn count_fx(text: &str) -> FxHashMap<&str, usize> {
     }
     counts
 }
-
+/// Runs the example.
 /// Checks that the three maps agree.
+
 fn main() {
     let text = "the quick brown fox jumps over the lazy dog the end";
 
@@ -73,12 +74,14 @@ fn main() {
     assert_eq!(by_id.get(&1), Some(&"one"));
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Checks that all hash-map implementations count words consistently.
 #[cfg(test)]
 mod tests {
     use super::*;

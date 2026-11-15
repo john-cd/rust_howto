@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Finds the closest measurement in a small three-dimensional point cloud.
 //!
 //! A point cloud is a set of 3D points, for example from a lidar (a laser
@@ -7,7 +8,6 @@
 //! basic step in obstacle avoidance and in aligning scans. A k-d tree speeds
 //! the search up by splitting space recursively.
 
-// ANCHOR: example
 use anyhow::Result;
 use kiddo::ImmutableKdTree;
 use kiddo::SquaredEuclidean;
@@ -31,10 +31,15 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the nearest-neighbor lookup without a sensor or graphics device.
+/// Finds the closest measurement in a small three-dimensional point cloud.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Selects the expected point and reports squared Euclidean distance.
 #[cfg(test)]
 mod tests {
     use super::*;

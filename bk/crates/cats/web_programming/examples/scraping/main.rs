@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Checks HTTP links from an HTML page against their resolved URLs.
 mod broken;
+/// Extracts anchor links from an HTML document with CSS selectors.
 mod extract_links;
+/// This example demonstrates how to extract unique links from a Wikipedia page.
 mod unique;
 
 /// Command-line arguments.
@@ -64,7 +67,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["broken", "extract_links", "unique"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

@@ -75,6 +75,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -90,7 +93,11 @@ mod tests {
         Ok(())
     }
 
-    #[test]
+    /// Retrieves the args parses the embedded argument list for the current lexopt from its current
+    ///
+    /// # Errors
+    /// An error is returned if get_args_parses_the_embedded_argument_list fails.
+    /// Returns an error if the requested data cannot be retrieved.
     fn get_args_parses_the_embedded_argument_list() -> Result<(), Box<dyn std::error::Error>> {
         let args = get_args()?;
         assert_eq!(args.name, "John");
@@ -98,6 +105,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if next, value fails.
     #[test]
     fn lexopt_rejects_a_non_numeric_age_value() -> Result<(), Box<dyn std::error::Error>> {
         use lexopt::ValueExt as _;

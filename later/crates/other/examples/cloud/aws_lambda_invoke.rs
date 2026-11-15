@@ -1,9 +1,9 @@
-// TODO Reviewed ??-??-2026.
-
 #![expect(
     dead_code,
     reason = "needs AWS credentials (Lambda); the tests use mocks"
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Invoke an AWS Lambda function synchronously and asynchronously.
 //!
@@ -36,6 +36,10 @@ pub struct Response {
 }
 
 /// Calls the function and waits for its JSON response.
+///
+/// # Arguments
+/// * `client` - Client used to make the request.
+/// * `request` - Request to send or process.
 pub async fn invoke_sync(
     client: &Client,
     function_name: &str,
@@ -58,6 +62,10 @@ pub async fn invoke_sync(
 }
 
 /// Queues an invocation and returns immediately (HTTP 202).
+///
+/// # Arguments
+/// * `client` - Client used to make the request.
+/// * `request` - Request to send or process.
 pub async fn invoke_async(client: &Client, function_name: &str, request: &Request) -> Result<i32> {
     let output = client
         .invoke()
@@ -71,11 +79,26 @@ pub async fn invoke_async(client: &Client, function_name: &str, request: &Reques
 }
 
 /// Parses the JSON bytes returned by the function.
+///
+/// # Arguments
+/// * `bytes` - Input bytes to decode or write.
+///
+/// # Errors
+/// Returns an error if the supplied input is invalid.
 pub fn parse_response(bytes: &[u8]) -> Result<Response> {
     serde_json::from_slice(bytes).context("unexpected function response")
 }
 // ANCHOR_END: example
 
+/// Parses a representative response from a Lambda function.
+///
+/// # Errors
+/// Returns an error if the response bytes are not valid JSON for `Response`.
+fn run() -> Result<Response> {
+    parse_response(br#"{"message":"Hello, Ada!"}"#)
+}
+
+/// Verifies that the function's JSON response is parsed.
 #[cfg(test)]
 mod tests {
     use super::*;

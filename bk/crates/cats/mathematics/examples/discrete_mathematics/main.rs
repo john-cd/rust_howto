@@ -2,18 +2,20 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Combine sets with union, intersection and difference.
 mod set_operations;
-
+/// Runs the example.
 /// Runs the set operations example.
+
 fn main() {
     set_operations::run();
 }
 
+/// panic fails the test.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example; each module's `run()` asserts its own results, so a
     /// panic fails the test.
     #[test]
     fn test_main_runs() {

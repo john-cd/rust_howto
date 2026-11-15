@@ -21,29 +21,33 @@
 
 use pathfinding::prelude::astar;
 
-/// Demonstrates grid-based A* pathfinding using implicit graph transitions.
-///
-/// Finds the shortest path on a 5x5 grid from (0, 0) to (4, 4) while navigating
-/// around static obstacles.
+/// Finds a lowest-cost path across a 5x5 grid while avoiding fixed obstacles.
+/// # Panics
+/// Panics if no route exists or the computed path does not have the expected cost.
 fn main() {
-    /// Represents a discrete 2D grid coordinate `(x, y)` in the search space.
+    /// Coordinate in the 5x5 grid searched by A*.
     #[derive(Clone, Debug, Eq, Hash, Ord, PartialEq, PartialOrd)]
     struct Pos(i32, i32);
 
     impl Pos {
-        /// Computes the Manhattan distance heuristic between two grid points.
+        /// Returns the Manhattan distance to another grid coordinate.
         ///
-        /// Calculates $|x_1 - x_2| + |y_1 - y_2|$, which serves as an
-        /// admissible heuristic for 4-connected orthogonal movements.
+        /// # Arguments
+        /// * `other` - Coordinate whose distance from `self` is measured.
+        ///
+        /// # Returns
+        /// The sum of the horizontal and vertical coordinate differences.
         fn distance(&self, other: &Self) -> u32 {
             self.0.abs_diff(other.0) + self.1.abs_diff(other.1)
         }
 
         /// Generates valid adjacent grid positions reachable in a single step.
-        ///
         /// Generates orthogonal moves (North, South, East, West), enforces grid
         /// boundary limits [0..4], filters out blocked obstacle cells, and
         /// assigns step cost 1.
+        ///
+        /// # Returns
+        /// Neighbor coordinates paired with their uniform movement cost.
         fn successors(&self) -> Vec<(Self, u32)> {
             let &Self(x, y) = self;
             vec![
@@ -85,15 +89,17 @@ fn main() {
 }
 
 // ANCHOR_END: example
+/// Runs the implicit-grid A* pathfinding example.
 
-/// Runs the `pathfinding` crate A* example by calling `main()`.
 pub fn run() {
     main();
 }
 
+/// Checks that A* finds the expected path cost and reaches the goal.
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies astar pathfinding example.
 
     #[test]
     fn test_astar_pathfinding_example() {

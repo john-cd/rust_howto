@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Laying out and rasterizing text with `cosmic-text`.
 mod cosmic_text;
+/// Laying out rich text with `parley`.
 mod parley;
 
 /// Command-line arguments.
@@ -26,8 +28,9 @@ enum Commands {
     #[command(name = "parley")]
     Parley,
 }
-
+/// Runs the example.
 /// Runs the example selected on the command line.
+
 fn main() {
     let cli = Cli::parse();
 
@@ -49,7 +52,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

@@ -37,6 +37,8 @@ struct Config2 {
 }
 
 impl Default for Config2 {
+    /// Constructs a usable initial config2 value with the defaults required by the default
+    /// component.
     fn default() -> Self {
         Self {
             timeout: 5000,
@@ -46,8 +48,9 @@ impl Default for Config2 {
         }
     }
 }
-
+/// Runs the example.
 /// Creates configurations with default values and overrides some fields.
+
 fn main() {
     let config = Config::default();
     println!("{config:?}");
@@ -71,8 +74,9 @@ fn main() {
     println!("{}", custom_config.timeout);
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -80,11 +84,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `default` example runs.
 
     #[test]
     fn test_default_example_entry_point() {
         main();
     }
+    /// Verifies derived default uses type defaults.
 
     #[test]
     fn test_derived_default_uses_type_defaults() {
@@ -94,6 +100,7 @@ mod tests {
         assert_eq!(c.endpoint, "");
         assert!(!c.logging_enabled);
     }
+    /// Verifies custom default.
 
     #[test]
     fn test_custom_default() {
@@ -103,6 +110,7 @@ mod tests {
         assert_eq!(c.endpoint, "https://api.example.com");
         assert!(c.logging_enabled);
     }
+    /// Verifies struct update syntax.
 
     #[test]
     fn test_struct_update_syntax() {

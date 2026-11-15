@@ -16,7 +16,9 @@ use ggez::glam::Vec2;
 use ggez::graphics;
 use ggez::graphics::Canvas;
 
+/// Shared `ball radius` used by this module.
 const BALL_RADIUS: f32 = 16.0;
+/// Shared `screen size` used by this module.
 const SCREEN_SIZE: Vec2 = Vec2::new(800.0, 600.0);
 
 /// Stores a ball's position and velocity in screen coordinates.
@@ -58,11 +60,11 @@ struct MainState {
 }
 
 impl MainState {
-    /// Creates the ball and its circle mesh.
-    ///
     /// # Errors
-    ///
     /// Returns a graphics error if the circle mesh cannot be created.
+    ///
+    /// # Arguments
+    /// * `context` - Shared state and services used to complete the ggez workflow.
     fn new(context: &Context) -> GameResult<Self> {
         let circle = graphics::Mesh::new_circle(
             context,
@@ -85,6 +87,9 @@ impl MainState {
 
 impl EventHandler for MainState {
     /// Advances the ball for one frame.
+
+    /// # Arguments
+    /// * `context` - Application state and services required to perform the operation.
     fn update(&mut self, context: &mut Context) -> GameResult {
         step(
             &mut self.ball,
@@ -104,20 +109,24 @@ impl EventHandler for MainState {
         canvas.finish(context)
     }
 }
-
 /// Builds the game context and starts the ggez event loop.
-///
+
 /// # Errors
-///
 /// Returns a ggez error if context or graphics initialization fails.
-pub fn run() -> GameResult {
+pub fn example_body() -> GameResult {
     let (context, event_loop) = ContextBuilder::new("rust_howto_ggez", "rust_howto").build()?;
     let state = MainState::new(&context)?;
 
-    event::run(context, event_loop, state)
+    event::example_body(context, event_loop, state)
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+pub fn run() -> GameResult {
+    example_body()
+}
+
+/// Verifies that the ball reverses direction when it reaches an edge.
 #[cfg(test)]
 mod tests {
     use super::*;

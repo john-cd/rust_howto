@@ -2,20 +2,19 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Parse the arguments of a `cargo hello` subcommand and select packages.
 mod cargo_subcommand;
-
 /// Runs the `cargo-hello` subcommand with the arguments supplied by Cargo.
-///
+
 /// # Errors
-///
 /// Returns an error if Cargo cannot read metadata for the selected workspace.
 fn main() -> anyhow::Result<()> {
     cargo_subcommand::run_from(std::env::args_os())
 }
 
+/// the process arguments in `main`, which belong to the test harness.
 #[cfg(test)]
 mod tests {
-    /// Runs the plugin against a temporary Cargo package; the plugin reads
     /// the process arguments in `main`, which belong to the test harness.
     #[test]
     fn test_plugin_runs_against_a_temporary_package() {

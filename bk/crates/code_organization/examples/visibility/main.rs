@@ -5,12 +5,19 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Accessing private items from the same module and its children.
 mod private_access;
+/// The `pub` keyword on functions, types, traits and modules.
 mod pub_keyword;
+/// Which items are accessible through nested public and private modules.
 mod public_access;
+/// Enum variants and trait items are public by default; struct fields are not.
 mod public_by_default;
+/// In the crate root:
 mod visibility_external_code;
+/// Restricting visibility to the current crate with `pub(crate)`.
 mod visibility_pub_crate;
+/// Restricting visibility to a scope with `pub(in path)`, `pub(super)` and `pub(crate)`.
 mod visibility_scope;
 
 /// Command-line arguments.
@@ -75,8 +82,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -98,7 +106,6 @@ mod tests {
         "visibility_scope",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

@@ -7,10 +7,13 @@ use clap::Parser;
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
 use clap::Subcommand;
 
+/// This example demonstrates how to initialize a SQLite database with tables.
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
 mod initialization;
+/// This function demonstrates inserting data into a SQLite database and then
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
 mod insert_select;
+/// This example demonstrates successful and rolled-back SQLite transactions.
 #[cfg(all(feature = "sqlite", any(target_os = "linux", test)))]
 mod transactions;
 
@@ -67,6 +70,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies that the sqlite example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;

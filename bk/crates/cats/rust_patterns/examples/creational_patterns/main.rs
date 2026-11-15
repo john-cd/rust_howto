@@ -5,8 +5,12 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// The Abstract Factory pattern creates families of related objects without
 mod abstract_factory;
+/// A factory is quite useful when we need to create objects of different types that share a common
+/// interface, without needing to know the exact type at compile time.
 mod factory;
+/// The singleton pattern with a global `OnceLock`.
 mod singleton;
 
 /// Command-line arguments.
@@ -47,8 +51,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -62,7 +67,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["abstract_factory", "factory", "singleton"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

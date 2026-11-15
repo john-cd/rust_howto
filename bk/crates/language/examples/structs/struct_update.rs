@@ -4,6 +4,7 @@
 //! Creating a struct from another instance with the struct update syntax.
 
 /// Represents a user with their active status and username.
+
 #[derive(Debug)]
 struct User {
     /// Whether the user is active.
@@ -11,8 +12,9 @@ struct User {
     /// Name of the user.
     username: String,
 }
-
+/// Runs the example.
 /// Creates a user from another one, overriding some fields.
+
 fn main() {
     // Create a first instance of the struct:
     let user1 = User {
@@ -35,8 +37,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

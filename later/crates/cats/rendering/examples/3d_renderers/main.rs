@@ -1,8 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Projects a 3D triangle to screen space the way a renderer's vertex stage
 //! does.
-// ANCHOR: example
+
 use glam::Mat4;
 use glam::Vec2;
 use glam::Vec3;
@@ -10,7 +11,9 @@ use glam::Vec4;
 use glam::camera::rh::proj::directx;
 use glam::camera::rh::view;
 
+/// Shared `width` used by this module.
 const WIDTH: f32 = 640.0;
+/// Shared `height` used by this module.
 const HEIGHT: f32 = 480.0;
 
 /// Builds the model-view-projection matrix for a camera looking at the origin.
@@ -23,9 +26,12 @@ fn model_view_projection() -> Mat4 {
     let projection = directx::perspective(core::f32::consts::FRAC_PI_3, WIDTH / HEIGHT, 0.1, 100.0);
     projection * view * model
 }
-
 /// Transforms a model-space position into pixel coordinates (origin at the
+
 /// top left) and a depth in `0.0..=1.0`, or `None` when it is clipped.
+
+/// # Returns
+/// `Some` when the requested value is available; otherwise returns `None`.
 fn project(mvp: Mat4, position: Vec3) -> Option<(Vec2, f32)> {
     let clip: Vec4 = mvp * position.extend(1.0);
     if clip.w <= 0.0 {
@@ -61,6 +67,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Projects a 3D triangle to screen space the way a renderer's vertex stage does.
+fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -71,7 +82,6 @@ mod tests {
         main();
     }
 
-    /// Verifies the origin lands at the screen center in front of the camera.
     #[test]
     fn projects_the_origin_to_the_screen_center() {
         let (pixel, depth) =
@@ -80,7 +90,6 @@ mod tests {
         assert!((0.0..1.0).contains(&depth));
     }
 
-    /// Verifies points behind the camera are clipped.
     #[test]
     fn clips_points_behind_the_camera() {
         assert!(project(model_view_projection(), Vec3::new(0.0, 0.0, 10.0)).is_none());

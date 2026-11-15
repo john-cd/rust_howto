@@ -28,10 +28,12 @@ impl log::Log for ConsoleLogger {
         }
     }
 
+    /// Flushes the current value.
+
     fn flush(&self) {}
 }
-
 /// Installs the custom logger and emits log messages at several levels.
+
 fn main() -> Result<(), SetLoggerError> {
     log::set_logger(&CONSOLE_LOGGER)?;
     log::set_max_level(LevelFilter::Info);
@@ -45,6 +47,9 @@ fn main() -> Result<(), SetLoggerError> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), SetLoggerError> {
     main()
 }

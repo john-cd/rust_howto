@@ -20,10 +20,15 @@ use async_trait::async_trait;
 use pingora::prelude::*;
 use pingora::server::Server;
 
+/// Shared `upstream host` used by this module.
 const UPSTREAM_HOST: &str = "127.0.0.1";
+/// Shared `upstream port` used by this module.
 const UPSTREAM_PORT: u16 = 8000;
+/// Shared `proxy listen address` used by this module.
 const PROXY_LISTEN_ADDRESS: &str = "127.0.0.1:6188";
+/// Shared `response header name` used by this module.
 const RESPONSE_HEADER_NAME: &str = "X-Rust-Howto";
+/// Shared `response header` used by this module.
 const RESPONSE_HEADER_VALUE: &str = "Pingora";
 
 /// Forwards HTTP requests to the local example upstream.
@@ -37,8 +42,10 @@ impl ProxyHttp for LocalProxy {
     fn new_ctx(&self) -> Self::CTX {}
 
     /// Returns the fixed plain-HTTP upstream peer.
+
     async fn upstream_peer(
         &self,
+        /// Session value.
         _session: &mut Session,
         _ctx: &mut Self::CTX,
     ) -> Result<Box<HttpPeer>> {
@@ -50,17 +57,20 @@ impl ProxyHttp for LocalProxy {
     }
 
     /// Adds the example response header after receiving an upstream response.
+
     async fn response_filter(
         &self,
+        /// Session value.
         _session: &mut Session,
+        /// Response header received from the upstream server.
         upstream_response: &mut ResponseHeader,
         _ctx: &mut Self::CTX,
     ) -> Result<()> {
         add_example_response_header(upstream_response)
     }
 }
-
 /// Adds the identifying header to a Pingora response without starting a server.
+
 fn add_example_response_header(response: &mut ResponseHeader) -> Result<()> {
     response.insert_header(RESPONSE_HEADER_NAME, RESPONSE_HEADER_VALUE)?;
     Ok(())
@@ -70,7 +80,6 @@ fn add_example_response_header(response: &mut ResponseHeader) -> Result<()> {
 fn main() -> anyhow::Result<()> {
     run_proxy()
 }
-
 /// Starts the Pingora server and its local reverse-proxy service.
 ///
 /// # Errors
@@ -87,10 +96,14 @@ fn run_proxy() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the Pingora reverse proxy and propagates setup errors.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies the response hook adds its header without a network request.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -110,7 +123,6 @@ mod tests {
         Ok(())
     }
 
-    /// Starts the proxy for a manual local upstream test.
     #[test]
     #[ignore = "requires a local upstream on 127.0.0.1:8000 and a proxy listener"]
     fn require_network() -> anyhow::Result<()> {

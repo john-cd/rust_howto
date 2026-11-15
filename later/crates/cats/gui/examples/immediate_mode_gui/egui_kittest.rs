@@ -12,6 +12,10 @@ use egui_kittest::Harness;
 use egui_kittest::kittest::Queryable;
 
 /// Draws a counter with an `Increment` button.
+///
+/// # Arguments
+/// * `ui` - Mutable ui whose state is updated by this operation.
+/// * `count` - Bound used to limit accepted data or the amount of work performed.
 fn counter_ui(ui: &mut egui::Ui, count: &mut u32) {
     ui.label(format!("Count: {count}"));
     if ui.button("Increment").clicked() {
@@ -37,6 +41,7 @@ fn main() {
     assert_eq!(*harness.state(), 2);
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     // Call through a binding: calling `main` directly trips

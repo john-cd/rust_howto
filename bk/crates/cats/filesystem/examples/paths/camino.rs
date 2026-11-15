@@ -25,8 +25,9 @@ fn utf8_path() -> Utf8PathBuf {
     println!("Final path: {path}");
     path
 }
-
+/// Runs the example.
 /// Compares standard paths with UTF-8 paths.
+
 fn main() {
     // The standard `PathBuf` can contain non-UTF-8 data:
     let mut path = PathBuf::from("/home/user");
@@ -57,8 +58,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

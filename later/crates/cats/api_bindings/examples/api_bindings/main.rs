@@ -1,10 +1,10 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Placeholder for API bindings examples.
 
 // Deferred (#1748): no API bindings example yet.
 
-// ANCHOR: example
 /// The notice printed while this category has no implemented example.
 const PLACEHOLDER_NOTICE: &str = "No API bindings example is implemented yet.";
 
@@ -13,6 +13,11 @@ fn main() {
     println!("{PLACEHOLDER_NOTICE}");
 }
 // ANCHOR_END: example
+
+/// Placeholder for API bindings examples.
+fn run() {
+    main();
+}
 
 /// Tests the placeholder entry point and its message.
 #[cfg(test)]

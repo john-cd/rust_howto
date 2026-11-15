@@ -40,6 +40,9 @@ impl App {
 
     /// Draws the list. The icons are characters of a font, so they are part
     /// of the text of the buttons.
+    ///
+    /// # Arguments
+    /// * `ui` - Mutable ui whose state is updated by this operation.
     fn show(&mut self, ui: &mut egui::Ui) {
         if ui
             .button(format!("{} Add", egui_phosphor::regular::PLUS))
@@ -60,7 +63,6 @@ impl App {
         self.toasts.show(ui.ctx());
     }
 
-    /// Adds an item and tells the user.
     fn add_item(&mut self) {
         self.items.push(format!("item {}", self.items.len() + 1));
         self.toasts
@@ -68,7 +70,8 @@ impl App {
             .duration(Some(Duration::from_secs(3)));
     }
 
-    /// Deletes the last item, or warns when there is none.
+    /// Removes or resets the last state owned by app, preventing stale data from affecting later
+    /// work.
     fn delete_last(&mut self) {
         if self.items.pop().is_some() {
             self.toasts.info("Item deleted");
@@ -104,10 +107,12 @@ fn run_example() {
     // A renderer would upload the textures; drop them on purpose.
     output.textures_delta.clear();
 }
+/// Runs the example.
 fn main() {
     run_example();
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     run_example();

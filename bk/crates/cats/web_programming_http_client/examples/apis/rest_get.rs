@@ -12,8 +12,8 @@
 use reqwest::Client;
 use reqwest::Error;
 use serde::Deserialize;
-
 /// Represents a GitHub user with their login and ID.
+
 #[derive(Deserialize, Debug, Eq, PartialEq)]
 struct User {
     /// The user's login name on GitHub.
@@ -56,12 +56,16 @@ async fn get_users(client: &Client, request_url: &str) -> Result<Vec<User>, Erro
 }
 
 // ANCHOR_END: example
-
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+
 pub fn run() -> Result<(), Error> {
     main()
 }
 
+/// Verifies that the example sends its request and deserializes the local response.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -101,8 +105,8 @@ mod tests {
     fn main_fetches_stargazers() -> Result<(), Error> {
         main()
     }
-
     /// An HTTP error status is reported as an error.
+
     #[tokio::test]
     async fn error_status_is_an_error() -> anyhow::Result<()> {
         let mut server = mockito::Server::new_async().await;

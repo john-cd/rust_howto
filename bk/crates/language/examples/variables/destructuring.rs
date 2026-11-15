@@ -14,7 +14,6 @@ fn main() {
 
     println!("x: {x}, y: {y}");
 
-    /// Represents a two-dimensional point.
     struct Point {
         /// The horizontal coordinate.
         x: i32,
@@ -39,8 +38,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

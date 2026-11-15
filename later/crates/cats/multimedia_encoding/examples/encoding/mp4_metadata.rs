@@ -76,14 +76,20 @@ fn create_sample_mp4() -> Result<Vec<u8>, Box<dyn Error + Send + Sync>> {
     Ok(buf)
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()
 }
 
+/// using `mp4`.
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies mp4 metadata entry point.
 
     #[test]
     fn test_mp4_metadata_entry_point() {

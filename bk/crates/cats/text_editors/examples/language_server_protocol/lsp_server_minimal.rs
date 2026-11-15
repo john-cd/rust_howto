@@ -67,6 +67,8 @@ fn run_server(connection: Connection) -> anyhow::Result<()> {
     Ok(())
 }
 
+/// # Errors
+/// An error is returned if send, Response fails.
 fn main() -> anyhow::Result<()> {
     // Two connected ends: the first for the server, the second for us.
     let (server_side, client) = Connection::memory();
@@ -129,6 +131,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

@@ -23,23 +23,25 @@ fn print_example() {
         buffer.as_raw()
     );
 }
-
+/// Runs the example.
 /// Runs the pixel-buffer example from a standalone entry point.
+
 fn main() {
     print_example();
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the pixel-buffer example.
+
 pub fn run() {
     print_example();
 }
 
+/// pixels.
 #[cfg(test)]
 mod tests {
     use super::example_buffer;
 
-    /// Verifies that the raw buffer stores RGBA pixels in row-major order.
     #[test]
     fn raw_bytes_preserve_pixel_order_and_alpha() {
         assert_eq!(

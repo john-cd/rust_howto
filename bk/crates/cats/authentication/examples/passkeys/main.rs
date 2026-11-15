@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// A passkey (WebAuthn) relying party built on `webauthn-rs`.
 mod passkeys;
 
 /// Runs the passkey (WebAuthn) example.
@@ -9,6 +10,7 @@ fn main() -> anyhow::Result<()> {
     passkeys::run()
 }
 
+/// The entry point runs offline.
 #[cfg(test)]
 mod tests {
     use super::*;

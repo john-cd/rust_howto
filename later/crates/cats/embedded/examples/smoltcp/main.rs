@@ -21,8 +21,8 @@ use smoltcp::wire::Ipv4Cidr;
 fn documentation_subnet() -> Ipv4Cidr {
     Ipv4Cidr::new(Ipv4Address::new(192, 0, 2, 0), 24)
 }
-
 /// Prints whether an example device address belongs to the configured subnet.
+
 fn print_example() {
     let subnet = documentation_subnet();
     let device = Ipv4Address::new(192, 0, 2, 42);
@@ -31,14 +31,16 @@ fn print_example() {
         subnet.contains_addr(&device)
     );
 }
-
+/// Runs the example.
 /// Runs the subnet check from a standalone entry point.
+
 fn main() {
     print_example();
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the subnet-membership example.
+
 pub fn run() {
     print_example();
 }
@@ -49,7 +51,6 @@ mod tests {
 
     use super::documentation_subnet;
 
-    /// Verifies that addresses inside and outside the subnet are distinguished.
     #[test]
     fn subnet_contains_only_its_configured_range() {
         let subnet = documentation_subnet();

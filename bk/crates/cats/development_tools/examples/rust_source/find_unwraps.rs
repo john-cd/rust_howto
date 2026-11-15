@@ -13,12 +13,15 @@ use syn::visit::Visit;
 /// A call to `unwrap` or `expect`.
 #[derive(Debug, PartialEq)]
 struct Finding {
+    /// HTTP method used for the request.
     method: String,
+    /// Source line number.
     line: usize,
 }
 
 #[derive(Default)]
 struct UnwrapFinder {
+    /// Collection of findings values consumed by unwrap finder operations.
     findings: Vec<Finding>,
 }
 
@@ -43,8 +46,15 @@ fn find_unwraps(source: &str) -> syn::Result<Vec<Finding>> {
     Ok(finder.findings)
 }
 
+/// # Errors
+/// An error is returned if find_unwraps fails.
+///
+/// # Panics
+/// Panics if an internal invariant is violated.
 fn main() -> syn::Result<()> {
     let source = "\
+/// # Panics
+/// Panics if an internal invariant is violated.
 fn main() {
     let n: u32 = \"1\".parse().unwrap();
     let m = Some(n).expect(\"present\");
@@ -74,6 +84,9 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> syn::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

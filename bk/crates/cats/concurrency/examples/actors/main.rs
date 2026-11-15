@@ -5,14 +5,18 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// An `actix` counter actor that replies with its updated total.
 mod actix;
+/// A small actor built from a Tokio task and message channels.
 mod actors;
+/// An actor with the `ractor` crate: a greeter that counts the greetings it
 mod ractor;
 // Disabled with the `riker` Cargo feature while its dependency chain is
 // vulnerable.
 
 // #[cfg(feature = "riker")]
 // mod riker;
+/// An actor with the `stakker` crate: a counter that processes messages.
 #[cfg(feature = "stakker")]
 mod stakker;
 
@@ -48,9 +52,8 @@ enum Commands {
     #[command(name = "stakker")]
     Stakker,
 }
-
 /// Runs the example selected on the command line.
-///
+
 /// # Errors
 /// Returns an error if the selected actor example cannot complete its message
 /// exchange.
@@ -97,7 +100,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["actix", "actors", "ractor", "stakker"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

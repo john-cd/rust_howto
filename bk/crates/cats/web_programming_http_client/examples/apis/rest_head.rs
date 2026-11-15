@@ -35,10 +35,14 @@ async fn main() -> reqwest::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> reqwest::Result<()> {
     main()
 }
 
+/// if a
 #[cfg(test)]
 mod tests {
     // output-only: the example only calls the live GitHub API (ignored
@@ -46,7 +50,8 @@ mod tests {
     use super::*;
 
     #[test]
-    #[ignore = "needs network"]
+    /// # Errors
+    /// An error is returned if require_network fails.
     fn require_network() -> anyhow::Result<()> {
         main()?;
         Ok(())

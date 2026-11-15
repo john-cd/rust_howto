@@ -4,6 +4,7 @@
 //! Labeled block expressions, which `break` out with a value.
 
 /// Breaks out of a labeled block with a value.
+
 fn main() {
     // Labeled block expressions must begin with a label, here `'block`.
     let result = 'block: {
@@ -25,12 +26,14 @@ fn main() {
 }
 
 /// Returns the condition that decides whether to break out of the block.
+
 fn condition() -> bool {
     false
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

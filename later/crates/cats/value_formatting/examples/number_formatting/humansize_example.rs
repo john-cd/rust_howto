@@ -11,9 +11,10 @@ use humansize::BINARY;
 use humansize::DECIMAL;
 use humansize::format_size;
 use humansize::format_size_i;
+/// Runs the example entry point.
 
 /// Formats sizes with SI (powers of 1000) and IEC (powers of 1024) units.
-pub fn run() {
+pub fn example_body() {
     // SI units: kB, MB, GB...
     assert_eq!(format_size(1_536_000_u64, DECIMAL), "1.54 MB");
     // IEC units: KiB, MiB, GiB...
@@ -24,6 +25,11 @@ pub fn run() {
     println!("{}", format_size(1_536_000_u64, DECIMAL));
 }
 // ANCHOR_END: example
+
+/// Runs the example function.
+pub fn run() {
+    example_body();
+}
 
 #[cfg(test)]
 mod tests {

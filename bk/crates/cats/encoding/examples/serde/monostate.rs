@@ -18,8 +18,9 @@
 
 use monostate::MustBe;
 use serde::Deserialize;
-
+/// Untagged API response distinguished by its `success` field.
 /// Represents a response that can be either a success or an error.
+
 #[derive(Deserialize)]
 #[serde(untagged)]
 pub enum ApiResponse {
@@ -36,8 +37,9 @@ pub enum ApiResponse {
         _message: String,
     },
 }
-
+/// Runs the example.
 /// Deserializes success and error responses from JSON.
+
 fn main() {
     let success = "{\"success\":true}";
     let response: ApiResponse =
@@ -67,6 +69,9 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }

@@ -67,7 +67,6 @@ fn main() {
     // representation.
     // -----------------------------------------------------------------------
 
-    /// Represents a two-dimensional point.
     #[derive(Generic, Debug, PartialEq)]
     struct Point {
         /// The horizontal coordinate.
@@ -88,7 +87,6 @@ fn main() {
     assert_eq!(h7, hlist![3.0f64, 4.0f64]);
 
     // Convert between two structurally identical types using `convert_from`.
-    /// Represents a three-dimensional point.
     #[derive(Generic)]
     struct Point3D {
         /// The horizontal coordinate.
@@ -99,7 +97,6 @@ fn main() {
         z: f64,
     }
 
-    /// Represents a three-dimensional vector.
     #[derive(Generic, Debug, PartialEq)]
     struct Vec3 {
         /// The horizontal coordinate.
@@ -131,7 +128,6 @@ fn main() {
     // converted without any hand-written boilerplate.
     // -----------------------------------------------------------------------
 
-    /// Represents a user before it is saved.
     #[derive(LabelledGeneric)]
     struct NewUser<'a> {
         /// The first name.
@@ -142,7 +138,6 @@ fn main() {
         age: usize,
     }
 
-    /// Represents a user after it is saved.
     #[derive(LabelledGeneric, Debug, PartialEq)]
     struct SavedUser<'a> {
         /// The first name.
@@ -166,7 +161,6 @@ fn main() {
     assert_eq!(saved.age, 28);
 
     // `transform_from` additionally handles reordered fields via `Sculptor`.
-    /// Represents an archived user record.
     #[derive(LabelledGeneric, Debug, PartialEq)]
     struct ArchivedUser<'a> {
         /// Age in years.
@@ -199,8 +193,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

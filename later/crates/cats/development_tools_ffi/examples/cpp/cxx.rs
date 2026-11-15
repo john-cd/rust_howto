@@ -27,6 +27,8 @@ mod ffi {
     unsafe extern "C++" {
         include!("development_tools_ffi/examples/cpp/hello.h");
 
+        /// # Arguments
+        /// * `name` - Human-readable value used to identify or display the selected cxx.
         fn hello(name: &CxxString);
         fn cpp_multiply(left: i32, right: i32) -> i32;
         fn cpp_add_via_rust(left: i32, right: i32) -> i32;
@@ -36,13 +38,14 @@ mod ffi {
         fn rust_add(left: i32, right: i32) -> i32;
     }
 }
-
 /// Adds two integers in Rust for the generated bridge.
+
 fn rust_add(left: i32, right: i32) -> i32 {
     left + right
 }
-
+/// Runs the example.
 /// Creates a C++ string and exercises the Rust and C++ functions.
+
 fn main() {
     // Reference the static C++ archive linked by the package build script.
     unsafe { cxx_link_anchor() };
@@ -55,21 +58,25 @@ fn main() {
 }
 
 /// Passes a C++ string through the generated bridge.
+///
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected cxx.
 fn call_cpp(name: &CxxString) {
     ffi::hello(name);
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();
 }
 
+/// Calls the C++ function through the generated bridge.
 #[cfg(test)]
 mod tests {
     use super::*;
 
     /// Calls the C++ function through the generated bridge.
-    /// Runs the cxx example through its entry point.
     #[test]
     fn test_cxx_example_entry_point() {
         main();

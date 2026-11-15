@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
-//! Writing and reading a ZIP archive asynchronously with `async_zip`.
 // ANCHOR: example
+//! Writing and reading a ZIP archive asynchronously with `async_zip`.
 
 use anyhow::Context as _;
 use anyhow::Result;
@@ -14,11 +14,9 @@ use futures_lite::io::Cursor;
 use tokio::fs::File;
 use tokio::io::AsyncReadExt as _;
 use tokio_util::compat::TokioAsyncWriteCompatExt as _;
-
 /// Writes a ZIP archive with one entry, reads it back, and checks its content.
-///
+
 /// # Errors
-///
 /// Returns an error if temporary storage, async file I/O, or ZIP processing
 /// fails, or if the restored entry differs from the original.
 #[tokio::main]
@@ -64,33 +62,33 @@ async fn main() -> Result<()> {
 
     Ok(())
 }
-
 // ANCHOR_END: example
 
 /// Runs the asynchronous ZIP archive example.
+/// Writing and reading a ZIP archive asynchronously with `async_zip`.
 ///
 /// # Errors
 ///
 /// Returns an error if archive creation or reading fails.
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Returns an error if the example fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that the asynchronous archive round trip succeeds.
-    ///
     /// # Errors
-    ///
     /// Returns an error if the example fails.
-    /// Runs the async zip example through its entry point.
     #[test]
     fn test_async_zip_example_entry_point() -> Result<()> {
         main()
     }
 
+    /// # Errors
+    /// An error is returned if cdrs fails.
     #[tokio::test]
     async fn archive_with_several_entries_lists_them_in_order() -> Result<()> {
         let mut writer = ZipFileWriter::new(Vec::new().compat_write());

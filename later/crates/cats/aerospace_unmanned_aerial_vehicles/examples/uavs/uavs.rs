@@ -58,22 +58,24 @@ fn connect_drone() -> Result<()> {
 fn main() -> Result<()> {
     connect_drone()
 }
-// ANCHOR_END: example
-
 /// Runs the example; it needs a real drone.
-///
+// ANCHOR_END: example
 /// # Errors
-///
 /// Returns an error if the drone rejects a command.
+
 pub fn run() -> Result<()> {
     main()
 }
 
+/// A captured-style flight-data packet decodes into the expected text.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Builds a Tello flight-data packet: header, 24 data bytes, CRC.
+    /// Talks to a real drone.
+
+    /// # Panics
+    /// Panics if the size fits.
     #[expect(
         clippy::little_endian_bytes,
         reason = "the Tello protocol is little-endian"
@@ -122,8 +124,8 @@ mod tests {
         assert_eq!(describe(&Message::Frame(0, Vec::new())), None);
     }
 
-    /// Talks to a real drone.
     // output-only: the example talks to a real drone.
+    /// Verifies that the `uavs` example runs.
     #[test]
     #[ignore = "requires real drone"]
     fn test_uavs_example_entry_point() -> Result<()> {

@@ -54,10 +54,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Checks that every worker increment is present after all joins.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -25,23 +25,31 @@ pub struct Config {
 /// The JSON Schema of `Config`.
 ///
 /// # Errors
-///
 /// Returns an error if the generated schema cannot be serialized as JSON.
 pub fn config_schema() -> anyhow::Result<serde_json::Value> {
     Ok(serde_json::to_value(schema_for!(Config))?)
 }
-
 /// Validates `instance` against the schema.
 ///
 /// # Errors
 ///
 /// Returns an error if schema serialization or validator construction fails.
+
 pub fn is_valid(instance: &serde_json::Value) -> anyhow::Result<bool> {
     let validator = jsonschema::validator_for(&config_schema()?)?;
     Ok(validator.is_valid(instance))
 }
 // ANCHOR_END: example
 
+/// Generates the configuration schema shown in the example.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<serde_json::Value> {
+    config_schema()
+}
+
+/// Accepts valid configuration and rejects wrong types or missing fields.
 #[cfg(test)]
 mod tests {
     use serde_json::json;

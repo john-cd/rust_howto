@@ -13,12 +13,13 @@ use proc_macro2::Spacing;
 use proc_macro2::Span;
 use proc_macro2::TokenStream;
 use proc_macro2::TokenTree;
-
 /// Parses Rust source into a token stream.
-///
+
 /// # Errors
-///
 /// Returns an error if the source is malformed.
+///
+/// # Arguments
+/// * `source` - Original value used as the starting point for the proc macro2 operation.
 fn parse_stream(source: &str) -> Result<TokenStream> {
     source.parse().map_err(|error: proc_macro2::LexError| {
         anyhow::anyhow!("failed to parse source as a token stream: {error}")
@@ -75,12 +76,13 @@ fn build_stream() -> TokenStream {
     .into_iter()
     .collect()
 }
-
+/// Runs the example.
 /// Prints parsed and manually constructed token streams.
 ///
 /// # Errors
 ///
 /// Returns an error if the example source cannot be parsed.
+
 fn main() -> Result<()> {
     let stream = parse_stream("fn hello() { let answer = 42; }")?;
     let mut descriptions = Vec::new();
@@ -90,21 +92,14 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the `proc_macro2` token-stream example.
-///
+
 /// # Errors
-///
 /// Returns an error if the example source cannot be parsed.
 pub fn run() -> Result<()> {
     main()
 }
-
-/// Verifies identifier counting traverses nested token groups.
-///
-/// # Errors
-///
-/// Returns an error if the test source cannot be parsed.
+/// Verifies that identifier counting includes tokens nested in groups.
 #[test]
 fn counts_identifiers_inside_groups() -> Result<()> {
     let stream = parse_stream("fn hello() { let answer = 42; }")?;
@@ -117,13 +112,14 @@ fn counts_identifiers_inside_groups() -> Result<()> {
 fn rejects_malformed_input() {
     assert!(parse_stream("fn hello( {").is_err());
 }
-
 /// Verifies that manually constructed token trees form valid Rust tokens.
+
 #[test]
 fn builds_a_token_stream() {
     assert_eq!(build_stream().to_string(), "answer = 42");
 }
 
+/// ordinary Rust crates and tests.
 #[cfg(test)]
 mod tests {
     use super::*;

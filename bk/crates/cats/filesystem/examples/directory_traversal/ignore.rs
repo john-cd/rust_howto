@@ -13,6 +13,7 @@
 use ignore::WalkBuilder;
 
 /// Walks directories while respecting the ignore files, such as `.gitignore`.
+
 fn main() {
     // Specify the directory to walk.
     let root = std::path::Path::new("examples/");
@@ -54,10 +55,14 @@ fn walk(root: &std::path::Path, extra: &str) -> Vec<String> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
 
+/// The example's own tree can be walked.
 #[cfg(test)]
 mod tests {
     use super::*;

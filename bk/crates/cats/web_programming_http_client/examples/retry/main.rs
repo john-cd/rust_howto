@@ -1,9 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
-//! Retry with exponential backoff.
 // ANCHOR: example
-//! Retry a fallible async call with exponential backoff and jitter.
+//! Retry with exponential backoff.
 //!
+//! Retry a fallible async call with exponential backoff and jitter.
 //! [`backon`] is the recommended crate: `backoff` is unmaintained
 //! (RUSTSEC-2025-0012). Only retry idempotent requests.
 
@@ -39,6 +39,8 @@ async fn fetch_with_retry(url: &str) -> Result<String> {
         .await
 }
 
+/// # Errors
+/// An error is returned if a fallible operation fails.
 #[tokio::main]
 async fn main() -> Result<()> {
     let body = fetch_with_retry("https://example.com").await?;
@@ -47,10 +49,24 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<()> {
+    main()
+}
+
+/// Panics if an internal invariant is violated.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
+    ///
+    /// # Panics
+    /// Panics if an internal invariant is violated.
     #[tokio::test]
     async fn retries_until_success() -> Result<()> {
         let mut server = mockito::Server::new_async().await;
@@ -76,6 +92,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Panics
+    /// Panics if an internal invariant is violated.
     #[tokio::test]
     async fn gives_up_after_max_attempts() -> Result<()> {
         let mut server = mockito::Server::new_async().await;

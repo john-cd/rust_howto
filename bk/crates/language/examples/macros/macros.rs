@@ -1,6 +1,6 @@
+#![allow(clippy::useless_vec)]
 // TODO Reviewed ??-??-2026.
 
-#![allow(clippy::useless_vec)]
 // ANCHOR: example
 //! Ways to use function-like macros: as expressions, statements, items and
 //! types.
@@ -92,10 +92,10 @@ fn main() {
     use_thread_local();
     println!("Associated constant: {}", <() as T>::CONST);
 }
-
 // ANCHOR_END: example
 
 /// Runs the example.
+/// Ways to use function-like macros: as expressions, statements, items and types.
 pub fn run() {
     main();
 }

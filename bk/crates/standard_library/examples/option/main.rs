@@ -5,12 +5,19 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Combining `Option` values with `map`, `and_then` and other combinators.
 mod option_combinators;
+/// Handling an `Option` with `match`.
 mod option_match;
+/// The `?` operator shines when we have a sequence of operations, each of which might fail.
 mod option_question_mark;
+/// Borrowing the content of an `Option` with `as_ref` and `as_mut`.
 mod option_ref;
+/// Demonstrates the use of `unwrap`, `expect`, `unwrap_or`, and `unwrap_or_else` with `Option`.
 mod option_unwrap;
+/// Creating and unwrapping `Option` values.
 mod options1;
+/// Using `Option` for an optional argument.
 mod options2;
 
 /// Command-line arguments.
@@ -75,8 +82,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -98,7 +106,6 @@ mod tests {
         "options2",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

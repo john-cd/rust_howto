@@ -5,9 +5,13 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// A struct generic over a constant, the length of an array.
 mod const_generics;
+/// A trait with an associated constant, implemented for arrays of any length.
 mod const_generics2;
+/// A struct that holds a reference of any type with a lifetime parameter.
 mod generic_lifetime;
+/// Generic type parameters on functions, structs, traits and type aliases.
 mod generic_type_parameter;
 
 /// Command-line arguments.
@@ -74,13 +78,13 @@ mod tests {
         "generic_type_parameter",
     ];
 
-    /// The command-line definition is internally consistent.
+    /// Each example is reachable through its own subcommand.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();
     }
 
-    /// Each example is reachable through its own subcommand.
+    /// Verifies every subcommand parses.
     #[test]
     fn test_every_subcommand_parses() {
         for name in SUBCOMMANDS {

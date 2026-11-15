@@ -11,6 +11,9 @@ use mlua::prelude::*;
 
 // In standalone mode, `mlua` allows to add scripting support.
 /// Creates a Lua table from Rust and iterates over it in Lua.
+
+/// # Errors
+/// An error is returned if create_table, set fails.
 fn main() -> LuaResult<()> {
     let lua = Lua::new();
 
@@ -27,11 +30,13 @@ fn main() -> LuaResult<()> {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() -> LuaResult<()> {
     main()
 }
 
+/// Verifies that Rust-created values are available to the Lua runtime.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -44,6 +49,10 @@ mod tests {
         Ok(())
     }
 
+    ///
+
+    /// # Errors
+    /// An error is returned if create_table, set fails.
     #[test]
     fn globals_round_trip_through_lua() -> LuaResult<()> {
         let lua = Lua::new();

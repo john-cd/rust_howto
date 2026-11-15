@@ -27,8 +27,9 @@ fn main() {
     #[cfg(not(all(target_arch = "wasm32", target_os = "unknown")))]
     println!("Build for wasm32-unknown-unknown to call the browser Window API.");
 }
-
+/// Runs the example entry point.
 /// Runs the example's host-side runner.
+
 pub fn run() {
     main();
 }
@@ -41,6 +42,7 @@ mod tests {
     /// Runs the web sys example through its entry point.
     // output-only: on the host, the example only prints a hint; the wasm32 code
     // needs a browser.
+    /// Verifies that the `web sys` example runs.
     #[test]
     fn test_web_sys_example_entry_point() {
         main();

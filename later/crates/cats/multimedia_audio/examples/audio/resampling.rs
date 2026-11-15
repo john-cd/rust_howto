@@ -43,10 +43,14 @@ fn main() -> Result<(), Box<dyn Error>> {
 // ANCHOR_END: example
 
 /// Runs the device-free resampling example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
 
+/// Verifies the output frame count shrinks when converting 48 kHz to 44.1 kHz.
 #[cfg(test)]
 mod tests {
     use super::*;

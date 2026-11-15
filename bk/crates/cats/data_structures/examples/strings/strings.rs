@@ -9,8 +9,8 @@
 //! explicitly.
 
 // `String` stores UTF-8 bytes and can represent Unicode text; ASCII is a subset
-// of UTF-8.
 /// Creates and mutates a `String`.
+// of UTF-8.
 fn string() {
     // Create an empty string:
     let mut s1 = String::new();
@@ -35,8 +35,8 @@ fn string() {
 }
 
 // The `str` type, also called a 'string slice', is the most primitive string
-// type. It is usually seen in its borrowed form, `&str`.
 /// Creates string slices from a `String`.
+// type. It is usually seen in its borrowed form, `&str`.
 #[expect(
     clippy::deref_by_slicing,
     reason = "This example demonstrates indexing a String with a full range."
@@ -114,8 +114,9 @@ fn common_operations() {
         println!("{b}");
     }
 }
-
+/// Runs the example.
 /// Runs all the string examples.
+
 fn main() {
     string();
     string_slices();
@@ -124,8 +125,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

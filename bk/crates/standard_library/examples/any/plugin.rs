@@ -16,8 +16,8 @@ use std::collections::HashMap;
 pub trait Plugin: Send + Sync + 'static {
     /// Returns the name of the plugin.
     fn name(&self) -> &'static str;
-
     /// Runs the plugin with access to the shared context.
+
     fn execute(&mut self, context: &mut Context);
 }
 
@@ -37,6 +37,7 @@ impl Context {
     }
 
     /// Returns a mutable reference to the service of type `T`, if registered.
+
     pub fn get_mut<T: Any + Send + Sync>(&mut self) -> Option<&mut T> {
         self.shared_data
             .get_mut(&TypeId::of::<T>())
@@ -44,6 +45,7 @@ impl Context {
     }
 
     /// Registers a service of type `T`, replacing any existing one.
+
     pub fn register<T: Any + Send + Sync>(&mut self, service: T) {
         self.shared_data
             .insert(TypeId::of::<T>(), Box::new(service));
@@ -64,6 +66,8 @@ impl Plugin for MyCounterPlugin {
         "MyCounterPlugin"
     }
 
+    /// # Arguments
+    /// * `context` - Shared state and services used to complete the plugin workflow.
     fn execute(&mut self, context: &mut Context) {
         if let Some(state) = context.get_mut::<AppState>() {
             state.counter += 10;
@@ -80,6 +84,8 @@ impl Plugin for MyStringPlugin {
         "MyStringPlugin"
     }
 
+    /// # Arguments
+    /// * `context` - Shared state and services used to complete the plugin workflow.
     fn execute(&mut self, context: &mut Context) {
         if let Some(value) = context.get::<i32>() {
             println!("MyStringPlugin: Retrieved i32: {value}");
@@ -103,6 +109,8 @@ impl Plugin for MyServiceConsumerPlugin {
         "MyServiceConsumerPlugin"
     }
 
+    /// # Arguments
+    /// * `context` - Shared state and services used to complete the plugin workflow.
     fn execute(&mut self, context: &mut Context) {
         context.register(CustomPluginService { value: 12345 });
         if let Some(s) = context.get::<String>() {
@@ -126,7 +134,6 @@ impl PluginManager {
         self.plugins.push(plugin);
     }
 
-    /// Runs every plugin once.
     fn initialize(&mut self) {
         for plugin in &mut self.plugins {
             println!("Initializing plugin '{}'", plugin.name());
@@ -165,19 +172,26 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
 
+/// An error is returned if ok_or fails.
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `plugin` example runs.
 
     #[test]
     fn test_plugin_example_entry_point() {
         main();
     }
 
+    /// # Errors
+    /// An error is returned if ok_or fails.
     #[test]
     fn test_context_register_get_and_get_mut() -> Result<(), Box<dyn std::error::Error>> {
         let mut ctx = Context::default();
@@ -194,6 +208,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if ok_or fails.
     #[test]
     fn test_plugins_cooperate_through_the_context() -> Result<(), Box<dyn std::error::Error>> {
         let mut manager = PluginManager::default();
@@ -219,6 +235,7 @@ mod tests {
         assert_eq!(service.value, 12345);
         Ok(())
     }
+    /// Verifies plugin names.
 
     #[test]
     fn test_plugin_names() {
@@ -226,6 +243,7 @@ mod tests {
         assert_eq!(MyStringPlugin.name(), "MyStringPlugin");
         assert_eq!(MyServiceConsumerPlugin.name(), "MyServiceConsumerPlugin");
     }
+    /// Verifies plugin without its state does nothing.
 
     #[test]
     fn test_plugin_without_its_state_does_nothing() {

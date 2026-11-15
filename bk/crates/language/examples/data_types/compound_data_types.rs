@@ -65,8 +65,8 @@ fn demo_tuples() {
     println!("\nOriginal tuple: {original:?}");
     println!("Swapped tuple: {swapped:?}");
 }
-
 /// Creates and indexes arrays.
+
 fn demo_arrays() {
     println!("=== ARRAYS ===");
 
@@ -133,8 +133,9 @@ fn demo_arrays() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

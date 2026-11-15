@@ -55,8 +55,10 @@ struct ShapeFactory;
 
 impl ShapeFactory {
     // The logic for creating different shape objects is centralized.
-    /// Creates a shape of the given type and size: the radius of a circle or
     /// the side of a square.
+
+    /// # Arguments
+    /// * `size` - Bound used to limit the amount of work or data accepted by the operation.
     fn create_shape(shape_type: ShapeType, size: f64) -> Box<dyn Shape> {
         match shape_type {
             ShapeType::Circle => Box::new(Circle { radius: size }),
@@ -64,8 +66,9 @@ impl ShapeFactory {
         }
     }
 }
-
+/// Runs the example.
 /// Creates shapes with the factory and draws them.
+
 fn main() {
     // Using the factory to create different shapes.
     let circle = ShapeFactory::create_shape(ShapeType::Circle, 5.0);
@@ -79,8 +82,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

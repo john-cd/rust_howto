@@ -28,6 +28,8 @@ fn exported_functions(binary: &[u8]) -> Result<Vec<String>> {
     Ok(names)
 }
 
+/// # Errors
+/// An error is returned if main, exported_functions fails.
 fn main() -> Result<()> {
     // Text format to binary format.
     let binary = wat::parse_str(
@@ -60,6 +62,9 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -77,7 +82,8 @@ mod tests {
         main()
     }
 
-    #[test]
+    /// # Errors
+    /// An error is returned if invalid_module_fails_validation fails.
     fn invalid_module_fails_validation() -> Result<()> {
         // A function that promises an `i32` but leaves the stack empty
         // parses fine but is rejected by validation.

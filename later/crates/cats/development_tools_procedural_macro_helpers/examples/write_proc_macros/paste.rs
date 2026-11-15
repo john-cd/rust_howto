@@ -24,7 +24,7 @@ macro_rules! create_structs {
                         Self { value }
                     }
 
-                    /// Returns the value stored in this struct.
+                    ///
                     fn get_value(&self) -> i32 {
                         self.value
                     }
@@ -49,11 +49,13 @@ fn main() {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();
 }
 
+/// Verifies that pasted identifiers can be used by the example.
 #[cfg(test)]
 mod tests {
     use super::*;

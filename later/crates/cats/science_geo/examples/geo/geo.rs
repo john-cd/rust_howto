@@ -15,8 +15,8 @@ use geo::Distance as _;
 use geo::Haversine;
 use geo::Point;
 use geo::polygon;
-
 /// Creates a unit square, checks its geometry and containment, and measures a
+
 /// city distance.
 fn main() {
     let square = polygon![
@@ -46,16 +46,17 @@ fn main() {
     println!("London to New York = {distance_km:.0} km");
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();
 }
 
+/// `geo`.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies area, centroid, containment, and Haversine distance assertions.
     #[test]
     fn unit_square_geometry_and_city_distance_are_valid() {
         main();

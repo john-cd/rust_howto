@@ -32,6 +32,7 @@ mod settings {
 
     /// Returns the process configuration, initializing it on first access.
     fn config() -> anyhow::Result<&'static Config> {
+        /// Shared `config` used by this module.
         static CONFIG: OnceLock<Result<Config, String>> = OnceLock::new();
 
         match CONFIG.get_or_init(|| build_config(None).map_err(|error| error.to_string())) {
@@ -44,8 +45,8 @@ mod settings {
     pub fn get<T: DeserializeOwned>(key: &str) -> anyhow::Result<T> {
         Ok(config()?.get::<T>(key)?)
     }
-
     /// Builds an isolated configuration from supplied environment values.
+
     #[cfg(test)]
     pub(super) fn from_source(
         environment_source: HashMap<String, String>,
@@ -53,8 +54,8 @@ mod settings {
         build_config(Some(environment_source))
     }
 }
-
 /// Reads the port and displays it.
+
 fn main() -> anyhow::Result<()> {
     let port = settings::get::<u16>("port")?;
     println!("Service port: {port}");
@@ -64,10 +65,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the singleton configuration example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that an injected environment value overrides the default port.
 #[cfg(test)]
 mod tests {
     use super::*;

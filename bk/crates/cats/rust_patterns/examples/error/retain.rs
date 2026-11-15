@@ -8,8 +8,10 @@
 //! [`std::io::Error`], [`std::num::ParseIntError`]) into [`anyhow::Error`],
 //! retaining the full error information along the call chain.
 
-/// Parses a string as a `u32`, propagating any [`std::num::ParseIntError`]
-/// via `?`.
+/// Trims `s` and parses it as a `u32`, propagating parse failures with `?`.
+///
+/// # Errors
+/// Returns an error if the trimmed string is not a valid unsigned integer.
 fn parse_value(s: &str) -> anyhow::Result<u32> {
     let n = s.trim().parse::<u32>()?;
     Ok(n)
@@ -38,10 +40,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that the retain example's main path succeeds.
 #[cfg(test)]
 mod tests {
     use super::*;

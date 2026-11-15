@@ -16,12 +16,11 @@ use candle_nn::VarBuilder;
 use candle_nn::VarMap;
 use candle_nn::linear;
 use candle_nn::loss;
-
 /// Trains a one-layer model and returns the initial and final mean squared
+
 /// loss.
 ///
 /// # Errors
-///
 /// Returns an error if Candle cannot allocate tensors, run the model, or update
 /// its parameters.
 fn training_losses() -> Result<(f32, f32)> {
@@ -63,10 +62,16 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// # Panics
+/// Panics if the Candle CPU training example failed.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main().expect("the Candle CPU training example failed");
 }
 
+/// Verifies that CPU training reduces the loss on synthetic data.
 #[cfg(test)]
 mod tests {
     use super::*;

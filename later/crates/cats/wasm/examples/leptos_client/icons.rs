@@ -1,5 +1,3 @@
-// TODO Reviewed ??-??-2026.
-
 #![allow(clippy::same_name_method)]
 #![expect(
     clippy::empty_enums,
@@ -12,6 +10,8 @@
         reason = "targets the browser (wasm32); native builds cannot call it"
     )
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Use [`icondata`] icon data as inline SVG in a Leptos view.
 //!
@@ -39,6 +39,7 @@ pub fn Icon(icon: IconData, #[prop(into)] label: String) -> impl IntoView {
 }
 
 /// Renders a small toolbar to a string, as a server would.
+
 pub fn toolbar_html() -> String {
     view! {
         <nav>
@@ -50,11 +51,15 @@ pub fn toolbar_html() -> String {
 }
 // ANCHOR_END: example
 
+/// Renders the labeled toolbar for inspection.
+fn run() -> String {
+    toolbar_html()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that both icons are rendered with their accessible labels.
     #[test]
     fn toolbar_renders_labeled_svg_icons() {
         let html = toolbar_html();
@@ -63,7 +68,6 @@ mod tests {
         assert!(html.contains("aria-label=\"Settings\""));
     }
 
-    /// Verifies that the icon constants carry drawable data.
     #[test]
     fn icon_data_is_not_empty() {
         assert!(!icondata::LuHouse.data.is_empty());

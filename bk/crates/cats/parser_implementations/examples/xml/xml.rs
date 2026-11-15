@@ -117,10 +117,14 @@ fn write_catalog() -> anyhow::Result<String> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Preserves element names, attributes, and text while parsing valid XML.
 #[cfg(test)]
 mod tests {
     use super::*;

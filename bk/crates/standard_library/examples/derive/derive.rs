@@ -45,16 +45,18 @@ fn hash() {
         println!("Found: {value}"); // Output: Found: Value for S(10).
     }
 }
-
+/// Runs the example.
 /// Runs both examples.
+
 fn main() {
     simple_tests();
     hash();
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -62,11 +64,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `derive` example runs.
 
     #[test]
     fn test_derive_example_entry_point() {
         main();
     }
+    /// Verifies default debug clone copy.
 
     #[test]
     fn test_default_debug_clone_copy() {
@@ -76,6 +80,7 @@ mod tests {
         let also_one = one;
         assert_eq!(one, also_one); // `one` is still usable: `Copy`.
     }
+    /// Verifies ordering.
 
     #[test]
     fn test_ordering() {
@@ -84,6 +89,7 @@ mod tests {
         assert_eq!(S(1).cmp(&S(1)), std::cmp::Ordering::Equal);
         assert_eq!([S(3), S(1), S(2)].iter().max(), Some(&S(3)));
     }
+    /// Verifies hash as map key.
 
     #[test]
     fn test_hash_as_map_key() {

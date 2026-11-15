@@ -23,12 +23,14 @@ use lettre::transport::smtp::authentication::Credentials;
 use lettre::transport::smtp::client::Certificate;
 use lettre::transport::smtp::client::Tls;
 use lettre::transport::smtp::client::TlsParameters;
-
 /// Builds a plain-text message from the supplied mailbox addresses.
-///
+
 /// # Errors
-///
 /// Returns an error if either address or the completed message is invalid.
+///
+/// # Arguments
+/// * `from` - Original value used as the starting point for the lettre operation.
+/// * `to` - Target value or destination produced by the lettre operation.
 fn build_message(from: &str, to: &str) -> anyhow::Result<Message> {
     let from: Mailbox = from.parse().context("parse SMTP_FROM mailbox")?;
     let to: Mailbox = to.parse().context("parse SMTP_TO mailbox")?;
@@ -42,20 +44,16 @@ fn build_message(from: &str, to: &str) -> anyhow::Result<Message> {
 
     Ok(message)
 }
-
 /// Runs the standalone SMTP delivery example.
-///
+
 /// # Errors
-///
 /// Returns an error if SMTP configuration is missing or delivery fails.
 fn main() -> anyhow::Result<()> {
     send_email()
 }
-
 /// Builds a message and sends it through an authenticated SMTP relay.
 ///
 /// # Errors
-///
 /// Returns an error if required environment variables are missing, the relay
 /// configuration is invalid, or message delivery fails.
 fn send_email() -> anyhow::Result<()> {
@@ -112,16 +110,15 @@ fn build_tls_parameters(domain: String) -> anyhow::Result<TlsParameters> {
     builder.build().context("build SMTP TLS parameters")
 }
 // ANCHOR_END: example
-
 /// Runs the SMTP delivery example.
-///
+
 /// # Errors
-///
 /// Returns an error if SMTP configuration is missing or delivery fails.
 pub fn run() -> anyhow::Result<()> {
     send_email()
 }
 
+/// Builds an email using reserved example addresses without contacting SMTP.
 #[cfg(test)]
 mod tests {
     use super::*;

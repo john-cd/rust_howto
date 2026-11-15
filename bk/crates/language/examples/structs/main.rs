@@ -5,15 +5,25 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Implementation of Common Traits on a `struct`.
 mod common_traits;
+/// A generic struct and its `impl` blocks.
 mod generic_structs;
+/// An associated constant on a struct.
 mod struct_constant;
+/// A struct with fields of many types.
 mod struct_fields;
+/// Methods and associated functions on a struct.
 mod struct_impl;
+/// Creating instances of a struct.
 mod struct_init;
+/// Implementing a trait with methods, an associated type and associated constants.
 mod struct_trait;
+/// Creating a struct from another instance with the struct update syntax.
 mod struct_update;
+/// The `main` function creates an instance of the `User` struct.
 mod structs;
+/// Tuple structs and unit-like structs.
 mod tuple_structs;
 
 /// Command-line arguments.
@@ -96,8 +106,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -122,7 +133,6 @@ mod tests {
         "tuple_structs",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

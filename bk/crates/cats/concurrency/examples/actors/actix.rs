@@ -41,9 +41,8 @@ impl Handler<Add> for Counter {
         self.total
     }
 }
-
 /// Starts the counter and returns the replies to two messages.
-///
+
 /// # Errors
 /// Returns an error if a message reply or the Actix system fails.
 fn run_actor() -> anyhow::Result<(u64, u64)> {
@@ -65,9 +64,8 @@ fn run_actor() -> anyhow::Result<(u64, u64)> {
     system.run().context("Actix system failed")?;
     Ok(totals)
 }
-
 /// Runs the Actix counter example.
-///
+
 /// # Errors
 /// Returns an error if a message reply or the Actix system fails.
 fn main() -> anyhow::Result<()> {
@@ -77,15 +75,15 @@ fn main() -> anyhow::Result<()> {
 }
 
 // ANCHOR_END: example
-
 /// Runs the Actix actor example.
-///
+
 /// # Errors
 /// Returns an error if a message reply or the Actix system fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that Actix replies with each updated counter total.
 #[cfg(test)]
 mod tests {
     use super::*;

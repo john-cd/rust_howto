@@ -24,6 +24,9 @@ struct Wrapper(Vec<String>);
 
 /// Implement a (non-local) trait on the (local) `Wrapper` type:
 impl fmt::Display for Wrapper {
+    /// Formats the value for display.
+    /// # Arguments
+    /// * `f` - Mutable formatter whose state is updated by this operation.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "[{}]", self.0.join(", "))
     }
@@ -40,8 +43,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

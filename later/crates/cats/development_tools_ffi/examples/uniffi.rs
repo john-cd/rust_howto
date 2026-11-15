@@ -20,6 +20,7 @@ pub enum ArithmeticError {
 }
 
 impl std::fmt::Display for ArithmeticError {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Self::IntegerOverflow => write!(f, "integer overflow"),
@@ -28,6 +29,10 @@ impl std::fmt::Display for ArithmeticError {
 }
 
 /// Returns a greeting for `name`.
+///
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected arithmetic error.
+
 #[uniffi::export]
 pub fn greet(name: String) -> String {
     format!("Hello, {name}!")
@@ -38,8 +43,8 @@ pub fn greet(name: String) -> String {
 pub fn add(a: u64, b: u64) -> Result<u64, ArithmeticError> {
     a.checked_add(b).ok_or(ArithmeticError::IntegerOverflow)
 }
-
 /// Prints a greeting and the sum of two numbers.
+
 fn main() -> Result<(), ArithmeticError> {
     println!("{}", greet("UniFFI".to_owned()));
     println!("{}", add(2, 3)?);
@@ -47,6 +52,15 @@ fn main() -> Result<(), ArithmeticError> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<(), ArithmeticError> {
+    main()
+}
+
+/// The exported functions can be called directly from Rust.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -70,7 +84,6 @@ mod tests {
         main()
     }
 
-    /// Checks that empty and non-empty names are both formatted correctly.
     #[test]
     fn greet_formats_the_name() {
         assert_eq!(greet("Ada".to_owned()), "Hello, Ada!");

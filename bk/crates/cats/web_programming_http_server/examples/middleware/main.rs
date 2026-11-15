@@ -5,7 +5,9 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Example showing how to add CORS headers to responses.
 mod cors;
+/// Serves an Axum route with common `tower-http` middleware.
 mod tower_http;
 
 /// Command-line arguments.
@@ -56,7 +58,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["cors", "tower_http"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

@@ -1,11 +1,10 @@
-// TODO Reviewed ??-??-2026.
-
-// ANCHOR: fixture_support
 //! Shared local files for the crate-index examples.
 //!
 //! Test fixtures are small, fixed input files. Shared fixtures keep the tests
 //! of the index generators short and deterministic, since they do not depend on
 //! the real book contents.
+//!
+//! TODO Reviewed ??-??-2026.
 
 use std::fs;
 use std::path::Path;
@@ -24,6 +23,9 @@ crates = ["serde", "serde_json"]
 "#;
 
 /// Creates a Cargo manifest and book-index fixture without network access.
+///
+/// # Errors
+/// Returns an error if the requested resource or connection cannot be created.
 pub(crate) fn create_fixture() -> Result<TempDir> {
     let fixture = tempfile::tempdir().context("create crate-index fixture directory")?;
     write_fixture_file(

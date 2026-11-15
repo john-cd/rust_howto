@@ -5,8 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates how to parse JSON5 data using the `json5` crate.
 mod json5;
+/// Demonstrates parsing and serializing JSON data using the `serde_json` crate.
 mod serde_json;
+/// Example of using the `simd-json` crate for parsing and manipulating JSON
 mod simd_json;
 
 /// Command-line arguments.
@@ -63,7 +66,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["json5", "serde_json", "simd_json"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

@@ -2,18 +2,20 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Convert a Rust string with the typed Objective-C Foundation bindings.
 mod objc2;
-
+/// Runs the example.
 /// Runs the objc example.
+
 fn main() {
     objc2::run();
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     fn test_main_entry_point() {

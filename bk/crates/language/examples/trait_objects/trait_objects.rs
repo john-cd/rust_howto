@@ -16,9 +16,10 @@ trait Draw {
 
 /// A struct representing a button.
 struct Button;
-
 /// Dummy implementation of the trait for `Button`.
+
 impl Draw for Button {
+    /// Dummy implementation.
     fn draw(&self) {
         println!("Button");
     }
@@ -26,8 +27,8 @@ impl Draw for Button {
 
 /// A struct representing text to be drawn on a screen.
 struct Text;
-
 /// Dummy implementation.
+
 impl Draw for Text {
     fn draw(&self) {
         println!("Text");
@@ -57,7 +58,8 @@ impl Screen {
         }
     }
 
-    /// Runs the screen, drawing each component.
+    /// Runs the example entry point.
+
     fn run(&self) {
         for component in &self.components {
             // The purpose of trait objects is to permit "late binding" of
@@ -67,15 +69,17 @@ impl Screen {
         }
     }
 }
-
+/// Runs the example.
 /// Creates a screen and runs it.
+
 fn main() {
     let s = Screen::new();
     s.run();
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

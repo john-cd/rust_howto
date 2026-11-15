@@ -32,24 +32,31 @@ fn App() -> Element {
 }
 
 /// Helper function to execute the example entry point.
-pub fn run() {
+pub fn example_body() {
     main();
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+pub fn run() -> Element {
+    main()
+}
+
+/// Launches the app: with the `dioxus` feature this opens a window, so it is skipped; without it
+/// `main` does nothing.
 #[cfg(test)]
 mod tests {
     use super::*;
 
     /// Launches the app: with the `dioxus` feature this opens a window, so it
     /// is skipped; without it `main` does nothing.
+    /// Rendering.
     #[test]
     #[cfg_attr(feature = "dioxus", ignore = "launches the Dioxus renderer")]
     fn test_main_entry_point() {
         main();
     }
 
-    /// Verifies that the component renders the expected HTML via Server-Side
     /// Rendering.
     #[test]
     #[cfg(feature = "dioxus")]

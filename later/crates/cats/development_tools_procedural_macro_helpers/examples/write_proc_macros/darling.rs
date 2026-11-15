@@ -22,12 +22,13 @@ struct BuilderOptions {
     #[darling(default)]
     prefix: Option<String>,
 }
-
 /// Parses builder options from derive input.
-///
+
 /// # Errors
-///
 /// Returns a Darling error for malformed input or unknown attributes.
+///
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested darling operation.
 fn parse_options(input: TokenStream) -> darling::Result<BuilderOptions> {
     let input: DeriveInput = syn::parse2(input).map_err(darling::Error::from)?;
     BuilderOptions::from_derive_input(&input)
@@ -36,7 +37,6 @@ fn parse_options(input: TokenStream) -> darling::Result<BuilderOptions> {
 /// Prints parsed options and a compiler-style diagnostic for an invalid key.
 ///
 /// # Errors
-///
 /// Returns an error if the valid example input cannot be parsed.
 fn main() -> Result<()> {
     let valid = quote! { #[builder(prefix = "with_")] struct Foo; };
@@ -51,24 +51,20 @@ fn main() -> Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the `darling` attribute-parsing example.
-///
+
 /// # Errors
-///
 /// Returns an error if the valid example input cannot be parsed.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Returns an error if either attribute input cannot be parsed.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Parses the configured prefix and supplies the default when it is absent.
-    ///
     /// # Errors
-    ///
     /// Returns an error if either attribute input cannot be parsed.
     #[test]
     fn parses_prefix_and_default() -> darling::Result<()> {

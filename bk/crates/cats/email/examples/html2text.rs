@@ -29,6 +29,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.
@@ -36,6 +39,7 @@ pub fn run() -> anyhow::Result<()> {
     entry()
 }
 
+/// Checks that the email text preserves its heading, link, and list.
 #[cfg(test)]
 mod tests {
     use super::*;

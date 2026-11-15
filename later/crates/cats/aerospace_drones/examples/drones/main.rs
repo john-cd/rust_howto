@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Sending a flight plan to a Tello drone.
 mod drones1;
 
 /// Runs the drones example.

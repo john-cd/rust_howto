@@ -22,11 +22,15 @@ use ort::value::Tensor;
 /// A loaded model. `Session::run` needs `&mut`, so the session is behind a
 /// mutex: use one session per worker (or a pool) when you need parallelism.
 struct Model {
+    /// Protocol version.
     version: u32,
+    /// Session value.
     session: Mutex<Session>,
 }
 
 impl Model {
+    /// # Errors
+    /// An error is returned if load, commit_from_memory fails.
     fn load(env: &Environment, version: u32, bytes: &[u8]) -> Result<Self> {
         Ok(Self {
             version,
@@ -37,11 +41,18 @@ impl Model {
 
 /// A scoring engine whose model can be replaced while it is in use.
 struct Engine {
+    /// Env value.
     env: Environment,
+    /// Model value.
     model: ArcSwap<Model>,
 }
 
 impl Engine {
+    /// Constructs a usable initial engine value with the defaults required by the onnx infer
+    /// component.
+    ///
+    /// # Errors
+    /// An error is returned if new, from_pointee fails.
     fn new(version: u32, bytes: &[u8]) -> Result<Self> {
         let env = ort::init().build()?;
         let model = ArcSwap::from_pointee(Model::load(&env, version, bytes)?);
@@ -69,6 +80,8 @@ impl Engine {
     }
 }
 
+/// # Errors
+/// An error is returned if new, let fails.
 fn main() -> Result<()> {
     // Models exported with `skl2onnx` (see `models/make_models.py`).
     let model_a = include_bytes!("models/logreg_a.onnx");
@@ -88,6 +101,10 @@ fn main() -> Result<()> {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 
 pub fn run() -> Result<()> {
     main()

@@ -113,16 +113,15 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the kinematics example.
-///
+
 /// # Errors
-///
 /// Returns an error if the kinematics computation fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// With both joints at zero the arm is stretched along the x axis.
 #[cfg(test)]
 mod tests {
     use super::*;

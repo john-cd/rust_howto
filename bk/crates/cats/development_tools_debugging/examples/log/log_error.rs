@@ -12,8 +12,9 @@
 fn execute_query(_query: &str) -> Result<(), &'static str> {
     Err("I'm afraid I can't do that")
 }
-
+/// Runs the example.
 /// Runs a query that fails and logs the error.
+
 fn main() {
     env_logger::init();
 
@@ -25,8 +26,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Compute line coverage per file from an LCOV report and enforce a minimum.
 mod lcov_summary;
 
 /// Runs the examples.

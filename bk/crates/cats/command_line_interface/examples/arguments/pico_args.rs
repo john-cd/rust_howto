@@ -59,6 +59,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -74,6 +77,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     #[test]
     fn options_flags_and_free_arguments_are_extracted() -> Result<(), Box<dyn std::error::Error>> {
         let mut args = Arguments::from_vec(

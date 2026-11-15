@@ -5,10 +5,15 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Using a closure to filter a list.
 mod closures;
+/// Closures as function arguments.
 mod closures_as_input_parameters;
+/// Closures that capture their environment.
 mod closures_capture;
+/// Demonstrates the use of the `move` keyword with closures.
 mod closures_move;
+/// Demonstrates closures with type annotations.
 mod closures_with_type_annotations;
 
 /// Command-line arguments.
@@ -61,8 +66,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -82,7 +88,6 @@ mod tests {
         "closures_with_type_annotations",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

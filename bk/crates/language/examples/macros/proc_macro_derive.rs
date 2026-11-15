@@ -31,8 +31,9 @@ struct User {
     #[helper]
     active: bool,
 }
-
+/// Runs the example.
 /// Creates a user and prints it using the derived trait.
+
 fn main() {
     let u = User {
         id: 1,
@@ -44,8 +45,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

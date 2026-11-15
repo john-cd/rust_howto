@@ -2,7 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Example: simulate a leaky integrate-and-fire neuron with constant current.
 mod leaky_integrate_fire;
+/// Example: create a dummy neuroimaging volume and save it as a `NIfTI` file.
 mod neuro;
 
 /// Runs the neuroscience example.
@@ -12,11 +14,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     fn test_main_entry_point() {

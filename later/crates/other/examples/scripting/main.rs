@@ -5,7 +5,9 @@
 use anyhow::Result;
 use anyhow::anyhow;
 
+/// # Rhai scripting Rhai is a lightweight, Rust-based scripting language.
 mod rhai;
+/// Expose a Rust type to Rhai, keep state in a `Scope` and sandbox scripts.
 mod rhai_types_and_limits;
 
 /// Runs the scripting example.
@@ -15,11 +17,11 @@ fn main() -> Result<()> {
     Ok(())
 }
 
+/// test their own results).
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example through its entry point (output-only: the modules
     /// test their own results).
     #[test]
     fn test_main_entry_point() {

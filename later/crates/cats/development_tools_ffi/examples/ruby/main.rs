@@ -5,9 +5,12 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Ruby-independent greeting logic shared with the native example.
 mod greeting;
+/// Calling Rust from Ruby with `magnus`.
 #[cfg(all(not(windows), feature = "ruby"))]
 mod magnus;
+/// Calling Ruby from Rust with `rutie`.
 #[cfg(feature = "ruby")]
 mod rutie;
 
@@ -31,8 +34,9 @@ enum Commands {
     #[command(name = "rutie")]
     Rutie,
 }
-
+/// Runs the example.
 /// Runs the example selected on the command line.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -61,7 +65,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

@@ -94,6 +94,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the `sha2` example by calling `main()`.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -101,6 +104,7 @@ pub fn run() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    /// Verifies that the `sha2` example runs.
 
     #[test]
     fn test_sha2_example_entry_point() {

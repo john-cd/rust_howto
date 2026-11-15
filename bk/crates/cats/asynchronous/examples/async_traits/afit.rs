@@ -29,8 +29,8 @@ impl Store for MemoryStore {
         self.0.get(key).cloned()
     }
 }
-
 /// Generic code can call the method as usual.
+
 async fn lookup<S: Store>(store: &S, key: &str) -> String {
     store
         .get(key)
@@ -57,12 +57,14 @@ async fn main() {
     assert_eq!(lookup(&store, "nope").await, "<missing>");
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Checks that generic code can await the in-memory store.
 #[cfg(test)]
 mod tests {
     use super::*;

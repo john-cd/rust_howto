@@ -5,12 +5,16 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Moves an entity with a headless Bevy ECS app.
 #[cfg(feature = "bevy")]
 mod bevy;
+/// A minimal `fyrox` plugin: game logic that the engine calls every frame.
 #[cfg(feature = "fyrox")]
 mod fyrox;
+/// Moves and draws a bouncing ball with ggez.
 #[cfg(feature = "ggez")]
 mod ggez;
+/// A bouncing ball in a Macroquad game loop.
 mod macroquad;
 
 /// Command-line arguments.
@@ -40,17 +44,15 @@ enum Commands {
     #[command(name = "macroquad")]
     Macroquad,
 }
-
 /// Runs the example selected on the command line.
-///
+
 /// # Errors
-///
 /// Returns an error if the selected engine's setup or event loop fails.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     dispatch(Cli::parse())
 }
-
 /// Runs the example selected in the parsed command line.
+
 fn dispatch(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
     if let Some(command) = cli.command {
         match command {
@@ -81,7 +83,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

@@ -33,6 +33,8 @@ struct Pair<A, B> {
 // Generics and trait bounds make it possible to implement a trait
 // conditionally. Here, the `Pair` type implements `Hash` if its components do.
 impl<A: Hash, B: Hash> Hash for Pair<A, B> {
+    /// # Arguments
+    /// * `state` - Shared state and services used to complete the trait_bounds workflow.
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.first.hash(state);
         self.second.hash(state);
@@ -49,6 +51,7 @@ fn main() {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 /// Runs the example.
 pub fn run() {

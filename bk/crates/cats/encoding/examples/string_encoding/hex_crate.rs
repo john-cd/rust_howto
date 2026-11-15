@@ -8,7 +8,10 @@
 //! text is not valid hex.
 
 /// Encodes bytes as lowercase hexadecimal and decodes them back.
-pub fn run() -> Result<(), hex::FromHexError> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> Result<(), hex::FromHexError> {
     let encoded = hex::encode("Hello world!");
     assert_eq!(encoded, "48656c6c6f20776f726c6421");
 
@@ -29,6 +32,14 @@ pub fn run() -> Result<(), hex::FromHexError> {
     Ok(())
 }
 // ANCHOR_END: example
+
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<(), hex::FromHexError> {
+    example_body()
+}
 
 #[cfg(test)]
 mod tests {

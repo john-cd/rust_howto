@@ -20,11 +20,13 @@ impl KillOnDrop {
     }
 
     /// Returns the child without killing it.
+
     fn release(mut self) -> Option<Child> {
         self.0.take()
     }
 
     /// Returns the guarded child's process id, if it was not released.
+
     fn id(&self) -> Option<u32> {
         self.0.as_ref().map(Child::id)
     }
@@ -65,7 +67,10 @@ fn fallible_work() -> anyhow::Result<()> {
 }
 
 /// Runs the failing function; the child does not outlive it.
-pub fn run() -> anyhow::Result<()> {
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+pub fn example_body() -> anyhow::Result<()> {
     assert!(fallible_work().is_err());
 
     // A released child is no longer guarded; the caller must clean it up.
@@ -78,6 +83,15 @@ pub fn run() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    example_body()
+}
+
+/// Keeps a child alive after the guard explicitly releases ownership.
 #[cfg(test)]
 mod tests {
     use super::*;

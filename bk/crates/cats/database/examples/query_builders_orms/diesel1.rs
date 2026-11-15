@@ -78,11 +78,9 @@ fn run_example() -> anyhow::Result<User> {
         .first(&mut connection)
         .context("read the inserted user")
 }
-
 /// Runs the migrated SQLite example and prints the inserted row.
-///
+
 /// # Errors
-///
 /// Returns an error if migration, insertion, or query execution fails.
 fn main() -> anyhow::Result<()> {
     let user = run_example()?;
@@ -90,16 +88,15 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the Diesel SQLite example.
-///
+
 /// # Errors
-///
 /// Returns an error if migration, insertion, or query execution fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Applies the embedded migration and reads back the inserted row.
 #[cfg(test)]
 mod tests {
     use super::*;

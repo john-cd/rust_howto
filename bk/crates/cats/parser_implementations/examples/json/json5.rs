@@ -9,8 +9,9 @@
 //! It is not intended to be used for machine-to-machine communication.
 
 use serde_json::Value;
-
+/// Runs the example.
 /// Parses a JSON5 string and prints the result.
+
 fn main() {
     let json5_str = r#"{
         // Comments are allowed.
@@ -66,6 +67,9 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }

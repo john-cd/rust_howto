@@ -49,6 +49,9 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -62,8 +65,8 @@ mod tests {
     fn test_swc_ecma_parser_example_entry_point() {
         main();
     }
+    /// Parses the current value.
 
-    /// Parses a snippet into a program, or returns the parse error.
     fn parse(source: &'static str) -> Result<Program, String> {
         let cm: Lrc<swc_common::SourceMap> = Default::default();
         let fm = cm.new_source_file(FileName::Custom("test.js".into()).into(), source);

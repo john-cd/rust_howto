@@ -1,7 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
-//! Models the register block and ownership token of a peripheral access crate.
 // ANCHOR: example
+//! Models the register block and ownership token of a peripheral access crate.
+
 use core::cell::UnsafeCell;
 use core::sync::atomic::AtomicBool;
 use core::sync::atomic::Ordering;
@@ -13,12 +14,13 @@ use core::sync::atomic::Ordering;
 struct Register(UnsafeCell<u32>);
 
 impl Register {
+    /// Constructs a usable initial register value with the defaults required by the main component.
     const fn new(reset_value: u32) -> Self {
         Self(UnsafeCell::new(reset_value))
     }
 
-    /// Reads the register. Volatile access keeps the compiler from caching
     /// or removing reads of hardware state.
+
     fn read(&self) -> u32 {
         // SAFETY: the pointer comes from a live `UnsafeCell<u32>`.
         unsafe { self.0.get().read_volatile() }
@@ -47,17 +49,20 @@ struct GpioRegisters {
 
 /// Ownership token for the GPIO port. Only one can exist.
 struct Gpio {
+    /// Memory-mapped registers for the GPIO device.
     registers: GpioRegisters,
 }
 
 /// All peripherals of the chip, handed out once, like a PAC's `Peripherals`.
 struct Peripherals {
+    /// GPIO device controlled by these registers.
     gpio: Gpio,
 }
 
 impl Peripherals {
     /// Returns the peripherals the first time it is called, then `None`.
     fn take() -> Option<Self> {
+        /// Shared `taken` used by this module.
         static TAKEN: AtomicBool = AtomicBool::new(false);
         Self::take_once(&TAKEN)
     }
@@ -100,6 +105,11 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Models the register block and ownership token of a peripheral access crate.
+fn run() {
+    main();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -110,7 +120,6 @@ mod tests {
         main();
     }
 
-    /// Verifies that only the first take returns the peripherals.
     #[test]
     fn peripherals_can_be_taken_once() {
         let taken = AtomicBool::new(false);
@@ -118,7 +127,6 @@ mod tests {
         assert!(Peripherals::take_once(&taken).is_none());
     }
 
-    /// Verifies that configuring one pin leaves the others untouched.
     #[test]
     fn modify_preserves_other_pins() {
         let taken = AtomicBool::new(false);

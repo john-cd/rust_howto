@@ -95,6 +95,14 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example through its program entry point.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> Result<()> {
+    main()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -115,7 +123,6 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies media sequence numbers and timestamps wrap at their field
     /// widths.
     #[test]
     fn frame_metadata_advances_and_wraps() {

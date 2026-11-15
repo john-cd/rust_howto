@@ -90,10 +90,9 @@ where
 /// Demonstrates the subcommand against a temporary Cargo package.
 ///
 /// # Errors
-///
 /// Returns an error if the temporary project cannot be created or queried.
 #[cfg(test)]
-pub fn run() -> anyhow::Result<()> {
+pub fn example_body() -> anyhow::Result<()> {
     let dir = tempfile::tempdir()?;
     let manifest = dir.path().join("Cargo.toml");
     std::fs::write(
@@ -108,14 +107,20 @@ pub fn run() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example function and returns its result.
+///
+/// # Errors
+/// Returns an error if the example operation fails.
+pub fn run() -> anyhow::Result<()> {
+    example_body()
+}
+
+/// Returns an error if the argument parser or metadata command fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies that Cargo's subcommand name is consumed by the parser.
-    ///
     /// # Errors
-    ///
     /// Returns an error if the argument parser or metadata command fails.
     #[test]
     fn the_subcommand_name_is_skipped() -> anyhow::Result<()> {
@@ -133,16 +138,12 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that unknown options are rejected.
     #[test]
     fn unknown_flags_are_rejected() {
         assert!(CargoCli::try_parse_from(["cargo", "hello", "--nope"]).is_err());
     }
 
-    /// Verifies that package selection honors the workspace and exclude flags.
-    ///
     /// # Errors
-    ///
     /// Returns an error if the temporary package cannot be created or queried.
     #[test]
     fn selects_the_default_package() -> anyhow::Result<()> {
@@ -170,10 +171,7 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that the book example runs against a temporary package.
-    ///
     /// # Errors
-    ///
     /// Returns an error if the example cannot create or query its package.
     #[test]
     fn run_succeeds() -> anyhow::Result<()> {

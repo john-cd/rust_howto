@@ -20,13 +20,17 @@ fn redactor(words: &[&str]) -> Result<AhoCorasick, aho_corasick::BuildError> {
         .match_kind(MatchKind::LeftmostLongest)
         .build(words)
 }
-
 /// Replaces every match with `***`.
+
 fn redact(ac: &AhoCorasick, text: &str) -> String {
     let replacements = vec!["***"; ac.patterns_len()];
     ac.replace_all(text, &replacements)
 }
 
+/// Finds and redacts configured secret words in a sample string.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 fn main() -> anyhow::Result<()> {
     let ac = redactor(&["pass", "password", "token"])?;
 
@@ -42,6 +46,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

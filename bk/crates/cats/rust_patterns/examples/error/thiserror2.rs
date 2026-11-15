@@ -29,6 +29,7 @@ pub struct MyError {
 /// Implement the `Display` trait for `MyError` to customize its string
 /// representation.
 impl std::fmt::Display for MyError {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> Result<(), std::fmt::Error> {
         write!(f, "{}", self.msg)
     }
@@ -58,6 +59,9 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }

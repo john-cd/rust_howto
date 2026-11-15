@@ -18,8 +18,9 @@ use heck::ToLowerCamelCase as _;
 use heck::ToPascalCase as _;
 use heck::ToSnakeCase as _;
 use heck::ToTitleCase as _;
-
+/// Runs the example.
 /// Converts a string to several cases.
+
 fn main() {
     let input = "hello_world example-string";
 
@@ -32,8 +33,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

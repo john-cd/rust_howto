@@ -7,12 +7,14 @@ use clap::Parser;
 #[cfg(any(feature = "diesel", feature = "sea_orm", feature = "sqlx"))]
 use clap::Subcommand;
 
+/// Runs the Diesel query-builder example.
 #[cfg(feature = "diesel")]
 mod diesel1;
 #[cfg(feature = "sea_orm")]
 mod sea_orm;
 #[cfg(feature = "sea_orm")]
 mod seaography;
+/// Runs the SQLx query-builder example.
 #[cfg(feature = "sqlx")]
 mod sqlx;
 
@@ -77,6 +79,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies command-line selection and execution of the documented examples.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -87,24 +90,28 @@ mod tests {
     fn test_main_is_a_no_op_without_features() {
         assert!(main().is_ok());
     }
+    /// Verifies diesel1 subcommand parses.
 
     #[cfg(feature = "diesel")]
     #[test]
     fn test_diesel1_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "diesel1"]).is_ok());
     }
+    /// Verifies sea orm subcommand parses.
 
     #[cfg(feature = "sea_orm")]
     #[test]
     fn test_sea_orm_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "sea_orm"]).is_ok());
     }
+    /// Verifies seaography subcommand parses.
 
     #[cfg(feature = "sea_orm")]
     #[test]
     fn test_seaography_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "seaography"]).is_ok());
     }
+    /// Verifies sqlx subcommand parses.
 
     #[cfg(feature = "sqlx")]
     #[test]

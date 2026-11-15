@@ -42,10 +42,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the scoped-thread example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that scoped workers borrow local text and return their values.
 #[cfg(test)]
 mod tests {
     use super::*;

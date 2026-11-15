@@ -35,17 +35,28 @@
 // `flutter_rust_bridge_codegen generate --watch`
 
 /// Greets a user from a generated Flutter bridge.
+///
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected flutter rust bridge.
+
 pub fn greet(name: String) -> String {
     format!("Hello, {name}! This is Rust speaking.")
 }
 
 /// Demonstrates an asynchronous Rust function exposed to Flutter.
+///
+/// # Arguments
+/// * `name` - Human-readable value used to identify or display the selected flutter rust bridge.
+
 pub async fn greet_async(name: String) -> String {
     greet(name)
 }
-
-/// Builds the values sent by the stream example so the API can be tested
-/// without Flutter.
+/// Builds the greeting values sent by the stream example.
+///
+/// Keeping this transformation in plain Rust lets it be tested without Flutter.
+///
+/// # Arguments
+/// * `name` - Name included in each greeting.
 fn greeting_updates(name: String) -> impl Iterator<Item = String> {
     [
         greet(name.clone()),
@@ -55,6 +66,9 @@ fn greeting_updates(name: String) -> impl Iterator<Item = String> {
 }
 
 /// Streams greeting updates to a Dart `Stream` and returns send failures to the
+///
+/// # Arguments
+/// * `name` - Name used to identify the item.
 /// caller.
 ///
 /// # Errors
@@ -80,8 +94,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the Flutter Rust Bridge example.
+
 pub fn run() {
     main();
 }
@@ -101,7 +116,6 @@ mod tests {
         main();
     }
 
-    /// Checks that the bridge API preserves the supplied name.
     #[test]
     fn greeting_includes_the_supplied_name() {
         assert_eq!(
@@ -110,7 +124,6 @@ mod tests {
         );
     }
 
-    /// Checks that the asynchronous bridge API returns the same greeting.
     #[test]
     fn async_greeting_includes_the_supplied_name() {
         let waker = Waker::noop();
@@ -123,7 +136,6 @@ mod tests {
         );
     }
 
-    /// Checks that the stream API sends useful updates in a stable order.
     #[test]
     fn greeting_updates_are_ordered_and_personalized() {
         assert_eq!(

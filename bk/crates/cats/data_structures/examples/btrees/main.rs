@@ -5,7 +5,11 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Builds or traverses btrees graph data while preserving relationships needed by downstream
+/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod btreemap;
+/// Builds or traverses btrees graph data while preserving relationships needed by downstream
+/// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod btreeset;
 
 /// Command-line arguments.
@@ -40,8 +44,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -55,7 +60,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["btreemap", "btreeset"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

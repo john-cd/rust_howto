@@ -17,6 +17,7 @@ use pulldown_cmark::Parser;
 use pulldown_cmark::html;
 
 /// Parses Markdown into events and renders them as HTML.
+/// Prints the greeting embedded in the Markdown code fence.
 fn main() {
     let markdown_input = r#"
 # Hello, Pulldown CMark!
@@ -26,8 +27,8 @@ This is a simple paragraph with **bold** and *italic* text.
 * List item 1
 * List item 2
 
-```rust
 /// Prints the greeting embedded in the Markdown code fence.
+```rust
 fn example() {
     println!("Hello from Rust!");
 }
@@ -55,8 +56,10 @@ fn example() {
 }
 
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -70,8 +73,11 @@ mod tests {
     fn test_pulldown_cmark_example_entry_point() {
         main();
     }
+    /// Renders the current value.
 
-    /// Renders markdown with all extensions enabled.
+    /// # Arguments
+    /// * `input` - Input data whose fields determine the requested pulldown cmark operation.
+
     fn render(input: &str) -> String {
         let mut html_output = String::new();
         html::push_html(&mut html_output, Parser::new_ext(input, Options::all()));

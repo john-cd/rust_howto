@@ -5,8 +5,12 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// `afl` (American Fuzzy Loop) is a popular fuzz testing tool, and `afl.rs` is a Rust crate that
+/// provides support for integrating AFL with Rust programs.
 #[cfg(not(windows))]
 mod afl;
+/// `bolero` is a fuzzing frontend for Rust that supports multiple engines like libFuzzer, AFL, and
+/// Honggfuzz.
 mod bolero_example;
 
 /// Command-line arguments.
@@ -43,8 +47,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -63,7 +68,6 @@ mod tests {
     #[cfg(windows)]
     const SUBCOMMANDS: &[&str] = &["bolero_example"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

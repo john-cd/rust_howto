@@ -1,6 +1,6 @@
+#![allow(clippy::async_yields_async)]
 // TODO Reviewed ??-??-2026.
 
-#![allow(clippy::async_yields_async)]
 // ANCHOR: example
 //! # Futures
 //!
@@ -52,10 +52,14 @@ async fn main() -> Result<()> {
     assert_eq!(flat, 1);
     Ok(())
 }
-
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 /// Runs the example.
+/// # Futures
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }

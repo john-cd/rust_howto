@@ -1,9 +1,8 @@
-// TODO Reviewed ??-??-2026.
-
-// ANCHOR: pus-telecommand
 //! Create and parse a PUS-C telecommand.
+//!
+//! TODO Reviewed ??-??-2026.
+
 /// Creates, serializes, and parses a PUS-C connection-test telecommand.
-///
 /// A telecommand is an instruction sent from the ground to a spacecraft.
 /// PUS (Packet Utilization Standard, from ECSS) layers named services on top
 /// of CCSDS packets. Service 17 is the "test" service: subtype 1 asks the

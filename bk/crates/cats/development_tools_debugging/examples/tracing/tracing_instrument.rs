@@ -27,7 +27,6 @@ fn my_function(my_arg: usize) {
 /// This async function will be instrumented with a span.
 ///
 /// The span will be named `my_async_span`.
-///
 /// The span will be exited when the function yields and re-entered when it
 /// resumes.
 #[instrument(name = "my_async_span")]
@@ -63,6 +62,7 @@ pub fn run() {
     main();
 }
 
+/// Checks that the instrumented functions run.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -81,6 +81,16 @@ mod tests {
     struct Buf(std::sync::Arc<std::sync::Mutex<Vec<u8>>>);
 
     impl std::io::Write for Buf {
+        /// Appends formatted tracing bytes to the shared capture buffer.
+        ///
+        /// # Arguments
+        /// * `data` - Bytes produced by the formatter.
+        ///
+        /// # Returns
+        /// The number of bytes appended.
+        ///
+        /// # Errors
+        /// Returns an I/O error if the buffer lock is poisoned.
         fn write(&mut self, data: &[u8]) -> std::io::Result<usize> {
             self.0
                 .lock()
@@ -88,6 +98,8 @@ mod tests {
                 .extend_from_slice(data);
             Ok(data.len())
         }
+
+        /// Flushes the current value.
 
         fn flush(&mut self) -> std::io::Result<()> {
             Ok(())
@@ -97,12 +109,13 @@ mod tests {
     impl<'a> tracing_subscriber::fmt::MakeWriter<'a> for Buf {
         type Writer = Self;
 
+        /// Assembles the writer from its component values so callers receive a ready-to-use result.
         fn make_writer(&'a self) -> Self {
             self.clone()
         }
     }
-
     /// Runs `f` with a thread-local subscriber and returns what it logged.
+
     fn capture(f: impl FnOnce()) -> String {
         let buf = Buf::default();
         let subscriber = tracing_subscriber::fmt()

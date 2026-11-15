@@ -14,8 +14,9 @@ use gtk::Button;
 use gtk::Label;
 use gtk::Orientation;
 use gtk::prelude::*;
-
+/// Runs the example.
 /// Creates and runs the application.
+
 fn main() {
     let app = Application::builder()
         .application_id("org.example.gtk4_counter")
@@ -27,6 +28,7 @@ fn main() {
 }
 
 /// Builds the window of the application.
+/// Builds ui.
 fn build_ui(app: &Application) {
     let window = ApplicationWindow::builder()
         .application(app)
@@ -84,6 +86,11 @@ fn build_ui(app: &Application) {
 }
 
 /// Updates `label` according to `value`.
+/// Applies the conditional label change to gtk4 and keeps dependent state consistent for later
+/// operations.
+///
+/// # Arguments
+/// * `label` - Human-readable value used to identify or display the selected gtk4.
 fn update_conditional_label(label: &Label, value: i32) {
     if value % 2 == 0 {
         label.set_text("Counter is even!");
@@ -92,18 +99,19 @@ fn update_conditional_label(label: &Label, value: i32) {
     }
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Opens the GTK 4 counter application.
+
 pub fn run() {
     main();
 }
 
+/// Activates the application on a display and clicks both buttons.
 #[cfg(test)]
 mod tests {
     use super::*;
 
     /// Activates the application on a display and clicks both buttons.
-    ///
     /// Run with a display, for example `xvfb-run -a cargo test --features gtk
     /// --example gtk -- --ignored --test-threads=1`: GTK must be used from the
     /// main thread.

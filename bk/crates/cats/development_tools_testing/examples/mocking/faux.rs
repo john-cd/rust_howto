@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Mocking a struct's methods with `faux`.
 //!
 //! A mock replaces a real dependency (a database or a web service) in a test,
@@ -7,15 +8,11 @@
 //! the methods of a struct without requiring a trait.
 
 /// Runs the example.
-pub fn run() {
-    main();
-}
 
-// ANCHOR: example
 // `faux` mocks the methods of structs for testing without
 // complicating or polluting our code.
-
 /// Represents a user with an ID and a name.
+
 #[derive(Debug, Clone, PartialEq)]
 struct User {
     /// Unique identifier of the user.
@@ -31,10 +28,11 @@ trait Database {
     /// Returns `Some(User)` if a user with the given ID exists, otherwise
     /// `None`.
     fn get_user(&self, id: u64) -> Option<User>;
-
-    /// Saves a user to the database.
-    ///
     /// Returns `true` if the save operation was successful, `false` otherwise.
+
+    /// # Returns
+    /// `true` when the condition described above holds, and `false` otherwise.
+
     fn save_user(&self, user: &User) -> bool;
 }
 
@@ -58,6 +56,14 @@ impl<D: Database> UserService<D> {
     }
 
     /// Renames the user `id`; returns whether the update succeeded.
+
+    /// # Arguments
+    /// * `id` - Identifier used to select the user service or related record being processed.
+    /// * `name` - Human-readable value used to identify or display the selected user service.
+    ///
+    /// # Returns
+    /// `true` when the condition described above holds, and `false` otherwise.
+
     fn update_user_name(&self, id: u64, name: String) -> bool {
         if let Some(mut user) = self.database.get_user(id) {
             user.name = name;
@@ -72,12 +78,17 @@ impl<D: Database> UserService<D> {
 struct ActualDatabase; // Well, sort of...
 
 impl Database for ActualDatabase {
+    /// # Arguments
+    /// * `id` - Identifier used to select the actual database record or cache entry affected by
+    ///   this operation.
     fn get_user(&self, id: u64) -> Option<User> {
         (id == 1).then(|| User {
             id,
             name: "Alice".to_owned(),
         })
     }
+
+    /// Persists the user produced by the faux workflow so later operations can retrieve it.
 
     fn save_user(&self, user: &User) -> bool {
         println!("Saved user: {user:?}");
@@ -98,13 +109,15 @@ impl Database for MockDatabase {
         None
     }
 
+    /// Persists the user produced by the faux workflow so later operations can retrieve it.
+
     fn save_user(&self, _user: &User) -> bool {
         // This will be mocked as well.
         false
     }
 }
-
 /// Looks up and renames a user through the service.
+
 fn main() {
     let service = UserService::new(ActualDatabase);
     let original_name = service
@@ -114,6 +127,12 @@ fn main() {
 
     println!("Original user name: {original_name}");
     println!("Update succeeded: {updated}");
+}
+// ANCHOR_END: example
+
+/// Mocking a struct's methods with `faux`.
+pub fn run() {
+    main();
 }
 
 /// Test module for `UserService` using `MockDatabase`.
@@ -175,4 +194,3 @@ mod tests {
         main();
     }
 }
-// ANCHOR_END: example

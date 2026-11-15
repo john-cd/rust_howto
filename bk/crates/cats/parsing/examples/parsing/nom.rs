@@ -26,17 +26,24 @@ fn parse_number(input: &str) -> IResult<&str, u32> {
     // error.
     map_res(digit1, str::parse).parse(input)
 }
-
 /// `parse_comma_separated_numbers` parses a comma-separated list of numbers.
 /// It returns a vector of `u32` integers.
+///
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested nom operation.
+
+/// # Errors
+/// Returns an error if a fallible operation cannot complete.
+/// Returns an error if the supplied input is invalid.
 fn parse_comma_separated_numbers(input: &str) -> IResult<&str, Vec<u32>> {
     // - `tag` recognizes a pattern / string.
     // - `separated_list0` alternates between two parsers to produce a list of
     // elements.
     separated_list0(tag(","), parse_number).parse(input)
 }
-
+/// Runs the example.
 /// Parses a comma-separated list of numbers and prints the result.
+
 fn main() {
     let input = "1,2,3,4,5";
     match parse_comma_separated_numbers(input) {
@@ -49,8 +56,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

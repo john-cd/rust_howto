@@ -43,13 +43,22 @@ struct SandboxConfig {
 
 /// An engine that meters fuel, plus a cache of compiled modules.
 struct Sandbox {
+    /// Wasmtime engine configured to meter guest execution.
     engine: Engine,
+    /// Fuel and memory limits applied to each guest store.
     config: SandboxConfig,
     /// Compiled modules, keyed by the hash of their source.
     cache: HashMap<String, Module>,
 }
 
 impl Sandbox {
+    /// Creates an engine configured for fuel metering and an empty module cache.
+    ///
+    /// # Arguments
+    /// * `config` - Fuel and linear-memory limits applied to guest executions.
+    ///
+    /// # Errors
+    /// Returns an error if Wasmtime cannot create the configured engine.
     fn new(config: SandboxConfig) -> Result<Self> {
         let mut engine_config = Config::new();
         engine_config.consume_fuel(true);
@@ -83,7 +92,10 @@ impl Sandbox {
         Ok(store)
     }
 
-    /// Calls an exported `(i32) -> i32` function.
+    /// Calls an exported `(i32) -> i32` function with one integer argument.
+    ///
+    /// # Errors
+    /// Returns an error if compilation, linking, instantiation, or the guest call fails.
     fn call(&mut self, wat: &str, export: &str, arg: i32) -> Result<i32> {
         let module = self.module(wat)?;
         let mut linker = Linker::new(&self.engine);
@@ -96,6 +108,9 @@ impl Sandbox {
     }
 
     /// Calls an exported `() -> ()` function.
+    ///
+    /// # Errors
+    /// Returns an error if compilation, linking, instantiation, or the guest call fails.
     fn call_unit(&mut self, wat: &str, export: &str) -> Result<()> {
         let module = self.module(wat)?;
         let linker = {
@@ -111,6 +126,9 @@ impl Sandbox {
 }
 
 /// Demonstrates normal host calls, fuel exhaustion, and memory limits.
+///
+/// # Errors
+/// Returns an error if Wasmtime rejects the module or any guest operation fails.
 fn main() -> Result<()> {
     let mut sandbox = Sandbox::new(SandboxConfig {
         fuel: 10_000,
@@ -135,6 +153,10 @@ fn main() -> Result<()> {
 
 // ANCHOR_END: example
 
+/// Runs the Wasmtime sandbox example.
+///
+/// # Errors
+/// Returns an error if engine setup or a guest operation fails.
 pub fn run() -> Result<()> {
     main()
 }

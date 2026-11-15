@@ -5,13 +5,21 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Silencing the warning about unused code with `#[allow(dead_code)]`.
 mod allow_dead_code;
+/// Marking an item as deprecated with `#[deprecated]`.
 mod attributes_deprecated;
+/// Deriving traits with `#[derive]`.
 mod attributes_derive;
+/// `allow` attributes suppress specific warnings.
 mod attributes_early_development;
+/// Warning about an ignored result with `#[must_use]`.
 mod attributes_must_use;
+/// Typical lint attributes for production code.
 mod attributes_production;
+/// This example demonstrates how to use `cfg-if` to conditionally compile code blocks.
 mod cfg_if;
+/// This example demonstrates conditional compilation using the `#[cfg]`
 mod conditional_compilation;
 
 /// Command-line arguments.
@@ -82,8 +90,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -106,7 +115,6 @@ mod tests {
         "conditional_compilation",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

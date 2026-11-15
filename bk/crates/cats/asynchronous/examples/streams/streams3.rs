@@ -89,6 +89,9 @@ async fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -109,6 +112,8 @@ mod tests {
         assert!(fetch_data(6).await.is_err());
     }
 
+    /// # Errors
+    /// An error is returned if into_inner fails.
     #[tokio::test(start_paused = true)]
     async fn concurrent_processing_handles_every_item() -> Result<(), Box<dyn std::error::Error>> {
         let results = std::sync::Mutex::new(Vec::new());
@@ -126,6 +131,7 @@ mod tests {
         assert_eq!(results.iter().filter(|r| r.is_err()).count(), 1);
         Ok(())
     }
+    /// Filters map drops the errors.
 
     #[tokio::test]
     async fn filter_map_drops_the_errors() {

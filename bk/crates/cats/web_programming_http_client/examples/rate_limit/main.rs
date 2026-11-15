@@ -1,9 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
-//! Client-side rate limiting.
 // ANCHOR: example
-//! Limit the rate of outgoing calls with a token bucket.
+//! Client-side rate limiting.
 //!
+//! Limit the rate of outgoing calls with a token bucket.
 //! [`governor`] implements the generic cell rate algorithm: each call takes a
 //! cell from a bucket that refills at a fixed rate.
 
@@ -18,8 +18,11 @@ use governor::clock::FakeRelativeClock;
 fn quota() -> Quota {
     Quota::per_second(NonZeroU32::MIN.saturating_add(1))
 }
-
 /// Calls `call` at most as often as the quota allows, waiting when necessary.
+///
+/// # Arguments
+/// * `count` - Bound used to limit accepted data or the amount of work performed.
+
 async fn rate_limited_calls(count: u32) -> Vec<u32> {
     let limiter = RateLimiter::direct(quota());
     let mut done = Vec::new();
@@ -31,6 +34,9 @@ async fn rate_limited_calls(count: u32) -> Vec<u32> {
     }
     done
 }
+/// Runs the example.
+
+///
 
 #[tokio::main]
 async fn main() {
@@ -41,6 +47,7 @@ async fn main() {
 
 /// The quota can be checked deterministically with a fake clock,
 /// so the test does not sleep.
+
 fn check_with_fake_clock() -> (bool, bool, bool, bool) {
     let clock = FakeRelativeClock::default();
     let limiter = RateLimiter::direct_with_clock(quota(), clock.clone());
@@ -54,6 +61,11 @@ fn check_with_fake_clock() -> (bool, bool, bool, bool) {
     (first, second, third, fourth)
 }
 // ANCHOR_END: example
+
+/// Runs the example through its program entry point.
+pub fn run() -> (bool, bool, bool, bool) {
+    main()
+}
 
 #[cfg(test)]
 mod tests {

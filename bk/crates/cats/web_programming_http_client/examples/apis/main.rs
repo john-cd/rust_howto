@@ -5,10 +5,15 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Wrap a paginated API (crates.io reverse dependencies) in an iterator.
 mod paginated;
+/// Calculate how long to wait after hitting a GitHub REST API rate limit.
 mod rate_limited;
+/// This example demonstrates how to make a GET request to a REST API and
 mod rest_get;
+/// This example demonstrates how to use the `HEAD` method to check if a
 mod rest_head;
+/// Example of using the `reqwest` crate to create and delete a GitHub Gist.
 mod rest_post;
 
 /// Command-line arguments.
@@ -84,7 +89,6 @@ mod tests {
         "rest_post",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

@@ -66,12 +66,16 @@ impl Source for Sine {
     }
 
     /// `None`: the sound never ends.
+
     fn total_duration(&self) -> Option<Duration> {
         None
     }
 }
-
 /// Plays a chord for one second. It needs an audio device.
+///
+/// # Errors
+/// Returns an error if a fallible operation cannot complete.
+
 #[expect(
     dead_code,
     reason = "this optional playback helper requires a device; the example stays device-free"
@@ -104,6 +108,7 @@ fn main() {
     println!("A4 generated; call play_chord() to hear it.");
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

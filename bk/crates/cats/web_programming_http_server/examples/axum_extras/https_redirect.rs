@@ -17,11 +17,16 @@ use axum_extra::headers::Host as HostHeader;
 /// Ports of the plain HTTP and HTTPS listeners.
 #[derive(Clone, Copy, Debug)]
 pub struct Ports {
+    /// HTTP port used by the local endpoint.
     pub http: u16,
+    /// HTTPS port used by the local endpoint.
     pub https: u16,
 }
 
 /// Rewrites `uri` to use `https`, replacing the HTTP port in `host`.
+///
+/// # Arguments
+/// * `uri` - URI identifying the requested resource.
 pub fn make_https(host: &str, uri: &Uri, ports: Ports) -> anyhow::Result<Uri> {
     let mut parts = uri.clone().into_parts();
     parts.scheme = Some(Scheme::HTTPS);
@@ -55,6 +60,15 @@ pub fn app(ports: Ports) -> Router {
 }
 // ANCHOR_END: example
 
+/// Builds the router that redirects HTTP requests to HTTPS.
+pub fn run() -> Router {
+    app(Ports {
+        http: 8080,
+        https: 8443,
+    })
+}
+
+/// An error is returned if replaces_port_and_scheme, make_https fails.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -64,11 +78,14 @@ mod tests {
 
     use super::*;
 
+    /// Shared `ports` used by this module.
     const PORTS: Ports = Ports {
         http: 8080,
         https: 8443,
     };
 
+    /// # Errors
+    /// An error is returned if replaces_port_and_scheme, make_https fails.
     #[test]
     fn replaces_port_and_scheme() -> anyhow::Result<()> {
         let uri: Uri = "/a/b?c=d".parse()?;
@@ -77,6 +94,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if make_https fails.
     #[test]
     fn default_https_port_is_omitted() -> anyhow::Result<()> {
         let ports = Ports {
@@ -88,13 +107,15 @@ mod tests {
         Ok(())
     }
 
-    #[test]
+    /// # Errors
+    /// An error is returned if invalid_host_is_an_error fails.
     fn invalid_host_is_an_error() -> anyhow::Result<()> {
         assert!(make_https("bad host", &"/".parse()?, PORTS).is_err());
         Ok(())
     }
 
-    #[tokio::test]
+    /// # Errors
+    /// An error is returned if redirects fails.
     async fn redirects() -> anyhow::Result<()> {
         let request = Request::get("/login?next=%2F")
             .header("host", "example.com:8080")

@@ -11,8 +11,9 @@
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() { x } else { y }
 }
-
+/// Runs the example.
 /// Finds the longer of two strings.
+
 fn main() {
     // The compiler infers the concrete lifetime for `'a` at the call site,
     // choosing the shorter of the two input lifetimes.
@@ -21,8 +22,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

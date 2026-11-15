@@ -4,6 +4,8 @@
 
 use anyhow::Result;
 
+/// Runs six Apache Arrow examples: arrays, sub-crate arrays, IPC files, CSV, JSON, and Serde
+/// conversion.
 #[cfg(feature = "arrow")]
 mod arrow;
 

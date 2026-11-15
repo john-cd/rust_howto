@@ -45,6 +45,9 @@ fn decode_wav(bytes: Vec<u8>) -> Result<Vec<f32>, Box<dyn Error>> {
 }
 
 /// Plays an audio file through the system's default output device.
+///
+/// # Errors
+/// Returns an error if a fallible operation cannot complete.
 #[expect(
     dead_code,
     reason = "this optional playback helper requires a device; the example stays device-free"
@@ -70,10 +73,14 @@ fn main() -> Result<(), Box<dyn Error>> {
 // ANCHOR_END: example
 
 /// Runs the device-free decoder example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
 
+/// Verifies WAV decoding returns samples without requiring an audio device.
 #[cfg(test)]
 mod tests {
     use super::*;

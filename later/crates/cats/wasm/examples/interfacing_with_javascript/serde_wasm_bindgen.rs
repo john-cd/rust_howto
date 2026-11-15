@@ -1,5 +1,3 @@
-// TODO Reviewed ??-??-2026.
-
 #![cfg_attr(
     not(test),
     expect(
@@ -7,6 +5,8 @@
         reason = "targets the browser (wasm32); native builds cannot call it"
     )
 )]
+// TODO Reviewed ??-??-2026.
+
 // ANCHOR: example
 //! Converts structured values between JavaScript and Rust with Serde.
 //!
@@ -37,9 +37,15 @@ fn increment_profile(profile: &mut Profile) -> Result<(), &'static str> {
 
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use wasm_bindgen::prelude::*;
-
 /// Deserializes a JavaScript profile, increments its visit count, and returns
+
 /// it.
+
+/// # Arguments
+/// * `value` - Value the serde wasm bindgen operation validates, transforms, or stores.
+
+/// # Errors
+/// Returns an error if the increment visits operation cannot satisfy its required invariants.
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 #[wasm_bindgen]
 pub fn increment_visits(value: JsValue) -> Result<JsValue, JsValue> {
@@ -48,25 +54,26 @@ pub fn increment_visits(value: JsValue) -> Result<JsValue, JsValue> {
     increment_profile(&mut profile).map_err(JsValue::from_str)?;
     serde_wasm_bindgen::to_value(&profile).map_err(|error| JsValue::from_str(&error.to_string()))
 }
-// ANCHOR_END: example
 
 /// Explains how to run the browser-only conversion on a native host.
 fn main() {
     #[cfg(not(all(target_arch = "wasm32", target_os = "unknown")))]
     println!("Build for wasm32-unknown-unknown to convert JavaScript values.");
 }
+// ANCHOR_END: example
 
 /// Runs the example's host-side runner.
+/// Converts structured values between JavaScript and Rust with Serde.
 pub fn run() {
     main();
 }
 
+/// Serde.
 #[cfg(test)]
 mod tests {
     use super::Profile;
     use super::increment_profile;
 
-    /// Verifies that a profile's visit count can be incremented.
     #[test]
     fn increments_profile_visits() {
         let mut profile = Profile {
@@ -78,7 +85,6 @@ mod tests {
         assert_eq!(profile.visits, 4);
     }
 
-    /// Verifies that visit-count overflow is reported.
     #[test]
     fn reports_profile_visit_overflow() {
         let mut profile = Profile {
@@ -92,7 +98,6 @@ mod tests {
         );
     }
 
-    /// Verifies that the host-side example runner succeeds.
     #[test]
     fn host_runner_succeeds() {
         super::main();

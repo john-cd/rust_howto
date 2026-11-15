@@ -29,17 +29,20 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the Prometheus exposition example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// scrape.
 #[cfg(test)]
 mod tests {
     use metrics_exporter_prometheus::PrometheusBuilder;
 
     use super::main;
 
-    /// Verifies that the in-memory handle renders measurements without an HTTP
     /// scrape.
     #[test]
     fn renders_recorded_metrics() {

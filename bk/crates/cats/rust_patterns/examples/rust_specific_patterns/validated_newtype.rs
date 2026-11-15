@@ -26,6 +26,7 @@ enum EmailError {
 }
 
 impl fmt::Display for EmailError {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
             Self::MissingAt => write!(f, "expected exactly one '@'"),
@@ -46,6 +47,7 @@ struct EmailAddress(String);
 impl TryFrom<String> for EmailAddress {
     type Error = EmailError;
 
+    /// Attempts to from and reports failure to the caller.
     fn try_from(value: String) -> Result<Self, Self::Error> {
         let mut parts = value.split('@');
         let (Some(local), Some(domain), None) = (parts.next(), parts.next(), parts.next()) else {
@@ -62,34 +64,45 @@ impl TryFrom<String> for EmailAddress {
 }
 
 impl TryFrom<&str> for EmailAddress {
+    /// Error returned when a string cannot be converted to an email address.
     type Error = EmailError;
 
+    /// Converts a string slice into a validated email address.
+    ///
+    /// # Errors
+    /// Returns `EmailError` if the value is not a valid email address.
     fn try_from(value: &str) -> Result<Self, Self::Error> {
         value.to_owned().try_into()
     }
 }
 
 impl FromStr for EmailAddress {
+    /// Error returned when a string cannot be parsed as an email address.
     type Err = EmailError;
 
+    /// Converts between the email address representation and str while preserving the invariants
+    /// required by callers.
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         s.try_into()
     }
 }
 
 impl From<EmailAddress> for String {
+    /// # Arguments
+    /// * `email` - Email address used for account lookup and authentication.
     fn from(email: EmailAddress) -> Self {
         email.0
     }
 }
 
 impl fmt::Display for EmailAddress {
+    /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str(&self.0)
     }
 }
-
 /// Parses valid and invalid addresses, directly and through JSON.
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let email: EmailAddress = "ferris@example.com".parse()?;
     println!("Valid: {email}");
@@ -121,12 +134,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     if let Err(e) = main() {
         eprintln!("{e}");
     }
 }
 
+/// Checks validation, parsing, conversion, and JSON round trips.
 #[cfg(test)]
 mod tests {
     use super::*;

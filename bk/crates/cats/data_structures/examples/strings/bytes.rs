@@ -9,8 +9,9 @@
 
 use bytes::BufMut as _;
 use bytes::BytesMut;
-
+/// Runs the example.
 /// Builds a `BytesMut` buffer, then freezes it into an immutable `Bytes`.
+
 fn main() {
     let mut buf = BytesMut::with_capacity(64);
     buf.put(&b"hello "[..]);
@@ -25,8 +26,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

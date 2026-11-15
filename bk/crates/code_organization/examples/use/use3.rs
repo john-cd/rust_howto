@@ -12,6 +12,8 @@ use std::collections::HashMap;
 // crate. We therefore prefix the path with the crate's name.
 
 /// Builds a map with the imported `HashMap`.
+/// Uses an imported `HashMap`.
+
 fn build_map() -> HashMap<u32, String> {
     // We now refer to `HashMap` by its name.
     let mut mymap: HashMap<u32, String> = HashMap::new();
@@ -20,20 +22,23 @@ fn build_map() -> HashMap<u32, String> {
     mymap.entry(42).or_insert("my favorite number".into());
     mymap
 }
-
+/// Runs the example.
 /// Uses an imported `HashMap`.
+
 fn main() {
     let mymap = build_map();
     println!("{mymap:?}");
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Verifies entry or insert keeps existing value.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -42,6 +47,7 @@ mod tests {
     fn test_main() {
         main();
     }
+    /// Verifies build map.
 
     #[test]
     fn test_build_map() {
@@ -51,6 +57,7 @@ mod tests {
         assert_eq!(map.get(&0), None);
     }
 
+    /// Verifies entry or insert keeps existing value.
     #[test]
     fn test_entry_or_insert_keeps_existing_value() {
         let mut map = build_map();

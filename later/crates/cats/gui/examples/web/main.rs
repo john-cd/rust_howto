@@ -5,8 +5,10 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// A web application with `dioxus`.
 #[cfg(feature = "dioxus")]
 mod dioxus;
+/// A plain Rust command function that a Tauri app can expose to its frontend.
 #[cfg(feature = "tauri")]
 mod tauri;
 
@@ -30,8 +32,9 @@ enum Commands {
     #[command(name = "tauri")]
     Tauri,
 }
-
+/// Runs the example.
 /// Runs the example selected on the command line.
+
 fn main() {
     let cli = Cli::parse();
 
@@ -55,7 +58,6 @@ mod tests {
 
     use super::*;
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn cli_definition_is_valid() {
         Cli::command().debug_assert();

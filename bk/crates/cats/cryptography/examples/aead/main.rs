@@ -5,6 +5,8 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// This example demonstrates how to use the `aes-gcm-siv` crate to encrypt and decrypt data using
+/// the AES-GCM-SIV algorithm (Misuse-Resistant Authenticated Encryption Cipher).
 mod aes_gcm_siv;
 
 /// Command-line arguments.
@@ -50,7 +52,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["aes_gcm_siv"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

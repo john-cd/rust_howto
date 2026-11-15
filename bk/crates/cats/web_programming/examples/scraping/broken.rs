@@ -85,11 +85,9 @@ async fn check_link(client: &Client, url: &Url) -> Result<bool> {
 
     bail!("unexpected HTTP status {status} while checking {url}");
 }
-
 /// Checks links on a web page one at a time and prints their status.
-///
+
 /// # Errors
-///
 /// Returns an error if fetching the page, parsing links, building the client,
 /// or checking a link fails.
 #[tokio::main]
@@ -122,7 +120,6 @@ async fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// # Errors
-///
 /// Returns any request, parsing, or link-checking error from the example.
 pub fn run() -> Result<()> {
     main()
@@ -130,6 +127,7 @@ pub fn run() -> Result<()> {
 
 // flaky test
 
+/// Verifies relative links resolve against a relative base href.
 #[cfg(test)]
 mod tests {
     use anyhow::Result;

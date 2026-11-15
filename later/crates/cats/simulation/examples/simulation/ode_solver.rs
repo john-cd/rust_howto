@@ -24,6 +24,9 @@ impl System<f64, Vector1<f64>> for ExponentialDecay {
 }
 
 /// Integrates from 0 to 1 and returns the final value.
+///
+/// # Panics
+/// Panics if the exponential-decay system should integrate.
 fn solve_exponential_decay() -> f64 {
     let mut solver = Rk4::new(ExponentialDecay, 0.0, Vector1::new(1.0), 1.0, 0.1);
     solver
@@ -35,8 +38,9 @@ fn solve_exponential_decay() -> f64 {
         .expect("the RK4 solver should return its final state");
     final_state[0]
 }
-
+/// Runs the example.
 /// Runs the ODE solver example and prints the numerical result.
+
 fn main() {
     let final_value = solve_exponential_decay();
     println!(
@@ -45,18 +49,19 @@ fn main() {
     );
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the ODE solver example through its entry point.
+
 pub fn run() {
     main();
 }
 
+/// Kutta
 #[cfg(test)]
 mod tests {
     use super::main;
     use super::solve_exponential_decay;
 
-    /// Verifies that RK4 agrees with the analytic exponential-decay solution.
     #[test]
     fn rk4_matches_analytic_exponential_decay() {
         let actual = solve_exponential_decay();

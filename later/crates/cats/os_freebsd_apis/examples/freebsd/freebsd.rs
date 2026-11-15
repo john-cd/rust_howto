@@ -1,18 +1,17 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Read-only queries of FreeBSD kernel state.
 //!
 //! FreeBSD is a Unix-like operating system used in servers and network
 //! appliances. `sysctl` is its interface for reading kernel state, such as the
 //! hostname or memory size. It runs on FreeBSD only.
 
-// ANCHOR: example
 use sysctl::Ctl;
 use sysctl::Sysctl;
 use sysctl::SysctlError;
-
 /// Reads and prints the kernel's operating-system type without modifying it.
-///
+
 /// # Errors
 /// Propagates lookup, permission, and value-conversion errors from `sysctl`.
 fn main() -> Result<(), SysctlError> {
@@ -23,9 +22,11 @@ fn main() -> Result<(), SysctlError> {
 // ANCHOR_END: example
 
 /// Runs the FreeBSD-only sysctl query.
+/// Read-only queries of FreeBSD kernel state.
 ///
 /// # Errors
 /// Propagates errors reading the named kernel value.
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), SysctlError> {
     main()
 }

@@ -21,10 +21,10 @@ use rand::rngs::SysRng;
 
 /// This example demonstrates the use of the ECDSA (Elliptic Curve Digital
 /// Signature Algorithm) with the P-256 curve for signing and verifying a
+///
 /// message. It uses the `p256` crate for cryptographic operations.
 ///
 /// # Errors
-///
 /// Returns an error if the operating system cannot provide secure randomness.
 fn main() -> anyhow::Result<()> {
     // Generate a signing key:
@@ -50,11 +50,9 @@ fn main() -> anyhow::Result<()> {
 }
 
 // ANCHOR_END: example
-
 /// Runs the P-256 signature example.
-///
+
 /// # Errors
-///
 /// Returns an error if the operating system cannot provide secure randomness.
 pub fn run() -> anyhow::Result<()> {
     main()

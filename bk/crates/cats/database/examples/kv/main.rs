@@ -7,8 +7,11 @@ use clap::Parser;
 #[cfg(any(feature = "lmdb", feature = "rocksdb"))]
 use clap::Subcommand;
 
+/// This function demonstrates basic usage of the `heed` crate for interacting with an LMDB
+/// database.
 #[cfg(feature = "lmdb")]
 mod heed;
+/// Example using Facebook's `RocksDB` embeddable database.
 #[cfg(feature = "rocksdb")]
 mod rocksdb;
 
@@ -57,6 +60,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies command-line selection and execution of the documented examples.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -67,12 +71,14 @@ mod tests {
     fn test_main_is_a_no_op_without_features() {
         assert!(main().is_ok());
     }
+    /// Verifies heed subcommand parses.
 
     #[cfg(feature = "lmdb")]
     #[test]
     fn test_heed_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "heed"]).is_ok());
     }
+    /// Verifies rocksdb subcommand parses.
 
     #[cfg(feature = "rocksdb")]
     #[test]

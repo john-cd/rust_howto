@@ -15,6 +15,10 @@ const CHILD_MARKER: &str = "EXAMPLE_TEST_ISOLATED_CHILD";
 
 /// Runs `body` in a dedicated process.
 ///
+/// # Arguments
+/// * `name` - Name used to identify the item.
+/// * `body` - Request or response body.
+///
 /// `module_path` is `module_path!()` of the calling test module, and `name` is
 /// the test function's name. In the parent process, the test re-executes
 /// itself with the marker set and asserts that the child succeeded; in the

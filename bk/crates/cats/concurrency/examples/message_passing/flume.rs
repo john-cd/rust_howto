@@ -24,9 +24,12 @@ use flume::unbounded;
 // - Asynchronous support, including mix and match with sync code.
 // - `select`-like interface.
 // - No `unsafe` code.
-
 /// Sends messages through a bounded `flume` channel and selects between
+
 /// channels.
+
+/// # Panics
+/// Panics if receiver remains alive.
 fn main() {
     // A bounded channel applies back-pressure when its two slots are full.
     let (tx, rx) = bounded(2);
@@ -47,6 +50,9 @@ fn main() {
 }
 
 /// Selects between two ready channels and returns both received values.
+
+/// # Panics
+/// Panics if receiver remains alive.
 fn select() -> (bool, i32) {
     let (tx0, rx0) = unbounded();
     let (tx1, rx1) = unbounded();
@@ -56,6 +62,7 @@ fn select() -> (bool, i32) {
         tx1.send(42).expect("receiver remains alive");
     });
 
+    /// Defines the outcomes available to the message passing workflow, including boolean, number.
     enum Selected {
         Boolean(bool),
         Number(i32),
@@ -78,8 +85,9 @@ fn select() -> (bool, i32) {
     result
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

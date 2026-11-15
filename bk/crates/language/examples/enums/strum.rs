@@ -71,8 +71,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
@@ -86,6 +87,7 @@ mod tests {
     fn test_strum_example_entry_point() {
         main();
     }
+    /// Verifies display.
 
     /// `Display` uses the custom serialization.
     #[test]

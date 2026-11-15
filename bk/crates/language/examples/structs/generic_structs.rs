@@ -20,18 +20,21 @@ impl<T> Point<T> {
         &self.x
     }
 }
-
 /// Implementation block for `Point<f32>` only:
+
 impl Point<f32> {
     /// A method specific to `Point<f32>`:
+    /// You may also use Trait Bounds to conditionally implement methods.
+    /// The following is only implemented for `Point<T>` when `T` implements both
+    /// the `Display` and `PartialOrd` traits.
     fn distance_from_origin(&self) -> f32 {
         self.x.hypot(self.y)
     }
 }
-
 /// You may also use Trait Bounds to conditionally implement methods.
 /// The following is only implemented for `Point<T>` when `T` implements both
 /// the `Display` and `PartialOrd` traits.
+
 impl<T: Display + PartialOrd> Point<T> {
     /// Prints the larger coordinate.
     fn cmp_display(&self) {
@@ -42,8 +45,9 @@ impl<T: Display + PartialOrd> Point<T> {
         }
     }
 }
-
+/// Runs the example.
 /// Creates points with several types and calls their methods.
+
 fn main() {
     // Instantiate `Point` with integer coordinates (type `i32`).
     let integer_point = Point { x: 5, y: 10 };
@@ -75,8 +79,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

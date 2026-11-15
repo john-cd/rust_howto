@@ -22,7 +22,9 @@ const LIMIT: usize = 2;
 struct Outcome {
     /// Results, in the order the tasks finished.
     results: Vec<u64>,
+    /// Number of tasks that ended in a panic.
     panicked: usize,
+    /// Number of tasks cancelled before returning.
     cancelled: usize,
 }
 
@@ -66,9 +68,9 @@ async fn run_pool_with_limit(inputs: Vec<u64>, limit: usize) -> Outcome {
 async fn run_pool(inputs: Vec<u64>) -> Outcome {
     run_pool_with_limit(inputs, LIMIT).await
 }
-
 /// `abort_all` cancels the remaining tasks; they report a cancelled
 /// `JoinError`.
+
 async fn abort_demo() -> usize {
     let mut set = JoinSet::new();
     for _ in 0..3 {
@@ -83,8 +85,9 @@ async fn abort_demo() -> usize {
     }
     cancelled
 }
-
+/// Runs the example.
 /// Runs the pool and the abort demonstration on a paused-clock runtime.
+
 fn main() {
     let runtime = match tokio::runtime::Builder::new_current_thread()
         .enable_time()
@@ -108,12 +111,14 @@ fn main() {
     assert_eq!(runtime.block_on(abort_demo()), 3);
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }
 
+/// Checks the bounded pool returns each completed task result.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -125,14 +130,12 @@ mod tests {
         main();
     }
 
-    /// Verifies that empty inputs to the pool result in an empty outcome.
     #[tokio::test(start_paused = true)]
     async fn pool_handles_empty_inputs() {
         let outcome = run_pool(vec![]).await;
         assert_eq!(outcome, Outcome::default());
     }
 
-    /// Verifies that individual panicking tasks are counted without halting remaining tasks.
     #[tokio::test(start_paused = true)]
     async fn pool_records_panicked_tasks_and_continues() {
         let outcome = run_pool(vec![13, 10]).await;
@@ -140,7 +143,6 @@ mod tests {
         assert_eq!(outcome.results, vec![100]);
     }
 
-    /// Verifies that aborting tasks in a JoinSet counts all cancellations.
     #[tokio::test(start_paused = true)]
     async fn abort_demo_cancels_all_spawned_tasks() {
         assert_eq!(abort_demo().await, 3);

@@ -16,8 +16,11 @@ use bumpalo::Bump;
 
 /// A tree node. The references point into the same arena.
 struct Node<'bump> {
+    /// Key used to find or update the cached value.
     key: i32,
+    /// Optional left used by node; `None` means the value is not configured or unavailable.
     left: Option<&'bump Self>,
+    /// Optional right used by node; `None` means the value is not configured or unavailable.
     right: Option<&'bump Self>,
 }
 
@@ -65,12 +68,14 @@ thread_local! {
 struct Noisy;
 
 impl Drop for Noisy {
+    /// Releases the resources owned by this value.
     fn drop(&mut self) {
         DROPS.with(|d| d.set(d.get() + 1));
     }
 }
-
+/// Runs the example.
 /// Builds a tree in an arena, then shows what happens to destructors.
+
 fn main() {
     let bump = Bump::new();
     let mut root = None;
@@ -99,8 +104,9 @@ fn main() {
     assert_eq!(DROPS.with(Cell::get), 1);
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

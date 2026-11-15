@@ -30,8 +30,10 @@ struct TokenPrinter {
 }
 
 impl TokenPrinter {
-    /// Starts or ends the printing of a run of characters, depending on whether
-    /// the current token is a character.
+    /// Updates text-run output when the next token changes character kind.
+
+    /// # Arguments
+    /// * `is_char` - Whether the next token contains character data.
     fn is_char(&self, is_char: bool) {
         match (self.in_char_run.get(), is_char) {
             (false, true) => print!("text: \""),
@@ -43,8 +45,14 @@ impl TokenPrinter {
 }
 
 impl TokenSink for TokenPrinter {
+    /// Handle value returned after each token is processed.
     type Handle = ();
 
+    /// Processes the token input for the html5ever workflow and applies the resulting state
+    /// changes. It calls `process_token`, `CharacterTokens` to apply the required changes.
+
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
     fn process_token(&self, token: Token, _line_number: u64) -> TokenSinkResult<()> {
         match token {
             CharacterTokens(text) => {
@@ -74,7 +82,6 @@ impl TokenSink for TokenPrinter {
 /// Tokenizes an inline HTML document and prints its tags and text.
 ///
 /// # Errors
-///
 /// Returns an error if the inline input cannot be represented as an HTML
 /// tendril.
 fn main() -> anyhow::Result<()> {
@@ -99,16 +106,15 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Runs the HTML tokenization example.
-///
+
 /// # Errors
-///
 /// Returns an error if the inline HTML cannot be tokenized.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Checks that the inline HTML document can be tokenized.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -126,6 +132,11 @@ mod tests {
     impl TokenSink for TagRecorder {
         type Handle = ();
 
+        /// Processes the token input for the html5ever workflow and applies the resulting state
+        /// changes. It calls `process_token`, `TagToken` to apply the required changes.
+
+        /// # Errors
+        /// An error is returned if a fallible operation fails.
         fn process_token(&self, token: Token, _line: u64) -> TokenSinkResult<()> {
             if let TagToken(tag) = token {
                 self.0

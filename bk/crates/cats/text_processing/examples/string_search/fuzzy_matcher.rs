@@ -9,8 +9,9 @@
 
 use fuzzy_matcher::FuzzyMatcher as _;
 use fuzzy_matcher::skim::SkimMatcherV2;
-
+/// Runs the example.
 /// Scores and ranks strings against a pattern.
+
 fn main() {
     // Create a matcher that scores similar strings.
     let matcher = SkimMatcherV2::default();
@@ -67,6 +68,9 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }

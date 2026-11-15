@@ -52,10 +52,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the YAML serialization example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that serializing and parsing YAML preserves a typed value.
 #[cfg(test)]
 mod tests {
     use super::main;

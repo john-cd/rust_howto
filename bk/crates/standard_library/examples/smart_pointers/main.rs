@@ -2,18 +2,20 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Implementing `Deref` for a smart pointer.
 mod deref;
-
+/// Runs the example.
 /// Runs the smart pointers example.
+
 fn main() {
     deref::run();
 }
 
+/// panic fails the test.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Runs the example; each module's `run()` asserts its own results, so a
     /// panic fails the test.
     #[test]
     fn test_main_runs() {

@@ -15,11 +15,14 @@ use helloworld::greeter_client::GreeterClient;
 pub mod helloworld {
     tonic::include_proto!("helloworld");
 }
-
 /// Sends a greeting request to `address` and returns the reply.
-///
+
 /// # Errors
 /// Returns an error if the server cannot be reached or the request fails.
+///
+/// # Arguments
+/// * `address` - Remote client address used to scope request, rate-limit, or audit behavior.
+/// * `name` - Human-readable value used to identify or display the selected tonic client.
 async fn greet(address: SocketAddr, name: &str) -> anyhow::Result<String> {
     let mut client = GreeterClient::connect(format!("http://{address}")).await?;
     let request = tonic::Request::new(HelloRequest {
@@ -41,11 +44,15 @@ async fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Boilerplate to expose the example logic to the crate's main harness.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 #[expect(dead_code, reason = "needs a running `Greeter` server")]
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies the client helper can call a server on a loopback socket.
 #[cfg(test)]
 mod tests {
     use super::*;

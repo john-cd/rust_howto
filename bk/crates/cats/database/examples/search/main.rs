@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// This module provides examples of interacting with Elasticsearch using the
 #[cfg(feature = "elasticsearch")]
 mod elasticsearch;
 
@@ -14,6 +15,7 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Verifies that the Elasticsearch example when the `elasticsearch` feature is enabled.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -26,7 +28,7 @@ mod tests {
         assert!(main().is_ok());
     }
 
-    /// Runs the example against a running Elasticsearch server.
+    /// Searches the configured Elasticsearch server for the sample document.
     #[cfg(feature = "elasticsearch")]
     #[test]
     #[ignore = "requires a running Elasticsearch server"]

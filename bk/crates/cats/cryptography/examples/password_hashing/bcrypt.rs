@@ -41,6 +41,9 @@ fn main() -> Result<(), Box<dyn Error>> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
@@ -56,6 +59,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if hash_verifies_only_the_original_password, verify fails.
     #[test]
     fn hash_verifies_only_the_original_password() -> Result<(), Box<dyn Error>> {
         let hashed = hash("correct horse", 4)?;
@@ -65,6 +70,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if hashing_is_salted, hash fails.
     #[test]
     fn hashing_is_salted() -> Result<(), Box<dyn Error>> {
         assert_ne!(hash("same", 4)?, hash("same", 4)?);

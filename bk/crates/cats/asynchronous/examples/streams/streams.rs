@@ -15,8 +15,8 @@ use futures::stream::StreamExt as _;
 async fn count_to_five() -> impl Stream<Item = u32> {
     stream::iter(1..=5)
 }
-
 /// Prints each number of the stream.
+
 #[tokio::main]
 async fn main() {
     let mut stream = count_to_five().await;
@@ -28,8 +28,9 @@ async fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

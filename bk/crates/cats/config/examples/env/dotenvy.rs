@@ -33,6 +33,9 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
@@ -48,6 +51,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if tempdir fails.
     #[test]
     fn dotenv_returns_an_error_when_no_env_file_is_found() -> Result<(), Box<dyn std::error::Error>>
     {
@@ -57,6 +62,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if variables_from_an_env_file_are_parsed, write fails.
     #[test]
     fn variables_from_an_env_file_are_parsed() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;

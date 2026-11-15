@@ -28,7 +28,6 @@ impl Game {
         self.ticks = self.ticks.saturating_add(1);
     }
 
-    /// Returns the number of updates so far.
     fn ticks(&self) -> u32 {
         self.ticks
     }
@@ -41,20 +40,23 @@ impl Plugin for Game {
         Ok(())
     }
 }
-
+/// Runs the example.
 /// Creates the plugin the way a game executor would.
+
 fn main() {
     let mut game = Game::default();
     game.tick();
     println!("The plugin ran {} update(s).", game.ticks());
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the Fyrox game engine example.
+
 pub fn run() {
     main();
 }
 
+/// The game logic is plain Rust: no window or GPU is needed to test it.
 #[cfg(test)]
 mod tests {
     use super::*;

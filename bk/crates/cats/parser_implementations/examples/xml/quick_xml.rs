@@ -77,6 +77,9 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
@@ -90,8 +93,8 @@ mod tests {
     fn test_quick_xml_example_entry_point() -> anyhow::Result<()> {
         main()
     }
-
     /// XML child elements populate the corresponding person fields.
+
     #[test]
     fn deserializes_person_fields() -> anyhow::Result<()> {
         let person: Person = from_str("<person><name>John Doe</name><age>32</age></person>")?;

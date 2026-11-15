@@ -13,8 +13,8 @@ use std::process::Command;
 use anyhow::Result;
 use anyhow::bail;
 use regex::Regex;
-
 /// Represents a Git commit with its hash and message.
+
 #[derive(PartialEq, Default, Clone, Debug)]
 struct Commit {
     /// The abbreviated hash of the commit.
@@ -24,13 +24,16 @@ struct Commit {
 }
 
 /// Executes the `git log --oneline` command, parses its output, and prints the
+///
 /// first 5 commits.
 ///
 /// # Returns
-///
 /// Returns `Ok(())` if the command executes successfully and the output is
 /// parsed correctly. Returns an error if the command fails or the output cannot
 /// be parsed.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 fn main() -> Result<()> {
     let output = Command::new("git").arg("log").arg("--oneline").output()?;
     if !output.status.success() {
@@ -59,15 +62,20 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// An error is returned if ignore_in_ci fails.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    #[test]
+    /// # Errors
+    /// An error is returned if ignore_in_ci fails.
     fn ignore_in_ci() -> anyhow::Result<()> {
         main()?;
         Ok(())

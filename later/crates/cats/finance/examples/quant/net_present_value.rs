@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Discounts a fixed sequence of cash flows with `financial`.
 //!
 //! Money today is worth more than the same money later, because it can earn
@@ -7,7 +8,6 @@
 //! and sums them, so an investment can be judged in today's money: a positive
 //! NPV means it earns more than the discount rate.
 
-// ANCHOR: example
 /// Keeps the time-zero investment separate from discounted future payments.
 fn main() {
     let initial_investment = -1000.0;
@@ -20,13 +20,13 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the fixed cash-flow calculation.
+/// Discounts a fixed sequence of cash flows with `financial`.
 pub fn run() {
     main();
 }
 
 #[cfg(test)]
 mod tests {
-    /// Compares the crate's timing convention with direct discounting.
     #[test]
     fn discounts_future_payments_from_an_initial_outflow() {
         super::main();

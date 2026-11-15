@@ -5,10 +5,15 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// UTF-8 paths with `camino`.
 mod camino;
+/// Canonicalizing paths.
 mod canonicalize;
+/// Canonicalize a path without the Windows `\\?\` prefix.
 mod dunce;
+/// Building and inspecting paths with `Path` and `PathBuf`.
 mod manipulate_paths;
+/// Compute a relative path between two paths.
 mod pathdiff;
 
 /// Command-line arguments.
@@ -84,7 +89,6 @@ mod tests {
         "pathdiff",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

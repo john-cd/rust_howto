@@ -5,12 +5,19 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Functions that never return.
 mod diverging_functions;
+/// Passing and calling function pointers.
 mod function_pointers;
+/// Defining functions with arguments and return values.
 mod functions;
+/// Generic functions that take arguments of any type.
 mod generic_functions;
+/// Generic functions with trait bounds.
 mod generic_functions2;
+/// A generic function with a lifetime parameter.
 mod generic_functions3;
+/// Returning references and owned values from functions.
 mod return_reference;
 
 /// Command-line arguments.
@@ -75,8 +82,9 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-
+/// Runs the example.
 /// Parses the command line and runs the selected example.
+
 fn main() {
     dispatch(Cli::parse());
 }
@@ -98,7 +106,6 @@ mod tests {
         "return_reference",
     ];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

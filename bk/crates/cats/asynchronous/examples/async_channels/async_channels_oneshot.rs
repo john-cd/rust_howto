@@ -10,6 +10,10 @@
 use tokio::sync::oneshot;
 
 /// Simulate some computation that takes a `u32` and returns a `String`.
+///
+/// # Arguments
+/// * `input` - Input data whose fields determine the requested async channels oneshot operation.
+
 async fn some_computation(input: u32) -> String {
     format!("The result of computation is {input}")
 }
@@ -56,6 +60,9 @@ async fn main() {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -70,6 +77,11 @@ mod tests {
         main();
     }
 
+    /// # Errors
+    /// An error is returned if a fallible operation fails.
+    ///
+    /// # Panics
+    /// Panics if receiver open.
     #[tokio::test]
     async fn oneshot_carries_the_computation_result() -> Result<(), Box<dyn std::error::Error>> {
         let (tx, rx) = oneshot::channel();

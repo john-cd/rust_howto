@@ -23,8 +23,8 @@ struct Row {
     /// The color.
     color: HexColor,
 }
-
 #[derive(Debug)]
+
 /// A color represented as a hex triplet.
 struct HexColor {
     /// The red component.
@@ -100,10 +100,14 @@ magenta,#ff00ff";
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// Verifies each source hex color is transformed into RGB channel columns.
 #[cfg(test)]
 mod tests {
     use super::*;

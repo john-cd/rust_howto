@@ -17,7 +17,6 @@ use tar::Archive;
 /// Unpacks the sample archive created by the compression example.
 ///
 /// # Errors
-///
 /// Returns an I/O error if the archive cannot be opened or its entries cannot
 /// be extracted.
 fn main() -> io::Result<()> {
@@ -42,16 +41,15 @@ fn decompress_archive(archive_path: &Path, destination: &Path) -> io::Result<()>
     Ok(())
 }
 // ANCHOR_END: example
-
 /// Extracts the archive created by the compression example.
-///
+
 /// # Errors
-///
 /// Returns an I/O error if the archive cannot be read or extracted.
 pub fn run() -> Result<(), std::io::Error> {
     main()
 }
 
+/// Returns an I/O error if the fixture cannot be created, extracted, or read back.
 #[cfg(test)]
 mod tests {
     use std::fs;
@@ -64,10 +62,7 @@ mod tests {
 
     use super::*;
 
-    /// Extracts an archive from an explicit path into a temporary destination.
-    ///
     /// # Errors
-    ///
     /// Returns an I/O error if the fixture cannot be created, extracted, or
     /// read back.
     #[test]
@@ -95,6 +90,8 @@ mod tests {
         Ok(())
     }
 
+    /// # Errors
+    /// An error is returned if run, main fails.
     #[test]
     fn test_main_entry_point() -> io::Result<()> {
         let _guard = crate::tar_compress::SAMPLE_ARCHIVE_LOCK
@@ -109,7 +106,8 @@ mod tests {
         Ok(())
     }
 
-    #[test]
+    /// # Errors
+    /// An error is returned if missing_archive_is_an_error fails.
     fn missing_archive_is_an_error() -> Result<(), Box<dyn std::error::Error>> {
         let dir = tempfile::tempdir()?;
         let err = decompress_archive(&dir.path().join("missing.tar.gz"), &dir.path().join("out"))

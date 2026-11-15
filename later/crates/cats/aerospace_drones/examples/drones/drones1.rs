@@ -22,6 +22,7 @@ use tello::Drone;
 
 /// The longest total hover time the plan may contain.
 // Safety limit: a small drone has only a few minutes of battery.
+/// Shared `max hover` used by this module.
 const MAX_HOVER: Duration = Duration::from_secs(30);
 
 /// One step of a flight plan.
@@ -52,9 +53,11 @@ impl Flyer for Drone {
         Self::land(self).map_err(|()| anyhow::anyhow!("the drone rejected `land`"))
     }
 }
-
-/// Checks that a plan starts with a take-off, ends with a landing, flies only
-/// once, and hovers for a safe total time.
+/// Checks that a plan starts with take-off, ends with landing, and stays within
+/// the allowed total hover time.
+///
+/// # Errors
+/// Returns an error if any flight-plan rule is violated.
 fn validate(plan: &[Step]) -> Result<()> {
     if plan.first() != Some(&Step::TakeOff) {
         bail!("a flight plan must start with a take-off");
@@ -111,16 +114,15 @@ fn main() -> Result<()> {
     fly(&mut drone, &plan)
 }
 // ANCHOR_END: example
-
 /// Runs the example; it needs a real drone.
-///
+
 /// # Errors
-///
 /// Returns an error if the plan is invalid or the drone rejects a command.
 pub fn run() -> Result<()> {
     main()
 }
 
+/// A valid plan sends its commands in order.
 #[cfg(test)]
 mod tests {
     use super::*;

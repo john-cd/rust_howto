@@ -1,15 +1,18 @@
-// TODO Reviewed ??-??-2026.
-
 //! Naming conventions for getters and iterators.
+//!
+//! TODO Reviewed ??-??-2026.
 
 // ANCHOR: getters
 /// A wrapper type with a getter and a mutating getter.
 pub struct S {
+    /// First item in the collection.
     first: String,
 }
 
 impl S {
     /// Constructs a new instance of `S` from any type convertible into a `String`.
+    ///
+    /// # Arguments
     ///
     /// Following the Rust API Guidelines (C-CTOR), the primary constructor is named `new`.
     ///
@@ -31,10 +34,10 @@ impl S {
     }
 
     /// Returns a mutable reference to the wrapped `first` string.
-    ///
     /// Following Rust API Guidelines (C-GETTER), mutating getters use the `_mut` suffix
     /// rather than `get_mut_first` or `mut_first`.
     /// Requires exclusive mutable access (`&mut self`), preventing concurrent data races.
+
     pub fn first_mut(&mut self) -> &mut String {
         &mut self.first
     }
@@ -44,6 +47,7 @@ impl S {
 // ANCHOR: iterators
 /// A container of `u32`s.
 pub struct Container {
+    /// Collection consumed by container while preserving its ordering and relationships.
     items: Vec<u32>,
 }
 
@@ -54,6 +58,7 @@ impl Container {
     }
 
     /// `IterMut` implements `Iterator<Item = &mut u32>`.
+
     pub fn iter_mut(&mut self) -> std::slice::IterMut<'_, u32> {
         self.items.iter_mut()
     }
@@ -63,6 +68,8 @@ impl<'a> IntoIterator for &'a Container {
     type IntoIter = std::slice::Iter<'a, u32>;
     type Item = &'a u32;
 
+    /// Converts between the into iterator representation and iter while preserving the invariants
+    /// required by callers.
     fn into_iter(self) -> Self::IntoIter {
         self.iter()
     }
@@ -72,6 +79,8 @@ impl<'a> IntoIterator for &'a mut Container {
     type IntoIter = std::slice::IterMut<'a, u32>;
     type Item = &'a mut u32;
 
+    /// Converts between the into iterator representation and iter while preserving the invariants
+    /// required by callers.
     fn into_iter(self) -> Self::IntoIter {
         self.iter_mut()
     }
@@ -87,6 +96,7 @@ impl IntoIterator for Container {
     }
 }
 // ANCHOR_END: iterators
+/// Runs the example.
 
 fn main() {
     let mut s = S::new("a");
@@ -111,6 +121,7 @@ mod tests {
     fn test_main() {
         main();
     }
+    /// Verifies getters.
 
     #[test]
     fn test_getters() {
@@ -118,6 +129,7 @@ mod tests {
         s.first_mut().push('b');
         assert_eq!(s.first(), "ab");
     }
+    /// Verifies iterators.
 
     #[test]
     fn test_iterators() {

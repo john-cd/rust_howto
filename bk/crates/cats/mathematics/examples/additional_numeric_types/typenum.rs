@@ -36,13 +36,13 @@ impl<T: Default + Clone, N: Unsigned> FixedBuffer<T, N> {
         }
     }
 
-    /// Returns the capacity of the buffer, which is `N`.
     fn capacity(&self) -> usize {
         N::USIZE
     }
 }
-
+/// Runs the example.
 /// Computes with type-level numbers and creates a fixed-size buffer.
+
 fn main() {
     // `typenum` provides type-level numbers evaluated at compile time.
     // U2 and U3 are type aliases for the compile-time unsigned integers 2 and
@@ -51,12 +51,10 @@ fn main() {
     println!("U3 = {}", U3::USIZE);
 
     // Compute 2 + 3 at the type level.
-    /// Represents the type-level sum of two and three.
     type Five = Sum<U2, U3>;
     println!("U2 + U3 = {}", Five::USIZE);
 
     // Compute 2 * 3 at the type level.
-    /// Represents the type-level product of two and three.
     type Six = Prod<U2, U3>;
     println!("U2 * U3 = {}", Six::USIZE);
 
@@ -74,8 +72,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

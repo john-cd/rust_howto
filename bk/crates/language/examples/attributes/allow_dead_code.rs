@@ -8,22 +8,22 @@
 //! can be silenced using `#[allow(dead_code)]` when developing or prototyping.
 
 /// This function is defined but never called.
-///
 /// In production code, unused functions should typically be removed to keep
 /// the codebase clean and maintainable. In early development or prototyping,
 /// the attribute below suppresses the `dead_code` compiler warning.
 #[allow(dead_code)]
 fn unused_function() {}
-
 /// Does not call `unused_function`.
+
 fn main() {
     println!("Nobody is calling `unused_function`.");
     // Expected output: Nobody is calling `unused_function`.
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

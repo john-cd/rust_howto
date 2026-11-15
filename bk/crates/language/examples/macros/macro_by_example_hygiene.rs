@@ -28,7 +28,6 @@ macro_rules! bar {
 /// Defines a function `f`, which is visible where the macro is called.
 macro_rules! baz {
     () => {
-        /// Defines the function emitted by the macro.
         fn f() {}
     };
 }
@@ -47,8 +46,9 @@ fn main() {
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

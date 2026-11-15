@@ -20,16 +20,17 @@ fn documented_function() {
 /// Demonstrates attaching an external Markdown file to an item's documentation.
 #[cfg_attr(doc, doc = include_str!("../../../../README.md"))]
 fn function_including_external_file_as_documentation() {}
-
 /// Calls the documented functions.
+
 fn main() {
     documented_function();
     function_including_external_file_as_documentation();
 }
 
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the example.
+
 pub fn run() {
     main();
 }

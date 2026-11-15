@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// A counter application with `xilem`.
 #[path = "xilem.rs"]
 mod xilem;
 
@@ -9,8 +10,11 @@ mod xilem;
 fn main() -> Result<(), winit::error::EventLoopError> {
     run()
 }
-
 /// Runs the native Xilem counter window.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
+
 pub fn run() -> Result<(), winit::error::EventLoopError> {
     xilem::run()
 }

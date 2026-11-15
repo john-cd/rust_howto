@@ -32,14 +32,16 @@ fn counter_view() -> impl IntoView {
     ))
     .style(|s| s.size_full().items_center().justify_center().gap(10))
 }
-
+/// Runs the example.
 /// Starts the Floem counter window.
+
 fn main() {
     floem::launch(counter_view);
 }
 // ANCHOR_END: example
-
+/// Runs the example entry point.
 /// Runs the Floem counter example.
+
 pub fn run() {
     main();
 }
@@ -48,7 +50,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies that counter actions update the signal without a window.
     #[test]
     fn actions_update_reactive_counter_state() {
         let counter = RwSignal::new(0);

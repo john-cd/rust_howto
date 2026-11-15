@@ -1,5 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
+// ANCHOR: example
 //! Draw shapes into a pixel buffer with `tiny-skia`.
 //!
 //! Rasterizing turns shapes (paths, fills, strokes) into the grid of coloured
@@ -7,7 +8,6 @@
 //! safe Rust, a small port of part of Google's Skia library, so no window or
 //! GPU is needed. It is what `resvg` uses to render SVG.
 
-// ANCHOR: example
 use ::tiny_skia::FillRule;
 use ::tiny_skia::Paint;
 use ::tiny_skia::PathBuilder;
@@ -67,8 +67,8 @@ fn pixel_rgba(pixmap: &Pixmap, x: u32, y: u32) -> Option<[u8; 4]> {
         .pixel(x, y)
         .map(|pixel| [pixel.red(), pixel.green(), pixel.blue(), pixel.alpha()])
 }
-
 /// Renders the scene and encodes its PNG bytes in memory.
+
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let pixmap = draw_scene()?;
     let png = pixmap.encode_png()?;
@@ -90,6 +90,10 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 // ANCHOR_END: example
 
 /// Runs the example from the `2d_raster_graphics` package target.
+/// Draw shapes into a pixel buffer with `tiny-skia`.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     main()
 }
@@ -100,7 +104,6 @@ mod tests {
     use super::main;
     use super::pixel_rgba;
 
-    /// Verifies circle fill, line stroke, and the transparent pixmap corner.
     #[test]
     fn draws_shapes_into_a_headless_pixmap() {
         let pixmap = draw_scene().expect("the sample scene should render");

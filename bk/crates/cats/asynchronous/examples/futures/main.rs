@@ -5,9 +5,13 @@
 use clap::Parser;
 use clap::Subcommand;
 
+/// Races two futures with `select!` from the `futures` crate.
 mod futures1;
+/// Polling several futures at once with `join!` and `join_all`.
 mod futures2;
+/// # Futures
 mod futures3;
+/// Combinators from `futures_util`, applied to asynchronous fetches that may
 mod futures_util;
 
 /// Command-line arguments.
@@ -70,7 +74,6 @@ mod tests {
     /// Every example is exposed as a subcommand.
     const SUBCOMMANDS: &[&str] = &["futures1", "futures2", "futures3", "futures_util"];
 
-    /// The command-line definition is internally consistent.
     #[test]
     fn test_cli_definition_is_valid() {
         Cli::command().debug_assert();

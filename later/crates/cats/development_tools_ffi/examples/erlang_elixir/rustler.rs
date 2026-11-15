@@ -1,6 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+//!
+
 #![cfg_attr(
     feature = "erlang",
     allow(
@@ -8,36 +10,39 @@
         reason = "Rustler's init macro keeps its generated function table alive for the VM lifetime"
     )
 )]
-
-//! Native implemented functions for Erlang and Elixir with `rustler`.
 //!
-//! Erlang and Elixir run on the BEAM virtual machine, which is great at
-//! concurrency but slow at number crunching. A NIF (native implemented
-//! function) is native code the VM calls directly. A crash in a NIF takes down
-//! the whole VM, so Rustler's safety matters.
 
 /// The functions exposed to Erlang and Elixir.
 mod nif {
     /// The `rustler` crate provides macros and functions for creating NIFs
     /// (Native Implemented Functions). NIFs are functions written in Rust that
     /// can be called directly from Erlang or Elixir code.
+    ///
+    /// # Arguments
+    /// * `name` - Human-readable value used to identify or display the selected rustler.
+
     pub fn greeting(name: String) -> String {
         format!("Hello, {name}!")
     }
 
     /// Returns a greeting for `name`.
+    ///
+    /// # Arguments
+    /// * `name` - Human-readable value used to identify or display the selected rustler.
+
     #[cfg(feature = "erlang")]
     #[rustler::nif]
     fn greet(name: String) -> String {
         greeting(name)
     }
-
+    /// # Arguments
     /// `add` is a NIF that takes two integers and returns their sum.
+
     pub fn sum(a: i32, b: i32) -> i32 {
         a + b
     }
-
     /// Returns the sum of `a` and `b`.
+
     #[cfg(feature = "erlang")]
     #[rustler::nif]
     fn add(a: i32, b: i32) -> i32 {
@@ -49,13 +54,11 @@ mod nif {
         use super::greeting;
         use super::sum;
 
-        /// Checks that the greeting contains the name.
         #[test]
         fn greet_returns_a_personalized_message() {
             assert_eq!(greeting("Rust".to_owned()), "Hello, Rust!");
         }
 
-        /// Checks that the sum is correct.
         #[test]
         fn add_returns_the_sum() {
             assert_eq!(sum(20, 22), 42);
@@ -77,6 +80,7 @@ fn main() {
     println!("Rustler NIFs defined. These are intended to be loaded by an Elixir/Erlang VM.");
 }
 // ANCHOR_END: example
+/// Runs the example entry point.
 
 pub fn run() {
     main();

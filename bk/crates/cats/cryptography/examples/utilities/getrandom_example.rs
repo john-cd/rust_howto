@@ -20,10 +20,14 @@ fn main() -> anyhow::Result<()> {
 // ANCHOR_END: example
 
 /// Runs the example.
+///
+/// # Errors
+/// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies that the example can fill its nonce buffer.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -35,6 +39,8 @@ mod tests {
         main()
     }
 
+    /// # Errors
+    /// An error is returned if fill fails.
     #[test]
     fn fills_distinct_nonzero_buffers() -> anyhow::Result<()> {
         let mut a = [0_u8; 32];
