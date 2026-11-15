@@ -30,7 +30,6 @@ fn App() -> Element {
         button { onclick: move |_| count += 1, "+" }
     }
 }
-
 // ANCHOR_END: example
 
 /// Runs the example through its program entry point.

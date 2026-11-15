@@ -82,7 +82,6 @@ fn main() -> Result<()> {
     assert_eq!(later, NaiveDate::from_ymd_opt(2025, 12, 2));
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the trading days example through its entry point.
 ///

@@ -16,7 +16,6 @@ fn main() {
     assert_eq!(formatted, "1234567");
     println!("{formatted}");
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 pub fn run() {

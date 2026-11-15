@@ -40,7 +40,6 @@ fn main() -> anyhow::Result<()> {
     println!("{}", prettyplease::unparse(&file));
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the token-transformation example.
 ///

@@ -103,7 +103,6 @@ fn main() {
         println!("{update}");
     }
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the Flutter Rust Bridge example.

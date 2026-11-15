@@ -71,7 +71,6 @@ fn main() {
     assert_eq!(cost, 8);
     assert_eq!(path.len(), 9);
 }
-
 // ANCHOR_END: example
 
 /// Runs the robotics pathfinding example by calling `main()`.

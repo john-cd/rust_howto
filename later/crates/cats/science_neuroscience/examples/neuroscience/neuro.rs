@@ -46,7 +46,6 @@ fn main() -> Result<(), Box<dyn Error>> {
     );
     Ok(())
 }
-
 // ANCHOR_END: example
 /// Runs the example entry point.
 ///
