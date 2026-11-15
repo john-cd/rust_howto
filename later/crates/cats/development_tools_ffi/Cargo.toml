@@ -102,7 +102,6 @@ anyhow = "1.0.104"
 # Library for reading/writing numbers in big-endian and little-endian.
 byteorder = { version = "1.5.0", optional = true }
 # A simple to use, efficient, and full-featured Command Line Argument Parser
-clap = { version = "4.6.7", features = ["derive"] }
 # Safe interop between Rust and C++
 cxx = { version = "1.0.205", optional = true }
 # Flutter/Dart <-> Rust binding generator, feature-rich, but seamless and simple
@@ -115,9 +114,9 @@ jni = { version = "0.22.4", optional = true }
 # the same dependency graph.
 mlua = { version = "0.12.2", features = ["lua54"], optional = true }
 # Exposes Rust functions and types through Node.js's N-API interface.
-napi = { version = "3.16.1", features = ["async"], optional = true }
+napi = { version = "3.16.2", features = ["async"], optional = true }
 # Generates Node.js N-API bindings from annotated Rust functions and types.
-napi-derive = { version = "3.7.0", optional = true }
+napi-derive = { version = "3.7.1", optional = true }
 # A safe abstraction layer for Node.js.
 neon = { version = "1.1.2", optional = true }
 # Safe Rust wrappers for creating Erlang NIF functions
@@ -126,6 +125,10 @@ rustler = { version = "0.39.0", optional = true }
 rutie = { version = "0.14.3", optional = true }
 # a multi-language bindings generator for rust
 uniffi = { version = "0.32.2", optional = true }
+
+[dev-dependencies]
+# A simple to use, efficient, and full-featured Command Line Argument Parser
+clap = { version = "4.6.7", features = ["derive"] }
 
 [build-dependencies]
 # Easy support for interacting between JS and Rust.
@@ -136,9 +139,6 @@ cbindgen = "0.29.4"
 cc = "=1.8.0"
 # C++ code generator for integrating `cxx` crate into a Cargo build.
 cxx-build = { version = "1.0.205", optional = true } # Generates and compiles the optional C++ bridge example.
-# a multi-language bindings generator for rust
-uniffi = { version = "0.32.2", optional = true }
-
 [features]
 cpp = ["dep:cxx", "dep:cxx-build"]
 erlang = ["dep:rustler"]
@@ -161,9 +161,9 @@ objc2-foundation = { version = "0.3.2", optional = true }
 
 [target.'cfg(not(target_os = "windows"))'.dependencies]
 # Windows RubyInstaller uses the MinGW ABI, which does not match this MSVC target.
-magnus = { version = "0.9.3", features = ["embed"], optional = true }
+magnus = { version = "0.9.4", features = ["embed"], optional = true }
 
-[target.'cfg(any(target_os = "linux", target_os = "windows"))'.dependencies]
+[target.'cfg(any(target_os = "linux", target_os = "windows"))'.dev-dependencies]
 # Embed Python and expose Rust functions to Python on Linux and Windows.
 pyo3 = "0.30.1"
 
