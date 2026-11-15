@@ -99,9 +99,6 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example entry point.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -117,6 +114,7 @@ mod tests {
         Ok(())
     }
 
+    /// Recomputes a query after one of its inputs changes.
     #[test]
     fn queries_are_recomputed_after_the_input_changes() {
         let mut db = MyDatabase::default();
@@ -129,6 +127,7 @@ mod tests {
         assert_eq!(summary(&db, input), "\"one two\" — 2 word(s)");
     }
 
+    /// Produces no words when the input is empty.
     #[test]
     fn empty_input_has_no_words() {
         let db = MyDatabase::default();

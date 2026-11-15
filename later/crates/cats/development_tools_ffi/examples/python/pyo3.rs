@@ -76,13 +76,12 @@ pub fn run() -> PyResult<()> {
 mod tests {
     use super::*;
 
-    ///
+    /// Verifies that the `pyo3` example runs.
     #[test]
     #[cfg_attr(
         target_os = "windows",
         ignore = "set PYTHONHOME to the Python base prefix and rerun this test"
     )]
-    /// Verifies that the `pyo3` example runs.
     fn test_pyo3_example_entry_point() -> PyResult<()> {
         main()
     }

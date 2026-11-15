@@ -64,9 +64,6 @@ fn main() -> Result<()> {
 
 /// # Panics
 /// Panics if the Candle CPU training example failed.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main().expect("the Candle CPU training example failed");
 }

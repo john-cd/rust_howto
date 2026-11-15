@@ -56,10 +56,6 @@ pub fn run() -> anyhow::Result<()> {
 }
 
 /// Rasterizes an SVG document at a bounded output size.
-///
-/// # Errors
-/// Returns an error if an operation in the example fails.
-/// Returns an error if a step of the example fails.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -88,6 +84,7 @@ mod tests {
         Ok(())
     }
 
+    /// Rejects malformed SVG input.
     #[test]
     fn rejects_malformed_svg() {
         assert!(rasterize("<svg", 100).is_err());

@@ -16,7 +16,8 @@ use geos::Geometry;
 /// Parses two polygons from WKT, tests them and measures their overlap.
 
 /// # Errors
-/// An error is returned if main, new_from_wkt fails.
+/// Returns an error if parsing the polygons or computing their spatial predicates, overlap, or
+/// buffer fails.
 #[cfg(feature = "geos")]
 fn main() -> geos::GResult<()> {
     let square = Geometry::new_from_wkt("POLYGON((0 0, 4 0, 4 4, 0 4, 0 0))")?;

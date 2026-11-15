@@ -50,9 +50,6 @@ fn main() -> Result<(), Box<dyn Error>> {
 // ANCHOR_END: example
 
 /// Runs the example.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main().expect("the seeded Linfa K-means example failed");
 }
@@ -73,6 +70,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the Linfa K-means example through its entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

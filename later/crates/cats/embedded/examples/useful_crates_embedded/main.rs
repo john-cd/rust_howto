@@ -68,10 +68,6 @@ pub fn run() -> anyhow::Result<()> {
 }
 
 /// Encodes messages with `postcard` into a bounded `heapless` queue.
-///
-/// # Errors
-/// Returns an error if an operation in the example fails.
-/// Returns an error if a step of the example fails.
 
 #[cfg(test)]
 mod tests {

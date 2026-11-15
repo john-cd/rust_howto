@@ -77,13 +77,6 @@ mod tests {
         assert_eq!(update.focus, button_id);
     }
 
-    /// node.
-    ///
-    /// # Arguments
-    /// * `id` - Identifier used to select the accesskit or related record being processed.
-    ///
-    /// # Panics
-    /// Panics if the accessibility tree contains each requested node.
     fn find_node(update: &TreeUpdate, id: NodeId) -> &Node {
         update
             .nodes

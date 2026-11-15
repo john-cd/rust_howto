@@ -103,10 +103,6 @@ pub fn run() -> anyhow::Result<()> {
 }
 
 /// Tessellates a path with Lyon and rasterizes the mesh with tiny-skia.
-///
-/// # Errors
-/// Returns an error if an operation in the example fails.
-/// Returns an error if a step of the example fails.
 #[cfg(test)]
 mod tests {
     use super::*;

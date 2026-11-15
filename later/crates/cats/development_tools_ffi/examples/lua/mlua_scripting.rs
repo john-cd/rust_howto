@@ -13,7 +13,8 @@ use mlua::prelude::*;
 /// Evaluates a chunk with a Rust callback in a restricted standard library.
 ///
 /// # Errors
-/// An error is returned if main, create_function fails.
+/// Returns an error if creating the Lua state or callback, registering globals, or evaluating the
+/// chunk fails.
 fn main() -> LuaResult<()> {
     let lua = Lua::new_with(
         LuaStdLib::MATH | LuaStdLib::STRING | LuaStdLib::TABLE,
