@@ -34,7 +34,6 @@ fn make_app() -> Command {
         )
 }
 /// Selects the stage from the command line and runs it.
-
 fn main() {
     let matches = make_app().get_matches();
 
@@ -55,7 +54,6 @@ fn main() {
     }
 }
 /// Initializes structured logging, falling back to stderr when the log file is unavailable.
-
 fn initialize_logging() {
     let log_file = std::fs::OpenOptions::new()
         .append(true)
@@ -97,7 +95,6 @@ fn initialize_stderr_logging() {
     }
 }
 /// Writes a best-effort logging diagnostic without panicking if stderr is unavailable.
-
 fn report_logging_failure(message: std::fmt::Arguments<'_>) {
     let _ = writeln!(io::stderr().lock(), "mdbook-scrub: {message}");
 }

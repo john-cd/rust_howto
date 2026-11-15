@@ -6,7 +6,6 @@
 mod aero;
 /// Runs the example.
 /// Runs the aerospace example.
-
 fn main() {
     aero::run();
 }

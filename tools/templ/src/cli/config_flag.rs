@@ -17,7 +17,6 @@ pub(super) fn arg_verbose() -> Arg {
         .global(true)
 }
 /// Returns the configuration given by the global flags.
-
 pub(super) fn get_config(matches: &ArgMatches) -> Config {
     Config {
         verbose: matches.get_flag("verbose"),

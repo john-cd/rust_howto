@@ -46,7 +46,6 @@ fn run() -> Result<ExitCode> {
 /// `ExitCode::FAILURE` when `--fail` is set and the report contains errors; otherwise success.
 /// # Errors
 /// Returns an error if repository scanning or JSON output fails.
-
 fn run_with(args: Args) -> Result<ExitCode> {
     let repo_root = args.repo_root.unwrap_or_else(default_repository_root);
     let report = build_report(&repo_root)

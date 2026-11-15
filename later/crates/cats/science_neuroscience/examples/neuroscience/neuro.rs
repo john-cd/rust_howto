@@ -20,7 +20,7 @@ fn output_path() -> PathBuf {
     ))
 }
 /// Creates a synthetic volume of neuroimaging data and prints its location and
-
+///
 /// shape.
 ///
 /// # Errors
@@ -52,7 +52,6 @@ fn main() -> Result<(), Box<dyn Error>> {
 ///
 /// # Errors
 /// Returns an error if a step of the example fails.
-
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }

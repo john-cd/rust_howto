@@ -53,7 +53,6 @@ fn ccsds_space_packet() -> [u8; 8] {
 // ANCHOR_END: ccsds-space-packet
 /// Runs the example.
 /// Runs the packet construction examples.
-
 fn main() {
     let packet = ccsds_space_packet();
     println!("CCSDS packet: {packet:02X?}");
@@ -62,7 +61,6 @@ fn main() {
 }
 /// Runs the example entry point.
 /// Runs the space protocols examples through the chapter entry point.
-
 pub fn run() {
     main();
 }

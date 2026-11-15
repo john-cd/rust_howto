@@ -23,9 +23,9 @@ fn write(root: &Path, path: &str, contents: &str) {
     fs::write(path, contents).expect("file is writable");
 }
 /// Builds a book tree with `chapters` chapters. Each chapter includes an anchored example whose
-
+///
 /// module tree is `depth` levels deep.
-
+///
 /// # Panics
 /// Panics if temporary directory is available.
 fn book_tree(chapters: usize, depth: usize) -> TempDir {

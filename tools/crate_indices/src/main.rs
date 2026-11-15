@@ -152,9 +152,9 @@ const ALPHABETICAL_PAGE_FOOTER: &str = "{{#include refs.incl.md}}\n\
 <div class=\"hidden\">\n\
 </div>\n";
 /// Returns the alphabetical page of the given crates and the crates that have
-
+///
 /// published recipes.
-
+///
 /// # Errors
 /// Returns an error if the create alphabetical page operation cannot satisfy its required
 /// invariants.

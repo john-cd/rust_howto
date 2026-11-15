@@ -40,7 +40,6 @@ fn main() -> anyhow::Result<()> {
     dispatch(cmd, &mut std::io::stdout())
 }
 /// Returns the categories whose slug, name or description match a word.
-
 fn matching_categories<'a>(all_categories: &'a [Category], word: &str) -> Vec<&'a Category> {
     let possible_cat_name = word.trim().to_lowercase();
     let possible_slug = possible_cat_name.replace([' ', '_'], "-");
@@ -59,7 +58,6 @@ fn dispatch(cmd: Cmd, out: &mut impl Write) -> anyhow::Result<()> {
     dispatch_with_categories(cmd, out, tool_lib::get_all_categories)
 }
 /// Runs a command with an injected category catalog loader.
-
 fn dispatch_with_categories(
     cmd: Cmd,
     out: &mut impl Write,

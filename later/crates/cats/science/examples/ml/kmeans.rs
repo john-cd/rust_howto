@@ -18,7 +18,7 @@ use linfa_clustering::KMeans;
 use rand_08::SeedableRng as _;
 use rand_08::rngs::StdRng;
 /// Fits K-means to two separated groups and returns one label per point.
-
+///
 /// # Errors
 /// Returns an error if K-means cannot fit the synthetic dataset.
 fn cluster_synthetic_points() -> Result<Vec<usize>, Box<dyn Error>> {

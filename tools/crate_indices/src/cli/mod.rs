@@ -158,40 +158,36 @@ fn get_crate_names(m: &clap::ArgMatches) -> Vec<String> {
         .collect::<Vec<String>>()
 }
 /// Get a file path from the command line arguments
-
+///
 /// # Panics
 /// Panics if file_path has a default value.
-
 fn get_file_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("file_path")
         .expect("file_path has a default value")
         .clone()
 }
 /// Get the required category metadata path.
-
+///
 /// # Panics
 /// Panics if metadata is required.
-
 fn get_metadata_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("metadata")
         .expect("metadata is required")
         .clone()
 }
 /// Get the book root used to find published recipe links.
-
+///
 /// # Panics
 /// Panics if book_root has a default value.
-
 fn get_book_root(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("book_root")
         .expect("book_root has a default value")
         .clone()
 }
 /// Get a dir path from the command line arguments
-
+///
 /// # Panics
 /// Panics if directory has a default value.
-
 fn get_dir_path(m: &clap::ArgMatches) -> PathBuf {
     m.get_one::<PathBuf>("directory")
         .expect("directory has a default value")
@@ -199,7 +195,6 @@ fn get_dir_path(m: &clap::ArgMatches) -> PathBuf {
 }
 /// Get an optional file path from the command line arguments.
 /// Returns `None` if the argument was not provided.
-
 fn get_optional_file_path(m: &clap::ArgMatches) -> Option<PathBuf> {
     m.get_one::<PathBuf>("file_path").cloned()
 }

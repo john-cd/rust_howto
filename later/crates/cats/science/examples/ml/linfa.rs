@@ -15,7 +15,7 @@ use linfa::prelude::Predict as _;
 use linfa::traits::Fit as _;
 use linfa_linear::LinearRegression;
 /// Fits a linear model and predicts two values outside the training range.
-
+///
 /// # Errors
 /// Returns an error if fitting the linear model fails.
 fn regression_predictions() -> Result<Vec<f64>, Box<dyn Error>> {

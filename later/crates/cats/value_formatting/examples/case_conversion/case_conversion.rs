@@ -10,7 +10,6 @@
 use heck::ToUpperCamelCase as _;
 /// Demonstrates identifier case conversion with heck.
 /// Converts a Rust-style identifier to upper camel case.
-
 fn main() {
     assert_eq!("http_client".to_upper_camel_case(), "HttpClient");
 }

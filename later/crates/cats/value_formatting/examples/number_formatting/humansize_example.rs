@@ -12,7 +12,7 @@ use humansize::DECIMAL;
 use humansize::format_size;
 use humansize::format_size_i;
 /// Runs the example entry point.
-
+///
 /// Formats sizes with SI (powers of 1000) and IEC (powers of 1024) units.
 pub fn example_body() {
     // SI units: kB, MB, GB...

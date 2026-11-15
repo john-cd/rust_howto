@@ -18,10 +18,9 @@ pub(super) fn subcommand_info() -> Command {
         .arg(super::arg_crate_name())
 }
 /// "$ myapp info" was run
-
+///
 /// # Returns
 /// `Some` when the requested value is available; otherwise returns `None`.
-
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<crate::CmdArgs> {
     let mut cmdargs = None;
     if let Some(m) = matches.subcommand_matches("info") {

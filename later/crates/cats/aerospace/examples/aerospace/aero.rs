@@ -39,7 +39,6 @@ fn predict(constants: &Constants, minutes: f64) -> Prediction {
         .expect("the fixed ISS elements should propagate over one orbit")
 }
 /// Samples roughly one orbit at ten-minute intervals.
-
 fn main() {
     let constants = iss_constants();
     // The ISS circles the Earth in about 92 minutes, so 0 to 90 covers
@@ -52,7 +51,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the orbit sampling example.
-
 pub fn run() {
     main();
 }

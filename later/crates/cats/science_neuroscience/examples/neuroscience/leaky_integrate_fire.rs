@@ -41,7 +41,6 @@ fn simulate_spike_times(input_current_na: f64, duration_ms: u32) -> Vec<u32> {
 }
 /// Runs the example.
 /// Runs the simulation and prints spike times for a suprathreshold input.
-
 fn main() {
     let spike_times_ms = simulate_spike_times(2.0, 100);
     println!(
@@ -52,7 +51,6 @@ fn main() {
 // ANCHOR_END: example
 /// Runs the example entry point.
 /// Runs the example.
-
 pub fn run() {
     main();
 }

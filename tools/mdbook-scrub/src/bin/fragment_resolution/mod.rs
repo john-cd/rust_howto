@@ -345,7 +345,6 @@ fn is_external_url(path: &str) -> bool {
             .is_some_and(|(scheme, _)| !scheme.contains('/') && !scheme.contains('\\'))
 }
 /// Decodes valid percent escapes while preserving plus signs and malformed escapes.
-
 fn percent_decode(value: &str) -> String {
     let bytes = value.as_bytes();
     let mut decoded = Vec::with_capacity(bytes.len());
@@ -398,7 +397,6 @@ fn slug(text: &str) -> String {
 /// # Arguments
 /// * `id` - Identifier used to select the mod record or cache entry affected by this operation.
 /// * `used` - Mutable hash set whose state is updated by this operation.
-
 fn unique_id(id: &str, used: &mut HashSet<String>) -> String {
     if used.insert(id.to_owned()) {
         return id.to_owned();

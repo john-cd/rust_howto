@@ -17,7 +17,7 @@ use candle_nn::VarMap;
 use candle_nn::linear;
 use candle_nn::loss;
 /// Trains a one-layer model and returns the initial and final mean squared
-
+///
 /// loss.
 ///
 /// # Errors

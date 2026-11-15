@@ -19,7 +19,6 @@ pub(super) fn arg_crate_name() -> clap::Arg {
 ///
 /// This function retrieves the values associated with the "`crate_name`" argument from the
 /// `clap::ArgMatches`.
-
 pub(super) fn get_cmd_arg_crate_name(m: &clap::ArgMatches) -> Vec<String> {
     m.get_many::<String>("crate_name")
         .unwrap_or_default()

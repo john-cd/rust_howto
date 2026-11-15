@@ -62,7 +62,6 @@ fn main() -> Result<()> {
 // ANCHOR_END: example
 /// # Errors
 /// Returns an error if the drone rejects a command.
-
 pub fn run() -> Result<()> {
     main()
 }
@@ -73,7 +72,7 @@ mod tests {
     use super::*;
 
     /// Talks to a real drone.
-
+    ///
     /// # Panics
     /// Panics if the size fits.
     #[expect(
