@@ -91,10 +91,6 @@ pub fn run() -> anyhow::Result<()> {
 }
 
 /// Round-trips DDS and KTX2 container metadata without a GPU.
-///
-/// # Errors
-/// Returns an error if an operation in the example fails.
-/// Returns an error if a step of the example fails.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -120,6 +116,7 @@ mod tests {
         Ok(())
     }
 
+    /// Rejects a KTX2 header with invalid magic bytes.
     #[test]
     fn ktx2_rejects_bad_magic() {
         assert!(Header::from_bytes(&[0; Header::LENGTH]).is_err());

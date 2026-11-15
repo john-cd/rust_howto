@@ -38,9 +38,6 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 /// # Panics
 /// Panics if the Linfa regression example failed.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main().expect("the Linfa regression example failed");
 }
@@ -61,6 +58,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the Linfa regression example through its entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

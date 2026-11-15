@@ -21,10 +21,6 @@ pub fn run() -> anyhow::Result<()> {
 }
 
 /// Starts the host-side Embassy task example.
-///
-/// # Errors
-/// Returns an error if an operation in the example fails.
-/// Returns an error if a step of the example fails.
 
 /// test their own results).
 #[cfg(test)]

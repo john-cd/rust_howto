@@ -19,10 +19,7 @@ impl LuaUserData for Counter {
     /// Registers methods that Lua scripts can call on the counter.
     ///
     /// # Arguments
-    /// * `methods` - Mutable m whose state is updated by this operation.
-    ///
-    /// # Errors
-    /// Returns an error if a fallible operation cannot complete.
+    /// * `methods` - Registry populated with methods callable from Lua.
     fn add_methods<M: LuaUserDataMethods<Self>>(methods: &mut M) {
         methods.add_method_mut("increment", |_, this, amount: i64| {
             this.value += amount;
@@ -34,7 +31,8 @@ impl LuaUserData for Counter {
 /// Creates userdata and calls its method from Lua.
 ///
 /// # Errors
-/// An error is returned if create_userdata, globals fails.
+/// Returns an error if creating the userdata, assigning it to the Lua globals, or evaluating the
+/// Lua script fails.
 fn main() -> LuaResult<()> {
     let lua = Lua::new();
     let counter = lua.create_userdata(Counter { value: 40 })?;
@@ -52,7 +50,7 @@ pub fn run() -> LuaResult<()> {
     main()
 }
 
-/// value.
+/// Tests for the Lua counter example.
 #[cfg(test)]
 mod tests {
     use super::*;

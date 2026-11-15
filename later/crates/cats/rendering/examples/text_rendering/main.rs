@@ -56,10 +56,6 @@ pub fn run() -> anyhow::Result<()> {
 }
 
 /// Rasterizes a glyph with `fontdue` and reads metrics with `ttf-parser`.
-///
-/// # Errors
-/// Returns an error if an operation in the example fails.
-/// Returns an error if a step of the example fails.
 #[cfg(test)]
 mod tests {
     use super::*;

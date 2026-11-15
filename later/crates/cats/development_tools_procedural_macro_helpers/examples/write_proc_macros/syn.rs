@@ -57,7 +57,6 @@ fn derive_describe(input: TokenStream) -> SynResult<TokenStream> {
     Ok(quote! {
         impl #impl_generics #ident #ty_generics #where_clause {
             /// Returns a formatted description of the struct fields.
-            ///
 
 
             pub fn describe(&self) -> String {
@@ -116,6 +115,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the procedural macro example through its entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

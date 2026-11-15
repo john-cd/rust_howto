@@ -50,7 +50,8 @@ mod tests {
     use wasmer::imports;
 
     /// # Errors
-    /// An error is returned if new, get_typed_function fails.
+    /// Returns an error if the module cannot be compiled or instantiated, its `add` export cannot
+    /// be retrieved, or calling the export fails.
     #[test]
     fn addition_wraps_on_overflow() -> anyhow::Result<()> {
         let mut store = Store::default();

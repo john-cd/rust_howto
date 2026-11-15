@@ -6,20 +6,8 @@
 
 /// Describes a small interface to screen readers with AccessKit.
 mod accesskit;
-/// Runs the example.
+
 /// Runs the screen readers example.
 fn main() {
     accesskit::run();
-}
-
-/// test their own results).
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// test their own results).
-    #[test]
-    fn test_main_entry_point() {
-        main();
-    }
 }

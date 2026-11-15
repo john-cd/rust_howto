@@ -94,9 +94,6 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example entry point.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main();
 }
@@ -112,6 +109,7 @@ mod tests {
         Ok(())
     }
 
+    /// Keeps derived results consistent with tracked inputs.
     #[test]
     fn derived_value_depends_only_on_the_tracked_value() {
         let config = Config {

@@ -62,9 +62,6 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 /// # Panics
 /// Panics if the SmartCore classification example failed.
-///
-/// # Errors
-/// Returns an error if a step of the example fails.
 pub fn run() {
     main().expect("the SmartCore classification example failed");
 }
@@ -86,6 +83,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the SmartCore classification example through its entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {

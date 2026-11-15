@@ -30,7 +30,7 @@ struct Model {
 
 impl Model {
     /// # Errors
-    /// An error is returned if load, commit_from_memory fails.
+    /// Returns an error if initializing the ONNX runtime or loading the model fails.
     fn load(env: &Environment, version: u32, bytes: &[u8]) -> Result<Self> {
         Ok(Self {
             version,
@@ -52,7 +52,7 @@ impl Engine {
     /// component.
     ///
     /// # Errors
-    /// An error is returned if new, from_pointee fails.
+    /// Returns an error if initializing the ONNX runtime or loading the model fails.
     fn new(version: u32, bytes: &[u8]) -> Result<Self> {
         let env = ort::init().build()?;
         let model = ArcSwap::from_pointee(Model::load(&env, version, bytes)?);
@@ -81,7 +81,7 @@ impl Engine {
 }
 
 /// # Errors
-/// An error is returned if new, let fails.
+/// Returns an error if model initialization, inference, or the model hot swap fails.
 fn main() -> Result<()> {
     // Models exported with `skl2onnx` (see `models/make_models.py`).
     let model_a = include_bytes!("models/logreg_a.onnx");

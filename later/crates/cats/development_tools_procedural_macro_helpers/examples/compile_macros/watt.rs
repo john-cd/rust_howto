@@ -60,7 +60,6 @@ mod tests {
     fn renames_function_and_preserves_body() -> anyhow::Result<()> {
         let input = quote! {
         /// Calculates the current value.
-                    ///
                     fn calculate() -> u32 {
                         6 * 7
                     }
@@ -74,6 +73,7 @@ mod tests {
         Ok(())
     }
 
+    /// Runs the procedural macro example through its entry point.
     #[test]
     fn test_main_entry_point() {
         if let Err(err) = main() {
