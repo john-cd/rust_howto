@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Asynchronous trait methods with the `async_trait` crate.
 //!
 //! Before native `async fn` in traits, the `async_trait` crate boxed each
@@ -10,9 +11,11 @@
 use async_trait::async_trait;
 
 // Define an asynchronous trait named `Advertisement`.
+
 /// An advertisement that can be run asynchronously.
 #[async_trait]
 trait Advertisement {
+
     /// Shows the advertisement.
     async fn run(&self);
 }
@@ -23,7 +26,8 @@ struct Modal;
 // Implement the `Advertisement` trait for the `Modal` struct:
 #[async_trait]
 impl Advertisement for Modal {
-    /// Runs the example entry point.
+
+    /// Shows the modal, repeats the signup reminder four times, then hides it.
     async fn run(&self) {
         // Call the `render_fullscreen` method on `self` and await its
         // completion.
@@ -41,6 +45,7 @@ impl Advertisement for Modal {
 
 // Implement methods for the `Modal` struct.
 impl Modal {
+
     /// Shows the modal in full screen.
     async fn render_fullscreen(&self) {
         println!("Render fullscreen");
@@ -56,8 +61,8 @@ impl Modal {
 async fn remind_user_to_join_mailing_list() {
     println!("Please join our mailing list");
 }
-/// Runs the example.
-/// Runs an advertisement on the Tokio runtime.
+
+/// Runs an advertisement through the async trait implementation on Tokio.
 #[tokio::main]
 async fn main() {
     // Create an instance of `Modal` and call the `run` method, awaiting its
@@ -66,8 +71,7 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs an advertisement through the async trait implementation on Tokio.
 pub fn run() {
     main();
 }
@@ -79,6 +83,7 @@ mod tests {
     /// Runs the async traits3 example through its entry point.
     // output-only: the example only prints its steps; the other tests
     // check that each step completes.
+
     /// Verifies that the `async traits3` example runs.
     #[test]
     fn test_async_traits3_example_entry_point() {

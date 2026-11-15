@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates two key uses of the `cached` crate:
 //! - Simple function memoization with `#[cached]`,
 //! - Advanced caching with custom configuration options.
@@ -23,6 +24,7 @@ fn fibonacci(n: u64) -> u64 {
 /// 60-second time-to-live.
 ///
 /// # Arguments
+///
 /// * `key` - Identifier used to look up the simulated data.
 #[cached(max_size = 50, ttl_secs = 60, refresh = true)]
 fn fetch_data(key: usize) -> String {
@@ -33,6 +35,7 @@ fn fetch_data(key: usize) -> String {
 /// Demonstrates timed TTL caching where cached entries expire after 1 second.
 ///
 /// # Arguments
+///
 /// * `key` - Identifier used to select the cached record or cache entry affected by this operation.
 #[cached(ttl_secs = 1)]
 fn short_lived_data(key: &str) -> String {
@@ -69,8 +72,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the memoized functions and shows that repeated calls use the cache.
 pub fn run() {
     main();
 }

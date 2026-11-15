@@ -7,16 +7,20 @@ use clap::Subcommand;
 
 /// This example demonstrates basic usage of `ArrayVec`.
 mod arrayvec;
+
 /// Fixed-capacity collections from the `heapless` crate.
 mod heapless;
+
 /// A `SmallVec`, which stores a few elements inline before moving to the heap.
 mod smallvec;
+
 /// A `TinyVec`, which stores a few elements inline before moving to the heap.
 mod tinyvec;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -26,15 +30,19 @@ struct Cli {
 #[allow(clippy::enum_variant_names)]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `arrayvec` example.
     #[command(name = "arrayvec")]
     Arrayvec,
+
     /// Runs the `smallvec` example.
     #[command(name = "smallvec")]
     Smallvec,
+
     /// Runs the `heapless` example.
     #[command(name = "heapless")]
     Heapless,
+
     /// Runs the `tinyvec` example.
     #[command(name = "tinyvec")]
     Tinyvec,
@@ -59,7 +67,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

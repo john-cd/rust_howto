@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Hexagonal architecture: a port (trait) with two adapters.
 //!
 //! Hexagonal (ports and adapters) architecture keeps the business logic
@@ -12,12 +13,20 @@ use std::collections::HashMap;
 
 /// The port: how the core stores users, whatever the technology.
 trait UserRepository {
+
+    /// Stores a user name in the repository under its ID.
+///
     /// # Arguments
+///
     /// * `id` - Identifier used to select the user repository record or cache entry affected by
     ///   this operation.
     /// * `name` - Human-readable value used to identify or display the selected user repository.
     fn save(&mut self, id: u32, name: &str);
+
+    /// Returns the name stored for the user with this ID, if present.
+///
     /// # Arguments
+///
     /// * `id` - Identifier used to select the user repository record or cache entry affected by
     ///   this operation.
     fn find(&self, id: u32) -> Option<String>;
@@ -26,13 +35,17 @@ trait UserRepository {
 /// An adapter that keeps users in memory (ideal for tests).
 #[derive(Default)]
 struct InMemoryRepository {
+
     /// Collection of users values consumed by in memory repository operations.
     users: HashMap<u32, String>,
 }
 
 impl UserRepository for InMemoryRepository {
+
     /// Saves the current value.
+///
     /// # Arguments
+///
     /// * `id` - Identifier used to select the in memory repository record or cache entry affected
     ///   by this operation.
     /// * `name` - Human-readable value used to identify or display the selected in memory
@@ -44,6 +57,7 @@ impl UserRepository for InMemoryRepository {
     /// Finds the current value.
     ///
     /// # Arguments
+///
     /// * `id` - Identifier used to select the in memory repository record or cache entry affected
     ///   by this operation.
     fn find(&self, id: u32) -> Option<String> {
@@ -53,13 +67,17 @@ impl UserRepository for InMemoryRepository {
 
 /// An adapter that only logs; a real one would call a database.
 struct LoggingRepository {
+
     /// Shared internal state.
     inner: InMemoryRepository,
 }
 
 impl UserRepository for LoggingRepository {
+
     /// Saves the current value.
+///
     /// # Arguments
+///
     /// * `id` - Identifier used to select the logging repository record or cache entry affected by
     ///   this operation.
     /// * `name` - Human-readable value used to identify or display the selected logging repository.
@@ -71,6 +89,7 @@ impl UserRepository for LoggingRepository {
     /// Finds the current value.
     ///
     /// # Arguments
+///
     /// * `id` - Identifier used to select the logging repository record or cache entry affected by
     ///   this operation.
     fn find(&self, id: u32) -> Option<String> {
@@ -81,12 +100,17 @@ impl UserRepository for LoggingRepository {
 
 /// The core: business logic that depends only on the port.
 struct UserService<R: UserRepository> {
+
     /// Repository value.
     repository: R,
 }
 
 impl<R: UserRepository> UserService<R> {
+
+    /// Normalizes a user name and stores it through the repository.
+///
     /// # Arguments
+///
     /// * `id` - Identifier used to select the user service record or cache entry affected by this
     ///   operation.
     /// * `name` - Human-readable value used to identify or display the selected user service.
@@ -94,7 +118,10 @@ impl<R: UserRepository> UserService<R> {
         self.repository.save(id, &name.trim().to_uppercase());
     }
 
+    /// Returns the registered display name for a user, or an unknown-user label.
+///
     /// # Arguments
+///
     /// * `id` - Identifier used to select the user service record or cache entry affected by this
     ///   operation.
     fn display_name(&self, id: u32) -> String {
@@ -103,7 +130,7 @@ impl<R: UserRepository> UserService<R> {
             .unwrap_or_else(|| "UNKNOWN".to_owned())
     }
 }
-/// Runs the example.
+
 /// Runs the same core logic with two different adapters.
 fn main() {
     let mut service = UserService {
@@ -123,7 +150,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Runs the same core logic with two different adapters.
 pub fn run() {
     main();
 }

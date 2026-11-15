@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Accepting several types through `AsRef`.
 //!
 //! `AsRef<T>` is a cheap conversion to a reference. A function that takes `impl
@@ -37,7 +38,8 @@ fn string_slice() {
 ///  although it is more common to use `&[T]` than `AsRef<T>`.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested asref operation.
+///
+/// * `input` - Collection to view as a slice, print, and count.
 fn print_vec<T: AsRef<[i32]>>(input: T) -> usize {
     let input = input.as_ref(); // Convert to a slice.
     println!("{input:?}");
@@ -47,6 +49,7 @@ fn print_vec<T: AsRef<[i32]>>(input: T) -> usize {
 // `Vec<T>` and `[T; N]` implement `AsRef<[T]>`.
 // We can also pass a reference to a vector or array, thanks to a blanket
 // `impl AsRef<U> for &T where T: AsRef<U>` in the standard library.
+
 /// Passes a vector and an array to a function that takes `AsRef<[i32]>`.
 fn vec_example() {
     let vec: Vec<i32> = vec![1, 2, 3];
@@ -59,7 +62,7 @@ fn vec_example() {
     let sli: &[i32] = &[1, 2, 3];
     print_vec(sli);
 }
-/// Runs the example.
+
 /// Runs both examples.
 fn main() {
     string_slice();
@@ -67,8 +70,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs both examples.
 pub fn run() {
     main();
 }
@@ -76,11 +78,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `asref` example runs.
     #[test]
     fn test_asref_example_entry_point() {
         main();
     }
+
     /// Verifies print length accepts string and str.
     #[test]
     fn test_print_length_accepts_string_and_str() {
@@ -88,6 +92,7 @@ mod tests {
         assert_eq!(print_length("Hello, Rust!"), 12);
         assert_eq!(print_length(""), 0);
     }
+
     /// Verifies print vec accepts vec array and slice.
     #[test]
     fn test_print_vec_accepts_vec_array_and_slice() {

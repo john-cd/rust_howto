@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Reformatting dates with a regular expression replacement.
 //!
 //! Regexes can rewrite text: capture groups are referred to in the replacement
@@ -31,8 +32,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Reformats the dates in a sample text.
 pub fn run() {
     main();
 }

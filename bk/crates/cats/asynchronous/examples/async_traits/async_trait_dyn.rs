@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `#[async_trait]` for trait objects.
 //!
 //! Native `async fn` in traits is not dyn-compatible: `Box<dyn Store>` does
@@ -13,8 +14,10 @@ use async_trait::async_trait;
 /// A storage backend, usable as `dyn Store`.
 #[async_trait]
 trait Store: Send + Sync {
+
     /// The name of the backend.
     fn name(&self) -> &'static str;
+
     /// Reads a value.
     async fn read(&self, key: &str) -> Option<String>;
 }
@@ -24,6 +27,7 @@ struct Constant(&'static str);
 
 #[async_trait]
 impl Store for Constant {
+
     /// Names this backend for display in the results.
     fn name(&self) -> &'static str {
         "constant"
@@ -40,6 +44,7 @@ struct Empty;
 
 #[async_trait]
 impl Store for Empty {
+
     /// Names this backend for display in the results.
     fn name(&self) -> &'static str {
         "empty"
@@ -50,12 +55,15 @@ impl Store for Empty {
         None
     }
 }
+
 /// Queries every backend in a heterogeneous list.
 ///
 /// # Arguments
+///
 /// * `key` - Identifier used to select the empty or related record being processed.
 ///
 /// # Returns
+///
 /// `Some` when the requested value is available; otherwise returns `None`.
 async fn read_all(stores: &[Box<dyn Store>], key: &str) -> Vec<(&'static str, Option<String>)> {
     let mut out = Vec::new();
@@ -64,7 +72,7 @@ async fn read_all(stores: &[Box<dyn Store>], key: &str) -> Vec<(&'static str, Op
     }
     out
 }
-/// Runs the example.
+
 /// Builds a `Vec<Box<dyn Store>>` and queries it.
 #[tokio::main]
 async fn main() {
@@ -77,7 +85,6 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example.
 pub fn run() {
     main();

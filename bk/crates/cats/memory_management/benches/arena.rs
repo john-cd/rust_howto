@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Criterion benchmark comparing arena allocation (`bumpalo`) against standard
 //! heap (`Box`) allocations.
 //!
@@ -20,23 +21,30 @@ use criterion::criterion_main;
 
 /// A binary tree node living in a `bumpalo` arena with reference pointers.
 struct ArenaNode<'bump> {
+
     /// Value stored by this wrapper.
     val: i32,
+
     /// Optional left used by arena node; `None` means the value is not configured or unavailable.
     left: Option<&'bump Self>,
+
     /// Optional right used by arena node; `None` means the value is not configured or unavailable.
     right: Option<&'bump Self>,
 }
 
 /// A binary tree node living on the standard heap using `Box`.
 struct BoxNode {
+
     /// Value stored by this wrapper.
     val: i32,
+
     /// Optional left used by box node; `None` means the value is not configured or unavailable.
     left: Option<Box<Self>>,
+
     /// Optional right used by box node; `None` means the value is not configured or unavailable.
     right: Option<Box<Self>>,
 }
+
 /// Inserts a value into an arena-backed binary search tree.
 fn insert_arena<'bump>(
     bump: &'bump Bump,
@@ -87,7 +95,8 @@ fn insert_box(node: Option<Box<BoxNode>>, val: i32) -> Box<BoxNode> {
 /// `Box` nodes.
 ///
 /// # Arguments
-/// * `c` - Mutable criterion whose state is updated by this operation.
+///
+/// * `c` - Criterion benchmark group used to register this benchmark.
 fn benchmark_tree_construction(c: &mut Criterion) {
     let mut group = c.benchmark_group("tree_construction");
 
@@ -121,7 +130,8 @@ fn benchmark_tree_construction(c: &mut Criterion) {
 /// Benchmarks batch allocating small objects in `bumpalo` vs standard `Box`.
 ///
 /// # Arguments
-/// * `c` - Mutable criterion whose state is updated by this operation.
+///
+/// * `c` - Criterion benchmark group used to register this benchmark.
 fn benchmark_batch_allocations(c: &mut Criterion) {
     let mut group = c.benchmark_group("batch_allocations");
 
@@ -162,6 +172,7 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+
     /// Runs the arena benchmark through its entry point.
     #[test]
     fn test_arena_bench_entry_point() {

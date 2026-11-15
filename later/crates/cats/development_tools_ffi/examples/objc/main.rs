@@ -4,7 +4,7 @@
 
 /// Convert a Rust string with the typed Objective-C Foundation bindings.
 mod objc2;
-/// Runs the example.
+
 /// Runs the objc example.
 fn main() {
     objc2::run();

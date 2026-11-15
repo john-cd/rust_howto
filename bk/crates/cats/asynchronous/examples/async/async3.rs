@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Run a task on the Tokio runtime and await its result.
 //!
 //! `tokio::spawn` starts a task that runs concurrently, possibly on another

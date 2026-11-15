@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Lazily initializes a single-threaded value with `std::cell::LazyCell`.
 //!
 //! Lazy initialization delays an expensive computation until the value is first
@@ -8,7 +9,7 @@
 //! version is `LazyLock`.
 
 use std::cell::LazyCell;
-/// Runs the example.
+
 /// Creates and reads a value initialized on first access.
 fn main() {
     let message = LazyCell::new(|| String::from("initialized on first access"));
@@ -16,8 +17,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates and reads a value initialized on first access.
 pub fn run() {
     main();
 }

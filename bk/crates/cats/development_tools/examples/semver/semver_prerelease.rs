@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to work with pre-release versions using the `semver` crate.
 //!
 //! A pre-release version such as `1.0.0-beta.1` sorts before the final `1.0.0`
@@ -26,9 +27,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses versions with and without a pre-release identifier.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

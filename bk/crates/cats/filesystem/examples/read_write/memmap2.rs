@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates reading from a memory-mapped file.
 //!
 //! Memory mapping makes the operating system expose a file as if it were part
@@ -47,9 +48,10 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Writes a file, then reads it through a read-only memory map.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Testing timeouts and retries instantly with Tokio's paused clock.
 //!
 //! Tokio can pause its clock in tests and advance it by hand, so code with
@@ -43,6 +44,7 @@ mod tests {
     // With `start_paused`, the runtime advances the clock automatically
     // whenever every task is waiting on a timer, so the test does not really
     // sleep.
+
     /// Advances virtual time to the timeout without sleeping in real time.
     #[tokio::test(start_paused = true)]
     async fn times_out_without_waiting() {

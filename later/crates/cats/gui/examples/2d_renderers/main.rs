@@ -8,6 +8,7 @@ use clap::Subcommand;
 /// Draw a vector shape in an OpenGL window with FemtoVG.
 #[cfg(feature = "femtovg")]
 mod femtovg;
+
 /// Draw shapes into an in-memory image with `skia-safe` (CPU raster, no GPU or
 #[cfg(feature = "skia")]
 mod skia_safe;
@@ -15,6 +16,7 @@ mod skia_safe;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,10 +25,12 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `femtovg` example.
     #[cfg(feature = "femtovg")]
     #[command(name = "femtovg")]
     Femtovg,
+
     /// Runs the `skia_safe` example.
     #[cfg(feature = "skia")]
     #[command(name = "skia_safe")]

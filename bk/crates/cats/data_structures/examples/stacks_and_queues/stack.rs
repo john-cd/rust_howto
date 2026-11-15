@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A stack implemented with `Vec`.
 //!
 //! A stack is last in, first out (LIFO), like a pile of plates. A `Vec` works
@@ -39,8 +40,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Pushes elements onto a stack and pops them in last-in, first-out order.
 pub fn run() {
     main();
 }

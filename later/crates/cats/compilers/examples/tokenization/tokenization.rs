@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Tokenizes a small arithmetic expression with logos.
 //!
 //! Tokenization (lexing) is the first stage of a compiler or interpreter: it
@@ -11,12 +12,15 @@
 use logos::Logos;
 
 #[derive(Debug, Logos, PartialEq)]
+
 /// Defines the outcomes available to the tokenization workflow, including identifier, plus.
 #[logos(skip r"[ \t]+")]
 enum Token {
+
     /// An identifier made from ASCII letters.
     #[regex(r"[a-zA-Z]+")]
     Identifier,
+
     /// The addition operator.
     #[token("+")]
     Plus,

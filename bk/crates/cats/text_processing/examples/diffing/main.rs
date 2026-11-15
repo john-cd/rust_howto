@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the `diff` crate to compare two strings
 mod diff;
+
 /// Diffing lines and words with `similar` and styling the result with
 mod similar;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `diff` example.
     #[command(name = "diff")]
     Diff,
+
     /// Runs the `similar` example.
     #[command(name = "similar")]
     Similar,

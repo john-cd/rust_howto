@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates inserting rows into PostgreSQL and querying the
 //! inserted data back.
 //!
@@ -16,18 +17,24 @@ use anyhow::Context as _;
 use postgres::Client;
 use postgres::NoTls;
 use postgres::types::ToSql;
+
 /// Represents an author with an ID, name, and country.
 struct Author {
+
     /// The identifier.
     _id: i32,
+
     /// The name.
     name: String,
+
     /// The country.
     country: String,
 }
+
 /// Inserts sample authors into a temporary table, then queries them back.
 ///
 /// # Errors
+///
 /// Returns an error if `DATABASE_URL` is missing, PostgreSQL cannot be reached,
 /// or an insert or query fails.
 fn main() -> anyhow::Result<()> {
@@ -95,7 +102,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Connects to PostgreSQL and runs the sample insert and query.
+///
 /// # Errors
+///
 /// Returns an error if PostgreSQL cannot be reached or the sample query fails.
 pub fn run() -> anyhow::Result<()> {
     main()

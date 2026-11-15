@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Downloads a file as binary response chunks into a temporary directory.
 mod download;
+
 /// Downloads a file in verified byte ranges.
 mod partial;
+
 /// This example shows how to POST a file to a server.
 mod post_file;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `download` example.
     #[command(name = "download")]
     Download,
+
     /// Runs the `partial` example.
     #[command(name = "partial")]
     Partial,
+
     /// Runs the `post_file` example.
     #[command(name = "post_file")]
     PostFile,

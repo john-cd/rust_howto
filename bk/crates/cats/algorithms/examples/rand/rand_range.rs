@@ -1,9 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates generating random numbers within a specified range.
 //!
 //! ### `Rng::random_range` Optimization and Range Syntax
+//!
 //! The `random_range` method is optimized for single one-off samples drawn from
 //! a range. All supported numeric types can be sampled using standard Range
 //! (`low..high`) and RangeInclusive (`low..=high`) expressions. Unsigned
@@ -24,8 +26,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates generating random numbers within a specified range.
 pub fn run() {
     main();
 }

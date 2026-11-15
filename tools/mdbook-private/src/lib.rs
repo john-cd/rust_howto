@@ -5,6 +5,7 @@
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 //!
 // Adapted from https://github.com/RealAtix/mdbook-private (Razvan Nicolescu).
 
@@ -24,18 +25,23 @@ use serde::Deserialize;
 #[derive(Deserialize)]
 #[serde(default, rename_all = "kebab-case")]
 struct Config {
+
     /// Whether to remove private chapters instead of keeping them.
     remove: bool,
+
     /// Whether to style the private content.
     style: bool,
+
     /// Notice displayed on private content.
     notice: String,
+
     /// Prefix of the file names of private chapters.
     chapter_prefix: String,
 }
 
 impl Default for Config {
-    /// Constructs a usable initial config value with the defaults required by the lib component.
+
+    /// Returns the default settings for removing and styling private book content.
     fn default() -> Self {
         Self {
             remove: false,
@@ -50,6 +56,7 @@ impl Default for Config {
 pub struct Private;
 
 impl Preprocessor for Private {
+
     /// Returns the preprocessor name.
     fn name(&self) -> &'static str {
         "private"
@@ -62,6 +69,7 @@ impl Preprocessor for Private {
             .config
             .get::<Config>("preprocessor.private")?
             .unwrap_or_default();
+
         /// Matches private code blocks that should be removed from the rendered book.
         static BLOCK: LazyLock<Regex> = LazyLock::new(|| {
             Regex::new(r"<!--\s*private\b\s*[\r?\n]?((?s).*?)[\r?\n]?\s*-->[\r?\n]?")
@@ -95,6 +103,7 @@ impl Preprocessor for Private {
         Ok(renderer != "not-supported")
     }
 }
+
 /// Removes the chapters, at any depth, whose file name starts with `prefix`.
 fn remove_chapters(items: &mut Vec<BookItem>, prefix: &str) {
     items.retain_mut(|item| {
@@ -117,8 +126,9 @@ fn remove_chapters(items: &mut Vec<BookItem>, prefix: &str) {
 /// Renumbers the chapters that have a number, starting at 1 under `parent`.
 ///
 /// # Arguments
-/// * `items` - Mutable [book item] whose state is updated by this operation.
-/// * `parent` - Mutable vec whose state is updated by this operation.
+///
+/// * `items` - Book items whose chapter numbers are renumbered recursively.
+/// * `parent` - Chapter-number prefix inherited by children of the current level.
 fn renumber(items: &mut [BookItem], parent: &mut Vec<u32>) {
     let mut next = 1;
     for item in items {

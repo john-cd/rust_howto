@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Add to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
@@ -47,9 +48,10 @@ fn watch_for_write(dir: &Path) -> anyhow::Result<notify::Event> {
 // Look for additional examples in <https://github.com/notify-rs/notify/tree/main/examples>.
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Watches a temporary directory and waits briefly for a file-system event.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

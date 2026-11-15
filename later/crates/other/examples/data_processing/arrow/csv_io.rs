@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Write an Arrow record batch to CSV and read it back.
 //!
 //! CSV is a plain-text format with no types, while Arrow columns are typed.
@@ -18,6 +19,7 @@ use arrow::record_batch::RecordBatch;
 /// Serializes a record batch to CSV, then reads the resulting bytes.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body(schema: Arc<Schema>, batch: &RecordBatch) -> Result<()> {
     let decoded = round_trip(schema, batch)?;
@@ -43,10 +45,12 @@ fn round_trip(schema: Arc<Schema>, batch: &RecordBatch) -> Result<RecordBatch> {
 /// Writes the sample record batch as CSV.
 ///
 /// # Arguments
+///
 /// * `schema` - Schema used to decode the CSV columns.
 /// * `batch` - Record batch to serialize and read back.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run(schema: Arc<Schema>, batch: &RecordBatch) -> Result<()> {
     example_body(schema, batch)

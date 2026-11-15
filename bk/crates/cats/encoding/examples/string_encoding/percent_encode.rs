@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of percent encoding and decoding strings.
 //!
 //! Percent-encoding makes text safe for URLs by replacing unsafe characters
@@ -41,9 +42,10 @@ fn main() -> Result<(), Utf8Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Percent-encodes a string, then decodes it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Utf8Error> {
     main()

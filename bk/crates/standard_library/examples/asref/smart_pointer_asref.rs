@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates the difference between taking a reference to a `Box` and using
 //! `as_ref()`.
 
@@ -30,8 +31,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates the difference between taking a reference to a `Box` and using `as_ref()`.
 pub fn run() {
     main();
 }
@@ -39,11 +39,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `smart pointer asref` example runs.
     #[test]
     fn test_smart_pointer_asref_example_entry_point() {
         main();
     }
+
     /// Verifies box as ref and deref give the same content.
     #[test]
     fn test_box_as_ref_and_deref_give_the_same_content() {

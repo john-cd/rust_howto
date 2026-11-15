@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! UTF-8 paths with `camino`.
 //!
 //! Standard Rust paths (`Path`) can hold bytes that are not valid UTF-8, which
@@ -25,7 +26,7 @@ fn utf8_path() -> Utf8PathBuf {
     println!("Final path: {path}");
     path
 }
-/// Runs the example.
+
 /// Compares standard paths with UTF-8 paths.
 fn main() {
     // The standard `PathBuf` can contain non-UTF-8 data:
@@ -57,8 +58,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Compares standard paths with UTF-8 paths.
 pub fn run() {
     main();
 }

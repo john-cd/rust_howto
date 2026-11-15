@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -66,6 +67,7 @@ use crate::common::batch::BatchConfig;
 
 // Batches are moved all over the pipeline and are quite big (56B+), so they are boxed to optimize
 // the moves. They are always reused, so there is no allocation performance penalty.
+
 /// Shared `rblen` used by this module.
 type BoxedWBatch = Box<WBatch>;
 
@@ -74,20 +76,25 @@ const RBLEN: usize = QueueSizeConf::MAX;
 
 // Inner structure to reuse serialization batches
 struct StageInRefill {
+
     /// N ref r value.
     n_ref_r: Waiter,
+
     /// S ref r value.
     s_ref_r: RingBufferReader<BoxedWBatch, RBLEN>,
+
     /// Batch config value.
     batch_config: (usize, BatchConfig),
+
     /// Batch allocs value.
     batch_allocs: usize,
 }
-/// Error returned when a transport receive stage has closed.
 
+/// Error returned when a transport receive stage has closed.
 #[derive(Debug)]
 pub(crate) struct TransportClosed;
 impl fmt::Display for TransportClosed {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "transport closed")
@@ -108,13 +115,11 @@ impl StageInRefill {
     }
 
     /// Waits for the current value.
-
     fn wait(&self) -> bool {
         self.n_ref_r.wait().is_ok()
     }
 
     /// Waits for deadline.
-
     fn wait_deadline(&self, instant: Instant) -> Result<bool, TransportClosed> {
         match self.n_ref_r.wait_deadline(instant) {
             Ok(()) => Ok(true),
@@ -125,30 +130,38 @@ impl StageInRefill {
 }
 
 lazy_static::lazy_static! {
+
    /// Monotonic origin used to measure elapsed transport time.
    static ref LOCAL_EPOCH: Instant = Instant::now();
 }
 
 /// Microsecond duration used for transport backoff calculations.
 type AtomicMicroSeconds = AtomicU32;
+
 /// Active value.
 type MicroSeconds = u32;
 
 struct AtomicBackoff {
+
     /// Whether the backoff is currently active.
     active: CachePadded<AtomicBool>,
+
     /// Number of bytes queued for the next transport write.
     bytes: CachePadded<AtomicBatchSize>,
+
     /// Time or size threshold that triggers the first write.
     first_write: CachePadded<AtomicMicroSeconds>,
 }
 
 // Inner structure to link the initial stage with the final stage of the pipeline
 struct StageInOut {
+
     /// Notifier for the next write stage.
     n_out_w: Notifier,
+
     /// Queue that carries write batches to the next stage.
     s_out_w: RingBufferWriter<BoxedWBatch, RBLEN>,
+
     /// Shared backoff state for the pipeline.
     atomic_backoff: Arc<AtomicBackoff>,
 }
@@ -171,10 +184,13 @@ impl StageInOut {
 }
 
 struct Current {
+
     /// Optional batch used by current; `None` means the value is not configured or unavailable.
     batch: Option<BoxedWBatch>,
+
     /// Current lifecycle value used to decide which current operations are valid.
     status: Arc<TransmissionPipelineStatus>,
+
     /// Prioflag value.
     prioflag: u8,
 }
@@ -197,8 +213,10 @@ impl Current {
 
 // Inner structure containing mutexes for current serialization batch and SNs
 struct StageInMutex {
+
     /// Currently active state.
     current: Arc<Mutex<Current>>,
+
     /// Transmission priority.
     priority: TransportPriorityTx,
 }
@@ -216,16 +234,23 @@ impl StageInMutex {
 
 #[derive(Debug)]
 struct WaitTime {
+
     /// Wait time value.
     wait_time: Duration,
+
     /// Optional max wait time used by wait time; `None` means the value is not configured or
     /// unavailable.
     max_wait_time: Option<Duration>,
 }
 
 impl WaitTime {
-    /// Constructs a usable initial wait time value with the defaults required by the pipeline
-    /// component.
+
+    /// Creates a retry delay with an optional maximum delay.
+    ///
+    /// # Arguments
+///
+    /// * `wait_time` - Initial delay before retrying.
+    /// * `max_wait_time` - Optional upper bound for the delay after backoff increases.
     fn new(wait_time: Duration, max_wait_time: Option<Duration>) -> Self {
         Self {
             wait_time,
@@ -233,8 +258,11 @@ impl WaitTime {
         }
     }
 
+    /// Doubles the backoff delay up to its limit and advances the retry deadline.
+    ///
     /// # Arguments
-    /// * `instant` - Mutable instant whose state is updated by this operation.
+///
+    /// * `instant` - Retry deadline to advance by the updated delay.
     fn advance(&mut self, instant: &mut Instant) {
         // grow wait_time exponentially
         self.wait_time = self.wait_time.saturating_mul(2);
@@ -261,7 +289,6 @@ impl WaitTime {
     }
 
     /// Waits for time.
-
     fn wait_time(&self) -> Duration {
         self.wait_time
     }
@@ -275,16 +302,22 @@ enum DeadlineSetting {
 }
 
 struct LazyDeadline {
+
     /// Optional deadline used by lazy deadline; `None` means the value is not configured or
     /// unavailable.
     deadline: Option<DeadlineSetting>,
+
     /// Wait time value.
     wait_time: WaitTime,
 }
 
 impl LazyDeadline {
-    /// Constructs a usable initial lazy deadline value with the defaults required by the pipeline
-    /// component.
+
+    /// Creates a deadline that starts when first requested, using the supplied retry delay.
+    ///
+    /// # Arguments
+///
+    /// * `wait_time` - Initial and maximum retry delay policy for the deadline.
     fn new(wait_time: WaitTime) -> Self {
         Self {
             deadline: None,
@@ -313,13 +346,19 @@ impl LazyDeadline {
 }
 
 struct Deadline {
+
     /// Lazy deadline value.
     lazy_deadline: LazyDeadline,
 }
 
 impl Deadline {
-    /// Constructs a usable initial deadline value with the defaults required by the pipeline
-    /// component.
+
+    /// Creates a lazily started deadline with the supplied initial and maximum retry delays.
+    ///
+    /// # Arguments
+///
+    /// * `wait_time` - Initial delay before waiting again.
+    /// * `max_wait_time` - Optional maximum delay used by exponential backoff.
     fn new(wait_time: Duration, max_wait_time: Option<Duration>) -> Self {
         Self {
             lazy_deadline: LazyDeadline::new(WaitTime::new(wait_time, max_wait_time)),
@@ -327,7 +366,6 @@ impl Deadline {
     }
 
     /// Waits for the current value.
-
     #[inline]
     fn wait(&mut self, s_ref: &StageInRefill) -> Result<bool, TransportClosed> {
         match self.lazy_deadline.deadline() {
@@ -343,24 +381,36 @@ impl Deadline {
 
 // This is the initial stage of the pipeline where messages are serliazed on
 struct StageIn {
+
     /// S ref value.
     s_ref: StageInRefill,
+
     /// S out value.
     s_out: StageInOut,
+
     /// Mutex value.
     mutex: StageInMutex,
+
     /// Fragbuf value.
     fragbuf: ZBuf,
+
     /// Flag indicating whether the stage in satisfies the batching condition.
     batching: bool,
     // used for stop fragment
+
     /// Batch config value.
     batch_config: BatchConfig,
 }
 
 impl StageIn {
-    /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
+
+    /// Queues a network message for transmission at the requested priority.
+    ///
+    /// # Arguments
+///
+    /// * `msg` - Network message to serialize and queue.
+    /// * `priority` - Priority queue that receives the message.
+    /// * `deadline` - Deadline used while waiting for a batch to become available.
     fn push_network_message(
         &mut self,
         msg: NetworkMessageRef,
@@ -530,7 +580,6 @@ impl StageIn {
     }
 
     /// Adds transport message.
-
     #[inline]
     fn push_transport_message(&mut self, msg: TransportMessage) -> bool {
         // Lock the current serialization batch.
@@ -598,6 +647,7 @@ impl StageIn {
 }
 
 // The result of the pull operation
+
 /// Defines the outcomes available to the common workflow, including some, none, backoff.
 enum Pull {
     Some(BoxedWBatch),
@@ -608,18 +658,26 @@ enum Pull {
 // Inner structure to keep track and signal backoff operations
 #[derive(Clone)]
 struct Backoff {
+
     /// Threshold value.
     threshold: MicroSeconds,
+
     /// Last bytes value.
     last_bytes: BatchSize,
+
     /// Atomic value.
     atomic: Arc<AtomicBackoff>,
     // active: bool,
 }
 
 impl Backoff {
-    /// Constructs a usable initial backoff value with the defaults required by the pipeline
-    /// component.
+
+    /// Creates a backoff tracker with its byte threshold and shared state.
+    ///
+    /// # Arguments
+///
+    /// * `threshold` - Byte threshold that activates backoff.
+    /// * `atomic` - Shared state updated while applying backoff.
     fn new(threshold: Duration, atomic: Arc<AtomicBackoff>) -> Self {
         Self {
             threshold: threshold.as_micros() as MicroSeconds,
@@ -632,15 +690,19 @@ impl Backoff {
 
 // Inner structure to link the final stage with the initial stage of the pipeline
 struct StageOutIn {
+
     /// S out r value.
     s_out_r: RingBufferReader<BoxedWBatch, RBLEN>,
+
     /// Currently active state.
     current: Arc<Mutex<Current>>,
+
     /// Backoff value.
     backoff: Backoff,
 }
 
 impl StageOutIn {
+
     /// Attempts to pull and reports failure to the caller.
     #[inline]
     fn try_pull(&mut self) -> Pull {
@@ -713,13 +775,17 @@ impl StageOutIn {
 }
 
 struct StageOutRefill {
+
     /// N ref w value.
     n_ref_w: Notifier,
+
     /// S ref w value.
     s_ref_w: RingBufferWriter<BoxedWBatch, RBLEN>,
 }
 
 impl StageOutRefill {
+
+    /// Returns a transmitted batch to the consumer for reuse at its priority.
     fn refill(&mut self, batch: BoxedWBatch) {
         assert!(self.s_ref_w.push(batch).is_none());
         let _ = self.n_ref_w.notify();
@@ -727,15 +793,19 @@ impl StageOutRefill {
 }
 
 struct StageOut {
+
     /// S in value.
     s_in: StageOutIn,
+
     /// S ref value.
     s_ref: StageOutRefill,
+
     /// N out r value.
     n_out_r: Waiter,
 }
 
 impl StageOut {
+
     /// Attempts to pull and reports failure to the caller.
     #[inline]
     fn try_pull(&mut self) -> Pull {
@@ -747,6 +817,7 @@ impl StageOut {
         self.s_ref.refill(batch);
     }
 
+    /// Returns the batches that are ready for transmission.
     fn drain(&mut self, guard: &mut MutexGuard<'_, Current>) -> Vec<BoxedWBatch> {
         let mut batches = vec![];
         // Empty the ring buffer
@@ -760,40 +831,52 @@ impl StageOut {
         batches
     }
 }
-/// Configuration for the queues and worker stages in a transmission pipeline.
 
+/// Configuration for the queues and worker stages in a transmission pipeline.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub(crate) struct TransmissionPipelineConf {
+
     /// Batching configuration for this transport.
     pub(crate) batch: BatchConfig,
+
     /// Queue size in `TransmissionPipelineConf`.
     pub(crate) queue_size: [usize; Priority::NUM],
+
     /// Delay before dropping the transport.
     /// Delay before dropping the transport.
     pub(crate) wait_before_drop: Duration,
+
     /// Maximum wait before incomplete fragments are discarded.
     pub(crate) max_wait_before_drop_fragments: Duration,
+
     /// Delay before closing the transport.
     pub(crate) wait_before_close: Duration,
+
     /// Flag indicating whether the transmission pipeline conf satisfies the batching enabled
     /// condition.
     pub(crate) batching_enabled: bool,
+
     /// Queue allocation policy.
     pub(crate) batching_time_limit: Duration,
+
     /// Queue allocation policy.
     pub(crate) queue_alloc: QueueAllocConf,
 }
 
 // A 2-stage transmission pipeline
+
 /// Concurrent pipeline that moves transport batches between producers and links.
 pub(crate) struct TransmissionPipeline;
 impl TransmissionPipeline {
     // A MPSC pipeline
     pub(crate) fn make(
+
         /// Settings that control how this transmission pipeline is constructed or processed.
         config: TransmissionPipelineConf,
+
         /// Transmission priority.
         priority: &[TransportPriorityTx],
+
         /// Flag indicating whether the transmission pipeline satisfies the link supports priority
         /// condition.
         link_supports_priority: bool,
@@ -913,39 +996,41 @@ impl TransmissionPipeline {
 
 struct TransmissionPipelineStatus {
     // The whole pipeline is enabled or disabled
+
     /// Disabled value.
     disabled: AtomicBool,
     // Bitflags to indicate the given priority queue is congested
+
     /// Congested value.
     congested: AtomicU8,
     // Bitflags to indicate the given priority queue has messages waiting to be sent
+
     /// Pending value.
     pending: AtomicU8,
     // wait parameters
     // Note: this is placed here to optimize TransmissionPipelineProducer memory layout and improve
     // performance
+
     /// Waits value.
     waits: Waits,
 }
 
 impl TransmissionPipelineStatus {
+
     /// Changes the disabled held by the transmission pipeline status; subsequent operations use the
     /// updated value.
-
     fn set_disabled(&self, status: bool) {
         self.disabled.store(status, Ordering::Relaxed);
     }
 
     /// Reports whether the transmission pipeline status meets the disabled condition so callers can
     /// choose the correct branch.
-
     fn is_disabled(&self) -> bool {
         self.disabled.load(Ordering::Relaxed)
     }
 
     /// Changes the congested held by the transmission pipeline status; subsequent operations use
     /// the updated value.
-
     fn set_congested(&self, priority: Priority, status: bool) {
         let prioflag = 1 << priority as u8;
         if status {
@@ -957,14 +1042,12 @@ impl TransmissionPipelineStatus {
 
     /// Reports whether the transmission pipeline status meets the congested condition so callers
     /// can choose the correct branch.
-
     fn is_congested(&self, priority: Priority) -> bool {
         let prioflag = 1 << priority as u8;
         self.congested.load(Ordering::Relaxed) & prioflag != 0
     }
 
-    /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
+    /// Returns the highest-priority pending message, if any.
     fn get_pending(&self) -> Option<Priority> {
         let pending = self.pending.load(Ordering::Relaxed);
         let prio = pending.trailing_zeros();
@@ -978,30 +1061,36 @@ impl TransmissionPipelineStatus {
 
 #[derive(Clone)]
 struct Waits {
+
     /// Delay before dropping the transport.
     wait_before_drop: Duration,
+
     /// Maximum wait before incomplete fragments are discarded.
     max_wait_before_drop_fragments: Duration,
 
     /// Delay before closing the transport.
     wait_before_close: Duration,
 }
-/// Producer handle for sending batches into a transmission pipeline.
 
+/// Producer handle for sending batches into a transmission pipeline.
 #[derive(Clone)]
 pub(crate) struct TransmissionPipelineProducer {
     // Each priority queue has its own Mutex
+
     /// Stage in value.
     stage_in: Arc<[Mutex<StageIn>]>,
+
     /// Current lifecycle value used to decide which transmission pipeline producer operations are
     /// valid.
     status: Arc<TransmissionPipelineStatus>,
 }
 
 impl TransmissionPipelineProducer {
+
     /// Adds network message.
     ///
     /// # Arguments
+///
     /// * `msg` - Message to schedule or process.
     #[inline]
     pub(crate) fn push_network_message(
@@ -1071,8 +1160,8 @@ impl TransmissionPipelineProducer {
     /// Adds transport message.
     ///
     /// # Arguments
+///
     /// * `msg` - Message to schedule or process.
-
     #[inline]
     pub(crate) fn push_transport_message(&self, msg: TransportMessage, priority: Priority) -> bool {
         // If the queue is not QoS, it means that we only have one priority with index 0.
@@ -1111,15 +1200,18 @@ impl TransmissionPipelineProducer {
         }
     }
 }
-/// Consumer handle for reading batches from a transmission pipeline.
 
+/// Consumer handle for reading batches from a transmission pipeline.
 pub(crate) struct TransmissionPipelineConsumer {
     // A single Mutex for all the priority queues
+
     /// Stage out value.
     stage_out: Box<[StageOut]>,
+
     /// Optional n out r used by transmission pipeline consumer; `None` means the value is not
     /// configured or unavailable.
     n_out_r: Option<Waiter>,
+
     /// Current lifecycle value used to decide which transmission pipeline consumer operations are
     /// valid.
     status: Arc<TransmissionPipelineStatus>,
@@ -1130,6 +1222,8 @@ pub(crate) trait PipelineConsumer {
     #[allow(private_interfaces)]
     fn status(&self) -> &TransmissionPipelineStatus;
     fn stage_pull(&mut self) -> Result<(BoxedWBatch, Priority), Option<MicroSeconds>>;
+
+    /// Returns the waiter used to notify the outgoing pipeline stage.
     fn n_out_r(&self) -> &Waiter;
     async fn pull(&mut self) -> Option<(BoxedWBatch, Priority)> {
         while !self.status().is_disabled() {
@@ -1174,12 +1268,15 @@ pub(crate) trait PipelineConsumer {
         None
     }
 
-    /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
+    /// Adds a non-ephemeral write batch to the outgoing pipeline at the given priority.
+    ///
+    /// # Arguments
+    ///
+    /// * `batch` - Write batch to add to the pipeline.
+    /// * `priority` - Priority assigned to the batch.
     fn refill(&mut self, batch: BoxedWBatch, priority: Priority);
 
-    /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
+    /// Removes and returns all pending write batches with their priorities.
     fn drain(&mut self) -> Vec<(BoxedWBatch, Priority)>;
 }
 
@@ -1201,8 +1298,11 @@ impl PipelineConsumer for TransmissionPipelineConsumer {
         Err(None)
     }
 
+    /// Returns the waiter notified when outgoing capacity becomes available.
+    ///
     /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
+    ///
+    /// Panics if no outgoing waiter has been installed.
     fn n_out_r(&self) -> &Waiter {
         self.n_out_r.as_ref().unwrap()
     }
@@ -1214,8 +1314,11 @@ impl PipelineConsumer for TransmissionPipelineConsumer {
         }
     }
 
+    /// Drains queued batches from every priority stage and returns each batch with its priority.
+    ///
     /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
+    ///
+    /// Panics if a stage lock is poisoned or an internal priority index is invalid.
     fn drain(&mut self) -> Vec<(BoxedWBatch, Priority)> {
         // Drain the remaining batches
         let mut batches = vec![];
@@ -1241,8 +1344,12 @@ impl PipelineConsumer for TransmissionPipelineConsumer {
 }
 
 impl TransmissionPipelineConsumer {
+
+    /// Splits the pipeline consumer into one consumer per priority.
+    ///
     /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
+    ///
+    /// Panics if an outgoing waiter is installed or a priority index is invalid.
     pub(crate) fn split(self) -> Vec<SplitTransmissionPipelineConsumer> {
         assert!(self.n_out_r.is_none());
         self.stage_out
@@ -1257,13 +1364,16 @@ impl TransmissionPipelineConsumer {
             .collect()
     }
 }
-/// Consumer for the receive side of a split transmission pipeline.
 
+/// Consumer for the receive side of a split transmission pipeline.
 pub(crate) struct SplitTransmissionPipelineConsumer {
+
     /// Transmission priority.
     priority: Priority,
+
     /// Stage out value.
     stage_out: StageOut,
+
     /// Current lifecycle value used to decide which split transmission pipeline consumer
     /// operations are valid.
     status: Arc<TransmissionPipelineStatus>,
@@ -1301,8 +1411,11 @@ impl PipelineConsumer for SplitTransmissionPipelineConsumer {
         }
     }
 
+    /// Drains this consumer's queued batches and pairs them with its priority.
+    ///
     /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
+    ///
+    /// Panics if the outgoing stage lock is poisoned.
     fn drain(&mut self) -> Vec<(BoxedWBatch, Priority)> {
         let current = self.stage_out.s_in.current.clone();
         let batches = self.stage_out.drain(&mut current.lock().unwrap());
@@ -1346,6 +1459,7 @@ mod tests {
 
     /// Shared `sleep` used by this module.
     const SLEEP: Duration = Duration::from_millis(100);
+
     /// Shared `timeout` used by this module.
     const TIMEOUT: Duration = Duration::from_secs(60);
 
@@ -1699,8 +1813,7 @@ mod tests {
         }
     }
 
-    /// # Errors
-    /// An error is returned if tx_pipeline_closed fails.
+    /// Checks that sending on a closed transmission pipeline reports the closed-transport error.
     async fn tx_pipeline_closed() -> ZResult<()> {
         // Pipeline
         let tct = TransportPriorityTx::make(Bits::from(TransportSn::MAX))?;

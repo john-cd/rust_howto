@@ -66,6 +66,7 @@ mod tests {
     use super::*;
 
     // Helper to read file content.
+
     /// Reads UTF-8 text from `path`.
     ///
     /// # Errors
@@ -79,6 +80,7 @@ mod tests {
     }
 
     // Write empty Vec.
+
     /// Verifies that write each empty.
     #[test]
     fn test_write_each_empty() -> Result<()> {

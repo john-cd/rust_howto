@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parses and inspects the normalized SVG tree produced by `usvg`.
 //!
 //! SVG files allow many shortcuts, such as styles, `use` references and
@@ -34,6 +35,7 @@ fn inspect_svg() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 /// Runs the parsing and inspection example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     inspect_svg()

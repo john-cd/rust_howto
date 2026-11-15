@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Add to `Cargo.toml`:
 //! ```toml
 //! remove_dir_all = { version = "1.0.0", features = [ "parallel" ] }
@@ -15,6 +16,7 @@ use remove_dir_all::remove_dir_all;
 fn main() -> io::Result<()> {
     remove_tree(Path::new("temp"))
 }
+
 /// Creates a directory tree under `base`, then removes a subdirectory.
 fn remove_tree(base: &Path) -> io::Result<()> {
     // Create a directory structure for demonstration purposes
@@ -52,9 +54,10 @@ fn remove_tree(base: &Path) -> io::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Creates a directory tree, then removes it with all its content.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> io::Result<()> {
     main()

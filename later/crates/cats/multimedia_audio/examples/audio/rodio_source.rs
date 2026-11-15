@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Plays a sound produced by a custom `rodio::Source`.
 //!
 //! A source is an iterator of samples, pulled by the audio thread.
@@ -18,15 +19,19 @@ use rodio::nz;
 
 /// A mono sine wave.
 struct Sine {
+
     /// Frequency in hertz. Whole numbers loop cleanly every second.
     frequency: f32,
+
     /// Samples per second.
     sample_rate: SampleRate,
+
     /// Index of the next sample within the current second.
     position: u32,
 }
 
 impl Sine {
+
     /// Creates a sine wave at the CD sample rate.
     fn new(frequency: f32) -> Self {
         Self {
@@ -52,6 +57,7 @@ impl Iterator for Sine {
 }
 
 impl Source for Sine {
+
     /// `None`: the format never changes.
     fn current_span_len(&self) -> Option<usize> {
         None
@@ -70,9 +76,11 @@ impl Source for Sine {
         None
     }
 }
+
 /// Plays a chord for one second. It needs an audio device.
 ///
 /// # Errors
+///
 /// Returns an error if a fallible operation cannot complete.
 #[expect(
     dead_code,
@@ -107,7 +115,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Pulls samples from the source, as the audio thread would, without a device.
 pub fn run() {
     main();
 }

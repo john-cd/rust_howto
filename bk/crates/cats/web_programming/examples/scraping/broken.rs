@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Checks HTTP links from an HTML page against their resolved URLs.
 //!
 //! A link checker finds broken links, which hurt users and search ranking. It
@@ -85,9 +86,11 @@ async fn check_link(client: &Client, url: &Url) -> Result<bool> {
 
     bail!("unexpected HTTP status {status} while checking {url}");
 }
+
 /// Checks links on a web page one at a time and prints their status.
 ///
 /// # Errors
+///
 /// Returns an error if fetching the page, parsing links, building the client,
 /// or checking a link fails.
 #[tokio::main]
@@ -118,7 +121,10 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example that checks extracted links for failures.
+///
 /// # Errors
+///
 /// Returns any request, parsing, or link-checking error from the example.
 pub fn run() -> Result<()> {
     main()

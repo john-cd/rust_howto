@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates a simple TCP server that listens for a single
 //! connection, reads data from the connection, and then prints the received
 //! data.
@@ -50,9 +51,10 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Listens on an unused port of the loopback interface and prints what one client sends.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()
@@ -88,6 +90,7 @@ mod tests {
     fn require_external_client() -> Result<(), Error> {
         main()
     }
+
     /// A client that sends nothing yields an empty string.
     #[test]
     fn empty_connection_yields_empty_input() -> Result<(), Error> {

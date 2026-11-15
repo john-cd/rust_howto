@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Serialize a Rust value to YAML and deserialize it with `serde-saphyr`.
 //!
 //! YAML is a human-friendly data format that uses indentation, popular for
@@ -15,10 +16,13 @@ use serde::Serialize;
 /// A person represented in a YAML document.
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
 struct Person {
+
     /// The person's name.
     name: String,
+
     /// The person's age.
     age: u8,
+
     /// The person's email addresses.
     emails: Vec<String>,
 }
@@ -53,6 +57,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the YAML serialization example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Making a struct callable by implementing the `Fn` traits.
 //!
 //! A closure is an anonymous function that can capture variables. The `Fn`,
@@ -10,6 +11,7 @@
 
 /// A callable that adds an offset.
 struct Adder {
+
     /// The number to add.
     offset: i32,
 }
@@ -40,6 +42,7 @@ impl Fn<(i32,)> for Adder {
         self.offset + args.0
     }
 }
+
 /// Calls an `Adder` like a function.
 fn main() {
     let add_five = Adder { offset: 5 };
@@ -50,7 +53,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Calls an `Adder` like a function.
 pub fn run() {
     main();
 }
@@ -58,11 +61,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `callable` example runs.
     #[test]
     fn test_callable_example_entry_point() {
         main();
     }
+
     /// Verifies adder is callable like a function.
     #[test]
     fn test_adder_is_callable_like_a_function() {
@@ -72,6 +77,7 @@ mod tests {
         // `Fn` can be called repeatedly.
         assert_eq!(add_five(3), add_five(3));
     }
+
     /// Verifies adder as fn trait bounds.
     #[test]
     fn test_adder_as_fn_trait_bounds() {

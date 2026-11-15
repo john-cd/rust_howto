@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `nom` is a parser combinator library, which makes it easy to build parsers
 //! from small, reusable components. Below is a simple example demonstrating how
 //! to use `nom` to parse a comma-separated list of numbers.
@@ -26,13 +27,16 @@ fn parse_number(input: &str) -> IResult<&str, u32> {
     // error.
     map_res(digit1, str::parse).parse(input)
 }
+
 /// `parse_comma_separated_numbers` parses a comma-separated list of numbers.
 /// It returns a vector of `u32` integers.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested nom operation.
+///
+/// * `input` - Comma-separated unsigned integers to parse.
 ///
 /// # Errors
+///
 /// Returns an error if a fallible operation cannot complete.
 /// Returns an error if the supplied input is invalid.
 fn parse_comma_separated_numbers(input: &str) -> IResult<&str, Vec<u32>> {
@@ -41,7 +45,7 @@ fn parse_comma_separated_numbers(input: &str) -> IResult<&str, Vec<u32>> {
     // elements.
     separated_list0(tag(","), parse_number).parse(input)
 }
-/// Runs the example.
+
 /// Parses a comma-separated list of numbers and prints the result.
 fn main() {
     let input = "1,2,3,4,5";
@@ -55,8 +59,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Parses a comma-separated list of numbers and prints the result.
 pub fn run() {
     main();
 }

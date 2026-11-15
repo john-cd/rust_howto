@@ -7,20 +7,26 @@ use clap::Subcommand;
 
 /// Encode and decode bytes with the `base64` crate.
 mod base64_example;
+
 /// Encode a fixed-size token with the `base64ct` crate.
 mod base64ct_example;
+
 /// Fill a byte array with randomness from the operating system.
 mod getrandom_example;
+
 /// Encode and decode bytes as hexadecimal with the `hex` crate.
 mod hex_example;
+
 /// This example demonstrates the usage of the `subtle` crate for
 mod subtle;
+
 /// Demonstrates the use of the `zeroize` crate to securely clear sensitive data
 mod zeroize;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -29,18 +35,24 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `subtle` example.
     #[command(name = "subtle")]
     Subtle,
+
     /// Runs the `zeroize` example.
     #[command(name = "zeroize")]
     Zeroize,
+
     /// Runs the `getrandom` example.
     Getrandom,
+
     /// Runs the `base64` example.
     Base64,
+
     /// Runs the `base64ct` example.
     Base64ct,
+
     /// Runs the `hex` example.
     Hex,
 }

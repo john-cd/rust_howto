@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// This is an example of an async main function.
 mod async_main;
+
 /// The `main` function, the entry point of a binary crate.
 mod main_fn;
+
 /// Example of a `main` function returning a `Result`,
 mod main_fn_with_result;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `async_main` example.
     #[command(name = "async_main")]
     AsyncMain,
+
     /// Runs the `main_fn` example.
     #[command(name = "main_fn")]
     MainFn,
+
     /// Runs the `main_fn_with_result` example.
     #[command(name = "main_fn_with_result")]
     MainFnWithResult,

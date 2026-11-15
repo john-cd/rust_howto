@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of a slice as a function argument.
 
 /// Returns the sum of the elements of `slice`.
@@ -28,8 +29,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Passes a vector, an array and slices to a function that accepts a slice.
 pub fn run() {
     main();
 }
@@ -43,6 +43,7 @@ mod tests {
     fn test_slice_as_argument_example_entry_point() {
         main();
     }
+
     /// Verifies sum.
     #[test]
     fn test_sum() {

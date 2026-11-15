@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Measure a unit square and compare two city coordinates with `geo`.
 //!
 //! Geospatial code works with points, lines and polygons given as coordinates.
@@ -15,8 +16,9 @@ use geo::Distance as _;
 use geo::Haversine;
 use geo::Point;
 use geo::polygon;
-/// Creates a unit square, checks its geometry and containment, and measures a
 
+/// Creates a unit square, checks its geometry and containment, and measures a
+///
 /// city distance.
 fn main() {
     let square = polygon![
@@ -48,7 +50,6 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

@@ -7,16 +7,20 @@ use clap::Subcommand;
 
 /// Compressing and decompressing a file asynchronously with
 mod async_compression;
+
 /// Writing and reading a ZIP archive asynchronously with `async_zip`.
 mod async_zip;
+
 /// Example of using the `flate2` crate.
 mod flate2;
+
 /// Example of using the `zip` crate.
 mod zip;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,15 +29,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `async_compression` example.
     #[command(name = "async_compression")]
     AsyncCompression,
+
     /// Runs the `async_zip` example.
     #[command(name = "async_zip")]
     AsyncZip,
+
     /// Runs the `flate2` example.
     #[command(name = "flate2")]
     Flate2,
+
     /// Runs the `zip` example.
     #[command(name = "zip")]
     Zip,

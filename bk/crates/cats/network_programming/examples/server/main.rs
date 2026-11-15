@@ -8,6 +8,7 @@ use clap::Subcommand;
 /// This example serves a small HTTP response with Glommio's Linux `io_uring`
 #[cfg(target_os = "linux")]
 mod glommio;
+
 /// This example demonstrates a simple TCP server that listens for a single connection, reads data
 /// from the connection, and then prints the received
 mod listen_unused;
@@ -15,6 +16,7 @@ mod listen_unused;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,10 +25,12 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `glommio` example.
     #[cfg(target_os = "linux")]
     #[command(name = "glommio")]
     Glommio,
+
     /// Runs the `listen_unused` example.
     #[command(name = "listen_unused")]
     ListenUnused,

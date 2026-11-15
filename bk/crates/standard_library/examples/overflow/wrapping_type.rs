@@ -1,9 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates wrapping arithmetic with `std::num::Wrapping`.
 
 use std::num::Wrapping;
+
 /// Demonstrates wrapping arithmetic with `std::num::Wrapping`.
 /// Adds two wrapped values and checks the result.
 fn main() {
@@ -22,6 +24,7 @@ pub(super) fn run() {
 /// Verifies that `Wrapping` arithmetic rolls over at the type boundary.
 #[cfg(test)]
 mod tests {
+
     /// Verifies that `Wrapping` arithmetic rolls over at the type boundary.
     #[test]
     fn test_wrapping_type_rolls_over() {

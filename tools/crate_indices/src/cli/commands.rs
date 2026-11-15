@@ -23,6 +23,7 @@ pub(super) fn cli() -> Command {
         .subcommand(subcommand_update_refdefs())
         .subcommand(subcommand_expand_crate_blocks())
 }
+
 /// Builds the `category_page` subcommand of the CLI user interface
 fn subcommand_category_page() -> Command {
     Command::new("category_page")
@@ -30,6 +31,7 @@ fn subcommand_category_page() -> Command {
         .about("Returns the markdown for the category page, given a list of crates")
         .arg(arg_crate_name())
 }
+
 /// Builds the offline `category_page_from_metadata` subcommand.
 fn subcommand_category_page_from_metadata() -> Command {
     Command::new("category_page_from_metadata")
@@ -38,6 +40,7 @@ fn subcommand_category_page_from_metadata() -> Command {
         .arg(arg_book_root())
         .arg(arg_crate_name())
 }
+
 /// Builds the `alphabetical_page` subcommand of the CLI user interface
 fn subcommand_alphabetical_page() -> Command {
     Command::new("alphabetical_page")
@@ -46,6 +49,7 @@ fn subcommand_alphabetical_page() -> Command {
         .arg(arg_book_root())
         .arg(arg_crate_name())
 }
+
 /// Builds the `crate_page` subcommand of the CLI user interface
 fn subcommand_crate_page() -> Command {
     Command::new("crate_page")
@@ -53,6 +57,7 @@ fn subcommand_crate_page() -> Command {
         .about("Returns the markdown for individual crate sections in crates_and_examples.md, given a list of crates")
         .arg(arg_crate_name())
 }
+
 /// Builds the `list_crates` subcommand of the CLI user interface
 fn subcommand_list_crates() -> Command {
     Command::new("list_crates")
@@ -60,6 +65,7 @@ fn subcommand_list_crates() -> Command {
         .about("Returns the list of crates used in the book")
         .arg(arg_directory())
 }
+
 /// Builds the `update_refdefs` subcommand of the CLI user interface
 fn subcommand_update_refdefs() -> Command {
     Command::new("update_refdefs")
@@ -68,6 +74,7 @@ fn subcommand_update_refdefs() -> Command {
         .arg(arg_crate_name())
         .arg(arg_file_path_with_default())
 }
+
 /// Builds the `expand_crate_blocks` subcommand of the CLI user interface
 fn subcommand_expand_crate_blocks() -> Command {
     Command::new("expand_crate_blocks")
@@ -91,6 +98,7 @@ fn arg_crate_name() -> clap::Arg {
         .action(clap::ArgAction::Append)
         .help("Crate name(s)")
 }
+
 /// Builds the `file_path` argument with a default value (used by `update_refdefs`).
 fn arg_file_path_with_default() -> clap::Arg {
     Arg::new("file_path")
@@ -104,6 +112,7 @@ fn arg_file_path_with_default() -> clap::Arg {
         .default_value("./src/refs/crate-refs.md")
         .help("File path")
 }
+
 /// Builds the required metadata file argument.
 fn arg_metadata_file() -> clap::Arg {
     Arg::new("metadata")
@@ -115,6 +124,7 @@ fn arg_metadata_file() -> clap::Arg {
         .value_hint(ValueHint::FilePath)
         .help("TOML category metadata snapshot")
 }
+
 /// Builds the book root argument used to discover published recipe links.
 fn arg_book_root() -> clap::Arg {
     Arg::new("book_root")
@@ -127,6 +137,7 @@ fn arg_book_root() -> clap::Arg {
         .default_value(".")
         .help("Book root containing src/indices/examples_index.md")
 }
+
 /// Builds the `file_path` argument without a default value (used by `expand_crate_blocks`).
 /// The refdefs file is optional: when not provided, reference definitions are not merged.
 fn arg_optional_file_path() -> clap::Arg {
@@ -140,6 +151,7 @@ fn arg_optional_file_path() -> clap::Arg {
         .value_hint(ValueHint::FilePath)
         .help("Optional path to a refdefs file where reference definitions will be merged")
 }
+
 /// Builds the `directory` argument of the CLI user interface
 fn arg_directory() -> clap::Arg {
     Arg::new("directory")
@@ -158,6 +170,7 @@ fn arg_directory() -> clap::Arg {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Builds the command-line interface without invalid argument definitions.
     #[test]
     fn verify_cli() {

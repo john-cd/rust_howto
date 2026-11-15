@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Get readable compiler errors for handlers with `#[debug_handler]`.
 //!
 //! Without the attribute, a handler with an unsupported signature fails with
@@ -15,6 +16,7 @@ use axum::routing::get;
 /// Shared state.
 #[derive(Clone)]
 struct AppState {
+
     /// Greeting returned by the server.
     greeting: &'static str,
 }
@@ -24,11 +26,13 @@ struct AppState {
 /// `String`: the error message names the argument.
 ///
 /// # Arguments
+///
 /// * `state` - Application state containing the repositories and services needed by this workflow.
 #[debug_handler]
 async fn greet(State(state): State<AppState>) -> String {
     state.greeting.to_owned()
 }
+
 /// Builds the router.
 pub fn app() -> Router {
     Router::new()

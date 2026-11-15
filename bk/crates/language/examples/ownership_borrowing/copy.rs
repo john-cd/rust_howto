@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Types that implement `Copy` are copied instead of moved.
 //!
 //! Values that implement `Copy` are duplicated implicitly, so the original
@@ -19,6 +20,7 @@ fn main() {
 
     // It is possible to make a custom type `Copy` by using the `derive`
     // attribute:
+
     /// Tuple struct whose `i32` value is copied when assigned.
     #[derive(Copy, Clone, Debug)]
     struct S(i32);
@@ -36,8 +38,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Copies integers and a user-defined `Copy` type.
 pub fn run() {
     main();
 }

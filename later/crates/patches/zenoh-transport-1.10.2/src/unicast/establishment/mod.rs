@@ -15,12 +15,16 @@
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
 //
+
 /// Accepts and validates an incoming unicast transport handshake.
 pub(crate) mod accept;
+
 /// Creates and validates cookies used to protect incoming transport handshakes.
 pub(super) mod cookie;
+
 /// Organizes the ext subsystem and declares its child modules.
 pub mod ext;
+
 /// Opens an outgoing unicast transport and completes its establishment handshake.
 pub(crate) mod open;
 
@@ -39,6 +43,7 @@ use crate::common::seq_num;
 
 /// **********************************
 // TRAITS
+
 /// **********************************
 #[async_trait]
 pub trait OpenFsm {
@@ -46,9 +51,12 @@ pub trait OpenFsm {
 
     type SendInitSynIn;
     type SendInitSynOut;
-    /// Sends init syn.
+
+    /// Builds the opening peer's initial SYN message and extension values.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested open fsm operation.
+///
+    /// * `input` - Opening state and local settings needed to construct InitSyn.
     async fn send_init_syn(
         self,
         input: Self::SendInitSynIn,
@@ -56,9 +64,12 @@ pub trait OpenFsm {
 
     type RecvInitAckIn;
     type RecvInitAckOut;
-    /// Receives init ack.
+
+    /// Validates the peer's InitAck and updates the opening handshake state.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested open fsm operation.
+///
+    /// * `input` - Link and opening state to update from the received InitAck.
     async fn recv_init_ack(
         self,
         input: Self::RecvInitAckIn,
@@ -66,9 +77,12 @@ pub trait OpenFsm {
 
     type SendOpenSynIn;
     type SendOpenSynOut;
-    /// Sends open syn.
+
+    /// Builds the opening peer's OpenSyn message and extension values.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested open fsm operation.
+///
+    /// * `input` - Link, negotiated opening state, and local OpenSyn settings.
     async fn send_open_syn(
         self,
         input: Self::SendOpenSynIn,
@@ -76,9 +90,12 @@ pub trait OpenFsm {
 
     type RecvOpenAckIn;
     type RecvOpenAckOut;
-    /// Receives open ack.
+
+    /// Validates the peer's OpenAck and completes opening-side negotiation.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested open fsm operation.
+///
+    /// * `input` - Link and opening state to update from the received OpenAck.
     async fn recv_open_ack(
         self,
         input: Self::RecvOpenAckIn,
@@ -92,9 +109,12 @@ pub trait AcceptFsm {
 
     type RecvInitSynIn;
     type RecvInitSynOut;
-    /// Receives init syn.
+
+    /// Validates the opening peer's InitSyn and records its negotiated settings.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested accept fsm operation.
+///
+    /// * `input` - Accepting state and received InitSyn fields to process.
     async fn recv_init_syn(
         self,
         input: Self::RecvInitSynIn,
@@ -102,9 +122,12 @@ pub trait AcceptFsm {
 
     type SendInitAckIn;
     type SendInitAckOut;
-    /// Sends init ack.
+
+    /// Builds the accepting peer's InitAck message and extension values.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested accept fsm operation.
+///
+    /// * `input` - Accepting state and local InitAck settings.
     async fn send_init_ack(
         self,
         input: Self::SendInitAckIn,
@@ -112,9 +135,12 @@ pub trait AcceptFsm {
 
     type RecvOpenSynIn;
     type RecvOpenSynOut;
-    /// Receives open syn.
+
+    /// Validates the opening peer's OpenSyn and completes accept-side negotiation.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested accept fsm operation.
+///
+    /// * `input` - Accepting state and received OpenSyn fields to process.
     async fn recv_open_syn(
         self,
         input: Self::RecvOpenSynIn,
@@ -122,19 +148,22 @@ pub trait AcceptFsm {
 
     type SendOpenAckIn;
     type SendOpenAckOut;
-    /// Sends open ack.
+
+    /// Builds the accepting peer's OpenAck message and extension values.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested accept fsm operation.
+///
+    /// * `input` - Accepting state and local OpenAck settings.
     async fn send_open_ack(
         self,
         input: Self::SendOpenAckIn,
     ) -> Result<Self::SendOpenAckOut, Self::Error>;
 }
-/// **********************************
 
+/// **********************************
 // FUNCTIONS
-/// **********************************
 
+/// **********************************
 pub(super) fn compute_sn(
     zid1: ZenohIdProto,
     zid2: ZenohIdProto,

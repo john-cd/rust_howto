@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the `approx` crate for approximate
 mod approx;
+
 /// This example demonstrates how to use the `assert!` macro with a custom failure message.
 mod tests_custom_message;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `approx` example.
     #[command(name = "approx")]
     Approx,
+
     /// Runs the `tests_custom_message` example.
     #[command(name = "tests_custom_message")]
     TestsCustomMessage,
@@ -42,7 +46,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

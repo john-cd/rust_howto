@@ -4,14 +4,19 @@
 
 /// Blur an image in memory using a Gaussian filter.
 mod blur;
+
 /// Encode an image to PNG and JPEG in memory.
 mod convert;
+
 /// Reads an orientation tag from a generated TIFF/EXIF record.
 mod exif_metadata;
+
 /// Generate and save a simple RGB image using the `image` crate.
 mod images;
+
 /// Optimizes a generated PNG and verifies its decoded pixels.
 mod optimize_png;
+
 /// Create an image in memory, resize it and convert it to grayscale.
 mod resize;
 

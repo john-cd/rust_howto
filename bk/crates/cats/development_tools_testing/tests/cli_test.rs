@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Test a compiled command-line executable with assert_cmd and predicates.
 
 use assert_cmd::Command;
@@ -9,6 +10,7 @@ use predicates::prelude::*;
 /// Checks that `--help` lists the `--name` option.
 ///
 /// # Errors
+///
 /// Returns an error if the test executable cannot be located.
 fn check_help_lists_the_name_option() -> anyhow::Result<()> {
     Command::cargo_bin("cli-demo")?
@@ -22,6 +24,7 @@ fn check_help_lists_the_name_option() -> anyhow::Result<()> {
 /// Checks that `--name Ada` prints the requested greeting.
 ///
 /// # Errors
+///
 /// Returns an error if the test executable cannot be located.
 fn check_success_prints_the_requested_greeting() -> anyhow::Result<()> {
     Command::cargo_bin("cli-demo")?
@@ -35,6 +38,7 @@ fn check_success_prints_the_requested_greeting() -> anyhow::Result<()> {
 /// Checks that `--fail` exits unsuccessfully and prints its diagnostic.
 ///
 /// # Errors
+///
 /// Returns an error if the test executable cannot be located.
 fn check_failure_reports_an_error() -> anyhow::Result<()> {
     Command::cargo_bin("cli-demo")?
@@ -49,6 +53,7 @@ fn check_failure_reports_an_error() -> anyhow::Result<()> {
 /// Runs the command-line integration checks in sequence.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     check_help_lists_the_name_option()?;

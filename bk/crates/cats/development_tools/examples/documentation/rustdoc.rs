@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Documenting a function, including documentation from an external file.
 //!
 //! `rustdoc` builds HTML documentation from doc comments, with links between
@@ -17,9 +18,11 @@ fn documented_function() {
 
 // Alternatively, we may use an external file.
 // This is useful for including large amounts of documentation.
+
 /// Demonstrates attaching an external Markdown file to an item's documentation.
 #[cfg_attr(doc, doc = include_str!("../../../../README.md"))]
 fn function_including_external_file_as_documentation() {}
+
 /// Calls the documented functions.
 fn main() {
     documented_function();
@@ -27,8 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the documented functions.
 pub fn run() {
     main();
 }
@@ -44,6 +46,7 @@ mod tests {
     }
 
     // output-only: the functions only print or carry documentation.
+
     /// Checks that documented functions are callable.
     #[test]
     fn documented_functions_are_callable() {

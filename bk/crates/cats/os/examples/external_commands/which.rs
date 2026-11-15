@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to use the `which` crate to find the location of
 //! executables.
 //!
@@ -31,8 +32,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Looks up the location of executables in the `PATH`.
 pub fn run() {
     main();
 }

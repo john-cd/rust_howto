@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Price European options with the Black-Scholes formula, using `statrs` for
 //! the normal distribution. No finance crate is needed.
 //!
@@ -14,14 +15,19 @@ use statrs::distribution::Normal;
 
 /// The inputs of the Black-Scholes model.
 struct Inputs {
+
     /// Price of the underlying asset.
     spot: f64,
+
     /// Strike price of the option.
     strike: f64,
+
     /// Time to maturity in years.
     years: f64,
+
     /// Annualized volatility of the underlying asset.
     volatility: f64,
+
     /// Continuously compounded risk-free rate.
     rate: f64,
 }
@@ -59,8 +65,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prices an at-the-money option and prints the result.
 pub fn run() {
     main();
 }

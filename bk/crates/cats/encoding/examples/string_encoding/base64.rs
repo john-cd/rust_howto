@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to encode and decode a string using `base64`.
 //!
 //! Base64 represents arbitrary bytes using 64 printable characters, so binary
@@ -26,9 +27,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Encodes bytes as Base64, then decodes them.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

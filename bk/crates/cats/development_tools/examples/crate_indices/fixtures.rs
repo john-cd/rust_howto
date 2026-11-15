@@ -25,7 +25,8 @@ crates = ["serde", "serde_json"]
 /// Creates a Cargo manifest and book-index fixture without network access.
 ///
 /// # Errors
-/// Returns an error if the requested resource or connection cannot be created.
+///
+/// Returns an error if the temporary directory or any fixture file cannot be created.
 pub(crate) fn create_fixture() -> Result<TempDir> {
     let fixture = tempfile::tempdir().context("create crate-index fixture directory")?;
     write_fixture_file(

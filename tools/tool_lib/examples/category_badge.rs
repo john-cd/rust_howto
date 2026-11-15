@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Constructing category badges using `tool_lib`.
 //!
 //! This example demonstrates how to use `tool_lib::create_category_badge` to
@@ -32,6 +33,7 @@ fn main() -> Result<()> {
 /// Runs the category badge example for programmatic execution.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     run_example()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Compressing and decompressing a file asynchronously with
 //! `async_compression`.
 //!
@@ -17,11 +18,13 @@ use tempfile::tempdir;
 use tokio::fs::File;
 use tokio::io::AsyncWriteExt as _;
 use tokio::io::BufReader;
+
 /// Creates a file, compresses it to gzip, decompresses it and prints the
 ///
 /// progress.
 ///
 /// # Errors
+///
 /// Returns an error if temporary storage, file I/O, compression, decompression,
 /// or the round-trip comparison fails.
 #[tokio::main]
@@ -102,7 +105,10 @@ async fn decompress_file_async(source_path: &Path, dest_path: &Path) -> IoResult
 }
 // ANCHOR_END: example
 
+/// Compresses and decompresses the example data asynchronously.
+///
 /// # Errors
+///
 /// Returns an error if compression or decompression fails.
 pub fn run() -> anyhow::Result<()> {
     main()

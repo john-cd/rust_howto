@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Building and traversing a directed graph with `petgraph`.
 //!
 //! A graph is a set of nodes connected by edges, for example cities and roads,
@@ -13,7 +14,7 @@ use petgraph::algo::dijkstra;
 use petgraph::dot::Config;
 use petgraph::dot::Dot;
 use petgraph::graph::Graph;
-/// Runs the example.
+
 /// Builds a small directed graph and queries it.
 fn main() {
     // Create a new directed graph:
@@ -68,8 +69,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Builds a small directed graph and queries it.
 pub fn run() {
     main();
 }

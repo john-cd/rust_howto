@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Defining functions with arguments and return values.
 
 /// Function with no parameters, no return type.
@@ -11,12 +12,14 @@ fn say_hello() {
 /// Function with one parameter called `name` of type `&str` (string slice).
 ///
 /// # Arguments
+///
 /// * `name` - Human-readable value used to identify or display the selected functions.
 fn greet(name: &str) {
     println!("Hello, {name}!");
 }
 
 // Function with two parameters: `a` and `b`, both of type `i32`.
+
 /// Adds two numbers and prints the sum.
 fn add_and_display(a: i32, b: i32) {
     let sum = a + b;
@@ -27,6 +30,7 @@ fn add_and_display(a: i32, b: i32) {
 fn multiply(x: i32, y: i32) -> i32 {
     x * y // No semicolon: this expression's value is returned.
 }
+
 /// Function bodies follow the same rules than blocks:
 #[allow(clippy::let_and_return)]
 fn foo(x: i32) -> i32 {
@@ -71,8 +75,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls each of the functions.
 pub fn run() {
     main();
 }

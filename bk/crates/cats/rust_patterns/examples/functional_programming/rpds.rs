@@ -1,6 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
+//! Demonstrates persistent collections from the `rpds` crate.
+//!
 //! # RPDS (Rust Persistent Data Structures) Example
 //!
 //! This example demonstrates the use of the `rpds` crate, which provides
@@ -47,8 +50,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Uses persistent vectors, maps and sets, which are never modified in place.
 pub fn run() {
     main();
 }

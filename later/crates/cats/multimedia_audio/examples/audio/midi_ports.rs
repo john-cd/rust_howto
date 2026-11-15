@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Lists MIDI input ports with `midir` and decodes raw MIDI messages.
 //!
 //! MIDI is a protocol that sends musical events, such as "note on, key 60,
@@ -13,19 +14,26 @@ use midir::MidiInput;
 /// A decoded channel voice message.
 #[derive(Debug, PartialEq, Eq)]
 enum MidiMessage {
+
     /// A key was pressed.
     NoteOn {
+
         /// Channel, from 0 to 15.
         channel: u8,
+
         /// Key number, from 0 to 127. 60 is middle C.
         key: u8,
+
         /// How hard the key was pressed, from 1 to 127.
         velocity: u8,
     },
+
     /// A key was released.
     NoteOff {
+
         /// Channel, from 0 to 15.
         channel: u8,
+
         /// Key number, from 0 to 127.
         key: u8,
     },
@@ -92,7 +100,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Lists the ports, if any, and decodes some messages.
 pub fn run() {
     main();
 }

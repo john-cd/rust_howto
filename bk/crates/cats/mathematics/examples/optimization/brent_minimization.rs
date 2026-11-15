@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Minimize a one-variable function with Brent's method.
 //!
 //! Optimization looks for the input that makes a function as small as possible,
@@ -25,9 +26,11 @@ impl CostFunction for Quadratic {
         Ok((x - 2.5).powi(2) + 4.0)
     }
 }
+
 /// Finds the minimum of the quadratic function within `[-5, 8]`.
 ///
 /// # Panics
+///
 /// Panics if Brent's method fails to find a minimum in the interval.
 fn minimize() -> f64 {
     let solver = BrentOpt::new(-5.0, 8.0).set_tolerance(f64::EPSILON.sqrt(), 1e-10);
@@ -51,7 +54,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {
     main();

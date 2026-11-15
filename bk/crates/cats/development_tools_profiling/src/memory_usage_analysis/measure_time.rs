@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `measure_time` is a simple crate for measuring the execution time of code
 //! blocks using the `measure_time!` macro.
 
@@ -18,6 +19,7 @@ fn measure_execution_time() {
     // Simulate some work:
     thread::sleep(Duration::from_millis(100));
 }
+
 /// Measures a short sleep with the `print_time!` macro.
 fn main() {
     measure_execution_time();

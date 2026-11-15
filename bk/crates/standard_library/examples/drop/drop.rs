@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Running code when a value is dropped, with the `Drop` trait.
 //!
 //! `Drop` runs code when a value goes out of scope, which is how Rust releases
@@ -10,6 +11,7 @@
 
 /// A struct that prints a message when it is dropped.
 struct CustomStruct {
+
     /// Some data.
     data: String,
 }
@@ -18,12 +20,13 @@ impl Drop for CustomStruct {
     // This is the only method required by the Drop trait. It takes a mutable
     // reference to self. The code inside this method will be executed when
     // an instance of CustomStruct is dropped.
+
     /// Releases the resources owned by this value.
     fn drop(&mut self) {
         println!("Dropping CustomStruct with data `{}`!", self.data);
     }
 }
-/// Runs the example.
+
 /// Creates and drops values.
 fn main() {
     let _c = CustomStruct {
@@ -51,8 +54,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates and drops values.
 pub fn run() {
     main();
 }
@@ -63,6 +65,7 @@ mod tests {
     use std::rc::Rc;
 
     use super::*;
+
     /// Verifies that the `drop` example runs.
     #[test]
     fn test_drop_example_entry_point() {
@@ -71,18 +74,22 @@ mod tests {
 
     /// Same shape as `CustomStruct`, but records when it is dropped.
     struct Recorder {
+
         /// Display label used to distinguish this recorder from other entries.
         name: &'static str,
+
         /// Collection of log values consumed by recorder operations.
         log: Rc<RefCell<Vec<&'static str>>>,
     }
 
     impl Drop for Recorder {
+
         /// Releases the resources owned by this value.
         fn drop(&mut self) {
             self.log.borrow_mut().push(self.name);
         }
     }
+
     /// Verifies values are dropped in reverse order of declaration.
     #[test]
     fn test_values_are_dropped_in_reverse_order_of_declaration() {
@@ -100,6 +107,7 @@ mod tests {
         }
         assert_eq!(*log.borrow(), vec!["d", "c"]);
     }
+
     /// Verifies explicit drop runs destructor immediately.
     #[test]
     fn test_explicit_drop_runs_destructor_immediately() {
@@ -112,6 +120,7 @@ mod tests {
         drop(e);
         assert_eq!(*log.borrow(), vec!["e"]);
     }
+
     /// Verifies custom struct can be created and dropped.
     #[test]
     fn test_custom_struct_can_be_created_and_dropped() {

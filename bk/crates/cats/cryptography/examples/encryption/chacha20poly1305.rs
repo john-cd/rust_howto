@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Authenticated encryption with ChaCha20-Poly1305, with and without associated
 //! data.
 //!
@@ -115,6 +116,7 @@ fn encrypt_then_decrypt() -> anyhow::Result<()> {
 }
 
 // --- Example with associated data (AAD) ---
+
 /// Encrypts with associated data, which must match when decrypting.
 fn aad() -> anyhow::Result<()> {
     let mut plaintext = Vec::from(b"This is a secret message.");
@@ -174,9 +176,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs both examples.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

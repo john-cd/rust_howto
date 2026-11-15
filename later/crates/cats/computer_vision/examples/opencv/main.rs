@@ -5,6 +5,7 @@
 /// Loads a Haar cascade and applies it to a generated grayscale frame.
 #[cfg(all(target_os = "linux", feature = "opencv"))]
 mod faces;
+
 /// This example demonstrates how to load an image, convert it to grayscale, and
 #[cfg(all(target_os = "linux", feature = "opencv"))]
 mod opencv;

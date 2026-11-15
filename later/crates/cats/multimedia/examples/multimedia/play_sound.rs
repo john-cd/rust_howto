@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Play a sine tone on the default audio output with `rodio`.
 //!
 //! The tone is built first, so its properties can be checked without an audio
@@ -24,6 +25,7 @@ const DURATION: Duration = Duration::from_secs(2);
 fn tone() -> impl Source {
     SineWave::new(FREQUENCY_HZ).take_duration(DURATION)
 }
+
 /// Plays a 440 Hz sine tone for two seconds on the default output device.
 fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     // Keep the sink alive: dropping it stops the audio.
@@ -42,6 +44,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 /// Plays the tone.
 ///
 /// # Errors
+///
 /// Returns an error if no audio output device is available.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()

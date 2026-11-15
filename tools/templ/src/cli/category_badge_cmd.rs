@@ -21,6 +21,7 @@ pub(super) fn subcommand_category_badge() -> Command {
                 .help("Enter the category name(s)"),
         )
 }
+
 /// Returns the command line arguments for the `category_badge` subcommand
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
     let mut cmdargs = None;

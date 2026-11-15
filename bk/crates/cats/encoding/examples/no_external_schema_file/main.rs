@@ -8,6 +8,7 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the `postcard` crate for serialization
 mod postcard;
+
 /// `rkyv` (short for "archive") is a high-performance, zero-copy (de)serialization framework that
 /// allows arbitrary field types
 mod rkyv;
@@ -15,6 +16,7 @@ mod rkyv;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,9 +25,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `postcard` example.
     #[command(name = "postcard")]
     Postcard,
+
     /// Runs the `rkyv` example.
     #[command(name = "rkyv")]
     Rkyv,

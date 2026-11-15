@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A custom `proptest` strategy that only generates valid values.
 //! A strategy tells `proptest` how to generate test inputs, for example numbers
 //! in a range or strings matching a pattern. Good strategies produce realistic
@@ -9,19 +10,25 @@
 /// A closed range of whole numbers with `start <= end`.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 struct Span {
+
     /// Start of the selected range.
     start: i32,
+
     /// End of the selected range.
     end: i32,
 }
 
 impl Span {
+
     /// Returns `None` when `start > end`.
     fn new(start: i32, end: i32) -> Option<Self> {
         (start <= end).then_some(Self { start, end })
     }
 
+    /// Returns the inclusive number of integers in the range.
+///
     /// # Panics
+///
     /// Panics if `start <= end` guarantees a positive length.
     fn len(&self) -> u64 {
         u64::try_from(i64::from(self.end) - i64::from(self.start) + 1)
@@ -41,6 +48,7 @@ impl Span {
         self.start <= other.end && other.start <= self.end
     }
 }
+
 /// Combines two spans; the property tests below check the invariants.
 fn main() {
     let _ = example();
@@ -77,6 +85,7 @@ mod tests {
     // argument depends on the first, so every generated `Span` is valid
     // and no test input is discarded.
     prop_compose! {
+
         /// Generates spans whose endpoints satisfy `start <= end`.
         fn any_span()(start in -1_000..1_000i32)
                      (length in 0..500i32, start in Just(start)) -> Span {
@@ -85,6 +94,7 @@ mod tests {
     }
 
     proptest! {
+
         /// Checks that the union contains both.
         #[test]
         fn union_contains_both(a in any_span(), b in any_span()) {
@@ -113,6 +123,7 @@ mod tests {
         }
 
         // `new` rejects exactly the inverted ranges.
+
         /// Checks that construction succeeds exactly when endpoints are ordered.
         #[test]
         fn new_matches_ordering(start in any::<i32>(), end in any::<i32>()) {

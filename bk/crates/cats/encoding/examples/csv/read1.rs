@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates deserializing CSV records into a struct.
 //!
 //! Deserializing turns each CSV row into a struct, using the header names as
@@ -8,15 +9,20 @@
 //! strings.
 
 use serde::Deserialize;
+
 /// Represents a record from the CSV data.
 #[derive(Debug, Deserialize, PartialEq)]
 struct Record {
+
     /// The year the car was built.
     year: u16,
+
     /// The manufacturer.
     make: String,
+
     /// The model.
     model: String,
+
     /// A description of the car.
     description: String,
 }
@@ -27,6 +33,7 @@ fn read_records(data: &str) -> Result<Vec<Record>, csv::Error> {
         .deserialize()
         .collect()
 }
+
 /// Deserializes CSV records into a struct and prints them.
 fn main() -> Result<(), csv::Error> {
     let data = "year,make,model,description
@@ -43,9 +50,10 @@ fn main() -> Result<(), csv::Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Deserializes CSV records into a struct and prints them.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), csv::Error> {
     main()

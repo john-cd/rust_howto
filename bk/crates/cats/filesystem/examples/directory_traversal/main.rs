@@ -7,30 +7,40 @@ use clap::Subcommand;
 
 /// Find duplicate filenames in the current directory.
 mod duplicate_name;
+
 /// This example demonstrates how to traverse a directory and find files that
 mod find_file;
+
 /// This example demonstrates how to use the `globset` crate to match file paths
 mod globset;
+
 /// This example demonstrates how to use the `ignore` crate to traverse a directory recursively,
 /// respecting `.gitignore` and similar files, and
 mod ignore;
+
 /// Demonstrates how to ignore case when matching file names.
 mod ignore_case;
+
 /// This example demonstrates the use of the `same_file` crate.
 #[cfg(target_os = "linux")]
 mod loops;
+
 /// This example demonstrates how to traverse a directory and check the last
 mod modified;
+
 /// This example demonstrates how to use the `glob` crate
 mod png;
+
 /// Calculates the total size of all files within a directory tree
 mod sizes;
+
 /// This example demonstrates how to skip hidden files and directories during
 mod skip_dot;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -39,34 +49,44 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `duplicate_name` example.
     #[command(name = "duplicate_name")]
     DuplicateName,
+
     /// Runs the `find_file` example.
     #[command(name = "find_file")]
     FindFile,
+
     /// Runs the `globset` example.
     #[command(name = "globset")]
     Globset,
+
     /// Runs the `ignore` example.
     #[command(name = "ignore")]
     Ignore,
+
     /// Runs the `ignore_case` example.
     #[command(name = "ignore_case")]
     IgnoreCase,
+
     /// Runs the `loops` example.
     #[cfg(target_os = "linux")]
     #[command(name = "loops")]
     Loops,
+
     /// Runs the `modified` example.
     #[command(name = "modified")]
     Modified,
+
     /// Runs the `png` example.
     #[command(name = "png")]
     Png,
+
     /// Runs the `sizes` example.
     #[command(name = "sizes")]
     Sizes,
+
     /// Runs the `skip_dot` example.
     #[command(name = "skip_dot")]
     SkipDot,

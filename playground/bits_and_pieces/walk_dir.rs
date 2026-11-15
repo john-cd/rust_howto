@@ -25,6 +25,7 @@ use walkdir::WalkDir;
 #[derive(Parser, Debug)]
 #[clap(version)]
 pub(crate) struct Args {
+
     /// The path of the directory to process.
     #[clap(help = "Path to directory to process")]
     pub directory: PathBuf,
@@ -35,7 +36,9 @@ pub(crate) struct Args {
 /// # Arguments
 ///
 /// * `dir` - The directory to walk through.
+///
 /// # Errors
+///
 /// Returns an error if traversal, reading, or atomic replacement fails.
 pub fn walk_directory(dir: &Path) -> Result<()> {
     for entry in WalkDir::new(dir) {
@@ -66,6 +69,7 @@ pub fn walk_directory(dir: &Path) -> Result<()> {
 
 /// Expands complete crate markers and preserves malformed or unfinished markers.
 fn replace_crate_markers(contents: &str) -> String {
+
     /// Prefix used to recognize crate include directives in book content.
     /// Prefix used to recognize crate include directives in book content.
     const PREFIX: &str = "{{!crate ";

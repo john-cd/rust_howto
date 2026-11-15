@@ -22,6 +22,7 @@ static CATEGORY_CACHE: LazyLock<Mutex<HashMap<String, Vec<model::Category>>>> =
 // https://doc.rust-lang.org/stable/core/cmp/trait.Ord.html
 
 impl model::Category {
+
     /// Creates a new `model::Category` from a `crates_io_api::Category`.
     pub(super) fn new(cat: crates_io_api::Category) -> Self {
         Self {
@@ -36,13 +37,15 @@ impl model::Category {
 ///
 /// # Arguments
 ///
-/// This function queries the `crates.io` API to fetch the category information for the specified
-/// crate.
+/// * `crate_name` - Name of the crate whose categories should be fetched.
 ///
-/// Returns a list of categories for a crate, given its name
+/// # Returns
+///
+/// The crate's categories, or an empty vector when it has none.
 ///
 /// # Errors
-/// Returns an error if the requested data cannot be retrieved.
+///
+/// Returns an error if the crates.io client cannot be created or the API request for `crate_name` fails.
 pub fn get_categories_for_crate(crate_name: &str) -> Result<Vec<model::Category>> {
     if let Ok(cache) = CATEGORY_CACHE.lock()
         && let Some(cats) = cache.get(crate_name)

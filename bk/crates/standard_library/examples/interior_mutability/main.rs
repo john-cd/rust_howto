@@ -8,16 +8,20 @@ use clap::Subcommand;
 /// `Cell<T>` provides a way to mutate data, even when the `Cell` itself is accessed through an
 /// immutable reference.
 mod cell;
+
 /// `OnceCell<T>` allows for single assignment, interior mutability.
 mod once_cell;
+
 /// A common pattern in Rust is using `Rc<RefCell<T>>` to allow multiple
 mod rc_refcell;
+
 /// `RefCell<T>` is a smart pointer that provides interior mutability.
 mod refcell;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -26,15 +30,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `cell` example.
     #[command(name = "cell")]
     Cell,
+
     /// Runs the `once_cell` example.
     #[command(name = "once_cell")]
     OnceCell,
+
     /// Runs the `rc_refcell` example.
     #[command(name = "rc_refcell")]
     RcRefcell,
+
     /// Runs the `refcell` example.
     #[command(name = "refcell")]
     Refcell,
@@ -59,7 +67,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

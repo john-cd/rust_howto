@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Removing the common indentation of multi-line strings with `indoc`.
 //!
 //! Multi-line string literals keep the indentation of the source code. `indoc`
@@ -8,7 +9,7 @@
 //! readability yet get clean output, for example SQL or help text.
 
 use indoc::indoc;
-/// Runs the example.
+
 /// Compares multi-line strings with and without `indoc`.
 fn main() {
     // Without `indoc`, multi-line strings preserve indentation from source
@@ -55,8 +56,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Compares multi-line strings with and without `indoc`.
 pub fn run() {
     main();
 }

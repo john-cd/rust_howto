@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generates a random `f64` with the `rand` crate.
 //!
 //! Random numbers come from a generator. `rand` seeds it from the operating
@@ -44,6 +45,7 @@ mod tests {
     fn test_main() {
         main();
     }
+
     /// Verifies random f64 is in unit interval.
     #[test]
     fn test_random_f64_is_in_unit_interval() {

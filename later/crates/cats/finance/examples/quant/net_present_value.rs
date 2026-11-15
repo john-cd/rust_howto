@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Discounts a fixed sequence of cash flows with `financial`.
 //!
 //! Money today is worth more than the same money later, because it can earn
@@ -27,6 +28,7 @@ pub fn run() {
 
 #[cfg(test)]
 mod tests {
+
     /// Discounts future cash flows against an initial investment.
     #[test]
     fn discounts_future_payments_from_an_initial_outflow() {

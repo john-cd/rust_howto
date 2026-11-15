@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Finds word boundaries with Unicode text segmentation (UAX #29), e.g. to
 //! count words or to feed a spell checker.
 //!
@@ -9,7 +10,12 @@
 //! defines the rules, which double-click selection and word counting follow.
 
 use unicode_segmentation::UnicodeSegmentation;
-/// Runs the example.
+
+/// Shows Unicode word boundaries and byte offsets in a multilingual sample.
+///
+/// # Panics
+///
+/// Panics if Unicode segmentation differs from the example's expected boundaries.
 fn main() -> anyhow::Result<()> {
     let text = "Café déjà-vu: naïve 日本語 can't stop, won't stop.";
 
@@ -34,10 +40,11 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Shows Unicode word boundaries and byte offsets in a multilingual sample.
 ///
-/// # Errors
-/// Returns an error if a step of the example fails.
+/// # Panics
+///
+/// Panics if Unicode segmentation differs from the example's expected boundaries.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

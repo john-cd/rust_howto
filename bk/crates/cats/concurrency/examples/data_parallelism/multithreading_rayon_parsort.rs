@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Sorts the vector in parallel using Rayon's `par_sort` method.
 //!
 //! A parallel sort splits the data, sorts the parts on different cores, and
@@ -8,7 +9,7 @@
 //! the overhead of threads makes it slower.
 
 use rayon::prelude::*;
-/// Runs the example.
+
 /// Sorts the vector in parallel using Rayon's `par_sort` method.
 fn main() {
     let mut v = [-5, 4, 1, -3, 2];
@@ -17,8 +18,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Sorts the vector in parallel using Rayon's `par_sort` method.
 pub fn run() {
     main();
 }

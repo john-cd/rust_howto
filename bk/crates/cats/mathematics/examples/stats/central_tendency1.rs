@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Computing the median of a list of integers with quickselect.
 //!
 //! The median is the middle value of the sorted data, so unlike the mean it is
@@ -127,8 +128,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Partitions a list and finds its median.
 pub fn run() {
     main();
 }

@@ -17,6 +17,7 @@ pub(super) fn cmd() -> Command {
         .about("Open one or more files")
         .arg(arg_filepaths().required(true))
 }
+
 /// Returns the files given to the `open` command, if it was run.
 pub(super) fn get_args(matches: &ArgMatches) -> Option<Vec<PathBuf>> {
     let m = matches.subcommand_matches("open")?;

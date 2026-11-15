@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Convert Serde-compatible rows to an Arrow batch and back to Rust structs.
 //!
 //! Serde can convert Rust structs to Arrow columns and back, which saves
@@ -20,8 +21,10 @@ use serde::Serialize;
 /// A Rust row that can be serialized into and deserialized from Arrow JSON.
 #[derive(Debug, Deserialize, PartialEq, Serialize)]
 struct Person {
+
     /// The person's name.
     name: String,
+
     /// The person's age in years.
     age: i32,
 }
@@ -29,6 +32,7 @@ struct Person {
 /// Converts rows to Arrow, writes Arrow as JSON, and converts the JSON to rows.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> Result<()> {
     let schema = Arc::new(Schema::new(vec![
@@ -64,6 +68,7 @@ pub fn example_body() -> Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<()> {
     example_body()

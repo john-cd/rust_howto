@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Displays a message box through the raw `winapi` bindings.
 //!
 //! The Windows API (Win32) is how programs ask Windows to create windows, read
@@ -19,6 +20,7 @@ use winapi::um::winuser::MessageBoxW;
 fn nul_terminated_wide(value: &str) -> Vec<u16> {
     value.encode_utf16().chain(std::iter::once(0)).collect()
 }
+
 /// Displays a message box using NUL-terminated UTF-16 strings.
 fn main() {
     let message = nul_terminated_wide("Hello from winapi!");
@@ -32,7 +34,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the message-box example.
 pub fn run() {
     main();

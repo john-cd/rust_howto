@@ -10,6 +10,7 @@ pub(super) fn cmd() -> Command {
     Command::new("test").about("Test command").hide(true)
     // not displayed in the help message.
 }
+
 /// Returns whether the `test` command was run.
 pub(super) fn is_present(matches: &ArgMatches) -> bool {
     matches.subcommand_name() == Some("test")
@@ -35,6 +36,7 @@ mod tests {
     }
 
     // Test partial matches of subcommand names and their aliases.
+
     /// Checks that an abbreviated command is recognized.
     #[test]
     fn test_cmd_test_infer() {

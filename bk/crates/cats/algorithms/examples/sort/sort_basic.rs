@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates the basic usage of the `sort` method on a vector.
 //!
 //! Sorting orders a collection so that searching and comparing become faster.
@@ -20,7 +21,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// This example demonstrates the basic usage of the `sort` method on a vector.
 pub fn run() {
     main();

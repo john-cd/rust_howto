@@ -2,16 +2,21 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Matching a struct against patterns.
 
 // Define a struct named `Point` with three fields: x, y, and z,
 // all of type `i32`.
+
 /// A point in three dimensions.
 struct Point {
+
     /// The x coordinate.
     x: i32,
+
     /// The y coordinate.
     y: i32,
+
     /// The z coordinate.
     z: i32,
 }
@@ -41,7 +46,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// Matching a struct against patterns.
 pub fn run() {
     main();

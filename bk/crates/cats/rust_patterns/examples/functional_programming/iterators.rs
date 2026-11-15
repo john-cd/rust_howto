@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates composing standard iterator adapters with closures.
 //!
 //! Iterators process a sequence one item at a time. Adapters such as `map` and
@@ -17,6 +18,7 @@ fn summarize_excess(readings: &[i32], baseline: i32) -> (usize, i32) {
         .map(|reading| reading - baseline)
         .fold((0, 0), |(count, total), excess| (count + 1, total + excess))
 }
+
 /// Prints the sum of readings above a baseline.
 fn main() {
     let readings = [8, 12, 16, 20];
@@ -25,8 +27,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the sum of readings above a baseline.
 pub fn run() {
     main();
 }

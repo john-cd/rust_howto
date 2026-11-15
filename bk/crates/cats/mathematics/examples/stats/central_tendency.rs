@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calculates the mean of a set of numbers.
 //!
 //! The mean is the sum divided by the count. It is sensitive to outliers
@@ -26,8 +27,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calculates the mean of a set of numbers.
 pub fn run() {
     main();
 }

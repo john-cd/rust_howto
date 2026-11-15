@@ -4,7 +4,7 @@
 
 /// A `SkipMap`, an ordered map built on a skip list.
 mod skiplist;
-/// Runs the example.
+
 /// Runs the skiplist example.
 fn main() {
     skiplist::run();

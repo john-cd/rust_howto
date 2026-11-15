@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates parsing various date and time strings into `chrono` types.
 //!
 //! Dates arrive as text in many layouts: RFC 2822 (emails), RFC 3339 / ISO 8601
@@ -44,9 +45,10 @@ fn main() -> Result<(), ParseError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Demonstrates parsing various date and time strings into `chrono` types.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), ParseError> {
     main()

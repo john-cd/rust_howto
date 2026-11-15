@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `pin-project-lite` projects a pinned field with a small declarative macro.
 //! Unlike `pin-project`, it does not provide a custom pinned-drop attribute.
 
@@ -13,6 +14,7 @@ use std::task::Waker;
 use pin_project_lite::pin_project;
 
 pin_project! {
+
     /// A future whose inner future stays pinned while its counter can move.
     struct CountPolls<F> {
         #[pin]

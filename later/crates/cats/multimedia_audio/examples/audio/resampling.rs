@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Resamples a mono buffer from 48 kHz to 44.1 kHz with `rubato`.
 //!
 //! The sample rate is how many sound measurements are taken per second: 48 kHz
@@ -45,6 +46,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 /// Runs the device-free resampling example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()

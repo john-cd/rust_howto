@@ -7,22 +7,29 @@ use clap::Subcommand;
 
 /// Cryptographic hashing with `blake3`: one-shot, incremental, keyed, key
 mod blake3;
+
 /// Fast, reproducible non-cryptographic hashing using `foldhash` with a fixed
 mod foldhash;
+
 /// MD5 hashing with the RustCrypto `md-5` crate.
 mod md5;
+
 /// SHA-1 hashing with the `sha1` crate.
 mod sha1;
+
 /// Cryptographic hashing with the `sha2` crate: SHA-256 and SHA-512 digests
 mod sha2;
+
 /// SHA-256 digest of a file's contents with `ring`, printed as hexadecimal.
 mod sha_digest;
+
 /// Ultra-fast data integrity verification using XXH3 (128-bit) checksums.
 mod xxh3_checksum;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -31,24 +38,31 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `blake3` example.
     #[command(name = "blake3")]
     Blake3,
+
     /// Runs the `foldhash` example.
     #[command(name = "foldhash")]
     Foldhash,
+
     /// Runs the `md5` example.
     #[command(name = "md5")]
     Md5,
+
     /// Runs the `sha1` example.
     #[command(name = "sha1")]
     Sha1,
+
     /// Runs the `sha2` example.
     #[command(name = "sha2")]
     Sha2,
+
     /// Runs the `sha_digest` example.
     #[command(name = "sha_digest")]
     ShaDigest,
+
     /// Runs the `xxh3_checksum` example.
     #[command(name = "xxh3_checksum")]
     Xxh3Checksum,

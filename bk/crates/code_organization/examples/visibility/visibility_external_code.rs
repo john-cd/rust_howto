@@ -1,9 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! In the crate root:
 
 // This function is available to external code using this crate as a dependency.
+
 /// A function that external crates can call.
 pub fn public_to_external_crates() -> &'static str {
     "public_to_external_crates"
@@ -11,8 +13,10 @@ pub fn public_to_external_crates() -> &'static str {
 
 // This module is public, so external crates may look inside of it,
 // and access the inner public function:
+
 /// A public module, so external crates can look inside it.
 pub mod public_api {
+
     /// A function that external crates can call through the public module.
     pub fn also_public_to_external_crates() -> &'static str {
         "also_public_to_external_crates"
@@ -22,14 +26,16 @@ pub mod public_api {
 // In contrast, this module is private, so an external crate cannot access it.
 // It is accessible from this module and its descendants. Its public items are
 // still restricted by the module's private boundary.
+
 /// A private module, which external crates cannot access.
 mod crate_helper_module {
+
     /// A function that can only be used within the crate.
     pub fn crate_helper() -> &'static str {
         "crate_helper"
     }
 }
-/// Runs the example.
+
 /// Calls the function of the private module.
 fn main() {
     println!("{}", public_to_external_crates());
@@ -39,8 +45,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the function of the private module.
 pub fn run() {
     main();
 }
@@ -54,6 +59,7 @@ mod tests {
     fn test_main() {
         main();
     }
+
     /// Verifies public API.
     #[test]
     fn test_public_api() {
@@ -63,6 +69,7 @@ mod tests {
             "also_public_to_external_crates"
         );
     }
+
     /// Verifies crate helper.
     #[test]
     fn test_crate_helper() {

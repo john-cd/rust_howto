@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Add this dependency to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
@@ -14,13 +15,16 @@ use priority_queue::PriorityQueue;
 /// A task in the priority queue.
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
 struct Task {
+
     /// The identifier of the task.
     id: u32,
+
     /// The name of the task.
     name: String,
 }
 
 impl Task {
+
     /// Creates a new `Task` instance.
     fn new(id: u32, name: &str) -> Self {
         Self {
@@ -138,7 +142,7 @@ fn advanced_usage() {
         println!("{item}");
     }
 }
-/// Runs the example.
+
 /// Runs the priority queue example.
 fn main() {
     basic_usage();
@@ -148,8 +152,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs the priority queue example.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Run a local HTTP reverse proxy with Pingora.
 //!
 //! Start an HTTP server on `127.0.0.1:8000`, then run
@@ -22,12 +23,16 @@ use pingora::server::Server;
 
 /// Shared `upstream host` used by this module.
 const UPSTREAM_HOST: &str = "127.0.0.1";
+
 /// Shared `upstream port` used by this module.
 const UPSTREAM_PORT: u16 = 8000;
+
 /// Shared `proxy listen address` used by this module.
 const PROXY_LISTEN_ADDRESS: &str = "127.0.0.1:6188";
+
 /// Shared `response header name` used by this module.
 const RESPONSE_HEADER_NAME: &str = "X-Rust-Howto";
+
 /// Shared `response header` used by this module.
 const RESPONSE_HEADER_VALUE: &str = "Pingora";
 
@@ -44,6 +49,7 @@ impl ProxyHttp for LocalProxy {
     /// Returns the fixed plain-HTTP upstream peer.
     async fn upstream_peer(
         &self,
+
         /// Session value.
         _session: &mut Session,
         _ctx: &mut Self::CTX,
@@ -58,8 +64,10 @@ impl ProxyHttp for LocalProxy {
     /// Adds the example response header after receiving an upstream response.
     async fn response_filter(
         &self,
+
         /// Session value.
         _session: &mut Session,
+
         /// Response header received from the upstream server.
         upstream_response: &mut ResponseHeader,
         _ctx: &mut Self::CTX,
@@ -67,6 +75,7 @@ impl ProxyHttp for LocalProxy {
         add_example_response_header(upstream_response)
     }
 }
+
 /// Adds the identifying header to a Pingora response without starting a server.
 fn add_example_response_header(response: &mut ResponseHeader) -> Result<()> {
     response.insert_header(RESPONSE_HEADER_NAME, RESPONSE_HEADER_VALUE)?;
@@ -77,9 +86,11 @@ fn add_example_response_header(response: &mut ResponseHeader) -> Result<()> {
 fn main() -> anyhow::Result<()> {
     run_proxy()
 }
+
 /// Starts the Pingora server and its local reverse-proxy service.
 ///
 /// # Errors
+///
 /// Returns an error if server configuration cannot be initialized.
 fn run_proxy() -> anyhow::Result<()> {
     let mut server = Server::new(None)?;
@@ -95,6 +106,7 @@ fn run_proxy() -> anyhow::Result<()> {
 /// Runs the Pingora reverse proxy and propagates setup errors.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

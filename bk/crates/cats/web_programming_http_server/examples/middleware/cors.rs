@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example showing how to add CORS headers to responses.
 //!
 //! Browsers block a web page from calling an API on another origin (domain)
@@ -27,6 +28,7 @@ use tower_http::cors::CorsLayer;
 async fn handle(_request: Request<Full<Bytes>>) -> Result<Response<Full<Bytes>>, Infallible> {
     Ok(Response::new(Full::default()))
 }
+
 /// Main function that sets up a service with CORS middleware.
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -56,9 +58,10 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Main function that sets up a service with CORS middleware.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

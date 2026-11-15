@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Builds and renders a simple Vello 2D scene.
 //!
 //! Vello is a 2D renderer that does most of its work on the GPU, using compute
@@ -92,9 +93,11 @@ async fn render_scene() -> Result<()> {
 
     Ok(())
 }
+
 /// Runs the Vello renderer example.
 ///
 /// # Errors
+///
 /// Returns an error if GPU setup or rendering fails.
 fn main() -> Result<()> {
     run()
@@ -151,6 +154,7 @@ fn build_scene() -> Scene {
 /// Builds and renders a simple Vello 2D scene.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     block_on(render_scene())

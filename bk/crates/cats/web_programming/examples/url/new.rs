@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to build a URL by joining a base URL with a path.
 //!
 //! A relative link such as `../docs/page.html` only makes sense with a base
@@ -18,6 +19,7 @@ use url::Url;
 ///
 /// Returns the joined `Url`, or a parse error if the base or path is invalid.
 fn build_github_url(path: &str) -> Result<Url, ParseError> {
+
     /// GitHub base URL used to demonstrate URL parsing and joining.
     const GITHUB: &str = "https://github.com/";
 
@@ -37,9 +39,10 @@ fn main() -> Result<(), ParseError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Builds a URL by joining a base URL and a path.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()?;

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates the use of `?`.
 //!
 //! The `?` operator returns the error to the caller if a `Result` is an `Err`,
@@ -10,14 +11,17 @@
 use std::fs::File;
 use std::io;
 use std::io::Read as _;
+
 /// Reads the username from the file "temp/hello.txt".
 ///
 /// # Returns
+///
 /// Returns `Ok(String)` containing the username if successful, or
 /// `Err(io::Error)` if an error occurs.
 ///
 /// # Errors
-/// Returns an error if the requested data cannot be retrieved.
+///
+/// Returns an error if `temp/hello.txt` cannot be opened or read as UTF-8 text.
 fn read_username_from_file() -> Result<String, io::Error> {
     // Note the `?`. If `open` fails, `read_username_from_file` returns its
     // error, short-circuiting the rest of the function. This function does
@@ -44,8 +48,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// The main function demonstrates how to use `read_username_from_file` and
 pub fn run() {
     main();
 }

@@ -8,27 +8,36 @@ use clap::Subcommand;
 /// CQRS (Command Query Responsibility Segregation) is an architectural pattern that separates the
 /// models for reading and writing data.
 mod cqrs;
+
 /// Dependency Injection (DI) is a design pattern that allows us to decouple
 mod di;
+
 /// Event-driven architecture: producers publish events to subscribers.
 mod event_bus;
+
 /// Event sourcing: store events, rebuild the state by replaying them.
 mod event_sourcing;
+
 /// Hexagonal architecture: a port (trait) with two adapters.
 mod hexagonal;
+
 /// This example demonstrates a layered architecture in Rust, separating concerns into data access,
 /// business logic, and presentation layers.
 mod layered_architecture;
+
 /// Pipeline architecture: stages connected by channels, each on its own thread.
 mod pipeline;
+
 /// Example usage of the `InMemoryUserRepository`.
 mod repository;
+
 /// A state machine whose transitions are triggered by events.
 mod state_machine;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -37,30 +46,39 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `cqrs` example.
     #[command(name = "cqrs")]
     Cqrs,
+
     /// Runs the `di` example.
     #[command(name = "di")]
     Di,
+
     /// Runs the `event_bus` example.
     #[command(name = "event_bus")]
     EventBus,
+
     /// Runs the `event_sourcing` example.
     #[command(name = "event_sourcing")]
     EventSourcing,
+
     /// Runs the `hexagonal` example.
     #[command(name = "hexagonal")]
     Hexagonal,
+
     /// Runs the `pipeline` example.
     #[command(name = "pipeline")]
     Pipeline,
+
     /// Runs the `layered_architecture` example.
     #[command(name = "layered_architecture")]
     LayeredArchitecture,
+
     /// Runs the `repository` example.
     #[command(name = "repository")]
     Repository,
+
     /// Runs the `state_machine` example.
     #[command(name = "state_machine")]
     StateMachine,
@@ -70,6 +88,7 @@ enum Commands {
 fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
+
 /// Runs the example selected in the parsed command line.
 fn dispatch(cli: Cli) -> anyhow::Result<()> {
     if let Some(command) = cli.command {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A no-allocation example using fixed-capacity collections.
 //!
 //! Embedded programs often cannot allocate memory at run time, since allocation
@@ -14,7 +15,9 @@ use heapless::String;
 use heapless::Vec;
 
 /// Demonstrates fixed-capacity storage and formatting without heap allocation.
+///
 /// # Errors
+///
 /// Returns a formatting error if the fixed-capacity message is too small.
 fn main() -> fmt::Result {
     let mut samples: Vec<u8, 8> = Vec::new();
@@ -37,6 +40,7 @@ fn main() -> fmt::Result {
 /// Runs the no-allocation demonstration in the host binary.
 ///
 /// # Errors
+///
 /// Propagates a formatting error if the message does not fit its inline buffer.
 /// A no-allocation example using fixed-capacity collections.
 pub fn run() -> fmt::Result {

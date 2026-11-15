@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Dockable, tabbed panes with `egui_tiles`.
 //!
 //! A `Tree` stores the layout: containers (tabs, rows, columns, grids) and
@@ -16,11 +17,13 @@ use egui_tiles::UiResponse;
 /// The content of a pane.
 #[derive(Debug, PartialEq, Eq)]
 struct Pane {
+
     /// The title shown on the tab.
     title: String,
 }
 
 impl Pane {
+
     /// Creates a pane.
     fn new(title: &str) -> Self {
         Self {
@@ -42,6 +45,7 @@ impl Behavior<Pane> for TreeBehavior {
         pane.title.as_str().into()
     }
 }
+
 /// Creates a tab container with two panes.
 fn new_tree() -> Tree<Pane> {
     Tree::new_tabs(
@@ -49,6 +53,7 @@ fn new_tree() -> Tree<Pane> {
         vec![Pane::new("Editor"), Pane::new("Console")],
     )
 }
+
 /// Adds a pane next to the existing tabs and makes it the active one.
 fn add_pane(tree: &mut Tree<Pane>, title: &str) -> Option<TileId> {
     let root = tree.root()?;
@@ -93,6 +98,7 @@ fn run_example() {
         });
     });
 }
+
 /// Runs the example.
 fn main() {
     run_example();

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Examples of password hashing and key derivation with Argon2.
 //!
 //! Servers must never store passwords directly; they store a salted,
@@ -63,6 +64,7 @@ fn password_hashing(password_to_save: &[u8]) -> Result<String, Error> {
 fn password_verification(password_to_check: &[u8], phc_string: &str) -> Result<bool, Error> {
     password_verification_with(&Argon2::default(), password_to_check, phc_string)
 }
+
 /// Verifies a password using the provided Argon2 configuration.
 fn password_verification_with(
     argon2: &Argon2<'_>,
@@ -99,9 +101,10 @@ fn key_derivation() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Hashes a password with Argon2, then verifies it and derives a key.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()

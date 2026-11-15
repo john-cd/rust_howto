@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of using the `zip` crate.
 //!
 //! The `zip` crate supports reading and writing ZIP files.
@@ -14,9 +15,11 @@ use std::io::Write as _;
 
 use zip::write::SimpleFileOptions;
 use zip::write::ZipWriter;
+
 /// Creates a zip archive with two files and an empty directory.
 ///
 /// # Errors
+///
 /// Returns an error if temporary storage or archive writing fails.
 fn main() -> anyhow::Result<()> {
     let temp_dir = tempfile::tempdir()?;
@@ -50,7 +53,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Creates and finalizes the ZIP archive used by the compression example.
+///
 /// # Errors
+///
 /// Returns an error if creating, writing, or finalizing the ZIP archive fails.
 pub fn run() -> anyhow::Result<()> {
     main()

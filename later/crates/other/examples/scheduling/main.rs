@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Sleep until the next cron time, run the job, repeat: no drift, because each
 mod cron_loop;
+
 /// Compute the next fire times of a cron expression with the `cron` crate.
 mod cron_next;
+
 /// A periodic job with `tokio::time::interval`.
 mod interval_job;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `cron_loop` example.
     #[command(name = "cron_loop")]
     CronLoop,
+
     /// Runs the `cron_next` example.
     #[command(name = "cron_next")]
     CronNext,
+
     /// Runs the `interval_job` example.
     #[command(name = "interval_job")]
     IntervalJob,
@@ -38,6 +44,7 @@ enum Commands {
 fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
+
 /// Runs the example selected in the parsed command line.
 fn dispatch(cli: Cli) -> anyhow::Result<()> {
     if let Some(command) = cli.command {

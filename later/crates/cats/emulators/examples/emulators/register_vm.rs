@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A two-register virtual machine with a bounded fetch/decode/execute loop.
 //!
 //! A virtual machine runs programs written for an imaginary processor. Each
@@ -14,15 +15,19 @@ use core::fmt;
 /// A malformed instruction, invalid address, or exhausted execution budget.
 #[derive(Debug)]
 enum EmuError {
+
     /// The instruction pointer is outside the loaded program.
     InvalidAddress(usize),
+
     /// No instruction matches this opcode and operand pair.
     UnknownInstruction([u8; 2]),
+
     /// The program failed to halt within the host's instruction budget.
     StepLimit,
 }
 
 impl fmt::Display for EmuError {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
@@ -41,19 +46,26 @@ impl core::error::Error for EmuError {}
 
 /// CPU state; each instruction is an opcode byte followed by an operand byte.
 struct Cpu<'a> {
+
     /// Borrowed, read-only program memory.
     program: &'a [[u8; 2]],
+
     /// Index of the next instruction, rather than a byte offset.
     pc: usize,
+
     /// Eight-bit accumulator (r0) and loop counter (r1).
     registers: [u8; 2],
+
     /// Whether the halt instruction has executed.
     halted: bool,
 }
 
 impl Cpu<'_> {
+
     /// Fetches, decodes, and executes one instruction; halted CPUs do nothing.
+///
     /// # Errors
+///
     /// Returns an error for an invalid address or unknown instruction.
     fn step(&mut self) -> Result<(), EmuError> {
         if self.halted {
@@ -88,7 +100,9 @@ impl Cpu<'_> {
 }
 
 /// Sums five down to one and stops after at most 64 guest instructions.
+///
 /// # Errors
+///
 /// Propagates malformed instructions, invalid addresses, and budget exhaustion.
 fn main() -> Result<(), EmuError> {
     // r0 = 0; r1 = 5; loop: r0 += r1; r1 -= 1; jump to loop if r1 != 0; halt.
@@ -121,6 +135,7 @@ fn main() -> Result<(), EmuError> {
 /// A two-register virtual machine with a bounded fetch/decode/execute loop.
 ///
 /// # Errors
+///
 /// Propagates guest instruction and execution-budget errors.
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {

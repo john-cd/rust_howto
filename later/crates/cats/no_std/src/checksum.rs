@@ -1,11 +1,13 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Wrapping byte arithmetic without allocation or operating-system services.
 
 /// Returns the sum of all bytes modulo 256; an empty slice has checksum zero.
 ///
 /// # Arguments
+///
 /// * `bytes` - Input bytes to decode or write.
 pub fn checksum(bytes: &[u8]) -> u8 {
     bytes.iter().fold(0_u8, |sum, byte| sum.wrapping_add(*byte))
@@ -18,6 +20,7 @@ pub fn checksum(bytes: &[u8]) -> u8 {
 /// into an example where the wrapper does call it.
 ///
 /// # Returns
+///
 /// The checksum of the byte string `Rust`.
 // This helper is used by the book example, not by the library target.
 #[allow(dead_code)]

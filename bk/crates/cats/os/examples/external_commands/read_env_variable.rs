@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to read an environment variable.
 //! If the environment variable is not set, a default value is used.
 //!
@@ -11,6 +12,7 @@
 //! `Result`.
 
 use std::env;
+
 /// Reads the `PATH` environment variable, or a default value if the variable is
 ///
 /// not set.
@@ -20,7 +22,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// This example demonstrates how to read an environment variable. If the environment variable is
 /// not set, a default value is used.
 pub fn run() {

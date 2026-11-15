@@ -16,6 +16,7 @@ const CHILD_MARKER: &str = "EXAMPLE_TEST_ISOLATED_CHILD";
 /// Runs `body` in a dedicated process.
 ///
 /// # Arguments
+///
 /// * `name` - Name used to identify the item.
 /// * `body` - Request or response body.
 ///

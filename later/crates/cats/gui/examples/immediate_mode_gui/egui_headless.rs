@@ -1,12 +1,14 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Runs an `egui` UI for one frame without a window, a GPU or a display.
 //!
 //! The same technique lets the examples of the other `egui` add-on crates run
 //! in continuous integration.
 
 use eframe::egui;
+
 /// Runs `add_contents` for one frame on a virtual 800 x 600 screen.
 ///
 /// Returns the output of the frame: the shapes to paint, the platform
@@ -14,6 +16,7 @@ use eframe::egui;
 /// commands such as the clipboard text, and so on.
 ///
 /// # Arguments
+///
 /// * `ctx` - Application state and services required to perform the operation.
 pub fn run_frame(ctx: &egui::Context, add_contents: impl FnMut(&mut egui::Ui)) -> egui::FullOutput {
     let screen = egui::Rect::from_min_size(egui::Pos2::ZERO, egui::vec2(800.0, 600.0));
@@ -44,7 +47,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Draws a label and a button, then looks at what was painted.
 pub fn run() {
     main();
 }

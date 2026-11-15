@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates explicit primitive casts, checked numeric conversions, and
 //! parsing.
 //!
@@ -9,18 +10,22 @@
 //! an error instead, which is safer for values from outside the program.
 
 use anyhow::Result;
+
 /// Converts a signed integer to `i32`, returning an error when it is out of
 ///
 /// range.
 ///
 /// # Arguments
-/// * `value` - Value the primitive operation validates, transforms, or stores.
+///
+/// * `value` - Signed integer to convert to `i32`.
 ///
 /// # Errors
+///
 /// Returns an error if `value` is outside the range of `i32`.
 fn narrow_to_i32(value: i64) -> Result<i32, std::num::TryFromIntError> {
     i32::try_from(value)
 }
+
 /// Runs examples of primitive conversions.
 fn main() -> Result<()> {
     let count = narrow_to_i32(42_i64)?;
@@ -39,6 +44,7 @@ fn main() -> Result<()> {
 /// Runs the conversion examples.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

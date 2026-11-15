@@ -10,14 +10,17 @@ use clap::Subcommand;
 /// This example demonstrates two key uses of the `cached` crate: - Simple function memoization with
 /// `#[cached]`,
 mod cached;
+
 /// Basic usage of `LruCache` from the `lru` crate.
 mod lru;
+
 /// Basic usage of the `moka` crate for high-performance concurrent caching.
 mod moka;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -26,12 +29,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `cached` example.
     #[command(name = "cached")]
     Cached,
+
     /// Runs the `lru` example.
     #[command(name = "lru")]
     Lru,
+
     /// Runs the `moka` example.
     #[command(name = "moka")]
     Moka,
@@ -53,7 +59,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

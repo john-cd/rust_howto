@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Converts an HTML email body to wrapped plain text with `html2text`.
 //!
 //! Most emails ship an HTML body. Converting it to text is useful for search
@@ -28,9 +29,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Converts the sample HTML email and checks its text alternative.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips

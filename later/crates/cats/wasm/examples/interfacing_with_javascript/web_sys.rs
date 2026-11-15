@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calls a browser API from Rust through `web-sys`.
 //!
 //! `web-sys` provides bindings to the browser's APIs, such as the document, the
@@ -27,7 +28,7 @@ fn main() {
     #[cfg(not(all(target_arch = "wasm32", target_os = "unknown")))]
     println!("Build for wasm32-unknown-unknown to call the browser Window API.");
 }
-/// Runs the example entry point.
+
 /// Runs the example's host-side runner.
 pub fn run() {
     main();
@@ -41,6 +42,7 @@ mod tests {
     /// Runs the `web-sys` example through its host fallback.
     // output-only: on the host, the example only prints a hint; the wasm32 code
     // needs a browser.
+
     /// Runs the example through its entry point without error.
     #[test]
     fn test_web_sys_example_entry_point() {

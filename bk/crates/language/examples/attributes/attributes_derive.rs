@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Deriving traits with `#[derive]`.
 //!
 //! The `derive` attribute invokes derive macros to generate trait
@@ -9,11 +10,14 @@
 
 // This attribute tells the compiler to automatically generate
 // an implementation of the `std::fmt::Debug` trait for the `Point` struct.
+
 /// A point that derives `Debug`.
 #[derive(Debug)]
 struct Point {
+
     /// The x coordinate.
     x: i32,
+
     /// The y coordinate.
     y: i32,
 }
@@ -33,8 +37,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints a point with the derived `Debug`.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to traverse a directory and find files that
 //! have been modified within the last 24 hours.
 //!
@@ -53,9 +54,10 @@ fn recently_modified(root: &Path) -> Result<Vec<PathBuf>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Walks the current directory tree and prints the files that were modified recently.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

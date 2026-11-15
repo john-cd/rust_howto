@@ -1,25 +1,30 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Depth-First Search (DFS) traversal of a graph using `petgraph`.
 //!
 //! ### What is Depth-First Search (DFS)?
+//!
 //! Depth-First Search is a graph traversal algorithm that explores as far down
 //! a branch as possible along each path before backtracking.
 //!
 //! ### How Does It Work?
+//!
 //! DFS manages exploration using a Last-In, First-Out (LIFO) call stack or
 //! explicit stack buffer. It follows unvisited outgoing edges sequentially
 //! until it encounters a dead end or previously visited node, then backtracks
 //! to explore remaining unvisited branch choices.
 //!
 //! ### Key Properties & Comparison with BFS
+//!
 //! - **Memory Efficiency**: In deep sparse graphs, DFS uses memory proportional to maximum search
 //!   depth $O(V)$, whereas BFS memory grows with frontier width $O(V)$.
 //! - **Non-Optimal Paths**: Unlike BFS, DFS does **not** guarantee finding the shortest path on
 //!   unweighted graphs.
 //!
 //! ### Typical Use Cases
+//!
 //! - Detecting cycles in directed or undirected graphs.
 //! - Computing topological ordering of directed acyclic graphs.
 //! - Topological maze generation and dead-end path discovery.
@@ -80,6 +85,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `petgraph dfs` example runs.
     #[test]
     fn test_petgraph_dfs_example_entry_point() {

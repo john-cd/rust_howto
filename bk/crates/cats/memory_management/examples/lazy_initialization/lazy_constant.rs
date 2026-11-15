@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates a lazily initialized global map with `std::sync::LazyLock`.
 //!
 //! A `static` must be built at compile time, which rules out maps and other
@@ -19,6 +20,7 @@ static PRIVILEGES: LazyLock<HashMap<&'static str, Vec<&'static str>>> = LazyLock
 });
 
 // Example function: display the access privileges for a given name.
+
 /// Prints the access level of the user `name`.
 fn show_access(name: &str) {
     let access = PRIVILEGES.get(name);
@@ -32,8 +34,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Looks up users in a lazily initialized global map.
 pub fn run() {
     main();
 }

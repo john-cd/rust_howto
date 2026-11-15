@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example copies text to and reads text from the system clipboard with
 //! the current `arboard` builder API.
 //!
@@ -35,6 +36,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the clipboard example and returns any clipboard access error.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

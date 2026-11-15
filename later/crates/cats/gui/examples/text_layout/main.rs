@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// Laying out and rasterizing text with `cosmic-text`.
 mod cosmic_text;
+
 /// Laying out rich text with `parley`.
 mod parley;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,14 +23,16 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `cosmic_text` example.
     #[command(name = "cosmic_text")]
     CosmicText,
+
     /// Runs the `parley` example.
     #[command(name = "parley")]
     Parley,
 }
-/// Runs the example.
+
 /// Runs the example selected on the command line.
 fn main() {
     let cli = Cli::parse();

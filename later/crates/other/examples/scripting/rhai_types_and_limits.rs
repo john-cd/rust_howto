@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Expose a Rust type to Rhai, keep state in a `Scope` and sandbox scripts.
 //!
 //! Rhai is a small scripting language embedded in Rust programs, so users can
@@ -15,11 +16,13 @@ use rhai::Scope;
 /// A Rust type that scripts can create and modify.
 #[derive(Debug, Clone)]
 struct Counter {
+
     /// Value stored by this wrapper.
     value: i64,
 }
 
 impl Counter {
+
     /// Creates a counter starting at zero.
     fn new() -> Self {
         Self { value: 0 }
@@ -34,6 +37,7 @@ impl Counter {
         self.value
     }
 }
+
 /// Registers a custom type, reuses a `Scope` between runs and limits a script.
 fn main() -> Result<(), Box<EvalAltResult>> {
     let mut engine = Engine::new();
@@ -70,6 +74,7 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 /// Runs the type registration and limits example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<EvalAltResult>> {
     main()

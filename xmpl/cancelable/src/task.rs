@@ -16,6 +16,7 @@ static COUNTER: AtomicU64 = AtomicU64::new(0);
 /// A progress report sent by a task.
 #[derive(Debug)]
 pub struct TaskResponse {
+
     /// Identifier of the task.
     pub task_id: u64,
 }
@@ -26,11 +27,13 @@ type FinalTaskResponse = TaskResponse;
 /// The task to execute.
 #[derive(Debug, Clone)]
 pub struct Task {
+
     /// Unique identifier of the task.
     task_id: u64,
 }
 
 impl Task {
+
     /// Creates a task with a new identifier.
     pub fn new() -> Self {
         let previous_value = COUNTER.fetch_add(1, Ordering::Relaxed);
@@ -66,7 +69,8 @@ impl Task {
 }
 
 impl Default for Task {
-    /// Constructs a usable initial task value with the defaults required by the task component.
+
+    /// Returns a task with the default cancellation state.
     fn default() -> Self {
         Self::new()
     }

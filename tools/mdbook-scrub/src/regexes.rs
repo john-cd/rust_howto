@@ -18,8 +18,10 @@ use super::conf::PreprocConfig;
 /// Compiled patterns used to remove hidden content and includes.
 #[derive(Default)]
 pub(crate) struct ScrubRegexes {
+
     /// Pattern for HTML sections marked as hidden, when enabled.
     pub hidden_sections: Option<Regex>,
+
     /// Pattern for includes whose paths begin with the configured hidden prefix.
     pub hidden_includes: Option<Regex>,
 }
@@ -48,17 +50,21 @@ pub(crate) fn get_regexes(conf: &PreprocConfig) -> ScrubRegexes {
 pub(crate) fn wikilink_regex() -> Regex {
     Regex::new(r"\[\[\s*([^|\]]*?)\s*(?:\|\s*([^\]]*?)\s*)?\]\]").expect("Invalid wikilink regex")
 }
+
 /// Applies a replacement outside code spans, fenced code blocks, and HTML comments.
 ///
 /// # Arguments
+///
 /// * `markdown` - Markdown source to transform.
 /// * `regex` - Pattern applied to unprotected text.
 /// * `replacement` - Replacement produced for each match.
 ///
 /// # Returns
+///
 /// The transformed Markdown.
 ///
 /// # Errors
+///
 /// Returns an error if the Markdown source cannot be parsed.
 pub(crate) fn replace_outside_protected_spans<F>(
     markdown: &str,
@@ -102,15 +108,19 @@ where
 
 /// Collects byte ranges occupied by Markdown constructs where replacements are skipped.
 struct ProtectedSpanCollector {
+
     /// Address of the source buffer's first byte.
     source_base: usize,
+
     /// Length of the source buffer in bytes.
     source_len: usize,
+
     /// Protected ranges measured from the start of the source buffer.
     spans: Vec<Range<usize>>,
 }
 
 impl ProtectedSpanCollector {
+
     /// Adds the source range for a protected Markdown span when it belongs to the input buffer.
     fn add_span(&mut self, text: &str) {
         let Some(start) = text.as_ptr().addr().checked_sub(self.source_base) else {
@@ -126,6 +136,7 @@ impl ProtectedSpanCollector {
 }
 
 impl<'a> Visitor<'a> for ProtectedSpanCollector {
+
     /// Collects protected spans for each line in a fenced code block.
     fn visit_fenced_code_block(&mut self, data: &'a FencedCodeBlockData<'a>) {
         for line in &data.lines {

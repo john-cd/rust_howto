@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates the use of PBKDF2 for password hashing and verification.
 //!
 //! Servers must never store passwords directly. They store a salted,
@@ -21,6 +22,7 @@ use ring::rand::SecureRandom as _;
 
 /// Demonstrates the use of PBKDF2 for password hashing and verification.
 fn main() -> Result<(), Unspecified> {
+
     /// Number of bytes in the password-hashing credential.
     const CREDENTIAL_LEN: usize = digest::SHA512_OUTPUT_LEN;
     let n_iter = NonZeroU32::new(100_000).expect("the pbkdf2 example invariant should hold");
@@ -67,9 +69,10 @@ fn main() -> Result<(), Unspecified> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Demonstrates the use of PBKDF2 for password hashing and verification.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Unspecified> {
     main()
@@ -89,6 +92,7 @@ mod tests {
     /// and rejects incorrect attempts. Defines the credential len constant.
     #[test]
     fn test_pbkdf2_verification_rejects_wrong_password() {
+
         /// Shared `credential len` used by this module.
         const CREDENTIAL_LEN: usize = digest::SHA512_OUTPUT_LEN;
         let n_iter = NonZeroU32::new(10_000).expect("iteration count should be non-zero");

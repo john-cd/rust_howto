@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to get the current working directory.
 //!
 //! The current working directory is the starting point for relative paths. It
@@ -20,9 +21,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints the current working directory.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Combine sets with union, intersection and difference.
 //!
 //! A set holds distinct elements. Union combines two sets, intersection keeps
@@ -11,10 +12,13 @@ use std::collections::BTreeSet;
 
 /// The set operation results for the two topic sets.
 struct SetComparison {
+
     /// Elements present in both sets.
     shared: BTreeSet<&'static str>,
+
     /// Elements present in either set.
     combined: BTreeSet<&'static str>,
+
     /// Elements present only in the mathematics set.
     math_only: BTreeSet<&'static str>,
 }
@@ -50,7 +54,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {
     main();

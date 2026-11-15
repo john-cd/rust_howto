@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This function demonstrates inserting data into a SQLite database and then
 //! selecting it back.
 //!
@@ -18,8 +19,10 @@ use rusqlite::Result;
 /// A cat.
 #[derive(Debug)]
 struct Cat {
+
     /// The name of the cat.
     name: String,
+
     /// The color of the cat.
     color: String,
 }
@@ -108,9 +111,10 @@ fn main() -> Result<Vec<Cat>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// This function demonstrates inserting data into a SQLite database and then selecting it back.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main().map(|_| ())

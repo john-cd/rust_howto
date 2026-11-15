@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Detecting the collision of two shapes with `parry2d`.
 //!
 //! Collision detection decides whether shapes overlap, which games use for
@@ -12,7 +13,7 @@ use parry2d::math::Vector;
 use parry2d::query;
 use parry2d::shape::Ball;
 use parry2d::shape::Cuboid;
-/// Runs the example.
+
 /// Creates two shapes and tests whether they intersect.
 fn main() {
     // Define shapes.
@@ -50,7 +51,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Creates two shapes and tests whether they intersect.
 pub fn run() {
     main();
 }

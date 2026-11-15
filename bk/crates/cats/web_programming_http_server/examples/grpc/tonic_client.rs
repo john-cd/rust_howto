@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example shows how to create a simple gRPC client using the `tonic`
 //! crate to interact with the `Greeter` server.
 //!
@@ -15,12 +16,15 @@ use helloworld::greeter_client::GreeterClient;
 pub mod helloworld {
     tonic::include_proto!("helloworld");
 }
+
 /// Sends a greeting request to `address` and returns the reply.
 ///
 /// # Errors
+///
 /// Returns an error if the server cannot be reached or the request fails.
 ///
 /// # Arguments
+///
 /// * `address` - Remote client address used to scope request, rate-limit, or audit behavior.
 /// * `name` - Human-readable value used to identify or display the selected tonic client.
 async fn greet(address: SocketAddr, name: &str) -> anyhow::Result<String> {
@@ -46,6 +50,7 @@ async fn main() -> anyhow::Result<()> {
 /// Boilerplate to expose the example logic to the crate's main harness.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 #[expect(dead_code, reason = "needs a running `Greeter` server")]
 pub fn run() -> anyhow::Result<()> {

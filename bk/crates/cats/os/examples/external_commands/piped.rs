@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to pipe the output of one external command to
 //! the input of another.
 //!
@@ -63,9 +64,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// This example demonstrates how to pipe the output of one external command to the input of another.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example: simulate a leaky integrate-and-fire neuron with constant current.
 //!
 //! Euler integration advances the membrane potential in one-millisecond steps.
@@ -8,14 +9,19 @@
 
 /// Shared `resting potential mv` used by this module.
 const RESTING_POTENTIAL_MV: f64 = -65.0;
+
 /// Shared `threshold potential mv` used by this module.
 const THRESHOLD_POTENTIAL_MV: f64 = -50.0;
+
 /// Shared `reset potential mv` used by this module.
 const RESET_POTENTIAL_MV: f64 = RESTING_POTENTIAL_MV;
+
 /// Shared `membrane resistance mohm` used by this module.
 const MEMBRANE_RESISTANCE_MOHM: f64 = 15.0;
+
 /// Shared `membrane time constant ms` used by this module.
 const MEMBRANE_TIME_CONSTANT_MS: f64 = 10.0;
+
 /// Shared `time step ms` used by this module.
 const TIME_STEP_MS: f64 = 1.0;
 
@@ -39,7 +45,7 @@ fn simulate_spike_times(input_current_na: f64, duration_ms: u32) -> Vec<u32> {
 
     spike_times_ms
 }
-/// Runs the example.
+
 /// Runs the simulation and prints spike times for a suprathreshold input.
 fn main() {
     let spike_times_ms = simulate_spike_times(2.0, 100);
@@ -50,8 +56,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs the simulation and prints spike times for a suprathreshold input.
 pub fn run() {
     main();
 }

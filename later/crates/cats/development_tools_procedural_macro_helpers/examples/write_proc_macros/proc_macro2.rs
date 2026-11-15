@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `proc_macro2` mirrors the compiler's token API, but works in ordinary Rust
 //! crates and tests. Parse source, inspect token trees, and build a stream
 //! without invoking a procedural-macro compiler entry point.
@@ -13,12 +14,15 @@ use proc_macro2::Spacing;
 use proc_macro2::Span;
 use proc_macro2::TokenStream;
 use proc_macro2::TokenTree;
+
 /// Parses Rust source into a token stream.
 ///
 /// # Errors
+///
 /// Returns an error if the source is malformed.
 ///
 /// # Arguments
+///
 /// * `source` - Original value used as the starting point for the proc macro2 operation.
 fn parse_stream(source: &str) -> Result<TokenStream> {
     source.parse().map_err(|error: proc_macro2::LexError| {
@@ -76,7 +80,7 @@ fn build_stream() -> TokenStream {
     .into_iter()
     .collect()
 }
-/// Runs the example.
+
 /// Prints parsed and manually constructed token streams.
 ///
 /// # Errors
@@ -95,10 +99,12 @@ fn main() -> Result<()> {
 /// Runs the `proc_macro2` token-stream example.
 ///
 /// # Errors
+///
 /// Returns an error if the example source cannot be parsed.
 pub fn run() -> Result<()> {
     main()
 }
+
 /// Verifies that identifier counting includes tokens nested in groups.
 #[test]
 fn counts_identifiers_inside_groups() -> Result<()> {
@@ -112,6 +118,7 @@ fn counts_identifiers_inside_groups() -> Result<()> {
 fn rejects_malformed_input() {
     assert!(parse_stream("fn hello( {").is_err());
 }
+
 /// Verifies that manually constructed token trees form valid Rust tokens.
 #[test]
 fn builds_a_token_stream() {

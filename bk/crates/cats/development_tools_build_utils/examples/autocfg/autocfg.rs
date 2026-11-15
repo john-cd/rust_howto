@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `autocfg` probes compiler support for use in Cargo build scripts.
 //!
 //! Add to your `Cargo.toml`:
@@ -18,7 +19,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the compiler capability probe.
 pub fn run() {
     main();

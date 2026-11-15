@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generate compact, URL-safe identifiers with `short-uuid`.
 //!
 //! A UUID is a 128-bit identifier that is unique for practical purposes without
@@ -12,6 +13,7 @@ use short_uuid::ShortUuid;
 /// Generates a short UUID and converts it to and from a regular UUID.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> anyhow::Result<()> {
     // A random (v4) UUID in a shorter, URL-safe form.
@@ -38,6 +40,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example_body()

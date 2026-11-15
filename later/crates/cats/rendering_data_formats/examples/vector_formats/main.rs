@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Rasterizes an SVG document at a bounded output size.
 
 use resvg::tiny_skia::Pixmap;
@@ -41,6 +42,7 @@ fn vector_formats_example() -> anyhow::Result<()> {
     println!("rendered at {}x{} pixels", pixmap.width(), pixmap.height());
     Ok(())
 }
+
 /// Runs the vector format example as a binary.
 fn main() -> anyhow::Result<()> {
     vector_formats_example()

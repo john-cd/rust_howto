@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Typical lint attributes for production code.
 //!
 //! The following is a set of attributes commonly used in production
@@ -37,16 +38,14 @@
 #[derive(Debug)]
 pub(crate) struct S;
 
-/// Here is the required documentation
-/// for the main function.
+/// Constructs and prints `S` to demonstrate production lint attributes.
 fn main() {
     let s = S;
     println!("{s:?}");
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Constructs and prints `S` to demonstrate production lint attributes.
 pub(crate) fn run() {
     main();
 }

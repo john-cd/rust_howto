@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A minimal `fyrox` plugin: game logic that the engine calls every frame.
 //!
 //! Projects are normally generated with `fyrox-template`, which creates a
@@ -18,11 +19,13 @@ use fyrox::plugin::error::GameResult;
 #[derive(Default, Visit, Reflect, Debug)]
 #[reflect(non_cloneable)]
 pub struct Game {
+
     /// Number of updates so far.
     ticks: u32,
 }
 
 impl Game {
+
     /// Advances the game by one fixed time step.
     fn tick(&mut self) {
         self.ticks = self.ticks.saturating_add(1);
@@ -34,13 +37,14 @@ impl Game {
 }
 
 impl Plugin for Game {
+
     /// The engine calls `update` at a fixed rate (`context.dt` seconds).
     fn update(&mut self, _context: &mut PluginContext<'_, '_>) -> GameResult {
         self.tick();
         Ok(())
     }
 }
-/// Runs the example.
+
 /// Creates the plugin the way a game executor would.
 fn main() {
     let mut game = Game::default();
@@ -49,7 +53,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the Fyrox game engine example.
 pub fn run() {
     main();

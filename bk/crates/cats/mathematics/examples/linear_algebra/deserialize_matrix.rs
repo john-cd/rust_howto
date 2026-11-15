@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to serialize and deserialize a `DMatrix` using
 //! `serde_json`.
 //!
@@ -33,9 +34,10 @@ fn main() -> Result<(), std::io::Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// This example demonstrates how to serialize and deserialize a `DMatrix` using `serde_json`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), std::io::Error> {
     main()

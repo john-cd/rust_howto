@@ -1,21 +1,26 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Creating instances of a struct.
 
 /// Represents a user with their active status, username, and email.
 #[derive(Debug)]
 struct User {
+
     /// Whether the user is active.
     active: bool,
+
     /// Name of the user.
     username: String,
+
     /// Email address of the user.
     email: String,
 }
 
 // It is common to define a function or an associated function (see below) that
 // initializes the struct.
+
 /// Creates a user from an email address and a username.
 fn build_user(email: String, username: String) -> User {
     User {
@@ -31,6 +36,7 @@ fn build_user(email: String, username: String) -> User {
 impl User {
     // Associated function.
     // By convention, the constructor is called "new", but that is not required.
+
     /// Creates an active user.
     fn new(email: String, username: String) -> Self {
         Self {
@@ -40,7 +46,7 @@ impl User {
         }
     }
 }
-/// Runs the example.
+
 /// Creates users with a function and with an associated function.
 fn main() {
     // We create an instance of the struct by calling a function:
@@ -62,8 +68,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates users with a function and with an associated function.
 pub fn run() {
     main();
 }

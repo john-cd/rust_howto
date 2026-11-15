@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Exports a Rust function as a loadable Lua module with `mlua`'s `module`
 //! feature.
 
@@ -9,12 +10,15 @@ use mlua::prelude::*;
 /// Builds the table returned when Lua loads this module.
 ///
 /// # Arguments
+///
 /// * `lua` - Lua state that owns the returned table and function.
 ///
 /// # Returns
+///
 /// The module table with its exported `double` function.
 ///
 /// # Errors
+///
 /// Returns an error if Lua cannot allocate the table or function.
 fn module_exports(lua: &Lua) -> LuaResult<LuaTable> {
     let exports = lua.create_table()?;
@@ -28,12 +32,15 @@ fn module_exports(lua: &Lua) -> LuaResult<LuaTable> {
 /// Provides the module entry point called by Lua's `require` function.
 ///
 /// # Arguments
+///
 /// * `lua` - Lua state requesting this module.
 ///
 /// # Returns
+///
 /// The module table returned to Lua's `require` function.
 ///
 /// # Errors
+///
 /// Returns an error if module exports cannot be created.
 #[mlua::lua_module]
 fn lua_module(lua: &Lua) -> LuaResult<LuaTable> {
@@ -44,6 +51,7 @@ fn lua_module(lua: &Lua) -> LuaResult<LuaTable> {
 /// Creates the Lua module table returned by the loadable module.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> LuaResult<LuaTable> {
     lua_module(&Lua::new())

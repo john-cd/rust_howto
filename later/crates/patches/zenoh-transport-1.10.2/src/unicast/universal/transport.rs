@@ -93,6 +93,7 @@ impl ClosableCallback {
 
 /// **********************************
 // UNIVERSAL TRANSPORT
+
 /// **********************************
 #[derive(Clone)]
 pub(crate) struct TransportUnicastUniversal {
@@ -166,6 +167,7 @@ impl TransportUnicastUniversal {
 
     /// **********************************
     // TERMINATION
+
     /// **********************************
     pub(super) async fn delete(&self) -> ZResult<()> {
         tracing::debug!(
@@ -274,8 +276,10 @@ impl TransportUnicastUniversal {
 
 #[async_trait]
 impl TransportUnicastTrait for TransportUnicastUniversal {
+
     /// **********************************
     // LINK
+
     /// **********************************
     async fn add_link(
         &self,
@@ -367,6 +371,7 @@ impl TransportUnicastTrait for TransportUnicastUniversal {
 
     /// **********************************
     // ACCESSORS
+
     /// **********************************
     fn set_callback(&self, callback: Arc<dyn TransportPeerEventHandler>) {
         self.callback.set(callback)
@@ -416,6 +421,7 @@ impl TransportUnicastTrait for TransportUnicastUniversal {
 
     /// **********************************
     // TERMINATION
+
     /// **********************************
     async fn close(&self, reason: u8) -> ZResult<()> {
         tracing::trace!("Closing transport with peer: {}", self.config.zid);
@@ -470,6 +476,7 @@ impl TransportUnicastTrait for TransportUnicastUniversal {
 
     /// **********************************
     // TX
+
     /// **********************************
     fn schedule(&self, msg: NetworkMessageMut) -> ZResult<bool> {
         self.internal_schedule(msg)
@@ -491,6 +498,7 @@ impl TransportUnicastTrait for TransportUnicastUniversal {
 ///   separate links) for message scheduling based on QoS.
 #[derive(Default)]
 pub(super) struct TransportLinks {
+
     /// Two associated links are contiguous within the array as such:
     /// \[..., Link, AssociatedLink, ...\].
     ///

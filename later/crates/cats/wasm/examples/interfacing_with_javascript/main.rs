@@ -8,18 +8,23 @@ use clap::Subcommand;
 
 /// Imports a JavaScript function into Rust through `wasm-bindgen`.
 mod js_import;
+
 /// Uses a JavaScript built-in from Rust through `js-sys`.
 mod js_sys;
+
 /// Awaits a JavaScript Promise from Rust.
 mod promises;
+
 /// Converts structured values between JavaScript and Rust with Serde.
 mod serde_wasm_bindgen;
+
 /// Calls a browser API from Rust through `web-sys`.
 mod web_sys;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -28,22 +33,28 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the JavaScript import example.
     #[command(name = "js_import")]
     JsImport,
+
     /// Runs the `js_sys` example.
     #[command(name = "js_sys")]
     JsSys,
+
     /// Runs the Promise example.
     #[command(name = "promises")]
     Promises,
+
     /// Runs the Serde conversion example.
     #[command(name = "serde_wasm_bindgen")]
     SerdeWasmBindgen,
+
     /// Runs the `web_sys` example.
     #[command(name = "web_sys")]
     WebSys,
 }
+
 /// Runs the example selected on the command line.
 fn main() {
     dispatch(Cli::parse());

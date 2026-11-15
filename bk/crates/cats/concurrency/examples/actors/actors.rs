@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A small actor built from a Tokio task and message channels.
 //!
 //! The actor model structures a program as independent actors that own their
@@ -14,10 +15,13 @@ use tokio::sync::oneshot;
 
 /// A command that the counter actor processes.
 enum Message {
+
     /// Adds an amount and returns the updated total through the reply channel.
     Add {
+
         /// The amount to add to the actor's state.
         amount: u64,
+
         /// The one-use channel on which the actor sends the updated total.
         reply_to: oneshot::Sender<u64>,
     },
@@ -30,9 +34,11 @@ struct CounterHandle {
 }
 
 impl CounterHandle {
+
     /// Adds an amount and waits for the actor's updated total.
     ///
     /// # Errors
+///
     /// Returns an error if the actor has stopped before receiving or replying
     /// to the command.
     async fn add(&self, amount: u64) -> anyhow::Result<u64> {
@@ -62,9 +68,11 @@ fn spawn_counter() -> (CounterHandle, tokio::task::JoinHandle<()>) {
 
     (CounterHandle { sender }, task)
 }
+
 /// Runs the counter actor and prints the result of two commands.
 ///
 /// # Errors
+///
 /// Returns an error if the actor task stops before replying or joining.
 async fn run_actor() -> anyhow::Result<()> {
     let (counter, task) = spawn_counter();
@@ -76,9 +84,11 @@ async fn run_actor() -> anyhow::Result<()> {
     task.await.context("counter actor task failed")?;
     Ok(())
 }
+
 /// Runs the asynchronous actor example on a Tokio runtime.
 ///
 /// # Errors
+///
 /// Returns an error if the runtime cannot be created or the actor task fails.
 fn main() -> anyhow::Result<()> {
     tokio::runtime::Runtime::new()?.block_on(run_actor())
@@ -88,6 +98,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the Tokio actor example.
 ///
 /// # Errors
+///
 /// Returns an error if the runtime cannot be created or the actor task fails.
 pub fn run() -> anyhow::Result<()> {
     main()

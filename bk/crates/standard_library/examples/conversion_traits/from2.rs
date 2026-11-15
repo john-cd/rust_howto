@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Converting custom errors from different sources.
 
 use std::fmt;
@@ -9,13 +10,16 @@ use std::io;
 /// An error that wraps errors of several types.
 #[derive(Debug)]
 pub(crate) enum MyError {
+
     /// An I/O error.
     Io(io::Error),
+
     /// An error message.
     Message(String),
 }
 
 impl fmt::Display for MyError {
+
     /// Formats the value for display.
     fn fmt(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
@@ -28,6 +32,7 @@ impl fmt::Display for MyError {
 impl std::error::Error for MyError {}
 
 impl From<io::Error> for MyError {
+
     /// Wraps an I/O error.
     fn from(error: io::Error) -> Self {
         Self::Io(error)
@@ -35,15 +40,18 @@ impl From<io::Error> for MyError {
 }
 
 impl From<&str> for MyError {
+
     /// Wraps a string slice as an owned message.
     fn from(message: &str) -> Self {
         Self::Message(message.to_owned())
     }
 }
+
 /// Returns a sample I/O error to demonstrate conversion with `?`.
 fn io_operation() -> Result<(), io::Error> {
     Err(io::Error::other("sample I/O failure"))
 }
+
 /// Converts the I/O error into `MyError` with the `?` operator.
 fn io_operation_with_custom_error() -> Result<(), MyError> {
     io_operation()?;
@@ -63,9 +71,10 @@ fn main() -> Result<(), MyError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Demonstrates conversions from I/O errors and string messages.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), MyError> {
     main()

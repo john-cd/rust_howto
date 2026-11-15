@@ -7,20 +7,25 @@ use clap::Subcommand;
 
 /// Enums with unit-like, struct-like and tuple-like variants.
 mod enums;
+
 /// `strum` provides derive macros that automatically implement various traits for your enums,
 /// making it easy to convert them to and from strings, iterate
 mod strum;
+
 /// Parse and print config values with `serialize_all` and
 mod strum_case;
+
 /// Labels and tooltips for a settings menu with `strum`'s `EnumMessage`, and the variant list with
 /// `IntoEnumIterator`, `VariantNames` and `EnumCount`.
 mod strum_messages;
+
 /// Attach arbitrary constant properties to variants with `EnumProperty`.
 mod strum_props;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -29,18 +34,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `enums` example.
     #[command(name = "enums")]
     Enums,
+
     /// Runs the `strum` example.
     #[command(name = "strum")]
     Strum,
+
     /// Runs the `strum_messages` example.
     #[command(name = "strum_messages")]
     StrumMessages,
+
     /// Runs the `strum_props` example.
     #[command(name = "strum_props")]
     StrumProps,
+
     /// Runs the `strum_case` example.
     #[command(name = "strum_case")]
     StrumCase,
@@ -68,7 +78,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

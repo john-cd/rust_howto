@@ -10,6 +10,7 @@ use clap::Subcommand;
 /// Inserting and querying documents in MongoDB.
 #[cfg(feature = "mongodb")]
 mod mongodb;
+
 /// Setting and getting a value in Redis.
 #[cfg(feature = "redis")]
 mod redis;
@@ -18,6 +19,7 @@ mod redis;
 #[cfg(any(feature = "mongodb", feature = "redis"))]
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,10 +29,12 @@ struct Cli {
 #[cfg(any(feature = "mongodb", feature = "redis"))]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `mongodb` example.
     #[cfg(feature = "mongodb")]
     #[command(name = "mongodb")]
     Mongodb,
+
     /// Runs the `redis` example.
     #[cfg(feature = "redis")]
     #[command(name = "redis")]
@@ -70,6 +74,7 @@ mod tests {
     fn test_mongodb_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "mongodb"]).is_ok());
     }
+
     /// Verifies redis subcommand parses.
     #[cfg(feature = "redis")]
     #[test]

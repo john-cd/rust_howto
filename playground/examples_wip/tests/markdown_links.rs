@@ -27,9 +27,11 @@ fn matches(rule: Rule, source: &str) -> bool {
 /// Return every named rule emitted by the document scanner.
 ///
 /// # Arguments
+///
 /// * `source` - Markdown source text to scan.
 ///
 /// # Panics
+///
 /// Panics if the document grammar does not consume the entire source.
 fn document_rules(source: &str) -> Vec<Rule> {
     MarkdownLinkParser::parse(Rule::document, source)
@@ -38,6 +40,7 @@ fn document_rules(source: &str) -> Vec<Rule> {
         .map(|pair| pair.as_rule())
         .collect()
 }
+
 /// Parses inline links and images with balanced brackets, destinations, and optional titles.
 #[test]
 fn recognizes_inline_links_images_and_titles() {

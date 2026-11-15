@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parses an SVG and rasterizes it to a PNG with `resvg`.
 //!
 //! SVG is an XML format that describes drawings as shapes and paths instead of
@@ -32,9 +33,11 @@ fn render_svg() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     );
     Ok(())
 }
+
 /// Renders the sample SVG to an in-memory pixmap.
 ///
 /// # Errors
+///
 /// Returns an error if the SVG cannot be parsed or the pixmap cannot be
 /// created.
 fn render_svg_to_pixmap()
@@ -62,6 +65,7 @@ fn render_svg_to_pixmap()
 /// Runs the rendering example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     render_svg()

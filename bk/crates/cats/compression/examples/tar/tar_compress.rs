@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This function creates a gzip-compressed tar archive from a directory.
 //!
 //! A tar archive bundles many files into one, keeping paths and permissions;
@@ -15,11 +16,13 @@ use std::path::Path;
 
 use flate2::Compression;
 use flate2::write::GzEncoder;
+
 /// Creates a sample input directory and archive under the system temp
 ///
 /// directory.
 ///
 /// # Errors
+///
 /// Returns an I/O error if the sample directory or archive cannot be written.
 fn main() -> io::Result<()> {
     let work_dir = std::env::temp_dir().join("rust_howto_tar_compress_example");
@@ -57,11 +60,16 @@ fn compress_directory(source_dir: &Path, archive_path: &Path) -> io::Result<()> 
 pub(crate) static SAMPLE_ARCHIVE_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
 // ANCHOR_END: example
 
+/// Creates and verifies a gzip-compressed tar archive from a sample directory.
+///
 /// # Errors
+///
 /// This function creates a gzip-compressed tar archive from a directory.
 ///
 /// Returns an I/O error if the sample source or archive cannot be written.
+///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), std::io::Error> {
     main()

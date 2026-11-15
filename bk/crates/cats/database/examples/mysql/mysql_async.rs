@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Connects to MySQL or MariaDB through a pool and runs parameterized queries.
 //!
 //! A connection pool keeps a few database connections open and lends them out,
@@ -53,6 +54,7 @@ async fn main() -> Result<()> {
 /// Runs the MySQL connection and query workflow.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

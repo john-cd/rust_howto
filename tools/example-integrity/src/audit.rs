@@ -41,8 +41,10 @@ const BOOK_ROOTS: &[(&str, &str)] = &[
     ("bk/drafts", "draft"),
     ("later/src", "future"),
 ];
+
 /// Shared `example roots` used by this module.
 const EXAMPLE_ROOTS: &[&str] = &["bk/crates", "later/crates"];
+
 /// Shared `entry points` used by this module.
 const ENTRY_POINTS: &[&str] = &["main.rs", "lib.rs", "mod.rs", "build.rs"];
 
@@ -51,15 +53,18 @@ static INCLUDE_DIRECTIVE: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"\{\{#(?P<kind>include|rustdoc_include)\s+(?P<target>[^}\s]+)\s*\}\}")
         .expect("the include directive regex is valid")
 });
+
 /// Shared `custom example` used by this module.
 static CUSTOM_EXAMPLE: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"\{\{#example\s+(?P<name>[^}\s]+)\s*\}\}")
         .expect("the custom example regex is valid")
 });
+
 /// Shared `summary link` used by this module.
 static SUMMARY_LINK: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"\]\((?P<path>[^)\s#]+\.md)(?:#[^)]*)?\)").expect("the Summary link regex is valid")
 });
+
 /// Shared `rust fence` used by this module.
 static RUST_FENCE: LazyLock<Regex> = LazyLock::new(|| {
     Regex::new(r"^\s*(`{3,}|~{3,})\s*(?P<language>[^\s`]*)")
@@ -68,92 +73,123 @@ static RUST_FENCE: LazyLock<Regex> = LazyLock::new(|| {
 
 #[derive(Debug, Deserialize)]
 struct CargoMetadata {
+
     /// Collection of packages values consumed by cargo metadata operations.
     packages: Vec<CargoPackage>,
 }
 
 #[derive(Debug, Deserialize)]
 struct CargoPackage {
+
     /// Display label used to distinguish this cargo package from other entries.
     name: String,
+
     /// Manifest path value.
     manifest_path: PathBuf,
+
     /// Collection of targets values consumed by cargo package operations.
     targets: Vec<CargoTarget>,
 }
 
 #[derive(Debug, Deserialize)]
 struct CargoTarget {
+
     /// Display label used to distinguish this cargo target from other entries.
     name: String,
+
     /// Collection of kind values consumed by cargo target operations.
     kind: Vec<String>,
+
     /// Src path value.
     src_path: PathBuf,
     #[serde(default)]
+
     /// Flag indicating whether the cargo target satisfies the test condition.
     test: bool,
     #[serde(default, rename = "required-features")]
+
     /// Collection of required features values consumed by cargo target operations.
     required_features: Vec<String>,
 }
 
 #[derive(Clone, Debug)]
 struct TargetIndex {
+
     /// Record value.
     record: CargoTargetRecord,
+
     /// Flag indicating whether the target index satisfies the tested condition.
     tested: bool,
 }
 
 #[derive(Clone, Debug)]
 struct ModuleVisitContext {
+
     /// Source path value.
     source_path: String,
+
     /// Target identity value.
     target_identity: String,
+
     /// Module path value.
     module_path: String,
+
     /// Module dir value.
     module_dir: PathBuf,
+
     /// Collection of conditions values consumed by module visit context operations.
     conditions: Vec<String>,
 }
 
 #[derive(Debug)]
 struct ScanState {
+
     /// Repo root value.
     repo_root: PathBuf,
+
     /// Report value.
     report: Report,
+
     /// Collection of targets by source values consumed by scan state operations.
     targets_by_source: HashMap<String, Vec<TargetIndex>>,
+
     /// Collection of modules by source values consumed by scan state operations.
     modules_by_source: HashMap<String, Vec<(String, Vec<String>)>>,
+
     /// Directly included value.
     directly_included: BTreeSet<String>,
+
     /// Collection of fragment includers values consumed by scan state operations.
     fragment_includers: BTreeMap<String, BTreeSet<String>>,
+
     /// Chapter has compiled example value.
     chapter_has_compiled_example: HashSet<String>,
+
     /// Chapter has tested example value.
     chapter_has_tested_example: HashSet<String>,
+
     /// Collection of exceptions values consumed by scan state operations.
     exceptions: Vec<ExceptionRecord>,
+
     /// Collection of example paths values consumed by scan state operations.
     example_paths: Vec<String>,
 }
 
 #[derive(Debug)]
 struct IncludeOptions<'a> {
+
     /// Chapter path value.
     chapter_path: &'a str,
+
     /// Source path value.
     source_path: &'a str,
+
     /// Source line number.
     line: usize,
+
     /// Flag indicating whether the include options satisfies the visible condition.
     visible: bool,
+
     /// Flag indicating whether the include options satisfies the inside fence condition.
     inside_fence: bool,
 }
@@ -161,6 +197,7 @@ struct IncludeOptions<'a> {
 /// Builds a deterministic inventory and emits path-specific integrity diagnostics.
 ///
 /// # Arguments
+///
 /// * `repo_root` - Path to the resource being processed.
 ///
 /// # Errors
@@ -249,6 +286,7 @@ pub fn build_report(repo_root: &Path) -> Result<Report> {
 }
 
 impl ScanState {
+
     /// Loads testable Cargo examples and their reachable Rust module graphs.
     fn load_cargo_targets(&mut self) -> Result<()> {
         for workspace in find_workspace_manifests(&self.repo_root)? {
@@ -1303,6 +1341,7 @@ fn is_hidden_chapter(path: &str) -> bool {
         .and_then(|name| name.to_str())
         .is_some_and(|name| name.starts_with('_'))
 }
+
 /// Converts absolute or relative paths into normalized slash-separated repository paths.
 fn path_to_slashes(path: &Path) -> String {
     path.components()
@@ -1636,11 +1675,13 @@ mod tests {
     /// Creates parent directories and writes a UTF-8 test fixture.
     ///
     /// # Arguments
+///
     /// * `root` - Temporary root directory for the fixture.
     /// * `path` - Relative fixture path beneath `root`.
     /// * `contents` - Text written to the fixture file.
     ///
     /// # Panics
+///
     /// Panics if the parent directory cannot be created or the file cannot be written.
     fn write_fixture(root: &Path, path: &str, contents: &str) {
         let path = root.join(path);

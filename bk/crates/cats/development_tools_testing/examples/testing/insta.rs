@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Snapshot testing with `insta`.
 //!
 //! A snapshot test compares the output with a reference file stored in the
@@ -14,6 +15,7 @@
 /// This is a sample function that formats user details.
 ///
 /// # Arguments
+///
 /// * `name` - Human-readable value used to identify or display the selected insta.
 pub fn format_user(name: &str, age: u32) -> String {
     format!("Name: {name}, Age: {age}")

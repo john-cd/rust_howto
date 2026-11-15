@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Comparing UTF-8 bytes, Unicode scalar values, and grapheme clusters.
 //!
 //! Unicode text has three levels: bytes (UTF-8 storage), scalar values (`char`)
@@ -28,8 +29,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints grapheme clusters and compares their count with other string lengths.
 pub fn run() {
     main();
 }

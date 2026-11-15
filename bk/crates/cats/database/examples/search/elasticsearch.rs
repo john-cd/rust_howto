@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This module provides examples of interacting with Elasticsearch using the
 //! official Rust client.
 //!
@@ -27,11 +28,14 @@ use serde_json::Value;
 use serde_json::json;
 use url::Host;
 use url::Url;
+
 /// Represents a document that can be indexed in Elasticsearch.
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
+
     /// The identifier of the document.
     id: i32,
+
     /// The title of the document.
     title: String,
 }
@@ -239,9 +243,10 @@ async fn cat_indices(client: Elasticsearch) -> anyhow::Result<Response> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Indexes a document in Elasticsearch, then searches for it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

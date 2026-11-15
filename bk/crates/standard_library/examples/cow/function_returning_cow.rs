@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of a function returning a `Cow`.
 //!
 //! Returning `Cow` lets a function return its input untouched (no allocation)
@@ -23,7 +24,7 @@ fn remove_whitespaces(s: &str) -> Cow<'_, str> {
         Cow::Borrowed(s)
     }
 }
-/// Runs the example.
+
 /// Removes the spaces of strings, allocating only when needed.
 fn main() {
     let original_string = "Hello world!  ";
@@ -44,8 +45,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Removes the spaces of strings, allocating only when needed.
 pub fn run() {
     main();
 }
@@ -53,11 +53,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `function returning cow` example runs.
     #[test]
     fn test_function_returning_cow_example_entry_point() {
         main();
     }
+
     /// Verifies spaces are removed with an allocation.
     #[test]
     fn test_spaces_are_removed_with_an_allocation() {
@@ -65,6 +67,7 @@ mod tests {
         assert!(matches!(result, Cow::Owned(_)));
         assert_eq!(result, "Helloworld!");
     }
+
     /// Verifies no spaces means no allocation.
     #[test]
     fn test_no_spaces_means_no_allocation() {
@@ -74,6 +77,7 @@ mod tests {
         // The result points into the input.
         assert!(std::ptr::eq(result.as_ref(), input));
     }
+
     /// Verifies edge cases.
     #[test]
     fn test_edge_cases() {

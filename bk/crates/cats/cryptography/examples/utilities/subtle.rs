@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates the usage of the `subtle` crate for
 //! constant-time cryptographic operations.
 //!
@@ -48,6 +49,7 @@ fn main() {
     // Example 3: CtOption for handling potential failures in constant time:
     // The `CtOption<T>` type represents an optional value similar to the
     // `Option<T>` type but is intended for use in constant time APIs.
+
     /// Parses a decimal integer into a constant-time optional value.
     fn try_parse(s: &str) -> CtOption<u32> {
         if s.len() < 3 {
@@ -81,8 +83,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Compares and selects values in constant time with `subtle`.
 pub fn run() {
     main();
 }

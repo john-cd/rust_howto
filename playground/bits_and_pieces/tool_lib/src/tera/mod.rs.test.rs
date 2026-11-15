@@ -10,6 +10,7 @@ use walkdir::DirEntry;
 use walkdir::WalkDir;
 
 // fn build_table(templ: Tera) -> anyhow::Result<()> {
+
 /// Walks the templates folder, ignoring hidden entries.
 fn build_table() -> anyhow::Result<()> {
     let walker = WalkDir::new("./templates")

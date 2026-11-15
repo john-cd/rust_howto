@@ -5,6 +5,7 @@
 //! TODO Reviewed ??-??-2026.
 
 // ANCHOR: C
+
 /// Compile a C file into a static library.
 fn c() {
     println!("cargo::rerun-if-changed=examples/build_time_tooling/hello.c");
@@ -15,6 +16,7 @@ fn c() {
 // ANCHOR_END: C
 
 // ANCHOR: CPP
+
 /// Compile a C++ file into a static library.
 fn cpp() {
     println!("cargo::rerun-if-changed=examples/build_time_tooling/foo.cpp");
@@ -26,6 +28,7 @@ fn cpp() {
 // ANCHOR_END: CPP
 
 // ANCHOR: C_DEFINES
+
 /// Compile a C file with specific `#define` directives.
 fn cc_defines() {
     println!("cargo::rerun-if-changed=examples/build_time_tooling/cc_defines.c");
@@ -41,6 +44,7 @@ fn cc_defines() {
 // ANCHOR_END: C_DEFINES
 
 // ANCHOR: out-dir-codegen
+
 /// Generates a Rust module from a tracked text input in Cargo's output
 /// directory.
 fn out_dir_codegen() -> Result<(), Box<dyn std::error::Error>> {
@@ -71,6 +75,7 @@ fn out_dir_codegen() -> Result<(), Box<dyn std::error::Error>> {
 /// Entry point for the build script.
 ///
 /// # Errors
+///
 /// Returns an error if generated source cannot be written to Cargo's output
 /// directory.
 fn main() -> Result<(), Box<dyn std::error::Error>> {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A Tokio `oneshot` channel that carries a single value between tasks.
 //!
 //! A oneshot channel carries exactly one value from a sender to a receiver. It
@@ -12,7 +13,8 @@ use tokio::sync::oneshot;
 /// Simulate some computation that takes a `u32` and returns a `String`.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested async channels oneshot operation.
+///
+/// * `input` - Value included in the returned message.
 async fn some_computation(input: u32) -> String {
     format!("The result of computation is {input}")
 }

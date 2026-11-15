@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Fast and easy queue abstraction.
 //!
 //! Provides an abstraction over a queue. When the abstraction is used
@@ -16,8 +17,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints a description of inner doc comments.
 pub fn run() {
     main();
 }

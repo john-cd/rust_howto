@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Train a logistic regression classifier in Rust with `smartcore`.
 //!
 //! Logistic regression is a classifier, despite the name: it predicts the
@@ -36,9 +37,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Fits a classifier on a small in-memory dataset: class 1 when both features are positive.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main().map_err(|e| anyhow::anyhow!("{e}"))

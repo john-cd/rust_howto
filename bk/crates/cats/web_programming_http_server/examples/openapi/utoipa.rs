@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generate an OpenAPI document from code with [`utoipa`].
 //!
 //! OpenAPI is a machine-readable description of an HTTP API. Generating it from
@@ -19,6 +20,7 @@ use utoipa_swagger_ui::SwaggerUi;
 /// A greeting.
 #[derive(Serialize, ToSchema)]
 pub struct Greeting {
+
     /// The text of the greeting.
     message: String,
 }
@@ -48,9 +50,11 @@ pub fn app() -> Router {
         .route("/hello/{name}", get(hello))
         .merge(SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", ApiDoc::openapi()))
 }
+
 /// Renders the document as pretty-printed JSON.
 ///
 /// # Errors
+///
 /// Returns an error if the OpenAPI document cannot be serialized as JSON.
 pub fn openapi_json() -> anyhow::Result<String> {
     Ok(ApiDoc::openapi().to_pretty_json()?)

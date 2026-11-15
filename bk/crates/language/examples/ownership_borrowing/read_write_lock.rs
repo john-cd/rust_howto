@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Many shared references or one mutable reference.
 //!
 //! The borrow rules allow many shared references or exactly one mutable
@@ -36,8 +37,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Takes shared references, then a mutable reference.
 pub fn run() {
     main();
 }

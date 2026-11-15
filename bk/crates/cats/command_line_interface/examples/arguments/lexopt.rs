@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `lexopt` crate to parse command
 //! line arguments.
 //!
@@ -10,8 +11,10 @@
 
 /// The parsed command-line arguments.
 struct Args {
+
     /// The value of the `--name` option, or the positional argument.
     name: String,
+
     /// The value of the `-a` or `--age` option.
     age: u32,
     // Add more fields here as needed.
@@ -73,9 +76,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses the arguments and prints them.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -10,15 +10,20 @@ use clap::crate_version;
 
 /// The arguments of the command line that apply to the whole application.
 mod args;
+
 /// The commands of the application.
 mod cmd;
+
 /// Loads and validates the settings that control cli behavior. Composition code uses this module
 /// before starting services so invalid configuration is reported early.
 mod config;
+
 /// The `open` subcommand.
 mod opencmd;
+
 /// The `query` subcommand.
 mod querycmd;
+
 /// The hidden `test` subcommand.
 mod testcmd;
 
@@ -188,6 +193,7 @@ mod tests {
     // .args_conflicts_with_subcommands(true) // If true, the use of an
     // argument prevents the use of subcommands, i.e. arguments can only
     // follow the final subcommand.  to change that behavior.
+
     /// Checks that file paths and the `open` command conflict.
     #[test]
     fn test_both_arg_filepaths_and_cmd_open() {
@@ -202,6 +208,7 @@ mod tests {
     }
 
     // Passing multiple commands is not supported.
+
     /// Checks that only one command is accepted.
     #[test]
     fn test_multiple_cmds() {

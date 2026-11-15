@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates invalid data handling when reading a CSV file.
 //!
 //! Real-world CSV files contain rows with missing or malformed values. Reading
@@ -9,16 +10,20 @@
 
 use csv::Error;
 use serde::Deserialize;
+
 /// Represents a record with a name, place, and an optional ID.
 ///
 /// The `id` field uses a custom deserialization function `csv::invalid_option`
 /// to handle cases where the ID might not be a valid u64.
 #[derive(Debug, Deserialize, PartialEq)]
 struct Record {
+
     /// The name.
     name: String,
+
     /// The place.
     place: String,
+
     /// The identifier, or `None` if it is not a valid number.
     #[serde(deserialize_with = "csv::invalid_option")]
     id: Option<u64>,
@@ -30,6 +35,7 @@ fn read_records(data: &str) -> Result<Vec<Record>, Error> {
         .deserialize()
         .collect()
 }
+
 /// Reads and prints CSV records with optional identifiers.
 fn main() -> Result<(), Error> {
     let data = "name,place,id
@@ -45,9 +51,10 @@ alisha,colombo,xyz";
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Reads and prints CSV records with optional identifiers.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()

@@ -7,22 +7,29 @@ use clap::Subcommand;
 
 /// Functions that never return.
 mod diverging_functions;
+
 /// Passing and calling function pointers.
 mod function_pointers;
+
 /// Defining functions with arguments and return values.
 mod functions;
+
 /// Generic functions that take arguments of any type.
 mod generic_functions;
+
 /// Generic functions with trait bounds.
 mod generic_functions2;
+
 /// A generic function with a lifetime parameter.
 mod generic_functions3;
+
 /// Returning references and owned values from functions.
 mod return_reference;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -31,24 +38,31 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `diverging_functions` example.
     #[command(name = "diverging_functions")]
     DivergingFunctions,
+
     /// Runs the `function_pointers` example.
     #[command(name = "function_pointers")]
     FunctionPointers,
+
     /// Runs the `functions` example.
     #[command(name = "functions")]
     Functions,
+
     /// Runs the `generic_functions` example.
     #[command(name = "generic_functions")]
     GenericFunctions,
+
     /// Runs the `generic_functions2` example.
     #[command(name = "generic_functions2")]
     GenericFunctions2,
+
     /// Runs the `generic_functions3` example.
     #[command(name = "generic_functions3")]
     GenericFunctions3,
+
     /// Runs the `return_reference` example.
     #[command(name = "return_reference")]
     ReturnReference,
@@ -82,7 +96,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

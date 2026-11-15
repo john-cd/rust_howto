@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! An `actix` counter actor that replies with its updated total.
 //!
 //! The actor model structures a program as independent actors that own their
@@ -24,6 +25,7 @@ impl Message for Add {
 
 /// An actor that owns a running total.
 struct Counter {
+
     /// The total after processing the last message.
     total: u64,
 }
@@ -41,9 +43,11 @@ impl Handler<Add> for Counter {
         self.total
     }
 }
+
 /// Starts the counter and returns the replies to two messages.
 ///
 /// # Errors
+///
 /// Returns an error if a message reply or the Actix system fails.
 fn run_actor() -> anyhow::Result<(u64, u64)> {
     let system = System::new();
@@ -64,9 +68,11 @@ fn run_actor() -> anyhow::Result<(u64, u64)> {
     system.run().context("Actix system failed")?;
     Ok(totals)
 }
+
 /// Runs the Actix counter example.
 ///
 /// # Errors
+///
 /// Returns an error if a message reply or the Actix system fails.
 fn main() -> anyhow::Result<()> {
     let (first, second) = run_actor()?;
@@ -78,6 +84,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the Actix actor example.
 ///
 /// # Errors
+///
 /// Returns an error if a message reply or the Actix system fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! SHA-256 digest of a file's contents with `ring`, printed as hexadecimal.
 //!
 //! A hash function turns any data into a short fixed-size fingerprint (a
@@ -56,9 +57,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Writes a file, computes its SHA-256 digest and prints it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
@@ -73,6 +75,7 @@ mod tests {
 
     /// Shared `empty sha256` used by this module.
     const EMPTY_SHA256: &str = "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855";
+
     /// Verifies that the `sha digest` example runs.
     #[test]
     fn test_sha_digest_example_entry_point() {
@@ -110,11 +113,16 @@ mod tests {
     /// Reads errors are propagated.
     #[test]
     fn read_errors_are_propagated() {
+
         /// Groups the data required by hashing operations.
         struct Failing;
         impl Read for Failing {
+
+            /// Always returns an I/O error to demonstrate digest failure handling.
+///
             /// # Arguments
-            /// * `_buf` - Mutable [u8] whose state is updated by this operation.
+///
+            /// * `_buf` - Read buffer supplied by the caller; ignored because this reader always fails.
             fn read(&mut self, _buf: &mut [u8]) -> std::io::Result<usize> {
                 Err(std::io::Error::other("boom"))
             }

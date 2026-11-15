@@ -16,6 +16,7 @@
 /// A vector of non-empty lines and the same lines joined into one string.
 ///
 /// # Example
+///
 /// ```
 /// use tool_lib::remove_empty_lines;
 /// let input = "Hello, world!\n\nThis is a test.\n   \nAnother line.";

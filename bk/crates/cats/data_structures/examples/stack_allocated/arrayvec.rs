@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates basic usage of `ArrayVec`.
 //!
 //! `ArrayVec` is a vector with a fixed maximum capacity stored on the stack, so
@@ -73,8 +74,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates basic usage of `ArrayVec`.
 pub fn run() {
     main();
 }

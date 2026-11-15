@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Keeps a secret out of logs with a newtype whose `Debug` and `Display`
 //! implementations redact the value, then does the same with `secrecy`.
 //!
@@ -24,6 +25,7 @@ use secrecy::SecretString;
 struct RedactedSecret(String);
 
 impl RedactedSecret {
+
     /// Returns the secret value. Call sites mark where the secret is used.
     fn expose_secret(&self) -> &str {
         &self.0
@@ -31,15 +33,19 @@ impl RedactedSecret {
 }
 
 impl fmt::Debug for RedactedSecret {
+
     /// Formats the value for display.
+///
     /// # Arguments
-    /// * `f` - Mutable formatter whose state is updated by this operation.
+///
+    /// * `f` - Formatter used to write the formatted representation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str("RedactedSecret(***)")
     }
 }
 
 impl fmt::Display for RedactedSecret {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.write_str("***")
@@ -59,8 +65,10 @@ impl FromStr for RedactedSecret {
 /// redacted.
 #[derive(Debug)]
 struct Config {
+
     /// Where to send requests.
     endpoint: String,
+
     /// Credential for the endpoint.
     api_key: RedactedSecret,
 }
@@ -68,6 +76,7 @@ struct Config {
 /// Builds and prints redacted secret values from both examples.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 fn main() -> Result<(), Infallible> {
     // Hand-written newtype:
@@ -89,7 +98,7 @@ fn main() -> Result<(), Infallible> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Builds and prints redacted secret values from both examples.
 pub fn run() {
     let _ = main();
 }

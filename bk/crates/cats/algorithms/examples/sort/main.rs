@@ -9,14 +9,17 @@ use clap::Subcommand;
 
 /// This example demonstrates the basic usage of the `sort` method on a vector.
 mod sort_basic;
+
 /// Sort floats using their IEEE 754 total ordering, including NaN.
 mod sort_float;
+
 /// Sorts a vector of structs, by their derived order and by a chosen field.
 mod sort_struct;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,12 +28,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `sort_basic` example.
     #[command(name = "sort_basic")]
     Basic,
+
     /// Runs the `sort_float` example.
     #[command(name = "sort_float")]
     Float,
+
     /// Runs the `sort_struct` example.
     #[command(name = "sort_struct")]
     Struct,
@@ -52,7 +58,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

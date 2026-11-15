@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calculate how long to wait after hitting a GitHub REST API rate limit.
 //!
 //! See <https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api>.
@@ -23,6 +24,7 @@ fn header_u64(headers: &HeaderMap, name: &str) -> Result<Option<u64>> {
         .map(|v| Ok(v.to_str()?.parse()?))
         .transpose()
 }
+
 /// Returns how long to wait before retrying a request, or `None` if the
 /// response was not rate limited.
 ///
@@ -79,9 +81,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Computes the wait time from example response headers and prints it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
@@ -99,11 +102,13 @@ mod tests {
     fn now() -> SystemTime {
         UNIX_EPOCH + Duration::from_secs(NOW)
     }
+
     /// Runs the rate limited example through its entry point.
     #[test]
     fn test_rate_limited_example_entry_point() -> Result<()> {
         main()
     }
+
     /// Verifies that success does not wait.
     #[test]
     fn success_does_not_wait() -> Result<()> {

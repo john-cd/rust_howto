@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of `Result` methods for value transformation and control flow.
 
 #![allow(
@@ -9,6 +10,7 @@
 )]
 
 // A contrived example of a function returning a `Result`:
+
 /// Divides `a` by `b`, or returns an error if `b` is zero.
 fn divide(a: i32, b: i32) -> Result<i32, &'static str> {
     if b == 0 {
@@ -17,7 +19,7 @@ fn divide(a: i32, b: i32) -> Result<i32, &'static str> {
         Ok(a / b)
     }
 }
-/// Runs the example.
+
 /// Transforms and chains `Result` values.
 #[allow(clippy::bind_instead_of_map)]
 fn main() {
@@ -50,7 +52,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example.
 pub fn run() {
     main();
@@ -59,11 +60,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `result2` example runs.
     #[test]
     fn test_result2_example_entry_point() {
         main();
     }
+
     /// Verifies divide.
     #[test]
     fn test_divide() {
@@ -71,6 +74,7 @@ mod tests {
         assert_eq!(divide(-9, 3), Ok(-3));
         assert_eq!(divide(10, 0), Err("Cannot divide by zero."));
     }
+
     /// Verifies combinators on ok.
     #[test]
     fn test_combinators_on_ok() {
@@ -79,6 +83,7 @@ mod tests {
         assert!(result.is_ok());
         assert_eq!(result.unwrap_or(-1), 11);
     }
+
     /// Verifies combinators short circuit on err.
     #[test]
     fn test_combinators_short_circuit_on_err() {
@@ -86,6 +91,7 @@ mod tests {
         assert_eq!(result, Err("Cannot divide by zero."));
         assert_eq!(result.unwrap_or(-1), -1);
     }
+
     /// Verifies expect on err panics.
     #[test]
     #[should_panic(expected = "Computation failed.")]

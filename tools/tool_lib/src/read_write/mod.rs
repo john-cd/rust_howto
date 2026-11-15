@@ -12,12 +12,16 @@ use anyhow::Result;
 
 /// Replacing files atomically through a temporary sibling file.
 mod atomic;
+
 /// Backing up files before they are overwritten.
 mod backup;
+
 /// Detecting differences between texts.
 mod diff;
+
 /// Manipulating file extensions.
 mod ext;
+
 /// Manipulate src/refs/*-refs.md files that contain all the reference definitions for the book.
 mod merge;
 

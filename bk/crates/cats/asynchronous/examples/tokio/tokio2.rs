@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of using a single-threaded Tokio runtime.
 //!
 //! Tokio can run on a single thread (the `current_thread` runtime) or on a pool
@@ -19,7 +20,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Example of using a single-threaded Tokio runtime.
 pub fn run() {
     main();
 }

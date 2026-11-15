@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Evolve a solution with a genetic algorithm.
 //!
 //! A genetic algorithm imitates evolution: it keeps a population of candidate
@@ -32,7 +33,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {
     main();

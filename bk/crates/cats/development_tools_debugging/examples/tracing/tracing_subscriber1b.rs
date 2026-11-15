@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to log in JSON format.
 //! This is intended for production use with systems where structured logs are
 //! consumed as JSON by analysis and viewing tools.
@@ -54,8 +55,7 @@ fn a_function() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates how to log in JSON format. This is intended for production use with systems where structured logs are consumed as JSON by analysis and viewing tools.
 pub fn run() {
     main();
 }

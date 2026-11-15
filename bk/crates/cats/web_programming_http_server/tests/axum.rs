@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates basic usage of the `axum` web framework.
 //! `axum` is a web application framework designed to work with `tokio` and
 //! `hyper`. It doesn't have its own middleware system but instead uses
@@ -30,6 +31,7 @@ use axum::routing::get;
 /// Application state shared across all handlers.
 #[derive(Clone)]
 struct AppState {
+
     /// The greeting that the root handler returns.
     greeting: String,
 }
@@ -42,10 +44,12 @@ struct AppState {
 /// `content-type: text/plain; charset=utf-8`.
 ///
 /// # Arguments
+///
 /// * `state` - Application state containing the repositories and services needed by this workflow.
 async fn root(State(state): State<Arc<AppState>>) -> String {
     state.greeting.clone()
 }
+
 /// Returns a user by ID.
 ///
 /// The [`Path`] extractor gives us the path parameters (here `id` in

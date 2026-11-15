@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Creating and inspecting symbolic links.
 //!
 //! A symbolic link is a file that points to another path. Following it gives
@@ -12,6 +13,7 @@ use std::path::Path;
 
 // Creating symbolic links is platform-specific, because different operating
 // systems handle them differently (e.g., file vs. directory links on Windows).
+
 /// Creates a symbolic link `link` that points to `original`.
 fn create_symlink(original: &Path, link: &Path) -> anyhow::Result<()> {
     #[cfg(target_family = "unix")]
@@ -77,6 +79,7 @@ where
 fn main() -> anyhow::Result<()> {
     demo(Path::new("temp"))
 }
+
 /// Creates `source.txt` and `my_link.txt` in `dir`, then inspects both.
 fn demo(dir: &Path) -> anyhow::Result<()> {
     fs::create_dir_all(dir)?;
@@ -99,9 +102,10 @@ fn demo(dir: &Path) -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Creates a file and a link to it, then inspects both.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `await-tree` crate.
 //!
 //! `await-tree` is a tool for visualizing the execution of asynchronous tasks
@@ -117,6 +118,7 @@ async fn baz(n: i32) {
 /// Runs the asynchronous example with a current-thread Tokio runtime.
 ///
 /// # Panics
+///
 /// Panics if the Tokio runtime cannot be created.
 pub fn run() {
     tokio::runtime::Builder::new_current_thread()

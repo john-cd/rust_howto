@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! String data types: `&str`, `String` and string literals.
 //!
 //! Rust distinguishes between borrowed string slices (`&str`), which reference
@@ -29,8 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates and prints strings of different types.
 pub fn run() {
     main();
 }

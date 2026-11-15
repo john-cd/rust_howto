@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A derive procedural macro that implements a trait.
 //!
 //! A derive macro is a procedural macro: a Rust function that runs at compile
@@ -11,8 +12,10 @@
 use proc_macros::DebugPrint;
 
 // Define the custom trait that the macro will implement.
+
 /// A trait that prints a debug representation.
 pub trait DebugPrint {
+
     /// Prints a debug representation of `self`.
     fn debug_print(&self);
 }
@@ -20,18 +23,22 @@ pub trait DebugPrint {
 // Apply our custom derive macro.
 // This will automatically `impl DebugPrint for` the struct.
 // We also derive the standard `Debug` trait.
+
 /// A user, with a derived [`DebugPrint`] implementation.
 #[derive(DebugPrint, Debug)]
 struct User {
+
     /// Unique identifier of the user.
     id: u64,
+
     /// Name of the user.
     name: String,
+
     /// Whether the user is active.
     #[helper]
     active: bool,
 }
-/// Runs the example.
+
 /// Creates a user and prints it using the derived trait.
 fn main() {
     let u = User {
@@ -44,8 +51,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates a user and prints it using the derived trait.
 pub fn run() {
     main();
 }

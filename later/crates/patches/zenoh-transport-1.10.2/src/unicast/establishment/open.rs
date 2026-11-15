@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -65,8 +66,10 @@ use crate::unicast::link::TransportLinkUnicastDirection;
 type OpenError = (zenoh_result::Error, Option<u8>);
 
 struct StateTransport {
+
     /// Maximum number of messages sent in a batch.
     batch_size: BatchSize,
+
     /// Sequence-number resolution.
     resolution: Resolution,
     ext_qos: ext::qos::StateOpen,
@@ -88,59 +91,76 @@ struct StateLink {
 }
 
 struct State {
+
     /// Transport value.
     transport: StateTransport,
     #[cfg(any(feature = "transport_auth", feature = "transport_compression"))]
+
     /// Transport link associated with this state.
     link: StateLink,
 }
 
 // InitSyn
 struct SendInitSynIn {
+
     /// Protocol version advertised by the local peer.
     mine_version: u8,
+
     /// Local Zenoh identifier.
     mine_zid: ZenohIdProto,
+
     /// Role advertised by the local peer.
     mine_whatami: WhatAmI,
 }
 
 // InitAck
 struct RecvInitAckOut {
+
     /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
+
     /// Role advertised by the remote peer.
     other_whatami: WhatAmI,
+
     /// Cookie received from the remote peer.
     other_cookie: ZSlice,
 }
 
 // OpenSyn
 struct SendOpenSynIn {
+
     /// Local Zenoh identifier.
     mine_zid: ZenohIdProto,
+
     /// Lease duration advertised by the local peer.
     mine_lease: Duration,
+
     /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
+
     /// Role advertised by the remote peer.
     other_whatami: WhatAmI,
+
     /// Cookie received from the remote peer.
     other_cookie: ZSlice,
 }
 
 struct SendOpenSynOut {
+
     /// Initial sequence number advertised by the local peer.
     mine_initial_sn: TransportSn,
 }
 
 // OpenAck
 struct RecvOpenAckOut {
+
     /// Optional other bound used by recv open ack out; `None` means the value is not configured or
     /// unavailable.
     other_bound: Option<Bound>,
+
     /// Lease duration advertised by the remote peer.
     other_lease: Duration,
+
     /// Initial sequence number advertised by the remote peer.
     other_initial_sn: TransportSn,
 }
@@ -151,6 +171,7 @@ struct OpenLink<'a> {
     #[cfg(feature = "transport_multilink")]
     ext_mlink: ext::multilink::MultiLinkFsm<'a>,
     #[cfg(feature = "shared-memory")]
+
     /// Optional ext shm used by open link; `None` means the value is not configured or
     /// unavailable.
     ext_shm: Option<ext::shm::auth::ShmFsm<'a>>,
@@ -162,6 +183,7 @@ struct OpenLink<'a> {
     ext_patch: ext::patch::PatchFsm<'a>,
     ext_region_name: ext::region_name::RegionNameFsm,
     // TODO(regions): move this into `ext::region::RegionFsm` (?)
+
     /// Optional ext remote bound used by open link; `None` means the value is not configured or
     /// unavailable.
     ext_remote_bound: Option<RemoteBoundCallback>,
@@ -179,10 +201,14 @@ impl<'a, 'b: 'a> OpenFsm for &'a mut OpenLink<'b> {
     type SendOpenSynIn = (&'a mut TransportLinkUnicast, &'a mut State, SendOpenSynIn);
     type SendOpenSynOut = SendOpenSynOut;
 
+    /// Builds an InitSyn and its negotiated extensions for the opening peer.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested open fsm operation.
+///
+    /// * `input` - Link, opening state, and local settings used to construct InitSyn.
     ///
     /// # Errors
+///
     /// Returns an error if constructing any negotiated extension for the init SYN fails.
     async fn send_init_syn(
         self,
@@ -287,10 +313,16 @@ impl<'a, 'b: 'a> OpenFsm for &'a mut OpenLink<'b> {
         Ok(())
     }
 
-    /// Receives init ack.
-
+    /// Receives the peer's InitAck, validates its negotiated settings, and updates open state.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested open fsm operation.
+///
+    /// * `input` - Link receiving InitAck and opening state to update.
+    ///
+    /// # Errors
+///
+    /// Returns an error if the message is not a valid InitAck or its negotiated extensions are
+    /// invalid.
     async fn recv_init_ack(
         self,
         input: Self::RecvInitAckIn,
@@ -438,10 +470,14 @@ impl<'a, 'b: 'a> OpenFsm for &'a mut OpenLink<'b> {
         Ok(output)
     }
 
+    /// Builds an OpenSyn and its negotiated extensions for the opening peer.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested open operation.
+///
+    /// * `input` - Link, negotiated opening state, and local OpenSyn settings.
     ///
     /// # Errors
+///
     /// Returns an error if constructing any negotiated extension for the open SYN fails.
     async fn send_open_syn(
         self,
@@ -562,10 +598,16 @@ impl<'a, 'b: 'a> OpenFsm for &'a mut OpenLink<'b> {
         Ok(output)
     }
 
-    /// Receives open ack.
-
+    /// Receives the peer's OpenAck and completes open-side extension negotiation.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested open operation.
+///
+    /// * `input` - Link receiving OpenAck and opening state to update.
+    ///
+    /// # Errors
+///
+    /// Returns an error if the message is not a valid OpenAck or its negotiated extensions are
+    /// invalid.
     async fn recv_open_ack(
         self,
         input: Self::RecvOpenAckIn,
@@ -659,14 +701,20 @@ impl<'a, 'b: 'a> OpenFsm for &'a mut OpenLink<'b> {
         Ok(output)
     }
 }
-/// Opens link.
+
+/// Opens a unicast link and completes the InitSyn/InitAck and OpenSyn/OpenAck handshake.
 ///
 /// # Arguments
-/// * `link` - Transport link to add, remove, or use.
+///
+/// * `endpoint` - Remote endpoint used to open the link.
+/// * `link` - Unicast link carrying the establishment messages.
+/// * `manager` - Transport manager that creates or joins the resulting transport.
+/// * `expected_zid` - Optional peer identifier that the handshake must match.
 ///
 /// # Errors
-/// Returns an error if the requested resource or connection cannot be created.
-
+///
+/// Returns an error if the handshake fails, the peer identifier does not match, or the resulting
+/// transport cannot be initialized.
 pub(crate) async fn open_link(
     endpoint: EndPoint,
     link: LinkUnicast,

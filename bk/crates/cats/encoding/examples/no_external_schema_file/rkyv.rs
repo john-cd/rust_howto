@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `rkyv` (short for "archive") is a high-performance, zero-copy
 //! (de)serialization framework that allows arbitrary field types
 //! and safe zero-copy mutation.
@@ -16,8 +17,10 @@ use rkyv::rancor::Error;
 /// A struct that can be archived.
 #[derive(Archive, Deserialize, Serialize, Debug, PartialEq, Eq)]
 struct MyStruct {
+
     /// A string.
     field1: String,
+
     /// A number.
     field2: i32,
 }
@@ -45,9 +48,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Serializes a struct with `rkyv`, then deserializes it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

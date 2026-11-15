@@ -7,18 +7,23 @@ use clap::Subcommand;
 
 /// `bitflags` generate types for C-style flags with ergonomic APIs.
 mod bitflags;
+
 /// Add the following to your `Cargo.toml`: ```toml [dependencies] bitvec = "1.1.1" ```
 mod bitvec;
+
 /// A fixed-size bit set with `fixedbitset`: a visited set for a graph walk.
 mod fixedbitset;
+
 /// Example of using the `flagset` crate to define and use bit flags.
 mod flagset;
+
 /// Compressed bitmaps with the `roaring` crate.
 mod roaring;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,18 +32,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `bitflags` example.
     #[command(name = "bitflags")]
     Bitflags,
+
     /// Runs the `bitvec` example.
     #[command(name = "bitvec")]
     Bitvec,
+
     /// Runs the `flagset` example.
     #[command(name = "flagset")]
     Flagset,
+
     /// Runs the `roaring` example.
     #[command(name = "roaring")]
     Roaring,
+
     /// Runs the `fixedbitset` example.
     #[command(name = "fixedbitset")]
     Fixedbitset,
@@ -66,7 +76,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

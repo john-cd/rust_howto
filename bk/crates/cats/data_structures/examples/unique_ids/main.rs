@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Generate compact, URL-safe identifiers with `short-uuid`.
 mod short_uuid;
+
 /// Generating and parsing ULIDs, sortable unique identifiers.
 mod ulid;
+
 /// Generating and parsing UUIDs.
 mod uuid;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `short_uuid` example.
     #[command(name = "short_uuid")]
     ShortUuid,
+
     /// Runs the `ulid` example.
     #[command(name = "ulid")]
     Ulid,
+
     /// Runs the `uuid` example.
     #[command(name = "uuid")]
     Uuid,
@@ -52,7 +58,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

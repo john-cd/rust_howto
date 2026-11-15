@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of using the `reqwest` crate to create and delete a GitHub Gist.
 //!
 //! REST APIs use HTTP verbs on URLs: `POST` creates a resource and `DELETE`
@@ -23,10 +24,13 @@ const GISTS_ENDPOINT: &str = "https://api.github.com/gists";
 /// State required by `Post` during transport operations.
 #[derive(Serialize, Debug)]
 struct Post<'a> {
+
     /// The description of the gist.
     description: &'a str,
+
     /// Whether the gist is public.
     public: bool,
+
     /// The files of the gist, by name.
     files: HashMap<&'a str, Content<'a>>,
 }
@@ -35,6 +39,7 @@ struct Post<'a> {
 /// State required by `Content` during transport operations.
 #[derive(Serialize, Debug)]
 struct Content<'a> {
+
     /// The text of the file.
     content: &'a str,
 }
@@ -43,8 +48,10 @@ struct Content<'a> {
 /// State required by `Gist` during transport operations.
 #[derive(Deserialize, Debug)]
 struct Gist {
+
     /// The identifier of the gist.
     id: String,
+
     /// The URL of the gist.
     html_url: String,
 }
@@ -111,6 +118,7 @@ async fn main() -> Result<()> {
 /// Runs the example from the APIs command-line dispatcher.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
@@ -138,10 +146,13 @@ mod tests {
 
     /// Holds one request captured by the local HTTP server.
     struct RecordedRequest {
+
         /// The first line of the HTTP request.
         request_line: String,
+
         /// The HTTP headers sent with the request.
         headers: String,
+
         /// The request body.
         body: String,
     }
@@ -149,6 +160,7 @@ mod tests {
     /// Starts a loopback server that sends one configured response per request.
     ///
     /// # Errors
+///
     /// Returns an error if the server cannot bind to an ephemeral loopback port
     /// or read its local address. Request-handling errors are reported by the
     /// returned `JoinHandle`.
@@ -275,6 +287,7 @@ mod tests {
     fn find_header_end(bytes: &[u8]) -> Option<usize> {
         bytes.windows(4).position(|window| window == b"\r\n\r\n")
     }
+
     /// Builds the deterministic gist payload used by the local server tests.
     fn test_gist_body() -> Post<'static> {
         Post {
@@ -297,6 +310,7 @@ mod tests {
             .join()
             .map_err(|_| anyhow!("local HTTP fixture thread panicked"))?
     }
+
     /// Verifies authorization, the gist payload, and the create/delete sequence.
     #[tokio::test]
     async fn creates_and_deletes_gist_with_authorization_and_json() -> Result<()> {

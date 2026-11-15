@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Read the macOS version through typed Foundation bindings.
 //!
 //! Foundation is Apple's base framework for macOS and iOS apps. The typed
@@ -10,9 +11,13 @@
 use std::io;
 
 use objc2_foundation::NSProcessInfo;
-/// Reads and prints the operating-system version using safe retained objects.
 
+/// Reads and prints the operating-system version using safe retained objects.
+///
+/// Prints the operating-system version returned by Foundation.
+///
 /// # Errors
+///
 /// Returns `InvalidData` if Foundation unexpectedly returns an empty version.
 fn main() -> io::Result<()> {
     let process_info = NSProcessInfo::processInfo();
@@ -32,6 +37,7 @@ fn main() -> io::Result<()> {
 /// Read the macOS version through typed Foundation bindings.
 ///
 /// # Errors
+///
 /// Propagates an empty system-version response from Foundation.
 /// Returns an error if a step of the example fails.
 pub fn run() -> io::Result<()> {

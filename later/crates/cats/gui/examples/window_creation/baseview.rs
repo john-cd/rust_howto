@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Create a simple `baseview` window and respond to basic window events.
 //!
 //! The window stays open until the close button is requested.
@@ -67,9 +68,10 @@ fn main() -> Result<(), baseview::Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Opens a window.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), baseview::Error> {
     main()

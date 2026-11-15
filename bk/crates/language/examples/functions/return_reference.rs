@@ -1,12 +1,14 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Returning references and owned values from functions.
 
 /// Return an owned type instead of a reference.
 fn return_string() -> String {
     String::new()
 }
+
 /// Pass a mutable reference,
 /// and modify in the function.
 fn use_mut_ref(v: &mut Vec<i32>) {
@@ -31,6 +33,7 @@ fn use_literal() -> &'static str {
 /// Use a static variable.
 fn use_static() -> &'static str {
     // Statics have by default a `'static` lifetime.
+
     /// Static string returned by the function to demonstrate a `'static`
     /// reference.
     static MY_STATIC: &str = "hello";
@@ -40,6 +43,7 @@ fn use_static() -> &'static str {
 /// Use a constant.
 fn use_const() -> &'static str {
     // Constants have by default a `'static` lifetime.
+
     /// Constant string returned by the function to compare reference lifetimes.
     const MY_CONST: &str = "hello";
     MY_CONST
@@ -67,8 +71,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls each function and checks the results.
 pub fn run() {
     main();
 }

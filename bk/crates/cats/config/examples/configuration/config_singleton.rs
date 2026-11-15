@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Loads application settings once with a thread-safe singleton.
 //!
 //! Add config and serde with the derive feature to Cargo.toml.
@@ -32,6 +33,7 @@ mod settings {
 
     /// Returns the process configuration, initializing it on first access.
     fn config() -> anyhow::Result<&'static Config> {
+
         /// Shared `config` used by this module.
         static CONFIG: OnceLock<Result<Config, String>> = OnceLock::new();
 
@@ -45,6 +47,7 @@ mod settings {
     pub fn get<T: DeserializeOwned>(key: &str) -> anyhow::Result<T> {
         Ok(config()?.get::<T>(key)?)
     }
+
     /// Builds an isolated configuration from supplied environment values.
     #[cfg(test)]
     pub(super) fn from_source(
@@ -53,6 +56,7 @@ mod settings {
         build_config(Some(environment_source))
     }
 }
+
 /// Reads the port and displays it.
 fn main() -> anyhow::Result<()> {
     let port = settings::get::<u16>("port")?;
@@ -64,6 +68,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the singleton configuration example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

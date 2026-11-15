@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates using generated, type-safe PostgreSQL queries
 //! with Cornucopia.
 //!
@@ -30,6 +31,7 @@ use tokio_postgres::NoTls;
 /// queries.
 ///
 /// # Errors
+///
 /// Returns an error if `DATABASE_URL` is missing, the database is unreachable,
 /// or a schema or query operation fails.
 #[tokio::main]
@@ -66,7 +68,10 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Connects to PostgreSQL and runs the generated Cornucopia query example.
+///
 /// # Errors
+///
 /// Returns an error if PostgreSQL is unavailable or a generated query fails.
 pub fn run() -> anyhow::Result<()> {
     main()

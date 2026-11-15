@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A spinlock built on an atomic flag, with a guard that unlocks it on drop.
 //!
 //! A spinlock makes a waiting thread loop until the lock is free instead of
@@ -20,16 +21,20 @@ use std::thread;
 
 /// A simple spinlock implementation.
 pub struct Spinlock<T> {
+
     /// Whether the lock is currently held.
     locked: AtomicBool,
+
     /// The protected data.
     data: UnsafeCell<T>, // Allows mutation through `&self` via unsafe code.
 }
 
 impl<T> Spinlock<T> {
+
     /// Creates a new spinlock wrapping the given data.
     ///
     /// # Arguments
+///
     /// * `data` - Data to process.
     pub const fn new(data: T) -> Self {
         Self {
@@ -69,6 +74,7 @@ impl<T> Spinlock<T> {
     }
 
     // Internal unlock method used by the guard.
+
     /// Releases the lock.
     #[inline]
     fn unlock(&self) {
@@ -92,13 +98,16 @@ unsafe impl<T: Send> Sync for Spinlock<T> {}
 /// The `must_use` attribute helps prevent this mistake.
 #[must_use = "if unused, the spinlock will immediately unlock"]
 pub struct SpinlockGuard<'a, T> {
+
     /// The spinlock that this guard holds.
     lock: &'a Spinlock<T>,
+
     /// Keeps the guard's auto-traits aligned with exclusive access to `T`.
     exclusive: PhantomData<&'a mut T>,
 }
 
 impl<T> Drop for SpinlockGuard<'_, T> {
+
     /// Releases the lock when the guard goes out of scope.
     #[inline]
     fn drop(&mut self) {
@@ -120,6 +129,7 @@ impl<T> Deref for SpinlockGuard<'_, T> {
 }
 
 impl<T> DerefMut for SpinlockGuard<'_, T> {
+
     /// Allows mutable access to the protected data.
     #[inline]
     fn deref_mut(&mut self) -> &mut Self::Target {
@@ -129,6 +139,7 @@ impl<T> DerefMut for SpinlockGuard<'_, T> {
 }
 
 // --- Example Usage ---
+
 /// Increments a shared counter from several threads under the spinlock.
 fn main() {
     // Wrap shared data in `Spinlock` and `Arc`.
@@ -165,8 +176,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Increments a shared counter from several threads under the spinlock.
 pub fn run() {
     main();
 }
@@ -185,6 +195,7 @@ mod tests {
 
     /// Requires a type to implement `Send` at compile time.
     fn assert_send<T: Send>() {}
+
     /// Requires a type to implement `Sync` at compile time.
     fn assert_sync<T: Sync>() {}
 

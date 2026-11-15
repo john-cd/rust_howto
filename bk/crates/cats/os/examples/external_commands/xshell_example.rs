@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Run a Rust tool with `xshell` and capture its output.
 //!
 //! `xshell` makes it easy to write script-like Rust: a macro builds a command
@@ -19,9 +20,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs `rustc --version` and prints the captured output.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -37,6 +39,7 @@ mod tests {
     fn test_xshell_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// The captured output is the compiler version.
     #[test]
     fn captures_the_compiler_version() -> anyhow::Result<()> {

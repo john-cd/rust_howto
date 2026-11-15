@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example demonstrating the use of `pulldown-cmark` to parse Markdown and
 //! convert it to HTML.
 //!
@@ -10,6 +11,7 @@
 //! to generate the HTML.
 
 use pulldown_cmark::Options;
+
 /// The `Parser` struct is the core component of `pulldown-cmark`. It takes
 /// a Markdown string as input and produces a stream of events representing
 /// the parsed Markdown structure.
@@ -56,9 +58,7 @@ fn example() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-///
-/// Runs the example.
+/// Parses Markdown into events and renders them as HTML. Prints the greeting embedded in the Markdown code fence.
 pub fn run() {
     main();
 }
@@ -72,10 +72,12 @@ mod tests {
     fn test_pulldown_cmark_example_entry_point() {
         main();
     }
+
     /// Renders the current value.
     ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested pulldown cmark operation.
+///
+    /// * `input` - Markdown source to convert to HTML.
     fn render(input: &str) -> String {
         let mut html_output = String::new();
         html::push_html(&mut html_output, Parser::new_ext(input, Options::all()));

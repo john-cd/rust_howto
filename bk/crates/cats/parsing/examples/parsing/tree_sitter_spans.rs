@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Classifies source text into highlight spans with Tree-sitter, then updates
 //! the syntax tree incrementally after an edit.
 //!
@@ -55,7 +56,10 @@ fn parse(
     Ok((tree, spans))
 }
 
+/// Parses the example Rust source and reports its syntax spans.
+///
 /// # Errors
+///
 /// Returns an error if the Rust grammar cannot be loaded or parsing the source fails.
 fn main() -> anyhow::Result<()> {
     let mut parser = Parser::new();
@@ -87,9 +91,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses the example Rust source and reports its syntax spans.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips

@@ -23,6 +23,7 @@ pub(super) fn subcommand_rbe() -> Command {
                 .help("Enter the RBE book chapter name e.g. \"attributes\""),
         )
 }
+
 /// Get the command line arguments for the `rbe` subcommand.
 ///
 /// # Arguments

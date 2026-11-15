@@ -4,6 +4,7 @@
 
 /// Shut a worker thread down cleanly when the user presses Ctrl-C.
 mod ctrlc_example;
+
 /// Shut an async service down on Ctrl-C or SIGTERM with Tokio.
 mod tokio_signal;
 

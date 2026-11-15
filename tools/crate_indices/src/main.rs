@@ -151,15 +151,18 @@ const ALPHABETICAL_PAGE_FOOTER: &str = "{{#include refs.incl.md}}\n\
 {{#include ../refs/link-refs.md}}\n\n\
 <div class=\"hidden\">\n\
 </div>\n";
+
 /// Returns the alphabetical page of the given crates and the crates that have
 ///
 /// published recipes.
 ///
 /// # Errors
+///
 /// Returns an error if the create alphabetical page operation cannot satisfy its required
 /// invariants.
 ///
 /// # Panics
+///
 /// Panics if empty crate names were filtered.
 fn create_alphabetical_page(
     crate_names: &[String],
@@ -303,6 +306,7 @@ mod tests {
     fn normalize_page_snapshot(contents: &str) -> String {
         strip_review_marker(contents).replace("\r\n", "\n")
     }
+
     /// Extracts crate names from badge links in a generated category index.
     fn category_index_crates(contents: &str) -> BTreeSet<&str> {
         contents

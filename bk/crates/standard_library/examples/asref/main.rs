@@ -7,16 +7,20 @@ use clap::Subcommand;
 
 /// Accepting several types through `AsRef`.
 mod asref;
+
 /// Implement `AsRef` for a composed type, as a last resort.
 mod asref_inheritance;
+
 /// Borrowing the content of an `Option` with `as_ref`.
 mod option_asref;
+
 /// Demonstrates the difference between taking a reference to a `Box` and using `as_ref()`.
 mod smart_pointer_asref;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,15 +29,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `asref` example.
     #[command(name = "asref")]
     Asref,
+
     /// Runs the `asref_inheritance` example.
     #[command(name = "asref_inheritance")]
     AsrefInheritance,
+
     /// Runs the `option_asref` example.
     #[command(name = "option_asref")]
     OptionAsref,
+
     /// Runs the `smart_pointer_asref` example.
     #[command(name = "smart_pointer_asref")]
     SmartPointerAsref,
@@ -58,7 +66,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

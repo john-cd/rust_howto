@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generates a tone with `rodio` without opening an audio device.
 //!
 //! A tone is a sine wave of one frequency; frequency (in Hz) sets the pitch.
@@ -19,6 +20,7 @@ fn tone_samples() -> Vec<f32> {
         .take_duration(Duration::from_millis(100))
         .collect()
 }
+
 /// Generates and checks a short tone buffer.
 fn main() {
     let samples = tone_samples();
@@ -32,7 +34,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the device-free tone example.
 pub fn run() {
     main();

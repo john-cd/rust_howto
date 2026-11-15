@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates a simple web application using the
 //! `shuttle_runtime` and `shuttle_axum` crates.
 //!
@@ -26,6 +27,7 @@ async fn main() -> shuttle_axum::ShuttleAxum {
 
 // A function that returns a static string.
 // All functions used as endpoints must return a HTTP-compatible response
+
 /// Returns a greeting.
 async fn hello_world() -> &'static str {
     "Hello, Shuttle!"

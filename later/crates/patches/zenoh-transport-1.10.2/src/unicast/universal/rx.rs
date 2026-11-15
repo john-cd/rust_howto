@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -47,6 +48,7 @@ use crate::unicast::transport_unicast_inner::TransportUnicastTrait;
 
 /// **********************************
 // TRANSPORT RX
+
 /// **********************************
 impl TransportUnicastUniversal {
     fn trigger_callback(
@@ -79,7 +81,6 @@ impl TransportUnicastUniversal {
 
     /// Processes the close input for the rx workflow and applies the resulting state changes. It
     /// calls `handle_close`, `clone` to apply the required changes.
-
     fn handle_close(&self, link: &Link, _reason: u8, session: bool) -> ZResult<()> {
         // Delete and clean up
         let c_transport = self.clone();
@@ -99,8 +100,15 @@ impl TransportUnicastUniversal {
 
     /// Selects the receive queue for a frame, verifies its sequence number, and delivers its
     /// messages to the registered callback.
-
+    ///
+    /// # Arguments
+///
+    /// * `frame` - Decoded frame received from the peer.
+    /// * `stats` - Optional link statistics updated for delivered transport messages.
+    /// * `link` - Receive link used for shared-memory handoff when that feature is enabled.
+    ///
     /// # Errors
+///
     /// Returns an error if QoS is disabled and the frame uses a non-default priority, sequence
     /// number verification fails, or the callback fails.
     fn handle_frame<R: BacktrackableReader>(
@@ -154,7 +162,6 @@ impl TransportUnicastUniversal {
 
     /// Processes the fragment input for the rx workflow and applies the resulting state changes. It
     /// calls `is_qos`, `priority` to apply the required changes.
-
     fn handle_fragment(
         &self,
         fragment: Fragment,
@@ -243,7 +250,6 @@ impl TransportUnicastUniversal {
     }
 
     /// Verifies sn.
-
     fn verify_sn(
         &self,
         message_type: &str,
@@ -265,11 +271,18 @@ impl TransportUnicastUniversal {
         Ok(true)
     }
 
-    /// Loads the messages required by the rx workflow and reports failures from the underlying
-    /// source.
-
+    /// Decodes frames and transport messages from a received batch and dispatches them.
+    ///
+    /// # Arguments
+///
+    /// * `batch` - Received batch to decode and process.
+    /// * `link` - Receive link associated with the batch.
+    /// * `stats` - Optional statistics updated for each decoded message.
+    ///
     /// # Errors
-    /// An error is returned if handle_frame, decode fails.
+///
+    /// Returns an error if decoding fails, frame or fragment validation fails, or callback handling
+    /// fails.
     pub(super) fn read_messages<TBuffer: BacktrackableReader + Buffer + Debug>(
         &self,
         mut batch: RBatch<TBuffer>,

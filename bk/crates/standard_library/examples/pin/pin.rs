@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Pinning values with `Pin` and `PhantomPinned`.
 //!
 //! `Pin` promises that a value will not be moved in memory. Futures made by
@@ -12,19 +13,23 @@ use std::pin::Pin;
 
 /// A type that cannot be moved once pinned.
 struct PinnedField {
+
     /// Marker that makes the type `!Unpin`.
     _pin: PhantomPinned,
 }
 
 /// A struct with a pinned field.
 struct PinnedParent {
+
     /// The structurally pinned field.
     field: PinnedField,
+
     /// Marker that makes the type `!Unpin`.
     _pin: PhantomPinned,
 }
 
 impl PinnedParent {
+
     /// Returns a pinned mutable reference to the field.
     fn field(self: Pin<&mut Self>) -> Pin<&mut PinnedField> {
         // SAFETY: `field` is structurally pinned: this API never exposes it as
@@ -61,9 +66,11 @@ fn main() {
     // does not move in the `unsafe` code. Here, we have exclusive control of
     // `y`.
     {
+
         /// Demonstrates a type that does not implement `Unpin`.
         struct NotUnpin {
             // The `PhantomPinned` field makes the struct `!Unpin`.
+
             /// Pinning marker used by the example.
             _pin: PhantomPinned,
         }
@@ -89,6 +96,7 @@ fn main() {
     // does not implement `Unpin` is to put that value inside a `Box` and
     // then wrapping it in a `Pin`.
     // Example from <https://doc.rust-lang.org/std/pin/struct.Pin.html#pinning-a-value-inside-a-box>.
+
     /// Returns the input incremented by one when awaited.
     async fn add_one(x: u32) -> u32 {
         x + 1
@@ -118,7 +126,8 @@ fn main() {
     /// Accepts a pinned mutable reference to a `Foo` value.
     ///
     /// # Arguments
-    /// * `_foo` - Mutable pin whose state is updated by this operation.
+///
+    /// * `_foo` - Pinned mutable reference passed to demonstrate the `Pin` requirement.
     fn stuff(_foo: Pin<&mut Foo>) {
         // ...
     }
@@ -128,8 +137,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Pins values on the stack and on the heap.
 pub fn run() {
     main();
 }
@@ -142,11 +150,13 @@ mod tests {
     use std::task::Waker;
 
     use super::*;
+
     /// Verifies that the `pin` example runs.
     #[test]
     fn test_pin_example_entry_point() {
         main();
     }
+
     /// Verifies pin new for unpin types.
     #[test]
     fn test_pin_new_for_unpin_types() {
@@ -156,6 +166,7 @@ mod tests {
         pinned.set(44);
         assert_eq!(*Pin::into_inner(pinned), 44);
     }
+
     /// Verifies pinned parent projects to its field.
     #[test]
     fn test_pinned_parent_projects_to_its_field() {
@@ -169,6 +180,7 @@ mod tests {
         let projected = parent.as_mut().field();
         assert!(std::ptr::eq(&raw const *projected, field_ptr));
     }
+
     /// Verifies pinned future can be polled.
     #[test]
     fn test_pinned_future_can_be_polled() {

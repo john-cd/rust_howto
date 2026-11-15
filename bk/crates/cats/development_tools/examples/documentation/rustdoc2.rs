@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Documentation comments on a struct and its constructor.
 //!
 //! `rustdoc` builds HTML documentation from doc comments. Intra-doc links such
@@ -30,10 +31,11 @@ fn new(name: &str) -> Person {
 /// A person with a name.
 #[derive(Debug)]
 struct Person {
+
     /// Name of the person.
     name: String,
 }
-/// Runs the example.
+
 /// Creates a person and prints it.
 fn main() {
     let john = new("John");
@@ -41,8 +43,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates a person and prints it.
 pub fn run() {
     main();
 }
@@ -56,6 +57,7 @@ mod tests {
     fn test_rustdoc2_example_entry_point() {
         main();
     }
+
     /// Creates builds a person with the given name.
     #[test]
     fn new_builds_a_person_with_the_given_name() {

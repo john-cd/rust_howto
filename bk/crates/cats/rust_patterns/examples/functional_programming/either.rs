@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `Either` enum from the `either`
 //! crate.
 //!
@@ -28,10 +29,12 @@ fn simple() {
 
 /// Returns the double of `value` on the right, or an error message on the left
 // Function that can return two different types.
+
 /// if `value` is not positive.
 ///
 /// # Arguments
-/// * `value` - Value the either operation validates, transforms, or stores.
+///
+/// * `value` - Integer to double when positive; non-positive values produce an error message.
 fn process_positive_integer(value: i32) -> Either<String, i32> {
     if value > 0 {
         Either::Right(value * 2)
@@ -39,7 +42,7 @@ fn process_positive_integer(value: i32) -> Either<String, i32> {
         Either::Left(format!("Invalid input: {value}"))
     }
 }
-/// Runs the example.
+
 /// Runs the `Either` examples and prints their results.
 fn main() {
     simple();
@@ -62,8 +65,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs the `Either` examples and prints their results.
 pub fn run() {
     main();
 }

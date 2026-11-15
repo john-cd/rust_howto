@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Reads configuration from the process environment without mutating it in
 //!
 //! tests.
@@ -16,11 +17,13 @@ const DEFAULT_LOG_LEVEL: &str = "info";
 /// Typed configuration parsed from an injected environment value.
 #[derive(Debug, PartialEq, Eq)]
 struct Config {
+
     /// The selected logging verbosity.
     log_level: String,
 }
 
 impl Config {
+
     /// Parses an optional `APP_LOG` value, defaulting to `info`.
     fn from_value(value: Option<&str>) -> Result<Self, &'static str> {
         let log_level = value.unwrap_or(DEFAULT_LOG_LEVEL);
@@ -50,6 +53,7 @@ fn main() -> Result<(), String> {
 /// Reads the process configuration and prints its selected log level.
 ///
 /// # Errors
+///
 /// Returns an error if `APP_LOG` is invalid or contains non-Unicode text.
 fn example() -> Result<(), String> {
     let config = Config::from_process_env()?;
@@ -61,6 +65,7 @@ fn example() -> Result<(), String> {
 /// Runs the example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<(), String> {
     example()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to read and write XML data using the
 //! `xml-rs` crate.
 //!
@@ -115,9 +116,10 @@ fn write_catalog() -> anyhow::Result<String> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Reads XML events from a string, then writes an XML document.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

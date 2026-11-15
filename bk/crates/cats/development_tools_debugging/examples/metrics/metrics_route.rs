@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Serves the Prometheus payload from an Axum `/metrics` route.
 //!
 //! Metrics are numbers that describe a running service, such as request counts
@@ -34,6 +35,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the Axum `/metrics` route example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Formats an integer with the `itoa` crate.
 //!
 //! `itoa` formats integers into text faster than the standard `format!`,
@@ -8,7 +9,7 @@
 //! in code that prints millions of numbers, such as serializers.
 
 use itoa::Buffer;
-/// Runs the example.
+
 /// Formats an integer into a reusable stack buffer.
 fn main() {
     let mut buffer = Buffer::new();
@@ -18,7 +19,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Formats an integer into a reusable stack buffer.
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

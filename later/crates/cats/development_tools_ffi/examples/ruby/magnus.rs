@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calling Rust from Ruby with `magnus`.
 //!
 //! Magnus lets Rust define Ruby classes and methods. Ruby native extensions are
@@ -8,11 +9,12 @@
 //! hot paths. It is built into a shared library that Ruby loads with `require`.
 
 use magnus::Error;
+
 /// Returns a greeting that can be called from Ruby or tested without Ruby.
 ///
 /// # Arguments
+///
 /// * `name` - Human-readable value used to identify or display the selected magnus.
-
 fn hello_rust(name: String) -> String {
     format!("Hello, {name}!")
 }
@@ -38,6 +40,7 @@ fn main() -> Result<(), Error> {
 /// Runs the Magnus embedding example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()
@@ -65,6 +68,7 @@ mod tests {
 
     // output-only: prints the greeting that embedded Ruby returns, which needs
     // Ruby headers and libruby.
+
     /// Runs the example through its entry point without error.
     #[test]
     #[ignore = "needs Ruby headers and libruby"]

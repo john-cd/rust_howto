@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The singleton pattern with a global `OnceLock`.
 //!
 //! A singleton is a value that exists exactly once and is shared globally, such
@@ -12,11 +13,13 @@ use std::sync::OnceLock;
 
 /// Application settings, shared as a singleton.
 struct Settings {
+
     /// The configuration value.
     config_value: String,
 }
 
 impl Settings {
+
     /// Creates settings with the given configuration value.
     fn new(value: String) -> Self {
         Self {
@@ -39,17 +42,19 @@ impl Settings {
 // We wrap our Settings instance in a Mutex to ensure thread-safe access and
 // modification. Since multiple threads might try to access the singleton, we
 // need to protect it from race conditions.
+
 /// The single, lazily initialized instance of the settings.
 static SETTINGS: OnceLock<Mutex<Settings>> = OnceLock::new();
 // You could also use `std::sync::LazyLock`.
 
 // Single point of access to our Settings instance.
+
 /// Returns the singleton, creating it on first use.
 fn get_settings() -> &'static Mutex<Settings> {
     // If SETTINGS hasn't been initialized yet, execute the closure.
     SETTINGS.get_or_init(|| Mutex::new(Settings::new("default_config".to_owned())))
 }
-/// Runs the example.
+
 /// Reads and updates the settings through the singleton.
 fn main() {
     // `OnceLock` has not been written to yet.
@@ -72,8 +77,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Reads and updates the settings through the singleton.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `main` function creates an instance of the `User` struct.
 //! It then prints the struct to the console.
 
@@ -9,12 +10,16 @@
 /// `sign_in_count`.
 #[derive(Debug)]
 struct User {
+
     /// Whether the user is active.
     active: bool,
+
     /// The user name.
     username: String,
+
     /// The email address.
     email: String,
+
     /// The number of times the user signed in.
     sign_in_count: u64,
 }
@@ -42,8 +47,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// The `main` function creates an instance of the `User` struct. It then prints the struct to the console.
 pub fn run() {
     main();
 }

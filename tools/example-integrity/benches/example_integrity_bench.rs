@@ -25,11 +25,13 @@ fn write_fixture(root: &Path, path: &str, contents: &str) {
         .expect("creates fixture directory");
     fs::write(path, contents).expect("writes fixture file");
 }
+
 /// Creates a synthetic large book repository tree with multiple packages, chapters,
 ///
 /// nested fragments, anchors, and module hierarchies.
 ///
 /// # Panics
+///
 /// Panics if creates temp dir.
 fn create_synthetic_book_tree(num_packages: usize, num_chapters: usize) -> TempDir {
     let dir = TempDir::new().expect("creates temp dir");
@@ -169,7 +171,8 @@ Another regular section with some markdown prose.\n";
 /// Benchmarks regex anchor extraction and verification against source files.
 ///
 /// # Arguments
-/// * `c` - Mutable criterion whose state is updated by this operation.
+///
+/// * `c` - Criterion benchmark group used to register this benchmark.
 fn benchmark_anchor_extraction(c: &mut Criterion) {
     let source_text = "\
 // Module documentation header.
@@ -177,7 +180,6 @@ use std::sync::Arc;
 
 // ANCHOR: setup
 /// Initializes sample benchmark state.
-///
 
 
 fn initialize() -> Arc<String> {
@@ -226,6 +228,7 @@ criterion_main!(benches);
 
 #[cfg(test)]
 mod tests {
+
     /// Runs the example_integrity benchmark entry point under test harness.
     #[test]
     fn test_example_integrity_bench_entry_point() {

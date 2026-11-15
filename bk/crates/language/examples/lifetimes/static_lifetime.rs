@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `'static` lifetime.
 //!
 //! `'static` means a reference can live for the whole program, like a string
@@ -23,8 +24,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints a `'static` string.
 pub fn run() {
     main();
 }

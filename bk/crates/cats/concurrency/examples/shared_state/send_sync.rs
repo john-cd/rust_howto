@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates safe concurrent access to shared data
 //! using `Arc` (Atomic Reference Counting) and `Mutex` (Mutual Exclusion).
 //!
@@ -55,9 +56,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Demonstrates that `Arc<Mutex<T>>` can share `T: Send` between threads.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

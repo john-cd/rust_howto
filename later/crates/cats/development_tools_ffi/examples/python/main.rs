@@ -10,6 +10,7 @@ use clap::Subcommand;
 /// Calls embedded Python code and passes it positional arguments with PyO3.
 #[cfg(any(target_os = "linux", target_os = "windows"))]
 mod pyo3;
+
 /// Demonstrates how to define a PyO3 Python module in Rust, register it with `sys.modules`, and
 /// invoke its Rust function and class from embedded Python.
 #[cfg(any(target_os = "linux", target_os = "windows"))]
@@ -19,6 +20,7 @@ mod use_rust_from_python;
 #[cfg(any(target_os = "linux", target_os = "windows"))]
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -28,10 +30,12 @@ struct Cli {
 #[cfg(any(target_os = "linux", target_os = "windows"))]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `pyo3` example.
     #[cfg(any(target_os = "linux", target_os = "windows"))]
     #[command(name = "pyo3")]
     Pyo3,
+
     /// Runs the `use_rust_from_python` example.
     #[cfg(any(target_os = "linux", target_os = "windows"))]
     #[command(name = "use_rust_from_python")]

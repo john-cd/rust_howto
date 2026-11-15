@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encode an image to PNG and JPEG in memory.
 //!
 //! PNG is lossless and suits graphics and screenshots; JPEG is lossy,
@@ -18,6 +19,7 @@ use image::RgbImage;
 /// Encodes a small image in two formats without creating files.
 ///
 /// # Errors
+///
 /// Returns an error if either image encoder fails.
 fn main() -> image::ImageResult<()> {
     let image = DynamicImage::ImageRgb8(RgbImage::from_pixel(2, 2, Rgb([40, 80, 120])));
@@ -33,6 +35,7 @@ fn main() -> image::ImageResult<()> {
 /// Runs the in-memory image encoding example.
 ///
 /// # Errors
+///
 /// Returns an error if PNG or JPEG encoding fails.
 pub fn run() -> image::ImageResult<()> {
     main()

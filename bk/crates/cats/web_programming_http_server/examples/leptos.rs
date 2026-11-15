@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A small Leptos counter example showing reactive signals and view mounting.
 //!
 //! This example is browser-targeted, so the default build path remains a
@@ -77,6 +78,7 @@ pub fn run() {
 mod tests {
     // output-only: the example only mounts a view or prints a message; see the
     // other tests for its logic.
+
     /// Verifies that the leptos example's main path succeeds.
     #[test]
     fn test_leptos_example_entry_point() {

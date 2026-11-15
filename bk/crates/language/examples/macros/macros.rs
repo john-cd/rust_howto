@@ -2,12 +2,14 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Ways to use function-like macros: as expressions, statements, items and
 //! types.
 
 use std::cell::RefCell;
 
 // Example uses of function-like macros:
+
 /// Shows several uses of function-like macros.
 fn examples() {
     // 1. They can be used as expressions.
@@ -34,12 +36,14 @@ fn examples() {
 
 // 4. Function-like macros can be used in a type alias.
 // Let's first write a macro-by-example that defines a tuple type:
+
 /// Defines a tuple type of the two given types.
 macro_rules! Tuple {
     { $A:ty, $B:ty } => { ($A, $B) };
 }
 
 // Define a tuple type alias with the macro above:
+
 /// A tuple type created with a macro.
 type T2 = Tuple!(i32, i32);
 
@@ -56,9 +60,11 @@ fn use_thread_local() {
 
 // 6. They can be used as an associated item (here, a `const`).
 // This macro creates a constant of a given type and value:
+
 /// Defines a constant `CONST` of the given type and value.
 macro_rules! const_maker {
     ($t:ty, $v:tt) => {
+
         /// Constant emitted by the macro with the caller-supplied type and
         /// value.
         const CONST: $t = $v;
@@ -78,6 +84,7 @@ impl T for () {}
 // then the inner macro `println` is expanded.
 //
 // This macro calls the `println!` macro:
+
 /// Expands to a call to the `println!` macro.
 macro_rules! _example {
     () => {
@@ -94,7 +101,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// Ways to use function-like macros: as expressions, statements, items and types.
 pub fn run() {
     main();

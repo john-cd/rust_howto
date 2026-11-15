@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// This example demonstrates how to parse JSON5 data using the `json5` crate.
 mod json5;
+
 /// Demonstrates parsing and serializing JSON data using the `serde_json` crate.
 mod serde_json;
+
 /// Example of using the `simd-json` crate for parsing and manipulating JSON
 mod simd_json;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `json5` example.
     #[command(name = "json5")]
     Json5,
+
     /// Runs the `serde_json` example.
     #[command(name = "serde_json")]
     SerdeJson,
+
     /// Runs the `simd_json` example.
     #[command(name = "simd_json")]
     SimdJson,

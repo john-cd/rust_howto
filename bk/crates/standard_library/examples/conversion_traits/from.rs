@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Converting between types with `From` and `Into`.
 //!
 //! `From` defines a lossless conversion between types, and gives you `Into` for
@@ -20,7 +21,7 @@ impl From<Meters> for Millimeters {
         Self(m.0 * 1000)
     }
 }
-/// Runs the example.
+
 /// Converts meters to millimeters with `from` and `into`.
 fn main() {
     let m = Meters(2);
@@ -35,8 +36,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Converts meters to millimeters with `from` and `into`.
 pub fn run() {
     main();
 }
@@ -44,11 +44,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `from` example runs.
     #[test]
     fn test_from_example_entry_point() {
         main();
     }
+
     /// Verifies from and into are equivalent.
     #[test]
     fn test_from_and_into_are_equivalent() {
@@ -57,11 +59,13 @@ mod tests {
         assert_eq!(via_into.0, 2000);
         assert_eq!(via_from.0, via_into.0);
     }
+
     /// Verifies zero meters.
     #[test]
     fn test_zero_meters() {
         assert_eq!(Millimeters::from(Meters(0)).0, 0);
     }
+
     /// Verifies debug output.
     #[test]
     fn test_debug_output() {

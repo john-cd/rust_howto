@@ -12,14 +12,17 @@ use clap::Subcommand;
 
 /// This function creates a gzip-compressed tar archive from a directory.
 mod tar_compress;
+
 /// Unpacking a gzip-compressed tar archive with `flate2` and `tar`.
 mod tar_decompress;
+
 /// Extract regular files from a gzipped tar archive after removing a shared path prefix.
 mod tar_strip_prefix;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -28,12 +31,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `tar_compress` example.
     #[command(name = "tar_compress")]
     Compress,
+
     /// Runs the `tar_decompress` example.
     #[command(name = "tar_decompress")]
     Decompress,
+
     /// Runs the `tar_strip_prefix` example.
     #[command(name = "tar_strip_prefix")]
     StripPrefix,

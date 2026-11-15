@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! - `tracing` is a framework for instrumenting Rust programs to collect scoped, structured, and
 //!   async-aware diagnostics.
 //! - Its `Subscriber` trait represents the functionality necessary to collect this trace data.
@@ -45,8 +46,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Installs a global subscriber and emits events.
 pub fn run() {
     main();
 }

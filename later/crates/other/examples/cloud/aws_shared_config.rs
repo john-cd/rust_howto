@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Load the AWS configuration once and share it across service clients.
 //!
 //! The SDK's configuration (credentials, region, retry policy) is loaded once,
@@ -18,6 +19,7 @@ use aws_config::timeout::TimeoutConfig;
 /// Loads the configuration with the default credential provider chain
 ///
 /// # Arguments
+///
 /// (environment, shared profile, SSO, container and instance roles).
 ///
 /// `region` and `profile` override what the environment provides. Retries and
@@ -54,6 +56,7 @@ pub async fn clients() -> (aws_sdk_s3::Client, aws_sdk_sqs::Client) {
 /// Runs the example: builds the clients and prints their region.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     let (s3, sqs) = tokio::runtime::Builder::new_current_thread()

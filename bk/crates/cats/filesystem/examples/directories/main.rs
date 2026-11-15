@@ -7,8 +7,10 @@ use clap::Subcommand;
 
 /// Demonstrates how to get the current working directory.
 mod cwd;
+
 /// Creating, listing and removing directories.
 mod manipulate_dirs;
+
 /// Add to `Cargo.toml`: ```toml remove_dir_all = { version = "1.0.0", features = [ "parallel" ] }
 /// ```
 mod remove_dir_all;
@@ -16,6 +18,7 @@ mod remove_dir_all;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -24,12 +27,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `cwd` example.
     #[command(name = "cwd")]
     Cwd,
+
     /// Runs the `manipulate_dirs` example.
     #[command(name = "manipulate_dirs")]
     ManipulateDirs,
+
     /// Runs the `remove_dir_all` example.
     #[command(name = "remove_dir_all")]
     RemoveDirAll,

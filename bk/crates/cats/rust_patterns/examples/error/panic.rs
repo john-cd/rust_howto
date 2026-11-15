@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates a simple panic.
 //! When executed, it will cause the program to terminate abruptly.
 //!
@@ -16,8 +17,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates a simple panic. When executed, it will cause the program to terminate abruptly.
 pub fn run() {
     main();
 }

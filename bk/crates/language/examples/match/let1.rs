@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Destructuring in a `let` statement.
 
 /// Destructures tuples and structs in `let` statements.
@@ -17,8 +18,10 @@ fn main() {
 
     // Destructuring with structs:
     struct Point {
+
         /// The horizontal coordinate.
         x: i32,
+
         /// The vertical coordinate.
         y: i32,
     }
@@ -41,8 +44,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Destructures tuples and structs in `let` statements.
 pub fn run() {
     main();
 }

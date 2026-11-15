@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Reads a GeoJSON feature and checks its planar geometry.
 //!
 //! GeoJSON is a JSON format for geographic features such as points and
@@ -51,6 +52,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 /// Reads a GeoJSON feature and checks its planar geometry.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()

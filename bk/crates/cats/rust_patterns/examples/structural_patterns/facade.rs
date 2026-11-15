@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Hides a hash map behind a user-directory API.
 //!
 //! The facade pattern hides a complicated or changeable component behind a
@@ -12,11 +13,13 @@ use std::collections::HashMap;
 /// A small user directory facade over an internal hash map.
 #[derive(Default)]
 struct UserDirectory {
+
     /// Collection of users by name values consumed by user directory operations.
     users_by_name: HashMap<String, String>,
 }
 
 impl UserDirectory {
+
     /// Registers or replaces the email address for a user name.
     fn register(&mut self, name: impl Into<String>, email: impl Into<String>) {
         self.users_by_name.insert(name.into(), email.into());
@@ -27,6 +30,7 @@ impl UserDirectory {
         self.users_by_name.get(name).map(String::as_str)
     }
 }
+
 /// Registers and looks up a user through the facade.
 fn main() -> anyhow::Result<()> {
     let mut directory = UserDirectory::default();
@@ -43,6 +47,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the facade example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Lifetime parameters on a function.
 //!
 //! A lifetime describes how long a reference stays valid. When a function
@@ -19,7 +20,7 @@
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() { x } else { y }
 }
-/// Runs the example.
+
 /// Compares strings with different lifetimes.
 fn main() {
     // We define two variables, one with a scope / lifetime
@@ -39,8 +40,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Compares strings with different lifetimes.
 pub fn run() {
     main();
 }

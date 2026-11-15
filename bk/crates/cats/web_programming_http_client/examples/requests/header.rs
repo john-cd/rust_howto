@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to set headers in HTTP requests using the `reqwest` crate.
 //!
 //! HTTP headers carry metadata with requests, such as `User-Agent` (who is
@@ -17,6 +18,7 @@ use serde::Deserialize;
 /// State required by `HeadersEcho` during transport operations.
 #[derive(Deserialize, Debug)]
 pub struct HeadersEcho {
+
     /// A map of header names to their values.
     pub headers: HashMap<String, String>,
 }
@@ -72,9 +74,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Demonstrates how to set headers in HTTP requests using the `reqwest` crate.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

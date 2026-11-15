@@ -14,6 +14,7 @@ mod diesel1;
 mod sea_orm;
 #[cfg(feature = "sea_orm")]
 mod seaography;
+
 /// Runs the SQLx query-builder example.
 #[cfg(feature = "sqlx")]
 mod sqlx;
@@ -22,6 +23,7 @@ mod sqlx;
 #[cfg(any(feature = "diesel", feature = "sea_orm", feature = "sqlx"))]
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -31,18 +33,22 @@ struct Cli {
 #[cfg(any(feature = "diesel", feature = "sea_orm", feature = "sqlx"))]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `diesel1` example.
     #[cfg(feature = "diesel")]
     #[command(name = "diesel1")]
     Diesel1,
+
     /// Runs the `sea_orm` example.
     #[cfg(feature = "sea_orm")]
     #[command(name = "sea_orm")]
     SeaOrm,
+
     /// Runs the `seaography` example.
     #[cfg(feature = "sea_orm")]
     #[command(name = "seaography")]
     Seaography,
+
     /// Runs the `sqlx` example.
     #[cfg(feature = "sqlx")]
     #[command(name = "sqlx")]
@@ -90,18 +96,21 @@ mod tests {
     fn test_diesel1_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "diesel1"]).is_ok());
     }
+
     /// Verifies sea orm subcommand parses.
     #[cfg(feature = "sea_orm")]
     #[test]
     fn test_sea_orm_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "sea_orm"]).is_ok());
     }
+
     /// Verifies seaography subcommand parses.
     #[cfg(feature = "sea_orm")]
     #[test]
     fn test_seaography_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "seaography"]).is_ok());
     }
+
     /// Verifies sqlx subcommand parses.
     #[cfg(feature = "sqlx")]
     #[test]

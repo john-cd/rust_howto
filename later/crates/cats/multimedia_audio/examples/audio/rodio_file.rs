@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Decodes a WAV in memory and shows how to play a file with `rodio`.
 //!
 //! WAV is an uncompressed audio container that stores samples directly; MP3 and
@@ -47,6 +48,7 @@ fn decode_wav(bytes: Vec<u8>) -> Result<Vec<f32>, Box<dyn Error>> {
 /// Plays an audio file through the system's default output device.
 ///
 /// # Errors
+///
 /// Returns an error if a fallible operation cannot complete.
 #[expect(
     dead_code,
@@ -75,6 +77,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 /// Runs the device-free decoder example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()

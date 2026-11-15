@@ -7,17 +7,23 @@ use anyhow::Result;
 
 /// Handle the `badge` CLI subcommand
 mod badge_cmd;
+
 /// Handle the `category_badge` CLI subcommand
 mod category_badge_cmd;
+
 /// Handle the `categories_badges_for_crate` CLI subcommand
 mod category_badges_for_crate_cmd;
+
 /// Loads and validates the settings that control cli behavior. Composition code uses this module
 /// before starting services so invalid configuration is reported early.
 mod config_flag;
+
 /// Shared utilities functions
 mod crate_name_arg;
+
 /// The `info` subcommand, which gets information about a crate.
 mod info_cmd;
+
 /// Handle the `rbe` CLI subcommand
 mod rbe;
 

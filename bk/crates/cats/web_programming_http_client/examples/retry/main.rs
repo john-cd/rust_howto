@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Retry with exponential backoff.
 //!
 //! Retry a fallible async call with exponential backoff and jitter.
@@ -39,8 +40,11 @@ async fn fetch_with_retry(url: &str) -> Result<String> {
         .await
 }
 
+/// Fetches a page using the exponential retry policy and prints the response size.
+///
 /// # Errors
-/// An error is returned if a fallible operation fails.
+///
+/// Returns an error if the HTTP request still fails after all four retry attempts.
 async fn example_async() -> Result<()> {
     let body = fetch_with_retry("https://example.com").await?;
     println!("Received {} bytes", body.len());

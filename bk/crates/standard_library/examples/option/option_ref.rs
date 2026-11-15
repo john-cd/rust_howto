@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Borrowing the content of an `Option` with `as_ref` and `as_mut`.
 
 /// Reads an `Option<String>` without consuming it.
@@ -26,7 +27,7 @@ fn as_mut() {
     }
     assert_eq!(x, Some(42));
 }
-/// Runs the example.
+
 /// Runs both examples.
 fn main() {
     as_ref();
@@ -34,8 +35,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs both examples.
 pub fn run() {
     main();
 }
@@ -43,11 +43,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `option ref` example runs.
     #[test]
     fn test_option_ref_example_entry_point() {
         main();
     }
+
     /// Verifies as ref keeps the original.
     #[test]
     fn test_as_ref_keeps_the_original() {
@@ -57,6 +59,7 @@ mod tests {
         assert_eq!(text.as_deref(), Some("Hello, world!"));
         assert_eq!(None::<String>.as_ref().map(String::len), None);
     }
+
     /// Verifies as mut modifies in place.
     #[test]
     fn test_as_mut_modifies_in_place() {

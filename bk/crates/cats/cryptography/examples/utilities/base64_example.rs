@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encode and decode bytes with the `base64` crate.
 //!
 //! Base64 represents arbitrary bytes using 64 printable characters, so binary
@@ -22,9 +23,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Encodes a byte string as Base64 and decodes it again.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

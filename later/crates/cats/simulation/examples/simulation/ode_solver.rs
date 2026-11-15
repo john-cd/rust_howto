@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Integrate exponential decay with a fixed-step fourth-order Runge-Kutta
 //! solver.
 //!
@@ -17,6 +18,7 @@ use ode_solvers::Vector1;
 struct ExponentialDecay;
 
 impl System<f64, Vector1<f64>> for ExponentialDecay {
+
     /// Computes the derivative of the exponential-decay state.
     fn system(&self, _x: f64, y: &Vector1<f64>, dy: &mut Vector1<f64>) {
         dy[0] = -y[0];
@@ -26,6 +28,7 @@ impl System<f64, Vector1<f64>> for ExponentialDecay {
 /// Integrates from 0 to 1 and returns the final value.
 ///
 /// # Panics
+///
 /// Panics if the solver cannot integrate the exponential-decay system or returns no final state.
 fn solve_exponential_decay() -> f64 {
     let mut solver = Rk4::new(ExponentialDecay, 0.0, Vector1::new(1.0), 1.0, 0.1);
@@ -38,7 +41,7 @@ fn solve_exponential_decay() -> f64 {
         .expect("the RK4 solver should return its final state");
     final_state[0]
 }
-/// Runs the example.
+
 /// Runs the ODE solver example and prints the numerical result.
 fn main() {
     let final_value = solve_exponential_decay();
@@ -49,7 +52,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the ODE solver example through its entry point.
 pub fn run() {
     main();

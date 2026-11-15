@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `toml_edit` crate to
 //! parse, modify, and print TOML documents while preserving the
 //! original formatting (comments, spaces and relative order or items).
@@ -11,14 +12,17 @@
 use toml_edit::DocumentMut;
 use toml_edit::Item;
 use toml_edit::value;
+
 /// Parses a TOML document, edits it while preserving its formatting, and prints
 ///
 /// it.
 ///
 /// # Errors
+///
 /// Returns an error if parsing or document edits fail.
 ///
 /// # Panics
+///
 /// Panics if `tokio.features` is missing or is not an array.
 fn main() -> anyhow::Result<()> {
     // Parse existing TOML, here a `Cargo.toml` file:
@@ -85,9 +89,10 @@ path = "src/main.rs"
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses a TOML document, edits it while preserving its formatting, and prints
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

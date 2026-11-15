@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Implementing equality with `PartialEq` and `Eq`.
 //!
 //! `PartialEq` defines `==`. `Eq` is a marker that equality is reflexive (a
@@ -12,11 +13,14 @@
 // and not equal if any fields are not equal.
 // When derived on enums, two instances are equal if they are the same variant
 // and all fields are equal.
+
 /// A point whose equality is derived.
 #[derive(Debug, PartialEq, Eq)]
 struct Point {
+
     /// The x coordinate.
     x: i32,
+
     /// The y coordinate.
     y: i32,
 }
@@ -34,8 +38,10 @@ fn points() {
 /// A person who is identified by an ID.
 #[derive(Debug)]
 struct Person {
+
     /// Unique identifier; the only field compared.
     id: u64,
+
     /// Last name of the person.
     last_name: String,
 }
@@ -50,6 +56,7 @@ impl PartialEq for Person {
 
 // `Eq` has no methods.
 impl Eq for Person {}
+
 /// Compares people for equality.
 fn people() {
     let p1 = Person {
@@ -63,7 +70,7 @@ fn people() {
     assert_eq!(p1, p2);
     assert_ne!(p1.last_name, p2.last_name);
 }
-/// Runs the example.
+
 /// Runs the examples.
 fn main() {
     points();
@@ -71,8 +78,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs the examples.
 pub fn run() {
     main();
 }
@@ -80,11 +86,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `eq` example runs.
     #[test]
     fn test_eq_example_entry_point() {
         main();
     }
+
     /// Verifies derived equality compares all fields.
     #[test]
     fn test_derived_equality_compares_all_fields() {
@@ -93,6 +101,7 @@ mod tests {
         assert_ne!(p1, Point { x: 3, y: 4 });
         assert_ne!(p1, Point { x: 1, y: 3 });
     }
+
     /// Verifies custom equality compares ids only.
     #[test]
     fn test_custom_equality_compares_ids_only() {

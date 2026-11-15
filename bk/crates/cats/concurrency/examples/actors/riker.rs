@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates a simple `riker` actor that receives a message.
 //!
 //! The actor model structures a program as independent actors that own their
@@ -54,6 +55,7 @@ impl Receive<Pong> for PingPongActor {
 /// Starts an actor system, creates an actor and sends it a message.
 ///
 /// # Errors
+///
 /// Returns an error if the actor system or actor cannot be created.
 fn main() -> Result<()> {
     // Build and start the actor system.
@@ -81,6 +83,7 @@ fn main() -> Result<()> {
 /// Runs the Riker actor example.
 ///
 /// # Errors
+///
 /// Returns an error if the actor system or actor cannot be created.
 pub fn run() -> Result<()> {
     main()

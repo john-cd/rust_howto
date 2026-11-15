@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Rust allows to write `impl Trait` as the return type of functions (often
 //! called "RPIT"). This means that the function returns "some type that
 //! implements the Trait". This is commonly used to return closures, iterators,
@@ -10,6 +11,7 @@
 fn returns_closure() -> impl Fn(i32) -> i32 {
     |x| x + 1
 }
+
 /// Calls a function that returns a closure with `impl Trait`.
 fn main() {
     let f = returns_closure();
@@ -17,8 +19,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls a function that returns a closure with `impl Trait`.
 pub fn run() {
     main();
 }

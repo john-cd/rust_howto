@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `serde_ignored` is a crate that helps handle unknown fields when
 //! deserializing with `serde`. It's useful to ignore fields
 //! that are present in the input but not defined in your struct.
@@ -21,12 +22,14 @@ use serde::Deserialize;
 /// A struct, whose JSON representation may contain unknown fields.
 #[derive(Deserialize, Debug)]
 struct MyStruct {
+
     /// A number.
     field1: i32,
+
     /// A string.
     field2: String,
 }
-/// Runs the example.
+
 /// Deserializes JSON and collects the fields that are ignored.
 fn main() {
     let json_data = r#"
@@ -64,7 +67,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Deserializes JSON and collects the fields that are ignored.
 pub fn run() {
     main();
 }

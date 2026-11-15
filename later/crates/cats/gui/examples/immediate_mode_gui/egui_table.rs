@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A virtualized data table with `egui_extras`.
 //!
 //! A virtualized table only draws the rows currently visible, so it stays fast
@@ -58,9 +59,13 @@ fn show_table(ui: &mut egui::Ui, row_count: usize) -> usize {
 struct TableApp;
 
 impl eframe::App for TableApp {
+
+    /// Draws the example table in the central egui panel.
+///
     /// # Arguments
-    /// * `ui` - Mutable ui whose state is updated by this operation.
-    /// * `_frame` - Mutable frame whose state is updated by this operation.
+///
+    /// * `ui` - egui interface used to lay out the table panel.
+    /// * `_frame` - eframe window state, unused by this app.
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
         egui::CentralPanel::default().show(ui, |ui| {
             show_table(ui, 10_000);
@@ -77,6 +82,7 @@ fn run_in_window() -> eframe::Result {
         Box::new(|_cc| Ok(Box::new(TableApp))),
     )
 }
+
 /// Lays out the table for one frame without a window.
 fn main() {
     let ctx = egui::Context::default();
@@ -100,7 +106,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Lays out the table for one frame without a window.
 pub fn run() {
     main();
 }

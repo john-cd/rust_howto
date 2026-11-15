@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Connect to Oracle, query user tables with bind variables, and print rows.
 //!
 //! Set `ORACLE_USER`, `ORACLE_PASSWORD`, and `ORACLE_CONNECT_STRING` in the
@@ -45,6 +46,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the example and reports missing configuration or Oracle errors.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

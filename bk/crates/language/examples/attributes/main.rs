@@ -7,24 +7,32 @@ use clap::Subcommand;
 
 /// Silencing the warning about unused code with `#[allow(dead_code)]`.
 mod allow_dead_code;
+
 /// Marking an item as deprecated with `#[deprecated]`.
 mod attributes_deprecated;
+
 /// Deriving traits with `#[derive]`.
 mod attributes_derive;
+
 /// `allow` attributes suppress specific warnings.
 mod attributes_early_development;
+
 /// Warning about an ignored result with `#[must_use]`.
 mod attributes_must_use;
+
 /// Typical lint attributes for production code.
 mod attributes_production;
+
 /// This example demonstrates how to use `cfg-if` to conditionally compile code blocks.
 mod cfg_if;
+
 /// This example demonstrates conditional compilation using the `#[cfg]`
 mod conditional_compilation;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -33,27 +41,35 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `allow_dead_code` example.
     #[command(name = "allow_dead_code")]
     AllowDeadCode,
+
     /// Runs the `attributes_deprecated` example.
     #[command(name = "attributes_deprecated")]
     AttributesDeprecated,
+
     /// Runs the `attributes_derive` example.
     #[command(name = "attributes_derive")]
     AttributesDerive,
+
     /// Runs the `attributes_early_development` example.
     #[command(name = "attributes_early_development")]
     AttributesEarlyDevelopment,
+
     /// Runs the `attributes_must_use` example.
     #[command(name = "attributes_must_use")]
     AttributesMustUse,
+
     /// Runs the `attributes_production` example.
     #[command(name = "attributes_production")]
     AttributesProduction,
+
     /// Runs the `cfg_if` example.
     #[command(name = "cfg_if")]
     CfgIf,
+
     /// Runs the `conditional_compilation` example.
     #[command(name = "conditional_compilation")]
     ConditionalCompilation,
@@ -90,7 +106,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

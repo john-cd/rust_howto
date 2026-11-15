@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to extract and format phone numbers from a
 //! text using regular expressions.
 //!
@@ -17,16 +18,20 @@ use regex::Regex;
 /// with its area code, exchange code,
 /// and subscriber number.
 struct PhoneNumber<'a> {
+
     /// The area code.
     area: &'a str,
+
     /// The exchange code.
     exchange: &'a str,
+
     /// The subscriber number.
     subscriber: &'a str,
 }
 
 /// Formats the phone number as "1 (area) exchange-subscriber".
 impl fmt::Display for PhoneNumber<'_> {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "1 ({}) {}-{}", self.area, self.exchange, self.subscriber)
@@ -91,9 +96,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Extracts and formats phone numbers from a given text.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Computes and inspects a flexbox layout with taffy.
 //!
 //! Flexbox is the CSS layout model: children are arranged in a row or column,
@@ -74,6 +75,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the taffy layout example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This is a basic example of an AWS Lambda function written in Rust.
 //! It demonstrates how to use the `lambda_runtime` crate to create a simple
 //! function that takes a name as input and returns a greeting message.
@@ -23,6 +24,7 @@ use serde::Serialize;
 /// The request that the function receives.
 #[derive(Deserialize)]
 struct Request {
+
     /// The name of the person to greet.
     name: String,
 }
@@ -30,6 +32,7 @@ struct Request {
 /// The response that the function returns.
 #[derive(PartialEq, Serialize)]
 struct Response {
+
     /// The greeting.
     message: String,
 }
@@ -58,6 +61,7 @@ async fn main() -> Result<(), Error> {
 /// Starts the Lambda runtime for this handler.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main().map_err(|e| anyhow::anyhow!("{e}"))?;

@@ -57,6 +57,7 @@ use crate::unicast::establishment::ext::auth::UsrPwdId;
 
 /// **********************************
 // TRANSPORT UNICAST
+
 /// **********************************
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub(crate) struct TransportConfigUnicast {
@@ -168,6 +169,7 @@ impl TransportUnicast {
     /// link, the entire transport is closed.
     ///
     /// # Example
+///
     /// ```no_run
     /// # async fn example(transport: zenoh_transport::unicast::TransportUnicast) {
     /// // Close a specific link while keeping the transport alive

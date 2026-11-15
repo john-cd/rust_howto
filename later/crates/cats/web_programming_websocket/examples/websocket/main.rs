@@ -4,8 +4,10 @@
 
 /// An asynchronous WebSocket client using async-tungstenite's Tokio adapter.
 mod async_tungstenite;
+
 /// A Tokio WebSocket client and one-connection echo server.
 mod tokio_tungstenite;
+
 /// A blocking WebSocket client using tungstenite.
 mod tungstenite;
 

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Applies an embedded Diesel migration and round-trips a user in SQLite.
 //!
 //! An ORM (object-relational mapper) maps database rows to Rust structs, and a
@@ -32,10 +33,13 @@ table! {
 #[diesel(table_name = users)]
 #[diesel(check_for_backend(diesel::sqlite::Sqlite))]
 struct User {
+
     /// The database-generated identifier.
     id: i32,
+
     /// The user's display name.
     name: String,
+
     /// The user's email address.
     email: String,
 }
@@ -44,8 +48,10 @@ struct User {
 #[derive(Insertable)]
 #[diesel(table_name = users)]
 struct NewUser<'a> {
+
     /// The user's display name.
     name: &'a str,
+
     /// The user's email address.
     email: &'a str,
 }
@@ -78,9 +84,11 @@ fn run_example() -> anyhow::Result<User> {
         .first(&mut connection)
         .context("read the inserted user")
 }
+
 /// Runs the migrated SQLite example and prints the inserted row.
 ///
 /// # Errors
+///
 /// Returns an error if migration, insertion, or query execution fails.
 fn main() -> anyhow::Result<()> {
     let user = run_example()?;
@@ -92,6 +100,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the Diesel SQLite example.
 ///
 /// # Errors
+///
 /// Returns an error if migration, insertion, or query execution fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parse the arguments of a `cargo hello` subcommand and select packages.
 //!
 //! Cargo runs any executable named `cargo-<name>` on your `PATH` when you type
@@ -15,6 +16,7 @@ use clap::Parser;
 #[derive(Parser)]
 #[command(name = "cargo", bin_name = "cargo")]
 enum CargoCli {
+
     /// Say hello to the selected packages.
     Hello(HelloArgs),
 }
@@ -22,12 +24,15 @@ enum CargoCli {
 /// The arguments of `cargo hello`.
 #[derive(Args)]
 struct HelloArgs {
+
     /// `-p`, `--workspace` and `--exclude`, as in cargo itself.
     #[command(flatten)]
     workspace: clap_cargo::Workspace,
+
     /// `--features`, `--all-features` and `--no-default-features`.
     #[command(flatten)]
     features: clap_cargo::Features,
+
     /// Path to `Cargo.toml`.
     #[arg(long, value_name = "PATH")]
     manifest_path: Option<std::path::PathBuf>,
@@ -90,6 +95,7 @@ where
 /// Demonstrates the subcommand against a temporary Cargo package.
 ///
 /// # Errors
+///
 /// Returns an error if the temporary project cannot be created or queried.
 #[cfg(test)]
 pub fn example_body() -> anyhow::Result<()> {
@@ -110,6 +116,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 #[cfg(test)]
 pub fn run() -> anyhow::Result<()> {

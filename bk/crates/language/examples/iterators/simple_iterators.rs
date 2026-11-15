@@ -1,10 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Simple iterators that are built from a function or a value.
 
 use std::iter;
-/// Runs the example.
+
 /// Creates and consumes each of the simple iterators.
 fn main() {
     // Creates an iterator that yields nothing.
@@ -78,8 +79,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates and consumes each of the simple iterators.
 pub fn run() {
     main();
 }

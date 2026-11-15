@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Records frames with `puffin` and serves them to `puffin_viewer`.
 //!
 //! Install the viewer with `cargo install puffin_viewer`, run it,
@@ -14,8 +15,10 @@ const ADDRESS: &str = "127.0.0.1:8585";
 
 /// The state of the profiler.
 enum ProfilerStatus {
+
     /// The server is listening. Dropping it stops the server.
     Active(#[expect(dead_code, reason = "held only to keep the server running")] Server),
+
     /// The server could not start. The application can continue without it.
     Failed(String),
 }
@@ -45,7 +48,7 @@ fn do_frame_work() -> u64 {
     }
     total
 }
-/// Runs the example.
+
 /// Runs a few frames of an application loop.
 fn main() {
     let status = start_profiler(ADDRESS);
@@ -65,8 +68,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs a few frames of an application loop.
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

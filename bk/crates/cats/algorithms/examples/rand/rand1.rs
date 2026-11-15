@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! In `Cargo.toml`, add:
 //! ```toml
 //! [dependencies]
@@ -33,8 +34,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Generates and prints a random `u8`, a random `u32` in a range and a random sample.
 pub fn run() {
     main();
 }
@@ -42,6 +42,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `rand1` example runs.
     #[test]
     fn test_rand1_example_entry_point() {

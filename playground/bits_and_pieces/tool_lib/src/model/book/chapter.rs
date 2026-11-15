@@ -9,8 +9,10 @@ use super::*;
 /// A chapter of the book, made of subchapters.
 #[derive(Serialize, Debug)]
 pub struct Chapter {
+
     /// Description of the chapter.
     description: String,
+
     /// The subchapters of the chapter.
     subchapters: Vec<Subchapter>,
 }
@@ -27,6 +29,7 @@ pub struct Chapter {
 // }
 
 impl Chapter {
+
     /// Creates a new `Chapter` instance.
     ///
     /// # Arguments

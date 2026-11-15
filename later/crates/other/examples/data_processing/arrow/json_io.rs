@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Write an Arrow record batch to newline-delimited JSON and read it back.
 //!
 //! Newline-delimited JSON (NDJSON) holds one JSON object per line, so files can
@@ -18,15 +19,18 @@ use arrow::record_batch::RecordBatch;
 /// Serializes a record batch to JSON, then reads the resulting bytes.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body(schema: Arc<Schema>, batch: &RecordBatch) -> Result<()> {
     let decoded = round_trip(schema, batch)?;
     assert_eq!(decoded, *batch);
     Ok(())
 }
+
 /// Writes `batch` as line-delimited JSON and reads the bytes using `schema`.
 ///
 /// # Errors
+///
 /// Returns an error if Arrow cannot serialize the batch or parse the JSON back
 /// into a record batch with `schema`.
 fn round_trip(schema: Arc<Schema>, batch: &RecordBatch) -> Result<RecordBatch> {
@@ -46,10 +50,12 @@ fn round_trip(schema: Arc<Schema>, batch: &RecordBatch) -> Result<RecordBatch> {
 /// Writes the sample record batch as JSON.
 ///
 /// # Arguments
+///
 /// * `schema` - Schema used to decode the JSON columns.
 /// * `batch` - Record batch to serialize and read back.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run(schema: Arc<Schema>, batch: &RecordBatch) -> Result<()> {
     example_body(schema, batch)

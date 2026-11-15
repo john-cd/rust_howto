@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `bytemuck` crate provides functions for reinterpreting one type as
 //! another without use of `unsafe`, whenever this is safe e.g. because both
 //! types are "just bytes" (i.e. no invalid values and no padding).
@@ -49,8 +50,10 @@ fn cast() {
 #[repr(C)]
 #[derive(Debug, Clone, Copy, NoUninit, AnyBitPattern)]
 struct MyStruct {
+
     /// A number.
     x: i32,
+
     /// Four bytes.
     y: [u8; 4],
 }
@@ -87,7 +90,7 @@ fn to_from_bytes() {
     let recovered: &MyStruct = bytemuck::from_bytes(bytes);
     println!("Recovered: {recovered:?}");
 }
-/// Runs the example.
+
 /// Runs the `bytemuck` examples.
 fn main() {
     cast();
@@ -96,8 +99,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs the `bytemuck` examples.
 pub fn run() {
     main();
 }

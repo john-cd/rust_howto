@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A reactive counter application with Floem.
 //!
 //! Floem uses reactive signals: a signal holds a value, and the parts of the
@@ -32,14 +33,13 @@ fn counter_view() -> impl IntoView {
     ))
     .style(|s| s.size_full().items_center().justify_center().gap(10))
 }
-/// Runs the example.
+
 /// Starts the Floem counter window.
 fn main() {
     floem::launch(counter_view);
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the Floem counter example.
 pub fn run() {
     main();

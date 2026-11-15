@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This is an example of an async main function.
 //!
 //! `main` cannot be `async` by itself, because something must run the futures.
@@ -28,9 +29,10 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// This is an example of an async main function.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

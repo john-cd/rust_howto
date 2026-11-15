@@ -7,22 +7,29 @@ use clap::Subcommand;
 
 /// Lifetime parameters on a function.
 mod lifetime_parameter_function;
+
 /// A lifetime parameter on a struct and on its `impl` blocks.
 mod lifetime_parameter_struct;
+
 /// Example of lifetime parameters in various items.
 mod lifetime_parameters;
+
 /// Alternatives to self-referential structs.
 mod self_referential_struct;
+
 /// Example of a self-referential struct using pinning.
 mod self_referential_struct2;
+
 /// Shows that shared reborrows of one mutable reference may overlap.
 mod shared_reborrows;
+
 /// The `'static` lifetime.
 mod static_lifetime;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -31,24 +38,31 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `lifetime_parameter_function` example.
     #[command(name = "lifetime_parameter_function")]
     LifetimeParameterFunction,
+
     /// Runs the `lifetime_parameter_struct` example.
     #[command(name = "lifetime_parameter_struct")]
     LifetimeParameterStruct,
+
     /// Runs the `lifetime_parameters` example.
     #[command(name = "lifetime_parameters")]
     LifetimeParameters,
+
     /// Runs the `shared_reborrows` example.
     #[command(name = "shared_reborrows")]
     SharedReborrows,
+
     /// Runs the `self_referential_struct` example.
     #[command(name = "self_referential_struct")]
     SelfReferentialStruct,
+
     /// Runs the `self_referential_struct2` example.
     #[command(name = "self_referential_struct2")]
     SelfReferentialStruct2,
+
     /// Runs the `static_lifetime` example.
     #[command(name = "static_lifetime")]
     StaticLifetime,
@@ -82,7 +96,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

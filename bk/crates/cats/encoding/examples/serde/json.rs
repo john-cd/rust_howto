@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates parsing a JSON string into a `serde_json::Value`
 //! and comparing it to a `serde_json::Value` created using the `json!` macro.
 //!
@@ -40,9 +41,10 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses a JSON string into a `serde_json::Value` and inspects it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()

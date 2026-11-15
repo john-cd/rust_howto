@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Detect dependency cycles in a directed graph.
 //!
 //! A graph is a set of nodes connected by edges. A directed graph's edges have
@@ -23,6 +24,7 @@ fn dependency_graph() -> DiGraph<&'static str, ()> {
     graph.add_edge(validate, publish, ());
     graph
 }
+
 /// Returns the graph's cyclic strongly connected components as task names.
 fn cyclic_components(graph: &DiGraph<&'static str, ()>) -> Vec<Vec<&'static str>> {
     let mut cycles = tarjan_scc(graph)
@@ -56,7 +58,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example from the chapter's example runner.
 pub fn run() {
     main();

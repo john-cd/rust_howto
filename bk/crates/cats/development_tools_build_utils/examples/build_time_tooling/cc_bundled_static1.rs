@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to call C functions from Rust.
 //! It uses the `cc` crate to compile a C file into a static library,
 //! and then links against that library.
@@ -11,11 +12,14 @@ use std::os::raw::c_char;
 use anyhow::Result;
 
 unsafe extern "C" {
+
     /// Prints a greeting to the console.
     fn hello();
+
     /// Greets the supplied user.
     fn greet(name: *const c_char);
 }
+
 /// Calls the no-argument C greeting function.
 fn hello_from_c() {
     // SAFETY: `build.rs` links the matching no-argument `hello` function.
@@ -25,9 +29,11 @@ fn hello_from_c() {
 /// Greets a name through the bundled C function.
 ///
 /// # Errors
+///
 /// Returns an error if `name` contains an interior NUL byte.
 ///
 /// # Arguments
+///
 /// * `name` - Human-readable value used to identify or display the selected cc bundled static1.
 fn greet_from_c(name: &str) -> Result<()> {
     let name = CString::new(name)?;
@@ -47,6 +53,7 @@ fn main() -> Result<()> {
 /// Runs the bundled C greeting example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
@@ -62,6 +69,7 @@ mod tests {
     fn bundled_c_greeting_runs() -> Result<()> {
         greet_from_c("workspace")
     }
+
     /// Rejects a name that cannot be represented as a C string.
     #[test]
     fn rejects_interior_nul() {

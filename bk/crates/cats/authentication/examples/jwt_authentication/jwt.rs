@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encode and verify HS256 JSON Web Tokens for a first-party API.
 //!
 //! This module provides functions to create and verify JSON Web Tokens (JWTs)
@@ -27,10 +28,13 @@ use serde::Serialize;
 /// - `roles`: Custom claim specifying access roles assigned to the user for authorization checks.
 #[derive(Clone, Debug, Deserialize, Eq, PartialEq, Serialize)]
 pub struct Claims {
+
     /// The subject identifier for the authenticated user.
     pub sub: String,
+
     /// Expiration time as seconds since the Unix epoch.
     pub exp: u64,
+
     /// Application roles used by the Axum authorization example.
     #[serde(default)]
     pub roles: Vec<String>,
@@ -39,6 +43,7 @@ pub struct Claims {
 /// Encodes `claims` as an HS256 token signed with `secret`.
 ///
 /// # Errors
+///
 /// Returns an error if the claims cannot be serialized or signed.
 pub fn create_jwt(claims: &Claims, secret: &[u8]) -> Result<String, jsonwebtoken::errors::Error> {
     encode(
@@ -47,12 +52,15 @@ pub fn create_jwt(claims: &Claims, secret: &[u8]) -> Result<String, jsonwebtoken
         &EncodingKey::from_secret(secret),
     )
 }
+
 /// Verifies the HS256 signature and expiration, then returns the token claims.
 ///
 /// # Arguments
+///
 /// * `token` - Token to validate or use for the request.
 ///
 /// # Errors
+///
 /// Returns an error if the token is malformed, expired, or signed with another
 /// key.
 pub fn verify_jwt(token: &str, secret: &[u8]) -> Result<Claims, jsonwebtoken::errors::Error> {
@@ -64,6 +72,7 @@ pub fn verify_jwt(token: &str, secret: &[u8]) -> Result<Claims, jsonwebtoken::er
 /// Creates and verifies a signed HS256 token using deterministic claims.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<Claims, jsonwebtoken::errors::Error> {
     let claims = Claims {

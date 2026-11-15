@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A trait with an associated type.
 //!
 //! An associated type is a type placeholder inside a trait that each
@@ -10,6 +11,7 @@
 /// A trait that represents an iterator (similar to what is in the standard
 /// library).
 trait Iterator {
+
     /// This associated type is the type of the elements yielded by the
     /// iterator. You can't provide a default implementation at this point.
     type Item;
@@ -36,10 +38,12 @@ impl Iterator for MyIterator {
         Some(self.0)
     }
 }
+
 /// Use the trait. Note how the associated type is specified within < and >.
 fn use_iterator(it: &mut impl Iterator<Item = u32>) -> Option<u32> {
     it.next()
 }
+
 /// Uses the iterator through the trait.
 fn main() {
     let mut it = MyIterator(42);
@@ -47,8 +51,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Uses the iterator through the trait.
 pub fn run() {
     main();
 }

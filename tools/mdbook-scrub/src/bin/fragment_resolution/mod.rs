@@ -22,22 +22,29 @@ use serde_json::Value;
 /// A local Markdown link whose target chapter does not define its fragment.
 #[derive(Debug, PartialEq, Eq)]
 pub(super) struct InvalidFragment {
+
     /// The source chapter containing the link.
     pub(super) source: PathBuf,
+
     /// The chapter addressed by the link.
     pub(super) target: PathBuf,
+
     /// The decoded fragment identifier.
     pub(super) fragment: String,
 }
 
 /// Markdown chapter data needed to resolve local fragment links.
 struct ChapterFragments {
+
     /// The path used to resolve links in this chapter.
     path: PathBuf,
+
     /// Alternate source path used by mdBook for files such as `README.md`.
     source_path: Option<PathBuf>,
+
     /// Heading and HTML identifiers emitted by the HTML renderer.
     identifiers: HashSet<String>,
+
     /// Local and external Markdown links found in the chapter.
     links: Vec<String>,
 }
@@ -45,10 +52,12 @@ struct ChapterFragments {
 /// Finds local links to Markdown chapters whose fragments do not exist.
 ///
 /// # Arguments
-/// * `context` - Context used to resolve configuration and services.
+///
+/// * `context` - mdBook render context containing the source root and book items.
 ///
 /// # Errors
-/// Returns an error if the requested data cannot be retrieved.
+///
+/// Returns an error if the source root or book items are missing from the render context.
 pub(super) fn find_invalid_fragments(context: &Value) -> Result<Vec<InvalidFragment>> {
     let source_root = source_root(context)?;
     let items = context
@@ -275,6 +284,7 @@ fn tag_identifiers(tag: &str) -> Vec<String> {
 
 /// Returns an expression matching HTML comments and start tags.
 fn html_tag_regex() -> &'static Regex {
+
     /// Shared `html tag` used by this module.
     static HTML_TAG: OnceLock<Regex> = OnceLock::new();
     HTML_TAG.get_or_init(|| {
@@ -307,6 +317,7 @@ fn links(content: &str) -> Vec<String> {
 
 /// Returns the compiled expression used to read HTML `href` attributes.
 fn html_href_regex() -> &'static Regex {
+
     /// Shared `html href` used by this module.
     static HTML_HREF: OnceLock<Regex> = OnceLock::new();
     HTML_HREF.get_or_init(|| {
@@ -344,6 +355,7 @@ fn is_external_url(path: &str) -> bool {
             .split_once(':')
             .is_some_and(|(scheme, _)| !scheme.contains('/') && !scheme.contains('\\'))
 }
+
 /// Decodes valid percent escapes while preserving plus signs and malformed escapes.
 fn percent_decode(value: &str) -> String {
     let bytes = value.as_bytes();
@@ -394,9 +406,11 @@ fn slug(text: &str) -> String {
 }
 
 /// Adds the numeric suffix used by mdBook when a generated heading ID repeats.
+///
 /// # Arguments
+///
 /// * `id` - Identifier used to select the mod record or cache entry affected by this operation.
-/// * `used` - Mutable hash set whose state is updated by this operation.
+/// * `used` - Set of heading IDs already assigned in this chapter.
 fn unique_id(id: &str, used: &mut HashSet<String>) -> String {
     if used.insert(id.to_owned()) {
         return id.to_owned();

@@ -8,6 +8,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Publish a custom metric with dimensions to Amazon CloudWatch.
 //!
 //! Amazon CloudWatch collects metrics and logs from AWS services. A custom
@@ -25,6 +26,7 @@ use aws_sdk_cloudwatch::types::StandardUnit;
 /// Builds one data point. Each distinct set of dimensions is a separate metric
 ///
 /// # Arguments
+///
 /// (and is billed as one), so keep dimension values low-cardinality.
 pub fn latency_datum(service: &str, millis: f64) -> Result<MetricDatum> {
     let dimension = Dimension::builder().name("Service").value(service).build();
@@ -39,6 +41,7 @@ pub fn latency_datum(service: &str, millis: f64) -> Result<MetricDatum> {
 /// Sends the data points under `namespace`.
 ///
 /// # Arguments
+///
 /// * `client` - Client used to make the request.
 /// * `data` - Data to process.
 pub async fn put_metrics(client: &Client, namespace: &str, data: Vec<MetricDatum>) -> Result<()> {
@@ -56,6 +59,7 @@ pub async fn put_metrics(client: &Client, namespace: &str, data: Vec<MetricDatum
 /// Builds a sample CloudWatch latency metric.
 ///
 /// # Errors
+///
 /// Returns an error if the CloudWatch SDK rejects the metric datum.
 fn run() -> Result<MetricDatum> {
     latency_datum("example-service", 42.0)

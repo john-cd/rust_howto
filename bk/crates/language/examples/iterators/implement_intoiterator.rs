@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of `IntoIterator` implementation.
 //!
 //! Note that the iterator is a custom `struct` separate from the collection
@@ -10,11 +11,13 @@
 /// In this example, we simply wrap a `Vec`.
 #[derive(Debug)]
 struct MyVec<T> {
+
     /// The items of the collection.
     data: Vec<T>,
 }
 
 impl<T> MyVec<T> {
+
     /// Constructor.
     fn new() -> Self {
         Self { data: Vec::new() }
@@ -25,10 +28,13 @@ impl<T> MyVec<T> {
         self.data.push(item);
     }
 }
+
 /// Implementation of `IntoIterator`.
 impl<T> IntoIterator for MyVec<T> {
+
     /// Associated type for the iterator.
     type IntoIter = MyVecIntoIterator<T>;
+
     /// Type of the elements that the iterator will yield.
     type Item = T;
 
@@ -43,6 +49,7 @@ impl<T> IntoIterator for MyVec<T> {
 /// It must implement the `Iterator` trait.
 #[derive(Debug)]
 struct MyVecIntoIterator<T> {
+
     /// The remaining items.
     data: Vec<T>,
     // Iterator types often store indices to track the progress of the
@@ -60,6 +67,7 @@ impl<T> Iterator for MyVecIntoIterator<T> {
     // The `Iterator` trait implements a large number of default methods, which
     // we get for free.
 }
+
 /// Iterates over a custom collection with a `for` loop.
 fn main() {
     let mut my_vec = MyVec::new();
@@ -74,8 +82,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Iterates over a custom collection with a `for` loop.
 pub fn run() {
     main();
 }

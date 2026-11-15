@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generate a random string of 20 alphanumeric characters.
 //!
 //! Random strings serve as IDs, temporary names and tokens. A default random
@@ -29,8 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Generate a random string of 20 alphanumeric characters.
 pub fn run() {
     main();
 }
@@ -38,6 +38,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `rand alphanumeric` example runs.
     #[test]
     fn test_rand_alphanumeric_example_entry_point() {

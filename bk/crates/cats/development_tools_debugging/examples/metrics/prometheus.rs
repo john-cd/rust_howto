@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Renders metrics in Prometheus exposition format without opening a port.
 //!
 //! Prometheus is a monitoring system that scrapes numbers from services over
@@ -31,6 +32,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the Prometheus exposition example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

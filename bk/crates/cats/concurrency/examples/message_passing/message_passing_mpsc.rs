@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates message passing using multiple producers and a
 //! single consumer. It showcases the use of `mpsc::channel` for creating a
 //! channel, `tx.send` for sending messages, and `rx.recv` for receiving
@@ -8,8 +9,8 @@
 
 use std::sync::mpsc;
 use std::thread;
+
 /// Sends messages from several producer threads to a single consumer through an
-/// Runs the example.
 /// `mpsc` channel.
 fn main() {
     let (tx, rx) = mpsc::channel();
@@ -42,8 +43,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Sends messages from several producer threads to a single consumer through an `mpsc` channel.
 pub fn run() {
     main();
 }

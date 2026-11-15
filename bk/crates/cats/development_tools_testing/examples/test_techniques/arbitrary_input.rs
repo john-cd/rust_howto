@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Derive `Arbitrary` to turn raw fuzzer bytes into a structured test case.
 //! The same bytes always produce the same input, which makes failures easy
 //! to reproduce. A fuzz target can call `check_input` with its supplied bytes.

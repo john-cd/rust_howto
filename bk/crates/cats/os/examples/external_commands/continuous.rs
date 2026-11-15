@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to continuously read from the standard output
 //! of an external command, filter the output, and print the filtered lines. It
 //! uses the `journalctl` command to read system logs, filters lines containing
@@ -48,18 +49,19 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// This example demonstrates how to continuously read from the standard output of an external
 /// command, filter the output, and print the filtered lines. It uses the `journalctl` command to
 /// read system logs, filters lines containing "usb", and prints them to the console.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
 #[cfg(target_os = "linux")]
+
 /// Verifies journal output can be read on Linux systems with systemd.
 #[cfg(test)]
 mod tests {

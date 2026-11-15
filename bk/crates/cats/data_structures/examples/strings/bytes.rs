@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates basic usage of the `bytes` crate.
 //!
 //! `Bytes` is a cheaply cloneable, immutable buffer of bytes: cloning shares
@@ -9,7 +10,7 @@
 
 use bytes::BufMut as _;
 use bytes::BytesMut;
-/// Runs the example.
+
 /// Builds a `BytesMut` buffer, then freezes it into an immutable `Bytes`.
 fn main() {
     let mut buf = BytesMut::with_capacity(64);
@@ -25,8 +26,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Builds a `BytesMut` buffer, then freezes it into an immutable `Bytes`.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `lazy_static` defines statically initialized values that are
 //! computed lazily at runtime. It can be particularly useful for initializing
 //! data that is expensive to compute or that needs to be shared across multiple
@@ -21,6 +22,7 @@ use lazy_static::lazy_static;
 // - The `static ref` keywords are passed to the macro, they are not part of the language per se.
 lazy_static! {
     // `CONFIG` is a lazily-initialized HashMap that holds configuration data.
+
 /// Configuration map initialized once and shared by all callers.
     /// Configuration map initialized once and shared by all callers.
     static ref CONFIG: HashMap<String, String> = {
@@ -30,12 +32,14 @@ lazy_static! {
         m
     };
     // You can call a method or a function:
+
 /// Number of entries in the lazily initialized configuration map.
     /// Number of entries in the lazily initialized configuration map.
     static ref COUNT: usize = CONFIG.len();
 
     // `COUNTER` is a lazily-initialized Mutex-protected integer counter.
     // The `Mutex` ensures that the COUNTER can be safely incremented from multiple threads, if needed.
+
 /// Mutex-protected counter initialized on first use.
     /// Mutex-protected counter initialized on first use.
     static ref COUNTER: Mutex<i32> = Mutex::new(0);
@@ -89,9 +93,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Reads values from a lazily initialized global map.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

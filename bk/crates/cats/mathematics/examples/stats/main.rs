@@ -7,16 +7,20 @@ use clap::Subcommand;
 
 /// Calculates the mean of a set of numbers.
 mod central_tendency;
+
 /// Computing the median of a list of integers with quickselect.
 mod central_tendency1;
+
 /// Calculates the mode of a dataset.
 mod central_tendency2;
+
 /// Computing the mean and the standard deviation of a list of integers.
 mod standard_deviation;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,15 +29,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `central_tendency` example.
     #[command(name = "central_tendency")]
     CentralTendency,
+
     /// Runs the `central_tendency1` example.
     #[command(name = "central_tendency1")]
     CentralTendency1,
+
     /// Runs the `central_tendency2` example.
     #[command(name = "central_tendency2")]
     CentralTendency2,
+
     /// Runs the `standard_deviation` example.
     #[command(name = "standard_deviation")]
     StandardDeviation,
@@ -58,7 +66,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

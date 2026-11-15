@@ -1,17 +1,21 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Implementing a trait with methods, an associated type and associated
 //! constants.
 
 // First, define a trait (if it's not a pre-existing one):
+
 /// A trait with methods, an associated function, a type and constants.
 trait SomeBehavior {
     // Method declaration (signature only, no body):
+
     /// Does something and returns a description.
     fn do_something(&self) -> String;
 
     // Method with default implementation:
+
     /// Performs an action with `value`; has a default implementation.
     fn another_action(&self, value: i32) {
         println!("The default implementation received the value: {value}");
@@ -19,14 +23,17 @@ trait SomeBehavior {
 
     // Associated function. In this case, it references the associated type
     // defined below. Note the path syntax `Self::<AssociatedType>`.
+
     /// An associated function that returns the associated type.
     fn assoc_func() -> Self::Output;
 
     // Associated type:
+
     /// The type that the associated function returns.
     type Output;
 
     // Associated constants with and without default:
+
     /// A constant with a default value.
     /// Defines the constant constant.
     const CONSTANT: i32 = 42;
@@ -37,10 +44,13 @@ trait SomeBehavior {
 }
 
 // Define your struct:
+
 /// A struct that implements [`SomeBehavior`].
 struct MyStruct {
+
     /// A number.
     data: i32,
+
     /// A name.
     name: String,
 }
@@ -48,13 +58,16 @@ struct MyStruct {
 // Implement the trait for your struct:
 impl SomeBehavior for MyStruct {
     // Define the associated type:
+
     /// Shared `another const` used by this module.
     type Output = String;
 
     // Define the const that did not have a default:
+
     /// Shared `another const` used by this module.
     const ANOTHER_CONST: &str = "Another constant value";
     // Override the const that did have a default:
+
     /// Shared `constant` used by this module.
     const CONSTANT: i32 = 43;
 
@@ -74,6 +87,7 @@ impl SomeBehavior for MyStruct {
         "Associated function output".to_owned()
     }
 }
+
 /// Uses the trait implementation.
 fn main() {
     let m = MyStruct {
@@ -90,9 +104,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-///
-/// Runs the example.
+/// Uses the trait implementation.
 pub fn run() {
     main();
 }
@@ -124,9 +136,11 @@ mod tests {
     /// A type that keeps the defaults gets the trait's default constant.
     #[test]
     fn test_default_constant() {
+
         /// Groups the data required by structs operations.
         struct Defaults;
         impl SomeBehavior for Defaults {
+
             /// Shared `another const` used by this module.
             type Output = ();
 

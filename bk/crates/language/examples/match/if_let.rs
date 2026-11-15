@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `if let` syntax allows you to combine `if` and `let`
 //! to handle values that match a specific pattern, while ignoring others.
 
@@ -42,8 +43,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// The `if let` syntax allows you to combine `if` and `let` to handle values that match a specific pattern, while ignoring others.
 pub fn run() {
     main();
 }

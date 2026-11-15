@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Filtering the lines of a log file with a set of regular expressions.
 //!
 //! A regular expression (regex) describes a text pattern. Log files can be
@@ -37,9 +38,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints the lines of the log that match any of the patterns.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

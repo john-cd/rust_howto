@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Publishing and consuming a message with the `lapin` AMQP client.
 //!
 //! AMQP is a protocol for message brokers such as RabbitMQ. A producer
@@ -23,6 +24,8 @@ use lapin::options::ConfirmSelectOptions;
 use lapin::options::QueueDeclareOptions;
 use lapin::types::FieldTable;
 
+/// Connects to RabbitMQ, publishes a message, consumes it, and acknowledges it.
+///
 /// # AMQP (Advanced Message Queuing Protocol) Client Example with `lapin`
 ///
 /// This example demonstrates basic usage of the `lapin` crate, an AMQP client
@@ -126,9 +129,10 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Connects to RabbitMQ, publishes a message, consumes it, and acknowledges it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -4,7 +4,7 @@
 
 /// A `RangeMap`, which maps ranges of keys to values.
 mod rangemap;
-/// Runs the example.
+
 /// Runs the rangemap example.
 fn main() {
     rangemap::run();

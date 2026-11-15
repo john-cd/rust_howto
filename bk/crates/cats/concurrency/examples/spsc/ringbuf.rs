@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `ringbuf` crate as an alternative to `rtrb`: a lock-free SPSC ring
 //! buffer with a trait-based API.
 //!
@@ -17,9 +18,10 @@ use ringbuf::traits::Split;
 
 /// The number of samples the ring buffer can hold.
 const CAPACITY: usize = 32;
+
 /// The total number of samples sent through the buffer.
 const TOTAL: usize = 500;
-/// Runs the example.
+
 /// Sends `TOTAL` samples through a heap-allocated ring buffer.
 fn main() {
     let rb = HeapRb::<f32>::new(CAPACITY);
@@ -60,8 +62,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Sends `TOTAL` samples through a heap-allocated ring buffer.
 pub fn run() {
     main();
 }

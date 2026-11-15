@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Initializes the logger and logs warning, info, and debug messages from the
 //! root module, then calls `foo::run()`.
 //!
@@ -10,8 +11,10 @@
 
 /// A module that logs messages and has a nested module.
 mod foo {
+
     /// A nested module that logs messages.
     mod bar {
+
         /// Logs warning, info, and debug messages from the `bar` module.
         pub fn run() {
             log::warn!("[bar] warn");
@@ -29,9 +32,8 @@ mod foo {
         bar::run();
     }
 }
-/// Initializes the logger and logs warning, info, and debug messages from the
-///
-/// root module, then calls `foo::run()`.
+
+/// Initializes logging and emits messages from the root, `foo`, and `foo::bar` modules.
 fn main() {
     env_logger::init();
     log::warn!("[root] warn");
@@ -42,8 +44,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Initializes logging and emits messages from the root, `foo`, and `foo::bar` modules.
 pub fn run() {
     main();
 }

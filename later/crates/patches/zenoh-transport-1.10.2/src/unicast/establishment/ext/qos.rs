@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -42,14 +43,17 @@ use crate::unicast::establishment::AcceptFsm;
 use crate::unicast::establishment::OpenFsm;
 
 // Extension Fsm
+
 /// State machine for negotiating quality-of-service settings.
 pub(crate) struct QoSFsm<'a> {
+
     /// First value in the pair.
     _a: PhantomData<&'a ()>,
 }
 
 impl QoSFsm<'_> {
-    /// Constructs a usable initial qo sfsm value with the defaults required by the qos component.
+
+    /// Creates the stateless state machine used to negotiate QoS extensions.
     pub(crate) const fn new() -> Self {
         Self { _a: PhantomData }
     }
@@ -60,9 +64,11 @@ impl QoSFsm<'_> {
 enum State {
     NoQoS,
     QoS {
+
         /// Optional reliability used by qo sfsm; `None` means the value is not configured or
         /// unavailable.
         reliability: Option<Reliability>,
+
         /// Optional priorities used by qo sfsm; `None` means the value is not configured or
         /// unavailable.
         priorities: Option<PriorityRange>,
@@ -70,9 +76,16 @@ enum State {
 }
 
 impl State {
-    /// Constructs a usable initial state value with the defaults required by the qos component.
 
+    /// Creates no-QoS state or reads the endpoint's QoS settings for negotiation.
+    ///
+    /// # Arguments
+///
+    /// * `is_qos` - Whether QoS negotiation is enabled for the transport.
+    /// * `endpoint` - Endpoint metadata containing optional reliability and priority settings.
+    ///
     /// # Errors
+///
     /// Returns an error if the configured reliability or priority metadata is invalid.
     fn new(is_qos: bool, endpoint: &EndPoint) -> ZResult<Self> {
         if !is_qos {
@@ -98,7 +111,6 @@ impl State {
     }
 
     /// Attempts to from u64 and reports failure to the caller.
-
     fn try_from_u64(value: u64) -> ZResult<Self> {
         match value {
             0b000_u64 => Ok(State::NoQoS),
@@ -212,7 +224,6 @@ impl State {
     }
 
     /// Reports whether the state meets the qos condition so callers can choose the correct branch.
-
     fn is_qos(&self) -> bool {
         matches!(self, State::QoS { .. })
     }
@@ -262,8 +273,8 @@ impl State {
         }
     }
 }
-/// Authentication state maintained by the initiator during the open handshake.
 
+/// Authentication state maintained by the initiator during the open handshake.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub(crate) struct StateOpen(State);
 
@@ -274,19 +285,23 @@ impl From<State> for StateOpen {
 }
 
 impl StateOpen {
-    /// Constructs a usable initial state open value with the defaults required by the qos
-    /// component.
+
+    /// Creates opening-side QoS state from the endpoint's reliability and priority settings.
+    ///
+    /// # Arguments
+///
+    /// * `is_qos` - Whether QoS negotiation is enabled for the transport.
+    /// * `endpoint` - Endpoint metadata containing optional reliability and priority settings.
     ///
     /// # Errors
-    /// Returns an error if the requested resource or connection cannot be created.
-
+///
+    /// Returns an error if the endpoint contains invalid reliability or priority metadata.
     pub(crate) fn new(is_qos: bool, endpoint: &EndPoint) -> ZResult<Self> {
         State::new(is_qos, endpoint).map(StateOpen)
     }
 
     /// Reports whether the state open meets the qos condition so callers can choose the correct
     /// branch.
-
     pub(crate) fn is_qos(&self) -> bool {
         self.0.is_qos()
     }
@@ -315,10 +330,11 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
     type SendOpenSynIn = &'a StateOpen;
     type SendOpenSynOut = Option<open::ext::QoS>;
 
-    /// Sends init syn.
-
+    /// Adds the opening peer's QoS state extensions to its InitSyn message.
+///
     /// # Arguments
-    /// * `state` - Shared state and services used to complete the qos workflow.
+///
+    /// * `state` - Opening-side state containing the configured QoS settings.
     async fn send_init_syn(
         self,
         state: Self::SendInitSynIn,
@@ -326,8 +342,15 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
         Ok(state.0.to_exts())
     }
 
-    /// Receives init ack.
-
+    /// Validates and stores the QoS settings advertised in the peer's InitAck.
+    ///
+    /// # Arguments
+///
+    /// * `input` - Opening-side state and optional QoS extensions received in InitAck.
+    ///
+    /// # Errors
+///
+    /// Returns an error if the peer advertises invalid QoS extensions or incompatible settings.
     async fn recv_init_ack(
         self,
         input: Self::RecvInitAckIn,
@@ -388,8 +411,11 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
         Ok(())
     }
 
+    /// Omits a QoS extension from OpenSyn because QoS is negotiated in the earlier handshake step.
+///
     /// # Arguments
-    /// * `_state` - Shared state and services used to complete the qos workflow.
+///
+    /// * `_state` - Opening-side QoS state; no extension is sent at this handshake step.
     async fn send_open_syn(
         self,
         _state: Self::SendOpenSynIn,
@@ -397,8 +423,11 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
         Ok(None)
     }
 
+    /// Completes the QoS OpenAck step without changing the negotiated state.
+///
     /// # Arguments
-    /// * `_state` - Shared state and services used to complete the qos workflow.
+///
+    /// * `_state` - Opening-side state and optional OpenAck QoS extension; neither changes state.
     async fn recv_open_ack(
         self,
         _state: Self::RecvOpenAckIn,
@@ -418,19 +447,23 @@ impl From<State> for StateAccept {
 }
 
 impl StateAccept {
-    /// Constructs a usable initial state accept value with the defaults required by the qos
-    /// component.
+
+    /// Creates accept-side QoS state from the endpoint's reliability and priority settings.
+    ///
+    /// # Arguments
+///
+    /// * `is_qos` - Whether QoS negotiation is enabled for the transport.
+    /// * `endpoint` - Endpoint metadata containing optional reliability and priority settings.
     ///
     /// # Errors
-    /// Returns an error if the requested resource or connection cannot be created.
-
+///
+    /// Returns an error if the endpoint contains invalid reliability or priority metadata.
     pub(crate) fn new(is_qos: bool, endpoint: &EndPoint) -> ZResult<Self> {
         State::new(is_qos, endpoint).map(StateAccept::from)
     }
 
     /// Reports whether the state accept meets the qos condition so callers can choose the correct
     /// branch.
-
     pub(crate) fn is_qos(&self) -> bool {
         self.0.is_qos()
     }
@@ -467,10 +500,14 @@ where
 {
     type Error = DidntRead;
 
+    /// Reads and validates a QoS state value from the input stream.
+///
     /// # Arguments
+///
     /// * `reader` - Source that supplies the bytes or records consumed by this operation.
     ///
     /// # Errors
+///
     /// Returns an error if the value cannot be decoded or does not represent a valid QoS state.
     fn read(self, reader: &mut R) -> Result<StateAccept, Self::Error> {
         Ok(State::try_from_u64(self.read(reader)?)
@@ -494,8 +531,15 @@ impl<'a> AcceptFsm for &'a QoSFsm<'a> {
     type SendOpenAckIn = &'a StateAccept;
     type SendOpenAckOut = Option<open::ext::QoS>;
 
-    /// Receives init syn.
-
+    /// Validates and stores the QoS settings advertised in the peer's InitSyn.
+    ///
+    /// # Arguments
+///
+    /// * `input` - Accept-side state and optional QoS extensions received in InitSyn.
+    ///
+    /// # Errors
+///
+    /// Returns an error if the peer's priority range or reliability conflicts with local settings.
     async fn recv_init_syn(
         self,
         input: Self::RecvInitSynIn,
@@ -556,10 +600,11 @@ impl<'a> AcceptFsm for &'a QoSFsm<'a> {
         Ok(())
     }
 
-    /// Sends init ack.
-
+    /// Adds the acceptor's negotiated QoS state extensions to its InitAck message.
+///
     /// # Arguments
-    /// * `state` - Shared state and services used to complete the qos workflow.
+///
+    /// * `state` - Accept-side state containing the negotiated QoS settings.
     async fn send_init_ack(
         self,
         state: Self::SendInitAckIn,
@@ -567,8 +612,11 @@ impl<'a> AcceptFsm for &'a QoSFsm<'a> {
         Ok(state.0.to_exts())
     }
 
+    /// Accepts the OpenSyn without additional QoS state changes.
+///
     /// # Arguments
-    /// * `_state` - Shared state and services used to complete the qos workflow.
+///
+    /// * `_state` - Accept-side state and optional OpenSyn extension, which are not changed here.
     async fn recv_open_syn(
         self,
         _state: Self::RecvOpenSynIn,
@@ -576,9 +624,11 @@ impl<'a> AcceptFsm for &'a QoSFsm<'a> {
         Ok(())
     }
 
+    /// Omits a QoS extension from OpenAck because no additional QoS data is sent at this step.
+    ///
     /// # Arguments
-    /// * `_state` - Shared state and services used to complete the qos workflow.
-
+///
+    /// * `_state` - Accept-side negotiated state; no extension is emitted at this step.
     async fn send_open_ack(
         self,
         _state: Self::SendOpenAckIn,
@@ -608,12 +658,7 @@ mod tests {
         };
     }
 
-    /// # Arguments
-    /// * `state_open` - Mutable state open whose state is updated by this operation.
-    /// * `state_accept` - Mutable state accept whose state is updated by this operation.
-
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Exchanges and validates QoS handshake extensions for the opening and accepting peers.
     async fn test_negotiation(
         state_open: &mut StateOpen,
         state_accept: &mut StateAccept,
@@ -628,8 +673,8 @@ mod tests {
 
         Ok(())
     }
-    /// Verifies negotiation ok.
 
+    /// Confirms both peers negotiate matching reliability and priority settings.
     async fn test_negotiation_ok(state_open: State, state_accept: State, state_expected: State) {
         let mut state_open = state_open.into();
         let mut state_accept = state_accept.into();
@@ -642,8 +687,8 @@ mod tests {
             }
         };
     }
-    /// Verifies negotiation err.
 
+    /// Confirms incompatible QoS settings are rejected.
     async fn test_negotiation_err(state_open: State, state_accept: State) {
         let mut state_open = state_open.into();
         let mut state_accept = state_accept.into();
@@ -652,6 +697,7 @@ mod tests {
             panic!("expected `Err(_)`, got `Ok(())`")
         }
     }
+
     /// Negotiates successfully when neither peer sets a priority range.
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_1() {
@@ -671,6 +717,7 @@ mod tests {
         )
         .await
     }
+
     /// Adopts the acceptor's priority range when the opener leaves it unset.
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_2() {
@@ -690,6 +737,7 @@ mod tests {
         )
         .await
     }
+
     /// Adopts the opener's priority range when the acceptor leaves it unset.
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_3() {
@@ -709,6 +757,7 @@ mod tests {
         )
         .await
     }
+
     /// Keeps matching priority ranges after negotiation.
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_4() {
@@ -728,6 +777,7 @@ mod tests {
         )
         .await
     }
+
     /// Uses the narrower range when both peers offer overlapping priority ranges.
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_5() {
@@ -747,6 +797,7 @@ mod tests {
         )
         .await
     }
+
     /// Rejects negotiation when the peers' priority ranges cannot be reconciled.
     #[tokio::test]
     async fn test_priority_range_negotiation_scenario_6() {
@@ -762,6 +813,7 @@ mod tests {
         )
         .await
     }
+
     /// Adopts the acceptor's reliability when the opener leaves it unset.
     #[tokio::test]
     async fn test_reliability_negotiation_scenario_2() {
@@ -781,6 +833,7 @@ mod tests {
         )
         .await
     }
+
     /// Rejects negotiation when peers request different reliability modes.
     #[tokio::test]
     async fn test_reliability_negotiation_scenario_3() {
@@ -796,6 +849,7 @@ mod tests {
         )
         .await
     }
+
     /// Keeps matching reliability modes after negotiation.
     #[tokio::test]
     async fn test_reliability_negotiation_scenario_4() {
@@ -815,6 +869,7 @@ mod tests {
         )
         .await
     }
+
     /// Rejects negotiation when peers request different reliability modes.
     #[tokio::test]
     async fn test_reliability_negotiation_scenario_5() {
@@ -830,6 +885,7 @@ mod tests {
         )
         .await
     }
+
     /// Negotiates the common reliability mode and overlapping priority range.
     #[tokio::test]
     async fn test_priority_range_and_reliability_negotiation_scenario_1() {

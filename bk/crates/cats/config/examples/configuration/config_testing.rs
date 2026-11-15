@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Tests a config source without changing the process environment.
 //!
 //! Tests that change environment variables affect other tests running in
@@ -34,6 +35,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the isolated configuration-source example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Create and verify an Ed25519 signature using `ed25519-dalek`.
 //!
 //! The example generates a new keypair, signs a message, and verifies it.
@@ -41,9 +42,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Signs a message with a random Ed25519 key and verifies the signature.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

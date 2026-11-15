@@ -1,13 +1,15 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Passing a mutable reference to a function.
 
 /// This function takes a mutable reference `&mut` to a `String`
 /// and appends ", world" to it.
 ///
 /// # Arguments
-/// * `some_string` - Mutable string whose state is updated by this operation.
+///
+/// * `some_string` - String to append `", world"` to.
 fn change(some_string: &mut String) {
     some_string.push_str(", world"); // Modifies the string in place.
     println!("{some_string}");
@@ -41,8 +43,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Modifies a string through mutable references.
 pub fn run() {
     main();
 }

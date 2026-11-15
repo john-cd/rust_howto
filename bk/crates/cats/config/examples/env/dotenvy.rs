@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Examples for working with `.env` files using `dotenvy`.
 //!
 //! A `.env` file lists `NAME=value` pairs for local development. `dotenvy`
@@ -31,9 +32,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Load environment variables from a `.env` file in the current directory.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

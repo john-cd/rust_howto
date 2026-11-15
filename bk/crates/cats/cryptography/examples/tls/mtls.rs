@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Send an HTTPS request with a client certificate and private key.
 //!
 //! In mutual TLS (mTLS) both sides prove who they are with certificates, not
@@ -16,11 +17,13 @@ use reqwest::Client;
 use reqwest::Identity;
 use rustls::crypto::CryptoProvider;
 use rustls::crypto::ring;
+
 /// Builds a client that trusts the supplied server CA and presents a client
 ///
 /// identity.
 ///
 /// # Errors
+///
 /// Returns an error if the PEM inputs cannot be parsed or the TLS client cannot be built.
 fn build_client(ca_certificate_pem: &[u8], client_identity_pem: &[u8]) -> anyhow::Result<Client> {
     install_crypto_provider()?;
@@ -48,6 +51,7 @@ fn install_crypto_provider() -> anyhow::Result<()> {
         Err(_) => bail!("could not install a Rustls crypto provider"),
     }
 }
+
 /// Sends a GET request using the configured CA certificate and client identity
 ///
 /// files.
@@ -79,6 +83,7 @@ async fn main() -> anyhow::Result<()> {
 /// Dispatches this example from the TLS command-line group.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -117,14 +122,19 @@ mod tests {
 
     /// Holds in-memory certificates and keys for a local mutual TLS exchange.
     struct LocalCertificateFixtures {
+
         /// DER-encoded certificate authority certificate.
         ca_certificate_der: CertificateDer<'static>,
+
         /// PEM-encoded certificate authority certificate.
         ca_certificate_pem: String,
+
         /// DER-encoded server certificate.
         server_certificate_der: CertificateDer<'static>,
+
         /// Private key associated with the server certificate.
         server_private_key: PrivateKeyDer<'static>,
+
         /// PEM-encoded client identity.
         client_identity_pem: String,
     }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Collect published recipe links from the local book index.
 //!
 //! The book's index maps each recipe to a page. Collecting the published ones
@@ -13,6 +14,7 @@ use crate::fixtures::create_fixture;
 /// Prints the crate-to-recipe links found in the fixture book.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn example_body() -> Result<()> {
     let fixture = create_fixture()?;
@@ -26,6 +28,7 @@ pub fn example_body() -> Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<()> {
     example_body()

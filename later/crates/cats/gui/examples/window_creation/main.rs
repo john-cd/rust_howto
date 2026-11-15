@@ -9,18 +9,21 @@ use clap::Subcommand;
 /// The view layer calls these routines when it draws or refreshes the component.
 #[cfg(feature = "baseview")]
 mod baseview;
+
 /// Contains the software pixels functionality used by this parent module.
 #[cfg(feature = "softbuffer")]
 mod software_pixels;
 // Tao's dependency is disabled because its current GTK 3 / glib 0.18 chain is
 // incompatible with the workspace. Keep tao.rs and the book example for a
 // compatible dependency update.
+
 /// Contains the winit functionality used by this parent module.
 mod winit;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -29,13 +32,16 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Draws a software pixel buffer in a Winit window.
     #[cfg(feature = "softbuffer")]
     SoftwarePixels,
+
     /// Runs the `baseview` example.
     #[cfg(feature = "baseview")]
     #[command(name = "baseview")]
     Baseview,
+
     /// Runs the `winit` example.
     #[command(name = "winit")]
     Winit,

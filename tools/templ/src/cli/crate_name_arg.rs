@@ -13,6 +13,7 @@ pub(super) fn arg_crate_name() -> clap::Arg {
         .action(clap::ArgAction::Append)
         .help("Enter the crate name(s). Multiple crate names can be specified.")
 }
+
 /// Extracts the crate names from the command line arguments.
 ///
 /// # Arguments

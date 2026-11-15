@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Extract regular files from a gzipped tar archive after removing a shared
 //! path prefix. The archive's file entries are written beneath the destination
 //! directory, and paths containing parent components are rejected.
@@ -87,9 +88,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Extracts the example archive into a local output directory.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

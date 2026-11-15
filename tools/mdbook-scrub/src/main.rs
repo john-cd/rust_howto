@@ -33,6 +33,7 @@ fn make_app() -> Command {
                 .about("Check whether a renderer is supported by this preprocessor"),
         )
 }
+
 /// Selects the stage from the command line and runs it.
 fn main() {
     let matches = make_app().get_matches();
@@ -53,6 +54,7 @@ fn main() {
         process::exit(1);
     }
 }
+
 /// Initializes structured logging, falling back to stderr when the log file is unavailable.
 fn initialize_logging() {
     let log_file = std::fs::OpenOptions::new()
@@ -94,6 +96,7 @@ fn initialize_stderr_logging() {
         report_logging_failure(format_args!("could not initialize stderr logging: {error}"));
     }
 }
+
 /// Writes a best-effort logging diagnostic without panicking if stderr is unavailable.
 fn report_logging_failure(message: std::fmt::Arguments<'_>) {
     let _ = writeln!(io::stderr().lock(), "mdbook-scrub: {message}");
@@ -103,6 +106,7 @@ fn report_logging_failure(message: std::fmt::Arguments<'_>) {
 /// preprocessor, and writes the processed book as JSON to standard output.
 ///
 /// # Errors
+///
 /// Returns an error if input JSON or version strings are invalid, the
 /// preprocessor fails, or the result cannot be serialized or written.
 fn handle_preprocessing(pre: &dyn Preprocessor) -> mdbook_preprocessor::errors::Result<()> {
@@ -134,6 +138,7 @@ fn handle_preprocessing(pre: &dyn Preprocessor) -> mdbook_preprocessor::errors::
 // the string supports and the second argument is the renderer name.
 // The preprocessor should exit with a status code 0 if it supports the given
 // renderer, or return a non-zero exit code if it does not.
+
 /// Exits with a status that tells mdBook whether the renderer is supported.
 fn handle_supports(pre: &dyn Preprocessor, sub_args: &ArgMatches) -> ! {
     let renderer = sub_args

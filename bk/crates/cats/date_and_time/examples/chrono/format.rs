@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Formatting the current time with `chrono`.
 //!
 //! Formatting turns a date and time into text using format specifiers such as
@@ -26,8 +27,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the current time in several formats.
 pub fn run() {
     main();
 }

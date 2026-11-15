@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! String slice examples.
 
 /// Creates string slices from a string literal and a `String`.
@@ -26,8 +27,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates string slices from a string literal and a `String`.
 pub fn run() {
     main();
 }

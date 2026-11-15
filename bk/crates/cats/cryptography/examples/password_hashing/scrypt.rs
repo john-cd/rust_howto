@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Hashing and verifying a password with `scrypt`.
 //!
 //! Servers must never store passwords directly; they store a salted,
@@ -54,9 +55,10 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the scrypt example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()

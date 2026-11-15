@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Creates complex numbers with integer and floating-point components.
 //!
 //! A complex number has a real part and an imaginary part, written a + bi,
@@ -20,8 +21,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates complex numbers with integer and floating-point components.
 pub fn run() {
     main();
 }

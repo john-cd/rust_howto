@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates the use of a global mutable state protected by a `Mutex`.
 //!
 //! `LazyLock` initializes a global `Mutex` containing a `Vec<String>` once.
@@ -43,9 +44,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Adds fruits to the global database from the main thread and prints its content.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

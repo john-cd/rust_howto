@@ -7,18 +7,23 @@ use clap::Subcommand;
 
 /// UTF-8 paths with `camino`.
 mod camino;
+
 /// Canonicalizing paths.
 mod canonicalize;
+
 /// Canonicalize a path without the Windows `\\?\` prefix.
 mod dunce;
+
 /// Building and inspecting paths with `Path` and `PathBuf`.
 mod manipulate_paths;
+
 /// Compute a relative path between two paths.
 mod pathdiff;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,18 +32,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `camino` example.
     #[command(name = "camino")]
     Camino,
+
     /// Runs the `canonicalize` example.
     #[command(name = "canonicalize")]
     Canonicalize,
+
     /// Runs the `dunce` example.
     #[command(name = "dunce")]
     Dunce,
+
     /// Runs the `manipulate_paths` example.
     #[command(name = "manipulate_paths")]
     ManipulatePaths,
+
     /// Runs the `pathdiff` example.
     #[command(name = "pathdiff")]
     Pathdiff,

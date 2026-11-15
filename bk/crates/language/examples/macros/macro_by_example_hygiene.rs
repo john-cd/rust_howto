@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Macro hygiene: variables in a macro do not clash with variables outside it.
 //!
 //! Hygiene means that variables created inside a macro do not clash with
@@ -15,6 +16,7 @@ macro_rules! foo {
 }
 
 // To use a local variable at the macro invocation site, pass it to the macro:
+
 /// Declares a variable with the name passed as an argument, so it is visible
 /// where the macro is called.
 macro_rules! bar {
@@ -25,6 +27,7 @@ macro_rules! bar {
 
 // Other symbols are available at the invocation site.
 // You may define a function, `impl` block, etc... in a macro.
+
 /// Defines a function `f`, which is visible where the macro is called.
 macro_rules! baz {
     () => {
@@ -46,8 +49,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the macros and shows which variables are visible.
 pub fn run() {
     main();
 }

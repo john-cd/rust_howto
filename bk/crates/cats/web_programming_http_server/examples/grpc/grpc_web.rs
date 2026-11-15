@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Serve a tonic service to browsers with gRPC-Web.
 //!
 //! Browsers cannot speak gRPC over HTTP/2 directly. `GrpcWebLayer` translates
@@ -31,8 +32,11 @@ pub fn cors() -> CorsLayer {
             http::HeaderName::from_static("grpc-message"),
         ])
 }
+
 /// Serves the `Greeter` service over gRPC and gRPC-Web on a bound listener.
+///
 /// # Errors
+///
 /// Returns an error if the server cannot serve the listener.
 #[cfg_attr(
     not(test),

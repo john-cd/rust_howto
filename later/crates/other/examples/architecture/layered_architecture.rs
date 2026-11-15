@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates a layered architecture in Rust,
 //! separating concerns into data access, business logic, and presentation
 //! layers.
@@ -8,18 +9,22 @@
 use std::sync::Arc;
 
 use anyhow::Result;
+
 /// Account record used by the layered architecture example.
 ///
 /// Represents a user in the system.
 #[derive(Debug, Clone)]
 pub struct User {
+
     /// The identifier of the user.
     pub id: u32,
+
     /// The name of the user.
     pub name: String,
 }
 
 // --- Persistence / Data Access Layer ---
+
 /// The data access layer.
 mod data {
     use std::collections::HashMap;
@@ -33,8 +38,10 @@ mod data {
     /// Specifies the operations implementations provide to architecture callers.
     #[async_trait]
     pub trait UserRepository {
+
         /// Returns the user with the given identifier, if any.
         async fn get_user(&self, id: u32) -> Result<Option<User>>;
+
         /// Stores a new user.
         async fn create_user(&self, user: User) -> Result<()>;
     }
@@ -42,11 +49,13 @@ mod data {
     /// An in-memory implementation of `UserRepository` for testing and
     /// demonstration purposes.
     pub struct InMemoryUserRepository {
+
         /// The users, by identifier.
         users: Mutex<HashMap<u32, User>>,
     }
 
     impl InMemoryUserRepository {
+
         /// Creates an empty repository.
         pub fn new() -> Self {
             Self {
@@ -57,9 +66,12 @@ mod data {
 
     #[async_trait]
     impl UserRepository for InMemoryUserRepository {
-        /// # Arguments
-        /// * `id` - Identifier used to select the in memory user repository record or cache entry
-        ///   affected by this operation.
+
+/// Returns the user with the requested ID from the repository.
+///
+/// # Arguments
+///
+/// * `id` - ID of the user to retrieve.
         async fn get_user(&self, id: u32) -> Result<Option<User>> {
             let users = self.users.lock().await;
             Ok(users.get(&id).cloned())
@@ -75,6 +87,7 @@ mod data {
 }
 
 // --- Service Layer ---
+
 /// The business layer.
 mod business {
     use std::sync::Arc;
@@ -86,8 +99,10 @@ mod business {
 
     /// Specifies the operations implementations provide to architecture callers.
     pub trait UserService {
+
         /// Returns the user with the given identifier, if any.
         async fn get_user(&self, id: u32) -> Result<Option<User>>;
+
         /// Creates a user.
         async fn create_user(&self, user: User) -> Result<()>;
     }
@@ -95,11 +110,13 @@ mod business {
     /// A simple implementation of `UserService` that delegates to a
     /// `UserRepository`.
     pub struct SimpleUserService<R: UserRepository + Send + Sync> {
+
         /// The repository that stores the users.
         repo: Arc<R>,
     }
 
     impl<R: UserRepository + Send + Sync> SimpleUserService<R> {
+
         /// Creates a service that uses `repo`.
         pub fn new(repo: Arc<R>) -> Self {
             Self { repo }
@@ -107,9 +124,12 @@ mod business {
     }
 
     impl<R: UserRepository + Send + Sync> UserService for SimpleUserService<R> {
-        /// # Arguments
-        /// * `id` - Identifier used to select the simple user service record or cache entry
-        ///   affected by this operation.
+
+/// Looks up a user by ID through the service's repository layer.
+///
+/// # Arguments
+///
+/// * `id` - ID of the user to retrieve.
         async fn get_user(&self, id: u32) -> Result<Option<User>> {
             // Business logic goes here.
             self.repo.get_user(id).await
@@ -124,6 +144,7 @@ mod business {
 }
 
 // --- Presentation Layer (simplistic CLI in this case) ---
+
 /// The presentation layer.
 mod presentation {
     use anyhow::Result;
@@ -167,9 +188,10 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// The main entry point of the application.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

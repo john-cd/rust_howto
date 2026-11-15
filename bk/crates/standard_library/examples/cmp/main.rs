@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// Implementing equality with `PartialEq` and `Eq`.
 mod eq;
+
 /// Implementing ordering with `PartialOrd` and `Ord`.
 mod ord;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `eq` example.
     #[command(name = "eq")]
     Eq,
+
     /// Runs the `ord` example.
     #[command(name = "ord")]
     Ord,
@@ -42,7 +46,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

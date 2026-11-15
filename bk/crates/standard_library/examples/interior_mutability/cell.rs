@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `Cell<T>` provides a way to mutate data, even when the `Cell` itself is
 //! accessed through an immutable reference. It is most often used for types
 //! that implement the `Copy` trait, allowing for simple value replacement
@@ -10,11 +11,13 @@ use std::cell::Cell;
 
 /// A struct with a field that can be modified through a shared reference.
 struct MyStruct<T> {
+
     /// The value, which can be replaced with a shared reference.
     value: Cell<T>,
 }
 
 impl<T> MyStruct<T> {
+
     /// Creates a struct that holds `value`.
     fn new(value: T) -> Self {
         Self {
@@ -23,6 +26,7 @@ impl<T> MyStruct<T> {
     }
 
     // Replace the interior value, dropping the replaced value.
+
     /// Replaces the value.
     fn set_value(&self, new_value: T) {
         self.value.set(new_value);
@@ -30,6 +34,7 @@ impl<T> MyStruct<T> {
 }
 
 impl<T: Copy> MyStruct<T> {
+
     /// Returns a copy of the value.
     fn get_value(&self) -> T {
         // For types that implement `Copy`, the `get` method
@@ -41,12 +46,13 @@ impl<T: Copy> MyStruct<T> {
 // For types that implement `Default`, the take method replaces the current
 // interior value with `Default::default()` and returns the replaced value.
 impl<T: Default> MyStruct<T> {
+
     /// Takes the value, leaving the default value in its place.
     fn take_value(&self) -> T {
         self.value.take()
     }
 }
-/// Runs the example.
+
 /// Reads and modifies a `Cell` through a shared reference.
 fn main() {
     let my_int_struct = MyStruct::new(42);
@@ -80,8 +86,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Reads and modifies a `Cell` through a shared reference.
 pub fn run() {
     main();
 }
@@ -89,11 +94,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `cell` example runs.
     #[test]
     fn test_cell_example_entry_point() {
         main();
     }
+
     /// Verifies set through a shared reference.
     #[test]
     fn test_set_through_a_shared_reference() {
@@ -103,6 +110,7 @@ mod tests {
         r.set_value(100);
         assert_eq!(s.get_value(), 100);
     }
+
     /// Verifies take leaves the default value.
     #[test]
     fn test_take_leaves_the_default_value() {
@@ -110,6 +118,7 @@ mod tests {
         assert_eq!(s.take_value(), "example");
         assert_eq!(s.take_value(), "");
     }
+
     /// Verifies replace and into inner.
     #[test]
     fn test_replace_and_into_inner() {

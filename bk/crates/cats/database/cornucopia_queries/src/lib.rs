@@ -14,24 +14,30 @@
 
 /// This module provides the `array_iterator` implementation used by its parent.
 mod array_iterator;
+
 /// This module provides the `client` implementation used by its parent.
 pub mod client;
+
 /// This module provides the `domain` implementation used by its parent.
 mod domain;
 #[allow(clippy::all, clippy::pedantic)]
 #[allow(unused_variables)]
 #[allow(unused_imports)]
+
 /// This module provides the `queries` implementation used by its parent.
 #[allow(dead_code)]
 pub mod queries;
+
 /// This module provides the `type_traits` implementation used by its parent.
 mod type_traits;
 #[allow(clippy::all, clippy::pedantic)]
 #[allow(unused_variables)]
 #[allow(unused_imports)]
+
 /// This module provides the `types` implementation used by its parent.
 #[allow(dead_code)]
 pub mod types;
+
 /// This module provides the `utils` implementation used by its parent.
 mod utils;
 pub use array_iterator::ArrayIterator;

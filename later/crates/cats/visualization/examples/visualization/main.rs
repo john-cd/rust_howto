@@ -4,8 +4,10 @@
 
 /// Demonstrates a Leptos component that renders a chart with
 mod leptos_chartistry;
+
 /// This example demonstrates how to create a simple scatter plot using the
 mod plotly;
+
 /// Demonstrates rendering a 2D line plot into an SVG string using `plotters`.
 mod plotters;
 

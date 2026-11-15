@@ -7,14 +7,19 @@ use clap::Subcommand;
 
 /// This module demonstrates how to reduce a hierarchical URL to its origin.
 mod base;
+
 /// This example demonstrates how to parse a URL and extract a portion of it.
 mod fragment;
+
 /// Demonstrates how to build a URL by joining a base URL with a path.
 mod new;
+
 /// Demonstrates parsing a URL and extracting its origin components.
 mod origin;
+
 /// This example demonstrates how to parse a URL and extract its origin.
 mod origin1;
+
 /// Turns url input into structured syntax data while preserving source locations and reporting
 /// malformed input. Analysis and validation code use these routines before applying domain-specific
 /// rules.
@@ -23,6 +28,7 @@ mod parse;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -31,21 +37,27 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `base` example.
     #[command(name = "base")]
     Base,
+
     /// Runs the `fragment` example.
     #[command(name = "fragment")]
     Fragment,
+
     /// Runs the `new` example.
     #[command(name = "new")]
     New,
+
     /// Runs the `origin` example.
     #[command(name = "origin")]
     Origin,
+
     /// Runs the `origin1` example.
     #[command(name = "origin1")]
     Origin1,
+
     /// Runs the `parse` example.
     #[command(name = "parse")]
     Parse,

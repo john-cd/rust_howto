@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates standard Rust format syntax and locale-aware integer grouping.
 //!
 //! Different countries write numbers differently: 1,234.5 in the US but 1.234,5
@@ -32,7 +33,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Prints standard and locale-aware number formats.
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

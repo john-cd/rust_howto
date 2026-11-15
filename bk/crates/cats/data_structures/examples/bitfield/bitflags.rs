@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `bitflags` generate types for C-style flags with ergonomic APIs.
 //!
 //! Bit flags pack several yes/no options into one integer, one bit each, and
@@ -15,24 +16,30 @@ use bitflags::bitflags;
 // Define a flag type using the `bitflags` macro.
 bitflags! {
     // Attributes can be applied to flags types:
+
     /// Flags that can be combined with bitwise operations.
     #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
     // You can derive additional traits on generated flags types if you enable the corresponding features:
     // #[derive(Serialize, Deserialize)]
+
 /// Flags that can be combined with bitwise operations.
 /// Bit flags representing the options enabled in this bitflags example.
     pub struct MyFlags: u32 {
         // A flag is a set of bits that may have a unique name.
+
 /// First independent flag bit.
         /// First independent flag bit.
         const FLAG_A       = 0b0000_0001;
+
 /// Second independent flag bit.
         /// Second independent flag bit.
         const FLAG_B       = 0b0000_0010; // Or 1 << 1;
+
 /// Third independent flag bit.
         /// Third independent flag bit.
         const FLAG_C       = 0b0000_0100;
         // Flags that set multiple bits are possible:
+
 /// Combination of the three independent flag bits.
         /// Combination of the three independent flag bits.
         const FLAG_ABC     = Self::FLAG_A.bits()
@@ -57,9 +64,12 @@ impl MyFlags {
 // Implement the `Display` trait for `MyFlags` to customize its string
 // representation:
 impl fmt::Display for MyFlags {
+
     /// Formats the value for display.
+///
     /// # Arguments
-    /// * `f` - Mutable formatter whose state is updated by this operation.
+///
+    /// * `f` - Formatter used to write the formatted representation.
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "{:032b}", self.bits())
     }
@@ -100,8 +110,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Combines, intersects and formats flags with bitwise operations.
 pub fn run() {
     main();
 }

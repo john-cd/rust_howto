@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates common string types in Rust.
 //!
 //! Rust has two main string types: `String`, an owned, growable UTF-8 buffer,
@@ -9,6 +10,7 @@
 //! explicitly.
 
 // `String` stores UTF-8 bytes and can represent Unicode text; ASCII is a subset
+
 /// Creates and mutates a `String`.
 // of UTF-8.
 fn string() {
@@ -35,6 +37,7 @@ fn string() {
 }
 
 // The `str` type, also called a 'string slice', is the most primitive string
+
 /// Creates string slices from a `String`.
 // type. It is usually seen in its borrowed form, `&str`.
 #[expect(
@@ -61,6 +64,7 @@ fn string_slices() {
     // String slices must always be valid UTF-8!
 
     // Convert a `String` to `&str` explicitly using `as_str()`.
+
     /// Prints the contents of the supplied slice.
     fn print_slice(s: &str) {
         println!("Printing a slice: '{s}'");
@@ -114,7 +118,7 @@ fn common_operations() {
         println!("{b}");
     }
 }
-/// Runs the example.
+
 /// Runs all the string examples.
 fn main() {
     string();
@@ -124,8 +128,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs all the string examples.
 pub fn run() {
     main();
 }

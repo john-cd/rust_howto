@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example showcasing `tinytemplate`.
 //!
 //! `TinyTemplate` is a minimal templating library.
@@ -16,7 +17,7 @@
 use std::collections::HashMap;
 
 use tinytemplate::TinyTemplate;
-/// Runs the example.
+
 /// Renders a template with values from a context and prints the result.
 fn main() {
     // Create a new template engine:
@@ -73,15 +74,21 @@ mod tests {
 
     #[derive(serde::Serialize)]
     struct Context {
+
         /// Display label used to distinguish this context from other entries.
         name: &'static str,
+
         /// Location label shown to the user.
         place: &'static str,
+
         /// Flag indicating whether the context satisfies the flag condition.
         flag: bool,
     }
 
+    /// Renders the greeting template using the supplied flag value.
+///
     /// # Panics
+///
     /// Panics if valid template.
     fn render(flag: bool) -> String {
         let mut tt = TinyTemplate::new();

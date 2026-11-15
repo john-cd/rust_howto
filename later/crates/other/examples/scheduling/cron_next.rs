@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Compute the next fire times of a cron expression with the `cron` crate.
 //!
 //! `cron` uses 6 or 7 fields: `sec min hour day-of-month month day-of-week
@@ -58,9 +59,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Lists the next three runs of "09:30 on weekdays" after a fixed instant.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

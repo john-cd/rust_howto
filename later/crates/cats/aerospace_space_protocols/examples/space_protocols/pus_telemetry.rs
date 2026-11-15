@@ -9,6 +9,7 @@ use spacepackets::ecss::tm::MessageTypeId;
 use spacepackets::ecss::tm::PusTmCreator;
 use spacepackets::ecss::tm::PusTmReader;
 use spacepackets::ecss::tm::PusTmSecondaryHeader;
+
 /// Serializes a service 17 telemetry response and checks the decoded fields.
 ///
 /// Telemetry is data flowing from the spacecraft to the ground. This packet is
@@ -38,6 +39,7 @@ pub fn pus_telemetry() {
 
 #[cfg(test)]
 mod tests {
+
     /// Encodes and decodes telemetry packets without changing their contents.
     #[test]
     fn telemetry_round_trips() {

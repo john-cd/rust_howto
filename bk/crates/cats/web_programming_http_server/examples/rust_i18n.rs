@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Localizes an API error using the request's `Accept-Language` header.
 //! Internationalization (i18n) adapts software to different languages. The
 //! `Accept-Language` header tells the server which languages the user prefers,

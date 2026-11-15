@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// Deriving common traits for a struct.
 mod derive;
+
 /// The `derive_more` crate extends Rust's built-in derive functionality to
 mod derive_more;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `derive` example.
     #[command(name = "derive")]
     Derive,
+
     /// Runs the `derive_more` example.
     #[command(name = "derive_more")]
     DeriveMore,
@@ -42,7 +46,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

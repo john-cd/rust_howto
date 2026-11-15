@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A small executable used by the command-line integration tests.
 //!
 //! A command-line program can be tested end to end by running the real binary
@@ -15,20 +16,25 @@ use clap::Parser;
 #[derive(Debug, Parser)]
 #[command(name = "cli-demo")]
 struct Args {
+
     /// Name to greet.
     #[arg(long, default_value = "world")]
     name: String,
+
     /// Return an error to demonstrate a failing command.
     #[arg(long)]
     fail: bool,
 }
+
 /// Parses CLI arguments and prints a greeting.
 ///
 /// # Errors
+///
 /// Returns an error when parsing fails or when the greeting action fails.
 fn main() -> anyhow::Result<()> {
     run_with_args(std::env::args_os())
 }
+
 /// Parses `args` and prints the resulting greeting.
 ///
 /// Help, version, and usage errors are reported by clap, which exits with the
@@ -66,6 +72,7 @@ fn greet(args: Args) -> anyhow::Result<String> {
 /// which belong to the test harness under `cargo test`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     run_with_args(["cli-demo"])

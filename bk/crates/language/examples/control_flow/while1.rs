@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This is an example of a `while` loop.
 
 /// This is an example of a `while` loop.
@@ -17,8 +18,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This is an example of a `while` loop.
 pub fn run() {
     main();
 }

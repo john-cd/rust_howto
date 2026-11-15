@@ -10,9 +10,11 @@ use clap::Subcommand;
 /// This example demonstrates how to initialize a SQLite database with tables.
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
 mod initialization;
+
 /// This function demonstrates inserting data into a SQLite database and then
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
 mod insert_select;
+
 /// This example demonstrates successful and rolled-back SQLite transactions.
 #[cfg(all(feature = "sqlite", any(target_os = "linux", test)))]
 mod transactions;
@@ -21,6 +23,7 @@ mod transactions;
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -30,14 +33,17 @@ struct Cli {
 #[cfg(all(target_os = "linux", feature = "sqlite"))]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `initialization` example.
     #[cfg(all(target_os = "linux", feature = "sqlite"))]
     #[command(name = "initialization")]
     Initialization,
+
     /// Runs the `insert_select` example.
     #[cfg(all(target_os = "linux", feature = "sqlite"))]
     #[command(name = "insert_select")]
     InsertSelect,
+
     /// Runs the `transactions` example.
     #[cfg(all(target_os = "linux", feature = "sqlite"))]
     #[command(name = "transactions")]

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Fill a byte array with randomness from the operating system.
 //!
 //! Cryptographic keys, nonces and tokens must be unpredictable. `getrandom`
@@ -18,9 +19,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Generates and displays a sample nonce using the OS random source.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

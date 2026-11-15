@@ -7,18 +7,23 @@ use clap::Subcommand;
 
 /// Log telemetry fields for an `OpenObserve` integration.
 mod open_observe;
+
 /// Create a manual OpenTelemetry span and pair it with regular tracing output.
 mod open_telemetry;
+
 /// This example demonstrates basic usage of the `slog` logging crate.
 mod slog;
+
 /// Propagate a W3C trace context from an HTTP client to a handler, so both
 mod trace_context;
+
 /// Printing the type of a value with `type_name_of_val`.
 mod type_name_of_val;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,18 +32,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `open_observe` example.
     #[command(name = "open_observe")]
     OpenObserve,
+
     /// Runs the `open_telemetry` example.
     #[command(name = "open_telemetry")]
     OpenTelemetry,
+
     /// Runs the `slog` example.
     #[command(name = "slog")]
     Slog,
+
     /// Runs the `trace_context` example.
     #[command(name = "trace_context")]
     TraceContext,
+
     /// Runs the `type_name_of_val` example.
     #[command(name = "type_name_of_val")]
     TypeNameOfVal,

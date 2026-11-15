@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Obtains an OAuth 2.0 client-credentials token and calls a local mock API.
 //!
 //! The service requests a scoped token, then uses it to access a protected
@@ -26,6 +27,7 @@ use oauth2::basic::BasicClient;
 /// Requests a scoped access token and uses it to call a protected resource.
 ///
 /// # Errors
+///
 /// Returns an error if either server rejects the request or responds
 /// unsuccessfully.
 fn request_protected_resource(
@@ -61,9 +63,11 @@ fn request_protected_resource(
 
     Ok((response.text()?, expires_in))
 }
+
 /// Runs the client against local authorization and resource server mocks.
 ///
 /// # Errors
+///
 /// Returns an error if the token or resource request fails.
 fn main() -> anyhow::Result<()> {
     let auth_server = MockServer::start();
@@ -106,6 +110,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the client-credentials example with its local mock servers.
 ///
 /// # Errors
+///
 /// Returns an error if the mocked token or resource request fails.
 pub fn run() -> anyhow::Result<()> {
     main()

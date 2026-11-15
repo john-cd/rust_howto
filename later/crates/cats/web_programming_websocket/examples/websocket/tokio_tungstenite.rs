@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A Tokio WebSocket client and one-connection echo server.
 //!
 //! A WebSocket is a long-lived, two-way connection that starts as an HTTP
@@ -71,6 +72,7 @@ async fn main() -> anyhow::Result<()> {
 /// Runs the WebSocket echo example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

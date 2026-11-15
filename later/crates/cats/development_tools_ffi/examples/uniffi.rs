@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Exporting a Rust API to other languages with `uniffi`.
 //!
 //! In a real project, this code lives in the `lib.rs` of a crate with
@@ -15,11 +16,13 @@ uniffi::setup_scaffolding!();
 #[uniffi(flat_error)]
 #[non_exhaustive]
 pub enum ArithmeticError {
+
     /// The result does not fit in a `u64`.
     IntegerOverflow,
 }
 
 impl std::fmt::Display for ArithmeticError {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -31,9 +34,11 @@ impl std::fmt::Display for ArithmeticError {
 /// Returns a greeting for `name`.
 ///
 /// # Arguments
+///
 /// * `name` - Name included in the greeting.
 ///
 /// # Returns
+///
 /// A greeting containing `name`.
 #[uniffi::export]
 pub fn greet(name: String) -> String {
@@ -43,27 +48,33 @@ pub fn greet(name: String) -> String {
 /// Adds two numbers, failing instead of wrapping on overflow.
 ///
 /// # Arguments
+///
 /// * `a` - First addend.
 /// * `b` - Second addend.
 ///
 /// # Returns
+///
 /// The sum when it fits in a `u64`.
 ///
 /// # Errors
+///
 /// Returns [`ArithmeticError::IntegerOverflow`] if the sum exceeds `u64::MAX`.
 #[uniffi::export]
 pub fn add(a: u64, b: u64) -> Result<u64, ArithmeticError> {
     a.checked_add(b).ok_or(ArithmeticError::IntegerOverflow)
 }
+
 /// Prints a greeting and the sum of two numbers.
 fn uniffi_example() -> Result<(), ArithmeticError> {
     println!("{}", greet("UniFFI".to_owned()));
     println!("{}", add(2, 3)?);
     Ok(())
 }
+
 /// Starts the UniFFI example as a binary.
 ///
 /// # Errors
+///
 /// Returns an error if the checked addition overflows.
 fn main() -> Result<(), ArithmeticError> {
     uniffi_example()
@@ -73,6 +84,7 @@ fn main() -> Result<(), ArithmeticError> {
 /// Runs the example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> Result<(), ArithmeticError> {
     uniffi_example()

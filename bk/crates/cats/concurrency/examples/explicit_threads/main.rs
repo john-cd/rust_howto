@@ -7,14 +7,17 @@ use clap::Subcommand;
 
 /// Scoped threads borrow a local string and return values through their
 mod multithreading_scoped_threads;
+
 /// Spawn threads and collect their results through `JoinHandle::join`.
 mod multithreading_spawn_join;
+
 /// A named thread created with `std::thread::Builder`.
 mod thread_builder;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,12 +26,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the scoped-thread example.
     #[command(name = "scoped_threads")]
     ScopedThreads,
+
     /// Runs the spawn-and-join example.
     #[command(name = "spawn_join")]
     SpawnJoin,
+
     /// Runs the thread-builder example.
     #[command(name = "thread_builder")]
     ThreadBuilder,

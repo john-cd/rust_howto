@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Alternatives to `Cow`.
 //!
 //! `Cow` (clone on write) holds either a borrowed or an owned value and clones
@@ -61,7 +62,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Shows alternatives to `Cow`: shared immutable strings and strings behind a lock.
 pub fn run() {
     main();
 }
@@ -70,11 +71,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `cow alternatives` example runs.
     #[test]
     fn test_cow_alternatives_example_entry_point() {
         main();
     }
+
     /// Verifies arc str is shared not copied.
     #[test]
     fn test_arc_str_is_shared_not_copied() {
@@ -105,6 +108,7 @@ mod tests {
         assert_eq!(*shared.read().map_err(|e| e.to_string())?, "String!!");
         Ok(())
     }
+
     /// Verifies rc str and box str.
     #[test]
     fn test_rc_str_and_box_str() {

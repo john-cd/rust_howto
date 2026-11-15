@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Reads an orientation tag from a generated TIFF/EXIF record.
 //!
 //! EXIF is metadata stored inside photos: camera model, time, GPS position and
@@ -36,6 +37,7 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 /// Reads an orientation tag from a generated TIFF/EXIF record.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     main()
@@ -44,6 +46,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 /// Reads a known orientation value from a small generated EXIF record.
 #[cfg(test)]
 mod tests {
+
     /// Reads a known orientation value from a small generated EXIF record.
     #[test]
     fn reads_generated_orientation() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {

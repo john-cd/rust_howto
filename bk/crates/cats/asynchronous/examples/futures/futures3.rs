@@ -2,6 +2,9 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
+//! Demonstrates transforming, chaining, choosing, and flattening futures.
+//!
 //! # Futures
 //!
 //! This example demonstrates various operations on futures using the `futures`
@@ -54,12 +57,12 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Combines futures with `map`, `then`, `Either` and `flatten`, and prints the results.
 ///
-/// Runs the example.
 /// # Futures
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

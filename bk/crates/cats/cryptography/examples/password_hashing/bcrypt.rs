@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `bcrypt` crate to hash and verify
 //! passwords.
 //!
@@ -39,9 +40,10 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Hashes a password with `bcrypt`, then verifies it.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generating thumbnails of images in parallel with `rayon` and `image`.
 //!
 //! Creating thumbnails is CPU-bound and every image is independent, which makes
@@ -73,9 +74,10 @@ fn make_thumbnail(original: &Path, output_dir: &Path, longest_edge: u32) -> Resu
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Creates thumbnails for the JPEG files in `input_dir` in parallel.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `windows` crate to call the
 //! `MessageBoxW` function from the Windows API.
 //! It displays a simple message box with the text "Hello, windows!" and
@@ -22,8 +23,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Displays a message box saying "Hello, windows!".
 pub fn run() {
     main();
 }

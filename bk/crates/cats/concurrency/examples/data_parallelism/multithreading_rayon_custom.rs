@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Running `rayon` work on a custom thread pool.
 //!
 //! Rayon runs parallel iterators on a global thread pool, which defaults to one
@@ -33,7 +34,7 @@ fn fib(n: usize) -> usize {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Computes a Fibonacci number on a pool of eight threads.
 pub fn run() {
     main();
 }

@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -36,16 +37,16 @@ use crate::multicast::link::TransportLinkMulticast;
 use crate::multicast::link::TransportLinkMulticastConfig;
 use crate::multicast::transport::TransportMulticastInner;
 
-/// Loads the link required by the establishment workflow and reports failures from the underlying
-/// source.
+/// Opens a multicast link and registers it with a multicast transport.
 ///
 /// # Arguments
-/// * `link` - Transport link to add, remove, or use.
 ///
+/// * `manager` - Transport manager that owns the resulting multicast transport.
+/// * `link` - Multicast link to open and associate with the transport.
 ///
 /// # Errors
-/// Returns an error if the requested resource or connection cannot be created.
-
+///
+/// Returns an error if the link cannot be configured or the transport cannot be created.
 pub(crate) async fn open_link(
     manager: &TransportManager,
     link: LinkMulticast,

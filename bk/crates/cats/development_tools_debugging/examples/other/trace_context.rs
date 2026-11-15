@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Propagate a W3C trace context from an HTTP client to a handler, so both
 //! sides report spans of the same trace.
 //!
@@ -154,9 +155,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints a message when the `opentelemetry` feature is not enabled.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -186,6 +188,7 @@ mod tests {
     /// finished spans.
     ///
     /// # Panics
+///
     /// Panics if flushing the tracer fails.
     fn collect_spans(body: impl FnOnce()) -> Vec<SpanData> {
         let (provider, exporter) = in_memory_tracing();

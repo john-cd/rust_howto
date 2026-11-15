@@ -11,6 +11,7 @@ use clap::Subcommand;
 /// database.
 #[cfg(feature = "lmdb")]
 mod heed;
+
 /// Example using Facebook's `RocksDB` embeddable database.
 #[cfg(feature = "rocksdb")]
 mod rocksdb;
@@ -19,6 +20,7 @@ mod rocksdb;
 #[cfg(any(feature = "lmdb", feature = "rocksdb"))]
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -28,10 +30,12 @@ struct Cli {
 #[cfg(any(feature = "lmdb", feature = "rocksdb"))]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `heed` example.
     #[cfg(feature = "lmdb")]
     #[command(name = "heed")]
     Heed,
+
     /// Runs the `rocksdb` example.
     #[cfg(feature = "rocksdb")]
     #[command(name = "rocksdb")]
@@ -71,6 +75,7 @@ mod tests {
     fn test_heed_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "heed"]).is_ok());
     }
+
     /// Verifies rocksdb subcommand parses.
     #[cfg(feature = "rocksdb")]
     #[test]

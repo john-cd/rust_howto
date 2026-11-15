@@ -20,6 +20,7 @@ use walkdir::WalkDir;
 #[derive(Parser, Debug)]
 #[clap(version)]
 struct Args {
+
     /// Root of the directory tree to search for `temp` folders.
     #[clap(help = "Path to the directory to clean.")]
     directory: PathBuf,
@@ -104,9 +105,11 @@ fn find_temp_dirs(
 /// Reports whether an entry's UTF-8 file name starts with a dot.
 ///
 /// # Arguments
+///
 /// * `entry` - Directory entry whose file name is checked.
 ///
 /// # Returns
+///
 /// `true` if the name starts with `.`; non-UTF-8 names return `false`.
 fn is_hidden(entry: &DirEntry) -> bool {
     entry
@@ -114,12 +117,14 @@ fn is_hidden(entry: &DirEntry) -> bool {
         .to_str()
         .is_some_and(|s| s.starts_with('.'))
 }
+
 /// Removes each non-hidden direct child of `dir`.
 ///
 /// Hidden entries are retained. Directories are removed recursively, while file
 /// and symbolic-link entries are removed without following links.
 ///
 /// # Arguments
+///
 /// * `dir` - Folder whose direct children are cleaned.
 ///
 /// # Errors
@@ -199,6 +204,7 @@ mod tests {
     }
 
     // Helper function to create a dummy directory structure for testing
+
     /// Creates the dummy dir.
     fn create_dummy_dir(root: &Path) {
         fs::create_dir_all(root.join("temp")).expect("input should parse");

@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -73,8 +74,10 @@ use crate::unicast::link::TransportLinkUnicastDirection;
 pub(super) type AcceptError = (zenoh_result::Error, Option<u8>);
 
 struct StateTransport {
+
     /// Maximum number of messages sent in a batch.
     batch_size: BatchSize,
+
     /// Sequence-number resolution.
     resolution: Resolution,
     ext_qos: ext::qos::StateAccept,
@@ -96,87 +99,113 @@ struct StateLink {
 }
 
 struct State {
+
     /// Transport value.
     transport: StateTransport,
     #[cfg(any(feature = "transport_auth", feature = "transport_compression"))]
+
     /// Transport link associated with this state.
     link: StateLink,
 }
 
 // InitSyn
 struct RecvInitSynIn {
+
     /// Protocol version advertised by the local peer.
     mine_version: u8,
 }
 struct RecvInitSynOut {
+
     /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
+
     /// Role advertised by the remote peer.
     other_whatami: WhatAmI,
 }
 
 // InitAck
 struct SendInitAckIn {
+
     /// Protocol version advertised by the local peer.
     mine_version: u8,
+
     /// Local Zenoh identifier.
     mine_zid: ZenohIdProto,
+
     /// Role advertised by the local peer.
     mine_whatami: WhatAmI,
+
     /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
+
     /// Role advertised by the remote peer.
     other_whatami: WhatAmI,
 }
 struct SendInitAckOut {
+
     /// Nonce included in the cookie.
     cookie_nonce: u64,
 }
 
 // OpenSyn
 struct RecvOpenSynIn {
+
     /// Nonce included in the cookie.
     cookie_nonce: u64,
 }
 struct RecvOpenSynOut {
+
     /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
+
     /// Role advertised by the remote peer.
     other_whatami: WhatAmI,
+
     /// Optional other bound used by recv open syn out; `None` means the value is not configured or
     /// unavailable.
     other_bound: Option<Bound>,
+
     /// Lease duration advertised by the remote peer.
     other_lease: Duration,
+
     /// Initial sequence number advertised by the remote peer.
     other_initial_sn: TransportSn,
     #[cfg(feature = "auth_usrpwd")]
+
     /// Identifier for other auth.
     other_auth_id: UsrPwdId,
 }
 
 // OpenAck
 struct SendOpenAckIn {
+
     /// Local Zenoh identifier.
     mine_zid: ZenohIdProto,
+
     /// Lease duration advertised by the local peer.
     mine_lease: Duration,
+
     /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
+
     /// Role advertised by the remote peer.
     other_whatami: WhatAmI,
 }
 struct SendOpenAckOut {
+
     /// Open ack value.
     open_ack: OpenAck,
 }
 
 // Fsm
 struct AcceptLink<'a> {
+
     /// Transport link associated with this state.
     link: &'a mut TransportLinkUnicast,
+
     /// Random number generator used for handshake values.
     prng: &'a Mutex<PseudoRng>,
+
     /// Block cipher used to protect the session.
     cipher: &'a BlockCipher,
     ext_qos: ext::qos::QoSFsm<'a>,
@@ -184,6 +213,7 @@ struct AcceptLink<'a> {
     ext_mlink: ext::multilink::MultiLinkFsm<'a>,
     #[cfg(feature = "shared-memory")]
     // Will be None if SHM operation is disabled by Config
+
     /// Optional ext shm used by accept link; `None` means the value is not configured or
     /// unavailable.
     ext_shm: Option<ext::shm::auth::ShmFsm<'a>>,
@@ -193,6 +223,7 @@ struct AcceptLink<'a> {
     #[cfg(feature = "transport_compression")]
     ext_compression: ext::compression::CompressionFsm<'a>,
     ext_patch: ext::patch::PatchFsm<'a>,
+
     /// Optional ext remote bound used by accept link; `None` means the value is not configured or
     /// unavailable.
     ext_remote_bound: Option<RemoteBoundCallback>,
@@ -211,10 +242,16 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
     type SendOpenAckIn = (&'a mut State, SendOpenAckIn);
     type SendOpenAckOut = SendOpenAckOut;
 
-    /// Receives init syn.
-
+    /// Receives the peer's InitSyn, negotiates transport settings, and updates accept state.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested accept fsm operation.
+///
+    /// * `input` - Accepting transport state and local settings used to validate InitSyn.
+    ///
+    /// # Errors
+///
+    /// Returns an error if the received message or peer settings are invalid, or an extension
+    /// cannot be negotiated.
     async fn recv_init_syn(
         self,
         input: Self::RecvInitSynIn,
@@ -354,10 +391,14 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
         Ok(output)
     }
 
+    /// Builds an InitAck and its negotiated extensions for the accepting peer.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested accept fsm operation.
+///
+    /// * `input` - Accepting transport state and local InitAck settings.
     ///
     /// # Errors
+///
     /// Returns an error if constructing any negotiated extension for the init ACK fails.
     async fn send_init_ack(
         self,
@@ -512,10 +553,16 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
         Ok(output)
     }
 
-    /// Receives open syn.
-
+    /// Receives the peer's OpenSyn, validates its cookie, and completes accept-side negotiation.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested accept operation.
+///
+    /// * `input` - Expected cookie nonce used to validate the received OpenSyn.
+    ///
+    /// # Errors
+///
+    /// Returns an error if the message is not a valid OpenSyn, its cookie is invalid, or extension
+    /// negotiation fails.
     async fn recv_open_syn(
         self,
         input: Self::RecvOpenSynIn,
@@ -666,10 +713,14 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
         Ok((state, output))
     }
 
+    /// Builds an OpenAck and its negotiated extensions for the accepting peer.
+    ///
     /// # Arguments
-    /// * `input` - Input data whose fields determine the requested accept operation.
+///
+    /// * `input` - Accepting transport state and local OpenAck settings.
     ///
     /// # Errors
+///
     /// Returns an error if constructing any negotiated extension for the open ACK fails.
     async fn send_open_ack(
         self,
@@ -788,14 +839,17 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
         Ok(output)
     }
 }
-/// Accepts link.
+
+/// Accepts an incoming unicast link and completes its establishment handshake.
 ///
 /// # Arguments
-/// * `link` - Transport link to add, remove, or use.
+///
+/// * `link` - Incoming unicast link carrying the establishment messages.
+/// * `manager` - Transport manager that creates or joins the resulting transport.
 ///
 /// # Errors
-/// Returns an error if the requested resource or connection cannot be created.
-
+///
+/// Returns an error if the handshake fails or the resulting transport cannot be initialized.
 pub(crate) async fn accept_link(link: LinkUnicast, manager: &TransportManager) -> ZResult<()> {
     let endpoint = link.get_src().to_endpoint();
     let direction = TransportLinkUnicastDirection::Inbound;

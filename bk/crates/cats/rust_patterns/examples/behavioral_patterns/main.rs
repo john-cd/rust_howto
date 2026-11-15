@@ -4,7 +4,7 @@
 
 /// Implements an undo and redo history with reversible insert commands.
 mod undo_redo;
-/// Runs the example.
+
 /// Runs the undo/redo example.
 fn main() {
     undo_redo::run();

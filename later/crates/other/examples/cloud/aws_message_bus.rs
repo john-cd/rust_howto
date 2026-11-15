@@ -5,6 +5,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A typed message bus: publish Protobuf messages through a trait, with an
 //! in-memory implementation for tests and AWS SQS / SNS implementations for
 //! production.
@@ -28,9 +29,11 @@ const MAX_BODY_BYTES: usize = 256 * 1024;
 /// A message published when an order is placed.
 #[derive(Clone, PartialEq, Eq, Message)]
 pub struct OrderPlaced {
+
     /// The order identifier.
     #[prost(string, tag = "1")]
     pub order_id: String,
+
     /// The number of items ordered.
     #[prost(uint32, tag = "2")]
     pub quantity: u32,
@@ -39,8 +42,10 @@ pub struct OrderPlaced {
 /// A message received from a queue, with the handle needed to acknowledge it.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Received {
+
     /// The base64-encoded Protobuf payload.
     pub body: String,
+
     /// The handle to pass to [`MessageSubscriber::ack`].
     pub receipt: String,
 }
@@ -48,12 +53,15 @@ pub struct Received {
 /// Publishes encoded messages to a queue or topic.
 #[async_trait]
 pub trait MessagePublisher: Send + Sync {
+
     /// Sends one already encoded text body to the destination.
     ///
     /// # Arguments
+///
     /// * `body` - Message text to publish.
     ///
     /// # Errors
+///
     /// Returns an error if the destination rejects or cannot accept the body.
     async fn publish_body(&self, body: String) -> Result<()>;
 }
@@ -61,18 +69,22 @@ pub trait MessagePublisher: Send + Sync {
 /// Receives messages from a queue.
 #[async_trait]
 pub trait MessageSubscriber: Send + Sync {
+
     /// Returns the messages that are currently visible, if any.
     ///
     /// # Errors
+///
     /// Returns an error if the queue cannot be read.
     async fn receive(&self) -> Result<Vec<Received>>;
 
     /// Removes a processed message so that it is not delivered again.
     ///
     /// # Arguments
+///
     /// * `receipt` - Receipt handle returned with the message.
     ///
     /// # Errors
+///
     /// Returns an error if the receipt cannot be acknowledged.
     async fn ack(&self, receipt: &str) -> Result<()>;
 }
@@ -84,9 +96,11 @@ pub trait MessageSubscriber: Send + Sync {
 /// Fails when the encoded body exceeds the SQS limit.
 ///
 /// # Arguments
+///
 /// * `message` - Protobuf value to encode.
 ///
 /// # Returns
+///
 /// Base64 text containing the encoded message.
 pub fn encode_body<M: Message>(message: &M) -> Result<String> {
     let body = STANDARD.encode(message.encode_to_vec());
@@ -105,9 +119,11 @@ pub fn encode_body<M: Message>(message: &M) -> Result<String> {
 /// Fails when the text is not valid base64 or not a valid `M`.
 ///
 /// # Arguments
+///
 /// * `body` - Base64 text produced by [`encode_body`].
 ///
 /// # Returns
+///
 /// The decoded message value.
 pub fn decode_body<M: Message + Default>(body: &str) -> Result<M> {
     let bytes = STANDARD.decode(body).context("body is not base64")?;
@@ -117,10 +133,12 @@ pub fn decode_body<M: Message + Default>(body: &str) -> Result<M> {
 /// Encodes `message` and publishes it.
 ///
 /// # Arguments
+///
 /// * `publisher` - Destination that accepts encoded message bodies.
 /// * `message` - Protobuf value to encode and publish.
 ///
 /// # Errors
+///
 /// Returns an error if encoding exceeds the body limit or publication fails.
 pub async fn publish<M: Message>(publisher: &dyn MessagePublisher, message: &M) -> Result<()> {
     publisher.publish_body(encode_body(message)?).await
@@ -131,13 +149,16 @@ pub async fn publish<M: Message>(publisher: &dyn MessagePublisher, message: &M) 
 /// visibility timeout, so handlers must be idempotent (at-least-once delivery).
 ///
 /// # Arguments
+///
 /// * `subscriber` - Source of visible messages and acknowledgements.
 /// * `handler` - Synchronous operation that returns `Ok` to acknowledge a message.
 ///
 /// # Returns
+///
 /// The number of messages handled successfully.
 ///
 /// # Errors
+///
 /// Returns an error if receiving, decoding, handling, or acknowledging fails.
 pub async fn consume<M, F>(subscriber: &dyn MessageSubscriber, mut handler: F) -> Result<usize>
 where
@@ -158,6 +179,7 @@ where
 /// An in-memory queue used by tests instead of AWS.
 #[derive(Default)]
 pub struct InMemoryBus {
+
     /// Messages that have not been acknowledged.
     messages: Mutex<Vec<Received>>,
 }
@@ -189,13 +211,16 @@ impl MessageSubscriber for InMemoryBus {
 
 /// An SQS queue. Requires AWS credentials and an existing queue.
 pub struct SqsBus {
+
     /// The shared SQS client.
     client: aws_sdk_sqs::Client,
+
     /// The queue URL, e.g. `https://sqs.us-east-1.amazonaws.com/123/orders`.
     queue_url: String,
 }
 
 impl SqsBus {
+
     /// Creates a bus from a client built from a shared `SdkConfig`.
     pub fn new(client: aws_sdk_sqs::Client, queue_url: String) -> Self {
         Self { client, queue_url }
@@ -257,13 +282,16 @@ impl MessageSubscriber for SqsBus {
 
 /// An SNS topic, which fans a message out to every subscribed queue.
 pub struct SnsTopic {
+
     /// The shared SNS client.
     client: aws_sdk_sns::Client,
+
     /// The topic ARN.
     topic_arn: String,
 }
 
 impl SnsTopic {
+
     /// Creates a publisher for the given topic.
     pub fn new(client: aws_sdk_sns::Client, topic_arn: String) -> Self {
         Self { client, topic_arn }
@@ -308,6 +336,7 @@ pub async fn demo() -> Result<()> {
 /// Builds a single-threaded runtime and runs the in-memory demonstration.
 ///
 /// # Errors
+///
 /// Returns an error if runtime construction or the demonstration fails.
 fn main() -> Result<()> {
     tokio::runtime::Builder::new_current_thread()
@@ -319,12 +348,14 @@ fn main() -> Result<()> {
 /// Runs the message bus example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if runtime construction or the demonstration fails.
 pub fn run() -> Result<()> {
     main()
 }
 
 #[cfg(test)]
+
 /// Checks message encoding, delivery, acknowledgements, and entry-point behavior.
 mod tests {
     use super::*;

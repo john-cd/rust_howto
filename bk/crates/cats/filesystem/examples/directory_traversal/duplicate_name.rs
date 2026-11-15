@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Find duplicate filenames in the current directory.
 //!
 //! Walking a directory tree visits every file below a path. Collecting names
@@ -22,14 +23,17 @@ fn main() -> Result<()> {
     }
     Ok(())
 }
+
 /// Returns the file names that appear more than once under `root`, in the
 ///
 /// order the second occurrence is found.
 ///
 /// # Arguments
+///
 /// * `root` - Filesystem location the operation reads, updates, or uses as its scope.
 ///
 /// # Errors
+///
 /// Returns an error if walking the directory tree fails.
 fn duplicate_names(root: &Path) -> Result<Vec<OsString>> {
     let mut filenames = HashMap::<OsString, usize>::new();
@@ -53,9 +57,10 @@ fn duplicate_names(root: &Path) -> Result<Vec<OsString>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints the file names that appear more than once in the current directory tree.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

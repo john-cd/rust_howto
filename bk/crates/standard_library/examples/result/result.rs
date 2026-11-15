@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `Result` is a type that represents either success (`Ok`) or failure (`Err`):
 //!
 //! ```
@@ -29,6 +30,7 @@ fn open_file(file_path: &str) {
 
 // ...but most often you'll want to return early when encountering an error,
 // and propagate the error up the call stack.
+
 /// Reads a file into a string, returning early on errors.
 #[allow(clippy::question_mark)]
 fn read_file(file_path: &str) -> Result<String, io::Error> {
@@ -49,6 +51,7 @@ fn read_file(file_path: &str) -> Result<String, io::Error> {
 
 // Therefore, use the `?` operator as a shortcut to return early
 // in case of an error. The following is equivalent to the previous function.
+
 /// Reads a file into a string, using the `?` operator.
 fn read_file2(file_path: &str) -> Result<String, io::Error> {
     let mut file: File = File::open(file_path)?;
@@ -62,13 +65,16 @@ fn read_file2(file_path: &str) -> Result<String, io::Error> {
 // `File::open(file_path)?.read_to_string(&mut contents)?;`.
 
 // You will often need to return one of multiple `Result` types.
+
 /// Reads a number from a file and maps its I/O and integer-parsing errors to
 /// the custom `MyError` type.
 ///
 /// # Arguments
+///
 /// * `file_path` - Path to the file containing the integer text.
 ///
 /// # Errors
+///
 /// Returns an error if the file cannot be opened or read, or its contents are
 /// not a valid `i32`.
 fn read_and_parse_file(file_path: &str) -> Result<i32, MyError> {
@@ -82,8 +88,10 @@ fn read_and_parse_file(file_path: &str) -> Result<i32, MyError> {
 /// An error that wraps I/O and parsing errors.
 #[derive(Debug)]
 enum MyError {
+
     /// An I/O error.
     Io(io::Error),
+
     /// A parsing error.
     Parse(ParseIntError),
 }
@@ -93,6 +101,7 @@ impl std::error::Error for MyError {}
 // Implementing the `Error` trait requires that `Debug` and `Display` are
 // implemented too.
 impl std::fmt::Display for MyError {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -104,7 +113,11 @@ impl std::fmt::Display for MyError {
 
 // We should also implement the `From` trait:
 impl From<io::Error> for MyError {
+
+    /// Wraps an I/O error in the example error type.
+///
     /// # Arguments
+///
     /// * `err` - Underlying failure whose details are preserved or converted into the returned
     ///   error.
     fn from(err: io::Error) -> Self {
@@ -113,7 +126,11 @@ impl From<io::Error> for MyError {
 }
 
 impl From<ParseIntError> for MyError {
+
+    /// Wraps a parse-integer error in the example error type.
+///
     /// # Arguments
+///
     /// * `err` - Underlying failure whose details are preserved or converted into the returned
     ///   error.
     fn from(err: ParseIntError) -> Self {
@@ -126,12 +143,15 @@ impl From<ParseIntError> for MyError {
 // for the standard library's `std::error::Error` trait.
 // Use it when writing libraries, in which case custom error types are
 // recommended.
+
 /// An error that wraps I/O and parsing errors, defined with `thiserror`.
 #[derive(thiserror::Error, Debug)]
 enum MyError2 {
+
     /// An I/O error.
     #[error("Io error")]
     Io(#[from] io::Error),
+
     /// A parsing error.
     #[error("Parse error")]
     Parse(#[from] ParseIntError),
@@ -149,6 +169,7 @@ fn read_and_parse_file_thiserror(file_path: &str) -> Result<i32, MyError2> {
 // A simpler method than returning a custom error type
 // may be to return a trait object (`dyn Error`, typically wrapped in a `Box`)
 // at the cost of greater opacity...
+
 /// Reads a number from a file, boxing the errors as `dyn Error`.
 fn read_and_parse_file2(file_path: &str) -> Result<i32, Box<dyn std::error::Error>> {
     let mut file = File::open(file_path)?;
@@ -161,6 +182,7 @@ fn read_and_parse_file2(file_path: &str) -> Result<i32, Box<dyn std::error::Erro
 // ...but crates like `anyhow` can simplify error management a great deal...
 // `anyhow::Result<T>` is equivalent to `std::result::Result<T, anyhow::Error>`.
 // Use it in applications, since custom error types are rarely needed then.
+
 /// Reads a number from a file, using `anyhow` for errors.
 fn read_and_parse_file3(file_path: &str) -> anyhow::Result<i32> {
     let mut file = File::open(file_path)?;
@@ -173,6 +195,7 @@ fn read_and_parse_file3(file_path: &str) -> anyhow::Result<i32> {
 // A function without a return value in its signature returns the unit type
 // `()`: `fn func() {...}` is a shorthand for `fn func() -> () { ... }`
 // To convert it to a fallible function, return `Result<(), SomeErrorType>`.
+
 /// Reads a number from a file and returns `()` on success.
 fn unit_return_value(file_path: &str) -> Result<(), anyhow::Error> {
     let _i: i32 = read_and_parse_file3(file_path)?;
@@ -185,6 +208,7 @@ fn unit_return_value(file_path: &str) -> Result<(), anyhow::Error> {
 // `main()` can return a `Result`, more precisely a `Result<T, E> where T:
 // Termination, E: Debug)`. `Result<(), Box<dyn std::error::Error>>` or
 // `anyhow::Result<()>` are common choices.
+
 /// Calls the functions that read files and handle their results.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let file_path = "example.txt";
@@ -203,9 +227,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Calls the functions that read files and handle their results.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()
@@ -216,6 +241,7 @@ mod tests {
     use std::path::PathBuf;
 
     use super::*;
+
     /// Verifies that the `result` example runs.
     #[test]
     fn test_result_example_entry_point() -> Result<(), Box<dyn std::error::Error>> {
@@ -250,6 +276,7 @@ mod tests {
         std::fs::remove_file(path)?;
         Ok(())
     }
+
     /// Verifies read file variants fail on missing file.
     #[test]
     fn test_read_file_variants_fail_on_missing_file() {
@@ -286,6 +313,7 @@ mod tests {
         std::fs::remove_file(path)?;
         Ok(())
     }
+
     /// Verifies I/O errors are converted with from.
     #[test]
     fn test_io_errors_are_converted_with_from() {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Moves and draws a bouncing ball with ggez.
 //!
 //! A game loop repeats: handle input, update the game state, draw a frame. The
@@ -18,14 +19,17 @@ use ggez::graphics::Canvas;
 
 /// Shared `ball radius` used by this module.
 const BALL_RADIUS: f32 = 16.0;
+
 /// Shared `screen size` used by this module.
 const SCREEN_SIZE: Vec2 = Vec2::new(800.0, 600.0);
 
 /// Stores a ball's position and velocity in screen coordinates.
 #[derive(Debug, Clone, Copy)]
 struct Ball {
+
     /// The center of the ball.
     position: Vec2,
+
     /// The velocity of the ball in pixels per second.
     velocity: Vec2,
 }
@@ -53,17 +57,24 @@ fn step(ball: &mut Ball, delta_seconds: f32, bounds: Vec2) {
 
 /// Holds the game state and reusable circle mesh.
 struct MainState {
+
     /// The moving ball.
     ball: Ball,
+
     /// The circle mesh rendered each frame.
     circle: graphics::Mesh,
 }
 
 impl MainState {
+
+    /// Creates the example circle mesh in the supplied ggez context.
+///
     /// # Errors
+///
     /// Returns a graphics error if the circle mesh cannot be created.
     ///
     /// # Arguments
+///
     /// * `context` - Shared state and services used to complete the ggez workflow.
     fn new(context: &Context) -> GameResult<Self> {
         let circle = graphics::Mesh::new_circle(
@@ -86,9 +97,11 @@ impl MainState {
 }
 
 impl EventHandler for MainState {
+
     /// Advances the ball for one frame.
     ///
     /// # Arguments
+///
     /// * `context` - Application state and services required to perform the operation.
     fn update(&mut self, context: &mut Context) -> GameResult {
         step(
@@ -109,9 +122,11 @@ impl EventHandler for MainState {
         canvas.finish(context)
     }
 }
+
 /// Builds the game context and starts the ggez event loop.
 ///
 /// # Errors
+///
 /// Returns a ggez error if context or graphics initialization fails.
 pub fn example_body() -> GameResult {
     let (context, event_loop) = ContextBuilder::new("rust_howto_ggez", "rust_howto").build()?;

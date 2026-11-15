@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates parallel sorting of a vector of strings using
 //! Rayon.
 //!
@@ -29,8 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates parallel sorting of a vector of strings using Rayon.
 pub fn run() {
     main();
 }

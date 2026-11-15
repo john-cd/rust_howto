@@ -8,6 +8,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Converts structured values between JavaScript and Rust with Serde.
 //!
 //! JavaScript values and Rust structs have different representations. Serde
@@ -20,8 +21,10 @@ use serde::Serialize;
 /// A small profile value exchanged with JavaScript.
 #[derive(Debug, Deserialize, PartialEq, Serialize)]
 struct Profile {
+
     /// The profile's display name.
     name: String,
+
     /// The number of visits recorded for this profile.
     visits: u32,
 }
@@ -37,14 +40,17 @@ fn increment_profile(profile: &mut Profile) -> Result<(), &'static str> {
 
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use wasm_bindgen::prelude::*;
+
 /// Deserializes a JavaScript profile, increments its visit count, and returns
 ///
 /// it.
 ///
 /// # Arguments
-/// * `value` - Value the serde wasm bindgen operation validates, transforms, or stores.
+///
+/// * `value` - JavaScript value containing the profile to update.
 ///
 /// # Errors
+///
 /// Returns an error if the JavaScript value cannot be deserialized as a profile, the visit count
 /// cannot be incremented, or the updated profile cannot be serialized.
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]

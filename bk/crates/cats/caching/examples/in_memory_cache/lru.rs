@@ -1,9 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Basic usage of `LruCache` from the `lru` crate.
 //!
 //! ### Least Recently Used (LRU) Eviction Strategy
+//!
 //! An LRU cache organizes items in order of use. When the cache reaches its
 //! pre-allocated maximum capacity and a new item is inserted, the cache
 //! automatically evicts the *least recently accessed* item:
@@ -65,8 +67,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Fills an LRU cache beyond its capacity and shows which entries are evicted.
 pub fn run() {
     main();
 }

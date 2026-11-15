@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `let ... else` statement.
 //!
 //! `let ... else` binds a pattern and, if it does not match, runs a block that
@@ -10,9 +11,11 @@
 /// Parses `input` as a `u32`, panicking if it is invalid.
 ///
 /// # Arguments
+///
 /// * `input` - Text to parse as a `u32`.
 ///
 /// # Panics
+///
 /// Panics if `input` is not a valid `u32`.
 fn parse_number(input: &str) -> u32 {
     // Try to parse the input string.
@@ -24,7 +27,7 @@ fn parse_number(input: &str) -> u32 {
     // If it succeeds, `num` is available in the surrounding scope.
     num
 }
-/// Runs the example.
+
 /// Parses a number with `let ... else`.
 fn main() {
     let value = parse_number("42");
@@ -32,8 +35,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Parses a number with `let ... else`.
 pub fn run() {
     main();
 }

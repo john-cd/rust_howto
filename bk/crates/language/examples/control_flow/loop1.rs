@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates the use of a `loop` with a `break` statement to return a value.
 
 /// Demonstrates the use of a `loop` with a `break` statement to return a value.
@@ -24,8 +25,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates the use of a `loop` with a `break` statement to return a value.
 pub fn run() {
     main();
 }

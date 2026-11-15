@@ -5,6 +5,7 @@
 
 /// Looks up crate categories through the crates.io API.
 mod categories_for_crate;
+
 /// Retrieves crate metadata and retains contextual lookup failures.
 mod info;
 

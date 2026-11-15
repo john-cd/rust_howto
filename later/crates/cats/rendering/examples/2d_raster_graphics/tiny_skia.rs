@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Draw shapes into a pixel buffer with `tiny-skia`.
 //!
 //! Rasterizing turns shapes (paths, fills, strokes) into the grid of coloured
@@ -67,6 +68,7 @@ fn pixel_rgba(pixmap: &Pixmap, x: u32, y: u32) -> Option<[u8; 4]> {
         .pixel(x, y)
         .map(|pixel| [pixel.red(), pixel.green(), pixel.blue(), pixel.alpha()])
 }
+
 /// Renders the scene and encodes its PNG bytes in memory.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let pixmap = draw_scene()?;
@@ -92,6 +94,7 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
 /// Draw shapes into a pixel buffer with `tiny-skia`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     main()

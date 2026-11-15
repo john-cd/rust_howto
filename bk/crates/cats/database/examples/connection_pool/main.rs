@@ -7,6 +7,7 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the `deadpool` crate to manage a pool
 mod deadpool;
+
 /// This example demonstrates how to use `deadpool-postgres` to manage a pool of PostgreSQL
 /// connections.
 #[cfg(feature = "postgres")]
@@ -15,6 +16,7 @@ mod deadpool2;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,9 +25,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `deadpool` example.
     #[command(name = "deadpool")]
     Deadpool,
+
     /// Runs the `deadpool2` example.
     #[cfg(feature = "postgres")]
     #[command(name = "deadpool2")]
@@ -62,6 +66,7 @@ mod tests {
     /// Every example is exposed as a subcommand.
     #[cfg(feature = "postgres")]
     const SUBCOMMANDS: &[&str] = &["deadpool", "deadpool2"];
+
     /// Shared `subcommands` used by this module.
     #[cfg(not(feature = "postgres"))]
     const SUBCOMMANDS: &[&str] = &["deadpool"];

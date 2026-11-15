@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates text styling using the `colored` crate.
 //!
 //! Terminals interpret ANSI escape sequences as colour and style commands. The
@@ -23,7 +24,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints text with colors and styles.
 pub fn run() {
     main();
 }

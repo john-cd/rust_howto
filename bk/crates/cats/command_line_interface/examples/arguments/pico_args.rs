@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parsing command-line arguments with `pico-args`.
 //!
 //! `pico-args` is a tiny command-line parser with no derive macros and no
@@ -57,9 +58,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses the optional `--name` and `--age` values, the `--verbose` flag and a free argument, then prints them.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

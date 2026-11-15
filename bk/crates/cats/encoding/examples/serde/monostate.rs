@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `monostate` crate with `serde` to
 //! deserialize untagged enums where certain fields must have specific values.
 //!
@@ -18,25 +19,31 @@
 
 use monostate::MustBe;
 use serde::Deserialize;
+
 /// Untagged API response distinguished by its `success` field.
 /// Represents a response that can be either a success or an error.
 #[derive(Deserialize)]
 #[serde(untagged)]
 pub enum ApiResponse {
+
     /// A successful response.
     Success {
+
         /// Always `true`.
         success: MustBe!(true),
     },
+
     /// An error response.
     Error {
+
         /// Always `false`.
         success: MustBe!(false),
+
         /// A message that describes the error.
         _message: String,
     },
 }
-/// Runs the example.
+
 /// Deserializes success and error responses from JSON.
 fn main() {
     let success = "{\"success\":true}";
@@ -66,7 +73,7 @@ fn main() {
 // Example adapted from <https://github.com/dtolnay/monostate/blob/master/tests/test.rs>.
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Deserializes success and error responses from JSON.
 pub fn run() {
     main();
 }

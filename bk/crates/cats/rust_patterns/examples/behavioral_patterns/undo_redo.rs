@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Implements an undo and redo history with reversible insert commands.
 //!
 //! Undo/redo is the command pattern: each action is stored as an object that
@@ -10,8 +11,10 @@
 /// A reversible insertion at a character index.
 #[derive(Clone, Copy, Debug)]
 struct InsertChar {
+
     /// Character position at which to insert the value.
     index: usize,
+
     /// Character to insert.
     value: char,
 }
@@ -19,18 +22,23 @@ struct InsertChar {
 /// Text plus command stacks that support undoing and redoing edits.
 #[derive(Debug, Default)]
 struct Editor {
+
     /// Current document contents.
     text: String,
+
     /// Applied commands that can be undone.
     undo_stack: Vec<InsertChar>,
+
     /// Undone commands that can be reapplied.
     redo_stack: Vec<InsertChar>,
 }
 
 impl Editor {
+
     /// Inserts the current value.
     ///
     /// # Arguments
+///
     /// * `index` - Position used to identify the element affected in the current ordered
     ///   collection.
     fn insert(&mut self, index: usize, value: char) {
@@ -84,8 +92,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates applying a command, undoing it, and redoing it.
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

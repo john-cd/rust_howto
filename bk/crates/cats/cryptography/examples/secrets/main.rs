@@ -8,17 +8,21 @@ use clap::Subcommand;
 /// Stores, loads and deletes a secret in the operating-system credential store (Windows Credential
 /// Manager, macOS Keychain or the Secret Service) with `keyring`.
 mod keyring;
+
 /// Keeps a secret out of logs with a newtype whose `Debug` and `Display`
 mod redacted_secret;
+
 /// Seals a secret under a passphrase: Argon2id derives a key, and XChaCha20-Poly1305 encrypts the
 /// secret, authenticating a version label and context as associated data.
 mod sealed_envelope;
+
 /// Wipes a secret from memory when it is dropped, using `zeroize`'s derive
 mod zeroize;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,15 +31,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `redacted_secret` example.
     #[command(name = "redacted_secret")]
     RedactedSecret,
+
     /// Runs the `zeroize` example.
     #[command(name = "zeroize")]
     Zeroize,
+
     /// Runs the `keyring` example.
     #[command(name = "keyring")]
     Keyring,
+
     /// Runs the `sealed_envelope` example.
     #[command(name = "sealed_envelope")]
     SealedEnvelope,
@@ -52,7 +60,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

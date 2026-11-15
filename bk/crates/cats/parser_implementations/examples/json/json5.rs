@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to parse JSON5 data using the `json5` crate.
 //!
 //! [JSON5](https://json5.org) is a superset of JSON that allows for more human-friendly syntax,
@@ -9,7 +10,7 @@
 //! It is not intended to be used for machine-to-machine communication.
 
 use serde_json::Value;
-/// Runs the example.
+
 /// Parses a JSON5 string and prints the result.
 fn main() {
     let json5_str = r#"{
@@ -64,7 +65,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses a JSON5 string and prints the result.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use `env_logger` to format log messages
 //! with timestamps.
 //!
@@ -39,8 +40,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates how to use `env_logger` to format log messages with timestamps.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Scalar data types: integers, floating-point numbers, booleans and
 //! characters.
 
@@ -74,8 +75,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Declares variables of each scalar type.
 pub fn run() {
     main();
 }

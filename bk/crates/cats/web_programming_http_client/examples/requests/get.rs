@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates a simple HTTP GET request using the `reqwest`
 //! crate. It fetches data from http://<httpbin.org/get> and prints the status, headers, and body.
 //!
@@ -22,9 +23,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Sends a GET request to <http://httpbin.org/get> and prints the response.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

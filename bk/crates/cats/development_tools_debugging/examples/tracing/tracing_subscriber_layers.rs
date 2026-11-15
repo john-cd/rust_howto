@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Composing a `tracing` subscriber from layers and filters.
 //!
 //! Layers add behaviour to a subscriber and stack: one layer might print to the
@@ -43,12 +44,15 @@ fn layers() {
 // directives. `EnvFilter` implements both the `Layer` and `Filter` traits, so
 // it may be used for both global filtering and per-layer filtering,
 // respectively.
+
 /// Shows several ways to build an `EnvFilter`.
 ///
 /// # Errors
+///
 /// Returns an error if a fallible operation cannot complete.
 ///
 /// # Panics
+///
 /// Panics if the condition documented by `expect` is not met.
 #[cfg_attr(
     not(test),
@@ -57,6 +61,7 @@ fn layers() {
         reason = "alternative global-subscriber setup; only one subscriber can be installed per process"
     )
 )]
+
 /// Filters the current value.
 fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     // 1. Returns a new `EnvFilter` from the value of the `RUST_LOG` environment variable, ignoring
@@ -88,7 +93,10 @@ fn filter() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     Ok(())
 }
 
+/// Configures a separate filter for the access-log layer.
+///
 /// ## Per-Layer Filtering
+///
 /// This example demonstrates how to add a filter to a specific layer.
 /// This allows different layers to have different filtering rules.
 #[cfg_attr(
@@ -133,9 +141,10 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Initializes the layered subscriber.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync + 'static>> {
     main()

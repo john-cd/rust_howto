@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrate various functionalities of the `time` crate.
 //!
 //! The `time` crate is a lighter alternative to `chrono` for dates, times and
@@ -19,6 +20,7 @@ use time::macros::format_description;
 /// Demonstrate various functionalities of the `time` crate.
 ///
 /// # Errors
+///
 /// Returns an error if a date, format description, or formatted value is
 /// invalid.
 fn main() -> anyhow::Result<()> {
@@ -56,6 +58,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the `time` crate example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips

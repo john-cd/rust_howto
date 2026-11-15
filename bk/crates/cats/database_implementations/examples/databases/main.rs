@@ -10,9 +10,11 @@ use clap::Subcommand;
 /// Example using the `redb` embedded key-value store.
 #[cfg(feature = "redb")]
 mod redb;
+
 /// Example using the `sled` embeddable database.
 #[cfg(feature = "sled")]
 mod sled;
+
 /// Use SurrealDB's embedded in-memory engine for a self-contained CRUD example.
 #[cfg(feature = "surrealdb")]
 mod surrealdb;
@@ -21,6 +23,7 @@ mod surrealdb;
 #[cfg(any(feature = "sled", feature = "surrealdb", feature = "redb"))]
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -30,14 +33,17 @@ struct Cli {
 #[cfg(any(feature = "sled", feature = "surrealdb", feature = "redb"))]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `redb` example.
     #[cfg(feature = "redb")]
     #[command(name = "redb")]
     Redb,
+
     /// Runs the `sled` example.
     #[cfg(feature = "sled")]
     #[command(name = "sled")]
     Sled,
+
     /// Runs the `surrealdb` example.
     #[cfg(feature = "surrealdb")]
     #[command(name = "surrealdb")]
@@ -82,18 +88,21 @@ mod tests {
     fn test_redb_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "redb"]).is_ok());
     }
+
     /// Verifies sled subcommand parses.
     #[cfg(feature = "sled")]
     #[test]
     fn test_sled_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "sled"]).is_ok());
     }
+
     /// Verifies surrealdb subcommand parses.
     #[cfg(feature = "surrealdb")]
     #[test]
     fn test_surrealdb_subcommand_parses() {
         assert!(Cli::try_parse_from(["example", "surrealdb"]).is_ok());
     }
+
     /// Unknown subcommands are rejected.
     #[cfg(any(feature = "sled", feature = "surrealdb", feature = "redb"))]
     #[test]

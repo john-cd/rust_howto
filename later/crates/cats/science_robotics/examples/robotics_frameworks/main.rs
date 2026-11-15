@@ -9,6 +9,7 @@ use clap::Subcommand;
 
 /// Forward and inverse kinematics of a planar arm with `k`, the kinematics
 mod openrr;
+
 /// Publishes and receives several local telemetry values with `zenoh`.
 #[cfg(feature = "zenoh")]
 mod zenoh;
@@ -16,6 +17,7 @@ mod zenoh;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -24,9 +26,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `openrr` example.
     #[command(name = "openrr")]
     Openrr,
+
     /// Runs the `zenoh` example.
     #[cfg(feature = "zenoh")]
     #[command(name = "zenoh")]
@@ -37,8 +41,8 @@ enum Commands {
 fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
-/// Runs the example selected in the parsed command line.
 
+/// Runs the example selected in the parsed command line.
 fn dispatch(cli: Cli) -> anyhow::Result<()> {
     if let Some(command) = cli.command {
         match command {

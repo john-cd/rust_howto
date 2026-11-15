@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A periodic job with `tokio::time::interval`.
 //!
 //! `MissedTickBehavior::Skip` drops most of the ticks missed while a run was
@@ -88,9 +89,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the demonstration on a paused-clock runtime and reports setup errors.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

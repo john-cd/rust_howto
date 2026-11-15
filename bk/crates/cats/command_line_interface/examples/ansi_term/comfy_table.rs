@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Print a table whose columns adapt to their content.
 //!
 //! Tables make command-line output readable. This crate measures the content

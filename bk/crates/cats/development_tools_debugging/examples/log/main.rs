@@ -7,26 +7,35 @@ use clap::Subcommand;
 
 /// Configures and initializes the logging system using log4rs.
 mod log_custom;
+
 /// This example demonstrates how to create a custom logger.
 mod log_custom_logger;
+
 /// Emitting a debug message with the `log` crate.
 mod log_debug;
+
 /// Configuring `env_logger` with an environment variable.
 mod log_env_variable;
+
 /// Defines failures emitted by log operations and conversions used at component boundaries. Callers
 /// match these errors to choose recovery or user-facing diagnostics.
 mod log_error;
+
 /// Initializes the logger and logs warning, info, and debug messages from the
 mod log_mod;
+
 /// This example demonstrates how to configure the `env_logger` to output logs
 mod log_stdout;
+
 /// Initializes syslog and logs debug and error messages.
 #[cfg(unix)]
 mod log_syslog;
+
 /// This example demonstrates how to use `env_logger` to format log messages
 mod log_timestamp;
 
 #[cfg(test)]
+
 /// This module provides the `isolated` implementation used by its parent.
 #[path = "../support/isolated.rs"]
 mod isolated;
@@ -34,6 +43,7 @@ mod isolated;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -42,31 +52,40 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `log_custom` example.
     #[command(name = "log_custom")]
     Custom,
+
     /// Runs the `log_custom_logger` example.
     #[command(name = "log_custom_logger")]
     CustomLogger,
+
     /// Runs the `log_debug` example.
     #[command(name = "log_debug")]
     Debug,
+
     /// Runs the `log_env_variable` example.
     #[command(name = "log_env_variable")]
     EnvVariable,
+
     /// Runs the `log_error` example.
     #[command(name = "log_error")]
     Error,
+
     /// Runs the `log_mod` example.
     #[command(name = "log_mod")]
     Mod,
+
     /// Runs the `log_stdout` example.
     #[command(name = "log_stdout")]
     Stdout,
+
     /// Runs the `log_syslog` example.
     #[cfg(unix)]
     #[command(name = "log_syslog")]
     Syslog,
+
     /// Runs the `log_timestamp` example.
     #[command(name = "log_timestamp")]
     Timestamp,

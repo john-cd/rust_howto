@@ -7,16 +7,20 @@ use clap::Subcommand;
 
 /// Trait objects with auto traits such as `Send`.
 mod dyn_autotraits;
+
 /// Example of (non-)dyn-compatible traits.
 mod dyn_compat;
+
 /// Trait objects of a trait with a supertrait.
 mod dyn_supertraits;
+
 /// Trait object example: a highly simplified GUI.
 mod trait_objects;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,15 +29,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `dyn_autotraits` example.
     #[command(name = "dyn_autotraits")]
     DynAutotraits,
+
     /// Runs the `dyn_compat` example.
     #[command(name = "dyn_compat")]
     DynCompat,
+
     /// Runs the `dyn_supertraits` example.
     #[command(name = "dyn_supertraits")]
     DynSupertraits,
+
     /// Runs the `trait_objects` example.
     #[command(name = "trait_objects")]
     TraitObjects,
@@ -58,7 +66,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

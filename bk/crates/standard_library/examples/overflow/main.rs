@@ -4,9 +4,10 @@
 
 /// Demonstrates explicit primitive integer overflow operations.
 mod overflow_methods;
+
 /// Demonstrates wrapping arithmetic with `std::num::Wrapping`.
 mod wrapping_type;
-/// Runs the example.
+
 /// Runs the primitive methods and `Wrapping` examples.
 fn main() {
     overflow_methods::run();

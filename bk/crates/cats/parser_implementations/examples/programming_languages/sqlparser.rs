@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `sqlparser` crate to parse SQL
 //! statements, extract information from them, and regenerate the original SQL
 //! text from the parsed Abstract Syntax Tree (AST).
@@ -73,9 +74,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses an SQL statement and prints the syntax tree.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

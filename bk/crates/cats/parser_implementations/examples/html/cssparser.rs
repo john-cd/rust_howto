@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Tokenize a small CSS declaration list with `cssparser`.
 //!
 //! CSS (Cascading Style Sheets) describes how web pages look. A tokenizer
@@ -15,6 +16,7 @@ use cssparser::Token;
 /// Tokenizes a CSS declaration list and prints each token.
 ///
 /// # Errors
+///
 /// Returns an error if the declaration list contains an invalid token.
 fn main() -> anyhow::Result<()> {
     let css = "color: red; font-size: 16px;";
@@ -42,6 +44,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the CSS tokenization example.
 ///
 /// # Errors
+///
 /// Returns an error if the declaration list contains an invalid token.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -57,6 +60,7 @@ mod tests {
     fn test_cssparser_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// Collects the tokens of a CSS snippet as strings.
     fn tokens(css: &str) -> Vec<String> {
         let mut parser = Parser::new(css);

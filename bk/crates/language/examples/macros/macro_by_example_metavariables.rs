@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Metavariables in declarative macros.
 
 /// Prints one, two or more arguments, depending on how many expressions it
@@ -25,8 +26,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the macro with different arguments.
 pub fn run() {
     main();
 }
@@ -42,6 +42,7 @@ mod tests {
     }
 
     // Output-only example: the macro arms only print their arguments.
+
     /// Both arms of the macro accept expressions.
     #[test]
     fn test_print_args_accepts_expressions() {

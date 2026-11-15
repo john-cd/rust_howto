@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates that the tangent of a number is equal to the sine
 //! of the number divided by the cosine of the number.
 //!
@@ -25,8 +26,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates that the tangent of a number is equal to the sine of the number divided by the cosine of the number.
 pub fn run() {
     main();
 }

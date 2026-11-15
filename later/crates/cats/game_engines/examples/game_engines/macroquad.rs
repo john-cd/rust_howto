@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A bouncing ball in a Macroquad game loop.
 //!
 //! A game loop repeats: handle input, update the game state, draw a frame.
@@ -15,8 +16,10 @@ const BALL_RADIUS: f32 = 15.0;
 /// A ball with a position and velocity in pixels.
 #[derive(Debug, Clone, Copy)]
 struct Ball {
+
     /// The center of the ball.
     position: Vec2,
+
     /// The ball's velocity on each axis in pixels per second.
     velocity: Vec2,
 }
@@ -66,7 +69,6 @@ async fn async_main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Starts the Macroquad window and game loop.
 pub fn run() {
     macroquad::Window::new("Bouncing Ball", async_main());

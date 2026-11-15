@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example builds a Basic-authenticated request without sending it.
 //!
 //! HTTP Basic authentication sends `username:password` in the `Authorization`
@@ -20,11 +21,14 @@ fn basic_auth_request(
 ) -> RequestBuilder {
     client.get(endpoint).basic_auth(user_name, Some(password))
 }
+
 /// Builds an authenticated request locally without contacting a server.
 ///
 /// The example uses placeholder credentials. Real credentials must be kept
 /// secret and sent only over HTTPS.
+///
 /// # Errors
+///
 /// Returns an error if the request cannot be constructed.
 fn main() -> anyhow::Result<()> {
     let client = Client::new();
@@ -43,9 +47,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Builds an authenticated request locally without contacting a server.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

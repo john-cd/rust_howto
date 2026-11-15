@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -81,9 +82,13 @@ fn duration_from_i64us(us: i64) -> Duration {
     }
 }
 
+/// Chooses the local bound used when establishing a transport to a remote peer.
 pub type RemoteBoundCallback = Arc<dyn Fn(TransportPeer) -> ZResult<Option<Bound>> + Send + Sync>;
 
+/// Configuration values used to build a transport manager.
+///
 /// # Examples
+///
 /// ```
 /// use std::sync::Arc;
 /// use std::time::Duration;
@@ -143,56 +148,79 @@ pub type RemoteBoundCallback = Arc<dyn Fn(TransportPeer) -> ZResult<Option<Bound
 ///     .unwrap();
 /// ```
 pub struct TransportManagerConfig {
+
     /// Protocol version.
     pub version: u8,
+
     /// Zenoh identifier of this peer.
     pub zid: ZenohIdProto,
+
     /// Role advertised by this peer.
     pub whatami: WhatAmI,
+
     /// Sequence-number resolution.
     pub resolution: Resolution,
+
     /// Maximum number of messages sent in a batch.
     pub batch_size: BatchSize,
+
     /// Flag indicating whether the transport manager config satisfies the batching condition.
     pub batching: bool,
+
     /// Delay before dropping the transport.
     pub wait_before_drop: Duration,
+
     /// Maximum wait before incomplete fragments are discarded.
     pub max_wait_before_drop_fragments: Duration,
+
     /// Delay before closing the transport.
     pub wait_before_close: Duration,
+
     /// Queue size in `TransportManagerConfig`.
     pub queue_size: [usize; Priority::NUM],
+
     /// Queue backoff in `TransportManagerConfig`.
     /// Queue allocation policy.
     pub queue_backoff: Duration,
+
     /// Queue allocation policy.
     pub queue_alloc: QueueAllocConf,
+
     /// Buffer size used to reassemble fragmented messages.
     pub defrag_buff_size: usize,
+
     /// Receive-buffer size for each link.
     pub link_rx_buffer_size: usize,
+
     /// Unicast value.
     pub unicast: TransportManagerConfigUnicast,
+
     /// Multicast value.
     pub multicast: TransportManagerConfigMulticast,
+
     /// Collection of link configs values consumed by transport manager config operations.
     pub link_configs: HashMap<LinkKind, String>, // (protocol, config)
+
     /// Number of transmission worker threads.
     pub handler: Arc<dyn TransportEventHandler>,
+
     /// Number of transmission worker threads.
     pub tx_threads: usize,
+
     /// Collection of supported links values consumed by transport manager config operations.
     pub supported_links: Vec<LinkKind>,
+
     /// Optional bound callback used by transport manager config; `None` means the value is not
     /// configured or unavailable.
     pub bound_callback: Option<RemoteBoundCallback>,
+
     /// Optional region name used by transport manager config; `None` means the value is not
     /// configured or unavailable.
     pub region_name: Option<RegionName>,
 }
 
 impl fmt::Debug for TransportManagerConfig {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportManagerConfig")
@@ -230,15 +258,20 @@ impl fmt::Debug for TransportManagerConfig {
 
 /// State required by `TransportManagerState` during transport operations.
 pub struct TransportManagerState {
+
     /// Unicast value.
     pub unicast: TransportManagerStateUnicast,
+
     /// Multicast value.
     pub multicast: TransportManagerStateMulticast,
+
     /// Shared memory context in `TransportManagerState`.
     #[cfg(feature = "shared-memory")]
+
     /// Optional shm context used by transport manager state; `None` means the value is not
     /// configured or unavailable.
     pub shm_context: Option<ShmContext>,
+
     /// Optional io_uring backend available on supported Linux architectures.
     #[cfg(all(
         feature = "uring",
@@ -251,15 +284,19 @@ pub struct TransportManagerState {
             target_arch = "powerpc64"
         )
     ))]
+
     /// Optional uring used by transport manager state; `None` means the value is not configured or
     /// unavailable.
     pub uring: Option<Uring>,
 }
 
 impl fmt::Debug for TransportManagerState {
+
     /// Formats the value for display.
+    ///
     /// # Arguments
-    /// * `f` - Mutable formatter whose state is updated by this operation.
+///
+    /// * `f` - Formatter used to write the debug representation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut debug = f.debug_struct("TransportManagerState");
         debug.field("unicast", &self.unicast);
@@ -269,19 +306,24 @@ impl fmt::Debug for TransportManagerState {
         debug.finish()
     }
 }
-/// Parameters used to configure and construct a transport manager.
 
+/// Parameters used to configure and construct a transport manager.
 pub struct TransportManagerParams {
+
     /// Settings that control how this transport manager params is constructed or processed.
     config: TransportManagerConfig,
+
     /// Current lifecycle value used to decide which transport manager params operations are valid.
     state: TransportManagerState,
 }
 
 impl fmt::Debug for TransportManagerParams {
+
     /// Formats the value for display.
+///
     /// # Arguments
-    /// * `f` - Mutable formatter whose state is updated by this operation.
+///
+    /// * `f` - Formatter used to write the formatted representation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportManagerParams")
             .field("config", &self.config)
@@ -292,61 +334,84 @@ impl fmt::Debug for TransportManagerParams {
 
 /// Configuration builder for `TransportManager`.
 pub struct TransportManagerBuilder {
+
     /// Protocol version.
     version: u8,
+
     /// Zenoh identifier of this peer.
     zid: ZenohIdProto,
+
     /// Role advertised by this peer.
     whatami: WhatAmI,
+
     /// Sequence-number resolution.
     resolution: Resolution,
+
     /// Maximum number of messages sent in a batch.
     batch_size: BatchSize,
+
     /// Flag indicating whether the transport manager builder satisfies the batching enabled
     /// condition.
     batching_enabled: bool,
+
     /// Batching time limit value.
     batching_time_limit: Duration,
+
     /// Delay before dropping the transport.
     wait_before_drop: Duration,
+
     /// Maximum wait before incomplete fragments are discarded.
     max_wait_before_drop_fragments: Duration,
+
     /// Delay before closing the transport.
     wait_before_close: Duration,
+
     /// Size of the queue.
     queue_size: QueueSizeConf,
+
     /// Queue allocation policy.
     queue_alloc: QueueAllocConf,
+
     /// Buffer size used to reassemble fragmented messages.
     defrag_buff_size: usize,
+
     /// Receive-buffer size for each link.
     link_rx_buffer_size: usize,
+
     /// Unicast value.
     unicast: TransportManagerBuilderUnicast,
+
     /// Multicast value.
     multicast: TransportManagerBuilderMulticast,
+
     /// Collection of link configs values consumed by transport manager builder operations.
     link_configs: HashMap<LinkKind, String>, // (protocol, config)
+
     /// Number of transmission worker threads.
     tx_threads: usize,
+
     /// Optional supported links used by transport manager builder; `None` means the value is not
     /// configured or unavailable.
     supported_links: Option<Vec<LinkKind>>,
+
     /// Optional region name used by transport manager builder; `None` means the value is not
     /// configured or unavailable.
     region_name: Option<RegionName>,
+
     /// Optional bound callback used by transport manager builder; `None` means the value is not
     /// configured or unavailable.
     bound_callback: Option<RemoteBoundCallback>,
     #[cfg(feature = "shared-memory")]
     shm: zenoh_config::ShmConf,
     #[cfg(feature = "shared-memory")]
+
     /// Optional shm reader used by transport manager builder; `None` means the value is not
     /// configured or unavailable.
     shm_reader: Option<ShmReader>,
 }
 
 impl fmt::Debug for TransportManagerBuilder {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut debug = f.debug_struct("TransportManagerBuilder");
@@ -393,9 +458,11 @@ impl TransportManagerBuilder {
         self
     }
 
+    /// Configures the shared-memory reader used by the transport manager.
+    ///
     /// # Arguments
-    /// * `shm_reader` - Reader supplying the input data.
-
+///
+    /// * `shm_reader` - Reader that supplies received shared-memory buffers.
     #[cfg(feature = "shared-memory")]
     pub fn shm_reader(mut self, shm_reader: Option<ShmReader>) -> Self {
         self.shm_reader = shm_reader;
@@ -427,9 +494,11 @@ impl TransportManagerBuilder {
         self
     }
 
+    /// Sets the maximum time a message may wait for batch aggregation.
+    ///
     /// # Arguments
-    /// * `batching_time_limit` - Duration controlling the operation.
-
+///
+    /// * `batching_time_limit` - Maximum delay before a pending batch is sent.
     pub fn batching_time_limit(mut self, batching_time_limit: Duration) -> Self {
         self.batching_time_limit = batching_time_limit;
         self
@@ -443,8 +512,10 @@ impl TransportManagerBuilder {
     /// Waits for before drop.
     ///
     /// # Arguments
+///
     /// * `wait_before_drop` - Duration controlling the operation.
-
+///
+    /// Sets the delay before dropping an inactive transport.
     pub fn wait_before_drop(mut self, wait_before_drop: Duration) -> Self {
         self.wait_before_drop = wait_before_drop;
         self
@@ -454,6 +525,7 @@ impl TransportManagerBuilder {
     /// callers.
     ///
     /// # Arguments
+///
     /// * `max_wait_before_drop_fragments` - Duration controlling the operation.
     pub fn max_wait_before_drop_fragments(
         mut self,
@@ -466,8 +538,10 @@ impl TransportManagerBuilder {
     /// Waits for before close.
     ///
     /// # Arguments
+///
     /// * `wait_before_close` - Duration controlling the operation.
-
+///
+    /// Sets the delay before closing a transport.
     pub fn wait_before_close(mut self, wait_before_close: Duration) -> Self {
         self.wait_before_close = wait_before_close;
         self
@@ -519,9 +593,11 @@ impl TransportManagerBuilder {
         self
     }
 
+    /// Sets the callback that determines the transport bound for a peer.
+    ///
     /// # Arguments
-    /// * `callback` - Callback invoked when the operation completes.
-
+///
+    /// * `callback` - Callback that selects the local bound for each remote peer.
     pub fn bound_callback(
         mut self,
         callback: impl Fn(TransportPeer) -> ZResult<Option<Bound>> + Send + Sync + 'static,
@@ -530,13 +606,14 @@ impl TransportManagerBuilder {
         self
     }
 
-    /// Converts between the manager representation and config while preserving the invariants
-    /// required by callers.
+    /// Applies transport settings from the expanded configuration to this builder.
     ///
     /// # Arguments
-    /// * `config` - Settings that control the behavior and limits of this manager workflow.
-
+///
+    /// * `config` - Expanded runtime configuration for transport, links, and shared memory.
+    ///
     /// # Errors
+///
     /// Returns an error if protocol configuration reports errors or the unicast or multicast
     /// settings cannot be built.
     pub async fn from_config(
@@ -595,7 +672,15 @@ impl TransportManagerBuilder {
         Ok(self)
     }
 
+    /// Builds a transport manager and initializes its enabled transport managers.
+    /// Starts a listener for the endpoint and returns its advertised locator.
+    ///
+    /// # Arguments
+///
+    /// * `endpoint` - Network endpoint on which to listen.
+    ///
     /// # Errors
+///
     /// Returns an error if shared-memory, unicast, or multicast manager construction fails.
     pub fn build(
         self,
@@ -700,11 +785,15 @@ impl TransportManagerBuilder {
         ))
     }
 
-    /// Assembles the test from its component values so callers receive a ready-to-use result.
+    /// Builds a transport manager with the test handler and test statistics registry.
+    ///
+    /// # Arguments
+///
+    /// * `handler` - Event handler notified about transport lifecycle events.
     ///
     /// # Errors
-    /// Returns an error if the requested resource or connection cannot be created.
-
+///
+    /// Returns an error if shared-memory, unicast, or multicast manager construction fails.
     #[cfg(feature = "test")]
     pub fn build_test(self, handler: Arc<dyn TransportEventHandler>) -> ZResult<TransportManager> {
         #[cfg(feature = "stats")]
@@ -718,8 +807,8 @@ impl TransportManagerBuilder {
 }
 
 impl Default for TransportManagerBuilder {
-    /// Constructs a usable initial transport manager builder value with the defaults required by
-    /// the manager component.
+
+    /// Creates a builder populated with the default transport, queue, and link settings.
     fn default() -> Self {
         let link_rx = LinkRxConf::default();
         let queue = QueueConf::default();
@@ -757,30 +846,37 @@ impl Default for TransportManagerBuilder {
         }
     }
 }
-/// Manager that owns transports and routes transport lifecycle events.
 
+/// Manager that owns transports and routes transport lifecycle events.
 #[derive(Clone)]
 pub struct TransportManager {
+
     /// Settings that control how this transport manager is constructed or processed.
     pub config: Arc<TransportManagerConfig>,
+
     /// Current lifecycle value used to decide which transport manager operations are valid.
     pub(crate) state: Arc<TransportManagerState>,
+
     /// Locator inspector in `TransportManager`.
     /// Random number generator used for handshake values.
     pub(crate) prng: Arc<AsyncMutex<PseudoRng>>,
+
     /// Block cipher used to protect the session.
     pub(crate) cipher: Arc<BlockCipher>,
     pub(crate) locator_inspector: zenoh_link::LocatorInspector,
+
     /// Controller used to stop and join background tasks.
     /// New unicast link sender value.
     pub(crate) new_unicast_link_sender: NewLinkChannelSender,
     #[cfg(feature = "stats")]
     pub(crate) stats: zenoh_stats::StatsRegistry,
+
     /// Controller used to stop and join background tasks.
     pub(crate) task_controller: TaskController,
 }
 
 impl fmt::Debug for TransportManager {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut debug = f.debug_struct("TransportManager");
@@ -800,6 +896,7 @@ impl fmt::Debug for TransportManager {
 }
 
 impl TransportManager {
+
     /// Creates a new the default value.
     pub fn new(
         params: TransportManagerParams,
@@ -873,9 +970,15 @@ impl TransportManager {
     }
 
     // LISTENER
-    /// **********************************
 
+    /// Starts a listener for the endpoint and returns its advertised locator.
+    ///
+    /// # Arguments
+///
+    /// * `endpoint` - Network endpoint on which to listen.
+    ///
     /// # Errors
+///
     /// Returns an error if endpoint inspection or starting the corresponding unicast or multicast
     /// listener fails.
     pub async fn add_listener(&self, endpoint: EndPoint) -> ZResult<Locator> {
@@ -890,8 +993,15 @@ impl TransportManager {
         }
     }
 
+    /// Removes the listener for the endpoint and cleans up its link manager when unused.
+    ///
+    /// # Arguments
+///
+    /// * `endpoint` - Endpoint identifying the listener to remove.
+    ///
     /// # Errors
-    /// An error is returned if a fallible operation fails.
+///
+    /// Returns an error if endpoint inspection or removing the listener fails.
     pub async fn del_listener(&self, endpoint: &EndPoint) -> ZResult<()> {
         if self
             .locator_inspector

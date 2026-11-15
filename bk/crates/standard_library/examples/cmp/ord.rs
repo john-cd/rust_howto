@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Implementing ordering with `PartialOrd` and `Ord`.
 //!
 //! `PartialOrd` defines `<` and `>`; `Ord` says every pair of values can be
@@ -11,13 +12,17 @@ use std::cmp::Ordering;
 
 // A struct to represent a software version.
 // The `Eq` trait has no methods, thus we can derive it automatically.
+
 /// A semantic version number.
 #[derive(Debug, Eq)]
 struct Version {
+
     /// Major version; compared first.
     major: u32,
+
     /// Minor version; compared after the major version.
     minor: u32,
+
     /// Patch version; compared last.
     patch: u32,
 }
@@ -60,7 +65,7 @@ impl Ord for Version {
         }
     }
 }
-/// Runs the example.
+
 /// Compares versions with the comparison operators and sorts them.
 fn main() {
     let v1 = Version {
@@ -115,7 +120,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Compares versions with the comparison operators and sorts them.
 pub fn run() {
     main();
 }
@@ -123,6 +128,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `ord` example runs.
     #[test]
     fn test_ord_example_entry_point() {
@@ -136,6 +142,7 @@ mod tests {
             patch,
         }
     }
+
     /// Verifies cmp compares fields in order.
     #[test]
     fn test_cmp_compares_fields_in_order() {
@@ -144,6 +151,7 @@ mod tests {
         assert_eq!(v(1, 2, 3).cmp(&v(1, 2, 4)), Ordering::Less);
         assert_eq!(v(1, 2, 3).cmp(&v(1, 2, 3)), Ordering::Equal);
     }
+
     /// Verifies partial cmp and operators.
     #[test]
     fn test_partial_cmp_and_operators() {
@@ -152,6 +160,7 @@ mod tests {
         assert!(v(2, 0, 0) > v(1, 9, 9));
         assert!(v(1, 0, 0) <= v(1, 0, 0));
     }
+
     /// Verifies max min and sort.
     #[test]
     fn test_max_min_and_sort() {

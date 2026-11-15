@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Run an ONNX model trained elsewhere (here, a scikit-learn logistic
 //! regression) with `ort`, and hot-swap the model without a restart.
 //!
@@ -22,14 +23,20 @@ use ort::value::Tensor;
 /// A loaded model. `Session::run` needs `&mut`, so the session is behind a
 /// mutex: use one session per worker (or a pool) when you need parallelism.
 struct Model {
+
     /// Protocol version.
     version: u32,
+
     /// Session value.
     session: Mutex<Session>,
 }
 
 impl Model {
+
+    /// Loads an ONNX model from the provided bytes and records its version.
+///
     /// # Errors
+///
     /// Returns an error if initializing the ONNX runtime or loading the model fails.
     fn load(env: &Environment, version: u32, bytes: &[u8]) -> Result<Self> {
         Ok(Self {
@@ -41,17 +48,25 @@ impl Model {
 
 /// A scoring engine whose model can be replaced while it is in use.
 struct Engine {
+
     /// Env value.
     env: Environment,
+
     /// Model value.
     model: ArcSwap<Model>,
 }
 
 impl Engine {
-    /// Constructs a usable initial engine value with the defaults required by the onnx infer
-    /// component.
+
+    /// Initializes the ONNX runtime and loads a model from the supplied bytes.
+    ///
+    /// # Arguments
+///
+    /// * `version` - Model version recorded with the loaded model.
+    /// * `bytes` - Serialized ONNX model data to load.
     ///
     /// # Errors
+///
     /// Returns an error if initializing the ONNX runtime or loading the model fails.
     fn new(version: u32, bytes: &[u8]) -> Result<Self> {
         let env = ort::init().build()?;
@@ -80,7 +95,10 @@ impl Engine {
     }
 }
 
+/// Runs inference with a loaded ONNX model, then swaps to another model version.
+///
 /// # Errors
+///
 /// Returns an error if model initialization, inference, or the model hot swap fails.
 fn main() -> Result<()> {
     // Models exported with `skl2onnx` (see `models/make_models.py`).
@@ -101,9 +119,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Runs inference with a loaded ONNX model, then swaps to another model version.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

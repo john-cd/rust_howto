@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Find reference-style links that have no definition with `mdbook-utils`.
 //!
 //! Install the tool with `cargo install mdbook-utils`; see its user guide for
@@ -50,6 +51,7 @@ fn main() -> Result<()> {
 /// Runs the `mdbook-utils` broken-links example.
 ///
 /// # Errors
+///
 /// Returns an error if the tool is missing or fails.
 pub fn run() -> Result<()> {
     // Call through a binding: calling `main` directly trips

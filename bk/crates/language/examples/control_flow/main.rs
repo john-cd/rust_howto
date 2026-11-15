@@ -7,18 +7,23 @@ use clap::Subcommand;
 
 /// Examples using `for`.
 mod for1;
+
 /// `if`, `else if` and `else` expressions.
 mod if_else;
+
 /// Labeled block expressions, which `break` out with a value.
 mod labeled_block_expression;
+
 /// Demonstrates the use of a `loop` with a `break` statement to return a value.
 mod loop1;
+
 /// This is an example of a `while` loop.
 mod while1;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,18 +32,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `for1` example.
     #[command(name = "for1")]
     For1,
+
     /// Runs the `if_else` example.
     #[command(name = "if_else")]
     IfElse,
+
     /// Runs the `labeled_block_expression` example.
     #[command(name = "labeled_block_expression")]
     LabeledBlockExpression,
+
     /// Runs the `loop1` example.
     #[command(name = "loop1")]
     Loop1,
+
     /// Runs the `while1` example.
     #[command(name = "while1")]
     While1,
@@ -66,7 +76,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Token trees as the arguments of declarative macros.
 
 /// Accepts a single token tree and expands to nothing.
@@ -37,8 +38,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls macros with single tokens and groups of tokens.
 pub fn run() {
     main();
 }

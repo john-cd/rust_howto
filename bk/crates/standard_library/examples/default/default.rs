@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `Default` trait provides a way to create a default value for a type.
 //! It initializes a struct without manually specifying every field.
 //!
@@ -9,36 +10,46 @@
 //! care about.
 
 // `derive` implements it automatically:
+
 /// A configuration, with the default values of each type.
 #[derive(Default, Debug)]
 struct Config {
+
     /// The timeout.
     timeout: u32, // defaults to `0`.
+
     /// The number of retries.
     retries: u8, // defaults to `0`.
+
     /// The address of the endpoint.
     endpoint: String, // defaults to `"".to_string()`.
+
     /// Whether logging is enabled.
     logging_enabled: bool, // defaults to `false`.
 }
 
 // For custom defaults, implement the trait manually:
+
 /// A configuration, with custom default values.
 #[derive(Debug)]
 struct Config2 {
+
     /// The timeout.
     timeout: u32,
+
     /// The number of retries.
     retries: u8,
+
     /// The address of the endpoint.
     endpoint: String,
+
     /// Whether logging is enabled.
     logging_enabled: bool,
 }
 
 impl Default for Config2 {
-    /// Constructs a usable initial config2 value with the defaults required by the default
-    /// component.
+
+    /// Returns the example configuration with its documented default values.
     fn default() -> Self {
         Self {
             timeout: 5000,
@@ -48,7 +59,7 @@ impl Default for Config2 {
         }
     }
 }
-/// Runs the example.
+
 /// Creates configurations with default values and overrides some fields.
 fn main() {
     let config = Config::default();
@@ -74,8 +85,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates configurations with default values and overrides some fields.
 pub fn run() {
     main();
 }
@@ -83,11 +93,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `default` example runs.
     #[test]
     fn test_default_example_entry_point() {
         main();
     }
+
     /// Verifies derived default uses type defaults.
     #[test]
     fn test_derived_default_uses_type_defaults() {
@@ -97,6 +109,7 @@ mod tests {
         assert_eq!(c.endpoint, "");
         assert!(!c.logging_enabled);
     }
+
     /// Verifies custom default.
     #[test]
     fn test_custom_default() {
@@ -106,6 +119,7 @@ mod tests {
         assert_eq!(c.endpoint, "https://api.example.com");
         assert!(c.logging_enabled);
     }
+
     /// Verifies struct update syntax.
     #[test]
     fn test_struct_update_syntax() {

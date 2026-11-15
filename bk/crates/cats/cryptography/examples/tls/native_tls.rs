@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Build a platform TLS connector with `native-tls`.
 //!
 //! This example builds a `TlsConnector` and can make an opt-in verified TLS
@@ -18,19 +19,24 @@ use native_tls::TlsStream;
 fn build_connector() -> anyhow::Result<TlsConnector> {
     Ok(TlsConnector::builder().build()?)
 }
+
 /// Opens a TCP connection and completes a certificate-validated TLS handshake.
 ///
 /// # Errors
+///
 /// Returns an error if the connection or TLS handshake fails.
 fn connect_tls(connector: &TlsConnector, host: &str) -> anyhow::Result<TlsStream<TcpStream>> {
     let tcp_stream = TcpStream::connect((host, 443))
         .with_context(|| format!("could not connect to {host}:443"))?;
     Ok(connector.connect(host, tcp_stream)?)
 }
+
 /// Builds a connector and optionally connects to `NATIVE_TLS_HOST`.
 ///
 /// Without the environment variable this example does not access the network.
+///
 /// # Errors
+///
 /// Returns an error if the connector cannot be built, the environment variable
 /// is invalid, or an opted-in connection fails.
 fn main() -> anyhow::Result<()> {
@@ -49,9 +55,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Builds a connector and optionally connects to `NATIVE_TLS_HOST`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

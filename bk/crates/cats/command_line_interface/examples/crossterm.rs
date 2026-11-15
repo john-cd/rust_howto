@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Terminal control with `crossterm`: raw mode, colors, cursor movement and key
 //! events.
 //!
@@ -38,6 +39,7 @@ fn main() -> anyhow::Result<()> {
 /// Sets up the terminal, handles key input, and restores terminal state.
 ///
 /// # Errors
+///
 /// Returns an error if terminal initialization, input, or cleanup fails.
 fn example() -> anyhow::Result<()> {
     let mut stdout = stdout();
@@ -104,6 +106,7 @@ fn example() -> anyhow::Result<()> {
 /// Runs the example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example()

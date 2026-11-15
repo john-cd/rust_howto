@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Overloading the `+` operator with `Add`.
 //!
 //! Operator overloading means implementing the traits in `std::ops`, such as
@@ -12,11 +13,14 @@ use std::ops::Add;
 // The struct we want to overload the '+' operator for.
 // We derive a few convenience traits, incl. `Debug` to allow for easy printing
 // with `{:?}`.
+
 /// A point in two dimensions.
 #[derive(Debug, Copy, Clone, PartialEq, Eq)]
 struct Point {
+
     /// The x coordinate.
     x: i32,
+
     /// The y coordinate.
     y: i32,
 }
@@ -36,7 +40,7 @@ impl Add for Point {
         }
     }
 }
-/// Runs the example.
+
 /// Adds two points.
 fn main() {
     let p1 = Point { x: 1, y: 5 };
@@ -52,8 +56,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Adds two points.
 pub fn run() {
     main();
 }
@@ -61,17 +64,20 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `ops` example runs.
     #[test]
     fn test_ops_example_entry_point() {
         main();
     }
+
     /// Verifies add.
     #[test]
     fn test_add() {
         let p = Point { x: 1, y: 5 } + Point { x: 2, y: 3 };
         assert_eq!(p, Point { x: 3, y: 8 });
     }
+
     /// Verifies add with negatives and zero.
     #[test]
     fn test_add_with_negatives_and_zero() {
@@ -80,6 +86,7 @@ mod tests {
         assert_eq!(p + zero, p);
         assert_eq!(p + Point { x: 1, y: -4 }, zero);
     }
+
     /// Verifies add overflow panics in debug builds.
     #[test]
     #[should_panic(expected = "overflow")]

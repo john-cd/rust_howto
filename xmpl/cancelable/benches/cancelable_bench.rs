@@ -24,7 +24,8 @@ use criterion::criterion_main;
 /// Benchmarks task creation and submission throughput into the worker queue.
 ///
 /// # Arguments
-/// * `c` - Mutable criterion whose state is updated by this operation.
+///
+/// * `c` - Criterion benchmark group used to register this benchmark.
 fn benchmark_task_submission_throughput(c: &mut Criterion) {
     let mut group = c.benchmark_group("task_submission");
 
@@ -63,7 +64,8 @@ fn submit_worker_tasks(worker: &Worker) {
 /// tasks.
 ///
 /// # Arguments
-/// * `c` - Mutable criterion whose state is updated by this operation.
+///
+/// * `c` - Criterion benchmark group used to register this benchmark.
 fn benchmark_channel_contention(c: &mut Criterion) {
     let mut group = c.benchmark_group("channel_contention");
 
@@ -96,7 +98,8 @@ fn benchmark_channel_contention(c: &mut Criterion) {
 /// cancellation.
 ///
 /// # Arguments
-/// * `c` - Mutable criterion whose state is updated by this operation.
+///
+/// * `c` - Criterion benchmark group used to register this benchmark.
 fn benchmark_cancellation_latency(c: &mut Criterion) {
     let mut group = c.benchmark_group("cancellation_latency");
 
@@ -144,6 +147,7 @@ criterion_main!(benches);
 
 #[cfg(test)]
 mod tests {
+
     /// Runs the cancelable benchmark entry point under test harness.
     #[test]
     fn test_cancelable_bench_entry_point() {

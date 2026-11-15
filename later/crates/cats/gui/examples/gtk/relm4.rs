@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A counter application with `relm4`.
 //!
 //! Relm4 builds GTK 4 apps in the Elm style: a model holds the state, messages
@@ -12,6 +13,7 @@ use relm4::prelude::*;
 
 /// The model of the counter.
 struct CounterModel {
+
     /// The current count.
     value: i32,
 }
@@ -19,8 +21,10 @@ struct CounterModel {
 /// The messages that the counter handles.
 #[derive(Debug)]
 enum CounterInput {
+
     /// Increases the count.
     Increment,
+
     /// Decreases the count.
     Decrement,
 }
@@ -81,6 +85,7 @@ impl SimpleComponent for CounterModel {
 }
 
 impl CounterModel {
+
     /// Updates the count for a message.
     fn apply(&mut self, message: CounterInput) {
         match message {
@@ -89,18 +94,15 @@ impl CounterModel {
         }
     }
 }
-/// Runs the example.
-/// Runs the application.
 
+/// Runs the application.
 fn main() {
     let app = RelmApp::new("relm4.example.counter");
     app.run::<CounterModel>(0);
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Opens the Relm4 counter application.
-
 pub fn run() {
     main();
 }

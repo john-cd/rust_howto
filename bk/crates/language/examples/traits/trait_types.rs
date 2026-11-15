@@ -1,11 +1,14 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Types that can implement a trait.
 
 // An example trait (with a method with a default implementation):
+
 /// A trait with a default method.
 trait Tr {
+
     /// Does nothing.
     fn foo(&self) {
         println!("foo");
@@ -14,8 +17,10 @@ trait Tr {
 
 /// An enum.
 enum MyEnum {
+
     /// The first variant.
     A,
+
     /// The second variant.
     B,
 }
@@ -26,8 +31,10 @@ impl Tr for MyEnum {}
 /// A union.
 #[repr(C)]
 union MyUnion {
+
     /// A 32-bit unsigned integer.
     f1: u32,
+
     /// A 32-bit float, which shares its memory with `f1`.
     f2: f32,
 }
@@ -66,6 +73,7 @@ fn main() {
     a.foo();
     let t = (1, 2.0);
     t.foo();
+
     /// Prints the label used by the function-pointer example.
     fn bar() {
         println!("bar");
@@ -80,8 +88,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the trait method on several types.
 pub fn run() {
     main();
 }

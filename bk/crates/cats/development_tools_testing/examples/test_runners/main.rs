@@ -4,7 +4,7 @@
 
 /// Writing tests that pass, fail, return a `Result` or are ignored.
 mod tests1;
-/// Runs the example.
+
 /// Runs the test runners example.
 fn main() {
     tests1::run();

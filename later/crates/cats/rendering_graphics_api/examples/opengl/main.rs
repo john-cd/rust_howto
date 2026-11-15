@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates loading and calling the cross-platform `glow` bindings.
 
 use std::ffi::CStr;
@@ -14,9 +15,11 @@ use glow::HasContext;
 fn c_symbol(name: &str) -> Option<CString> {
     CString::new(name).ok()
 }
+
 /// Loads `glow` bindings from the function pointers of a current OpenGL context.
 ///
 /// # Safety
+///
 /// The caller must make the intended OpenGL context current before loading its
 /// function pointers and keep that context valid while using the returned API.
 #[cfg_attr(
@@ -37,9 +40,11 @@ unsafe fn load_context(mut get_proc_address: impl FnMut(&CStr) -> *const c_void)
         })
     }
 }
+
 /// Clears the current framebuffer to a dark blue color.
 ///
 /// # Safety
+///
 /// `gl` must belong to the current context, which must remain current for the
 /// duration of both OpenGL calls.
 #[cfg_attr(
@@ -85,8 +90,10 @@ mod tests {
     unsafe extern "system" fn stub_get_string(_: u32) -> *const u8 {
         c"2.1 Mock".as_ptr().cast::<u8>()
     }
+
     /// Accepts the clear color requested by the example without changing state.
     unsafe extern "system" fn stub_clear_color(_: f32, _: f32, _: f32, _: f32) {}
+
     /// Mock OpenGL clear-color function used to load a test context.
     unsafe extern "system" fn stub_clear(_: u32) {}
 

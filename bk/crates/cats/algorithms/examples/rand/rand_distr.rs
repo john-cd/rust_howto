@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to sample from a normal distribution.
 //!
 //! The `Normal` struct represents a normal distribution with a given mean and
@@ -21,9 +22,10 @@ fn main() -> Result<(), NormalError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Sample from a normal distribution with mean 2.0 and standard deviation 3.0:
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), NormalError> {
     main()
@@ -32,6 +34,7 @@ pub fn run() -> Result<(), NormalError> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `rand distr` example runs.
     #[test]
     fn test_rand_distr_example_entry_point() {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Check whether an external command reports a version that meets a
 //! requirement.
 //!
@@ -16,16 +17,20 @@ use anyhow::Result;
 use anyhow::bail;
 use semver::Version;
 use semver::VersionReq;
+
 /// Runs `command --version` and parses the final token as a semantic version.
 ///
 /// # Arguments
+///
 /// * `command` - Program to query for its version.
 ///
 /// # Returns
+///
 /// `Ok(None)` if the program is not installed, or `Ok(Some(version))` if it
 /// reports a valid version.
 ///
 /// # Errors
+///
 /// Returns an error if the program cannot be started for another reason, exits
 /// unsuccessfully, emits invalid UTF-8, omits a version token, or reports an
 /// invalid version.
@@ -85,9 +90,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Checks whether the installed Git version satisfies the example requirement.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

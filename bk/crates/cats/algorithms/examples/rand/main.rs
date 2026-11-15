@@ -9,24 +9,32 @@ use clap::Subcommand;
 
 /// Fast pseudo-random number generation with `fastrand`.
 mod fastrand;
+
 /// In `Cargo.toml`, add: ```toml [dependencies] rand = "0.10.3" or latest.
 mod rand1;
+
 /// Generate a random string of 20 alphanumeric characters.
 mod rand_alphanumeric;
+
 /// Demonstrates how to implement a custom distribution for the `rand` crate.
 mod rand_custom;
+
 /// This example demonstrates how to sample from a normal distribution.
 mod rand_distr;
+
 /// Generates a random password from a custom set of characters with `rand`.
 mod rand_password;
+
 /// Demonstrates generating random numbers within a specified range.
 mod rand_range;
+
 /// Generates random numbers in ranges with the `rand` crate.
 mod rand_range_uniform;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -35,27 +43,35 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `fastrand` example.
     #[command(name = "fastrand")]
     Fastrand,
+
     /// Runs the `rand1` example.
     #[command(name = "rand")]
     Rand,
+
     /// Runs the `rand_alphanumeric` example.
     #[command(name = "rand_alphanumeric")]
     RandAlphanumeric,
+
     /// Runs the `rand_custom` example.
     #[command(name = "rand_custom")]
     RandCustom,
+
     /// Runs the `rand_distr` example.
     #[command(name = "rand_distr")]
     RandDistr,
+
     /// Runs the `rand_password` example.
     #[command(name = "rand_password")]
     RandPassword,
+
     /// Runs the `rand_range` example.
     #[command(name = "rand_range")]
     RandRange,
+
     /// Runs the `rand_range_uniform` example.
     #[command(name = "rand_range_uniform")]
     RandRangeUniform,

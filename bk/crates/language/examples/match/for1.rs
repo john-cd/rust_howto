@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Destructuring in a `for` loop.
 
 /// Destructures the tuples of a vector in a `for` loop.
@@ -16,8 +17,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Destructures the tuples of a vector in a `for` loop.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `HEAD` method to check if a
 //! resource exists.
 //!
@@ -33,9 +34,10 @@ async fn main() -> reqwest::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Sends a `HEAD` request to check whether a user exists.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> reqwest::Result<()> {
     main()

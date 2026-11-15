@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Runs a headless `wgpu` compute shader that doubles each storage-buffer
 //! value.
 //!
@@ -20,7 +21,11 @@ const COMPUTE_SHADER: &str = "
 var<storage, read_write> values: array<u32>;
 
 @compute @workgroup_size(64)
+
+/// Doubles the storage-array value at each in-range invocation index.
+///
 /// # Arguments
+///
 /// * `id` - Identifier used to select the wgpu record or cache entry affected by this operation.
 fn double_values(@builtin(global_invocation_id) id: vec3<u32>) {
     if (id.x < arrayLength(&values)) {
@@ -31,6 +36,7 @@ fn double_values(@builtin(global_invocation_id) id: vec3<u32>) {
 
 /// Shared `input` used by this module.
 const INPUT_VALUES: [u32; 8] = [1, 2, 3, 4, 5, 6, 7, 8];
+
 /// Shared `workgroup size` used by this module.
 const WORKGROUP_SIZE: u32 = 64;
 
@@ -38,12 +44,14 @@ const WORKGROUP_SIZE: u32 = 64;
 fn main() -> Result<(), Box<dyn Error>> {
     block_on(run_compute())
 }
+
 /// Requests a headless device, doubles the storage-buffer values, and reads
 /// them back.
 #[expect(
     clippy::little_endian_bytes,
     reason = "WGSL u32 storage buffers use little-endian byte order"
 )]
+
 /// Runs compute.
 async fn run_compute() -> Result<(), Box<dyn Error>> {
     let mut instance_desc = wgpu::InstanceDescriptor::new_without_display_handle();
@@ -145,6 +153,7 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
     clippy::little_endian_bytes,
     reason = "WGSL u32 storage buffers use little-endian byte order"
 )]
+
 /// Reads u32 values.
 fn read_u32_values(
     device: &wgpu::Device,
@@ -177,6 +186,7 @@ fn read_u32_values(
 /// Runs the example's asynchronous compute workflow on a blocking executor.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
@@ -207,6 +217,7 @@ mod tests {
     fn test_compute_doubles_storage_values() -> Result<(), Box<dyn Error>> {
         run()
     }
+
     /// Runs the example through its entry point.
     #[test]
     #[ignore = "requires a compatible GPU adapter"]

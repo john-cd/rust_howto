@@ -12,9 +12,11 @@ use clap::Subcommand;
 /// Creates a Lua table in Rust and reads it from an embedded Lua 5.4 runtime.
 #[cfg(feature = "lua")]
 mod mlua;
+
 /// Calls an embedded Lua chunk and a Rust function while exposing only a
 #[cfg(feature = "lua")]
 mod mlua_scripting;
+
 /// Exposes a Rust counter as Lua userdata with a method, using vendored Lua.
 #[cfg(feature = "lua")]
 mod mlua_userdata;
@@ -23,6 +25,7 @@ mod mlua_userdata;
 #[cfg(feature = "lua")]
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -32,14 +35,17 @@ struct Cli {
 #[cfg(feature = "lua")]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `mlua` example.
     #[cfg(feature = "lua")]
     #[command(name = "mlua")]
     Mlua,
+
     /// Runs the embedded scripting example.
     #[cfg(feature = "lua")]
     #[command(name = "mlua_scripting")]
     MluaScripting,
+
     /// Runs the userdata example.
     #[cfg(feature = "lua")]
     #[command(name = "mlua_userdata")]
@@ -84,8 +90,7 @@ mod tests {
         }
     }
 }
-/// Runs the example.
-/// Runs the example selected on the command line.
 
+/// Runs the example selected on the command line.
 #[cfg(not(feature = "lua"))]
 fn main() {}

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The main function to render the App component.
 //!
 //! Yew is a Rust framework for web front ends, compiled to WebAssembly. A
@@ -43,7 +44,7 @@ fn App() -> Html {
         </div>
     }
 }
-/// Runs the example.
+
 /// Runs the Yew example in the browser target.
 fn main() {
     #[cfg(target_arch = "wasm32")]
@@ -54,13 +55,13 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the Yew example for the crate's example harness.
 pub fn run() {
     main();
 }
 
 #[cfg(test)]
+
 /// Tests the `yew` example and its documented behavior.
 #[cfg(not(target_arch = "wasm32"))]
 mod tests {
@@ -75,6 +76,7 @@ mod tests {
     }
 
     // output-only: on the host, the entry point only prints a hint.
+
     /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() {

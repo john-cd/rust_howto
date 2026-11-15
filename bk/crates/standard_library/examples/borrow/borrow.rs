@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Looking up a `HashMap` of `String` keys with a `&str`, thanks to `Borrow`.
 //!
 //! The `Borrow` trait is why you can look up a `HashMap<String, V>` with a
@@ -12,6 +13,7 @@ use std::collections::HashMap;
 // This is the most common use of `Borrow`.
 // A `HashMap<String, V>` can be queried with a `&str`,
 // because `String: Borrow<str>`.
+
 /// Looks up scores with `&str` keys.
 fn main() {
     let mut scores: HashMap<String, u32> = HashMap::new();
@@ -29,8 +31,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Looks up scores with `&str` keys.
 pub fn run() {
     main();
 }
@@ -38,11 +39,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `borrow` example runs.
     #[test]
     fn test_borrow_example_entry_point() {
         main();
     }
+
     /// Verifies lookup with borrowed key.
     #[test]
     fn test_lookup_with_borrowed_key() {

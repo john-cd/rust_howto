@@ -5,6 +5,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A minimal Kubernetes operator with `kube-rs`: a custom resource (`Echo`),
 //! a pure function that computes the desired `Deployment`, and a controller
 //! loop that applies it and reports the status.
@@ -42,10 +43,13 @@ use serde_json::json;
     namespaced,
     status = "EchoStatus"
 )]
+
 /// Desired state stored in the Kubernetes `Echo` custom resource.
 pub struct EchoSpec {
+
     /// The message the pods echo.
     pub message: String,
+
     /// The number of pods.
     pub replicas: i32,
 }
@@ -53,6 +57,7 @@ pub struct EchoSpec {
 /// The observed state of an `Echo`, written to the status subresource.
 #[derive(Clone, Debug, Default, Deserialize, Serialize, JsonSchema)]
 pub struct EchoStatus {
+
     /// The number of ready pods.
     pub ready_replicas: i32,
 }
@@ -60,12 +65,15 @@ pub struct EchoStatus {
 /// Reconciliation errors.
 #[derive(Debug, thiserror::Error)]
 pub enum ReconcileError {
+
     /// The `Echo` has no name or UID, so it cannot own a `Deployment`.
     #[error("the Echo is missing metadata")]
     MissingMetadata,
+
     /// The desired `Deployment` could not be built.
     #[error("invalid Deployment: {0}")]
     Invalid(#[from] serde_json::Error),
+
     /// The API server rejected a request.
     #[error("Kubernetes API error: {0}")]
     Kube(#[from] kube::Error),
@@ -73,6 +81,7 @@ pub enum ReconcileError {
 
 /// Shared state for the reconciler.
 struct Context {
+
     /// Database client used to execute the query.
     client: Client,
 }
@@ -80,6 +89,7 @@ struct Context {
 /// A pure function from the spec to the desired `Deployment`: it is
 ///
 /// # Arguments
+///
 /// idempotent and can be unit-tested without a cluster.
 pub fn desired_deployment(echo: &Echo) -> Result<Deployment, ReconcileError> {
     let name = echo.name_any();
@@ -173,6 +183,7 @@ fn main() -> anyhow::Result<()> {
 /// computes the desired `Deployment`, and a controller loop that applies it and reports the status.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -200,6 +211,7 @@ mod tests {
     fn test_kubernetes_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// Matches the generated custom-resource definition to the committed snapshot.
     #[test]
     fn crd_matches_the_committed_snapshot() -> anyhow::Result<()> {

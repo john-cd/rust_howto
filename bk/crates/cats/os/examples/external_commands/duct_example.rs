@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Run a child command with `duct` and capture its output.
 //!
 //! A child process is another program started by yours. `duct` builds commands
@@ -17,9 +18,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs `git status --short --ignore-submodules=all` and prints its output.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -35,6 +37,7 @@ mod tests {
     fn test_duct_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// `duct` captures the standard output of a command.
     #[test]
     fn duct_captures_output() -> anyhow::Result<()> {

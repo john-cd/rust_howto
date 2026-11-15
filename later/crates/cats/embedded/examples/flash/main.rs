@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Starts the flash application and connects its top-level components.
 //! The executable uses this module to initialize services and hand control to the application.
 
@@ -20,6 +21,7 @@ enum FlashError {
 }
 
 impl core::fmt::Display for FlashError {
+
     /// Formats the value for display.
     fn fmt(&self, formatter: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         write!(formatter, "NOR flash operation failed: {self:?}")
@@ -29,6 +31,7 @@ impl core::fmt::Display for FlashError {
 impl std::error::Error for FlashError {}
 
 impl NorFlashError for FlashError {
+
     /// Maps model-specific errors to the portable NOR flash error category.
     fn kind(&self) -> NorFlashErrorKind {
         NorFlashErrorKind::Other
@@ -37,11 +40,13 @@ impl NorFlashError for FlashError {
 
 /// State required by `RamNorFlash` during transport operations.
 struct RamNorFlash {
+
     /// Byte representation of the value.
     bytes: [u8; 16],
 }
 
 impl Default for RamNorFlash {
+
     /// Creates an erased in-memory flash region.
     fn default() -> Self {
         Self { bytes: [0xff; 16] }
@@ -49,11 +54,13 @@ impl Default for RamNorFlash {
 }
 
 impl ErrorType for RamNorFlash {
+
     /// Shared `read size` used by this module.
     type Error = FlashError;
 }
 
 impl ReadNorFlash for RamNorFlash {
+
     /// Shared `read size` used by this module.
     const READ_SIZE: usize = 1;
 
@@ -74,8 +81,10 @@ impl ReadNorFlash for RamNorFlash {
 }
 
 impl NorFlash for RamNorFlash {
+
     /// Shared `erase size` used by this module.
     const ERASE_SIZE: usize = 8;
+
     /// Shared `write size` used by this module.
     const WRITE_SIZE: usize = 2;
 
@@ -122,8 +131,8 @@ impl NorFlash for RamNorFlash {
 fn main() -> anyhow::Result<()> {
     run_example()
 }
-/// Stores and reads a record through the in-memory NOR flash model.
 
+/// Stores and reads a record through the in-memory NOR flash model.
 fn run_example() -> anyhow::Result<()> {
     let mut flash = RamNorFlash::default();
     flash.erase(0, 8)?;
@@ -139,6 +148,7 @@ fn run_example() -> anyhow::Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Rejects writes that set flash bits from zero back to one until the block is erased.
     #[test]
     fn requires_erase_before_zero_to_one_write() {

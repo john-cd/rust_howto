@@ -7,13 +7,17 @@ use clap::Subcommand;
 
 /// Parse, deserialize, and write XML with `quick-xml`.
 mod quick_xml;
+
 /// Builds or traverses xml graph data while preserving relationships needed by downstream analysis.
 /// Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod roxmltree;
+
 /// This example demonstrates how to read and write XML data using the
 mod xml;
+
 /// Parse a small XML document with `xml5ever` and inspect its DOM tree.
 mod xml5ever;
+
 /// Turns xml input into structured syntax data while preserving source locations and reporting
 /// malformed input. Analysis and validation code use these routines before applying domain-specific
 /// rules.
@@ -22,6 +26,7 @@ mod xmlparser;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -30,18 +35,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `quick_xml` example.
     #[command(name = "quick_xml")]
     QuickXml,
+
     /// Runs the `roxmltree` example.
     #[command(name = "roxmltree")]
     Roxmltree,
+
     /// Runs the `xml` example.
     #[command(name = "xml")]
     Xml,
+
     /// Runs the `xml5ever` example.
     #[command(name = "xml5ever")]
     Xml5ever,
+
     /// Runs the `xmlparser` example.
     #[command(name = "xmlparser")]
     Xmlparser,

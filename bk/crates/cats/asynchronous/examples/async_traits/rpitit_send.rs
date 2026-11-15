@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Making the futures of a trait method `Send` so the trait can be used with
 //! `tokio::spawn`: either declare `-> impl Future<Output = T> + Send`, or let
 //! `trait_variant` generate a `Send` version of the trait.
@@ -11,9 +12,11 @@ use std::future::Future;
 /// Style 1: return-position `impl Trait` in a trait (RPITIT) with an explicit
 /// `Send` bound.
 trait Refresh {
+
     /// Refreshes the state and returns its new version number.
     ///
     /// # Errors
+///
     /// Returns an error if the state cannot be refreshed.
     fn refresh(&mut self) -> impl Future<Output = Result<u32, String>> + Send;
 }
@@ -22,6 +25,7 @@ trait Refresh {
 struct Counter(u32);
 
 impl Refresh for Counter {
+
     /// Increments and returns the counter value.
     async fn refresh(&mut self) -> Result<u32, String> {
         self.0 += 1;
@@ -40,8 +44,10 @@ async fn refresh_in_task<R: Refresh + Send + 'static>(mut r: R) -> Result<u32, S
 /// from the plain trait `LocalStore`.
 #[trait_variant::make(SendStore: Send)]
 trait LocalStore {
+
     /// Looks up a key.
     async fn get(&self, key: &str) -> Option<String>;
+
     /// Stores a value.
     async fn put(&mut self, key: &str, value: String);
 }
@@ -52,6 +58,7 @@ trait LocalStore {
 struct MemoryStore(HashMap<String, String>);
 
 impl SendStore for MemoryStore {
+
     /// Returns the value associated with `key`, if any.
     async fn get(&self, key: &str) -> Option<String> {
         self.0.get(key).cloned()
@@ -96,7 +103,6 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example.
 pub fn run() {
     main();

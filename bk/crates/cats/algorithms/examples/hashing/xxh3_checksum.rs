@@ -1,15 +1,18 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Ultra-fast data integrity verification using XXH3 (128-bit) checksums.
 //!
 //! ### What is XXH3?
+//!
 //! XXH3 is a state-of-the-art non-cryptographic hash algorithm from the xxHash
 //! family designed to process data at near-memory-bandwidth speeds (tens of
 //! gigabytes per second) by leveraging SIMD vector instructions (AVX2, SSE2,
 //! NEON).
 //!
 //! ### Non-Cryptographic Checksum vs. Cryptographic MAC
+//!
 //! - **Accidental Corruption Detection**: XXH3 reliably detects accidental bit flips, truncated
 //!   files, network transmission errors, and disk corruption.
 //! - **NOT Malice-Proof**: Because XXH3 is non-cryptographic, an intentional adversary can easily
@@ -17,6 +20,7 @@
 //!   malicious attackers, use HMAC (e.g., `HMAC-SHA256`) or digital signatures.
 //!
 //! ### Purpose & Use Cases
+//!
 //! - In-memory data frame checksums in high-throughput network streaming.
 //! - Database page integrity checking and disk block validation.
 //! - Cache validation and fast deduplication checks.
@@ -34,11 +38,13 @@ fn seal(payload: &[u8]) -> Vec<u8> {
     out.extend_from_slice(&xxh3_128(payload).to_be_bytes());
     out
 }
+
 /// Opens a sealed buffer, verifies its appended XXH3 checksum tag, and returns
 ///
 /// the payload slice if valid, or `None` if corrupted.
 ///
 /// # Returns
+///
 /// `Some` when the requested value is available; otherwise returns `None`.
 fn open(sealed: &[u8]) -> Option<&[u8]> {
     let split = sealed.len().checked_sub(TAG_LEN)?;
@@ -63,7 +69,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the XXH3 checksum example by calling `main()`.
 pub fn run() {
     // Call through a binding: calling `main` directly trips
@@ -75,6 +80,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `xxh3 checksum` example runs.
     #[test]
     fn test_xxh3_checksum_example_entry_point() {

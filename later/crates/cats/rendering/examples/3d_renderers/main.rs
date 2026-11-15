@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Projects a 3D triangle to screen space the way a renderer's vertex stage
 //! does.
 
@@ -13,6 +14,7 @@ use glam::camera::rh::view;
 
 /// Shared `width` used by this module.
 const WIDTH: f32 = 640.0;
+
 /// Shared `height` used by this module.
 const HEIGHT: f32 = 480.0;
 
@@ -26,13 +28,16 @@ fn model_view_projection() -> Mat4 {
     let projection = directx::perspective(core::f32::consts::FRAC_PI_3, WIDTH / HEIGHT, 0.1, 100.0);
     projection * view * model
 }
+
 /// Transforms a model-space position into pixel coordinates and normalized depth.
 ///
 /// # Arguments
+///
 /// * `mvp` - Model-view-projection matrix used to transform the position.
 /// * `position` - Position in model space.
 ///
 /// # Returns
+///
 /// `Some((pixel, depth))` when the position is in front of the camera and inside
 /// the clip volume; otherwise, `None`.
 fn project(mvp: Mat4, position: Vec3) -> Option<(Vec2, f32)> {
@@ -68,6 +73,7 @@ fn project_triangle_example() {
         }
     }
 }
+
 /// Starts the 3D projection example as a binary.
 fn main() {
     project_triangle_example();

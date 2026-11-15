@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A dot product with SIMD: `std::arch` intrinsics selected at run time, a
 //! scalar fallback, and the portable `wide` crate.
 //!
@@ -20,6 +21,7 @@ use wide::f32x4;
 fn dot_scalar(a: &[f32], b: &[f32]) -> f32 {
     a.iter().zip(b).map(|(x, y)| x * y).sum()
 }
+
 /// SSE2 (always available on `x86_64`): four lanes at a time.
 #[cfg(target_arch = "x86_64")]
 #[target_feature(enable = "sse2")]
@@ -111,7 +113,7 @@ fn fixture(len: usize, seed: u32) -> Vec<f32> {
         })
         .collect()
 }
-/// Runs the example.
+
 /// Compares the implementations on a fixed input.
 fn main() {
     let a = fixture(1_003, 1);
@@ -124,7 +126,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Compares scalar, runtime-dispatched, and portable SIMD on fixed inputs.
 pub fn run() {
     // Call through a binding: calling `main` directly trips

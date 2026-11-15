@@ -1,6 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
+//! Demonstrates embedding Rhai scripts in a Rust application.
+//!
 //! # Rhai scripting
 //!
 //! Rhai is a lightweight, Rust-based scripting language.
@@ -22,6 +25,7 @@ use rhai::Scope;
 fn add(x: i64, y: i64) -> i64 {
     x + y
 }
+
 /// Registers Rust functions in a Rhai engine and calls them from scripts.
 fn main() -> Result<(), Box<EvalAltResult>> {
     // Create a new `Rhai` scripting engine.
@@ -81,6 +85,7 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 /// Runs the scripting example, returning any script evaluation error.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<EvalAltResult>> {
     main()?;

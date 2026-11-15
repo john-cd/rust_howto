@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Mocking a struct's methods with `faux`.
 //!
 //! A mock replaces a real dependency (a database or a web service) in a test,
@@ -10,31 +11,38 @@
 /// Runs the example.
 // `faux` mocks the methods of structs for testing without
 // complicating or polluting our code.
+
 /// Represents a user with an ID and a name.
 #[derive(Debug, Clone, PartialEq)]
 struct User {
+
     /// Unique identifier of the user.
     id: u64,
+
     /// Name of the user.
     name: String,
 }
 
 /// A trait representing a database that can retrieve and save user data.
 trait Database {
+
     /// Retrieves a user by their ID.
     ///
     /// Returns `Some(User)` if a user with the given ID exists, otherwise
     /// `None`.
     fn get_user(&self, id: u64) -> Option<User>;
+
     /// Returns `true` if the save operation was successful, `false` otherwise.
     ///
     /// # Returns
+///
     /// `true` when the condition described above holds, and `false` otherwise.
     fn save_user(&self, user: &User) -> bool;
 }
 
 /// A service that interacts with a `Database` to manage user data.
 struct UserService<D: Database> {
+
     /// The database implementation used by this service.
     database: D,
 }
@@ -42,6 +50,7 @@ struct UserService<D: Database> {
 /// Implementation of `UserService` that uses a generic `Database`
 /// implementation.
 impl<D: Database> UserService<D> {
+
     /// Creates a new `UserService` with the given database.
     fn new(database: D) -> Self {
         Self { database }
@@ -55,10 +64,12 @@ impl<D: Database> UserService<D> {
     /// Renames the user `id`; returns whether the update succeeded.
     ///
     /// # Arguments
+///
     /// * `id` - Identifier used to select the user service or related record being processed.
     /// * `name` - Human-readable value used to identify or display the selected user service.
     ///
     /// # Returns
+///
     /// `true` when the condition described above holds, and `false` otherwise.
     fn update_user_name(&self, id: u64, name: String) -> bool {
         if let Some(mut user) = self.database.get_user(id) {
@@ -74,9 +85,12 @@ impl<D: Database> UserService<D> {
 struct ActualDatabase; // Well, sort of...
 
 impl Database for ActualDatabase {
+
+    /// Returns the fixed example user for ID 1 and `None` for other IDs.
+    ///
     /// # Arguments
-    /// * `id` - Identifier used to select the actual database record or cache entry affected by
-    ///   this operation.
+    ///
+    /// * `id` - ID of the user to retrieve.
     fn get_user(&self, id: u64) -> Option<User> {
         (id == 1).then(|| User {
             id,
@@ -98,6 +112,7 @@ struct MockDatabase {}
 /// Implementation of the `Database` trait for `MockDatabase`.
 #[faux::methods]
 impl Database for MockDatabase {
+
     /// Mock implementation of `get_user`.
     /// This method will be mocked during testing.
     fn get_user(&self, _id: u64) -> Option<User> {
@@ -110,6 +125,7 @@ impl Database for MockDatabase {
         false
     }
 }
+
 /// Looks up and renames a user through the service.
 fn main() {
     let service = UserService::new(ActualDatabase);

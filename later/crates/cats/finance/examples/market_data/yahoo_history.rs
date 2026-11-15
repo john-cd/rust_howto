@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Fetch daily bars from Yahoo! Finance under a rate limit.
 //!
 //! Respect the data provider's terms of use: Yahoo! Finance's public API is
@@ -17,9 +18,11 @@ use yahoo_finance_api::YahooConnector;
 /// Converts a Yahoo! chart response into daily bars.
 ///
 /// # Arguments
+///
 /// * `json` - Decoded chart response returned by the Yahoo! Finance endpoint.
 ///
 /// # Errors
+///
 /// Returns an error if the response is malformed or contains no quote data.
 #[cfg_attr(
     not(test),
@@ -36,9 +39,11 @@ fn parse_bars(json: serde_json::Value) -> anyhow::Result<Vec<Quote>> {
 /// second.
 ///
 /// # Arguments
+///
 /// * `tickers` - Symbols to fetch, processed sequentially under the rate limit.
 ///
 /// # Errors
+///
 /// Returns an error if the provider cannot be created or a request fails.
 async fn fetch(tickers: &[&str]) -> anyhow::Result<()> {
     let limiter = RateLimiter::direct(Quota::per_second(NonZeroU32::new(2).expect("non-zero")));
@@ -55,6 +60,7 @@ async fn fetch(tickers: &[&str]) -> anyhow::Result<()> {
 /// Creates a current-thread runtime and fetches daily bars for two example symbols.
 ///
 /// # Errors
+///
 /// Returns an error if the runtime cannot start or either market-data request fails.
 fn main() -> anyhow::Result<()> {
     let rt = tokio::runtime::Builder::new_current_thread()
@@ -67,6 +73,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the example (requires network access).
 ///
 /// # Errors
+///
 /// Returns an error if runtime setup or a market-data request fails.
 pub fn run() -> anyhow::Result<()> {
     main()

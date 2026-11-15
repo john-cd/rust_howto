@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `approx` crate for approximate
 //! equality comparisons.
 //!
@@ -41,8 +42,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// `approx` provides facilities for testing the approximate equality of floating-point based types, which are subject to rounding errors. It is commonly used in tests.
 pub fn run() {
     main();
 }

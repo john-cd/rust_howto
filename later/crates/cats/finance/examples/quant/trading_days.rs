@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Count NYSE trading days and step forward by a number of trading days with
 //! the `trading-calendar` crate.
 //!
@@ -87,6 +88,7 @@ fn main() -> Result<()> {
 /// Runs the trading days example through its entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the calendar rejects a date.
 pub fn run() -> Result<()> {
     main()
@@ -101,6 +103,7 @@ mod tests {
     fn test_trading_days_example_entry_point() -> Result<()> {
         main()
     }
+
     /// Verifies that the calendar knows Independence Day 2025 (a Friday).
     #[test]
     fn independence_day_is_not_a_trading_day() -> Result<()> {

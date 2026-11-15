@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calling a C++ function compiled by a build script with the `cc` crate.
 //!
 //! A build script (`build.rs`) runs before your crate compiles. The `cc` crate
@@ -9,9 +10,11 @@
 
 // Declare a C-compatible symbol that can be implemented in bundled C++ code.
 unsafe extern "C" {
+
     /// Multiplies two integers in the bundled C++ implementation.
     fn multiply(x: i32, y: i32) -> i32;
 }
+
 /// Safely multiplies two integers with the bundled C++ function.
 fn multiply_from_cpp(left: i32, right: i32) -> Option<i32> {
     let expected = left.checked_mul(right)?;
@@ -29,7 +32,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the bundled C++ multiplication example.
 pub fn run() {
     main();

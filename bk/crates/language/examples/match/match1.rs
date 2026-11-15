@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example defines different types of US coins using an `enum` and then
 //! uses a `match` expression to determine the value of a given coin in cents,
 //! demonstrating how `match` can handle different `enum` variants and extract
@@ -10,12 +11,16 @@
 /// Each variant represents a type of US coin.
 enum Coin {
     // Unit-like variants (no fields):
+
     /// A penny.
     Penny,
+
     /// A nickel.
     Nickel,
+
     /// A dime.
     Dime,
+
     /// The `Quarter` is a tuple variant.
     /// Its field stores the name of a US State.
     Quarter(String),
@@ -56,8 +61,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the value in cents of each coin.
 pub fn run() {
     main();
 }

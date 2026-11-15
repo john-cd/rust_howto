@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of using the `flagset` crate to define and use bit flags.
 //!
 //! `flagset` has no dependencies, incl. the stdlib, so it can be used in
@@ -14,6 +15,7 @@ use flagset::flags;
 // Flags are defined using the `flags!` macro:
 flags! {
     // Flag values can be defined implicitly:
+
 /// Defines flags stored in a one-byte integer.
     /// Defines flags stored in a one-byte integer.
     enum FlagsA: u8 { // Note the field-size type.
@@ -23,6 +25,7 @@ flags! {
     }
 
     // Flag values can also be defined explicitly...
+
 /// Defines flags stored in a C `int`.
     /// Defines flags stored in a C `int`.
     enum FlagsB: c_int {
@@ -37,6 +40,7 @@ flags! {
 // A collection of flags is a `FlagSet<T>`.
 // If you are storing the flags in memory, the raw `FlagSet<T>` type should be
 // used.
+
 /// A container that stores a set of flags.
 #[derive(Debug)]
 struct Container(FlagSet<FlagsA>);
@@ -44,12 +48,13 @@ struct Container(FlagSet<FlagsA>);
 impl Container {
     // However, if you want to receive flags as an input to a function, you
     // should use `impl Into<FlagSet<T>>`.
+
     /// Creates a container from anything convertible into a `FlagSet`.
     fn new(flags: impl Into<FlagSet<FlagsA>>) -> Self {
         Self(flags.into())
     }
 }
-/// Runs the example.
+
 /// Creates containers from flags and checks their bits.
 fn main() {
     let container = Container::new(FlagsA::Foo | FlagsA::Bar);
@@ -62,8 +67,7 @@ fn main() {
 // Adapted from <https://docs.rs/flagset>
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates containers from flags and checks their bits.
 pub fn run() {
     main();
 }

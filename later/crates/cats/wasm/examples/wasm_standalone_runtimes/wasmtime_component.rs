@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calls a typed WebAssembly *component* from Rust with `wasmtime`.
 //!
 //! The contract is the WIT package in `components/wit/greeter.wit`. The
@@ -40,12 +41,16 @@ use exports::howto::greeter::greeting::GreetError;
 
 /// Host state: what the guest's `logger` import writes to, plus limits.
 struct State {
+
     /// Messages the guest logged.
     log: Vec<String>,
+
     /// Resource limits applied to the guest.
     limits: StoreLimits,
+
     /// The WASI configuration: empty, so the guest has no capabilities.
     wasi: WasiCtx,
+
     /// WASI resources (streams, ...) in use by the guest.
     table: ResourceTable,
 }
@@ -61,6 +66,7 @@ impl WasiView for State {
 
 /// The host implementation of the `logger` import.
 impl howto::greeter::logger::Host for State {
+
     /// Instantiates `component` with a fuel budget and a memory limit.
     ///
     /// A component built for `wasm32-wasip2` imports a few WASI interfaces for
@@ -72,6 +78,7 @@ impl howto::greeter::logger::Host for State {
         self.log.push(message);
     }
 }
+
 /// Instantiates `component` with a fuel budget and a memory limit.
 ///
 /// A component built for `wasm32-wasip2` imports a few WASI interfaces for
@@ -168,9 +175,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Builds the guest, then calls its exported `greet` function.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     let entry = main;
@@ -198,6 +206,7 @@ mod tests {
     fn example_succeeds() -> Result<()> {
         main()
     }
+
     /// Valid and invalid names produce the typed results.
     #[test]
     fn typed_results_cross_the_boundary() -> Result<()> {

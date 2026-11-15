@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A bounded worker pool with `JoinSet`: keep at most `LIMIT` tasks running,
 //! refill as tasks finish, collect results in completion order, and tell a
 //! panic from a cancellation.
@@ -20,10 +21,13 @@ const LIMIT: usize = 2;
 /// What happened to the tasks.
 #[derive(Debug, Default, PartialEq)]
 struct Outcome {
+
     /// Results, in the order the tasks finished.
     results: Vec<u64>,
+
     /// Number of tasks that ended in a panic.
     panicked: usize,
+
     /// Number of tasks cancelled before returning.
     cancelled: usize,
 }
@@ -68,6 +72,7 @@ async fn run_pool_with_limit(inputs: Vec<u64>, limit: usize) -> Outcome {
 async fn run_pool(inputs: Vec<u64>) -> Outcome {
     run_pool_with_limit(inputs, LIMIT).await
 }
+
 /// `abort_all` cancels the remaining tasks; they report a cancelled
 /// `JoinError`.
 async fn abort_demo() -> usize {
@@ -84,7 +89,7 @@ async fn abort_demo() -> usize {
     }
     cancelled
 }
-/// Runs the example.
+
 /// Runs the pool and the abort demonstration on a paused-clock runtime.
 fn main() {
     let runtime = match tokio::runtime::Builder::new_current_thread()
@@ -110,8 +115,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs the pool and the abort demonstration on a paused-clock runtime.
 pub fn run() {
     main();
 }

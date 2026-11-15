@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates basic `mio` event polling with a `Waker`.
 //!
 //! `mio` is the low-level layer under Tokio: it asks the operating system (via
@@ -19,7 +20,9 @@ use mio::Waker;
 const WAKE_TOKEN: Token = Token(0);
 
 /// Wakes up a polling instance and handles the event.
+///
 /// # Errors
+///
 /// Returns an error if polling or waking the instance fails.
 fn main() -> std::io::Result<()> {
     example()
@@ -28,6 +31,7 @@ fn main() -> std::io::Result<()> {
 /// Creates a poller, wakes it, and reports the resulting event.
 ///
 /// # Errors
+///
 /// Returns an error if polling or waking the instance fails.
 fn example() -> std::io::Result<()> {
     // Create a new polling instance and event storage.
@@ -58,6 +62,7 @@ fn example() -> std::io::Result<()> {
 /// Runs the example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> std::io::Result<()> {
     example()

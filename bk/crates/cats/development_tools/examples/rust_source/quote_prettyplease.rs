@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generates Rust source with `quote` and formats it with `prettyplease`.
 //!
 //! Code generators build Rust code as token streams with `quote` and then
@@ -10,8 +11,11 @@
 use quote::format_ident;
 use quote::quote;
 
+/// Generates Rust tokens, parses them, and prints the formatted source.
+///
 /// # Errors
-/// An error is returned if parse2 fails.
+///
+/// Returns a `syn::Error` if the generated tokens cannot be parsed as a Rust file.
 fn main() -> syn::Result<()> {
     // Splice values into the generated code with `#name`.
     let name = format_ident!("add_one");
@@ -30,9 +34,10 @@ fn main() -> syn::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Generates Rust tokens, parses them, and prints the formatted source.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> syn::Result<()> {
     // Call through a binding: calling `main` directly trips

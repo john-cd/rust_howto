@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Represent, add, and format money with an explicit currency.
 //!
 //! Never store money as `f64`: binary floating point cannot represent values
@@ -10,8 +11,7 @@
 
 use rusty_money::Money;
 use rusty_money::iso;
-/// Runs the example entry point.
-///
+
 /// Builds amounts from minor units, adds them, and formats the result.
 pub fn example_body() {
     // The amount is stored as a decimal; the currency travels with it.

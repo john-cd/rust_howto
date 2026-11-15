@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Formatting strings with `print!`, `format!` and `write!`.
 //!
 //! Format strings describe how to print values: `{}` uses `Display` (for
@@ -99,8 +100,10 @@ fn format() {
     /// An example struct that implements the `Debug` trait.
     #[derive(Debug)]
     struct Point {
+
         /// The horizontal coordinate.
         x: i32,
+
         /// The vertical coordinate.
         y: i32,
     }
@@ -125,7 +128,7 @@ fn format() {
     // release builds.
     let _q = dbg!(Point { x: 5, y: 5 });
 }
-/// Runs the example.
+
 /// Runs each of the formatting examples.
 fn main() {
     print();
@@ -134,8 +137,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs each of the formatting examples.
 pub fn run() {
     main();
 }

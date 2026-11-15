@@ -1,6 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
+//! Implements a counter application core that can run behind different platform shells.
+//!
 //! # Crux Core Example
 //!
 //! This example keeps a counter's state transitions in a platform-independent
@@ -15,6 +18,7 @@ use serde::Serialize;
 /// The counter's internal state.
 #[derive(Default)]
 pub struct Model {
+
     /// The current count.
     count: isize,
 }
@@ -22,6 +26,7 @@ pub struct Model {
 /// The state that a platform shell displays.
 #[derive(Serialize, Deserialize, Clone, Default)]
 pub struct ViewModel {
+
     /// The count formatted for display.
     pub count: String,
 }
@@ -29,10 +34,13 @@ pub struct ViewModel {
 /// Events that the counter core can process.
 #[derive(Serialize, Deserialize, Clone, Debug)]
 pub enum Event {
+
     /// Increments the count by one.
     Increment,
+
     /// Decrements the count by one.
     Decrement,
+
     /// Resets the count to zero.
     Reset,
 }
@@ -40,6 +48,7 @@ pub enum Event {
 /// Effects that the shell must handle for the core.
 #[crux_core::macros::effect(typegen)]
 pub enum Effect {
+
     /// Requests that the shell render the updated view model.
     Render(crux_core::render::RenderOperation),
 }
@@ -69,8 +78,7 @@ impl App for Counter {
         }
     }
 }
-/// Runs the example.
-/// # Crux Core Example
+
 /// Runs two increments through Crux's in-process core and prints its view.
 fn main() {
     let core = crux_core::Core::<Counter>::new();
@@ -80,10 +88,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-///
 /// Exposes this example to the crate's dispatcher.
-/// # Crux Core Example
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Add a `Run` button to code examples embedded in your crate documentation.
 //!
 //! Place the following attribute at the top of your crate.
@@ -16,6 +17,7 @@
 fn return_a_string() -> String {
     "This will be printed.".to_owned()
 }
+
 /// Prints the string returned by a documented function.
 fn main() {
     example();

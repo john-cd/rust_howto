@@ -7,16 +7,20 @@ use clap::Subcommand;
 
 /// An `IndexMap`, a hash map that preserves insertion order.
 mod indexmap;
+
 /// A `LinkedHashMap`, a hash map that remembers insertion order.
 mod linked_hash_map;
+
 /// A `MultiMap`, which associates several values with one key.
 mod multimap;
+
 /// A `SlotMap`, which hands out stable keys on insertion.
 mod slotmap;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,15 +29,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `indexmap` example.
     #[command(name = "indexmap")]
     Indexmap,
+
     /// Runs the `linked_hash_map` example.
     #[command(name = "linked_hash_map")]
     LinkedHashMap,
+
     /// Runs the `multimap` example.
     #[command(name = "multimap")]
     Multimap,
+
     /// Runs the `slotmap` example.
     #[command(name = "slotmap")]
     Slotmap,

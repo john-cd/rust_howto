@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A plain Rust command function that a Tauri app can expose to its frontend.
 //!
 //! Tauri builds desktop apps with a web front end (HTML and JavaScript) and a
@@ -11,6 +12,7 @@
 /// Greets the caller by name.
 ///
 /// # Arguments
+///
 /// * `name` - Human-readable value used to identify or display the selected mod.
 pub fn greet(name: &str) -> String {
     format!("Hello, {name}! Welcome to Tauri.")

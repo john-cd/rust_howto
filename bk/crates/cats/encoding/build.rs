@@ -10,6 +10,7 @@ use std::process::Command;
 /// Compiles the Cap'n Proto schema or copies its checked-in generated source.
 ///
 /// # Errors
+///
 /// Returns an error if the compiler fails or the generated source cannot be
 /// copied into Cargo's output directory.
 fn capnp() -> Result<(), Box<dyn std::error::Error>> {
@@ -45,9 +46,11 @@ fn capnp() -> Result<(), Box<dyn std::error::Error>> {
 // ANCHOR_END: capnp
 
 // ANCHOR: prost
+
 /// Compiles the Protocol Buffers schema and generates its Rust types.
 ///
 /// # Errors
+///
 /// Returns an error if parsing the schema or generating Rust code fails.
 fn prost() -> Result<(), Box<dyn std::error::Error>> {
     println!("cargo::rerun-if-changed=examples/binary_encoders/person.proto");
@@ -61,9 +64,11 @@ fn prost() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 // ANCHOR_END: prost
+
 /// Runs the schema compilers needed by this crate's examples.
 ///
 /// # Errors
+///
 /// Returns an error if Protocol Buffers code generation fails.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     capnp()?;

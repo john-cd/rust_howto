@@ -17,7 +17,9 @@ pub const TEST_JWT_SECRET: &str = "default_test_secret_key_that_is_at_least_32_b
 /// Signs and verifies an in-memory token using the `JWT_SECRET` environment
 ///
 /// variable.
+///
 /// # Errors
+///
 /// Returns an error if `JWT_SECRET` is missing, too short, or token creation
 /// or verification fails.
 pub fn run_from_env() -> anyhow::Result<()> {
@@ -29,6 +31,7 @@ pub fn run_from_env() -> anyhow::Result<()> {
 /// Signs and verifies a short-lived token with `secret`.
 ///
 /// # Errors
+///
 /// Returns an error if the secret is invalid or token creation or verification
 /// fails.
 pub fn run_with_secret(secret: &str) -> anyhow::Result<()> {
@@ -58,10 +61,12 @@ pub fn run_with_secret(secret: &str) -> anyhow::Result<()> {
 fn main() -> anyhow::Result<()> {
     run_with_secret(TEST_JWT_SECRET)
 }
+
 /// Runs the example with a deterministic test secret without changing the
 /// process environment.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

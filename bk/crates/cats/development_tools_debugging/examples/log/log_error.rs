@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Logging an error with the `log` crate.
 //!
 //! Logging an error with `error!` records that something failed, with enough
@@ -12,7 +13,7 @@
 fn execute_query(_query: &str) -> Result<(), &'static str> {
     Err("I'm afraid I can't do that")
 }
-/// Runs the example.
+
 /// Runs a query that fails and logs the error.
 fn main() {
     env_logger::init();
@@ -25,8 +26,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs a query that fails and logs the error.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Marking an item as deprecated with `#[deprecated]`.
 //!
 //! The `#[deprecated]` attribute warns callers that an API should no longer be
@@ -11,6 +12,7 @@
 
 // Mark a function as deprecated.
 // That also works for structs, enums, etc...
+
 /// A deprecated function.
 #[deprecated(since = "5.2.0", note = "Use `bar` instead")]
 pub fn foo() {
@@ -29,8 +31,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls a deprecated function.
 pub fn run() {
     main();
 }

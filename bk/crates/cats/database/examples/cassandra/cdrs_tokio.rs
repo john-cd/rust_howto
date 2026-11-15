@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Connecting to Cassandra with the `cdrs-tokio` async client.
 //!
 //! Cassandra is a distributed NoSQL database built for huge data volumes and
@@ -32,6 +33,7 @@ use uuid::Uuid;
 
 /// Contact point used by this local Cassandra example.
 const CONTACT_POINT: &str = "127.0.0.1:9042";
+
 /// Maximum time to wait for the initial Cassandra connection.
 const CONNECTION_TIMEOUT: Duration = Duration::from_secs(10);
 
@@ -45,21 +47,26 @@ type CurrentSession = Session<
 /// A row of the example table.
 #[derive(Clone, Debug, IntoCdrsValue, cdrs_tokio::TryFromRow, PartialEq)]
 struct RowStruct {
+
     /// Unique identifier of the row.
     id: Uuid,
+
     /// Name of the person.
     name: String,
+
     /// Age of the person, in years.
     age: i32,
 }
 
 impl RowStruct {
+
     /// Converts the row into the values bound to an insert query.
     fn into_query_values(self) -> QueryValues {
         // Transforms arguments to values consumed by queries
         query_values!("id" => self.id, "name" => self.name, "age" => self.age)
     }
 }
+
 /// Reads a user row by its primary key.
 ///
 /// # Errors
@@ -83,9 +90,11 @@ async fn select_user(session: &CurrentSession, id: Uuid) -> anyhow::Result<Optio
         .transpose()
         .map_err(Into::into)
 }
+
 /// Creates the table, then inserts, reads, updates, and deletes a user row.
 ///
 /// # Errors
+///
 /// Returns an error if Cassandra cannot be reached or any schema or data query
 /// fails.
 async fn example() -> anyhow::Result<()> {
@@ -181,6 +190,7 @@ KEY, name TEXT, age INT);",
 /// Runs the cdrs-tokio CRUD example.
 ///
 /// # Errors
+///
 /// Returns an error if connecting to Cassandra or any CRUD operation fails.
 pub async fn run() -> anyhow::Result<()> {
     example().await

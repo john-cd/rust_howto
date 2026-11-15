@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates the difference between `iter()`, `iter_mut()` and
 //! `into_iter()`.
 //!
@@ -56,8 +57,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates the difference between `iter()`, `iter_mut()` and `into_iter()`.
 pub fn run() {
     main();
 }

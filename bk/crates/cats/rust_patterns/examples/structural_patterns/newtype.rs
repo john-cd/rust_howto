@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Uses a newtype so user identifiers cannot be confused with arbitrary
 //! integers.
 //!
@@ -13,6 +14,7 @@
 struct UserId(u64);
 
 impl UserId {
+
     /// Creates an identifier and rejects the reserved zero value.
     fn new(value: u64) -> anyhow::Result<Self> {
         anyhow::ensure!(value != 0, "user identifiers must be nonzero");
@@ -23,6 +25,7 @@ impl UserId {
         self.0
     }
 }
+
 /// Prints a user identifier constructed through its invariant-checking API.
 fn main() -> anyhow::Result<()> {
     let user_id = UserId::new(42)?;
@@ -34,6 +37,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the newtype example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Compare floating-point values with `float-cmp` and `approx`.
 //!
 //! `0.1 + 0.2` is not exactly `0.3` in binary floating point, so exact
@@ -31,8 +32,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates ULP and epsilon comparisons for a rounded result.
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

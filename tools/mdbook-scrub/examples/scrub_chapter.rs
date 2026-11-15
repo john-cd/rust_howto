@@ -25,7 +25,11 @@ const SAMPLE: &str = "Visible intro.\n\n<div class=\"hidden\">secret notes</div>
     clippy::print_stdout,
     reason = "Example reports the scrubbed chapter on standard output"
 )]
+
+/// Preprocesses a sample mdBook chapter with the scrubber.
+///
 /// # Errors
+///
 /// Returns an error if chapter preprocessing fails.
 fn main() -> anyhow::Result<()> {
     let mut book = Book::new();

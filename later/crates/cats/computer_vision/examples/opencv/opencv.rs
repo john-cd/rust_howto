@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to load an image, convert it to grayscale, and
 //! save the result using the `opencv` crate.
 //!
@@ -69,6 +70,7 @@ fn process_image(input_path: &Path, output_path: &Path) -> Result<Mat, Box<dyn s
 }
 
 // ANCHOR: grayscale
+
 /// Converts a BGR image to one channel while retaining its dimensions.
 fn to_grayscale(input: &Mat) -> opencv::Result<Mat> {
     let mut grayscale = Mat::default();
@@ -78,6 +80,7 @@ fn to_grayscale(input: &Mat) -> opencv::Result<Mat> {
 // ANCHOR_END: grayscale
 
 // ANCHOR: canny
+
 /// Smooths a grayscale frame and computes its Canny edge mask.
 fn detect_edges(grayscale: &Mat) -> opencv::Result<Mat> {
     let mut blurred = Mat::default();
@@ -100,6 +103,7 @@ fn detect_edges(grayscale: &Mat) -> opencv::Result<Mat> {
 /// Runs the generated-image grayscale and edge-detection workflow.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()

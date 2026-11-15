@@ -9,16 +9,20 @@ use clap::Subcommand;
 /// malformed input. Analysis and validation code use these routines before applying domain-specific
 /// rules.
 mod cssparser;
+
 /// Tokenize HTML with `html5ever` and print the parsed tokens.
 mod html5ever;
+
 /// Selects HTML elements and extracts their text with CSS selectors.
 mod scraper;
+
 /// This example demonstrates how to use the `tl` crate to parse HTML.
 mod tl;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,15 +31,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `cssparser` example.
     #[command(name = "cssparser")]
     Cssparser,
+
     /// Runs the `html5ever` example.
     #[command(name = "html5ever")]
     Html5ever,
+
     /// Runs the `scraper` CSS selector example.
     #[command(name = "scraper")]
     Scraper,
+
     /// Runs the `tl` example.
     #[command(name = "tl")]
     Tl,

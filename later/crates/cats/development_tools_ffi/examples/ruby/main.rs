@@ -7,9 +7,11 @@ use clap::Subcommand;
 
 /// Ruby-independent greeting logic shared with the native example.
 mod greeting;
+
 /// Calling Rust from Ruby with `magnus`.
 #[cfg(all(not(windows), feature = "ruby"))]
 mod magnus;
+
 /// Calling Ruby from Rust with `rutie`.
 #[cfg(feature = "ruby")]
 mod rutie;
@@ -17,6 +19,7 @@ mod rutie;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,16 +28,18 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `magnus` example.
     #[cfg(all(not(windows), feature = "ruby"))]
     #[command(name = "magnus")]
     Magnus,
+
     /// Runs the `rutie` example.
     #[cfg(feature = "ruby")]
     #[command(name = "rutie")]
     Rutie,
 }
-/// Runs the example.
+
 /// Runs the example selected on the command line.
 fn main() {
     dispatch(Cli::parse());

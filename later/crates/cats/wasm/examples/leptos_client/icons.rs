@@ -13,6 +13,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Use [`icondata`] icon data as inline SVG in a Leptos view.
 //!
 //! `icondata` ships the paths of many icon sets as constants; enable only the
@@ -25,6 +26,7 @@ use leptos::prelude::*;
 /// Renders `icon` as an inline `<svg>` that follows the surrounding text color.
 ///
 /// # Arguments
+///
 /// * `icon` - Icon path data and view box to render.
 /// * `label` - Accessible text announced by assistive technology.
 #[component]

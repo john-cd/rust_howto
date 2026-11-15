@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Add the following to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]
@@ -13,6 +14,7 @@ use bitvec::prelude::*;
 /// Demonstrates reading individual bits in a bit vector.
 ///
 /// # Arguments
+///
 /// * `bv` - The bit vector to inspect.
 fn bit_indexing(bv: &BitVec<u8, Msb0>) {
     println!("===== Bit Access =====");
@@ -24,6 +26,7 @@ fn bit_indexing(bv: &BitVec<u8, Msb0>) {
 /// Demonstrates mutating individual bits in a bit vector.
 ///
 /// # Arguments
+///
 /// * `bv` - The bit vector to update.
 fn bit_mutation(bv: &mut BitVec<u8, Msb0>) {
     println!("\n===== Bit Mutation =====");
@@ -38,6 +41,7 @@ fn bit_mutation(bv: &mut BitVec<u8, Msb0>) {
 /// Demonstrates length, all-bit, any-bit, and set-bit queries.
 ///
 /// # Arguments
+///
 /// * `bv` - The bit vector to query.
 fn bit_checking(bv: &BitVec<u8, Msb0>) {
     println!("\n===== Bit Checking and Querying =====");
@@ -61,6 +65,7 @@ fn bit_checking(bv: &BitVec<u8, Msb0>) {
 /// Prints each bit in the supplied vector in order.
 ///
 /// # Arguments
+///
 /// * `bv` - The bit vector to iterate over.
 fn bit_iteration(bv: &BitVec<u8, Msb0>) {
     println!("\n===== Bit Iteration =====");
@@ -71,6 +76,7 @@ fn bit_iteration(bv: &BitVec<u8, Msb0>) {
     }
     println!();
 }
+
 /// Creates a bit vector and demonstrates access, mutation, queries, and
 ///
 /// iteration.
@@ -203,7 +209,7 @@ fn practical_applications() {
     println!("Extracted values: {value1}, {value2}, {value3}");
     assert_eq!((value1, value2, value3), (0b101, 0b10011, 0b11001010));
 }
-/// Runs the example.
+
 /// Runs each bit-vector demonstration in sequence.
 fn main() {
     basic_operations();
@@ -214,7 +220,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the bit-vector example.
 pub fn run() {
     main();

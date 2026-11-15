@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Creates a Lua table in Rust and reads it from an embedded Lua 5.4 runtime.
 //!
 //! Lua is a small scripting language that applications embed so that users can
@@ -10,10 +11,12 @@
 use mlua::prelude::*;
 
 // In standalone mode, `mlua` allows to add scripting support.
+
 /// Creates a Lua table from Rust and iterates over it in Lua.
 ///
 /// # Errors
-/// An error is returned if create_table, set fails.
+///
+/// Returns a Lua error if table creation, assignment, or script execution fails.
 fn main() -> LuaResult<()> {
     let lua = Lua::new();
 
@@ -30,7 +33,7 @@ fn main() -> LuaResult<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Creates a Lua table from Rust and iterates over it in Lua.
 pub fn run() -> LuaResult<()> {
     main()
 }

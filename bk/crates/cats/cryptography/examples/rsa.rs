@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! RSA encryption and decryption with PKCS#1 v1.5 padding.
 //!
 //! RSA is a public-key scheme: anyone can encrypt with the public key, but only

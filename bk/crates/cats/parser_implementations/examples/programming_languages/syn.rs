@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parses Rust source text into an abstract syntax tree with `syn`.
 //!
 //! An abstract syntax tree (AST) represents the structure of source code as a
@@ -36,9 +37,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses sample Rust declarations and prints their names.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

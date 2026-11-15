@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Connecting to PostgreSQL with `tokio-postgres`.
 
 use anyhow::Context as _;
@@ -23,6 +24,7 @@ pub async fn example_body() -> anyhow::Result<()> {
 /// Runs the example against the database at `url`.
 ///
 /// # Arguments
+///
 /// * `url` - URL identifying the requested resource.
 pub(crate) async fn run_with_url(url: &str) -> anyhow::Result<()> {
     // The libpq-style connection strings consist of space-separated
@@ -128,6 +130,7 @@ pub fn main() -> anyhow::Result<()> {
 /// Runs the example through its program entry point.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     main()

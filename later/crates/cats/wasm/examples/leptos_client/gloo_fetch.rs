@@ -8,6 +8,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Call an HTTP API from WebAssembly with [`gloo_net`].
 //!
 //! In the browser, programs cannot use the usual networking libraries; they
@@ -18,8 +19,10 @@
 /// natively.
 #[derive(Debug, PartialEq, Eq)]
 pub struct RequestSpec {
+
     /// Fully qualified endpoint URL after joining the base and request path.
     pub url: String,
+
     /// Optional bearer token formatted for the `Authorization` header.
     pub authorization: Option<String>,
 }
@@ -27,6 +30,7 @@ pub struct RequestSpec {
 /// Builds the request for `path`, attaching a bearer token when supplied.
 ///
 /// # Arguments
+///
 /// * `base` - API base URL, with or without a trailing slash.
 /// * `path` - Relative endpoint path, with or without a leading slash.
 /// * `token` - Optional access token used for bearer authorization.

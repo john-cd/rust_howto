@@ -4,12 +4,17 @@
 
 /// Cookie-based login with `axum-login`, in-memory sessions and permissions.
 mod axum_login;
+
 /// Protect a state-changing form with a synchronizer CSRF token.
 mod csrf;
+
 /// Hash and verify passwords with Argon2id.
 mod hashing;
 
+/// Runs the password hashing, CSRF, and Axum session-login demonstrations.
+///
 /// # Errors
+///
 /// Returns an error if the password-hashing or Axum session-login example fails.
 fn main() -> anyhow::Result<()> {
     hashing::run()?;

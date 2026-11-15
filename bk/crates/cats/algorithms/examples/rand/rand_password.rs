@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generates a random password from a custom set of characters with `rand`.
 //!
 //! A password generator draws each character independently from an allowed set.
@@ -12,12 +13,14 @@ use rand::RngExt as _;
 /// Prints a random password of fixed length.
 fn main() {
     // Define the character set to choose from:
+
     /// Characters that may appear in the generated password.
     const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
                             abcdefghijklmnopqrstuvwxyz\
                             0123456789)(*&^%$#@!~";
 
     // Define the length of the password:
+
     /// Length of the generated password.
     /// Defines the password len constant.
     const PASSWORD_LEN: usize = 15;
@@ -38,8 +41,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints a random password of fixed length.
 pub fn run() {
     main();
 }
@@ -47,6 +49,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `rand password` example runs.
     #[test]
     fn test_rand_password_example_entry_point() {

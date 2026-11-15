@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to send input to an external command's
 //! standard input (`stdin`) and process its standard output (`stdout`) and
 //! standard error (`stderr`).
@@ -65,9 +66,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Sends text to the standard input of `rev` and prints the reversed output.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A project check in the style of `cargo xtask`: find `unwrap()` and
 //! `expect()` calls with `syn`, reporting file-relative line numbers.
 //!
@@ -13,15 +14,18 @@ use syn::visit::Visit;
 /// A call to `unwrap` or `expect`.
 #[derive(Debug, PartialEq)]
 struct Finding {
-    /// HTTP method used for the request.
+
+    /// Name of the method call (`unwrap` or `expect`).
     method: String,
+
     /// Source line number.
     line: usize,
 }
 
 #[derive(Default)]
 struct UnwrapFinder {
-    /// Collection of findings values consumed by unwrap finder operations.
+
+    /// Calls to `unwrap` and `expect` found in the parsed source.
     findings: Vec<Finding>,
 }
 
@@ -46,11 +50,15 @@ fn find_unwraps(source: &str) -> syn::Result<Vec<Finding>> {
     Ok(finder.findings)
 }
 
+/// Parses sample Rust source and reports calls to `unwrap` and `expect`.
+///
 /// # Errors
-/// An error is returned if find_unwraps fails.
+///
+/// Returns an error if the embedded Rust source cannot be parsed.
 ///
 /// # Panics
-/// Panics if an internal invariant is violated.
+///
+/// Panics if the sample does not produce the expected calls and line numbers.
 fn main() -> syn::Result<()> {
     let source = "\
 /// # Panics
@@ -83,10 +91,15 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Finds `unwrap` and `expect` calls in sample Rust source and reports their line numbers.
 ///
 /// # Errors
-/// Returns an error if a step of the example fails.
+///
+/// Returns an error if the embedded Rust source cannot be parsed.
+///
+/// # Panics
+///
+/// Panics if the sample does not produce the expected calls and line numbers.
 pub fn run() -> syn::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

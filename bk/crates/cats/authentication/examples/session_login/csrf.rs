@@ -1,9 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Protect a state-changing form with a synchronizer CSRF token.
 //!
 //! ### Cross-Site Request Forgery (CSRF) & Synchronizer Token Pattern
+//!
 //! CSRF attacks trick an authenticated user's browser into submitting
 //! unauthorized requests to a target website. To protect state-changing
 //! requests (like POST forms):
@@ -60,6 +62,7 @@ fn constant_time_eq(a: &str, b: &str) -> bool {
             .fold(0, |acc, (x, y)| acc | (x ^ y))
             == 0
 }
+
 /// Renders the form with the hidden token field.
 async fn show_form(session: Session) -> Result<Html<String>, StatusCode> {
     let token = csrf_token(&session).await?;
@@ -74,8 +77,10 @@ async fn show_form(session: Session) -> Result<Html<String>, StatusCode> {
 
 #[derive(Deserialize)]
 struct ChangeEmail {
+
     /// CSRF token checked for this request.
     csrf_token: String,
+
     /// Email address used to identify or contact the change email.
     email: String,
 }
@@ -125,9 +130,11 @@ mod tests {
     /// Collects a response body and decodes it as UTF-8.
     ///
     /// # Arguments
+///
     /// * `response` - Response whose body should be read.
     ///
     /// # Errors
+///
     /// Returns an error if body collection or UTF-8 decoding fails.
     async fn body_of(response: Response<Body>) -> anyhow::Result<String> {
         let bytes = response.into_body().collect().await?.to_bytes();
@@ -160,6 +167,7 @@ mod tests {
     /// Posts a change-email form with its session cookie and CSRF token.
     ///
     /// # Errors
+///
     /// Returns an error if the request cannot be built or sent.
     async fn post(app: &Router, cookie: &str, token: &str) -> anyhow::Result<Response<Body>> {
         let request = Request::post("/change-email")
@@ -209,6 +217,7 @@ mod tests {
         assert!(!constant_time_eq("abc", "abd"));
         assert!(!constant_time_eq("abc", "ab"));
     }
+
     /// Verifies that the `csrf` example runs.
     #[test]
     fn test_csrf_example_entry_point() {

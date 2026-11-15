@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Trait object example: a highly simplified GUI.
 //!
 //! A trait object lets you store values of different types behind one interface
@@ -10,14 +11,17 @@
 
 /// A trait for types that can be drawn.
 trait Draw {
+
     /// Draws the object.
     fn draw(&self);
 }
 
 /// A struct representing a button.
 struct Button;
+
 /// Dummy implementation of the trait for `Button`.
 impl Draw for Button {
+
     /// Dummy implementation.
     fn draw(&self) {
         println!("Button");
@@ -26,6 +30,7 @@ impl Draw for Button {
 
 /// A struct representing text to be drawn on a screen.
 struct Text;
+
 /// Dummy implementation.
 impl Draw for Text {
     fn draw(&self) {
@@ -35,6 +40,7 @@ impl Draw for Text {
 
 /// A struct representing a screen that can display multiple components.
 struct Screen {
+
     /// A vector of trait objects that can be drawn.
     /// Note the `dyn` keyword. Trait objects are dynamically sized types.
     /// Like all DSTs, trait objects must be used behind some type of pointer -
@@ -48,6 +54,7 @@ struct Screen {
 }
 
 impl Screen {
+
     /// Creates a new screen with some components. The list below
     /// could be dynamically generated at run time.
     fn new() -> Self {
@@ -56,7 +63,7 @@ impl Screen {
         }
     }
 
-    /// Runs the example entry point.
+    /// Draws each stored component through dynamic dispatch.
     fn run(&self) {
         for component in &self.components {
             // The purpose of trait objects is to permit "late binding" of
@@ -66,16 +73,15 @@ impl Screen {
         }
     }
 }
-/// Runs the example.
-/// Creates a screen and runs it.
+
+/// Creates a screen and draws its components through `Draw` trait objects.
 fn main() {
     let s = Screen::new();
     s.run();
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates a screen and draws its components through `Draw` trait objects.
 pub fn run() {
     main();
 }

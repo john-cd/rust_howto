@@ -13,6 +13,7 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 //!
 //
 
@@ -41,15 +42,18 @@ use zenoh_runtime::ZRuntime;
 use super::transport::TransportUnicastLowlatency;
 use crate::unicast::link::TransportLinkUnicast;
 use crate::unicast::link::TransportLinkUnicastRx;
-/// Sends with link.
+
+/// Encodes a low-latency transport message and writes it to the unicast link.
 ///
 /// # Arguments
-/// * `link` - Transport link to add, remove, or use.
-/// * `msg` - Message to schedule or process.
+///
+/// * `link` - Underlying unicast link used to transmit the message.
+/// * `msg` - Low-latency transport message to encode and send.
+/// * `stats` - Optional link statistics updated after transmission.
 ///
 /// # Errors
-/// Returns an error if the output cannot be written or sent.
-
+///
+/// Returns an error if encoding the message or writing it to the link fails.
 pub(crate) async fn send_with_link(
     link: &LinkUnicast,
     msg: TransportMessageLowLatencyRef<'_>,
@@ -93,15 +97,17 @@ pub(crate) async fn send_with_link(
     Ok(())
 }
 
-/// Loads the with link required by the link workflow and reports failures from the underlying
-/// source.
+/// Reads one low-latency batch from the link into the caller-provided buffer.
 ///
 /// # Arguments
-/// * `link` - Transport link to add, remove, or use.
-/// * `buffer` - Buffer used to stage the input or output.
-
+///
+/// * `link` - Receive side of the unicast link to read from.
+/// * `buffer` - Buffer that receives the batch bytes.
+/// * `is_streamed` - Whether the link prefixes each batch with its encoded length.
+///
 /// # Errors
-/// Returns an error if the batch length exceeds `buffer` or reading from the link fails.
+///
+/// Returns an error if the batch exceeds `buffer` or reading from the link fails.
 pub(crate) async fn read_with_link(
     link: &TransportLinkUnicastRx,
     buffer: &mut [u8],
@@ -124,11 +130,16 @@ pub(crate) async fn read_with_link(
 }
 
 impl TransportUnicastLowlatency {
-    /// # Errors
-    /// Returns an error if no link is available or sending the message fails.
+
+    /// Sends a network message through the low-latency link.
     ///
-    /// # Panics
-    /// Panics if an internal `Result` or `Option` has no usable value.
+    /// # Arguments
+///
+    /// * `msg` - Network message to send.
+    ///
+    /// # Errors
+///
+    /// Returns an error if no link is available or sending the message fails.
     pub(super) fn send(&self, #[allow(unused_mut)] mut msg: NetworkMessageMut) -> ZResult<()> {
         zenoh_runtime::ZRuntime::TX.block_in_place(async {
             let guard = zasyncwrite!(self.link);
@@ -176,11 +187,12 @@ impl TransportUnicastLowlatency {
     /// Sends async.
     ///
     /// # Arguments
+///
     /// * `msg` - Message to schedule or process.
     ///
     /// # Errors
+///
     /// Returns an error if the output cannot be written or sent.
-
     pub(super) async fn send_async(&self, msg: TransportMessageLowLatencyRef<'_>) -> ZResult<()> {
         let guard = zasyncwrite!(self.link);
         let link = &guard.as_ref().ok_or_else(|| zerror!("No link"))?.link;
@@ -196,8 +208,8 @@ impl TransportUnicastLowlatency {
     /// Starts keepalive.
     ///
     /// # Arguments
+///
     /// * `keep_alive` - Duration controlling the operation.
-
     pub(super) fn start_keepalive(&self, keep_alive: Duration) {
         let c_transport = self.clone();
         let token = self.token.child_token();
@@ -231,9 +243,11 @@ impl TransportUnicastLowlatency {
         self.tracker.spawn_on(task, &ZRuntime::TX);
     }
 
+    /// Starts the low-latency receive task with the given lease duration.
+    ///
     /// # Arguments
-    /// * `lease` - Duration controlling the operation.
-
+///
+    /// * `lease` - Maximum time the receive task waits for a message before checking its lease.
     pub(super) fn internal_start_rx(&self, lease: Duration) {
         let rx_buffer_size = self.manager.config.link_rx_buffer_size;
         let token = self.token.child_token();
@@ -316,6 +330,7 @@ impl TransportUnicastLowlatency {
 
 /// **********************************
 // TASKS
+
 /// **********************************
 async fn keepalive_task(
     link: Arc<RwLock<Option<TransportLinkUnicast>>>,

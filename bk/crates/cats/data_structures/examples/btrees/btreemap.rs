@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A `BTreeMap`, an ordered map, storing book ratings.
 //!
 //! A `BTreeMap` keeps its keys sorted, so iteration is in order and you can
@@ -95,8 +96,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates, fills, queries and iterates over a `BTreeMap`.
 pub fn run() {
     main();
 }

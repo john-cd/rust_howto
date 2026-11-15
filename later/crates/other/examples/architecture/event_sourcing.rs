@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Event sourcing: store events, rebuild the state by replaying them.
 //!
 //! Event sourcing stores every change as an immutable event instead of
@@ -18,11 +19,13 @@ enum AccountEvent {
 /// The current state, derived from the events.
 #[derive(Debug, Default, PartialEq)]
 struct Account {
+
     /// Balance value.
     balance: i64,
 }
 
 impl Account {
+
     /// Applies the current value.
     fn apply(&mut self, event: &AccountEvent) {
         match event {
@@ -56,7 +59,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Appends events to a log and rebuilds the state at different points in time.
 pub fn run() {
     main();
 }

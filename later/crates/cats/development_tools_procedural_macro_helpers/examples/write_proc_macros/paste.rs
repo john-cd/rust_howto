@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Concatenating identifiers in macros with `paste`.
 //!
 //! Declarative macros cannot create new identifiers such as `get_` + a field
@@ -14,11 +15,13 @@ macro_rules! create_structs {
         paste! {
             $(
                 struct [<$name Struct>] {
+
                     /// Value stored by the generated struct.
                     value: i32,
                 }
 
                 impl [<$name Struct>] {
+
                     /// Creates a struct containing `value`.
                     fn new(value: i32) -> Self {
                         Self { value }
@@ -49,7 +52,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Demonstrates the generated structs and their associated methods.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Lists the serial ports that the operating system reports.
 
 use serialport::SerialPortInfo;

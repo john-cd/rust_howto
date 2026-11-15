@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parallel `filter`, `map` and `reduce` over a vector with `rayon`.
 //!
 //! Map/reduce first transforms every element independently (map), then combines
@@ -11,10 +12,11 @@ use rayon::prelude::*;
 
 /// A person, reduced to an age.
 struct Person {
+
     /// Age in years.
     age: u32,
 }
-/// Runs the example.
+
 /// Computes the average age of the people older than 30, in parallel.
 fn main() {
     // Create a vector of `Person` instances.
@@ -49,8 +51,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Computes the average age of the people older than 30, in parallel.
 pub fn run() {
     main();
 }

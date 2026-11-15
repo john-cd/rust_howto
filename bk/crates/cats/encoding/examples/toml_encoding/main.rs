@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// The following demonstrates TOML decoding.
 mod toml;
+
 /// This example demonstrates how to deserialize TOML data into Rust structs.
 mod toml1;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `toml` example.
     #[command(name = "toml")]
     Toml,
+
     /// Runs the `toml1` example.
     #[command(name = "toml1")]
     Toml1,

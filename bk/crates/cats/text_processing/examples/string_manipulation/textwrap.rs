@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Wrapping, filling and indenting text with `textwrap`.
 //!
 //! Wrapping breaks text into lines of a given width, which command-line help,
@@ -71,7 +72,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Wraps, fills and indents a sample text.
 pub fn run() {
     main();
 }

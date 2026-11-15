@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Tokenize HTML with `html5ever` and print the parsed tokens.
 //!
 //! HTML5 defines exactly how a browser must read even broken markup.
@@ -24,15 +25,18 @@ use html5ever::tokenizer::Tokenizer;
 /// A token sink that prints the tokens of an HTML document.
 #[derive(Clone)]
 struct TokenPrinter {
+
     /// Whether the previous token was a character, so that consecutive
     /// characters are printed as one text.
     in_char_run: Cell<bool>,
 }
 
 impl TokenPrinter {
+
     /// Updates text-run output when the next token changes character kind.
     ///
     /// # Arguments
+///
     /// * `is_char` - Whether the next token contains character data.
     fn is_char(&self, is_char: bool) {
         match (self.in_char_run.get(), is_char) {
@@ -45,14 +49,11 @@ impl TokenPrinter {
 }
 
 impl TokenSink for TokenPrinter {
+
     /// Handle value returned after each token is processed.
     type Handle = ();
 
-    /// Processes the token input for the html5ever workflow and applies the resulting state
-    /// changes. It calls `process_token`, `CharacterTokens` to apply the required changes.
-    ///
-    /// # Errors
-    /// An error is returned if a fallible operation fails.
+    /// Prints character tokens and tags emitted by the HTML tokenizer.
     fn process_token(&self, token: Token, _line_number: u64) -> TokenSinkResult<()> {
         match token {
             CharacterTokens(text) => {
@@ -82,6 +83,7 @@ impl TokenSink for TokenPrinter {
 /// Tokenizes an inline HTML document and prints its tags and text.
 ///
 /// # Errors
+///
 /// Returns an error if the inline input cannot be represented as an HTML
 /// tendril.
 fn main() -> anyhow::Result<()> {
@@ -110,6 +112,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the HTML tokenization example.
 ///
 /// # Errors
+///
 /// Returns an error if the inline HTML cannot be tokenized.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -132,11 +135,7 @@ mod tests {
     impl TokenSink for TagRecorder {
         type Handle = ();
 
-        /// Processes the token input for the html5ever workflow and applies the resulting state
-        /// changes. It calls `process_token`, `TagToken` to apply the required changes.
-        ///
-        /// # Errors
-        /// An error is returned if a fallible operation fails.
+        /// Records each tag token's kind and name.
         fn process_token(&self, token: Token, _line: u64) -> TokenSinkResult<()> {
             if let TagToken(tag) = token {
                 self.0

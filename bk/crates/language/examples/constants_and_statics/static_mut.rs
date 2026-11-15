@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! `static mut` Example.
 //!
 //! `static mut` use is generally discouraged due to the potential for data
@@ -26,6 +27,7 @@ static RUN_LOCK: Mutex<()> = Mutex::new(());
 /// concurrent access to `VAL`.
 fn dont_do_this() {
     // Declare a mutable static variable:
+
     /// Mutable global integer used to demonstrate `static mut` access.
     static mut VAL: i32 = 0;
 
@@ -46,6 +48,7 @@ fn dont_do_this() {
 
     // BEWARE: In addition, statics can be initialized from mutable statics,
     // but they read the _initial_ value of that static.
+
     /// Value copied from `VAL` during static initialization.
     static READ_FROM_VAL: i32 = unsafe { VAL };
     assert_eq!(READ_FROM_VAL, 0);
@@ -56,6 +59,7 @@ fn do_instead() {
     // Use an _immutable_ static containing an Atomic.
     // Note that Atomic variables are safe to share between threads (they
     // implement `Sync`).
+
     /// Atomic counter that supports concurrent updates without a mutex.
     static COUNTER: AtomicU64 = AtomicU64::new(0);
 
@@ -101,6 +105,7 @@ fn or_do_that() {
 
     // Use `Mutex` or `RwLock`, potentially wrapped in an `Arc`,
     // for safe concurrent access:
+
     /// Counter protected by a mutex for safe shared mutation.
     static SAFE_COUNTER: Mutex<u32> = Mutex::new(0);
 
@@ -129,6 +134,7 @@ fn or_do_that() {
     println!("Final SAFE_COUNTER value: {final_count}");
     assert_eq!(final_count, initial + 20_000);
 }
+
 /// Runs the three approaches in turn.
 ///
 /// Concurrency contract: calls are serialized, so `main` (and [`run`]) may be
@@ -143,8 +149,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs the three approaches in turn.
 pub fn run() {
     main();
 }

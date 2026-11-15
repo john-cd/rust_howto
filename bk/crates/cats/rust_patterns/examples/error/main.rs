@@ -7,43 +7,59 @@ use clap::Subcommand;
 
 /// Demonstrates chaining fallible operations with `Result::and_then`.
 mod and_then;
+
 /// Demonstrates the use of the `anyhow` crate for error handling.
 mod anyhow;
+
 /// This example demonstrates how to use backtraces to debug errors.
 mod backtrace;
+
 /// Demonstrates how to use the `color-eyre` crate for enhanced error reporting.
 mod color_eyre;
+
 /// Defines failures emitted by error operations and conversions used at component boundaries.
 /// Callers match these errors to choose recovery or user-facing diagnostics.
 mod error_handling;
+
 /// Demonstrates transforming successful values and errors with `Result`.
 mod map;
+
 /// This example demonstrates how to define custom error types using `miette` and `thiserror`.
 mod miette;
+
 /// This example demonstrates a simple panic.
 mod panic;
+
 /// Demonstrates the use of `?`.
 mod question_mark;
+
 /// Propagating errors with the `?` operator through a function that parses a
 mod question_mark2;
+
 /// Demonstrates returning and handling a recoverable error with `Result`.
 mod result;
+
 /// This example demonstrates how to avoid discarding errors during error
 mod retain;
+
 /// Defines failures emitted by error operations and conversions used at component boundaries.
 /// Callers match these errors to choose recovery or user-facing diagnostics.
 mod thiserror;
+
 /// Defines failures emitted by error operations and conversions used at component boundaries.
 /// Callers match these errors to choose recovery or user-facing diagnostics.
 mod thiserror2;
+
 /// Demonstrates the use of `unwrap()` and `expect()` for handling `Result`
 mod unwrap;
+
 /// Demonstrates the use of `unwrap_or` and `unwrap_or_else` for handling
 mod unwrap_or_else;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -52,51 +68,67 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `anyhow` example.
     #[command(name = "anyhow")]
     Anyhow,
+
     /// Runs the `and_then` example.
     #[command(name = "and_then")]
     AndThen,
+
     /// Runs the `backtrace` example.
     #[command(name = "backtrace")]
     Backtrace,
+
     /// Runs the `color_eyre` example.
     #[command(name = "color_eyre")]
     ColorEyre,
+
     /// Runs the `error_handling` example.
     #[command(name = "error_handling")]
     ErrorHandling,
+
     /// Runs the `miette` example.
     #[command(name = "miette")]
     Miette,
+
     /// Runs the `map` example.
     #[command(name = "map")]
     Map,
+
     /// Runs the `panic` example.
     #[command(name = "panic")]
     Panic,
+
     /// Runs the `question_mark` example.
     #[command(name = "question_mark")]
     QuestionMark,
+
     /// Runs the `question_mark2` example.
     #[command(name = "question_mark2")]
     QuestionMark2,
+
     /// Runs the `retain` example.
     #[command(name = "retain")]
     Retain,
+
     /// Runs the `Result` example.
     #[command(name = "result")]
     Result,
+
     /// Runs the `thiserror` example.
     #[command(name = "thiserror")]
     Thiserror,
+
     /// Runs the `thiserror2` example.
     #[command(name = "thiserror2")]
     Thiserror2,
+
     /// Runs the `unwrap` example.
     #[command(name = "unwrap")]
     Unwrap,
+
     /// Runs the `unwrap_or_else` example.
     #[command(name = "unwrap_or_else")]
     UnwrapOrElse,

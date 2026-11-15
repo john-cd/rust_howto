@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Replace a file so that readers never see a half-written file.
 //!
 //! Writing a file in place can leave it half-written if the program or the
@@ -65,9 +66,11 @@ fn replace_with_atomicwrites(target: &Path, contents: &[u8]) -> anyhow::Result<(
     AtomicFile::new(target, AllowOverwrite).write(|file| file.write_all(contents))?;
     Ok(())
 }
+
 /// Writes the same file twice with each variant.
 ///
 /// # Errors
+///
 /// Returns an error if fixture creation, replacement, synchronization, or
 /// reading the resulting contents fails.
 pub fn example_body() -> anyhow::Result<()> {
@@ -88,6 +91,7 @@ pub fn example_body() -> anyhow::Result<()> {
 /// Runs the example function and returns its result.
 ///
 /// # Errors
+///
 /// Returns an error if the example operation fails.
 pub fn run() -> anyhow::Result<()> {
     example_body()

@@ -9,6 +9,7 @@ use clap::Subcommand;
 /// provides support for integrating AFL with Rust programs.
 #[cfg(not(windows))]
 mod afl;
+
 /// `bolero` is a fuzzing frontend for Rust that supports multiple engines like libFuzzer, AFL, and
 /// Honggfuzz.
 mod bolero_example;
@@ -16,6 +17,7 @@ mod bolero_example;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -24,10 +26,12 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `afl` example.
     #[cfg(not(windows))]
     #[command(name = "afl")]
     Afl,
+
     /// Runs the `bolero_example` example.
     #[command(name = "bolero_example")]
     BoleroExample,
@@ -47,7 +51,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to skip hidden files and directories during
 //! directory traversal.
 //!
@@ -14,6 +15,7 @@ use std::path::PathBuf;
 use anyhow::Result;
 use walkdir::DirEntry;
 use walkdir::WalkDir;
+
 /// Checks if a directory entry should be included in the traversal.
 ///
 /// This function filters out hidden files and directories (those starting with
@@ -21,6 +23,7 @@ use walkdir::WalkDir;
 fn is_not_hidden(entry: &DirEntry) -> bool {
     entry.depth() == 0 || !entry.file_name().to_string_lossy().starts_with('.')
 }
+
 /// Prints the paths of the current directory tree, skipping hidden files and
 /// directories.
 fn main() -> Result<()> {
@@ -41,9 +44,10 @@ fn visible_paths(root: &Path) -> Result<Vec<PathBuf>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints the paths of the current directory tree, skipping hidden files and directories.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

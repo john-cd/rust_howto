@@ -18,7 +18,8 @@ use criterion::criterion_main;
 /// Registers and drops tokens to measure the cost of the shared registry.
 ///
 /// # Arguments
-/// * `c` - Mutable criterion whose state is updated by this operation.
+///
+/// * `c` - Criterion benchmark group used to register this benchmark.
 fn bench_token_registration(c: &mut Criterion) {
     let mut group = c.benchmark_group("token_registration");
     for count in [1_u64, 100, 1_000] {
@@ -39,7 +40,8 @@ fn bench_token_registration(c: &mut Criterion) {
 /// Measures how long `cancel_all` takes with many registered tasks, and how fast a token notices.
 ///
 /// # Arguments
-/// * `c` - Mutable criterion whose state is updated by this operation.
+///
+/// * `c` - Criterion benchmark group used to register this benchmark.
 fn bench_cancellation_signal(c: &mut Criterion) {
     let mut group = c.benchmark_group("cancellation_signal");
     for count in [1_u64, 100, 1_000] {
@@ -80,8 +82,10 @@ fn bench_cancellation_signal(c: &mut Criterion) {
 /// Measures registry contention when several threads register and drop tokens concurrently.
 ///
 /// # Arguments
-/// * `c` - Mutable criterion whose state is updated by this operation.
+///
+/// * `c` - Criterion benchmark group used to register this benchmark.
 fn bench_registry_contention(c: &mut Criterion) {
+
     /// Shared `tokens per thread` used by this module.
     const TOKENS_PER_THREAD: u64 = 200;
     let mut group = c.benchmark_group("registry_contention");
@@ -114,9 +118,11 @@ fn bench_registry_contention(c: &mut Criterion) {
 /// Measures filling the worker queue and the time until a cancelled worker has fully stopped.
 ///
 /// # Arguments
-/// * `c` - Mutable criterion whose state is updated by this operation.
+///
+/// * `c` - Criterion benchmark group used to register this benchmark.
 fn bench_worker_submission_and_cancel(c: &mut Criterion) {
     // Matches the worker's queue capacity.
+
     /// Shared `queued` used by this module.
     const QUEUED: u64 = 5;
     let mut group = c.benchmark_group("worker");

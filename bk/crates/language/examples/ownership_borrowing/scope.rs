@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Scope and drop.
 
 /// Creates a string in an inner scope, where it is dropped at the end.
@@ -24,8 +25,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates a string in an inner scope, where it is dropped at the end.
 pub fn run() {
     main();
 }

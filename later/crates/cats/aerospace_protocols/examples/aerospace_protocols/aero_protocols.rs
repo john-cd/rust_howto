@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encode and decode a MAVLink heartbeat without a vehicle or network.
 //!
 //! MAVLink is a lightweight binary protocol that drones, rovers and ground
@@ -54,6 +55,7 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 /// Runs the in-memory heartbeat example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()

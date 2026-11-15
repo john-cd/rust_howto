@@ -1,28 +1,36 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Enums with unit-like, struct-like and tuple-like variants.
 
 /// An enum to represent different types of messages.
 #[derive(Debug)]
 enum Message {
+
     /// A variant without data.
     Quit, // Unit-like variant (no fields).
+
     /// A variant with named fields.
     Move {
+
         /// Distance to move in the x direction.
         x: i32,
+
         /// Distance to move in the y direction.
         y: i32,
     }, // Struct-like variant (named fields).
+
     /// A variant that holds a string.
     Write(String), // Tuple-like variant (numbered fields).
+
     /// A variant that holds three color components.
     ChangeColor(i32, i32, i32), // Another tuple-like variant.
 }
 
 /// Define methods on enums.
 impl Message {
+
     /// Prints a description of the message.
     fn call(&self) {
         // The `match` keyword allows us to compare a value against a series of
@@ -43,7 +51,7 @@ impl Message {
         // `match` expression handles all possibilities.
     }
 }
-/// Runs the example.
+
 /// Creates a message of each kind and calls it.
 fn main() {
     // `msg` is assigned one of the variants.
@@ -62,8 +70,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates a message of each kind and calls it.
 pub fn run() {
     main();
 }
@@ -95,6 +102,7 @@ mod tests {
             "ChangeColor(1, 2, 3)"
         );
     }
+
     /// Verifies call every variant.
     #[test]
     fn test_call_every_variant() {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A simple example that plays a 440Hz sine wave (A4) for 1 second.
 //!
 //! Sound is stored as samples, numbers that describe the air pressure many
@@ -78,6 +79,7 @@ where
 /// A simple example that plays a 440Hz sine wave (A4) for 1 second.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error>> {
     main()
@@ -89,6 +91,7 @@ mod tests {
 
     /// Runs the audio example through its entry point.
     // output-only: the example plays a tone on the default output device.
+
     /// Runs the audio example through its entry point without error.
     #[test]
     #[ignore = "requires audio device"]

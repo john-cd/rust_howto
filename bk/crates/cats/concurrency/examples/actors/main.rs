@@ -7,8 +7,10 @@ use clap::Subcommand;
 
 /// An `actix` counter actor that replies with its updated total.
 mod actix;
+
 /// A small actor built from a Tokio task and message channels.
 mod actors;
+
 /// An actor with the `ractor` crate: a greeter that counts the greetings it
 mod ractor;
 
@@ -24,6 +26,7 @@ mod stakker;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -32,12 +35,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `actix` example.
     #[command(name = "actix")]
     Actix,
+
     /// Runs the `actors` example.
     #[command(name = "actors")]
     Actors,
+
     /// Runs the `ractor` example.
     #[command(name = "ractor")]
     Ractor,
@@ -47,6 +53,7 @@ enum Commands {
     // #[cfg(feature = "riker")]
     // #[command(name = "riker")]
     // Riker,
+
     /// Runs the `stakker` example.
     #[cfg(feature = "stakker")]
     #[command(name = "stakker")]
@@ -56,6 +63,7 @@ enum Commands {
 /// Runs the example selected on the command line.
 ///
 /// # Errors
+///
 /// Returns an error if the selected actor example cannot complete its message
 /// exchange.
 fn dispatch(cli: Cli) -> anyhow::Result<()> {

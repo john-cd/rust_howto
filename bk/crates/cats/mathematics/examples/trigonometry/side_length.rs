@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Calculates the hypotenuse of a right triangle given an angle and the length
 //! of the side opposite to it.
 //!
@@ -15,7 +16,7 @@ fn hypotenuse(angle: f64, side_length: f64) -> f64 {
     // Calculate the hypotenuse using the sine function.
     side_length / angle.sin()
 }
-/// Runs the example.
+
 /// Calculates the hypotenuse for a 1 radian angle opposite a side of 80.
 fn main() {
     // The angle in radians.
@@ -29,8 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calculates the hypotenuse for a 1 radian angle opposite a side of 80.
 pub fn run() {
     main();
 }

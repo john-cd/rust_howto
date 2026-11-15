@@ -18,6 +18,7 @@ fn run(args: &[&str]) -> Output {
         .output()
         .expect("the binary should start")
 }
+
 /// Writes `contents` to `root/relative`, creating parent folders.
 fn write(root: &Path, relative: &str, contents: &str) {
     let path = root.join(relative);
@@ -43,6 +44,7 @@ fn test_unknown_command_fails() {
     let output = run(&["bogus"]);
     assert!(!output.status.success());
 }
+
 /// Lists dependencies in sorted, duplicate-free order.
 #[test]
 fn test_list_crates_prints_sorted_unique_dependencies() {
@@ -67,6 +69,7 @@ fn test_list_crates_prints_sorted_unique_dependencies() {
         ["anyhow", "cc", "serde"]
     );
 }
+
 /// Renders category names and crate links from a metadata snapshot.
 #[test]
 fn test_category_page_from_metadata_renders_categories() {
@@ -118,6 +121,7 @@ fn test_category_page_from_metadata_missing_file_fails() {
     assert!(!output.status.success());
     assert!(String::from_utf8_lossy(&output.stderr).contains("missing.toml"));
 }
+
 /// Leaves Markdown unchanged when it contains no crate directives.
 #[test]
 fn test_expand_crate_blocks_without_directives_keeps_files() {

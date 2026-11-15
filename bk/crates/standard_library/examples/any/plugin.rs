@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A plugin system that stores shared services by their `TypeId`.
 //!
 //! A service registry stores one object per type, keyed by `TypeId`, and
@@ -14,8 +15,10 @@ use std::collections::HashMap;
 
 /// A plugin that the host can run.
 pub trait Plugin: Send + Sync + 'static {
+
     /// Returns the name of the plugin.
     fn name(&self) -> &'static str;
+
     /// Runs the plugin with access to the shared context.
     fn execute(&mut self, context: &mut Context);
 }
@@ -23,11 +26,13 @@ pub trait Plugin: Send + Sync + 'static {
 /// The services shared between the host and the plugins, indexed by type.
 #[derive(Default)]
 pub struct Context {
+
     /// The services, by type.
     shared_data: HashMap<TypeId, Box<dyn Any + Send + Sync>>,
 }
 
 impl Context {
+
     /// Returns the service of type `T`, if registered.
     pub fn get<T: Any + Send + Sync>(&self) -> Option<&T> {
         self.shared_data
@@ -51,6 +56,7 @@ impl Context {
 
 /// State owned by the host.
 struct AppState {
+
     /// A counter that plugins can increase.
     counter: u32,
 }
@@ -63,8 +69,11 @@ impl Plugin for MyCounterPlugin {
         "MyCounterPlugin"
     }
 
+    /// Adds ten to the registered application counter when `AppState` is present.
+    ///
     /// # Arguments
-    /// * `context` - Shared state and services used to complete the plugin workflow.
+    ///
+    /// * `context` - Plugin context that may contain the application state to update.
     fn execute(&mut self, context: &mut Context) {
         if let Some(state) = context.get_mut::<AppState>() {
             state.counter += 10;
@@ -81,8 +90,11 @@ impl Plugin for MyStringPlugin {
         "MyStringPlugin"
     }
 
+    /// Prints a registered integer and registers a greeting string.
+    ///
     /// # Arguments
-    /// * `context` - Shared state and services used to complete the plugin workflow.
+    ///
+    /// * `context` - Plugin context used to read the integer and register the string.
     fn execute(&mut self, context: &mut Context) {
         if let Some(value) = context.get::<i32>() {
             println!("MyStringPlugin: Retrieved i32: {value}");
@@ -94,6 +106,7 @@ impl Plugin for MyStringPlugin {
 /// A service registered by a plugin.
 #[derive(Debug)]
 pub struct CustomPluginService {
+
     /// A value.
     pub value: u64,
 }
@@ -106,8 +119,11 @@ impl Plugin for MyServiceConsumerPlugin {
         "MyServiceConsumerPlugin"
     }
 
+    /// Registers a custom service and prints a string when one is available.
+    ///
     /// # Arguments
-    /// * `context` - Shared state and services used to complete the plugin workflow.
+    ///
+    /// * `context` - Plugin context used to register the service and read stored values.
     fn execute(&mut self, context: &mut Context) {
         context.register(CustomPluginService { value: 12345 });
         if let Some(s) = context.get::<String>() {
@@ -119,13 +135,16 @@ impl Plugin for MyServiceConsumerPlugin {
 /// Owns the plugins and their context.
 #[derive(Default)]
 struct PluginManager {
+
     /// The registered plugins.
     plugins: Vec<Box<dyn Plugin>>,
+
     /// The context shared by the plugins.
     context: Context,
 }
 
 impl PluginManager {
+
     /// Adds a plugin.
     fn add_plugin(&mut self, plugin: Box<dyn Plugin>) {
         self.plugins.push(plugin);
@@ -168,7 +187,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Registers services, runs the plugins and checks the shared state.
 pub fn run() {
     main();
 }
@@ -177,6 +196,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `plugin` example runs.
     #[test]
     fn test_plugin_example_entry_point() {
@@ -226,6 +246,7 @@ mod tests {
         assert_eq!(service.value, 12345);
         Ok(())
     }
+
     /// Verifies plugin names.
     #[test]
     fn test_plugin_names() {
@@ -233,6 +254,7 @@ mod tests {
         assert_eq!(MyStringPlugin.name(), "MyStringPlugin");
         assert_eq!(MyServiceConsumerPlugin.name(), "MyServiceConsumerPlugin");
     }
+
     /// Verifies plugin without its state does nothing.
     #[test]
     fn test_plugin_without_its_state_does_nothing() {

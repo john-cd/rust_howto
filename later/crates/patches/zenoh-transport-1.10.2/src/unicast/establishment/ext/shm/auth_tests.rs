@@ -12,8 +12,11 @@
 use super::*;
 use crate::common::shm::handoff::PriorityContainer;
 
+/// Completes the initial shared-memory handshake between two peers.
+///
 /// # Panics
-/// Panics if an internal `Result` or `Option` has no usable value.
+///
+/// Panics if any handshake step fails.
 async fn exchange_init(alice: &ShmFsm<'_>, bob: &ShmFsm<'_>) {
     let syn = alice.send_init_syn(&StateOpen::new()).await.unwrap();
     bob.recv_init_syn(syn).await.unwrap();
@@ -28,8 +31,15 @@ fn assert_disabled(fsm: ShmFsm<'_>) {
     assert!(matches!(link.tx.ids(), HandoffCounterIds::Disabled));
 }
 
+/// Encodes an OpenAck shared-memory extension with the supplied handoff counters.
+///
+/// # Arguments
+///
+/// * `bob_counters` - Handoff counter identifiers to encode in the extension.
+///
 /// # Panics
-/// Panics if an internal `Result` or `Option` has no usable value.
+///
+/// Panics if the OpenAck extension cannot be encoded.
 fn ack_with_counters(bob_counters: HandoffCounterIds) -> open::ext::Shm {
     let mut bytes = vec![];
     Zenoh080

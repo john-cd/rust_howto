@@ -1,18 +1,22 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parse and format human-readable durations with `humantime`.
 //!
 //! ### Overview
+//!
 //! The `humantime` crate parses string representations of time durations (such
 //! as `"2h 30m 15s"`, `"1 day 2 hours"`, or `"150ms"`) into standard
 //! `std::time::Duration` instances, and formats `std::time::Duration` or
 //! `std::time::SystemTime` into human-friendly strings.
 
 use std::time::Duration;
+
 /// Parses a human-readable duration and formats it again.
 ///
 /// # Errors
+///
 /// Returns an error if the sample duration is invalid.
 fn main() -> anyhow::Result<()> {
     let human_text = "2h 30m 15s";
@@ -27,6 +31,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the humantime example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates the use of the `rug` crate for arbitrary precision
 //! arithmetic.
 //!
@@ -84,8 +85,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates, converts and operates on arbitrary-precision numbers.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Encode a blank AV1 frame using the `rav1e` crate.
 //!
 //! This example creates a default encoder context, sends one frame, flushes the
@@ -42,9 +43,10 @@ fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Encodes a blank AV1 frame and counts the packets produced.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     main()

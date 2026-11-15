@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates stable references in an `elsa::FrozenVec`.
 
 use elsa::FrozenVec;
@@ -41,6 +42,7 @@ pub(super) fn run() {
 /// Verifies that references and indexing retain the inserted values.
 #[cfg(test)]
 mod tests {
+
     /// Verifies that references and indexing retain the inserted values.
     #[test]
     fn test_references_survive_pushes() {

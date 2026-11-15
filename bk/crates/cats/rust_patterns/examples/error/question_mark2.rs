@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Propagating errors with the `?` operator through a function that parses a
 //! port.
 //!
@@ -48,7 +49,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses valid and invalid ports and prints the result.
 pub fn run() {
     main();
 }

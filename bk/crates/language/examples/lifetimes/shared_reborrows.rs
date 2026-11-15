@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Shows that shared reborrows of one mutable reference may overlap.
 
 /// Shows overlapping immutable reborrows followed by a mutable access.

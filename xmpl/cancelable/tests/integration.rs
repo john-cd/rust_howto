@@ -92,6 +92,7 @@ fn test_cancellation_under_high_queue_load() -> anyhow::Result<()> {
 
     Ok(())
 }
+
 /// Stops worker threads on repeated runs without hanging.
 #[test]
 fn test_thread_termination_across_independent_process_invocations() {

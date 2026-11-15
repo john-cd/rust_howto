@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates explicit primitive integer overflow operations.
 
 /// Compares wrapping, checked, overflowing, and saturating addition.
@@ -24,6 +25,7 @@ pub(super) fn run() {
 /// Verifies the four explicit overflow behaviors at the `u8` boundary.
 #[cfg(test)]
 mod tests {
+
     /// Verifies the four explicit overflow behaviors at the `u8` boundary.
     #[test]
     fn test_explicit_overflow_methods() {

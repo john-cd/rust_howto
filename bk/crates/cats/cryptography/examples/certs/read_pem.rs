@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Read a PEM certificate file and decode its DER bytes.
 //!
 //! PEM is a text wrapper for binary cryptographic data: Base64 between
@@ -65,6 +66,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the PEM file-reading example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

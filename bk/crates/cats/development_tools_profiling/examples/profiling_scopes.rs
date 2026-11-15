@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Marks the code to profile with the `profiling` facade.
 //!
 //! `profiling` forwards each scope to a backend chosen with a Cargo feature,
@@ -14,6 +15,7 @@
 fn sum_of_squares(n: u64) -> u64 {
     (1..=n).map(|i| i * i).sum()
 }
+
 /// Runs one frame of work and returns its computed total.
 ///
 /// A frame is one iteration of a game or UI loop; the same pattern can mark
@@ -36,7 +38,7 @@ fn run_frame() -> u64 {
     profiling::finish_frame!();
     total + big
 }
-/// Runs the example.
+
 /// Runs a few frames.
 fn main() {
     let mut checksum = 0;
@@ -48,8 +50,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs a few frames.
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

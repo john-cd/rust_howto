@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Set and read cookies with `tower-cookies`.
 //!
 //! A cookie is a small value the server asks the browser to store and send back
@@ -30,12 +31,14 @@ async fn set_language(cookies: Cookies) -> &'static str {
 /// Reads the cookie back, with a default when it is absent.
 ///
 /// # Arguments
+///
 /// * `cookies` - Cookie state updated with the authenticated session after successful verification.
 async fn get_language(cookies: Cookies) -> String {
     cookies
         .get(COOKIE_NAME)
         .map_or_else(|| "en".to_owned(), |c| c.value().to_owned())
 }
+
 /// Builds the router.
 pub fn app() -> Router {
     Router::new()
@@ -64,9 +67,11 @@ mod tests {
     /// Reads an Axum response body as UTF-8 text.
     ///
     /// # Arguments
+///
     /// * `response` - Response whose body should be collected.
     ///
     /// # Errors
+///
     /// Returns an error if collecting the body or decoding UTF-8 fails.
     async fn body(response: axum::response::Response) -> anyhow::Result<String> {
         let bytes = response.into_body().collect().await?.to_bytes();

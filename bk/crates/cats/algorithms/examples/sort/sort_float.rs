@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Sort floats using their IEEE 754 total ordering, including NaN.
 //!
 //! Floating-point numbers cannot be sorted with `sort` because `NaN` (not a
@@ -24,7 +25,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// Sort floats using their IEEE 754 total ordering, including NaN.
 pub fn run() {
     main();
@@ -33,6 +33,7 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `sort float` example runs.
     #[test]
     fn test_sort_float_example_entry_point() {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Exposes a button in a native Winit window through AccessKit.
 //! Close the window to end the example. Run it on a desktop with a display.
 

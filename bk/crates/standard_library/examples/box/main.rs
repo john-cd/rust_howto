@@ -7,18 +7,23 @@ use clap::Subcommand;
 
 /// Basic `Box` usage.
 mod box_basics;
+
 /// Dereferencing a `Box`.
 mod box_deref;
+
 /// Boxing dynamically sized types.
 mod box_dst;
+
 /// Example using `Box<T>` for recursive data structures.
 mod box_recursive;
+
 /// Example of using `Box` as a smart pointer for trait objects.
 mod box_trait_objects;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -28,18 +33,23 @@ struct Cli {
 #[allow(clippy::enum_variant_names)]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `box_basics` example.
     #[command(name = "box_basics")]
     BoxBasics,
+
     /// Runs the `box_deref` example.
     #[command(name = "box_deref")]
     BoxDeref,
+
     /// Runs the `box_dst` example.
     #[command(name = "box_dst")]
     BoxDst,
+
     /// Runs the `box_recursive` example.
     #[command(name = "box_recursive")]
     BoxRecursive,
+
     /// Runs the `box_trait_objects` example.
     #[command(name = "box_trait_objects")]
     BoxTraitObjects,
@@ -67,7 +77,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

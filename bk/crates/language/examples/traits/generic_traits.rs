@@ -1,17 +1,20 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A generic trait.
 
 /// A generic trait that can be implemented for different types.
 /// `T` between angle brackets is a generic type parameter:
 trait Test<T> {
+
     /// A function that takes a value of generic type `T` as its input.
     fn test(_t: T);
 }
 
 /// A type that implements `Test` for any type.
 struct SomeStruct;
+
 /// Generic implementation of a generic trait for a `struct`.
 // Note that the `<>` brackets appear in two places.
 impl<T> Test<T> for SomeStruct {
@@ -29,8 +32,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the generic trait method with several types.
 pub fn run() {
     main();
 }

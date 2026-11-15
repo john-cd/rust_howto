@@ -5,6 +5,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates zero-cost memory manipulation with `zerocopy`.
 //!
 //! First, add the following to your `Cargo.toml`:
@@ -64,6 +65,7 @@ use zerocopy::KnownLayout;
 /// A struct that can be created from zeroed bytes.
 #[derive(FromZeros, Debug)]
 struct MyZeroableStruct {
+
     /// Eight bytes.
     field: [u8; 8],
 }
@@ -97,15 +99,20 @@ fn manipulate_zero_bytes() {
 // It means that their layout is exactly that C or C++ expect.
 #[repr(C)]
 // We derive the Zerocopy traits that are required to convert from / to bytes.
+
 /// The header of a packet.
 #[derive(FromBytes, IntoBytes, Immutable, KnownLayout, PartialEq, Debug)]
 struct PacketHeader {
+
     /// The source port.
     src_port: [u8; 2],
+
     /// The destination port.
     dst_port: [u8; 2],
+
     /// The length of the packet.
     length: [u8; 2],
+
     /// The checksum.
     checksum: [u8; 2],
 }
@@ -118,8 +125,10 @@ struct PacketHeader {
 #[repr(C)]
 #[derive(FromBytes, Immutable, KnownLayout)]
 struct Packet {
+
     /// The header of the packet.
     header: PacketHeader,
+
     /// The body of the packet, whose length is only known at runtime.
     body: [u8],
 }
@@ -191,8 +200,10 @@ fn from_bytes() -> anyhow::Result<()> {
 #[repr(u8)]
 #[derive(IntoBytes, Immutable)]
 enum MyEnum {
+
     /// The first variant, stored as 0.
     A,
+
     /// The second variant, stored as 1.
     B,
 }
@@ -227,10 +238,10 @@ fn main() -> anyhow::Result<()> {
 // Examples adapted from <https://docs.rs/zerocopy/>
 // ANCHOR_END: example
 
-/// Runs the example.
 /// This example demonstrates zero-cost memory manipulation with `zerocopy`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

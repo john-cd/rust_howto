@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parses Rust source text with `syn` (outside of a procedural macro) and
 //! counts the items it defines with a `Visit` implementation.
 //!
@@ -13,23 +14,32 @@ use syn::visit::Visit;
 /// Counts functions (free functions and methods) and structs.
 #[derive(Default)]
 struct ItemCounter {
+
     /// Number of functions discovered.
     functions: usize,
+
     /// Number of structs discovered.
     structs: usize,
 }
 
 impl<'ast> Visit<'ast> for ItemCounter {
+
+    /// Counts a free function in the syntax tree and continues visiting its child items.
+    ///
     /// # Arguments
-    /// * `node` - Mutable impl item fn whose state is updated by this operation.
+    ///
+    /// * `node` - Free function node to count and traverse.
     fn visit_item_fn(&mut self, node: &'ast syn::ItemFn) {
         self.functions += 1;
         // Keep walking so nested items are counted too.
         syn::visit::visit_item_fn(self, node);
     }
 
+    /// Counts an associated function in the syntax tree and continues visiting its child items.
+    ///
     /// # Arguments
-    /// * `node` - Mutable item struct whose state is updated by this operation.
+    ///
+    /// * `node` - Associated function node to count and traverse.
     fn visit_impl_item_fn(&mut self, node: &'ast syn::ImplItemFn) {
         self.functions += 1;
         syn::visit::visit_impl_item_fn(self, node);
@@ -49,17 +59,25 @@ fn count_items(source: &str) -> syn::Result<(usize, usize)> {
     Ok((counter.functions, counter.structs))
 }
 
+/// Parses the embedded Rust source and counts its functions and structs.
+///
 /// # Errors
+///
 /// Returns an error if the embedded Rust source cannot be parsed.
+///
+/// # Panics
+///
+/// Panics if parsing the sample no longer finds the expected number of functions and structs.
 fn main() -> syn::Result<()> {
     let source = "
+
         /// Groups the data required by rust source operations.
         struct Point { x: f64, y: f64 }
 
         impl Point {
-            ///
             fn norm(&self) -> f64 { (self.x * self.x + self.y * self.y).sqrt() }
         }
+
 /// Runs the example.
         fn main() {
             fn helper() {}
@@ -76,10 +94,15 @@ fn main() -> syn::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses the embedded Rust source and counts its functions and structs.
 ///
 /// # Errors
-/// Returns an error if a step of the example fails.
+///
+/// Returns an error if the embedded Rust source cannot be parsed.
+///
+/// # Panics
+///
+/// Panics if parsing the sample no longer finds the expected number of functions and structs.
 pub fn run() -> syn::Result<()> {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

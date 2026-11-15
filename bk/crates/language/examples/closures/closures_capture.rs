@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Closures that capture their environment.
 
 /// Defines a closure that captures a variable and calls it.
@@ -21,8 +22,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Defines a closure that captures a variable and calls it.
 pub fn run() {
     main();
 }

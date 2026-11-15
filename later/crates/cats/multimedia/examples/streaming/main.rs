@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Negotiate a WebRTC audio stream between two peers with `str0m`.
 //!
 //! `str0m` is Sans-I/O: it never opens sockets or spawns threads. The
@@ -21,10 +22,13 @@ use str0m::media::MediaKind;
 /// A media payload with transport-oriented ordering and timing metadata.
 #[derive(Debug, PartialEq, Eq)]
 struct MediaFrame {
+
     /// The wrapping sequence number assigned to this frame.
     sequence_number: u16,
+
     /// The wrapping media timestamp for the first sample in this frame.
     timestamp: u32,
+
     /// The encoded media payload.
     payload: Vec<u8>,
 }
@@ -93,6 +97,7 @@ fn streaming_example() -> Result<()> {
     }
     Ok(())
 }
+
 /// Starts the streaming example when this file is built as a binary.
 fn main() -> Result<()> {
     streaming_example()

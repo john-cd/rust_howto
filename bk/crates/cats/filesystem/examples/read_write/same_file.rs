@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Check whether we are reading & writing to the same file.
 //!
 //! Two different paths can name the same file, through hard links or symbolic
@@ -12,10 +13,16 @@ use std::io::Error;
 
 use same_file::Handle;
 
-/// Check whether we are reading & writing to the same file.
-//     "You are reading and writing to the same file!",
-// when a request is rejected.
-/// Runs the example.
+/// Checks whether standard streams or file paths refer to the same underlying file.
+///
+/// # Errors
+///
+/// Returns an I/O error if stream handles cannot be obtained, the temporary file cannot be
+/// created, or file identity cannot be checked.
+///
+/// # Panics
+///
+/// Panics if equivalent path spellings are not recognized as the same file.
 fn main() -> Result<(), Error> {
     // Get a `Handle` for the standard input, output, and error:
     let stdin = Handle::stdin()?;
@@ -53,10 +60,16 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Checks whether standard streams or file paths refer to the same underlying file.
 ///
 /// # Errors
-/// Returns an error if a step of the example fails.
+///
+/// Returns an I/O error if stream handles cannot be obtained, the temporary file cannot be
+/// created, or file identity cannot be checked.
+///
+/// # Panics
+///
+/// Panics if equivalent path spellings are not recognized as the same file.
 pub fn run() -> Result<(), Error> {
     main()
 }

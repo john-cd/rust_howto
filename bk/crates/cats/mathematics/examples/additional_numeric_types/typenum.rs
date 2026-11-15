@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Type-level numbers with `typenum`.
 //!
 //! Type-level numbers move numeric values into the type system, so the compiler
@@ -21,13 +22,16 @@ use typenum::Unsigned;
 /// The size `N` is a type-level unsigned integer from `typenum`, so
 /// mismatched sizes are caught at compile time rather than at runtime.
 struct FixedBuffer<T, N: Unsigned> {
+
     /// The elements of the buffer.
     data: Vec<T>,
+
     /// Marker that carries the size `N` in the type.
     _size: PhantomData<N>,
 }
 
 impl<T: Default + Clone, N: Unsigned> FixedBuffer<T, N> {
+
     /// Creates a buffer of `N` default elements.
     fn new() -> Self {
         Self {
@@ -40,7 +44,7 @@ impl<T: Default + Clone, N: Unsigned> FixedBuffer<T, N> {
         N::USIZE
     }
 }
-/// Runs the example.
+
 /// Computes with type-level numbers and creates a fixed-size buffer.
 fn main() {
     // `typenum` provides type-level numbers evaluated at compile time.
@@ -71,8 +75,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Computes with type-level numbers and creates a fixed-size buffer.
 pub fn run() {
     main();
 }

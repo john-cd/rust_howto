@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Consuming any `IntoIterator` in a generic function.
 
 /// This function demonstrates the use of `IntoIterator` as a trait bound,
@@ -32,8 +33,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Sums a vector and an array.
 pub fn run() {
     main();
 }
@@ -47,6 +47,7 @@ mod tests {
     fn test_consume_intoiterator_example_entry_point() {
         main();
     }
+
     /// Verifies sum all.
     #[test]
     fn test_sum_all() {

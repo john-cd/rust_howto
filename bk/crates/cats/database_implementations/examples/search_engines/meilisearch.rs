@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This is an example of how to use the MeiliSearch Rust SDK to index and
 //! search documents.
 //!
@@ -21,10 +22,13 @@ use serde::Serialize;
 /// A document that can be indexed in `MeiliSearch`.
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
+
     /// The identifier of the document.
     id: usize,
+
     /// The title of the document.
     title: String,
+
     /// The content of the document.
     content: String,
 }
@@ -44,6 +48,7 @@ async fn main() -> anyhow::Result<()> {
 /// settings.
 ///
 /// # Errors
+///
 /// Returns an error if the server cannot be reached or rejects an operation.
 async fn run_with_config(
     meilisearch_url: String,
@@ -107,6 +112,7 @@ async fn run_with_config(
 /// Runs the Meilisearch example.
 ///
 /// # Errors
+///
 /// Returns an error if the Meilisearch server is unreachable or rejects a
 /// request.
 pub fn run() -> anyhow::Result<()> {

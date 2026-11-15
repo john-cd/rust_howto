@@ -8,12 +8,14 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the `fake` crate to generate fake data for testing.
 mod fake;
+
 /// Property-based testing with `proptest`.
 mod proptest;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -22,9 +24,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `fake` example.
     #[command(name = "fake")]
     Fake,
+
     /// Runs the `proptest` example.
     #[command(name = "proptest")]
     Proptest,
@@ -43,7 +47,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

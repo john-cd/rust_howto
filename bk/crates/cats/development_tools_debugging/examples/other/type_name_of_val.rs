@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Printing the type of a value with `type_name_of_val`.
 //!
 //! `type_name_of_val` returns the name of a value's type as text, which is
@@ -11,6 +12,7 @@
 fn get_iter() -> impl Iterator<Item = i32> {
     [1, 2, 3].into_iter()
 }
+
 /// Prints the type name of the iterator.
 fn main() {
     let iter = get_iter();
@@ -27,8 +29,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the type name of the iterator.
 pub fn run() {
     main();
 }

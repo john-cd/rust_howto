@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The main function initializes the terminal, runs the application, and
 //! restores the terminal to its original state.
 //!
@@ -61,6 +62,7 @@ fn example() {
 /// The `App` struct represents the main application state.
 #[derive(Debug, Default)]
 struct App {
+
     /// The mode of the application.
     mode: Mode,
 }
@@ -68,17 +70,21 @@ struct App {
 /// The `Mode` enum represents the different states of the application.
 #[derive(Debug, Default, PartialEq)]
 enum Mode {
+
     /// The application is running.
     #[default]
     Running,
     // Add more states / screens as needed...
+
     /// The application is exiting.
     Exiting,
+
     /// The application is done.
     Done,
 }
 
 impl App {
+
     /// The `run` function contains the main loop of the application.
     ///
     /// It repeatedly draws the UI and handles input events until the
@@ -148,6 +154,7 @@ impl App {
 /// This implementation of the `Widget` trait for `&App` defines how the
 /// application's UI is rendered.
 impl Widget for &App {
+
     /// Renders the current value.
     fn render(self, area: Rect, buf: &mut Buffer) {
         // Create a layout with three vertical chunks using `Layout`.
@@ -198,11 +205,13 @@ impl Widget for &App {
 
 /// The `MiddleWidget` struct is a custom widget that displays text.
 struct MiddleWidget {
+
     /// The text to display.
     text: String,
 }
 
 impl MiddleWidget {
+
     /// Creates a widget that displays `text`.
     pub fn new(text: impl Into<String>) -> Self {
         Self { text: text.into() }
@@ -211,6 +220,7 @@ impl MiddleWidget {
 
 impl Widget for MiddleWidget {
     // Draw a `Paragraph` widget with some example text.
+
     /// Renders the current value.
     fn render(self, area: Rect, buf: &mut Buffer) {
         let text = Text::raw(self.text);
@@ -241,9 +251,11 @@ mod tests {
         // More tests here...
         Ok(())
     }
+
     /// Renders the current value.
     ///
     /// # Arguments
+///
     /// * `app` - Shared state and services used to complete the ratatui workflow.
     fn render(app: &App) -> String {
         let area = Rect::new(0, 0, 40, 12);
@@ -300,6 +312,7 @@ mod tests {
         assert!(text.contains("hello"));
         assert!(text.contains("Text"));
     }
+
     /// Verifies that the `ratatui` example runs.
     #[test]
     #[ignore = "requires an interactive terminal and key input"]

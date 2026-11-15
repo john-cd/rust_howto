@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Removes dangerous markup from untrusted HTML with `ammonia`.
 //!
 //! XSS (cross-site scripting) is an attack where untrusted HTML runs a script
@@ -40,9 +41,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Cleans unsafe tags, attributes, and URL schemes from untrusted HTML.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips

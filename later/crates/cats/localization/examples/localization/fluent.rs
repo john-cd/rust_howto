@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Loads inline Fluent resources and formats greetings and plural messages.
 //!
 //! The example keeps English and French translations in FTL resources and
@@ -26,6 +27,7 @@ const FR: &str = "greeting = Bonjour, { $name } !\nitems = { $count ->\n    [one
 /// Builds a Fluent bundle for a locale from an inline FTL resource.
 ///
 /// # Errors
+///
 /// Returns an error when the locale cannot be parsed, the resource is invalid,
 /// or the resource cannot be added to the bundle.
 fn new_bundle(locale: &str, source: &str) -> ExampleResult<FluentBundle<FluentResource>> {
@@ -44,6 +46,7 @@ fn new_bundle(locale: &str, source: &str) -> ExampleResult<FluentBundle<FluentRe
 /// Formats a message from a bundle and reports missing messages or arguments.
 ///
 /// # Errors
+///
 /// Returns an error when the message has no value or Fluent reports a
 /// formatting problem.
 fn format_message(
@@ -74,6 +77,7 @@ fn format_message(
 /// Prints English and French greetings and pluralized item counts.
 ///
 /// # Errors
+///
 /// Returns an error if either locale bundle cannot be built or a message cannot be formatted.
 fn main() -> ExampleResult<()> {
     let english = new_bundle("en-US", EN_US)?;
@@ -101,12 +105,14 @@ fn main() -> ExampleResult<()> {
 /// Runs the Fluent localization example.
 ///
 /// # Errors
+///
 /// Returns an error if bundle creation or message formatting fails.
 pub fn run() -> ExampleResult<()> {
     main()
 }
 
 #[cfg(test)]
+
 /// Verifies formatting for both configured locales.
 mod tests {
     use super::*;

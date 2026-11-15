@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Placeholder for API bindings examples.
 
 // Deferred (#1748): no API bindings example yet.

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Recognizes US states by name or by abbreviation with `us-state-info`.
 //!
 //! State names and two-letter postal abbreviations (CA, NY) are both common in
@@ -8,20 +9,27 @@
 //! can be matched.
 
 use us_state_info::State;
+
 /// Parses a state name or a two-letter abbreviation.
-
+///
 /// The match is case-insensitive and ignores spaces.
-
+///
+/// Parses a state name or postal abbreviation after trimming surrounding whitespace.
+///
+/// # Arguments
+///
+/// * `text` - State name or postal abbreviation to parse.
+///
 /// # Returns
-/// `Some` when the requested value is available; otherwise returns `None`.
+///
+/// The matching state, or `None` if the text does not identify a state.
 fn parse_state(text: &str) -> Option<State> {
     // `TryFrom<String>` is implemented. The error type does not implement
     // `std::error::Error`, so convert it to an `Option`.
     State::try_from(text.trim().to_owned()).ok()
 }
-/// Runs the example.
-/// Checks that names and abbreviations map to the same state.
 
+/// Checks that names and abbreviations map to the same state.
 fn main() {
     assert_eq!(parse_state("CA"), Some(State::California));
     assert_eq!(parse_state("California"), parse_state("ca"));
@@ -36,7 +44,6 @@ fn main() {
 // ANCHOR_END: example
 
 /// Runs the example entry point.
-
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates how to use a custom delimiter during CSV deserialization.
 //!
 //! CSV (comma-separated values) is a plain-text table format, with one record
@@ -10,13 +11,17 @@
 use csv::Error;
 use csv::ReaderBuilder;
 use serde::Deserialize;
+
 /// Represents a record to import.
 #[derive(Debug, Deserialize, PartialEq)]
 struct Record {
+
     /// The name.
     name: String,
+
     /// The place.
     place: String,
+
     /// The identifier, if any.
     #[serde(deserialize_with = "csv::invalid_option")]
     id: Option<u64>,
@@ -41,9 +46,10 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Reads tab-separated data and prints each record.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()

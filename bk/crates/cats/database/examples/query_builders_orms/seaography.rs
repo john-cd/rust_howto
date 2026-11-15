@@ -5,6 +5,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Generating a GraphQL server from a database with Seaography.
 //!
 //! Seaography is an automated GraphQL framework for SeaORM.
@@ -48,11 +49,14 @@ mod post {
     #[derive(Clone, Debug, PartialEq, Eq, DeriveEntityModel)]
     #[sea_orm(table_name = "posts")]
     pub struct Model {
+
         /// The primary key.
         #[sea_orm(primary_key)]
         pub id: i32,
+
         /// The title of the post.
         pub title: String,
+
         /// The body of the post.
         pub content: String,
     }
@@ -62,6 +66,7 @@ mod post {
     pub enum Relation {}
 
     impl seaography::RelationBuilder for Relation {
+
         /// Returns no relation name because this enum has no variants.
         fn get_relation_name(&self, _: &'static BuilderContext) -> String {
             unreachable!("the posts entity defines no relations")
@@ -149,10 +154,10 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// Generating a GraphQL server from a database with Seaography.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

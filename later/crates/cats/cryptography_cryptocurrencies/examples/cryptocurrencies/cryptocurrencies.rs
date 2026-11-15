@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Queries an Ethereum balance and signs a message with `alloy`, without
 //! network access.
 //!
@@ -30,6 +31,7 @@ use alloy::sol;
 const ACCOUNT: Address = address!("d8dA6BF26964aF9D7eEd9e03E53415D37aA96045");
 
 sol! {
+
     /// The part of the ERC-20 token interface used by this example.
     #[sol(rpc)]
     interface IERC20 {
@@ -99,9 +101,10 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the example against a mocked node.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub async fn run() -> anyhow::Result<()> {
     main().await
@@ -117,6 +120,7 @@ mod tests {
     async fn main_runs() -> anyhow::Result<()> {
         main().await
     }
+
     /// Formats a mocked account balance in ether.
     #[tokio::test]
     async fn balance_is_formatted_in_ether() -> anyhow::Result<()> {

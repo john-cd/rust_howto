@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Runs CPU-bound work from `async` code on the Rayon thread pool.
 //!
 //! An async runtime runs many tasks on a few threads, so a task that computes
@@ -39,7 +40,6 @@ async fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the example.
 pub fn run() {
     main();

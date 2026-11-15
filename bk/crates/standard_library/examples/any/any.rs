@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Dynamic typing with the `Any` trait.
 //!
 //! Rust is statically typed, but `Any` lets you hold a value of unknown type
@@ -18,6 +19,7 @@ use std::any::Any;
 //   mutable reference.
 //
 // All are implemented on `dyn Any`, `dyn Any + Send`, `dyn Any + Send + Sync`.
+
 /// Returns whether `s` is a `String`.
 fn is_string(s: &dyn Any) -> bool {
     // `is<T>` is equivalent to `TypeId::of::<T>() == s.type_id()`.
@@ -38,13 +40,14 @@ fn is_string(s: &dyn Any) -> bool {
 // `Box<dyn Any>` and attempts to downcast it to a `Box<T>`. `downcast` is
 // implemented on `Box<dyn Any>`, `Box<dyn Any + Send>`, `Box<dyn Any + Send +
 // Sync>`.
+
 /// Prints `value` if it is a `String`.
 fn print_if_string(value: Box<dyn Any>) {
     if let Ok(string) = value.downcast::<String>() {
         println!("String: {string}");
     }
 }
-/// Runs the example.
+
 /// Checks the type of values at runtime.
 fn main() {
     assert!(!is_string(&42));
@@ -55,7 +58,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Checks the type of values at runtime.
 pub fn run() {
     main();
 }
@@ -64,11 +67,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `any` example runs.
     #[test]
     fn test_any_example_entry_point() {
         main();
     }
+
     /// Verifies is string.
     #[test]
     fn test_is_string() {

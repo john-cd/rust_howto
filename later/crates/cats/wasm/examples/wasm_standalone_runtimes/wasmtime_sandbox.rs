@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Run untrusted WebAssembly in a `wasmtime` sandbox: a fuel budget bounds the
 //! CPU time, a store limit bounds memory, and the only capability the guest
 //! has is one host function (no WASI, no filesystem, no network).
@@ -35,29 +36,37 @@ const WAT: &str = r#"(module
 
 /// Resource limits for one evaluation.
 struct SandboxConfig {
+
     /// Maximum number of units of "fuel" (roughly, Wasm instructions).
     fuel: u64,
+
     /// Maximum size of the linear memory, in bytes.
     max_memory_bytes: usize,
 }
 
 /// An engine that meters fuel, plus a cache of compiled modules.
 struct Sandbox {
+
     /// Wasmtime engine configured to meter guest execution.
     engine: Engine,
+
     /// Fuel and memory limits applied to each guest store.
     config: SandboxConfig,
+
     /// Compiled modules, keyed by the hash of their source.
     cache: HashMap<String, Module>,
 }
 
 impl Sandbox {
+
     /// Creates an engine configured for fuel metering and an empty module cache.
     ///
     /// # Arguments
+///
     /// * `config` - Fuel and linear-memory limits applied to guest executions.
     ///
     /// # Errors
+///
     /// Returns an error if Wasmtime cannot create the configured engine.
     fn new(config: SandboxConfig) -> Result<Self> {
         let mut engine_config = Config::new();
@@ -95,6 +104,7 @@ impl Sandbox {
     /// Calls an exported `(i32) -> i32` function with one integer argument.
     ///
     /// # Errors
+///
     /// Returns an error if compilation, linking, instantiation, or the guest call fails.
     fn call(&mut self, wat: &str, export: &str, arg: i32) -> Result<i32> {
         let module = self.module(wat)?;
@@ -110,6 +120,7 @@ impl Sandbox {
     /// Calls an exported `() -> ()` function.
     ///
     /// # Errors
+///
     /// Returns an error if compilation, linking, instantiation, or the guest call fails.
     fn call_unit(&mut self, wat: &str, export: &str) -> Result<()> {
         let module = self.module(wat)?;
@@ -128,6 +139,7 @@ impl Sandbox {
 /// Demonstrates normal host calls, fuel exhaustion, and memory limits.
 ///
 /// # Errors
+///
 /// Returns an error if Wasmtime rejects the module or any guest operation fails.
 fn main() -> Result<()> {
     let mut sandbox = Sandbox::new(SandboxConfig {
@@ -155,6 +167,7 @@ fn main() -> Result<()> {
 /// Runs the Wasmtime sandbox example.
 ///
 /// # Errors
+///
 /// Returns an error if engine setup or a guest operation fails.
 pub fn run() -> Result<()> {
     main()

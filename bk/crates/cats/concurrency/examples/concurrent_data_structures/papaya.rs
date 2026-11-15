@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A concurrent hash map from the `papaya` crate, used from several threads.
 //!
 //! A concurrent hash map lets many threads read and write at once. Papaya's
@@ -54,6 +55,7 @@ fn apply_atomic_updates(map: &HashMap<char, i32>, key: char) -> (i32, Option<i32
 }
 
 // Use a map from multiple threads.
+
 /// Inserts into and reads from a shared `papaya` map from several threads.
 fn main() -> anyhow::Result<()> {
     // Create a map.
@@ -71,9 +73,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Inserts into and reads from a shared `papaya` map from several threads.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parses an Intel HEX data record and its end-of-file record.
 //!
 //! Intel HEX is a text format for firmware images: each line is a record with
@@ -27,6 +28,7 @@ fn parse_records() -> Result<Vec<Record>, Box<dyn Error + Send + Sync>> {
 /// Parses an Intel HEX data record and its end-of-file record.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
     let records = parse_records()?;

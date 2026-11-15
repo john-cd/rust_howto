@@ -1,14 +1,17 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Multi-producer, multi-consumer (MPMC) async channel communication.
 //!
 //! ### Overview
+//!
 //! The `async_channel` crate provides multi-producer, multi-consumer channels
 //! where multiple tasks can send messages (`Sender`) and multiple tasks can
 //! receive messages (`Receiver`).
 //!
 //! ### Key Concepts
+//!
 //! - **Bounded Channels**: Backpressure is enforced by setting a fixed capacity limit. When the
 //!   buffer is full, `send().await` suspends execution until space becomes available.
 //! - **Multiple Producers and Consumers**: Both `Sender` and `Receiver` types implement `Clone`.
@@ -26,7 +29,9 @@ use tokio::task;
 use tokio::time::Duration;
 
 /// This function simulates a producer that sends messages to a channel.
+///
 /// # Arguments
+///
 /// * `id` - The ID of the producer.
 /// * `tx` - The sender side of the channel used to send messages.
 async fn producer(id: usize, tx: Sender<String>) {
@@ -50,6 +55,7 @@ async fn producer(id: usize, tx: Sender<String>) {
 /// This function simulates a consumer that receives messages from a channel.
 ///
 /// # Arguments
+///
 /// * `id` - The ID of the consumer.
 /// * `rx` - The receiver side of the channel used to receive messages.
 async fn consumer(id: usize, rx: Receiver<String>) {

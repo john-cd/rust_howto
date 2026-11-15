@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Query extended metadata through Linux's safe statx wrapper.
 //!
 //! `statx` is the Linux system call that returns file metadata (size, owner,
@@ -16,7 +17,9 @@ use rustix::fs::statx;
 use tempfile::NamedTempFile;
 
 /// Prints the size and, when available, birth time of a temporary file.
+///
 /// # Errors
+///
 /// Propagates temporary-file, write, and statx errors, including unsupported
 /// system calls on older kernels or restricted hosts.
 fn main() -> io::Result<()> {
@@ -57,6 +60,7 @@ fn main() -> io::Result<()> {
 /// Query extended metadata through Linux's safe statx wrapper.
 ///
 /// # Errors
+///
 /// Propagates file creation, IO, metadata, and explicit cleanup errors.
 /// Returns an error if a step of the example fails.
 pub fn run() -> io::Result<()> {

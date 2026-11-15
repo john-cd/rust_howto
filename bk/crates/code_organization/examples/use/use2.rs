@@ -1,12 +1,15 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Bringing a function into scope with `use`.
 
 /// This module represents the front of the house in a restaurant.
 mod front_of_house {
+
     /// This module handles hosting duties within the front of the house.
     pub mod hosting {
+
         /// Adds a customer to the waitlist.
         pub fn add_to_waitlist() -> &'static str {
             "Add to waitlist."
@@ -26,15 +29,14 @@ fn eat_at_restaurant() -> &'static str {
     // IDIOM: import the module, not the function itself.
     hosting::add_to_waitlist()
 }
-/// Runs the example.
+
 /// Runs the use2 example.
 fn main() {
     println!("{}", eat_at_restaurant());
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs the use2 example.
 pub fn run() {
     main();
 }
@@ -48,6 +50,7 @@ mod tests {
     fn test_main() {
         main();
     }
+
     /// Verifies shortened path calls same function.
     #[test]
     fn test_shortened_path_calls_same_function() {

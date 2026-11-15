@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates the use of `as_ref`, `as_deref`, and `as_mut` methods on
 //! `Result`.
 
@@ -12,7 +13,7 @@ fn get_message(success: bool) -> Result<String, &'static str> {
         Err("Failed to get message")
     }
 }
-/// Runs the example.
+
 /// Converts a `Result` with `as_ref`, `as_deref` and `as_mut`.
 fn main() {
     let result: Result<String, &'static str> = get_message(true);
@@ -38,8 +39,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Converts a `Result` with `as_ref`, `as_deref` and `as_mut`.
 pub fn run() {
     main();
 }
@@ -47,17 +47,20 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `result3` example runs.
     #[test]
     fn test_result3_example_entry_point() {
         main();
     }
+
     /// Verifies get message.
     #[test]
     fn test_get_message() {
         assert_eq!(get_message(true), Ok("Rust".to_owned()));
         assert_eq!(get_message(false), Err("Failed to get message"));
     }
+
     /// Verifies as ref and as deref.
     #[test]
     fn test_as_ref_and_as_deref() {
@@ -67,6 +70,7 @@ mod tests {
         // The original is still usable.
         assert_eq!(result, Ok("Rust".to_owned()));
     }
+
     /// Verifies as mut modifies in place.
     #[test]
     fn test_as_mut_modifies_in_place() {
@@ -76,6 +80,7 @@ mod tests {
         }
         assert_eq!(result, Ok("Rust is awesome!".to_owned()));
     }
+
     /// Verifies as mut on err does nothing.
     #[test]
     fn test_as_mut_on_err_does_nothing() {

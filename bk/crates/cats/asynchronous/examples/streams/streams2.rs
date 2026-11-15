@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates bounded concurrent processing with a deterministic stream.
 //!
 //! Bounded concurrency runs at most N tasks at once, for example N downloads,
@@ -42,9 +43,10 @@ async fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs the example and prints the results in input order.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

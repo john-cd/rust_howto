@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Opens a document and asks for its symbols with `lsp-server` and
 //! `lsp-types`, and shows the `Content-Length` framing that real servers use.
 //!
@@ -99,8 +100,11 @@ fn function_symbols(uri: &Uri, text: &str) -> Vec<SymbolInformation> {
     symbols
 }
 
+/// Runs an in-memory LSP client and server and exchanges a document request.
+///
 /// # Errors
-/// An error is returned if send, recv fails.
+///
+/// Returns an error if a message cannot be sent or received, the server responds with an error, or the response has an unexpected shape.
 fn main() -> anyhow::Result<()> {
     let (server_side, client) = Connection::memory();
     let server = thread::spawn(move || run_server(server_side));
@@ -181,9 +185,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs an in-memory LSP client and server and exchanges a document request.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips
@@ -201,6 +206,7 @@ mod tests {
     fn test_lsp_client_example_entry_point() -> anyhow::Result<()> {
         main()
     }
+
     /// Drives a real `rust-analyzer` over stdio.
     #[test]
     #[ignore = "needs rust-analyzer on the PATH"]

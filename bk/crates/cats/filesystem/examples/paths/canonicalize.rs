@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Canonicalizing paths.
 //!
 //! Canonicalizing turns a path into an absolute one with `.`, `..` and symbolic
@@ -30,9 +31,10 @@ fn main() -> std::io::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Canonicalizes a path with `..` components.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> std::io::Result<()> {
     main()

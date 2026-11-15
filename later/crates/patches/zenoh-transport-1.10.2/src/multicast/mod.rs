@@ -14,16 +14,22 @@
 //
 // Contributors:
 //   ZettaScale Zenoh Team, <zenoh@zettascale.tech>
+
 /// Establishes multicast transports and registers newly discovered peers.
 pub(crate) mod establishment;
+
 /// Represents a multicast link and exposes its transport read and write operations.
 pub(crate) mod link;
+
 /// Owns multicast transport configuration, peer state, and link lifecycle.
 pub(crate) mod manager;
+
 /// Receives and dispatches messages arriving on a multicast transport.
 pub(crate) mod rx;
+
 /// Tracks multicast transport state and coordinates its links, peers, and priority queues.
 pub(crate) mod transport;
+
 /// Schedules and sends messages over multicast transport links.
 pub(crate) mod tx;
 
@@ -53,18 +59,22 @@ use crate::multicast::link::TransportLinkMulticast;
 
 /// **********************************
 // TRANSPORT MULTICAST
+
 /// **********************************
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub(crate) struct TransportConfigMulticast {
+
     /// Number of bits used for sequence numbers.
     pub(crate) sn_resolution: Bits,
+
     /// Initial sns value.
     pub(crate) initial_sns: Box<[PrioritySn]>,
+
     /// Transport link associated with this state.
     pub(crate) link: TransportLinkMulticast,
 }
-/// Multicast transport state shared by its connected peers and links.
 
+/// Multicast transport state shared by its connected peers and links.
 #[derive(Clone)]
 pub struct TransportMulticast(Weak<TransportMulticastInner>);
 
@@ -76,60 +86,73 @@ impl TransportMulticast {
             .ok_or_else(|| zerror!("Transport multicast closed").into())
     }
 
+    /// Returns the sequence-number resolution of the active multicast transport.
+    ///
     /// # Errors
-    /// An error is returned if get_sn_resolution fails.
-    /// Returns an error if the requested data cannot be retrieved.
+///
+    /// Returns an error if the multicast transport has already been closed.
     #[inline(always)]
     pub fn get_sn_resolution(&self) -> ZResult<Bits> {
         let transport = self.get_transport()?;
         Ok(transport.get_sn_resolution())
     }
 
-    /// Reports whether the transport multicast meets the shm condition so callers can choose the
-    /// correct branch.
-
+    /// Reports whether shared-memory transport is enabled for this multicast connection.
+    ///
     /// # Errors
-    /// An error is returned if is_shm fails.
+///
+    /// Returns an error if the multicast transport has already been closed.
     #[inline(always)]
     pub fn is_shm(&self) -> ZResult<bool> {
         let transport = self.get_transport()?;
         Ok(transport.is_shm())
     }
 
-    /// Reports whether the transport multicast meets the qos condition so callers can choose the
-    /// correct branch.
-
+    /// Reports whether QoS transport is enabled for this multicast connection.
+    ///
     /// # Errors
-    /// An error is returned if is_qos fails.
+///
+    /// Returns an error if the multicast transport has already been closed.
     pub fn is_qos(&self) -> ZResult<bool> {
         let transport = self.get_transport()?;
         Ok(transport.is_qos())
     }
 
+    /// Returns the event handler registered with the active multicast transport, if any.
+    ///
     /// # Errors
-    /// An error is returned if get_callback fails.
-    /// Returns an error if the requested data cannot be retrieved.
+///
+    /// Returns an error if the multicast transport has already been closed.
     pub fn get_callback(&self) -> ZResult<Option<Arc<dyn TransportMulticastEventHandler>>> {
         let transport = self.get_transport()?;
         Ok(transport.get_callback())
     }
 
+    /// Returns the active multicast transport link.
+    ///
     /// # Errors
-    /// An error is returned if get_link fails.
-    /// Returns an error if the requested data cannot be retrieved.
+///
+    /// Returns an error if the multicast transport has already been closed.
     pub fn get_link(&self) -> ZResult<Link> {
         let transport = self.get_transport()?;
         Ok(Link::new_multicast(&transport.get_link().link))
     }
 
+    /// Returns the peers currently connected to the multicast transport.
+    ///
     /// # Errors
-    /// An error is returned if get_peers fails.
-    /// Returns an error if the requested data cannot be retrieved.
+///
+    /// Returns an error if the multicast transport has already been closed.
     pub fn get_peers(&self) -> ZResult<Vec<TransportPeer>> {
         let transport = self.get_transport()?;
         Ok(transport.get_peers())
     }
 
+    /// Closes the multicast transport, succeeding immediately if it is already closed.
+    ///
+    /// # Errors
+///
+    /// Returns an error if closing the active multicast transport fails.
     #[inline(always)]
     pub async fn close(&self) -> ZResult<()> {
         // Return Ok if the transport has already been closed
@@ -139,22 +162,26 @@ impl TransportMulticast {
         }
     }
 
-    /// Returns if the message has successfully been sent.
+    /// Schedules a network message for transmission over this multicast transport.
     ///
     /// # Arguments
-    /// * `message` - Message to send or handle.
+///
+    /// * `message` - Mutable network message to schedule for transmission.
     ///
     /// # Errors
-    /// Returns an error if the operation cannot be completed.
+///
+    /// Returns an error if the transport is closed or queuing the message fails.
     #[inline(always)]
     pub fn schedule(&self, message: NetworkMessageMut) -> ZResult<bool> {
         let transport = self.get_transport()?;
         transport.schedule(message)
     }
 
+    /// Returns a snapshot of the active multicast transport statistics.
+    ///
     /// # Errors
-    /// An error is returned if get_stats fails.
-    /// Returns an error if the requested data cannot be retrieved.
+///
+    /// Returns an error if the multicast transport has already been closed.
     pub fn get_stats(&self) -> ZResult<zenoh_stats::TransportStats> {
         Ok(self.get_transport()?.stats.clone())
     }
@@ -175,6 +202,7 @@ impl PartialEq for TransportMulticast {
 }
 
 impl fmt::Debug for TransportMulticast {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self.get_transport() {

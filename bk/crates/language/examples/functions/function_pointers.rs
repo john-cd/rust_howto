@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Passing and calling function pointers.
 //!
 //! Function pointers (`fn(...) -> ...`) point to executable code rather than
@@ -11,10 +12,12 @@
 fn add_one(x: i32) -> i32 {
     x + 1
 }
+
 /// This function takes a function pointer in argument.
 fn do_twice(f: fn(i32) -> i32, arg: i32) -> i32 {
     f(arg) + f(arg)
 }
+
 /// Calls a function through a pointer and passes it to another function.
 fn main() {
     let func_ptr: fn(i32) -> i32 = add_one; // Assign a function pointer to a variable.
@@ -25,8 +28,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls a function through a pointer and passes it to another function.
 pub fn run() {
     main();
 }
@@ -40,11 +42,13 @@ mod tests {
     fn test_function_pointers_example_entry_point() {
         main();
     }
+
     /// Verifies add one.
     #[test]
     fn test_add_one() {
         assert_eq!(add_one(10), 11);
     }
+
     /// Verifies do twice.
     #[test]
     fn test_do_twice() {

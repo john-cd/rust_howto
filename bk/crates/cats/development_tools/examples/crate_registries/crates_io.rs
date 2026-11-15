@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Examples of use of the 'crates.io' API.
 //!
 //! crates.io is the public registry of Rust packages. Its API reports versions,
@@ -28,6 +29,7 @@ fn get_client() -> Result<SyncClient> {
 /// Retrieve information for a given crate.
 ///
 /// # Errors
+///
 /// Returns an error if the HTTP request fails or the crates.io response cannot be parsed.
 #[tracing::instrument(err)]
 fn get_info_for_crate(crate_name: &str) -> Result<CrateResponse> {
@@ -123,9 +125,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Searches `crates.io` for crates and displays information about a crate.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

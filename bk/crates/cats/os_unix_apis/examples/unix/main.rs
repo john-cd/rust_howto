@@ -8,6 +8,7 @@ use clap::Subcommand;
 /// Simple Rust example using the `nix` crate to handle Unix-like operating
 #[cfg(target_family = "unix")]
 mod nix;
+
 /// `rustix` is a library that provides a safe and idiomatic Rust interface to
 #[cfg(target_family = "unix")]
 mod rustix;
@@ -15,6 +16,7 @@ mod rustix;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,10 +25,12 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `nix` example.
     #[cfg(target_family = "unix")]
     #[command(name = "nix")]
     Nix,
+
     /// Runs the `rustix` example.
     #[cfg(target_family = "unix")]
     #[command(name = "rustix")]
@@ -48,7 +52,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Modifying a `Cow` in place, cloning it on write.
 //!
 //! `to_mut` gives mutable access to the data inside a `Cow`. If it was
@@ -15,7 +16,8 @@ use std::borrow::Cow;
 /// modification.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested modify cow in place operation.
+///
+/// * `input` - Cow string to append to when it contains `Rust`.
 fn modify_string(input: &mut Cow<str>) {
     // Note the mutable reference.
     if input.contains("Rust") {
@@ -37,8 +39,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Modifies a borrowed and an owned `Cow`.
 pub fn run() {
     main();
 }
@@ -46,11 +47,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `modify cow in place` example runs.
     #[test]
     fn test_modify_cow_in_place_example_entry_point() {
         main();
     }
+
     /// Verifies unmatched input stays borrowed.
     #[test]
     fn test_unmatched_input_stays_borrowed() {
@@ -58,6 +61,7 @@ mod tests {
         modify_string(&mut c);
         assert!(matches!(c, Cow::Borrowed("Hello")));
     }
+
     /// Verifies matching input is cloned on write.
     #[test]
     fn test_matching_input_is_cloned_on_write() {
@@ -66,6 +70,7 @@ mod tests {
         assert!(matches!(c, Cow::Owned(_)));
         assert_eq!(c, "Rust is awesome!");
     }
+
     /// Verifies already owned input is modified in place.
     #[test]
     fn test_already_owned_input_is_modified_in_place() {

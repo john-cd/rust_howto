@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Serializing and deserializing a struct to and from JSON with `serde_json`.
 //!
 //! JSON is the most common text format for web APIs. With `serde`, a struct
@@ -13,13 +14,17 @@ use serde::Serialize;
 // Define a struct `Person`.
 // The `Serialize` and `Deserialize` derive macros automatically implement the
 // `Serialize` and `Deserialize` traits for `Person`.
+
 /// A person, serialized to and from JSON.
 #[derive(Serialize, Deserialize, Debug, PartialEq, Eq)]
 struct Person {
+
     /// Name of the person.
     name: String,
+
     /// Age of the person, in years.
     age: u8,
+
     /// Email address of the person.
     email: String,
 }
@@ -45,7 +50,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Serializes a person to JSON and deserializes it back.
 pub fn run() {
     main();
 }

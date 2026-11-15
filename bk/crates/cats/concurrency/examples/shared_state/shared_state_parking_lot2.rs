@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A reader-writer lock from `parking_lot`.
 //!
 //! A read-write lock allows many readers at once, or one writer. It helps when
@@ -39,8 +40,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates simultaneous reads followed by an exclusive update.
 pub fn run() {
     main();
 }

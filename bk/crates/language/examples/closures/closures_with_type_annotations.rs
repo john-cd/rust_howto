@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates closures with type annotations.
 
 use std::thread;
@@ -19,8 +20,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Demonstrates closures with type annotations.
 pub fn run() {
     main();
 }

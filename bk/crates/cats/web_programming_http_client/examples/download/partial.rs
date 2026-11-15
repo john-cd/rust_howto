@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Downloads a file in verified byte ranges.
 //!
 //! HTTP range requests (the `Range: bytes=0-99` header) ask the server for part
@@ -26,20 +27,26 @@ use reqwest::header::RANGE;
 
 /// An iterator that yields adjacent, inclusive byte ranges.
 struct PartialRangeIter {
+
     /// The first byte of the next range.
     start: u64,
+
     /// The last byte of the interval.
     end: u64,
+
     /// The maximum size of a range.
     buffer_size: u32,
+
     /// Whether all the ranges were yielded.
     finished: bool,
 }
 
 impl PartialRangeIter {
+
     /// Creates a range iterator for the inclusive interval from `start` to
     ///
     /// # Arguments
+///
     /// `end`.
     ///
     /// An interval with `start > end` is empty.
@@ -149,8 +156,10 @@ fn download_to<W: Write>(url: &str, chunk_size: u32, output: &mut W) -> Result<(
 /// Downloads a sample file in chunks and writes it under `temp`.
 ///
 /// # Errors
+///
 /// Returns any directory, file, network, response, or write error.
 fn main() -> Result<()> {
+
     /// Maximum number of bytes requested in each download chunk.
     const CHUNK_SIZE: u32 = 10_240;
     let url = "https://httpbin.org/range/102400?duration=2";
@@ -168,6 +177,7 @@ fn main() -> Result<()> {
 /// Runs the partial-download example.
 ///
 /// # Errors
+///
 /// Returns any error from the example's file or HTTP operations.
 pub fn run() -> Result<()> {
     main()
@@ -195,11 +205,13 @@ mod tests {
     /// Starts a loopback server that serves the requested content and records requests.
     ///
     /// # Arguments
+///
     /// * `content` - Bytes returned for the requested ranges.
     /// * `range_status` - Status code sent for range requests.
     /// * `request_count` - Number of client requests the server accepts.
     ///
     /// # Errors
+///
     /// Returns an error if the loopback listener cannot bind or its address
     /// cannot be read. Errors inside the server thread are returned by its
     /// `JoinHandle`.
@@ -354,6 +366,7 @@ mod tests {
             .map_err(|_| anyhow::anyhow!("local range server panicked"))?
             .context("local range server failed")
     }
+
     /// Returns the value of a request's Range header, if present.
     fn range_header(request: &str) -> Option<&str> {
         request.lines().find_map(|line| {

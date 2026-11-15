@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates URL parsing.
 //!
 //! A URL has parts: scheme (`https`), host (`example.com`), optional port,
@@ -25,9 +26,10 @@ fn main() -> Result<(), ParseError> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Demonstrates URL parsing.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), ParseError> {
     main()

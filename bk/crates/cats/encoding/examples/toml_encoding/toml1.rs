@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to deserialize TOML data into Rust structs.
 //!
 //! TOML is a configuration file format designed to be easy for people to read
@@ -15,8 +16,10 @@ use toml::de::Error;
 /// The configuration.
 #[derive(Deserialize, Debug)]
 struct Config {
+
     /// The package settings.
     package: Package,
+
     /// The dependencies, as a map from names to versions.
     dependencies: HashMap<String, String>,
 }
@@ -24,10 +27,13 @@ struct Config {
 /// The settings of a package.
 #[derive(Deserialize, Debug)]
 struct Package {
+
     /// The name of the package.
     name: String,
+
     /// The version of the package.
     version: String,
+
     /// The authors of the package.
     authors: Vec<String>,
 }
@@ -56,9 +62,10 @@ fn main() -> Result<(), Error> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Deserializes TOML into a struct and checks its content.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Error> {
     main()

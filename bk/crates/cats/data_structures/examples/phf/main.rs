@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates a compile-time perfect hash map.
 
 use phf::phf_map;

@@ -16,9 +16,11 @@ pub(super) fn subcommand_category_badges_for_crate() -> Command {
         .display_order(1)
         .arg(super::arg_crate_name())
 }
+
 /// Get the command-line arguments for the `categories_badges_for_crate` subcommand
 ///
 /// # Arguments
+///
 /// * `matches` - The matches from the command line arguments
 pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
     let mut cmdargs = None;

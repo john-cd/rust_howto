@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A bounded MPMC pipeline distributes messages to worker threads.
 //!
 //! Crossbeam channels pass messages between threads. Scoped threads let workers
@@ -78,6 +79,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the bounded MPMC pipeline example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

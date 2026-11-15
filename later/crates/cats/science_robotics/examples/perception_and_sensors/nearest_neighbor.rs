@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Finds the closest measurement in a small three-dimensional point cloud.
 //!
 //! A point cloud is a set of 3D points, for example from a lidar (a laser
@@ -34,6 +35,7 @@ fn main() -> Result<()> {
 /// Finds the closest measurement in a small three-dimensional point cloud.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

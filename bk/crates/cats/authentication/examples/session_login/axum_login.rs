@@ -1,9 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Cookie-based login with `axum-login`, in-memory sessions and permissions.
 //!
 //! ### Cookie-Based Login and Session Management
+//!
 //! Cookie-based session management maintains user authentication state across
 //! HTTP requests:
 //! 1. Upon successful authentication (verifying username and password hash), the server creates a
@@ -49,12 +51,16 @@ use super::hashing;
 /// A user. The `AuthUser` hash invalidates sessions when the password changes.
 #[derive(Clone, Debug)]
 pub struct User {
+
     /// Stable identifier used to retrieve and update this user.
     id: i64,
+
     /// Account username.
     username: String,
+
     /// Stored password hash.
     password_hash: String,
+
     /// Permissions granted to this user.
     permissions: HashSet<String>,
 }
@@ -76,8 +82,10 @@ impl AuthUser for User {
 /// Credentials posted by the login form.
 #[derive(Clone, Debug, Deserialize)]
 pub struct Credentials {
+
     /// Account username.
     username: String,
+
     /// Credential checked by the authentication flow before a session is issued.
     password: String,
 }
@@ -85,26 +93,32 @@ pub struct Credentials {
 /// An in-memory user store. Replace with a database in a real application.
 #[derive(Clone)]
 pub struct Backend {
+
     /// Users indexed by their stable identifiers for authentication and authorization lookups.
     users: Arc<HashMap<i64, User>>,
+
     /// Hash verified when the username is unknown, so that the response time
     /// does not reveal which usernames exist.
     dummy_hash: Arc<String>,
 }
 
 impl Backend {
+
     /// Constructs a new in-memory authentication and authorization backend.
     /// Computes a dummy password hash in advance so unknown usernames incur
     /// comparable password-verification work, reducing timing-based username
     /// enumeration.
     ///
     /// # Arguments
+///
     /// * `users` - Initial user records, indexed by each user's identifier.
     ///
     /// # Errors
+///
     /// Returns an error if hashing the dummy password fails.
     ///
     /// # Concurrency
+///
     /// Internal state is wrapped in `Arc` references, allowing safe concurrent
     /// access across multiple worker threads handling incoming HTTP requests.
     pub fn new(users: Vec<User>) -> anyhow::Result<Self> {
@@ -123,9 +137,11 @@ impl AuthnBackend for Backend {
     /// Checks a submitted username and password against the in-memory user store.
     ///
     /// # Arguments
+///
     /// * `creds` - Username and password submitted by the login form.
     ///
     /// # Returns
+///
     /// The matching user when the password is valid, or `None` for an unknown user or bad password.
     async fn authenticate(&self, creds: Credentials) -> Result<Option<User>, Infallible> {
         let user = self.users.values().find(|u| u.username == creds.username);
@@ -138,9 +154,11 @@ impl AuthnBackend for Backend {
     /// Looks up a user by the identifier supplied by axum-login.
     ///
     /// # Arguments
+///
     /// * `id` - User identifier to look up.
     ///
     /// # Returns
+///
     /// The matching user, or `None` if the ID is not present in the in-memory store.
     async fn get_user(&self, id: &UserId<Self>) -> Result<Option<User>, Infallible> {
         Ok(self.users.get(id).cloned())
@@ -148,15 +166,18 @@ impl AuthnBackend for Backend {
 }
 
 impl AuthzBackend for Backend {
+
     /// Permission names stored on a user account.
     type Permission = String;
 
     /// Returns the permissions assigned to `user`.
     ///
     /// # Arguments
+///
     /// * `user` - User whose permissions are requested.
     ///
     /// # Returns
+///
     /// A copy of the user's permission names.
     async fn get_user_permissions(&self, user: &User) -> Result<HashSet<String>, Infallible> {
         Ok(user.permissions.clone())
@@ -206,6 +227,7 @@ async fn protected(session: AuthSession) -> String {
 async fn admin() -> &'static str {
     "Admin area"
 }
+
 /// Builds the application router with configured routes and authentication middleware.
 ///
 /// # Arguments
@@ -245,6 +267,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the session login example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()
@@ -279,11 +302,13 @@ mod tests {
     /// Sends a login request and returns the router's response.
     ///
     /// # Arguments
+///
     /// * `app` - Router serving the login endpoint.
     /// * `name` - Username submitted to the endpoint.
     /// * `pw` - Password submitted to the endpoint.
     ///
     /// # Errors
+///
     /// Returns an error if the request body cannot be built or the router fails.
     async fn login_as(app: &Router, name: &str, pw: &str) -> anyhow::Result<Response<Body>> {
         let request = Request::post("/login")
@@ -292,7 +317,10 @@ mod tests {
         Ok(app.clone().oneshot(request).await?)
     }
 
+    /// Returns the first cookie pair from an HTTP response, if its header is valid.
+///
     /// # Arguments
+///
     /// * `response` - Data produced for the caller by the surrounding axum_login workflow.
     fn cookie(response: &Response<Body>) -> Option<String> {
         let value = response.headers().get(header::SET_COOKIE)?.to_str().ok()?;
@@ -302,11 +330,13 @@ mod tests {
     /// Sends a request with an optional session cookie and returns its response.
     ///
     /// # Arguments
+///
     /// * `app` - Router that handles the request.
     /// * `uri` - Request path to call.
     /// * `cookie` - Optional cookie header value.
     ///
     /// # Errors
+///
     /// Returns an error if the request cannot be built or the router fails.
     async fn get_with(
         app: &Router,
@@ -378,6 +408,7 @@ mod tests {
         );
         Ok(())
     }
+
     /// Verifies axum login entry point.
     #[test]
     fn test_axum_login_entry_point() -> anyhow::Result<()> {

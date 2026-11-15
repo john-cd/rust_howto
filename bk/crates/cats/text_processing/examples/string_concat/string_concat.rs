@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Different ways to concatenate strings.
 //!
 //! A Rust `String` owns heap memory and can grow; a `&str` is a borrowed view.
@@ -71,6 +72,7 @@ use concat_string::concat_string;
 // The `concat_string!` macro concatenates string slices into owned strings.
 // concat_string! accepts any number of arguments that implement AsRef<str>
 // and creates a String with the appropriate capacity.
+
 /// Concatenates with the `concat_string!` macro.
 fn concatenate_with_concat_string() {
     println!("{}", concat_string!("Hello", String::from(" "), "world"));
@@ -140,7 +142,7 @@ fn concatenate_with_chain() {
     let result: String = part1.chars().chain(part2.chars()).collect();
     println!("{result}");
 }
-/// Runs the example.
+
 /// Runs each of the concatenation examples.
 fn main() {
     concatenate_with_plus();
@@ -161,8 +163,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Runs each of the concatenation examples.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Downloads a file as binary response chunks into a temporary directory.
 //!
 //! Large files should be saved in chunks as they arrive instead of being loaded
@@ -41,6 +42,7 @@ async fn download_to(url: &str, destination: &Path) -> Result<u64> {
 /// Downloads a sample image into a temporary directory.
 ///
 /// # Errors
+///
 /// Returns any temporary-directory, request, response, or file-write error.
 #[tokio::main]
 async fn main() -> Result<()> {
@@ -57,6 +59,7 @@ async fn main() -> Result<()> {
 /// Runs the asynchronous binary download example.
 ///
 /// # Errors
+///
 /// Returns any error from the asynchronous download.
 pub fn run() -> Result<()> {
     main()

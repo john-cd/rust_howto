@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Draws software pixels in a native Winit window.
 //!
 //! Software rendering means the CPU computes every pixel into a buffer that is
@@ -22,23 +23,28 @@ use winit::window::WindowId;
 /// Owns the window surface and propagates event-handler errors to the caller.
 #[derive(Default)]
 struct App {
+
     /// Optional surface used by app; `None` means the value is not configured or unavailable.
     surface: Option<Surface<Rc<Window>, Rc<Window>>>,
+
     /// Optional error used by app; `None` means the value is not configured or unavailable.
     error: Option<Box<dyn std::error::Error>>,
 }
 
 /// The solid color of the frame, in the 0x00RRGGBB format.
 const BLUE: u32 = 0x0020_60C0;
+
 /// Returns the size as non-zero numbers, or `None` for a zero-sized
 ///
 /// (minimized) window.
 ///
 /// # Returns
+///
 /// `Some` when the requested value is available; otherwise returns `None`.
 fn non_zero_size(width: u32, height: u32) -> Option<(NonZeroU32, NonZeroU32)> {
     Some((NonZeroU32::new(width)?, NonZeroU32::new(height)?))
 }
+
 /// Presents a solid blue frame, skipping zero-sized minimized windows.
 fn draw(surface: &mut Surface<Rc<Window>, Rc<Window>>) -> Result<(), Box<dyn std::error::Error>> {
     let size = surface.window().inner_size();
@@ -114,6 +120,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 /// Draws software pixels in a native Winit window.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()

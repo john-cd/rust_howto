@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the AWS SDK for Rust to list Amazon S3
 //! buckets visible to the configured AWS identity.
 //!
@@ -16,6 +17,7 @@ use tracing::info;
 /// Lists the S3 buckets visible to the configured AWS identity.
 ///
 /// # Errors
+///
 /// Returns an error when the AWS SDK cannot load configuration or list buckets.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
@@ -39,12 +41,14 @@ async fn main() -> anyhow::Result<()> {
 /// Runs the S3 listing example.
 ///
 /// # Errors
+///
 /// Returns an error when configuration or the S3 request fails.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
 
 #[cfg(test)]
+
 /// Tests the AWS example entry point when credentials are available.
 mod tests {
     use super::*;
@@ -52,6 +56,7 @@ mod tests {
     /// Requires AWS credentials and network access, so it is ignored by
     /// default.
     // output-only: the example logs the bucket names of the AWS account.
+
     /// Lists buckets when AWS credentials and network access are available.
     #[test]
     #[ignore = "needs AWS credentials and network access"]

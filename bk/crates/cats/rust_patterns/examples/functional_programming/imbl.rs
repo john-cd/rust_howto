@@ -1,6 +1,9 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
+//! Demonstrates structurally shared persistent collections from `imbl`.
+//!
 //! # Persistent Collections with `imbl`
 //!
 //! These persistent collections share unchanged structure between related
@@ -81,8 +84,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Uses immutable vectors, maps and sets, which share structure between versions.
 pub fn run() {
     main();
 }

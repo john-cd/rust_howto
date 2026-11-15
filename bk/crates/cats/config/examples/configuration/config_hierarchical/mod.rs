@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Loads typed settings by layering TOML files, environment variables, and CLI
 //! overrides.
 //!
@@ -16,6 +17,7 @@ use serde::Deserialize;
 
 /// Builds typed settings from files, environment variables, and CLI overrides.
 mod cfg;
+
 /// Command-line arguments of the hierarchical configuration example.
 mod cli;
 
@@ -25,10 +27,13 @@ pub(crate) use cli::parse_command_line_args;
 /// Application settings loaded from several sources.
 #[derive(Debug, Deserialize)]
 pub(crate) struct Settings {
+
     /// Settings for the service.
     pub service: ServiceSettings,
+
     /// Settings for the database.
     pub database: DatabaseSettings,
+
     /// Settings for logging.
     pub logging: LoggingSettings,
 }
@@ -36,8 +41,10 @@ pub(crate) struct Settings {
 /// Service settings.
 #[derive(Debug, Deserialize)]
 pub(crate) struct ServiceSettings {
+
     /// The application name.
     pub name: String,
+
     /// The port the service listens on.
     pub port: u16,
 }
@@ -45,8 +52,10 @@ pub(crate) struct ServiceSettings {
 /// Database settings.
 #[derive(Debug, Deserialize)]
 pub(crate) struct DatabaseSettings {
+
     /// The connection URL.
     pub url: String,
+
     /// The maximum connection count.
     pub max_connections: u32,
 }
@@ -54,6 +63,7 @@ pub(crate) struct DatabaseSettings {
 /// Logging settings.
 #[derive(Debug, Deserialize)]
 pub(crate) struct LoggingSettings {
+
     /// The logging level.
     pub level: String,
 }
@@ -61,10 +71,13 @@ pub(crate) struct LoggingSettings {
 /// Command-line options that override configuration sources.
 #[derive(Debug)]
 pub(crate) struct CommandLineArgs {
+
     /// The selected configuration profile.
     pub run_mode: String,
+
     /// An optional additional configuration file.
     pub custom_config_file_path: Option<PathBuf>,
+
     /// An optional service port override.
     pub port: Option<u16>,
 }
@@ -120,6 +133,7 @@ fn main() -> Result<()> {
 /// Runs the layered configuration example.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

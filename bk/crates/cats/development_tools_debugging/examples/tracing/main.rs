@@ -7,34 +7,47 @@ use clap::Subcommand;
 
 /// This example demonstrates the basic usage of the `tracing` crate for logging
 mod tracing;
+
 /// Instrumenting sync and async functions with `tracing` spans.
 mod tracing_instrument;
+
 /// Demonstrates entering and exiting a span using `entered()` and `exit()`.
 mod tracing_span_entered;
+
 /// Demonstrates how to use tracing spans to instrument code,
 mod tracing_span_in_scope;
+
 /// Creating and entering spans with `tracing`.
 mod tracing_spans;
+
 /// - `tracing` is a framework for instrumenting Rust programs to collect scoped, structured, and
 /// async-aware diagnostics.
 mod tracing_subscriber;
+
 /// Demonstrates how to configure the tracing subscriber
 mod tracing_subscriber1;
+
 /// Demonstrates how to log in JSON format.
 mod tracing_subscriber1b;
+
 /// Demonstrates how to write logs to multiple destinations (in this instance,
 mod tracing_subscriber2b;
+
 /// This example demonstrates how to enable or
 mod tracing_subscriber3;
+
 /// Demonstrates how to configure tracing at runtime, - dealing with a variable number of `Layer`s
 /// of different types.
 mod tracing_subscriber3b;
+
 /// This example demonstrates customizing the formatting of log lines for spans and events.
 mod tracing_subscriber4;
+
 /// Composing a `tracing` subscriber from layers and filters.
 mod tracing_subscriber_layers;
 
 #[cfg(test)]
+
 /// This module provides the `isolated` implementation used by its parent.
 #[path = "../support/isolated.rs"]
 mod isolated;
@@ -42,6 +55,7 @@ mod isolated;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -50,42 +64,55 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `tracing` example.
     #[command(name = "tracing")]
     Tracing,
+
     /// Runs the `tracing_instrument` example.
     #[command(name = "tracing_instrument")]
     TracingInstrument,
+
     /// Runs the `tracing_span_entered` example.
     #[command(name = "tracing_span_entered")]
     TracingSpanEntered,
+
     /// Runs the `tracing_span_in_scope` example.
     #[command(name = "tracing_span_in_scope")]
     TracingSpanInScope,
+
     /// Runs the `tracing_spans` example.
     #[command(name = "tracing_spans")]
     TracingSpans,
+
     /// Runs the `tracing_subscriber` example.
     #[command(name = "tracing_subscriber")]
     TracingSubscriber,
+
     /// Runs the `tracing_subscriber1` example.
     #[command(name = "tracing_subscriber1")]
     TracingSubscriber1,
+
     /// Runs the `tracing_subscriber1b` example.
     #[command(name = "tracing_subscriber1b")]
     TracingSubscriber1b,
+
     /// Runs the example that composes tracing subscriber layers.
     #[command(name = "tracing_subscriber_layers", alias = "tracing_subscriber2")]
     TracingSubscriberLayers,
+
     /// Runs the `tracing_subscriber2b` example.
     #[command(name = "tracing_subscriber2b")]
     TracingSubscriber2b,
+
     /// Runs the `tracing_subscriber3` example.
     #[command(name = "tracing_subscriber3")]
     TracingSubscriber3,
+
     /// Runs the `tracing_subscriber3b` example.
     #[command(name = "tracing_subscriber3b")]
     TracingSubscriber3b,
+
     /// Runs the `tracing_subscriber4` example.
     #[command(name = "tracing_subscriber4")]
     TracingSubscriber4,

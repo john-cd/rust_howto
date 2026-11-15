@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Rasterizes a glyph with `fontdue` and reads metrics with `ttf-parser`.
 
 use fontdue::Font;
@@ -38,9 +39,11 @@ fn text_rendering_example() -> anyhow::Result<()> {
     println!("{advance} of {units_per_em} font units advance");
     Ok(())
 }
+
 /// Starts the text rendering example as a binary.
 ///
 /// # Errors
+///
 /// Returns an error if the bundled font cannot be parsed.
 fn main() -> anyhow::Result<()> {
     text_rendering_example()

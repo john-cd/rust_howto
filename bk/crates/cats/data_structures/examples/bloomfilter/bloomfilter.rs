@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A Bloom filter, a compact set that can give false positives but no false
 //! negatives.
 //!
@@ -10,7 +11,7 @@
 //! avoid disk reads for keys that do not exist.
 
 use bloomfilter::Bloom;
-/// Runs the example.
+
 /// Inserts items into a Bloom filter and checks for membership.
 fn main() {
     let items_count = 100;
@@ -26,8 +27,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Inserts items into a Bloom filter and checks for membership.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates successful and rolled-back SQLite transactions.
 //!
 //! A transaction groups several statements so that they either all take effect
@@ -30,6 +31,7 @@ fn initialize_schema(connection: &Connection) -> rusqlite::Result<()> {
 /// Demonstrates a committed transaction followed by a rolled-back transaction.
 ///
 /// # Errors
+///
 /// Returns errors from opening the in-memory database, creating its schema, or
 /// running either transaction when it fails for a reason other than the
 /// expected unique-constraint violation.
@@ -58,15 +60,18 @@ fn main() -> Result<()> {
 
     Ok(())
 }
+
 /// Inserts two colors and commits them in a single transaction.
 ///
 /// # Errors
+///
 /// Returns a SQLite error if any statement or the commit fails.
 /// state.
 /// Returns a SQLite error if the query cannot be prepared or read.
 ///
 /// # Arguments
-/// * `connection` - Mutable connection whose state is updated by this operation.
+///
+/// * `connection` - SQLite connection used to execute and commit the transaction.
 fn successful_tx(connection: &mut Connection) -> rusqlite::Result<()> {
     let transaction = connection.transaction()?;
     transaction.execute("DELETE FROM cats", ())?;
@@ -81,11 +86,14 @@ fn successful_tx(connection: &mut Connection) -> rusqlite::Result<()> {
 /// is rolled back when it is dropped.
 ///
 /// Returns the unique-constraint error for the duplicate color, or another
+///
 /// # Errors
+///
 /// SQLite error if an earlier statement fails.
 ///
 /// # Arguments
-/// * `connection` - Mutable connection whose state is updated by this operation.
+///
+/// * `connection` - SQLite connection used to execute the transaction that is expected to fail.
 fn rolled_back_tx(connection: &mut Connection) -> rusqlite::Result<()> {
     let transaction = connection.transaction()?;
     transaction.execute("DELETE FROM cats", ())?;
@@ -95,6 +103,7 @@ fn rolled_back_tx(connection: &mut Connection) -> rusqlite::Result<()> {
     transaction.execute("INSERT INTO cat_colors (name) VALUES (?1)", [&"lavender"])?;
     transaction.commit()
 }
+
 /// Reads color names in insertion order so callers can verify transaction
 /// state.
 ///
@@ -111,6 +120,7 @@ fn color_names(connection: &Connection) -> rusqlite::Result<Vec<String>> {
 /// Runs the transaction example.
 ///
 /// # Errors
+///
 /// Returns any unexpected database error from the example.
 #[cfg(target_os = "linux")]
 pub fn run() -> Result<()> {

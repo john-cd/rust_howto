@@ -10,6 +10,7 @@ use clap::Subcommand;
 /// A GTK 4 application with a button and a label.
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 mod gtk4;
+
 /// A counter application with `relm4`.
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 mod relm4;
@@ -18,6 +19,7 @@ mod relm4;
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -27,14 +29,16 @@ struct Cli {
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `gtk4` example.
     #[command(name = "gtk4")]
     Gtk4,
+
     /// Runs the `relm4` example.
     #[command(name = "relm4")]
     Relm4,
 }
-/// Runs the example.
+
 /// Runs the example selected on the command line.
 fn main() {
     run_with_args(std::env::args_os());

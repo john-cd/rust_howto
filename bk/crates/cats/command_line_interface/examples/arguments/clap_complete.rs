@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates generating shell completions with `clap_complete`.
 //!
 //! Shell completion lets users press Tab to complete command names and options.
@@ -24,8 +25,11 @@ fn build_cli() -> Command {
             .value_parser(ValueParser::path_buf()),
     )
 }
+
 /// Generates a Bash completion script for the command-line interface.
+///
 /// # Errors
+///
 /// Returns an error if the directory cannot be created or the script cannot be
 /// written.
 fn main() -> std::io::Result<()> {
@@ -46,7 +50,10 @@ fn main() -> std::io::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Generates shell completion scripts for the example command-line interface.
+///
 /// # Errors
+///
 /// Returns an error if the directory cannot be created or the script cannot be
 /// written.
 pub fn run() -> std::io::Result<()> {

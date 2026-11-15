@@ -7,8 +7,10 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the maintained `toml` crate to parse
 mod basic_toml;
+
 /// Example demonstrating TOML parsing and deserialization.
 mod toml;
+
 /// This example demonstrates how to use the `toml_edit` crate to parse, modify, and print TOML
 /// documents while preserving the
 mod toml_edit;
@@ -16,6 +18,7 @@ mod toml_edit;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -24,12 +27,15 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `basic_toml` example.
     #[command(name = "basic_toml")]
     BasicToml,
+
     /// Runs the `toml` example.
     #[command(name = "toml")]
     Toml,
+
     /// Runs the `toml_edit` example.
     #[command(name = "toml_edit")]
     TomlEdit,

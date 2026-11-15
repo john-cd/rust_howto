@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Wrap a paginated API (crates.io reverse dependencies) in an iterator.
 //!
 //! APIs return large result sets in pages, to bound response size. A client
@@ -18,11 +19,14 @@ use serde::Deserialize;
 /// `GET /api/v1/crates/{name}/reverse_dependencies`.
 #[derive(Debug, Deserialize)]
 struct Page {
+
     /// The dependency edges. `crate_id` is the crate being depended upon (the
     /// one queried), NOT the dependent crate.
     dependencies: Vec<Dependency>,
+
     /// The versions of the dependent crates.
     versions: Vec<Version>,
+
     /// The total number of reverse dependencies.
     meta: Meta,
 }
@@ -30,6 +34,7 @@ struct Page {
 /// A dependency edge.
 #[derive(Debug, Deserialize)]
 struct Dependency {
+
     /// The id of the version of the dependent crate that declares this edge.
     version_id: u64,
 }
@@ -37,8 +42,10 @@ struct Dependency {
 /// A version of a dependent crate.
 #[derive(Debug, Deserialize)]
 struct Version {
+
     /// The id of the version.
     id: u64,
+
     /// The name of the dependent crate.
     #[serde(rename = "crate")]
     crate_name: String,
@@ -47,11 +54,13 @@ struct Version {
 /// Pagination metadata.
 #[derive(Debug, Deserialize)]
 struct Meta {
+
     /// The total number of items, across all pages.
     total: u64,
 }
 
 impl Page {
+
     /// The `dependencies` entries no longer carry the dependent crate's name:
     /// look it up through `version_id` in the `versions` array.
     fn dependent_names(&self) -> Vec<&str> {
@@ -70,9 +79,11 @@ impl Page {
 /// Fetches one page (1-based) from crates.io.
 ///
 /// # Arguments
+///
 /// * `name` - Human-readable value used to identify or display the selected page.
 ///
 /// # Errors
+///
 /// Returns an error if a fallible operation cannot complete.
 #[expect(
     dead_code,
@@ -93,19 +104,25 @@ fn fetch_page(client: &Client, name: &str, page: u64) -> Result<Page> {
 
 /// Iterates over every dependent crate, fetching pages lazily with `fetch`.
 struct ReverseDependencies<F: FnMut(u64) -> Result<Page>> {
+
     /// Fetches the page with the given number.
     fetch: F,
+
     /// The number of the next page to fetch.
     next_page: u64,
+
     /// Names from the current page not yet yielded (in reverse order).
     buffer: Vec<String>,
+
     /// The number of items fetched so far.
     seen: u64,
+
     /// Whether the last page was reached or an error was returned.
     done: bool,
 }
 
 impl<F: FnMut(u64) -> Result<Page>> ReverseDependencies<F> {
+
     /// Creates the iterator.
     fn new(fetch: F) -> Self {
         Self {
@@ -173,9 +190,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints dependent crates, using canned pages instead of the network.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()
@@ -190,6 +208,7 @@ mod tests {
     fn test_paginated_example_entry_point() -> Result<()> {
         main()
     }
+
     /// All pages are walked, in order, and the walk stops at the total.
     #[test]
     fn walks_every_page() -> Result<()> {

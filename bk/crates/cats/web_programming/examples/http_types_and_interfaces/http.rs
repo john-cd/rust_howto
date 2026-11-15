@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates the basic usage of the `http` crate for creating
 //! and manipulating HTTP requests and responses.
 //!
@@ -25,9 +26,11 @@ use http::header::AUTHORIZATION;
 use http::header::CONTENT_LENGTH;
 use http::header::CONTENT_TYPE;
 use http::header::SET_COOKIE;
+
 /// Builds a header map with standard and application-defined headers.
 ///
 /// # Errors
+///
 /// Returns an error if any configured header value contains invalid bytes.
 fn build_headers() -> anyhow::Result<HeaderMap> {
     let mut headers = HeaderMap::new();
@@ -47,9 +50,11 @@ fn build_headers() -> anyhow::Result<HeaderMap> {
 
     Ok(headers)
 }
+
 /// Builds a GET request with typed standard headers and an in-memory body.
 ///
 /// # Errors
+///
 /// Returns an error if a header is invalid or the request cannot be built.
 fn build_request() -> anyhow::Result<Request<&'static str>> {
     let mut request = Request::builder()
@@ -60,9 +65,11 @@ fn build_request() -> anyhow::Result<Request<&'static str>> {
 
     Ok(request)
 }
+
 /// Builds an HTTP request and response, then parses and inspects their headers.
 ///
 /// # Errors
+///
 /// Returns an error if a header value is invalid or a response header cannot
 /// be represented as text.
 fn main() -> anyhow::Result<()> {

@@ -8,6 +8,7 @@ use clap::Subcommand;
 /// Builds or traverses btrees graph data while preserving relationships needed by downstream
 /// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod btreemap;
+
 /// Builds or traverses btrees graph data while preserving relationships needed by downstream
 /// analysis. Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod btreeset;
@@ -15,6 +16,7 @@ mod btreeset;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -23,9 +25,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `btreemap` example.
     #[command(name = "btreemap")]
     Btreemap,
+
     /// Runs the `btreeset` example.
     #[command(name = "btreeset")]
     Btreeset,
@@ -44,7 +48,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

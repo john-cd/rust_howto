@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Log telemetry fields for an `OpenObserve` integration.
 //!
 //! Set `OTEL_EXPORTER_OTLP_ENDPOINT` to an OpenObserve OTLP base URL such as
@@ -34,14 +35,17 @@ fn main() -> anyhow::Result<()> {
 /// Exports a sample span when an endpoint is configured, or prints setup help.
 ///
 /// # Arguments
+///
 /// * `endpoint` - OTLP endpoint used for export; when absent, the function only prints setup
 ///   guidance.
 ///
 /// # Returns
+///
 /// Completes after the configured exporter shuts down, or immediately when no
 /// endpoint is provided.
 ///
 /// # Errors
+///
 /// Returns an error if exporter setup or provider shutdown fails.
 #[cfg(feature = "opentelemetry")]
 fn run_with_endpoint(endpoint: Option<&str>) -> anyhow::Result<()> {
@@ -85,9 +89,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Prints a message when the `opentelemetry` feature is not enabled.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

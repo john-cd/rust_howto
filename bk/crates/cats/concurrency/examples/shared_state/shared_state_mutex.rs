@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates using a `Mutex` to safely share mutable state between threads.
 //!
 //! A `Mutex` allows one thread at a time to access the data it protects, which
@@ -52,9 +53,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Demonstrates using a mutex to serialize concurrent counter updates.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

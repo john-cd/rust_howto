@@ -7,26 +7,35 @@ use clap::Subcommand;
 
 /// Demonstrates the concept of borrowing in Rust.
 mod borrowing_function;
+
 /// Passing a mutable reference to a function.
 mod borrowing_function_mutable;
+
 /// Immutable Reference Example.
 mod borrowing_immutable;
+
 /// This example demonstrates the use of the `clone` method
 mod clone;
+
 /// Types that implement `Copy` are copied instead of moved.
 mod copy;
+
 /// This example demonstrates move semantics in Rust.
 mod move1;
+
 /// Moving a value into a function and getting it back.
 mod move_function;
+
 /// Many shared references or one mutable reference.
 mod read_write_lock;
+
 /// Scope and drop.
 mod scope;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -35,30 +44,39 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `borrowing_function` example.
     #[command(name = "borrowing_function")]
     BorrowingFunction,
+
     /// Runs the `borrowing_function_mutable` example.
     #[command(name = "borrowing_function_mutable")]
     BorrowingFunctionMutable,
+
     /// Runs the `borrowing_immutable` example.
     #[command(name = "borrowing_immutable")]
     BorrowingImmutable,
+
     /// Runs the `clone` example.
     #[command(name = "clone")]
     Clone,
+
     /// Runs the `copy` example.
     #[command(name = "copy")]
     Copy,
+
     /// Runs the `move1` example.
     #[command(name = "move1")]
     Move1,
+
     /// Runs the `move_function` example.
     #[command(name = "move_function")]
     MoveFunction,
+
     /// Runs the `read_write_lock` example.
     #[command(name = "read_write_lock")]
     ReadWriteLock,
+
     /// Runs the `scope` example.
     #[command(name = "scope")]
     Scope,
@@ -98,7 +116,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

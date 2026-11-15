@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// A bounded MPMC pipeline distributes messages to worker threads.
 mod crossbeam_complex;
+
 /// Receives from whichever Crossbeam channel is ready first.
 mod crossbeam_select;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The Crossbeam channel examples.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs a bounded multi-producer, multi-consumer pipeline.
     #[command(name = "bounded_mpmc")]
     BoundedMpmc,
+
     /// Selects messages from several channels.
     #[command(name = "select_channels")]
     SelectChannels,

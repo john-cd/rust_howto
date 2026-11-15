@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Adds rational numbers without converting them to floating-point values.
 //!
 //! A rational number is a fraction of two integers. Adding 1/3 and 1/6 exactly
@@ -8,7 +9,7 @@
 //! exactness matters more than speed.
 
 use num_rational::Ratio;
-/// Runs the example.
+
 /// Adds one third and one sixth exactly.
 fn main() {
     let third = Ratio::new(1_i64, 3);
@@ -20,7 +21,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the rational-number example.
 pub fn run() {
     main();

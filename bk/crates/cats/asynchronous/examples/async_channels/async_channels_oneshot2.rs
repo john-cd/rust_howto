@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates the use of `tokio::sync::oneshot` channels to
 //! communicate between asynchronous tasks. It simulates downloading a file
 //! and then processing it in separate tasks.
@@ -48,7 +49,7 @@ async fn async_main() -> Result<(), Box<dyn std::error::Error>> {
 
     Ok(())
 }
-/// Runs the example.
+
 /// Creates a Tokio runtime and runs [`async_main`] on it.
 fn main() {
     let rt = tokio::runtime::Runtime::new()
@@ -58,8 +59,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Creates a Tokio runtime and runs [`async_main`] on it.
 pub fn run() {
     main();
 }

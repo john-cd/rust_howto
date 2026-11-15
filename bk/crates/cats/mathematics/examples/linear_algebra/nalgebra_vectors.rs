@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates vector operations using the `nalgebra` crate:
 //! creating vectors, computing dot and cross products, norm, and normalization.
 //!
@@ -39,8 +40,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates vector operations using the `nalgebra` crate: creating vectors, computing dot and cross products, norm, and normalization.
 pub fn run() {
     main();
 }

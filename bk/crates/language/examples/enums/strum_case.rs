@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Parse and print config values with `serialize_all` and
 //! `ascii_case_insensitive`.
 //!
@@ -50,8 +51,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Round trips values and shows a parse error.
 pub fn run() {
     main();
 }

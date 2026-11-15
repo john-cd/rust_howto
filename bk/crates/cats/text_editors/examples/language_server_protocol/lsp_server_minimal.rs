@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A tiny Language Server Protocol server and client talking over an
 //! in-memory channel, using `lsp-server` and `lsp-types`.
 //!
@@ -67,7 +68,10 @@ fn run_server(connection: Connection) -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Runs an in-memory LSP server and client and exercises hover requests.
+///
 /// # Errors
+///
 /// Returns an error if sending or receiving an LSP message, parsing the document URI, or decoding
 /// the hover response fails.
 fn main() -> anyhow::Result<()> {
@@ -131,9 +135,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Runs an in-memory LSP server and client and exercises hover requests.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     // Call through a binding: calling `main` directly trips

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates basic usage of the `winnow` crate.
 //!
 //! A parser combinator library builds parsers from small functions that are
@@ -17,6 +18,7 @@ use winnow::prelude::*;
 fn parse_list(input: &mut &str) -> ModalResult<Vec<i32>> {
     separated(1.., digit1.parse_to::<i32>(), ",").parse_next(input)
 }
+
 /// Parses a comma-separated list of numbers with `winnow`.
 fn main() -> anyhow::Result<()> {
     let mut input = "1,2,3,4,5";
@@ -29,9 +31,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses a comma-separated list of numbers with `winnow`.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

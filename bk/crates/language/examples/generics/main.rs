@@ -7,16 +7,20 @@ use clap::Subcommand;
 
 /// A struct generic over a constant, the length of an array.
 mod const_generics;
+
 /// A trait with an associated constant, implemented for arrays of any length.
 mod const_generics2;
+
 /// A struct that holds a reference of any type with a lifetime parameter.
 mod generic_lifetime;
+
 /// Generic type parameters on functions, structs, traits and type aliases.
 mod generic_type_parameter;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -25,15 +29,19 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `const_generics` example.
     #[command(name = "const_generics")]
     ConstGenerics,
+
     /// Runs the `const_generics2` example.
     #[command(name = "const_generics2")]
     ConstGenerics2,
+
     /// Runs the `generic_lifetime` example.
     #[command(name = "generic_lifetime")]
     GenericLifetime,
+
     /// Runs the `generic_type_parameter` example.
     #[command(name = "generic_type_parameter")]
     GenericTypeParameter,

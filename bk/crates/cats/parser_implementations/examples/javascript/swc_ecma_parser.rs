@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to use the `swc_ecma_parser` crate to parse
 //! JavaScript code. It creates a simple JavaScript program, parses it, and
 //! then prints the parsed Abstract Syntax Tree (AST) to the console.
@@ -47,7 +48,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Parses a JavaScript program and prints the resulting syntax tree.
 pub fn run() {
     main();
 }
@@ -61,6 +62,7 @@ mod tests {
     fn test_swc_ecma_parser_example_entry_point() {
         main();
     }
+
     /// Parses the current value.
     fn parse(source: &'static str) -> Result<Program, String> {
         let cm: Lrc<swc_common::SourceMap> = Default::default();

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Computing the mean and the standard deviation of a list of integers.
 //!
 //! The standard deviation measures how spread out the values are around the
@@ -15,6 +16,7 @@
 /// * `data` - A slice of i32 integers.
 ///
 /// # Returns
+///
 /// Returns `Some(f64)` containing the mean if the slice is not empty, otherwise
 /// returns `None`.
 fn mean(data: &[i32]) -> Option<f64> {
@@ -26,6 +28,7 @@ fn mean(data: &[i32]) -> Option<f64> {
         _ => None,
     }
 }
+
 /// Calculates the standard deviation of a slice of i32 integers.
 ///
 /// # Arguments
@@ -33,6 +36,7 @@ fn mean(data: &[i32]) -> Option<f64> {
 /// * `data` - A slice of i32 integers.
 ///
 /// # Returns
+///
 /// Returns `Some(f64)` containing the standard deviation if the slice is not
 /// empty, otherwise returns `None`.
 fn std_deviation(data: &[i32]) -> Option<f64> {
@@ -82,8 +86,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Prints the mean and standard deviation of a list.
 pub fn run() {
     main();
 }

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Example of a function accepting either owned or borrowed values
 //! at its input.
 //!
@@ -12,7 +13,8 @@ use std::borrow::Cow;
 /// A function consuming a `Cow`:
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested cow as function param operation.
+///
+/// * `input` - Owned or borrowed text to inspect for `Rust`.
 fn process_text(input: Cow<str>) {
     if input.contains("Rust") {
         println!("Contains Rust!");
@@ -35,8 +37,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls a function with borrowed and owned strings.
 pub fn run() {
     main();
 }
@@ -44,11 +45,13 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Verifies that the `cow as function param` example runs.
     #[test]
     fn test_cow_as_function_param_example_entry_point() {
         main();
     }
+
     /// Verifies process text accepts every kind of input.
     #[test]
     fn test_process_text_accepts_every_kind_of_input() {
@@ -58,6 +61,7 @@ mod tests {
         process_text("literal".into());
         process_text(String::from("owned").into());
     }
+
     /// Verifies conversions pick the right variant.
     #[test]
     fn test_conversions_pick_the_right_variant() {

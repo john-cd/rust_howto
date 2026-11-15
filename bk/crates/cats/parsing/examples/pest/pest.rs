@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates `pest` parsing a flat arithmetic expression
 //! into alternating number and operator tokens.
 //!
@@ -41,7 +42,7 @@ fn parse_expression(input: &str) -> anyhow::Result<Vec<String>> {
         .map(|pair| pair.as_str().to_owned())
         .collect())
 }
-/// Runs the example.
+
 /// Parses an arithmetic expression and prints its tokens.
 fn main() -> anyhow::Result<()> {
     let input = "3 + 5 * 2 - 8 / 4";
@@ -56,6 +57,7 @@ fn main() -> anyhow::Result<()> {
 /// Runs the example and propagates parse errors.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

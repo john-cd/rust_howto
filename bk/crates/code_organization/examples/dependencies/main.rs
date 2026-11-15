@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Using items from an external crate (a dependency).
 
 // Bring the following items into scope:
@@ -12,6 +13,7 @@ use anyhow::anyhow; // The `anyhow!` macro.
 fn a_func() -> anyhow::Result<()> {
     Ok(())
 }
+
 /// Refers to `Result` without having to write its full path every time.
 fn fallible(fail: bool) -> Result<u32> {
     if fail {
@@ -25,6 +27,7 @@ fn fallible(fail: bool) -> Result<u32> {
 /// Program entry point for the external dependency example.
 ///
 /// # Errors
+///
 /// Returns an error if the example returns one.
 fn main() -> Result<()> {
     example()
@@ -33,6 +36,7 @@ fn main() -> Result<()> {
 /// Uses imported names from `anyhow` and prints the successful result.
 ///
 /// # Errors
+///
 /// Returns an error if `a_func` or `fallible(false)` returns one.
 fn example() -> Result<()> {
     a_func()?;

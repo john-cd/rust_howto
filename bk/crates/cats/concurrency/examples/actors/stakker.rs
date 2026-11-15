@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! An actor with the `stakker` crate: a counter that processes messages.
 //!
 //! The actor model structures a program as independent actors that own their
@@ -15,11 +16,13 @@ use stakker::*;
 
 /// An actor that holds a running total.
 struct Counter {
+
     /// The running total.
     count: u32,
 }
 
 impl Counter {
+
     /// Creates a counter actor with an initial value of zero.
     fn init(_cx: CX![]) -> Option<Self> {
         Some(Self { count: 0 })
@@ -31,12 +34,15 @@ impl Counter {
         ret!([reply_to], self.count);
     }
 }
+
 /// Sends two increments and returns the replies from the counter actor.
 ///
 /// # Errors
+///
 /// Returns an error if the actor does not reply to either increment.
 ///
 /// # Panics
+///
 /// Panics if the first reply receiver stays open until delivery.
 fn run_actor() -> anyhow::Result<(u32, u32)> {
     let mut system = Stakker::new(Instant::now());
@@ -81,9 +87,11 @@ fn run_actor() -> anyhow::Result<(u32, u32)> {
         .context("counter actor stopped before replying to the second increment")?;
     Ok((first, second))
 }
+
 /// Runs the Stakker counter example.
 ///
 /// # Errors
+///
 /// Returns an error if the actor does not reply to either increment.
 fn main() -> anyhow::Result<(u32, u32)> {
     let (first, second) = run_actor()?;
@@ -95,6 +103,7 @@ fn main() -> anyhow::Result<(u32, u32)> {
 /// Runs the Stakker actor example.
 ///
 /// # Errors
+///
 /// Returns an error if the actor does not reply to either increment.
 pub fn run() -> anyhow::Result<()> {
     main()?;

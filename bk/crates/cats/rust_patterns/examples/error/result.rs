@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates returning and handling a recoverable error with `Result`.
 //!
 //! `Result<T, E>` represents either success (`Ok`) or a failure (`Err`) that
@@ -15,7 +16,7 @@ fn divide(numerator: i32, denominator: i32) -> Result<i32, &'static str> {
         Ok(numerator / denominator)
     }
 }
-/// Runs the example.
+
 /// Handles both success and failure results from `divide`.
 fn main() {
     for (numerator, denominator) in [(12, 3), (12, 0)] {
@@ -29,8 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Handles both success and failure results from `divide`.
 pub fn run() {
     main();
 }

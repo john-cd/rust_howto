@@ -10,6 +10,7 @@ use clap::Subcommand;
 /// Displays a message box through the raw `winapi` bindings.
 #[cfg(target_os = "windows")]
 mod winapi;
+
 /// This example demonstrates how to use the `windows` crate to call the `MessageBoxW` function from
 /// the Windows API.
 #[cfg(target_os = "windows")]
@@ -19,6 +20,7 @@ mod windows;
 #[cfg(target_os = "windows")]
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -28,14 +30,16 @@ struct Cli {
 #[cfg(target_os = "windows")]
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `winapi` example.
     #[command(name = "winapi")]
     Winapi,
+
     /// Runs the `windows` example.
     #[command(name = "windows")]
     Windows,
 }
-/// Runs the example.
+
 /// Runs the example selected on the command line.
 #[cfg(target_os = "windows")]
 fn main() {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `ordered-float` crate provides a wrapper type `OrderedFloat` for
 //! floating-point numbers that can be used as keys in ordered collections
 //! like `BTreeMap`.
@@ -45,8 +46,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// The `ordered-float` crate provides a wrapper type `OrderedFloat` for floating-point numbers that can be used as keys in ordered collections
 pub fn run() {
     main();
 }

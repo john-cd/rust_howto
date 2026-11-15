@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates stable references in an `elsa::FrozenMap`.
 
 use elsa::FrozenMap;
@@ -29,6 +30,7 @@ pub(super) fn run() {
 /// Verifies that the example can read a value after another insertion.
 #[cfg(test)]
 mod tests {
+
     /// Verifies that the example can read a value after another insertion.
     #[test]
     fn test_value_reference_survives_insertion() {

@@ -4,6 +4,7 @@
 
 /// Runs a short-lived container with explicit cleanup using Bollard.
 mod docker_client;
+
 /// Tests a Redis service on a randomly mapped host port.
 mod redis_test;
 

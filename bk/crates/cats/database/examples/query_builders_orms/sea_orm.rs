@@ -5,6 +5,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Build `SeaORM` queries from an inline entity definition.
 //!
 //! This example creates a simple active model and prints the generated SQL
@@ -27,11 +28,14 @@ mod post {
     #[derive(Clone, Debug, PartialEq, Eq, DeriveEntityModel)]
     #[sea_orm(table_name = "posts")]
     pub struct Model {
+
         /// The identifier of the post.
         #[sea_orm(primary_key)]
         pub id: i32,
+
         /// The title of the post.
         pub title: String,
+
         /// The content of the post.
         pub content: String,
     }
@@ -72,10 +76,10 @@ fn build_queries() -> (String, String) {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
 /// Build `SeaORM` queries from an inline entity definition.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), DbErr> {
     main()
@@ -85,6 +89,7 @@ pub fn run() -> Result<(), DbErr> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
     /// Inserts query contains post fields and values.
     #[test]
     fn insert_query_contains_post_fields_and_values() {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Uses a JavaScript built-in from Rust through `js-sys`.
 //!
 //! `js-sys` exposes JavaScript's built-in objects, such as `Date`, `Array` and
@@ -26,7 +27,7 @@ fn main() {
     #[cfg(not(all(target_arch = "wasm32", target_os = "unknown")))]
     println!("Build for wasm32-unknown-unknown to call JavaScript's Date API.");
 }
-/// Runs the example entry point.
+
 /// Runs the example's host-side runner.
 pub fn run() {
     main();
@@ -40,6 +41,7 @@ mod tests {
     /// Runs the `js-sys` example through its host fallback.
     // output-only: on the host, the example only prints a hint; the wasm32 code
     // needs a browser.
+
     /// Runs the example through its entry point without error.
     #[test]
     fn test_js_sys_example_entry_point() {

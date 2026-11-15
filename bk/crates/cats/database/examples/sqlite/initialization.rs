@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates how to initialize a SQLite database with tables.
 //!
 //! SQLite is a database in a single file, with no server to install; it is
@@ -51,9 +52,10 @@ fn create_tables(conn: &Connection) -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Creates a SQLite database and a table.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

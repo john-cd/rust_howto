@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Build and inspect X.509 certificate fields with the `x509_cert` crate.
 //!
 //! This deterministic, offline example demonstrates DER encoding of a
@@ -30,9 +31,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Builds the subject, serial number and validity of an X.509 certificate and prints their DER lengths.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Fixed-capacity collections from the `heapless` crate.
 //!
 //! `heapless` offers collections with a fixed capacity that never allocate, for
@@ -96,7 +97,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the `heapless` collection example.
 pub fn run() {
     main();

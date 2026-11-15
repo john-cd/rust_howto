@@ -44,6 +44,7 @@ impl CompressionFsm<'_> {
 
 /// **********************************
 // OPEN
+
 /// **********************************
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub(crate) struct StateOpen {
@@ -108,6 +109,7 @@ impl<'a> OpenFsm for &'a CompressionFsm<'a> {
 
 /// **********************************
 // ACCEPT
+
 /// **********************************
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub(crate) struct StateAccept {

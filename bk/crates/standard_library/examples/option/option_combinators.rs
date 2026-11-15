@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Combining `Option` values with `map`, `and_then` and other combinators.
 
 /// Parses an even integer and halves it, returning `None` for invalid or odd
@@ -8,9 +9,11 @@
 /// input.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested option combinators operation.
+///
+/// * `input` - Integer string to parse before checking whether it is even.
 ///
 /// # Returns
+///
 /// `Some` when the requested value is available; otherwise returns `None`.
 fn parse_even_half(input: &str) -> Option<u32> {
     input
@@ -22,7 +25,7 @@ fn parse_even_half(input: &str) -> Option<u32> {
         // `map` transforms the value without another fallible step.
         .map(|number| number / 2)
 }
-/// Runs the example.
+
 /// Parses a number and transforms it with `Option` combinators.
 fn main() {
     let half = parse_even_half("24").unwrap_or(0);
@@ -30,8 +33,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Parses a number and transforms it with `Option` combinators.
 pub fn run() {
     main();
 }

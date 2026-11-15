@@ -14,6 +14,7 @@ use postgres_types::private::BytesMut;
 use postgres_types::to_sql_checked;
 
 use super::domain::escape_domain_to_sql;
+
 /// Specifies the operations implementations provide to cornucopia queries callers.
 pub trait StringSql: std::fmt::Debug + ToSql + Sync {}
 impl<T: StringSql> StringSql for &T {}
@@ -21,11 +22,13 @@ impl StringSql for String {}
 impl StringSql for &str {}
 impl StringSql for Cow<'_, str> {}
 impl StringSql for Box<str> {}
+
 /// Specifies the operations implementations provide to cornucopia queries callers.
 pub trait BytesSql: std::fmt::Debug + ToSql + Send + Sync {}
 impl<T: BytesSql> BytesSql for &T {}
 impl BytesSql for Vec<u8> {}
 impl BytesSql for &[u8] {}
+
 /// Specifies the operations implementations provide to cornucopia queries callers.
 pub trait ArraySql: std::fmt::Debug + ToSql + Send + Sync {
     type Item;
@@ -84,11 +87,13 @@ impl<
         escape_domain_to_sql(ty, w, (self.0)())
     }
 }
+
 /// Groups the data required by cornucopia queries operations.
 pub struct IterSql<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync>(pub F);
 impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> std::fmt::Debug
     for IterSql<T, I, F>
 {
+
     /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.debug_tuple("ArrayFn").finish()
@@ -103,10 +108,12 @@ impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> T
     /// required by callers.
     ///
     /// # Errors
+///
     /// Returns an error if the iterator length cannot be represented or an element cannot be
     /// serialized.
     ///
     /// # Panics
+///
     /// Panics if `ty` is not an array type.
     fn to_sql(
         &self,

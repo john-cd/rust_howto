@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The following demonstrates how to use percent encoding to handle special
 //! characters in URLs.
 //!
@@ -21,10 +22,12 @@ use percent_encoding::percent_encode;
 /// Encodes a string for use as a URL component.
 ///
 /// # Arguments
-/// * `input` - Input data whose fields determine the requested percent encoding operation.
+///
+/// * `input` - URL component text to percent-encode.
 fn encode_url_component(input: &str) -> String {
     percent_encode(input.as_bytes(), NON_ALPHANUMERIC).to_string()
 }
+
 /// Decodes a percent-encoded string.
 fn decode_url_component(encoded: &str) -> Result<String> {
     // Decode the percent-encoded string and convert it to UTF-8.
@@ -47,9 +50,10 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Encodes and decodes a URL component.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
     main()

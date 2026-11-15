@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Demonstrates using `seize` for safe, concurrent memory reclamation.
 //!
 //! `seize` provides fast and efficient memory reclamation for concurrent
@@ -109,6 +110,7 @@ mod tests {
         static DROPPED: AtomicUsize = AtomicUsize::new(0);
         struct Tracked(i32);
         impl Drop for Tracked {
+
             /// Releases the resources owned by this value.
             fn drop(&mut self) {
                 DROPPED.fetch_add(1, Ordering::SeqCst);

@@ -1,12 +1,15 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Which items are accessible through nested public and private modules.
 
 /// A private module.
 mod a_module {
+
     /// A private function.
     fn private() {}
+
     /// A public function.
     pub fn public() -> &'static str {
         private();
@@ -16,8 +19,10 @@ mod a_module {
 
     /// A public nested module.
     pub mod public_nested_module {
+
         /// A private function.
         fn private() {}
+
         /// A public function.
         pub fn public() -> &'static str {
             private();
@@ -27,8 +32,10 @@ mod a_module {
 
     /// A private nested module.
     mod private_nested_module {
+
         /// A private function.
         fn private() {}
+
         /// A public function.
         pub fn public() {
             private();
@@ -58,8 +65,10 @@ fn main() {
 }
 
 // The same applies when calling from a sibling module.
+
 /// A module that is a sibling of `a_module`.
 mod another_module {
+
     /// Calls the items accessible from this module.
     pub fn call() {
         // `super` refers to the parent and is therefore accessible
@@ -77,8 +86,7 @@ fn call_sibling() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Calls the accessible items.
 pub fn run() {
     main();
 }
@@ -93,6 +101,7 @@ mod tests {
     fn test_main() {
         main();
     }
+
     /// Verifies public items in public modules.
     #[test]
     fn test_public_items_in_public_modules() {

@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Pipeline architecture: stages connected by channels, each on its own thread.
 //!
 //! A pipeline splits work into stages connected by channels, each stage on its
@@ -9,6 +10,7 @@
 
 use std::sync::mpsc;
 use std::thread;
+
 /// Runs pipeline.
 /// Parses and squares input concurrently, returning the collected results.
 fn run_pipeline(input: Vec<&'static str>) -> Vec<i64> {
@@ -56,7 +58,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the bounded-channel pipeline example.
 pub fn run() {
     main();

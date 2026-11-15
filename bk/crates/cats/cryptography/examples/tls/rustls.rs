@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Connect to a TLS server with `rustls` and verify its certificate.
 //!
 //! TLS encrypts a connection and lets the client verify the server's identity
@@ -35,6 +36,7 @@ fn connector_with_roots(root_store: RootCertStore) -> anyhow::Result<TlsConnecto
 fn webpki_root_store() -> RootCertStore {
     RootCertStore::from_iter(webpki_roots::TLS_SERVER_ROOTS.iter().cloned())
 }
+
 /// Opens a verified TLS connection to the resolved server address.
 async fn connect_to_server(
     server_name: &str,
@@ -71,9 +73,10 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Connects to the host named by `TLS_SERVER` when one is configured.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

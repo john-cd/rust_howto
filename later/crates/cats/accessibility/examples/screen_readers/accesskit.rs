@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Describes a small interface to screen readers with AccessKit.
 //!
 //! A screen reader is software that reads the screen aloud or shows it in

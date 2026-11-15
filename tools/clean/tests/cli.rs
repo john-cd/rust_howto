@@ -16,6 +16,7 @@ fn run_clean(dir: &Path) -> Output {
         .output()
         .expect("the clean binary should start")
 }
+
 /// Reports an error when the root is missing.
 #[test]
 fn test_missing_root_fails() {

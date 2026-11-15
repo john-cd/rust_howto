@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Simple example of a GUI application with `egui`.
 //!
 //! In `Cargo.toml`, add:
@@ -20,18 +21,23 @@ fn main() -> Result<(), eframe::Error> {
         Box::new(|_cc| Ok(Box::new(MyApp::default()))),
     )
 }
+
 /// An app with a counter.
 #[derive(Default)]
 struct MyApp {
+
     /// The number of clicks on the button.
     counter: i32,
+
     /// The text shown in the editable text field.
     name: String,
+
     /// The value selected by the slider.
     amount: f32,
 }
 
 impl MyApp {
+
     /// Draws the app's controls and returns the increment button's rectangle.
     fn show(&mut self, ui: &mut egui::Ui) -> egui::Rect {
         egui::CentralPanel::default()
@@ -51,6 +57,7 @@ impl MyApp {
 }
 
 impl eframe::App for MyApp {
+
     /// Draws one frame of the application.
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
         self.show(ui);
@@ -58,15 +65,17 @@ impl eframe::App for MyApp {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
+/// Opens a native window that runs the app.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<(), eframe::Error> {
     main()
 }
 
 // eframe's native runner is deliberately covered by the ignored window test.
+
 /// Builds pointer input for the headless UI test.
 #[cfg(test)]
 fn raw_input(events: Vec<egui::Event>) -> egui::RawInput {

@@ -2,6 +2,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! A counter window defined with Slint.
 //!
 //! Slint describes the interface in its own markup language (`.slint`), which
@@ -53,6 +54,7 @@ fn connect_counter_increment(app: &App) {
 /// A counter window defined with Slint.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

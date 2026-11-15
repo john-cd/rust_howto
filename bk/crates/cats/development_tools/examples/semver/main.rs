@@ -7,21 +7,26 @@ use clap::Subcommand;
 
 /// Check whether an external command reports a version that meets a
 mod semver_command;
+
 /// Demonstrates parsing, comparing, and serializing complex semantic version
 mod semver_complex;
+
 /// This example demonstrates how to find the maximum matching version from a list of versions based
 /// on a given version requirement string, using the `semver` crate.
 mod semver_latest;
+
 /// Turns semver input into structured syntax data while preserving source locations and reporting
 /// malformed input. Analysis and validation code use these routines before applying domain-specific
 /// rules.
 mod semver_parse;
+
 /// Demonstrates how to work with pre-release versions using the `semver` crate.
 mod semver_prerelease;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -30,18 +35,23 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `semver_command` example.
     #[command(name = "semver_command")]
     Command,
+
     /// Runs the `semver_complex` example.
     #[command(name = "semver_complex")]
     Complex,
+
     /// Runs the `semver_latest` example.
     #[command(name = "semver_latest")]
     Latest,
+
     /// Runs the `semver_parse` example.
     #[command(name = "semver_parse")]
     Parse,
+
     /// Runs the `semver_prerelease` example.
     #[command(name = "semver_prerelease")]
     Prerelease,

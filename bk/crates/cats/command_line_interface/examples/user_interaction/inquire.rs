@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! The `inquire` crate is used for creating interactive CLI prompts.
 //!
 //! Interactive prompts ask the user questions: text input, yes/no, a list to
@@ -39,8 +40,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// The `inquire` crate is used for creating interactive CLI prompts.
 pub fn run() {
     main();
 }
@@ -51,6 +51,7 @@ mod tests {
 
     // output-only: the example only prompts the user, so there is nothing to
     // assert without an interactive terminal.
+
     /// Runs the interactive prompt when user input is available.
     #[test]
     #[ignore = "Requires user input"]

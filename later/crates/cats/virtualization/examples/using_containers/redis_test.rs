@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Tests a Redis service on a randomly mapped host port.
 //!
 //! Integration tests are more realistic against a real service than against a
@@ -49,6 +50,7 @@ async fn main() -> anyhow::Result<()> {
 /// Tests a Redis service on a randomly mapped host port.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub async fn run() -> anyhow::Result<()> {
     main().await
@@ -57,6 +59,7 @@ pub async fn run() -> anyhow::Result<()> {
 /// Checks Redis readiness, dynamic port discovery, and a real PING/PONG.
 #[cfg(test)]
 mod tests {
+
     /// Checks Redis readiness, dynamic port discovery, and a real PING/PONG.
     #[tokio::test]
     #[ignore = "needs a Docker daemon"]

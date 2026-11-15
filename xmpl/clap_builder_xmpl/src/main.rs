@@ -6,6 +6,7 @@
 
 /// The command-line interface: arguments, subcommands and their parsing.
 mod cli;
+
 /// Parses the command line and prints the selected configuration and commands.
 fn main() {
     env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init(); // Log to stderr.
@@ -51,6 +52,7 @@ mod tests {
     fn describe_args(args: &[&str]) -> Vec<String> {
         describe(cli::get_args_from(args))
     }
+
     /// Checks that the real CLI entry point starts under the test harness.
     #[test]
     #[ignore = "main() parses the real process arguments, which belong to the test harness"]
@@ -85,6 +87,7 @@ mod tests {
         assert_eq!(lines[1], "Value for config file: a.toml");
         assert_eq!(lines[2], r#"Command: open ["x.csv"]"#);
     }
+
     /// Parses the `query` and `test` subcommands into their expected commands.
     #[test]
     fn query_and_test() {

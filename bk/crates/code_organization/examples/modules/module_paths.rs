@@ -1,10 +1,12 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Resolve paths between modules and re-export a public module.
 
 /// A module containing an item used by a sibling module.
 mod a {
+
     /// A unit struct declared in module `a`.
     pub struct A;
 }
@@ -22,8 +24,10 @@ mod c {
 
 /// A private module that contains a public nested module.
 mod e {
+
     /// A public nested module.
     pub mod f {
+
         /// Returns a message from the nested module.
         pub fn try_that() -> &'static str {
             "Called f::try_that through the re-export."
@@ -41,7 +45,6 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
 /// Runs the module path example.
 pub fn run() {
     main();
@@ -57,11 +60,13 @@ mod tests {
     fn test_module_paths_example_entry_point() {
         main();
     }
+
     /// Verifies sibling module path.
     #[test]
     fn test_sibling_module_path() {
         assert_eq!(c::do_something(), "Created a::A through super::a.");
     }
+
     /// Verifies reexported module path.
     #[test]
     fn test_reexported_module_path() {

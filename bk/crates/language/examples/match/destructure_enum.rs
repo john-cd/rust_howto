@@ -1,19 +1,25 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! Destructuring an enum in a `match`.
 
 /// A message of different kinds.
 enum Message {
+
     /// A message without data.
     Quit,
+
     /// A message with coordinates.
     Move {
+
         /// The x coordinate.
         x: i32,
+
         /// The y coordinate.
         y: i32,
     },
+
     /// A message with text.
     Write(String),
 }
@@ -37,8 +43,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// Matches a message and extracts its data.
 pub fn run() {
     main();
 }

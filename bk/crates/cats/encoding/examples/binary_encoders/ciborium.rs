@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example show how to (de)serialize CBOR data using the ciborium crate.
 //!
 //! CBOR stands for Concise Binary Object Representation, a binary data
@@ -22,10 +23,13 @@ use serde::Serialize;
 /// A struct that is serialized to and deserialized from CBOR.
 #[derive(Serialize, Deserialize, Debug, PartialEq, Eq)]
 struct MyData {
+
     /// The name.
     name: String,
+
     /// The age in years.
     age: u32,
+
     /// Whether the data is active.
     is_active: bool,
 }
@@ -56,9 +60,10 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the example.
+/// Demonstrates serializing and deserializing a struct to and from CBOR.
 ///
 /// # Errors
+///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
     main()

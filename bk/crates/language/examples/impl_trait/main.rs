@@ -7,12 +7,14 @@ use clap::Subcommand;
 
 /// Using `impl Trait` as an argument type and as a return type.
 mod impl_trait;
+
 /// Rust allows to write `impl Trait` as the return type of functions (often called "RPIT").
 mod rpit;
 
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
+
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -21,9 +23,11 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
+
     /// Runs the `impl_trait` example.
     #[command(name = "impl_trait")]
     ImplTrait,
+
     /// Runs the `rpit` example.
     #[command(name = "rpit")]
     Rpit,
@@ -42,7 +46,7 @@ fn dispatch(cli: Cli) {
         }
     }
 }
-/// Runs the example.
+
 /// Parses the command line and runs the selected example.
 fn main() {
     dispatch(Cli::parse());

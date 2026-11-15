@@ -6,11 +6,13 @@ use std::path::PathBuf;
 
 /// Builds a [`Config`] step by step.
 pub(crate) struct ConfigBuilder {
+
     /// The configuration being built.
     config: Config,
 }
 
 impl ConfigBuilder {
+
     /// Sets the verbosity level.
     pub(crate) fn set_verbose(mut self, verbose: u8) -> Self {
         self.config.verbose = verbose;
@@ -32,13 +34,16 @@ impl ConfigBuilder {
 /// The configuration of the application.
 #[derive(Default, Clone, Debug)]
 pub(crate) struct Config {
+
     /// Verbosity level; the number of `-v` flags.
     verbose: u8,
+
     /// Path of the configuration file, if any.
     config_file: Option<PathBuf>,
 }
 
 impl Config {
+
     /// Returns a builder for a configuration.
     pub(crate) fn builder() -> ConfigBuilder {
         ConfigBuilder {

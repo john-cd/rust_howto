@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+
 //! This example demonstrates matrix multiplication using the `ndarray` crate.
 //!
 //! Matrix multiplication combines rows of the first matrix with columns of the
@@ -24,8 +25,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Runs the example entry point.
-/// Runs the example.
+/// This example demonstrates matrix multiplication using the `ndarray` crate.
 pub fn run() {
     main();
 }
