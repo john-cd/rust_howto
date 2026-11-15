@@ -19,7 +19,6 @@ mod relm4;
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -29,7 +28,6 @@ struct Cli {
 #[cfg(all(feature = "gtk", not(target_os = "windows")))]
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `gtk4` example.
     #[command(name = "gtk4")]
     Gtk4,

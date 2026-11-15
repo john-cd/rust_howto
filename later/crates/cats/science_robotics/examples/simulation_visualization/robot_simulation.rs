@@ -24,7 +24,6 @@ const SIMULATION_STEPS: usize = 600;
 /// The robot chassis state after the physics simulation settles.
 #[derive(Debug)]
 struct ChassisState {
-
     /// Center height value.
     center_height: f32,
 

@@ -11,7 +11,6 @@ use super::Category;
 /// Represents a Rust crate with its name, (GitHub) repository URL, and associated categories.
 #[derive(Serialize, Debug)]
 pub struct Crate {
-
     /// Name of the crate.
     name: String,
 
@@ -24,7 +23,6 @@ pub struct Crate {
 
 /// Implementation block for the `Crate` struct.
 impl Crate {
-
     /// Creates a crate without categories.
     fn new(name: String, repo_url: String) -> Self {
         Self {

@@ -17,7 +17,6 @@ use syn::DeriveInput;
 #[derive(Debug, FromDeriveInput)]
 #[darling(attributes(builder))]
 struct BuilderOptions {
-
     /// The name of the struct that carried the attribute.
     ident: syn::Ident,
 

@@ -24,12 +24,11 @@ use shaku::module;
 
 /// A service that greets people.
 trait Greeter: Interface {
-
     /// Returns a greeting for `name`.
     /// A greeter that greets in English.
     ///
     /// # Arguments
-///
+    ///
     /// * `name` - Human-readable value used to identify or display the selected greeter.
     fn greet(&self, name: &str) -> String;
 }
@@ -49,12 +48,11 @@ trait Greeter: Interface {
 struct EnglishGreeter;
 
 impl Greeter for EnglishGreeter {
-
-/// Formats a greeting for the provided name.
-///
-/// # Arguments
-///
-/// * `name` - Name to include in the greeting.
+    /// Formats a greeting for the provided name.
+    ///
+    /// # Arguments
+    ///
+    /// * `name` - Name to include in the greeting.
     fn greet(&self, name: &str) -> String {
         format!("Hello, {name}!")
     }
@@ -67,7 +65,6 @@ impl Greeter for EnglishGreeter {
 
 /// A service that starts a conversation.
 trait Conversation: Interface {
-
     /// Starts the current value.
     fn start(&self) -> String;
 }
@@ -81,7 +78,6 @@ struct EnglishConversation {
     // Components can depend on other components.
     // Make sure the property is declared as a trait object wrapped in an
     // `Arc`.
-
     /// The greeter, which is injected.
     #[shaku(inject)]
     greeter: Arc<dyn Greeter>,
@@ -92,7 +88,6 @@ struct EnglishConversation {
 }
 
 impl Conversation for EnglishConversation {
-
     /// Starts the current value.
     fn start(&self) -> String {
         self.greeter.greet(self.person.as_str())

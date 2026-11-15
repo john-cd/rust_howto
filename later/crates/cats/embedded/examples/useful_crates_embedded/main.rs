@@ -12,7 +12,6 @@ use serde::Serialize;
 /// A message with a stable wire format.
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
 struct Reading {
-
     /// Sensor value.
     sensor: u8,
 

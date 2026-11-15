@@ -18,7 +18,6 @@ use ode_solvers::Vector1;
 struct ExponentialDecay;
 
 impl System<f64, Vector1<f64>> for ExponentialDecay {
-
     /// Computes the derivative of the exponential-decay state.
     fn system(&self, _x: f64, y: &Vector1<f64>, dy: &mut Vector1<f64>) {
         dy[0] = -y[0];

@@ -46,7 +46,6 @@ use serde_json::json;
 
 /// Desired state stored in the Kubernetes `Echo` custom resource.
 pub struct EchoSpec {
-
     /// The message the pods echo.
     pub message: String,
 
@@ -57,7 +56,6 @@ pub struct EchoSpec {
 /// The observed state of an `Echo`, written to the status subresource.
 #[derive(Clone, Debug, Default, Deserialize, Serialize, JsonSchema)]
 pub struct EchoStatus {
-
     /// The number of ready pods.
     pub ready_replicas: i32,
 }
@@ -65,7 +63,6 @@ pub struct EchoStatus {
 /// Reconciliation errors.
 #[derive(Debug, thiserror::Error)]
 pub enum ReconcileError {
-
     /// The `Echo` has no name or UID, so it cannot own a `Deployment`.
     #[error("the Echo is missing metadata")]
     MissingMetadata,
@@ -81,7 +78,6 @@ pub enum ReconcileError {
 
 /// Shared state for the reconciler.
 struct Context {
-
     /// Database client used to execute the query.
     client: Client,
 }

@@ -10,7 +10,6 @@ use std::collections::HashMap;
 #[derive(Debug, Default)]
 struct Wrapper<T: Clone> {
     // Generic types must stay visible as text, not become HTML tags.
-
     /// Collection consumed by wrapper while preserving its ordering and relationships.
     items: HashMap<String, Vec<Option<T>>>,
 }

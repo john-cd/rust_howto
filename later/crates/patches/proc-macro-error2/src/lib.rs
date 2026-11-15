@@ -340,7 +340,6 @@ mod imp;
 #[derive(Debug, Clone, Copy)]
 #[must_use = "A SpanRange does nothing unless used"]
 pub struct SpanRange {
-
     /// First item in the collection.
     pub first: Span,
 
@@ -349,7 +348,6 @@ pub struct SpanRange {
 }
 
 impl SpanRange {
-
     /// Create a range with the `first` and `last` spans being the same.
     pub fn single_span(span: Span) -> Self {
         SpanRange {
@@ -366,7 +364,7 @@ impl SpanRange {
     /// Construct span range from a `TokenStream`. This method always preserves all the
     ///
     /// # Arguments
-///
+    ///
     /// range.
     ///
     /// ### Note
@@ -385,7 +383,7 @@ impl SpanRange {
     /// Join two span ranges. The resulting range will start at `self.first` and end at
     ///
     /// # Arguments
-///
+    ///
     /// `other.last`.
     pub fn join_range(self, other: SpanRange) -> Self {
         SpanRange {

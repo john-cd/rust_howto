@@ -74,7 +74,6 @@ use crate::unicast::link::TransportLinkUnicastDirection;
 pub(super) type AcceptError = (zenoh_result::Error, Option<u8>);
 
 struct StateTransport {
-
     /// Maximum number of messages sent in a batch.
     batch_size: BatchSize,
 
@@ -99,7 +98,6 @@ struct StateLink {
 }
 
 struct State {
-
     /// Transport value.
     transport: StateTransport,
     #[cfg(any(feature = "transport_auth", feature = "transport_compression"))]
@@ -110,12 +108,10 @@ struct State {
 
 // InitSyn
 struct RecvInitSynIn {
-
     /// Protocol version advertised by the local peer.
     mine_version: u8,
 }
 struct RecvInitSynOut {
-
     /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
 
@@ -125,7 +121,6 @@ struct RecvInitSynOut {
 
 // InitAck
 struct SendInitAckIn {
-
     /// Protocol version advertised by the local peer.
     mine_version: u8,
 
@@ -142,19 +137,16 @@ struct SendInitAckIn {
     other_whatami: WhatAmI,
 }
 struct SendInitAckOut {
-
     /// Nonce included in the cookie.
     cookie_nonce: u64,
 }
 
 // OpenSyn
 struct RecvOpenSynIn {
-
     /// Nonce included in the cookie.
     cookie_nonce: u64,
 }
 struct RecvOpenSynOut {
-
     /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
 
@@ -178,7 +170,6 @@ struct RecvOpenSynOut {
 
 // OpenAck
 struct SendOpenAckIn {
-
     /// Local Zenoh identifier.
     mine_zid: ZenohIdProto,
 
@@ -192,14 +183,12 @@ struct SendOpenAckIn {
     other_whatami: WhatAmI,
 }
 struct SendOpenAckOut {
-
     /// Open ack value.
     open_ack: OpenAck,
 }
 
 // Fsm
 struct AcceptLink<'a> {
-
     /// Transport link associated with this state.
     link: &'a mut TransportLinkUnicast,
 
@@ -245,11 +234,11 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
     /// Receives the peer's InitSyn, negotiates transport settings, and updates accept state.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Accepting transport state and local settings used to validate InitSyn.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the received message or peer settings are invalid, or an extension
     /// cannot be negotiated.
     async fn recv_init_syn(
@@ -394,11 +383,11 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
     /// Builds an InitAck and its negotiated extensions for the accepting peer.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Accepting transport state and local InitAck settings.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if constructing any negotiated extension for the init ACK fails.
     async fn send_init_ack(
         self,
@@ -556,11 +545,11 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
     /// Receives the peer's OpenSyn, validates its cookie, and completes accept-side negotiation.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Expected cookie nonce used to validate the received OpenSyn.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the message is not a valid OpenSyn, its cookie is invalid, or extension
     /// negotiation fails.
     async fn recv_open_syn(
@@ -716,11 +705,11 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
     /// Builds an OpenAck and its negotiated extensions for the accepting peer.
     ///
     /// # Arguments
-///
+    ///
     /// * `input` - Accepting transport state and local OpenAck settings.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if constructing any negotiated extension for the open ACK fails.
     async fn send_open_ack(
         self,

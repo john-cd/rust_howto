@@ -22,7 +22,7 @@ mod nif {
     /// can be called directly from Erlang or Elixir code.
     ///
     /// # Arguments
-///
+    ///
     /// * `name` - Human-readable value used to identify or display the selected rustler.
     pub fn greeting(name: String) -> String {
         format!("Hello, {name}!")
@@ -31,7 +31,7 @@ mod nif {
     /// Returns a greeting for `name`.
     ///
     /// # Arguments
-///
+    ///
     /// * `name` - Human-readable value used to identify or display the selected rustler.
     #[cfg(feature = "erlang")]
     #[rustler::nif]
@@ -40,9 +40,9 @@ mod nif {
     }
 
     /// Adds two integers for calls from Erlang or Elixir.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// `add` is a NIF that takes two integers and returns their sum.
     pub fn sum(a: i32, b: i32) -> i32 {
         a + b
@@ -89,7 +89,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Calls the plain Rust helpers behind the NIFs. The NIFs themselves are meant to be loaded by Erlang or Elixir.
+/// Calls the plain Rust helpers behind the NIFs. The NIFs themselves are meant to be loaded by
+/// Erlang or Elixir.
 pub fn run() {
     main();
 }

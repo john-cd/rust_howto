@@ -68,7 +68,6 @@ pub fn log_fn(_attr: TokenStream, item: TokenStream) -> TokenStream {
 #[derive(Debug, FromDeriveInput)]
 #[darling(attributes(my_macro))]
 struct MyMacroOpts {
-
     /// The name given in the `my_macro` attribute.
     name: String,
 }

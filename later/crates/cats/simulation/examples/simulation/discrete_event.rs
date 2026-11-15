@@ -17,7 +17,6 @@ use std::collections::VecDeque;
 /// A customer's scheduled arrival and fixed service duration.
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
 struct Customer {
-
     /// Stable identifier used to retrieve and update this customer.
     id: usize,
 
@@ -38,7 +37,6 @@ enum EventKind {
 /// A queue arrival or service completion in the event schedule.
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
 struct Event {
-
     /// Time value.
     time: u32,
 
@@ -55,7 +53,6 @@ struct Event {
 /// The number of customers served and their mean time waiting for service.
 #[derive(Debug, PartialEq)]
 struct QueueReport {
-
     /// Served value.
     served: usize,
 
@@ -66,7 +63,6 @@ struct QueueReport {
 /// Simulates fixed customer arrivals and service times with a min-heap event
 /// queue.
 fn simulate_single_server_queue() -> QueueReport {
-
     /// Shared `arrival times` used by this module.
     const ARRIVAL_TIMES: [u32; 5] = [0, 1, 2, 13, 14];
 

@@ -28,7 +28,6 @@ const MODULE: &str = r#"
 /// What a module requires from, and offers to, its host.
 #[derive(Debug, Default, PartialEq, Eq)]
 struct Interface {
-
     /// Imported functions as `module.name`, which the host must provide.
     imports: Vec<String>,
 

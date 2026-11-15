@@ -9,7 +9,6 @@ use std::fmt::Formatter;
 #[derive(PartialEq, Eq, Clone, Copy, Debug)]
 #[non_exhaustive]
 pub enum TaskError {
-
     /// The task was interrupted.
     Interrupted,
 

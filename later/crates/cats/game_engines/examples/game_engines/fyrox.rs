@@ -19,13 +19,11 @@ use fyrox::plugin::error::GameResult;
 #[derive(Default, Visit, Reflect, Debug)]
 #[reflect(non_cloneable)]
 pub struct Game {
-
     /// Number of updates so far.
     ticks: u32,
 }
 
 impl Game {
-
     /// Advances the game by one fixed time step.
     fn tick(&mut self) {
         self.ticks = self.ticks.saturating_add(1);
@@ -37,7 +35,6 @@ impl Game {
 }
 
 impl Plugin for Game {
-
     /// The engine calls `update` at a fixed rate (`context.dt` seconds).
     fn update(&mut self, _context: &mut PluginContext<'_, '_>) -> GameResult {
         self.tick();

@@ -13,7 +13,6 @@
 
 /// A basic 1D rocket launch simulation.
 struct Rocket {
-
     /// Mass of the rocket without fuel, in kg.
     mass_empty: f64, // kg
 

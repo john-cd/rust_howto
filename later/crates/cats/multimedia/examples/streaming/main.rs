@@ -22,7 +22,6 @@ use str0m::media::MediaKind;
 /// A media payload with transport-oriented ordering and timing metadata.
 #[derive(Debug, PartialEq, Eq)]
 struct MediaFrame {
-
     /// The wrapping sequence number assigned to this frame.
     sequence_number: u16,
 

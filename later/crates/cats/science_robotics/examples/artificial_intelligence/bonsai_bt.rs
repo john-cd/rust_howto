@@ -45,11 +45,9 @@ use bonsai_bt::Wait;
 #[derive(Clone, Debug, Copy)]
 pub enum Actions {
     // Increment accumulator.
-
     /// Increments the accumulator.
     Inc,
     // Decrement accumulator.
-
     /// Decrements the accumulator.
     Dec,
 }

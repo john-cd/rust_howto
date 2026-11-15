@@ -26,7 +26,6 @@ fn main() -> iced::Result {
 /// The state of the counter.
 #[derive(Default)]
 struct Counter {
-
     /// The current count.
     value: i64,
 }
@@ -34,7 +33,6 @@ struct Counter {
 /// The messages that the counter handles.
 #[derive(Debug, Clone, Copy)]
 enum Message {
-
     /// Increases the count.
     Increment,
 
@@ -43,7 +41,6 @@ enum Message {
 }
 
 impl Counter {
-
     /// Updates the count according to `message`.
     fn update(&mut self, message: Message) {
         match message {

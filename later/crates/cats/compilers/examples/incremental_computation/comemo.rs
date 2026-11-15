@@ -42,7 +42,6 @@ fn compute_derived_value(config: Tracked<'_, Config>) -> i32 {
 /// Define a struct to represent a configuration.
 #[derive(Clone, Debug)]
 struct Config {
-
     /// The value.
     value: i32,
 
@@ -57,7 +56,6 @@ struct Config {
 /// methods, among other [restrictions](https://docs.rs/comemo/0.4.0/comemo/attr.track.html).
 #[track]
 impl Config {
-
     /// Returns the current tracked configuration value.
     fn get_value(&self) -> i32 {
         self.value

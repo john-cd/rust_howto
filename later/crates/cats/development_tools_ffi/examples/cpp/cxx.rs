@@ -29,9 +29,9 @@ mod ffi {
         include!("development_tools_ffi/examples/cpp/hello.h");
 
         /// Converts the C++ string argument into a Rust greeting.
-///
+        ///
         /// # Arguments
-///
+        ///
         /// * `name` - Human-readable value used to identify or display the selected cxx.
         fn hello(name: &CxxString);
         fn cpp_multiply(left: i32, right: i32) -> i32;

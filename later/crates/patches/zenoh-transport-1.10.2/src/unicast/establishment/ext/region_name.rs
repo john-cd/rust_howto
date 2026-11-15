@@ -33,18 +33,16 @@ use crate::unicast::establishment::OpenFsm;
 
 /// State machine for negotiating region names during unicast establishment.
 pub(crate) struct RegionNameFsm {
-
     /// Optional region name used by region name fsm; `None` means the value is not configured or
     /// unavailable.
     region_name: Option<RegionName>,
 }
 
 impl RegionNameFsm {
-
     /// Creates a negotiator with the optional local region name to advertise.
     ///
     /// # Arguments
-///
+    ///
     /// * `region_name` - Local region name advertised during the handshake, if configured.
     pub(crate) fn new(region_name: Option<RegionName>) -> Self {
         Self { region_name }
@@ -53,14 +51,12 @@ impl RegionNameFsm {
 
 #[derive(Debug, Clone, PartialEq)]
 struct State {
-
     /// Optional other region name used by state; `None` means the value is not configured or
     /// unavailable.
     other_region_name: Option<RegionName>,
 }
 
 impl State {
-
     /// Creates empty negotiation state before the peer's region name is received.
     fn new() -> Self {
         Self {
@@ -85,7 +81,6 @@ impl State {
 pub(crate) struct StateOpen(State);
 
 impl StateOpen {
-
     /// Creates opening-side state with no peer region name recorded yet.
     pub(crate) fn new() -> Self {
         Self(State::new())
@@ -111,7 +106,7 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
     /// Advertises the local region name in the InitSyn extension when configured.
     ///
     /// # Arguments
-///
+    ///
     /// * `_state` - Opening-side state required by the handshake trait; the local name is held by
     ///   this negotiator.
     async fn send_init_syn(
@@ -124,12 +119,12 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
     /// Records the peer region name advertised in the InitAck.
     ///
     /// # Arguments
-///
+    ///
     /// * `state` - Opening-side negotiation state updated with the peer name.
     /// * `ext` - Optional region-name extension received in InitAck.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the extension cannot be decoded as a valid region name.
     async fn recv_init_ack(
         self,
@@ -142,7 +137,7 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
     /// Returns the peer region name recorded from InitAck for the OpenSyn step.
     ///
     /// # Arguments
-///
+    ///
     /// * `state` - Opening-side state containing the peer's negotiated region name.
     async fn send_open_syn(
         self,
@@ -165,7 +160,6 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
 pub(crate) struct StateAccept(State);
 
 impl StateAccept {
-
     /// Creates accept-side state with no peer region name recorded yet.
     pub(crate) fn new() -> Self {
         Self(State::new())
@@ -203,13 +197,13 @@ where
     type Error = zenoh_result::Error;
 
     /// Reads and decodes the peer region-name extension from the input stream.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `reader` - Source that supplies the bytes or records consumed by this operation.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the region name cannot be read or parsed.
     fn read(self, reader: &mut R) -> Result<StateAccept, Self::Error> {
         let s: String = self
@@ -242,12 +236,12 @@ impl<'a> AcceptFsm for &'a RegionNameFsm {
     /// Records the peer region name advertised in the InitSyn.
     ///
     /// # Arguments
-///
+    ///
     /// * `state` - Accept-side negotiation state updated with the peer name.
     /// * `ext` - Optional region-name extension received in InitSyn.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the extension cannot be decoded as a valid region name.
     async fn recv_init_syn(
         self,
@@ -260,7 +254,7 @@ impl<'a> AcceptFsm for &'a RegionNameFsm {
     /// Advertises the local region name in the InitAck extension when configured.
     ///
     /// # Arguments
-///
+    ///
     /// * `_state` - Accept-side state required by the handshake trait; the local name is held by
     ///   this negotiator.
     async fn send_init_ack(
@@ -281,7 +275,7 @@ impl<'a> AcceptFsm for &'a RegionNameFsm {
     /// Returns the peer region name recorded from InitSyn for the completed transport.
     ///
     /// # Arguments
-///
+    ///
     /// * `state` - Accept-side state containing the peer's negotiated region name.
     async fn send_open_ack(
         self,

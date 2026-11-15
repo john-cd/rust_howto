@@ -12,17 +12,15 @@ use mlua::prelude::*;
 
 /// A counter whose value is owned by Rust and exposed to Lua.
 struct Counter {
-
     /// Value stored by this wrapper.
     value: i64,
 }
 
 impl LuaUserData for Counter {
-
     /// Registers methods that Lua scripts can call on the counter.
     ///
     /// # Arguments
-///
+    ///
     /// * `methods` - Registry populated with methods callable from Lua.
     fn add_methods<M: LuaUserDataMethods<Self>>(methods: &mut M) {
         methods.add_method_mut("increment", |_, this, amount: i64| {

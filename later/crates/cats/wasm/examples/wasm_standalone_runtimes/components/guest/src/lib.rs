@@ -22,7 +22,6 @@ const MAX_NAME_LEN: usize = 32;
 struct Component;
 
 impl Guest for Component {
-
     /// Greets `name`, rejecting empty or overly long names.
     fn greet(name: String) -> Result<String, GreetError> {
         logger::log(&format!("greet({name:?})"));

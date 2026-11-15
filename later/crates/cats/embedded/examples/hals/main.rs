@@ -10,7 +10,6 @@ use embedded_hal::digital::OutputPin;
 
 #[derive(Default)]
 struct MockPin {
-
     /// Flag indicating whether the mock pin satisfies the high condition.
     high: bool,
 
@@ -23,7 +22,6 @@ impl ErrorType for MockPin {
 }
 
 impl OutputPin for MockPin {
-
     /// Drives the simulated pin low and records the transition.
     fn set_low(&mut self) -> Result<(), Self::Error> {
         self.high = false;

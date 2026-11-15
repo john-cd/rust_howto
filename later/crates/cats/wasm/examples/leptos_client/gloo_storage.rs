@@ -23,7 +23,6 @@ const KEY: &str = "settings";
 #[derive(Clone, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(default)]
 pub struct Settings {
-
     /// Whether the interface should use its dark color theme.
     pub dark_mode: bool,
 

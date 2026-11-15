@@ -16,7 +16,6 @@ use std::sync::Mutex;
 /// Define a simple data model.
 #[derive(Debug, Clone, PartialEq, Eq)]
 struct User {
-
     /// The unique identifier for the user.
     id: i32,
 
@@ -31,32 +30,31 @@ struct User {
 /// This trait outlines the operations that can be performed on a collection of
 /// users, such as retrieving, adding, updating, deleting, and listing users.
 trait UserRepository {
-
     /// Returns the user with the given identifier, if any.
     ///
     /// # Arguments
-///
+    ///
     /// * `id` - Identifier of the user to retrieve.
     fn get_user(&self, id: i32) -> Option<User>;
 
     /// Inserts the user, replacing any record with the same identifier.
     ///
     /// # Arguments
-///
+    ///
     /// * `user` - User record to store.
     fn add_user(&self, user: User);
 
     /// Replaces the user that has the same identifier.
     ///
     /// # Arguments
-///
+    ///
     /// * `user` - Updated user record.
     fn update_user(&self, user: User);
 
     /// Removes the user with the given identifier, if one is stored.
     ///
     /// # Arguments
-///
+    ///
     /// * `id` - Identifier of the user to remove.
     fn delete_user(&self, id: i32);
 
@@ -69,13 +67,11 @@ trait UserRepository {
 /// This struct uses a `HashMap` to store users and `Arc<Mutex<>>` to allow for
 /// concurrent access and modification.
 struct InMemoryUserRepository {
-
     /// The users, by identifier.
     users: Arc<Mutex<HashMap<i32, User>>>,
 }
 
 impl InMemoryUserRepository {
-
     /// Creates an empty repository.
     fn new() -> Self {
         Self {
@@ -86,15 +82,14 @@ impl InMemoryUserRepository {
 
 /// Implementation of the `UserRepository` trait for `InMemoryUserRepository`.
 impl UserRepository for InMemoryUserRepository {
-
     /// Returns a clone of the user stored under `id`, if present.
     ///
     /// # Arguments
-///
+    ///
     /// * `id` - Identifier of the user to retrieve.
     ///
     /// # Panics
-///
+    ///
     /// Panics if the mutex is poisoned.
     fn get_user(&self, id: i32) -> Option<User> {
         let users = self.users.lock().expect("mutex should not be poisoned");
@@ -104,11 +99,11 @@ impl UserRepository for InMemoryUserRepository {
     /// Inserts or replaces a user in the in-memory repository.
     ///
     /// # Arguments
-///
+    ///
     /// * `user` - User record to store.
     ///
     /// # Panics
-///
+    ///
     /// Panics if the mutex is poisoned.
     fn add_user(&self, user: User) {
         let mut users = self.users.lock().expect("mutex should not be poisoned");
@@ -118,11 +113,11 @@ impl UserRepository for InMemoryUserRepository {
     /// Replaces the repository record with the same identifier as `user`.
     ///
     /// # Arguments
-///
+    ///
     /// * `user` - Updated user record.
     ///
     /// # Panics
-///
+    ///
     /// Panics if the mutex is poisoned.
     fn update_user(&self, user: User) {
         let mut users = self.users.lock().expect("mutex should not be poisoned");
@@ -132,11 +127,11 @@ impl UserRepository for InMemoryUserRepository {
     /// Removes the user with `id` from the in-memory repository, if present.
     ///
     /// # Arguments
-///
+    ///
     /// * `id` - Identifier of the user to remove.
     ///
     /// # Panics
-///
+    ///
     /// Panics if the mutex is poisoned.
     fn delete_user(&self, id: i32) {
         let mut users = self.users.lock().expect("mutex should not be poisoned");
@@ -146,7 +141,7 @@ impl UserRepository for InMemoryUserRepository {
     /// Returns clones of all user records stored in the repository.
     ///
     /// # Panics
-///
+    ///
     /// Panics if the mutex is poisoned.
     fn get_all_users(&self) -> Vec<User> {
         let users = self.users.lock().expect("mutex should not be poisoned");
@@ -204,7 +199,8 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// Example usage of the `InMemoryUserRepository`. This function demonstrates how to create a repository, add users, retrieve users, update users, delete users, and list all users.
+/// Example usage of the `InMemoryUserRepository`. This function demonstrates how to create a
+/// repository, add users, retrieve users, update users, delete users, and list all users.
 pub fn run() {
     main();
 }
@@ -220,9 +216,9 @@ mod tests {
     }
 
     /// Creates a user record from its identifier and display name.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `id` - Identifier used to select the in memory user repository record or cache entry
     ///   affected by this operation.
     /// * `name` - Human-readable value used to identify or display the selected in memory user

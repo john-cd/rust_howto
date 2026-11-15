@@ -39,7 +39,6 @@ fn my_function(a: i64, b: i64) -> PyResult<i64> {
 /// A Python-visible counter backed by a Rust integer.
 #[pyclass]
 struct Counter {
-
     /// Current counter value.
     value: i64,
 }
@@ -47,7 +46,6 @@ struct Counter {
 /// Methods exposed on Python's `Counter` class.
 #[pymethods]
 impl Counter {
-
     /// Creates a counter initialized to `value`.
     #[new]
     fn new(value: i64) -> Self {

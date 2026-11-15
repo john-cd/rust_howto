@@ -20,13 +20,11 @@ use xilem::view::text_button;
 /// The state of the counter.
 #[derive(Default)]
 struct Counter {
-
     /// The current count.
     num: i32,
 }
 
 impl Counter {
-
     /// Adds one to the count.
     fn increment(&mut self) {
         self.num += 1;

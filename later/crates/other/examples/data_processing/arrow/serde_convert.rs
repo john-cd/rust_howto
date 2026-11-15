@@ -21,7 +21,6 @@ use serde::Serialize;
 /// A Rust row that can be serialized into and deserialized from Arrow JSON.
 #[derive(Debug, Deserialize, PartialEq, Serialize)]
 struct Person {
-
     /// The person's name.
     name: String,
 

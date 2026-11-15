@@ -34,7 +34,6 @@ const HTML: &str = r#"<!doctype html>
 /// The reasons for rejecting a URI.
 #[derive(Debug, PartialEq, Eq)]
 enum UriError {
-
     /// The text is not a valid URI.
     Invalid,
 
@@ -43,7 +42,6 @@ enum UriError {
 }
 
 impl fmt::Display for UriError {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {

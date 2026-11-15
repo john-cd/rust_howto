@@ -15,7 +15,6 @@ use core::fmt;
 /// A malformed instruction, invalid address, or exhausted execution budget.
 #[derive(Debug)]
 enum EmuError {
-
     /// The instruction pointer is outside the loaded program.
     InvalidAddress(usize),
 
@@ -27,7 +26,6 @@ enum EmuError {
 }
 
 impl fmt::Display for EmuError {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
@@ -46,7 +44,6 @@ impl core::error::Error for EmuError {}
 
 /// CPU state; each instruction is an opcode byte followed by an operand byte.
 struct Cpu<'a> {
-
     /// Borrowed, read-only program memory.
     program: &'a [[u8; 2]],
 
@@ -61,11 +58,10 @@ struct Cpu<'a> {
 }
 
 impl Cpu<'_> {
-
     /// Fetches, decodes, and executes one instruction; halted CPUs do nothing.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns an error for an invalid address or unknown instruction.
     fn step(&mut self) -> Result<(), EmuError> {
         if self.halted {

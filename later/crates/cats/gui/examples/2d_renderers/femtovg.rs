@@ -69,7 +69,6 @@ fn draw_frame(canvas: &mut Canvas<OpenGl>, width: u32, height: u32, scale: f32) 
 }
 
 struct FemtoVgApp {
-
     /// Window value.
     window: Window,
 
@@ -84,7 +83,6 @@ struct FemtoVgApp {
 }
 
 impl ApplicationHandler for FemtoVgApp {
-
     /// No additional resources are needed when the event loop resumes.
     fn resumed(&mut self, _event_loop: &ActiveEventLoop) {}
 

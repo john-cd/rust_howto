@@ -16,13 +16,11 @@ uniffi::setup_scaffolding!();
 #[uniffi(flat_error)]
 #[non_exhaustive]
 pub enum ArithmeticError {
-
     /// The result does not fit in a `u64`.
     IntegerOverflow,
 }
 
 impl std::fmt::Display for ArithmeticError {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {

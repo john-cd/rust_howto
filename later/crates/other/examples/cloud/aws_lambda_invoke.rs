@@ -25,7 +25,6 @@ use serde::Serialize;
 /// The request understood by the function (see the Lambda example).
 #[derive(Serialize)]
 pub struct Request {
-
     /// The name to greet.
     pub name: String,
 }
@@ -33,7 +32,6 @@ pub struct Request {
 /// The response returned by the function.
 #[derive(Debug, Deserialize, PartialEq, Eq)]
 pub struct Response {
-
     /// The greeting.
     pub message: String,
 }

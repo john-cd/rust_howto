@@ -28,7 +28,6 @@ fn triangle_points(center: Vec2, radius: f32, angle: f32) -> [Vec2; 3] {
 /// Visual state updated by the render loop.
 #[derive(Debug, Clone, Copy, PartialEq)]
 struct GameState {
-
     /// The current rotation angle of the triangle in radians.
     angle: f32,
 
@@ -37,7 +36,6 @@ struct GameState {
 }
 
 impl GameState {
-
     /// Creates a new default game state with zero rotation and blue color.
     fn new() -> Self {
         Self {

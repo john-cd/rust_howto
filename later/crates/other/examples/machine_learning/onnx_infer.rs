@@ -23,7 +23,6 @@ use ort::value::Tensor;
 /// A loaded model. `Session::run` needs `&mut`, so the session is behind a
 /// mutex: use one session per worker (or a pool) when you need parallelism.
 struct Model {
-
     /// Protocol version.
     version: u32,
 
@@ -32,11 +31,10 @@ struct Model {
 }
 
 impl Model {
-
     /// Loads an ONNX model from the provided bytes and records its version.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns an error if initializing the ONNX runtime or loading the model fails.
     fn load(env: &Environment, version: u32, bytes: &[u8]) -> Result<Self> {
         Ok(Self {
@@ -48,7 +46,6 @@ impl Model {
 
 /// A scoring engine whose model can be replaced while it is in use.
 struct Engine {
-
     /// Env value.
     env: Environment,
 
@@ -57,16 +54,15 @@ struct Engine {
 }
 
 impl Engine {
-
     /// Initializes the ONNX runtime and loads a model from the supplied bytes.
     ///
     /// # Arguments
-///
+    ///
     /// * `version` - Model version recorded with the loaded model.
     /// * `bytes` - Serialized ONNX model data to load.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if initializing the ONNX runtime or loading the model fails.
     fn new(version: u32, bytes: &[u8]) -> Result<Self> {
         let env = ort::init().build()?;

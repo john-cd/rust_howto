@@ -48,11 +48,10 @@ pub(crate) struct SeqNum {
 }
 
 impl SeqNum {
-
     /// Create a new sequence number with a given resolution.
     ///
     /// # Arguments
-///
+    ///
     /// * `value` - The sequence number.
     ///
     /// * `resolution` - The resolution (modulo) to be used for the sequence number. As a
@@ -175,11 +174,10 @@ impl SeqNum {
 pub(crate) struct SeqNumGenerator(SeqNum);
 
 impl SeqNumGenerator {
-
     /// Create a new sequence number generator with a given resolution.
     ///
     /// # Arguments
-///
+    ///
     /// * `initial_sn` - The initial sequence number. It is a good practice to initialize the
     ///   sequence number generator with a random number
     ///

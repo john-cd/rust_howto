@@ -26,7 +26,6 @@ const SCREEN_SIZE: Vec2 = Vec2::new(800.0, 600.0);
 /// Stores a ball's position and velocity in screen coordinates.
 #[derive(Debug, Clone, Copy)]
 struct Ball {
-
     /// The center of the ball.
     position: Vec2,
 
@@ -57,7 +56,6 @@ fn step(ball: &mut Ball, delta_seconds: f32, bounds: Vec2) {
 
 /// Holds the game state and reusable circle mesh.
 struct MainState {
-
     /// The moving ball.
     ball: Ball,
 
@@ -66,15 +64,14 @@ struct MainState {
 }
 
 impl MainState {
-
     /// Creates the example circle mesh in the supplied ggez context.
-///
+    ///
     /// # Errors
-///
+    ///
     /// Returns a graphics error if the circle mesh cannot be created.
     ///
     /// # Arguments
-///
+    ///
     /// * `context` - Shared state and services used to complete the ggez workflow.
     fn new(context: &Context) -> GameResult<Self> {
         let circle = graphics::Mesh::new_circle(
@@ -97,11 +94,10 @@ impl MainState {
 }
 
 impl EventHandler for MainState {
-
     /// Advances the ball for one frame.
     ///
     /// # Arguments
-///
+    ///
     /// * `context` - Application state and services required to perform the operation.
     fn update(&mut self, context: &mut Context) -> GameResult {
         step(

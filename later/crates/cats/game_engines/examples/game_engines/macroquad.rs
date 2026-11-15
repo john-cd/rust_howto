@@ -16,7 +16,6 @@ const BALL_RADIUS: f32 = 15.0;
 /// A ball with a position and velocity in pixels.
 #[derive(Debug, Clone, Copy)]
 struct Ball {
-
     /// The center of the ball.
     position: Vec2,
 

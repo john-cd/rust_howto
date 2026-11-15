@@ -16,7 +16,6 @@ use geocoding::Point;
 
 /// Wraps any forward geocoder and remembers its answers.
 struct CachedGeocoder<G> {
-
     /// The provider to ask on a cache miss.
     inner: G,
 
@@ -25,7 +24,6 @@ struct CachedGeocoder<G> {
 }
 
 impl<G: Forward<f64>> CachedGeocoder<G> {
-
     /// Creates an empty cache around `inner`.
     fn new(inner: G) -> Self {
         Self {
@@ -82,21 +80,19 @@ fn locate_online(address: &str) -> Result<Option<Point<f64>>, GeocodingError> {
 
 /// A geocoder that knows one place and counts the questions it is asked.
 struct Gazetteer {
-
     /// The number of calls to `forward`.
     calls: std::cell::Cell<usize>,
 }
 
 impl Forward<f64> for Gazetteer {
-
     /// Returns the coordinates for its one supported place query.
     ///
     /// # Arguments
-///
+    ///
     /// * `address` - Normalized place query received by the cache.
     ///
     /// # Returns
-///
+    ///
     /// One point for the Eiffel Tower query, or an empty list for other queries.
     fn forward(&self, address: &str) -> Result<Vec<Point<f64>>, GeocodingError> {
         self.calls.set(self.calls.get() + 1);

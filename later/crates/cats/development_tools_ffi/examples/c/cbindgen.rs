@@ -22,7 +22,6 @@ pub extern "C" fn subtract(a: i32, b: i32) -> i32 {
 /// A point with the memory layout of a C struct.
 #[repr(C)]
 pub struct Point {
-
     /// The x coordinate.
     pub x: f64,
 

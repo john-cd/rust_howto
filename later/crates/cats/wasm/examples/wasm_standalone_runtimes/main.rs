@@ -27,7 +27,6 @@ mod wasmtime_sandbox;
 /// Command-line arguments.
 #[derive(Parser)]
 struct Cli {
-
     /// The example to run.
     #[command(subcommand)]
     command: Option<Commands>,
@@ -36,7 +35,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-
     /// Runs the `wasmer` example.
     #[cfg(feature = "wasmer")]
     #[command(name = "wasmer")]

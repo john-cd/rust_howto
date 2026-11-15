@@ -28,7 +28,6 @@ use salsa::Setter as _;
 /// recompute.
 #[salsa::input]
 struct SourceInput {
-
     /// The text to analyze.
     content: String,
 }
@@ -63,7 +62,6 @@ fn summary(db: &dyn salsa::Database, input: SourceInput) -> String {
 #[salsa::db]
 #[derive(Default)]
 struct MyDatabase {
-
     /// The storage of the memoized results.
     storage: salsa::Storage<Self>,
 }

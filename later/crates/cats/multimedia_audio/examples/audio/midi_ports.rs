@@ -14,10 +14,8 @@ use midir::MidiInput;
 /// A decoded channel voice message.
 #[derive(Debug, PartialEq, Eq)]
 enum MidiMessage {
-
     /// A key was pressed.
     NoteOn {
-
         /// Channel, from 0 to 15.
         channel: u8,
 
@@ -30,7 +28,6 @@ enum MidiMessage {
 
     /// A key was released.
     NoteOff {
-
         /// Channel, from 0 to 15.
         channel: u8,
 

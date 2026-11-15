@@ -148,7 +148,6 @@ pub type RemoteBoundCallback = Arc<dyn Fn(TransportPeer) -> ZResult<Option<Bound
 ///     .unwrap();
 /// ```
 pub struct TransportManagerConfig {
-
     /// Protocol version.
     pub version: u8,
 
@@ -220,7 +219,6 @@ pub struct TransportManagerConfig {
 }
 
 impl fmt::Debug for TransportManagerConfig {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportManagerConfig")
@@ -258,7 +256,6 @@ impl fmt::Debug for TransportManagerConfig {
 
 /// State required by `TransportManagerState` during transport operations.
 pub struct TransportManagerState {
-
     /// Unicast value.
     pub unicast: TransportManagerStateUnicast,
 
@@ -291,11 +288,10 @@ pub struct TransportManagerState {
 }
 
 impl fmt::Debug for TransportManagerState {
-
     /// Formats the value for display.
     ///
     /// # Arguments
-///
+    ///
     /// * `f` - Formatter used to write the debug representation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut debug = f.debug_struct("TransportManagerState");
@@ -309,7 +305,6 @@ impl fmt::Debug for TransportManagerState {
 
 /// Parameters used to configure and construct a transport manager.
 pub struct TransportManagerParams {
-
     /// Settings that control how this transport manager params is constructed or processed.
     config: TransportManagerConfig,
 
@@ -318,11 +313,10 @@ pub struct TransportManagerParams {
 }
 
 impl fmt::Debug for TransportManagerParams {
-
     /// Formats the value for display.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `f` - Formatter used to write the formatted representation.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("TransportManagerParams")
@@ -334,7 +328,6 @@ impl fmt::Debug for TransportManagerParams {
 
 /// Configuration builder for `TransportManager`.
 pub struct TransportManagerBuilder {
-
     /// Protocol version.
     version: u8,
 
@@ -411,7 +404,6 @@ pub struct TransportManagerBuilder {
 }
 
 impl fmt::Debug for TransportManagerBuilder {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut debug = f.debug_struct("TransportManagerBuilder");
@@ -461,7 +453,7 @@ impl TransportManagerBuilder {
     /// Configures the shared-memory reader used by the transport manager.
     ///
     /// # Arguments
-///
+    ///
     /// * `shm_reader` - Reader that supplies received shared-memory buffers.
     #[cfg(feature = "shared-memory")]
     pub fn shm_reader(mut self, shm_reader: Option<ShmReader>) -> Self {
@@ -497,7 +489,7 @@ impl TransportManagerBuilder {
     /// Sets the maximum time a message may wait for batch aggregation.
     ///
     /// # Arguments
-///
+    ///
     /// * `batching_time_limit` - Maximum delay before a pending batch is sent.
     pub fn batching_time_limit(mut self, batching_time_limit: Duration) -> Self {
         self.batching_time_limit = batching_time_limit;
@@ -512,9 +504,9 @@ impl TransportManagerBuilder {
     /// Waits for before drop.
     ///
     /// # Arguments
-///
+    ///
     /// * `wait_before_drop` - Duration controlling the operation.
-///
+    ///
     /// Sets the delay before dropping an inactive transport.
     pub fn wait_before_drop(mut self, wait_before_drop: Duration) -> Self {
         self.wait_before_drop = wait_before_drop;
@@ -525,7 +517,7 @@ impl TransportManagerBuilder {
     /// callers.
     ///
     /// # Arguments
-///
+    ///
     /// * `max_wait_before_drop_fragments` - Duration controlling the operation.
     pub fn max_wait_before_drop_fragments(
         mut self,
@@ -538,9 +530,9 @@ impl TransportManagerBuilder {
     /// Waits for before close.
     ///
     /// # Arguments
-///
+    ///
     /// * `wait_before_close` - Duration controlling the operation.
-///
+    ///
     /// Sets the delay before closing a transport.
     pub fn wait_before_close(mut self, wait_before_close: Duration) -> Self {
         self.wait_before_close = wait_before_close;
@@ -596,7 +588,7 @@ impl TransportManagerBuilder {
     /// Sets the callback that determines the transport bound for a peer.
     ///
     /// # Arguments
-///
+    ///
     /// * `callback` - Callback that selects the local bound for each remote peer.
     pub fn bound_callback(
         mut self,
@@ -609,11 +601,11 @@ impl TransportManagerBuilder {
     /// Applies transport settings from the expanded configuration to this builder.
     ///
     /// # Arguments
-///
+    ///
     /// * `config` - Expanded runtime configuration for transport, links, and shared memory.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if protocol configuration reports errors or the unicast or multicast
     /// settings cannot be built.
     pub async fn from_config(
@@ -676,11 +668,11 @@ impl TransportManagerBuilder {
     /// Starts a listener for the endpoint and returns its advertised locator.
     ///
     /// # Arguments
-///
+    ///
     /// * `endpoint` - Network endpoint on which to listen.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if shared-memory, unicast, or multicast manager construction fails.
     pub fn build(
         self,
@@ -788,11 +780,11 @@ impl TransportManagerBuilder {
     /// Builds a transport manager with the test handler and test statistics registry.
     ///
     /// # Arguments
-///
+    ///
     /// * `handler` - Event handler notified about transport lifecycle events.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if shared-memory, unicast, or multicast manager construction fails.
     #[cfg(feature = "test")]
     pub fn build_test(self, handler: Arc<dyn TransportEventHandler>) -> ZResult<TransportManager> {
@@ -807,7 +799,6 @@ impl TransportManagerBuilder {
 }
 
 impl Default for TransportManagerBuilder {
-
     /// Creates a builder populated with the default transport, queue, and link settings.
     fn default() -> Self {
         let link_rx = LinkRxConf::default();
@@ -850,7 +841,6 @@ impl Default for TransportManagerBuilder {
 /// Manager that owns transports and routes transport lifecycle events.
 #[derive(Clone)]
 pub struct TransportManager {
-
     /// Settings that control how this transport manager is constructed or processed.
     pub config: Arc<TransportManagerConfig>,
 
@@ -876,7 +866,6 @@ pub struct TransportManager {
 }
 
 impl fmt::Debug for TransportManager {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut debug = f.debug_struct("TransportManager");
@@ -896,7 +885,6 @@ impl fmt::Debug for TransportManager {
 }
 
 impl TransportManager {
-
     /// Creates a new the default value.
     pub fn new(
         params: TransportManagerParams,
@@ -974,11 +962,11 @@ impl TransportManager {
     /// Starts a listener for the endpoint and returns its advertised locator.
     ///
     /// # Arguments
-///
+    ///
     /// * `endpoint` - Network endpoint on which to listen.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if endpoint inspection or starting the corresponding unicast or multicast
     /// listener fails.
     pub async fn add_listener(&self, endpoint: EndPoint) -> ZResult<Locator> {
@@ -996,11 +984,11 @@ impl TransportManager {
     /// Removes the listener for the endpoint and cleans up its link manager when unused.
     ///
     /// # Arguments
-///
+    ///
     /// * `endpoint` - Endpoint identifying the listener to remove.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if endpoint inspection or removing the listener fails.
     pub async fn del_listener(&self, endpoint: &EndPoint) -> ZResult<()> {
         if self

@@ -59,11 +59,10 @@ fn show_table(ui: &mut egui::Ui, row_count: usize) -> usize {
 struct TableApp;
 
 impl eframe::App for TableApp {
-
     /// Draws the example table in the central egui panel.
-///
+    ///
     /// # Arguments
-///
+    ///
     /// * `ui` - egui interface used to lay out the table panel.
     /// * `_frame` - eframe window state, unused by this app.
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {

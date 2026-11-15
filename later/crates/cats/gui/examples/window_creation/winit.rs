@@ -19,7 +19,6 @@ use winit::window::WindowId;
 /// Application state for the example window.
 #[derive(Default)]
 struct App {
-
     /// The window created after the event loop resumes.
     window: Option<Window>,
 }

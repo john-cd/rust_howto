@@ -276,7 +276,6 @@ impl TransportUnicastUniversal {
 
 #[async_trait]
 impl TransportUnicastTrait for TransportUnicastUniversal {
-
     /// **********************************
     // LINK
 
@@ -498,7 +497,6 @@ impl TransportUnicastTrait for TransportUnicastUniversal {
 ///   separate links) for message scheduling based on QoS.
 #[derive(Default)]
 pub(super) struct TransportLinks {
-
     /// Two associated links are contiguous within the array as such:
     /// \[..., Link, AssociatedLink, ...\].
     ///

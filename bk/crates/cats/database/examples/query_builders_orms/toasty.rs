@@ -11,7 +11,6 @@
 /// A user stored by the example database.
 #[derive(Debug, toasty::Model)]
 struct User {
-
     /// The database-generated identifier.
     #[key]
     #[auto]

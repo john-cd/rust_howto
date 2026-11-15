@@ -32,17 +32,14 @@ impl Renderable for Render {
 #[derive(Serialize, Debug)]
 pub struct RenderInfo {
     // name (e.g. path without glob prefix) of the template for a given object
-
     /// Name of the template, without the glob prefix.
     pub template_name: String,
     // String containing a template to build the destination file path
-
     /// Template of the destination file path.
     pub dest_filepath_template: String,
 }
 
 impl RenderInfo {
-
     /// Creates the information required to render an object.
     pub fn new(template_name: String, dest_filepath_template: String) -> Self {
         Self {

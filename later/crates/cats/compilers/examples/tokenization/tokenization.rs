@@ -16,7 +16,6 @@ use logos::Logos;
 /// Defines the outcomes available to the tokenization workflow, including identifier, plus.
 #[logos(skip r"[ \t]+")]
 enum Token {
-
     /// An identifier made from ASCII letters.
     #[regex(r"[a-zA-Z]+")]
     Identifier,

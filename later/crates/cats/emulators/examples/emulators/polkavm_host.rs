@@ -37,7 +37,6 @@ type ExampleResult<T> = Result<T, Box<dyn Error + Send + Sync>>;
 /// The state of the host, shared with the guest program.
 #[derive(Debug, Default)]
 struct HostState {
-
     /// The number of calls to the host function.
     counter: u32,
 }

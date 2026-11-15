@@ -25,7 +25,6 @@ fn main() -> Result<(), eframe::Error> {
 /// An app with a counter.
 #[derive(Default)]
 struct MyApp {
-
     /// The number of clicks on the button.
     counter: i32,
 
@@ -37,7 +36,6 @@ struct MyApp {
 }
 
 impl MyApp {
-
     /// Draws the app's controls and returns the increment button's rectangle.
     fn show(&mut self, ui: &mut egui::Ui) -> egui::Rect {
         egui::CentralPanel::default()
@@ -57,7 +55,6 @@ impl MyApp {
 }
 
 impl eframe::App for MyApp {
-
     /// Draws one frame of the application.
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
         self.show(ui);

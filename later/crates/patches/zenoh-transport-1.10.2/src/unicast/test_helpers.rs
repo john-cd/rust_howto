@@ -53,7 +53,6 @@ use crate::unicast::transport_unicast_inner::TransportUnicastTrait;
 /// calls the `on_schedule` callback provided at construction time, allowing tests to observe
 /// every message that the routing layer sends to this face without a real network connection.
 pub struct MockTransportUnicastInner {
-
     /// Zenoh identifier of this peer.
     zid: ZenohIdProto,
 
@@ -65,7 +64,6 @@ pub struct MockTransportUnicastInner {
 }
 
 impl fmt::Debug for MockTransportUnicastInner {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("MockTransportUnicastInner")
@@ -78,7 +76,6 @@ impl fmt::Debug for MockTransportUnicastInner {
 
 #[async_trait]
 impl TransportUnicastTrait for MockTransportUnicastInner {
-
     /// Changes the callback held by the mock transport unicast inner; subsequent operations use the
     /// updated value.
     fn set_callback(&self, _callback: Arc<dyn TransportPeerEventHandler>) {}

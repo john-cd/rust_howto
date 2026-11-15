@@ -84,12 +84,12 @@ impl TransportMulticastInner {
     /// Validates a join announcement from a peer that is already connected.
     ///
     /// # Arguments
-///
+    ///
     /// * `join` - Join announcement received from the peer.
     /// * `peer` - Remote peer associated with this event.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the join announcement's identity or negotiated settings differ from the
     /// peer's established transport state.
     pub(super) fn handle_join_from_peer(
@@ -119,13 +119,13 @@ impl TransportMulticastInner {
     /// Validates a join from an unknown peer and registers it when it matches local settings.
     ///
     /// # Arguments
-///
+    ///
     /// * `join` - Join announcement received from the peer.
     /// * `locator` - Network locator associated with the peer.
     /// * `batch_size` - Batch size negotiated for the receiving link.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if initializing the new peer fails.
     pub(super) fn handle_join_from_unknown(
         &self,
@@ -192,12 +192,12 @@ impl TransportMulticastInner {
     /// its messages to the callback.
     ///
     /// # Arguments
-///
+    ///
     /// * `frame` - Decoded frame received from the peer.
     /// * `peer` - Peer whose receive sequence and callback state are updated.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if QoS is disabled and the frame uses a non-default priority, sequence
     /// verification fails, or callback processing fails.
     fn handle_frame(
@@ -340,14 +340,14 @@ impl TransportMulticastInner {
     /// Decodes received frames and transport messages and dispatches them to their handlers.
     ///
     /// # Arguments
-///
+    ///
     /// * `batch` - Received batch to decode.
     /// * `locator` - Locator of the peer that sent the batch.
     /// * `batch_size` - Batch size used to validate join announcements.
     /// * `stats` - Optional link statistics updated for each decoded transport message.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if decoding a message, validating a frame or fragment, or initializing a
     /// peer from a join fails.
     pub(super) fn read_messages(

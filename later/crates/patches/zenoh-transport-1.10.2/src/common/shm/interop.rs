@@ -69,7 +69,6 @@ use crate::unicast::establishment::ext::shm::segment::RXAuthSegment;
 
 #[derive(Debug)]
 struct ProviderInitCfg {
-
     /// Size of the shm.
     shm_size: NonZeroUsize,
 }
@@ -77,7 +76,6 @@ struct ProviderInitCfg {
 /// Defines the outcomes available to the shm workflow, including initializing, ready, error.
 #[derive(Debug)]
 pub enum ProviderInitState {
-
     /// Initializing variant of `ProviderInitState`.
     Initializing(flume::Receiver<Option<Arc<ShmProvider<PosixShmProviderBackend>>>>),
 
@@ -103,11 +101,10 @@ enum ProviderInitStateInner {
 }
 
 impl std::fmt::Debug for ProviderInitStateInner {
-
     /// Formats the value for display.
     ///
     /// # Arguments
-///
+    ///
     /// * `f` - Formatter used to write the debug representation.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
@@ -126,7 +123,6 @@ pub struct LazyShmProvider {
 }
 
 impl std::fmt::Debug for LazyShmProvider {
-
     /// Formats the value for display.
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.debug_struct("LazyShmProvider")
@@ -137,11 +133,10 @@ impl std::fmt::Debug for LazyShmProvider {
 }
 
 impl LazyShmProvider {
-
     /// Creates a shared-memory provider with the requested segment size and payload threshold.
     ///
     /// # Arguments
-///
+    ///
     /// * `shm_size` - Size of the shared-memory segment to initialize.
     /// * `message_size_threshold` - Minimum payload size eligible for shared-memory wrapping.
     pub fn new(shm_size: NonZeroUsize, message_size_threshold: usize) -> Self {
@@ -206,7 +201,7 @@ impl LazyShmProvider {
     /// Wraps a large payload slice with shared-memory metadata and records its handoff transaction.
     ///
     /// # Arguments
-///
+    ///
     /// * `ext_shm` - Message extension updated with shared-memory metadata for the slice.
     /// * `slice` - Payload slice to replace with a shared-memory reference when eligible.
     /// * `handoff_transaction` - Transaction that records the shared-memory reference for sending.
@@ -251,7 +246,6 @@ impl LazyShmProvider {
 /// Configuration for handing link payloads to shared memory.
 #[derive(Debug)]
 pub struct LinkShmHandoffConfig {
-
     /// Rx value.
     pub rx: RxHandoffChannel,
 
@@ -260,11 +254,10 @@ pub struct LinkShmHandoffConfig {
 }
 
 impl LinkShmHandoffConfig {
-
     /// Combines the receive and transmit handoff channels for a link.
     ///
     /// # Arguments
-///
+    ///
     /// * `rx` - Channel used to complete received shared-memory references.
     /// * `tx` - Channel used to retain shared-memory buffers until transmission completes.
     pub fn new(rx: RxHandoffChannel, tx: TxHandoffChannel) -> Self {
@@ -283,17 +276,15 @@ impl LinkShmHandoffConfig {
 /// Shared-memory settings negotiated for a transport.
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct TransportShmConfig {
-
     /// Link partner segment value.
     link_partner_segment: Arc<RXAuthSegment>,
 }
 
 impl TransportShmConfig {
-
     /// Creates transport shared-memory settings for the peer's receive segment.
     ///
     /// # Arguments
-///
+    ///
     /// * `link_partner_segment` - Peer segment mounted to resolve incoming shared-memory buffers.
     pub fn new(link_partner_segment: Arc<RXAuthSegment>) -> Self {
         Self {
@@ -303,7 +294,6 @@ impl TransportShmConfig {
 }
 
 impl PartnerShmConfig for TransportShmConfig {
-
     /// Reports whether this value supports protocol.
     fn supports_protocol(&self, protocol: ProtocolID) -> bool {
         self.link_partner_segment.protocols().contains(&protocol)
@@ -315,7 +305,6 @@ impl PartnerShmConfig for TransportShmConfig {
 pub struct MulticastTransportShmConfig;
 
 impl PartnerShmConfig for MulticastTransportShmConfig {
-
     /// Reports whether this value supports protocol.
     fn supports_protocol(&self, _protocol: ProtocolID) -> bool {
         true
@@ -331,7 +320,6 @@ impl PartnerShmConfig for MulticastTransportShmConfig {
 /// regardless of these flags.
 #[derive(Clone, Copy, Debug)]
 pub struct ShmOptimizationPolicy {
-
     /// Whether publication (`Put`) payloads may be implicitly copied into SHM.
     pub put: bool,
 
@@ -457,7 +445,6 @@ pub fn map_zmsg_to_shmbuf(
 
 /// Specifies the operations implementations provide to shm callers.
 pub trait PartnerShmConfig {
-
     /// Reports whether this value supports protocol.
     fn supports_protocol(&self, protocol: ProtocolID) -> bool;
 }
@@ -477,7 +464,7 @@ trait MapShm {
     /// Maps shared-memory references in this message's payload to local buffers.
     ///
     /// # Arguments
-///
+    ///
     /// * `shmr` - Reader used to mount the referenced shared-memory buffers.
     /// * `handoff` - Receiver used to complete shared-memory receive handoffs.
     /// * `priority` - Priority associated with the receive handoff.
@@ -574,13 +561,13 @@ impl MapShm for Put {
     /// Maps shared-memory references in this put payload to local buffers.
     ///
     /// # Arguments
-///
+    ///
     /// * `shmr` - Reader used to mount the referenced shared-memory buffers.
     /// * `handoff` - Receiver used to complete shared-memory receive handoffs.
     /// * `priority` - Priority associated with the receive handoff.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if a referenced shared-memory buffer cannot be mounted.
     fn map_to_shmbuf(
         &mut self,
@@ -623,13 +610,13 @@ impl MapShm for Query {
     /// Maps the query body's shared-memory payload references to local buffers.
     ///
     /// # Arguments
-///
+    ///
     /// * `shmr` - Reader used to mount the referenced shared-memory buffers.
     /// * `handoff` - Receiver used to complete shared-memory receive handoffs.
     /// * `priority` - Priority associated with the receive handoff.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if a referenced shared-memory buffer cannot be mounted.
     fn map_to_shmbuf(
         &mut self,
@@ -675,13 +662,13 @@ impl MapShm for Reply {
     /// Maps a put reply's shared-memory payload references to local buffers.
     ///
     /// # Arguments
-///
+    ///
     /// * `shmr` - Reader used to mount the referenced shared-memory buffers.
     /// * `handoff` - Receiver used to complete shared-memory receive handoffs.
     /// * `priority` - Priority associated with the receive handoff.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if a referenced shared-memory buffer cannot be mounted.
     fn map_to_shmbuf(
         &mut self,
@@ -722,7 +709,7 @@ impl MapShm for Err {
     /// Maps shared-memory references in this error payload to local buffers.
     ///
     /// # Arguments
-///
+    ///
     /// * `shmr` - Reader used to mount the referenced shared-memory buffers.
     /// * `handoff` - Receiver used to complete shared-memory receive handoffs.
     /// * `priority` - Priority associated with the receive handoff.

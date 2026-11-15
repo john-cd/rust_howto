@@ -19,7 +19,6 @@
 /// natively.
 #[derive(Debug, PartialEq, Eq)]
 pub struct RequestSpec {
-
     /// Fully qualified endpoint URL after joining the base and request path.
     pub url: String,
 

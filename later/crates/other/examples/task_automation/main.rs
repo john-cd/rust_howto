@@ -23,7 +23,6 @@ use cron::Schedule;
 
 /// A task to run on a schedule.
 struct Task {
-
     /// A `cron` expression (seconds first).
     schedule: Schedule,
 
@@ -32,7 +31,6 @@ struct Task {
 }
 
 impl Task {
-
     /// Creates a task from a schedule expression and a command template.
     fn new(schedule: &str, command: &str) -> Result<Self> {
         Ok(Self {
@@ -49,7 +47,7 @@ impl Task {
     /// Expands `$WHAT`, tokenizes the configured command, runs it, and returns stdout.
     ///
     /// # Errors
-///
+    ///
     /// Returns an error if the command is empty, cannot be started, or exits unsuccessfully.
     fn run(&self, what: &str) -> Result<String> {
         let line = shellexpand::env_with_context_no_errors(&self.command, |name: &str| {
