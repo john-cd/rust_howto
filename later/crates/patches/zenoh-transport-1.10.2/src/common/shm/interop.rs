@@ -570,7 +570,7 @@ impl MapShm for Query {
     }
 
     /// # Errors
-    /// An error is returned if Some fails.
+    /// Returns an error if mapping the query payload to a shared-memory buffer fails.
     fn map_to_shmbuf(
         &mut self,
         shmr: &ShmReader,
@@ -613,7 +613,7 @@ impl MapShm for Reply {
     }
 
     /// # Errors
-    /// An error is returned if Put fails.
+    /// Returns an error if mapping the reply payload to a shared-memory buffer fails.
     fn map_to_shmbuf(
         &mut self,
         shmr: &ShmReader,
@@ -668,7 +668,8 @@ impl MapShm for Err {
 /// # Arguments
 /// * `shmr` - Reader supplying the input data.
 /// # Errors
-/// An error is returned if read, read_shmbuf fails.
+/// Returns an error if the shared-memory metadata cannot be decoded or the referenced buffer cannot
+/// be mounted.
 #[cold]
 #[inline(never)]
 pub fn map_zslice_to_shmbuf(zslice: &mut ZSlice, shmr: &ShmReader) -> ZResult<()> {

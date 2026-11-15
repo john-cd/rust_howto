@@ -358,7 +358,7 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
     /// * `input` - Input data whose fields determine the requested accept fsm operation.
     ///
     /// # Errors
-    /// An error is returned if let, cfg fails.
+    /// Returns an error if constructing any negotiated extension for the init ACK fails.
     async fn send_init_ack(
         self,
         input: Self::SendInitAckIn,
@@ -670,7 +670,7 @@ impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
     /// * `input` - Input data whose fields determine the requested accept operation.
     ///
     /// # Errors
-    /// An error is returned if send_open_ack, cfg fails.
+    /// Returns an error if constructing any negotiated extension for the open ACK fails.
     async fn send_open_ack(
         self,
         input: Self::SendOpenAckIn,

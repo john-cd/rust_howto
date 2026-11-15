@@ -131,7 +131,6 @@ impl TransportLinkMulticast {
     //     let mut link = self.rx();
     //     link.recv().await
     // }
-    ///
 
     pub(crate) async fn close(&self, reason: Option<u8>) -> ZResult<()> {
         if let Some(reason) = reason {
@@ -181,7 +180,7 @@ impl TransportLinkMulticastTx {
     /// * `batch` - Mutable wbatch whose state is updated by this operation.
 
     /// # Errors
-    /// An error is returned if finalize, as_slice fails.
+    /// Returns an error if batch finalization or writing the bytes to the link fails.
     pub(crate) async fn send_batch(&mut self, batch: &mut WBatch) -> ZResult<()> {
         /// Shared `err` used by this module.
         const ERR: &str = "Write error on link: ";
@@ -489,8 +488,6 @@ impl TransportLinkMulticastUniversal {
     pub(super) fn stop_rx(&mut self) {
         self.signal_rx.trigger();
     }
-
-    ///
 
     /// # Errors
     /// An error is returned if a fallible operation fails.

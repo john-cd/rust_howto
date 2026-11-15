@@ -179,9 +179,8 @@ impl SeqNumGenerator {
     /// * `initial_sn` - The initial sequence number. It is a good practice to initialize the
     ///   sequence number generator with a random number
     ///
-    /// * `sn_resolution` - The resolution, in bits, to be used for the sequence number generator.
-    ///   As a consequence of wire zenoh's representation of sequence numbers this should be a
-    ///   multiple of 7.
+    /// * `resolution` - The sequence number resolution, in bits. As a consequence of wire zenoh's
+    ///   representation of sequence numbers this should be a multiple of 7.
     ///
     /// # Errors
     ///
@@ -212,6 +211,7 @@ impl SeqNumGenerator {
 mod tests {
     use super::*;
 
+    /// Sets sequence numbers and wraps increments at the configured mask.
     #[test]
     fn sn_set() {
         let mask = (u8::MAX >> 1) as TransportSn;
@@ -233,6 +233,7 @@ mod tests {
         assert_eq!(sn0a.get(), 1);
     }
 
+    /// Calculates sequence-number gaps across wraparound.
     #[test]
     fn sn_gap() {
         let mask = (u8::MAX >> 1) as TransportSn;
@@ -248,6 +249,7 @@ mod tests {
         assert_eq!(sn0a.gap(0).unwrap(), 1);
     }
 
+    /// Compares sequence numbers using half-range precedence.
     #[test]
     fn sn_precedence() {
         let mask = (u8::MAX >> 1) as TransportSn;
@@ -262,6 +264,7 @@ mod tests {
         assert!(!sn0a.precedes((mask / 2) + 1).unwrap());
     }
 
+    /// Generates sequence numbers and wraps at the configured mask.
     #[test]
     fn sn_generation() {
         let mask = (u8::MAX >> 1) as TransportSn;

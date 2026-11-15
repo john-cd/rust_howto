@@ -125,7 +125,7 @@ pub(crate) async fn read_with_link(
 
 impl TransportUnicastLowlatency {
     /// # Errors
-    /// An error is returned if as_ref fails.
+    /// Returns an error if no link is available or sending the message fails.
     ///
     /// # Panics
     /// Panics if an internal `Result` or `Option` has no usable value.

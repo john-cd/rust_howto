@@ -83,8 +83,6 @@ impl<T> ReliabilityQueue<T> {
         self.len() == self.capacity()
     }
 
-    ///
-
     #[inline]
     pub(super) fn get_base(&self) -> u64 {
         self.sn.get()
@@ -289,6 +287,7 @@ mod tests {
 
     use super::*;
 
+    /// Pulls inserted messages in order and leaves the queue empty.
     #[test]
     fn reliability_queue_simple() {
         let size = 2;
@@ -312,6 +311,7 @@ mod tests {
         assert!(queue.is_empty());
     }
 
+    /// Holds out-of-order messages until earlier sequence numbers arrive.
     #[test]
     fn reliability_queue_order() {
         let size = 2;
@@ -339,6 +339,7 @@ mod tests {
         assert!(queue.is_empty());
     }
 
+    /// Rejects inserts beyond the queue capacity.
     #[test]
     fn reliability_queue_full() {
         let size = 2;
@@ -366,6 +367,7 @@ mod tests {
         assert!(queue.is_empty());
     }
 
+    /// Rejects sequence numbers outside the current queue window.
     #[test]
     fn reliability_queue_out_of_sync() {
         let size = 2;
@@ -380,6 +382,7 @@ mod tests {
         assert!(queue.is_empty());
     }
 
+    /// Preserves message order when sequence numbers wrap around.
     #[test]
     fn reliability_queue_overflow() {
         // Test the overflow case
@@ -414,6 +417,7 @@ mod tests {
         assert!(queue.is_empty());
     }
 
+    /// Tracks missing sequence numbers in the retransmission mask.
     #[test]
     fn reliability_queue_mask() {
         // Test the deterministic insertion of elements and mask
@@ -449,6 +453,7 @@ mod tests {
         assert!(queue.is_empty());
     }
 
+    /// Tracks the retransmission mask for randomly ordered inserts.
     #[test]
     fn reliability_queue_random_mask() {
         // Test the random insertion of elements and the mask
@@ -498,6 +503,7 @@ mod tests {
         assert_eq!(queue.get_mask(), mask);
     }
 
+    /// Advances the queue base and resets its window when rebased.
     #[test]
     fn reliability_queue_rebase() {
         let size = 8;
@@ -579,6 +585,7 @@ mod tests {
         assert_eq!(queue.get_mask(), mask);
     }
 
+    /// Removes acknowledged messages from the reliability queue.
     #[test]
     fn reliability_queue_remove() {
         let size = 8;
