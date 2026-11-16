@@ -49,7 +49,3 @@ Convert and manage colors with a focus on correctness, flexibility and ease of u
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

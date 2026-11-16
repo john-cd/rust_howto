@@ -83,7 +83,3 @@ Usually handled with build scripts ([`build.rs`][book~cargo~build-script]↗{{hi
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

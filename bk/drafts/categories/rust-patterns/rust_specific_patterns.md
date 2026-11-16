@@ -102,8 +102,6 @@ When a value has a field that only affects how it is shown, such as a display st
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-write
-
 - [& vs. ref in Rust patterns][blog~rust-patterns-ref]↗.
 
 </div>
