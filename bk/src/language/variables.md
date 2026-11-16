@@ -41,7 +41,7 @@ Destructuring allows you to unpack values from compound types like tuples, array
 ## Related Topics {#related-topics .skip}
 
 - [[constants_and_statics | Constants and Statics]].
-- [[match | Match and Patterns]].
+- [Match and Patterns](pattern_matching.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

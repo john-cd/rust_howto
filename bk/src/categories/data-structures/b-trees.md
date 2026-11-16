@@ -40,7 +40,7 @@ It is based on a self-balancing tree, specifically a B-Tree. `BTreeSet` stores u
 ## Related Topics {#related-topics .skip}
 
 - [[hashmaps | Hashmaps]].
-- Other [[maps | Maps]].
+- Other [Maps](other_maps.md).
 - [[sorting | Sorting]].
 - [[vectors | Vectors]].
 

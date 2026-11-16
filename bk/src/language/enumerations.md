@@ -79,9 +79,9 @@ If the same enum is also serialized with [`serde`][c~serde~docs]↗{{hi:serde}},
 
 ## Related Topics {#related-topics .skip}
 
-- [[match | Match]].
-- [[rust-patterns | Rust Patterns]].
-- [[functional_programming | Functional Programming]].
+- [Match](pattern_matching.md).
+- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
+- [Functional Programming](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/functional_programming.md).
 - [[data_types | Data Types]].
 - [[structs | Structs]].
 

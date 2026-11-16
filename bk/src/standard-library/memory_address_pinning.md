@@ -48,7 +48,7 @@ For examples of polling futures and running them on an executor, see [Async Rust
 
 ## Related Topics {#related-topics .skip}
 
-- [[futures | Futures]].
+- [Futures](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/asynchronous/futures.md).
 - [[traits | Traits]].
 
 {{#include refs.incl.md}}

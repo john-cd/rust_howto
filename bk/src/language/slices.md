@@ -2,7 +2,9 @@
 
 # Slices
 
-{{#include slices.incl.md}}{{hi:Slices}}
+{{#include slices.incl.md}}
+
+{{hi:Slices}}
 
 ## Slice Basics {#slices}
 

@@ -52,7 +52,7 @@ Apply the `#[must_use]` attribute to functions, methods, or entire types (like s
 
 `Result<T, E>` itself is marked `#[must_use]`, so ignoring a returned result produces a warning even when the function that produced it has no `#[must_use]` attribute. If you ignore the result, you may also be ignoring an error that could be corrected or reported.
 
-In the [[builder_pattern | builder pattern]], methods often return `Self` or a modified version of the builder. The final `.build()` or similar method returns the constructed object. If you forget to call the final method or assign the result, you haven't actually created the object you intended. Adding `#[must_use]` on the builder type or its methods helps catch this problem.
+In the [builder pattern](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/builder_pattern.md), methods often return `Self` or a modified version of the builder. The final `.build()` or similar method returns the constructed object. If you forget to call the final method or assign the result, you haven't actually created the object you intended. Adding `#[must_use]` on the builder type or its methods helps catch this problem.
 
 ## Mark an Item as `deprecated` {#deprecated}
 
@@ -139,9 +139,9 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 ## Related Topics {#related-topics .skip}
 
 - [[automatic_trait_derivation | Derive]] for the `#[derive(...)]` attribute used to automatically derive common traits.
-- [[rust-patterns | Rust Patterns]].
-- [[testing | Testing]] for the `#[test]` attribute.
-- [[documentation | Documentation]] for the `#[doc(...)]` attribute.
+- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
+- [Testing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_testing/testing.md) for the `#[test]` attribute.
+- [Documentation](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/documentation/documentation.md) for the `#[doc(...)]` attribute.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -2,7 +2,9 @@
 
 # Example Code and Templates
 
-{{#include example_code.incl.md}}{{hi:Example code}}
+{{#include example_code.incl.md}}
+
+{{hi:Example code}}
 
 ## Small Examples and Exercises {#examples-exercises}
 

@@ -127,10 +127,10 @@ A method returning `&T` from `&mut self` has the same rule. The returned referen
 ## Related Topics {#related-topics .skip}
 
 - [[clone-on-write | COW]].
-- [[memory-management | Memory Management]].
+- [Memory Management](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/memory-management/index.md).
 - [[ownership_and_borrowing | Ownership & Borrowing]].
-- [[rust-patterns | Rust Patterns]].
-- [[typecasts | Typecasts]].
+- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
+- [Typecasts](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/encoding/typecasts.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

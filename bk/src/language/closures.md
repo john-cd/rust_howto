@@ -79,8 +79,8 @@ constructors are [function items](https://doc.rust-lang.org/reference/types/func
 ## Related Topics {#related-topics .skip}
 
 - [[functions | Functions]].
-- [[rust-patterns | Rust Patterns]].
-- [[functional_programming | Functional Programming]].
+- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
+- [Functional Programming](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/functional_programming.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

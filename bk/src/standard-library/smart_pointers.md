@@ -58,7 +58,7 @@ See [[interior_mutability | Interior Mutability]].
 
 The standard library provides several types for lazy initialization: [`LazyCell<T>`][c~std::cell::LazyCell~docs]↗, [`LazyLock`][c~std::sync::LazyLock~docs]↗, [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗.
 
-See details in the [[lazy_initialization | Lazy Initialization]] chapter.
+See details in the [Lazy Initialization](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/memory-management/lazy_initialization.md) chapter.
 
 ## Synchronization Primitives {#sync-primitives}
 
@@ -75,7 +75,7 @@ Less common primitives include:
 - [`Barrier`][c~std::sync::Barrier~docs]↗{{hi:std::sync::Barrier}} is a synchronization primitive that allows multiple threads to wait for each other at a certain point in their execution. It is useful for coordinating the execution of multiple threads that need to reach a certain point before proceeding.
 - [`Condvar`][c~std::sync::Condvar~docs]↗{{hi:std::sync::Condvar}} is a condition variable that allows threads to wait for a condition to be met before proceeding. It is often used in conjunction with [`Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} to signal when a condition changes, allowing threads to wake up and continue execution.
 
-See the [[concurrency | Concurrency]] chapter.
+See the [Concurrency](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/index.md) chapter.
 
 ## Implement a Smart Pointer with `Deref` {#deref}
 
@@ -113,11 +113,11 @@ The following example demonstrates the implementation of a basic smart pointer:
 - [[reference_counting | Reference Counting]].
 - [[resource_cleanup | Resource Cleanup]].
 - [[vectors | Vectors]].
-- [[concurrency | Concurrency]].
-- [[memory-management | Memory Management]].
-- [[memory_usage_analysis | Memory Usage Analysis]].
-- [[rust-patterns | Rust Patterns]].
-- [[shared_state | Shared State]].
+- [Concurrency](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/index.md).
+- [Memory Management](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/memory-management/index.md).
+- [Memory Usage Analysis](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_profiling/memory_usage_analysis.md).
+- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
+- [Shared State](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/shared_state.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -59,7 +59,7 @@ Primitive type `str` is a dynamically sized sequence of UTF-8 bytes. Most code u
 {{#include ../../crates/language/examples/data_types/string_data_types.rs:example}}
 ```
 
-Strings are covered in much more details in the [[strings | Strings]] and [[text-processing | Text Processing]] chapters.
+Strings are covered in much more details in the [[strings | Strings]] and [Text Processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md) chapters.
 
 ## Use the Unit and Never Special Types {#special-types}
 

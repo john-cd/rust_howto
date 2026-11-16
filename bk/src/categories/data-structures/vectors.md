@@ -60,7 +60,7 @@ Read [Implementing Vec][book~rustonomicon~implementing-vec]↗ for more details 
 - [[b-trees | B-trees]].
 - [[binary_heaps | Binary Heaps]].
 - [[hashmaps | Hashmaps]].
-- [[maps | Other Maps]].
+- [Other Maps](other_maps.md).
 - [[slices | Slices]].
 - [[stack-allocated | Stack-allocated data structures]].
 - [[stacks_and_queues | Stacks and Queues]].
@@ -69,10 +69,10 @@ Read [Implementing Vec][book~rustonomicon~implementing-vec]↗ for more details 
 ## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
-- [[encoding | Encoding]].
-- [[rust-patterns | Rust Patterns]].
+- [Encoding](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/encoding/index.md).
+- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
 - [[sorting | Sorting]].
-- [[typecasts | Typecasts]].
+- [Typecasts](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/encoding/typecasts.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

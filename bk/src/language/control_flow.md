@@ -16,7 +16,7 @@
 {{#include ../../crates/language/examples/control_flow/if_else.rs:example}}
 ```
 
-Refer to the [[match | match]] chapter for `if let` expressions.
+Refer to the [match](pattern_matching.md) chapter for `if let` expressions.
 
 ## Create Loops Using `loop` {#loop}
 
@@ -42,7 +42,7 @@ The condition is checked before each iteration.
 {{#include ../../crates/language/examples/control_flow/while1.rs:example}}
 ```
 
-`while` supports `break` expressions and loop labels. Refer to the [[match | match]] chapter for `while let` loops.
+`while` supports `break` expressions and loop labels. Refer to the [match](pattern_matching.md) chapter for `while let` loops.
 
 ## Iterate Through a Collection with `for` {#for}
 
@@ -73,7 +73,7 @@ You may think of them as a `loop` that executes only once and allows exiting ear
 
 ## Related Topics {#related-topics .skip}
 
-- [[match | Match]].
+- [Match](pattern_matching.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -23,7 +23,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [ANIXE][anixe~website]↗ | Builds their travel services trading platform in Rust. |
 | [ARM][arm~website]↗ | Designs processor architectures and licenses semiconductor intellectual property. |
 | [Accelerant][accelerant~website]↗ | Provides data and technology for specialty insurance underwriting and distribution. |
-| [Actyx][actyx~website]↗ [(github)][actyx~repo]↗ | Actyx is a peer-to-peer event stream [[database | database]] (a.k.a. reliable durable pub-sub) written completely in Rust. |
+| [Actyx][actyx~website]↗ [(github)][actyx~repo]↗ | Actyx is a peer-to-peer event stream [database](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/index.md) (a.k.a. reliable durable pub-sub) written completely in Rust. |
 | [Adacore][adacore~website]↗ [(blog)][adacore~blog]↗ | Develops Ada and SPARK compilers and tools for safety-critical software. |
 | [Afterpay][afterpay~website]↗ | Offers buy now, pay later payment services. |
 | [Airborne Engineering][airborne-engineering~website]↗ | Develops and tests rocket propulsion systems and aerospace hardware. |
@@ -37,7 +37,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Atlassian][atlassian~website]↗ | Uses Rust to analyze petabytes of source code. |
 | [Attain][attainoutcomes~website]↗ | Provides permissioned consumer purchase data and marketing measurement products. |
 | [Automata][ata~website]↗ | Develops machine-attestation infrastructure for verifiable computing. |
-| [Bencher][bencher~website]↗ [(github)][bencher~repo]↗ | Continuous [[benchmarking | benchmarking]] tools designed to catch [[performance | performance]] regressions in CI. |
+| [Bencher][bencher~website]↗ [(github)][bencher~repo]↗ | Continuous [benchmarking](../categories/development-tools/profiling.md) tools designed to catch [performance](../categories/development-tools/profiling.md) regressions in CI. |
 | [Bitfury][bitfury~website]↗ | Exonum is an extensible framework for blockchain projects written in Rust. |
 | [Block][block~website]↗ | Builds financial technology products, including Square and Cash App. |
 | [Brainport Digital Factory][brainportdigitalfactory~website]↗ | Helps manufacturers in the Brainport region adopt digital and smart-manufacturing technologies. |
@@ -45,8 +45,8 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Braun Embedded][braun-embedded~website]↗ [(github)][braun-embedded~repo]↗ | Provides firmware development services for ARM Cortex-M microcontrollers. |
 | [Brave][brave~website]↗ [(github)][brave~repo]↗ | Uses Rust for its browser's ad-blocking engine. |
 | [Buoyant][buoyant~website]↗ | Builds Linkerd and provides cloud-native service-mesh software and support. |
-| [Calyptech][calyptech~website]↗ | Used for high [[performance | performance]] embedded system components as an alternative to C. |
-| [Canonical][canonical~website]↗ | Everything from server monitoring to [[middleware | middleware]]. |
+| [Calyptech][calyptech~website]↗ | Used for high [performance](../categories/development-tools/profiling.md) embedded system components as an alternative to C. |
+| [Canonical][canonical~website]↗ | Everything from server monitoring to [middleware](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/web-programming_http-server/middleware.md). |
 | [CarGurus][cargurus~website]↗ | Operates an online marketplace for researching and buying cars. |
 | [Cash App][cash-app~website]↗ | Provides mobile payment and other consumer financial services. |
 | [Ceph][ceph~website]↗ | Provides an open-source storage system partially written in Rust. Rust bindings for `librbd`, an interface into the Ceph storage platform. |
@@ -57,7 +57,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Cloudflare][cloudflare~website]↗ [(github)][cloudflare~repo]↗ | Uses Rust for its core edge logic. See, for example, [Pingora (blog)][cloudflare~blog]↗. |
 | [CodeDay][codeday~website]↗ | A nonprofit that helps young people learn technology by building creative projects. |
 | [Corrode][corrode~website]↗ [(github)][corrode~repo]↗ | Corrode is a Germany-based Rust consulting and development firm. |
-| [Coursera][coursera~website]↗ | Uses Rust for its [[learning | learning]] platform. |
+| [Coursera][coursera~website]↗ | Uses Rust for its [learning](learning_rust.md) platform. |
 | [Craft][craft~website]↗ | Their core machine learning engine is written in Rust. |
 | [Cryptape][cryptape~website]↗ | Their business intelligence platform built for blockchain is written in Rust. |
 | [CurrySoftware GmbH][currysoftware~repo]↗ | Develops software and open-source projects, including developer tools. |
@@ -71,7 +71,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Disney][disney~website]↗ | Creates and distributes entertainment, media, and consumer products. |
 | [Dropbox][dropbox~website]↗ | Uses Rust for its file-syncing engine. |
 | [DungeonFog][dungeonfog~website]↗ [(github)][dungeonfog~repo]↗ | Uses Rust in their game engine and map-making tool for RPGs. The "Project Deios" map maker tool is written completely in Rust. |
-| [EVO][evo~website]↗ | Develops marketplaces for online shopping, fintech, and logistics. [[Development tools | development-tools]], containerization, monitoring and orchestration systems written in Rust. |
+| [EVO][evo~website]↗ | Develops marketplaces for online shopping, fintech, and logistics. [development-tools](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/index.md), containerization, monitoring and orchestration systems written in Rust. |
 | [Embark Studios][embark-studios~website]↗ | Develops video games and interactive entertainment. |
 | [Embecosm][embecosm~website]↗ | Provides compiler, embedded-software, and hardware engineering services. |
 | [Espressif][espressif~website]↗ [(github)][espressif~repo]↗ | Rust improves performance of embedded and IoT devices in ESP products. |
@@ -122,7 +122,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Meilisearch][meilisearch~website]↗ [(github)][meilisearch~repo]↗ | Develops a search engine and API for application search. |
 | [Memfault][memfault~website]↗ | Provides observability and diagnostic tools for connected embedded devices. |
 | [Meta][meta~website]↗ | Uses Rust for parts of its source control backend (Sapling) and other server-side projects. |
-| [Microsoft][microsoft~website]↗ | Uses Rust for various projects, including the [[windows | Windows]] kernel, Azure, and Visual Studio. [`windows-rs`][c~windows~docs]↗{{hi:windows-rs}} calls Windows APIs from Rust. There are several Azure services also using Rust, including [Azure IoT Edge][azure-iot-edge~repo]↗ and 'Kusto', the core query and storage engine for [Azure Data Explorer][azure-data-explorer]↗. |
+| [Microsoft][microsoft~website]↗ | Uses Rust for various projects, including the [Windows](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/os_windows-apis/windows.md) kernel, Azure, and Visual Studio. [`windows-rs`][c~windows~docs]↗{{hi:windows-rs}} calls Windows APIs from Rust. There are several Azure services also using Rust, including [Azure IoT Edge][azure-iot-edge~repo]↗ and 'Kusto', the core query and storage engine for [Azure Data Explorer][azure-data-explorer]↗. |
 | [MoveParallel][moveparallel~website]↗ | Develops autonomous battery-electric vehicles for rail and industrial transport. |
 | [Mozilla][mozilla~website]↗ [(github)][mozilla~repo]↗ | The creators of Rust, Mozilla has used the Rust language in various projects, including parts of the Firefox web browser. [Servo][servo~website]↗, the browser engine that Mozilla started, is now hosted by the Linux Foundation Europe. |
 | [Multi Media, LLC][multimediallc~website]↗ | Builds technology products and operates online video and community platforms. |
@@ -136,7 +136,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [OpenSource Science][os-sci~website]↗ (OS-Sci) | Promotes computer-science education through free and open-source software. |
 | [OxidOS Automotive][oxidos~website]↗ | Develops Rust-based software and tools for secure automotive electronic control units. |
 | [PUCPR][pucpr~website]↗ | A private university in Paraná, Brazil, with teaching and research programs. |
-| [Parity Technology][parity~website]↗ [(github)][paritytech~repo]↗ | Creates open-sourced networks, consensus protocols, and [[cryptography | cryptography]], entirely in Rust. |
+| [Parity Technology][parity~website]↗ [(github)][paritytech~repo]↗ | Creates open-sourced networks, consensus protocols, and [cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), entirely in Rust. |
 | [Personio][personio~website]↗ | Provides HR and payroll software for small and midsize businesses. |
 | [Pollen Robotics][pollen-robotics~website]↗ | Develops open-source robotics hardware and humanoid robots. |
 | [PolySync][polysync~website]↗ | Builds safety-critical runtime environments & infrastructure for autonomous vehicles. |
