@@ -109,6 +109,9 @@
   - [Graph Theory](categories/mathematics/graph_theory.md)
   - [Differential Equations](categories/mathematics/differential_equations.md)
 
+- [Images](categories/multimedia_images/index.md)
+  - [Image Processing](categories/multimedia_images/images.md)
+
 - [Number Formatting](categories/value-formatting/number_formatting.md)
 
 - [WebSockets](categories/web-programming_websocket/index.md)

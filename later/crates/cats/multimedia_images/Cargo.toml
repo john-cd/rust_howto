@@ -23,11 +23,6 @@ path = "examples/color_handling/main.rs"
 test = true
 
 [[example]]
-name = "images"
-path = "examples/images/main.rs"
-test = true
-
-[[example]]
 name = "pixel_buffers"
 path = "examples/pixel_buffers/main.rs"
 test = true
@@ -36,16 +31,8 @@ test = true
 clap = "4.6.7"
 # Imaging library. Provides basic image processing and encoders/decoders for common image formats.
 image = "0.25.10"
-# Exif parsing library written in pure Rust
-kamadak-exif = "0.6.2"
-# A lossless PNG compression optimizer
-oxipng = { version = "10.2.1", default-features = false }
 # Convert and manage colors with a focus on correctness, flexibility and ease of use.
 palette = "0.7.7"
-
-[dev-dependencies]
-# Isolate generated image files during tests.
-tempfile = "3.27.0"
 
 [lints]
 workspace = true

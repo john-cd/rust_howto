@@ -396,6 +396,10 @@
 
 {{#include ../standard-library/value_comparison.incl.md}}
 
+## Images
+
+{{#include ../categories/multimedia_images/images.incl.md}}
+
 ## Number Formatting
 
 {{#include ../categories/value-formatting/number_formatting.incl.md}}

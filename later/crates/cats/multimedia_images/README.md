@@ -1,20 +1,10 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Multimedia Images
+# Image Color and Pixel Buffers
 
-This crate contains code examples for the **Multimedia Images** category on crates.io. It demonstrates integration with key ecosystem crates including `image`.
-
-## Examples Covered
-
-- **Images** (`examples/images/`): Demonstrates concepts like `blur`, `convert`, `images`, `resize`.
-
-## Usage
-
-To check or run examples in this crate:
+From `later/crates`, run the staged color conversion and pixel buffer examples.
 
 ```console
-cargo check --package multimedia_images --examples
-cargo test --package multimedia_images
+cargo run --locked -p multimedia_images --example color_handling
+cargo run --locked -p multimedia_images --example pixel_buffers
 ```
-
-Code examples correspond to chapters in `bk/src/categories/multimedia_images` or related book sections.

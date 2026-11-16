@@ -31,6 +31,7 @@ members = [
     "cats/hardware_support",
     "cats/mathematics",
     "cats/memory_management",
+    "cats/multimedia_images",
     "cats/network_programming",
     "cats/os",
     "cats/os_unix_apis",

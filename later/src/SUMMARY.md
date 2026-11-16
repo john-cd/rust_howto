@@ -127,7 +127,7 @@
   - [Window creation](categories/gui/window_creation.md)
 
 - [Images](categories/multimedia_images/index.md)
-  - [Images](categories/multimedia_images/images.md)
+  - [Image Processing Recipes](categories/multimedia_images/images.md)
   - [Color Handling](categories/multimedia_images/color_handling.md)
   - [Pixel Buffers](categories/multimedia_images/pixel_buffers.md)
 

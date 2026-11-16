@@ -389,6 +389,12 @@
 [ex~mathematics~vector-comparison]: ../categories/mathematics/linear_algebra.md#vector-comparison
 [ex~mathematics~vector-norm]: ../categories/mathematics/linear_algebra.md#vector-norm
 [ex~mathematics~verifying-tan-is-equal-to-sin-divided-by-cos]: ../categories/mathematics/trigonometry.md#verifying-tan-is-equal-to-sin-divided-by-cos
+[ex~multimedia_images~convert-formats]: ../categories/multimedia_images/images.md#convert-formats
+[ex~multimedia_images~image_loading_and_saving]: ../categories/multimedia_images/images.md#create-image
+[ex~multimedia_images~image_manipulation]: ../categories/multimedia_images/images.md#resize-and-crop
+[ex~multimedia_images~image_processing]: ../categories/multimedia_images/images.md#apply-filters
+[ex~multimedia_images~optimize-pngs]: ../categories/multimedia_images/images.md#optimize-pngs
+[ex~multimedia_images~read-exif-metadata]: ../categories/multimedia_images/images.md#read-exif-metadata
 [ex~standard-library~accept-either-owned-or-borrowed-values]: ../standard-library/clone-on-write.md#accept-either-owned-or-borrowed-values
 [ex~standard-library~adapters-for-working-with-references]: ../standard-library/optional_values.md#adapters-for-working-with-references
 [ex~standard-library~any-trait]: ../standard-library/dynamic_typing.md#any-trait

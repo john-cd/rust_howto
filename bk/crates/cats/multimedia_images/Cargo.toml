@@ -1,0 +1,39 @@
+# TODO Reviewed ??-??-2026.
+
+[package]
+name = "multimedia_images"
+version.workspace = true
+description = "Book code examples and their crate dependencies - multimedia_images"
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["multimedia::images"]
+autolib = false
+
+[[example]]
+name = "images"
+path = "examples/images/main.rs"
+test = true
+
+[dependencies]
+clap = "4.6.7"
+# Imaging library. Provides basic image processing and encoders/decoders for common image formats.
+image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
+# Exif parsing library written in pure Rust
+kamadak-exif = "0.6.2"
+# A lossless PNG compression optimizer
+oxipng = { version = "10.2.1", default-features = false }
+
+[dev-dependencies]
+# Isolate generated image files during tests.
+tempfile = "3.27.0"
+
+[lints]
+workspace = true
