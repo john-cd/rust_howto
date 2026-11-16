@@ -22326,6 +22326,7 @@ dependencies = [
  "tree-sitter-json",
  "unicode-normalization",
  "unicode-segmentation",
+ "unicode-width 0.2.3",
  "ustr",
 ]
 

@@ -6,7 +6,7 @@
 
 ## Text and UTF-8 {#text-and-utf-8}
 
-Rust `String` and `&str` values always contain valid UTF-8. A string's `.len()` is its byte length, while `.chars()` iterates Unicode scalar values (`char`), not user-perceived characters. A visible symbol may be made of multiple scalar values; use a grapheme segmentation library such as [`unicode-segmentation`][c~unicode-segmentation~docs]↗ when text editing or display needs grapheme clusters.
+Rust `String` and `&str` values always contain valid UTF-8. A string's `.len()` is its byte length, while `.chars()` iterates Unicode scalar values (`char`), not user-perceived characters. A visible symbol may be made of multiple scalar values; [Count Unicode Text for Display](../text-processing/unicode.md) demonstrates grapheme clusters and terminal column width.
 
 Converting arbitrary bytes with `String::from_utf8` checks that the bytes are valid UTF-8 and returns an error otherwise. `String::from_utf8_lossy` replaces invalid sequences with the replacement character. For UTF-16 or a legacy character encoding, decode with an encoding-specific API and choose deliberately how invalid input is handled; do not treat arbitrary bytes as a Rust string.
 

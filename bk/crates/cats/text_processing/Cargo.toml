@@ -151,6 +151,7 @@ tree-sitter-json = "0.24.8"
 unicode-normalization = "0.1.26"
 # This crate provides Grapheme Cluster, Word and Sentence boundaries according to Unicode Standard Annex #29 rules.
 unicode-segmentation = "1.13.3"
+unicode-width = "0.2.3"
 # Fast, FFI-friendly string interning.
 ustr = "1.1.0"
 

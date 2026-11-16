@@ -234,6 +234,10 @@
 
 {{#include ../categories/parsing/parsing.incl.md}}
 
+## Text Processing
+
+- [Collect Unicode Graphemes](../categories/text-processing/unicode.md#collect-unicode-graphemes).
+
 ## Template Engine
 
 ### `tera`

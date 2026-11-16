@@ -152,6 +152,7 @@
 - [Find Missing Assertions with Mutation Testing](categories/development-tools/mutation_testing.md)
 - [Test an AWS Lambda Handler Locally](categories/cloud/aws_lambda.md)
 - [Connect Two Iroh Endpoints on Loopback](categories/network-programming/iroh_loopback.md)
+- [Count Unicode Text for Display](categories/text-processing/unicode.md)
 - [HTTP Servers](categories/web-programming_http-server/json_patch.md)
   - [Bound Retries and Concurrency with Tower](categories/web-programming_http-server/service_resilience.md)
 
