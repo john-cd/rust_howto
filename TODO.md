@@ -27,8 +27,10 @@ Rust semantics, the first promoted recipes, and the next migration candidates.
   The final render has 329 runnable blocks, down from 375. The Slices and
   Ownership controls are unchanged, and the Slices book doctests passed.
   Offline hashing, cache, number-formatting, and plugin tests passed.
-  The broader Windows Cargo sweep stopped when `D:` ran out of space.
-  Rerun the remaining targets when space is available.
+  The remaining Windows Cargo sweep passed on `ad96171a1` with Rust 1.100.0
+  on `x86_64-pc-windows-msvc`. The locked, offline run covered 25 example
+  targets with 212 tests passed, zero failures, and one existing multimap
+  test ignored because it requires external resources.
 - [#2276][owners] · Corrected `Clone`, `Copy`, reborrowing, and `Box`
   guarantees in `d31ce9992`. All 17 ownership example tests and strict
   Clippy passed.
