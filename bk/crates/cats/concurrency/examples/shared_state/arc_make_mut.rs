@@ -39,15 +39,15 @@ mod cfg {
             &self.server_address
         }
 
+        /// Returns the connection limit in this configuration snapshot.
         pub fn max_connections(&self) -> u8 {
             self.max_connections
         }
 
-        /// Updates the configuration, cloning it first if other `Arc` pointers
+        /// Replaces the server address and connection limit on this handle.
         ///
-        /// # Arguments
-        ///
-        /// to it exist (clone-on-write).
+        /// If other strong handles share the allocation, they keep the old
+        /// values and this handle points to a clone. Otherwise the update is in place.
         pub fn update(self: &mut Arc<Self>, server_address: String, max_connections: u8) {
             // If there are other `Arc` pointers to the same allocation,
             // then `make_mut` will clone the inner value to a new allocation to
@@ -85,7 +85,7 @@ pub fn run() {
     main();
 }
 
-/// it on write
+/// Tests the example and the reader snapshot it preserves.
 #[cfg(test)]
 mod tests {
     use super::*;
