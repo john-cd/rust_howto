@@ -13,8 +13,28 @@ mod standard_and_localized;
 
 /// Runs the number formatting example.
 fn main() {
-    humansize_example::run();
-    itoa::run();
-    ryu::run();
-    standard_and_localized::run();
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("humansize"));
+    command = command.subcommand(clap::Command::new("itoa"));
+    command = command.subcommand(clap::Command::new("ryu"));
+    command = command.subcommand(clap::Command::new("standard-and-localized"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("humansize", _)) => {
+            humansize_example::run();
+        }
+        Some(("itoa", _)) => {
+            itoa::run();
+        }
+        Some(("ryu", _)) => {
+            ryu::run();
+        }
+        Some(("standard-and-localized", _)) => {
+            standard_and_localized::run();
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

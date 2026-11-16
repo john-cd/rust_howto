@@ -15,8 +15,32 @@ mod published_recipes;
 
 /// Runs each local crate-index example in sequence.
 fn main() -> anyhow::Result<()> {
-    dependencies::run()?;
-    published_recipes::run()?;
-    category_page::run()?;
-    alphabetical_page::run()
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("dependencies"));
+    command = command.subcommand(clap::Command::new("published-recipes"));
+    command = command.subcommand(clap::Command::new("category-page"));
+    command = command.subcommand(clap::Command::new("alphabetical-page"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("dependencies", _)) => {
+            dependencies::run()?;
+            Ok(())
+        }
+        Some(("published-recipes", _)) => {
+            published_recipes::run()?;
+            Ok(())
+        }
+        Some(("category-page", _)) => {
+            category_page::run()?;
+            Ok(())
+        }
+        Some(("alphabetical-page", _)) => {
+            alphabetical_page::run()?;
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

@@ -9,7 +9,22 @@ mod neuro;
 
 /// Runs the neuroscience example.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    neuro::run()?;
-    leaky_integrate_fire::run();
-    Ok(())
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("neuro"));
+    command = command.subcommand(clap::Command::new("leaky-integrate-fire"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("neuro", _)) => {
+            neuro::run()?;
+            Ok(())
+        }
+        Some(("leaky-integrate-fire", _)) => {
+            leaky_integrate_fire::run();
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

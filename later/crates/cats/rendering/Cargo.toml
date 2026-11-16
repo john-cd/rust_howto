@@ -48,6 +48,7 @@ path = "examples/text_rendering/main.rs"
 test = true
 
 [dependencies]
+clap = "4.6.7"
 # An SVG rendering library.
 resvg = "0.49.0" # Rasterizes normalized SVG trees into pixmaps.
 # An SVG simplification library.

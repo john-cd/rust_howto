@@ -42,6 +42,7 @@ path = "examples/puffin_server.rs"
 test = true
 
 [dependencies]
+clap = "4.6.7"
 # A library for heap profiling and ad hoc profiling with DHAT.
 dhat = "0.3.3"
 # Provices macros to measure the time until end of scope.

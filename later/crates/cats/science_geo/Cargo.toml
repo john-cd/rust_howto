@@ -23,6 +23,7 @@ path = "examples/geo/main.rs"
 test = true
 
 [dependencies]
+clap = "4.6.7"
 # Geospatial primitives and algorithms
 geo = "0.33.1"
 # Geocoding library for Rust

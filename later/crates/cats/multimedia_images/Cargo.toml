@@ -33,6 +33,7 @@ path = "examples/pixel_buffers/main.rs"
 test = true
 
 [dependencies]
+clap = "4.6.7"
 # Imaging library. Provides basic image processing and encoders/decoders for common image formats.
 image = "0.25.10"
 # Exif parsing library written in pure Rust

@@ -11,7 +11,27 @@ mod register_vm;
 
 /// Runs the emulators example.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    register_vm::run()?;
-    polkavm_host::run()?;
-    intel_hex::run()
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("register-vm"));
+    command = command.subcommand(clap::Command::new("polkavm-host"));
+    command = command.subcommand(clap::Command::new("intel-hex"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("register-vm", _)) => {
+            register_vm::run()?;
+            Ok(())
+        }
+        Some(("polkavm-host", _)) => {
+            polkavm_host::run()?;
+            Ok(())
+        }
+        Some(("intel-hex", _)) => {
+            intel_hex::run()?;
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

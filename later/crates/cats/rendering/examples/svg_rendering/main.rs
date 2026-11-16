@@ -9,7 +9,22 @@ mod usvg;
 
 /// Runs the two SVG examples.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    resvg::run()?;
-    usvg::run()?;
-    Ok(())
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("resvg"));
+    command = command.subcommand(clap::Command::new("usvg"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("resvg", _)) => {
+            resvg::run()?;
+            Ok(())
+        }
+        Some(("usvg", _)) => {
+            usvg::run()?;
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

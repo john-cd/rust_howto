@@ -15,18 +15,22 @@ mod utoipa;
 
 /// Prints the generated OpenAPI document, propagating serialization errors.
 fn main() -> anyhow::Result<()> {
-    println!("{}", utoipa::openapi_json()?);
-
-    // The router that would serve the API and its Swagger UI:
-    let _router = utoipa::run();
-
-    // A JSON Schema of the configuration, and a validation against it:
-    let schema = schemars::run()?;
-    println!("{schema}");
-    let valid = schemars::is_valid(&serde_json::json!({ "port": 8080 }))?;
-    let invalid = schemars::is_valid(&serde_json::json!({ "port": "text" }))?;
-    println!("valid: {valid}, invalid: {invalid}");
-    let config: schemars::Config = serde_json::from_value(serde_json::json!({ "port": 8080 }))?;
-    println!("port: {}, verbose: {}", config.port, config.verbose);
-    Ok(())
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("utoipa"));
+    command = command.subcommand(clap::Command::new("schemars"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("utoipa", _)) => {
+            utoipa::run()?;
+            Ok(())
+        }
+        Some(("schemars", _)) => {
+            schemars::run()?;
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

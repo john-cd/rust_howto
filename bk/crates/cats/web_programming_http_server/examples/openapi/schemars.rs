@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Derive a JSON Schema with [`schemars`] and validate data against it with
 //! [`jsonschema`].
 //!
@@ -42,6 +41,18 @@ pub fn is_valid(instance: &serde_json::Value) -> anyhow::Result<bool> {
     let validator = jsonschema::validator_for(&config_schema()?)?;
     Ok(validator.is_valid(instance))
 }
+
+/// Prints the generated schema and demonstrates accepting and rejecting data.
+fn main() -> anyhow::Result<()> {
+    let schema = config_schema()?;
+    println!("{schema}");
+    let valid = is_valid(&serde_json::json!({ "port": 8080 }))?;
+    let invalid = is_valid(&serde_json::json!({ "port": "text" }))?;
+    println!("valid: {valid}, invalid: {invalid}");
+    let config: Config = serde_json::from_value(serde_json::json!({ "port": 8080 }))?;
+    println!("port: {}, verbose: {}", config.port, config.verbose);
+    Ok(())
+}
 // ANCHOR_END: example
 
 /// Generates the configuration schema shown in the example.
@@ -49,8 +60,9 @@ pub fn is_valid(instance: &serde_json::Value) -> anyhow::Result<bool> {
 /// # Errors
 ///
 /// Returns an error if the example operation fails.
-pub fn run() -> anyhow::Result<serde_json::Value> {
-    config_schema()
+pub fn run() -> anyhow::Result<()> {
+    let entry_point = main;
+    entry_point()
 }
 
 /// Accepts valid configuration and rejects wrong types or missing fields.
@@ -59,6 +71,12 @@ mod tests {
     use serde_json::json;
 
     use super::*;
+
+    /// Runs the schema example through its private entry point.
+    #[test]
+    fn private_main_runs() -> anyhow::Result<()> {
+        main()
+    }
 
     /// Accepts valid configuration and rejects wrong types or missing fields.
     #[test]

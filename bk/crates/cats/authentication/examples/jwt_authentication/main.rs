@@ -19,12 +19,27 @@ mod jwt_service;
 ///
 /// Returns an error if token creation or verification fails.
 fn main() -> anyhow::Result<()> {
-    let _claims = jwt::run()?;
-    let _router = jwt_axum_extractor::run()?;
-
-    if std::env::var("JWT_SECRET").is_ok() {
-        jwt_service::run_from_env()
-    } else {
-        jwt_service::run()
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("jwt"));
+    command = command.subcommand(clap::Command::new("jwt-axum-extractor"));
+    command = command.subcommand(clap::Command::new("jwt-service"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("jwt", _)) => {
+            jwt::run()?;
+            Ok(())
+        }
+        Some(("jwt-axum-extractor", _)) => {
+            let _router = jwt_axum_extractor::run()?;
+            Ok(())
+        }
+        Some(("jwt-service", _)) => {
+            jwt_service::run()?;
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
     }
 }

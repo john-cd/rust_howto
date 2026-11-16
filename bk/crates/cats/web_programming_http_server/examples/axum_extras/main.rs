@@ -25,15 +25,36 @@ mod typed_header;
 
 /// Runs the example.
 fn main() {
-    // Build the routers; serving them is shown in the tests.
-    let routers = [
-        cookies::run(),
-        debug_handler::run(),
-        flash_messages::run(),
-        typed_header::run(),
-        axum_server_tls::run(),
-        https_redirect::run(),
-    ];
-    println!("Built {} routers.", routers.len());
-    println!("Run `cargo test --example axum_extras` to call them.");
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("cookies"));
+    command = command.subcommand(clap::Command::new("debug-handler"));
+    command = command.subcommand(clap::Command::new("flash-messages"));
+    command = command.subcommand(clap::Command::new("typed-header"));
+    command = command.subcommand(clap::Command::new("axum-server-tls"));
+    command = command.subcommand(clap::Command::new("https-redirect"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("cookies", _)) => {
+            let _ = cookies::run();
+        }
+        Some(("debug-handler", _)) => {
+            let _ = debug_handler::run();
+        }
+        Some(("flash-messages", _)) => {
+            let _ = flash_messages::run();
+        }
+        Some(("typed-header", _)) => {
+            let _ = typed_header::run();
+        }
+        Some(("axum-server-tls", _)) => {
+            let _ = axum_server_tls::run();
+        }
+        Some(("https-redirect", _)) => {
+            let _ = https_redirect::run();
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

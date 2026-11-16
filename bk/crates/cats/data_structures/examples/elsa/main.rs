@@ -9,6 +9,20 @@ mod frozen_vec;
 
 /// Runs both `elsa` collection examples.
 fn main() {
-    frozen_map::run();
-    frozen_vec::run();
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("frozen-map"));
+    command = command.subcommand(clap::Command::new("frozen-vec"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("frozen-map", _)) => {
+            frozen_map::run();
+        }
+        Some(("frozen-vec", _)) => {
+            frozen_vec::run();
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

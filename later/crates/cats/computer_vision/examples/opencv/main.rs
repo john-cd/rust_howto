@@ -14,10 +14,22 @@ mod opencv;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     #[cfg(all(target_os = "linux", feature = "opencv"))]
     {
-        opencv::run()?;
-        if std::env::var_os("OPENCV_HAAR_CASCADE").is_some() {
-            faces::run()?;
+        let matches = clap::Command::new("examples")
+            .subcommand(clap::Command::new("opencv"))
+            .subcommand(clap::Command::new("faces"))
+            .subcommand_required(true)
+            .arg_required_else_help(true)
+            .get_matches();
+        match matches.subcommand() {
+            Some(("opencv", _)) => opencv::run()?,
+            Some(("faces", _)) => faces::run()?,
+            _ => unreachable!("Clap requires one of the declared subcommands"),
         }
+        Ok(())
     }
-    Ok(())
+    #[cfg(not(all(target_os = "linux", feature = "opencv")))]
+    {
+        println!("OpenCV examples require Linux and the `opencv` feature.");
+        Ok(())
+    }
 }

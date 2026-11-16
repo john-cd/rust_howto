@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generate an OpenAPI document from code with [`utoipa`].
 //!
 //! OpenAPI is a machine-readable description of an HTTP API. Generating it from
@@ -58,11 +57,19 @@ pub fn app() -> Router {
 pub fn openapi_json() -> anyhow::Result<String> {
     Ok(ApiDoc::openapi().to_pretty_json()?)
 }
+
+/// Prints the OpenAPI document and builds the documented router.
+fn main() -> anyhow::Result<()> {
+    println!("{}", openapi_json()?);
+    let _router = app();
+    Ok(())
+}
 // ANCHOR_END: example
 
 /// Builds the router documented by the generated OpenAPI description.
-pub fn run() -> Router {
-    app()
+pub fn run() -> anyhow::Result<()> {
+    let entry_point = main;
+    entry_point()
 }
 
 /// Includes the greeting route and response schema in the document.
@@ -75,6 +82,12 @@ mod tests {
     use tower::ServiceExt;
 
     use super::*;
+
+    /// Runs the OpenAPI example through its private entry point.
+    #[test]
+    fn private_main_runs() -> anyhow::Result<()> {
+        main()
+    }
 
     /// Includes the greeting route and response schema in the document.
     #[test]

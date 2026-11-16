@@ -21,13 +21,52 @@ mod wav_write_read;
 
 /// Runs the audio examples.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    audio::run()?;
-    hrtf::run()?;
-    wav_write_read::run()?;
-    rodio_file::run()?;
-    tone::run();
-    resampling::run()?;
-    rodio_source::run();
-    midi_ports::run();
-    Ok(())
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("audio"));
+    command = command.subcommand(clap::Command::new("hrtf"));
+    command = command.subcommand(clap::Command::new("wav-write-read"));
+    command = command.subcommand(clap::Command::new("rodio-file"));
+    command = command.subcommand(clap::Command::new("tone"));
+    command = command.subcommand(clap::Command::new("resampling"));
+    command = command.subcommand(clap::Command::new("rodio-source"));
+    command = command.subcommand(clap::Command::new("midi-ports"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("audio", _)) => {
+            audio::run()?;
+            Ok(())
+        }
+        Some(("hrtf", _)) => {
+            hrtf::run()?;
+            Ok(())
+        }
+        Some(("wav-write-read", _)) => {
+            wav_write_read::run()?;
+            Ok(())
+        }
+        Some(("rodio-file", _)) => {
+            rodio_file::run()?;
+            Ok(())
+        }
+        Some(("tone", _)) => {
+            tone::run();
+            Ok(())
+        }
+        Some(("resampling", _)) => {
+            resampling::run()?;
+            Ok(())
+        }
+        Some(("rodio-source", _)) => {
+            rodio_source::run();
+            Ok(())
+        }
+        Some(("midi-ports", _)) => {
+            midi_ports::run();
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

@@ -28,6 +28,7 @@ path = "examples/audio/main.rs"
 test = true
 
 [dependencies]
+clap = "4.6.7"
 # Keep cpal at 0.17.1 and rodio on 0.22: cpal 0.17.2+ uses alsa-sys 0.4, which conflicts with the 0.3 line used by Bevy and Fyrox.
 # Low-level cross-platform audio I/O library.
 cpal = "=0.17.1"

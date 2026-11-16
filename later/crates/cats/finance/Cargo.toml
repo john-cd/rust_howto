@@ -33,6 +33,7 @@ path = "examples/quant/main.rs"
 test = true
 
 [dependencies]
+clap = "4.6.7"
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # A Black Scholes option pricing library.
