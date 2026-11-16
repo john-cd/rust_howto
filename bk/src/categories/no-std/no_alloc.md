@@ -41,7 +41,7 @@ From `bk/crates`, run `cargo run --locked -p no_std_no_alloc --example no_alloc`
 ## Related Topics {#related-topics .skip}
 
 - [No Standard Library](no_std.md).
-- [Memory Management](../memory-management/index.md).
+- [Heap Storage](../../standard-library/heap_storage.md).
 - [Stack-allocated Data Structures](../data-structures/stack-allocated.md).
 
 {{#include refs.incl.md}}
