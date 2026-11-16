@@ -83,6 +83,10 @@ The `main` function often returns a `Result` as well. Rust converts it into an e
 
 For more background on error handling in Rust, review the [[entry_points | entry point]] and [error handling](../standard-library/recoverable_error_handling.md) sections of this book or read [this section][book~rust~error-handling]↗ of the 'Rust book'.
 
+## Find Cross-Cutting Topics {#important-sections .skip}
+
+For working with failures, start with [Recoverable Error Handling](../standard-library/recoverable_error_handling.md). For language mechanics, see [Ownership and Borrowing](../language/ownership_and_borrowing.md). To choose among common collections, use the [Data Structures overview](../categories/data-structures/index.md).
+
 ## A Note about Crate Representation {#note-about-crate-representation}
 
 This book intends to cover "key" or "foundational" crates - the crates that make up the most common programming tasks, and that the rest of the ecosystem builds off of.
@@ -93,14 +97,3 @@ The crate selection process is necessarily opinionated. Feel free to offer sugge
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-
-## Important Sections {#important-sections .skip}
-
-- The book covers cross-cutting concerns that affect most aspects of development e.g. [error handling](../standard-library/recoverable_error_handling.md), [[error_customization | error customization]], [[config | configuration]], [[development-tools_debugging | debugging]]...
-- [[concurrency | Concurrency]], including [[asynchronous | asynchronous programming]], is covered in details.
-- So are [[development tools]] and programming domains such as [[command-line-interface | CLI]] and [[web_programming | Web]] development.
-
-
-</div>

@@ -55,6 +55,10 @@ Floating-point calculations round, so exact equality is often the wrong requirem
 {{#include ../../../crates/cats/development_tools_testing/examples/assertions/approx.rs:example}}
 ```
 
+## Show Differences in Failed Equality Assertions
+
+In tests that compare large or nested values, import `pretty_assertions::assert_eq` to show the differences when the assertion fails. Declare [`pretty_assertions`](https://docs.rs/pretty_assertions) as a development dependency.
+
 ## Related Topics {#related-topics .skip}
 
 - [[testing | Testing]] describes unit, integration, and documentation tests.
@@ -65,8 +69,3 @@ Assertions are for tests and internal invariants. Return a `Result` for expected
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-- [pretty_assertions - Rust dev tool][c~pretty_assertions~lib.rs]↗.
-
-</div>

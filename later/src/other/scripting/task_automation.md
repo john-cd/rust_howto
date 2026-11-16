@@ -38,6 +38,8 @@ This example describes a task as data: [`cron`][c~cron~docs]↗ finds the next r
 {{#include ../../../crates/other/examples/task_automation/scheduled_command.rs:example}}
 ```
 
+For jobs that run on a schedule, see [Scheduling](../scheduling/scheduling.md) for the scheduling side of the workflow.
+
 ## Related Topics {#related-topics .skip}
 
 - [[command-line-interface | Command Line Interface]].
@@ -48,7 +50,3 @@ This example describes a task as data: [`cron`][c~cron~docs]↗ finds the next r
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  Editorial placement: keep command execution and scheduling in Scripting. See the Scheduling chapter for recurring jobs.
-</div>
