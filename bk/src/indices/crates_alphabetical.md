@@ -1,5 +1,4 @@
 <!-- TODO Reviewed ??-??-2026. -->
-
 # Crates in Alphabetical Order
 
 Crates mentioned in this book, in alphabetical order. Nested links point to published recipes that use each crate.
@@ -11,14 +10,28 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 - [![aho-corasick][c~aho-corasick~docs~badge]][c~aho-corasick~docs]
 - [![anyhow][c~anyhow~docs~badge]][c~anyhow~docs]
 - [![approx][c~approx~docs~badge]][c~approx~docs]
+- [![arc-swap][c~arc-swap~docs~badge]][c~arc-swap~docs]
+  - [`arc-swap`][ex~concurrency~arc-swap]
+- [![argmin][c~argmin~docs~badge]][c~argmin~docs]
+  - [Find a Root with Brent's Method][ex~mathematics~find-a-root-with-brents-method]
+  - [Minimize a Function with Brent's Method][ex~mathematics~minimize-a-function-with-brents-method]
+  - [Minimize a Function with Nelder-Mead][ex~mathematics~minimize-a-function-with-nelder-mead]
+- [![argmin-math][c~argmin-math~docs~badge]][c~argmin-math~docs]
+  - [Minimize a Function with Nelder-Mead][ex~mathematics~minimize-a-function-with-nelder-mead]
 - [![arrayvec][c~arrayvec~docs~badge]][c~arrayvec~docs]
   - [Store Fixed-size Vectors and Strings on the Stack with `arrayvec`][ex~data-structures~arrayvec]
+- [![async-compression][c~async-compression~docs~badge]][c~async-compression~docs]
+  - [Compress and Decompress Files Asynchronously with `async-compression`][ex~compression~async-gzip-file]
+- [![async_zip][c~async_zip~docs~badge]][c~async_zip~docs]
+  - [Write and Read a ZIP Archive with `async_zip`][ex~compression~async-zip]
 - [![atomicwrites][c~atomicwrites~docs~badge]][c~atomicwrites~docs]
   - [Replace a File Atomically][ex~filesystem~replace-a-file-atomically]
 - [![axum][c~axum~docs~badge]][c~axum~docs]
 
 ## B
 
+- [![base64][c~base64~docs~badge]][c~base64~docs]
+  - [Encode and Decode with `base64`][ex~encoding~base64]
 - [![bitflags][c~bitflags~docs~badge]][c~bitflags~docs]
   - [Work with C-style Flags using `bitflags`][ex~data-structures~bitflags]
 - [![bitvec][c~bitvec~docs~badge]][c~bitvec~docs]
@@ -30,18 +43,42 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 
 ## C
 
+- [![cached][c~cached~docs~badge]][c~cached~docs]
+  - [`cached`][ex~caching~cached]
+- [![calamine][c~calamine~docs~badge]][c~calamine~docs]
+  - [Read an Excel Workbook][ex~encoding~read-xlsx]
 - [![camino][c~camino~docs~badge]][c~camino~docs]
   - [Ensure your Paths are UTF-8 with `camino`][ex~filesystem~camino]
 - [![cargo][c~cargo~docs~badge]][c~cargo~docs]
 - [![cargo-expand][c~cargo-expand~docs~badge]][c~cargo-expand~docs]
 - [![cargo-generate][c~cargo-generate~docs~badge]][c~cargo-generate~docs]
 - [![cfg-if][c~cfg-if~docs~badge]][c~cfg-if~docs]
+- [![chrono][c~chrono~docs~badge]][c~chrono~docs]
+  - [Convert Date to UNIX Timestamp and Vice Versa][ex~date-and-time~unix-timestamp]
+  - [Convert a UTC Time to Fixed Time Zones][ex~date-and-time~convert-local-time]
+  - [Display Formatted Date and Time][ex~date-and-time~display-formatted-date-time]
+  - [Examine the Date and Time][ex~date-and-time~examine-date-and-time]
+  - [Parse a String into a `DateTime` Struct][ex~date-and-time~parse-string-into-datetime-struct]
+  - [Perform Checked Date and Time Calculations][ex~date-and-time~perform-checked-date-time-calc]
 - [![clear][c~clear~docs~badge]][c~clear~docs]
+- [![cmaes][c~cmaes~docs~badge]][c~cmaes~docs]
+  - [Minimize a Function with CMA-ES][ex~mathematics~minimize-a-function-with-cma-es]
+- [![crossbeam-utils][c~crossbeam-utils~docs~badge]][c~crossbeam-utils~docs]
+  - [AtomicCell with `crossbeam`][ex~concurrency~crossbeam-atomics]
+- [![csv][c~csv~docs~badge]][c~csv~docs]
+  - [Filter CSV Records][ex~encoding~filter-csv]
+  - [Handle Invalid CSV data with `serde`][ex~encoding~handle-invalid-csv]
+  - [Read CSV Records][ex~encoding~read-csv-records]
+  - [Read CSV Records with Different Delimiters][ex~encoding~read-csv-different-delimiter]
+  - [Serialize Records to CSV][ex~encoding~serialize-to-csv]
+  - [Serialize Records to CSV Using `serde`][ex~encoding~serialize-to-csv-using-serde]
+  - [Transform a CSV Column][ex~encoding~transform-csv-column]
 
 ## D
 
 - [![data-encoding][c~data-encoding~docs~badge]][c~data-encoding~docs]
   - [Calculate the SHA-256 Digest of a File][ex~algorithms~sha256]
+  - [Encode and Decode Hexadecimal][ex~encoding~data-encoding]
 - [![derive_more][c~derive_more~docs~badge]][c~derive_more~docs]
   - [Derive Additional Traits with `derive_more`][ex~standard-library~derive-more]
 - [![dioxus][c~dioxus~docs~badge]][c~dioxus~docs]
@@ -54,6 +91,8 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 
 ## E
 
+- [![elsa][c~elsa~docs~badge]][c~elsa~docs]
+  - [Use Append-only Frozen Collections][ex~data-structures~elsa-frozen-vec]
 - [![enumflags][c~enumflags~docs~badge]][c~enumflags~docs]
 
 ## F
@@ -67,6 +106,11 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 - [![flagset][c~flagset~docs~badge]][c~flagset~docs]
   - [Work with C-style Flags using `flagset`][ex~data-structures~flagset]
 - [![flate2][c~flate2~docs~badge]][c~flate2~docs]
+  - [Compress a Directory into a Tarball][ex~compression~compress-a-directory-into-a-tarball]
+  - [Compress and Decompress a File with Gzip][ex~compression~gzip-file]
+  - [Compress or Decompress Data with `flate2`][ex~compression~compress-decompress]
+  - [Decompress a Tarball][ex~compression~decompress-a-tarball]
+  - [Decompress a Tarball While Removing a Prefix from the Paths][ex~compression~decompress-a-tarball-removing-prefix]
 - [![fnv][c~fnv~docs~badge]][c~fnv~docs]
 - [![foldhash][c~foldhash~docs~badge]][c~foldhash~docs]
   - [`foldhash`][ex~algorithms~foldhash]
@@ -90,26 +134,45 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Half-Precision Floats][ex~mathematics~half-precision]
 - [![heapless][c~heapless~docs~badge]][c~heapless~docs]
   - [Work with Heapless Data Structures with `heapless`][ex~data-structures~heapless]
+- [![hex][c~hex~docs~badge]][c~hex~docs]
+  - [Encode and Decode Hexadecimal with `hex`][ex~encoding~hex]
+- [![humansize][c~humansize~docs~badge]][c~humansize~docs]
+  - [Format a Byte Count for Display with `humansize`][ex~value-formatting~humansize]
+- [![humantime][c~humantime~docs~badge]][c~humantime~docs]
+  - [`humantime`][ex~date-and-time~humantime]
 
 ## I
 
 - [![ignore][c~ignore~docs~badge]][c~ignore~docs]
   - [Walk the Filesystem While Respecting Ignore Files][ex~filesystem~walk-the-filesystem-while-respecting-ignore-files]
 - [![im][c~im~docs~badge]][c~im~docs]
+- [![image][c~image~docs~badge]][c~image~docs]
+  - [Apply Filters][ex~multimedia_images~image_processing]
+  - [Convert Formats][ex~multimedia_images~convert-formats]
+  - [Create and Save an Image][ex~multimedia_images~image_loading_and_saving]
+  - [Resize and Crop][ex~multimedia_images~image_manipulation]
 - [![indexmap][c~indexmap~docs~badge]][c~indexmap~docs]
   - [Store Data in an Insertion-ordered Map][ex~data-structures~indexmap]
 - [![indextree][c~indextree~docs~badge]][c~indextree~docs]
 - [![infer][c~infer~docs~badge]][c~infer~docs]
   - [Detect a File's Type from its Content][ex~filesystem~infer]
 - [![itertools][c~itertools~docs~badge]][c~itertools~docs]
+- [![itoa][c~itoa~docs~badge]][c~itoa~docs]
+  - [Convert Integers to String Quickly with `itoa`][ex~value-formatting~itoa]
 
 ## J
 
+- [![jsonschema][c~jsonschema~docs~badge]][c~jsonschema~docs]
+  - [Derive and Validate a JSON Schema][ex~web-programming_http-server~schemars]
 - [![just][c~just~docs~badge]][c~just~docs]
 
 ## L
 
 - [![leptos][c~leptos~docs~badge]][c~leptos~docs]
+- [![loom][c~loom~docs~badge]][c~loom~docs]
+  - [Check a Publication and Cancellation Protocol with Loom][ex~concurrency~loom]
+- [![lru][c~lru~docs~badge]][c~lru~docs]
+  - [Use a Least Recently Used (LRU) Cache][ex~caching~lru-cache]
 
 ## M
 
@@ -120,6 +183,10 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 - [![mdbook-private][c~mdbook-private~docs~badge]][c~mdbook-private~docs]
 - [![memmap2][c~memmap2~docs~badge]][c~memmap2~docs]
   - [Access a File Randomly Using a Memory Map][ex~filesystem~memory-map]
+- [![moka][c~moka~docs~badge]][c~moka~docs]
+  - [`moka`][ex~caching~moka]
+- [![monostate][c~monostate~docs~badge]][c~monostate~docs]
+  - [`monostate`][ex~encoding~monostate]
 - [![multimap][c~multimap~docs~badge]][c~multimap~docs]
   - [Store Multiple Values for a Single Key with `multimap`][ex~data-structures~multimap]
 
@@ -138,6 +205,8 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Use nalgebra Vectors][ex~mathematics~nalgebra-vectors]
 - [![nalgebra-lapack][c~nalgebra-lapack~docs~badge]][c~nalgebra-lapack~docs]
 - [![ndarray][c~ndarray~docs~badge]][c~ndarray~docs]
+- [![nom][c~nom~docs~badge]][c~nom~docs]
+  - [Create a Parser with `nom`][ex~parsing~nom]
 - [![notify][c~notify~docs~badge]][c~notify~docs]
   - [Watch Files or Directories and Execute a Function When They Change][ex~filesystem~watch-files-or-dirs]
 - [![num][c~num~docs~badge]][c~num~docs]
@@ -150,6 +219,8 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Use Big Integers][ex~mathematics~big-integers]
   - [Use Big Integers with `num-bigint`][ex~mathematics~num-bigint]
 - [![num-complex][c~num-complex~docs~badge]][c~num-complex~docs]
+- [![num-format][c~num-format~docs~badge]][c~num-format~docs]
+  - [Format Numbers with Standard Rust Syntax and Locale Grouping][ex~value-formatting~standard-and-locale-formatting]
 - [![num-rational][c~num-rational~docs~badge]][c~num-rational~docs]
   - [Rational Numbers][ex~mathematics~rational-numbers]
 - [![num-traits][c~num-traits~docs~badge]][c~num-traits~docs]
@@ -166,13 +237,31 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 
 - [![parking_lot][c~parking_lot~docs~badge]][c~parking_lot~docs]
 - [![pathfinding][c~pathfinding~docs~badge]][c~pathfinding~docs]
+  - [Find Shortest Paths on a Grid with `pathfinding`][ex~algorithms~pathfinding-astar]
+- [![percent-encoding][c~percent-encoding~docs~badge]][c~percent-encoding~docs]
+  - [Encode a URL Component][ex~encoding~url-component-encoding]
+  - [Percent-encode a String][ex~encoding~percent-encoding]
 - [![petgraph][c~petgraph~docs~badge]][c~petgraph~docs]
   - [Create and Manipulate Graphs with `petgraph`][ex~data-structures~petgraph]
+  - [Find Cyclic Dependencies][ex~mathematics~find-cyclic-dependencies]
+  - [Find Shortest Paths with A* Search][ex~algorithms~petgraph-astar]
+  - [Find Shortest Paths with Dijkstra's Algorithm][ex~algorithms~petgraph-dijkstra]
+  - [Minimum Spanning Tree with `petgraph`][ex~algorithms~petgraph-mst]
+  - [Schedule DAG Tasks by Level][ex~mathematics~schedule-dag-tasks-by-level]
+  - [Sort Tasks Topologically in a DAG][ex~algorithms~petgraph-toposort]
+  - [Traverse a Graph with Breadth-First Search (BFS)][ex~algorithms~petgraph-bfs]
+  - [Traverse a Graph with Depth-First Search (DFS)][ex~algorithms~petgraph-dfs]
+- [![phf][c~phf~docs~badge]][c~phf~docs]
+  - [Use a Compile-time Perfect Hash Map][ex~data-structures~phf-map]
+- [![polars][c~polars~docs~badge]][c~polars~docs]
+  - [Build and query a Polars DataFrame][ex~data-processing~dataframes]
 - [![priority-queue][c~priority-queue~docs~badge]][c~priority-queue~docs]
   - [Create a Priority Queue with `priority-queue`][ex~data-structures~priority-queue]
 
 ## R
 
+- [![radiate][c~radiate~docs~badge]][c~radiate~docs]
+  - [Maximize Fitness with a Genetic Algorithm][ex~mathematics~maximize-fitness-with-a-genetic-algorithm]
 - [![rand][c~rand~docs~badge]][c~rand~docs]
   - [Create Random Passwords from a Set of Alphanumeric Characters][ex~algorithms~generate-random-values-from-set-alphanumeric]
   - [Create Random Passwords from a Set of User-defined Characters][ex~algorithms~create-random-passwords-from-a-set-of-user-defined-characters]
@@ -180,9 +269,12 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Generate Random Numbers Within a Given Distribution][ex~algorithms~generate-random-numbers-within-a-given-distribution]
   - [Generate Random Numbers Within a Range][ex~algorithms~generate-random-numbers-within-a-range]
   - [Generate Random Values of a Custom Type][ex~algorithms~generate-random-values-custom-type]
+  - [Minimize a Function with Particle Swarm Optimization][ex~mathematics~minimize-a-function-with-particle-swarm-optimization]
 - [![rand_distr][c~rand_distr~docs~badge]][c~rand_distr~docs]
   - [Generate Random Numbers Within a Given Distribution][ex~algorithms~generate-random-numbers-within-a-given-distribution]
 - [![rangemap][c~rangemap~docs~badge]][c~rangemap~docs]
+- [![rayon][c~rayon~docs~badge]][c~rayon~docs]
+  - [Schedule DAG Tasks by Level][ex~mathematics~schedule-dag-tasks-by-level]
 - [![regex][c~regex~docs~badge]][c~regex~docs]
 - [![remove_dir_all][c~remove_dir_all~docs~badge]][c~remove_dir_all~docs]
   - [Remove a Directory and its Contents with `remove_dir_all`][ex~filesystem~remove_dir_all]
@@ -197,17 +289,31 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 - [![rust-crypto][c~rust-crypto~docs~badge]][c~rust-crypto~docs]
 - [![rust_decimal][c~rust_decimal~docs~badge]][c~rust_decimal~docs]
   - [Use Fixed-Precision Decimal Numbers][ex~mathematics~big-decimal]
+- [![rust_xlsxwriter][c~rust_xlsxwriter~docs~badge]][c~rust_xlsxwriter~docs]
+  - [Write an Excel Workbook][ex~encoding~write-xlsx]
 - [![rustc-hash][c~rustc-hash~docs~badge]][c~rustc-hash~docs]
   - [Choose a Faster Hasher: `ahash` and `rustc-hash`][ex~data-structures~fast-hashmap]
+- [![ryu][c~ryu~docs~badge]][c~ryu~docs]
+  - [Convert Floating Point to String Quickly with `ryu`][ex~value-formatting~ryu]
 
 ## S
 
 - [![same-file][c~same-file~docs~badge]][c~same-file~docs]
   - [Avoid Writing and Reading from the Same File][ex~filesystem~avoid-writing-and-reading-from-the-same-file]
   - [Find Loops in a Given Path][ex~filesystem~find-loop-in-path]
+- [![schemars][c~schemars~docs~badge]][c~schemars~docs]
+  - [Derive and Validate a JSON Schema][ex~web-programming_http-server~schemars]
 - [![serde][c~serde~docs~badge]][c~serde~docs]
+  - [Handle Invalid CSV data with `serde`][ex~encoding~handle-invalid-csv]
+  - [Serialization with `serde`][ex~encoding~serde]
+  - [Serialize Records to CSV Using `serde`][ex~encoding~serialize-to-csv-using-serde]
+  - [Transform a CSV Column][ex~encoding~transform-csv-column]
 - [![serde_ignored][c~serde_ignored~docs~badge]][c~serde_ignored~docs]
+  - [Handle Unknown Fields When Deserializing, with `serde-ignored`][ex~encoding~serde-ignored]
 - [![serde_json][c~serde_json~docs~badge]][c~serde_json~docs]
+  - [(De)serialize JSON][ex~encoding~serde-json2]
+- [![serde_urlencoded][c~serde_urlencoded~docs~badge]][c~serde_urlencoded~docs]
+  - [Encode Forms and Path Segments with `serde_urlencoded` and `urlencoding`][ex~encoding~form-urlencoded]
 - [![sha1][c~sha1~docs~badge]][c~sha1~docs]
   - [Hash with `sha1`][ex~algorithms~sha1]
 - [![sha2][c~sha2~docs~badge]][c~sha2~docs]
@@ -228,6 +334,7 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Accept Arguments of Multiple Types with `AsRef`][ex~standard-library~asref]
   - [Accept Either an Owned or Borrowed Value as the Input of a Function][ex~standard-library~accept-either-owned-or-borrowed-values]
   - [Add Function-like Behavior to a Custom Type][ex~standard-library~function-like-behavior]
+  - [Build a Spinlock Using Atomics][ex~concurrency~spinlock]
   - [Calculate Measures of Central Tendency][ex~mathematics~measures-of-central-tendency]
   - [Calculate the Distance Between two Points on Earth][ex~mathematics~distance-between-two-points-on-earth]
   - [Calculate the Side Length of a Triangle][ex~mathematics~calculating-the-side-length-of-a-triangle]
@@ -235,6 +342,7 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Choose between `AsRef`, `Deref`, and `Borrow`][ex~standard-library~asref-vs-deref-vs-borrow]
   - [Choose between `Result` and `Option`][ex~standard-library~result-vs-option]
   - [Choose the Right Trait for a Conversion][ex~standard-library~choose-conversion-trait]
+  - [Compare Sets with `BTreeSet`][ex~mathematics~compare-sets-with-btreeset]
   - [Compare and Sort Values with `PartialOrd` and `Ord`][ex~standard-library~ord]
   - [Compute the Standard Deviation][ex~mathematics~standard-deviation]
   - [Concatenate Strings][ex~data-structures~string-concatenation]
@@ -263,6 +371,7 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Implement the "Early Return" Pattern with the `?` Operator][ex~standard-library~return-early-pattern]
   - [Interior Mutability][ex~standard-library~interior-mutability]
   - [Lazy Initialization][ex~standard-library~lazy-initialization]
+  - [Measure the Elapsed Time Between Two Code Sections][ex~date-and-time~measure-elapsed-time]
   - [Modify a `Cow` In-place][ex~standard-library~modify-cow-in-place]
   - [Multiple Ownership with Reference Counting][ex~standard-library~reference-counting]
   - [Overload Operators like `+`, `-`, `[]`][ex~standard-library~operator-overloading]
@@ -278,6 +387,7 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Sort a Vector of Floats][ex~algorithms~sort-vector-floats]
   - [Sort a Vector of Integers][ex~algorithms~sort-vector-integers]
   - [Sort a Vector of Structs][ex~algorithms~sort-vector-structs]
+  - [Standard Atomic Types][ex~concurrency~atomics]
   - [Store Data in a Linked List][ex~data-structures~linkedlist]
   - [Store Data on the Heap with `Box`][ex~standard-library~box]
   - [Store Homogeneous Data in a Contiguous, Growable Array with `Vec`][ex~data-structures~vec]
@@ -316,11 +426,31 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 ## T
 
 - [![tar][c~tar~docs~badge]][c~tar~docs]
+  - [Compress a Directory into a Tarball][ex~compression~compress-a-directory-into-a-tarball]
+  - [Decompress a Tarball][ex~compression~decompress-a-tarball]
+  - [Decompress a Tarball While Removing a Prefix from the Paths][ex~compression~decompress-a-tarball-removing-prefix]
 - [![tempfile][c~tempfile~docs~badge]][c~tempfile~docs]
   - [Create Temporary Files or Temporary Directories][ex~filesystem~temporary-files-or-directories]
   - [Replace a File Atomically][ex~filesystem~replace-a-file-atomically]
+- [![tera][c~tera~docs~badge]][c~tera~docs]
+  - [Create HTML Files from a Template][ex~template-engine~create-html-from-template]
+  - [Sanitize or Escape: What Protects a Template][ex~template-engine~sanitize-vs-escape]
+- [![time][c~time~docs~badge]][c~time~docs]
+  - [Use the `time` Crate][ex~date-and-time~time-crate]
+- [![tinytemplate][c~tinytemplate~docs~badge]][c~tinytemplate~docs]
+  - [Create Markdown Fragments from a Template][ex~template-engine~tinytemplate]
 - [![tinyvec][c~tinyvec~docs~badge]][c~tinyvec~docs]
   - [Store Small Vectors on the Stack with Fallback to the Heap, with `tinyvec`][ex~data-structures~tinyvec]
+- [![tokio][c~tokio~docs~badge]][c~tokio~docs]
+  - [Publish the Latest Value with `watch`][ex~asynchronous~watch-latest]
+  - [Restart a Failing Task with a Supervisor][ex~asynchronous~supervisor]
+  - [Run a Bounded Pool of Tasks with `JoinSet`][ex~asynchronous~joinset-pool]
+- [![tokio-tungstenite][c~tokio-tungstenite~docs~badge]][c~tokio-tungstenite~docs]
+  - [Implement Websocket While Using the `tokio` Async Runtime][ex~web-programming_websocket~general-purpose]
+- [![tokio-util][c~tokio-util~docs~badge]][c~tokio-util~docs]
+  - [Cancel a Tree of Tasks with `CancellationToken`][ex~asynchronous~cancellation-tree]
+- [![tree-sitter][c~tree-sitter~docs~badge]][c~tree-sitter~docs]
+  - [Create a Parser with `tree-sitter`][ex~parsing~tree-sitter]
 - [![typenum][c~typenum~docs~badge]][c~typenum~docs]
   - [`typenum`][ex~mathematics~typenum]
 
@@ -330,6 +460,13 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Generate and Parse ULIDs][ex~data-structures~ulid]
 - [![ultraviolet][c~ultraviolet~docs~badge]][c~ultraviolet~docs]
 - [![uom][c~uom~docs~badge]][c~uom~docs]
+  - [Convert Units with `uom`][ex~mathematics~convert-units-with-uom]
+- [![url][c~url~docs~badge]][c~url~docs]
+  - [Encode Form Data][ex~encoding~url]
+- [![urlencoding][c~urlencoding~docs~badge]][c~urlencoding~docs]
+  - [Encode Forms and Path Segments with `serde_urlencoded` and `urlencoding`][ex~encoding~form-urlencoded]
+- [![utoipa][c~utoipa~docs~badge]][c~utoipa~docs]
+  - [Generate an OpenAPI Document with `utoipa`][ex~web-programming_http-server~utoipa]
 - [![uuid][c~uuid~docs~badge]][c~uuid~docs]
   - [Generate and Parse UUIDs][ex~data-structures~generate-parse-uuid]
 
@@ -345,6 +482,8 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
   - [Recursively Find Duplicate File Names][ex~filesystem~recursively-find-duplicate-file-names]
   - [Traverse Directories While Skipping Dotfiles][ex~filesystem~traverse-directories-while-skipping-dotfiles]
 - [![windows][c~windows~docs~badge]][c~windows~docs]
+- [![winnow][c~winnow~docs~badge]][c~winnow~docs]
+  - [Write an Expression Parser with a `winnow` Lexer][ex~parsing~expression-parser]
 
 ## X
 
@@ -359,6 +498,7 @@ Crates mentioned in this book, in alphabetical order. Nested links point to publ
 ## Z
 
 - [![zip][c~zip~docs~badge]][c~zip~docs]
+  - [Create a ZIP Archive with `zip`][ex~compression~zip]
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
