@@ -22,6 +22,10 @@ Grapheme segmentation does not normalize text. For example, a precomposed `é` a
 
 The example distinguishes grapheme clusters from scalar values and bytes. A user-facing count should name which unit it uses; a grapheme count is not a limit on encoded data size.
 
+For terminal alignment, measure display columns separately from byte, scalar,
+and grapheme counts. [`unicode-width`][unicode-width~website]↗ estimates display
+width according to Unicode width rules. Actual rendering can depend on the terminal.
+
 ## Related Topics {#related-topics .skip}
 
 - [[strings | Strings]].
@@ -29,10 +33,3 @@ The example distinguishes grapheme clusters from scalar values and bytes. A user
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-review
-
-- [unicode_width][unicode-width~website]↗: Determine displayed width of [`char`][primitive~char]↗{{hi:char}} and [`str`][primitive~str]↗{{hi:str}} types according to Unicode Standard Annex #11 rules.
-
-</div>

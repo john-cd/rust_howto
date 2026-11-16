@@ -6,7 +6,7 @@
 
 A diff describes how two versions of text differ. It usually groups content as unchanged, removed, or inserted. Choose the unit that makes changes useful to the reader: lines for source files and logs, words or characters for short prose, and graphemes when highlighting user-perceived characters. A diff is a comparison result; applying changes safely also requires checking the base version and the context where edits belong.
 
-## `diff` {#diff}
+## Compare Two Sequences with `diff` {#diff}
 
 {{#badges diff}}
 
@@ -16,7 +16,7 @@ A diff describes how two versions of text differ. It usually groups content as u
 {{#include ../../../crates/cats/text_processing/examples/diffing/diff.rs:example}}
 ```
 
-## `similar` {#similar}
+## Generate a Unified Diff with `similar` {#similar}
 
 {{#badges similar}}{{hi:Difference}}{{hi:Diff}}{{hi:Compare}}{{hi:Changes}}{{hi:Patience}}
 
@@ -36,7 +36,3 @@ The example compares lines and words, then renders a unified diff. The output is
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write; titles
-</div>
