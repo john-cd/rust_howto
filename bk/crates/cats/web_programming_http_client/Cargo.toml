@@ -33,6 +33,11 @@ path = "examples/http_clients/main.rs"
 test = true
 
 [[example]]
+name = "offline_http_client"
+path = "examples/offline_http_client.rs"
+test = true
+
+[[example]]
 name = "rate_limit"
 path = "examples/rate_limit/main.rs"
 test = true
@@ -55,6 +60,7 @@ test = true
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+axum = "0.8.9"
 # Make retry like a built-in feature provided by Rust.
 backon = "1.6.0"
 # A simple to use, efficient, and full-featured Command Line Argument Parser
@@ -70,7 +76,7 @@ hyper = "1.12.0"
 # Provides runtime, client, server, and protocol utilities for Hyper applications.
 hyper-util = "0.1.21"
 # higher level HTTP client library
-reqwest = { version = "0.13.5", features = ["blocking", "json", "stream"] }
+reqwest = { version = "0.13.5", features = ["blocking", "json", "query", "stream"] }
 # A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] }
 # A library for managing temporary files and directories.

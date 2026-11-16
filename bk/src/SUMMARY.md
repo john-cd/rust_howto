@@ -153,6 +153,7 @@
 - [Test an AWS Lambda Handler Locally](categories/cloud/aws_lambda.md)
 - [Connect Two Iroh Endpoints on Loopback](categories/network-programming/iroh_loopback.md)
 - [Count Unicode Text for Display](categories/text-processing/unicode.md)
+- [Make an HTTP Request Against a Local Service](categories/web-programming_http-client/offline_http_client.md)
 - [HTTP Servers](categories/web-programming_http-server/json_patch.md)
   - [Bound Retries and Concurrency with Tower](categories/web-programming_http-server/service_resilience.md)
 
