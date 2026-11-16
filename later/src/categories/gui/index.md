@@ -6,6 +6,8 @@
 
 Libraries and bindings for building graphical user interfaces in desktop and browser applications. This index groups them by application target and interaction model; the project pages provide the examples.
 
+Start with a framework if you need a complete application and event loop. For a specific part of an existing application, the components section covers rendering, layout, windows, file dialogs, and clipboard integration.
+
 ## Choosing the Right Framework
 
 Framework maturity, maintenance, accessibility, styling, and platform support vary. Check the project's current documentation and native prerequisites against your deployment needs.
@@ -111,7 +113,6 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  organize
   [Are we (I)DE yet?][are-we-ide-yet?~website]↗.
   [Porting a cross-platform GUI application to Rust][blog~porting-a-cross-platform-gui-application-to-rust]↗.
 </div>
