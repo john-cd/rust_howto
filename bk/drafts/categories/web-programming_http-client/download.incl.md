@@ -3,5 +3,5 @@
 | Recipe | Crates | Categories |
 | --- | --- | --- |
 | [Download a File to a Temporary Directory][ex~web-programming_http-client~download] | {{#crate reqwest}} {{#crate tempfile}} | {{#categories network-programming="Network programming" filesystem=Filesystem web-programming="Web programming" web-programming::http-client="HTTP client"}} |
-| [Make a Partial Download with HTTP Range Headers][ex~web-programming_http-client~partial-download-with-http-range-headers] | {{#crate reqwest}} | {{#categories network-programming="Network programming" web-programming="Web programming" web-programming::http-client="HTTP client"}} |
 | [POST a File with Reqwest][ex~web-programming_http-client~post-a-file-with-reqwest] | {{#crate reqwest}} | {{#categories network-programming="Network programming" web-programming="Web programming" web-programming::http-client="HTTP client"}} |
+| [Make a Partial Download with HTTP Range Headers][ex~web-programming_http-client~partial-download-with-http-range-headers] | {{#crate reqwest}} | {{#categories network-programming="Network programming" web-programming="Web programming" web-programming::http-client="HTTP client"}} |

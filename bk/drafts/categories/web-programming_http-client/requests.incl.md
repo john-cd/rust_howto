@@ -2,6 +2,6 @@
 
 | Recipe | Crates | Categories |
 | --- | --- | --- |
-| [Make a HTTP GET Request][ex~web-programming_http-client~make-a-http-get-request] | {{#crate reqwest}} | {{#categories network-programming="Network programming" web-programming="Web programming" web-programming::http-client="HTTP client"}} |
-| [Make a HTTP GET Request Asynchronously][ex~web-programming_http-client~async] | {{#crate reqwest}} | {{#categories web-programming::http-client="HTTP client"}} |
-| [Set Custom Headers and URL Parameters for a REST Request][ex~web-programming_http-client~custom-headers-and-url-parameters] | {{#crate reqwest}} {{#crate hyper}} {{#crate url}} | {{#categories network-programming="Network programming" web-programming="Web programming" web-programming::http-client="HTTP client"}} |
+| [Make an HTTP GET Request][ex~web-programming_http-client~make-a-http-get-request] | {{#crate reqwest}} | {{#categories network-programming="Network programming" web-programming="Web programming" web-programming::http-client="HTTP client"}} |
+| [Make an HTTP GET Request Asynchronously][ex~web-programming_http-client~async] | {{#crate reqwest}} | {{#categories web-programming::http-client="HTTP client"}} |
+| [Set Custom Headers and URL Parameters for a REST Request][ex~web-programming_http-client~custom-headers-and-url-parameters] | {{#crate reqwest}} {{#crate serde}} {{#crate url}} | {{#categories network-programming="Network programming" web-programming="Web programming" web-programming::http-client="HTTP client"}} |

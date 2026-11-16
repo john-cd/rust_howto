@@ -4,7 +4,7 @@
 
 {{#include requests.incl.md}}
 
-## Make a HTTP GET Request {#make-a-http-get-request}
+## Make an HTTP GET Request {#make-a-http-get-request}
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
 
@@ -14,7 +14,7 @@ Parses the supplied [URL][p~url] and makes a synchronous HTTP GET request with [
 {{#include ../../../crates/cats/web_programming_http_client/examples/requests/get.rs:example}}
 ```
 
-## Make a HTTP GET Request Asynchronously {#async}
+## Make an HTTP GET Request Asynchronously {#async}
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![tokio~website][c~tokio~website~badge]][c~tokio~website] {{#badges tokio}} {{hi:Async}} {{hi:Futures}} {{hi:Io}} {{hi:Non-blocking}} {{#categories network-programming="Network programming",web-programming="Web programming",asynchronous=Asynchronous}}
 
