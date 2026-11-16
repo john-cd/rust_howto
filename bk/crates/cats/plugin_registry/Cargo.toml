@@ -1,0 +1,20 @@
+[package]
+name = "plugin_registry"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+
+[[example]]
+name = "plugins"
+path = "examples/plugins.rs"
+test = true
+
+[dependencies]
+inventory = "0.3.25"
+
+[dev-dependencies]
+plugin_extension = { path = "../plugin_extension" }
+
+[lints]
+workspace = true
