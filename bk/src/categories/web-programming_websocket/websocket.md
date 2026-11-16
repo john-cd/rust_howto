@@ -51,7 +51,7 @@ cargo run --locked -p web_programming_websocket --example websocket
 
 The client prints `Received: Hello WebSocket` after the server echoes its message.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/web_programming_websocket/examples/websocket/tokio_tungstenite.rs:example}}
 ```
 

@@ -22,7 +22,7 @@ with the `blur`, `exif-metadata`, or `optimize-png` subcommand.
 
 An `ImageBuffer` holds pixels in memory; `save` chooses the file format from the extension. The example builds an RGB gradient in memory and writes it to the PNG path given on the command line (or `generated_image.png` by default).
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/multimedia_images/examples/images/images.rs:example}}
 ```
 
@@ -32,7 +32,7 @@ An `ImageBuffer` holds pixels in memory; `save` chooses the file format from the
 
 Resize a generated gradient and convert it to grayscale. Choose an interpolation filter for the desired quality and cost; `crop_imm` selects a rectangular region without resizing it.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/multimedia_images/examples/images/resize.rs:example}}
 ```
 
@@ -42,7 +42,7 @@ Resize a generated gradient and convert it to grayscale. Choose an interpolation
 
 Encode an image to PNG and JPEG in memory. JPEG is lossy and does not retain an alpha channel; format conversion can also discard metadata, so preserve metadata explicitly when the application needs it.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/multimedia_images/examples/images/convert.rs:example}}
 ```
 
@@ -52,7 +52,7 @@ Encode an image to PNG and JPEG in memory. JPEG is lossy and does not retain an 
 
 Apply Gaussian blur to an in-memory image. `imageproc` supplies additional analysis and filtering operations.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/multimedia_images/examples/images/blur.rs:example}}
 ```
 
@@ -62,7 +62,7 @@ Apply Gaussian blur to an in-memory image. `imageproc` supplies additional analy
 
 The Cargo package `kamadak-exif` exposes the Rust crate `exif`. Use `Reader::read_from_container` with a buffered file reader for JPEG/TIFF input. This self-contained example uses `read_raw` on a tiny generated TIFF record and checks the Orientation tag. Reading the tag does not rotate the pixels; orientation-aware display or conversion must apply that transformation separately.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/multimedia_images/examples/images/exif_metadata.rs:example}}
 ```
 
@@ -72,7 +72,7 @@ The Cargo package `kamadak-exif` exposes the Rust crate `exif`. Use `Reader::rea
 
 `oxipng::optimize_from_memory` changes PNG encoding choices while retaining the image. The test compares every decoded pixel before and after optimization; it does not assume every small input becomes smaller. Metadata stripping is a separate policy choice and is not requested here.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/multimedia_images/examples/images/optimize_png.rs:example}}
 ```
 
