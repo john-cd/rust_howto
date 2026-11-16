@@ -129,7 +129,6 @@ Deriving `Arbitrary` lets a fuzz target map raw input bytes to a typed request. 
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-testing: write
 
 - [serial_test][c~serial_test~docs]↗ allows for the creation of serialized Rust tests using the serial attribute.
 

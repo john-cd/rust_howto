@@ -34,7 +34,3 @@ cargo test --doc
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  testing: write
-</div>

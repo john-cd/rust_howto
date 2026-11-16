@@ -55,7 +55,3 @@ Code that calls a web service can be tested without the network by pointing the 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  testing: write
-</div>
