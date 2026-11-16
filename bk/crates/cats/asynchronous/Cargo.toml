@@ -58,6 +58,11 @@ path = "examples/cancellation_token.rs"
 test = true
 
 [[example]]
+name = "pinned_cancellation"
+path = "examples/pinned_cancellation.rs"
+test = true
+
+[[example]]
 name = "mio"
 path = "examples/mio.rs"
 test = true
