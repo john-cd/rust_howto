@@ -78,6 +78,8 @@ If you need to count user-perceived characters or align text in terminal columns
 - [[lifetimes | Lifetimes]].
 - Working with [[other_strings | Other Strings]] (CString, OsString).
 
+See [Number Formatting](../value-formatting/number_formatting.md) for precision, locale grouping, and byte counts.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 

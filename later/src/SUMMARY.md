@@ -214,7 +214,7 @@
   - [Physics Engines](categories/simulation/physics_engines.md)
 
 - [Value formatting](categories/value-formatting/index.md)
-  - [Value formatting](categories/value-formatting/number_formatting.md)
+  - [Identifier Case Conversion](categories/value-formatting/number_formatting.md)
 
 - [Video](categories/multimedia_video/index.md)
   - [Video](categories/multimedia_video/video.md)
