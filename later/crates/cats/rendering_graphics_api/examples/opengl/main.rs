@@ -1,5 +1,5 @@
 mod book_example;
 
-fn main() -> impl std::process::Termination {
-    book_example::run()
+fn main() {
+    book_example::run();
 }

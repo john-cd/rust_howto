@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Fetch unread messages over IMAP and parse them with [`mail_parser`].
 //!
 //! Needs a server: set `IMAP_HOST`, `IMAP_USER` and `IMAP_PASSWORD`
@@ -137,6 +136,24 @@ pub async fn run() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// Checks unseen-message retrieval against a configured IMAP server.
+    #[tokio::test]
+    #[ignore = "needs IMAP settings, an expected subject, and an unseen message"]
+    async fn require_external_svc() -> Result<()> {
+        use anyhow::Context as _;
+
+        let expected_subject = std::env::var("IMAP_EXPECTED_SUBJECT")
+            .context("set IMAP_EXPECTED_SUBJECT to the seeded message subject")?;
+        let summaries = fetch_unseen().await?;
+        assert!(
+            summaries
+                .iter()
+                .any(|summary| summary.subject == expected_subject),
+            "no unseen message had subject {expected_subject:?}"
+        );
+        Ok(())
+    }
 
     /// Verifies that the summarizes a sample message.
     #[test]

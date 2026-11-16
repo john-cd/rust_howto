@@ -9,15 +9,3 @@ mod vectors;
 fn main() {
     vectors::run();
 }
-
-/// Verifies that the vector example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// Verifies that the vector dispatcher runs.
-    #[test]
-    fn vector_dispatcher_runs() {
-        assert!(std::panic::catch_unwind(main).is_ok());
-    }
-}

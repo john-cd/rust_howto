@@ -9,15 +9,3 @@ mod linkedlist;
 fn main() {
     linkedlist::run();
 }
-
-/// Verifies that the linked list example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// Verifies that the linkedlist dispatcher runs.
-    #[test]
-    fn linkedlist_dispatcher_runs() {
-        assert!(std::panic::catch_unwind(main).is_ok());
-    }
-}

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates a basic HTTP server using the Loco framework.
 //! It defines a simple application with a controller and routes.
 //!
@@ -109,7 +108,11 @@ fn main() -> anyhow::Result<()> {
 /// Returns an error if a step of the example fails.
 fn example() -> anyhow::Result<()> {
     #[cfg(feature = "loco-support")]
-    println!("Run with `cargo loco start` from a Loco application directory.");
+    {
+        let _ = App::app_name();
+        drop(home::routes());
+        println!("Run with `cargo loco start` from a Loco application directory.");
+    }
     #[cfg(not(feature = "loco-support"))]
     println!("Enable `loco-support` to compile the Loco application hooks.");
     Ok(())
