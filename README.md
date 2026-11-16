@@ -69,7 +69,7 @@ slot is `main`, regardless of its branch name.
 | `CODE_TARGET_ROOT`  | `D:/target`     | `$XDG_CACHE_HOME/cargo-target` or `~/.cache/cargo-target` |
 | `CODE_BUILD_ROOT`   | `D:/code_build` | `$XDG_CACHE_HOME/cargo-build` or `~/.cache/cargo-build`   |
 | `CODE_SCCACHE_ROOT` | `D:/sccache`    | `$XDG_CACHE_HOME/sccache` or `~/.cache/sccache`           |
-| `CODE_TEMP_ROOT`    | `D:/temp`       | Existing native `TMPDIR` or `/tmp`                        |
+| `CODE_TEMP_ROOT`    | `C:/temp`       | Existing native `TMPDIR` or `/tmp`                        |
 
 Set roots to absolute paths and create the directories before building. Targets use
 `CODE_TARGET_ROOT/rust_howto/<slot>` and intermediate files use
@@ -138,7 +138,7 @@ Caches and generated files use matching paths under `CODE_PYTHON_BUILD_ROOT`
 and `CODE_PYTHON_OUTPUT_ROOT`. The main checkout uses slot `main`; linked
 worktrees use their letter. Configure `CODE_PACKAGES_ROOT` for uv/pip/prek
 caches and `CODE_TOOLS_ROOT` for uv-managed interpreters and tools.
-Windows defaults are `D:/packages`, `C:/tools`, and `D:/temp` for temporary
+Windows defaults are `D:/packages`, `C:/tools`, and `C:/temp` for temporary
 files; Unix uses `~/.local/share`, `~/.local/tools`, and native temporary paths.
 `CODE_PYTHON_ENV_ROOT` defaults to `<packages>/uv/environments`; build and output
 roots default to `<temp>/python-build` and `<temp>/python-output`.
@@ -151,7 +151,7 @@ The primary checkout uses `develop`; `main` is an independent empty branch.
 Auxiliary worktrees belong under `.worktrees/`, with names a and b only.
 Storage roots are configurable through `CODE_REPOS_ROOT`, `CODE_TEMP_ROOT`,
 `CODE_PACKAGES_ROOT`, and `CODE_TOOLS_ROOT`. Windows defaults are `D:/code`,
-`D:/temp` (`C:/temp` fallback), `D:/packages`, and `C:/tools` respectively.
+`C:/temp` (`C:/temp` fallback), `D:/packages`, and `C:/tools` respectively.
 Unix uses native home/cache/temp paths. A root override changes destinations;
 it does not move existing installations. Tool-specific overrides such as
 `CARGO_HOME`, `npm_config_cache`, and `NUGET_PACKAGES` remain independent.
