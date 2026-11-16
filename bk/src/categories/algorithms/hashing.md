@@ -112,7 +112,7 @@ For legacy applications, you may consider using the following hashing [algorithm
 
 {{#badges md-5 cryptography=Cryptography no-std="No standard library"}}{{hi:Hash}}{{hi:Md5}}{{hi:Crypto}}{{hi:Digest}}
 
-[`md-5`][c~md-5~docs]↗{{hi:md-5}} implements the MD5 hash function.
+[`md-5`][c~md-5~docs]↗{{hi:md-5}} implements the MD5 hash function. Use it only for compatibility with existing formats or systems. MD5 is unsuitable where collision resistance is required.
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/hashing/md5.rs:example}}
@@ -142,5 +142,4 @@ Other RustCrypto ecosystem crates include [`aes-gcm`][c~aes-gcm~docs], [`aes-gcm
 
 <div class="hidden">
   accuracy review: algorithms
-  content audit: crate pointers (AEAD, signatures, certificates, ahash) removed in 68a11801; restore or keep a short list
 </div>
