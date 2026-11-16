@@ -34,6 +34,7 @@
 - [Standard Library](standard-library/index.md)
   - [Optional Values](standard-library/optional_values.md)
   - [Recoverable Error Handling](standard-library/recoverable_error_handling.md)
+  - [Handle Panics at a Boundary](standard-library/panic_boundaries.md)
   - [Default Values](standard-library/default_values.md)
   - [Value Comparison](standard-library/value_comparison.md)
   - [Smart Pointers](standard-library/smart_pointers.md)

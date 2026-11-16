@@ -88,6 +88,8 @@ See also the [[optional_values | Option]] chapter.
 
 ## Choose an Error Boundary
 
+For failures caused by unwinding at an isolated callback or foreign-function boundary, see [Handle Panics at a Boundary](panic_boundaries.md).
+
 Expose typed errors when callers can recover by matching a variant. At an application boundary, add the operation and relevant input to the diagnostic while preserving the source error. Readers can compare typed error sets and diagnostic context in [The Missing Piece in Rust Error Handling][blog~rust-error-sets]↗ and [User-friendly Errors in Rust][blog~user-friendly-rust-errors]↗.
 
 ## References {#references .skip}
