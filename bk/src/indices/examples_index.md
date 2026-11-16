@@ -512,6 +512,12 @@
 
 {{#include ../categories/asynchronous/structured_concurrency.incl.md}}
 
+## Atomics and Loom
+
+{{#include ../categories/concurrency/atomics.incl.md}}
+
+{{#include ../categories/concurrency/loom.incl.md}}
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

@@ -13,8 +13,8 @@ Concurrency{{hi:Concurrency}} is about coordinating tasks whose lifetimes overla
 | [Data Parallelism](data_parallelism.md) | Split CPU-bound iterator work across cores | `rayon` |
 | [Message Passing](message_passing.md) | Send owned values between threads | `std::sync::mpsc`, `crossbeam-channel`, `flume` |
 | [Shared State](shared_state.md) | Coordinate access to shared values | `Mutex`, `RwLock` |
-| [Atomics](atomics.md) | Coordinate simple shared values without a mutex | `std::sync::atomic`, `arc-swap` |
-| [Model-Checking with Loom](loom.md) | Explore thread interleavings of a small protocol | `loom` |
+| [Atomics](https://john-cd.com/rust_howto/categories/concurrency/atomics.html) | Coordinate simple shared values without a mutex | `std::sync::atomic`, `arc-swap` |
+| [Model-Checking with Loom](https://john-cd.com/rust_howto/categories/concurrency/loom.html) | Explore thread interleavings of a small protocol | `loom` |
 | [`crossbeam`](crossbeam.md) | Use scoped threads and lower-level concurrency tools | `crossbeam` |
 | [Concurrent Data Structures](concurrent_data_structures.md) | Share maps and queues across threads | `dashmap`, `papaya`, `crossbeam-queue` |
 | [`Send` and `Sync`](send_sync.md) | Understand safe transfer and sharing between threads | `std::marker` |
@@ -54,7 +54,7 @@ Protect shared state with locks or atomics when ownership transfer through a cha
 
 Explore the thread interleavings of a small publication and cancellation protocol with [`loom`][c~loom~docs]↗.
 
-{{#include loom.incl.md}}
+See [Model-Checking with Loom](https://john-cd.com/rust_howto/categories/concurrency/loom.html) in the published book.
 
 ## Concurrent Data Structures
 

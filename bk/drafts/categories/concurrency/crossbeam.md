@@ -4,7 +4,7 @@
 
 {{#include crossbeam.incl.md}}
 
-Crossbeam is a family of crates for concurrent programming. `crossbeam-channel` adds bounded multi-producer, multi-consumer channels and `select!`; `crossbeam-queue` provides concurrent queues, while `crossbeam-utils` includes `AtomicCell`. The queue and atomic recipes live in [Concurrent Data Structures](concurrent_data_structures.md) and [Atomics](atomics.md).
+Crossbeam is a family of crates for concurrent programming. `crossbeam-channel` adds bounded multi-producer, multi-consumer channels and `select!`; `crossbeam-queue` provides concurrent queues, while `crossbeam-utils` includes `AtomicCell`. The queue and atomic recipes live in [Concurrent Data Structures](concurrent_data_structures.md) and [Atomics](https://john-cd.com/rust_howto/categories/concurrency/atomics.html).
 
 Use `std::thread::scope` for scoped threads on current Rust; it replaces the thread-scoping recipe once provided by Crossbeam. Use the [Message Passing](message_passing.md) chapter for general channel patterns.
 
