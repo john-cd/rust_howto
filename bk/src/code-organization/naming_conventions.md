@@ -50,7 +50,7 @@ When a type wraps a single value to associate it with higher-level semantics, ac
 With a few exceptions, the `get_` prefix is not used for getters in Rust code.{{hi:Getters}} Follow the field name by `_mut` for mutating getters.
 
 ```rust
-{{#include ../../crates/code_organization/examples/naming_conventions/main.rs:getters}}
+{{#include ../../crates/code_organization/examples/naming_conventions/book_example.rs:getters}}
 ```
 
 For getters that do runtime validation such as bounds checking, consider adding unsafe `_unchecked` variants.
@@ -60,7 +60,7 @@ For getters that do runtime validation such as bounds checking, consider adding 
 For a container with elements of type `U`, iterator methods should be named:{{hi:Iterator methods}}
 
 ```rust
-{{#include ../../crates/code_organization/examples/naming_conventions/main.rs:iterators}}
+{{#include ../../crates/code_organization/examples/naming_conventions/book_example.rs:iterators}}
 ```
 
 ## References {#references .skip}
