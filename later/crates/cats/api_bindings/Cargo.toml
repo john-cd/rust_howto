@@ -22,6 +22,8 @@ path = "examples/api_bindings/main.rs"
 test = true
 
 [dependencies]
+# Safe Rust API for gzip and other compression formats.
+flate2 = "1.1.11"
 
 [lints]
 workspace = true
