@@ -48,11 +48,7 @@ Add the library crate types to `Cargo.toml`:
 crate-type = ["cdylib", "rlib"]
 ```
 
-Export a Rust function with `wasm-bindgen`:
-
-```rust,editable
-{{#include ../../../crates/cats/wasm/examples/wasm_development/wasm.rs:example}}
-```
+Place the [exported Rust function](interfacing_with_javascript.md#wasm-bindgen) in `src/lib.rs`. The JavaScript chapter also shows how to initialize the generated module and call the export.
 
 Build JavaScript bindings and a browser-loadable ES module with `wasm-pack`:
 
@@ -78,7 +74,15 @@ For a framework-based front end, use the tool supported by that framework. For e
 
 ## Test Wasm and JavaScript integration
 
-Keep logic that does not call host APIs testable on the host with `cargo test`. Use [`wasm-bindgen-test`][c~wasm-bindgen-test~docs]↗{{hi:wasm-bindgen-test}} ([guide][wasm-bindgen-test~guide]↗) for behavior that needs JavaScript imports, browser globals, or DOM APIs. Mark those tests with `#[wasm_bindgen_test]` and choose the JavaScript runtime or browser that matches the feature under test:
+Keep logic that does not call host APIs testable on the host. This test calls the
+same arithmetic function exported to JavaScript. From `later/crates`, run
+`cargo test -p wasm --example wasm_development`.
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/wasm/examples/wasm_development/main.rs:host-tests}}
+```
+
+Use [`wasm-bindgen-test`][c~wasm-bindgen-test~docs]↗{{hi:wasm-bindgen-test}} ([guide][wasm-bindgen-test~guide]↗) for behavior that needs JavaScript imports, browser globals, or DOM APIs. Mark those tests with `#[wasm_bindgen_test]` and choose the JavaScript runtime or browser that matches the feature under test:
 
 ```bash
 wasm-pack test --node

@@ -4,11 +4,7 @@
 
 {{#include wasm_basics.incl.md}}
 
-This host-testable example exports an addition function to JavaScript when compiled for the browser target:
-
-```rust,noplayground
-{{#include ../../../crates/cats/wasm/examples/wasm_development/wasm.rs:example}}
-```
+For a browser example that exports and calls a Rust function, see [Interfacing with JavaScript](interfacing_with_javascript.md#wasm-bindgen).
 
 ## What is WebAssembly? {#What-is-wasm .skip}
 
@@ -47,7 +43,3 @@ Rust game libraries such as [`winit`][c~winit~docs]↗{{hi:winit}}, [`wgpu`][c~w
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  final review
-</div>
