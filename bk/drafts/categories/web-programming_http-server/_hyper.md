@@ -23,6 +23,8 @@ The server below binds to loopback port 3000, accepts connections, adapts each T
 {{#include ../../../crates/cats/web_programming_http_server/examples/hyper_server.rs:example}}
 ```
 
+From `bk/crates`, run `cargo run -p web_programming_http_server --example hyper_server` and request `http://127.0.0.1:3000/health`. The health route is a quick way to verify that the connection and service are working.
+
 ## `hyper` TLS Support {#hyper-tls-support .skip}
 
 [![hyper-tls~website][c~hyper-tls~website~badge]][c~hyper-tls~website] {{#badges hyper-tls}} {{hi:Http}} {{hi:Https}} {{hi:Hyper}} {{hi:Ssl}} {{hi:Tls}}
@@ -50,7 +52,3 @@ TLS support for Hyper through OpenSSL.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  hyper: fix
-</div>
