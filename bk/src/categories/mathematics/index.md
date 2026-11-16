@@ -22,11 +22,9 @@ For vectors, matrices, decompositions, and transformations, the examples use `na
 - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} provides N-dimensional arrays.
 - [`nalgebra-lapack`][c~nalgebra-lapack~docs]↗{{hi:nalgebra-lapack}} connects nalgebra to LAPACK routines.
 
-### Tensors
-
-For multidimensional arrays, see [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}. The examples below focus on vectors and matrices; there is no dedicated tensor example yet.
-
 {{#include linear_algebra.incl.md}}
+
+For rank-three arrays, see [Reduce a Tensor Along an Axis](linear_algebra.md#reduce-a-tensor-along-an-axis).
 
 ## Probability and Statistics
 
