@@ -115,6 +115,7 @@ Just a small intermediate release.
 
 - "help" messages that can have their own span on nightly, they
   inherit parent span on stable.
+
   ```rust
   let cond_help = if condition { Some("some help message") else { None } };
   abort!(
@@ -125,6 +126,7 @@ Just a small intermediate release.
       note = note_span => "don't forget the note, {}", "would you?" // notes can have their own span but it's effective only on nightly
   )
   ```
+
 - Warnings via `emit_warning` and `emit_warning_call_site`. Nightly only, they're ignored on stable.
 - Now `proc-macro-error` delegates to `proc_macro::Diagnostic` on nightly.
 
@@ -151,9 +153,9 @@ Just a small intermediate release.
 
 # v0.3.0 (2019-10-8)
 
-## The crate has been completely rewritten from scratch!
+## The crate has been completely rewritten from scratch
 
-## Changes (most are breaking):
+## Changes (most are breaking)
 
 - Renamed macros:
   - `span_error` => `abort`

@@ -12,12 +12,8 @@ The supported form expands a crate and its optional extra categories into badges
 
 ## Badge Migration Fixture {#badge-migration-fixture}
 
-| Recipe                                                          | Crates         | Categories                            |
-| --------------------------------------------------------------- | -------------- | ------------------------------------- |
+| Recipe | Crates | Categories |
+| --- | --- | --- |
 | [Sort a Vector of Integers][ex~algorithms~sort-vector-integers] | {{#crate std}} | {{#categories algorithms=Algorithms}} |
 
 [ex~algorithms~sort-vector-integers]: sorting.md#sort-vector-integers
-[c~std~docs]: https://doc.rust-lang.org/std
-[c~std~docs~badge]: https://img.shields.io/badge/std-firebrick?logo=rust
-[cat~algorithms]: https://crates.io/categories/algorithms
-[cat~algorithms~badge]: https://img.shields.io/badge/Algorithms-white
