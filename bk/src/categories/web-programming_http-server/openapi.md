@@ -6,13 +6,21 @@
 
 Describe an HTTP API and its data types in a machine-readable form, so that documentation, clients, and validators stay in step with the code.
 
+From `bk/crates`, run the examples with Cargo.
+
+```sh
+cargo run --locked -p web_programming_http_server --example openapi -- utoipa
+cargo run --locked -p web_programming_http_server --example openapi -- schemars
+cargo test --locked -p web_programming_http_server --example openapi
+```
+
 ## Generate an OpenAPI Document with `utoipa` {#utoipa}
 
 [![utoipa][c~utoipa~docs~badge]][c~utoipa~docs]{{hi:utoipa}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:web-programming}} [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:web-programming::http-server}}
 
 [`utoipa`][c~utoipa~docs]↗{{hi:utoipa}} generates an OpenAPI document from your Rust code (the code-first approach). Derive `ToSchema` for request and response types, annotate each handler with `#[utoipa::path]` to describe its route, parameters, and responses, and collect them with `#[derive(OpenApi)]`. Doc comments become descriptions.
 
-```rust,editable,noplayground
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/web_programming_http_server/examples/openapi/utoipa.rs:example}}
 ```
 
@@ -26,19 +34,15 @@ Keep the specification honest: commit a generated copy and fail the continuous-i
 
 [![schemars][c~schemars~docs~badge]][c~schemars~docs]{{hi:schemars}} [![jsonschema][c~jsonschema~docs~badge]][c~jsonschema~docs]{{hi:jsonschema}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:web-programming}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:encoding}}
 
-[`schemars`][c~schemars~docs]↗{{hi:schemars}} derives a [JSON Schema](https://json-schema.org) from a type that implements `serde`'s traits, honouring `#[serde(...)]` attributes and doc comments. [`jsonschema`][c~jsonschema~docs]↗{{hi:jsonschema}} validates a JSON value against a schema. Together they let you publish a schema for a configuration file, or reject malformed input with a precise message before deserializing it.
+[`schemars`][c~schemars~docs]↗{{hi:schemars}} derives a [JSON Schema](https://json-schema.org) from a type that implements `serde`'s traits, honoring `#[serde(...)]` attributes and doc comments. [`jsonschema`][c~jsonschema~docs]↗{{hi:jsonschema}} validates a JSON value against a schema. Together they let you publish a schema for a configuration file, or reject malformed input with a precise message before deserializing it.
 
-```rust,editable,noplayground
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/web_programming_http_server/examples/openapi/schemars.rs:example}}
 ```
 
 The tests check that a valid configuration passes, that a wrongly typed or incomplete one is rejected, and that the schema lists the expected properties.
 
-## Related Topics {#related-topics .skip}
-
-- [[axum | Axum]].
-- [[grpc | gRPC]] for describing services with Protocol Buffers instead.
-- [[web-programming_http-server | HTTP Servers]].
+See [Update JSON Fields with Axum](json_patch.md) for a request type that distinguishes an omitted field from an explicit null.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

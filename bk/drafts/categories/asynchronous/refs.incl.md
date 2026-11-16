@@ -12,7 +12,7 @@
 [ex~asynchronous~broadcast]: async_channels.md#broadcast
 [ex~asynchronous~call-async-from-blocking]: async_and_blocking.md#call-async-from-blocking
 [ex~asynchronous~cancellation-token]: async_utilities.md#cancellation-token
-[ex~asynchronous~cancellation-tree]: structured_concurrency.md#cancellation-tree
+[ex~asynchronous~cancellation-tree]: https://john-cd.com/rust_howto/categories/asynchronous/structured_concurrency.html#cancellation-tree
 [ex~asynchronous~calling-blocking-from-async]: async_and_blocking.md#calling-blocking-from-async
 [ex~asynchronous~diff-other-languages]: async.md#diff-other-languages
 [ex~asynchronous~futures-executor]: async_and_blocking.md#futures-executor
@@ -21,7 +21,7 @@
 [ex~asynchronous~graceful-shutdown]: tokio.md#graceful-shutdown
 [ex~asynchronous~io]: tokio.md#io
 [ex~asynchronous~join]: tokio.md#join
-[ex~asynchronous~joinset-pool]: structured_concurrency.md#joinset-pool
+[ex~asynchronous~joinset-pool]: https://john-cd.com/rust_howto/categories/asynchronous/structured_concurrency.html#joinset-pool
 [ex~asynchronous~joining-futures]: futures.md#joining-futures
 [ex~asynchronous~kanal]: async_channels.md#kanal
 [ex~asynchronous~localset]: tokio.md#localset
@@ -37,11 +37,11 @@
 [ex~asynchronous~spawn-tasks]: async.md#spawn-tasks
 [ex~asynchronous~spawning]: tokio.md#spawning
 [ex~asynchronous~streams]: streams.md#streams
-[ex~asynchronous~supervisor]: structured_concurrency.md#supervisor
+[ex~asynchronous~supervisor]: https://john-cd.com/rust_howto/categories/asynchronous/structured_concurrency.html#supervisor
 [ex~asynchronous~tokio-runtime]: async_and_blocking.md#tokio-runtime
 [ex~asynchronous~tokio]: async_channels.md#tokio
 [ex~asynchronous~utilities]: async_utilities.md#utilities
-[ex~asynchronous~watch-latest]: structured_concurrency.md#watch-latest
+[ex~asynchronous~watch-latest]: https://john-cd.com/rust_howto/categories/asynchronous/structured_concurrency.html#watch-latest
 [ex~asynchronous~which-crate-provides-what]: async.md#which-crate-provides-what
 [p~async-channels]: async_channels.md
 [p~async]: async.md

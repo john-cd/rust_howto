@@ -27,6 +27,10 @@
 [ex~algorithms~sort-vector-integers]: ../categories/algorithms/sorting.md#sort-vector-integers
 [ex~algorithms~sort-vector-structs]: ../categories/algorithms/sorting.md#sort-vector-structs
 [ex~algorithms~xxh3]: ../categories/algorithms/hashing.md#xxh3
+[ex~asynchronous~cancellation-tree]: ../categories/asynchronous/structured_concurrency.md#cancellation-tree
+[ex~asynchronous~joinset-pool]: ../categories/asynchronous/structured_concurrency.md#joinset-pool
+[ex~asynchronous~supervisor]: ../categories/asynchronous/structured_concurrency.md#supervisor
+[ex~asynchronous~watch-latest]: ../categories/asynchronous/structured_concurrency.md#watch-latest
 [ex~caching~cached]: ../categories/caching/in_memory_cache.md#cached
 [ex~caching~lru-cache]: ../categories/caching/in_memory_cache.md#lru-cache
 [ex~caching~moka]: ../categories/caching/in_memory_cache.md#moka
@@ -85,6 +89,7 @@
 [ex~contributing~templ]: ../appendices/contributing/documentation_generation.md#templ
 [ex~contributing~using-vs-code]: ../appendices/contributing/development_environment_setup.md#using-vs-code
 [ex~contributing~windows-install]: ../appendices/contributing/development_environment_setup.md#windows-install
+[ex~data-processing~dataframes]: ../categories/data-processing/dataframes.md#dataframes
 [ex~data-structures~arrayvec]: ../categories/data-structures/stack-allocated.md#arrayvec
 [ex~data-structures~binary-heap]: ../categories/data-structures/binary_heaps.md#binary-heap
 [ex~data-structures~bitflags]: ../categories/data-structures/bit_arrays.md#bitflags
@@ -121,7 +126,6 @@
 [ex~data-structures~tinyvec]: ../categories/data-structures/stack-allocated.md#smallvec-tinyvec
 [ex~data-structures~ulid]: ../categories/data-structures/unique_identifiers.md#ulid
 [ex~data-structures~vec]: ../categories/data-structures/vectors.md#vec
-[ex~data-processing~dataframes]: ../categories/data-processing/dataframes.md#dataframes
 [ex~date-and-time~convert-local-time]: ../categories/date-and-time/duration.md#convert-local-time
 [ex~date-and-time~display-formatted-date-time]: ../categories/date-and-time/parse.md#display-formatted-date-time
 [ex~date-and-time~examine-date-and-time]: ../categories/date-and-time/parse.md#examine-date-and-time
@@ -439,8 +443,8 @@
 [ex~multimedia_images~image_processing]: ../categories/multimedia_images/images.md#apply-filters
 [ex~multimedia_images~optimize-pngs]: ../categories/multimedia_images/images.md#optimize-pngs
 [ex~multimedia_images~read-exif-metadata]: ../categories/multimedia_images/images.md#read-exif-metadata
-[ex~no-std~no-std]: ../categories/no-std/no_std.md#no-std
 [ex~no-std_no-alloc~noalloc]: ../categories/no-std/no_alloc.md#noalloc
+[ex~no-std~no-std]: ../categories/no-std/no_std.md#no-std
 [ex~parsing~expression-parser]: ../categories/parsing/expression_parser.md#expression-parser
 [ex~parsing~nom]: ../categories/parsing/parsing.md#nom
 [ex~parsing~pest]: ../categories/parsing/parsing.md#pest
@@ -498,12 +502,14 @@
 [ex~standard-library~return-early-pattern]: ../standard-library/optional_values.md#return-early-pattern
 [ex~standard-library~smart-pointer-comparison]: ../standard-library/smart_pointers.md#smart-pointer-comparison
 [ex~standard-library~sync-primitives]: ../standard-library/smart_pointers.md#sync-primitives
+[ex~template-engine~create-html-from-template]: ../categories/template-engine/tera.md#create-html-from-template
+[ex~template-engine~sanitize-vs-escape]: ../categories/template-engine/tera.md#sanitize-vs-escape
+[ex~template-engine~tinytemplate]: ../categories/template-engine/tinytemplate.md#tinytemplate
 [ex~value-formatting~humansize]: ../categories/value-formatting/number_formatting.md#humansize
 [ex~value-formatting~itoa]: ../categories/value-formatting/number_formatting.md#itoa
 [ex~value-formatting~ryu]: ../categories/value-formatting/number_formatting.md#ryu
 [ex~value-formatting~standard-and-locale-formatting]: ../categories/value-formatting/number_formatting.md#standard-and-locale-formatting
+[ex~web-programming_http-server~schemars]: ../categories/web-programming_http-server/openapi.md#schemars
+[ex~web-programming_http-server~utoipa]: ../categories/web-programming_http-server/openapi.md#utoipa
 [ex~web-programming_websocket~general-purpose]: ../categories/web-programming_websocket/websocket.md#general-purpose
-[ex~template-engine~create-html-from-template]: ../categories/template-engine/tera.md#create-html-from-template
-[ex~template-engine~sanitize-vs-escape]: ../categories/template-engine/tera.md#sanitize-vs-escape
-[ex~template-engine~tinytemplate]: ../categories/template-engine/tinytemplate.md#tinytemplate
 [p~standard-library]: ../standard-library/index.md

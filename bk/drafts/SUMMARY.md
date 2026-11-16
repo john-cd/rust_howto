@@ -11,7 +11,6 @@
   - [Futures crate](categories/asynchronous/futures.md)
   - [Mixing Async and Blocking Code](categories/asynchronous/async_and_blocking.md)
   - [Utilities](categories/asynchronous/async_utilities.md)
-  - [Cancellation and Structured Concurrency](categories/asynchronous/structured_concurrency.md)
 
 - [Authentication](categories/authentication/index.md)
   - [Basic Authentication](categories/authentication/basic_authentication.md)
@@ -257,7 +256,6 @@
   - [Middleware](categories/web-programming_http-server/middleware.md)
   - [CORS](categories/web-programming_http-server/cors.md)
   - [Axum Add-ons](categories/web-programming_http-server/axum_extras.md)
-  - [OpenAPI and JSON Schema](categories/web-programming_http-server/openapi.md)
   - [Batteries-included Frameworks](categories/web-programming_http-server/_batteries-included_frameworks.md)
   - [GraphQL](categories/web-programming_http-server/_graphql.md)
   - [gRPC](categories/web-programming_http-server/_grpc.md)

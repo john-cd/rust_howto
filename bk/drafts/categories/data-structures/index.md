@@ -72,11 +72,11 @@ Start with the operation that dominates your workload: indexing for `Vec`, work 
 
 ## Perfect Hash Functions
 
-{{#include phf.incl.md}}
+See [Use a Compile-time Perfect Hash Map](https://john-cd.com/rust_howto/categories/data-structures/index.html#phf-map) in the published book.
 
 ## Append-only Collections
 
-{{#include elsa.incl.md}}
+See [Use Append-only Frozen Collections](https://john-cd.com/rust_howto/categories/data-structures/index.html#elsa-frozen-vec) in the published book.
 
 ## Key Equivalence with `equivalent`
 
