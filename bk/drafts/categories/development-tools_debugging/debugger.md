@@ -92,7 +92,3 @@ See the [Cargo profile reference][debugger~cargo~profiles]↗ for other debug in
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  add Debugger page
-</div>
