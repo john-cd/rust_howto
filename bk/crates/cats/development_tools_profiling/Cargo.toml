@@ -27,6 +27,11 @@ path = "examples/benchmarking/main.rs"
 test = true
 
 [[example]]
+name = "regression_workload"
+path = "examples/benchmarking/regression_workload.rs"
+test = true
+
+[[example]]
 name = "dhat_assertions"
 path = "examples/dhat_assertions.rs"
 test = true

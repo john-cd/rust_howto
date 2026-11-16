@@ -109,6 +109,7 @@
   - [Differential Equations](categories/mathematics/differential_equations.md)
 
 - [Profiling and Benchmarking](categories/development-tools/profiling.md)
+- [Compare Benchmark Results in CI](categories/development-tools/benchmark_regressions.md)
 
 ## Resources
 
