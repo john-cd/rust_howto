@@ -2,7 +2,7 @@
 
 # Worktrees
 
-Updated 2026-11-03 (America/Los_Angeles). This file describes the managed layout;
+Updated 2026-11-16 (America/Los_Angeles). This file describes the managed layout;
 use `git worktree list --porcelain` and `git status --short` for live state.
 
 - The primary checkout stays on `develop` and uses cache slot `main`.
@@ -20,10 +20,11 @@ use `git worktree list --porcelain` and `git status --short` for live state.
 
 Override the `CODE_*_ROOT` environment variables before invoking tooling.
 Windows defaults are `CODE_REPOS_ROOT=D:/code`,
-`CODE_TEMP_ROOT=D:/temp` (`C:/temp` fallback),
+`CODE_TEMP_ROOT=C:/temp`,
 `CODE_PACKAGES_ROOT=D:/packages`, and `CODE_TOOLS_ROOT=C:/tools`.
 Unix uses native home/cache/temp directories. Root overrides do not move existing
-installations or rewrite independent package-manager settings.
+installations or rewrite independent package-manager settings. Use `D:/temp`
+for explicitly isolated test caches and remove them when finished.
 
 ## Rust
 
@@ -48,28 +49,22 @@ See the README for this repository's project paths and commands.
 
 ## Current state
 
-Reviewed 2026-11-03. The primary checkout is on `develop`; integration is
-linear and will be synchronized with `origin/develop` after the reviewed topic
-commits are pushed. Slot `a` will be detached at the integrated `develop` tip
-after delivery. Slot `b` remains on `codex/issue-2164-cargo-profiles`. Slot `c`
-is detached at `931d6b84` with a cherry-pick in progress; preserve it and do not
-reuse it.
+Reviewed 2026-11-16. The primary checkout is on `develop` at `79725592e` for
+this snapshot, eight commits ahead of `origin/develop`; this `WORKTREES.md`
+update follows that snapshot. Its recent history includes
+`ffe8d0834` (`codex/promote-later-first-wave`); slot `c` was not inspected or
+changed during this task, per the user's request. Preserve the primary's
+modified `TODO.md` and untracked `later-to-bk-plan.md`; the `mdbook-utils`
+submodule update is committed at `01d34fe`.
 
-| Checkout | Branch or revision                | Status and cache                                            |
+| Checkout | Branch or revision | Status and cache |
 | --- | --- | --- |
-| Repository root | `develop` | Clean after integration; cache slot `main`.                 |
-| `.worktrees/a` | detached at integrated `develop`  | Clean after delivery; cache slot `a`.                       |
-| `.worktrees/b` | `codex/issue-2164-cargo-profiles` | Clean; cache slot `b`.                                      |
-| `.worktrees/c` | detached at `931d6b84`            | Cherry-pick in progress; preserve; C: intermediate cleared. |
+| Repository root | `develop` (snapshot `79725592e`) | Chapter migrations, storage defaults, five book-link/accuracy commits, and fixture formatting committed; eight commits ahead before this status update; modified `TODO.md` and untracked `later-to-bk-plan.md` preserved; `mdbook-utils` at `01d34fe`; cache slot `main`. |
+| `.worktrees/a` | `codex/worktree-a-md060-compact` at `e1535bda2` | Clean; compact-table and storage behavior already exist on `develop`; branch retained; cache slot `a`. |
+| `.worktrees/b` | `codex/issue-2273-book-links` at `719f93f09` | Clean; five topic commits are integrated into `develop`; branch retained; cache slot `b`. |
+| `.worktrees/c` | Preserved per user request | Not inspected or changed; cache slot `c`. |
 
-The primary `main` cache and worktree `a`/`b` caches remain in place. Slot `c`'s
-intermediate cache was removed on 2026-11-03 after confirming no Cargo or rustc
-process was active and the checkout's worktree was clean at a detached tip
-already contained in `develop`. Its empty `D:/code_build/rust_howto/c` directory
-was recreated. The shared `D:/sccache` remains in place. A Git cherry-pick is
-currently in progress in slot `c`; preserve it until that operation is resolved.
-
-### Branch and pull request review
+### Prior branch and pull request review (November 3, 2026)
 
 - `develop` was `962858a3` and matched `origin/develop` before this task. Commit
   `a6ce8788` was integrated by fast-forward and pushed; the existing merge-commit
@@ -112,7 +107,7 @@ currently in progress in slot `c`; preserve it until that operation is resolved.
   comments that are inaccurate in at least two cases. Neither part was
   cherry-picked; the unique commit remains preserved for later review.
 
-### Temporary and generated-file review
+### Prior temporary and generated-file review (November 3, 2026)
 
 The only search hits were three identical
 `mdbook-utils/.jules/sentinel.md` review markers in the submodule checkout and
