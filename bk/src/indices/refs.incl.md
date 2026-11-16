@@ -442,5 +442,9 @@
 [ex~standard-library~return-early-pattern]: ../standard-library/optional_values.md#return-early-pattern
 [ex~standard-library~smart-pointer-comparison]: ../standard-library/smart_pointers.md#smart-pointer-comparison
 [ex~standard-library~sync-primitives]: ../standard-library/smart_pointers.md#sync-primitives
+[ex~value-formatting~humansize]: ../categories/value-formatting/number_formatting.md#humansize
+[ex~value-formatting~itoa]: ../categories/value-formatting/number_formatting.md#itoa
+[ex~value-formatting~ryu]: ../categories/value-formatting/number_formatting.md#ryu
+[ex~value-formatting~standard-and-locale-formatting]: ../categories/value-formatting/number_formatting.md#standard-and-locale-formatting
 [ex~web-programming_websocket~general-purpose]: ../categories/web-programming_websocket/websocket.md#general-purpose
 [p~standard-library]: ../standard-library/index.md

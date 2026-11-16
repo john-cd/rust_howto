@@ -109,6 +109,8 @@
   - [Graph Theory](categories/mathematics/graph_theory.md)
   - [Differential Equations](categories/mathematics/differential_equations.md)
 
+- [Number Formatting](categories/value-formatting/number_formatting.md)
+
 - [WebSockets](categories/web-programming_websocket/index.md)
   - [Echo Client and Server](categories/web-programming_websocket/websocket.md)
 

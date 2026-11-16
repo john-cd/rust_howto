@@ -396,6 +396,10 @@
 
 {{#include ../standard-library/value_comparison.incl.md}}
 
+## Number Formatting
+
+{{#include ../categories/value-formatting/number_formatting.incl.md}}
+
 ## WebSockets
 
 {{#include ../categories/web-programming_websocket/websocket.incl.md}}

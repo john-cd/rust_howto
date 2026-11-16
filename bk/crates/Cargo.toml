@@ -41,6 +41,7 @@ members = [
     "cats/template_engine",
     "cats/text_editors",
     "cats/text_processing",
+    "cats/value_formatting",
     "cats/web_programming",
     "cats/web_programming_http_client",
     "cats/web_programming_http_server",

@@ -22,23 +22,10 @@ name = "case_conversion"
 path = "examples/case_conversion/main.rs"
 test = true
 
-[[example]]
-name = "number_formatting"
-path = "examples/number_formatting/main.rs"
-test = true
-
 [dependencies]
 clap = "4.6.7"
 # Case conversion used by the identifier formatting example.
 heck = "0.5.0"
-# A configurable crate to easily represent sizes in a human-readable format.
-humansize = "2.1.3" # Human-readable byte sizes.
-# Fast integer primitive to string conversion
-itoa = "1.0.19" # Fast integer-to-string conversion.
-# A Rust crate for producing string-representations of numbers, formatted according to international standards
-num-format = "0.4.4" # Locale-aware grouping separators for integer output.
-# Fast floating point to string conversion
-ryu = "1.0.23"
 
 [lints]
 workspace = true
