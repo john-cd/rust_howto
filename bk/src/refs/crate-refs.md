@@ -381,6 +381,7 @@
 [c~async-channel~repo~badge]: https://img.shields.io/badge/async--channel-steelblue?logo=github
 [c~async-compression~crates.io]: https://crates.io/crates/async-compression
 [c~async-compression~docs]: https://docs.rs/async-compression
+[c~async-compression~docs~badge]: https://img.shields.io/crates/v/async-compression?label=async-compression
 [c~async-compression~repo]: https://github.com/Nullus157/async-compression
 [c~async-fs~crates.io]: https://crates.io/crates/async-fs
 [c~async-fs~crates.io~badge]: https://img.shields.io/badge/crates.io-async--fs-crimson
@@ -1707,6 +1708,8 @@
 [c~chrono-tz~repo~badge]: https://img.shields.io/badge/chrono--tz-steelblue?logo=github
 [c~chrono::Date::checked_add_signed~docs]: https://docs.rs/chrono/latest/chrono/struct.Date.html#method.checked_add_signed
 [c~chrono::Date::checked_sub_signed~docs]: https://docs.rs/chrono/latest/chrono/struct.Date.html#method.checked_sub_signed
+[c~chrono::DateTime::checked_add_signed~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html#method.checked_add_signed
+[c~chrono::DateTime::checked_sub_signed~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html#method.checked_sub_signed
 [c~chrono::DateTime::format~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html#method.format
 [c~chrono::DateTime::from_utc~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html#method.from_utc
 [c~chrono::DateTime::parse_from_rfc2822~docs]: https://docs.rs/chrono/latest/chrono/struct.DateTime.html#method.parse_from_rfc2822

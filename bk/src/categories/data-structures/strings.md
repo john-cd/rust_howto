@@ -50,7 +50,7 @@ See the [String Concatenation](https://github.com/john-cd/rust_howto/blob/develo
 See:
 
 - [Regex (Regular Expressions)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/regex.md).
-- [Parsing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/parsing/index.md).
+- [Parsing](../parsing/index.md).
 - [Text Processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md).
 - [String Parsing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_parsing.md).
 

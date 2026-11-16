@@ -67,7 +67,7 @@ This example shows how to serialize a Rust tuple. [`csv::writer`][c~csv::Writer~
 
 [![csv][c~csv~docs~badge]][c~csv~docs]{{hi:csv}} [![serde][c~serde~docs~badge]][c~serde~docs]{{hi:serde}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
-The following example shows how to serialize custom [structs][p~structs]{{hi:Serialize custom structs}} as CSV records using the [`serde`][c~serde~docs]↗{{hi:serde}} crate.
+The following example shows how to serialize custom [structs](../../language/structs.md){{hi:Serialize custom structs}} as CSV records using the [`serde`][c~serde~docs]↗{{hi:serde}} crate.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/csv/serde_serialize.rs:example}}

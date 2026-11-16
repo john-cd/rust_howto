@@ -8,6 +8,4 @@
 [ex~compression~decompress-a-tarball-removing-prefix]: tar.md#decompress-a-tarball-removing-prefix
 [ex~compression~decompress-a-tarball]: tar.md#decompress-a-tarball
 [ex~compression~zip]: compression.md#zip
-[c~async-compression~docs]: https://docs.rs/async-compression
-[c~async-compression~docs~badge]: https://img.shields.io/crates/v/async-compression?label=async-compression
 [p~compression]: index.md

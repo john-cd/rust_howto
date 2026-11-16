@@ -19,7 +19,7 @@ The tree is then evaluated recursively. The tests check `1 + 2 * 3 = 7`, `2 ^ 3 
 {{#include ../../../crates/cats/parsing/examples/calc/calc_parser.rs:example}}
 ```
 
-A hand-written parser is a good fit when the grammar is small, error messages matter, or the grammar is not context free in a convenient way. Prefer a grammar-driven tool such as [`pest`][c~pest~docs]↗{{hi:pest}} (see [[parsing | Parsing Utilities]]) when the grammar is large or changes often, and a combinator library such as [`nom`][c~nom~docs]↗{{hi:nom}} or `chumsky` for binary formats or when you want recovery from errors.
+A hand-written parser is a good fit when the grammar is small, error messages matter, or the grammar is not context free in a convenient way. Prefer a grammar-driven tool such as [`pest`][c~pest~docs]↗{{hi:pest}} (see [Parsing Utilities](index.md)) when the grammar is large or changes often, and a combinator library such as [`nom`][c~nom~docs]↗{{hi:nom}} or `chumsky` for binary formats or when you want recovery from errors.
 
 ## Hand-Written Parser, `pest`, `chumsky` or `nom` {#parser-choices}
 
@@ -35,7 +35,7 @@ A rule of thumb: a hand-written parser for one small language, `pest` when a sep
 
 ## Related Topics
 
-- [[parsing | Parsing Utilities]].
+- [Parsing Utilities](index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

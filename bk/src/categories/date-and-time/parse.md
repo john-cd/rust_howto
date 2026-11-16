@@ -66,8 +66,8 @@ A parser and formatter for `std::time::{Duration, SystemTime}`. The example pars
 
 ## Related Topics {#related-topics .skip}
 
-- [[duration | Duration and Calculation]].
-- [[time_crate | The `time` Crate]].
+- [Duration and Calculation](duration.md).
+- [The `time` Crate](time_crate.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
