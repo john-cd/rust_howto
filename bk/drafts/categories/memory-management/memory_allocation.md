@@ -39,7 +39,7 @@ Mimalloc is a general purpose, performance-oriented allocator built by Microsoft
 A library or an application can let the build choose the [`#[global_allocator]`][c~std::alloc::GlobalAlloc~docs]↗{{hi:GlobalAlloc}}. The example defines the features `use-mimalloc` and `use-jemalloc`, rejects builds that enable both features, and falls back to the system allocator when neither is. It lives in a separate package so its mutually exclusive features do not conflict with the main workspace's `--all-features` checks. From `bk/`, run `just cargo run --manifest-path crates/cats/memory_management/allocator_selection/Cargo.toml --features use-mimalloc`. On MSVC, selecting jemalloc falls back to the system allocator.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/memory_management/allocator_selection/src/book_example.rs:example}}
+{{#include ../../../crates/cats/memory_management/allocator_selection/src/global_allocator.rs:example}}
 ```
 
 Measure before switching: the best allocator depends on the workload and the platform. `tikv-jemallocator` does not support the MSVC target.

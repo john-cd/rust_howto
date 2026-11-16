@@ -1,5 +1,5 @@
-mod book_example;
+mod retry_after_header;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    retry_after_header::run()
 }

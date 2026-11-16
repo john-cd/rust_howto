@@ -1,5 +1,5 @@
-mod book_example;
+mod exponential_backoff;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    exponential_backoff::run()
 }

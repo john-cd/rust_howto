@@ -1,5 +1,5 @@
-mod book_example;
+mod token_bucket;
 
 fn main() {
-    book_example::run();
+    token_bucket::run();
 }

@@ -1,5 +1,5 @@
-mod book_example;
+mod external_dependency;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    external_dependency::run()
 }

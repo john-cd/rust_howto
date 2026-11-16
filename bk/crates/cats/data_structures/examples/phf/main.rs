@@ -1,5 +1,5 @@
-mod book_example;
+mod perfect_hash_map;
 
 fn main() {
-    book_example::run();
+    perfect_hash_map::run();
 }

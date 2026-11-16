@@ -1,5 +1,5 @@
-mod book_example;
+mod composite_predicate;
 
 fn main() {
-    book_example::run();
+    composite_predicate::run();
 }

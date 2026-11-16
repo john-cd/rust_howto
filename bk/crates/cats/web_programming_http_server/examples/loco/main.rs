@@ -1,5 +1,5 @@
-mod book_example;
+mod loco_routes;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    loco_routes::run()
 }

@@ -21,7 +21,7 @@ The [`phf`][c~phf~docs]↗{{hi:phf}} crate provides compile-time generated const
 The following example shows how to define a compile-time static map using the `phf_map!` macro. The map is generated at compile time and placed in read-only memory, so there is no runtime overhead for building the map:
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/data_structures/examples/phf/book_example.rs:example}}
+{{#include ../../../crates/cats/data_structures/examples/phf/perfect_hash_map.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}

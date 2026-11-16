@@ -11,7 +11,7 @@ This library implements an interface to "predicates" - boolean-valued functions 
 This is really useful when creating filters and checks that can be changed at runtime with user interaction - it allows a clean separation of concerns where the configuration code can be used to build up a predicate, and then that predicate can be given to the code that does the actual filtering without the filtering code knowing anything about user configuration.
 
 ```rust,editable
-{{#include ../crates/cats/development_tools_testing/examples/predicates/book_example.rs:example}}
+{{#include ../crates/cats/development_tools_testing/examples/predicates/composite_predicate.rs:example}}
 ```
 
 ## Common Predicate Types

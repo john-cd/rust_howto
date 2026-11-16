@@ -1,5 +1,5 @@
-mod book_example;
+mod global_allocator;
 
 fn main() {
-    book_example::run();
+    global_allocator::run();
 }
