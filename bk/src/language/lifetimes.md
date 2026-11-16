@@ -28,8 +28,8 @@ When the compiler can't figure out the relationships between the lifetimes of di
 
 Note the following:
 
-- Lifetimes are annotations, not types: Lifetimes don't change the underlying type of a variable. A `&i32` is a reference to an `i32`, regardless of its lifetime annotation. The lifetime annotation just provides extra information to the compiler about how long that reference is valid.
-- A lifetime is said to "outlive" another one if its representative scope is as long or longer than the other. References with longer lifetimes can be freely coerced into references with shorter ones. As such, you should read a lifetime `'a` as "lives at least as long as `'a`".
+- Lifetime parameters affect type checking. In `&'a i32`, the referent type is `i32` and the reference type includes the lifetime `'a`.
+- The bound `'long: 'short` means `'long` outlives `'short`. Rust can shorten the outer lifetime of `&T` or `&mut T` when the longer borrow outlives the shorter one. Changing a lifetime inside the referent follows different rules. For example, shortening the outer borrow of `&mut &'static str` still leaves the slot holding a `&'static str`. Treating the slot as holding a shorter reference would allow a temporary string to escape through that slot.
 - Lifetimes are compile-time only: they are erased during compilation and have no runtime overhead.
 
 ## Lifetime Elision Rules {#lifetime-elision-rules}
@@ -66,10 +66,25 @@ Lifetime parameters are listed in angle brackets (e.g. `<'a>`), usually immediat
 
 ### Use Lifetime Parameters in Functions {#lifetimes-in-functions}
 
-In the following example, we define a function with a lifetime parameter, which is then used to specify the relationships between the lifetimes of different references. In this case, the generic lifetime parameter will get the concrete lifetime that is equal to the smaller of the lifetimes of the function arguments `x` and `y`:
+The function below can return either input. Both input borrows must outlive the inferred `'a`, and callers can use the result within that shared portion of their lifetimes:
 
 ```rust,editable
 {{#include ../../crates/language/examples/lifetimes/lifetime_parameter_function.rs:example}}
+```
+
+The following call fails because `chosen` is used after one of its possible referents has been dropped:
+
+```rust,compile_fail,E0597,noplayground
+fn choose<'a>(first: &'a str, second: &'a str) -> &'a str {
+    if first.len() >= second.len() { first } else { second }
+}
+
+let chosen;
+{
+    let temporary = String::from("temporary");
+    chosen = choose("static input", &temporary);
+}
+println!("{chosen}");
 ```
 
 ### Use Lifetimes and Lifetime Parameters in Struct Definitions and Implementations {#lifetime-annotations}
@@ -91,7 +106,7 @@ Instead, you may:
 - Store only owned data in the struct,
 - Store the owned data outside the struct and let the struct hold only references,
 - Store ranges rather than references, if the pointed-to type is a sequence (array, string, vector...),
-- Use `Rc` or `Arc`.
+- Store a separate owned `Rc` or `Arc` handle to shared data where a field would otherwise borrow another field.
 - Use arena-style allocation to enforce shared lifetimes.
 - Use raw pointers (Requires `unsafe` code).
 
@@ -102,7 +117,7 @@ Instead, you may:
 ## Common Misconceptions {#common-misconceptions}
 
 - **`T` only contains owned types**: In generic code, the type parameter `T` contains all types, including references (e.g., `&i32` or `&mut i32`). Therefore, `T` is a superset of `&T` and `&mut T`.
-- **`T: 'static` means the type must be valid for the entire program**: `T: 'static` actually means that `T` _can_ live at least as long as a `'static` lifetime. Owned types (like `String` or `Vec`) satisfy this bound because their owner can hold them indefinitely. It does not mean the value _has_ to live for the entire program, or that it is created at compile time.
+- **A `'static` bound on a type** means the type has no borrowed data that limits it to a shorter lifetime. A local `String` satisfies `T: 'static` and can be dropped immediately. A value of type `&'static T` is a reference whose referent is valid for the entire program.
 - **`&'a T` and `T: 'a` are the same**: `T: 'a` means type `T` must be valid for lifetime `'a`. This accepts owned types, types containing references, and references. `&'a T` only accepts references.
 - **Shared reborrows cannot overlap**: Multiple shared reborrows of the same mutable reference may overlap. While any such shared borrow remains live, the original mutable reference cannot be used for incompatible mutable access.
 - **Lifetimes can grow and shrink at run-time**: Lifetimes are statically verified at compile-time. The borrow checker assumes every code path can be taken and chooses the shortest possible lifetime. Lifetimes cannot grow or shrink dynamically at run-time.
