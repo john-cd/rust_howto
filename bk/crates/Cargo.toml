@@ -33,6 +33,7 @@ members = [
     "cats/mathematics",
     "cats/memory_management",
     "cats/multimedia_images",
+    "cats/mutation_boundary",
     "cats/network_programming",
     "cats/no_std",
     "cats/no_std_no_alloc",
