@@ -19,6 +19,8 @@ Use geospatial types and algorithms to process coordinates, shapes, and spatial 
 
 Python's geospatial stack has long used GDAL/OGR for raster and vector data. Rust offers GDAL bindings and specialized crates for common formats and operations; compare format support, native dependencies, and analysis features before choosing a stack.
 
+For polygon overlays, see the [GEOS example](geo.md#geos). It explains when a native GEOS dependency is useful and how to interpret planar results.
+
 ## Example
 
 {{#include geo.incl.md}}
@@ -32,7 +34,3 @@ Python's geospatial stack has long used GDAL/OGR for raster and vector data. Rus
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  content audit: category index content removed by recent commits; review and restore
-</div>

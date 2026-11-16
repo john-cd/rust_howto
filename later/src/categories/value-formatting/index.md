@@ -18,6 +18,8 @@ Format values for display, potentially adapting output to a user's language and 
 | Terminal output | [`console`][c~console~docs]↗{{hi:console}}; older [`ansi_term`][c~ansi_term~docs]↗{{hi:ansi_term}} and [`termion`][c~termion~docs]↗{{hi:termion}} | `console` provides terminal styling and utilities. The older crates remain useful when maintaining existing code; check their platform support and recent releases before starting a new project. |
 | Dates, currency, and messages | [`icu`][c~icu~docs]↗{{hi:icu}}, [`fluent`][c~fluent~docs]↗{{hi:fluent}} | Use locale-aware APIs for dates, currencies, plurals, and translated messages. |
 
+Use Rust's `Display` implementation for ordinary text formatting. Use a locale-aware formatter when the output needs to follow the reader's conventions.
+
 ## Examples
 
 {{#include number_formatting.incl.md}}
@@ -32,7 +34,3 @@ Format values for display, potentially adapting output to a user's language and 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  content audit: category index content removed by recent commits; review and restore
-</div>
