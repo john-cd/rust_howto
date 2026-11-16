@@ -16,7 +16,7 @@ The Rust virtualization ecosystem is still under development, but there's growin
 ## Virtual Machine Monitors and Building Blocks
 
 | Project | Role | Notes |
-| --- | --- | --- |
+| -------------------------------------------------------------------- | ---------------- | ---------------------------------------------------------------------- |
 | [Firecracker][firecracker~repo]↗{{hi:Firecracker}} | VMM | Lightweight microVMs; see also its [`jailer`][jailer~lib.rs]↗. |
 | [`crosvm`][crosvm~repo]↗{{hi:crosvm}} | VMM | Chrome OS VMM focused on security. |
 | [Cloud Hypervisor][cloud-hypervisor~website]↗{{hi:cloud-hypervisor}} | VMM | Built for cloud workloads. |
@@ -32,6 +32,8 @@ The Rust virtualization ecosystem is still under development, but there's growin
 
 [`QEMU`][wikipedia~QEMU]↗{{hi:QEMU}} and [`KVM`][c~kvm~docs]↗{{hi:KVM}} remain the usual integration points. Rust's memory safety is a strong advantage for security-sensitive virtualization code.
 
+[gVisor][gvisor~website]↗ provides a sandboxed userspace kernel for containers. Compare its supported system calls, workload needs, and deployment environment with the micro-VM choices above.
+
 ## Code Examples
 
 {{#include virtualization.incl.md}}
@@ -39,7 +41,7 @@ The Rust virtualization ecosystem is still under development, but there's growin
 ## Related Topics
 
 | Topic | Rust Crates | Notes |
-| --- | --- | --- |
+| ---------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | Sandboxing with [Wasm](../wasm/index.md) | [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}}, [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}} | `wasmi` interprets WebAssembly; `wasi-rs` provides WASI bindings. |
 | [Emulators](../emulators/index.md) | [`qemu-rs`][c~qemu~docs]↗{{hi:qemu-rs}} | QEMU bindings for emulation and virtualization. |
 | FFI | | See [Development Tools: FFI](../development-tools_ffi/index.md). |

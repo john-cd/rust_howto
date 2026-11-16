@@ -36,6 +36,8 @@ Use [`wat`][c~wat~docs]↗{{hi:wat}} to convert text format to binary, and [`was
 
 {{#include leptos.incl.md}}
 
+For component interfaces, see the [WIT reference][wasm~wit-reference]↗. For porting C or C++ applications to the web, see the [Emscripten documentation][emscripten~guide]↗. [Lua in the Browser, with Rust and WebAssembly][book~lua-browser-rust-wasm]↗ is a project walkthrough that uses Rust to host another language in the browser.
+
 ## References
 
 - [Rust and WebAssembly (book)][book~rustwasm]↗{{hi:WASM}}.

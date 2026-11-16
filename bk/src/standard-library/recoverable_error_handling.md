@@ -34,7 +34,7 @@ The following example shows how to return `Result` from a function, propagate it
 In addition to working with pattern matching, [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} provides a wide variety of convenience methods, the most common being:
 
 | Method | Description | Use Case |
-| --- | --- | --- |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------- |
 | [`unwrap()`][c~std::result::Result::unwrap~docs]↗{{hi:std::result::Result::unwrap}} | Returns the `Ok` value or panics if `Err`. | Use when you're certain the result is `Ok`. See also `expect`. |
 | [`unwrap_or(default)`][c~std::result::Result::unwrap_or~docs]↗{{hi:std::result::Result::unwrap_or}} | Returns the `Ok` value or the supplied fallback if `Err`. | Use when you want a fallback value. |
 | [`unwrap_or_else(func)`][c~std::result::Result::unwrap_or_else~docs]↗{{hi:std::result::Result::unwrap_or_else}} | Returns the `Ok` value or calls a function to generate a fallback. | Use when computing a fallback dynamically. |
@@ -80,11 +80,15 @@ These methods are useful for working with references to the values inside a `Res
 The following table lists common methods that convert `Result<T, E>` to `Option`:
 
 | Method | Description | Use Case |
-| --- | --- | --- |
+| --------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------- |
 | [`ok()`][c~std::result::Result::ok_method~docs]↗{{hi:std::result::Result::ok}} | Converts `Result<T, E>` into `Option<T>`, discarding the error. | Use when you only care about the success value. |
 | [`err()`][c~std::result::Result::err_method~docs]↗{{hi:std::result::Result::err}} | Converts `Result<T, E>` into `Option<E>`, discarding the success value. | Use when you only care about the error. |
 
 See also the [[optional_values | Option]] chapter.
+
+## Choose an Error Boundary
+
+Expose typed errors when callers can recover by matching a variant. At an application boundary, add the operation and relevant input to the diagnostic while preserving the source error. Readers can compare typed error sets and diagnostic context in [The Missing Piece in Rust Error Handling][blog~rust-error-sets]↗ and [User-friendly Errors in Rust][blog~user-friendly-rust-errors]↗.
 
 ## References {#references .skip}
 
@@ -104,6 +108,5 @@ See also the [[optional_values | Option]] chapter.
 - [[recoverable_error_handling | Error Handling]].
 - [[error_customization | Error Customization]].
 - [[rust-patterns | Rust Patterns]].
-
 
 </div>

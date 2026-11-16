@@ -21,5 +21,9 @@ Embedded applications interact with device peripherals under limits on memory, e
 
 For broader project discovery, browse [Awesome Embedded Rust][awesome-embedded-rust~repo] and [Are We RTOS Yet?][arewertosyet~website]. Check maintenance, target support, and feature compatibility in each project's current documentation before choosing a dependency.
 
+## Study Hardware Drivers
+
+[The Rust Embedded Drivers Book][book~red-embedded-drivers]↗ walks through writing drivers in the embedded Rust ecosystem. [Embedded Rust in Production][blog~embedded-rust-production]↗ gives examples from real hardware projects.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

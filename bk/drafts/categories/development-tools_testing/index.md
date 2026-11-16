@@ -40,6 +40,10 @@ Coverage shows which instrumented code ran for a particular test configuration. 
 
 {{#include code_coverage.incl.md}}
 
+## Mutation Testing
+
+[`cargo-mutants`][cargo-mutants~repo]↗ modifies one behavior at a time and runs the tests. A surviving mutation is a prompt to inspect the assertions or consider whether that mutation is equivalent to the original. The [worked mutation-testing example][blog~mutation-testing-rust]↗ shows how to turn a survival into a stronger test.
+
 ## Compiler Diagnostics
 
 Use [`trybuild`][c~trybuild~repo]↗ to check that a small Rust program compiles or fails with the expected diagnostics. This is useful when reviewing procedural macro errors and trait-bound failures.

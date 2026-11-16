@@ -14,6 +14,10 @@ Brent's method combines bisection, the secant method, and inverse quadratic inte
 {{#include ../../../crates/cats/mathematics/examples/numerical_analysis/root_finding.rs:example}}
 ```
 
+## Compare Floating-Point Summation Methods
+
+Adding floating-point values in a different order can change the result. [Taming Floating-Point Sums][blog~floating-point-sums]↗ compares ordinary accumulation, pairwise summation, and compensation, including how each approach handles rounding error.
+
 ## Related Topics {#related-topics .skip}
 
 - [[linear_algebra | Linear Algebra]].

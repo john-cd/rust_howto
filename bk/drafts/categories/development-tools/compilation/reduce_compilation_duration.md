@@ -138,6 +138,10 @@ Consider using remote build servers or a separate build machine for large projec
 
 ## References and Related Topics {#references-and-related-topics .skip}
 
+Cargo 1.100 reorganizes intermediate artifacts to reduce build-configuration collisions. See the [Rust 1.100 release notes][rust~1-100~release]↗ for the scope of the change.
+
+To find old checkout-specific build outputs, [`cargo-clean-all`][cargo-clean-all~repo]↗ offers an interactive scan. Inspect the candidates and restrict the root directory before deleting artifacts.
+
 ### References {#references}
 
 - [Cargo build performance guide][book~cargo~build-performance]↗.

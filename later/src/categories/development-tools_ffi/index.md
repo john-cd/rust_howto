@@ -12,6 +12,8 @@ This chapter covers tools to help you better interface with other languages. Thi
 
 {{#include generate_ffi_bindings.incl.md}}
 
+[Crubit][crubit~repo]↗ and [Zngur][zngur~docs]↗ are additional Rust–C++ interop projects. Compare their supported types, ownership model, build integration, and toolchain requirements with CXX or bindgen before choosing one.
+
 ## Calling Rust from Other Languages
 
 While [`cbindgen`][c~cbindgen~docs]↗{{hi:cbindgen}} helps with C, other languages might have their own FFI mechanisms. [`cpython`][c~cpython~docs]↗{{hi:cpython}} and [`pyo3`][c~pyo3~docs]↗{{hi:pyo3}} are common for Python.

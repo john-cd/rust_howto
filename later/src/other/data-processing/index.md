@@ -54,12 +54,18 @@ Databend, and Rerun through focused examples.
 
 - [Seq][datalust~website]↗ provides centralized structured-log search and analysis.
 
+[Vector][vector-observability~repo]↗ is a production example of an observability data pipeline with sources, transforms, and sinks.
+
 ### Further reading and tools
 
 - [AWS Lambda with DuckDB and Delta Lake][blog~aws-lambda-duckdb-and-delta-lake]↗.
 - [Elusion][c~elusion~lib.rs]↗, a Rust data utility.
 - [Data with Rust][datawithrust~website]↗.
 - [A community discussion about Rust data-engineering projects][reddit~data-engineering]↗.
+
+### Explore Data Interactively
+
+Use [Evcxr Jupyter][evcxr~jupyter~guide]↗ to explore small Rust data examples interactively. See [LakeSail][lakesail~website]↗ for a Spark-compatible engine and the [ClickHouse Rust client][clickhouse~rust-client~guide]↗ for a service-based OLAP workflow. [Awesome Rust Data Science][awesome-rust-datascience~repo]↗ collects libraries by task.
 
 ## Related topics
 

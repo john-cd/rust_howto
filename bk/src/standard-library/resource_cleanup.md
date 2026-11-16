@@ -35,6 +35,8 @@ To implement `Drop` for a custom type, you would do something like this:
 {{#include ../../crates/standard_library/examples/drop/drop.rs:example}}
 ```
 
+For cleanup specific to one scope, Rust 1.100 introduced [`std::mem::DropGuard`][std~mem~dropguard]↗. It runs a closure when the guard is dropped. Use an explicit fallible operation when the caller must handle a cleanup error.
+
 ## Related Topics {#related-topics .skip}
 
 - [[data_structures | Data Structures]].
@@ -51,6 +53,5 @@ To implement `Drop` for a custom type, you would do something like this:
 <div class="hidden">
 
 - [[memory-management | Memory Management]].
-
 
 </div>

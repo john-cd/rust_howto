@@ -99,7 +99,7 @@ impl Shape {
 Trait objects enable _dynamic dispatch_. This means that the decision of which concrete method implementation to call is made _at runtime_, rather than at compile time. This is in contrast to _static dispatch_, which Rust uses with generics (and `impl Trait`, see below), where the compiler generates specialized code for each concrete type used by a generic item.
 
 | Feature | Static Dispatch (Generics) | Dynamic Dispatch (Trait Objects) |
-| --- | --- | --- |
+| ----------- | ----------------------------------------------------- | -------------------------------------------------- |
 | Mechanism | Monomorphization (code duplication at compile time) | vtable lookups at runtime |
 | Performance | Generally faster (no runtime lookup overhead) | Slightly slower (due to vtable indirection) |
 | Flexibility | Less flexible for heterogeneous collections | More flexible for heterogeneous collections |
@@ -171,6 +171,10 @@ Trait-object upcasting lets you coerce a trait object to one of its supertrait o
 ```rust
 {{#include ../../crates/language/examples/trait_objects/dyn_compat.rs:example}}
 ```
+
+## Register Implementations Across Crates
+
+When several linked crates supply implementations, [`inventory`][c~inventory~docs]↗ can collect typed registrations. Use a straightforward list when the host already knows every implementation. Define an explicit sort order when the displayed results need to be deterministic.
 
 ## Related Topics {#related-topics .skip}
 

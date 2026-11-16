@@ -9,12 +9,14 @@ Helps figure out what is going on with your code such as logging{{hi:Logging}}, 
 ## Debuggers
 
 | Topic | Rust Crates |
-| --- | --- |
+| ---------- | ----------- |
 | [[debugger | Debuggers]] | `rust-gdb`, `rust-lldb`, or VS Code with CodeLLDB |
 
 For quick value inspection and panic backtraces, see [[debugging | Debugging]].
 
 {{#include debugging.incl.md}}
+
+For source navigation, [Lantern Lattice][lantern-lattice~repo]↗ builds a call graph using language tooling such as rust-analyzer. Inspect the tool's target, feature, and generated-code coverage when a call edge matters.
 
 ## Logging & Tracing
 

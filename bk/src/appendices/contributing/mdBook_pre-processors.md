@@ -29,6 +29,10 @@ The [[mdbook | `mdbook`]] chapter describes these preprocessors and backends in 
 
 Consult the project's [README][mdbook-scrub-readme~repo]↗ for more details.
 
+## Check a Book During Editing
+
+[`mdbook-lint`][mdbook-lint~repo]↗ checks Markdown with mdBook-specific rules. [Lychee][lychee~repo]↗ checks links in existing Markdown or HTML. Run the checks against the source or rendered output that your workflow publishes.
+
 ## Related Topics {#related-topics .skip}
 
 - [[book_editing_and_example_code_development | Book Editing and Example Code Development]].
@@ -39,6 +43,5 @@ Consult the project's [README][mdbook-scrub-readme~repo]↗ for more details.
 <div class="hidden">
 
 - [[mdbook | Mdbook]].
-
 
 </div>

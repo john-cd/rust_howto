@@ -29,6 +29,8 @@ You can also use the AWS SDK from within a Lambda function to interact with AWS 
 
 See also the ["Create Lambda Functions with Rust"][aws-create-lambda-functions-with-rust~website]↗ and ["AWS Lambda Rust Runtime Examples"][aws-lambda-rust-runtime~examples~repo]↗ webpages.
 
+The [Cargo Lambda getting-started guide][cargo-lambda~getting-started]↗ covers the local watch and invoke workflow. The [AWS Lambda Rust walkthrough][aws~rust-lambda~walkthrough]↗ shows the deployment path and AWS prerequisites.
+
 ## Interact with AWS Services with the AWS SDK for Rust {#aws-sdk-rust}
 
 AWS has developed an official AWS SDK for Rust, which allows developers to interact with AWS services using the Rust programming language.

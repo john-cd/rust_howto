@@ -80,6 +80,8 @@ Concurrency testing tools explore schedules through a model of the program. [`lo
 - [Creusot][creusot~repo]↗ helps prove that code is correct in an automated fashion.
 - [`crucible`][c~crucible~docs]↗{{hi:crucible}} (symbolic execution).
 
+[Creusot's manual][creusot~guide]↗ covers writing contracts and proving their obligations. The [Verify Rust Standard Library effort][verify-rust-std~guide]↗ tracks verification targets and harnesses for standard-library code.
+
 ## References {#references .skip}
 
 - [Model Checking][wikipedia~model-checking]↗.
