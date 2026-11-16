@@ -39,7 +39,3 @@ Analysis commonly builds on decoding and digital signal processing. [`symphonia`
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  content audit: category index content removed by recent commits; review and restore
-</div>
