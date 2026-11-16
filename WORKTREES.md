@@ -55,12 +55,12 @@ after delivery. Slot `b` remains on `codex/issue-2164-cargo-profiles`. Slot `c`
 is detached at `931d6b84` with a cherry-pick in progress; preserve it and do not
 reuse it.
 
-| Checkout        | Branch or revision                | Status and cache                                            |
+| Checkout | Branch or revision                | Status and cache                                            |
 | --- | --- | --- |
-| Repository root | `develop`                         | Clean after integration; cache slot `main`.                 |
-| `.worktrees/a`  | detached at integrated `develop`  | Clean after delivery; cache slot `a`.                       |
-| `.worktrees/b`  | `codex/issue-2164-cargo-profiles` | Clean; cache slot `b`.                                      |
-| `.worktrees/c`  | detached at `931d6b84`            | Cherry-pick in progress; preserve; C: intermediate cleared. |
+| Repository root | `develop` | Clean after integration; cache slot `main`.                 |
+| `.worktrees/a` | detached at integrated `develop`  | Clean after delivery; cache slot `a`.                       |
+| `.worktrees/b` | `codex/issue-2164-cargo-profiles` | Clean; cache slot `b`.                                      |
+| `.worktrees/c` | detached at `931d6b84`            | Cherry-pick in progress; preserve; C: intermediate cleared. |
 
 The primary `main` cache and worktree `a`/`b` caches remain in place. Slot `c`'s
 intermediate cache was removed on 2026-11-03 after confirming no Cargo or rustc
