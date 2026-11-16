@@ -396,6 +396,10 @@
 
 {{#include ../standard-library/value_comparison.incl.md}}
 
+## WebSockets
+
+{{#include ../categories/web-programming_websocket/websocket.incl.md}}
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

@@ -1,12 +1,12 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Web Programming Websocket
+# Alternate WebSocket Clients
 
-Book code examples for Web Programming with WebSockets using Tungstenite. It demonstrates integration with key ecosystem crates including `anyhow`, `async-tungstenite`, `futures-util`, `tokio`, `tokio-tungstenite`, `tungstenite`.
+Book code examples for Web Programming with WebSockets using Tungstenite. It demonstrates integration with key ecosystem crates including `anyhow`, `async-tungstenite`, `futures-util`, `tokio`, `tungstenite`.
 
 ## Examples Covered
 
-- **Websocket** (`examples/websocket/`): Demonstrates concepts like `async_tungstenite`, `tokio_tungstenite`, `tungstenite`.
+- **Websocket** (`examples/websocket/`): Demonstrates concepts like `async_tungstenite`, `tungstenite`.
 
 ## Usage
 
@@ -17,4 +17,4 @@ cargo check --package web_programming_websocket --examples
 cargo test --package web_programming_websocket
 ```
 
-Code examples correspond to chapters in `bk/src/categories/web_programming_websocket` or related book sections.
+Code examples correspond to chapters in `later/src/categories/web-programming_websocket` or related book sections.

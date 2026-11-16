@@ -68,15 +68,6 @@ async fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the WebSocket echo example.
-///
-/// # Errors
-///
-/// Returns an error if a step of the example fails.
-pub fn run() -> anyhow::Result<()> {
-    main()
-}
-
 /// Verifies that the loopback echo server returns the client's text.
 #[cfg(test)]
 mod tests {
