@@ -20,8 +20,7 @@ This book's [GitHub repository][rust-howto~repo]↗ is structured as follows:
   - The Rust examples embedded in the book are found below `bk/crates` (see below for details).
   - The [`bk/master`][rust-howto~bk-master~repo]↗ folder contains the master list of crates used in the book (which is used by a few scripts to generate tables).
   - [`bk/scripts`][rust-howto~bk-scripts~repo]↗ contains [just][c~just~website]↗ modules (`mod.just` files) and shell scripts (`*.sh` files) for building the code & book and managing references, links, recipe tables, examples, etc.
-- Additional code and tools are found in the `playground`, `publish`, `tools`, and `xmpl` folders.
-  - The [`playground`][rust-howto~playground~repo]↗ folder contains bits and pieces of code for testing and exploration. Use it to develop new code examples.
+- Additional code and tools are found in the `publish`, `tools`, and `xmpl` folders.
   - The [`publish`][rust-howto~publish~repo]↗ folder contains a placeholder crate that is published to `crates.io`, so that the links to the book could be found there.
   - [`tools`][rust-howto~tools~repo]↗ contains several command-line utilities to build specific sections of the book, for example book indices.
     - `mdbook-scrub` is a custom `mdbook` preprocessor used by the book.
@@ -59,7 +58,7 @@ The book's [GitHub repository][rust-howto~repo]↗ is a "monorepo" with multiple
   - Most examples live under `bk/crates/<section-or-category>/examples/<chapter_name>/<example_name>.rs`. A few supporting files live in `src`, `tests`, or `build.rs`.
   - Each example is a separate `.rs` module included by the chapter's `main.rs`, so the examples for a chapter compile together.
   - The book examples share one `Cargo.lock` and workspace output directory. Workspace members can inherit dependency versions from `[workspace.dependencies]`, but each crate declares the dependencies it uses.
-- The rest of the code is either in standalone crates (`publish`) or independent workspaces (`playground`,`tools` and `xmpl`).
+- The rest of the code is either in standalone crates (`publish`) or independent workspaces (`tools` and `xmpl`).
   - The [`tools`][rust-howto~tools~repo]↗ workspace builds a few CLI binaries that share a common `tool_lib` library.
   - In the base folder of each project, type [`just`][c~just~docs]↗{{hi:just}} at the shell prompt for a list of commands you can use to format, check, build, lint and test the code. `just release` builds tools in release mode and copies the binaries into the `bin` folder (in the repo root).
 
@@ -107,6 +106,5 @@ For the sake of readability, the test boilerplate is hidden in the book.
 
 - [[cargo | Cargo]].
 
-accuracy review: contributing guide
 
 </div>

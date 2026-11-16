@@ -16,6 +16,14 @@ The `Dockerfile` is organized into three main stages:
 
 The `development` target is used by `.devcontainer/devcontainer.json` to install [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} and rust tooling{{hi:Rust tooling}}.
 
+## Run Cargo Checks in the Background
+
+Save this example as `bacon.toml` beside a Rust workspace's `Cargo.toml`. Run `bacon` for continuous checking, `bacon clippy` for lints, or `bacon nextest` for tests if Cargo Nextest is installed.
+
+```toml
+{{#include examples/bacon.toml}}
+```
+
 ## Rust and Docker {#rust-and-docker}
 
 The project uses several tools and techniques to optimize the Rust development experience within Docker:
@@ -79,7 +87,7 @@ It uses the `ci` target in `.devcontainer/Dockerfile`.
 To test the [`docker`][docker~website]↗{{hi:docker}} image manually, use
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.99.1-slim-trixie --build-arg MDBOOK_VERSION=0.5.4 .
+docker build --file .devcontainer/Dockerfile --target ci --tag rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.100.0-slim-trixie --build-arg MDBOOK_VERSION=0.5.4 .
 docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/bk/book rust_howto_ci bash
 ```
 
@@ -90,7 +98,7 @@ docker run -it --rm --name rust_howto_ci1 --volume $(pwd)/book:/code/bk/book rus
 From the project root folder, use the following to build and push the `development` image:
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target development --tag johncd/rust_howto_dev:latest --build-arg RUST_IMAGE_LABEL=1.99.1-slim-trixie --build-arg MDBOOK_VERSION=0.5.4 .
+docker build --file .devcontainer/Dockerfile --target development --tag johncd/rust_howto_dev:latest --build-arg RUST_IMAGE_LABEL=1.100.0-slim-trixie --build-arg MDBOOK_VERSION=0.5.4 .
 # Or `docker tag rust_howto_dev johncd/rust_howto_dev:latest`
 docker login
 # Or `docker login -u "user" -p "password" docker.io`
@@ -100,7 +108,7 @@ docker push johncd/rust_howto_dev:latest
 Use the following to build and push the CI image:
 
 ```bash
-docker build --file .devcontainer/Dockerfile --target ci --tag johncd/rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.99.1-slim-trixie --build-arg MDBOOK_VERSION=0.5.4 .
+docker build --file .devcontainer/Dockerfile --target ci --tag johncd/rust_howto_ci --build-arg RUST_IMAGE_LABEL=1.100.0-slim-trixie --build-arg MDBOOK_VERSION=0.5.4 .
 docker login
 docker push johncd/rust_howto_ci:latest
 ```
@@ -112,7 +120,3 @@ docker push johncd/rust_howto_ci:latest
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: contributing guide
-</div>

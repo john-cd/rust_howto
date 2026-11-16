@@ -1,5 +1,13 @@
 # TODO Reviewed ??-??-2026.
 
+# File checks supplied by prek.
+[[repos]]
+repo = "builtin"
+hooks = [
+  { id = "check-toml" },
+  { id = "trailing-whitespace", args = ["--markdown-linebreak-ext=md"] },
+]
+
 # Local hooks for Rust workspaces.
 [[repos]]
 repo = "local"

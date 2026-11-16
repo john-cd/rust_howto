@@ -1316,7 +1316,6 @@
 [rust-howto~license~repo]: https://github.com/john-cd/rust_howto/blob/develop/LICENSE
 [rust-howto~mdbook-scrub~repo]: https://github.com/john-cd/rust_howto/tree/develop/tools/mdbook-scrub
 [rust-howto~new-issue]: https://github.com/john-cd/rust_howto/issues/new
-[rust-howto~playground~repo]: https://github.com/john-cd/rust_howto/tree/develop/playground
 [rust-howto~publish~repo]: https://github.com/john-cd/rust_howto/tree/develop/publish
 [rust-howto~readme~repo]: https://github.com/john-cd/rust_howto/blob/develop/README.md
 [rust-howto~repo]: https://github.com/john-cd/rust_howto

@@ -22,6 +22,8 @@ For Rust workspaces, use local hooks to run commands from the workspace root. Th
 
 This example runs workspace-wide formatting and Clippy checks when Rust files change. Those commands can be expensive for a large workspace; narrow them to the affected package or move slower checks to CI as appropriate.
 
+The built-in hooks check TOML and trailing whitespace. The local hooks run Cargo commands over the workspace when Rust files change.
+
 ```toml
 {{#include examples/prek.toml}}
 ```

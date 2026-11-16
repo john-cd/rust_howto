@@ -33,9 +33,6 @@ on:
       - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.lock"
       - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.toml"
       - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/**/Cargo.toml"
-      - "playground/Cargo.lock"
-      - "playground/Cargo.toml"
-      - "playground/**/Cargo.toml"
       - "publish/Cargo.lock"
       - "publish/Cargo.toml"
       - "publish/**/Cargo.toml"
@@ -75,9 +72,6 @@ on:
       - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.lock"
       - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.toml"
       - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/**/Cargo.toml"
-      - "playground/Cargo.lock"
-      - "playground/Cargo.toml"
-      - "playground/**/Cargo.toml"
       - "publish/Cargo.lock"
       - "publish/Cargo.toml"
       - "publish/**/Cargo.toml"
@@ -158,8 +152,6 @@ jobs:
             config: later/crates/deny.toml
           - workspace: later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest
             config: later/crates/deny.toml
-          - workspace: playground
-            config: bk/crates/deny.toml
           - workspace: publish
             config: bk/crates/deny.toml
     continue-on-error: true

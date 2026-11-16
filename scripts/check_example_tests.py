@@ -19,7 +19,7 @@ Convention (see the tracking issue for "Test all book examples"):
   because the test depends on an external service or resource.
 
 Usage: scripts/check_example_tests.py [--summary] [--csv] [ROOT ...]
-Default roots: bk/crates later/crates xmpl playground tools.
+Default roots: bk/crates later/crates xmpl tools.
 Exit status is 0 (the report is informational).
 """
 
@@ -30,7 +30,7 @@ from collections import defaultdict
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-DEFAULT_ROOTS = ["bk/crates", "later/crates", "xmpl", "playground", "tools"]
+DEFAULT_ROOTS = ["bk/crates", "later/crates", "xmpl", "tools"]
 SKIP_PARTS = {"target", ".git", "node_modules"}
 
 FN_MAIN = re.compile(r"^\s*(?:pub(?:\([^)]*\))?\s+)?(?:async\s+)?fn\s+main\s*\(", re.M)

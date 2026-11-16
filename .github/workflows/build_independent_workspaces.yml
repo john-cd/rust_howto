@@ -1,6 +1,6 @@
 # TODO Reviewed ??-??-2026.
 
-## Formats, lints and tests the independent example workspaces (`xmpl`, `playground`, `publish`) on Linux.
+## Formats, lints and tests the independent example workspaces (`xmpl` and `publish`) on Linux.
 ## Each is its own Cargo workspace, so the book and tools workflows do not compile them.
 ## The staging workspace `later/crates` is deliberately excluded here: see `check_staging_workspace.yml`.
 name: Build independent workspaces on Linux
@@ -10,7 +10,6 @@ on:
     branches: [develop]
     paths:
       - "xmpl/**"
-      - "playground/**"
       - "publish/**"
       - ".github/workflows/build_independent_workspaces.yml"
       - ".github/actions/**"
@@ -25,7 +24,6 @@ on:
     branches: [develop]
     paths:
       - "xmpl/**"
-      - "playground/**"
       - "publish/**"
       - ".github/workflows/build_independent_workspaces.yml"
       - ".github/actions/**"
@@ -65,7 +63,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        workspace: [xmpl, playground, publish]
+        workspace: [xmpl, publish]
         ## Doctests need a library target: only `xmpl` has any.
         include:
           - workspace: xmpl
@@ -87,7 +85,6 @@ jobs:
             bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main
             later/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main
             tools -> ${{ github.workspace }}/.ci/target/rust_howto/main
-            playground -> ${{ github.workspace }}/.ci/target/rust_howto/main
             publish -> ${{ github.workspace }}/.ci/target/rust_howto/main
             xmpl -> ${{ github.workspace }}/.ci/target/rust_howto/main
           cache-key: ${{ matrix.workspace }}

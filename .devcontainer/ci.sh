@@ -47,7 +47,6 @@ for manifest in \
     "bk/crates/Cargo.toml" \
     "tools/Cargo.toml" \
     "xmpl/Cargo.toml" \
-    "playground/Cargo.toml" \
     "publish/Cargo.toml"; do
     echo "Auditing ${manifest}"
     cargo deny \

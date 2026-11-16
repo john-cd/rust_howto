@@ -17,16 +17,16 @@ Keep this file, README, contributor guidance, and configuration comments synchro
 
 ## File ownership
 
-| Files | Convention |
-| --- | --- |
-| `.editorconfig`, `.gitattributes` | UTF-8 and LF, four-space Rust/Python, two-space configuration; preserve Markdown hard breaks and binary attributes. |
-| `.gitignore`, `.dockerignore`, `.aiexclude` | Exclude outputs, compiler caches, environments, and worktrees; keep maintained configuration and lockfiles reviewable. Ignore files are not a security boundary. |
-| `AGENTS.md`, `CONTRIBUTING.md`, `README.md` | Keep repository-specific commands, ownership, and examples; link this reference. |
-| `Cargo.toml`, `clippy.toml`, `rustfmt.toml` | Workspace lint inheritance and a common baseline; preserve explicit exceptions and package compatibility requirements. |
-| `pyproject.toml`, `uv.lock` | Ruff uses 100 columns and LF; explicit default E4/E7/E9/F lint selection. Keep project Python pins and locked resolution. Quality tools use a separate locked `lint` group. |
-| `prek.toml` | Keep the existing repository hook set and pinned hook revisions. Scope language tools to their files; the Rust formatter runs only when Rust source is staged. |
-| `deny.toml`, `nextest.toml` | Keep dependency-license exceptions, test filters, and resource/time limits local. Nextest normally discovers `.config/nextest.toml`; a Cargo profile is selected separately. |
-| `.github/`, `.devcontainer/`, `Dockerfile*` | Preserve deployment/platform behavior; align package coverage and cache inputs. Keep compiler/Python pins compatible with manifests and lockfiles. |
+| Files                                       | Convention                                                                                                                                                                   |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `.editorconfig`, `.gitattributes`           | UTF-8 and LF, four-space Rust/Python, two-space configuration; preserve Markdown hard breaks and binary attributes.                                                          |
+| `.gitignore`, `.dockerignore`, `.aiexclude` | Exclude outputs, compiler caches, environments, and worktrees; keep maintained configuration and lockfiles reviewable. Ignore files are not a security boundary.             |
+| `AGENTS.md`, `CONTRIBUTING.md`, `README.md` | Keep repository-specific commands, ownership, and examples; link this reference.                                                                                             |
+| `Cargo.toml`, `clippy.toml`, `rustfmt.toml` | Workspace lint inheritance and a common baseline; preserve explicit exceptions and package compatibility requirements.                                                       |
+| `pyproject.toml`, `uv.lock`                 | Ruff uses 100 columns and LF; explicit default E4/E7/E9/F lint selection. Keep project Python pins and locked resolution. Quality tools use a separate locked `lint` group.  |
+| `prek.toml`                                 | Keep the existing repository hook set and pinned hook revisions. Scope language tools to their files; the Rust formatter runs only when Rust source is staged.               |
+| `deny.toml`, `nextest.toml`                 | Keep dependency-license exceptions, test filters, and resource/time limits local. Nextest normally discovers `.config/nextest.toml`; a Cargo profile is selected separately. |
+| `.github/`, `.devcontainer/`, `Dockerfile*` | Preserve deployment/platform behavior; align package coverage and cache inputs. Keep compiler/Python pins compatible with manifests and lockfiles.                           |
 
 ## Dependency updates
 
@@ -36,15 +36,15 @@ test-book, and malformed-manifest fixtures are excluded intentionally. Revisit t
 `.github/dependabot.yml` whenever a manifest, Dockerfile, chart, or local action is added.
 Python uv workspace members share the root lock; they do not need overlapping update entries.
 
-| Ecosystem | Roots |
-| --- | --- |
-| `cargo` | `/bk/crates`, `/bk/crates/cats/database/examples/query_builders_orms/toasty_validation`, `/bk/crates/cats/memory_management/allocator_selection`, `/later/crates`, `/later/crates/cats/development_tools_ffi/python_extension`, `/later/crates/cats/embedded`, `/later/crates/cats/gui/vizia`, `/later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest`, `/playground`, `/publish`, `/tools`, `/xmpl` |
-| `uv` | `/later/crates/cats/development_tools_ffi/python_extension` |
-| `docker` | `/.devcontainer` |
-| `docker-compose` | `/.devcontainer` |
-| `devcontainers` | `/` |
-| `github-actions` | `/`, `/.github/actions/docker-login`, `/.github/actions/load-pinned-versions`, `/.github/actions/set-cache-scope`, `/.github/actions/setup-rust` |
-| `gitsubmodule` | `/` |
+| Ecosystem        | Roots                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cargo`          | `/bk/crates`, `/bk/crates/cats/database/examples/query_builders_orms/toasty_validation`, `/bk/crates/cats/memory_management/allocator_selection`, `/later/crates`, `/later/crates/cats/development_tools_ffi/python_extension`, `/later/crates/cats/embedded`, `/later/crates/cats/gui/vizia`, `/later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest`, `/publish`, `/tools`, `/xmpl` |
+| `uv`             | `/later/crates/cats/development_tools_ffi/python_extension`                                                                                                                                                                                                                                                                                                                                                |
+| `docker`         | `/.devcontainer`                                                                                                                                                                                                                                                                                                                                                                                           |
+| `docker-compose` | `/.devcontainer`                                                                                                                                                                                                                                                                                                                                                                                           |
+| `devcontainers`  | `/`                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `github-actions` | `/`, `/.github/actions/docker-login`, `/.github/actions/load-pinned-versions`, `/.github/actions/set-cache-scope`, `/.github/actions/setup-rust`                                                                                                                                                                                                                                                           |
+| `gitsubmodule`   | `/`                                                                                                                                                                                                                                                                                                                                                                                                        |
 
 GitHub Actions uses `/` for workflows and explicit directories for nested composite actions.
 Dependabot can update supported toolchain files, container images/features, charts, and packages;
@@ -73,13 +73,13 @@ config discovery starts at the command's working directory; run from the owning 
 especially when that workspace has a child config. Config values override manifest profiles,
 and environment/command-line overrides take precedence over config values.
 
-| Profile | Workspace code | Dependencies and build tools |
-| --- | --- | --- |
-| `dev` / `test` | Level 0, no symbols, incremental disabled | Level 1 by default, selected compute-heavy dependencies at level 3, no symbols. |
-| `debug` | Level 2 symbols for workspace crates | Same optimized dependency settings as `dev`, with dependency symbols disabled. |
-| `ci` | Inherits `dev`, incremental disabled | Same flags as `dev` for dependency cache reuse. Use release jobs for performance validation. |
-| `tools` | Level 2 for repository tools | Same dependency settings as `dev`. |
-| `release` / other specialized profiles | Preserve existing shipping/profiling choices | Preserve existing shipping/profiling choices. |
+| Profile                                | Workspace code                               | Dependencies and build tools                                                                 |
+| -------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `dev` / `test`                         | Level 0, no symbols, incremental disabled    | Level 1 by default, selected compute-heavy dependencies at level 3, no symbols.              |
+| `debug`                                | Level 2 symbols for workspace crates         | Same optimized dependency settings as `dev`, with dependency symbols disabled.               |
+| `ci`                                   | Inherits `dev`, incremental disabled         | Same flags as `dev` for dependency cache reuse. Use release jobs for performance validation. |
+| `tools`                                | Level 2 for repository tools                 | Same dependency settings as `dev`.                                                           |
+| `release` / other specialized profiles | Preserve existing shipping/profiling choices | Preserve existing shipping/profiling choices.                                                |
 
 `test`, `ci`, `debug`, and `tools` inherit `dev`. Cargo checks an exact package override first, then
 the wildcard package override, then the build override. Independent `bk/crates`, `later/crates`,
@@ -162,12 +162,12 @@ of nextest's test-runner `--profile ci`.
 
 ## Linkers
 
-| Platform | Policy |
-| --- | --- |
-| Windows MSVC | Rust How-To keeps the MSVC toolchain default; an earlier `rust-lld` comparison showed no gain. Preserve stack flags. MSVC libraries/SDK are still required. The invoked linker was captured on 2026-11-09; see the validation evidence below. |
-| x86-64 GNU/Linux | Rust 1.90+ already defaults to LLD. Existing mold users retain mold and its installation steps. For AArch64/other triples, explicitly install/configure the appropriate linker before switching. |
-| macOS | Use the modern Apple linker shipped with Xcode 15+. sold's maintainer now recommends Apple's linker. |
-| Experiments | Compare mold and Wild on representative native Linux binaries. Wild lists Linux/Wasm support and future Mach-O/Windows/incremental-linking work; do not assume universal drop-in support. |
+| Platform         | Policy                                                                                                                                                                                                                                        |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Windows MSVC     | Rust How-To keeps the MSVC toolchain default; an earlier `rust-lld` comparison showed no gain. Preserve stack flags. MSVC libraries/SDK are still required. The invoked linker was captured on 2026-11-09; see the validation evidence below. |
+| x86-64 GNU/Linux | Rust 1.90+ already defaults to LLD. Existing mold users retain mold and its installation steps. For AArch64/other triples, explicitly install/configure the appropriate linker before switching.                                              |
+| macOS            | Use the modern Apple linker shipped with Xcode 15+. sold's maintainer now recommends Apple's linker.                                                                                                                                          |
+| Experiments      | Compare mold and Wild on representative native Linux binaries. Wild lists Linux/Wasm support and future Mach-O/Windows/incremental-linking work; do not assume universal drop-in support.                                                     |
 
 Changing linker flags invalidates compiler cache keys. Benchmark cold and warm links with native
 dependencies, debug symbols, and release/LTO settings before adopting a new default.

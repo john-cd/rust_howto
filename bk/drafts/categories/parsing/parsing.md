@@ -30,6 +30,16 @@ Grammars are saved in separate [`.pest`][c~pest~docs]↗{{hi:.pest}}  files whi
 {{#include ../../../crates/cats/parsing/examples/pest/pest.rs:example}}
 ```
 
+### Find Markdown Link Candidates
+
+The document grammar consumes fenced code blocks before looking for inline links. The example walks the parse tree and prints the source span for each inline link candidate. Reference labels and nested links require additional context, and applications that need complete CommonMark interpretation should use a Markdown parser.
+
+```rust,noplayground
+{{#include ../../../crates/cats/parsing/examples/pest_markdown/main.rs:example}}
+```
+
+See the [full Pest grammar](https://github.com/john-cd/rust_howto/blob/develop/bk/crates/cats/parsing/examples/pest_markdown/markdown_links.pest). Run the example from `bk/crates` with `cargo run -p parsing --example pest_markdown`.
+
 ## Create a Parser with `tree-sitter` {#tree-sitter}
 
 {{#badges tree-sitter}}

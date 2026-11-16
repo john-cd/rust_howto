@@ -56,7 +56,6 @@ jobs:
             bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main
             later/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main
             tools -> ${{ github.workspace }}/.ci/target/rust_howto/main
-            playground -> ${{ github.workspace }}/.ci/target/rust_howto/main
             publish -> ${{ github.workspace }}/.ci/target/rust_howto/main
             xmpl -> ${{ github.workspace }}/.ci/target/rust_howto/main
           cache-key: staging

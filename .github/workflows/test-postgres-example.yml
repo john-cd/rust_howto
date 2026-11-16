@@ -54,8 +54,7 @@ jobs:
           nightly: "skip"
           components: ""
           cache-workspaces: "bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main\nlater/crates -> ${{ github.workspace
-            }}/.ci/target/rust_howto/main\ntools -> ${{ github.workspace }}/.ci/target/rust_howto/main\nplayground -> ${{
-            github.workspace }}/.ci/target/rust_howto/main\npublish -> ${{ github.workspace }}/.ci/target/rust_howto/main\n\
+            }}/.ci/target/rust_howto/main\ntools -> ${{ github.workspace }}/.ci/target/rust_howto/main\npublish -> ${{ github.workspace }}/.ci/target/rust_howto/main\n\
             xmpl -> ${{ github.workspace }}/.ci/target/rust_howto/main"
 
       - name: Run the PostgreSQL CRUD and connection teardown test

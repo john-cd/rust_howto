@@ -8,7 +8,8 @@ This crate contains code examples for the **Parsing** category on crates.io. It 
 
 - **Calc** (`examples/calc/`): Demonstrates concepts like `calc_parser`.
 - **Parsing** (`examples/parsing/`): Demonstrates concepts like `nom`, `tree_sitter`, `tree_sitter_spans`, `winnow`.
-- **Pest** (`examples/pest/`): Demonstrates concepts like `pest`.
+- **Pest** (`examples/pest/`): Parses arithmetic expressions.
+- **Pest Markdown** (`examples/pest_markdown/`): Finds inline link candidates outside fenced code blocks.
 
 ## Usage
 

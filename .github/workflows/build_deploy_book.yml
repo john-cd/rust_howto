@@ -215,8 +215,7 @@ jobs:
           save-if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}',
             github.event.repository.default_branch) }}
           workspaces: "bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main\nlater/crates -> ${{ github.workspace
-            }}/.ci/target/rust_howto/main\ntools -> ${{ github.workspace }}/.ci/target/rust_howto/main\nplayground -> ${{
-            github.workspace }}/.ci/target/rust_howto/main\npublish -> ${{ github.workspace }}/.ci/target/rust_howto/main\n\
+            }}/.ci/target/rust_howto/main\ntools -> ${{ github.workspace }}/.ci/target/rust_howto/main\npublish -> ${{ github.workspace }}/.ci/target/rust_howto/main\n\
             xmpl -> ${{ github.workspace }}/.ci/target/rust_howto/main"
       - name: Login to Docker Hub
         uses: ./.github/actions/docker-login
@@ -258,8 +257,7 @@ jobs:
             hashFiles('**/.cargo/config.toml', '**/rust-toolchain.toml', '**/Cargo.lock') }}
           cache-directories: ${{ github.workspace }}/.ci/build/rust_howto/main
           workspaces: "bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main\nlater/crates -> ${{ github.workspace
-            }}/.ci/target/rust_howto/main\ntools -> ${{ github.workspace }}/.ci/target/rust_howto/main\nplayground -> ${{
-            github.workspace }}/.ci/target/rust_howto/main\npublish -> ${{ github.workspace }}/.ci/target/rust_howto/main\n\
+            }}/.ci/target/rust_howto/main\ntools -> ${{ github.workspace }}/.ci/target/rust_howto/main\npublish -> ${{ github.workspace }}/.ci/target/rust_howto/main\n\
             xmpl -> ${{ github.workspace }}/.ci/target/rust_howto/main"
       - name: Login to Docker Hub
         uses: ./.github/actions/docker-login
