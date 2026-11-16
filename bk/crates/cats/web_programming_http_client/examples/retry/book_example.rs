@@ -1,0 +1,132 @@
+// TODO Reviewed ??-??-2026.
+
+// ANCHOR: example
+
+//! Retry with exponential backoff.
+//!
+//! Retry a fallible async call with exponential backoff and jitter.
+//! [`backon`] is the recommended crate: `backoff` is unmaintained
+//! (RUSTSEC-2025-0012). Only retry idempotent requests.
+
+use std::time::Duration;
+
+use anyhow::Result;
+use anyhow::bail;
+use backon::ExponentialBuilder;
+use backon::Retryable;
+
+/// Fetches `url`; fails on `429 Too Many Requests` and on server errors.
+async fn fetch(url: &str) -> Result<String> {
+    let response = reqwest::get(url).await?;
+    let status = response.status();
+    if status.is_server_error() || status.as_u16() == 429 {
+        bail!("transient failure: {status}");
+    }
+    Ok(response.error_for_status()?.text().await?)
+}
+
+/// Retries `fetch` up to four times, doubling the delay each time.
+async fn fetch_with_retry(url: &str) -> Result<String> {
+    let backoff = ExponentialBuilder::default()
+        .with_min_delay(Duration::from_millis(100))
+        .with_max_delay(Duration::from_secs(5))
+        .with_max_times(4)
+        .with_jitter();
+
+    (|| fetch(url))
+        .retry(backoff)
+        .sleep(tokio::time::sleep)
+        .notify(|err, delay| println!("Retrying in {delay:?}: {err}"))
+        .await
+}
+
+/// Fetches a page using the exponential retry policy and prints the response size.
+///
+/// # Errors
+///
+/// Returns an error if the HTTP request still fails after all four retry attempts.
+async fn example_async() -> Result<()> {
+    let body = fetch_with_retry("https://example.com").await?;
+    println!("Received {} bytes", body.len());
+    Ok(())
+}
+
+/// Runs the asynchronous HTTP example on a current-thread Tokio runtime.
+fn example() -> Result<()> {
+    tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()?
+        .block_on(example_async())
+}
+
+/// Starts the example as a standalone program.
+fn main() -> Result<()> {
+    example()
+}
+// ANCHOR_END: example
+
+/// Runs the book example.
+pub fn run() -> Result<()> {
+    let entry_point = main;
+    entry_point()
+}
+/// Panics if an internal invariant is violated.
+/// Tests retrying failed requests and stopping at the configured attempt limit.
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Retries until success.
+    #[tokio::test]
+    async fn retries_until_success() -> Result<()> {
+        let mut server = mockito::Server::new_async().await;
+        let failing = server
+            .mock("GET", "/")
+            .with_status(429)
+            .with_header("retry-after", "0")
+            .expect(2)
+            .create_async()
+            .await;
+        let ok = server
+            .mock("GET", "/")
+            .with_status(200)
+            .with_body("hello")
+            .expect(1)
+            .create_async()
+            .await;
+
+        let body = fetch_with_retry(&server.url()).await?;
+        assert_eq!(body, "hello");
+        failing.assert_async().await;
+        ok.assert_async().await;
+        Ok(())
+    }
+
+    /// Verifies that the gives up after max attempts.
+    #[tokio::test]
+    async fn gives_up_after_max_attempts() -> Result<()> {
+        let mut server = mockito::Server::new_async().await;
+        // One attempt plus four retries.
+        let mock = server
+            .mock("GET", "/")
+            .with_status(503)
+            .expect(5)
+            .create_async()
+            .await;
+        assert!(fetch_with_retry(&server.url()).await.is_err());
+        mock.assert_async().await;
+        Ok(())
+    }
+}
+
+#[cfg(test)]
+mod private_main_tests {
+    use super::main;
+
+    #[test]
+    #[ignore = "requires external network access"]
+    fn private_main_succeeds() {
+        let entry_point = main;
+        entry_point().expect("the example entry point should succeed");
+    }
+}
