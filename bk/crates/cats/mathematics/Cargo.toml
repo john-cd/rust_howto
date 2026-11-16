@@ -77,6 +77,11 @@ name = "units"
 path = "examples/units/main.rs"
 test = true
 
+[[example]]
+name = "tensor"
+path = "examples/tensor.rs"
+test = true
+
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"

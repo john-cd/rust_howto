@@ -22,6 +22,17 @@ Note that the sum is computed as `let sum = &a + &b`. The `&` operator is used t
 {{#include ../../../crates/cats/mathematics/examples/linear_algebra/add_matrices.rs:example}}
 ```
 
+## Reduce a Tensor Along an Axis {#reduce-a-tensor-along-an-axis}
+
+An [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} tensor can represent a batch of
+matrices as an array with shape `(batch, row, column)`. This example sums
+along axis 0, the batch axis. Each cell in the resulting matrix is the sum
+of the corresponding cells across all batches.
+
+```rust,editable
+{{#include ../../../crates/cats/mathematics/examples/tensor.rs:example}}
+```
+
 ## Multiply Matrices {#multiplying-matrices}
 
 {{#badges ndarray data-structures="Data structures" science=}}{{hi:Array}}{{hi:Blas}}{{hi:Data-structure}}{{hi:Matrix}}{{hi:Multidimensional}}
