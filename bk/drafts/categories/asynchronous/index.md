@@ -62,9 +62,7 @@ Find utilities for timeouts, retries, task inspection, and other common async ta
 
 ## Cancellation and Structured Concurrency {#structured-concurrency}
 
-Manage task lifetimes, cancellation, and child-task completion as a unit in [Structured Concurrency](structured_concurrency.md).
-
-{{#include structured_concurrency.incl.md}}
+Manage task lifetimes, cancellation, and child-task completion as a unit in [Cancellation and Structured Concurrency](https://john-cd.com/rust_howto/categories/asynchronous/structured_concurrency.html).
 
 ## Related Topics
 

@@ -36,7 +36,7 @@ For runtime integration, see [Tokio][p~tokio]. The [`async-stream`][c~async-stre
 
 - [[async | Asynchronous Programming]] introduces futures and runtimes.
 - [[async_channels | Asynchronous Channels]] covers message passing between asynchronous tasks.
-- [[structured_concurrency | Structured Concurrency]] covers task lifetimes and cancellation.
+- [Structured Concurrency](https://john-cd.com/rust_howto/categories/asynchronous/structured_concurrency.html) covers task lifetimes and cancellation.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -66,7 +66,7 @@ Middleware is a powerful way to add functionality to your web server.
 
 ## OpenAPI and JSON Schema
 
-{{#include openapi.incl.md}}
+See the published [OpenAPI and JSON Schema](https://john-cd.com/rust_howto/categories/web-programming_http-server/openapi.html) recipes.
 
 ## Static Website Generators
 

@@ -504,6 +504,14 @@
 
 {{#include ../categories/web-programming_websocket/websocket.incl.md}}
 
+## OpenAPI and JSON Schema
+
+{{#include ../categories/web-programming_http-server/openapi.incl.md}}
+
+## Cancellation and Structured Concurrency
+
+{{#include ../categories/asynchronous/structured_concurrency.incl.md}}
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

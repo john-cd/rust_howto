@@ -76,7 +76,7 @@ A trait with a native `async fn` is not dyn-compatible, so `Vec<Box<dyn Store>>`
 
 - [[trait_objects | Trait Objects]].
 - [[traits | Traits]].
-- [[structured_concurrency | Cancellation and Structured Concurrency]].
+- [Cancellation and Structured Concurrency](https://john-cd.com/rust_howto/categories/asynchronous/structured_concurrency.html).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

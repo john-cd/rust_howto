@@ -10,7 +10,7 @@ The first function below races a pending future against one deterministic yield.
 {{#include ../../crates/cats/asynchronous/examples/pinned_cancellation.rs:example}}
 ```
 
-Run `cargo test -p asynchronous --example pinned_cancellation` from `bk/crates`. Cancellation stops work at a suspension point; it cannot undo side effects that already happened. For cooperative shutdown, see the [staging structured-concurrency guide](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/asynchronous/structured_concurrency.md) and its `CancellationToken` and `JoinSet` examples.
+Run `cargo test -p asynchronous --example pinned_cancellation` from `bk/crates`. Cancellation stops work at a suspension point; it cannot undo side effects that already happened. For cooperative shutdown, see the [Cancellation and Structured Concurrency](../categories/asynchronous/structured_concurrency.md) and its `CancellationToken` and `JoinSet` examples.
 
 To spawn on Tokio's multi-thread runtime, the future must be `Send` across every `.await`. This deliberately failing example holds an `Rc` across a suspension point:
 

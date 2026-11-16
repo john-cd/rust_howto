@@ -39,13 +39,13 @@
 [ex~web-programming_http-server~protoc]: _grpc.md#protoc
 [ex~web-programming_http-server~rocket]: other_frameworks.md#rocket
 [ex~web-programming_http-server~rust-on-nails]: _batteries-included_frameworks.md#rust-on-nails
-[ex~web-programming_http-server~schemars]: openapi.md#schemars
+[ex~web-programming_http-server~schemars]: https://john-cd.com/rust_howto/categories/web-programming_http-server/openapi.html#schemars
 [ex~web-programming_http-server~summary]: cors.md#summary
 [ex~web-programming_http-server~tonic]: _grpc.md#tonic
 [ex~web-programming_http-server~tower-http]: middleware.md#tower-http
 [ex~web-programming_http-server~tower]: middleware.md#tower
 [ex~web-programming_http-server~typed-header]: axum_extras.md#typed-header
-[ex~web-programming_http-server~utoipa]: openapi.md#utoipa
+[ex~web-programming_http-server~utoipa]: https://john-cd.com/rust_howto/categories/web-programming_http-server/openapi.html#utoipa
 [ex~web-programming_http-server~when-to-configure-cors]: cors.md#when-to-configure-cors
 [ex~web-programming_http-server~zola]: static_website_generators.md#zola
 [fetch~cors]: https://fetch.spec.whatwg.org/#cors-protocol
@@ -55,7 +55,7 @@
 [p~documentation]: ../development-tools/documentation/documentation.md
 [p~http-client]: ../web-programming_http-client/index.md
 [p~middleware]: middleware.md
-[p~openapi]: openapi.md
+[p~openapi]: https://john-cd.com/rust_howto/categories/web-programming_http-server/openapi.html
 [p~other-http-frameworks]: other_frameworks.md
 [p~performance]: ../development-tools_cargo-plugins/performance.md
 [p~server]: ../network-programming/server.md
