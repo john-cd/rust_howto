@@ -2,7 +2,7 @@
 
 # Summary
 
-[Introduction](introduction/index.md)
+[Introduction](introduction.md)
 [How to Read This Book](introduction/how_to_read_this_book.md)
 
 ## Core Concepts
@@ -95,6 +95,7 @@
 
 - [Data Processing](categories/data-processing/index.md)
   - [DataFrames](categories/data-processing/dataframes.md)
+
 - [Date and Time](categories/date-and-time/index.md)
   - [Duration and Calculation](categories/date-and-time/duration.md)
   - [Parsing and Displaying](categories/date-and-time/parse.md)
@@ -139,6 +140,7 @@
 
 - [WebSockets](categories/web-programming_websocket/index.md)
   - [Echo Client and Server](categories/web-programming_websocket/websocket.md)
+
 - [Parsing](categories/parsing/index.md)
   - [Parsing Utilities](categories/parsing/parsing.md)
   - [Expression Parser](categories/parsing/expression_parser.md)
@@ -150,7 +152,9 @@
 - [Find Missing Assertions with Mutation Testing](categories/development-tools/mutation_testing.md)
 - [HTTP Servers](categories/web-programming_http-server/json_patch.md)
   - [Bound Retries and Concurrency with Tower](categories/web-programming_http-server/service_resilience.md)
+
 - [Diagnose Rust Build Time](categories/development-tools/build_time_diagnosis.md)
+
 - [Compare Benchmark Results in CI](categories/development-tools/benchmark_regressions.md)
 
 - [Template Engines](categories/template-engine/index.md)
