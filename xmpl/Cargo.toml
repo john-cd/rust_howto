@@ -13,8 +13,6 @@ clap = { version = "4.6.7", features = ["cargo", "env"] }
 criterion = "0.8.2"
 # Tools for concurrent programming
 crossbeam = "0.8.5"
-# Multi-producer multi-consumer channels for message passing
-crossbeam-channel = "0.5.17"
 # A logging implementation for `log` which is configured via an environment variable.
 env_logger = "0.11.11"
 # Application-level tracing for Rust.
