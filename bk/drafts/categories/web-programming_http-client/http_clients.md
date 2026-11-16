@@ -57,11 +57,7 @@ Use the blocking API in synchronous code. Keep it off async runtime worker threa
 - [[asynchronous | Asynchronous Programming]] for async runtimes and I/O.
 - [[network-programming | Network Programming]] for TCP and lower-level connections.
 - [[web-programming_http-server | HTTP Servers]] for server-side Hyper, Axum, and Actix Web examples.
-- [Hyper server implementation][p~hyper] for the matching server-side connection example.
+- [Hyper server implementation](../web-programming_http-server/_hyper.md#hyper) for the matching server-side connection example.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  http_clients: expand; link to hyper.md in server.
-</div>

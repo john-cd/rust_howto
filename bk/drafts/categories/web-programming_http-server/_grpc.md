@@ -86,7 +86,3 @@ The book uses the pure-Rust approach for both `helloworld.proto` and `echo.proto
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  grpc: write
-</div>

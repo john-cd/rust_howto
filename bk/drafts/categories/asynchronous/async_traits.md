@@ -82,6 +82,4 @@ A trait with a native `async fn` is not dyn-compatible, so `Vec<Box<dyn Store>>`
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  async-traits: review new Rust features
-  async-trait = Provides a workaround for the lack of [language][p~language] support for [async][p~async] [functions][p~functions] in traits.
-</div>
+  </div>
