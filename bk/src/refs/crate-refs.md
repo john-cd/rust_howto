@@ -4450,6 +4450,9 @@
 [c~ipnet~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ipnet-yellow
 [c~ipnet~repo]: https://github.com/krisprice/ipnet
 [c~ipnet~repo~badge]: https://img.shields.io/badge/ipnet-steelblue?logo=github
+[c~iroh~crates.io]: https://crates.io/crates/iroh
+[c~iroh~docs]: https://docs.rs/iroh
+[c~iroh~repo]: https://github.com/n0-computer/iroh
 [c~isahc~crates.io]: https://crates.io/crates/isahc
 [c~isahc~crates.io~badge]: https://img.shields.io/badge/crates.io-isahc-crimson
 [c~isahc~docs]: https://docs.rs/isahc
@@ -4489,6 +4492,9 @@
 [c~jemalloc~lib.rs]: https://lib.rs/crates/jemalloc
 [c~jemalloc~lib.rs~badge]: https://img.shields.io/badge/lib.rs-jemalloc-yellow
 [c~jemalloc~repo~badge]: https://img.shields.io/badge/jemalloc-steelblue?logo=github
+[c~jiff~crates.io]: https://crates.io/crates/jiff
+[c~jiff~docs]: https://docs.rs/jiff
+[c~jiff~repo]: https://github.com/BurntSushi/jiff
 [c~jnix~crates.io]: https://crates.io/crates/jnix
 [c~jnix~crates.io~badge]: https://img.shields.io/badge/crates.io-jnix-crimson
 [c~jnix~docs]: https://docs.rs/jnix
@@ -4609,6 +4615,8 @@
 [c~k8s-openapi~lib.rs~badge]: https://img.shields.io/badge/lib.rs-k8s--openapi-yellow
 [c~k8s-openapi~repo]: https://github.com/Arnavion/k8s-openapi
 [c~k8s-openapi~repo~badge]: https://img.shields.io/badge/k8s--openapi-steelblue?logo=github
+[c~kamadak-exif~docs]: https://docs.rs/kamadak-exif
+[c~kamadak-exif~docs~badge]: https://img.shields.io/crates/v/kamadak-exif?label=kamadak-exif
 [c~kanal~crates.io]: https://crates.io/crates/kanal
 [c~kanal~crates.io~badge]: https://img.shields.io/badge/crates.io-kanal-crimson
 [c~kanal~docs]: https://docs.rs/kanal
@@ -4617,8 +4625,6 @@
 [c~kanal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kanal-yellow
 [c~kanal~repo]: https://github.com/fereidani/kanal
 [c~kanal~repo~badge]: https://img.shields.io/badge/kanal-steelblue?logo=github
-[c~kamadak-exif~docs]: https://docs.rs/kamadak-exif
-[c~kamadak-exif~docs~badge]: https://img.shields.io/crates/v/kamadak-exif?label=kamadak-exif
 [c~kani~announcing-the-kani-rust-verifier-project~blog]: https://model-checking.github.io/kani-verifier-blog/2022/05/04/announcing-the-kani-rust-verifier-project.html
 [c~kani~crates.io]: https://crates.io/crates/kani
 [c~kani~crates.io~badge]: https://img.shields.io/badge/crates.io-kani-crimson
@@ -6503,6 +6509,8 @@
 [c~plotters~repo~badge]: https://img.shields.io/badge/plotters-steelblue?logo=github
 [c~plotters~website]: https://plotters-rs.github.io
 [c~plotters~website~badge]: https://img.shields.io/badge/plotters-coral
+[c~plugin_registry~crates.io]: https://crates.io/crates/plugin_registry
+[c~plugin_registry~docs]: https://docs.rs/plugin_registry
 [c~poem~crates.io]: https://crates.io/crates/poem
 [c~poem~crates.io~badge]: https://img.shields.io/badge/crates.io-poem-crimson
 [c~poem~docs]: https://docs.rs/poem
@@ -9885,6 +9893,9 @@
 [c~unicode-segmentation~lib.rs~badge]: https://img.shields.io/badge/lib.rs-unicode--segmentation-yellow
 [c~unicode-segmentation~repo]: https://github.com/unicode-rs/unicode-segmentation
 [c~unicode-segmentation~repo~badge]: https://img.shields.io/badge/unicode--segmentation-steelblue?logo=github
+[c~unicode-width~crates.io]: https://crates.io/crates/unicode-width
+[c~unicode-width~docs]: https://docs.rs/unicode-width
+[c~unicode-width~repo]: https://github.com/unicode-rs/unicode-width
 [c~uniffi~crates.io]: https://crates.io/crates/uniffi
 [c~uniffi~crates.io~badge]: https://img.shields.io/badge/crates.io-uniffi-crimson
 [c~uniffi~docs]: https://docs.rs/uniffi/latest/uniffi
