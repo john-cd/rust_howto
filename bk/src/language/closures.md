@@ -78,6 +78,8 @@ constructors are [function items](https://doc.rust-lang.org/reference/types/func
 
 ## Related Topics {#related-topics .skip}
 
+Rust 1.85 stabilized `async` closures, which can return a future that borrows from captured state. They are distinct from a regular closure whose body merely creates an `async` block; see the [Rust 1.85 announcement](https://blog.rust-lang.org/2025/02/20/Rust-1.85.0.html). The book's ordinary closure examples remain compatible with its Rust 1.98.1 baseline.
+
 - [[functions | Functions]].
 - [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
 - [Functional Programming](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/functional_programming.md).

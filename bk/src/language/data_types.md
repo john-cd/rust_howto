@@ -76,6 +76,12 @@ See also the [[functions | Functions]] chapter.
 
 Starting with Rust 1.100, `!` can appear in type positions such as `Result<T, !>`. In that release, `std::convert::Infallible` became an alias for `!`, and editions before 2024 gained the new never-type fallback behavior. See the [Rust 1.100 announcement][rust~1-100~release]↗ for migration details.
 
+This snippet requires Rust 1.100 or newer; the book's Rust 1.98.1 example workspace does not compile it:
+
+```rust
+{{#include ../snippets/rust_1_100.rs:never_type}}
+```
+
 ## Declare a Type Alias {#type-aliases}
 
 A type alias is a way to give a new name to an existing type, making code easier to read and write. It does not create a new type, meaning the original type's properties still apply.

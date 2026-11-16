@@ -213,6 +213,8 @@ In the Rust 2024 edition, explicit `ref`, `ref mut`, or `mut` binding modifiers 
 
 ## References {#references .skip}
 
+Rust 1.88 stabilized `let` chains in `if` and `while` conditions. They let a pattern binding and later Boolean tests share one condition; see the [Rust 1.88 release notes](https://blog.rust-lang.org/2025/06/26/Rust-1.88.0/) for the syntax. Use a separate `match` when the other cases need meaningful handling.
+
 - [Pattern Matching][book~rust~pattern-matching]↗{{hi:Pattern matching}}.
 - [Patterns Are Not Expressions][blog~patterns-are-not-expressions]↗.
 

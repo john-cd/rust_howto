@@ -77,6 +77,14 @@ For example, in the following, we define a linked list that has an unknown numbe
 
 Rust 1.100 stabilized [`Allocator`][std~alloc~allocator]↗ and per-instance allocation for selected standard types, including `Box` and `Vec`. Check the stability of the collection methods you need before choosing a minimum Rust version.
 
+With Rust 1.100 or newer, a `Vec` and `Box` can use an allocator passed when they are constructed:
+
+```rust
+{{#include ../snippets/rust_1_100.rs:allocator}}
+```
+
+`System` is a demonstration allocator; choose a custom allocator only when its lifetime, alignment, failure behavior, and measurement justify the added complexity. Other collections do not necessarily expose the same stable allocator API.
+
 ## Related Topics {#related-topics .skip}
 
 - [Memory Management](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/memory-management/index.md).
