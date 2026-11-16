@@ -153,6 +153,8 @@ Caused by:
 
 For `anyhow`, setting `RUST_BACKTRACE=1` before running the example enables backtrace capture. An error backtrace is distinct from the panic backtrace controlled by the same variable.
 
+For another set of small examples, see [Rust by Example on error handling][book~rust-by-example~error].
+
 ## Related Topics {#related-topics .skip}
 
 For custom error types, diagnostic reports, and application-level context, see [[error_customization | Custom Errors]]. For an introduction to recoverable failures with `Result`, see the [Rust Book chapter on error handling][book~rust~ch09-02-recoverable-errors-with-result].
@@ -160,11 +162,9 @@ For custom error types, diagnostic reports, and application-level context, see [
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
 
-Some examples above are adapted from the [Recoverable Errors with `Result`][book~rust~ch09-02-recoverable-errors-with-result]↗ chapter of the Rust book. The `?` operator is available in functions whose return type implements [`std::ops::FromResidual`][c~std::ops::FromResidual~docs]↗{{hi:std::ops::FromResidual}}, such as `Result` and `Option`.
+Some examples above are adapted from the [Recoverable Errors with `Result`][book~rust~ch09-02-recoverable-errors-with-result]↗ chapter of the Rust book. In a function returning `Result`, `?` can return early with an error. In a function returning `Option`, it can return early with `None`. Use `ok_or_else` when a missing value needs to become an error.
 
 <div class="hidden">
-error_handling: fix / organize
-review [![Rust by example - error][book~rust-by-example~error~badge]][book~rust-by-example~error]
 
 [`std::io::Error`][c~std::io::Error~docs]↗{{hi:std::io::Error}} defined type implementing the [`std::error::Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} trait.
 

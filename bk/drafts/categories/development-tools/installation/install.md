@@ -39,6 +39,8 @@ Cargo can also install from a Git repository, a local path, or a named registry.
 
 Prebuilt artifacts are supplied through release infrastructure outside Cargo's normal source build. Check the project's release page and the [`cargo-binstall`][c~cargo-binstall~docs]↗{{hi:cargo-binstall}} documentation to understand where an artifact comes from and which fallback behavior is enabled before installing it.
 
+If Cargo reports that the command is unavailable after installation, check that the selected install root's `bin` directory is on `PATH`. Confirm the executable works from a fresh shell before using it in scripts.
+
 ## Related Topics {#related-topics .skip}
 
 | Topic | See also |
@@ -49,7 +51,3 @@ Prebuilt artifacts are supplied through release infrastructure outside Cargo's n
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
-
-<div class="hidden">
-  review
-</div>

@@ -35,6 +35,8 @@ cargo install cargo-generate
 cargo generate ratatui/templates simple
 ```
 
+On exit, restore the terminal state before reporting an error. Separate event handling from state updates so navigation can be checked without an interactive terminal.
+
 ## See Also {#see-also .skip}
 
 {{#badges tui}}{{hi:Terminal}}{{hi:Dashboard}}{{hi:tui}}
@@ -53,7 +55,3 @@ cargo generate ratatui/templates simple
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  tui: expand
-</div>

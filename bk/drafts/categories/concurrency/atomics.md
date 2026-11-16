@@ -8,7 +8,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}{{hi:Atomics}}{{hi:std::sync::atomic}}
 
-Atomic types{{hi:Atomic types}} in [`std::sync::atomic`][c~std::sync::atomic~docs]↗provide primitive shared-memory communication between threads{{hi:Threads}}, and are the building blocks of other concurrent types.
+Atomic types{{hi:Atomic types}} in [`std::sync::atomic`][c~std::sync::atomic~docs]↗ provide primitive shared-memory communication between threads{{hi:Threads}}, and are the building blocks of other concurrent types.
 
 The [`std::sync::atomic`][c~std::sync::atomic~docs]↗ module provides [`std::sync::atomic::AtomicBool`][c~std::sync::atomic::AtomicBool~docs]↗{{hi:std::sync::atomic::AtomicBool}}, [`std::sync::atomic::AtomicIsize`][c~std::sync::atomic::AtomicIsize~docs]↗{{hi:std::sync::atomic::AtomicIsize}}, [`std::sync::atomic::AtomicUsize`][c~std::sync::atomic::AtomicUsize~docs]↗{{hi:std::sync::atomic::AtomicUsize}}, [`std::sync::atomic::AtomicI8`][c~std::sync::atomic::AtomicI8~docs]↗{{hi:std::sync::atomic::AtomicI8}}, [`std::sync::atomic::AtomicU16`][c~std::sync::atomic::AtomicU16~docs]↗{{hi:std::sync::atomic::AtomicU16}}, etc.
 
@@ -16,7 +16,7 @@ The [`std::sync::atomic`][c~std::sync::atomic~docs]↗ module provides [`std::sy
 {{#include ../../../crates/cats/concurrency/examples/atomics/atomics.rs:example}}
 ```
 
-The most common way to share an atomic variable is to put it into an [`std::sync::Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} (an atomically-reference-counted shared pointer).
+To share ownership of an atomic variable across threads, put it in an [`std::sync::Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} (an atomically-reference-counted shared pointer).
 
 ## AtomicCell with `crossbeam` {#crossbeam-atomics}
 
@@ -56,7 +56,3 @@ The following example implements a spinlock using [`std::sync::atomic::AtomicBoo
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  fix
-</div>

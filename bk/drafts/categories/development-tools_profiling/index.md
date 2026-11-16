@@ -6,6 +6,8 @@
 
 This section covers profiling tools to identify performance bottlenecks, analyze memory usage, and benchmark your code.
 
+Start with a representative workload. Use profiling to locate where time or memory is spent, then use a benchmark to compare a specific change against the same workload and build configuration.
+
 ## CPU & System Profiling
 
 Flame graphs are excellent for visualizing CPU usage and identifying hot spots. System profilers like [`perf`][c~perf~docs]↗{{hi:perf}} provide more detailed information.
@@ -75,7 +77,3 @@ Memory profilers help find memory leaks and excessive allocations.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  expand / review
-</div>

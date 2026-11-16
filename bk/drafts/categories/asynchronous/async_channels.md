@@ -71,7 +71,7 @@ When all senders or all receivers are dropped, the channel becomes closed. A clo
 
 {{#badges postage}}
 
-[`postage`][c~postage~docs]↗ includes async channel types such as [`postage::broadcast`][c~postage::broadcast~docs]↗{{hi:postage::broadcast}}. Consult its documentation for the buffer, backpressure, and receiver-lifecycle guarantees that apply to the selected channel.
+[`postage`][c~postage~docs]↗ includes async channel types such as [`postage::broadcast`][c~postage::broadcast~docs]↗{{hi:postage::broadcast}}. Start with the delivery model: use the work-queue and one-shot recipes above for those cases, and use this recipe when each subscriber should receive the same messages. Check the selected channel's buffer, backpressure, and receiver-lifecycle guarantees.
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/async_channels/postage.rs:example}}
@@ -94,7 +94,3 @@ When all senders or all receivers are dropped, the channel becomes closed. A clo
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  async_channels: review add other [`postage`][c~postage~docs]↗{{hi:postage}} channels?
-</div>

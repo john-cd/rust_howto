@@ -40,6 +40,10 @@ Coverage shows which instrumented code ran for a particular test configuration. 
 
 {{#include code_coverage.incl.md}}
 
+## Compiler Diagnostics
+
+Use [`trybuild`][c~trybuild~repo]↗ to check that a small Rust program compiles or fails with the expected diagnostics. This is useful when reviewing procedural macro errors and trait-bound failures.
+
 ## Fuzzing
 
 {{#include fuzzing.incl.md}}
@@ -56,10 +60,3 @@ Coverage shows which instrumented code ran for a particular test configuration. 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-expand
-
-- [trybuild][c~trybuild~repo]↗: Test harness for ui tests of compiler diagnostics.
-
-</div>
