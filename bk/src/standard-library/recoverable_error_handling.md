@@ -92,6 +92,8 @@ For failures caused by unwinding at an isolated callback or foreign-function bou
 
 Expose typed errors when callers can recover by matching a variant. At an application boundary, add the operation and relevant input to the diagnostic while preserving the source error. Readers can compare typed error sets and diagnostic context in [The Missing Piece in Rust Error Handling][blog~rust-error-sets]↗ and [User-friendly Errors in Rust][blog~user-friendly-rust-errors]↗.
 
+For examples of defining domain-specific errors and preserving their causes, see [Custom Errors (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/error_handling/error_customization.md).
+
 ## References {#references .skip}
 
 - [What is the Rust equivalent to a `try catch` statement][stackoverflow~what-is-the-rust-equivalent-to-a-try-catch-statement]↗.
@@ -107,8 +109,6 @@ Expose typed errors when callers can recover by matching a variant. At an applic
 
 <div class="hidden">
 
-- [[recoverable_error_handling | Error Handling]].
-- [[error_customization | Error Customization]].
 - [[rust-patterns | Rust Patterns]].
 
 </div>

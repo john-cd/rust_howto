@@ -62,10 +62,12 @@ The example counts words with three maps: the standard library's [`HashMap`][c~s
 {{#include ../../../crates/cats/data_structures/examples/hashmap/fast_hashmap.rs:example}}
 ```
 
+See [Hashing](../algorithms/hashing.md) for the difference between hash-table hashers and cryptographic digests. If several threads need to update the same map, compare the approaches in [Concurrent Data Structures (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/concurrent_data_structures.md).
+
 ## Related Data Structures {#related-data-structures .skip}
 
 - [[b-trees | B-trees]].
-- [[maps | Other Maps]].
+- [[other_maps | Other Maps]].
 
 ## Related Topics {#related-topics .skip}
 
@@ -76,9 +78,6 @@ The example counts words with three maps: the standard library's [`HashMap`][c~s
 
 <div class="hidden">
 
-- [[concurrent_data_structures | Concurrent Data Structures]].
 - [[databases | Databases]].
-- [[hashing | Hashing]].
-- [[key_value_stores | Key-Value Stores]].
 
 </div>

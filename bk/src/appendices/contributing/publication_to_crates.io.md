@@ -30,6 +30,8 @@ Type [`just`][c~just~docs]↗{{hi:just}} at the command line for a list of short
 
 For subsequent releases, crates.io supports [Trusted Publishing][crates-io~trusted-publishing~guide]↗ from supported CI environments using short-lived credentials. The [crates.io development update][rust-blog~crates-io-2025-07]↗ also covers triggering a docs.rs rebuild from a version's crates.io page.
 
+For planning a release workflow that runs from CI, see [Release Automation (draft)](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/devops/release_automation.md).
+
 ## Related Topics {#related-topics .skip}
 
 - [[book_editing_and_example_code_development | Book Editing and Example Code Development]].
@@ -42,6 +44,5 @@ For subsequent releases, crates.io supports [Trusted Publishing][crates-io~trust
 - [[cargo | Cargo]].
 - [[crate_registries | Crate Registries]].
 - [[github_actions | Github Actions]].
-- [[release_automation | Release Automation]].
 
 </div>

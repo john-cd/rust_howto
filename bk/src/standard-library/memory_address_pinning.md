@@ -44,6 +44,8 @@ The following example demonstrates the basic usage of `Pin`, `Unpin`, `PhantomPi
 
 An address-sensitive struct illustrates why the referent's address matters. The worked examples in [Self-referential Structs in Rust][blog~rust-self-referential-structs]↗ start with the failed move and show what the type needs to uphold.
 
+For examples of polling futures and running them on an executor, see [Async Rust (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/asynchronous/async.md).
+
 ## Related Topics {#related-topics .skip}
 
 - [[futures | Futures]].
@@ -51,9 +53,3 @@ An address-sensitive struct illustrates why the referent's address matters. The 
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-
-- [[async_programming | Async Programming]].
-
-</div>
