@@ -12,7 +12,7 @@ This host example creates a small DataFrame in memory, filters rows lazily,
 selects columns, sums revenue by region, sorts the summary, and joins regional
 targets. Schema and value assertions keep the example self-checking.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/data_processing/examples/dataframes/dataframes.rs:example}}
 ```
 
