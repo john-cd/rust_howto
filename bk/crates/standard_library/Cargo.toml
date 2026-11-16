@@ -93,6 +93,11 @@ path = "examples/pointer_provenance.rs"
 test = true
 
 [[example]]
+name = "panic_boundary"
+path = "examples/panic_boundary.rs"
+test = true
+
+[[example]]
 name = "pin"
 path = "examples/pin/main.rs"
 test = true
