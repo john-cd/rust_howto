@@ -8,10 +8,10 @@
 //! parallel. Servers that support them answer with status 206 (Partial
 //! Content).
 
-use std::fs::File;
 use std::io;
 use std::io::Write;
 use std::ops::RangeInclusive;
+use std::path::Path;
 use std::str::FromStr as _;
 
 use anyhow::Context as _;
@@ -21,7 +21,9 @@ use reqwest::StatusCode;
 use reqwest::blocking::Client;
 use reqwest::header::CONTENT_LENGTH;
 use reqwest::header::CONTENT_RANGE;
+use reqwest::header::ETAG;
 use reqwest::header::HeaderValue;
+use reqwest::header::IF_RANGE;
 use reqwest::header::RANGE;
 
 /// An iterator that yields adjacent, inclusive byte ranges.
@@ -109,6 +111,16 @@ fn download_to<W: Write>(url: &str, chunk_size: u32, output: &mut W) -> Result<(
         .context("HEAD response Content-Length was not valid text")?;
     let content_length = u64::from_str(content_length)
         .context("HEAD response Content-Length was not a valid unsigned integer")?;
+    // A weak validator cannot establish byte-for-byte identity across requests.
+    let etag = head_response
+        .headers()
+        .get(ETAG)
+        .context("HEAD response omitted a strong ETag")?
+        .clone();
+    let tag = etag.to_str().context("ETag was not valid text")?;
+    if !tag.starts_with('"') || !tag.ends_with('"') || tag.len() < 2 {
+        bail!("HEAD response did not provide a strong ETag");
+    }
 
     if content_length == 0 {
         return Ok(());
@@ -118,10 +130,17 @@ fn download_to<W: Write>(url: &str, chunk_size: u32, output: &mut W) -> Result<(
         let start = *range.start();
         let end = *range.end();
         let range_header = HeaderValue::from_str(&format!("bytes={start}-{end}"))?;
-        let mut response = client.get(url).header(RANGE, range_header).send()?;
+        let mut response = client
+            .get(url)
+            .header(RANGE, range_header)
+            .header(IF_RANGE, etag.clone())
+            .send()?;
         let status = response.status();
         if status != StatusCode::PARTIAL_CONTENT {
             bail!("Expected 206 Partial Content for bytes {start}-{end}, got {status}");
+        }
+        if response.headers().get(ETAG) != Some(&etag) {
+            bail!("ETag changed or was omitted for bytes {start}-{end}");
         }
 
         let content_range = response
@@ -150,21 +169,70 @@ fn download_to<W: Write>(url: &str, chunk_size: u32, output: &mut W) -> Result<(
     Ok(())
 }
 
-/// Downloads a sample file in chunks and writes it under `temp`.
+/// Publishes a complete download only when every range has been validated.
+fn download_file(url: &str, chunk_size: u32, destination: &Path) -> Result<()> {
+    let parent = destination.parent().context("destination has no parent")?;
+    let mut staged = tempfile::NamedTempFile::new_in(parent)?;
+    download_to(url, chunk_size, staged.as_file_mut())?;
+    staged.as_file_mut().sync_all()?;
+    staged.persist_noclobber(destination)?;
+    Ok(())
+}
+
+/// Downloads a sample file in chunks into a temporary file.
 ///
 /// # Errors
 ///
 /// Returns any directory, file, network, response, or write error.
 fn main() -> Result<()> {
     /// Maximum number of bytes requested in each download chunk.
-    const CHUNK_SIZE: u32 = 10_240;
-    let url = "https://httpbin.org/range/102400?duration=2";
-
-    std::fs::create_dir_all("temp")?;
-    let mut output_file = File::create("temp/download.bin")?;
+    const CHUNK_SIZE: u32 = 4;
+    let content = b"0123456789";
+    let listener = std::net::TcpListener::bind("127.0.0.1:0")?;
+    let url = format!("http://{}/resource", listener.local_addr()?);
+    let server = std::thread::spawn(move || -> io::Result<()> {
+        use io::Read as _;
+        for _ in 0..4 {
+            let (mut stream, _) = listener.accept()?;
+            let mut request = [0; 2048];
+            let count = stream.read(&mut request)?;
+            let request = String::from_utf8_lossy(&request[..count]);
+            if request.starts_with("HEAD ") {
+                stream.write_all(b"HTTP/1.1 200 OK\r\nContent-Length: 10\r\nETag: \"sample-v1\"\r\nConnection: close\r\n\r\n")?;
+            } else {
+                let range = request
+                    .lines()
+                    .find_map(|line| line.strip_prefix("range: bytes="))
+                    .ok_or_else(|| io::Error::other("range header missing"))?;
+                let (start, end) = range
+                    .trim()
+                    .split_once('-')
+                    .ok_or_else(|| io::Error::other("invalid range"))?;
+                let start: usize = start.parse().map_err(io::Error::other)?;
+                let end: usize = end.parse().map_err(io::Error::other)?;
+                let body = content
+                    .get(start..=end)
+                    .ok_or_else(|| io::Error::other("invalid bounds"))?;
+                write!(
+                    stream,
+                    "HTTP/1.1 206 Partial Content\r\nContent-Length: {}\r\nContent-Range: bytes {start}-{end}/10\r\nETag: \"sample-v1\"\r\nConnection: close\r\n\r\n",
+                    body.len()
+                )?;
+                stream.write_all(body)?;
+            }
+        }
+        Ok(())
+    });
+    let directory = tempfile::tempdir()?;
+    let destination = directory.path().join("download.bin");
 
     println!("starting download...");
-    download_to(url, CHUNK_SIZE, &mut output_file)?;
+    let result = download_file(&url, CHUNK_SIZE, &destination);
+    server
+        .join()
+        .map_err(|_| anyhow::anyhow!("local server panicked"))??;
+    result?;
+    assert_eq!(std::fs::read(&destination)?, content);
     println!("Finished with success!");
     Ok(())
 }
@@ -196,6 +264,7 @@ mod tests {
     use reqwest::StatusCode;
 
     use super::PartialRangeIter;
+    use super::download_file;
     use super::download_to;
 
     /// Starts a loopback server that serves the requested content and records requests.
@@ -215,6 +284,8 @@ mod tests {
         content: Vec<u8>,
         range_status: StatusCode,
         request_count: usize,
+        changed_after_first_range: bool,
+        truncate_last_range: bool,
     ) -> Result<(String, JoinHandle<io::Result<Vec<String>>>)> {
         let listener = TcpListener::bind("127.0.0.1:0")?;
         let address = listener.local_addr()?;
@@ -222,7 +293,7 @@ mod tests {
 
         let server = std::thread::spawn(move || -> io::Result<Vec<String>> {
             let mut requests = Vec::with_capacity(request_count);
-            for _ in 0..request_count {
+            for request_index in 0..request_count {
                 let mut stream = accept_with_timeout(&listener)?;
                 stream.set_nonblocking(false)?;
                 stream.set_read_timeout(Some(Duration::from_secs(5)))?;
@@ -231,7 +302,7 @@ mod tests {
 
                 if request.starts_with("HEAD ") {
                     let headers = format!(
-                        "HTTP/1.1 200 OK\r\nContent-Length: {}\r\nConnection: close\r\n\r\n",
+                        "HTTP/1.1 200 OK\r\nContent-Length: {}\r\nETag: \"sample-v1\"\r\nConnection: close\r\n\r\n",
                         content.len()
                     );
                     stream.write_all(headers.as_bytes())?;
@@ -250,13 +321,22 @@ mod tests {
                             "requested test range was outside the content",
                         )
                     })?;
+                    let etag = if changed_after_first_range && request_index > 1 {
+                        "sample-v2"
+                    } else {
+                        "sample-v1"
+                    };
                     let headers = format!(
-                        "HTTP/1.1 206 Partial Content\r\nContent-Length: {}\r\nContent-Range: bytes {start}-{end}/{}\r\nConnection: close\r\n\r\n",
+                        "HTTP/1.1 206 Partial Content\r\nContent-Length: {}\r\nContent-Range: bytes {start}-{end}/{}\r\nETag: \"{etag}\"\r\nConnection: close\r\n\r\n",
                         body.len(),
                         content.len()
                     );
                     stream.write_all(headers.as_bytes())?;
-                    stream.write_all(body)?;
+                    if truncate_last_range && request_index == request_count - 1 {
+                        stream.write_all(&body[..body.len() - 1])?;
+                    } else {
+                        stream.write_all(body)?;
+                    }
                 } else {
                     let headers = format!(
                         "HTTP/1.1 {range_status}\r\nContent-Length: {}\r\nConnection: close\r\n\r\n",
@@ -395,7 +475,13 @@ mod tests {
     #[test]
     fn downloads_all_ranges_without_gaps_or_overlaps() -> Result<()> {
         let content = b"0123456789".to_vec();
-        let (url, server) = start_range_server(content.clone(), StatusCode::PARTIAL_CONTENT, 4)?;
+        let (url, server) = start_range_server(
+            content.clone(),
+            StatusCode::PARTIAL_CONTENT,
+            4,
+            false,
+            false,
+        )?;
         let mut output = Vec::new();
 
         let download_result = download_to(&url, 4, &mut output);
@@ -421,7 +507,8 @@ mod tests {
     /// Verifies an empty file needs only HEAD and leaves the output empty.
     #[test]
     fn empty_file_does_not_send_range_requests() -> Result<()> {
-        let (url, server) = start_range_server(Vec::new(), StatusCode::PARTIAL_CONTENT, 1)?;
+        let (url, server) =
+            start_range_server(Vec::new(), StatusCode::PARTIAL_CONTENT, 1, false, false)?;
         let mut output = Vec::new();
 
         download_to(&url, 4, &mut output)?;
@@ -441,7 +528,7 @@ mod tests {
     #[test]
     fn rejects_non_partial_range_response() -> Result<()> {
         let content = b"abcd".to_vec();
-        let (url, server) = start_range_server(content, StatusCode::OK, 2)?;
+        let (url, server) = start_range_server(content, StatusCode::OK, 2, false, false)?;
         let mut output = Vec::new();
 
         let download_result = download_to(&url, 2, &mut output);
@@ -456,10 +543,55 @@ mod tests {
         Ok(())
     }
 
-    /// Runs the example against the live service.
+    /// An equal-length replacement cannot be combined with the first chunk.
     #[test]
-    #[ignore = "needs network"]
-    fn main_downloads_live() -> Result<()> {
+    fn changed_etag_preserves_existing_destination() -> Result<()> {
+        let (url, server) = start_range_server(
+            b"abcdefgh".to_vec(),
+            StatusCode::PARTIAL_CONTENT,
+            3,
+            true,
+            false,
+        )?;
+        let dir = tempfile::tempdir()?;
+        let destination = dir.path().join("download.bin");
+        std::fs::write(&destination, b"original")?;
+
+        let result = download_file(&url, 4, &destination);
+        let requests = join_server(server)?;
+        let error = result
+            .err()
+            .context("changed representation was accepted")?;
+        assert!(error.to_string().contains("ETag changed"));
+        assert_eq!(std::fs::read(&destination)?, b"original");
+        assert_eq!(requests.len(), 3);
+        assert!(requests[1].contains("if-range: \"sample-v1\""));
+        assert!(requests[2].contains("if-range: \"sample-v1\""));
+        Ok(())
+    }
+
+    /// A short final response cannot publish a partial file.
+    #[test]
+    fn truncated_range_does_not_publish() -> Result<()> {
+        let (url, server) = start_range_server(
+            b"abcdefgh".to_vec(),
+            StatusCode::PARTIAL_CONTENT,
+            3,
+            false,
+            true,
+        )?;
+        let dir = tempfile::tempdir()?;
+        let destination = dir.path().join("download.bin");
+        let result = download_file(&url, 4, &destination);
+        join_server(server)?;
+        assert!(result.is_err());
+        assert!(!destination.exists());
+        Ok(())
+    }
+
+    /// Runs the example against its loopback fixture.
+    #[test]
+    fn main_downloads_loopback() -> Result<()> {
         super::main()
     }
 }
