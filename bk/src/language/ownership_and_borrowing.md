@@ -20,7 +20,7 @@ Some languages (Java, C#, Go...) use _garbage collection_ (GC) to reclaim unreac
 
 In other languages (C, C++...), the programmer must explicitly allocate and free the memory. This is very error-prone: each allocation must be paired with exactly one deallocation. Forgetting to free memory leaks it. Freeing memory too early or more than once ("double free" error) may lead to memory overlap and invalid variables, likely causing a program crash.
 
-Rust manages memory through its _ownership_ system instead: the memory is automatically returned once the (one and only one) variable that owns it goes out of scope. We will see below how Rust enforces very strict rules to ensure memory safety without runtime costs.
+Rust uses ownership to decide when to drop a value and run its cleanup. The compiler checks moves and borrows statically. A type can implement shared ownership, as `Rc` and `Arc` do, with runtime reference counts that determine when to drop the shared value.
 
 ## Ownership {#ownership}
 
@@ -30,9 +30,9 @@ Rust's ownership system ensures automatic _memory safety_ without the need for a
 
 Ownership is a set of rules that the compiler enforces _at compile time_. If these rules are violated, the program won't compile:
 
-1. **Each value in Rust has a variable that is its owner.**
-2. **There can only be one owner at a time.**
-3. **When the owner goes out of scope, the value is dropped** (meaning Rust automatically calls a special drop method to deallocate the memory).
+1. **A value can be owned by a binding, a temporary, or another value.**
+2. **A move transfers ownership of that value.** Several separately owned handles can share an underlying allocation.
+3. **A value is normally dropped at the end of its drop scope.** Dropping runs its destructor if it has one and drops owned fields. Types that own allocations release them as part of cleanup.
 
 The _scope_ of a variable is defined as follows: A variable is valid from the point it is declared until the end of its current scope (usually a block of code enclosed in curly braces `{ }` and typically the body of a function).
 
@@ -68,11 +68,11 @@ Assignment (of non-`Copy` values) is not the only event that triggers a move: pa
 {{#include ../../crates/language/examples/ownership_borrowing/move_function.rs:example}}
 ```
 
-## Clone (Deep Copy) {#clone}
+## Duplicate a Value with `Clone` {#clone}
 
 Rust will never automatically create deep copies of your data, because, as described above, they can be expensive.
 
-Instead, you may explicitly request a deep copy by calling the `clone` method of the [`std::clone::Clone`][c~std::clone::Clone~docs]↗{{hi:std::clone::Clone}} trait:
+The `clone` method of the [`std::clone::Clone`][c~std::clone::Clone~docs]↗{{hi:std::clone::Clone}} trait explicitly duplicates a value. The type determines what is duplicated. Cloning a `String` duplicates its contents. Cloning an `Arc<String>` creates a new handle to the same allocation:
 
 ```rust,editable
 {{#include ../../crates/language/examples/ownership_borrowing/clone.rs:example}}
@@ -83,9 +83,7 @@ However, you will often simply add the `#[derive(Clone)]` attribute to have the 
 
 ## Copy Semantics {#copy-semantics}
 
-For stack-only, fixed-size variables (which include integers, floats, bools, chars, tuples thereof, and immutable references), there's no need for "move" semantics, because there's no heap data or requirements for special deallocation logic.
-
-Such stack-only values, and more precisely all types that implement the [`std::marker::Copy`][c~std::marker::Copy~docs]↗{{hi:std::marker::Copy}} trait, use "Copy Semantics" instead:
+Types that implement the [`std::marker::Copy`][c~std::marker::Copy~docs]↗{{hi:std::marker::Copy}} trait are copied implicitly in places that would otherwise move a value. Examples include integers, floats, booleans, characters, and shared references. A shared reference can point to heap storage, and copying it still copies only the reference.
 
 When you assign a variable of a `Copy` type to another, a simple _bitwise copy_ of the value is made, and _the original variable remains valid_.
 
@@ -119,9 +117,7 @@ let b: &mut i32 = &mut a;
 *b += 1;
 ```
 
-Note that **If you have a mutable reference to a value, you can have no other simultaneous references to that value.**{{hi:Simultaneous references}}
-
-In other words, you can have either one and only one mutable reference (`&mut T`) or any number of immutable references (`&T`) to a particular piece of data in a particular scope. In effect, references function like a read/write lock:{{hi:Read/write lock}}
+A mutable reference grants exclusive access to the data it borrows. A reborrow can temporarily lend that access to a new reference. The original reference becomes usable again after the reborrow ends. Shared references normally allow only shared reads, with controlled mutation available through types such as `Cell` and `Mutex`. Rust checks the borrowing rules at compile time. A `RwLock` additionally coordinates access at runtime across threads.{{hi:Simultaneous references}}{{hi:Read/write lock}}
 
 ```rust,editable
 {{#include ../../crates/language/examples/ownership_borrowing/read_write_lock.rs:example}}

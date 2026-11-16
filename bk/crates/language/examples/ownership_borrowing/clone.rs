@@ -1,15 +1,15 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! This example demonstrates the use of the `clone` method
-//! to create a deep copy of a `String`.
+//! Compares cloning owned contents and cloning shared ownership.
 //!
 //! Assigning a non-`Copy` value such as `String` moves ownership. Calling
-//! `clone()` makes an independent copy, which can be expensive, so clone only
-//! when you need two owned values.
+//! `clone()` duplicates its buffer. Cloning an `Arc<String>` creates a new
+//! handle and shares the buffer.
 
-/// This example demonstrates the use of the `clone` method
-/// to create a deep copy of a `String`.
+use std::sync::Arc;
+
+/// Checks that cloning a string copies its contents and cloning an Arc shares them.
 fn main() {
     // Create a String on the heap.
     let mut s1 = String::from("hello");
@@ -33,10 +33,14 @@ fn main() {
     // `s1` and `s2` are independent of each other. Let's modify `s1`:
     s1.push('!');
     assert_ne!(s1, s2);
+
+    let shared = Arc::new(s1);
+    let second_owner = Arc::clone(&shared);
+    assert!(Arc::ptr_eq(&shared, &second_owner));
 }
 // ANCHOR_END: example
 
-/// This example demonstrates the use of the `clone` method to create a deep copy of a `String`.
+/// Compares cloning a string and cloning a shared handle.
 pub fn run() {
     main();
 }
