@@ -5767,6 +5767,9 @@
 [c~no-panics-whatsoever~lib.rs~badge]: https://img.shields.io/badge/lib.rs-no--panics--whatsoever-yellow
 [c~no-panics-whatsoever~repo]: https://github.com/lachlansneff/no-panics-whatsoever
 [c~no-panics-whatsoever~repo~badge]: https://img.shields.io/badge/no--panics--whatsoever-steelblue?logo=github
+[c~no_std~crates.io]: https://crates.io/crates/no_std
+[c~no_std~docs]: https://docs.rs/no_std
+[c~no_std~repo]: https://github.com/john-cd/rust_howto
 [c~nom~crates.io]: https://crates.io/crates/nom
 [c~nom~crates.io~badge]: https://img.shields.io/badge/crates.io-nom-crimson
 [c~nom~docs]: https://docs.rs/nom
