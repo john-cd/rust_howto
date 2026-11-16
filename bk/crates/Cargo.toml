@@ -1436,6 +1436,8 @@ volatile_composites = "warn"
 while_float = "warn"
 
 [patch.crates-io]
-# Stable rsa 0.10 removed a feature still requested by crypto-glue 0.2.2.
+# WebAuthn 0.6.2 resolves crypto-glue 0.2.2, which requests rsa/sha2.
+# Stable rsa 0.10.0 no longer exposes that feature and is required by the
+# cryptography examples. Remove this patch when crypto-glue ships the fix.
 # Review by 2026-12-16: https://github.com/john-cd/rust_howto/issues/2247
 crypto-glue = { path = "patches/crypto-glue-0.2.2" }

@@ -9,9 +9,9 @@ all-features = false
 # Record each no-fix advisory explicitly with a reason. Revisit the entries
 # when an upstream fix is available.
 ignore = [
-  { id = "RUSTSEC-2026-0291", reason = "No fixed owned-alloc or lockfree release exists. The sole path is the Linux-only Glommio teaching example, which documents the panicking-Drop trigger and production risk; Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2247" },
+  { id = "RUSTSEC-2026-0291", reason = "No fixed owned-alloc or lockfree release exists. The sole path is the Linux-only Glommio teaching example, which documents the panicking-Drop trigger and production risk. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2247" },
   { id = "RUSTSEC-2026-0387", reason = "crypto-bigint 0.5.5 is pulled through elliptic-curve 0.13.8 and jsonwebtoken 10.4.0 by the latest meilisearch-sdk 0.33.0 and SurrealDB 4.0.1 dependency paths. Fixed versions start at 0.7.6; recheck when those upstream stacks move to elliptic-curve 0.14. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2247" },
-  { id = "RUSTSEC-2023-0071", reason = "rsa 0.9.10 is still required by openidconnect 4.1.0 and reqsign 0.20.7 through zen-engine 2.1.7. Stable rsa 0.10 is available, but these current upstream ranges have not moved. Recheck when compatible releases land; Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2247" },
+  { id = "RUSTSEC-2023-0071", reason = "The locked graph still selects rsa 0.9.10 through jsonwebtoken 10.4.0, openidconnect 4.1.0, and the reqsign 0.20.7 stack from zen-engine 2.1.7. These dependencies require the 0.9 series. The patched range starts at 0.10.0. Remove this exception once all affected paths accept a fixed release. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2247" },
   { id = "RUSTSEC-2026-0459", reason = "The bk/crates database adapters currently resolve libsqlite3-sys 0.37.0: SQLx 0.9.0 caps it below 0.38 and Diesel 2.3.14 below 0.39. Bundled SQLite before 3.54.0 is affected, so this records an unresolved risk, not a remediation. Upgrade the adapters together to resolve patched libsqlite3-sys >=0.39.0, then remove this entry; review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2245" },
 ]
 unmaintained = "workspace"
