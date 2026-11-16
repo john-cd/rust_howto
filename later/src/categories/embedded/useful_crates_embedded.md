@@ -15,7 +15,7 @@ Use a bounded queue between an interrupt or producer and a worker only after cho
 The example below combines `heapless` with `postcard`: it encodes messages into fixed-size buffers, queues them in a four-slot `Deque`, and rejects new messages when the queue is full. It runs on the host; the same code compiles for `no_std` targets.
 
 ```rust,editable
-{{#include ../../../crates/cats/embedded/examples/useful_crates_embedded/main.rs:example}}
+{{#include ../../../crates/cats/embedded/examples/useful_crates_embedded/book_example.rs:example}}
 ```
 
 ## `postcard` {#postcard}
@@ -35,7 +35,7 @@ It is useful for compact messages in constrained systems. Define a stable messag
 The following host-side example checks whether IPv4 addresses belong to a configured subnet. It exercises `smoltcp`'s address primitives without opening a socket or requiring a network device.
 
 ```rust,noplayground
-{{#include ../../../crates/cats/embedded/examples/smoltcp/main.rs:example}}
+{{#include ../../../crates/cats/embedded/examples/smoltcp/book_example.rs:example}}
 ```
 
 ## `portable-atomic` {#portable-atomic}

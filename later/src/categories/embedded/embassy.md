@@ -22,10 +22,6 @@ The task module and firmware entry point are separate files. Place both in a fir
 {{#include ../../../crates/cats/embedded/examples/embassy/embassy.rs:example}}
 ```
 
-```rust,editable
-{{#include ../../../crates/cats/embedded/examples/embassy/main.rs:example}}
-```
-
 ### RP2040 blinky firmware
 
 The following firmware sketch uses the RP2040 HAL and is intentionally not compiled by the host example workspace. It toggles the onboard LED every 500 milliseconds:

@@ -127,6 +127,13 @@ fn run_example() -> anyhow::Result<Vec<u32>> {
         .map(|received| received.load(Ordering::Acquire))
         .collect())
 }
+
+/// Runs the bounded task flow and prints the values received by the consumer.
+fn main() -> anyhow::Result<()> {
+    let received_values = run_example()?;
+    println!("Received sensor values: {received_values:?}");
+    Ok(())
+}
 // ANCHOR_END: example
 
 /// Runs bounded Embassy producer and consumer tasks on a host executor and prints their readings.
@@ -135,14 +142,14 @@ fn run_example() -> anyhow::Result<Vec<u32>> {
 ///
 /// Returns an error if the executor cannot start or finish the task sequence.
 pub fn run() -> anyhow::Result<()> {
-    let received_values = run_example()?;
-    println!("Received sensor values: {received_values:?}");
-    Ok(())
+    let entry_point = main;
+    entry_point()
 }
 
 /// Tests the bounded Embassy task flow on the host executor.
 #[cfg(test)]
 mod tests {
+    use super::main;
     use super::run_example;
 
     /// Verifies that the host tasks exchange messages in order.
@@ -152,5 +159,12 @@ mod tests {
             run_example().expect("the host Embassy tasks should finish before the deadline");
 
         assert_eq!(received_values, [10, 20, 30]);
+    }
+
+    /// Verifies that the private example entry point completes successfully.
+    #[test]
+    fn private_main_succeeds() {
+        let entry_point = main;
+        entry_point().expect("the host Embassy example should finish before the deadline");
     }
 }
