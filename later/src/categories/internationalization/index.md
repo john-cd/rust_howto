@@ -49,7 +49,3 @@ Test messages with missing translations and fallback locales, long translated st
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  Review `whoami`
-</div>

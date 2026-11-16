@@ -26,15 +26,9 @@ These examples use inline SVG to keep the parsing and rendering steps self-conta
 
 ## Related Topics {#related-topics .skip}
 
-- Vector graphics and rendering.
-- UI toolkits and shape drawing.
-- Cross-platform graphics libraries.
-- Image and multimedia workflows.
+- [Draw and fill vector paths](2d_vector_graphics.md).
+- [Read and rasterize vector formats](../rendering_data-formats/vector_formats.md).
+- [Work with raster images](../multimedia_images/images.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write.
-  Decide what to cover.
-</div>
