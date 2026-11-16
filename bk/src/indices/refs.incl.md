@@ -374,7 +374,6 @@
 [ex~mathematics~multiply-a-scalar-with-a-vector-and-a-matrix]: ../categories/mathematics/linear_algebra.md#multiply-a-scalar-with-a-vector-and-a-matrix
 [ex~mathematics~multiplying-matrices]: ../categories/mathematics/linear_algebra.md#multiplying-matrices
 [ex~mathematics~nalgebra-svd]: ../categories/mathematics/linear_algebra.md#nalgebra-svd
-[ex~mathematics~sparse-matrices]: ../categories/mathematics/linear_algebra.md#sparse-matrices
 [ex~mathematics~nalgebra-transformations]: ../categories/mathematics/linear_algebra.md#nalgebra-transformations
 [ex~mathematics~nalgebra-vectors]: ../categories/mathematics/linear_algebra.md#nalgebra-vectors
 [ex~mathematics~num-bigint]: ../categories/mathematics/additional_numeric_types.md#num-bigint
@@ -384,6 +383,7 @@
 [ex~mathematics~schedule-dag-tasks-by-level]: ../categories/mathematics/graph_theory.md#schedule-dag-tasks-by-level
 [ex~mathematics~solve-an-initial-value-problem]: ../categories/mathematics/differential_equations.md#solve-an-initial-value-problem
 [ex~mathematics~sortable-floats]: ../categories/mathematics/additional_numeric_types.md#sortable-floats
+[ex~mathematics~sparse-matrices]: ../categories/mathematics/linear_algebra.md#sparse-matrices
 [ex~mathematics~standard-deviation]: ../categories/mathematics/statistics.md#standard-deviation
 [ex~mathematics~typenum]: ../categories/mathematics/additional_numeric_types.md#typenum
 [ex~mathematics~vector-comparison]: ../categories/mathematics/linear_algebra.md#vector-comparison
@@ -442,4 +442,5 @@
 [ex~standard-library~return-early-pattern]: ../standard-library/optional_values.md#return-early-pattern
 [ex~standard-library~smart-pointer-comparison]: ../standard-library/smart_pointers.md#smart-pointer-comparison
 [ex~standard-library~sync-primitives]: ../standard-library/smart_pointers.md#sync-primitives
+[ex~web-programming_websocket~general-purpose]: ../categories/web-programming_websocket/websocket.md#general-purpose
 [p~standard-library]: ../standard-library/index.md

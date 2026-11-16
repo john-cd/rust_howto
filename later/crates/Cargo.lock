@@ -24923,7 +24923,7 @@ dependencies = [
  "serde_json",
  "shuttle-common",
  "tokio",
- "tokio-tungstenite 0.27.0",
+ "tokio-tungstenite",
  "url",
 ]
 
@@ -27247,20 +27247,6 @@ dependencies = [
  "tokio-rustls",
  "tungstenite 0.27.0",
  "webpki-roots 0.26.11",
-]
-
-[[package]]
-name = "tokio-tungstenite"
-version = "0.30.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "17a073bfed563fa236697a068031408a93cd9522e08abf9933ead3e73411bd71"
-dependencies = [
- "futures-util",
- "log",
- "native-tls",
- "tokio",
- "tokio-native-tls",
- "tungstenite 0.30.0",
 ]
 
 [[package]]
@@ -29961,7 +29947,6 @@ dependencies = [
  "clap",
  "futures-util",
  "tokio",
- "tokio-tungstenite 0.30.0",
  "tungstenite 0.30.0",
 ]
 

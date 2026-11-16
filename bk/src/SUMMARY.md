@@ -109,6 +109,9 @@
   - [Graph Theory](categories/mathematics/graph_theory.md)
   - [Differential Equations](categories/mathematics/differential_equations.md)
 
+- [WebSockets](categories/web-programming_websocket/index.md)
+  - [Echo Client and Server](categories/web-programming_websocket/websocket.md)
+
 - [Profiling and Benchmarking](categories/development-tools/profiling.md)
 - [Compare Benchmark Results in CI](categories/development-tools/benchmark_regressions.md)
 

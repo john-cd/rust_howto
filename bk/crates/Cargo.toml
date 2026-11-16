@@ -44,6 +44,7 @@ members = [
     "cats/web_programming",
     "cats/web_programming_http_client",
     "cats/web_programming_http_server",
+    "cats/web_programming_websocket",
     "code_organization",
     "language",
     "proc_macros",
