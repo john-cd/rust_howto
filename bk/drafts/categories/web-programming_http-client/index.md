@@ -4,21 +4,16 @@
 
 [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]
 
-Make HTTP network requests.
+Choose an HTTP client based on the API and runtime your application needs.
+Use [`ureq`][c~ureq~docs]↗ for synchronous requests, [`reqwest`][c~reqwest~docs]↗
+for a higher-level client with blocking and asynchronous APIs, or
+[`hyper`][c~hyper~docs]↗ when you need control over connections and HTTP
+messages. Each is demonstrated in the recipes below.
 
-The following table outlines common tasks for building web clients in Rust and relevant crates. Web clients can range from simple HTTP request libraries to more advanced tools for interacting with APIs or building web applications that fetch data.
-
-- Simple HTTP Requests: [`ureq`][c~ureq~docs]↗{{hi:ureq}} is often recommended for its simplicity, especially for basic use cases.
-- General-Purpose HTTP Client: [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} is highly versatile and supports a wide range of features.
-- Performance-Focused HTTP Client: [`isahc`][c~isahc~docs]↗{{hi:isahc}} is often considered to be performant.
-- REST API Interaction: [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} + [`serde`][c~serde~docs]↗{{hi:serde}}.
-- When working with WASM, you'll either use [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} compiled to WASM or interact with the browser's 'fetch' API via [`wasm-bindgen`][c~wasm-bindgen~docs]↗{{hi:wasm-bindgen}}.
-
-| Topic | Rust Crates (Examples) | Notes |
-| --- | --- | --- |
-| HTTP Clients (Making Requests) | [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, [`isahc`][c~isahc~docs]↗{{hi:isahc}}, [`ureq`][c~ureq~docs]↗{{hi:ureq}} | [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} is a popular and versatile HTTP client. [`isahc`][c~isahc~docs]↗{{hi:isahc}} is another option with a focus on performance. [`ureq`][c~ureq~docs]↗{{hi:ureq}} is a lightweight and easy-to-use HTTP client. |
-
-Most HTTP client crates support asynchronous requests using [`async`][keyword~async]↗{{hi:async}} and [`await`][c~await~docs]↗{{hi:await}}. Asynchronous requests are generally preferred for web clients to avoid blocking the main thread.
+The request recipes cover headers and query parameters. The API recipes add
+JSON, pagination, and status handling. The reliability recipes show when to
+limit requests, retry with backoff, and honor `Retry-After`. Use the file
+transfer recipes for streams and byte ranges.
 
 ## HTTP Client Libraries
 
@@ -56,10 +51,3 @@ Most HTTP client crates support asynchronous requests using [`async`][keyword~as
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-web-programming_http-client/index: fix, sync table and contents
-
-- [rquest - Rust HTTP client][c~rquest~lib.rs]↗.
-
-</div>
