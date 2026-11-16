@@ -9,7 +9,7 @@ Manage the complexity of dealing with the fourth dimension.
 [`chrono`][c~chrono~docs]↗{{hi:chrono}} provides a broad date-and-time API, including the system's local time zone. [`time`][c~time~docs]↗{{hi:time}} has a modular API and supports `no_std` configurations. Choose based on the types, time-zone data, and runtime features your application needs.
 
 | Topic | Rust Crates |
-| --- | --- |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Date and Time Types | [`chrono`][c~chrono~docs]↗{{hi:chrono}}, [`time`][c~time~docs]↗{{hi:time}} |
 | Named Time Zones | [`chrono-tz`][c~chrono-tz~docs]↗{{hi:chrono-tz}} supplies IANA time-zone data for `chrono`; `time` supports UTC offsets and can optionally query the system's local offset. |
 | Formatting and Parsing | [`chrono`][c~chrono~docs]↗{{hi:chrono}}, [`time`][c~time~docs]↗{{hi:time}} |
@@ -28,6 +28,8 @@ Manage the complexity of dealing with the fourth dimension.
 ## Using the `time` Crate
 
 {{#include time_crate.incl.md}}
+
+For scheduling by local civil time, [Jiff's time-zone documentation][jiff~timezone~docs]↗ explains how a time zone can map one clock reading to zero, one, or two instants.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

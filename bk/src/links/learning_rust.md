@@ -19,6 +19,8 @@ The resources below cover different learning styles, from structured courses and
 - Rust [language][p~language] main site: [`rust-lang.org`][rust-lang~website]↗{{hi:Rust learning}}.
 - [Learning Resources][blessed.rs-learning-resources~website]↗ - `blessed.rs`.
 
+For a quick visual map of Rust's types and traits, see [Elements of Rust][rustcurious~elements]↗. Microsoft's [Pragmatic Rust Guidelines][microsoft~rust-guidelines]↗ are an example of a team-wide convention guide for code, APIs, and tooling.
+
 ## Learning Roadmaps {#learning-roadmap}
 
 - [Rust Developer Roadmap][roadmap-rust~website]↗.

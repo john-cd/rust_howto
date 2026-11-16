@@ -75,6 +75,8 @@ For example, in the following, we define a linked list that has an unknown numbe
 {{#include ../../crates/standard_library/examples/box/box_recursive.rs:example}}
 ```
 
+Rust 1.100 stabilized [`Allocator`][std~alloc~allocator]↗ and per-instance allocation for selected standard types, including `Box` and `Vec`. Check the stability of the collection methods you need before choosing a minimum Rust version.
+
 ## Related Topics {#related-topics .skip}
 
 - [[memory-management | Memory Management]].

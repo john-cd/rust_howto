@@ -165,6 +165,8 @@ Note that serialization followed by deserialization gives back the original matr
 {{#include ../../../crates/cats/mathematics/examples/linear_algebra/deserialize_matrix.rs:example}}
 ```
 
+For dense matrix operations and factorizations on medium and large matrices, see [`faer`][faer~linear-algebra~docs]↗. Compare the available decompositions and matrix storage options with the requirements of your workload.
+
 ## Related Topics {#related-topics .skip}
 
 - [[vectors | Vectors]].

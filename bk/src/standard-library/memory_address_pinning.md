@@ -42,6 +42,8 @@ The following example demonstrates the basic usage of `Pin`, `Unpin`, `PhantomPi
 {{#include ../../crates/standard_library/examples/pin/pin.rs:example}}
 ```
 
+An address-sensitive struct illustrates why the referent's address matters. The worked examples in [Self-referential Structs in Rust][blog~rust-self-referential-structs]↗ start with the failed move and show what the type needs to uphold.
+
 ## Related Topics {#related-topics .skip}
 
 - [[futures | Futures]].
@@ -53,6 +55,5 @@ The following example demonstrates the basic usage of `Pin`, `Unpin`, `PhantomPi
 <div class="hidden">
 
 - [[async_programming | Async Programming]].
-
 
 </div>

@@ -36,7 +36,7 @@ The example reads the `Host` header with `TypedHeader<headers::Host>`. This is t
 
 [`axum-server`][c~axum-server~docs]↗{{hi:axum-server}} serves a router with TLS through [`rustls`][c~rustls~docs]↗{{hi:rustls}}. `RustlsConfig::from_pem_file(cert, key)` loads a certificate chain and private key from disk (`from_pem` takes bytes); `bind_rustls` then serves the router. A `Handle` lets you learn the bound address with `listening()` and stop the server with `graceful_shutdown`, which gives in-flight requests a grace period to finish.
 
-The test generates a throwaway self-signed certificate with [`rcgen`][c~rcgen~docs]↗{{hi:rcgen}}, serves on an ephemeral port, trusts that certificate in a [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} client, and checks a request. Use a certificate from a real certificate authority in production, for example one issued automatically by ACME.
+The test generates a throwaway self-signed certificate with [`rcgen`][c~rcgen~docs]↗{{hi:rcgen}}, serves on an ephemeral port, trusts that certificate in a [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} client, and checks a request. Use a certificate from a trusted certificate authority in production. For public HTTPS deployments, see [Let's Encrypt's ACME guidance][letsencrypt~website]↗.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/web_programming_http_server/examples/axum_extras/axum_server_tls.rs:example}}
@@ -94,6 +94,10 @@ async fn bad(body: String, State(state): State<AppState>) -> String {
 ```
 
 Remove the attribute once the handler compiles; it only improves diagnostics. Async handlers that hold a non-`Send` value across an `.await` are another common culprit that it reports clearly.
+
+## Test an Axum Router
+
+[`axum-test`][axum-test~docs]↗ builds requests and checks responses from a router. Use it for JSON bodies, headers, and cookies when validating endpoint behavior.
 
 ## Related Topics {#related-topics .skip}
 

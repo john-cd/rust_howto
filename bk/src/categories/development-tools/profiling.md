@@ -22,4 +22,8 @@ The example follows the setup in [Nikolai Vazquez's Divan introduction][divan~bl
 {{#include ../../../crates/cats/development_tools_profiling/benches/divan.rs:example}}
 ```
 
+## Measure Build Time
+
+Run `cargo build --timings` and inspect Cargo's timing report to find expensive crate builds and the critical path. Keep toolchain, features, and cache state fixed when comparing changes. The [Corrode compilation guide][corrode~build-timings]↗ shows how to use the report to find a slow crate. [Feldera's build-time case study][feldera~build-times]↗ illustrates why dependency structure and feature choices also matter.
+
 {{#include ../../refs/link-refs.md}}

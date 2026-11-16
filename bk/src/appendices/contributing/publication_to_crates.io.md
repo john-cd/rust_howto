@@ -26,6 +26,10 @@ To publish the crate to `crates.io`, use the following steps:
 
 Type [`just`][c~just~docs]↗{{hi:just}} at the command line for a list of shortcuts for some of the above commands.
 
+## Publish From CI
+
+For subsequent releases, crates.io supports [Trusted Publishing][crates-io~trusted-publishing~guide]↗ from supported CI environments using short-lived credentials. The [crates.io development update][rust-blog~crates-io-2025-07]↗ also covers triggering a docs.rs rebuild from a version's crates.io page.
+
 ## Related Topics {#related-topics .skip}
 
 - [[book_editing_and_example_code_development | Book Editing and Example Code Development]].
@@ -39,6 +43,5 @@ Type [`just`][c~just~docs]↗{{hi:just}} at the command line for a list of short
 - [[crate_registries | Crate Registries]].
 - [[github_actions | Github Actions]].
 - [[release_automation | Release Automation]].
-
 
 </div>

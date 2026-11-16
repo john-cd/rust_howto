@@ -42,10 +42,10 @@ Plan to host the server executable and its site assets together. A CSR app can b
 
 ### Choose a rendering mode {#choose-a-rendering-mode}
 
-| Need                                               | Starting point                                                |
+| Need | Starting point |
 | -------------------------------------------------- | ------------------------------------------------------------- |
-| Static hosting or an existing backend              | CSR with Trunk                                                |
-| Server-rendered HTML and a Rust server             | SSR with `cargo-leptos`                                       |
+| Static hosting or an existing backend | CSR with Trunk |
+| Server-rendered HTML and a Rust server | SSR with `cargo-leptos` |
 | Browser APIs outside Leptos's view and event model | Use the bindings described in [[interfacing_with_javascript]] |
 
 ## Build a Client-side App {#client-side-app}
@@ -105,6 +105,8 @@ Keep the token out of `localStorage` where possible, since any script on the pag
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/wasm/examples/leptos_client/grpc_web_client.rs:example}}
 ```
+
+The [Leptos Book][leptos~book]↗ explains the framework's rendering options and full-stack setup. [Awesome Leptos][awesome-leptos~repo]↗ collects community libraries and applications to study.
 
 ## Related topics {#related-topics .skip}
 

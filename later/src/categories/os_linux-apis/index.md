@@ -7,7 +7,7 @@
 Linux-specific interfaces are useful when a program needs kernel or service features beyond portable `std`. Prefer safe bindings and isolate platform-specific code behind `cfg(target_os = "linux")` so other targets retain a clear fallback.
 
 | Task | Crates and interfaces | Notes |
-| --- | --- | --- |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | System calls | [`rustix`][c~rustix~docs]↗{{hi:rustix}}, [`nix`][c~nix~docs]↗{{hi:nix}}, `std::os::linux` | `rustix` and `nix` offer typed wrappers; use libc bindings only when a wrapper is unavailable. |
 | Asynchronous I/O | [`io-uring`][c~io-uring~docs]↗{{hi:io-uring}}, [`tokio-uring`][c~tokio-uring~docs]↗{{hi:tokio-uring}}, [`glommio`][c~glommio~docs]↗{{hi:glommio}} | Select a runtime that matches the application's completion and cancellation model. |
 | eBPF | [`aya`][c~aya~docs]↗{{hi:aya}} | Load and manage eBPF programs from Rust. |
@@ -29,6 +29,8 @@ Kernel device drivers traditionally use C APIs. The [Rust for Linux project][rus
 - [[os | Operating Systems]].
 - [[virtualization | Virtualization]].
 - [[linux | Linux]].
+
+For an eBPF learning path, see [Building eBPF Programs with Aya][aya~book]↗. Check the documented kernel and privilege requirements before running a program.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

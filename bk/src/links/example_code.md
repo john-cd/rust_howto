@@ -30,6 +30,11 @@ Reading code is the fastest way to learn idiomatic Rust. Use the following links
 - [`geckodriver`][geckodriver~repo]↗ is a WebDriver proxy for automating Firefox through Marionette. Use it with a WebDriver client for browser tests.
 - [Pake][pake~repo]↗ packages websites as desktop apps with Rust and Tauri.
 
+### Command-line and Desktop Applications
+
+- [ripgrep][c~ripgrep~repo]↗ is a reference for fast content search with ignore rules. [Clapgrep][clapgrep~repo]↗ shows a graphical workflow for searching local files.
+- [Czkawka][czkawka~repo]↗ shows how a file-utility project organizes duplicate and similar-image scans. [Halloy][halloy~repo]↗ is a desktop IRC client with real networking and state-management code.
+
 ### Lists of Popular Rust Repositories {#repositories}
 
 - GitHub Topic: ["Rust"][topics-rust~repo]↗: Popular repositories on GitHub.

@@ -13,7 +13,7 @@ Start with a framework if you need a complete application and event loop. For a 
 Framework maturity, maintenance, accessibility, styling, and platform support vary. Check the project's current documentation and native prerequisites against your deployment needs.
 
 | Application need | Examples | Where to look |
-| --- | --- | --- |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | Native application using an existing GUI toolkit | [`gtk4`][c~gtk4~docs]↗{{hi:GTK}}, [`qt`][c~qt~docs]↗{{hi:Qt}}, [`fltk-rs`][c~fltk~docs]↗{{hi:FLTK}} | [Bindings to native GUI toolkits](#bindings-to-native-gui-toolkits) |
 | Immediate-mode UI for tools and interactive applications | [`egui`][c~egui~docs]↗{{hi:egui}} | [Immediate-mode GUIs](#immediate-mode-guis) |
 | Retained-mode or declarative UI | [`iced`][c~iced~docs]↗{{hi:iced}}, [`slint`][c~slint~docs]↗{{hi:slint}} | [Retained-mode GUIs](#retained-mode-guis) |
@@ -49,11 +49,17 @@ Immediate-mode GUIs describe the interface as application state changes, while r
 
 {{#include web_based_gui.incl.md}}
 
+[Blitz][dioxus-blitz~docs]↗ is an HTML and CSS renderer. The [Tauri–Verso announcement][tauri~verso~experiment]↗ describes an experimental webview integration.
+
 ## Web Frameworks
 
 For browser-based user interfaces, see [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming: HTTP Server]].
 
 ## GUI Components
+
+[GPUI Kit][gpui-kit~repo]↗ provides reusable components for GPUI apps. The [2025 survey of Rust GUI libraries][blog~rust-gui-survey-2025]↗ captures the author's experience with several toolkits. Consult current project documentation for platform and accessibility support.
+
+For Dioxus internals, [Subsecond][subsecond~docs]↗ supplies hot-patching, [Generational Box][generational-box~docs]↗ supplies generational handles, and [Manganis][manganis~docs]↗ handles assets.
 
 ### 2D Renderers
 

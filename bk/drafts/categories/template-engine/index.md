@@ -9,7 +9,7 @@ Template engines render text by combining a template with data. Choose by where 
 ## Choose a Template Workflow
 
 | Workflow | Crates | How they fit |
-| --- | --- | --- |
+| ------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Compile templates with Rust | [`askama`][c~askama~docs]↗{{hi:askama}} | Jinja-like template files are bound to a Rust `struct` or `enum` with a derive macro and checked during compilation. |
 | Write HTML in Rust | [`maud`][c~maud~docs]↗{{hi:maud}}, [`markup`][c~markup~docs]↗{{hi:markup}} | HTML or markup is written with Rust macro syntax and rendered as a Rust value. |
 | Load Jinja-style templates at runtime | [`minijinja`][c~minijinja~docs]↗{{hi:minijinja}}, [`tera`][c~tera~docs]↗{{hi:tera}} | Both use Jinja-inspired syntax. MiniJinja emphasizes a small dependency footprint; Tera includes template inheritance, filters, and custom functions. |
@@ -17,6 +17,8 @@ Template engines render text by combining a template with data. Choose by where 
 | Keep text templating minimal | [`tinytemplate`][c~tinytemplate~docs]↗{{hi:tinytemplate}} | A small runtime engine for interpolation and simple control flow. |
 
 For HTML output, check the selected engine's auto-escaping behavior and only bypass escaping for trusted content.
+
+[Askama's guide][askama~guide]↗ shows how to derive `Template` for Rust types and bind them to compile-time-checked templates. For a SQL-centered workflow, [SQLPage][sqlpage~guide]↗ renders application pages from SQL queries.
 
 ## Included Examples
 

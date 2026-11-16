@@ -32,6 +32,8 @@ The example uses permissive CORS settings so a local browser demo can send reque
 {{#include ../../../crates/cats/web_programming_http_server/examples/middleware/tower_http.rs:example}}
 ```
 
+For retry policies and circuit breakers, see [`tower-resilience`][tower-resilience~repo]↗. For an application-level quota, [`governor`][governor~repo]↗ provides rate limiting. Choose separate policies for how long a call may take, which failures merit a retry, and how much work to admit.
+
 ## Investigate Alternatives to `tower` {#alternatives}
 
 {{#badges trillium}} {{hi:Async}} {{hi:trillium}} {{hi:Framework}} {{#categories web-programming::http-server="HTTP server",web-programming="Web programming"}} {{hi:HTTP server}}

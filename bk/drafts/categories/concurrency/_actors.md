@@ -52,16 +52,20 @@ A Tokio task and channels can implement a small actor without an actor-framework
 {{#include ../../../crates/cats/concurrency/examples/actors/stakker.rs:example}}
 ```
 
+## Tellus
+
+[Tellus][tellus~docs]↗ provides typed messages and supervision on Tokio. Its synchronous handlers update actor-owned state one message at a time.
+
 ## Comparison
 
-| Option                  | Runtime and model                                                          | Local example                                                               |
+| Option | Runtime and model | Local example |
 | ----------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| Tokio task and channels | Tokio task with an explicit mailbox and request/reply messages             | [`actors.rs`](../../../crates/cats/concurrency/examples/actors/actors.rs)   |
-| Actix                   | Actor system with typed messages, sync and async handling, and supervision | [`actix.rs`](../../../crates/cats/concurrency/examples/actors/actix.rs)     |
-| Ractor                  | Erlang-inspired actor lifecycle and supervision; Tokio or async-std        | [`ractor.rs`](../../../crates/cats/concurrency/examples/actors/ractor.rs)   |
-| Kameo                   | Asynchronous actors with supervision and fault recovery                    | [Kameo guide][c~kameo~docs]↗                                                |
-| Xtra (low activity)     | Small asynchronous actors that can use different futures executors         | [Xtra guide][c~xtra~docs]↗                                                  |
-| Stakker                 | Lightweight, single-threaded actors with deferred calls and callbacks      | [`stakker.rs`](../../../crates/cats/concurrency/examples/actors/stakker.rs) |
+| Tokio task and channels | Tokio task with an explicit mailbox and request/reply messages | [`actors.rs`](../../../crates/cats/concurrency/examples/actors/actors.rs) |
+| Actix | Actor system with typed messages, sync and async handling, and supervision | [`actix.rs`](../../../crates/cats/concurrency/examples/actors/actix.rs) |
+| Ractor | Erlang-inspired actor lifecycle and supervision; Tokio or async-std | [`ractor.rs`](../../../crates/cats/concurrency/examples/actors/ractor.rs) |
+| Kameo | Asynchronous actors with supervision and fault recovery | [Kameo guide][c~kameo~docs]↗ |
+| Xtra (low activity) | Small asynchronous actors that can use different futures executors | [Xtra guide][c~xtra~docs]↗ |
+| Stakker | Lightweight, single-threaded actors with deferred calls and callbacks | [`stakker.rs`](../../../crates/cats/concurrency/examples/actors/stakker.rs) |
 
 ## Historical and Unmaintained Frameworks {#historical-frameworks}
 
