@@ -133,7 +133,7 @@ anyhow = "1.0.104"
 # Image and text handling for the OS clipboard.
 arboard = "3.7.0"
 # Low-level windowing system geared towards making audio plugin UIs.
-baseview = { git = "https://github.com/RustAudio/baseview", rev = "4fe59b368f50573127fa1285767208781bc03cdf", optional = true }
+baseview = { version = "0.4.2", git = "https://github.com/RustAudio/baseview", rev = "4fe59b368f50573127fa1285767208781bc03cdf", optional = true }
 # A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
 # Pure Rust multi-line text handling

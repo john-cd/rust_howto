@@ -4,9 +4,6 @@
 # published by the book, so these entries document triage instead of blocking CI.
 # Run: `cargo deny --manifest-path Cargo.toml check advisories` from this folder.
 #
-# `cargo update` finds no compatible fix (2026-10-28): each vulnerable crate is
-# pinned by a third-party dependency. Revisit when promoting a crate to `bk/crates`.
-#
 # The default gate follows ordinary workspace features. Audit optional
 # integrations separately with `cargo deny --all-features check advisories`;
 # the full lockfile is also inspected with `cargo audit`.
@@ -22,26 +19,18 @@ all-features = false
 
 [advisories]
 ignore = [
-  { id = "RUSTSEC-2026-0258", reason = "h2 0.3.27 is pinned by hyper 0.14 through geocoding 0.4 in science_geo. Only the optional locate_online helper reaches the fixed OpenStreetMap provider; the example entry point and tests use a fake provider, and users cannot select an endpoint. A malicious peer could still send hostile HTTP/2 frames if that helper is used. No compatible geocoding update exists; keep staging-only." },
-  # Dependabot alert #148: only the optional Zenoh stack reaches this vulnerable version.
-  { id = "RUSTSEC-2026-0041", reason = "lz4_flex 0.10.0 is required by zenoh-transport 1.10.2 (science_robotics, optional `zenoh` feature); no zenoh release uses the fixed 0.11.6/0.12.1 series. The Zenoh example uses a local-only session with default transport (no compression negotiated, no untrusted peer data), the `safe-decode` feature is enabled as the advisory's mitigation, and the crate is not published. Recheck when a zenoh release updates lz4_flex; keep staging-only." },
-  # Dependabot alert #86: trading-calendar 0.2.3 requires vulnerable lru 0.12.5; the fix starts at 0.16.3.
-  # The unsound = "workspace" policy does not scan transitive dependencies, so record this narrow exception without broadening the scan scope.
-  { id = "RUSTSEC-2026-0002", reason = "lru 0.12.5 is introduced by trading-calendar 0.2.3 in the staging finance examples; the current release still requires the vulnerable lru series, so Cargo cannot select fixed lru 0.16.3. Recheck when trading-calendar accepts a fixed release; tracked in #2116." },
-  { id = "RUSTSEC-2026-0194", reason = "quick-xml 0.39.4 is pinned by urdf-rs 0.9.1 (via k 0.32.0 in science_robotics); the fix is in 0.41. The kinematics example parses only a URDF string embedded in the source, never untrusted XML. Recheck when urdf-rs updates quick-xml; keep staging-only." },
-  { id = "RUSTSEC-2026-0195", reason = "quick-xml 0.39.4 is pinned by urdf-rs 0.9.1 (via k 0.32.0 in science_robotics); the fix is in 0.41. The kinematics example parses only a URDF string embedded in the source, never untrusted XML. Recheck when urdf-rs updates quick-xml; keep staging-only." },
-  { id = "RUSTSEC-2026-0192", reason = "ttf-parser 0.25.1 is unmaintained and has no patched release. The current graph reaches it through fontdb 0.23.0 and fontdue 0.9.5 in staging GUI, rendering, and game examples. Recheck before promotion and when these dependency chains change; tracked in #2116." },
-  { id = "RUSTSEC-2026-0367", reason = "zip 8.6.0 remains pinned by ggez 0.10.0, which requires zip 8.x. The example draws generated geometry and does not open or extract ZIP archives, so SUID/SGID preservation is not reached. Recheck when ggez accepts zip 9; keep staging-only." },
-  { id = "RUSTSEC-2026-0368", reason = "zip 8.6.0 remains pinned by ggez 0.10.0, which requires zip 8.x. The example does not call ZipArchive::extract or accept an archive, so attacker-controlled symlink targets are not exercised. Recheck when ggez accepts zip 9; keep staging-only." },
-  { id = "RUSTSEC-2026-0369", reason = "zip 8.6.0 remains pinned by ggez 0.10.0, which requires zip 8.x. The example does not extract archives or apply archive permissions through symlinks. Recheck when ggez accepts zip 9; keep staging-only." },
+  { id = "RUSTSEC-2026-0258", reason = "h2 0.3.27 is pinned by hyper 0.14 through geocoding 0.4 in science_geo. Only the optional locate_online helper reaches the fixed OpenStreetMap provider; the example entry point and tests use a fake provider, and users cannot select an endpoint. A malicious peer could still send hostile HTTP/2 frames if that helper is used. No compatible geocoding update exists; keep staging-only. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2116" },
+  { id = "RUSTSEC-2026-0194", reason = "quick-xml 0.39.4 is pinned by urdf-rs 0.9.1 (via k 0.32.0 in science_robotics); the fix is in 0.41. The kinematics example parses only a URDF string embedded in the source, never untrusted XML. Recheck when urdf-rs updates quick-xml; keep staging-only. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2116" },
+  { id = "RUSTSEC-2026-0195", reason = "quick-xml 0.39.4 is pinned by urdf-rs 0.9.1 (via k 0.32.0 in science_robotics); the fix is in 0.41. The kinematics example parses only a URDF string embedded in the source, never untrusted XML. Recheck when urdf-rs updates quick-xml; keep staging-only. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2116" },
+  { id = "RUSTSEC-2026-0192", reason = "The staging rendering font-metrics example directly uses unmaintained ttf-parser 0.25.1. Upstream has no fixed release; evaluate replacing the parser with skrifa. Other GUI and game dependencies also select this version. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2116" },
+  { id = "RUSTSEC-2026-0367", reason = "zip 8.6.0 remains pinned by ggez 0.10.0, which requires zip 8.x. The example draws generated geometry and does not open or extract ZIP archives, so SUID/SGID preservation is not reached. Recheck when ggez accepts zip 9; keep staging-only. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2116" },
+  { id = "RUSTSEC-2026-0368", reason = "zip 8.6.0 remains pinned by ggez 0.10.0, which requires zip 8.x. The example does not call ZipArchive::extract or accept an archive, so attacker-controlled symlink targets are not exercised. Recheck when ggez accepts zip 9; keep staging-only. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2116" },
+  { id = "RUSTSEC-2026-0369", reason = "zip 8.6.0 remains pinned by ggez 0.10.0, which requires zip 8.x. The example does not extract archives or apply archive permissions through symlinks. Recheck when ggez accepts zip 9; keep staging-only. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2116" },
   # RUSTSEC-2026-0429: ggez still requires zip 8.x; its example does not extract archives.
-  { id = "RUSTSEC-2026-0429", reason = "zip 8.6.0 remains pinned by ggez 0.10.0, which requires zip 8.x; the fix is in zip 9.0.0. The example draws generated geometry and does not extract archives. Recheck when ggez accepts zip 9; keep staging-only." },
-  { id = "RUSTSEC-2026-0387", reason = "crypto-bigint 0.5.5 has secret-dependent timing in operations intended to be constant-time. The locked graph still reaches elliptic-curve 0.13.8 through Alloy's k256 0.13 and str0m's p256/p384 0.13; those crates need compatible updates to use the fixed crypto-bigint 0.7 line. The timing risk remains, so keep affected examples staging-only and recheck when either chain changes; tracked in #2116." },
-  { id = "RUSTSEC-2026-0391", reason = "zstd 0.13.3 is pinned by arrow-ipc/datafusion and the optional Wasmtime cache stack; fixed only in zstd 0.14. Arrow IPC and DataFusion examples use in-memory buffers/tables, and the Wasmtime example compiles inline WAT without configuring a file cache; no example reuses a compression context or decompresses user-controlled data. Recheck the dependency stack before promotion." },
-  { id = "RUSTSEC-2026-0398", reason = "zstd-safe 7.3.0 is pulled by zstd 0.13.3 through Arrow, DataFusion, and the optional Wasmtime cache stack. No example calls Seekable::decompress; the affected transitive APIs are not exposed by the in-memory fixtures. Keep staging-only and recheck before promotion." },
-  { id = "RUSTSEC-2026-0403", reason = "zstd-safe 7.3.0 is pulled by zstd 0.13.3 through Arrow, DataFusion, and the optional Wasmtime cache stack. No example uses legacy-frame streaming decompression; the affected transitive APIs are not exposed by the in-memory fixtures. Keep staging-only and recheck before promotion." },
-  { id = "RUSTSEC-2025-0035", reason = "macroquad is a direct dependency of a staging crate; no fixed release exists. Replace or isolate it before the chapter leaves staging." },
-  { id = "RUSTSEC-2024-0436", reason = "paste is a direct dependency of a staging crate. Replace it (for example with pastey) before promotion." },
+  { id = "RUSTSEC-2026-0429", reason = "zip 8.6.0 remains pinned by ggez 0.10.0, which requires zip 8.x; the fix is in zip 9.0.0. The example draws generated geometry and does not extract archives. Recheck when ggez accepts zip 9; keep staging-only. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2116" },
+  { id = "RUSTSEC-2026-0387", reason = "crypto-bigint 0.5.5 has secret-dependent timing in operations intended to be constant-time. The locked graph still reaches elliptic-curve 0.13.8 through Alloy's k256 0.13 and str0m's p256/p384 0.13; those crates need compatible updates to use the fixed crypto-bigint 0.7 line. The timing risk remains, so keep affected examples staging-only and recheck when either chain changes. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2116" },
+  { id = "RUSTSEC-2025-0035", reason = "macroquad is a direct dependency of a staging crate; no fixed release exists. Replace or isolate it before the chapter leaves staging. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2116" },
+  { id = "RUSTSEC-2024-0436", reason = "paste is a direct dependency of a staging crate. Replace it (for example with pastey) before promotion. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2116" },
 ]
 unmaintained = "workspace"
 unsound = "workspace"
@@ -76,8 +65,40 @@ allow = [
 confidence-threshold = 0.8
 exceptions = [
   # egui bundles the Ubuntu and Hack fonts (SIL OFL 1.1 and the Ubuntu Font License) in this crate.
-  { crate = "epaint_default_fonts", allow = ["OFL-1.1", "Ubuntu-font-1.0"] },
+  # Review by 2026-12-16: https://github.com/john-cd/rust_howto/issues/2283
+  { crate = "epaint_default_fonts@=0.34.3", allow = ["OFL-1.1", "Ubuntu-font-1.0"] },
+  { crate = "epaint_default_fonts@=0.36.2", allow = ["OFL-1.1", "Ubuntu-font-1.0"] },
+  { crate = "epaint_default_fonts@=0.37.0", allow = ["OFL-1.1", "Ubuntu-font-1.0"] },
+  # The optional Slint examples use the upstream royalty-free license option.
+  # Review by 2026-12-16: https://github.com/john-cd/rust_howto/issues/2283
+  { crate = "i-slint-backend-selector@=1.18.1", allow = ["LicenseRef-Slint-Royalty-free-2.0"] },
+  { crate = "i-slint-backend-winit@=1.18.1", allow = ["LicenseRef-Slint-Royalty-free-2.0"] },
+  { crate = "i-slint-common@=1.18.1", allow = ["LicenseRef-Slint-Royalty-free-2.0"] },
+  { crate = "i-slint-compiler@=1.18.1", allow = ["LicenseRef-Slint-Royalty-free-2.0"] },
+  { crate = "i-slint-core@=1.18.1", allow = ["LicenseRef-Slint-Royalty-free-2.0"] },
+  { crate = "i-slint-core-macros@=1.18.1", allow = ["LicenseRef-Slint-Royalty-free-2.0"] },
+  { crate = "i-slint-renderer-femtovg@=1.18.1", allow = ["LicenseRef-Slint-Royalty-free-2.0"] },
+  { crate = "i-slint-renderer-skia@=1.18.1", allow = ["LicenseRef-Slint-Royalty-free-2.0"] },
+  { crate = "i-slint-renderer-software@=1.18.1", allow = ["LicenseRef-Slint-Royalty-free-2.0"] },
+  { crate = "slint@=1.18.1", allow = ["LicenseRef-Slint-Royalty-free-2.0"] },
+  { crate = "slint-macros@=1.18.1", allow = ["LicenseRef-Slint-Royalty-free-2.0"] },
+  # The optional Wasmer recipe demonstrates Singlepass on non-Windows hosts.
+  # The book distributes example source. The shipped license restricts production use.
+  # Review by 2026-12-16: https://github.com/john-cd/rust_howto/issues/2283
+  { crate = "wasmer-compiler-singlepass@=7.5.0", allow = ["BUSL-1.1"] },
 ]
+
+# Published manifests point to license files without SPDX expressions.
+# Review by 2026-12-16: https://github.com/john-cd/rust_howto/issues/2283
+[[licenses.clarify]]
+crate = "allo-isolate@=0.1.27"
+expression = "Apache-2.0"
+license-files = [{ path = "LICENSE", hash = 0x0a6d4ed6 }]
+
+[[licenses.clarify]]
+crate = "wasmer-compiler-singlepass@=7.5.0"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xa3d75455 }]
 
 [licenses.private]
 # Workspace examples are not published packages; the root LICENSE is not an
@@ -94,11 +115,10 @@ unknown-registry = "deny"
 unknown-git = "deny"
 allow-registry = ["https://github.com/rust-lang/crates.io-index"]
 allow-git = [
-  "https://github.com/john-cd/book_tooling",
-  # Pingora is pinned to a git revision (see the `pingora` workspace dependency).
-  "https://github.com/cloudflare/pingora",
-  # Kube is pinned to the merged PR #2086 revision (see `other/Cargo.toml`).
-  "https://github.com/kube-rs/kube",
-  # trading-calendar is pinned to an upstream commit with the fixed lru dependency.
+  # The finance example pins trading-calendar to the commit with fixed lru.
+  # Review by 2026-12-16: https://github.com/john-cd/rust_howto/issues/2116
   "https://github.com/danjloveless/trading-calendar",
+  # The optional window-creation example pins Baseview to a Git commit.
+  # Review by 2026-12-16: https://github.com/john-cd/rust_howto/issues/2283
+  "https://github.com/RustAudio/baseview",
 ]

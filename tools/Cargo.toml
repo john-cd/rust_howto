@@ -32,9 +32,7 @@ crates_io_api = "0.12.0"
 # Measures Rust benchmark performance with statistical analysis and comparison reports.
 criterion = "0.8.2"
 # Extra iterator adaptors, iterator methods, free functions, and macros.
-itertools = "0.15.0"
-# `tool_lib` still uses 0.14 while `crate_indices` uses 0.15.
-itertools_014 = { package = "itertools", version = "=0.14.0" }
+itertools = "0.13.0"
 # High-level library for running mdBook
 mdbook-driver = "0.5.4"
 # Markdown processing used in mdBook

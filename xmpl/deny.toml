@@ -19,15 +19,6 @@ version = 2
 unmaintained = "workspace"
 unsound = "workspace"
 yanked = "deny"
-ignore = [
-  # Dependabot alert #86: trading-calendar 0.2.3 requires lru 0.12.5; the fix is >=0.16.3.
-  # The repo's unsound = "workspace" scope does not scan this transitive dependency;
-  # retain the narrow exception to record the Dependabot disposition without broadening policy.
-  {
-    id = "RUSTSEC-2026-0002",
-    reason = "Dependabot reports lru 0.12.5 via trading-calendar 0.2.3; no upstream release accepts fixed lru yet. The current unsound = workspace policy excludes transitive deps. Tracked in #2116.",
-  },
-]
 
 [licenses]
 allow = [

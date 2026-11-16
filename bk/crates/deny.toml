@@ -9,10 +9,10 @@ all-features = false
 # Record each no-fix advisory explicitly with a reason. Revisit the entries
 # when an upstream fix is available.
 ignore = [
-  { id = "RUSTSEC-2026-0291", reason = "No fixed owned-alloc or lockfree release exists. The sole path is the Linux-only Glommio teaching example, which documents the panicking-Drop trigger and production risk; tracked in #2247." },
-  { id = "RUSTSEC-2026-0387", reason = "crypto-bigint 0.5.5 is pulled through elliptic-curve 0.13.8 and jsonwebtoken 10.4.0 by the latest meilisearch-sdk 0.33.0 and SurrealDB 4.0.1 dependency paths. Fixed versions start at 0.7.6; recheck when those upstream stacks move to elliptic-curve 0.14. Tracked in #2247." },
-  { id = "RUSTSEC-2023-0071", reason = "rsa 0.9.10 is still required by openidconnect 4.1.0 and reqsign 0.20.7 through zen-engine 2.1.7. Stable rsa 0.10 is available, but these current upstream ranges have not moved. Recheck when compatible releases land; tracked in #2247." },
-  { id = "RUSTSEC-2026-0459", reason = "The bk/crates database adapters currently resolve libsqlite3-sys 0.37.0: SQLx 0.9.0 caps it below 0.38 and Diesel 2.3.14 below 0.39. Bundled SQLite before 3.54.0 is affected, so this records an unresolved risk, not a remediation. Upgrade the adapters together to resolve patched libsqlite3-sys >=0.39.0, then remove this entry; tracked in #2245." },
+  { id = "RUSTSEC-2026-0291", reason = "No fixed owned-alloc or lockfree release exists. The sole path is the Linux-only Glommio teaching example, which documents the panicking-Drop trigger and production risk; Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2247" },
+  { id = "RUSTSEC-2026-0387", reason = "crypto-bigint 0.5.5 is pulled through elliptic-curve 0.13.8 and jsonwebtoken 10.4.0 by the latest meilisearch-sdk 0.33.0 and SurrealDB 4.0.1 dependency paths. Fixed versions start at 0.7.6; recheck when those upstream stacks move to elliptic-curve 0.14. Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2247" },
+  { id = "RUSTSEC-2023-0071", reason = "rsa 0.9.10 is still required by openidconnect 4.1.0 and reqsign 0.20.7 through zen-engine 2.1.7. Stable rsa 0.10 is available, but these current upstream ranges have not moved. Recheck when compatible releases land; Review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2247" },
+  { id = "RUSTSEC-2026-0459", reason = "The bk/crates database adapters currently resolve libsqlite3-sys 0.37.0: SQLx 0.9.0 caps it below 0.38 and Diesel 2.3.14 below 0.39. Bundled SQLite before 3.54.0 is affected, so this records an unresolved risk, not a remediation. Upgrade the adapters together to resolve patched libsqlite3-sys >=0.39.0, then remove this entry; review by 2026-12-16. https://github.com/john-cd/rust_howto/issues/2245" },
 ]
 unmaintained = "workspace"
 unsound = "workspace"
@@ -44,15 +44,12 @@ allow = [
 ]
 confidence-threshold = 0.8
 exceptions = [
-  # The text_processing example specifically teaches concat_strs; it is not
-  # linked into a product binary or distributed as part of the book build.
-  { crate = "concat_strs@1.0.2", allow = ["AGPL-3.0"] },
-  { crate = "concat_strs_impl@1.0.1", allow = ["AGPL-3.0"] },
   # The mathematics examples intentionally demonstrate arbitrary precision
   # through rug/GMP. Readers obtain these LGPL crates independently from
   # crates.io; the book publishes neither their sources nor linked binaries.
-  { crate = "rug@1.30.0", allow = ["LGPL-3.0-or-later"] },
-  { crate = "gmp-mpfr-sys@1.7.1", allow = ["LGPL-3.0-or-later"] },
+  # Review by 2026-12-16: https://github.com/john-cd/rust_howto/issues/2283
+  { crate = "rug@=1.30.0", allow = ["LGPL-3.0-or-later"] },
+  { crate = "gmp-mpfr-sys@=1.7.1", allow = ["LGPL-3.0-or-later"] },
   # The optional SurrealDB example uses kv-mem and parse to teach an embedded
   # in-memory database. Upstream 4.0.1 ships these exact packages with BUSL-1.1
   # license files. The book publishes the example source only.
@@ -83,6 +80,152 @@ exceptions = [
   { crate = "surrealdb-types@=4.0.1", allow = ["BUSL-1.1"] },
   { crate = "surrealdb-types-derive@=4.0.1", allow = ["BUSL-1.1"] },
 ]
+
+# The upstream manifests use the deprecated LGPL-3.0+ identifier.
+# Review by 2026-12-16: https://github.com/john-cd/rust_howto/issues/2283
+[[licenses.clarify]]
+crate = "gmp-mpfr-sys@=1.7.1"
+expression = "LGPL-3.0-or-later"
+license-files = [{ path = "LICENSE-LGPL.md", hash = 0x3ad3d07a }]
+
+[[licenses.clarify]]
+crate = "rug@=1.30.0"
+expression = "LGPL-3.0-or-later"
+license-files = [{ path = "LICENSE-LGPL.md", hash = 0x3ad3d07a }]
+
+# The published manifest points to the MIT license file.
+# Review by 2026-12-16: https://github.com/john-cd/rust_howto/issues/2283
+[[licenses.clarify]]
+crate = "tokio-tungstenite-wasm@=0.9.0"
+expression = "MIT"
+license-files = [{ path = "LICENSE", hash = 0x5c83871f }]
+
+# SurrealDB publishes license-file metadata. Check the shipped BUSL terms.
+# Review by 2026-12-16: https://github.com/john-cd/rust_howto/issues/2282
+[[licenses.clarify]]
+crate = "surrealdb@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-catalog@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-cnf@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-collections@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-common@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-core@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-datastore@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-engine-api@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-engine-local@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-expr@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-iam@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-idx@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-keyspace-macro@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-kvs@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-kvs-any@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-kvs-mem@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-observe@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-parse-common@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-parser-next@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-rpc@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-runtime@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-stored-derive@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-strand@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-types@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
+
+[[licenses.clarify]]
+crate = "surrealdb-types-derive@=4.0.1"
+expression = "BUSL-1.1"
+license-files = [{ path = "LICENSE", hash = 0xd8f74b3a }]
 
 [licenses.private]
 # Workspace examples are not published packages; the root LICENSE is not an

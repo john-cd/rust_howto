@@ -23079,7 +23079,7 @@ dependencies = [
  "anyhow",
  "cargo_toml",
  "crates_io_api",
- "itertools 0.14.0",
+ "itertools 0.13.0",
  "once_cell",
  "regex",
  "reqwest 0.13.5",
