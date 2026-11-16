@@ -10,7 +10,9 @@
 
 [`tinytemplate`][c~tinytemplate~docs]↗{{hi:tinytemplate}} is a small runtime template engine for string interpolation and control flow. It is a good fit when templates are short, known at build time, and rendered to a `String`. The tool templates in `tools/tool_lib/src/templates/` use this pattern with embedded template constants and custom formatters.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p template_engine --example tinytemplate`. The tests render the sample template.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/template_engine/examples/tinytemplate/tinytemplate.rs:example}}
 ```
 

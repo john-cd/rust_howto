@@ -28,7 +28,7 @@ If you are simply looking for the solution to a given task, the easiest ways to 
 
 Code examples, a.k.a. recipes, are designed to give you instant access to working code, along with an explanation of what it is doing, and to guide you to further information. Most recipes can be copied to the clipboard; edited in place; and run on the Rust playground by clicking the "right arrow" button. The results, if any, are displayed below the example.
 
-Many recipes are self-contained programs that you can copy into your own projects. Some snippets are illustrative or marked `noplayground`, require additional crates, configuration, or an external service; check each recipe's notes before running it. The following instructions show how to set up a local project for a typical recipe.
+Many recipes are self-contained programs that you can copy into your own projects. Use the Play button when the snippet fits the Playground's available crates and environment. Follow the recipe's Cargo command when it needs the workspace's dependency versions or features, local files, native tools, or sockets. An illustrative fragment shows the part to put in a larger program. The following instructions show how to set up a local project for a typical recipe.
 
 Consider the following example for generating a random number:
 

@@ -16,7 +16,9 @@ The following example gets the current working directory{{hi:Current working dir
 
 [`std::time::Duration::as_secs`][c~std::time::Duration::as_secs~docs]↗{{hi:std::time::Duration::as_secs}} converts the duration to seconds so it can be compared with 24 hours (24 \* 60 \* 60 seconds). [`std::fs::Metadata::is_file`][c~std::fs::Metadata::is_file~docs]↗{{hi:std::fs::Metadata::is_file}} filters out directories.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p filesystem --example directory_traversal`. The tests create their own entries and check which are recent.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/filesystem/examples/directory_traversal/modified.rs:example}}
 ```
 

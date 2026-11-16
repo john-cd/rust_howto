@@ -32,7 +32,9 @@ ULID stands for Universally Unique Lexicographically Sortable Identifier. Like a
 
 [`short-uuid`][c~short-uuid~docs]↗{{hi:short-uuid}} encodes a UUID in a shorter, URL-safe string. It converts losslessly to and from a regular [`uuid::Uuid`][c~uuid~docs]↗. Use it for identifiers that appear in URLs or are typed by people. For time-ordered identifiers, consider UUID version 7 or a ULID (see above); for compact random identifiers without UUID structure, consider `nanoid`.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p data_structures --example unique_ids`. The tests check that a shortened UUID can be decoded.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/data_structures/examples/unique_ids/short_uuid.rs:example}}
 ```
 

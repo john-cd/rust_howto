@@ -21,11 +21,14 @@ Rust semantics, the first promoted recipes, and the next migration candidates.
 - [#2274][index] · Verified all word-index fragments in the current render.
   The release check in `465832a57` catches all 14 failures from the old render.
   The check is integrated on `develop`.
-- **P2** [#2275][run] · Marked five recipe pages for local Cargo runs in
-  `bca582811` and verified their rendered controls. The image, WebSocket,
-  and fixed-capacity tests passed. The host checksum ran, and the Polars
-  example passed `cargo check`. The remaining published recipes still need
-  an execution-requirements audit.
+- [#2275][run] · Audited 479 rendered Rust fences against the Playground
+  crate list and local execution requirements. Moved 46 workspace-only
+  blocks and excerpts out of the Playground and documented local commands.
+  The final render has 329 runnable blocks, down from 375. The Slices and
+  Ownership controls are unchanged, and the Slices book doctests passed.
+  Offline hashing, cache, number-formatting, and plugin tests passed.
+  The broader Windows Cargo sweep stopped when `D:` ran out of space.
+  Rerun the remaining targets when space is available.
 - [#2276][owners] · Corrected `Clone`, `Copy`, reborrowing, and `Box`
   guarantees in `d31ce9992`. All 17 ownership example tests and strict
   Clippy passed.

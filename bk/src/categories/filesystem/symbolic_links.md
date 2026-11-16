@@ -10,7 +10,9 @@
 
 Symbolic links are handled primarily through the standard library's `std::fs` module, with platform-specific extensions in `std::os::unix::fs` and `std::os::windows::fs`. These modules provide functions to create, read, and inspect symbolic links without following them to their target:
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p filesystem --example symbolic_links`. The tests create and inspect a link on Unix or Windows with symlink creation enabled.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/filesystem/examples/symbolic_links/symbolic_links.rs:example}}
 ```
 

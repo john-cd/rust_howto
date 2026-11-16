@@ -13,6 +13,10 @@ Hashes are used for several different purposes:
 - Password storage requires a dedicated, deliberately expensive password-hashing function. Do not store passwords with SHA-256, BLAKE3, or another fast general-purpose hash.
 - Digital-signature schemes commonly hash data as part of signing and verification; use a complete signature scheme rather than treating a digest as a signature.
 
+From `bk/crates`, run `cargo test --locked -p algorithms --example hashing`
+to exercise the file digest, XXH3 checksum, and MD5 recipes. The tests
+generate their own file and check digest values and changed inputs.
+
 Choose an implementation based on the required properties:
 
 **Cryptographic digests:**
@@ -42,7 +46,7 @@ SHA-256 (Secure Hash Algorithm 256-bit) is part of the SHA-2 family of cryptogra
 
 Writes some data to a file, then calculates the SHA-256{{hi:SHA-256}} [`digest::Digest`][c~digest::Digest~docs]↗{{hi:digest::Digest}} of the file's contents using [`digest::Context`][c~digest::Context~docs]↗{{hi:digest::Context}}.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/algorithms/examples/hashing/sha_digest.rs:example}}
 ```
 
@@ -90,7 +94,7 @@ This example fixes a seed so the same input produces the same value; use randomi
 
 XXH3 is a fast, non-cryptographic hash. The example appends a 128-bit XXH3 tag to a buffer, verifies it on read, and rejects a corrupted byte. A tag like this detects accidental corruption such as a truncated or bit-flipped cache file. It is **not** a message authentication code: an attacker can forge a matching tag. For tamper resistance, use an HMAC or a signature - see [Encryption](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/encryption.md).
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/algorithms/examples/hashing/xxh3_checksum.rs:example}}
 ```
 
@@ -114,7 +118,7 @@ For legacy applications, you may consider using the following hashing [algorithm
 
 [`md-5`][c~md-5~docs]↗{{hi:md-5}} implements the MD5 hash function. Use it only for compatibility with existing formats or systems. MD5 is unsuitable where collision resistance is required.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/algorithms/examples/hashing/md5.rs:example}}
 ```
 

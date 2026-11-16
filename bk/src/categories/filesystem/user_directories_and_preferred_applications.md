@@ -12,7 +12,9 @@
 
 The following example gets paths to standard (home, configuration, data, cache, executables) directories on the file system:
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p filesystem --example user_directories`. The output depends on the local home directory and operating system.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/filesystem/examples/user_directories/dirs.rs:example}}
 ```
 
@@ -34,7 +36,9 @@ The following example gets paths to standard (home, configuration, data, cache, 
 
 [`open`][c~open~docs]↗{{hi:open}} opens a path or [URL](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/web-programming/url.md) using the default program configured on the system:
 
-```rust,editable
+From `bk/crates`, run `cargo run --locked -p filesystem --example open`. Create `example.txt` in `bk/crates` first. The example opens the file and a URL using the system's default applications.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/filesystem/examples/open.rs:example}}
 ```
 

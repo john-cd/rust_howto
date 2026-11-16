@@ -4,7 +4,7 @@
 
 For a small, closed command set, construct a list explicitly. This makes membership and initialization order visible. When independent crates must contribute commands without editing a central list, [`inventory`](https://docs.rs/inventory/latest/inventory/) can collect statically linked registrations. The example uses two crates: `plugin_registry` owns the declaration and `plugin_extension` submits `greet`.
 
-```rust
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/plugin_registry/examples/plugins.rs:example}}
 ```
 

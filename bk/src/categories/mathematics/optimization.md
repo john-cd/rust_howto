@@ -10,7 +10,9 @@
 
 Brent's minimization method combines golden section search with parabolic interpolation. It searches within a bounded interval without requiring a derivative. This example finds the minimum of a quadratic function on `[-5, 8]`.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p mathematics --example optimization`. The tests exercise each method on its sample objective.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/mathematics/examples/optimization/brent_minimization.rs:example}}
 ```
 
@@ -20,7 +22,7 @@ Brent's minimization method combines golden section search with parabolic interp
 
 The Nelder-Mead simplex method needs no derivatives, so it suits smooth functions whose gradient is unavailable. This example minimizes the Rosenbrock function, a narrow curved valley with its minimum at `(1, 1)`. Gradient-based solvers in `argmin`, such as `LBFGS`, converge faster when you can supply gradients.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/mathematics/examples/optimization/nelder_mead_rosenbrock.rs:example}}
 ```
 
@@ -30,7 +32,7 @@ The Nelder-Mead simplex method needs no derivatives, so it suits smooth function
 
 CMA-ES (Covariance Matrix Adaptation Evolution Strategy) is a derivative-free method for black-box, non-convex problems. It samples candidates from a Gaussian whose shape adapts as the search proceeds. Fix the seed so tests are deterministic.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/mathematics/examples/optimization/cmaes_sphere.rs:example}}
 ```
 
@@ -50,7 +52,7 @@ A swarm of particles moves through the search space; each blends its momentum wi
 
 A genetic algorithm evolves a population through selection, crossover and mutation. This example evolves a 32-bit string toward all ones (the "OneMax" problem) with `radiate`, using a scoped seed for reproducibility.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/mathematics/examples/optimization/genetic_algorithm.rs:example}}
 ```
 

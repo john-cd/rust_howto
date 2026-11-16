@@ -125,14 +125,13 @@ mod module1 {
 
 Instead of working with deeply-nested modules, it is convenient to keep submodules private and reexport items of interest instead.
 
-For example, you may write in `module1`:
+This excerpt shows the private modules and the public items that the parent imports:
 
-```rust
+```rust,no_run,noplayground
 {{#include ../../crates/code_organization/examples/project_layout/reexports_and_prelude.rs:reexports}}
 ```
 
 This flattens the module hierarchy and hides implementation details.
-Code in a parent module then refers to:
 
 See the [[use_declarations | `use` keyword]] chapter.
 
@@ -142,9 +141,12 @@ Library crates with complex public APIs or deeply nested modules often define a 
 
 A single glob import e.g., `use crate_name::prelude::*;` brings all these common items into scope in one fell swoop and removes the need for repetitive `use` declarations:
 
-```rust
+```rust,no_run,noplayground
 {{#include ../../crates/code_organization/examples/project_layout/reexports_and_prelude.rs:prelude}}
 ```
+
+From `bk/crates`, run `cargo test --locked -p code_organization --example project_layout`.
+The tests verify that the parent can access both the reexports and the prelude items.
 
 You may also reexport commonly used items from a dependency of your library, e.g. `pub use my_dependency::some_module::CommonType;`.
 

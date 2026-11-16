@@ -21,7 +21,7 @@ cargo run --locked -p value_formatting --example number_formatting -- ryu
 
 This test-backed example covers alignment, precision, scientific notation, hexadecimal and binary output, plus English and German thousands separators.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/value_formatting/examples/number_formatting/standard_and_localized.rs:example}}
 ```
 
@@ -31,7 +31,7 @@ This test-backed example covers alignment, precision, scientific notation, hexad
 
 [`humansize::format_size`][c~humansize~docs]↗{{hi:humansize}} formats a number of bytes as text. `DECIMAL` uses powers of 1000 (`kB`, `MB`), and `BINARY` uses powers of 1024 (`KiB`, `MiB`). `format_size_i` accepts signed values, such as a change in memory use.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/value_formatting/examples/number_formatting/humansize_example.rs:example}}
 ```
 

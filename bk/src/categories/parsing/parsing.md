@@ -46,7 +46,9 @@ See the [full Pest grammar](https://github.com/john-cd/rust_howto/blob/develop/b
 
 [`tree-sitter`][c~tree-sitter~docs]↗{{hi:tree-sitter}} provides Rust bindings to the Tree-sitter parsing library. [`tree-sitter`][tree-sitter~website]↗ is a parser generator tool and an incremental parsing library. It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p parsing --example parsing`. The tests parse source and check query matches.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/parsing/examples/parsing/tree_sitter.rs:example}}
 ```
 
@@ -68,7 +70,9 @@ The byte spans from the syntax-tree examples can also drive editor-style token c
 
 Tree-sitter builds a concrete syntax tree that can be updated incrementally after an edit. The example walks the tree to collect the byte range of every node a highlighter would color, then edits the source and re-parses with the previous tree so only the changed region is re-analyzed. See also the basic `tree-sitter` example above.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p parsing --example tree_sitter_spans`. The tests check syntax spans before and after an edit.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/parsing/examples/parsing/tree_sitter_spans.rs:example}}
 ```
 

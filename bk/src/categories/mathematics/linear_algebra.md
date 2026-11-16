@@ -149,7 +149,9 @@ A matrix is _sparse_ when almost all of its entries are zero, as in graphs, phys
 
 This example collects `(row, column, value)` entries in a [`sprs::TriMat`][c~sprs::TriMat~docs]↗{{hi:sprs::TriMat}}, then converts it to the compressed sparse row (CSR) format, [`sprs::CsMat`][c~sprs::CsMat~docs]↗{{hi:sprs::CsMat}}, which supports fast arithmetic. It reads individual entries, iterates over the non-zero entries of each row, multiplies the matrix by a dense vector and by itself, and transposes it.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p mathematics --example linear_algebra`. The tests exercise construction and use of sparse matrices.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/mathematics/examples/linear_algebra/sparse_matrices.rs:example}}
 ```
 

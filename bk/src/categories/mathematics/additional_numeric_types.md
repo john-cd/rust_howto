@@ -92,7 +92,9 @@
 
 [`fixed`][c~fixed~docs] provides fixed-point types whose integer and fractional bit counts are chosen in the type. Use it when a fixed binary scale is appropriate, and select a type whose range and fractional precision fit the calculation.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p mathematics --example additional_numeric_types`. The tests check fixed-point arithmetic.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/mathematics/examples/additional_numeric_types/fixed_point.rs:example}}
 ```
 

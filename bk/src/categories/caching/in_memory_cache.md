@@ -24,7 +24,9 @@ If a failed lookup is cached, give that result a separate expiration policy so a
 
 [`lru`][c~lru~docs]↗{{hi:lru}} provides a capacity-bounded least recently used (LRU) map. It is useful when one owner controls access and wants an explicit eviction policy. A capacity limit does not add expiration or synchronization between threads; add those behaviors only if the application needs them.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p caching --example in_memory_cache`. The tests cover eviction, retrieval, and memoized calls.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/caching/examples/in_memory_cache/lru.rs:example}}
 ```
 
@@ -34,7 +36,7 @@ If a failed lookup is cached, give that result a separate expiration policy so a
 
 [`moka`][c~moka~docs]↗{{hi:moka}} provides synchronous and asynchronous concurrent caches. Its policies include maximum capacity, expiration by time-to-live or time-to-idle, and size-aware weighting. Select the `sync` or `future` cache to match the surrounding code, and remember that maintenance and eviction are cache-policy behavior rather than durable storage.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/caching/examples/in_memory_cache/moka.rs:example}}
 ```
 
@@ -44,7 +46,7 @@ If a failed lookup is cached, give that result a separate expiration policy so a
 
 [`cached`][c~cached~docs]↗{{hi:cached}} provides cache types and procedural macros for memoizing function results. A memoization key is derived from the function's inputs, so only use it when equal keys reliably produce interchangeable results. Configure a size or time bound for long-running processes, and avoid caching values that depend on hidden mutable state or secrets.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/caching/examples/in_memory_cache/cached.rs:example}}
 ```
 
