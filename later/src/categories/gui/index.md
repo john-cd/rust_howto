@@ -114,5 +114,4 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
   organize
   [Are we (I)DE yet?][are-we-ide-yet?~website]↗.
   [Porting a cross-platform GUI application to Rust][blog~porting-a-cross-platform-gui-application-to-rust]↗.
-  cover zola?
 </div>

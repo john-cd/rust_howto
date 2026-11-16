@@ -47,7 +47,3 @@ Often done with custom [functions][p~functions] or data structures, but crates l
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  cover property [testing][p~testing] [proptest][c~proptest~repo]
-</div>

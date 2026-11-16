@@ -74,7 +74,6 @@ By implementing the unsafe marker [traits][p~traits] [`std::marker::Send`][c~std
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-write; add links?
 
 - [Implementing `Vec`][book~rustonomicon~implementing-vec]↗.
 - [An unsafe tour of Rust's Send and Sync][blog~an-unsafe-tour-of-rust-s-send-and-sync]↗.
