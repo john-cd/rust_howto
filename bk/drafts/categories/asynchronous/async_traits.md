@@ -82,4 +82,4 @@ A trait with a native `async fn` is not dyn-compatible, so `Vec<Box<dyn Store>>`
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  </div>
+</div>

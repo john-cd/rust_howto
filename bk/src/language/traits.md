@@ -187,5 +187,4 @@ This topic is covered in the [[asynchronous | Async]] chapter.
 
 - [[rust-patterns | Rust Patterns]].
 
-
 </div>

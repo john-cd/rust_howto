@@ -43,5 +43,4 @@ This is useful when the exact type is complex, not relevant to the caller, or im
 
 - [[rust-patterns | Rust Patterns]].
 
-
 </div>
