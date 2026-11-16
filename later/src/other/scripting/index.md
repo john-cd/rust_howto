@@ -43,6 +43,8 @@ For custom languages, see [[compilers | Compilers]], [[text-processing | Text Pr
 
 For parsing building blocks, see [`logos`][c~logos~docs]↗{{hi:logos}} for lexing, [`nom`][c~nom~docs]↗{{hi:nom}} and [`chumsky`][c~chumsky~docs]↗{{hi:chumsky}} for parser combinators, and [`pest`][c~pest~docs]↗{{hi:pest}} or [`lalrpop`][c~lalrpop~docs]↗{{hi:lalrpop}} for grammar-driven parsers. Procedural macro tooling such as [`quote`][c~quote~docs]↗{{hi:quote}} can help generate Rust syntax trees. The [`object`][c~object~docs]↗{{hi:object}} crate can read object and executable files and write object files or selected executable formats.
 
+For a broader survey of languages that compile to WebAssembly, see [Awesome WebAssembly Languages][awesome-wasm-langs-typescript~repo]↗.
+
 ## Related Topics
 
 - [[development-tools_ffi | Development Tools: FFI]].
@@ -53,12 +55,3 @@ For parsing building blocks, see [`logos`][c~logos~docs]↗{{hi:logos}} for lexi
 {{#include ../../refs/link-refs.md}}
 
 [cargo-script-nightly]: https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#script
-
-<div class="hidden">
-content audit: category index content removed by recent commits; review and restore
-
-- Additional script tools: [`rust-script`][c~rust-script~website]↗, [`cargo-scripter`][c~cargo-scripter~docs]↗, [`shell2batch`][c~shell2batch~docs]↗, and the [Pre-RFC: `cargo-script` for everyone][forum~pre-rfc-cargo-script-for-everyone]↗. Roto project links: [![website][c~roto~website~badge]][c~roto~website]↗ [![docs][c~roto~docs~badge]][c~roto~docs]↗ [![crates.io][c~roto~crates.io~badge]][c~roto~crates.io]↗ [![repository][c~roto~repo~badge]][c~roto~repo]↗ [![lib.rs][c~roto~lib.rs~badge]][c~roto~lib.rs]↗ and an [introduction blog post][blog~roto]↗.
-- Curated overview: [Awesome WebAssembly Languages][awesome-wasm-langs-typescript~repo]↗.
-- `rlua` was superseded by `mlua`; it is intentionally omitted from the current Lua recommendation above.
-
-</div>

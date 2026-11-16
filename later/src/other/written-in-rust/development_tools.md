@@ -108,10 +108,3 @@ These command-line tools cover shells, file navigation, search, monitoring, prom
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-content audit: Written-in-Rust tool lists trimmed by recent commits; review and restore removed entries
-
-- The [Awesome Rust Tools][awesome-rust-tools~repo]↗ and [Awesome Alternatives in Rust][awesome-alternatives-in-rust~repo]↗ lists are broader catalogs, not endorsements or maintenance guarantees.
-
-</div>
