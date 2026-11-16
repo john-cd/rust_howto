@@ -3,7 +3,12 @@
 // ANCHOR: example
 
 //! `pin-project-lite` projects a pinned field with a small declarative macro.
-//! Unlike `pin-project`, it does not provide a custom pinned-drop attribute.
+//!
+//! `Pin<&mut Self>` prevents moving a value whose address must remain stable.
+//! Calling `project` exposes `inner` as a pinned mutable reference, while the
+//! ordinary `polls` counter remains mutable. This lets the wrapper update its
+//! bookkeeping without moving the inner future. Unlike `pin-project`, this
+//! lightweight crate does not provide a custom pinned-drop attribute.
 
 use std::future::Future;
 use std::pin::Pin;

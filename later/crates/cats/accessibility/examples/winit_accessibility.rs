@@ -3,7 +3,13 @@
 // ANCHOR: example
 
 //! Exposes a button in a native Winit window through AccessKit.
-//! Close the window to end the example. Run it on a desktop with a display.
+//!
+//! The tree describes the window and its labeled button in semantic terms, so
+//! assistive technology can discover the control without relying on its visual
+//! appearance. `Adapter` connects that tree to Winit: window events are passed
+//! to it, and an initial-tree request causes the current tree to be supplied.
+//! Close the window to end the event loop. Run this example on a desktop with a
+//! display and an accessibility bridge supported by the platform.
 
 use accesskit::Node;
 use accesskit::NodeId;
