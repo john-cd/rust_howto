@@ -222,7 +222,3 @@ See also the [Rust Jobs Reports][filtra.io-rust~website]↗ on Filtra.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: decisions for the maintainer
-</div>

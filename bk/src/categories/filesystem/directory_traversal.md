@@ -135,7 +135,3 @@ The following example uses [`globset`][c~globset~docs]↗{{hi:globset}} which al
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: file system
-</div>

@@ -18,7 +18,3 @@ Please review the [LICENSE][rust-howto~license~repo]↗ file.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: decisions for the maintainer
-</div>

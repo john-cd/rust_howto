@@ -52,6 +52,5 @@ To implement `Drop` for a custom type, you would do something like this:
 
 - [[memory-management | Memory Management]].
 
-accuracy review: standard library
 
 </div>

@@ -84,9 +84,3 @@ constructors are [function items](https://doc.rust-lang.org/reference/types/func
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-
-accuracy review: introduction and language basics
-
-</div>

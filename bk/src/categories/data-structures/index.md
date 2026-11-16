@@ -20,6 +20,8 @@ The standard library provides these common collections. `Vec` is defined in `std
 
 Refer to the [[language | Language]] and [[standard-library | Standard Library]] sections for examples of use.
 
+Start with the operation that dominates your workload: indexing for `Vec`, work at both ends for `VecDeque`, sorted traversal for a B-tree, and priority retrieval for `BinaryHeap`. The sections below link to examples of those operations.
+
 ## Strings
 
 {{#include strings.incl.md}}
@@ -98,8 +100,3 @@ Refer to the [[language | Language]] and [[standard-library | Standard Library]]
 - [[dataframes | Dataframes]].
 - [[concurrent_data_structures | Concurrent Data Structures]].
 - [`scroll`][c~scroll~docs]↗: easily and efficiently read/write types from data containers like byte arrays.
-
-<div class="hidden">
-  data-structures: expand
-  accuracy review: data structures
-</div>

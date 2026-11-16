@@ -8,7 +8,7 @@
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~data-structures][cat~data-structures~badge]][cat~data-structures]
 
-`std::collections::BinaryHeap` is a binary heap, where elements can be efficiently inserted and the maximum or minimum element can be quickly accessed. By default, `BinaryHeap` is a "max-heap", meaning the largest element is always at the top. The following demonstrates its basic operations:
+`std::collections::BinaryHeap` is a max-heap. `peek` returns the largest element in constant time, and `pop` removes it in logarithmic time. Wrap elements in `std::cmp::Reverse` to get the smallest element first. The following demonstrates its basic operations:
 
 ```rust,editable
 {{#include ../../../crates/cats/data_structures/examples/binaryheap/binaryheap.rs:example}}
@@ -42,7 +42,3 @@ inserting elements, popping elements, using custom types, and more:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: data structures
-</div>

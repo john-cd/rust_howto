@@ -51,7 +51,3 @@ The following example implements a custom order for software versions:
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: standard library
-</div>

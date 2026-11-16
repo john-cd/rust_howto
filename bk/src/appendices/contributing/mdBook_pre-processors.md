@@ -40,6 +40,5 @@ Consult the project's [README][mdbook-scrub-readme~repo]↗ for more details.
 
 - [[mdbook | Mdbook]].
 
-accuracy review: contributing guide
 
 </div>

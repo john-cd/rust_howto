@@ -112,7 +112,7 @@ See [[vectors | Vector]] for more details.
 - `assert_eq!(left, right)` panics if `left` is not equal to `right`, providing a helpful message showing both values.
 - `assert_ne!(left, right)` panics if `left` is equal to `right`.
 
-There are also [`debug_assert`][c~std::debug_assert~docs]↗, [`debug_assert_eq`][c~std::debug_assert_eq~docs]↗, and [`debug_assert_ne`][c~std::debug_assert_ne~docs]↗ macros that are only enabled in non-optimized builds (i.e. disabled in release builds) by default.
+There are also [`debug_assert`][c~std::debug_assert~docs]↗, [`debug_assert_eq`][c~std::debug_assert_eq~docs]↗, and [`debug_assert_ne`][c~std::debug_assert_ne~docs]↗ macros that run when debug assertions are enabled. Cargo enables them in the default development profile and disables them in the default release profile. Their expressions are type-checked in either case.
 
 ### Mark Sections of your Code as Unreachable or Unimplemented {#unreachable-macros}
 
@@ -427,7 +427,3 @@ Debugging macros can be challenging. To see what a macro expands to and debug it
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: traits, iterators, attributes and macros
-</div>

@@ -92,7 +92,3 @@ Review the [git][git~website]↗ manual for more commands.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: introduction and language basics
-</div>

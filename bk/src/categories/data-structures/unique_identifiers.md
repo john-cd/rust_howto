@@ -42,7 +42,3 @@ ULID stands for Universally Unique Lexicographically Sortable Identifier. Like a
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: data structures
-</div>

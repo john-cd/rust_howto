@@ -68,6 +68,5 @@ In the Rust 2024 edition, the `static_mut_refs` lint is denied by default: code 
 
 [When are Rust's `const fn`s executed?][blog~const-fn]↗.
 
-accuracy review: introduction and language basics
 
 </div>

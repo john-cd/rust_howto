@@ -30,7 +30,3 @@ A file extension can be missing or wrong. [`infer`][c~infer~docs]↗{{hi:infer}}
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: file system
-</div>

@@ -54,6 +54,5 @@ The following example demonstrates the basic usage of `Pin`, `Unpin`, `PhantomPi
 
 - [[async_programming | Async Programming]].
 
-accuracy review: standard library
 
 </div>

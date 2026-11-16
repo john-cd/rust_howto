@@ -52,7 +52,3 @@ See also [Rust Community Talks][talks~repo]↗.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: links and crate selection
-</div>

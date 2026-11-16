@@ -57,7 +57,3 @@ This section provides a large number of links to Rust resources.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: links and crate selection
-</div>

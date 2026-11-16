@@ -60,7 +60,7 @@ Functions which take an [`Iterator`][c~std::iter::Iterator~docs]↗{{hi:std::ite
 
 ## Return an Iterator from a Function or Method {#return-an-iterator}
 
-The `impl SomeTrait` notation refers to an opaque type that implements a trait; it is only allowed in arguments and return types of functions and methods.
+In a return type, `impl SomeTrait` lets the function choose one concrete type that implements the trait without exposing that type to the caller. In a parameter type, the caller supplies a concrete type that satisfies the trait bound.
 
 Iterator types produced by a chain of calls to iterator adapters (`map`, `take`, `filter`, etc.) can be quite complex and hard to write.
 It is therefore common to use `impl Iterator<Item = T>` as the return type for functions or methods that return an iterator.
@@ -107,7 +107,3 @@ One benefit of implementing `IntoIterator` is that your type will work with the 
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: traits, iterators, attributes and macros
-</div>

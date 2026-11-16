@@ -81,6 +81,5 @@ The example counts words with three maps: the standard library's [`HashMap`][c~s
 - [[hashing | Hashing]].
 - [[key_value_stores | Key-Value Stores]].
 
-accuracy review: data structures
 
 </div>

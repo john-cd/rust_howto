@@ -102,6 +102,5 @@ The crate selection process is necessarily opinionated. Feel free to offer sugge
 - [[concurrency | Concurrency]], including [[asynchronous | asynchronous programming]], is covered in details.
 - So are [[development tools]] and programming domains such as [[command-line-interface | CLI]] and [[web_programming | Web]] development.
 
-accuracy review: introduction and language basics
 
 </div>

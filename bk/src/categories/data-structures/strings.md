@@ -91,6 +91,5 @@ See:
 - [[unicode | Unicode]] handling.
 - [[value_formatting | Value Formatting]].
 
-accuracy review: data structures
 
 </div>

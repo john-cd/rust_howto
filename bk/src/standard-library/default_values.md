@@ -25,7 +25,3 @@ The `Default` trait has a single method, `default()`, which returns the default 
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: standard library
-</div>

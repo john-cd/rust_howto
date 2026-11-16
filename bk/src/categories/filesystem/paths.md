@@ -74,7 +74,3 @@ The result is `None` when `path` is relative and `base` is absolute, because the
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: file system
-</div>

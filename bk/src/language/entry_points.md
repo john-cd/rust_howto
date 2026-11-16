@@ -57,6 +57,5 @@ Rust also supports asynchronous main functions for writing concurrent applicatio
 
 - [[asynchronous | Asynchronous]].
 
-accuracy review: introduction and language basics
 
 </div>

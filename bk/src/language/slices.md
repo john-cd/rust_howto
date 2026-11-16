@@ -75,7 +75,3 @@ See the [[strings | String]] chapter for more details.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: introduction and language basics
-</div>

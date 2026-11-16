@@ -96,7 +96,3 @@ You should also read the [`oorandom` README file][c~oorandom~lib.rs]↗ for a co
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: algorithms
-</div>

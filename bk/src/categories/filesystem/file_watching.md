@@ -24,7 +24,3 @@ This example demonstrates how to watch for file system events. It sets up a file
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: file system
-</div>
