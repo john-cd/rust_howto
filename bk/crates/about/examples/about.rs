@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generates a random `f64` with the `rand` crate.
 //!
 //! Random numbers come from a generator. `rand` seeds it from the operating
