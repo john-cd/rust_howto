@@ -6,7 +6,7 @@ This crate contains code examples for the **API Bindings** category on crates.io
 
 ## Examples Covered
 
-- **API Bindings** (`examples/api_bindings/`): Tested placeholder; no API binding example is implemented yet.
+- **API Bindings** (`examples/api_bindings/`): Uses `flate2`'s safe gzip encoder and decoder to round-trip bytes.
 
 ## Usage
 
