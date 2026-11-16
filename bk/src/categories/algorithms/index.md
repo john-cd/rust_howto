@@ -6,7 +6,7 @@
 
 This category covers Rust implementations of algorithms{{hi:Algorithms}} such as sorting{{hi:Sorting}}, hashing, graph processing, and random value generation. Prefer the standard library for common operations; use a specialized crate when it adds a capability or performance your application needs.
 
-[[compression | Compression]], [[cryptography | cryptography]], [[data-structures | data structures]], [[mathematics | mathematics]], [[science | scientific algorithms]], [[search | search]], [[strings | strings]], and [[text-processing | text processing]] are discussed elsewhere but are briefly mentioned below.
+[Compression](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/compression/index.md), [cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), [[data-structures | data structures]], [[mathematics | mathematics]], [scientific algorithms](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [search](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/search.md), [[strings | strings]], and [text processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md) are discussed elsewhere but are briefly mentioned below.
 
 ## Random Value Generation
 
@@ -28,7 +28,7 @@ This category covers Rust implementations of algorithms{{hi:Algorithms}} such as
 
 ### Compression Algorithms
 
-For [[compression | compression]], use:
+For [compression](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/compression/index.md), use:
 
 - `flate2` for deflate, gzip, and zlib compression,
 - `zip` for zip files,
@@ -39,25 +39,25 @@ For [[compression | compression]], use:
 - `snap` for Snappy compression, and
 - `brotli` for Brotli compression.
 
-See [[compression | Compression]].
+See [Compression](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/compression/index.md).
 
 ### Data Structures
 
 For common [[data-structures | data structures]] ([`Vec`][c~std::vec::Vec~docs]↗, [`HashMap`][c~std::collections::HashMap~docs]↗, etc.), you will use [`std::collections`][c~std::collections~docs]↗. You may also consider:
 
 - [`im`][c~im~docs]↗{{hi:im}} for immutable data structures,
-- `indexmap` for [[maps | maps]] that keep track of insertion order,
+- `indexmap` for [maps](../data-structures/other_maps.md) that keep track of insertion order,
 - `arrayvec`, `smallvec`, `tinyvec` and `heapless` for [[stack-allocated | stack-allocated data structures]],
 - [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} for [[graphs | graphs]],
-- `dashmap` and `papaya` for [[concurrent_data_structures | concurrent data structures]],
+- `dashmap` and `papaya` for [concurrent data structures](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/concurrent_data_structures.md),
 - `parking_lot` for mutexes,
 - `crossbeam-channel`, `flume`, `tokio`, and `postage` for channels.
 
 Worth a mention: `fst` provides fast, memory-efficient, immutable set and map data structures for storing and searching (very) large collections of strings and associated values. It is based on finite state transducers (FSTs). The capabilities of ordered sets and maps mirror that of `BTreeSet` and `BTreeMap` found in the standard library. The key difference is that sets and maps in `fst` are immutable, keys are byte sequences, and values, in the case of maps, are always unsigned 64 bit integers.
 
-See [[vectors | vector]], [[hashmaps | hash maps]], [[maps | other maps]], and [[binary_heaps | Binary Heap]] within the [[data-structures | Data Structures]] section for more details.
+See [[vectors | vector]], [[hashmaps | hash maps]], [other maps](../data-structures/other_maps.md), and [[binary_heaps | Binary Heap]] within the [[data-structures | Data Structures]] section for more details.
 
-See [[data-structures | Data Structures]] and [[concurrent_data_structures | Concurrent Data Structures]].
+See [[data-structures | Data Structures]] and [Concurrent Data Structures](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/concurrent_data_structures.md).
 
 ### Recursive Algorithms
 
@@ -73,7 +73,7 @@ For small-scale tasks, like filtering a list of items in memory, reach first for
 - `argminmax` provides efficient argmin & argmax (in 1 function) with SIMD for floats and integers.
 - `bytecount` counts occurrences of a given byte or UTF-8 code points in a byte slice quickly.
 
-[meilisearch][c~meilisearch~repo]↗ and [tantivy][c~tantivy~repo]↗ are full-text search engines written in Rust, similar to what you'd expect from `Elasticsearch` or `Algolia`. See also [[rust_search_engines | Search Engines]].
+[meilisearch][c~meilisearch~repo]↗ and [tantivy][c~tantivy~repo]↗ are full-text search engines written in Rust, similar to what you'd expect from `Elasticsearch` or `Algolia`. See also [Search Engines](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database-implementations/rust_search_engines.md).
 
 ### String Algorithms and Text Processing
 
@@ -84,11 +84,11 @@ For [[strings | Strings]], use:
 - [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}} for finding occurrences of many patterns at once,
 - [`strsim`][c~strsim~docs]↗{{hi:strsim}} for string similarity.
 
-See also [[string_concat | String Concat]], [[string_encoding | String Encoding]], [[string_parsing | String Parsing]], and [[text-processing | Text Processing]].
+See also [String Concat](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_concat.md), [String Encoding](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/encoding/string_encoding.md), [String Parsing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_parsing.md), and [Text Processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md).
 
 ### Cryptography
 
-See [[cryptography | Cryptography]], [[cryptography_utilities | Cryptography Utilities]], and [[encryption | Encryption]].
+See [Cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), [Cryptography Utilities](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/cryptography_utilities.md), and [Encryption](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/encryption.md).
 
 ### Data Processing
 
@@ -121,7 +121,7 @@ For [[mathematics | Mathematics]], use the following crates for general numerica
 
 ### Science
 
-See [[science | Science]], [[_machine_learning | Machine Learning]], [[science_geo | Geoscience]], [[science_neuroscience | Neuroscience]], [[science_robotics | Science Robotics]], and [[simulation | Simulation]].
+See [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [Machine Learning](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/machine-learning/index.md), [Geoscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_geo/index.md), [Neuroscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_neuroscience/index.md), [Science Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md), and [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md).
 
 ## References
 

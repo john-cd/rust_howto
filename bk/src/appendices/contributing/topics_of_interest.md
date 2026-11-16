@@ -6,64 +6,64 @@
 
 The following are topics that deserve (additional) coverage and examples:
 
-- Rust [[gui | GUI]].
-- [[rust-patterns | Rust Patterns]].
+- Rust [GUI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/index.md).
+- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
 - Rust [[macros | Macros]].
 - [[data-structures | Data Structures]].
-- [[testing | Testing]].
-- [[gpu | GPU]] processing, CUDA.
-- [[machine-learning | Machine Learning]], for example [Burn][c~burn~docs]↗, [Candle][candle~repo]↗, and [tch][c~tch~docs]↗.
-- [[email | Email]].
-- [[template-engine | Template Engines]].
-- [[caching | Caching]].
-- [[compilers | Compilers]].
-- [[wasm | WASM]].
+- [Testing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_testing/testing.md).
+- [GPU](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/gpu/index.md) processing, CUDA.
+- [Machine Learning](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/machine-learning/index.md), for example [Burn][c~burn~docs]↗, [Candle][candle~repo]↗, and [tch][c~tch~docs]↗.
+- [Email](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/email/index.md).
+- [Template Engines](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/template-engine/index.md).
+- [Caching](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/caching/index.md).
+- [Compilers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/compilers/index.md).
+- [WASM](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md).
 - [[algorithms | Algorithms]].
-- [[authentication | Authentication]] and authorization: OAuth 2.0, LDAP/Active Directory.
-- Continuous Deployment & Integration ([[cd_ci | CD / CI]]) for Rust projects.
-- Use of Rust in [[aws | AWS]] and other [[cloud | Cloud]] services.
-- [[serverless | Serverless]] Rust.
-- More [[database | database]] examples, including object databases, graph databases, e.g. BonsaiDB, neo4j.
-- [[embedded | Embedded]] systems.
-- [[visualization | Visualization]].
-- [[graphics | Graphics]].
-- [[games | Games]], [[game-engines | Game Engines]].
-- [[search | Search]] engines.
-- [[compression | Compression]]: Zip files and other archives.
+- [Authentication](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/authentication/index.md) and authorization: OAuth 2.0, LDAP/Active Directory.
+- Continuous Deployment & Integration ([CD / CI](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/devops/cd_ci.md)) for Rust projects.
+- Use of Rust in [AWS](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/aws.md) and other [Cloud](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/index.md) services.
+- [Serverless](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/rust_native_cloud_development.md#write-serverless-functions) Rust.
+- More [database](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/index.md) examples, including object databases, graph databases, e.g. BonsaiDB, neo4j.
+- [Embedded](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md) systems.
+- [Visualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/visualization/index.md).
+- [Graphics](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/graphics/index.md).
+- [Games](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/games/index.md), [Game Engines](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/game-engines/index.md).
+- [Search](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/search.md) engines.
+- [Compression](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/compression/index.md): Zip files and other archives.
 - Buffer pools, garbage collection, or other reference-counted examples.
 - IPv6 address processing.
-- [[cloud | Cloud]]: load balancers, status reporting (Vigil), routing, orchestration, containers.
+- [Cloud](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/index.md): load balancers, status reporting (Vigil), routing, orchestration, containers.
 - Reverse proxies.
-- [[web-programming | Web programming]].
-- [[virtualization | Virtualization]].
-- [[version-control | Version Control]]: libgit2: clone, change branches, create commits, push, pull.
-- [[cryptography | Cryptography]], SSL, SSH, other public key [[encryption | encryption]], X.509, RusTLS.
-- [[network-programming | Network Programming]]: Basic and advanced TCP/IP networking.
+- [Web programming](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/web-programming/index.md).
+- [Virtualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md).
+- [Version Control](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/devops/version_control.md): libgit2: clone, change branches, create commits, push, pull.
+- [Cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), SSL, SSH, other public key [encryption](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/encryption.md), X.509, RusTLS.
+- [Network Programming](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/network-programming/index.md): Basic and advanced TCP/IP networking.
 - DNS lookups and resolution.
 - Interfacing with FLTK (Fast Light Tool Kit).
 - Raft Consensus library.
 - Network file systems.
 - [[statistics | Statistics]], math.
-- Sound ([[multimedia_audio | Multimedia - audio]]).
-- [[api-bindings | API bindings]].
-- FFI ([[development-tools_ffi | Development tools - FFI]]).
-- [[hardware-support | Hardware support]].
-- Build Utils ([[development-tools_build-utils | Development tools - build utils]]).
-- [[rendering | Rendering]].
+- Sound ([Multimedia - audio](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/multimedia_audio/index.md)).
+- [API bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md).
+- FFI ([Development tools - FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md)).
+- [Hardware support](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/hardware-support/index.md).
+- Build Utils ([Development tools - build utils](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_build-utils/index.md)).
+- [Rendering](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/index.md).
 - High-performance computing: OpenMP, etc.
 - Social media APIs.
 - Personal file sharing: OwnCloud, etc.
-- [[emulators | Emulators]].
-- [[accessibility | Accessibility]].
-- [[internationalization | Internationalization]] and [[localization | Localization]].
-- [[multimedia | Multimedia]].
-- [[computer-vision | Computer Vision]].
-- [[science_robotics | Robotics]].
-- [[simulation | Simulation]].
-- [[science | Science]] ([[geo | Geo]], [[neuroscience | Neuro]]).
-- [[finance | Finance]].
-- [[aerospace | Aerospace]]-related crates: [[drones | Drones]], UAVs, [[space-protocols | Space Protocols]], simulation...
-- [[cryptocurrencies | Cryptocurrencies]].
+- [Emulators](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/emulators/index.md).
+- [Accessibility](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/accessibility/index.md).
+- [Internationalization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/internationalization/index.md) and [Localization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/localization/index.md).
+- [Multimedia](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/multimedia/index.md).
+- [Computer Vision](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/computer-vision/index.md).
+- [Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md).
+- [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md).
+- [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md) ([Geo](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_geo/geo.md), [Neuro](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_neuroscience/neuroscience.md)).
+- [Finance](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/finance/index.md).
+- [Aerospace](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace/index.md)-related crates: [Drones](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace_drones/drones.md), UAVs, [Space Protocols](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace_space-protocols/space_protocols.md), simulation...
+- [Cryptocurrencies](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/cryptography_cryptocurrencies/index.md).
 
 Check the [open issues][rust-howto~issues]↗ for tracked work, and browse the [`bk/drafts`][rust-howto~drafts~repo]↗ and [`later/src`][rust-howto~bk-later~repo]↗ folders for chapters still in progress.
 

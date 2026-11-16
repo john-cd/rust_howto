@@ -13,7 +13,7 @@ To use a (public) item (structs, enums, traits, functions, etc.) of an external 
 anyhow = "1.0.104"
 ```
 
-The name of the external crate is followed by `=` and a semantic version specifier. See the [[cargo | Cargo]] chapters for details.
+The name of the external crate is followed by `=` and a semantic version specifier. See the [Cargo](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/cargo/cargo.md) chapters for details.
 
 You can then refer to its items using a path that starts with the external crate's name, e.g. `anyhow::Result`.
 

@@ -137,9 +137,9 @@ See also the [[reference-to-reference_conversions | AsRef]] chapter.
 ## Related Topics {#related-topics .skip}
 
 - [[iterators | Iterators]].
-- [[match | Match]].
+- [Match](../language/pattern_matching.md).
 - [[recoverable_error_handling | Result]].
-- [[rust-patterns | Rust Patterns]].
+- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

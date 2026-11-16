@@ -43,16 +43,16 @@ You may also use [`dbg`][c~std::dbg~docs]↗{{hi:std::dbg}} for debug output.{{h
 
 ## Concatenate Strings {#string-concatenation}
 
-See the [[string_concat | String Concatenation]] chapter and the [Concatenation Benchmark][concatenation_benchmarks~repo]↗ repository.
+See the [String Concatenation](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_concat.md) chapter and the [Concatenation Benchmark][concatenation_benchmarks~repo]↗ repository.
 
 ## String Manipulation {#string-manipulation .skip}
 
 See:
 
-- [[regex | Regex (Regular Expressions)]].
-- [[parsing | Parsing]].
-- [[text-processing | Text Processing]].
-- [[string_parsing | String Parsing]].
+- [Regex (Regular Expressions)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/regex.md).
+- [Parsing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/parsing/index.md).
+- [Text Processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md).
+- [String Parsing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_parsing.md).
 
 ## Build Byte Buffers with `bytes` {#bytes}
 
@@ -76,7 +76,7 @@ If you need to count user-perceived characters or align text in terminal columns
 
 - [[algorithms | Algorithms]].
 - [[lifetimes | Lifetimes]].
-- Working with [[other_strings | Other Strings]] (CString, OsString).
+- Working with [Other Strings](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/other_strings.md) (CString, OsString).
 
 See [Number Formatting](../value-formatting/number_formatting.md) for precision, locale grouping, and byte counts.
 

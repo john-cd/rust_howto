@@ -13,7 +13,7 @@ The step size affects the approximation's accuracy. For a problem with a known e
 ## Related Topics {#related-topics .skip}
 
 - [[numerical_analysis | Numerical Analysis]].
-- [[simulation | Simulation]].
+- [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

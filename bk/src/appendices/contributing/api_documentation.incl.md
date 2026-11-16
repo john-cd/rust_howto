@@ -19,7 +19,7 @@ Use `no_run` when an example should compile but cannot be run in the test enviro
 
 ## Link related items
 
-Use intra-doc links such as [`Type`] and [`Type::method`] to connect related public items. Rustdoc checks these links; see the [intra-doc link reference][rustdoc~intra-doc-links]. Prefer links users can follow in the published API, and resolve warnings for broken or ambiguous targets. The [`rustdoc::broken_intra_doc_links` lint][rustdoc~lints] warns about unresolved links.
+Use intra-doc links such as ``[`Type`]`` and ``[`Type::method`]`` to connect related public items. Rustdoc checks these links; see the [intra-doc link reference][rustdoc~intra-doc-links]. Prefer links users can follow in the published API, and resolve warnings for broken or ambiguous targets. The [`rustdoc::broken_intra_doc_links` lint][rustdoc~lints] warns about unresolved links.
 
 ## Generate and test the API docs
 

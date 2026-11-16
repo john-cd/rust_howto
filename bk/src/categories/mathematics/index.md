@@ -6,7 +6,7 @@
 
 This section collects Rust crates and runnable examples for mathematical and numerical programming. The chapter tables show the examples currently available.
 
-Some commonly used crates are [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} for linear algebra, [`glam`][c~glam~docs]↗{{hi:glam}} for graphics-oriented vector and matrix operations, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} for multidimensional arrays, [`sprs`][c~sprs~docs]↗{{hi:sprs}} for sparse matrices, and [`statrs`][c~statrs~docs]↗{{hi:statrs}} for statistical distributions and functions. See the [[randomness | Randomness]] chapter for random number generation.
+Some commonly used crates are [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} for linear algebra, [`glam`][c~glam~docs]↗{{hi:glam}} for graphics-oriented vector and matrix operations, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} for multidimensional arrays, [`sprs`][c~sprs~docs]↗{{hi:sprs}} for sparse matrices, and [`statrs`][c~statrs~docs]↗{{hi:statrs}} for statistical distributions and functions. See the [Randomness](../algorithms/random_value_generation.md) chapter for random number generation.
 
 ## Trigonometry
 
@@ -38,7 +38,7 @@ For random variables, distributions, hypothesis [testing][cat~development-tools:
 
 Use [`rand`][c~rand~docs]↗{{hi:rand}} for random number generation.
 
-See the [[randomness | Randomness]] chapter.
+See the [Randomness](../algorithms/random_value_generation.md) chapter.
 
 ## Additional Numeric Types
 
@@ -101,21 +101,21 @@ The [Units of Measurement chapter][p~units] demonstrates dimensional types and c
 ## Related Topics
 
 - [[algorithms | Algorithms]].
-- [[cryptography | Cryptography]].
-- Plotting and Graphing: [[visualization | Visualization]].
-- [[randomness | Randomness]].
+- [Cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md).
+- Plotting and Graphing: [Visualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/visualization/index.md).
+- [Randomness](../algorithms/random_value_generation.md).
 - [[sorting | Sorting]].
 
 ## Applications
 
-- [[classical_machine_learning | Classical Machine Learning]].
-- [[deep_learning | Deep Learning]].
-- [[science | Science]].
-  - [[science_geo | Geoscience]].
-  - [[science_neuroscience | Neuroscience]].
-- [[science_robotics | Robotics]].
-- [[search | Search]].
-- [[simulation | Simulation]].
+- [Classical Machine Learning](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/classical_machine_learning.md).
+- [Deep Learning](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/deep_learning.md).
+- [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md).
+  - [Geoscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_geo/index.md).
+  - [Neuroscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_neuroscience/index.md).
+- [Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md).
+- [Search](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/search.md).
+- [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

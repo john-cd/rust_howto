@@ -92,7 +92,7 @@ Read the [procedural macros](#procedural-macros) sections below for more details
 
 [`concat!`][c~std::concat~docs]↗ concatenates literals into a static string slice.
 
-See [[string_concat | String Concatenation]] for more details.
+See [String Concatenation](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_concat.md) for more details.
 
 ### Create a Vector with `vec!` {#vec-macro}
 
@@ -419,11 +419,11 @@ Debugging macros can be challenging. To see what a macro expands to and debug it
 
 ## Related Topics {#related-topics .skip}
 
-- [[development-tools_procedural-macro-helpers | Development Tools: Procedural Macro Helpers]].
-  - [[compile_macros | Compile Macros]].
-  - [[macro_tools | Macro Tools]].
-  - [[write_proc_macros | Write Proc Macros]].
-- [[rust-patterns | Rust Patterns]].
+- [Development Tools: Procedural Macro Helpers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_procedural-macro-helpers/index.md).
+  - [Compile Macros](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_procedural-macro-helpers/compile_macros.md).
+  - [Macro Tools](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_procedural-macro-helpers/macro_tools.md).
+  - [Write Proc Macros](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_procedural-macro-helpers/write_proc_macros.md).
+- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

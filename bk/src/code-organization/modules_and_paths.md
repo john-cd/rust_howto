@@ -194,7 +194,7 @@ The following example summarizes the visibility rules when it comes to modules. 
 
 ## Related Topics {#related-topics .skip}
 
-- [[package_layout | Package Layout]].
+- [Package Layout](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/cargo/package_layout.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

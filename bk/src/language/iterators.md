@@ -101,8 +101,8 @@ One benefit of implementing `IntoIterator` is that your type will work with the 
 
 - [[closures | Closures]].
 - [[data-structures | Data Structures]].
-- [[functional_programming | Functional Programming]].
-- [[rust-patterns | Rust Patterns]].
+- [Functional Programming](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/functional_programming.md).
+- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
 - [[vectors | Vectors]].
 
 {{#include refs.incl.md}}

@@ -2,7 +2,9 @@
 
 # Entry Points
 
-{{#include entry_points.incl.md}}{{hi:main}}
+{{#include entry_points.incl.md}}
+
+{{hi:main}}
 
 [![Rust by Example - hello][book~rust-by-example~hello~badge]][book~rust-by-example~hello]
 
@@ -50,7 +52,7 @@ For an introduction to futures and executors, see [Async Rust (draft)](https://g
 ## Related Topics {#related-topics .skip}
 
 - [[functions | Functions]].
-- [[package_layout | Package Layout]].
+- [Package Layout](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/cargo/package_layout.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

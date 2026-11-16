@@ -17,13 +17,13 @@ The [`bk/book.toml`][rust-howto~book.toml~repo]↗ config file configures severa
 - [`mdbook-linkcheck`][c~mdbook-linkcheck~repo]↗{{hi:mdbook-linkcheck}} is a [backend][book~mdbook~backends]↗ that checks links. Install the pinned version with `cargo install mdbook-linkcheck --version 0.7.7 --locked`. The active `[output.linkcheck]` configuration in [`book.toml`][c~mdbook~book.toml]↗{{hi:book.toml}} invokes this repository's `mdbook-linkcheck-compat` shim, which adapts the tool's command-line contract for the configured mdBook version.
 - The default [`html`][book~mdbook~renderers]↗{{hi:html}} backend is used to generate the HTML for deployment on GitHub Pages.
 
-The [[mdbook | `mdbook`]] chapter describes these preprocessors and backends in more detail.
+The [`mdbook`](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/documentation/mdbook.md) chapter describes these preprocessors and backends in more detail.
 
 ## Use `mdbook-scrub`, a Custom Preprocessor for `mdbook` {#mdbook-scrub}
 
 [`mdbook-scrub`][rust-howto~mdbook-scrub~repo]↗ is a [custom preprocessor][book~mdbook~preprocessors]↗ written specifically for this book. It is a simple tool that
 
-- removes the hidden sections between <div class="hidden"> and </div> from the markdown before rendering. By default, [`mdbook`][book~mdbook]↗{{hi:mdbook}} hides  sections, but they remain searchable.
+- removes the hidden sections between <div class="hidden"> and </div> from the markdown before rendering. By default, [`mdbook`][book~mdbook]↗{{hi:mdbook}} hides sections, but they remain searchable.
 - removes the legacy `{{#includes }}` directive for hidden files (files that start with `_`), if any. See [mdBook's include documentation][book~mdbook~including-files]↗ for the related syntax. This feature fixes a gap of `mdbook-private`.
 - expands the book-specific directives stage used by `bk/book.toml` before the other preprocessors.
 

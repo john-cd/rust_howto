@@ -141,11 +141,11 @@ sudo apt-get -y install just
 
 ## Related Topics {#related-topics .skip}
 
-- [[containers | Containers]].
-- [[development_tools | Development Tools]].
+- [Containers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/containers.md).
+- [Development Tools](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/index.md).
 - [[rust-installation | Rust Installation]].
-- [[text-editors | Text Editors]].
-- [[vscode | Vscode]].
+- [Text Editors](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-editors/index.md).
+- [Vscode](https://code.visualstudio.com/docs/languages/rust).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

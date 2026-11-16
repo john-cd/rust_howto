@@ -74,7 +74,7 @@ Start with the operation that dominates your workload: indexing for `Vec`, work 
 
 - [[data_types | Data Types]].
 - [[smart_pointers | Smart Pointers]].
-- Immutable Data Structures: [`im`][c~im~docs]↗{{hi:im}}, [`rpds`][c~rpds~docs]↗{{hi:rpds}}. See [[functional_programming | Functional Programming]].
+- Immutable Data Structures: [`im`][c~im~docs]↗{{hi:im}}, [`rpds`][c~rpds~docs]↗{{hi:rpds}}. See [Functional Programming](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/functional_programming.md).
 - Specialized Data Structures:
   - Trees and Tries: [`indextree`][c~indextree~docs]↗{{hi:indextree}}.
   - Bloom Filters: [`bloomfilter`][c~bloomfilter~docs]↗{{hi:bloomfilter}}.
@@ -84,7 +84,7 @@ Start with the operation that dominates your workload: indexing for `Vec`, work 
 
 ## Related Topics
 
-- [[serde | Serialization / Deserialization]].
+- [Serialization / Deserialization](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/encoding/serde.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
@@ -98,5 +98,5 @@ Start with the operation that dominates your workload: indexing for `Vec`, work 
 - [`equivalent`][c~equivalent~lib.rs]↗.
 - [Converting between different collection types][blog~converting-between-different-collection-types]↗: from `Vec` to `HashSet` or `HashMap`.
 - [[dataframes | Dataframes]].
-- [[concurrent_data_structures | Concurrent Data Structures]].
+- [Concurrent Data Structures](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/concurrent_data_structures.md).
 - [`scroll`][c~scroll~docs]↗: easily and efficiently read/write types from data containers like byte arrays.

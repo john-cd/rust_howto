@@ -53,7 +53,7 @@ The following demonstrates the usage of `TinyVec`:
 
 The [`heapless`][c~heapless~docs]↗{{hi:heapless}} crate provides fixed-size data structures that don't require dynamic memory allocation. This means they are backed by _static memory allocation_ (on the stack, in a static variable, or even in the heap, despite the name) and have _fixed_ capacities determined at compile time. They don't implicitly and unpredictably re-allocate at runtime.
 
-This can be particularly useful for [[embedded]] systems or performance-critical applications, where dynamic memory allocation is not feasible or desirable: operations on [`heapless`][c~heapless~docs]↗{{hi:heapless}} data structures do not involve a memory allocator, reducing the risk of memory allocation failures. In addition, operations like `push` and `pop` are truly constant time, as there is no dynamic resizing involved.
+This can be particularly useful for [embedded](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md) systems or performance-critical applications, where dynamic memory allocation is not feasible or desirable: operations on [`heapless`][c~heapless~docs]↗{{hi:heapless}} data structures do not involve a memory allocator, reducing the risk of memory allocation failures. In addition, operations like `push` and `pop` are truly constant time, as there is no dynamic resizing involved.
 
 [`heapless`][c~heapless~docs]↗{{hi:heapless}} includes:
 
