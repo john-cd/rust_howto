@@ -18,10 +18,9 @@ The model below has two threads. A producer publishes a value and then raises a 
 
 ### Run the Model Separately from Ordinary Tests
 
-The model tests are named `loom_*` and live in their own example, so you can run just the model (from `bk`, the example crates live in `crates`):
+The model tests are named `loom_*` and live in their own example. Run them from `bk/crates`:
 
 ```sh
-just ntt loom
 cargo test -p concurrency --example loom_model
 ```
 
@@ -40,7 +39,3 @@ See [Atomics][ex~concurrency~atomics] and [Shared-state Concurrency][ex~concurre
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  fix
-</div>
