@@ -18,7 +18,7 @@ Use macOS-specific frameworks only when portable Rust APIs do not cover the requ
 | File events | FSEvents bindings | Watch filesystem changes using the native event service. |
 | App packaging | [`cargo-bundle`][c~cargo-bundle~docs]↗{{hi:cargo-bundle}} | Package a Rust application bundle for distribution. |
 
-The older `cocoa`, `core-foundation`, and `objc` crates are legacy interfaces. For new Objective-C framework code, review the `objc2-*` crates and their framework features. The older wrapper is retained in the existing example for comparison; see [[objc | Objective-C]].
+The older `cocoa`, `core-foundation`, and `objc` crates are legacy interfaces. For new Objective-C framework code, review the `objc2-*` crates and their framework features. The example uses `objc2-foundation` to read the operating system version. See [[objc | Objective-C]] for more on calling Objective-C from Rust.
 
 A short AppKit entry point uses the current main-thread marker API:
 
@@ -45,10 +45,3 @@ This API is macOS-only; initialize AppKit on the main thread and enable the corr
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-content audit: category index content removed by recent commits; review and restore
-
-- Historical research notes: interface with Cocoa using Objective-C bindings where needed, and see the [Swift bindings project][swift~website]↗ for Swift interoperability options. Prefer the maintained `objc2-*` crates described above for new AppKit work.
-
-</div>

@@ -32,7 +32,3 @@ Kernel device drivers traditionally use C APIs. The [Rust for Linux project][rus
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  content audit: category index content removed by recent commits; review and restore
-</div>
