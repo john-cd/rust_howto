@@ -42,6 +42,11 @@ path = "examples/axum.rs"
 test = true
 
 [[example]]
+name = "json_patch"
+path = "examples/json_patch.rs"
+test = true
+
+[[example]]
 name = "grpc"
 path = "examples/grpc/main.rs"
 test = true
