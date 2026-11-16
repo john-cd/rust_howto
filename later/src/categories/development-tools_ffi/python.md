@@ -61,20 +61,12 @@ An embedded module is available only to the Rust process that registers it. To e
 {{#include ../../../crates/cats/development_tools_ffi/python_extension/src/lib.rs}}
 ```
 
-From `later/crates/cats/development_tools_ffi/python_extension`, create and
-activate a Python virtual environment, then install the pinned Maturin version
-and build the extension:
+The extension requires Python 3.14 or later. Its development pin is Python 3.15.
+From `later/crates/cats/development_tools_ffi/python_extension`, use uv to build
+and run the example with the locked dependencies on Python 3.14:
 
 ```console
-python -m venv .venv
-```
-
-Activate the environment with `source .venv/bin/activate` on Linux or `.venv\\Scripts\\Activate.ps1` in PowerShell, then run:
-
-```console
-python -m pip install "maturin==1.15.0"
-maturin develop
-python python/use_rust_from_python.py
+uv run --locked --python 3.14 python python/use_rust_from_python.py
 ```
 
 Maturin builds the extension for the active Python environment. The script imports `rust_howto_python_module` and prints the result of calling its Rust `add` function.
