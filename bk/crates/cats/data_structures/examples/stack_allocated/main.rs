@@ -7,13 +7,10 @@ use clap::Subcommand;
 
 /// This example demonstrates basic usage of `ArrayVec`.
 mod arrayvec;
-
 /// Fixed-capacity collections from the `heapless` crate.
 mod heapless;
-
 /// A `SmallVec`, which stores a few elements inline before moving to the heap.
 mod smallvec;
-
 /// A `TinyVec`, which stores a few elements inline before moving to the heap.
 mod tinyvec;
 

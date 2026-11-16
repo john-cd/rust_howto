@@ -8,7 +8,6 @@ use clap::Subcommand;
 
 /// Calls `async` code from blocking code with `futures::executor::block_on`.
 mod call_async_from_blocking_futures_executor;
-
 /// Calls `async` code from blocking code by building a Tokio runtime by hand.
 mod call_async_from_blocking_tokio_runtime;
 

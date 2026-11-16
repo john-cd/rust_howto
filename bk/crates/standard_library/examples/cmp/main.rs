@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Implementing equality with `PartialEq` and `Eq`.
 mod eq;
-
 /// Implementing ordering with `PartialOrd` and `Ord`.
 mod ord;
 

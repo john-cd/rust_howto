@@ -8,10 +8,8 @@ use clap::Subcommand;
 /// `Result` is a type that represents either success (`Ok`) or failure (`Err`): ``` pub enum
 /// Result<T, E> { Ok(T), Err(E), } ```
 mod result;
-
 /// Example of `Result` methods for value transformation and control flow.
 mod result2;
-
 /// Demonstrates the use of `as_ref`, `as_deref`, and `as_mut` methods on `Result`.
 mod result3;
 

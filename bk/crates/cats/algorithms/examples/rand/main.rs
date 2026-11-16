@@ -9,25 +9,18 @@ use clap::Subcommand;
 
 /// Fast pseudo-random number generation with `fastrand`.
 mod fastrand;
-
 /// In `Cargo.toml`, add: ```toml [dependencies] rand = "0.10.3" or latest.
 mod rand1;
-
 /// Generate a random string of 20 alphanumeric characters.
 mod rand_alphanumeric;
-
 /// Demonstrates how to implement a custom distribution for the `rand` crate.
 mod rand_custom;
-
 /// This example demonstrates how to sample from a normal distribution.
 mod rand_distr;
-
 /// Generates a random password from a custom set of characters with `rand`.
 mod rand_password;
-
 /// Demonstrates generating random numbers within a specified range.
 mod rand_range;
-
 /// Generates random numbers in ranges with the `rand` crate.
 mod rand_range_uniform;
 

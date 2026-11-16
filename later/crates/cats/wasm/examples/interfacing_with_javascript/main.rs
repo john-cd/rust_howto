@@ -8,16 +8,12 @@ use clap::Subcommand;
 
 /// Imports a JavaScript function into Rust through `wasm-bindgen`.
 mod js_import;
-
 /// Uses a JavaScript built-in from Rust through `js-sys`.
 mod js_sys;
-
 /// Awaits a JavaScript Promise from Rust.
 mod promises;
-
 /// Converts structured values between JavaScript and Rust with Serde.
 mod serde_wasm_bindgen;
-
 /// Calls a browser API from Rust through `web-sys`.
 mod web_sys;
 

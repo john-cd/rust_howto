@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Documenting a function, including documentation from an external file.
 mod rustdoc;
-
 /// Documentation comments on a struct and its constructor.
 mod rustdoc2;
-
 /// Fast and easy queue abstraction.
 mod rustdoc3;
 

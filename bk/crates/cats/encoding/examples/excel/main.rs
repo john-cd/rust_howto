@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Reads an `.xlsx` workbook with `calamine`.
 mod calamine;
-
 /// Writes an `.xlsx` workbook with `rust_xlsxwriter`: a bold header,
 mod xlsxwriter;
 

@@ -7,13 +7,10 @@ use clap::Subcommand;
 
 /// Trait objects with auto traits such as `Send`.
 mod dyn_autotraits;
-
 /// Example of (non-)dyn-compatible traits.
 mod dyn_compat;
-
 /// Trait objects of a trait with a supertrait.
 mod dyn_supertraits;
-
 /// Trait object example: a highly simplified GUI.
 mod trait_objects;
 

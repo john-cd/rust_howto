@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Deriving common traits for a struct.
 mod derive;
-
 /// The `derive_more` crate extends Rust's built-in derive functionality to
 mod derive_more;
 

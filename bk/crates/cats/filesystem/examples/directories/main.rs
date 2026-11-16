@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Demonstrates how to get the current working directory.
 mod cwd;
-
 /// Creating, listing and removing directories.
 mod manipulate_dirs;
 

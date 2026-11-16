@@ -4,7 +4,6 @@
 
 /// Demonstrates stable references in an `elsa::FrozenMap`.
 mod frozen_map;
-
 /// Demonstrates stable references in an `elsa::FrozenVec`.
 mod frozen_vec;
 

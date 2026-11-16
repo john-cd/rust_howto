@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Example showing how to add CORS headers to responses.
 mod cors;
-
 /// Serves an Axum route with common `tower-http` middleware.
 mod tower_http;
 

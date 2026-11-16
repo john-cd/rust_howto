@@ -7,13 +7,10 @@ use clap::Subcommand;
 
 /// Calculates the mean of a set of numbers.
 mod central_tendency;
-
 /// Computing the median of a list of integers with quickselect.
 mod central_tendency1;
-
 /// Calculates the mode of a dataset.
 mod central_tendency2;
-
 /// Computing the mean and the standard deviation of a list of integers.
 mod standard_deviation;
 

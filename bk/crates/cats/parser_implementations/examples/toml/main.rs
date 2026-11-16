@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the maintained `toml` crate to parse
 mod basic_toml;
-
 /// Example demonstrating TOML parsing and deserialization.
 mod toml;
 

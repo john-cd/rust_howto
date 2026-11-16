@@ -10,7 +10,6 @@
 
 /// Derive a JSON Schema with [`schemars`] and validate data against it with
 mod schemars;
-
 /// Generate an OpenAPI document from code with [`utoipa`].
 mod utoipa;
 

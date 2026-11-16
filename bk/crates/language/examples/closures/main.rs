@@ -7,16 +7,12 @@ use clap::Subcommand;
 
 /// Using a closure to filter a list.
 mod closures;
-
 /// Closures as function arguments.
 mod closures_as_input_parameters;
-
 /// Closures that capture their environment.
 mod closures_capture;
-
 /// Demonstrates the use of the `move` keyword with closures.
 mod closures_move;
-
 /// Demonstrates closures with type annotations.
 mod closures_with_type_annotations;
 

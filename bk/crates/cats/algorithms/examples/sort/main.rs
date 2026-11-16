@@ -9,10 +9,8 @@ use clap::Subcommand;
 
 /// This example demonstrates the basic usage of the `sort` method on a vector.
 mod sort_basic;
-
 /// Sort floats using their IEEE 754 total ordering, including NaN.
 mod sort_float;
-
 /// Sorts a vector of structs, by their derived order and by a chosen field.
 mod sort_struct;
 

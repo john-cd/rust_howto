@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Basics of `async` functions and `Future`s: calling, awaiting and combining them.
 mod async1;
-
 /// This is the main asynchronous function.
 mod async2;
-
 /// Run a task on the Tokio runtime and await its result.
 mod async3;
 

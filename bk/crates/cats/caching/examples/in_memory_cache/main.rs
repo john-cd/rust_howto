@@ -10,10 +10,8 @@ use clap::Subcommand;
 /// This example demonstrates two key uses of the `cached` crate: - Simple function memoization with
 /// `#[cached]`,
 mod cached;
-
 /// Basic usage of `LruCache` from the `lru` crate.
 mod lru;
-
 /// Basic usage of the `moka` crate for high-performance concurrent caching.
 mod moka;
 

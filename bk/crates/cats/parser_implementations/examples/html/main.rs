@@ -9,13 +9,10 @@ use clap::Subcommand;
 /// malformed input. Analysis and validation code use these routines before applying domain-specific
 /// rules.
 mod cssparser;
-
 /// Tokenize HTML with `html5ever` and print the parsed tokens.
 mod html5ever;
-
 /// Selects HTML elements and extracts their text with CSS selectors.
 mod scraper;
-
 /// This example demonstrates how to use the `tl` crate to parse HTML.
 mod tl;
 

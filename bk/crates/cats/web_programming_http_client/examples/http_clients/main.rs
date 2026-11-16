@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Example of using the `hyper` low-level HTTP client to fetch a URL.
 mod hyper;
-
 /// This example demonstrates a simple HTTP GET request using the `ureq` crate.
 mod ureq;
 

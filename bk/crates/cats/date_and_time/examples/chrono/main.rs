@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Demonstrates checked arithmetic with `DateTime` and `Duration`.
 mod checked;
-
 /// Demonstrates how to get the current UTC time and date using the chrono crate.
 mod current;
-
 /// Formatting the current time with `chrono`.
 mod format;
 
@@ -18,10 +16,8 @@ mod format;
 /// malformed input. Analysis and validation code use these routines before applying domain-specific
 /// rules.
 mod parse_string_into_datetime;
-
 /// Converting between a date and time and a Unix timestamp with `chrono`.
 mod timestamp;
-
 /// Demonstrates how to work with timezones in Chrono.
 mod timezone;
 

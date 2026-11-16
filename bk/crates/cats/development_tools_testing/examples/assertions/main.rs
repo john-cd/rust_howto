@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the `approx` crate for approximate
 mod approx;
-
 /// This example demonstrates how to use the `assert!` macro with a custom failure message.
 mod tests_custom_message;
 

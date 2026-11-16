@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// This example demonstrates a simple HTTP GET request using the `reqwest`
 mod get;
-
 /// This example demonstrates a simple HTTP GET request using the `reqwest`
 mod get1;
-
 /// Demonstrates how to set headers in HTTP requests using the `reqwest` crate.
 mod header;
 

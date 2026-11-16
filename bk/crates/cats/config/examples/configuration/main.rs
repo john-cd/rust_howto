@@ -16,7 +16,6 @@ mod config_singleton;
 /// Loads and validates the settings that control configuration behavior. Composition code uses this
 /// module before starting services so invalid configuration is reported early.
 mod config_testing;
-
 /// Loads a typed configuration with confy.
 mod confy;
 

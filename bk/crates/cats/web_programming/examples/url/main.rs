@@ -7,16 +7,12 @@ use clap::Subcommand;
 
 /// This module demonstrates how to reduce a hierarchical URL to its origin.
 mod base;
-
 /// This example demonstrates how to parse a URL and extract a portion of it.
 mod fragment;
-
 /// Demonstrates how to build a URL by joining a base URL with a path.
 mod new;
-
 /// Demonstrates parsing a URL and extracting its origin components.
 mod origin;
-
 /// This example demonstrates how to parse a URL and extract its origin.
 mod origin1;
 

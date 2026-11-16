@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Laying out and rasterizing text with `cosmic-text`.
 mod cosmic_text;
-
 /// Laying out rich text with `parley`.
 mod parley;
 

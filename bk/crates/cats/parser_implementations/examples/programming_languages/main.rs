@@ -5,7 +5,6 @@
 /// Contains the sqlparser functionality used by this parent module.
 #[cfg(feature = "sqlparser")]
 mod sqlparser;
-
 /// Contains the syn functionality used by this parent module.
 mod syn;
 

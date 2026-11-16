@@ -7,13 +7,10 @@ use clap::Subcommand;
 
 /// Accepting several types through `AsRef`.
 mod asref;
-
 /// Implement `AsRef` for a composed type, as a last resort.
 mod asref_inheritance;
-
 /// Borrowing the content of an `Option` with `as_ref`.
 mod option_asref;
-
 /// Demonstrates the difference between taking a reference to a `Box` and using `as_ref()`.
 mod smart_pointer_asref;
 

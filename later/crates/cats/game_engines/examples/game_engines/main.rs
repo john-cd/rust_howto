@@ -16,7 +16,6 @@ mod fyrox;
 /// Moves and draws a bouncing ball with ggez.
 #[cfg(feature = "ggez")]
 mod ggez;
-
 /// A bouncing ball in a Macroquad game loop.
 mod macroquad;
 

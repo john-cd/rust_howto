@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// A queue implemented with `VecDeque`.
 mod queue;
-
 /// A stack implemented with `Vec`.
 mod stack;
 

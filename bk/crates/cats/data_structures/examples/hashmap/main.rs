@@ -7,16 +7,12 @@ use clap::Subcommand;
 
 /// Demonstrates how to use a custom hash function (FNV) with `HashMap` and
 mod custom_hash_function;
-
 /// Demonstrate using a custom type as the key in a `HashMap`.
 mod custom_type_as_key;
-
 /// The same word count with three hash maps: the standard library's, `ahash`'s
 mod fast_hashmap;
-
 /// This example demonstrates the basic usage of `HashMap` in Rust.
 mod hashmap;
-
 /// This example demonstrates the basic usage of `HashSet`.
 mod hashset;
 

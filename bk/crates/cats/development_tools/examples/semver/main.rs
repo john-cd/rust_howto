@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Check whether an external command reports a version that meets a
 mod semver_command;
-
 /// Demonstrates parsing, comparing, and serializing complex semantic version
 mod semver_complex;
 
@@ -19,7 +18,6 @@ mod semver_latest;
 /// malformed input. Analysis and validation code use these routines before applying domain-specific
 /// rules.
 mod semver_parse;
-
 /// Demonstrates how to work with pre-release versions using the `semver` crate.
 mod semver_prerelease;
 

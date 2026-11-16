@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Sleep until the next cron time, run the job, repeat: no drift, because each
 mod cron_loop;
-
 /// Compute the next fire times of a cron expression with the `cron` crate.
 mod cron_next;
-
 /// A periodic job with `tokio::time::interval`.
 mod interval_job;
 

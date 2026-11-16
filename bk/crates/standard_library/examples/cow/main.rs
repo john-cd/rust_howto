@@ -7,19 +7,14 @@ use clap::Subcommand;
 
 /// Alternatives to `Cow`.
 mod cow_alternatives;
-
 /// Example of a function accepting either owned or borrowed values
 mod cow_as_function_param;
-
 /// Demonstrates various uses and conversions of `Cow` (Clone-on-Write).
 mod cow_to_borrowed_owned;
-
 /// Example of a function returning a `Cow`.
 mod function_returning_cow;
-
 /// Returning a borrowed or an owned string with `Cow`.
 mod into_cow;
-
 /// Modifying a `Cow` in place, cloning it on write.
 mod modify_cow_in_place;
 

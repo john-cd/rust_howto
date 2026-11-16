@@ -7,16 +7,12 @@ use clap::Subcommand;
 
 /// UTF-8 paths with `camino`.
 mod camino;
-
 /// Canonicalizing paths.
 mod canonicalize;
-
 /// Canonicalize a path without the Windows `\\?\` prefix.
 mod dunce;
-
 /// Building and inspecting paths with `Path` and `PathBuf`.
 mod manipulate_paths;
-
 /// Compute a relative path between two paths.
 mod pathdiff;
 

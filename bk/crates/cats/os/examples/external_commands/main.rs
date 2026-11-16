@@ -9,7 +9,6 @@ use clap::Subcommand;
 /// command, filter the output, and print the filtered lines.
 #[cfg(target_os = "linux")]
 mod continuous;
-
 /// Run a child command with `duct` and capture its output.
 mod duct_example;
 
@@ -21,7 +20,6 @@ mod error_file;
 /// This example demonstrates how to pipe the output of one external command to
 #[cfg(target_family = "unix")]
 mod piped;
-
 /// This example demonstrates how to run an external command, capture its
 mod process_output;
 
@@ -33,13 +31,10 @@ mod read_env_variable;
 /// and process its standard output (`stdout`) and
 #[cfg(target_family = "unix")]
 mod send_input;
-
 /// Split and quote command lines with `shlex`.
 mod shlex_example;
-
 /// Demonstrates how to use the `which` crate to find the location of
 mod which;
-
 /// Run a Rust tool with `xshell` and capture its output.
 mod xshell_example;
 

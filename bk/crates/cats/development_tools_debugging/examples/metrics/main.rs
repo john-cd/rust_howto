@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Serves the Prometheus payload from an Axum `/metrics` route.
 mod metrics_route;
-
 /// Renders metrics in Prometheus exposition format without opening a port.
 mod prometheus;
-
 /// Records request counts and durations with the `metrics` facade.
 mod record_metrics;
 

@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// This is an example of an async main function.
 mod async_main;
-
 /// The `main` function, the entry point of a binary crate.
 mod main_fn;
-
 /// Example of a `main` function returning a `Result`,
 mod main_fn_with_result;
 

@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Converting between types with `From` and `Into`.
 mod from;
-
 /// Converting custom errors from different sources.
 mod from2;
-
 /// Parsing from raw bytes.
 mod from3;
 

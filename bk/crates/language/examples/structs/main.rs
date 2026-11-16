@@ -7,31 +7,22 @@ use clap::Subcommand;
 
 /// Implementation of Common Traits on a `struct`.
 mod common_traits;
-
 /// A generic struct and its `impl` blocks.
 mod generic_structs;
-
 /// An associated constant on a struct.
 mod struct_constant;
-
 /// A struct with fields of many types.
 mod struct_fields;
-
 /// Methods and associated functions on a struct.
 mod struct_impl;
-
 /// Creating instances of a struct.
 mod struct_init;
-
 /// Implementing a trait with methods, an associated type and associated constants.
 mod struct_trait;
-
 /// Creating a struct from another instance with the struct update syntax.
 mod struct_update;
-
 /// The `main` function creates an instance of the `User` struct.
 mod structs;
-
 /// Tuple structs and unit-like structs.
 mod tuple_structs;
 

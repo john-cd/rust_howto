@@ -4,13 +4,10 @@
 
 /// Format a byte count as a human-readable size.
 mod humansize_example;
-
 /// Formats an integer with the `itoa` crate.
 mod itoa;
-
 /// Converts floating-point values to decimal strings with the `ryu` crate.
 mod ryu;
-
 /// Demonstrates standard Rust format syntax and locale-aware integer grouping.
 mod standard_and_localized;
 

@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Checks HTTP links from an HTML page against their resolved URLs.
 mod broken;
-
 /// Extracts anchor links from an HTML document with CSS selectors.
 mod extract_links;
-
 /// This example demonstrates how to extract unique links from a Wikipedia page.
 mod unique;
 

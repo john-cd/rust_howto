@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Mocking a struct's methods with `faux`.
 mod faux;
-
 /// Mocking a trait with `mockall`.
 mod mockall;
 

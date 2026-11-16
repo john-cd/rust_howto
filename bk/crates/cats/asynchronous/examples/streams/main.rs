@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Creating and consuming a `Stream` of numbers.
 mod streams;
-
 /// Demonstrates bounded concurrent processing with a deterministic stream.
 mod streams2;
-
 /// Processing a `Stream` of fallible asynchronous fetches with `futures_util`.
 mod streams3;
 

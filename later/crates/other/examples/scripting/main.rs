@@ -7,7 +7,6 @@ use anyhow::anyhow;
 
 /// Demonstrates embedding Rhai scripts in a Rust application.
 mod rhai;
-
 /// Expose a Rust type to Rhai, keep state in a `Scope` and sandbox scripts.
 mod rhai_types_and_limits;
 

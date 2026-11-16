@@ -7,13 +7,10 @@ use clap::Subcommand;
 
 /// Destructuring tuples, arrays and structs into variables.
 mod destructuring;
-
 /// Shadowing a variable with a new binding.
 mod shadowing;
-
 /// Variables are used to store values.
 mod vars;
-
 /// Variable immutability and mutability.
 mod vars2;
 

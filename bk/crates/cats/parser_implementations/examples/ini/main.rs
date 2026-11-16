@@ -6,7 +6,6 @@
 /// malformed input. Analysis and validation code use these routines before applying domain-specific
 /// rules.
 mod configparser_ini;
-
 /// This example demonstrates how to use `rust-ini` to parse and manipulate INI
 mod rust_ini;
 

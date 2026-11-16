@@ -4,7 +4,6 @@
 
 /// Example: simulate a leaky integrate-and-fire neuron with constant current.
 mod leaky_integrate_fire;
-
 /// Example: create a dummy neuroimaging volume and save it as a `NIfTI` file.
 mod neuro;
 

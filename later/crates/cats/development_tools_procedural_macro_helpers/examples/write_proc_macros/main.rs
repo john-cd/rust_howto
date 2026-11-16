@@ -11,16 +11,12 @@ use clap::Subcommand;
 
 /// Parse derive attributes with a declarative `darling` input model.
 mod darling;
-
 /// Concatenating identifiers in macros with `paste`.
 mod paste;
-
 /// `proc_macro2` mirrors the compiler's token API, but works in ordinary Rust crates and tests.
 mod proc_macro2;
-
 /// Generate a struct and typed getters from field syntax using `quote`.
 mod quote;
-
 /// `syn` parses a token stream into Rust syntax-tree types such as `DeriveInput`.
 mod syn;
 

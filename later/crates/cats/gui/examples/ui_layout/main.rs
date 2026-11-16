@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Computing a layout with `morphorm`.
 mod morphorm;
-
 /// Computes and inspects a flexbox layout with taffy.
 mod taffy;
 

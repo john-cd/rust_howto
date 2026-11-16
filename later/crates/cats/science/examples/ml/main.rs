@@ -8,13 +8,10 @@ use clap::Subcommand;
 /// Train a linear model on synthetic data with Candle on the CPU.
 #[cfg(feature = "candle")]
 mod candle;
-
 /// Cluster two groups of synthetic points with seeded Linfa K-means.
 mod kmeans;
-
 /// Predict numeric values with a linear regression model from `linfa-linear`.
 mod linfa;
-
 /// Train a SmartCore decision-tree classifier on synthetic data and measure its
 mod smartcore;
 

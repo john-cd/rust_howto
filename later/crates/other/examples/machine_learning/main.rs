@@ -12,7 +12,6 @@ mod forecast;
 /// Run an ONNX model trained elsewhere (here, a scikit-learn logistic
 #[cfg(feature = "onnx")]
 mod onnx_infer;
-
 /// Train a logistic regression classifier in Rust with `smartcore`.
 mod smartcore_fit;
 

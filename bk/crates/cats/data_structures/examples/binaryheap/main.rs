@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// A `BinaryHeap` used as a priority queue.
 mod binaryheap;
-
 /// Add this dependency to your `Cargo.toml`: ```toml [dependencies] priority-queue = "2.7.0" ```
 mod priority_queue;
 

@@ -8,7 +8,6 @@ use clap::Subcommand;
 
 /// This example demonstrates the usage of the `comemo` crate for fine-grained
 mod comemo;
-
 /// This example demonstrates incremental computation using the `salsa` crate.
 mod salsa;
 

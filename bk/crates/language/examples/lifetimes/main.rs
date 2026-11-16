@@ -7,22 +7,16 @@ use clap::Subcommand;
 
 /// Lifetime parameters on a function.
 mod lifetime_parameter_function;
-
 /// A lifetime parameter on a struct and on its `impl` blocks.
 mod lifetime_parameter_struct;
-
 /// Example of lifetime parameters in various items.
 mod lifetime_parameters;
-
 /// Alternatives to self-referential structs.
 mod self_referential_struct;
-
 /// Example of a self-referential struct using pinning.
 mod self_referential_struct2;
-
 /// Shows that shared reborrows of one mutable reference may overlap.
 mod shared_reborrows;
-
 /// The `'static` lifetime.
 mod static_lifetime;
 

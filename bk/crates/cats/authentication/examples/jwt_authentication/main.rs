@@ -4,7 +4,6 @@
 
 /// Encode and verify HS256 JSON Web Tokens for a first-party API.
 mod jwt;
-
 /// Extract a JWT from the HTTP `Authorization` header and check a role in Axum.
 mod jwt_axum_extractor;
 

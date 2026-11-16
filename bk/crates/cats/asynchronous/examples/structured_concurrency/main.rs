@@ -14,7 +14,6 @@ mod cancellation_tree;
 /// A bounded worker pool with `JoinSet`: keep at most `LIMIT` tasks running, refill as tasks
 /// finish, collect results in completion order, and tell a
 mod joinset_pool;
-
 /// A supervisor that restarts a failing task with capped exponential backoff
 mod supervisor;
 

@@ -11,10 +11,8 @@ mod quick_xml;
 /// Builds or traverses xml graph data while preserving relationships needed by downstream analysis.
 /// Workspace and rendering code use this module to obtain a consistent view of the graph.
 mod roxmltree;
-
 /// This example demonstrates how to read and write XML data using the
 mod xml;
-
 /// Parse a small XML document with `xml5ever` and inspect its DOM tree.
 mod xml5ever;
 

@@ -8,19 +8,14 @@ use clap::Subcommand;
 
 /// Demonstrates how to clone trait objects using the `dyn_clone` crate.
 mod dyn_clone;
-
 /// A newtype whose equality ignores a presentation field.
 mod newtype_equality;
-
 /// Newtypes that carry a unit: only the operations that make sense are
 mod newtype_units;
-
 /// The following demonstrates the use of the `pin_project` crate for pin
 mod pin_project;
-
 /// Projects pinned fields with the lightweight macro variant.
 mod pin_project_lite;
-
 /// A validated newtype: an `EmailAddress` that cannot hold invalid data, even
 mod validated_newtype;
 

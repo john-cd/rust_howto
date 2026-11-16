@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// This example demonstrates basic usage of the `bytes` crate.
 mod bytes;
-
 /// Formatting strings with `print!`, `format!` and `write!`.
 mod string_format;
-
 /// This example demonstrates common string types in Rust.
 mod strings;
 

@@ -8,10 +8,8 @@ use clap::Subcommand;
 
 /// Runs CPU-bound work from `async` code on the Rayon thread pool.
 mod call_blocking_from_async_rayon;
-
 /// This example demonstrates how to call a blocking function from an
 mod call_blocking_from_async_spawn_blocking;
-
 /// Runs CPU-bound work from `async` code on a dedicated thread.
 mod call_blocking_from_async_spawn_dedicated_thread;
 

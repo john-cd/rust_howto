@@ -11,14 +11,12 @@ mod enums;
 /// `strum` provides derive macros that automatically implement various traits for your enums,
 /// making it easy to convert them to and from strings, iterate
 mod strum;
-
 /// Parse and print config values with `serialize_all` and
 mod strum_case;
 
 /// Labels and tooltips for a settings menu with `strum`'s `EnumMessage`, and the variant list with
 /// `IntoEnumIterator`, `VariantNames` and `EnumCount`.
 mod strum_messages;
-
 /// Attach arbitrary constant properties to variants with `EnumProperty`.
 mod strum_props;
 

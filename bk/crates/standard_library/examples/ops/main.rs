@@ -6,7 +6,6 @@
 // `fn_traits` feature, so the `callable` module stays disabled on the stable
 // channel. #![feature(unboxed_closures, fn_traits)]
 // mod callable;
-
 /// Overloading the `+` operator with `Add`.
 mod ops;
 

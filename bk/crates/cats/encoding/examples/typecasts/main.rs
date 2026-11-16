@@ -8,10 +8,8 @@ use clap::Subcommand;
 /// The `bytemuck` crate provides functions for reinterpreting one type as another without use of
 /// `unsafe`, whenever this is safe e.g.
 mod bytemuck;
-
 /// Demonstrates explicit primitive casts, checked numeric conversions, and
 mod primitive;
-
 /// This example demonstrates zero-cost memory manipulation with `zerocopy`.
 mod zerocopy;
 

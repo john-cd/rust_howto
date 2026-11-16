@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Different ways to concatenate strings.
 mod string_concat;
-
 /// Concatenates constant string slices at compile time with `constcat`.
 mod string_concat2;
 

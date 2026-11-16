@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// A bounded MPMC pipeline distributes messages to worker threads.
 mod crossbeam_complex;
-
 /// Receives from whichever Crossbeam channel is ready first.
 mod crossbeam_select;
 

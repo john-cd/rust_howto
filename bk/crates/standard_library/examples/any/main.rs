@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Dynamic typing with the `Any` trait.
 mod any;
-
 /// A plugin system that stores shared services by their `TypeId`.
 mod plugin;
-
 /// Comparing types at runtime with `TypeId`.
 mod type_id;
 

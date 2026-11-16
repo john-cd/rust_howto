@@ -7,16 +7,12 @@ use clap::Subcommand;
 
 /// Basic `Box` usage.
 mod box_basics;
-
 /// Dereferencing a `Box`.
 mod box_deref;
-
 /// Boxing dynamically sized types.
 mod box_dst;
-
 /// Example using `Box<T>` for recursive data structures.
 mod box_recursive;
-
 /// Example of using `Box` as a smart pointer for trait objects.
 mod box_trait_objects;
 

@@ -7,16 +7,12 @@ use clap::Subcommand;
 
 /// Converts words to common naming conventions and uppercases a Unicode
 mod case_conversion;
-
 /// This example demonstrates how to use the `heck` crate to convert strings
 mod heck;
-
 /// Removing the common indentation of multi-line strings with `indoc`.
 mod indoc;
-
 /// Turn a title into a URL-friendly slug.
 mod slug;
-
 /// Wrapping, filling and indenting text with `textwrap`.
 mod textwrap;
 

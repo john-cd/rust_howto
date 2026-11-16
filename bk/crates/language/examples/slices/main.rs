@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Example of a slice as a function argument.
 mod slice_as_argument;
-
 /// A slice is a view into a contiguous sequence of elements in a collection.
 mod slices;
-
 /// String slice examples.
 mod string_slices;
 
