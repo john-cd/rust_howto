@@ -26,6 +26,8 @@ The HTTP request body wraps that document in JSON, for example `{"query":"{ hell
 {{#include ../../../crates/cats/web_programming_http_server/examples/async_graphql.rs:example}}
 ```
 
+This recipe starts from a hand-written schema. Use [Seaography](../database/query_builders_orms.md#sea-orm) when you want to generate a GraphQL API from SeaORM entities.
+
 ## Other Options {#other-options .skip}
 
 [![juniper~website][c~juniper~website~badge]][c~juniper~website] {{#badges juniper}} {{hi:Apollo}} {{hi:Server}} {{hi:Graphql}} {{hi:Web}} {{#categories web-programming="Web programming",asynchronous=Asynchronous,web-programming::http-server="HTTP server"}}
@@ -42,7 +44,3 @@ Juniper doesn't include a web server. Instead, it provides building blocks to ma
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  graphql: write integrate in seography graphql section?
-</div>

@@ -4,7 +4,7 @@
 
 {{#include _actix.incl.md}}
 
-## Create a web Server with Actix Web {#actix}
+## Create a Web Server with Actix Web {#actix}
 
 [![actix-web~website][c~actix-web~website~badge]][c~actix-web~website] {{#badges actix-web}} {{hi:Actix}} {{hi:Async}} {{hi:Framework}} {{hi:Http}} {{hi:Web}} {{#categories asynchronous=Asynchronous,network-programming="Network programming",web-programming::http-server="HTTP server",web-programming::websocket=WebSocket}}
 
@@ -15,6 +15,8 @@ The example binds to `127.0.0.1:8080` for local access. The accompanying test in
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/actix_web.rs:example}}
 ```
+
+From `bk/crates`, start the example with `cargo run -p web_programming_http_server --example actix_web`. Then request `http://127.0.0.1:8080/`.
 
 ## References {#references .skip}
 
@@ -31,7 +33,3 @@ The example binds to `127.0.0.1:8080` for local access. The accompanying test in
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  actix: organize / write
-</div>

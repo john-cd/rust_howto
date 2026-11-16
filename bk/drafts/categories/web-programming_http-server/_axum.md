@@ -4,7 +4,7 @@
 
 {{#include _axum.incl.md}}
 
-## Create a web Server with `axum` {#axum}
+## Create a Web Server with `axum` {#axum}
 
 {{#badges axum asynchronous=Asynchronous network-programming="Network programming" web-programming::http-server="HTTP server"}}{{hi:Framework}}{{hi:Http}}{{hi:Web}}
 
@@ -15,6 +15,8 @@ This example shows those pieces together: route registration, a fallback, a stat
 ```rust,editable
 {{#include ../../../crates/cats/web_programming_http_server/examples/axum.rs:example}}
 ```
+
+For examples of middleware and other extensions, see [Axum Extras](axum_extras.md).
 
 ## See Also {#see-also .skip}
 
@@ -33,8 +35,6 @@ This example shows those pieces together: route registration, a fallback, a stat
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-axum: write
-
 [Rust Axum clean demo][clean_axum_demo~repo]↗ is a one-stop, production-ready API template.
 
 **Rust Axum Clean Demo** is a GitHub template that brings together almost all the best practices and features for building a production-ready API server with [Axum][c~axum~repo]↗ and [SQLx][c~sqlx~repo]↗.
