@@ -10,7 +10,7 @@ Rust's ownership, borrowing, and lifetimes handle most memory management without
 
 | Need | Starting point | Notes |
 | --- | --- | --- |
-| Store a value on the heap with one owner | [`Box`][c~std::boxed::Box~docs]↗{{hi:Box}} | Use when a value has a dynamic size, needs indirection, or must be owned by a trait object. |
+| Store a value on the heap with one owner | [`Box`][c~std::boxed::Box~docs]↗{{hi:Box}} | Use when a value has a dynamic size, needs indirection, or must be owned through a trait object. |
 | Share read-only data within one thread | [`Rc`][c~std::rc::Rc~docs]↗{{hi:Rc}} | Reference counting does not make the value thread-safe. |
 | Share data across threads | [`Arc`][c~std::sync::Arc~docs]↗{{hi:Arc}} | The inner type must also satisfy the thread-safety bounds. Pair with a lock or atomic type only when shared mutation is required. |
 | Mutate through a shared reference in one thread | [`Cell`][c~std::cell::Cell~docs]↗{{hi:Cell}} or [`RefCell`][c~std::cell::RefCell~docs]↗{{hi:RefCell}} | `Cell` offers interior mutation for suitable values; `RefCell` checks borrows at runtime and panics on a conflicting borrow. |
@@ -20,7 +20,7 @@ See [[smart_pointers | Smart Pointers]] for examples and trade-offs. Use raw poi
 
 ## Static Data and Lazy Initialization
 
-A constant is inlined as a value; a static item has one fixed storage location. Prefer immutable statics for process-wide constants. Avoid mutable global state because it hides ownership and synchronization requirements.
+A constant denotes a value and has no guaranteed address identity. A static item denotes a storage location. Prefer immutable statics for process-wide constants. Avoid mutable global state because it hides ownership and synchronization requirements.
 
 For values that should be initialized on first use, use the standard library's lazy initialization types where they fit. See [[lazy_initialization | Lazy Initialization]] and [[shared_state | Shared State]].
 
@@ -57,7 +57,3 @@ See [[memory_usage_analysis | Memory Usage Analysis]] and [[development-tools_pr
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  memory-management/index: organize; align table and sections; write missing sections; cross link
-</div>

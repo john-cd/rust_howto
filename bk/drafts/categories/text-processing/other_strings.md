@@ -56,6 +56,8 @@ You may also use the [string_cache][c~string_cache~docs]↗ library for internin
 
 [`compact_str`][c~compact_str~docs]↗{{hi:compact_str}} provides `CompactString`, which stores short strings inline in the value and longer strings in allocated storage. Inline storage is part of the value; it is not necessarily on the stack. Consider it when an application has many short strings, and compare memory use and performance with `String` for that workload.
 
+Use `OsStr` for system-provided names and paths, `CStr` for borrowed NUL-terminated C strings, and byte strings when the format permits arbitrary bytes. Convert to UTF-8 at the boundary where the application actually needs text.
+
 ## Related topics {#related-topics .skip}
 
 - [[development-tools_ffi | Development Tools: FFI]]
@@ -63,7 +65,3 @@ You may also use the [string_cache][c~string_cache~docs]↗ library for internin
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  review
-</div>

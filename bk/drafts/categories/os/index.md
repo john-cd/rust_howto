@@ -60,7 +60,3 @@ This section lists operating systems and system projects implemented in Rust. Th
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  os/index: fix; organize; add cross links
-</div>

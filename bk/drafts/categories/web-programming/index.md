@@ -6,6 +6,8 @@
 
 Web applications combine HTTP, asynchronous I/O, serialization, and user-interface code. Use this index to find the guide for the layer you are building.
 
+Use the [HTTP Clients](../web-programming_http-client/index.md) chapter to call a service, and the [HTTP Servers](../web-programming_http-server/index.md) chapter to expose one. This overview links to the URL, media-type, and parsing tools used on either side.
+
 ## Services, APIs, and Network I/O
 
 | Goal | Start here |
@@ -68,7 +70,6 @@ For browser interfaces compiled to WebAssembly, explore [`yew`][c~yew~docs]↗{{
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-web-programming/index: organize; need full review; further cross link
 
 Frameworks:
 

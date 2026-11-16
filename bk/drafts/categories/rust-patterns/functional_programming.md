@@ -8,6 +8,8 @@ Functional style builds results by composing small functions over values. Rust s
 
 Start with the standard iterator adapters, then use [`itertools`][c~itertools~docs]↗{{hi:itertools}} when its additional adapters make a transformation clearer. Persistent collections such as [`imbl`][c~imbl~docs]↗{{hi:imbl}} and [`rpds`][c~rpds~docs]↗{{hi:rpds}} can share structure between versions. [`either`][c~either~docs]↗{{hi:either}} represents one of two alternatives, and [`frunk`][c~frunk~docs]↗{{hi:frunk}} provides heterogeneous lists and type-level tools.
 
+Start with the iterator examples for transformations and composition. The later recipes cover persistent collections, alternative types, and heterogeneous lists. For intermediate debugging, start with `Iterator::inspect`, which observes values as the iterator is consumed.
+
 ## Transform Collections with Iterator Adapters {#iterator-adapters}
 
 Iterator adapters are lazy: `filter` and `map` describe a transformation, and a consumer such as `fold` runs it. Closures let each step capture values such as a threshold without introducing mutable intermediate collections.
@@ -86,12 +88,9 @@ Frunk is a functional programming toolbelt for Rust. It provides developers with
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-functional_programming: organize / align intro and sections / add examples
-review
 - [rust-type-level-programming][blog~rust-type-level-programming]↗.
 - [Type-Level Programming in Rust][blog~type-level-programming-in-rust]↗.
 
-review [tap][c~tap~crates.io]↗.
 
 - [Type-level Programming in Rust][blog~willcrichton-type-level-programming]↗.
 

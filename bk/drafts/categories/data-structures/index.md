@@ -20,6 +20,8 @@ The `std::collections` module of the standard library includes:
 
 Refer to the [[language | Language]] and [[standard-library | Standard Library]] sections for examples of use.
 
+Start with the operation that dominates your workload: indexing for `Vec`, work at both ends for `VecDeque`, sorted traversal for a B-tree, and priority retrieval for `BinaryHeap`. The sections below link to examples of those operations.
+
 ## Strings
 
 {{#include ../../../src/categories/data-structures/strings.incl.md}}
@@ -188,7 +190,3 @@ See [[functional_programming | Functional Programming]].
 {{#include ../../../src/categories/data-structures/refs.incl.md}}
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  data-structures: expand
-</div>

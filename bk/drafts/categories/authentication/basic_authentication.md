@@ -20,6 +20,8 @@ Treat the credentials as secrets: do not commit them, put them in command-line a
 
 Its test sends the built request through an in-memory Axum route and verifies that valid credentials receive `200 OK` while invalid credentials receive `401 Unauthorized`. It does not open a socket or contact a service. If you send a real Basic-authenticated request, use HTTPS, keep credentials in a secret manager, and never log the header. The example is excluded from Rust Playground because the blocking `reqwest` client depends on native TLS support.
 
+Basic authentication encodes the username and password in the request header. The encoding does not protect credentials from anyone who can read the request.
+
 ## Related Topics {#related-topics .skip}
 
 - [[cryptography | Cryptography]].
@@ -29,7 +31,3 @@ Its test sends the built request through an in-memory Axum route and verifies th
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  expand
-</div>

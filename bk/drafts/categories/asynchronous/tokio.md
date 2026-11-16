@@ -28,7 +28,7 @@ Use `select!` when the task should continue with whichever future completes firs
 
 ## Spawn Independent Tasks {#spawning}
 
-Use `tokio::spawn` when work should be scheduled as an independent task. It returns a `JoinHandle`; awaiting it yields the task's result or a `JoinError` if the task panicked or was cancelled. Await handles when results or failures matter. A spawned task must own its captured data, and the multi-threaded runtime requires spawned futures to be `Send`.
+Use `tokio::spawn` when work should be scheduled as an independent task. It returns a `JoinHandle`; awaiting it yields the task's result or a `JoinError` if the task panicked or was cancelled. Await handles when results or failures matter. Both the future passed to `tokio::spawn` and its output must satisfy `Send + 'static`, even on the current-thread runtime. A task can move in owned values or borrow data with a static lifetime. Use `spawn_local` inside a local task set for futures that are not `Send`.
 
 Tasks are lightweight, but spawning unbounded work can still exhaust memory or overload a service. Limit concurrency and queue capacity when accepting work faster than it can be processed.
 
@@ -73,7 +73,3 @@ The following example uses `tokio-graceful-shutdown` to organize nested services
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  tokio: review
-</div>

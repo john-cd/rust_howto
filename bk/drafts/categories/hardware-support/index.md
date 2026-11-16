@@ -16,6 +16,8 @@ Rust hardware support ranges from selecting CPU-specific instructions to communi
 | Memory-mapped registers and interrupts | A chip PAC/HAL and its documented interrupt model | These low-level operations require careful ownership and synchronization; avoid hand-written register access when a maintained HAL provides it. |
 | OS device drivers | OS-specific driver interfaces and system APIs | Drivers may require privileged code and unsafe operations. Ordinary applications should use the OS device interface or a crate that wraps it. |
 
+Choose the boundary first: operating-system APIs for user-space programs, a board HAL for bare-metal peripherals, or a small hardware-specific layer when you need direct register access.
+
 ## Processor Management
 
 {{#include processor.incl.md}}
@@ -70,7 +72,6 @@ Use `no_std` targets with the board's documented HAL and toolchain. See [[no_std
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-expand hardware-support, write missing sections
 
 - [Multiversion][c~multiversion~lib.rs]↗ - Rust HW library.
 

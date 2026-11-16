@@ -27,6 +27,8 @@ Shows the number of logical CPU cores{{hi:CPU cores}} in the current machine usi
 {{#include ../../../crates/cats/hardware_support/examples/processor/cpu_count.rs:example}}
 ```
 
+When distributing one binary to several CPUs, keep a portable path and select a specialized routine only on CPUs that support the required instructions.
+
 ## Low-Level Programming and Optimization {#low-level .skip}
 
 ### Inline Assembly {#inline-assembly .skip}
@@ -115,7 +117,6 @@ In embedded systems, we often have more direct access to CPU features and periph
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-processor: expand
 
 - [Nine Rules for SIMD Acceleration of Your Rust Code (Part 1)][blog~towardsdatascience-nine-rules-for-simd-acceleration-of-your-rust-code-part-1]↗.
 - [Towards fearless SIMD, 7 years later][blog~towards-fearless-simd]↗ - Linebender.

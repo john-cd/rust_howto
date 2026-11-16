@@ -4,6 +4,8 @@
 
 {{#include argument_parsing.incl.md}}
 
+Choose the command names, inputs, and error behavior before choosing a parser. The recipes below show declarative and builder APIs, followed by lower-level parsers.
+
 ## Plan a Command-line Interface {#plan-cli}
 
 Treat command-line arguments as a user-facing interface. Give options clear names and help text, use positional arguments for the main input, and group related operations under subcommands. Keep standard output suitable for data and send diagnostics to standard error.
@@ -120,7 +122,6 @@ The structopt project has been superseded by clap's derive API. For existing app
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-arguments: review
 
 [Parsing arguments in Rust with no dependencies][blog~parsing-arguments-rust-no-dep]↗.
 

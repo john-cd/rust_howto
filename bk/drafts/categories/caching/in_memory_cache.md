@@ -16,6 +16,8 @@ Consider these questions when designing a cache:
 
 [`lru`][c~lru~docs]↗{{hi:lru}}, [`moka`][c~moka~docs]↗{{hi:moka}}, and [`cached`][c~cached~docs]↗{{hi:cached}} cover different needs: a small explicit LRU data structure, a concurrent cache with policies, and function memoization.
 
+If a failed lookup is cached, give that result a separate expiration policy so a transient failure does not persist as long as a successful result.
+
 ## Use a Least Recently Used (LRU) Cache {#lru-cache}
 
 [![lru][c~lru~docs~badge]][c~lru~docs]{{hi:lru}} [![cat~caching][cat~caching~badge]][cat~caching]{{hi:Caching}}
@@ -55,7 +57,3 @@ Consider these questions when designing a cache:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  expand; review in depth
-</div>
