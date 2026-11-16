@@ -94,6 +94,16 @@ Expose typed errors when callers can recover by matching a variant. At an applic
 
 For examples of defining domain-specific errors and preserving their causes, see [Custom Errors (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/error_handling/error_customization.md).
 
+## Keep a Typed Library Error and Add CLI Context
+
+This example lets library callers distinguish an invalid integer from zero. [`thiserror`](https://docs.rs/thiserror/latest/thiserror/) derives `Error` while retaining the parse error as a source. The application uses [`anyhow::Context`](https://docs.rs/anyhow/latest/anyhow/trait.Context.html) to add the attempted operation, then prints a concise top-level message and the source chain. It returns a failing exit status for bad input.
+
+```rust
+{{#include ../../crates/standard_library/examples/typed_errors.rs:example}}
+```
+
+From `bk/crates`, run `cargo run -p standard_library --example typed_errors -- 4` for success or replace `4` with `oops` for a failure. The test invokes the same `run` boundary with in-memory output streams. Type erasure is useful at the CLI edge where callers no longer need to match variants; keep the typed error in a library API when callers have different recovery paths. Avoid exposing raw source details to an end user when they contain sensitive input; log or report them in an appropriate diagnostic channel.
+
 ## References {#references .skip}
 
 - [What is the Rust equivalent to a `try catch` statement][stackoverflow~what-is-the-rust-equivalent-to-a-try-catch-statement]↗.
