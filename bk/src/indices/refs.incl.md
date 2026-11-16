@@ -108,6 +108,7 @@
 [ex~data-structures~tinyvec]: ../categories/data-structures/stack-allocated.md#smallvec-tinyvec
 [ex~data-structures~ulid]: ../categories/data-structures/unique_identifiers.md#ulid
 [ex~data-structures~vec]: ../categories/data-structures/vectors.md#vec
+[ex~data-processing~dataframes]: ../categories/data-processing/dataframes.md#dataframes
 [ex~filesystem~avoid-writing-and-reading-from-the-same-file]: ../categories/filesystem/reading_and_writing_files.md#avoid-writing-and-reading-from-the-same-file
 [ex~filesystem~camino]: ../categories/filesystem/paths.md#camino
 [ex~filesystem~canonicalize]: ../categories/filesystem/paths.md#canonicalize

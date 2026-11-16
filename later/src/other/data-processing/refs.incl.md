@@ -4,7 +4,6 @@
 [ex~data-processing~arrow-ipc]: data_engineering.md#arrow-ipc
 [ex~data-processing~arrow-sub-crates]: data_engineering.md#arrow-sub-crates
 [ex~data-processing~ballista]: data_engineering.md#ballista
-[ex~data-processing~dataframes]: dataframes.md#dataframes
 [ex~data-processing~datafusion]: data_engineering.md#datafusion
 [ex~data-processing~jsonpath]: data_engineering.md#jsonpath
 [ex~data-processing~read-and-write-csv-files]: csv.md#read-and-write-csv-files
@@ -19,6 +18,3 @@
 [p~csv]: https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/encoding/csv.md
 [p~data-processing]: index.md
 [p~python]: ../../categories/development-tools_ffi/python.md
-
-[c~polars~lazy~guide]: https://docs.pola.rs/api/rust/dev/polars/docs/lazy/index.html
-[c~polars~sources~guide]: https://docs.pola.rs/user-guide/lazy/sources_sinks/

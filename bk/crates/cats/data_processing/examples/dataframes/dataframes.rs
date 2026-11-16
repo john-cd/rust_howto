@@ -72,29 +72,32 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
-/// Verifies the aggregation values and joined row count for inline data.
+/// Verifies the aggregation schema, values, and joined target rows.
 #[cfg(test)]
 mod tests {
+    use polars::prelude::DataType;
+
     use super::main;
     use super::summarize_and_join_sales;
 
-    /// Verifies the aggregation values and joined row count for inline data.
+    /// Checks the output schemas, aggregation values, and joined target rows.
     #[test]
     fn aggregate_and_join_return_expected_results() -> anyhow::Result<()> {
         let (summary, joined) = summarize_and_join_sales()?;
 
         assert_eq!(summary.shape(), (2, 2));
+        assert_eq!(summary.column("region")?.dtype(), &DataType::String);
+        assert_eq!(summary.column("revenue")?.dtype(), &DataType::Int64);
         assert_eq!(summary.column("revenue")?.i64()?.get(0), Some(330));
         assert_eq!(joined.height(), 2);
+        assert_eq!(joined.column("target")?.dtype(), &DataType::Int64);
         assert_eq!(joined.column("target")?.i64()?.get(0), Some(300));
         Ok(())
     }
 
-    /// Runs the example through its entry point without error.
+    /// Exercises the same entry point used by the command-line binary.
     #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+    fn example_runs_to_completion() -> anyhow::Result<()> {
+        main()
     }
 }

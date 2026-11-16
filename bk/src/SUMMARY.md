@@ -85,6 +85,9 @@
   - [Stack-allocated Data Structures](categories/data-structures/stack-allocated.md)
   - [Unique Identifiers](categories/data-structures/unique_identifiers.md)
 
+- [Data Processing](categories/data-processing/index.md)
+  - [DataFrames](categories/data-processing/dataframes.md)
+
 - [File System](categories/filesystem/index.md)
   - [Paths](categories/filesystem/paths.md)
   - [File Reading and Writing](categories/filesystem/reading_and_writing_files.md)

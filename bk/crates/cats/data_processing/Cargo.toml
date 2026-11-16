@@ -1,0 +1,29 @@
+# TODO Reviewed ??-??-2026.
+
+[package]
+name = "data_processing"
+version.workspace = true
+description = "Book code examples and their crate dependencies - data_processing"
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+autolib = false
+
+[[example]]
+name = "dataframes"
+path = "examples/dataframes/main.rs"
+test = true
+
+[dependencies]
+anyhow = "1.0.104"
+polars = { version = "0.55.2", default-features = false, features = ["lazy"] }
+
+[lints]
+workspace = true
