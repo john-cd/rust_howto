@@ -8,7 +8,7 @@
 
 [![book~rust~box][book~rust~box~badge]][book~rust~box]{{hi:Box}} [![Rust by example - box][book~rust-by-example~box~badge]][book~rust-by-example~box] [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-Values are stored inline by default. [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} lets you store data on the heap{{hi:Heap}} rather than inline on the stack{{hi:Stack}}. The box itself is a pointer-sized value; it owns its inner data and drops that data when the box goes out of scope:
+[`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} owns its pointee and drops it when the box is dropped. With the default allocator, a nonzero-sized pointee lives in a heap{{hi:Heap}} allocation. A zero-sized pointee needs no allocation. For sized `T`, the default `Box<T>` has the representation of one pointer. For dynamically sized types, a pointer also needs metadata, such as a slice length or trait-object vtable. A box can itself be a local, a struct field, or an element in a collection.{{hi:Stack}}
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/box/box_basics.rs:example}}
@@ -31,7 +31,8 @@ Use [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} when
 - you need to store a dynamically sized type, whose size is not known at compile time, behind a pointer such as `Box<dyn Trait>` or `Box<[T]>`;
 - you need indirection to make a recursive type have a finite, known size. For example, a linked-list node can contain `Option<Box<Node>>`; the `Box` has a known pointer size even though the list can grow recursively.
 - you want to own a value and you care only that it's a type that implements a particular trait rather than being of a specific type.
-- When you need to transfer ownership of data between functions - although [`Arc<T>`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} or [`Rc<T>`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} might be more appropriate for shared ownership.
+
+Pass a value directly to transfer ownership when no indirection is needed. Use [`Arc<T>`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} or [`Rc<T>`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} for shared ownership.
 
 Use `&T` or `&mut T` when you only need to borrow a value. A small type can still benefit from boxing when it needs indirection, for example to break a recursive type cycle.
 

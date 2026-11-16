@@ -3,10 +3,8 @@
 // ANCHOR: example
 //! Many shared references or one mutable reference.
 //!
-//! The borrow rules allow many shared references or exactly one mutable
-//! reference at a time, never both. This prevents data races and iterator
-//! invalidation at compile time. A `RwLock` applies the same rule at run time
-//! across threads.
+//! Shared borrows permit simultaneous reads. An exclusive borrow can lend
+//! its access to a shorter reborrow and resume after that reborrow ends.
 
 /// A struct holding a flag.
 #[derive(Debug)]
@@ -32,7 +30,12 @@ fn main() {
     s1 = MyStruct(false);
     s1.0 = true;
 
-    println!("{s1:?}");
+    let exclusive = &mut s1;
+    let shorter = &mut *exclusive;
+    shorter.0 = false;
+    assert!(!exclusive.0);
+    exclusive.0 = true;
+    assert!(s1.0);
 }
 // ANCHOR_END: example
 
