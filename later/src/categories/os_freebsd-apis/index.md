@@ -29,10 +29,3 @@ Check target support and platform-specific behavior in the selected crate before
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-content audit: category index content removed by recent commits; review and restore
-
-- Crates.io categories: [API Bindings][cat~api-bindings]↗ and [External FFI Bindings][cat~external-ffi-bindings]↗.
-
-</div>
