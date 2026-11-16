@@ -2,10 +2,10 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-/// Contains the sqlparser functionality used by this parent module.
+/// Parses SQL statements and prints their syntax trees.
 #[cfg(feature = "sqlparser")]
 mod sqlparser;
-/// Contains the syn functionality used by this parent module.
+/// Parses Rust source and extracts the names of top-level functions, structs, and enums.
 mod syn;
 
 /// Runs the example if the `sqlparser` feature is enabled.

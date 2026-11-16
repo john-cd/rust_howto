@@ -6,7 +6,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
-/// Contains the wasmer functionality used by this parent module.
+/// Compiles inline WebAssembly text and calls an exported addition function with Wasmer.
 #[cfg(feature = "wasmer")]
 mod wasmer;
 
