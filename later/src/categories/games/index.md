@@ -19,6 +19,16 @@ These examples show several kinds of games built with Rust. Project availability
 - [Are We Game Yet? games][are-we-game-yet?-games~website]↗ lists games by genre and links to project pages.
 - Browse the [games made with Rust on itch.io][itch.io~made-with-rust~website]↗{{hi:itch.io}} for indie releases and prototypes.
 
+## Animate a Triangle with Macroquad
+
+This example separates game state updates from drawing. Each frame advances the
+triangle by the elapsed time, and pressing Space changes its color. From
+`later/crates`, run `cargo run -p games --example games` on a system with a graphical desktop.
+
+```rust,editable
+{{#include ../../../crates/cats/games/examples/games.rs:example}}
+```
+
 ## Related Topics
 
 - [[game-engines | Game engines and frameworks]].
@@ -29,12 +39,3 @@ These examples show several kinds of games built with Rust. Project availability
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-write; need in depth review; review [are-we-game-yet? games][are-we-game-yet?-games~website]
-
-```rust,editable
-{{#include ../../../crates/cats/games/examples/games.rs:example}}
-```
-
-</div>
