@@ -47,6 +47,11 @@ path = "examples/json_patch.rs"
 test = true
 
 [[example]]
+name = "service_resilience"
+path = "examples/service_resilience.rs"
+test = true
+
+[[example]]
 name = "grpc"
 path = "examples/grpc/main.rs"
 test = true
@@ -142,7 +147,7 @@ serde = { version = "1.0.229", features = ["derive"] }
 # A JSON serialization file format
 serde_json = "1.0.154"
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
-tokio = { version = "1.54.1", features = ["io-util", "macros", "net", "rt-multi-thread", "sync", "time"] }
+tokio = { version = "1.54.1", features = ["io-util", "macros", "net", "rt-multi-thread", "sync", "time", "test-util"] }
 # Utilities to work with `Stream` and `tokio`.
 tokio-stream = { version = "0.1.19", features = ["net"] }
 # A gRPC over HTTP/2 implementation focused on high performance, interoperability, and flexibility.
@@ -152,7 +157,7 @@ tonic-prost = "0.14.9"
 # grpc-web protocol translation for tonic services.
 tonic-web = "0.14.9"
 # Tower is a library of modular and reusable components for building robust clients and servers.
-tower = { version = "0.5.3", features = ["util"] }
+tower = { version = "0.5.3", features = ["limit", "util"] }
 # Cookie manager middleware for tower.
 tower-cookies = "0.11.0"
 # Tower middleware and utilities for HTTP clients and servers

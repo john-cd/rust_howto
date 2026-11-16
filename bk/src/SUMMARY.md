@@ -146,6 +146,7 @@
 - [Profiling and Benchmarking](categories/development-tools/profiling.md)
 
 - [HTTP Servers](categories/web-programming_http-server/json_patch.md)
+  - [Bound Retries and Concurrency with Tower](categories/web-programming_http-server/service_resilience.md)
 - [Diagnose Rust Build Time](categories/development-tools/build_time_diagnosis.md)
 - [Compare Benchmark Results in CI](categories/development-tools/benchmark_regressions.md)
 
