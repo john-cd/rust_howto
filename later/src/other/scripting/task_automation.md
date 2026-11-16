@@ -50,5 +50,5 @@ This example describes a task as data: [`cron`][c~cron~docs]↗ finds the next r
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  write; where does this chapter belong?
+  Editorial placement: keep command execution and scheduling in Scripting. See the Scheduling chapter for recurring jobs.
 </div>

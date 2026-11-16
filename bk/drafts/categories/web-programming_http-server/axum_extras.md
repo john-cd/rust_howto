@@ -104,10 +104,3 @@ Remove the attribute once the handler compiles; it only improves diagnostics. As
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[written for issue #1939](https://github.com/john-cd/rust_howto/issues/1939)
-
-[written for issue #1910](https://github.com/john-cd/rust_howto/issues/1910)
-
-</div>

@@ -40,11 +40,7 @@ Once adding an external crate as a dependency, you will very often bring items f
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-
-- [[cargo | Cargo]].
-- [[dependency_management | Dependency Management]].
-- [[development-tools_cargo-plugins | Development Tools - Cargo Plugins]].
-
-[accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
-
+  - [[cargo | Cargo]].
+  - [[dependency_management | Dependency Management]].
+  - [[development-tools_cargo-plugins | Development Tools - Cargo Plugins]].
 </div>

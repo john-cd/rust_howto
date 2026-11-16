@@ -78,7 +78,3 @@ This example uses [`trading-calendar`][c~trading-calendar~docs]↗{{hi:trading-c
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [examples](https://github.com/john-cd/rust_howto/issues/1949)
-</div>

@@ -30,7 +30,3 @@ These clients connect to different providers and do not make their data intercha
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [examples](https://github.com/john-cd/rust_howto/issues/1949)
-</div>

@@ -91,7 +91,3 @@ When writing a library or in contexts where the public API must remain stable, `
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  [accuracy review: code organization](https://github.com/john-cd/rust_howto/issues/1890)
-</div>

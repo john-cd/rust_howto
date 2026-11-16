@@ -26,7 +26,3 @@ Beware that `Drop` does not run for values allocated with `Bump::alloc`. Enable 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [arena allocation: review the new page](https://github.com/john-cd/rust_howto/issues/1925)
-</div>

@@ -90,7 +90,3 @@ The Wry/Tao source remains available, but its Cargo registration, feature, and d
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [show a local web page in a native window](https://github.com/john-cd/rust_howto/issues/1952)
-</div>

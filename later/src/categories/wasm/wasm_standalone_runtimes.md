@@ -95,7 +95,3 @@ The tests cover a successful call, the typed `err` results, a component that doe
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [Sandbox example follow-up](https://github.com/john-cd/rust_howto/issues/1926).
-</div>

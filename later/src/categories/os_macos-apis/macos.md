@@ -45,7 +45,3 @@ Put macOS-only dependencies in `[target.'cfg(target_os = "macos")'.dependencies]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [macos: write](https://github.com/john-cd/rust_howto/issues/435)
-</div>

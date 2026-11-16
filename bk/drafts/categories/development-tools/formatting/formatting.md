@@ -95,7 +95,3 @@ See the [Rustfmt documentation for formatting attributes][rustfmt~attributes] fo
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
-
-<div class="hidden">
-  formatting: add link for formatting attributes
-</div>

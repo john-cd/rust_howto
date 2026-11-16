@@ -89,7 +89,3 @@ The [`hex`][c~hex~docs]↗{{hi:hex}} crate offers `hex::encode`, which produces 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [review](https://github.com/john-cd/rust_howto/issues/930)
-</div>

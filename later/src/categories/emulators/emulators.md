@@ -45,6 +45,5 @@ See the [`ihex` documentation][c~ihex~docs] and the [parsing chapter][p~parsing]
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [emulators: write](https://github.com/john-cd/rust_howto/issues/347)
   [in-depth-analysis-of-polkavm-a-perfect-path-to-understanding-polkadot][blog~medium~in-depth-analysis-of-polkavm].
 </div>

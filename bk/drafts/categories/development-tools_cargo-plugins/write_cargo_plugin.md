@@ -33,7 +33,3 @@ The example declares the arguments with [`clap`][c~clap~docs]↗:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [write and test a cargo subcommand](https://github.com/john-cd/rust_howto/issues/1951)
-</div>

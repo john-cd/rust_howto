@@ -79,7 +79,3 @@ This table outlines common text processing tasks and relevant Rust crates.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [review; address NLP](https://github.com/john-cd/rust_howto/issues/963)
-</div>

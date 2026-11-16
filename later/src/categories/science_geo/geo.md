@@ -98,7 +98,3 @@ Before geocoding at scale:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [geocode addresses and compute distances](https://github.com/john-cd/rust_howto/issues/1942)
-</div>

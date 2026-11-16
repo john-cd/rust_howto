@@ -18,5 +18,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  [ML examples](https://github.com/john-cd/rust_howto/issues/1929); coordinate with #1757 (Linfa / ndarray compatibility)
+  ML examples; coordinate with #1757 (Linfa / ndarray compatibility)
 </div>

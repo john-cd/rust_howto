@@ -35,7 +35,3 @@ The separate `interner_allocations` executable wraps the system allocator and co
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [string interning: review the new page](https://github.com/john-cd/rust_howto/issues/1925)
-</div>

@@ -14,7 +14,3 @@ See also [Machine Learning in the Science chapter][p~classical-machine-learning]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [ML examples](https://github.com/john-cd/rust_howto/issues/1929)
-</div>

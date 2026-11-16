@@ -85,7 +85,3 @@ cargo add clap_complete
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [shells: expand](https://github.com/john-cd/rust_howto/issues/239)
-</div>

@@ -49,7 +49,3 @@ For shared POSIX operations, check the target support of `libc`, `nix`, or `rust
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [freebsd: write](https://github.com/john-cd/rust_howto/issues/433)
-</div>

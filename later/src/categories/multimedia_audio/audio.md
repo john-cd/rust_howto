@@ -135,8 +135,3 @@ Points to remember:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [audio files, playback and MIDI](https://github.com/john-cd/rust_howto/issues/1943)
-  [ring-buffer recipe for audio callbacks](https://github.com/john-cd/rust_howto/issues/1908)
-</div>
