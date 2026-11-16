@@ -1,0 +1,14 @@
+[package]
+name = "iroh_loopback"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+anyhow = "1.0.104"
+iroh = { version = "1.4.1", default-features = false, features = ["tls-ring"] }
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "time"] }
+
+[lints]
+workspace = true
