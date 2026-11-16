@@ -270,8 +270,8 @@ jobs:
             -e SKIP_TESTS="true" \
             -e BUILD_PDF="${{ inputs.build_pdf || false }}" \
             rust-howto-book
-      - name: Check rendered entry and contributor links
-        run: python bk/scripts/check_rendered_entry_links.py book/html
+      - name: Check rendered chapter links
+        run: python bk/scripts/check_rendered_entry_links.py book/html --all-chapters
       - name: Check rendered word index fragments
         run: python bk/scripts/check_rendered_entry_links.py book/html --word-index
       - name: Upload artifacts
