@@ -33,6 +33,26 @@ cargo llvm-cov --workspace --all-features --lcov --output-path lcov.info
 
 Coverage of documentation tests may require explicit options and toolchain support. Check the tool's current documentation and make sure the generated report includes the test types you intend to measure.
 
+### Find an Untested Case
+
+This example tests subtotals just below and at the free shipping threshold.
+The zero subtotal takes a separate path that neither test exercises.
+
+```rust,editable
+{{#include ../../../crates/cats/development_tools_testing/examples/code_coverage/main.rs:example}}
+```
+
+From `bk/crates`, generate an HTML report for this example:
+
+```sh
+cargo llvm-cov -p development_tools_testing --example code_coverage --html --open
+```
+
+Find `examples/code_coverage/main.rs` in the report and inspect
+`shipping_cents`. Add a test asserting that `shipping_cents(0)` returns `None`,
+then rerun the command to see the newly covered line. The report can also mark
+`main` as uncovered because the test harness runs the tests as its entry point.
+
 ## Collect Coverage with grcov {#coverage_testing}
 
 {{#badges grcov command-line-utilities="Command line utilities" development-tools="Development tools" development-tools::testing=Testing}}{{hi:Coverage}}
@@ -68,7 +88,3 @@ Coverage tools such as [`cargo llvm-cov`][cargo-llvm-cov~repo] and grcov write L
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>
