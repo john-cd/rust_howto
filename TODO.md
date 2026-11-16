@@ -14,11 +14,10 @@ matched `origin/develop`. The inventory covers 133 published, 245 draft, and
 184 future table-of-contents entries. Spot checks focused on foundational
 Rust semantics, the first promoted recipes, and the next migration candidates.
 
-- **P2** [#2273][links] · Landing and contributor links passed the rendered
-  check in `0126f0f2c`. The release workflow now runs that check.
-  The full link checker still reports existing missing targets and unresolved
-  references, including example-index and promoted-chapter links.
-  Rerun it after the active migration.
+- [#2273][links] · The full local link-check build passed on `75c31d963`.
+  The release check now covers all published HTML pages, including the root
+  and legacy introduction URLs. It passes on the current render and detects
+  unresolved references and broken links in the original audit render.
 - [#2274][index] · Verified all word-index fragments in the current render.
   The release check in `465832a57` catches all 14 failures from the old render.
   The check is integrated on `develop`.
