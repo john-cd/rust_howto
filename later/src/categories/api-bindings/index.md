@@ -14,7 +14,7 @@ callers can handle failures with `Result` without calling the underlying C API
 directly:
 
 ```rust
-{{#include ../../../crates/cats/api_bindings/examples/api_bindings/book_example.rs:example}}
+{{#include ../../../crates/cats/api_bindings/examples/api_bindings/gzip_round_trip.rs:example}}
 ```
 
 ## Database Bindings

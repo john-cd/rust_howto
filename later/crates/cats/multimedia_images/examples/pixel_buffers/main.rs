@@ -1,5 +1,5 @@
-mod book_example;
+mod rgba_pixel_buffer;
 
 fn main() {
-    book_example::run();
+    rgba_pixel_buffer::run();
 }

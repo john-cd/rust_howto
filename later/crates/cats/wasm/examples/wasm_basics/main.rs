@@ -1,5 +1,5 @@
-mod book_example;
+mod inspect_wasm_module;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    inspect_wasm_module::run()
 }

@@ -1,5 +1,5 @@
-mod book_example;
+mod signal_counter;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    signal_counter::run()
 }

@@ -58,7 +58,7 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 [`vizia`][c~vizia~docs] binds views to application models and routes events back to update them. The example uses Vizia 0.4's signal-based API and lives in a separate package because its Skia dependency conflicts with the GUI workspace's Slint version.
 
 ```rust,editable
-{{#include ../../../crates/cats/gui/vizia/src/book_example.rs:example}}
+{{#include ../../../crates/cats/gui/vizia/src/signal_counter.rs:example}}
 ```
 
 ## Xilem and Masonry {#xilem}

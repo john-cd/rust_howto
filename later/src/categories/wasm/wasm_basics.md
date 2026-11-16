@@ -35,7 +35,7 @@ Rust game libraries such as [`winit`][c~winit~docs]↗{{hi:winit}}, [`wgpu`][c~w
 [`wat`][c~wat~docs]↗{{hi:wat}} assembles the text format into a binary module, and [`wasmparser`][c~wasmparser~docs]↗{{hi:wasmparser}} reads a binary without running it. The example lists the functions the module expects the host to provide (imports) and the functions the host can call (exports).
 
 ```rust,editable
-{{#include ../../../crates/cats/wasm/examples/wasm_basics/book_example.rs:example}}
+{{#include ../../../crates/cats/wasm/examples/wasm_basics/inspect_wasm_module.rs:example}}
 ```
 
 ## Related topics {#related-topics .skip}

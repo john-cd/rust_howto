@@ -15,7 +15,7 @@ Most common image files and displays use sRGB-encoded channel values. Those enco
 The tested example decodes an 8-bit sRGB color to linear light for processing, then converts it back for display.
 
 ```rust,noplayground
-{{#include ../../../crates/cats/multimedia_images/examples/color_handling/book_example.rs:example}}
+{{#include ../../../crates/cats/multimedia_images/examples/color_handling/srgb_linear_conversion.rs:example}}
 ```
 
 Do not interpret `Srgb<u8>` components as linear values in the range 0.0 to 1.0 without decoding the transfer function. Likewise, do not apply the RGB transfer function to alpha; alpha describes coverage or opacity, not light intensity.

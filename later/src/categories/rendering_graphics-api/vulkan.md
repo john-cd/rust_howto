@@ -15,7 +15,7 @@
 `ash` loads the Vulkan library at runtime, so a program can detect a missing driver instead of failing to start. This example reports the instance version when a Vulkan loader is installed and degrades gracefully otherwise. Creating an instance and a device is the next step; it needs a driver and, to present images, a window system.
 
 ```rust,editable
-{{#include ../../../crates/cats/rendering_graphics_api/examples/vulkan/book_example.rs:example}}
+{{#include ../../../crates/cats/rendering_graphics_api/examples/vulkan/vulkan_instance_version.rs:example}}
 ```
 
 ## `vulkano` {#vulkano}

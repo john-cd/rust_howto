@@ -1,5 +1,5 @@
-mod book_example;
+mod blink_output_pin;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    blink_output_pin::run()
 }

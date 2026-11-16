@@ -1,5 +1,5 @@
-mod book_example;
+mod nor_flash_storage;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    nor_flash_storage::run()
 }

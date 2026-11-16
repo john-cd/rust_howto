@@ -1,5 +1,5 @@
-mod book_example;
+mod postcard_queue;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    postcard_queue::run()
 }

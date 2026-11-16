@@ -27,7 +27,7 @@ Keep the pixel format alongside the buffer. Four bytes might mean RGBA, BGRA, or
 The tested buffer example below uses two tightly packed RGBA pixels and verifies channel order and alpha:
 
 ```rust
-{{#include ../../../crates/cats/multimedia_images/examples/pixel_buffers/book_example.rs:example}}
+{{#include ../../../crates/cats/multimedia_images/examples/pixel_buffers/rgba_pixel_buffer.rs:example}}
 ```
 
 ## Update a Frame
