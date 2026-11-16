@@ -46,6 +46,8 @@ An address-sensitive struct illustrates why the referent's address matters. The 
 
 For examples of polling futures and running them on an executor, see [Async Rust (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/asynchronous/async.md).
 
+For a runnable Tokio example that pins a future, cancels it by dropping it, and owns spawned task handles, see [Pin Futures and Own Their Cancellation](pinned_async_cancellation.md).
+
 ## Related Topics {#related-topics .skip}
 
 - [Futures](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/asynchronous/futures.md).

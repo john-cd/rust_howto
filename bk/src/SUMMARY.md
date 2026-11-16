@@ -43,6 +43,7 @@
     - [Interior Mutability](standard-library/interior_mutability.md)
     - [Clone-on-Write](standard-library/clone-on-write.md)
     - [Memory Address Pinning](standard-library/memory_address_pinning.md)
+    - [Pin Futures and Own Their Cancellation](standard-library/pinned_async_cancellation.md)
   - [Resource Cleanup](standard-library/resource_cleanup.md)
   - [Pointer Provenance at an FFI Boundary](standard-library/pointer_provenance.md)
   - [Conversion Traits](standard-library/conversion_traits.md)
