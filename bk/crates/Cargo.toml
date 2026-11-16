@@ -40,6 +40,8 @@ members = [
     "cats/os_unix_apis",
     "cats/os_windows_apis",
     "cats/parser_implementations",
+    "cats/plugin_extension",
+    "cats/plugin_registry",
     "cats/parsing",
     "cats/rust_patterns",
     "cats/template_engine",
