@@ -44,7 +44,3 @@ Use [`glommio`][c~glommio~docs]↗{{hi:glommio}} for Linux `io_uring` networking
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  server: write; add cross-links: async, web, `http` server
-</div>
