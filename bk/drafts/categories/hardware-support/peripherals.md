@@ -21,7 +21,7 @@ On Windows, `nusb` uses WinUSB, so the device or interface must be associated wi
 This example lists the ports that the operating system reports without opening any of them. An empty list and an enumeration error are normal outcomes on machines without serial hardware or permissions.
 
 ```rust,editable
-{{#include ../../../crates/cats/hardware_support/examples/peripherals/main.rs:example}}
+{{#include ../../../crates/cats/hardware_support/examples/peripherals/book_example.rs:example}}
 ```
 
 ## Human Interface Devices {#human-interface-devices .skip}
