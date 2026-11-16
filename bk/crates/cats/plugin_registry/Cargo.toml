@@ -14,7 +14,7 @@ test = true
 inventory = "0.3.25"
 
 [dev-dependencies]
-plugin_extension = { path = "../plugin_extension" }
+plugin_extension = { version = "0.1.2", path = "../plugin_extension" }
 
 [lints]
 workspace = true

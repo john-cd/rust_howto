@@ -23,7 +23,6 @@ path = "examples/websocket/main.rs"
 test = true
 
 [dependencies]
-clap = "4.6.7"
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # Async binding for Tungstenite, the Lightweight stream-based WebSocket implementation
@@ -31,6 +30,7 @@ async-tungstenite = { version = "0.35.0", features = [
     "tokio-runtime",
     "tokio-native-tls",
 ] }
+clap = "4.6.7"
 # Common utilities and extension traits for the futures-rs library.
 futures-util = "0.3.34"
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.

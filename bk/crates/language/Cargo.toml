@@ -126,7 +126,7 @@ cfg-if = "1.0.5"
 # A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
 # Core procedural macro implementations (derive, attribute, and function-like) used in the book examples.
-proc_macros = { path = "../proc_macros" }
+proc_macros = { version = "0.1.2", path = "../proc_macros" }
 # Helpful macros for working with enums and strings
 strum = { version = "0.28.0", features = ["derive"] }
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.

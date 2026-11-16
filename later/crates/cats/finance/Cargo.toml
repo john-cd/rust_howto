@@ -33,13 +33,13 @@ path = "examples/quant/main.rs"
 test = true
 
 [dependencies]
-clap = "4.6.7"
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # A Black Scholes option pricing library.
 black_scholes = "0.11.1"
 # Date and time library for Rust
 chrono = "0.4.45"
+clap = "4.6.7"
 # A collection of finance calculations mimicking some of Excel Financial Functions interface
 financial = "1.1.5"
 # A rate-limiting implementation in Rust
@@ -59,7 +59,7 @@ ta-statistics = "0.2.6"
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["rt", "macros"] }
 # Comprehensive trading calendar with holidays and hours for global markets
-trading-calendar = { git = "https://github.com/danjloveless/trading-calendar.git", rev = "7b03202e8e6b02f6f433e5f1adaedef053c2cf6f" }
+trading-calendar = { version = "0.2.3", git = "https://github.com/danjloveless/trading-calendar.git", rev = "7b03202e8e6b02f6f433e5f1adaedef053c2cf6f" }
 # A rust adapter for the yahoo! finance API to fetch histories of market data quotes.
 yahoo_finance_api = "5.0.0"
 

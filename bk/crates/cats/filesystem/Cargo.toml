@@ -115,7 +115,7 @@ same-file = "1.0.6"
 # A library for managing temporary files and directories.
 tempfile = "3.27.0"
 # Research projects for genetic programming, optimization, and quantitative finance.
-utils = { path = "../../utils" }
+utils = { version = "0.1.2", path = "../../utils" }
 # Recursively walk a directory.
 walkdir = "2.5.0"
 

@@ -125,7 +125,7 @@ tempfile = "3.27.0"
 # Yet another format-preserving TOML parser.
 toml_edit = "0.25.19"
 # Local Cargo, metadata, and book-index operations reused from the helper tools.
-tool_lib = { path = "../../../../tools/tool_lib" }
+tool_lib = { version = "0.1.2", path = "../../../../tools/tool_lib" }
 # A simple event-driven library for parsing WebAssembly binary files.
 wasmparser = "0.263.0"
 # Rust converter from the WebAssembly binary format to the text format.
