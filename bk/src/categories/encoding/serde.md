@@ -59,7 +59,7 @@ Use this for a protocol field that must contain one exact sentinel value, for ex
 
 ## Choosing a Format
 
-Serde supports many formats through separate crates. See [Serde's data formats](https://serde.rs/#data-formats) and the book's [CSV](csv.md), [binary encoders](_binary_encoders.md), and [complex encodings](complex_encoding.md) chapters. Choose and document a format based on interoperability, schema evolution, human readability, and size requirements.
+Serde supports many formats through separate crates. See [Serde's data formats](https://serde.rs/#data-formats) and the book's [CSV](csv.md) chapter. Choose and document a format based on interoperability, schema evolution, human readability, and size requirements.
 
 ## Further Reading {#further-reading .skip}
 
@@ -67,9 +67,7 @@ Serde supports many formats through separate crates. See [Serde's data formats](
 
 ## Related Topics {#related-topics .skip}
 
-- [JSON](../parser-implementations/json.md).
 - [CSV](csv.md).
-- [Binary encoders](_binary_encoders.md).
 - [Encoding category](index.md).
 
 {{#include refs.incl.md}}

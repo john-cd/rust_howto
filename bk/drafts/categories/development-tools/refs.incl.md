@@ -17,7 +17,7 @@
 [p~cross-platform]: # "../../../other/cross-platform/index.md"
 [p~documentation]: documentation/documentation.md
 [p~download]: ../web-programming_http-client/download.md
-[p~duration]: ../date-and-time/duration.md
+[p~duration]: https://john-cd.com/rust_howto/categories/date-and-time/duration.html
 [p~embedded]: # "../../embedded/index.md"
 [p~functions]: ../../language/functions.md
 [p~fuzzing]: ../development-tools_testing/fuzzing.md

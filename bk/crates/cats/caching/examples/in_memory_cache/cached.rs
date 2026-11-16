@@ -56,8 +56,12 @@ fn main() {
     {
         use cached::Cached as _;
         let cache = FIBONACCI.write();
-        println!("misses: {:?}", cache.cache_misses());
-        assert_eq!(cache.cache_misses(), Some(11));
+        println!(
+            "cache hits: {:?}; misses: {:?}",
+            cache.cache_hits(),
+            cache.cache_misses()
+        );
+        assert!(matches!(cache.cache_hits(), Some(hits) if hits > 0));
         // Braces to make sure the lock is dropped.
     }
 

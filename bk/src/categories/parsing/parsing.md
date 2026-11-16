@@ -2,7 +2,7 @@
 
 # Parsing Utilities
 
-Use parser combinators to compose reusable parsing functions, or choose a parser generator when a separate grammar is easier to review and maintain. The examples below build custom parsers; for established formats such as JSON, TOML, Markdown, and XML, see [[parser-implementations | Parser Implementations]].
+Use parser combinators to compose reusable parsing functions, or choose a parser generator when a separate grammar is easier to review and maintain. The examples below build custom parsers; for established formats such as JSON, TOML, Markdown, and XML, prefer a format-specific library.
 
 {{#include parsing.incl.md}}
 
@@ -50,7 +50,7 @@ See the [full Pest grammar](https://github.com/john-cd/rust_howto/blob/develop/b
 {{#include ../../../crates/cats/parsing/examples/parsing/tree_sitter.rs:example}}
 ```
 
-For editor-style token colors, see [[syntax_highlighting | Syntax Highlighting]].
+The byte spans from the syntax-tree examples can also drive editor-style token coloring.
 
 ## Create a Parser with `winnow` {#winnow}
 
@@ -84,9 +84,8 @@ Tree-sitter builds a concrete syntax tree that can be updated incrementally afte
 
 ## Related Topics {#related-topics .skip}
 
-- [[parser-implementations | Parser Implementations]].
-- [[text-processing | Text Processing]].
-- [[string_parsing | String Parsing]].
+- [Parsing](index.md).
+- [Strings](../data-structures/strings.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

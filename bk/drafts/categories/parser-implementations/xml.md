@@ -62,7 +62,7 @@ Choose a streaming parser when documents may be large or should be processed inc
 
 ## Related Topics {#related-topics .skip}
 
-- [Parsing Utilities](../parsing/parsing.md) covers parsers for custom grammars.
+- [Parsing Utilities](https://john-cd.com/rust_howto/categories/parsing/parsing.html) covers parsers for custom grammars.
 - [HTML and CSS](html.md) covers parsing web documents and selecting elements.
 - [Web Scraping](../web-programming/scraping.md) demonstrates extracting content from web pages.
 

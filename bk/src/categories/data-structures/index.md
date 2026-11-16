@@ -70,6 +70,36 @@ Start with the operation that dominates your workload: indexing for `Vec`, work 
 
 {{#include unique_identifiers.incl.md}}
 
+## Perfect Hash Maps
+
+The [`phf`][c~phf~docs]↗{{hi:phf}} crate generates maps and sets for keys known at compile time. It supports `Map`, `Set`, `OrderedMap`, and `OrderedSet`, with corresponding `phf_map!`, `phf_set!`, `phf_ordered_map!`, and `phf_ordered_set!` macros. The generated lookup tables need no runtime construction.
+
+### Use a Compile-time Perfect Hash Map {#phf-map}
+
+{{#include phf.incl.md}}
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/data_structures/examples/phf/perfect_hash_map.rs:example}}
+```
+
+## Append-only Collections with `elsa`
+
+[`elsa`][c~elsa~docs]↗{{hi:elsa}} provides append-only collections such as `FrozenVec` and `FrozenMap`. They allow insertion through shared references but do not support removing or replacing entries. Stored values must implement `StableDeref` so references to their targets remain valid as the collection grows. For example, `Box<T>` keeps its allocation stable even if the vector reallocates and moves its `Box` values; the vector itself may still reallocate.
+
+### Use Append-only Frozen Collections {#elsa-frozen-vec}
+
+{{#include elsa.incl.md}}
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/data_structures/examples/elsa/frozen_vec.rs:example}}
+```
+
+`FrozenMap<K, Box<V>>` uses the same stable-target property for values:
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/data_structures/examples/elsa/frozen_map.rs:example}}
+```
+
 ## Additional Data Structures
 
 - [[data_types | Data Types]].

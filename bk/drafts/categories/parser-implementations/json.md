@@ -41,7 +41,7 @@ Use `serde_json` for the usual Serde-based typed or dynamic JSON data model. Cho
 ## Related Topics {#related-topics .skip}
 
 - [Structured Data](../encoding/complex_encoding.md) demonstrates deserializing JSON and TOML into values and application types.
-- [Parsing Utilities](../parsing/parsing.md) covers custom grammars and parser construction.
+- [Parsing Utilities](https://john-cd.com/rust_howto/categories/parsing/parsing.html) covers custom grammars and parser construction.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

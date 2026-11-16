@@ -44,7 +44,7 @@ Use `comrak` when GitHub Flavored Markdown extensions or rendering and formattin
 
 ## Related Topics {#related-topics .skip}
 
-- [Parsing Utilities](../parsing/parsing.md) explains how to construct parsers for custom grammars.
+- [Parsing Utilities](https://john-cd.com/rust_howto/categories/parsing/parsing.html) explains how to construct parsers for custom grammars.
 - [Text Processing](../text-processing/index.md) covers Markdown-adjacent string operations.
 
 {{#include refs.incl.md}}

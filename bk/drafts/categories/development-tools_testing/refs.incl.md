@@ -43,7 +43,7 @@
 [p~search]: ../database/search.md
 [p~sorting]: ../../../src/categories/algorithms/sorting.md
 [p~testing]: testing.md
-[p~time]: ../date-and-time/time_crate.md
+[p~time]: https://john-cd.com/rust_howto/categories/date-and-time/time_crate.html
 [p~tokio]: ../asynchronous/tokio.md
 [ex~development-tools_testing~rstest]: testing.md#rstest
 [ex~development-tools_testing~env-vars]: testing.md#env-vars

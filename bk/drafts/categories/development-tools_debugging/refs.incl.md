@@ -49,7 +49,7 @@
 [p~macros]: ../../../src/language/macros.md
 [p~main]: ../../language/entrypoint.md
 [p~modules]: ../../code_organization/modules.md
-[p~parse]: ../date-and-time/parse.md
+[p~parse]: https://john-cd.com/rust_howto/categories/date-and-time/parse.html
 [p~parsing]: # "../parsing/index.md"
 [p~toml]: ../parser-implementations/toml.md
 [p~tracing]: tracing.md

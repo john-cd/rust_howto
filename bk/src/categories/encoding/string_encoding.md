@@ -84,7 +84,6 @@ The [`hex`][c~hex~docs]↗{{hi:hex}} crate offers `hex::encode`, which produces 
 
 - [Rust strings][p~strings].
 - [Encoding and serialization][p~encoding].
-- [URL parsing and construction][p~url].
 - [Unique Identifiers][p~unique-identifiers].
 
 {{#include refs.incl.md}}

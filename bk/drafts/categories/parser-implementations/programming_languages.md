@@ -40,7 +40,7 @@ This example parses source into a `syn::File` AST and extracts selected top-leve
 {{#include ../../../crates/cats/parser_implementations/examples/programming_languages/syn.rs:example}}
 ```
 
-For expression parsing in a small custom language, see [Expression Parser](../parsing/expression_parser.md).
+For expression parsing in a small custom language, see [Expression Parser](https://john-cd.com/rust_howto/categories/parsing/expression_parser.html).
 
 ## Parse WebAssembly (WAT/WASM) {#wasm_parsing}
 

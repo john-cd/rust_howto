@@ -1,42 +1,12 @@
-<!-- TODO Reviewed ??-??-2026. -->
-
 # Index of Examples
 
-## Contributing
-
-### Book Editing and Example Code Development
-
-{{#include ../appendices/contributing/book_editing_and_example_code_development.incl.md}}
-
-### Dev Container and Docker
-
-{{#include ../appendices/contributing/dev_container_and_docker.incl.md}}
-
-### Development Environment Setup
-
-{{#include ../appendices/contributing/development_environment_setup.incl.md}}
-
-### Documentation Generation
-
-{{#include ../appendices/contributing/documentation_generation.incl.md}}
-
-### mdBook Pre-Processors
-
-{{#include ../appendices/contributing/mdBook_pre-processors.incl.md}}
-
-### Publication to `crates.io`
-
-{{#include ../appendices/contributing/publication_to_crates.io.incl.md}}
-
-### Repository Structure
-
-{{#include ../appendices/contributing/repository_structure.incl.md}}
-
-### Topics of Interest
-
-{{#include ../appendices/contributing/topics_of_interest.incl.md}}
+## Examples
 
 ## Algorithms
+
+### Graph Algorithms
+
+{{#include ../categories/algorithms/graph_algorithms.incl.md}}
 
 ### Hashing
 
@@ -49,6 +19,22 @@
 ### Sorting
 
 {{#include ../categories/algorithms/sorting.incl.md}}
+
+## Caching
+
+### In Memory Cache
+
+{{#include ../categories/caching/in_memory_cache.incl.md}}
+
+## Compression
+
+### Compression
+
+{{#include ../categories/compression/compression.incl.md}}
+
+### `tar`
+
+{{#include ../categories/compression/tar.incl.md}}
 
 ## Data Structures
 
@@ -63,6 +49,10 @@
 ### Bit Arrays
 
 {{#include ../categories/data-structures/bit_arrays.incl.md}}
+
+### Elsa
+
+{{#include ../categories/data-structures/elsa.incl.md}}
 
 ### Graphs
 
@@ -80,7 +70,11 @@
 
 {{#include ../categories/data-structures/other_maps.incl.md}}
 
-### Stack-Allocated Data Structures
+### Phf
+
+{{#include ../categories/data-structures/phf.incl.md}}
+
+### Stack-Allocated
 
 {{#include ../categories/data-structures/stack-allocated.incl.md}}
 
@@ -103,6 +97,40 @@
 ## Data Processing
 
 {{#include ../categories/data-processing/dataframes.incl.md}}
+
+## Date and Time
+
+### Duration
+
+{{#include ../categories/date-and-time/duration.incl.md}}
+
+### Parse
+
+{{#include ../categories/date-and-time/parse.incl.md}}
+
+### Time Crate
+
+{{#include ../categories/date-and-time/time_crate.incl.md}}
+
+## Development Tools
+
+## Encoding
+
+### CSV
+
+{{#include ../categories/encoding/csv.incl.md}}
+
+### Excel
+
+{{#include ../categories/encoding/excel.incl.md}}
+
+### Serde
+
+{{#include ../categories/encoding/serde.incl.md}}
+
+### String Encoding
+
+{{#include ../categories/encoding/string_encoding.incl.md}}
 
 ## Filesystem
 
@@ -156,9 +184,33 @@
 
 {{#include ../categories/mathematics/complex_numbers.incl.md}}
 
+### Differential Equations
+
+{{#include ../categories/mathematics/differential_equations.incl.md}}
+
+### Discrete Mathematics
+
+{{#include ../categories/mathematics/discrete_mathematics.incl.md}}
+
+### Graph Theory
+
+{{#include ../categories/mathematics/graph_theory.incl.md}}
+
 ### Linear Algebra
 
 {{#include ../categories/mathematics/linear_algebra.incl.md}}
+
+### Numerical Analysis
+
+{{#include ../categories/mathematics/numerical_analysis.incl.md}}
+
+### Numerical Integration
+
+{{#include ../categories/mathematics/numerical_integration.incl.md}}
+
+### Optimization
+
+{{#include ../categories/mathematics/optimization.incl.md}}
 
 ### Statistics
 
@@ -168,13 +220,41 @@
 
 {{#include ../categories/mathematics/trigonometry.incl.md}}
 
+### Units
+
+{{#include ../categories/mathematics/units.incl.md}}
+
+## Parsing
+
+### Expression Parser
+
+{{#include ../categories/parsing/expression_parser.incl.md}}
+
+### Parsing
+
+{{#include ../categories/parsing/parsing.incl.md}}
+
+## Template Engine
+
+### `tera`
+
+{{#include ../categories/template-engine/tera.incl.md}}
+
+### `tinytemplate`
+
+{{#include ../categories/template-engine/tinytemplate.incl.md}}
+
 ## Code Organization
+
+### CLIppy
+
+{{#include ../code-organization/clippy.incl.md}}
 
 ### Code Organization by Project Type
 
 {{#include ../code-organization/code_organization_by_project_type.incl.md}}
 
-### Dependencies
+### DependenCIes
 
 {{#include ../code-organization/dependencies.incl.md}}
 
@@ -216,7 +296,7 @@
 
 {{#include ../language/attributes.incl.md}}
 
-### Closures
+### ClOSures
 
 {{#include ../language/closures.incl.md}}
 
@@ -252,7 +332,7 @@
 
 {{#include ../language/impl_trait.incl.md}}
 
-### Iterators
+### I`tera`tors
 
 {{#include ../language/iterators.incl.md}}
 
@@ -260,7 +340,7 @@
 
 {{#include ../language/lifetimes.incl.md}}
 
-### Macros
+### MacrOS
 
 {{#include ../language/macros.incl.md}}
 
@@ -322,9 +402,11 @@
 
 {{#include ../links/rust_companies_and_jobs.incl.md}}
 
-### Videos and Podcasts
+### VideOS and Podcasts
 
 {{#include ../links/videos_and_podcasts.incl.md}}
+
+## Refs
 
 ## Rust Installation
 

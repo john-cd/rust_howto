@@ -1,16 +1,13 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-<!-- markdownlint-disable MD057 -->
-
-[ex~date-and-time~convert-local-time]: duration.md#convert-local-time
-[ex~date-and-time~display-formatted-date-time]: parse.md#display-formatted-date-time
-[ex~date-and-time~examine-date-and-time]: parse.md#examine-date-and-time
-[ex~date-and-time~humantime]: parse.md#humantime
-[ex~date-and-time~measure-elapsed-time]: duration.md#measure-elapsed-time
-[ex~date-and-time~parse-string-into-datetime-struct]: parse.md#parse-string-into-datetime-struct
-[ex~date-and-time~perform-checked-date-time-calc]: duration.md#perform-checked-date-time-calc
-[ex~date-and-time~time-crate]: time_crate.md#time-crate
-[ex~date-and-time~unix-timestamp]: parse.md#unix-timestamp
+[ex~date-and-time~convert-local-time]: https://john-cd.com/rust_howto/categories/date-and-time/duration.html#convert-local-time
+[ex~date-and-time~display-formatted-date-time]: https://john-cd.com/rust_howto/categories/date-and-time/parse.html#display-formatted-date-time
+[ex~date-and-time~examine-date-and-time]: https://john-cd.com/rust_howto/categories/date-and-time/parse.html#examine-date-and-time
+[ex~date-and-time~humantime]: https://john-cd.com/rust_howto/categories/date-and-time/parse.html#humantime
+[ex~date-and-time~measure-elapsed-time]: https://john-cd.com/rust_howto/categories/date-and-time/duration.html#measure-elapsed-time
+[ex~date-and-time~parse-string-into-datetime-struct]: https://john-cd.com/rust_howto/categories/date-and-time/parse.html#parse-string-into-datetime-struct
+[ex~date-and-time~perform-checked-date-time-calc]: https://john-cd.com/rust_howto/categories/date-and-time/duration.html#perform-checked-date-time-calc
+[ex~date-and-time~time-crate]: https://john-cd.com/rust_howto/categories/date-and-time/time_crate.html#time-crate
+[ex~date-and-time~unix-timestamp]: https://john-cd.com/rust_howto/categories/date-and-time/parse.html#unix-timestamp
 [p~date-and-time]: index.md
-[p~standard-library]: ../../../src/standard-library/index.md
-[c~jiff~docs]: https://docs.rs/jiff
+[p~standard-library]: https://john-cd.com/rust_howto/standard-library/index.html
