@@ -201,7 +201,7 @@ expand = true # partial words will match longer terms
 
 # mdbook-pandoc configuration
 # https://crates.io/crates/mdbook-pandoc
-# Requires `pandoc` and `tectonic` to be installed.
+# PDF rendering requires `pandoc`, `tectonic`, and `rsvg-convert` on PATH.
 
 [output.pandoc]
 optional = true # CI and Windows HTML builds may skip the PDF backend; request it explicitly in CI to run it.
@@ -228,6 +228,7 @@ to = "latex" # output format
 # Use tectonic as the PDF engine: it is self-contained and does not require a separate LaTeX installation.
 # See https://tectonic-typesetting.github.io
 pdf-engine = "tectonic"
+filters = [{ type = "lua", path = "scripts/book/pdf_badges.lua" }]
 
 # `mdbook-pandoc` overrides Pandoc's defaults for the following options to better support mdBooks
 file-scope = true # parse each file individually before combining

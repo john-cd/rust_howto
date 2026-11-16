@@ -56,6 +56,18 @@ Note that [`cargo doc --open`][book~cargo~cargo-doc]↗{{hi:cargo doc}} does not
 
 Read the `justfile`{{hi:justfile}} or the [just module][c~just~programmer-manual]↗ in `bk/scripts/docs`{{hi:just}} for more details.
 
+## Build the Book as a PDF {#build-book-pdf}
+
+Put `mdbook-pandoc`, `pandoc`, `tectonic`, and `rsvg-convert` on PATH. On Debian-based systems, `librsvg2-bin` supplies `rsvg-convert`. On Windows, install `mingw-w64-ucrt-x86_64-librsvg` with MSYS2 and add its `ucrt64/bin` directory to the build shell's PATH.
+
+From `bk/`, run the full build with PDF output and local link warnings treated as errors.
+
+```bash
+BUILD_PDF=1 MDBOOK_OUTPUT__LINKCHECK__WARNING_POLICY=error just bb
+```
+
+The PDF is written to `book/pandoc/pdf/book.pdf`. On Windows the build script defaults Tectonic's cache to `D:/cache/tectonic`. Set `TECTONIC_CACHE_DIR` to override it or when invoking `mdbook build` directly. The first render may download TeX files and fetch remote images. The PDF uses linked text for Shields.io badges and preserves other images.
+
 ## Use a "Dev Container" Feature {#dev-container-feature}
 
 Alternatively, use the ["Desktop lite" Dev Container feature][desktop-lite~repo]↗{{hi:desktop-lite}} to install a light GUI manager{{hi:GUI manager}}. Add the following to [`devcontainer.json`][dev-containers-devcontainer.json]↗{{hi:devcontainer.json}}:
