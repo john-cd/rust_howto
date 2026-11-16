@@ -4,6 +4,8 @@
 
 {{#include atomics.incl.md}}
 
+From `bk/crates`, run `cargo test --locked -p concurrency --example atomics`.
+
 ## Standard Atomic Types {#atomics}
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}{{hi:Atomics}}{{hi:std::sync::atomic}}
@@ -24,7 +26,7 @@ To share ownership of an atomic variable across threads, put it in an [`std::syn
 
 `crossbeam-utils` provides miscellaneous tools for concurrent programming. It offers [`crossbeam_utils::atomic::AtomicCell`][c~crossbeam-utils::atomic::AtomicCell~docs]↗{{hi:crossbeam_utils::atomic::AtomicCell}}, a thread-safe mutable memory location. This type is equivalent to [`std::cell::Cell`][c~std::cell::Cell~docs]↗{{hi:std::cell::Cell}}, except it can also be shared among multiple threads. Operations on `AtomicCell`s use atomic instructions whenever possible, and synchronize using global locks otherwise.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/concurrency/examples/atomics/atomic_cell.rs:example}}
 ```
 
@@ -38,7 +40,7 @@ The [`arc-swap::ArcSwap`][c~arc-swap::ArcSwap~docs]↗{{hi:arc-swap::ArcSwap}} t
 
 [![std][c~std~docs~badge]][c~std~docs] [![cat~concurrency][cat~concurrency~badge]][cat~concurrency]{{hi:Concurrency}}{{hi:Spinlock}}{{hi:std::sync::atomic::AtomicBool}}
 
-A spinlock{{hi:Spinlock}} is a simple synchronization primitive that uses busy-waiting (spinning) to acquire a lock. Unlike [`std::sync::Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}}, which puts the thread to sleep when the lock is unavailable, a spinlock keeps checking in a tight loop. This makes spinlocks efficient for very short critical sections, but wasteful for longer ones.
+A spinlock{{hi:Spinlock}} is a simple synchronization primitive that uses busy-waiting (spinning) to acquire a lock. A spinlock continually retries acquisition. A [`std::sync::Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} can block a waiting thread under contention. Prefer a mutex for application code and treat this spinlock as an example of acquire and release ordering.
 
 The following example implements a spinlock using [`std::sync::atomic::AtomicBool`][c~std::sync::atomic::AtomicBool~docs]↗{{hi:std::sync::atomic::AtomicBool}} with RAII-based locking via a guard type:
 
@@ -48,11 +50,7 @@ The following example implements a spinlock using [`std::sync::atomic::AtomicBoo
 
 `Spinlock<T>` is `Sync` when `T: Send`, because access to its protected value goes through the lock. Its guard carries an exclusive-access marker, so a guard is `Send` when `T: Send` but is `Sync` only when `T: Sync`. This prevents two threads from sharing one guard to access a non-`Sync` value such as `Cell<T>` concurrently.
 
-## Related Topics {#related-topics .skip}
-
-- [[shared_state | Shared-State Concurrency]].
-- [[send_sync | `Send` and `Sync`]].
-- [[loom | Model-Checking with Loom]] to check atomic orderings against the memory model.
+See [Model-Checking with Loom](loom.md) for a test that distinguishes acquire and release ordering from relaxed ordering.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -70,6 +70,11 @@
 [ex~compression~decompress-a-tarball]: ../categories/compression/tar.md#decompress-a-tarball
 [ex~compression~gzip-file]: ../categories/compression/compression.md#gzip-file
 [ex~compression~zip]: ../categories/compression/compression.md#zip
+[ex~concurrency~arc-swap]: ../categories/concurrency/atomics.md#arc-swap
+[ex~concurrency~atomics]: ../categories/concurrency/atomics.md#atomics
+[ex~concurrency~crossbeam-atomics]: ../categories/concurrency/atomics.md#crossbeam-atomics
+[ex~concurrency~loom]: ../categories/concurrency/loom.md#loom-model-checking
+[ex~concurrency~spinlock]: ../categories/concurrency/atomics.md#spinlock
 [ex~contributing~alternative-just-install]: ../appendices/contributing/development_environment_setup.md#alternative-just-install
 [ex~contributing~alternative-mdbook-install]: ../appendices/contributing/development_environment_setup.md#alternative-mdbook-install
 [ex~contributing~book-organization]: ../appendices/contributing/repository_structure.md#book-organization

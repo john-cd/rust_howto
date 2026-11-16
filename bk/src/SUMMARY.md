@@ -155,6 +155,8 @@
 - [Count Unicode Text for Display](categories/text-processing/unicode.md)
 - [Make an HTTP Request Against a Local Service](categories/web-programming_http-client/offline_http_client.md)
 - [Cancellation and Structured Concurrency](categories/asynchronous/structured_concurrency.md)
+- [Atomics](categories/concurrency/atomics.md)
+- [Model-Checking with Loom](categories/concurrency/loom.md)
 - [HTTP Servers](categories/web-programming_http-server/json_patch.md)
   - [OpenAPI and JSON Schema](categories/web-programming_http-server/openapi.md)
   - [Bound Retries and Concurrency with Tower](categories/web-programming_http-server/service_resilience.md)

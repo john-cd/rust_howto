@@ -12,7 +12,7 @@ An ordinary test runs one schedule of your threads and usually passes even when 
 
 The model below has two threads. A producer publishes a value and then raises a `ready` flag; the consumer may cancel the producer and reads the value only after it observes `ready`. The invariant is that a reader that sees `ready` always sees the published value, and `ready` is set exactly when the producer reports that it published. The correct protocol pairs a `Release` store with an `Acquire` load. The second test uses `Relaxed` for both and expects Loom to find the stale read.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/concurrency/examples/loom_model.rs:example}}
 ```
 
@@ -21,10 +21,10 @@ The model below has two threads. A producer publishes a value and then raises a 
 The model tests are named `loom_*` and live in their own example. Run them from `bk/crates`:
 
 ```sh
-cargo test -p concurrency --example loom_model
+cargo test --locked -p concurrency --example loom_model
 ```
 
-Tune the exploration with environment variables instead of editing the code: `LOOM_MAX_PREEMPTIONS` bounds the number of forced thread switches, `LOOM_MAX_BRANCHES` bounds the branches per execution, and `LOOM_LOG=1` prints the failing schedule. Loom is a test-only dependency, so it never ships in your binaries.
+This example sets a preemption bound of three in the model builder. To change that limit, edit the builder setting. `LOOM_MAX_BRANCHES` controls how many branches Loom allows in one execution. Loom is a test-only dependency in this package.
 
 In a real library, do not depend on `loom` in production code. Define the sync types behind a small module that re-exports `std::sync` normally and `loom::sync` under `#[cfg(loom)]`, declare `cfg(loom)` in `[lints.rust] unexpected_cfgs`, and run the model with `RUSTFLAGS="--cfg loom" cargo test --release`. This keeps the normal test run fast and reserves the exhaustive exploration for a dedicated CI job.
 
@@ -35,7 +35,7 @@ In a real library, do not depend on `loom` in production code. Define the sync t
 - Loom models the C11 memory model approximately. It does not support every ordering (for example, `SeqCst` fences and some relaxed behaviors are approximated), and it cannot test hardware effects, timing, I/O, or `unsafe` code that bypasses its types.
 - A passing model shows that the _model_ is correct within its bounds. It does not prove that arbitrary production code is correct; keep the model small, mirror the real protocol faithfully, and combine it with ordinary tests, Miri and review.
 
-See [Atomics][ex~concurrency~atomics] and [Shared-state Concurrency][ex~concurrency~shared-state] for the primitives being modeled, and [Testing][ex~development-tools_testing~testing] for the wider testing toolbox.
+See [Atomics][ex~concurrency~atomics] for the primitives being modeled.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
