@@ -22,7 +22,6 @@ Use VS Code's **Preferences: Open User Settings (JSON)** command to edit setting
     "bk/crates/Cargo.toml",
     "later/crates/Cargo.toml",
     "mdbook-utils/Cargo.toml",
-    "playground/Cargo.toml",
     "publish/Cargo.toml",
     "tools/Cargo.toml",
     "xmpl/Cargo.toml"

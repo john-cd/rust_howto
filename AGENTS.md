@@ -34,15 +34,14 @@
 
 This repository is a monorepo with several independent Rust workspaces. Run commands from the matching workspace instead of assuming the repo root is a Cargo workspace.
 
-| Area | Working directory | Build / lint / test | Run one test |
-| --- | --- | --- | --- |
-| Main book examples | `bk\` | `just b`, `just lc`, `just t` | `just ntt <keyword>` |
-| Book rendering | `bk\` | `just bb` to build the book, `just s` to serve it, `just q` for a faster preview path on Unix | n/a |
-| Future/staging crates | `later\` | `just b`, `just lc`, `just t` | `cargo test -p <crate> <test_name>` from `later\crates` |
-| Helper binaries | `tools\` | `just b`, `just lc`, `just t` | `cargo test -p <crate> <test_name>` |
-| Additional long-form examples | `xmpl\` | `just b`, `just lc`, `just t` | `cargo test -p <crate> <test_name>` |
-| Scratch workspace | `playground\` | `just b`, `just lc`, `just t` | `cargo test -p <crate> <test_name>` |
-| Placeholder published crate | `publish\` | `just b`, `just lc`, `just t` | `cargo test <test_name>` |
+| Area                          | Working directory | Build / lint / test                                                                           | Run one test                                            |
+| ----------------------------- | ----------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| Main book examples            | `bk\`             | `just b`, `just lc`, `just t`                                                                 | `just ntt <keyword>`                                    |
+| Book rendering                | `bk\`             | `just bb` to build the book, `just s` to serve it, `just q` for a faster preview path on Unix | n/a                                                     |
+| Future/staging crates         | `later\`          | `just b`, `just lc`, `just t`                                                                 | `cargo test -p <crate> <test_name>` from `later\crates` |
+| Helper binaries               | `tools\`          | `just b`, `just lc`, `just t`                                                                 | `cargo test -p <crate> <test_name>`                     |
+| Additional long-form examples | `xmpl\`           | `just b`, `just lc`, `just t`                                                                 | `cargo test -p <crate> <test_name>`                     |
+| Placeholder published crate   | `publish\`        | `just b`, `just lc`, `just t`                                                                 | `cargo test <test_name>`                                |
 
 Additional repo-specific commands:
 
@@ -59,7 +58,7 @@ This repo is primarily an mdBook publishing repo with Rust workspaces attached t
 - `tools\` is a separate Rust workspace for repo-specific helper binaries. `mdbook-scrub` is built there and consumed by `bk\book.toml` through the repo-level `bin\` directory. `tool_lib` is the shared library used by the tool crates.
 - `mdbook-utils\` is a companion CLI/library project used to manage links, reference definitions, code block extraction/includes, and sitemap generation for large mdBook source trees.
 - `later\src\` and `later\crates\` mirror the book/example structure for work-in-progress or future content that is not yet part of the main published book.
-- `xmpl\` holds standalone examples that are too large to embed directly in the book, `playground\` is for exploratory code, and `publish\` is the small placeholder crate published to crates.io so the book is discoverable there.
+- `xmpl\` holds standalone examples that are too large to embed directly in the book, and `publish\` is the small placeholder crate published to crates.io so the book is discoverable there.
 
 ## Worktrees and compilation caches
 

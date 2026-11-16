@@ -37,6 +37,11 @@ name = "pest"
 path = "examples/pest/main.rs"
 test = true
 
+[[example]]
+name = "pest_markdown"
+path = "examples/pest_markdown/main.rs"
+test = true
+
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"

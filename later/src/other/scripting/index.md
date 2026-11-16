@@ -8,32 +8,30 @@ Scripting in Rust has two distinct forms: running Rust source as a lightweight s
 
 Cargo's single-file script support uses frontmatter and is currently an unstable nightly feature. Its command-line form is `cargo +nightly -Zscript script.rs`; check the [Cargo unstable feature documentation][cargo-script-nightly] before relying on it. [`rust-script`][c~rust-script~repo]↗{{hi:rust-script}} is another script runner.
 
-```rust
----
-[dependencies]
-anyhow = "1"
----
+Save the example as `config_path.rs`. The `---cargo` block declares the script's dependency, and Clap parses `--config` as a path. The script prints the selected path.
 
-fn main() -> anyhow::Result<()> {
-    println!("Hello from one Rust source file");
-    Ok(())
-}
+```text
+{{#include examples/config_path.rs}}
+```
+
+```sh
+cargo +nightly -Zscript config_path.rs --config local.toml
 ```
 
 ## Embed a Scripting Language
 
-| Language | Crate | Typing | Sandboxing and embedding notes |
-| --- | --- | --- | --- |
-| Rhai | [`rhai`][c~rhai~docs]↗{{hi:rhai}} | Dynamic | Rust-oriented syntax; configure operation and data limits for untrusted scripts. |
-| Lua | [`mlua`][c~mlua~docs]↗{{hi:mlua}} | Dynamic | Bindings for Lua and Luau; select a runtime and features explicitly. See [[lua | Lua]]. |
-| Rune | [`rune`][c~rune~docs]↗{{hi:rune}} | Dynamic | Embeddable scripting language with host functions and modules. |
-| Koto | [`koto`][c~koto~docs]↗{{hi:koto}} | Dynamic | Small language designed for embedding. |
-| Roto | [`roto`][c~roto~docs]↗{{hi:roto}} | Static | Domain-specific scripting for network routing applications. |
-| JavaScript | [`boa`][c~boa~docs]↗{{hi:boa}}, [`deno_core`][c~deno_core~docs]↗{{hi:deno_core}} | Dynamic | Choose an engine or embed Deno's runtime core; host integration and permissions are your responsibility. |
-| Python | [`pyo3`][c~pyo3~docs]↗{{hi:pyo3}} | Dynamic | Embeds or interoperates with Python; see [[python | Python]]. |
-| Other JavaScript engines | [`quickjs-rs`][c~quickjs-rs~docs]↗{{hi:quickjs-rs}}, [`v8`][c~v8~docs]↗{{hi:v8}} | Dynamic | Bindings to QuickJS or Google's V8; check native build requirements and the maintenance state of the binding. |
-| Python bindings | [`cpython`][c~cpython~docs]↗{{hi:cpython}} | Dynamic | Older CPython bindings; compare with PyO3 for new integrations. |
-| WebAssembly runtimes | [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}, [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} | Varies | Embed a WebAssembly runtime or interpreter when scripts can be compiled to WASM; sandboxing still depends on the host configuration. |
+| Language                 | Crate                                                                               | Typing  | Sandboxing and embedding notes                                                                                                       |
+| ------------------------ | ----------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Rhai                     | [`rhai`][c~rhai~docs]↗{{hi:rhai}}                                                   | Dynamic | Rust-oriented syntax; configure operation and data limits for untrusted scripts.                                                     |
+| Lua                      | [`mlua`][c~mlua~docs]↗{{hi:mlua}}                                                   | Dynamic | Bindings for Lua and Luau; select a runtime and features explicitly. See [[lua                                                       | Lua]]. |
+| Rune                     | [`rune`][c~rune~docs]↗{{hi:rune}}                                                   | Dynamic | Embeddable scripting language with host functions and modules.                                                                       |
+| Koto                     | [`koto`][c~koto~docs]↗{{hi:koto}}                                                   | Dynamic | Small language designed for embedding.                                                                                               |
+| Roto                     | [`roto`][c~roto~docs]↗{{hi:roto}}                                                   | Static  | Domain-specific scripting for network routing applications.                                                                          |
+| JavaScript               | [`boa`][c~boa~docs]↗{{hi:boa}}, [`deno_core`][c~deno_core~docs]↗{{hi:deno_core}}    | Dynamic | Choose an engine or embed Deno's runtime core; host integration and permissions are your responsibility.                             |
+| Python                   | [`pyo3`][c~pyo3~docs]↗{{hi:pyo3}}                                                   | Dynamic | Embeds or interoperates with Python; see [[python                                                                                    | Python]]. |
+| Other JavaScript engines | [`quickjs-rs`][c~quickjs-rs~docs]↗{{hi:quickjs-rs}}, [`v8`][c~v8~docs]↗{{hi:v8}}    | Dynamic | Bindings to QuickJS or Google's V8; check native build requirements and the maintenance state of the binding.                        |
+| Python bindings          | [`cpython`][c~cpython~docs]↗{{hi:cpython}}                                          | Dynamic | Older CPython bindings; compare with PyO3 for new integrations.                                                                      |
+| WebAssembly runtimes     | [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}, [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} | Varies  | Embed a WebAssembly runtime or interpreter when scripts can be compiled to WASM; sandboxing still depends on the host configuration. |
 
 An embedded interpreter is not automatically a security boundary. Restrict exposed host functions, filesystem and network access, execution time, and memory according to the threat model.
 

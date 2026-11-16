@@ -9,7 +9,7 @@ the single-package `publish` crate). The single source of truth is
 `scripts/lints/<profile>.toml`:
 
 - `examples`: book and staging example workspaces (`bk/crates`, `later/crates`,
-  `xmpl`, `playground`), which relax lints that examples intentionally violate.
+  `xmpl`), which relax lints that examples intentionally violate.
 - `strict`: maintained tooling (`tools`, `publish`), which denies unsafe code and
   missing documentation.
 
@@ -28,7 +28,6 @@ TARGETS = {
     "bk/crates/Cargo.toml": ("examples", True),
     "later/crates/Cargo.toml": ("examples", True),
     "xmpl/Cargo.toml": ("examples", True),
-    "playground/Cargo.toml": ("examples", True),
     "tools/Cargo.toml": ("strict", True),
     "publish/Cargo.toml": ("strict", False),
 }

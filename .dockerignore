@@ -38,7 +38,6 @@ __pycache__/
 bk/drafts/
 later/
 mdbook-utils/
-playground/
 publish/
 typ/
 /*.md

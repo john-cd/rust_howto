@@ -23,7 +23,6 @@ updates:
       - /later/crates/cats/embedded
       - /later/crates/cats/gui/vizia
       - /later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest
-      - /playground
       - /publish
       - /tools
       - /xmpl

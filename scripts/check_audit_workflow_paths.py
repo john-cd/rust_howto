@@ -29,7 +29,6 @@ WORKSPACES = {
     "later/crates/cats/embedded": "later/crates/deny.toml",
     "later/crates/cats/gui/vizia": "later/crates/deny.toml",
     "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest": "later/crates/deny.toml",
-    "playground": "bk/crates/deny.toml",
     "publish": "bk/crates/deny.toml",
     "tools": "bk/crates/deny.toml",
     "xmpl": "bk/crates/deny.toml",

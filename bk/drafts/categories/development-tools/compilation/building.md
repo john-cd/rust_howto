@@ -4,13 +4,13 @@
 
 {{#include building.incl.md}}
 
-| Concern | Where to start |
-| --- | --- |
-| Build a package | Use `cargo check` for fast feedback, `cargo build` to compile, and `cargo run` to build and run a binary. |
-| Build scripts | Add `build.rs` only when a build needs to generate files, inspect the environment, or compile native code. See the [Cargo build-script reference][book~cargo~build-script]↗. |
-| Build profiles | Set development and release profile options in `Cargo.toml`; measure changes against the workload you care about. |
-| Compiler and linker configuration | Prefer Cargo's target and profile configuration. Keep machine-specific paths out of shared configuration. |
-| Repeated project tasks | Use a small `justfile` or a dedicated task runner when ordinary Cargo commands are not enough; see the [Cargo plugin build guide][p~building]. |
+| Concern                           | Where to start                                                                                                                                                               |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Build a package                   | Use `cargo check` for fast feedback, `cargo build` to compile, and `cargo run` to build and run a binary.                                                                    |
+| Build scripts                     | Add `build.rs` only when a build needs to generate files, inspect the environment, or compile native code. See the [Cargo build-script reference][book~cargo~build-script]↗. |
+| Build profiles                    | Set development and release profile options in `Cargo.toml`; measure changes against the workload you care about.                                                            |
+| Compiler and linker configuration | Prefer Cargo's target and profile configuration. Keep machine-specific paths out of shared configuration.                                                                    |
+| Repeated project tasks            | Use a small `justfile` or a dedicated task runner when ordinary Cargo commands are not enough; see the [Cargo plugin build guide][p~building].                               |
 
 For cross-compilation, linker choices, and compile-time optimization, use the focused [cross-compilation][p~cross-compilation] and [compilation performance][p~performance] guides. This chapter covers Cargo's normal build flow; the separate [Cargo plugin build guide][p~building] covers task runners such as `cargo-make`, `cargo-xtask`, and `xshell`.
 
@@ -27,34 +27,10 @@ Consult the [Just programmer's manual][c~just~programmer-manual]↗.
 Place the following example `justfile`{{hi:justfile}} in the root folder of your project. Run [`just`][c~just~website]↗{{hi:just}} to see a list of recipes. Run `just <recipe>` to execute the corresponding recipe.
 
 ```makefile
-# Load a .env file, if present.
-set dotenv-load
-
-default:
- @just --list --unsorted
-
-# Check a local package and all of its dependencies for errors
-check:
- @cargo check
-
-# Compile a local package and all of its dependencies
-build: check
- @cargo build
-
-# Run a binary or example of the local package
-run: check
- @cargo run
-
-system-info:
- @echo "This is an {{arch()}} machine".
-
-# Shebang script example
-foo:
-  #!/usr/bin/env bash
-  set -euxo pipefail
-  hello='Yo'
-  echo "$hello from Bash!"
+{{#include examples/justfile}}
 ```
+
+Run `just build` to check and build the project, or pass a name filter with `just test parses_input`. On Windows, run these recipes from Git Bash with its tools on PATH. From a child directory, run `just where` to see the difference between the invocation directory and the directory where recipes run.
 
 ### Install `just` in a Dev Container {#install-just-in-a-dev-container .skip}
 

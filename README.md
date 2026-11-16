@@ -11,7 +11,7 @@ Point your browser to [`https://john-cd.com/rust_howto`][rust-howto~website]↗ 
 
 ## Local Rust checks
 
-Install the toolchain from `rust-toolchain.toml` with `rustup show` in the checkout. From the repository root, run `just check` and `just test`. For targeted Cargo work, use `bk/crates`, `playground`, `publish`, `tools`, `xmpl`, or `later/crates` for deferred examples. For formatting, use the nightly pin in `rustfmt-toolchain.toml`.
+Install the toolchain from `rust-toolchain.toml` with `rustup show` in the checkout. From the repository root, run `just check` and `just test`. For targeted Cargo work, use `bk/crates`, `publish`, `tools`, `xmpl`, or `later/crates` for deferred examples. For formatting, use the nightly pin in `rustfmt-toolchain.toml`.
 
 ## Work In Progress
 
@@ -64,12 +64,12 @@ Keep the primary checkout on `develop`. Use `.worktrees/a`, `.worktrees/b`, and
 reusing slots, and keep each slot's build cache. The primary checkout's output
 slot is `main`, regardless of its branch name.
 
-| Variable | Windows default | Linux/macOS default |
-| --- | --- | --- |
-| `CODE_TARGET_ROOT` | `D:/target` | `$XDG_CACHE_HOME/cargo-target` or `~/.cache/cargo-target` |
-| `CODE_BUILD_ROOT` | `D:/code_build` | `$XDG_CACHE_HOME/cargo-build` or `~/.cache/cargo-build` |
-| `CODE_SCCACHE_ROOT` | `D:/sccache` | `$XDG_CACHE_HOME/sccache` or `~/.cache/sccache` |
-| `CODE_TEMP_ROOT` | `D:/temp` | Existing native `TMPDIR` or `/tmp` |
+| Variable            | Windows default | Linux/macOS default                                       |
+| ------------------- | --------------- | --------------------------------------------------------- |
+| `CODE_TARGET_ROOT`  | `D:/target`     | `$XDG_CACHE_HOME/cargo-target` or `~/.cache/cargo-target` |
+| `CODE_BUILD_ROOT`   | `D:/code_build` | `$XDG_CACHE_HOME/cargo-build` or `~/.cache/cargo-build`   |
+| `CODE_SCCACHE_ROOT` | `D:/sccache`    | `$XDG_CACHE_HOME/sccache` or `~/.cache/sccache`           |
+| `CODE_TEMP_ROOT`    | `D:/temp`       | Existing native `TMPDIR` or `/tmp`                        |
 
 Set roots to absolute paths and create the directories before building. Targets use
 `CODE_TARGET_ROOT/rust_howto/<slot>` and intermediate files use
