@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A calculator in two stages: a `winnow` lexer that produces zero-copy
 //! tokens with byte spans, then a hand-written precedence-climbing parser
 //! that builds and evaluates an expression tree.

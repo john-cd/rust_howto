@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Extract strongly typed headers with [`axum_extra::TypedHeader`].
 //!
 //! HTTP headers are text. A typed header is parsed into a Rust type for you,

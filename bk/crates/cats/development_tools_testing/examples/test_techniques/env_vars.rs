@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Reads configuration from the process environment without mutating it in
 //!
 //! tests.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Comparing types at runtime with `TypeId`.
 //!
 //! A `TypeId` is a unique identifier of a type, available at run time.

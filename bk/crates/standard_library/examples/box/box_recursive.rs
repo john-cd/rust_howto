@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example using `Box<T>` for recursive data structures.
 //!
 //! A recursive type such as a linked list or tree would have infinite size if

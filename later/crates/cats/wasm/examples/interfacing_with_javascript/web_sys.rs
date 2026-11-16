@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Calls a browser API from Rust through `web-sys`.
 //!
 //! `web-sys` provides bindings to the browser's APIs, such as the document, the

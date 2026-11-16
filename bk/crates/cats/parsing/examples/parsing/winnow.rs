@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates basic usage of the `winnow` crate.
 //!
 //! A parser combinator library builds parsers from small functions that are

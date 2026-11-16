@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Calculate how long to wait after hitting a GitHub REST API rate limit.
 //!
 //! See <https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api>.

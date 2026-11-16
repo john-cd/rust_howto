@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A basic one-dimensional rocket launch simulation.
 //!
 //! Simulations like this one let engineers test a design before building it.

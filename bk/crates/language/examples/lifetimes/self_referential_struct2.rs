@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of a self-referential struct using pinning.
 //!
 //! A self-referential struct holds a pointer to its own data. Moving the struct

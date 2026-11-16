@@ -8,7 +8,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Call an HTTP API from WebAssembly with [`gloo_net`].
 //!
 //! In the browser, programs cannot use the usual networking libraries; they

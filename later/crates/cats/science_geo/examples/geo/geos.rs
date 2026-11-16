@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Runs GEOS spatial predicates and operations through the `geos` crate.
 //!
 //! GEOS is the C++ geometry engine behind PostGIS and QGIS. Spatial predicates

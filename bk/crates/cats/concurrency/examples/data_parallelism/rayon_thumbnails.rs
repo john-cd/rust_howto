@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generating thumbnails of images in parallel with `rayon` and `image`.
 //!
 //! Creating thumbnails is CPU-bound and every image is independent, which makes

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Split and quote command lines with `shlex`.
 //!
 //! Shells split a command line into words using quoting rules. `shlex` applies

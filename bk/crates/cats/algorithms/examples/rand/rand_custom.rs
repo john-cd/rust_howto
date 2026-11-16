@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to implement a custom distribution for the `rand` crate.
 //!
 //! A distribution describes how random values are spread, for example uniformly

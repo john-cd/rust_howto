@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates persistent collections from the `rpds` crate.
 //!
 //! # RPDS (Rust Persistent Data Structures) Example

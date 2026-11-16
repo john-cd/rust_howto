@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Requiring several traits with `+`.
 
 use std::clone::Clone;

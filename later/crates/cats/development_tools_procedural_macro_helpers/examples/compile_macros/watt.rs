@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parses a function and renames it using `proc_macro2`, `syn`, and `quote`.
 //!
 //! Procedural macros are programs that rewrite code at compile time. `syn`

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encode PCM audio samples to a WAV buffer using `hound`.
 //!
 //! PCM (pulse-code modulation) samples are plain numbers that describe a sound

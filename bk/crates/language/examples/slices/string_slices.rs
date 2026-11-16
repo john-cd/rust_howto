@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! String slice examples.
 
 /// Creates string slices from a string literal and a `String`.

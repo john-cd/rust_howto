@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Testing timeouts and retries instantly with Tokio's paused clock.
 //!
 //! Tokio can pause its clock in tests and advance it by hand, so code with

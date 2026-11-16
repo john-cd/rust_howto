@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Writing tests that pass, fail, return a `Result` or are ignored.
 //!
 //! `cargo test` runs every function marked `#[test]` in parallel threads, and

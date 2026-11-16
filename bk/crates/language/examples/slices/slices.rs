@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A slice is a view into a contiguous sequence of elements in a collection.
 //!
 //! A slice (`&[T]`) consists of a pointer and a length. It allows safe,

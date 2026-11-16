@@ -5,7 +5,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Persist typed settings in the browser's local storage with [`gloo_storage`].
 //!
 //! Local storage is a small key-value store in the browser that survives page

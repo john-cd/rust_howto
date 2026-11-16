@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Load the AWS configuration once and share it across service clients.
 //!
 //! The SDK's configuration (credentials, region, retry policy) is loaded once,

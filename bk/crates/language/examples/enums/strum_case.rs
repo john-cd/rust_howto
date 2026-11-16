@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parse and print config values with `serialize_all` and
 //! `ascii_case_insensitive`.
 //!

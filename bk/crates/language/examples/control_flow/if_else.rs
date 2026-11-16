@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `if`, `else if` and `else` expressions.
 
 /// Branches on numbers and on a boolean condition.

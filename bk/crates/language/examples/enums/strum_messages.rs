@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Labels and tooltips for a settings menu with `strum`'s `EnumMessage`, and
 //! the variant list with `IntoEnumIterator`, `VariantNames` and `EnumCount`.
 

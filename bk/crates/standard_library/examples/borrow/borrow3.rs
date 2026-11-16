@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Implementing `Borrow` for a string type with canonical lowercase storage.
 
 /// A string wrapper that normalizes input for case-insensitive comparisons.

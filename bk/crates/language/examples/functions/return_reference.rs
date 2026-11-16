@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Returning references and owned values from functions.
 
 /// Return an owned type instead of a reference.

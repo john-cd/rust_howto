@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Implements an undo and redo history with reversible insert commands.
 //!
 //! Undo/redo is the command pattern: each action is stored as an object that

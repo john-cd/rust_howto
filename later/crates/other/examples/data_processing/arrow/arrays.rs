@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Build typed Arrow arrays, a schema, and a record batch.
 //!
 //! Apache Arrow is a columnar in-memory format: each column of a table is

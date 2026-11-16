@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The `inquire` crate is used for creating interactive CLI prompts.
 //!
 //! Interactive prompts ask the user questions: text input, yes/no, a list to

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! String data types: `&str`, `String` and string literals.
 //!
 //! Rust distinguishes between borrowed string slices (`&str`), which reference

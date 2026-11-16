@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Combining `Option` values with `map`, `and_then` and other combinators.
 
 /// Parses an even integer and halves it, returning `None` for invalid or odd

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The Abstract Factory pattern creates families of related objects without
 //! tying-in to their concrete implementations.
 //!

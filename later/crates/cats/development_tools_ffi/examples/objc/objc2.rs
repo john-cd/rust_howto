@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Convert a Rust string with the typed Objective-C Foundation bindings.
 //!
 //! Objective-C is the primary native object-oriented language for Apple's

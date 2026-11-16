@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Running code when a value is dropped, with the `Drop` trait.
 //!
 //! `Drop` runs code when a value goes out of scope, which is how Rust releases

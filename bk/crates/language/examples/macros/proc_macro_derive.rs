@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A derive procedural macro that implements a trait.
 //!
 //! A derive macro is a procedural macro: a Rust function that runs at compile

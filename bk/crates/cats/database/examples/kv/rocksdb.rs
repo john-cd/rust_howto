@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example using Facebook's `RocksDB` embeddable database.
 //!
 //! Ensure you have the '`RocksDB`' C++ library installed on your system,

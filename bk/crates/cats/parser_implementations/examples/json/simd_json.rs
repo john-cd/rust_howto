@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of using the `simd-json` crate for parsing and manipulating JSON
 //! data.
 //!

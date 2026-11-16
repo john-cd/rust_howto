@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A simple example that plays a 440Hz sine wave (A4) for 1 second.
 //!
 //! Sound is stored as samples, numbers that describe the air pressure many

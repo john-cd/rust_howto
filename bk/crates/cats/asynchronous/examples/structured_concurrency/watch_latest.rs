@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Choosing a Tokio channel: `watch` keeps only the latest value (config,
 //! state), `broadcast` delivers every event but receivers can lag, and `mpsc`
 //! is a work queue where each message goes to one consumer.

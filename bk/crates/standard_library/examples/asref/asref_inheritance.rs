@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Implement `AsRef` for a composed type, as a last resort.
 //!
 //! Rust has no inheritance or subtyping: `ImageFile` is not a `MediaFile`.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Add a `Run` button to code examples embedded in your crate documentation.
 //!
 //! Place the following attribute at the top of your crate.

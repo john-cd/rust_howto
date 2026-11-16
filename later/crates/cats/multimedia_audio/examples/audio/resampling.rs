@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Resamples a mono buffer from 48 kHz to 44.1 kHz with `rubato`.
 //!
 //! The sample rate is how many sound measurements are taken per second: 48 kHz

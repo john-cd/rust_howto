@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Create an image in memory, resize it and convert it to grayscale.
 //!
 //! Resizing creates thumbnails and fits images to a screen. The filter decides

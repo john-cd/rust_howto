@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generates random numbers in ranges with the `rand` crate.
 //!
 //! ### Performance Advantage of `Uniform` Distribution

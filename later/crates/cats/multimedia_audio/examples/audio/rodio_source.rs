@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Plays a sound produced by a custom `rodio::Source`.
 //!
 //! A source is an iterator of samples, pulled by the audio thread.

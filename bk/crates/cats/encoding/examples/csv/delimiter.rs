@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to use a custom delimiter during CSV deserialization.
 //!
 //! CSV (comma-separated values) is a plain-text table format, with one record

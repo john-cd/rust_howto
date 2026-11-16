@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Finds a button by its label and clicks it with `egui_kittest`.
 //!
 //! `egui_kittest` runs the UI headless, like the previous recipe, and adds

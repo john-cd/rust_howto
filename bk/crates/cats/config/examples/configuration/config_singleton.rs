@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Loads application settings once with a thread-safe singleton.
 //!
 //! Add config and serde with the derive feature to Cargo.toml.

@@ -5,7 +5,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generating a GraphQL server from a database with Seaography.
 //!
 //! Seaography is an automated GraphQL framework for SeaORM.

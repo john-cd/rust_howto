@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Receives from whichever Crossbeam channel is ready first.
 //!
 //! `select!` waits on several channels and runs the branch of whichever has a

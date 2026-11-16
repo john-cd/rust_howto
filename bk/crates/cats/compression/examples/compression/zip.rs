@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of using the `zip` crate.
 //!
 //! The `zip` crate supports reading and writing ZIP files.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to use backtraces to debug errors.
 //!
 //! The example code defines a struct `Rgb` that represents a color in RGB

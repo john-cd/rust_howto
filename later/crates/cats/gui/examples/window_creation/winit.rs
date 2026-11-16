@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Creating a window with `winit`.
 //!
 //! A window is how a program receives input and shows pixels. `winit` creates

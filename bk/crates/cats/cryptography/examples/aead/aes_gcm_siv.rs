@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to use the `aes-gcm-siv` crate to encrypt and
 //! decrypt data using the AES-GCM-SIV algorithm (Misuse-Resistant Authenticated
 //! Encryption Cipher).

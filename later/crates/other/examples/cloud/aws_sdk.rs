@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to use the AWS SDK for Rust to list Amazon S3
 //! buckets visible to the configured AWS identity.
 //!

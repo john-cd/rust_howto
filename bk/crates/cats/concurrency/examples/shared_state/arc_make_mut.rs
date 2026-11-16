@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Sharing a configuration between threads with `Arc`, and cloning it on write
 //! with `Arc::make_mut`.
 //!

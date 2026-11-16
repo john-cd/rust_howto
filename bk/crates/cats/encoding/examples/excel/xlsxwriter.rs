@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Writes an `.xlsx` workbook with `rust_xlsxwriter`: a bold header,
 //! numbers, dates, a formula and a column width.
 //!

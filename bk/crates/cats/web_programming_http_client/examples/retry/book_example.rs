@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Retry with exponential backoff.
 //!
 //! Retry a fallible async call with exponential backoff and jitter.

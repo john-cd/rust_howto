@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Round-trips DDS and KTX2 container metadata without a GPU.
 
 use ddsfile::AlphaMode;

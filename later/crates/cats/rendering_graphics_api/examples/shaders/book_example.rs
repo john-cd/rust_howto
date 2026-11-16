@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Validates a WGSL shader with `naga` and translates it to SPIR-V.
 
 use naga::back::spv;

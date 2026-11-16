@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Calls `async` code from blocking code by building a Tokio runtime by hand.
 //!
 //! To call async code from a plain `main` or a thread, build a Tokio runtime

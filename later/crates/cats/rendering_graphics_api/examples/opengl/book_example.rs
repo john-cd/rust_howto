@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates loading and calling the cross-platform `glow` bindings.
 
 use std::ffi::CStr;

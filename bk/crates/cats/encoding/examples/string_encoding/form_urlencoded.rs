@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encode and decode forms and path segments.
 //!
 //! Web forms and URLs can only carry a limited set of characters.

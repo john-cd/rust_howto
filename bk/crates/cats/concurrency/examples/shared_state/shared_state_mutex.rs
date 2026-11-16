@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates using a `Mutex` to safely share mutable state between threads.
 //!
 //! A `Mutex` allows one thread at a time to access the data it protects, which

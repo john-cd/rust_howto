@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Draw a vector shape in an OpenGL window with FemtoVG.
 //!
 //! FemtoVG is a 2D vector graphics library (paths, fills, strokes, text) that

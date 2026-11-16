@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates the use of the mimalloc memory allocator.
 //!
 //! Mimalloc is a general purpose, performance oriented allocator built by

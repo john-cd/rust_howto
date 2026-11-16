@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates a simple HTTP GET request using the `reqwest`
 //! crate. It fetches data from http://<httpbin.org/get> and prints the status, headers, and body.
 //!

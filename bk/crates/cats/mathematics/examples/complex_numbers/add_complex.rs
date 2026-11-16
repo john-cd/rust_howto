@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates the manipulation of complex numbers.
 //!
 //! A complex number has a real part and an imaginary part, written a + bi,

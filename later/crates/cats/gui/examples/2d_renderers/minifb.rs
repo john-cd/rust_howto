@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A minimal native graphics example using `minifb`.
 //!
 //! `minifb` opens a native window and gives you a plain `u32` pixel buffer to

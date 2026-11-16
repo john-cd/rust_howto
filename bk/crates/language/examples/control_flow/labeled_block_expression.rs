@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Labeled block expressions, which `break` out with a value.
 
 /// Breaks out of a labeled block with a value.

@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This function creates a gzip-compressed tar archive from a directory.
 //!
 //! A tar archive bundles many files into one, keeping paths and permissions;

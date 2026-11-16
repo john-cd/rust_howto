@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A spinlock built on an atomic flag, with a guard that unlocks it on drop.
 //!
 //! A spinlock makes a waiting thread loop until the lock is free instead of

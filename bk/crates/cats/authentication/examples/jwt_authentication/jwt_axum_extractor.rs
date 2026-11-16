@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Extract a JWT from the HTTP `Authorization` header and check a role in Axum.
 //!
 //! A JWT (JSON Web Token) is a signed token that carries claims such as the

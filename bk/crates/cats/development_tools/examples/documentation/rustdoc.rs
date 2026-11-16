@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Documenting a function, including documentation from an external file.
 //!
 //! `rustdoc` builds HTML documentation from doc comments, with links between

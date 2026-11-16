@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Basic usage of the `moka` crate for high-performance concurrent caching.
 //!
 //! ### Purpose and Architecture of `moka`

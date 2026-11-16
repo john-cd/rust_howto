@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates returning and handling a recoverable error with `Result`.
 //!
 //! `Result<T, E>` represents either success (`Ok`) or a failure (`Err`) that

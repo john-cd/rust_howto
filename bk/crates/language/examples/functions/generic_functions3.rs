@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A generic function with a lifetime parameter.
 
 /// Function with an explicit lifetime parameter.

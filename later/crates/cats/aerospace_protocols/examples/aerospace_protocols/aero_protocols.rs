@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encode and decode a MAVLink heartbeat without a vehicle or network.
 //!
 //! MAVLink is a lightweight binary protocol that drones, rovers and ground

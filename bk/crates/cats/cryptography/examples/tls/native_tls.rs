@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Build a platform TLS connector with `native-tls`.
 //!
 //! This example builds a `TlsConnector` and can make an opt-in verified TLS

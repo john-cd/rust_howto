@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Applies an embedded Diesel migration and round-trips a user in SQLite.
 //!
 //! An ORM (object-relational mapper) maps database rows to Rust structs, and a

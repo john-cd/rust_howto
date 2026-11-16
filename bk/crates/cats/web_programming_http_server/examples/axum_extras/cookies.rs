@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Set and read cookies with `tower-cookies`.
 //!
 //! A cookie is a small value the server asks the browser to store and send back

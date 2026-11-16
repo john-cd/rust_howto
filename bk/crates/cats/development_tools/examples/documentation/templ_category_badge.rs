@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generate a category badge with the shared `templ` renderer.
 //!
 //! A badge is a small label, here showing a category, rendered from a template.

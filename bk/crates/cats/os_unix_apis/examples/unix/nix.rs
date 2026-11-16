@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Simple Rust example using the `nix` crate to handle Unix-like operating
 //! system tasks: create a file, write to it, read from it, and delete it.
 //!

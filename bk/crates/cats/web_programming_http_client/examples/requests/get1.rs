@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates a simple HTTP GET request using the `reqwest`
 //! crate.
 //!

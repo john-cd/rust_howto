@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Inspect MP4 container metadata including tracks and duration using `mp4`.
 //!
 //! MP4 is a container: it holds separate tracks (video, audio, subtitles) plus

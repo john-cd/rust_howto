@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Get readable compiler errors for handlers with `#[debug_handler]`.
 //!
 //! Without the attribute, a handler with an unsupported signature fails with

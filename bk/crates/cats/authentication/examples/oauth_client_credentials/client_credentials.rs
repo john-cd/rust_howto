@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Obtains an OAuth 2.0 client-credentials token and calls a local mock API.
 //!
 //! The service requests a scoped token, then uses it to access a protected

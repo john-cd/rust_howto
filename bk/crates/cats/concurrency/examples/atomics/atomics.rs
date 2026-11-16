@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates the use of atomic types.
 //!
 //! This example uses `AtomicUsize` to maintain a global counter of threads.

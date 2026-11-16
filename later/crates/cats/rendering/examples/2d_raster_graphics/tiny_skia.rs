@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Draw shapes into a pixel buffer with `tiny-skia`.
 //!
 //! Rasterizing turns shapes (paths, fills, strokes) into the grid of coloured

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parallel iterators with `rayon`: a sum of squares and an in-place update.
 //!
 //! Rayon turns a sequential iterator into a parallel one by changing `iter()`

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Main function that parses command line arguments and prints their values:
 //!
 //! Command-line arguments are the words typed after a program name. A parser

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Replace a file so that readers never see a half-written file.
 //!
 //! Writing a file in place can leave it half-written if the program or the

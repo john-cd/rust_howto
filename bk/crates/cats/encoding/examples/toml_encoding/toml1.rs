@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to deserialize TOML data into Rust structs.
 //!
 //! TOML is a configuration file format designed to be easy for people to read

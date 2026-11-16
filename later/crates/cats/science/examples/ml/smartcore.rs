@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Train a SmartCore decision-tree classifier on synthetic data and measure its
 //! accuracy on a seeded holdout split.
 //!

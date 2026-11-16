@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Binding a value to a name while matching a pattern with `@`.
 
 /// A message with an identifier.

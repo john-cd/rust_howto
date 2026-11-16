@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates signing and verifying messages with ed25519-dalek.
 //!
 //! A digital signature proves who wrote a message and that it was not altered:

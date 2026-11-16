@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Implementing `Deref` for a smart pointer.
 //!
 //! A smart pointer owns data and behaves like a reference. Implementing `Deref`

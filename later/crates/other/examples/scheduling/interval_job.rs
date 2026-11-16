@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A periodic job with `tokio::time::interval`.
 //!
 //! `MissedTickBehavior::Skip` drops most of the ticks missed while a run was

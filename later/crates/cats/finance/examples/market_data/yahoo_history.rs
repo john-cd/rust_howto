@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Fetch daily bars from Yahoo! Finance under a rate limit.
 //!
 //! Respect the data provider's terms of use: Yahoo! Finance's public API is

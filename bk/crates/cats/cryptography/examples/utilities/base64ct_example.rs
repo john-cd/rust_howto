@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encode a fixed-size token with `base64ct`.
 //! Base64 is a text representation, not encryption. This crate's decoder
 //! avoids data-dependent lookup tables for sensitive byte sequences.

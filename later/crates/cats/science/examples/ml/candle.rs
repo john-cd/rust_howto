@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Train a linear model on synthetic data with Candle on the CPU.
 //!
 //! The example needs no downloaded model and uses the optional candle feature

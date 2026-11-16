@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Converts words to common naming conventions and uppercases a Unicode
 //! character.
 //!

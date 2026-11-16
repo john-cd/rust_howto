@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Detect a file's type from its first bytes.
 //!
 //! File type detection by content looks at the first bytes of a file, the

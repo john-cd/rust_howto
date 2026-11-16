@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Computing the median of a list of integers with quickselect.
 //!
 //! The median is the middle value of the sorted data, so unlike the mean it is

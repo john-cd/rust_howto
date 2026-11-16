@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encoding and decoding a struct in little-endian byte order with `byteorder`.
 //!
 //! Endianness is the order in which the bytes of a multi-byte number are

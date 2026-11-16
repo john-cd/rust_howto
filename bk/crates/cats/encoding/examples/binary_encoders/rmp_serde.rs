@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Serialize and deserialize a struct with MessagePack via `rmp-serde`.
 //!
 //! `to_vec_named` encodes a struct as a map with field names. The compact

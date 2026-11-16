@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Runs an `egui` UI for one frame without a window, a GPU or a display.
 //!
 //! The same technique lets the examples of the other `egui` add-on crates run

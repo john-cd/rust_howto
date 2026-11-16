@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encode an image to PNG and JPEG in memory.
 //!
 //! PNG is lossless and suits graphics and screenshots; JPEG is lossy,

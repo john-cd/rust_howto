@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates bounded concurrent processing with a deterministic stream.
 //!
 //! Bounded concurrency runs at most N tasks at once, for example N downloads,

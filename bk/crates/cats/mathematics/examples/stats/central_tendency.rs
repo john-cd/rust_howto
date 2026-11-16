@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Calculates the mean of a set of numbers.
 //!
 //! The mean is the sum divided by the count. It is sensitive to outliers

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to ignore case when matching file names.
 //!
 //! File name case sensitivity differs: Linux is case sensitive, while Windows

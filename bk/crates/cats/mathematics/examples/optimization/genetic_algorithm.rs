@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Evolve a solution with a genetic algorithm.
 //!
 //! A genetic algorithm imitates evolution: it keeps a population of candidate

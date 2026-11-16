@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Marks the code to profile with the `profiling` facade.
 //!
 //! `profiling` forwards each scope to a backend chosen with a Cargo feature,

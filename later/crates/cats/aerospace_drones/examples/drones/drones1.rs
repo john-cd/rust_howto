@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Sending a flight plan to a Tello drone.
 //!
 //! The plan is checked before any command is sent. The `tello` crate is bound

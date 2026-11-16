@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The `num_traits` crate provides numeric traits for generic mathematics.
 //!
 //! A trait describes behaviour that several types share. The numeric traits let

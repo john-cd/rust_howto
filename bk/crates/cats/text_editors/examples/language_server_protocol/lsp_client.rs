@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Opens a document and asks for its symbols with `lsp-server` and
 //! `lsp-types`, and shows the `Content-Length` framing that real servers use.
 //!

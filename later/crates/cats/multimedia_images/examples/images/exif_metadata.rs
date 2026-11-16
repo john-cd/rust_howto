@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Reads an orientation tag from a generated TIFF/EXIF record.
 //!
 //! EXIF is metadata stored inside photos: camera model, time, GPS position and

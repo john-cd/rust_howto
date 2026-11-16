@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Sleep until the next cron time, run the job, repeat: no drift, because each
 //! wake-up is computed from the schedule rather than from "now plus a period".
 //!

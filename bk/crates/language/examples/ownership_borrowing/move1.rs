@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates move semantics in Rust.
 //!
 //! Note that `String` (and all non-`Copy` types) have "move" semantics.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Importing items from the standard library with `use`.
 
 // This `use` statement allows us to use `HashMap` directly without having to

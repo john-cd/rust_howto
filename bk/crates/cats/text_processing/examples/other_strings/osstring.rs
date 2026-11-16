@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Working with `OsString` and `OsStr`, the platform-native strings.
 //!
 //! File names and environment variables are not always valid UTF-8, especially

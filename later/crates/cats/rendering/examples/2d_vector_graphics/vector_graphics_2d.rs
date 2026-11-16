@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Builds and tessellates a small vector path with Lyon.
 
 use lyon::math::point;

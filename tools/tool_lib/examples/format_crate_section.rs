@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Formatting crate sections and crate blocks using `tool_lib`.
 //!
 //! This example demonstrates how to use `tool_lib` to format:

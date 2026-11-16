@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! One-time initialization with `parking_lot::Once`.
 //!
 //! `parking_lot` provides smaller and usually faster locks than the standard

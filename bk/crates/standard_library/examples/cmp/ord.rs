@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Implementing ordering with `PartialOrd` and `Ord`.
 //!
 //! `PartialOrd` defines `<` and `>`; `Ord` says every pair of values can be

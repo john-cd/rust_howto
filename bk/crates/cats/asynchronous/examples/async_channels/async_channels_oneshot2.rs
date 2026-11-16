@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates the use of `tokio::sync::oneshot` channels to
 //! communicate between asynchronous tasks. It simulates downloading a file
 //! and then processing it in separate tasks.

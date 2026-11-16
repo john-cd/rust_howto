@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The guest side of the `howto:greeter` component.
 //! `wit_bindgen::generate!` reads the WIT file and generates the `Guest`
 //! trait to implement and the `logger` import to call.

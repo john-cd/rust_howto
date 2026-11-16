@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Configuring `env_logger` with an environment variable.
 //!
 //! `env_logger` reads the `RUST_LOG` environment variable to choose log levels,

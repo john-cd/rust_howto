@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A `RangeMap`, which maps ranges of keys to values.
 //!
 //! A range map associates values with ranges of keys, for example IP address

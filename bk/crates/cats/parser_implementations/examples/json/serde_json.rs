@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates parsing and serializing JSON data using the `serde_json` crate.
 //!
 //! JSON is the most common text format for web APIs. `serde_json` parses it

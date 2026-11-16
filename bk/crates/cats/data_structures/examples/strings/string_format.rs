@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Formatting strings with `print!`, `format!` and `write!`.
 //!
 //! Format strings describe how to print values: `{}` uses `Display` (for

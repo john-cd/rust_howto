@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A progress bar with `indicatif`.
 //!
 //! A progress bar shows how much of a task is done and estimates the time left.

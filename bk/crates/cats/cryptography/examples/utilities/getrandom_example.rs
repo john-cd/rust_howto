@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Fill a byte array with randomness from the operating system.
 //!
 //! Cryptographic keys, nonces and tokens must be unpredictable. `getrandom`

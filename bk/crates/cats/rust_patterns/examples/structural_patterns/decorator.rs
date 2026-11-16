@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Wraps a reader to add byte-counting behavior.
 //!
 //! The decorator pattern wraps an object to add behaviour while keeping the

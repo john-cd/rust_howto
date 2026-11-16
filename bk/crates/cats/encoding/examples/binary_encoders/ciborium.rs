@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example show how to (de)serialize CBOR data using the ciborium crate.
 //!
 //! CBOR stands for Concise Binary Object Representation, a binary data

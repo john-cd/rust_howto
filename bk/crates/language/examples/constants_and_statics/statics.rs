@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `static` Example.
 
 // Statics are in SCREAMING_SNAKE_CASE, must declare their type, must be

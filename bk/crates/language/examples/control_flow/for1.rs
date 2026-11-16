@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Examples using `for`.
 
 /// Loops over ranges and collections with `for`.

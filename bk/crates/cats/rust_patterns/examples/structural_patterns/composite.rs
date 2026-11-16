@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Represents and evaluates a tree with leaf and group nodes.
 //!
 //! The composite pattern treats single objects and groups of them uniformly, as

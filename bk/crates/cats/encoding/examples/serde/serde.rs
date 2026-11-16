@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates basic serialization and deserialization using `serde`.
 //!
 //! Serialization turns a Rust value into a format such as JSON, and

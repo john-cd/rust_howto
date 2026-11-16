@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This module contains an example of verifying Rust code using Kani.
 //!
 //! See <https://model-checking.github.io/kani/tutorial-first-steps.html>.

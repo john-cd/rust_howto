@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Records request counts and durations with the `metrics` facade.
 //!
 //! The `metrics` crate is a facade like `log`: code records counters, gauges

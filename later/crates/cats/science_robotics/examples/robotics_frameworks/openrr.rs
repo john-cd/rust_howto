@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Forward and inverse kinematics of a planar arm with `k`, the kinematics
 //! library underneath OpenRR. No robot, simulator or GUI is needed.
 //!

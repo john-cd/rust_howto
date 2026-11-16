@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Pinning values with `Pin` and `PhantomPinned`.
 //!
 //! `Pin` promises that a value will not be moved in memory. Futures made by

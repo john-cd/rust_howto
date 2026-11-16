@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Run the benchmarks with `cargo bench`:
 //!
 //! Benchmarks measure how fast code runs. Criterion runs the code many times,

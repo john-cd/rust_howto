@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates the usage of the `xshell` crate for shell
 //! scripting in Rust.
 //!

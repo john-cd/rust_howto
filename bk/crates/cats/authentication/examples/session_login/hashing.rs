@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Hash and verify passwords with Argon2id.
 //!
 //! ### Argon2id Password Hashing

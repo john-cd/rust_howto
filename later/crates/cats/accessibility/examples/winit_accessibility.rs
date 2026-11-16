@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Exposes a button in a native Winit window through AccessKit.
 //!
 //! The tree describes the window and its labeled button in semantic terms, so

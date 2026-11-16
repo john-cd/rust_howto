@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Restricting the types a declarative macro accepts.
 
 // 1. If you want to allow expressions but ensure they are numeric, you can enforce type checking:

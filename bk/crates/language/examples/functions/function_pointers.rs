@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Passing and calling function pointers.
 //!
 //! Function pointers (`fn(...) -> ...`) point to executable code rather than

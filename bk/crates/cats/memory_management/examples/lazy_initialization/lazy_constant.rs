@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates a lazily initialized global map with `std::sync::LazyLock`.
 //!
 //! A `static` must be built at compile time, which rules out maps and other

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Reports the native graphics API behind a headless `wgpu` adapter.
 //!
 //! An adapter represents a physical or software GPU. Vulkan, Metal and DirectX

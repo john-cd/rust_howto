@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Types that implement `Copy` are copied instead of moved.
 //!
 //! Values that implement `Copy` are duplicated implicitly, so the original

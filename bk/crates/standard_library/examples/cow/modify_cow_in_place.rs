@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Modifying a `Cow` in place, cloning it on write.
 //!
 //! `to_mut` gives mutable access to the data inside a `Cow`. If it was

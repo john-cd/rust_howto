@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Simple example of a GUI application with `egui`.
 //!
 //! In `Cargo.toml`, add:

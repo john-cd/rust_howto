@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example shows how to use the `exp` function on a complex number.
 //!
 //! Euler's formula links the exponential function with rotation:

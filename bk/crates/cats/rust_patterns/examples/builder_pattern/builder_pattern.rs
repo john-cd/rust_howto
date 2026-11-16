@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example builder pattern.
 //!
 //! The builder pattern constructs a complex value step by step with chained

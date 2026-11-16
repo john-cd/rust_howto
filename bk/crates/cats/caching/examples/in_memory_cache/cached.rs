@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates two key uses of the `cached` crate:
 //! - Simple function memoization with `#[cached]`,
 //! - Advanced caching with custom configuration options.

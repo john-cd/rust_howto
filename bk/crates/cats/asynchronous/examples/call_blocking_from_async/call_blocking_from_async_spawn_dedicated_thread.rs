@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Runs CPU-bound work from `async` code on a dedicated thread.
 //!
 //! For long-running or CPU-heavy work, a dedicated thread avoids occupying the

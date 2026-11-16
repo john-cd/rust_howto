@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Measure a unit square and compare two city coordinates with `geo`.
 //!
 //! Geospatial code works with points, lines and polygons given as coordinates.

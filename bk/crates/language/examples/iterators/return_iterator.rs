@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Returning an iterator from a function with `impl Iterator`.
 
 /// Return an iterator from a function using the `impl Iterator<Item = T>`

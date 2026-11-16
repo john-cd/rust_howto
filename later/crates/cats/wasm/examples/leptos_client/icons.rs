@@ -13,7 +13,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Use [`icondata`] icon data as inline SVG in a Leptos view.
 //!
 //! `icondata` ships the paths of many icon sets as constants; enable only the

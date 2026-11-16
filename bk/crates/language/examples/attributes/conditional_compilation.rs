@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates conditional compilation using the `#[cfg]`
 //! attribute and `cfg!` macro.
 //!

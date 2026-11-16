@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates the basic usage of `HashMap` in Rust.
 //!
 //! `HashMap` is a collection that stores key-value pairs, where each key is

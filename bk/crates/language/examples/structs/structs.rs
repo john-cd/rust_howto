@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The `main` function creates an instance of the `User` struct.
 //! It then prints the struct to the console.
 

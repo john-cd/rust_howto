@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A small GraphQL endpoint using `async-graphql` with Axum.
 //!
 //! The `/graphql` route accepts GraphQL requests and runs them against a schema

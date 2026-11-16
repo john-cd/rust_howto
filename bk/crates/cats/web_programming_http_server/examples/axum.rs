@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This module demonstrates basic usage of axum.
 //!
 //! `axum` is a web application framework designed to work with `tokio`

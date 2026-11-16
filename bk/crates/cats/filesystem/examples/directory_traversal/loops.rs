@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates the use of the `same_file` crate.
 //!
 //! Symbolic links can point back to a parent directory, so naively following

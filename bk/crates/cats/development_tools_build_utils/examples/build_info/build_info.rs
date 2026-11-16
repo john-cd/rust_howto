@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Embedding build details, such as the version, Git commit and build time, in
 //! the binary helps with support: a bug report can state exactly which build
 //! produced it.

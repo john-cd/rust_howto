@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parses Rust source text into an abstract syntax tree with `syn`.
 //!
 //! An abstract syntax tree (AST) represents the structure of source code as a

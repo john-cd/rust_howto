@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Serialize a Rust value to YAML and deserialize it with `serde-saphyr`.
 //!
 //! YAML is a human-friendly data format that uses indentation, popular for

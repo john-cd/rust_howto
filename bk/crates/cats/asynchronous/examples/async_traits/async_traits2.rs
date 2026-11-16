@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Return-position `impl Trait` in a trait method.
 //!
 //! A trait method can return `impl Future` (return-position `impl Trait`),

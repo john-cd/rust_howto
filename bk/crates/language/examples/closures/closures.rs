@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Using a closure to filter a list.
 
 /// Finds all strings in a list that contain the '@' character.

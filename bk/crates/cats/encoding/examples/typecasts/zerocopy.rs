@@ -5,7 +5,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates zero-cost memory manipulation with `zerocopy`.
 //!
 //! First, add the following to your `Cargo.toml`:

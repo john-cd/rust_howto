@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Compare floating-point values with `float-cmp` and `approx`.
 //!
 //! `0.1 + 0.2` is not exactly `0.3` in binary floating point, so exact

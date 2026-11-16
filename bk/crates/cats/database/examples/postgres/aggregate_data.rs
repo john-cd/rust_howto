@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Group PostgreSQL rows by artist nationality and count each group.
 //!
 //! An aggregate query combines rows. `GROUP BY` puts rows with the same value

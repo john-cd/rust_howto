@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Consuming any `IntoIterator` in a generic function.
 
 /// This function demonstrates the use of `IntoIterator` as a trait bound,

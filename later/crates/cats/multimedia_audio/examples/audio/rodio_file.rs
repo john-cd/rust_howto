@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Decodes a WAV in memory and shows how to play a file with `rodio`.
 //!
 //! WAV is an uncompressed audio container that stores samples directly; MP3 and

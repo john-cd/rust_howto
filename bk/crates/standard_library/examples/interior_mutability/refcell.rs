@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `RefCell<T>` is a smart pointer that provides interior mutability.
 //! It allows us to mutate data even when there are immutable references to it.
 //! It enforces borrowing rules _at runtime_, panicking if they are violated.

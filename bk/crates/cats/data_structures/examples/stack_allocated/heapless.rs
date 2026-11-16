@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Fixed-capacity collections from the `heapless` crate.
 //!
 //! `heapless` offers collections with a fixed capacity that never allocate, for

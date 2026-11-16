@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A small Rocket server with one route and an in-process test.
 //!
 //! Run it with `cargo run --example rocket --features rocket-support`.

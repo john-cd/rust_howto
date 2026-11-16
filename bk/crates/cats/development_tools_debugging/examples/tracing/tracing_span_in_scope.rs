@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to use tracing spans to instrument code,
 //! including synchronous and asynchronous code.
 //!

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Examples of use of the 'crates.io' API.
 //!
 //! crates.io is the public registry of Rust packages. Its API reports versions,

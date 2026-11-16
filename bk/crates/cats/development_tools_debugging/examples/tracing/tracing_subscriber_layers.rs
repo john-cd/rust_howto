@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Composing a `tracing` subscriber from layers and filters.
 //!
 //! Layers add behaviour to a subscriber and stack: one layer might print to the

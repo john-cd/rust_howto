@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Captures and prints a stack trace using the standard library.
 //!
 //! A backtrace lists the chain of function calls that led to a point in the

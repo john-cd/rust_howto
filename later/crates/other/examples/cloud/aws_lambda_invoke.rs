@@ -5,7 +5,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Invoke an AWS Lambda function synchronously and asynchronously.
 //!
 //! AWS Lambda runs your function on demand without servers to manage. A

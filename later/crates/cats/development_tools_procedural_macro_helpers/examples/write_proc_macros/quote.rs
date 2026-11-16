@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generate a struct and typed getters from field syntax using `quote`.
 //!
 //! `#variable` interpolates a value implementing `ToTokens`; repetitions such

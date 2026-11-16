@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parses Rust source text with `syn` (outside of a procedural macro) and
 //! counts the items it defines with a `Visit` implementation.
 //!

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Newtypes that carry a unit: only the operations that make sense are
 //! implemented, so the compiler rejects mixing units by mistake.
 //!

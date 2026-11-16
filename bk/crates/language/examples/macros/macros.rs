@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Ways to use function-like macros: as expressions, statements, items and
 //! types.
 

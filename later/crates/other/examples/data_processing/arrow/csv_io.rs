@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Write an Arrow record batch to CSV and read it back.
 //!
 //! CSV is a plain-text format with no types, while Arrow columns are typed.

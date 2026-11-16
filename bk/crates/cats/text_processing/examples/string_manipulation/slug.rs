@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Turn a title into a URL-friendly slug.
 //!
 //! A slug is the readable part of a URL derived from a title: lowercase, words

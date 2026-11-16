@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Basic `Box` usage.
 //!
 //! `Box<T>` stores a value on the heap and owns it. Use it for large values you

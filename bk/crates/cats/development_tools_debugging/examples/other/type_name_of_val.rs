@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Printing the type of a value with `type_name_of_val`.
 //!
 //! `type_name_of_val` returns the name of a value's type as text, which is

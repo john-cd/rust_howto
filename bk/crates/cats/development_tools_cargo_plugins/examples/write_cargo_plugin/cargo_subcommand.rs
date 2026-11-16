@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parse the arguments of a `cargo hello` subcommand and select packages.
 //!
 //! Cargo runs any executable named `cargo-<name>` on your `PATH` when you type

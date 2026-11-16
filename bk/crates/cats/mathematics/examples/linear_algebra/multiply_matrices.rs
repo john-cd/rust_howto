@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates matrix multiplication using the `ndarray` crate.
 //!
 //! Matrix multiplication combines rows of the first matrix with columns of the

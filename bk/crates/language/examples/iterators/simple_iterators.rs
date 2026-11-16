@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Simple iterators that are built from a function or a value.
 
 use std::iter;

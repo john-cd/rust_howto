@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates wrapping arithmetic with `std::num::Wrapping`.
 
 use std::num::Wrapping;

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Shortest path search on a weighted graph using the A* algorithm with
 //! `petgraph`.
 //!

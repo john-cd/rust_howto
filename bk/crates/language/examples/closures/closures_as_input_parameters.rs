@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Closures as function arguments.
 
 // This function demonstrates how to accept a closure as an input parameter.

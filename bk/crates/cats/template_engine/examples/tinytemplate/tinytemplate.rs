@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example showcasing `tinytemplate`.
 //!
 //! `TinyTemplate` is a minimal templating library.

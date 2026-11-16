@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Loads inline Fluent resources and formats greetings and plural messages.
 //!
 //! The example keeps English and French translations in FTL resources and

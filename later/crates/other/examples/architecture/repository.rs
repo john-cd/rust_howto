@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example usage of the `InMemoryUserRepository`.
 //!
 //! The repository pattern hides data storage behind an interface with methods

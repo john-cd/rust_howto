@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates the use of `crossbeam_channel`'s `tick` and
 //! `after` functions to create channels that deliver messages periodically and
 //! after a certain duration, respectively.

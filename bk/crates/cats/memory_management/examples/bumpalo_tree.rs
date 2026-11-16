@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A binary search tree whose nodes live in a `bumpalo` arena.
 //!
 //! Nodes refer to each other with plain `&'bump` references: no `Box`, no

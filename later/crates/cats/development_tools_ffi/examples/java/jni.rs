@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Calling Rust from Java with the Java Native Interface.
 //!
 //! JNI (Java Native Interface) is how Java calls native code. A Rust function

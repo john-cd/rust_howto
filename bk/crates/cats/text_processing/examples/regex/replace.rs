@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Reformatting dates with a regular expression replacement.
 //!
 //! Regexes can rewrite text: capture groups are referred to in the replacement

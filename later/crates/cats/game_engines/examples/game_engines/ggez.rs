@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Moves and draws a bouncing ball with ggez.
 //!
 //! A game loop repeats: handle input, update the game state, draw a frame. The

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Predict numeric values with a linear regression model from `linfa-linear`.
 //!
 //! Linear regression fits a straight line (or plane) through data to predict a

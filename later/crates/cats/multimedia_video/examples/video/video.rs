@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encodes a short synthetic video as AV1 packets using `rav1e`.
 //!
 //! `rav1e` is a pure-Rust AV1 encoder. The workflow is the same for any

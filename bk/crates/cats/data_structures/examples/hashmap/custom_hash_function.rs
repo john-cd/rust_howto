@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to use a custom hash function (FNV) with `HashMap` and
 //! `HashSet` for better performance with small keys.
 //!

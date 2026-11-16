@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Creating and unwrapping `Option` values.
 
 /// Creates `Some` and `None` values and unwraps them.

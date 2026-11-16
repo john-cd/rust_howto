@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Talking to Cassandra over its native protocol with `cassandra-protocol`.
 //!
 //! Cassandra is a distributed NoSQL database built for huge data volumes and

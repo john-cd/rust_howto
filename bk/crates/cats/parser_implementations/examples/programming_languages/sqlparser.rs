@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to use the `sqlparser` crate to parse SQL
 //! statements, extract information from them, and regenerate the original SQL
 //! text from the parsed Abstract Syntax Tree (AST).

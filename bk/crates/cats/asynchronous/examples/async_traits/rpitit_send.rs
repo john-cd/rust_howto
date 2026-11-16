@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Making the futures of a trait method `Send` so the trait can be used with
 //! `tokio::spawn`: either declare `-> impl Future<Output = T> + Send`, or let
 //! `trait_variant` generate a `Send` version of the trait.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Authenticated encryption with ChaCha20-Poly1305, with and without associated
 //! data.
 //!

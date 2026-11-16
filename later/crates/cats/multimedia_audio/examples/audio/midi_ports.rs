@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Lists MIDI input ports with `midir` and decodes raw MIDI messages.
 //!
 //! MIDI is a protocol that sends musical events, such as "note on, key 60,

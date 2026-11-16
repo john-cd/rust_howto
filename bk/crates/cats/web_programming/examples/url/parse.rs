@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates URL parsing.
 //!
 //! A URL has parts: scheme (`https`), host (`example.com`), optional port,

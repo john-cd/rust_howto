@@ -5,7 +5,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Send an HTML and plain-text email with Amazon SES v2.
 //!
 //! Amazon SES is a service for sending email at scale. A message has a

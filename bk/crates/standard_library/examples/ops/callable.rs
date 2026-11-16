@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Making a struct callable by implementing the `Fn` traits.
 //!
 //! A closure is an anonymous function that can capture variables. The `Fn`,

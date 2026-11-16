@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Drive a simulated first-order plant to a setpoint with a PI controller.
 //!
 //! A PID controller keeps a measured value, such as a motor speed, a drone's

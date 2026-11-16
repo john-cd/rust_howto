@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates vector operations using the `nalgebra` crate:
 //! creating vectors, computing dot and cross products, norm, and normalization.
 //!

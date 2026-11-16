@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Draws software pixels in a native Winit window.
 //!
 //! Software rendering means the CPU computes every pixel into a buffer that is

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Price European options with the `black_scholes` crate, then recover the
 //! volatility from a price (implied volatility).
 //!

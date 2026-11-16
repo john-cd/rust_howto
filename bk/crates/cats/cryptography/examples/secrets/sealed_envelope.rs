@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Seals a secret under a passphrase: Argon2id derives a key, and
 //! XChaCha20-Poly1305 encrypts the secret, authenticating a version label and
 //! context as associated data.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! MD5 hashing with the RustCrypto `md-5` crate.
 //!
 //! WARNING: MD5 should be considered cryptographically broken and unsuitable

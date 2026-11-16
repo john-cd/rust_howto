@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Extracting hashtags from a text with a regular expression.
 //!
 //! A regular expression (regex) describes a text pattern. Capture groups pick

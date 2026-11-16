@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Lifetime parameters on a function.
 //!
 //! A lifetime describes how long a reference stays valid. When a function

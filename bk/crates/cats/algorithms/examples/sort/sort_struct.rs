@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Sorts a vector of structs, by their derived order and by a chosen field.
 //!
 //! Structs can be sorted by their derived ordering (field by field, in

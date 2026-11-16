@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Re-exporting a name with `pub use`.
 
 /// A module that re-exports a function from a private module.

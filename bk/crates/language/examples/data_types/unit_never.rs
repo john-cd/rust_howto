@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The unit type `()` and the never type `!`.
 //!
 //! The unit type `()` represents the absence of meaningful data and has a

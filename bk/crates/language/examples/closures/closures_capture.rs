@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Closures that capture their environment.
 
 /// Defines a closure that captures a variable and calls it.

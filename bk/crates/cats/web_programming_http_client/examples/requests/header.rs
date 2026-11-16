@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to set headers in HTTP requests using the `reqwest` crate.
 //!
 //! HTTP headers carry metadata with requests, such as `User-Agent` (who is

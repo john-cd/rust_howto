@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Spawn threads and collect their results through `JoinHandle::join`.
 //!
 //! A thread runs code concurrently with the rest of the program. `spawn` starts

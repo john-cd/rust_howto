@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Keeps a secret out of logs with a newtype whose `Debug` and `Display`
 //! implementations redact the value, then does the same with `secrecy`.
 //!

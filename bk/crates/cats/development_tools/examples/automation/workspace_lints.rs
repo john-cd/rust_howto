@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Checks that every workspace member opts in to the shared
 //! `[workspace.lints]` table, and can fix a manifest with `toml_edit`.
 //!

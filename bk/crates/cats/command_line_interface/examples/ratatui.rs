@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The main function initializes the terminal, runs the application, and
 //! restores the terminal to its original state.
 //!

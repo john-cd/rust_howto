@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Describe a task as data, then schedule, expand, parse and run it.
 //!
 //! - `cron` computes when the task is due.

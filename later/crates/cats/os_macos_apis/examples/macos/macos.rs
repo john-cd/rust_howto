@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Read the macOS version through typed Foundation bindings.
 //!
 //! Foundation is Apple's base framework for macOS and iOS apps. The typed

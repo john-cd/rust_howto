@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Classifies JSON keys, strings, numbers, and literals into byte spans with
 //! the Tree-sitter JSON grammar.
 //!

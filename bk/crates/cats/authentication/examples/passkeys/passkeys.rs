@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A passkey (WebAuthn) relying party built on `webauthn-rs`.
 //!
 //! The server never verifies signatures itself: `webauthn-rs` checks the

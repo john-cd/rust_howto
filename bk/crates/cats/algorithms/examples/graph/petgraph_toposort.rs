@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Topological sorting of a Directed Acyclic Graph (DAG) using `petgraph`.
 //!
 //! ### What is Topological Sorting?

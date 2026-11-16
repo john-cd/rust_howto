@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Run an ONNX model trained elsewhere (here, a scikit-learn logistic
 //! regression) with `ort`, and hot-swap the model without a restart.
 //!

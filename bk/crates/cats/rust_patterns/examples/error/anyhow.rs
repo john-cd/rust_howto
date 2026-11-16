@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates the use of the `anyhow` crate for error handling.
 //!
 //! `anyhow` is for applications: one `anyhow::Error` type holds any error and

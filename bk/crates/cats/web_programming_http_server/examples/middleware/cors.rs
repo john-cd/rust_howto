@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example showing how to add CORS headers to responses.
 //!
 //! Browsers block a web page from calling an API on another origin (domain)

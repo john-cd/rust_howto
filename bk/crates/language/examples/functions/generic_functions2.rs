@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generic functions with trait bounds.
 
 use std::fmt::Debug;

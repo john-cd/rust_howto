@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Diffing lines and words with `similar` and styling the result with
 //! `console`.
 //!

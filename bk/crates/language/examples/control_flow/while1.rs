@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This is an example of a `while` loop.
 
 /// This is an example of a `while` loop.

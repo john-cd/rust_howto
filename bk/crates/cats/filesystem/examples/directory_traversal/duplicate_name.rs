@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Find duplicate filenames in the current directory.
 //!
 //! Walking a directory tree visits every file below a path. Collecting names

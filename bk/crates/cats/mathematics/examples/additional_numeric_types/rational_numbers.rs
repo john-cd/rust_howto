@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Adds rational numbers without converting them to floating-point values.
 //!
 //! A rational number is a fraction of two integers. Adding 1/3 and 1/6 exactly

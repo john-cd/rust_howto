@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to configure the `env_logger` to output logs
 //! to `Stdout`.
 //!

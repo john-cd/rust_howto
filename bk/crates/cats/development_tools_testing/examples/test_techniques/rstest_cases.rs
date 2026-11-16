@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parameterized tests and fixtures with `rstest`.
 //!
 //! Table-driven tests run one test body with many input/expected pairs.

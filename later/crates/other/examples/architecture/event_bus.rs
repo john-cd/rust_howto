@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Event-driven architecture: producers publish events to subscribers.
 //!
 //! In an event bus, producers publish events without knowing who listens, and

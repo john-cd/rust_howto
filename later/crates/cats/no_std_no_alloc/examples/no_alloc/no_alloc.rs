@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A no-allocation example using fixed-capacity collections.
 //!
 //! Embedded programs often cannot allocate memory at run time, since allocation

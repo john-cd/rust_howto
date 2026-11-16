@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A dot product with SIMD: `std::arch` intrinsics selected at run time, a
 //! scalar fallback, and the portable `wide` crate.
 //!

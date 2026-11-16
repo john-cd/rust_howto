@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encode a blank AV1 frame using the `rav1e` crate.
 //!
 //! This example creates a default encoder context, sends one frame, flushes the

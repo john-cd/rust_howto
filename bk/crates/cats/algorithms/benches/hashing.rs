@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Criterion benchmark comparing non-cryptographic and cryptographic hash
 //! functions on byte buffers.
 //!

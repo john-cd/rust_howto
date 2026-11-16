@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Lists the packages and targets of a Cargo workspace with `cargo_metadata`.
 //!
 //! `cargo metadata` prints, as JSON, what Cargo knows about a project: its

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Configures and initializes the logging system using log4rs.
 //!
 //! The `log` crate is a facade: libraries call `info!`, `warn!` and so on, and

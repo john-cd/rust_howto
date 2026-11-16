@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Dereferencing a `Box`.
 
 /// Reads the value inside a `Box` with `*`.

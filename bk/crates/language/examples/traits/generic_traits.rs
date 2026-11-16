@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A generic trait.
 
 /// A generic trait that can be implemented for different types.

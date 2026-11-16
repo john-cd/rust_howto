@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates the `doc-comment` crate for attaching
 //! documentation text to a Rust item.
 //!

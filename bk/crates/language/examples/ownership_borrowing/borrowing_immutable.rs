@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Immutable Reference Example.
 
 /// Creates and dereferences a shared reference.

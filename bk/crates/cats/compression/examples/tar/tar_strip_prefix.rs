@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Extract regular files from a gzipped tar archive after removing a shared
 //! path prefix. The archive's file entries are written beneath the destination
 //! directory, and paths containing parent components are rejected.

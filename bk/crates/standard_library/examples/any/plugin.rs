@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A plugin system that stores shared services by their `TypeId`.
 //!
 //! A service registry stores one object per type, keyed by `TypeId`, and

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates embedding Rhai scripts in a Rust application.
 //!
 //! # Rhai scripting

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A counter application with `relm4`.
 //!
 //! Relm4 builds GTK 4 apps in the Elm style: a model holds the state, messages

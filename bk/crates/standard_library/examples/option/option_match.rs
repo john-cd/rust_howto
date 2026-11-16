@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Handling an `Option` with `match`.
 
 /// Divides `numerator` by `denominator`; returns `None` if the denominator is

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Make a Windows child die with its parent by using a Job Object.
 //!
 //! A Windows Job Object groups processes so the system can manage them

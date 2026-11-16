@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates generating random numbers within a specified range.
 //!
 //! ### `Rng::random_range` Optimization and Range Syntax

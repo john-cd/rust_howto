@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Mocking a struct's methods with `faux`.
 //!
 //! A mock replaces a real dependency (a database or a web service) in a test,

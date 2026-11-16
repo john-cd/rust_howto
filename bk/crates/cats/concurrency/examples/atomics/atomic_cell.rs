@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates the use of `AtomicCell` from the `crossbeam-utils` crate.
 //!
 //! An atomic value can be read and changed by several threads without a lock,

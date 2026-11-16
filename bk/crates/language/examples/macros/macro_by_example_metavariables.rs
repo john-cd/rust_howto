@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Metavariables in declarative macros.
 
 /// Prints one, two or more arguments, depending on how many expressions it

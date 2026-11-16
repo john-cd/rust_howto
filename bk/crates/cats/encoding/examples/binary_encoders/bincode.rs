@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Serialize and deserialize a struct with `bincode` 2.x.
 //!
 //! Version 2 changed the API: encode with `bincode::serde::encode_to_vec` and

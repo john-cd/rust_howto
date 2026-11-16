@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Building and traversing a directed graph with `petgraph`.
 //!
 //! A graph is a set of nodes connected by edges, for example cities and roads,

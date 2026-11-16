@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A minimal program for stepping through with a debugger.
 
 /// Computes and prints a value that can be inspected in a debugger.

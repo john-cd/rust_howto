@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Wrapping, filling and indenting text with `textwrap`.
 //!
 //! Wrapping breaks text into lines of a given width, which command-line help,

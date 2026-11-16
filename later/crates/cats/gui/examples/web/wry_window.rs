@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Shows a web page in a native window with `tao` and `wry`.
 //!
 //! `tao` creates the window and runs the event loop, `wry` puts the

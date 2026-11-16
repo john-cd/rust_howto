@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of a slice as a function argument.
 
 /// Returns the sum of the elements of `slice`.

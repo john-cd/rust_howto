@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Classifies source text into highlight spans with Tree-sitter, then updates
 //! the syntax tree incrementally after an edit.
 //!

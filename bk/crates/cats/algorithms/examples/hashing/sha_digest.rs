@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! SHA-256 digest of a file's contents with `ring`, printed as hexadecimal.
 //!
 //! A hash function turns any data into a short fixed-size fingerprint (a

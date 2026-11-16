@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Format a byte count as a human-readable size.
 //!
 //! People read "1.5 MiB" faster than "1572864". Binary units (KiB, MiB) use

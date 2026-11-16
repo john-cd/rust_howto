@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Locating the standard directories of the current user with `dirs`.
 //!
 //! The `dirs` crate finds the user's well-known folders (home, documents,

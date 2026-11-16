@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Projects a 3D triangle to screen space the way a renderer's vertex stage
 //! does.
 

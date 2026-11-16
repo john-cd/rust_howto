@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Highlights source code with `syntect` (TextMate grammars and themes), as
 //! HTML and as terminal escape codes.
 //!

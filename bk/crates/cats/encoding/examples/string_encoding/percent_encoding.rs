@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The following demonstrates how to use percent encoding to handle special
 //! characters in URLs.
 //!

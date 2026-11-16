@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A struct generic over a constant, the length of an array.
 //!
 //! Const generics parameterize a type by a value. Here, `InnerArray<i32, 8>`

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A small HTTP/1 server built directly with Hyper and Tokio.
 
 use std::convert::Infallible;

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Computing the mean and the standard deviation of a list of integers.
 //!
 //! The standard deviation measures how spread out the values are around the

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Run a Rust tool with `xshell` and capture its output.
 //!
 //! `xshell` makes it easy to write script-like Rust: a macro builds a command

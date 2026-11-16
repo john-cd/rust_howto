@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Run a local HTTP reverse proxy with Pingora.
 //!
 //! Start an HTTP server on `127.0.0.1:8000`, then run

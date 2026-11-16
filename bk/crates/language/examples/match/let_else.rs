@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The `let ... else` statement.
 //!
 //! `let ... else` binds a pattern and, if it does not match, runs a block that

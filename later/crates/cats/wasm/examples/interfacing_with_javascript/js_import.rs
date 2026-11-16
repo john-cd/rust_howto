@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Imports a JavaScript function into Rust through `wasm-bindgen`.
 //!
 //! WebAssembly (Wasm) is a compact binary format that browsers run at

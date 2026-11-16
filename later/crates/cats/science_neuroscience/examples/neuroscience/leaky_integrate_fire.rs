@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example: simulate a leaky integrate-and-fire neuron with constant current.
 //!
 //! Euler integration advances the membrane potential in one-millisecond steps.

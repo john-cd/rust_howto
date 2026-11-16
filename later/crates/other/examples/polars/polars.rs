@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example: query inline sales data with Polars and join regional targets.
 //!
 //! The example builds DataFrames with `df!`, runs a lazy filter, projection,

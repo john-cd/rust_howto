@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Single-source shortest path calculation on a weighted graph using Dijkstra's
 //! algorithm in `petgraph`.
 //!

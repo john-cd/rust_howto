@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Methods and associated functions on a struct.
 
 /// A struct representing a rectangle with a width and height.

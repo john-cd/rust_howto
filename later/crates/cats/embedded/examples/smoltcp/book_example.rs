@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Checks IPv4 addresses against a configured subnet with `smoltcp`.
 //!
 //! `smoltcp` is a TCP/IP network stack that needs neither an operating system

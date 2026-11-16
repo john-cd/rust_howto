@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Selecting the global allocator with Cargo features.
 //!
 //! Enable one of `use-mimalloc` and `use-jemalloc`; with neither, the system

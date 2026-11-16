@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Calling Rust from Flutter with `flutter_rust_bridge`.
 //!
 //! Flutter builds mobile and desktop interfaces in Dart. `flutter_rust_bridge`

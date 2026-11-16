@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Silencing the warning about unused code with `#[allow(dead_code)]`.
 //!
 //! The Rust compiler generates warnings for code that is defined but never

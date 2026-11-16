@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates rendering a 2D line plot into an SVG string using `plotters`.
 //!
 //! Plotters draws charts into many backends; SVG is a text format for vector

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parse a multipart email and print its subject and plain-text part.
 //!
 //! A multipart email carries several versions of the body, for example plain

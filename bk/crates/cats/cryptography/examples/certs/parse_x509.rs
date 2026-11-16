@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parse a DER-encoded X.509 certificate with `x509-cert`.
 //!
 //! `rcgen` supplies an offline certificate so this example does not depend on

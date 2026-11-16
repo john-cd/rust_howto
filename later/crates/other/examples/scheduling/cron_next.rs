@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Compute the next fire times of a cron expression with the `cron` crate.
 //!
 //! `cron` uses 6 or 7 fields: `sec min hour day-of-month month day-of-week

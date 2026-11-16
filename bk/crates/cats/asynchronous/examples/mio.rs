@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates basic `mio` event polling with a `Waker`.
 //!
 //! `mio` is the low-level layer under Tokio: it asks the operating system (via

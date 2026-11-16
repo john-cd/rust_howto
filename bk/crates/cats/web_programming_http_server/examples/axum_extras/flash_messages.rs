@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! One-time "flash" messages with `axum-messages` and `tower-sessions`.
 //!
 //! A flash message is a one-time notice, such as "Saved", stored in the user's

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generating and parsing UUIDs.
 //!
 //! A UUID is a 128-bit identifier that is unique for practical purposes without

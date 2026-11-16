@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates using `tokio::task::LocalSet` to run non-`Send` tasks.
 //!
 //! Tasks spawned with `tokio::spawn` may move between threads, so their data

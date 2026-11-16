@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Reading the metadata of files and directories.
 //!
 //! File metadata is information about a file apart from its content: size,

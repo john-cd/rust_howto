@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Creating a struct from another instance with the struct update syntax.
 
 /// Represents a user with their active status and username.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Connects to MySQL or MariaDB through a pool and runs parameterized queries.
 //!
 //! A connection pool keeps a few database connections open and lends them out,

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Redacts many words in a log line with one reusable, case-insensitive
 //! `aho-corasick` automaton.
 //!

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Train a logistic regression classifier in Rust with `smartcore`.
 //!
 //! Logistic regression is a classifier, despite the name: it predicts the

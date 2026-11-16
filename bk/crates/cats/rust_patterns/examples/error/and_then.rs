@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates chaining fallible operations with `Result::and_then`.
 //!
 //! `and_then` chains fallible steps: if the first succeeded, its value feeds

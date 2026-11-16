@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates successful and rolled-back SQLite transactions.
 //!
 //! A transaction groups several statements so that they either all take effect

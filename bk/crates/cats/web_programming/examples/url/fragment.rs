@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to parse a URL and extract a portion of it.
 //!
 //! The `Url::parse` function is used to parse a URL string into a `Url` object.

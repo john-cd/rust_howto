@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Emitting a debug message with the `log` crate.
 //!
 //! Log levels rank messages: `error`, `warn`, `info`, `debug` and `trace`, from

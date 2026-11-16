@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `rkyv` (short for "archive") is a high-performance, zero-copy
 //! (de)serialization framework that allows arbitrary field types
 //! and safe zero-copy mutation.

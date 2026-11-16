@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parsing published recipes using `tool_lib`.
 //!
 //! This example demonstrates how to use `tool_lib::collect_published_recipe_links`

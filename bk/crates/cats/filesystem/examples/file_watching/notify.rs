@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Add to your `Cargo.toml`:
 //! ```toml
 //! [dependencies]

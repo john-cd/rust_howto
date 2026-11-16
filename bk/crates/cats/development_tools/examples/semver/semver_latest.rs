@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to find the maximum matching version from a
 //! list of versions based on a given version requirement string, using the
 //! `semver` crate.

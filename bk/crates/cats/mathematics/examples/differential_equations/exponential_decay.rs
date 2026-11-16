@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Solve an exponential decay equation numerically and compare with the exact
 //! solution.
 //!

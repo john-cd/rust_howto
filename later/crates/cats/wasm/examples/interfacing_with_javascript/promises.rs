@@ -8,7 +8,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Awaits a JavaScript Promise from Rust.
 //!
 //! A JavaScript Promise stands for a value that arrives later, like a Rust

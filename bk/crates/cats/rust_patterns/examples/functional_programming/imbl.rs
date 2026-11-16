@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates structurally shared persistent collections from `imbl`.
 //!
 //! # Persistent Collections with `imbl`

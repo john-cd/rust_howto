@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example using the `redb` embedded key-value store.
 //!
 //! `redb` is a pure-Rust, ACID-compliant embedded key-value database with a

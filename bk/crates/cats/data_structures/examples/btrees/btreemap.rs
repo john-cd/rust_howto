@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A `BTreeMap`, an ordered map, storing book ratings.
 //!
 //! A `BTreeMap` keeps its keys sorted, so iteration is in order and you can

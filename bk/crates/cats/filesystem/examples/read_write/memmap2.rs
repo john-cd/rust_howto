@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates reading from a memory-mapped file.
 //!
 //! Memory mapping makes the operating system expose a file as if it were part

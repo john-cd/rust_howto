@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A trait with an associated type.
 //!
 //! An associated type is a type placeholder inside a trait that each

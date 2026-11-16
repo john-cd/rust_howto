@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Destructuring tuples, arrays and structs into variables.
 
 /// Destructures several kinds of values in `let` statements.

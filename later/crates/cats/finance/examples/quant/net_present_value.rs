@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Discounts a fixed sequence of cash flows with `financial`.
 //!
 //! Money today is worth more than the same money later, because it can earn

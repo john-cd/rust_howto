@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates explicit primitive integer overflow operations.
 
 /// Compares wrapping, checked, overflowing, and saturating addition.

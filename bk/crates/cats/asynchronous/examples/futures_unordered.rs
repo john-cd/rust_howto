@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Collects the results of multiple futures with `FuturesUnordered`.
 //!
 //! Futures are asynchronous operations that may not have finished yet.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parsing a color from a string by implementing `FromStr`.
 //!
 //! The `FromStr` trait defines how a type is created from text, which also

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to use `deadpool-postgres` to manage a pool of
 //! PostgreSQL connections.
 //! `deadpool` is an async pool for connections and objects of any type.

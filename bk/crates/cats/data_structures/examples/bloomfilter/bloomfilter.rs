@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A Bloom filter, a compact set that can give false positives but no false
 //! negatives.
 //!

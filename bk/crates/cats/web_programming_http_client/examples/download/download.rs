@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Downloads a file as binary response chunks into a temporary directory.
 //!
 //! Large files should be saved in chunks as they arrive instead of being loaded

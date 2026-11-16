@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates deserializing CSV records into a struct.
 //!
 //! Deserializing turns each CSV row into a struct, using the header names as

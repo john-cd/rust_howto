@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Prints the great-circle distance between Paris and London.
 //!
 //! Latitude and longitude locate a point on the Earth in degrees. The

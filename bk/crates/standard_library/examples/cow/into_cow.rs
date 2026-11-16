@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Returning a borrowed or an owned string with `Cow`.
 //!
 //! `Cow` (clone on write) holds either a borrowed or an owned value. Both

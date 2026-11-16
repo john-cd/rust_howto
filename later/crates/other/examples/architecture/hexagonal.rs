@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Hexagonal architecture: a port (trait) with two adapters.
 //!
 //! Hexagonal (ports and adapters) architecture keeps the business logic

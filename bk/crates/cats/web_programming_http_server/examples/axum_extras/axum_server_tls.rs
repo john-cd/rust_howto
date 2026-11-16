@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Serve an `axum` router over HTTPS with `axum-server` and `rustls`.
 //!
 //! TLS encrypts HTTP so that traffic cannot be read or changed on the network

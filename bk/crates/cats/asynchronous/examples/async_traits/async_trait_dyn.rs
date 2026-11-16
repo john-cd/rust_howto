@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `#[async_trait]` for trait objects.
 //!
 //! Native `async fn` in traits is not dyn-compatible: `Box<dyn Store>` does

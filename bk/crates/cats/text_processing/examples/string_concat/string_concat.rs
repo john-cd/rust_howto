@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Different ways to concatenate strings.
 //!
 //! A Rust `String` owns heap memory and can grow; a `&str` is a borrowed view.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A simple `PolkaVM` host example.
 //!
 //! This example loads a compiled `.polkavm` guest blob from the command line,

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Formats numbers and dates with ICU4X using two different locales.
 //!
 //! Numbers and dates are written differently around the world (1,234.5 or

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generic I2C driver example using `embedded-hal` 1.0 traits.
 //!
 //! I2C is a two-wire bus that connects a controller (such as a robot's

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A named thread created with `std::thread::Builder`.
 //!
 //! The thread builder sets a name and stack size before starting a thread. A

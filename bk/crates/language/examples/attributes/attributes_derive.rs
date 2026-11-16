@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Deriving traits with `#[derive]`.
 //!
 //! The `derive` attribute invokes derive macros to generate trait

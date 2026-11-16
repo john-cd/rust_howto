@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Loads the Vulkan library with `ash` and reports the instance version.
 
 use ash::Entry;

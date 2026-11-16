@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Deriving common traits for a struct.
 
 use std::collections::HashMap;

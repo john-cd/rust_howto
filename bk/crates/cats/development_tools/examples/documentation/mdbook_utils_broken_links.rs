@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Find reference-style links that have no definition with `mdbook-utils`.
 //!
 //! Install the tool with `cargo install mdbook-utils`; see its user guide for

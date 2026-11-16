@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates using `bumpalo` for fast bump allocation.
 //!
 //! `bumpalo` is a bump allocator (also called an arena allocator). It

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `syn` parses a token stream into Rust syntax-tree types such as
 //! `DeriveInput`. A derive helper can inspect the input shape, reject
 //! unsupported data with a spanned error, and return generated tokens for a

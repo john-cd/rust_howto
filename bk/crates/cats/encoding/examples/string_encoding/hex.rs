@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of encoding and decoding a string using hexadecimal encoding.
 //!
 //! Hexadecimal writes each byte as two characters from 0-9 and a-f. It is the

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Loads a Haar cascade and applies it to a generated grayscale frame.
 //!
 //! A Haar cascade is a classic face-detection method: a trained list of simple

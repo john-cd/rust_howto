@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A bouncing ball in a Macroquad game loop.
 //!
 //! A game loop repeats: handle input, update the game state, draw a frame.

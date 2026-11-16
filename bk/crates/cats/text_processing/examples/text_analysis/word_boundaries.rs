@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Finds word boundaries with Unicode text segmentation (UAX #29), e.g. to
 //! count words or to feed a spell checker.
 //!

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A `MultiMap`, which associates several values with one key.
 //!
 //! A multimap associates several values with one key, for example the tags of a

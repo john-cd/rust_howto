@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The `'static` lifetime.
 //!
 //! `'static` means a reference can live for the whole program, like a string

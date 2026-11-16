@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Displays a message box through the raw `winapi` bindings.
 //!
 //! The Windows API (Win32) is how programs ask Windows to create windows, read

@@ -8,7 +8,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Publish a custom metric with dimensions to Amazon CloudWatch.
 //!
 //! Amazon CloudWatch collects metrics and logs from AWS services. A custom

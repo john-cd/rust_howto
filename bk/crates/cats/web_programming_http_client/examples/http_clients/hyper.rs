@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of using the `hyper` low-level HTTP client to fetch a URL.
 //!
 //! This example demonstrates how to:

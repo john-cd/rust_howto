@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Negotiate a WebRTC audio stream between two peers with `str0m`.
 //!
 //! `str0m` is Sans-I/O: it never opens sockets or spawns threads. The

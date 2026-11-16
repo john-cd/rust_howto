@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A line plot and a bar chart with `egui_plot`.
 //!
 //! In an immediate-mode GUI the interface is rebuilt by code on every frame,

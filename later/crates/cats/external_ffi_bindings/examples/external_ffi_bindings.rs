@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Compare a raw Unix process-ID binding with the standard library.
 //!
 //! FFI (foreign function interface) lets Rust call functions written in C. A

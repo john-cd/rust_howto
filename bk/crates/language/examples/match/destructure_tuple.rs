@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Destructuring a tuple in a `match`.
 
 /// Matches a pair against several patterns.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates the `frunk` crate, a functional programming
 //! toolbelt for Rust.
 //!

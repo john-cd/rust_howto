@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Runs CPU-bound work from `async` code on the Rayon thread pool.
 //!
 //! An async runtime runs many tasks on a few threads, so a task that computes

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates parsing various date and time strings into `chrono` types.
 //!
 //! Dates arrive as text in many layouts: RFC 2822 (emails), RFC 3339 / ISO 8601

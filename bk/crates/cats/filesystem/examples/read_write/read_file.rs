@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates writing to and reading from a file.
 //!
 //! Reading a file line by line with a buffered reader keeps memory use low,

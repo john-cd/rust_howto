@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of using `Box` as a smart pointer for trait objects.
 //!
 //! `Box` can be used to store an owned trait object on the heap.

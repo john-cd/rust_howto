@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A stack implemented with `Vec`.
 //!
 //! A stack is last in, first out (LIFO), like a pile of plates. A `Vec` works

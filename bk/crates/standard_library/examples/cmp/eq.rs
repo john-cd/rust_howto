@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Implementing equality with `PartialEq` and `Eq`.
 //!
 //! `PartialEq` defines `==`. `Eq` is a marker that equality is reflexive (a

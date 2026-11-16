@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generates Rust source with `quote` and formats it with `prettyplease`.
 //!
 //! Code generators build Rust code as token streams with `quote` and then

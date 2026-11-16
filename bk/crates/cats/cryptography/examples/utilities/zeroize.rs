@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates the use of the `zeroize` crate to securely clear sensitive data
 //! from memory.
 //!

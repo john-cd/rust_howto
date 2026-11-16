@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Builds and renders a simple Vello 2D scene.
 //!
 //! Vello is a 2D renderer that does most of its work on the GPU, using compute

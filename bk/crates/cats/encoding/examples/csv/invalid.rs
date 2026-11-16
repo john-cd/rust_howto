@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates invalid data handling when reading a CSV file.
 //!
 //! Real-world CSV files contain rows with missing or malformed values. Reading

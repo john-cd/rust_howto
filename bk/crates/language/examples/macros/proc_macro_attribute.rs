@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! An attribute procedural macro that logs function calls.
 //!
 //! An attribute macro is a procedural macro, a Rust function that runs at

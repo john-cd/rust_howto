@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parse, deserialize, and write XML with `quick-xml`.
 //!
 //! XML is a text format of nested tags, used in older web services (SOAP),

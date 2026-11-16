@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Creating and inspecting symbolic links.
 //!
 //! A symbolic link is a file that points to another path. Following it gives

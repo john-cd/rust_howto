@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Formatting the current time with `chrono`.
 //!
 //! Formatting turns a date and time into text using format specifiers such as

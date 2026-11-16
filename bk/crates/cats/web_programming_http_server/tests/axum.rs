@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates basic usage of the `axum` web framework.
 //! `axum` is a web application framework designed to work with `tokio` and
 //! `hyper`. It doesn't have its own middleware system but instead uses

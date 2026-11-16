@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Removes dangerous markup from untrusted HTML with `ammonia`.
 //!
 //! XSS (cross-site scripting) is an attack where untrusted HTML runs a script

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Turns an address into coordinates with the `geocoding` crate.
 //!
 //! The provider sits behind the `Forward` trait, so a cache and a fake

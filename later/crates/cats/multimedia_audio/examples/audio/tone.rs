@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generates a tone with `rodio` without opening an audio device.
 //!
 //! A tone is a sine wave of one frequency; frequency (in Hz) sets the pitch.

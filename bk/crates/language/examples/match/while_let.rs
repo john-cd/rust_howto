@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Looping with `while let`.
 
 /// Pops the elements of a vector with `while let`.

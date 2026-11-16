@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Shut a worker thread down cleanly when the user presses Ctrl-C.
 //!
 //! A signal is a notification the operating system sends to a process. Ctrl-C

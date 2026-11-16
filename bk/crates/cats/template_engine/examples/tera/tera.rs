@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of using the Tera template engine.
 //!
 //! A template engine fills placeholders in a text file with data, to generate

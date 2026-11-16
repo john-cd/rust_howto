@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Renders and saves a Julia set with Rayon and the image crate.
 //!
 //! A thread pool starts a fixed number of worker threads and feeds them jobs,

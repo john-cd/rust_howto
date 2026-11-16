@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Authenticated encryption and decryption with AES-256-GCM.
 //!
 //! AES is the standard symmetric cipher, meaning one secret key both encrypts

@@ -5,7 +5,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A typed message bus: publish Protobuf messages through a trait, with an
 //! in-memory implementation for tests and AWS SQS / SNS implementations for
 //! production.

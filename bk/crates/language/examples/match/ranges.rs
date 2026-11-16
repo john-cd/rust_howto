@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Matching ranges of values.
 
 /// Matches a number against ranges.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A reader-writer lock from `parking_lot`.
 //!
 //! A read-write lock allows many readers at once, or one writer. It helps when

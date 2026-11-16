@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Use `xmlparser` when an application needs low-level tokens and control over
 //! XML processing without building a tree. Prefer `roxmltree` for convenient
 //! read-only tree access or `quick-xml` for higher-level streaming APIs.

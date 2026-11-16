@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A counter application with `iced`.
 //!
 //! Iced follows the Elm architecture: the state is a struct, user actions
