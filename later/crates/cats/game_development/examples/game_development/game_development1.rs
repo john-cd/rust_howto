@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Detecting the collision of two shapes with `parry2d`.
 //!
 //! Collision detection decides whether shapes overlap, which games use for

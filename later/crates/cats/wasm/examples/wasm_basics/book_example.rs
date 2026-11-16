@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Assemble a WebAssembly module and inspect what it asks of its host.
 //!
 //! A `.wasm` file is a portable binary: it starts with the magic bytes

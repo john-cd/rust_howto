@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Boxing dynamically sized types.
 //!
 //! Dynamically sized types (DSTs), such as `str`, slices and `dyn Trait`, have

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Tessellates a path with Lyon and rasterizes the mesh with tiny-skia.
 
 use lyon::math::point;

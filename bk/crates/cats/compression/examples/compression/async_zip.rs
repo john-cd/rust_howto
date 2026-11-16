@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Writing and reading a ZIP archive asynchronously with `async_zip`.
 
 use anyhow::Context as _;

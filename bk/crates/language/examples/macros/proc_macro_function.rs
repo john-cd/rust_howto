@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A function-like procedural macro that processes a SQL query.
 //!
 //! A function-like procedural macro, written as `name!(...)`, runs Rust code at

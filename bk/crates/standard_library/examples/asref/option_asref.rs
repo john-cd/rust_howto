@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Borrowing the content of an `Option` with `as_ref`.
 
 // `Option::as_ref()` allows us to get an `Option<&String>`.

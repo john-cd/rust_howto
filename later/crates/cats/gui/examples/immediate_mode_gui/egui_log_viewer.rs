@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Shows the `tracing` events of an application in a panel with `egui_tracing`.
 //!
 //! `tracing` records structured log events from a program. A subscriber layer

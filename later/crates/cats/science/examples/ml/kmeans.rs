@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Cluster two groups of synthetic points with seeded Linfa K-means.
 //!
 //! Machine learning learns patterns from data. K-means is unsupervised

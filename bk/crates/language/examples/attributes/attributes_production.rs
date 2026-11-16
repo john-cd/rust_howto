@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Typical lint attributes for production code.
 //!
 //! The following is a set of attributes commonly used in production

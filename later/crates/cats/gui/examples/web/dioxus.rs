@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A web application with `dioxus`.
 //!
 //! Dioxus builds user interfaces from components, functions that return markup

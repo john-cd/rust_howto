@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! An asynchronous WebSocket client using async-tungstenite's Tokio adapter.
 //!
 //! A WebSocket is a long-lived, two-way connection that starts as an HTTP

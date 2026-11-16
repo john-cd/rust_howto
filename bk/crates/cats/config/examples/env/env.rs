@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Examples for working with standard environment variables.
 //!
 //! Environment variables are named text values that the operating system hands

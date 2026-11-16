@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A Tokio WebSocket client and one-connection echo server.
 //!
 //! A WebSocket is a long-lived, two-way connection that starts as an HTTP

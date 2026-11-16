@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Records frames with `puffin` and serves them to `puffin_viewer`.
 //!
 //! Install the viewer with `cargo install puffin_viewer`, run it,

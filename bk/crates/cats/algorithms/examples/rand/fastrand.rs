@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Fast pseudo-random number generation with `fastrand`.
 //!
 //! ### Advantages of `fastrand`

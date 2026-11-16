@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates basic usage of `ArrayVec`.
 //!
 //! `ArrayVec` is a vector with a fixed maximum capacity stored on the stack, so

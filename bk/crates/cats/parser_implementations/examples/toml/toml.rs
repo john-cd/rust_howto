@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example demonstrating TOML parsing and deserialization.
 //!
 //! TOML is a configuration file format designed to be easy for people to read

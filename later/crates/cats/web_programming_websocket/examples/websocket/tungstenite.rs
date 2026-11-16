@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A blocking WebSocket client using tungstenite.
 //!
 //! A WebSocket is a long-lived, two-way connection between a client and a

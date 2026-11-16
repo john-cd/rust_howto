@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Using `Option` for an optional argument.
 
 /// This function simulates baking a cake.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Visibility of items in modules.
 
 // This file is an (implicit) module.

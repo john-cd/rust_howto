@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parse Rust source code and query its syntax tree with Tree-sitter.
 //!
 //! Tree-sitter builds a concrete syntax tree from source code, quickly and

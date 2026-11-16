@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encode and verify HS256 JSON Web Tokens for a first-party API.
 //!
 //! This module provides functions to create and verify JSON Web Tokens (JWTs)

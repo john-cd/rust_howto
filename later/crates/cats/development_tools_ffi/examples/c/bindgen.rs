@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generate Rust declarations for a C library with bindgen.
 //!
 //! The package build script compiles example.c, runs bindgen on example.h, and

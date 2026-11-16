@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generate an alphabetical crate section with published recipe links.
 //!
 //! This book lists crates in generated index pages. A script reads local

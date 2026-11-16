@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The newtype pattern: implementing an external trait on an external type.
 //!
 //! The orphan rule forbids implementing an external trait for an external type.

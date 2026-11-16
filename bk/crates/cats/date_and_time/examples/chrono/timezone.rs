@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to work with timezones in Chrono.
 //!
 //! UTC is the world reference time. Local times are UTC plus an offset, and

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to multiply a scalar by a vector and then
 //! multiply a matrix by the resulting vector.
 //!

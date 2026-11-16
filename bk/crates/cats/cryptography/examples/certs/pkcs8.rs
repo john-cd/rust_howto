@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encoding and decoding private keys in PKCS#8 format.
 //!
 //! PKCS#8 is the standard container for private keys, which records the key

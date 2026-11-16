@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates checked arithmetic with `DateTime` and `Duration`.
 //!
 //! Date arithmetic can overflow or produce an invalid date. The checked methods

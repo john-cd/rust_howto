@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generic type parameters on functions, structs, traits and type aliases.
 
 use std::collections::HashMap;

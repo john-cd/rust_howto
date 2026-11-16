@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Computes the great-circle distance between two places with the
 //! `haversine` crate and with `geo`.
 //!

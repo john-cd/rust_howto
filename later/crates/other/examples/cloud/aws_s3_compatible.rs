@@ -8,7 +8,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Point the S3 client at an S3-compatible store (MinIO, RustFS, LocalStack),
 //! optionally over HTTPS with a private certificate authority.
 //!

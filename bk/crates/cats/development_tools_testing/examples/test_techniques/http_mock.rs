@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Tests an HTTP client against a local mock server with `httpmock`.
 //! A mock HTTP server runs locally and answers with canned responses, so a
 //! client can be tested without the internet and with failures that are hard to

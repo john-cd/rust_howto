@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Selects HTML elements and extracts their text with CSS selectors.
 //!
 //! Web scraping extracts data from HTML pages. CSS selectors, such as

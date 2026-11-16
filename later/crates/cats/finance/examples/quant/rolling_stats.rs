@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Daily returns and a 20-day rolling standard deviation, annualized with
 //! the square root of 252 trading days.
 //!

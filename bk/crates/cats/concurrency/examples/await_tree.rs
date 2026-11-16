@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to use the `await-tree` crate.
 //!
 //! `await-tree` is a tool for visualizing the execution of asynchronous tasks

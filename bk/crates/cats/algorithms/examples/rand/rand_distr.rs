@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to sample from a normal distribution.
 //!
 //! The `Normal` struct represents a normal distribution with a given mean and

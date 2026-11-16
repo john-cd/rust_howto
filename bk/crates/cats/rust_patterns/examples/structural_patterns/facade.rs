@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Hides a hash map behind a user-directory API.
 //!
 //! The facade pattern hides a complicated or changeable component behind a

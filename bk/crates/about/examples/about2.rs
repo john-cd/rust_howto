@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to parse a URL and extract a portion of it.
 //!
 //! A URL has parts: scheme, host, port, path, query and fragment. A parser

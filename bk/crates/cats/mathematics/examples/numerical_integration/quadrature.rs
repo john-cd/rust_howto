@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates dependency-free numerical integration.
 
 /// Errors returned by the composite integration methods.

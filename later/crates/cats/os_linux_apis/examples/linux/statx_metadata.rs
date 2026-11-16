@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Query extended metadata through Linux's safe statx wrapper.
 //!
 //! `statx` is the Linux system call that returns file metadata (size, owner,

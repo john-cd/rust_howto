@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Types that can implement a trait.
 
 // An example trait (with a method with a default implementation):

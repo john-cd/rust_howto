@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This is the main asynchronous function.
 //! It demonstrates that calling an async function does not execute its body
 //! immediately.

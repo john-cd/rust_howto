@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A tree of `CancellationToken`s: cancelling a parent cancels its children,
 //! but not the other way around. Workers check the token in a `select!`.
 //!

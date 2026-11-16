@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! An `actix` counter actor that replies with its updated total.
 //!
 //! The actor model structures a program as independent actors that own their

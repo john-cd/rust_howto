@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A `BTreeSet`, an ordered set of unique names.
 //!
 //! A `BTreeSet` is a set that keeps its elements sorted, so you can iterate in

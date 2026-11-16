@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example copies text to and reads text from the system clipboard with
 //! the current `arboard` builder API.
 //!

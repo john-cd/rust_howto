@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Fast, reproducible non-cryptographic hashing using `foldhash` with a fixed
 //! seed.
 //!

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Computing a layout with `morphorm`.
 //!
 //! A layout engine computes the size and position of every element from rules

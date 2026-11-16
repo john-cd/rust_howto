@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Snippet with angle brackets, attributes and comments.
 
 use std::collections::HashMap;

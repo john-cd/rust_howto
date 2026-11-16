@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Destructuring an enum in a `match`.
 
 /// A message of different kinds.

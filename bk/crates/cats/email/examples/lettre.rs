@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of sending an email using the `lettre` crate.
 //!
 //! Set `SMTP_SERVER`, `SMTP_USERNAME`, and `SMTP_PASSWORD` to the relay

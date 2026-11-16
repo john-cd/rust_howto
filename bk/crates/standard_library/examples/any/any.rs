@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Dynamic typing with the `Any` trait.
 //!
 //! Rust is statically typed, but `Any` lets you hold a value of unknown type

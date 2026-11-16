@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Running `rayon` work on a custom thread pool.
 //!
 //! Rayon runs parallel iterators on a global thread pool, which defaults to one

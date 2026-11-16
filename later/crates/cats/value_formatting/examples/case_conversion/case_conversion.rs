@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates identifier case conversion with heck.
 //!
 //! Naming styles: `snake_case`, `camelCase`, `PascalCase` and `kebab-case`.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Variable immutability and mutability.
 //!
 //! Immutability by default helps prevent accidental changes. Use `mut` on a

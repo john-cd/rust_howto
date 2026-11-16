@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Detect dependency cycles in a directed graph.
 //!
 //! A graph is a set of nodes connected by edges. A directed graph's edges have

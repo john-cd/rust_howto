@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Trait bounds written in several ways.
 
 /// Something that can be summarized.

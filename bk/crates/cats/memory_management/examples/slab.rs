@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates using `slab` for pre-allocated storage.
 //!
 //! `slab` provides a slab allocator - a pre-allocated pool of memory

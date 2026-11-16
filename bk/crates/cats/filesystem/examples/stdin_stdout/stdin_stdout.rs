@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Reading from standard input and writing to standard output.
 //!
 //! Standard input and output are the streams connected to the terminal or to

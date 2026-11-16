@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Measuring the similarity of strings with `strsim`.
 //!
 //! String similarity metrics measure how close two strings are. Levenshtein

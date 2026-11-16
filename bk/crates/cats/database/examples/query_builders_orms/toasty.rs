@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Create and query a model with Toasty and in-memory SQLite.
 //!
 //! An ORM (object-relational mapper) maps database rows to Rust structs, so you

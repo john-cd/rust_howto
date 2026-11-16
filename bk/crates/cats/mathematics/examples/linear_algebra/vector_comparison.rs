@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to compare vectors using the `approx` crate.
 //!
 //! Floating-point numbers are rarely exactly equal after calculations (0.1 +

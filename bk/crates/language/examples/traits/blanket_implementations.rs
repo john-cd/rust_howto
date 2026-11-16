@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A blanket implementation of a trait for all types that implement another.
 //!
 //! A blanket implementation implements a trait for every type that meets a

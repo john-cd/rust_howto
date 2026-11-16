@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Downloads a file in verified byte ranges.
 //!
 //! HTTP range requests (the `Range: bytes=0-99` header) ask the server for part

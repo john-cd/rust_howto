@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Finding the MIME type of a file from its name.
 //!
 //! A MIME type (media type) such as `image/png` or `text/html` tells software

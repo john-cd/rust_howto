@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Warning about an ignored result with `#[must_use]`.
 //!
 //! The `#[must_use]` attribute warns when a function's return value is ignored

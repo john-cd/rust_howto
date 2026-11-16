@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! List dependencies declared in local Cargo manifests.
 //!
 //! A `Cargo.toml` manifest lists a crate's dependencies. Reading manifests as

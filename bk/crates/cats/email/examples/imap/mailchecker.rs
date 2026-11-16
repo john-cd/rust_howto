@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Reject syntactically invalid and disposable addresses with [`mailchecker`].
 //!
 //! Disposable addresses come from throwaway-mail services and are often used

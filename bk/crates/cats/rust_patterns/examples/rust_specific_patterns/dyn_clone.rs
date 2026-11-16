@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to clone trait objects using the `dyn_clone` crate.
 //!
 //! A trait object (`Box<dyn Trait>`) cannot be cloned directly, because `Clone`

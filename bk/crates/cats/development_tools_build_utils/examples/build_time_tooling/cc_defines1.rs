@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Passing preprocessor definitions to C code compiled with the `cc` crate.
 //!
 //! Preprocessor definitions (`-DNAME=value`) switch parts of C code on or off

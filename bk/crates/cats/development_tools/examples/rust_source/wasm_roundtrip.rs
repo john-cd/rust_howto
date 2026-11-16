@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Assembles WebAssembly text (`wat`) into a binary module, lists its exports
 //! with `wasmparser` and prints it back as text with `wasmprinter`.
 //!

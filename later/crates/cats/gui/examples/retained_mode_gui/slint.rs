@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A counter window defined with Slint.
 //!
 //! Slint describes the interface in its own markup language (`.slint`), which

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parsing from raw bytes.
 
 /// A message, created from raw bytes.

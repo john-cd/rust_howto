@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Calling Rust from Node.js with `napi`.
 //!
 //! N-API is Node.js's stable interface for native add-ons. The `napi` crate

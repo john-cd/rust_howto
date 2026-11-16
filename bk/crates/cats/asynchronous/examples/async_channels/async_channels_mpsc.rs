@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A Tokio multi-producer, single-consumer (`mpsc`) channel.
 //!
 //! A channel passes values between tasks so that they need not share memory.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Canonicalizing paths.
 //!
 //! Canonicalizing turns a path into an absolute one with `.`, `..` and symbolic

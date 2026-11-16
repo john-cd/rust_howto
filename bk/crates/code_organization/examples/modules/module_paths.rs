@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Resolve paths between modules and re-export a public module.
 
 /// A module containing an item used by a sibling module.

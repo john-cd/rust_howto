@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to call C functions from Rust.
 //! It uses the `cc` crate to compile a C file into a static library,
 //! and then links against that library.

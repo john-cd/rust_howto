@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Use SurrealDB's embedded in-memory engine for a self-contained CRUD example.
 //!
 //! SurrealDB is a multi-model database: one engine offers documents, tables

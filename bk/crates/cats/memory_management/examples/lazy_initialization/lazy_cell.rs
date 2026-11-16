@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Lazily initializes a single-threaded value with `std::cell::LazyCell`.
 //!
 //! Lazy initialization delays an expensive computation until the value is first

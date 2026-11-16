@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A state machine whose transitions are triggered by events.
 //!
 //! A state machine has a finite set of states and rules for moving between them

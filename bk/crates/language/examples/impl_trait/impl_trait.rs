@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Using `impl Trait` as an argument type and as a return type.
 //!
 //! `impl Trait` in argument position means "any type implementing the trait".

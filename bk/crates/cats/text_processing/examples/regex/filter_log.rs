@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Filtering the lines of a log file with a set of regular expressions.
 //!
 //! A regular expression (regex) describes a text pattern. Log files can be

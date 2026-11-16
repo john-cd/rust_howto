@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to build a URL by joining a base URL with a path.
 //!
 //! A relative link such as `../docs/page.html` only makes sense with a base

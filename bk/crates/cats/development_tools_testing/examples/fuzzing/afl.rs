@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `afl` (American Fuzzy Loop) is a popular fuzz testing tool, and `afl.rs`
 //! is a Rust crate that provides support for integrating AFL with Rust
 //! programs. Below is an example of how we can use `afl.rs` to fuzz a

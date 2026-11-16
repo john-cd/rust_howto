@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Bringing a function into scope with `use`.
 
 /// This module represents the front of the house in a restaurant.

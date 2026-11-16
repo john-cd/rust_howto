@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generate and save a simple RGB image using the `image` crate.
 //!
 //! This example builds a gradient image in memory and writes it to a PNG file.

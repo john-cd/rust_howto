@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Calling Rust from Ruby with `magnus`.
 //!
 //! Magnus lets Rust define Ruby classes and methods. Ruby native extensions are

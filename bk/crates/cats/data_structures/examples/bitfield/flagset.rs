@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of using the `flagset` crate to define and use bit flags.
 //!
 //! `flagset` has no dependencies, incl. the stdlib, so it can be used in

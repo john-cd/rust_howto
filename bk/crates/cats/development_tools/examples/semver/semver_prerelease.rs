@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to work with pre-release versions using the `semver` crate.
 //!
 //! A pre-release version such as `1.0.0-beta.1` sorts before the final `1.0.0`

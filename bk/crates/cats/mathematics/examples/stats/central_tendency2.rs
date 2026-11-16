@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Calculates the mode of a dataset.
 //!
 //! The mode is the most frequent value. It is the only measure of central

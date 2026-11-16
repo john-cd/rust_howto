@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Receiving telemetry from a Tello drone.
 //!
 //! Decoding a message into text is a pure function, so it can be tested

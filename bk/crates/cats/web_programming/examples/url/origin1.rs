@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to parse a URL and extract its origin.
 //!
 //! The `url::Url` struct is used to parse the URL string.

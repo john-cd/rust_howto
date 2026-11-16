@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Examples for working with `.env` files and `envy`.
 //!
 //! `envy` reads environment variables into a typed struct with Serde, so a

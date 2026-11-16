@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Property-based testing with `proptest`.
 //! Property-based testing checks a rule that must hold for all inputs, such as
 //! "reversing twice gives the original". The tool generates many random inputs

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Collect published recipe links from the local book index.
 //!
 //! The book's index maps each recipe to a page. Collecting the published ones

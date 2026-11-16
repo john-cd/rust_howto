@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Event sourcing: store events, rebuild the state by replaying them.
 //!
 //! Event sourcing stores every change as an immutable event instead of

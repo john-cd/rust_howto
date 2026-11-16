@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `proc_macro2` mirrors the compiler's token API, but works in ordinary Rust
 //! crates and tests. Parse source, inspect token trees, and build a stream
 //! without invoking a procedural-macro compiler entry point.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Destructuring a struct into its fields.
 
 /// A point in two dimensions.

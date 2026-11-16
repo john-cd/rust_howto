@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Setting and getting a value in Redis.
 //!
 //! Redis is an in-memory key-value store, very fast and often used as a cache,

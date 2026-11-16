@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A GTK 4 application with a button and a label.
 //!
 //! GTK is a widely used toolkit for desktop interfaces on Linux (the base of

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrate using a custom type as the key in a `HashMap`.
 //!
 //! A `HashMap` key must implement `Hash` and `Eq`, and equal keys must have

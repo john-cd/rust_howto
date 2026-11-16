@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `bolero` is a fuzzing frontend for Rust that supports multiple engines
 //! like libFuzzer, AFL, and Honggfuzz. It also allows running fuzz targets
 //! as regular unit tests.

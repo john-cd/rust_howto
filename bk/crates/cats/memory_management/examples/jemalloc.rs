@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates using a custom global allocator.
 //!
 //! Add to your `Cargo.toml`:

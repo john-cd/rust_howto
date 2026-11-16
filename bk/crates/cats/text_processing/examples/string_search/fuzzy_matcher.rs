@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Fuzzy matching of strings with `fuzzy-matcher`.
 //!
 //! Fuzzy matching finds approximate matches and ranks them, like the Ctrl-P

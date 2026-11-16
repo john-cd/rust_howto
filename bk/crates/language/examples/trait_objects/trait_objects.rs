@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Trait object example: a highly simplified GUI.
 //!
 //! A trait object lets you store values of different types behind one interface

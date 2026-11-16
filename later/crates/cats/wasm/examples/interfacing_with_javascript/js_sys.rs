@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Uses a JavaScript built-in from Rust through `js-sys`.
 //!
 //! `js-sys` exposes JavaScript's built-in objects, such as `Date`, `Array` and

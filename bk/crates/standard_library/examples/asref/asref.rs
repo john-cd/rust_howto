@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Accepting several types through `AsRef`.
 //!
 //! `AsRef<T>` is a cheap conversion to a reference. A function that takes `impl

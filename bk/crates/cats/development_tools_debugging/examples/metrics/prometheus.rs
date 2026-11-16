@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Renders metrics in Prometheus exposition format without opening a port.
 //!
 //! Prometheus is a monitoring system that scrapes numbers from services over

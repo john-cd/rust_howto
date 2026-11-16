@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Enum variants and trait items are public by default; struct fields are not.
 
 /// A module with public types and traits.

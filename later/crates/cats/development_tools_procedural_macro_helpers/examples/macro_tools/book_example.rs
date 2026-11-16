@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Snapshot-test the code that a derive helper generates.
 //!
 //! `cargo expand` shows the code produced by a macro, and `macrotest` compares

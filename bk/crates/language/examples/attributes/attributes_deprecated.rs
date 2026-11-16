@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Marking an item as deprecated with `#[deprecated]`.
 //!
 //! The `#[deprecated]` attribute warns callers that an API should no longer be

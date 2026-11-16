@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates stable references in an `elsa::FrozenVec`.
 
 use elsa::FrozenVec;

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Initializes syslog and logs debug and error messages.
 //!
 //! Syslog is the Unix logging service: programs send messages to it and the

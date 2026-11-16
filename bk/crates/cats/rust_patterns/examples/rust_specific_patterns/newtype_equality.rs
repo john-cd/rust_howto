@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A newtype whose equality ignores a presentation field.
 //!
 //! `PartialEq` and `Hash` must agree: values that compare equal must hash

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `static mut` Example.
 //!
 //! `static mut` use is generally discouraged due to the potential for data

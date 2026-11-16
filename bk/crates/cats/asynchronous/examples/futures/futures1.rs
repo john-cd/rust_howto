@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Races two futures with `select!` from the `futures` crate.
 //!
 //! `select!` waits for several futures and returns when the first one

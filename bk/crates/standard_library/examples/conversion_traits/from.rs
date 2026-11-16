@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Converting between types with `From` and `Into`.
 //!
 //! `From` defines a lossless conversion between types, and gives you `Into` for

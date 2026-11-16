@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Simulate a single-server bank queue with a timestamp-ordered event heap.
 //!
 //! In a discrete-event simulation the model state changes only at events, such

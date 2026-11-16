@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Concatenates constant string slices at compile time with `constcat`.
 //!
 //! Constants are computed at compile time, so a combined message costs nothing

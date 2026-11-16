@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Processing a `Stream` of fallible asynchronous fetches with `futures_util`.
 //!
 //! A stream of fallible fetches yields `Result` items. You decide what an error

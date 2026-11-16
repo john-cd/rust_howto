@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Accepts only a single top-level query by parsing SQL before execution.
 //!
 //! Query syntax does not prove read-only behavior: a `SELECT` can call a

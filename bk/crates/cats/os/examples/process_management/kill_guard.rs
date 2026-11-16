@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Kill a child process automatically when its owner goes out of scope.
 //!
 //! A guard is a value whose `Drop` runs when it leaves scope. Wrapping a child

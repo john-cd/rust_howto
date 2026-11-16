@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Comparing UTF-8 bytes, Unicode scalar values, and grapheme clusters.
 //!
 //! Unicode text has three levels: bytes (UTF-8 storage), scalar values (`char`)

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Building and inspecting paths with `Path` and `PathBuf`.
 //!
 //! `Path` and `PathBuf` handle path parts portably: `join` appends a component

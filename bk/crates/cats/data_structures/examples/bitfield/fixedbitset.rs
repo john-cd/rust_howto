@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A fixed-size bit set with `fixedbitset`: a visited set for a graph walk.
 //!
 //! `FixedBitSet` uses one bit per element (a `Vec<bool>` uses a byte) and

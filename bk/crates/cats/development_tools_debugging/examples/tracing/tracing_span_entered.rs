@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates entering and exiting a span using `entered()` and `exit()`.
 //!
 //! A span marks a period of work, such as handling one request. Events logged

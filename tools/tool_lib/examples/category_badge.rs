@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Constructing category badges using `tool_lib`.
 //!
 //! This example demonstrates how to use `tool_lib::create_category_badge` to

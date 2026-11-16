@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates big integer manipulation.
 //!
 //! A normal integer overflows beyond 64 bits. Big integers grow as needed,

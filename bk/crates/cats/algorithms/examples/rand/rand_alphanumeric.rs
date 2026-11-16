@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generate a random string of 20 alphanumeric characters.
 //!
 //! Random strings serve as IDs, temporary names and tokens. A default random

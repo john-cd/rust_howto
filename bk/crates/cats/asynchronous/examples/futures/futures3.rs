@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates transforming, chaining, choosing, and flattening futures.
 //!
 //! # Futures

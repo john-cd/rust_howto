@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Cryptographic hashing with the `sha2` crate: SHA-256 and SHA-512 digests
 //! formatted as hexadecimal or Base64.
 //!

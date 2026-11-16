@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Counts how often each file changed in the last commits with `gix`,
 //! a pure-Rust implementation of Git (no `git` executable or `libgit2`).
 //!

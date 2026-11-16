@@ -8,7 +8,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A gRPC client that uses gRPC-Web in the browser and HTTP/2 elsewhere.
 //!
 //! The message types and the client are written by hand to keep the example

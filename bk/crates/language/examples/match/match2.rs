@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Matching a struct against patterns.
 
 // Define a struct named `Point` with three fields: x, y, and z,

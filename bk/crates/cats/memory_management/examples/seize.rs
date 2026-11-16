@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates using `seize` for safe, concurrent memory reclamation.
 //!
 //! `seize` provides fast and efficient memory reclamation for concurrent

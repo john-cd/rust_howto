@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Breadth-First Search (BFS) traversal of a graph using `petgraph`.
 //!
 //! ### What is Breadth-First Search (BFS)?

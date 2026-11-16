@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates a simple `riker` actor that receives a message.
 //!
 //! The actor model structures a program as independent actors that own their

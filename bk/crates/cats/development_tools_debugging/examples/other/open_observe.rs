@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Log telemetry fields for an `OpenObserve` integration.
 //!
 //! Set `OTEL_EXPORTER_OTLP_ENDPOINT` to an OpenObserve OTLP base URL such as

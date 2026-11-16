@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A Tokio `oneshot` channel that carries a single value between tasks.
 //!
 //! A oneshot channel carries exactly one value from a sender to a receiver. It

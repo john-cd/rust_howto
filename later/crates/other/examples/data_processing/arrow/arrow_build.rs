@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Build Arrow columns by hand with the `arrow-array` crate, combine them
 //! into a `RecordBatch`, and print it with `arrow-cast`.
 //!

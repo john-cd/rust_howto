@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Tests a config source without changing the process environment.
 //!
 //! Tests that change environment variables affect other tests running in

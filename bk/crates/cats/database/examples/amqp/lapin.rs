@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Publishing and consuming a message with the `lapin` AMQP client.
 //!
 //! AMQP is a protocol for message brokers such as RabbitMQ. A producer

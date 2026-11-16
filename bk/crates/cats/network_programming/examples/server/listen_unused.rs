@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates a simple TCP server that listens for a single
 //! connection, reads data from the connection, and then prints the received
 //! data.

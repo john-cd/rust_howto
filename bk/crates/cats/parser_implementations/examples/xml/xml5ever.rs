@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parse a small XML document with `xml5ever` and inspect its DOM tree.
 //!
 //! XML is a text format of nested tags. A DOM (document object model) is the

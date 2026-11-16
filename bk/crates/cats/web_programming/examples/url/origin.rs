@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates parsing a URL and extracting its origin components.
 //!
 //! A web origin is the scheme, host and port of a URL. Browsers use it for the

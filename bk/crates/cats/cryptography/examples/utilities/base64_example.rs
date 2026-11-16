@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encode and decode bytes with the `base64` crate.
 //!
 //! Base64 represents arbitrary bytes using 64 printable characters, so binary

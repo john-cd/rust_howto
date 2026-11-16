@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Run untrusted WebAssembly in a `wasmtime` sandbox: a fuel budget bounds the
 //! CPU time, a store limit bounds memory, and the only capability the guest
 //! has is one host function (no WASI, no filesystem, no network).

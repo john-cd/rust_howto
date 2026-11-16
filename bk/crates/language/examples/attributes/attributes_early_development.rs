@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `allow` attributes suppress specific warnings.
 //!
 //! These attributes are typically used during early development to temporarily

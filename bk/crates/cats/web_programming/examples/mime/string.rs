@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates parsing MIME types from strings and handling invalid input.
 //!
 //! A MIME type has the form `type/subtype`, optionally with parameters such as

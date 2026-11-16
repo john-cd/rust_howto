@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Read-only queries of FreeBSD kernel state.
 //!
 //! FreeBSD is a Unix-like operating system used in servers and network

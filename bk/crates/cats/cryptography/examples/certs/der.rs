@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encoding a struct to DER and decoding it back with the `der` crate.
 //!
 //! DER (Distinguished Encoding Rules) is the binary format X.509 certificates

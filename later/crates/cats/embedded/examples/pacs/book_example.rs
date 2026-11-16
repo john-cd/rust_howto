@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Models the register block and ownership token of a peripheral access crate.
 
 use core::cell::UnsafeCell;

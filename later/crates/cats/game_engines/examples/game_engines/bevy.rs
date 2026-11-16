@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Moves an entity with a headless Bevy ECS app.
 //!
 //! Bevy uses an entity component system (ECS). Entities are plain IDs,

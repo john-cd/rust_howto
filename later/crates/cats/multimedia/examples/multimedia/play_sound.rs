@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Play a sine tone on the default audio output with `rodio`.
 //!
 //! The tone is built first, so its properties can be checked without an audio

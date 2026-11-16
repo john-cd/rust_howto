@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Checks HTTP links from an HTML page against their resolved URLs.
 //!
 //! A link checker finds broken links, which hurt users and search ranking. It

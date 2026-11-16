@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Criterion benchmark comparing `std::collections::HashMap`,
 //!
 //! `ahash::AHashMap`, and `rustc_hash::FxHashMap`.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This macro provides a domain-specific language (DSL) for defining
 //! configuration for an application. Instead of using a `HashMap`, or a
 //! `struct` directly, we want a more declarative, human-readable way to specify

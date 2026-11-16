@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to parse JSON5 data using the `json5` crate.
 //!
 //! [JSON5](https://json5.org) is a superset of JSON that allows for more human-friendly syntax,

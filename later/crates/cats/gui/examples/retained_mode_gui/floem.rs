@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A reactive counter application with Floem.
 //!
 //! Floem uses reactive signals: a signal holds a value, and the parts of the

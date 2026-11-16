@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A bounded `flume` channel for commands sent to a loop that handles them
 //! once per "tick" (a UI frame, a game loop iteration, a control cycle).
 //!

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Toast notifications with `egui-notify` and icons with `egui-phosphor`.
 //!
 //! A toast is a short notification that appears over the interface and fades

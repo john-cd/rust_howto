@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Serves an Axum route with common `tower-http` middleware.
 //!
 //! Middleware wraps a handler to add behaviour for every request, such as

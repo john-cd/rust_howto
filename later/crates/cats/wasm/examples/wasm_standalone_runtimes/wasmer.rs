@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Runs an in-memory WebAssembly module with Wasmer.
 
 use wasmer::Instance;

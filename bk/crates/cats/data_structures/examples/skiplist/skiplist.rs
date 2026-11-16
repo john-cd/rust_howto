@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A `SkipMap`, an ordered map built on a skip list.
 //!
 //! A skip list keeps sorted elements in layered linked lists, where upper

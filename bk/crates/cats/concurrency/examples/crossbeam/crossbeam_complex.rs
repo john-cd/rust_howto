@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A bounded MPMC pipeline distributes messages to worker threads.
 //!
 //! Crossbeam channels pass messages between threads. Scoped threads let workers

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This is an example of an async main function.
 //!
 //! `main` cannot be `async` by itself, because something must run the futures.

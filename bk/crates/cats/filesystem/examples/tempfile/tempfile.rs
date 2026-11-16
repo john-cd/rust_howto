@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Creating temporary files and directories with `tempfile`.
 //!
 //! Temporary files are for scratch data. The `tempfile` crate creates them with

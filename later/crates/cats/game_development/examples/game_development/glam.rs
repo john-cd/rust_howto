@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates the use of the `glam` crate.
 //!
 //! `glam` is a linear algebra library for games and graphics applications.

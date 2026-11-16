@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Mocking a trait with `mockall`.
 //!
 //! A mock replaces a real dependency (a database or a web service) in a test.

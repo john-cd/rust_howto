@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Encodes messages with `postcard` into a bounded `heapless` queue.
 
 use heapless::Deque;

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! String interning example.
 //!
 //! A `Ustr` (Unique str) is a lightweight handle representing a static,

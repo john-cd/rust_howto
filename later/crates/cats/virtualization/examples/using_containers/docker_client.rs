@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Runs a short-lived container with explicit cleanup using Bollard.
 //!
 //! A container runs a program in an isolated process with its own file system,

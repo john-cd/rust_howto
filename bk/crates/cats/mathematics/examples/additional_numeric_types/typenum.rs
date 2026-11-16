@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Type-level numbers with `typenum`.
 //!
 //! Type-level numbers move numeric values into the type system, so the compiler

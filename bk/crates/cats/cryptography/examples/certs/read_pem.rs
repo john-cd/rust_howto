@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Read a PEM certificate file and decode its DER bytes.
 //!
 //! PEM is a text wrapper for binary cryptographic data: Base64 between

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates customizing the formatting of log lines for spans
 //! and events. See
 //! <https://docs.rs/tracing-subscriber/latest/tracing_subscriber/fmt/index.html#customizing-formatters>

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Compute line coverage per file from an LCOV report and enforce a minimum.
 //!
 //! Code coverage reports which lines tests execute. LCOV is a plain-text report

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Add to `Cargo.toml`:
 //! ```toml
 //! remove_dir_all = { version = "1.0.0", features = [ "parallel" ] }

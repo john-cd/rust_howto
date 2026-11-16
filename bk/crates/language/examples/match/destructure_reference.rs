@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Destructuring references.
 
 /// Destructures references with `&` and `ref`.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to use the `which` crate to find the location of
 //! executables.
 //!

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Scope and drop.
 
 /// Creates a string in an inner scope, where it is dropped at the end.

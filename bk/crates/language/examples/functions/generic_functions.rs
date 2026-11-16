@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generic functions that take arguments of any type.
 
 // This is a generic function that can take any type.

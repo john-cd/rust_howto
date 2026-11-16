@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Tokenizes a small arithmetic expression with logos.
 //!
 //! Tokenization (lexing) is the first stage of a compiler or interpreter: it

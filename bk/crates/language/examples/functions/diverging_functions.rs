@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Functions that never return.
 //!
 //! A diverging function never returns, for example because it exits the program

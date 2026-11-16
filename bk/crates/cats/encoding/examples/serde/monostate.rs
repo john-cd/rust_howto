@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to use the `monostate` crate with `serde` to
 //! deserialize untagged enums where certain fields must have specific values.
 //!

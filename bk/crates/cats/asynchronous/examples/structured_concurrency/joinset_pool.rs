@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A bounded worker pool with `JoinSet`: keep at most `LIMIT` tasks running,
 //! refill as tasks finish, collect results in completion order, and tell a
 //! panic from a cancellation.

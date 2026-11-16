@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Depth-First Search (DFS) traversal of a graph using `petgraph`.
 //!
 //! ### What is Depth-First Search (DFS)?

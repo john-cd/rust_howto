@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parses an Intel HEX data record and its end-of-file record.
 //!
 //! Intel HEX is a text format for firmware images: each line is a record with

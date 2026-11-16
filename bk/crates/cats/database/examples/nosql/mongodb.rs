@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Inserting and querying documents in MongoDB.
 //!
 //! MongoDB is a document database: it stores flexible JSON-like documents in

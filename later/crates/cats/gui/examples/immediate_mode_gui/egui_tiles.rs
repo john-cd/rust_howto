@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Dockable, tabbed panes with `egui_tiles`.
 //!
 //! A `Tree` stores the layout: containers (tabs, rows, columns, grids) and

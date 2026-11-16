@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Calls a typed WebAssembly *component* from Rust with `wasmtime`.
 //!
 //! The contract is the WIT package in `components/wit/greeter.wit`. The

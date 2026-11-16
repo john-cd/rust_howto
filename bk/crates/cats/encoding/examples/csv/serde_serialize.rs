@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates serializing structs to CSV using `serde`.
 //!
 //! Serializing writes each struct as one CSV row, with a header line taken from

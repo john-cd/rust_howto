@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates the use of PBKDF2 for password hashing and verification.
 //!
 //! Servers must never store passwords directly. They store a salted,

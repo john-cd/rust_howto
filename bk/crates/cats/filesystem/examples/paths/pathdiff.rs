@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Compute a relative path between two paths.
 //!
 //! A relative path describes how to get from one directory to another, for

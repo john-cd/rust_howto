@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Create and verify an Ed25519 signature using `ed25519-dalek`.
 //!
 //! The example generates a new keypair, signs a message, and verifies it.

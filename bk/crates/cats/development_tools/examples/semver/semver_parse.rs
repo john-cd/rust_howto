@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to parse a semantic version string.
 //!
 //! `semver` is a parser for Cargo's flavor of Semantic Versioning.

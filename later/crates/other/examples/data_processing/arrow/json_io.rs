@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Write an Arrow record batch to newline-delimited JSON and read it back.
 //!
 //! Newline-delimited JSON (NDJSON) holds one JSON object per line, so files can

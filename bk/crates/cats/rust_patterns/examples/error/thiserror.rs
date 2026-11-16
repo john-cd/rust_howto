@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Defining an error type with `thiserror`.
 //!
 //! `thiserror` derives the boilerplate of an error type: `Display` messages and

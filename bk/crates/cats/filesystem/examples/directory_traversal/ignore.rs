@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to use the `ignore` crate to traverse a
 //! directory recursively, respecting `.gitignore` and similar files, and
 //! ignoring hidden files.

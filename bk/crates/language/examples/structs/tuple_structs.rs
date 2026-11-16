@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Tuple structs and unit-like structs.
 
 /// A tuple struct.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Placeholder for examples of software written in Rust.
 //!
 //! Reviewed 10-26-2026.

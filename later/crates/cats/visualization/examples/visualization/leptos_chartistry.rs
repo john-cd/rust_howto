@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates a Leptos component that renders a chart with
 //! `leptos-chartistry`.
 //!

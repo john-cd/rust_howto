@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Wrap a paginated API (crates.io reverse dependencies) in an iterator.
 //!
 //! APIs return large result sets in pages, to bound response size. A client

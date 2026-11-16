@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Generates a random password from a custom set of characters with `rand`.
 //!
 //! A password generator draws each character independently from an allowed set.

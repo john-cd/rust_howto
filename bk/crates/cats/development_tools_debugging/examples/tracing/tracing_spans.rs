@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Creating and entering spans with `tracing`.
 //!
 //! A span marks a period of work with a name and fields, and spans can nest, so

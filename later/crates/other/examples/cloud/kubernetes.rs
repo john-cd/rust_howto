@@ -5,7 +5,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A minimal Kubernetes operator with `kube-rs`: a custom resource (`Echo`),
 //! a pure function that computes the desired `Deployment`, and a controller
 //! loop that applies it and reports the status.

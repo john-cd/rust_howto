@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Polling several futures at once with `join!` and `join_all`.
 //!
 //! `join!` runs several futures concurrently and waits for all of them, which

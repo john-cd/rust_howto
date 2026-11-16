@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A virtualized data table with `egui_extras`.
 //!
 //! A virtualized table only draws the rows currently visible, so it stays fast

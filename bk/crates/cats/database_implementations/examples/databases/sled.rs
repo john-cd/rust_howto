@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example using the `sled` embeddable database.
 //!
 //! `sled` is a pure-Rust high-performance embedded database.

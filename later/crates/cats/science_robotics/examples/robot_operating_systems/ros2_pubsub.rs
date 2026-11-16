@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Publish and receive `std_msgs/String` messages with a ROS 2 node.
 //!
 //! ROS 2 (Robot Operating System) is a middleware: it lets the separate

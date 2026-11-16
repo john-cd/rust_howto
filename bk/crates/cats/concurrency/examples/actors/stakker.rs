@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! An actor with the `stakker` crate: a counter that processes messages.
 //!
 //! The actor model structures a program as independent actors that own their

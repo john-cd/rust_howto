@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to extract unique links from a Wikipedia page.
 //!
 //! It uses the `reqwest` crate to fetch the page content, the `regex` crate to

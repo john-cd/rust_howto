@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Wrapping byte arithmetic without allocation or operating-system services.
 
 /// Returns the sum of all bytes modulo 256; an empty slice has checksum zero.

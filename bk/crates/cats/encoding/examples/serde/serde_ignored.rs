@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `serde_ignored` is a crate that helps handle unknown fields when
 //! deserializing with `serde`. It's useful to ignore fields
 //! that are present in the input but not defined in your struct.

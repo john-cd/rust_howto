@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Renders Markdown to HTML, then sanitizes the result.
 //!
 //! Markdown allows raw HTML, so sanitizing the *Markdown source* is not

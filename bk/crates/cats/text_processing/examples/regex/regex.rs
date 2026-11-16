@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Extracting links from Markdown with several regular expressions.
 //!
 //! A regular expression (regex) describes a text pattern. Compile it once and

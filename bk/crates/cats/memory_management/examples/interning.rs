@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! String interning: store each distinct string once and compare, hash and
 //! copy cheap handles instead of strings.
 //!

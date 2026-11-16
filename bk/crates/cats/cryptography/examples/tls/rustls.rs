@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Connect to a TLS server with `rustls` and verify its certificate.
 //!
 //! TLS encrypts a connection and lets the client verify the server's identity

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Extracts anchor links from an HTML document with CSS selectors.
 //!
 //! Web scraping extracts data from HTML pages. Links are `<a href>` elements,

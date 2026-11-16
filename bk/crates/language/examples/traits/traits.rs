@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Defining and implementing traits in Rust.
 //!
 //! Traits define shared behavior that multiple types can implement, similar

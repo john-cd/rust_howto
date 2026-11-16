@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Simplified implementation of the `Arc` smart pointer.
 //!
 //! Invoking `clone` on `Arc` produces a new `Arc` instance, which points to the

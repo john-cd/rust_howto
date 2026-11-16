@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Overloading the `+` operator with `Add`.
 //!
 //! Operator overloading means implementing the traits in `std::ops`, such as

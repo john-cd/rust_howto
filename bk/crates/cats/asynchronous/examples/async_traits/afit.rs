@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A native `async fn` in a trait (AFIT), called through generics.
 //!
 //! Decision table:

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parallel `filter`, `map` and `reduce` over a vector with `rayon`.
 //!
 //! Map/reduce first transforms every element independently (map), then combines

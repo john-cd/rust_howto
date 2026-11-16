@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates generating shell completions with `clap_complete`.
 //!
 //! Shell completion lets users press Tab to complete command names and options.

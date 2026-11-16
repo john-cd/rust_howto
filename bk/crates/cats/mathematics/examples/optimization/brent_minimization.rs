@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Minimize a one-variable function with Brent's method.
 //!
 //! Optimization looks for the input that makes a function as small as possible,

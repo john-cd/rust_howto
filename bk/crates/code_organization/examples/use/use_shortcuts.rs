@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Shortcuts for `use`: globs, grouped imports, `self` and aliases.
 
 // Use a glob (the `*`) to bring all public objects within a module

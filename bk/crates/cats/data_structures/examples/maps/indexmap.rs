@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! An `IndexMap`, a hash map that preserves insertion order.
 //!
 //! An `IndexMap` is a hash map that remembers insertion order and lets you

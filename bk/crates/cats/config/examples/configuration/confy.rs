@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Loads a typed configuration with confy.
 //!
 //! `confy` stores a settings struct in the user's configuration directory (for

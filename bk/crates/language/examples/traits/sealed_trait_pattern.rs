@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of a sealed trait, preventing external implementations.
 //!
 //! A sealed trait cannot be implemented outside its crate, because it requires

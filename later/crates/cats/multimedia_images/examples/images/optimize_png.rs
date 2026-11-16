@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Optimizes a generated PNG and verifies its decoded pixels.
 //!
 //! PNG optimizers try many compression settings and filters to produce a

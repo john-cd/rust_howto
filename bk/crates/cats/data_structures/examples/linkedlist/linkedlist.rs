@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A `LinkedList`, a doubly linked list.
 //!
 //! A linked list stores each element in a separate node pointing to the next,

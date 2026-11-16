@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A supervisor that restarts a failing task with capped exponential backoff
 //! and stops when it is cancelled.
 //!

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to use `rust-ini` to parse and manipulate INI
 //! files.
 //!

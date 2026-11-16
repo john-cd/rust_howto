@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates the basic usage of `HashSet`.
 //!
 //! `HashSet` is a collection that stores unique values. It's useful for

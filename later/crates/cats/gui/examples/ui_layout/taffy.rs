@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Computes and inspects a flexbox layout with taffy.
 //!
 //! Flexbox is the CSS layout model: children are arranged in a row or column,

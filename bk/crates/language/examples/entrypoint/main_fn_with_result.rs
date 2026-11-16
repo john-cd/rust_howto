@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of a `main` function returning a `Result`,
 //! in this case a specialized `Result` type for I/O operations.
 //!

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Converting between a date and time and a Unix timestamp with `chrono`.
 //!
 //! A Unix timestamp counts the seconds since 1 January 1970 00:00:00 UTC. It is

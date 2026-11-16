@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to use the `diff` crate to compare two strings
 //! and print the differences.
 //!

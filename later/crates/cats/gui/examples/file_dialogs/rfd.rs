@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates opening a file dialog using the rfd crate.
 //!
 //! A file dialog is the operating system's own "open" or "save" window. Using

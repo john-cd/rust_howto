@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Creating and consuming a `Stream` of numbers.
 //!
 //! A stream is the asynchronous version of an iterator: it yields many values

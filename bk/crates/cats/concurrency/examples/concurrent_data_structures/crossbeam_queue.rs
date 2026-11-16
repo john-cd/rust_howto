@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates the basic usage of `ArrayQueue`.
 //!
 //! A lock-free queue lets many threads push and pop without taking a mutex, so

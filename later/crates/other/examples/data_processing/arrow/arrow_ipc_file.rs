@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Save a `RecordBatch` in the Arrow IPC file and stream formats with the
 //! `arrow-ipc` crate, then read it back.
 //!

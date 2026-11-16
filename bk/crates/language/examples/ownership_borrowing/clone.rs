@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates the use of the `clone` method
 //! to create a deep copy of a `String`.
 //!

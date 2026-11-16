@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Find a root of a function numerically.
 //!
 //! A root of a function is an input where it equals zero. Solving equations

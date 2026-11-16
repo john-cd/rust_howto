@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates incremental computation using the `salsa` crate.
 //!
 //! `salsa` is a framework for writing incremental, on-demand programs: programs

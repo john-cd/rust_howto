@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of using the `reqwest` crate to create and delete a GitHub Gist.
 //!
 //! REST APIs use HTTP verbs on URLs: `POST` creates a resource and `DELETE`

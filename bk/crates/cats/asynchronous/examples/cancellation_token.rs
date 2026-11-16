@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Cancels a group of asynchronous tasks with `CancellationToken`.
 //!
 //! A cancellation token is a shared signal for asking tasks to stop, for

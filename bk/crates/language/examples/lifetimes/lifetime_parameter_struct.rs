@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A lifetime parameter on a struct and on its `impl` blocks.
 //!
 //! A struct that holds a reference needs a lifetime parameter, which says the

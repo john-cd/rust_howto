@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Formats an integer with the `itoa` crate.
 //!
 //! `itoa` formats integers into text faster than the standard `format!`,

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Scoped threads borrow a local string and return values through their
 //! handles.
 //!

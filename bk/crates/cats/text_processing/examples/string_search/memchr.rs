@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Searching bytes quickly with `memchr`.
 //!
 //! `memchr` finds a byte in a slice using vector (SIMD) CPU instructions that

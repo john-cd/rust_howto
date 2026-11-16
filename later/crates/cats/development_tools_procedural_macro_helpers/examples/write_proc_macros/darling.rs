@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parse derive attributes with a declarative `darling` input model.
 //!
 //! `FromDeriveInput` reads the `builder` attribute and can turn invalid keys

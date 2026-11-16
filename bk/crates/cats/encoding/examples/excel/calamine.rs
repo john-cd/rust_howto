@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Reads an `.xlsx` workbook with `calamine`.
 //!
 //! The workbook is the one written by the `rust_xlsxwriter` recipe,

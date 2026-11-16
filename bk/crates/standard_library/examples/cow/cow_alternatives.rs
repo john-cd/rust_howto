@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Alternatives to `Cow`.
 //!
 //! `Cow` (clone on write) holds either a borrowed or an owned value and clones

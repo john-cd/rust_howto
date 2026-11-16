@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Blur an image in memory using a Gaussian filter.
 //!
 //! A Gaussian blur replaces each pixel with a weighted average of its

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates sparse matrices using the `sprs` crate.
 //!
 //! A matrix is *sparse* when almost all of its entries are zero. Think of a

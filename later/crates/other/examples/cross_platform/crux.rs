@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Implements a counter application core that can run behind different platform shells.
 //!
 //! # Crux Core Example

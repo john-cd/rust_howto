@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parses an SVG and rasterizes it to a PNG with `resvg`.
 //!
 //! SVG is an XML format that describes drawings as shapes and paths instead of

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Test a compiled command-line executable with assert_cmd and predicates.
 
 use assert_cmd::Command;

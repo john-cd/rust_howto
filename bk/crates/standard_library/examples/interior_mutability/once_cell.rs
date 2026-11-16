@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `OnceCell<T>` allows for single assignment, interior mutability.
 //! It's typically used for lazy initialization of a value.
 //!

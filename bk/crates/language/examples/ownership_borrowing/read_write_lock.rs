@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Many shared references or one mutable reference.
 //!
 //! The borrow rules allow many shared references or exactly one mutable

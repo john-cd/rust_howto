@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A queue implemented with `VecDeque`.
 //!
 //! A queue is first in, first out (FIFO), like a line at a shop. `VecDeque` is

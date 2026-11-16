@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates composing standard iterator adapters with closures.
 //!
 //! Iterators process a sequence one item at a time. Adapters such as `map` and

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to write `use` declarations to bring items
 //! from external crates into scope, without having to write their full paths.
 

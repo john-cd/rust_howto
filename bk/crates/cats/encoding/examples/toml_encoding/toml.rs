@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The following demonstrates TOML decoding.
 //!
 //! TOML is a minimal configuration file format.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Rust allows to write `impl Trait` as the return type of functions (often
 //! called "RPIT"). This means that the function returns "some type that
 //! implements the Trait". This is commonly used to return closures, iterators,

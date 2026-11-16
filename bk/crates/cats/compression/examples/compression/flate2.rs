@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of using the `flate2` crate.
 //!
 //! `flate2` is a stream compression library that supports DEFLATE, zlib,

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Criterion benchmark comparing arena allocation (`bumpalo`) against standard
 //! heap (`Box`) allocations.
 //!

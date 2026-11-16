@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Derive `Arbitrary` to turn raw fuzzer bytes into a structured test case.
 //!
 //! `Unstructured` hands those bytes to the derive implementation, which reads

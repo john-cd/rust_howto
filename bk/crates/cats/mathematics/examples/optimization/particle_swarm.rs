@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Minimize a function with particle swarm optimization.
 //!
 //! Particle swarm optimization moves many candidate points through the search

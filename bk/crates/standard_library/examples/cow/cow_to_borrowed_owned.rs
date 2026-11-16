@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates various uses and conversions of `Cow` (Clone-on-Write).
 //!
 //! `Cow` (clone on write) holds either a borrowed or an owned value and clones

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to use the `tl` crate to parse HTML.
 //!
 //! `tl` is a fast HTML parser that builds a tree of tags you can search by ID,

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Tokenize HTML with `html5ever` and print the parsed tokens.
 //!
 //! HTML5 defines exactly how a browser must read even broken markup.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Loads typed settings by layering TOML files, environment variables, and CLI
 //! overrides.
 //!

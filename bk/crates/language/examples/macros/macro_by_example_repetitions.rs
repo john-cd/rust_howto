@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Repetitions in declarative macros.
 
 /// Returns the sum of the expressions passed as arguments.

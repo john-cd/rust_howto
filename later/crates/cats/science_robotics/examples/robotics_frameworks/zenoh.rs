@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Publishes and receives several local telemetry values with `zenoh`.
 //!
 //! Zenoh is a publish/subscribe protocol for robots and edge devices. Data is

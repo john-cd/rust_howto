@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Model-checks a publication and cancellation protocol with `loom`.
 //!
 //! One thread publishes a value and then raises a `ready` flag; the other

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Sorts the vector in parallel using Rayon's `par_sort` method.
 //!
 //! A parallel sort splits the data, sorts the parts on different cores, and

@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Calls embedded Python code and passes it positional arguments with PyO3.
 //!
 //! PyO3 connects Rust and Python. Embedding runs a Python interpreter inside a

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A `SmallVec`, which stores a few elements inline before moving to the heap.
 //!
 //! `SmallVec` stores up to N items inline (on the stack) and moves to the heap

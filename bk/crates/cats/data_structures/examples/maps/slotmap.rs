@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A `SlotMap`, which hands out stable keys on insertion.
 //!
 //! A slot map hands out stable keys when you insert, and detects stale keys: a

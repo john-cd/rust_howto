@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Sample a satellite's orbit from a fixed two-line element set using `sgp4`.
 //!
 //! A two-line element set (TLE) is a compact text format that space agencies

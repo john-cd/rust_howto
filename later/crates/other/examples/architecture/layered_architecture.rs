@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates a layered architecture in Rust,
 //! separating concerns into data access, business logic, and presentation
 //! layers.

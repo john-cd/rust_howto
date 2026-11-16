@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Serve a tonic service to browsers with gRPC-Web.
 //!
 //! Browsers cannot speak gRPC over HTTP/2 directly. `GrpcWebLayer` translates

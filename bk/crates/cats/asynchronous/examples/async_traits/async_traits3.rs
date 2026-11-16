@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Asynchronous trait methods with the `async_trait` crate.
 //!
 //! Before native `async fn` in traits, the `async_trait` crate boxed each

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to configure tracing at runtime,
 //! - dealing with a variable number of `Layer`s of different types.
 //! - reloading the tracing configuration at runtime.

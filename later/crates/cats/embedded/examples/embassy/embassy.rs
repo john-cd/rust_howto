@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Runs a bounded pair of Embassy tasks on the host executor.
 //!
 //! Embassy is an async runtime for microcontrollers: tasks wait on timers and

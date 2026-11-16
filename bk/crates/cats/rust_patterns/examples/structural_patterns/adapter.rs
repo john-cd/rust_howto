@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Adapts buffered input lines into simple comma-separated row values.
 //!
 //! The adapter pattern converts one interface to the one a caller expects, like

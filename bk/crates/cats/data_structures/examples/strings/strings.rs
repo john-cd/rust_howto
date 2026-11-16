@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates common string types in Rust.
 //!
 //! Rust has two main string types: `String`, an owned, growable UTF-8 buffer,

@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Nested routes, a route parameter and a not-found route with
 //! [`leptos_router`].
 //!

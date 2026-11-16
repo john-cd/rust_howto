@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Concatenating identifiers in macros with `paste`.
 //!
 //! Declarative macros cannot create new identifiers such as `get_` + a field

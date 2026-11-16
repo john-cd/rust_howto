@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Runs a headless `wgpu` compute shader that doubles each storage-buffer
 //! value.
 //!

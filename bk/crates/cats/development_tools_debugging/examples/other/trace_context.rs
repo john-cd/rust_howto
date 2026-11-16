@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Propagate a W3C trace context from an HTTP client to a handler, so both
 //! sides report spans of the same trace.
 //!

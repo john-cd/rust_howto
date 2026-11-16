@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The `main` function, the entry point of a binary crate.
 //!
 //! `main` is where a binary crate starts. It takes no arguments (read them with

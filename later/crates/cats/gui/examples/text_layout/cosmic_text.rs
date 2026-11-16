@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Laying out and rasterizing text with `cosmic-text`.
 //!
 //! Text layout is harder than it looks: the library picks fonts, shapes

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Connects to Oracle with Sibyl's blocking API and reads a value from `DUAL`.
 //!
 //! Oracle Database is a commercial relational database. `DUAL` is a built-in

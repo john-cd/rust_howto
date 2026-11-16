@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Tokenize a small CSS declaration list with `cssparser`.
 //!
 //! CSS (Cascading Style Sheets) describes how web pages look. A tokenizer

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to capture both standard output and standard
 //! error from an external command and redirect them to the same file.
 //!

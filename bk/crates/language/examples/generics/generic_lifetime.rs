@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A struct that holds a reference of any type with a lifetime parameter.
 
 /// Struct with a type parameter `T` and a lifetime parameter `'a`.

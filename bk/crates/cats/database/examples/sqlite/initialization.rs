@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates how to initialize a SQLite database with tables.
 //!
 //! SQLite is a database in a single file, with no server to install; it is

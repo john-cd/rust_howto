@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! UTF-8 paths with `camino`.
 //!
 //! Standard Rust paths (`Path`) can hold bytes that are not valid UTF-8, which

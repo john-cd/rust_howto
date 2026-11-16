@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example shows how to serialize data to a CSV file.
 //!
 //! CSV (comma-separated values) is a plain-text table format that spreadsheets

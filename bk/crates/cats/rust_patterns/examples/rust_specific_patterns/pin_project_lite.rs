@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `pin-project-lite` projects a pinned field with a small declarative macro.
 //!
 //! `Pin<&mut Self>` prevents moving a value whose address must remain stable.

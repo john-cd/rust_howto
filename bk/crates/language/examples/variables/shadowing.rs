@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Shadowing a variable with a new binding.
 
 /// Shadows a variable in the same and in an inner scope.

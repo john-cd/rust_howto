@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Shut an async service down on Ctrl-C or SIGTERM with Tokio.
 //!
 //! Services should shut down gracefully: stop accepting new work, finish what

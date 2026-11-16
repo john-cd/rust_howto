@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! An `async fn` in a trait, implemented by a health checker.
 //!
 //! Since Rust 1.75, traits can declare `async fn` directly. A trait lets

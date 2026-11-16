@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parsing command-line arguments with `pico-args`.
 //!
 //! `pico-args` is a tiny command-line parser with no derive macros and no

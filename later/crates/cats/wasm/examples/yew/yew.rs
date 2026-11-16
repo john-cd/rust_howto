@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The main function to render the App component.
 //!
 //! Yew is a Rust framework for web front ends, compiled to WebAssembly. A

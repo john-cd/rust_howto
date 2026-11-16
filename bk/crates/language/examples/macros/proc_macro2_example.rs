@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Rewriting tokens with a procedural macro built on `proc-macro2`.
 
 // Import our custom procedural macro that was built using `proc-macro2`.

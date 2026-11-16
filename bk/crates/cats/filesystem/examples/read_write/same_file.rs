@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Check whether we are reading & writing to the same file.
 //!
 //! Two different paths can name the same file, through hard links or symbolic

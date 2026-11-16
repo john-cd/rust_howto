@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Minimize the Rosenbrock function with Nelder-Mead.
 //!
 //! Nelder-Mead minimizes a function without derivatives by moving a simplex (a

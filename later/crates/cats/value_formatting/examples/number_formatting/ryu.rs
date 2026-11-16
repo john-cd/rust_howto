@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Formats floating-point values as decimal strings with the `ryu` crate.
 //!
 //! # Ryū Example

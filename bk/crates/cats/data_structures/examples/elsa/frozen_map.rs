@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates stable references in an `elsa::FrozenMap`.
 
 use elsa::FrozenMap;

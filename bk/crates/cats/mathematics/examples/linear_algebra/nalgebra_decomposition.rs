@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates matrix decompositions using the `nalgebra` crate.
 //!
 //! A decomposition splits a matrix into simpler ones (such as LU, QR or SVD).

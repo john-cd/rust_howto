@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of a function returning a `Cow`.
 //!
 //! Returning `Cow` lets a function return its input untouched (no allocation)

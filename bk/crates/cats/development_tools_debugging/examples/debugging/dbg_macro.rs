@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Prints an expression with `dbg!` and continues with its value.
 //!
 //! `dbg!` prints the expression, its value and the file and line to standard

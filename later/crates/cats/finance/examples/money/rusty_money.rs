@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Represent, add, and format money with an explicit currency.
 //!
 //! Never store money as `f64`: binary floating point cannot represent values

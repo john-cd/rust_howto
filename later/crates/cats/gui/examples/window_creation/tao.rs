@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Creates and manages a desktop window with Tao.
 //!
 //! A window is how a program receives input and shows pixels. `tao` is a fork

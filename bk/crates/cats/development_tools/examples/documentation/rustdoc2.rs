@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Documentation comments on a struct and its constructor.
 //!
 //! `rustdoc` builds HTML documentation from doc comments. Intra-doc links such

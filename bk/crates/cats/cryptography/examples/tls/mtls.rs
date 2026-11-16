@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Send an HTTPS request with a client certificate and private key.
 //!
 //! In mutual TLS (mTLS) both sides prove who they are with certificates, not

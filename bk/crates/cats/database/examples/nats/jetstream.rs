@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Publishes orders to a NATS JetStream stream and processes them with a
 //! durable pull consumer.
 //!

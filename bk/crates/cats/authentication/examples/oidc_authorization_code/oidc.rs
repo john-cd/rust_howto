@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Signs a user in with the OpenID Connect authorization-code flow and PKCE,
 //! using a deterministic in-process identity provider.
 //!

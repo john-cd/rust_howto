@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Kill a child and all of its descendants with a Unix process group.
 //!
 //! A process group collects a process and the children it starts. Killing the

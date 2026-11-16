@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Creates complex numbers with integer and floating-point components.
 //!
 //! A complex number has a real part and an imaginary part, written a + bi,

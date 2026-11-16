@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Redirect HTTP requests to HTTPS.
 //!
 //! The URI rewriting is a pure function, which makes it easy to test.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Trait objects with auto traits such as `Send`.
 //!
 //! A `Box<dyn Trait>` is not `Send` unless you say so: `Box<dyn Trait + Send>`.

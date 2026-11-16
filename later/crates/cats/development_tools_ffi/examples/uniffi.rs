@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Exporting a Rust API to other languages with `uniffi`.
 //!
 //! In a real project, this code lives in the `lib.rs` of a crate with

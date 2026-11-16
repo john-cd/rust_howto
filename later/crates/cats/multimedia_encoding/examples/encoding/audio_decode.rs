@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Probe and decode audio formats to linear PCM samples using `symphonia`.
 //!
 //! Audio files come in many formats (MP3, FLAC, Ogg, WAV). A decoder first

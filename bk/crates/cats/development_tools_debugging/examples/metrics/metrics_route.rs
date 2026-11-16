@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Serves the Prometheus payload from an Axum `/metrics` route.
 //!
 //! Metrics are numbers that describe a running service, such as request counts

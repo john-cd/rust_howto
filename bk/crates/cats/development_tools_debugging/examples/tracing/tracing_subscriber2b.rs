@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates how to write logs to multiple destinations (in this instance,
 //! stdout and a file) simultaneously.
 //!

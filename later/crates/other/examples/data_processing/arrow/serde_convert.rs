@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Convert Serde-compatible rows to an Arrow batch and back to Rust structs.
 //!
 //! Serde can convert Rust structs to Arrow columns and back, which saves

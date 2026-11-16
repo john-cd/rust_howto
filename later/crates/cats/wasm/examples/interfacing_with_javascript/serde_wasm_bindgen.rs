@@ -8,7 +8,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Converts structured values between JavaScript and Rust with Serde.
 //!
 //! JavaScript values and Rust structs have different representations. Serde

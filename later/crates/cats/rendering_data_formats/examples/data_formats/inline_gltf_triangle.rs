@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parses an inline glTF triangle and reports its vertex and index counts.
 //!
 //! glTF is the "JPEG of 3D": an open format for 3D models used by engines and

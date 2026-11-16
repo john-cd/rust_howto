@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A `TinyVec`, which stores a few elements inline before moving to the heap.
 //!
 //! `TinyVec` stores a few items inline and spills to the heap if it grows.

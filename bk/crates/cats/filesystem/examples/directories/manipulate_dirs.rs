@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Creating, listing and removing directories.
 //!
 //! `create_dir_all` creates a directory and any missing parents, like `mkdir

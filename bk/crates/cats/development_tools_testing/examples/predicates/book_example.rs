@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates building and applying a composite predicate.
 
 use predicates::prelude::*;

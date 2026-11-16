@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Snapshot testing with `insta`.
 //!
 //! A snapshot test compares the output with a reference file stored in the

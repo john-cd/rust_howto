@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Parse and format human-readable durations with `humantime`.
 //!
 //! ### Overview

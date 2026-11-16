@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A small executable used by the command-line integration tests.
 //!
 //! A command-line program can be tested end to end by running the real binary

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A validated newtype: an `EmailAddress` that cannot hold invalid data, even
 //! when it comes from `serde` deserialization.
 //!

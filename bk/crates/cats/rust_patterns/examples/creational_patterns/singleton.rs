@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The singleton pattern with a global `OnceLock`.
 //!
 //! A singleton is a value that exists exactly once and is shared globally, such

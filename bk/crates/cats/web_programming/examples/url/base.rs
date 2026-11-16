@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This module demonstrates how to reduce a hierarchical URL to its origin.
 //!
 //! A URL has parts: scheme (`https`), host (`example.com`), optional port, path, query and fragment. A hierarchical URL, such as `https://...`, can be cut back to its origin or its base to resolve relative links.

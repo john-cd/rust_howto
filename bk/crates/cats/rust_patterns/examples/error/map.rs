@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates transforming successful values and errors with `Result`.
 //!
 //! `map` transforms the success value of a `Result` and leaves an error

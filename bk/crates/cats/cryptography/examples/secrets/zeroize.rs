@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Wipes a secret from memory when it is dropped, using `zeroize`'s derive
 //! macros.
 //!

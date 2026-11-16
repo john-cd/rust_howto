@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Compressed bitmaps with the `roaring` crate.
 //!
 //! A roaring bitmap stores a set of integers compactly and supports fast union

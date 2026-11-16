@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The `pub` keyword on functions, types, traits and modules.
 
 /// Private module.

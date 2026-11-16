@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Alternatives to self-referential structs.
 
 /// 1. Avoid self-referential structs. Note how each field points to a portion of the `String` owned

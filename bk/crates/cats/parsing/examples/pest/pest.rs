@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates `pest` parsing a flat arithmetic expression
 //! into alternating number and operator tokens.
 //!

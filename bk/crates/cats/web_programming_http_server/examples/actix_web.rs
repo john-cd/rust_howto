@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates a basic Actix Web server.
 //!
 //! It defines a simple HTTP server that listens on `127.0.0.1:8080` and

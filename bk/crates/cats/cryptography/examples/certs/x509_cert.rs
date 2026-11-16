@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Build and inspect X.509 certificate fields with the `x509_cert` crate.
 //!
 //! This deterministic, offline example demonstrates DER encoding of a

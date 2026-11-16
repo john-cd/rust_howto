@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Creates a row-major RGBA pixel buffer with opaque and translucent pixels.
 
 use image::Rgba;

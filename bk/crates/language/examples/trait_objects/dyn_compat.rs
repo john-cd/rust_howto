@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Example of (non-)dyn-compatible traits.
 //!
 //! A trait object (`dyn Trait`) calls methods through a table of function

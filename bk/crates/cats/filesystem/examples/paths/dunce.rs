@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Canonicalize a path without the Windows `\\?\` prefix.
 //!
 //! On Windows, `canonicalize` returns paths with a `\\?\` prefix that many

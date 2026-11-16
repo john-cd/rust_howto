@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Reads a GeoJSON feature and checks its planar geometry.
 //!
 //! GeoJSON is a JSON format for geographic features such as points and

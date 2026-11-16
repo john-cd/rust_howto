@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Forecast a seasonal time series with `augurs`: MSTL removes the seasonal
 //! component, and an exponential smoothing (ETS) model forecasts the trend.
 //!

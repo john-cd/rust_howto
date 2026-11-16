@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Simple `wasmi` example for virtualization.
 //!
 //! This loads a tiny WebAssembly module from a raw byte array, instantiates it

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Honour `429 Too Many Requests` and `Retry-After`.
 //!
 //!

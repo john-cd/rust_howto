@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Logging an error with the `log` crate.
 //!
 //! Logging an error with `error!` records that something failed, with enough

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Associated constants in traits.
 
 /// A trait demonstrating the use of associated constants.

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `autocfg` probes compiler support for use in Cargo build scripts.
 //!
 //! Add to your `Cargo.toml`:

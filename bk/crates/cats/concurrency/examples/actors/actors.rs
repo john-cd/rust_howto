@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A small actor built from a Tokio task and message channels.
 //!
 //! The actor model structures a program as independent actors that own their

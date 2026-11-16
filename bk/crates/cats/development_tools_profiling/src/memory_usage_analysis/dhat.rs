@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! `dhat` provides heap profiling and ad-hoc profiling capabilities,
 //! similar to those provided by `DHAT`, a powerful heap profiler that
 //! comes with `Valgrind`.

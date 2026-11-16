@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrate various functionalities of the `time` crate.
 //!
 //! The `time` crate is a lighter alternative to `chrono` for dates, times and

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Queries an Ethereum balance and signs a message with `alloy`, without
 //! network access.
 //!

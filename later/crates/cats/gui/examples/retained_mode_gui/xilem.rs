@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! A counter application with `xilem`.
 //!
 //! Xilem builds the interface from a function of the state: it returns a

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Lazily initializes shared global data with `std::sync::LazyLock`.
 //!
 //! A global value shared by many threads must be initialized exactly once, even

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! The `ringbuf` crate as an alternative to `rtrb`: a lock-free SPSC ring
 //! buffer with a trait-based API.
 //!
