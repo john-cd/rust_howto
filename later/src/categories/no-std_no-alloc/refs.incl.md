@@ -1,6 +1,5 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-
 [c~core::fmt::Write~docs]: https://doc.rust-lang.org/core/fmt/trait.Write.html
 [c~heapless::pool~docs]: https://docs.rs/heapless/latest/heapless/pool/
 [c~heapless::spsc~docs]: https://docs.rs/heapless/latest/heapless/spsc/
