@@ -49,8 +49,8 @@ See the README for this repository's project paths and commands.
 
 ## Current state
 
-Reviewed 2026-11-16. The primary checkout is on `develop` at `79725592e` for
-this snapshot, eight commits ahead of `origin/develop`; this `WORKTREES.md`
+Reviewed 2026-11-16. The primary checkout is on `develop` at `178910f75` for
+this snapshot, ten commits ahead of `origin/develop`; this `WORKTREES.md`
 update follows that snapshot. Its recent history includes
 `ffe8d0834` (`codex/promote-later-first-wave`); slot `c` was not inspected or
 changed during this task, per the user's request. Preserve the primary's
@@ -59,7 +59,7 @@ submodule update is committed at `01d34fe`.
 
 | Checkout | Branch or revision | Status and cache |
 | --- | --- | --- |
-| Repository root | `develop` (snapshot `79725592e`) | Chapter migrations, storage defaults, five book-link/accuracy commits, and fixture formatting committed; eight commits ahead before this status update; modified `TODO.md` and untracked `later-to-bk-plan.md` preserved; `mdbook-utils` at `01d34fe`; cache slot `main`. |
+| Repository root | `develop` (snapshot `178910f75`) | Chapter migrations, storage defaults, five book-link/accuracy commits, and fixture formatting committed; ten commits ahead before this status update; modified `TODO.md` and untracked `later-to-bk-plan.md` preserved; `mdbook-utils` at `01d34fe`; cache slot `main`. |
 | `.worktrees/a` | `codex/worktree-a-md060-compact` at `e1535bda2` | Clean; compact-table and storage behavior already exist on `develop`; branch retained; cache slot `a`. |
 | `.worktrees/b` | `codex/issue-2273-book-links` at `719f93f09` | Clean; five topic commits are integrated into `develop`; branch retained; cache slot `b`. |
 | `.worktrees/c` | Preserved per user request | Not inspected or changed; cache slot `c`. |
