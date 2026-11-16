@@ -11,6 +11,15 @@ root := replace(clean(source_directory() + "/../.."), "\\", "/")
 exe := if os_family() == "windows" { ".exe" } else { "" }
 python := if os_family() == "windows" { "python" } else { "python3" }
 mdbook_utils_rev := env("MDBOOK_UTILS_REV", "dedddf3699e461cd418c1a044d82aabd3fec62e0")
+mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
+
+# ---- Task aliases -----------------------------------------------------------
+
+alias bb := buildbook
+alias s := serve
+alias q := quick
+
+# ---- Book build and preview -------------------------------------------------
 
 # List the available recipes and task modules.
 [no-exit-message]
@@ -18,9 +27,6 @@ _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- BOOK BUILDING -----------------------------------
-
-# Run the buildbook recipe. Alias: bb.
-alias bb := buildbook
 
 # Render unpublished draft chapters without adding them to the published book.
 @drafts: _release_mbdbook-scrub
@@ -50,8 +56,6 @@ alias bb := buildbook
     cargo install --git https://github.com/john-cd/mdbook-utils --rev {{ mdbook_utils_rev }} --locked mdbook-utils
 
 # Install the pinned word-index preprocessor when a developer renders outside CI.
-mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
-
 # Install the pinned mdbook-indexing preprocessor used to render the book.
 @_install-mdbook-indexing:
     cargo install --locked --version {{ mdbook_indexing_version }} mdbook-indexing
@@ -106,18 +110,12 @@ mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
 
 ## ---- BOOK SERVING -----------------------------------
 
-# Run the serve recipe. Alias: s.
-alias s := serve
-
 # Serve the book (incl. link checking)
 @serve: _install-mdbook-indexing
     echo "Serve the book"
     cd {{ quote(root) }} && mdbook serve -p 3000 -n 127.0.0.1 --open {{ quote(root) }}
     ## NOTE: can conflict with "port" / EXPOSE in the Docker / Docker Compose configuration
     ## Or use: cd {{ root }}/book/html ; python3 -m http.server 3000
-
-# Run the quick recipe. Alias: q.
-alias q := quick
 
 # Serve the book from its Markdown files, skipping link checking and preprocessors for speed; rebuilds it on changes
 @quick:

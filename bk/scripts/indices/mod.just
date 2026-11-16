@@ -7,6 +7,10 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 exe := if os_family() == "windows" { ".exe" } else { "" }
 root := replace(clean(source_directory() + "/../.."), "\\", "/")
+help := 'help'
+empty := ''
+
+# ---- Index generation and reference maintenance ----------------------------
 
 # List the available recipes and task modules.
 [no-exit-message]
@@ -15,9 +19,6 @@ _default:
 
 ## ---- INDICES MANAGEMENT -----------------------------------
 ## ---- CRATE INDICES -----------------------------------
-
-help := 'help'
-empty := ''
 
 # Create the `crates by category` and `crates (alphabetical)` pages
 [no-cd]

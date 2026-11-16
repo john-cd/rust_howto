@@ -3,9 +3,13 @@
 # Purpose: Export shared Python tooling paths and provide uv and prek recipes.
 # Usage: Import from a project justfile; run that justfile with --list or env.
 
+# ---- Shared shell configuration --------------------------------------------
+
 # Shared Python environment configuration, imported by each Python project's justfile.
 set shell := ["bash", "-uc"]
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
+
+# ---- Project paths and exported environment --------------------------------
 
 # Resolve the importing project from this file's location. Worktree builds, caches, and outputs
 # are keyed by repository, project, and worktree slot; py_environment_project may share an
@@ -67,13 +71,15 @@ export TEMP := if os() == "windows" { CODE_TEMP_ROOT } else { env("TEMP", "/tmp"
 export TMP := if os() == "windows" { CODE_TEMP_ROOT } else { env("TMP", "/tmp") }
 export TMPDIR := if os() == "windows" { CODE_TEMP_ROOT } else { env("TMPDIR", "/tmp") }
 
+# ---- Python and hook recipes ------------------------------------------------
+
 # Create only the external directories needed by tools.
 _python-prepare:
-    @mkdir -p {{quote(CODE_PYTHON_BUILD_DIR)}} {{quote(CODE_PYTHON_OUTPUT_DIR)}} {{quote(CODE_TEMP_ROOT)}}
+    @mkdir -p {{ quote(CODE_PYTHON_BUILD_DIR) }} {{ quote(CODE_PYTHON_OUTPUT_DIR) }} {{ quote(CODE_TEMP_ROOT) }}
 
 # Synchronize the committed dependency lockfile.
 sync: _python-prepare
-    uv --directory {{quote(py_project_dir)}} sync --locked
+    uv --directory {{ quote(py_project_dir) }} sync --locked
 
 # Forward uv arguments without losing argument boundaries; keep build outputs external.
 [positional-arguments]
@@ -85,54 +91,54 @@ uv +args: _python-prepare
                 case "$arg" in -o|--out-dir|--out-dir=*|-o?*) explicit_output=true ;; esac; \
             done; \
             if [[ $explicit_output == false ]]; then \
-                args+=(--out-dir {{quote(CODE_PYTHON_OUTPUT_DIR + "/dist")}}); \
+                args+=(--out-dir {{ quote(CODE_PYTHON_OUTPUT_DIR + "/dist") }}); \
             fi; \
         fi; \
-        uv --directory {{quote(py_project_dir)}} "${args[@]}"
+        uv --directory {{ quote(py_project_dir) }} "${args[@]}"
 
 # Run an application or tool in the locked project environment.
 [positional-arguments]
 run +args: _python-prepare
-    uv --directory {{quote(py_project_dir)}} run --locked "$@"
+    uv --directory {{ quote(py_project_dir) }} run --locked "$@"
 
 # Run repository hooks from the Git repository root.
 [positional-arguments]
 prek +args: _python-prepare
-    cd {{quote(py_repo_root)}} && prek "$@"
+    cd {{ quote(py_repo_root) }} && prek "$@"
 
 # Install the repository Git hook shims with prek.
 hooks-install: _python-prepare
-    cd {{quote(py_repo_root)}} && prek install
+    cd {{ quote(py_repo_root) }} && prek install
 
 # Run all repository hooks against every tracked file.
 hooks: _python-prepare
-    cd {{quote(py_repo_root)}} && prek run --all-files
+    cd {{ quote(py_repo_root) }} && prek run --all-files
 
 # Display the selected project and the environment exported to child processes.
 env:
-    @printf 'WORKTREE_DIR=%s\nWORKTREE_SLOT=%s\nPYTHON_PROJECT_DIR=%s\n' {{quote(py_repo_root)}} {{quote(py_slot)}} {{quote(py_project_dir)}}
-    @printf 'CODE_REPOS_ROOT=%s\n' {{quote(CODE_REPOS_ROOT)}}
-    @printf 'CODE_TEMP_ROOT=%s\n' {{quote(CODE_TEMP_ROOT)}}
-    @printf 'CODE_PACKAGES_ROOT=%s\n' {{quote(CODE_PACKAGES_ROOT)}}
-    @printf 'CODE_CACHE_ROOT=%s\n' {{quote(CODE_CACHE_ROOT)}}
-    @printf 'CODE_TOOLS_ROOT=%s\n' {{quote(CODE_TOOLS_ROOT)}}
-    @printf 'CODE_PYTHON_ENV_ROOT=%s\n' {{quote(CODE_PYTHON_ENV_ROOT)}}
-    @printf 'CODE_PYTHON_BUILD_ROOT=%s\n' {{quote(CODE_PYTHON_BUILD_ROOT)}}
-    @printf 'CODE_PYTHON_OUTPUT_ROOT=%s\n' {{quote(CODE_PYTHON_OUTPUT_ROOT)}}
-    @printf 'CODE_PYTHON_BUILD_DIR=%s\n' {{quote(CODE_PYTHON_BUILD_DIR)}}
-    @printf 'CODE_PYTHON_OUTPUT_DIR=%s\n' {{quote(CODE_PYTHON_OUTPUT_DIR)}}
-    @printf 'UV_PROJECT_ENVIRONMENT=%s\n' {{quote(UV_PROJECT_ENVIRONMENT)}}
-    @printf 'UV_CACHE_DIR=%s\n' {{quote(UV_CACHE_DIR)}}
-    @printf 'UV_PYTHON_INSTALL_DIR=%s\n' {{quote(UV_PYTHON_INSTALL_DIR)}}
-    @printf 'UV_TOOL_DIR=%s\n' {{quote(UV_TOOL_DIR)}}
-    @printf 'UV_TOOL_BIN_DIR=%s\n' {{quote(UV_TOOL_BIN_DIR)}}
-    @printf 'UV_LINK_MODE=%s\n' {{quote(UV_LINK_MODE)}}
-    @printf 'PIP_CACHE_DIR=%s\n' {{quote(PIP_CACHE_DIR)}}
-    @printf 'PREK_HOME=%s\n' {{quote(PREK_HOME)}}
-    @printf 'PYTHONPYCACHEPREFIX=%s\n' {{quote(PYTHONPYCACHEPREFIX)}}
-    @printf 'RUFF_CACHE_DIR=%s\n' {{quote(RUFF_CACHE_DIR)}}
-    @printf 'PYTEST_ADDOPTS=%s\n' {{quote(PYTEST_ADDOPTS)}}
-    @printf 'MKDOCS_SITE_DIR=%s\n' {{quote(MKDOCS_SITE_DIR)}}
-    @printf 'TEMP=%s\n' {{quote(TEMP)}}
-    @printf 'TMP=%s\n' {{quote(TMP)}}
-    @printf 'TMPDIR=%s\n' {{quote(TMPDIR)}}
+    @printf 'WORKTREE_DIR=%s\nWORKTREE_SLOT=%s\nPYTHON_PROJECT_DIR=%s\n' {{ quote(py_repo_root) }} {{ quote(py_slot) }} {{ quote(py_project_dir) }}
+    @printf 'CODE_REPOS_ROOT=%s\n' {{ quote(CODE_REPOS_ROOT) }}
+    @printf 'CODE_TEMP_ROOT=%s\n' {{ quote(CODE_TEMP_ROOT) }}
+    @printf 'CODE_PACKAGES_ROOT=%s\n' {{ quote(CODE_PACKAGES_ROOT) }}
+    @printf 'CODE_CACHE_ROOT=%s\n' {{ quote(CODE_CACHE_ROOT) }}
+    @printf 'CODE_TOOLS_ROOT=%s\n' {{ quote(CODE_TOOLS_ROOT) }}
+    @printf 'CODE_PYTHON_ENV_ROOT=%s\n' {{ quote(CODE_PYTHON_ENV_ROOT) }}
+    @printf 'CODE_PYTHON_BUILD_ROOT=%s\n' {{ quote(CODE_PYTHON_BUILD_ROOT) }}
+    @printf 'CODE_PYTHON_OUTPUT_ROOT=%s\n' {{ quote(CODE_PYTHON_OUTPUT_ROOT) }}
+    @printf 'CODE_PYTHON_BUILD_DIR=%s\n' {{ quote(CODE_PYTHON_BUILD_DIR) }}
+    @printf 'CODE_PYTHON_OUTPUT_DIR=%s\n' {{ quote(CODE_PYTHON_OUTPUT_DIR) }}
+    @printf 'UV_PROJECT_ENVIRONMENT=%s\n' {{ quote(UV_PROJECT_ENVIRONMENT) }}
+    @printf 'UV_CACHE_DIR=%s\n' {{ quote(UV_CACHE_DIR) }}
+    @printf 'UV_PYTHON_INSTALL_DIR=%s\n' {{ quote(UV_PYTHON_INSTALL_DIR) }}
+    @printf 'UV_TOOL_DIR=%s\n' {{ quote(UV_TOOL_DIR) }}
+    @printf 'UV_TOOL_BIN_DIR=%s\n' {{ quote(UV_TOOL_BIN_DIR) }}
+    @printf 'UV_LINK_MODE=%s\n' {{ quote(UV_LINK_MODE) }}
+    @printf 'PIP_CACHE_DIR=%s\n' {{ quote(PIP_CACHE_DIR) }}
+    @printf 'PREK_HOME=%s\n' {{ quote(PREK_HOME) }}
+    @printf 'PYTHONPYCACHEPREFIX=%s\n' {{ quote(PYTHONPYCACHEPREFIX) }}
+    @printf 'RUFF_CACHE_DIR=%s\n' {{ quote(RUFF_CACHE_DIR) }}
+    @printf 'PYTEST_ADDOPTS=%s\n' {{ quote(PYTEST_ADDOPTS) }}
+    @printf 'MKDOCS_SITE_DIR=%s\n' {{ quote(MKDOCS_SITE_DIR) }}
+    @printf 'TEMP=%s\n' {{ quote(TEMP) }}
+    @printf 'TMP=%s\n' {{ quote(TMP) }}
+    @printf 'TMPDIR=%s\n' {{ quote(TMPDIR) }}

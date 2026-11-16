@@ -6,13 +6,14 @@
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 python := if os_family() == "windows" { "python" } else { "python3" }
+book_root := replace(clean(source_directory() + "/../.."), "\\", "/")
+
+# ---- API documentation ------------------------------------------------------
 
 # List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
-
-book_root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 ## ---- CODE DOCUMENTATION -----------------------------------
 

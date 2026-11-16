@@ -12,6 +12,8 @@ root := clean(source_directory() + "/../..")
 book_root := replace(root, "\\", "/")
 book_script := replace(root + "/scripts/book/build_book.sh", "\\", "/")
 
+# ---- Book build helpers -----------------------------------------------------
+
 # Build the book through the shared script, including its book.toml fallback.
 mdbook-build:
     echo "Build book in {{ book_root }}"

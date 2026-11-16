@@ -3,6 +3,8 @@
 
 # TODO Reviewed ??-??-2026.
 
+# ---- Imports and shell configuration ---------------------------------------
+
 import "../scripts/build.just"
 
 set shell := ["bash", "-uc"]
@@ -18,10 +20,7 @@ rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
 rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
 export RUSTFMT_TOOLCHAIN := rustfmt_toolchain
 
-# List the available recipes and task modules.
-[no-exit-message]
-_default:
-    @just --list --unsorted --justfile {{ quote(source_file()) }}
+# ---- Task aliases and entry point ------------------------------------------
 
 # Uniform task names (short aliases; old names kept as aliases).
 alias f := format
@@ -47,6 +46,12 @@ alias nta := test
 alias nextestall := test
 alias docall := doc-serve
 
+# List the available recipes and task modules.
+[no-exit-message]
+_default:
+    @just --list --unsorted --justfile {{ quote(source_file()) }}
+
+# ---- Formatting -------------------------------------------------------------
 
 # Format all Rust packages and their local path-based dependencies.
 @format:
@@ -64,6 +69,8 @@ alias docall := doc-serve
     cd {{ code_root }}; cargo +{{ rustfmt_toolchain }} fmt --all -- --check
     cd {{ code_root }}/cats/gui/vizia; cargo +{{ rustfmt_toolchain }} fmt --all -- --check
     cd {{ code_root }}/cats/development_tools_ffi/python_extension; cargo +{{ rustfmt_toolchain }} fmt --all -- --check
+
+# ---- Checks and lint --------------------------------------------------------
 
 # Check all Rust targets with every configured feature.
 @check:
@@ -106,6 +113,8 @@ alias docall := doc-serve
 # Run the local CI gates (the same as check-all).
 @ci: check-all
 
+# ---- Build and tests --------------------------------------------------------
+
 # Build all packages (all features).
 @build:
     echo "Build all packages, all features in $(pwd)"
@@ -132,6 +141,8 @@ alias docall := doc-serve
     cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo nextest run --package development_tools_ffi --all-targets --locked --no-fail-fast --status-level all --features {{ quote(ffi_features_for_linking) }}
     cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo test --package development_tools_ffi --all-targets --locked --features lua-module
     cd {{ code_root }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo nextest run --package wasm --all-targets --locked --no-fail-fast --status-level all --all-features
+
+# ---- Documentation ---------------------------------------------------------
 
 # Build the cargo doc documentation.
 @doc:

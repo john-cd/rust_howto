@@ -3,7 +3,16 @@
 
 # TODO Reviewed ??-??-2026.
 
+# ---- Configuration ----------------------------------------------------------
+
 set fallback
+set unstable
+set windows-shell := ["C:\\cygwin64\\bin\\bash.exe", "-uc"]
+set script-interpreter := ["C:\\cygwin64\\bin\\bash.exe", "-u"]
+
+root := if os_family() == 'windows' { quote(replace(justfile_directory(), '\\', '/')) } else { quote(justfile_directory()) }
+
+# ---- Example commands -------------------------------------------------------
 
 # List the available recipes and task modules.
 [no-exit-message]
@@ -27,8 +36,6 @@ _default:
 # 3) Cygwin
 # - Requires cygwin installation
 
-set windows-shell := ["C:\\cygwin64\\bin\\bash.exe", "-uc"]
-
 # Print the absolute working-directory path for this Just example.
 @pwd:
     echo '{{ absolute_path(".") }}'
@@ -42,10 +49,6 @@ set windows-shell := ["C:\\cygwin64\\bin\\bash.exe", "-uc"]
     echo '{{ invocation_directory() }}'
 
 # make [script] work
-
-set unstable
-
-set script-interpreter := ["C:\\cygwin64\\bin\\bash.exe", "-u"]
 
 # Demonstrate Windows script recipes and print the Just executable and directory paths.
 [script]
@@ -69,7 +72,5 @@ set script-interpreter := ["C:\\cygwin64\\bin\\bash.exe", "-u"]
 #    echo '{{ p }}'
 
 # convert Windows path to Cygwin path
-
-root := if os_family() == 'windows' { quote(replace(justfile_directory(), '\', '/')) } else { quote(justfile_directory()) }
 
 # [review https://github.com/casey/just/issues/2599](https://github.com/john-cd/rust_howto/issues/1253)
