@@ -7,6 +7,6 @@ removed its experimental MSSQL driver in 0.7; a current SQLx release does not
 connect to SQL Server. Integrated authentication has separate platform,
 feature, and domain requirements.
 
-| Recipe                             | Crates              | Categories                                     |
-| ---------------------------------- | ------------------- | ---------------------------------------------- |
+| Recipe | Crates | Categories |
+| --- | --- | --- |
 | [`tiberius`][ex~database~tiberius] | {{#crate tiberius}} | {{#categories database="Database interfaces"}} |

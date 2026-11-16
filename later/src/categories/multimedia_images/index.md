@@ -10,15 +10,15 @@ For most common image tasks, the [`image`][c~image~docs]↗{{hi:image}} crate wi
 
 ## Choose a Crate by Task {#choose-a-crate}
 
-| Task                              | Crates                                                                                                                            |
-| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Load, save and convert formats    | [`image`][c~image~docs]↗{{hi:image}}                                                                                              |
-| Resize and crop                   | [`image`][c~image~docs]↗{{hi:image}}, [`fast_image_resize`][c~fast_image_resize~docs]↗{{hi:fast_image_resize}} (SIMD-accelerated) |
-| Filters, drawing and geometry     | [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} (see [2D Raster Graphics](../rendering/2d_raster_graphics.md))                   |
-| Read metadata (EXIF)              | [`kamadak-exif`][kamadak-exif~repo]↗                                                                                              |
-| Optimize PNG files                | [`oxipng`][oxipng~repo]↗                                                                                                          |
-| Fast decoders                     | [`zune-image`][zune-image~repo]↗                                                                                                  |
-| Detect objects, faces or features | See [Computer Vision](../computer-vision/index.md).                                                                               |
+| Task | Crates |
+| --- | --- |
+| Load, save and convert formats | [`image`][c~image~docs]↗{{hi:image}} |
+| Resize and crop | [`image`][c~image~docs]↗{{hi:image}}, [`fast_image_resize`][c~fast_image_resize~docs]↗{{hi:fast_image_resize}} (SIMD-accelerated) |
+| Filters, drawing and geometry | [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} (see [2D Raster Graphics](../rendering/2d_raster_graphics.md)) |
+| Read metadata (EXIF) | [`kamadak-exif`][kamadak-exif~repo]↗ |
+| Optimize PNG files | [`oxipng`][oxipng~repo]↗ |
+| Fast decoders | [`zune-image`][zune-image~repo]↗ |
+| Detect objects, faces or features | See [Computer Vision](../computer-vision/index.md). |
 
 The example creates an image in memory, resizes it and converts it to grayscale. It needs no files.
 

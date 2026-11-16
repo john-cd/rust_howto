@@ -142,11 +142,11 @@ Cache misses must still yield correct builds. These examples save caches only on
 
 ## Security and Supply-Chain Checks {#supply-chain-checks}
 
-| Tool                               | What it checks                                                                          | Preparation                                                                           |
-| ---------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| [`cargo-deny`][cargo-deny~guide]↗  | Dependency advisories, licenses, duplicate or banned dependencies, and allowed sources. | Review and commit `deny.toml`; keep advisory data current.                            |
-| [`cargo-audit`][cargo-audit~repo]↗ | Resolved dependencies in `Cargo.lock` against RustSec advisories.                       | Commit the lockfile and review reports and exceptions.                                |
-| [`zizmor`][zizmor~usage~docs]↗     | Security properties of workflow and action definitions.                                 | Run against `.github/workflows`; offline mode omits checks requiring GitHub API data. |
+| Tool | What it checks | Preparation |
+| --- | --- | --- |
+| [`cargo-deny`][cargo-deny~guide]↗ | Dependency advisories, licenses, duplicate or banned dependencies, and allowed sources. | Review and commit `deny.toml`; keep advisory data current. |
+| [`cargo-audit`][cargo-audit~repo]↗ | Resolved dependencies in `Cargo.lock` against RustSec advisories. | Commit the lockfile and review reports and exceptions. |
+| [`zizmor`][zizmor~usage~docs]↗ | Security properties of workflow and action definitions. | Run against `.github/workflows`; offline mode omits checks requiring GitHub API data. |
 
 `cargo-deny` and `cargo-audit` overlap on advisories; decide whether both reports serve your policy. A clean scan means no matching known advisory was found, not that every dependency has been audited. Consider scheduled scans, since advisory databases change without a source commit.
 
@@ -160,12 +160,12 @@ Give test jobs only `contents: read`, disable checkout credential persistence wh
 
 ## Useful GitHub Actions {#useful-github-actions}
 
-| Task                                            | Action                                           |
-| ----------------------------------------------- | ------------------------------------------------ |
-| Check out source                                | [`actions/checkout`][actions-checkout~repo]↗     |
-| Install a compiler and components               | [`dtolnay/rust-toolchain`][rust-toolchain~repo]↗ |
+| Task | Action |
+| --- | --- |
+| Check out source | [`actions/checkout`][actions-checkout~repo]↗ |
+| Install a compiler and components | [`dtolnay/rust-toolchain`][rust-toolchain~repo]↗ |
 | Reuse Cargo downloads and compilation artifacts | [`Swatinem/rust-cache`][rust-cache~action~repo]↗ |
-| Install command-line tools                      | [`taiki-e/install-action`][install_action~repo]↗ |
+| Install command-line tools | [`taiki-e/install-action`][install_action~repo]↗ |
 
 ## Related Topics {#related-topics .skip}
 

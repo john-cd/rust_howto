@@ -94,12 +94,12 @@ A real-time thread often also needs a higher scheduling priority. [`thread-prior
 
 ## Choosing a Channel {#choosing-a-channel}
 
-| Need                                                    | Use                                                                         |
-| ------------------------------------------------------- | --------------------------------------------------------------------------- |
-| Several producers, one consumer, no extra dependency    | [`std::sync::mpsc`][c~std::sync::mpsc::channel~docs]↗                       |
-| Several consumers, `select!`, tickers and timeouts      | [`crossbeam-channel`][c~crossbeam-channel~docs]↗                            |
-| A channel API that can be used from sync and async code | [`flume`][c~flume~docs]↗ or [`kanal`][c~kanal~docs]↗                        |
-| A real-time thread that must not block or allocate      | an SPSC ring buffer: [`rtrb`][c~rtrb~docs]↗ or [`ringbuf`][c~ringbuf~docs]↗ |
+| Need | Use |
+| --- | --- |
+| Several producers, one consumer, no extra dependency | [`std::sync::mpsc`][c~std::sync::mpsc::channel~docs]↗ |
+| Several consumers, `select!`, tickers and timeouts | [`crossbeam-channel`][c~crossbeam-channel~docs]↗ |
+| A channel API that can be used from sync and async code | [`flume`][c~flume~docs]↗ or [`kanal`][c~kanal~docs]↗ |
+| A real-time thread that must not block or allocate | an SPSC ring buffer: [`rtrb`][c~rtrb~docs]↗ or [`ringbuf`][c~ringbuf~docs]↗ |
 
 ## See Also {#see-also .skip}
 

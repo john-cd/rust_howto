@@ -1,19 +1,19 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-| Recipe                                                                                              | Crates                                                           | Categories                                                      |
-| --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------- |
-| [Style Text with `nu-ansi-term`][ex~command-line-interface~nu-ansi-term]                            | {{#crate nu-ansi-term}}                                          | {{#categories command-line-interface="Command-line interface"}} |
-| [Print Colored Text to the Terminal][ex~command-line-interface~colored-text]                        | {{#crate nu-ansi-term}}                                          | {{#categories command-line-interface="Command-line interface"}} |
-| [Print Bold Text to the Terminal][ex~command-line-interface~bold-text]                              | {{#crate nu-ansi-term}}                                          | {{#categories command-line-interface="Command-line interface"}} |
-| [Print Bold and Colored Text to the Terminal][ex~command-line-interface~bold-colored-text]          | {{#crate nu-ansi-term}}                                          | {{#categories command-line-interface="Command-line interface"}} |
-| [Manipulate the Cursor, Style the Output, Handle Input Events][ex~command-line-interface~crossterm] | {{#crate crossterm}}                                             | {{#categories command-line-interface="Command-line interface"}} |
-| [`ansiterm`][ex~command-line-interface~ansiterm]                                                    | {{#crate ansiterm}}                                              | {{#categories command-line-interface="Command-line interface"}} |
-| [`anstream`][ex~command-line-interface~anstream]                                                    | {{#crate anstream}}                                              | {{#categories command-line-interface="Command-line interface"}} |
-| [`anstyle`][ex~command-line-interface~anstyle]                                                      | {{#crate anstyle}}                                               | {{#categories command-line-interface="Command-line interface"}} |
-| [`console`][ex~command-line-interface~console]                                                      | {{#crate console}}                                               | {{#categories command-line-interface="Command-line interface"}} |
-| [`owo-colors`][ex~command-line-interface~owo-colors]                                                | {{#crate owo-colors}}                                            | {{#categories command-line-interface="Command-line interface"}} |
-| [`stylish`][ex~command-line-interface~stylish]                                                      | {{#crate stylish}}                                               | {{#categories command-line-interface="Command-line interface"}} |
-| [`termcolor`][ex~command-line-interface~termcolor]                                                  | {{#crate termcolor}}                                             | {{#categories command-line-interface="Command-line interface"}} |
-| [`yansi`][ex~command-line-interface~yansi]                                                          | {{#crate yansi}}                                                 | {{#categories command-line-interface="Command-line interface"}} |
-| [`termion`][ex~command-line-interface~termion]                                                      | {{#crate termion}}                                               | {{#categories command-line-interface="Command-line interface"}} |
-| [`colored`][ex~command-line-interface~colored]                                                      | [![colored][c~colored~docs~badge]][c~colored~docs]{{hi:colored}} | {{#categories command-line-interface="Command-line interface"}} |
+| Recipe | Crates | Categories |
+| --- | --- | --- |
+| [Style Text with `nu-ansi-term`][ex~command-line-interface~nu-ansi-term] | {{#crate nu-ansi-term}} | {{#categories command-line-interface="Command-line interface"}} |
+| [Print Colored Text to the Terminal][ex~command-line-interface~colored-text] | {{#crate nu-ansi-term}} | {{#categories command-line-interface="Command-line interface"}} |
+| [Print Bold Text to the Terminal][ex~command-line-interface~bold-text] | {{#crate nu-ansi-term}} | {{#categories command-line-interface="Command-line interface"}} |
+| [Print Bold and Colored Text to the Terminal][ex~command-line-interface~bold-colored-text] | {{#crate nu-ansi-term}} | {{#categories command-line-interface="Command-line interface"}} |
+| [Manipulate the Cursor, Style the Output, Handle Input Events][ex~command-line-interface~crossterm] | {{#crate crossterm}} | {{#categories command-line-interface="Command-line interface"}} |
+| [`ansiterm`][ex~command-line-interface~ansiterm] | {{#crate ansiterm}} | {{#categories command-line-interface="Command-line interface"}} |
+| [`anstream`][ex~command-line-interface~anstream] | {{#crate anstream}} | {{#categories command-line-interface="Command-line interface"}} |
+| [`anstyle`][ex~command-line-interface~anstyle] | {{#crate anstyle}} | {{#categories command-line-interface="Command-line interface"}} |
+| [`console`][ex~command-line-interface~console] | {{#crate console}} | {{#categories command-line-interface="Command-line interface"}} |
+| [`owo-colors`][ex~command-line-interface~owo-colors] | {{#crate owo-colors}} | {{#categories command-line-interface="Command-line interface"}} |
+| [`stylish`][ex~command-line-interface~stylish] | {{#crate stylish}} | {{#categories command-line-interface="Command-line interface"}} |
+| [`termcolor`][ex~command-line-interface~termcolor] | {{#crate termcolor}} | {{#categories command-line-interface="Command-line interface"}} |
+| [`yansi`][ex~command-line-interface~yansi] | {{#crate yansi}} | {{#categories command-line-interface="Command-line interface"}} |
+| [`termion`][ex~command-line-interface~termion] | {{#crate termion}} | {{#categories command-line-interface="Command-line interface"}} |
+| [`colored`][ex~command-line-interface~colored] | [![colored][c~colored~docs~badge]][c~colored~docs]{{hi:colored}} | {{#categories command-line-interface="Command-line interface"}} |

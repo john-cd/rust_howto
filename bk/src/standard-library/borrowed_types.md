@@ -12,16 +12,16 @@
 
 Rust data types often have multiple representations to suit different needs. For example, smart pointer types like [`Box<T>`][c~std::boxed::Box~docs]↗ or [`Arc<T>`][c~std::sync::Arc~docs]↗ allow you to choose how a value is stored and managed. Some types, such as [`String`][c~std::string::String~docs]↗, extend a more basic type ([`str`][primitive~str]↗{{hi:str}}) by adding features like mutability and dynamic growth, which require extra metadata. This design lets you use lightweight, immutable, borrowed types when possible, and switch to more flexible, feature-rich, memory-owning types when necessary. Common type pairs include:
 
-| Borrowed Type                                             | Owned Type                                                        |
-| --------------------------------------------------------- | ----------------------------------------------------------------- |
-| [`&str`][primitive~str]↗{{hi:&str}}                       | [`String`][c~std::string::String~docs]↗                           |
-| [`&CStr`][c~std::ffi::CStr~docs]↗{{hi:std::ffi::CStr}}    | [`CString`][c~std::ffi::CString~docs]↗{{hi:std::ffi::CString}}    |
+| Borrowed Type | Owned Type |
+| --- | --- |
+| [`&str`][primitive~str]↗{{hi:&str}} | [`String`][c~std::string::String~docs]↗ |
+| [`&CStr`][c~std::ffi::CStr~docs]↗{{hi:std::ffi::CStr}} | [`CString`][c~std::ffi::CString~docs]↗{{hi:std::ffi::CString}} |
 | [`&OsStr`][c~std::ffi::OsStr~docs]↗{{hi:std::ffi::OsStr}} | [`OsString`][c~std::ffi::OsString~docs]↗{{hi:std::ffi::OsString}} |
-| [`&Path`][c~std::path::Path~docs]↗{{hi:std::path::Path}}  | [`PathBuf`][c~std::path::PathBuf~docs]↗{{hi:std::path::PathBuf}}  |
-| [`&[T]`][primitive~slice]↗{{hi:slice}}                    | [`Vec<T>`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}}             |
-| `&[T]`                                                    | [`[T; N]`][primitive~array]↗{{hi:array}}                          |
-| [`&T`][primitive~reference]↗{{hi:reference}}              | [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}}         |
-| `&T`                                                      | [`Arc<T>`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}}           |
+| [`&Path`][c~std::path::Path~docs]↗{{hi:std::path::Path}} | [`PathBuf`][c~std::path::PathBuf~docs]↗{{hi:std::path::PathBuf}} |
+| [`&[T]`][primitive~slice]↗{{hi:slice}} | [`Vec<T>`][c~std::vec::Vec~docs]↗{{hi:std::vec::Vec}} |
+| `&[T]` | [`[T; N]`][primitive~array]↗{{hi:array}} |
+| [`&T`][primitive~reference]↗{{hi:reference}} | [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} |
+| `&T` | [`Arc<T>`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} |
 
 Types express that they can be _borrowed as_ some type `T` by implementing [`Borrow<T>`][c~std::borrow::Borrow~docs]↗{{hi:std::borrow::Borrow}}. Use the trait's `borrow` method to return a reference `&T`. For instance, a `Box<T>` can be borrowed as `&T`, while a `String` can be borrowed as `&str`.
 

@@ -4,13 +4,13 @@
 
 {{#include code_writing.incl.md}}
 
-| Task                                      | Tool                                                                                                  |
-| ----------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Expand macros and conditional compilation | [`cargo-expand`][ex~development-tools_cargo-plugins~cargo-expand]↗                                    |
-| Generate a project from a template        | [`cargo-generate`][ex~development-tools_cargo-plugins~cargo-generate]↗                                |
-| Inspect module structure                  | [`cargo-modules`][ex~development-tools_cargo-plugins~cargo-modules]↗                                  |
-| Check feature combinations                | [`cargo-hack`][ex~development-tools_cargo-plugins~cargo-hack]↗                                        |
-| Add or remove dependencies                | Built-in [`cargo add`][book~cargo~cargo-add]↗ and [`cargo remove`][book~cargo~cargo-remove]↗ commands |
+| Task | Tool |
+| --- | --- |
+| Expand macros and conditional compilation | [`cargo-expand`][ex~development-tools_cargo-plugins~cargo-expand]↗ |
+| Generate a project from a template | [`cargo-generate`][ex~development-tools_cargo-plugins~cargo-generate]↗ |
+| Inspect module structure | [`cargo-modules`][ex~development-tools_cargo-plugins~cargo-modules]↗ |
+| Check feature combinations | [`cargo-hack`][ex~development-tools_cargo-plugins~cargo-hack]↗ |
+| Add or remove dependencies | Built-in [`cargo add`][book~cargo~cargo-add]↗ and [`cargo remove`][book~cargo~cargo-remove]↗ commands |
 
 For dependency updates, [`cargo-edit`][c~cargo-edit~docs]↗{{hi:cargo-edit}} currently provides `cargo upgrade` and `cargo set-version`; current Cargo versions already include `cargo add` and `cargo remove`.
 
@@ -64,11 +64,11 @@ cargo hack check --each-feature
 
 ## Related Topics {#related-topics .skip}
 
-| Topic                                                                 | Rust Crates                                                                                                                                                                                   |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Documentation Generation                                              | [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} (while primarily for documentation output, it does involve processing and "generating" [documentation][p~documentation] from your code). |
-| API [Documentation][p~documentation] Generators (for REST APIs, etc.) | Often tied to web frameworks; no single dominant crate.                                                                                                                                       |
-| String Manipulation / Text Processing (Often used in code generation) | [regex][p~regex], [`itertools`][c~itertools~docs]↗{{hi:itertools}} (not [`cargo`][c~cargo~docs]↗{{hi:cargo}} plugins, but commonly used crates).                                              |
+| Topic | Rust Crates |
+| --- | --- |
+| Documentation Generation | [`cargo doc`][book~cargo~cargo-doc]↗{{hi:cargo doc}} (while primarily for documentation output, it does involve processing and "generating" [documentation][p~documentation] from your code). |
+| API [Documentation][p~documentation] Generators (for REST APIs, etc.) | Often tied to web frameworks; no single dominant crate. |
+| String Manipulation / Text Processing (Often used in code generation) | [regex][p~regex], [`itertools`][c~itertools~docs]↗{{hi:itertools}} (not [`cargo`][c~cargo~docs]↗{{hi:cargo}} plugins, but commonly used crates). |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

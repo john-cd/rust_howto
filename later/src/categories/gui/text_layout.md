@@ -8,10 +8,10 @@ A text layout engine turns Unicode text and style into positioned glyphs that an
 
 These steps matter for more than multilingual paragraphs: even short strings can include combining marks, ligatures, emoji, or characters missing from the primary font. A layout library keeps those rules consistent while the GUI handles application state and the renderer draws the resulting glyphs.
 
-| Crate                                | Rich text                        | Bidirectional text | Editing support                 | Used by                                                                   |
-| ------------------------------------ | -------------------------------- | ------------------ | ------------------------------- | ------------------------------------------------------------------------- |
-| [`parley`][c~parley~docs]↗           | Styled spans and inline elements | Yes                | Selection and editing utilities | Xilem and Masonry                                                         |
-| [`cosmic-text`][c~cosmic-text~docs]↗ | Attributed text spans            | Yes                | Editor APIs                     | COSMIC desktop and iced; glyphon uses it in a `wgpu` text-rendering stack |
+| Crate | Rich text | Bidirectional text | Editing support | Used by |
+| --- | --- | --- | --- | --- |
+| [`parley`][c~parley~docs]↗ | Styled spans and inline elements | Yes | Selection and editing utilities | Xilem and Masonry |
+| [`cosmic-text`][c~cosmic-text~docs]↗ | Attributed text spans | Yes | Editor APIs | COSMIC desktop and iced; glyphon uses it in a `wgpu` text-rendering stack |
 
 Both examples use the bundled Roboto font, so their wrapping does not depend on installed system fonts. The font's SIL Open Font License 1.1 is included in `later/crates/cats/gui/assets/OFL.txt`.
 

@@ -10,17 +10,17 @@
 
 This snapshot was checked against current crate documentation and release records on 2026-10-26. Optional backends and native runtime requirements vary by feature and platform.
 
-| Crate                                 | Training                        | Inference                        | GPU backends / role                                 | Maintenance and notes                                      |
-| ------------------------------------- | ------------------------------- | -------------------------------- | --------------------------------------------------- | ---------------------------------------------------------- |
-| [`candle`][c~candle-core~repo]↗       | Basic                           | Yes; includes pre-trained models | CUDA, Metal                                         | Active; `candle-core` 0.11.0 (2026-06-26).                 |
-| [`burn`][c~burn~repo]↗                | Yes                             | Yes                              | wgpu, CUDA, ROCm, Metal, Vulkan                     | Active; 0.22.1 (2026-10-20).                               |
-| [`tch`][c~tch~repo]↗                  | Yes                             | Yes                              | CUDA, Apple MPS, Vulkan                             | Active; 0.26.0; bindings to the C++ PyTorch library.       |
-| [`ort`][c~ort~repo]↗                  | Yes; ONNX Runtime training APIs | Yes; ONNX models                 | CUDA, TensorRT, CoreML, and other providers         | Active; 2.0.0-rc.15 (2026-10-19), a release candidate.     |
-| [`tract`][c~tract~repo]↗              | No                              | Yes; ONNX and NNEF               | CPU; optional CUDA, Metal, and WebGPU               | Active; 0.23.9 (2026-10-15); Rust inference engine.        |
-| [`rust-bert`][c~rust-bert~repo]↗      | Custom training through `tch`   | Yes; ready-to-use NLP pipelines  | Through LibTorch or ONNX Runtime                    | No recent release; 0.23.0 (2024-09-29).                    |
-| [`tensorflow`][tensorflow-rust~repo]↗ | Yes                             | Yes                              | CUDA via the TensorFlow runtime                     | Archived upstream on 2026-03-17; consider for legacy work. |
-| [`cudarc`][c~cudarc~repo]↗            | N/A                             | N/A                              | CUDA driver/runtime bindings; not a model framework | Active; current docs list 0.19.10.                         |
-| [`dfdx`][c~dfdx~repo]↗                | Yes                             | Yes                              | CPU and CUDA                                        | Inactive; latest release 0.13.0 (2023-07-27).              |
+| Crate | Training | Inference | GPU backends / role | Maintenance and notes |
+| --- | --- | --- | --- | --- |
+| [`candle`][c~candle-core~repo]↗ | Basic | Yes; includes pre-trained models | CUDA, Metal | Active; `candle-core` 0.11.0 (2026-06-26). |
+| [`burn`][c~burn~repo]↗ | Yes | Yes | wgpu, CUDA, ROCm, Metal, Vulkan | Active; 0.22.1 (2026-10-20). |
+| [`tch`][c~tch~repo]↗ | Yes | Yes | CUDA, Apple MPS, Vulkan | Active; 0.26.0; bindings to the C++ PyTorch library. |
+| [`ort`][c~ort~repo]↗ | Yes; ONNX Runtime training APIs | Yes; ONNX models | CUDA, TensorRT, CoreML, and other providers | Active; 2.0.0-rc.15 (2026-10-19), a release candidate. |
+| [`tract`][c~tract~repo]↗ | No | Yes; ONNX and NNEF | CPU; optional CUDA, Metal, and WebGPU | Active; 0.23.9 (2026-10-15); Rust inference engine. |
+| [`rust-bert`][c~rust-bert~repo]↗ | Custom training through `tch` | Yes; ready-to-use NLP pipelines | Through LibTorch or ONNX Runtime | No recent release; 0.23.0 (2024-09-29). |
+| [`tensorflow`][tensorflow-rust~repo]↗ | Yes | Yes | CUDA via the TensorFlow runtime | Archived upstream on 2026-03-17; consider for legacy work. |
+| [`cudarc`][c~cudarc~repo]↗ | N/A | N/A | CUDA driver/runtime bindings; not a model framework | Active; current docs list 0.19.10. |
+| [`dfdx`][c~dfdx~repo]↗ | Yes | Yes | CPU and CUDA | Inactive; latest release 0.13.0 (2023-07-27). |
 
 Train with `burn`, `candle`, or `tch`, or train elsewhere and run an exported model with `ort` or `tract`. For a quick reference, use `candle`'s CPU support; GPU execution depends on the selected backend and its native runtime.
 

@@ -33,19 +33,19 @@ The following example shows how to return `Result` from a function, propagate it
 
 In addition to working with pattern matching, [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} provides a wide variety of convenience methods, the most common being:
 
-| Method                                                                                                              | Description                                                               | Use Case                                                       |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| [`unwrap()`][c~std::result::Result::unwrap~docs]↗{{hi:std::result::Result::unwrap}}                                 | Returns the `Ok` value or panics if `Err`.                                | Use when you're certain the result is `Ok`. See also `expect`. |
-| [`unwrap_or(default)`][c~std::result::Result::unwrap_or~docs]↗{{hi:std::result::Result::unwrap_or}}                 | Returns the `Ok` value or the supplied fallback if `Err`.                 | Use when you want a fallback value.                            |
-| [`unwrap_or_else(func)`][c~std::result::Result::unwrap_or_else~docs]↗{{hi:std::result::Result::unwrap_or_else}}     | Returns the `Ok` value or calls a function to generate a fallback.        | Use when computing a fallback dynamically.                     |
-| [`map(func)`][c~std::result::Result::map~docs]↗{{hi:std::result::Result::map}}                                      | Applies a function to the `Ok` value.                                     | Use to transform the result, if successful.                    |
-| [`map_err(func)`][c~std::result::Result::map_err~docs]↗{{hi:std::result::Result::map_err}}                          | Applies a function to the `Err` value.                                    | Use to transform the error.                                    |
-| [`and_then(func)`][c~std::result::Result::and_then~docs]↗{{hi:std::result::Result::and_then}}                       | Applies a function that returns `Result`, flattening the result.          | Use for chaining operations that may fail.                     |
-| [`or_else(func)`][c~std::result::Result::or_else~docs]↗{{hi:std::result::Result::or_else}}                          | Calls a function to provide an alternative `Result`, if `Err`.            | Use to recover from errors dynamically.                        |
-| [`map_or(default, func)`][c~std::result::Result::map_or~docs]↗{{hi:std::result::Result::map_or}}                    | Applies a function to the `Ok` value or returns a default if `Err`.       | Use when you need a fallback value.                            |
-| [`map_or_else(err_func, ok_func)`][c~std::result::Result::map_or_else~docs]↗{{hi:std::result::Result::map_or_else}} | Applies a function to the `Ok` value or calls another function for `Err`. | Use when you need dynamic error handling.                      |
-| [`is_ok()`][c~std::result::Result::is_ok~docs]↗{{hi:std::result::Result::is_ok}}                                    | Returns `true` if the result is `Ok`.                                     | Use to check success.                                          |
-| [`is_err()`][c~std::result::Result::is_err~docs]↗{{hi:std::result::Result::is_err}}                                 | Returns `true` if the result is `Err`.                                    | Use to check failure.                                          |
+| Method | Description | Use Case |
+| --- | --- | --- |
+| [`unwrap()`][c~std::result::Result::unwrap~docs]↗{{hi:std::result::Result::unwrap}} | Returns the `Ok` value or panics if `Err`. | Use when you're certain the result is `Ok`. See also `expect`. |
+| [`unwrap_or(default)`][c~std::result::Result::unwrap_or~docs]↗{{hi:std::result::Result::unwrap_or}} | Returns the `Ok` value or the supplied fallback if `Err`. | Use when you want a fallback value. |
+| [`unwrap_or_else(func)`][c~std::result::Result::unwrap_or_else~docs]↗{{hi:std::result::Result::unwrap_or_else}} | Returns the `Ok` value or calls a function to generate a fallback. | Use when computing a fallback dynamically. |
+| [`map(func)`][c~std::result::Result::map~docs]↗{{hi:std::result::Result::map}} | Applies a function to the `Ok` value. | Use to transform the result, if successful. |
+| [`map_err(func)`][c~std::result::Result::map_err~docs]↗{{hi:std::result::Result::map_err}} | Applies a function to the `Err` value. | Use to transform the error. |
+| [`and_then(func)`][c~std::result::Result::and_then~docs]↗{{hi:std::result::Result::and_then}} | Applies a function that returns `Result`, flattening the result. | Use for chaining operations that may fail. |
+| [`or_else(func)`][c~std::result::Result::or_else~docs]↗{{hi:std::result::Result::or_else}} | Calls a function to provide an alternative `Result`, if `Err`. | Use to recover from errors dynamically. |
+| [`map_or(default, func)`][c~std::result::Result::map_or~docs]↗{{hi:std::result::Result::map_or}} | Applies a function to the `Ok` value or returns a default if `Err`. | Use when you need a fallback value. |
+| [`map_or_else(err_func, ok_func)`][c~std::result::Result::map_or_else~docs]↗{{hi:std::result::Result::map_or_else}} | Applies a function to the `Ok` value or calls another function for `Err`. | Use when you need dynamic error handling. |
+| [`is_ok()`][c~std::result::Result::is_ok~docs]↗{{hi:std::result::Result::is_ok}} | Returns `true` if the result is `Ok`. | Use to check success. |
+| [`is_err()`][c~std::result::Result::is_err~docs]↗{{hi:std::result::Result::is_err}} | Returns `true` if the result is `Err`. | Use to check failure. |
 
 The following example demonstrates a few of these methods:
 
@@ -79,10 +79,10 @@ These methods are useful for working with references to the values inside a `Res
 
 The following table lists common methods that convert `Result<T, E>` to `Option`:
 
-| Method                                                                            | Description                                                             | Use Case                                        |
-| --------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------- |
-| [`ok()`][c~std::result::Result::ok_method~docs]↗{{hi:std::result::Result::ok}}    | Converts `Result<T, E>` into `Option<T>`, discarding the error.         | Use when you only care about the success value. |
-| [`err()`][c~std::result::Result::err_method~docs]↗{{hi:std::result::Result::err}} | Converts `Result<T, E>` into `Option<E>`, discarding the success value. | Use when you only care about the error.         |
+| Method | Description | Use Case |
+| --- | --- | --- |
+| [`ok()`][c~std::result::Result::ok_method~docs]↗{{hi:std::result::Result::ok}} | Converts `Result<T, E>` into `Option<T>`, discarding the error. | Use when you only care about the success value. |
+| [`err()`][c~std::result::Result::err_method~docs]↗{{hi:std::result::Result::err}} | Converts `Result<T, E>` into `Option<E>`, discarding the success value. | Use when you only care about the error. |
 
 See also the [[optional_values | Option]] chapter.
 

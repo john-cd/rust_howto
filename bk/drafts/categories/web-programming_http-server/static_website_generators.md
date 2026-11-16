@@ -6,11 +6,11 @@
 
 Static site generators turn source content into files that can be served by a static web server or content delivery network. They work well when pages can be generated ahead of time and do not need a server-side database for each request. Choose a tool based on the kind of site, the amount of interactivity, and the build and deployment environment.
 
-| Tool                                     | Good fit                                                                 | Considerations                                                                                                                      |
-| ---------------------------------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------- |
-| [Zola][zola~website]↗{{hi:zola}}         | Blogs, portfolios, and content-focused websites                          | A single generator provides templates, Markdown processing, assets, and a static build.                                             |
-| [`mdBook`][c~mdbook~docs]↗{{hi:mdBook}}  | Technical books and structured documentation                             | Markdown chapters, navigation, search, and documentation-oriented workflows; it is not a general-purpose content management system. |
-| [Dioxus][c~dioxus~website]↗{{hi:Dioxus}} | Rust applications that need interactive pages or static route generation | Shares UI components across rendering targets; more application structure is needed than for a simple content site.                 |
+| Tool | Good fit | Considerations |
+| --- | --- | --- |
+| [Zola][zola~website]↗{{hi:zola}} | Blogs, portfolios, and content-focused websites | A single generator provides templates, Markdown processing, assets, and a static build. |
+| [`mdBook`][c~mdbook~docs]↗{{hi:mdBook}} | Technical books and structured documentation | Markdown chapters, navigation, search, and documentation-oriented workflows; it is not a general-purpose content management system. |
+| [Dioxus][c~dioxus~website]↗{{hi:Dioxus}} | Rust applications that need interactive pages or static route generation | Shares UI components across rendering targets; more application structure is needed than for a simple content site. |
 
 ## Build a Content Site with Zola {#zola}
 

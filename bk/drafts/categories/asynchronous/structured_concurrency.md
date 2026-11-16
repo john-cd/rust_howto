@@ -43,11 +43,11 @@ For a server-wide shutdown signal, see [graceful shutdown][ex~asynchronous~grace
 
 Pick the Tokio channel by what the receivers need:
 
-| Receivers need                                        | Use                                                                                                                  |
-| ----------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Receivers need | Use |
+| --- | --- |
 | Only the latest value, such as configuration or state | [`watch`][c~tokio::sync::watch~docs]↗{{hi:watch}}: `send_replace` publishes, `changed().await` waits for a new value |
-| Every event, accepting that a slow receiver can lag   | [`broadcast`][c~tokio::sync::broadcast~docs]↗{{hi:broadcast}}                                                        |
-| A work queue where each message goes to one consumer  | `mpsc` (see [Async Channels][p~async-channels])                                                                      |
+| Every event, accepting that a slow receiver can lag | [`broadcast`][c~tokio::sync::broadcast~docs]↗{{hi:broadcast}} |
+| A work queue where each message goes to one consumer | `mpsc` (see [Async Channels][p~async-channels]) |
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/structured_concurrency/watch_latest.rs:example}}

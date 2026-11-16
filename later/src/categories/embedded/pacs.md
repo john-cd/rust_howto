@@ -20,10 +20,10 @@ The example models a register block and the ownership token that a generated PAC
 
 ## PAC or HAL?
 
-| Use a PAC when                                                                                               | Use a HAL when                                                                            |
-| ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
-| A required register or interrupt feature is not exposed by the HAL.                                          | You need ordinary GPIO, I2C, SPI, PWM, timer, or serial operations.                       |
-| You are implementing or debugging a HAL or device-specific driver.                                           | You want application code or a portable driver to target a stable trait interface.        |
+| Use a PAC when | Use a HAL when |
+| --- | --- |
+| A required register or interrupt feature is not exposed by the HAL. | You need ordinary GPIO, I2C, SPI, PWM, timer, or serial operations. |
+| You are implementing or debugging a HAL or device-specific driver. | You want application code or a portable driver to target a stable trait interface. |
 | You need precise control over a register sequence and can verify it against the reference manual and errata. | You want the HAL to own peripheral configuration and enforce pin or peripheral ownership. |
 
 If using registers directly, check the reference manual for access width, read/write side effects, reset values, reserved bits, and required ordering. Do not assume a PAC proves that an operation is electrically safe or valid for the board.

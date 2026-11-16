@@ -34,15 +34,15 @@
 
 This repository is a monorepo with several independent Rust workspaces. Run commands from the matching workspace instead of assuming the repo root is a Cargo workspace.
 
-| Area                          | Working directory | Build / lint / test                                                                           | Run one test                                            |
-| ----------------------------- | ----------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| Main book examples            | `bk\`             | `just b`, `just lc`, `just t`                                                                 | `just ntt <keyword>`                                    |
-| Book rendering                | `bk\`             | `just bb` to build the book, `just s` to serve it, `just q` for a faster preview path on Unix | n/a                                                     |
-| Future/staging crates         | `later\`          | `just b`, `just lc`, `just t`                                                                 | `cargo test -p <crate> <test_name>` from `later\crates` |
-| Helper binaries               | `tools\`          | `just b`, `just lc`, `just t`                                                                 | `cargo test -p <crate> <test_name>`                     |
-| Additional long-form examples | `xmpl\`           | `just b`, `just lc`, `just t`                                                                 | `cargo test -p <crate> <test_name>`                     |
-| Scratch workspace             | `playground\`     | `just b`, `just lc`, `just t`                                                                 | `cargo test -p <crate> <test_name>`                     |
-| Placeholder published crate   | `publish\`        | `just b`, `just lc`, `just t`                                                                 | `cargo test <test_name>`                                |
+| Area | Working directory | Build / lint / test | Run one test |
+| --- | --- | --- | --- |
+| Main book examples | `bk\` | `just b`, `just lc`, `just t` | `just ntt <keyword>` |
+| Book rendering | `bk\` | `just bb` to build the book, `just s` to serve it, `just q` for a faster preview path on Unix | n/a |
+| Future/staging crates | `later\` | `just b`, `just lc`, `just t` | `cargo test -p <crate> <test_name>` from `later\crates` |
+| Helper binaries | `tools\` | `just b`, `just lc`, `just t` | `cargo test -p <crate> <test_name>` |
+| Additional long-form examples | `xmpl\` | `just b`, `just lc`, `just t` | `cargo test -p <crate> <test_name>` |
+| Scratch workspace | `playground\` | `just b`, `just lc`, `just t` | `cargo test -p <crate> <test_name>` |
+| Placeholder published crate | `publish\` | `just b`, `just lc`, `just t` | `cargo test <test_name>` |
 
 Additional repo-specific commands:
 

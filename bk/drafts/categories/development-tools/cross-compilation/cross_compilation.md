@@ -4,14 +4,14 @@
 
 {{#include cross_compilation.incl.md}}
 
-| Recipe                                                                                   | What it covers                                                          |
-| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [Choose and install a target][ex~cross-compilation~target-and-toolchain]                 | Target triples, Rust target libraries, native linkers, and sysroots.    |
-| [Build for Linux targets][ex~cross-compilation~linux-targets]                            | Static musl Linux and AArch64 GNU/Linux.                                |
-| [Build for Windows GNU][ex~cross-compilation~windows-gnu]                                | MinGW linker setup and a Windows GNU build.                             |
-| [Build for WebAssembly][ex~cross-compilation~webassembly]                                | Browser or embedding-host WebAssembly and WASI Preview 2 components.    |
+| Recipe | What it covers |
+| --- | --- |
+| [Choose and install a target][ex~cross-compilation~target-and-toolchain] | Target triples, Rust target libraries, native linkers, and sysroots. |
+| [Build for Linux targets][ex~cross-compilation~linux-targets] | Static musl Linux and AArch64 GNU/Linux. |
+| [Build for Windows GNU][ex~cross-compilation~windows-gnu] | MinGW linker setup and a Windows GNU build. |
+| [Build for WebAssembly][ex~cross-compilation~webassembly] | Browser or embedding-host WebAssembly and WASI Preview 2 components. |
 | [Handle native dependencies and platform code][ex~cross-compilation~native-dependencies] | Cross C/C++ toolchains, scoped Rust flags, and conditional compilation. |
-| [Use cross-compilation plugins][ex~cross-compilation~cross-compilation]                  | Docker or Podman based `cross` and Zig based `cargo-zigbuild`.          |
+| [Use cross-compilation plugins][ex~cross-compilation~cross-compilation] | Docker or Podman based `cross` and Zig based `cargo-zigbuild`. |
 
 ## Choose and install a target {#target-and-toolchain}
 

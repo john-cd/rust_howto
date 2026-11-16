@@ -6,14 +6,14 @@ DevOps connects software development and operations through practices for versio
 
 ## Start Here {#start-here}
 
-| Guide                                       | Focus                                                                       |
-| ------------------------------------------- | --------------------------------------------------------------------------- |
-| [Version Control](version_control.md)       | Review changes, manage branches, and keep development workflows repeatable. |
-| [CI/CD](cd_ci.md)                           | Run automated checks and promote verified artifacts.                        |
-| [GitHub Actions](github_actions.md)         | Configure Rust toolchains, caches, and workflows on GitHub.                 |
-| [Release Automation](release_automation.md) | Version, validate, package, and publish a release.                          |
-| [Containers][p~containers]                  | Build and operate containerized applications.                               |
-| [Using Containers][p~using-containers]      | Use Rust clients to work with container runtimes.                           |
+| Guide | Focus |
+| --- | --- |
+| [Version Control](version_control.md) | Review changes, manage branches, and keep development workflows repeatable. |
+| [CI/CD](cd_ci.md) | Run automated checks and promote verified artifacts. |
+| [GitHub Actions](github_actions.md) | Configure Rust toolchains, caches, and workflows on GitHub. |
+| [Release Automation](release_automation.md) | Version, validate, package, and publish a release. |
+| [Containers][p~containers] | Build and operate containerized applications. |
+| [Using Containers][p~using-containers] | Use Rust clients to work with container runtimes. |
 
 ## Infrastructure as Code {#infrastructure-as-code}
 

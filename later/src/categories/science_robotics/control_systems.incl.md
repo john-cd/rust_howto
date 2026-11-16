@@ -1,12 +1,12 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-| Recipe                                                                                      | Crates                                                                                                   | Categories                                 |
-| ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
-| [Feedback Control with `pid`][ex~science_robotics~pid]                                      | [![pid][c~pid~docs~badge]][c~pid~docs]{{hi:pid}}                                                         | {{#categories science::robotics=Robotics}} |
-| [`k`: Kinematics Library for Robotics][ex~science_robotics~k]                               | [![k][c~k~docs~badge]][c~k~docs]{{hi:k}}                                                                 | {{#categories science::robotics=Robotics}} |
-| [`nalgebra`: Linear Algebra Library for Control Algorithms][ex~science_robotics~nalgebra]   | [![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}}                                     | {{#categories science::robotics=Robotics}} |
-| [Linear Algebra with `faer`][ex~science_robotics~faer]                                      | [faer][faer~docs]                                                                                        | {{#categories science::robotics=Robotics}} |
-| [`openrr-planner`][ex~science_robotics~openrr-planner]                                      | [![openrr-planner][c~openrr-planner~docs~badge]][c~openrr-planner~docs]{{hi:openrr-planner}}             | {{#categories science::robotics=Robotics}} |
-| [Pathfinding Algorithms for Navigation with `pathfinding`][ex~science_robotics~pathfinding] |                                                                                                          | {{#categories science::robotics=Robotics}} |
-| [`rrt`][ex~science_robotics~rrt]                                                            | [![rrt][c~rrt~docs~badge]][c~rrt~docs]{{hi:rrt}}                                                         | {{#categories science::robotics=Robotics}} |
-| [`rs-opw-kinematics`][ex~science_robotics~rs-opw-kinematics]                                | [![rs-opw-kinematics][c~rs-opw-kinematics~docs~badge]][c~rs-opw-kinematics~docs]{{hi:rs-opw-kinematics}} | {{#categories science::robotics=Robotics}} |
+| Recipe | Crates | Categories |
+| --- | --- | --- |
+| [Feedback Control with `pid`][ex~science_robotics~pid] | [![pid][c~pid~docs~badge]][c~pid~docs]{{hi:pid}} | {{#categories science::robotics=Robotics}} |
+| [`k`: Kinematics Library for Robotics][ex~science_robotics~k] | [![k][c~k~docs~badge]][c~k~docs]{{hi:k}} | {{#categories science::robotics=Robotics}} |
+| [`nalgebra`: Linear Algebra Library for Control Algorithms][ex~science_robotics~nalgebra] | [![nalgebra][c~nalgebra~docs~badge]][c~nalgebra~docs]{{hi:nalgebra}} | {{#categories science::robotics=Robotics}} |
+| [Linear Algebra with `faer`][ex~science_robotics~faer] | [faer][faer~docs] | {{#categories science::robotics=Robotics}} |
+| [`openrr-planner`][ex~science_robotics~openrr-planner] | [![openrr-planner][c~openrr-planner~docs~badge]][c~openrr-planner~docs]{{hi:openrr-planner}} | {{#categories science::robotics=Robotics}} |
+| [Pathfinding Algorithms for Navigation with `pathfinding`][ex~science_robotics~pathfinding] | | {{#categories science::robotics=Robotics}} |
+| [`rrt`][ex~science_robotics~rrt] | [![rrt][c~rrt~docs~badge]][c~rrt~docs]{{hi:rrt}} | {{#categories science::robotics=Robotics}} |
+| [`rs-opw-kinematics`][ex~science_robotics~rs-opw-kinematics] | [![rs-opw-kinematics][c~rs-opw-kinematics~docs~badge]][c~rs-opw-kinematics~docs]{{hi:rs-opw-kinematics}} | {{#categories science::robotics=Robotics}} |

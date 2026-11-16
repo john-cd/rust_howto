@@ -8,12 +8,12 @@ When the standard library does not expose an operating-system facility, choose a
 
 ## Choose an Interface
 
-| Need                                               | Starting point                                     | Trade-off                                                                                                  |
-| -------------------------------------------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Portable files, processes, environment, or sockets | [`std`][c~std~docs]↗                               | Prefer this for ordinary application code; it hides platform-specific details.                             |
-| Unix system APIs with safe Rust types              | [`rustix`][c~rustix~docs]↗ or [`nix`][c~nix~docs]↗ | Use a wrapper that returns `Result` and owns or borrows file descriptors safely.                           |
-| An API that a wrapper does not expose              | [`libc`][c~libc~docs]↗                             | C-compatible types and pointers require a small, reviewed `unsafe` boundary.                               |
-| A raw kernel call with no library binding          | Platform-specific syscall interface                | Check the target OS and architecture documentation; do not assume syscall numbers or layouts are portable. |
+| Need | Starting point | Trade-off |
+| --- | --- | --- |
+| Portable files, processes, environment, or sockets | [`std`][c~std~docs]↗ | Prefer this for ordinary application code; it hides platform-specific details. |
+| Unix system APIs with safe Rust types | [`rustix`][c~rustix~docs]↗ or [`nix`][c~nix~docs]↗ | Use a wrapper that returns `Result` and owns or borrows file descriptors safely. |
+| An API that a wrapper does not expose | [`libc`][c~libc~docs]↗ | C-compatible types and pointers require a small, reviewed `unsafe` boundary. |
+| A raw kernel call with no library binding | Platform-specific syscall interface | Check the target OS and architecture documentation; do not assume syscall numbers or layouts are portable. |
 
 Check the documented safety requirements, pointer lifetimes, ownership rules, error convention, and platform availability before calling a low-level function. Keep `unsafe` blocks small and provide a safe Rust-facing wrapper where the operation is reused.
 

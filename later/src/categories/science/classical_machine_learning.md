@@ -8,19 +8,19 @@
 
 ## Choose an Algorithm by Task {#classical-ml}
 
-| Task           | Example                                                    | Guidance                                                                     |
-| -------------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| Classification | Seeded [`smartcore`][c~smartcore~docs] decision tree       | Use labeled examples and evaluate predictions on held-out data.              |
-| Clustering     | Seeded [`linfa-clustering`][linfa-clustering~docs] K-means | Use numeric features without labels and choose the number of clusters.       |
-| Regression     | [`linfa-linear`][c~linfa-linear~docs] linear regression    | Predict a numeric target and check prediction error on held-out data.        |
-| Preprocessing  | Scaling and train/test splitting                           | Split first; fit scalers and other learned transforms on training rows only. |
+| Task | Example | Guidance |
+| --- | --- | --- |
+| Classification | Seeded [`smartcore`][c~smartcore~docs] decision tree | Use labeled examples and evaluate predictions on held-out data. |
+| Clustering | Seeded [`linfa-clustering`][linfa-clustering~docs] K-means | Use numeric features without labels and choose the number of clusters. |
+| Regression | [`linfa-linear`][c~linfa-linear~docs] linear regression | Predict a numeric target and check prediction error on held-out data. |
+| Preprocessing | Scaling and train/test splitting | Split first; fit scalers and other learned transforms on training rows only. |
 
 ## Compare Linfa and SmartCore
 
-| Crate                           | Algorithms                                          | Array integration                              | Maintenance                                                                   |
-| ------------------------------- | --------------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------------------------------- |
-| [`linfa`][c~linfa~docs]         | Modular crates: `linfa-clustering`, `linfa-linear`. | `ndarray` records in `DatasetBase`.            | Review updates across algorithm crates; see [Linfa releases][linfa~releases]. |
-| [`smartcore`][c~smartcore~docs] | Broad suite in one crate.                           | `DenseMatrix`; optional `ndarray` integration. | Follow the main crate's [release history][smartcore~releases].                |
+| Crate | Algorithms | Array integration | Maintenance |
+| --- | --- | --- | --- |
+| [`linfa`][c~linfa~docs] | Modular crates: `linfa-clustering`, `linfa-linear`. | `ndarray` records in `DatasetBase`. | Review updates across algorithm crates; see [Linfa releases][linfa~releases]. |
+| [`smartcore`][c~smartcore~docs] | Broad suite in one crate. | `DenseMatrix`; optional `ndarray` integration. | Follow the main crate's [release history][smartcore~releases]. |
 
 This chapter's examples use Linfa 0.8.1 and SmartCore 0.6.16.
 

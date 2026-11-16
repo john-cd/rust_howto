@@ -4,8 +4,8 @@
 
 {{#include debugging.incl.md}}
 
-| Topic     | Rust Crates                                                         |
-| --------- | ------------------------------------------------------------------- |
+| Topic | Rust Crates |
+| --- | --- |
 | Debugging | [`gdb`][c~gdb~docs]↗{{hi:gdb}} or [`lldb`][c~lldb~docs]↗{{hi:lldb}} |
 
 For breakpoints, stepping, variable inspection, and stack traces, see [[debugger | Debuggers]].
