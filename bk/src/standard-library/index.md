@@ -48,7 +48,7 @@ The table below lists stable modules of the Standard Library, highlights the mos
 | [`std::prelude`][c~std::prelude~docs]↗{{hi:std::prelude}} | The prelude that Rust automatically imports into every Rust program. | [[code_organization | Code Organization]] |
 | [`std::primitive`][c~std::primitive~docs]↗{{hi:std::primitive}} | This module reexports the primitive types to allow usage that is not possibly shadowed by other declared types. | [[data_types | Data Types]] |
 | [**`std::process`**][c~std::process~docs]↗{{hi:std::process}} | A module for working with processes. Home of [`Command`][c~std::process::Command~docs]↗ and [`exit()`][c~std::process::exit~docs]↗. | [[external_commands | External Commands]] |
-| [`std::ptr`][c~std::ptr~docs]↗{{hi:std::ptr}} | Manually manage memory through raw pointers, e.g. [`NonNull`][c~std::ptr::NonNull~docs]↗ and many unsafe functions. Advanced topic. | [[ownership_and_borrowing | Ownership & Borrowing]] |
+| [`std::ptr`][c~std::ptr~docs]↗{{hi:std::ptr}} | Manually manage memory through raw pointers, e.g. [`NonNull`][c~std::ptr::NonNull~docs]↗ and many unsafe functions. Advanced topic. | [Pointer Provenance at an FFI Boundary](pointer_provenance.md) |
 | [**`std::rc`**][c~std::rc~docs]↗{{hi:std::rc}} | Single-threaded reference-counting pointers. 'Rc' stands for "Reference Counted". See [`Rc`][c~std::rc::Rc~docs]↗. | [[reference_counting | Reference Counting]] |
 | [**`std::result`**][c~std::result~docs]↗{{hi:std::result}} | Error handling with the [`Result`][c~std::result::Result~docs]↗ type. | [[recoverable_error_handling | Result]] |
 | [`std::slice`][c~std::slice~docs]↗{{hi:std::slice}} | Utilities for the [slice][primitive~slice]↗ primitive type. | [[slices | Slices]] |
