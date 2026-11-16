@@ -21,7 +21,7 @@ Under [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}}, you use [`core
 | `alloc` | [`alloc`][c~alloc~docs]↗{{hi:alloc}} | A global allocator | `Box`, `Vec`, `String`, `Rc`, `Arc`, `BTreeMap`. See [No Alloc](../no-std_no-alloc/index.md) for working without it. |
 | `std` | [`std`][c~std~docs]↗{{hi:std}} | Target support | Higher-level APIs such as files and threads, where the target supports them. |
 
-A freestanding `#![no_std]` binary needs a panic handler. Crates such as [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}} and [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}} supply one. See the [no-std chapter](no_std.md) for examples.
+A freestanding `#![no_std]` binary needs a panic handler. Crates such as [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}} and [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}} supply one. See [Bare-metal Startup and Allocation](no_std.md) for a sketch.
 
 ## Useful `no_std` Crates
 
@@ -36,7 +36,7 @@ A freestanding `#![no_std]` binary needs a panic handler. Crates such as [`panic
 | Atomics on any target | [`atomic`][c~atomic~docs]↗{{hi:atomic}} | Generic `Atomic<T>` wrapper. |
 | Global allocator | [`embedded-alloc`][c~embedded-alloc~docs]↗{{hi:embedded-alloc}} | Heap allocator for use with `alloc`. Prefer it over the unmaintained [`wee_alloc`][c~wee_alloc~docs]↗{{hi:wee_alloc}}. |
 
-## Code Examples
+## Bare-metal Recipes
 
 {{#include no_std.incl.md}}
 

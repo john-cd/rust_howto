@@ -38,6 +38,8 @@ For lockfiles, feature selection, and dependency updates, see [Dependency Manage
 - [[code_organization_by_project_type | Code Organization By Project Type]].
 - [[crate-selection | Crate Selection]].
 
+See [No Standard Library](../categories/no-std/no_std.md) for a library that uses a feature to select `std` support.
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

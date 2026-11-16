@@ -150,7 +150,7 @@
   - [No `alloc`](categories/no-std_no-alloc/no_alloc.md)
 
 - [No `std`](categories/no-std/index.md)
-  - [No `std`](categories/no-std/no_std.md)
+  - [Bare-metal Startup and Allocation](categories/no-std/no_std.md)
 
 - [Operating systems - FreeBSD](categories/os_freebsd-apis/index.md)
   - [FreeBSD](categories/os_freebsd-apis/freebsd.md)

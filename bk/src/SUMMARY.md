@@ -57,6 +57,7 @@
   - [Visibility](code-organization/visibility.md)
   - [`use` Declarations](code-organization/use_declarations.md)
   - [Dependencies](code-organization/dependencies.md)
+  - [No Standard Library](categories/no-std/no_std.md)
   - [Code Organization by Project Type](code-organization/code_organization_by_project_type.md)
   - [Naming Conventions](code-organization/naming_conventions.md)
   - [Configure Clippy for a Workspace](code-organization/clippy.md)
