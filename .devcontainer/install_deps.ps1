@@ -8,11 +8,7 @@
     Installs development dependencies for Windows.
 #>
 
-$defaultTempRoot = if (Test-Path -LiteralPath 'D:\temp' -PathType Container) {
-    'D:\temp'
-} else {
-    'C:\temp'
-}
+$defaultTempRoot = 'C:\temp'
 $temporaryRoot = if ($env:CODE_TEMP_ROOT) { $env:CODE_TEMP_ROOT } else { $defaultTempRoot }
 if (-not (Test-Path -LiteralPath $temporaryRoot -PathType Container)) {
     New-Item -ItemType Directory -Path $temporaryRoot -Force | Out-Null
