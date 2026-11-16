@@ -27,6 +27,8 @@ Once adding an external crate as a dependency, you will very often bring items f
 {{#include ../../crates/code_organization/examples/dependencies/external_dependency.rs:example}}
 ```
 
+For lockfiles, feature selection, and dependency updates, see [Dependency Management (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_cargo-plugins/dependency_management.md).
+
 ## References {#references .skip}
 
 - [Using a Crate to Get More Functionality][book~rust~ch02-00-guessing-game-tutorial.html#using-a-crate-to-get-more-functionality]↗.
@@ -40,7 +42,5 @@ Once adding an external crate as a dependency, you will very often bring items f
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-  - [[cargo | Cargo]].
-  - [[dependency_management | Dependency Management]].
   - [[development-tools_cargo-plugins | Development Tools - Cargo Plugins]].
 </div>

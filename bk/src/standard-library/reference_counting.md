@@ -36,6 +36,8 @@ If you need mutability inside an `Rc`, you can use [`RefCell<T>`][c~std::cell::R
 
 See [[interior_mutability | Interior Mutability]] for more details.
 
+For examples of sharing and coordinating mutation across threads, see [Shared-State Concurrency (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/shared_state.md).
+
 ## Related Topics {#related-topics .skip}
 
 - [[heap_storage | Box]].
@@ -47,9 +49,3 @@ See [[interior_mutability | Interior Mutability]] for more details.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-
-- [[concurrency | Concurrency]].
-
-</div>

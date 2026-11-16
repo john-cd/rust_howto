@@ -45,6 +45,8 @@ Rust also supports asynchronous main functions for writing concurrent applicatio
 {{#include ../../crates/language/examples/entrypoint/async_main.rs:example}}
 ```
 
+For an introduction to futures and executors, see [Async Rust (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/asynchronous/async.md).
+
 ## Related Topics {#related-topics .skip}
 
 - [[functions | Functions]].
@@ -52,9 +54,3 @@ Rust also supports asynchronous main functions for writing concurrent applicatio
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-
-- [[asynchronous | Asynchronous]].
-
-</div>

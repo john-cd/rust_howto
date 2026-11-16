@@ -23,7 +23,7 @@ The [[mdbook | `mdbook`]] chapter describes these preprocessors and backends in 
 
 [`mdbook-scrub`][rust-howto~mdbook-scrub~repo]↗ is a [custom preprocessor][book~mdbook~preprocessors]↗ written specifically for this book. It is a simple tool that
 
-- removes the hidden sections between <div class="hidden"> and </div> from the markdown before rendering. By default, [`mdbook`][book~mdbook]↗{{hi:mdbook}} hides <div class="hidden"></div> sections, but they remain searchable.
+- removes the hidden sections between <div class="hidden"> and </div> from the markdown before rendering. By default, [`mdbook`][book~mdbook]↗{{hi:mdbook}} hides  sections, but they remain searchable.
 - removes the legacy `{{#includes }}` directive for hidden files (files that start with `_`), if any. See [mdBook's include documentation][book~mdbook~including-files]↗ for the related syntax. This feature fixes a gap of `mdbook-private`.
 - expands the book-specific directives stage used by `bk/book.toml` before the other preprocessors.
 
@@ -33,15 +33,11 @@ Consult the project's [README][mdbook-scrub-readme~repo]↗ for more details.
 
 [`mdbook-lint`][mdbook-lint~repo]↗ checks Markdown with mdBook-specific rules. [Lychee][lychee~repo]↗ checks links in existing Markdown or HTML. Run the checks against the source or rendered output that your workflow publishes.
 
+For the book structure and rendering workflow that preprocessors extend, see [mdBook (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/documentation/mdbook.md).
+
 ## Related Topics {#related-topics .skip}
 
 - [[book_editing_and_example_code_development | Book Editing and Example Code Development]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-
-- [[mdbook | Mdbook]].
-
-</div>

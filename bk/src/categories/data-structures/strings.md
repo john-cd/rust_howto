@@ -70,6 +70,8 @@ See:
 - [[vectors | Vectors]].
 - [[clone-on-write | COW]].
 
+If you need to count user-perceived characters or align text in terminal columns, see [Unicode Text (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/unicode.md).
+
 ## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
@@ -88,7 +90,6 @@ See:
 - [[rust_search_engines | Rust Search Engines]].
 - [[template_engine | Template Engine]].
 - [[text_layout | Text Layout]].
-- [[unicode | Unicode]] handling.
 - [[value_formatting | Value Formatting]].
 
 </div>
