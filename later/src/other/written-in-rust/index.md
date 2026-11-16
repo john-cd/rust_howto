@@ -10,7 +10,7 @@ The tested crate example is a placeholder; this page currently provides a
 curated project overview rather than an executable integration:
 
 ```rust,ignore
-{{#include ../../../crates/other/examples/written_in_rust/main.rs:example}}
+{{#include ../../../crates/other/examples/written_in_rust/book_example.rs:example}}
 ```
 
 ## Systems Programming

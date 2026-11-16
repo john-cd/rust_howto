@@ -1,47 +1,5 @@
-// TODO Reviewed ??-??-2026.
+mod book_example;
 
-// ANCHOR: example
-
-//! Creates a row-major RGBA pixel buffer with opaque and translucent pixels.
-
-use image::Rgba;
-use image::RgbaImage;
-
-/// Creates a two-pixel RGBA image for the example.
-fn example_buffer() -> RgbaImage {
-    let mut buffer = RgbaImage::new(2, 1);
-    buffer.put_pixel(0, 0, Rgba([255, 0, 0, 255]));
-    buffer.put_pixel(1, 0, Rgba([0, 0, 255, 128]));
-    buffer
-}
-
-/// Prints the row-major byte storage of the example image.
-fn print_example() {
-    let buffer = example_buffer();
-    println!(
-        "dimensions={:?}, bytes={:?}",
-        buffer.dimensions(),
-        buffer.as_raw()
-    );
-}
-
-/// Runs the pixel-buffer example from a standalone entry point.
-fn main() {
-    print_example();
-}
-// ANCHOR_END: example
-
-/// pixels.
-#[cfg(test)]
-mod tests {
-    use super::example_buffer;
-
-    /// Preserves pixel order and alpha when exposing raw bytes.
-    #[test]
-    fn raw_bytes_preserve_pixel_order_and_alpha() {
-        assert_eq!(
-            example_buffer().as_raw().as_slice(),
-            &[255, 0, 0, 255, 0, 0, 255, 128]
-        );
-    }
+fn main() -> impl std::process::Termination {
+    book_example::run()
 }

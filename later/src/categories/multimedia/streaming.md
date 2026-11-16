@@ -27,7 +27,7 @@ Prefer a WebRTC or media pipeline library over implementing RTP packetization di
 [`str0m`][c~str0m~docs]↗{{hi:str0m}} does no network I/O of its own, so the offer and answer can be exchanged in a single process. This example negotiates a send-only audio stream between two peers; a real application would carry the SDP over its signaling service and then move UDP packets between the peers.
 
 ```rust,editable
-{{#include ../../../crates/cats/multimedia/examples/streaming/main.rs:example}}
+{{#include ../../../crates/cats/multimedia/examples/streaming/book_example.rs:example}}
 ```
 
 {{#include refs.incl.md}}
@@ -36,5 +36,5 @@ Prefer a WebRTC or media pipeline library over implementing RTP packetization di
 The example advances frame sequence numbers and media timestamps before a protocol-specific packetizer sends them. It illustrates timing metadata only; it is not an RTP implementation.
 
 ```rust,noplayground
-{{#include ../../../crates/cats/multimedia/examples/streaming/main.rs:example}}
+{{#include ../../../crates/cats/multimedia/examples/streaming/book_example.rs:example}}
 ```

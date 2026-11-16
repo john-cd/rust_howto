@@ -13,7 +13,7 @@ OpenGL is a cross-platform graphics API with a large installed base, but it is a
 [`glow`][c~glow~docs]↗{{hi:glow}} provides bindings for OpenGL, OpenGL ES, and WebGL behind one Rust API. The [`egui_glow` integration][egui_glow~repo] uses it for GL rendering; `wgpu` provides a separate GL/GLES backend on supported targets. The tested example below shows how to load the bindings and clear a framebuffer; a windowing crate must create and make the context current first.
 
 ```rust
-{{#include ../../../crates/cats/rendering_graphics_api/examples/opengl/main.rs:example}}
+{{#include ../../../crates/cats/rendering_graphics_api/examples/opengl/book_example.rs:example}}
 ```
 
 ## Create a window and context with `glutin` and `winit` {#glutin}
