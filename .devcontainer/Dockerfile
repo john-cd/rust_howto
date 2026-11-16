@@ -225,6 +225,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     liblzma-dev \
     libreadline-dev \
     librocksdb-dev \
+    librsvg2-bin \
     librsvg2-dev \
     libsqlite3-dev \
     libssl-dev \

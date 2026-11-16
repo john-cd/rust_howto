@@ -1,28 +1,39 @@
 #!/usr/bin/env bash
-# Purpose: Generate the book's HTML / JS.
-# Usage: ./scripts/build_book.sh.
+# Purpose: Generate the book's HTML and optional PDF.
+# Usage: ./scripts/book/build_book.sh <book-root>.
 #
 # TODO Reviewed ??-??-2026.
 
 set -euo pipefail
 
-# Generate the book's HTML / JS
-
-root="$(realpath $1)/"
+root="$(realpath "$1")/"
 
 # Make sure that `book.toml` is available
 # See `quick.sh`
-if [ ! -f ${root}book.toml ]; then
-    cp -f ${root}book.toml.bak ${root}book.toml
+if [ ! -f "${root}book.toml" ]; then
+    cp -f "${root}book.toml.bak" "${root}book.toml"
 fi
 
-# The PDF profile needs LaTeX/SVG tooling that local machines often lack.
-# Render Markdown instead unless the PDF is explicitly requested (BUILD_PDF=1).
-if [ "${BUILD_PDF:-0}" != "1" ]; then
-    export MDBOOK_OUTPUT__PANDOC__PROFILE__PDF__TO=gfm
-    export MDBOOK_OUTPUT__PANDOC__PROFILE__PDF__OUTPUT_FILE=book.md
-fi
+case "${BUILD_PDF:-0}" in
+    1|true)
+        for tool in mdbook-pandoc pandoc tectonic rsvg-convert; do
+            if ! command -v "$tool" >/dev/null; then
+                printf 'PDF build requires %s on PATH.\n' "$tool" >&2
+                exit 1
+            fi
+        done
+        if [[ "$OSTYPE" == msys* && -z "${TECTONIC_CACHE_DIR:-}" ]]; then
+            TECTONIC_CACHE_DIR="$(cygpath -am "${CODE_CACHE_ROOT:-D:/cache}/tectonic")"
+            export TECTONIC_CACHE_DIR
+        fi
+        export MDBOOK_OUTPUT__PANDOC__OPTIONAL=false
+        ;;
+    *)
+        export MDBOOK_OUTPUT__PANDOC__PROFILE__PDF__TO=gfm
+        export MDBOOK_OUTPUT__PANDOC__PROFILE__PDF__OUTPUT_FILE=book.md
+        ;;
+esac
 
-mdbook build ${root}
+mdbook build "$root"
 
 echo "DONE"
