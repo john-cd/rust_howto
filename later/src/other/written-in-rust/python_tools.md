@@ -59,12 +59,3 @@ For Python extensions written in Rust, see [[python | Python FFI and extensions]
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-python_tools: write
-content audit: Written-in-Rust tool lists trimmed by recent commits; review and restore removed entries
-
-- [`uv` documentation][uv~docs~website]↗.
-- [`pyapp`][pyapp~website]↗ is retained as a Python application packaging resource; verify its current status before recommending it.
-
-</div>
