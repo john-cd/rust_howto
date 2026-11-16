@@ -9,6 +9,8 @@ root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 set tempdir := "."
 
+# ---- GitHub issue management -----------------------------------------------
+
 # List the available recipes and task modules.
 [no-exit-message]
 _default:

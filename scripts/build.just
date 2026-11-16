@@ -55,11 +55,23 @@ export CARGO_BUILD_RUSTC_WRAPPER := env("CARGO_BUILD_RUSTC_WRAPPER", "sccache")
 export CARGO_INCREMENTAL := "0"
 export SCCACHE_DIR := build_code_sccache_root
 export SCCACHE_CACHE_SIZE := "45G"
-
 export SCCACHE_BASEDIRS := build_sccache_basedirs
 export TEMP := if os() == "windows" { build_code_temp_root } else { env("TEMP", "/tmp") }
 export TMP := if os() == "windows" { build_code_temp_root } else { env("TMP", "/tmp") }
 export TMPDIR := if os() == "windows" { build_code_temp_root } else { env("TMPDIR", "/tmp") }
+export CODE_REPOS_ROOT := build_code_repos_root
+export CODE_PACKAGES_ROOT := build_code_packages_root
+export CODE_TOOLS_ROOT := build_code_tools_root
+export CODE_TARGET_ROOT := build_code_target_root
+export CODE_BUILD_ROOT := build_code_build_root
+export CODE_TEMP_ROOT := build_code_temp_root
+export CARGO_HOME := env("CARGO_HOME", if os() == "windows" { join(build_code_packages_root, "cargo") } else { join(home_directory(), ".cargo") })
+export NUGET_PACKAGES := env("NUGET_PACKAGES", join(build_code_packages_root, "nuget"))
+export npm_config_cache := env("npm_config_cache", join(build_code_packages_root, "npm"))
+
+# ---- Build setup ------------------------------------------------------------
+
+# ---- Cargo commands ---------------------------------------------------------
 
 # Run an ad hoc Cargo command with this checkout's shared build environment.
 [positional-arguments]
@@ -67,6 +79,8 @@ export TMPDIR := if os() == "windows" { build_code_temp_root } else { env("TMPDI
     @printf '[cargo] start: %s\n' "$*"
     cargo "$@"
     @printf '[cargo] done: %s\n' "$*"
+
+# ---- Build directories and cache -------------------------------------------
 
 # Connect direct Cargo commands to the same persistent directories as just.
 [windows]
@@ -97,41 +111,33 @@ cache-setup:
 [unix]
 worktree slot branch:
     bash "{{ build_repo }}/scripts/setup-build.sh" --slot "{{ slot }}" "{{ branch }}" "{{ build_inherited_target }}" "{{ build_inherited_intermediate }}"
+# ---- Environment diagnostics -----------------------------------------------
+
 # Print the active worktree paths and compiler-cache configuration.
 build-env:
-    @printf 'WORKTREE_DIR=%s\n' {{quote(build_repo)}}
-    @printf 'WORKTREE_SLOT=%s\n' {{quote(tooling_slot)}}
-    @printf 'REPO_ROOT=%s\n' {{quote(tooling_main)}}
-    @printf 'CODE_TARGET_ROOT=%s\n' {{quote(build_code_target_root)}}
-    @printf 'CODE_BUILD_ROOT=%s\n' {{quote(build_code_build_root)}}
-    @printf 'CODE_SCCACHE_ROOT=%s\n' {{quote(build_code_sccache_root)}}
-    @printf 'CODE_TEMP_ROOT=%s\n' {{quote(build_code_temp_root)}}
-    @printf 'BRANCH=%s\n' "$(git -C {{quote(build_repo)}} -c core.fsmonitor=false branch --show-current)"
-    @if test -z "$(git -C {{quote(build_repo)}} -c core.fsmonitor=false status --porcelain)"; then echo STATUS=clean; else echo STATUS=dirty; fi
-    @printf 'CARGO_TARGET_DIR=%s\n' {{quote(CARGO_TARGET_DIR)}}
-    @printf 'CARGO_BUILD_TARGET_DIR=%s\n' {{quote(CARGO_BUILD_TARGET_DIR)}}
-    @printf 'CARGO_BUILD_BUILD_DIR=%s\n' {{quote(CARGO_BUILD_BUILD_DIR)}}
-    @printf 'RUSTC_WRAPPER=%s\n' {{quote(RUSTC_WRAPPER)}}
-    @printf 'CARGO_BUILD_RUSTC_WRAPPER=%s\n' {{quote(CARGO_BUILD_RUSTC_WRAPPER)}}
-    @printf 'CARGO_INCREMENTAL=%s\n' {{quote(CARGO_INCREMENTAL)}}
-    @printf 'CARGO_BUILD_JOBS=%s\n' {{quote(env("CARGO_BUILD_JOBS", ""))}}
-    @printf 'SCCACHE_DIR=%s\n' {{quote(SCCACHE_DIR)}}
-    @printf 'SCCACHE_CACHE_SIZE=%s\n' {{quote(SCCACHE_CACHE_SIZE)}}
-    @printf 'SCCACHE_BASEDIRS=%s\n' {{quote(SCCACHE_BASEDIRS)}}
-    @printf 'TEMP=%s\n' {{quote(TEMP)}}
-    @printf 'TMP=%s\n' {{quote(TMP)}}
-    @printf 'TMPDIR=%s\n' {{quote(TMPDIR)}}
-
-export CODE_REPOS_ROOT := build_code_repos_root
-export CODE_PACKAGES_ROOT := build_code_packages_root
-export CODE_TOOLS_ROOT := build_code_tools_root
-export CODE_TARGET_ROOT := build_code_target_root
-export CODE_BUILD_ROOT := build_code_build_root
-export CODE_TEMP_ROOT := build_code_temp_root
-export CARGO_HOME := env("CARGO_HOME", if os() == "windows" { join(build_code_packages_root, "cargo") } else { join(home_directory(), ".cargo") })
-export NUGET_PACKAGES := env("NUGET_PACKAGES", join(build_code_packages_root, "nuget"))
-export npm_config_cache := env("npm_config_cache", join(build_code_packages_root, "npm"))
+    @printf 'WORKTREE_DIR=%s\n' {{ quote(build_repo) }}
+    @printf 'WORKTREE_SLOT=%s\n' {{ quote(tooling_slot) }}
+    @printf 'REPO_ROOT=%s\n' {{ quote(tooling_main) }}
+    @printf 'CODE_TARGET_ROOT=%s\n' {{ quote(build_code_target_root) }}
+    @printf 'CODE_BUILD_ROOT=%s\n' {{ quote(build_code_build_root) }}
+    @printf 'CODE_SCCACHE_ROOT=%s\n' {{ quote(build_code_sccache_root) }}
+    @printf 'CODE_TEMP_ROOT=%s\n' {{ quote(build_code_temp_root) }}
+    @printf 'BRANCH=%s\n' "$(git -C {{ quote(build_repo) }} -c core.fsmonitor=false branch --show-current)"
+    @if test -z "$(git -C {{ quote(build_repo) }} -c core.fsmonitor=false status --porcelain)"; then echo STATUS=clean; else echo STATUS=dirty; fi
+    @printf 'CARGO_TARGET_DIR=%s\n' {{ quote(CARGO_TARGET_DIR) }}
+    @printf 'CARGO_BUILD_TARGET_DIR=%s\n' {{ quote(CARGO_BUILD_TARGET_DIR) }}
+    @printf 'CARGO_BUILD_BUILD_DIR=%s\n' {{ quote(CARGO_BUILD_BUILD_DIR) }}
+    @printf 'RUSTC_WRAPPER=%s\n' {{ quote(RUSTC_WRAPPER) }}
+    @printf 'CARGO_BUILD_RUSTC_WRAPPER=%s\n' {{ quote(CARGO_BUILD_RUSTC_WRAPPER) }}
+    @printf 'CARGO_INCREMENTAL=%s\n' {{ quote(CARGO_INCREMENTAL) }}
+    @printf 'CARGO_BUILD_JOBS=%s\n' {{ quote(env("CARGO_BUILD_JOBS", "")) }}
+    @printf 'SCCACHE_DIR=%s\n' {{ quote(SCCACHE_DIR) }}
+    @printf 'SCCACHE_CACHE_SIZE=%s\n' {{ quote(SCCACHE_CACHE_SIZE) }}
+    @printf 'SCCACHE_BASEDIRS=%s\n' {{ quote(SCCACHE_BASEDIRS) }}
+    @printf 'TEMP=%s\n' {{ quote(TEMP) }}
+    @printf 'TMP=%s\n' {{ quote(TMP) }}
+    @printf 'TMPDIR=%s\n' {{ quote(TMPDIR) }}
 
 # Configure shared Cargo compiler defaults; checkout output slots remain separate.
 configure-cargo-host:
-    pwsh -NoLogo -NoProfile -File {{quote(join(build_repo, "scripts/cargo-host.ps1"))}} -BuildRoot {{quote(build_code_build_root)}} -ConfigureHost
+    pwsh -NoLogo -NoProfile -File {{ quote(join(build_repo, "scripts/cargo-host.ps1")) }} -BuildRoot {{ quote(build_code_build_root) }} -ConfigureHost

@@ -3,6 +3,8 @@
 
 # TODO Reviewed ??-??-2026.
 
+# ---- Imports and shell configuration ---------------------------------------
+
 import "../scripts/build.just"
 
 set shell := ["bash", "-uc"]
@@ -16,10 +18,7 @@ rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
 rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
 export RUSTFMT_TOOLCHAIN := rustfmt_toolchain
 
-# List the available recipes and task modules.
-[no-exit-message]
-_default:
-    @just --list --unsorted --justfile {{ quote(source_file()) }}
+# ---- Task aliases and entry point ------------------------------------------
 
 # Uniform task names (short aliases; old names kept as aliases).
 alias f := format
@@ -46,6 +45,12 @@ alias nextestall := test
 alias docall := doc-serve
 alias br := release
 
+# List the available recipes and task modules.
+[no-exit-message]
+_default:
+    @just --list --unsorted --justfile {{ quote(source_file()) }}
+
+# ---- Formatting -------------------------------------------------------------
 
 # Format all Rust packages and their local path-based dependencies.
 @format:
@@ -59,6 +64,8 @@ alias br := release
 @format-check:
     echo "Checking formatting of all packages and their local path-based dependencies in $(pwd)"
     cargo +{{ rustfmt_toolchain }} fmt --all -- --check
+
+# ---- Checks and lint --------------------------------------------------------
 
 # Check all Rust targets with every configured feature.
 @check:
@@ -84,6 +91,8 @@ alias br := release
 # Run the local CI gates (the same as check-all).
 @ci: check-all
 
+# ---- Build and tests --------------------------------------------------------
+
 # Build all packages (all features).
 @build:
     echo "Build all packages, all features in $(pwd)"
@@ -94,6 +103,8 @@ alias br := release
     echo "Test all code in the workspace in $(pwd) (incl. doctests) (all features)"
     cargo test --doc --workspace --locked --all-features --quiet # nextest does not handle doctests
     cargo nextest run --workspace --all-targets --locked --no-fail-fast --status-level all --all-features
+
+# ---- Documentation ---------------------------------------------------------
 
 # Build the cargo doc documentation.
 @doc:
@@ -108,6 +119,8 @@ alias br := release
 # Audit embedded example integrity and fail when an example is invalid.
 @audit-examples:
     cargo run --locked -p example-integrity -- --fail
+
+# ---- Release and example maintenance ---------------------------------------
 
 # Build release binaries and copy them into the repository's bin/ directory.
 @release:

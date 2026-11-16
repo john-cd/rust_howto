@@ -5,9 +5,10 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+set tempdir := "."
 book_root := replace(clean(join(source_directory(), "../..")), "\\", "/")
 
-set tempdir := "."
+# ---- Crate reference and metadata checks -----------------------------------
 
 # List the available recipes and task modules.
 [no-exit-message]

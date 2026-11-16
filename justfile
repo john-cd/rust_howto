@@ -3,6 +3,8 @@
 
 # TODO Reviewed ??-??-2026.
 
+# ---- Imports and shell configuration ---------------------------------------
+
 import "scripts/build.just"
 
 set unstable
@@ -12,6 +14,8 @@ set shell := ["bash", "-uc"]
 # Use Git Bash on Windows so recipes share one shell syntax across platforms.
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 set quiet
+
+# ---- Task aliases -----------------------------------------------------------
 
 # Uniform task names (short aliases). The aggregate tasks run in every workspace.
 alias f := format
@@ -31,10 +35,14 @@ alias de := deny
 alias hi := hooks-install
 alias hr := hooks-run
 
+# ---- Workspace orchestration -----------------------------------------------
+
 # List the available recipes and task modules.
 [no-exit-message]
 _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
+
+# ---- Formatting and dependency policy ---------------------------------------
 
 # Format Cargo manifests in every independent Rust workspace.
 @fmt-toml:
@@ -60,6 +68,8 @@ _default:
       echo "Checking dependency policy in ${workspace}"; \
       cargo deny --locked --manifest-path "${workspace}/Cargo.toml" --workspace check; \
     done
+
+# ---- Aggregate workspace tasks ---------------------------------------------
 
 # Run a recipe in every workspace and report failure if any workspace fails.
 @all cmd:
@@ -108,6 +118,8 @@ doc: (all "doc")
 # Run the local CI gates: check-all plus dependency policy.
 ci: check-all deny
 
+# ---- Workspace modules ------------------------------------------------------
+
 # Book
 mod bk
 # Later
@@ -122,6 +134,8 @@ mod publish
 mod tools
 # Additional examples
 mod xmpl
+
+# ---- Git hooks --------------------------------------------------------------
 
 # Install the repository Git hook shim using prek.
 hooks-install:

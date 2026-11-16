@@ -7,6 +7,10 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 exe := if os_family() == "windows" { ".exe" } else { "" }
 root := replace(clean(join(source_directory(), "..", "..")), "\\", "/")
+help := 'help'
+empty := ''
+
+# ---- Utility commands -------------------------------------------------------
 
 # List the available recipes and task modules.
 [no-exit-message]
@@ -14,9 +18,6 @@ _default:
     @just --list --unsorted --justfile {{ quote(source_file()) }}
 
 ## ---- UTILITIES -----------------------------------
-
-help := 'help'
-empty := ''
 
 # Run mdbook-utils from the book root. Defaults to its help; pass a command and optional subcommands.
 @utils cmd=help *subcmd=empty:

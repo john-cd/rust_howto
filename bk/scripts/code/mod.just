@@ -15,9 +15,12 @@ rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
 # `oracle` and `sibyl` need OCI_LIB_DIR (see bk/drafts/categories/database/oracle.md),
 # so workspace-wide recipes add them only when it is set.
 database_features := "cassandra,diesel,elasticsearch,lapin,lmdb,mongodb,mssql,postgres,redis,rocksdb,sea_orm,sqlx,sqlite"
+current_crate := file_name(invocation_directory())
 
 rustfmt_toolchain := if rustfmt_toolchain_override == "" { rustfmt_toolchain_default } else { rustfmt_toolchain_override }
 export RUSTFMT_TOOLCHAIN := rustfmt_toolchain
+
+# ---- Code validation --------------------------------------------------------
 
 # List the available recipes and task modules.
 [no-exit-message]
@@ -133,8 +136,6 @@ _default:
 # Test only tests that match a given keyword
 @nextestthis test:
     cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --locked --no-fail-fast --success-output final -E 'test(~{{ test }})'
-
-current_crate := file_name(invocation_directory())
 
 # Test in the current directory (or the default packages of the workspace if in the root) (all features)
 [no-cd]

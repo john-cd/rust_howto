@@ -5,9 +5,9 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
-## ---- DEFAULT -------------------------------------
-
 root := replace(clean(source_directory() + "/../../.."), "\\", "/")
+
+# ---- Git hook tasks ---------------------------------------------------------
 
 # List the available recipes and task modules.
 [no-exit-message]
