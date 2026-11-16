@@ -17,25 +17,25 @@ The online crate-information commands are separate; the example below demonstrat
 
 ## List local dependencies
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../crates/cats/development_tools/examples/crate_indices/dependencies.rs:example}}
 ```
 
 ## Collect published recipes
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../crates/cats/development_tools/examples/crate_indices/published_recipes.rs:example}}
 ```
 
 ## Generate a category page
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../crates/cats/development_tools/examples/crate_indices/category_page.rs:example}}
 ```
 
 ## Generate an alphabetical section
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../crates/cats/development_tools/examples/crate_indices/alphabetical_page.rs:example}}
 ```
 

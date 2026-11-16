@@ -10,7 +10,9 @@
 
 `uom` represents measurements as typed quantities. It converts values at unit boundaries and uses dimensions to prevent operations such as adding a length to a time. This example divides a distance by a duration to calculate a speed, then displays the distance in meters.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p mathematics --example units`. The tests verify conversions between units.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/mathematics/examples/units/quantities_and_conversions.rs:example}}
 ```
 

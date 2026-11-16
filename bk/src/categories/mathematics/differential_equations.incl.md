@@ -6,7 +6,9 @@ An initial value problem describes how a state changes over an independent varia
 
 The step size affects the approximation's accuracy. For a problem with a known exact solution, compare the numerical result against it as this test does.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p mathematics --example differential_equations`. The test compares the numerical trajectory with the exact solution.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/mathematics/examples/differential_equations/exponential_decay.rs:example}}
 ```
 

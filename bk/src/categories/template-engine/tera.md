@@ -23,7 +23,9 @@ crate-badge generation pattern used by this repository's `tools/templ`; that
 tool currently uses TinyTemplate internally, while this sample renders the
 same kind of Markdown with Tera and fixed local data.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p template_engine --example tera`. The tests render the sample template.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/template_engine/examples/tera/tera.rs:example}}
 ```
 

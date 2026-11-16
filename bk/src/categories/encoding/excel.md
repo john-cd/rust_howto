@@ -10,7 +10,9 @@
 
 [`rust_xlsxwriter::Workbook`][c~rust_xlsxwriter::Workbook~docs]↗{{hi:rust_xlsxwriter::Workbook}} creates a new `.xlsx` file. Add a worksheet, write cells by zero-based row and column, and call `save`. Reuse a [`rust_xlsxwriter::Format`][c~rust_xlsxwriter::Format~docs]↗{{hi:rust_xlsxwriter::Format}} for fonts and number formats.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p encoding --example excel`. The tests create their own workbook and check written values and rows.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/encoding/examples/excel/xlsxwriter.rs:example}}
 ```
 
@@ -25,7 +27,7 @@ Points to remember:
 
 [`calamine::open_workbook`][c~calamine::open_workbook~docs]↗{{hi:calamine::open_workbook}} opens `.xlsx`, `.xlsm`, `.xlsb`, `.xls` and `.ods` files. The [`calamine::Reader`][c~calamine::Reader~docs]↗{{hi:calamine::Reader}} trait gives access to the sheets. Each cell is a [`calamine::Data`][c~calamine::Data~docs]↗{{hi:calamine::Data}} value (`Int`, `Float`, `String`, `Bool`, `DateTime`, `Error` or `Empty`), so match on it instead of assuming a type.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/encoding/examples/excel/calamine.rs:example}}
 ```
 

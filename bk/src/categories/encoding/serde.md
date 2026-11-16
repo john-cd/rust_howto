@@ -41,7 +41,9 @@ Use `serde_json::to_string` or `to_vec` to serialize and `from_str` or `from_sli
 
 Capture names of fields that the target type does not recognize while deserializing. This can help configuration tools report misspelled or obsolete keys instead of silently overlooking them.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p encoding --example serde`. The tests exercise field validation and detection of unused fields.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/encoding/examples/serde/serde_ignored.rs:example}}
 ```
 
@@ -53,7 +55,7 @@ The [`monostate`][c~monostate~docs]↗{{hi:monostate}} library implements a type
 
 Use this for a protocol field that must contain one exact sentinel value, for example a tagged marker. It does not replace validation for the rest of the input.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/encoding/examples/serde/monostate.rs:example}}
 ```
 

@@ -66,7 +66,9 @@ Base64 represents arbitrary bytes as ASCII text; it is not encryption or compres
 
 The [`hex`][c~hex~docs]↗{{hi:hex}} crate offers `hex::encode`, which produces lowercase hexadecimal, `hex::decode`, and `hex::decode_to_slice` for fixed-size buffers. Invalid input returns a `FromHexError`, for example for an odd length or a character that is not a hex digit. [`data-encoding`][c~data-encoding~docs]↗ (shown above) and `const-hex` are alternatives.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p encoding --example string_encoding`. The tests check encoding, decoding, and invalid input.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/encoding/examples/string_encoding/hex_crate.rs:example}}
 ```
 
@@ -76,7 +78,7 @@ The [`hex`][c~hex~docs]↗{{hi:hex}} crate offers `hex::encode`, which produces 
 
 [`serde_urlencoded`][c~serde_urlencoded~docs]↗{{hi:serde_urlencoded}} serializes a struct to an `application/x-www-form-urlencoded` string (a query string or form body) and parses it back, into a struct or a map. Spaces become `+`. [`urlencoding`][c~urlencoding~docs]↗{{hi:urlencoding}} escapes a single path or query segment; a space becomes `%20`.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/encoding/examples/string_encoding/form_urlencoded.rs:example}}
 ```
 

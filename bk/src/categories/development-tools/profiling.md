@@ -18,7 +18,7 @@ cargo bench -p development_tools_profiling --bench divan
 
 The example follows the setup in [Nikolai Vazquez's Divan introduction][divan~blog]↗.
 
-```rust
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/development_tools_profiling/benches/divan.rs:example}}
 ```
 

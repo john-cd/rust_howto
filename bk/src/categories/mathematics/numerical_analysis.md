@@ -10,7 +10,9 @@
 
 Brent's method combines bisection, the secant method, and inverse quadratic interpolation. It requires an interval whose endpoint values have opposite signs. This example finds the root of `cos(x) - x` in `[0, 1]`.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p mathematics --example numerical_analysis`. The tests check the root reported by Brent's method.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/mathematics/examples/numerical_analysis/root_finding.rs:example}}
 ```
 

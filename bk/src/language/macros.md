@@ -367,7 +367,9 @@ Then, in your main crate, use the macro like this:
 
 [`proc-macro2`][c~proc-macro2~docs]↗{{hi:proc-macro2}} wraps the compiler's `proc_macro::TokenStream` in a type that also works outside a macro invocation, so the token-processing logic can be unit-tested as ordinary code. `replace_ident!` converts its input to a `proc_macro2::TokenStream`, renames the identifier in a plain function, and converts the result back.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p language --example macros`. The tests compile and exercise the workspace procedural macro.
+
+```rust,ignore,noplayground
 {{#include ../../crates/language/examples/macros/proc_macro2_example.rs:example}}
 ```
 

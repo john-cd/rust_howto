@@ -53,7 +53,9 @@ This example showcases how to create, insert, access, and remove elements from a
 
 [`linked-hash-map`][c~linked-hash-map~docs]↗{{hi:linked-hash-map}} is a hash map that iterates in insertion order. It is older than [`indexmap`](#indexmap) and has not changed much recently: prefer `indexmap` for new code, and use `linked-hash-map` when you need its `LinkedHashMap` API, for example to move an entry to the end when it is used again.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p data_structures --example maps`. The tests check that the map preserves insertion order.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/data_structures/examples/maps/linked_hash_map.rs:example}}
 ```
 
@@ -63,7 +65,9 @@ This example showcases how to create, insert, access, and remove elements from a
 
 [`rangemap`][c~rangemap~docs]↗{{hi:rangemap}} stores values against ranges of keys instead of single keys, and merges or splits ranges as you insert. Range ends are exclusive, so `0..50` and `50..100` are adjacent and `100` is not covered. It suits address spaces, schedules and version ranges.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p data_structures --example rangemap`. The tests check range lookup and merging.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/data_structures/examples/rangemap/rangemap.rs:example}}
 ```
 
@@ -73,7 +77,9 @@ This example showcases how to create, insert, access, and remove elements from a
 
 [`skiplist`][c~skiplist~docs]↗{{hi:skiplist}} provides `SkipMap`, an ordered map built on a skip list. Iteration visits the keys in sorted order regardless of insertion order. For most programs, [`BTreeMap`][c~std::collections::BTreeMap~docs]↗ from the standard library is the simpler choice; a skip list is mainly of interest for its structure and for `skiplist`'s ordered-collection API.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p data_structures --example skiplist`. The tests check ordered lookup and iteration.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/data_structures/examples/skiplist/skiplist.rs:example}}
 ```
 
@@ -83,7 +89,9 @@ This example showcases how to create, insert, access, and remove elements from a
 
 A Bloom filter is a compact set that can say "possibly present" or "definitely absent": it may report false positives but never false negatives. [`bloomfilter`][c~bloomfilter~docs]↗{{hi:bloomfilter}} sizes the filter from the number of items you expect and the false-positive rate you accept. Use it to skip expensive lookups for keys that are certainly not in a store.
 
-```rust,editable
+From `bk/crates`, run `cargo test --locked -p data_structures --example bloomfilter`. The tests check membership for inserted values.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/data_structures/examples/bloomfilter/bloomfilter.rs:example}}
 ```
 
