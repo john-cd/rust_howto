@@ -53,6 +53,35 @@ exceptions = [
   # crates.io; the book publishes neither their sources nor linked binaries.
   { crate = "rug@1.30.0", allow = ["LGPL-3.0-or-later"] },
   { crate = "gmp-mpfr-sys@1.7.1", allow = ["LGPL-3.0-or-later"] },
+  # The optional SurrealDB example uses kv-mem and parse to teach an embedded
+  # in-memory database. Upstream 4.0.1 ships these exact packages with BUSL-1.1
+  # license files. The book publishes the example source only.
+  # Review by 2026-12-16: https://github.com/john-cd/rust_howto/issues/2282
+  { crate = "surrealdb@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-catalog@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-cnf@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-collections@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-common@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-core@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-datastore@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-engine-api@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-engine-local@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-expr@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-iam@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-idx@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-keyspace-macro@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-kvs@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-kvs-any@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-kvs-mem@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-observe@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-parse-common@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-parser-next@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-rpc@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-runtime@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-stored-derive@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-strand@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-types@=4.0.1", allow = ["BUSL-1.1"] },
+  { crate = "surrealdb-types-derive@=4.0.1", allow = ["BUSL-1.1"] },
 ]
 
 [licenses.private]
