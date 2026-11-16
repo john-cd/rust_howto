@@ -12,11 +12,8 @@
 
 Rust has no `null`. Instead, it represents the presence or absence of a value with the [`std::option::Option`][c~std::option::Option~docs]↗{{hi:std::option::Option}} enum:
 
-```rust,editable,noplayground
-enum Option<T> {
-  None,
-  Some(T),
-}
+```rust,no_run,noplayground
+{{#include ../../crates/standard_library/examples/option/option_definition.rs:definition}}
 ```
 
 Every [`std::option::Option`][c~std::option::Option~docs]↗{{hi:std::option::Option}} is either [`std::option::Option::Some`][c~std::option::Option::Some~docs]↗{{hi:std::option::Option::Some}} and contains a value, or [`std::option::Option::None`][c~std::option::Option::None~docs]↗{{hi:std::option::Option::None}}, and does not.
@@ -45,16 +42,8 @@ Every [`std::option::Option`][c~std::option::Option~docs]↗{{hi:std::option::Op
 
 "Early Exit" (also called "Early Return") is the technique of immediately returning from a function (or exiting a loop) as soon as an invalid or exceptional condition is detected. For this purpose, Rust offers the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator, which is essentially a shortcut for a [`match`][keyword~match]↗ expression:
 
-```rust,noplayground
-fn func() -> Option<...> {
-   let maybe_val: Option<...> = ...;
-   let val = match maybe_val {
-      Some(v) => v,
-      _ => return None,  // Early exit.
-   };
- // ...
- Some(val)
-}
+```rust,no_run,noplayground
+{{#include ../../crates/standard_library/examples/option/option_question_mark.rs:early_match}}
 ```
 
 In the example below, when `s.chars().next()?` encounters [`None`][c~std::option::Option::None~docs]↗{{hi:std::option::Option::None}}, the function is exited early (returning `None`), guarding the subsequent uppercase conversion logic from operating on an empty string.

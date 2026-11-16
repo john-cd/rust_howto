@@ -42,40 +42,15 @@ Traits can have associated types, which are types that can be used in its functi
 
 An associated type declaration can include generic parameters and trait bounds (see [[generics | Generics]] for more details):
 
-```rust,noplayground
-use std::fmt::Debug;
-use std::fmt::Display;
-
-trait Tr {
-    type Item;
-    // Associated type with a trait bound:
-    type Item2: Display;
-    // Associated type with multiple trait bounds:
-    type Item3: Debug + Display;
-    // Associated type with a generic type parameter:
-    type Item4<T>;
-    // Associated type with a lifetime, a generic type parameter, and a const generic:
-    type Item5<'a, T, const N: usize>;
-    // Associated type with a `where` bound:
-    type Item6<T>
-    where
-        T: Clone;
-}
+```rust,no_run,noplayground
+{{#include ../../crates/language/examples/traits/associated_type_forms.rs:associated_types}}
 ```
 
 A common pattern is a generic trait, with a generic type parameter with a default, plus an associated type for the output.
 The use of an associated type eliminates the need to write generic type parameters in many places:
 
-```rust,noplayground
-/// A trait that represents the ability to add two values together.
-/// Similar to `core::ops::Add`.
-trait Add<Rhs = Self> {
-    /// The type of the result of the addition.
-    type Output;
-
-    /// Adds two values together.
-    fn add(self, rhs: Rhs) -> Self::Output;
-}
+```rust,no_run,noplayground
+{{#include ../../crates/language/examples/traits/associated_type_forms.rs:add}}
 ```
 
 ### Define Associated Constants in Traits {#constants-in-traits}

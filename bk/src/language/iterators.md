@@ -10,12 +10,8 @@
 
 Iterators allow you to process a sequence of items. An iterator is any type that implements the [`Iterator`][c~std::iter::Iterator~docs]↗{{hi:std::iter::Iterator}} trait. This trait requires only one required method: `next()`. Iterators are lazy, meaning they don't do any work until you ask for the next item (via `next()`).
 
-```rust,noplayground
-pub trait Iterator {
-    type Item;
-    fn next(&mut self) -> Option<Self::Item>;
-    // ... many other methods ...
-}
+```rust,no_run,noplayground
+{{#include ../../crates/language/examples/iterators/iterator_signature.rs:signature}}
 ```
 
 The `next()` method returns an `Option<Self::Item>`. If there is a next item, it returns `Some(item)`, otherwise it returns `None`.

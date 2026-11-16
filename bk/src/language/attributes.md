@@ -19,13 +19,10 @@ Common attributes include:
 - `#[derive(...)]` to autogenerate an implementation of certain traits.
 - `#[test]` to mark functions as tests.
 
-Attribute can take arguments with different syntaxes:
+Attributes accept arguments in several forms.
 
-```rust,compile_fail,noplayground
-#[attribute = "value"]
-#[attribute(key = "value")]
-#[attribute(value)]
-#[attribute(value, value2)]
+```rust,no_run,noplayground
+{{#include ../../crates/language/examples/attributes/attribute_syntax.rs:forms}}
 ```
 
 The following is an example of `#[derive(...)]`:
@@ -36,10 +33,8 @@ The following is an example of `#[derive(...)]`:
 
 Outer attributes `#[attr]` apply to the item below them. Inner attributes `#![attr]` apply to the item that the attribute is declared within. You often see these at the very top of a file (or inline module) to apply to the entire module, or at the very top of `lib.rs` or `main.rs` to apply to the entire crate:
 
-```rust,noplayground
-// For example, add the following to the top of your file
-// to warn if public items are not documented.
-#![warn(missing_docs)]
+```rust,ignore,noplayground
+{{#include ../../crates/language/examples/attributes/attribute_syntax.rs:inner_lint}}
 ```
 
 ## Mark an Item as `must_use` {#must-use}
@@ -78,14 +73,10 @@ You can apply these lint attributes to specific items ([functions][p~functions],
 {{#include ../../crates/language/examples/attributes/allow_dead_code.rs:example}}
 ```
 
-Common lint attributes are:
+The following module applies common lint attributes at module and item scope.
 
-```rust,noplayground
-#[allow(dead_code)]        // Silence warnings about unused functions, methods, or other items.
-#[allow(unused_imports)]   // Silence warnings about `use` statements that import items not used in the scope.
-#[allow(unused_variables)] // Silence warnings about unused variables in a function.
-#![warn(missing_docs)]     // Warn if public items are not documented.
-#![deny(unsafe_code)]      // Prevent the use of unsafe blocks.
+```rust,no_run,noplayground
+{{#include ../../crates/language/examples/attributes/attribute_syntax.rs:lint_levels}}
 ```
 
 To print the list of compiler 'lint' options and default settings, enter `rustc -W help` at the command prompt, or refer to the [lints chapter (`rustc` book)][book~rustc~lints]↗.{{hi:Lint checks}}

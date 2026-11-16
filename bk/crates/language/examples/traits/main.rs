@@ -212,3 +212,6 @@ mod tests {
         assert!(Cli::try_parse_from(["example", "no-such-example"]).is_err());
     }
 }
+
+#[cfg(test)]
+mod associated_type_forms;

@@ -41,32 +41,14 @@ Use trait objects when:
 
 - You need a heterogeneous collection of types that share a common interface:
 
-```rust,editable,noplayground
-// Cats and Dogs:
-let animals: Vec<Box<dyn Animal>> = vec![
-    Box::new(Dog),
-    Box::new(Cat),
-    Box::new(Dog),
-];
-
-for animal in animals {
-    animal.make_noise(); // Dynamically dispatches to `Dog::make_noise` or `Cat::make_noise`, depending on the object, at run time.
-}
+```rust,ignore,noplayground
+{{#include ../../crates/language/examples/trait_objects/animal_dispatch.rs:collection}}
 ```
 
 - You want to return different concrete types implementing the same trait from a function, and the caller doesn't need to know the specific concrete type:
 
-```rust,editable,noplayground
-fn get_animal(is_dog: bool) -> Box<dyn Animal> {
-    if is_dog {
-        Box::new(Dog)
-    } else {
-        Box::new(Cat)
-    }
-}
-
-let my_dog = get_animal(true);
-my_dog.make_noise();
+```rust,ignore,noplayground
+{{#include ../../crates/language/examples/trait_objects/animal_dispatch.rs:selection}}
 ```
 
 - You are implementing a plugin system where the types of plugins are not known at compile time.
@@ -79,19 +61,7 @@ Consider alternatives (like generics or enums) when:
 - You have a _small, fixed_ set of types that can implement the behavior. An enum with methods might be simpler and offer static dispatch:
 
 ```rust,editable
-enum Shape {
-    Circle { radius: f64 },
-    Square { side: f64 },
-}
-
-impl Shape {
-    fn draw(&self) {
-        match self {
-            Shape::Circle { radius } => println!("Draw a circle with radius {radius}"),
-            Shape::Square { side } => println!("Draw a square with side {side}"),
-        }
-    }
-}
+{{#include ../../crates/language/examples/trait_objects/animal_dispatch.rs:shape}}
 ```
 
 ## Static Dispatch vs. Dynamic Dispatch {#static-dispatch-vs-dynamic-dispatch}
@@ -135,14 +105,8 @@ Auto traits are [special traits][book~rust-reference~special-traits]↗, one of 
 
 For example, the following are valid trait objects:
 
-```rust,compile_fail,noplayground
-dyn Trait // Base trait.
-dyn Trait + Send // Base + autotrait. The order does not matter.
-dyn Trait + Send + Sync // Base + autotraits.
-
-// Note: there may be also (at most one) lifetime parameter:
-dyn Trait + 'static
-dyn Trait + Send + 'static
+```rust,ignore,noplayground
+{{#include ../../crates/language/examples/trait_objects/animal_dispatch.rs:bounds}}
 ```
 
 Common examples include `Send` and `Sync` for thread safety. A type is `Send` if it can be safely sent to another thread, and `Sync` if it can be safely shared between threads. To use a trait object in a multithreaded environment, you will often need one or both of these autotraits:

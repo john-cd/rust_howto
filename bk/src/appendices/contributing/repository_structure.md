@@ -70,31 +70,15 @@ Consult the `README.md` files of each crate for more details.
 
 ## All Examples are Fully and Continuously Tested {#examples-fully-tested}
 
-In order to make sure that all `bk/crates` code examples work, they are backed by tests, similar to the following:
+The following test calls the example's `main` function. The source file marks the part shown to readers with `// ANCHOR: example` and `// ANCHOR_END: example`. The test stays outside that region.
 
-```rust,editable,noplayground
-// ANCHOR: example
-// The portion between ANCHOR and ANCHOR_END is shown in the book.
-fn main() {
-    // Actual book example goes here.
-}
-// ANCHOR_END: example
-
-// This test is executed by `cargo test` or `cargo nextest run`
-// every time the code is built. It calls `main()`.
-#[cfg(test)]
-mod tests {
-    use super::*;
-    #[test]
-    fn test_main() {
-        main();
-    }
-}
+```rust,ignore,noplayground
+{{#include ../../../crates/about/examples/about.rs:smoke_test}}
 ```
 
 These tests are run by the CD/CI workflows (in the `.github` folder) following a `git push` or pull request.
 
-For the sake of readability, the test boilerplate is hidden in the book.
+In a recipe chapter, include only the example's anchor so readers see the code they need.
 
 ## Related Topics {#related-topics .skip}
 

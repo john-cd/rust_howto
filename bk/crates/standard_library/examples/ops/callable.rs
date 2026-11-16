@@ -1,12 +1,14 @@
 // TODO Reviewed ??-??-2026.
 
-// ANCHOR: example
 //! Making a struct callable by implementing the `Fn` traits.
 //!
 //! A closure is an anonymous function that can capture variables. The `Fn`,
 //! `FnMut` and `FnOnce` traits say how it uses what it captured (by reference,
 //! by mutable reference, or by consuming it). Functions that take closures are
 //! generic over them.
+
+// ANCHOR: example
+#![feature(unboxed_closures, fn_traits)]
 
 /// A callable that adds an offset.
 struct Adder {
@@ -50,11 +52,6 @@ fn main() {
     println!("5 + 3 = {}", add_five(3)); // prints "5 + 3 = 8".
 }
 // ANCHOR_END: example
-
-/// Calls an `Adder` like a function.
-pub fn run() {
-    main();
-}
 
 #[cfg(test)]
 mod tests {

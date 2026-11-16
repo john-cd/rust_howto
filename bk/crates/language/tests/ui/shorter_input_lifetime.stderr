@@ -1,0 +1,11 @@
+error[E0597]: `temporary` does not live long enough
+  --> tests/ui/shorter_input_lifetime.rs:16:41
+   |
+15 |         let temporary = String::from("temporary");
+   |             --------- binding `temporary` declared here
+16 |         chosen = choose("static input", &temporary);
+   |                                         ^^^^^^^^^^ borrowed value does not live long enough
+17 |     }
+   |     - `temporary` dropped here while still borrowed
+18 |     println!("{chosen}");
+   |                ------ borrow later used here

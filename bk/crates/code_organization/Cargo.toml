@@ -15,7 +15,16 @@ repository.workspace = true
 publish = false
 keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["rust-patterns"]
-autolib = false
+
+[[example]]
+name = "clippy_expect"
+path = "examples/clippy_expect.rs"
+test = true
+
+[[example]]
+name = "library_cli"
+path = "examples/library_cli/main.rs"
+test = true
 
 [[example]]
 name = "modules"

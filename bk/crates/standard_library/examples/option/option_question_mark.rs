@@ -26,6 +26,22 @@ fn get_first_char_uppercase(input: Option<String>) -> Option<char> {
     Some(first_char.to_ascii_uppercase())
 }
 
+#[cfg(test)]
+#[allow(
+    clippy::question_mark,
+    reason = "Shows the match that the question mark replaces."
+)]
+// ANCHOR: early_match
+/// Returns the first ASCII uppercase character, or None for missing input.
+fn get_first_char_with_match(input: Option<&str>) -> Option<char> {
+    let first_char = match input.and_then(|s| s.chars().next()) {
+        Some(character) => character,
+        None => return None,
+    };
+    Some(first_char.to_ascii_uppercase())
+}
+// ANCHOR_END: early_match
+
 /// Applies the `?` operator to `Option` values.
 fn main() {
     // `Option` contains a `String` and it's not empty.
@@ -72,6 +88,17 @@ mod tests {
             Some('H')
         );
         assert_eq!(get_first_char_uppercase(Some("1abc".to_owned())), Some('1'));
+    }
+
+    /// The explicit early return agrees with the question-mark form.
+    #[test]
+    fn explicit_match_propagates_absence() {
+        for input in [None, Some(""), Some("hello")] {
+            assert_eq!(
+                get_first_char_with_match(input),
+                get_first_char_uppercase(input.map(str::to_owned)),
+            );
+        }
     }
 
     /// Verifies none and empty string give none.

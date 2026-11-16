@@ -13,11 +13,13 @@ use proc_macros::log_calls;
 // Apply the custom attribute macro.
 // This will log the function call.
 
+// ANCHOR: attribute_usage
 /// Adds two numbers; calls are logged by the attribute macro.
 #[log_calls]
 fn add(a: i32, b: i32) -> i32 {
     a + b
 }
+// ANCHOR_END: attribute_usage
 
 /// Calls a function that is logged.
 fn main() {

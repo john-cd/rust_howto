@@ -19,24 +19,17 @@ Cargo.toml
 
 where `lib.rs` includes the modules with [`mod`][book~rust-reference~modules]↗{{hi:mod}} statements:
 
-```rust,noplayground
-pub mod module1; // Public modules, so that the contents may be accessible from outside the crate.
-pub mod module2;
-
-// ...
+```rust,ignore,noplayground
+{{#include ../../crates/code_organization/src/lib.rs:public_modules}}
 ```
 
-You may also keep the modules private and reexport specific items with a [`pub use`][book~rust-reference~use-declarations-visibility]↗{{hi:pub use}} declaration:
+This example keeps the child modules private and exposes selected items with a [`pub use`][book~rust-reference~use-declarations-visibility]↗{{hi:pub use}} declaration:
 
-```rust,noplayground
-mod module1;
-mod module2;
-
-pub use module1::public_function;
-pub use module2::Struct1;
+```rust,no_run,noplayground
+{{#include ../../crates/code_organization/examples/project_layout/reexports_and_prelude.rs:private_modules}}
 ```
 
-It is common for `lib.rs` to only contains `mod` and `pub use` statements, and nothing else.
+A library root can consist entirely of module declarations and reexports.
 
 In Rust, there are no requirements to store a single [`struct`][book~rust-reference~structs]↗{{hi:struct}} or [`enum`][book~rust-reference~enum]↗{{hi:enum}} and associated code per file.
 
@@ -60,25 +53,14 @@ Cargo.toml
 
 where [`mod.rs`][book~rust-reference~modules-search]↗{{hi:mod.rs}} contains:
 
-```rust,noplayground
-pub mod submodule1;
-pub mod submodule2;
-
-// ...
+```rust,ignore,noplayground
+{{#include ../../crates/code_organization/src/module1/mod.rs:nested_modules}}
 ```
 
 Code elsewhere can then refer to public items in the submodules:
 
-```rust,noplayground
-// In `module2.rs`:
-use super::module1::submodule1;
-use super::module1::submodule2::Struct1;
-
-fn a_func() {
-  submodule1::public_function();
-
-  let _struct = Struct1;
-}
+```rust,ignore,noplayground
+{{#include ../../crates/code_organization/src/module2.rs:sibling_imports}}
 ```
 
 Nested folders are also possible:
@@ -111,14 +93,10 @@ Less commonly, you may see:
 
 where the module is a file and its submodules are under a folder named after the module.
 
-Finally, `module1` can also be defined inline in `lib.rs` - especially if the module only contains `mod` / `pub use` statements.
+An inline module in `lib.rs` can also declare children whose contents live in separate files.
 
-```rust,noplayground
-// In `lib.rs`:
-mod module1 {
-  pub mod submodule1;
-  pub mod submodule2;
-}
+```rust,ignore,noplayground
+{{#include ../../crates/code_organization/src/lib.rs:inline_module}}
 ```
 
 ## Flatten the Module Hierarchy Using Reexports {#flatten-module-hierarchy}
@@ -154,9 +132,8 @@ The standard library includes a number of preludes. For example, adding [`use st
 
 There is also a "Rust prelude", things that Rust automatically imports into every Rust program without even the need for an explicit [`use`][book~rust-reference~use-declarations]↗{{hi:use}} declaration. Here is an excerpt:
 
-```rust,noplayground
-pub use std::option::Option::{self, Some, None};
-pub use std::fmt::{self, Debug, Display};
+```rust,no_run,noplayground
+{{#include ../../crates/code_organization/examples/project_layout/standard_prelude.rs:option_exports}}
 ```
 
 ## Organize the Code of a Binary Crate {#binary-crate-organization}
@@ -193,14 +170,8 @@ This code organization exposes a public library crate API, which has the advanta
 
 A variation of this code organization puts the command-line argument parsing (or UI) code in modules under `main.rs` and keeps the non-user-interface code in the associated library crate.
 
-```rust,noplayground
-mod cli; // Command-line argument parsing.
-
-use crate_name::lib_module::*; // Business logic in the library crate.
-
-fn main() {
-  // ...
-}
+```rust,ignore,noplayground
+{{#include ../../crates/code_organization/examples/library_cli/main.rs:example}}
 ```
 
 ## Organize Large Projects Using a Workspace {#large-projects}

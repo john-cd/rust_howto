@@ -31,9 +31,7 @@ A few important points:
 Empty slices can be created:
 
 ```rust,editable
-let x = [1, 2, 3];
-let empty = &x[..0]; // Same as `&x[0..0]`.
-assert_eq!(empty, &[]);
+{{#include ../../crates/language/examples/slices/empty_slice.rs:empty}}
 ```
 
 ### Common Use Cases {#common-use-cases}

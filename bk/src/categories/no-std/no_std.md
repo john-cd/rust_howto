@@ -22,10 +22,7 @@ serde = { version = "1", default-features = false, features = ["derive"] }
 Put the conditional attribute at the crate root (`src/lib.rs`), as in this workspace's `no_std` library:
 
 ```rust,ignore,noplayground
-#![cfg_attr(not(feature = "std"), no_std)]
-
-mod checksum;
-pub use checksum::checksum;
+{{#include ../../../crates/cats/no_std/src/lib.rs:library}}
 ```
 
 The separate module implements a wrapping byte checksum without allocation or operating-system calls. This block belongs in the library module:

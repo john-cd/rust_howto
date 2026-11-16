@@ -22,6 +22,7 @@ pub trait DebugPrint {
 // This will automatically `impl DebugPrint for` the struct.
 // We also derive the standard `Debug` trait.
 
+// ANCHOR: derive_usage
 /// A user, with a derived [`DebugPrint`] implementation.
 #[derive(DebugPrint, Debug)]
 struct User {
@@ -35,6 +36,7 @@ struct User {
     #[helper]
     active: bool,
 }
+// ANCHOR_END: derive_usage
 
 /// Creates a user and prints it using the derived trait.
 fn main() {

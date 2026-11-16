@@ -28,13 +28,7 @@ You can also have `main` return `Result<(), E>`. Because `Result` implements [`T
 It is also common to return a `Result` with a boxed error trait object, especially if multiple error types are possible:
 
 ```rust,noplayground
-use std::error::Error;
-// ...
-
-fn main() -> Result<(), Box<dyn Error>> {
-   // ...
-   Ok(())
-}
+{{#include ../../crates/language/examples/entrypoint/boxed_main_error.rs:example}}
 ```
 
 More precisely, `main` should return a type that implements `std::process::Termination`. For example, you may return `std::process::ExitCode` to provide a status code the current process can return to its parent.

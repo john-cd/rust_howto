@@ -14,19 +14,8 @@ Run `cargo test -p asynchronous --example pinned_cancellation` from `bk/crates`.
 
 To spawn on Tokio's multi-thread runtime, the future must be `Send` across every `.await`. This deliberately failing example holds an `Rc` across a suspension point:
 
-```rust,compile_fail
-use std::{future::pending, rc::Rc};
-
-fn require_send<T: Send>(_: T) {}
-
-fn main() {
-    let future = async {
-        let local = Rc::new(1);
-        pending::<()>().await;
-        drop(local);
-    };
-    require_send(future); // future cannot be sent between threads safely
-}
+```rust,compile_fail,noplayground
+{{#include ../../crates/language/tests/ui/future_holds_non_send_value.rs:example}}
 ```
 
 Moving the `Rc` use entirely before `.await`, or using an owned `Send` value such as `Arc` when sharing across threads is necessary, changes that requirement. See the [staging Send/Sync guide](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/send_sync.md). Actor frameworks such as [Tellus](https://docs.rs/tellus/latest/tellus/) also make mailbox ownership explicit, but do not replace task cancellation and join decisions.
