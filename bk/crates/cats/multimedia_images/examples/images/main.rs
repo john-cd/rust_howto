@@ -2,6 +2,8 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+use std::path::PathBuf;
+
 /// Blur an image in memory using a Gaussian filter.
 mod blur;
 /// Encode an image to PNG and JPEG in memory.
@@ -23,7 +25,13 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     command = command.subcommand(clap::Command::new("exif-metadata"));
     command = command.subcommand(clap::Command::new("optimize-png"));
     command = command.subcommand(clap::Command::new("resize"));
-    command = command.subcommand(clap::Command::new("images"));
+    command = command.subcommand(
+        clap::Command::new("images").arg(
+            clap::Arg::new("output")
+                .value_parser(clap::value_parser!(PathBuf))
+                .help("Output path (defaults to generated_image.png)"),
+        ),
+    );
     let matches = command
         .subcommand_required(true)
         .arg_required_else_help(true)
@@ -49,8 +57,8 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
             resize::run();
             Ok(())
         }
-        Some(("images", _)) => {
-            images::run()?;
+        Some(("images", args)) => {
+            images::run_with_output_path(args.get_one::<PathBuf>("output").cloned())?;
             Ok(())
         }
         _ => unreachable!("Clap requires one of the declared subcommands"),

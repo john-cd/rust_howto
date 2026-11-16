@@ -20,11 +20,7 @@ For most common image tasks, the [`image`][c~image~docs]↗{{hi:image}} crate wi
 | Fast decoders | [`zune-image`][zune-image~repo]↗ |
 | Detect objects, faces or features | See [Computer Vision](../computer-vision/index.md). |
 
-The example creates an image in memory, resizes it and converts it to grayscale. It needs no files.
-
-```rust,editable
-{{#include ../../../crates/cats/multimedia_images/examples/images/resize.rs:example}}
-```
+Follow the [Image Processing recipes](images.md) for runnable examples.
 
 ## Image Loading and Saving, Manipulation, and Image Processing
 
@@ -33,8 +29,6 @@ The example creates an image in memory, resizes it and converts it to grayscale.
 [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} provides more advanced image processing algorithms.
 
 Specialized crates exist for specific formats like PNG, JPEG, GIF, WebP: [`lodepng`][c~lodepng~docs]↗{{hi:lodepng}}, [`jpeg-decoder`][c~jpeg-decoder~docs]↗{{hi:jpeg-decoder}}, [`gif`][c~gif~docs]↗{{hi:gif}}, [`webp`][c~webp~docs]↗{{hi:webp}}.
-
-{{#include images.incl.md}}
 
 ## Low-level Pixel Manipulation - Pixel Buffers and Data Structures
 

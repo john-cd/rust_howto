@@ -12,18 +12,16 @@ use std::path::PathBuf;
 use image::ImageBuffer;
 use image::Rgb;
 
-/// Generates a gradient image and saves it to the path given on the command
-/// line.
-fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
-    run_with_output_path(image_output_path_from_args())
-}
-
-/// Chooses a default output path when none is supplied, then writes the image.
+/// Writes a generated gradient to the selected output path.
+///
+/// When no path is supplied, writes to `generated_image.png`.
 ///
 /// # Errors
 ///
 /// Returns an error if saving the generated image to the selected output path fails.
-fn run_with_output_path(output_path: Option<PathBuf>) -> Result<(), Box<dyn Error + Send + Sync>> {
+pub fn run_with_output_path(
+    output_path: Option<PathBuf>,
+) -> Result<(), Box<dyn Error + Send + Sync>> {
     let output_path = output_path.unwrap_or_else(|| {
         let default = PathBuf::from("generated_image.png");
         eprintln!("No output path provided, writing to {}", default.display());
@@ -63,21 +61,7 @@ fn build_gradient_image(width: u32, height: u32) -> ImageBuffer<Rgb<u8>, Vec<u8>
 
     img
 }
-
-/// Returns the output path from the first command-line argument.
-fn image_output_path_from_args() -> Option<PathBuf> {
-    std::env::args_os().nth(1).map(PathBuf::from)
-}
 // ANCHOR_END: example
-
-/// Generates a gradient image and saves it to the path given on the command line.
-///
-/// # Errors
-///
-/// Returns an error if a step of the example fails.
-pub fn run() -> Result<(), Box<dyn Error + Send + Sync>> {
-    main()
-}
 
 /// Verifies that gradient image round trips through png.
 #[cfg(test)]

@@ -3085,6 +3085,9 @@
 [c~exa~repo~badge]: https://img.shields.io/badge/exa-steelblue?logo=github
 [c~exa~website]: https://the.exa.website
 [c~exa~website~badge]: https://img.shields.io/badge/exa-coral
+[c~exif~crates.io]: https://crates.io/crates/kamadak-exif
+[c~exif~docs]: https://docs.rs/kamadak-exif
+[c~exif~repo]: https://github.com/kamadak/exif-rs
 [c~extrasafe~crates.io]: https://crates.io/crates/extrasafe
 [c~extrasafe~crates.io~badge]: https://img.shields.io/badge/crates.io-extrasafe-crimson
 [c~extrasafe~docs]: https://docs.rs/extrasafe
@@ -4611,6 +4614,8 @@
 [c~kanal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-kanal-yellow
 [c~kanal~repo]: https://github.com/fereidani/kanal
 [c~kanal~repo~badge]: https://img.shields.io/badge/kanal-steelblue?logo=github
+[c~kamadak-exif~docs]: https://docs.rs/kamadak-exif
+[c~kamadak-exif~docs~badge]: https://img.shields.io/crates/v/kamadak-exif?label=kamadak-exif
 [c~kani~announcing-the-kani-rust-verifier-project~blog]: https://model-checking.github.io/kani-verifier-blog/2022/05/04/announcing-the-kani-rust-verifier-project.html
 [c~kani~crates.io]: https://crates.io/crates/kani
 [c~kani~crates.io~badge]: https://img.shields.io/badge/crates.io-kani-crimson
@@ -6133,6 +6138,10 @@
 [c~oxc~repo~badge]: https://img.shields.io/badge/oxc-steelblue?logo=github
 [c~oxc~website]: https://oxc.rs
 [c~oxc~website~badge]: https://img.shields.io/badge/oxc-coral
+[c~oxipng~crates.io]: https://crates.io/crates/oxipng
+[c~oxipng~docs]: https://docs.rs/oxipng
+[c~oxipng~docs~badge]: https://img.shields.io/crates/v/oxipng?label=oxipng
+[c~oxipng~repo]: https://github.com/oxipng/oxipng
 [c~p256~crates.io]: https://crates.io/crates/p256
 [c~p256~crates.io~badge]: https://img.shields.io/badge/crates.io-p256-crimson
 [c~p256~docs]: https://docs.rs/p256
