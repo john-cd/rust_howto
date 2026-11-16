@@ -439,14 +439,21 @@ impl ScanState {
             .entry(context.source_path.clone())
             .or_default()
             .push((context.target_identity.clone(), context.conditions.clone()));
-        self.visit_module_items(&parsed.items, context, visited)
+        let path_base = full_path
+            .parent()
+            .context("Rust source has no parent directory")?;
+        self.visit_module_items(&parsed.items, context, path_base, visited)
     }
 
     /// Traverses inline and file-backed Rust modules from one parsed source file.
+    ///
+    /// `path_base` is the containing file's directory at file scope and the
+    /// logical module directory inside an inline module.
     fn visit_module_items(
         &mut self,
         items: &[Item],
         context: ModuleVisitContext,
+        path_base: &Path,
         visited: &mut HashSet<(String, String)>,
     ) -> Result<()> {
         for item in items {
@@ -466,14 +473,16 @@ impl ScanState {
                         source_path: context.source_path.clone(),
                         target_identity: context.target_identity.clone(),
                         module_path: child_module,
-                        module_dir: nested_dir,
+                        module_dir: nested_dir.clone(),
                         conditions: module_conditions,
                     },
+                    &nested_dir,
                     visited,
                 )?;
                 continue;
             }
-            let Some(path) = Self::resolve_module_path(module, &context.module_dir) else {
+            let Some(path) = Self::resolve_module_path(module, &context.module_dir, path_base)
+            else {
                 self.diagnostic(
                     "error",
                     "rust-module-missing",
@@ -514,9 +523,13 @@ impl ScanState {
     }
 
     /// Resolves a file-backed Rust module using `#[path]` or Rust's module layout.
-    fn resolve_module_path(module: &ItemMod, module_dir: &Path) -> Option<PathBuf> {
+    fn resolve_module_path(
+        module: &ItemMod,
+        module_dir: &Path,
+        path_base: &Path,
+    ) -> Option<PathBuf> {
         if let Some(path) = path_attribute(&module.attrs) {
-            let candidate = module_dir.join(path);
+            let candidate = path_base.join(path);
             return candidate.is_file().then_some(candidate);
         }
         let name = module.ident.to_string();
