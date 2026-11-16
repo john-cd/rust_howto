@@ -61,6 +61,12 @@ pub fn debug_print_derive(input: proc_macro::TokenStream) -> proc_macro::TokenSt
     // a structured `DeriveInput` struct.
     let ast = syn::parse_macro_input!(input as syn::DeriveInput);
 
+    if matches!(ast.data, syn::Data::Union(_)) {
+        return syn::Error::new_spanned(&ast.ident, "DebugPrint does not support unions")
+            .to_compile_error()
+            .into();
+    }
+
     let name = &ast.ident; // The name of the struct/enum.
     let (impl_generics, ty_generics, where_clause) = ast.generics.split_for_impl();
 

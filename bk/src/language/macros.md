@@ -412,6 +412,12 @@ fn main() {
 
 Debugging macros can be challenging. To see what a macro expands to and debug it, use the [`cargo-expand`][c~cargo-expand~crates.io]↗ cargo plugin. See also the [debugging][book~the-little-book-of-rust-macros~debugging]↗ section of the little book of macros for more suggestions.
 
+#### Inspect and Test a Procedural Macro {#inspect-and-test-procedural-macro}
+
+The `DebugPrint` derive above has a passing invocation in `proc_macro_derive.rs`. From `bk/crates`, run `cargo test -p language --example macros proc_macro_derive` to check it. To inspect the generated implementation, install `cargo-expand` and run `cargo expand -p language --example macros`; find `impl DebugPrint for User` in the output. `cargo-expand` is optional and needs a compatible Rust toolchain; the tests use the repository's pinned toolchain.
+
+The same workspace has a compile-fail case in `language/tests/ui/debug_print_union.rs`: deriving `DebugPrint` on a union reports `DebugPrint does not support unions` at the union name. Run `cargo test -p language --test compile_fail debug_print_rejects_unions` to compare the compiler output with the checked-in `.stderr` file. The `trybuild` harness in `language/tests/compile_fail.rs` runs the case. If the diagnostic intentionally changes, use `TRYBUILD=overwrite cargo test -p language --test compile_fail debug_print_rejects_unions`, inspect the new `.stderr` diff, then rerun without `TRYBUILD`. `macrotest` is a separate optional approach for expansion snapshots; this recipe uses `cargo-expand` for inspection and `trybuild` for checked diagnostics.
+
 ## References {#references .skip}
 
 - [Rust Reference - Macros][book~rust-reference~macros]↗.
