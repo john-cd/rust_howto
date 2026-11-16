@@ -33,6 +33,11 @@ path = "examples/humantime.rs"
 test = true
 
 [[example]]
+name = "jiff_dst"
+path = "examples/jiff_dst.rs"
+test = true
+
+[[example]]
 name = "time"
 path = "examples/time.rs"
 test = true
@@ -46,6 +51,7 @@ chrono = "0.4.45"
 clap = { version = "4.6.7", features = ["derive"] }
 # A parser and formatter for std::time::{Duration, SystemTime}
 humantime = "2.4.0"
+jiff = { version = "0.2.38", features = ["tzdb-bundle-always"] }
 # Date and time library. Fully interoperable with the standard library. Mostly compatible with #![no_std].
 time = { version = "0.3.55", features = [
     "formatting",
