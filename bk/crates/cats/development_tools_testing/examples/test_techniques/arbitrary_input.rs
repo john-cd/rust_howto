@@ -3,8 +3,14 @@
 // ANCHOR: example
 
 //! Derive `Arbitrary` to turn raw fuzzer bytes into a structured test case.
-//! The same bytes always produce the same input, which makes failures easy
-//! to reproduce. A fuzz target can call `check_input` with its supplied bytes.
+//!
+//! `Unstructured` hands those bytes to the derive implementation, which reads
+//! fields in declaration order. The input borrows its path from the byte slice,
+//! so decoding does not need to allocate a `String`. Decoding can fail when the
+//! bytes do not contain a valid value; fuzz targets should treat that as an
+//! ordinary rejected input. Reusing the same bytes reproduces the same case.
+//! The assertion below stands in for an invariant checked by the code under
+//! test; a real fuzz target would call `check_input` with each supplied input.
 
 use arbitrary::Arbitrary;
 use arbitrary::Unstructured;
