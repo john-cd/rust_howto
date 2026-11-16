@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+// ANCHOR: capnp
 use std::fs;
 use std::io::ErrorKind;
 use std::path::PathBuf;
