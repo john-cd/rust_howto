@@ -1,5 +1,5 @@
-mod book_example;
+mod list_serial_ports;
 
 fn main() {
-    book_example::run();
+    list_serial_ports::run();
 }

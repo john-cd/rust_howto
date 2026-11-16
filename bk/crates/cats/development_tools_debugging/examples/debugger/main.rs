@@ -1,5 +1,5 @@
-mod book_example;
+mod debugger_walkthrough;
 
 fn main() {
-    book_example::run();
+    debugger_walkthrough::run();
 }

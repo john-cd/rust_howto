@@ -7,7 +7,7 @@ Rust's toolchain provides `rust-gdb` and `rust-lldb` wrappers for launching GDB 
 For example, this tested example has a local value that you can inspect while stepping through the program:
 
 ```rust
-{{#include ../../../crates/cats/development_tools_debugging/examples/debugger/book_example.rs:example}}
+{{#include ../../../crates/cats/development_tools_debugging/examples/debugger/debugger_walkthrough.rs:example}}
 ```
 
 ## Debug from a Terminal {#terminal-debuggers}

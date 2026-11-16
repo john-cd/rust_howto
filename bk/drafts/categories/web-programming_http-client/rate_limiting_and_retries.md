@@ -15,7 +15,7 @@ APIs enforce quotas and fail transiently. A well-behaved client slows itself dow
 The test uses `FakeRelativeClock`, so it advances time by hand instead of sleeping.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/web_programming_http_client/examples/rate_limit/book_example.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_client/examples/rate_limit/token_bucket.rs:example}}
 ```
 
 Share one limiter between tasks by wrapping it in an `Arc`, and use a keyed limiter (`RateLimiter::keyed`) to limit per user or per host. Check the provider's documented quota and leave some headroom.
@@ -29,7 +29,7 @@ Share one limiter between tasks by wrapping it in an `Arc`, and use a keyed limi
 The example treats `429 Too Many Requests` and `5xx` responses as transient and everything else as final. The tests start a local [`mockito`][c~mockito~docs]↗{{hi:mockito}} server that fails twice and then succeeds, and another that always fails to show that the retries stop.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/web_programming_http_client/examples/retry/book_example.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_client/examples/retry/exponential_backoff.rs:example}}
 ```
 
 ### Retry Safely
@@ -46,7 +46,7 @@ The example treats `429 Too Many Requests` and `5xx` responses as transient and 
 A `429` or `503` response may carry a `Retry-After` header, in seconds or as an HTTP date. The server knows better than the client when it will be ready, so prefer the header over the computed delay. The example keeps the requested delay in a custom error type, and `backon`'s `adjust` replaces the computed delay with it (capped at a minute, so a hostile or buggy server cannot park the client). `when` limits the retries to throttling errors, so a `404` fails at once. The test checks that the client really waits for the second the mock server asks for. The example parses only the seconds form; parse the date form with `httpdate` if the API uses it.
 
 ```rust,editable,noplayground
-{{#include ../../../crates/cats/web_programming_http_client/examples/retry_after/book_example.rs:example}}
+{{#include ../../../crates/cats/web_programming_http_client/examples/retry_after/retry_after_header.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}

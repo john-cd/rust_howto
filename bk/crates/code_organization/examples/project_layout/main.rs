@@ -1,5 +1,5 @@
-mod book_example;
+mod reexports_and_prelude;
 
 fn main() {
-    book_example::run();
+    reexports_and_prelude::run();
 }

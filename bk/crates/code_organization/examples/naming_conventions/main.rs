@@ -1,5 +1,5 @@
-mod book_example;
+mod getters_and_iterators;
 
 fn main() {
-    book_example::run();
+    getters_and_iterators::run();
 }
