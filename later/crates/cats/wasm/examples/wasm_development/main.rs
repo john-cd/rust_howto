@@ -9,3 +9,17 @@ mod wasm;
 fn main() {
     wasm::run();
 }
+
+// ANCHOR: host-tests
+/// Tests the exported arithmetic on the host.
+#[cfg(test)]
+mod tests {
+    use super::wasm::add;
+
+    /// Adds two integers.
+    #[test]
+    fn adds_two_integers() {
+        assert_eq!(add(2, 2), 4);
+    }
+}
+// ANCHOR_END: host-tests

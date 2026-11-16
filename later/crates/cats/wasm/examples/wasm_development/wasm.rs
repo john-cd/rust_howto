@@ -23,15 +23,3 @@ pub fn add(left: i32, right: i32) -> i32 {
 pub fn run() {
     println!("2 + 2 = {}", add(2, 2));
 }
-
-/// browser
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// Adds two integers.
-    #[test]
-    fn adds_two_integers() {
-        assert_eq!(add(2, 2), 4);
-    }
-}
