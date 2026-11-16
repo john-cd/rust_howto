@@ -39,7 +39,7 @@ A common cache-aside flow is to read from the cache, fetch from the source on a 
 
 For file-backed values, [`notify`][c~notify~docs]↗{{hi:notify}} can report filesystem events; treat events as a signal to invalidate or reload, not as a durable record of every change. See:
 
-- [[file_watching | File Watching]].
+- [File Watching](../filesystem/file_watching.md).
 
 ## Application-Level Caching
 

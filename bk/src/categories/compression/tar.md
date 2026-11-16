@@ -50,7 +50,7 @@ The runnable example expects `temp/archive.tar.gz` and writes files beneath `tem
 
 - [Compression and decompression](compression.md).
 - [Compression formats overview](index.md).
-- [[filesystem | Filesystem]].
+- [Filesystem](../filesystem/index.md).
 - [Temporary files and directories](../filesystem/temporary_files_and_directories.md).
 
 {{#include refs.incl.md}}

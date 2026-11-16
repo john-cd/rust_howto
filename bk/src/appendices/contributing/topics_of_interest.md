@@ -14,8 +14,8 @@ The following are topics that deserve (additional) coverage and examples:
 - [GPU](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/gpu/index.md) processing, CUDA.
 - [Machine Learning](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/machine-learning/index.md), for example [Burn][c~burn~docs]↗, [Candle][candle~repo]↗, and [tch][c~tch~docs]↗.
 - [Email](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/email/index.md).
-- [Template Engines](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/template-engine/index.md).
-- [Caching](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/caching/index.md).
+- [Template Engines](../../categories/template-engine/index.md).
+- [Caching](../../categories/caching/index.md).
 - [Compilers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/compilers/index.md).
 - [WASM](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md).
 - [[algorithms | Algorithms]].
@@ -29,7 +29,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [Graphics](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/graphics/index.md).
 - [Games](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/games/index.md), [Game Engines](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/game-engines/index.md).
 - [Search](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/search.md) engines.
-- [Compression](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/compression/index.md): Zip files and other archives.
+- [Compression](../../categories/compression/index.md): Zip files and other archives.
 - Buffer pools, garbage collection, or other reference-counted examples.
 - IPv6 address processing.
 - [Cloud](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/index.md): load balancers, status reporting (Vigil), routing, orchestration, containers.

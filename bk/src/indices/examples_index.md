@@ -186,7 +186,7 @@
 
 ### Differential Equations
 
-{{#include ../categories/mathematics/differential_equations.incl.md}}
+- [Solve an Initial Value Problem][ex~mathematics~solve-an-initial-value-problem].
 
 ### Discrete Mathematics
 
@@ -246,7 +246,7 @@
 
 ## Code Organization
 
-### CLIppy
+### Clippy
 
 {{#include ../code-organization/clippy.incl.md}}
 

@@ -114,7 +114,7 @@ The [`phf`][c~phf~docs]↗{{hi:phf}} crate generates maps and sets for keys know
 
 ## Related Topics
 
-- [Serialization / Deserialization](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/encoding/serde.md).
+- [Serialization / Deserialization](../encoding/serde.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

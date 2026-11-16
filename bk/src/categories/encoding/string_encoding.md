@@ -82,9 +82,9 @@ The [`hex`][c~hex~docs]↗{{hi:hex}} crate offers `hex::encode`, which produces 
 
 ## Related Topics {#related-topics .skip}
 
-- [Rust strings][p~strings].
+- [Rust strings](../data-structures/strings.md).
 - [Encoding and serialization][p~encoding].
-- [Unique Identifiers][p~unique-identifiers].
+- [Unique Identifiers](../data-structures/unique_identifiers.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
