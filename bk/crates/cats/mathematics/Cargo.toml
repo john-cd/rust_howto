@@ -53,6 +53,11 @@ path = "examples/numerical_analysis/main.rs"
 test = true
 
 [[example]]
+name = "accurate_sum"
+path = "examples/numerical_analysis/accurate_sum.rs"
+test = true
+
+[[example]]
 name = "numerical_integration"
 path = "examples/numerical_integration/main.rs"
 test = true
