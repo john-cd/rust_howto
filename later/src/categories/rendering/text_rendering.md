@@ -13,7 +13,7 @@ Libraries and tools for loading and [rendering][p~rendering] fonts.
 This example loads a TrueType font from memory, rasterizes one glyph into a coverage bitmap with `fontdue`, and reads design metrics with `ttf-parser`. The bundled font is Roboto, under the Apache License 2.0. Coverage values are alpha: composite them with a text color to draw. Shaping, bidirectional text, and fallback fonts need a layout library; see [[text_layout | Text Layout]].
 
 ```rust,editable
-{{#include ../../../crates/cats/rendering/examples/text_rendering/main.rs:example}}
+{{#include ../../../crates/cats/rendering/examples/text_rendering/book_example.rs:example}}
 ```
 
 ## `ab_glyph` {#ab_glyph}

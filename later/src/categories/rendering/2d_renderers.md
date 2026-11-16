@@ -22,7 +22,7 @@ A crate's GPU backend must be compatible with the versions used elsewhere in an 
 `lyon` produces vertices and indices, and the application chooses what draws them. This example feeds the mesh to `tiny-skia`'s CPU rasterizer; a GPU renderer would upload the same buffers. It needs no window or GPU.
 
 ```rust,editable
-{{#include ../../../crates/cats/rendering/examples/2d_renderers/main.rs:example}}
+{{#include ../../../crates/cats/rendering/examples/2d_renderers/book_example.rs:example}}
 ```
 
 ## CPU Pixel Buffers {#pixel-based-2d-rendering}

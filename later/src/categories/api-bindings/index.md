@@ -12,7 +12,7 @@ No API binding demonstration is implemented in this category yet. The included
 crate example is a tested placeholder that marks this gap:
 
 ```rust,ignore
-{{#include ../../../crates/cats/api_bindings/examples/api_bindings/main.rs:example}}
+{{#include ../../../crates/cats/api_bindings/examples/api_bindings/book_example.rs:example}}
 ```
 
 ## Database Bindings

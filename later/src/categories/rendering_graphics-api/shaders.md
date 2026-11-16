@@ -31,7 +31,7 @@ Shader translator and validator. Part of the [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}
 This example parses and validates a WGSL shader, then translates it to SPIR-V. It runs without a GPU, so it can check shaders in CI before they reach a driver.
 
 ```rust,editable
-{{#include ../../../crates/cats/rendering_graphics_api/examples/shaders/main.rs:example}}
+{{#include ../../../crates/cats/rendering_graphics_api/examples/shaders/book_example.rs:example}}
 ```
 
 ## `rust-gpu` {#rust-gpu}
