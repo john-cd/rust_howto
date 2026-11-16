@@ -75,16 +75,7 @@ The function below can return either input. Both input borrows must outlive the 
 The following call fails because `chosen` is used after one of its possible referents has been dropped:
 
 ```rust,compile_fail,E0597,noplayground
-fn choose<'a>(first: &'a str, second: &'a str) -> &'a str {
-    if first.len() >= second.len() { first } else { second }
-}
-
-let chosen;
-{
-    let temporary = String::from("temporary");
-    chosen = choose("static input", &temporary);
-}
-println!("{chosen}");
+{{#include ../../crates/language/tests/ui/shorter_input_lifetime.rs:example}}
 ```
 
 ### Use Lifetimes and Lifetime Parameters in Struct Definitions and Implementations {#lifetime-annotations}

@@ -63,18 +63,8 @@ You cannot directly return a reference to a local variable created within and ow
 
 In Rust, the borrow checker prevents returning references to local data, enforcing memory safety:
 
-```rust,compile_fail,noplayground
-// Compile Error[E0515]: cannot return reference to local variable `s`.
-fn try_create<'a>() -> &'a String {
-    let s = String::new();
-    &s
-    // References are pointers to memory locations. Once the function is executed, the local variable is popped off the execution stack.
-}
-
-#[test]
-fn test_main() {
-    let _ = try_create();
-}
+```rust,compile_fail,E0515,noplayground
+{{#include ../../crates/language/tests/ui/return_reference_to_local.rs:example}}
 ```
 
 Instead, you should typically:

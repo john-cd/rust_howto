@@ -1,0 +1,19 @@
+//! Models optional values and compares explicit and implicit early return.
+//!
+//! TODO Reviewed ??-??-2026.
+
+// ANCHOR: definition
+enum Option<T> {
+    None,
+    Some(T),
+}
+// ANCHOR_END: definition
+
+/// An optional value either carries its payload or represents its absence.
+#[test]
+fn presence_is_explicit() {
+    let present = Option::Some(42);
+    let absent = Option::<u8>::None;
+    assert!(matches!(present, Option::Some(42)));
+    assert!(matches!(absent, Option::None));
+}

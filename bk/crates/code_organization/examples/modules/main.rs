@@ -26,3 +26,6 @@ fn main() {
         _ => unreachable!("Clap requires one of the declared subcommands"),
     }
 }
+
+#[cfg(test)]
+mod module_forms;

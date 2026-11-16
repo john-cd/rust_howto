@@ -18,17 +18,8 @@ Modules form a tree that originates in the "crate root file" (usually `src/lib.r
 
 To declare a module, use the [`mod`][keyword~mod]↗{{hi:mod}} keyword. A module can be written inline in its parent's file with curly brackets: `mod <module_name> { ... }`. It can also be declared in a separate file by ending the declaration with a semicolon: `mod <module_name>;`:
 
-```rust,noplayground
-// Module in separate file: `a_file.rs` or `a_file/mod.rs` - see below.
-mod a_file;
-
-// Inline module.
-mod inline_module {
-    // The module's items are written within the brackets.
-    fn some_function() {
-      // ...
-    }
-}
+```rust,ignore,noplayground
+{{#include ../../crates/code_organization/examples/modules/module_forms.rs:declarations}}
 ```
 
 Note that modules (and items within) are private by default. Review [[visibility | visibility rules]].
@@ -42,23 +33,12 @@ Write `mod module_name;` to declare a module that has its code in a separate fil
 - `module_name.rs`,
 - `module_name/mod.rs` (older style),
 
-and compiles that file as the module's contents. Writing `mod a_file;` in `src/main.rs` is identical to inline module contents in the same file as `src/main.rs` or `a/b/mod.rs`.
+and compiles that file as the module's contents. For example, `mod a_file;` in `src/main.rs` loads the module from `src/a_file.rs` or `src/a_file/mod.rs`.
 
 You can nest (inline or external-file) modules as you wish:
 
-```rust,noplayground
-// Inline module.
-mod a {
-
-    // The module code is in `a/b.rs` or `a/b/mod.rs`.
-    // `b.rs` or `mod.rs` can in turn contain modules.
-    mod b;
-
-    // Nested inline module.
-    mod c {
-    // ...
-    }
-}
+```rust,ignore,noplayground
+{{#include ../../crates/code_organization/examples/modules/module_forms.rs:nested}}
 ```
 
 The "older style" conveniently groups all files for a module and its submodules into one folder, but results in a proliferation of `mod.rs` files.
@@ -77,58 +57,22 @@ Note the following:
 
 Paths{{hi:Path}} let you use items (like functions, structs, enums, modules, etc.) within your Rust code, when those items are defined in different modules. Paths consist of a sequence of one or more segments separated by `::`, where each segment is an item (often a module), an alias, or a keyword like `super`, `self`, or `crate`:{{hi:super}}{{hi:self}}{{hi:crate}}
 
-```rust,noplayground
-a_module                          // Path to a module.
-a_module::a_function              // Path to a function in a module.
-a_module::Struct1                 // Path to a struct in a module. Also works for enums, constants, etc.
-
-a_module::nested_module           // Path to a nested module.
-a_module::nested_module::b_function // Path to a function in a nested module.
-
-super                             // Path to the parent module.
-super::sibling_module             // Path to another module declared in the parent module.
-
-crate::first_level::second_level  // Path to a nested module, starting from the crate root.
+```rust,ignore,noplayground
+{{#include ../../crates/code_organization/examples/modules/module_forms.rs:imports}}
 ```
 
 Note that [[visibility | visibility]] rules apply. A path is valid only if all of its segments are accessible from the location of use. See the section below. Aliases are covered in the [[use_declarations | `use` keyword]] chapter.{{hi:use}}
 
-Going into more details, there are two main kinds of paths: relative and absolute paths. Relative paths start from the current module you are writing code in:
+Going into more details, there are two main kinds of paths: relative and absolute paths. Relative paths start from the current module. The example calls the same function with and without an explicit `self::` prefix.
 
-```rust,noplayground
-/// Inline module declaration.
-mod a_module {
-    pub fn some_function() {
-        // ...
-    }
-}
-
-fn call_something_in_a_module() {
-    // Call `some_function` using a relative path:
-    a_module::some_function();
-
-    // Relative paths can also start with a `self` keyword,
-    // which refers to the current module, but it is very often elided:
-    // The above is equivalent to:
-    self::a_module::some_function();
-}
-// The inner function was marked public with `pub`,
-// so that it could be accessed. See visibility rules below.
+```rust,ignore,noplayground
+{{#include ../../crates/code_organization/examples/modules/module_forms.rs:relative}}
 ```
 
 The [`super`][keyword~super]↗{{hi:super}} keyword is used to refer to the parent module:
 
-```rust,noplayground
-mod a {
-  fn in_a() {
-    // Call a function in the parent module of `a`:
-    super::in_parent_module();
-  }
-}
-
-fn in_parent_module() {
-  // ...
-}
+```rust,ignore,noplayground
+{{#include ../../crates/code_organization/examples/modules/module_forms.rs:parent}}
 ```
 
 ## Use `super` and a Re-Export in a Module Tree {#module-tree-paths}
@@ -143,31 +87,16 @@ path `f::try_that()` available:
 
 Absolute paths start from the root of your crate (the top-level module, usually defined in `src/lib.rs` or `src/main.rs`). You use the keyword `crate` followed by `::` to begin an absolute path.
 
-```rust,editable
-// In the crate root:
-mod module_a {
-    pub mod submodule_b {
-        pub fn some_function() {
-            // ...
-        }
-    }
-}
-
-// Elsewhere in the crate:
-fn main() {
-    crate::module_a::submodule_b::some_function();
-}
+```rust,ignore,noplayground
+{{#include ../../crates/code_organization/examples/modules/module_forms.rs:absolute}}
 ```
 
 {{i:Absolute paths}} are infrequently seen but useful for disambiguation when a module name is the same as an external dependency.
 
 Paths can be used to refer to elements within containers other than modules: structs, enums, traits, etc.
 
-```rust,noplayground
-a_module::Enum1::Variant1         // Path to a variant in an enum, itself in a module.
-TypeName::a_function()            // Path to an associated function within a type (e.g. a struct, an enum).
-<ImplType as Trait>::AssocType    // Path to an associated type within a trait.
-TypeName::CONSTANT_NAME           // Path to an associated constant within a type's `impl` block.
+```rust,ignore,noplayground
+{{#include ../../crates/code_organization/examples/modules/module_forms.rs:associated_items}}
 ```
 
 ## Use Modules to Hide Implementation Details {#hide-implementation-details}

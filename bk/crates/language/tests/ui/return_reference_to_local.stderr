@@ -1,0 +1,5 @@
+error[E0515]: cannot return reference to local variable `s`
+ --> tests/ui/return_reference_to_local.rs:6:5
+  |
+6 |     &s
+  |     ^^ returns a reference to data owned by the current function

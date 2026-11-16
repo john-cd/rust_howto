@@ -22,10 +22,7 @@ Generic enums are declared similarly to generic structs, with type parameters be
 The most common example is the `Result` enum.{{hi:Result}} It can either hold a value of type `T` (in the `Ok` variant) or an error value of type `E` (in the `Err` variant):
 
 ```rust,noplayground
-enum Result<T, E> {
-    Ok(T),
-    Err(E),
-}
+{{#include ../../crates/language/examples/enums/result_definition.rs:example}}
 ```
 
 ## Common `enums` {#common-enums}

@@ -25,11 +25,7 @@ Macros come in three forms:
 "Function-like" macros are called most frequently, well, like a [[functions | function]] would be, with a list of parameters and within a parent function's body:
 
 ```rust,editable
-fn main() {
-    let name = "Alice";
-    let age = 30;
-    println!("My name is {name} and my age is {}", age);
-}
+{{#include ../../crates/language/examples/macros/format_arguments.rs:example}}
 ```
 
 - Note the `!` suffix after the macro's name.
@@ -53,12 +49,8 @@ The following example demonstrates where function-like macros can be used in Rus
 
 [[attributes | Attribute]]-like macros modify the behavior of items (e.g., functions or modules) they are applied to:
 
-```rust,noplayground
-// If `log_calls` is a custom attribute macro, apply it as follows:
-#[log_calls]
-fn add(a: i32, b: i32) -> i32 {
-    a + b
-}
+```rust,ignore,noplayground
+{{#include ../../crates/language/examples/macros/proc_macro_attribute.rs:attribute_usage}}
 ```
 
 Read the [procedural macros](#procedural-macros) sections below for more details.
@@ -67,13 +59,8 @@ Read the [procedural macros](#procedural-macros) sections below for more details
 
 Custom [[automatic_trait_derivation | derive]] macros automatically generate [[traits | trait]] implementations for structs and enums.
 
-```rust,noplayground
-// Automatically implement `MyCustomTrait` for the `User` struct:
-#[derive(MyCustomTrait)]
-struct User {
-    id: u64,
-    name: String,
-}
+```rust,ignore,noplayground
+{{#include ../../crates/language/examples/macros/proc_macro_derive.rs:derive_usage}}
 ```
 
 Read the [procedural macros](#procedural-macros) sections below for more details.
@@ -390,25 +377,13 @@ Macros have two ways of reporting errors. The first is to `panic!`. The second i
 
 When something goes wrong inside a macro, the compiler often points to the macro invocation site, not the actual problem. Using the [`compile_error!`][c~core::compile_error~docs]↗ macro provides clearer diagnostics:
 
-```rust,editable
-macro_rules! must_be_an_identifier {
-    ($x:ident) => {
-        // Your code goes here.
-    };
-    ($_:tt) => {
-        // Causes compilation to fail with the given error message.
-        // It is the compiler-level form of `panic!`,
-        // but emits an error during compilation rather than at runtime.
-        compile_error!("This macro only accepts an identifier.");
-    };
-}
+```rust,no_run,noplayground
+{{#include ../../crates/language/examples/macros/identifier_only_macro.rs:definition}}
 
-fn main() {
-
-    must_be_an_identifier!(foo);
-    // must_be_an_identifier!(42);
-}
+{{#include ../../crates/language/examples/macros/identifier_only_macro.rs:usage}}
 ```
+
+The call with `foo` succeeds. Calling `must_be_an_identifier!(42)` emits the custom diagnostic during compilation.
 
 Debugging macros can be challenging. To see what a macro expands to and debug it, use the [`cargo-expand`][c~cargo-expand~crates.io]↗ cargo plugin. See also the [debugging][book~the-little-book-of-rust-macros~debugging]↗ section of the little book of macros for more suggestions.
 

@@ -72,9 +72,8 @@ Each struct is allowed to have multiple `impl` blocks. Multiple `impl` blocks ar
 
 Note that Rust automatically inserts references and dereferences when calling methods: When you call a method with `object.something()`, Rust automatically adds `&`, `&mut`, or `*` as needed so the object matches the method's signature. In other words, the following are the same:
 
-```rust,noplayground
-p1.distance(&p2);
-(&p1).distance(&p2);
+```rust,ignore,noplayground
+{{#include ../../crates/language/examples/structs/method_receiver.rs:example}}
 ```
 
 ### Initialize Structs with a Constructor-like (Associated) Function {#struct-init}

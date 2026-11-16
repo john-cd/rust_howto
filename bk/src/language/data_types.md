@@ -89,12 +89,7 @@ A type alias is a way to give a new name to an existing type, making code easier
 Use the `type` keyword to declare type aliases:
 
 ```rust,editable
-type Kilometers = u32;
-
-type Point = (i32, i32);
-
-// A generic alias names an existing generic type:
-type TypeAlias<T> = Vec<T>;
+{{#include ../../crates/language/examples/data_types/type_aliases.rs:aliases}}
 ```
 
 Bounds in a type alias's `where` clause are not enforced at use sites and can be misleading (`type_alias_bounds` lint). Put required bounds on the functions or types that use the alias instead.

@@ -7,15 +7,7 @@
 Pattern matching is a powerful control flow construct for inspecting data, changing your program's flow based on whether a value conforms to a certain pattern, destructuring the value into its constituent parts, and binding those parts to variables. For example, `match` expressions branch code based on different patterns:
 
 ```rust,editable
-// For example, let's match a sample `Result` against two patterns:
-let res = Ok::<i32, String>(42);
-
-match res {
-    // The pattern `Ok(value)` below matches the provided `res`, therefore its expression after `=>` is evaluated:
-    Ok(value) => { println!("Result: {value}"); } // It destructures `Ok` and binds its inner value to the new variable `value`, which is then printed.
-    Err(error) => { eprintln!("Error: {error}"); }
-    // All possible values must be covered.
-}
+{{#include ../../crates/language/examples/match/match_result.rs:example}}
 ```
 
 You will see complex pattern matching most commonly in `match` expressions, but pattern matching can be used in several other places:

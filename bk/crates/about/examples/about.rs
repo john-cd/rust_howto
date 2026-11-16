@@ -39,11 +39,13 @@ fn run() {
 mod tests {
     use super::*;
 
+    // ANCHOR: smoke_test
     /// Runs the example's main function.
     #[test]
     fn test_main() {
         main();
     }
+    // ANCHOR_END: smoke_test
 
     /// Verifies random f64 is in unit interval.
     #[test]

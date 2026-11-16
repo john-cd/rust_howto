@@ -108,13 +108,7 @@ Immutable references (of type `&T` if `T` is the base type), also called shared 
 Mutable references (of type `&mut T`), called exclusive references, borrow a value and modify it:
 
 ```rust,noplayground
-let mut a: i32 = 1;
-
-// Create a mutable reference:
-let b: &mut i32 = &mut a;
-
-// Use `*` to dereference it:
-*b += 1;
+{{#include ../../crates/language/examples/ownership_borrowing/mutate_through_reference.rs:example}}
 ```
 
 A mutable reference grants exclusive access to the data it borrows. A reborrow can temporarily lend that access to a new reference. The original reference becomes usable again after the reborrow ends. Shared references normally allow only shared reads, with controlled mutation available through types such as `Cell` and `Mutex`. Rust checks the borrowing rules at compile time. A `RwLock` additionally coordinates access at runtime across threads.{{hi:Simultaneous references}}{{hi:Read/write lock}}

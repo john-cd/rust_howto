@@ -7,6 +7,7 @@
 
 // ANCHOR: reexports
 
+// ANCHOR: private_modules
 /// A module that keeps its submodules private and reexports the items of
 /// interest, which flattens the module hierarchy.
 mod module1 {
@@ -33,6 +34,7 @@ mod module1 {
     pub use submodule1::public_function;
     pub use submodule2::Struct1;
 }
+// ANCHOR_END: private_modules
 
 // The function and struct appear as if they were defined in `module1`.
 use module1::Struct1;

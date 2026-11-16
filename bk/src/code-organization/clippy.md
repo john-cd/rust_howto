@@ -47,19 +47,13 @@ Cargo accepts an integer `priority` in a lint entry. If you opt into a group and
 allow-expect-in-tests = true
 ```
 
-An exception in production code should describe the invariant that makes it safe. Put this example in `app/src/main.rs`.
+An exception in production code should describe the invariant that makes it safe. This example scopes the expectation to the function that relies on the invariant.
 
 ```rust
-/// Writes one hexadecimal digit for the low four bits.
-fn main() {
-    #[expect(clippy::expect_used, reason = "The mask restricts the value to 0–15.")]
-    let digit = char::from_digit(u32::from(0xabu8 & 0x0f), 16)
-        .expect("a four-bit value fits in one hexadecimal digit");
-    println!("{digit}");
-}
+{{#include ../../crates/code_organization/examples/clippy_expect.rs:example}}
 ```
 
-Remove the attribute and `cargo clippy` reports `expect_used` at the call. Restore it and the warning is suppressed for that statement. When a later edit removes the cause, `unfulfilled_lint_expectations` asks you to remove the obsolete expectation. Use `#[allow(..., reason = "...")]` when the exception intentionally covers code that may warn only on certain targets or feature combinations. See the [Rust Reference on lint attributes][rust-reference~lint-attributes]↗ and [Clippy configuration options][book~clippy~configuration]↗.
+Remove the attribute and `cargo clippy` reports `expect_used` at the call. Restore it and the warning is suppressed for that function. When a later edit removes the cause, `unfulfilled_lint_expectations` asks you to remove the obsolete expectation. Use `#[allow(..., reason = "...")]` when the exception intentionally covers code that may warn only on certain targets or feature combinations. See the [Rust Reference on lint attributes][rust-reference~lint-attributes]↗ and [Clippy configuration options][book~clippy~configuration]↗.
 
 ## Gate CI with a Pinned Toolchain {#clippy-ci}
 

@@ -9,3 +9,6 @@ mod vectors;
 fn main() {
     vectors::run();
 }
+
+#[cfg(test)]
+mod vector_capacity;
