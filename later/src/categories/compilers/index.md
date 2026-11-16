@@ -47,7 +47,3 @@ An interpreter executes source code or bytecode. A transpiler translates source 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  content audit: category index content removed by recent commits; review and restore
-</div>
