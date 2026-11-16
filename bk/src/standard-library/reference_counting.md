@@ -52,5 +52,4 @@ See [[interior_mutability | Interior Mutability]] for more details.
 
 - [[concurrency | Concurrency]].
 
-
 </div>

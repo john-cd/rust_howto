@@ -153,5 +153,4 @@ Note how multiple `impl` blocks are possible; they can implement associated func
 
 - [[rust-patterns | Rust Patterns]].
 
-
 </div>

@@ -28,6 +28,7 @@
     "lineWidth": 120,
     "newLineKind": "lf",
     "strongKind": "asterisks",
+    "table.skipFormat": true,
     "textWrap": "maintain",
     "unorderedListKind": "dashes"
   },

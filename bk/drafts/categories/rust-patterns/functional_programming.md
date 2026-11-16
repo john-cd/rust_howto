@@ -91,7 +91,6 @@ Frunk is a functional programming toolbelt for Rust. It provides developers with
 - [rust-type-level-programming][blog~rust-type-level-programming]↗.
 - [Type-Level Programming in Rust][blog~type-level-programming-in-rust]↗.
 
-
 - [Type-level Programming in Rust][blog~willcrichton-type-level-programming]↗.
 
 </div>

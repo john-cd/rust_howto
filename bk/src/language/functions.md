@@ -100,5 +100,4 @@ You can also use `std::borrow::Cow` to generalize over owned data and unowned re
 
 - [[rust-patterns | Rust Patterns]].
 
-
 </div>

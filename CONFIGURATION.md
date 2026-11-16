@@ -9,6 +9,7 @@ Keep this file, README, contributor guidance, and configuration comments synchro
 ## Consistency plan
 
 1. Share LF/UTF-8 editing defaults and language formatting conventions.
+   Markdownlint enforces compact table spacing. dprint preserves table layout so the checks agree.
 2. Pin nightly Rustfmt to `nightly-2026-11-11` and align lint baselines while preserving stricter rules, domain limits, and teaching examples.
 3. Enumerate maintained dependency roots and use predictable monthly grouped updates.
 4. Isolate checkout outputs, align dependency compiler flags, and make CI caches configuration-aware.

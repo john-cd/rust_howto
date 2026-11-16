@@ -140,5 +140,4 @@ The following covers portions of the Rust Standard Library that are not otherwis
 - [`std::pin`][c~std::pin~projections-and-structural-pinning~docs]↗.
 - [`core::iter`][c~core::iter~docs]↗.
 
-
 </div>

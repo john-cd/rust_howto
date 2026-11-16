@@ -166,5 +166,4 @@ The same applies to mutable references:
 
 - [[rust-patterns | Rust Patterns]].
 
-
 </div>

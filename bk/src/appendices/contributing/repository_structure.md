@@ -106,5 +106,4 @@ For the sake of readability, the test boilerplate is hidden in the book.
 
 - [[cargo | Cargo]].
 
-
 </div>
