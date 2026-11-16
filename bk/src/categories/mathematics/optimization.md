@@ -70,7 +70,3 @@ Always seed random number generators in tests, and cap iterations or generations
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: mathematics
-</div>

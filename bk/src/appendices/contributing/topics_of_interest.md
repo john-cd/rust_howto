@@ -74,7 +74,3 @@ Check the [open issues][rust-howto~issues]↗ for tracked work, and browse the [
 
 {{#include ../../refs/link-refs.md}}
 {{#include refs.incl.md}}
-
-<div class="hidden">
-  accuracy review: contributing guide
-</div>

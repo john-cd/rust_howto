@@ -87,7 +87,3 @@ Keep in mind that choosing `heapless` is a trade-off: gain performance and deter
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: data structures
-</div>

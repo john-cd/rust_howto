@@ -74,7 +74,3 @@ For most common file system tasks, [`std::fs`][c~std::fs~docs]↗{{hi:std::fs}} 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: file system
-</div>

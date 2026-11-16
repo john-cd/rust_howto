@@ -17,7 +17,3 @@ The step size affects the approximation's accuracy. For a problem with a known e
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: mathematics
-</div>

@@ -64,7 +64,3 @@ If you need to do a _costly_ conversion, it is better to implement [`From`][c~st
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: standard library
-</div>

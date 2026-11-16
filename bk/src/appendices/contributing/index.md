@@ -184,7 +184,3 @@ This guide is based on the **contributing.md**. [Make your own][contributing.md~
 [ex~contributing~suggesting-enhancements]: #suggesting-enhancements
 [ex~contributing~table-of-contents]: #table-of-contents
 [ex~contributing~styleguides]: #styleguides
-
-<div class="hidden">
-  accuracy review: contributing guide
-</div>

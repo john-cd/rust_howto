@@ -12,7 +12,7 @@ In Rust, _references_ access a value without taking ownership of it ("borrow" it
 
 References are similar to pointers but come with strict safety guarantees: they are aligned, not null, and pointing to memory containing a _valid_ value of `T`.
 
-To guarantee the latter, the Rust compiler attaches a _lifetime_ to each reference. A lifetime represents the _scope_ (a section of code) for which the value (and therefore the borrow) is valid. Lifetimes therefore prevent dangling references, which occur when a reference points to memory that has been deallocated or otherwise invalidated.{{hi:Dangling references}}
+A reference type has a _lifetime_ that describes how long the reference may be used. The compiler checks that the referent remains valid for that lifetime. A borrow can end before the variable it borrows goes out of scope.{{hi:Dangling references}}
 
 The Rust compiler infers most lifetimes (see below), therefore we will most often write references with an implicit lifetime:
 
@@ -134,7 +134,3 @@ A method returning `&T` from `&mut self` has the same rule. The returned referen
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: introduction and language basics
-</div>

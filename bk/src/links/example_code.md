@@ -96,7 +96,3 @@ For experiments with unstable APIs, consult the [Cargo unstable-feature referenc
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: links and crate selection
-</div>

@@ -33,7 +33,7 @@ Use [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} when
 - you want to own a value and you care only that it's a type that implements a particular trait rather than being of a specific type.
 - When you need to transfer ownership of data between functions - although [`Arc<T>`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} or [`Rc<T>`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} might be more appropriate for shared ownership.
 
-Do not use `Box` for small, fixed-size types, or when you only need a reference: If you just need to borrow a value, use `&T` (immutable reference) or `&mut T` (mutable reference).
+Use `&T` or `&mut T` when you only need to borrow a value. A small type can still benefit from boxing when it needs indirection, for example to break a recursive type cycle.
 
 ## Use `Box` to Store Dynamically Sized Types {#box-dst}
 
@@ -83,7 +83,3 @@ For example, in the following, we define a linked list that has an unknown numbe
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: standard library
-</div>

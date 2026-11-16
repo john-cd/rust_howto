@@ -62,7 +62,3 @@ Distinguish the above traits from the following:
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: standard library
-</div>

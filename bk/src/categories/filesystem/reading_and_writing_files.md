@@ -77,7 +77,3 @@ Atomic visibility and durability after power loss are different guarantees. The 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: file system
-</div>

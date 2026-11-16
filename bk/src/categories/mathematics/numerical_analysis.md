@@ -21,7 +21,3 @@ Brent's method combines bisection, the secant method, and inverse quadratic inte
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: mathematics
-</div>

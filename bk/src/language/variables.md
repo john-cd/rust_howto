@@ -45,7 +45,3 @@ Destructuring allows you to unpack values from compound types like tuples, array
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: introduction and language basics
-</div>

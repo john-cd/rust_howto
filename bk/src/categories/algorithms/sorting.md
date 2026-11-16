@@ -67,7 +67,3 @@ To sort in a different way, provide a custom comparator function to the [`std::v
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: algorithms
-</div>

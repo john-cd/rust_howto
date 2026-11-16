@@ -139,7 +139,3 @@ Other RustCrypto ecosystem crates include [`aes-gcm`][c~aes-gcm~docs], [`aes-gcm
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: algorithms
-</div>

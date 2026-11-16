@@ -99,7 +99,3 @@ Taking the example of strings: using `&str` for borrowing and `String` for owned
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: standard library
-</div>

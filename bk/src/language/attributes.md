@@ -145,7 +145,3 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: traits, iterators, attributes and macros
-</div>

@@ -48,7 +48,3 @@ A `rust` code block can show a play button that runs the code in the [Rust Playg
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: contributing guide
-</div>

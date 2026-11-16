@@ -63,8 +63,3 @@ Refer to the [[books | books]] chapter for a detailed list of Rust books.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: introduction and language basics
-  accuracy review: decisions for the maintainer
-</div>

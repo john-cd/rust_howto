@@ -95,7 +95,3 @@ A Bloom filter is a compact set that can say "possibly present" or "definitely a
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: data structures
-</div>

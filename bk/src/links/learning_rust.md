@@ -106,7 +106,3 @@ The [Hands-On Microservices with Rust repository][book~Hands-On-Microservices-wi
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: links and crate selection
-</div>

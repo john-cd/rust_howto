@@ -119,8 +119,3 @@ The [Units of Measurement chapter][p~units] demonstrates dimensional types and c
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  accuracy review: mathematics
-  accuracy review: decisions for the maintainer
-</div>

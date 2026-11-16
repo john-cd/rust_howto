@@ -8,7 +8,11 @@ The memory of a computer program is primarily structured into a _stack_ and a _h
 
 Under the covers, most CPUs maintain a pointer to the top of the stack in one of its internal registers. Pushing data onto the stack is a matter of copying a value onto the next available memory slot. Popping data off the stack is simply adjusting the stack pointer register value. Therefore, the stack is fast, but it suffers from one major constraint: _all data stored on the stack must have a known, fixed size_.
 
-Data with an unknown size at compile time or a size that might change must be stored on the heap instead. The heap is less organized and managed by a _memory allocator_ subroutine. Upon request for a memory block, the memory allocator finds empty memory in the heap, marks it as being in use, and returns a pointer, which is the memory address of the allocated memory. Because a pointer to the heap is a known, fixed size, the pointer can be stored on the stack, but when you want the actual data, the pointer must be followed ("dereferenced").
+Dynamically sized types such as `str` and `[T]` are usually accessed through a
+pointer that carries metadata, such as the length of a slice. Their backing
+storage can live on the stack, on the heap, or in static storage. A growable
+collection such as `Vec<T>` has a fixed-size handle and can allocate or resize
+its element buffer on the heap.
 
 Allocating space on the heap is slower than pushing data on the stack, because the allocator must find a large enough block and perform bookkeeping for the next allocation. It tracks which blocks are in use so allocations do not overlap; if a program fails to release an allocation, that memory can remain unavailable until the process exits. The heap can also suffer from _fragmentation_, when free space is split into small chunks among allocated blocks, leaving no large enough block for a request and potentially causing an out-of-memory error.
 
@@ -162,6 +166,5 @@ The same applies to mutable references:
 
 - [[rust-patterns | Rust Patterns]].
 
-accuracy review: introduction and language basics
 
 </div>
