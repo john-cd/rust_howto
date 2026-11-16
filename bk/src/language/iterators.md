@@ -30,11 +30,11 @@ There are three common methods, which can create iterators from a collection:
 
 Use `iter()` when you need to iterate over the elements of a collection without modifying them, `iter_mut()` when you need to modify them in place, and `into_iter()` when you want to consume the collection. The latter is often used when you're done with the original collection after iteration or when you want to transfer ownership of the elements. The following table summarizes the use cases:
 
-| Feature       | Mutability      | Element Type    | Ownership | Collection Use Afterwards |
-| ------------- | --------------- | --------------- | --------- | ------------------------- |
-| `iter()`      | Immutable       | `&T`            | Borrows   | Usable after              |
-| `iter_mut()`  | Mutable         | `&mut T`        | Borrows   | Usable after              |
-| `into_iter()` | Depends on type | `T` (typically) | Consumes  | Not usable after          |
+| Feature | Mutability | Element Type | Ownership | Collection Use Afterwards |
+| --- | --- | --- | --- | --- |
+| `iter()` | Immutable | `&T` | Borrows | Usable after |
+| `iter_mut()` | Mutable | `&mut T` | Borrows | Usable after |
+| `into_iter()` | Depends on type | `T` (typically) | Consumes | Not usable after |
 
 ```rust,editable
 {{#include ../../crates/language/examples/iterators/iterators.rs:example}}

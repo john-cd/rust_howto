@@ -10,12 +10,12 @@ WebSockets begin with an HTTP handshake and then keep one connection open for me
 
 ## Choose a crate that matches the runtime
 
-| Need                                     | Crate                                                                  | Use it when                                                                                 |
-| ---------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Blocking client or custom I/O            | [tungstenite][c~tungstenite~docs]↗{{hi:tungstenite}}                   | Synchronous I/O fits the application, or you need to adapt the protocol to a custom stream. |
-| Tokio client or server                   | [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} | The application already uses Tokio and needs asynchronous socket I/O.                       |
-| Another supported async runtime          | [async-tungstenite][c~async-tungstenite~docs]↗{{hi:async-tungstenite}} | The project needs an async WebSocket implementation with an adapter for its runtime.        |
-| A WebSocket route in an HTTP application | Your web framework                                                     | The framework already owns the HTTP server and provides WebSocket upgrade support.          |
+| Need | Crate | Use it when |
+| --- | --- | --- |
+| Blocking client or custom I/O | [tungstenite][c~tungstenite~docs]↗{{hi:tungstenite}} | Synchronous I/O fits the application, or you need to adapt the protocol to a custom stream. |
+| Tokio client or server | [tokio-tungstenite][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} | The application already uses Tokio and needs asynchronous socket I/O. |
+| Another supported async runtime | [async-tungstenite][c~async-tungstenite~docs]↗{{hi:async-tungstenite}} | The project needs an async WebSocket implementation with an adapter for its runtime. |
+| A WebSocket route in an HTTP application | Your web framework | The framework already owns the HTTP server and provides WebSocket upgrade support. |
 
 These are protocol libraries, not application protocols. Your application still defines message formats, authorization, reconnect behavior, and how clients handle server-initiated messages.
 

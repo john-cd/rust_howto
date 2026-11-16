@@ -8,11 +8,11 @@ support; a folder layout alone does not define an architecture.
 
 ## Choose a starting point
 
-| If you want to...                                                                         | Start here                                                        |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| Clarify goals, boundaries, quality requirements, alternatives, and decisions              | [Software Architecture Process](software_architecture_process.md) |
-| Compare system-level structures such as layered, event-driven, or microservices           | [Common Architectures](common_architectures.md)                   |
-| Organize component responsibilities with repository, state-machine, or injection patterns | [Architectural Patterns](architectural_patterns.md)               |
+| If you want to... | Start here |
+| --- | --- |
+| Clarify goals, boundaries, quality requirements, alternatives, and decisions | [Software Architecture Process](software_architecture_process.md) |
+| Compare system-level structures such as layered, event-driven, or microservices | [Common Architectures](common_architectures.md) |
+| Organize component responsibilities with repository, state-machine, or injection patterns | [Architectural Patterns](architectural_patterns.md) |
 
 Read the process first when beginning a system or reviewing a major change. Use the
 architecture styles to compare broad structures, then choose component patterns only

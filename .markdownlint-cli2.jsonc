@@ -3,7 +3,7 @@
 // markdownlint-cli2 configuration for the book content.
 // Run `just lint-md` from bk/ (`just mdlint` remains an alias).
 {
-  "config": { "extends": "bk/.markdownlint.yaml" },
+  "config": { "MD060": { "style": "compact" }, "extends": "bk/.markdownlint.yaml" },
   "globs": [
     "bk/src/**/*.md",
     "bk/drafts/**/*.md",

@@ -1,14 +1,14 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-| Recipe                                                                                                                                                 | Crates                          | Categories                                                               |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------- | ------------------------------------------------------------------------ |
-| [Locate Installed Executables with `which`][ex~os~which]                                                                                               | {{#crate which}}                | {{#categories os="Operating systems"}}                                   |
-| [Run an External Command and Process its `stdout`][ex~os~run-an-external-command-and-process-stdout]                                                   | {{#crate std}} {{#crate regex}} | {{#categories os="Operating systems" text-processing="Text processing"}} |
-| [Run an External Command, Passing it `stdin`, then Check for an Error Code][ex~os~run-an-external-command-passing-stdin-and-check-for-error-code]      | {{#crate std}}                  | {{#categories os="Operating systems"}}                                   |
-| [Run Piped External Commands][ex~os~run-piped-external-commands]                                                                                       | {{#crate std}}                  | {{#categories os="Operating systems"}}                                   |
-| [Redirect both the `stdout` and `stderr` of a Child Process to the Same File][ex~os~redirect-both-stdout-and-stderr-of-child-process-to-the-same-file] | {{#crate std}}                  | {{#categories os="Operating systems"}}                                   |
-| [Continuously Process the Outputs of a Child Process][ex~os~continuously-process-child-process-outputs]                                                | {{#crate std}}                  | {{#categories os="Operating systems"}}                                   |
-| [Read an Environment Variable][ex~os~read-environment-variable]                                                                                        | {{#crate std}}                  | {{#categories os="Operating systems"}}                                   |
-| [Run Child Processes Using `duct`][ex~os~run-child-processes-using-duct]                                                                               | {{#crate duct}}                 | {{#categories os="Operating systems"}}                                   |
-| [Write Shell-Oriented Scripts with `xshell`][ex~os~xshell]                                                                                             | {{#crate xshell}}               | {{#categories os="Operating systems"}}                                   |
-| [Split and Quote Command Lines with `shlex`][ex~os~shlex]                                                                                              | {{#crate shlex}}                | {{#categories os="Operating systems"}}                                   |
+| Recipe | Crates | Categories |
+| --- | --- | --- |
+| [Locate Installed Executables with `which`][ex~os~which] | {{#crate which}} | {{#categories os="Operating systems"}} |
+| [Run an External Command and Process its `stdout`][ex~os~run-an-external-command-and-process-stdout] | {{#crate std}} {{#crate regex}} | {{#categories os="Operating systems" text-processing="Text processing"}} |
+| [Run an External Command, Passing it `stdin`, then Check for an Error Code][ex~os~run-an-external-command-passing-stdin-and-check-for-error-code] | {{#crate std}} | {{#categories os="Operating systems"}} |
+| [Run Piped External Commands][ex~os~run-piped-external-commands] | {{#crate std}} | {{#categories os="Operating systems"}} |
+| [Redirect both the `stdout` and `stderr` of a Child Process to the Same File][ex~os~redirect-both-stdout-and-stderr-of-child-process-to-the-same-file] | {{#crate std}} | {{#categories os="Operating systems"}} |
+| [Continuously Process the Outputs of a Child Process][ex~os~continuously-process-child-process-outputs] | {{#crate std}} | {{#categories os="Operating systems"}} |
+| [Read an Environment Variable][ex~os~read-environment-variable] | {{#crate std}} | {{#categories os="Operating systems"}} |
+| [Run Child Processes Using `duct`][ex~os~run-child-processes-using-duct] | {{#crate duct}} | {{#categories os="Operating systems"}} |
+| [Write Shell-Oriented Scripts with `xshell`][ex~os~xshell] | {{#crate xshell}} | {{#categories os="Operating systems"}} |
+| [Split and Quote Command Lines with `shlex`][ex~os~shlex] | {{#crate shlex}} | {{#categories os="Operating systems"}} |

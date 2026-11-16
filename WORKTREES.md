@@ -56,7 +56,7 @@ is detached at `931d6b84` with a cherry-pick in progress; preserve it and do not
 reuse it.
 
 | Checkout        | Branch or revision                | Status and cache                                            |
-| --------------- | --------------------------------- | ----------------------------------------------------------- |
+| --- | --- |
 | Repository root | `develop`                         | Clean after integration; cache slot `main`.                 |
 | `.worktrees/a`  | detached at integrated `develop`  | Clean after delivery; cache slot `a`.                       |
 | `.worktrees/b`  | `codex/issue-2164-cargo-profiles` | Clean; cache slot `b`.                                      |

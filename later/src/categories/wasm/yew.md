@@ -56,11 +56,11 @@ Client-side rendering is Yew's default: the browser loads the WebAssembly app an
 
 ## Compare web frameworks
 
-| Framework                  | Browser rendering model                                                               | Server-side rendering                                              |
-| -------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| [Yew][c~yew~docs]          | Virtual DOM; client-side rendering with WebAssembly by default.                       | `ServerRenderer` and hydration are available; SSR is experimental. |
-| [Leptos][c~leptos~website] | Fine-grained reactive updates; supports browser CSR.                                  | Supports SSR with hydration as well as CSR.                        |
-| [Dioxus][c~dioxus~website] | Virtual DOM with platform-specific renderers, including the WebAssembly web renderer. | Dioxus Fullstack supports SSR and web hydration.                   |
+| Framework | Browser rendering model | Server-side rendering |
+| --- | --- | --- |
+| [Yew][c~yew~docs] | Virtual DOM; client-side rendering with WebAssembly by default. | `ServerRenderer` and hydration are available; SSR is experimental. |
+| [Leptos][c~leptos~website] | Fine-grained reactive updates; supports browser CSR. | Supports SSR with hydration as well as CSR. |
+| [Dioxus][c~dioxus~website] | Virtual DOM with platform-specific renderers, including the WebAssembly web renderer. | Dioxus Fullstack supports SSR and web hydration. |
 
 Choose based on the rendering model, deployment, and platform targets the application needs. The [[web-programming | Web Programming]] page provides more framework options. Dioxus's [desktop and mobile webview targets](../gui/web_based_gui.md#dioxus) are described in the GUI chapter.
 

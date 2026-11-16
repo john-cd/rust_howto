@@ -9,13 +9,13 @@ for the transactional reads and writes covered by the [database index][p~databas
 Choose a search system based on the shape of the query and where you want its
 index to run:
 
-| Search system                      | Rust client                                             | Typical use                                                                                                                             |
-| ---------------------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| [Meilisearch][c~meilisearch~repo]↗ | [`meilisearch-sdk`][c~meilisearch-sdk~docs]↗            | Hosted full-text search with typo tolerance and search-as-you-type.                                                                     |
-| Elasticsearch                      | [`elasticsearch`][c~elasticsearch~docs]↗                | General-purpose search through an asynchronous REST API. The example below uses this client.                                            |
-| OpenSearch                         | [`opensearch`][c~opensearch~docs]↗                      | The OpenSearch service and REST API. Use its client rather than assuming Elasticsearch clients and server versions are interchangeable. |
-| [Qdrant][c~qdrant~repo]↗           | [`qdrant-client`][c~qdrant-client~docs]↗                | Vector similarity search over embeddings; the Rust client connects to Qdrant's gRPC endpoint.                                           |
-| Tantivy                            | [Search engines written in Rust][p~rust-search-engines] | Embed a full-text index in the Rust process instead of running a separate service.                                                      |
+| Search system | Rust client | Typical use |
+| --- | --- | --- |
+| [Meilisearch][c~meilisearch~repo]↗ | [`meilisearch-sdk`][c~meilisearch-sdk~docs]↗ | Hosted full-text search with typo tolerance and search-as-you-type. |
+| Elasticsearch | [`elasticsearch`][c~elasticsearch~docs]↗ | General-purpose search through an asynchronous REST API. The example below uses this client. |
+| OpenSearch | [`opensearch`][c~opensearch~docs]↗ | The OpenSearch service and REST API. Use its client rather than assuming Elasticsearch clients and server versions are interchangeable. |
+| [Qdrant][c~qdrant~repo]↗ | [`qdrant-client`][c~qdrant-client~docs]↗ | Vector similarity search over embeddings; the Rust client connects to Qdrant's gRPC endpoint. |
+| Tantivy | [Search engines written in Rust][p~rust-search-engines] | Embed a full-text index in the Rust process instead of running a separate service. |
 
 These client crates target different services and are not interchangeable
 query builders. The recipe table above lists only examples included on this

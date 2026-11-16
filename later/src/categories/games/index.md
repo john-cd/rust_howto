@@ -6,13 +6,13 @@
 
 These examples show several kinds of games built with Rust. Project availability and development status can change; follow each project link for current downloads and activity.
 
-| Game                                                 | Genre / description                                                       |
-| ---------------------------------------------------- | ------------------------------------------------------------------------- |
-| [`Veloren`][veloren.net~website]↗{{hi:Veloren}}      | Multiplayer, open-world voxel role-playing game.                          |
-| [`Zemeroth`][zemeroth~website]↗{{hi:Zemeroth}}       | Turn-based tactical game.                                                 |
-| [`Nox Futura`][nox-futura~website]↗{{hi:Nox Futura}} | 3D colony-building and survival simulation.                               |
-| [`Epicinium`][epicinium~website]↗{{hi:Epicinium}}    | Turn-based strategy game with simultaneous turns and resource management. |
-| [`Hypercoven`][hypercoven~website]↗{{hi:Hypercoven}} | Real-time strategy game.                                                  |
+| Game | Genre / description |
+| --- | --- |
+| [`Veloren`][veloren.net~website]↗{{hi:Veloren}} | Multiplayer, open-world voxel role-playing game. |
+| [`Zemeroth`][zemeroth~website]↗{{hi:Zemeroth}} | Turn-based tactical game. |
+| [`Nox Futura`][nox-futura~website]↗{{hi:Nox Futura}} | 3D colony-building and survival simulation. |
+| [`Epicinium`][epicinium~website]↗{{hi:Epicinium}} | Turn-based strategy game with simultaneous turns and resource management. |
+| [`Hypercoven`][hypercoven~website]↗{{hi:Hypercoven}} | Real-time strategy game. |
 
 ## Browse More Games
 

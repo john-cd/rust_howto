@@ -1,12 +1,12 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-| Recipe                                                                                          | Tools                                                                                                 | Categories                                             |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
-| [Measure process memory][ex~development-tools_profiling~process-memory]                         | Operating-system process metrics                                                                      | {{#categories development-tools::profiling=Profiling}} |
-| [Profile heap peaks with Valgrind Massif][ex~development-tools_profiling~massif]                | [Massif][valgrind~massif~website]                                                                     | {{#categories development-tools::profiling=Profiling}} |
-| [Find heap allocation sites with Heaptrack][ex~development-tools_profiling~heaptrack]           | [Heaptrack][c~heaptrack~docs]                                                                         | {{#categories development-tools::profiling=Profiling}} |
-| [Profile Heap Memory with `dhat`][ex~development-tools_profiling~dhat]                          | {{#crate dhat}}                                                                                       | {{#categories development-tools::profiling=Profiling}} |
-| [Assert on Heap Allocations in a Test with `dhat`][ex~development-tools_profiling~dhat-testing] | {{#crate dhat}}                                                                                       | {{#categories development-tools::profiling=Profiling}} |
-| [Find leaks and memory errors][ex~development-tools_profiling~leaks]                            | [Memcheck][valgrind~memcheck~website]                                                                 | {{#categories development-tools::profiling=Profiling}} |
-| [Examine memory with a debugger][ex~development-tools_profiling~debugging]                      | [![gdb][c~gdb~docs~badge]][c~gdb~docs]{{hi:gdb}} [![lldb][c~lldb~docs~badge]][c~lldb~docs]{{hi:lldb}} | {{#categories development-tools::profiling=Profiling}} |
-| [Use tracing to understand allocation patterns][ex~development-tools_profiling~tracing]         | {{#crate tracing}}                                                                                    | {{#categories development-tools::profiling=Profiling}} |
+| Recipe | Tools | Categories |
+| --- | --- | --- |
+| [Measure process memory][ex~development-tools_profiling~process-memory] | Operating-system process metrics | {{#categories development-tools::profiling=Profiling}} |
+| [Profile heap peaks with Valgrind Massif][ex~development-tools_profiling~massif] | [Massif][valgrind~massif~website] | {{#categories development-tools::profiling=Profiling}} |
+| [Find heap allocation sites with Heaptrack][ex~development-tools_profiling~heaptrack] | [Heaptrack][c~heaptrack~docs] | {{#categories development-tools::profiling=Profiling}} |
+| [Profile Heap Memory with `dhat`][ex~development-tools_profiling~dhat] | {{#crate dhat}} | {{#categories development-tools::profiling=Profiling}} |
+| [Assert on Heap Allocations in a Test with `dhat`][ex~development-tools_profiling~dhat-testing] | {{#crate dhat}} | {{#categories development-tools::profiling=Profiling}} |
+| [Find leaks and memory errors][ex~development-tools_profiling~leaks] | [Memcheck][valgrind~memcheck~website] | {{#categories development-tools::profiling=Profiling}} |
+| [Examine memory with a debugger][ex~development-tools_profiling~debugging] | [![gdb][c~gdb~docs~badge]][c~gdb~docs]{{hi:gdb}} [![lldb][c~lldb~docs~badge]][c~lldb~docs]{{hi:lldb}} | {{#categories development-tools::profiling=Profiling}} |
+| [Use tracing to understand allocation patterns][ex~development-tools_profiling~tracing] | {{#crate tracing}} | {{#categories development-tools::profiling=Profiling}} |

@@ -43,4 +43,4 @@ The composite pattern represents both leaves and groups with one interface. An e
 ```
 
 | Recipe | Crates | Categories |
-| ------ | ------ | ---------- |
+| --- | --- | --- |

@@ -8,8 +8,8 @@
 
 {{#badges accesskit gui=GUI}}{{hi:Gui}}{{hi:Ui}}{{hi:Accessibility}}
 
-| Recipe                                                                           |
-| -------------------------------------------------------------------------------- |
+| Recipe |
+| --- |
 | [Make a User Interface Accessible to Screen Readers][ex~accessibility~accesskit] |
 
 {{#include refs.incl.md}}

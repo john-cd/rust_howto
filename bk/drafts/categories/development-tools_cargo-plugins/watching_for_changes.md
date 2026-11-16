@@ -4,12 +4,12 @@
 
 {{#include watching_for_changes.incl.md}}
 
-| Task                                       | Tool                                | Why                                                                 |
-| ------------------------------------------ | ----------------------------------- | ------------------------------------------------------------------- |
-| Rerun common Cargo checks in a terminal UI | [Bacon][c~bacon~repo]               | Cargo-aware tasks such as `check`, `test`, and `clippy`.            |
-| Watch files and run any command            | [Watchexec][c~watchexec~repo]       | General command runner for custom build, test, or script workflows. |
-| Keep an existing watcher script running    | [`cargo-watch`][c~cargo-watch~repo] | Archived; retain only for legacy workflows.                         |
-| Read compiler diagnostics with less noise  | [`cargo-limit`][c~cargo-limit~repo] | Filters and prioritizes Cargo output; it does not watch files.      |
+| Task | Tool | Why |
+| --- | --- | --- |
+| Rerun common Cargo checks in a terminal UI | [Bacon][c~bacon~repo] | Cargo-aware tasks such as `check`, `test`, and `clippy`. |
+| Watch files and run any command | [Watchexec][c~watchexec~repo] | General command runner for custom build, test, or script workflows. |
+| Keep an existing watcher script running | [`cargo-watch`][c~cargo-watch~repo] | Archived; retain only for legacy workflows. |
+| Read compiler diagnostics with less noise | [`cargo-limit`][c~cargo-limit~repo] | Filters and prioritizes Cargo output; it does not watch files. |
 
 Many [IDEs][p~ides] already watch files and can run Cargo tasks automatically. Check the editor's build and test settings before adding another background process.
 

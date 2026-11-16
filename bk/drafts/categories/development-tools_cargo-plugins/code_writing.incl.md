@@ -1,9 +1,9 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-| Recipe                                                                                                                            | Crates                    | Categories                                                                                             |
-| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------ |
-| [Expand a Crate for Inspection][ex~development-tools_cargo-plugins~cargo-expand]                                                  | {{#crate cargo-expand}}   | {{#categories development-tools="Development tools" development-tools::cargo-plugins="Cargo plugins"}} |
-| [Generate a Rust Project from a Template][ex~development-tools_cargo-plugins~cargo-generate]                                      | {{#crate cargo-generate}} | {{#categories development-tools="Development tools" development-tools::cargo-plugins="Cargo plugins"}} |
-| [Inspect Module Structure][ex~development-tools_cargo-plugins~cargo-modules]                                                      | {{#crate cargo-modules}}  | {{#categories development-tools="Development tools" development-tools::cargo-plugins="Cargo plugins"}} |
-| [Check Feature Combinations][ex~development-tools_cargo-plugins~cargo-hack]                                                       | {{#crate cargo-hack}}     | {{#categories development-tools="Development tools" development-tools::cargo-plugins="Cargo plugins"}} |
-| [Quickly Open the `crates.io` or `docs.rs` Page for the Latest Version of a Crate][ex~development-tools_cargo-plugins~cargo-open] | {{#crate cargo-crates}}   | {{#categories development-tools::cargo-plugins="Cargo plugins"}}                                       |
+| Recipe | Crates | Categories |
+| --- | --- | --- |
+| [Expand a Crate for Inspection][ex~development-tools_cargo-plugins~cargo-expand] | {{#crate cargo-expand}} | {{#categories development-tools="Development tools" development-tools::cargo-plugins="Cargo plugins"}} |
+| [Generate a Rust Project from a Template][ex~development-tools_cargo-plugins~cargo-generate] | {{#crate cargo-generate}} | {{#categories development-tools="Development tools" development-tools::cargo-plugins="Cargo plugins"}} |
+| [Inspect Module Structure][ex~development-tools_cargo-plugins~cargo-modules] | {{#crate cargo-modules}} | {{#categories development-tools="Development tools" development-tools::cargo-plugins="Cargo plugins"}} |
+| [Check Feature Combinations][ex~development-tools_cargo-plugins~cargo-hack] | {{#crate cargo-hack}} | {{#categories development-tools="Development tools" development-tools::cargo-plugins="Cargo plugins"}} |
+| [Quickly Open the `crates.io` or `docs.rs` Page for the Latest Version of a Crate][ex~development-tools_cargo-plugins~cargo-open] | {{#crate cargo-crates}} | {{#categories development-tools::cargo-plugins="Cargo plugins"}} |

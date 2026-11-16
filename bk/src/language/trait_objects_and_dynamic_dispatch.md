@@ -98,14 +98,14 @@ impl Shape {
 
 Trait objects enable _dynamic dispatch_. This means that the decision of which concrete method implementation to call is made _at runtime_, rather than at compile time. This is in contrast to _static dispatch_, which Rust uses with generics (and `impl Trait`, see below), where the compiler generates specialized code for each concrete type used by a generic item.
 
-| Feature     | Static Dispatch (Generics)                            | Dynamic Dispatch (Trait Objects)                   |
-| ----------- | ----------------------------------------------------- | -------------------------------------------------- |
-| Mechanism   | Monomorphization (code duplication at compile time)   | vtable lookups at runtime                          |
-| Performance | Generally faster (no runtime lookup overhead)         | Slightly slower (due to vtable indirection)        |
-| Flexibility | Less flexible for heterogeneous collections           | More flexible for heterogeneous collections        |
-| Code Size   | Can lead to larger binaries (due to monomorphization) | Can lead to smaller binaries (no code duplication) |
-| Type Known  | At compile time                                       | At runtime (for the trait object itself)           |
-| Syntax      | `fn foo<T: MyTrait>(item: T)`                         | `fn foo(item: &dyn MyTrait)`                       |
+| Feature | Static Dispatch (Generics) | Dynamic Dispatch (Trait Objects) |
+| --- | --- | --- |
+| Mechanism | Monomorphization (code duplication at compile time) | vtable lookups at runtime |
+| Performance | Generally faster (no runtime lookup overhead) | Slightly slower (due to vtable indirection) |
+| Flexibility | Less flexible for heterogeneous collections | More flexible for heterogeneous collections |
+| Code Size | Can lead to larger binaries (due to monomorphization) | Can lead to smaller binaries (no code duplication) |
+| Type Known | At compile time | At runtime (for the trait object itself) |
+| Syntax | `fn foo<T: MyTrait>(item: T)` | `fn foo(item: &dyn MyTrait)` |
 
 ### `impl Trait` vs `dyn Trait` {#impl-trait-vs-dyn-trait}
 

@@ -10,14 +10,14 @@ Libraries and bindings for building graphical user interfaces in desktop and bro
 
 Framework maturity, maintenance, accessibility, styling, and platform support vary. Check the project's current documentation and native prerequisites against your deployment needs.
 
-| Application need                                         | Examples                                                                                                   | Where to look                                                         |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| Native application using an existing GUI toolkit         | [`gtk4`][c~gtk4~docs]↗{{hi:GTK}}, [`qt`][c~qt~docs]↗{{hi:Qt}}, [`fltk-rs`][c~fltk~docs]↗{{hi:FLTK}}        | [Bindings to native GUI toolkits](#bindings-to-native-gui-toolkits)   |
-| Immediate-mode UI for tools and interactive applications | [`egui`][c~egui~docs]↗{{hi:egui}}                                                                          | [Immediate-mode GUIs](#immediate-mode-guis)                           |
-| Retained-mode or declarative UI                          | [`iced`][c~iced~docs]↗{{hi:iced}}, [`slint`][c~slint~docs]↗{{hi:slint}}                                    | [Retained-mode GUIs](#retained-mode-guis)                             |
-| Desktop application using web technologies               | [`tauri`][c~tauri~docs]↗{{hi:tauri}}                                                                       | [Web-based desktop GUIs](#web-based-guis)                             |
-| GUI that runs in a web browser                           | [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`dioxus`][c~dioxus~docs]↗{{hi:dioxus}} | [Web Frameworks](#web-frameworks)                                     |
-| Custom window and renderer                               | [`winit`][c~winit~docs]↗{{hi:winit}}, [`minifb`][c~minifb~docs]↗{{hi:minifb}}                              | [Window creation](#window-creation) and [2D renderers](#2d-renderers) |
+| Application need | Examples | Where to look |
+| --- | --- | --- |
+| Native application using an existing GUI toolkit | [`gtk4`][c~gtk4~docs]↗{{hi:GTK}}, [`qt`][c~qt~docs]↗{{hi:Qt}}, [`fltk-rs`][c~fltk~docs]↗{{hi:FLTK}} | [Bindings to native GUI toolkits](#bindings-to-native-gui-toolkits) |
+| Immediate-mode UI for tools and interactive applications | [`egui`][c~egui~docs]↗{{hi:egui}} | [Immediate-mode GUIs](#immediate-mode-guis) |
+| Retained-mode or declarative UI | [`iced`][c~iced~docs]↗{{hi:iced}}, [`slint`][c~slint~docs]↗{{hi:slint}} | [Retained-mode GUIs](#retained-mode-guis) |
+| Desktop application using web technologies | [`tauri`][c~tauri~docs]↗{{hi:tauri}} | [Web-based desktop GUIs](#web-based-guis) |
+| GUI that runs in a web browser | [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`dioxus`][c~dioxus~docs]↗{{hi:dioxus}} | [Web Frameworks](#web-frameworks) |
+| Custom window and renderer | [`winit`][c~winit~docs]↗{{hi:winit}}, [`minifb`][c~minifb~docs]↗{{hi:minifb}} | [Window creation](#window-creation) and [2D renderers](#2d-renderers) |
 
 GTK and Tauri are the options that are most production-ready without caveats; the Rust-native toolkits are usable for simple projects but are still maturing. For web front ends that also generate static pages, see [`perseus`][c~perseus~docs]↗{{hi:perseus}}.
 

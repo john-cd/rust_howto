@@ -4,13 +4,13 @@
 
 {{#include performance.incl.md}}
 
-| Topic                     | Cargo tool                              | Best fit                                                                                                       |
-| ------------------------- | --------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Choose a profile template | [`cargo-wizard`][c~cargo-wizard~repo]   | Compare starting points for compile time, runtime speed, or binary size. Review its edits before keeping them. |
-| Unify workspace features  | [`cargo-hakari`][c~cargo-hakari~repo]   | Reduce duplicate dependency builds in a large workspace with a generated `workspace-hack` crate.               |
-| Find runtime hot spots    | [`cargo flamegraph`][c~flamegraph~repo] | Sample a representative workload and visualize where it spends CPU time.                                       |
-| Run tests efficiently     | [`cargo-nextest`][c~cargo-nextest~repo] | Schedule already compiled tests with a dedicated runner; this does not shorten compilation itself.             |
-| Reuse Docker build layers | [`cargo-chef`][c~cargo-chef~repo]       | Cache dependency compilation between container image builds.                                                   |
+| Topic | Cargo tool | Best fit |
+| --- | --- | --- |
+| Choose a profile template | [`cargo-wizard`][c~cargo-wizard~repo] | Compare starting points for compile time, runtime speed, or binary size. Review its edits before keeping them. |
+| Unify workspace features | [`cargo-hakari`][c~cargo-hakari~repo] | Reduce duplicate dependency builds in a large workspace with a generated `workspace-hack` crate. |
+| Find runtime hot spots | [`cargo flamegraph`][c~flamegraph~repo] | Sample a representative workload and visualize where it spends CPU time. |
+| Run tests efficiently | [`cargo-nextest`][c~cargo-nextest~repo] | Schedule already compiled tests with a dedicated runner; this does not shorten compilation itself. |
+| Reuse Docker build layers | [`cargo-chef`][c~cargo-chef~repo] | Cache dependency compilation between container image builds. |
 
 ## Choose a starting profile with `cargo-wizard` {#cargo-wizard}
 

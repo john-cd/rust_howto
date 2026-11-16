@@ -23,12 +23,12 @@ from the certificate, protect it, and use self-signed certificates only for
 local development or tests unless you have deliberately configured a private
 trust anchor.
 
-| Recipe                                                       | Crates                 | Categories                                |
-| ------------------------------------------------------------ | ---------------------- | ----------------------------------------- |
-| [Create a self-signed certificate][ex~cryptography~rcgen]    | {{#crate rcgen}}       | {{#categories cryptography=Cryptography}} |
-| [DER][ex~cryptography~der]                                   | {{#crate der}}         | {{#categories cryptography=Cryptography}} |
+| Recipe | Crates | Categories |
+| --- | --- | --- |
+| [Create a self-signed certificate][ex~cryptography~rcgen] | {{#crate rcgen}} | {{#categories cryptography=Cryptography}} |
+| [DER][ex~cryptography~der] | {{#crate der}} | {{#categories cryptography=Cryptography}} |
 | [Read a PEM certificate file][ex~cryptography~read-pem-file] | {{#crate pem-rfc7468}} | {{#categories cryptography=Cryptography}} |
-| [`pem-rfc7468`][ex~cryptography~pem-rfc7468]                 | {{#crate pem-rfc7468}} | {{#categories cryptography=Cryptography}} |
-| [Parse an X.509 certificate][ex~cryptography~parse-x509]     | {{#crate x509-cert}}   | {{#categories cryptography=Cryptography}} |
-| [`pkcs8`][ex~cryptography~pkcs8]                             | {{#crate pkcs8}}       | {{#categories cryptography=Cryptography}} |
-| [`x509-cert`][ex~cryptography~x509-cert]                     | {{#crate x509-cert}}   | {{#categories cryptography=Cryptography}} |
+| [`pem-rfc7468`][ex~cryptography~pem-rfc7468] | {{#crate pem-rfc7468}} | {{#categories cryptography=Cryptography}} |
+| [Parse an X.509 certificate][ex~cryptography~parse-x509] | {{#crate x509-cert}} | {{#categories cryptography=Cryptography}} |
+| [`pkcs8`][ex~cryptography~pkcs8] | {{#crate pkcs8}} | {{#categories cryptography=Cryptography}} |
+| [`x509-cert`][ex~cryptography~x509-cert] | {{#crate x509-cert}} | {{#categories cryptography=Cryptography}} |

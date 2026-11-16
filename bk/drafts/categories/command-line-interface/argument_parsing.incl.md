@@ -1,10 +1,10 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-| Recipe                                                                                              | Crates                                                                                   | Categories                                                      |
-| --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| [Using `clap`'s Builder API][ex~command-line-interface~clap-builder]                                | {{#crate clap}}                                                                          | {{#categories command-line-interface="Command-line interface"}} |
-| [Advanced `clap` Builder Example with Subcommands][ex~command-line-interface~clap-builder-advanced] | {{#crate clap}}                                                                          | {{#categories command-line-interface="Command-line interface"}} |
-| [Using `clap`'s Derive API][ex~command-line-interface~clap-derive]                                  | {{#crate clap}}                                                                          | {{#categories command-line-interface="Command-line interface"}} |
-| [Parse Command-line Arguments with `lexopt`][ex~command-line-interface~lexopt]                      | {{#crate lexopt}}                                                                        | {{#categories command-line-interface="Command-line interface"}} |
-| [Parse Command-line Arguments with `pico-args`][ex~command-line-interface~pico-args]                | {{#crate pico-args}}                                                                     | {{#categories command-line-interface="Command-line interface"}} |
-| [Generate Shell Completion Scripts with `clap_complete`][ex~command-line-interface~clap_complete]   | [![clap_complete][c~clap_complete~docs~badge]][c~clap_complete~docs]{{hi:clap_complete}} | {{#categories command-line-interface="Command-line interface"}} |
+| Recipe | Crates | Categories |
+| --- | --- | --- |
+| [Using `clap`'s Builder API][ex~command-line-interface~clap-builder] | {{#crate clap}} | {{#categories command-line-interface="Command-line interface"}} |
+| [Advanced `clap` Builder Example with Subcommands][ex~command-line-interface~clap-builder-advanced] | {{#crate clap}} | {{#categories command-line-interface="Command-line interface"}} |
+| [Using `clap`'s Derive API][ex~command-line-interface~clap-derive] | {{#crate clap}} | {{#categories command-line-interface="Command-line interface"}} |
+| [Parse Command-line Arguments with `lexopt`][ex~command-line-interface~lexopt] | {{#crate lexopt}} | {{#categories command-line-interface="Command-line interface"}} |
+| [Parse Command-line Arguments with `pico-args`][ex~command-line-interface~pico-args] | {{#crate pico-args}} | {{#categories command-line-interface="Command-line interface"}} |
+| [Generate Shell Completion Scripts with `clap_complete`][ex~command-line-interface~clap_complete] | [![clap_complete][c~clap_complete~docs~badge]][c~clap_complete~docs]{{hi:clap_complete}} | {{#categories command-line-interface="Command-line interface"}} |

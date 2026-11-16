@@ -6,11 +6,11 @@
 
 Web-based GUI toolkits use HTML, CSS, and JavaScript, or Rust components that render through web technologies. The choice depends on how much of the application should be native Rust, whether you need a full framework or just a webview, and which desktop or mobile targets you need.
 
-| Option                        | UI code                                                        | Renderer                                                                               | Platforms                               | Bundle-size considerations                                                                             |
-| ----------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| [`tauri`][c~tauri~docs]↗      | Any HTML/CSS/JavaScript front end with a Rust back end         | System webview through [`wry`][c~wry~docs]↗                                            | Windows, macOS, Linux, Android, and iOS | Does not bundle a browser engine; app assets, plugins, and platform runtime setup affect package size. |
-| [`dioxus`][c~dioxus~docs]↗    | Rust components written with `rsx!`, with web assets as needed | Browser DOM on web; system webview on desktop/mobile; experimental Blitz/WGPU renderer | Web, desktop, Android, and iOS          | System webviews keep desktop packages small; assets and selected renderer/features affect output.      |
-| [`wry`][c~wry~docs]↗ directly | Web content plus a Rust window and event-loop host             | Platform system webview                                                                | Windows, macOS, Linux, Android, and iOS | Low-level library only; the application chooses and packages its UI assets and other dependencies.     |
+| Option | UI code | Renderer | Platforms | Bundle-size considerations |
+| --- | --- | --- | --- | --- |
+| [`tauri`][c~tauri~docs]↗ | Any HTML/CSS/JavaScript front end with a Rust back end | System webview through [`wry`][c~wry~docs]↗ | Windows, macOS, Linux, Android, and iOS | Does not bundle a browser engine; app assets, plugins, and platform runtime setup affect package size. |
+| [`dioxus`][c~dioxus~docs]↗ | Rust components written with `rsx!`, with web assets as needed | Browser DOM on web; system webview on desktop/mobile; experimental Blitz/WGPU renderer | Web, desktop, Android, and iOS | System webviews keep desktop packages small; assets and selected renderer/features affect output. |
+| [`wry`][c~wry~docs]↗ directly | Web content plus a Rust window and event-loop host | Platform system webview | Windows, macOS, Linux, Android, and iOS | Low-level library only; the application chooses and packages its UI assets and other dependencies. |
 
 ## `tauri` {#tauri}
 

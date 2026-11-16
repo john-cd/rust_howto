@@ -6,8 +6,8 @@ Use `std::thread::scope` for short-lived workers that borrow stack data. It has 
 
 Use `std::thread::Builder` when a worker needs a name or a custom stack size. Its `spawn` method is fallible. `std::thread::available_parallelism()` provides a hint for sizing a worker pool, subject to operating-system limits.
 
-| Recipe                                                                   | Crates         | Categories                              |
-| ------------------------------------------------------------------------ | -------------- | --------------------------------------- |
-| [Spawn Threads and Collect Their Results][ex~concurrency~spawn-join]     | {{#crate std}} | {{#categories concurrency=Concurrency}} |
+| Recipe | Crates | Categories |
+| --- | --- | --- |
+| [Spawn Threads and Collect Their Results][ex~concurrency~spawn-join] | {{#crate std}} | {{#categories concurrency=Concurrency}} |
 | [Use Scoped Threads to Borrow Stack Data][ex~concurrency~scoped-threads] | {{#crate std}} | {{#categories concurrency=Concurrency}} |
-| [Name Threads and Set the Stack Size][ex~concurrency~thread-builder]     | {{#crate std}} | {{#categories concurrency=Concurrency}} |
+| [Name Threads and Set the Stack Size][ex~concurrency~thread-builder] | {{#crate std}} | {{#categories concurrency=Concurrency}} |

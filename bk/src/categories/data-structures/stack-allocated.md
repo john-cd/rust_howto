@@ -6,12 +6,12 @@
 
 An array or fixed-capacity collection stores its elements inline with the collection value. A local value is usually placed on the stack, but the same value can also be stored in static memory or inside another allocation. The important distinction is whether the collection asks an allocator for more space as it grows.
 
-| Crate                          | Capacity and growth                                                                                           | When the collection is full                                      |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| [`arrayvec`][c~arrayvec~docs]↗ | Fixed capacity; no allocation when growing                                                                    | `push` panics; `try_push` returns the rejected item              |
-| [`heapless`][c~heapless~docs]↗ | Fixed capacity; does not use a heap allocator                                                                 | Operations such as `push` return an error with the rejected item |
-| [`smallvec`][c~smallvec~docs]↗ | Stores a configured number of elements inline, then can allocate and grow                                     | Grows like a vector after spilling to the heap                   |
-| [`tinyvec`][c~tinyvec~docs]↗   | With `alloc`, `TinyVec` starts inline and can move to heap storage; without it, `ArrayVec` has fixed capacity | `TinyVec` grows when it spills; `ArrayVec` panics if full        |
+| Crate | Capacity and growth | When the collection is full |
+| --- | --- | --- |
+| [`arrayvec`][c~arrayvec~docs]↗ | Fixed capacity; no allocation when growing | `push` panics; `try_push` returns the rejected item |
+| [`heapless`][c~heapless~docs]↗ | Fixed capacity; does not use a heap allocator | Operations such as `push` return an error with the rejected item |
+| [`smallvec`][c~smallvec~docs]↗ | Stores a configured number of elements inline, then can allocate and grow | Grows like a vector after spilling to the heap |
+| [`tinyvec`][c~tinyvec~docs]↗ | With `alloc`, `TinyVec` starts inline and can move to heap storage; without it, `ArrayVec` has fixed capacity | `TinyVec` grows when it spills; `ArrayVec` panics if full |
 
 Fixed-capacity collections are useful when a maximum size is known or dynamic allocation is unavailable. Choose an inline capacity with care: the collection value occupies space for that capacity even when it is empty, and large local values can use substantial stack space. `SmallVec` and `TinyVec` trade a larger inline value for avoiding allocations in common small cases. These layouts do not guarantee faster code; measure when performance matters.
 

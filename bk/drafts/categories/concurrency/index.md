@@ -6,19 +6,19 @@
 
 Concurrency{{hi:Concurrency}} is about coordinating tasks whose lifetimes overlap. Parallelism{{hi:Parallelism}} is the simultaneous execution of work, often across CPU cores. Rust's ownership rules and the `Send` and `Sync` traits help make cross-thread sharing safe; use async tasks for I/O-bound coordination and threads or data-parallel iterators for CPU-bound work. The recipes below focus on operating-system threads and parallel computation.
 
-| Topic                                                       | Use this chapter for                                 | Common building blocks                          |
-| ----------------------------------------------------------- | ---------------------------------------------------- | ----------------------------------------------- |
-| [Explicit Threads](explicit_threads.md)                     | Spawn, scope, and join operating-system threads      | `std::thread`                                   |
-| [Threadpools](threadpool.md)                                | Reuse workers for independent jobs                   | `threadpool`                                    |
-| [Data Parallelism](data_parallelism.md)                     | Split CPU-bound iterator work across cores           | `rayon`                                         |
-| [Message Passing](message_passing.md)                       | Send owned values between threads                    | `std::sync::mpsc`, `crossbeam-channel`, `flume` |
-| [Shared State](shared_state.md)                             | Coordinate access to shared values                   | `Mutex`, `RwLock`                               |
-| [Atomics](atomics.md)                                       | Coordinate simple shared values without a mutex      | `std::sync::atomic`, `arc-swap`                 |
-| [Model-Checking with Loom](loom.md)                         | Explore thread interleavings of a small protocol     | `loom`                                          |
-| [`crossbeam`](crossbeam.md)                                 | Use scoped threads and lower-level concurrency tools | `crossbeam`                                     |
-| [Concurrent Data Structures](concurrent_data_structures.md) | Share maps and queues across threads                 | `dashmap`, `papaya`, `crossbeam-queue`          |
-| [`Send` and `Sync`](send_sync.md)                           | Understand safe transfer and sharing between threads | `std::marker`                                   |
-| [Actors](_actors.md)                                        | Isolate state behind message-driven workers          | Tokio, Actix, Ractor, Kameo, Stakker            |
+| Topic | Use this chapter for | Common building blocks |
+| --- | --- | --- |
+| [Explicit Threads](explicit_threads.md) | Spawn, scope, and join operating-system threads | `std::thread` |
+| [Threadpools](threadpool.md) | Reuse workers for independent jobs | `threadpool` |
+| [Data Parallelism](data_parallelism.md) | Split CPU-bound iterator work across cores | `rayon` |
+| [Message Passing](message_passing.md) | Send owned values between threads | `std::sync::mpsc`, `crossbeam-channel`, `flume` |
+| [Shared State](shared_state.md) | Coordinate access to shared values | `Mutex`, `RwLock` |
+| [Atomics](atomics.md) | Coordinate simple shared values without a mutex | `std::sync::atomic`, `arc-swap` |
+| [Model-Checking with Loom](loom.md) | Explore thread interleavings of a small protocol | `loom` |
+| [`crossbeam`](crossbeam.md) | Use scoped threads and lower-level concurrency tools | `crossbeam` |
+| [Concurrent Data Structures](concurrent_data_structures.md) | Share maps and queues across threads | `dashmap`, `papaya`, `crossbeam-queue` |
+| [`Send` and `Sync`](send_sync.md) | Understand safe transfer and sharing between threads | `std::marker` |
+| [Actors](_actors.md) | Isolate state behind message-driven workers | Tokio, Actix, Ractor, Kameo, Stakker |
 
 ## Explicit Threads
 

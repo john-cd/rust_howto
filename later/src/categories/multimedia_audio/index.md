@@ -6,16 +6,16 @@
 
 Audio tasks include device input and output, decoding and encoding, synthesis, streaming, and digital signal processing. Select a device API, format library, or DSP toolkit according to the part of the pipeline you need. For most common device input and output tasks, [`cpal`][c~cpal~docs]↗{{hi:cpal}} is sufficient.
 
-| Task                         | Crates                                                                                                              | Notes                                                                                 |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| Device input and output      | [`cpal`][c~cpal~docs]↗{{hi:cpal}}, [`rodio`][c~rodio~docs]↗{{hi:rodio}}                                             | `cpal` exposes audio devices and streams; `rodio` provides higher-level playback.     |
-| MIDI input and output        | [`midir`][c~midir~docs]↗{{hi:midir}}                                                                                | Connect to MIDI ports and receive or send raw messages in real time.                  |
-| Decode media                 | [`symphonia`][c~symphonia~docs]↗{{hi:symphonia}}                                                                    | Decode common compressed and uncompressed formats.                                    |
-| Read and write audio formats | [`hound`][c~hound~docs]↗{{hi:hound}}, [`ogg`][c~ogg~docs]↗{{hi:ogg}}, [`flac`][c~flac~docs]↗{{hi:flac}}             | `hound` handles WAV; use Ogg or FLAC crates when working directly with those formats. |
-| Encode Vorbis and Opus       | [`vorbis_rs`][c~vorbis_rs~docs]↗{{hi:vorbis_rs}}, [`opus`][c~opus~docs]↗{{hi:opus}}                                 | Use an encoder library appropriate to the target codec.                               |
-| Binaural rendering           | [`hrtf`][c~hrtf~docs]↗{{hi:hrtf}}                                                                                   | Spatialize a mono source with head-related impulse responses.                         |
-| Synthesis and DSP            | [`fundsp`][c~fundsp~docs]↗{{hi:fundsp}}, [`dasp`][c~dasp~docs]↗{{hi:dasp}}, [`rubato`][c~rubato~docs]↗{{hi:rubato}} | Synthesize, process, or resample sample streams.                                      |
-| Audio plugins                | [`nih-plug`][c~nih-plug~repo]↗{{hi:nih-plug}}                                                                       | Framework for building audio plugins.                                                 |
+| Task | Crates | Notes |
+| --- | --- | --- |
+| Device input and output | [`cpal`][c~cpal~docs]↗{{hi:cpal}}, [`rodio`][c~rodio~docs]↗{{hi:rodio}} | `cpal` exposes audio devices and streams; `rodio` provides higher-level playback. |
+| MIDI input and output | [`midir`][c~midir~docs]↗{{hi:midir}} | Connect to MIDI ports and receive or send raw messages in real time. |
+| Decode media | [`symphonia`][c~symphonia~docs]↗{{hi:symphonia}} | Decode common compressed and uncompressed formats. |
+| Read and write audio formats | [`hound`][c~hound~docs]↗{{hi:hound}}, [`ogg`][c~ogg~docs]↗{{hi:ogg}}, [`flac`][c~flac~docs]↗{{hi:flac}} | `hound` handles WAV; use Ogg or FLAC crates when working directly with those formats. |
+| Encode Vorbis and Opus | [`vorbis_rs`][c~vorbis_rs~docs]↗{{hi:vorbis_rs}}, [`opus`][c~opus~docs]↗{{hi:opus}} | Use an encoder library appropriate to the target codec. |
+| Binaural rendering | [`hrtf`][c~hrtf~docs]↗{{hi:hrtf}} | Spatialize a mono source with head-related impulse responses. |
+| Synthesis and DSP | [`fundsp`][c~fundsp~docs]↗{{hi:fundsp}}, [`dasp`][c~dasp~docs]↗{{hi:dasp}}, [`rubato`][c~rubato~docs]↗{{hi:rubato}} | Synthesize, process, or resample sample streams. |
+| Audio plugins | [`nih-plug`][c~nih-plug~repo]↗{{hi:nih-plug}} | Framework for building audio plugins. |
 
 ## Audio Streaming
 

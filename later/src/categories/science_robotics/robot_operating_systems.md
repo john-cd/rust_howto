@@ -10,13 +10,13 @@ ROS connects robot nodes through topics, services, and actions. Choose a ROS 2 c
 
 The release snapshot below was checked on October 29, 2026. A recent release shows activity, but does not guarantee compatibility with every ROS distribution or DDS implementation.
 
-| Client                            | ROS version and approach                                                        | Latest stable release checked | Integration and status                                                                                                  |
-| --------------------------------- | ------------------------------------------------------------------------------- | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| [`r2r`][r2r~setup]                | ROS 2; bindings to installed `rcl` libraries and generated message support      | 0.9.7, September 13, 2026     | Used by the recipe below; source a compatible ROS installation and install libclang.                                    |
-| [`rclrs`][ros2-rust~repo]         | ROS 2; Rust client built on `rcl` in the ros2-rust project                      | 0.8.0, September 23, 2026     | Integrates with ROS workspaces, `colcon`, and `cargo-ament-build`; its API and distribution support are still evolving. |
-| [`ros2-client`][ros2-client~repo] | ROS 2; native Rust client with RustDDS by default and an optional Zenoh backend | 0.12.1, October 26, 2026      | Avoids the native `rcl` client stack; check message generation, QoS, security, and ROS interoperability support.        |
-| [`rosrust`][c~rosrust~repo]       | ROS 1; native Rust client                                                       | 0.9.12, February 3, 2025      | For existing ROS 1 deployments; the ROS 1 ecosystem is end of life.                                                     |
-| [`roslibrust`][roslibrust~repo]   | Async Rust abstraction with ROS 1, ROS 2, rosbridge, and Zenoh backends         | 0.26.0, September 25, 2026    | Select the backend and its prerequisites explicitly; rosbridge needs a bridge server and adds a protocol hop.           |
+| Client | ROS version and approach | Latest stable release checked | Integration and status |
+| --- | --- | --- | --- |
+| [`r2r`][r2r~setup] | ROS 2; bindings to installed `rcl` libraries and generated message support | 0.9.7, September 13, 2026 | Used by the recipe below; source a compatible ROS installation and install libclang. |
+| [`rclrs`][ros2-rust~repo] | ROS 2; Rust client built on `rcl` in the ros2-rust project | 0.8.0, September 23, 2026 | Integrates with ROS workspaces, `colcon`, and `cargo-ament-build`; its API and distribution support are still evolving. |
+| [`ros2-client`][ros2-client~repo] | ROS 2; native Rust client with RustDDS by default and an optional Zenoh backend | 0.12.1, October 26, 2026 | Avoids the native `rcl` client stack; check message generation, QoS, security, and ROS interoperability support. |
+| [`rosrust`][c~rosrust~repo] | ROS 1; native Rust client | 0.9.12, February 3, 2025 | For existing ROS 1 deployments; the ROS 1 ecosystem is end of life. |
+| [`roslibrust`][roslibrust~repo] | Async Rust abstraction with ROS 1, ROS 2, rosbridge, and Zenoh backends | 0.26.0, September 25, 2026 | Select the backend and its prerequisites explicitly; rosbridge needs a bridge server and adds a protocol hop. |
 
 ROS applications are composed of nodes that exchange messages on topics, make request-response calls through services, or run long-lived actions. Select a client based on whether the project already uses a ROS installation and `rcl`, needs a pure-Rust middleware stack, or communicates through a bridge. The table's release dates are a snapshot; verify current package and distribution support before choosing.
 

@@ -8,15 +8,15 @@ Use macOS-specific frameworks only when portable Rust APIs do not cover the requ
 
 ## Frameworks and Tasks
 
-| Framework or task      | Rust bindings                                                                        | Common use                                                  |
-| ---------------------- | ------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
-| AppKit                 | [`objc2-app-kit`][c~objc2-app-kit~docs]↗{{hi:objc2-app-kit}}                         | Native windows, application lifecycle, menus, and controls. |
-| Swift interoperability | [swift-bridge][swift-bridge~repo]↗                                                   | Generate bindings when a Swift application calls Rust.      |
-| Foundation             | [`objc2-foundation`][c~objc2-foundation~docs]↗{{hi:objc2-foundation}}                | Foundation objects and services.                            |
-| Core Foundation        | [`objc2-core-foundation`][c~objc2-core-foundation~docs]↗{{hi:objc2-core-foundation}} | Lower-level Core Foundation APIs.                           |
-| Security and Keychain  | [`objc2-security`][c~objc2-security~docs]↗{{hi:objc2-security}}                      | Security framework and credential storage.                  |
-| File events            | FSEvents bindings                                                                    | Watch filesystem changes using the native event service.    |
-| App packaging          | [`cargo-bundle`][c~cargo-bundle~docs]↗{{hi:cargo-bundle}}                            | Package a Rust application bundle for distribution.         |
+| Framework or task | Rust bindings | Common use |
+| --- | --- | --- |
+| AppKit | [`objc2-app-kit`][c~objc2-app-kit~docs]↗{{hi:objc2-app-kit}} | Native windows, application lifecycle, menus, and controls. |
+| Swift interoperability | [swift-bridge][swift-bridge~repo]↗ | Generate bindings when a Swift application calls Rust. |
+| Foundation | [`objc2-foundation`][c~objc2-foundation~docs]↗{{hi:objc2-foundation}} | Foundation objects and services. |
+| Core Foundation | [`objc2-core-foundation`][c~objc2-core-foundation~docs]↗{{hi:objc2-core-foundation}} | Lower-level Core Foundation APIs. |
+| Security and Keychain | [`objc2-security`][c~objc2-security~docs]↗{{hi:objc2-security}} | Security framework and credential storage. |
+| File events | FSEvents bindings | Watch filesystem changes using the native event service. |
+| App packaging | [`cargo-bundle`][c~cargo-bundle~docs]↗{{hi:cargo-bundle}} | Package a Rust application bundle for distribution. |
 
 The older `cocoa`, `core-foundation`, and `objc` crates are legacy interfaces. For new Objective-C framework code, review the `objc2-*` crates and their framework features. The older wrapper is retained in the existing example for comparison; see [[objc | Objective-C]].
 

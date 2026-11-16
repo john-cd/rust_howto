@@ -8,11 +8,11 @@
 
 Choose the target to match the host:
 
-| Target                   | Use                                                 | Host requirements                                                                                  |
-| ------------------------ | --------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `wasm32-unknown-unknown` | Browser and JavaScript-hosted modules.              | Provides no operating-system APIs; use JavaScript bindings for host services.                      |
-| `wasm32-wasip1`          | Programs using the WASI Preview 1 system interface. | A runtime that supports Preview 1; useful when maintaining compatibility with existing WASI hosts. |
-| `wasm32-wasip2`          | Programs using the WASI Preview 2 component model.  | A runtime that supports Preview 2 components.                                                      |
+| Target | Use | Host requirements |
+| --- | --- | --- |
+| `wasm32-unknown-unknown` | Browser and JavaScript-hosted modules. | Provides no operating-system APIs; use JavaScript bindings for host services. |
+| `wasm32-wasip1` | Programs using the WASI Preview 1 system interface. | A runtime that supports Preview 1; useful when maintaining compatibility with existing WASI hosts. |
+| `wasm32-wasip2` | Programs using the WASI Preview 2 component model. | A runtime that supports Preview 2 components. |
 
 A browser application usually combines `wasm32-unknown-unknown` with a UI framework such as [[yew | Yew]] or [[leptos | Leptos]] and Trunk. A Rust library called from an existing JavaScript application can use `wasm-bindgen` and `wasm-pack`. For a command-line program or server module, choose a WASI target supported by the deployment runtime. The WASI Preview 1 target produces a core Wasm module; Preview 2 uses the component model.
 

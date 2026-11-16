@@ -78,16 +78,16 @@ The following example executes shell commands and interacts with the file system
 
 ## Related Topics {#related-topics .skip}
 
-| Topic                   | Rust Crates                                                                                                                                                                                                                   |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| General Build Guide     | See the [Cargo build overview][p~code-building] for ordinary package builds and profile configuration.                                                                                                                        |
-| Repository Automation   | See [[development-tools_automation                                                                                                                                                                                            | Repository Automation]] for an `xtask` project-check example and Git history automation. |
-| Cargo Commands          | See [[development-tools_cargo                                                                                                                                                                                                 | Cargo]] for built-in commands, package layout, workspaces, and build scripts. |
-| Testing                 | See [[development-tools_testing                                                                                                                                                                                               | Testing]] for test runners and CI checks that can be composed by a task runner. |
-| Cross-Compilation       | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation.                                                                                                                                                            |
+| Topic | Rust Crates |
+| --- | --- |
+| General Build Guide | See the [Cargo build overview][p~code-building] for ordinary package builds and profile configuration. |
+| Repository Automation | See [[development-tools_automation | Repository Automation]] for an `xtask` project-check example and Git history automation. |
+| Cargo Commands | See [[development-tools_cargo | Cargo]] for built-in commands, package layout, workspaces, and build scripts. |
+| Testing | See [[development-tools_testing | Testing]] for test runners and CI checks that can be composed by a task runner. |
+| Cross-Compilation | [`cross`][c~cross~docs]↗{{hi:cross}} simplifies cross-compilation. |
 | Packaging, Distribution | [`cargo-deb`][c~cargo-deb~docs]↗{{hi:cargo-deb}} creates Debian packages. [`cargo-rpm`][c~cargo-rpm~docs]↗{{hi:cargo-rpm}} creates RPM packages. [`create-dmg`][create-dmg~repo]↗{{hi:create-dmg}} creates macOS disk images. |
-| Build Script Helpers    | [`cc`][c~cc~docs]↗{{hi:cc}} helps with compiling C/C++ code in build scripts. [`pkg-config`][c~pkg-config~docs]↗{{hi:pkg-config}} finds system libraries.                                                                     |
-| Code Generation         | Use build scripts.                                                                                                                                                                                                            |
+| Build Script Helpers | [`cc`][c~cc~docs]↗{{hi:cc}} helps with compiling C/C++ code in build scripts. [`pkg-config`][c~pkg-config~docs]↗{{hi:pkg-config}} finds system libraries. |
+| Code Generation | Use build scripts. |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

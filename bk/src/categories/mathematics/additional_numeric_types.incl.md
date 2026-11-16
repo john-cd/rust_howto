@@ -2,23 +2,23 @@
 
 Choose a numeric representation for the range, precision, and operations your problem needs. Use [`num-bigint`][c~num-bigint~docs] for integers that can exceed the built-in types, [`rust_decimal`][c~rust_decimal~docs] for bounded base-10 values such as financial amounts, [`num-rational`][c~num-rational~docs] for exact fractions, [`fixed`][c~fixed~docs] when the number of fractional bits is fixed, and [`half`][c~half~docs] for compact IEEE 754 binary16 storage when its lower precision is acceptable. For arbitrary-precision rationals, floats, or complex numbers backed by GMP, MPFR, and MPC, consider [`rug`][c~rug~docs].
 
-| Representation                                                                                                  | Recommended crate                                                | Use it when                                                                 |
-| --------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| Arbitrary-precision integer                                                                                     | [`num-bigint`][c~num-bigint~docs]                                | Built-in integer ranges are too small.                                      |
-| Bounded decimal                                                                                                 | [`rust_decimal`][c~rust_decimal~docs]                            | Base-10 scale and predictable decimal rounding matter.                      |
-| Rational number                                                                                                 | [`num-rational`][c~num-rational~docs]                            | Keep fractions exact as numerator and denominator.                          |
-| Fixed-point number                                                                                              | [`fixed`][c~fixed~docs]                                          | The binary fractional precision is known in advance.                        |
-| Half-precision float                                                                                            | [`half`][c~half~docs]                                            | Reduce storage with IEEE 754 binary16 when reduced precision is acceptable. |
-| Recipe                                                                                                          | Crates                                                           | Categories                                                                  |
-| --------                                                                                                        | --------                                                         | ------------                                                                |
-| [Abstract over Different Number Types][ex~mathematics~abstracting-over-number-types]                            | {{#crate num-traits}}                                            | {{#categories mathematics=Mathematics}}                                     |
-| [Use Big Integers][ex~mathematics~big-integers]                                                                 | {{#crate num}} {{#crate num-bigint}} {{#crate rug}}              | {{#categories mathematics=Mathematics science=Science}}                     |
-| [Use Fixed-Precision Decimal Numbers][ex~mathematics~big-decimal]                                               | {{#crate rust_decimal}}                                          | {{#categories mathematics=Mathematics}}                                     |
-| [Sort Floats][ex~mathematics~sortable-floats]                                                                   | {{#crate ordered-float}}                                         | {{#categories mathematics=Mathematics}}                                     |
-| [Use Big Integers with `num-bigint`][ex~mathematics~num-bigint]                                                 | {{#crate num-bigint}}                                            | {{#categories mathematics=Mathematics science=Science}}                     |
-| [`num`][ex~mathematics~num]                                                                                     | {{#crate num}}                                                   | {{#categories mathematics=Mathematics science=Science}}                     |
-| [Work with Arbitrary-precision Integers, Rationals, Floats, and Complex Numbers with `rug`][ex~mathematics~rug] | {{#crate rug}}                                                   | {{#categories mathematics=Mathematics science=Science}}                     |
-| [`typenum`][ex~mathematics~typenum]                                                                             | [![typenum][c~typenum~docs~badge]][c~typenum~docs]{{hi:typenum}} | {{#categories mathematics=Mathematics}}                                     |
-| [Rational Numbers][ex~mathematics~rational-numbers]                                                             | {{#crate num-rational}}                                          | {{#categories mathematics=Mathematics}}                                     |
-| [Fixed-Point Numbers][ex~mathematics~fixed-point]                                                               | {{#crate fixed}}                                                 | {{#categories mathematics=Mathematics}}                                     |
-| [Half-Precision Floats][ex~mathematics~half-precision]                                                          | {{#crate half}}                                                  | {{#categories mathematics=Mathematics}}                                     |
+| Representation | Recommended crate | Use it when |
+| --- | --- | --- |
+| Arbitrary-precision integer | [`num-bigint`][c~num-bigint~docs] | Built-in integer ranges are too small. |
+| Bounded decimal | [`rust_decimal`][c~rust_decimal~docs] | Base-10 scale and predictable decimal rounding matter. |
+| Rational number | [`num-rational`][c~num-rational~docs] | Keep fractions exact as numerator and denominator. |
+| Fixed-point number | [`fixed`][c~fixed~docs] | The binary fractional precision is known in advance. |
+| Half-precision float | [`half`][c~half~docs] | Reduce storage with IEEE 754 binary16 when reduced precision is acceptable. |
+| Recipe | Crates | Categories |
+| --- | --- | --- |
+| [Abstract over Different Number Types][ex~mathematics~abstracting-over-number-types] | {{#crate num-traits}} | {{#categories mathematics=Mathematics}} |
+| [Use Big Integers][ex~mathematics~big-integers] | {{#crate num}} {{#crate num-bigint}} {{#crate rug}} | {{#categories mathematics=Mathematics science=Science}} |
+| [Use Fixed-Precision Decimal Numbers][ex~mathematics~big-decimal] | {{#crate rust_decimal}} | {{#categories mathematics=Mathematics}} |
+| [Sort Floats][ex~mathematics~sortable-floats] | {{#crate ordered-float}} | {{#categories mathematics=Mathematics}} |
+| [Use Big Integers with `num-bigint`][ex~mathematics~num-bigint] | {{#crate num-bigint}} | {{#categories mathematics=Mathematics science=Science}} |
+| [`num`][ex~mathematics~num] | {{#crate num}} | {{#categories mathematics=Mathematics science=Science}} |
+| [Work with Arbitrary-precision Integers, Rationals, Floats, and Complex Numbers with `rug`][ex~mathematics~rug] | {{#crate rug}} | {{#categories mathematics=Mathematics science=Science}} |
+| [`typenum`][ex~mathematics~typenum] | [![typenum][c~typenum~docs~badge]][c~typenum~docs]{{hi:typenum}} | {{#categories mathematics=Mathematics}} |
+| [Rational Numbers][ex~mathematics~rational-numbers] | {{#crate num-rational}} | {{#categories mathematics=Mathematics}} |
+| [Fixed-Point Numbers][ex~mathematics~fixed-point] | {{#crate fixed}} | {{#categories mathematics=Mathematics}} |
+| [Half-Precision Floats][ex~mathematics~half-precision] | {{#crate half}} | {{#categories mathematics=Mathematics}} |

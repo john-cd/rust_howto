@@ -6,12 +6,12 @@ This page compares Rocket, Poem, Salvo, and Warp. Axum and Actix Web have dedica
 
 ## Compare Frameworks
 
-| Framework                                                                                                              | Request and routing model                                                                                 | Consider it when                                                                                       |
-| ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| [Rocket][c~rocket~docs]↗ [![rocket][c~rocket~docs~badge]][c~rocket~docs]                                               | Declared routes with attribute macros; typed request and data guards validate inputs before handlers run. | You want route signatures and request validation to be explicit and type-driven.                       |
-| [Poem][c~poem~docs]↗ [![poem][c~poem~docs~badge]][c~poem~docs] [![poem~repo][c~poem~repo~badge]][c~poem~repo]          | Endpoint and handler functions, extractors, routing, and feature-gated middleware.                        | You want an endpoint-oriented API with modular optional features and test utilities.                   |
-| [Salvo][salvo~website]↗ [![salvo][c~salvo~docs~badge]][c~salvo~docs] [![salvo~repo][c~salvo~repo~badge]][c~salvo~repo] | Tree-based routing; handlers also provide middleware, with optional protocol and integration features.    | You want to compose routing and middleware and select optional capabilities such as OpenAPI or HTTP/3. |
-| [Warp][c~warp~docs]↗ [![warp][c~warp~docs~badge]][c~warp~docs] [![warp~repo][c~warp~repo~badge]][c~warp~repo]          | Composable `Filter`s combine routing, extraction, and response behavior.                                  | You prefer to build routes from reusable filter pipelines and test them without opening a listener.    |
+| Framework | Request and routing model | Consider it when |
+| --- | --- | --- |
+| [Rocket][c~rocket~docs]↗ [![rocket][c~rocket~docs~badge]][c~rocket~docs] | Declared routes with attribute macros; typed request and data guards validate inputs before handlers run. | You want route signatures and request validation to be explicit and type-driven. |
+| [Poem][c~poem~docs]↗ [![poem][c~poem~docs~badge]][c~poem~docs] [![poem~repo][c~poem~repo~badge]][c~poem~repo] | Endpoint and handler functions, extractors, routing, and feature-gated middleware. | You want an endpoint-oriented API with modular optional features and test utilities. |
+| [Salvo][salvo~website]↗ [![salvo][c~salvo~docs~badge]][c~salvo~docs] [![salvo~repo][c~salvo~repo~badge]][c~salvo~repo] | Tree-based routing; handlers also provide middleware, with optional protocol and integration features. | You want to compose routing and middleware and select optional capabilities such as OpenAPI or HTTP/3. |
+| [Warp][c~warp~docs]↗ [![warp][c~warp~docs~badge]][c~warp~docs] [![warp~repo][c~warp~repo~badge]][c~warp~repo] | Composable `Filter`s combine routing, extraction, and response behavior. | You prefer to build routes from reusable filter pipelines and test them without opening a listener. |
 
 These frameworks have different APIs and feature sets. Compare their current documentation, supported Rust versions, runtimes, release history, and required integrations before choosing one. For a full-stack framework such as Cot or Loco, see [Batteries-included Frameworks][p~batteries-included-frameworks].
 

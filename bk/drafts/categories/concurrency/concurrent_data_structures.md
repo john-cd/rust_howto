@@ -6,14 +6,14 @@
 
 Refer to the [comparative benchmarks of concurrent HashMaps][conc-map-bench~repo]↗.
 
-| Crate                                        | Structure                       | Lock-free?                                                   | Notes                                                                                   |
-| -------------------------------------------- | ------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
-| [`dashmap`][c~dashmap~docs]↗                 | Sharded hash map                | No; uses shard locks                                         | Familiar map API. Keep entry guards short-lived.                                        |
-| [`papaya`][c~papaya~docs]↗                   | Concurrent hash table           | Yes; lock-free map API                                       | Pin the map for access; pins also protect values from reclamation.                      |
-| [`scc`][c~scc~docs]↗                         | Concurrent hash map and indexes | Mixed; entry access uses bucket locks, resizing is lock-free | Provides sync and async interfaces.                                                     |
-| [`flurry`][c~flurry~docs]↗                   | Concurrent hash table           | Reads do not lock; updates are synchronized                  | Access methods use a guard for safe reclamation.                                        |
-| [`crossbeam-queue`][c~crossbeam-queue~docs]↗ | Bounded MPMC queue              | Yes                                                          | `ArrayQueue` has a fixed capacity and reports when it is full.                          |
-| [`arc-swap`][c~arc-swap~docs]↗               | Atomic shared-pointer slot      | Readers are lock-free; writers are lock-free                 | Useful for read-mostly configuration snapshots; see [ArcSwap][ex~concurrency~arc-swap]. |
+| Crate | Structure | Lock-free? | Notes |
+| --- | --- | --- | --- |
+| [`dashmap`][c~dashmap~docs]↗ | Sharded hash map | No; uses shard locks | Familiar map API. Keep entry guards short-lived. |
+| [`papaya`][c~papaya~docs]↗ | Concurrent hash table | Yes; lock-free map API | Pin the map for access; pins also protect values from reclamation. |
+| [`scc`][c~scc~docs]↗ | Concurrent hash map and indexes | Mixed; entry access uses bucket locks, resizing is lock-free | Provides sync and async interfaces. |
+| [`flurry`][c~flurry~docs]↗ | Concurrent hash table | Reads do not lock; updates are synchronized | Access methods use a guard for safe reclamation. |
+| [`crossbeam-queue`][c~crossbeam-queue~docs]↗ | Bounded MPMC queue | Yes | `ArrayQueue` has a fixed capacity and reports when it is full. |
+| [`arc-swap`][c~arc-swap~docs]↗ | Atomic shared-pointer slot | Readers are lock-free; writers are lock-free | Useful for read-mostly configuration snapshots; see [ArcSwap][ex~concurrency~arc-swap]. |
 
 ## `dashmap` {#dashmap}
 

@@ -31,11 +31,11 @@ In `snake_case` or `SCREAMING_SNAKE_CASE`, a "word" should never consist of a si
 
 Conversions should be provided as methods, with names prefixed as follows:
 
-| Prefix  | Cost      | Ownership                                                                                 |
-| ------- | --------- | ----------------------------------------------------------------------------------------- |
-| `as_`   | Cheap     | Borrowed -> borrowed. Use if it returns another "view" of the data.                       |
-| `to_`   | Expensive | Borrowed -> borrowed; borrowed -> owned (non-`Copy` types); owned -> owned (`Copy` types) |
-| `into_` | Variable  | Owned -> owned (non-Copy types). `into_*` consumes its input.                             |
+| Prefix | Cost | Ownership |
+| --- | --- | --- |
+| `as_` | Cheap | Borrowed -> borrowed. Use if it returns another "view" of the data. |
+| `to_` | Expensive | Borrowed -> borrowed; borrowed -> owned (non-`Copy` types); owned -> owned (`Copy` types) |
+| `into_` | Variable | Owned -> owned (non-Copy types). `into_*` consumes its input. |
 
 Examples:
 

@@ -6,14 +6,14 @@ A 2D renderer turns paths, shapes, text, or a pixel buffer into an image. Use th
 
 ## Compare Rendering Approaches {#choosing-the-right-library}
 
-| Task                             | Crates                 | Integration boundary                                                     |
-| -------------------------------- | ---------------------- | ------------------------------------------------------------------------ |
-| Draw paths into a CPU image      | `tiny-skia`, `raqote`  | An in-memory pixel buffer; no GPU or window is needed.                   |
-| Present an existing pixel buffer | `pixels`, `minifb`     | Supply pixels and connect a window or graphics backend.                  |
-| Tessellate vector geometry       | `lyon`                 | Produces vertices and indices; the application chooses a renderer.       |
-| Draw through a canvas API        | `femtovg`, `skia-safe` | Manage the context, target surface, and native-library prerequisites.    |
-| Render a vector scene on a GPU   | `vello`, `vger`        | Provide a compatible GPU backend and render target.                      |
-| Integrate a browser renderer     | `webrender`            | Browser-engine infrastructure, rather than a general application recipe. |
+| Task | Crates | Integration boundary |
+| --- | --- | --- |
+| Draw paths into a CPU image | `tiny-skia`, `raqote` | An in-memory pixel buffer; no GPU or window is needed. |
+| Present an existing pixel buffer | `pixels`, `minifb` | Supply pixels and connect a window or graphics backend. |
+| Tessellate vector geometry | `lyon` | Produces vertices and indices; the application chooses a renderer. |
+| Draw through a canvas API | `femtovg`, `skia-safe` | Manage the context, target surface, and native-library prerequisites. |
+| Render a vector scene on a GPU | `vello`, `vger` | Provide a compatible GPU backend and render target. |
+| Integrate a browser renderer | `webrender` | Browser-engine infrastructure, rather than a general application recipe. |
 
 A crate's GPU backend must be compatible with the versions used elsewhere in an application. In particular, [Vger](2d_vector_graphics.md#vger) expects a WGPU integration different from this workspace; it remains documented without a runnable book recipe. [WebRender](2d_vector_graphics.md#webrender) is background coverage rather than a recommended standalone example. These dispositions avoid presenting unfinished adapters as working recipes.
 
