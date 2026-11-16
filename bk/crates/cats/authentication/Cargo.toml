@@ -50,7 +50,6 @@ path = "examples/oauth_client_credentials/main.rs"
 test = true
 
 [dependencies]
-clap = "4.6.7"
 ## General
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
@@ -60,6 +59,7 @@ argon2 = "0.6.0"
 axum = { version = "0.8.9", features = ["form"] }
 # User identification, authentication, and authorization for Axum.
 axum-login = "0.18.0"
+clap = "4.6.7"
 # A small cross-platform library for retrieving random data from system source
 getrandom = "0.4.3" # Generate random CSRF tokens.
 # Combinators and adapters for HTTP request or response bodies.

@@ -23,10 +23,10 @@ path = "examples/visualization/main.rs"
 test = true
 
 [dependencies]
-clap = "4.6.7"
 ## General
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+clap = "4.6.7"
 # Leptos is a full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
 leptos = { version = "0.8.23", features = ["ssr"] }
 # Chartistry is a charting library for Leptos

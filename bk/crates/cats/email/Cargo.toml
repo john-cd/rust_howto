@@ -38,13 +38,13 @@ path = "examples/mailparse.rs"
 test = true
 
 [dependencies]
-clap = "4.6.7"
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # Async IMAP client for Rust
 async-imap = { version = "0.12.0", default-features = false, features = [
     "runtime-tokio",
 ] }
+clap = "4.6.7"
 # An implementation of futures and streams featuring zero allocations, composability, and iterator-like interfaces.
 futures = "0.3.34"
 # Render HTML as plain text.

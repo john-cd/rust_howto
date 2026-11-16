@@ -7,7 +7,7 @@ publish = false
 
 [dependencies]
 inventory = "0.3.25"
-plugin_registry = { path = "../plugin_registry" }
+plugin_registry = { version = "0.1.2", path = "../plugin_registry" }
 
 [lints]
 workspace = true

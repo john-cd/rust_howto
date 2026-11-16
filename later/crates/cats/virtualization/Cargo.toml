@@ -23,11 +23,11 @@ path = "examples/virtualization/main.rs"
 test = true
 
 [dependencies]
-clap = "4.6.7"
 # Flexible concrete Error type built on std::error::Error
 anyhow = { version = "1.0.104", optional = true }
 # An asynchronous Docker daemon API
 bollard = { version = "0.21.1", optional = true }
+clap = "4.6.7"
 # Common utilities and extension traits for the futures-rs library.
 futures-util = { version = "0.3.34", optional = true }
 # A library for integration-testing against docker containers from within Rust.
