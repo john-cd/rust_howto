@@ -67,8 +67,6 @@ Assertions are for tests and internal invariants. Return a `Result` for expected
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-write
-
 - [pretty_assertions - Rust dev tool][c~pretty_assertions~lib.rs]↗.
 
 </div>

@@ -58,7 +58,3 @@ Do not cast arbitrary bytes to a pixel struct unless its layout, alignment, and 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

@@ -46,7 +46,3 @@ Keep secrets out of source control. Restrict access to configuration files that 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

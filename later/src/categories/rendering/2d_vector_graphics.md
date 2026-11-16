@@ -97,7 +97,3 @@ Use Lyon when your application needs path geometry and wants to select its own b
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

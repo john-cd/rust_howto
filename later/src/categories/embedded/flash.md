@@ -42,7 +42,3 @@ For persistent records, define a format with versioning and integrity checks. De
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

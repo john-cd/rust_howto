@@ -73,7 +73,3 @@ The [`embedded-storage`][c~embedded-storage~docs]↗ traits give drivers and sto
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

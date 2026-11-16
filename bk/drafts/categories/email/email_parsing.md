@@ -35,7 +35,3 @@ Treat headers, HTML, filenames, and attachments as untrusted input. Set message-
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

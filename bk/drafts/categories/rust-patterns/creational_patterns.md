@@ -43,7 +43,3 @@ A singleton exposes one shared instance, often through a global lazy initializer
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

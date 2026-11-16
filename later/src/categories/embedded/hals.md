@@ -74,7 +74,3 @@ The following host-side example implements `embedded-hal`'s output-pin trait for
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

@@ -46,7 +46,3 @@ The `Body` trait yields frames asynchronously. Data frames carry byte buffers, a
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

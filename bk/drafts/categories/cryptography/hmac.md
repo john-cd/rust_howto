@@ -35,7 +35,3 @@ The example uses [`ring::hmac`][c~ring::hmac~docs]↗{{hi:ring::hmac}} to create
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

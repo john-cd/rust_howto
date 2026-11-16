@@ -77,7 +77,3 @@ The example also shows one accent-insensitive comparison policy: apply canonical
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write
-</div>

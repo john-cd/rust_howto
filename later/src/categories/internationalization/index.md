@@ -51,6 +51,5 @@ Test messages with missing translations and fallback locales, long translated st
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  write
   Review `whoami`
 </div>
