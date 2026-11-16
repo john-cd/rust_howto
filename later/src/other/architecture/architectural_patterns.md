@@ -27,9 +27,11 @@
 
 ## Dependency Injection {#dependency-injection}
 
-- Promotes modularity by injecting dependencies at runtime or compile time.
-- Achievable using crates like [`shaku`][c~shaku~docs]↗{{hi:shaku}}.
-- Rarer in Rust than in other languages like Java.
+Assemble dependencies where the application is configured. This example uses
+`shaku` to inject a `Greeter` into an `EnglishConversation`. The module builder
+also sets the conversation parameters. A plugin registry serves a different purpose:
+discovering implementations registered by different parts of the application.
+See [Plugin Registration](index.md#plugin-registration).
 
 ```rust,editable
 {{#include ../../../crates/other/examples/architecture/di.rs:example}}
@@ -46,7 +48,3 @@
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  write. create missing examples. cover [`inventory`][c~inventory~docs]↗{{hi:inventory}} crate for DI?
-</div>

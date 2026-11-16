@@ -90,7 +90,3 @@ For system-specific APIs, use the smallest platform-specific layer possible. The
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  add / write; link to other chapters; conditional compile
-</div>
