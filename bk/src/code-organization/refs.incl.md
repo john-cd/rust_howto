@@ -44,3 +44,14 @@
 [p~variables]: ../language/variables.md
 [p~visibility]: visibility.md
 [ex~code-organization~monorepos-and-git-submodules]: code_organization_by_project_type.md#monorepos-and-git-submodules
+
+[blog~stricter-clippy]: https://emschwartz.me/your-clippy-config-should-be-stricter/
+[book~clippy~configuration]: https://doc.rust-lang.org/clippy/configuration.html
+[book~clippy~lint-groups]: https://doc.rust-lang.org/clippy/lints.html
+[cargo~workspace-lints]: https://doc.rust-lang.org/cargo/reference/workspaces.html#the-lints-table
+[rust-howto~example-clippy~repo]: https://github.com/john-cd/rust_howto/blob/develop/bk/crates/clippy.toml
+[rust-howto~example-lints~repo]: https://github.com/john-cd/rust_howto/blob/develop/bk/crates/Cargo.toml
+[rust-howto~lint-inheritance~repo]: https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/automation/xtask.md
+[rust-howto~tools-clippy~repo]: https://github.com/john-cd/rust_howto/blob/develop/tools/clippy.toml
+[rust-howto~tools-lints~repo]: https://github.com/john-cd/rust_howto/blob/develop/tools/Cargo.toml
+[rust-reference~lint-attributes]: https://doc.rust-lang.org/reference/attributes/diagnostics.html#lint-check-attributes

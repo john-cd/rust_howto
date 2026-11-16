@@ -35,6 +35,8 @@ just nta
 
 Use `just ntt <keyword>` for a focused test. For one Cargo test, run `cargo test -p <crate> <test_name>` from `bk/crates/`. After changing book content, use `just bb` to build it. In your pull request, list the checks you ran and any service, GUI, or platform-specific checks that could not run locally. Pull requests validate changes without publishing the book.
 
+For the lint settings behind the example checks, see [Configure Clippy for a Workspace](../../code-organization/clippy.md#repository-policy).
+
 ## Rust Playground
 
 A `rust` code block can show a play button that runs the code in the [Rust Playground][rust-playground~website]↗{{hi:Rust Playground}}. Add the `mdbook-runnable` attribute to keep the button when `ignore` is set. The Playground supports a limited set of libraries; use `noplayground` when an example cannot run there.

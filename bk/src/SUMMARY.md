@@ -57,6 +57,7 @@
   - [Dependencies](code-organization/dependencies.md)
   - [Code Organization by Project Type](code-organization/code_organization_by_project_type.md)
   - [Naming Conventions](code-organization/naming_conventions.md)
+  - [Configure Clippy for a Workspace](code-organization/clippy.md)
 
 ## Code Examples by Category
 
