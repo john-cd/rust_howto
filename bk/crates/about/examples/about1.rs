@@ -2,7 +2,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! This example demonstrates converting a byte slice representing an IPv6
 //! address to an `IpAddr` type.
 //!
