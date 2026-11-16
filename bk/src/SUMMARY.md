@@ -150,6 +150,7 @@
 - [Date and Time](categories/date-and-time/jiff_dst.md)
 - [Register Commands Explicitly or with Inventory](categories/rust-patterns/plugin_registration.md)
 - [Find Missing Assertions with Mutation Testing](categories/development-tools/mutation_testing.md)
+- [Test an AWS Lambda Handler Locally](categories/cloud/aws_lambda.md)
 - [HTTP Servers](categories/web-programming_http-server/json_patch.md)
   - [Bound Retries and Concurrency with Tower](categories/web-programming_http-server/service_resilience.md)
 
