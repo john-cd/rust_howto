@@ -71,6 +71,11 @@ When defining a function that accepts a closure, you use the `Fn`, `FnMut`, or `
 {{#include ../../crates/language/examples/closures/closures_as_input_parameters.rs:example}}
 ```
 
+A function that accepts a callable can also accept a tuple struct or tuple
+variant constructor when its signature matches. For example,
+`values.into_iter().map(Some)` wraps each value in `Option::Some`. These
+constructors are [function items](https://doc.rust-lang.org/reference/types/function-item.html).
+
 ## Related Topics {#related-topics .skip}
 
 - [[functions | Functions]].
@@ -81,12 +86,6 @@ When defining a function that accepts a closure, you use the `Fn`, `FnMut`, or `
 {{#include ../refs/link-refs.md}}
 
 <div class="hidden">
-
-Methods expecting a closure can also accept an enum variant (tuple-like)
-
-https://www.reddit.com/r/rust/comments/1l8okiy/im_blown_that_this_is_a_thing/
-
-Enum variants and tuple-like structs can be used as function items in general https://doc.rust-lang.org/reference/types/function-item.html
 
 accuracy review: introduction and language basics
 

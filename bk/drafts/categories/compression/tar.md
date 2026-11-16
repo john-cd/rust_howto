@@ -55,7 +55,3 @@ The runnable example expects `temp/archive.tar.gz` and writes files beneath `tem
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [tar: review](https://github.com/john-cd/rust_howto/issues/253)
-</div>

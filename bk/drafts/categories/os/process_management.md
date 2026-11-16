@@ -69,7 +69,3 @@ Controlling the lifetime of a child is different from limiting what it can do. T
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [manage child processes](https://github.com/john-cd/rust_howto/issues/1922)
-</div>

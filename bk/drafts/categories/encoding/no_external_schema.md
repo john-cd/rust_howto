@@ -44,8 +44,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-[write](https://github.com/john-cd/rust_howto/issues/1078)
-
-This chapter compares formats that use application types without a separate schema file, including their wire-level type information and `no_std` support. The `rkyv` example remains as a distinct type-specific archive approach.
-
+  This chapter compares formats that use application types without a separate schema file, including their wire-level type information and `no_std` support. The `rkyv` example remains as a distinct type-specific archive approach.
 </div>

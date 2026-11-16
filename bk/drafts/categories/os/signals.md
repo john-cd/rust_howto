@@ -38,7 +38,3 @@ In async code, await [`tokio::signal::ctrl_c`][c~tokio::signal::ctrl_c~docs]↗{
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [graceful shutdown on Ctrl-C](https://github.com/john-cd/rust_howto/issues/1907)
-</div>

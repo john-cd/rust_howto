@@ -40,9 +40,5 @@ GitHub [sunset Atom on December 15, 2022](https://github.blog/2022-06-08-sunsett
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-
-The table distinguishes native support from plugin and LSP setups, fills in integration details, removes Atom from the current-editor list because GitHub sunset it, and replaces the unfinished related-topics placeholder. Recheck vendor setup links when updating this index.
-
-[Review the text editors index](https://github.com/john-cd/rust_howto/issues/962)
-
+  The table distinguishes native support from plugin and LSP setups, fills in integration details, removes Atom from the current-editor list because GitHub sunset it, and replaces the unfinished related-topics placeholder. Recheck vendor setup links when updating this index.
 </div>

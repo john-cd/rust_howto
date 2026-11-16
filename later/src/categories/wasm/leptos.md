@@ -116,8 +116,3 @@ Keep the token out of `localStorage` where possible, since any script on the pag
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-[client-side app written for issue #1944](https://github.com/john-cd/rust_howto/issues/1944)
-
-</div>

@@ -36,7 +36,3 @@ Design notes:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [kubernetes operator](https://github.com/john-cd/rust_howto/issues/1928)
-</div>

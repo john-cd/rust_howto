@@ -72,7 +72,3 @@ A supervisor runs a task, restarts it when it fails with capped exponential back
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [structured concurrency: review the new page](https://github.com/john-cd/rust_howto/issues/1920)
-</div>

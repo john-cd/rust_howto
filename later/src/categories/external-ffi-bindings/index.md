@@ -33,12 +33,3 @@ The table is a set of examples, not an exhaustive catalog. The `-sys` crates com
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-review
-
-```rust,editable
-{{#include ../../../crates/cats/external_ffi_bindings/examples/external_ffi_bindings.rs:example}}
-```
-
-</div>

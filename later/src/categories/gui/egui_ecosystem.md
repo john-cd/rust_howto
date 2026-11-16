@@ -98,7 +98,3 @@ Use the same `egui_kittest` version as `egui`: the crate releases in lockstep.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [egui add-on crates](https://github.com/john-cd/rust_howto/issues/1933)
-</div>

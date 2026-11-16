@@ -29,7 +29,3 @@ The example needs a server, so the book does not run it; it reads `IMAP_HOST`, `
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [written for issue #1946](https://github.com/john-cd/rust_howto/issues/1946)
-</div>

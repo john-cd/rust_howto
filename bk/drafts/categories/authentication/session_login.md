@@ -71,7 +71,3 @@ The example generates 32 random bytes with [`getrandom`][c~getrandom~docs]↗{{h
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  [written for issue #1910](https://github.com/john-cd/rust_howto/issues/1910)
-</div>
