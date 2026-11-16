@@ -7,15 +7,14 @@ This crate contains standalone code examples and snippets that do not fit direct
 ## Examples Covered
 
 - **Data Processing & Apache Arrow**: Manipulating in-memory tabular data using `arrow` arrays, CSV/JSON I/O, and record batches.
-- **Applications Written in Rust**: Curated project references; the current executable example is an explicit placeholder.
 
 ## Usage
 
 To check or run examples in this crate:
 
 ```console
-cargo check --package written_in_rust --examples
-cargo test --package written_in_rust
+cargo check --package other --examples
+cargo test --package other
 ```
 
 Code examples correspond to standalone chapters in `bk/src/other/` or supplementary sections.
