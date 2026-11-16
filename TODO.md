@@ -30,11 +30,11 @@ The published book has foundational coverage, with the largest reader-facing gap
 - **P3** [#2267](https://github.com/john-cd/rust_howto/issues/2267) · Turn the existing AWS Lambda material into a runnable local workflow.
 - **P3** [#2268](https://github.com/john-cd/rust_howto/issues/2268) · Show a local Iroh peer round trip, identity, and failure handling.
 
-The November 16 [This Week in Rust archive](https://this-week-in-rust.org/blog/archives/index.html) follow-up checked recent issues against published and draft coverage. Three focused gaps from [#677](https://this-week-in-rust.org/blog/2026/11/11/this-week-in-rust-677/) remain:
+The November 16 [This Week in Rust archive](https://this-week-in-rust.org/blog/archives/index.html) follow-up checked recent issues against published and draft coverage. Three focused gaps from [#677](https://this-week-in-rust.org/blog/2026/11/11/this-week-in-rust-677/) were implemented in the published book:
 
-- **P2** [#2270](https://github.com/john-cd/rust_howto/issues/2270) · Explain pointer provenance with a runnable FFI boundary example and Miri check.
-- **P3** [#2271](https://github.com/john-cd/rust_howto/issues/2271) · Add a baseline-versus-change CI benchmark recipe with noise handling.
-- **P3** [#2272](https://github.com/john-cd/rust_howto/issues/2272) · Show panic, poisoning, and unwinding behavior at service and FFI boundaries.
+- [#2270](https://github.com/john-cd/rust_howto/issues/2270) · Pointer provenance and an FFI boundary example; test, Clippy, and Miri passed.
+- [#2271](https://github.com/john-cd/rust_howto/issues/2271) · CI benchmark comparison with a noise guard and raw timings.
+- [#2272](https://github.com/john-cd/rust_howto/issues/2272) · Panic, poisoning, and unwinding behavior at service and FFI boundaries.
 
 <!-- recommended-issue-order:start -->
 
