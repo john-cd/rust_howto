@@ -8,6 +8,7 @@ members = [
     "cats/asynchronous",
     "cats/authentication",
     "cats/caching",
+    "cats/cloud_lambda",
     "cats/command_line_interface",
     "cats/compression",
     "cats/concurrency",
