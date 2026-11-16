@@ -10,14 +10,14 @@ use clap::Subcommand;
 #[cfg(feature = "baseview")]
 mod baseview;
 
-/// Contains the software pixels functionality used by this parent module.
+/// Draws CPU-rendered pixels in a Winit window using Softbuffer.
 #[cfg(feature = "softbuffer")]
 mod software_pixels;
 // Tao's dependency is disabled because its current GTK 3 / glib 0.18 chain is
 // incompatible with the workspace. Keep tao.rs and the book example for a
 // compatible dependency update.
 
-/// Contains the winit functionality used by this parent module.
+/// Opens a native window and handles window events with Winit.
 mod winit;
 
 /// Command-line arguments.
