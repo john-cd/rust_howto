@@ -36,6 +36,10 @@ Rust's "module system" helps structure your projects effectively. It gives fine-
 
 {{#include naming_conventions.incl.md}}
 
+## Configure Clippy for a Workspace
+
+{{#include clippy.incl.md}}
+
 ## References
 
 - [Rust Project Primer][rustprojectprimer~website]↗.
