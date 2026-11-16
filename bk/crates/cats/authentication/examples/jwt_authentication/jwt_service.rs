@@ -62,14 +62,18 @@ fn main() -> anyhow::Result<()> {
     run_with_secret(TEST_JWT_SECRET)
 }
 
-/// Runs the example with a deterministic test secret without changing the
-/// process environment.
+/// Runs the example with `JWT_SECRET` when it is set, otherwise with a
+/// deterministic demonstration secret.
 ///
 /// # Errors
 ///
 /// Returns an error if a step of the example fails.
 pub fn run() -> anyhow::Result<()> {
-    main()
+    if std::env::var_os("JWT_SECRET").is_some() {
+        run_from_env()
+    } else {
+        main()
+    }
 }
 
 /// Verifies that the example succeeds with its injected test secret and fails on invalid secrets.

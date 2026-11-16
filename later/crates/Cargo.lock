@@ -1466,6 +1466,9 @@ checksum = "3a38750a2a9617d9f1a1428b408fb909f7256a2766c59b0b07993170959731bb"
 [[package]]
 name = "api_bindings"
 version = "0.1.2"
+dependencies = [
+ "flate2",
+]
 
 [[package]]
 name = "approx"
@@ -6023,6 +6026,7 @@ dependencies = [
 name = "computer_vision"
 version = "0.1.2"
 dependencies = [
+ "clap",
  "image 0.25.10",
  "opencv",
  "tempfile",
@@ -9754,6 +9758,7 @@ checksum = "edd0f118536f44f5ccd48bcb8b111bdc3de888b58c74639dfb034a357d0f206d"
 name = "emulators"
 version = "0.1.2"
 dependencies = [
+ "clap",
  "ihex",
  "polkavm",
 ]
@@ -10525,6 +10530,7 @@ dependencies = [
  "anyhow",
  "black_scholes",
  "chrono",
+ "clap",
  "financial",
  "governor",
  "rand 0.10.4",
@@ -17905,6 +17911,7 @@ dependencies = [
 name = "multimedia_audio"
 version = "0.1.2"
 dependencies = [
+ "clap",
  "cpal",
  "hound",
  "hrtf 0.10.0",
@@ -17917,6 +17924,7 @@ dependencies = [
 name = "multimedia_encoding"
 version = "0.1.2"
 dependencies = [
+ "clap",
  "hound",
  "mp4",
  "rav1e",
@@ -17927,6 +17935,7 @@ dependencies = [
 name = "multimedia_images"
 version = "0.1.2"
 dependencies = [
+ "clap",
  "image 0.25.10",
  "kamadak-exif",
  "oxipng",
@@ -22941,6 +22950,7 @@ name = "rendering"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "clap",
  "fontdue 0.9.5",
  "glam 0.34.3",
  "lyon",
@@ -24030,6 +24040,7 @@ dependencies = [
 name = "science_geo"
 version = "0.1.2"
 dependencies = [
+ "clap",
  "geo",
  "geocoding",
  "geojson",
@@ -24043,6 +24054,7 @@ dependencies = [
 name = "science_neuroscience"
 version = "0.1.2"
 dependencies = [
+ "clap",
  "ndarray 0.17.2",
  "nifti",
 ]
@@ -25155,6 +25167,7 @@ dependencies = [
 name = "simulation"
 version = "0.1.2"
 dependencies = [
+ "clap",
  "ode_solvers",
  "rapier2d 0.36.1",
 ]
@@ -28578,6 +28591,7 @@ checksum = "ba73ea9cf16a25df0c8caa16c51acb937d5712a8429db78a3ee29d5dcacd3a65"
 name = "value_formatting"
 version = "0.1.2"
 dependencies = [
+ "clap",
  "heck 0.5.0",
  "humansize",
  "itoa",
@@ -28803,6 +28817,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "bollard",
+ "clap",
  "futures-util",
  "testcontainers",
  "tokio",
@@ -28831,6 +28846,7 @@ name = "visualization"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "clap",
  "leptos",
  "leptos-chartistry",
  "plotly",
@@ -29942,6 +29958,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "async-tungstenite",
+ "clap",
  "futures-util",
  "tokio",
  "tokio-tungstenite 0.30.0",

@@ -23,6 +23,7 @@ path = "examples/emulators/main.rs"
 test = true
 
 [dependencies]
+clap = "4.6.7"
 # A Rust library for parsing and generating Intel HEX (or IHEX) objects. This format is commonly used for representing compiled program code and...
 ihex = "3.0.0"
 # A fast and secure RISC-V based virtual machine

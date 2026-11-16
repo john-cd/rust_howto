@@ -15,11 +15,37 @@ mod egui_table;
 
 /// Runs the immediate mode gui example.
 fn main() -> Result<(), eframe::Error> {
-    // Exercise the headless examples before opening the desktop window.
-    egui_headless::run();
-    egui_kittest::run();
-    egui_plot::run();
-    egui_table::run();
-    egui::run()?;
-    Ok(())
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("egui-headless"));
+    command = command.subcommand(clap::Command::new("egui-kittest"));
+    command = command.subcommand(clap::Command::new("egui-plot"));
+    command = command.subcommand(clap::Command::new("egui-table"));
+    command = command.subcommand(clap::Command::new("egui"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("egui-headless", _)) => {
+            egui_headless::run();
+            Ok(())
+        }
+        Some(("egui-kittest", _)) => {
+            egui_kittest::run();
+            Ok(())
+        }
+        Some(("egui-plot", _)) => {
+            egui_plot::run();
+            Ok(())
+        }
+        Some(("egui-table", _)) => {
+            egui_table::run();
+            Ok(())
+        }
+        Some(("egui", _)) => {
+            egui::run()?;
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

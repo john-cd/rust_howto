@@ -17,10 +17,42 @@ mod resize;
 
 /// Runs the images examples.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    blur::run();
-    convert::run()?;
-    exif_metadata::run()?;
-    optimize_png::run()?;
-    resize::run();
-    images::run()
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("blur"));
+    command = command.subcommand(clap::Command::new("convert"));
+    command = command.subcommand(clap::Command::new("exif-metadata"));
+    command = command.subcommand(clap::Command::new("optimize-png"));
+    command = command.subcommand(clap::Command::new("resize"));
+    command = command.subcommand(clap::Command::new("images"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("blur", _)) => {
+            blur::run();
+            Ok(())
+        }
+        Some(("convert", _)) => {
+            convert::run()?;
+            Ok(())
+        }
+        Some(("exif-metadata", _)) => {
+            exif_metadata::run()?;
+            Ok(())
+        }
+        Some(("optimize-png", _)) => {
+            optimize_png::run()?;
+            Ok(())
+        }
+        Some(("resize", _)) => {
+            resize::run();
+            Ok(())
+        }
+        Some(("images", _)) => {
+            images::run()?;
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

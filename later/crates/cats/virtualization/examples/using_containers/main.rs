@@ -10,6 +10,22 @@ mod redis_test;
 /// Executes the Docker recipes against the configured daemon.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    docker_client::run().await?;
-    redis_test::run().await
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("docker-client"));
+    command = command.subcommand(clap::Command::new("redis-test"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("docker-client", _)) => {
+            docker_client::run().await?;
+            Ok(())
+        }
+        Some(("redis-test", _)) => {
+            redis_test::run().await?;
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

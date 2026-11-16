@@ -1668,6 +1668,7 @@ dependencies = [
  "argon2 0.6.0",
  "axum 0.8.9",
  "axum-login",
+ "clap",
  "getrandom 0.4.3",
  "http-body-util",
  "httpmock",
@@ -5296,6 +5297,7 @@ dependencies = [
 name = "development_tools_profiling"
 version = "0.1.2"
 dependencies = [
+ "clap",
  "criterion",
  "dhat",
  "divan",
@@ -6003,6 +6005,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "async-imap",
+ "clap",
  "futures",
  "html2text",
  "lettre",

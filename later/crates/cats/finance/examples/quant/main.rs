@@ -17,11 +17,42 @@ mod trading_days;
 
 /// Runs the quant examples.
 fn main() -> anyhow::Result<()> {
-    rustquant::run();
-    black_scholes::run();
-    rolling_stats::run();
-    trading_days::run()?;
-    net_present_value::run();
-    monte_carlo::run();
-    Ok(())
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("rustquant"));
+    command = command.subcommand(clap::Command::new("black-scholes"));
+    command = command.subcommand(clap::Command::new("rolling-stats"));
+    command = command.subcommand(clap::Command::new("trading-days"));
+    command = command.subcommand(clap::Command::new("net-present-value"));
+    command = command.subcommand(clap::Command::new("monte-carlo"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("rustquant", _)) => {
+            rustquant::run();
+            Ok(())
+        }
+        Some(("black-scholes", _)) => {
+            black_scholes::run();
+            Ok(())
+        }
+        Some(("rolling-stats", _)) => {
+            rolling_stats::run();
+            Ok(())
+        }
+        Some(("trading-days", _)) => {
+            trading_days::run()?;
+            Ok(())
+        }
+        Some(("net-present-value", _)) => {
+            net_present_value::run();
+            Ok(())
+        }
+        Some(("monte-carlo", _)) => {
+            monte_carlo::run();
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

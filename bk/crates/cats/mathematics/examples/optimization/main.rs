@@ -16,10 +16,37 @@ mod particle_swarm;
 /// Runs the bounded function minimization, Nelder-Mead, CMA-ES and particle
 /// swarm examples.
 fn main() -> Result<(), argmin::core::Error> {
-    brent_minimization::run();
-    nelder_mead_rosenbrock::run()?;
-    cmaes_sphere::run();
-    genetic_algorithm::run();
-    particle_swarm::run();
-    Ok(())
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("brent-minimization"));
+    command = command.subcommand(clap::Command::new("nelder-mead-rosenbrock"));
+    command = command.subcommand(clap::Command::new("cmaes-sphere"));
+    command = command.subcommand(clap::Command::new("genetic-algorithm"));
+    command = command.subcommand(clap::Command::new("particle-swarm"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("brent-minimization", _)) => {
+            brent_minimization::run();
+            Ok(())
+        }
+        Some(("nelder-mead-rosenbrock", _)) => {
+            nelder_mead_rosenbrock::run()?;
+            Ok(())
+        }
+        Some(("cmaes-sphere", _)) => {
+            cmaes_sphere::run();
+            Ok(())
+        }
+        Some(("genetic-algorithm", _)) => {
+            genetic_algorithm::run();
+            Ok(())
+        }
+        Some(("particle-swarm", _)) => {
+            particle_swarm::run();
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

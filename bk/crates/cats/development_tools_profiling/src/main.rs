@@ -14,18 +14,20 @@ mod memory_usage_analysis {
 
 /// Runs both the heap profiling and execution-time demonstrations.
 fn main() {
-    memory_usage_analysis::dhat::run();
-    memory_usage_analysis::measure_time::run();
-}
-
-/// Calls both profiling demonstrations through the entry point.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// Verifies that both demonstrations return control to the entry point.
-    #[test]
-    fn test_main_runs() {
-        main();
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("dhat"));
+    command = command.subcommand(clap::Command::new("measure-time"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("dhat", _)) => {
+            memory_usage_analysis::dhat::run();
+        }
+        Some(("measure-time", _)) => {
+            memory_usage_analysis::measure_time::run();
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
     }
 }

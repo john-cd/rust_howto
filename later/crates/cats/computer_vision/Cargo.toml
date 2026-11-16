@@ -23,7 +23,7 @@ path = "examples/opencv/main.rs"
 test = true
 
 [dependencies]
-
+clap = "4.6.7"
 [dev-dependencies]
 # Gives the image-processing test isolated input and output paths.
 tempfile = "3.27.0"

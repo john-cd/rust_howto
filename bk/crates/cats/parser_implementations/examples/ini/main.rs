@@ -11,6 +11,22 @@ mod rust_ini;
 
 /// Runs the ini example.
 fn main() -> anyhow::Result<()> {
-    configparser_ini::run()?;
-    rust_ini::run()
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("configparser-ini"));
+    command = command.subcommand(clap::Command::new("rust-ini"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("configparser-ini", _)) => {
+            configparser_ini::run()?;
+            Ok(())
+        }
+        Some(("rust-ini", _)) => {
+            rust_ini::run()?;
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

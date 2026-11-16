@@ -9,6 +9,20 @@ mod module_visibility;
 
 /// Runs the modules example.
 fn main() {
-    module_paths::run();
-    module_visibility::run();
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("module-paths"));
+    command = command.subcommand(clap::Command::new("module-visibility"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("module-paths", _)) => {
+            module_paths::run();
+        }
+        Some(("module-visibility", _)) => {
+            module_visibility::run();
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

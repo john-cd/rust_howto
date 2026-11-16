@@ -9,6 +9,22 @@ mod bonsai_bt;
 
 /// Runs the artificial intelligence examples.
 fn main() -> anyhow::Result<()> {
-    astar::run()?;
-    bonsai_bt::run()
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("astar"));
+    command = command.subcommand(clap::Command::new("bonsai-bt"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("astar", _)) => {
+            astar::run()?;
+            Ok(())
+        }
+        Some(("bonsai-bt", _)) => {
+            bonsai_bt::run()?;
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

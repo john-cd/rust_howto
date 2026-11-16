@@ -16,11 +16,40 @@ mod timeout_kill;
 
 /// Runs the examples that are available on this platform.
 fn main() -> anyhow::Result<()> {
-    #[cfg(unix)]
-    process_group::run()?;
+    let mut command = clap::Command::new("examples");
     #[cfg(windows)]
-    job_object::run()?;
-    timeout_kill::run()?;
-    kill_guard::run()?;
-    Ok(())
+    {
+        command = command.subcommand(clap::Command::new("job-object"));
+    }
+    command = command.subcommand(clap::Command::new("kill-guard"));
+    #[cfg(unix)]
+    {
+        command = command.subcommand(clap::Command::new("process-group"));
+    }
+    command = command.subcommand(clap::Command::new("timeout-kill"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        #[cfg(windows)]
+        Some(("job-object", _)) => {
+            job_object::run()?;
+            Ok(())
+        }
+        Some(("kill-guard", _)) => {
+            kill_guard::run()?;
+            Ok(())
+        }
+        #[cfg(unix)]
+        Some(("process-group", _)) => {
+            process_group::run()?;
+            Ok(())
+        }
+        Some(("timeout-kill", _)) => {
+            timeout_kill::run()?;
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

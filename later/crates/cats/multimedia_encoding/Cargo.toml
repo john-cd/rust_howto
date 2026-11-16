@@ -23,6 +23,7 @@ path = "examples/encoding/main.rs"
 test = true
 
 [dependencies]
+clap = "4.6.7"
 # A wav encoding and decoding library
 hound = "3.5.1"
 # MP4 reader and writer library in Rust.

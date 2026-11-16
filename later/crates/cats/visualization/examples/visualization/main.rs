@@ -11,8 +11,27 @@ mod plotters;
 
 /// Runs the visualization example.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-    plotly::run()?;
-    plotters::run()?;
-    leptos_chartistry::run();
-    Ok(())
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("plotly"));
+    command = command.subcommand(clap::Command::new("plotters"));
+    command = command.subcommand(clap::Command::new("leptos-chartistry"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("plotly", _)) => {
+            plotly::run()?;
+            Ok(())
+        }
+        Some(("plotters", _)) => {
+            plotters::run()?;
+            Ok(())
+        }
+        Some(("leptos-chartistry", _)) => {
+            leptos_chartistry::run();
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }

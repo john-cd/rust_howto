@@ -11,8 +11,27 @@ mod tungstenite;
 
 /// Runs each of the WebSocket examples.
 fn main() -> anyhow::Result<()> {
-    async_tungstenite::run()?;
-    tungstenite::run()?;
-    tokio_tungstenite::run()?;
-    Ok(())
+    let mut command = clap::Command::new("examples");
+    command = command.subcommand(clap::Command::new("async-tungstenite"));
+    command = command.subcommand(clap::Command::new("tungstenite"));
+    command = command.subcommand(clap::Command::new("tokio-tungstenite"));
+    let matches = command
+        .subcommand_required(true)
+        .arg_required_else_help(true)
+        .get_matches();
+    match matches.subcommand() {
+        Some(("async-tungstenite", _)) => {
+            async_tungstenite::run()?;
+            Ok(())
+        }
+        Some(("tungstenite", _)) => {
+            tungstenite::run()?;
+            Ok(())
+        }
+        Some(("tokio-tungstenite", _)) => {
+            tokio_tungstenite::run()?;
+            Ok(())
+        }
+        _ => unreachable!("Clap requires one of the declared subcommands"),
+    }
 }
