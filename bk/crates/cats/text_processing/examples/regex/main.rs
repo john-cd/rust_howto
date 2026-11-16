@@ -7,22 +7,16 @@ use clap::Subcommand;
 
 /// Extracting the login of an email address with a regular expression.
 mod email;
-
 /// Backreferences, capture groups and splitting with `fancy_regex`.
 mod fancy_regex;
-
 /// Filtering the lines of a log file with a set of regular expressions.
 mod filter_log;
-
 /// Extracting hashtags from a text with a regular expression.
 mod hashtags;
-
 /// This example demonstrates how to extract and format phone numbers from a
 mod phone;
-
 /// Extracting links from Markdown with several regular expressions.
 mod regex;
-
 /// Reformatting dates with a regular expression replacement.
 mod replace;
 

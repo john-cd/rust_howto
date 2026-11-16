@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// `comrak` is a `CommonMark` and GitHub-flavored Markdown compatible parser.
 mod comrak;
-
 /// This example demonstrates how to use the `markdown` crate to parse Markdown
 mod markdown;
-
 /// Example demonstrating the use of `pulldown-cmark` to parse Markdown and
 mod pulldown_cmark;
 

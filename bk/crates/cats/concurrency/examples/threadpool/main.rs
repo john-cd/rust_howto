@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Renders and saves a Julia set with Rayon and the image crate.
 mod threadpool_fractal;
-
 /// Walk a directory and computes the SHA256 digest of all iso files.
 mod threadpool_walk;
 

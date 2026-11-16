@@ -7,19 +7,14 @@ use clap::Subcommand;
 
 /// Consuming any `IntoIterator` in a generic function.
 mod consume_intoiterator;
-
 /// Example of `IntoIterator` implementation.
 mod implement_intoiterator;
-
 /// Iterator adapters, such as `map`, that transform an iterator lazily.
 mod iterator_adapters;
-
 /// This example demonstrates the difference between `iter()`, `iter_mut()` and
 mod iterators;
-
 /// Returning an iterator from a function with `impl Iterator`.
 mod return_iterator;
-
 /// Simple iterators that are built from a function or a value.
 mod simple_iterators;
 

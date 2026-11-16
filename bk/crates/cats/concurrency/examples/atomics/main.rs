@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Demonstrates the use of `AtomicCell` from the `crossbeam-utils` crate.
 mod atomic_cell;
-
 /// Demonstrates the use of atomic types.
 mod atomics;
-
 /// A spinlock built on an atomic flag, with a guard that unlocks it on drop.
 mod spinlock;
 

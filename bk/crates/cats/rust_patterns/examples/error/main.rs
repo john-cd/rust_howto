@@ -7,38 +7,28 @@ use clap::Subcommand;
 
 /// Demonstrates chaining fallible operations with `Result::and_then`.
 mod and_then;
-
 /// Demonstrates the use of the `anyhow` crate for error handling.
 mod anyhow;
-
 /// This example demonstrates how to use backtraces to debug errors.
 mod backtrace;
-
 /// Demonstrates how to use the `color-eyre` crate for enhanced error reporting.
 mod color_eyre;
 
 /// Defines failures emitted by error operations and conversions used at component boundaries.
 /// Callers match these errors to choose recovery or user-facing diagnostics.
 mod error_handling;
-
 /// Demonstrates transforming successful values and errors with `Result`.
 mod map;
-
 /// This example demonstrates how to define custom error types using `miette` and `thiserror`.
 mod miette;
-
 /// This example demonstrates a simple panic.
 mod panic;
-
 /// Demonstrates the use of `?`.
 mod question_mark;
-
 /// Propagating errors with the `?` operator through a function that parses a
 mod question_mark2;
-
 /// Demonstrates returning and handling a recoverable error with `Result`.
 mod result;
-
 /// This example demonstrates how to avoid discarding errors during error
 mod retain;
 
@@ -49,10 +39,8 @@ mod thiserror;
 /// Defines failures emitted by error operations and conversions used at component boundaries.
 /// Callers match these errors to choose recovery or user-facing diagnostics.
 mod thiserror2;
-
 /// Demonstrates the use of `unwrap()` and `expect()` for handling `Result`
 mod unwrap;
-
 /// Demonstrates the use of `unwrap_or` and `unwrap_or_else` for handling
 mod unwrap_or_else;
 

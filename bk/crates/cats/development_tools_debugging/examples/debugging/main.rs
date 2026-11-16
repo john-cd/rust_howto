@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Captures and prints a stack trace using the standard library.
 mod backtrace;
-
 /// Prints an expression with `dbg!` and continues with its value.
 mod dbg_macro;
 

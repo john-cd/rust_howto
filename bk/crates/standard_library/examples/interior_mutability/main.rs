@@ -8,13 +8,10 @@ use clap::Subcommand;
 /// `Cell<T>` provides a way to mutate data, even when the `Cell` itself is accessed through an
 /// immutable reference.
 mod cell;
-
 /// `OnceCell<T>` allows for single assignment, interior mutability.
 mod once_cell;
-
 /// A common pattern in Rust is using `Rc<RefCell<T>>` to allow multiple
 mod rc_refcell;
-
 /// `RefCell<T>` is a smart pointer that provides interior mutability.
 mod refcell;
 

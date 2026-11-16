@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Demonstrates the manipulation of complex numbers.
 mod add_complex;
-
 /// Creates complex numbers with integer and floating-point components.
 mod create_complex;
-
 /// This example shows how to use the `exp` function on a complex number.
 mod mathematical_functions;
 

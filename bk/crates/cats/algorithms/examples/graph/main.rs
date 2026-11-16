@@ -9,22 +9,16 @@ use clap::Subcommand;
 
 /// Implicit grid pathfinding using the A* algorithm and the `pathfinding` crate.
 mod pathfinding_astar;
-
 /// Finds a shortest path on a weighted graph with A* and Manhattan distance.
 mod petgraph_astar;
-
 /// Visits graph nodes level by level from the start node.
 mod petgraph_bfs;
-
 /// Explores a graph depth first to illustrate branch traversal order.
 mod petgraph_dfs;
-
 /// Computes single-source shortest paths in a weighted directed graph.
 mod petgraph_dijkstra;
-
 /// Builds a minimum spanning tree of a weighted undirected graph with Kruskal's algorithm.
 mod petgraph_mst;
-
 /// Orders tasks so each dependency precedes the task that needs it.
 mod petgraph_toposort;
 

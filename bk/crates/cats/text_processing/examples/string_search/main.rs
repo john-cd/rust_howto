@@ -7,13 +7,10 @@ use clap::Subcommand;
 
 /// Searching a text for several patterns at once with the Aho-Corasick
 mod aho_corasick;
-
 /// Fuzzy matching of strings with `fuzzy-matcher`.
 mod fuzzy_matcher;
-
 /// Searching bytes quickly with `memchr`.
 mod memchr;
-
 /// Measuring the similarity of strings with `strsim`.
 mod strsim;
 

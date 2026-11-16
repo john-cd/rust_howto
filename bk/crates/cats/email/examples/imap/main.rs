@@ -4,7 +4,6 @@
 
 /// Fetch unread messages over IMAP and parse them with [`mail_parser`].
 mod imap_fetch;
-
 /// Reject syntactically invalid and disposable addresses with [`mailchecker`].
 mod mailchecker;
 

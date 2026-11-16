@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// An `actix` counter actor that replies with its updated total.
 mod actix;
-
 /// A small actor built from a Tokio task and message channels.
 mod actors;
-
 /// An actor with the `ractor` crate: a greeter that counts the greetings it
 mod ractor;
 

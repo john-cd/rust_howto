@@ -7,13 +7,10 @@ use clap::Subcommand;
 
 /// Examples of password hashing and key derivation with Argon2.
 mod argon2;
-
 /// This example demonstrates how to use the `bcrypt` crate to hash and verify
 mod bcrypt;
-
 /// Demonstrates the use of PBKDF2 for password hashing and verification.
 mod pbkdf2;
-
 /// Hashing and verifying a password with `scrypt`.
 mod scrypt;
 

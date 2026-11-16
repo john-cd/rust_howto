@@ -8,29 +8,22 @@ use clap::Subcommand;
 /// CQRS (Command Query Responsibility Segregation) is an architectural pattern that separates the
 /// models for reading and writing data.
 mod cqrs;
-
 /// Dependency Injection (DI) is a design pattern that allows us to decouple
 mod di;
-
 /// Event-driven architecture: producers publish events to subscribers.
 mod event_bus;
-
 /// Event sourcing: store events, rebuild the state by replaying them.
 mod event_sourcing;
-
 /// Hexagonal architecture: a port (trait) with two adapters.
 mod hexagonal;
 
 /// This example demonstrates a layered architecture in Rust, separating concerns into data access,
 /// business logic, and presentation layers.
 mod layered_architecture;
-
 /// Pipeline architecture: stages connected by channels, each on its own thread.
 mod pipeline;
-
 /// Example usage of the `InMemoryUserRepository`.
 mod repository;
-
 /// A state machine whose transitions are triggered by events.
 mod state_machine;
 

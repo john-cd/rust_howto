@@ -4,7 +4,6 @@
 
 /// Resolve paths between modules and re-export a public module.
 mod module_paths;
-
 /// Visibility of items in modules.
 mod module_visibility;
 

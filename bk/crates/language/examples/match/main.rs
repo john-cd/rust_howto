@@ -7,38 +7,28 @@ use clap::Subcommand;
 
 /// Binding a value to a name while matching a pattern with `@`.
 mod at_bindings;
-
 /// Destructuring an enum in a `match`.
 mod destructure_enum;
-
 /// Destructuring references.
 mod destructure_reference;
-
 /// Destructuring a struct into its fields.
 mod destructure_struct;
-
 /// Destructuring a tuple in a `match`.
 mod destructure_tuple;
-
 /// Destructuring in function and closure arguments.
 mod fn_closure_arguments;
-
 /// Destructuring in a `for` loop.
 mod for1;
 
 /// The `if let` syntax allows you to combine `if` and `let` to handle values that match a specific
 /// pattern, while ignoring others.
 mod if_let;
-
 /// Ignoring values in patterns with `_` and `..`.
 mod ignore_values;
-
 /// Destructuring in a `let` statement.
 mod let1;
-
 /// The `let ...
 mod let_else;
-
 /// Matching literals.
 mod literals;
 
@@ -46,25 +36,18 @@ mod literals;
 /// expression to determine the value of a given coin in cents, demonstrating how `match` can handle
 /// different `enum` variants and extract data associated with them.
 mod match1;
-
 /// Matching a struct against patterns.
 mod match2;
-
 /// Match guards, the `if` conditions of match arms.
 mod match_guards;
-
 /// Matching one of several patterns with `|`.
 mod or_patterns;
-
 /// Matching ranges of values.
 mod ranges;
-
 /// Variable binding moves or copies the bound value by default.
 mod ref_bindings;
-
 /// Binding the content of an `Option` to a variable with `if let`.
 mod variable_binding;
-
 /// Looping with `while let`.
 mod while_let;
 

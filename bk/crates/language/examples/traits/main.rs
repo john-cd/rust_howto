@@ -7,43 +7,30 @@ use clap::Subcommand;
 
 /// A trait with an associated type.
 mod associated_types;
-
 /// A blanket implementation of a trait for all types that implement another.
 mod blanket_implementations;
-
 /// Associated constants in traits.
 mod const_in_traits;
-
 /// Adding a method to an external type with a trait.
 mod extend_external_type;
-
 /// A generic trait.
 mod generic_traits;
-
 /// The newtype pattern: implementing an external trait on an external type.
 mod newtype;
-
 /// Example of a sealed trait, preventing external implementations.
 mod sealed_trait_pattern;
-
 /// A trait that requires another trait.
 mod supertraits;
-
 /// Trait bounds on functions and implementations.
 mod trait_bounds;
-
 /// Trait bounds written in several ways.
 mod trait_bounds2;
-
 /// Requiring several traits with `+`.
 mod trait_bounds_multiple_traits;
-
 /// A trait method with a default implementation.
 mod trait_default_implementation;
-
 /// Types that can implement a trait.
 mod trait_types;
-
 /// Defining and implementing traits in Rust.
 mod traits;
 

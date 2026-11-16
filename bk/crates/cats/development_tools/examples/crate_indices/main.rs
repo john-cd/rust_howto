@@ -4,16 +4,12 @@
 
 /// Generate an alphabetical crate section with published recipe links.
 mod alphabetical_page;
-
 /// Generate a category page from local TOML metadata and recipe links.
 mod category_page;
-
 /// List dependencies declared in local Cargo manifests.
 mod dependencies;
-
 /// Shared local files for the crate-index examples.
 mod fixtures;
-
 /// Collect published recipe links from the local book index.
 mod published_recipes;
 

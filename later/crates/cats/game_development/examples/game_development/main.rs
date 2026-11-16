@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Detecting the collision of two shapes with `parry2d`.
 mod game_development1;
-
 /// Demonstrates the use of the `glam` crate.
 mod glam;
 

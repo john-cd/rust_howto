@@ -11,34 +11,24 @@ mod macro_by_example_basic;
 /// This macro provides a domain-specific language (DSL) for defining configuration for an
 /// application.
 mod macro_by_example_dsl;
-
 /// Macro hygiene: variables in a macro do not clash with variables outside it.
 mod macro_by_example_hygiene;
-
 /// Metavariables in declarative macros.
 mod macro_by_example_metavariables;
-
 /// Repetitions in declarative macros.
 mod macro_by_example_repetitions;
-
 /// Type checking of the expressions a declarative macro expands to.
 mod macro_by_example_type_checking;
-
 /// Restricting the types a declarative macro accepts.
 mod macro_by_example_type_checking2;
-
 /// Ways to use function-like macros: as expressions, statements, items and types.
 mod macros;
-
 /// Rewriting tokens with a procedural macro built on `proc-macro2`.
 mod proc_macro2_example;
-
 /// An attribute procedural macro that logs function calls.
 mod proc_macro_attribute;
-
 /// A derive procedural macro that implements a trait.
 mod proc_macro_derive;
-
 /// A function-like procedural macro that processes a SQL query.
 mod proc_macro_function;
 

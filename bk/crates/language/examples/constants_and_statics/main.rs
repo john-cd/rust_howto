@@ -8,10 +8,8 @@ use clap::Subcommand;
 
 /// `const` Example.
 mod constants;
-
 /// `static mut` Example.
 mod static_mut;
-
 /// `static` Example.
 mod statics;
 

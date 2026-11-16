@@ -7,19 +7,14 @@ use clap::Subcommand;
 
 /// Encode and decode bytes with the `base64` crate.
 mod base64_example;
-
 /// Encode a fixed-size token with the `base64ct` crate.
 mod base64ct_example;
-
 /// Fill a byte array with randomness from the operating system.
 mod getrandom_example;
-
 /// Encode and decode bytes as hexadecimal with the `hex` crate.
 mod hex_example;
-
 /// This example demonstrates the usage of the `subtle` crate for
 mod subtle;
-
 /// Demonstrates the use of the `zeroize` crate to securely clear sensitive data
 mod zeroize;
 

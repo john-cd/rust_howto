@@ -7,22 +7,16 @@ use clap::Subcommand;
 
 /// Functions that never return.
 mod diverging_functions;
-
 /// Passing and calling function pointers.
 mod function_pointers;
-
 /// Defining functions with arguments and return values.
 mod functions;
-
 /// Generic functions that take arguments of any type.
 mod generic_functions;
-
 /// Generic functions with trait bounds.
 mod generic_functions2;
-
 /// A generic function with a lifetime parameter.
 mod generic_functions3;
-
 /// Returning references and owned values from functions.
 mod return_reference;
 

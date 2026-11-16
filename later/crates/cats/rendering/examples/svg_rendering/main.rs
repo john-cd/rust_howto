@@ -4,7 +4,6 @@
 
 /// Parses an SVG and rasterizes it to a PNG with `resvg`.
 mod resvg;
-
 /// Parses and inspects the normalized SVG tree produced by `usvg`.
 mod usvg;
 

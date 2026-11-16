@@ -7,30 +7,24 @@ use clap::Subcommand;
 
 /// Configures and initializes the logging system using log4rs.
 mod log_custom;
-
 /// This example demonstrates how to create a custom logger.
 mod log_custom_logger;
-
 /// Emitting a debug message with the `log` crate.
 mod log_debug;
-
 /// Configuring `env_logger` with an environment variable.
 mod log_env_variable;
 
 /// Defines failures emitted by log operations and conversions used at component boundaries. Callers
 /// match these errors to choose recovery or user-facing diagnostics.
 mod log_error;
-
 /// Initializes the logger and logs warning, info, and debug messages from the
 mod log_mod;
-
 /// This example demonstrates how to configure the `env_logger` to output logs
 mod log_stdout;
 
 /// Initializes syslog and logs debug and error messages.
 #[cfg(unix)]
 mod log_syslog;
-
 /// This example demonstrates how to use `env_logger` to format log messages
 mod log_timestamp;
 

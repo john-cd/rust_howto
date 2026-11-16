@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// A styled progress spinner with `indicatif` and `console`.
 mod indicatif;
-
 /// A progress bar with `indicatif`.
 mod indicatif2;
-
 /// The `inquire` crate is used for creating interactive CLI prompts.
 mod inquire;
 

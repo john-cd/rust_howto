@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Demonstrates reading from a memory-mapped file.
 mod memmap2;
-
 /// Demonstrates writing to and reading from a file.
 mod read_file;
-
 /// Check whether we are reading & writing to the same file.
 mod same_file;
 

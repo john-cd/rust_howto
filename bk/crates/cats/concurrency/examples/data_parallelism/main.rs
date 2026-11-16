@@ -7,28 +7,20 @@ use clap::Subcommand;
 
 /// Parallel iterators with `rayon`: a sum of squares and an in-place update.
 mod multithreading_rayon;
-
 /// Running `rayon` work on a custom thread pool.
 mod multithreading_rayon_custom;
-
 /// Sorts the vector in parallel using Rayon's `par_sort` method.
 mod multithreading_rayon_parsort;
-
 /// This example demonstrates the use of `any` and `all` methods on a parallel
 mod rayon_any_all;
-
 /// Mutating the elements of an array in parallel with `rayon`.
 mod rayon_iter_mut;
-
 /// Parallel `filter`, `map` and `reduce` over a vector with `rayon`.
 mod rayon_map_reduce;
-
 /// Demonstrates parallel searching using Rayon's `par_iter().find_any()`.
 mod rayon_parallel_search;
-
 /// This example demonstrates parallel sorting of a vector of strings using
 mod rayon_parallel_sort;
-
 /// Generating thumbnails of images in parallel with `rayon` and `image`.
 mod rayon_thumbnails;
 

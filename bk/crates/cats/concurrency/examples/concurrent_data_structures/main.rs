@@ -8,13 +8,10 @@ use clap::Subcommand;
 
 /// Demonstrates the basic usage of `ArrayQueue`.
 mod crossbeam_queue;
-
 /// Demonstrates the use of `DashMap` for concurrent data access and
 mod dashmap;
-
 /// This example demonstrates the basic usage of the `flurry::HashMap` for concurrent data access.
 mod flurry;
-
 /// A concurrent hash map from the `papaya` crate, used from several threads.
 mod papaya;
 

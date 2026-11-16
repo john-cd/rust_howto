@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Using `impl Trait` as an argument type and as a return type.
 mod impl_trait;
-
 /// Rust allows to write `impl Trait` as the return type of functions (often called "RPIT").
 mod rpit;
 

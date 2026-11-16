@@ -7,16 +7,12 @@ use clap::Subcommand;
 
 /// Demonstrates basic usage of the maintained `nu-ansi-term` crate.
 mod ansi_term_basic;
-
 /// Basic example of using `nu-ansi-term` to print bold text.
 mod ansi_term_basic1;
-
 /// Demonstrates basic usage of the `nu-ansi-term` crate for colored and styled
 mod ansi_term_basic2;
-
 /// This example demonstrates text styling using the `colored` crate.
 mod colored;
-
 /// Print a table whose columns adapt to their content.
 mod comfy_table;
 

@@ -4,7 +4,6 @@
 
 /// Simulate a single-server bank queue with a timestamp-ordered event heap.
 mod discrete_event;
-
 /// Integrate exponential decay with a fixed-step fourth-order Runge-Kutta
 mod ode_solver;
 

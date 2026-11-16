@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the `directories` crate to find the
 mod directories;
-
 /// Locating the standard directories of the current user with `dirs`.
 mod dirs;
 

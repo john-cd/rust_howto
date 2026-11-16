@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Downloads a file as binary response chunks into a temporary directory.
 mod download;
-
 /// Downloads a file in verified byte ranges.
 mod partial;
-
 /// This example shows how to POST a file to a server.
 mod post_file;
 

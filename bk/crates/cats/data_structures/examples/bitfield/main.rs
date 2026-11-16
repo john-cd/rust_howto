@@ -7,16 +7,12 @@ use clap::Subcommand;
 
 /// `bitflags` generate types for C-style flags with ergonomic APIs.
 mod bitflags;
-
 /// Add the following to your `Cargo.toml`: ```toml [dependencies] bitvec = "1.1.1" ```
 mod bitvec;
-
 /// A fixed-size bit set with `fixedbitset`: a visited set for a graph walk.
 mod fixedbitset;
-
 /// Example of using the `flagset` crate to define and use bit flags.
 mod flagset;
-
 /// Compressed bitmaps with the `roaring` crate.
 mod roaring;
 

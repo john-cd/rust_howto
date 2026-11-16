@@ -7,16 +7,12 @@ use clap::Subcommand;
 
 /// Examples using `for`.
 mod for1;
-
 /// `if`, `else if` and `else` expressions.
 mod if_else;
-
 /// Labeled block expressions, which `break` out with a value.
 mod labeled_block_expression;
-
 /// Demonstrates the use of a `loop` with a `break` statement to return a value.
 mod loop1;
-
 /// This is an example of a `while` loop.
 mod while1;
 

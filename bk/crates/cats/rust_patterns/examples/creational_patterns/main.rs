@@ -11,7 +11,6 @@ mod abstract_factory;
 /// A factory is quite useful when we need to create objects of different types that share a common
 /// interface, without needing to know the exact type at compile time.
 mod factory;
-
 /// The singleton pattern with a global `OnceLock`.
 mod singleton;
 

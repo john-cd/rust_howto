@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// The following demonstrates TOML decoding.
 mod toml;
-
 /// This example demonstrates how to deserialize TOML data into Rust structs.
 mod toml1;
 

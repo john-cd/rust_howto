@@ -8,13 +8,10 @@ use clap::Subcommand;
 /// Demonstrates the use of tuples and arrays in Rust, including their declaration, access,
 /// destructuring, iteration, and mutation.
 mod compound_data_types;
-
 /// Scalar data types: integers, floating-point numbers, booleans and characters.
 mod scalar_data_types;
-
 /// String data types: `&str`, `String` and string literals.
 mod string_data_types;
-
 /// The unit type `()` and the never type `!`.
 mod unit_never;
 

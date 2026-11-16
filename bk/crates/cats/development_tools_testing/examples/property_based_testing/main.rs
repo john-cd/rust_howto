@@ -8,7 +8,6 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the `fake` crate to generate fake data for testing.
 mod fake;
-
 /// Property-based testing with `proptest`.
 mod proptest;
 

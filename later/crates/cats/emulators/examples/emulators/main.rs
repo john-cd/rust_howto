@@ -4,10 +4,8 @@
 
 /// Parses an Intel HEX data record and its end-of-file record.
 mod intel_hex;
-
 /// A simple `PolkaVM` host example.
 mod polkavm_host;
-
 /// A two-register virtual machine with a bounded fetch/decode/execute loop.
 mod register_vm;
 

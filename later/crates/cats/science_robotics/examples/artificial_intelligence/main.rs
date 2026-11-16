@@ -4,7 +4,6 @@
 
 /// Robot path planning on an occupancy grid using the A* algorithm.
 mod astar;
-
 /// Controls a counter with a behavior tree built using `bonsai_bt`.
 mod bonsai_bt;
 

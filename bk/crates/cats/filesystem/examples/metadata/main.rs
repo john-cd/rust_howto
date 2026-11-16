@@ -4,7 +4,6 @@
 
 /// Detect a file's type from its first bytes.
 mod infer;
-
 /// Reading the metadata of files and directories.
 mod metadata;
 

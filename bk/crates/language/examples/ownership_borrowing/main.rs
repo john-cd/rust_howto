@@ -7,28 +7,20 @@ use clap::Subcommand;
 
 /// Demonstrates the concept of borrowing in Rust.
 mod borrowing_function;
-
 /// Passing a mutable reference to a function.
 mod borrowing_function_mutable;
-
 /// Immutable Reference Example.
 mod borrowing_immutable;
-
 /// This example demonstrates the use of the `clone` method
 mod clone;
-
 /// Types that implement `Copy` are copied instead of moved.
 mod copy;
-
 /// This example demonstrates move semantics in Rust.
 mod move1;
-
 /// Moving a value into a function and getting it back.
 mod move_function;
-
 /// Many shared references or one mutable reference.
 mod read_write_lock;
-
 /// Scope and drop.
 mod scope;
 

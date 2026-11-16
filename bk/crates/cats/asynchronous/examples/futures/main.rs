@@ -7,13 +7,10 @@ use clap::Subcommand;
 
 /// Races two futures with `select!` from the `futures` crate.
 mod futures1;
-
 /// Polling several futures at once with `join!` and `join_all`.
 mod futures2;
-
 /// Demonstrates future combinators from the `futures` crate.
 mod futures3;
-
 /// Combinators from `futures_util`, applied to asynchronous fetches that may
 mod futures_util;
 

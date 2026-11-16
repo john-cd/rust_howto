@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Looking up a `HashMap` of `String` keys with a `&str`, thanks to `Borrow`.
 mod borrow;
-
 /// A generic lookup that accepts any type that `String` borrows as.
 mod borrow2;
-
 /// Implementing `Borrow` for a string type with canonical lowercase storage.
 mod borrow3;
 

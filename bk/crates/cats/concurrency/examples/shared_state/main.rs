@@ -7,19 +7,14 @@ use clap::Subcommand;
 
 /// Sharing a configuration between threads with `Arc`, and cloning it on write
 mod arc_make_mut;
-
 /// Demonstrates the use of a global mutable state protected by a `Mutex`.
 mod global_mut_state;
-
 /// Demonstrates safe concurrent access to shared data
 mod send_sync;
-
 /// Demonstrates using a `Mutex` to safely share mutable state between threads.
 mod shared_state_mutex;
-
 /// One-time initialization with `parking_lot::Once`.
 mod shared_state_parking_lot;
-
 /// A reader-writer lock from `parking_lot`.
 mod shared_state_parking_lot2;
 

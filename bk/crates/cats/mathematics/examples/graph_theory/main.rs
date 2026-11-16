@@ -7,7 +7,6 @@ use clap::Subcommand;
 
 /// Detect dependency cycles in a directed graph.
 mod cycle_detection;
-
 /// Group tasks into levels that can run in parallel.
 mod topological_levels;
 

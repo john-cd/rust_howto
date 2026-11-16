@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Prints the great-circle distance between Paris and London.
 mod latitude_longitude;
-
 /// Calculates the hypotenuse of a right triangle given an angle and the length
 mod side_length;
-
 /// This example demonstrates that the tangent of a number is equal to the sine
 mod tan_sin_cos;
 

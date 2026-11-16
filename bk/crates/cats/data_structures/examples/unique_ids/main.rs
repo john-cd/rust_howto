@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Generate compact, URL-safe identifiers with `short-uuid`.
 mod short_uuid;
-
 /// Generating and parsing ULIDs, sortable unique identifiers.
 mod ulid;
-
 /// Generating and parsing UUIDs.
 mod uuid;
 

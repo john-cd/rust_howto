@@ -7,13 +7,10 @@ use clap::Subcommand;
 
 /// Compressing and decompressing a file asynchronously with
 mod async_compression;
-
 /// Writing and reading a ZIP archive asynchronously with `async_zip`.
 mod async_zip;
-
 /// Example of using the `flate2` crate.
 mod flate2;
-
 /// Example of using the `zip` crate.
 mod zip;
 

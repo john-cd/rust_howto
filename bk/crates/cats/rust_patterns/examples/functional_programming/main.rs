@@ -8,19 +8,14 @@ use clap::Subcommand;
 
 /// This example demonstrates how to use the `Either` enum from the `either`
 mod either;
-
 /// This example demonstrates the `frunk` crate, a functional programming
 mod frunk;
-
 /// Demonstrates persistent collections with `imbl`.
 mod imbl;
-
 /// Demonstrates composing standard iterator adapters with closures.
 mod iterators;
-
 /// This example demonstrates the usage of the `itertools` crate.
 mod itertools;
-
 /// Demonstrates persistent data structures with the `rpds` crate.
 mod rpds;
 

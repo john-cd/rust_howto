@@ -7,10 +7,8 @@ use clap::Subcommand;
 
 /// Scoped threads borrow a local string and return values through their
 mod multithreading_scoped_threads;
-
 /// Spawn threads and collect their results through `JoinHandle::join`.
 mod multithreading_spawn_join;
-
 /// A named thread created with `std::thread::Builder`.
 mod thread_builder;
 

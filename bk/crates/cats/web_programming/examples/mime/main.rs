@@ -8,10 +8,8 @@ use clap::Subcommand;
 
 /// Finding the MIME type of a file from its name.
 mod filename;
-
 /// This example demonstrates how to retrieve the Content-Type header from a
 mod request;
-
 /// Demonstrates parsing MIME types from strings and handling invalid input.
 mod string;
 
