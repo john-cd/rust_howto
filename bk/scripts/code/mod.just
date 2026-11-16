@@ -156,6 +156,7 @@ _default:
     db_features="{{ database_features }}${OCI_LIB_DIR:+,oracle,sibyl}"; cd {{ quote(code_root) }}; cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --package database --all-targets --locked --no-fail-fast --status-level all --features "$db_features"
     cd {{ quote(code_root) }}; RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= CARGO_INCREMENTAL=1 cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --package web_programming_http_server --all-targets --locked --no-fail-fast --status-level all --all-features
     cd {{ quote(code_root) }}; cargo test --doc --workspace
+    cargo test --locked --manifest-path {{ quote(code_root + "/rust_1_100/Cargo.toml") }}
 
 # Clean the `crates/**/temp` folders of most files prior / after testing
 @_clean_temp_dir:

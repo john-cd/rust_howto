@@ -59,7 +59,7 @@ Primitive type `str` is a dynamically sized sequence of UTF-8 bytes. Most code u
 {{#include ../../crates/language/examples/data_types/string_data_types.rs:example}}
 ```
 
-Strings are covered in much more details in the [[strings | Strings]] and [Text Processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md) chapters.
+Strings are covered in more detail in the [[strings | Strings]] and [Text Processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md) chapters.
 
 ## Use the Unit and Never Special Types {#special-types}
 
@@ -76,10 +76,10 @@ See also the [[functions | Functions]] chapter.
 
 Starting with Rust 1.100, `!` can appear in type positions such as `Result<T, !>`. In that release, `std::convert::Infallible` became an alias for `!`, and editions before 2024 gained the new never-type fallback behavior. See the [Rust 1.100 announcement][rust~1-100~release]↗ for migration details.
 
-This snippet requires Rust 1.100 or newer; the book's Rust 1.98.1 example workspace does not compile it:
+This example requires Rust 1.100 or newer. From the repository root, run `cargo test --locked --manifest-path bk/crates/rust_1_100/Cargo.toml` to test it.
 
 ```rust
-{{#include ../snippets/rust_1_100.rs:never_type}}
+{{#include ../../crates/rust_1_100/src/lib.rs:never_type}}
 ```
 
 ## Declare a Type Alias {#type-aliases}

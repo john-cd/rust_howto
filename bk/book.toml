@@ -19,6 +19,7 @@ extra-watch-dirs = [
   "crates/cats",
   "crates/language",
   "crates/other",
+  "crates/rust_1_100",
   "crates/standard_library",
 ]
 

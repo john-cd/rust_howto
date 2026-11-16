@@ -56,13 +56,15 @@ The book's [GitHub repository][rust-howto~repo]↗ is a "monorepo" with multiple
 - The Rust examples embedded in the book use many dependencies, so compiling them can take time. They live in an isolated [`cargo`][c~cargo~docs]↗{{hi:cargo}} workspace whose manifest is `bk/crates/Cargo.toml`. Its member crates are grouped by book section (for example, `bk/crates/language`) or, under `bk/crates/cats`, by `crates.io` category (for example, `bk/crates/cats/algorithms`).
   - Each workspace crate contains a [`Cargo.toml`][book~cargo~cargo-toml]↗{{hi:Cargo.toml}} file that declares the dependencies used by its examples. Use `cargo add <crate>` or `cargo add <crate> -F <feature>` from that crate's directory to add a dependency.
   - Most examples live under `bk/crates/<section-or-category>/examples/<chapter_name>/<example_name>.rs`. A few supporting files live in `src`, `tests`, or `build.rs`.
-  - Each example is a separate `.rs` module included by the chapter's `main.rs`, so the examples for a chapter compile together.
-  - The book examples share one `Cargo.lock` and workspace output directory. Workspace members can inherit dependency versions from `[workspace.dependencies]`, but each crate declares the dependencies it uses.
+  - Keep Rust example source in tested packages under `bk/crates`. Include the relevant anchors from those files in `bk/src` so the book shows the same code that the tests exercise.
+  - Chapter examples usually compile together because the chapter's `main.rs` declares each example module.
+  - Workspace members share one `Cargo.lock` and output directory. Members can inherit dependency versions from `[workspace.dependencies]`, and each crate declares the dependencies it uses.
+  - The independent package in `bk/crates/rust_1_100` tests examples that require Rust 1.100.
 - The rest of the code is either in standalone crates (`publish`) or independent workspaces (`tools` and `xmpl`).
   - The [`tools`][rust-howto~tools~repo]↗ workspace builds a few CLI binaries that share a common `tool_lib` library.
   - In the base folder of each project, type [`just`][c~just~docs]↗{{hi:just}} at the shell prompt for a list of commands you can use to format, check, build, lint and test the code. `just release` builds tools in release mode and copies the binaries into the `bin` folder (in the repo root).
 
-Cargo's `target` and intermediate `build` directories are linked from the repository root to persistent, per-checkout cache directories by `just build-setup`. On Windows these are `D:\target\rust_howto\<slot>` and `D:\code_build\rust_howto\<slot>`; the Dev Container uses `/root/.cache/rust_howto/target/<slot>` and `/root/.cache/rust_howto/build/<slot>`. The root `.cargo/config.toml` and shared `scripts/build.just` configure these paths for the independent workspaces. Run `just build-setup` once in a checkout before direct Cargo commands; `just worktree` sets up new slots automatically.
+Run `just build-setup` to link Cargo's `target` and intermediate `build` directories to the configured per-checkout cache directories. The root `.cargo/config.toml` and shared `scripts/build.just` configure these paths for the independent workspaces. Run the setup once before using Cargo directly in a checkout. The `just worktree` recipe sets up new slots automatically.
 
 Consult the `README.md` files of each crate for more details.
 

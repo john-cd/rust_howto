@@ -153,6 +153,13 @@ jobs:
           cargo test --workspace --doc --locked --profile ci -- --show-output
         working-directory: bk/crates
 
+      - name: Test examples requiring Rust 1.100
+        working-directory: bk/crates/rust_1_100
+        run: |
+          cargo +"$RUSTFMT_TOOLCHAIN" fmt --check
+          cargo clippy --locked --all-targets -- --deny warnings
+          cargo test --locked
+
       - name: Configure credentials for private Cargo dependencies
         shell: pwsh
         env:
