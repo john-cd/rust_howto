@@ -143,6 +143,7 @@
   - [Expression Parser](categories/parsing/expression_parser.md)
 
 - [Profiling and Benchmarking](categories/development-tools/profiling.md)
+- [Diagnose Rust Build Time](categories/development-tools/build_time_diagnosis.md)
 - [Compare Benchmark Results in CI](categories/development-tools/benchmark_regressions.md)
 
 - [Template Engines](categories/template-engine/index.md)
