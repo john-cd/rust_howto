@@ -24,13 +24,12 @@ The `Box<T>` type is a smart pointer{{hi:Smart pointers}}, because it implements
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-Use [`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} when
+[`Box<T>`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} supports several use cases.
 
-- you don't want to rely on stack space;
-- you have a large amount of data and you want to avoid copying it on the stack: If you have a very large struct, you might want to allocate it on the heap using `Box` to avoid stack overflow.
-- you need to store a dynamically sized type, whose size is not known at compile time, behind a pointer such as `Box<dyn Trait>` or `Box<[T]>`;
-- you need indirection to make a recursive type have a finite, known size. For example, a linked-list node can contain `Option<Box<Node>>`; the `Box` has a known pointer size even though the list can grow recursively.
-- you want to own a value and you care only that it's a type that implements a particular trait rather than being of a specific type.
+- Move large data to the heap to reduce stack usage.
+- Own a dynamically sized value through a pointer such as `Box<[T]>`.
+- Give a recursive type a finite size through indirection. A linked-list node can contain an `Option<Box<Node>>` because the box has a known size.
+- Own a value through its trait interface with `Box<dyn Trait>`.
 
 Pass a value directly to transfer ownership when no indirection is needed. Use [`Arc<T>`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} or [`Rc<T>`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} for shared ownership.
 
@@ -56,7 +55,7 @@ The following demonstrates boxes containing slices and string slices:
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-Trait objects `dyn SomeTrait` are opaque values that implements a base trait `SomeTrait`. The purpose of trait objects is to permit "late binding", a.k.a. virtual dispatch. When you call a function through a `dyn SomeTrait`, the compiler inserts code to lookup the function to call _at runtime_, allowing for polymorphism.
+Trait objects `dyn SomeTrait` are opaque values that implement a base trait `SomeTrait`. The purpose of trait objects is to permit "late binding", a.k.a. virtual dispatch. When you call a function through a `dyn SomeTrait`, the compiler inserts code to lookup the function to call _at runtime_, allowing for polymorphism.
 
 Because their underlying concrete types are obscured, trait objects are dynamically sized types (DSTs). Like all DSTs, trait objects must be used behind some type of pointer, for example `&dyn SomeTrait` or `Box<dyn SomeTrait>`. If you want an owned trait object use `Box<dyn Trait>`, and if you want a borrowed trait object use `&dyn Trait`.
 
@@ -81,7 +80,7 @@ Rust 1.100 stabilized [`Allocator`][std~alloc~allocator]↗ and per-instance all
 With Rust 1.100 or newer, a `Vec` and `Box` can use an allocator passed when they are constructed:
 
 ```rust
-{{#include ../snippets/rust_1_100.rs:allocator}}
+{{#include ../../crates/rust_1_100/src/lib.rs:allocator}}
 ```
 
 `System` is a demonstration allocator; choose a custom allocator only when its lifetime, alignment, failure behavior, and measurement justify the added complexity. Other collections do not necessarily expose the same stable allocator API.

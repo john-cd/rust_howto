@@ -37,10 +37,10 @@ To implement `Drop` for a custom type, you would do something like this:
 
 For cleanup specific to one scope, Rust 1.100 introduced [`std::mem::DropGuard`][std~mem~dropguard]↗. It runs a closure when the guard is dropped. Use an explicit fallible operation when the caller must handle a cleanup error.
 
-This Rust 1.100 snippet records cleanup on both normal completion and early return through `?` or `return`:
+This example records cleanup on both normal completion and an explicit early return.
 
 ```rust
-{{#include ../snippets/rust_1_100.rs:drop_guard}}
+{{#include ../../crates/rust_1_100/src/lib.rs:drop_guard}}
 ```
 
 `DropGuard::dismiss` is available when successful completion should skip rollback rather than run the closure. The example above intentionally runs cleanup on every path.
