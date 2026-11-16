@@ -2,6 +2,8 @@
 
 # Unicode
 
+This recipe is published in [Count Unicode Text for Display](../../../src/categories/text-processing/unicode.md).
+
 {{#include unicode.incl.md}}
 
 Rust `str` and `String` values are UTF-8. Their `len()` method returns a byte count, while `chars()` iterates Unicode scalar values. Neither count necessarily matches the characters a reader sees: a visible character can be encoded as more than one scalar value, and an emoji sequence can contain several scalars.

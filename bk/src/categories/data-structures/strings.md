@@ -10,7 +10,7 @@
 
 The "string slice" type, `str`, is a primitive representing a view into a sequence of UTF-8 encoded bytes:
 
-- It is immutable.
+- Its UTF-8 bytes cannot be changed in ways that break UTF-8 or alter the slice length. A mutable `&mut str` supports length-preserving operations such as `make_ascii_uppercase`.
 - Since the size of an `str` is unknown at compile time, one can only handle it behind a pointer. It is most often seen in its borrowed form as `&str`.
 - `&str` is a fat pointer containing a pointer to the actual string data (which can reside on the heap, stack, or in static memory) and its length.
 - `&str` is a view into existing string data _without taking ownership_. This is common for function arguments and where owning the string is not needed.
@@ -70,7 +70,7 @@ See:
 - [[vectors | Vectors]].
 - [[clone-on-write | COW]].
 
-If you need to count user-perceived characters or align text in terminal columns, see [Unicode Text (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/unicode.md).
+If you need to count user-perceived characters or align text in terminal columns, see [Count Unicode Text for Display](../text-processing/unicode.md).
 
 ## Related Topics {#related-topics .skip}
 

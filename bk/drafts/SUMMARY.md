@@ -231,7 +231,6 @@
   - [String Search](categories/text-processing/string_search.md)
   - [Text Analysis](categories/text-processing/text_analysis.md)
   - [Syntax Highlighting](categories/text-processing/syntax_highlighting.md)
-  - [Unicode Handling](categories/text-processing/unicode.md)
   - [Text Diffing](categories/text-processing/diffing.md)
   - [OS and C Strings](categories/text-processing/other_strings.md)
 

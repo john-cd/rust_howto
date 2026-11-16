@@ -8,7 +8,9 @@
 //! skin tone or an accented letter can be several `char`s but one grapheme, so
 //! counting `char`s is not counting what people see.
 
+use unicode_normalization::UnicodeNormalization;
 use unicode_segmentation::UnicodeSegmentation;
+use unicode_width::UnicodeWidthStr;
 
 /// Prints grapheme clusters and compares their count with other string lengths.
 fn main() {
@@ -18,12 +20,23 @@ fn main() {
     println!("UTF-8 bytes: {}", text.len());
     println!("Unicode scalar values: {}", text.chars().count());
     println!("Grapheme clusters: {graphemes:?}");
+    println!(
+        "Terminal columns (estimate): {}",
+        UnicodeWidthStr::width(text)
+    );
 
+    assert_eq!(text.len(), 12);
+    assert_eq!(text.chars().count(), 5);
+    assert_eq!(UnicodeWidthStr::width(text), 4);
     assert_eq!(graphemes, ["e\u{301}", " ", "🇫🇷"]);
     assert_ne!("é", "e\u{301}");
     assert_eq!(
         UnicodeSegmentation::graphemes("é", true).count(),
         UnicodeSegmentation::graphemes("e\u{301}", true).count()
+    );
+    assert_eq!(
+        "é".nfc().collect::<String>(),
+        "e\u{301}".nfc().collect::<String>()
     );
 }
 // ANCHOR_END: example
