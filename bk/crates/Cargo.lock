@@ -17710,6 +17710,7 @@ dependencies = [
  "rustls-platform-verifier",
  "serde",
  "serde_json",
+ "serde_urlencoded",
  "sync_wrapper",
  "tokio",
  "tokio-rustls",
@@ -24487,6 +24488,7 @@ name = "web_programming_http_client"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "axum 0.8.9",
  "backon",
  "clap",
  "futures-util",

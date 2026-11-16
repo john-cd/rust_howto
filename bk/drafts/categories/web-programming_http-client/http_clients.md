@@ -12,21 +12,9 @@
 
 For a single request, the top-level `reqwest::get` and `reqwest::blocking::get` helpers are convenient. For repeated requests, create a `Client` once and reuse it so connections can be pooled. Configure timeouts and other client-wide behavior with `Client::builder`; call `error_for_status()` when an HTTP error status should become a Rust error, since receiving a response is separate from deciding whether its status is successful.
 
-### Asynchronous GET {#reqwest-async-get}
+### GET Requests
 
-This example uses the asynchronous API to print a response. For structured JSON, custom headers, pagination, and more request patterns, see [[apis | APIs]], [[requests | Requests]], and [[download | Download]].
-
-```rust,editable
-{{#include ../../../crates/cats/web_programming_http_client/examples/requests/get1.rs:example}}
-```
-
-### Blocking GET {#reqwest-blocking-get}
-
-Use the blocking API in synchronous code. Keep it off async runtime worker threads; if a synchronous operation must be called from async code, use the runtime's blocking-work facility.
-
-```rust,editable
-{{#include ../../../crates/cats/web_programming_http_client/examples/requests/get.rs:example}}
-```
+The published [local HTTP client recipe](../../../src/categories/web-programming_http-client/offline_http_client.md) owns the runnable async GET workflow. Use the blocking API in synchronous code, outside async runtime workers.
 
 ## `ureq` {#ureq}
 

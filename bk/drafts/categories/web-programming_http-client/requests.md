@@ -6,28 +6,7 @@
 
 ## Make an HTTP GET Request {#make-a-http-get-request}
 
-[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
-
-Parses the supplied [URL][p~url] and makes a synchronous HTTP GET request with [`reqwest::blocking::get`][c~reqwest::blocking::get~docs]↗{{hi:reqwest::blocking::get}}. It checks the status with [`reqwest::Response::error_for_status`][c~reqwest::Response::error_for_status~docs]↗{{hi:reqwest::Response::error_for_status}} before consuming the response body. Use the blocking client from synchronous code; in async code, use the asynchronous client and await its operations.
-
-```rust,editable
-{{#include ../../../crates/cats/web_programming_http_client/examples/requests/get.rs:example}}
-```
-
-## Make an HTTP GET Request Asynchronously {#async}
-
-[![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![tokio~website][c~tokio~website~badge]][c~tokio~website] {{#badges tokio}} {{hi:Async}} {{hi:Futures}} {{hi:Io}} {{hi:Non-blocking}} {{#categories network-programming="Network programming",web-programming="Web programming",asynchronous=Asynchronous}}
-
-A similar approach can be used by including the [`tokio`][c~tokio~docs]↗{{hi:tokio}} executor to make the main function asynchronous, retrieving the same information.
-
-In this example, [`tokio::main`][c~tokio~tutorial_hello_tokio~website]↗{{hi:tokio::main}} handles all the heavy executor setup and allows sequential code implemented without blocking until [`.await`][book~rust-reference~await]↗{{hi:.await}}.
-
-Uses the [asynchronous][p~asynchronous] versions of [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, both [`reqwest::get`][c~reqwest::get~docs]↗{{hi:reqwest::get}} and
-[`reqwest::Response`][c~reqwest::Response~docs]↗{{hi:reqwest::Response}}. The example checks for an unsuccessful status before reading the body.
-
-```rust,editable
-{{#include ../../../crates/cats/web_programming_http_client/examples/requests/get1.rs:example}}
-```
+The published [local HTTP client recipe](../../../src/categories/web-programming_http-client/offline_http_client.md) owns the runnable GET workflow, status checks, deadline, and JSON decoding.
 
 ## Set Custom Headers and URL Parameters for a REST Request {#custom-headers-and-url-parameters}
 
