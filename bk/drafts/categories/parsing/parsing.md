@@ -77,6 +77,11 @@ Tree-sitter builds a concrete syntax tree that can be updated incrementally afte
 - [`combine`][c~combine~docs]↗{{hi:combine}} and [`chumsky`][c~chumsky~docs]↗{{hi:chumsky}} are parser-combinator libraries; compare their error and recovery APIs when diagnostics are important.
 - [`peg`][c~peg~docs]↗{{hi:peg}} generates a parser from a PEG grammar, like `pest`.
 
+## Further Reading
+
+- [Awesome Pest][awesome-pest~repo]↗ collects projects and learning resources for Pest.
+- [Parse Rosetta Rust][parse-rosetta-rs~repo]↗ compares parser approaches on a shared task.
+
 ## Related Topics {#related-topics .skip}
 
 - [[parser-implementations | Parser Implementations]].
@@ -85,11 +90,3 @@ Tree-sitter builds a concrete syntax tree that can be updated incrementally afte
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-- [Awesome Pest][awesome-pest~repo]↗: A curated list of resources, projects, and tools using or for the `pest` parser generator in Rust.
-- [ABNF to Pest][c~abnf_to_pest~crates.io]↗.
-- [`winnow`][c~winnow~docs]↗.
-- [parse-rosetta-rs][parse-rosetta-rs~repo]↗.
-
-</div>

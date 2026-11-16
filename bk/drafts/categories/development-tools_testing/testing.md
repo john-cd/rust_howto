@@ -73,6 +73,8 @@ Often involves using [`tokio::test`][c~tokio::test~docs]↗{{hi:tokio::test}} or
 
 [![cat~development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing]{{hi:Environment variables}}
 
+For tests that must coordinate access to another shared resource, [`serial_test`][c~serial_test~docs]↗ can serialize participating tests. Use an isolated child process for environment-dependent behavior.
+
 Parse configuration from an injected value in unit tests. For integration tests of process environment behavior, set or remove variables on a child `std::process::Command`; this isolates the values from the test runner. A `serial_test` lock coordinates only tests that use the same lock, and a restoring wrapper does not protect against unrelated threads, libraries, or DNS code reading the process environment. In edition 2024, `std::env::set_var` and `remove_var` are unsafe on every target, but the safety precondition differs: on Windows they are sound even in multithreaded programs; on Unix they must not be called in a multithreaded program where other threads may read or write the environment.
 
 ```rust,editable
@@ -127,9 +129,3 @@ Deriving `Arbitrary` lets a fuzz target map raw input bytes to a typed request. 
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-
-- [serial_test][c~serial_test~docs]↗ allows for the creation of serialized Rust tests using the serial attribute.
-
-</div>

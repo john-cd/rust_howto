@@ -97,6 +97,10 @@ In `foo.capnp`:
 - Language-agnostic: You can generate code in various [programming languages][p~programming-languages] from a single `.capnp` definition file.
 - Schema evolution: Cap'n Proto supports schema evolution, allowing us to modify the structure of your data over time without breaking compatibility.
 
+## Separate the Wire Format from the Buffer
+
+The examples above choose a schema and a wire encoding. [`bytes`][c~bytes~lib.rs]↗ provides byte buffers for carrying that encoded data. A buffer does not choose how the data is serialized.
+
 ## Related Topics {#related-topics .skip}
 
 - [[complex_encoding | Structured Data]].
@@ -104,9 +108,3 @@ In `foo.capnp`:
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  - [pot][c~pot~docs]↗.
-  - [`protobuf`][c~protobuf~docs]↗: another Protocol Buffers implementation; its recipe was dropped in favor of `prost`.
-  - [bytes][c~bytes~lib.rs]↗.
-</div>

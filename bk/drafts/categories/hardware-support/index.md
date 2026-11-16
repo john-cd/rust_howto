@@ -18,6 +18,8 @@ Rust hardware support ranges from selecting CPU-specific instructions to communi
 
 Choose the boundary first: operating-system APIs for user-space programs, a board HAL for bare-metal peripherals, or a small hardware-specific layer when you need direct register access.
 
+If a library needs a portable implementation and an optimized one, [`multiversion`](https://docs.rs/multiversion) can generate specialized implementations and select one for the processor. See the processor chapter for SIMD examples.
+
 ## Processor Management
 
 {{#include processor.incl.md}}
@@ -70,9 +72,3 @@ Use `no_std` targets with the board's documented HAL and toolchain. See [[no_std
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-
-- [Multiversion][c~multiversion~lib.rs]↗ - Rust HW library.
-
-</div>

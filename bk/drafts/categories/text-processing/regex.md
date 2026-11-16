@@ -81,6 +81,11 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]↗{{h
 {{#include ../../../crates/cats/text_processing/examples/regex/regex.rs:example}}
 ```
 
+## Generate Patterns or Choose a Lower-Level Engine
+
+- [`grex`][c~grex~repo]↗ proposes regular expressions from sample strings. Test the result against inputs that should fail as well as inputs that should match.
+- [`regex-automata`][c~regex-automata~docs]↗ exposes lower-level matching engines. Use it when you need explicit control of engine configuration or multi-pattern searches.
+
 ## Related Topics {#related-topics .skip}
 
 - [[rust_search_engines | Rust Search Engines]].
@@ -89,10 +94,3 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]↗{{h
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-- [grex][c~grex~repo]↗: A command-line tool and Rust library with Python bindings for generating regular expressions from user-provided test cases.
-
-- [regex_automata][c~regex-automata~docs]↗: Multi-pattern searches with capture groups.
-
-</div>
