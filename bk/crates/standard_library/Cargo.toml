@@ -113,6 +113,11 @@ path = "examples/result/main.rs"
 test = true
 
 [[example]]
+name = "typed_errors"
+path = "examples/typed_errors.rs"
+test = true
+
+[[example]]
 name = "smart_pointers"
 path = "examples/smart_pointers/main.rs"
 test = true
