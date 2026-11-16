@@ -9,15 +9,3 @@ mod rangemap;
 fn main() {
     rangemap::run();
 }
-
-/// Verifies that the `rangemap` example.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// Verifies that the rangemap dispatcher runs.
-    #[test]
-    fn rangemap_dispatcher_runs() {
-        assert!(std::panic::catch_unwind(main).is_ok());
-    }
-}

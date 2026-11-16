@@ -1,32 +1,22 @@
-//! Runs the macos example.
+//! Runs the macOS Foundation query on supported hosts.
 //!
 //! TODO Reviewed ??-??-2026.
 
-/// Read the macOS version through typed Foundation bindings.
+/// Reads the macOS version through typed Foundation bindings.
 #[cfg(target_os = "macos")]
 mod macos;
-
-/// Runs the macos example.
-///
-/// Runs the macOS system-version example.
-///
-/// # Errors
-///
-/// Propagates an empty native operating-system version string.
-#[cfg(target_os = "macos")]
-fn main() -> std::io::Result<()> {
-    macos::run()
-}
-
-/// Reports that the Foundation system-information query requires macOS.
+/// Reports when the example is run on another operating system.
 #[cfg(not(target_os = "macos"))]
-fn main() -> std::io::Result<()> {
-    run()
-}
+mod unsupported;
 
-/// Provides a message-only fallback without linking Apple's frameworks.
-#[cfg(not(target_os = "macos"))]
-fn run() -> std::io::Result<()> {
-    println!("This Foundation example requires macOS.");
-    Ok(())
+/// Runs the macOS example or its unsupported-platform message.
+fn main() -> std::io::Result<()> {
+    #[cfg(target_os = "macos")]
+    {
+        macos::run()
+    }
+    #[cfg(not(target_os = "macos"))]
+    {
+        unsupported::run()
+    }
 }

@@ -1,7 +1,6 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-
 //! Demonstrates a compile-time perfect hash map.
 
 use phf::phf_map;
@@ -22,7 +21,7 @@ static KEYWORDS: phf::Map<&'static str, &'static str> = phf_map! {
 
 /// Looks up keywords and prints the compile-time map's entries.
 fn main() {
-    run();
+    example();
 }
 
 /// Looks up sample keywords and prints the compile-time map's entries.

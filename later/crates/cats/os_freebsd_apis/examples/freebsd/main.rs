@@ -1,32 +1,22 @@
-//! Runs the freebsd example.
+//! Runs the FreeBSD kernel query on supported hosts.
 //!
 //! TODO Reviewed ??-??-2026.
 
 /// Read-only queries of FreeBSD kernel state.
 #[cfg(target_os = "freebsd")]
 mod freebsd;
-
-/// Runs the freebsd example.
-///
-/// Runs the FreeBSD kernel-information example.
-///
-/// # Errors
-///
-/// Propagates failures reading FreeBSD kernel information.
-#[cfg(target_os = "freebsd")]
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    Ok(freebsd::run()?)
-}
-
-/// Reports that the kernel query requires FreeBSD.
+/// Reports when the example is run on another operating system.
 #[cfg(not(target_os = "freebsd"))]
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    run()
-}
+mod unsupported;
 
-/// Provides a harmless fallback on hosts without the FreeBSD sysctl interface.
-#[cfg(not(target_os = "freebsd"))]
-fn run() -> Result<(), Box<dyn std::error::Error>> {
-    println!("This sysctl example requires FreeBSD.");
-    Ok(())
+/// Runs the FreeBSD example or its unsupported-platform message.
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    #[cfg(target_os = "freebsd")]
+    {
+        Ok(freebsd::run()?)
+    }
+    #[cfg(not(target_os = "freebsd"))]
+    {
+        Ok(unsupported::run()?)
+    }
 }

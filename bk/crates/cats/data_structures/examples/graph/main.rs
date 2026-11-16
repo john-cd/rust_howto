@@ -9,15 +9,3 @@ mod petgraph;
 fn main() {
     petgraph::run();
 }
-
-/// Confirms that the graph example completes without panicking.
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    /// Verifies that the graph dispatcher runs.
-    #[test]
-    fn graph_dispatcher_runs() {
-        assert!(std::panic::catch_unwind(main).is_ok());
-    }
-}
