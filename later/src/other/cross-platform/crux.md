@@ -42,7 +42,3 @@ Crux is a good fit when several clients need the same business rules but need di
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  crux: add / edit; link to architecture pages
-</div>
