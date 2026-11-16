@@ -37,11 +37,11 @@ The [Kubernetes operators chapter][ex~cloud~kubernetes]↗ shows how to write an
 
 {{#include kubernetes.incl.md}}
 
-## Integrate a distributed application runtime
+## Integrate a distributed application runtime {#dapr}
 
 [Dapr][dapr~rust~sdk~docs]↗ provides building blocks for distributed applications
 that run across cloud and edge environments. Its current Rust SDK documentation marks
-the client library as alpha, so check its status and API stability before adopting it.
+the client library as alpha, so check its status and API stability before adopting it. The [Rust SDK examples][dapr-rust~examples]↗ show how a Rust application calls into the runtime.
 
 ## Build cloud infrastructure with Rust
 
