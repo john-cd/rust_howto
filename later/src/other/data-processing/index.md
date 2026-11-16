@@ -6,6 +6,8 @@ Data work ranges from reading local files and shaping tables to building pipelin
 query engines, and analytics systems. Start with a recipe page, then explore the
 project links for tools that support larger workflows.
 
+Choose an entry point by the data you have and the output you need. The first sections cover local transformations and queries. The later sections cover recurring pipelines, storage, and operations.
+
 ## Import and transform files
 
 The [CSV chapter](csv.md) shows command-line operations for inspecting, filtering,
@@ -68,7 +70,3 @@ Databend, and Rerun through focused examples.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  organize / edit
-</div>
