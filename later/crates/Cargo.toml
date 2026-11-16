@@ -5,6 +5,7 @@ resolver = "3"
 members = ["cats/*", "other"]
 exclude = [
     "cats/embedded",
+    "cats/no_std_no_alloc",
     "patches/proc-macro-error2",
     "patches/zenoh-transport-1.10.2",
 ]

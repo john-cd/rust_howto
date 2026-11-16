@@ -19,6 +19,8 @@ Use arrays or fixed-capacity collections when the maximum size is known. [heaple
 - [postcard][c~postcard~docs]↗ supports compact serialization; configure [serde][c~serde~docs]↗ with default features disabled for `no_std` use.
 - [defmt][c~defmt~docs]↗ provides compact logging for embedded targets.
 
+See the [published No Allocation chapter](https://john-cd.com/rust_howto/categories/no-std/no_alloc.html) for collections, bounded queues, and formatting without heap allocation.
+
 For embedded hardware interfaces, see [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}}. Small panic handlers such as [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}} and [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}} provide target-appropriate panic behavior; choose one that matches the platform. Static allocation is another option for values whose storage can live for the program's duration; see [[static allocation | Static Allocation]].
 
 ## Example

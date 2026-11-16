@@ -55,6 +55,8 @@ A consumer can select the core-only library with `no_std = { path = "../no_std",
 
 ## Related Topics {#related-topics .skip}
 
+- [No Allocation](no_alloc.md).
+
 - [Dependencies](../../code-organization/dependencies.md).
 
 {{#include refs.incl.md}}
