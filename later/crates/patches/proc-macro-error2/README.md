@@ -222,7 +222,7 @@ That said, we need a solution, but this solution must meet these conditions:
 
 This crate aims to provide such a mechanism. All you have to do is annotate your top-level
 `#[proc_macro]` function with `#[proc_macro_error]` attribute and change panics to
-[`abort!`]/[`abort_call_site!`] where appropriate, see [the Guide][guide].
+[`abort!`](https://docs.rs/proc-macro-error2/1/proc_macro_error/macro.abort.html)/[`abort_call_site!`](https://docs.rs/proc-macro-error2/1/proc_macro_error/macro.abort_call_site.html) where appropriate, see [the Guide][guide].
 
 ## Disclaimer
 
