@@ -2,4 +2,4 @@
 
 | Recipe | Crates | Categories |
 | --- | --- | --- |
-| [Crates Working Without `std`][ex~no-std~no-std] | {{!crate }} | {{#categories no-std="No standard library"}} |
+| [Provide a Panic Handler for a Bare-metal Binary][ex~no-std~no-std] | {{!crate }} | {{#categories no-std="No standard library"}} |

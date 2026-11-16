@@ -1,40 +1,8 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# No `std`
+# Bare-metal Startup and Allocation
 
-{{#include no_std.incl.md}}
-
-[`#![no_std]`][rust~no_std~attribute] prevents a crate from automatically linking Rust's standard library. The crate uses [`core`][c~core~docs], which provides primitive types, `Option`, `Result`, iterators, atomics, and formatting. `no_std` does not by itself prohibit heap allocation: a program can also use [`alloc`][c~alloc~docs] when its final binary supplies a global allocator.
-
-## Write a library for both `std` and `no_std`
-
-A library can enable `no_std` unless its `std` Cargo feature is selected. Dependencies that enable `std` by default should disable those defaults and re-enable the dependency's `std` feature from your crate's feature:
-
-```toml
-[features]
-default = ["std"]
-std = ["serde/std"]
-
-[dependencies]
-serde = { version = "1", default-features = false, features = ["derive"] }
-```
-
-Put the conditional attribute at the crate root (`src/lib.rs`), as in this workspace's `no_std` library:
-
-```rust,ignore
-#![cfg_attr(not(feature = "std"), no_std)]
-
-mod checksum;
-pub use checksum::checksum;
-```
-
-The separate module implements a wrapping byte checksum without allocation or operating-system calls:
-
-```rust,editable
-{{#include ../../../crates/cats/no_std/src/checksum.rs:example}}
-```
-
-With these defaults, downstream users get `std` unless they disable default features. Omit `default = ["std"]` when downstream users should opt in to `std`. If the library needs a `Vec` or `String`, gate that API behind an `alloc` feature and use `alloc` types; the final application still chooses the allocator.
+See the [No Standard Library chapter](https://john-cd.com/rust_howto/categories/no-std/no_std.html) for the checksum library and Cargo feature setup.
 
 ## Use heap collections with `alloc`
 
@@ -71,7 +39,7 @@ fn main() -> ! {
 
 If fixed capacity is enough, prefer the [[no-std_no-alloc | No Alloc]] patterns instead of adding a heap.
 
-## Provide a panic handler for a bare-metal binary
+## Provide a panic handler for a bare-metal binary {#no-std}
 
 A bare-metal binary does not get the startup code or panic handler supplied by `std`. Use the entry-point macro and linker setup for the selected HAL or runtime, then provide a panic handler. This isolated sketch is intentionally not compiled:
 
@@ -88,31 +56,6 @@ fn panic(_info: &PanicInfo<'_>) -> ! {
 ```
 
 For board setup, startup, and probe workflows, see [[embedded | Embedded Systems]].
-
-## Check that a crate builds without `std`
-
-Install a target supported by the selected HAL, then build with default features disabled. For a Cortex-M4F target, for example:
-
-```powershell
-rustup target add thumbv7em-none-eabihf
-cargo build --no-default-features --target thumbv7em-none-eabihf
-```
-
-Check the dependency feature tree as well: one dependency that enables `std` by default can prevent the no-std build. The workspace's checksum library has no dependencies and a `std` feature enabled by default. From `later/crates`, compile only its library without that feature, or run its separate host example:
-
-```sh
-cargo build -p no_std --lib --no-default-features
-cargo build -p no_std --lib --no-default-features --target thumbv7em-none-eabihf
-cargo run -p no_std --example no_std
-```
-
-A consumer can select the core-only library with `no_std = { path = "../no_std", default-features = false }` in its dependencies. The host example below uses `std` for printing; the library does not supply a panic handler or entry point, because those belong to the final binary. The bare-metal target command requires the target installation described above.
-
-## Core-only example {#no-std}
-
-```rust,editable
-{{#include ../../../crates/cats/no_std/examples/no_std/checksum.rs:example}}
-```
 
 ## Related Topics {#related-topics .skip}
 
