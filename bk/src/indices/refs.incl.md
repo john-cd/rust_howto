@@ -396,6 +396,7 @@
 [ex~multimedia_images~optimize-pngs]: ../categories/multimedia_images/images.md#optimize-pngs
 [ex~multimedia_images~read-exif-metadata]: ../categories/multimedia_images/images.md#read-exif-metadata
 [ex~no-std~no-std]: ../categories/no-std/no_std.md#no-std
+[ex~no-std_no-alloc~noalloc]: ../categories/no-std/no_alloc.md#noalloc
 [ex~standard-library~accept-either-owned-or-borrowed-values]: ../standard-library/clone-on-write.md#accept-either-owned-or-borrowed-values
 [ex~standard-library~adapters-for-working-with-references]: ../standard-library/optional_values.md#adapters-for-working-with-references
 [ex~standard-library~any-trait]: ../standard-library/dynamic_typing.md#any-trait

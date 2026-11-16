@@ -34,6 +34,7 @@ members = [
     "cats/multimedia_images",
     "cats/network_programming",
     "cats/no_std",
+    "cats/no_std_no_alloc",
     "cats/os",
     "cats/os_unix_apis",
     "cats/os_windows_apis",

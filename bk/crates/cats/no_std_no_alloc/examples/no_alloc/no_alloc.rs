@@ -41,17 +41,16 @@ fn main() -> fmt::Result {
 /// # Errors
 ///
 /// Propagates a formatting error if the message does not fit its inline buffer.
-/// A no-allocation example using fixed-capacity collections.
 pub fn run() -> fmt::Result {
     main()
 }
 
-/// storage.
+/// Verifies fixed-capacity overflow handling and formatting behavior.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// storage.
+    /// Verifies fixed-capacity overflow handling and formatting behavior.
     #[test]
     fn fixed_capacity_storage_rejects_overflow_and_formats() {
         main().expect("the demonstrated message fits in 32 bytes");
