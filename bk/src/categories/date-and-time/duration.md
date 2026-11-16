@@ -44,7 +44,7 @@ This example converts a fixed UTC timestamp to fixed offsets, so its output is d
 
 - [Parsing and Displaying](parse.md) covers date parsing and formatting.
 - [Time](time_crate.md) demonstrates the `time` crate.
-- [Benchmarking](../development-tools_profiling/benchmarking.md) uses a benchmark harness for repeatable measurements; `Instant` is useful for elapsed-time diagnostics, not a substitute for benchmarking.
+- [Benchmark regression testing](../development-tools/benchmark_regressions.md) uses a benchmark harness for repeatable measurements; `Instant` is useful for elapsed-time diagnostics, not a substitute for benchmarking.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

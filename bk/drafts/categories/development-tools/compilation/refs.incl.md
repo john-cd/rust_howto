@@ -35,7 +35,7 @@
 [p~cross-compilation]: ../cross-compilation/cross_compilation.md
 [p~configuration]: ../../config/configuration.md
 [p~contributing]: ../../../../src/appendices/contributing/index.md
-[p~duration]: ../../date-and-time/duration.md
+[p~duration]: https://john-cd.com/rust_howto/categories/date-and-time/duration.html
 [p~generics]: ../../../../src/language/generics.md
 [p~building]: ../../development-tools_cargo-plugins/building.md
 [p~modules]: ../../../code_organization/modules.md

@@ -71,6 +71,13 @@
   - [Hashing](categories/algorithms/hashing.md)
   - [Graph Algorithms](categories/algorithms/graph_algorithms.md)
 
+- [Caching](categories/caching/index.md)
+  - [In-memory Caching](categories/caching/in_memory_cache.md)
+
+- [Compression](categories/compression/index.md)
+  - [Working with Tarballs](categories/compression/tar.md)
+  - [Compression and Decompression](categories/compression/compression.md)
+
 - [Data Structures](categories/data-structures/index.md)
   - [Strings](categories/data-structures/strings.md)
   - [Vectors](categories/data-structures/vectors.md)
@@ -87,6 +94,16 @@
 
 - [Data Processing](categories/data-processing/index.md)
   - [DataFrames](categories/data-processing/dataframes.md)
+- [Date and Time](categories/date-and-time/index.md)
+  - [Duration and Calculation](categories/date-and-time/duration.md)
+  - [Parsing and Displaying](categories/date-and-time/parse.md)
+  - [`time` Crate](categories/date-and-time/time_crate.md)
+
+- [Encoding and Serialization](categories/encoding/index.md)
+  - [Character Encoding](categories/encoding/string_encoding.md)
+  - [CSV Processing](categories/encoding/csv.md)
+  - [Excel Spreadsheets](categories/encoding/excel.md)
+  - [Serialization with `serde`](categories/encoding/serde.md)
 
 - [File System](categories/filesystem/index.md)
   - [Paths](categories/filesystem/paths.md)
@@ -121,9 +138,16 @@
 
 - [WebSockets](categories/web-programming_websocket/index.md)
   - [Echo Client and Server](categories/web-programming_websocket/websocket.md)
+- [Parsing](categories/parsing/index.md)
+  - [Parsing Utilities](categories/parsing/parsing.md)
+  - [Expression Parser](categories/parsing/expression_parser.md)
 
 - [Profiling and Benchmarking](categories/development-tools/profiling.md)
 - [Compare Benchmark Results in CI](categories/development-tools/benchmark_regressions.md)
+
+- [Template Engines](categories/template-engine/index.md)
+  - [Tera](categories/template-engine/tera.md)
+  - [TinyTemplate](categories/template-engine/tinytemplate.md)
 
 ## Resources
 

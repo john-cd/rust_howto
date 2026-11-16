@@ -8,6 +8,7 @@
 [ex~data-structures~btreeset]: b-trees.md#btreeset
 [ex~data-structures~custom-hash-function]: hashmaps.md#custom-hash-function
 [ex~data-structures~custom-key-type]: hashmaps.md#custom-key-type
+[ex~data-structures~elsa-frozen-vec]: index.md#elsa-frozen-vec
 [ex~data-structures~fast-hashmap]: hashmaps.md#fast-hashmap
 [ex~data-structures~fixedbitset]: bit_arrays.md#fixedbitset
 [ex~data-structures~flagset]: bit_arrays.md#flagset
@@ -21,6 +22,7 @@
 [ex~data-structures~memory-allocation]: vectors.md#memory-allocation
 [ex~data-structures~multimap]: other_maps.md#multimap
 [ex~data-structures~petgraph]: graphs.md#petgraph
+[ex~data-structures~phf-map]: index.md#phf-map
 [ex~data-structures~placeholders]: strings.md#placeholders
 [ex~data-structures~priority-queue]: binary_heaps.md#priority-queue
 [ex~data-structures~queue]: stacks_and_queues.md#queue

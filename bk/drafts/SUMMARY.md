@@ -21,7 +21,6 @@
   - [Passkeys (WebAuthn)](categories/authentication/passkeys.md)
 
 - [Caching](categories/caching/index.md)
-  - [In-memory Caching](categories/caching/in_memory_cache.md)
 
 - [Command-line Interface](categories/command-line-interface/index.md)
   - [Argument Parsing](categories/command-line-interface/argument_parsing.md)
@@ -35,8 +34,6 @@
   - [Shells](categories/command-line-utilities/shells.md)
 
 - [Compression](categories/compression/index.md)
-  - [Working with Tarballs](categories/compression/tar.md)
-  - [Flate2](categories/compression/compression.md)
 
 - [Concurrency](categories/concurrency/index.md)
   - [Explicit Threads](categories/concurrency/explicit_threads.md)
@@ -84,13 +81,8 @@
   - [Search](categories/database-implementations/rust_search_engines.md)
 
 - [Date and Time](categories/date-and-time/index.md)
-  - [Duration and Calculation](categories/date-and-time/duration.md)
-  - [Parsing and Displaying](categories/date-and-time/parse.md)
-  - [`time` Crate](categories/date-and-time/time_crate.md)
 
 - [Data Structures](categories/data-structures/index.md)
-  - [Perfect Hash Functions](categories/data-structures/phf.md)
-  - [Append-only Collections](categories/data-structures/elsa.md)
 
 - [Development Tools](categories/development-tools/index.md)
   - [Cargo](categories/development-tools/cargo/cargo.md)
@@ -168,11 +160,7 @@
   - [Reading emails](categories/email/read_emails.md)
 
 - [Encoding and Serialization](categories/encoding/index.md)
-  - [Character Sets](categories/encoding/string_encoding.md)
-  - [CSV Processing](categories/encoding/csv.md)
-  - [Excel Spreadsheets](categories/encoding/excel.md)
   - [Structured Data](categories/encoding/complex_encoding.md)
-  - [Serialization with `serde`](categories/encoding/serde.md)
   - [Typecasting](categories/encoding/typecasts.md)
   - [Binary Encoders](categories/encoding/_binary_encoders.md)
   - [Binary Encoders, No External Schema](categories/encoding/no_external_schema.md)
@@ -210,8 +198,6 @@
   - [Windows](categories/os_windows-apis/windows.md)
 
 - [Parsing](categories/parsing/index.md)
-  - [Parsing](categories/parsing/parsing.md)
-  - [Expression Parser](categories/parsing/expression_parser.md)
 
 - [Parser Implementations](categories/parser-implementations/index.md)
   - [HTML](categories/parser-implementations/html.md)
@@ -232,8 +218,6 @@
   - [Rust-specific Patterns](categories/rust-patterns/rust_specific_patterns.md)
 
 - [Template Engines](categories/template-engine/index.md)
-  - [Tera](categories/template-engine/tera.md)
-  - [TinyTemplate](categories/template-engine/tinytemplate.md)
 
 - [Text Editors](categories/text-editors/index.md)
   - [IDEs](categories/text-editors/ides.md)

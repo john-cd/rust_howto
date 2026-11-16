@@ -50,10 +50,7 @@ If a failed lookup is cached, give that result a separate expiration policy so a
 
 ## Related Topics {#related-topics .skip}
 
-- [[database | Database]].
-- [[database-implementations | Database Implementations]].
-- [[nosql | NoSQL]].
-- [[key_value_stores | Key-Value Stores]].
+- [Caching](index.md) covers hybrid and distributed cache choices.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -48,7 +48,7 @@ Use `toml` with Serde to map data to Rust types, or parse into `toml::Value` whe
 
 - [Configuration](../config/configuration.md) covers loading and validating application settings.
 - [Structured Data](../encoding/complex_encoding.md) shows deserializing TOML alongside other serialized formats.
-- [Parsing Utilities](../parsing/parsing.md) covers building parsers for custom grammars.
+- [Parsing Utilities](https://john-cd.com/rust_howto/categories/parsing/parsing.html) covers building parsers for custom grammars.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

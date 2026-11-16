@@ -63,8 +63,8 @@ Use `async_zip` when archive reads or writes need to participate in an async tas
 ## Related Topics {#related-topics .skip}
 
 - [[filesystem | Filesystem]].
-- [I/O streams][p~streams].
-- [Error handling][p~error-handling].
+- [Compression and decompression](index.md).
+- [Recoverable Error Handling](../../standard-library/recoverable_error_handling.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

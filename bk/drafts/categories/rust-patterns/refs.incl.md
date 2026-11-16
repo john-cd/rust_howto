@@ -34,7 +34,7 @@
 [p~language]: ../../../src/language/index.md
 [p~macros]: ../../../src/language/macros.md
 [p~maps]: ../../../src/categories/data-structures/other_maps.md
-[p~parse]: ../date-and-time/parse.md
+[p~parse]: https://john-cd.com/rust_howto/categories/date-and-time/parse.html
 [p~unix]: # "../os_unix-apis/unix.md"
 [c~imbl~docs]: https://docs.rs/imbl
 [c~imbl~docs~badge]: https://img.shields.io/crates/v/imbl?label=imbl
