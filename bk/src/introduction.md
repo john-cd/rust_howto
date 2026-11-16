@@ -61,5 +61,9 @@ This book is a complement to similar works:
 
 Refer to the [[books | books]] chapter for a detailed list of Rust books.
 
-{{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+[p~category-algorithms]: categories/algorithms/index.md
+[p~lang]: language/index.md
+[p~books]: links/books.md
+[p~standard_library]: standard-library/index.md
+
+{{#include refs/link-refs.md}}
