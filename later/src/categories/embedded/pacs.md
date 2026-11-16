@@ -15,7 +15,7 @@ A PAC is not a complete board configuration. It may describe register fields and
 The example models a register block and the ownership token that a generated PAC provides, using host memory in place of device registers. A real PAC defines the register addresses from the vendor's SVD file; the `take` pattern and the volatile read-modify-write operations are the same.
 
 ```rust,editable
-{{#include ../../../crates/cats/embedded/examples/pacs/book_example.rs:example}}
+{{#include ../../../crates/cats/embedded/examples/pacs/register_block.rs:example}}
 ```
 
 ## PAC or HAL?

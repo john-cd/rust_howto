@@ -1,5 +1,5 @@
-mod book_example;
+mod glow_context;
 
 fn main() {
-    book_example::run();
+    glow_context::run();
 }

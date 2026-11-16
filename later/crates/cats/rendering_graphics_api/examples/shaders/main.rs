@@ -1,5 +1,5 @@
-mod book_example;
+mod wgsl_to_spirv;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    wgsl_to_spirv::run()
 }

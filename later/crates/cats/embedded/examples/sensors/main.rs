@@ -1,5 +1,5 @@
-mod book_example;
+mod i2c_temperature;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    i2c_temperature::run()
 }

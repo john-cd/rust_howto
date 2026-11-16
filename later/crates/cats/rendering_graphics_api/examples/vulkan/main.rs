@@ -1,5 +1,5 @@
-mod book_example;
+mod vulkan_instance_version;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    vulkan_instance_version::run()
 }

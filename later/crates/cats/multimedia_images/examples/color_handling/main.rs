@@ -1,5 +1,5 @@
-mod book_example;
+mod srgb_linear_conversion;
 
 fn main() {
-    book_example::run();
+    srgb_linear_conversion::run();
 }

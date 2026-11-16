@@ -1,5 +1,5 @@
-mod book_example;
+mod rasterize_svg;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    rasterize_svg::run()
 }

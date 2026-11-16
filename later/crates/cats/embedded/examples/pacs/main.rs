@@ -1,5 +1,5 @@
-mod book_example;
+mod register_block;
 
 fn main() {
-    book_example::run();
+    register_block::run();
 }

@@ -1,5 +1,5 @@
-mod book_example;
+mod webrtc_audio_negotiation;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    webrtc_audio_negotiation::run()
 }

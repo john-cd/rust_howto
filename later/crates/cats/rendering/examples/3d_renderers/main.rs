@@ -1,5 +1,5 @@
-mod book_example;
+mod project_triangle;
 
 fn main() {
-    book_example::run();
+    project_triangle::run();
 }

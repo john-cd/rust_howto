@@ -1,5 +1,5 @@
-mod book_example;
+mod rasterize_glyph;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    rasterize_glyph::run()
 }

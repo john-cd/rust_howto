@@ -1,5 +1,5 @@
-mod book_example;
+mod gzip_round_trip;
 
 fn main() -> std::io::Result<()> {
-    book_example::run()
+    gzip_round_trip::run()
 }

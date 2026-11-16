@@ -1,5 +1,5 @@
-mod book_example;
+mod tessellate_and_rasterize;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    tessellate_and_rasterize::run()
 }

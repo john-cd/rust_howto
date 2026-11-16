@@ -1,5 +1,5 @@
-mod book_example;
+mod fixed_priority_schedule;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    fixed_priority_schedule::run()
 }

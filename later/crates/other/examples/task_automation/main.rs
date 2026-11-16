@@ -1,5 +1,5 @@
-mod book_example;
+mod scheduled_command;
 
 fn main() -> impl std::process::Termination {
-    book_example::run()
+    scheduled_command::run()
 }
