@@ -9,7 +9,7 @@
 [ex~cloud~aws-lambda-invoke]: aws.md#aws-lambda-invoke
 [ex~cloud~aws-s3-compatible]: aws.md#aws-s3-compatible
 [ex~cloud~aws-message-bus]: aws.md#aws-message-bus
-[ex~cloud~dapr]: _fragment.md#dapr
+[ex~cloud~dapr]: index.md#dapr
 [ex~cloud~lambda]: aws.md#lambda
 [ex~cloud~shuttle]: rust_native_cloud_development.md#shuttle
 [docs-shuttle-rs]: https://docs.shuttle.dev/

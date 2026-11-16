@@ -20,6 +20,5 @@
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  decide where that goes
   | [Use the `dapr` distributed runtime][ex~cloud~dapr]↗ | [![dapr-rust-sdk~repo][dapr-rust-sdk~repo~badge]][dapr-rust-sdk~repo] |
 </div>
