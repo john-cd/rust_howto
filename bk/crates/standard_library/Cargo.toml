@@ -88,6 +88,11 @@ path = "examples/overflow/main.rs"
 test = true
 
 [[example]]
+name = "pointer_provenance"
+path = "examples/pointer_provenance.rs"
+test = true
+
+[[example]]
 name = "pin"
 path = "examples/pin/main.rs"
 test = true

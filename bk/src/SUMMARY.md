@@ -43,6 +43,7 @@
     - [Clone-on-Write](standard-library/clone-on-write.md)
     - [Memory Address Pinning](standard-library/memory_address_pinning.md)
   - [Resource Cleanup](standard-library/resource_cleanup.md)
+  - [Pointer Provenance at an FFI Boundary](standard-library/pointer_provenance.md)
   - [Conversion Traits](standard-library/conversion_traits.md)
   - [Reference-to-reference Conversions](standard-library/reference-to-reference_conversions.md)
   - [Borrowed Types](standard-library/borrowed_types.md)
