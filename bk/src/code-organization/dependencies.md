@@ -24,7 +24,7 @@ You may start the path with `::` followed by the name of the crate if a crate na
 Once adding an external crate as a dependency, you will very often bring items from external crates into scope with the `use` keyword. See the [[use_declarations | `use` Keyword]] chapter for details. The following example uses both styles:
 
 ```rust
-{{#include ../../crates/code_organization/examples/dependencies/main.rs:example}}
+{{#include ../../crates/code_organization/examples/dependencies/book_example.rs:example}}
 ```
 
 ## References {#references .skip}

@@ -128,7 +128,7 @@ Instead of working with deeply-nested modules, it is convenient to keep submodul
 For example, you may write in `module1`:
 
 ```rust
-{{#include ../../crates/code_organization/examples/project_layout/main.rs:reexports}}
+{{#include ../../crates/code_organization/examples/project_layout/book_example.rs:reexports}}
 ```
 
 This flattens the module hierarchy and hides implementation details.
@@ -143,7 +143,7 @@ Library crates with complex public APIs or deeply nested modules often define a 
 A single glob import e.g., `use crate_name::prelude::*;` brings all these common items into scope in one fell swoop and removes the need for repetitive `use` declarations:
 
 ```rust
-{{#include ../../crates/code_organization/examples/project_layout/main.rs:prelude}}
+{{#include ../../crates/code_organization/examples/project_layout/book_example.rs:prelude}}
 ```
 
 You may also reexport commonly used items from a dependency of your library, e.g. `pub use my_dependency::some_module::CommonType;`.
