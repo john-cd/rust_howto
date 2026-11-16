@@ -26,7 +26,7 @@ py_environment_key := if py_environment_project == "." { join(py_repo_name, py_s
 # Overrideable storage roots (the caller's environment wins over these defaults):
 # CODE_REPOS_ROOT reports the conventional checkout root (D:/code on Windows, ~/code on Unix);
 # py_repo_root itself is derived from this imported file's location.
-# CODE_TEMP_ROOT holds temporary files (C:/temp; Unix TMPDIR or /tmp).
+# CODE_TEMP_ROOT holds temporary files (C:/temp on Windows; Unix TMPDIR or /tmp).
 # CODE_CACHE_ROOT holds shared tool caches (D:/cache on Windows).
 # CODE_PACKAGES_ROOT holds package data and caches (D:/packages or ~/.local/share).
 # CODE_TOOLS_ROOT holds portable tools (C:/tools or ~/.local/tools).

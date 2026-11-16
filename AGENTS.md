@@ -170,7 +170,7 @@ The current Windows defaults below can be overridden per machine or shell with e
 - CODE_BUILD_ROOT: D:/code_build on Windows; XDG cache or ~/.cache/cargo-build by default on Unix.
 - CODE_TARGET_ROOT: D:/target on Windows; XDG cache or ~/.cache/cargo-target by default on Unix.
 - CODE_SCCACHE_ROOT: D:/sccache on Windows; XDG cache or ~/.cache/sccache by default on Unix.
-- CODE_TEMP_ROOT: C:/temp on Windows, with C:/temp as a fallback where a script needs one; Unix uses the existing TMPDIR or /tmp.
+- CODE_TEMP_ROOT: C:/temp on Windows; Unix uses the existing TMPDIR or /tmp.
 - CODE_PACKAGES_ROOT: D:/packages on Windows; ~/.local/share by default on Unix.
 - CODE_TOOLS_ROOT: C:/tools on Windows; ~/.local/tools by default on Unix.
 
@@ -190,7 +190,7 @@ Python project directories in this repository:
 - Keep each standalone Python project on a committed `uv.lock` and `.python-version`. Workspace members share the workspace root lock and Python pin.
 - Run commands from the repository root through `just --justfile <path>/justfile`: append `env`, `uv sync --locked`, or `uv run <command>`. Formatting and lint tasks use a separate `<slot>-lint` environment with only the locked Ruff group and do not build the extension. Install the hook tool with `just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile uv tool install prek`; install and run hooks with `just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile hooks-install` and `just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile hooks`.
 - The Justfile assigns project/worktree-specific environments under `CODE_PYTHON_ENV_ROOT`, Python caches under `CODE_PYTHON_BUILD_ROOT`, generated outputs under `CODE_PYTHON_OUTPUT_ROOT`, package-manager data under `CODE_PACKAGES_ROOT`, and tool executables under `CODE_TOOLS_ROOT`. Override these roots through environment variables.
-- On Windows the defaults are `D:/cache/uv/environments`, `C:/temp/python-build`, `C:/temp/python-output`, `D:/packages`, `C:/tools`, and `C:/temp` (with `C:/temp` fallback). Unix-like defaults use native home directories and `TMPDIR` or `/tmp`.
+- On Windows the defaults are `D:/cache/uv/environments`, `C:/temp/python-build`, `C:/temp/python-output`, `D:/packages`, `C:/tools`, and `C:/temp`. Unix-like defaults use native home directories and `TMPDIR` or `/tmp`.
 - `CODE_BUILD_ROOT`, `CODE_TARGET_ROOT`, and `CODE_SCCACHE_ROOT` are Rust/Cargo-specific; the Python Justfile does not read or set them. Use the repo's Cargo runner for Rust builds.
 
 ## Required repository storage and Git policy
@@ -198,7 +198,7 @@ Python project directories in this repository:
 - Keep the primary checkout on `develop`. Keep `main` as an independent empty root commit; do not merge development history into it.
 - Auxiliary worktrees must be direct children of `.worktrees/` and use slots `a`, `b`, or `c` only. Never use task-named or external worktree paths.
 - Preserve unique commits on named branches before moving a detached checkout. Keep history linear, squash unpublished related changes, and never rewrite published history without explicit authorization.
-- Use `CODE_TEMP_ROOT` for Windows temp files: `C:/temp` when available, otherwise `C:/temp`. Unix uses its native `TMPDIR` or `/tmp`.
+- Use `CODE_TEMP_ROOT` for Windows temp files: `C:/temp`. Unix uses its native `TMPDIR` or `/tmp`.
 - Use `CODE_PACKAGES_ROOT` for package data (Windows `D:/packages`) and `CODE_TOOLS_ROOT` for portable tools (Windows `C:/tools`). Existing tool-specific environment overrides take precedence; changing a root does not move installed packages.
 - Run Cargo through `just cargo`. The runner must export central per-repo/per-slot target and build paths, sccache with incremental disabled, and only registered allowed sccache base directories.
 - Windows Cargo intermediate files use `CODE_BUILD_ROOT`; defaults are `D:/code_build/<repo>/<slot>` and `D:/target/<repo>/<slot>` for build and target outputs.
