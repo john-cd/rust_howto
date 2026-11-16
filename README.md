@@ -151,7 +151,7 @@ The primary checkout uses `develop`; `main` is an independent empty branch.
 Auxiliary worktrees belong under `.worktrees/`, with names a and b only.
 Storage roots are configurable through `CODE_REPOS_ROOT`, `CODE_TEMP_ROOT`,
 `CODE_PACKAGES_ROOT`, and `CODE_TOOLS_ROOT`. Windows defaults are `D:/code`,
-`C:/temp` (`C:/temp` fallback), `D:/packages`, and `C:/tools` respectively.
+`C:/temp`, `D:/packages`, and `C:/tools` respectively.
 Unix uses native home/cache/temp paths. A root override changes destinations;
 it does not move existing installations. Tool-specific overrides such as
 `CARGO_HOME`, `npm_config_cache`, and `NUGET_PACKAGES` remain independent.
