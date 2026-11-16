@@ -8,15 +8,26 @@ Graphics libraries cover different layers of a rendering pipeline, from drawing 
 
 ## Choose a Graphics Layer
 
-| Goal | Crates | What they provide |
-| --- | --- | --- |
-| Draw 2D shapes and paths | [`raqote`][c~raqote~docs]↗{{hi:raqote}}, [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} | 2D drawing APIs for paths, fills, strokes, and images. |
-| Render a pixel buffer | [`pixels`][c~pixels~docs]↗{{hi:pixels}} | A GPU-backed pixel buffer built on [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}. |
-| Turn vector paths into renderable geometry | [`lyon`][c~lyon~docs]↗{{hi:lyon}} | Tessellates 2D fills and strokes into geometry; a renderer still draws the result. |
-| Build a GPU renderer or 3D application | [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} | A cross-platform graphics API with native and WebAssembly backends. |
-| Make sketches and generative artwork | [`nannou`][c~nannou~repo]↗{{hi:nannou}} | A creative-coding framework with drawing, graphics, windowing, and UI APIs. |
+| Goal                                       | Crates                                                                                    | What they provide                                                                  |
+| ------------------------------------------ | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Draw 2D shapes and paths                   | [`raqote`][c~raqote~docs]↗{{hi:raqote}}, [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}} | 2D drawing APIs for paths, fills, strokes, and images.                             |
+| Render a pixel buffer                      | [`pixels`][c~pixels~docs]↗{{hi:pixels}}                                                   | A GPU-backed pixel buffer built on [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}.              |
+| Turn vector paths into renderable geometry | [`lyon`][c~lyon~docs]↗{{hi:lyon}}                                                         | Tessellates 2D fills and strokes into geometry; a renderer still draws the result. |
+| Build a GPU renderer or 3D application     | [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}                                                         | A cross-platform graphics API with native and WebAssembly backends.                |
+| Make sketches and generative artwork       | [`nannou`][c~nannou~repo]↗{{hi:nannou}}                                                   | A creative-coding framework with drawing, graphics, windowing, and UI APIs.        |
 
 These tools are not interchangeable. For example, `lyon` prepares path geometry while a renderer such as `wgpu` submits it to a graphics backend. `pixels` starts from a pixel buffer, while 2D drawing APIs expose higher-level path and paint operations. A GUI framework or game engine may provide window management and rendering as part of a larger application framework.
+
+## Draw a Triangle as SVG
+
+SVG describes a scene with shapes in a shared coordinate system. The rectangle
+paints the background first, and the polygon paints the triangle over it. From
+`bk/crates`, run `cargo run -q -p graphics --example graphics > triangle.svg`
+and open the resulting file in a browser.
+
+```rust,editable
+{{#include ../../../crates/cats/graphics/examples/graphics.rs:example}}
+```
 
 ## Rendering Topics
 

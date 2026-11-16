@@ -1,23 +1,47 @@
-//! Placeholder for a graphics example.
-//!
-//! TODO Reviewed ??-??-2026.
+// TODO Reviewed ??-??-2026.
 
-// Deferred (#1748): no graphics example yet.
+// ANCHOR: example
+//! Draw a triangle over a background and write the result as SVG.
 
-/// Does nothing yet.
-fn main() {}
+use std::io;
+use std::io::Write;
 
-/// Verifies the placeholder entry point remains callable.
+/// Writes a 160 by 120 SVG scene to the supplied output.
+///
+/// # Errors
+///
+/// Returns an error if the output cannot be written.
+fn draw(mut output: impl Write) -> io::Result<()> {
+    writeln!(
+        output,
+        r#"<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120">
+  <rect width="160" height="120" fill="midnightblue"/>
+  <polygon points="80,20 140,100 20,100" fill="gold"/>
+</svg>"#
+    )
+}
+
+/// Writes the scene to standard output.
+///
+/// # Errors
+///
+/// Returns an error if standard output cannot be written.
+fn main() -> io::Result<()> {
+    draw(io::stdout().lock())
+}
+// ANCHOR_END: example
+
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    // output-only: placeholder without behavior until the graphics example
-    // exists (#1748).
-
-    /// Verifies the placeholder entry point remains callable.
+    /// Checks that the triangle is written after the background.
     #[test]
-    fn test_graphics_placeholder_entry_point() {
-        main();
+    fn draws_shapes_in_order() -> Result<(), Box<dyn std::error::Error>> {
+        let mut output = Vec::new();
+        draw(&mut output)?;
+        let svg = String::from_utf8(output)?;
+        assert!(svg.contains("fill=\"midnightblue\"/>\n  <polygon"));
+        Ok(())
     }
 }
