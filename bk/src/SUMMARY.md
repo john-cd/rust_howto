@@ -144,6 +144,8 @@
   - [Expression Parser](categories/parsing/expression_parser.md)
 
 - [Profiling and Benchmarking](categories/development-tools/profiling.md)
+
+- [HTTP Servers](categories/web-programming_http-server/json_patch.md)
 - [Diagnose Rust Build Time](categories/development-tools/build_time_diagnosis.md)
 - [Compare Benchmark Results in CI](categories/development-tools/benchmark_regressions.md)
 
