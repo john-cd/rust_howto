@@ -52,12 +52,6 @@ path = "examples/machine_learning/main.rs"
 test = true
 
 [[example]]
-name = "polars"
-path = "examples/polars/main.rs"
-test = true
-required-features = ["polars"]
-
-[[example]]
 name = "scheduling"
 path = "examples/scheduling/main.rs"
 test = true
@@ -71,10 +65,6 @@ test = true
 name = "task_automation"
 path = "examples/task_automation/main.rs"
 test = true
-
-# `polars` and `datafusion` can be enabled together: `Cargo.lock` resolves a single `chrono`
-# (polars-arrow 0.51 and datafusion 55 both accept it). Re-check with
-# `cargo tree --locked -i chrono --features polars,datafusion` when bumping either crate.
 
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
@@ -165,8 +155,6 @@ kube = { version = "5.0.0", features = ["derive", "runtime", "client"] }
 lambda_runtime = "1.5.0"
 # A safe Rust wrapper for ONNX Runtime 1.31 - Optimize and accelerate machine learning inference & training
 ort = { version = "2.0.0-rc.15", optional = true } # Downloads ONNX Runtime binaries at build time
-# DataFrame library based on Apache Arrow
-polars = { version = "0.55.2", default-features = false, features = ["lazy"], optional = true }
 # A Protocol Buffers implementation for the Rust Language.
 prost = "0.14.5" # Protobuf message derive.
 # Rust X.509 certificate generator
@@ -213,7 +201,6 @@ onnx = ["dep:ort", "dep:arc-swap"]
 datafusion = ["dep:datafusion"]
 arrow = ["dep:arrow", "dep:arrow-array", "dep:arrow-cast", "dep:arrow-ipc"]
 typegen = ["crux_core/typegen"] # for Crux
-polars = ["dep:polars"]
 
 [lints]
 workspace = true

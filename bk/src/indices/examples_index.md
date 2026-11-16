@@ -100,6 +100,10 @@
 
 {{#include ../categories/data-structures/vectors.incl.md}}
 
+## Data Processing
+
+{{#include ../categories/data-processing/dataframes.incl.md}}
+
 ## Filesystem
 
 ### Directories

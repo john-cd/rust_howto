@@ -13,6 +13,7 @@ members = [
     "cats/concurrency",
     "cats/config",
     "cats/cryptography",
+    "cats/data_processing",
     "cats/data_structures",
     "cats/database",
     "cats/database/cornucopia_queries",

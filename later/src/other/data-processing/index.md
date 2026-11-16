@@ -20,8 +20,6 @@ splitting, and joining delimited files.
 The [dataframes chapter](dataframes.md) uses Polars for columnar, dataframe-style
 operations over structured data.
 
-{{#include dataframes.incl.md}}
-
 ## Build data systems
 
 The [data engineering chapter](data_engineering.md) introduces Arrow, DataFusion,
