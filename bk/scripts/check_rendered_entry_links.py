@@ -24,10 +24,15 @@ class Page(HTMLParser):
     def __init__(self, html: str) -> None:
         super().__init__()
         self.targets: list[str] = []
+        self.anchors: set[str] = set()
         self.feed(html)
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
+        if anchor := values.get("id"):
+            self.anchors.add(anchor)
+        if tag == "a" and (anchor := values.get("name")):
+            self.anchors.add(anchor)
         if tag == "a" and (href := values.get("href")):
             self.targets.append(href)
         if tag == "meta" and (values.get("http-equiv") or "").lower() == "refresh":
@@ -36,11 +41,44 @@ class Page(HTMLParser):
                 self.targets.append(match[1].strip("'\""))
 
 
+def check_word_index(root: Path) -> list[str]:
+    """Verify each local fragment against the emitted chapter HTML."""
+    source = root / "word_index.html"
+    targets = set(Page(source.read_text(encoding="utf-8")).targets)
+    chapters: dict[Path, set[str]] = {}
+    failures = []
+    for href in sorted(targets):
+        link = urlsplit(href)
+        if link.scheme or link.netloc or not link.fragment:
+            continue
+        target = urlsplit(urljoin(BOOK_URL + source.name, href)).path
+        if not target.startswith("/rust_howto/"):
+            failures.append(f"{source.name}: {href} leaves the book")
+            continue
+        chapter = root / unquote(target.removeprefix("/rust_howto/"))
+        if chapter not in chapters:
+            chapters[chapter] = (
+                Page(chapter.read_text(encoding="utf-8")).anchors
+                if chapter.is_file()
+                else set()
+            )
+        if unquote(link.fragment) not in chapters[chapter]:
+            failures.append(f"{source.name}: missing anchor {href}")
+    return failures
+
+
 def main() -> int:
     """Report unresolved chapter references and invalid local targets."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("html_dir", type=Path)
-    root = parser.parse_args().html_dir
+    parser.add_argument("--word-index", action="store_true")
+    args = parser.parse_args()
+    root = args.html_dir
+    if args.word_index:
+        failures = check_word_index(root)
+        for failure in failures:
+            print(failure)
+        return int(bool(failures))
     failures = []
     for source in PAGES:
         html = (root / source).read_text(encoding="utf-8")
