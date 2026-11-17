@@ -39,6 +39,7 @@ impl Task {
         }
     }
 
+    /// Handles the task id behavior for this component.
     pub fn task_id(&self) -> u64 {
         self.task_id
     }
