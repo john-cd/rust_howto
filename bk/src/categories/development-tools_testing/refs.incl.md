@@ -2,7 +2,6 @@
 
 <!-- markdownlint-disable MD057 -->
 
-[cargo-llvm-cov~repo]: https://github.com/taiki-e/cargo-llvm-cov
 [ex~development-tools_testing~afl]: fuzzing.md#afl
 [ex~development-tools_testing~approx]: assertions.md#approx
 [ex~development-tools_testing~assertion_libraries]: assertions.md#assertion_libraries
@@ -23,30 +22,22 @@
 [ex~development-tools_testing~insta_redactions]: snapshot_testing.md#insta-redactions
 [ex~development-tools_testing~integration_testing]: testing.md#integration_testing
 [ex~development-tools_testing~lcov]: code_coverage.md#lcov
+[ex~development-tools_testing~mutation-testing]: mutation_testing.md#mutation-testing
 [ex~development-tools_testing~mocking]: mocking.md#mocking
 [ex~development-tools_testing~proptesting]: property_based_testing.md#proptesting
 [ex~development-tools_testing~standard-assertions]: assertions.md#standard-library-macros
 [ex~development-tools_testing~test_data_generation]: property_based_testing.md#test_data_generation
 [ex~development-tools_testing~unit_testing]: testing.md#unit_testing
-[p~asynchronous]: ../asynchronous/index.md
-[p~attributes]: ../../language/attributes.md
-[p~cargo]: ../development-tools/cargo/cargo.md
-[p~code-coverage]: code_coverage.md
-[p~crates]: ../../../src/crate-selection/index.md
-[p~functions]: ../../language/functions.md
-[p~install]: ../development-tools/installation/install.md
-[p~language]: ../../../src/language/index.md
-[p~macros]: ../../../src/language/macros.md
-[p~modules]: ../../code_organization/modules.md
-[p~requests]: ../web-programming_http-client/requests.md
-[p~scripting]: # "../../other/scripting/index.md"
-[p~search]: ../database/search.md
-[p~sorting]: ../../../src/categories/algorithms/sorting.md
-[p~testing]: testing.md
-[p~time]: https://john-cd.com/rust_howto/categories/date-and-time/time_crate.html
-[p~tokio]: ../asynchronous/tokio.md
 [ex~development-tools_testing~rstest]: testing.md#rstest
 [ex~development-tools_testing~env-vars]: testing.md#env-vars
 [ex~development-tools_testing~paused-time]: testing.md#paused-time
 [ex~development-tools_testing~proptest-strategy]: testing.md#proptest-strategy
 [ex~development-tools_testing~float-asserts]: testing.md#float-asserts
+[c~honggfuzz~crates.io]: https://crates.io/crates/honggfuzz
+[c~honggfuzz~crates.io~badge]: https://img.shields.io/crates/v/honggfuzz?label=honggfuzz
+[c~honggfuzz~docs]: https://docs.rs/honggfuzz
+[c~honggfuzz~docs~badge]: https://img.shields.io/crates/v/honggfuzz?label=honggfuzz
+[c~honggfuzz~lib.rs]: https://lib.rs/crates/honggfuzz
+[c~honggfuzz~lib.rs~badge]: https://img.shields.io/badge/lib.rs-honggfuzz-steelblue
+[c~honggfuzz~repo]: https://github.com/rust-fuzz/honggfuzz-rs
+[c~honggfuzz~repo~badge]: https://img.shields.io/badge/honggfuzz-steelblue?logo=github
