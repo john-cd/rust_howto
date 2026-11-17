@@ -101,8 +101,8 @@ Install [`dprint`][dprint~website] and use the `mdfmt` recipes from the `bk` dir
 
 ```sh
 cd bk
-just mdfmt drafts/categories/development-tools_debugging/debugging.md
-just mdfmt-check drafts/categories/development-tools_debugging/debugging.md
+just mdfmt src/categories/development-tools_debugging/debugging.md
+just mdfmt-check src/categories/development-tools_debugging/debugging.md
 ```
 
 Pass a path under `src`, `drafts`, or `../later/src` to format or check that file. The root configuration also excludes generated indices and build output.

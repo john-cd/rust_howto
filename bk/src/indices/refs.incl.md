@@ -1,5 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
+[c~opentelemetry-http~docs]: https://docs.rs/opentelemetry-http
 [ex~algorithms~blake3]: ../categories/algorithms/hashing.md#blake3
 [ex~algorithms~create-random-passwords-from-a-set-of-user-defined-characters]: ../categories/algorithms/random_value_generation.md#create-random-passwords-from-a-set-of-user-defined-characters
 [ex~algorithms~cryptographic-algorithms]: ../categories/algorithms/hashing.md#cryptographic-algorithms
@@ -264,6 +265,40 @@
 [ex~date-and-time~perform-checked-date-time-calc]: ../categories/date-and-time/duration.md#perform-checked-date-time-calc
 [ex~date-and-time~time-crate]: ../categories/date-and-time/time_crate.md#time-crate
 [ex~date-and-time~unix-timestamp]: ../categories/date-and-time/parse.md#unix-timestamp
+[ex~development-tools_debugging~add-tracing-spans-to-fn]: ../categories/development-tools_debugging/tracing.md#add-tracing-spans-to-fn
+[ex~development-tools_debugging~capture-a-backtrace]: ../categories/development-tools_debugging/debugging.md#capture-a-backtrace
+[ex~development-tools_debugging~configure-tracing]: ../categories/development-tools_debugging/tracing.md#configure-tracing
+[ex~development-tools_debugging~custom-env-var-for-logging]: ../categories/development-tools_debugging/config_log.md#custom-env-var-for-logging
+[ex~development-tools_debugging~custom-event-formatter]: ../categories/development-tools_debugging/tracing.md#custom-event-formatter
+[ex~development-tools_debugging~custom-logger]: ../categories/development-tools_debugging/log.md#custom-logger
+[ex~development-tools_debugging~enable-log-levels-per-module]: ../categories/development-tools_debugging/config_log.md#enable-log-levels-per-module
+[ex~development-tools_debugging~events]: ../categories/development-tools_debugging/tracing.md#events
+[ex~development-tools_debugging~inspect-expression-with-dbg]: ../categories/development-tools_debugging/debugging.md#inspect-expression-with-dbg
+[ex~development-tools_debugging~log-error-message-to-console]: ../categories/development-tools_debugging/log.md#log-error-message-to-console
+[ex~development-tools_debugging~log-to-console]: ../categories/development-tools_debugging/log.md#log-to-console
+[ex~development-tools_debugging~log-to-custom-location]: ../categories/development-tools_debugging/config_log.md#log-to-custom-location
+[ex~development-tools_debugging~log-to-stdout]: ../categories/development-tools_debugging/log.md#log-to-stdout
+[ex~development-tools_debugging~metrics-route]: ../categories/development-tools_debugging/metrics.md#serve-metrics-from-an-axum-route
+[ex~development-tools_debugging~open-observe]: ../categories/development-tools_debugging/distributed_telemetry.md#open-observe
+[ex~development-tools_debugging~open-telemetry]: ../categories/development-tools_debugging/distributed_telemetry.md#open-telemetry
+[ex~development-tools_debugging~prometheus]: ../categories/development-tools_debugging/metrics.md#expose-prometheus-metrics
+[ex~development-tools_debugging~propagate-context-across-http]: ../categories/development-tools_debugging/distributed_telemetry.md#propagate-context-across-http
+[ex~development-tools_debugging~record-metrics]: ../categories/development-tools_debugging/metrics.md#record-counters-and-histograms
+[ex~development-tools_debugging~slog]: ../categories/development-tools_debugging/tracing_alternatives.md#slog
+[ex~development-tools_debugging~span-entered]: ../categories/development-tools_debugging/tracing.md#span-entered
+[ex~development-tools_debugging~span-instrument]: ../categories/development-tools_debugging/tracing.md#span-instrument
+[ex~development-tools_debugging~spans]: ../categories/development-tools_debugging/tracing.md#spans
+[ex~development-tools_debugging~syslog]: ../categories/development-tools_debugging/log.md#syslog
+[ex~development-tools_debugging~terminal-debuggers]: ../categories/development-tools_debugging/debugger.md#terminal-debuggers
+[ex~development-tools_debugging~timestamp-in-log-messages]: ../categories/development-tools_debugging/config_log.md#timestamp-in-log-messages
+[ex~development-tools_debugging~tracing-basics]: ../categories/development-tools_debugging/tracing.md#tracing-basics
+[ex~development-tools_debugging~tracing-change-log-level]: ../categories/development-tools_debugging/tracing.md#tracing-change-log-level
+[ex~development-tools_debugging~tracing-change-runtime]: ../categories/development-tools_debugging/tracing.md#tracing-change-runtime
+[ex~development-tools_debugging~tracing-config-runtime]: ../categories/development-tools_debugging/tracing.md#tracing-config-runtime
+[ex~development-tools_debugging~tracing-log-json]: ../categories/development-tools_debugging/tracing.md#tracing-log-json
+[ex~development-tools_debugging~tracing-multiple-destinations]: ../categories/development-tools_debugging/tracing.md#tracing-multiple-destinations
+[ex~development-tools_debugging~type-name-of-val]: ../categories/development-tools_debugging/diagnostic_functions.md#type-name-of-val
+[ex~development-tools_debugging~vscode]: ../categories/development-tools_debugging/debugger.md#vscode
 [ex~development-tools_testing~afl]: ../categories/development-tools_testing/fuzzing.md#afl
 [ex~development-tools_testing~approx]: ../categories/development-tools_testing/assertions.md#approx
 [ex~development-tools_testing~assertion_libraries]: ../categories/development-tools_testing/assertions.md#assertion_libraries
@@ -760,4 +795,6 @@
 [ex~web-programming_http-server~schemars]: ../categories/web-programming_http-server/openapi.md#schemars
 [ex~web-programming_http-server~utoipa]: ../categories/web-programming_http-server/openapi.md#utoipa
 [ex~web-programming_websocket~general-purpose]: ../categories/web-programming_websocket/websocket.md#general-purpose
+[metrics-exporter-prometheus~website]: https://docs.rs/metrics-exporter-prometheus
+[metrics~website]: https://docs.rs/metrics
 [p~standard-library]: ../standard-library/index.md

@@ -9532,6 +9532,7 @@
 [c~tokio~crates.io~badge]: https://img.shields.io/badge/crates.io-tokio-crimson
 [c~tokio~docs]: https://docs.rs/tokio
 [c~tokio::test~docs]: https://docs.rs/tokio/latest/tokio/attr.test.html
+[c~opentelemetry-http~docs]: https://docs.rs/opentelemetry-http
 [c~tokio~docs~badge]: https://img.shields.io/crates/v/tokio?label=tokio
 [c~tokio~examples~docs]: https://github.com/tokio-rs/tokio/tree/master/examples
 [c~tokio~examples~docs~badge]: https://img.shields.io/badge/Tokio_examples-steelblue?logo=github
