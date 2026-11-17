@@ -6,5 +6,4 @@
 [ex~versioning~parse-a-complex-version-string]: versioning.md#parse-a-complex-version-string
 [ex~versioning~parse-a-version-string]: versioning.md#parse-a-version-string
 [p~cargo]: ../cargo/cargo.md
-[p~parsing]: # "../../parsing/index.md"
-[p~strings]: ../../../../src/categories/data-structures/strings.md
+[p~parsing]: ../../parsing/index.md
