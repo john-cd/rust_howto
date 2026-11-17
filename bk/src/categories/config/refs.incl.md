@@ -8,11 +8,11 @@
 [ex~config~load_configuration_into_a_singleton]: configuration.md#load_configuration_into_a_singleton
 [ex~config~test_configuration_loading_methods]: configuration.md#test_configuration_loading_methods
 [p~cli-argument-parsing]: ../command-line-interface/argument_parsing.md
-[p~environment-variables]: environment_variables.md
 [p~config]: index.md
 [p~configuration]: configuration.md
+[p~environment-variables]: environment_variables.md
 [p~json]: ../parser-implementations/json.md
-[p~structs]: ../../../src/language/structs.md
+[p~structs]: ../../language/structs.md
 [p~toml]: ../parser-implementations/toml.md
 
 [c~confique~docs]: https://docs.rs/confique
