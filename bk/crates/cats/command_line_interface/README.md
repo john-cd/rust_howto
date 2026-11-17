@@ -8,6 +8,7 @@ This crate contains code examples for the **Command Line Interface** category on
 
 - **Ansi Term** (`examples/ansi_term/`): Demonstrates concepts like `ansi_term_basic`, `ansi_term_basic1`, `ansi_term_basic2`, `colored`.
 - **Arguments** (`examples/arguments/`): Demonstrates concepts like `clap`, `clap_basic`, `clap_complete`, `lexopt`, `pico_args`.
+- **Advanced Clap Builder** (`examples/clap_builder_xmpl/`): Demonstrates a modular CLI with subcommands, global flags, environment variables, custom help styling, and parsing tests.
 - **User Interaction** (`examples/user_interaction/`): Demonstrates concepts like `indicatif`, `indicatif2`, `inquire`.
 - **Standalone Examples**: `crossterm`, `ratatui`.
 
@@ -20,4 +21,4 @@ cargo check --package command_line_interface --examples
 cargo test --package command_line_interface
 ```
 
-Code examples correspond to chapters in `bk/src/categories/command_line_interface` or related book sections.
+Code examples correspond to chapters in `bk/src/categories/command-line-interface` or related book sections.
