@@ -46,4 +46,22 @@ mod tests {
     fn test_replace_example_entry_point() {
         main();
     }
+
+    /// Unmatched text is borrowed without allocating a replacement string.
+    #[test]
+    fn leaves_unmatched_text_borrowed() {
+        assert!(matches!(
+            reformat_dates("no dates"),
+            Cow::Borrowed("no dates")
+        ));
+    }
+
+    /// Replacement recognizes digit patterns without validating calendar dates.
+    #[test]
+    fn rewrites_patterns_without_calendar_validation() {
+        assert_eq!(
+            reformat_dates("2026-99-99 and 2013-01-15"),
+            "99/99/2026 and 01/15/2013"
+        );
+    }
 }

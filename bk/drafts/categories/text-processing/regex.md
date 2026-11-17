@@ -4,6 +4,8 @@
 
 {{#include regex.incl.md}}
 
+Hashtag extraction, US-style phone extraction, and date replacement have moved to the [published Regular Expressions chapter](https://john-cd.com/rust_howto/categories/text-processing/regex.html).
+
 Regular expressions are useful for searching and extracting text with a repeatable pattern. Prefer ordinary string methods for literal prefixes, suffixes, or delimiters. Rust's `regex` crate guarantees linear-time matching and intentionally omits features that require backtracking, such as look-around and backreferences; use `fancy-regex` only when those features are required and inputs are appropriately bounded.
 
 ## Verify and Extract Login from an Email Address {#verify-and-extract-login-from-an-email-address}
@@ -16,28 +18,6 @@ Validates that an [email][p~email] address{{hi:Email address}} is formatted corr
 {{#include ../../../crates/cats/text_processing/examples/regex/email.rs:example}}
 ```
 
-## Extract a list of Unique #hashtags from a Text {#extract-a-list-of-unique-hashtags-from-a-text}
-
-[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs]{{hi:lazy_static}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
-
-Extracts, sorts, and deduplicates list of hashtags{{hi:Hashtags}} from text.
-
-The hashtag regex given here only catches Latin hashtags that start with a letter. The complete [Twitter hashtag regex][twitter~hashtag-regex~repo]↗ [![twitter~hashtag-regex~repo][twitter~hashtag-regex~repo~badge]][twitter~hashtag-regex~repo] is much more complicated.
-
-```rust,editable
-{{#include ../../../crates/cats/text_processing/examples/regex/hashtags.rs:example}}
-```
-
-## Extract Phone Numbers from Text {#extract-phone-numbers-from-text}
-
-[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
-
-Processes a string of text using [`regex::Regex::captures_iter`][c~regex::Regex::captures_iter~docs]↗{{hi:regex::Regex::captures_iter}} to capture multiple phone numbers{{hi:Phone numbers}}. The example here is for US convention phone numbers.
-
-```rust,editable
-{{#include ../../../crates/cats/text_processing/examples/regex/phone.rs:example}}
-```
-
 ## Filter a log File by Matching Multiple Regular Expressions {#filter-a-log-file-by-matching-multiple-regular-expressions}
 
 [![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
@@ -48,19 +28,6 @@ A [`regex::RegexSetBuilder`][c~regex::RegexSetBuilder~docs]↗{{hi:regex::RegexS
 
 ```rust,editable
 {{#include ../../../crates/cats/text_processing/examples/regex/filter_log.rs:example}}
-```
-
-## Replace all Occurrences of one text Pattern with Another Pattern {#replace-all-occurrences-of-one-text-pattern-with-another-pattern}
-
-[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs]{{hi:lazy_static}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
-
-Replaces all occurrences of the standard ISO 8601{{hi:ISO 8601}} _YYYY-MM-DD_ date pattern with the equivalent American English date{{hi:Date}} with slashes. For example `2013-01-15` becomes `01/15/2013`.
-
-The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]↗{{hi:regex::Regex::replace_all}} replaces all occurrences of the whole regex{{hi:regex}}.
-`&str` implements the [`regex::Replacer`][c~regex::Replacer~docs]↗{{hi:regex::Replacer}} trait which allows variables like `$abcde` to refer to corresponding named capture groups{{hi:Named capture groups}} `(?P<abcde>REGEX)` from the search regex. See the [`replacement string syntax`][c~regex::Regex~replacement-string-syntax]↗{{hi:Replacement string syntax}} for examples and escaping detail.
-
-```rust,editable
-{{#include ../../../crates/cats/text_processing/examples/regex/replace.rs:example}}
 ```
 
 ## Use Regular Expressions with Back-references and Lookarounds {#fancy-regex}

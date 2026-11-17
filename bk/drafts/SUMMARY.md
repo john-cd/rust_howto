@@ -2,6 +2,8 @@
 
 # Categories
 
+<!-- Ordered migration review and remaining work: MIGRATION.md. -->
+
 - [Asynchronous](categories/asynchronous/index.md)
   - [Async](categories/asynchronous/async.md)
   - [Async and Traits](categories/asynchronous/async_traits.md)
@@ -221,7 +223,7 @@
   - [Language Server Protocol](categories/text-editors/language_server_protocol.md)
 
 - [Text Processing](categories/text-processing/index.md)
-  - [Regular Expressions](categories/text-processing/regex.md)
+  - [Regular Expressions — Remaining Recipes](categories/text-processing/regex.md)
   - [String Parsing](categories/text-processing/string_parsing.md)
   - [String Concatenation](categories/text-processing/string_concat.md)
   - [String Manipulation](categories/text-processing/string_manipulation.md)

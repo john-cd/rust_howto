@@ -236,6 +236,8 @@
 
 ## Text Processing
 
+{{#include ../categories/text-processing/regex.incl.md}}
+
 - [Collect Unicode Graphemes](../categories/text-processing/unicode.md#collect-unicode-graphemes).
 
 ## Template Engine
