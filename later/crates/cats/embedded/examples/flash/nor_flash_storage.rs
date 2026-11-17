@@ -14,8 +14,11 @@ use embedded_storage::nor_flash::ReadNorFlash;
 /// erase.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum FlashError {
+    /// Represents the out of bounds case of flash error.
     OutOfBounds,
+    /// Represents the unaligned case of flash error.
     Unaligned,
+    /// Represents the needs erase case of flash error.
     NeedsErase,
 }
 
@@ -68,6 +71,7 @@ impl ReadNorFlash for RamNorFlash {
         Ok(())
     }
 
+    /// Returns the available capacity for this resource.
     fn capacity(&self) -> usize {
         self.bytes.len()
     }
@@ -166,10 +170,12 @@ mod tests {
     }
 }
 
+/// Provides private main tests behavior for the nor flash storage component.
 #[cfg(test)]
 mod private_main_tests {
     use super::main;
 
+    /// Checks that private main succeeds.
     #[test]
     fn private_main_succeeds() {
         let entry_point = main;

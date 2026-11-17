@@ -11,6 +11,7 @@ fn main() -> anyhow::Result<()> {
     neon::run()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

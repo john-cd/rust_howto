@@ -54,6 +54,7 @@ struct State {
 }
 
 impl WasiView for State {
+    /// Handles the ctx behavior for this component.
     fn ctx(&mut self) -> WasiCtxView<'_> {
         WasiCtxView {
             ctx: &mut self.wasi,
@@ -182,6 +183,7 @@ pub fn run() -> Result<()> {
     entry()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

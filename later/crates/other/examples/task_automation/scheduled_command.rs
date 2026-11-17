@@ -129,21 +129,25 @@ mod tests {
     }
 }
 
+/// Runs the example logic exposed by this module.
 pub fn run() -> impl std::process::Termination {
     let entry_point = main;
     entry_point()
 }
 
+/// Provides entry point tests behavior for the scheduled command component.
 #[cfg(test)]
 mod entry_point_tests {
     use super::*;
 
+    /// Checks that private main runs.
     #[test]
     fn private_main_runs() {
         let entry_point = main;
         entry_point().expect("example entry point should succeed");
     }
 
+    /// Checks that next run is after the requested time.
     #[test]
     fn next_run_is_after_the_requested_time() -> Result<()> {
         let task = Task::new("0 30 2 * * *", "rustc --print $WHAT")?;

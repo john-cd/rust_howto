@@ -63,6 +63,7 @@ fn run() -> RequestSpec {
     build_request("https://api.example.com", "/items", None)
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

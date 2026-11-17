@@ -40,6 +40,7 @@ mod domain {
         }
 
         // Getters.
+        /// Handles the id behavior for this component.
         pub fn id(&self) -> u32 {
             self.id
         }
@@ -49,6 +50,7 @@ mod domain {
             &self.name
         }
 
+        /// Handles the quantity behavior for this component.
         pub fn quantity(&self) -> u32 {
             self.quantity
         }
@@ -125,6 +127,7 @@ mod events {
         /// Returns all events recorded after the specified version offset.
         fn get_events_since(&self, version: usize) -> Vec<ProductEvent>;
 
+        /// Handles the event count behavior for this component.
         fn event_count(&self) -> usize;
     }
 
@@ -158,6 +161,7 @@ mod events {
             }
         }
 
+        /// Returns the events since stored by or available from this value.
         fn get_events_since(&self, version: usize) -> Vec<ProductEvent> {
             let events = self
                 .events
@@ -170,6 +174,7 @@ mod events {
             }
         }
 
+        /// Handles the event count behavior for this component.
         fn event_count(&self) -> usize {
             self.events
                 .read()
@@ -377,6 +382,7 @@ mod read_store {
             read_model.get(&id).cloned()
         }
 
+        /// Returns the all products stored by or available from this value.
         fn get_all_products(&self) -> Vec<Product> {
             let read_model = self
                 .read_model
@@ -496,6 +502,7 @@ mod query {
             self.read_repo.get_product(id)
         }
 
+        /// Returns the all products stored by or available from this value.
         pub fn get_all_products(&self) -> Vec<Product> {
             self.read_repo.get_all_products()
         }
@@ -585,6 +592,7 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

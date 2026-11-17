@@ -24,6 +24,7 @@ use tokio_util::sync::CancellationToken;
 struct Clock {
     /// Start of the selected range.
     start: DateTime<Utc>,
+    /// Origin locator used to identify the remote endpoint.
     origin: tokio::time::Instant,
 }
 

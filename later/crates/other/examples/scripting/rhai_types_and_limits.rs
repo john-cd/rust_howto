@@ -30,6 +30,7 @@ impl Counter {
         self.value += 1;
     }
 
+    /// Returns the value represented by this object.
     fn value(&mut self) -> i64 {
         self.value
     }
@@ -77,6 +78,7 @@ pub fn run() -> Result<(), Box<EvalAltResult>> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

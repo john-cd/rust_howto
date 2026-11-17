@@ -38,10 +38,12 @@ fn main() -> std::io::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Runs the example logic exposed by this module.
 pub fn run() -> std::io::Result<()> {
     main()
 }
 
+/// Provides entry point tests behavior for the gzip round trip component.
 #[cfg(test)]
 mod entry_point_tests {
     use super::*;

@@ -11,6 +11,7 @@
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 use wasm_bindgen::prelude::*;
 
+// Declares foreign functions and types linked from this module.
 #[cfg(all(target_arch = "wasm32", target_os = "unknown"))]
 #[wasm_bindgen]
 unsafe extern "C" {

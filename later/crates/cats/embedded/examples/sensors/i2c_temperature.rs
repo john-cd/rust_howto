@@ -11,6 +11,7 @@ use embedded_hal::i2c::Operation;
 /// Defines the outcomes available to the sensors workflow, including unexpected transaction.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum BusError {
+    /// Represents the unexpected transaction case of bus error.
     UnexpectedTransaction,
 }
 
@@ -35,6 +36,7 @@ impl embedded_hal::i2c::Error for BusError {
 struct MockI2c;
 
 impl ErrorType for MockI2c {
+    /// Alias for `BusError` used to represent error.
     type Error = BusError;
 }
 
@@ -100,10 +102,12 @@ mod tests {
     }
 }
 
+/// Provides private main tests behavior for the i2c temperature component.
 #[cfg(test)]
 mod private_main_tests {
     use super::main;
 
+    /// Checks that private main succeeds.
     #[test]
     fn private_main_succeeds() {
         let entry_point = main;

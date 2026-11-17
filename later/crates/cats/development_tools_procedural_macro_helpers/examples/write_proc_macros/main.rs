@@ -79,6 +79,7 @@ fn dispatch(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory as _;

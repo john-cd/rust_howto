@@ -77,20 +77,25 @@ pub struct SimpleCache {
 }
 
 impl Cache for SimpleCache {
+    /// Alias for `Entity` used to represent node.
     type Node = Entity;
 
+    /// Handles the width behavior for this component.
     fn width(&self, node: &Self::Node) -> f32 {
         self.rects.get(node).map_or(0.0, |r| r.2)
     }
 
+    /// Handles the height behavior for this component.
     fn height(&self, node: &Self::Node) -> f32 {
         self.rects.get(node).map_or(0.0, |r| r.3)
     }
 
+    /// Handles the posx behavior for this component.
     fn posx(&self, node: &Self::Node) -> f32 {
         self.rects.get(node).map_or(0.0, |r| r.0)
     }
 
+    /// Handles the posy behavior for this component.
     fn posy(&self, node: &Self::Node) -> f32 {
         self.rects.get(node).map_or(0.0, |r| r.1)
     }
@@ -128,24 +133,33 @@ pub struct ChildIter<'a> {
 }
 
 impl<'a> Iterator for ChildIter<'a> {
+    /// Alias for `&'a Entity` used to represent item.
     type Item = &'a Entity;
 
+    /// Returns the next value produced by this iterator or protocol stream.
     fn next(&mut self) -> Option<Self::Item> {
         self.iter.next()
     }
 }
 
 impl Node for Entity {
+    /// Alias for `Self` used to represent cache key.
     type CacheKey = Self;
+    /// Alias for `ChildIter<'t>` used to represent child iter.
     type ChildIter<'t> = ChildIter<'t>;
+    /// Alias for `SimpleStore` used to represent store.
     type Store = SimpleStore;
+    /// Alias for `()` used to represent sub layout.
     type SubLayout<'a> = ();
+    /// Alias for `SimpleTree` used to represent tree.
     type Tree = SimpleTree;
 
+    /// Handles the key behavior for this component.
     fn key(&self) -> Self::CacheKey {
         *self
     }
 
+    /// Handles the children behavior for this component.
     fn children<'t>(&self, tree: &'t Self::Tree) -> Self::ChildIter<'t> {
         /// Empty child list shared by nodes with no children.
         static EMPTY: Vec<Entity> = Vec::new();
@@ -154,18 +168,22 @@ impl Node for Entity {
         }
     }
 
+    /// Handles the parent behavior for this component.
     fn parent<'t>(&'t self, tree: &'t Self::Tree) -> Option<&'t Self> {
         tree.parents.get(self)
     }
 
+    /// Handles the layout type behavior for this component.
     fn layout_type(&self, _store: &Self::Store) -> Option<LayoutType> {
         Some(LayoutType::Row)
     }
 
+    /// Handles the width behavior for this component.
     fn width(&self, store: &Self::Store) -> Option<Units> {
         store.width.get(self).copied()
     }
 
+    /// Handles the height behavior for this component.
     fn height(&self, store: &Self::Store) -> Option<Units> {
         store.height.get(self).copied()
     }
@@ -176,30 +194,37 @@ impl Node for Entity {
         true
     }
 
+    /// Handles the position type behavior for this component.
     fn position_type(&self, _: &Self::Store) -> Option<PositionType> {
         Some(PositionType::Relative)
     }
 
+    /// Handles the alignment behavior for this component.
     fn alignment(&self, _: &Self::Store) -> Option<Alignment> {
         None
     }
 
+    /// Handles the left behavior for this component.
     fn left(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the right behavior for this component.
     fn right(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the top behavior for this component.
     fn top(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the bottom behavior for this component.
     fn bottom(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the content size behavior for this component.
     fn content_size(
         &self,
         _: &Self::Store,
@@ -210,82 +235,102 @@ impl Node for Entity {
         None
     }
 
+    /// Handles the padding left behavior for this component.
     fn padding_left(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the padding right behavior for this component.
     fn padding_right(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the padding top behavior for this component.
     fn padding_top(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the padding bottom behavior for this component.
     fn padding_bottom(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the vertical gap behavior for this component.
     fn vertical_gap(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the horizontal gap behavior for this component.
     fn horizontal_gap(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the min vertical gap behavior for this component.
     fn min_vertical_gap(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the min horizontal gap behavior for this component.
     fn min_horizontal_gap(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the max vertical gap behavior for this component.
     fn max_vertical_gap(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the max horizontal gap behavior for this component.
     fn max_horizontal_gap(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
+    /// Handles the min width behavior for this component.
     fn min_width(&self, _: &Self::Store) -> Option<Units> {
         None
     }
 
+    /// Handles the min height behavior for this component.
     fn min_height(&self, _: &Self::Store) -> Option<Units> {
         None
     }
 
+    /// Handles the max width behavior for this component.
     fn max_width(&self, _: &Self::Store) -> Option<Units> {
         None
     }
 
+    /// Handles the max height behavior for this component.
     fn max_height(&self, _: &Self::Store) -> Option<Units> {
         None
     }
 
+    /// Handles the grid columns behavior for this component.
     fn grid_columns(&self, _: &Self::Store) -> Option<Vec<Units>> {
         None
     }
 
+    /// Handles the grid rows behavior for this component.
     fn grid_rows(&self, _: &Self::Store) -> Option<Vec<Units>> {
         None
     }
 
+    /// Handles the column start behavior for this component.
     fn column_start(&self, _: &Self::Store) -> Option<usize> {
         None
     }
 
+    /// Handles the row start behavior for this component.
     fn row_start(&self, _: &Self::Store) -> Option<usize> {
         None
     }
 
+    /// Handles the column span behavior for this component.
     fn column_span(&self, _: &Self::Store) -> Option<usize> {
         None
     }
 
+    /// Handles the row span behavior for this component.
     fn row_span(&self, _: &Self::Store) -> Option<usize> {
         None
     }
@@ -296,6 +341,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

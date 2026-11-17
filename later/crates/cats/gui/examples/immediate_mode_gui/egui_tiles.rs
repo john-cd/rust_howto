@@ -33,11 +33,13 @@ impl Pane {
 struct TreeBehavior;
 
 impl Behavior<Pane> for TreeBehavior {
+    /// Handles the pane ui behavior for this component.
     fn pane_ui(&mut self, ui: &mut egui::Ui, _tile_id: TileId, pane: &mut Pane) -> UiResponse {
         ui.heading(&pane.title);
         UiResponse::None
     }
 
+    /// Handles the tab title for pane behavior for this component.
     fn tab_title_for_pane(&mut self, pane: &Pane) -> egui::WidgetText {
         pane.title.as_str().into()
     }
@@ -107,6 +109,7 @@ pub fn run() {
     run_example();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

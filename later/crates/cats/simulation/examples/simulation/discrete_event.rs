@@ -29,8 +29,13 @@ struct Customer {
 /// The event to process at a particular simulation time.
 #[derive(Clone, Copy, Debug, Eq, Ord, PartialEq, PartialOrd)]
 enum EventKind {
+    /// Represents the departure case of event kind.
     Departure,
-    Arrival { service_duration: u32 },
+    /// A customer arrives and begins a service interval.
+    Arrival {
+        /// Time the arriving customer needs before the matching departure.
+        service_duration: u32,
+    },
 }
 
 /// A queue arrival or service completion in the event schedule.

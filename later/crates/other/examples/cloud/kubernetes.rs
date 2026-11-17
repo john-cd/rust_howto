@@ -183,10 +183,12 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Handles the echo behavior for this component.
     fn echo() -> Echo {
         let mut echo = Echo::new(
             "hello",

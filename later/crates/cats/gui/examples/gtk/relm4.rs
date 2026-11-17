@@ -28,8 +28,11 @@ enum CounterInput {
 
 #[relm4::component(pub)]
 impl SimpleComponent for CounterModel {
+    /// Alias for `i32` used to represent init.
     type Init = i32;
+    /// Alias for `CounterInput` used to represent input.
     type Input = CounterInput;
+    /// Alias for `()` used to represent output.
     type Output = ();
 
     view! {
@@ -65,6 +68,7 @@ impl SimpleComponent for CounterModel {
         }
     }
 
+    /// Handles the init behavior for this component.
     fn init(
         init: Self::Init,
         root: Self::Root,
@@ -76,6 +80,7 @@ impl SimpleComponent for CounterModel {
         ComponentParts { model, widgets }
     }
 
+    /// Handles the update behavior for this component.
     fn update(&mut self, message: Self::Input, _sender: ComponentSender<Self>) {
         self.apply(message);
     }
@@ -103,6 +108,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

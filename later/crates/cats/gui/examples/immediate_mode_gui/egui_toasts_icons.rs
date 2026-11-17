@@ -65,6 +65,7 @@ impl App {
         self.toasts.show(ui.ctx());
     }
 
+    /// Adds the supplied item to the current collection or state.
     fn add_item(&mut self) {
         self.items.push(format!("item {}", self.items.len() + 1));
         self.toasts
@@ -121,6 +122,7 @@ pub fn run() {
     run_example();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

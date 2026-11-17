@@ -27,11 +27,13 @@ fn Layout() -> impl IntoView {
     }
 }
 
+/// Handles the home behavior for this component.
 #[component]
 fn Home() -> impl IntoView {
     view! { <h1>"Home"</h1> }
 }
 
+/// Handles the user list behavior for this component.
 #[component]
 fn UserList() -> impl IntoView {
     view! { <h1>"Users"</h1> }
@@ -45,6 +47,7 @@ fn UserDetail() -> impl IntoView {
     view! { <h1>"User " {id}</h1> }
 }
 
+/// Handles the not found behavior for this component.
 #[component]
 fn NotFound() -> impl IntoView {
     view! { <h1>"Not found"</h1> }

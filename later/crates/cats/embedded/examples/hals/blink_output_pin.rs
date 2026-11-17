@@ -7,6 +7,7 @@
 use embedded_hal::digital::ErrorType;
 use embedded_hal::digital::OutputPin;
 
+/// Data for mock pin operations, including high and transitions.
 #[derive(Default)]
 struct MockPin {
     /// Flag indicating whether the mock pin satisfies the high condition.
@@ -17,6 +18,7 @@ struct MockPin {
 }
 
 impl ErrorType for MockPin {
+    /// Alias for `core::convert::Infallible` used to represent error.
     type Error = core::convert::Infallible;
 }
 
@@ -75,10 +77,12 @@ mod tests {
     }
 }
 
+/// Provides private main tests behavior for the blink output pin component.
 #[cfg(test)]
 mod private_main_tests {
     use super::main;
 
+    /// Checks that private main succeeds.
     #[test]
     fn private_main_succeeds() {
         let entry_point = main;

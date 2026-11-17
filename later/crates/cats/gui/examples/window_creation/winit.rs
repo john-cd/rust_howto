@@ -23,6 +23,7 @@ struct App {
 }
 
 impl ApplicationHandler for App {
+    /// Reports whether the suspended operation has resumed.
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
         if self.window.is_none() {
             let attributes = Window::default_attributes().with_title("Winit window");
@@ -36,6 +37,7 @@ impl ApplicationHandler for App {
         }
     }
 
+    /// Handles the window event behavior for this component.
     fn window_event(
         &mut self,
         event_loop: &ActiveEventLoop,

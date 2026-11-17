@@ -51,6 +51,7 @@ impl Counter {
         Self { value }
     }
 
+    /// Handles the current value behavior for this component.
     #[getter]
     fn current_value(&self) -> i64 {
         self.value
@@ -156,14 +157,12 @@ mod tests {
 
     use super::*;
 
-    /// Runs the Python bridge example and verifies its registered APIs.
+    /// Runs the Python bridge example through its entry point.
     #[test]
     #[cfg_attr(
         target_os = "windows",
         ignore = "set PYTHONHOME to the Python base prefix and rerun this test"
     )]
-
-    /// Verifies that the `use rust from python` example runs.
     fn test_use_rust_from_python_example_entry_point() -> PyResult<()> {
         main()
     }

@@ -99,6 +99,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::draw_scene;

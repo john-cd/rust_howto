@@ -68,6 +68,7 @@ pub fn run() -> Result<(), winit::error::EventLoopError> {
     run_app()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
