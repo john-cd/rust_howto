@@ -64,6 +64,24 @@
 
 {{#include ../categories/caching/in_memory_cache.incl.md}}
 
+## Command-line Interface
+
+### Argument Parsing
+
+{{#include ../categories/command-line-interface/argument_parsing.incl.md}}
+
+### ANSI Terminal
+
+{{#include ../categories/command-line-interface/ansi_terminal.incl.md}}
+
+### Terminal User Interfaces
+
+{{#include ../categories/command-line-interface/tui.incl.md}}
+
+### User Interaction
+
+{{#include ../categories/command-line-interface/user_interaction.incl.md}}
+
 ## Compression
 
 ### Compression
