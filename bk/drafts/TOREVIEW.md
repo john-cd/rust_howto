@@ -14,7 +14,7 @@ This inventory was reviewed for [issue #1720](https://github.com/john-cd/rust_ho
 | Hands-On Microservices with Rust, especially Chapter 8's chat service | Added to [Learning Rust](../src/links/learning_rust.md#learn-from-historical-application-examples) as historical 2018 source, with an upgrade caveat. |
 | crates.io February 2025 update; March 2025 language-interop essay; Rust 2024 review; startup infrastructure retrospective | Added to [Dated Ecosystem Discussions](../src/links/blogs_and_forums.md#dated-ecosystem-discussions). These are dated context rather than current API claims. |
 | Talent Plan | Already linked in [Learning Rust](../src/links/learning_rust.md); no duplicate added. |
-| cargo-semver-checks | Already covered in [Maintaining Crates](categories/development-tools_cargo-plugins/maintaining.md); its 2025 GSoC background article was added there. |
+| cargo-semver-checks | Already covered in [Maintaining Cargo Projects](../src/categories/development-tools_cargo-plugins/maintaining.md); its GSoC background article is included there. |
 
 ## Entries Not Promoted
 

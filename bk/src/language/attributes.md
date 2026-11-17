@@ -132,7 +132,7 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 - [[automatic_trait_derivation | Derive]] for the `#[derive(...)]` attribute used to automatically derive common traits.
 - [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
 - [Testing](../categories/development-tools_testing/testing.md) for the `#[test]` attribute.
-- [Documentation](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/documentation/documentation.md) for the `#[doc(...)]` attribute.
+- [Documentation](../categories/development-tools/documentation/documentation.md) for the `#[doc(...)]` attribute.
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

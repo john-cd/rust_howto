@@ -36,7 +36,7 @@
 [p~graphics]: ../graphics/index.md
 [p~images]: ../multimedia_images/images.md
 [p~option]: # "../../standard-library/option.md"
-[p~performance]: ../development-tools_cargo-plugins/performance.md
+[p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~rendering-engine]: ../rendering_engine/index.md
 [p~rendering]: index.md
 [p~shaders]: ../rendering_graphics-api/shaders.md

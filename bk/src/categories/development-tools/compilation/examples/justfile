@@ -1,0 +1,17 @@
+# TODO Reviewed ??-??-2026.
+
+default:
+    @just --list --unsorted
+
+check:
+    cargo check
+
+build: check
+    cargo build
+
+test filter="":
+    cargo test {{ quote(filter) }}
+
+@where:
+    echo {{ quote("Invoked from " + invocation_directory()) }}
+    echo {{ quote("Recipes run from " + justfile_directory()) }}

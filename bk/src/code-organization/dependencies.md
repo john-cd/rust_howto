@@ -13,7 +13,7 @@ To use a (public) item (structs, enums, traits, functions, etc.) of an external 
 anyhow = "1.0.104"
 ```
 
-The name of the external crate is followed by `=` and a semantic version specifier. See the [Cargo](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/cargo/cargo.md) chapters for details.
+The name of the external crate is followed by `=` and a semantic version specifier. See the [Cargo](../categories/development-tools/cargo/cargo.md) chapters for details.
 
 You can then refer to its items using a path that starts with the external crate's name, e.g. `anyhow::Result`.
 
@@ -27,7 +27,7 @@ Once adding an external crate as a dependency, you will very often bring items f
 {{#include ../../crates/code_organization/examples/dependencies/external_dependency.rs:example}}
 ```
 
-For lockfiles, feature selection, and dependency updates, see [Dependency Management (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_cargo-plugins/dependency_management.md).
+For lockfiles, feature selection, and dependency updates, see [Dependency Management](../categories/development-tools_cargo-plugins/dependency_management.md).
 
 ## Check for Unused Dependencies with Cargo 1.100
 
@@ -44,6 +44,7 @@ global-min-publish-age = "3 days"
 
 The setting affects **new resolution**: an already locked version remains in `Cargo.lock`, and a deliberate `cargo update --precise` can be used when a reviewed fix is needed sooner. Commit and review lockfile changes. The policy is not an advisory scanner or a substitute for checking dependency provenance; it also depends on the registry recording publication times. `cargo install` does not apply this cooldown. See the [Rust 1.100 announcement](https://blog.rust-lang.org/releases/1.100.0/) and [Cargo configuration reference](https://doc.rust-lang.org/cargo/reference/config.html#registryglobal-min-publish-age).
 
+Cargo 1.100 also reorganizes intermediate build artifacts under the configured build directory by build-configuration hash. Different features or compiler inputs can coexist with fewer collisions, but a target directory remains local build state rather than a portable dependency cache. Keep build outputs separate between checkout-specific worktrees and measure any cache policy before changing it. See [Cargo's build cache reference](https://doc.rust-lang.org/cargo/reference/build-cache.html) and the [build-time diagnosis](../categories/development-tools/build_time_diagnosis.md) chapter.
 
 ## References {#references .skip}
 

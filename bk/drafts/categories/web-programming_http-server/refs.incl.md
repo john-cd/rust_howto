@@ -57,7 +57,7 @@
 [p~middleware]: middleware.md
 [p~openapi]: https://john-cd.com/rust_howto/categories/web-programming_http-server/openapi.html
 [p~other-http-frameworks]: other_frameworks.md
-[p~performance]: ../development-tools_cargo-plugins/performance.md
+[p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
 [p~server]: ../network-programming/server.md
 [p~toml]: ../../../src/categories/parser-implementations/toml.md
 [p~tracing]: ../development-tools_debugging/tracing.md

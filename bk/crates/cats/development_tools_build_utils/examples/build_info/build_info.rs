@@ -2,8 +2,8 @@
 
 // ANCHOR: example
 //! Embedding build details, such as the version, Git commit and build time, in
-//! the binary helps with support: a bug report can state exactly which build
-//! produced it.
+//! the binary helps with support: a bug report can state which build produced
+//! it. Git metadata is included when the build runs in a Git checkout.
 
 use std::collections::BTreeSet;
 
@@ -16,23 +16,19 @@ build_info::build_info!(fn build_info);
 /// Prints build metadata embedded by the build script.
 fn main() -> anyhow::Result<()> {
     let info = build_info();
-    let git_info = info
+    let git_commit = info
         .version_control
         .as_ref()
         .and_then(VersionControl::git)
-        .ok_or_else(|| anyhow::anyhow!("Git metadata is unavailable"))?;
+        .map(|git| git.commit_short_id.as_str())
+        .unwrap_or("unavailable");
     let build_timestamp = info.timestamp.to_string();
     let compiler_version = info.compiler.version.to_string();
 
     anyhow::ensure!(!build_timestamp.is_empty(), "build timestamp is empty");
     anyhow::ensure!(!compiler_version.is_empty(), "compiler version is empty");
-    anyhow::ensure!(
-        !git_info.commit_short_id.is_empty(),
-        "Git commit hash is empty"
-    );
-
     println!("Built at: {build_timestamp}");
-    println!("Git commit: {}", git_info.commit_short_id);
+    println!("Git commit: {git_commit}");
     println!("Compiler: {compiler_version}");
     println!("Dependencies:");
     for (name, version) in get_dependencies(&info.crate_info) {
@@ -68,14 +64,14 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
-/// Verifies the binary has Git, build timestamp, and compiler metadata.
+/// Verifies build timestamp and compiler metadata are available.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies the binary has Git, build timestamp, and compiler metadata.
+    /// Verifies the binary reports build timestamp and compiler metadata.
     #[test]
-    fn build_info_contains_git_time_and_compiler() -> anyhow::Result<()> {
+    fn build_info_has_timestamp_and_compiler() -> anyhow::Result<()> {
         main()
     }
 

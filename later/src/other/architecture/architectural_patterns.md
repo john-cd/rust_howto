@@ -43,7 +43,7 @@ See [Plugin Registration](index.md#plugin-registration).
 - Logging and Monitoring: Structured logging with [`tracing`][c~tracing~docs]↗{{hi:tracing}} or [`log`][c~log~docs]↗{{hi:log}}. See Development Tools: Debugging<!-- Cross-book topic: bk/drafts/categories/development-tools_debugging/index.md; not included in this preview. -->.
 - Error Handling<!-- Cross-book topic: bk/drafts/categories/rust-patterns/error_handling/error_handling.md; not included in this preview. -->.
 - Testing<!-- Cross-book topic: bk/src/categories/development-tools_testing/testing.md; not included in this preview. --> and Quality Assurance.
-- Performance<!-- Cross-book topic: bk/drafts/categories/development-tools_cargo-plugins/performance.md; not included in this preview. --> Optimization.
+- Performance<!-- Cross-book topic: bk/src/categories/development-tools_cargo-plugins/performance.md; not included in this preview. --> Optimization.
 - Deployment and Operations. See [Devops](../devops/index.md).
 
 {{#include refs.incl.md}}

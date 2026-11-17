@@ -39,7 +39,7 @@
 [p~mocking]: ../../../../bk/src/categories/development-tools_testing/mocking.md
 [p~modules]: ../../../src/code_organization/modules_and_paths.md
 [p~parsing]: ../../categories/parsing/parsing.md
-[p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
+[p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~requests]: ../../../src/categories/web-programming_http-client/requests.md
 [p~tracing]: ../../../src/categories/development-tools_debugging/tracing.md

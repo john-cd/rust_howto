@@ -245,7 +245,7 @@ When working with Git submodules in your Rust projects, remember this crucial be
 
 ## Related Topics {#related-topics .skip}
 
-- [Package Layout](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/cargo/package_layout.md).
+- [Package Layout](../categories/development-tools/cargo/package_layout.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

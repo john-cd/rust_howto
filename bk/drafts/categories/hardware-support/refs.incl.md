@@ -18,4 +18,4 @@
 [p~functions]: ../../language/functions.md
 [p~linux]: https://docs.kernel.org/driver-api/
 [p~os]: ../os/index.md
-[p~performance]: ../development-tools_cargo-plugins/performance.md
+[p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md

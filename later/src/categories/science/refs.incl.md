@@ -23,6 +23,6 @@
 [p~classical-machine-learning]: classical_machine_learning.md
 [p~gpu]: # "../../other/gpu/gpu.md"
 [p~learning]: ../../../src/links/learning_rust.md
-[p~performance]: ../../../drafts/categories/development-tools_cargo-plugins/performance.md
+[p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~python]: ../../../drafts/categories/development-tools_ffi/python.md
 [p~robotics-ai]: ../science_robotics/artificial_intelligence.md

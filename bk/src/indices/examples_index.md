@@ -240,6 +240,128 @@
 
 ## Development Tools
 
+### Cargo
+
+{{#include ../categories/development-tools/cargo/cargo.incl.md}}
+
+{{#include ../categories/development-tools/cargo/crate_registries.incl.md}}
+
+{{#include ../categories/development-tools/cargo/package_layout.incl.md}}
+
+### Compilation
+
+{{#include ../categories/development-tools/compilation/building.incl.md}}
+
+{{#include ../categories/development-tools/compilation/reduce_compilation_duration.incl.md}}
+
+{{#include ../categories/development-tools/compilation/faster_linking.incl.md}}
+
+### Installation
+
+{{#include ../categories/development-tools/installation/install.incl.md}}
+
+{{#include ../categories/development-tools/installation/rustup.incl.md}}
+
+### Formatting
+
+{{#include ../categories/development-tools/formatting/formatting.incl.md}}
+
+### Documentation
+
+{{#include ../categories/development-tools/documentation/documentation.incl.md}}
+
+{{#include ../categories/development-tools/documentation/mdbook.incl.md}}
+
+{{#include ../categories/development-tools/documentation/mdbook_utils.incl.md}}
+
+{{#include ../categories/development-tools/documentation/templ.incl.md}}
+
+{{#include ../categories/development-tools/documentation/badges.incl.md}}
+
+### Versioning
+
+{{#include ../categories/development-tools/versioning/versioning.incl.md}}
+
+### Repository Automation
+
+{{#include ../categories/development-tools/automation/xtask.incl.md}}
+
+{{#include ../categories/development-tools/automation/git.incl.md}}
+
+### Cross-compilation
+
+{{#include ../categories/development-tools/cross-compilation/cross_compilation.incl.md}}
+
+### Other
+
+{{#include ../categories/development-tools/other/code_verification.incl.md}}
+
+{{#include ../categories/development-tools/other/miri.incl.md}}
+
+{{#include ../categories/development-tools/other/other.incl.md}}
+
+{{#include ../categories/development-tools/other/rust_source.incl.md}}
+
+### Transpilation
+
+{{#include ../categories/development-tools/transcompilation/transpilers.incl.md}}
+
+### Build Utils
+
+#### Build-time Tools
+
+{{#include ../categories/development-tools_build-utils/build_time_tooling.incl.md}}
+
+#### Build Caches
+
+{{#include ../categories/development-tools_build-utils/build_cache.incl.md}}
+
+#### Compiler Feature Detection
+
+{{#include ../categories/development-tools_build-utils/autocfg.incl.md}}
+
+### Cargo Plugins
+
+#### Code Writing
+
+{{#include ../categories/development-tools_cargo-plugins/code_writing.incl.md}}
+
+#### Code Formatting and Linting
+
+{{#include ../categories/development-tools_cargo-plugins/code_formatting_linting.incl.md}}
+
+#### Dependency Management
+
+{{#include ../categories/development-tools_cargo-plugins/dependency_management.incl.md}}
+
+#### Building and Task Runners
+
+{{#include ../categories/development-tools_cargo-plugins/building.incl.md}}
+
+#### Watching for Changes
+
+{{#include ../categories/development-tools_cargo-plugins/watching_for_changes.incl.md}}
+
+#### Cross-compiling
+
+{{#include ../categories/development-tools_cargo-plugins/cross_compiling.incl.md}}
+
+#### Auditing
+
+{{#include ../categories/development-tools_cargo-plugins/auditing.incl.md}}
+
+#### Performance
+
+{{#include ../categories/development-tools_cargo-plugins/performance.incl.md}}
+
+#### Maintaining
+
+{{#include ../categories/development-tools_cargo-plugins/maintaining.incl.md}}
+
+#### Writing a Cargo Plugin
+
+{{#include ../categories/development-tools_cargo-plugins/write_cargo_plugin.incl.md}}
+
 ### Debugging and Observability
 
 #### Debuggers

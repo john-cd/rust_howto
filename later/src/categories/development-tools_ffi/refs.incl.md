@@ -59,7 +59,7 @@
 [p~macros]: ../../language/macros.md
 [p~modules]: ../../language/modules.md
 [p~option]: # "../../standard-library/option.md"
-[p~performance]: ../development-tools_cargo-plugins/performance.md
+[p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~serde]: ../encoding/serde.md
 [p~strings]: ../data-structures/strings.md
 

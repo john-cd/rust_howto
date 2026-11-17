@@ -1,8 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! This example demonstrates the usage of the `xshell` crate for shell
-//! scripting in Rust.
+//! This example demonstrates the `xshell` crate for project scripting in Rust.
 //!
 //! `xshell` provides a convenient way to execute shell commands, manipulate the
 //! file system, and manage environment variables within a Rust program.
@@ -26,6 +25,8 @@ fn main() -> anyhow::Result<()> {
     // `std::env::var`, and only affect paths and commands passed to the
     // `Shell`.
     let sh = Shell::new()?;
+    let working_dir = tempfile::tempdir()?;
+    sh.change_dir(working_dir.path());
 
     // Run a command and capture its standard output.
     // The `cmd!` macro provides a convenient syntax
@@ -55,6 +56,7 @@ fn main() -> anyhow::Result<()> {
     //
     // Returns a RAII guard which reverts the working directory to the old value
     // when dropped.
+    std::fs::create_dir(sh.current_dir().join(temp_dir))?;
     let guard = sh.push_dir(temp_dir);
     let cwd = sh.current_dir();
     println!("New current directory: {}", cwd.display());
@@ -74,7 +76,7 @@ fn main() -> anyhow::Result<()> {
     // This is useful when you don't want to see the command in the output.
 
     // Path manipulation.
-    let file_path = sh.current_dir().join("text.txt");
+    let file_path = sh.current_dir().join("test.txt");
     println!("File path: {}", file_path.display());
 
     // Check whether the generated file exists before reading or removing it.

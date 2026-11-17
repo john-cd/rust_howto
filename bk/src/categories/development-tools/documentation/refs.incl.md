@@ -1,0 +1,33 @@
+<!-- TODO Reviewed ??-??-2026. -->
+
+[ex~documentation~badges]: badges.md#badges
+[ex~documentation~cd-ci]: mdbook.md#cd-ci
+[ex~documentation~mdbook-utils]: mdbook_utils.md#mdbook-utils
+[ex~documentation~templ]: templ.md#templ
+[ex~documentation~templ-category-badge]: templ.md#templ-category-badge
+[ex~documentation~templ-crate-references]: templ.md#templ-crate-references
+[ex~documentation~templ-help]: templ.md#templ-help
+[ex~documentation~templ-rbe]: templ.md#templ-rbe
+[ex~documentation~documenting-your-code]: documentation.md#documenting-your-code
+[ex~documentation~mdbook-plugins]: mdbook.md#mdbook-plugins
+[ex~documentation~mdbook]: mdbook.md#mdbook
+[ex~documentation~summary-file]: mdbook.md#summary-file
+[ex~documentation~includes-and-anchors]: mdbook.md#includes-and-anchors
+[ex~documentation~alternatives]: mdbook.md#alternatives
+[ex~documentation~module-or-crate-level-documentation]: documentation.md#module-or-crate-level-documentation
+[ex~documentation~playground]: mdbook.md#playground
+[ex~documentation~doc-comment]: documentation.md#documentation-tests
+[ex~documentation~aquamarine]: documentation.md#aquamarine
+[ex~documentation~termbook]: mdbook.md#termbook
+[p~cargo]: ../cargo/cargo.md
+[p~code-documentation]: documentation.md#documenting-your-code
+[p~template-engine]: ../../template-engine/index.md
+[mdbook-utils~repo]: https://github.com/john-cd/mdbook-utils
+[mdbook-utils~repo~badge]: https://img.shields.io/badge/mdbook--utils-steelblue?logo=github
+[mdbook-utils~guide]: https://john-cd.github.io/mdbook-utils
+[book_tooling~repo]: https://github.com/john-cd/book_tooling
+[rust-howto~templ~repo]: https://github.com/john-cd/rust_howto/tree/develop/tools/templ
+[shields~badge-reference~docs]: https://shields.io/badges
+[docsrs~badge~docs]: https://docs.rs/about/badges
+[github-actions~status-badge~docs]: https://docs.github.com/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge
+[aquamarine~repo]: https://github.com/mersinvald/aquamarine
