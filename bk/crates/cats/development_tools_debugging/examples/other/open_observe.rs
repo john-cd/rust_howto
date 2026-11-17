@@ -5,7 +5,11 @@
 //!
 //! Set `OTEL_EXPORTER_OTLP_ENDPOINT` to an OpenObserve OTLP base URL such as
 //! `http://localhost:5080/api/default`. Set
-//! `OTEL_EXPORTER_OTLP_HEADERS` to the required authorization header.
+//! `OPENOBSERVE_AUTHORIZATION` to the value of the `Authorization` header
+//! required by the deployment.
+
+#[cfg(feature = "opentelemetry")]
+use std::collections::HashMap;
 
 #[cfg(feature = "opentelemetry")]
 use opentelemetry::KeyValue;
@@ -19,6 +23,8 @@ use opentelemetry::trace::Tracer as _;
 use opentelemetry_otlp::SpanExporter;
 #[cfg(feature = "opentelemetry")]
 use opentelemetry_otlp::WithExportConfig;
+#[cfg(feature = "opentelemetry")]
+use opentelemetry_otlp::WithHttpConfig;
 #[cfg(feature = "opentelemetry")]
 use opentelemetry_sdk::trace::SdkTracerProvider;
 
@@ -53,9 +59,15 @@ fn run_with_endpoint(endpoint: Option<&str>) -> anyhow::Result<()> {
         return Ok(());
     };
 
+    let headers = std::env::var("OPENOBSERVE_AUTHORIZATION")
+        .ok()
+        .map(|value| HashMap::from([("Authorization".to_owned(), value)]))
+        .unwrap_or_default();
+
     let exporter = SpanExporter::builder()
         .with_http()
         .with_endpoint(endpoint.to_owned())
+        .with_headers(headers)
         .build()?;
     let provider = SdkTracerProvider::builder()
         .with_resource(
@@ -72,7 +84,7 @@ fn run_with_endpoint(endpoint: Option<&str>) -> anyhow::Result<()> {
     span.set_attribute(KeyValue::new("openobserve.stream", "default"));
     span.add_event("example event payload", vec![KeyValue::new("records", 1)]);
 
-    tracing::info!(%endpoint, stream = "default", "sending trace to OpenObserve");
+    tracing::info!(stream = "default", "sending trace to OpenObserve");
     tracing::info!(records = 1, "example event payload");
 
     span.end();
