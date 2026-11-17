@@ -66,11 +66,13 @@ impl<T> ReliabilityQueue<T> {
         }
     }
 
+    /// Returns the available capacity for this resource.
     #[inline]
     pub(super) fn capacity(&self) -> usize {
         self.inner.capacity()
     }
 
+    /// Handles the len behavior for this component.
     #[inline]
     pub(super) fn len(&self) -> usize {
         self.len
@@ -90,6 +92,7 @@ impl<T> ReliabilityQueue<T> {
         self.len() == self.capacity()
     }
 
+    /// Returns the base stored by or available from this value.
     #[inline]
     pub(super) fn get_base(&self) -> u64 {
         self.sn.get()
@@ -201,6 +204,7 @@ impl<T> ReliabilityQueue<T> {
         }
     }
 
+    /// Pulls the next available value from the producer.
     pub(super) fn pull(&mut self) -> Option<T> {
         let t = self.inner[self.index].take();
         if t.is_some() {

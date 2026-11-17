@@ -34,25 +34,38 @@ use zenoh_protocol::transport::BatchSize;
 
 use crate::unicast::establishment::ext;
 
+/// Data for cookie operations, including zid and whatami.
 #[derive(Debug, PartialEq)]
 pub(crate) struct Cookie {
+    /// Zenoh identifier of the remote peer.
     pub(crate) zid: ZenohIdProto,
+    /// Role advertised by the remote Zenoh peer.
     pub(crate) whatami: WhatAmI,
+    /// Sequence-number resolution negotiated for this link.
     pub(crate) resolution: Resolution,
+    /// Maximum payload size sent in a single transport batch.
     pub(crate) batch_size: BatchSize,
+    /// Random challenge used to verify the handshake peer.
     pub(crate) nonce: u64,
     // Extensions
     pub(crate) ext_qos: ext::qos::StateAccept,
+    /// ext mlink value tracked by this type.
     #[cfg(feature = "transport_multilink")]
     pub(crate) ext_mlink: ext::multilink::StateAccept,
+    /// ext shm value tracked by this type.
     #[cfg(feature = "shared-memory")]
     pub(crate) ext_shm: ext::shm::auth::StateAccept,
+    /// ext auth value tracked by this type.
     #[cfg(feature = "transport_auth")]
     pub(crate) ext_auth: ext::auth::StateAccept,
+    /// Acceptance state for the negotiated low-latency transport extension.
     pub(crate) ext_lowlatency: ext::lowlatency::StateAccept,
+    /// ext compression value tracked by this type.
     #[cfg(feature = "transport_compression")]
     pub(crate) ext_compression: ext::compression::StateAccept,
+    /// ext patch value tracked by this type.
     pub(crate) ext_patch: ext::patch::StateAccept,
+    /// ext region name value tracked by this type.
     pub(crate) ext_region_name: ext::region_name::StateAccept,
 }
 
@@ -60,8 +73,10 @@ impl<W> WCodec<&Cookie, &mut W> for Zenoh080
 where
     W: Writer,
 {
+    /// Alias for `Result<(), DidntWrite>` used to represent output.
     type Output = Result<(), DidntWrite>;
 
+    /// Writes the supplied value to the configured output sink.
     fn write(self, writer: &mut W, x: &Cookie) -> Self::Output {
         self.write(&mut *writer, &x.zid)?;
         let wai: u8 = x.whatami.into();
@@ -91,8 +106,10 @@ impl<R> RCodec<Cookie, &mut R> for Zenoh080
 where
     R: Reader,
 {
+    /// Alias for `zenoh_result::Error` used to represent error.
     type Error = zenoh_result::Error;
 
+    /// Reads the next value from the supplied input source.
     fn read(self, reader: &mut R) -> Result<Cookie, Self::Error> {
         let zid: ZenohIdProto = self.read(&mut *reader)?;
         let wai: u8 = self.read(&mut *reader)?;
@@ -139,9 +156,13 @@ where
     }
 }
 
+/// Data for zenoh080 cookie operations, including cipher and prng.
 pub(super) struct Zenoh080Cookie<'a> {
+    /// Cipher used to protect the exchanged handshake data.
     pub(super) cipher: &'a BlockCipher,
+    /// Random number generator used to create handshake nonces.
     pub(super) prng: &'a mut PseudoRng,
+    /// Codec used to encode and decode transport messages.
     pub(super) codec: Zenoh080,
 }
 
@@ -149,8 +170,10 @@ impl<W> WCodec<&Cookie, &mut W> for &mut Zenoh080Cookie<'_>
 where
     W: Writer,
 {
+    /// Alias for `Result<(), DidntWrite>` used to represent output.
     type Output = Result<(), DidntWrite>;
 
+    /// Writes the supplied value to the configured output sink.
     fn write(self, writer: &mut W, x: &Cookie) -> Self::Output {
         let mut buff = vec![];
         let mut support = buff.writer();
@@ -168,8 +191,10 @@ impl<R> RCodec<Cookie, &mut R> for &mut Zenoh080Cookie<'_>
 where
     R: Reader,
 {
+    /// Alias for `zenoh_result::Error` used to represent error.
     type Error = zenoh_result::Error;
 
+    /// Reads the next value from the supplied input source.
     fn read(self, reader: &mut R) -> Result<Cookie, Self::Error> {
         let bytes: Vec<u8> = self.codec.read(&mut *reader)?;
         let decrypted = self.cipher.decrypt(bytes).map_err(|_| DidntRead)?;
@@ -182,6 +207,7 @@ where
 }
 
 impl Cookie {
+    /// Generates a random value using the supplied random source.
     #[cfg(test)]
     pub(crate) fn rand() -> Self {
         use rand::Rng;
@@ -210,6 +236,7 @@ impl Cookie {
     }
 }
 
+/// Tests behavior implemented by the surrounding module.
 mod tests {
 
     /// Round-trips transport cookies through the binary codec.
@@ -221,8 +248,10 @@ mod tests {
 
         use super::*;
 
+        /// Defines the num iter value used by this code.
         const NUM_ITER: usize = 1_000;
 
+        /// Expands the run single pattern into Rust code at compile time.
         macro_rules! run_single {
             ($type:ty, $rand:expr, $wcode:expr, $rcode:expr, $buff:expr) => {
                 for _ in 0..NUM_ITER {
@@ -241,6 +270,7 @@ mod tests {
             };
         }
 
+        /// Expands the run pattern into Rust code at compile time.
         macro_rules! run {
             ($type:ty, $rand:expr, $codec:expr) => {
                 println!("Vec<u8>: codec {}", std::any::type_name::<$type>());

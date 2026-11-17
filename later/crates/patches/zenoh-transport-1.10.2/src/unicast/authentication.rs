@@ -82,14 +82,17 @@ impl TransportAuthId {
         self.link_auth_ids.push(link_auth_id);
     }
 
+    /// Handles the username behavior for this component.
     pub fn username(&self) -> Option<&String> {
         self.username.as_ref()
     }
 
+    /// Handles the link auth ids behavior for this component.
     pub fn link_auth_ids(&self) -> &Vec<LinkAuthId> {
         &self.link_auth_ids
     }
 
+    /// Returns the Zenoh identifier assigned to this peer.
     pub fn zid(&self) -> &ZenohIdProto {
         &self.zid
     }

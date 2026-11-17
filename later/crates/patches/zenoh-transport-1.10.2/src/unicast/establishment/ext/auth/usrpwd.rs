@@ -155,6 +155,7 @@ impl AuthUsrPwd {
     /// Returns an error if the dictionary cannot be read, or contains a malformed
     /// line, an empty username, or an empty password.
     pub async fn from_config(config: &UsrPwdConf) -> ZResult<Option<Self>> {
+        /// Defines the s value used by this code.
         const S: &str = "UsrPwd extension - From config.";
 
         let mut lookup: HashMap<User, Password> = HashMap::new();
@@ -211,6 +212,7 @@ impl AuthUsrPwd {
 }
 
 impl fmt::Debug for AuthUsrPwd {
+    /// Formats this value for human-readable output.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self.credentials.as_ref() {
             Some(c) => write!(
@@ -312,6 +314,7 @@ impl<W> WCodec<&StateAccept, &mut W> for Zenoh080
 where
     W: Writer,
 {
+    /// Alias for `Result<(), DidntWrite>` used to represent output.
     type Output = Result<(), DidntWrite>;
 
     /// Writes the nonce to the provided writer.
@@ -334,6 +337,7 @@ impl<R> RCodec<StateAccept, &mut R> for Zenoh080
 where
     R: Reader,
 {
+    /// Alias for `DidntRead` used to represent error.
     type Error = DidntRead;
 
     /// Reads a nonce and constructs acceptor state from it.
@@ -404,6 +408,7 @@ impl<W> WCodec<&OpenSyn, &mut W> for Zenoh080
 where
     W: Writer,
 {
+    /// Alias for `Result<(), DidntWrite>` used to represent output.
     type Output = Result<(), DidntWrite>;
 
     /// Writes both fields in wire order.
@@ -428,6 +433,7 @@ impl<R> RCodec<OpenSyn, &mut R> for Zenoh080
 where
     R: Reader,
 {
+    /// Alias for `DidntRead` used to represent error.
     type Error = DidntRead;
 
     /// Reads both fields in wire order.
@@ -463,14 +469,23 @@ where
 /// ```
 #[async_trait]
 impl<'a> OpenFsm for &'a AuthUsrPwdFsm<'a> {
+    /// Alias for `ZError` used to represent error.
     type Error = ZError;
+    /// Alias for `(&'a mut StateOpen, Option<ext::InitAck>)` used to represent recv init ack in.
     type RecvInitAckIn = (&'a mut StateOpen, Option<ext::InitAck>);
+    /// Alias for `()` used to represent recv init ack out.
     type RecvInitAckOut = ();
+    /// Alias for `(&'a mut StateOpen, Option<ext::OpenAck>)` used to represent recv open ack in.
     type RecvOpenAckIn = (&'a mut StateOpen, Option<ext::OpenAck>);
+    /// Alias for `()` used to represent recv open ack out.
     type RecvOpenAckOut = ();
+    /// Alias for `&'a StateOpen` used to represent send init syn in.
     type SendInitSynIn = &'a StateOpen;
+    /// Alias for `Option<ext::InitSyn>` used to represent send init syn out.
     type SendInitSynOut = Option<ext::InitSyn>;
+    /// Alias for `&'a StateOpen` used to represent send open syn in.
     type SendOpenSynIn = &'a StateOpen;
+    /// Alias for `Option<ext::OpenSyn>` used to represent send open syn out.
     type SendOpenSynOut = Option<ext::OpenSyn>;
 
     /// Announces that the initiator supports username/password authentication.
@@ -506,6 +521,7 @@ impl<'a> OpenFsm for &'a AuthUsrPwdFsm<'a> {
         self,
         input: Self::RecvInitAckIn,
     ) -> Result<Self::RecvInitAckOut, Self::Error> {
+        /// Defines the s value used by this code.
         const S: &str = "UsrPwd extension - Recv InitSyn.";
 
         if zasyncread!(self.inner).credentials.is_none() {
@@ -538,6 +554,7 @@ impl<'a> OpenFsm for &'a AuthUsrPwdFsm<'a> {
         self,
         state: Self::SendOpenSynIn,
     ) -> Result<Self::SendOpenSynOut, Self::Error> {
+        /// Defines the s value used by this code.
         const S: &str = "UsrPwd extension - Send OpenSyn.";
 
         // If credentials are not configured, don't continue the USRPWD authentication
@@ -581,6 +598,7 @@ impl<'a> OpenFsm for &'a AuthUsrPwdFsm<'a> {
         self,
         input: Self::RecvOpenAckIn,
     ) -> Result<Self::RecvOpenAckOut, Self::Error> {
+        /// Defines the s value used by this code.
         const S: &str = "UsrPwd extension - Recv OpenAck.";
 
         let (_, ext) = input;
@@ -598,14 +616,23 @@ impl<'a> OpenFsm for &'a AuthUsrPwdFsm<'a> {
 /// **********************************
 #[async_trait]
 impl<'a> AcceptFsm for &'a AuthUsrPwdFsm<'a> {
+    /// Alias for `ZError` used to represent error.
     type Error = ZError;
+    /// Alias for `(&'a mut StateAccept, Option<ext::InitSyn>)` used to represent recv init syn in.
     type RecvInitSynIn = (&'a mut StateAccept, Option<ext::InitSyn>);
+    /// Alias for `()` used to represent recv init syn out.
     type RecvInitSynOut = ();
+    /// Alias for `(&'a mut StateAccept, Option<ext::OpenSyn>)` used to represent recv open syn in.
     type RecvOpenSynIn = (&'a mut StateAccept, Option<ext::OpenSyn>);
+    /// Alias for `Vec<u8>` used to represent recv open syn out.
     type RecvOpenSynOut = Vec<u8>;
+    /// Alias for `&'a StateAccept` used to represent send init ack in.
     type SendInitAckIn = &'a StateAccept;
+    /// Alias for `Option<ext::InitAck>` used to represent send init ack out.
     type SendInitAckOut = Option<ext::InitAck>;
+    /// Alias for `&'a StateAccept` used to represent send open ack in.
     type SendOpenAckIn = &'a StateAccept;
+    /// Alias for `Option<ext::OpenAck>` used to represent send open ack out.
     type SendOpenAckOut = Option<ext::OpenAck>;
 
     /// Requires an initial authentication request from the initiator.
@@ -621,6 +648,7 @@ impl<'a> AcceptFsm for &'a AuthUsrPwdFsm<'a> {
         self,
         input: Self::RecvInitSynIn,
     ) -> Result<Self::RecvInitSynOut, Self::Error> {
+        /// Defines the s value used by this code.
         const S: &str = "UsrPwd extension - Recv InitSyn.";
 
         let (_, ext_usrpwd) = input;
@@ -667,6 +695,7 @@ impl<'a> AcceptFsm for &'a AuthUsrPwdFsm<'a> {
         self,
         input: Self::RecvOpenSynIn,
     ) -> Result<Self::RecvOpenSynOut, Self::Error> {
+        /// Defines the s value used by this code.
         const S: &str = "UsrPwd extension - Recv OpenSyn.";
 
         let (state, mut ext_usrpwd) = input;
@@ -720,6 +749,7 @@ mod tests {
     /// Accepts valid configuration and rejects malformed dictionary entries.
     #[tokio::test(flavor = "multi_thread", worker_threads = 4)]
     async fn authenticator_usrpwd_config() {
+        /// Handles the inner behavior for this component.
         async fn inner() {
             use std::fs::File;
             use std::io::Write;
@@ -736,6 +766,7 @@ mod tests {
             config.set_password(Some("pwd1".to_owned())).unwrap();
             config.set_dictionary_file(Some(f1.to_owned())).unwrap();
 
+            /// Expands the zconfig pattern into Rust code at compile time.
             macro_rules! zconfig {
                 () => {
                     File::options()

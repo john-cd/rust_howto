@@ -28,12 +28,15 @@ use super::defragmentation::DefragBuffer;
 use super::seq_num::SeqNum;
 use super::seq_num::SeqNumGenerator;
 
+/// Data for transport channel tx operations, including sn.
 #[derive(Debug)]
 pub(crate) struct TransportChannelTx {
+    /// Sequence number used to order transport messages.
     pub(crate) sn: SeqNumGenerator,
 }
 
 impl TransportChannelTx {
+    /// Constructs the value from the supplied transport configuration.
     pub(crate) fn make(resolution: Bits) -> ZResult<TransportChannelTx> {
         let tch = TransportChannelTx {
             sn: SeqNumGenerator::make(0, resolution)?,
@@ -41,18 +44,23 @@ impl TransportChannelTx {
         Ok(tch)
     }
 
+    /// Synchronizes the local sequence state with the supplied transport state.
     pub(crate) fn sync(&mut self, sn: TransportSn) -> ZResult<()> {
         self.sn.set(sn)
     }
 }
 
+/// Data for transport channel rx operations, including sn and defrag.
 #[derive(Debug)]
 pub(crate) struct TransportChannelRx {
+    /// Sequence number used to order transport messages.
     pub(crate) sn: SeqNum,
+    /// Reassembly buffer that collects fragments until a complete message is available.
     pub(crate) defrag: DefragBuffer,
 }
 
 impl TransportChannelRx {
+    /// Constructs the value from the supplied transport configuration.
     pub(crate) fn make(
         reliability: Reliability,
         resolution: Bits,
@@ -64,6 +72,7 @@ impl TransportChannelRx {
         Ok(tch)
     }
 
+    /// Synchronizes the local sequence state with the supplied transport state.
     pub(crate) fn sync(&mut self, sn: TransportSn) -> ZResult<()> {
         // Set the sequence number in the state as it had received a message with sn - 1
         let sn = if sn == 0 {
@@ -77,13 +86,17 @@ impl TransportChannelRx {
     }
 }
 
+/// Data for transport priority tx operations, including reliable and best effort.
 #[derive(Clone, Debug)]
 pub(crate) struct TransportPriorityTx {
+    /// Whether this transport channel uses reliable delivery.
     pub(crate) reliable: Arc<Mutex<TransportChannelTx>>,
+    /// Best-effort channel used when reliable delivery is unnecessary.
     pub(crate) best_effort: Arc<Mutex<TransportChannelTx>>,
 }
 
 impl TransportPriorityTx {
+    /// Constructs the value from the supplied transport configuration.
     pub(crate) fn make(resolution: Bits) -> ZResult<TransportPriorityTx> {
         let rch = TransportChannelTx::make(resolution)?;
         let bch = TransportChannelTx::make(resolution)?;
@@ -94,19 +107,24 @@ impl TransportPriorityTx {
         Ok(ctx)
     }
 
+    /// Synchronizes the local sequence state with the supplied transport state.
     pub(crate) fn sync(&self, sn: PrioritySn) -> ZResult<()> {
         zlock!(self.reliable).sync(sn.reliable)?;
         zlock!(self.best_effort).sync(sn.best_effort)
     }
 }
 
+/// Data for transport priority rx operations, including reliable and best effort.
 #[derive(Clone, Debug)]
 pub(crate) struct TransportPriorityRx {
+    /// Whether this transport channel uses reliable delivery.
     pub(crate) reliable: Arc<Mutex<TransportChannelRx>>,
+    /// Best-effort channel used when reliable delivery is unnecessary.
     pub(crate) best_effort: Arc<Mutex<TransportChannelRx>>,
 }
 
 impl TransportPriorityRx {
+    /// Constructs the value from the supplied transport configuration.
     pub(crate) fn make(resolution: Bits, defrag_buff_size: usize) -> ZResult<TransportPriorityRx> {
         let rch = TransportChannelRx::make(Reliability::Reliable, resolution, defrag_buff_size)?;
         let bch = TransportChannelRx::make(Reliability::BestEffort, resolution, defrag_buff_size)?;
@@ -117,6 +135,7 @@ impl TransportPriorityRx {
         Ok(ctr)
     }
 
+    /// Synchronizes the local sequence state with the supplied transport state.
     pub(crate) fn sync(&self, sn: PrioritySn) -> ZResult<()> {
         zlock!(self.reliable).sync(sn.reliable)?;
         zlock!(self.best_effort).sync(sn.best_effort)

@@ -49,6 +49,7 @@ impl RegionNameFsm {
     }
 }
 
+/// State for state operations that tracks other region name.
 #[derive(Debug, Clone, PartialEq)]
 struct State {
     /// Optional other region name used by state; `None` means the value is not configured or
@@ -66,6 +67,7 @@ impl State {
 }
 
 impl State {
+    /// Generates a random value using the supplied random source.
     #[cfg(test)]
     pub(crate) fn rand() -> Self {
         use rand::Rng;
@@ -86,6 +88,7 @@ impl StateOpen {
         Self(State::new())
     }
 
+    /// Handles the other region name behavior for this component.
     pub(crate) fn other_region_name(&self) -> Option<RegionName> {
         self.0.other_region_name.clone()
     }
@@ -93,14 +96,23 @@ impl StateOpen {
 
 #[async_trait::async_trait]
 impl<'a> OpenFsm for &'a RegionNameFsm {
+    /// Alias for `zenoh_result::Error` used to represent error.
     type Error = zenoh_result::Error;
+    /// Alias for `(&'a mut StateOpen, Option<ext::RegionName>)` used to represent recv init ack in.
     type RecvInitAckIn = (&'a mut StateOpen, Option<ext::RegionName>);
+    /// Alias for `()` used to represent recv init ack out.
     type RecvInitAckOut = ();
+    /// Alias for `()` used to represent recv open ack in.
     type RecvOpenAckIn = ();
+    /// Alias for `()` used to represent recv open ack out.
     type RecvOpenAckOut = ();
+    /// Alias for `&'a StateOpen` used to represent send init syn in.
     type SendInitSynIn = &'a StateOpen;
+    /// Alias for `Option<ext::RegionName>` used to represent send init syn out.
     type SendInitSynOut = Option<ext::RegionName>;
+    /// Alias for `&'a StateOpen` used to represent send open syn in.
     type SendOpenSynIn = &'a StateOpen;
+    /// Alias for `Option<RegionName>` used to represent send open syn out.
     type SendOpenSynOut = Option<RegionName>;
 
     /// Advertises the local region name in the InitSyn extension when configured.
@@ -165,10 +177,12 @@ impl StateAccept {
         Self(State::new())
     }
 
+    /// Handles the other region name behavior for this component.
     pub(crate) fn other_region_name(&self) -> Option<RegionName> {
         self.0.other_region_name.clone()
     }
 
+    /// Generates a random value using the supplied random source.
     #[cfg(test)]
     pub(crate) fn rand() -> Self {
         Self(State::rand())
@@ -179,8 +193,10 @@ impl<W> WCodec<&StateAccept, &mut W> for Zenoh080
 where
     W: Writer,
 {
+    /// Alias for `Result<(), DidntWrite>` used to represent output.
     type Output = Result<(), DidntWrite>;
 
+    /// Writes the supplied value to the configured output sink.
     fn write(self, writer: &mut W, x: &StateAccept) -> Self::Output {
         if let Some(region_name) = &x.0.other_region_name {
             self.write(writer, region_name.as_str())
@@ -194,6 +210,7 @@ impl<R> RCodec<StateAccept, &mut R> for Zenoh080
 where
     R: Reader,
 {
+    /// Alias for `zenoh_result::Error` used to represent error.
     type Error = zenoh_result::Error;
 
     /// Reads and decodes the peer region-name extension from the input stream.
@@ -223,14 +240,24 @@ where
 
 #[async_trait::async_trait]
 impl<'a> AcceptFsm for &'a RegionNameFsm {
+    /// Alias for `zenoh_result::Error` used to represent error.
     type Error = zenoh_result::Error;
+    /// Alias for `(&'a mut StateAccept, Option<ext::RegionName>)` used to represent recv init syn
+    /// in.
     type RecvInitSynIn = (&'a mut StateAccept, Option<ext::RegionName>);
+    /// Alias for `()` used to represent recv init syn out.
     type RecvInitSynOut = ();
+    /// Alias for `()` used to represent recv open syn in.
     type RecvOpenSynIn = ();
+    /// Alias for `()` used to represent recv open syn out.
     type RecvOpenSynOut = ();
+    /// Alias for `&'a StateAccept` used to represent send init ack in.
     type SendInitAckIn = &'a StateAccept;
+    /// Alias for `Option<ext::RegionName>` used to represent send init ack out.
     type SendInitAckOut = Option<ext::RegionName>;
+    /// Alias for `&'a StateAccept` used to represent send open ack in.
     type SendOpenAckIn = &'a StateAccept;
+    /// Alias for `Option<RegionName>` used to represent send open ack out.
     type SendOpenAckOut = Option<RegionName>;
 
     /// Records the peer region name advertised in the InitSyn.

@@ -13,6 +13,7 @@ use crate::diagnostic::Diagnostic;
 use crate::diagnostic::Level;
 use crate::diagnostic::SuggestionKind;
 
+/// Handles the abort if dirty behavior for this component.
 pub fn abort_if_dirty() {
     check_correctness();
     if IS_DIRTY.with(|c| c.get()) {
@@ -20,11 +21,13 @@ pub fn abort_if_dirty() {
     }
 }
 
+/// Releases resources that are no longer needed by the operation.
 pub(crate) fn cleanup() -> Vec<Diagnostic> {
     IS_DIRTY.with(|c| c.set(false));
     vec![]
 }
 
+/// Handles the emit diagnostic behavior for this component.
 pub(crate) fn emit_diagnostic(diag: Diagnostic) {
     let Diagnostic {
         level,

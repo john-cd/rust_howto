@@ -54,6 +54,7 @@ use crate::unicast::establishment::ext::shm::handoff::TxHandoffStorage;
 pub(crate) enum TransportLinkUnicastDirection {
     /// Inbound direction of the transport link.
     Inbound,
+    /// Represents the outbound case of transport link unicast direction.
     Outbound,
 }
 
@@ -89,6 +90,7 @@ pub(crate) struct TransportLinkShmHandoff {
 
 #[cfg(feature = "shared-memory")]
 impl From<LinkShmHandoffConfig> for TransportLinkShmHandoff {
+    /// Constructs this type from the supplied source value.
     fn from(value: LinkShmHandoffConfig) -> Self {
         Self {
             tx: value.tx.into(),
@@ -131,6 +133,7 @@ impl TransportLinkUnicast {
         )
     }
 
+    /// Handles the reconfigure behavior for this component.
     pub(crate) fn reconfigure(
         self,
         new_config: TransportLinkUnicastConfig,
@@ -153,6 +156,7 @@ impl TransportLinkUnicast {
         )
     }
 
+    /// Handles the init behavior for this component.
     fn init(
         link: LinkUnicast,
         mut config: TransportLinkUnicastConfig,
@@ -168,6 +172,7 @@ impl TransportLinkUnicast {
         }
     }
 
+    /// Handles the link behavior for this component.
     pub(crate) fn link(&self) -> Link {
         Link::new_unicast(
             &self.link,
@@ -176,6 +181,7 @@ impl TransportLinkUnicast {
         )
     }
 
+    /// Handles the tx behavior for this component.
     pub(crate) fn tx(&self) -> TransportLinkUnicastTx {
         TransportLinkUnicastTx {
             inner: self.clone(),
@@ -192,6 +198,7 @@ impl TransportLinkUnicast {
         }
     }
 
+    /// Handles the rx behavior for this component.
     pub(crate) fn rx(&self) -> TransportLinkUnicastRx {
         TransportLinkUnicastRx {
             link: self.link.clone(),
@@ -225,6 +232,7 @@ impl TransportLinkUnicast {
         link.recv().await
     }
 
+    /// Closes the transport resource and releases its associated state.
     pub(crate) async fn close(&self, reason: Option<u8>) -> ZResult<()> {
         if let Some(reason) = reason {
             // Build the close message
@@ -262,6 +270,7 @@ impl fmt::Debug for TransportLinkUnicast {
 }
 
 impl PartialEq<Link> for TransportLinkUnicast {
+    /// Compares this value with the supplied value for equality.
     fn eq(&self, other: &Link) -> bool {
         &other.src == self.link.get_src() && &other.dst == self.link.get_dst()
     }
@@ -369,6 +378,7 @@ impl fmt::Debug for TransportLinkUnicastTx {
 pub(crate) struct TransportLinkUnicastRx {
     /// Transport link associated with this state.
     pub(crate) link: LinkUnicast,
+    /// Configuration applied when the transport is created.
     pub(crate) config: TransportLinkUnicastConfig,
 
     /// Shared memory in `TransportLinkUnicastRx`.
@@ -516,6 +526,7 @@ impl MaybeOpenAck {
         Ok(())
     }
 
+    /// Handles the link behavior for this component.
     pub(crate) fn link(&self) -> Link {
         self.link.inner.link()
     }
@@ -555,10 +566,12 @@ impl LinkUnicastWithOpenAck {
         }
     }
 
+    /// Handles the inner config behavior for this component.
     pub(crate) fn inner_config(&self) -> &TransportLinkUnicastConfig {
         &self.link.config
     }
 
+    /// Handles the unpack behavior for this component.
     pub(crate) fn unpack(
         self,
     ) -> (
@@ -570,6 +583,7 @@ impl LinkUnicastWithOpenAck {
         (self.link, ack, self.associated_link)
     }
 
+    /// Handles the fail behavior for this component.
     pub(crate) fn fail(self) -> (TransportLinkUnicast, Option<TransportLinkUnicast>) {
         (self.link, self.associated_link)
     }

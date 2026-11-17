@@ -95,6 +95,7 @@ impl TransportLinkMulticast {
         Self { link, config }
     }
 
+    /// Handles the tx behavior for this component.
     pub(crate) fn tx(&self) -> TransportLinkMulticastTx {
         TransportLinkMulticastTx {
             inner: self.clone(),
@@ -111,6 +112,7 @@ impl TransportLinkMulticast {
         }
     }
 
+    /// Handles the rx behavior for this component.
     pub(crate) fn rx(&self) -> TransportLinkMulticastRx {
         TransportLinkMulticastRx {
             inner: self.clone(),
@@ -282,6 +284,7 @@ pub(crate) struct TransportLinkMulticastRx {
 }
 
 impl TransportLinkMulticastRx {
+    /// Receives and validates the batch message from the peer.
     pub async fn recv_batch<C, T>(&self, buff: C) -> ZResult<(RBatch<ZSlice>, Locator)>
     where
         C: Fn() -> T + Copy,
@@ -571,6 +574,7 @@ async fn tx_task(
     mut last_sns: Vec<PrioritySn>,
     #[cfg(feature = "stats")] stats: zenoh_stats::LinkStats,
 ) -> ZResult<()> {
+    /// Handles the join behavior for this component.
     async fn join(last_join: Instant, join_interval: Duration) {
         let now = Instant::now();
         let target = last_join + join_interval;

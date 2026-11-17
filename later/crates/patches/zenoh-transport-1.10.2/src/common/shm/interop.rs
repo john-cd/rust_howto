@@ -67,6 +67,7 @@ use crate::unicast::establishment::ext::shm::handoff::TxHandoffStorage;
 use crate::unicast::establishment::ext::shm::handoff::TxHandoffTransaction;
 use crate::unicast::establishment::ext::shm::segment::RXAuthSegment;
 
+/// Data for provider init cfg operations, including shm size.
 #[derive(Debug)]
 struct ProviderInitCfg {
     /// Size of the shm.
@@ -90,7 +91,9 @@ pub enum ProviderInitState {
 /// Defines the outcomes available to the shm workflow, including enabled, initializing, ready,
 /// error.
 enum ProviderInitStateInner {
+    /// Represents the enabled case of provider init state inner.
     Enabled(ProviderInitCfg),
+    /// Represents the initializing case of provider init state inner.
     Initializing(flume::Receiver<Option<Arc<ShmProvider<PosixShmProviderBackend>>>>),
 
     /// Marks the shm operation as having completed successfully.
@@ -118,7 +121,9 @@ impl std::fmt::Debug for ProviderInitStateInner {
 
 /// Lazily initialized shared-memory provider and allocator.
 pub struct LazyShmProvider {
+    /// Message size above which the alternate transport path is used.
     message_size_threshold: usize,
+    /// Protocol state that determines which handshake transition is valid.
     state: Mutex<ProviderInitStateInner>,
 }
 
@@ -218,6 +223,7 @@ impl LazyShmProvider {
         }
     }
 
+    /// Handles the wrap in place behavior for this component.
     fn _wrap_in_place<const ID: u8>(
         shm_provider: &ShmProvider<PosixShmProviderBackend>,
         ext_shm: &mut Option<ShmType<ID>>,
@@ -330,6 +336,7 @@ pub struct ShmOptimizationPolicy {
     pub reply: bool,
 }
 
+/// Handles the map zmsg to partner behavior for this component.
 pub fn map_zmsg_to_partner<ShmCfg: PartnerShmConfig>(
     msg: &mut NetworkMessageMut,
     partner_shm_cfg: &ShmCfg,
@@ -487,6 +494,7 @@ trait MapShm {
     );
 }
 
+/// Maps a sequence number into the peer sequence-number resolution.
 fn map_to_partner<const ID: u8, ShmCfg: PartnerShmConfig>(
     zbuf: &mut ZBuf,
     ext_shm: &mut Option<ShmType<ID>>,
@@ -514,6 +522,7 @@ fn map_to_partner<const ID: u8, ShmCfg: PartnerShmConfig>(
     }
 }
 
+/// Handles the map to shmbuf behavior for this component.
 fn map_to_shmbuf<const ID: u8>(
     zbuf: &mut ZBuf,
     ext_shm: &mut Option<ShmType<ID>>,
@@ -540,6 +549,7 @@ fn map_to_shmbuf<const ID: u8>(
 
 // Impl - Put
 impl MapShm for Put {
+    /// Maps a sequence number into the peer sequence-number resolution.
     fn map_to_partner<ShmCfg: PartnerShmConfig>(
         &mut self,
         partner_shm_cfg: &ShmCfg,
@@ -584,6 +594,7 @@ impl MapShm for Put {
 
 // Impl - Query
 impl MapShm for Query {
+    /// Maps a sequence number into the peer sequence-number resolution.
     fn map_to_partner<ShmCfg: PartnerShmConfig>(
         &mut self,
         partner_shm_cfg: &ShmCfg,
@@ -639,6 +650,7 @@ impl MapShm for Query {
 
 // Impl - Reply
 impl MapShm for Reply {
+    /// Maps a sequence number into the peer sequence-number resolution.
     fn map_to_partner<ShmCfg: PartnerShmConfig>(
         &mut self,
         partner_shm_cfg: &ShmCfg,
@@ -688,6 +700,7 @@ impl MapShm for Reply {
 
 // Impl - Err
 impl MapShm for Err {
+    /// Maps a sequence number into the peer sequence-number resolution.
     fn map_to_partner<ShmCfg: PartnerShmConfig>(
         &mut self,
         partner_shm_cfg: &ShmCfg,

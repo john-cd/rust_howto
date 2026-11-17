@@ -189,6 +189,7 @@ macro_rules! emit_call_site_warning {
     }};
 }
 
+/// Expands the pme suggestions pattern into Rust code at compile time.
 #[doc(hidden)]
 #[macro_export]
 macro_rules! __pme__suggestions {

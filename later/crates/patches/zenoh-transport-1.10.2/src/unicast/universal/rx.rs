@@ -51,6 +51,7 @@ use crate::unicast::transport_unicast_inner::TransportUnicastTrait;
 
 /// **********************************
 impl TransportUnicastUniversal {
+    /// Invokes the callback registered for this state transition.
     fn trigger_callback(
         &self,
         callback: &dyn TransportPeerEventHandler,

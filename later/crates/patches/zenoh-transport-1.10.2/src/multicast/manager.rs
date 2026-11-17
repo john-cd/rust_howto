@@ -164,6 +164,7 @@ impl TransportManagerBuilderMulticast {
         self
     }
 
+    /// Handles the keep alive behavior for this component.
     pub fn keep_alive(mut self, keep_alive: usize) -> Self {
         self.keep_alive = keep_alive;
         self
@@ -179,16 +180,19 @@ impl TransportManagerBuilderMulticast {
         self
     }
 
+    /// Handles the max sessions behavior for this component.
     pub fn max_sessions(mut self, max_sessions: usize) -> Self {
         self.max_sessions = max_sessions;
         self
     }
 
+    /// Handles the qos behavior for this component.
     pub fn qos(mut self, is_qos: bool) -> Self {
         self.is_qos = is_qos;
         self
     }
 
+    /// Handles the compression behavior for this component.
     #[cfg(feature = "transport_compression")]
     pub fn compression(mut self, is_compression: bool) -> Self {
         self.is_compression = is_compression;
@@ -271,6 +275,7 @@ impl Default for TransportManagerBuilderMulticast {
 }
 
 impl TransportManager {
+    /// Handles the config multicast behavior for this component.
     pub fn config_multicast() -> TransportManagerBuilderMulticast {
         TransportManagerBuilderMulticast::default()
     }
@@ -392,6 +397,7 @@ impl TransportManager {
         super::establishment::open_link(self, link).await
     }
 
+    /// Returns the transport multicast stored by or available from this value.
     pub async fn get_transport_multicast(&self, zid: &ZenohIdProto) -> Option<TransportMulticast> {
         for t in zasynclock!(self.state.multicast.transports).values() {
             if t.get_peers().iter().any(|p| p.zid == *zid) {
@@ -401,6 +407,7 @@ impl TransportManager {
         None
     }
 
+    /// Returns the transports multicast stored by or available from this value.
     pub async fn get_transports_multicast(&self) -> Vec<TransportMulticast> {
         zasynclock!(self.state.multicast.transports)
             .values()
@@ -493,6 +500,7 @@ impl TransportManager {
         })
     }
 
+    /// Returns the listeners multicast stored by or available from this value.
     pub async fn get_listeners_multicast(&self) -> Vec<EndPoint> {
         zasynclock!(self.state.multicast.transports)
             .values()
@@ -500,6 +508,7 @@ impl TransportManager {
             .collect()
     }
 
+    /// Returns the locators multicast stored by or available from this value.
     pub async fn get_locators_multicast(&self) -> Vec<Locator> {
         zasynclock!(self.state.multicast.transports)
             .values()

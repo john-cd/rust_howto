@@ -44,13 +44,17 @@ use crate::unicast::establishment::ext::shm::segment::ShmCounterID;
 use crate::unicast::establishment::ext::shm::segment::ShmRXCounterLease;
 use crate::unicast::establishment::ext::shm::segment::ShmTXCounterLease;
 
+/// Defines the possible handoff config cases handled by this code.
 #[derive(Debug)]
 pub enum HandoffConfig<T: Sized> {
+    /// Represents the disabled case of handoff config.
     Disabled,
+    /// Represents the per prio case of handoff config.
     PerPrio(PriorityContainer<T>),
 }
 
 impl<T: Sized + Clone> Clone for HandoffConfig<T> {
+    /// Handles the clone behavior for this component.
     fn clone(&self) -> Self {
         match self {
             Self::Disabled => Self::Disabled,
@@ -60,6 +64,7 @@ impl<T: Sized + Clone> Clone for HandoffConfig<T> {
 }
 
 impl<T: Sized> HandoffConfig<T> {
+    /// Constructs this value from a fn.
     pub fn from_fn(
         reliability: Reliability,
         ctor_fn: impl Fn(Priority) -> ZResult<T>,
@@ -71,9 +76,11 @@ impl<T: Sized> HandoffConfig<T> {
     }
 }
 
+/// Alias for `HandoffConfig<ShmRXCounterLease>` used to represent rx handoff channel.
 pub type RxHandoffChannel = HandoffConfig<ShmRXCounterLease>;
 
 impl RxHandoffChannel {
+    /// Handles the new rx behavior for this component.
     pub fn new_rx(segment: &Arc<RXAuthSegment>, ids: HandoffCounterIds) -> ZResult<Self> {
         Ok(match ids {
             HandoffCounterIds::Disabled => Self::Disabled,
@@ -86,6 +93,7 @@ impl RxHandoffChannel {
         })
     }
 
+    /// Handles the on rx behavior for this component.
     pub fn on_rx(&self, priority: Priority) {
         match self {
             HandoffConfig::PerPrio(prio_container) => prio_container[priority].counter_decrease(),
@@ -94,18 +102,22 @@ impl RxHandoffChannel {
     }
 }
 
+/// Data for tx handoff channel operations, including handoff config and handoff counter ids.
 #[derive(Debug)]
 pub struct TxHandoffChannel(HandoffConfig<ShmTXCounterLease>);
 impl TxHandoffChannel {
+    /// Creates a disabled instance that does not accept transport work.
     pub fn new_disabled() -> Self {
         Self(HandoffConfig::Disabled)
     }
 
+    /// Handles the new tx behavior for this component.
     pub fn new_tx(reliability: Reliability, auth: &AuthUnicast) -> ZResult<Self> {
         let ctor_fn = |_prio| auth.lease_tx_counter();
         Ok(Self(HandoffConfig::from_fn(reliability, ctor_fn)?))
     }
 
+    /// Handles the ids behavior for this component.
     pub fn ids(&self) -> HandoffCounterIds {
         match &self.0 {
             HandoffConfig::PerPrio(prio_container) => {
@@ -117,14 +129,18 @@ impl TxHandoffChannel {
     }
 }
 
+/// Stores shared global handoff reactor state used by this module.
 #[dynamic(lazy, drop)]
 static mut GLOBAL_HANDOFF_REACTOR: HandoffReactor = HandoffReactor::new();
 
+/// Data for handoff reactor operations, including task sender.
 struct HandoffReactor {
+    /// Channel sender used to hand work to the background task.
     task_sender: Sender<Arc<TxHandoffTask>>,
 }
 
 impl HandoffReactor {
+    /// Creates a new handoff reactor with the supplied configuration.
     fn new() -> Self {
         let (task_sender, task_receiver) = flume::unbounded();
 
@@ -152,14 +168,19 @@ impl HandoffReactor {
     }
 }
 
+/// Data for tx handoff task operations, including counter and handoffs len.
 #[derive(Debug)]
 struct TxHandoffTask {
+    /// Counter tracking the number of completed operations.
     counter: ShmTXCounterLease,
+    /// handoffs len value tracked by this type.
     handoffs_len: AtomicUsize,
+    /// In-flight handoffs that still need to complete.
     handoffs: lockfree::queue::Queue<Option<ShmBufHardRef>>,
 }
 
 impl TxHandoffTask {
+    /// Creates a new tx handoff task with the supplied configuration.
     fn new(counter: ShmTXCounterLease) -> Self {
         Self {
             counter,
@@ -168,6 +189,7 @@ impl TxHandoffTask {
         }
     }
 
+    /// Handles the poll behavior for this component.
     fn poll(&self) {
         let to_pop = self.handoffs_len.load(SeqCst) as isize - self.counter.counter() as isize;
         if to_pop > 0 {
@@ -179,13 +201,17 @@ impl TxHandoffTask {
     }
 }
 
+/// Data for tx handoff inner operations, including task and not commit.
 #[derive(Debug)]
 pub struct TxHandoffInner {
+    /// Background task responsible for this connection lifecycle step.
     task: Arc<TxHandoffTask>,
+    /// not commit value tracked by this type.
     not_commit: Mutex<VecDeque<ShmBufHardRef>>,
 }
 
 impl TxHandoffInner {
+    /// Creates a new tx handoff inner with the supplied configuration.
     pub fn new(counter: ShmTXCounterLease) -> Self {
         let task = Arc::new(TxHandoffTask::new(counter));
 
@@ -202,17 +228,21 @@ impl TxHandoffInner {
     }
 }
 
+/// Data for tx handoff operations, including inner.
 #[derive(Clone, Debug)]
 pub struct TxHandoff {
+    /// Wrapped value that owns the underlying state.
     inner: Arc<TxHandoffInner>,
 }
 
 impl TxHandoff {
+    /// Creates a new tx handoff with the supplied configuration.
     pub fn new(counter: ShmTXCounterLease) -> Self {
         let inner = Arc::new(TxHandoffInner::new(counter));
         Self { inner }
     }
 
+    /// Handles the lock behavior for this component.
     fn lock(&self) -> LockedTxHandoff {
         let inner = self.inner.clone();
         let lock = zlock!(self.inner.not_commit);
@@ -224,24 +254,29 @@ impl TxHandoff {
     }
 }
 
+/// Data for locked tx handoff operations, including lock and inner.
 struct LockedTxHandoff {
     // SAFETY: `lock` borrows into the mutex that `inner` owns. Rust drops fields in
     // declaration order. Keep `lock` first, or `inner` frees the mutex too early.
     lock: std::sync::MutexGuard<'static, VecDeque<ShmBufHardRef>>,
+    /// Wrapped value that owns the underlying state.
     inner: Arc<TxHandoffInner>,
 }
 
 impl LockedTxHandoff {
+    /// Handles the push behavior for this component.
     pub fn push(&mut self, reference: ShmBufHardRef) {
         self.inner.task.counter.add(1);
         self.lock.push_back(reference);
     }
 
+    /// Handles the cancel behavior for this component.
     pub fn cancel(mut self) {
         self.inner.task.counter.sub(self.lock.len() as u32);
         self.lock.clear();
     }
 
+    /// Handles the commit behavior for this component.
     pub fn commit(mut self) {
         let len = self.lock.len();
         while let Some(h) = self.lock.pop_front() {
@@ -251,13 +286,16 @@ impl LockedTxHandoff {
     }
 }
 
+/// Data for tx handoff storage operations, including handoff config and handoff config.
 #[derive(Debug, Clone)]
 pub struct TxHandoffStorage(HandoffConfig<TxHandoff>);
 impl TxHandoffStorage {
+    /// Creates a disabled instance that does not accept transport work.
     pub fn new_disabled() -> Self {
         Self(HandoffConfig::Disabled)
     }
 
+    /// Returns the value requested from this object.
     fn get(&self, priority: Priority) -> Option<&TxHandoff> {
         match &self.0 {
             HandoffConfig::PerPrio(prio_container) => Some(&prio_container[priority]),
@@ -267,6 +305,7 @@ impl TxHandoffStorage {
 }
 
 impl From<TxHandoffChannel> for TxHandoffStorage {
+    /// Constructs this type from the supplied source value.
     fn from(value: TxHandoffChannel) -> Self {
         match value.0 {
             HandoffConfig::PerPrio(prio_container) => {
@@ -278,24 +317,33 @@ impl From<TxHandoffChannel> for TxHandoffStorage {
     }
 }
 
+/// Data for lazy transaction operations, including storage and priority.
 struct LazyTransaction<'a> {
+    /// Storage backing the event bus or record collection.
     storage: &'a TxHandoffStorage,
+    /// Transport priority assigned to this channel.
     priority: Priority,
 }
 
 impl<'a> LazyTransaction<'a> {
+    /// Creates a new lazy transaction with the supplied configuration.
     fn new(storage: &'a TxHandoffStorage, priority: Priority) -> Self {
         Self { storage, priority }
     }
 }
 
+/// Defines the possible open transaction state cases handled by this code.
 enum OpenTransactionState<'a> {
+    /// Represents the lazy case of open transaction state.
     Lazy(LazyTransaction<'a>),
+    /// Represents the disabled case of open transaction state.
     Disabled,
+    /// Represents the init case of open transaction state.
     Init(LockedTxHandoff),
 }
 
 impl<'a> OpenTransactionState<'a> {
+    /// Attempts to access and reports whether the operation succeeds.
     fn try_access(&mut self) -> Option<&mut LockedTxHandoff> {
         match self {
             OpenTransactionState::Lazy(lazy_transaction) => {
@@ -310,12 +358,14 @@ impl<'a> OpenTransactionState<'a> {
         }
     }
 
+    /// Handles the on tx behavior for this component.
     fn on_tx(&mut self, reference: ShmBufHardRef) {
         if let Some(handoff) = self.try_access() {
             handoff.push(reference);
         }
     }
 
+    /// Closes the transport resource and releases its associated state.
     fn close(self) -> ClosedTransactionState {
         if let OpenTransactionState::Init(locked) = self {
             return ClosedTransactionState::new(locked);
@@ -324,25 +374,31 @@ impl<'a> OpenTransactionState<'a> {
     }
 }
 
+/// State for closed transaction state operations that tracks state.
 struct ClosedTransactionState {
+    /// Protocol state that determines which handshake transition is valid.
     state: Option<LockedTxHandoff>,
 }
 
 impl ClosedTransactionState {
+    /// Creates a new closed transaction state with the supplied configuration.
     fn new(state: LockedTxHandoff) -> Self {
         Self { state: Some(state) }
     }
 
+    /// Creates a disabled instance that does not accept transport work.
     const fn new_disabled() -> Self {
         Self { state: None }
     }
 
+    /// Handles the commit behavior for this component.
     fn commit(self) {
         if let Some(state) = self.state {
             state.commit();
         }
     }
 
+    /// Handles the cancel behavior for this component.
     fn cancel(self) {
         if let Some(state) = self.state {
             state.cancel();
@@ -350,11 +406,14 @@ impl ClosedTransactionState {
     }
 }
 
+/// Data for open transaction operations, including state.
 pub struct OpenTransaction<'a> {
+    /// Protocol state that determines which handshake transition is valid.
     state: OpenTransactionState<'a>,
 }
 
 impl<'a> OpenTransaction<'a> {
+    /// Creates a new open transaction with the supplied configuration.
     pub fn new(storage: &'a TxHandoffStorage, priority: Priority) -> Self {
         let lazy = LazyTransaction::new(storage, priority);
         Self {
@@ -362,31 +421,38 @@ impl<'a> OpenTransaction<'a> {
         }
     }
 
+    /// Creates a disabled instance that does not accept transport work.
     pub const fn new_disabled() -> Self {
         Self {
             state: OpenTransactionState::Disabled,
         }
     }
 
+    /// Handles the on tx behavior for this component.
     pub fn on_tx(&mut self, reference: ShmBufHardRef) {
         self.state.on_tx(reference);
     }
 
+    /// Closes the transport resource and releases its associated state.
     pub fn close(self) -> TxHandoffTransaction {
         let closed = self.state.close();
         TxHandoffTransaction::new(closed)
     }
 }
 
+/// Data for tx handoff transaction operations, including state.
 pub struct TxHandoffTransaction {
+    /// Protocol state that determines which handshake transition is valid.
     state: ClosedTransactionState,
 }
 
 impl TxHandoffTransaction {
+    /// Creates a new tx handoff transaction with the supplied configuration.
     fn new(state: ClosedTransactionState) -> Self {
         Self { state }
     }
 
+    /// Handles the commit behavior for this component.
     pub fn commit(&mut self) {
         let mut state = ClosedTransactionState::new_disabled();
         std::mem::swap(&mut self.state, &mut state);
@@ -395,6 +461,7 @@ impl TxHandoffTransaction {
 }
 
 impl Drop for TxHandoffTransaction {
+    /// Releases the resources owned by this value.
     fn drop(&mut self) {
         let mut state = ClosedTransactionState::new_disabled();
         std::mem::swap(&mut self.state, &mut state);
@@ -406,8 +473,10 @@ impl<W> WCodec<&PriorityContainer<ShmCounterID>, &mut W> for Zenoh080
 where
     W: Writer,
 {
+    /// Alias for `Result<(), DidntWrite>` used to represent output.
     type Output = Result<(), DidntWrite>;
 
+    /// Writes the supplied value to the configured output sink.
     fn write(self, writer: &mut W, x: &PriorityContainer<ShmCounterID>) -> Self::Output {
         for obj in x {
             self.write(&mut *writer, obj)?;
@@ -420,21 +489,26 @@ impl<R> RCodec<PriorityContainer<ShmCounterID>, &mut R> for Zenoh080
 where
     R: Reader,
 {
+    /// Alias for `DidntRead` used to represent error.
     type Error = DidntRead;
 
+    /// Reads the next value from the supplied input source.
     fn read(self, reader: &mut R) -> Result<PriorityContainer<ShmCounterID>, Self::Error> {
         PriorityContainer::from_fn(|_| self.read(&mut *reader))
     }
 }
 
+/// Alias for `HandoffConfig<ShmCounterID>` used to represent handoff counter ids.
 pub type HandoffCounterIds = HandoffConfig<ShmCounterID>;
 
 impl<W> WCodec<&HandoffCounterIds, &mut W> for Zenoh080
 where
     W: Writer,
 {
+    /// Alias for `Result<(), DidntWrite>` used to represent output.
     type Output = Result<(), DidntWrite>;
 
+    /// Writes the supplied value to the configured output sink.
     fn write(self, writer: &mut W, x: &HandoffCounterIds) -> Self::Output {
         match x {
             HandoffConfig::Disabled => {
@@ -453,8 +527,10 @@ impl<R> RCodec<HandoffCounterIds, &mut R> for Zenoh080
 where
     R: Reader,
 {
+    /// Alias for `DidntRead` used to represent error.
     type Error = DidntRead;
 
+    /// Reads the next value from the supplied input source.
     fn read(self, reader: &mut R) -> Result<HandoffCounterIds, Self::Error> {
         let status: u8 = self.read(&mut *reader)?;
         Ok(if status == 0 {
@@ -466,6 +542,7 @@ where
     }
 }
 
+/// Provides race tests behavior for the handoff component.
 #[cfg(test)]
 mod race_tests {
     use std::sync::atomic::Ordering::SeqCst;

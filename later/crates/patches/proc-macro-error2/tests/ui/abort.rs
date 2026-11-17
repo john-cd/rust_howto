@@ -9,4 +9,5 @@ direct_abort!(one, two);
 abort_notes!(one, two);
 abort_call_site_test!(one, two);
 
+/// Runs the example demonstrated by this module.
 fn main() {}

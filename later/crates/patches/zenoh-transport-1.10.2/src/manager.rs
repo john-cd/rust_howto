@@ -74,6 +74,7 @@ use crate::multicast::manager::TransportManagerStateMulticast;
 ))]
 use crate::uring::Uring;
 
+/// Handles the duration from i64us behavior for this component.
 fn duration_from_i64us(us: i64) -> Duration {
     if us >= 0 {
         Duration::from_micros(us as u64)
@@ -394,6 +395,7 @@ pub struct TransportManagerBuilder {
     /// Optional bound callback used by transport manager builder; `None` means the value is not
     /// configured or unavailable.
     bound_callback: Option<RemoteBoundCallback>,
+    /// Shared-memory extension state negotiated for the session.
     #[cfg(feature = "shared-memory")]
     shm: zenoh_config::ShmConf,
     #[cfg(feature = "shared-memory")]
@@ -444,6 +446,7 @@ impl fmt::Debug for TransportManagerBuilder {
 }
 
 impl TransportManagerBuilder {
+    /// Handles the shm behavior for this component.
     #[cfg(feature = "shared-memory")]
     pub fn shm(mut self, shm: zenoh_config::ShmConf) -> Self {
         self.shm = shm;
@@ -461,26 +464,31 @@ impl TransportManagerBuilder {
         self
     }
 
+    /// Returns the Zenoh identifier assigned to this peer.
     pub fn zid(mut self, zid: ZenohIdProto) -> Self {
         self.zid = zid;
         self
     }
 
+    /// Handles the whatami behavior for this component.
     pub fn whatami(mut self, whatami: WhatAmI) -> Self {
         self.whatami = whatami;
         self
     }
 
+    /// Handles the resolution behavior for this component.
     pub fn resolution(mut self, resolution: Resolution) -> Self {
         self.resolution = resolution;
         self
     }
 
+    /// Handles the batch size behavior for this component.
     pub fn batch_size(mut self, batch_size: BatchSize) -> Self {
         self.batch_size = batch_size;
         self
     }
 
+    /// Handles the batching enabled behavior for this component.
     pub fn batching_enabled(mut self, batching_enabled: bool) -> Self {
         self.batching_enabled = batching_enabled;
         self
@@ -496,6 +504,7 @@ impl TransportManagerBuilder {
         self
     }
 
+    /// Handles the queue alloc behavior for this component.
     pub fn queue_alloc(mut self, queue_alloc: QueueAllocConf) -> Self {
         self.queue_alloc = queue_alloc;
         self
@@ -539,47 +548,56 @@ impl TransportManagerBuilder {
         self
     }
 
+    /// Handles the queue size behavior for this component.
     pub fn queue_size(mut self, queue_size: QueueSizeConf) -> Self {
         self.queue_size = queue_size;
         self
     }
 
+    /// Handles the defrag buff size behavior for this component.
     pub fn defrag_buff_size(mut self, defrag_buff_size: usize) -> Self {
         self.defrag_buff_size = defrag_buff_size;
         self
     }
 
+    /// Handles the link rx buffer size behavior for this component.
     pub fn link_rx_buffer_size(mut self, link_rx_buffer_size: usize) -> Self {
         self.link_rx_buffer_size = link_rx_buffer_size;
         self
     }
 
+    /// Handles the link configs behavior for this component.
     pub fn link_configs(mut self, link_configs: HashMap<LinkKind, String>) -> Self {
         self.link_configs = link_configs;
         self
     }
 
+    /// Handles the unicast behavior for this component.
     pub fn unicast(mut self, unicast: TransportManagerBuilderUnicast) -> Self {
         self.unicast = unicast;
         self
     }
 
+    /// Handles the multicast behavior for this component.
     pub fn multicast(mut self, multicast: TransportManagerBuilderMulticast) -> Self {
         self.multicast = multicast;
         self
     }
 
+    /// Handles the tx threads behavior for this component.
     pub fn tx_threads(mut self, num: usize) -> Self {
         self.tx_threads = num;
         self
     }
 
+    /// Handles the protocols behavior for this component.
     pub fn protocols(mut self, protocols: Option<Vec<String>>) -> Self {
         self.supported_links =
             protocols.map(|ps| LinkKind::new_supported_links(ps.iter().map(|s| s.as_str())));
         self
     }
 
+    /// Returns the shared-memory region name negotiated for this session.
     pub fn region_name(mut self, region_name: Option<RegionName>) -> Self {
         self.region_name = region_name;
         self
@@ -853,11 +871,13 @@ pub struct TransportManager {
 
     /// Block cipher used to protect the session.
     pub(crate) cipher: Arc<BlockCipher>,
+    /// Inspector used to parse and validate endpoint locators.
     pub(crate) locator_inspector: zenoh_link::LocatorInspector,
 
     /// Controller used to stop and join background tasks.
     /// New unicast link sender value.
     pub(crate) new_unicast_link_sender: NewLinkChannelSender,
+    /// Transport counters and timings collected for this connection.
     #[cfg(feature = "stats")]
     pub(crate) stats: zenoh_stats::StatsRegistry,
 
@@ -933,24 +953,29 @@ impl TransportManager {
         this
     }
 
+    /// Handles the builder behavior for this component.
     pub fn builder() -> TransportManagerBuilder {
         TransportManagerBuilder::default()
     }
 
+    /// Returns the Zenoh identifier assigned to this peer.
     pub fn zid(&self) -> ZenohIdProto {
         self.config.zid
     }
 
+    /// Returns a snapshot of the counters collected for this transport.
     #[cfg(feature = "stats")]
     pub fn stats(&self) -> &zenoh_stats::StatsRegistry {
         &self.stats
     }
 
+    /// Returns the shm context stored by or available from this value.
     #[cfg(feature = "shared-memory")]
     pub fn get_shm_context(&self) -> &Option<ShmContext> {
         &self.state.shm_context
     }
 
+    /// Closes the transport resource and releases its associated state.
     pub async fn close(&self) {
         self.close_unicast().await;
         self.close_multicast().await;
@@ -1002,6 +1027,7 @@ impl TransportManager {
         }
     }
 
+    /// Returns the listeners stored by or available from this value.
     pub async fn get_listeners(&self) -> Vec<EndPoint> {
         let mut lsu = self.get_listeners_unicast().await;
         let mut lsm = self.get_listeners_multicast().await;
@@ -1011,6 +1037,7 @@ impl TransportManager {
 
     // TODO(yuyuan): Can we make this async as above?
 
+    /// Returns the locators stored by or available from this value.
     pub fn get_locators(&self) -> Vec<Locator> {
         let mut lsu = zenoh_runtime::ZRuntime::Net.block_in_place(self.get_locators_unicast());
         let mut lsm = zenoh_runtime::ZRuntime::Net.block_in_place(self.get_locators_multicast());
@@ -1020,6 +1047,7 @@ impl TransportManager {
 
     // TODO(yuyuan): Can we make this async as above?
 
+    /// Returns the locators noloopback stored by or available from this value.
     pub fn get_locators_noloopback(&self) -> Vec<Locator> {
         let mut lsu =
             zenoh_runtime::ZRuntime::Net.block_in_place(self.get_locators_unicast_noloopback());

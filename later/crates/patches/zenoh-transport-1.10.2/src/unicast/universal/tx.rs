@@ -43,10 +43,14 @@ impl TransportUnicastUniversal {
         reliability: Reliability,
         priority: Priority,
     ) -> Option<usize> {
+        /// Data for match operations, including full and partial.
         #[derive(Default)]
         struct Match {
+            /// Full link selected for the current transport operation.
             full: Option<usize>,
+            /// Partially received message retained until the remaining fragments arrive.
             partial: Option<usize>,
+            /// Fallback link used when no specific link class is selected.
             any: Option<usize>,
         }
 
@@ -74,6 +78,7 @@ impl TransportUnicastUniversal {
         match_.full.or(match_.partial).or(match_.any)
     }
 
+    /// Handles the supplied push result for this component.
     fn handle_push_result(
         &self,
         msg: NetworkMessageRef,
@@ -245,6 +250,7 @@ impl TransportUnicastUniversal {
     }
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use zenoh_protocol::core::Priority;
@@ -253,6 +259,7 @@ mod tests {
 
     use crate::unicast::universal::transport::TransportUnicastUniversal;
 
+    /// Expands the priority range pattern into Rust code at compile time.
     macro_rules! priority_range {
         ($start:literal, $end:literal) => {
             PriorityRange::new($start.try_into().unwrap()..=$end.try_into().unwrap())

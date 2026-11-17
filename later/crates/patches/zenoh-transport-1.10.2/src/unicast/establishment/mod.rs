@@ -47,9 +47,12 @@ use crate::common::seq_num;
 /// **********************************
 #[async_trait]
 pub trait OpenFsm {
+    /// Type of the error values produced or consumed by this trait.
     type Error;
 
+    /// Type of the send init syn in values produced or consumed by this trait.
     type SendInitSynIn;
+    /// Type of the send init syn out values produced or consumed by this trait.
     type SendInitSynOut;
 
     /// Builds the opening peer's initial SYN message and extension values.
@@ -62,7 +65,9 @@ pub trait OpenFsm {
         input: Self::SendInitSynIn,
     ) -> Result<Self::SendInitSynOut, Self::Error>;
 
+    /// Type of the recv init ack in values produced or consumed by this trait.
     type RecvInitAckIn;
+    /// Type of the recv init ack out values produced or consumed by this trait.
     type RecvInitAckOut;
 
     /// Validates the peer's InitAck and updates the opening handshake state.
@@ -75,7 +80,9 @@ pub trait OpenFsm {
         input: Self::RecvInitAckIn,
     ) -> Result<Self::RecvInitAckOut, Self::Error>;
 
+    /// Type of the send open syn in values produced or consumed by this trait.
     type SendOpenSynIn;
+    /// Type of the send open syn out values produced or consumed by this trait.
     type SendOpenSynOut;
 
     /// Builds the opening peer's OpenSyn message and extension values.
@@ -88,7 +95,9 @@ pub trait OpenFsm {
         input: Self::SendOpenSynIn,
     ) -> Result<Self::SendOpenSynOut, Self::Error>;
 
+    /// Type of the recv open ack in values produced or consumed by this trait.
     type RecvOpenAckIn;
+    /// Type of the recv open ack out values produced or consumed by this trait.
     type RecvOpenAckOut;
 
     /// Validates the peer's OpenAck and completes opening-side negotiation.
@@ -105,9 +114,12 @@ pub trait OpenFsm {
 /// Specifies the operations implementations provide to establishment callers.
 #[async_trait]
 pub trait AcceptFsm {
+    /// Type of the error values produced or consumed by this trait.
     type Error;
 
+    /// Type of the recv init syn in values produced or consumed by this trait.
     type RecvInitSynIn;
+    /// Type of the recv init syn out values produced or consumed by this trait.
     type RecvInitSynOut;
 
     /// Validates the opening peer's InitSyn and records its negotiated settings.
@@ -120,7 +132,9 @@ pub trait AcceptFsm {
         input: Self::RecvInitSynIn,
     ) -> Result<Self::RecvInitSynOut, Self::Error>;
 
+    /// Type of the send init ack in values produced or consumed by this trait.
     type SendInitAckIn;
+    /// Type of the send init ack out values produced or consumed by this trait.
     type SendInitAckOut;
 
     /// Builds the accepting peer's InitAck message and extension values.
@@ -133,7 +147,9 @@ pub trait AcceptFsm {
         input: Self::SendInitAckIn,
     ) -> Result<Self::SendInitAckOut, Self::Error>;
 
+    /// Type of the recv open syn in values produced or consumed by this trait.
     type RecvOpenSynIn;
+    /// Type of the recv open syn out values produced or consumed by this trait.
     type RecvOpenSynOut;
 
     /// Validates the opening peer's OpenSyn and completes accept-side negotiation.
@@ -146,7 +162,9 @@ pub trait AcceptFsm {
         input: Self::RecvOpenSynIn,
     ) -> Result<Self::RecvOpenSynOut, Self::Error>;
 
+    /// Type of the send open ack in values produced or consumed by this trait.
     type SendOpenAckIn;
+    /// Type of the send open ack out values produced or consumed by this trait.
     type SendOpenAckOut;
 
     /// Builds the accepting peer's OpenAck message and extension values.

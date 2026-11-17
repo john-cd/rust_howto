@@ -73,30 +73,41 @@ use crate::unicast::link::TransportLinkUnicastDirection;
 /// Maximum number of messages sent in a batch.
 pub(super) type AcceptError = (zenoh_result::Error, Option<u8>);
 
+/// Data for state transport operations, including batch size and resolution.
 struct StateTransport {
     /// Maximum number of messages sent in a batch.
     batch_size: BatchSize,
 
     /// Sequence-number resolution.
     resolution: Resolution,
+    /// ext qos value tracked by this type.
     ext_qos: ext::qos::StateAccept,
+    /// ext mlink value tracked by this type.
     #[cfg(feature = "transport_multilink")]
     ext_mlink: ext::multilink::StateAccept,
+    /// ext shm value tracked by this type.
     #[cfg(feature = "shared-memory")]
     ext_shm: ext::shm::auth::StateAccept,
+    /// Acceptance state for the negotiated low-latency transport extension.
     ext_lowlatency: ext::lowlatency::StateAccept,
+    /// ext patch value tracked by this type.
     ext_patch: ext::patch::StateAccept,
+    /// ext region name value tracked by this type.
     ext_region_name: ext::region_name::StateAccept,
 }
 
+/// Data for state link operations, including ext auth and ext compression.
 #[cfg(any(feature = "transport_auth", feature = "transport_compression"))]
 struct StateLink {
+    /// ext auth value tracked by this type.
     #[cfg(feature = "transport_auth")]
     ext_auth: ext::auth::StateAccept,
+    /// ext compression value tracked by this type.
     #[cfg(feature = "transport_compression")]
     ext_compression: ext::compression::StateAccept,
 }
 
+/// State for state operations that tracks transport and link.
 struct State {
     /// Transport value.
     transport: StateTransport,
@@ -111,6 +122,7 @@ struct RecvInitSynIn {
     /// Protocol version advertised by the local peer.
     mine_version: u8,
 }
+/// Data for recv init syn out operations, including other zid and other whatami.
 struct RecvInitSynOut {
     /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
@@ -136,6 +148,7 @@ struct SendInitAckIn {
     /// Role advertised by the remote peer.
     other_whatami: WhatAmI,
 }
+/// Data for send init ack out operations, including cookie nonce.
 struct SendInitAckOut {
     /// Nonce included in the cookie.
     cookie_nonce: u64,
@@ -146,6 +159,7 @@ struct RecvOpenSynIn {
     /// Nonce included in the cookie.
     cookie_nonce: u64,
 }
+/// Data for recv open syn out operations, including other zid and other whatami.
 struct RecvOpenSynOut {
     /// Zenoh identifier advertised by the remote peer.
     other_zid: ZenohIdProto,
@@ -182,6 +196,7 @@ struct SendOpenAckIn {
     /// Role advertised by the remote peer.
     other_whatami: WhatAmI,
 }
+/// Data for send open ack out operations, including open ack.
 struct SendOpenAckOut {
     /// Open ack value.
     open_ack: OpenAck,
@@ -197,7 +212,9 @@ struct AcceptLink<'a> {
 
     /// Block cipher used to protect the session.
     cipher: &'a BlockCipher,
+    /// ext qos value tracked by this type.
     ext_qos: ext::qos::QoSFsm<'a>,
+    /// ext mlink value tracked by this type.
     #[cfg(feature = "transport_multilink")]
     ext_mlink: ext::multilink::MultiLinkFsm<'a>,
     #[cfg(feature = "shared-memory")]
@@ -206,29 +223,43 @@ struct AcceptLink<'a> {
     /// Optional ext shm used by accept link; `None` means the value is not configured or
     /// unavailable.
     ext_shm: Option<ext::shm::auth::ShmFsm<'a>>,
+    /// ext auth value tracked by this type.
     #[cfg(feature = "transport_auth")]
     ext_auth: ext::auth::AuthFsm<'a>,
+    /// Acceptance state for the negotiated low-latency transport extension.
     ext_lowlatency: ext::lowlatency::LowLatencyFsm<'a>,
+    /// ext compression value tracked by this type.
     #[cfg(feature = "transport_compression")]
     ext_compression: ext::compression::CompressionFsm<'a>,
+    /// ext patch value tracked by this type.
     ext_patch: ext::patch::PatchFsm<'a>,
 
     /// Optional ext remote bound used by accept link; `None` means the value is not configured or
     /// unavailable.
     ext_remote_bound: Option<RemoteBoundCallback>,
+    /// ext region name value tracked by this type.
     ext_region_name: ext::region_name::RegionNameFsm,
 }
 
 #[async_trait]
 impl<'a, 'b: 'a> AcceptFsm for &'a mut AcceptLink<'b> {
+    /// Alias for `AcceptError` used to represent error.
     type Error = AcceptError;
+    /// Alias for `(&'a mut State, RecvInitSynIn)` used to represent recv init syn in.
     type RecvInitSynIn = (&'a mut State, RecvInitSynIn);
+    /// Alias for `RecvInitSynOut` used to represent recv init syn out.
     type RecvInitSynOut = RecvInitSynOut;
+    /// Alias for `RecvOpenSynIn` used to represent recv open syn in.
     type RecvOpenSynIn = RecvOpenSynIn;
+    /// Alias for `(State, RecvOpenSynOut)` used to represent recv open syn out.
     type RecvOpenSynOut = (State, RecvOpenSynOut);
+    /// Alias for `(State, SendInitAckIn)` used to represent send init ack in.
     type SendInitAckIn = (State, SendInitAckIn);
+    /// Alias for `SendInitAckOut` used to represent send init ack out.
     type SendInitAckOut = SendInitAckOut;
+    /// Alias for `(&'a mut State, SendOpenAckIn)` used to represent send open ack in.
     type SendOpenAckIn = (&'a mut State, SendOpenAckIn);
+    /// Alias for `SendOpenAckOut` used to represent send open ack out.
     type SendOpenAckOut = SendOpenAckOut;
 
     /// Receives the peer's InitSyn, negotiates transport settings, and updates accept state.

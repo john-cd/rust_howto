@@ -80,26 +80,32 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
     /// updated value.
     fn set_callback(&self, _callback: Arc<dyn TransportPeerEventHandler>) {}
 
+    /// Returns the status stored by or available from this value.
     async fn get_status(&self) -> AsyncMutexGuard<'_, TransportStatus> {
         unimplemented!("MockTransportUnicastInner::get_status")
     }
 
+    /// Returns the zid stored by or available from this value.
     fn get_zid(&self) -> ZenohIdProto {
         self.zid
     }
 
+    /// Returns the whatami stored by or available from this value.
     fn get_whatami(&self) -> WhatAmI {
         self.whatami
     }
 
+    /// Returns the callback stored by or available from this value.
     fn get_callback(&self) -> Option<Arc<dyn TransportPeerEventHandler>> {
         unimplemented!("MockTransportUnicastInner::get_callback")
     }
 
+    /// Returns the links stored by or available from this value.
     fn get_links(&self) -> Vec<Link> {
         vec![]
     }
 
+    /// Returns the auth ids stored by or available from this value.
     fn get_auth_ids(&self) -> TransportAuthId {
         unimplemented!("MockTransportUnicastInner::get_auth_ids")
     }
@@ -117,18 +123,22 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
         false
     }
 
+    /// Returns the shared-memory region name negotiated for this session.
     fn region_name(&self) -> Option<RegionName> {
         None
     }
 
+    /// Returns the bound stored by or available from this value.
     fn get_bound(&self) -> Option<Bound> {
         None
     }
 
+    /// Returns the config stored by or available from this value.
     fn get_config(&self) -> &TransportConfigUnicast {
         unimplemented!("MockTransportUnicastInner::get_config")
     }
 
+    /// Returns a snapshot of the counters collected for this transport.
     #[cfg(feature = "stats")]
     fn stats(&self) -> zenoh_stats::TransportStats {
         unimplemented!("MockTransportUnicastInner::stats")
@@ -145,6 +155,7 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
         unimplemented!("MockTransportUnicastInner::add_link")
     }
 
+    /// Schedules the event at its calculated execution time.
     fn schedule(&self, msg: NetworkMessageMut) -> ZResult<bool> {
         let body = match msg.body {
             NetworkBodyMut::Push(p) => NetworkBody::Push(p.clone()),
@@ -162,6 +173,7 @@ impl TransportUnicastTrait for MockTransportUnicastInner {
         Ok(true)
     }
 
+    /// Closes the transport resource and releases its associated state.
     async fn close(&self, _reason: u8) -> ZResult<()> {
         Ok(())
     }

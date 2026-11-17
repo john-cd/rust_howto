@@ -19,6 +19,7 @@ use zenoh_protocol::transport::TransportSn;
 use zenoh_result::ZResult;
 use zenoh_result::bail;
 
+/// Defines the res u8 value used by this code.
 const RES_U8: TransportSn = (u8::MAX >> 1) as TransportSn; // 1 byte max when encoded
 const RES_U16: TransportSn = (u16::MAX >> 2) as TransportSn; // 2 bytes max when encoded
 const RES_U32: TransportSn = (u32::MAX >> 4) as TransportSn; // 4 bytes max when encoded
@@ -43,7 +44,9 @@ pub(crate) fn get_mask(resolution: Bits) -> TransportSn {
 /// less, equal or greater of each other.
 #[derive(Clone, Copy, Debug)]
 pub(crate) struct SeqNum {
+    /// Value stored for this value.
     value: TransportSn,
+    /// Bit mask used to select the relevant flag bits.
     mask: TransportSn,
 }
 
@@ -72,20 +75,24 @@ impl SeqNum {
         Ok(sn)
     }
 
+    /// Returns the value requested from this object.
     pub(crate) fn get(&self) -> TransportSn {
         self.value
     }
 
+    /// Returns the next value produced by this iterator or protocol stream.
     #[inline(always)]
     pub(crate) fn next(&self) -> TransportSn {
         self.value.wrapping_add(1) & self.mask
     }
 
+    /// Handles the resolution behavior for this component.
     #[inline(always)]
     pub(crate) fn resolution(&self) -> TransportSn {
         self.mask
     }
 
+    /// Updates this value with the supplied state.
     pub(crate) fn set(&mut self, value: TransportSn) -> ZResult<()> {
         if (value & !self.mask) != 0 {
             bail!("The sequence number value must be smaller than the resolution");
@@ -95,6 +102,7 @@ impl SeqNum {
         Ok(())
     }
 
+    /// Handles the increment behavior for this component.
     pub(crate) fn increment(&mut self) {
         self.value = self.next();
     }
@@ -193,6 +201,7 @@ impl SeqNumGenerator {
         Ok(SeqNumGenerator(sn))
     }
 
+    /// Handles the now behavior for this component.
     pub(crate) fn now(&mut self) -> TransportSn {
         self.0.get()
     }
@@ -204,11 +213,13 @@ impl SeqNumGenerator {
         now
     }
 
+    /// Updates this value with the supplied state.
     pub(crate) fn set(&mut self, sn: TransportSn) -> ZResult<()> {
         self.0.set(sn)
     }
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

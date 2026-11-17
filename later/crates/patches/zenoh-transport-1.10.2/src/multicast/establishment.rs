@@ -57,6 +57,7 @@ pub(crate) async fn open_link(
     // Generate initial SNs
     let sn_resolution = manager.config.resolution.get(Field::FrameSN);
     let max = seq_num::get_mask(sn_resolution);
+    /// Expands the zgen prioritysn pattern into Rust code at compile time.
     macro_rules! zgen_prioritysn {
         () => {
             PrioritySn {
