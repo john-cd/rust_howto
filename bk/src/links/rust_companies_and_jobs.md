@@ -71,7 +71,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Disney][disney~website]↗ | Creates and distributes entertainment, media, and consumer products. |
 | [Dropbox][dropbox~website]↗ | Uses Rust for its file-syncing engine. |
 | [DungeonFog][dungeonfog~website]↗ [(github)][dungeonfog~repo]↗ | Uses Rust in their game engine and map-making tool for RPGs. The "Project Deios" map maker tool is written completely in Rust. |
-| [EVO][evo~website]↗ | Develops marketplaces for online shopping, fintech, and logistics. [development-tools](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/index.md), containerization, monitoring and orchestration systems written in Rust. |
+| [EVO][evo~website]↗ | Develops marketplaces for online shopping, fintech, and logistics. [development-tools](../categories/development-tools/index.md), containerization, monitoring and orchestration systems written in Rust. |
 | [Embark Studios][embark-studios~website]↗ | Develops video games and interactive entertainment. |
 | [Embecosm][embecosm~website]↗ | Provides compiler, embedded-software, and hardware engineering services. |
 | [Espressif][espressif~website]↗ [(github)][espressif~repo]↗ | Rust improves performance of embedded and IoT devices in ESP products. |

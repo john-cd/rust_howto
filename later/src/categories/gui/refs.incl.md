@@ -66,7 +66,7 @@
 [p~containers]: ../virtualization/containers.md
 [p~cross-platform]: ../../other/cross-platform/index.md
 [p~data-formats]: ../rendering_data-formats/index.md
-[p~documentation]: ../../../../bk/drafts/categories/development-tools/documentation/documentation.md
+[p~documentation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools/documentation/documentation.md
 [p~embedded]: # "../embedded/index.md"
 [p~game-development]: ../game-development/game_development.md
 [p~games]: ../games/index.md

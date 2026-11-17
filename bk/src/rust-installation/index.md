@@ -84,11 +84,11 @@ Review the [git][git~website]↗ manual for more commands.
 
 ## Related Topics
 
-- [`cargo`](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/cargo/cargo.md).
+- [`cargo`](../categories/development-tools/cargo/cargo.md).
 - [[entry_points | Entrypoints]].
 - [[language | Language]].
-- [Package layout](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/cargo/package_layout.md).
-- [`rustup`](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/installation/rustup.md).
+- [Package layout](../categories/development-tools/cargo/package_layout.md).
+- [`rustup`](../categories/development-tools/installation/rustup.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

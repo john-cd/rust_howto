@@ -46,7 +46,7 @@ For an introduction to futures and executors, see [Async Rust (draft)](../catego
 ## Related Topics {#related-topics .skip}
 
 - [[functions | Functions]].
-- [Package Layout](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/cargo/package_layout.md).
+- [Package Layout](../categories/development-tools/cargo/package_layout.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

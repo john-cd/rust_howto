@@ -17,7 +17,7 @@ The [`bk/book.toml`][rust-howto~book.toml~repo]↗ config file configures severa
 - [`mdbook-linkcheck`][c~mdbook-linkcheck~repo]↗{{hi:mdbook-linkcheck}} is a [backend][book~mdbook~backends]↗ that checks links. Install the pinned version with `cargo install mdbook-linkcheck --version 0.7.7 --locked`. The active `[output.linkcheck]` configuration in [`book.toml`][c~mdbook~book.toml]↗{{hi:book.toml}} invokes this repository's `mdbook-linkcheck-compat` shim, which adapts the tool's command-line contract for the configured mdBook version.
 - The default [`html`][book~mdbook~renderers]↗{{hi:html}} backend is used to generate the HTML for deployment on GitHub Pages.
 
-The [`mdbook`](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/documentation/mdbook.md) chapter describes these preprocessors and backends in more detail.
+The [`mdbook`](../../categories/development-tools/documentation/mdbook.md) chapter describes these preprocessors and backends in more detail.
 
 ## Use `mdbook-scrub`, a Custom Preprocessor for `mdbook` {#mdbook-scrub}
 
@@ -33,7 +33,7 @@ Consult the project's [README][mdbook-scrub-readme~repo]↗ for more details.
 
 [`mdbook-lint`][mdbook-lint~repo]↗ checks Markdown with mdBook-specific rules. [Lychee][lychee~repo]↗ checks links in existing Markdown or HTML. Run the checks against the source or rendered output that your workflow publishes.
 
-For the book structure and rendering workflow that preprocessors extend, see [mdBook (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/documentation/mdbook.md).
+For the book structure and rendering workflow that preprocessors extend, see [mdBook](../../categories/development-tools/documentation/mdbook.md).
 
 ## Related Topics {#related-topics .skip}
 
