@@ -27,7 +27,7 @@ Once adding an external crate as a dependency, you will very often bring items f
 {{#include ../../crates/code_organization/examples/dependencies/external_dependency.rs:example}}
 ```
 
-For lockfiles, feature selection, and dependency updates, see [Dependency Management (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_cargo-plugins/dependency_management.md).
+For lockfiles, feature selection, and dependency updates, see [Dependency Management](../categories/development-tools_cargo-plugins/dependency_management.md).
 
 ## Check for Unused Dependencies with Cargo 1.100
 

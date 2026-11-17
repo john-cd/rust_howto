@@ -37,7 +37,7 @@ An interpreter executes source code or bytecode. A transpiler translates source 
 - [[programming_languages | Programming Languages]].
 - [[development-tools | Development Tools]].
 - [[development-tools_build-utils | Development Tools: Build Utils]].
-- [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
+- [Development Tools: Cargo Plugins](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/index.md).
 - [[development-tools_debugging | Development Tools: Debugging]].
 - [[development-tools_procedural-macro-helpers | Development Tools: Procedural Macro Helpers]].
 - [Development Tools - Profiling](../../../../bk/src/categories/development-tools_profiling/index.md).

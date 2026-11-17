@@ -78,7 +78,7 @@
 [p~immediate-mode-gui]: immediate_mode_gui.md
 [p~main]: ../../../../bk/src/language/entry_points.md
 [p~option]: ../../../../bk/src/standard-library/optional_values.md
-[p~performance]: # "../../categories/development-tools_cargo-plugins/performance.md"
+[p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~rendering]: ../rendering/index.md
 [p~ui-layout]: ui_layout.md
 [p~wasm]: ../wasm/index.md

@@ -73,18 +73,6 @@
     - [Reduce Compilation Duration](categories/development-tools/compilation/reduce_compilation_duration.md)
     - [Transpilers](categories/development-tools/transcompilation/transpilers.md)
 
-- [Development Tools - Cargo Plugins](categories/development-tools_cargo-plugins/index.md)
-  - [Writing Code](categories/development-tools_cargo-plugins/code_writing.md)
-  - [Code Formatting, Linting](categories/development-tools_cargo-plugins/code_formatting_linting.md)
-  - [Dependency Management](categories/development-tools_cargo-plugins/dependency_management.md)
-  - [Building](categories/development-tools_cargo-plugins/building.md)
-  - [Cross-compiling](categories/development-tools_cargo-plugins/cross_compiling.md)
-  - [Watching for Changes](categories/development-tools_cargo-plugins/watching_for_changes.md)
-  - [Improving Performance](categories/development-tools_cargo-plugins/performance.md)
-  - [Auditing](categories/development-tools_cargo-plugins/auditing.md)
-  - [Maintaining](categories/development-tools_cargo-plugins/maintaining.md)
-  - [Write a Cargo Plugin](categories/development-tools_cargo-plugins/write_cargo_plugin.md)
-
 - [Email](categories/email/index.md)
   - [Sending emails](categories/email/send_emails.md)
   - [Email parsing](categories/email/email_parsing.md)

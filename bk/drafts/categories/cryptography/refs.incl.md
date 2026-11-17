@@ -63,7 +63,7 @@
 [p~hashing]: ../../../src/categories/algorithms/hashing.md
 [p~match]: ../../../src/language/pattern_matching.md
 [p~password_hashing]: password_hashing.md
-[p~performance]: ../development-tools_cargo-plugins/performance.md
+[p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
 [p~search]: ../database/search.md
 [p~server]: ../network-programming/server.md
 [p~signature]: signature.md
