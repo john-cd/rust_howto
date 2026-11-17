@@ -68,7 +68,7 @@ For a multi-threaded context, use [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗
 - [Memory Management](../categories/memory-management/index.md).
 - [Memory Usage Analysis](../categories/development-tools_profiling/memory_usage_analysis.md).
 - [[reference_counting | Reference Counting]].
-- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
+- [Rust Patterns](../categories/rust-patterns/index.md).
 - [Shared State](../categories/concurrency/shared_state.md).
 - [[smart_pointers | Smart Pointers]].
 

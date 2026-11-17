@@ -150,6 +150,6 @@ Note how multiple `impl` blocks are possible; they can implement associated func
 
 <div class="hidden">
 
-- [[rust-patterns | Rust Patterns]].
+- [Rust Patterns](../categories/rust-patterns/index.md).
 
 </div>

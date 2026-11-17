@@ -88,6 +88,6 @@ You can also use `std::borrow::Cow` to generalize over owned data and unowned re
 
 <div class="hidden">
 
-- [[rust-patterns | Rust Patterns]].
+- [Rust Patterns](../categories/rust-patterns/index.md).
 
 </div>

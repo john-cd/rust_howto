@@ -16,28 +16,28 @@ Use a builder when construction has many optional settings, needs validation, or
 {{#include ../../../crates/cats/rust_patterns/examples/builder_pattern/builder_pattern.rs:example}}
 ```
 
-## `typed-builder` {#typed-builder}
+## Compile-time Checked Builders {#typed-builder}
 
 {{#badges typed-builder rust-patterns="Rust patterns"}}{{hi:Builder}}
 
-[`typed-builder`][c~typed-builder~docs]↗{{hi:typed-builder}} derives compile-time type-checked builders. It uses a 'derive' macro and leverages Rust's type system to ensure that all required fields are set. If you forget a required field, your code won't even compile.
+[`typed-builder`][c~typed-builder~docs]↗{{hi:typed-builder}} derives a builder whose type tracks which required fields have been set. A missing required field is a compile error when the builder is finalized.
 
 ## `derive_builder` {#derive_builder}
 
 {{#badges derive_builder development-tools="Development tools" rust-patterns="Rust patterns"}}{{hi:Builder}}{{hi:Derive}}{{hi:Macro}}{{hi:Setter}}{{hi:Struct}}
 
-[`derive_builder`][c~derive_builder~docs]↗{{hi:derive_builder}} provides a `#[derive(Builder)]` macro to automatically implement the builder pattern for arbitrary structs. It performs checks at runtime within the `.build()` method.
+[`derive_builder`][c~derive_builder~docs]↗{{hi:derive_builder}} derives a builder for a struct. Its `.build()` method checks at runtime that required fields are present.
 
 ## `bon` {#bon}
 
 [![bon~website][c~bon~website~badge]][c~bon~website] {{#badges bon}} {{hi:Builder}} {{hi:Constructor}} {{hi:Derive}} {{hi:Macro}} {{hi:Setter}} {{#categories asynchronous=Asynchronous,data-structures="Data structures",no-std="No standard library",no-std::no-alloc="No dynamic allocation",rust-patterns="Rust patterns"}}
 
-[`bon`][c~bon~docs]↗{{hi:bon}} is a compile-time-checked builder generator with additional features like support for fallible/async builders and named function arguments via the builder pattern.
+[`bon`][c~bon~docs]↗{{hi:bon}} derives builders with support for required fields, fallible or asynchronous construction, and named arguments for functions.
 
 ## Related Topics {#related-topics .skip}
 
 - [Rust Patterns](index.md) groups builders with other creational, structural, and behavioral patterns.
-- [Error Handling](error_handling/error_handling.md) covers reporting validation failures from `build`.
+- [Recoverable Error Handling](../../standard-library/recoverable_error_handling.md) covers returning validation failures from `build`.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

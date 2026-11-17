@@ -6,7 +6,7 @@ This crate contains code examples for the **Rust Patterns** category on crates.i
 
 ## Examples Covered
 
-- **Behavioral Patterns** (`examples/behavioral_patterns/`): Demonstrates concepts like `undo_redo`.
+- **Behavioral Patterns** (`examples/behavioral_patterns/`): Demonstrates the typestate lifecycle and an `undo_redo` command history.
 - **Builder Pattern** (`examples/builder_pattern/`): Demonstrates concepts like `builder_pattern`.
 - **Business Rules** (`examples/business_rules/`): Demonstrates concepts like `decision_table`.
 - **Creational Patterns** (`examples/creational_patterns/`): Demonstrates concepts like `abstract_factory`, `factory`, `singleton`.
@@ -25,4 +25,4 @@ cargo check --package rust_patterns --examples
 cargo test --package rust_patterns
 ```
 
-Code examples correspond to chapters in `bk/src/categories/rust_patterns` or related book sections.
+Code examples correspond to chapters in `bk/src/categories/rust-patterns` or related book sections.

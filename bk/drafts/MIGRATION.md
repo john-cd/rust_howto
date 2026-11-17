@@ -2,9 +2,9 @@
 
 # Draft Migration Review
 
-Review snapshot initiated for [issue #2284](https://github.com/john-cd/rust_howto/issues/2284). Text Processing and Parser Implementations were tracked by [issues #2288](https://github.com/john-cd/rust_howto/issues/2288) and [#2289](https://github.com/john-cd/rust_howto/issues/2289). Encoding, Configuration, Memory Management, Concurrency, Asynchronous Programming, Command-line Interface, Command-line Utilities, Development Tools - Testing, Debugging, Profiling, Build Utils, Cargo Plugins, and the remaining Development Tools chapters are tracked by [issues #2290](https://github.com/john-cd/rust_howto/issues/2290), [#2291](https://github.com/john-cd/rust_howto/issues/2291), [#2292](https://github.com/john-cd/rust_howto/issues/2292), [#2293](https://github.com/john-cd/rust_howto/issues/2293), [#2294](https://github.com/john-cd/rust_howto/issues/2294), [#2295](https://github.com/john-cd/rust_howto/issues/2295), [#2296](https://github.com/john-cd/rust_howto/issues/2296), [#2297](https://github.com/john-cd/rust_howto/issues/2297), [#2298](https://github.com/john-cd/rust_howto/issues/2298), [#2299](https://github.com/john-cd/rust_howto/issues/2299), [#2300](https://github.com/john-cd/rust_howto/issues/2300), [#2301](https://github.com/john-cd/rust_howto/issues/2301), and [#2302](https://github.com/john-cd/rust_howto/issues/2302). This inventory retains the remaining category order and readiness work.
+Review snapshot initiated for [issue #2284](https://github.com/john-cd/rust_howto/issues/2284). Text Processing and Parser Implementations were tracked by [issues #2288](https://github.com/john-cd/rust_howto/issues/2288) and [#2289](https://github.com/john-cd/rust_howto/issues/2289). Encoding, Configuration, Memory Management, Concurrency, Asynchronous Programming, Command-line Interface, Command-line Utilities, Development Tools - Testing, Debugging, Profiling, Build Utils, Cargo Plugins, and the remaining Development Tools chapters are tracked by [issues #2290](https://github.com/john-cd/rust_howto/issues/2290), [#2291](https://github.com/john-cd/rust_howto/issues/2291), [#2292](https://github.com/john-cd/rust_howto/issues/2292), [#2293](https://github.com/john-cd/rust_howto/issues/2293), [#2294](https://github.com/john-cd/rust_howto/issues/2294), [#2295](https://github.com/john-cd/rust_howto/issues/2295), [#2296](https://github.com/john-cd/rust_howto/issues/2296), [#2297](https://github.com/john-cd/rust_howto/issues/2297), [#2298](https://github.com/john-cd/rust_howto/issues/2298), [#2299](https://github.com/john-cd/rust_howto/issues/2299), [#2300](https://github.com/john-cd/rust_howto/issues/2300), [#2301](https://github.com/john-cd/rust_howto/issues/2301), and [#2302](https://github.com/john-cd/rust_howto/issues/2302). Rust Patterns is tracked by [issue #2309](https://github.com/john-cd/rust_howto/issues/2309). This inventory retains the remaining category order and readiness work.
 
-The initial regex recipes, the `FromStr` custom-type recipe, and the complete Text Processing, Parser Implementations, Encoding, Configuration, Memory Management, Concurrency, Asynchronous Programming, Command-line Interface, Command-line Utilities, Development Tools - Testing, Development Tools - Debugging, Development Tools - Profiling, Development Tools - Build Utils, Development Tools - Cargo Plugins, and Development Tools categories are published. Closeout tests and the HTML book render have passed; the detailed evidence appears below. Other chapters remain **candidates for review**, not certified ready. The initial inventory covered 224 entries; 100 draft-summary entries remain across 23 ordered groups. Order favors deterministic local examples, then concurrency/tooling, then service/platform-dependent work. Within a category, move prerequisites and individual ready recipes first; move an overview only when its included tables reference published recipes. Existing human review markers are preserved and are not machine-checkable readiness gates.
+The initial regex recipes, the `FromStr` custom-type recipe, and the complete Text Processing, Parser Implementations, Encoding, Configuration, Memory Management, Concurrency, Asynchronous Programming, Command-line Interface, Command-line Utilities, Development Tools - Testing, Development Tools - Debugging, Development Tools - Profiling, Development Tools - Build Utils, Development Tools - Cargo Plugins, and Development Tools and Rust Patterns categories are published. Closeout tests and the HTML book render have passed; the detailed evidence appears below. Other chapters remain **candidates for review**, not certified ready. The initial inventory covered 224 entries; 91 draft-summary entries remain across 22 ordered groups. Order favors deterministic local examples, then concurrency/tooling, then service/platform-dependent work. Within a category, move prerequisites and individual ready recipes first; move an overview only when its included tables reference published recipes. Existing human review markers are preserved and are not machine-checkable readiness gates.
 
 For every candidate: inspect prose against behavior and example coverage; resolve migration blockers; move unique text and its recipe tables/reference definitions; update both summaries, related links, and the published example index. At closeout, run the owning example tests and documented commands (including failure paths and needed features), then render the book and check diagnostics, includes, and destinations. Examples already under `bk/crates` stay there. Move examples from `later` only when their dependencies/features are available in the published workspace. A complete draft overview is not evidence that every included recipe is ready.
 
@@ -78,23 +78,11 @@ Development Tools - Cargo Plugins: moved the overview and ten chapters covering 
 
 Development Tools: promoted the remaining 25 chapters for Cargo, package layout, registries, compilation, installation, formatting, documentation, versioning, repository automation, cross-compilation, verification, Rust source tooling, Miri, linking, and transpilation. Integrated them with the published overview and the five component categories, updated related links and references, and added table-only example-index sources where chapters contain prose. The existing examples remain in `bk/crates/cats/development_tools`; `templ` was tested in its isolated workspace. See [final closeout](#validation-closeout) for commands and results.
 
-## 1. rust-patterns
+## Completed Eighteenth Migration
 
-Merge error-handling overlap with published Result/Option chapters. Verify examples and their ownership/error contracts; prioritize builder/composition before broad pattern catalogs.
+Rust Patterns: moved the overview and builder, creational, structural, behavioral, functional, Rust-specific, and custom-error chapters into the published book. Kept the runnable examples in the existing `bk/crates/cats/rust_patterns` package, added a type-state example, and integrated the existing inventory-registration recipe. Retired the duplicate generic error chapter in favor of the published Recoverable Error Handling guide, while preserving custom error, reporting, and backtrace examples. Updated incoming links, both summaries, related topics, and the example index. Focused tests and the HTML render are recorded in Validation Closeout below.
 
-| Chapter in draft summary | Remaining work / blockers |
-| --- | --- |
-| [Error Handling](categories/rust-patterns/error_handling/error_handling.md) | No missing include/anchor found; category work and execution/render checks still required |
-| [Error Customization](categories/rust-patterns/error_handling/error_customization.md) | No missing include/anchor found; category work and execution/render checks still required |
-| [Rust Patterns](categories/rust-patterns/index.md) | No missing include/anchor found; category work and execution/render checks still required |
-| [Creational Patterns](categories/rust-patterns/creational_patterns.md) | No missing include/anchor found; category work and execution/render checks still required |
-| [Builder Pattern](categories/rust-patterns/builder_pattern.md) | No missing include/anchor found; category work and execution/render checks still required |
-| [Structural Patterns](categories/rust-patterns/structural_patterns.md) | No missing include/anchor found; category work and execution/render checks still required |
-| [Behavioral Design Patterns](categories/rust-patterns/behavioral_patterns.md) | No missing include/anchor found; category work and execution/render checks still required |
-| [Functional Programming](categories/rust-patterns/functional_programming.md) | No missing include/anchor found; category work and execution/render checks still required |
-| [Rust-specific Patterns](categories/rust-patterns/rust_specific_patterns.md) | No missing include/anchor found; category work and execution/render checks still required |
-
-## 2. standalone
+## 1. standalone
 
 Overflow: run debug and release behavior. Predicates: run the composite predicate fixture. Plugins: establish actual dynamic loading versus Any-based dispatch. Self-referential: audit pinning/unsafe invariants. Inheritance: repair the duplicate explicit anchor and explain composition/dispatch consistently before promotion.
 
@@ -106,7 +94,7 @@ Overflow: run debug and release behavior. Predicates: run the composite predicat
 | [Inheritance](inheritance.md) | Duplicate heading IDs: `inheritance-in-rust` |
 | [Predicates](predicates.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 3. web-programming
+## 2. web-programming
 
 Promote local URL/HTTP-type/HTML-sanitization fixtures first. Replace scraping and MIME response dependencies on live sites with local fixtures, and verify malicious HTML handling.
 
@@ -119,7 +107,7 @@ Promote local URL/HTTP-type/HTML-sanitization fixtures first. Replace scraping a
 | [Media Types](categories/web-programming/mime.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Sanitize HTML](categories/web-programming/html_sanitization.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 4. web-programming_http-client
+## 3. web-programming_http-client
 
 Use a loopback server for requests, downloads, timeouts, rate limits, and retries. API recipes need mock pagination/error fixtures; gist creation/deletion requires explicit credentials and cleanup.
 
@@ -132,7 +120,7 @@ Use a loopback server for requests, downloads, timeouts, rate limits, and retrie
 | [Rate Limiting and Retries](categories/web-programming_http-client/rate_limiting_and_retries.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Downloads](categories/web-programming_http-client/download.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 5. web-programming_http-server
+## 4. web-programming_http-server
 
 Test bounded loopback server/client flows. Verify middleware, CORS preflight, TLS fixtures, schema generation, GraphQL, and gRPC including generated code before promoting framework comparisons.
 
@@ -152,7 +140,7 @@ Test bounded loopback server/client flows. Verify middleware, CORS preflight, TL
 | [gRPC](categories/web-programming_http-server/_grpc.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [`hyper`](categories/web-programming_http-server/_hyper.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 6. network-programming
+## 5. network-programming
 
 Use loopback fixtures for server/proxy shutdown, forwarding, errors, and timeouts; check for conflicts with already published network recipes. The existing `network_programming` package currently fails to compile its Pingora example because three function parameters have `///` comments in attribute position (lines 53, 68, and 71); fix that before promoting this category.
 
@@ -162,7 +150,7 @@ Use loopback fixtures for server/proxy shutdown, forwarding, errors, and timeout
 | [Server](categories/network-programming/server.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Reverse Proxy](categories/network-programming/reverse_proxy.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 7. database
+## 6. database
 
 Start with embedded SQLite/key-value fixtures, then pools/ORMs. External databases, Oracle/MSSQL clients, and AMQP require provisioned services, credentials, and cleanup; run nested toasty_validation independently.
 
@@ -181,7 +169,7 @@ Start with embedded SQLite/key-value fixtures, then pools/ORMs. External databas
 | [Search](categories/database/search.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [AMQP](categories/database/amqp.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 8. database-implementations
+## 7. database-implementations
 
 Reconcile the published database implementation material; validate embedded search locally and distinguish application recipes from implementation surveys.
 
@@ -191,7 +179,7 @@ Reconcile the published database implementation material; validate embedded sear
 | [Databases](categories/database-implementations/databases.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Search](categories/database-implementations/rust_search_engines.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 9. cryptography
+## 8. cryptography
 
 Review security claims and demonstrate authentication/tamper failures, nonce/key handling, password parameters, and certificate validation. Supply local TLS/certificate fixtures; passing a happy path alone is insufficient.
 
@@ -208,7 +196,7 @@ Review security claims and demonstrate authentication/tamper failures, nonce/key
 | [TLS](categories/cryptography/tls.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Cryptographic Utilities](categories/cryptography/cryptography_utilities.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 10. authentication
+## 9. authentication
 
 Basic auth needs HTTPS context. Session/CSRF flows need request-level tests; OAuth/OIDC need mock issuers or configured providers; passkeys require browser/authenticator ceremony validation.
 
@@ -221,7 +209,7 @@ Basic auth needs HTTPS context. Session/CSRF flows need request-level tests; OAu
 | [OpenID Connect Authorization Code with PKCE](categories/authentication/oidc_authorization_code.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Passkeys (WebAuthn)](categories/authentication/passkeys.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 11. email
+## 10. email
 
 Parsing can use checked-in messages; sending and reading require local SMTP/IMAP fixtures or explicitly configured accounts, timeouts, and cleanup.
 
@@ -232,7 +220,7 @@ Parsing can use checked-in messages; sending and reading require local SMTP/IMAP
 | [Email parsing](categories/email/email_parsing.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Reading emails](categories/email/read_emails.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 12. os
+## 11. os
 
 Run child-process/signal examples on their supported platforms with bounded subprocesses; avoid changing the parent shell or relying on machine-specific commands.
 
@@ -245,7 +233,7 @@ Run child-process/signal examples on their supported platforms with bounded subp
 | [Low-level System Calls](categories/os/low_level_system_calls.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Rust OSes](categories/os/rust_os.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 13. os_unix-apis
+## 12. os_unix-apis
 
 Validate on supported Unix hosts with scoped process/filesystem resources; identify Linux-specific assumptions rather than claiming portability.
 
@@ -254,7 +242,7 @@ Validate on supported Unix hosts with scoped process/filesystem resources; ident
 | [Operating systems - Unix](categories/os_unix-apis/index.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Unix](categories/os_unix-apis/unix.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 14. os_windows-apis
+## 13. os_windows-apis
 
 Requires a Windows host and relevant APIs/permissions; Linux compilation or prose inspection does not validate Windows runtime behavior.
 
@@ -263,7 +251,7 @@ Requires a Windows host and relevant APIs/permissions; Linux compilation or pros
 | [Operating systems - Windows](categories/os_windows-apis/index.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Windows](categories/os_windows-apis/windows.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 15. hardware-support
+## 14. hardware-support
 
 Processor examples need architecture feature checks; peripherals need actual compatible devices and permissions. Keep hardware prose separate from validated runnable recipes.
 
@@ -273,7 +261,7 @@ Processor examples need architecture feature checks; peripherals need actual com
 | [Processor](categories/hardware-support/processor.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Peripherals](categories/hardware-support/peripherals.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 16. text-editors
+## 15. text-editors
 
 Check current editor configuration and execute the LSP examples against a local client/server. Reconcile contributor IDE setup material.
 
@@ -283,7 +271,7 @@ Check current editor configuration and execute the LSP examples against a local 
 | [IDEs](categories/text-editors/ides.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Language Server Protocol](categories/text-editors/language_server_protocol.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 17. graphics
+## 16. graphics
 
 Compare the graphics overview with the published graphics recipes; merge unique guidance only after checking links and identifying platform/tool requirements.
 
@@ -291,7 +279,7 @@ Compare the graphics overview with the published graphics recipes; merge unique 
 | --- | --- |
 | [Graphics](categories/graphics/index.md) | No missing include/anchor found; category work and execution/render checks still required |
 
-## 18. caching
+## 17. caching
 
 Draft overview is a redirect to already published caching/in-memory cache; no chapter promotion remains. Verify destination and retire the duplicate summary entry.
 
@@ -299,7 +287,7 @@ Draft overview is a redirect to already published caching/in-memory cache; no ch
 | --- | --- |
 | [Caching](categories/caching/index.md) | Published path exists: compare/merge or retire redirect; do not overwrite |
 
-## 19. compression
+## 18. compression
 
 Draft overview is a redirect to already published compression; no chapter promotion remains. Verify destination and retire the duplicate summary entry.
 
@@ -307,7 +295,7 @@ Draft overview is a redirect to already published compression; no chapter promot
 | --- | --- |
 | [Compression](categories/compression/index.md) | Published path exists: compare/merge or retire redirect; do not overwrite |
 
-## 20. date-and-time
+## 19. date-and-time
 
 This is a redirect to the published date/time chapter; verify its destination and retire the duplicate draft-summary entry.
 
@@ -315,7 +303,7 @@ This is a redirect to the published date/time chapter; verify its destination an
 | --- | --- |
 | [Date and Time](categories/date-and-time/index.md) | Published path exists: compare/merge or retire redirect; do not overwrite |
 
-## 21. data-structures
+## 20. data-structures
 
 Compare with published collections and data-structures chapters; merge only unique guidance and repair links, rather than duplicating the category.
 
@@ -323,7 +311,7 @@ Compare with published collections and data-structures chapters; merge only uniq
 | --- | --- |
 | [Data Structures](categories/data-structures/index.md) | Missing include `phf.incl.md`; Missing include `elsa.incl.md`; Published path exists: compare/merge or retire redirect; do not overwrite |
 
-## 22. parsing
+## 21. parsing
 
 This is a redirect to the published parsing/expression parser material; verify its destinations and retire the duplicate draft-summary entry.
 
@@ -331,7 +319,7 @@ This is a redirect to the published parsing/expression parser material; verify i
 | --- | --- |
 | [Parsing](categories/parsing/index.md) | Published path exists: compare/merge or retire redirect; do not overwrite |
 
-## 23. template-engine
+## 22. template-engine
 
 This is a redirect to published Tera/TinyTemplate recipes; verify its destinations and retire the duplicate draft-summary entry.
 
