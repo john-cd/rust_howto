@@ -84,7 +84,7 @@ For [[strings | Strings]], use:
 - [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}} for finding occurrences of many patterns at once,
 - [`strsim`][c~strsim~docs]↗{{hi:strsim}} for string similarity.
 
-See also [String Concat](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_concat.md), [String Encoding](../encoding/string_encoding.md), [String Parsing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_parsing.md), and [Text Processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md).
+See also [String Concat](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_concat.md), [String Encoding](../encoding/string_encoding.md), [String Parsing](../text-processing/string_parsing.md), and [Text Processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md).
 
 ### Cryptography
 
