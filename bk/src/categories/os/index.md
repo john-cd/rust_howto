@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Operating System
+# Operating Systems
 
 [![cat~os][cat~os~badge]][cat~os]
 
@@ -43,7 +43,7 @@ Direct system calls and Foreign Function Interface (FFI) bindings are lower-leve
 
 {{#include low_level_system_calls.incl.md}}
 
-See the [Unix-specific APIs][p~unix] and [Linux APIs][p~linux] chapters for platform details.
+For platform-specific details, consult the [Rust Unix APIs](https://doc.rust-lang.org/std/os/unix/) and [Rust Windows APIs](https://doc.rust-lang.org/std/os/windows/) documentation.
 
 ## Operating Systems Written in Rust
 
@@ -53,10 +53,10 @@ This section lists operating systems and system projects implemented in Rust. Th
 
 ## Related Topics {#related-topics .skip}
 
-- [[filesystem | File System]] covers portable file and directory operations.
-- [Command-line Interface](../../../src/categories/command-line-interface/index.md) covers command arguments and user interaction.
-- [[network-programming | Network Programming]] covers networking beyond the standard library primitives.
-- [[concurrency | Concurrency]] covers threads, synchronization, and parallel work.
+- [File System](../filesystem/index.md) covers portable file and directory operations.
+- [Command-line Interface](../command-line-interface/index.md) covers command arguments and user interaction.
+- [Network Programming](../network-programming/index.md) covers networking beyond the standard library primitives.
+- [Concurrency](../concurrency/index.md) covers threads, synchronization, and parallel work.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

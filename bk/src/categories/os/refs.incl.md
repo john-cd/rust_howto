@@ -4,7 +4,6 @@
 
 [c~nix::sys::signal::killpg~docs]: https://docs.rs/nix/latest/nix/sys/signal/fn.killpg.html
 [c~tokio::signal::ctrl_c~docs]: https://docs.rs/tokio/latest/tokio/signal/fn.ctrl_c.html
-[ex~os~bottlerocket]: rust_os.md#bottlerocket
 [ex~os~call-libc]: low_level_system_calls.md#call-libc
 [ex~os~continuously-process-child-process-outputs]: external_commands.md#continuously-process-child-process-outputs
 [ex~os~ctrlc]: signals.md#ctrlc
@@ -13,7 +12,6 @@
 [ex~os~kill-guard]: process_management.md#kill-guard
 [ex~os~read-environment-variable]: external_commands.md#read-environment-variable
 [ex~os~redirect-both-stdout-and-stderr-of-child-process-to-the-same-file]: external_commands.md#redirect-both-stdout-and-stderr-of-child-process-to-the-same-file
-[ex~os~redox]: rust_os.md#redox
 [ex~os~run-an-external-command-and-process-stdout]: external_commands.md#run-an-external-command-and-process-stdout
 [ex~os~run-an-external-command-passing-stdin-and-check-for-error-code]: external_commands.md#run-an-external-command-passing-stdin-and-check-for-error-code
 [ex~os~run-child-processes-using-duct]: external_commands.md#run-child-processes-using-duct
@@ -23,10 +21,6 @@
 [ex~os~tokio-signal]: signals.md#tokio-signal
 [ex~os~which]: external_commands.md#which
 [ex~os~xshell]: external_commands.md#xshell
-[p~functions]: ../../language/functions.md
-[p~log]: ../../../src/categories/development-tools_debugging/log.md
-[p~unix]: # "../os_unix-apis/unix.md"
-[p~written-in-rust]: # "../../other/written-in-rust/index.md"
 [blog_os~guide]: https://os.phil-opp.com/
 [bootloader~repo]: https://github.com/rust-osdev/bootloader
 [linux~rust-docs]: https://docs.kernel.org/rust/index.html

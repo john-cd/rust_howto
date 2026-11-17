@@ -2,7 +2,7 @@
 
 # OS
 
-This crate contains code examples for the **OS** category on crates.io. It demonstrates integration with key ecosystem crates including `anyhow`, `clap`, `ctrlc`, `duct`, `libc`, `regex`.
+This crate contains code examples used by the book's **Operating Systems** category. It demonstrates integration with `anyhow`, `clap`, `ctrlc`, `duct`, `libc`, `nix`, `regex`, `shlex`, `tokio`, `wait-timeout`, `which`, `windows-sys`, and `xshell`.
 
 ## Examples Covered
 

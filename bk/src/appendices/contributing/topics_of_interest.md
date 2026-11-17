@@ -38,7 +38,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [Virtualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md).
 - [Version Control](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/devops/version_control.md): libgit2: clone, change branches, create commits, push, pull.
 - [Cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), SSL, SSH, other public key [encryption](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/encryption.md), X.509, RusTLS.
-- [Network Programming](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/network-programming/index.md): Basic and advanced TCP/IP networking.
+- [Network Programming](../../categories/network-programming/index.md): Basic and advanced TCP/IP networking.
 - DNS lookups and resolution.
 - Interfacing with FLTK (Fast Light Tool Kit).
 - Raft Consensus library.
