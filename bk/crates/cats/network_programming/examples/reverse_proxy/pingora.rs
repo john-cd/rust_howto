@@ -49,8 +49,6 @@ impl ProxyHttp for LocalProxy {
     /// Returns the fixed plain-HTTP upstream peer.
     async fn upstream_peer(
         &self,
-
-        /// Session value.
         _session: &mut Session,
         _ctx: &mut Self::CTX,
     ) -> Result<Box<HttpPeer>> {
@@ -64,11 +62,7 @@ impl ProxyHttp for LocalProxy {
     /// Adds the example response header after receiving an upstream response.
     async fn response_filter(
         &self,
-
-        /// Session value.
         _session: &mut Session,
-
-        /// Response header received from the upstream server.
         upstream_response: &mut ResponseHeader,
         _ctx: &mut Self::CTX,
     ) -> Result<()> {
