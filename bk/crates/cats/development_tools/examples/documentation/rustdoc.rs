@@ -1,11 +1,14 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Documenting a function, including documentation from an external file.
+//! Documents functions and includes an external file in the module documentation.
 //!
 //! `rustdoc` builds HTML documentation from doc comments, with links between
 //! items. Run `cargo doc --open`. Examples in the comments are tested, so the
 //! documentation stays correct.
+
+// Include the workspace README in the module documentation when building docs.
+#![cfg_attr(doc, doc = include_str!("../../../../README.md"))]
 
 /// This is a doc comment.
 /// Note the three slashes.
@@ -15,17 +18,13 @@ fn documented_function() {
     println!("Function with doc comment.");
 }
 
-// Alternatively, we may use an external file.
-// This is useful for including large amounts of documentation.
-
-/// Demonstrates attaching an external Markdown file to an item's documentation.
-#[cfg_attr(doc, doc = include_str!("../../../../README.md"))]
-fn function_including_external_file_as_documentation() {}
+/// Shows a short doc comment on a function with no implementation.
+fn function_with_short_documentation() {}
 
 /// Calls the documented functions.
 fn main() {
     documented_function();
-    function_including_external_file_as_documentation();
+    function_with_short_documentation();
 }
 // ANCHOR_END: example
 
@@ -34,6 +33,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -50,6 +50,6 @@ mod tests {
     #[test]
     fn documented_functions_are_callable() {
         documented_function();
-        function_including_external_file_as_documentation();
+        function_with_short_documentation();
     }
 }

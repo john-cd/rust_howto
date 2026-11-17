@@ -6,11 +6,16 @@
     clippy::exhaustive_enums,
     reason = "Pest derives a closed Rule enum for this grammar."
 )]
+#![allow(
+    missing_docs,
+    reason = "pest_derive emits Rule variants and parser methods without documentation."
+)]
 
 // ANCHOR: example
 use pest::Parser;
 use pest_derive::Parser;
 
+/// Data carried by markdown link parser operations.
 #[derive(Parser)]
 #[grammar = "examples/pest_markdown/markdown_links.pest"]
 struct MarkdownLinkParser;
