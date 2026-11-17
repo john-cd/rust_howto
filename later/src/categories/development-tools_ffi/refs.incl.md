@@ -50,7 +50,7 @@
 [c~piccolo~docs]: https://docs.rs/piccolo/latest/piccolo/
 [rust-nomicon~ffi]: https://doc.rust-lang.org/nomicon/ffi.html
 [rust-reference~type-layout]: https://doc.rust-lang.org/reference/type-layout.html#representations
-[p~asynchronous]: ../asynchronous/index.md
+[p~asynchronous]: https://john-cd.com/rust_howto/categories/asynchronous/index.html
 [p~concurrency]: # "../../categories/concurrency/index.md"
 [p~error-handling]: # "../../categories/rust-patterns/error_handling/error_handling.md"
 [p~functions]: ../../language/functions.md

@@ -24,7 +24,7 @@
 [p~actors]: ../../../src/categories/concurrency/_actors.md
 [p~apis]: ../../../src/categories/web-programming_http-client/apis.md
 [p~architecture]: index.md
-[p~asynchronous]: ../../../src/categories/asynchronous/index.md
+[p~asynchronous]: https://john-cd.com/rust_howto/categories/asynchronous/index.html
 [p~authentication]: ../../../src/categories/authentication/index.md
 [p~aws]: ../cloud/aws.md
 [p~concurrency]: ../../../src/categories/concurrency/index.md

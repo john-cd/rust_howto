@@ -9,7 +9,7 @@
 [c~email_address~crates.io]: https://crates.io/crates/email_address
 [c~fast_chemail~crates.io]: https://crates.io/crates/fast_chemail
 [c~ipnet~docs]: https://docs.rs/ipnet
-[p~asynchronous]: ../asynchronous/index.md
+[p~asynchronous]: ../../../src/categories/asynchronous/index.md
 [p~linux]: # "../os_linux-apis/linux.md"
 [p~requests]: ../web-programming_http-client/requests.md
 [p~server]: server.md

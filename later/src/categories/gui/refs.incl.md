@@ -61,7 +61,7 @@
 [dioxus~mobile~website]: https://dioxuslabs.com/learn/0.7/guides/platforms/mobile/
 [tauri~windows-prerequisites~website]: https://v2.tauri.app/start/prerequisites/
 [p~apis]: ../../../../bk/drafts/categories/web-programming_http-client/apis.md
-[p~asynchronous]: ../../../../bk/drafts/categories/asynchronous/index.md
+[p~asynchronous]: https://john-cd.com/rust_howto/categories/asynchronous/index.html
 [p~audio]: ../multimedia_audio/audio.md
 [p~containers]: ../virtualization/containers.md
 [p~cross-platform]: ../../other/cross-platform/index.md

@@ -20,6 +20,44 @@
 
 {{#include ../categories/algorithms/sorting.incl.md}}
 
+## Asynchronous Programming
+
+### Async Basics
+
+{{#include ../categories/asynchronous/async.incl.md}}
+
+### Async Channels
+
+{{#include ../categories/asynchronous/async_channels.incl.md}}
+
+### Async Traits
+
+{{#include ../categories/asynchronous/async_traits.incl.md}}
+
+### Async Utilities
+
+{{#include ../categories/asynchronous/async_utilities.incl.md}}
+
+### Futures
+
+{{#include ../categories/asynchronous/futures.incl.md}}
+
+### Mixing Async and Blocking Code
+
+{{#include ../categories/asynchronous/async_and_blocking.incl.md}}
+
+### Streams
+
+{{#include ../categories/asynchronous/streams.incl.md}}
+
+### Tokio Runtime
+
+{{#include ../categories/asynchronous/tokio.incl.md}}
+
+### Cancellation and Structured Concurrency
+
+{{#include ../categories/asynchronous/structured_concurrency.incl.md}}
+
 ## Caching
 
 ### In Memory Cache
@@ -594,10 +632,6 @@
 ## OpenAPI and JSON Schema
 
 {{#include ../categories/web-programming_http-server/openapi.incl.md}}
-
-## Cancellation and Structured Concurrency
-
-{{#include ../categories/asynchronous/structured_concurrency.incl.md}}
 
 ## Atomics and Loom
 
