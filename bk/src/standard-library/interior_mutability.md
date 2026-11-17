@@ -51,7 +51,7 @@ For shared mutable state across multiple threads, use `Arc<T>` with [`Mutex<T>`]
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:std::cell::OnceCell}}
 
-[`OnceCell<T>`][c~std::cell::OnceCell~docs]↗ allows for single assignment interior mutability. Unlike `Cell` or `RefCell`, once a `OnceCell` is initialized, its value cannot be changed. This makes it perfect for [lazy initialization](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/memory-management/lazy_initialization.md), where you want to defer the creation of an expensive value until it is first needed, but ensure it is only computed once.
+[`OnceCell<T>`][c~std::cell::OnceCell~docs]↗ allows for single assignment interior mutability. Unlike `Cell` or `RefCell`, once a `OnceCell` is initialized, its value cannot be changed. This makes it perfect for [lazy initialization](../categories/memory-management/lazy_initialization.md), where you want to defer the creation of an expensive value until it is first needed, but ensure it is only computed once.
 
 You can initialize a `OnceCell` using `set`, but a more common pattern is to use `get_or_init`, which takes a closure that returns the initialization value.
 
@@ -65,7 +65,7 @@ For a multi-threaded context, use [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗
 
 - [Concurrency](../categories/concurrency/index.md).
 - [[data-structures | Data Structures]].
-- [Memory Management](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/memory-management/index.md).
+- [Memory Management](../categories/memory-management/index.md).
 - [Memory Usage Analysis](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_profiling/memory_usage_analysis.md).
 - [[reference_counting | Reference Counting]].
 - [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).

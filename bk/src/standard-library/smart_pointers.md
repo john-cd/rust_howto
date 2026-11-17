@@ -58,7 +58,7 @@ See [[interior_mutability | Interior Mutability]].
 
 The standard library provides several types for lazy initialization: [`LazyCell<T>`][c~std::cell::LazyCell~docs]↗, [`LazyLock`][c~std::sync::LazyLock~docs]↗, [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗.
 
-See details in the [Lazy Initialization](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/memory-management/lazy_initialization.md) chapter.
+See details in the [Lazy Initialization](../categories/memory-management/lazy_initialization.md) chapter.
 
 ## Synchronization Primitives {#sync-primitives}
 
@@ -114,7 +114,7 @@ The following example demonstrates the implementation of a basic smart pointer:
 - [[resource_cleanup | Resource Cleanup]].
 - [[vectors | Vectors]].
 - [Concurrency](../categories/concurrency/index.md).
-- [Memory Management](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/memory-management/index.md).
+- [Memory Management](../categories/memory-management/index.md).
 - [Memory Usage Analysis](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_profiling/memory_usage_analysis.md).
 - [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
 - [Shared State](../categories/concurrency/shared_state.md).

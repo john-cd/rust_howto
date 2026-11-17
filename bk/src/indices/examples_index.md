@@ -335,6 +335,24 @@
 
 {{#include ../categories/mathematics/units.incl.md}}
 
+## Memory Management
+
+### Lazy Initialization
+
+{{#include ../categories/memory-management/lazy_initialization.incl.md}}
+
+### Memory Allocation
+
+{{#include ../categories/memory-management/memory_allocation.incl.md}}
+
+### Arena Allocation
+
+{{#include ../categories/memory-management/arena_allocation.incl.md}}
+
+### String Interning
+
+{{#include ../categories/memory-management/string_interning.incl.md}}
+
 ## Parsing
 
 ### Expression Parser
