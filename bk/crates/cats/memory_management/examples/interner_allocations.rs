@@ -17,6 +17,7 @@ use std::cell::Cell;
 /// String interning: store each distinct string once and compare, hash and
 mod interning;
 
+/// Data carried by counting allocator operations.
 struct CountingAllocator;
 
 thread_local! {
@@ -27,10 +28,12 @@ thread_local! {
     static ALLOCATIONS: Cell<usize> = const { Cell::new(0) };
 }
 
+/// Handles the allocations behavior for this component.
 fn allocations() -> usize {
     ALLOCATIONS.with(Cell::get)
 }
 
+/// Counts the allocation in the supplied input.
 fn count_allocation() {
     ALLOCATIONS.with(|count| count.set(count.get() + 1));
 }
@@ -38,6 +41,7 @@ fn count_allocation() {
 // SAFETY: Each operation forwards the original pointer and layout to System;
 // the counter uses only atomics and never allocates.
 unsafe impl GlobalAlloc for CountingAllocator {
+    /// Handles the alloc behavior for this component.
     unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
         // SAFETY: The caller supplies the layout required by GlobalAlloc.
         let ptr = unsafe { System.alloc(layout) };
@@ -47,11 +51,13 @@ unsafe impl GlobalAlloc for CountingAllocator {
         ptr
     }
 
+    /// Handles the dealloc behavior for this component.
     unsafe fn dealloc(&self, ptr: *mut u8, layout: Layout) {
         // SAFETY: The caller supplies the original allocation and layout.
         unsafe { System.dealloc(ptr, layout) };
     }
 
+    /// Handles the realloc behavior for this component.
     unsafe fn realloc(&self, ptr: *mut u8, layout: Layout, new_size: usize) -> *mut u8 {
         // SAFETY: The caller supplies the original allocation, layout, and new
         // size.

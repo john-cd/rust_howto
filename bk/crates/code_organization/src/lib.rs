@@ -3,13 +3,17 @@
 //! TODO Reviewed ??-??-2026.
 
 // ANCHOR: public_modules
+/// Provides module1 behavior for the src component.
 pub mod module1;
+/// Provides module2 behavior for the src component.
 pub mod module2;
 // ANCHOR_END: public_modules
 
 // ANCHOR: inline_module
 mod inline_layout {
+    /// Provides submodule1 behavior for the src component.
     pub mod submodule1;
+    /// Provides submodule2 behavior for the src component.
     pub mod submodule2;
 }
 // ANCHOR_END: inline_module

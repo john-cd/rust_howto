@@ -25,6 +25,7 @@ impl Rectangle {
         self.width * self.height
     }
 
+    /// Handles the square behavior for this component.
     fn square(size: u32) -> Self {
         Self {
             width: size,
@@ -50,6 +51,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -81,6 +81,7 @@ struct Circle {
 }
 
 impl ObjectSafeClone for Circle {
+    /// Handles the clone boxed behavior for this component.
     fn clone_boxed(&self) -> Box<dyn ObjectSafeClone> {
         Box::new(Self {
             radius: self.radius,
@@ -153,6 +154,7 @@ trait TraitMethods {
 }
 
 impl TraitMethods for Circle {
+    /// Handles the returns behavior for this component.
     fn returns(&self) -> Self
     where
         Self: Sized,
@@ -168,16 +170,19 @@ impl TraitMethods for Circle {
 impl NotObjectSafe for Circle {}
 
 impl NotObjectSafe2 for Circle {
+    /// Alias for `Vec<T>` used to represent item.
     type Item<T> = Vec<T>;
 }
 
 impl NotObjectSafe3 for Circle {}
 
 impl NotObjectSafe4 for Circle {
+    /// Handles the do stuff behavior for this component.
     fn do_stuff<T>(&self, _t: T) {}
 }
 
 impl NotObjectSafe5 for Circle {
+    /// Handles the clone me behavior for this component.
     fn clone_me(&self) -> Self {
         Self {
             radius: self.radius,
@@ -186,6 +191,7 @@ impl NotObjectSafe5 for Circle {
 }
 
 impl NotObjectSafe6 for Circle {
+    /// Handles the clone boxed behavior for this component.
     fn clone_boxed(&self) -> Box<Self> {
         Box::new(Self {
             radius: self.radius,
@@ -258,6 +264,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

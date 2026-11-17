@@ -9,7 +9,8 @@ use clap::Subcommand;
 
 /// Fast pseudo-random number generation with `fastrand`.
 mod fastrand;
-/// In `Cargo.toml`, add: ```toml [dependencies] rand = "0.10.3" or latest.
+/// In `Cargo.toml`, add `rand = "0.10.3"` under the `[dependencies]` section or use a newer
+/// version.
 mod rand1;
 /// Generate a random string of 20 alphanumeric characters.
 mod rand_alphanumeric;
@@ -107,6 +108,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     dispatch(Cli::parse())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;

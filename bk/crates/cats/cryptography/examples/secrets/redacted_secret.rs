@@ -49,6 +49,7 @@ impl fmt::Display for RedactedSecret {
 }
 
 impl FromStr for RedactedSecret {
+    /// Alias for `Infallible` used to represent err.
     type Err = Infallible;
 
     /// Lets the secret be parsed from an environment variable or a flag.

@@ -45,6 +45,7 @@ pub fn run() -> anyhow::Result<()> {
     example_body()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

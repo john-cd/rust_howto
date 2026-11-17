@@ -25,7 +25,7 @@ use pin_project::pinned_drop;
 
 /// The `#[pin_project]` attribute creates a projection type covering all the
 /// fields of struct or enum.
-/// - For the fields that use #[pin] attribute, it creates the pinned reference to the field.
+/// - For fields marked with the `#[pin]` attribute, it creates a pinned reference.
 /// - For the other fields, it creates a normal reference to the field.
 ///
 /// This works for tuple structs as well.
@@ -126,6 +126,7 @@ impl SelfReferential {
         *this.pointer = std::ptr::from_ref(this.value.as_ref().get_ref());
     }
 
+    /// Returns the pointer stored by or available from this value.
     fn get_pointer(self: Pin<&Self>) -> *const String {
         *self.project_ref().pointer
     }
@@ -161,6 +162,7 @@ struct PollCounter<F> {
 }
 
 impl<F: Future> Future for PollCounter<F> {
+    /// Alias for `F::Output` used to represent output.
     type Output = F::Output;
 
     /// Counts this poll and delegates to the pinned inner future.
@@ -284,6 +286,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

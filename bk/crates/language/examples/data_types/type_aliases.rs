@@ -5,6 +5,7 @@
 // ANCHOR: aliases
 type Kilometers = u32;
 
+/// Alias for `(i32, i32)` used to represent point.
 type Point = (i32, i32);
 
 // A generic alias names an existing generic type.

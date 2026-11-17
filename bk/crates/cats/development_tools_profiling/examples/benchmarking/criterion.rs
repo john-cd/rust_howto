@@ -49,6 +49,7 @@ pub fn run() {
     benchmark_fibonacci(&mut criterion);
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

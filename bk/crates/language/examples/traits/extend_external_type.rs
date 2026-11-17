@@ -14,6 +14,7 @@ trait MyHash {
 /// Implement the `MyHash` trait for preexisting type `i64`,
 /// which is defined in the standard library.
 impl MyHash for i64 {
+    /// Handles the myhash behavior for this component.
     fn myhash(&self) -> u64 {
         *self as u64
     }
@@ -32,6 +33,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

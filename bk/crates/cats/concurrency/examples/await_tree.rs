@@ -127,6 +127,7 @@ pub fn run() {
         .block_on(example_async());
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

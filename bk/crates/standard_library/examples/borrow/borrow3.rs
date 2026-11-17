@@ -17,6 +17,7 @@ mod cis {
     pub struct CaseInsensitiveString(String);
 
     impl From<String> for CaseInsensitiveString {
+        /// Constructs this type from the supplied source value.
         fn from(s: String) -> Self {
             // We store the lowercase version of the string.
             Self(s.to_ascii_lowercase())
@@ -25,6 +26,7 @@ mod cis {
 
     // Implement `Borrow<str>` to allow lookup by the canonical lowercase form.
     impl Borrow<str> for CaseInsensitiveString {
+        /// Handles the borrow behavior for this component.
         fn borrow(&self) -> &str {
             &self.0
         }
@@ -84,6 +86,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

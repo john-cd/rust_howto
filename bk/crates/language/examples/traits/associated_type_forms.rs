@@ -6,7 +6,9 @@
 use std::fmt::Debug;
 use std::fmt::Display;
 
+/// Defines the operations required for tr behavior.
 trait Tr {
+    /// Type of the item values produced or consumed by this trait.
     type Item;
     // Associated type with a trait bound.
     type Item2: Display;
@@ -26,11 +28,17 @@ trait Tr {
 struct Example;
 
 impl Tr for Example {
+    /// Alias for `u8` used to represent item.
     type Item = u8;
+    /// Alias for `String` used to represent item2.
     type Item2 = String;
+    /// Alias for `i32` used to represent item3.
     type Item3 = i32;
+    /// Alias for `Option<T>` used to represent item4.
     type Item4<T> = Option<T>;
+    /// Alias for `&'a [T; N]` used to represent item5.
     type Item5<'a, T: 'a, const N: usize> = &'a [T; N];
+    /// Alias for `Vec<T>` used to represent item6.
     type Item6<T: Clone> = Vec<T>;
 }
 
@@ -64,8 +72,10 @@ trait Add<Rhs = Self> {
 struct Value(u32);
 
 impl Add for Value {
+    /// Alias for `u32` used to represent output.
     type Output = u32;
 
+    /// Adds the supplied value to the current collection or state.
     fn add(self, rhs: Self) -> Self::Output {
         self.0 + rhs.0
     }

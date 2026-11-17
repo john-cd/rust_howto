@@ -4,6 +4,7 @@
 
 // ANCHOR: signature
 trait Iterator {
+    /// Type of the item values produced or consumed by this trait.
     type Item;
 
     /// Returns the next item, or None when the iterator runs out.
@@ -14,8 +15,10 @@ trait Iterator {
 struct Once<T>(Option<T>);
 
 impl<T> Iterator for Once<T> {
+    /// Alias for `T` used to represent item.
     type Item = T;
 
+    /// Returns the next value produced by this iterator or protocol stream.
     fn next(&mut self) -> Option<Self::Item> {
         self.0.take()
     }

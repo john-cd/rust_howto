@@ -80,6 +80,7 @@ fn main() {
     dispatch(Cli::parse());
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;
@@ -127,5 +128,6 @@ mod tests {
     }
 }
 
+/// Provides result definition behavior for the enums component.
 #[cfg(test)]
 mod result_definition;

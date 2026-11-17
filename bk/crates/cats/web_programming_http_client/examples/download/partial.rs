@@ -68,8 +68,10 @@ impl PartialRangeIter {
 
 /// Iterates over consecutive byte ranges without gaps or overlaps.
 impl Iterator for PartialRangeIter {
+    /// Alias for `RangeInclusive<u64>` used to represent item.
     type Item = RangeInclusive<u64>;
 
+    /// Returns the next value produced by this iterator or protocol stream.
     fn next(&mut self) -> Option<Self::Item> {
         if self.finished {
             return None;

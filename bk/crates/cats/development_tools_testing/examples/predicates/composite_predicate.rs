@@ -89,10 +89,12 @@ pub fn run() {
     entry_point();
 }
 
+/// Provides private main tests behavior for the composite predicate component.
 #[cfg(test)]
 mod private_main_tests {
     use super::main;
 
+    /// Checks that private main succeeds.
     #[test]
     fn private_main_succeeds() {
         let entry_point = main;

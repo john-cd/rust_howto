@@ -15,8 +15,10 @@ struct MyBox<T>(T);
 
 // Implement `Deref` for `MyBox`.
 impl<T> Deref for MyBox<T> {
+    /// Alias for `T` used to represent target.
     type Target = T;
 
+    /// Returns a reference to the value wrapped by this type.
     fn deref(&self) -> &Self::Target {
         &self.0
     }
@@ -40,6 +42,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -61,6 +64,7 @@ mod tests {
     /// Verifies deref coercion to str.
     #[test]
     fn test_deref_coercion_to_str() {
+        /// Handles the takes str behavior for this component.
         fn takes_str(s: &str) -> usize {
             s.len()
         }

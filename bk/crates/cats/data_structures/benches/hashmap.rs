@@ -147,6 +147,7 @@ pub fn run() {
     benchmark_integer_keys(&mut criterion);
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
 

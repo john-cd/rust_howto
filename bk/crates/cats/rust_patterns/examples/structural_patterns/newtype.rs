@@ -19,6 +19,7 @@ impl UserId {
         Ok(Self(value))
     }
 
+    /// Returns the value requested from this object.
     fn get(self) -> u64 {
         self.0
     }

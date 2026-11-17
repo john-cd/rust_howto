@@ -40,7 +40,9 @@ struct Manager {
 
 // The `Manager` is responsible for creating and recycling `Server` instances.
 impl managed::Manager for Manager {
+    /// Alias for `Error` used to represent error.
     type Error = Error;
+    /// Alias for `Server` used to represent type.
     type Type = Server;
 
     /// Creates a new `Server` instance.
@@ -51,6 +53,7 @@ impl managed::Manager for Manager {
         Ok(Server) // In a real-world scenario, this would establish a connection.
     }
 
+    /// Handles the recycle behavior for this component.
     async fn recycle(&self, _: &mut Server, _: &managed::Metrics) -> managed::RecycleResult<Error> {
         Ok(())
     }

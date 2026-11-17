@@ -42,6 +42,7 @@ impl<'ast> Visit<'ast> for ItemCounter {
         syn::visit::visit_impl_item_fn(self, node);
     }
 
+    /// Handles the visit item struct behavior for this component.
     fn visit_item_struct(&mut self, node: &'ast syn::ItemStruct) {
         self.structs += 1;
         syn::visit::visit_item_struct(self, node);
@@ -107,6 +108,7 @@ pub fn run() -> syn::Result<()> {
     entry()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

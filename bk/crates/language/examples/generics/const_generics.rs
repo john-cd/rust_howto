@@ -19,6 +19,7 @@ impl<T: std::marker::Copy, const N: usize> InnerArray<T, N> {
         Self([val; N])
     }
 
+    /// Handles the len behavior for this component.
     fn len(&self) -> usize {
         N // The size N is known at compile time.
     }
@@ -40,6 +41,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

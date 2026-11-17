@@ -16,13 +16,17 @@ use serde::Serialize;
 // ANCHOR: example
 #[derive(Default, Debug)]
 enum Field<T> {
+    /// Represents the absent case of field.
     #[default]
     Absent,
+    /// Represents the null case of field.
     Null,
+    /// Represents the value case of field.
     Value(T),
 }
 
 impl<'de, T: Deserialize<'de>> Deserialize<'de> for Field<T> {
+    /// Handles the deserialize behavior for this component.
     fn deserialize<D: Deserializer<'de>>(deserializer: D) -> Result<Self, D::Error> {
         Ok(match Option::<T>::deserialize(deserializer)? {
             Some(value) => Self::Value(value),
@@ -31,24 +35,32 @@ impl<'de, T: Deserialize<'de>> Deserialize<'de> for Field<T> {
     }
 }
 
+/// Data for profile patch operations, including nickname.
 #[derive(Deserialize)]
 struct ProfilePatch {
+    /// Nickname stored for this value.
     #[serde(default)]
     nickname: Field<String>,
 }
 
+/// Data for profile operations, including nickname.
 #[derive(Clone, Serialize)]
 struct Profile {
+    /// Nickname stored for this value.
     nickname: Option<String>,
 }
 
+/// Alias for `Arc<Mutex<Profile>>` used to represent shared profile.
 type SharedProfile = Arc<Mutex<Profile>>;
+/// Alias for `(StatusCode, Json<serde_json::Value>)` used to represent api error.
 type ApiError = (StatusCode, Json<serde_json::Value>);
 
+/// Handles the api error behavior for this component.
 fn api_error(status: StatusCode, message: &str) -> ApiError {
     (status, Json(serde_json::json!({ "error": message })))
 }
 
+/// Handles the update behavior for this component.
 async fn update(
     State(profile): State<SharedProfile>,
     body: Result<Json<ProfilePatch>, JsonRejection>,
@@ -73,6 +85,7 @@ async fn update(
     Ok(Json(current.clone()))
 }
 
+/// Handles the app behavior for this component.
 fn app(profile: SharedProfile) -> Router {
     Router::new()
         .route("/profile", patch(update))
@@ -89,6 +102,7 @@ fn main() {
     );
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -98,6 +112,7 @@ mod tests {
 
     use super::*;
 
+    /// Handles the request behavior for this component.
     async fn request(router: Router, body: &str) -> (StatusCode, serde_json::Value) {
         let response = router
             .oneshot(
@@ -118,6 +133,7 @@ mod tests {
         )
     }
 
+    /// Checks that distinguishes absent null and value.
     #[tokio::test]
     async fn distinguishes_absent_null_and_value() {
         let router = app(Arc::new(Mutex::new(Profile {
@@ -136,6 +152,7 @@ mod tests {
         assert_eq!(body["nickname"], "Grace");
     }
 
+    /// Checks that rejects invalid payloads.
     #[tokio::test]
     async fn rejects_invalid_payloads() {
         let router = app(Arc::new(Mutex::new(Profile { nickname: None })));

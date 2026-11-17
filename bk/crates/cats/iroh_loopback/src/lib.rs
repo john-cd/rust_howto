@@ -9,8 +9,10 @@ use iroh::EndpointAddr;
 use iroh::endpoint::RelayMode;
 use iroh::endpoint::presets;
 
+/// Defines the alpn value used by this code.
 const ALPN: &[u8] = b"rust-howto/loopback/1";
 
+/// Handles the local endpoint behavior for this component.
 async fn local_endpoint(accept: bool) -> Result<Endpoint> {
     let mut builder = Endpoint::builder(presets::N0)
         .relay_mode(RelayMode::Disabled)
@@ -79,6 +81,7 @@ pub async fn round_trip() -> Result<()> {
 
 #[cfg(test)]
 mod tests {
+    /// Checks that loopback and missing address.
     #[tokio::test]
     async fn loopback_and_missing_address() -> anyhow::Result<()> {
         super::round_trip().await

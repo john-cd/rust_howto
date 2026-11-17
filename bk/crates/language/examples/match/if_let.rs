@@ -24,7 +24,9 @@ fn main() {
 
     /// Specifies one of the supported movement directions.
     enum Direction {
+        /// Represents the left case of direction.
         Left,
+        /// Represents the right case of direction.
         Right,
     }
 
@@ -48,6 +50,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

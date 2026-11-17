@@ -20,6 +20,7 @@ trait MyTrait: DynClone {
 
 // Implement `MyTrait` for `String``.
 impl MyTrait for String {
+    /// Handles the recite behavior for this component.
     fn recite(&self) {
         println!("{self} ♫");
     }
@@ -49,6 +50,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -64,6 +66,7 @@ mod tests {
     struct Counter(std::rc::Rc<std::cell::Cell<u32>>);
 
     impl MyTrait for Counter {
+        /// Handles the recite behavior for this component.
         fn recite(&self) {
             self.0.set(self.0.get() + 1);
         }

@@ -12,6 +12,7 @@ pub struct Command {
 
 inventory::collect!(Command);
 
+/// Handles the help behavior for this component.
 fn help() -> &'static str {
     "help text"
 }

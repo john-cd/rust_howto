@@ -4,7 +4,9 @@
 
 // ANCHOR: definition
 enum Option<T> {
+    /// Represents the none case of option.
     None,
+    /// Represents the some case of option.
     Some(T),
 }
 // ANCHOR_END: definition

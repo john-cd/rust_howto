@@ -19,6 +19,7 @@ mod my {
 
     // Blanket implementation for ALL types that implement `Display`:
     impl<T: Display> VeryUsefulTrait for T {
+        /// Handles the my method behavior for this component.
         fn my_method(&self) -> String {
             format!("{self}")
         }
@@ -43,6 +44,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

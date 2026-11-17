@@ -10,6 +10,7 @@ use std::os::raw::c_char;
 
 use anyhow::Result;
 
+// Declares foreign functions and types linked from this module.
 unsafe extern "C" {
 
     /// Prints a greeting to the console.

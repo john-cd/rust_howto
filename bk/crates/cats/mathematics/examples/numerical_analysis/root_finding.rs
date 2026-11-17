@@ -13,13 +13,17 @@ use argmin::core::Executor;
 use argmin::core::State;
 use argmin::solver::brent::BrentRoot;
 
+/// Data carried by cos minus x operations.
 #[derive(Clone, Copy)]
 struct CosMinusX;
 
 impl CostFunction for CosMinusX {
+    /// Alias for `f64` used to represent output.
     type Output = f64;
+    /// Alias for `f64` used to represent param.
     type Param = f64;
 
+    /// Handles the cost behavior for this component.
     fn cost(&self, x: &Self::Param) -> Result<Self::Output, Error> {
         Ok(x.cos() - x)
     }
@@ -62,6 +66,7 @@ fn test_brent_method_finds_root() {
     assert!((root.cos() - root).abs() < 1e-10);
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

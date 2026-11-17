@@ -33,6 +33,7 @@ fn main() -> std::io::Result<()> {
     Ok(())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use tokio::time::Instant;

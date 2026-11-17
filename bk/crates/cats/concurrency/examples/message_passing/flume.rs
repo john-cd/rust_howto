@@ -67,7 +67,9 @@ fn select() -> (bool, i32) {
 
     /// Defines the outcomes available to the message passing workflow, including boolean, number.
     enum Selected {
+        /// Represents the boolean case of selected.
         Boolean(bool),
+        /// Represents the number case of selected.
         Number(i32),
     }
 
@@ -94,6 +96,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

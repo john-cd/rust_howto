@@ -12,7 +12,9 @@ use serde::Serialize;
     not(test),
     expect(dead_code, reason = "used by the in-process router test")
 )]
+/// Data for greeting operations, including message.
 struct Greeting {
+    /// Message stored for this value.
     message: String,
 }
 
@@ -49,6 +51,7 @@ mod tests {
 
     use super::*;
 
+    /// Handles the ok behavior for this component.
     async fn ok(
         headers: HeaderMap,
         Query(query): Query<std::collections::HashMap<String, String>>,
@@ -63,6 +66,7 @@ mod tests {
         })
     }
 
+    /// Checks that success status and bad json.
     #[tokio::test]
     async fn success_status_and_bad_json() -> anyhow::Result<()> {
         let app = Router::new()
@@ -100,4 +104,5 @@ mod tests {
     }
 }
 
+/// Runs the example demonstrated by this module.
 fn main() {}

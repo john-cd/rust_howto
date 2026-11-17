@@ -7,16 +7,20 @@ trait Animal {
     fn make_noise(&self) -> &'static str;
 }
 
+/// Data carried by dog operations.
 struct Dog;
+/// Data carried by cat operations.
 struct Cat;
 
 impl Animal for Dog {
+    /// Handles the make noise behavior for this component.
     fn make_noise(&self) -> &'static str {
         "woof"
     }
 }
 
 impl Animal for Cat {
+    /// Handles the make noise behavior for this component.
     fn make_noise(&self) -> &'static str {
         "meow"
     }
@@ -49,8 +53,16 @@ fn selects_an_animal_at_runtime() {
 
 // ANCHOR: shape
 enum Shape {
-    Circle { radius: f64 },
-    Square { side: f64 },
+    /// A circle whose radius determines its area.
+    Circle {
+        /// Distance from the circle's center to its edge.
+        radius: f64,
+    },
+    /// A square whose side length determines its area.
+    Square {
+        /// Length of each side of the square.
+        side: f64,
+    },
 }
 
 impl Shape {
@@ -79,9 +91,13 @@ fn matches_each_shape_variant() {
 
 // ANCHOR: bounds
 type AnimalOnly = dyn Animal;
+/// Alias for `dyn Animal + Send` used to represent send animal.
 type SendAnimal = dyn Animal + Send;
+/// Alias for `dyn Animal + Send + Sync` used to represent shared animal.
 type SharedAnimal = dyn Animal + Send + Sync;
+/// Alias for `dyn Animal + 'static` used to represent static animal.
 type StaticAnimal = dyn Animal + 'static;
+/// Alias for `dyn Animal + Send + 'static` used to represent static send animal.
 type StaticSendAnimal = dyn Animal + Send + 'static;
 // ANCHOR_END: bounds
 

@@ -64,6 +64,7 @@ pub struct User {
 }
 
 impl AuthUser for User {
+    /// Alias for `i64` used to represent id.
     type Id = i64;
 
     /// Returns the stable identifier used by the session backend.
@@ -125,8 +126,11 @@ impl Backend {
 }
 
 impl AuthnBackend for Backend {
+    /// Alias for `Credentials` used to represent credentials.
     type Credentials = Credentials;
+    /// Alias for `Infallible` used to represent error.
     type Error = Infallible;
+    /// Alias for `User` used to represent user.
     type User = User;
 
     /// Checks a submitted username and password against the in-memory user store.
@@ -267,6 +271,7 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -278,6 +283,7 @@ mod tests {
 
     use super::*;
 
+    /// Handles the test app behavior for this component.
     fn test_app() -> anyhow::Result<Router> {
         let user = |id, name: &str, perms: &[&str]| -> anyhow::Result<User> {
             Ok(User {

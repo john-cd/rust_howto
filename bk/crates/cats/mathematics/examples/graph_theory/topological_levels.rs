@@ -128,6 +128,7 @@ fn test_topological_levels_wait_for_prerequisites() {
     assert_eq!(levels, vec![vec![2, 5], vec![10], vec![17]]);
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use std::collections::HashMap;

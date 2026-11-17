@@ -78,6 +78,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -95,6 +96,7 @@ mod tests {
         );
     }
 
+    /// Data carried by buf operations.
     #[derive(Clone, Default)]
     struct Buf(std::sync::Arc<std::sync::Mutex<Vec<u8>>>);
 

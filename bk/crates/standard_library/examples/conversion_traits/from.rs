@@ -16,6 +16,7 @@ struct Millimeters(u32);
 struct Meters(u32);
 
 impl From<Meters> for Millimeters {
+    /// Constructs this type from the supplied source value.
     fn from(m: Meters) -> Self {
         Self(m.0 * 1000)
     }
@@ -40,6 +41,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -126,8 +126,10 @@ mod my {
 
     // Implement `Deref` to make `Arc` a smart pointer.
     impl<T> Deref for Arc<T> {
+        /// Alias for `T` used to represent target.
         type Target = T;
 
+        /// Returns a reference to the value wrapped by this type.
         fn deref(&self) -> &Self::Target {
             // SAFETY: this `Arc` owns a live strong count, so its allocation
             // and initialized data remain valid for the returned borrow.
@@ -161,6 +163,7 @@ mod my {
         }
     }
 
+    /// Tests behavior implemented by the surrounding module.
     #[cfg(test)]
     mod tests {
         use std::panic::AssertUnwindSafe;
@@ -264,6 +267,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

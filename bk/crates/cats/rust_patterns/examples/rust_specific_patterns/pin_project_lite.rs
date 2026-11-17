@@ -28,8 +28,10 @@ pin_project! {
 }
 
 impl<F: Future> Future for CountPolls<F> {
+    /// Alias for `F::Output` used to represent output.
     type Output = F::Output;
 
+    /// Handles the poll behavior for this component.
     fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
         let this = self.project();
         *this.polls += 1;
@@ -37,6 +39,7 @@ impl<F: Future> Future for CountPolls<F> {
     }
 }
 
+/// Runs the example demonstrated by this module.
 fn main() {
     let mut future = Box::pin(CountPolls {
         inner: std::future::ready(42),
@@ -49,12 +52,15 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Runs the example logic exposed by this module.
 pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
+    /// Checks that projected future completes.
     #[test]
     fn projected_future_completes() {
         super::main();

@@ -94,6 +94,7 @@ pub fn run() {
     let entry_point = main;
     entry_point();
 }
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -114,10 +115,12 @@ mod tests {
     }
 }
 
+/// Provides private main tests behavior for the reexports and prelude component.
 #[cfg(test)]
 mod private_main_tests {
     use super::main;
 
+    /// Checks that private main succeeds.
     #[test]
     fn private_main_succeeds() {
         let entry_point = main;

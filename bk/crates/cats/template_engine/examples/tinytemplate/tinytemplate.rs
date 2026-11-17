@@ -57,6 +57,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -71,6 +72,7 @@ mod tests {
     const TEMPLATE: &str =
         "Hello, {name}! {{ if flag }}Welcome to {place}.{{ else }}Welcome home!{{ endif }}";
 
+    /// Context passed through context operations, retaining name and place.
     #[derive(serde::Serialize)]
     struct Context {
         /// Display label used to distinguish this context from other entries.

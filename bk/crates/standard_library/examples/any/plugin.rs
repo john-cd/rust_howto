@@ -60,6 +60,7 @@ struct AppState {
 pub struct MyCounterPlugin;
 
 impl Plugin for MyCounterPlugin {
+    /// Returns the name represented by this value.
     fn name(&self) -> &'static str {
         "MyCounterPlugin"
     }
@@ -81,6 +82,7 @@ impl Plugin for MyCounterPlugin {
 pub struct MyStringPlugin;
 
 impl Plugin for MyStringPlugin {
+    /// Returns the name represented by this value.
     fn name(&self) -> &'static str {
         "MyStringPlugin"
     }
@@ -109,6 +111,7 @@ pub struct CustomPluginService {
 pub struct MyServiceConsumerPlugin;
 
 impl Plugin for MyServiceConsumerPlugin {
+    /// Returns the name represented by this value.
     fn name(&self) -> &'static str {
         "MyServiceConsumerPlugin"
     }
@@ -142,6 +145,7 @@ impl PluginManager {
         self.plugins.push(plugin);
     }
 
+    /// Handles the initialize behavior for this component.
     fn initialize(&mut self) {
         for plugin in &mut self.plugins {
             println!("Initializing plugin '{}'", plugin.name());

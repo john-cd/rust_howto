@@ -121,6 +121,7 @@ fn main() {
     dispatch(Cli::parse());
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;
@@ -173,5 +174,6 @@ mod tests {
     }
 }
 
+/// Provides method receiver behavior for the structs component.
 #[cfg(test)]
 mod method_receiver;

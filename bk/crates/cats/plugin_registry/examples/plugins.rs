@@ -3,6 +3,7 @@
 use plugin_registry::Command;
 use plugin_registry::registry;
 
+/// Handles the local behavior for this component.
 fn local() -> &'static str {
     "local"
 }
@@ -34,15 +35,18 @@ fn main() {
     );
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Checks that discovers in sorted order.
     #[test]
     fn discovers_in_sorted_order() {
         main();
     }
 
+    /// Checks that rejects duplicate names.
     #[test]
     fn rejects_duplicate_names() {
         let first = Command {

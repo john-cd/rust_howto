@@ -55,6 +55,7 @@ bitflags! {
 // `impl` blocks can be added to flags types to implement additional methods.
 impl MyFlags {
     // Convert the bitflags to a u64:
+    /// Views or converts this value as a u64.
     pub fn as_u64(&self) -> u64 {
         u64::from(self.bits())
     }
@@ -113,6 +114,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

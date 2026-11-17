@@ -7,7 +7,12 @@ use clap::Subcommand;
 
 /// A `BinaryHeap` used as a priority queue.
 mod binaryheap;
-/// Add this dependency to your `Cargo.toml`: ```toml [dependencies] priority-queue = "2.7.0" ```
+/// Add this dependency to your `Cargo.toml`:
+///
+/// ```toml
+/// [dependencies]
+/// priority-queue = "2.7.0"
+/// ```
 mod priority_queue;
 
 /// Command-line arguments.
@@ -49,6 +54,7 @@ fn main() {
     dispatch(Cli::parse());
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;

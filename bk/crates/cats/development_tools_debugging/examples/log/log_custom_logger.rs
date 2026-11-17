@@ -18,10 +18,12 @@ static CONSOLE_LOGGER: ConsoleLogger = ConsoleLogger;
 struct ConsoleLogger;
 
 impl log::Log for ConsoleLogger {
+    /// Handles the enabled behavior for this component.
     fn enabled(&self, metadata: &Metadata) -> bool {
         metadata.level() <= Level::Info
     }
 
+    /// Handles the log behavior for this component.
     fn log(&self, record: &Record) {
         if self.enabled(record.metadata()) {
             println!("Rust says: {} - {}", record.level(), record.args());
@@ -53,6 +55,7 @@ pub fn run() -> Result<(), SetLoggerError> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

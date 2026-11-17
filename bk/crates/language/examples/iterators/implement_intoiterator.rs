@@ -51,6 +51,7 @@ struct MyVecIntoIterator<T> {
 }
 
 impl<T> Iterator for MyVecIntoIterator<T> {
+    /// Alias for `T` used to represent item.
     type Item = T;
 
     /// The core iterator method.
@@ -81,6 +82,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -20,6 +20,7 @@ struct Finding {
     line: usize,
 }
 
+/// Data for unwrap finder operations, including findings.
 #[derive(Default)]
 struct UnwrapFinder {
     /// Calls to `unwrap` and `expect` found in the parsed source.
@@ -27,6 +28,7 @@ struct UnwrapFinder {
 }
 
 impl<'ast> Visit<'ast> for UnwrapFinder {
+    /// Handles the visit expr method call behavior for this component.
     fn visit_expr_method_call(&mut self, call: &'ast syn::ExprMethodCall) {
         let method = call.method.to_string();
         if method == "unwrap" || method == "expect" {
@@ -104,6 +106,7 @@ pub fn run() -> syn::Result<()> {
     entry()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

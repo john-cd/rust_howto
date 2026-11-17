@@ -14,6 +14,7 @@ fn main() {
 
     println!("x: {x}, y: {y}");
 
+    /// Data for point operations, including x and y.
     struct Point {
         /// The horizontal coordinate.
         x: i32,
@@ -44,6 +45,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

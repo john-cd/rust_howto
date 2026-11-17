@@ -85,6 +85,7 @@ fn main() {
     dispatch(Cli::parse());
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;
@@ -133,5 +134,6 @@ mod tests {
     }
 }
 
+/// Provides iterator signature behavior for the iterators component.
 #[cfg(test)]
 mod iterator_signature;

@@ -31,6 +31,7 @@ pub struct NewsArticle {
 
 // Implement the `Summary` trait on the `NewsArticle` type.
 impl Summary for NewsArticle {
+    /// Handles the summarize behavior for this component.
     fn summarize(&self) -> String {
         format!("{}, by {} ({})", self.headline, self.author, self.location)
     }
@@ -60,6 +61,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

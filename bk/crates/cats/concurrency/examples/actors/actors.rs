@@ -27,6 +27,7 @@ enum Message {
 /// A cloneable handle for sending commands to the counter actor.
 #[derive(Clone)]
 struct CounterHandle {
+    /// Sender stored for this value.
     sender: mpsc::Sender<Message>,
 }
 

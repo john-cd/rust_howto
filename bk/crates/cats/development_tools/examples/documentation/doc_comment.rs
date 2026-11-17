@@ -34,6 +34,7 @@ pub fn run() {
     documented_function();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

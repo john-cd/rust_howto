@@ -24,8 +24,10 @@ pub mod my_game {
     }
 
     impl<'a> ::flatbuffers::Follow<'a> for Monster<'a> {
+        /// Alias for `Monster<'a>` used to represent inner.
         type Inner = Monster<'a>;
 
+        /// Handles the follow behavior for this component.
         #[inline]
         unsafe fn follow(buf: &'a [u8], loc: usize) -> Self::Inner {
             Self {
@@ -40,11 +42,13 @@ pub mod my_game {
         /// Shared `vt name` used by this module.
         pub const VT_NAME: ::flatbuffers::VOffsetT = 4;
 
+        /// Initializes the from table field and returns access to it.
         #[inline]
         pub unsafe fn init_from_table(table: ::flatbuffers::Table<'a>) -> Self {
             Monster { _tab: table }
         }
 
+        /// Creates the value from the supplied configuration and inputs.
         #[allow(unused_mut)]
         pub fn create<
             'bldr: 'args,
@@ -63,6 +67,7 @@ pub mod my_game {
             builder.finish()
         }
 
+        /// Returns the name represented by this value.
         #[inline]
         pub fn name(&self) -> Option<&'a str> {
             // Safety:
@@ -126,7 +131,9 @@ pub mod my_game {
 
     /// Builder that writes a monster record into a FlatBuffer.
     pub struct MonsterBuilder<'a: 'b, 'b, A: ::flatbuffers::Allocator + 'a> {
+        /// FlatBuffer builder used to assemble the serialized message.
         fbb_: &'b mut ::flatbuffers::FlatBufferBuilder<'a, A>,
+        /// Offset of the serialized value within the backing buffer.
         start_: ::flatbuffers::WIPOffset<::flatbuffers::TableUnfinishedWIPOffset>,
     }
     impl<'a: 'b, 'b, A: ::flatbuffers::Allocator + 'a> MonsterBuilder<'a, 'b, A> {
@@ -142,6 +149,7 @@ pub mod my_game {
                 .push_slot_always::<::flatbuffers::WIPOffset<_>>(Monster::VT_NAME, name);
         }
 
+        /// Adds the supplied hp to the current collection or state.
         #[inline]
         pub fn add_hp(&mut self, hp: i32) {
             self.fbb_.push_slot::<i32>(Monster::VT_HP, hp, 0);
@@ -163,6 +171,7 @@ pub mod my_game {
             }
         }
 
+        /// Finalizes the current builder and produces its completed value.
         #[inline]
         pub fn finish(self) -> ::flatbuffers::WIPOffset<Monster<'a>> {
             let o = self.fbb_.end_table(self.start_);

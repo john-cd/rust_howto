@@ -17,7 +17,9 @@ use argmin::solver::neldermead::NelderMead;
 struct Rosenbrock;
 
 impl CostFunction for Rosenbrock {
+    /// Alias for `f64` used to represent output.
     type Output = f64;
+    /// Alias for `Vec<f64>` used to represent param.
     type Param = Vec<f64>;
 
     /// Evaluates the Rosenbrock objective at the supplied point.
@@ -78,6 +80,7 @@ fn test_nelder_mead_finds_rosenbrock_minimum() -> Result<(), Error> {
     Ok(())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

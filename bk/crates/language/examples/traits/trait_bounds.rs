@@ -60,6 +60,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -73,6 +74,7 @@ mod tests {
     /// Equal values hash equally; different values (almost surely) do not.
     #[test]
     fn test_pair_hash() {
+        /// Handles the hash of behavior for this component.
         fn hash_of<T: Hash>(t: &T) -> u64 {
             let mut hasher = DefaultHasher::new();
             t.hash(&mut hasher);

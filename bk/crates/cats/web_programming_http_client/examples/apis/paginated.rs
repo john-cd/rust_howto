@@ -128,8 +128,10 @@ impl<F: FnMut(u64) -> Result<Page>> ReverseDependencies<F> {
 }
 
 impl<F: FnMut(u64) -> Result<Page>> Iterator for ReverseDependencies<F> {
+    /// Alias for `Result<String>` used to represent item.
     type Item = Result<String>;
 
+    /// Returns the next value produced by this iterator or protocol stream.
     fn next(&mut self) -> Option<Self::Item> {
         if self.buffer.is_empty() && !self.done {
             match (self.fetch)(self.next_page) {
@@ -191,6 +193,7 @@ pub fn run() -> Result<()> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

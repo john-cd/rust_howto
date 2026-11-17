@@ -27,6 +27,7 @@ impl<R: BufRead> CsvRows<R> {
 }
 
 impl<R: BufRead> Iterator for CsvRows<R> {
+    /// Alias for `std::io::Result<Vec<String>>` used to represent item.
     type Item = std::io::Result<Vec<String>>;
 
     /// Reads one line and splits it into fields.
@@ -58,6 +59,7 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use std::io::Cursor;

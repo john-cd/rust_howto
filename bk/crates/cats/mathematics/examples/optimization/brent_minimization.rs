@@ -14,13 +14,17 @@ use argmin::core::Executor;
 use argmin::core::State;
 use argmin::solver::brent::BrentOpt;
 
+/// Data carried by quadratic operations.
 #[derive(Clone, Copy)]
 struct Quadratic;
 
 impl CostFunction for Quadratic {
+    /// Alias for `f64` used to represent output.
     type Output = f64;
+    /// Alias for `f64` used to represent param.
     type Param = f64;
 
+    /// Handles the cost behavior for this component.
     fn cost(&self, x: &Self::Param) -> Result<Self::Output, Error> {
         Ok((x - 2.5).powi(2) + 4.0)
     }
@@ -66,6 +70,7 @@ fn test_brent_method_finds_quadratic_minimum() {
     assert!(((minimum - 2.5).powi(2) + 4.0 - 4.0).abs() < 1e-12);
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

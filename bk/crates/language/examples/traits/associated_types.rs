@@ -29,6 +29,7 @@ impl Iterator for MyIterator {
     // You can use `Self` in the associated type definition.
     type Item = u32;
 
+    /// Returns the next value produced by this iterator or protocol stream.
     fn next(&mut self) -> Option<Self::Item> {
         // This example iterator returns the same value forever.
         // `&mut self` is a shortcut for `self: &mut Self`,
@@ -54,6 +55,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

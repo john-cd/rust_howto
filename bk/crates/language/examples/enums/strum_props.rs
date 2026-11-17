@@ -10,8 +10,10 @@ use strum::IntoEnumIterator;
 /// Editor commands with an icon and a keyboard shortcut each.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, EnumIter, EnumProperty)]
 enum Command {
+    /// Represents the save case of command.
     #[strum(props(icon = "save", shortcut = "Ctrl+S", confirm = false))]
     Save,
+    /// Represents the delete case of command.
     #[strum(props(icon = "trash", shortcut = "Ctrl+D", confirm = true, order = 9))]
     Delete,
     // A variant without properties.

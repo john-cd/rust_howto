@@ -17,6 +17,7 @@ enum Expression {
 }
 
 impl Expression {
+    /// Handles the evaluate behavior for this component.
     fn evaluate(&self) -> i64 {
         match self {
             Self::Value(value) => *value,
@@ -46,6 +47,7 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::Expression;

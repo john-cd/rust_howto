@@ -13,8 +13,8 @@
 //! [build-dependencies]
 //! pest_generator = "2.7.15"
 //! ```
-//! The `grammar.pest` file defines the grammar rules, and the ``.rs` file
-//! uses the generated parser to parse the input and print the parsed pairs.
+//! The `grammar.pest` file defines the grammar rules; this Rust example uses
+//! the generated parser to parse the input and print the parsed pairs.
 //!
 //! `pest` uses parsing expression grammars (or PEG) as its input, which are
 //! similar in spirit to regular expressions, but which offer the enhanced

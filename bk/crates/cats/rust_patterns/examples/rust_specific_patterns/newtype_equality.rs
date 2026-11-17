@@ -35,6 +35,7 @@ struct PhoneNumber {
 }
 
 impl PartialEq for PhoneNumber {
+    /// Compares this value with the supplied value for equality.
     fn eq(&self, other: &Self) -> bool {
         self.country_code == other.country_code && self.number == other.number
     }

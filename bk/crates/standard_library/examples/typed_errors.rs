@@ -10,12 +10,15 @@ use thiserror::Error;
 // ANCHOR: example
 #[derive(Debug, Error)]
 enum CountError {
+    /// Represents the invalid integer case of count error.
     #[error("count must be a positive integer")]
     InvalidInteger(#[source] std::num::ParseIntError),
+    /// Represents the zero case of count error.
     #[error("count must be greater than zero")]
     Zero,
 }
 
+/// Parses a count representation into this type.
 fn parse_count(input: &str) -> Result<u32, CountError> {
     let count = input.parse().map_err(CountError::InvalidInteger)?;
     if count == 0 {
@@ -24,6 +27,7 @@ fn parse_count(input: &str) -> Result<u32, CountError> {
     Ok(count)
 }
 
+/// Handles the calculate behavior for this component.
 fn calculate(input: &str) -> anyhow::Result<String> {
     let count = parse_count(input).with_context(|| format!("reading count from {input:?}"))?;
     let doubled = count
@@ -32,6 +36,7 @@ fn calculate(input: &str) -> anyhow::Result<String> {
     Ok(format!("twice the count: {doubled}"))
 }
 
+/// Runs the example logic exposed by this module.
 fn run(input: Option<&str>, out: &mut impl Write, err: &mut impl Write) -> io::Result<ExitCode> {
     let Some(input) = input else {
         writeln!(err, "usage: typed_errors <positive-count>")?;
@@ -61,12 +66,14 @@ fn main() -> io::Result<ExitCode> {
     )
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use std::error::Error as _;
 
     use super::*;
 
+    /// Checks that library error retains a source.
     #[test]
     fn library_error_retains_a_source() {
         let error = parse_count("not-a-number").expect_err("invalid input must fail");
@@ -74,6 +81,7 @@ mod tests {
         assert!(error.source().is_some());
     }
 
+    /// Checks that cli success is readable.
     #[test]
     fn cli_success_is_readable() -> io::Result<()> {
         let (mut out, mut err) = (Vec::new(), Vec::new());
@@ -83,6 +91,7 @@ mod tests {
         Ok(())
     }
 
+    /// Checks that cli failure is nonzero and shows chain.
     #[test]
     fn cli_failure_is_nonzero_and_shows_chain() -> io::Result<()> {
         let (mut out, mut err) = (Vec::new(), Vec::new());

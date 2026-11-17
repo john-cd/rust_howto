@@ -129,6 +129,7 @@ mod tests {
     struct TagRecorder(std::cell::RefCell<Vec<String>>);
 
     impl TokenSink for TagRecorder {
+        /// Alias for `()` used to represent handle.
         type Handle = ();
 
         /// Records each tag token's kind and name.
