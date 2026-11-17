@@ -107,16 +107,6 @@
   - [Low-level Profiling Tools](categories/development-tools_profiling/assembly.md)
   - [Memory Usage Analysis](categories/development-tools_profiling/memory_usage_analysis.md)
 
-- [Development Tools - Testing](categories/development-tools_testing/index.md)
-  - [Assertions](categories/development-tools_testing/assertions.md)
-  - [Testing](categories/development-tools_testing/testing.md)
-  - [Snapshot Testing](categories/development-tools_testing/snapshot_testing.md)
-  - [Property-based Testing](categories/development-tools_testing/property_based_testing.md)
-  - [Mocking](categories/development-tools_testing/mocking.md)
-  - [Test Runners](categories/development-tools_testing/test_runners.md)
-  - [Code Coverage](categories/development-tools_testing/code_coverage.md)
-  - [Fuzzing](categories/development-tools_testing/fuzzing.md)
-
 - [Email](categories/email/index.md)
   - [Sending emails](categories/email/send_emails.md)
   - [Email parsing](categories/email/email_parsing.md)

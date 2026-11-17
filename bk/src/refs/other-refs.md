@@ -1708,6 +1708,7 @@
 [smithy~website]: https://smithy.io/
 [dioxus-blitz~docs]: https://docs.rs/blitz/latest/blitz/
 [tauri~verso~experiment]: https://v2.tauri.app/blog/tauri-verso-integration/
+[cargo-llvm-cov~repo]: https://github.com/taiki-e/cargo-llvm-cov
 [atuin~repo]: https://github.com/atuinsh/atuin
 [bandwhich~repo]: https://github.com/imsnif/bandwhich
 [doggo~repo]: https://github.com/mr-karan/doggo

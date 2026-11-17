@@ -36,7 +36,7 @@
 | [![development-tools::ffi][cat~development-tools::ffi~badge]][cat~development-tools::ffi] | Interfaces with other languages, including binding generators and helpful language constructs. | - |
 | [![development-tools::procedural-macro-helpers][cat~development-tools::procedural-macro-helpers~badge]][cat~development-tools::procedural-macro-helpers] | Writing procedural macros in Rust. | - |
 | [![development-tools::profiling][cat~development-tools::profiling~badge]][cat~development-tools::profiling] | Figuring out the performance of one's code. | [Profiling](../categories/development-tools_profiling/index.md) |
-| [![development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing] | Verifying the correctness of code. | [Testing](../categories/development-tools_testing/index.md) |
+| [![development-tools::testing][cat~development-tools::testing~badge]][cat~development-tools::testing] | Verifying the correctness of code. | [Testing](../../src/categories/development-tools_testing/index.md) |
 | [![email][cat~email~badge]][cat~email] | Sending, receiving, formatting, and parsing email. | [Email](../categories/email/index.md) |
 | [![embedded][cat~embedded~badge]][cat~embedded] | Embedded devices or hardware without an operating system. | - |
 | [![emulators][cat~emulators~badge]][cat~emulators] | Emulators, often to allow running software that is not natively available on the host computer, e.g. video game systems. | - |

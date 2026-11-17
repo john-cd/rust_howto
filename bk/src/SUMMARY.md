@@ -140,6 +140,17 @@
   - [Parsing and Displaying](categories/date-and-time/parse.md)
   - [`time` Crate](categories/date-and-time/time_crate.md)
 
+- [Development Tools - Testing](categories/development-tools_testing/index.md)
+  - [Testing](categories/development-tools_testing/testing.md)
+  - [Assertions](categories/development-tools_testing/assertions.md)
+  - [Snapshot Testing](categories/development-tools_testing/snapshot_testing.md)
+  - [Test Runners](categories/development-tools_testing/test_runners.md)
+  - [Property-Based Testing](categories/development-tools_testing/property_based_testing.md)
+  - [Mocking](categories/development-tools_testing/mocking.md)
+  - [Code Coverage](categories/development-tools_testing/code_coverage.md)
+  - [Mutation Testing](categories/development-tools_testing/mutation_testing.md)
+  - [Fuzzing](categories/development-tools_testing/fuzzing.md)
+
 - [Encoding and Serialization](categories/encoding/index.md)
   - [Character Encoding](categories/encoding/string_encoding.md)
   - [CSV Processing](categories/encoding/csv.md)
@@ -208,7 +219,6 @@
 
 - [Date and Time](categories/date-and-time/jiff_dst.md)
 - [Register Commands Explicitly or with Inventory](categories/rust-patterns/plugin_registration.md)
-- [Find Missing Assertions with Mutation Testing](categories/development-tools/mutation_testing.md)
 - [Test an AWS Lambda Handler Locally](categories/cloud/aws_lambda.md)
 - [Connect Two Iroh Endpoints on Loopback](categories/network-programming/iroh_loopback.md)
 - [Text Processing](categories/text-processing/index.md)

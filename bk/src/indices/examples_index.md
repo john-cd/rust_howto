@@ -240,6 +240,44 @@
 
 ## Development Tools
 
+### Testing
+
+#### Testing
+
+{{#include ../categories/development-tools_testing/testing.incl.md}}
+
+#### Assertions
+
+{{#include ../categories/development-tools_testing/assertions.incl.md}}
+
+#### Snapshot Testing
+
+{{#include ../categories/development-tools_testing/snapshot_testing.incl.md}}
+
+#### Test Runners
+
+{{#include ../categories/development-tools_testing/test_runners.incl.md}}
+
+#### Property-Based Testing
+
+{{#include ../categories/development-tools_testing/property_based_testing.incl.md}}
+
+#### Mocking
+
+{{#include ../categories/development-tools_testing/mocking.incl.md}}
+
+#### Code Coverage
+
+{{#include ../categories/development-tools_testing/code_coverage.incl.md}}
+
+#### Mutation Testing
+
+{{#include ../categories/development-tools_testing/mutation_testing.incl.md}}
+
+#### Fuzzing
+
+{{#include ../categories/development-tools_testing/fuzzing.incl.md}}
+
 ## Encoding
 
 ### CSV
