@@ -159,6 +159,7 @@ pub fn append_dummy(dummy: TokenStream) {
     });
 }
 
+/// Releases resources that are no longer needed by the operation.
 pub(crate) fn cleanup() -> Option<TokenStream> {
     DUMMY_IMPL.with(|old_dummy| old_dummy.replace(None))
 }

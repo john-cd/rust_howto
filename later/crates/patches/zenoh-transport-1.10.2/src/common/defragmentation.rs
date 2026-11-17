@@ -29,16 +29,23 @@ use zenoh_result::bail;
 
 use super::seq_num::SeqNum;
 
+/// Data for defrag buffer operations, including reliability and sn.
 #[derive(Debug)]
 pub(crate) struct DefragBuffer {
+    /// Delivery guarantee selected for this transport channel.
     reliability: Reliability,
+    /// Sequence number used to order transport messages.
     pub(crate) sn: SeqNum,
+    /// Buffer holding bytes that have not yet been consumed.
     buffer: ZBuf,
+    /// Maximum capacity available for the operation.
     capacity: usize,
+    /// Number of bytes available in the current buffer.
     len: usize,
 }
 
 impl DefragBuffer {
+    /// Constructs the value from the supplied transport configuration.
     pub(crate) fn make(
         reliability: Reliability,
         resolution: Bits,
@@ -54,22 +61,26 @@ impl DefragBuffer {
         Ok(db)
     }
 
+    /// Reports whether this value is empty.
     #[inline(always)]
     pub(crate) fn is_empty(&self) -> bool {
         self.buffer.is_empty()
     }
 
+    /// Handles the clear behavior for this component.
     #[inline(always)]
     pub(crate) fn clear(&mut self) {
         self.buffer.clear();
         self.len = 0;
     }
 
+    /// Synchronizes the local sequence state with the supplied transport state.
     #[inline(always)]
     pub(crate) fn sync(&mut self, sn: TransportSn) -> ZResult<()> {
         self.sn.set(sn)
     }
 
+    /// Handles the push behavior for this component.
     pub(crate) fn push(&mut self, sn: TransportSn, zslice: ZSlice) -> ZResult<()> {
         if sn != self.sn.get() {
             self.clear();
@@ -97,6 +108,7 @@ impl DefragBuffer {
         Ok(())
     }
 
+    /// Handles the defragment behavior for this component.
     #[inline(always)]
     pub(crate) fn defragment(&mut self) -> Option<NetworkMessage> {
         let mut reader = self.buffer.reader();

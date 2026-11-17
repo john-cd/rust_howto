@@ -1,5 +1,5 @@
 error: unknown setting `trololo`, expected one of `assert_unwind_safe`, `allow_not_macro`, `proc_macro_hack`
- --> tests/ui/unknown_setting.rs:3:57
+ --> tests/ui/unknown_setting.rs:6:57
   |
-3 | #[proc_macro_error(allow_not_macro, assert_unwind_safe, trololo)]
+6 | #[proc_macro_error(allow_not_macro, assert_unwind_safe, trololo)]
   |                                                         ^^^^^^^

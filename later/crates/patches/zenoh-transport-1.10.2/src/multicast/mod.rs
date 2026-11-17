@@ -78,6 +78,7 @@ pub(crate) struct TransportConfigMulticast {
 pub struct TransportMulticast(Weak<TransportMulticastInner>);
 
 impl TransportMulticast {
+    /// Returns the transport stored by or available from this value.
     #[inline(always)]
     fn get_transport(&self) -> ZResult<Arc<TransportMulticastInner>> {
         self.0
@@ -187,6 +188,7 @@ impl TransportMulticast {
 }
 
 impl From<&Arc<TransportMulticastInner>> for TransportMulticast {
+    /// Constructs this type from the supplied source value.
     fn from(s: &Arc<TransportMulticastInner>) -> TransportMulticast {
         TransportMulticast(Arc::downgrade(s))
     }
@@ -195,6 +197,7 @@ impl From<&Arc<TransportMulticastInner>> for TransportMulticast {
 impl Eq for TransportMulticast {}
 
 impl PartialEq for TransportMulticast {
+    /// Compares this value with the supplied value for equality.
     fn eq(&self, other: &Self) -> bool {
         Weak::ptr_eq(&self.0, &other.0)
     }

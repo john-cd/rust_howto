@@ -60,7 +60,9 @@ impl QoSFsm<'_> {
 /// Defines the outcomes available to the ext workflow, including no qo s.
 #[derive(Clone, Debug, PartialEq, Eq)]
 enum State {
+    /// Represents the no qo s case of state.
     NoQoS,
+    /// Represents the qo s case of state.
     QoS {
         /// Optional reliability used by qo sfsm; `None` means the value is not configured or
         /// unavailable.
@@ -202,6 +204,7 @@ impl State {
         }
     }
 
+    /// Attempts to from exts and reports whether the operation succeeds.
     fn try_from_exts(
         (qos, qos_link): (Option<init::ext::QoS>, Option<init::ext::QoSLink>),
     ) -> ZResult<Self> {
@@ -224,6 +227,7 @@ impl State {
         matches!(self, State::QoS { .. })
     }
 
+    /// Returns the transport priorities supported by this channel.
     fn priorities(&self) -> Option<PriorityRange> {
         match self {
             State::NoQoS
@@ -237,6 +241,7 @@ impl State {
         }
     }
 
+    /// Handles the reliability behavior for this component.
     fn reliability(&self) -> Option<Reliability> {
         match self {
             State::NoQoS
@@ -250,6 +255,7 @@ impl State {
         }
     }
 
+    /// Generates a random value using the supplied random source.
     #[cfg(test)]
     fn rand() -> Self {
         use rand::Rng;
@@ -275,6 +281,7 @@ impl State {
 pub(crate) struct StateOpen(State);
 
 impl From<State> for StateOpen {
+    /// Constructs this type from the supplied source value.
     fn from(value: State) -> Self {
         StateOpen(value)
     }
@@ -301,10 +308,12 @@ impl StateOpen {
         self.0.is_qos()
     }
 
+    /// Returns the transport priorities supported by this channel.
     pub(crate) fn priorities(&self) -> Option<PriorityRange> {
         self.0.priorities()
     }
 
+    /// Handles the reliability behavior for this component.
     pub(crate) fn reliability(&self) -> Option<Reliability> {
         self.0.reliability()
     }
@@ -312,17 +321,27 @@ impl StateOpen {
 
 #[async_trait]
 impl<'a> OpenFsm for &'a QoSFsm<'a> {
+    /// Alias for `ZError` used to represent error.
     type Error = ZError;
+    /// Names the recv init ack in type associated with this interface.
     type RecvInitAckIn = (
         &'a mut StateOpen,
         (Option<init::ext::QoS>, Option<init::ext::QoSLink>),
     );
+    /// Alias for `()` used to represent recv init ack out.
     type RecvInitAckOut = ();
+    /// Alias for `(&'a mut StateOpen, Option<open::ext::QoS>)` used to represent recv open ack in.
     type RecvOpenAckIn = (&'a mut StateOpen, Option<open::ext::QoS>);
+    /// Alias for `()` used to represent recv open ack out.
     type RecvOpenAckOut = ();
+    /// Alias for `&'a StateOpen` used to represent send init syn in.
     type SendInitSynIn = &'a StateOpen;
+    /// Alias for `(Option<init::ext::QoS>, Option<init::ext::QoSLink>)` used to represent send init
+    /// syn out.
     type SendInitSynOut = (Option<init::ext::QoS>, Option<init::ext::QoSLink>);
+    /// Alias for `&'a StateOpen` used to represent send open syn in.
     type SendOpenSynIn = &'a StateOpen;
+    /// Alias for `Option<open::ext::QoS>` used to represent send open syn out.
     type SendOpenSynOut = Option<open::ext::QoS>;
 
     /// Adds the opening peer's QoS state extensions to its InitSyn message.
@@ -436,6 +455,7 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
 pub(crate) struct StateAccept(State);
 
 impl From<State> for StateAccept {
+    /// Constructs this type from the supplied source value.
     fn from(value: State) -> Self {
         StateAccept(value)
     }
@@ -462,14 +482,17 @@ impl StateAccept {
         self.0.is_qos()
     }
 
+    /// Returns the transport priorities supported by this channel.
     pub(crate) fn priorities(&self) -> Option<PriorityRange> {
         self.0.priorities()
     }
 
+    /// Handles the reliability behavior for this component.
     pub(crate) fn reliability(&self) -> Option<Reliability> {
         self.0.reliability()
     }
 
+    /// Generates a random value using the supplied random source.
     #[cfg(test)]
     pub(crate) fn rand() -> Self {
         State::rand().into()
@@ -481,8 +504,10 @@ impl<W> WCodec<&StateAccept, &mut W> for Zenoh080
 where
     W: Writer,
 {
+    /// Alias for `Result<(), DidntWrite>` used to represent output.
     type Output = Result<(), DidntWrite>;
 
+    /// Writes the supplied value to the configured output sink.
     fn write(self, writer: &mut W, x: &StateAccept) -> Self::Output {
         self.write(writer, &x.0.to_u64())
     }
@@ -492,6 +517,7 @@ impl<R> RCodec<StateAccept, &mut R> for Zenoh080
 where
     R: Reader,
 {
+    /// Alias for `DidntRead` used to represent error.
     type Error = DidntRead;
 
     /// Reads and validates a QoS state value from the input stream.
@@ -512,17 +538,28 @@ where
 
 #[async_trait]
 impl<'a> AcceptFsm for &'a QoSFsm<'a> {
+    /// Alias for `ZError` used to represent error.
     type Error = ZError;
+    /// Names the recv init syn in type associated with this interface.
     type RecvInitSynIn = (
         &'a mut StateAccept,
         (Option<init::ext::QoS>, Option<init::ext::QoSLink>),
     );
+    /// Alias for `()` used to represent recv init syn out.
     type RecvInitSynOut = ();
+    /// Alias for `(&'a mut StateAccept, Option<open::ext::QoS>)` used to represent recv open syn
+    /// in.
     type RecvOpenSynIn = (&'a mut StateAccept, Option<open::ext::QoS>);
+    /// Alias for `()` used to represent recv open syn out.
     type RecvOpenSynOut = ();
+    /// Alias for `&'a StateAccept` used to represent send init ack in.
     type SendInitAckIn = &'a StateAccept;
+    /// Alias for `(Option<init::ext::QoS>, Option<init::ext::QoSLink>)` used to represent send init
+    /// ack out.
     type SendInitAckOut = (Option<init::ext::QoS>, Option<init::ext::QoSLink>);
+    /// Alias for `&'a StateAccept` used to represent send open ack in.
     type SendOpenAckIn = &'a StateAccept;
+    /// Alias for `Option<open::ext::QoS>` used to represent send open ack out.
     type SendOpenAckOut = Option<open::ext::QoS>;
 
     /// Validates and stores the QoS settings advertised in the peer's InitSyn.
@@ -646,6 +683,7 @@ mod tests {
     use crate::unicast::establishment::AcceptFsm;
     use crate::unicast::establishment::OpenFsm;
 
+    /// Expands the priority range pattern into Rust code at compile time.
     macro_rules! priority_range {
         ($start:literal, $end:literal) => {
             PriorityRange::new($start.try_into().unwrap()..=$end.try_into().unwrap())

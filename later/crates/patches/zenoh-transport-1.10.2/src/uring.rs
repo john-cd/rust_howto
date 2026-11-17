@@ -21,12 +21,15 @@ use zenoh_result::ZResult;
 use zenoh_uring::api::reader::Reader;
 use zenoh_uring::api::types::BufferCount;
 
+/// Data for uring operations, including reader.
 #[derive(Clone)]
 pub struct Uring {
+    /// Reader used to access the decoded Capn Proto message.
     pub reader: Reader,
 }
 
 impl Uring {
+    /// Creates a new uring with the supplied configuration.
     pub fn new(batch_size: usize, link_rx_buffer_size: usize) -> ZResult<Self> {
         // add 2 bytes for size header in case of streamed links
         let batch_size = batch_size + (u16::BITS / 8) as usize;

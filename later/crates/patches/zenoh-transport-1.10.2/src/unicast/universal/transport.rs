@@ -62,12 +62,16 @@ use crate::unicast::transport_unicast_inner::TransportStatus;
 use crate::unicast::transport_unicast_inner::TransportUnicastTrait;
 use crate::unicast::universal::link::TransportLinkUnicastUniversal;
 
+/// Data for closable callback operations, including callback and closed.
 pub(crate) struct ClosableCallback {
+    /// Callback invoked when the tracked event occurs.
     callback: OnceLock<Arc<dyn TransportPeerEventHandler>>,
+    /// Whether the channel has been closed.
     closed: AtomicBool,
 }
 
 impl ClosableCallback {
+    /// Creates a new closable callback with the supplied configuration.
     pub(crate) fn new() -> Self {
         ClosableCallback {
             callback: OnceLock::new(),
@@ -75,16 +79,19 @@ impl ClosableCallback {
         }
     }
 
+    /// Updates this value with the supplied state.
     pub(crate) fn set(&self, cb: Arc<dyn TransportPeerEventHandler>) {
         let _ = self.callback.set(cb);
     }
 
+    /// Returns the value requested from this object.
     pub(crate) fn get(&self) -> Option<&Arc<dyn TransportPeerEventHandler>> {
         self.callback
             .get()
             .filter(|_| !self.closed.load(Ordering::Relaxed))
     }
 
+    /// Closes the transport resource and releases its associated state.
     pub(crate) fn close(&self) -> Option<&Arc<dyn TransportPeerEventHandler>> {
         self.closed.store(true, Ordering::Relaxed);
         self.callback.get()
@@ -105,6 +112,7 @@ pub(crate) struct TransportUnicastUniversal {
     pub(super) priority_tx: Arc<[TransportPriorityTx]>,
     // Rx priorities
     pub(super) priority_rx: Arc<[TransportPriorityRx]>,
+    /// Context that owns shared-memory segment and access metadata.
     #[cfg(feature = "shared-memory")]
     pub(super) shm_context: Option<UnicastTransportShmContext>,
     // The links associated to the channel
@@ -119,6 +127,7 @@ pub(crate) struct TransportUnicastUniversal {
 }
 
 impl TransportUnicastUniversal {
+    /// Constructs the value from the supplied transport configuration.
     pub fn make(
         manager: TransportManager,
         config: TransportConfigUnicast,
@@ -203,6 +212,7 @@ impl TransportUnicastUniversal {
         Ok(())
     }
 
+    /// Removes the link after its transport state has been shut down.
     pub(crate) async fn del_link(&self, link: Link) -> ZResult<()> {
         // Try to remove the link
         let Some((is_last, stl, associated_link)) = zwrite!(self.links).remove_link(&link) else {
@@ -244,6 +254,7 @@ impl TransportUnicastUniversal {
         close_stl_res.and(close_asl_res)
     }
 
+    /// Synchronizes the local sequence state with the supplied transport state.
     async fn sync(
         &self,
         initial_sn_rx: TransportSn,
@@ -376,43 +387,53 @@ impl TransportUnicastTrait for TransportUnicastUniversal {
         self.callback.set(callback)
     }
 
+    /// Returns the status stored by or available from this value.
     async fn get_status(&self) -> AsyncMutexGuard<'_, TransportStatus> {
         zasynclock!(self.status)
     }
 
+    /// Returns the zid stored by or available from this value.
     fn get_zid(&self) -> ZenohIdProto {
         self.config.zid
     }
 
+    /// Returns the whatami stored by or available from this value.
     fn get_whatami(&self) -> WhatAmI {
         self.config.whatami
     }
 
+    /// Reports whether this value is shm.
     #[cfg(feature = "shared-memory")]
     fn is_shm(&self) -> bool {
         self.config.shm.is_some()
     }
 
+    /// Reports whether this value is qos.
     fn is_qos(&self) -> bool {
         self.config.is_qos
     }
 
+    /// Returns the shared-memory region name negotiated for this session.
     fn region_name(&self) -> Option<RegionName> {
         self.config.region_name.clone()
     }
 
+    /// Returns the bound stored by or available from this value.
     fn get_bound(&self) -> Option<Bound> {
         self.config.bound
     }
 
+    /// Returns the callback stored by or available from this value.
     fn get_callback(&self) -> Option<Arc<dyn TransportPeerEventHandler>> {
         self.callback.get().cloned()
     }
 
+    /// Returns the config stored by or available from this value.
     fn get_config(&self) -> &TransportConfigUnicast {
         &self.config
     }
 
+    /// Returns a snapshot of the counters collected for this transport.
     #[cfg(feature = "stats")]
     fn stats(&self) -> zenoh_stats::TransportStats {
         self.stats.clone()
@@ -447,10 +468,12 @@ impl TransportUnicastTrait for TransportUnicastUniversal {
         self.delete().await
     }
 
+    /// Stops the link and releases its resources.
     async fn close_link(&self, link: Link) -> ZResult<()> {
         self.del_link(link).await
     }
 
+    /// Returns the links stored by or available from this value.
     fn get_links(&self) -> Vec<Link> {
         zread!(self.links)
             .get_links()
@@ -459,6 +482,7 @@ impl TransportUnicastTrait for TransportUnicastUniversal {
             .collect()
     }
 
+    /// Returns the auth ids stored by or available from this value.
     fn get_auth_ids(&self) -> TransportAuthId {
         let mut transport_auth_id = TransportAuthId::new(self.get_zid());
         // Convert LinkUnicast auth ids to AuthId
@@ -481,6 +505,7 @@ impl TransportUnicastTrait for TransportUnicastUniversal {
         self.internal_schedule(msg)
     }
 
+    /// Adds the supplied debug fields to the current collection or state.
     fn add_debug_fields<'a, 'b: 'a, 'c>(
         &self,
         s: &'c mut DebugStruct<'a, 'b>,
@@ -505,10 +530,12 @@ pub(super) struct TransportLinks {
 }
 
 impl TransportLinks {
+    /// Returns the links stored by or available from this value.
     pub(super) fn get_links(&self) -> &[TransportLinkMarker] {
         &self.inner
     }
 
+    /// Adds the supplied link to the end or position selected by this collection.
     fn push_link(
         &mut self,
         link: TransportLinkUnicastUniversal,
@@ -526,6 +553,7 @@ impl TransportLinks {
         self.inner = links.into_boxed_slice();
     }
 
+    /// Removes the selected link from the current collection or state.
     fn remove_link(
         &mut self,
         link: &Link,
@@ -583,6 +611,7 @@ impl TransportLinks {
         ))
     }
 
+    /// Handles the take behavior for this component.
     fn take(&mut self) -> Vec<TransportLinkUnicastUniversal> {
         std::mem::take(&mut self.inner)
             .into_vec()
@@ -591,6 +620,7 @@ impl TransportLinks {
             .collect()
     }
 
+    /// Handles the nb links multilink behavior for this component.
     fn nb_links_multilink(&self, direction: TransportLinkUnicastDirection) -> usize {
         // Do not count AssociatedLink: pairs of (Link, AssociatedLink) must count as only one for
         // multilink limit.
@@ -603,13 +633,17 @@ impl TransportLinks {
     }
 }
 
+/// Defines the possible transport link marker cases handled by this code.
 #[derive(Clone)]
 pub(super) enum TransportLinkMarker {
+    /// Represents the link case of transport link marker.
     Link(TransportLinkUnicastUniversal),
+    /// Represents the associated link case of transport link marker.
     AssociatedLink(TransportLinkUnicastUniversal),
 }
 
 impl TransportLinkMarker {
+    /// Consumes this value and converts it into a inner.
     fn into_inner(self) -> TransportLinkUnicastUniversal {
         match self {
             TransportLinkMarker::Link(l) | TransportLinkMarker::AssociatedLink(l) => l,
@@ -618,8 +652,10 @@ impl TransportLinkMarker {
 }
 
 impl Deref for TransportLinkMarker {
+    /// Alias for `TransportLinkUnicastUniversal` used to represent target.
     type Target = TransportLinkUnicastUniversal;
 
+    /// Returns a reference to the value wrapped by this type.
     #[inline]
     fn deref(&self) -> &Self::Target {
         match self {

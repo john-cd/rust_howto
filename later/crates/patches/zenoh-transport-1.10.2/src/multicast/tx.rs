@@ -26,6 +26,7 @@ use crate::common::shm::interop::map_zmsg_to_partner;
 
 // noinspection ALL
 impl TransportMulticastInner {
+    /// Handles the schedule on link behavior for this component.
     fn schedule_on_link(&self, msg: NetworkMessageRef) -> ZResult<bool> {
         let guard = zread!(self.link);
         match guard.as_ref() {

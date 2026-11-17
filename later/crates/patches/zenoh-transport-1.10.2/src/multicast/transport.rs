@@ -63,31 +63,46 @@ use crate::multicast::link::TransportLinkMulticast;
 /// **********************************
 #[derive(Clone)]
 pub(super) struct TransportMulticastPeer {
+    /// Shared-memory metadata version used to check peer compatibility.
     pub(super) version: u8,
+    /// Endpoint locator used to establish the connection.
     pub(super) locator: Locator,
+    /// Zenoh identifier of the remote peer.
     pub(super) zid: ZenohIdProto,
+    /// Role advertised by the remote Zenoh peer.
     pub(super) whatami: WhatAmI,
+    /// Sequence-number resolution negotiated for this link.
     pub(super) resolution: Resolution,
+    /// Lease that prevents the shared resource from being reclaimed early.
     pub(super) lease: Duration,
+    /// Whether this link is currently active.
     pub(super) is_active: Arc<AtomicBool>,
+    /// Token used to prove ownership of the current lease.
     token: CancellationToken,
+    /// Receiver for messages on the selected priority channel.
     pub(super) priority_rx: Box<[TransportPriorityRx]>,
+    /// Handler that processes the received event.
     pub(super) handler: Arc<dyn TransportPeerEventHandler>,
+    /// Patch type negotiated during the transport open handshake.
     pub(super) patch: PatchType,
+    /// Transport counters and timings collected for this connection.
     #[cfg(feature = "stats")]
     pub(super) stats: zenoh_stats::LinkStats,
 }
 
 impl TransportMulticastPeer {
+    /// Sets the active used by this value.
     pub(super) fn set_active(&self) {
         self.is_active.store(true, Ordering::Release);
     }
 
+    /// Reports whether this value is qos.
     pub(super) fn is_qos(&self) -> bool {
         self.priority_rx.len() == Priority::NUM
     }
 }
 
+/// Data for transport multicast inner operations, including manager and priority tx.
 #[derive(Clone)]
 pub(crate) struct TransportMulticastInner {
     // The manager this channel is associated to
@@ -107,14 +122,17 @@ pub(crate) struct TransportMulticastInner {
     // Transport statistics
     #[cfg(feature = "stats")]
     pub(super) stats: zenoh_stats::TransportStats,
+    /// Counters and timings collected for the link.
     #[cfg(feature = "stats")]
     pub(super) link_stats: zenoh_stats::LinkStats,
 
+    /// Context that owns shared-memory segment and access metadata.
     #[cfg(feature = "shared-memory")]
     pub(super) shm_context: Option<MulticastTransportShmContext>,
 }
 
 impl TransportMulticastInner {
+    /// Constructs the value from the supplied transport configuration.
     pub(super) fn make(
         manager: TransportManager,
         config: TransportConfigMulticast,
@@ -163,6 +181,7 @@ impl TransportMulticastInner {
         Ok(ti)
     }
 
+    /// Sets the callback used by this value.
     pub(super) fn set_callback(&self, callback: Arc<dyn TransportMulticastEventHandler>) {
         let mut guard = zwrite!(self.callback);
         *guard = Some(callback);
@@ -176,19 +195,23 @@ impl TransportMulticastInner {
         self.manager.config.resolution.get(Field::FrameSN)
     }
 
+    /// Reports whether this value is qos.
     pub(crate) fn is_qos(&self) -> bool {
         self.priority_tx.len() == Priority::NUM
     }
 
+    /// Reports whether this value is shm.
     #[cfg(feature = "shared-memory")]
     pub(crate) fn is_shm(&self) -> bool {
         self.shm_context.is_some()
     }
 
+    /// Returns the callback stored by or available from this value.
     pub(crate) fn get_callback(&self) -> Option<Arc<dyn TransportMulticastEventHandler>> {
         zread!(self.callback).clone()
     }
 
+    /// Returns the link stored by or available from this value.
     pub(crate) fn get_link(&self) -> TransportLinkMulticast {
         zread!(self.link).as_ref().unwrap().link.clone()
     }
@@ -221,6 +244,7 @@ impl TransportMulticastInner {
         Ok(())
     }
 
+    /// Closes the transport resource and releases its associated state.
     pub(crate) async fn close(&self, reason: u8) -> ZResult<()> {
         tracing::trace!(
             "Closing multicast transport of peer {}: {}",
@@ -287,6 +311,7 @@ impl TransportMulticastInner {
         }
     }
 
+    /// Stops the tx and releases its resources.
     pub(super) fn stop_tx(&self) -> ZResult<()> {
         let mut guard = zwrite!(self.link);
         match guard.as_mut() {
@@ -304,6 +329,7 @@ impl TransportMulticastInner {
         }
     }
 
+    /// Starts the rx operation or task.
     pub(super) fn start_rx(&self) -> ZResult<()> {
         let mut guard = zwrite!(self.link);
         match guard.as_mut() {
@@ -329,6 +355,7 @@ impl TransportMulticastInner {
         }
     }
 
+    /// Stops the rx and releases its resources.
     pub(super) fn stop_rx(&self) -> ZResult<()> {
         let mut guard = zwrite!(self.link);
         match guard.as_mut() {
@@ -452,6 +479,7 @@ impl TransportMulticastInner {
         Ok(())
     }
 
+    /// Handles the del peer behavior for this component.
     pub(super) fn del_peer(&self, locator: &Locator, reason: u8) -> ZResult<()> {
         let mut guard = zwrite!(self.peers);
         if let Some(peer) = guard.remove(locator) {
@@ -472,6 +500,7 @@ impl TransportMulticastInner {
         Ok(())
     }
 
+    /// Returns the peers stored by or available from this value.
     pub(super) fn get_peers(&self) -> Vec<TransportPeer> {
         zread!(self.peers)
             .values()

@@ -101,6 +101,7 @@ impl fmt::Display for TransportClosed {
 impl std::error::Error for TransportClosed {}
 
 impl StageInRefill {
+    /// Pulls the next available value from the producer.
     fn pull(&mut self) -> Option<BoxedWBatch> {
         match self.s_ref_r.pull() {
             Some(b) => Some(b),
@@ -139,6 +140,7 @@ type AtomicMicroSeconds = AtomicU32;
 /// Active value.
 type MicroSeconds = u32;
 
+/// Data for atomic backoff operations, including active and bytes.
 struct AtomicBackoff {
     /// Whether the backoff is currently active.
     active: CachePadded<AtomicBool>,
@@ -163,6 +165,7 @@ struct StageInOut {
 }
 
 impl StageInOut {
+    /// Handles the notify behavior for this component.
     #[inline]
     fn notify(&self, bytes: BatchSize) {
         self.atomic_backoff.bytes.store(bytes, Ordering::Relaxed);
@@ -171,6 +174,7 @@ impl StageInOut {
         }
     }
 
+    /// Handles the move batch behavior for this component.
     #[inline]
     fn move_batch(&mut self, batch: BoxedWBatch) {
         let _ = self.s_out_w.push(batch);
@@ -179,6 +183,7 @@ impl StageInOut {
     }
 }
 
+/// Data for current operations, including batch and status.
 struct Current {
     /// Optional batch used by current; `None` means the value is not configured or unavailable.
     batch: Option<BoxedWBatch>,
@@ -191,6 +196,7 @@ struct Current {
 }
 
 impl Current {
+    /// Handles the notify pending behavior for this component.
     fn notify_pending(&mut self) {
         self.status
             .pending
@@ -216,6 +222,7 @@ struct StageInMutex {
 }
 
 impl StageInMutex {
+    /// Handles the channel behavior for this component.
     #[inline]
     fn channel(&self, is_reliable: bool) -> MutexGuard<'_, TransportChannelTx> {
         if is_reliable {
@@ -226,6 +233,7 @@ impl StageInMutex {
     }
 }
 
+/// Data for wait time operations, including wait time and max wait time.
 #[derive(Debug)]
 struct WaitTime {
     /// Wait time value.
@@ -289,10 +297,13 @@ impl WaitTime {
 /// Defines the outcomes available to the common workflow, including immediate, finite.
 #[derive(Clone)]
 enum DeadlineSetting {
+    /// Represents the immediate case of deadline setting.
     Immediate,
+    /// Represents the finite case of deadline setting.
     Finite(Instant),
 }
 
+/// Data for lazy deadline operations, including deadline and wait time.
 struct LazyDeadline {
     /// Optional deadline used by lazy deadline; `None` means the value is not configured or
     /// unavailable.
@@ -315,6 +326,7 @@ impl LazyDeadline {
         }
     }
 
+    /// Handles the advance behavior for this component.
     fn advance(&mut self) {
         match self.deadline().to_owned() {
             DeadlineSetting::Immediate => {}
@@ -325,6 +337,7 @@ impl LazyDeadline {
         }
     }
 
+    /// Handles the deadline behavior for this component.
     #[inline]
     fn deadline(&mut self) -> &mut DeadlineSetting {
         self.deadline
@@ -335,6 +348,7 @@ impl LazyDeadline {
     }
 }
 
+/// Data for deadline operations, including lazy deadline.
 struct Deadline {
     /// Lazy deadline value.
     lazy_deadline: LazyDeadline,
@@ -362,6 +376,7 @@ impl Deadline {
         }
     }
 
+    /// Handles the on next fragment behavior for this component.
     fn on_next_fragment(&mut self) {
         self.lazy_deadline.advance();
     }
@@ -406,6 +421,7 @@ impl StageIn {
         let mut c_guard = zlock!(self.mutex.current);
         c_guard.notify_pending();
 
+        /// Expands the zgetbatch rets pattern into Rust code at compile time.
         macro_rules! zgetbatch_rets {
             ($($restore_sn:stmt)?) => {
                 loop {
@@ -439,6 +455,7 @@ impl StageIn {
             };
         }
 
+        /// Expands the zretok pattern into Rust code at compile time.
         macro_rules! zretok {
             ($batch:expr, $msg:expr) => {{
                 if !self.batching || $msg.is_express() {
@@ -571,6 +588,7 @@ impl StageIn {
         let mut c_guard = zlock!(self.mutex.current);
         c_guard.notify_pending();
 
+        /// Expands the zgetbatch rets pattern into Rust code at compile time.
         macro_rules! zgetbatch_rets {
             () => {
                 loop {
@@ -596,6 +614,7 @@ impl StageIn {
             };
         }
 
+        /// Expands the zretok pattern into Rust code at compile time.
         macro_rules! zretok {
             ($batch:expr) => {{
                 if !self.batching {
@@ -635,8 +654,11 @@ impl StageIn {
 
 /// Defines the outcomes available to the common workflow, including some, none, backoff.
 enum Pull {
+    /// Represents the some case of pull.
     Some(BoxedWBatch),
+    /// Represents the none case of pull.
     None,
+    /// Represents the backoff case of pull.
     Backoff(MicroSeconds),
 }
 
@@ -755,6 +777,7 @@ impl StageOutIn {
     }
 }
 
+/// Data for stage out refill operations, including n ref w and s ref w.
 struct StageOutRefill {
     /// N ref w value.
     n_ref_w: Notifier,
@@ -771,6 +794,7 @@ impl StageOutRefill {
     }
 }
 
+/// Data for stage out operations, including s in and s ref.
 struct StageOut {
     /// S in value.
     s_in: StageOutIn,
@@ -789,6 +813,7 @@ impl StageOut {
         self.s_in.try_pull()
     }
 
+    /// Restores capacity after the previous batch has been consumed.
     #[inline]
     fn refill(&mut self, batch: BoxedWBatch) {
         self.s_ref.refill(batch);
@@ -969,6 +994,7 @@ impl TransmissionPipeline {
     }
 }
 
+/// Data for transmission pipeline status operations, including disabled and congested.
 struct TransmissionPipelineStatus {
     // The whole pipeline is enabled or disabled
     /// Disabled value.
@@ -1029,6 +1055,7 @@ impl TransmissionPipelineStatus {
     }
 }
 
+/// Data for waits operations, including wait before drop and max wait before drop fragments.
 #[derive(Clone)]
 struct Waits {
     /// Delay before dropping the transport.
@@ -1153,6 +1180,7 @@ impl TransmissionPipelineProducer {
         self.status.set_disabled(true);
     }
 
+    /// Handles the disable behavior for this component.
     pub(crate) fn disable(&self) {
         self.status.set_disabled(true);
 
@@ -1185,12 +1213,15 @@ pub(crate) struct TransmissionPipelineConsumer {
 
 /// Specifies the operations implementations provide to common callers.
 pub(crate) trait PipelineConsumer {
+    /// Handles the status behavior for this component.
     #[allow(private_interfaces)]
     fn status(&self) -> &TransmissionPipelineStatus;
+    /// Handles the stage pull behavior for this component.
     fn stage_pull(&mut self) -> Result<(BoxedWBatch, Priority), Option<MicroSeconds>>;
 
     /// Returns the waiter used to notify the outgoing pipeline stage.
     fn n_out_r(&self) -> &Waiter;
+    /// Pulls the next available value from the producer.
     async fn pull(&mut self) -> Option<(BoxedWBatch, Priority)> {
         while !self.status().is_disabled() {
             let backoff = match self.stage_pull() {
@@ -1247,11 +1278,13 @@ pub(crate) trait PipelineConsumer {
 }
 
 impl PipelineConsumer for TransmissionPipelineConsumer {
+    /// Handles the status behavior for this component.
     #[allow(private_interfaces)]
     fn status(&self) -> &TransmissionPipelineStatus {
         &self.status
     }
 
+    /// Handles the stage pull behavior for this component.
     fn stage_pull(&mut self) -> Result<(BoxedWBatch, Priority), Option<MicroSeconds>> {
         while let Some(prio) = self.status.get_pending() {
             let queue = &mut self.stage_out[prio as usize];
@@ -1273,6 +1306,7 @@ impl PipelineConsumer for TransmissionPipelineConsumer {
         self.n_out_r.as_ref().unwrap()
     }
 
+    /// Restores capacity after the previous batch has been consumed.
     fn refill(&mut self, batch: BoxedWBatch, priority: Priority) {
         if !batch.is_ephemeral() {
             self.stage_out[priority as usize].refill(batch);
@@ -1344,17 +1378,20 @@ pub(crate) struct SplitTransmissionPipelineConsumer {
 }
 
 impl SplitTransmissionPipelineConsumer {
+    /// Handles the priority behavior for this component.
     pub(crate) fn priority(&self) -> Priority {
         self.priority
     }
 }
 
 impl PipelineConsumer for SplitTransmissionPipelineConsumer {
+    /// Handles the status behavior for this component.
     #[allow(private_interfaces)]
     fn status(&self) -> &TransmissionPipelineStatus {
         &self.status
     }
 
+    /// Handles the stage pull behavior for this component.
     fn stage_pull(&mut self) -> Result<(BoxedWBatch, Priority), Option<MicroSeconds>> {
         match self.stage_out.try_pull() {
             Pull::Some(batch) => Ok((batch, self.priority)),
@@ -1363,10 +1400,12 @@ impl PipelineConsumer for SplitTransmissionPipelineConsumer {
         }
     }
 
+    /// Handles the n out r behavior for this component.
     fn n_out_r(&self) -> &Waiter {
         &self.stage_out.n_out_r
     }
 
+    /// Restores capacity after the previous batch has been consumed.
     fn refill(&mut self, batch: BoxedWBatch, priority: Priority) {
         if !batch.is_ephemeral() {
             debug_assert_eq!(self.priority, priority);
@@ -1468,6 +1507,7 @@ mod tests {
     /// Delivers queued messages through the transmission pipeline on worker threads.
     #[tokio::test(flavor = "multi_thread", worker_threads = 4)]
     async fn tx_pipeline_flow() -> ZResult<()> {
+        /// Schedules the event at its calculated execution time.
         fn schedule(queue: TransmissionPipelineProducer, num_msg: usize, payload_size: usize) {
             // Send reliable messages
             let key = "test".into();
@@ -1490,6 +1530,7 @@ mod tests {
             }
         }
 
+        /// Handles the consume behavior for this component.
         async fn consume(mut queue: impl PipelineConsumer, num_msg: usize) {
             let mut batches: usize = 0;
             let mut bytes: usize = 0;
@@ -1594,6 +1635,7 @@ mod tests {
     /// Blocks producers when transmission batches are exhausted and resumes them after consumption.
     #[tokio::test(flavor = "multi_thread", worker_threads = 4)]
     async fn tx_pipeline_blocking() -> ZResult<()> {
+        /// Schedules the event at its calculated execution time.
         fn schedule(queue: TransmissionPipelineProducer, counter: Arc<AtomicUsize>, id: usize) {
             // Make sure to put only one message per batch: set the payload size
             // to half of the batch in such a way the serialized zenoh message

@@ -33,10 +33,12 @@ use crate::unicast::establishment::OpenFsm;
 
 // Extension Fsm
 pub(crate) struct LowLatencyFsm<'a> {
+    /// a value tracked by this type.
     _a: PhantomData<&'a ()>,
 }
 
 impl LowLatencyFsm<'_> {
+    /// Creates a new low latency fsm with the supplied configuration.
     pub(crate) const fn new() -> Self {
         Self { _a: PhantomData }
     }
@@ -48,14 +50,17 @@ impl LowLatencyFsm<'_> {
 /// **********************************
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub(crate) struct StateOpen {
+    /// Whether lowlatency is enabled for this value.
     is_lowlatency: bool,
 }
 
 impl StateOpen {
+    /// Creates a new state open with the supplied configuration.
     pub(crate) const fn new(is_lowlatency: bool) -> Self {
         Self { is_lowlatency }
     }
 
+    /// Reports whether this value is lowlatency.
     pub(crate) const fn is_lowlatency(&self) -> bool {
         self.is_lowlatency
     }
@@ -63,16 +68,28 @@ impl StateOpen {
 
 #[async_trait]
 impl<'a> OpenFsm for &'a LowLatencyFsm<'a> {
+    /// Alias for `ZError` used to represent error.
     type Error = ZError;
+    /// Alias for `(&'a mut StateOpen, Option<init::ext::LowLatency>)` used to represent recv init
+    /// ack in.
     type RecvInitAckIn = (&'a mut StateOpen, Option<init::ext::LowLatency>);
+    /// Alias for `()` used to represent recv init ack out.
     type RecvInitAckOut = ();
+    /// Alias for `(&'a mut StateOpen, Option<open::ext::LowLatency>)` used to represent recv open
+    /// ack in.
     type RecvOpenAckIn = (&'a mut StateOpen, Option<open::ext::LowLatency>);
+    /// Alias for `()` used to represent recv open ack out.
     type RecvOpenAckOut = ();
+    /// Alias for `&'a StateOpen` used to represent send init syn in.
     type SendInitSynIn = &'a StateOpen;
+    /// Alias for `Option<init::ext::LowLatency>` used to represent send init syn out.
     type SendInitSynOut = Option<init::ext::LowLatency>;
+    /// Alias for `&'a StateOpen` used to represent send open syn in.
     type SendOpenSynIn = &'a StateOpen;
+    /// Alias for `Option<open::ext::LowLatency>` used to represent send open syn out.
     type SendOpenSynOut = Option<open::ext::LowLatency>;
 
+    /// Sends the init syn message to the peer.
     async fn send_init_syn(
         self,
         state: Self::SendInitSynIn,
@@ -81,6 +98,7 @@ impl<'a> OpenFsm for &'a LowLatencyFsm<'a> {
         Ok(output)
     }
 
+    /// Receives and validates the init ack message from the peer.
     async fn recv_init_ack(
         self,
         input: Self::RecvInitAckIn,
@@ -90,6 +108,7 @@ impl<'a> OpenFsm for &'a LowLatencyFsm<'a> {
         Ok(())
     }
 
+    /// Sends the open syn message to the peer.
     async fn send_open_syn(
         self,
         _state: Self::SendOpenSynIn,
@@ -97,6 +116,7 @@ impl<'a> OpenFsm for &'a LowLatencyFsm<'a> {
         Ok(None)
     }
 
+    /// Receives and validates the open ack message from the peer.
     async fn recv_open_ack(
         self,
         _state: Self::RecvOpenAckIn,
@@ -111,18 +131,22 @@ impl<'a> OpenFsm for &'a LowLatencyFsm<'a> {
 /// **********************************
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub(crate) struct StateAccept {
+    /// Whether lowlatency is enabled for this value.
     is_lowlatency: bool,
 }
 
 impl StateAccept {
+    /// Creates a new state accept with the supplied configuration.
     pub(crate) const fn new(is_lowlatency: bool) -> Self {
         Self { is_lowlatency }
     }
 
+    /// Reports whether this value is lowlatency.
     pub(crate) const fn is_lowlatency(&self) -> bool {
         self.is_lowlatency
     }
 
+    /// Generates a random value using the supplied random source.
     #[cfg(test)]
     pub(crate) fn rand() -> Self {
         use rand::Rng;
@@ -136,8 +160,10 @@ impl<W> WCodec<&StateAccept, &mut W> for Zenoh080
 where
     W: Writer,
 {
+    /// Alias for `Result<(), DidntWrite>` used to represent output.
     type Output = Result<(), DidntWrite>;
 
+    /// Writes the supplied value to the configured output sink.
     fn write(self, writer: &mut W, x: &StateAccept) -> Self::Output {
         let is_lowlatency = u8::from(x.is_lowlatency);
         self.write(&mut *writer, is_lowlatency)?;
@@ -149,8 +175,10 @@ impl<R> RCodec<StateAccept, &mut R> for Zenoh080
 where
     R: Reader,
 {
+    /// Alias for `DidntRead` used to represent error.
     type Error = DidntRead;
 
+    /// Reads the next value from the supplied input source.
     fn read(self, reader: &mut R) -> Result<StateAccept, Self::Error> {
         let is_lowlatency: u8 = self.read(&mut *reader)?;
         let is_lowlatency = is_lowlatency == 1;
@@ -160,16 +188,28 @@ where
 
 #[async_trait]
 impl<'a> AcceptFsm for &'a LowLatencyFsm<'a> {
+    /// Alias for `ZError` used to represent error.
     type Error = ZError;
+    /// Alias for `(&'a mut StateAccept, Option<init::ext::LowLatency>)` used to represent recv init
+    /// syn in.
     type RecvInitSynIn = (&'a mut StateAccept, Option<init::ext::LowLatency>);
+    /// Alias for `()` used to represent recv init syn out.
     type RecvInitSynOut = ();
+    /// Alias for `(&'a mut StateAccept, Option<open::ext::LowLatency>)` used to represent recv open
+    /// syn in.
     type RecvOpenSynIn = (&'a mut StateAccept, Option<open::ext::LowLatency>);
+    /// Alias for `()` used to represent recv open syn out.
     type RecvOpenSynOut = ();
+    /// Alias for `&'a StateAccept` used to represent send init ack in.
     type SendInitAckIn = &'a StateAccept;
+    /// Alias for `Option<init::ext::LowLatency>` used to represent send init ack out.
     type SendInitAckOut = Option<init::ext::LowLatency>;
+    /// Alias for `&'a StateAccept` used to represent send open ack in.
     type SendOpenAckIn = &'a StateAccept;
+    /// Alias for `Option<open::ext::LowLatency>` used to represent send open ack out.
     type SendOpenAckOut = Option<open::ext::LowLatency>;
 
+    /// Receives and validates the init syn message from the peer.
     async fn recv_init_syn(
         self,
         input: Self::RecvInitSynIn,
@@ -179,6 +219,7 @@ impl<'a> AcceptFsm for &'a LowLatencyFsm<'a> {
         Ok(())
     }
 
+    /// Sends the init ack message to the peer.
     async fn send_init_ack(
         self,
         state: Self::SendInitAckIn,
@@ -187,6 +228,7 @@ impl<'a> AcceptFsm for &'a LowLatencyFsm<'a> {
         Ok(output)
     }
 
+    /// Receives and validates the open syn message from the peer.
     async fn recv_open_syn(
         self,
         _state: Self::RecvOpenSynIn,
@@ -194,6 +236,7 @@ impl<'a> AcceptFsm for &'a LowLatencyFsm<'a> {
         Ok(())
     }
 
+    /// Sends the open ack message to the peer.
     async fn send_open_ack(
         self,
         _state: Self::SendOpenAckIn,

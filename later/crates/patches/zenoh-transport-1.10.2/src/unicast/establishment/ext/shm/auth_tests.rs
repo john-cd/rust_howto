@@ -24,6 +24,7 @@ async fn exchange_init(alice: &ShmFsm<'_>, bob: &ShmFsm<'_>) {
     alice.recv_init_ack(ack).await.unwrap();
 }
 
+/// Handles the assert disabled behavior for this component.
 fn assert_disabled(fsm: ShmFsm<'_>) {
     let (transport, link) = fsm.shm_init_result();
     assert!(transport.is_none(), "incomplete negotiation enabled SHM");

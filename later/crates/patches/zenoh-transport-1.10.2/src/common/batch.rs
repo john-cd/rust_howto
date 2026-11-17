@@ -74,6 +74,7 @@ macro_rules! zsplit {
     }};
 }
 
+/// Expands the zsplit mut pattern into Rust code at compile time.
 macro_rules! zsplit_mut {
     ($slice:expr, $config:expr) => {{
         match ($config.is_streamed, $config.has_header()) {
@@ -137,6 +138,7 @@ impl BatchConfig {
         }
     }
 
+    /// Handles the header behavior for this component.
     fn header(&self) -> Option<BatchHeader> {
         #[cfg(not(feature = "transport_compression"))]
         {
@@ -199,6 +201,7 @@ pub struct WBatchStats {
 
 #[cfg(feature = "stats")]
 impl WBatchStats {
+    /// Handles the clear behavior for this component.
     fn clear(&mut self) {
         self.t_msgs = 0;
     }
@@ -211,6 +214,7 @@ impl WBatchStats {
 pub enum Finalize {
     /// Batch variant of `Finalize`.
     Batch,
+    /// Represents the buffer case of finalize.
     Buffer,
 }
 
@@ -449,14 +453,18 @@ impl WBatch {
 
 /// Specifies the operations implementations provide to common callers.
 pub trait Encode<Message> {
+    /// Type of the output values produced or consumed by this trait.
     type Output;
 
+    /// Encodes this value in the format expected by the peer.
     fn encode(self, x: Message) -> Self::Output;
 }
 
 impl Encode<&TransportMessage> for &mut WBatch {
+    /// Alias for `Result<(), DidntWrite>` used to represent output.
     type Output = Result<(), DidntWrite>;
 
+    /// Encodes this value in the format expected by the peer.
     fn encode(self, x: &TransportMessage) -> Self::Output {
         let mut writer = self.buffer.writer();
         let res = self.codec.write(&mut writer, x);
@@ -471,8 +479,10 @@ impl Encode<&TransportMessage> for &mut WBatch {
 }
 
 impl Encode<NetworkMessageRef<'_>> for &mut WBatch {
+    /// Alias for `Result<(), BatchError>` used to represent output.
     type Output = Result<(), BatchError>;
 
+    /// Encodes this value in the format expected by the peer.
     fn encode(self, x: NetworkMessageRef) -> Self::Output {
         let mut writer = self.buffer.writer();
         self.codec.write(&mut writer, x)
@@ -480,8 +490,10 @@ impl Encode<NetworkMessageRef<'_>> for &mut WBatch {
 }
 
 impl Encode<(NetworkMessageRef<'_>, &FrameHeader)> for &mut WBatch {
+    /// Alias for `Result<(), BatchError>` used to represent output.
     type Output = Result<(), BatchError>;
 
+    /// Encodes this value in the format expected by the peer.
     fn encode(self, x: (NetworkMessageRef, &FrameHeader)) -> Self::Output {
         let mut writer = self.buffer.writer();
         let res = self.codec.write(&mut writer, x);
@@ -496,8 +508,10 @@ impl Encode<(NetworkMessageRef<'_>, &FrameHeader)> for &mut WBatch {
 }
 
 impl Encode<(&mut ZBufReader<'_>, &mut FragmentHeader)> for &mut WBatch {
+    /// Alias for `Result<NonZeroUsize, DidntWrite>` used to represent output.
     type Output = Result<NonZeroUsize, DidntWrite>;
 
+    /// Encodes this value in the format expected by the peer.
     fn encode(self, x: (&mut ZBufReader<'_>, &mut FragmentHeader)) -> Self::Output {
         let mut writer = self.buffer.writer();
         let res = self.codec.write(&mut writer, x);
@@ -542,6 +556,7 @@ impl<TBuffer: BacktrackableReader + Buffer> RBatch<TBuffer> {
         }
     }
 
+    /// Handles the len behavior for this component.
     pub fn len(&self) -> usize {
         self.buffer.len()
     }
@@ -635,6 +650,7 @@ where
 
 /// Specifies the operations implementations provide to common callers.
 pub trait DecompressUring {
+    /// Type of the result values produced or consumed by this trait.
     type Result;
 
     /// Applies the decompressed change to decompress uring and keeps dependent state consistent for
@@ -643,6 +659,7 @@ pub trait DecompressUring {
 }
 
 impl DecompressUring for RBatch<ZSlice> {
+    /// Alias for `()` used to represent result.
     type Result = ();
 
     /// Applies the decompressed change to rbatch and keeps dependent state consistent for later
@@ -653,6 +670,7 @@ impl DecompressUring for RBatch<ZSlice> {
 }
 
 impl DecompressUring for RBatch<ZBufReader<'_>> {
+    /// Alias for `RBatch<ZSlice>` used to represent result.
     type Result = RBatch<ZSlice>;
 
     /// Applies the decompressed change to rbatch and keeps dependent state consistent for later
@@ -710,6 +728,7 @@ impl RBatch<ZSlice> {
 
 /// Specifies the operations implementations provide to common callers.
 pub trait Decode<Message> {
+    /// Type of the error values produced or consumed by this trait.
     type Error;
 
     /// Decodes the transport message stored in the received batch.
@@ -717,8 +736,10 @@ pub trait Decode<Message> {
 }
 
 impl<TBuffer: BacktrackableReader + Buffer> Decode<TransportMessage> for &mut RBatch<TBuffer> {
+    /// Alias for `DidntRead` used to represent error.
     type Error = DidntRead;
 
+    /// Handles the decode behavior for this component.
     fn decode(self) -> Result<TransportMessage, Self::Error> {
         self.codec.read(&mut self.buffer)
     }
@@ -727,6 +748,7 @@ impl<TBuffer: BacktrackableReader + Buffer> Decode<TransportMessage> for &mut RB
 impl<TBuffer: BacktrackableReader + Buffer> Decode<(TransportMessage, BatchSize)>
     for &mut RBatch<TBuffer>
 {
+    /// Alias for `DidntRead` used to represent error.
     type Error = DidntRead;
 
     /// Decodes the next transport message and reports how many bytes it consumed.
@@ -745,8 +767,10 @@ impl<TBuffer: BacktrackableReader + Buffer> Decode<(TransportMessage, BatchSize)
 impl<'a, TBuffer: BacktrackableReader + Buffer> Decode<FrameReader<'a, TBuffer>>
     for &'a mut RBatch<TBuffer>
 {
+    /// Alias for `DidntRead` used to represent error.
     type Error = DidntRead;
 
+    /// Handles the decode behavior for this component.
     fn decode(self) -> Result<FrameReader<'a, TBuffer>, Self::Error> {
         self.codec.read(&mut self.buffer)
     }

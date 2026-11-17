@@ -1,5 +1,5 @@
 error: ...
- --> tests/ui/multiple_tokens.rs:2:1
+ --> tests/ui/multiple_tokens.rs:4:1
   |
-2 | type T = ();
+4 | type T = ();
   | ^^^^^^^^^^^^

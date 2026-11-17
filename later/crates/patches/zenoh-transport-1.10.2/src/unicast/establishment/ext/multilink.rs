@@ -44,14 +44,17 @@ use crate::unicast::establishment::ext::auth::pubkey::AuthPubKeyFsm;
 use crate::unicast::establishment::ext::auth::pubkey::ZPublicKey;
 use crate::unicast::establishment::ext::auth::pubkey::{self};
 
+/// Defines the key size value used by this code.
 const KEY_SIZE: usize = 512;
 
 // Extension Fsm
 pub(crate) struct MultiLink {
+    /// Public key used to authenticate or encrypt data for the peer.
     pubkey: Option<RwLock<AuthPubKey>>,
 }
 
 impl MultiLink {
+    /// Constructs the value from the supplied transport configuration.
     pub(crate) fn make<R>(rng: &mut R, is_multilink: bool) -> ZResult<Self>
     where
         R: Rng + CryptoRng,
@@ -69,6 +72,7 @@ impl MultiLink {
         }
     }
 
+    /// Opens the transport using the negotiated session parameters.
     pub(crate) fn open(&self, is_multilink: bool) -> StateOpen {
         StateOpen {
             pubkey: is_multilink.then_some((
@@ -78,6 +82,7 @@ impl MultiLink {
         }
     }
 
+    /// Handles the accept behavior for this component.
     pub(crate) fn accept(&self, is_multilink: bool) -> StateAccept {
         StateAccept {
             pubkey: is_multilink.then_some((
@@ -87,6 +92,7 @@ impl MultiLink {
         }
     }
 
+    /// Handles the fsm behavior for this component.
     pub(crate) fn fsm<'a>(&'a self, prng: &'a Mutex<PseudoRng>) -> MultiLinkFsm<'a> {
         MultiLinkFsm {
             fsm: self
@@ -97,7 +103,9 @@ impl MultiLink {
     }
 }
 
+/// Data for multi link fsm operations, including fsm.
 pub(crate) struct MultiLinkFsm<'a> {
+    /// Finite-state machine that tracks the protocol lifecycle.
     fsm: Option<AuthPubKeyFsm<'a>>,
 }
 
@@ -106,10 +114,12 @@ pub(crate) struct MultiLinkFsm<'a> {
 
 /// **********************************
 pub(crate) struct StateOpen {
+    /// Public key used to authenticate or encrypt data for the peer.
     pubkey: Option<(pubkey::StateOpen, ZPublicKey)>,
 }
 
 impl StateOpen {
+    /// Handles the multilink behavior for this component.
     pub(crate) fn multilink(&self) -> Option<ZPublicKey> {
         self.pubkey.as_ref().map(|(_, p)| p.clone())
     }
@@ -117,16 +127,28 @@ impl StateOpen {
 
 #[async_trait]
 impl<'a> OpenFsm for &'a MultiLinkFsm<'a> {
+    /// Alias for `ZError` used to represent error.
     type Error = ZError;
+    /// Alias for `(&'a mut StateOpen, Option<init::ext::MultiLink>)` used to represent recv init
+    /// ack in.
     type RecvInitAckIn = (&'a mut StateOpen, Option<init::ext::MultiLink>);
+    /// Alias for `()` used to represent recv init ack out.
     type RecvInitAckOut = ();
+    /// Alias for `(&'a mut StateOpen, Option<open::ext::MultiLinkAck>)` used to represent recv open
+    /// ack in.
     type RecvOpenAckIn = (&'a mut StateOpen, Option<open::ext::MultiLinkAck>);
+    /// Alias for `()` used to represent recv open ack out.
     type RecvOpenAckOut = ();
+    /// Alias for `&'a StateOpen` used to represent send init syn in.
     type SendInitSynIn = &'a StateOpen;
+    /// Alias for `Option<init::ext::MultiLink>` used to represent send init syn out.
     type SendInitSynOut = Option<init::ext::MultiLink>;
+    /// Alias for `&'a StateOpen` used to represent send open syn in.
     type SendOpenSynIn = &'a StateOpen;
+    /// Alias for `Option<open::ext::MultiLinkSyn>` used to represent send open syn out.
     type SendOpenSynOut = Option<open::ext::MultiLinkSyn>;
 
+    /// Sends the init syn message to the peer.
     async fn send_init_syn(
         self,
         input: Self::SendInitSynIn,
@@ -140,10 +162,12 @@ impl<'a> OpenFsm for &'a MultiLinkFsm<'a> {
         Ok(r)
     }
 
+    /// Receives and validates the init ack message from the peer.
     async fn recv_init_ack(
         self,
         input: Self::RecvInitAckIn,
     ) -> Result<Self::RecvInitAckOut, Self::Error> {
+        /// Defines the s value used by this code.
         const S: &str = "MultiLink extension - Recv InitAck.";
 
         let (state, mut ext) = input;
@@ -172,6 +196,7 @@ impl<'a> OpenFsm for &'a MultiLinkFsm<'a> {
         Ok(())
     }
 
+    /// Sends the open syn message to the peer.
     async fn send_open_syn(
         self,
         input: Self::SendOpenSynIn,
@@ -185,6 +210,7 @@ impl<'a> OpenFsm for &'a MultiLinkFsm<'a> {
         Ok(r)
     }
 
+    /// Receives and validates the open ack message from the peer.
     async fn recv_open_ack(
         self,
         input: Self::RecvOpenAckIn,
@@ -215,14 +241,17 @@ impl<'a> OpenFsm for &'a MultiLinkFsm<'a> {
 /// **********************************
 #[derive(Debug, PartialEq)]
 pub(crate) struct StateAccept {
+    /// Public key used to authenticate or encrypt data for the peer.
     pubkey: Option<(pubkey::StateAccept, ZPublicKey)>,
 }
 
 impl StateAccept {
+    /// Handles the multilink behavior for this component.
     pub(crate) fn multilink(&self) -> Option<ZPublicKey> {
         self.pubkey.as_ref().map(|(_, p)| p.clone())
     }
 
+    /// Generates a random value using the supplied random source.
     #[cfg(test)]
     pub(crate) fn rand() -> Self {
         let mut rng = rand::thread_rng();
@@ -248,8 +277,10 @@ impl<W> WCodec<&StateAccept, &mut W> for Zenoh080
 where
     W: Writer,
 {
+    /// Alias for `Result<(), DidntWrite>` used to represent output.
     type Output = Result<(), DidntWrite>;
 
+    /// Writes the supplied value to the configured output sink.
     fn write(self, writer: &mut W, x: &StateAccept) -> Self::Output {
         match x.pubkey.as_ref() {
             Some((s, p)) => {
@@ -266,8 +297,10 @@ impl<R> RCodec<StateAccept, &mut R> for Zenoh080
 where
     R: Reader,
 {
+    /// Alias for `DidntRead` used to represent error.
     type Error = DidntRead;
 
+    /// Reads the next value from the supplied input source.
     fn read(self, reader: &mut R) -> Result<StateAccept, Self::Error> {
         let is_multilink: u8 = self.read(&mut *reader)?;
         let pubkey = if is_multilink == 1 {
@@ -283,20 +316,33 @@ where
 
 #[async_trait]
 impl<'a> AcceptFsm for &'a MultiLinkFsm<'a> {
+    /// Alias for `ZError` used to represent error.
     type Error = ZError;
+    /// Alias for `(&'a mut StateAccept, Option<init::ext::MultiLink>)` used to represent recv init
+    /// syn in.
     type RecvInitSynIn = (&'a mut StateAccept, Option<init::ext::MultiLink>);
+    /// Alias for `()` used to represent recv init syn out.
     type RecvInitSynOut = ();
+    /// Alias for `(&'a mut StateAccept, Option<open::ext::MultiLinkSyn>)` used to represent recv
+    /// open syn in.
     type RecvOpenSynIn = (&'a mut StateAccept, Option<open::ext::MultiLinkSyn>);
+    /// Alias for `()` used to represent recv open syn out.
     type RecvOpenSynOut = ();
+    /// Alias for `&'a StateAccept` used to represent send init ack in.
     type SendInitAckIn = &'a StateAccept;
+    /// Alias for `Option<init::ext::MultiLink>` used to represent send init ack out.
     type SendInitAckOut = Option<init::ext::MultiLink>;
+    /// Alias for `&'a StateAccept` used to represent send open ack in.
     type SendOpenAckIn = &'a StateAccept;
+    /// Alias for `Option<open::ext::MultiLinkAck>` used to represent send open ack out.
     type SendOpenAckOut = Option<open::ext::MultiLinkAck>;
 
+    /// Receives and validates the init syn message from the peer.
     async fn recv_init_syn(
         self,
         input: Self::RecvInitSynIn,
     ) -> Result<Self::RecvInitSynOut, Self::Error> {
+        /// Defines the s value used by this code.
         const S: &str = "MultiLink extension - Recv InitSyn.";
 
         let (state, mut ext) = input;
@@ -326,6 +372,7 @@ impl<'a> AcceptFsm for &'a MultiLinkFsm<'a> {
         Ok(())
     }
 
+    /// Sends the init ack message to the peer.
     async fn send_init_ack(
         self,
         input: Self::SendInitAckIn,
@@ -339,6 +386,7 @@ impl<'a> AcceptFsm for &'a MultiLinkFsm<'a> {
         Ok(r)
     }
 
+    /// Receives and validates the open syn message from the peer.
     async fn recv_open_syn(
         self,
         input: Self::RecvOpenSynIn,
@@ -353,6 +401,7 @@ impl<'a> AcceptFsm for &'a MultiLinkFsm<'a> {
             .await
     }
 
+    /// Sends the open ack message to the peer.
     async fn send_open_ack(
         self,
         input: Self::SendOpenAckIn,

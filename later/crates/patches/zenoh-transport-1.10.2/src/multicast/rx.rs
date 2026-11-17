@@ -51,6 +51,7 @@ use crate::common::priority::TransportChannelRx;
 /// **********************************
 // noinspection ALL
 impl TransportMulticastInner {
+    /// Invokes the callback registered for this state transition.
     fn trigger_callback(
         &self,
         #[allow(unused_mut)] // shared-memory feature requires mut

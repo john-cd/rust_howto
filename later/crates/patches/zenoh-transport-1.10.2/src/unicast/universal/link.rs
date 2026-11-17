@@ -142,6 +142,7 @@ use crate::unicast::link::TransportLinkUnicast;
 use crate::unicast::link::TransportLinkUnicastRx;
 use crate::unicast::link::TransportLinkUnicastTx;
 
+/// Data for transport link unicast universal operations, including link and pipeline.
 #[derive(Clone)]
 pub(super) struct TransportLinkUnicastUniversal {
     // The underlying link
@@ -153,15 +154,19 @@ pub(super) struct TransportLinkUnicastUniversal {
     #[cfg(feature = "unstable")]
     // Notifier for a BlockFirst message to be ready to be sent
     // (after the previous one has been sent)
+    /// Notifiers blocked until the first transmission completes.
     pub block_first_notifiers: [Notifier; Priority::NUM],
     #[cfg(feature = "unstable")]
     // Waiter for a BlockFirst message to be ready to be sent
+    /// Waiters blocked until the first transmission completes.
     pub block_first_waiters: [Waiter; Priority::NUM],
+    /// Transport counters and timings collected for this connection.
     #[cfg(feature = "stats")]
     pub(super) stats: zenoh_stats::LinkStats,
 }
 
 impl TransportLinkUnicastUniversal {
+    /// Creates a new transport link unicast universal with the supplied configuration.
     pub(super) fn new(
         transport: &TransportUnicastUniversal,
         link: TransportLinkUnicast,
@@ -225,6 +230,7 @@ impl TransportLinkUnicastUniversal {
         (result, consumer)
     }
 
+    /// Starts the tx operation or task.
     pub(super) fn start_tx(
         &mut self,
         transport: TransportUnicastUniversal,
@@ -261,6 +267,7 @@ impl TransportLinkUnicastUniversal {
             .spawn_with_rt(zenoh_runtime::ZRuntime::TX, task);
     }
 
+    /// Starts the rx operation or task.
     pub(super) fn start_rx(&mut self, transport: TransportUnicastUniversal, lease: Duration) {
         let priorities = self.link.config.priorities.clone();
         let reliability = self.link.config.reliability;
@@ -309,6 +316,7 @@ impl TransportLinkUnicastUniversal {
             .spawn_with_rt(zenoh_runtime::ZRuntime::RX, task);
     }
 
+    /// Closes the transport resource and releases its associated state.
     pub(super) async fn close(self) -> ZResult<()> {
         tracing::trace!("{}: closing", self.link);
         self.task_controller.terminate_all_async().await;
@@ -367,6 +375,7 @@ async fn tx_task(
     Ok(())
 }
 
+/// Writes loop to the configured output.
 async fn write_loop(
     write_priority: Option<Priority>,
     mut pipeline: impl PipelineConsumer,
@@ -444,6 +453,7 @@ async fn write_loop(
     Ok(())
 }
 
+/// Handles the rx task behavior for this component.
 async fn rx_task(
     link: &mut TransportLinkUnicastRx,
     transport: TransportUnicastUniversal,
@@ -490,6 +500,7 @@ async fn rx_task(
         .unwrap_or(Ok(()))
 }
 
+/// Handles the rx task non uring behavior for this component.
 async fn rx_task_non_uring(
     link: &mut TransportLinkUnicastRx,
     transport: TransportUnicastUniversal,
@@ -550,6 +561,7 @@ async fn rx_task_non_uring(
     }
 }
 
+/// Reads loop from the configured input.
 async fn read_loop<F: Fn() -> Box<[u8]>>(
     priority: Option<Priority>,
     link: &mut TransportLinkUnicastRx,
@@ -558,6 +570,7 @@ async fn read_loop<F: Fn() -> Box<[u8]>>(
     #[cfg(feature = "stats")] stats: zenoh_stats::LinkStats,
     pool: &RecyclingObjectPool<Box<[u8]>, F>,
 ) -> ZResult<()> {
+    /// Reads the next value from the supplied input source.
     async fn read<F: Fn() -> Box<[u8]>>(
         link: &mut TransportLinkUnicastRx,
         priority: Option<Priority>,
@@ -588,18 +601,26 @@ async fn read_loop<F: Fn() -> Box<[u8]>>(
     }
 }
 
+/// Data for timeout tracker inner operations, including timeout and waker.
 struct TimeoutTrackerInner {
+    /// Maximum duration allowed for the operation.
     timeout: Duration,
+    /// Task waker notified when the wait condition changes.
     waker: AtomicWaker,
+    /// Whether the wait has exceeded its deadline.
     has_timed_out: AtomicBool,
+    /// Most recent reset time used to calculate elapsed time.
     latest_reset: Mutex<Instant>,
+    /// Background task responsible for this connection lifecycle step.
     task: OnceLock<JoinHandle<()>>,
 }
 
+/// Data for timeout tracker operations, including waker and has timed out.
 #[derive(Clone)]
 struct TimeoutTracker(Arc<TimeoutTrackerInner>);
 
 impl TimeoutTracker {
+    /// Creates a new timeout tracker with the supplied configuration.
     fn new(timeout: Duration) -> TimeoutTracker {
         let now = Instant::now();
         let inner = Arc::new(TimeoutTrackerInner {
@@ -630,14 +651,17 @@ impl TimeoutTracker {
         Self(inner)
     }
 
+    /// Handles the timeout behavior for this component.
     fn timeout(&self) -> Duration {
         self.0.timeout
     }
 
+    /// Handles the reset behavior for this component.
     fn reset(&self) {
         *self.0.latest_reset.lock().unwrap() = Instant::now();
     }
 
+    /// Waits until if is ready or completes.
     async fn wait_if(&self, predicate: bool) {
         poll_fn(|cx| {
             if !predicate {
@@ -655,6 +679,7 @@ impl TimeoutTracker {
 }
 
 impl Drop for TimeoutTracker {
+    /// Releases the resources owned by this value.
     fn drop(&mut self) {
         self.0.task.get().unwrap().abort();
     }
@@ -671,6 +696,7 @@ impl Drop for TimeoutTracker {
         target_arch = "powerpc64"
     )
 ))]
+/// Handles the rx task uring behavior for this component.
 async fn rx_task_uring(
     link: &mut TransportLinkUnicastRx,
     transport: TransportUnicastUniversal,
@@ -706,6 +732,7 @@ async fn rx_task_uring(
 
     let lease_tracker = TimeoutTracker::new(lease);
 
+    /// Reads batch from the configured input.
     fn read_batch<TBuffer: BacktrackableReader + Buffer + Debug>(
         transport: &TransportUnicastUniversal,
         link: &TransportLinkUnicastRx,

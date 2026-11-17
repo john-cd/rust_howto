@@ -625,6 +625,7 @@ impl TransportManager {
         }
     }
 
+    /// Returns the link manager unicast stored by or available from this value.
     async fn get_link_manager_unicast(&self, endpoint: &EndPoint) -> ZResult<LinkManagerUnicast> {
         match zasynclock!(self.state.unicast.link_managers).get(&LinkKey::from(endpoint)) {
             Some(manager) => Ok(manager.clone()),
@@ -635,6 +636,7 @@ impl TransportManager {
         }
     }
 
+    /// Handles the del link manager unicast behavior for this component.
     async fn del_link_manager_unicast(&self, endpoint: &EndPoint) -> ZResult<()> {
         match zasynclock!(self.state.unicast.link_managers).remove(&LinkKey::from(endpoint)) {
             Some(_) => Ok(()),
@@ -699,6 +701,7 @@ impl TransportManager {
         Ok(())
     }
 
+    /// Returns the listeners unicast stored by or available from this value.
     pub async fn get_listeners_unicast(&self) -> Vec<EndPoint> {
         let mut vec: Vec<EndPoint> = vec![];
         for p in zasynclock!(self.state.unicast.link_managers).values() {
@@ -707,6 +710,7 @@ impl TransportManager {
         vec
     }
 
+    /// Returns the locators unicast stored by or available from this value.
     pub async fn get_locators_unicast(&self) -> Vec<Locator> {
         let mut vec: Vec<Locator> = vec![];
         for p in zasynclock!(self.state.unicast.link_managers).values() {
@@ -868,6 +872,7 @@ impl TransportManager {
         other_lease: Duration,
         mut guard: AsyncMutexGuard<'_, HashMap<ZenohIdProto, Arc<dyn TransportUnicastTrait>>>,
     ) -> InitTransportResult {
+        /// Expands the link error pattern into Rust code at compile time.
         macro_rules! link_error {
             ($s:expr, $reason:expr) => {
                 match $s {
@@ -984,6 +989,7 @@ impl TransportManager {
                 }
             };
 
+        /// Expands the transport error pattern into Rust code at compile time.
         macro_rules! transport_error {
             ($s:expr, $reason:expr) => {
                 match $s {
@@ -1225,6 +1231,7 @@ impl TransportManager {
             .map(|t| TransportUnicast(Arc::downgrade(t)))
     }
 
+    /// Returns the transports unicast stored by or available from this value.
     pub async fn get_transports_unicast(&self) -> Vec<TransportUnicast> {
         zasynclock!(self.state.unicast.transports)
             .values()
@@ -1232,6 +1239,7 @@ impl TransportManager {
             .collect()
     }
 
+    /// Returns the transports unicast blocking stored by or available from this value.
     pub fn get_transports_unicast_blocking(&self) -> Vec<TransportUnicast> {
         self.state
             .unicast
@@ -1307,6 +1315,7 @@ impl TransportManager {
 
 #[cfg(all(feature = "test", feature = "transport_auth"))]
 impl TransportManager {
+    /// Returns the auth handle unicast stored by or available from this value.
     pub fn get_auth_handle_unicast(&self) -> Arc<Auth> {
         self.state.unicast.authenticator.clone()
     }

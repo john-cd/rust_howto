@@ -206,6 +206,7 @@ impl TransportUnicastLowlatency {
         Ok(())
     }
 
+    /// Synchronizes the local sequence state with the supplied transport state.
     async fn sync(
         &self,
         _initial_sn_rx: TransportSn,
@@ -238,10 +239,12 @@ impl TransportUnicastTrait for TransportUnicastLowlatency {
         *zwrite!(self.callback) = Some(callback);
     }
 
+    /// Returns the status stored by or available from this value.
     async fn get_status(&self) -> AsyncMutexGuard<'_, TransportStatus> {
         zasynclock!(self.status)
     }
 
+    /// Returns the links stored by or available from this value.
     fn get_links(&self) -> Vec<Link> {
         let handle = tokio::runtime::Handle::current();
         let guard =
@@ -249,10 +252,12 @@ impl TransportUnicastTrait for TransportUnicastLowlatency {
         guard.as_ref().map(|l| vec![l.link()]).unwrap_or_default()
     }
 
+    /// Returns the zid stored by or available from this value.
     fn get_zid(&self) -> ZenohIdProto {
         self.config.zid
     }
 
+    /// Returns the auth ids stored by or available from this value.
     fn get_auth_ids(&self) -> TransportAuthId {
         // Convert LinkUnicast auth id to AuthId
         let mut transport_auth_id = TransportAuthId::new(self.get_zid());
@@ -268,6 +273,7 @@ impl TransportUnicastTrait for TransportUnicastLowlatency {
         transport_auth_id
     }
 
+    /// Returns the whatami stored by or available from this value.
     fn get_whatami(&self) -> WhatAmI {
         self.config.whatami
     }
@@ -285,22 +291,27 @@ impl TransportUnicastTrait for TransportUnicastLowlatency {
         self.config.is_qos
     }
 
+    /// Returns the shared-memory region name negotiated for this session.
     fn region_name(&self) -> Option<RegionName> {
         self.config.region_name.clone()
     }
 
+    /// Returns the bound stored by or available from this value.
     fn get_bound(&self) -> Option<Bound> {
         self.config.bound
     }
 
+    /// Returns the callback stored by or available from this value.
     fn get_callback(&self) -> Option<Arc<dyn TransportPeerEventHandler>> {
         zread!(self.callback).clone()
     }
 
+    /// Returns the config stored by or available from this value.
     fn get_config(&self) -> &TransportConfigUnicast {
         &self.config
     }
 
+    /// Returns a snapshot of the counters collected for this transport.
     #[cfg(feature = "stats")]
     fn stats(&self) -> zenoh_stats::TransportStats {
         self.stats.clone()

@@ -26,6 +26,7 @@ use zenoh_protocol::core::Priority;
 /// Container that groups messages by priority for shared-memory handoff.
 #[derive(Debug)]
 pub struct PriorityContainer<T: Sized> {
+    /// Objects allocated for each supported transport priority.
     per_prio_objects: [T; Priority::NUM],
 }
 
@@ -70,6 +71,7 @@ impl<T: Sized> PriorityContainer<T> {
         Self { per_prio_objects }
     }
 
+    /// Handles the map behavior for this component.
     pub fn map<Tother: Sized>(self, map_fn: impl FnMut(T) -> Tother) -> PriorityContainer<Tother> {
         PriorityContainer::new(self.per_prio_objects.map(map_fn))
     }
@@ -100,6 +102,7 @@ impl<T: Sized> PriorityContainer<T> {
         Ok(PriorityContainer::new(per_prio_objects))
     }
 
+    /// Handles the map ref behavior for this component.
     pub fn map_ref<Tother: Sized>(
         &self,
         map_fn: impl Fn(&T) -> Tother,
@@ -112,7 +115,9 @@ impl<T: Sized> PriorityContainer<T> {
 }
 
 impl<'a, T: Sized> IntoIterator for &'a PriorityContainer<T> {
+    /// Alias for `core::slice::Iter<'a, T>` used to represent into iter.
     type IntoIter = core::slice::Iter<'a, T>;
+    /// Alias for `&'a T` used to represent item.
     type Item = &'a T;
 
     /// Converts between the into iterator representation and iter while preserving the invariants
@@ -123,6 +128,7 @@ impl<'a, T: Sized> IntoIterator for &'a PriorityContainer<T> {
 }
 
 impl<T: Sized> Index<Priority> for PriorityContainer<T> {
+    /// Alias for `T` used to represent output.
     type Output = T;
 
     /// Returns the value stored for the requested priority.

@@ -65,30 +65,41 @@ use crate::unicast::link::TransportLinkUnicastDirection;
 /// Maximum number of messages sent in a batch.
 type OpenError = (zenoh_result::Error, Option<u8>);
 
+/// Data for state transport operations, including batch size and resolution.
 struct StateTransport {
     /// Maximum number of messages sent in a batch.
     batch_size: BatchSize,
 
     /// Sequence-number resolution.
     resolution: Resolution,
+    /// ext qos value tracked by this type.
     ext_qos: ext::qos::StateOpen,
+    /// ext mlink value tracked by this type.
     #[cfg(feature = "transport_multilink")]
     ext_mlink: ext::multilink::StateOpen,
+    /// ext shm value tracked by this type.
     #[cfg(feature = "shared-memory")]
     ext_shm: ext::shm::auth::StateOpen,
+    /// Acceptance state for the negotiated low-latency transport extension.
     ext_lowlatency: ext::lowlatency::StateOpen,
+    /// ext patch value tracked by this type.
     ext_patch: ext::patch::StateOpen,
+    /// ext region name value tracked by this type.
     ext_region_name: ext::region_name::StateOpen,
 }
 
+/// Data for state link operations, including ext auth and ext compression.
 #[cfg(any(feature = "transport_auth", feature = "transport_compression"))]
 struct StateLink {
+    /// ext auth value tracked by this type.
     #[cfg(feature = "transport_auth")]
     ext_auth: ext::auth::StateOpen,
+    /// ext compression value tracked by this type.
     #[cfg(feature = "transport_compression")]
     ext_compression: ext::compression::StateOpen,
 }
 
+/// State for state operations that tracks transport and link.
 struct State {
     /// Transport value.
     transport: StateTransport,
@@ -140,6 +151,7 @@ struct SendOpenSynIn {
     other_cookie: ZSlice,
 }
 
+/// Data for send open syn out operations, including mine initial sn.
 struct SendOpenSynOut {
     /// Initial sequence number advertised by the local peer.
     mine_initial_sn: TransportSn,
@@ -160,7 +172,9 @@ struct RecvOpenAckOut {
 
 // FSM
 struct OpenLink<'a> {
+    /// ext qos value tracked by this type.
     ext_qos: ext::qos::QoSFsm<'a>,
+    /// ext mlink value tracked by this type.
     #[cfg(feature = "transport_multilink")]
     ext_mlink: ext::multilink::MultiLinkFsm<'a>,
     #[cfg(feature = "shared-memory")]
@@ -168,12 +182,17 @@ struct OpenLink<'a> {
     /// Optional ext shm used by open link; `None` means the value is not configured or
     /// unavailable.
     ext_shm: Option<ext::shm::auth::ShmFsm<'a>>,
+    /// ext auth value tracked by this type.
     #[cfg(feature = "transport_auth")]
     ext_auth: ext::auth::AuthFsm<'a>,
+    /// Acceptance state for the negotiated low-latency transport extension.
     ext_lowlatency: ext::lowlatency::LowLatencyFsm<'a>,
+    /// ext compression value tracked by this type.
     #[cfg(feature = "transport_compression")]
     ext_compression: ext::compression::CompressionFsm<'a>,
+    /// ext patch value tracked by this type.
     ext_patch: ext::patch::PatchFsm<'a>,
+    /// ext region name value tracked by this type.
     ext_region_name: ext::region_name::RegionNameFsm,
     // TODO(regions): move this into `ext::region::RegionFsm` (?)
     /// Optional ext remote bound used by open link; `None` means the value is not configured or
@@ -183,14 +202,27 @@ struct OpenLink<'a> {
 
 #[async_trait]
 impl<'a, 'b: 'a> OpenFsm for &'a mut OpenLink<'b> {
+    /// Alias for `OpenError` used to represent error.
     type Error = OpenError;
+    /// Alias for `(&'a mut TransportLinkUnicast, &'a mut State)` used to represent recv init ack
+    /// in.
     type RecvInitAckIn = (&'a mut TransportLinkUnicast, &'a mut State);
+    /// Alias for `RecvInitAckOut` used to represent recv init ack out.
     type RecvInitAckOut = RecvInitAckOut;
+    /// Alias for `(&'a mut TransportLinkUnicast, &'a mut State)` used to represent recv open ack
+    /// in.
     type RecvOpenAckIn = (&'a mut TransportLinkUnicast, &'a mut State);
+    /// Alias for `RecvOpenAckOut` used to represent recv open ack out.
     type RecvOpenAckOut = RecvOpenAckOut;
+    /// Alias for `(&'a mut TransportLinkUnicast, &'a mut State, SendInitSynIn)` used to represent
+    /// send init syn in.
     type SendInitSynIn = (&'a mut TransportLinkUnicast, &'a mut State, SendInitSynIn);
+    /// Alias for `()` used to represent send init syn out.
     type SendInitSynOut = ();
+    /// Alias for `(&'a mut TransportLinkUnicast, &'a mut State, SendOpenSynIn)` used to represent
+    /// send open syn in.
     type SendOpenSynIn = (&'a mut TransportLinkUnicast, &'a mut State, SendOpenSynIn);
+    /// Alias for `SendOpenSynOut` used to represent send open syn out.
     type SendOpenSynOut = SendOpenSynOut;
 
     /// Builds an InitSyn and its negotiated extensions for the opening peer.

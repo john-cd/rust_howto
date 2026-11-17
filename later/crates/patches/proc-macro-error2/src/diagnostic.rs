@@ -92,6 +92,7 @@ pub trait DiagnosticExt: Sealed {
 }
 
 impl DiagnosticExt for Diagnostic {
+    /// Handles the spanned range behavior for this component.
     fn spanned_range(span_range: SpanRange, level: Level, message: String) -> Self {
         Diagnostic {
             level,
@@ -102,17 +103,20 @@ impl DiagnosticExt for Diagnostic {
         }
     }
 
+    /// Handles the span range error behavior for this component.
     fn span_range_error(mut self, span_range: SpanRange, msg: String) -> Self {
         self.children.push((span_range, msg));
         self
     }
 
+    /// Handles the span range help behavior for this component.
     fn span_range_help(mut self, span_range: SpanRange, msg: String) -> Self {
         self.suggestions
             .push((SuggestionKind::Help, msg, Some(span_range)));
         self
     }
 
+    /// Handles the span range note behavior for this component.
     fn span_range_note(mut self, span_range: SpanRange, msg: String) -> Self {
         self.suggestions
             .push((SuggestionKind::Note, msg, Some(span_range)));
@@ -293,6 +297,7 @@ impl ToTokens for Diagnostic {
             }
         }
 
+        /// Handles the diag to tokens behavior for this component.
         fn diag_to_tokens(
             span_range: SpanRange,
             level: &Level,
@@ -346,10 +351,12 @@ impl ToTokens for Diagnostic {
 pub(crate) enum SuggestionKind {
     /// Note diagnostic emitted by the macro.
     Help,
+    /// Represents the note case of suggestion kind.
     Note,
 }
 
 impl SuggestionKind {
+    /// Returns the name represented by this value.
     fn name(&self) -> &'static str {
         match self {
             SuggestionKind::Note => "note",
@@ -365,6 +372,7 @@ impl From<syn::Error> for Diagnostic {
         use proc_macro2::Delimiter;
         use proc_macro2::TokenTree;
 
+        /// Handles the gut error behavior for this component.
         fn gut_error(ts: &mut impl Iterator<Item = TokenTree>) -> Option<(SpanRange, String)> {
             let start_span = ts.next()?.span();
             ts.next().expect(":1");

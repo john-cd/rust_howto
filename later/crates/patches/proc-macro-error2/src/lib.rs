@@ -401,6 +401,7 @@ impl SpanRange {
 
 /// This traits expands `Result<T, Into<Diagnostic>>` with some handy shortcuts.
 pub trait ResultExt {
+    /// Type of the ok values produced or consumed by this trait.
     type Ok;
 
     /// Behaves like `Result::unwrap`: if self is `Ok` yield the contained value,
@@ -415,6 +416,7 @@ pub trait ResultExt {
 
 /// This traits expands `Option` with some handy shortcuts.
 pub trait OptionExt {
+    /// Type of the some values produced or consumed by this trait.
     type Some;
 
     /// Behaves like `Option::expect`: if self is `Some` yield the contained value,
@@ -433,8 +435,10 @@ pub fn abort_if_dirty() {
 }
 
 impl<T, E: Into<Diagnostic>> ResultExt for Result<T, E> {
+    /// Alias for `T` used to represent ok.
     type Ok = T;
 
+    /// Handles the unwrap or abort behavior for this component.
     fn unwrap_or_abort(self) -> T {
         match self {
             Ok(res) => res,
@@ -442,6 +446,7 @@ impl<T, E: Into<Diagnostic>> ResultExt for Result<T, E> {
         }
     }
 
+    /// Handles the expect or abort behavior for this component.
     fn expect_or_abort(self, message: &str) -> T {
         match self {
             Ok(res) => res,
@@ -455,8 +460,10 @@ impl<T, E: Into<Diagnostic>> ResultExt for Result<T, E> {
 }
 
 impl<T> OptionExt for Option<T> {
+    /// Alias for `T` used to represent some.
     type Some = T;
 
+    /// Handles the expect or abort behavior for this component.
     fn expect_or_abort(self, message: &str) -> T {
         match self {
             Some(res) => res,
@@ -512,6 +519,7 @@ where
     }
 }
 
+/// Handles the abort now behavior for this component.
 fn abort_now() -> ! {
     check_correctness();
     std::panic::panic_any(AbortNow)
@@ -523,6 +531,7 @@ thread_local! {
     static ENTERED_ENTRY_POINT: Cell<usize> = const { Cell::new(0) };
 }
 
+/// Data carried by abort now operations.
 struct AbortNow;
 
 /// Checks the correctness invariants before option is accepted by downstream operations.
@@ -550,29 +559,39 @@ pub mod __export {
 
     /// Specifies the operations implementations provide to proc-macro-error2 callers.
     pub trait SpanAsSpanRange {
+        /// Handles the first arg must either be span or implement to tokens or be span range
+        /// behavior for this component.
         #[allow(non_snake_case)]
         fn FIRST_ARG_MUST_EITHER_BE_Span_OR_IMPLEMENT_ToTokens_OR_BE_SpanRange(&self) -> SpanRange;
     }
 
     /// Specifies the operations implementations provide to proc-macro-error2 callers.
     pub trait Span2AsSpanRange {
+        /// Handles the first arg must either be span or implement to tokens or be span range
+        /// behavior for this component.
         #[allow(non_snake_case)]
         fn FIRST_ARG_MUST_EITHER_BE_Span_OR_IMPLEMENT_ToTokens_OR_BE_SpanRange(&self) -> SpanRange;
     }
 
     /// Specifies the operations implementations provide to proc-macro-error2 callers.
     pub trait ToTokensAsSpanRange {
+        /// Handles the first arg must either be span or implement to tokens or be span range
+        /// behavior for this component.
         #[allow(non_snake_case)]
         fn FIRST_ARG_MUST_EITHER_BE_Span_OR_IMPLEMENT_ToTokens_OR_BE_SpanRange(&self) -> SpanRange;
     }
 
     /// Specifies the operations implementations provide to proc-macro-error2 callers.
     pub trait SpanRangeAsSpanRange {
+        /// Handles the first arg must either be span or implement to tokens or be span range
+        /// behavior for this component.
         #[allow(non_snake_case)]
         fn FIRST_ARG_MUST_EITHER_BE_Span_OR_IMPLEMENT_ToTokens_OR_BE_SpanRange(&self) -> SpanRange;
     }
 
     impl<T: ToTokens> ToTokensAsSpanRange for &T {
+        /// Handles the first arg must either be span or implement to tokens or be span range
+        /// behavior for this component.
         fn FIRST_ARG_MUST_EITHER_BE_Span_OR_IMPLEMENT_ToTokens_OR_BE_SpanRange(&self) -> SpanRange {
             let mut ts = self.to_token_stream().into_iter();
             let first = match ts.next() {
@@ -590,6 +609,8 @@ pub mod __export {
     }
 
     impl Span2AsSpanRange for Span {
+        /// Handles the first arg must either be span or implement to tokens or be span range
+        /// behavior for this component.
         fn FIRST_ARG_MUST_EITHER_BE_Span_OR_IMPLEMENT_ToTokens_OR_BE_SpanRange(&self) -> SpanRange {
             SpanRange {
                 first: *self,
@@ -599,6 +620,8 @@ pub mod __export {
     }
 
     impl SpanAsSpanRange for proc_macro::Span {
+        /// Handles the first arg must either be span or implement to tokens or be span range
+        /// behavior for this component.
         fn FIRST_ARG_MUST_EITHER_BE_Span_OR_IMPLEMENT_ToTokens_OR_BE_SpanRange(&self) -> SpanRange {
             SpanRange {
                 first: (*self).into(),
@@ -608,6 +631,8 @@ pub mod __export {
     }
 
     impl SpanRangeAsSpanRange for SpanRange {
+        /// Handles the first arg must either be span or implement to tokens or be span range
+        /// behavior for this component.
         fn FIRST_ARG_MUST_EITHER_BE_Span_OR_IMPLEMENT_ToTokens_OR_BE_SpanRange(&self) -> SpanRange {
             *self
         }

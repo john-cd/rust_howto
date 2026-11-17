@@ -38,21 +38,26 @@ use crate::TransportPeerEventHandler;
 use crate::unicast::TransportConfigUnicast;
 use crate::unicast::link::TransportLinkUnicast;
 
+/// Names the link error type associated with this interface.
 pub(crate) type LinkError = (
     zenoh_result::Error,
     TransportLinkUnicast,
     Option<TransportLinkUnicast>,
     u8,
 );
+/// Alias for `(zenoh_result::Error, Arc<dyn TransportUnicastTrait>, u8)` used to represent
+/// transport error.
 pub(crate) type TransportError = (zenoh_result::Error, Arc<dyn TransportUnicastTrait>, u8);
 
 /// Defines the outcomes available to the unicast workflow, including link, transport.
 pub(crate) enum InitTransportError {
     /// Link variant of `InitTransportError`.
     Link(Box<LinkError>),
+    /// Represents the transport case of init transport error.
     Transport(TransportError),
 }
 
+/// Names the add link result type associated with this interface.
 pub(crate) type AddLinkResult<'a> = Result<
     (
         Box<dyn FnOnce() + Send + Sync + 'a>,
@@ -62,13 +67,17 @@ pub(crate) type AddLinkResult<'a> = Result<
     ),
     LinkError,
 >;
+/// Alias for `Result<Arc<dyn TransportUnicastTrait>, InitTransportError>` used to represent init
+/// transport result.
 pub(crate) type InitTransportResult = Result<Arc<dyn TransportUnicastTrait>, InitTransportError>;
 
 /// Defines the outcomes available to the unicast workflow, including uninitialized, alive, closed.
 pub(crate) enum TransportStatus {
     /// Alive lifecycle state of the transport.
     Uninitialized,
+    /// Represents the alive case of transport status.
     Alive,
+    /// Represents the closed case of transport status.
     Closed,
 }
 
@@ -85,12 +94,18 @@ pub(crate) trait TransportUnicastTrait: Send + Sync {
     /// **********************************
     fn set_callback(&self, callback: Arc<dyn TransportPeerEventHandler>);
 
+    /// Returns the status stored by or available from this value.
     async fn get_status(&self) -> AsyncMutexGuard<'_, TransportStatus>;
+    /// Returns the zid stored by or available from this value.
     fn get_zid(&self) -> ZenohIdProto;
+    /// Returns the whatami stored by or available from this value.
     fn get_whatami(&self) -> WhatAmI;
+    /// Returns the callback stored by or available from this value.
     fn get_callback(&self) -> Option<Arc<dyn TransportPeerEventHandler>>;
 
+    /// Returns the links stored by or available from this value.
     fn get_links(&self) -> Vec<Link>;
+    /// Returns the auth ids stored by or available from this value.
     fn get_auth_ids(&self) -> super::authentication::TransportAuthId;
 
     /// Reports whether the transport unicast trait meets the shm condition so callers can choose
@@ -105,7 +120,9 @@ pub(crate) trait TransportUnicastTrait: Send + Sync {
     /// Applies the rules used by transport unicast inner to keep transport unicast trait state
     /// valid for its callers.
     fn region_name(&self) -> Option<RegionName>;
+    /// Returns the bound stored by or available from this value.
     fn get_bound(&self) -> Option<Bound>;
+    /// Returns the config stored by or available from this value.
     fn get_config(&self) -> &TransportConfigUnicast;
 
     /// Applies the rules used by transport unicast inner to keep transport unicast trait state
