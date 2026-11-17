@@ -170,6 +170,52 @@
 
 {{#include ../categories/cryptography/cryptography_utilities.incl.md}}
 
+## Database Access
+
+### Message Queues
+
+{{#include ../categories/database/amqp.incl.md}}
+
+### Connection Pools
+
+{{#include ../categories/database/connection_pool.incl.md}}
+
+### Key-Value Stores
+
+{{#include ../categories/database/key_value_stores.incl.md}}
+
+### Microsoft SQL Server
+
+{{#include ../categories/database/mssql.incl.md}}
+
+### MySQL and MariaDB
+
+{{#include ../categories/database/mysql.incl.md}}
+
+### NoSQL
+
+{{#include ../categories/database/nosql.incl.md}}
+
+### Oracle
+
+{{#include ../categories/database/oracle.incl.md}}
+
+### PostgreSQL
+
+{{#include ../categories/database/postgres.incl.md}}
+
+### Query Builders and ORMs
+
+{{#include ../categories/database/query_builders_orms.incl.md}}
+
+### Search
+
+{{#include ../categories/database/search.incl.md}}
+
+### SQLite
+
+{{#include ../categories/database/sqlite.incl.md}}
+
 ## Concurrency
 
 ### Actors

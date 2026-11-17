@@ -5,18 +5,6 @@
 <!-- Ordered migration review and remaining work: MIGRATION.md. -->
 
 
-- [Database Access](categories/database/index.md)
-  - [SQLite](categories/database/sqlite.md)
-  - [Postgres](categories/database/postgres.md)
-  - [MSSQL](categories/database/mssql.md)
-  - [MySQL](categories/database/mysql.md)
-  - [Oracle](categories/database/oracle.md)
-  - [Connection Pools](categories/database/connection_pool.md)
-  - [Query Builders and ORMs](categories/database/query_builders_orms.md)
-  - [NoSQL](categories/database/nosql.md)
-  - [Key-Value Stores](categories/database/key_value_stores.md)
-  - [Search](categories/database/search.md)
-  - [AMQP](categories/database/amqp.md)
 
 - [Database Implementations](categories/database-implementations/index.md)
   - [Databases](categories/database-implementations/databases.md)

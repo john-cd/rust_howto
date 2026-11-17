@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Search
 
@@ -15,12 +15,12 @@ index to run:
 | Elasticsearch | [`elasticsearch`][c~elasticsearch~docs]↗ | General-purpose search through an asynchronous REST API. The example below uses this client. |
 | OpenSearch | [`opensearch`][c~opensearch~docs]↗ | The OpenSearch service and REST API. Use its client rather than assuming Elasticsearch clients and server versions are interchangeable. |
 | [Qdrant][c~qdrant~repo]↗ | [`qdrant-client`][c~qdrant-client~docs]↗ | Vector similarity search over embeddings; the Rust client connects to Qdrant's gRPC endpoint. |
-| Tantivy | [Search engines written in Rust][p~rust-search-engines] | Embed a full-text index in the Rust process instead of running a separate service. |
+| Tantivy | Full-text search library | Embed a full-text index in the Rust process instead of running a separate service. |
 
 These client crates target different services and are not interchangeable
 query builders. The recipe table above lists only examples included on this
-page; see [search engines written in Rust][p~rust-search-engines] for the
-embedded Tantivy example and other engine implementations.
+page. Tantivy is an embedded Rust search engine; Meilisearch, Elasticsearch,
+OpenSearch, and Qdrant are separate services with different query APIs.
 
 ## Connect to Elasticsearch {#elasticsearch}
 
@@ -63,8 +63,6 @@ runs. Start Elasticsearch before running that test explicitly.
 
 ## Related Topics {#related-topics .skip}
 
-- [Search engines written in Rust][p~rust-search-engines] — embedded libraries
-  and server implementations such as Tantivy and Meilisearch.
 - [Database index][p~database] — the database chapters and search-related
   integrations.
 - [PostgreSQL][p~postgres] — use its built-in

@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Key-value Stores
 
@@ -8,16 +8,15 @@
 
 {{#badges heed data-structures="Data structures" database="Database interfaces"}}{{hi:Database}}{{hi:LMDB}}{{hi:Storage}}{{hi:Typed}}
 
-[`heed`][c~heed~docs]↗{{hi:heed}} is a fully-typed [`LMDB`][wikipedia~LMDB]↗{{hi:LMDB}} wrapper. `LMDB` (Lightning Memory-Mapped Database) is a fast and efficient embedded [database][p~database] library that provides key/value storage.
-[`heed`][c~heed~docs]↗{{hi:heed}} is a fully-typed [`LMDB`][wikipedia~LMDB]↗{{hi:LMDB}} wrapper. `LMDB` (Lightning Memory-Mapped Database) is a fast and efficient embedded [database][p~database] library that provides key/value storage.
+[`heed`][c~heed~docs]↗{{hi:heed}} is a fully typed wrapper for [`LMDB`][wikipedia~LMDB]↗{{hi:LMDB}}, an embedded key-value database with memory-mapped storage and ACID transactions.
 Use [`heed`][c~heed~docs]↗{{hi:heed}} for:
 
 - [Caching][p~caching]: App data, web pages or images.
-- [Embedded][p~embedded] [databases][p~databases] for mobile apps, IoT devices, desktop applications.
+- Embedded databases for mobile apps, IoT devices, and desktop applications.
 - Indexing: Local [search][p~search] index or metadata storage.
 - Game state persistence, [configuration][p~configuration] storage.
 
-Advantages include speed, minimal memory footprint, [embedded][p~embedded] use, memory mapping, and ACID (Atomicity, Consistency, Isolation, Durability) properties. It is not ideal for huge datasets, complex queries, or network access.
+Advantages include speed, minimal memory footprint, embedded use, memory mapping, and ACID (Atomicity, Consistency, Isolation, Durability) properties. It is not ideal for huge datasets, complex queries, or network access.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/kv/heed.rs:example}}
@@ -29,7 +28,7 @@ Advantages include speed, minimal memory footprint, [embedded][p~embedded] use, 
 
 [`rocksdb`][c~rocksdb~docs]↗{{hi:rocksdb}} is a Rust wrapper for Facebook's `RocksDB` embeddable database. [`RocksDB`][c~rocksdb~docs]↗{{hi:RocksDB}} is a high performance database for key-value data. Use [`rocksdb`][c~rocksdb~docs]↗{{hi:rocksdb}}:
 
-- As the storage engine for other [databases][p~databases] (MySQL, MongoDB, TiKV...).
+- As the storage engine for other databases (including MySQL, MongoDB, and TiKV).
 - For [caching][p~caching].
 - To handle time-series data, indexes for [search][p~search] engines, persistent message queues.
 
@@ -43,8 +42,8 @@ Advantages include speed, minimal memory footprint, [embedded][p~embedded] use, 
 
 ## Related Topics {#related-topics .skip}
 
-- [[nosql | NoSQL and Friends]].
-- [[connection_pool | Connection Pool]].
+- [NoSQL and Friends](nosql.md).
+- [Connection Pools](connection_pool.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

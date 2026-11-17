@@ -64,6 +64,7 @@ fn main() -> anyhow::Result<()> {
 /// Verifies command-line selection and execution of the documented examples.
 #[cfg(test)]
 mod tests {
+    #[cfg(any(feature = "mongodb", feature = "redis"))]
     use super::*;
 
     /// Parses the MongoDB subcommand when its feature is enabled.
