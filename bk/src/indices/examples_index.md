@@ -900,6 +900,16 @@
 
 {{#include ../categories/template-engine/tinytemplate.incl.md}}
 
+## Text Editors
+
+### IDEs and Text Editors
+
+{{#include ../categories/text-editors/ides.incl.md}}
+
+### Language Server Protocol
+
+{{#include ../categories/text-editors/language_server_protocol.incl.md}}
+
 ## Code Organization
 
 ### Clippy

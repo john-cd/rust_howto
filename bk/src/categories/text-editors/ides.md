@@ -62,10 +62,10 @@
 
 ## Related Topics {#related-topics .skip}
 
-- [Development Tools - Debugging](../../../src/categories/development-tools_debugging/index.md).
-- [[development_environment_setup | Development Environment Setup]].
-- [[syntax_highlighting | Syntax Highlighting]].
-- [[cargo | Cargo]].
+- [Debugging and Observability](../development-tools_debugging/index.md).
+- [Development Environment Setup](../../appendices/contributing/development_environment_setup.md).
+- [Syntax Highlighting](../text-processing/syntax_highlighting.md).
+- [Cargo](../development-tools/cargo/cargo.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
