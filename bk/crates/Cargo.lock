@@ -6234,7 +6234,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "base64 0.23.1",
- "bincode 2.0.1",
+ "bincode 1.3.3",
  "bytemuck",
  "byteorder",
  "calamine",
