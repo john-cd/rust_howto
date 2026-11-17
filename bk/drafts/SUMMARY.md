@@ -158,11 +158,6 @@
   - [Email parsing](categories/email/email_parsing.md)
   - [Reading emails](categories/email/read_emails.md)
 
-- [Encoding and Serialization](categories/encoding/index.md)
-  - [Structured Data](categories/encoding/complex_encoding.md)
-  - [Typecasting](categories/encoding/typecasts.md)
-  - [Binary Encoders](categories/encoding/_binary_encoders.md)
-  - [Binary Encoders, No External Schema](categories/encoding/no_external_schema.md)
 
 - [Error Handling](categories/rust-patterns/error_handling/error_handling.md)
   - [Error Customization](categories/rust-patterns/error_handling/error_customization.md)

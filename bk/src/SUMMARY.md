@@ -106,6 +106,10 @@
   - [CSV Processing](categories/encoding/csv.md)
   - [Excel Spreadsheets](categories/encoding/excel.md)
   - [Serialization with `serde`](categories/encoding/serde.md)
+  - [Structured Data](categories/encoding/complex_encoding.md)
+  - [Typecasts and Byte Layout](categories/encoding/typecasts.md)
+  - [Binary Encoders](categories/encoding/binary_encoders.md)
+  - [Binary Encoders Without External Schemas](categories/encoding/no_external_schema.md)
 
 - [File System](categories/filesystem/index.md)
   - [Paths](categories/filesystem/paths.md)

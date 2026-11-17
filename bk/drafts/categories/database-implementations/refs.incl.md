@@ -26,7 +26,7 @@
 [p~database]: ../database/index.md
 [p~message-queues]: ../database/amqp.md
 [p~embedded]: # "../embedded/index.md"
-[p~encoding]: ../encoding/index.md
+[p~encoding]: ../../../src/categories/encoding/index.md
 [p~iterators]: ../../language/iterators.md
 [p~search]: ../database/search.md
 [p~sqlite]: ../database/sqlite.md

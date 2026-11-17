@@ -83,7 +83,6 @@ For [[strings | Strings]], use:
 - [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}} for finding occurrences of many patterns at once,
 - [`strsim`][c~strsim~docs]↗{{hi:strsim}} for string similarity.
 
-See also [String Concat](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_concat.md), [String Encoding](../encoding/string_encoding.md), [String Parsing](../text-processing/string_parsing.md), and [Text Processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md).
 
 ### Cryptography
 
@@ -126,6 +125,7 @@ See [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categ
 
 - [`rust-algorithms`][rust-algorithms~repo]↗: Common data structures and algorithms in Rust.
 
+See also [String Concatenation](../text-processing/string_concat.md), [String Encoding](../encoding/string_encoding.md), [String Parsing](../text-processing/string_parsing.md), and [Text Processing](../text-processing/index.md).
 [Compression](../compression/index.md), [cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), [[data-structures | data structures]], [[mathematics | mathematics]], [scientific algorithms](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [search](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/search.md), [[strings | strings]], and [text processing](../text-processing/index.md) are discussed elsewhere but are briefly mentioned below.
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
