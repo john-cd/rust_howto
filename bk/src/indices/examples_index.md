@@ -74,6 +74,52 @@
 
 {{#include ../categories/compression/tar.incl.md}}
 
+## Concurrency
+
+### Actors
+
+{{#include ../categories/concurrency/_actors.incl.md}}
+
+### Atomics
+
+{{#include ../categories/concurrency/atomics.incl.md}}
+
+### Concurrent Data Structures
+
+{{#include ../categories/concurrency/concurrent_data_structures.incl.md}}
+
+### Crossbeam
+
+{{#include ../categories/concurrency/crossbeam.incl.md}}
+
+### Data Parallelism
+
+{{#include ../categories/concurrency/data_parallelism.incl.md}}
+
+### Explicit Threads
+
+{{#include ../categories/concurrency/explicit_threads.incl.md}}
+
+### Message Passing
+
+{{#include ../categories/concurrency/message_passing.incl.md}}
+
+### Shared State
+
+{{#include ../categories/concurrency/shared_state.incl.md}}
+
+### Send and Sync
+
+{{#include ../categories/concurrency/send_sync.incl.md}}
+
+### Thread Pools
+
+{{#include ../categories/concurrency/threadpool.incl.md}}
+
+### Model-Checking with Loom
+
+{{#include ../categories/concurrency/loom.incl.md}}
+
 ## Data Structures
 
 ### B-Trees
@@ -632,12 +678,6 @@
 ## OpenAPI and JSON Schema
 
 {{#include ../categories/web-programming_http-server/openapi.incl.md}}
-
-## Atomics and Loom
-
-{{#include ../categories/concurrency/atomics.incl.md}}
-
-{{#include ../categories/concurrency/loom.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

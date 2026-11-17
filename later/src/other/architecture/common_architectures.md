@@ -47,7 +47,7 @@ Actors encapsulate state, behavior, and a mailbox. [Actors][p~actors] communicat
 
 An actor can own its state and process messages sequentially, avoiding locks around that state. Shared resources outside the actor may still require synchronization. Use actors for independent, stateful entities (sessions, devices, game objects) that need isolation and supervision. Libraries like [`actix`][c~actix~docs]↗{{hi:actix}} support actor-based designs.
 
-See the Actors<!-- Cross-book topic: bk/drafts/categories/concurrency/_actors.md; not included in this preview. --> chapter for more details.
+See the Actors<!-- Cross-book topic: bk/src/categories/concurrency/_actors.md; not included in this preview. --> chapter for more details.
 
 ## Command Query Responsibility Segregation (CQRS) {#cqrs}
 
@@ -65,7 +65,7 @@ Pipelines pass data through ordered stages that each transform or filter the inp
 {{#include ../../../crates/other/examples/architecture/pipeline.rs:example}}
 ```
 
-See Data Parallelism<!-- Cross-book topic: bk/drafts/categories/concurrency/data_parallelism.md; not included in this preview. -->, [Data Processing](../data-processing/index.md).
+See Data Parallelism<!-- Cross-book topic: bk/src/categories/concurrency/data_parallelism.md; not included in this preview. -->, [Data Processing](../data-processing/index.md).
 
 ## Event Sourcing {#event-sourcing}
 
@@ -86,7 +86,7 @@ An entity-component system (ECS) represents objects as entities with components,
 ## Related Topics {#related-topics .skip}
 
 - [Cloud](../cloud/index.md).
-- Concurrency<!-- Cross-book topic: bk/drafts/categories/concurrency/index.md; not included in this preview. -->.
+- Concurrency<!-- Cross-book topic: bk/src/categories/concurrency/index.md; not included in this preview. -->.
 - [Data Processing](../data-processing/index.md).
 - Web Programming<!-- Cross-book topic: bk/drafts/categories/web-programming/index.md; not included in this preview. -->.
 

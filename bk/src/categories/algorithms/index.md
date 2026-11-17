@@ -48,7 +48,7 @@ For common [[data-structures | data structures]] ([`Vec`][c~std::vec::Vec~docs]â
 - `indexmap` for [maps](../data-structures/other_maps.md) that keep track of insertion order,
 - `arrayvec`, `smallvec`, `tinyvec` and `heapless` for [[stack-allocated | stack-allocated data structures]],
 - [`petgraph`][c~petgraph~docs]â†—{{hi:petgraph}} for [[graphs | graphs]],
-- `dashmap` and `papaya` for [concurrent data structures](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/concurrent_data_structures.md),
+- `dashmap` and `papaya` for [concurrent data structures](../concurrency/concurrent_data_structures.md),
 - `parking_lot` for mutexes,
 - `crossbeam-channel`, `flume`, `tokio`, and `postage` for channels.
 
@@ -56,7 +56,7 @@ Worth a mention: `fst` provides fast, memory-efficient, immutable set and map da
 
 See [[vectors | vector]], [[hashmaps | hash maps]], [other maps](../data-structures/other_maps.md), and [[binary_heaps | Binary Heap]] within the [[data-structures | Data Structures]] section for more details.
 
-See [[data-structures | Data Structures]] and [Concurrent Data Structures](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/concurrent_data_structures.md).
+See [[data-structures | Data Structures]] and [Concurrent Data Structures](../concurrency/concurrent_data_structures.md).
 
 ### Recursive Algorithms
 

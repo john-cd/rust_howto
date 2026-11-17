@@ -50,7 +50,7 @@
 [sophus-rs~repo]: https://github.com/sophus-vision/sophus-rs
 [p~classical-machine-learning]: ../science/classical_machine_learning.md
 [p~computer-vision]: ../computer-vision/index.md
-[p~concurrency]: ../../../src/categories/concurrency/index.md
+[p~concurrency]: https://john-cd.com/rust_howto/categories/concurrency/index.html
 [p~deep-learning]: ../science/deep_learning.md
 [p~embedded]: ../embedded/index.md
 [p~graphics]: ../graphics/index.md
