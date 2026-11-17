@@ -352,6 +352,20 @@
 
 {{#include ../categories/date-and-time/time_crate.incl.md}}
 
+## Email
+
+### Email Parsing
+
+{{#include ../categories/email/email_parsing.incl.md}}
+
+### Read Emails
+
+{{#include ../categories/email/read_emails.incl.md}}
+
+### Send Emails
+
+{{#include ../categories/email/send_emails.incl.md}}
+
 ## Development Tools
 
 ### Cargo

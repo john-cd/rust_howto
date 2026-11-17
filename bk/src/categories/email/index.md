@@ -6,7 +6,7 @@
 
 Crates to help with sending, receiving, formatting, and parsing email.
 
-Sending, mailbox access, and message parsing are separate tasks. [`lettre`][c~lettre~docs]↗{{hi:lettre}} builds messages and sends them through a configured transport such as an SMTP relay. [`imap`][c~imap~docs]↗{{hi:imap}} connects to an existing mailbox to search and fetch messages. Parse the returned RFC 5322/MIME bytes with a message parser; the [`mime`][c~mime~docs]↗{{hi:mime}} crate represents media types but does not parse complete messages.
+Sending, mailbox access, and message parsing are separate tasks. [`lettre`][c~lettre~docs]↗{{hi:lettre}} builds messages and sends them through a configured transport such as an SMTP relay. [`async-imap`][c~async-imap~docs]↗{{hi:async-imap}} connects asynchronously to an existing mailbox to search and fetch messages. Parse the returned RFC 5322/MIME bytes with a message parser; the [`mime`][c~mime~docs]↗{{hi:mime}} crate represents media types but does not parse complete messages.
 
 ## Send Emails
 
@@ -26,7 +26,7 @@ See [Email Parsing](email_parsing.md) when you already have raw message bytes. I
 
 ## Read Emails
 
-[![imap][c~imap~docs~badge]][c~imap~docs]{{hi:imap}} [![mail-parser][c~mail-parser~docs~badge]][c~mail-parser~docs]{{hi:mail-parser}}
+[![async-imap][c~async-imap~docs~badge]][c~async-imap~docs]{{hi:async-imap}} [![mail-parser][c~mail-parser~docs~badge]][c~mail-parser~docs]{{hi:mail-parser}}
 
 See [Read Emails](read_emails.md) to fetch messages from a mailbox over IMAP, then parse the fetched content. The example needs a reachable server and caller-provided credentials, so it is not run as part of the book.
 
@@ -34,9 +34,9 @@ See [Read Emails](read_emails.md) to fetch messages from a mailbox over IMAP, th
 
 ## Related Topics
 
-- [Network Programming][p~network-programming] covers transport and protocol clients.
-- [Encoding and Serialization][p~encoding] covers character sets and serialized data.
-- [Web Programming][p~web-programming] covers related HTML and web content handling.
+- [Asynchronous Programming](../asynchronous/index.md) covers async protocol clients.
+- [Encoding and Serialization](../encoding/index.md) covers character sets and serialized data.
+- [Web Programming](../web-programming/index.md) covers HTML content handling.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
