@@ -220,5 +220,14 @@
 
 {{#include refs.incl.md}}
 
+- [Parser Implementations](categories/parser-implementations/index.md)
+  - [HTML and CSS Parsing](categories/parser-implementations/html.md)
+  - [INI Parsing](categories/parser-implementations/ini.md)
+  - [JSON Parsing](categories/parser-implementations/json.md)
+  - [Markdown](categories/parser-implementations/markdown.md)
+  - [TOML](categories/parser-implementations/toml.md)
+  - [XML Parsing](categories/parser-implementations/xml.md)
+  - [YAML Parsing](categories/parser-implementations/yaml.md)
+  - [General Programming Language Parsing](categories/parser-implementations/programming_languages.md)
 <div class="hidden">
 </div>

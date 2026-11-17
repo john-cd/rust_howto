@@ -59,7 +59,7 @@
 [p~other-http-frameworks]: other_frameworks.md
 [p~performance]: ../development-tools_cargo-plugins/performance.md
 [p~server]: ../network-programming/server.md
-[p~toml]: ../parser-implementations/toml.md
+[p~toml]: ../../../src/categories/parser-implementations/toml.md
 [p~tracing]: ../development-tools_debugging/tracing.md
 [p~web-servers]: index.md
 [rust-on-nails~repo]: https://github.com/purton-tech/rust-on-nails

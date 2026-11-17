@@ -13,5 +13,5 @@
 [p~linux]: # "../os_linux-apis/linux.md"
 [p~requests]: ../web-programming_http-client/requests.md
 [p~server]: server.md
-[p~toml]: ../parser-implementations/toml.md
+[p~toml]: ../../../src/categories/parser-implementations/toml.md
 [p~written-in-rust]: # "../../other/written-in-rust/index.md"
