@@ -6,8 +6,8 @@
 //! Add to your `Cargo.toml`:
 //! ```toml
 //! [target.'cfg(not(target_env = "msvc"))'.dependencies]
-//! tikv-jemallocator = "0.6"
-//! tikv-jemalloc-ctl = { version = "0.6.0", features = [ "stats", "use_std" ] } # optional - for introspection.
+//! tikv-jemallocator = "0.7.0"
+//! tikv-jemalloc-ctl = { version = "0.7.0", features = ["stats", "use_std"] } # optional, for introspection.
 //! ```
 
 /// Uses `jemalloc` as the global allocator.

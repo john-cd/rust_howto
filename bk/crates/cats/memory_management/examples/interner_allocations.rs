@@ -107,12 +107,12 @@ fn run() {
     example();
 }
 
-/// allocates and that repeated lookups do not.
+/// Verifies that a first insertion allocates and repeated lookups do not.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// allocates and that repeated lookups do not.
+    /// Verifies that a first insertion allocates and repeated lookups do not.
     #[test]
     fn test_main_measures_allocations() {
         main();

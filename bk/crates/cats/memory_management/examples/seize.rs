@@ -20,7 +20,6 @@
 //! seize = "0.5"
 //! ```
 
-use std::sync::Arc;
 use std::sync::atomic::AtomicPtr;
 use std::sync::atomic::Ordering;
 
@@ -36,7 +35,7 @@ fn main() {
 fn example() {
     // A `Collector` manages the access and retirement of concurrent objects.
     // It is typically stored alongside the data structure it protects.
-    let collector = Arc::new(Collector::new());
+    let collector = Collector::new();
 
     // Box a value and obtain a raw pointer that will be managed by `seize`.
     // `Box::into_raw` transfers ownership out of the `Box` without dropping
@@ -45,41 +44,32 @@ fn example() {
     let ptr: *mut i32 = Box::into_raw(Box::new(100_i32));
 
     // Store the pointer in an atomic so it can be shared across threads.
-    let shared = Arc::new(AtomicPtr::new(ptr));
+    let shared = AtomicPtr::new(ptr);
 
-    // --- Simulated reader ---
-    {
-        // `enter` marks the current thread as active and returns a guard.
-        // While this guard is live, no managed object can be reclaimed.
-        let guard = collector.enter();
+    // `enter` marks the current thread as active and returns a guard. While
+    // this guard is live, the collector will not reclaim protected objects.
+    let guard = collector.enter();
 
-        // `guard.protect` performs a safe atomic load: the loaded pointer
-        // is guaranteed to remain valid for the lifetime of `guard`.
-        // `Acquire` pairs with the `Release` store done by the writing
-        // thread, ensuring all prior writes to the pointed-to value are
-        // visible to this thread.
-        let raw = guard.protect(&shared, Ordering::Acquire);
-
-        if !raw.is_null() {
-            // Safety: `raw` is non-null and protected by `guard`.
-            let value: i32 = unsafe { *raw };
-            println!("Read value: {value}");
-        }
-
-        // `guard` is dropped here; the thread is marked inactive.
+    // `guard.protect` loads the pointer and keeps it valid for the guard's
+    // lifetime. `Acquire` pairs with a writer's release operation.
+    let raw = guard.protect(&shared, Ordering::Acquire);
+    if !raw.is_null() {
+        // SAFETY: `raw` is non-null and protected by `guard`.
+        let value: i32 = unsafe { *raw };
+        println!("Read value: {value}");
     }
 
-    // --- Reclamation ---
-    // After all guards that could have seen this pointer are dropped,
-    // retire it so the collector can free the memory when it is safe.
-    //
-    // `seize::reclaim::boxed` calls `Box::from_raw` and drops the original
-    // `T`, so any destructor runs at reclamation time.
-    //
-    // Safety: `ptr` is no longer accessible to any other thread.
-    unsafe {
-        collector.retire(ptr, seize::reclaim::boxed::<i32>);
-    }
+    // Unpublish the pointer before retirement. A concurrent data structure
+    // must make every reader use the same protection protocol.
+    let retired = shared.swap(std::ptr::null_mut(), Ordering::AcqRel);
+    assert_eq!(retired, ptr);
+
+    drop(guard);
+
+    // `reclaim::boxed` reconstructs the original Box and drops its `T` when
+    // no active guard can still access the pointer.
+    // SAFETY: the pointer is no longer published and this example owns it.
+    unsafe { collector.retire(retired, seize::reclaim::boxed::<i32>) };
 
     println!("Value retired; memory will be reclaimed by the collector.");
 }
@@ -123,14 +113,15 @@ mod tests {
         let collector = Collector::new();
         let ptr = Box::into_raw(Box::new(Tracked(5)));
         let shared = AtomicPtr::new(ptr);
-        {
-            let guard = collector.enter();
-            let raw = guard.protect(&shared, Ordering::Acquire);
-            // SAFETY: `raw` is non-null and protected by `guard`.
-            assert_eq!(unsafe { (*raw).0 }, 5);
-        }
-        // SAFETY: no other thread can reach `ptr`.
-        unsafe { collector.retire(ptr, seize::reclaim::boxed::<Tracked>) };
+        let guard = collector.enter();
+        let raw = guard.protect(&shared, Ordering::Acquire);
+        // SAFETY: `raw` is non-null and protected by `guard`.
+        assert_eq!(unsafe { (*raw).0 }, 5);
+        let retired = shared.swap(std::ptr::null_mut(), Ordering::AcqRel);
+        assert_eq!(retired, ptr);
+        drop(guard);
+        // SAFETY: the pointer is no longer published and this test owns it.
+        unsafe { collector.retire(retired, seize::reclaim::boxed::<Tracked>) };
         drop(collector);
         assert_eq!(DROPPED.load(Ordering::SeqCst), 1);
     }
