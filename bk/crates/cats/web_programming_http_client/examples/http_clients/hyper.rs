@@ -101,6 +101,7 @@ mod tests {
 
     /// Requires a live network service to run the example.
     #[test]
+    #[ignore = "needs network"]
     fn require_network() -> anyhow::Result<()> {
         main()?;
         Ok(())

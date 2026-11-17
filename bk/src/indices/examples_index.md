@@ -1022,6 +1022,18 @@
 
 {{#include ../categories/web-programming/url.incl.md}}
 
+### HTTP Clients
+
+{{#include ../categories/web-programming_http-client/http_clients.incl.md}}
+
+{{#include ../categories/web-programming_http-client/requests.incl.md}}
+
+{{#include ../categories/web-programming_http-client/apis.incl.md}}
+
+{{#include ../categories/web-programming_http-client/rate_limiting_and_retries.incl.md}}
+
+{{#include ../categories/web-programming_http-client/download.incl.md}}
+
 ## WebSockets
 
 {{#include ../categories/web-programming_websocket/websocket.incl.md}}

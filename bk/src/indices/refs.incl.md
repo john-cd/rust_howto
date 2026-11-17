@@ -1,6 +1,22 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
 [c~opentelemetry-http~docs]: https://docs.rs/opentelemetry-http
+[ex~web-programming_http-client~check-if-an-api-resource-exists]: ../categories/web-programming_http-client/apis.md#check-if-an-api-resource-exists
+[ex~web-programming_http-client~consume-a-paginated-restful-api]: ../categories/web-programming_http-client/apis.md#consume-a-paginated-restful-api
+[ex~web-programming_http-client~create-and-delete-gist-with~repo-api]: ../categories/web-programming_http-client/apis.md#create-and-delete-gist-with~repo-api
+[ex~web-programming_http-client~custom-headers-and-url-parameters]: ../categories/web-programming_http-client/requests.md#custom-headers-and-url-parameters
+[ex~web-programming_http-client~download]: ../categories/web-programming_http-client/download.md#download
+[ex~web-programming_http-client~handle-a-rate-limited-api]: ../categories/web-programming_http-client/apis.md#handle-a-rate-limited-api
+[ex~web-programming_http-client~hyper]: ../categories/web-programming_http-client/http_clients.md#hyper
+[ex~web-programming_http-client~make-a-http-get-request]: ../categories/web-programming_http-client/requests.md#make-a-http-get-request
+[ex~web-programming_http-client~partial-download-with-http-range-headers]: ../categories/web-programming_http-client/download.md#partial-download-with-http-range-headers
+[ex~web-programming_http-client~post-a-file-with-reqwest]: ../categories/web-programming_http-client/download.md#post-a-file-with-reqwest
+[ex~web-programming_http-client~query-the~repo-api]: ../categories/web-programming_http-client/apis.md#query-the~repo-api
+[ex~web-programming_http-client~rate-limit]: ../categories/web-programming_http-client/rate_limiting_and_retries.md#rate-limit
+[ex~web-programming_http-client~reqwest]: ../categories/web-programming_http-client/http_clients.md#reqwest
+[ex~web-programming_http-client~retry]: ../categories/web-programming_http-client/rate_limiting_and_retries.md#retry
+[ex~web-programming_http-client~retry-after]: ../categories/web-programming_http-client/rate_limiting_and_retries.md#retry-after
+[ex~web-programming_http-client~ureq]: ../categories/web-programming_http-client/http_clients.md#ureq
 [ex~algorithms~blake3]: ../categories/algorithms/hashing.md#blake3
 [ex~algorithms~create-random-passwords-from-a-set-of-user-defined-characters]: ../categories/algorithms/random_value_generation.md#create-random-passwords-from-a-set-of-user-defined-characters
 [ex~algorithms~cryptographic-algorithms]: ../categories/algorithms/hashing.md#cryptographic-algorithms

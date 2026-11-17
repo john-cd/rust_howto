@@ -14,7 +14,7 @@ For a single request, the top-level `reqwest::get` and `reqwest::blocking::get` 
 
 ### GET Requests
 
-The published [local HTTP client recipe](../../../src/categories/web-programming_http-client/offline_http_client.md) owns the runnable async GET workflow. Use the blocking API in synchronous code, outside async runtime workers.
+For a complete async GET, see [Make an HTTP Request](requests.md#make-a-http-get-request). Use the blocking API in synchronous code, outside async runtime workers.
 
 ## `ureq` {#ureq}
 
@@ -42,10 +42,9 @@ The published [local HTTP client recipe](../../../src/categories/web-programming
 
 ## Related Topics {#related-topics .skip}
 
-- [[asynchronous | Asynchronous Programming]] for async runtimes and I/O.
-- [[network-programming | Network Programming]] for TCP and lower-level connections.
-- [[web-programming_http-server | HTTP Servers]] for server-side Hyper, Axum, and Actix Web examples.
-- [Hyper server implementation](../web-programming_http-server/_hyper.md#hyper) for the matching server-side connection example.
+- [Asynchronous Programming](../asynchronous/index.md) for async runtimes and I/O.
+- [HTTP Servers](../web-programming_http-server/json_patch.md) for server-side Hyper, Axum, and Actix Web examples.
+- [WebSockets](../web-programming_websocket/index.md) for long-lived, bidirectional connections.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

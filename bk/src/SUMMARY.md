@@ -266,6 +266,12 @@
   - [Media Types](categories/web-programming/mime.md)
   - [Sanitize HTML](categories/web-programming/html_sanitization.md)
   - [Uniform Resource Locator](categories/web-programming/url.md)
+  - [HTTP Clients](categories/web-programming_http-client/index.md)
+    - [HTTP Client Libraries](categories/web-programming_http-client/http_clients.md)
+    - [Make HTTP Requests](categories/web-programming_http-client/requests.md)
+    - [Call an API](categories/web-programming_http-client/apis.md)
+    - [Rate Limiting and Retries](categories/web-programming_http-client/rate_limiting_and_retries.md)
+    - [Download and Upload](categories/web-programming_http-client/download.md)
 
 - [WebSockets](categories/web-programming_websocket/index.md)
   - [Echo Client and Server](categories/web-programming_websocket/websocket.md)

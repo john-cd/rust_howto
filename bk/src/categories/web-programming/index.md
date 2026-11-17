@@ -13,7 +13,7 @@ Use the [local HTTP client example](../web-programming_http-client/offline_http_
 | Goal | Start here |
 | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Build an HTTP server or REST API | [HTTP server example](../web-programming_http-server/json_patch.md); it shows request handling with Axum. |
-| Send requests to an HTTP service | [Make an HTTP Request Against a Local Service](../web-programming_http-client/offline_http_client.md), which uses a loopback fixture. |
+| Send requests to an HTTP service | [HTTP Clients](../web-programming_http-client/index.md) covers client selection, API calls, retries, and file transfers; [Make an HTTP Request Against a Local Service](../web-programming_http-client/offline_http_client.md) is a small loopback example. |
 | Implement a GraphQL endpoint | [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}}. |
 | Implement a gRPC service | [`tonic`][c~tonic~docs]↗{{hi:tonic}}. |
 | Use TCP or UDP without HTTP | Choose a networking crate such as Tokio; transport protocols are separate from HTTP. |
@@ -25,7 +25,7 @@ Use the [local HTTP client example](../web-programming_http-client/offline_http_
 | Task | Crates |
 | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Full-stack web frameworks (routing, middleware, templating) | [`axum`][c~axum~docs]↗{{hi:axum}} (built on [`tower`][c~tower~docs]↗{{hi:tower}} and [`hyper`][c~hyper~docs]↗{{hi:hyper}}), [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}} (performance), [`rocket`][c~rocket~docs]↗{{hi:rocket}} (declarative), [`warp`][c~warp~docs]↗{{hi:warp}} (lightweight) |
-| HTTP clients | [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, [`isahc`][c~isahc~docs]↗{{hi:isahc}} |
+| HTTP clients | [Client guide](../web-programming_http-client/index.md): [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, [`ureq`][c~ureq~docs]↗{{hi:ureq}}, and [`hyper`][c~hyper~docs]↗{{hi:hyper}} |
 | Templating | [`minijinja`][c~minijinja~docs]↗{{hi:minijinja}}, [`tera`][c~tera~docs]↗{{hi:tera}}, [`handlebars`][c~handlebars~docs]↗{{hi:handlebars}}, [`askama`][c~askama~docs]↗{{hi:askama}} |
 | Authentication middleware | [`actix-web-httpauth`][c~actix-web-httpauth~docs]↗{{hi:actix-web-httpauth}} (Actix Web), [`tower-http`][c~tower-http~docs]↗{{hi:tower-http}} (generic) |
 | GraphQL | [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}}, [`juniper`][c~juniper~docs]↗{{hi:juniper}} |
@@ -58,6 +58,7 @@ For browser interfaces compiled to WebAssembly, explore [`yew`][c~yew~docs]↗{{
 
 - [Asynchronous Programming](../asynchronous/index.md) for async runtimes and task coordination.
 - [Make an HTTP Request Against a Local Service](../web-programming_http-client/offline_http_client.md) for a deterministic client example.
+- [HTTP Clients](../web-programming_http-client/index.md) for client selection, API requests, rate limiting, retries, and downloads.
 - [Serialization and Deserialization](../encoding/serde.md) for JSON and other data formats.
 - [Testing](../development-tools_testing/index.md) for unit, integration, and end-to-end checks.
 
