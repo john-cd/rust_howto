@@ -13,6 +13,10 @@
 /// ```rust,editable
 /// println!("{}", return_a_string());
 /// ```
+#[allow(
+    rustdoc::private_doc_tests,
+    reason = "The example shows an editable doctest on a private helper."
+)]
 fn return_a_string() -> String {
     "This will be printed.".to_owned()
 }
@@ -33,6 +37,7 @@ pub fn run() {
     example();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

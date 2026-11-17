@@ -21,6 +21,10 @@
 /// // `cargo test` runs doctest automatically as well.
 /// let person = Person::new("name");
 /// ```
+#[allow(
+    rustdoc::private_doc_tests,
+    reason = "This example teaches doctest syntax on a private helper."
+)]
 fn new(name: &str) -> Person {
     Person {
         name: name.to_owned(),
@@ -46,6 +50,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
