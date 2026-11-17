@@ -143,12 +143,6 @@
   - [Processor](categories/hardware-support/processor.md)
   - [Peripherals](categories/hardware-support/peripherals.md)
 
-- [Memory Management](categories/memory-management/index.md)
-  - [Lazy Initialization](categories/memory-management/lazy_initialization.md)
-  - [Memory Allocation](categories/memory-management/memory_allocation.md)
-  - [Arena Allocation](categories/memory-management/arena_allocation.md)
-  - [String Interning](categories/memory-management/string_interning.md)
-
 - [Network Programming](categories/network-programming/index.md)
   - [Server](categories/network-programming/server.md)
   - [Reverse Proxy](categories/network-programming/reverse_proxy.md)

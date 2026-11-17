@@ -165,6 +165,12 @@
   - [Graph Theory](categories/mathematics/graph_theory.md)
   - [Differential Equations](categories/mathematics/differential_equations.md)
 
+- [Memory Management](categories/memory-management/index.md)
+  - [Lazy Initialization](categories/memory-management/lazy_initialization.md)
+  - [Memory Allocation](categories/memory-management/memory_allocation.md)
+  - [Arena Allocation](categories/memory-management/arena_allocation.md)
+  - [String Interning](categories/memory-management/string_interning.md)
+
 - [Images](categories/multimedia_images/index.md)
   - [Image Processing](categories/multimedia_images/images.md)
 

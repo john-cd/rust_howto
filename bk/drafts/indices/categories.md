@@ -53,7 +53,7 @@
 | [![internationalization][cat~internationalization~badge]][cat~internationalization] | Developing software capable of adapting to various languages and regions. | - |
 | [![localization][cat~localization~badge]][cat~localization] | Adapting internationalized software to specific languages and regions. | - |
 | [![mathematics][cat~mathematics~badge]][cat~mathematics] | Crates with a mathematical aspect. | - |
-| [![memory-management][cat~memory-management~badge]][cat~memory-management] | Allocation, memory mapping, garbage collection, reference counting, or interfaces to foreign memory managers. | [Memory Management](../categories/memory-management/index.md) |
+| [![memory-management][cat~memory-management~badge]][cat~memory-management] | Allocation, memory mapping, garbage collection, reference counting, or interfaces to foreign memory managers. | [Memory Management](../../src/categories/memory-management/index.md) |
 | [![multimedia][cat~multimedia~badge]][cat~multimedia] | Audio, video, and image processing or rendering engines. | - |
 | [![multimedia::audio][cat~multimedia::audio~badge]][cat~multimedia::audio] | Record, output, or process audio. | - |
 | [![multimedia::encoding][cat~multimedia::encoding~badge]][cat~multimedia::encoding] | Encode or decode binary data in multimedia formats. | - |

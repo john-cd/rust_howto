@@ -35,7 +35,7 @@
 [p~error-handling]: ../../../src/categories/rust-patterns/error_handling/error_handling.md
 [p~github-actions]: ../devops/github_actions.md
 [p~json]: ../../../src/categories/parser-implementations/json.md
-[p~memory-allocation]: ../../../src/categories/memory-management/memory_allocation.md
+[p~memory-allocation]: ../../../../bk/src/categories/memory-management/memory_allocation.md
 [p~mocking]: ../../../src/categories/development-tools_testing/mocking.md
 [p~modules]: ../../../src/code_organization/modules_and_paths.md
 [p~parsing]: ../../categories/parsing/parsing.md
