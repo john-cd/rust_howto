@@ -70,7 +70,7 @@ You can also implement `derive` for your own traits through procedural [[macros 
 
 - [[attributes | Attributes]].
 - [[macros | Macros]].
-- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
+- [Rust Patterns](../categories/rust-patterns/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -405,7 +405,7 @@ The same workspace has a compile-fail case in `language/tests/ui/debug_print_uni
   - [Compile Macros](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_procedural-macro-helpers/compile_macros.md).
   - [Macro Tools](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_procedural-macro-helpers/macro_tools.md).
   - [Write Proc Macros](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_procedural-macro-helpers/write_proc_macros.md).
-- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
+- [Rust Patterns](../categories/rust-patterns/index.md).
 
 See [String Concatenation](../categories/text-processing/string_concat.md) for more details.
 {{#include refs.incl.md}}

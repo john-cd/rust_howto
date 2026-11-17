@@ -41,6 +41,6 @@ This is useful when the exact type is complex, not relevant to the caller, or im
 
 <div class="hidden">
 
-- [[rust-patterns | Rust Patterns]].
+- [Rust Patterns](../categories/rust-patterns/index.md).
 
 </div>

@@ -56,7 +56,7 @@ Read [Implementing Vec][book~rustonomicon~implementing-vec]↗ for more details 
 
 - [[algorithms | Algorithms]].
 - [Encoding](../encoding/index.md).
-- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
+- [Rust Patterns](../rust-patterns/index.md).
 - [[sorting | Sorting]].
 - [Typecasts and byte layout](../encoding/typecasts.md).
 

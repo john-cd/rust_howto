@@ -61,7 +61,7 @@ It offers a wide range of functions for combining, grouping, and manipulating it
 
 {{#badges either data-structures="Data structures" no-std="No standard library"}}{{hi:Data-structure}}{{hi:No_std}}
 
-The enum [`Either`][c~either~docs]↗{{hi:Either}} with variants `Left` and `Right` is a general purpose sum type with two cases. This is useful for representing values that can take on one of two different forms, which is a common pattern in functional programming. [`Either`][c~either~docs]↗{{hi:Either}} has methods that are similar to `Option` and `Result`, and it also implements traits like `Iterator`. This crate also includes [macros][p~macros] `try_left!()` and `try_right!()` to use for short-circuiting logic, similar to how the `?` operator is used with `Result`.
+The enum [`Either`][c~either~docs]↗{{hi:Either}} has `Left` and `Right` variants for a value that can take one of two forms. It offers methods similar to `Option` and `Result` and implements traits such as `Iterator`. The crate also includes [macros][p~macros] `try_left!()` and `try_right!()` for short-circuiting logic, similar to `?` with `Result`.
 
 Note that [`Either`][c~either~docs]↗{{hi:Either}} is general purpose. For describing success or error, use the regular [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} enum.
 
@@ -73,7 +73,7 @@ Note that [`Either`][c~either~docs]↗{{hi:Either}} is general purpose. For desc
 
 {{#badges frunk}}{{hi:Monoid}}{{hi:Generic}}{{hi:HList}}{{hi:Validated}}{{hi:frunk}}
 
-Frunk is a functional programming toolbelt for Rust. It provides developers with a number of functional programming data structures and type-level programming tools like [`HList`][c~frunk::hlist::HList~docs]↗{{hi:HList}} (heterogeneous lists)↗, `Coproduct`, `Generic`, `LabelledGeneric`, `Validated`, `Monoid`, `Semigroup` and friends. It is useful for complex data transformations and metaprogramming.
+Frunk is a functional programming toolkit for Rust. It provides heterogeneous lists such as [`HList`][c~frunk::hlist::HList~docs]↗{{hi:HList}}, coproducts, generic conversions, validation, and abstractions such as `Monoid` and `Semigroup`. These tools are useful for complex data transformations and type-level programming.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/frunk.rs:example}}
@@ -82,7 +82,7 @@ Frunk is a functional programming toolbelt for Rust. It provides developers with
 ## Related Topics {#related-topics .skip}
 
 - [Iterators][book~rust~iterators] and [closures][book~rust~closures] in the Rust Book.
-- [[structural_patterns | Structural Patterns]] for pattern matching and algebraic data types.
+- [Structural Patterns](structural_patterns.md) for pattern matching and algebraic data types.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

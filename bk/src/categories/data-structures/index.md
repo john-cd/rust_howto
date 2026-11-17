@@ -104,7 +104,7 @@ The [`phf`][c~phf~docs]↗{{hi:phf}} crate generates maps and sets for keys know
 
 - [[data_types | Data Types]].
 - [[smart_pointers | Smart Pointers]].
-- Immutable Data Structures: [`im`][c~im~docs]↗{{hi:im}}, [`rpds`][c~rpds~docs]↗{{hi:rpds}}. See [Functional Programming](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/functional_programming.md).
+- Immutable Data Structures: [`im`][c~im~docs]↗{{hi:im}}, [`rpds`][c~rpds~docs]↗{{hi:rpds}}. See [Functional Programming](../rust-patterns/functional_programming.md).
 - Specialized Data Structures:
   - Trees and Tries: [`indextree`][c~indextree~docs]↗{{hi:indextree}}.
   - Bloom Filters: [`bloomfilter`][c~bloomfilter~docs]↗{{hi:bloomfilter}}.

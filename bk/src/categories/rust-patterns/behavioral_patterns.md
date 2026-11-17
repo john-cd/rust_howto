@@ -8,9 +8,13 @@ Behavioral patterns describe how components communicate and how operations are r
 
 ## Implement the Typestate Pattern in Rust {#typestate-pattern}
 
-The typestate pattern is a design pattern that encodes information about an object's run-time state in its compile-time type.
+The typestate pattern encodes an object's allowed state transitions in its type. Here, publishing consumes a `Draft` and returns a `Published` article; the published-only method is unavailable before that transition.
 
-- [Typestate Pattern][blog~typestate-pattern]↗.
+```rust,editable
+{{#include ../../../crates/cats/rust_patterns/examples/behavioral_patterns/typestate.rs:example}}
+```
+
+See also: [Typestate Pattern][blog~typestate-pattern]↗.
 
 ## Externalize Business Rules in a Decision Table {#business-rules}
 

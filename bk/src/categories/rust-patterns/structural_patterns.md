@@ -1,5 +1,7 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
+# Structural Patterns
+
 Rust does not use class inheritance for code reuse. Instead, compose values from smaller types, define shared behavior with traits, and wrap existing types with newtypes when a domain needs stronger invariants or a distinct interface. Common structural patterns include newtypes, adapters, decorators, facades, and composite trees.
 
 ## Create a Newtype for a Domain Identifier {#newtype}
@@ -42,5 +44,15 @@ The composite pattern represents both leaves and groups with one interface. An e
 {{#include ../../../crates/cats/rust_patterns/examples/structural_patterns/composite.rs:example}}
 ```
 
-| Recipe | Crates | Categories |
-| --- | --- | --- |
+{{#include structural_patterns.incl.md}}
+
+## Related Topics {#related-topics .skip}
+
+- [Builder Pattern](builder_pattern.md).
+- [Behavioral Patterns](behavioral_patterns.md).
+- [Creational Patterns](creational_patterns.md).
+- [Functional Programming](functional_programming.md).
+- [Rust-Specific Patterns](rust_specific_patterns.md).
+
+{{#include refs.incl.md}}
+{{#include ../../refs/link-refs.md}}

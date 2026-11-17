@@ -36,10 +36,10 @@ A singleton exposes one shared instance, often through a global lazy initializer
 
 ## Related Topics {#related-topics .skip}
 
-- [[builder_pattern | Builder Pattern]] is a common Rust construction API for values with optional configuration.
-- [[structural_patterns | Structural Patterns]] cover composition and relationships between types.
-- [[behavioral_patterns | Behavioral Patterns]] cover communication and state transitions.
-- [[lazy_initialization | Lazy Initialization]] describes safe one-time initialization.
+- [Builder Pattern](builder_pattern.md) is a common Rust construction API for values with optional configuration.
+- [Structural Patterns](structural_patterns.md) cover composition and relationships between types.
+- [Behavioral Patterns](behavioral_patterns.md) cover communication and state transitions.
+- [Lazy Initialization](../memory-management/lazy_initialization.md) describes safe one-time initialization.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

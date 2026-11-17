@@ -135,7 +135,7 @@ A method returning `&T` from `&mut self` has the same rule. The returned referen
 - [[clone-on-write | COW]].
 - [Memory Management](../categories/memory-management/index.md).
 - [[ownership_and_borrowing | Ownership & Borrowing]].
-- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
+- [Rust Patterns](../categories/rust-patterns/index.md).
 - [Typecasts and byte layout](../categories/encoding/typecasts.md).
 
 {{#include refs.incl.md}}

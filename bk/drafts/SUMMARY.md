@@ -53,9 +53,6 @@
   - [Reading emails](categories/email/read_emails.md)
 
 
-- [Error Handling](categories/rust-patterns/error_handling/error_handling.md)
-  - [Error Customization](categories/rust-patterns/error_handling/error_customization.md)
-
 - [Graphics](categories/graphics/index.md)
 
 - [Hardware Support](categories/hardware-support/index.md)
@@ -81,14 +78,6 @@
 
 - [Parsing](categories/parsing/index.md)
 
-
-- [Rust Patterns](categories/rust-patterns/index.md)
-  - [Creational Patterns](categories/rust-patterns/creational_patterns.md)
-    - [Builder Pattern](categories/rust-patterns/builder_pattern.md)
-  - [Structural Patterns](categories/rust-patterns/structural_patterns.md)
-  - [Behavioral Design Patterns](categories/rust-patterns/behavioral_patterns.md)
-  - [Functional Programming](categories/rust-patterns/functional_programming.md)
-  - [Rust-specific Patterns](categories/rust-patterns/rust_specific_patterns.md)
 
 - [Template Engines](categories/template-engine/index.md)
 
