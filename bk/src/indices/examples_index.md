@@ -240,6 +240,20 @@
 
 ## Development Tools
 
+### Build Utils
+
+#### Build-time Tools
+
+{{#include ../categories/development-tools_build-utils/build_time_tooling.incl.md}}
+
+#### Build Caches
+
+{{#include ../categories/development-tools_build-utils/build_cache.incl.md}}
+
+#### Compiler Feature Detection
+
+{{#include ../categories/development-tools_build-utils/autocfg.incl.md}}
+
 ### Debugging and Observability
 
 #### Debuggers

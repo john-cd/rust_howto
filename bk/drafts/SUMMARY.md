@@ -73,11 +73,6 @@
     - [Reduce Compilation Duration](categories/development-tools/compilation/reduce_compilation_duration.md)
     - [Transpilers](categories/development-tools/transcompilation/transpilers.md)
 
-- [Development Tools - Build-time Tooling](categories/development-tools_build-utils/index.md)
-  - [Build-time Tools](categories/development-tools_build-utils/build_time_tooling.md)
-  - [`autocfg`](categories/development-tools_build-utils/autocfg.md)
-  - [Build Cache](categories/development-tools_build-utils/build_cache.md)
-
 - [Development Tools - Cargo Plugins](categories/development-tools_cargo-plugins/index.md)
   - [Writing Code](categories/development-tools_cargo-plugins/code_writing.md)
   - [Code Formatting, Linting](categories/development-tools_cargo-plugins/code_formatting_linting.md)

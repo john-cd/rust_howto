@@ -265,6 +265,15 @@
 [ex~date-and-time~perform-checked-date-time-calc]: ../categories/date-and-time/duration.md#perform-checked-date-time-calc
 [ex~date-and-time~time-crate]: ../categories/date-and-time/time_crate.md#time-crate
 [ex~date-and-time~unix-timestamp]: ../categories/date-and-time/parse.md#unix-timestamp
+[ex~development-tools_build-utils~autocfg]: ../categories/development-tools_build-utils/autocfg.md#autocfg
+[ex~development-tools_build-utils~build-info]: ../categories/development-tools_build-utils/build_time_tooling.md#build-info
+[ex~development-tools_build-utils~cache-in-ci]: ../categories/development-tools_build-utils/build_cache.md#cache-in-ci
+[ex~development-tools_build-utils~cc-custom-defines]: ../categories/development-tools_build-utils/build_time_tooling.md#cc-custom-defines
+[ex~development-tools_build-utils~cc]: ../categories/development-tools_build-utils/build_time_tooling.md#cc
+[ex~development-tools_build-utils~cpp]: ../categories/development-tools_build-utils/build_time_tooling.md#cpp
+[ex~development-tools_build-utils~out-dir-codegen]: ../categories/development-tools_build-utils/build_time_tooling.md#out-dir-codegen
+[ex~development-tools_build-utils~sccache]: ../categories/development-tools_build-utils/build_cache.md#sccache
+[ex~development-tools_build-utils~target-and-build-directories]: ../categories/development-tools_build-utils/build_cache.md#target-and-build-directories
 [ex~development-tools_debugging~add-tracing-spans-to-fn]: ../categories/development-tools_debugging/tracing.md#add-tracing-spans-to-fn
 [ex~development-tools_debugging~capture-a-backtrace]: ../categories/development-tools_debugging/debugging.md#capture-a-backtrace
 [ex~development-tools_debugging~configure-tracing]: ../categories/development-tools_debugging/tracing.md#configure-tracing
