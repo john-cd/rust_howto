@@ -290,6 +290,7 @@
 [ex~data-structures~btreeset]: ../categories/data-structures/b-trees.md#btreeset
 [ex~data-structures~custom-hash-function]: ../categories/data-structures/hashmaps.md#custom-hash-function
 [ex~data-structures~custom-key-type]: ../categories/data-structures/hashmaps.md#custom-key-type
+[ex~data-structures~collection-conversions]: ../categories/data-structures/index.md#collection-conversions
 [ex~data-structures~elsa-frozen-vec]: ../categories/data-structures/index.md#elsa-frozen-vec
 [ex~data-structures~fast-hashmap]: ../categories/data-structures/hashmaps.md#fast-hashmap
 [ex~data-structures~fixedbitset]: ../categories/data-structures/bit_arrays.md#fixedbitset
