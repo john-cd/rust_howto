@@ -608,13 +608,5 @@
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
-{{#include ../categories/text-processing/other_strings.incl.md}}
-{{#include ../categories/text-processing/diffing.incl.md}}
-{{#include ../categories/text-processing/syntax_highlighting.incl.md}}
-{{#include ../categories/text-processing/text_analysis.incl.md}}
-{{#include ../categories/text-processing/string_search.incl.md}}
-{{#include ../categories/text-processing/string_manipulation.incl.md}}
-{{#include ../categories/text-processing/string_concat.incl.md}}
-{{#include ../categories/text-processing/unicode.incl.md}}
 <div class="hidden">
 </div>
