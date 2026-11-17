@@ -45,7 +45,7 @@ This table outlines common text processing tasks and relevant Rust crates.
 
 ### Parse Strings
 
-{{#include string_parsing.incl.md}}
+The [`FromStr` custom type recipe](../../../src/categories/text-processing/string_parsing.md#implement-the-fromstr-trait-for-a-custom-struct) is published in the main book.
 
 ### Diff Text
 

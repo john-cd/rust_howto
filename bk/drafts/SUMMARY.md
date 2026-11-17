@@ -224,7 +224,6 @@
 
 - [Text Processing](categories/text-processing/index.md)
   - [Regular Expressions — Remaining Recipes](categories/text-processing/regex.md)
-  - [String Parsing](categories/text-processing/string_parsing.md)
   - [String Concatenation](categories/text-processing/string_concat.md)
   - [String Manipulation](categories/text-processing/string_manipulation.md)
   - [String Search](categories/text-processing/string_search.md)

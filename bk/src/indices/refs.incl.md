@@ -512,6 +512,7 @@
 [ex~template-engine~tinytemplate]: ../categories/template-engine/tinytemplate.md#tinytemplate
 [ex~text-processing~extract-a-list-of-unique-hashtags-from-a-text]: ../categories/text-processing/regex.md#extract-a-list-of-unique-hashtags-from-a-text
 [ex~text-processing~extract-phone-numbers-from-text]: ../categories/text-processing/regex.md#extract-phone-numbers-from-text
+[ex~text-processing~implement-the-fromstr-trait-for-a-custom-struct]: ../categories/text-processing/string_parsing.md#implement-the-fromstr-trait-for-a-custom-struct
 [ex~text-processing~replace-all-occurrences-of-one-text-pattern-with-another-pattern]: ../categories/text-processing/regex.md#replace-all-occurrences-of-one-text-pattern-with-another-pattern
 [ex~value-formatting~humansize]: ../categories/value-formatting/number_formatting.md#humansize
 [ex~value-formatting~itoa]: ../categories/value-formatting/number_formatting.md#itoa

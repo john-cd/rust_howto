@@ -57,7 +57,7 @@ Distinguish the above traits from the following:
 - [[reference-to-reference_conversions | AsRef]].
 - [[reference-to-reference_conversions | Borrow]].
 - [[smart_pointers | Smart Pointers]].
-- [String Parsing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_parsing.md).
+- [String Parsing](../categories/text-processing/string_parsing.md).
 - [[traits | Traits]].
 
 {{#include refs.incl.md}}

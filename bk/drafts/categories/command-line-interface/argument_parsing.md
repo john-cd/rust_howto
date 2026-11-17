@@ -116,7 +116,7 @@ The structopt project has been superseded by clap's derive API. For existing app
 - [[parse | Parse]].
 - [[parser-implementations | Parser Implementations]].
 - [[parsing | Parsing]].
-- [[string_parsing | String Parsing]].
+- [String Parsing](../../../src/categories/text-processing/string_parsing.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
