@@ -37,10 +37,12 @@ type Handle = Rc<Node>;
 struct NameRef<'a>(&'a QualName);
 
 impl ElemName for NameRef<'_> {
+    /// Handles the ns behavior for this component.
     fn ns(&self) -> &Namespace {
         &self.0.ns
     }
 
+    /// Handles the local name behavior for this component.
     fn local_name(&self) -> &LocalName {
         &self.0.local
     }
@@ -165,10 +167,14 @@ fn unnamed_node(kind: NodeKind) -> Handle {
 }
 
 impl TreeSink for XmlTree {
+    /// Alias for `NameRef<'a>` used to represent elem name.
     type ElemName<'a> = NameRef<'a>;
+    /// Alias for `Handle` used to represent handle.
     type Handle = Handle;
+    /// Alias for `Self` used to represent output.
     type Output = Self;
 
+    /// Finalizes the current builder and produces its completed value.
     fn finish(self) -> Self::Output {
         self
     }
@@ -179,6 +185,7 @@ impl TreeSink for XmlTree {
         self.errors.borrow_mut().push(msg);
     }
 
+    /// Returns the document stored by or available from this value.
     fn get_document(&self) -> Self::Handle {
         Rc::clone(&self.document)
     }
@@ -229,6 +236,7 @@ impl TreeSink for XmlTree {
         })
     }
 
+    /// Handles the append behavior for this component.
     fn append(&self, parent: &Self::Handle, child: NodeOrText<Self::Handle>) {
         match child {
             AppendNode(child) => append_child(parent, child),
@@ -252,6 +260,7 @@ impl TreeSink for XmlTree {
         }
     }
 
+    /// Adds the supplied based on parent node to the end or position selected by this collection.
     fn append_based_on_parent_node(
         &self,
         element: &Self::Handle,
@@ -267,6 +276,7 @@ impl TreeSink for XmlTree {
         self.append(&parent, child);
     }
 
+    /// Adds the supplied doctype to document to the end or position selected by this collection.
     fn append_doctype_to_document(
         &self,
         name: StrTendril,
@@ -298,6 +308,7 @@ impl TreeSink for XmlTree {
         }
     }
 
+    /// Handles the same node behavior for this component.
     fn same_node(&self, first: &Self::Handle, second: &Self::Handle) -> bool {
         Rc::ptr_eq(first, second)
     }
@@ -307,6 +318,7 @@ impl TreeSink for XmlTree {
         self.quirks_mode.set(mode);
     }
 
+    /// Adds the supplied before sibling to the end or position selected by this collection.
     fn append_before_sibling(&self, sibling: &Self::Handle, new_node: NodeOrText<Self::Handle>) {
         let new_node = match new_node {
             AppendNode(node) => node,
@@ -330,6 +342,7 @@ impl TreeSink for XmlTree {
         parent_children.insert(index, new_node);
     }
 
+    /// Adds the supplied attrs if missing to the current collection or state.
     fn add_attrs_if_missing(&self, target: &Self::Handle, attrs: Vec<Attribute>) {
         let NodeKind::Element {
             attrs: target_attrs,
@@ -371,6 +384,7 @@ impl TreeSink for XmlTree {
         }
     }
 
+    /// Handles the reparent children behavior for this component.
     fn reparent_children(&self, node: &Self::Handle, new_parent: &Self::Handle) {
         let Some(node_children) = children(node) else {
             return;

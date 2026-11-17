@@ -25,6 +25,7 @@ pub struct Pong;
 struct PingPongActor;
 
 impl Actor for PingPongActor {
+    /// Alias for `PingPongActorMsg` used to represent msg.
     type Msg = PingPongActorMsg;
 
     /// Receives the current value.
@@ -34,6 +35,7 @@ impl Actor for PingPongActor {
 }
 
 impl Receive<Ping> for PingPongActor {
+    /// Alias for `PingPongActorMsg` used to represent msg.
     type Msg = PingPongActorMsg;
 
     /// Receives the current value.
@@ -43,6 +45,7 @@ impl Receive<Ping> for PingPongActor {
 }
 
 impl Receive<Pong> for PingPongActor {
+    /// Alias for `PingPongActorMsg` used to represent msg.
     type Msg = PingPongActorMsg;
 
     /// Receives the current value.
@@ -88,6 +91,7 @@ pub fn run() -> Result<()> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

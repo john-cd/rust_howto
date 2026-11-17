@@ -19,6 +19,7 @@ use anyhow::Context;
 struct Add(u64);
 
 impl Message for Add {
+    /// Alias for `u64` used to represent result.
     type Result = u64;
 }
 
@@ -29,10 +30,12 @@ struct Counter {
 }
 
 impl Actor for Counter {
+    /// Alias for `ActorContext<Self>` used to represent context.
     type Context = ActorContext<Self>;
 }
 
 impl Handler<Add> for Counter {
+    /// Alias for `u64` used to represent result.
     type Result = u64;
 
     /// Adds the message amount and returns the updated total.

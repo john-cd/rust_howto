@@ -37,6 +37,7 @@ const TOKEN_KEY: &str = "csrf_token";
 
 /// Returns the session's CSRF token, creating one on first use.
 async fn csrf_token(session: &Session) -> Result<String, StatusCode> {
+    /// Handles the internal behavior for this component.
     fn internal<E>(_: E) -> StatusCode {
         StatusCode::INTERNAL_SERVER_ERROR
     }
@@ -74,6 +75,7 @@ async fn show_form(session: Session) -> Result<Html<String>, StatusCode> {
     )))
 }
 
+/// Data for change email operations, including csrf token and email.
 #[derive(Deserialize)]
 struct ChangeEmail {
     /// CSRF token checked for this request.
@@ -114,6 +116,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;

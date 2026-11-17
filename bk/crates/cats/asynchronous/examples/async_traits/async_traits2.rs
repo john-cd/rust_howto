@@ -26,6 +26,7 @@ struct MyContainer {
 
 /// Implementation of the `Container` trait for `MyContainer`.
 impl Container for MyContainer {
+    /// Returns the items produced by this query or iterator.
     fn items(&self) -> impl Iterator<Item = u8> {
         self.items.iter().copied()
     }
@@ -47,6 +48,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

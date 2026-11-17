@@ -5,8 +5,8 @@
 use clap::Parser;
 use clap::Subcommand;
 
-/// `Result` is a type that represents either success (`Ok`) or failure (`Err`): ``` pub enum
-/// Result<T, E> { Ok(T), Err(E), } ```
+/// `Result` represents either success (`Ok`) or failure (`Err`), with the shape
+/// `enum Result<T, E> { Ok(T), Err(E) }`.
 mod result;
 /// Example of `Result` methods for value transformation and control flow.
 mod result2;
@@ -60,6 +60,7 @@ fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;

@@ -50,6 +50,7 @@ pub fn run() {
     run_example();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

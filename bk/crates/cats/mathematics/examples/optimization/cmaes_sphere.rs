@@ -63,6 +63,7 @@ fn test_cmaes_finds_shifted_sphere_minimum() {
     }
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

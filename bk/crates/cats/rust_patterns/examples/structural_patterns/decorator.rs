@@ -28,6 +28,7 @@ impl<R> CountingReader<R> {
         }
     }
 
+    /// Handles the bytes read behavior for this component.
     fn bytes_read(&self) -> usize {
         self.bytes_read
     }
@@ -62,6 +63,7 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use std::io::Cursor;

@@ -94,6 +94,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     dispatch(Cli::parse())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;

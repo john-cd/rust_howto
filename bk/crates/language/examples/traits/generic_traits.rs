@@ -16,6 +16,7 @@ struct SomeStruct;
 /// Generic implementation of a generic trait for a `struct`.
 // Note that the `<>` brackets appear in two places.
 impl<T> Test<T> for SomeStruct {
+    /// Handles the test behavior for this component.
     fn test(_t: T) {
         println!("This is the test function.");
     }
@@ -35,6 +36,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

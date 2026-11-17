@@ -60,6 +60,7 @@ impl Error for RgbParseError {
 }
 
 impl FromStr for Rgb {
+    /// Alias for `RgbParseError` used to represent err.
     type Err = RgbParseError;
 
     /// Parses an ASCII color hex code in the exact `#RRGGBB` form.

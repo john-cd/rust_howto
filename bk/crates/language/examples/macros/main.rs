@@ -152,6 +152,7 @@ fn main() {
     dispatch(Cli::parse());
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;
@@ -207,8 +208,10 @@ mod tests {
     }
 }
 
+/// Provides format arguments behavior for the macros component.
 #[cfg(test)]
 mod format_arguments;
 
+/// Provides identifier only macro behavior for the macros component.
 #[cfg(test)]
 mod identifier_only_macro;

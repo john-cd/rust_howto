@@ -50,6 +50,7 @@ mod a_module {
     }
 
     impl Trait for PublicStruct {
+        /// Alias for `bool` used to represent out.
         type Out = bool;
 
         /// Uses the public items of the module.
@@ -109,8 +110,10 @@ mod tests {
         /// Groups the data required by visibility operations.
         struct Doubler;
         impl a_module::Trait for Doubler {
+            /// Alias for `u8` used to represent out.
             type Out = u8;
 
+            /// Handles the method behavior for this component.
             fn method(&self) -> u8 {
                 2
             }

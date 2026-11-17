@@ -157,6 +157,7 @@ fn main() {
     dispatch(Cli::parse());
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;
@@ -213,5 +214,6 @@ mod tests {
     }
 }
 
+/// Provides associated type forms behavior for the traits component.
 #[cfg(test)]
 mod associated_type_forms;

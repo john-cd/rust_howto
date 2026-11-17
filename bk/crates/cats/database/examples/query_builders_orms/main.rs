@@ -10,8 +10,10 @@ use clap::Subcommand;
 /// Runs the Diesel query-builder example.
 #[cfg(feature = "diesel")]
 mod diesel1;
+/// Provides sea orm behavior for the query builders orms component.
 #[cfg(feature = "sea_orm")]
 mod sea_orm;
+/// Provides seaography behavior for the query builders orms component.
 #[cfg(feature = "sea_orm")]
 mod seaography;
 

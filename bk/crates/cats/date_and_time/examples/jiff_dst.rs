@@ -58,8 +58,10 @@ fn main() -> Result<(), jiff::Error> {
     schedule()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
+    /// Checks that disambiguation and calendar arithmetic.
     #[test]
     fn disambiguation_and_calendar_arithmetic() -> Result<(), jiff::Error> {
         super::schedule()

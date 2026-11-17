@@ -20,6 +20,7 @@ struct Circle {
 }
 
 impl Shape for Circle {
+    /// Handles the area behavior for this component.
     fn area(&self) -> f64 {
         std::f64::consts::PI * self.radius * self.radius
     }
@@ -35,6 +36,7 @@ struct Rectangle {
 }
 
 impl Shape for Rectangle {
+    /// Handles the area behavior for this component.
     fn area(&self) -> f64 {
         self.width * self.height
     }
@@ -65,6 +67,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

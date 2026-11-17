@@ -4,7 +4,9 @@
 
 // ANCHOR: example
 enum Result<T, E> {
+    /// Represents the ok case of result.
     Ok(T),
+    /// Represents the err case of result.
     Err(E),
 }
 // ANCHOR_END: example

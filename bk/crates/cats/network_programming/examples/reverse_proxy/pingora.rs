@@ -40,6 +40,7 @@ struct LocalProxy;
 
 #[async_trait]
 impl ProxyHttp for LocalProxy {
+    /// Alias for `()` used to represent ctx.
     type CTX = ();
 
     /// Returns the empty request context used by this stateless proxy.

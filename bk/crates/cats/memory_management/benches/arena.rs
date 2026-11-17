@@ -167,6 +167,7 @@ pub fn run() {
     black_box(insert_box(None, 1));
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
 

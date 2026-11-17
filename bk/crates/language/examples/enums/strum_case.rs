@@ -20,8 +20,11 @@ use strum::ParseError;
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Display, EnumString)]
 #[strum(serialize_all = "snake_case", ascii_case_insensitive)]
 enum Verbosity {
+    /// Represents the quiet case of verbosity.
     Quiet,
+    /// Represents the normal case of verbosity.
     Normal,
+    /// Represents the very verbose case of verbosity.
     VeryVerbose,
 }
 

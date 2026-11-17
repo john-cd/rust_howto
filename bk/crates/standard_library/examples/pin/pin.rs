@@ -136,6 +136,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use std::future::Future as _;
@@ -178,6 +179,7 @@ mod tests {
     /// Verifies pinned future can be polled.
     #[test]
     fn test_pinned_future_can_be_polled() {
+        /// Adds the supplied one to the current collection or state.
         async fn add_one(x: u32) -> u32 {
             x + 1
         }

@@ -7,7 +7,12 @@ use clap::Subcommand;
 
 /// `bitflags` generate types for C-style flags with ergonomic APIs.
 mod bitflags;
-/// Add the following to your `Cargo.toml`: ```toml [dependencies] bitvec = "1.1.1" ```
+/// Add the following to your `Cargo.toml`:
+///
+/// ```toml
+/// [dependencies]
+/// bitvec = "1.1.1"
+/// ```
 mod bitvec;
 /// A fixed-size bit set with `fixedbitset`: a visited set for a graph walk.
 mod fixedbitset;
@@ -76,6 +81,7 @@ fn main() {
     dispatch(Cli::parse());
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;

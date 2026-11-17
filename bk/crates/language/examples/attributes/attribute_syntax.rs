@@ -6,12 +6,15 @@
 #[doc = "A documented constant."]
 const COUNT: u8 = 2;
 
+/// Defines the old count value used by this code.
 #[deprecated(note = "Use COUNT instead.")]
 const OLD_COUNT: u8 = 2;
 
+/// Data carried by label operations.
 #[derive(Debug)]
 struct Label;
 
+/// Data carried by number operations.
 #[derive(PartialEq, Eq)]
 struct Number(u8);
 // ANCHOR_END: forms
@@ -24,6 +27,7 @@ mod lint_settings {
     // ANCHOR_END: inner_lint
     #![deny(unsafe_code)]
 
+    /// Handles the unused helper behavior for this component.
     #[allow(dead_code, reason = "Demonstrates an unused item.")]
     fn unused_helper() {}
 

@@ -50,6 +50,7 @@ pub fn run() -> Result<(), Utf8Error> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

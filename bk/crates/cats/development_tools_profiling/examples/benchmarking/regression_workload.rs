@@ -11,6 +11,7 @@ fn main() {
 
 #[cfg(test)]
 mod tests {
+    /// Checks that fixed input has expected checksum.
     #[test]
     fn fixed_input_has_expected_checksum() {
         assert_eq!((0..100_000_u64).sum::<u64>(), 4_999_950_000);

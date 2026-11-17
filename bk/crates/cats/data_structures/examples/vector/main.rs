@@ -10,5 +10,6 @@ fn main() {
     vectors::run();
 }
 
+/// Provides vector capacity behavior for the vector component.
 #[cfg(test)]
 mod vector_capacity;

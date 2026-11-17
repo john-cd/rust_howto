@@ -118,10 +118,12 @@ mod tests {
     }
 }
 
+/// Provides private main tests behavior for the exponential backoff component.
 #[cfg(test)]
 mod private_main_tests {
     use super::main;
 
+    /// Checks that private main succeeds.
     #[test]
     #[ignore = "requires external network access"]
     fn private_main_succeeds() {

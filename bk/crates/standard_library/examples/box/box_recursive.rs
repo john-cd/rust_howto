@@ -66,6 +66,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -76,6 +77,7 @@ mod tests {
         main();
     }
 
+    /// Handles the values behavior for this component.
     fn values(head: &Node) -> Vec<i32> {
         let mut out = vec![head.value];
         let mut current = &head.next;

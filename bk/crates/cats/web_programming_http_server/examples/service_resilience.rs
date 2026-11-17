@@ -17,20 +17,30 @@ use tower::service_fn;
     expect(dead_code, reason = "failure cases are exercised in the tests")
 )]
 enum Operation {
+    /// Represents the read case of operation.
     Read,
+    /// Represents the write case of operation.
     Write,
+    /// Represents the permanent failure case of operation.
     PermanentFailure,
+    /// Represents the stall case of operation.
     Stall,
 }
 
+/// Defines the possible failure cases handled by this code.
 #[derive(Debug, PartialEq, Eq)]
 enum Failure {
+    /// Represents the transient case of failure.
     Transient,
+    /// Represents the permanent case of failure.
     Permanent,
+    /// Represents the retry exhausted case of failure.
     RetryExhausted,
+    /// Represents the deadline case of failure.
     Deadline,
 }
 
+/// Handles the call with budget behavior for this component.
 async fn call_with_budget(
     operation: Operation,
     fail_first: usize,
@@ -84,10 +94,12 @@ fn main() -> Result<(), Failure> {
     Ok(())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Checks that one transient error then success.
     #[tokio::test(start_paused = true)]
     async fn one_transient_error_then_success() {
         let calls = Arc::new(AtomicUsize::new(0));
@@ -104,6 +116,7 @@ mod tests {
         assert_eq!(calls.load(Ordering::SeqCst), 2);
     }
 
+    /// Checks that attempts and deadline are bounded.
     #[tokio::test(start_paused = true)]
     async fn attempts_and_deadline_are_bounded() {
         let calls = Arc::new(AtomicUsize::new(0));
@@ -126,6 +139,7 @@ mod tests {
         );
     }
 
+    /// Checks that writes and permanent failures are not retried.
     #[tokio::test(start_paused = true)]
     async fn writes_and_permanent_failures_are_not_retried() {
         for (operation, expected) in [

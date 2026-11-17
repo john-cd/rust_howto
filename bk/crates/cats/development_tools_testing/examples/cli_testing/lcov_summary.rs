@@ -26,6 +26,7 @@ struct FileCoverage {
 }
 
 impl FileCoverage {
+    /// Handles the percent behavior for this component.
     fn percent(&self) -> f64 {
         if self.found == 0 {
             100.0

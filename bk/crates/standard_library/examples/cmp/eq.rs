@@ -45,6 +45,7 @@ struct Person {
 
 // Custom implementation of `PartialEq` and `Eq`:
 impl PartialEq for Person {
+    /// Compares this value with the supplied value for equality.
     fn eq(&self, other: &Self) -> bool {
         self.id == other.id
         // `last_name` is ignored.
@@ -80,6 +81,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

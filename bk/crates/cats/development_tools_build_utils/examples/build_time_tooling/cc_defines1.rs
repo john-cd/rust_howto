@@ -13,6 +13,7 @@ use std::ffi::c_char;
 use anyhow::Context;
 use anyhow::Result;
 
+// Declares foreign functions and types linked from this module.
 unsafe extern "C" {
 
     /// Returns the application name defined for the C source.
@@ -20,6 +21,7 @@ unsafe extern "C" {
 
     /// Returns the package version defined for the C source.
     fn app_version() -> *const c_char;
+    /// Handles the welcome is defined behavior for this component.
     fn welcome_is_defined() -> i32;
 }
 

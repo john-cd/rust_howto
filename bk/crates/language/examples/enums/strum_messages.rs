@@ -37,7 +37,9 @@ enum BoolDisplayMode {
         message = "1 / 0",
         detailed_message = "Shows 1 for true and 0 for false"
     )]
+    /// Represents the digits case of bool display mode.
     Digits,
+    /// Represents the checkbox case of bool display mode.
     #[strum(message = "Checkbox", detailed_message = "Shows a checkbox")]
     Checkbox,
 }

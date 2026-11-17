@@ -151,6 +151,7 @@ pub fn run() {
     let _ = hash_fold(&bytes);
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
 

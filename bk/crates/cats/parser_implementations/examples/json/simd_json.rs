@@ -9,7 +9,7 @@
 //! instead of the system allocator used by default.
 //!
 //! Example of using `mimalloc`:
-//! ```rust
+//! ```text
 //! use mimalloc::MiMalloc;
 //!
 //! #[global_allocator]
@@ -91,6 +91,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

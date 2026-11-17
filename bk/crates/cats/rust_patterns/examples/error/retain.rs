@@ -5,7 +5,7 @@
 //! conversions using the `anyhow` crate.
 //!
 //! The `?` operator automatically converts different error types (e.g.,
-//! [`std::io::Error`], [`std::num::ParseIntError`]) into [`anyhow::Error`],
+//! [`std::io::Error`], [`std::num::ParseIntError`]) into `anyhow::Error`,
 //! retaining the full error information along the call chain.
 
 /// Trims `s` and parses it as a `u32`, propagating parse failures with `?`.
@@ -21,7 +21,7 @@ fn parse_value(s: &str) -> anyhow::Result<u32> {
 /// Reads a number from a file.
 /// Both [`std::io::Error`] (from file reading) and
 /// [`std::num::ParseIntError`] (from parsing) are automatically converted
-/// to [`anyhow::Error`] by `?`, so no error information is lost.
+/// to `anyhow::Error` by `?`, so no error information is lost.
 fn read_number_from_file(path: &str) -> anyhow::Result<u32> {
     let content = std::fs::read_to_string(path)?;
     let n = parse_value(&content)?;

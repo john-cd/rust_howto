@@ -63,6 +63,7 @@ mod tests {
         main();
     }
 
+    /// Data carried by buf operations.
     #[derive(Clone, Default)]
     struct Buf(std::sync::Arc<std::sync::Mutex<Vec<u8>>>);
 

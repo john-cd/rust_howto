@@ -59,6 +59,7 @@ mod light {
     struct LightTextBox;
 
     impl TextBox for LightTextBox {
+        /// Handles the display text behavior for this component.
         fn display_text(&self, text: &str) {
             println!("Displaying '{text}' in a light text box.");
         }
@@ -105,6 +106,7 @@ mod dark {
     struct DarkTextBox;
 
     impl TextBox for DarkTextBox {
+        /// Handles the display text behavior for this component.
         fn display_text(&self, text: &str) {
             println!("Displaying '{text}' in a dark text box.");
         }
@@ -153,6 +155,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     // output-only: the example only prints what each factory's products do; see

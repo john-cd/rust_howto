@@ -27,5 +27,6 @@ fn main() {
     }
 }
 
+/// Provides module forms behavior for the modules component.
 #[cfg(test)]
 mod module_forms;

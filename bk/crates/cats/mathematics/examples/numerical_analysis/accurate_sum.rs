@@ -23,6 +23,7 @@ fn compensated_sum(values: &[f64]) -> Result<f64, &'static str> {
     Ok(result)
 }
 
+/// Handles the compare behavior for this component.
 fn compare() -> Result<(f64, f64), &'static str> {
     let values = [1.0e16, 1.0, -1.0e16];
     Ok((values.iter().sum(), compensated_sum(&values)?))
@@ -35,15 +36,18 @@ fn main() -> Result<(), &'static str> {
     Ok(())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
 
+    /// Checks that compensation recovers the small term.
     #[test]
     fn compensation_recovers_the_small_term() {
         assert_eq!(compare(), Ok((0.0, 1.0)));
     }
 
+    /// Checks that rejects nonfinite input.
     #[test]
     fn rejects_nonfinite_input() {
         assert_eq!(

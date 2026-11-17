@@ -21,6 +21,7 @@ impl<const N: usize> FixedSizeBuffer for [u8; N] {
     /// Capacity of the array implementing this trait.
     const CAPACITY: usize = N;
 
+    /// Returns the buffer stored by or available from this value.
     fn get_buffer(&self) -> &[u8] {
         self
     }
@@ -47,6 +48,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

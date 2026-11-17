@@ -58,6 +58,7 @@ fn main() {
     dispatch(Cli::parse());
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;
@@ -99,5 +100,6 @@ mod tests {
     }
 }
 
+/// Provides empty slice behavior for the slices component.
 #[cfg(test)]
 mod empty_slice;

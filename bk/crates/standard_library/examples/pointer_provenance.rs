@@ -14,6 +14,7 @@ unsafe extern "C" fn second_byte(bytes: *const u8, len: usize) -> u16 {
     u16::from(unsafe { *second })
 }
 
+/// Reads second from the configured input.
 fn read_second(bytes: &[u8]) -> Option<u8> {
     // SAFETY: the slice provides an initialized, readable allocation for the
     // duration of the call. The callee checks the length before dereferencing.
@@ -26,10 +27,12 @@ fn main() {
     assert_eq!(read_second(b"R"), None);
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::read_second;
 
+    /// Checks that reads only within the live slice.
     #[test]
     fn reads_only_within_the_live_slice() {
         assert_eq!(read_second(&[]), None);

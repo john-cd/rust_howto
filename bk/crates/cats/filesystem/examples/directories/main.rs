@@ -10,7 +10,10 @@ mod cwd;
 /// Creating, listing and removing directories.
 mod manipulate_dirs;
 
-/// Add to `Cargo.toml`: ```toml remove_dir_all = { version = "1.0.0", features = [ "parallel" ] }
+/// Add this dependency to `Cargo.toml`:
+///
+/// ```toml
+/// remove_dir_all = { version = "1.0.0", features = ["parallel"] }
 /// ```
 mod remove_dir_all;
 
@@ -61,6 +64,7 @@ fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;

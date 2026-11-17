@@ -3,7 +3,7 @@
 // ANCHOR: example
 //! `Result` is a type that represents either success (`Ok`) or failure (`Err`):
 //!
-//! ```
+//! ```text
 //! pub enum Result<T, E> {
 //!     Ok(T),
 //!     Err(E),
@@ -230,6 +230,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use std::path::PathBuf;

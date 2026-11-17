@@ -22,22 +22,27 @@ use std::ops::SubAssign;
 struct Meters(f64);
 
 impl Add for Meters {
+    /// Alias for `Self` used to represent output.
     type Output = Self;
 
+    /// Adds the supplied value to the current collection or state.
     fn add(self, rhs: Self) -> Self {
         Self(self.0 + rhs.0)
     }
 }
 
 impl AddAssign for Meters {
+    /// Adds the supplied assign to the current collection or state.
     fn add_assign(&mut self, rhs: Self) {
         self.0 += rhs.0;
     }
 }
 
 impl Sub for Meters {
+    /// Alias for `Self` used to represent output.
     type Output = Self;
 
+    /// Handles the sub behavior for this component.
     fn sub(self, rhs: Self) -> Self {
         Self(self.0 - rhs.0)
     }
@@ -52,6 +57,7 @@ impl SubAssign for Meters {
 
 /// Scaling by a plain number is fine: meters * 2.0 is still meters.
 impl Mul<f64> for Meters {
+    /// Alias for `Self` used to represent output.
     type Output = Self;
 
     /// Dividing two lengths gives a dimensionless ratio.
@@ -62,8 +68,10 @@ impl Mul<f64> for Meters {
 
 /// Dividing two lengths gives a dimensionless ratio.
 impl Div for Meters {
+    /// Alias for `f64` used to represent output.
     type Output = f64;
 
+    /// Handles the div behavior for this component.
     fn div(self, rhs: Self) -> f64 {
         self.0 / rhs.0
     }

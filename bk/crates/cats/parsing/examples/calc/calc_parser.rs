@@ -24,16 +24,22 @@ use winnow::token::take_while;
 /// A lexical token. Identifiers borrow from the input.
 #[derive(Debug, Clone, Copy, PartialEq)]
 enum Token<'a> {
+    /// Represents the number case of token.
     Number(f64),
+    /// Represents the ident case of token.
     Ident(&'a str),
+    /// Represents the op case of token.
     Op(char),
+    /// Represents the l paren case of token.
     LParen,
+    /// Represents the r paren case of token.
     RParen,
 }
 
 /// A token and the byte range it occupies in the input.
 type Spanned<'a> = (Token<'a>, Range<usize>);
 
+/// Alias for `LocatingSlice<&'a str>` used to represent input.
 type Input<'a> = LocatingSlice<&'a str>;
 
 /// Parses one token.
@@ -75,9 +81,13 @@ fn lex(source: &str) -> Result<Vec<Spanned<'_>>, String> {
 /// The expression tree.
 #[derive(Debug, PartialEq)]
 enum Expr<'a> {
+    /// Represents the number case of expr.
     Number(f64),
+    /// Represents the var case of expr.
     Var(&'a str),
+    /// Represents the neg case of expr.
     Neg(Box<Self>),
+    /// Represents the binary case of expr.
     Binary(Box<Self>, char, Box<Self>),
 }
 

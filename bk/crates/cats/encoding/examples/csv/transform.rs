@@ -39,6 +39,7 @@ struct HexColor {
 }
 
 impl FromStr for HexColor {
+    /// Alias for `anyhow::Error` used to represent err.
     type Err = anyhow::Error;
 
     /// Parse a hex color string into a `HexColor`.

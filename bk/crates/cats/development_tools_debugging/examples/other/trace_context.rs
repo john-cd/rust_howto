@@ -203,6 +203,7 @@ mod tests {
         spans
     }
 
+    /// Handles the span named behavior for this component.
     fn span_named<'a>(spans: &'a [SpanData], name: &str) -> &'a SpanData {
         spans
             .iter()

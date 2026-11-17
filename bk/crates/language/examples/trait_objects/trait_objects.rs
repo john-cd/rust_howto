@@ -30,6 +30,7 @@ struct Text;
 
 /// Dummy implementation.
 impl Draw for Text {
+    /// Draws the next sample from the configured distribution.
     fn draw(&self) {
         println!("Text");
     }
@@ -81,6 +82,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

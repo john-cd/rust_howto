@@ -47,6 +47,7 @@ impl std::error::Error for EmailError {}
 struct EmailAddress(String);
 
 impl TryFrom<String> for EmailAddress {
+    /// Alias for `EmailError` used to represent error.
     type Error = EmailError;
 
     /// Attempts to from and reports failure to the caller.

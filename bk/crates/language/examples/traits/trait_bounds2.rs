@@ -37,6 +37,7 @@ struct Article {
 }
 
 impl Summary for Article {
+    /// Handles the summarize behavior for this component.
     fn summarize(&self) -> String {
         self.txt.clone()
     }
@@ -58,6 +59,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

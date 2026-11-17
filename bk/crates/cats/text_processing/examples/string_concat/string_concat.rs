@@ -167,6 +167,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     // output-only: the example prints the result of each concatenation

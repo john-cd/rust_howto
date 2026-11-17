@@ -107,6 +107,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -148,6 +149,7 @@ mod tests {
                 String::new()
             }
 
+            /// Handles the assoc func behavior for this component.
             fn assoc_func() -> Self::Output {}
         }
         assert_eq!(Defaults::CONSTANT, 42);

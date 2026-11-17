@@ -111,6 +111,7 @@ impl<T> Drop for SpinlockGuard<'_, T> {
 }
 
 impl<T> Deref for SpinlockGuard<'_, T> {
+    /// Alias for `T` used to represent target.
     type Target = T;
 
     /// Allows immutable access to the protected data.
@@ -175,6 +176,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use std::cell::Cell;

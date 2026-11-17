@@ -35,6 +35,7 @@ pub fn run() {
     example_body();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use std::sync::Mutex;

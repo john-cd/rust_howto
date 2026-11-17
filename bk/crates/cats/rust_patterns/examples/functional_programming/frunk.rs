@@ -100,6 +100,7 @@ fn main() {
         z: f64,
     }
 
+    /// Data for vec3 operations, including x and y.
     #[derive(Generic, Debug, PartialEq)]
     struct Vec3 {
         /// The horizontal coordinate.
@@ -145,6 +146,7 @@ fn main() {
         age: usize,
     }
 
+    /// Data for saved user operations, including first name and last name.
     #[derive(LabelledGeneric, Debug, PartialEq)]
     struct SavedUser<'a> {
         /// The first name.
@@ -209,6 +211,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

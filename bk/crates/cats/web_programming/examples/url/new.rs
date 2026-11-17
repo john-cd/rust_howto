@@ -47,6 +47,7 @@ pub fn run() -> anyhow::Result<()> {
     Ok(())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -24,6 +24,7 @@ struct Circle {
 }
 
 impl Shape for Circle {
+    /// Draws the next sample from the configured distribution.
     fn draw(&self) {
         println!("Drawing a circle with radius: {}", self.radius);
     }
@@ -38,6 +39,7 @@ struct Square {
 }
 
 impl Shape for Square {
+    /// Draws the next sample from the configured distribution.
     fn draw(&self) {
         println!("Drawing a square with side: {}", self.side);
     }
@@ -94,6 +96,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     // output-only: the example only prints what each shape does; see the other

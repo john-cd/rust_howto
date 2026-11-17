@@ -59,6 +59,7 @@ fn main() -> anyhow::Result<()> {
     dispatch(Cli::parse())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;
@@ -100,5 +101,6 @@ mod tests {
     }
 }
 
+/// Provides boxed main error behavior for the entrypoint component.
 #[cfg(test)]
 mod boxed_main_error;

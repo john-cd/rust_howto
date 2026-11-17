@@ -9,7 +9,7 @@
 //!
 //! The key types are:
 //! - [`Collector`]: tracks threads and manages reclamation epochs.
-//! - [`LocalGuard`] (via `Collector::enter`): a per-thread guard that protects objects from being
+//! - `LocalGuard` (via `Collector::enter`): a per-thread guard that protects objects from being
 //!   reclaimed while it is held.
 //!
 //! `seize` is primarily useful when building lock-free data structures
@@ -90,6 +90,7 @@ pub fn run() {
     example();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -107,6 +108,7 @@ mod tests {
 
         /// Shared `dropped` used by this module.
         static DROPPED: AtomicUsize = AtomicUsize::new(0);
+        /// Data carried by tracked operations.
         struct Tracked(i32);
         impl Drop for Tracked {
             /// Releases the resources owned by this value.

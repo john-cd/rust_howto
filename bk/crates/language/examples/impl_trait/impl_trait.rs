@@ -19,6 +19,7 @@ trait Speak {
 struct Dog;
 
 impl Speak for Dog {
+    /// Handles the speak behavior for this component.
     fn speak(&self) -> String {
         "Woof!".to_owned()
     }
@@ -28,6 +29,7 @@ impl Speak for Dog {
 struct Cat;
 
 impl Speak for Cat {
+    /// Handles the speak behavior for this component.
     fn speak(&self) -> String {
         "Meow!".to_owned()
     }
@@ -83,6 +85,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -20,6 +20,7 @@ mod a {
     // The contents come from module_forms/a/b.rs.
     pub(super) mod b;
 
+    /// Provides c behavior for the module forms component.
     pub(super) mod c {
         /// Returns a value from a nested inline module.
         pub(in crate::module_forms) fn value() -> u8 {
@@ -61,10 +62,12 @@ fn absolute_path() -> u8 {
 // ANCHOR_END: absolute
 
 enum Direction {
+    /// Represents the north case of direction.
     North,
 }
 
 impl Direction {
+    /// Sets the default bound or default used by this code.
     const DEFAULT: Self = Self::North;
 
     /// Constructs the north direction.
@@ -73,11 +76,14 @@ impl Direction {
     }
 }
 
+/// Defines the operations required for measurement behavior.
 trait Measurement {
+    /// Type of the unit values produced or consumed by this trait.
     type Unit;
 }
 
 impl Measurement for Direction {
+    /// Alias for `u8` used to represent unit.
     type Unit = u8;
 }
 

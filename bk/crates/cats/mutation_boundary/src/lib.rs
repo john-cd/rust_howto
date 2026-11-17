@@ -12,6 +12,7 @@ pub fn classify(value: u8) -> &'static str {
 mod tests {
     use super::classify;
 
+    /// Checks that classifies a small value.
     #[test]
     fn classifies_a_small_value() {
         assert_eq!(classify(5), "small");

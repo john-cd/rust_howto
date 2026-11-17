@@ -115,6 +115,7 @@ pub fn run() {
     entry();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -63,6 +63,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -75,6 +75,7 @@ mod tests {
         main();
     }
 
+    /// Data carried by buf operations.
     #[derive(Clone, Default)]
     struct Buf(std::sync::Arc<std::sync::Mutex<Vec<u8>>>);
 
@@ -107,6 +108,7 @@ mod tests {
     }
 
     impl<'a> tracing_subscriber::fmt::MakeWriter<'a> for Buf {
+        /// Alias for `Self` used to represent writer.
         type Writer = Self;
 
         /// Assembles the writer from its component values so callers receive a ready-to-use result.

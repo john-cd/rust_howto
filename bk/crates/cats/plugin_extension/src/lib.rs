@@ -2,6 +2,7 @@
 
 use plugin_registry::Command;
 
+/// Handles the greet behavior for this component.
 fn greet() -> &'static str {
     "hello"
 }

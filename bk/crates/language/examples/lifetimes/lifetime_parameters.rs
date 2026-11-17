@@ -70,6 +70,7 @@ trait Describable<'a> {
 
 // Implementation of a generic trait, with a lifetime parameter:
 impl<'a> Describable<'a> for String {
+    /// Handles the describe behavior for this component.
     fn describe(&self) -> &'a str {
         "This is a string."
     }
@@ -88,6 +89,7 @@ impl<T: Display> Display for RefHolder<'_, T> {
 
 // Implementation of a generic trait for a generic type:
 impl<'a, T> Describable<'a> for RefHolder<'a, T> {
+    /// Handles the describe behavior for this component.
     fn describe(&self) -> &'a str {
         "This is a reference holder."
     }
@@ -131,6 +133,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

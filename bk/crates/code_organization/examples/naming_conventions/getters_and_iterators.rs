@@ -66,7 +66,9 @@ impl Container {
 }
 
 impl<'a> IntoIterator for &'a Container {
+    /// Alias for `std::slice::Iter<'a, u32>` used to represent into iter.
     type IntoIter = std::slice::Iter<'a, u32>;
+    /// Alias for `&'a u32` used to represent item.
     type Item = &'a u32;
 
     /// Converts between the into iterator representation and iter while preserving the invariants
@@ -77,7 +79,9 @@ impl<'a> IntoIterator for &'a Container {
 }
 
 impl<'a> IntoIterator for &'a mut Container {
+    /// Alias for `std::slice::IterMut<'a, u32>` used to represent into iter.
     type IntoIter = std::slice::IterMut<'a, u32>;
+    /// Alias for `&'a mut u32` used to represent item.
     type Item = &'a mut u32;
 
     /// Converts between the into iterator representation and iter while preserving the invariants
@@ -88,7 +92,9 @@ impl<'a> IntoIterator for &'a mut Container {
 }
 
 impl IntoIterator for Container {
+    /// Alias for `std::vec::IntoIter<u32>` used to represent into iter.
     type IntoIter = std::vec::IntoIter<u32>;
+    /// Alias for `u32` used to represent item.
     type Item = u32;
 
     /// `IntoIter` implements `Iterator<Item = u32>`.
@@ -122,6 +128,7 @@ pub fn run() {
     let entry_point = main;
     entry_point();
 }
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -146,10 +153,12 @@ mod tests {
     }
 }
 
+/// Provides private main tests behavior for the getters and iterators component.
 #[cfg(test)]
 mod private_main_tests {
     use super::main;
 
+    /// Checks that private main succeeds.
     #[test]
     fn private_main_succeeds() {
         let entry_point = main;

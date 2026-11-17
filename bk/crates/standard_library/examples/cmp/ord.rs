@@ -27,6 +27,7 @@ struct Version {
 
 // Implement `PartialEq` to define when two versions are equal.
 impl PartialEq for Version {
+    /// Compares this value with the supplied value for equality.
     fn eq(&self, other: &Self) -> bool {
         self.major == other.major && self.minor == other.minor && self.patch == other.patch
     }
@@ -35,6 +36,7 @@ impl PartialEq for Version {
 // Implement `PartialOrd`. Since our ordering is total, `partial_cmp`
 // can simply wrap the result of `cmp` in `Some`.
 impl PartialOrd for Version {
+    /// Handles the partial cmp behavior for this component.
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
         Some(self.cmp(other))
     }
@@ -43,6 +45,7 @@ impl PartialOrd for Version {
 // Implement `Ord` to define the total ordering of versions.
 // It implements a lexicographical comparison.
 impl Ord for Version {
+    /// Handles the cmp behavior for this component.
     fn cmp(&self, other: &Self) -> Ordering {
         // Compare major versions first.
         match self.major.cmp(&other.major) {
@@ -123,6 +126,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -133,6 +137,7 @@ mod tests {
         main();
     }
 
+    /// Handles the v behavior for this component.
     fn v(major: u32, minor: u32, patch: u32) -> Version {
         Version {
             major,

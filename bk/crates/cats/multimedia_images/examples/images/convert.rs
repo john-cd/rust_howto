@@ -40,6 +40,7 @@ pub fn run() -> image::ImageResult<()> {
     main()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

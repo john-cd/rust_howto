@@ -37,6 +37,7 @@ impl<T: Default + Clone, N: Unsigned> FixedBuffer<T, N> {
         }
     }
 
+    /// Returns the available capacity for this resource.
     fn capacity(&self) -> usize {
         N::USIZE
     }
@@ -77,6 +78,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

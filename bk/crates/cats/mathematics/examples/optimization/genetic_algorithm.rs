@@ -43,6 +43,7 @@ fn test_genetic_algorithm_reaches_maximum_fitness() {
     assert_eq!(evolve(), BITS);
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

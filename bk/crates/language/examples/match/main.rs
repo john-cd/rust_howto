@@ -27,7 +27,7 @@ mod if_let;
 mod ignore_values;
 /// Destructuring in a `let` statement.
 mod let1;
-/// The `let ...
+/// The `let ... else` statement for handling a pattern that may not match.
 mod let_else;
 /// Matching literals.
 mod literals;
@@ -216,6 +216,7 @@ fn main() {
     dispatch(Cli::parse());
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;
@@ -278,5 +279,6 @@ mod tests {
     }
 }
 
+/// Provides match result behavior for the match component.
 #[cfg(test)]
 mod match_result;

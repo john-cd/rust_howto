@@ -10,6 +10,7 @@
 
 /// A thing that can send a message.
 trait Message {
+    /// Sends the message message to the peer.
     fn send_message(&self);
 }
 
@@ -66,6 +67,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

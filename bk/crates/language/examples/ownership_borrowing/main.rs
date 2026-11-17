@@ -112,6 +112,7 @@ fn main() {
     dispatch(Cli::parse());
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory;
@@ -163,5 +164,6 @@ mod tests {
     }
 }
 
+/// Provides mutate through reference behavior for the ownership borrowing component.
 #[cfg(test)]
 mod mutate_through_reference;
