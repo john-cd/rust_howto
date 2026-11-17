@@ -57,7 +57,7 @@
 [p~derive]: ../../../src/standard-library/automatic_trait_derivation.md
 [p~email]: ../email/index.md
 [p~embedded]: # "../embedded/index.md"
-[p~encoding]: ../encoding/index.md
+[p~encoding]: ../../../src/categories/encoding/index.md
 [p~encryption]: encryption.md
 [p~functions]: ../../../src/language/functions.md
 [p~hashing]: ../../../src/categories/algorithms/hashing.md

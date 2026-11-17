@@ -7,7 +7,7 @@
 [ex~email~mailchecker]: send_emails.md#mailchecker
 [ex~email~mailparse]: email_parsing.md#mailparse
 [ex~email~mime]: email_parsing.md#mime
-[p~encoding]: ../encoding/index.md
+[p~encoding]: ../../../src/categories/encoding/index.md
 [p~network-programming]: ../network-programming/index.md
 [p~tls]: ../cryptography/tls.md
 [p~web-programming]: ../web-programming/index.md

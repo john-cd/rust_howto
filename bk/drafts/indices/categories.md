@@ -40,7 +40,7 @@
 | [![email][cat~email~badge]][cat~email] | Sending, receiving, formatting, and parsing email. | [Email](../categories/email/index.md) |
 | [![embedded][cat~embedded~badge]][cat~embedded] | Embedded devices or hardware without an operating system. | - |
 | [![emulators][cat~emulators~badge]][cat~emulators] | Emulators, often to allow running software that is not natively available on the host computer, e.g. video game systems. | - |
-| [![encoding][cat~encoding~badge]][cat~encoding] | Encoding and/or decoding data from one data format to another. | [Encoding and Serialization](../categories/encoding/index.md) |
+| [![encoding][cat~encoding~badge]][cat~encoding] | Encoding and/or decoding data from one data format to another. | [Encoding and Serialization](../../src/categories/encoding/index.md) |
 | [![external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings] | Direct Rust FFI bindings to libraries written in other languages; often denoted by a `-sys` suffix. Safe and idiomatic wrappers are in the "API bindings" category. | - |
 | [![filesystem][cat~filesystem~badge]][cat~filesystem] | Dealing with files and filesystems. | - |
 | [![finance][cat~finance~badge]][cat~finance] | Dealing with money: accounting, trading, investments, taxes, banking and payment processing using government-backed currencies. | - |

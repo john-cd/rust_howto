@@ -524,6 +524,14 @@
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
+{{#include ../categories/encoding/no_external_schema.incl.md}}
+### Binary Encoders Without External Schemas
+{{#include ../categories/encoding/_binary_encoders.incl.md}}
+### Binary Encoders
+{{#include ../categories/encoding/typecasts.incl.md}}
+### Typecasts and Byte Layout
+{{#include ../categories/encoding/complex_encoding.incl.md}}
+### Structured Data
 {{#include ../categories/parser-implementations/programming_languages.incl.md}}
 {{#include ../categories/parser-implementations/yaml.incl.md}}
 {{#include ../categories/parser-implementations/xml.incl.md}}
