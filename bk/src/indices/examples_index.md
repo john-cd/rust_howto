@@ -234,6 +234,40 @@
 
 {{#include ../categories/parsing/parsing.incl.md}}
 
+## Parser Implementations
+
+### HTML and CSS Parsing
+
+{{#include ../categories/parser-implementations/html.incl.md}}
+
+### INI Parsing
+
+{{#include ../categories/parser-implementations/ini.incl.md}}
+
+### JSON Parsing
+
+{{#include ../categories/parser-implementations/json.incl.md}}
+
+### Markdown
+
+{{#include ../categories/parser-implementations/markdown.incl.md}}
+
+### TOML
+
+{{#include ../categories/parser-implementations/toml.incl.md}}
+
+### XML Parsing
+
+{{#include ../categories/parser-implementations/xml.incl.md}}
+
+### YAML Parsing
+
+{{#include ../categories/parser-implementations/yaml.incl.md}}
+
+### General Programming Language Parsing
+
+{{#include ../categories/parser-implementations/programming_languages.incl.md}}
+
 ## Text Processing
 
 {{#include ../categories/text-processing/regex.incl.md}}
