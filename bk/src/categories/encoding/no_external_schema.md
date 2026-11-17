@@ -16,6 +16,8 @@ These formats contrast with [schema-first binary encoders][p~binary-encoders], w
 
 [`bincode`][c~bincode~docs]↗{{hi:bincode}} encodes and decodes Rust values as compact binary data. The receiver must use a compatible type definition and configuration; the byte stream does not carry field names or an independent schema.
 
+The example pins [Bincode 1.3.3](https://docs.rs/bincode/1.3.3/bincode/), which its maintainers consider a complete release. Bincode 2 is unmaintained; consider actively maintained alternatives for new systems.
+
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/binary_encoders/bincode.rs:example}}
 ```

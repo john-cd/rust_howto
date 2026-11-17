@@ -1,18 +1,13 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Serialize and deserialize a struct with `bincode` 2.x.
+//! Serialize and deserialize a struct with `bincode` 1.3.3.
 //!
-//! Version 2 changed the API: encode with `bincode::serde::encode_to_vec` and
-//! decode with `bincode::serde::decode_from_slice`, using the same explicit
-//! configuration on both sides. These replace the familiar `serialize` and
-//! `deserialize` functions from version 1. This example uses the 2.0.1 release;
-//! the upstream repository is archived, so evaluate maintained alternatives
-//! before choosing a format for a new system.
+//! Bincode 1.3.3 provides the familiar `serialize` and `deserialize` helpers.
+//! The project considers this release complete; Bincode 2 is unmaintained, so
+//! evaluate actively maintained alternatives before choosing a format for a
+//! new system.
 
-use bincode::config::standard;
-use bincode::serde::decode_from_slice;
-use bincode::serde::encode_to_vec;
 use serde::Deserialize;
 use serde::Serialize;
 
@@ -30,9 +25,7 @@ struct MyData {
     is_active: bool,
 }
 
-/// Encodes a struct with bincode 2, then decodes it with the same
-///
-/// configuration.
+/// Encodes and decodes a struct with Bincode's default configuration.
 ///
 /// # Errors
 ///
@@ -44,15 +37,11 @@ fn main() -> anyhow::Result<()> {
         is_active: true,
     };
 
-    let encoded = encode_to_vec(&data, standard())?;
-    let (decoded, consumed): (MyData, usize) = decode_from_slice(&encoded, standard())?;
+    let encoded = bincode::serialize(&data)?;
+    let decoded: MyData = bincode::deserialize(&encoded)?;
     assert_eq!(data, decoded);
-    assert_eq!(encoded.len(), consumed);
 
-    println!(
-        "Encoded {} bytes; decoder consumed {consumed} bytes",
-        encoded.len()
-    );
+    println!("Encoded {} bytes", encoded.len());
     println!("Decoded value: {decoded:?}");
     Ok(())
 }
@@ -87,41 +76,33 @@ mod tests {
         main()
     }
 
-    /// Checks that the standard configuration uses varint integers.
+    /// Checks that the default helper uses fixed-width little-endian integers.
     #[test]
-    fn standard_config_uses_varint_integers() -> anyhow::Result<()> {
-        let encoded = encode_to_vec(sample(), standard())?;
+    fn default_helper_uses_fixed_width_little_endian_integers() -> anyhow::Result<()> {
+        let encoded = bincode::serialize(&sample())?;
         assert_eq!(
             encoded,
-            [5, b'A', b'l', b'i', b'c', b'e', 30, 1],
+            [5, 0, 0, 0, 0, 0, 0, 0, b'A', b'l', b'i', b'c', b'e', 30, 0, 0, 0, 1],
             "unexpected bincode wire format"
         );
         Ok(())
     }
 
-    /// Both sides of a connection must agree on the configuration.
+    /// Both sides of a connection must agree on the encoded type and format.
     #[test]
-    fn fixed_int_encoding_is_larger_and_incompatible_with_standard() -> anyhow::Result<()> {
-        let fixed = bincode::config::standard().with_fixed_int_encoding();
-        let encoded = encode_to_vec(sample(), fixed)?;
-        // 8-byte length + 5 name bytes + 4-byte age + 1 boolean byte.
-        assert_eq!(encoded.len(), 18);
-
-        let (decoded, _): (MyData, usize) = decode_from_slice(&encoded, fixed)?;
+    fn serialized_data_round_trips() -> anyhow::Result<()> {
+        let encoded = bincode::serialize(&sample())?;
+        let decoded: MyData = bincode::deserialize(&encoded)?;
         assert_eq!(decoded, sample());
-
-        // Decoding with the wrong configuration does not yield the value.
-        let wrong = decode_from_slice::<MyData, _>(&encoded, standard());
-        assert!(wrong.map_or(true, |(value, _)| value != sample()));
         Ok(())
     }
 
     /// Truncated bytes are rejected by the decoder.
     #[test]
     fn truncated_input_is_an_error() -> anyhow::Result<()> {
-        let encoded = encode_to_vec(sample(), standard())?;
+        let encoded = bincode::serialize(&sample())?;
         let truncated = &encoded[..encoded.len() - 2];
-        assert!(decode_from_slice::<MyData, _>(truncated, standard()).is_err());
+        assert!(bincode::deserialize::<MyData>(truncated).is_err());
         Ok(())
     }
 }
