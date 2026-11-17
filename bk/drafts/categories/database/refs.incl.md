@@ -37,6 +37,7 @@
 [p~asynchronous]: ../../../src/categories/asynchronous/index.md
 [p~caching]: ../caching/index.md
 [p~cargo]: ../development-tools/cargo/cargo.md
+[p~configuration]: ../../../src/categories/config/configuration.md
 [p~configuration]: ../config/configuration.md
 [p~crates]: ../../../src/crate-selection/index.md
 [p~database]: index.md

@@ -103,6 +103,10 @@
   - [Atomics](categories/concurrency/atomics.md)
   - [Model-Checking with Loom](categories/concurrency/loom.md)
 
+- [Configuration](categories/config/index.md)
+  - [Configuration Management](categories/config/configuration.md)
+  - [Environment Variables](categories/config/environment_variables.md)
+
 - [Data Structures](categories/data-structures/index.md)
   - [Strings](categories/data-structures/strings.md)
   - [Vectors](categories/data-structures/vectors.md)

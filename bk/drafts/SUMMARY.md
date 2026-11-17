@@ -25,9 +25,6 @@
   - [Shells](categories/command-line-utilities/shells.md)
 
 - [Compression](categories/compression/index.md)
-- [Configuration](categories/config/index.md)
-  - [Environment Variables](categories/config/environment_variables.md)
-  - [Configuration Management](categories/config/configuration.md)
 
 - [Cryptography](categories/cryptography/index.md)
   - [Password Hashing](categories/cryptography/password_hashing.md)

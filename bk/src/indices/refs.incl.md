@@ -156,6 +156,13 @@
 [ex~concurrency~sync]: ../categories/concurrency/send_sync.md#sync
 [ex~concurrency~thread-builder]: ../categories/concurrency/explicit_threads.md#thread-builder
 [ex~concurrency~thumbnails-in-parallel]: ../categories/concurrency/data_parallelism.md#thumbnails-in-parallel
+[ex~config~config]: ../categories/config/configuration.md#config
+[ex~config~confy]: ../categories/config/configuration.md#confy
+[ex~config~dotenvy]: ../categories/config/environment_variables.md#dotenvy
+[ex~config~env]: ../categories/config/environment_variables.md#env
+[ex~config~envy]: ../categories/config/environment_variables.md#envy
+[ex~config~load_configuration_into_a_singleton]: ../categories/config/configuration.md#load_configuration_into_a_singleton
+[ex~config~test_configuration_loading_methods]: ../categories/config/configuration.md#test_configuration_loading_methods
 [ex~contributing~alternative-just-install]: ../appendices/contributing/development_environment_setup.md#alternative-just-install
 [ex~contributing~alternative-mdbook-install]: ../appendices/contributing/development_environment_setup.md#alternative-mdbook-install
 [ex~contributing~book-organization]: ../appendices/contributing/repository_structure.md#book-organization
@@ -549,6 +556,7 @@
 [ex~parser-implementations~basic-toml]: ../categories/parser-implementations/toml.md#basic-toml
 [ex~parser-implementations~comrak]: ../categories/parser-implementations/markdown.md#comrak
 [ex~parser-implementations~configparser]: ../categories/parser-implementations/ini.md#configparser
+[ex~parser-implementations~configuration]: ../categories/config/configuration.md
 [ex~parser-implementations~css-rs]: ../categories/parser-implementations/html.md#css-rs
 [ex~parser-implementations~html5ever]: ../categories/parser-implementations/html.md#html5ever
 [ex~parser-implementations~ini]: ../categories/parser-implementations/ini.md#ini

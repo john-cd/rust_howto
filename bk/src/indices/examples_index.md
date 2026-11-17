@@ -120,6 +120,16 @@
 
 {{#include ../categories/concurrency/loom.incl.md}}
 
+## Configuration
+
+### Configuration Management
+
+{{#include ../categories/config/configuration.incl.md}}
+
+### Environment Variables
+
+{{#include ../categories/config/environment_variables.incl.md}}
+
 ## Data Structures
 
 ### B-Trees

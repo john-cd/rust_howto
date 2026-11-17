@@ -39,7 +39,7 @@ See [Plugin Registration](index.md#plugin-registration).
 
 ## Related Topics {#related-topics .skip}
 
-- Configuration<!-- Cross-book topic: bk/drafts/categories/config/index.md; not included in this preview. --> Management: Loading and managing settings with [`config`][c~config~docs]↗{{hi:config}} or [`dotenv`][c~dotenv~docs]↗{{hi:dotenv}}.
+- Configuration<!-- Cross-book topic: bk/src/categories/config/index.md; not included in this preview. --> Management: Loading and managing settings with [`config`][c~config~docs]↗{{hi:config}} or [`dotenv`][c~dotenv~docs]↗{{hi:dotenv}}.
 - Logging and Monitoring: Structured logging with [`tracing`][c~tracing~docs]↗{{hi:tracing}} or [`log`][c~log~docs]↗{{hi:log}}. See Development Tools: Debugging<!-- Cross-book topic: bk/drafts/categories/development-tools_debugging/index.md; not included in this preview. -->.
 - Error Handling<!-- Cross-book topic: bk/drafts/categories/rust-patterns/error_handling/error_handling.md; not included in this preview. -->.
 - Testing<!-- Cross-book topic: bk/drafts/categories/development-tools_testing/testing.md; not included in this preview. --> and Quality Assurance.
