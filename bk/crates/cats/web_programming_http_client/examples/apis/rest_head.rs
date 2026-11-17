@@ -21,15 +21,20 @@ async fn main() -> reqwest::Result<()> {
 
     let timeout = Duration::new(5, 0);
     let client = ClientBuilder::new().timeout(timeout).build()?;
-    let response = client.head(&request_url).send().await?;
+    let exists = user_exists(&client, &request_url).await?;
 
-    if response.status().is_success() {
+    if exists {
         println!("{user} is a user!");
     } else {
         println!("{user} is not a user!");
     }
 
     Ok(())
+}
+
+/// Sends a `HEAD` request and reports whether the endpoint returned success.
+async fn user_exists(client: &reqwest::Client, request_url: &str) -> reqwest::Result<bool> {
+    Ok(client.head(request_url).send().await?.status().is_success())
 }
 // ANCHOR_END: example
 
@@ -45,14 +50,50 @@ pub fn run() -> reqwest::Result<()> {
 /// if a
 #[cfg(test)]
 mod tests {
-    // output-only: the example only calls the live GitHub API (ignored
-    // offline); see the other tests for its logic.
     use super::*;
 
     /// Requires a live network service to run the example.
     #[test]
+    #[ignore = "needs network"]
     fn require_network() -> anyhow::Result<()> {
         main()?;
+        Ok(())
+    }
+
+    /// A successful HEAD response means the resource exists.
+    #[tokio::test]
+    async fn successful_head_response_means_user_exists() -> anyhow::Result<()> {
+        let mut server = mockito::Server::new_async().await;
+        let mock = server
+            .mock("HEAD", "/users/ferris-the-crab")
+            .with_status(200)
+            .create_async()
+            .await;
+        let client = reqwest::Client::new();
+
+        let exists =
+            user_exists(&client, &format!("{}/users/ferris-the-crab", server.url())).await?;
+
+        mock.assert_async().await;
+        assert!(exists);
+        Ok(())
+    }
+
+    /// A not-found HEAD response means the resource does not exist.
+    #[tokio::test]
+    async fn not_found_head_response_means_user_does_not_exist() -> anyhow::Result<()> {
+        let mut server = mockito::Server::new_async().await;
+        let mock = server
+            .mock("HEAD", "/users/missing")
+            .with_status(404)
+            .create_async()
+            .await;
+        let client = reqwest::Client::new();
+
+        let exists = user_exists(&client, &format!("{}/users/missing", server.url())).await?;
+
+        mock.assert_async().await;
+        assert!(!exists);
         Ok(())
     }
 }

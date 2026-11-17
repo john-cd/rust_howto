@@ -87,13 +87,6 @@
 
 
 
-- [Web Programming - HTTP Clients](categories/web-programming_http-client/index.md)
-  - [HTTP clients](categories/web-programming_http-client/http_clients.md)
-  - [Making Requests](categories/web-programming_http-client/requests.md)
-  - [Calling a Web API](categories/web-programming_http-client/apis.md)
-  - [Rate Limiting and Retries](categories/web-programming_http-client/rate_limiting_and_retries.md)
-  - [Downloads](categories/web-programming_http-client/download.md)
-
 - [Web Programming - HTTP Servers](categories/web-programming_http-server/index.md)
   - [Internationalized API Errors](categories/web-programming_http-server/i18n.md)
   - [Axum](categories/web-programming_http-server/_axum.md)

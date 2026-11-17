@@ -3,7 +3,7 @@
 | Recipe | Crates | Categories |
 | --- | --- | --- |
 | [Query the GitHub API][ex~web-programming_http-client~query-the~repo-api] | {{#crate reqwest}} {{#crate serde}} | {{#categories network-programming="Network programming" encoding=Encoding web-programming="Web programming" web-programming::http-client="HTTP client"}} |
-| [Check if an API Resource Exists][ex~web-programming_http-client~check-if-an-api-resource-exists] | {{#crate reqwest}} | {{#categories network-programming="Network programming" web-programming="Web programming"}} |
+| [Check if an API Resource Exists][ex~web-programming_http-client~check-if-an-api-resource-exists] | {{#crate reqwest}} | {{#categories network-programming="Network programming" web-programming="Web programming" web-programming::http-client="HTTP client"}} |
 | [Create and Delete a Gist with the GitHub API][ex~web-programming_http-client~create-and-delete-gist-with~repo-api] | {{#crate reqwest}} {{#crate serde}} | {{#categories network-programming="Network programming" encoding=Encoding web-programming="Web programming" web-programming::http-client="HTTP client"}} |
 | [Consume a Paginated RESTful API][ex~web-programming_http-client~consume-a-paginated-restful-api] | {{#crate reqwest}} {{#crate serde}} | {{#categories network-programming="Network programming" encoding=Encoding web-programming="Web programming" web-programming::http-client="HTTP client"}} |
 | [Handle a Rate-limited API][ex~web-programming_http-client~handle-a-rate-limited-api] | {{#crate reqwest}} {{#crate hyper}} | {{#categories network-programming="Network programming" encoding=Encoding web-programming="Web programming" web-programming::http-client="HTTP client"}} |

@@ -3,9 +3,9 @@
 // ANCHOR: example
 //! Demonstrates how to set headers in HTTP requests using the `reqwest` crate.
 //!
-//! HTTP headers carry metadata with requests, such as `User-Agent` (who is
-//! calling), `Accept` (the formats the client wants) and `Authorization`
-//! (credentials). Many APIs require a `User-Agent`.
+//! HTTP headers carry request metadata, such as `User-Agent` (who is calling),
+//! `Accept` (the formats the client wants) and `Authorization` (credentials).
+//! Many APIs require a `User-Agent`.
 
 use std::collections::HashMap;
 
@@ -40,8 +40,8 @@ fn request_headers(url: url::Url) -> Result<HeadersEcho> {
     // Headers for this request only:
     let mut headers = header::HeaderMap::new();
     headers.insert(
-        reqwest::header::CONTENT_TYPE,
-        header::HeaderValue::from_static("image/png"),
+        reqwest::header::ACCEPT,
+        header::HeaderValue::from_static("application/json"),
     );
 
     let response = client
@@ -140,6 +140,7 @@ mod tests {
         assert!(request.starts_with("GET /headers?lang=rust&browser=servo HTTP/1.1\r\n"));
         let request = request.to_ascii_lowercase();
         assert!(request.contains("authorization: bearer deadbeefc001cafeedecafbad"));
+        assert!(request.contains("accept: application/json"));
         assert!(request.contains("x-my-header: value"));
         assert_eq!(result.headers["User-Agent"], "Rust-test");
         Ok(())

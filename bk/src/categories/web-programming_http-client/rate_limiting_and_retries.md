@@ -39,7 +39,7 @@ The example treats `429 Too Many Requests` and `5xx` responses as transient and 
 - **Combine both tools.** Keep the shared limiter outside the retry closure and await it just before each request is sent. Every retry then consumes the same quota after any `Retry-After` delay.
 - **Cap everything.** Bound the number of attempts and the total time, and surface the last error to the caller.
 
-## Honour `Retry-After` {#retry-after}
+## Honor `Retry-After` {#retry-after}
 
 [![backon][c~backon~docs~badge]][c~backon~docs]{{hi:backon}} [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![cat~web-programming::http-client][cat~web-programming::http-client~badge]][cat~web-programming::http-client]{{hi:web-programming::http-client}}
 
@@ -51,9 +51,9 @@ A `429` or `503` response may carry a `Retry-After` header, in seconds or as an 
 
 ## Related Topics {#related-topics .skip}
 
-- [[apis | Calling a Web API]].
-- [[requests | Making Requests]].
-- [[session_login | Session Login]] for limiting login attempts.
+- [Calling a Web API](apis.md) for status and rate-limit headers.
+- [Making Requests](requests.md) for client setup and request options.
+- [Authentication](../authentication/basic_authentication.md) for credential handling.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
