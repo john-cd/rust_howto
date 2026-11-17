@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 [`tiberius`][c~tiberius~docs] implements the SQL Server TDS protocol for
 asynchronous Rust applications. This example pairs it with Tokio and native

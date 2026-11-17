@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Message Queues (AMQP)
 
@@ -50,7 +50,7 @@ NATS_URL=nats://127.0.0.1:4222 cargo test -p database --example nats --features 
 
 - [Asynchronous programming][p~async] and [Tokio][p~tokio].
 - [Async streams][p~streams].
-- [Exchange typed messages over AWS SQS and SNS][p~aws]: a managed queue behind the same publisher and subscriber traits.
+- AWS SQS and SNS offer managed messaging services with different delivery and replay models.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Working with Postgres
 
@@ -64,7 +64,7 @@ This recipe counts artist rows by nationality in an existing PostgreSQL `artists
 
 {{#badges tokio-postgres}}
 
-[`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}} is an asynchronous PostgreSQL client for the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime. The example starts the connection driver on a separate task, then uses parameterized statements inside a temporary table. `tokio-postgres` does not provide a pool; see [Connection Pools][ex~database~connection_pool] for pooling options. [`sqlx`][c~sqlx~docs]↗{{hi:SQLx}} is another async client with compile-time query checking when its offline or live metadata is configured.
+[`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}} is an asynchronous PostgreSQL client for the [`tokio`][c~tokio~docs]↗{{hi:tokio}} runtime. The example starts the connection driver on a separate task, then uses parameterized statements inside a temporary table. `tokio-postgres` does not provide a pool; see [Connection Pools][ex~database~connection-pool] for pooling options. [`sqlx`][c~sqlx~docs]↗{{hi:SQLx}} is another async client with compile-time query checking when its offline or live metadata is configured.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/tests/postgres/tokio_postgres.rs:example}}
@@ -92,7 +92,7 @@ Cornucopia 1.0 incorporated the Clorinde fork's rewritten code generator, so pro
 
 ## Related Topics {#related-topics .skip}
 
-- [Connection Pools][ex~database~connection_pool]
+- [Connection Pools][ex~database~connection-pool]
 - [`sqlx`][ex~database~sqlx]
 - [Query Builders and ORMs][ex~database~query-builders-orms]
 - [Database Search][ex~database~search]

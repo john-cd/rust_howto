@@ -40,7 +40,7 @@ async fn main() -> anyhow::Result<()> {
     let client = Client::with_uri_str(&mongo_uri).await?;
     // Get a handle to the "test_db" database.
     let db = client.database("test_db");
-    // Get a handle to the "users" collection, expecting documents of type
+    // Get a handle to the "users" collection of user documents.
     // `User`.
     let collection = db.collection::<User>("users");
 

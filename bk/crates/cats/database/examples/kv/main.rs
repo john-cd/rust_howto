@@ -65,6 +65,7 @@ fn main() -> anyhow::Result<()> {
 /// Verifies command-line selection and execution of the documented examples.
 #[cfg(test)]
 mod tests {
+    #[cfg(any(feature = "lmdb", feature = "rocksdb"))]
     use super::*;
 
     /// Parses the Heed subcommand when its feature is enabled.
