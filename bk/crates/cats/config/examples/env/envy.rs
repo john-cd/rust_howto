@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Examples for working with `.env` files and `envy`.
+//! Examples for deserializing environment variables into a typed struct with `envy`.
 //!
 //! `envy` reads environment variables into a typed struct with Serde, so a
 //! missing or malformed variable becomes one clear error at startup instead of

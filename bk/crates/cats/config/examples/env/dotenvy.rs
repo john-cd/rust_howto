@@ -4,34 +4,28 @@
 //! Examples for working with `.env` files using `dotenvy`.
 //!
 //! A `.env` file lists `NAME=value` pairs for local development. `dotenvy`
-//! loads them into the process environment. Never commit a `.env` file that
+//! can load them into the process environment. Never commit a `.env` file that
 //! holds secrets, and do not rely on it in production, where the platform sets
 //! the variables.
 
-use std::env;
-
 use anyhow::Result;
 
-/// Load environment variables from a `.env` file in the current directory.
+/// Reads one setting from a `.env` file without changing the process environment.
 fn main() -> Result<()> {
-    // Load environment variables from .env file.
-    // Fails if .env file not found, not readable or invalid.
-    // If variables with the same names already exist in the environment,
-    // their values will be preserved. If multiple declarations for the
-    // same environment variable exist in your .env file, the first one is
-    // applied.
-    dotenvy::dotenv()?;
-    // OR: dotenvy::dotenv().ok();
+    let dir = tempfile::tempdir()?;
+    let path = dir.path().join(".env");
+    std::fs::write(&path, "APP_MODE=development\n")?;
 
-    for (key, value) in env::vars() {
-        println!("{key}: {value}");
+    let variables = dotenvy::from_path_iter(path)?.collect::<Result<Vec<_>, _>>()?;
+    if let Some((_, value)) = variables.iter().find(|(key, _)| key == "APP_MODE") {
+        println!("APP_MODE={value}");
     }
 
     Ok(())
 }
 // ANCHOR_END: example
 
-/// Load environment variables from a `.env` file in the current directory.
+/// Reads one setting from a `.env` file without changing the process environment.
 ///
 /// # Errors
 ///
