@@ -4,8 +4,6 @@
 
 <!-- Ordered migration review and remaining work: MIGRATION.md. -->
 
-- [Caching](categories/caching/index.md)
-
 - [Compression](categories/compression/index.md)
 
 - [Cryptography](categories/cryptography/index.md)
