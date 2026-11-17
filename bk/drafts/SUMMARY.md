@@ -222,15 +222,6 @@
   - [IDEs](categories/text-editors/ides.md)
   - [Language Server Protocol](categories/text-editors/language_server_protocol.md)
 
-- [Text Processing](categories/text-processing/index.md)
-  - [Regular Expressions — Remaining Recipes](categories/text-processing/regex.md)
-  - [String Concatenation](categories/text-processing/string_concat.md)
-  - [String Manipulation](categories/text-processing/string_manipulation.md)
-  - [String Search](categories/text-processing/string_search.md)
-  - [Text Analysis](categories/text-processing/text_analysis.md)
-  - [Syntax Highlighting](categories/text-processing/syntax_highlighting.md)
-  - [Text Diffing](categories/text-processing/diffing.md)
-  - [OS and C Strings](categories/text-processing/other_strings.md)
 
 - [Web Programming](categories/web-programming/index.md)
   - [HTTP Types and Interfaces](categories/web-programming/http_types_and_interfaces.md)

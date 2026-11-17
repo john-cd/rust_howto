@@ -88,7 +88,7 @@
 | [![simulation][cat~simulation~badge]][cat~simulation] | Modeling or model construction, e.g. to simulate a networking protocol. | - |
 | [![template-engine][cat~template-engine~badge]][cat~template-engine] | Combining templates with data to produce result documents, usually with an emphasis on processing text. | [Template Engines](../categories/template-engine/index.md) |
 | [![text-editors][cat~text-editors~badge]][cat~text-editors] | Applications for editing text. | [Text Editors](../categories/text-editors/index.md) |
-| [![text-processing][cat~text-processing~badge]][cat~text-processing] | Dealing with human language when expressed in textual form. | [Text Processing](../categories/text-processing/index.md) |
+| [![text-processing][cat~text-processing~badge]][cat~text-processing] | Dealing with human language when expressed in textual form. | [Text Processing](../../src/categories/text-processing/index.md) |
 | [![value-formatting][cat~value-formatting~badge]][cat~value-formatting] | Allowing an application to format values for display to a user, potentially adapting the display to various languages and regions. | - |
 | [![virtualization][cat~virtualization~badge]][cat~virtualization] | Creation and management of virtual environments and resources of any form, including containerization systems. | - |
 | [![visualization][cat~visualization~badge]][cat~visualization] | Ways to view data, such as plotting or graphing. | - |
