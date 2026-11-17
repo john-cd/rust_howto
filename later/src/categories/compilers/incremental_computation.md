@@ -43,7 +43,7 @@ Rust offers several frameworks and libraries to facilitate incremental computati
 
 - [[development-tools | Development Tools]].
 - [[development-tools_build-utils | Development Tools: Build Utils]].
-- [[development-tools_cargo-plugins | Development Tools: Cargo Plugins]].
+- [Development Tools: Cargo Plugins](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/index.md).
 - [[parsing | Parsing]].
 - [[parser-implementations | Parser Implementations]].
   - [[programming_languages | Programming Languages]].

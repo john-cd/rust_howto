@@ -65,7 +65,7 @@
 [p~github-actions]: github_actions.md
 [p~images]: ../../categories/multimedia_images/images.md
 [p~language]: ../../language/index.md
-[p~maintaining]: ../../categories/development-tools_cargo-plugins/maintaining.md
+[p~maintaining]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/maintaining.md
 [p~mdbook]: ../../categories/development-tools/documentation/mdbook.md
 [p~python]: ../../categories/development-tools_ffi/python.md
 [p~rustup]: ../../../src/categories/development-tools/installation/rustup.md

@@ -254,6 +254,48 @@
 
 {{#include ../categories/development-tools_build-utils/autocfg.incl.md}}
 
+### Cargo Plugins
+
+#### Code Writing
+
+{{#include ../categories/development-tools_cargo-plugins/code_writing.incl.md}}
+
+#### Code Formatting and Linting
+
+{{#include ../categories/development-tools_cargo-plugins/code_formatting_linting.incl.md}}
+
+#### Dependency Management
+
+{{#include ../categories/development-tools_cargo-plugins/dependency_management.incl.md}}
+
+#### Building and Task Runners
+
+{{#include ../categories/development-tools_cargo-plugins/building.incl.md}}
+
+#### Watching for Changes
+
+{{#include ../categories/development-tools_cargo-plugins/watching_for_changes.incl.md}}
+
+#### Cross-compiling
+
+{{#include ../categories/development-tools_cargo-plugins/cross_compiling.incl.md}}
+
+#### Auditing
+
+{{#include ../categories/development-tools_cargo-plugins/auditing.incl.md}}
+
+#### Performance
+
+{{#include ../categories/development-tools_cargo-plugins/performance.incl.md}}
+
+#### Maintaining
+
+{{#include ../categories/development-tools_cargo-plugins/maintaining.incl.md}}
+
+#### Writing a Cargo Plugin
+
+{{#include ../categories/development-tools_cargo-plugins/write_cargo_plugin.incl.md}}
+
 ### Debugging and Observability
 
 #### Debuggers

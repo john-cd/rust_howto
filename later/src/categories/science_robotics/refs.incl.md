@@ -63,7 +63,7 @@
 [p~network-programming]: ../network-programming/index.md
 [p~node]: ../development-tools_ffi/node.md
 [p~opencv]: ../computer-vision/opencv.md
-[p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
+[p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~python]: ../development-tools_ffi/python.md
 [p~robotics-ai]: artificial_intelligence.md

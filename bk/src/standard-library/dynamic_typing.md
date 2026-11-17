@@ -47,7 +47,7 @@ The [`reflect`][c~reflect~docs]↗ crate explores a reflection-like API for writ
 
 ## Related Topics {#related-topics .skip}
 
-- [Development Tools: Cargo Plugins](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_cargo-plugins/index.md).
+- [Development Tools - Cargo Plugins](../categories/development-tools_cargo-plugins/index.md).
 - [Scripting](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/scripting/index.md).
 - [[traits | Traits]].
 

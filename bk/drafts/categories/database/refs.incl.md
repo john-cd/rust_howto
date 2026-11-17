@@ -48,7 +48,7 @@
 [p~ignore]: # "../filesystem/ignore.md"
 [p~memory]: ../../../src/categories/development-tools_profiling/memory_usage_analysis.md
 [p~option]: # "../../standard-library/option.md"
-[p~performance]: ../development-tools_cargo-plugins/performance.md
+[p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
 [p~postgres]: postgres.md
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~search]: search.md

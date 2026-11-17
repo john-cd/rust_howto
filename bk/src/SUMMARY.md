@@ -140,6 +140,18 @@
   - [Parsing and Displaying](categories/date-and-time/parse.md)
   - [`time` Crate](categories/date-and-time/time_crate.md)
 
+- [Development Tools - Cargo Plugins](categories/development-tools_cargo-plugins/index.md)
+  - [Writing Code](categories/development-tools_cargo-plugins/code_writing.md)
+  - [Code Formatting and Linting](categories/development-tools_cargo-plugins/code_formatting_linting.md)
+  - [Dependency Management](categories/development-tools_cargo-plugins/dependency_management.md)
+  - [Build and Run](categories/development-tools_cargo-plugins/building.md)
+  - [Cross-compilation](categories/development-tools_cargo-plugins/cross_compiling.md)
+  - [Watching for Changes](categories/development-tools_cargo-plugins/watching_for_changes.md)
+  - [Performance](categories/development-tools_cargo-plugins/performance.md)
+  - [Auditing](categories/development-tools_cargo-plugins/auditing.md)
+  - [Maintaining Cargo Projects](categories/development-tools_cargo-plugins/maintaining.md)
+  - [Write a Cargo Plugin](categories/development-tools_cargo-plugins/write_cargo_plugin.md)
+
 - [Development Tools - Debugging](categories/development-tools_debugging/index.md)
   - [Debuggers](categories/development-tools_debugging/debugger.md)
   - [Debugging](categories/development-tools_debugging/debugging.md)
