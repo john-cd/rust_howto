@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Networking
+# Network Programming
 
 [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
@@ -33,6 +33,8 @@ For protocol-specific APIs, see [Email](../email/index.md), [HTTP clients](../we
 | Peer-to-peer networking | [Iroh][blog~iroh]↗ is a Rust networking project for peer-to-peer connections and data transfer. |
 
 ## Connect Peers and Address Data
+
+{{#include iroh_loopback.incl.md}}
 
 [Iroh][iroh~docs]↗ documents endpoint IDs, discovery, and relay-assisted connections. [IPFS][ipfs~website]↗ explains content-addressed data. [Ockam][ockam~docs]↗ documents authenticated channels for service-to-service communication.
 

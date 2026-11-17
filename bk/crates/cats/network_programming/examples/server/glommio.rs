@@ -112,6 +112,7 @@ mod tests {
 
     /// Serves one real request over loopback on an ephemeral port.
     #[test]
+    #[ignore = "requires Linux io_uring support and container permissions"]
     fn serves_a_request_over_loopback() {
         let executor = LocalExecutorBuilder::default()
             .spawn(|| async {

@@ -337,6 +337,12 @@
 [ex~hardware-support~check-number-of-logical-cpu-cores]: ../categories/hardware-support/processor.md#check-number-of-logical-cpu-cores
 [ex~hardware-support~list-serial-ports]: ../categories/hardware-support/peripherals.md#list-serial-ports
 [ex~hardware-support~simd-dot-product]: ../categories/hardware-support/processor.md#simd-dot-product
+[ex~network-programming~glommio-http-server]: ../categories/network-programming/server.md#glommio-http-server
+[ex~network-programming~iroh-loopback]: ../categories/network-programming/iroh_loopback.md
+[ex~network-programming~listen-on-unused-port]: ../categories/network-programming/server.md#listen-on-unused-port
+[ex~network-programming~ngrok]: ../categories/network-programming/reverse_proxy.md#ngrok
+[ex~network-programming~pingora]: ../categories/network-programming/reverse_proxy.md#pingora
+[ex~network-programming~rathole]: ../categories/network-programming/reverse_proxy.md#rathole
 [ex~development-tools_build-utils~autocfg]: ../categories/development-tools_build-utils/autocfg.md#autocfg
 [ex~development-tools_build-utils~build-info]: ../categories/development-tools_build-utils/build_time_tooling.md#build-info
 [ex~development-tools_build-utils~cache-in-ci]: ../categories/development-tools_build-utils/build_cache.md#cache-in-ci

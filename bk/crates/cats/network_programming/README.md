@@ -2,7 +2,7 @@
 
 # Network Programming
 
-Network programming examples covering Axum servers, ngrok tunneling, and load balancing with Pingora. It demonstrates integration with key ecosystem crates including `anyhow`, `axum`, `clap`, `ngrok`, `tokio`, `url`.
+Network programming examples covering TCP servers, Linux `io_uring` servers with Glommio, ngrok tunneling, and HTTP proxying with Pingora. It demonstrates integration with `anyhow`, `axum`, `clap`, `glommio`, `ngrok`, `pingora`, `tokio`, and `url`.
 
 ## Examples Covered
 
@@ -18,4 +18,4 @@ cargo check --package network_programming --examples
 cargo test --package network_programming
 ```
 
-Code examples correspond to chapters in `bk/src/categories/network_programming` or related book sections.
+Code examples correspond to chapters in `bk/src/categories/network-programming` or related book sections.

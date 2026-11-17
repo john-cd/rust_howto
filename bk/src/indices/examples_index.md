@@ -376,6 +376,20 @@
 
 {{#include ../categories/hardware-support/processor.incl.md}}
 
+## Network Programming
+
+### Peer-to-Peer
+
+{{#include ../categories/network-programming/iroh_loopback.incl.md}}
+
+### Reverse Proxies and Ingress
+
+{{#include ../categories/network-programming/reverse_proxy.incl.md}}
+
+### Servers
+
+{{#include ../categories/network-programming/server.incl.md}}
+
 ## Development Tools
 
 ### Cargo
