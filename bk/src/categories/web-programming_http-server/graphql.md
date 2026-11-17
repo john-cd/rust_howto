@@ -2,7 +2,7 @@
 
 # GraphQL
 
-{{#include _graphql.incl.md}}
+{{#include graphql.incl.md}}
 
 GraphQL is a query language and execution model for APIs. A schema defines the available types and fields; a client selects the fields it needs in each request. Servers commonly expose a GraphQL schema at one HTTP endpoint, though GraphQL can also be transported over other protocols.
 
@@ -26,7 +26,7 @@ The HTTP request body wraps that document in JSON, for example `{"query":"{ hell
 {{#include ../../../crates/cats/web_programming_http_server/examples/async_graphql.rs:example}}
 ```
 
-This recipe starts from a hand-written schema. Use [Seaography](../database/query_builders_orms.md#sea-orm) when you want to generate a GraphQL API from SeaORM entities.
+This recipe starts from a hand-written schema. Use [Seaography](https://docs.rs/seaography/latest/seaography/) when you want to generate a GraphQL API from SeaORM entities.
 
 ## Other Options {#other-options .skip}
 
@@ -38,9 +38,9 @@ Juniper doesn't include a web server. Instead, it provides building blocks to ma
 
 ## Related Topics {#related-topics .skip}
 
-- [[asynchronous | Asynchronous Programming]] for async resolvers and Tokio.
-- [[web-programming_http-server | HTTP Servers]] for the Axum endpoint and other server frameworks.
-- [[web-programming_http-client | HTTP Clients]] for making HTTP requests to an API.
+- [Asynchronous Programming](../asynchronous/index.md) for async resolvers and Tokio.
+- [HTTP Servers](index.md) for the Axum endpoint and other server frameworks.
+- [HTTP Clients](../web-programming_http-client/offline_http_client.md) for making requests to an API.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

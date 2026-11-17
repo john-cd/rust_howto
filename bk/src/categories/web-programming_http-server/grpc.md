@@ -2,7 +2,7 @@
 
 # gRPC
 
-{{#include _grpc.incl.md}}
+{{#include grpc.incl.md}}
 
 ## Implement gRPC {#tonic}
 
@@ -12,17 +12,17 @@ gRPC defines remote methods and their request and response messages in a service
 
 The repository's `proto/helloworld.proto` declares `Greeter.SayHello(HelloRequest) returns (HelloReply)`. The build script uses `protox` and `tonic-prost-build` to generate Rust client and server types from that contract; `tonic::include_proto!("helloworld")` includes the generated module. This avoids a separate `protoc` executable.
 
-The package currently pairs Tonic and its Prost integration crates at 0.14.6 with Prost 0.14.4. A standalone project using the same setup can declare:
+Use matching 0.14 releases of Tonic, its Prost integration crates, and Prost. A standalone project can declare:
 
 ```toml
 [dependencies]
-tonic = "0.14.6"
-tonic-prost = "0.14.6"
-prost = "0.14.4"
+tonic = "0.14"
+tonic-prost = "0.14"
+prost = "0.14"
 
 [build-dependencies]
 protox = "0.10.0"
-tonic-prost-build = "0.14.6"
+tonic-prost-build = "0.14"
 ```
 
 `MyGreeter` implements the generated `Greeter` trait. Each RPC receives a `Request<T>` and returns either a `Response<T>` or a `Status`; `Server::builder().add_service(...)` registers the implementation, and `.serve(addr).await` runs the server. The example binds to the IPv6 loopback address on port 50051 for local use.
@@ -45,20 +45,20 @@ The matching client connects to the running `Greeter` server through the generat
 
 Browsers cannot make the HTTP/2 trailers-based calls that gRPC needs. [gRPC-Web][grpc-web~repo]↗ is a variant of the protocol that browsers can speak with `fetch`. [`tonic-web`][c~tonic-web~docs]↗{{hi:tonic-web}} provides `GrpcWebLayer`, which translates gRPC-Web requests into gRPC for the same `tonic` service, so one port serves native and browser clients.
 
-Two details matter. First, `Server::builder().accept_http1(true)` is required, because gRPC-Web may arrive over HTTP/1.1. Second, a page served from another origin needs CORS: add a [`tower-http`][c~tower-http~docs]↗{{hi:tower-http}} `CorsLayer` that allows the request headers and exposes `grpc-status` and `grpc-message` (see [[cors | Cross-origin Resource Sharing]]). The example mirrors any origin to stay short; allow only your own origins in production.
+Two details matter. First, `Server::builder().accept_http1(true)` is required, because gRPC-Web may arrive over HTTP/1.1. Second, a page served from another origin needs CORS: add a [`tower-http`][c~tower-http~docs]↗{{hi:tower-http}} `CorsLayer` that allows the request headers and exposes `grpc-status` and `grpc-message` (see [Cross-origin Resource Sharing](cors.md)). The example mirrors any origin to stay short; allow only your own origins in production.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/web_programming_http_server/examples/grpc/grpc_web.rs:example}}
 ```
 
-The test sends a hand-framed gRPC-Web request (a five-byte length prefix followed by the protobuf message) to the service and checks the reply, so no browser is needed. In the browser, the [`tonic-web-wasm-client`][c~tonic-web-wasm-client~docs]↗{{hi:tonic-web-wasm-client}} crate provides the matching client; see [[leptos | Leptos]].
+The test sends a hand-framed gRPC-Web request (a five-byte length prefix followed by the protobuf message) to the service and checks the reply, so no browser is needed. In a browser, the [`tonic-web-wasm-client`][c~tonic-web-wasm-client~docs]↗{{hi:tonic-web-wasm-client}} crate provides the matching client.
 
 **gRPC, gRPC-Web, Connect, or something else?**
 
 - Use plain gRPC between servers: it supports all four streaming modes.
 - Use gRPC-Web for browser clients. It supports unary and server-streaming calls, but not client or bidirectional streaming. A proxy such as Envoy can translate supported gRPC-Web calls when the server cannot use `GrpcWebLayer`; it cannot add browser request-streaming support.
 - Connect is a separate HTTP-based protocol that supports all four RPC shapes. Bidirectional streaming requires HTTP/2; the other modes also work over HTTP/1.1. Connect's browser client supports unary and server streaming because request streaming is not supported across browsers. Connect implementations can also serve gRPC and gRPC-Web; the `tonic-web` layer in this example does not implement Connect. See the [Connect protocol reference][connectrpc~protocol] and [browser guide][connectrpc~web].
-- If the API is small and public, a JSON API described with OpenAPI may be simpler for outside developers; see [OpenAPI and JSON Schema](https://john-cd.com/rust_howto/categories/web-programming_http-server/openapi.html).
+- If the API is small and public, a JSON API described with OpenAPI may be simpler for outside developers; see [OpenAPI and JSON Schema](openapi.md).
 
 ## Generate Code Without a System `protoc` {#protoc}
 
@@ -80,9 +80,9 @@ The book uses the pure-Rust approach for both `helloworld.proto` and `echo.proto
 
 ## Related Topics {#related-topics .skip}
 
-- [[asynchronous | Asynchronous Programming]] for Tokio and async service methods.
-- [[network-programming | Network Programming]] for socket addresses and transport basics.
-- [[web-programming_http-server | HTTP Servers]] for HTTP-based web services and middleware.
+- [Asynchronous Programming](../asynchronous/index.md) for Tokio and async service methods.
+- [HTTP Types and Interfaces](../web-programming/http_types_and_interfaces.md) for HTTP request and response types.
+- [HTTP Servers](index.md) for HTTP-based web services and middleware.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

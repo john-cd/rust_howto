@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Update JSON Fields with Axum
+# Update JSON Fields with Axum {#json-patch}
 
 A PATCH request often needs three states: an omitted field leaves its current value alone, `null` clears it, and a value replaces it. `Option<String>` alone merges the first two states during Serde deserialization. This local [Axum](https://docs.rs/axum/latest/axum/) example uses `#[serde(default)]` for omission and a custom `Deserialize` implementation for explicit null. It validates a nickname before changing an in-memory profile.
 
