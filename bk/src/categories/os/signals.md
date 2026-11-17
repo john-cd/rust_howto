@@ -32,9 +32,9 @@ In async code, await [`tokio::signal::ctrl_c`][c~tokio::signal::ctrl_c~docs]↗{
 
 ## Related Topics {#related-topics .skip}
 
-- [[process_management | Process Management]] covers stopping child processes.
-- [[external_commands | External Commands]].
-- [[concurrency | Concurrency]] covers threads and channels.
+- [Process Management](process_management.md) covers stopping child processes.
+- [External Commands](external_commands.md).
+- [Concurrency](../concurrency/index.md) covers threads and channels.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

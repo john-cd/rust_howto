@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# External Command
+# External Commands
 
 {{#include external_commands.incl.md}}
 
@@ -50,7 +50,7 @@ Starts the Unix `rev` utility using [`std::process::Command`][c~std::process::Co
 
 Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current working directory. It is equivalent to running: `du -ah . | sort -hr | head -n 10`.
 
-[`std::process::Command`][c~std::process::Command~docs]↗{{hi:std::process::Command}} represent a process{{hi:Process}}. Output of a child process is captured with a [`std::process::Stdio::piped`][c~std::process::Stdio::piped~docs]↗{{hi:std::process::Stdio::piped}} between parent and child.
+[`std::process::Command`][c~std::process::Command~docs]↗{{hi:std::process::Command}} starts a child process. To capture its output, connect the parent and child with [`std::process::Stdio::piped`][c~std::process::Stdio::piped~docs]↗{{hi:std::process::Stdio::piped}}.
 
 ```rust,editable
 {{#include ../../../crates/cats/os/examples/external_commands/piped.rs:example}}
@@ -62,7 +62,7 @@ Shows up to the 10<sup>th</sup> biggest files and subdirectories in the current 
 
 Spawns a child process and redirects [`std::io::Stdout`][c~std::io::Stdout~docs]↗{{hi:std::io::Stdout}} and [`std::io::Stderr`][c~std::io::Stderr~docs]↗{{hi:std::io::Stderr}} to the same file. It follows the same idea as [run piped external commands][ex~os~run-piped-external-commands]↗, however [`std::process::Stdio`][c~std::process::Stdio~docs]↗{{hi:std::process::Stdio}} writes to a specified file. [`std::fs::File::try_clone`][c~std::fs::File::try_clone~docs]↗{{hi:std::fs::File::try_clone}} references the same file handle for [`std::io::Stdout`][c~std::io::Stdout~docs]↗{{hi:std::io::Stdout}} and [`std::io::Stderr`][c~std::io::Stderr~docs]↗{{hi:std::io::Stderr}}. It will ensure that both handles write with the same cursor position.
 
-The below recipe is equivalent to run the [Unix][p~unix] shell command `ls . oops >out.txt 2>&1`.
+This recipe is similar to the Unix shell command `ls . oops >out.txt 2>&1`.
 
 ```rust,editable
 {{#include ../../../crates/cats/os/examples/external_commands/error_file.rs:example}}
@@ -72,10 +72,9 @@ The below recipe is equivalent to run the [Unix][p~unix] shell command `ls . oop
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~os][cat~os~badge]][cat~os]{{hi:OS}}
 
-In [Run an external command and process its `stdout`][ex~os~run-an-external-command-and-process-stdout]↗, processing doesn't start until the external [`std::process::Command`][c~std::process::Command~docs]↗{{hi:std::process::Command}} is finished. The recipe below calls [`std::process::Stdio::piped`][c~std::process::Stdio::piped~docs]↗{{hi:std::process::Stdio::piped}} to create a pipe, and reads
-[`std::io::Stdout`][c~std::io::Stdout~docs]↗{{hi:std::io::Stdout}} continuously as soon as the [`std::io::BufReader`][c~std::io::BufReader~docs]↗{{hi:std::io::BufReader}} is updated.
+In [Run an External Command and Process its `stdout`][ex~os~run-an-external-command-and-process-stdout]↗, the program waits for the child to exit before processing its captured output. This recipe instead pipes the child's output and reads it line by line while the process is running.
 
-The below recipe is equivalent to the Unix shell command `journalctl | grep usb`.
+This recipe is similar to the Unix shell command `journalctl | grep usb`.
 
 ```rust,editable
 {{#include ../../../crates/cats/os/examples/external_commands/continuous.rs:example}}
@@ -115,7 +114,7 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 
 [`shlex`][c~shlex~docs]↗ splits a string into words the way a POSIX shell would (`shlex::split`), and quotes a word so that it can be pasted into a shell (`shlex::try_quote`). Use it to parse a command line you receive as a string, or to print a copy-pasteable command in logs and error messages. `try_quote` returns an error for input it cannot quote, such as a NUL byte.
 
-Quoting for display is not a reason to run a command through a shell: pass each argument to `Command::args` instead (see [[process_management | Process Management]]).
+Quoting for display is not a reason to run a command through a shell: pass each argument to `Command::args` instead (see [Process Management](process_management.md)).
 
 ```rust,editable
 {{#include ../../../crates/cats/os/examples/external_commands/shlex_example.rs:example}}
@@ -123,12 +122,10 @@ Quoting for display is not a reason to run a command through a shell: pass each 
 
 ## Related Topics {#related-topics .skip}
 
-- [[process_management | Process Management]].
-- [Command-line Interface](../../../src/categories/command-line-interface/index.md).
-- [Command-line Utilities Written in Rust](../../../src/categories/command-line-utilities/index.md).
-- [Shells and Related Utilities](../../../src/categories/command-line-utilities/shells.md).
-- [[shells | Shells]].
-- [[os | Operating Systems]].
+- [Process Management](process_management.md).
+- [Command-line Interface](../command-line-interface/index.md).
+- [Command-line Utilities](../command-line-utilities/index.md).
+- [Shells and Related Utilities](../command-line-utilities/shells.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

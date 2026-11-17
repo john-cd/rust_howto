@@ -300,6 +300,13 @@
   - [Reverse Proxies and Ingress](categories/network-programming/reverse_proxy.md)
   - [Connect Two Iroh Endpoints on Loopback](categories/network-programming/iroh_loopback.md)
 
+- [Operating Systems](categories/os/index.md)
+  - [External Commands](categories/os/external_commands.md)
+  - [Process Management](categories/os/process_management.md)
+  - [Signals and Graceful Shutdown](categories/os/signals.md)
+  - [Low-level System Calls](categories/os/low_level_system_calls.md)
+  - [Operating Systems Written in Rust](categories/os/rust_os.md)
+
 - [Images](categories/multimedia_images/index.md)
   - [Image Processing](categories/multimedia_images/images.md)
 

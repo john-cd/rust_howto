@@ -29,10 +29,10 @@ The [`libc`][c~libc~docs]↗{{hi:libc}} crate exposes platform C-library functio
 
 ## Related Topics {#related-topics .skip}
 
-- [[os | Operating System]] starts with portable operating-system services.
-- [[unix | Unix APIs]] covers safe wrappers for common Unix interfaces.
-- [[windows | Windows APIs]] covers Windows-specific bindings.
-- [[generate_ffi_bindings | FFI Bindings]] covers calling C and C++ code.
+- [Operating Systems](index.md) starts with portable operating-system services.
+- [Rust Unix APIs](https://doc.rust-lang.org/std/os/unix/) documents platform-specific Unix interfaces.
+- [Rust Windows APIs](https://doc.rust-lang.org/std/os/windows/) documents platform-specific Windows interfaces.
+- [The Rust Reference: External blocks](https://doc.rust-lang.org/reference/items/external-blocks.html) covers declaring C functions and types.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
