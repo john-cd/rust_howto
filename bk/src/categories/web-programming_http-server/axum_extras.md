@@ -42,7 +42,7 @@ The test generates a throwaway self-signed certificate with [`rcgen`][c~rcgen~do
 {{#include ../../../crates/cats/web_programming_http_server/examples/axum_extras/axum_server_tls.rs:example}}
 ```
 
-`rustls` needs a process-wide crypto provider; install one at start-up as the test does. See [[certificates | Certificates]].
+`rustls` needs a process-wide crypto provider; install one at start-up as the test does. See the [`rustls` documentation][c~rustls~docs]↗ for certificate and provider setup.
 
 ## Show One-time Flash Messages {#flash-messages}
 
@@ -101,10 +101,10 @@ Remove the attribute once the handler compiles; it only improves diagnostics. As
 
 ## Related Topics {#related-topics .skip}
 
-- [[axum | Axum]].
-- [[middleware | Middleware]].
-- [[session_login | Session Login]].
-- [[web-programming_http-server | HTTP Servers]].
+- [Axum](axum.md).
+- [Middleware](middleware.md).
+- [`tower-sessions` documentation](https://docs.rs/tower-sessions/latest/tower_sessions/) for server-side session storage.
+- [HTTP Servers](index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

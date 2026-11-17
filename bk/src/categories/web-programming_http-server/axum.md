@@ -2,7 +2,7 @@
 
 # Axum
 
-{{#include _axum.incl.md}}
+{{#include axum.incl.md}}
 
 ## Create a Web Server with `axum` {#axum}
 
@@ -27,9 +27,9 @@ For examples of middleware and other extensions, see [Axum Extras](axum_extras.m
 
 ## Related Topics {#related-topics .skip}
 
-- [[asynchronous | Asynchronous Programming]] for Tokio runtimes, async functions, and task scheduling.
-- [[network-programming | Network Programming]] for TCP sockets and lower-level server behavior.
-- [[web-programming_http-server | HTTP Servers]] for Hyper, Actix Web, GraphQL, gRPC, and middleware.
+- [Asynchronous Programming](../asynchronous/index.md) for Tokio runtimes, async functions, and task scheduling.
+- [HTTP Types and Interfaces](../web-programming/http_types_and_interfaces.md) for HTTP request and response types.
+- [HTTP Servers](index.md) for Hyper, Actix Web, GraphQL, gRPC, and middleware.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -10,7 +10,7 @@
 //! `say_hello`. The `say_hello` method takes a `HelloRequest` and returns a
 //! `HelloReply`.
 //!
-//! The package uses `tonic` and `tonic-prost` 0.14.6 with `prost` 0.14.4.
+//! The package uses matching 0.14 releases of `tonic`, `tonic-prost`, and `prost`.
 //! Its build script generates this module from `proto/helloworld.proto`.
 
 // Imports from the module created by `tonic` (see below):

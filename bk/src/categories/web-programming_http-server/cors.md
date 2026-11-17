@@ -33,11 +33,11 @@ This example allows `GET` and `POST` from any origin and returns `Access-Control
 ## See Also {#see-also .skip}
 
 - [CORS (Mozilla)][mozilla~cors]↗.
-- See [[middleware | Middleware]] for a running Axum server that combines CORS with tracing, compression, and a request timeout.
+- See [Middleware](middleware.md) for an Axum server that combines CORS with tracing, compression, and a request timeout.
 
 ## Related Topics {#related-topics .skip}
 
-- [[middleware | Middleware]].
+- [Middleware](middleware.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

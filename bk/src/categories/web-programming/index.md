@@ -6,13 +6,13 @@
 
 Web applications combine HTTP, asynchronous I/O, serialization, and user-interface code. Use this index to find the guide for the layer you are building.
 
-Use the [local HTTP client example](../web-programming_http-client/offline_http_client.md) to call a service, and the [HTTP server example](../web-programming_http-server/json_patch.md) as a starting point for an API. This overview links to URL, media-type, and parsing tools used on either side.
+Use the [HTTP client example](../web-programming_http-client/offline_http_client.md) to call a service and the [HTTP Servers guide](../web-programming_http-server/index.md) to choose a framework. The [JSON Patch example](../web-programming_http-server/json_patch.md) is a concrete starting point for an API. This overview also links to URL, media-type, and parsing tools used on either side.
 
 ## Services, APIs, and Network I/O
 
 | Goal | Start here |
 | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Build an HTTP server or REST API | [HTTP server example](../web-programming_http-server/json_patch.md); it shows request handling with Axum. |
+| Build an HTTP server or REST API | [HTTP Servers](../web-programming_http-server/index.md) compares frameworks; [Update JSON Fields with Axum](../web-programming_http-server/json_patch.md) demonstrates request handling. |
 | Send requests to an HTTP service | [HTTP Clients](../web-programming_http-client/index.md) covers client selection, API calls, retries, and file transfers; [Make an HTTP Request Against a Local Service](../web-programming_http-client/offline_http_client.md) is a small loopback example. |
 | Implement a GraphQL endpoint | [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}}. |
 | Implement a gRPC service | [`tonic`][c~tonic~docs]↗{{hi:tonic}}. |
@@ -59,6 +59,7 @@ For browser interfaces compiled to WebAssembly, explore [`yew`][c~yew~docs]↗{{
 - [Asynchronous Programming](../asynchronous/index.md) for async runtimes and task coordination.
 - [Make an HTTP Request Against a Local Service](../web-programming_http-client/offline_http_client.md) for a deterministic client example.
 - [HTTP Clients](../web-programming_http-client/index.md) for client selection, API requests, rate limiting, retries, and downloads.
+- [HTTP Servers](../web-programming_http-server/index.md) for framework choice, middleware, API schemas, and service resilience.
 - [Serialization and Deserialization](../encoding/serde.md) for JSON and other data formats.
 - [Testing](../development-tools_testing/index.md) for unit, integration, and end-to-end checks.
 
