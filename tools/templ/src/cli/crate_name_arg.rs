@@ -27,6 +27,7 @@ pub(super) fn get_cmd_arg_crate_name(m: &clap::ArgMatches) -> Vec<String> {
         .collect::<Vec<String>>()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::Command;

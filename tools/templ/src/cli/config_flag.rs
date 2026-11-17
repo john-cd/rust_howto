@@ -24,6 +24,7 @@ pub(super) fn get_config(matches: &ArgMatches) -> Config {
     }
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::Command;
