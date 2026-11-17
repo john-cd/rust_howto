@@ -179,7 +179,10 @@ impl SeqNum {
 ///
 /// The [`SeqNumGenerator`][SeqNumGenerator] encapsulates the generation of sequence numbers.
 #[derive(Clone, Copy, Debug)]
-pub(crate) struct SeqNumGenerator(SeqNum);
+pub(crate) struct SeqNumGenerator(
+    /// Next sequence number reserved by this generator.
+    SeqNum,
+);
 
 impl SeqNumGenerator {
     /// Create a new sequence number generator with a given resolution.

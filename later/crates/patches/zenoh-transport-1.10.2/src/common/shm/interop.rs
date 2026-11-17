@@ -78,11 +78,17 @@ struct ProviderInitCfg {
 #[derive(Debug)]
 pub enum ProviderInitState {
     /// Initializing variant of `ProviderInitState`.
-    Initializing(flume::Receiver<Option<Arc<ShmProvider<PosixShmProviderBackend>>>>),
+    Initializing(
+        /// Completion channel for shared-memory provider initialization.
+        flume::Receiver<Option<Arc<ShmProvider<PosixShmProviderBackend>>>>,
+    ),
 
     /// Ready variant of `ProviderInitState`.
     /// Marks the shm operation as having completed successfully.
-    Ready(Arc<ShmProvider<PosixShmProviderBackend>>),
+    Ready(
+        /// Initialized provider shared by the active transport.
+        Arc<ShmProvider<PosixShmProviderBackend>>,
+    ),
 
     /// Marks the shm operation as unsuccessful after recovery options are exhausted.
     Error,
@@ -92,12 +98,21 @@ pub enum ProviderInitState {
 /// error.
 enum ProviderInitStateInner {
     /// Represents the enabled case of provider init state inner.
-    Enabled(ProviderInitCfg),
+    Enabled(
+        /// Configuration required to initialize the shared-memory provider.
+        ProviderInitCfg,
+    ),
     /// Represents the initializing case of provider init state inner.
-    Initializing(flume::Receiver<Option<Arc<ShmProvider<PosixShmProviderBackend>>>>),
+    Initializing(
+        /// Completion channel for shared-memory provider initialization.
+        flume::Receiver<Option<Arc<ShmProvider<PosixShmProviderBackend>>>>,
+    ),
 
     /// Marks the shm operation as having completed successfully.
-    Ready(Arc<ShmProvider<PosixShmProviderBackend>>),
+    Ready(
+        /// Initialized provider shared by the active transport.
+        Arc<ShmProvider<PosixShmProviderBackend>>,
+    ),
 
     /// Marks the shm operation as unsuccessful after recovery options are exhausted.
     Error,

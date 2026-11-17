@@ -617,7 +617,10 @@ struct TimeoutTrackerInner {
 
 /// Data for timeout tracker operations, including waker and has timed out.
 #[derive(Clone)]
-struct TimeoutTracker(Arc<TimeoutTrackerInner>);
+struct TimeoutTracker(
+    /// Shared timeout state observed by all tracker handles.
+    Arc<TimeoutTrackerInner>,
+);
 
 impl TimeoutTracker {
     /// Creates a new timeout tracker with the supplied configuration.

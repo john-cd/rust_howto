@@ -7,7 +7,10 @@
 
 /// A struct that does not implement `Copy`, so it has move semantics.
 #[derive(Debug)]
-struct MyStruct(bool);
+struct MyStruct(
+    /// Boolean state used by the borrowing and synchronization example.
+    bool,
+);
 
 // This function takes an (immutable) reference to `MyStruct`.
 // We can read but not modify `s1`.

@@ -278,7 +278,10 @@ impl State {
 
 /// Authentication state maintained by the initiator during the open handshake.
 #[derive(Clone, Debug, PartialEq, Eq)]
-pub(crate) struct StateOpen(State);
+pub(crate) struct StateOpen(
+    /// Protocol state retained while the region-name extension is open.
+    State,
+);
 
 impl From<State> for StateOpen {
     /// Constructs this type from the supplied source value.
@@ -452,7 +455,10 @@ impl<'a> OpenFsm for &'a QoSFsm<'a> {
 
 /// Quality-of-service extension state exchanged during unicast establishment.
 #[derive(Clone, Debug, PartialEq, Eq)]
-pub(crate) struct StateAccept(State);
+pub(crate) struct StateAccept(
+    /// Protocol state retained while accepting the region-name extension.
+    State,
+);
 
 impl From<State> for StateAccept {
     /// Constructs this type from the supplied source value.

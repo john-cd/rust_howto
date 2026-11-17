@@ -22,7 +22,10 @@ enum Field<T> {
     /// Represents the null case of field.
     Null,
     /// Represents the value case of field.
-    Value(T),
+    Value(
+        /// Replacement value carried by this JSON patch operation.
+        T,
+    ),
 }
 
 impl<'de, T: Deserialize<'de>> Deserialize<'de> for Field<T> {

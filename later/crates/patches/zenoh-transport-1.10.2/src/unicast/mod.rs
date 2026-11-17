@@ -101,7 +101,10 @@ pub(crate) struct TransportConfigUnicast {
 /// [`TransportUnicast`] is the transport handler returned
 /// when opening a new unicast transport
 #[derive(Clone)]
-pub struct TransportUnicast(Weak<dyn TransportUnicastTrait>);
+pub struct TransportUnicast(
+    /// Weak reference to unicast internals that avoids a reference cycle.
+    Weak<dyn TransportUnicastTrait>,
+);
 
 impl TransportUnicast {
     /// Returns the inner stored by or available from this value.

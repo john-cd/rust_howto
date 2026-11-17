@@ -19,13 +19,20 @@ pub enum DataStoreError {
     // #[error("...")] messages on the struct or each variant of your enum.
     /// The data store disconnected.
     #[error("data store disconnected")]
-    Disconnect(#[from] std::io::Error), /* A `From` impl is generated for
-                                         * each variant containing
-                                         * a #[from] attribute. */
+    Disconnect(
+        /// Underlying error preserved by the Disconnect case.
+        #[from]
+        std::io::Error,
+    ), /* A `From` impl is generated for
+        * each variant containing
+        * a #[from] attribute. */
 
     /// The data for a key is not available.
     #[error("the data for key `{0}` is not available")]
-    Redaction(String),
+    Redaction(
+        /// Text value carried by the Redaction case.
+        String,
+    ),
 
     /// A header does not have the expected content.
     #[error("invalid header (expected {expected:?}, found {found:?})")]
@@ -47,7 +54,11 @@ pub enum DataStoreError {
     // underlying error without adding an additional message.
 
     /// Other variant of `DataStoreError`.
-    Other(#[from] anyhow::Error),
+    Other(
+        /// Underlying error preserved by the Other case.
+        #[from]
+        anyhow::Error,
+    ),
 }
 
 /// Returns a `DataStoreError` on purpose.

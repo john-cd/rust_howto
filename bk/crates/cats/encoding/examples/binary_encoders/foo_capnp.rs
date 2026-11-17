@@ -11,7 +11,10 @@
 pub mod my_struct {
     /// Data for owned operations, including impl and generic.
     #[derive(Copy, Clone)]
-    pub struct Owned(());
+    pub struct Owned(
+        /// Zero-sized payload used to construct the generated ownership marker.
+        (),
+    );
     impl ::capnp::introspect::Introspect for Owned {
         /// Handles the introspect behavior for this component.
         fn introspect() -> ::capnp::introspect::Type {

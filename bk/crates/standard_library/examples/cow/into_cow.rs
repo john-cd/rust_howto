@@ -18,7 +18,12 @@ enum HttpStatus {
     NotFound,
 
     /// A status with a custom message.
-    Custom(u16, String),
+    Custom(
+        /// Numeric value used to distinguish this custom borrowed-or-owned case.
+        u16,
+        /// Owned text held by the custom case.
+        String,
+    ),
 }
 
 /// Call `into` to convert a string slice or a `String` into a `Cow` with

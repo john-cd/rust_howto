@@ -99,7 +99,10 @@ impl<
 }
 
 /// Groups the data required by cornucopia queries operations.
-pub struct IterSql<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync>(pub F);
+pub struct IterSql<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync>(
+    /// Factory that creates a fresh iterator for each SQL query.
+    pub F,
+);
 impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> std::fmt::Debug
     for IterSql<T, I, F>
 {

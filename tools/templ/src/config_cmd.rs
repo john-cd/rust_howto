@@ -18,19 +18,34 @@ pub(crate) enum Cmd {
     None,
 
     /// Create the badges, and optionally the reference definitions, of crates.
-    Badges(CmdArgs2),
+    Badges(
+        /// Arguments for creating badges and optional reference definitions.
+        CmdArgs2,
+    ),
 
     /// Create a Rust By Example badge.
-    Rbe(CmdArgs),
+    Rbe(
+        /// Arguments for creating the Rust By Example badge.
+        CmdArgs,
+    ),
 
     /// Create the category badges of the crates.
-    CategoriesForCrateBadge(CmdArgs),
+    CategoriesForCrateBadge(
+        /// Arguments for building a crate badge from its categories.
+        CmdArgs,
+    ),
 
     /// Create the badges of the categories that match the given words.
-    CategoryBadges(CmdArgs),
+    CategoryBadges(
+        /// Arguments for filtering and creating category badges.
+        CmdArgs,
+    ),
 
     /// Get information about a crate.
-    Info(CmdArgs),
+    Info(
+        /// Arguments selecting the crate whose metadata is displayed.
+        CmdArgs,
+    ),
 }
 
 /// The command arguments for multiple commands.

@@ -16,7 +16,10 @@ use actix::System;
 use anyhow::Context;
 
 /// A message that adds an amount to the counter.
-struct Add(u64);
+struct Add(
+    /// Amount the actor should add to its accumulated value.
+    u64,
+);
 
 impl Message for Add {
     /// Alias for `u64` used to represent result.

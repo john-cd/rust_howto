@@ -12,7 +12,12 @@ use std::collections::BTreeMap;
 use regex::Regex;
 
 /// Store a regular expression and the names of its capture groups.
-struct Re(Regex, Vec<&'static str>);
+struct Re(
+    /// Compiled regular expression used to capture matches.
+    Regex,
+    /// Capture names associated with the regular expression groups.
+    Vec<&'static str>,
+);
 
 /// Regexes take a while to compile.
 /// It is reasonable to store them in a global static.

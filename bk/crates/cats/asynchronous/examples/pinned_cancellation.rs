@@ -5,7 +5,10 @@ use std::future::pending;
 use tokio::sync::oneshot;
 
 /// Data carried by drop notice operations.
-struct DropNotice(Option<oneshot::Sender<()>>);
+struct DropNotice(
+    /// One-shot signal sender used to notify the task that it should drop its resource.
+    Option<oneshot::Sender<()>>,
+);
 
 impl Drop for DropNotice {
     /// Releases the resources owned by this value.

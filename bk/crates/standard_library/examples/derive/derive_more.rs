@@ -33,7 +33,10 @@ struct Point {
 
 /// Newtype pattern with conversion traits.
 #[derive(From, Into, Display, Debug)]
-struct UserId(u64);
+struct UserId(
+    /// Numeric identifier for a user.
+    u64,
+);
 
 /// Struct with a constructor.
 #[allow(
@@ -112,7 +115,10 @@ fn main() {
 
 /// An amount of money.
 #[derive(Add, AddAssign, Sub, SubAssign, From, Into, Display, Debug, Clone, Copy)]
-struct Amount(f64);
+struct Amount(
+    /// Monetary amount used by the conversion example.
+    f64,
+);
 
 // Custom error type with derive_more's `Error` trait.
 // `std::error::Error` requires `std::fmt::Debug` and `std::fmt::Display`.

@@ -47,7 +47,10 @@ mod tests {
 
     /// Data carried by buf operations.
     #[derive(Clone, Default)]
-    struct Buf(std::sync::Arc<std::sync::Mutex<Vec<u8>>>);
+    struct Buf(
+        /// Shared output buffer used by cloned writers to capture formatted bytes safely.
+        std::sync::Arc<std::sync::Mutex<Vec<u8>>>,
+    );
 
     impl std::io::Write for Buf {
         /// Appends formatted tracing bytes to the shared capture buffer.

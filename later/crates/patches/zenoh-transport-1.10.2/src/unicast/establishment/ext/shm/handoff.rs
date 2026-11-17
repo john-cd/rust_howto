@@ -50,7 +50,10 @@ pub enum HandoffConfig<T: Sized> {
     /// Represents the disabled case of handoff config.
     Disabled,
     /// Represents the per prio case of handoff config.
-    PerPrio(PriorityContainer<T>),
+    PerPrio(
+        /// Per-priority queues used to schedule handoff transactions.
+        PriorityContainer<T>,
+    ),
 }
 
 impl<T: Sized + Clone> Clone for HandoffConfig<T> {
@@ -104,7 +107,10 @@ impl RxHandoffChannel {
 
 /// Data for tx handoff channel operations, including handoff config and handoff counter ids.
 #[derive(Debug)]
-pub struct TxHandoffChannel(HandoffConfig<ShmTXCounterLease>);
+pub struct TxHandoffChannel(
+    /// Shared-memory handoff configuration used by the transmitting channel.
+    HandoffConfig<ShmTXCounterLease>,
+);
 impl TxHandoffChannel {
     /// Creates a disabled instance that does not accept transport work.
     pub fn new_disabled() -> Self {
@@ -288,7 +294,10 @@ impl LockedTxHandoff {
 
 /// Data for tx handoff storage operations, including handoff config and handoff config.
 #[derive(Debug, Clone)]
-pub struct TxHandoffStorage(HandoffConfig<TxHandoff>);
+pub struct TxHandoffStorage(
+    /// Handoff configuration that owns the transmit-side storage.
+    HandoffConfig<TxHandoff>,
+);
 impl TxHandoffStorage {
     /// Creates a disabled instance that does not accept transport work.
     pub fn new_disabled() -> Self {
@@ -335,11 +344,17 @@ impl<'a> LazyTransaction<'a> {
 /// Defines the possible open transaction state cases handled by this code.
 enum OpenTransactionState<'a> {
     /// Represents the lazy case of open transaction state.
-    Lazy(LazyTransaction<'a>),
+    Lazy(
+        /// Transaction that has not acquired the transmit lock yet.
+        LazyTransaction<'a>,
+    ),
     /// Represents the disabled case of open transaction state.
     Disabled,
     /// Represents the init case of open transaction state.
-    Init(LockedTxHandoff),
+    Init(
+        /// Handoff state with its transmit lock already acquired.
+        LockedTxHandoff,
+    ),
 }
 
 impl<'a> OpenTransactionState<'a> {

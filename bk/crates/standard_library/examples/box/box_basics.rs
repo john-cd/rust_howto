@@ -11,7 +11,10 @@
 /// This means that when an instance of `MyStruct` is moved, the original
 /// instance is no longer valid.
 #[derive(Debug)]
-struct MyStruct(i32);
+struct MyStruct(
+    /// Numeric value stored by the MyStruct wrapper.
+    i32,
+);
 
 /// Moves a value from the stack to the heap with a `Box`.
 fn main() {

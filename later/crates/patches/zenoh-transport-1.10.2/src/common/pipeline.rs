@@ -300,7 +300,10 @@ enum DeadlineSetting {
     /// Represents the immediate case of deadline setting.
     Immediate,
     /// Represents the finite case of deadline setting.
-    Finite(Instant),
+    Finite(
+        /// Instant at which the current operation times out.
+        Instant,
+    ),
 }
 
 /// Data for lazy deadline operations, including deadline and wait time.
@@ -655,11 +658,17 @@ impl StageIn {
 /// Defines the outcomes available to the common workflow, including some, none, backoff.
 enum Pull {
     /// Represents the some case of pull.
-    Some(BoxedWBatch),
+    Some(
+        /// Queued batch retained by the backoff state.
+        BoxedWBatch,
+    ),
     /// Represents the none case of pull.
     None,
     /// Represents the backoff case of pull.
-    Backoff(MicroSeconds),
+    Backoff(
+        /// Delay before retrying the deferred send.
+        MicroSeconds,
+    ),
 }
 
 // Inner structure to keep track and signal backoff operations

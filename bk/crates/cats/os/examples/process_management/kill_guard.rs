@@ -11,7 +11,10 @@ use std::process::Child;
 use std::process::Command;
 
 /// Owns a child process and kills it on drop unless it was released.
-struct KillOnDrop(Option<Child>);
+struct KillOnDrop(
+    /// Owned child process that the guard terminates when it is dropped.
+    Option<Child>,
+);
 
 impl KillOnDrop {
     /// Starts guarding `child`.

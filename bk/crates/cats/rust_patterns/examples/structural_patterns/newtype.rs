@@ -10,7 +10,10 @@
 
 /// A nonzero identifier for a user.
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
-struct UserId(u64);
+struct UserId(
+    /// Numeric identifier for a user.
+    u64,
+);
 
 impl UserId {
     /// Creates an identifier and rejects the reserved zero value.

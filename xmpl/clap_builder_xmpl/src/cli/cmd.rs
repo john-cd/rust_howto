@@ -14,10 +14,16 @@ pub enum Cmd {
 
     /// Explicit `open` command or implicit open (given a list of
     /// files).
-    Open(Vec<PathBuf>),
+    Open(
+        /// Filesystem paths opened by the command.
+        Vec<PathBuf>,
+    ),
 
     /// `query` command, storing query words.
-    Query(Vec<String>),
+    Query(
+        /// Query terms searched by the command.
+        Vec<String>,
+    ),
 
     /// A hidden command that does nothing.
     Test,

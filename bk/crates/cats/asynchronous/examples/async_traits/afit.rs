@@ -21,7 +21,10 @@ trait Store {
 }
 
 /// An in-memory implementation.
-struct MemoryStore(HashMap<String, String>);
+struct MemoryStore(
+    /// Key-value entries retained by the in-memory store implementation.
+    HashMap<String, String>,
+);
 
 impl Store for MemoryStore {
     /// Returns the value associated with `key`, if any.

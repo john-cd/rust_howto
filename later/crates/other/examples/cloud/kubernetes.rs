@@ -67,11 +67,19 @@ pub enum ReconcileError {
 
     /// The desired `Deployment` could not be built.
     #[error("invalid Deployment: {0}")]
-    Invalid(#[from] serde_json::Error),
+    Invalid(
+        /// JSON parsing or serialization failure that invalidated the resource.
+        #[from]
+        serde_json::Error,
+    ),
 
     /// The API server rejected a request.
     #[error("Kubernetes API error: {0}")]
-    Kube(#[from] kube::Error),
+    Kube(
+        /// Kubernetes client failure returned by the API request.
+        #[from]
+        kube::Error,
+    ),
 }
 
 /// Shared state for the reconciler.

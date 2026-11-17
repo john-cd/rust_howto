@@ -69,7 +69,10 @@ trait Add<Rhs = Self> {
 }
 // ANCHOR_END: add
 
-struct Value(u32);
+struct Value(
+    /// Numeric value stored by the Value wrapper.
+    u32,
+);
 
 impl Add for Value {
     /// Alias for `u32` used to represent output.

@@ -33,7 +33,10 @@ enum Step {
     TakeOff,
 
     /// Stay in place for a while.
-    Hover(Duration),
+    Hover(
+        /// Length of time the drone should remain hovering.
+        Duration,
+    ),
 
     /// Return to the ground.
     Land,
@@ -139,7 +142,10 @@ mod tests {
 
     /// Records the commands it receives instead of flying.
     #[derive(Default)]
-    struct Recorder(Vec<&'static str>);
+    struct Recorder(
+        /// Ordered log of events recorded by the drone example.
+        Vec<&'static str>,
+    );
 
     impl Flyer for Recorder {
         /// Handles the take off behavior for this component.

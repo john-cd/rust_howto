@@ -12,7 +12,11 @@ use thiserror::Error;
 enum CountError {
     /// Represents the invalid integer case of count error.
     #[error("count must be a positive integer")]
-    InvalidInteger(#[source] std::num::ParseIntError),
+    InvalidInteger(
+        /// Underlying error preserved by the InvalidInteger case.
+        #[source]
+        std::num::ParseIntError,
+    ),
     /// Represents the zero case of count error.
     #[error("count must be greater than zero")]
     Zero,

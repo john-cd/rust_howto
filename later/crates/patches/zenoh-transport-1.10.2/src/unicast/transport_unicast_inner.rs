@@ -52,9 +52,15 @@ pub(crate) type TransportError = (zenoh_result::Error, Arc<dyn TransportUnicastT
 /// Defines the outcomes available to the unicast workflow, including link, transport.
 pub(crate) enum InitTransportError {
     /// Link variant of `InitTransportError`.
-    Link(Box<LinkError>),
+    Link(
+        /// Underlying link failure reported by the transport.
+        Box<LinkError>,
+    ),
     /// Represents the transport case of init transport error.
-    Transport(TransportError),
+    Transport(
+        /// Underlying transport failure returned by the connection.
+        TransportError,
+    ),
 }
 
 /// Names the add link result type associated with this interface.

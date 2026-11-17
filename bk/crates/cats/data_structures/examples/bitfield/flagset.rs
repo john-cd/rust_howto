@@ -42,7 +42,10 @@ flags! {
 
 /// A container that stores a set of flags.
 #[derive(Debug)]
-struct Container(FlagSet<FlagsA>);
+struct Container(
+    /// Set of flags stored by the example container.
+    FlagSet<FlagsA>,
+);
 
 impl Container {
     // However, if you want to receive flags as an input to a function, you

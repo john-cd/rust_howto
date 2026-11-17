@@ -5,9 +5,15 @@
 // ANCHOR: example
 enum Result<T, E> {
     /// Represents the ok case of result.
-    Ok(T),
+    Ok(
+        /// Value produced when the operation succeeds.
+        T,
+    ),
     /// Represents the err case of result.
-    Err(E),
+    Err(
+        /// Error produced when the operation fails.
+        E,
+    ),
 }
 // ANCHOR_END: example
 

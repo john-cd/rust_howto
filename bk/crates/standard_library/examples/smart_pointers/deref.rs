@@ -11,7 +11,10 @@ use std::ops::Deref;
 // Define a custom smart pointer.
 
 /// A box that holds a value and dereferences to it.
-struct MyBox<T>(T);
+struct MyBox<T>(
+    /// Owned value exposed through the box-like Deref implementation.
+    T,
+);
 
 // Implement `Deref` for `MyBox`.
 impl<T> Deref for MyBox<T> {

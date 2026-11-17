@@ -19,7 +19,10 @@ use flume::bounded;
 #[derive(Debug, PartialEq)]
 enum Command {
     /// Adds a value to the running total.
-    Add(i32),
+    Add(
+        /// Signed amount requested by this actor message.
+        i32,
+    ),
 
     /// Stops the loop.
     Quit,

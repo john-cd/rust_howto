@@ -63,7 +63,10 @@ mod tests {
 
     /// A trait object that counts how many times it recited.
     #[derive(Clone)]
-    struct Counter(std::rc::Rc<std::cell::Cell<u32>>);
+    struct Counter(
+        /// Shared mutable counter value cloned across the trait-object example.
+        std::rc::Rc<std::cell::Cell<u32>>,
+    );
 
     impl MyTrait for Counter {
         /// Handles the recite behavior for this component.

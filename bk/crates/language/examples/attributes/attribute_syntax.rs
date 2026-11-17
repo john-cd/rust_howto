@@ -16,7 +16,10 @@ struct Label;
 
 /// Data carried by number operations.
 #[derive(PartialEq, Eq)]
-struct Number(u8);
+struct Number(
+    /// Numeric value stored by the Number wrapper.
+    u8,
+);
 // ANCHOR_END: forms
 
 // ANCHOR: lint_levels

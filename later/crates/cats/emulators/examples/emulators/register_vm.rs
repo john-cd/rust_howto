@@ -15,10 +15,16 @@ use core::fmt;
 #[derive(Debug)]
 enum EmuError {
     /// The instruction pointer is outside the loaded program.
-    InvalidAddress(usize),
+    InvalidAddress(
+        /// Memory address that does not map to a valid register.
+        usize,
+    ),
 
     /// No instruction matches this opcode and operand pair.
-    UnknownInstruction([u8; 2]),
+    UnknownInstruction(
+        /// Instruction bytes that do not match a supported opcode.
+        [u8; 2],
+    ),
 
     /// The program failed to halt within the host's instruction budget.
     StepLimit,

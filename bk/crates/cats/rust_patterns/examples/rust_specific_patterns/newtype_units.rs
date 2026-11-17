@@ -19,7 +19,10 @@ use std::ops::SubAssign;
 /// A length in meters.
 #[derive(Debug, Clone, Copy, PartialEq, PartialOrd, Default)]
 #[repr(transparent)]
-struct Meters(f64);
+struct Meters(
+    /// Distance value measured in meters.
+    f64,
+);
 
 impl Add for Meters {
     /// Alias for `Self` used to represent output.

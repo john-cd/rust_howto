@@ -9,11 +9,17 @@
 
 /// A length in millimeters.
 #[derive(Debug)]
-struct Millimeters(u32);
+struct Millimeters(
+    /// Length value measured in millimeters.
+    u32,
+);
 
 /// A length in meters.
 #[derive(Debug)]
-struct Meters(u32);
+struct Meters(
+    /// Length value measured in meters.
+    u32,
+);
 
 impl From<Meters> for Millimeters {
     /// Constructs this type from the supplied source value.

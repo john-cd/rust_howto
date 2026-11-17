@@ -21,7 +21,10 @@ trait Store: Send + Sync {
 }
 
 /// Always answers with the same value.
-struct Constant(&'static str);
+struct Constant(
+    /// Static response returned by this test service.
+    &'static str,
+);
 
 #[async_trait]
 impl Store for Constant {

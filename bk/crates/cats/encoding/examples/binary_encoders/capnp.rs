@@ -21,7 +21,7 @@
 //! `capnpc` is a Rust code-generation plugin; it does not include the compiler.
 //! The repository build script falls back to the checked-in generated file.
 //! A standalone `build.rs` can compile the schema like this:
-//! ```rust
+//! ```text
 //! fn main() {
 //!     capnpc::CompilerCommand::new()
 //!         .src_prefix("examples/binary_encoders")

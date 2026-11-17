@@ -34,7 +34,10 @@ type Handle = Rc<Node>;
 
 /// The name view returned to the XML tree builder.
 #[derive(Debug)]
-struct NameRef<'a>(&'a QualName);
+struct NameRef<'a>(
+    /// Borrowed qualified XML name, avoiding a clone while visiting the node.
+    &'a QualName,
+);
 
 impl ElemName for NameRef<'_> {
     /// Handles the ns behavior for this component.
@@ -51,10 +54,16 @@ impl ElemName for NameRef<'_> {
 /// The kinds of nodes stored in the small example tree.
 enum NodeKind {
     /// The document node and its ordered children.
-    Document(RefCell<Vec<Handle>>),
+    Document(
+        /// Child nodes that make up the parsed document.
+        RefCell<Vec<Handle>>,
+    ),
 
     /// A document fragment and its ordered children.
-    Fragment(RefCell<Vec<Handle>>),
+    Fragment(
+        /// Child nodes contained in this parsed fragment.
+        RefCell<Vec<Handle>>,
+    ),
 
     /// An element with attributes, children, and optional template contents.
     Element {
@@ -69,10 +78,16 @@ enum NodeKind {
     },
 
     /// Text content accumulated from XML character tokens.
-    Text(RefCell<String>),
+    Text(
+        /// Text content accumulated for this XML node.
+        RefCell<String>,
+    ),
 
     /// A comment node.
-    Comment(String),
+    Comment(
+        /// Text content of the XML comment.
+        String,
+    ),
 
     /// A processing instruction node.
     ProcessingInstruction {

@@ -637,9 +637,15 @@ impl TransportLinks {
 #[derive(Clone)]
 pub(super) enum TransportLinkMarker {
     /// Represents the link case of transport link marker.
-    Link(TransportLinkUnicastUniversal),
+    Link(
+        /// Established universal link used for unicast transport.
+        TransportLinkUnicastUniversal,
+    ),
     /// Represents the associated link case of transport link marker.
-    AssociatedLink(TransportLinkUnicastUniversal),
+    AssociatedLink(
+        /// Additional universal link associated with the primary connection.
+        TransportLinkUnicastUniversal,
+    ),
 }
 
 impl TransportLinkMarker {

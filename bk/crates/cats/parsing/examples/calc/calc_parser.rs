@@ -25,11 +25,20 @@ use winnow::token::take_while;
 #[derive(Debug, Clone, Copy, PartialEq)]
 enum Token<'a> {
     /// Represents the number case of token.
-    Number(f64),
+    Number(
+        /// Numeric value stored for this literal.
+        f64,
+    ),
     /// Represents the ident case of token.
-    Ident(&'a str),
+    Ident(
+        /// Source slice containing the identifier spelling.
+        &'a str,
+    ),
     /// Represents the op case of token.
-    Op(char),
+    Op(
+        /// Operator character represented by this token.
+        char,
+    ),
     /// Represents the l paren case of token.
     LParen,
     /// Represents the r paren case of token.
@@ -82,13 +91,29 @@ fn lex(source: &str) -> Result<Vec<Spanned<'_>>, String> {
 #[derive(Debug, PartialEq)]
 enum Expr<'a> {
     /// Represents the number case of expr.
-    Number(f64),
+    Number(
+        /// Numeric value stored for this literal.
+        f64,
+    ),
     /// Represents the var case of expr.
-    Var(&'a str),
+    Var(
+        /// Name of the variable referenced by this expression.
+        &'a str,
+    ),
     /// Represents the neg case of expr.
-    Neg(Box<Self>),
+    Neg(
+        /// Expression whose value is negated.
+        Box<Self>,
+    ),
     /// Represents the binary case of expr.
-    Binary(Box<Self>, char, Box<Self>),
+    Binary(
+        /// Left operand evaluated before the binary operator.
+        Box<Self>,
+        /// Binary operator applied between the two operands.
+        char,
+        /// Right operand evaluated after the binary operator.
+        Box<Self>,
+    ),
 }
 
 /// Parser over a token vector; `pos` is the next token to read.

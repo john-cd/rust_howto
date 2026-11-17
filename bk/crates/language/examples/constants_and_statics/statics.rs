@@ -26,7 +26,10 @@ fn main() {
 // A struct that implements a `Drop` destructor.
 
 /// A type that prints a message when it is dropped.
-struct PrintOnDrop(&'static str);
+struct PrintOnDrop(
+    /// Static message printed when the wrapper is dropped.
+    &'static str,
+);
 
 impl Drop for PrintOnDrop {
     /// Releases the resources owned by this value.

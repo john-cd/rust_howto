@@ -80,7 +80,10 @@ impl State {
 
 /// Region-name negotiation state maintained by the opening peer.
 #[derive(Debug, Clone, PartialEq)]
-pub(crate) struct StateOpen(State);
+pub(crate) struct StateOpen(
+    /// Protocol state retained while the region-name extension is open.
+    State,
+);
 
 impl StateOpen {
     /// Creates opening-side state with no peer region name recorded yet.
@@ -169,7 +172,10 @@ impl<'a> OpenFsm for &'a RegionNameFsm {
 
 /// Region-name negotiation state maintained by the accepting peer.
 #[derive(Debug, Clone, PartialEq)]
-pub(crate) struct StateAccept(State);
+pub(crate) struct StateAccept(
+    /// Protocol state retained while accepting the region-name extension.
+    State,
+);
 
 impl StateAccept {
     /// Creates accept-side state with no peer region name recorded yet.

@@ -10,10 +10,16 @@ use std::io;
 #[derive(Debug)]
 pub(crate) enum MyError {
     /// An I/O error.
-    Io(io::Error),
+    Io(
+        /// Underlying error preserved by the Io case.
+        io::Error,
+    ),
 
     /// An error message.
-    Message(String),
+    Message(
+        /// Text value carried by the Message case.
+        String,
+    ),
 }
 
 impl fmt::Display for MyError {

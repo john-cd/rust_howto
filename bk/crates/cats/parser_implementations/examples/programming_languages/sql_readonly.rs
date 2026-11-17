@@ -15,10 +15,16 @@ use sqlparser::parser::Parser;
 #[derive(Debug, PartialEq)]
 enum Rejection {
     /// The text is not valid SQL.
-    Syntax(String),
+    Syntax(
+        /// SQL text that failed to parse as a single read-only statement.
+        String,
+    ),
 
     /// More or fewer than one statement.
-    NotOneStatement(usize),
+    NotOneStatement(
+        /// Number of statements found when exactly one was required.
+        usize,
+    ),
 
     /// A statement other than a query, e.g. `DROP TABLE`.
     NotAQuery,

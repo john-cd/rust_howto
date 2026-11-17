@@ -14,13 +14,22 @@ use std::collections::HashMap;
 #[derive(Debug, PartialEq, Clone)]
 pub enum ConfigValue {
     /// A string.
-    String(String),
+    String(
+        /// String contents stored in this configuration value.
+        String,
+    ),
 
     /// A boolean.
-    Boolean(bool),
+    Boolean(
+        /// Boolean value carried by the message.
+        bool,
+    ),
 
     /// A nested map of configuration values.
-    Map(HashMap<String, Self>),
+    Map(
+        /// Nested configuration entries keyed by their names.
+        HashMap<String, Self>,
+    ),
 }
 
 // Our DSL Macro.

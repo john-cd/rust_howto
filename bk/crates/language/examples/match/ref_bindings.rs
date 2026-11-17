@@ -14,7 +14,10 @@ fn main() {
 
     /// Newtype used to show how match bindings borrow or move a value.
     #[derive(Debug)]
-    struct My(String);
+    struct My(
+        /// Owned text stored by the My wrapper.
+        String,
+    );
 
     let my = My(String::from("Hello"));
 

@@ -57,7 +57,10 @@ fn main() {
 
 /// A node of the layout tree.
 #[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
-pub struct Entity(u32);
+pub struct Entity(
+    /// Stable entity identifier used by the layout engine.
+    u32,
+);
 
 /// The sizes of the nodes.
 #[derive(Default)]
