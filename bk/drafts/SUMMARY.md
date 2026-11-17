@@ -10,12 +10,6 @@
   - [Databases](categories/database-implementations/databases.md)
   - [Search](categories/database-implementations/rust_search_engines.md)
 
-- [Email](categories/email/index.md)
-  - [Sending emails](categories/email/send_emails.md)
-  - [Email parsing](categories/email/email_parsing.md)
-  - [Reading emails](categories/email/read_emails.md)
-
-
 - [Graphics](categories/graphics/index.md)
 
 - [Hardware Support](categories/hardware-support/index.md)

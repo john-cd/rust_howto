@@ -28,10 +28,10 @@ Treat headers, HTML, filenames, and attachments as untrusted input. Set message-
 
 ## Related Topics {#related-topics .skip}
 
-- [[email | Email]].
-- [[parsing | Parsing]].
-- [[encoding | Encoding]].
-- [[web-programming | Web Programming]].
+- [Email](index.md).
+- [Parsing](../parsing/index.md).
+- [Encoding and Serialization](../encoding/index.md).
+- [Sanitize HTML](../web-programming/html_sanitization.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
