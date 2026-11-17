@@ -5,3 +5,7 @@
 | [Extract a list of Unique #hashtags from a Text][ex~text-processing~extract-a-list-of-unique-hashtags-from-a-text] | {{#crate regex}} {{#crate lazy_static}} | {{#categories text-processing="Text processing"}} |
 | [Extract Phone Numbers from Text][ex~text-processing~extract-phone-numbers-from-text] | {{#crate regex}} | {{#categories text-processing="Text processing"}} |
 | [Replace all Occurrences of one text Pattern with Another Pattern][ex~text-processing~replace-all-occurrences-of-one-text-pattern-with-another-pattern] | {{#crate regex}} {{#crate lazy_static}} | {{#categories text-processing="Text processing"}} |
+| [Verify and Extract Login from an Email Address][ex~text-processing~verify-and-extract-login-from-an-email-address] | {{#crate regex}} {{#crate lazy_static}} | {{#categories text-processing="Text processing"}} |
+| [Filter a Log File by Matching Multiple Regular Expressions][ex~text-processing~filter-a-log-file-by-matching-multiple-regular-expressions] | {{#crate regex}} | {{#categories text-processing="Text processing"}} |
+| [Use Regular Expressions with Back-references and Lookarounds][ex~text-processing~fancy-regex] | {{#crate fancy-regex}} | {{#categories text-processing="Text processing"}} |
+| [Longer Regex Example][ex~text-processing~longer-regex-example] | {{#crate regex}} | {{#categories text-processing="Text processing"}} |

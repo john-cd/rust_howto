@@ -14,7 +14,7 @@ This book's [GitHub repository][rust-howto~repo]↗ is structured as follows:
 - The [`bin`][rust-howto~bin~repo]↗ folder stores executables used to generate parts of the book or used by the book building process. Generate these tools using `just tools release` or `just scrub release`. These commands build the code and copy the compiled executables into `bin`.
 - The [`bk`][rust-howto~bk~repo]↗ folder contains the book itself:
   - The [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} configuration is in [`bk/book.toml`][c~mdbook~book.toml]↗{{hi:book.toml}}.
-  - The [markdown](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/parser-implementations/markdown.md) sources of the book are in the `bk/src` folder (work-in-progress chapters are in `bk/drafts`; stub chapters are in `later/src`), the structure of which is described below.
+  - The [Markdown chapter](../../categories/parser-implementations/markdown.md) and other published book sources are in the `bk/src` folder (work-in-progress chapters are in `bk/drafts`; stub chapters are in `later/src`), the structure of which is described below.
   - After the book is built using [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}}, the resulting HTML and Javascript are found in `bk/book/html`.
   - The templates and assets are in [`bk/theme`][rust-howto~bk-theme~repo]↗ and [`bk/static`][rust-howto~bk-static~repo]↗ respectively.
   - The Rust examples embedded in the book are found below `bk/crates` (see below for details).

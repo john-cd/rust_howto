@@ -132,6 +132,23 @@
 
 {{#include ../categories/encoding/string_encoding.incl.md}}
 
+
+### Binary Encoders
+
+{{#include ../categories/encoding/_binary_encoders.incl.md}}
+
+### Binary Encoders Without External Schemas
+
+{{#include ../categories/encoding/no_external_schema.incl.md}}
+
+### Structured Data
+
+{{#include ../categories/encoding/complex_encoding.incl.md}}
+
+### Typecasts and Byte Layout
+
+{{#include ../categories/encoding/typecasts.incl.md}}
+
 ## Filesystem
 
 ### Directories
@@ -234,13 +251,79 @@
 
 {{#include ../categories/parsing/parsing.incl.md}}
 
+## Parser Implementations
+
+### HTML and CSS Parsing
+
+{{#include ../categories/parser-implementations/html.incl.md}}
+
+### INI Parsing
+
+{{#include ../categories/parser-implementations/ini.incl.md}}
+
+### JSON Parsing
+
+{{#include ../categories/parser-implementations/json.incl.md}}
+
+### Markdown
+
+{{#include ../categories/parser-implementations/markdown.incl.md}}
+
+### TOML
+
+{{#include ../categories/parser-implementations/toml.incl.md}}
+
+### XML Parsing
+
+{{#include ../categories/parser-implementations/xml.incl.md}}
+
+### YAML Parsing
+
+{{#include ../categories/parser-implementations/yaml.incl.md}}
+
+### General Programming Language Parsing
+
+{{#include ../categories/parser-implementations/programming_languages.incl.md}}
+
 ## Text Processing
 
 {{#include ../categories/text-processing/regex.incl.md}}
 
 {{#include ../categories/text-processing/string_parsing.incl.md}}
 
-- [Collect Unicode Graphemes](../categories/text-processing/unicode.md#collect-unicode-graphemes).
+
+### Count Unicode Text for Display
+
+{{#include ../categories/text-processing/unicode.incl.md}}
+
+### String Concatenation
+
+{{#include ../categories/text-processing/string_concat.incl.md}}
+
+### String Manipulation
+
+{{#include ../categories/text-processing/string_manipulation.incl.md}}
+
+### String Search and Fuzzy Matching
+
+{{#include ../categories/text-processing/string_search.incl.md}}
+
+### Text Analysis
+
+{{#include ../categories/text-processing/text_analysis.incl.md}}
+
+### Syntax Highlighting
+
+{{#include ../categories/text-processing/syntax_highlighting.incl.md}}
+
+### Text Diffing
+
+{{#include ../categories/text-processing/diffing.incl.md}}
+
+### OS and Non-UTF-8 Strings
+
+{{#include ../categories/text-processing/other_strings.incl.md}}
+
 
 ## Template Engine
 

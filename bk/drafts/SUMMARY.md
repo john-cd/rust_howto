@@ -158,11 +158,6 @@
   - [Email parsing](categories/email/email_parsing.md)
   - [Reading emails](categories/email/read_emails.md)
 
-- [Encoding and Serialization](categories/encoding/index.md)
-  - [Structured Data](categories/encoding/complex_encoding.md)
-  - [Typecasting](categories/encoding/typecasts.md)
-  - [Binary Encoders](categories/encoding/_binary_encoders.md)
-  - [Binary Encoders, No External Schema](categories/encoding/no_external_schema.md)
 
 - [Error Handling](categories/rust-patterns/error_handling/error_handling.md)
   - [Error Customization](categories/rust-patterns/error_handling/error_customization.md)
@@ -198,15 +193,6 @@
 
 - [Parsing](categories/parsing/index.md)
 
-- [Parser Implementations](categories/parser-implementations/index.md)
-  - [HTML](categories/parser-implementations/html.md)
-  - [INI](categories/parser-implementations/ini.md)
-  - [JSON](categories/parser-implementations/json.md)
-  - [Markdown](categories/parser-implementations/markdown.md)
-  - [TOML](categories/parser-implementations/toml.md)
-  - [XML](categories/parser-implementations/xml.md)
-  - [YAML](categories/parser-implementations/yaml.md)
-  - [Programming Languages](categories/parser-implementations/programming_languages.md)
 
 - [Rust Patterns](categories/rust-patterns/index.md)
   - [Creational Patterns](categories/rust-patterns/creational_patterns.md)
@@ -222,15 +208,6 @@
   - [IDEs](categories/text-editors/ides.md)
   - [Language Server Protocol](categories/text-editors/language_server_protocol.md)
 
-- [Text Processing](categories/text-processing/index.md)
-  - [Regular Expressions — Remaining Recipes](categories/text-processing/regex.md)
-  - [String Concatenation](categories/text-processing/string_concat.md)
-  - [String Manipulation](categories/text-processing/string_manipulation.md)
-  - [String Search](categories/text-processing/string_search.md)
-  - [Text Analysis](categories/text-processing/text_analysis.md)
-  - [Syntax Highlighting](categories/text-processing/syntax_highlighting.md)
-  - [Text Diffing](categories/text-processing/diffing.md)
-  - [OS and C Strings](categories/text-processing/other_strings.md)
 
 - [Web Programming](categories/web-programming/index.md)
   - [HTTP Types and Interfaces](categories/web-programming/http_types_and_interfaces.md)

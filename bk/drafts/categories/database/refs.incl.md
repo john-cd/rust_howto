@@ -49,12 +49,12 @@
 [p~option]: # "../../standard-library/option.md"
 [p~performance]: ../development-tools_cargo-plugins/performance.md
 [p~postgres]: postgres.md
-[p~programming-languages]: ../parser-implementations/programming_languages.md
+[p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~search]: search.md
 [p~server]: ../network-programming/server.md
+[p~toml]: ../../../src/categories/parser-implementations/toml.md
 [p~streams]: ../asynchronous/streams.md
 [p~tokio]: ../asynchronous/tokio.md
-[p~toml]: ../parser-implementations/toml.md
 [p~url]: ../web-programming/url.md
 [p~windows]: ../os_windows-apis/windows.md
 [c~cornucopia~migration~1.0]: https://github.com/cornucopia-rs/cornucopia/blob/main/docs/src/introduction/migration_to_1_0.md

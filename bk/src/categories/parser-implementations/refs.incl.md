@@ -11,9 +11,9 @@
 [c~serde-saphyr~docs~badge]: https://img.shields.io/crates/v/serde-saphyr?label=serde-saphyr
 [c~yaml-rust2~docs]: https://docs.rs/yaml-rust2
 [ex~parser-implementations~basic-toml]: toml.md#basic-toml
+[ex~parser-implementations~configuration]: ../config/configuration.md
 [ex~parser-implementations~comrak]: markdown.md#comrak
 [ex~parser-implementations~configparser]: ini.md#configparser
-[ex~parser-implementations~configuration]: ../config/configuration.md
 [ex~parser-implementations~css-rs]: html.md#css-rs
 [ex~parser-implementations~html5ever]: html.md#html5ever
 [ex~parser-implementations~ini]: ini.md#ini
@@ -33,13 +33,7 @@
 [ex~parser-implementations~tl]: html.md#tl
 [ex~parser-implementations~toml-edit]: toml.md#toml-edit
 [ex~parser-implementations~toml]: toml.md#toml
-[ex~parser-implementations~wasm_parsing]: programming_languages.md#wasm_parsing
 [ex~parser-implementations~xml-rs]: xml.md#xml-rs
 [ex~parser-implementations~xml5ever]: xml.md#xml5ever
 [ex~parser-implementations~xmlparser]: xml.md#xmlparser
-[p~streams]: ../asynchronous/streams.md
-[p~template-engine]: ../template-engine/index.md
-[p~traits]: ../../../src/language/traits.md
-[p~web-scraping]: ../web-programming/scraping.md
-[p~xml-parsing]: xml.md
 [ex~parser-implementations~sql_readonly]: programming_languages.md#sql_readonly

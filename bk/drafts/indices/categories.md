@@ -40,7 +40,7 @@
 | [![email][cat~email~badge]][cat~email] | Sending, receiving, formatting, and parsing email. | [Email](../categories/email/index.md) |
 | [![embedded][cat~embedded~badge]][cat~embedded] | Embedded devices or hardware without an operating system. | - |
 | [![emulators][cat~emulators~badge]][cat~emulators] | Emulators, often to allow running software that is not natively available on the host computer, e.g. video game systems. | - |
-| [![encoding][cat~encoding~badge]][cat~encoding] | Encoding and/or decoding data from one data format to another. | [Encoding and Serialization](../categories/encoding/index.md) |
+| [![encoding][cat~encoding~badge]][cat~encoding] | Encoding and/or decoding data from one data format to another. | [Encoding and Serialization](../../src/categories/encoding/index.md) |
 | [![external-ffi-bindings][cat~external-ffi-bindings~badge]][cat~external-ffi-bindings] | Direct Rust FFI bindings to libraries written in other languages; often denoted by a `-sys` suffix. Safe and idiomatic wrappers are in the "API bindings" category. | - |
 | [![filesystem][cat~filesystem~badge]][cat~filesystem] | Dealing with files and filesystems. | - |
 | [![finance][cat~finance~badge]][cat~finance] | Dealing with money: accounting, trading, investments, taxes, banking and payment processing using government-backed currencies. | - |
@@ -69,7 +69,7 @@
 | [![os::macos-apis][cat~os::macos-apis~badge]][cat~os::macos-apis] | Bindings to macOS-specific APIs. | - |
 | [![os::unix-apis][cat~os::unix-apis~badge]][cat~os::unix-apis] | Bindings to Unix-specific APIs. | [Unix APIs](../categories/os_unix-apis/index.md) |
 | [![os::windows-apis][cat~os::windows-apis~badge]][cat~os::windows-apis] | Bindings to Windows-specific APIs. | [Windows APIs](../categories/os_windows-apis/index.md) |
-| [![parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations] | Parsers implemented for particular formats or languages. | [Parser Implementations](../categories/parser-implementations/index.md) |
+| [![parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations] | Parsers implemented for particular formats or languages. | [Parser Implementations](../../src/categories/parser-implementations/index.md) |
 | [![parsing][cat~parsing~badge]][cat~parsing] | Creating parsers of binary and text formats. Format-specific parsers belong in other, more specific categories. | [Parsing](../categories/parsing/index.md) |
 | [![rendering][cat~rendering~badge]][cat~rendering] | Real-time or offline rendering of 2D or 3D graphics, usually with the help of a graphics card. | - |
 | [![rendering::data-formats][cat~rendering::data-formats~badge]][cat~rendering::data-formats] | Loading and parsing of data formats related to 2D or 3D rendering, like 3D models or animation sheets. | - |
@@ -88,7 +88,7 @@
 | [![simulation][cat~simulation~badge]][cat~simulation] | Modeling or model construction, e.g. to simulate a networking protocol. | - |
 | [![template-engine][cat~template-engine~badge]][cat~template-engine] | Combining templates with data to produce result documents, usually with an emphasis on processing text. | [Template Engines](../categories/template-engine/index.md) |
 | [![text-editors][cat~text-editors~badge]][cat~text-editors] | Applications for editing text. | [Text Editors](../categories/text-editors/index.md) |
-| [![text-processing][cat~text-processing~badge]][cat~text-processing] | Dealing with human language when expressed in textual form. | [Text Processing](../categories/text-processing/index.md) |
+| [![text-processing][cat~text-processing~badge]][cat~text-processing] | Dealing with human language when expressed in textual form. | [Text Processing](../../src/categories/text-processing/index.md) |
 | [![value-formatting][cat~value-formatting~badge]][cat~value-formatting] | Allowing an application to format values for display to a user, potentially adapting the display to various languages and regions. | - |
 | [![virtualization][cat~virtualization~badge]][cat~virtualization] | Creation and management of virtual environments and resources of any form, including containerization systems. | - |
 | [![visualization][cat~visualization~badge]][cat~visualization] | Ways to view data, such as plotting or graphing. | - |
