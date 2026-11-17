@@ -108,6 +108,17 @@
   - [Working with Tarballs](categories/compression/tar.md)
   - [Compression and Decompression](categories/compression/compression.md)
 
+- [Cryptography](categories/cryptography/index.md)
+  - [Encryption](categories/cryptography/encryption.md)
+  - [AEAD](categories/cryptography/aead.md)
+  - [Password Hashing](categories/cryptography/password_hashing.md)
+  - [HMAC](categories/cryptography/hmac.md)
+  - [Digital Signatures](categories/cryptography/signature.md)
+  - [Digital Certificates](categories/cryptography/certificates.md)
+  - [TLS](categories/cryptography/tls.md)
+  - [Protect Secrets](categories/cryptography/secrets.md)
+  - [Cryptographic Utilities](categories/cryptography/cryptography_utilities.md)
+
 - [Concurrency](categories/concurrency/index.md)
   - [Explicit Threads](categories/concurrency/explicit_threads.md)
   - [Threadpools](categories/concurrency/threadpool.md)

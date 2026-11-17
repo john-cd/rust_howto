@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 [rfc~2104]: https://www.rfc-editor.org/rfc/rfc2104.html
 [rfc~5116]: https://www.rfc-editor.org/rfc/rfc5116.html
@@ -44,28 +44,22 @@
 [ex~cryptography~rustls]: tls.md#rustls
 [ex~cryptography~scrypt]: password_hashing.md#scrypt
 [ex~cryptography~sealed-envelope]: secrets.md#sealed-envelope
-[ex~cryptography~sodiumoxide]: encryption.md#sodiumoxide
 [ex~cryptography~subtle]: cryptography_utilities.md#subtle
 [ex~cryptography~x509-cert]: certificates.md#x509-cert
 [ex~cryptography~zeroize-secrets]: secrets.md#zeroize-secrets
 [ex~cryptography~zeroize]: cryptography_utilities.md#zeroize
 [p~aead]: aead.md
-[p~algorithms]: ../../../src/categories/algorithms/index.md
+[p~algorithms]: ../algorithms/index.md
 [p~authentication]: ../authentication/index.md
-[p~crates]: ../../../src/crate-selection/index.md
-[p~database]: ../database/index.md
-[p~derive]: ../../../src/standard-library/automatic_trait_derivation.md
-[p~email]: ../email/index.md
-[p~embedded]: # "../embedded/index.md"
-[p~encoding]: ../../../src/categories/encoding/index.md
+[p~crates]: ../../crate-selection/index.md
+[p~derive]: ../../standard-library/automatic_trait_derivation.md
+[p~encoding]: ../encoding/index.md
 [p~encryption]: encryption.md
-[p~functions]: ../../../src/language/functions.md
-[p~hashing]: ../../../src/categories/algorithms/hashing.md
-[p~match]: ../../../src/language/pattern_matching.md
+[p~functions]: ../../language/functions.md
+[p~hashing]: ../algorithms/hashing.md
+[p~match]: ../../language/pattern_matching.md
 [p~password_hashing]: password_hashing.md
-[p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
-[p~search]: ../database/search.md
-[p~server]: ../network-programming/server.md
+[p~performance]: ../development-tools_cargo-plugins/performance.md
 [p~signature]: signature.md
 [p~tls]: tls.md
-[p~traits]: ../../../src/language/traits.md
+[p~traits]: ../../language/traits.md

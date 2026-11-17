@@ -10,9 +10,9 @@
 //! padding to the older PKCS#1 v1.5 shown here, so treat this as a
 //! compatibility example.
 
-// Security: `rsa` has no fix for RUSTSEC-2023-0071. This example performs a
-// local round trip only; do not expose decryption timing to attackers or use
-// this crate for production cryptography.
+// The direct `rsa` 0.10 dependency includes the RUSTSEC-2023-0071 fix. This
+// local PKCS#1 v1.5 round trip is for compatibility study only; do not expose
+// its decryption behavior to attacker-controlled ciphertext.
 // Operating system's cryptographically secure random number generator.
 use rand::rngs::SysRng;
 // Encryption using PKCS#1 v1.5 padding.

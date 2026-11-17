@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Cryptographic Utilities
 
@@ -70,8 +70,8 @@ The [`subtle`][c~subtle~docs]↗{{hi:subtle}} crate is a low-level library and d
 
 ## Related Topics {#related-topics .skip}
 
-- [[memory-management | Memory Management]].
-- [[cryptography | Cryptography]].
+- [Memory Management](../memory-management/index.md).
+- [Cryptography](index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

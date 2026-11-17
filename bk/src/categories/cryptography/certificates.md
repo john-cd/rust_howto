@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Create Certificates
 
@@ -30,7 +30,7 @@ Use [`rcgen`][c~rcgen~docs]↗{{hi:rcgen}} to create certificates for local deve
 
 PEM (Privacy Enhanced Mail) is a text-based format (Base64 encoded DER) commonly used for cryptographic keys, certificates, and other data structures.
 
-[`pem-rfc7468`][c~pem-rfc7468~docs]↗{{hi:pem-rfc7468}} implements PEM Encoding (RFC 7468) for PKIX, PKCS, and CMS Structures, implementing a strict subset of the original Privacy-Enhanced Mail encoding intended specifically for use with cryptographic keys, certificates, and other messages. It provides a [`#![no_std]`][book~rust-reference~no_std]-friendly, constant-time implementation suitable for use with cryptographic private keys.
+[`pem-rfc7468`][c~pem-rfc7468~docs]↗{{hi:pem-rfc7468}} implements PEM Encoding (RFC 7468) for PKIX, PKCS, and CMS Structures, implementing a strict subset of the original Privacy-Enhanced Mail encoding intended specifically for use with cryptographic keys, certificates, and other messages. It provides a [`#![no_std]`][book~rust-reference~no_std]-friendly implementation for encoding and decoding PEM blocks.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/certs/pem_rfc7468.rs:example}}
@@ -78,7 +78,7 @@ The existing example builds and encodes selected certificate fields; it does not
 
 ## Related Topics {#related-topics .skip}
 
-- [[signature | Signature]].
+- [Digital Signatures](signature.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

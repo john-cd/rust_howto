@@ -1,10 +1,10 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # TLS
 
 {{#include tls.incl.md}}
 
-Transport Layer Security (TLS) protects the confidentiality and integrity of network traffic and authenticates the server. It is used by web browsing, [email][p~email], and other client/server protocols. TLS 1.2 and TLS 1.3 are the supported versions in the examples below; Secure Sockets Layer (SSL) is obsolete. Use a maintained TLS library and validate the server name and certificate chain.
+Transport Layer Security (TLS) protects the confidentiality and integrity of network traffic and authenticates the server. It is used by web browsing, email, and other client/server protocols. TLS 1.2 and TLS 1.3 are the supported versions in the examples below; Secure Sockets Layer (SSL) is obsolete. Use a maintained TLS library and validate the server name and certificate chain.
 
 ## Connect to a Server over TLS {#rustls}
 
@@ -51,9 +51,8 @@ Choose [`native-tls`][c~native-tls~docs]↗{{hi:native-tls}} when integration wi
 ## Related Topics {#related-topics .skip}
 
 - [Certificates](certificates.md).
-- [Network Programming][p~server].
-- [[web-programming_http-client | Web Programming HTTP Client]].
-- [[web-programming_http-server | Web Programming HTTP Server]].
+- [HTTP Clients](../web-programming_http-client/index.md).
+- [HTTP Servers](../web-programming_http-server/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
