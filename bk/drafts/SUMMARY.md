@@ -12,10 +12,6 @@
 
 - [Graphics](categories/graphics/index.md)
 
-- [Network Programming](categories/network-programming/index.md)
-  - [Server](categories/network-programming/server.md)
-  - [Reverse Proxy](categories/network-programming/reverse_proxy.md)
-
 - [Operating Systems](categories/os/index.md)
   - [External Commands](categories/os/external_commands.md)
   - [Process Management](categories/os/process_management.md)

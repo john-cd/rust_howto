@@ -295,6 +295,11 @@
   - [Arena Allocation](categories/memory-management/arena_allocation.md)
   - [String Interning](categories/memory-management/string_interning.md)
 
+- [Network Programming](categories/network-programming/index.md)
+  - [Server](categories/network-programming/server.md)
+  - [Reverse Proxies and Ingress](categories/network-programming/reverse_proxy.md)
+  - [Connect Two Iroh Endpoints on Loopback](categories/network-programming/iroh_loopback.md)
+
 - [Images](categories/multimedia_images/index.md)
   - [Image Processing](categories/multimedia_images/images.md)
 
@@ -349,7 +354,6 @@
 
 - [Date and Time](categories/date-and-time/jiff_dst.md)
 - [Test an AWS Lambda Handler Locally](categories/cloud/aws_lambda.md)
-- [Connect Two Iroh Endpoints on Loopback](categories/network-programming/iroh_loopback.md)
 - [Text Processing](categories/text-processing/index.md)
   - [Regular Expressions](categories/text-processing/regex.md)
   - [String Parsing](categories/text-processing/string_parsing.md)
