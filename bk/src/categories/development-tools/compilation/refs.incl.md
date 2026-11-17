@@ -30,13 +30,7 @@
 [book~cargo~build-performance]: https://doc.rust-lang.org/cargo/guide/build-performance.html
 [book~cargo~check]: https://doc.rust-lang.org/cargo/commands/cargo-check.html
 [book~cargo~profiles]: https://doc.rust-lang.org/cargo/reference/profiles.html
-[p~caching]: ../../caching/index.md
 [p~cargo]: ../cargo/cargo.md
 [p~cross-compilation]: ../cross-compilation/cross_compilation.md
-[p~configuration]: ../../config/configuration.md
-[p~contributing]: ../../../../src/appendices/contributing/index.md
-[p~duration]: https://john-cd.com/rust_howto/categories/date-and-time/duration.html
-[p~generics]: ../../../../src/language/generics.md
 [p~building]: ../../development-tools_cargo-plugins/building.md
-[p~modules]: ../../../code_organization/modules.md
-[p~performance]: ../../development-tools_cargo-plugins/performance.md
+[p~performance]: ../../development-tools_profiling/benchmarking.md

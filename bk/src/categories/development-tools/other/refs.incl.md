@@ -13,21 +13,16 @@
 [ex~other~scaffold-a-new-project]: other.md#scaffold-a-new-project
 [ex~other~shuttle]: code_verification.md#shuttle
 [p~build-utils]: ../../development-tools_build-utils/index.md
-[p~cargo]: ../cargo/cargo.md
+[p~building]: ../../development-tools_cargo-plugins/building.md
 [p~concurrency]: ../../concurrency/index.md
-[p~cross-platform]: # "../../../other/cross-platform/index.md"
-[p~download]: ../../web-programming_http-client/download.md
-[p~embedded]: # "../../embedded/index.md"
-[p~functions]: ../../../language/functions.md
+[p~configuration]: ../../config/configuration.md
 [p~fuzzing]: ../../development-tools_testing/fuzzing.md
-[p~linux]: # "../../os_linux-apis/linux.md"
 [p~macros]: ../../../../src/language/macros.md
-[p~main]: ../../../language/entrypoint.md
-[p~memory]: ../../development-tools_profiling/memory_usage_analysis.md
-[p~option]: # "../../../standard-library/option.md"
-[p~performance]: ../../development-tools_cargo-plugins/performance.md
-[p~search]: ../../database/search.md
+[p~performance]: ../../development-tools_profiling/index.md
 [p~testing]: ../../development-tools_testing/testing.md
+[miri~docs]: https://github.com/rust-lang/miri
+[miri~repo]: https://github.com/rust-lang/miri
+[miri~repo~badge]: https://img.shields.io/badge/miri-steelblue?logo=github
 [ex~rust_source~syn-parse-file]: rust_source.md#syn-parse-file
 [ex~rust_source~quote-prettyplease]: rust_source.md#quote-prettyplease
 [ex~rust_source~cargo-metadata]: rust_source.md#cargo-metadata

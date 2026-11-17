@@ -78,11 +78,11 @@ fn main() {
         vec![
             Finding {
                 method: "unwrap".into(),
-                line: 2
+                line: 4
             },
             Finding {
                 method: "expect".into(),
-                line: 3
+                line: 5
             },
         ]
     );

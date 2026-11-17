@@ -7,5 +7,3 @@
 [ex~cross-compilation~target-and-toolchain]: cross_compilation.md#target-and-toolchain
 [ex~cross-compilation~webassembly]: cross_compilation.md#webassembly
 [ex~cross-compilation~windows-gnu]: cross_compilation.md#windows-gnu
-[p~attributes]: ../../../language/attributes.md
-[p~cargo]: ../cargo/cargo.md
