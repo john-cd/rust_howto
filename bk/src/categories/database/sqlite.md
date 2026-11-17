@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # SQLite
 
@@ -10,7 +10,7 @@
 
 [![rusqlite][c~rusqlite~docs~badge]][c~rusqlite~docs]{{hi:rusqlite}} [![rusqlite~documentation][c~rusqlite~documentation~badge]][c~rusqlite~documentation] [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
-Use the [`rusqlite`][c~rusqlite~docs]↗{{hi:rusqlite}} crate to open SQLite databases. See the [documentation][c~rusqlite~documentation]↗ for compiling on [Windows][p~windows].
+Use the [`rusqlite`][c~rusqlite~docs]↗{{hi:rusqlite}} crate to open SQLite databases. See the [`rusqlite` documentation][c~rusqlite~documentation]↗ for Windows-specific build requirements.
 
 [`rusqlite::Connection::open`][c~rusqlite::Connection::open~docs]↗{{hi:rusqlite::Connection::open}} will create the database if it doesn't already exist.
 
@@ -44,8 +44,8 @@ In the following example, colors add to a table having a unique constraint on th
 
 ## Related Topics {#related-topics .skip}
 
-- [[connection_pool | Connection Pool]].
-- [[query_builders_orms | Query Builders and ORMs]].
+- [Connection Pools](connection_pool.md).
+- [Query Builders and ORMs](query_builders_orms.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

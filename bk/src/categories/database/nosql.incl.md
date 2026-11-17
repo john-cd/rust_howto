@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 These examples cover document, key-value, and wide-column data models, plus a
 low-level Cassandra wire-protocol example. MongoDB and Cassandra examples need

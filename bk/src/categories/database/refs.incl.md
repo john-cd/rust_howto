@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 [oracle~instant-client]: https://www.oracle.com/database/technologies/instant-client/downloads.html
 [oracle~docker]: https://github.com/gvenzl/oci-oracle-free
@@ -33,34 +33,20 @@
 [ex~database~toasty]: query_builders_orms.md#toasty
 [ex~database~tokio-postgres]: postgres.md#tokio-postgres
 [ex~database~transaction]: sqlite.md#transaction
-[p~async]: ../../../src/categories/asynchronous/async.md
-[p~asynchronous]: ../../../src/categories/asynchronous/index.md
+[p~async]: ../asynchronous/async.md
+[p~asynchronous]: ../asynchronous/index.md
 [p~caching]: ../caching/index.md
 [p~cargo]: ../development-tools/cargo/cargo.md
-[p~configuration]: ../../../src/categories/config/configuration.md
 [p~configuration]: ../config/configuration.md
-[p~crates]: ../../../src/crate-selection/index.md
+[p~crates]: ../../crate-selection/index.md
 [p~database]: index.md
-[p~databases]: ../database-implementations/databases.md
-[p~email]: # "../email/index.md"
-[p~embedded]: # "../embedded/index.md"
-[p~graphql]: # "../web-programming_http-server/graphql.md"
-[p~ignore]: # "../filesystem/ignore.md"
-[p~memory]: ../../../src/categories/development-tools_profiling/memory_usage_analysis.md
-[p~option]: # "../../standard-library/option.md"
-[p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
 [p~postgres]: postgres.md
-[p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~search]: search.md
-[p~server]: ../network-programming/server.md
-[p~streams]: ../../../src/categories/asynchronous/streams.md
-[p~tokio]: ../../../src/categories/asynchronous/tokio.md
-[p~toml]: ../../../src/categories/parser-implementations/toml.md
+[p~streams]: ../asynchronous/streams.md
+[p~tokio]: ../asynchronous/tokio.md
 [p~url]: ../web-programming/url.md
-[p~windows]: ../os_windows-apis/windows.md
 [c~cornucopia~migration~1.0]: https://github.com/cornucopia-rs/cornucopia/blob/main/docs/src/introduction/migration_to_1_0.md
 [c~r2d2~docs]: https://docs.rs/r2d2
-[p~rust-search-engines]: ../database-implementations/rust_search_engines.md
 [c~opensearch~docs]: https://docs.rs/opensearch
 [c~qdrant-client~docs]: https://docs.rs/qdrant-client
 [elastic~local-docker~docs]: https://www.elastic.co/search-labs/tutorials/install-elasticsearch/docker

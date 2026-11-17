@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Query Builders and ORMs
 
@@ -10,7 +10,7 @@ These libraries offer different levels of abstraction. [`diesel`][c~diesel~docs]
 
 {{#badges sqlx database=Databases}}
 
-[`sqlx`][c~sqlx~docs]↗ is a low-level, [asynchronous][p~asynchronous] SQL library for Rust. It supports various [databases][p~databases] like PostgreSQL{{hi:PostgreSQL}}, MySQL{{hi:MySQL}}, SQLite{{hi:SQLite}}, and MSSQL{{hi:MSSQL}}, and both [`tokio`][c~tokio~docs]↗{{hi:tokio}} and [`async-std`][c~async-std~docs]↗{{hi:async-std}} async runtimes. It is not an ORM: write SQL directly, and use compile-time checked macros when schema metadata is available.
+[`sqlx`][c~sqlx~docs]↗ is a low-level, [asynchronous][p~asynchronous] SQL library for Rust. It supports PostgreSQL{{hi:PostgreSQL}}, MySQL{{hi:MySQL}}, and SQLite{{hi:SQLite}}. This example uses [`tokio`][c~tokio~docs]↗{{hi:tokio}}; choose the runtime and database features that match your application. SQLx is not an ORM: write SQL directly, and use compile-time checked macros when schema metadata is available.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/query_builders_orms/sqlx.rs:example}}
@@ -58,7 +58,7 @@ diesel setup
 diesel migration generate create_users
 ```
 
-`DATABASE_URL` can point to a file-backed SQLite database for multi-command CLI workflows. An in-memory database exists only within one process; the example test below opens one directly so it needs no `.env` file. For other [databases][p~databases], the URL format is `protocol://user:password@host/database`. For MySQL, the URL would be as follows:
+`DATABASE_URL` can point to a file-backed SQLite database for multi-command CLI workflows. An in-memory database exists only within one process; the example test below opens one directly so it needs no `.env` file. For other databases, the URL format is `protocol://user:password@host/database`. For MySQL, the URL would be as follows:
 
 ```bash
 echo DATABASE_URL=mysql://<username>:<password>@localhost/<database> >> .env
