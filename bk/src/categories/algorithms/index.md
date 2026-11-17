@@ -6,7 +6,6 @@
 
 This category covers Rust implementations of algorithms{{hi:Algorithms}} such as sorting{{hi:Sorting}}, hashing, graph processing, and random value generation. Prefer the standard library for common operations; use a specialized crate when it adds a capability or performance your application needs.
 
-[Compression](../compression/index.md), [cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), [[data-structures | data structures]], [[mathematics | mathematics]], [scientific algorithms](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [search](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/search.md), [[strings | strings]], and [text processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md) are discussed elsewhere but are briefly mentioned below.
 
 ## Random Value Generation
 
@@ -127,5 +126,6 @@ See [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categ
 
 - [`rust-algorithms`][rust-algorithms~repo]↗: Common data structures and algorithms in Rust.
 
+[Compression](../compression/index.md), [cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), [[data-structures | data structures]], [[mathematics | mathematics]], [scientific algorithms](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [search](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/search.md), [[strings | strings]], and [text processing](../text-processing/index.md) are discussed elsewhere but are briefly mentioned below.
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

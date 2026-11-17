@@ -79,7 +79,6 @@ Read the [procedural macros](#procedural-macros) sections below for more details
 
 [`concat!`][c~std::concat~docs]↗ concatenates literals into a static string slice.
 
-See [String Concatenation](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_concat.md) for more details.
 
 ### Create a Vector with `vec!` {#vec-macro}
 
@@ -408,5 +407,6 @@ The same workspace has a compile-fail case in `language/tests/ui/debug_print_uni
   - [Write Proc Macros](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_procedural-macro-helpers/write_proc_macros.md).
 - [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
 
+See [String Concatenation](../categories/text-processing/string_concat.md) for more details.
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

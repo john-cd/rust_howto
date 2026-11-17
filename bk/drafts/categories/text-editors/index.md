@@ -34,7 +34,7 @@ GitHub [sunset Atom on December 15, 2022](https://github.blog/2022-06-08-sunsett
 ## Related Topics
 
 - [Development Tools][p~development-tools]
-- [Text processing](../text-processing/index.md)
+- [Text processing](../../../src/categories/text-processing/index.md)
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
