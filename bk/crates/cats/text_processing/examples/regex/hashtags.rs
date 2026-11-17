@@ -50,4 +50,21 @@ mod tests {
     fn test_hashtags_example_entry_point() {
         main();
     }
+
+    /// Deduplication is case-sensitive and retains the leading hash.
+    #[test]
+    fn extracts_distinct_ascii_tags() {
+        let tags = extract_hashtags("#Rust #rust #Rust #tag_2 #2 #_");
+        assert_eq!(tags, HashSet::from(["#Rust", "#rust", "#tag_2"]));
+    }
+
+    /// This small pattern allows embedded hashes and partial non-ASCII tags.
+    #[test]
+    fn documents_extraction_boundaries() {
+        assert_eq!(
+            extract_hashtags("word#tag #café #éclair"),
+            HashSet::from(["#tag", "#caf"])
+        );
+        assert!(extract_hashtags("no tags here").is_empty());
+    }
 }
