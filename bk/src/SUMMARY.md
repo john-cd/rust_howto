@@ -152,6 +152,7 @@
 - [Find Missing Assertions with Mutation Testing](categories/development-tools/mutation_testing.md)
 - [Test an AWS Lambda Handler Locally](categories/cloud/aws_lambda.md)
 - [Connect Two Iroh Endpoints on Loopback](categories/network-programming/iroh_loopback.md)
+- [Regular Expressions](categories/text-processing/regex.md)
 - [Count Unicode Text for Display](categories/text-processing/unicode.md)
 - [Make an HTTP Request Against a Local Service](categories/web-programming_http-client/offline_http_client.md)
 - [Cancellation and Structured Concurrency](categories/asynchronous/structured_concurrency.md)

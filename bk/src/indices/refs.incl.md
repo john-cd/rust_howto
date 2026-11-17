@@ -510,6 +510,9 @@
 [ex~template-engine~create-html-from-template]: ../categories/template-engine/tera.md#create-html-from-template
 [ex~template-engine~sanitize-vs-escape]: ../categories/template-engine/tera.md#sanitize-vs-escape
 [ex~template-engine~tinytemplate]: ../categories/template-engine/tinytemplate.md#tinytemplate
+[ex~text-processing~extract-a-list-of-unique-hashtags-from-a-text]: ../categories/text-processing/regex.md#extract-a-list-of-unique-hashtags-from-a-text
+[ex~text-processing~extract-phone-numbers-from-text]: ../categories/text-processing/regex.md#extract-phone-numbers-from-text
+[ex~text-processing~replace-all-occurrences-of-one-text-pattern-with-another-pattern]: ../categories/text-processing/regex.md#replace-all-occurrences-of-one-text-pattern-with-another-pattern
 [ex~value-formatting~humansize]: ../categories/value-formatting/number_formatting.md#humansize
 [ex~value-formatting~itoa]: ../categories/value-formatting/number_formatting.md#itoa
 [ex~value-formatting~ryu]: ../categories/value-formatting/number_formatting.md#ryu

@@ -10,8 +10,8 @@
 [ex~text-processing~constcat]: string_concat.md#compile-time
 [ex~text-processing~cstring]: other_strings.md#cstring
 [ex~text-processing~diff]: diffing.md#diff
-[ex~text-processing~extract-a-list-of-unique-hashtags-from-a-text]: regex.md#extract-a-list-of-unique-hashtags-from-a-text
-[ex~text-processing~extract-phone-numbers-from-text]: regex.md#extract-phone-numbers-from-text
+[ex~text-processing~extract-a-list-of-unique-hashtags-from-a-text]: https://john-cd.com/rust_howto/categories/text-processing/regex.html#extract-a-list-of-unique-hashtags-from-a-text
+[ex~text-processing~extract-phone-numbers-from-text]: https://john-cd.com/rust_howto/categories/text-processing/regex.html#extract-phone-numbers-from-text
 [ex~text-processing~fancy-regex]: regex.md#fancy-regex
 [ex~text-processing~filter-a-log-file-by-matching-multiple-regular-expressions]: regex.md#filter-a-log-file-by-matching-multiple-regular-expressions
 [ex~text-processing~fuzzy-matcher]: string_search.md#fuzzy-matcher
@@ -21,7 +21,7 @@
 [ex~text-processing~longer-regex-example]: regex.md#longer-regex-example
 [ex~text-processing~memchr]: string_search.md#memchr
 [ex~text-processing~osstring]: other_strings.md#osstring
-[ex~text-processing~replace-all-occurrences-of-one-text-pattern-with-another-pattern]: regex.md#replace-all-occurrences-of-one-text-pattern-with-another-pattern
+[ex~text-processing~replace-all-occurrences-of-one-text-pattern-with-another-pattern]: https://john-cd.com/rust_howto/categories/text-processing/regex.html#replace-all-occurrences-of-one-text-pattern-with-another-pattern
 [ex~text-processing~similar]: diffing.md#similar
 [ex~text-processing~slug]: string_manipulation.md#slug
 [ex~text-processing~string-concat]: string_concat.md#string-concat
