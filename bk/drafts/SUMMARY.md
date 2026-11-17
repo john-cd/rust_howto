@@ -10,8 +10,6 @@
   - [Databases](categories/database-implementations/databases.md)
   - [Search](categories/database-implementations/rust_search_engines.md)
 
-- [Date and Time](categories/date-and-time/index.md)
-
 - [Data Structures](categories/data-structures/index.md)
 
 - [Email](categories/email/index.md)
