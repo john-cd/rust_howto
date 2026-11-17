@@ -1,0 +1,22 @@
+<!-- TODO Reviewed ??-??-2026. -->
+
+[ex~development-tools_profiling~cargo-flamegraph]: benchmarking.md#cargo-flamegraph
+[ex~development-tools_profiling~criterion]: benchmarking.md#criterion
+[ex~development-tools_profiling~divan]: benchmarking.md#divan
+[ex~development-tools_profiling~hyperfine]: benchmarking.md#hyperfine
+[ex~development-tools_profiling~hashing-benchmark]: benchmarking.md#hashing-benchmark
+[ex~development-tools_profiling~arena-benchmark]: benchmarking.md#arena-benchmark
+[ex~development-tools_profiling~hashmap-benchmark]: benchmarking.md#hashmap-benchmark
+[ex~development-tools_profiling~benchmark-regression]: benchmark_regressions.md#compare-benchmark-results-in-ci
+[ex~development-tools_profiling~profiling-scopes]: instrumentation_profiling.md#profiling-scopes
+[ex~development-tools_profiling~puffin-server]: instrumentation_profiling.md#puffin-server
+[ex~development-tools_profiling~measure-time]: instrumentation_profiling.md#measure-time
+[ex~development-tools_profiling~cargo-show-asm]: assembly.md#cargo-show-asm
+[ex~development-tools_profiling~process-memory]: memory_usage_analysis.md#process-memory
+[ex~development-tools_profiling~massif]: memory_usage_analysis.md#massif
+[ex~development-tools_profiling~heaptrack]: memory_usage_analysis.md#heaptrack
+[ex~development-tools_profiling~dhat]: memory_usage_analysis.md#dhat
+[ex~development-tools_profiling~dhat-testing]: memory_usage_analysis.md#dhat-testing
+[ex~development-tools_profiling~leaks]: memory_usage_analysis.md#leaks
+[ex~development-tools_profiling~debugging]: memory_usage_analysis.md#debugging
+[ex~development-tools_profiling~tracing]: memory_usage_analysis.md#tracing
