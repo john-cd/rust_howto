@@ -151,6 +151,11 @@
   - [Distributed Telemetry](categories/development-tools_debugging/distributed_telemetry.md)
   - [Diagnostic Functions](categories/development-tools_debugging/diagnostic_functions.md)
 
+- [Development Tools - Build Utils](categories/development-tools_build-utils/index.md)
+  - [Build-time Tooling](categories/development-tools_build-utils/build_time_tooling.md)
+  - [Compiler Feature Detection with `autocfg`](categories/development-tools_build-utils/autocfg.md)
+  - [Build Caches](categories/development-tools_build-utils/build_cache.md)
+
 - [Development Tools - Profiling](categories/development-tools_profiling/index.md)
   - [Benchmarking](categories/development-tools_profiling/benchmarking.md)
   - [Instrumentation Profiling](categories/development-tools_profiling/instrumentation_profiling.md)
