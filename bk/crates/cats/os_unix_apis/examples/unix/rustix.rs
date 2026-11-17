@@ -85,10 +85,12 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Runs the rustix example through its entry point.
+    /// Runs the rustix example and verifies it removes its temporary files.
     #[test]
     fn test_rustix_example_entry_point() -> anyhow::Result<()> {
         main()?;
+        assert!(!std::path::Path::new("my_renamed_file").exists());
+        assert!(!std::path::Path::new("example2.txt").exists());
         Ok(())
     }
 
@@ -102,14 +104,5 @@ mod tests {
             Mode::empty(),
         );
         assert_eq!(result.err(), Some(rustix::io::Errno::NOENT));
-    }
-
-    /// The example leaves no file behind.
-    #[test]
-    fn main_cleans_up_after_itself() -> anyhow::Result<()> {
-        main()?;
-        assert!(!std::path::Path::new("my_renamed_file").exists());
-        assert!(!std::path::Path::new("example2.txt").exists());
-        Ok(())
     }
 }

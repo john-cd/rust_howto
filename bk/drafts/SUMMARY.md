@@ -12,9 +12,6 @@
 
 - [Graphics](categories/graphics/index.md)
 
-- [Operating systems - Unix](categories/os_unix-apis/index.md)
-  - [Unix](categories/os_unix-apis/unix.md)
-
 - [Operating systems - Windows](categories/os_windows-apis/index.md)
   - [Windows](categories/os_windows-apis/windows.md)
 

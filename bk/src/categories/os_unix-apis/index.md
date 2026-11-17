@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# OS - Unix APIs
+# Unix APIs
 
 [![cat~os::unix-apis][cat~os::unix-apis~badge]][cat~os::unix-apis]{{hi:Operating systems::Unix APIs}}
 
@@ -20,18 +20,18 @@ Raw [`libc`][c~libc~docs]↗ calls expose platform-specific details and unsafe c
 
 ## Unix API Examples
 
-The [[unix | Unix APIs]] chapter compares [`rustix`][c~rustix~docs]↗ and [`nix`][c~nix~docs]↗ and includes working examples.
+The [Unix APIs](unix.md) chapter compares [`rustix`][c~rustix~docs]↗ and [`nix`][c~nix~docs]↗ with working examples.
 
 {{#include unix.incl.md}}
 
 ## Related Topics {#related-topics .skip}
 
-- [[os | Operating System]].
-- [[linux | Linux APIs]].
-- [[macos | macOS APIs]].
-- [[windows | Windows APIs]].
-- [[low_level_system_calls | Low-level System Calls]].
-- [[generate_ffi_bindings | FFI Bindings]].
+- [Operating Systems](../os/index.md) covers portable OS services.
+- [Linux userspace APIs](https://docs.kernel.org/userspace-api/index.html) documents Linux-specific interfaces.
+- [Apple system frameworks](https://developer.apple.com/documentation/technologies) documents macOS APIs.
+- [Rust Windows APIs](https://doc.rust-lang.org/std/os/windows/) covers Windows-specific interfaces.
+- [Low-level System Calls](../os/low_level_system_calls.md) compares standard-library, wrapper, and C-library interfaces.
+- [The Rust Reference: External blocks](https://doc.rust-lang.org/reference/items/external-blocks.html) covers declaring foreign functions and types.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

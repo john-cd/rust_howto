@@ -28,8 +28,8 @@ use nix::unistd::read;
 use nix::unistd::unlink;
 // Write to a raw file descriptor:
 use nix::unistd::write;
-use rustix::fd::AsFd as _;
 use rustix::fd::BorrowedFd;
+use std::os::fd::AsFd as _;
 
 /// Creates a file, writes to it and reads it back using `nix`.
 fn main() -> nix::Result<()> {
@@ -40,7 +40,7 @@ fn main() -> nix::Result<()> {
         let rfd: OwnedFd = open(
             path,
             // Create the file if it does not exist. Only allow writing:
-            OFlag::O_CREAT | OFlag::O_WRONLY,
+            OFlag::O_CREAT | OFlag::O_WRONLY | OFlag::O_TRUNC,
             // Read/write permissions for owner:
             Mode::S_IRUSR | Mode::S_IWUSR,
         )?;

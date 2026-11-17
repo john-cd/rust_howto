@@ -408,6 +408,10 @@
 
 {{#include ../categories/os/low_level_system_calls.incl.md}}
 
+### Unix APIs
+
+{{#include ../categories/os_unix-apis/unix.incl.md}}
+
 ## Development Tools
 
 ### Cargo
