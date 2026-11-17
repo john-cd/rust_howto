@@ -91,6 +91,6 @@ The following example demonstrates how to implement traits for types based on co
 
 <div class="hidden">
 
-- [[rust-patterns | Rust Patterns]].
+- [Rust Patterns](../categories/rust-patterns/index.md).
 
 </div>

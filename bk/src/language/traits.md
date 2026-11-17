@@ -160,6 +160,6 @@ This topic is covered in the [Async](../categories/asynchronous/index.md) chapte
 
 <div class="hidden">
 
-- [[rust-patterns | Rust Patterns]].
+- [Rust Patterns](../categories/rust-patterns/index.md).
 
 </div>

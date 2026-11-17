@@ -277,9 +277,17 @@
   - [YAML Parsing](categories/parser-implementations/yaml.md)
   - [General Programming Language Parsing](categories/parser-implementations/programming_languages.md)
 
+- [Rust Patterns](categories/rust-patterns/index.md)
+  - [Creational Patterns](categories/rust-patterns/creational_patterns.md)
+    - [Builder Pattern](categories/rust-patterns/builder_pattern.md)
+  - [Structural Patterns](categories/rust-patterns/structural_patterns.md)
+  - [Behavioral Patterns](categories/rust-patterns/behavioral_patterns.md)
+  - [Functional Programming](categories/rust-patterns/functional_programming.md)
+  - [Rust-specific Patterns](categories/rust-patterns/rust_specific_patterns.md)
+  - [Custom Errors and Reports](categories/rust-patterns/custom_errors.md)
+  - [Register Commands Explicitly or with Inventory](categories/rust-patterns/plugin_registration.md)
 
 - [Date and Time](categories/date-and-time/jiff_dst.md)
-- [Register Commands Explicitly or with Inventory](categories/rust-patterns/plugin_registration.md)
 - [Test an AWS Lambda Handler Locally](categories/cloud/aws_lambda.md)
 - [Connect Two Iroh Endpoints on Loopback](categories/network-programming/iroh_loopback.md)
 - [Text Processing](categories/text-processing/index.md)

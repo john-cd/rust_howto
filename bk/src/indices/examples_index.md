@@ -474,7 +474,6 @@
 
 {{#include ../categories/encoding/string_encoding.incl.md}}
 
-
 ### Binary Encoders
 
 {{#include ../categories/encoding/_binary_encoders.incl.md}}
@@ -645,12 +644,45 @@
 
 {{#include ../categories/parser-implementations/programming_languages.incl.md}}
 
+## Rust Patterns
+
+### Behavioral Patterns
+
+{{#include ../categories/rust-patterns/behavioral_patterns.incl.md}}
+
+### Builder Pattern
+
+{{#include ../categories/rust-patterns/builder_pattern.incl.md}}
+
+### Creational Patterns
+
+{{#include ../categories/rust-patterns/creational_patterns.incl.md}}
+
+### Custom Errors and Reports
+
+{{#include ../categories/rust-patterns/custom_errors.incl.md}}
+
+### Functional Programming
+
+{{#include ../categories/rust-patterns/functional_programming.incl.md}}
+
+### Rust-specific Patterns
+
+{{#include ../categories/rust-patterns/rust_specific_patterns.incl.md}}
+
+### Structural Patterns
+
+{{#include ../categories/rust-patterns/structural_patterns.incl.md}}
+
+### Plugin Registration
+
+{{#include ../categories/rust-patterns/plugin_registration.incl.md}}
+
 ## Text Processing
 
 {{#include ../categories/text-processing/regex.incl.md}}
 
 {{#include ../categories/text-processing/string_parsing.incl.md}}
-
 
 ### Count Unicode Text for Display
 
@@ -683,7 +715,6 @@
 ### OS and Non-UTF-8 Strings
 
 {{#include ../categories/text-processing/other_strings.incl.md}}
-
 
 ## Template Engine
 

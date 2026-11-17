@@ -7,7 +7,7 @@
 The following are topics that deserve (additional) coverage and examples:
 
 - Rust [GUI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/index.md).
-- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
+- [Rust Patterns](../../categories/rust-patterns/index.md).
 - Rust [[macros | Macros]].
 - [[data-structures | Data Structures]].
 - [Testing](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_testing/testing.md).

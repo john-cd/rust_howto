@@ -222,6 +222,6 @@ Rust 1.88 stabilized `let` chains in `if` and `while` conditions. They let a pat
 
 <div class="hidden">
 
-- [[rust-patterns | Rust Patterns]].
+- [Rust Patterns](../categories/rust-patterns/index.md).
 
 </div>

@@ -89,7 +89,7 @@ With Rust 1.100 or newer, a `Vec` and `Box` can use an allocator passed when the
 
 - [Memory Management](../categories/memory-management/index.md).
 - [[ownership_and_borrowing | Ownership & Borrowing]].
-- [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
+- [Rust Patterns](../categories/rust-patterns/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

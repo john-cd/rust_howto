@@ -4,9 +4,9 @@
 
 [![cat~rust-patterns][cat~rust-patterns~badge]][cat~rust-patterns]{{hi:Rust patterns}}
 
-Shared solutions for particular situations specific to programming in Rust.
+This category collects common design patterns, Rust idioms, and ecosystem techniques. Use them when they make ownership, resource management, or API boundaries clearer; a direct function, struct, or enum is often simpler.
 
-Start with the language patterns below when choosing ownership, error, or concurrency techniques. The design-pattern chapters group construction and behavior recipes: [Builder Pattern](builder_pattern.md), [Structural Patterns](structural_patterns.md), and [Behavioral Design Patterns](behavioral_patterns.md). The [Rust-specific Patterns](rust_specific_patterns.md) chapter covers idioms built around Rust's type system.
+Start with the language patterns below when choosing ownership, error, or concurrency techniques. The design-pattern chapters group construction and behavior recipes: [Builder Pattern](builder_pattern.md), [Creational Patterns](creational_patterns.md), [Structural Patterns](structural_patterns.md), and [Behavioral Patterns](behavioral_patterns.md). [Functional Programming](functional_programming.md) covers iterator composition and related ecosystem tools. [Rust-specific Patterns](rust_specific_patterns.md) focuses on idioms built around Rust's type system.
 
 ## Basic Patterns
 
@@ -14,25 +14,18 @@ Start with the language patterns below when choosing ownership, error, or concur
 
 | Pattern | Description | Resources |
 | --- | --- | --- |
-| Ownership & Borrowing | Ownership ties a value's lifetime to its owner; borrowing provides access without transferring ownership. The borrowing rules prevent data races by ensuring that either multiple parts of the code can read a value or one part can modify it. These are fundamental language features. | Rust Book, "Understanding Ownership". |
-| RAII: Resource Acquisition Is Initialization | Manage resources memory, files, network connections by tying them to the lifetime of an object. Automatic cleanup via [`Drop`][c~std::ops::Drop~docs]↗{{hi:Drop}} trait. | Rust Book, "Understanding Ownership". |
-| Interior Mutability | Allow mutation of data even when there are immutable references. Use [`RefCell`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}}, `Rc<RefCell<T>>`, `Cell` types. | `std::cell`, [`std::sync::atomic`][c~std::sync::atomic~docs]↗{{hi:std::sync::atomic}} documentation. The Rust Book, "Interior Mutability". |
+| Ownership & Borrowing | Ownership determines who drops a value; borrowing grants access without transferring ownership. Rust's borrowing rules prevent aliased mutation and help make data races impossible in safe code. | [Ownership and Borrowing](../../language/ownership_and_borrowing.md). |
+| RAII: Resource Acquisition Is Initialization | Tie a resource's cleanup to a value's lifetime so dropping the value releases it. The [`Drop`][c~std::ops::Drop~docs]↗{{hi:Drop}} trait supports this pattern. | [Resource Cleanup](../../standard-library/resource_cleanup.md). |
+| Interior Mutability | Use interior mutability when a value must change through a shared reference. `Cell` and `RefCell` are single-threaded options; atomics and locks are for shared access across threads. | [Interior Mutability](../../standard-library/interior_mutability.md). |
 
-### Error Handling & Customization
+### Error Handling and Customization
 
 | Pattern | Description | Example/Resources |
 | --- | --- | --- |
-| Error Handling | Represent the possibility of failure via [`Result`][c~std::result::Result~docs]↗{{hi:std::result::Result}} or absence via [`Option`][c~std::option::Option~docs]↗{{hi:std::option::Option}}. `Result` and `Option` are part of the prelude. Use [`match`][keyword~match]↗{{hi:match}}, `unwrap`{{hi:unwrap}}, `expect`{{hi:expect}}, and `?`{{hi:?}} operator. Crates like [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} and [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} can help with error management. | The Rust Book, "Error Handling". |
-| `?`{{hi:?}} Operator | Propagate errors concisely. | The Rust Book, "Error Handling". |
-| [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}} Trait | Define conversions between types with [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}}, often used for error handling. | Standard library documentation. |
+| Recoverable failures | Use `Option` for an absent value and `Result` when callers need the reason an operation failed. Propagate or handle expected errors; reserve panics for broken invariants. | [Recoverable Error Handling](../../standard-library/recoverable_error_handling.md). |
+| Custom errors and reports | Use typed errors for library contracts, then add context or format diagnostics at an application boundary. | [Custom Errors and Reports](custom_errors.md). |
 
-#### Error Handling
-
-{{#include error_handling/error_handling.incl.md}}
-
-#### Error Customization
-
-{{#include error_handling/error_customization.incl.md}}
+{{#include custom_errors.incl.md}}
 
 ### Generics & Traits
 
@@ -48,11 +41,11 @@ Start with the language patterns below when choosing ownership, error, or concur
 | Pattern | Description | Example/Resources |
 | --- | --- | --- |
 | Threading | Run independent work on OS threads and join their results. | [`std::thread`][c~std::thread~docs]↗{{hi:std::thread}} and `std::sync` provide basic threading and synchronization primitives. |
-| Atomically Reference Counting | Use [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} to share data safely between threads. Combine with [`Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} or [`RwLock`][c~std::sync::RwLock~docs]↗{{hi:RwLock}} for mutable access. | The Rust Book, "Shared-State Concurrency". |
+| Atomic Reference Counting | Use [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} to share data safely between threads. Combine with [`Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} or [`RwLock`][c~std::sync::RwLock~docs]↗{{hi:RwLock}} for mutable access. | The Rust Book, "Shared-State Concurrency". |
 | Mutual Exclusion Lock | Use [`Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} for protecting shared data from concurrent access. | The Rust Book, "Shared-State Concurrency". |
 | Read-Write Lock | [`RwLock`][c~std::sync::RwLock~docs]↗{{hi:RwLock}} allows multiple readers or exclusive writers to access shared data. | Standard library documentation. |
 | Channels | Communicate between threads using message passing. | The Rust Book, "Message Passing Concurrency". |
-| Concurrent Data Structures | | [`crossbeam`][c~crossbeam~docs]↗{{hi:crossbeam}} offers advanced concurrent data structures. |
+| Concurrent Data Structures | Use a concurrent collection when multiple workers need coordinated access to shared data. | [Concurrent Data Structures](../concurrency/concurrent_data_structures.md) and [`crossbeam`][c~crossbeam~docs]↗{{hi:crossbeam}}. |
 | Asynchronous Programming | Build asynchronous applications using e.g. the [`tokio`][c~tokio~docs]↗{{hi:tokio}} asynchronous runtime, futures, tasks, and actors. | [`tokio`][c~tokio~docs]↗{{hi:tokio}} crate documentation. |
 
 ### Functional Programming with Rust
@@ -71,10 +64,11 @@ Start with the language patterns below when choosing ownership, error, or concur
 | Macros | Code that generates other code at compile time. Fundamental language features. | Crates like [`syn`][c~syn~docs]↗{{hi:syn}} and [`quote`][c~quote~docs]↗{{hi:quote}} are used for procedural macros. The Rust Book, "Macros". |
 | Unsafe Code | Bypass Rust's safety guarantees (use with caution). | The Rust Book, "Unsafe Rust". Rustonomicon. |
 | FFI (Foreign Function Interface) | Interact with code written in other languages e.g., C. | The Rust Book, "Foreign Function Interface". |
+| Plugin Registration | Let independent, statically linked crates contribute commands without editing a central list. | [Register Commands Explicitly or with Inventory](plugin_registration.md). | `inventory` discovers linked registrations; it does not load dynamic libraries. |
 
 ## Design Patterns
 
-Design patterns are well-proven blueprints or best practices for solving recurring problems in software design.
+Design patterns are recurring ways to organize software. In Rust, prefer the smallest design that makes ownership, variation, or state transitions clear; class-oriented patterns may be better expressed with enums, traits, closures, or composition.
 
 ### Creational Patterns
 
@@ -83,7 +77,7 @@ Design patterns are well-proven blueprints or best practices for solving recurri
 | Builder | Constructing complex objects step-by-step. | Use [`derive_builder`][c~derive_builder~docs]↗{{hi:derive_builder}} for code generation. | Often implemented directly using structs and methods. [`derive_builder`][c~derive_builder~docs]↗{{hi:derive_builder}} reduces boilerplate. |
 | Factory | Creating objects of different types based on some criteria. | Often implemented directly using traits, enums, or closures. | Traits and generics are frequently used. |
 | Abstract Factory | Creating families of related objects. | Often implemented directly using traits and generics. | |
-| Singleton | Ensuring a class has only one instance. | Often implemented directly using static variables or lazy initialization. | Can be implemented with [`lazy_static`][c~lazy_static~docs]↗{{hi:lazy_static}}, though Singletons are often discouraged in Rust. |
+| Singleton | Exposing one shared instance when process-wide identity is part of the requirement. | Prefer passing a value through the application; `OnceLock` or `LazyLock` can initialize a global value. | Global state makes ownership, mutation, and tests harder to reason about. |
 
 #### Builder Patterns
 
@@ -104,7 +98,7 @@ Design patterns are well-proven blueprints or best practices for solving recurri
 | Flyweight | Sharing objects to reduce memory usage. | Often implemented directly using [`Rc`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} or [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}}. | [`Rc`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} and [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} are used for shared ownership. |
 | Proxy | Controlling access to another object. | Often implemented directly. | Can be implemented with custom types and dereferencing. |
 
-{{#include structural_patterns.incl.md}}
+[See Structural Patterns](structural_patterns.md) for the recipes.
 
 ### Behavioral Patterns
 
@@ -119,22 +113,22 @@ Design patterns are well-proven blueprints or best practices for solving recurri
 | Observer | Notifying interested parties when a state changes. | [`event-listener`][c~event-listener~docs]↗{{hi:event-listener}} | Helps with implementing the observer pattern. |
 | State | Altering an object's behavior when its internal state changes. | Often implemented directly using enums. | Enums are often used to represent states. |
 | Strategy | Choosing an algorithm at runtime. | Often implemented directly using trait objects or enums. | Trait objects or enums are commonly used. |
-| Template Method | Defining the skeleton of an algorithm and letting subclasses define specific steps. | Often implemented directly using traits | Traits are helpful for defining the template. |
-| Visitor | Adding new operations to objects without changing their classes. | Often implemented directly using traits | Traits are usually used for visitor implementations. |
-| Dependency Injection | Providing dependencies to components. | Dependency injection frameworks ([`shaku`][c~shaku~docs]↗{{hi:shaku}}) exist, but it's often handled manually, especially in smaller projects. [`yew`][c~yew~docs]↗{{hi:yew}} uses dependency injection for its component system. | |
+| Template Method | Defining a sequence of steps while allowing implementations to supply selected behavior. | A trait with default methods can provide the shared sequence. | Rust traits replace the inheritance-based subclass variation used in some languages. |
+| Visitor | Adding operations over a set of data variants without placing every operation on each variant. | Often implemented with enums and traits. | Consider a direct `match` when the set of variants is closed. |
+| Dependency Injection | Supplying a component with the services it needs. | Constructors, function arguments, and context providers are common approaches; frameworks such as [`shaku`][c~shaku~docs]↗{{hi:shaku}} offer additional support. | Prefer explicit dependencies when they keep the component easy to understand and test. |
 
 {{#include behavioral_patterns.incl.md}}
 
 ## Related Programming Tasks
 
-| Pattern | Description | Example/Resources |
-| --- | --- | --- |
-| Parsing | [`nom`][c~nom~docs]↗{{hi:nom}}, [`pest`][c~pest~docs]↗{{hi:pest}}, [`lalrpop`][c~lalrpop~docs]↗{{hi:lalrpop}} | These crates are useful for parsing various input formats. |
-| Serialization (Serde) | [`serde`][c~serde~docs]↗{{hi:serde}}, [`serde_json`][c~serde_json~docs]↗{{hi:serde_json}}, [`serde_yml`][c~serde_yml~docs]↗{{hi:serde_yml}}, [`toml`][c~toml~docs]↗{{hi:toml}} | [`serde`][c~serde~docs]↗{{hi:serde}} is a powerful framework for serialization and deserialization. |
-| CLI Argument Parsing | [`clap`][c~clap~docs]↗{{hi:clap}}, [`structopt`][c~structopt~docs]↗{{hi:structopt}} | These crates help with parsing command-line arguments. |
-| Logging | [`log`][c~log~docs]↗{{hi:log}}, [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}}, [`tracing`][c~tracing~docs]↗{{hi:tracing}} | [`log`][c~log~docs]↗{{hi:log}} is a logging facade, and [`env_logger`][c~env_logger~docs]↗{{hi:env_logger}} and [`tracing`][c~tracing~docs]↗{{hi:tracing}} are logging implementations. |
-| Testing | Built-in | Rust has built-in support for unit and integration testing. Crates like [`rstest`][c~rstest~docs]↗{{hi:rstest}} can help with testing. |
-| Asynchronous Programming | [`tokio`][c~tokio~docs]↗{{hi:tokio}}, [`async-std`][c~async-std~docs]↗{{hi:async-std}}, [`futures`][c~futures~docs]↗{{hi:futures}} | [`tokio`][c~tokio~docs]↗{{hi:tokio}} and [`async-std`][c~async-std~docs]↗{{hi:async-std}} are asynchronous runtimes. [`futures`][c~futures~docs]↗{{hi:futures}} provides utilities for working with futures. |
+| Task | Where to continue |
+| --- | --- |
+| Parsing | [Parser Implementations](../parser-implementations/index.md) |
+| Serialization | [Encoding and Serialization](../encoding/index.md) |
+| Command-line interfaces | [Command-line Interface](../command-line-interface/index.md) |
+| Logging and diagnostics | [Debugging and Observability](../development-tools_debugging/index.md) |
+| Testing | [Testing](../development-tools_testing/index.md) |
+| Asynchronous programming | [Asynchronous Programming](../asynchronous/index.md) |
 
 ## References
 
@@ -143,13 +137,3 @@ Design patterns are well-proven blueprints or best practices for solving recurri
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-
-- [patterns][rust-unofficial-patterns~repo]↗: A catalog of Rust design patterns, anti-patterns and idioms.
-
-```rust,editable
-{{#include ../../../crates/cats/rust_patterns/examples/scopeguard.rs:example}}
-```
-
-</div>

@@ -80,6 +80,6 @@ You may think of them as a `loop` that executes only once and allows exiting ear
 
 <div class="hidden">
 
-- [[rust-patterns | Rust Patterns]].
+- [Rust Patterns](../categories/rust-patterns/index.md).
 
 </div>

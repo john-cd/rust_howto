@@ -8,7 +8,7 @@
 
 {{#badges dyn-clone rust-patterns="Rust patterns" no-std="No standard library"}}
 
-The [`dyn-clone`][c~dyn-clone~docs]↗{{hi:dyn-clone}} crate provides a [`DynClone`][c~dyn-clone::DynClone~docs]↗{{hi:dyn-clone::DynClone}} trait that can be used in trait objects, and a [`clone_box`][c~clone_box~docs]↗{{hi:clone_box}} function that can clone any sized or dynamically sized implementation of `DynClone`. Types that implement the standard library's [`std::clone::Clone`][c~std::clone::Clone~docs]↗{{hi:std::clone::Clone}} trait are automatically usable by a `DynClone` trait object.
+The [`dyn-clone`][c~dyn-clone~docs]↗{{hi:dyn-clone}} crate provides a [`DynClone`][c~dyn-clone::DynClone~docs]↗{{hi:dyn-clone::DynClone}} trait that can be used in trait objects, and a [`clone_box`][c~dyn-clone::clone_box~docs]↗{{hi:clone_box}} function that can clone any sized or dynamically sized implementation of `DynClone`. Types that implement the standard library's [`std::clone::Clone`][c~std::clone::Clone~docs]↗{{hi:std::clone::Clone}} trait are automatically usable by a `DynClone` trait object.
 
 ```rust,editable
 {{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/dyn_clone.rs:example}}
@@ -93,10 +93,10 @@ When a value has a field that only affects how it is shown, such as a display st
 
 ## Related Topics {#related-topics .skip}
 
-- [[asynchronous | Asynchronous]]: `Pin` and `pin-project` are frequently used when manually implementing `Future`s and async state machines.
-- [[resource_cleanup | Resource Cleanup]]: the `Drop` trait, which underpins RAII and `scopeguard`.
-- [[smart_pointers | Smart Pointers]]: `Box<dyn Trait>` and pinned smart pointers.
-- [[traits | Traits]]: trait objects and dynamic dispatch, including the newtype pattern.
+- [Asynchronous](../asynchronous/index.md): `Pin` and `pin-project` are frequently used when manually implementing `Future`s and async state machines.
+- [Resource Cleanup](../../standard-library/resource_cleanup.md): the `Drop` trait, which underpins RAII and `scopeguard`.
+- [Smart Pointers](../../standard-library/smart_pointers.md): `Box<dyn Trait>` and pinned smart pointers.
+- [Traits](../../language/traits.md): trait objects and dynamic dispatch, including the newtype pattern.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
