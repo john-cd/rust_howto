@@ -19,10 +19,7 @@
 [ex~documentation~doc-comment]: documentation.md#documentation-tests
 [ex~documentation~aquamarine]: documentation.md#aquamarine
 [ex~documentation~termbook]: mdbook.md#termbook
-[p~apis]: ../../web-programming_http-client/apis.md
-[p~books]: ../../../../src/links/books.md
 [p~cargo]: ../cargo/cargo.md
-[p~concurrency]: ../../concurrency/index.md
 [p~code-documentation]: documentation.md#documenting-your-code
 [p~template-engine]: ../../template-engine/index.md
 [mdbook-utils~repo]: https://github.com/john-cd/mdbook-utils
