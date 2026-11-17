@@ -4,5 +4,6 @@
 | --- | --- | --- |
 | [Format Your Code][ex~development-tools_cargo-plugins~rustfmt] | [![rustfmt][c~rustfmt~repo~badge]][c~rustfmt~repo] | {{#categories development-tools="Development tools" development-tools::cargo-plugins="Cargo plugins"}} |
 | [Check Spelling in Rust Sources and Documentation][ex~development-tools_cargo-plugins~cargo-spellcheck] | {{#crate cargo-spellcheck}} | {{#categories development-tools::cargo-plugins="Cargo plugins"}} |
+| [Check Links in Rust Documentation][ex~development-tools_cargo-plugins~cargo-deadlinks] | {{#crate cargo-deadlinks}} | {{#categories development-tools::cargo-plugins="Cargo plugins"}} |
 | [Lint Your Code][ex~development-tools_cargo-plugins~cargo-clippy] | {{#crate clippy}} | {{#categories development-tools="Development tools"}} |
 | [Fix Compiler Warnings Automatically][ex~development-tools_cargo-plugins~rustfix] | {{#crate rustfix}} | {{#categories development-tools="Development tools"}} |

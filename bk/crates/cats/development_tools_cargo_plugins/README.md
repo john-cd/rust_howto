@@ -14,8 +14,8 @@ Book code examples for creating and using Cargo plugins and automating tasks wit
 To check or run examples in this crate:
 
 ```console
-cargo check --package cargo --examples
+cargo check --package cargo --all-targets
 cargo test --package cargo
 ```
 
-Code examples correspond to chapters in `bk/src/categories/development_tools_cargo_plugins` or related book sections.
+Code examples correspond to chapters in `bk/src/categories/development-tools_cargo-plugins` or related book sections.
