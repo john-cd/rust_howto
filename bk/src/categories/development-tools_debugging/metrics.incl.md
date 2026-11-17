@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-Metrics summarize numeric measurements over time. Use counters for totals, gauges for values that can rise or fall, and histograms for distributions such as request duration; use logs for individual events and traces for the path of a request across components. The [`metrics`][metrics~website] facade lets libraries emit measurements without choosing the application's recorder. Applications can install an exporter such as [`metrics-exporter-prometheus`][c~metrics-exporter-prometheus~docs] or bridge instrumentation into OpenTelemetry; see [[tracing | Tracing]] and [[distributed_telemetry | Distributed Telemetry]].
+Metrics summarize numeric measurements over time. Use counters for totals, gauges for values that can rise or fall, and histograms for distributions such as request duration; use logs for individual events and traces for the path of a request across components. The [`metrics`][metrics~website] facade lets libraries emit measurements without choosing the application's recorder. Applications can install an exporter such as [`metrics-exporter-prometheus`][c~metrics-exporter-prometheus~docs] or bridge instrumentation into OpenTelemetry; see [Tracing](tracing.md) and [Distributed Telemetry](distributed_telemetry.md).
 
 ## Record Counters and Histograms {#record-counters-and-histograms}
 

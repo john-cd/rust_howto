@@ -1,0 +1,54 @@
+<!-- TODO Reviewed ??-??-2026. -->
+
+<!-- markdownlint-disable MD057 -->
+
+[debugger~codelldb]: https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb
+[debugger~cargo~profiles]: https://doc.rust-lang.org/cargo/reference/profiles.html
+[debugger~dbg]: https://doc.rust-lang.org/std/macro.dbg.html
+[vscode~rust~docs]: https://code.visualstudio.com/docs/languages/rust
+[ex~development-tools_debugging~terminal-debuggers]: debugger.md#terminal-debuggers
+[ex~development-tools_debugging~vscode]: debugger.md#vscode
+[ex~development-tools_debugging~inspect-expression-with-dbg]: debugging.md#inspect-expression-with-dbg
+[ex~development-tools_debugging~capture-a-backtrace]: debugging.md#capture-a-backtrace
+[ex~development-tools_debugging~enable-log-levels-per-module]: config_log.md#enable-log-levels-per-module
+[ex~development-tools_debugging~custom-env-var-for-logging]: config_log.md#custom-env-var-for-logging
+[ex~development-tools_debugging~timestamp-in-log-messages]: config_log.md#timestamp-in-log-messages
+[ex~development-tools_debugging~log-to-custom-location]: config_log.md#log-to-custom-location
+[ex~development-tools_debugging~type-name-of-val]: diagnostic_functions.md#type-name-of-val
+[ex~development-tools_debugging~open-telemetry]: distributed_telemetry.md#open-telemetry
+[ex~development-tools_debugging~propagate-context-across-http]: distributed_telemetry.md#propagate-context-across-http
+[ex~development-tools_debugging~open-observe]: distributed_telemetry.md#open-observe
+[ex~development-tools_debugging~log-to-console]: log.md#log-to-console
+[ex~development-tools_debugging~log-error-message-to-console]: log.md#log-error-message-to-console
+[ex~development-tools_debugging~log-to-stdout]: log.md#log-to-stdout
+[ex~development-tools_debugging~custom-logger]: log.md#custom-logger
+[ex~development-tools_debugging~syslog]: log.md#syslog
+[ex~development-tools_debugging~metrics-route]: metrics.md#serve-metrics-from-an-axum-route
+[ex~development-tools_debugging~record-metrics]: metrics.md#record-counters-and-histograms
+[ex~development-tools_debugging~prometheus]: metrics.md#expose-prometheus-metrics
+[ex~development-tools_debugging~slog]: tracing_alternatives.md#slog
+[ex~development-tools_debugging~tracing-basics]: tracing.md#tracing-basics
+[ex~development-tools_debugging~tracing-change-log-level]: tracing.md#tracing-change-log-level
+[ex~development-tools_debugging~tracing-log-json]: tracing.md#tracing-log-json
+[ex~development-tools_debugging~configure-tracing]: tracing.md#configure-tracing
+[ex~development-tools_debugging~tracing-multiple-destinations]: tracing.md#tracing-multiple-destinations
+[ex~development-tools_debugging~tracing-config-runtime]: tracing.md#tracing-config-runtime
+[ex~development-tools_debugging~tracing-change-runtime]: tracing.md#tracing-change-runtime
+[ex~development-tools_debugging~custom-event-formatter]: tracing.md#custom-event-formatter
+[ex~development-tools_debugging~events]: tracing.md#events
+[ex~development-tools_debugging~spans]: tracing.md#spans
+[ex~development-tools_debugging~span-entered]: tracing.md#span-entered
+[ex~development-tools_debugging~span-instrument]: tracing.md#span-instrument
+[ex~development-tools_debugging~add-tracing-spans-to-fn]: tracing.md#add-tracing-spans-to-fn
+[metrics~website]: https://docs.rs/metrics
+[metrics-exporter-prometheus~website]: https://docs.rs/metrics-exporter-prometheus
+[opentelemetry-otlp~docs]: https://docs.rs/opentelemetry-otlp
+[opentelemetry-http~docs]: https://docs.rs/opentelemetry-http
+[tracing-opentelemetry~docs]: https://docs.rs/tracing-opentelemetry
+[opentelemetry-otlp-example]: https://github.com/open-telemetry/opentelemetry-rust/tree/main/opentelemetry-otlp/examples/basic-otlp
+[opentelemetry-rust~repo]: https://github.com/open-telemetry/opentelemetry-rust
+[otel-context-propagation]: https://opentelemetry.io/docs/concepts/context-propagation/
+[jaeger~otlp-docs]: https://www.jaegertracing.io/docs/2.22/features/
+[openobserve~traces-docs]: https://openobserve.ai/docs/reference/api/ingestion/traces/
+[quickwit~traces-docs]: https://quickwit.io/docs/main-branch/distributed-tracing/overview
+[tracing-appender~docs]: https://docs.rs/tracing-appender/latest/tracing_appender/
