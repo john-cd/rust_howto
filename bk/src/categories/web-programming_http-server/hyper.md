@@ -2,7 +2,7 @@
 
 # Hyper
 
-{{#include _hyper.incl.md}}
+{{#include hyper.incl.md}}
 
 ## Implement an HTTP API with `hyper` {#hyper}
 
@@ -45,10 +45,9 @@ TLS support for Hyper through OpenSSL.
 
 ## Related Topics {#related-topics .skip}
 
-- [TCP Listener Servers](../network-programming/server.md) for lower-level networking.
 - [Asynchronous Programming](../asynchronous/index.md) for Tokio and async I/O concepts.
-- [Higher-Level HTTP Server Frameworks](index.md) for Axum, Actix Web, middleware, and routing.
-- [HTTP Clients](../web-programming_http-client/index.md) for client-side requests and convenient HTTP APIs.
+- [HTTP Servers](index.md) for Axum, Actix Web, middleware, and routing.
+- [HTTP Clients](../web-programming_http-client/offline_http_client.md) for client-side requests and convenient HTTP APIs.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

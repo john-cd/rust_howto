@@ -2,7 +2,7 @@
 
 # Actix Web
 
-{{#include _actix.incl.md}}
+{{#include actix.incl.md}}
 
 ## Create a Web Server with Actix Web {#actix}
 
@@ -27,9 +27,9 @@ From `bk/crates`, start the example with `cargo run -p web_programming_http_serv
 
 ## Related Topics {#related-topics .skip}
 
-- [[asynchronous | Asynchronous Programming]] for async runtimes and task execution.
-- [[network-programming | Network Programming]] for TCP listeners and lower-level sockets.
-- [[web-programming_http-server | HTTP Servers]] for Axum, Hyper, GraphQL, gRPC, and middleware.
+- [Asynchronous Programming](../asynchronous/index.md) for async runtimes and task execution.
+- [HTTP Types and Interfaces](../web-programming/http_types_and_interfaces.md) for HTTP request and response types.
+- [HTTP Servers](index.md) for Axum, Hyper, GraphQL, gRPC, and middleware.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

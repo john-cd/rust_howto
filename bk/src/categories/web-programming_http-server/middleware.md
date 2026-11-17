@@ -24,7 +24,7 @@ A number of third-party libraries support [`tower`][c~tower~docs]↗{{hi:tower}}
 
 [`Tower HTTP`][c~tower-http~docs]↗{{hi:tower-http}} contains HTTP specific Tower utilities.
 
-The example below serves an Axum route and composes tracing, response compression, CORS, and request-timeout layers with `tower::ServiceBuilder`. It also adds a response header with Axum's `middleware::from_fn`, which is useful for application-specific logic that does not need a reusable Tower `Layer` type. The focused CORS example is in [[cors | Cross-origin Resource Sharing]].
+The example below serves an Axum route and composes tracing, response compression, CORS, and request-timeout layers with `tower::ServiceBuilder`. It also adds a response header with Axum's `middleware::from_fn`, which is useful for application-specific logic that does not need a reusable Tower `Layer` type. The focused CORS example is in [Cross-origin Resource Sharing](cors.md).
 
 The example uses permissive CORS settings so a local browser demo can send requests from any origin. Configure an explicit allowlist of trusted origins, methods, and headers for a deployed application.
 
@@ -44,13 +44,13 @@ Trillium is a separate web framework rather than a Tower middleware crate. Its r
 
 ## Related Topics {#related-topics .skip}
 
-- [[cors | Cross-origin Resource Sharing]].
-- [[axum | Axum]].
-- [[asynchronous | Asynchronous Programming]].
+- [Cross-origin Resource Sharing](cors.md).
+- [Axum](axum.md).
+- [Asynchronous Programming](../asynchronous/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
 <div class="hidden">
-  This review adds a concrete Axum `from_fn` middleware example, verifies it together with the existing CORS layer using a local request, and clarifies the permissive CORS and alternative-framework guidance. The Tower concepts remain concise because the adjacent code demonstrates the composition directly.
+  The Axum `from_fn` middleware example composes with a local CORS layer; the permissive CORS settings are intended for local demonstrations only.
 </div>

@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Bound Retries and Concurrency with Tower
+# Bound Retries and Concurrency with Tower {#service-resilience}
 
 An upstream error is not permission to retry every request. This in-memory [Tower](https://docs.rs/tower/latest/tower/) service retries only an idempotent read after a transient failure, at most twice. A `ConcurrencyLimit` caps requests entering the upstream service, and one Tokio timeout covers the **whole** retry sequence. The tests use a paused clock and no network service.
 

@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Web Serving
+# HTTP Servers
 
 [![cat~web-programming::http-server][cat~web-programming::http-server~badge]][cat~web-programming::http-server]{{hi:HTTP server}}
 
@@ -28,15 +28,15 @@ This guidance has no standalone code example because framework selection depends
 
 ### Axum
 
-{{#include _axum.incl.md}}
+{{#include axum.incl.md}}
 
 ### Actix Web
 
-{{#include _actix.incl.md}}
+{{#include actix.incl.md}}
 
 ### Batteries-included Frameworks
 
-{{#include _batteries-included_frameworks.incl.md}}
+{{#include batteries_included_frameworks.incl.md}}
 
 ### Other Frameworks
 
@@ -44,17 +44,18 @@ This guidance has no standalone code example because framework selection depends
 
 ### Low-level Serving with `hyper`
 
-{{#include _hyper.incl.md}}
+{{#include hyper.incl.md}}
 
 ## Middleware
 
-Middleware is a powerful way to add functionality to your web server.
+Middleware adds cross-cutting behavior such as tracing, compression, CORS, and
+timeouts to request handling.
+
+{{#include middleware.incl.md}}
 
 ## Internationalized API Errors
 
 {{#include i18n.incl.md}}
-
-{{#include middleware.incl.md}}
 
 ### Cross-origin Resource Sharing
 
@@ -66,7 +67,12 @@ Middleware is a powerful way to add functionality to your web server.
 
 ## OpenAPI and JSON Schema
 
-See the published [OpenAPI and JSON Schema](https://john-cd.com/rust_howto/categories/web-programming_http-server/openapi.html) recipes.
+See [OpenAPI and JSON Schema](openapi.md) for API descriptions and generated schemas.
+
+## API Behavior and Reliability
+
+- [Update JSON fields with Axum](json_patch.md) to distinguish an omitted field, `null`, and a replacement value in a `PATCH` request.
+- [Bound retries and concurrency with Tower](service_resilience.md) to limit retries for safe operations and cap total request time.
 
 ## Static Website Generators
 
@@ -74,18 +80,18 @@ See the published [OpenAPI and JSON Schema](https://john-cd.com/rust_howto/categ
 
 ## GraphQL
 
-{{#include _graphql.incl.md}}
+{{#include graphql.incl.md}}
 
 ## gRPC
 
-{{#include _grpc.incl.md}}
+{{#include grpc.incl.md}}
 
 ## Related Topics
 
 This section is a navigation list to related how-to chapters.
 
-- [Authentication and authorization][p~authentication].
-- [HTTP client APIs][p~http-client].
+- Authentication and authorization middleware such as [`actix-web-httpauth`](https://docs.rs/actix-web-httpauth/latest/actix_web_httpauth/) and [`tower-http`](https://docs.rs/tower-http/latest/tower_http/auth/).
+- [Make an HTTP Request Against a Local Service](../web-programming_http-client/offline_http_client.md) for a deterministic HTTP client example.
 - [Tracing and diagnostics][p~tracing].
   {{#include refs.incl.md}}
   {{#include ../../refs/link-refs.md}}

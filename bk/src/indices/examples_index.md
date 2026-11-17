@@ -1034,6 +1034,36 @@
 
 {{#include ../categories/web-programming_http-client/download.incl.md}}
 
+### HTTP Servers
+
+{{#include ../categories/web-programming_http-server/axum.incl.md}}
+
+{{#include ../categories/web-programming_http-server/actix.incl.md}}
+
+{{#include ../categories/web-programming_http-server/batteries_included_frameworks.incl.md}}
+
+{{#include ../categories/web-programming_http-server/other_frameworks.incl.md}}
+
+{{#include ../categories/web-programming_http-server/hyper.incl.md}}
+
+{{#include ../categories/web-programming_http-server/middleware.incl.md}}
+
+{{#include ../categories/web-programming_http-server/i18n.incl.md}}
+
+{{#include ../categories/web-programming_http-server/cors.incl.md}}
+
+{{#include ../categories/web-programming_http-server/axum_extras.incl.md}}
+
+{{#include ../categories/web-programming_http-server/static_website_generators.incl.md}}
+
+{{#include ../categories/web-programming_http-server/graphql.incl.md}}
+
+{{#include ../categories/web-programming_http-server/grpc.incl.md}}
+
+{{#include ../categories/web-programming_http-server/json_patch.incl.md}}
+
+{{#include ../categories/web-programming_http-server/service_resilience.incl.md}}
+
 ## WebSockets
 
 {{#include ../categories/web-programming_websocket/websocket.incl.md}}

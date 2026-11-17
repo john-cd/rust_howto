@@ -163,7 +163,7 @@ tower-cookies = "0.11.0"
 # Tower middleware and utilities for HTTP clients and servers
 tower-http = { version = "0.7.1", features = ["full", "auth"] }
 # 🥠 Sessions as a `tower` and `axum` middleware.
-tower-sessions = { version = "0.15.0", features = ["memory-store"] } # Pinned: axum-messages 0.8 (latest) needs tower-sessions 0.14; 0.15 is out.
+tower-sessions = { version = "0.14.0", features = ["memory-store"] } # Keep compatible with axum-messages 0.8, which uses tower-sessions-core 0.14.
 # Application-level tracing for Rust.
 tracing = "0.1.44"
 # Utilities for implementing and composing `tracing` subscribers.
