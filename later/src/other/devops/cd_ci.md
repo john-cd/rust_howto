@@ -66,7 +66,7 @@ For an example of a mature Rust release workflow, see [ripgrep's release workflo
 - [GitHub Actions](github_actions.md).
 - [Release Automation](release_automation.md).
 - [Version Control](version_control.md).
-- Testing<!-- Cross-book topic: bk/drafts/categories/development-tools_testing/testing.md; not included in this preview. -->.
+- Testing<!-- Cross-book topic: bk/src/categories/development-tools_testing/testing.md; not included in this preview. -->.
 - Code Formatting and Linting<!-- Cross-book topic: bk/drafts/categories/development-tools_cargo-plugins/code_formatting_linting.md; not included in this preview. -->.
 - [Cloud](../cloud/index.md).
 

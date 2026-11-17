@@ -62,7 +62,7 @@
 
 ## Related Topics {#related-topics .skip}
 
-- [[debugging | Debugging]].
+- [Development Tools - Debugging](../../../src/categories/development-tools_debugging/index.md).
 - [[development_environment_setup | Development Environment Setup]].
 - [[syntax_highlighting | Syntax Highlighting]].
 - [[cargo | Cargo]].

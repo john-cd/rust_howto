@@ -5,7 +5,7 @@
 use clap::Parser;
 use clap::Subcommand;
 
-/// `afl` (American Fuzzy Loop) is a popular fuzz testing tool, and `afl.rs` is a Rust crate that
+/// `afl` (American Fuzzy Lop) is a popular fuzz testing tool, and `afl` is a Rust crate that
 /// provides support for integrating AFL with Rust programs.
 #[cfg(not(windows))]
 mod afl;

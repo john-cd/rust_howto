@@ -240,6 +240,100 @@
 
 ## Development Tools
 
+### Debugging and Observability
+
+#### Debuggers
+
+{{#include ../categories/development-tools_debugging/debugger.incl.md}}
+
+#### Debugging
+
+{{#include ../categories/development-tools_debugging/debugging_examples.incl.md}}
+
+#### Tracing
+
+{{#include ../categories/development-tools_debugging/tracing.incl.md}}
+
+#### Logging Alternatives
+
+{{#include ../categories/development-tools_debugging/tracing_alternatives.incl.md}}
+
+#### Log Messages
+
+{{#include ../categories/development-tools_debugging/log.incl.md}}
+
+#### Logging Configuration
+
+{{#include ../categories/development-tools_debugging/config_log.incl.md}}
+
+#### Metrics
+
+{{#include ../categories/development-tools_debugging/metrics_examples.incl.md}}
+
+#### Distributed Telemetry
+
+{{#include ../categories/development-tools_debugging/distributed_telemetry_examples.incl.md}}
+
+#### Diagnostic Functions
+
+{{#include ../categories/development-tools_debugging/diagnostic_functions.incl.md}}
+
+### Profiling
+
+#### Benchmarking
+
+{{#include ../categories/development-tools_profiling/benchmarking.incl.md}}
+
+#### Instrumentation Profiling
+
+{{#include ../categories/development-tools_profiling/instrumentation_profiling.incl.md}}
+
+#### Low-level Profiling Tools
+
+{{#include ../categories/development-tools_profiling/assembly.incl.md}}
+
+#### Memory Usage Analysis
+
+{{#include ../categories/development-tools_profiling/memory_usage_analysis.incl.md}}
+
+### Testing
+
+#### Testing
+
+{{#include ../categories/development-tools_testing/testing.incl.md}}
+
+#### Assertions
+
+{{#include ../categories/development-tools_testing/assertions.incl.md}}
+
+#### Snapshot Testing
+
+{{#include ../categories/development-tools_testing/snapshot_testing.incl.md}}
+
+#### Test Runners
+
+{{#include ../categories/development-tools_testing/test_runners.incl.md}}
+
+#### Property-Based Testing
+
+{{#include ../categories/development-tools_testing/property_based_testing.incl.md}}
+
+#### Mocking
+
+{{#include ../categories/development-tools_testing/mocking.incl.md}}
+
+#### Code Coverage
+
+{{#include ../categories/development-tools_testing/code_coverage.incl.md}}
+
+#### Mutation Testing
+
+{{#include ../categories/development-tools_testing/mutation_testing.incl.md}}
+
+#### Fuzzing
+
+{{#include ../categories/development-tools_testing/fuzzing.incl.md}}
+
 ## Encoding
 
 ### CSV

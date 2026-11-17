@@ -18,4 +18,4 @@ cargo check --package development_tools_profiling --examples
 cargo test --package development_tools_profiling
 ```
 
-Code examples correspond to chapters in `bk/src/categories/development_tools_profiling` or related book sections.
+Code examples correspond to chapters in `bk/src/categories/development-tools_profiling` or related book sections.
