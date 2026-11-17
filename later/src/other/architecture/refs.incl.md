@@ -27,7 +27,7 @@
 [p~asynchronous]: https://john-cd.com/rust_howto/categories/asynchronous/index.html
 [p~authentication]: ../../../src/categories/authentication/index.md
 [p~aws]: ../cloud/aws.md
-[p~concurrency]: ../../../src/categories/concurrency/index.md
+[p~concurrency]: https://john-cd.com/rust_howto/categories/concurrency/index.html
 [p~containerization]: ../../categories/virtualization/containerization.md
 [p~database]: ../../../src/categories/database/index.md
 [p~databases]: ../../../src/categories/database-implementations/databases.md

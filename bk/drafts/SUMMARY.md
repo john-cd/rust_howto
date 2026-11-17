@@ -25,18 +25,6 @@
   - [Shells](categories/command-line-utilities/shells.md)
 
 - [Compression](categories/compression/index.md)
-
-- [Concurrency](categories/concurrency/index.md)
-  - [Explicit Threads](categories/concurrency/explicit_threads.md)
-  - [Threadpools](categories/concurrency/threadpool.md)
-  - [Multithreading with `crossbeam`](categories/concurrency/crossbeam.md)
-  - [Data Parallelism](categories/concurrency/data_parallelism.md)
-  - [Message Passing and Channels](categories/concurrency/message_passing.md)
-  - [Shared-state Concurrency](categories/concurrency/shared_state.md)
-  - [Concurrent Data Structures](categories/concurrency/concurrent_data_structures.md)
-  - [Send and Sync](categories/concurrency/send_sync.md)
-  - [Actors](categories/concurrency/_actors.md)
-
 - [Configuration](categories/config/index.md)
   - [Environment Variables](categories/config/environment_variables.md)
   - [Configuration Management](categories/config/configuration.md)
