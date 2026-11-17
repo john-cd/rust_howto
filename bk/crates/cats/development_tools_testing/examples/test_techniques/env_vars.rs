@@ -1,9 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Reads configuration from the process environment without mutating it in
-//!
-//! tests.
+//! Reads configuration from the process environment without mutating it in tests.
 //! Environment variables are shared by all tests in a process, and tests run in
 //! parallel, so changing them can make tests interfere. Serialize such tests,
 //! or restore the variable afterwards.
