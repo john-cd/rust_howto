@@ -21,7 +21,7 @@
 [p~asynchronous]: ../asynchronous/index.md
 [p~building]: ../development-tools_cargo-plugins/building.md
 [p~hyper]: # "../web-programming_http-server/_hyper.md#hyper"
-[p~json]: ../parser-implementations/json.md
+[p~json]: ../../../src/categories/parser-implementations/json.md
 [p~main]: ../../language/entrypoint.md
 [p~http-clients]: http_clients.md
 [p~requests]: requests.md

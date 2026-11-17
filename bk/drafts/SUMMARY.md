@@ -198,15 +198,6 @@
 
 - [Parsing](categories/parsing/index.md)
 
-- [Parser Implementations](categories/parser-implementations/index.md)
-  - [HTML](categories/parser-implementations/html.md)
-  - [INI](categories/parser-implementations/ini.md)
-  - [JSON](categories/parser-implementations/json.md)
-  - [Markdown](categories/parser-implementations/markdown.md)
-  - [TOML](categories/parser-implementations/toml.md)
-  - [XML](categories/parser-implementations/xml.md)
-  - [YAML](categories/parser-implementations/yaml.md)
-  - [Programming Languages](categories/parser-implementations/programming_languages.md)
 
 - [Rust Patterns](categories/rust-patterns/index.md)
   - [Creational Patterns](categories/rust-patterns/creational_patterns.md)
