@@ -4,16 +4,6 @@
 
 <!-- Ordered migration review and remaining work: MIGRATION.md. -->
 
-- [Cryptography](categories/cryptography/index.md)
-  - [Password Hashing](categories/cryptography/password_hashing.md)
-  - [Encryption](categories/cryptography/encryption.md)
-  - [AEAD](categories/cryptography/aead.md)
-  - [Protect Secrets](categories/cryptography/secrets.md)
-  - [Signatures](categories/cryptography/signature.md)
-  - [HMAC](categories/cryptography/hmac.md)
-  - [Certificates](categories/cryptography/certificates.md)
-  - [TLS](categories/cryptography/tls.md)
-  - [Cryptographic Utilities](categories/cryptography/cryptography_utilities.md)
 
 - [Database Access](categories/database/index.md)
   - [SQLite](categories/database/sqlite.md)

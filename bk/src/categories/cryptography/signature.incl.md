@@ -1,8 +1,8 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 Digital signatures let a private-key holder sign data so that a verifier can check its integrity and confirm that the signature was made by someone holding the corresponding key. A signature does not encrypt data or identify a real-world person; applications must establish trust in public keys separately.
 
-For new protocols, Ed25519 with `ed25519-dalek` is a practical default. Choose P-256 ECDSA when interoperability requires it; RSA signatures are mainly for legacy protocol compatibility. The `signature` crate provides common signing and verification traits. Keep private keys protected and use a standard encoding such as [PKCS#8](certificates.md#pkcs8) for storage; sign a well-defined, unambiguous representation of the data.
+For new protocols, Ed25519 with `ed25519-dalek` is a practical default. Choose P-256 ECDSA when interoperability requires it; RSA signatures are mainly for legacy protocol compatibility. The `signature` crate provides common signing and verification traits. Keep private keys protected and use a standard encoding such as [PKCS#8][ex~cryptography~pkcs8] for storage; sign a well-defined, unambiguous representation of the data.
 
 | Recipe | Crates | Categories |
 | --- | --- | --- |

@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Encrypt with AEAD
 
@@ -59,11 +59,11 @@ For more [algorithms][p~algorithms], see Rust Crypto AEADs: aes-gcm-siv{{hi:aes-
 
 ## Related Topics {#related-topics .skip}
 
-- [[encryption | Encryption]].
-- [[hashing | Hashing]].
-- [[hmac | HMAC]].
-- [[password_hashing | Password hashing]].
-- [[signature | Digital signatures]].
+- [Encryption](encryption.md).
+- [Hashing](../algorithms/hashing.md).
+- [HMAC](hmac.md).
+- [Password Hashing](password_hashing.md).
+- [Digital Signatures](signature.md).
 - [Cryptography category](index.md).
 
 {{#include refs.incl.md}}

@@ -132,6 +132,44 @@
 
 {{#include ../categories/compression/tar.incl.md}}
 
+## Cryptography
+
+### Authenticated Encryption
+
+{{#include ../categories/cryptography/aead.incl.md}}
+
+### Certificates
+
+{{#include ../categories/cryptography/certificates.incl.md}}
+
+### Encryption
+
+{{#include ../categories/cryptography/encryption.incl.md}}
+
+### HMAC
+
+{{#include ../categories/cryptography/hmac.incl.md}}
+
+### Password Hashing
+
+{{#include ../categories/cryptography/password_hashing.incl.md}}
+
+### Protect Secrets
+
+{{#include ../categories/cryptography/secrets.incl.md}}
+
+### Digital Signatures
+
+{{#include ../categories/cryptography/signature.incl.md}}
+
+### TLS
+
+{{#include ../categories/cryptography/tls.incl.md}}
+
+### Cryptographic Utilities
+
+{{#include ../categories/cryptography/cryptography_utilities.incl.md}}
+
 ## Concurrency
 
 ### Actors
