@@ -37,7 +37,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Atlassian][atlassian~website]↗ | Uses Rust to analyze petabytes of source code. |
 | [Attain][attainoutcomes~website]↗ | Provides permissioned consumer purchase data and marketing measurement products. |
 | [Automata][ata~website]↗ | Develops machine-attestation infrastructure for verifiable computing. |
-| [Bencher][bencher~website]↗ [(github)][bencher~repo]↗ | Continuous [benchmarking](../categories/development-tools/profiling.md) tools designed to catch [performance](../categories/development-tools/profiling.md) regressions in CI. |
+| [Bencher][bencher~website]↗ [(github)][bencher~repo]↗ | Continuous [benchmarking](../categories/development-tools_profiling/index.md) tools designed to catch [performance](../categories/development-tools_profiling/index.md) regressions in CI. |
 | [Bitfury][bitfury~website]↗ | Exonum is an extensible framework for blockchain projects written in Rust. |
 | [Block][block~website]↗ | Builds financial technology products, including Square and Cash App. |
 | [Brainport Digital Factory][brainportdigitalfactory~website]↗ | Helps manufacturers in the Brainport region adopt digital and smart-manufacturing technologies. |
@@ -45,7 +45,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Braun Embedded][braun-embedded~website]↗ [(github)][braun-embedded~repo]↗ | Provides firmware development services for ARM Cortex-M microcontrollers. |
 | [Brave][brave~website]↗ [(github)][brave~repo]↗ | Uses Rust for its browser's ad-blocking engine. |
 | [Buoyant][buoyant~website]↗ | Builds Linkerd and provides cloud-native service-mesh software and support. |
-| [Calyptech][calyptech~website]↗ | Used for high [performance](../categories/development-tools/profiling.md) embedded system components as an alternative to C. |
+| [Calyptech][calyptech~website]↗ | Used for high [performance](../categories/development-tools_profiling/index.md) embedded system components as an alternative to C. |
 | [Canonical][canonical~website]↗ | Everything from server monitoring to [middleware](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/web-programming_http-server/middleware.md). |
 | [CarGurus][cargurus~website]↗ | Operates an online marketplace for researching and buying cars. |
 | [Cash App][cash-app~website]↗ | Provides mobile payment and other consumer financial services. |

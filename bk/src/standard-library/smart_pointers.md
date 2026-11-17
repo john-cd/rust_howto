@@ -115,7 +115,7 @@ The following example demonstrates the implementation of a basic smart pointer:
 - [[vectors | Vectors]].
 - [Concurrency](../categories/concurrency/index.md).
 - [Memory Management](../categories/memory-management/index.md).
-- [Memory Usage Analysis](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_profiling/memory_usage_analysis.md).
+- [Memory Usage Analysis](../categories/development-tools_profiling/memory_usage_analysis.md).
 - [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
 - [Shared State](../categories/concurrency/shared_state.md).
 

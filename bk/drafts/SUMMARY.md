@@ -90,12 +90,6 @@
   - [Maintaining](categories/development-tools_cargo-plugins/maintaining.md)
   - [Write a Cargo Plugin](categories/development-tools_cargo-plugins/write_cargo_plugin.md)
 
-- [Development Tools - Performance, Profiling](categories/development-tools_profiling/index.md)
-  - [Benchmarking](categories/development-tools_profiling/benchmarking.md)
-  - [Instrumentation Profiling](categories/development-tools_profiling/instrumentation_profiling.md)
-  - [Low-level Profiling Tools](categories/development-tools_profiling/assembly.md)
-  - [Memory Usage Analysis](categories/development-tools_profiling/memory_usage_analysis.md)
-
 - [Email](categories/email/index.md)
   - [Sending emails](categories/email/send_emails.md)
   - [Email parsing](categories/email/email_parsing.md)
