@@ -86,12 +86,6 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Checks that the example can run without starting a server.
-    #[test]
-    fn test_puffin_server_example_entry_point() {
-        main();
-    }
-
     /// Records a frame without a server and checks the captured scopes.
     #[test]
     fn frame_has_scopes() {

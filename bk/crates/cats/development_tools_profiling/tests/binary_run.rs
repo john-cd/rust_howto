@@ -7,20 +7,32 @@ use std::process::Command;
 /// The binary runs the dhat and time-measurement examples to completion.
 #[test]
 fn binary_runs_memory_and_timing_examples_successfully() {
-    let output = Command::new(env!("CARGO_BIN_EXE_development_tools_profiling"))
+    let binary = env!("CARGO_BIN_EXE_development_tools_profiling");
+    let memory = Command::new(binary)
+        .arg("dhat")
         .output()
         .expect("the profiling binary should start");
 
     assert!(
-        output.status.success(),
+        memory.status.success(),
         "exit status {:?}; stderr: {}",
-        output.status.code(),
-        String::from_utf8_lossy(&output.stderr)
+        memory.status.code(),
+        String::from_utf8_lossy(&memory.stderr)
     );
+
+    let timing = Command::new(binary)
+        .arg("measure-time")
+        .output()
+        .expect("the profiling binary should start");
     let combined = format!(
         "{}{}",
-        String::from_utf8_lossy(&output.stdout),
-        String::from_utf8_lossy(&output.stderr)
+        String::from_utf8_lossy(&timing.stdout),
+        String::from_utf8_lossy(&timing.stderr)
+    );
+    assert!(
+        timing.status.success(),
+        "exit status {:?}; stderr: {combined}",
+        timing.status.code()
     );
     assert!(
         combined.contains("execution_time"),

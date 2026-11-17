@@ -1,10 +1,15 @@
 # TODO Reviewed ??-??-2026.
 
-# Purpose: Run equivalent workload commands with Hyperfine and save their measurements.
-# Usage: Run with bash bk/crates/cats/development_tools_profiling/examples/benchmarking/hyperfine.sh from the example workspace, as described in the book.
+# Purpose: Compare two equivalent sort workloads with Hyperfine and save their measurements.
+# Usage: Run with bash bk/crates/cats/development_tools_profiling/examples/benchmarking/hyperfine.sh from bk/crates.
 #
-# Replace these commands with two equivalent ways to run your workload.
-hyperfine --warmup 3 --runs 10 'target/release/my_program --input sample.txt' 'target/release/my_program --input sample.txt --optimized'
+cargo build --release -p development_tools_profiling --example regression_workload
 
-# Save the measurements so they can be reviewed with the change.
-hyperfine --export-markdown results.md --warmup 3 --runs 10 'target/release/my_program --input sample.txt'
+binary=target/release/examples/regression_workload
+if [ -f "${binary}.exe" ]; then
+    binary="${binary}.exe"
+fi
+
+hyperfine --warmup 3 --runs 10 --export-markdown results.md \
+    --command-name "stable sort" "${binary} stable" \
+    --command-name "unstable sort" "${binary} unstable"
