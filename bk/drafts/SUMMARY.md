@@ -4,8 +4,6 @@
 
 <!-- Ordered migration review and remaining work: MIGRATION.md. -->
 
-- [Compression](categories/compression/index.md)
-
 - [Cryptography](categories/cryptography/index.md)
   - [Password Hashing](categories/cryptography/password_hashing.md)
   - [Encryption](categories/cryptography/encryption.md)
