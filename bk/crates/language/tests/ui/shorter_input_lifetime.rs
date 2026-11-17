@@ -9,6 +9,7 @@ fn choose<'a>(first: &'a str, second: &'a str) -> &'a str {
     }
 }
 
+/// Runs the example demonstrated by this module.
 fn main() {
     let chosen;
     {

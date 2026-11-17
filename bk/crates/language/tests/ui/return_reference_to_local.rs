@@ -6,6 +6,7 @@ fn try_create<'a>() -> &'a String {
     &s
 }
 
+/// Runs the example demonstrated by this module.
 fn main() {
     let _ = try_create();
 }
