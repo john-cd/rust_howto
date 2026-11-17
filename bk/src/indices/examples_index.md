@@ -132,6 +132,23 @@
 
 {{#include ../categories/encoding/string_encoding.incl.md}}
 
+
+### Binary Encoders
+
+{{#include ../categories/encoding/_binary_encoders.incl.md}}
+
+### Binary Encoders Without External Schemas
+
+{{#include ../categories/encoding/no_external_schema.incl.md}}
+
+### Structured Data
+
+{{#include ../categories/encoding/complex_encoding.incl.md}}
+
+### Typecasts and Byte Layout
+
+{{#include ../categories/encoding/typecasts.incl.md}}
+
 ## Filesystem
 
 ### Directories
