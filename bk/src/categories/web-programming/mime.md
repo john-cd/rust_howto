@@ -24,7 +24,7 @@ The following example guesses a MIME type from the filename extension with [`mim
 {{#include ../../../crates/cats/web_programming/examples/mime/filename.rs:example}}
 ```
 
-## Parse the MIME Type of a HTTP Response {#parse-the-mime-type-of-a-http-response}
+## Parse the MIME Type of an HTTP Response {#parse-the-mime-type-of-a-http-response}
 
 [![reqwest][c~reqwest~docs~badge]][c~reqwest~docs]{{hi:reqwest}} [![mime][c~mime~docs~badge]][c~mime~docs]{{hi:mime}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}} [![cat~web-programming][cat~web-programming~badge]][cat~web-programming]{{hi:Web programming}}
 
@@ -40,8 +40,8 @@ Note that the [`reqwest::header`][c~reqwest::header~docs]↗{{hi:reqwest::header
 
 ## Related Topics {#related-topics .skip}
 
-- [Make HTTP Requests](../web-programming_http-client/requests.md).
-- Filesystem<!-- Cross-book topic: bk/src/categories/filesystem/index.md; not included in this preview. -->.
+- [Make an HTTP Request Against a Local Service](../web-programming_http-client/offline_http_client.md).
+- [Filesystem](../filesystem/index.md).
 
 To identify a file from its contents instead of its extension, use a content-sniffing crate such as [`infer`][c~infer~docs]↗.
 

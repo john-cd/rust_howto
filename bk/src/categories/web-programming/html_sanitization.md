@@ -4,7 +4,7 @@
 
 {{#include html_sanitization.incl.md}}
 
-Strip dangerous markup from user-supplied or scraped HTML before showing or storing it. For an email's plain-text alternative, see [[send_emails | Send Emails]].
+Strip dangerous markup from user-supplied or scraped HTML before showing or storing it. If content should be plain text, emit text instead of rendering HTML markup.
 
 ## Sanitize Untrusted HTML (`ammonia`) {#ammonia}
 
@@ -28,7 +28,7 @@ Markdown allows raw HTML, so cleaning the Markdown source is not enough. Render 
 
 ## Related Topics {#related-topics .skip}
 
-- [Web Scraping](scraping.md).
+- [Extracting Links](scraping.md).
 - [Template Engine](../template-engine/index.md).
 
 {{#include refs.incl.md}}

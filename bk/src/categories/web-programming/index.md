@@ -6,19 +6,19 @@
 
 Web applications combine HTTP, asynchronous I/O, serialization, and user-interface code. Use this index to find the guide for the layer you are building.
 
-Use the [HTTP Clients](../web-programming_http-client/index.md) chapter to call a service, and the [HTTP Servers](../web-programming_http-server/index.md) chapter to expose one. This overview links to the URL, media-type, and parsing tools used on either side.
+Use the [local HTTP client example](../web-programming_http-client/offline_http_client.md) to call a service, and the [HTTP server example](../web-programming_http-server/json_patch.md) as a starting point for an API. This overview links to URL, media-type, and parsing tools used on either side.
 
 ## Services, APIs, and Network I/O
 
 | Goal | Start here |
 | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Build an HTTP server or REST API | [HTTP Servers](../web-programming_http-server/index.md). The guide covers Axum, Actix Web, Hyper, middleware, GraphQL, and gRPC. |
-| Send requests to an HTTP service | [HTTP Clients](../web-programming_http-client/index.md). The guide compares `reqwest`, `ureq`, and Hyper, and includes request and download examples. |
-| Implement a GraphQL endpoint | [GraphQL](../web-programming_http-server/_graphql.md). |
-| Implement a gRPC service | [gRPC](../web-programming_http-server/_grpc.md). |
-| Use TCP or UDP without HTTP | [Network Programming](../network-programming/index.md). |
-| Add WebSocket communication | [Web Programming: WebSocket](https://john-cd.com/rust_howto/categories/web-programming_websocket/websocket.html), [Asynchronous Programming](../asynchronous/index.md) and [Network Programming](../network-programming/index.md); see [`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} and [`async-tungstenite`][c~async-tungstenite~docs]↗{{hi:async-tungstenite}}. |
-| Add authentication or authorization | [Authentication](../authentication/index.md). |
+| Build an HTTP server or REST API | [HTTP server example](../web-programming_http-server/json_patch.md); it shows request handling with Axum. |
+| Send requests to an HTTP service | [Make an HTTP Request Against a Local Service](../web-programming_http-client/offline_http_client.md), which uses a loopback fixture. |
+| Implement a GraphQL endpoint | [`async-graphql`][c~async-graphql~docs]↗{{hi:async-graphql}}. |
+| Implement a gRPC service | [`tonic`][c~tonic~docs]↗{{hi:tonic}}. |
+| Use TCP or UDP without HTTP | Choose a networking crate such as Tokio; transport protocols are separate from HTTP. |
+| Add WebSocket communication | [WebSockets](../web-programming_websocket/index.md) and [Asynchronous Programming](../asynchronous/index.md); see [`tokio-tungstenite`][c~tokio-tungstenite~docs]↗{{hi:tokio-tungstenite}} and [`async-tungstenite`][c~async-tungstenite~docs]↗{{hi:async-tungstenite}}. |
+| Add authentication or authorization | Use framework middleware such as [`actix-web-httpauth`][c~actix-web-httpauth~docs]↗ or [`tower-http`][c~tower-http~docs]↗. |
 
 ## Crates by Task
 
@@ -34,7 +34,7 @@ Use the [HTTP Clients](../web-programming_http-client/index.md) chapter to call 
 
 ## Browser Interfaces and Generated Pages
 
-For browser interfaces compiled to WebAssembly, explore [`yew`][c~yew~docs]↗{{hi:yew}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}}, [`seed`][c~seed~docs]↗{{hi:seed}}, and [`dominator`][c~dominator~docs]↗{{hi:dominator}}. For HTML templates, see [Template Engines](../template-engine/index.md). The HTTP server guide also covers [Static Site Generators](../web-programming_http-server/static_website_generators.md), including Zola.
+For browser interfaces compiled to WebAssembly, explore [`yew`][c~yew~docs]↗{{hi:yew}}, [`leptos`][c~leptos~docs]↗{{hi:leptos}}, [`seed`][c~seed~docs]↗{{hi:seed}}, and [`dominator`][c~dominator~docs]↗{{hi:dominator}}. For HTML templates, see [Template Engines](../template-engine/index.md). For static sites, see [Zola's documentation][c~zola~docs]↗.
 
 ## Code Examples
 
@@ -57,7 +57,7 @@ For browser interfaces compiled to WebAssembly, explore [`yew`][c~yew~docs]↗{{
 ## Related Topics
 
 - [Asynchronous Programming](../asynchronous/index.md) for async runtimes and task coordination.
-- [Databases](../database/index.md) for database drivers, connection pools, and query tools.
+- [Make an HTTP Request Against a Local Service](../web-programming_http-client/offline_http_client.md) for a deterministic client example.
 - [Serialization and Deserialization](../encoding/serde.md) for JSON and other data formats.
 - [Testing](../development-tools_testing/index.md) for unit, integration, and end-to-end checks.
 
