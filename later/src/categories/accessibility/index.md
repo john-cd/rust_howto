@@ -32,7 +32,7 @@ See [GUI](../gui/index.md), [GTK](../gui/gtk.md), [Immediate Mode GUI](../gui/im
 
 Make output understandable when read aloud or redirected: use clear labels and stable ordering, keep errors distinct from normal output, and avoid relying on color, cursor position, or decorative characters to communicate meaning. Provide a way to disable color and ensure prompts can be answered without a mouse. Terminal styling crates such as [`termcolor`][c~termcolor~docs]↗{{hi:termcolor}} and [`crossterm`][c~crossterm~docs]↗{{hi:crossterm}} help control presentation, but do not replace accessible wording and behavior.
 
-See Command Line Interface<!-- Cross-book topic: bk/drafts/categories/command-line-interface/index.md; not included in this preview. -->.
+See Command Line Interface<!-- Cross-book topic: bk/src/categories/command-line-interface/index.md; not included in this preview. -->.
 
 ## Testing and Review
 

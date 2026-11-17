@@ -103,7 +103,7 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 ## Related Topics
 
 - [[accessibility | Accessibility]].
-- [[command-line-interface | Command Line Interface]].
+- Command Line Interface<!-- Cross-book topic: bk/src/categories/command-line-interface/index.md; not included in this preview. -->.
 - [[game_development | Game Development]].
 - [[game-engines | Game Engines]].
 - [[graphics | Graphics]].

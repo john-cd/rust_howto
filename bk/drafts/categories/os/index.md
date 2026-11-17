@@ -54,7 +54,7 @@ This section lists operating systems and system projects implemented in Rust. Th
 ## Related Topics {#related-topics .skip}
 
 - [[filesystem | File System]] covers portable file and directory operations.
-- [[command-line-interface | Command Line Interface]] covers command arguments and user interaction.
+- [Command-line Interface](../../../src/categories/command-line-interface/index.md) covers command arguments and user interaction.
 - [[network-programming | Network Programming]] covers networking beyond the standard library primitives.
 - [[concurrency | Concurrency]] covers threads, synchronization, and parallel work.
 
