@@ -151,6 +151,13 @@
   - [Distributed Telemetry](categories/development-tools_debugging/distributed_telemetry.md)
   - [Diagnostic Functions](categories/development-tools_debugging/diagnostic_functions.md)
 
+- [Development Tools - Profiling](categories/development-tools_profiling/index.md)
+  - [Benchmarking](categories/development-tools_profiling/benchmarking.md)
+  - [Instrumentation Profiling](categories/development-tools_profiling/instrumentation_profiling.md)
+  - [Low-level Profiling Tools](categories/development-tools_profiling/assembly.md)
+  - [Memory Usage Analysis](categories/development-tools_profiling/memory_usage_analysis.md)
+  - [Compare Benchmark Results in CI](categories/development-tools_profiling/benchmark_regressions.md)
+
 - [Development Tools - Testing](categories/development-tools_testing/index.md)
   - [Testing](categories/development-tools_testing/testing.md)
   - [Assertions](categories/development-tools_testing/assertions.md)
@@ -226,7 +233,6 @@
   - [YAML Parsing](categories/parser-implementations/yaml.md)
   - [General Programming Language Parsing](categories/parser-implementations/programming_languages.md)
 
-- [Profiling and Benchmarking](categories/development-tools/profiling.md)
 
 - [Date and Time](categories/date-and-time/jiff_dst.md)
 - [Register Commands Explicitly or with Inventory](categories/rust-patterns/plugin_registration.md)
@@ -250,7 +256,6 @@
 
 - [Diagnose Rust Build Time](categories/development-tools/build_time_diagnosis.md)
 
-- [Compare Benchmark Results in CI](categories/development-tools/benchmark_regressions.md)
 
 - [Template Engines](categories/template-engine/index.md)
   - [Tera](categories/template-engine/tera.md)

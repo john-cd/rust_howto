@@ -278,6 +278,24 @@
 
 {{#include ../categories/development-tools_debugging/diagnostic_functions.incl.md}}
 
+### Profiling
+
+#### Benchmarking
+
+{{#include ../categories/development-tools_profiling/benchmarking.incl.md}}
+
+#### Instrumentation Profiling
+
+{{#include ../categories/development-tools_profiling/instrumentation_profiling.incl.md}}
+
+#### Low-level Profiling Tools
+
+{{#include ../categories/development-tools_profiling/assembly.incl.md}}
+
+#### Memory Usage Analysis
+
+{{#include ../categories/development-tools_profiling/memory_usage_analysis.incl.md}}
+
 ### Testing
 
 #### Testing
