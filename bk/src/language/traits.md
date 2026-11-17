@@ -140,7 +140,7 @@ For more details on trait bounds, see the [[generics | Generics]] and [[impl_tra
 
 ## Use Async with Traits {#async-and-traits}
 
-This topic is covered in the [Async](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/asynchronous/index.md) chapter.
+This topic is covered in the [Async](../categories/asynchronous/index.md) chapter.
 
 ## References {#references .skip}
 

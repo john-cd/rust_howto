@@ -41,12 +41,12 @@ Rust also supports asynchronous main functions for writing concurrent applicatio
 {{#include ../../crates/language/examples/entrypoint/async_main.rs:example}}
 ```
 
-For an introduction to futures and executors, see [Async Rust (draft)](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/asynchronous/async.md).
+For an introduction to futures and executors, see [Async Rust (draft)](../categories/asynchronous/async.md).
 
 ## Related Topics {#related-topics .skip}
 
 - [[functions | Functions]].
-- [Package Layout](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools/cargo/package_layout.md).
+- [Package Layout](../categories/development-tools/cargo/package_layout.md).
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

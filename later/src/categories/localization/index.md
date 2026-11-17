@@ -22,7 +22,7 @@ Internationalization (i18n) prepares software to work across languages and regio
 
 - [Localization guide][ex~localization~localization]↗{{hi:Localization}}.
 - [[accessibility | Accessibility]].
-- [[command-line-interface | Command Line Interface]].
+- Command Line Interface<!-- Cross-book topic: bk/src/categories/command-line-interface/index.md; not included in this preview. -->.
 - [[date-and-time | Date and Time]].
 - [[gui | GUI]].
 - [[internationalization | Internationalization]].

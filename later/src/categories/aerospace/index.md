@@ -48,7 +48,7 @@ This guide focuses on vehicle communication and radio-control protocols; the Dro
 - **Geoscience:** See [[science_geo | Geoscience]]; [`geo`][c~geo~docs] supports distances, bearings, and geometry, while [`proj`][c~proj~docs] converts coordinate systems such as latitude/longitude to UTM.
 - **Hardware:** See [[hardware-support | Hardware Support]].
 - **Mathematics:** Kalman filters, matrices and rotations with [`nalgebra`][c~nalgebra~docs], numerical integration, and quaternion representations.
-- **Testing:** See [[testing | Testing]] for unit and property tests with [`proptest`][c~proptest~docs].
+- **Testing:** See Testing<!-- Cross-book topic: bk/src/categories/development-tools_testing/testing.md; not included in this preview. --> for unit and property tests with [`proptest`][c~proptest~docs].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

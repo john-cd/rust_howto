@@ -79,7 +79,7 @@ Read the [procedural macros](#procedural-macros) sections below for more details
 
 [`concat!`][c~std::concat~docs]↗ concatenates literals into a static string slice.
 
-See [String Concatenation](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_concat.md) for more details.
+See [String Concatenation](../categories/text-processing/string_concat.md) for more details.
 
 ### Create a Vector with `vec!` {#vec-macro}
 

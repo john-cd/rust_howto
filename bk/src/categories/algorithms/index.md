@@ -6,7 +6,7 @@
 
 This category covers Rust implementations of algorithms{{hi:Algorithms}} such as sorting{{hi:Sorting}}, hashing, graph processing, and random value generation. Prefer the standard library for common operations; use a specialized crate when it adds a capability or performance your application needs.
 
-[Compression](../compression/index.md), [cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), [[data-structures | data structures]], [[mathematics | mathematics]], [scientific algorithms](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [search](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/search.md), [[strings | strings]], and [text processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md) are discussed elsewhere but are briefly mentioned below.
+[Compression](../compression/index.md), [cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), [[data-structures | data structures]], [[mathematics | mathematics]], [scientific algorithms](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [search](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/search.md), [[strings | strings]], and [text processing](../text-processing/index.md) are discussed elsewhere but are briefly mentioned below.
 
 ## Random Value Generation
 
@@ -49,7 +49,7 @@ For common [[data-structures | data structures]] ([`Vec`][c~std::vec::Vec~docs]�
 - `indexmap` for [maps](../data-structures/other_maps.md) that keep track of insertion order,
 - `arrayvec`, `smallvec`, `tinyvec` and `heapless` for [[stack-allocated | stack-allocated data structures]],
 - [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}} for [[graphs | graphs]],
-- `dashmap` and `papaya` for [concurrent data structures](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/concurrent_data_structures.md),
+- `dashmap` and `papaya` for [concurrent data structures](../concurrency/concurrent_data_structures.md),
 - `parking_lot` for mutexes,
 - `crossbeam-channel`, `flume`, `tokio`, and `postage` for channels.
 
@@ -57,7 +57,7 @@ Worth a mention: `fst` provides fast, memory-efficient, immutable set and map da
 
 See [[vectors | vector]], [[hashmaps | hash maps]], [other maps](../data-structures/other_maps.md), and [[binary_heaps | Binary Heap]] within the [[data-structures | Data Structures]] section for more details.
 
-See [[data-structures | Data Structures]] and [Concurrent Data Structures](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/concurrent_data_structures.md).
+See [[data-structures | Data Structures]] and [Concurrent Data Structures](../concurrency/concurrent_data_structures.md).
 
 ### Recursive Algorithms
 
@@ -84,7 +84,7 @@ For [[strings | Strings]], use:
 - [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}} for finding occurrences of many patterns at once,
 - [`strsim`][c~strsim~docs]↗{{hi:strsim}} for string similarity.
 
-See also [String Concat](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/string_concat.md), [String Encoding](../encoding/string_encoding.md), [String Parsing](../text-processing/string_parsing.md), and [Text Processing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/text-processing/index.md).
+See also [String Concatenation](../text-processing/string_concat.md), [String Encoding](../encoding/string_encoding.md), [String Parsing](../text-processing/string_parsing.md), and [Text Processing](../text-processing/index.md).
 
 ### Cryptography
 

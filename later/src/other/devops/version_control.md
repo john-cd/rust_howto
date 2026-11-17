@@ -46,8 +46,8 @@ Rust also has standalone Git tools: [`gitoxide`][gitoxide~repo]↗ provides Git 
 
 ## Related Topics {#related-topics .skip}
 
-- [[development-tools_testing | Development Tools Testing]].
-- [[development-tools_cargo-plugins | Development Tools Cargo Plugins]].
+- Testing<!-- Cross-book topic: bk/src/categories/development-tools_testing/index.md; not included in this preview. -->.
+- [Development Tools Cargo Plugins](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/index.md).
 - [[building | Building]].
 - [[versioning | Versioning]].
   {{#include refs.incl.md}}

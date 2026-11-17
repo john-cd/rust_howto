@@ -20,11 +20,81 @@
 
 {{#include ../categories/algorithms/sorting.incl.md}}
 
+## Asynchronous Programming
+
+### Async Basics
+
+{{#include ../categories/asynchronous/async.incl.md}}
+
+### Async Channels
+
+{{#include ../categories/asynchronous/async_channels.incl.md}}
+
+### Async Traits
+
+{{#include ../categories/asynchronous/async_traits.incl.md}}
+
+### Async Utilities
+
+{{#include ../categories/asynchronous/async_utilities.incl.md}}
+
+### Futures
+
+{{#include ../categories/asynchronous/futures.incl.md}}
+
+### Mixing Async and Blocking Code
+
+{{#include ../categories/asynchronous/async_and_blocking.incl.md}}
+
+### Streams
+
+{{#include ../categories/asynchronous/streams.incl.md}}
+
+### Tokio Runtime
+
+{{#include ../categories/asynchronous/tokio.incl.md}}
+
+### Cancellation and Structured Concurrency
+
+{{#include ../categories/asynchronous/structured_concurrency.incl.md}}
+
 ## Caching
 
 ### In Memory Cache
 
 {{#include ../categories/caching/in_memory_cache.incl.md}}
+
+## Command-line Interface
+
+### Argument Parsing
+
+{{#include ../categories/command-line-interface/argument_parsing.incl.md}}
+
+### ANSI Terminal
+
+{{#include ../categories/command-line-interface/ansi_terminal.incl.md}}
+
+### Terminal User Interfaces
+
+{{#include ../categories/command-line-interface/tui.incl.md}}
+
+### User Interaction
+
+{{#include ../categories/command-line-interface/user_interaction.incl.md}}
+
+## Command-line Utilities
+
+### Filesystem Utilities
+
+{{#include ../categories/command-line-utilities/filesystem_examples.incl.md}}
+
+### Networking Utilities
+
+{{#include ../categories/command-line-utilities/networking_examples.incl.md}}
+
+### Shells and Related Utilities
+
+{{#include ../categories/command-line-utilities/shells_examples.incl.md}}
 
 ## Compression
 
@@ -35,6 +105,62 @@
 ### `tar`
 
 {{#include ../categories/compression/tar.incl.md}}
+
+## Concurrency
+
+### Actors
+
+{{#include ../categories/concurrency/_actors.incl.md}}
+
+### Atomics
+
+{{#include ../categories/concurrency/atomics.incl.md}}
+
+### Concurrent Data Structures
+
+{{#include ../categories/concurrency/concurrent_data_structures.incl.md}}
+
+### Crossbeam
+
+{{#include ../categories/concurrency/crossbeam.incl.md}}
+
+### Data Parallelism
+
+{{#include ../categories/concurrency/data_parallelism.incl.md}}
+
+### Explicit Threads
+
+{{#include ../categories/concurrency/explicit_threads.incl.md}}
+
+### Message Passing
+
+{{#include ../categories/concurrency/message_passing.incl.md}}
+
+### Shared State
+
+{{#include ../categories/concurrency/shared_state.incl.md}}
+
+### Send and Sync
+
+{{#include ../categories/concurrency/send_sync.incl.md}}
+
+### Thread Pools
+
+{{#include ../categories/concurrency/threadpool.incl.md}}
+
+### Model-Checking with Loom
+
+{{#include ../categories/concurrency/loom.incl.md}}
+
+## Configuration
+
+### Configuration Management
+
+{{#include ../categories/config/configuration.incl.md}}
+
+### Environment Variables
+
+{{#include ../categories/config/environment_variables.incl.md}}
 
 ## Data Structures
 
@@ -114,6 +240,222 @@
 
 ## Development Tools
 
+### Cargo
+
+{{#include ../categories/development-tools/cargo/cargo.incl.md}}
+
+{{#include ../categories/development-tools/cargo/crate_registries.incl.md}}
+
+{{#include ../categories/development-tools/cargo/package_layout.incl.md}}
+
+### Compilation
+
+{{#include ../categories/development-tools/compilation/building.incl.md}}
+
+{{#include ../categories/development-tools/compilation/reduce_compilation_duration.incl.md}}
+
+{{#include ../categories/development-tools/compilation/faster_linking.incl.md}}
+
+### Installation
+
+{{#include ../categories/development-tools/installation/install.incl.md}}
+
+{{#include ../categories/development-tools/installation/rustup.incl.md}}
+
+### Formatting
+
+{{#include ../categories/development-tools/formatting/formatting.incl.md}}
+
+### Documentation
+
+{{#include ../categories/development-tools/documentation/documentation.incl.md}}
+
+{{#include ../categories/development-tools/documentation/mdbook.incl.md}}
+
+{{#include ../categories/development-tools/documentation/mdbook_utils.incl.md}}
+
+{{#include ../categories/development-tools/documentation/templ.incl.md}}
+
+{{#include ../categories/development-tools/documentation/badges.incl.md}}
+
+### Versioning
+
+{{#include ../categories/development-tools/versioning/versioning.incl.md}}
+
+### Repository Automation
+
+{{#include ../categories/development-tools/automation/xtask.incl.md}}
+
+{{#include ../categories/development-tools/automation/git.incl.md}}
+
+### Cross-compilation
+
+{{#include ../categories/development-tools/cross-compilation/cross_compilation.incl.md}}
+
+### Other
+
+{{#include ../categories/development-tools/other/code_verification.incl.md}}
+
+{{#include ../categories/development-tools/other/miri.incl.md}}
+
+{{#include ../categories/development-tools/other/other.incl.md}}
+
+{{#include ../categories/development-tools/other/rust_source.incl.md}}
+
+### Transpilation
+
+{{#include ../categories/development-tools/transcompilation/transpilers.incl.md}}
+
+### Build Utils
+
+#### Build-time Tools
+
+{{#include ../categories/development-tools_build-utils/build_time_tooling.incl.md}}
+
+#### Build Caches
+
+{{#include ../categories/development-tools_build-utils/build_cache.incl.md}}
+
+#### Compiler Feature Detection
+
+{{#include ../categories/development-tools_build-utils/autocfg.incl.md}}
+
+### Cargo Plugins
+
+#### Code Writing
+
+{{#include ../categories/development-tools_cargo-plugins/code_writing.incl.md}}
+
+#### Code Formatting and Linting
+
+{{#include ../categories/development-tools_cargo-plugins/code_formatting_linting.incl.md}}
+
+#### Dependency Management
+
+{{#include ../categories/development-tools_cargo-plugins/dependency_management.incl.md}}
+
+#### Building and Task Runners
+
+{{#include ../categories/development-tools_cargo-plugins/building.incl.md}}
+
+#### Watching for Changes
+
+{{#include ../categories/development-tools_cargo-plugins/watching_for_changes.incl.md}}
+
+#### Cross-compiling
+
+{{#include ../categories/development-tools_cargo-plugins/cross_compiling.incl.md}}
+
+#### Auditing
+
+{{#include ../categories/development-tools_cargo-plugins/auditing.incl.md}}
+
+#### Performance
+
+{{#include ../categories/development-tools_cargo-plugins/performance.incl.md}}
+
+#### Maintaining
+
+{{#include ../categories/development-tools_cargo-plugins/maintaining.incl.md}}
+
+#### Writing a Cargo Plugin
+
+{{#include ../categories/development-tools_cargo-plugins/write_cargo_plugin.incl.md}}
+
+### Debugging and Observability
+
+#### Debuggers
+
+{{#include ../categories/development-tools_debugging/debugger.incl.md}}
+
+#### Debugging
+
+{{#include ../categories/development-tools_debugging/debugging_examples.incl.md}}
+
+#### Tracing
+
+{{#include ../categories/development-tools_debugging/tracing.incl.md}}
+
+#### Logging Alternatives
+
+{{#include ../categories/development-tools_debugging/tracing_alternatives.incl.md}}
+
+#### Log Messages
+
+{{#include ../categories/development-tools_debugging/log.incl.md}}
+
+#### Logging Configuration
+
+{{#include ../categories/development-tools_debugging/config_log.incl.md}}
+
+#### Metrics
+
+{{#include ../categories/development-tools_debugging/metrics_examples.incl.md}}
+
+#### Distributed Telemetry
+
+{{#include ../categories/development-tools_debugging/distributed_telemetry_examples.incl.md}}
+
+#### Diagnostic Functions
+
+{{#include ../categories/development-tools_debugging/diagnostic_functions.incl.md}}
+
+### Profiling
+
+#### Benchmarking
+
+{{#include ../categories/development-tools_profiling/benchmarking.incl.md}}
+
+#### Instrumentation Profiling
+
+{{#include ../categories/development-tools_profiling/instrumentation_profiling.incl.md}}
+
+#### Low-level Profiling Tools
+
+{{#include ../categories/development-tools_profiling/assembly.incl.md}}
+
+#### Memory Usage Analysis
+
+{{#include ../categories/development-tools_profiling/memory_usage_analysis.incl.md}}
+
+### Testing
+
+#### Testing
+
+{{#include ../categories/development-tools_testing/testing.incl.md}}
+
+#### Assertions
+
+{{#include ../categories/development-tools_testing/assertions.incl.md}}
+
+#### Snapshot Testing
+
+{{#include ../categories/development-tools_testing/snapshot_testing.incl.md}}
+
+#### Test Runners
+
+{{#include ../categories/development-tools_testing/test_runners.incl.md}}
+
+#### Property-Based Testing
+
+{{#include ../categories/development-tools_testing/property_based_testing.incl.md}}
+
+#### Mocking
+
+{{#include ../categories/development-tools_testing/mocking.incl.md}}
+
+#### Code Coverage
+
+{{#include ../categories/development-tools_testing/code_coverage.incl.md}}
+
+#### Mutation Testing
+
+{{#include ../categories/development-tools_testing/mutation_testing.incl.md}}
+
+#### Fuzzing
+
+{{#include ../categories/development-tools_testing/fuzzing.incl.md}}
+
 ## Encoding
 
 ### CSV
@@ -127,6 +469,22 @@
 ### Serde
 
 {{#include ../categories/encoding/serde.incl.md}}
+
+### Structured Data
+
+{{#include ../categories/encoding/complex_encoding.incl.md}}
+
+### Typecasts and Byte Layout
+
+{{#include ../categories/encoding/typecasts.incl.md}}
+
+### Binary Encoders
+
+{{#include ../categories/encoding/_binary_encoders.incl.md}}
+
+### Binary Encoders Without External Schemas
+
+{{#include ../categories/encoding/no_external_schema.incl.md}}
 
 ### String Encoding
 
@@ -224,6 +582,24 @@
 
 {{#include ../categories/mathematics/units.incl.md}}
 
+## Memory Management
+
+### Lazy Initialization
+
+{{#include ../categories/memory-management/lazy_initialization.incl.md}}
+
+### Memory Allocation
+
+{{#include ../categories/memory-management/memory_allocation.incl.md}}
+
+### Arena Allocation
+
+{{#include ../categories/memory-management/arena_allocation.incl.md}}
+
+### String Interning
+
+{{#include ../categories/memory-management/string_interning.incl.md}}
+
 ## Parsing
 
 ### Expression Parser
@@ -234,13 +610,45 @@
 
 {{#include ../categories/parsing/parsing.incl.md}}
 
+## Parser Implementations
+
+{{#include ../categories/parser-implementations/html.incl.md}}
+
+{{#include ../categories/parser-implementations/ini.incl.md}}
+
+{{#include ../categories/parser-implementations/json.incl.md}}
+
+{{#include ../categories/parser-implementations/markdown.incl.md}}
+
+{{#include ../categories/parser-implementations/toml.incl.md}}
+
+{{#include ../categories/parser-implementations/xml.incl.md}}
+
+{{#include ../categories/parser-implementations/yaml.incl.md}}
+
+{{#include ../categories/parser-implementations/programming_languages.incl.md}}
+
 ## Text Processing
 
 {{#include ../categories/text-processing/regex.incl.md}}
 
 {{#include ../categories/text-processing/string_parsing.incl.md}}
 
-- [Collect Unicode Graphemes](../categories/text-processing/unicode.md#collect-unicode-graphemes).
+{{#include ../categories/text-processing/unicode.incl.md}}
+
+{{#include ../categories/text-processing/string_concat.incl.md}}
+
+{{#include ../categories/text-processing/string_manipulation.incl.md}}
+
+{{#include ../categories/text-processing/string_search.incl.md}}
+
+{{#include ../categories/text-processing/text_analysis.incl.md}}
+
+{{#include ../categories/text-processing/syntax_highlighting.incl.md}}
+
+{{#include ../categories/text-processing/diffing.incl.md}}
+
+{{#include ../categories/text-processing/other_strings.incl.md}}
 
 ## Template Engine
 
@@ -511,16 +919,6 @@
 ## OpenAPI and JSON Schema
 
 {{#include ../categories/web-programming_http-server/openapi.incl.md}}
-
-## Cancellation and Structured Concurrency
-
-{{#include ../categories/asynchronous/structured_concurrency.incl.md}}
-
-## Atomics and Loom
-
-{{#include ../categories/concurrency/atomics.incl.md}}
-
-{{#include ../categories/concurrency/loom.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

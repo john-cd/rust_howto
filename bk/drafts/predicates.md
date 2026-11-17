@@ -32,7 +32,7 @@ The `predicates` crate provides a wide range of built-in predicates:
 
 ## Related Topics {#related-topics .skip}
 
-- [[development-tools_testing | Testing]].
+- [Testing](../src/categories/development-tools_testing/testing.md).
 
 {{#include refs.incl.md}}
 {{#include refs/link-refs.md}}

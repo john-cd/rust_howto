@@ -138,7 +138,7 @@ Describe how the system is built, configured, released, deployed, observed, and
 recovered. Identify runtime dependencies, configuration and secret sources, data
 migrations, health signals, backup and restore expectations, and ownership for
 operational response. Decide how version compatibility, rollbacks, and partial outages
-will be handled. Use the project's build<!-- Cross-book topic: bk/drafts/categories/development-tools/compilation/building.md; not included in this preview. --> and deployment guidance and the
+will be handled. Use the project's build<!-- Cross-book topic: bk/src/categories/development-tools/compilation/building.md; not included in this preview. --> and deployment guidance and the
 [CI/CD chapter][p~github-actions].
 
 For Rust applications, document target platforms and required system libraries, the

@@ -11,11 +11,11 @@
 [ex~hardware-support~check-number-of-logical-cpu-cores]: processor.md#check-number-of-logical-cpu-cores
 [ex~hardware-support~simd]: processor.md#simd
 [ex~hardware-support~simd-dot-product]: processor.md#simd-dot-product
-[p~assembly]: ../development-tools_profiling/assembly.md
-[p~asynchronous]: ../asynchronous/index.md
+[p~assembly]: ../../../src/categories/development-tools_profiling/assembly.md
+[p~asynchronous]: ../../../src/categories/asynchronous/index.md
 [p~data-parallelism]: ../concurrency/data_parallelism.md
 [p~embedded]: https://docs.rust-embedded.org/book/
 [p~functions]: ../../language/functions.md
 [p~linux]: https://docs.kernel.org/driver-api/
 [p~os]: ../os/index.md
-[p~performance]: ../development-tools_cargo-plugins/performance.md
+[p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md

@@ -50,7 +50,7 @@
 [sophus-rs~repo]: https://github.com/sophus-vision/sophus-rs
 [p~classical-machine-learning]: ../science/classical_machine_learning.md
 [p~computer-vision]: ../computer-vision/index.md
-[p~concurrency]: ../../../src/categories/concurrency/index.md
+[p~concurrency]: https://john-cd.com/rust_howto/categories/concurrency/index.html
 [p~deep-learning]: ../science/deep_learning.md
 [p~embedded]: ../embedded/index.md
 [p~graphics]: ../graphics/index.md
@@ -63,7 +63,7 @@
 [p~network-programming]: ../network-programming/index.md
 [p~node]: ../development-tools_ffi/node.md
 [p~opencv]: ../computer-vision/opencv.md
-[p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
+[p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~python]: ../development-tools_ffi/python.md
 [p~robotics-ai]: artificial_intelligence.md

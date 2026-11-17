@@ -18,10 +18,10 @@
 [ex~web-programming_http-client~retry]: rate_limiting_and_retries.md#retry
 [ex~web-programming_http-client~retry-after]: rate_limiting_and_retries.md#retry-after
 [ex~web-programming_http-client~ureq]: http_clients.md#ureq
-[p~asynchronous]: ../asynchronous/index.md
-[p~building]: ../development-tools_cargo-plugins/building.md
+[p~asynchronous]: ../../../src/categories/asynchronous/index.md
+[p~building]: ../../../src/categories/development-tools_cargo-plugins/building.md
 [p~hyper]: # "../web-programming_http-server/_hyper.md#hyper"
-[p~json]: ../parser-implementations/json.md
+[p~json]: ../../../src/categories/parser-implementations/json.md
 [p~main]: ../../language/entrypoint.md
 [p~http-clients]: http_clients.md
 [p~requests]: requests.md

@@ -159,7 +159,7 @@ From `bk/crates`, run `cargo test --locked -p mathematics --example linear_algeb
 
 {{#badges nalgebra data-structures="Data structures" science=}}
 
-You can serialize and deserialize a matrix to and from [JSON](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/parser-implementations/json.md) using [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} and `serde_json::from_str`{{hi:serde_json::from_str}}.
+You can serialize and deserialize a matrix to and from [JSON](../parser-implementations/json.md) using [`serde_json::to_string`][c~serde_json::to_string~docs]↗{{hi:serde_json::to_string}} and `serde_json::from_str`{{hi:serde_json::from_str}}.
 
 Note that serialization followed by deserialization gives back the original matrix.
 

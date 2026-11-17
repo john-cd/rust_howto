@@ -1708,3 +1708,13 @@
 [smithy~website]: https://smithy.io/
 [dioxus-blitz~docs]: https://docs.rs/blitz/latest/blitz/
 [tauri~verso~experiment]: https://v2.tauri.app/blog/tauri-verso-integration/
+[cargo-llvm-cov~repo]: https://github.com/taiki-e/cargo-llvm-cov
+[atuin~repo]: https://github.com/atuinsh/atuin
+[bandwhich~repo]: https://github.com/imsnif/bandwhich
+[doggo~repo]: https://github.com/mr-karan/doggo
+[dua~repo]: https://github.com/Byron/dua-cli
+[fish~repo]: https://github.com/fish-shell/fish-shell
+[oha~repo]: https://github.com/hatoo/oha
+[trippy~repo]: https://github.com/fujiapple852/trippy
+[xh~repo]: https://github.com/ducaale/xh
+[book~rust-reference~type-coercions]: https://doc.rust-lang.org/reference/type-coercions.html

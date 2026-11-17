@@ -89,7 +89,7 @@ Profiling tools help identify CPU-related performance issues.
 
 `cargo flamegraph`, [`perf`][c~perf~docs]↗{{hi:perf}} (Linux) help identify performance bottlenecks in your code, which can be related to CPU usage.
 
-See [[development-tools_profiling | Development Tools Profiling]] and [[memory_usage_analysis | Memory Usage Analysis]].
+See [Development Tools - Profiling](../../../src/categories/development-tools_profiling/index.md) and [Memory Usage Analysis](../../../src/categories/development-tools_profiling/memory_usage_analysis.md).
 
 ### Concurrency and Multithreading (Related to CPU Utilization) {#concurrency-and-multithreading .skip}
 

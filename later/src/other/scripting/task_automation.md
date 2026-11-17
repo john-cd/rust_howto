@@ -42,10 +42,10 @@ For jobs that run on a schedule, see [Scheduling](../scheduling/scheduling.md) f
 
 ## Related Topics {#related-topics .skip}
 
-- [[command-line-interface | Command Line Interface]].
-  - [[argument_parsing | Argument Parsing]].
-  - [[tui | TUI]].
-  - [[user_interaction | User Interaction]].
+- Command Line Interface<!-- Cross-book topic: bk/src/categories/command-line-interface/index.md; not included in this preview. -->.
+  - Argument Parsing<!-- Cross-book topic: bk/src/categories/command-line-interface/argument_parsing.md; not included in this preview. -->.
+  - Terminal User Interfaces<!-- Cross-book topic: bk/src/categories/command-line-interface/tui.md; not included in this preview. -->.
+  - User Interaction<!-- Cross-book topic: bk/src/categories/command-line-interface/user_interaction.md; not included in this preview. -->.
 - [[filesystem | Filesystem]].
 
 {{#include refs.incl.md}}

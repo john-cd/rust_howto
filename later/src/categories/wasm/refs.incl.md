@@ -18,7 +18,7 @@
 [ex~wasm~yew]: yew.md#yew
 [p~apis]: ../../../src/categories/web-programming_http-client/apis.md
 [p~audio]: ../../../drafts/categories/multimedia_audio/audio.md
-[p~building]: ../../../drafts/categories/development-tools_cargo-plugins/building.md
+[p~building]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/building.md
 [p~caching]: ../../../src/categories/caching/index.md
 [p~cross-platform]: ../../../drafts/other/cross-platform/index.md
 [p~embedded]: ../../../drafts/categories/embedded/index.md
@@ -28,11 +28,11 @@
 [p~html]: ../../../src/categories/parser-implementations/html.md
 [p~modules]: ../../../src/code_organization/modules_and_paths.md
 [p~node]: ../../../drafts/categories/development-tools_ffi/node.md
-[p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
+[p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~rendering]: ../../../drafts/categories/rendering/rendering.md
 [p~serverless]: ../../../drafts/other/cloud/_fragment.md
-[p~testing]: ../../../src/categories/development-tools_testing/testing.md
+[p~testing]: ../../../../bk/src/categories/development-tools_testing/testing.md
 [p~visualization]: ../../../drafts/categories/visualization/visualization.md
 [mozilla~webassembly-concepts~website]: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
 [rustc~wasm32-unknown-unknown~website]: https://doc.rust-lang.org/rustc/platform-support/wasm32-unknown-unknown.html

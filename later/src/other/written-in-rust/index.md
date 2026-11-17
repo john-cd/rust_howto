@@ -10,7 +10,7 @@ This overview highlights a small set of software projects that demonstrate where
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Operating systems and isolation | [Redox OS][redox~repo]↗, [Stratis][stratis~repo]↗, [youki][youki~repo]↗, [Kata Containers][kata-containers~repo]↗, [Firecracker][firecracker~repo]↗, [Bottlerocket][c~bottlerocket~repo]↗, [Hyperlight][hyperlight~repo]↗, and [Rust for Linux][rust-for-linux~repo]↗; see [Virtualization](../../categories/virtualization/index.md). |
 | Embedded systems | [Tock OS][tock~repo]↗, [`esp-rs`][espressif~repo]↗, and [OxidOS Automotive][oxidos~website]↗; see [Embedded Systems](../../categories/embedded/index.md). |
-| Command-line utilities | See the [[command-line-utilities | Command-line Utilities Written in Rust]] index for command-line tools; see the [additional command-line examples](development_tools.md#utilities) and Filesystem CLI chapter. |
+| Command-line utilities | See Command-line Utilities<!-- Cross-book topic: bk/src/categories/command-line-utilities/index.md; not included in this preview. --> for command-line tools; see the [additional command-line examples](development_tools.md#utilities) and File Listing and Display<!-- Cross-book topic: bk/src/categories/command-line-utilities/filesystem_cli.md; not included in this preview. -->. |
 
 ## Web Development and Networking
 

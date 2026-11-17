@@ -101,7 +101,7 @@ These command-line tools cover shells, file navigation, search, monitoring, prom
 ## Related Topics {#related-topics .skip}
 
 - [[programming_languages | Programming Languages]].
-- [[command-line-interface | Command Line Interface]].
+- Command Line Interface<!-- Cross-book topic: bk/src/categories/command-line-interface/index.md; not included in this preview. -->.
 - [[version_control | Version Control]].
 - [[cross-platform | Cross-platform Development]].
 - [[gui | GUI]].

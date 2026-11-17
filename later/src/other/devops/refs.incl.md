@@ -65,11 +65,11 @@
 [p~github-actions]: github_actions.md
 [p~images]: ../../categories/multimedia_images/images.md
 [p~language]: ../../language/index.md
-[p~maintaining]: ../../categories/development-tools_cargo-plugins/maintaining.md
+[p~maintaining]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/maintaining.md
 [p~mdbook]: ../../categories/development-tools/documentation/mdbook.md
 [p~python]: ../../categories/development-tools_ffi/python.md
 [p~rustup]: ../../../src/categories/development-tools/installation/rustup.md
-[p~testing]: ../../../src/categories/development-tools_testing/testing.md
+[p~testing]: ../../../../bk/src/categories/development-tools_testing/testing.md
 [p~toml]: ../../categories/parser-implementations/toml.md
 [p~using-containers]: ../../categories/virtualization/using_containers.md
 [p~versioning]: ../../categories/development-tools/versioning/versioning.md

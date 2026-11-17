@@ -10,7 +10,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
 - Rust [[macros | Macros]].
 - [[data-structures | Data Structures]].
-- [Testing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_testing/testing.md).
+- [Testing](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_testing/testing.md).
 - [GPU](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/gpu/index.md) processing, CUDA.
 - [Machine Learning](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/machine-learning/index.md), for example [Burn][c~burn~docs]↗, [Candle][candle~repo]↗, and [tch][c~tch~docs]↗.
 - [Email](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/email/index.md).
@@ -48,7 +48,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [API bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md).
 - FFI ([Development tools - FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md)).
 - [Hardware support](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/hardware-support/index.md).
-- Build Utils ([Development tools - build utils](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_build-utils/index.md)).
+- [Development Tools - Build Utils](../../categories/development-tools_build-utils/index.md).
 - [Rendering](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/index.md).
 - High-performance computing: OpenMP, etc.
 - Social media APIs.

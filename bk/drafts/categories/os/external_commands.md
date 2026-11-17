@@ -124,9 +124,9 @@ Quoting for display is not a reason to run a command through a shell: pass each 
 ## Related Topics {#related-topics .skip}
 
 - [[process_management | Process Management]].
-- [[command_line_interface | Command Line Interface]].
-- [[command_line_utilities | Command-line Utilities Written in Rust]].
-- [[shells | Shells]].
+- [Command-line Interface](../../../src/categories/command-line-interface/index.md).
+- [Command-line Utilities Written in Rust](../../../src/categories/command-line-utilities/index.md).
+- [Shells and Related Utilities](../../../src/categories/command-line-utilities/shells.md).
 - [[os | Operating Systems]].
 
 {{#include refs.incl.md}}

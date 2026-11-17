@@ -128,5 +128,5 @@ The [`phf`][c~phf~docs]↗{{hi:phf}} crate generates maps and sets for keys know
 - [`equivalent`][c~equivalent~lib.rs]↗.
 - [Converting between different collection types][blog~converting-between-different-collection-types]↗: from `Vec` to `HashSet` or `HashMap`.
 - [[dataframes | Dataframes]].
-- [Concurrent Data Structures](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/concurrent_data_structures.md).
+- [Concurrent Data Structures](../concurrency/concurrent_data_structures.md).
 - [`scroll`][c~scroll~docs]↗: easily and efficiently read/write types from data containers like byte arrays.

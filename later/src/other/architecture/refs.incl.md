@@ -24,10 +24,10 @@
 [p~actors]: ../../../src/categories/concurrency/_actors.md
 [p~apis]: ../../../src/categories/web-programming_http-client/apis.md
 [p~architecture]: index.md
-[p~asynchronous]: ../../../src/categories/asynchronous/index.md
+[p~asynchronous]: https://john-cd.com/rust_howto/categories/asynchronous/index.html
 [p~authentication]: ../../../src/categories/authentication/index.md
 [p~aws]: ../cloud/aws.md
-[p~concurrency]: ../../../src/categories/concurrency/index.md
+[p~concurrency]: https://john-cd.com/rust_howto/categories/concurrency/index.html
 [p~containerization]: ../../categories/virtualization/containerization.md
 [p~database]: ../../../src/categories/database/index.md
 [p~databases]: ../../../src/categories/database-implementations/databases.md
@@ -35,11 +35,11 @@
 [p~error-handling]: ../../../src/categories/rust-patterns/error_handling/error_handling.md
 [p~github-actions]: ../devops/github_actions.md
 [p~json]: ../../../src/categories/parser-implementations/json.md
-[p~memory-allocation]: ../../../src/categories/memory-management/memory_allocation.md
-[p~mocking]: ../../../src/categories/development-tools_testing/mocking.md
+[p~memory-allocation]: ../../../../bk/src/categories/memory-management/memory_allocation.md
+[p~mocking]: ../../../../bk/src/categories/development-tools_testing/mocking.md
 [p~modules]: ../../../src/code_organization/modules_and_paths.md
 [p~parsing]: ../../categories/parsing/parsing.md
-[p~performance]: ../../../src/categories/development-tools_cargo-plugins/performance.md
+[p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~requests]: ../../../src/categories/web-programming_http-client/requests.md
 [p~tracing]: ../../../src/categories/development-tools_debugging/tracing.md

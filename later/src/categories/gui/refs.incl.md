@@ -61,12 +61,12 @@
 [dioxus~mobile~website]: https://dioxuslabs.com/learn/0.7/guides/platforms/mobile/
 [tauri~windows-prerequisites~website]: https://v2.tauri.app/start/prerequisites/
 [p~apis]: ../../../../bk/drafts/categories/web-programming_http-client/apis.md
-[p~asynchronous]: ../../../../bk/drafts/categories/asynchronous/index.md
+[p~asynchronous]: https://john-cd.com/rust_howto/categories/asynchronous/index.html
 [p~audio]: ../multimedia_audio/audio.md
 [p~containers]: ../virtualization/containers.md
 [p~cross-platform]: ../../other/cross-platform/index.md
 [p~data-formats]: ../rendering_data-formats/index.md
-[p~documentation]: ../../../../bk/drafts/categories/development-tools/documentation/documentation.md
+[p~documentation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools/documentation/documentation.md
 [p~embedded]: # "../embedded/index.md"
 [p~game-development]: ../game-development/game_development.md
 [p~games]: ../games/index.md
@@ -78,7 +78,7 @@
 [p~immediate-mode-gui]: immediate_mode_gui.md
 [p~main]: ../../../../bk/src/language/entry_points.md
 [p~option]: ../../../../bk/src/standard-library/optional_values.md
-[p~performance]: # "../../categories/development-tools_cargo-plugins/performance.md"
+[p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~rendering]: ../rendering/index.md
 [p~ui-layout]: ui_layout.md
 [p~wasm]: ../wasm/index.md
