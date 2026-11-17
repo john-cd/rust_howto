@@ -25,10 +25,10 @@ use tokio_native_tls::TlsConnector;
 /// A message reduced to the fields we care about.
 #[derive(Debug, PartialEq, Eq)]
 pub struct Summary {
-    /// Subject name from the certificate.
+    /// Subject line from the message.
     pub subject: String,
 
-    /// Start value of the requested interval.
+    /// Sender's email address from the `From` header.
     pub from: String,
 }
 
@@ -155,7 +155,7 @@ mod tests {
         Ok(())
     }
 
-    /// Verifies that the summarizes a sample message.
+    /// Verifies that `summarize` extracts the subject and sender from a sample.
     #[test]
     fn summarizes_a_sample_message() {
         let eml = b"From: Alice <alice@example.com>\r\n\

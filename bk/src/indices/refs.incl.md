@@ -328,6 +328,12 @@
 [ex~date-and-time~perform-checked-date-time-calc]: ../categories/date-and-time/duration.md#perform-checked-date-time-calc
 [ex~date-and-time~time-crate]: ../categories/date-and-time/time_crate.md#time-crate
 [ex~date-and-time~unix-timestamp]: ../categories/date-and-time/parse.md#unix-timestamp
+[ex~email~build_email_messages]: ../categories/email/send_emails.md#build_email_messages
+[ex~email~html2text]: ../categories/email/send_emails.md#html2text
+[ex~email~imap]: ../categories/email/read_emails.md#imap
+[ex~email~lettre]: ../categories/email/send_emails.md#lettre
+[ex~email~mailchecker]: ../categories/email/send_emails.md#mailchecker
+[ex~email~mailparse]: ../categories/email/email_parsing.md#mailparse
 [ex~development-tools_build-utils~autocfg]: ../categories/development-tools_build-utils/autocfg.md#autocfg
 [ex~development-tools_build-utils~build-info]: ../categories/development-tools_build-utils/build_time_tooling.md#build-info
 [ex~development-tools_build-utils~cache-in-ci]: ../categories/development-tools_build-utils/build_cache.md#cache-in-ci

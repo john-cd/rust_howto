@@ -171,6 +171,11 @@
   - [Parsing and Displaying](categories/date-and-time/parse.md)
   - [`time` Crate](categories/date-and-time/time_crate.md)
 
+- [Email](categories/email/index.md)
+  - [Send Emails](categories/email/send_emails.md)
+  - [Email Parsing](categories/email/email_parsing.md)
+  - [Read Emails](categories/email/read_emails.md)
+
 - [Development Tools](categories/development-tools/index.md)
   - [Cargo](categories/development-tools/cargo/cargo.md)
     - [Package Layout](categories/development-tools/cargo/package_layout.md)

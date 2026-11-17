@@ -8,9 +8,9 @@ Read a mailbox over IMAP, then parse the messages. IMAP is stateful: connect, lo
 
 ## Fetch Unread Messages over IMAP {#imap}
 
-[![imap][c~imap~docs~badge]][c~imap~docs]{{hi:imap}} [![mail-parser][c~mail-parser~docs~badge]][c~mail-parser~docs]{{hi:mail-parser}} [![cat~email][cat~email~badge]][cat~email]{{hi:email}}
+[![async-imap][c~async-imap~docs~badge]][c~async-imap~docs]{{hi:async-imap}} [![mail-parser][c~mail-parser~docs~badge]][c~mail-parser~docs]{{hi:mail-parser}} [![cat~email][cat~email~badge]][cat~email]{{hi:email}}
 
-[`imap`][c~imap~docs]↗{{hi:imap}} is a synchronous IMAP client. The example connects over TLS (port 993) with [`native-tls`][c~native-tls~docs]↗{{hi:native-tls}}, logs in, selects `INBOX`, searches for `UNSEEN` messages, fetches each as `RFC822`, and parses it with [`mail-parser`][c~mail-parser~docs]↗{{hi:mail-parser}}. For asynchronous code, use [`async-imap`][c~async-imap~docs]↗{{hi:async-imap}}.
+[`async-imap`][c~async-imap~docs]↗{{hi:async-imap}} is an asynchronous IMAP client. The example uses Tokio and connects over TLS (port 993) with [`native-tls`][c~native-tls~docs]↗{{hi:native-tls}}, logs in, selects `INBOX`, searches for `UNSEEN` messages, fetches each as `RFC822`, and parses it with [`mail-parser`][c~mail-parser~docs]↗{{hi:mail-parser}}. The [`imap`][c~imap~docs]↗{{hi:imap}} crate provides a synchronous alternative.
 
 The example needs a server, so the book does not run it; it reads `IMAP_HOST`, `IMAP_USER`, and `IMAP_PASSWORD` from the environment and reports a clear error when one is missing. `IMAP_PORT` is optional and defaults to 993. To trust an additional local test root certificate, set `MAIL_TLS_ROOT_CERT` to its PEM file path; certificate and hostname validation remain enabled. The ignored service test also requires an unseen message whose subject matches `IMAP_EXPECTED_SUBJECT`. The message-processing step, `summarize`, is a pure function with unit tests over a sample message.
 
@@ -19,13 +19,13 @@ The example needs a server, so the book does not run it; it reads `IMAP_HOST`, `
 ```
 
 - **Credentials.** Gmail and Outlook require an app password or OAuth 2.0 rather than your account password. Read credentials from the environment or a secret store, and never log them or the message bodies.
-- **Parsing.** See [[email_parsing | Email Parsing]] for [`mailparse`][c~mailparse~docs]↗{{hi:mailparse}}, an alternative parser.
+- **Parsing.** See [Email Parsing](email_parsing.md) for [`mailparse`][c~mailparse~docs]↗{{hi:mailparse}}, an alternative parser.
 - **Side effects.** Fetching a message with `RFC822` marks it as seen on most servers; use `BODY.PEEK[]` to read without changing flags.
 
 ## Related Topics {#related-topics .skip}
 
-- [[send_emails | Sending Emails]].
-- [[email_parsing | Email Parsing]].
+- [Send Emails](send_emails.md).
+- [Email Parsing](email_parsing.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -12,10 +12,10 @@
 [![lettre~crates.io][c~lettre~crates.io~badge]][c~lettre~crates.io]
 [![lettre~repo][c~lettre~repo~badge]][c~lettre~repo]
 [![lettre~lib.rs][c~lettre~lib.rs~badge]][c~lettre~lib.rs]
-[![cat~email][cat~email~badge]][cat~email]{{hi:Email}}
-[![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
 [`lettre`][c~lettre~docs]↗{{hi:lettre}} provides a typed message builder for headers, addresses, and body content. The complete example below uses a helper to build a message before choosing an SMTP transport.
+
+The `build_message` helper validates the sender and recipient and constructs the message without contacting SMTP. The [Send Emails](#lettre) example below uses it to deliver through a configured relay; unit tests cover the builder offline.
 
 ## Send Emails {#lettre}
 
@@ -23,8 +23,6 @@
 [![lettre~crates.io][c~lettre~crates.io~badge]][c~lettre~crates.io]
 [![lettre~repo][c~lettre~repo~badge]][c~lettre~repo]
 [![lettre~lib.rs][c~lettre~lib.rs~badge]][c~lettre~lib.rs]
-[![cat~email][cat~email~badge]][cat~email]{{hi:Email}}
-[![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/email/examples/lettre.rs:example}}
@@ -58,7 +56,7 @@ A syntax-and-domain-list check cannot tell whether a mailbox exists. For syntax 
 
 [![html2text][c~html2text~docs~badge]][c~html2text~docs] [![html2text~crates.io][c~html2text~crates.io~badge]][c~html2text~crates.io]{{hi:html2text}} [![cat~email][cat~email~badge]][cat~email]{{hi:Email}}
 
-A multipart email should carry a `text/plain` part next to the HTML one, for clients that cannot show HTML and for spam filters. Instead of writing the text version by hand, generate it from the HTML body with [`html2text`][c~html2text~docs]↗{{hi:html2text}}, then pass both strings to the `lettre` message builder (`MultiPart::alternative_plain_html`). See also [[html_sanitization | Sanitize HTML]].
+A multipart email should carry a `text/plain` part next to the HTML one, for clients that cannot show HTML and for spam filters. Instead of writing the text version by hand, generate it from the HTML body with [`html2text`][c~html2text~docs]↗{{hi:html2text}}, then pass both strings to the `lettre` message builder (`MultiPart::alternative_plain_html`). See also [Sanitize HTML](../web-programming/html_sanitization.md).
 
 ```rust,editable
 {{#include ../../../crates/cats/email/examples/html2text.rs:example}}
@@ -66,10 +64,10 @@ A multipart email should carry a `text/plain` part next to the HTML one, for cli
 
 ## Related Topics {#related-topics .skip}
 
-- [[read_emails | Read Emails]] for retrieving messages from a mailbox.
-- [[email_parsing | Email Parsing]] for parsing raw message bytes and MIME parts.
-- [Network Programming][p~network-programming] for protocol clients and transports.
-- [Transport Layer Security][p~tls] for protecting network connections.
+- [Read Emails](read_emails.md) for retrieving messages from a mailbox.
+- [Email Parsing](email_parsing.md) for parsing raw message bytes and MIME parts.
+- [Asynchronous Programming](../asynchronous/index.md) for async protocol clients.
+- [Transport Layer Security](../cryptography/tls.md) for protecting network connections.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
