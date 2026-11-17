@@ -31,7 +31,9 @@ impl BytesSql for &[u8] {}
 
 /// Specifies the operations implementations provide to cornucopia queries callers.
 pub trait ArraySql: std::fmt::Debug + ToSql + Send + Sync {
+    /// Type of the item values produced or consumed by this trait.
     type Item;
+    /// Escapes domain to sql characters so the value is safe in its output context.
     fn escape_domain_to_sql(
         &self,
         ty: &Type,
@@ -39,8 +41,10 @@ pub trait ArraySql: std::fmt::Debug + ToSql + Send + Sync {
     ) -> Result<IsNull, Box<dyn std::error::Error + Sync + Send>>;
 }
 impl<T: std::fmt::Debug + ToSql + Sync, A: ArraySql<Item = T>> ArraySql for &A {
+    /// Alias for `T` used to represent item.
     type Item = T;
 
+    /// Escapes domain to sql characters so the value is safe in its output context.
     fn escape_domain_to_sql(
         &self,
         ty: &Type,
@@ -50,8 +54,10 @@ impl<T: std::fmt::Debug + ToSql + Sync, A: ArraySql<Item = T>> ArraySql for &A {
     }
 }
 impl<T: std::fmt::Debug + ToSql + Send + Sync> ArraySql for Vec<T> {
+    /// Alias for `T` used to represent item.
     type Item = T;
 
+    /// Escapes domain to sql characters so the value is safe in its output context.
     fn escape_domain_to_sql(
         &self,
         ty: &Type,
@@ -61,8 +67,10 @@ impl<T: std::fmt::Debug + ToSql + Send + Sync> ArraySql for Vec<T> {
     }
 }
 impl<T: std::fmt::Debug + ToSql + Sync> ArraySql for &[T] {
+    /// Alias for `T` used to represent item.
     type Item = T;
 
+    /// Escapes domain to sql characters so the value is safe in its output context.
     fn escape_domain_to_sql(
         &self,
         ty: &Type,
@@ -77,8 +85,10 @@ impl<
     F: Fn() -> I + Send + Sync,
 > ArraySql for IterSql<T, I, F>
 {
+    /// Alias for `T` used to represent item.
     type Item = T;
 
+    /// Escapes domain to sql characters so the value is safe in its output context.
     fn escape_domain_to_sql(
         &self,
         ty: &Type,
@@ -141,6 +151,7 @@ impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> T
         Ok(IsNull::No)
     }
 
+    /// Reports whether the peer accepted this extension or message.
     fn accepts(ty: &Type) -> bool {
         match *ty.kind() {
             Kind::Array(ref member) => T::accepts(member),
@@ -148,6 +159,7 @@ impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> T
         }
     }
 }
+/// Handles the downcast behavior for this component.
 fn downcast(len: usize) -> Result<i32, Box<dyn std::error::Error + Sync + Send>> {
     if len > i32::MAX as usize {
         Err("value too large to transmit".into())

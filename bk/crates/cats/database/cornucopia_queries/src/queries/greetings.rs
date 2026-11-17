@@ -12,6 +12,7 @@ use crate::client::async_::GenericClient;
 pub struct StringQuery<'c, 'a, 's, C: GenericClient, T, const N: usize> {
     /// Database client used to execute the query.
     client: &'c C,
+    /// Query parameters bound to the prepared database statement.
     params: [&'a (dyn postgres_types::ToSql + Sync); N],
 
     /// Query text sent to the database.
@@ -20,6 +21,7 @@ pub struct StringQuery<'c, 'a, 's, C: GenericClient, T, const N: usize> {
     /// Optional cached used by string query; `None` means the value is not configured or
     /// unavailable.
     cached: Option<&'s tokio_postgres::Statement>,
+    /// Row extractor that converts database results into typed values.
     extractor: fn(&tokio_postgres::Row) -> Result<&str, tokio_postgres::Error>,
 
     /// Function that converts a database row to the result type.
@@ -118,6 +120,7 @@ where
 
 /// Prepared statement that inserts a greeting into the database.
 pub struct AddGreetingStmt(&'static str, Option<tokio_postgres::Statement>);
+/// Adds the supplied greeting to the current collection or state.
 pub fn add_greeting() -> AddGreetingStmt {
     AddGreetingStmt(
         "INSERT INTO cornucopia_greetings (message) VALUES ($1) ON CONFLICT (message) DO NOTHING",
@@ -125,6 +128,7 @@ pub fn add_greeting() -> AddGreetingStmt {
     )
 }
 impl AddGreetingStmt {
+    /// Prepares the request or statement so it can be executed safely.
     pub async fn prepare<'a, C: GenericClient>(
         mut self,
         client: &'a C,
@@ -133,6 +137,7 @@ impl AddGreetingStmt {
         Ok(self)
     }
 
+    /// Handles the bind behavior for this component.
     pub async fn bind<'c, 'a, 's, C: GenericClient, T1: crate::StringSql>(
         &'s self,
         client: &'c C,
@@ -144,6 +149,7 @@ impl AddGreetingStmt {
 
 /// Groups the data required by queries operations.
 pub struct ListGreetingsStmt(&'static str, Option<tokio_postgres::Statement>);
+/// Handles the list greetings behavior for this component.
 pub fn list_greetings() -> ListGreetingsStmt {
     ListGreetingsStmt(
         "SELECT message FROM cornucopia_greetings ORDER BY message",
@@ -151,6 +157,7 @@ pub fn list_greetings() -> ListGreetingsStmt {
     )
 }
 impl ListGreetingsStmt {
+    /// Prepares the request or statement so it can be executed safely.
     pub async fn prepare<'a, C: GenericClient>(
         mut self,
         client: &'a C,
@@ -159,6 +166,7 @@ impl ListGreetingsStmt {
         Ok(self)
     }
 
+    /// Handles the bind behavior for this component.
     pub fn bind<'c, 'a, 's, C: GenericClient>(
         &'s self,
         client: &'c C,

@@ -38,6 +38,7 @@ impl<'a, T: FromSql<'a>> Debug for ArrayIterator<'a, T> {
     }
 }
 impl<'a, T: FromSql<'a>> Iterator for ArrayIterator<'a, T> {
+    /// Alias for `T` used to represent item.
     type Item = T;
 
     /// Returns the next value from the array iterator, if one remains.
@@ -74,6 +75,7 @@ impl<'a, T: FromSql<'a>> FromSql<'a> for ArrayIterator<'a, T> {
         })
     }
 
+    /// Reports whether the peer accepted this extension or message.
     fn accepts(ty: &Type) -> bool {
         match *ty.kind() {
             Kind::Array(ref inner) => T::accepts(escape_domain(inner)),

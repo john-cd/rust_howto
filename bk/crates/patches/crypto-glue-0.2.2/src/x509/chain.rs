@@ -34,36 +34,61 @@ use crate::x509::Certificate;
 use crate::x509::KeyUsage;
 use crate::x509::oiddb::rfc5912;
 
+/// Defines the possible x509 verification error cases handled by this code.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum X509VerificationError {
+    /// Represents the invalid system time case of x509 verification error.
     InvalidSystemTime,
+    /// Represents the basic constraints not present case of x509 verification error.
     BasicConstraintsNotPresent,
+    /// Represents the leaf must not be ca case of x509 verification error.
     LeafMustNotBeCA,
+    /// Represents the key usage not valid case of x509 verification error.
     KeyUsageNotValid,
+    /// Represents the extension failure case of x509 verification error.
     ExtensionFailure,
+    /// Represents the not before case of x509 verification error.
     NotBefore,
+    /// Represents the not after case of x509 verification error.
     NotAfter,
+    /// Represents the no matching issuer case of x509 verification error.
     NoMatchingIssuer,
+    /// Represents the invalid issuer case of x509 verification error.
     InvalidIssuer,
+    /// Represents the excessive path length case of x509 verification error.
     ExcessivePathLength,
+    /// Represents the ca not marked as such case of x509 verification error.
     CaNotMarkedAsSuch,
+    /// Represents the path length exceeded case of x509 verification error.
     PathLengthExceeded,
+    /// Represents the signature algorithm mismatch case of x509 verification error.
     SignatureAlgorithmMismatch,
+    /// Represents the signature algorithm not implemented case of x509 verification error.
     SignatureAlgorithmNotImplemented,
+    /// Represents the der signature invalid case of x509 verification error.
     DerSignatureInvalid,
+    /// Represents the verifying key from spki case of x509 verification error.
     VerifyingKeyFromSpki,
+    /// Represents the signature verification failed case of x509 verification error.
     SignatureVerificationFailed,
+    /// Represents the certificate serialisation case of x509 verification error.
     CertificateSerialisation,
+    /// Represents the key usage not present case of x509 verification error.
     KeyUsageNotPresent,
+    /// Represents the subject public key information invalid case of x509 verification error.
     SubjectPublicKeyInformationInvalid,
 }
 
+/// Data for x509 store operations, including store and leaf basic constraints required.
 pub struct X509Store {
+    /// Backing store used to look up trusted certificate data.
     store: Vec<Certificate>,
+    /// Whether the leaf certificate must contain basic constraints.
     leaf_basic_constraints_required: bool,
 }
 
 impl X509Store {
+    /// Creates a new x509 store with the supplied configuration.
     pub fn new(ca_roots: &[Certificate]) -> Self {
         Self {
             store: ca_roots.iter().map(|c| (*c).clone()).collect(),
@@ -71,10 +96,12 @@ impl X509Store {
         }
     }
 
+    /// Handles the leaf basic constraints required behavior for this component.
     pub fn leaf_basic_constraints_required(&mut self, enable: bool) {
         self.leaf_basic_constraints_required = enable;
     }
 
+    /// Handles the verify behavior for this component.
     pub fn verify(
         &self,
         leaf: &Certificate,
@@ -148,6 +175,7 @@ impl X509Store {
         Ok(authority_cert)
     }
 
+    /// Validates the supplied leaf before it is used.
     fn validate_leaf(
         &self,
         certificate_to_validate: &Certificate,
@@ -210,6 +238,7 @@ impl X509Store {
         Ok(())
     }
 
+    /// Validates the supplied pair before it is used.
     fn validate_pair(
         &self,
         certificate_to_validate: &Certificate,
@@ -308,6 +337,7 @@ impl X509Store {
         Ok(())
     }
 
+    /// Handles the locate authority certificate behavior for this component.
     fn locate_authority_certificate(
         &self,
         certificate_to_validate: &Certificate,
@@ -420,6 +450,7 @@ fn verify_der_signature(
     Ok(())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use std::str::FromStr;
@@ -453,6 +484,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that x509 chain verify basic.
     fn x509_chain_verify_basic() {
         let _ = tracing_subscriber::fmt::try_init();
 
@@ -515,6 +547,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that x509 chain verify rsa fido mds.
     fn x509_chain_verify_rsa_fido_mds() {
         let _ = tracing_subscriber::fmt::try_init();
 
@@ -543,6 +576,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that x509 chain verify rsa yubico u2f.
     fn x509_chain_verify_rsa_yubico_u2f() {
         let _ = tracing_subscriber::fmt::try_init();
 
@@ -560,6 +594,7 @@ mod tests {
         assert!(ca_store.verify(leaf, &chain, now).is_ok());
     }
 
+    /// Defines the yubico u2 f root value used by this code.
     const YUBICO_U2F_ROOT: &str = r#"-----BEGIN CERTIFICATE-----
 MIIDHjCCAgagAwIBAgIEG0BT9zANBgkqhkiG9w0BAQsFADAuMSwwKgYDVQQDEyNZ
 dWJpY28gVTJGIFJvb3QgQ0EgU2VyaWFsIDQ1NzIwMDYzMTAgFw0xNDA4MDEwMDAw
@@ -580,6 +615,7 @@ sG/5xUb/Btwb2X2g4InpiB/yt/3CpQXpiWX/K4mBvUKiGn05ZsqeY1gx4g0xLBqc
 U9psmyPzK+Vsgw2jeRQ5JlKDyqE0hebfC1tvFu0CCrJFcw==
 -----END CERTIFICATE-----"#;
 
+    /// Defines the yubico device attest value used by this code.
     const YUBICO_DEVICE_ATTEST: &str = r#"-----BEGIN CERTIFICATE-----
 MIICvTCCAaWgAwIBAgIEGKxGwDANBgkqhkiG9w0BAQsFADAuMSwwKgYDVQQDEyNZ
 dWJpY28gVTJGIFJvb3QgQ0EgU2VyaWFsIDQ1NzIwMDYzMTAgFw0xNDA4MDEwMDAw
@@ -598,6 +634,7 @@ w7ZPNPnrpBrLauKDd202RlN4SP7ohL3d9bG6V5hUz/3OusNEBZUn5W3VmPj1ZnFa
 vkMB3RkRMOa58MZAORJT4imAPzrvJ0vtv94/y71C6tZ5
 -----END CERTIFICATE-----"#;
 
+    /// Defines the global sign root value used by this code.
     const GLOBAL_SIGN_ROOT: &str = r#"-----BEGIN CERTIFICATE-----
 MIIEYTCCA0mgAwIBAgIOSKQC3SeSDaIINJ3RmXswDQYJKoZIhvcNAQELBQAwTDEg
 MB4GA1UECxMXR2xvYmFsU2lnbiBSb290IENBIC0gUjMxEzARBgNVBAoTCkdsb2Jh
@@ -625,6 +662,7 @@ L2xk4DmjA4K6iPI+1+qMhyrkUM/2ZEdA8ldqwl8nQDkKS7vq6sUZ5LPVdfpxJZZu
 abvp10ZlOtfu8hL5gCXcxnwGxzSb
 -----END CERTIFICATE-----"#;
 
+    /// Defines the fido mds value used by this code.
     const FIDO_MDS: &str = r#"-----BEGIN CERTIFICATE-----
 MIIHGTCCBgGgAwIBAgIMIa7sY/5SFH8UYph5MA0GCSqGSIb3DQEBCwUAMGIxCzAJ
 BgNVBAYTAkJFMRkwFwYDVQQKExBHbG9iYWxTaWduIG52LXNhMTgwNgYDVQQDEy9H

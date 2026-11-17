@@ -66,10 +66,14 @@ use crate::traits::EncodeDer;
 use crate::traits::OwnedToRef;
 use crate::traits::Verifier;
 
+/// Provides chain behavior for the x509 component.
 mod chain;
+/// Provides display behavior for the x509 component.
 mod display;
+/// Provides serialise behavior for the x509 component.
 mod serialise;
 
+/// Handles the uuid to serial behavior for this component.
 pub fn uuid_to_serial(serial_uuid: uuid::Uuid) -> SerialNumber {
     let mut serial_bytes: [u8; 17] = [0; 17];
     // The first byte must be a value else if the leading byte is a null then
@@ -82,6 +86,7 @@ pub fn uuid_to_serial(serial_uuid: uuid::Uuid) -> SerialNumber {
     SerialNumber::new(&serial_bytes).expect("Failed to create serial number from uuid")
 }
 
+/// Handles the x509 digest public key sha256 behavior for this component.
 pub fn x509_digest_public_key_sha256(certificate: &Certificate) -> Option<Sha256Output> {
     let public_key_bytes = certificate
         .tbs_certificate()
@@ -94,12 +99,14 @@ pub fn x509_digest_public_key_sha256(certificate: &Certificate) -> Option<Sha256
     Some(hasher.finalize())
 }
 
+/// Handles the x509 digest cert sha256 behavior for this component.
 pub fn x509_digest_cert_sha256(certificate: &Certificate) -> Result<Sha256Output, der::Error> {
     let mut hasher = Sha256::new();
     hasher.update(certificate.to_der()?);
     Ok(hasher.finalize())
 }
 
+/// Handles the x509 verify signature behavior for this component.
 pub fn x509_verify_signature(
     data: &[u8],
     signature: &[u8],

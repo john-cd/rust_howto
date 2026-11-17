@@ -64,6 +64,7 @@ pub fn now() -> SystemTime {
 
         use wasm_bindgen::prelude::*;
 
+        // Declares foreign functions and types linked from this module.
         #[wasm_bindgen]
         extern "C" {
             // NOTE: This signature works around https://bugzilla.mozilla.org/show_bug.cgi?id=1787770
@@ -79,6 +80,7 @@ pub fn now() -> SystemTime {
     SystemTime::now()
 }
 
+/// Builds a test ca root from the supplied configuration.
 pub(crate) fn build_test_ca_root(
     not_before: Time,
     not_after: Time,
@@ -229,6 +231,7 @@ pub(crate) fn build_test_ca_root(
     (signing_key, cert)
 }
 
+/// Builds a test ca int from the supplied configuration.
 pub(crate) fn build_test_ca_int(
     not_before: Time,
     not_after: Time,
@@ -460,6 +463,7 @@ pub(crate) fn build_test_ca_int(
     (int_signing_key, int_cert)
 }
 
+/// Builds a test csr from the supplied configuration.
 pub(crate) fn build_test_csr(subject: &Name) -> (EcdsaP384SigningKey, CertReq) {
     let client_signing_key = EcdsaP384SigningKey::generate();
     let client_verifying_key = VerifyingKey::from(&client_signing_key);
@@ -522,6 +526,7 @@ pub(crate) fn build_test_csr(subject: &Name) -> (EcdsaP384SigningKey, CertReq) {
     (client_signing_key, client_cert_req)
 }
 
+/// Handles the test ca sign client csr behavior for this component.
 pub(crate) fn test_ca_sign_client_csr(
     not_before: Time,
     not_after: Time,
@@ -736,6 +741,7 @@ pub(crate) fn test_ca_sign_client_csr(
     client_cert
 }
 
+/// Handles the test ca sign server csr behavior for this component.
 pub(crate) fn test_ca_sign_server_csr(
     not_before: Time,
     not_after: Time,
@@ -952,6 +958,7 @@ pub(crate) fn test_ca_sign_server_csr(
     all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
     wasm_bindgen_test
 )]
+/// Checks that ca build process.
 fn test_ca_build_process() {
     let now = now();
     let not_before = Time::try_from(now).expect("Failed to convert SystemTime to Time");
