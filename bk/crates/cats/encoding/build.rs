@@ -42,6 +42,17 @@ fn capnp() -> Result<(), Box<dyn std::error::Error>> {
         Err(error) => return Err(Box::new(error)),
     }
 
+    // A generated file's inner doc comment cannot be included inside a module.
+    // Keep the generated header as a normal comment for both build paths.
+    let output_path = PathBuf::from(std::env::var_os("OUT_DIR").ok_or_else(|| {
+        std::io::Error::new(ErrorKind::NotFound, "Cargo did not set OUT_DIR")
+    })?)
+    .join("foo_capnp.rs");
+    let generated = fs::read_to_string(&output_path)?;
+    if let Some(header) = generated.strip_prefix("//! ") {
+        fs::write(output_path, format!("// {header}"))?;
+    }
+
     Ok(())
 }
 // ANCHOR_END: capnp

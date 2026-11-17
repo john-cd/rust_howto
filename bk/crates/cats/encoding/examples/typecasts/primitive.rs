@@ -4,9 +4,10 @@
 //! Demonstrates explicit primitive casts, checked numeric conversions, and
 //! parsing.
 //!
-//! An `as` cast silently truncates or wraps when the value does not fit (for
-//! example 300 as `u8` gives 44). Checked conversions such as `try_from` return
-//! an error instead, which is safer for values from outside the program.
+//! An `as` cast silently truncates when an integer value does not fit (for
+//! example 300 as `u8` keeps the low eight bits and gives 44). Checked
+//! conversions such as `try_from` return an error instead, which is safer for
+//! values from outside the program.
 
 use anyhow::Result;
 
@@ -20,7 +21,7 @@ use anyhow::Result;
 ///
 /// # Errors
 ///
-/// Returns an error if `value` is outside the range of `i32`.
+/// Returns an error if `value` is outside the `i32` range.
 fn narrow_to_i32(value: i64) -> Result<i32, std::num::TryFromIntError> {
     i32::try_from(value)
 }
@@ -49,7 +50,7 @@ pub fn run() -> Result<()> {
     main()
 }
 
-/// conversions, and
+/// Tests the primitive conversion behavior.
 #[cfg(test)]
 mod tests {
     use super::*;
