@@ -894,6 +894,29 @@
 
 {{#include ../rust-installation/index.incl.md}}
 
+
+## Standalone Topics
+
+### Integer Overflow
+
+{{#include ../categories/standalone/overflow.incl.md}}
+
+### Inheritance
+
+{{#include ../categories/standalone/inheritance.incl.md}}
+
+### Plugin Architecture
+
+{{#include ../categories/standalone/plugin.incl.md}}
+
+### Predicates
+
+{{#include ../categories/standalone/predicates.incl.md}}
+
+### Self-Referential Types
+
+{{#include ../categories/standalone/self_referential.incl.md}}
+
 ## Standard Library
 
 ### Automatic Trait Derivation

@@ -954,6 +954,14 @@
 [ex~text-processing~rake]: ../categories/text-processing/text_analysis.md#rake
 [ex~text-processing~replace-all-occurrences-of-one-text-pattern-with-another-pattern]: ../categories/text-processing/regex.md#replace-all-occurrences-of-one-text-pattern-with-another-pattern
 [ex~text-processing~similar]: ../categories/text-processing/diffing.md#similar
+[ex~standalone~asref-projection]: ../categories/standalone/inheritance.md#asref-projection
+[ex~standalone~composite-predicate]: ../categories/standalone/predicates.md#composite-predicate
+[ex~standalone~explicit-overflow-methods]: ../categories/standalone/overflow.md#explicit-overflow-methods
+[ex~standalone~in-process-plugin-host]: ../categories/standalone/plugin.md#in-process-plugin-host
+[ex~standalone~overflow-profile]: ../categories/standalone/overflow.md#debug-and-release-overflow
+[ex~standalone~pinned-self-reference]: ../categories/standalone/self_referential.md#pinned-self-reference
+[ex~standalone~safe-alternatives]: ../categories/standalone/self_referential.md#safe-alternatives
+[ex~standalone~wrapping-type]: ../categories/standalone/overflow.md#wrapping-type
 [ex~text-processing~slug]: ../categories/text-processing/string_manipulation.md#slug
 [ex~text-processing~string-concat]: ../categories/text-processing/string_concat.md#string-concat
 [ex~text-processing~strsim]: ../categories/text-processing/string_search.md#strsim
