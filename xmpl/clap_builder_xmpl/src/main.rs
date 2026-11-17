@@ -44,6 +44,7 @@ fn describe((config, commands): (cli::Config, Vec<cli::Cmd>)) -> Vec<String> {
     lines
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

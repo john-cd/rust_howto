@@ -17,6 +17,7 @@ pub enum TaskError {
 }
 
 impl Display for TaskError {
+    /// Formats this value for human-readable output.
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), std::fmt::Error> {
         // Just call `Debug`.
         write!(f, "{self:?}")?;

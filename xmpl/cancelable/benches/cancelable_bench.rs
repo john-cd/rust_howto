@@ -145,6 +145,7 @@ criterion_group!(
 );
 criterion_main!(benches);
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
 
