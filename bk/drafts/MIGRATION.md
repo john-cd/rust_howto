@@ -4,7 +4,7 @@
 
 Review snapshot for [issue #2284](https://github.com/john-cd/rust_howto/issues/2284), based on `develop` at `c2678fd7a` plus the regex promotion. The issue owns follow-up status; this is the requested source inventory, not a second live task tracker.
 
-Only the three regex recipes promoted in this change are release candidates validated by this task. All other chapters below are **candidates for review**, not certified ready. The queue covers all 224 current draft-summary entries across 38 ordered groups. Order favors deterministic local examples, then concurrency/tooling, then service/platform-dependent work. Within a category, move prerequisites and individual ready recipes first; move an overview only when its included tables reference published recipes. Existing human review markers are preserved and are not machine-checkable readiness gates.
+The three regex recipes and the `FromStr` custom-type recipe are now published. Other chapters below are **candidates for review**, not certified ready. The initial inventory covered 224 entries; 223 draft-summary entries remain across 38 ordered groups. Order favors deterministic local examples, then concurrency/tooling, then service/platform-dependent work. Within a category, move prerequisites and individual ready recipes first; move an overview only when its included tables reference published recipes. Existing human review markers are preserved and are not machine-checkable readiness gates.
 
 For every candidate: inspect prose against behavior; run the owning example tests and documented commands (including failure paths and needed features); move unique text and its recipe tables/reference definitions; update both summaries and the published example index; render the book and check diagnostics, includes, and destinations. Examples already under `bk/crates` stay there. Move examples from `later` only when their dependencies/features are available in the published workspace. A complete draft overview is not evidence that every included recipe is ready.
 
@@ -14,15 +14,18 @@ The static review below checks chapter existence, direct and nested include path
 
 Regular Expressions: unique ASCII hashtags, US-style phone extraction, and date-pattern replacement. Published source: [regex.md](../src/categories/text-processing/regex.md); examples remain in `bk/crates/cats/text_processing/examples/regex`. The draft chapter retains email, log filtering, fancy-regex, the longer example, and engine-selection guidance.
 
+## Completed Second Migration
+
+String Parsing: the reviewed `FromStr` recipe and its example-index entry moved to the published book under [issue #2286](https://github.com/john-cd/rust_howto/issues/2286). The existing `bk/crates/cats/text_processing/examples/string_parsing/from_str.rs` remains in place; it already contains valid, malformed, and entry-point test cases. Tests and book rendering were not run for this documentation-only move.
+
 ## 1. text-processing
 
-Finish the remaining regex recipes individually: the full regex test run fails in `email::tests::test_email_example_entry_point` (expected `Some("I❤email")`, got `None`); a `///` line was inserted inside the verbose regex literal and must be corrected. Email extraction must not claim full email validation; supply a log fixture for filtering; explain the longer example and bound fancy-regex inputs. Remove the duplicate Longer Regex row and repair its undefined reference. Then consider string parsing, concatenation, manipulation, search, diffing, other strings, text analysis, and highlighting; run each target and inspect its output. Unicode is already published and absent from this draft summary.
+Finish the remaining regex recipes individually: the full regex test run fails in `email::tests::test_email_example_entry_point` (expected `Some("I❤email")`, got `None`); a `///` line was inserted inside the verbose regex literal and must be corrected. Email extraction must not claim full email validation; supply a log fixture for filtering; explain the longer example and bound fancy-regex inputs. Remove the duplicate Longer Regex row and repair its undefined reference. Then consider concatenation, manipulation, search, diffing, other strings, text analysis, and highlighting; run each target and inspect its output. Unicode is already published and absent from this draft summary.
 
 | Chapter in draft summary | Remaining work / blockers |
 | --- | --- |
 | [Text Processing](categories/text-processing/index.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [Regular Expressions — Remaining Recipes](categories/text-processing/regex.md) | Published path exists: compare/merge or retire redirect; do not overwrite; Only remaining recipes; duplicate/undefined Longer Regex table reference |
-| [String Parsing](categories/text-processing/string_parsing.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [String Concatenation](categories/text-processing/string_concat.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [String Manipulation](categories/text-processing/string_manipulation.md) | No missing include/anchor found; category work and execution/render checks still required |
 | [String Search](categories/text-processing/string_search.md) | No missing include/anchor found; category work and execution/render checks still required |

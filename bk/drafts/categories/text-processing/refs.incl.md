@@ -16,7 +16,6 @@
 [ex~text-processing~filter-a-log-file-by-matching-multiple-regular-expressions]: regex.md#filter-a-log-file-by-matching-multiple-regular-expressions
 [ex~text-processing~fuzzy-matcher]: string_search.md#fuzzy-matcher
 [ex~text-processing~heck]: string_manipulation.md#heck
-[ex~text-processing~implement-the-fromstr-trait-for-a-custom-struct]: string_parsing.md#implement-the-fromstr-trait-for-a-custom-struct
 [ex~text-processing~indoc]: string_manipulation.md#indoc
 [ex~text-processing~longer-regex-example]: regex.md#longer-regex-example
 [ex~text-processing~memchr]: string_search.md#memchr
