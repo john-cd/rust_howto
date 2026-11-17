@@ -77,6 +77,7 @@ mod tests {
         assert_eq!(update.focus, button_id);
     }
 
+    /// Handles the find node behavior for this component.
     fn find_node(update: &TreeUpdate, id: NodeId) -> &Node {
         update
             .nodes

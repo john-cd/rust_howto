@@ -11,7 +11,9 @@
 /// Facts that happened to an account. Events are never modified.
 #[derive(Debug, Clone)]
 enum AccountEvent {
+    /// Represents the deposited case of account event.
     Deposited(i64),
+    /// Represents the withdrawn case of account event.
     Withdrawn(i64),
 }
 
@@ -61,6 +63,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

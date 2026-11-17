@@ -67,6 +67,7 @@ fn dispatch(cli: Cli) {
     }
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use clap::CommandFactory as _;

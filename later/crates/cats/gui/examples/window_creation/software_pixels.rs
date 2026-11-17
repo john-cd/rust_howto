@@ -58,6 +58,7 @@ fn draw(surface: &mut Surface<Rc<Window>, Rc<Window>>) -> Result<(), Box<dyn std
 }
 
 impl ApplicationHandler for App {
+    /// Reports whether the suspended operation has resumed.
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
         if self.surface.is_some() {
             return;
@@ -81,6 +82,7 @@ impl ApplicationHandler for App {
         }
     }
 
+    /// Handles the window event behavior for this component.
     fn window_event(&mut self, event_loop: &ActiveEventLoop, _id: WindowId, event: WindowEvent) {
         match event {
             WindowEvent::CloseRequested => event_loop.exit(),

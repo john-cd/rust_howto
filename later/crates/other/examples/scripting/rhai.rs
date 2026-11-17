@@ -91,6 +91,7 @@ pub fn run() -> Result<(), Box<EvalAltResult>> {
     Ok(())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

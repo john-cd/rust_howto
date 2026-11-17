@@ -146,6 +146,7 @@ pub fn run() -> Result<(), Box<dyn Error>> {
     entry()
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -183,6 +184,7 @@ mod tests {
         assert!(!called);
     }
 
+    /// Handles the opener receives the validated url behavior for this component.
     fn opener_receives_the_validated_url() -> Result<(), Box<dyn Error>> {
         let mut opened = None;
         open_validated_uri("file:///tmp/a.html", |url| {

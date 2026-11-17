@@ -38,6 +38,7 @@ struct Rocket {
 }
 
 impl Rocket {
+    /// Handles the total mass behavior for this component.
     fn total_mass(&self) -> f64 {
         self.mass_empty + self.fuel_mass
     }
@@ -152,6 +153,7 @@ use ode_solvers::Vector2;
 struct ConstantGravity;
 
 impl System<f64, Vector2<f64>> for ConstantGravity {
+    /// Handles the system behavior for this component.
     fn system(&self, _time: f64, y: &Vector2<f64>, dy: &mut Vector2<f64>) {
         dy[0] = y[1];
         dy[1] = -9.81;
@@ -183,6 +185,7 @@ pub fn run() {
     println!("Ballistic altitude after 10 seconds (m): {}", trajectory[0]);
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

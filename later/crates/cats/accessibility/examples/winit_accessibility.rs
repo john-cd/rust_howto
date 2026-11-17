@@ -45,12 +45,16 @@ fn tree() -> TreeUpdate {
 
 /// Routes native window events to the accessibility adapter.
 struct App {
+    /// Window receiving the accessibility adapter.
     window: Option<Window>,
+    /// Accessibility adapter attached to the window.
     adapter: Option<Adapter>,
+    /// Proxy used to send events to the application event loop.
     proxy: winit::event_loop::EventLoopProxy<AccessEvent>,
 }
 
 impl ApplicationHandler<AccessEvent> for App {
+    /// Reports whether the suspended operation has resumed.
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
         if self.window.is_some() {
             return;
@@ -74,6 +78,7 @@ impl ApplicationHandler<AccessEvent> for App {
         }
     }
 
+    /// Handles the window event behavior for this component.
     fn window_event(&mut self, event_loop: &ActiveEventLoop, id: WindowId, event: WindowEvent) {
         if let (Some(window), Some(adapter)) = (&self.window, &mut self.adapter)
             && window.id() == id
@@ -85,6 +90,7 @@ impl ApplicationHandler<AccessEvent> for App {
         }
     }
 
+    /// Handles the user event behavior for this component.
     fn user_event(&mut self, _event_loop: &ActiveEventLoop, event: AccessEvent) {
         if let Some(adapter) = &mut self.adapter
             && matches!(event.window_event, AccessWindowEvent::InitialTreeRequested)
@@ -94,6 +100,7 @@ impl ApplicationHandler<AccessEvent> for App {
     }
 }
 
+/// Runs the example demonstrated by this module.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let event_loop = EventLoop::<AccessEvent>::with_user_event().build()?;
     event_loop.set_control_flow(ControlFlow::Wait);
@@ -111,6 +118,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 mod tests {
     use super::*;
 
+    /// Checks that tree exposes focused button.
     #[test]
     fn tree_exposes_focused_button() {
         let update = tree();

@@ -180,6 +180,7 @@ pub struct InMemoryBus {
 
 #[async_trait]
 impl MessagePublisher for InMemoryBus {
+    /// Publishes the response body to the waiting subscribers.
     async fn publish_body(&self, body: String) -> Result<()> {
         let mut messages = self.messages.lock().expect("queue lock poisoned");
         let receipt = format!("receipt-{}", messages.len());
@@ -190,10 +191,12 @@ impl MessagePublisher for InMemoryBus {
 
 #[async_trait]
 impl MessageSubscriber for InMemoryBus {
+    /// Handles the receive behavior for this component.
     async fn receive(&self) -> Result<Vec<Received>> {
         Ok(self.messages.lock().expect("queue lock poisoned").clone())
     }
 
+    /// Handles the ack behavior for this component.
     async fn ack(&self, receipt: &str) -> Result<()> {
         self.messages
             .lock()
@@ -221,6 +224,7 @@ impl SqsBus {
 
 #[async_trait]
 impl MessagePublisher for SqsBus {
+    /// Publishes the response body to the waiting subscribers.
     async fn publish_body(&self, body: String) -> Result<()> {
         self.client
             .send_message()
@@ -235,6 +239,7 @@ impl MessagePublisher for SqsBus {
 
 #[async_trait]
 impl MessageSubscriber for SqsBus {
+    /// Handles the receive behavior for this component.
     async fn receive(&self) -> Result<Vec<Received>> {
         let output = self
             .client
@@ -260,6 +265,7 @@ impl MessageSubscriber for SqsBus {
             .collect())
     }
 
+    /// Handles the ack behavior for this component.
     async fn ack(&self, receipt: &str) -> Result<()> {
         self.client
             .delete_message()
@@ -290,6 +296,7 @@ impl SnsTopic {
 
 #[async_trait]
 impl MessagePublisher for SnsTopic {
+    /// Publishes the response body to the waiting subscribers.
     async fn publish_body(&self, body: String) -> Result<()> {
         self.client
             .publish()

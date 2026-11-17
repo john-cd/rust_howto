@@ -40,6 +40,7 @@ impl Sine {
 }
 
 impl Iterator for Sine {
+    /// Alias for `f32` used to represent item.
     type Item = f32;
 
     /// Computes the next sample. The audio thread calls this function
@@ -59,10 +60,12 @@ impl Source for Sine {
         None
     }
 
+    /// Handles the channels behavior for this component.
     fn channels(&self) -> ChannelCount {
         nz!(1)
     }
 
+    /// Handles the sample rate behavior for this component.
     fn sample_rate(&self) -> SampleRate {
         self.sample_rate
     }
@@ -116,6 +119,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

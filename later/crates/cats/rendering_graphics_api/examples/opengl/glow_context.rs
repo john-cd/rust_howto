@@ -122,15 +122,18 @@ mod tests {
     }
 }
 
+/// Runs the example logic exposed by this module.
 pub fn run() {
     let entry_point = main;
     entry_point();
 }
 
+/// Provides entry point tests behavior for the glow context component.
 #[cfg(test)]
 mod entry_point_tests {
     use super::*;
 
+    /// Checks that private main runs.
     #[test]
     fn private_main_runs() {
         let entry_point = main;

@@ -15,6 +15,7 @@ use cxx::let_cxx_string;
 // target.
 #[link(name = "development_tools_ffi_cxx", kind = "static")]
 unsafe extern "C" {
+    /// Handles the cxx link anchor behavior for this component.
     fn cxx_link_anchor();
 }
 
@@ -24,6 +25,7 @@ unsafe extern "C" {
 /// code from C++.
 #[cxx::bridge]
 mod ffi {
+    // Declares foreign functions and types linked from this module.
     unsafe extern "C++" {
         include!("development_tools_ffi/examples/cpp/hello.h");
 
@@ -33,11 +35,15 @@ mod ffi {
         ///
         /// * `name` - Human-readable value used to identify or display the selected cxx.
         fn hello(name: &CxxString);
+        /// Handles the cpp multiply behavior for this component.
         fn cpp_multiply(left: i32, right: i32) -> i32;
+        /// Handles the cpp add via rust behavior for this component.
         fn cpp_add_via_rust(left: i32, right: i32) -> i32;
     }
 
+    // Declares foreign functions and types linked from this module.
     extern "Rust" {
+        /// Handles the rust add behavior for this component.
         fn rust_add(left: i32, right: i32) -> i32;
     }
 }

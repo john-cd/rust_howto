@@ -150,6 +150,7 @@ mod tests {
         }
     }
 
+    /// Handles the cpu behavior for this component.
     fn cpu(program: &[[u8; 2]]) -> Cpu<'_> {
         Cpu {
             program,

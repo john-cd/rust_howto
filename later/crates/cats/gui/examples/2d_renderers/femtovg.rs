@@ -67,6 +67,7 @@ fn draw_frame(canvas: &mut Canvas<OpenGl>, width: u32, height: u32, scale: f32) 
     canvas.flush();
 }
 
+/// Data for femto vg app operations, including window and surface.
 struct FemtoVgApp {
     /// Window value.
     window: Window,

@@ -45,6 +45,7 @@ pub fn run() -> anyhow::Result<()> {
     main().map_err(|e| anyhow::anyhow!("{e}"))
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

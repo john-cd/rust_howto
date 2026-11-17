@@ -21,6 +21,7 @@ struct Args {
     config: PathBuf,
 }
 
+/// Runs the example demonstrated by this module.
 fn main() {
     let args = Args::parse();
     println!("{}", args.config.display());

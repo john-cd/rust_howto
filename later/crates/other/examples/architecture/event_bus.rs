@@ -17,8 +17,16 @@ use tokio::sync::broadcast;
 /// Events published on the bus.
 #[derive(Debug, Clone, PartialEq)]
 enum Event {
-    OrderPlaced { id: u32 },
-    OrderShipped { id: u32 },
+    /// An order was placed with this identifier.
+    OrderPlaced {
+        /// Identifier assigned to the placed order.
+        id: u32,
+    },
+    /// The order with this identifier was shipped.
+    OrderShipped {
+        /// Identifier of the order that was shipped.
+        id: u32,
+    },
 }
 
 /// A minimal in-process bus with bounded subscriber queues.
@@ -97,6 +105,7 @@ pub fn run() {
     main();
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

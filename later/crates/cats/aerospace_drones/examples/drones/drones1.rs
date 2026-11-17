@@ -49,10 +49,12 @@ trait Flyer {
 }
 
 impl Flyer for Drone {
+    /// Handles the take off behavior for this component.
     fn take_off(&mut self) -> Result<()> {
         Self::take_off(self).map_err(|()| anyhow::anyhow!("the drone rejected `take_off`"))
     }
 
+    /// Handles the land behavior for this component.
     fn land(&mut self) -> Result<()> {
         Self::land(self).map_err(|()| anyhow::anyhow!("the drone rejected `land`"))
     }
@@ -140,11 +142,13 @@ mod tests {
     struct Recorder(Vec<&'static str>);
 
     impl Flyer for Recorder {
+        /// Handles the take off behavior for this component.
         fn take_off(&mut self) -> Result<()> {
             self.0.push("take_off");
             Ok(())
         }
 
+        /// Handles the land behavior for this component.
         fn land(&mut self) -> Result<()> {
             self.0.push("land");
             Ok(())

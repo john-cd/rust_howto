@@ -7,6 +7,7 @@ pub fn message() -> String {
     String::from("Hello from Rust again!")
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
 
