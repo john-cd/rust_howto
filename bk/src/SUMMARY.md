@@ -294,6 +294,13 @@
   - [Custom Errors and Reports](categories/rust-patterns/custom_errors.md)
   - [Register Commands Explicitly or with Inventory](categories/rust-patterns/plugin_registration.md)
 
+- [Standalone Topics](categories/standalone/index.md)
+  - [Integer Overflow](categories/standalone/overflow.md)
+  - [Inheritance](categories/standalone/inheritance.md)
+  - [Plugin Architecture](categories/standalone/plugin.md)
+  - [Predicates](categories/standalone/predicates.md)
+  - [Self-Referential Types](categories/standalone/self_referential.md)
+
 - [Date and Time](categories/date-and-time/jiff_dst.md)
 - [Test an AWS Lambda Handler Locally](categories/cloud/aws_lambda.md)
 - [Connect Two Iroh Endpoints on Loopback](categories/network-programming/iroh_loopback.md)
