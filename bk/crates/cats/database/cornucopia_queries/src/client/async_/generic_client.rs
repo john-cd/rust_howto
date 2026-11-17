@@ -21,6 +21,7 @@ use tokio_postgres::types::ToSql;
 /// In addition, when the `deadpool` feature is enabled (default), this trait
 /// also abstracts over deadpool clients and transactions
 pub trait GenericClient: Send + Sync {
+    /// Handles the stmt cache behavior for this component.
     fn stmt_cache() -> bool {
         false
     }
@@ -102,10 +103,12 @@ pub trait GenericClient: Send + Sync {
         I::Item: BorrowToSql;
 }
 impl GenericClient for Transaction<'_> {
+    /// Prepares the request or statement so it can be executed safely.
     async fn prepare(&self, query: &str) -> Result<Statement, Error> {
         Transaction::prepare(self, query).await
     }
 
+    /// Executes the prepared operation and reports its result.
     async fn execute<T>(&self, query: &T, params: &[&(dyn ToSql + Sync)]) -> Result<u64, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
@@ -113,6 +116,7 @@ impl GenericClient for Transaction<'_> {
         Transaction::execute(self, query, params).await
     }
 
+    /// Executes the query and requires exactly one returned row.
     async fn query_one<T>(
         &self,
         statement: &T,
@@ -124,6 +128,7 @@ impl GenericClient for Transaction<'_> {
         Transaction::query_one(self, statement, params).await
     }
 
+    /// Executes the query and returns an optional row.
     async fn query_opt<T>(
         &self,
         statement: &T,
@@ -135,6 +140,7 @@ impl GenericClient for Transaction<'_> {
         Transaction::query_opt(self, statement, params).await
     }
 
+    /// Executes the query with the supplied parameters.
     async fn query<T>(&self, query: &T, params: &[&(dyn ToSql + Sync)]) -> Result<Vec<Row>, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
@@ -142,6 +148,7 @@ impl GenericClient for Transaction<'_> {
         Transaction::query(self, query, params).await
     }
 
+    /// Executes a raw database query and returns its untyped result.
     async fn query_raw<T, I>(&self, statement: &T, params: I) -> Result<RowStream, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
@@ -153,10 +160,12 @@ impl GenericClient for Transaction<'_> {
     }
 }
 impl GenericClient for Client {
+    /// Prepares the request or statement so it can be executed safely.
     async fn prepare(&self, query: &str) -> Result<Statement, Error> {
         Client::prepare(self, query).await
     }
 
+    /// Executes the prepared operation and reports its result.
     async fn execute<T>(&self, query: &T, params: &[&(dyn ToSql + Sync)]) -> Result<u64, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
@@ -164,6 +173,7 @@ impl GenericClient for Client {
         Client::execute(self, query, params).await
     }
 
+    /// Executes the query and requires exactly one returned row.
     async fn query_one<T>(
         &self,
         statement: &T,
@@ -175,6 +185,7 @@ impl GenericClient for Client {
         Client::query_one(self, statement, params).await
     }
 
+    /// Executes the query and returns an optional row.
     async fn query_opt<T>(
         &self,
         statement: &T,
@@ -186,6 +197,7 @@ impl GenericClient for Client {
         Client::query_opt(self, statement, params).await
     }
 
+    /// Executes the query with the supplied parameters.
     async fn query<T>(&self, query: &T, params: &[&(dyn ToSql + Sync)]) -> Result<Vec<Row>, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
@@ -193,6 +205,7 @@ impl GenericClient for Client {
         Client::query(self, query, params).await
     }
 
+    /// Executes a raw database query and returns its untyped result.
     async fn query_raw<T, I>(&self, statement: &T, params: I) -> Result<RowStream, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,

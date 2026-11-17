@@ -15,14 +15,17 @@ use tokio_postgres::types::BorrowToSql;
 
 use super::generic_client::GenericClient;
 impl GenericClient for DeadpoolClient {
+    /// Handles the stmt cache behavior for this component.
     fn stmt_cache() -> bool {
         true
     }
 
+    /// Prepares the request or statement so it can be executed safely.
     async fn prepare(&self, query: &str) -> Result<Statement, Error> {
         ClientWrapper::prepare_cached(self, query).await
     }
 
+    /// Executes the prepared operation and reports its result.
     async fn execute<T>(
         &self,
         query: &T,
@@ -34,6 +37,7 @@ impl GenericClient for DeadpoolClient {
         PgClient::execute(self, query, params).await
     }
 
+    /// Executes the query and requires exactly one returned row.
     async fn query_one<T>(
         &self,
         statement: &T,
@@ -45,6 +49,7 @@ impl GenericClient for DeadpoolClient {
         PgClient::query_one(self, statement, params).await
     }
 
+    /// Executes the query and returns an optional row.
     async fn query_opt<T>(
         &self,
         statement: &T,
@@ -56,6 +61,7 @@ impl GenericClient for DeadpoolClient {
         PgClient::query_opt(self, statement, params).await
     }
 
+    /// Executes the query with the supplied parameters.
     async fn query<T>(
         &self,
         query: &T,
@@ -67,6 +73,7 @@ impl GenericClient for DeadpoolClient {
         PgClient::query(self, query, params).await
     }
 
+    /// Executes a raw database query and returns its untyped result.
     async fn query_raw<T, I>(&self, statement: &T, params: I) -> Result<RowStream, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,
@@ -78,14 +85,17 @@ impl GenericClient for DeadpoolClient {
     }
 }
 impl GenericClient for DeadpoolTransaction<'_> {
+    /// Handles the stmt cache behavior for this component.
     fn stmt_cache() -> bool {
         false
     }
 
+    /// Prepares the request or statement so it can be executed safely.
     async fn prepare(&self, query: &str) -> Result<Statement, Error> {
         DeadpoolTransaction::prepare_cached(self, query).await
     }
 
+    /// Executes the prepared operation and reports its result.
     async fn execute<T>(
         &self,
         query: &T,
@@ -97,6 +107,7 @@ impl GenericClient for DeadpoolTransaction<'_> {
         PgTransaction::execute(self, query, params).await
     }
 
+    /// Executes the query and requires exactly one returned row.
     async fn query_one<T>(
         &self,
         statement: &T,
@@ -108,6 +119,7 @@ impl GenericClient for DeadpoolTransaction<'_> {
         PgTransaction::query_one(self, statement, params).await
     }
 
+    /// Executes the query and returns an optional row.
     async fn query_opt<T>(
         &self,
         statement: &T,
@@ -119,6 +131,7 @@ impl GenericClient for DeadpoolTransaction<'_> {
         PgTransaction::query_opt(self, statement, params).await
     }
 
+    /// Executes the query with the supplied parameters.
     async fn query<T>(
         &self,
         query: &T,
@@ -130,6 +143,7 @@ impl GenericClient for DeadpoolTransaction<'_> {
         PgTransaction::query(self, query, params).await
     }
 
+    /// Executes a raw database query and returns its untyped result.
     async fn query_raw<T, I>(&self, statement: &T, params: I) -> Result<RowStream, Error>
     where
         T: ?Sized + ToStatement + Sync + Send,

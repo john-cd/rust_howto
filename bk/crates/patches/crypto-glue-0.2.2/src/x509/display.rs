@@ -19,22 +19,30 @@ use x509_cert::spki::SubjectPublicKeyInfoRef;
 
 use crate::x509::Certificate;
 
+/// Defines the indent value used by this code.
 const INDENT: usize = 2;
+/// Defines the indent two value used by this code.
 const INDENT_TWO: usize = INDENT * 2;
+/// Defines the indent three value used by this code.
 const INDENT_THREE: usize = INDENT * 3;
+/// Defines the indent four value used by this code.
 const INDENT_FOUR: usize = INDENT * 4;
 
+/// Data for x509 display operations, including cert.
 pub struct X509Display<'a> {
+    /// Certificate whose fields are being formatted.
     cert: &'a Certificate,
 }
 
 impl<'a> From<&'a Certificate> for X509Display<'a> {
+    /// Constructs this type from the supplied source value.
     fn from(cert: &'a Certificate) -> Self {
         X509Display { cert }
     }
 }
 
 impl fmt::Display for X509Display<'_> {
+    /// Formats this value for human-readable output.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         writeln!(f, "--")?;
         writeln!(f, "Certificate:")?;
@@ -411,12 +419,16 @@ impl fmt::Display for X509Display<'_> {
     }
 }
 
+/// Data for bytes display operations, including bytes and indent.
 struct BytesDisplay<'a> {
+    /// Encoded bytes being formatted or decoded.
     bytes: &'a [u8],
+    /// Indentation level applied to the formatted output.
     indent: usize,
 }
 
 impl fmt::Display for BytesDisplay<'_> {
+    /// Formats this value for human-readable output.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{:indent$}", "", indent = self.indent)?;
 
@@ -439,12 +451,16 @@ impl fmt::Display for BytesDisplay<'_> {
     }
 }
 
+/// Data for general name display operations, including name and indent.
 struct GeneralNameDisplay<'a> {
+    /// Name stored for this value.
     name: &'a GeneralName,
+    /// Indentation level applied to the formatted output.
     indent: usize,
 }
 
 impl fmt::Display for GeneralNameDisplay<'_> {
+    /// Formats this value for human-readable output.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{:indent$}", "", indent = self.indent)?;
         match self.name {
@@ -476,18 +492,23 @@ impl fmt::Display for GeneralNameDisplay<'_> {
     }
 }
 
+/// Data for subject public key display operations, including spki and indent.
 pub struct SubjectPublicKeyDisplay<'a> {
+    /// Subject public key information decoded from the certificate.
     spki: SubjectPublicKeyInfoRef<'a>,
+    /// Indentation level applied to the formatted output.
     indent: usize,
 }
 
 impl<'a> From<SubjectPublicKeyInfoRef<'a>> for SubjectPublicKeyDisplay<'a> {
+    /// Constructs this type from the supplied source value.
     fn from(spki: SubjectPublicKeyInfoRef<'a>) -> Self {
         Self { spki, indent: 0 }
     }
 }
 
 impl fmt::Display for SubjectPublicKeyDisplay<'_> {
+    /// Formats this value for human-readable output.
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         writeln!(
             f,

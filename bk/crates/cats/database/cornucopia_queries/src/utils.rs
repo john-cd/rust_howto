@@ -5,12 +5,14 @@
 use postgres_types::Kind;
 use postgres_types::ToSql;
 use postgres_types::Type;
+/// Escapes domain characters so the value is safe in its output context.
 pub fn escape_domain(ty: &Type) -> &Type {
     match ty.kind() {
         Kind::Domain(ty) => ty,
         _ => ty,
     }
 }
+/// Creates an iterator over successive slices of the input.
 pub fn slice_iter<'a>(
     s: &'a [&'a (dyn ToSql + Sync)],
 ) -> impl ExactSizeIterator<Item = &'a dyn ToSql> + 'a {

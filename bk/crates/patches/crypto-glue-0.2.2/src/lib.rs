@@ -31,11 +31,14 @@ pub use rand;
 pub use spki;
 pub use zeroize;
 
+/// Provides prelude behavior for the src component.
 pub mod prelude {}
 
+/// Provides test ca behavior for the src component.
 #[cfg(test)]
 mod test_ca;
 
+/// Provides traits behavior for the src component.
 pub mod traits {
     pub use aes_gcm::aead::AeadInOut;
     pub use crypto_common::Generate;
@@ -69,6 +72,7 @@ pub mod traits {
     pub use spki::DynSignatureAlgorithmIdentifier;
     pub use spki::EncodePublicKey as SpkiEncodePublicKey;
     pub use zeroize::Zeroizing;
+    /// Provides hazmat behavior for the src component.
     pub mod hazmat {
 
         //! This is a “Hazardous Materials” module. You should ONLY use it if you’re 100% absolutely
@@ -80,51 +84,64 @@ pub mod traits {
     pub use x509_cert::ext::ToExtension;
 }
 
+/// Provides x509 behavior for the src component.
 pub mod x509;
 
+/// Provides md5 behavior for the src component.
 pub mod md5 {
     pub use md5::*;
 }
 
+/// Provides sha1 behavior for the src component.
 pub mod sha1 {
     use hybrid_array::Array;
     use hybrid_array::sizes::U20;
     pub use sha1::Sha1;
 
+    /// Alias for `Array<u8, U20>` used to represent sha1 output.
     pub type Sha1Output = Array<u8, U20>;
 }
 
+/// Provides s256 behavior for the src component.
 pub mod s256 {
     use hybrid_array::Array;
     use hybrid_array::sizes::U32;
     pub use sha2::Sha256;
 
+    /// Alias for `Array<u8, U32>` used to represent sha256 output.
     pub type Sha256Output = Array<u8, U32>;
 }
 
+/// Provides s384 behavior for the src component.
 pub mod s384 {
     use hybrid_array::Array;
     use hybrid_array::sizes::U48;
     pub use sha2::Sha384;
 
+    /// Alias for `Array<u8, U48>` used to represent sha384 output.
     pub type Sha384Output = Array<u8, U48>;
 }
 
+/// Provides s512 behavior for the src component.
 pub mod s512 {
     use hybrid_array::Array;
     use hybrid_array::sizes::U64;
     pub use sha2::Sha512;
 
+    /// Alias for `Array<u8, U64>` used to represent sha512 output.
     pub type Sha512Output = Array<u8, U64>;
 }
 
+/// Provides hkdf s256 behavior for the src component.
 pub mod hkdf_s256 {
     use hkdf::Hkdf;
     use sha2::Sha256;
 
+    /// Alias for `Hkdf<Sha256>` used to represent hkdf sha256.
     pub type HkdfSha256 = Hkdf<Sha256>;
 }
 
+/// Provides hmac s1 behavior for the src component.
 pub mod hmac_s1 {
     use crypto_common::Key;
     use crypto_common::Output;
@@ -134,19 +151,25 @@ pub mod hmac_s1 {
     use sha1::digest::CtOutput;
     use zeroize::Zeroizing;
 
+    /// Alias for `Hmac<Sha1>` used to represent hmac sha1.
     pub type HmacSha1 = Hmac<Sha1>;
 
+    /// Alias for `Zeroizing<Key<Hmac<Sha1>>>` used to represent hmac sha1 key.
     pub type HmacSha1Key = Zeroizing<Key<Hmac<Sha1>>>;
 
+    /// Alias for `CtOutput<HmacSha1>` used to represent hmac sha1 output.
     pub type HmacSha1Output = CtOutput<HmacSha1>;
 
+    /// Alias for `Output<HmacSha1>` used to represent hmac sha1 bytes.
     pub type HmacSha1Bytes = Output<HmacSha1>;
 
+    /// Creates a cryptographic key from the supplied key material.
     pub fn new_key() -> HmacSha1Key {
         use crypto_common::Generate;
         Key::<HmacSha1>::generate().into()
     }
 
+    /// Performs the one-shot operation using the supplied key and input.
     pub fn oneshot(key: &HmacSha1Key, data: &[u8]) -> HmacSha1Output {
         use crypto_common::KeyInit;
 
@@ -155,11 +178,13 @@ pub mod hmac_s1 {
         hmac.finalize()
     }
 
+    /// Constructs a key from vec bytes.
     #[allow(clippy::needless_pass_by_value)]
     pub fn key_from_vec(bytes: Vec<u8>) -> Option<HmacSha1Key> {
         key_from_slice(&bytes)
     }
 
+    /// Constructs a key from slice bytes.
     pub fn key_from_slice(bytes: &[u8]) -> Option<HmacSha1Key> {
         use crypto_common::KeySizeUser;
         // Key too short - too long.
@@ -173,16 +198,19 @@ pub mod hmac_s1 {
         }
     }
 
+    /// Constructs a key from bytes bytes.
     pub fn key_from_bytes(bytes: [u8; 64]) -> HmacSha1Key {
         Key::<Hmac<Sha1>>::from(bytes).into()
     }
 
+    /// Returns the number of bytes required to represent a key.
     pub fn key_size() -> usize {
         use crypto_common::KeySizeUser;
         Hmac::<Sha1>::key_size()
     }
 }
 
+/// Provides hmac s256 behavior for the src component.
 pub mod hmac_s256 {
     use crypto_common::Key;
     use crypto_common::Output;
@@ -192,19 +220,25 @@ pub mod hmac_s256 {
     use sha2::digest::CtOutput;
     use zeroize::Zeroizing;
 
+    /// Alias for `Hmac<Sha256>` used to represent hmac sha256.
     pub type HmacSha256 = Hmac<Sha256>;
 
+    /// Alias for `Zeroizing<Key<Hmac<Sha256>>>` used to represent hmac sha256 key.
     pub type HmacSha256Key = Zeroizing<Key<Hmac<Sha256>>>;
 
+    /// Alias for `CtOutput<HmacSha256>` used to represent hmac sha256 output.
     pub type HmacSha256Output = CtOutput<HmacSha256>;
 
+    /// Alias for `Output<HmacSha256>` used to represent hmac sha256 bytes.
     pub type HmacSha256Bytes = Output<HmacSha256>;
 
+    /// Creates a cryptographic key from the supplied key material.
     pub fn new_key() -> HmacSha256Key {
         use crypto_common::Generate;
         Key::<HmacSha256>::generate().into()
     }
 
+    /// Performs the one-shot operation using the supplied key and input.
     pub fn oneshot(key: &HmacSha256Key, data: &[u8]) -> HmacSha256Output {
         use crypto_common::KeyInit;
 
@@ -213,11 +247,13 @@ pub mod hmac_s256 {
         hmac.finalize()
     }
 
+    /// Constructs a key from vec bytes.
     #[allow(clippy::needless_pass_by_value)]
     pub fn key_from_vec(bytes: Vec<u8>) -> Option<HmacSha256Key> {
         key_from_slice(&bytes)
     }
 
+    /// Constructs a key from slice bytes.
     pub fn key_from_slice(bytes: &[u8]) -> Option<HmacSha256Key> {
         use crypto_common::KeySizeUser;
         // Key too short - too long.
@@ -231,16 +267,19 @@ pub mod hmac_s256 {
         }
     }
 
+    /// Constructs a key from bytes bytes.
     pub fn key_from_bytes(bytes: [u8; 64]) -> HmacSha256Key {
         Key::<Hmac<Sha256>>::from(bytes).into()
     }
 
+    /// Returns the number of bytes required to represent a key.
     pub fn key_size() -> usize {
         use crypto_common::KeySizeUser;
         Hmac::<Sha256>::key_size()
     }
 }
 
+/// Provides hmac s512 behavior for the src component.
 pub mod hmac_s512 {
     use crypto_common::Key;
     use crypto_common::Output;
@@ -250,19 +289,25 @@ pub mod hmac_s512 {
     use sha2::digest::CtOutput;
     use zeroize::Zeroizing;
 
+    /// Alias for `Hmac<Sha512>` used to represent hmac sha512.
     pub type HmacSha512 = Hmac<Sha512>;
 
+    /// Alias for `Zeroizing<Key<Hmac<Sha512>>>` used to represent hmac sha512 key.
     pub type HmacSha512Key = Zeroizing<Key<Hmac<Sha512>>>;
 
+    /// Alias for `CtOutput<HmacSha512>` used to represent hmac sha512 output.
     pub type HmacSha512Output = CtOutput<HmacSha512>;
 
+    /// Alias for `Output<HmacSha512>` used to represent hmac sha512 bytes.
     pub type HmacSha512Bytes = Output<HmacSha512>;
 
+    /// Handles the new hmac sha512 key behavior for this component.
     pub fn new_hmac_sha512_key() -> HmacSha512Key {
         use crypto_common::Generate;
         Key::<HmacSha512>::generate().into()
     }
 
+    /// Performs the one-shot operation using the supplied key and input.
     pub fn oneshot(key: &HmacSha512Key, data: &[u8]) -> HmacSha512Output {
         use crypto_common::KeyInit;
 
@@ -271,6 +316,7 @@ pub mod hmac_s512 {
         hmac.finalize()
     }
 
+    /// Constructs a key from slice bytes.
     pub fn key_from_slice(bytes: &[u8]) -> Option<HmacSha512Key> {
         use crypto_common::KeySizeUser;
         // Key too short - too long.
@@ -284,40 +330,48 @@ pub mod hmac_s512 {
         }
     }
 
+    /// Returns the number of bytes required to represent a key.
     pub fn key_size() -> usize {
         use crypto_common::KeySizeUser;
         Hmac::<Sha512>::key_size()
     }
 }
 
+/// Provides aes128 behavior for the src component.
 pub mod aes128 {
     use aes;
     use crypto_common::Key;
     use zeroize::Zeroizing;
 
+    /// Alias for `Zeroizing<Key<aes::Aes128>>` used to represent aes128 key.
     pub type Aes128Key = Zeroizing<Key<aes::Aes128>>;
 
+    /// Returns the number of bytes required to represent a key.
     pub fn key_size() -> usize {
         use crypto_common::KeySizeUser;
         aes::Aes128::key_size()
     }
 
+    /// Constructs a key from slice bytes.
     pub fn key_from_slice(bytes: &[u8]) -> Option<Aes128Key> {
         Key::<aes::Aes128>::try_from(bytes)
             .ok()
             .map(|key| key.into())
     }
 
+    /// Constructs a key from bytes bytes.
     pub fn key_from_bytes(bytes: [u8; 16]) -> Aes128Key {
         Key::<aes::Aes128>::from(bytes).into()
     }
 
+    /// Creates a cryptographic key from the supplied key material.
     pub fn new_key() -> Aes128Key {
         use crypto_common::Generate;
         Key::<aes::Aes128>::generate().into()
     }
 }
 
+/// Provides aes128gcm behavior for the src component.
 pub mod aes128gcm {
     use aes::cipher::consts::U12;
     use aes::cipher::consts::U16;
@@ -328,27 +382,35 @@ pub mod aes128gcm {
 
     pub use crate::aes128::Aes128Key;
 
+    /// Alias for `aes_gcm::Aes128Gcm` used to represent aes128 gcm.
     pub type Aes128Gcm = aes_gcm::Aes128Gcm;
 
+    /// Alias for `aes_gcm::Nonce<U12>` used to represent aes128 gcm nonce.
     pub type Aes128GcmNonce = aes_gcm::Nonce<U12>;
+    /// Alias for `aes_gcm::Tag<U16>` used to represent aes128 gcm tag.
     pub type Aes128GcmTag = aes_gcm::Tag<U16>;
 
+    /// Handles the new nonce behavior for this component.
     pub fn new_nonce() -> Aes128GcmNonce {
         use crypto_common::Generate;
         Aes128GcmNonce::generate()
     }
 }
 
+/// Provides aes128kw behavior for the src component.
 pub mod aes128kw {
     pub use crypto_common::KeyInit;
     use hybrid_array::Array;
     use hybrid_array::sizes::U24;
 
+    /// Alias for `aes_kw::KwAes128` used to represent aes128 kw.
     pub type Aes128Kw = aes_kw::KwAes128;
 
+    /// Alias for `Array<u8, U24>` used to represent aes128 kw wrapped.
     pub type Aes128KwWrapped = Array<u8, U24>;
 }
 
+/// Provides aes256 behavior for the src component.
 pub mod aes256 {
     use aes;
     pub use aes::Aes256;
@@ -358,31 +420,41 @@ pub mod aes256 {
     use crypto_common::Key;
     use zeroize::Zeroizing;
 
+    /// Alias for `Zeroizing<Key<aes::Aes256>>` used to represent aes256 key.
     pub type Aes256Key = Zeroizing<Key<aes::Aes256>>;
+    /// Alias for `<aes::Aes256 as aes::cipher::BlockSizeUser>::BlockSize` used to represent aes256
+    /// block size.
     pub type Aes256BlockSize = <aes::Aes256 as aes::cipher::BlockSizeUser>::BlockSize;
+    /// Alias for `Array<u8, <aes::Aes256 as aes::cipher::BlockSizeUser>::BlockSize>` used to
+    /// represent aes256 block.
     pub type Aes256Block = Array<u8, <aes::Aes256 as aes::cipher::BlockSizeUser>::BlockSize>;
 
+    /// Returns the number of bytes required to represent a key.
     pub fn key_size() -> usize {
         use crypto_common::KeySizeUser;
         aes::Aes256::key_size()
     }
 
+    /// Constructs a key from slice bytes.
     pub fn key_from_slice(bytes: &[u8]) -> Option<Aes256Key> {
         Key::<aes::Aes256>::try_from(bytes)
             .ok()
             .map(|key| key.into())
     }
 
+    /// Constructs a key from bytes bytes.
     pub fn key_from_bytes(bytes: [u8; 32]) -> Aes256Key {
         Key::<aes::Aes256>::from(bytes).into()
     }
 
+    /// Creates a cryptographic key from the supplied key material.
     pub fn new_key() -> Aes256Key {
         use crypto_common::Generate;
         Key::<aes::Aes256>::generate().into()
     }
 }
 
+/// Provides aes256gcm behavior for the src component.
 pub mod aes256gcm {
     use aes::Aes256;
     use aes::cipher::consts::U12;
@@ -396,20 +468,27 @@ pub mod aes256gcm {
     pub use crate::aes256::Aes256Key;
 
     // Same as  AesGcm<Aes256, U12, U16>;
+    /// Alias for `aes_gcm::Aes256Gcm` used to represent aes256 gcm.
     pub type Aes256Gcm = aes_gcm::Aes256Gcm;
 
+    /// Alias for `AesGcm<Aes256, U16, U16>` used to represent aes256 gcm n16.
     pub type Aes256GcmN16 = AesGcm<Aes256, U16, U16>;
+    /// Alias for `aes_gcm::Nonce<U16>` used to represent aes256 gcm nonce16.
     pub type Aes256GcmNonce16 = aes_gcm::Nonce<U16>;
 
+    /// Alias for `aes_gcm::Nonce<U12>` used to represent aes256 gcm nonce.
     pub type Aes256GcmNonce = aes_gcm::Nonce<U12>;
+    /// Alias for `aes_gcm::Tag<U16>` used to represent aes256 gcm tag.
     pub type Aes256GcmTag = aes_gcm::Tag<U16>;
 
+    /// Handles the new nonce behavior for this component.
     pub fn new_nonce() -> Aes256GcmNonce {
         use crypto_common::Generate;
         Aes256GcmNonce::generate()
     }
 }
 
+/// Provides aes256cts behavior for the src component.
 pub mod aes256cts {
     use aes::cipher::Array;
     pub use aes::cipher::BlockModeDecrypt;
@@ -422,17 +501,22 @@ pub mod aes256cts {
 
     pub use crate::aes256::Aes256Key;
 
+    /// Alias for `cts::CbcCs3<aes::Aes256>` used to represent aes256 cts enc.
     pub type Aes256CtsEnc = cts::CbcCs3<aes::Aes256>;
+    /// Alias for `cts::CbcCs3<aes::Aes256>` used to represent aes256 cts dec.
     pub type Aes256CtsDec = cts::CbcCs3<aes::Aes256>;
 
+    /// Alias for `Array<u8, U16>` used to represent aes256 cts iv.
     pub type Aes256CtsIv = Array<u8, U16>;
 
+    /// Handles the new iv behavior for this component.
     pub fn new_iv() -> Aes256CtsIv {
         use crypto_common::Generate;
         Aes256CtsIv::generate()
     }
 }
 
+/// Provides aes256cbc behavior for the src component.
 pub mod aes256cbc {
     use aes::cipher::Array;
     pub use aes::cipher::BlockModeDecrypt;
@@ -445,16 +529,21 @@ pub mod aes256cbc {
     use crate::hmac_s256::HmacSha256;
     use crate::hmac_s256::HmacSha256Output;
 
+    /// Alias for `cbc::Encryptor<aes::Aes256>` used to represent aes256 cbc enc.
     pub type Aes256CbcEnc = cbc::Encryptor<aes::Aes256>;
+    /// Alias for `cbc::Decryptor<aes::Aes256>` used to represent aes256 cbc dec.
     pub type Aes256CbcDec = cbc::Decryptor<aes::Aes256>;
 
+    /// Alias for `Array<u8, U16>` used to represent aes256 cbc iv.
     pub type Aes256CbcIv = Array<u8, U16>;
 
+    /// Handles the new iv behavior for this component.
     pub fn new_iv() -> Aes256CbcIv {
         use crypto_common::Generate;
         Aes256CbcIv::generate()
     }
 
+    /// Handles the enc behavior for this component.
     pub fn enc<P>(
         key: &Aes256Key,
         data: &[u8],
@@ -478,6 +567,7 @@ pub mod aes256cbc {
         Ok((mac, iv, ciphertext))
     }
 
+    /// Handles the dec behavior for this component.
     pub fn dec<P>(
         key: &Aes256Key,
         mac: &HmacSha256Output,
@@ -507,16 +597,20 @@ pub mod aes256cbc {
     }
 }
 
+/// Provides aes256kw behavior for the src component.
 pub mod aes256kw {
     pub use crypto_common::KeyInit;
     use hybrid_array::Array;
     use hybrid_array::sizes::U40;
 
+    /// Alias for `aes_kw::KwAes256` used to represent aes256 kw.
     pub type Aes256Kw = aes_kw::KwAes256;
 
+    /// Alias for `Array<u8, U40>` used to represent aes256 kw wrapped.
     pub type Aes256KwWrapped = Array<u8, U40>;
 }
 
+/// Provides rsa behavior for the src component.
 pub mod rsa {
     pub use rand;
     pub use rsa::BoxedUint as BigUint;
@@ -530,25 +624,37 @@ pub mod rsa {
     pub use sha2::Sha256;
     pub use sha2::Sha384;
 
+    /// Sets the min bits bound or default used by this code.
     pub const MIN_BITS: usize = 2048;
 
+    /// Alias for `RsaPrivateKey` used to represent rs256 private key.
     pub type RS256PrivateKey = RsaPrivateKey;
+    /// Alias for `RsaPublicKey` used to represent rs256 public key.
     pub type RS256PublicKey = RsaPublicKey;
+    /// Alias for `Signature` used to represent rs256 signature.
     pub type RS256Signature = Signature;
+    /// Alias for `Sha256` used to represent rs256 digest.
     pub type RS256Digest = Sha256;
+    /// Alias for `VerifyingKey<Sha256>` used to represent rs256 verifying key.
     pub type RS256VerifyingKey = VerifyingKey<Sha256>;
+    /// Alias for `SigningKey<Sha256>` used to represent rs256 signing key.
     pub type RS256SigningKey = SigningKey<Sha256>;
 
+    /// Alias for `Sha384` used to represent rs384 digest.
     pub type RS384Digest = Sha384;
+    /// Alias for `VerifyingKey<Sha384>` used to represent rs384 verifying key.
     pub type RS384VerifyingKey = VerifyingKey<Sha384>;
+    /// Alias for `SigningKey<Sha384>` used to represent rs384 signing key.
     pub type RS384SigningKey = SigningKey<Sha384>;
 
+    /// Creates a cryptographic key from the supplied key material.
     pub fn new_key(bits: usize) -> rsa::errors::Result<RsaPrivateKey> {
         let bits = std::cmp::max(bits, MIN_BITS);
         let mut rng = rand::rng();
         RsaPrivateKey::new(&mut rng, bits)
     }
 
+    /// Handles the oaep sha256 encrypt behavior for this component.
     pub fn oaep_sha256_encrypt(
         public_key: &RsaPublicKey,
         data: &[u8],
@@ -558,6 +664,7 @@ pub mod rsa {
         public_key.encrypt(&mut rng, padding, data)
     }
 
+    /// Handles the oaep sha256 decrypt behavior for this component.
     pub fn oaep_sha256_decrypt(
         private_key: &RsaPrivateKey,
         ciphertext: &[u8],
@@ -567,14 +674,17 @@ pub mod rsa {
     }
 }
 
+/// Provides ec behavior for the src component.
 pub mod ec {
     pub use sec1::EcPrivateKey;
 }
 
+/// Provides ecdh behavior for the src component.
 pub mod ecdh {
     pub use elliptic_curve::ecdh::diffie_hellman;
 }
 
+/// Provides ecdh p256 behavior for the src component.
 pub mod ecdh_p256 {
     use elliptic_curve::FieldBytes;
     use elliptic_curve::PublicKey;
@@ -585,22 +695,31 @@ pub mod ecdh_p256 {
     use p256::NistP256;
     use sha2::Sha256;
 
+    /// Alias for `EphemeralSecret<NistP256>` used to represent ecdh p256 ephemeral secret.
     pub type EcdhP256EphemeralSecret = EphemeralSecret<NistP256>;
+    /// Alias for `SharedSecret<NistP256>` used to represent ecdh p256 shared secret.
     pub type EcdhP256SharedSecret = SharedSecret<NistP256>;
+    /// Alias for `PublicKey<NistP256>` used to represent ecdh p256 public key.
     pub type EcdhP256PublicKey = PublicKey<NistP256>;
+    /// Alias for `Sec1Point<NistP256>` used to represent ecdh p256 public sec1 point.
     pub type EcdhP256PublicSec1Point = Sec1Point<NistP256>;
+    /// Alias for `FieldBytes<NistP256>` used to represent ecdh p256 field bytes.
     pub type EcdhP256FieldBytes = FieldBytes<NistP256>;
 
+    /// Alias for `Hkdf<Sha256>` used to represent ecdh p256 hkdf.
     pub type EcdhP256Hkdf = Hkdf<Sha256>;
 
+    /// Alias for `Sha256` used to represent ecdh p256 digest.
     pub type EcdhP256Digest = Sha256;
 
+    /// Handles the new secret behavior for this component.
     pub fn new_secret() -> EcdhP256EphemeralSecret {
         use crypto_common::Generate;
         EcdhP256EphemeralSecret::generate()
     }
 }
 
+/// Provides ecdsa p256 behavior for the src component.
 pub mod ecdsa_p256 {
     use ecdsa::DigestAlgorithm;
     use ecdsa::Signature;
@@ -619,32 +738,47 @@ pub mod ecdsa_p256 {
     use p256::NistP256;
     use p256::ecdsa::DerSignature;
 
+    /// Alias for `<NistP256 as DigestAlgorithm>::Digest` used to represent ecdsa p256 digest.
     pub type EcdsaP256Digest = <NistP256 as DigestAlgorithm>::Digest;
 
+    /// Alias for `SecretKey<NistP256>` used to represent ecdsa p256 private key.
     pub type EcdsaP256PrivateKey = SecretKey<NistP256>;
+    /// Alias for `NonZeroScalar<NistP256>` used to represent ecdsa p256 non zero scalar.
     pub type EcdsaP256NonZeroScalar = NonZeroScalar<NistP256>;
 
+    /// Alias for `FieldBytes<NistP256>` used to represent ecdsa p256 field bytes.
     pub type EcdsaP256FieldBytes = FieldBytes<NistP256>;
+    /// Alias for `AffinePoint<NistP256>` used to represent ecdsa p256 affine point.
     pub type EcdsaP256AffinePoint = AffinePoint<NistP256>;
 
+    /// Alias for `PublicKey<NistP256>` used to represent ecdsa p256 public key.
     pub type EcdsaP256PublicKey = PublicKey<NistP256>;
 
+    /// Alias for `Array<u8, U32>` used to represent ecdsa p256 public coordinate.
     pub type EcdsaP256PublicCoordinate = Array<u8, U32>;
+    /// Alias for `Sec1Point<NistP256>` used to represent ecdsa p256 public sec1 point.
     pub type EcdsaP256PublicSec1Point = Sec1Point<NistP256>;
 
+    /// Alias for `SigningKey<NistP256>` used to represent ecdsa p256 signing key.
     pub type EcdsaP256SigningKey = SigningKey<NistP256>;
+    /// Alias for `VerifyingKey<NistP256>` used to represent ecdsa p256 verifying key.
     pub type EcdsaP256VerifyingKey = VerifyingKey<NistP256>;
 
+    /// Alias for `Signature<NistP256>` used to represent ecdsa p256 signature.
     pub type EcdsaP256Signature = Signature<NistP256>;
+    /// Alias for `DerSignature` used to represent ecdsa p256 der signature.
     pub type EcdsaP256DerSignature = DerSignature;
+    /// Alias for `SignatureBytes<NistP256>` used to represent ecdsa p256 signature bytes.
     pub type EcdsaP256SignatureBytes = SignatureBytes<NistP256>;
 
+    /// Creates a cryptographic key from the supplied key material.
     pub fn new_key() -> EcdsaP256PrivateKey {
         use crypto_common::Generate;
 
         EcdsaP256PrivateKey::generate()
     }
 
+    /// Constructs this value from a coords raw.
     pub fn from_coords_raw(x: &[u8], y: &[u8]) -> Option<EcdsaP256PublicKey> {
         let mut field_x = EcdsaP256FieldBytes::default();
         if x.len() != field_x.len() {
@@ -665,6 +799,7 @@ pub mod ecdsa_p256 {
     }
 }
 
+/// Provides ecdsa p384 behavior for the src component.
 pub mod ecdsa_p384 {
     use ecdsa::DigestAlgorithm;
     use ecdsa::Signature;
@@ -681,30 +816,43 @@ pub mod ecdsa_p384 {
     use p384::ecdsa::DerSignature;
     // use sha2::digest::consts::U32;
 
+    /// Alias for `<NistP384 as DigestAlgorithm>::Digest` used to represent ecdsa p384 digest.
     pub type EcdsaP384Digest = <NistP384 as DigestAlgorithm>::Digest;
 
+    /// Alias for `SecretKey<NistP384>` used to represent ecdsa p384 private key.
     pub type EcdsaP384PrivateKey = SecretKey<NistP384>;
 
+    /// Alias for `FieldBytes<NistP384>` used to represent ecdsa p384 field bytes.
     pub type EcdsaP384FieldBytes = FieldBytes<NistP384>;
+    /// Alias for `AffinePoint<NistP384>` used to represent ecdsa p384 affine point.
     pub type EcdsaP384AffinePoint = AffinePoint<NistP384>;
 
+    /// Alias for `PublicKey<NistP384>` used to represent ecdsa p384 public key.
     pub type EcdsaP384PublicKey = PublicKey<NistP384>;
 
     // pub type EcdsaP384PublicCoordinate = GenericArray<u8, U32>;
+    /// Alias for `Sec1Point<NistP384>` used to represent ecdsa p384 public sec1 point.
     pub type EcdsaP384PublicSec1Point = Sec1Point<NistP384>;
 
+    /// Alias for `SigningKey<NistP384>` used to represent ecdsa p384 signing key.
     pub type EcdsaP384SigningKey = SigningKey<NistP384>;
+    /// Alias for `VerifyingKey<NistP384>` used to represent ecdsa p384 verifying key.
     pub type EcdsaP384VerifyingKey = VerifyingKey<NistP384>;
 
+    /// Alias for `Signature<NistP384>` used to represent ecdsa p384 signature.
     pub type EcdsaP384Signature = Signature<NistP384>;
+    /// Alias for `DerSignature` used to represent ecdsa p384 der signature.
     pub type EcdsaP384DerSignature = DerSignature;
+    /// Alias for `SignatureBytes<NistP384>` used to represent ecdsa p384 signature bytes.
     pub type EcdsaP384SignatureBytes = SignatureBytes<NistP384>;
 
+    /// Creates a cryptographic key from the supplied key material.
     pub fn new_key() -> EcdsaP384PrivateKey {
         use crypto_common::Generate;
         EcdsaP384PrivateKey::generate()
     }
 
+    /// Constructs this value from a coords raw.
     pub fn from_coords_raw(x: &[u8], y: &[u8]) -> Option<EcdsaP384PublicKey> {
         let mut field_x = EcdsaP384FieldBytes::default();
         if x.len() != field_x.len() {
@@ -725,6 +873,7 @@ pub mod ecdsa_p384 {
     }
 }
 
+/// Provides ecdsa p521 behavior for the src component.
 pub mod ecdsa_p521 {
     use ecdsa::DigestAlgorithm;
     use ecdsa::Signature;
@@ -740,30 +889,43 @@ pub mod ecdsa_p521 {
     use p521::NistP521;
     use p521::ecdsa::DerSignature;
 
+    /// Alias for `<NistP521 as DigestAlgorithm>::Digest` used to represent ecdsa p521 digest.
     pub type EcdsaP521Digest = <NistP521 as DigestAlgorithm>::Digest;
 
+    /// Alias for `SecretKey<NistP521>` used to represent ecdsa p521 private key.
     pub type EcdsaP521PrivateKey = SecretKey<NistP521>;
 
+    /// Alias for `FieldBytes<NistP521>` used to represent ecdsa p521 field bytes.
     pub type EcdsaP521FieldBytes = FieldBytes<NistP521>;
+    /// Alias for `AffinePoint<NistP521>` used to represent ecdsa p521 affine point.
     pub type EcdsaP521AffinePoint = AffinePoint<NistP521>;
 
+    /// Alias for `PublicKey<NistP521>` used to represent ecdsa p521 public key.
     pub type EcdsaP521PublicKey = PublicKey<NistP521>;
 
     // pub type EcdsaP521PublicCoordinate = GenericArray<u8, U32>;
+    /// Alias for `Sec1Point<NistP521>` used to represent ecdsa p521 public sec1 point.
     pub type EcdsaP521PublicSec1Point = Sec1Point<NistP521>;
 
+    /// Alias for `SigningKey<NistP521>` used to represent ecdsa p521 signing key.
     pub type EcdsaP521SigningKey = SigningKey<NistP521>;
+    /// Alias for `VerifyingKey<NistP521>` used to represent ecdsa p521 verifying key.
     pub type EcdsaP521VerifyingKey = VerifyingKey<NistP521>;
 
+    /// Alias for `Signature<NistP521>` used to represent ecdsa p521 signature.
     pub type EcdsaP521Signature = Signature<NistP521>;
+    /// Alias for `DerSignature` used to represent ecdsa p521 der signature.
     pub type EcdsaP521DerSignature = DerSignature;
+    /// Alias for `SignatureBytes<NistP521>` used to represent ecdsa p521 signature bytes.
     pub type EcdsaP521SignatureBytes = SignatureBytes<NistP521>;
 
+    /// Creates a cryptographic key from the supplied key material.
     pub fn new_key() -> EcdsaP521PrivateKey {
         use crypto_common::Generate;
         EcdsaP521PrivateKey::generate()
     }
 
+    /// Constructs this value from a coords raw.
     pub fn from_coords_raw(x: &[u8], y: &[u8]) -> Option<EcdsaP521PublicKey> {
         let mut field_x = EcdsaP521FieldBytes::default();
         if x.len() != field_x.len() {
@@ -784,6 +946,7 @@ pub mod ecdsa_p521 {
     }
 }
 
+/// Provides nist sp800 108 kdf hmac sha256 behavior for the src component.
 pub mod nist_sp800_108_kdf_hmac_sha256 {
     use crypto_common::KeySizeUser;
     use digest::consts::*;
@@ -795,14 +958,18 @@ pub mod nist_sp800_108_kdf_hmac_sha256 {
 
     use crate::traits::Zeroizing;
 
+    /// Data carried by mock output operations.
     struct MockOutput;
 
     impl KeySizeUser for MockOutput {
+        /// Alias for `U32` used to represent key size.
         type KeySize = U32;
     }
 
+    /// Alias for `Hmac<Sha256>` used to represent hmac sha256.
     type HmacSha256 = Hmac<Sha256>;
 
+    /// Handles the derive key aes256 behavior for this component.
     pub fn derive_key_aes256(
         key_in: &[u8],
         label: &[u8],
@@ -824,10 +991,12 @@ pub mod nist_sp800_108_kdf_hmac_sha256 {
     }
 }
 
+/// Provides pkcs8 behavior for the src component.
 pub mod pkcs8 {
     pub use pkcs8::PrivateKeyInfo;
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     #[cfg(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")))]
@@ -840,6 +1009,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that sha256 basic.
     fn sha256_basic() {
         use crate::s256::*;
         use crate::traits::*;
@@ -856,6 +1026,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that hmac 256 basic.
     fn hmac_256_basic() {
         use crate::hmac_s256::*;
         use crate::traits::KeyInit;
@@ -875,6 +1046,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that hmac 512 basic.
     fn hmac_512_basic() {
         use cipher::KeyInit;
 
@@ -894,6 +1066,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that aes256gcm basic.
     fn aes256gcm_basic() {
         use crate::aes256;
         use crate::aes256gcm::*;
@@ -935,6 +1108,7 @@ mod tests {
         assert_eq!(buffer, b"test message, super cool");
     }
 
+    /// Checks that aes256cts basic.
     #[test]
     fn aes256cts_basic() {
         use crate::aes256;
@@ -966,6 +1140,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that aes256cbc basic.
     fn aes256cbc_basic() {
         use crate::aes256;
         use crate::aes256cbc::*;
@@ -992,6 +1167,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that aes256cbc hmac basic.
     fn aes256cbc_hmac_basic() {
         use crate::aes256;
         use crate::aes256cbc::block_padding;
@@ -1014,6 +1190,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that aes256kw basic.
     fn aes256kw_basic() {
         use crate::aes256;
         use crate::aes256kw::*;
@@ -1044,6 +1221,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that rsa basic.
     fn rsa_basic() {
         use crate::rsa::*;
         use crate::traits::*;
@@ -1081,6 +1259,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that ecdsa p256 basic.
     fn ecdsa_p256_basic() {
         use crate::ecdsa_p256::*;
         use crate::traits::*;
@@ -1114,6 +1293,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that ecdh p256 basic.
     fn ecdh_p256_basic() {
         use crate::ecdh_p256::*;
 
@@ -1137,6 +1317,7 @@ mod tests {
         all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
+    /// Checks that pkcs8 handling test.
     fn pkcs8_handling_test() {
         use pkcs8::PrivateKeyInfoRef;
 
@@ -1154,6 +1335,7 @@ mod tests {
         eprintln!("{priv_key_info:?}");
     }
 
+    /// Checks that rustls mtls basic.
     #[cfg(any(unix, windows))]
     #[test]
     fn rustls_mtls_basic() {

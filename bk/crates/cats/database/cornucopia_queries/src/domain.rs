@@ -34,6 +34,7 @@ impl<T: ToSql> ToSql for Domain<T> {
         postgres_types::ToSql::to_sql(&self.0, escape_domain(ty), out)
     }
 
+    /// Reports whether the peer accepted this extension or message.
     fn accepts(ty: &Type) -> bool
     where
         Self: Sized,
@@ -66,6 +67,7 @@ impl<'a, T: ToSql + Sync + 'a, A: ArraySql<Item = T>> ToSql for DomainArray<'a, 
         self.0.escape_domain_to_sql(ty, w)
     }
 
+    /// Reports whether the peer accepted this extension or message.
     fn accepts(ty: &Type) -> bool {
         match *ty.kind() {
             Kind::Array(ref member) => T::accepts(escape_domain(member)),
@@ -118,6 +120,7 @@ pub fn escape_domain_to_sql<T: ToSql>(
     )?;
     Ok(IsNull::No)
 }
+/// Handles the downcast behavior for this component.
 fn downcast(len: usize) -> Result<i32, Box<dyn Error + Sync + Send>> {
     if len > i32::MAX as usize {
         Err("value too large to transmit".into())

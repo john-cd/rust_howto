@@ -3,6 +3,7 @@
 //! TODO Reviewed ??-??-2026.
 //!
 //! The adapters encode private keys and certificates as base64-encoded DER.
+/// Provides pkeyb64 behavior for the serialise component.
 pub mod pkeyb64 {
     use base64::Engine as _;
     use base64::engine::general_purpose;
@@ -14,6 +15,7 @@ pub mod pkeyb64 {
 
     use crate::der::SecretDocument;
 
+    /// Handles the serialize behavior for this component.
     pub fn serialize<S>(key: &SecretDocument, ser: S) -> Result<S::Ok, S::Error>
     where
         S: Serializer,
@@ -23,6 +25,7 @@ pub mod pkeyb64 {
         ser.serialize_str(&s)
     }
 
+    /// Handles the deserialize behavior for this component.
     pub fn deserialize<'de, D>(des: D) -> Result<SecretDocument, D::Error>
     where
         D: Deserializer<'de>,
@@ -43,6 +46,7 @@ pub mod pkeyb64 {
     }
 }
 
+/// Provides x509b64 behavior for the serialise component.
 pub mod x509b64 {
     use base64::Engine as _;
     use base64::engine::general_purpose;
@@ -57,6 +61,7 @@ pub mod x509b64 {
     use crate::traits::EncodeDer;
     use crate::x509::Certificate;
 
+    /// Handles the cert to string behavior for this component.
     pub fn cert_to_string(cert: &Certificate) -> Result<String, crate::der::Error> {
         cert.to_der()
             .inspect_err(|err| {
@@ -65,6 +70,7 @@ pub mod x509b64 {
             .map(|der| general_purpose::URL_SAFE_NO_PAD.encode(der))
     }
 
+    /// Handles the serialize behavior for this component.
     pub fn serialize<S>(cert: &Certificate, ser: S) -> Result<S::Ok, S::Error>
     where
         S: Serializer,
@@ -78,6 +84,7 @@ pub mod x509b64 {
         ser.serialize_str(&s)
     }
 
+    /// Handles the deserialize behavior for this component.
     pub fn deserialize<'de, D>(des: D) -> Result<Certificate, D::Error>
     where
         D: Deserializer<'de>,
