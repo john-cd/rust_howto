@@ -15,9 +15,6 @@
 - [Operating systems - Windows](categories/os_windows-apis/index.md)
   - [Windows](categories/os_windows-apis/windows.md)
 
-- [Parsing](categories/parsing/index.md)
-
-
 - [Template Engines](categories/template-engine/index.md)
 
 - [Text Editors](categories/text-editors/index.md)
