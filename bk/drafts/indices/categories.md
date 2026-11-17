@@ -22,7 +22,7 @@
 | [![compression][cat~compression~badge]][cat~compression] | Algorithms for making data smaller. | [Compression](../categories/compression/index.md) |
 | [![computer-vision][cat~computer-vision~badge]][cat~computer-vision] | Comprehending the world from video or images. | - |
 | [![concurrency][cat~concurrency~badge]][cat~concurrency] | Implementing concurrent and parallel computation. | [Concurrency](../../src/categories/concurrency/index.md) |
-| [![config][cat~config~badge]][cat~config] | Configuration management for applications. | [Configuration](../categories/config/index.md) |
+| [![config][cat~config~badge]][cat~config] | Configuration management for applications. | [Configuration](../../src/categories/config/index.md) |
 | [![cryptography][cat~cryptography~badge]][cat~cryptography] | Algorithms for securing data. | [Cryptography](../categories/cryptography/index.md) |
 | [![cryptography::cryptocurrencies][cat~cryptography::cryptocurrencies~badge]][cat~cryptography::cryptocurrencies] | Digital currencies, wallets, and distributed ledgers. | - |
 | [![data-structures][cat~data-structures~badge]][cat~data-structures] | Rust implementations of particular ways of organizing data suited for specific purposes. | [Data Structures](../categories/data-structures/index.md) |

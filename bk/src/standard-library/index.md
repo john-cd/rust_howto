@@ -23,7 +23,7 @@ The table below lists stable modules of the Standard Library, highlights the mos
 | [**`std::collections`**][c~std::collections~docs]↗{{hi:std::collections}} | Collection types. Home of [`HashMap`][c~std::collections::HashMap~docs]↗, [`HashSet`][c~std::collections::HashSet~docs]↗ and others. | [[hashmaps | HashMap]], [[data-structures | Data Structures]] |
 | [**`std::convert`**][c~std::convert~docs]↗{{hi:std::convert}} | Traits for conversions between types: [`AsRef`][c~std::convert::AsRef~docs]↗, [`From`][c~std::convert::From~docs]↗ and others. | [[reference-to-reference_conversions | AsRef]] |
 | [**`std::default`**][c~std::default~docs]↗{{hi:std::default}} | The [`Default`][c~std::default::Default~docs]↗ trait for types with a default value. | [[conversion_traits | Conversion Traits]], [[automatic_trait_derivation | Derive]] |
-| [`std::env`][c~std::env~docs]↗{{hi:std::env}} | Inspection and manipulation of the process's environment. | [Environment Variables](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/config/environment_variables.md) |
+| [`std::env`][c~std::env~docs]↗{{hi:std::env}} | Inspection and manipulation of the process's environment. | [Environment Variables](../categories/config/environment_variables.md) |
 | [**`std::error`**][c~std::error~docs]↗{{hi:std::error}} | [`Error`][c~std::error::Error~docs]↗ Interfaces. | [[recoverable_error_handling | Error Handling]] |
 | [`std::f32`][c~std::f32~docs]↗{{hi:std::f32}} | Constants for the `f32` single-precision floating point type. | [[data_types | Data Types]] |
 | [`std::f64`][c~std::f64~docs]↗{{hi:std::f64}} | Constants for the `f64` double-precision floating point type. | [[data_types | Data Types]] |
