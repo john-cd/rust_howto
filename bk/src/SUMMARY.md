@@ -307,6 +307,9 @@
   - [Low-level System Calls](categories/os/low_level_system_calls.md)
   - [Operating Systems Written in Rust](categories/os/rust_os.md)
 
+- [Operating systems - Unix](categories/os_unix-apis/index.md)
+  - [Unix APIs](categories/os_unix-apis/unix.md)
+
 - [Images](categories/multimedia_images/index.md)
   - [Image Processing](categories/multimedia_images/images.md)
 

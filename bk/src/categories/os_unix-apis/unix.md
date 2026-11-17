@@ -22,7 +22,7 @@ Check the crate's target support and feature flags because Unix does not mean ev
 
 {{#badges nix os::unix-apis="Unix APIs"}}
 
-[`nix`][c~nix~docs]↗{{hi:nix}} provides bindings to the various *nix system [functions][p~functions] (Unix, Linux, MacOS, etc.).
+[`nix`][c~nix~docs]↗{{hi:nix}} provides bindings to APIs on Unix-like systems, including Linux, macOS, and the BSDs. Its target support and available operations vary by platform.
 
 Use `nix` when its API and enabled features match the required interface. Its API surface and supported targets differ from `rustix`; review the crate documentation and target-specific behavior before choosing between them. Avoid raw syscalls unless neither `std` nor a maintained wrapper exposes the required operation.
 
@@ -32,10 +32,10 @@ Use `nix` when its API and enabled features match the required interface. Its AP
 
 ## Related Topics {#related-topics .skip}
 
-- [[os | Operating System]] introduces portable operating-system services.
-- [[low_level_system_calls | Low-level system calls]] compares standard-library, wrapper, and C-library interfaces.
-- [[windows | Windows APIs]] covers Windows-specific bindings.
-- [[generate_ffi_bindings | FFI Bindings]] covers bindings to foreign libraries.
+- [Operating Systems](../os/index.md) introduces portable operating-system services.
+- [Low-level System Calls](../os/low_level_system_calls.md) compares standard-library, wrapper, and C-library interfaces.
+- [Rust Windows APIs](https://doc.rust-lang.org/std/os/windows/) covers Windows-specific bindings.
+- [The Rust Reference: External blocks](https://doc.rust-lang.org/reference/items/external-blocks.html) covers declaring foreign functions and types.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
