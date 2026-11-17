@@ -13,17 +13,6 @@
 
 - [Caching](categories/caching/index.md)
 
-- [Command-line Interface](categories/command-line-interface/index.md)
-  - [Argument Parsing](categories/command-line-interface/argument_parsing.md)
-  - [ANSI Terminal](categories/command-line-interface/ansi_terminal.md)
-  - [Terminal User Interfaces](categories/command-line-interface/tui.md)
-  - [User Interaction](categories/command-line-interface/user_interaction.md)
-
-- [Command-line Utilities](categories/command-line-utilities/index.md)
-  - [Filesystem](categories/command-line-utilities/filesystem_cli.md)
-  - [Networking](categories/command-line-utilities/networking_cli.md)
-  - [Shells](categories/command-line-utilities/shells.md)
-
 - [Compression](categories/compression/index.md)
 
 - [Cryptography](categories/cryptography/index.md)

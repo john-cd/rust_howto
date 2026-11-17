@@ -45,7 +45,7 @@ The Range header is defined in [`RFC7233`][ietf~http-range-rfc7233]↗{{hi:RFC-7
 - [[requests | Make HTTP Requests]].
 - [[server | HTTP Server]].
 - [[filesystem | Filesystem]].
-- [[command-line-interface | Command Line Interface]] for progress bars with `indicatif`.
+- [Command-line Interface](../../../src/categories/command-line-interface/index.md) for progress bars with `indicatif`.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

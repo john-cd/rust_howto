@@ -64,6 +64,38 @@
 
 {{#include ../categories/caching/in_memory_cache.incl.md}}
 
+## Command-line Interface
+
+### Argument Parsing
+
+{{#include ../categories/command-line-interface/argument_parsing.incl.md}}
+
+### ANSI Terminal
+
+{{#include ../categories/command-line-interface/ansi_terminal.incl.md}}
+
+### Terminal User Interfaces
+
+{{#include ../categories/command-line-interface/tui.incl.md}}
+
+### User Interaction
+
+{{#include ../categories/command-line-interface/user_interaction.incl.md}}
+
+## Command-line Utilities
+
+### Filesystem Utilities
+
+{{#include ../categories/command-line-utilities/filesystem_examples.incl.md}}
+
+### Networking Utilities
+
+{{#include ../categories/command-line-utilities/networking_examples.incl.md}}
+
+### Shells and Related Utilities
+
+{{#include ../categories/command-line-utilities/shells_examples.incl.md}}
+
 ## Compression
 
 ### Compression
