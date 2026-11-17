@@ -13,13 +13,13 @@ use url::Url;
 
 /// Parses a URL and checks its scheme, host and port.
 fn main() -> Result<(), ParseError> {
-    let s = "ftp://rust-lang.org/examples";
+    let s = "https://rust-lang.org/examples";
 
     let url = Url::parse(s)?;
 
-    assert_eq!(url.scheme(), "ftp");
+    assert_eq!(url.scheme(), "https");
     assert_eq!(url.host(), Some(Host::Domain("rust-lang.org")));
-    assert_eq!(url.port_or_known_default(), Some(21));
+    assert_eq!(url.port_or_known_default(), Some(443));
     println!("The origin is as expected!");
 
     Ok(())

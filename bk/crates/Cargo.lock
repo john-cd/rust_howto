@@ -24470,8 +24470,11 @@ version = "0.1.2"
 dependencies = [
  "ammonia",
  "anyhow",
+ "bytes",
  "clap",
  "http 1.5.0",
+ "http-body",
+ "http-body-util",
  "lazy_static",
  "mime",
  "mime_guess",

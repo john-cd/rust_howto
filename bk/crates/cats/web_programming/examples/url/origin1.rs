@@ -14,13 +14,13 @@ use url::Url;
 
 /// Parses a URL and compares its origin with the expected one.
 fn main() -> Result<()> {
-    let s = "ftp://rust-lang.org/examples";
+    let s = "https://rust-lang.org/examples";
 
     let url = Url::parse(s)?;
 
-    let expected_scheme = "ftp".to_owned();
+    let expected_scheme = "https".to_owned();
     let expected_host = Host::Domain("rust-lang.org".to_owned());
-    let expected_port = 21;
+    let expected_port = 443;
     let expected = Origin::Tuple(expected_scheme, expected_host, expected_port);
 
     let origin = url.origin();

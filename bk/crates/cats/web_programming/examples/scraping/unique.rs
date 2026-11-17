@@ -24,10 +24,18 @@ fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
     lazy_static! {
         static ref WIKI_REGEX: Regex = Regex::new(
             r"(?x)
-        /// Matches Wikipedia article URLs in scraped text.
-                \[\[(?P<internal>[^\[\]|]*)[^\[\]]*\]\]    # internal links
+                \[\[
+                    (?P<internal> [^\[\]|]+ )
+                    (?: \| [^\[\]]* )?
+                \]\]
                 |
-                (url=|URL\||\[)(?P<external>http.*?)[\x20|}] # external links
+                \[
+                    (?P<external> https?:// [^\s\]]+ )
+                    (?: \s [^\]]* )?
+                \]
+                |
+                (?: url= | URL\| )
+                (?P<url_external> https?:// [^\s|}]+ )
             "
         )
         .expect("the fixed MediaWiki link regex is valid");
@@ -35,10 +43,15 @@ fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
 
     let links: HashSet<_> = WIKI_REGEX
         .captures_iter(content)
-        .map(|c| match (c.name("internal"), c.name("external")) {
-            (Some(val), None) => Cow::from(val.as_str().to_lowercase()),
-            (None, Some(val)) => Cow::from(val.as_str()),
-            _ => unreachable!(),
+        .filter_map(|captures| {
+            if let Some(internal) = captures.name("internal") {
+                Some(Cow::from(internal.as_str().to_lowercase()))
+            } else {
+                captures
+                    .name("external")
+                    .or_else(|| captures.name("url_external"))
+                    .map(|external| Cow::from(external.as_str()))
+            }
         })
         .collect();
 

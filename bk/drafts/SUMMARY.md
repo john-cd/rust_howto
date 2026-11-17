@@ -86,12 +86,6 @@
   - [Language Server Protocol](categories/text-editors/language_server_protocol.md)
 
 
-- [Web Programming](categories/web-programming/index.md)
-  - [HTTP Types and Interfaces](categories/web-programming/http_types_and_interfaces.md)
-  - [Extracting Links](categories/web-programming/scraping.md)
-  - [URLs](categories/web-programming/url.md)
-  - [Media Types](categories/web-programming/mime.md)
-  - [Sanitize HTML](categories/web-programming/html_sanitization.md)
 
 - [Web Programming - HTTP Clients](categories/web-programming_http-client/index.md)
   - [HTTP clients](categories/web-programming_http-client/http_clients.md)

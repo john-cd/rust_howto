@@ -260,6 +260,13 @@
 
 - [Number Formatting](categories/value-formatting/number_formatting.md)
 
+- [Web Programming](categories/web-programming/index.md)
+  - [Extracting Links](categories/web-programming/scraping.md)
+  - [HTTP Types and Interfaces](categories/web-programming/http_types_and_interfaces.md)
+  - [Media Types](categories/web-programming/mime.md)
+  - [Sanitize HTML](categories/web-programming/html_sanitization.md)
+  - [Uniform Resource Locator](categories/web-programming/url.md)
+
 - [WebSockets](categories/web-programming_websocket/index.md)
   - [Echo Client and Server](categories/web-programming_websocket/websocket.md)
 
