@@ -23,10 +23,10 @@ cargo test -p text_processing --example string_parsing
 
 ## Related Topics {#related-topics .skip}
 
-- [[parsing | Parsing]].
-  - [[parse | Date and Time Parsing]].
-  - Command-line [[argument_parsing | Argument Parsing]].
-- [[strings | Strings]].
+- [Parsing](../parsing/index.md).
+  - [Date and Time Parsing](../date-and-time/parse.md).
+  - Command-line argument parsing.
+- [Strings](../data-structures/strings.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

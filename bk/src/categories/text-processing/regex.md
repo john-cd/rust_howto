@@ -4,7 +4,7 @@
 
 {{#include regex.incl.md}}
 
-Use [`regex`](https://docs.rs/regex/latest/regex/) to extract patterned text and rewrite matches. Compile a pattern once when reusing it. Prefer string methods for literal prefixes, suffixes, and delimiters.
+Use [`regex`][c~regex~docs]↗{{hi:regex}} to extract patterned text and rewrite matches. Compile a pattern once when reusing it. The crate guarantees linear-time matching and omits features that need backtracking, such as look-around and backreferences. Use [`fancy-regex`][c~fancy-regex~docs]↗{{hi:fancy-regex}} only when those features are required, and bound input size because backtracking can take much longer on adversarial text. Prefer string methods for literal prefixes, suffixes, and delimiters.
 
 ## Extract a list of Unique #hashtags from a Text {#extract-a-list-of-unique-hashtags-from-a-text}
 
@@ -45,6 +45,51 @@ The method [`regex::Regex::replace_all`][c~regex::Regex::replace_all~docs]↗{{h
 {{#include ../../../crates/cats/text_processing/examples/regex/replace.rs:example}}
 ```
 
+## Verify and Extract Login from an Email Address {#verify-and-extract-login-from-an-email-address}
+
+[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![lazy_static][c~lazy_static~docs~badge]][c~lazy_static~docs]{{hi:lazy_static}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+
+Extracts the login before `@` from a simple `login@domain` shape. This pattern rejects whitespace and requires a non-empty domain, but it is not a full email-address validator; use a confirmation flow when an address must be verified.
+
+```rust,editable
+{{#include ../../../crates/cats/text_processing/examples/regex/email.rs:example}}
+```
+
+## Filter a Log File by Matching Multiple Regular Expressions {#filter-a-log-file-by-matching-multiple-regular-expressions}
+
+[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+
+Reads `temp/application.log` and prints lines containing a version, an IP address followed by port 443, or a warning. A [`regex::RegexSetBuilder`][c~regex::RegexSetBuilder~docs]↗{{hi:regex::RegexSetBuilder}} combines patterns and tests them in one pass. The example test creates the log fixture; to run the command manually, create that file first. Raw string literals keep patterns with backslashes readable.
+
+```rust,editable
+{{#include ../../../crates/cats/text_processing/examples/regex/filter_log.rs:example}}
+```
+
+## Use Regular Expressions with Back-references and Lookarounds {#fancy-regex}
+
+{{#badges fancy-regex text-processing="Text processing"}}
+
+The standard `regex` crate does not support backtracking features such as backreferences and look-arounds. Use [`fancy-regex`][c~fancy-regex~docs]↗{{hi:fancy-regex}} when a pattern requires them. Backtracking can take much longer than a linear-time regex, so bound the input and test patterns against worst-case data.
+
+```rust,editable
+{{#include ../../../crates/cats/text_processing/examples/regex/fancy_regex.rs:example}}
+```
+
+## Longer Regex Example {#longer-regex-example}
+
+[![regex][c~regex~docs~badge]][c~regex~docs]{{hi:regex}} [![regex~repo][c~regex~repo~badge]][c~regex~repo] [![cat~text-processing][cat~text-processing~badge]][cat~text-processing]{{hi:Text processing}}
+
+This example parses Markdown links and images with several regular expressions. It demonstrates captures, replacement, and splitting; for general Markdown input, use a Markdown parser because regex patterns do not model nested syntax.
+
+```rust,editable
+{{#include ../../../crates/cats/text_processing/examples/regex/regex.rs:example}}
+```
+
+## Generate Patterns or Choose a Lower-Level Engine
+
+- [`grex`][c~grex~repo]↗ proposes regular expressions from sample strings. Test the result against inputs that should fail as well as inputs that should match.
+- [`regex-automata`][c~regex-automata~docs]↗ exposes lower-level matching engines. Use it when you need explicit control of engine configuration or multi-pattern searches.
+
 Run these Cargo examples from `bk/crates` (external crates are required):
 
 ```sh
@@ -60,6 +105,7 @@ cargo test -p text_processing --example regex replace::
 
 - [Strings](../data-structures/strings.md).
 - [Unicode text measurements](unicode.md).
+- [String search and fuzzy matching](string_search.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

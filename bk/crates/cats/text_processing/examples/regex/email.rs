@@ -15,7 +15,6 @@ fn extract_login(input: &str) -> Option<&str> {
     lazy_static! {
         static ref RE: Regex = Regex::new(
             r"(?x)
-        /// Matches the email address format demonstrated by this example.
             ^(?P<login>[^@\s]+)@
             ([[:word:]]+\.)*
             [[:word:]]+$
