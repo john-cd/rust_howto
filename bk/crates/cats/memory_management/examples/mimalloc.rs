@@ -8,17 +8,17 @@
 //!
 //! Add to your `Cargo.toml`:
 //! ```toml
-//! mimalloc = "0.1.46" # Or latest
+//! mimalloc = "0.1.52"
 //! ```
 //!
 //! A C compiler is required.
 //!
-//! Using secure mode adds guard pages, randomized allocation, encrypted free
-//! lists, etc. The performance penalty is usually around 10%.
+//! The optional `secure` feature enables additional hardening, with a
+//! workload-dependent performance cost.
 //!
 //! ```toml
 //! [dependencies]
-//! mimalloc = { version = "*", features = ["secure"] }
+//! mimalloc = { version = "0.1.52", features = ["secure"] }
 //! ```
 
 use mimalloc::MiMalloc;

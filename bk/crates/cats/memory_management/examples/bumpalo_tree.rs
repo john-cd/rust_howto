@@ -19,10 +19,10 @@ struct Node<'bump> {
     /// Key used to find or update the cached value.
     key: i32,
 
-    /// Optional left used by node; `None` means the value is not configured or unavailable.
+    /// The left subtree, if present.
     left: Option<&'bump Self>,
 
-    /// Optional right used by node; `None` means the value is not configured or unavailable.
+    /// The right subtree, if present.
     right: Option<&'bump Self>,
 }
 

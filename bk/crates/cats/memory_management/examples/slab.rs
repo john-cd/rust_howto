@@ -3,9 +3,8 @@
 // ANCHOR: example
 //! Demonstrates using `slab` for pre-allocated storage.
 //!
-//! `slab` provides a slab allocator - a pre-allocated pool of memory
-//! for a single data type. This avoids repeated heap allocations and
-//! reduces memory fragmentation.
+//! `slab` stores one value type in indexed slots and reuses a slot after its
+//! value is removed. Use `with_capacity` to reserve slots up front.
 //!
 //! Add to your `Cargo.toml`:
 //! ```toml

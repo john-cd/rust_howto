@@ -20,7 +20,7 @@ cargo check --package memory_management --examples
 cargo test --package memory_management
 ```
 
-Code examples correspond to chapters in `bk/src/categories/memory_management` or related book sections.
+Code examples correspond to chapters in `bk/src/categories/memory-management` or related book sections.
 
 ## NOTES
 
