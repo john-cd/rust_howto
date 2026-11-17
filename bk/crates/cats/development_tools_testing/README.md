@@ -26,4 +26,4 @@ cargo check --package development_tools_testing --examples
 cargo test --package development_tools_testing
 ```
 
-Code examples correspond to chapters in `bk/src/categories/development_tools_testing` or related book sections.
+Code examples correspond to chapters in `bk/src/categories/development-tools_testing` or related book sections.
