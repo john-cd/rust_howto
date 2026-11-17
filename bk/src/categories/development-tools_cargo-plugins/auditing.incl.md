@@ -6,4 +6,6 @@
 | [Embed the Exact Crate Versions in Your Rust Executable for Auditability][ex~development-tools_cargo-plugins~cargo-auditable] | {{#crate cargo-auditable}} | {{#categories development-tools::cargo-plugins="Cargo plugins"}} |
 | [List the license(s) of Dependencies][ex~development-tools_cargo-plugins~cargo-license] | {{#crate cargo-license}} | {{#categories development-tools::cargo-plugins="Cargo plugins"}} |
 | [`cargo deny`][ex~development-tools_cargo-plugins~cargo-deny] | {{#crate cargo-deny}} | {{#categories development-tools::cargo-plugins="Cargo plugins"}} |
+| [Review Dependency Supply Chains with `cargo vet` and `cargo-crev`][ex~development-tools_cargo-plugins~cargo-vet] | | {{#categories development-tools::cargo-plugins="Cargo plugins"}} |
+| [Find Unsafe Code and Unused Dependencies][ex~development-tools_cargo-plugins~dependency-analysis] | {{#crate cargo-geiger}} {{#crate cargo-machete}} {{#crate cargo-udeps}} | {{#categories development-tools::cargo-plugins="Cargo plugins"}} |
 | [Generate a CycloneDX Software Bill of Materials][ex~development-tools_cargo-plugins~cargo-cyclonedx] | {{#crate cargo-cyclonedx}} | {{#categories development-tools::cargo-plugins="Cargo plugins"}} |
