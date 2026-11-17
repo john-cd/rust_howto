@@ -12,10 +12,6 @@
 
 - [Graphics](categories/graphics/index.md)
 
-- [Hardware Support](categories/hardware-support/index.md)
-  - [Processor](categories/hardware-support/processor.md)
-  - [Peripherals](categories/hardware-support/peripherals.md)
-
 - [Network Programming](categories/network-programming/index.md)
   - [Server](categories/network-programming/server.md)
   - [Reverse Proxy](categories/network-programming/reverse_proxy.md)

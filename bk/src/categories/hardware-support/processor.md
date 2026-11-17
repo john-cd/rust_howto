@@ -17,7 +17,7 @@ Use [`std::thread::available_parallelism`][c~std::thread~docs]↗{{hi:std::threa
 
 For vendor, model, cache, or instruction-set inventory on x86 and x86-64, [`raw-cpuid`][c~raw-cpuid~docs]↗{{hi:raw-cpuid}} can read CPUID data. It is architecture-specific and does not replace the runtime feature-detection check required before calling an architecture-specific intrinsic. CPU identification is not required for ordinary application logic.
 
-### Check the Number of Logical cpu Cores {#check-number-of-logical-cpu-cores}
+### Check the Number of Logical CPU Cores {#check-number-of-logical-cpu-cores}
 
 {{#badges num_cpus}} {{hi:Cpus}} {{hi:Cores}} {{hi:Cpu}} {{#categories hardware-support="Hardware support"}} {{hi:Logical cpu cores}}
 
@@ -33,7 +33,7 @@ When distributing one binary to several CPUs, keep a portable path and select a 
 
 ### Inline Assembly {#inline-assembly .skip}
 
-Rust supports inline [assembly][p~assembly] through the `asm!` macro. Assembly is architecture-specific and bypasses many compiler guarantees, so use it only when a supported intrinsic or library cannot express a measured requirement. Keep it in a small, documented boundary and provide a portable implementation where practical.
+Rust supports inline [assembly](../development-tools_profiling/assembly.md) through the `asm!` macro. Assembly is architecture-specific and bypasses many compiler guarantees, so use it only when a supported intrinsic or library cannot express a measured requirement. Keep it in a small, documented boundary and provide a portable implementation where practical.
 
 ### Compiler Intrinsics {#compiler-intrinsics .skip}
 
@@ -72,7 +72,7 @@ All three implementations use the common prefix when the input lengths differ. T
 
 When SIMD pays off:
 
-- SIMD helps on long, contiguous numeric loops. Measure with [`criterion`][c~criterion~docs]↗{{hi:criterion}} before and after.
+- SIMD helps on long, contiguous numeric loops. Measure with [Criterion](../development-tools_profiling/benchmarking.md) before and after.
 - SIMD changes the order of floating-point additions, so results can differ from the scalar version in the last bits. The example's fixtures use small integers, which `f32` represents exactly.
 - Handle `NaN` and infinity deliberately; lane-wise operations propagate them without any check.
 - WebAssembly has its own `simd128` target feature, enabled at compile time rather than detected at run time.
@@ -81,37 +81,35 @@ When SIMD pays off:
 
 ### Atomic Operations {#atomic-operations .skip}
 
-See [[atomics | Atomics]].
+See [Atomics](../concurrency/atomics.md).
 
 ### Profiling {#profiling .skip}
 
 Profiling tools help identify CPU-related performance issues.
 
-`cargo flamegraph`, [`perf`][c~perf~docs]↗{{hi:perf}} (Linux) help identify performance bottlenecks in your code, which can be related to CPU usage.
+`perf` on Linux and tools such as `cargo flamegraph` help identify performance bottlenecks. See [Profiling](../development-tools_profiling/index.md).
 
-See [Development Tools - Profiling](../../../src/categories/development-tools_profiling/index.md) and [Memory Usage Analysis](../../../src/categories/development-tools_profiling/memory_usage_analysis.md).
+For memory-related bottlenecks, see [Memory Usage Analysis](../development-tools_profiling/memory_usage_analysis.md).
 
 ### Concurrency and Multithreading (Related to CPU Utilization) {#concurrency-and-multithreading .skip}
 
-Concurrency and multithreading allow the uses of multiple CPU cores.
+Concurrency and multithreading can use multiple CPU cores when the work can be divided safely.
 
-`std::thread`: (Standard library) For creating and managing threads.
-[`rayon`][c~rayon~docs]↗{{hi:rayon}}: A [data parallelism][p~data-parallelism] library that makes it easy to parallelize computations.
-[`tokio`][c~tokio~docs]↗{{hi:tokio}}: An [asynchronous][p~asynchronous] runtime for writing concurrent applications.
+[`std::thread`][c~std::thread~docs]↗ creates and manages operating-system threads. [`rayon`][c~rayon~docs]↗ simplifies [data-parallel work](../concurrency/data_parallelism.md); [`tokio`][c~tokio~docs]↗ is an [asynchronous runtime](../asynchronous/index.md) for I/O-bound tasks.
 
-See [[concurrency | Concurrency]].
+See [Concurrency](../concurrency/index.md).
 
 ## Memory Model {#memory-model .skip}
 
-Understanding the CPU's memory model is important for writing correct concurrent code. See [[memory-management | Memory Management]].
+Understanding the CPU memory model is important for correct concurrent code. See [Atomics](../concurrency/atomics.md) and [Memory Management](../memory-management/index.md).
 
 ### Operating System Interaction {#operating-system-interaction .skip}
 
-System calls are used to interact with the operating system, which in turn interacts with the CPU. See [[os | OS]].
+System calls let programs request services from the operating system. For platform-specific APIs, see the Rust documentation for [`std::os::unix`](https://doc.rust-lang.org/std/os/unix/index.html) and [`std::os::windows`](https://doc.rust-lang.org/std/os/windows/index.html).
 
 ### Embedded Systems Programming {#embedded-systems-programming .skip}
 
-In embedded systems, we often have more direct access to CPU features and peripherals. See the [Embedded][p~embedded] Systems section for relevant crates.
+Embedded systems expose CPU features and peripherals through board or chip support crates. Start with the [Embedded Rust Book](https://docs.rust-embedded.org/book/).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
