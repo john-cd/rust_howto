@@ -8,6 +8,7 @@
 [ex~data-structures~btreeset]: b-trees.md#btreeset
 [ex~data-structures~custom-hash-function]: hashmaps.md#custom-hash-function
 [ex~data-structures~custom-key-type]: hashmaps.md#custom-key-type
+[ex~data-structures~collection-conversions]: index.md#collection-conversions
 [ex~data-structures~elsa-frozen-vec]: index.md#elsa-frozen-vec
 [ex~data-structures~fast-hashmap]: hashmaps.md#fast-hashmap
 [ex~data-structures~fixedbitset]: bit_arrays.md#fixedbitset

@@ -9,6 +9,7 @@ This crate contains code examples for the **Data Structures** category on crates
 - **Binaryheap** (`examples/binaryheap/`): Demonstrates concepts like `binaryheap`, `priority_queue`.
 - **Bitfield** (`examples/bitfield/`): Demonstrates concepts like `bitflags`, `bitvec`, `fixedbitset`, `flagset`, `roaring`.
 - **Bloomfilter** (`examples/bloomfilter/`): Demonstrates concepts like `bloomfilter`.
+- **Collection conversions** (`examples/collection_conversions/`): Converts arrays and vectors to sets and maps using iterators.
 - **Btrees** (`examples/btrees/`): Demonstrates concepts like `btreemap`, `btreeset`.
 - **Elsa** (`examples/elsa/`): Demonstrates stable references in append-only `FrozenVec` and `FrozenMap` collections.
 - **Graph** (`examples/graph/`): Demonstrates concepts like `petgraph`.

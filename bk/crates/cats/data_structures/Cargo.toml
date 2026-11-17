@@ -37,6 +37,11 @@ path = "examples/bloomfilter/main.rs"
 test = true
 
 [[example]]
+name = "collection_conversions"
+path = "examples/collection_conversions/main.rs"
+test = true
+
+[[example]]
 name = "btrees"
 path = "examples/btrees/main.rs"
 test = true

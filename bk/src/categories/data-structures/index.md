@@ -70,6 +70,16 @@ Start with the operation that dominates your workload: indexing for `Vec`, work 
 
 {{#include unique_identifiers.incl.md}}
 
+## Convert Between Collection Types {#collection-conversions}
+
+Most standard collection conversions use iterators and `collect`. For example, collect an array or vector into a `HashSet` to remove duplicates, or collect key-value pairs into a `HashMap`. `HashMap` and `HashSet` iteration order is unspecified; sort values when output order matters.
+
+{{#include collection_conversions.incl.md}}
+
+```rust,editable,noplayground
+{{#include ../../../crates/cats/data_structures/examples/collection_conversions/main.rs:example}}
+```
+
 ## Perfect Hash Maps
 
 The [`phf`][c~phf~docs]↗{{hi:phf}} crate generates maps and sets for keys known at compile time. It supports `Map`, `Set`, `OrderedMap`, and `OrderedSet`, with corresponding `phf_map!`, `phf_set!`, `phf_ordered_map!`, and `phf_ordered_set!` macros. The generated lookup tables need no runtime construction.
