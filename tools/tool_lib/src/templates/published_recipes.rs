@@ -135,6 +135,7 @@ pub fn collect_published_recipe_links(book_root: impl AsRef<Path>) -> Result<Rec
         .collect())
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use std::fs;

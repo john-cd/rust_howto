@@ -36,6 +36,7 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
     cmdargs
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;

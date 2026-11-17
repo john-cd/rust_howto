@@ -71,12 +71,14 @@ static RUST_FENCE: LazyLock<Regex> = LazyLock::new(|| {
         .expect("the Markdown fence regex is valid")
 });
 
+/// Data for cargo metadata operations, including packages.
 #[derive(Debug, Deserialize)]
 struct CargoMetadata {
     /// Collection of packages values consumed by cargo metadata operations.
     packages: Vec<CargoPackage>,
 }
 
+/// Data for cargo package operations, including name and manifest path.
 #[derive(Debug, Deserialize)]
 struct CargoPackage {
     /// Display label used to distinguish this cargo package from other entries.
@@ -89,6 +91,7 @@ struct CargoPackage {
     targets: Vec<CargoTarget>,
 }
 
+/// Data for cargo target operations, including name and kind.
 #[derive(Debug, Deserialize)]
 struct CargoTarget {
     /// Display label used to distinguish this cargo target from other entries.
@@ -109,6 +112,7 @@ struct CargoTarget {
     required_features: Vec<String>,
 }
 
+/// Data for target index operations, including record and tested.
 #[derive(Clone, Debug)]
 struct TargetIndex {
     /// Record value.
@@ -118,6 +122,8 @@ struct TargetIndex {
     tested: bool,
 }
 
+/// Context passed through module visit context operations, retaining source path and target
+/// identity.
 #[derive(Clone, Debug)]
 struct ModuleVisitContext {
     /// Source path value.
@@ -136,6 +142,7 @@ struct ModuleVisitContext {
     conditions: Vec<String>,
 }
 
+/// State for scan state operations that tracks repo root and report.
 #[derive(Debug)]
 struct ScanState {
     /// Repo root value.
@@ -169,6 +176,7 @@ struct ScanState {
     example_paths: Vec<String>,
 }
 
+/// Data for include options operations, including chapter path and source path.
 #[derive(Debug)]
 struct IncludeOptions<'a> {
     /// Chapter path value.

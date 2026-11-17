@@ -43,6 +43,7 @@ pub(super) fn get_cmd(matches: &ArgMatches) -> Option<CmdArgs> {
     badge
 }
 
+/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
     use super::*;
