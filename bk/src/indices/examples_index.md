@@ -608,15 +608,6 @@
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
-{{#include ../categories/parser-implementations/programming_languages.incl.md}}
-{{#include ../categories/parser-implementations/yaml.incl.md}}
-{{#include ../categories/parser-implementations/xml.incl.md}}
-{{#include ../categories/parser-implementations/toml.incl.md}}
-{{#include ../categories/parser-implementations/markdown.incl.md}}
-{{#include ../categories/parser-implementations/json.incl.md}}
-{{#include ../categories/parser-implementations/ini.incl.md}}
-{{#include ../categories/parser-implementations/html.incl.md}}
-## Parser Implementations
 {{#include ../categories/text-processing/other_strings.incl.md}}
 {{#include ../categories/text-processing/diffing.incl.md}}
 {{#include ../categories/text-processing/syntax_highlighting.incl.md}}
