@@ -166,7 +166,10 @@ impl AuthPubKey {
 /// Data carried by z public key operations.
 #[repr(transparent)]
 #[derive(Clone, PartialEq, Eq, Hash)]
-pub struct ZPublicKey(RsaPublicKey);
+pub struct ZPublicKey(
+    /// RSA public key used to verify peer identity.
+    RsaPublicKey,
+);
 
 impl Deref for ZPublicKey {
     /// Alias for `RsaPublicKey` used to represent target.
@@ -201,7 +204,10 @@ impl From<RsaPublicKey> for ZPublicKey {
 /// Data carried by z private key operations.
 #[repr(transparent)]
 #[derive(Clone, PartialEq, Eq)]
-pub struct ZPrivateKey(RsaPrivateKey);
+pub struct ZPrivateKey(
+    /// RSA private key used to authenticate this endpoint.
+    RsaPrivateKey,
+);
 
 impl Deref for ZPrivateKey {
     /// Alias for `RsaPrivateKey` used to represent target.

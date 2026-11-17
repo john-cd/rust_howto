@@ -14,7 +14,10 @@ mod cis {
 
     /// A string normalized to lowercase when it is constructed.
     #[derive(Debug, PartialEq, Eq, Hash)]
-    pub struct CaseInsensitiveString(String);
+    pub struct CaseInsensitiveString(
+        /// Owned text stored by the CaseInsensitiveString wrapper.
+        String,
+    );
 
     impl From<String> for CaseInsensitiveString {
         /// Constructs this type from the supplied source value.

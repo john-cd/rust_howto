@@ -11,7 +11,10 @@ use std::collections::HashMap;
 /// Here we derive several common traits for a simple struct `S` that wraps an
 /// `i32`.
 #[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy, Hash, Default)]
-struct S(i32);
+struct S(
+    /// Numeric value stored by the S wrapper.
+    i32,
+);
 
 /// Uses the derived `Default`, `Debug`, `Clone`, `Copy` and comparison traits.
 fn simple_tests() {

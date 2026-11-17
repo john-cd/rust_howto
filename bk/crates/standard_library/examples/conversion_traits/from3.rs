@@ -5,7 +5,10 @@
 
 /// A message, created from raw bytes.
 #[derive(Debug)]
-struct Message(String);
+struct Message(
+    /// Owned text stored by the Message wrapper.
+    String,
+);
 
 // Implement `From` to convert from a `u8` slice to our custom struct.
 impl From<&[u8]> for Message {

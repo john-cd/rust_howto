@@ -20,7 +20,10 @@ trait Refresh {
 }
 
 /// Implementors may still write `async fn`: the compiler checks the bound.
-struct Counter(u32);
+struct Counter(
+    /// Current counter value exposed by the async trait implementation.
+    u32,
+);
 
 impl Refresh for Counter {
     /// Increments and returns the counter value.
@@ -51,7 +54,10 @@ trait LocalStore {
 /// An in-memory store; it implements both traits (`LocalStore` for free
 /// functions on one thread, `SendStore` for spawned tasks).
 #[derive(Default)]
-struct MemoryStore(HashMap<String, String>);
+struct MemoryStore(
+    /// Key-value entries retained by the in-memory store implementation.
+    HashMap<String, String>,
+);
 
 impl SendStore for MemoryStore {
     /// Returns the value associated with `key`, if any.

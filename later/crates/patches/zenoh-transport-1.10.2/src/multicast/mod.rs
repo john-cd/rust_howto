@@ -75,7 +75,10 @@ pub(crate) struct TransportConfigMulticast {
 
 /// Multicast transport state shared by its connected peers and links.
 #[derive(Clone)]
-pub struct TransportMulticast(Weak<TransportMulticastInner>);
+pub struct TransportMulticast(
+    /// Weak reference to multicast internals that avoids a reference cycle.
+    Weak<TransportMulticastInner>,
+);
 
 impl TransportMulticast {
     /// Returns the transport stored by or available from this value.

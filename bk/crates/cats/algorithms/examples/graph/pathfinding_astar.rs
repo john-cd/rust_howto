@@ -31,7 +31,12 @@ use pathfinding::prelude::astar;
 fn main() {
     /// Coordinate in the 5x5 grid searched by A*.
     #[derive(Clone, Debug, Eq, Hash, Ord, PartialEq, PartialOrd)]
-    struct Pos(i32, i32);
+    struct Pos(
+        /// Horizontal coordinate in the pathfinding grid.
+        i32,
+        /// Vertical coordinate in the pathfinding grid.
+        i32,
+    );
 
     impl Pos {
         /// Returns the Manhattan distance to another grid coordinate.

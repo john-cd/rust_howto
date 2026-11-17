@@ -23,7 +23,10 @@ use windows_sys::Win32::System::JobObjects::JobObjectExtendedLimitInformation;
 use windows_sys::Win32::System::JobObjects::SetInformationJobObject;
 
 /// A Job Object that terminates every process assigned to it when it closes.
-struct KillOnCloseJob(HANDLE);
+struct KillOnCloseJob(
+    /// Windows job handle whose closure terminates the processes assigned to it.
+    HANDLE,
+);
 
 impl KillOnCloseJob {
     /// Creates an unnamed job with the "kill on close" limit.

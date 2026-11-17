@@ -8,7 +8,10 @@
 
 /// A struct holding a flag.
 #[derive(Debug)]
-struct MyStruct(bool);
+struct MyStruct(
+    /// Boolean state used by the borrowing and synchronization example.
+    bool,
+);
 
 /// Takes shared references, then a mutable reference.
 fn main() {

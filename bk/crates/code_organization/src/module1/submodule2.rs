@@ -1,4 +1,7 @@
 //! Library data types.
 
 /// Contains the name for a greeting.
-pub struct Greeting<'a>(pub &'a str);
+pub struct Greeting<'a>(
+    /// Borrowed greeting text returned without allocating a new string.
+    pub &'a str,
+);

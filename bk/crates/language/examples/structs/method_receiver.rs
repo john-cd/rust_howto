@@ -2,7 +2,10 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-struct Point(i32);
+struct Point(
+    /// X coordinate used by the point methods.
+    i32,
+);
 
 impl Point {
     /// Returns the distance between two points on a line.

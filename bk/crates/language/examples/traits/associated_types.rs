@@ -21,7 +21,10 @@ trait Iterator {
 }
 
 /// An iterator over numbers.
-struct MyIterator(u32);
+struct MyIterator(
+    /// Next integer value yielded by the iterator.
+    u32,
+);
 
 // We implement the trait for a given struct...
 impl Iterator for MyIterator {

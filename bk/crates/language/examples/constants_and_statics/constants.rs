@@ -42,7 +42,10 @@ fn main() {
     // Use as a "const generic" parameter:
 
     /// Wraps an integer array whose length is selected by a const generic.
-    struct Foo<const N: usize>([i32; N]);
+    struct Foo<const N: usize>(
+        /// Fixed-size integer array whose length is supplied by the const generic N.
+        [i32; N],
+    );
     let _foo = Foo::<LEN>([0; 5]);
 
     // A constant's value can be calculated from an expression
@@ -76,7 +79,10 @@ fn main() {
     // Let's create a struct that implements a `Drop` destructor:
 
     /// Prints a message when its value is dropped.
-    struct PrintOnDrop(&'static str);
+    struct PrintOnDrop(
+        /// Static message printed when the wrapper is dropped.
+        &'static str,
+    );
 
     impl Drop for PrintOnDrop {
         /// Releases the resources owned by this value.

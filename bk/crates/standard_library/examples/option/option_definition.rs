@@ -7,7 +7,10 @@ enum Option<T> {
     /// Represents the none case of option.
     None,
     /// Represents the some case of option.
-    Some(T),
+    Some(
+        /// Successful result value returned to the caller.
+        T,
+    ),
 }
 // ANCHOR_END: definition
 

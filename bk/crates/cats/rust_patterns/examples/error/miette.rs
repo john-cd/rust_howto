@@ -79,7 +79,11 @@ mod mylib {
 
         /// An I/O error.
         #[diagnostic(code(my_lib::io_error))]
-        IoError(#[from] std::io::Error),
+        IoError(
+            /// Underlying I/O failure preserved as the source error.
+            #[from]
+            std::io::Error,
+        ),
 
         // Wrap another `Diagnostic`.
         // Use `#[diagnostic(transparent)]` to wrap another `[Diagnostic]`
@@ -88,7 +92,11 @@ mod mylib {
         /// Another error, which is itself a diagnostic.
         #[error(transparent)]
         #[diagnostic(transparent)]
-        AnotherError(#[from] AnotherError),
+        AnotherError(
+            /// Underlying error preserved by the AnotherError case.
+            #[from]
+            AnotherError,
+        ),
     }
 
     /// Another error:

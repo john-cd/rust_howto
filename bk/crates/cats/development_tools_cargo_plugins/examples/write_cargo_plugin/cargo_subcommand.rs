@@ -16,7 +16,10 @@ use clap::Parser;
 #[command(name = "cargo", bin_name = "cargo")]
 enum CargoCli {
     /// Say hello to the selected packages.
-    Hello(HelloArgs),
+    Hello(
+        /// Arguments parsed for the hello subcommand.
+        HelloArgs,
+    ),
 }
 
 /// The arguments of `cargo hello`.

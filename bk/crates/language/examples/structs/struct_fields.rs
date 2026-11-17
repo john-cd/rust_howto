@@ -15,7 +15,10 @@ enum Status {
 
 /// A tuple struct.
 #[derive(Debug)]
-struct InnerStruct(i32);
+struct InnerStruct(
+    /// Integer stored by the nested struct in the field-access example.
+    i32,
+);
 
 /// A struct with a field of each kind of type.
 #[derive(Debug)]

@@ -44,7 +44,10 @@ impl std::error::Error for EmailError {}
 /// ways to build one run the validation.
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 #[serde(try_from = "String", into = "String")]
-struct EmailAddress(String);
+struct EmailAddress(
+    /// Owned text stored by the EmailAddress wrapper.
+    String,
+);
 
 impl TryFrom<String> for EmailAddress {
     /// Alias for `EmailError` used to represent error.

@@ -33,7 +33,10 @@ enum RgbParseError {
     InvalidFormat,
 
     /// One of the three hexadecimal components was invalid.
-    InvalidComponent(ParseIntError),
+    InvalidComponent(
+        /// Underlying error preserved by the InvalidComponent case.
+        ParseIntError,
+    ),
 }
 
 impl Display for RgbParseError {

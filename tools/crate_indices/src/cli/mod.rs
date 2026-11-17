@@ -19,25 +19,46 @@ pub(crate) enum Cmd {
     None,
 
     /// Generate the page of a category.
-    CategoryPage(CmdArgs),
+    CategoryPage(
+        /// Options for generating a category page.
+        CmdArgs,
+    ),
 
     /// Generate the page of a category from a local metadata snapshot.
-    CategoryPageFromMetadata(CategoryPageFromMetadataCmdArgs),
+    CategoryPageFromMetadata(
+        /// Options for generating a category page from a local metadata snapshot.
+        CategoryPageFromMetadataCmdArgs,
+    ),
 
     /// Generate the alphabetical index of crates.
-    AlphabeticalCratePage(AlphabeticalCratePageCmdArgs),
+    AlphabeticalCratePage(
+        /// Options for generating the alphabetical crate index.
+        AlphabeticalCratePageCmdArgs,
+    ),
 
     /// Generate the page of a crate.
-    CratePage(CmdArgs),
+    CratePage(
+        /// Options for generating one crate page.
+        CmdArgs,
+    ),
 
     /// List the crates used in a directory.
-    ListCrates(DirectoryCmdArgs),
+    ListCrates(
+        /// Directory selection and filters for listing crates.
+        DirectoryCmdArgs,
+    ),
 
     /// Update the reference definitions of a file.
-    UpdateRefDefs(CmdArgs2),
+    UpdateRefDefs(
+        /// Options for updating reference definitions.
+        CmdArgs2,
+    ),
 
     /// Expand the crate blocks in a directory.
-    ExpandCrateBlocks(ExpandCrateBlocksCmdArgs),
+    ExpandCrateBlocks(
+        /// Options for expanding crate blocks in a directory.
+        ExpandCrateBlocksCmdArgs,
+    ),
 }
 
 /// Command arguments with a list of crate names,

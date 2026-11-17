@@ -15,7 +15,10 @@ use ustr::Ustr;
 
 /// A handle to an interned string.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
-pub(crate) struct Symbol(u32);
+pub(crate) struct Symbol(
+    /// Index of this interned symbol in the table.
+    u32,
+);
 
 /// Owns the interned strings.
 #[derive(Default)]

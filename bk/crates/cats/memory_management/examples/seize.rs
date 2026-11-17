@@ -109,7 +109,10 @@ mod tests {
         /// Shared `dropped` used by this module.
         static DROPPED: AtomicUsize = AtomicUsize::new(0);
         /// Data carried by tracked operations.
-        struct Tracked(i32);
+        struct Tracked(
+            /// Value whose destructor activity is recorded by the example.
+            i32,
+        );
         impl Drop for Tracked {
             /// Releases the resources owned by this value.
             fn drop(&mut self) {

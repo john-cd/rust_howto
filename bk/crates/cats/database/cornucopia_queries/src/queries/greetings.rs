@@ -119,7 +119,12 @@ where
 }
 
 /// Prepared statement that inserts a greeting into the database.
-pub struct AddGreetingStmt(&'static str, Option<tokio_postgres::Statement>);
+pub struct AddGreetingStmt(
+    /// SQL text used to insert a greeting.
+    &'static str,
+    /// Prepared PostgreSQL statement cached after the first execution.
+    Option<tokio_postgres::Statement>,
+);
 /// Adds the supplied greeting to the current collection or state.
 pub fn add_greeting() -> AddGreetingStmt {
     AddGreetingStmt(
@@ -148,7 +153,12 @@ impl AddGreetingStmt {
 }
 
 /// Groups the data required by queries operations.
-pub struct ListGreetingsStmt(&'static str, Option<tokio_postgres::Statement>);
+pub struct ListGreetingsStmt(
+    /// SQL text used to list stored greetings.
+    &'static str,
+    /// Prepared PostgreSQL statement cached after the first execution.
+    Option<tokio_postgres::Statement>,
+);
 /// Handles the list greetings behavior for this component.
 pub fn list_greetings() -> ListGreetingsStmt {
     ListGreetingsStmt(

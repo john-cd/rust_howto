@@ -19,10 +19,20 @@ enum Message {
     }, // Struct-like variant (named fields).
 
     /// A variant that holds a string.
-    Write(String), // Tuple-like variant (numbered fields).
+    Write(
+        /// Text value carried by the Write case.
+        String,
+    ), // Tuple-like variant (numbered fields).
 
     /// A variant that holds three color components.
-    ChangeColor(i32, i32, i32), // Another tuple-like variant.
+    ChangeColor(
+        /// Red component of the requested color.
+        i32,
+        /// Green component of the requested color.
+        i32,
+        /// Blue component of the requested color.
+        i32,
+    ), // Another tuple-like variant.
 }
 
 /// Define methods on enums.

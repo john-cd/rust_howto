@@ -12,11 +12,17 @@ use bevy::prelude::*;
 
 /// Stores an entity's position in world coordinates.
 #[derive(Component, Debug, Clone, Copy, PartialEq)]
-struct Position(Vec2);
+struct Position(
+    /// Position vector used by the game entity.
+    Vec2,
+);
 
 /// Stores an entity's velocity in world units per second.
 #[derive(Component, Debug, Clone, Copy)]
-struct Velocity(Vec2);
+struct Velocity(
+    /// Velocity vector applied to the game entity.
+    Vec2,
+);
 
 /// Builds a minimal app that moves one entity.
 fn build_app() -> App {

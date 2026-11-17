@@ -43,10 +43,16 @@ impl<'a, T> RefHolder<'a, T> {
 /// An enum whose variants hold references.
 enum Either<'a, T, U> {
     /// A reference to a value of the first type.
-    Left(&'a T),
+    Left(
+        /// Borrowed value on the left side of the pair.
+        &'a T,
+    ),
 
     /// A reference to a value of the second type.
-    Right(&'a U),
+    Right(
+        /// Borrowed value on the right side of the pair.
+        &'a U,
+    ),
 }
 
 // Union with lifetime parameter (unsafe, rarer):

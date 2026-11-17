@@ -117,7 +117,12 @@ impl<T> Processor<T> for S {
 /// Let's define a tuple struct with a type parameter.
 ///
 /// This is a struct that contains two fields of type `T`.
-struct TupleStruct<T>(T, T);
+struct TupleStruct<T>(
+    /// First value stored by this two-element generic tuple struct.
+    T,
+    /// Second value stored by this two-element generic tuple struct.
+    T,
+);
 
 // Generic implementation of a generic trait for a generic struct.
 impl<T> Processor<T> for TupleStruct<T> {

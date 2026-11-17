@@ -10,10 +10,16 @@
 /// A tree whose leaves are values and whose groups sum child expressions.
 enum Expression {
     /// A numeric leaf value.
-    Value(i64),
+    Value(
+        /// Literal value stored in the composite expression tree.
+        i64,
+    ),
 
     /// A group that adds its child expressions.
-    Sum(Vec<Self>),
+    Sum(
+        /// Child expressions whose values are added together.
+        Vec<Self>,
+    ),
 }
 
 impl Expression {

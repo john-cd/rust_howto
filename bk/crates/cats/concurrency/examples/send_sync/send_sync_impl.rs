@@ -175,7 +175,10 @@ mod my {
         use super::Arc;
 
         /// Tracks whether the shared value is destroyed.
-        struct DropCounter(StdArc<AtomicUsize>);
+        struct DropCounter(
+            /// Shared atomic count incremented when a tracked value is dropped.
+            StdArc<AtomicUsize>,
+        );
 
         impl Drop for DropCounter {
             /// Releases the resources owned by this value.
@@ -219,7 +222,10 @@ mod my {
 
 /// A struct that prints when dropped, for demonstration purposes.
 #[derive(Debug)]
-struct Droppable(i32);
+struct Droppable(
+    /// Identifier recorded by the example when this value is dropped.
+    i32,
+);
 
 impl Drop for Droppable {
     /// Releases the resources owned by this value.

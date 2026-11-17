@@ -18,7 +18,10 @@ enum Message {
     },
 
     /// A message with text.
-    Write(String),
+    Write(
+        /// Text value carried by the Write case.
+        String,
+    ),
 }
 
 /// Matches a message and extracts its data.

@@ -157,7 +157,10 @@ impl BatchConfig {
 /// One-byte flag that describes the encoding of a transport batch.
 #[repr(transparent)]
 #[derive(Copy, Clone, Debug)]
-pub struct BatchHeader(u8);
+pub struct BatchHeader(
+    /// Encoded header byte containing the batch flags.
+    u8,
+);
 
 impl BatchHeader {
     /// Shared `compression` used by this module.

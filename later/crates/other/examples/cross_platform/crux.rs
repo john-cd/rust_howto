@@ -45,7 +45,10 @@ pub enum Event {
 #[crux_core::macros::effect(typegen)]
 pub enum Effect {
     /// Requests that the shell render the updated view model.
-    Render(crux_core::render::RenderOperation),
+    Render(
+        /// Rendering operation produced by the application update.
+        crux_core::render::RenderOperation,
+    ),
 }
 
 /// The Crux counter application.

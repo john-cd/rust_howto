@@ -21,7 +21,10 @@ use secrecy::SecretString;
 /// The only way to read the value is the explicit `expose_secret` call, which
 /// is easy to find in a code review.
 #[derive(Clone, PartialEq, Eq)]
-struct RedactedSecret(String);
+struct RedactedSecret(
+    /// Secret text retained by the wrapper while its Debug output hides the contents.
+    String,
+);
 
 impl RedactedSecret {
     /// Returns the secret value. Call sites mark where the secret is used.

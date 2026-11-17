@@ -199,7 +199,13 @@ fn future_projection_example() {
 #[pin_project(project = EnumProj)]
 enum PinnedEnum<T, U> {
     /// A variant with a pinned field and an unpinned field.
-    Variant1(#[pin] T, U),
+    Variant1(
+        /// Field that remains pinned when the enum is projected.
+        #[pin]
+        T,
+        /// Ordinary field projected without pinning.
+        U,
+    ),
 }
 
 impl<T: Debug, U: Debug> PinnedEnum<T, U> {

@@ -22,7 +22,10 @@ fn main() {
 
     /// Tuple struct whose `i32` value is copied when assigned.
     #[derive(Copy, Clone, Debug)]
-    struct S(i32);
+    struct S(
+        /// Numeric value stored by the S wrapper.
+        i32,
+    );
     // Notes:
     // - `Clone` is a supertrait of `Copy`, so everything which is
     // `Copy` must also implement `Clone`.

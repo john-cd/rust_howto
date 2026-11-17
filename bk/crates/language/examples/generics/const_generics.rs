@@ -11,7 +11,10 @@
 ///
 /// Note the `const` keyword, the parameter name (here `N`),
 /// which must be followed by a type declaration.
-struct InnerArray<T, const N: usize>([T; N]);
+struct InnerArray<T, const N: usize>(
+    /// Fixed-size array whose element count is chosen by the const generic N.
+    [T; N],
+);
 
 impl<T: std::marker::Copy, const N: usize> InnerArray<T, N> {
     /// Creates an array of `N` copies of `val`.

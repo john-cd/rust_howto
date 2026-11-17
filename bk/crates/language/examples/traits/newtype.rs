@@ -20,7 +20,10 @@ use std::fmt;
 /// Tuple struct wrapping the type we want to add a non-local trait to.
 ///
 /// This is the 'newtype pattern'.
-struct Wrapper(Vec<String>);
+struct Wrapper(
+    /// Owned strings wrapped to demonstrate the newtype pattern.
+    Vec<String>,
+);
 
 /// Implement a (non-local) trait on the (local) `Wrapper` type:
 impl fmt::Display for Wrapper {

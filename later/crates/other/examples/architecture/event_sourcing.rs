@@ -12,9 +12,15 @@
 #[derive(Debug, Clone)]
 enum AccountEvent {
     /// Represents the deposited case of account event.
-    Deposited(i64),
+    Deposited(
+        /// Amount added to the account balance by this event.
+        i64,
+    ),
     /// Represents the withdrawn case of account event.
-    Withdrawn(i64),
+    Withdrawn(
+        /// Amount removed from the account balance by this event.
+        i64,
+    ),
 }
 
 /// The current state, derived from the events.

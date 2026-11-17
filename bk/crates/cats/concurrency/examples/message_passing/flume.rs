@@ -68,9 +68,15 @@ fn select() -> (bool, i32) {
     /// Defines the outcomes available to the message passing workflow, including boolean, number.
     enum Selected {
         /// Represents the boolean case of selected.
-        Boolean(bool),
+        Boolean(
+            /// Boolean value carried by the message.
+            bool,
+        ),
         /// Represents the number case of selected.
-        Number(i32),
+        Number(
+            /// Signed integer carried by the message.
+            i32,
+        ),
     }
 
     // `Selector` waits for whichever receive operation becomes ready first.

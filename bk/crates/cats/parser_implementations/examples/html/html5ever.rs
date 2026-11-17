@@ -126,7 +126,10 @@ mod tests {
     }
 
     /// A sink that records the names of the tags it sees.
-    struct TagRecorder(std::cell::RefCell<Vec<String>>);
+    struct TagRecorder(
+        /// Mutable list of element names collected while the parser walks the document.
+        std::cell::RefCell<Vec<String>>,
+    );
 
     impl TokenSink for TagRecorder {
         /// Alias for `()` used to represent handle.

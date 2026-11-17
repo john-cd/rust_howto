@@ -88,10 +88,16 @@ fn read_and_parse_file(file_path: &str) -> Result<i32, MyError> {
 #[derive(Debug)]
 enum MyError {
     /// An I/O error.
-    Io(io::Error),
+    Io(
+        /// Underlying error preserved by the Io case.
+        io::Error,
+    ),
 
     /// A parsing error.
-    Parse(ParseIntError),
+    Parse(
+        /// Underlying error preserved by the Parse case.
+        ParseIntError,
+    ),
 }
 
 impl std::error::Error for MyError {}
@@ -144,11 +150,19 @@ impl From<ParseIntError> for MyError {
 enum MyError2 {
     /// An I/O error.
     #[error("Io error")]
-    Io(#[from] io::Error),
+    Io(
+        /// Underlying error preserved by the Io case.
+        #[from]
+        io::Error,
+    ),
 
     /// A parsing error.
     #[error("Parse error")]
-    Parse(#[from] ParseIntError),
+    Parse(
+        /// Underlying error preserved by the Parse case.
+        #[from]
+        ParseIntError,
+    ),
 }
 
 /// Reads a number from a file, with the `thiserror` error type.

@@ -18,7 +18,10 @@ use super::type_traits::ArraySql;
 use super::utils::escape_domain;
 
 /// Validated domain value used by the generated query API.
-pub struct Domain<T: ToSql>(pub T);
+pub struct Domain<T: ToSql>(
+    /// Database value represented using this SQL domain newtype.
+    pub T,
+);
 impl<T: ToSql + Debug> Debug for Domain<T> {
     /// Formats the value for display.
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
@@ -53,7 +56,10 @@ impl<T: ToSql> ToSql for Domain<T> {
 }
 
 /// Array of validated domain values used by the generated query API.
-pub struct DomainArray<'a, T: ToSql + Sync, A: ArraySql<Item = T>>(pub &'a A);
+pub struct DomainArray<'a, T: ToSql + Sync, A: ArraySql<Item = T>>(
+    /// Borrowed array whose elements are encoded with the SQL domain type.
+    pub &'a A,
+);
 impl<T: ToSql + Sync, A: ArraySql<Item = T>> Debug for DomainArray<'_, T, A> {
     /// Formats the value for display.
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {

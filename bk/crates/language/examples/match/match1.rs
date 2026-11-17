@@ -21,7 +21,10 @@ enum Coin {
 
     /// The `Quarter` is a tuple variant.
     /// Its field stores the name of a US State.
-    Quarter(String),
+    Quarter(
+        /// Name of the U.S. state represented by this quarter.
+        String,
+    ),
 }
 
 /// Returns the value in cents of a given coin.

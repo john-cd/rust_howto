@@ -11,7 +11,10 @@ use core::sync::atomic::Ordering;
 ///
 /// A real PAC places the block at a fixed address from the reference manual;
 /// this host-side model keeps it in ordinary memory instead.
-struct Register(UnsafeCell<u32>);
+struct Register(
+    /// Register storage that permits controlled mutation through a shared reference.
+    UnsafeCell<u32>,
+);
 
 impl Register {
     /// Initializes the register cell with its reset value.

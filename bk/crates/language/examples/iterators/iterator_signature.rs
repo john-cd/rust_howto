@@ -12,7 +12,10 @@ trait Iterator {
 }
 // ANCHOR_END: signature
 
-struct Once<T>(Option<T>);
+struct Once<T>(
+    /// Value still available to yield; taking it leaves None and ends the iterator.
+    Option<T>,
+);
 
 impl<T> Iterator for Once<T> {
     /// Alias for `T` used to represent item.
