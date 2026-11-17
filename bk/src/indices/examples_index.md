@@ -241,6 +241,39 @@
 {{#include ../categories/text-processing/string_parsing.incl.md}}
 
 
+### Count Unicode Text for Display
+
+{{#include ../categories/text-processing/unicode.incl.md}}
+
+### String Concatenation
+
+{{#include ../categories/text-processing/string_concat.incl.md}}
+
+### String Manipulation
+
+{{#include ../categories/text-processing/string_manipulation.incl.md}}
+
+### String Search and Fuzzy Matching
+
+{{#include ../categories/text-processing/string_search.incl.md}}
+
+### Text Analysis
+
+{{#include ../categories/text-processing/text_analysis.incl.md}}
+
+### Syntax Highlighting
+
+{{#include ../categories/text-processing/syntax_highlighting.incl.md}}
+
+### Text Diffing
+
+{{#include ../categories/text-processing/diffing.incl.md}}
+
+### OS and Non-UTF-8 Strings
+
+{{#include ../categories/text-processing/other_strings.incl.md}}
+
+
 ## Template Engine
 
 ### `tera`
