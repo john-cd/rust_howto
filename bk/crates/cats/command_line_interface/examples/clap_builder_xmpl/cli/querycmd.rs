@@ -1,0 +1,78 @@
+//! The `query` subcommand.
+//!
+//! TODO Reviewed ??-??-2026.
+
+use clap::ArgMatches;
+use clap::Command;
+use clap::arg;
+
+/// Defines the `query` command, which takes the words of the query.
+pub(super) fn cmd() -> Command {
+    Command::new("query")
+        // An optional short flag could provide the `-q` shortcut.
+        .about("Query a data source")
+        .arg(
+            arg!(<query> ... "query to run")
+                .required(true)
+                .value_parser(clap::builder::NonEmptyStringValueParser::new())
+                // Optionally capture all remaining tokens as trailing arguments.
+                // .trailing_var_arg(true)
+                .allow_negative_numbers(true),
+        )
+}
+
+/// Returns the words supplied to the `query` subcommand.
+/// See: <https://docs.rs/clap/latest/clap/struct.Arg.html#method.trailing_var_arg>
+/// Returns an empty vector if the subcommand was not present.
+pub(super) fn get_args(matches: &ArgMatches) -> Vec<String> {
+    if let Some(sub_m) = matches.subcommand_matches("query") {
+        sub_m
+            .get_many::<String>("query")
+            .unwrap_or_default()
+            .cloned()
+            .collect()
+    } else {
+        Vec::new()
+    }
+}
+
+/// Lets clap check the command definition for mistakes.
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::cli::cli;
+
+    /// Lets clap check the command definition for mistakes.
+    #[test]
+    fn verify_query_cmd() {
+        cmd().debug_assert(); // <https://docs.rs/clap/latest/clap/struct.Command.html#method.debug_assert>
+    }
+
+    /// Checks that the words are collected.
+    #[test]
+    fn test_cmd_query() {
+        let m = cli().get_matches_from(vec!["foo", "query", "SELECT", "col", "FROM", "tbl"]);
+        assert_eq!(get_args(&m), vec!["SELECT", "col", "FROM", "tbl"]);
+    }
+
+    /// Checks that at least one word is required.
+    #[test]
+    fn test_cmd_query_none() {
+        let m = cli().try_get_matches_from(vec!["foo", "query"]);
+        assert!(m.is_err());
+
+        // Empty string.
+        let m = cli().try_get_matches_from(vec!["foo", ""]);
+        assert!(m.is_err());
+    }
+
+    // Verify that we don't get confused by negative numbers (that look
+    // like flags).
+
+    /// Checks that negative numbers are accepted as words.
+    #[test]
+    fn test_cmd_query_neg_numbers() {
+        let m = cli().get_matches_from(vec!["foo", "query", "SELECT", "-1", "FROM", "tbl"]);
+        assert_eq!(get_args(&m), vec!["SELECT", "-1", "FROM", "tbl"]);
+    }
+}
