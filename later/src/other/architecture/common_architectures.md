@@ -38,7 +38,7 @@ In event-driven architecture, producers publish events for consumers to handle i
 {{#include ../../../crates/other/examples/architecture/event_bus.rs:example}}
 ```
 
-See Asynchronous<!-- Cross-book topic: bk/drafts/categories/asynchronous/index.md; not included in this preview. --> and AMQP<!-- Cross-book topic: bk/drafts/categories/database/amqp.md; not included in this preview. -->.
+See Asynchronous<!-- Cross-book topic: bk/src/categories/asynchronous/index.md; not included in this preview. --> and AMQP<!-- Cross-book topic: bk/drafts/categories/database/amqp.md; not included in this preview. -->.
 
 ## Actor Model {#actor-model}
 

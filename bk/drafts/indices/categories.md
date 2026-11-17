@@ -13,7 +13,7 @@
 | [![aerospace::unmanned-aerial-vehicles][cat~aerospace::unmanned-aerial-vehicles~badge]][cat~aerospace::unmanned-aerial-vehicles] | Unmanned aerial vehicles like multicopters, fixed wing, VTOL (Vertical Takeoff and Landing), airships/balloons, rovers, boats, submersibles. | - |
 | [![algorithms][cat~algorithms~badge]][cat~algorithms] | Rust implementations of core algorithms, such as hashing, sorting, searching. | - |
 | [![api-bindings][cat~api-bindings~badge]][cat~api-bindings] | Idiomatic wrappers for specific APIs for convenient access from Rust. Includes HTTP API wrappers as well. Non-idiomatic or unsafe bindings can be found in "External FFI bindings". | - |
-| [![asynchronous][cat~asynchronous~badge]][cat~asynchronous] | Dealing with events independently of the main program flow, using techniques like futures, promises, waiting, or eventing. | [Asynchronous](../categories/asynchronous/index.md) |
+| [![asynchronous][cat~asynchronous~badge]][cat~asynchronous] | Dealing with events independently of the main program flow, using techniques like futures, promises, waiting, or eventing. | [Asynchronous](../../src/categories/asynchronous/index.md) |
 | [![authentication][cat~authentication~badge]][cat~authentication] | Confirming identities. | [Authentication](../categories/authentication/index.md) |
 | [![caching][cat~caching~badge]][cat~caching] | Storing the results of previous computations in order to reuse them. | [Caching](../categories/caching/index.md) |
 | [![command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] | Creating command line interfaces with argument parsers, line-editing, or output coloring and formatting. | [Command-line Interface](../categories/command-line-interface/index.md) |

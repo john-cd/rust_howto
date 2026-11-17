@@ -9,7 +9,7 @@
 [ex~simulation~avian]: physics_engines.md#avian
 [ex~simulation~bevy-rapier]: physics_engines.md#bevy-rapier
 [p~robotics-simulation]: ../science_robotics/simulation_visualization.md#physics-simulation
-[p~asynchronous]: ../asynchronous/index.md
+[p~asynchronous]: https://john-cd.com/rust_howto/categories/asynchronous/index.html
 [c~ode_solvers~docs]: https://docs.rs/ode_solvers/latest/ode_solvers/
 [c~nexosim~docs]: https://docs.rs/nexosim
 [c~desim~docs]: https://docs.rs/desim

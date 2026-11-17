@@ -12,7 +12,7 @@
 [ex~hardware-support~simd]: processor.md#simd
 [ex~hardware-support~simd-dot-product]: processor.md#simd-dot-product
 [p~assembly]: ../development-tools_profiling/assembly.md
-[p~asynchronous]: ../asynchronous/index.md
+[p~asynchronous]: ../../../src/categories/asynchronous/index.md
 [p~data-parallelism]: ../concurrency/data_parallelism.md
 [p~embedded]: https://docs.rust-embedded.org/book/
 [p~functions]: ../../language/functions.md

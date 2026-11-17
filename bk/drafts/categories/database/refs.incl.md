@@ -33,8 +33,8 @@
 [ex~database~toasty]: query_builders_orms.md#toasty
 [ex~database~tokio-postgres]: postgres.md#tokio-postgres
 [ex~database~transaction]: sqlite.md#transaction
-[p~async]: ../asynchronous/async.md
-[p~asynchronous]: ../asynchronous/index.md
+[p~async]: ../../../src/categories/asynchronous/async.md
+[p~asynchronous]: ../../../src/categories/asynchronous/index.md
 [p~caching]: ../caching/index.md
 [p~cargo]: ../development-tools/cargo/cargo.md
 [p~configuration]: ../config/configuration.md
@@ -52,9 +52,9 @@
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~search]: search.md
 [p~server]: ../network-programming/server.md
+[p~streams]: ../../../src/categories/asynchronous/streams.md
+[p~tokio]: ../../../src/categories/asynchronous/tokio.md
 [p~toml]: ../../../src/categories/parser-implementations/toml.md
-[p~streams]: ../asynchronous/streams.md
-[p~tokio]: ../asynchronous/tokio.md
 [p~url]: ../web-programming/url.md
 [p~windows]: ../os_windows-apis/windows.md
 [c~cornucopia~migration~1.0]: https://github.com/cornucopia-rs/cornucopia/blob/main/docs/src/introduction/migration_to_1_0.md

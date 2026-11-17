@@ -4,16 +4,6 @@
 
 <!-- Ordered migration review and remaining work: MIGRATION.md. -->
 
-- [Asynchronous](categories/asynchronous/index.md)
-  - [Async](categories/asynchronous/async.md)
-  - [Async and Traits](categories/asynchronous/async_traits.md)
-  - [Tokio Async Runtime](categories/asynchronous/tokio.md)
-  - [Async Channels](categories/asynchronous/async_channels.md)
-  - [Streams](categories/asynchronous/streams.md)
-  - [Futures crate](categories/asynchronous/futures.md)
-  - [Mixing Async and Blocking Code](categories/asynchronous/async_and_blocking.md)
-  - [Utilities](categories/asynchronous/async_utilities.md)
-
 - [Authentication](categories/authentication/index.md)
   - [Basic Authentication](categories/authentication/basic_authentication.md)
   - [Session Login](categories/authentication/session_login.md)

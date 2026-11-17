@@ -72,6 +72,17 @@
   - [Hashing](categories/algorithms/hashing.md)
   - [Graph Algorithms](categories/algorithms/graph_algorithms.md)
 
+- [Asynchronous Programming](categories/asynchronous/index.md)
+  - [Async](categories/asynchronous/async.md)
+  - [Futures Crate](categories/asynchronous/futures.md)
+  - [Tokio](categories/asynchronous/tokio.md)
+  - [Async Channels](categories/asynchronous/async_channels.md)
+  - [Async Traits](categories/asynchronous/async_traits.md)
+  - [Streams](categories/asynchronous/streams.md)
+  - [Mixing Async and Blocking Code](categories/asynchronous/async_and_blocking.md)
+  - [Async Utilities](categories/asynchronous/async_utilities.md)
+  - [Cancellation and Structured Concurrency](categories/asynchronous/structured_concurrency.md)
+
 - [Caching](categories/caching/index.md)
   - [In-memory Caching](categories/caching/in_memory_cache.md)
 
@@ -178,7 +189,6 @@
   - [Text Diffing](categories/text-processing/diffing.md)
   - [OS and Non-UTF-8 Strings](categories/text-processing/other_strings.md)
 - [Make an HTTP Request Against a Local Service](categories/web-programming_http-client/offline_http_client.md)
-- [Cancellation and Structured Concurrency](categories/asynchronous/structured_concurrency.md)
 - [Atomics](categories/concurrency/atomics.md)
 - [Model-Checking with Loom](categories/concurrency/loom.md)
 - [HTTP Servers](categories/web-programming_http-server/json_patch.md)
