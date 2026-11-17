@@ -274,6 +274,10 @@
 
 ## Data Structures
 
+### Collection Conversions
+
+{{#include ../categories/data-structures/collection_conversions.incl.md}}
+
 ### B-Trees
 
 {{#include ../categories/data-structures/b-trees.incl.md}}
