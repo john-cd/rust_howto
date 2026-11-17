@@ -390,6 +390,24 @@
 
 {{#include ../categories/network-programming/server.incl.md}}
 
+## Operating Systems
+
+### External Commands
+
+{{#include ../categories/os/external_commands.incl.md}}
+
+### Process Management
+
+{{#include ../categories/os/process_management.incl.md}}
+
+### Signals and Graceful Shutdown
+
+{{#include ../categories/os/signals.incl.md}}
+
+### Low-level System Calls
+
+{{#include ../categories/os/low_level_system_calls.incl.md}}
+
 ## Development Tools
 
 ### Cargo

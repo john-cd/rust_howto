@@ -4,7 +4,7 @@
 
 {{#include process_management.incl.md}}
 
-[`std::process::Command`][c~std::process::Command~docs]↗ makes starting a child process easy (see [[external_commands | External Commands]]). Cleaning up reliably is the part that is easy to get wrong:
+[`std::process::Command`][c~std::process::Command~docs]↗ makes starting a child process easy (see [External Commands](external_commands.md)). Cleaning up reliably is the part that is easy to get wrong:
 
 - Killing a child does not kill the processes it started. Put the child in its own process group (Unix) or a Job Object (Windows) and signal the whole group.
 - Always `wait` for a child after killing it; otherwise it remains a zombie until the parent exits.
@@ -63,9 +63,9 @@ Controlling the lifetime of a child is different from limiting what it can do. T
 
 ## Related Topics {#related-topics .skip}
 
-- [[external_commands | External Commands]].
-- [[signals | Signals and Graceful Shutdown]].
-- [[concurrency | Concurrency]].
+- [External Commands](external_commands.md).
+- [Signals and Graceful Shutdown](signals.md).
+- [Concurrency](../concurrency/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
