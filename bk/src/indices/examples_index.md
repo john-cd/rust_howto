@@ -1000,6 +1000,28 @@
 
 {{#include ../categories/value-formatting/number_formatting.incl.md}}
 
+## Web Programming
+
+### Extracting Links
+
+{{#include ../categories/web-programming/scraping.incl.md}}
+
+### HTTP Types and Interfaces
+
+{{#include ../categories/web-programming/http_types_and_interfaces.incl.md}}
+
+### Media Types
+
+{{#include ../categories/web-programming/mime.incl.md}}
+
+### Sanitize HTML
+
+{{#include ../categories/web-programming/html_sanitization.incl.md}}
+
+### Uniform Resource Locator
+
+{{#include ../categories/web-programming/url.incl.md}}
+
 ## WebSockets
 
 {{#include ../categories/web-programming_websocket/websocket.incl.md}}

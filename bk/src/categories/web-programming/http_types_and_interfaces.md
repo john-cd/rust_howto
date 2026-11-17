@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# HTTP Types & Interfaces
+# HTTP Types and Interfaces
 
 {{#include http_types_and_interfaces.incl.md}}
 
@@ -30,7 +30,7 @@ Issue #1355 expands the sample from a basic request/response builder into header
 
 Trait representing an asynchronous, streaming, HTTP request or response body.
 
-The `Body` trait yields frames asynchronously. Data frames carry byte buffers, and HTTP/2 bodies can also carry trailers. An implementation provides an error type and may report size hints, allowing network libraries to stream large payloads without first collecting them into one allocation.
+The `Body` trait yields frames asynchronously. Data frames carry byte buffers, and HTTP/2 bodies can also carry trailers. An implementation provides an error type and may report size hints, allowing network libraries to stream large payloads without first collecting them into one allocation. The next recipe uses `Full`, an `http-body-util` type that implements this trait.
 
 ## `http-body-util` {#http-body-util}
 
@@ -38,10 +38,14 @@ The `Body` trait yields frames asynchronously. Data frames carry byte buffers, a
 
 [`http-body-util`][c~http-body-util~docs]↗{{hi:http-body-util}} provides adapters for the `http_body::Body` trait. `Full` and `Empty` represent a single payload or no payload; `StreamBody` adapts a stream of frames. Its `BodyExt` extension trait includes `collect`, which is useful for small, known-size responses but buffers the full body in memory.
 
+```rust,noplayground
+{{#include ../../../crates/cats/web_programming/examples/http_types_and_interfaces/body.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
-- HTTP clients: [HTTP Client](../web-programming_http-client/index.md).
-- HTTP servers: [HTTP Server](../web-programming_http-server/index.md).
+- HTTP clients: [Make an HTTP Request Against a Local Service](../web-programming_http-client/offline_http_client.md).
+- HTTP servers: [JSON Patch](../web-programming_http-server/json_patch.md).
 - Middleware often uses the `tower::Service` interface to wrap request and response handling.
 
 {{#include refs.incl.md}}

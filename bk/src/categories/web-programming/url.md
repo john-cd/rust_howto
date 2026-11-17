@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Uniform Resource Location
+# Uniform Resource Locator
 
 {{#include url.incl.md}}
 
@@ -38,7 +38,7 @@ The [`url::Url::join`][c~url::Url::join~docs]↗{{hi:url::Url::join}} method res
 {{#include ../../../crates/cats/web_programming/examples/url/new.rs:example}}
 ```
 
-## Extract the URL Origin (scheme / Host / port) {#extract-the-url-origin}
+## Extract the URL Origin (scheme, host, and port) {#extract-the-url-origin}
 
 [![url][c~url~docs~badge]][c~url~docs]{{hi:url}} [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}}
 
@@ -66,7 +66,7 @@ Parses [`url::Url`][c~url::Url~docs]↗{{hi:url::Url}} and slices it at [`url::P
 
 ## Related Topics {#related-topics .skip}
 
-- [Make HTTP Requests](../web-programming_http-client/requests.md).
+- [Make an HTTP Request Against a Local Service](../web-programming_http-client/offline_http_client.md).
 - [Extracting Links](scraping.md).
 
 {{#include refs.incl.md}}

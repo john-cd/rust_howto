@@ -43,7 +43,7 @@ MediaWiki link syntax is described in the [MediaWiki links guide][mediawiki~link
 ## Related Topics {#related-topics .skip}
 
 - [Uniform Resource Locator](url.md).
-- [Make HTTP Requests](../web-programming_http-client/requests.md).
+- [Make an HTTP Request Against a Local Service](../web-programming_http-client/offline_http_client.md).
 
 HTML parsing does not execute page JavaScript. For pages that need browser rendering or interaction, consider [headless_chrome](https://github.com/rust-headless-chrome/rust-headless-chrome) (Chrome DevTools Protocol), [chromiumoxide](https://github.com/mattsse/chromiumoxide) (Chrome DevTools Protocol), or [fantoccini](https://github.com/jonhoo/fantoccini) (WebDriver).
 
