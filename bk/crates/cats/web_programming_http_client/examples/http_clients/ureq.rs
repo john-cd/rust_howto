@@ -14,17 +14,16 @@ fn main() -> anyhow::Result<()> {
     // Define the URL to fetch data from.
     let url = "https://jsonplaceholder.typicode.com/posts/1";
     // Send a GET request to the URL and read the response body as a string.
-    let response: String =
-        // Make a GET request.
-        ureq::get(url)
-        // Send the request and blocks the caller until we receive a response.
-        .call()?
-        // Return a mutable reference to the associated HTTP body.
-        .body_mut()
-        .read_to_string()?;
+    let response = get_text(url)?;
 
     println!("Response: {response}");
     Ok(())
+}
+
+/// Sends a blocking GET request and returns the response body as text.
+fn get_text(url: &str) -> anyhow::Result<String> {
+    let mut response = ureq::get(url).call()?;
+    Ok(response.body_mut().read_to_string()?)
 }
 // ANCHOR_END: example
 
@@ -41,14 +40,30 @@ pub fn run() -> anyhow::Result<()> {
 /// `ureq` crate.
 #[cfg(test)]
 mod tests {
-    // output-only: the example fetches a live URL (ignored offline); see the
-    // other tests for its logic.
     use super::*;
 
     /// Requires a live network service to run the example.
     #[test]
+    #[ignore = "needs network"]
     fn require_network() -> anyhow::Result<()> {
         main()?;
+        Ok(())
+    }
+
+    /// A GET request returns the body text from the server.
+    #[test]
+    fn gets_text_from_a_local_server() -> anyhow::Result<()> {
+        let mut server = mockito::Server::new();
+        let mock = server
+            .mock("GET", "/posts/1")
+            .with_status(200)
+            .with_body("a local post")
+            .create();
+
+        let response = get_text(&format!("{}/posts/1", server.url()))?;
+
+        mock.assert();
+        assert_eq!(response, "a local post");
         Ok(())
     }
 }

@@ -42,14 +42,10 @@ The Range header is defined in [`RFC7233`][ietf~http-range-rfc7233]↗{{hi:RFC-7
 
 ## Related Topics {#related-topics .skip}
 
-- [[requests | Make HTTP Requests]].
-- [[server | HTTP Server]].
-- [[filesystem | Filesystem]].
+- [Make HTTP Requests](requests.md).
+- [HTTP Servers](../web-programming_http-server/json_patch.md).
+- [Filesystem](../filesystem/index.md).
 - [Command-line Interface](../../../src/categories/command-line-interface/index.md) for progress bars with `indicatif`.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  This review changes the basic download example to stream binary chunks into a temporary file, verifies that behavior with a local server, and corrects the upload and byte-range descriptions to match the existing examples.
-</div>
