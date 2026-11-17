@@ -58,6 +58,32 @@
 
 {{#include ../categories/asynchronous/structured_concurrency.incl.md}}
 
+## Authentication
+
+### Basic Authentication
+
+{{#include ../categories/authentication/basic_authentication.incl.md}}
+
+### Passwords, Sessions, and CSRF
+
+{{#include ../categories/authentication/session_login.incl.md}}
+
+### OAuth 2.0 Client Credentials
+
+{{#include ../categories/authentication/oauth_client_credentials.incl.md}}
+
+### OpenID Connect Authorization Code with PKCE
+
+{{#include ../categories/authentication/oidc_authorization_code.incl.md}}
+
+### JWT Bearer Authentication
+
+{{#include ../categories/authentication/jwt_authentication.incl.md}}
+
+### Passkeys
+
+{{#include ../categories/authentication/passkeys.incl.md}}
+
 ## Caching
 
 ### In Memory Cache

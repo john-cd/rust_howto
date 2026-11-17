@@ -84,6 +84,15 @@
 [ex~asynchronous~utilities]: ../categories/asynchronous/async_utilities.md#utilities
 [ex~asynchronous~watch-latest]: ../categories/asynchronous/structured_concurrency.md#watch-latest
 [ex~asynchronous~which-crate-provides-what]: ../categories/asynchronous/async.md#which-crate-provides-what
+[ex~authentication~basic-authentication]: ../categories/authentication/basic_authentication.md#basic-authentication
+[ex~authentication~hash-passwords]: ../categories/authentication/session_login.md#hash-passwords
+[ex~authentication~session-login]: ../categories/authentication/session_login.md#session-login
+[ex~authentication~csrf]: ../categories/authentication/session_login.md#csrf
+[ex~authentication~oauth-client-credentials]: ../categories/authentication/oauth_client_credentials.md#oauth-client-credentials
+[ex~authentication~oidc-authorization-code]: ../categories/authentication/oidc_authorization_code.md#oidc-authorization-code
+[ex~authentication~passkeys]: ../categories/authentication/passkeys.md#passkeys
+[ex~authentication~jwt-sign-and-verify]: ../categories/authentication/index.md#jwt-sign-and-verify
+[ex~authentication~jwt-bearer-extractor]: ../categories/authentication/index.md#jwt-bearer-extractor
 [ex~automation~find-unwraps]: ../categories/development-tools/automation/xtask.md#find-unwraps
 [ex~automation~git-churn]: ../categories/development-tools/automation/git.md#git-churn
 [ex~automation~workspace-lints]: ../categories/development-tools/automation/xtask.md#workspace-lints

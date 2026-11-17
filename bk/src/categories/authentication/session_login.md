@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Session Login
 
@@ -12,7 +12,7 @@ Cookie-based sessions remain the simplest way to authenticate people who use a w
 
 Never store passwords, only salted hashes made with a slow, memory-hard function. [`argon2`][c~argon2~docs]↗{{hi:argon2}} implements Argon2id, the algorithm the OWASP password storage guidance recommends first. `hash` generates a random salt and returns a self-describing PHC string (algorithm, parameters, salt, and hash) that can be stored in a single database column; `verify` parses that string and compares in constant time.
 
-[`password-auth`][c~password-auth~docs]↗{{hi:password-auth}} is the one-line alternative: it wraps Argon2 with safe defaults, and `is_hash_obsolete` tells you when a stored hash should be re-hashed with newer parameters. See [[password_hashing | Password Hashing]] for the other algorithms.
+[`password-auth`][c~password-auth~docs]↗{{hi:password-auth}} is the one-line alternative: it wraps Argon2 with safe defaults, and `is_hash_obsolete` tells you when a stored hash should be re-hashed with newer parameters. See the [OWASP Password Storage Cheat Sheet][owasp~password-storage] for algorithm-selection guidance.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/authentication/examples/session_login/hashing.rs:example}}
@@ -38,13 +38,13 @@ The tests drive the router with `tower::ServiceExt::oneshot`, so no network port
 
 ### Harden the Session
 
-- **Cookie flags.** Serve the application over HTTPS and call `SessionManagerLayer::with_secure(true)`. Keep the cookie `HttpOnly` (the default), so that scripts cannot read it. `tower-sessions` defaults to `SameSite=Strict`; relax it with `with_same_site(SameSite::Lax)` only if users must stay logged in when they arrive from links on other sites. The example sets `Secure` to `false` only so that it can run over plain HTTP in tests; see [[axum_extras | Axum Add-ons]] for an HTTP to HTTPS redirect and for TLS with `axum-server`; serving the login page only over HTTPS is what makes the `Secure` flag useful.
+- **Cookie flags.** Serve the application over HTTPS and call `SessionManagerLayer::with_secure(true)`. Keep the cookie `HttpOnly` (the default), so that scripts cannot read it. `tower-sessions` defaults to `SameSite=Strict`; relax it with `with_same_site(SameSite::Lax)` only if users must stay logged in when they arrive from links on other sites. The example sets `Secure` to `false` only so that it can run over plain HTTP in tests; see [Axum Add-ons](../web-programming_http-server/axum_extras.md) for an HTTP to HTTPS redirect and for TLS with `axum-server`; serving the login page only over HTTPS is what makes the `Secure` flag useful.
 - **Session fixation.** On the first login, `AuthSession::login` calls `Session::cycle_id`, replacing the pre-authentication ID while retaining session data. Do not bypass it by writing the user ID into the session yourself. Renew the ID after other privilege-level changes too, as [OWASP recommends][owasp~session-management].
 - **Timing leaks.** The example verifies a dummy hash when the username is unknown, so that the response time does not reveal which accounts exist. Return the same error for an unknown user and a wrong password.
 - **CSRF.** `SameSite` cookies blunt most cross-site request forgery, but state-changing forms should also carry a CSRF token or be checked with the `Origin` header. See the next section.
-- **Brute force.** Limit login attempts per account and per address, for example with a token bucket ([[rate_limiting_and_retries | Rate Limiting and Retries]] shows one for outgoing calls).
+- **Brute force.** Limit login attempts per account and per address, for example with a token bucket ([Rate Limiting and Retries](../web-programming_http-client/rate_limiting_and_retries.md) shows one for outgoing calls).
 
-For single sign-on with an external identity provider, see OAuth 2.0 in the [[authentication | Authentication]] overview.
+For single sign-on with an external identity provider, see OAuth 2.0 in the [Authentication](index.md) overview.
 
 ## Protect Forms with a CSRF Token {#csrf}
 
@@ -59,15 +59,15 @@ The example generates 32 random bytes with [`getrandom`][c~getrandom~docs]↗{{h
 ```
 
 - Check the token on every `POST`, `PUT`, `PATCH`, and `DELETE`, never on `GET`, and never put it in a URL.
-- For JSON APIs called by scripts, send the token in a custom header, or require a header that browsers will not send cross-site without a CORS preflight; see [[cors | Cross-origin Resource Sharing]].
+- For JSON APIs called by scripts, send the token in a custom header, or require a header that browsers will not send cross-site without a CORS preflight; see [Cross-origin Resource Sharing](../web-programming_http-server/cors.md).
 - Rotate the token when the user logs in, so it is tied to the authenticated session.
 
 ## Related Topics {#related-topics .skip}
 
-- [[authentication | Authentication]].
-- [[axum_extras | Axum Add-ons]] for flash messages, cookies, and TLS.
-- [[password_hashing | Password Hashing]].
-- [[web-programming_http-server | HTTP Servers]].
+- [Authentication](index.md).
+- [Axum Add-ons](../web-programming_http-server/axum_extras.md) for flash messages, cookies, and TLS.
+- [OWASP Password Storage Cheat Sheet][owasp~password-storage].
+- [HTTP Servers](../web-programming_http-server/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # OpenID Connect Authorization Code with PKCE
 
@@ -28,9 +28,9 @@ Notes for real deployments:
 
 ## Related Topics {#related-topics .skip}
 
-- [[authentication | Authentication]] for OAuth and OIDC flow choices.
-- [[oauth_client_credentials | OAuth 2.0 Client Credentials]] for service-to-service tokens.
-- [[session_login | Session Login]] for keeping the user signed in afterwards.
+- [Authentication](index.md) for OAuth and OIDC flow choices.
+- [OAuth 2.0 Client Credentials](oauth_client_credentials.md) for service-to-service tokens.
+- [Session Login](session_login.md) for keeping the user signed in afterwards.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
