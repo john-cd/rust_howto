@@ -2,7 +2,7 @@
 
 # Peripheral Devices
 
-Peripheral access usually goes through an operating-system driver. Choose a crate for the device's protocol or class, then check its supported platforms, required native libraries, and permissions before depending on it. User-space access is not the same as writing a kernel driver.
+Peripheral access usually goes through an operating-system driver. Choose a crate for the device's protocol or class, then check its supported platforms, required native libraries, and permissions before depending on it. User-space access is not the same as writing a kernel driver. The serial-port example only enumerates devices; it does not require attached hardware.
 
 {{#include peripherals.incl.md}}
 
@@ -38,7 +38,7 @@ Applications normally use the operating system's network stack through [`std::ne
 
 ## Graphics Cards (GPUs) {#graphics-cards .skip}
 
-[`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} and APIs such as [`vulkano`][c~vulkano~docs]↗{{hi:vulkano}} provide supported graphics and compute interfaces over the platform's GPU drivers. Use those APIs for rendering or compute work instead of accessing device registers or GPU memory directly; see [[graphics | Graphics]].
+[`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} and APIs such as [`vulkano`][c~vulkano~docs]↗{{hi:vulkano}} provide supported graphics and compute interfaces over platform GPU drivers. Use these APIs for rendering or compute work instead of accessing device registers or GPU memory directly.
 
 ## General Hardware Interaction {#general-hardware-interaction .skip}
 
@@ -48,7 +48,7 @@ For specialized devices, look for a maintained crate that implements the device'
 
 ### Device Drivers {#device-drivers .skip}
 
-Kernel drivers run with privileged access and must follow the target operating system's driver model, synchronization rules, and hardware specifications. They are separate from ordinary Rust applications and often require unsafe operations at the hardware boundary. For Linux kernel development, see the [Rust for Linux driver documentation][p~linux]; APIs and supported kernel versions are tied to the kernel tree being built.
+Kernel drivers run with privileged access and must follow the target operating system's driver model, synchronization rules, and hardware specifications. They are separate from ordinary Rust applications and often require unsafe operations at the hardware boundary. For Linux kernel development, see the [Rust for Linux driver documentation](https://docs.kernel.org/driver-api/); APIs and supported kernel versions are tied to the kernel tree being built.
 
 ### Hardware Access (User Space) {#hardware-access .skip}
 
@@ -56,14 +56,10 @@ In user space, an application normally opens an OS-provided device interface or 
 
 ## Related Topics {#related-topics .skip}
 
-- [Embedded Rust][p~embedded].
-- [Operating-system APIs][p~os].
-- [Linux kernel drivers][p~linux].
-- [Asynchronous Rust][p~asynchronous].
+- [Embedded Rust Book](https://docs.rust-embedded.org/book/).
+- [No Standard Library](../no-std/no_std.md) for bare-metal targets.
+- [Linux kernel driver documentation](https://docs.kernel.org/driver-api/).
+- [Asynchronous Programming](../asynchronous/index.md) for nonblocking device APIs.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  Expanded the peripheral guide with USB, serial, HID, GPIO, networking, GPU, driver, and user-space access guidance, including platform permission boundaries and local topic references.
-</div>

@@ -334,6 +334,9 @@
 [ex~email~lettre]: ../categories/email/send_emails.md#lettre
 [ex~email~mailchecker]: ../categories/email/send_emails.md#mailchecker
 [ex~email~mailparse]: ../categories/email/email_parsing.md#mailparse
+[ex~hardware-support~check-number-of-logical-cpu-cores]: ../categories/hardware-support/processor.md#check-number-of-logical-cpu-cores
+[ex~hardware-support~list-serial-ports]: ../categories/hardware-support/peripherals.md#list-serial-ports
+[ex~hardware-support~simd-dot-product]: ../categories/hardware-support/processor.md#simd-dot-product
 [ex~development-tools_build-utils~autocfg]: ../categories/development-tools_build-utils/autocfg.md#autocfg
 [ex~development-tools_build-utils~build-info]: ../categories/development-tools_build-utils/build_time_tooling.md#build-info
 [ex~development-tools_build-utils~cache-in-ci]: ../categories/development-tools_build-utils/build_cache.md#cache-in-ci
