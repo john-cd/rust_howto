@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Encryption
 
@@ -27,29 +27,27 @@ secure random source; they do not need an external service.
 {{#include ../../../crates/cats/cryptography/examples/encryption/chacha20poly1305.rs:example}}
 ```
 
-## Use the RSA Algorithm {#rsa}
+## RSA PKCS#1 v1.5 Compatibility Example {#rsa}
 
 {{#badges rsa cryptography=Cryptography}}{{hi:Crypto}}{{hi:Security}}{{hi:Encryption}}{{hi:rsa}}
 
-RSA (Rivest-Shamir-Adleman) is one of the most widely used public-key cryptosystems for secure data transmission. It relies on the mathematical properties of prime numbers to generate a pair of keys: a public key and a private key. The public key is used to encrypt data, which can only be decrypted by the corresponding private key, ensuring that only the intended recipient can access the information.
-
-[`rsa`][c~rsa~docs]↗{{hi:rsa}} is a pure Rust RSA implementation. It generates RSA key pairs (public and private keys), encrypts data with the public key, and decrypts data with the corresponding private key. The crate also supports digital signatures, enables signing data with the private key and verifying the [signature][p~signature] with the public key. [`rsa`][c~rsa~docs]↗{{hi:rsa}} offers various functionalities for working with RSA keys, including loading and saving keys in different formats (like PEM), and provides implementations of different padding schemes (like PKCS#1 v1.5 padding and PSS padding).
+`rsa` implements RSA public-key operations. RSA encryption is limited to short messages, so protocols usually use it only to protect a symmetric key and use AEAD for the data. This example demonstrates PKCS#1 v1.5 padding for compatibility; it is not a recommendation for a new protocol. The direct `rsa` 0.10 dependency includes the fix for [RUSTSEC-2023-0071](https://rustsec.org/advisories/RUSTSEC-2023-0071.html), but that does not make this legacy padding scheme suitable for a new protocol. Do not expose decryption errors or timing to an attacker, because that can create a padding oracle. If a protocol requires RSA encryption, use a maintained library and its RSA-OAEP support; prefer an established protocol over designing a hybrid scheme yourself.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/rsa.rs:example}}
 ```
 
-## `sodiumoxide` {#sodiumoxide}
+## Deprecated `sodiumoxide` API
 
 {{#badges sodiumoxide cryptography=Cryptography}}{{hi:NaCl}}{{hi:Libsodium}}{{hi:Crypto}}
 
-[`sodiumoxide`][c~sodiumoxide~docs]↗{{hi:sodiumoxide}} is a fast cryptographic library for Rust (bindings to [`libsodium`][libsodium]↗{{hi:libsodium}}). It implements encryption, decryption, signatures, password hashing, and more.
+`sodiumoxide` is deprecated. Do not start new projects with it. When maintaining legacy code, evaluate a maintained alternative such as [`dryoc`][c~dryoc~docs]↗ or the relevant RustCrypto crates; check API compatibility and security status before migrating.
 
 ## Related Topics {#related-topics .skip}
 
-- [[aead | Authenticated encryption and associated data]].
-- [[password_hashing | Password hashing]].
-- [[signature | Digital signatures]].
+- [AEAD](aead.md).
+- [Password Hashing](password_hashing.md).
+- [Digital Signatures](signature.md).
 - [Cryptography category](index.md).
 
 {{#include refs.incl.md}}

@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Cryptography
 
@@ -26,7 +26,7 @@ Use a message authentication code when parties share a secret and need integrity
 
 ## Digital Signatures
 
-Sign with a private key and verify with the corresponding public key. See [Digital Signatures](signature.md) for Ed25519 (`ed25519-dalek`), P-256 ECDSA, RSA compatibility, and the `signature` traits. Protect private keys and choose an identity and key-distribution scheme separately.
+Sign with a private key and verify with the corresponding public key. See [Digital Signatures](signature.md) for Ed25519 (`ed25519-dalek`), ECDSA, DSA compatibility, and the `signature` traits. Protect private keys and choose an identity and key-distribution scheme separately.
 
 ## Digital Certificates (X.509)
 

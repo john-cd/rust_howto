@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Compute Digital Signatures
 
@@ -28,7 +28,7 @@ A key pair, consisting of a private key and a public key, is generated. The priv
 To sign a message, a hash of the message is created. This hash is then signed using the private key, producing the digital signature.
 The recipient uses the sender's public key to verify the signature. If the signature is valid, it confirms that the message is authentic and has not been altered.
 
-[`ed25519-dalek`][c~ed25519-dalek~docs]↗{{hi:ed25519-dalek}} is compatible with [`#![no_std]`][book~rust-reference~no_std] environments, making it suitable for [embedded][p~embedded] systems or situations where the standard library is not available.
+[`ed25519-dalek`][c~ed25519-dalek~docs]↗{{hi:ed25519-dalek}} is compatible with [`#![no_std]`][book~rust-reference~no_std] environments, making it suitable for embedded systems or situations where the standard library is not available.
 
 ```rust,editable
 {{#include ../../../crates/cats/cryptography/examples/sign/ed25519_dalek.rs:example}}
@@ -67,9 +67,9 @@ For more [algorithms][p~algorithms], see Rust Crypto Signatures:
 
 ## Related Topics {#related-topics .skip}
 
-- [[hashing | Cryptographic hashing]].
-- [[certificates | Digital certificates]].
-- [[tls | TLS]].
+- [Cryptographic Hashing](../algorithms/hashing.md).
+- [Digital Certificates](certificates.md).
+- [TLS](tls.md).
 - [Cryptography category](index.md).
 
 {{#include refs.incl.md}}

@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Message Authentication Code
 
@@ -28,10 +28,10 @@ The example uses [`ring::hmac`][c~ring::hmac~docs]↗{{hi:ring::hmac}} to create
 
 ## Related Topics {#related-topics .skip}
 
-- [[hashing | Hashing]] describes the hash functions used by HMAC.
-- [[encryption | Encryption]] and [[aead | Authenticated Encryption]] cover confidentiality and authenticated encryption.
-- [[signature | Digital Signatures]] covers public-key authentication.
-- [[password_hashing | Password Hashing]] explains why passwords need a dedicated, deliberately expensive algorithm.
+- [Hashing](../algorithms/hashing.md) describes the hash functions used by HMAC.
+- [Encryption](encryption.md) and [AEAD](aead.md) cover confidentiality and authenticated encryption.
+- [Digital Signatures](signature.md) covers public-key authentication.
+- [Password Hashing](password_hashing.md) explains why passwords need a dedicated, deliberately expensive algorithm.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
