@@ -20,6 +20,44 @@
 
 {{#include ../categories/algorithms/sorting.incl.md}}
 
+## Asynchronous Programming
+
+### Async Basics
+
+{{#include ../categories/asynchronous/async.incl.md}}
+
+### Async Channels
+
+{{#include ../categories/asynchronous/async_channels.incl.md}}
+
+### Async Traits
+
+{{#include ../categories/asynchronous/async_traits.incl.md}}
+
+### Async Utilities
+
+{{#include ../categories/asynchronous/async_utilities.incl.md}}
+
+### Futures
+
+{{#include ../categories/asynchronous/futures.incl.md}}
+
+### Mixing Async and Blocking Code
+
+{{#include ../categories/asynchronous/async_and_blocking.incl.md}}
+
+### Streams
+
+{{#include ../categories/asynchronous/streams.incl.md}}
+
+### Tokio Runtime
+
+{{#include ../categories/asynchronous/tokio.incl.md}}
+
+### Cancellation and Structured Concurrency
+
+{{#include ../categories/asynchronous/structured_concurrency.incl.md}}
+
 ## Caching
 
 ### In Memory Cache
@@ -35,6 +73,62 @@
 ### `tar`
 
 {{#include ../categories/compression/tar.incl.md}}
+
+## Concurrency
+
+### Actors
+
+{{#include ../categories/concurrency/_actors.incl.md}}
+
+### Atomics
+
+{{#include ../categories/concurrency/atomics.incl.md}}
+
+### Concurrent Data Structures
+
+{{#include ../categories/concurrency/concurrent_data_structures.incl.md}}
+
+### Crossbeam
+
+{{#include ../categories/concurrency/crossbeam.incl.md}}
+
+### Data Parallelism
+
+{{#include ../categories/concurrency/data_parallelism.incl.md}}
+
+### Explicit Threads
+
+{{#include ../categories/concurrency/explicit_threads.incl.md}}
+
+### Message Passing
+
+{{#include ../categories/concurrency/message_passing.incl.md}}
+
+### Shared State
+
+{{#include ../categories/concurrency/shared_state.incl.md}}
+
+### Send and Sync
+
+{{#include ../categories/concurrency/send_sync.incl.md}}
+
+### Thread Pools
+
+{{#include ../categories/concurrency/threadpool.incl.md}}
+
+### Model-Checking with Loom
+
+{{#include ../categories/concurrency/loom.incl.md}}
+
+## Configuration
+
+### Configuration Management
+
+{{#include ../categories/config/configuration.incl.md}}
+
+### Environment Variables
+
+{{#include ../categories/config/environment_variables.incl.md}}
 
 ## Data Structures
 
@@ -240,6 +334,24 @@
 ### Units
 
 {{#include ../categories/mathematics/units.incl.md}}
+
+## Memory Management
+
+### Lazy Initialization
+
+{{#include ../categories/memory-management/lazy_initialization.incl.md}}
+
+### Memory Allocation
+
+{{#include ../categories/memory-management/memory_allocation.incl.md}}
+
+### Arena Allocation
+
+{{#include ../categories/memory-management/arena_allocation.incl.md}}
+
+### String Interning
+
+{{#include ../categories/memory-management/string_interning.incl.md}}
 
 ## Parsing
 
@@ -594,16 +706,6 @@
 ## OpenAPI and JSON Schema
 
 {{#include ../categories/web-programming_http-server/openapi.incl.md}}
-
-## Cancellation and Structured Concurrency
-
-{{#include ../categories/asynchronous/structured_concurrency.incl.md}}
-
-## Atomics and Loom
-
-{{#include ../categories/concurrency/atomics.incl.md}}
-
-{{#include ../categories/concurrency/loom.incl.md}}
 
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

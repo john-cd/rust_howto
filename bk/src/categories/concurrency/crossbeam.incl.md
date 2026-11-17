@@ -6,5 +6,3 @@ Use the Crossbeam crates when an application needs MPMC channels, channel select
 | --- | --- | --- |
 | [Select Across Several Channels][ex~concurrency~select-channels] | {{#crate crossbeam-channel}} | {{#categories concurrency=Concurrency}} |
 | [Distribute Work with a Bounded MPMC Pipeline][ex~concurrency~parallel-pipeline] | {{#crate crossbeam-channel}} | {{#categories concurrency=Concurrency}} |
-| [Concurrent Queues][ex~concurrency~crossbeam-queue] | {{#crate crossbeam-queue}} | {{#categories concurrency=Concurrency}} |
-| [AtomicCell][ex~concurrency~crossbeam-atomics] | {{#crate crossbeam-utils}} | {{#categories concurrency=Concurrency}} |

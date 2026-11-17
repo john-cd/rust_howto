@@ -32,7 +32,7 @@ or engineering question.
 ## Related topics
 
 - [Cloud](../cloud/index.md) and deployment environments.
-- Concurrency<!-- Cross-book topic: bk/drafts/categories/concurrency/index.md; not included in this preview. --> and asynchronous behavior.
+- Concurrency<!-- Cross-book topic: bk/src/categories/concurrency/index.md; not included in this preview. --> and asynchronous behavior.
 - [Data Processing](../data-processing/index.md) and storage choices.
 - Web Programming<!-- Cross-book topic: bk/drafts/categories/web-programming/index.md; not included in this preview. --> and service interfaces.
 - [Written in Rust](../written-in-rust/index.md) for examples of complete Rust applications.

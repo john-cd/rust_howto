@@ -18,4 +18,4 @@ To spawn on Tokio's multi-thread runtime, the future must be `Send` across every
 {{#include ../../crates/language/tests/ui/future_holds_non_send_value.rs:example}}
 ```
 
-Moving the `Rc` use entirely before `.await`, or using an owned `Send` value such as `Arc` when sharing across threads is necessary, changes that requirement. See the [staging Send/Sync guide](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/send_sync.md). Actor frameworks such as [Tellus](https://docs.rs/tellus/latest/tellus/) also make mailbox ownership explicit, but do not replace task cancellation and join decisions.
+Moving the `Rc` use entirely before `.await`, or using an owned `Send` value such as `Arc` when sharing across threads is necessary, changes that requirement. See the [staging Send/Sync guide](../categories/concurrency/send_sync.md). Actor frameworks such as [Tellus](https://docs.rs/tellus/latest/tellus/) also make mailbox ownership explicit, but do not replace task cancellation and join decisions.

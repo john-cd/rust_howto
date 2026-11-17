@@ -92,7 +92,7 @@ Taking the example of strings: using `&str` for borrowing and `String` for owned
 ## Related Topics {#related-topics .skip}
 
 - [[lifetimes | Lifetimes]].
-- [Memory Management](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/memory-management/index.md).
+- [Memory Management](../categories/memory-management/index.md).
 - [[ownership_and_borrowing | Ownership & Borrowing]].
 - [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
 - [[strings | Strings]].

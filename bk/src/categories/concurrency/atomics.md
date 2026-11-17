@@ -30,11 +30,11 @@ To share ownership of an atomic variable across threads, put it in an [`std::syn
 {{#include ../../../crates/cats/concurrency/examples/atomics/atomic_cell.rs:example}}
 ```
 
-## `arc-swap` {#arc-swap}
+## Read-mostly Snapshots with `arc-swap` {#arc-swap}
 
 {{#badges arc-swap data-structures="Data structures" memory-management="Memory management"}}{{hi:Arc}}{{hi:Atomic}}
 
-The [`arc-swap::ArcSwap`][c~arc-swap::ArcSwap~docs]↗{{hi:arc-swap::ArcSwap}} type in [`arc-swap`][c~arc-swap~docs]↗{{hi:arc-swap}} stores an `Arc` that can be replaced atomically. Its lock-free reads let a writer publish a new immutable value while readers continue using their existing snapshot. It is designed for read-mostly shared state; use a mutex when callers need to mutate the value in place.
+The [`arc-swap::ArcSwap`][c~arc-swap::ArcSwap~docs]↗{{hi:arc-swap::ArcSwap}} type in [`arc-swap`][c~arc-swap~docs]↗{{hi:arc-swap}} stores an `Arc` that can be replaced atomically. Readers can keep using the snapshot they loaded while a writer publishes a replacement. It is designed for read-mostly shared state; use a mutex when callers need to mutate the value in place. This page describes the API but does not include a runnable `arc-swap` recipe.
 
 ## Build a Spinlock Using Atomics {#spinlock}
 

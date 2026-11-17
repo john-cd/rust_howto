@@ -4,16 +4,6 @@
 
 <!-- Ordered migration review and remaining work: MIGRATION.md. -->
 
-- [Asynchronous](categories/asynchronous/index.md)
-  - [Async](categories/asynchronous/async.md)
-  - [Async and Traits](categories/asynchronous/async_traits.md)
-  - [Tokio Async Runtime](categories/asynchronous/tokio.md)
-  - [Async Channels](categories/asynchronous/async_channels.md)
-  - [Streams](categories/asynchronous/streams.md)
-  - [Futures crate](categories/asynchronous/futures.md)
-  - [Mixing Async and Blocking Code](categories/asynchronous/async_and_blocking.md)
-  - [Utilities](categories/asynchronous/async_utilities.md)
-
 - [Authentication](categories/authentication/index.md)
   - [Basic Authentication](categories/authentication/basic_authentication.md)
   - [Session Login](categories/authentication/session_login.md)
@@ -35,21 +25,6 @@
   - [Shells](categories/command-line-utilities/shells.md)
 
 - [Compression](categories/compression/index.md)
-
-- [Concurrency](categories/concurrency/index.md)
-  - [Explicit Threads](categories/concurrency/explicit_threads.md)
-  - [Threadpools](categories/concurrency/threadpool.md)
-  - [Multithreading with `crossbeam`](categories/concurrency/crossbeam.md)
-  - [Data Parallelism](categories/concurrency/data_parallelism.md)
-  - [Message Passing and Channels](categories/concurrency/message_passing.md)
-  - [Shared-state Concurrency](categories/concurrency/shared_state.md)
-  - [Concurrent Data Structures](categories/concurrency/concurrent_data_structures.md)
-  - [Send and Sync](categories/concurrency/send_sync.md)
-  - [Actors](categories/concurrency/_actors.md)
-
-- [Configuration](categories/config/index.md)
-  - [Environment Variables](categories/config/environment_variables.md)
-  - [Configuration Management](categories/config/configuration.md)
 
 - [Cryptography](categories/cryptography/index.md)
   - [Password Hashing](categories/cryptography/password_hashing.md)
@@ -167,12 +142,6 @@
 - [Hardware Support](categories/hardware-support/index.md)
   - [Processor](categories/hardware-support/processor.md)
   - [Peripherals](categories/hardware-support/peripherals.md)
-
-- [Memory Management](categories/memory-management/index.md)
-  - [Lazy Initialization](categories/memory-management/lazy_initialization.md)
-  - [Memory Allocation](categories/memory-management/memory_allocation.md)
-  - [Arena Allocation](categories/memory-management/arena_allocation.md)
-  - [String Interning](categories/memory-management/string_interning.md)
 
 - [Network Programming](categories/network-programming/index.md)
   - [Server](categories/network-programming/server.md)

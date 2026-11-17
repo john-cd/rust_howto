@@ -16,7 +16,7 @@ The core idea of interior mutability is to allow data to be mutated through a sh
 
 Rust memory safety allows either several immutable references (`&T`) to an object `T` or one mutable reference (`&mut T`) at a time. References follow these rules at compile time. `RefCell<T>` provides interior mutability by checking the same borrowing rules at runtime; `Cell<T>` instead moves values in and out without exposing an interior reference, and `OnceCell<T>` allows one-time initialization.
 
-These types are used in scenarios involving [shared state](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/shared_state.md) within a single thread, like GUI applications or when creating complex [data structures][p~data-structures] like graphs.
+These types are used in scenarios involving [shared state](../categories/concurrency/shared_state.md) within a single thread, like GUI applications or when creating complex [data structures][p~data-structures] like graphs.
 
 `RefCell` keeps track of borrowing rules _at runtime_ and ensures that only one mutable or multiple immutable borrows exist at a time.
 Attempts to violate borrowing rules (like having multiple mutable borrows) will cause a _panic_ at runtime. Common methods include `borrow`, [`borrow_mut`][c~std::cell::RefCell::borrow_mut~docs]↗, and [`try_borrow`][c~std::cell::RefCell::try_borrow~docs]↗.
@@ -51,7 +51,7 @@ For shared mutable state across multiple threads, use `Arc<T>` with [`Mutex<T>`]
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}{{hi:std::cell::OnceCell}}
 
-[`OnceCell<T>`][c~std::cell::OnceCell~docs]↗ allows for single assignment interior mutability. Unlike `Cell` or `RefCell`, once a `OnceCell` is initialized, its value cannot be changed. This makes it perfect for [lazy initialization](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/memory-management/lazy_initialization.md), where you want to defer the creation of an expensive value until it is first needed, but ensure it is only computed once.
+[`OnceCell<T>`][c~std::cell::OnceCell~docs]↗ allows for single assignment interior mutability. Unlike `Cell` or `RefCell`, once a `OnceCell` is initialized, its value cannot be changed. This makes it perfect for [lazy initialization](../categories/memory-management/lazy_initialization.md), where you want to defer the creation of an expensive value until it is first needed, but ensure it is only computed once.
 
 You can initialize a `OnceCell` using `set`, but a more common pattern is to use `get_or_init`, which takes a closure that returns the initialization value.
 
@@ -63,13 +63,13 @@ For a multi-threaded context, use [`OnceLock<T>`][c~std::sync::OnceLock~docs]↗
 
 ## Related Topics {#related-topics .skip}
 
-- [Concurrency](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/index.md).
+- [Concurrency](../categories/concurrency/index.md).
 - [[data-structures | Data Structures]].
-- [Memory Management](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/memory-management/index.md).
+- [Memory Management](../categories/memory-management/index.md).
 - [Memory Usage Analysis](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/development-tools_profiling/memory_usage_analysis.md).
 - [[reference_counting | Reference Counting]].
 - [Rust Patterns](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/rust-patterns/index.md).
-- [Shared State](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/concurrency/shared_state.md).
+- [Shared State](../categories/concurrency/shared_state.md).
 - [[smart_pointers | Smart Pointers]].
 
 {{#include refs.incl.md}}

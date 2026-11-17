@@ -72,12 +72,40 @@
   - [Hashing](categories/algorithms/hashing.md)
   - [Graph Algorithms](categories/algorithms/graph_algorithms.md)
 
+- [Asynchronous Programming](categories/asynchronous/index.md)
+  - [Async](categories/asynchronous/async.md)
+  - [Futures Crate](categories/asynchronous/futures.md)
+  - [Tokio](categories/asynchronous/tokio.md)
+  - [Async Channels](categories/asynchronous/async_channels.md)
+  - [Async Traits](categories/asynchronous/async_traits.md)
+  - [Streams](categories/asynchronous/streams.md)
+  - [Mixing Async and Blocking Code](categories/asynchronous/async_and_blocking.md)
+  - [Async Utilities](categories/asynchronous/async_utilities.md)
+  - [Cancellation and Structured Concurrency](categories/asynchronous/structured_concurrency.md)
+
 - [Caching](categories/caching/index.md)
   - [In-memory Caching](categories/caching/in_memory_cache.md)
 
 - [Compression](categories/compression/index.md)
   - [Working with Tarballs](categories/compression/tar.md)
   - [Compression and Decompression](categories/compression/compression.md)
+
+- [Concurrency](categories/concurrency/index.md)
+  - [Explicit Threads](categories/concurrency/explicit_threads.md)
+  - [Threadpools](categories/concurrency/threadpool.md)
+  - [Multithreading with `crossbeam`](categories/concurrency/crossbeam.md)
+  - [Data Parallelism](categories/concurrency/data_parallelism.md)
+  - [Message Passing and Channels](categories/concurrency/message_passing.md)
+  - [Shared-State Concurrency](categories/concurrency/shared_state.md)
+  - [Concurrent Data Structures](categories/concurrency/concurrent_data_structures.md)
+  - [Send and Sync](categories/concurrency/send_sync.md)
+  - [Actors](categories/concurrency/actors.md)
+  - [Atomics](categories/concurrency/atomics.md)
+  - [Model-Checking with Loom](categories/concurrency/loom.md)
+
+- [Configuration](categories/config/index.md)
+  - [Configuration Management](categories/config/configuration.md)
+  - [Environment Variables](categories/config/environment_variables.md)
 
 - [Data Structures](categories/data-structures/index.md)
   - [Strings](categories/data-structures/strings.md)
@@ -137,6 +165,12 @@
   - [Graph Theory](categories/mathematics/graph_theory.md)
   - [Differential Equations](categories/mathematics/differential_equations.md)
 
+- [Memory Management](categories/memory-management/index.md)
+  - [Lazy Initialization](categories/memory-management/lazy_initialization.md)
+  - [Memory Allocation](categories/memory-management/memory_allocation.md)
+  - [Arena Allocation](categories/memory-management/arena_allocation.md)
+  - [String Interning](categories/memory-management/string_interning.md)
+
 - [Images](categories/multimedia_images/index.md)
   - [Image Processing](categories/multimedia_images/images.md)
 
@@ -178,9 +212,6 @@
   - [Text Diffing](categories/text-processing/diffing.md)
   - [OS and Non-UTF-8 Strings](categories/text-processing/other_strings.md)
 - [Make an HTTP Request Against a Local Service](categories/web-programming_http-client/offline_http_client.md)
-- [Cancellation and Structured Concurrency](categories/asynchronous/structured_concurrency.md)
-- [Atomics](categories/concurrency/atomics.md)
-- [Model-Checking with Loom](categories/concurrency/loom.md)
 - [HTTP Servers](categories/web-programming_http-server/json_patch.md)
   - [OpenAPI and JSON Schema](categories/web-programming_http-server/openapi.md)
   - [Bound Retries and Concurrency with Tower](categories/web-programming_http-server/service_resilience.md)

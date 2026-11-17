@@ -13,7 +13,7 @@
 | [![aerospace::unmanned-aerial-vehicles][cat~aerospace::unmanned-aerial-vehicles~badge]][cat~aerospace::unmanned-aerial-vehicles] | Unmanned aerial vehicles like multicopters, fixed wing, VTOL (Vertical Takeoff and Landing), airships/balloons, rovers, boats, submersibles. | - |
 | [![algorithms][cat~algorithms~badge]][cat~algorithms] | Rust implementations of core algorithms, such as hashing, sorting, searching. | - |
 | [![api-bindings][cat~api-bindings~badge]][cat~api-bindings] | Idiomatic wrappers for specific APIs for convenient access from Rust. Includes HTTP API wrappers as well. Non-idiomatic or unsafe bindings can be found in "External FFI bindings". | - |
-| [![asynchronous][cat~asynchronous~badge]][cat~asynchronous] | Dealing with events independently of the main program flow, using techniques like futures, promises, waiting, or eventing. | [Asynchronous](../categories/asynchronous/index.md) |
+| [![asynchronous][cat~asynchronous~badge]][cat~asynchronous] | Dealing with events independently of the main program flow, using techniques like futures, promises, waiting, or eventing. | [Asynchronous](../../src/categories/asynchronous/index.md) |
 | [![authentication][cat~authentication~badge]][cat~authentication] | Confirming identities. | [Authentication](../categories/authentication/index.md) |
 | [![caching][cat~caching~badge]][cat~caching] | Storing the results of previous computations in order to reuse them. | [Caching](../categories/caching/index.md) |
 | [![command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] | Creating command line interfaces with argument parsers, line-editing, or output coloring and formatting. | [Command-line Interface](../categories/command-line-interface/index.md) |
@@ -21,8 +21,8 @@
 | [![compilers][cat~compilers~badge]][cat~compilers] | Compiler implementations, including interpreters and transpilers. | - |
 | [![compression][cat~compression~badge]][cat~compression] | Algorithms for making data smaller. | [Compression](../categories/compression/index.md) |
 | [![computer-vision][cat~computer-vision~badge]][cat~computer-vision] | Comprehending the world from video or images. | - |
-| [![concurrency][cat~concurrency~badge]][cat~concurrency] | Implementing concurrent and parallel computation. | [Concurrency](../categories/concurrency/index.md) |
-| [![config][cat~config~badge]][cat~config] | Configuration management for applications. | [Configuration](../categories/config/index.md) |
+| [![concurrency][cat~concurrency~badge]][cat~concurrency] | Implementing concurrent and parallel computation. | [Concurrency](../../src/categories/concurrency/index.md) |
+| [![config][cat~config~badge]][cat~config] | Configuration management for applications. | [Configuration](../../src/categories/config/index.md) |
 | [![cryptography][cat~cryptography~badge]][cat~cryptography] | Algorithms for securing data. | [Cryptography](../categories/cryptography/index.md) |
 | [![cryptography::cryptocurrencies][cat~cryptography::cryptocurrencies~badge]][cat~cryptography::cryptocurrencies] | Digital currencies, wallets, and distributed ledgers. | - |
 | [![data-structures][cat~data-structures~badge]][cat~data-structures] | Rust implementations of particular ways of organizing data suited for specific purposes. | [Data Structures](../categories/data-structures/index.md) |
@@ -53,7 +53,7 @@
 | [![internationalization][cat~internationalization~badge]][cat~internationalization] | Developing software capable of adapting to various languages and regions. | - |
 | [![localization][cat~localization~badge]][cat~localization] | Adapting internationalized software to specific languages and regions. | - |
 | [![mathematics][cat~mathematics~badge]][cat~mathematics] | Crates with a mathematical aspect. | - |
-| [![memory-management][cat~memory-management~badge]][cat~memory-management] | Allocation, memory mapping, garbage collection, reference counting, or interfaces to foreign memory managers. | [Memory Management](../categories/memory-management/index.md) |
+| [![memory-management][cat~memory-management~badge]][cat~memory-management] | Allocation, memory mapping, garbage collection, reference counting, or interfaces to foreign memory managers. | [Memory Management](../../src/categories/memory-management/index.md) |
 | [![multimedia][cat~multimedia~badge]][cat~multimedia] | Audio, video, and image processing or rendering engines. | - |
 | [![multimedia::audio][cat~multimedia::audio~badge]][cat~multimedia::audio] | Record, output, or process audio. | - |
 | [![multimedia::encoding][cat~multimedia::encoding~badge]][cat~multimedia::encoding] | Encode or decode binary data in multimedia formats. | - |
