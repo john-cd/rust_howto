@@ -24,7 +24,7 @@
 [ex~os~which]: external_commands.md#which
 [ex~os~xshell]: external_commands.md#xshell
 [p~functions]: ../../language/functions.md
-[p~log]: ../development-tools_debugging/log.md
+[p~log]: ../../../src/categories/development-tools_debugging/log.md
 [p~unix]: # "../os_unix-apis/unix.md"
 [p~written-in-rust]: # "../../other/written-in-rust/index.md"
 [blog_os~guide]: https://os.phil-opp.com/

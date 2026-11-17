@@ -140,6 +140,17 @@
   - [Parsing and Displaying](categories/date-and-time/parse.md)
   - [`time` Crate](categories/date-and-time/time_crate.md)
 
+- [Development Tools - Debugging](categories/development-tools_debugging/index.md)
+  - [Debuggers](categories/development-tools_debugging/debugger.md)
+  - [Debugging](categories/development-tools_debugging/debugging.md)
+  - [Tracing](categories/development-tools_debugging/tracing.md)
+  - [Alternatives](categories/development-tools_debugging/tracing_alternatives.md)
+  - [Log Messages](categories/development-tools_debugging/log.md)
+  - [Logging Configuration](categories/development-tools_debugging/config_log.md)
+  - [Metrics](categories/development-tools_debugging/metrics.md)
+  - [Distributed Telemetry](categories/development-tools_debugging/distributed_telemetry.md)
+  - [Diagnostic Functions](categories/development-tools_debugging/diagnostic_functions.md)
+
 - [Development Tools - Testing](categories/development-tools_testing/index.md)
   - [Testing](categories/development-tools_testing/testing.md)
   - [Assertions](categories/development-tools_testing/assertions.md)

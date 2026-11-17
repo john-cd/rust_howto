@@ -240,6 +240,44 @@
 
 ## Development Tools
 
+### Debugging and Observability
+
+#### Debuggers
+
+{{#include ../categories/development-tools_debugging/debugger.incl.md}}
+
+#### Debugging
+
+{{#include ../categories/development-tools_debugging/debugging_examples.incl.md}}
+
+#### Tracing
+
+{{#include ../categories/development-tools_debugging/tracing.incl.md}}
+
+#### Logging Alternatives
+
+{{#include ../categories/development-tools_debugging/tracing_alternatives.incl.md}}
+
+#### Log Messages
+
+{{#include ../categories/development-tools_debugging/log.incl.md}}
+
+#### Logging Configuration
+
+{{#include ../categories/development-tools_debugging/config_log.incl.md}}
+
+#### Metrics
+
+{{#include ../categories/development-tools_debugging/metrics_examples.incl.md}}
+
+#### Distributed Telemetry
+
+{{#include ../categories/development-tools_debugging/distributed_telemetry_examples.incl.md}}
+
+#### Diagnostic Functions
+
+{{#include ../categories/development-tools_debugging/diagnostic_functions.incl.md}}
+
 ### Testing
 
 #### Testing
