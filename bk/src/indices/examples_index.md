@@ -82,6 +82,20 @@
 
 {{#include ../categories/command-line-interface/user_interaction.incl.md}}
 
+## Command-line Utilities
+
+### Filesystem Utilities
+
+{{#include ../categories/command-line-utilities/filesystem_examples.incl.md}}
+
+### Networking Utilities
+
+{{#include ../categories/command-line-utilities/networking_examples.incl.md}}
+
+### Shells and Related Utilities
+
+{{#include ../categories/command-line-utilities/shells_examples.incl.md}}
+
 ## Compression
 
 ### Compression
