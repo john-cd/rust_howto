@@ -17,7 +17,7 @@
 | [![authentication][cat~authentication~badge]][cat~authentication] | Confirming identities. | [Authentication](../categories/authentication/index.md) |
 | [![caching][cat~caching~badge]][cat~caching] | Storing the results of previous computations in order to reuse them. | [Caching](../categories/caching/index.md) |
 | [![command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface] | Creating command line interfaces with argument parsers, line-editing, or output coloring and formatting. | [Command-line Interface](../../src/categories/command-line-interface/index.md) |
-| [![command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] | Applications to run at the command line. | [Command-line Utilities](../categories/command-line-utilities/index.md) |
+| [![command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities] | Applications to run at the command line. | [Command-line Utilities](../../src/categories/command-line-utilities/index.md) |
 | [![compilers][cat~compilers~badge]][cat~compilers] | Compiler implementations, including interpreters and transpilers. | - |
 | [![compression][cat~compression~badge]][cat~compression] | Algorithms for making data smaller. | [Compression](../categories/compression/index.md) |
 | [![computer-vision][cat~computer-vision~badge]][cat~computer-vision] | Comprehending the world from video or images. | - |

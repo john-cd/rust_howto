@@ -13,11 +13,6 @@
 
 - [Caching](categories/caching/index.md)
 
-- [Command-line Utilities](categories/command-line-utilities/index.md)
-  - [Filesystem](categories/command-line-utilities/filesystem_cli.md)
-  - [Networking](categories/command-line-utilities/networking_cli.md)
-  - [Shells](categories/command-line-utilities/shells.md)
-
 - [Compression](categories/compression/index.md)
 
 - [Cryptography](categories/cryptography/index.md)

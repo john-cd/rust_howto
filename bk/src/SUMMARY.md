@@ -92,6 +92,11 @@
   - [Terminal User Interfaces](categories/command-line-interface/tui.md)
   - [User Interaction](categories/command-line-interface/user_interaction.md)
 
+- [Command-line Utilities](categories/command-line-utilities/index.md)
+  - [File Listing and Display](categories/command-line-utilities/filesystem_cli.md)
+  - [Networking Utilities](categories/command-line-utilities/networking_cli.md)
+  - [Shells and Related Utilities](categories/command-line-utilities/shells.md)
+
 - [Compression](categories/compression/index.md)
   - [Working with Tarballs](categories/compression/tar.md)
   - [Compression and Decompression](categories/compression/compression.md)
