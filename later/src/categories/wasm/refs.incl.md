@@ -32,7 +32,7 @@
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~rendering]: ../../../drafts/categories/rendering/rendering.md
 [p~serverless]: ../../../drafts/other/cloud/_fragment.md
-[p~testing]: ../../../src/categories/development-tools_testing/testing.md
+[p~testing]: ../../../../bk/src/categories/development-tools_testing/testing.md
 [p~visualization]: ../../../drafts/categories/visualization/visualization.md
 [mozilla~webassembly-concepts~website]: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
 [rustc~wasm32-unknown-unknown~website]: https://doc.rust-lang.org/rustc/platform-support/wasm32-unknown-unknown.html
