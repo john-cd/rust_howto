@@ -366,6 +366,16 @@
 
 {{#include ../categories/email/send_emails.incl.md}}
 
+## Hardware Support
+
+### Peripheral Devices
+
+{{#include ../categories/hardware-support/peripherals_examples.incl.md}}
+
+### Processor
+
+{{#include ../categories/hardware-support/processor.incl.md}}
+
 ## Development Tools
 
 ### Cargo

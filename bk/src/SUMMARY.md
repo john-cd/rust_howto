@@ -176,6 +176,10 @@
   - [Email Parsing](categories/email/email_parsing.md)
   - [Read Emails](categories/email/read_emails.md)
 
+- [Hardware Support](categories/hardware-support/index.md)
+  - [Processor](categories/hardware-support/processor.md)
+  - [Peripheral Devices](categories/hardware-support/peripherals.md)
+
 - [Development Tools](categories/development-tools/index.md)
   - [Cargo](categories/development-tools/cargo/cargo.md)
     - [Package Layout](categories/development-tools/cargo/package_layout.md)
