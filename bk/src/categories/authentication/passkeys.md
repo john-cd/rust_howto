@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Passkeys (WebAuthn)
 
@@ -39,9 +39,9 @@ Notes for real deployments:
 
 ## Related Topics {#related-topics .skip}
 
-- [[authentication | Authentication]] for choosing between sessions, tokens and federated sign-in.
-- [[session_login | Session Login]] for keeping the user signed in after the passkey ceremony.
-- [[oidc_authorization_code | OpenID Connect Authorization Code with PKCE]] for delegating sign-in to a provider.
+- [Authentication](index.md) for choosing between sessions, tokens and federated sign-in.
+- [Session Login](session_login.md) for keeping the user signed in after the passkey ceremony.
+- [OpenID Connect Authorization Code with PKCE](oidc_authorization_code.md) for delegating sign-in to a provider.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

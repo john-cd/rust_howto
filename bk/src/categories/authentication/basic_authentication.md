@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # Basic Authentication
 
@@ -24,10 +24,8 @@ Basic authentication encodes the username and password in the request header. Th
 
 ## Related Topics {#related-topics .skip}
 
-- [[cryptography | Cryptography]].
-- [[encryption | Encryption]].
-- [[signature | Signatures]].
-- [[certificates | Certificates]].
+- [Encode and Decode with `base64`](../encoding/string_encoding.md#base64) explains the header encoding; Base64 does not protect credentials.
+- [HTTP Servers](../web-programming_http-server/index.md) for HTTPS and request handling.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
