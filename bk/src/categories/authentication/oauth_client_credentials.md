@@ -1,4 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
+<!-- TODO Reviewed 11-17-2026. -->
 
 # OAuth 2.0 Client Credentials
 
@@ -20,9 +20,9 @@ The client-credentials grant is not a user-login flow: the access token authoriz
 
 ## Related Topics {#related-topics .skip}
 
-- [[authentication | Authentication]] for OAuth and OIDC flow choices.
-- [[session_login | Session Login]] for browser user sign-in.
-- [[web-programming_http-client | HTTP Clients]] for `reqwest` requests.
+- [Authentication](index.md) for OAuth and OIDC flow choices.
+- [Session Login](session_login.md) for browser user sign-in.
+- [HTTP Clients](../web-programming_http-client/index.md) for `reqwest` requests.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

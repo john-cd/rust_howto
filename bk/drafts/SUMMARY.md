@@ -4,13 +4,6 @@
 
 <!-- Ordered migration review and remaining work: MIGRATION.md. -->
 
-- [Authentication](categories/authentication/index.md)
-  - [Basic Authentication](categories/authentication/basic_authentication.md)
-  - [Session Login](categories/authentication/session_login.md)
-  - [OAuth 2.0 Client Credentials](categories/authentication/oauth_client_credentials.md)
-  - [OpenID Connect Authorization Code with PKCE](categories/authentication/oidc_authorization_code.md)
-  - [Passkeys (WebAuthn)](categories/authentication/passkeys.md)
-
 - [Caching](categories/caching/index.md)
 
 - [Compression](categories/compression/index.md)
