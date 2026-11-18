@@ -25,6 +25,10 @@ incoming link from the example index. Some are overview pages that share recipes
 | P3 | Improve [sidebar and related-topic navigation][nov18-nav] and the [worked A* explanation][nov18-astar]. |
 | P3 | Add recipes for [borrowed and owned JSON input][nov18-serde] and [streaming Zstandard][nov18-zstd]. |
 
+Of 4,270 unique HTTPS destinations in rendered chapter links, 2,366 returned success and 11 returned 404.
+The other 1,893 were inconclusive, including requests deferred after host rate limits.
+[External link findings and verified replacements](https://github.com/john-cd/rust_howto/issues/2396) supplement the stale draft links above.
+
 The locked, offline Windows example targets for caching, async channels and graph algorithms passed 50 tests.
 Removing both sorts from a temporary copy of the benchmark still passed its checksum test. Workspace tests alone
 also miss setup instructions that omit a required feature. The full example workspace, other platforms and PDF
