@@ -28,7 +28,7 @@ impl Game {
         self.ticks = self.ticks.saturating_add(1);
     }
 
-    /// Handles the ticks behavior for this component.
+    /// Returns the saturating count of simulation updates applied to the game.
     fn ticks(&self) -> u32 {
         self.ticks
     }

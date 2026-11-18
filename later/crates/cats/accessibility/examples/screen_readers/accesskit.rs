@@ -77,7 +77,7 @@ mod tests {
         assert_eq!(update.focus, button_id);
     }
 
-    /// Handles the find node behavior for this component.
+    /// Finds a semantic node by ID, failing the test if the expected node is absent.
     fn find_node(update: &TreeUpdate, id: NodeId) -> &Node {
         update
             .nodes

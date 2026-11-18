@@ -51,7 +51,7 @@ impl Counter {
         Self { value }
     }
 
-    /// Handles the current value behavior for this component.
+    /// Exposes the stored count as a read-only Python property without changing it.
     #[getter]
     fn current_value(&self) -> i64 {
         self.value

@@ -60,12 +60,12 @@ impl Source for Sine {
         None
     }
 
-    /// Handles the channels behavior for this component.
+    /// Reports one channel because the iterator emits a mono sample stream.
     fn channels(&self) -> ChannelCount {
         nz!(1)
     }
 
-    /// Handles the sample rate behavior for this component.
+    /// Reports the configured samples per second used by the oscillator phase calculation.
     fn sample_rate(&self) -> SampleRate {
         self.sample_rate
     }
