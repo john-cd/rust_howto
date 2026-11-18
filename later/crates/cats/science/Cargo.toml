@@ -27,6 +27,11 @@ name = "feature_pipeline"
 path = "examples/feature_pipeline.rs"
 test = true
 
+[[example]]
+name = "text_features"
+path = "examples/text_features.rs"
+test = true
+
 [dependencies]
 # Provides tensors, devices, and core operations for the Candle machine-learning framework.
 candle-core = { version = "0.11.1", optional = true }

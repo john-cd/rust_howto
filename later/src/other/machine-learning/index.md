@@ -2,7 +2,7 @@
 
 # Machine Learning in Practice
 
-These recipes cover three practical workflows: training a small classifier, forecasting future observations, and deploying an exported model. Choose the training and serving tools for the required model, runtime dependencies, target, and performance measurements. These examples use synthetic fixtures and do not establish production accuracy or latency.
+These recipes cover training-only feature preparation, a lexical retrieval baseline, fitting a classifier, forecasting future observations, and deploying an exported model. Choose the training and serving tools for the required model, runtime dependencies, target, and performance measurements. These examples use synthetic fixtures and do not establish production accuracy or latency.
 
 {{#include index.incl.md}}
 
@@ -35,6 +35,30 @@ The test with an extreme held-out value verifies that evaluation rows cannot cha
 training statistics. RMSE has the same units as the target; classification needs
 classification metrics rather than an arbitrary RMSE threshold. Keep a final test set
 untouched by preprocessing choices and hyperparameter searches.
+
+## Establish a Text Retrieval Baseline
+
+Before adding a neural embedding model, measure a simple lexical baseline. This example
+learns a sorted vocabulary from training documents, converts queries to count vectors,
+and ranks by cosine similarity. Unknown words do not add inference-time features;
+all-unknown queries have zero similarity. Matching complete tokens avoids accidental
+substring matches, such as treating "rusty" as the word "rust".
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/science/examples/text_features.rs:example}}
+```
+
+```sh
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p science --example text_features
+```
+
+This is a small reference baseline, not a pretrained tokenizer or semantic search model.
+It lowercases and splits alphanumeric words; it does not perform Unicode normalization,
+stemming, stop-word filtering, or subword segmentation. Real corpora need vocabulary and
+document-length limits and a versioned transform. For a pretrained transformer, use its
+exact `tokenizers` tokenizer/configuration, vocabulary, special tokens, attention mask,
+and truncation rules; a bag-of-words vector cannot be substituted for model token IDs.
+Evaluate retrieval with labeled queries and ranking metrics rather than classifier accuracy.
 
 ## Choose the Execution Layer
 
