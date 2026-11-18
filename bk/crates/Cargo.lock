@@ -24551,6 +24551,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "clap",
+ "naga 30.0.2",
  "pollster 1.0.1",
  "three-d",
  "three-d-asset",
