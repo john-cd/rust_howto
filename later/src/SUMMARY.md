@@ -115,6 +115,7 @@
   - [GPU](other/gpu/gpu.md)
 
 - [GUI](categories/gui/index.md)
+  - [Responsive Background Work](categories/gui/background_work.md)
   - [Clipboard](categories/gui/clipboard.md)
   - [File Dialogs](categories/gui/file_dialogs.md)
   - [GTK](categories/gui/gtk.md)
