@@ -20,7 +20,7 @@ For shared crate selection and helper-process contracts, see [Native OS APIs and
 | File events | FSEvents bindings | Watch filesystem changes using the native event service. |
 | App packaging | [`cargo-bundle`][c~cargo-bundle~docs]↗{{hi:cargo-bundle}} | Package a Rust application bundle for distribution. |
 
-The older `cocoa`, `core-foundation`, and `objc` crates are legacy interfaces. For new Objective-C framework code, review the `objc2-*` crates and their framework features. The example uses `objc2-foundation` to read the operating system version. See [[objc | Objective-C]] for more on calling Objective-C from Rust.
+The older `cocoa`, `core-foundation`, and `objc` crates are legacy interfaces. For new Objective-C framework code, review the `objc2-*` crates and their framework features. The example uses `objc2-foundation` to read the operating system version. See [Objective-C](../development-tools_ffi/objc.md) for more on calling Objective-C from Rust.
 
 A short AppKit entry point uses the current main-thread marker API:
 
@@ -40,10 +40,10 @@ This API is macOS-only; initialize AppKit on the main thread and enable the corr
 
 ## Related Topics
 
-- [[api-bindings | API Bindings]] and [[external-ffi-bindings | External FFI Bindings]].
-- [[development-tools_ffi | Development Tools: FFI]].
-- [[objc | Objective-C]].
-- [[os | Operating Systems]].
+- [API Bindings](../api-bindings/index.md) and [External FFI Bindings](../external-ffi-bindings/index.md).
+- [Development Tools: FFI](../development-tools_ffi/index.md).
+- [Objective-C](../development-tools_ffi/objc.md).
+- [Operating Systems](https://john-cd.com/rust_howto/categories/os/index.html).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -23,11 +23,11 @@ For shared crate selection and helper-process contracts, see [Native OS APIs and
 
 ## Related Topics
 
-- [[os | Operating Systems]].
-- [[os_linux-apis | OS: Linux APIs]].
-- [[os_macos-apis | OS: macOS APIs]].
-- [[os_unix-apis | OS: Unix APIs]].
-- [[development-tools_ffi | Development Tools: FFI]].
+- [Operating Systems](https://john-cd.com/rust_howto/categories/os/index.html).
+- [OS: Linux APIs](../os_linux-apis/index.md).
+- [OS: macOS APIs](../os_macos-apis/index.md).
+- [OS: Unix APIs](https://john-cd.com/rust_howto/categories/os_unix-apis/index.html).
+- [Development Tools: FFI](../development-tools_ffi/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
