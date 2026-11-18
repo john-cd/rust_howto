@@ -16,7 +16,9 @@ use std::sync::atomic::Ordering;
 use embassy_executor::Spawner;
 use embassy_sync::blocking_mutex::raw::CriticalSectionRawMutex;
 use embassy_sync::channel::Channel;
-use embassy_time::Timer;
+use embassy_sync::signal::Signal;
+use embassy_time::Duration;
+use embassy_time::with_timeout;
 
 /// Capacity for all messages sent by the example task.
 const MESSAGE_COUNT: usize = 3;
@@ -28,7 +30,10 @@ static SENSOR_VALUES: Channel<CriticalSectionRawMutex, u32, MESSAGE_COUNT> = Cha
 static RECEIVED_VALUES: [AtomicU32; MESSAGE_COUNT] =
     [AtomicU32::new(0), AtomicU32::new(0), AtomicU32::new(0)];
 
-/// Signals that the consumer received the complete message sequence.
+/// Wakes the deadline task when the consumer has received the entire sequence.
+static CONSUMER_DONE: Signal<CriticalSectionRawMutex, ()> = Signal::new();
+
+/// Signals that the deadline task finished, allowing all task slots to be reused.
 static COMPLETED: AtomicBool = AtomicBool::new(false);
 
 /// Signals that the timer-backed task deadline elapsed.
@@ -56,14 +61,15 @@ async fn receive_sensor_values() {
         received.store(SENSOR_VALUES.receive().await, Ordering::Release);
     }
 
-    COMPLETED.store(true, Ordering::Release);
+    CONSUMER_DONE.signal(());
 }
 
 /// Ends the host run if the producer and consumer do not finish promptly.
 #[embassy_executor::task]
 async fn stop_after_deadline() {
-    Timer::after_secs(2).await;
-    TIMED_OUT.store(true, Ordering::Release);
+    let result = with_timeout(Duration::from_secs(2), CONSUMER_DONE.wait()).await;
+    TIMED_OUT.store(result.is_err(), Ordering::Release);
+    COMPLETED.store(true, Ordering::Release);
 }
 
 /// Starts all three tasks and reports task-allocation failures.
@@ -95,6 +101,7 @@ fn run_example() -> anyhow::Result<Vec<u32>> {
     for received in &RECEIVED_VALUES {
         received.store(0, Ordering::Relaxed);
     }
+    CONSUMER_DONE.reset();
     COMPLETED.store(false, Ordering::Relaxed);
     TIMED_OUT.store(false, Ordering::Relaxed);
     SPAWN_FAILED.store(false, Ordering::Relaxed);
@@ -107,11 +114,7 @@ fn run_example() -> anyhow::Result<Vec<u32>> {
                 SPAWN_FAILED.store(true, Ordering::Release);
             }
         },
-        || {
-            COMPLETED.load(Ordering::Acquire)
-                || TIMED_OUT.load(Ordering::Acquire)
-                || SPAWN_FAILED.load(Ordering::Acquire)
-        },
+        || COMPLETED.load(Ordering::Acquire) || SPAWN_FAILED.load(Ordering::Acquire),
     );
 
     if SPAWN_FAILED.load(Ordering::Acquire) {
@@ -158,6 +161,11 @@ mod tests {
             run_example().expect("the host Embassy tasks should finish before the deadline");
 
         assert_eq!(received_values, [10, 20, 30]);
+        // A successful return must release the static deadline-task slot too.
+        assert_eq!(
+            run_example().expect("a second run should reuse all task slots"),
+            [10, 20, 30]
+        );
     }
 
     /// Verifies that the private example entry point completes successfully.

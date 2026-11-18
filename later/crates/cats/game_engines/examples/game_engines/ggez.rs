@@ -60,6 +60,8 @@ struct MainState {
 
     /// The circle mesh rendered each frame.
     circle: graphics::Mesh,
+    /// Remaining frames in a bounded platform smoke run, or no bound interactively.
+    smoke_frames: Option<u8>,
 }
 
 impl MainState {
@@ -72,7 +74,8 @@ impl MainState {
     /// # Arguments
     ///
     /// * `context` - Shared state and services used to complete the ggez workflow.
-    fn new(context: &Context) -> GameResult<Self> {
+    /// * `smoke` - Requests shutdown after two successful frame presentations.
+    fn new(context: &Context, smoke: bool) -> GameResult<Self> {
         let circle = graphics::Mesh::new_circle(
             context,
             graphics::DrawMode::fill(),
@@ -88,6 +91,7 @@ impl MainState {
                 velocity: Vec2::new(160.0, 120.0),
             },
             circle,
+            smoke_frames: smoke.then_some(2),
         })
     }
 }
@@ -114,7 +118,17 @@ impl EventHandler for MainState {
             &self.circle,
             graphics::DrawParam::default().dest(self.ball.position),
         );
-        canvas.finish(context)
+        canvas.finish(context)?;
+        if let Some(remaining) = &mut self.smoke_frames
+            && *remaining > 0
+        {
+            *remaining -= 1;
+            if *remaining == 0 {
+                println!("Presented two ggez frames successfully.");
+                context.request_quit();
+            }
+        }
+        Ok(())
     }
 }
 
@@ -125,7 +139,10 @@ impl EventHandler for MainState {
 /// Returns a ggez error if context or graphics initialization fails.
 pub fn example_body() -> GameResult {
     let (context, event_loop) = ContextBuilder::new("rust_howto_ggez", "rust_howto").build()?;
-    let state = MainState::new(&context)?;
+    let state = MainState::new(
+        &context,
+        std::env::var_os("RUST_HOWTO_SMOKE_TEST").is_some(),
+    )?;
 
     event::run(context, event_loop, state)
 }

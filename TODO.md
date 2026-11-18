@@ -37,9 +37,9 @@ Rust semantics, the first promoted recipes, and the next migration candidates.
 - [#2277][life] · Corrected common lifetime selection, nested references,
   and static bounds in `d6ed36b28`. All 22 lifetime example tests and
   strict Clippy passed. The new negative example produced `E0597`.
-- **P2** [#2269][i2269] · The future No Allocation index still includes a file
-  removed by the published migration. Fix and rerender the preview before
-  closing.
+- The future No Allocation include is repaired and its preview renders under
+  [#2350](https://github.com/john-cd/rust_howto/issues/2350). Platform and ML
+  migration readiness is recorded in [later/PLATFORM_READINESS.md](later/PLATFORM_READINESS.md).
 - **P2** [#2279][ranges] · The draft HTTP range recipe can combine chunks from
   different versions and leave a partial destination.
 

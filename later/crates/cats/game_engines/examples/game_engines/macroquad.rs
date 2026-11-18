@@ -50,10 +50,8 @@ async fn async_main() {
         velocity: vec2(160.0, 120.0),
     };
 
-    #[expect(
-        clippy::infinite_loop,
-        reason = "The frame loop runs until the window is closed and the process exits"
-    )]
+    let smoke = std::env::var_os("RUST_HOWTO_SMOKE_TEST").is_some();
+    let mut presented = 0;
     loop {
         clear_background(WHITE);
         step(
@@ -63,6 +61,11 @@ async fn async_main() {
         );
         draw_circle(ball.position.x, ball.position.y, BALL_RADIUS, RED);
         next_frame().await;
+        presented += 1;
+        if smoke && presented == 3 {
+            println!("Presented three Macroquad frames successfully.");
+            break;
+        }
     }
 }
 // ANCHOR_END: example

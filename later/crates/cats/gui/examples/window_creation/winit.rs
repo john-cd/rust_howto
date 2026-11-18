@@ -20,6 +20,10 @@ use winit::window::WindowId;
 struct App {
     /// The window created after the event loop resumes.
     window: Option<Window>,
+    /// Closes the native smoke run after its first redraw event.
+    smoke: bool,
+    /// Number of redraw events handled by this instance.
+    redraws: usize,
 }
 
 impl ApplicationHandler for App {
@@ -47,7 +51,11 @@ impl ApplicationHandler for App {
         if should_exit(&event) {
             event_loop.exit();
         } else if matches!(event, WindowEvent::RedrawRequested) {
+            self.redraws += 1;
             println!("Redraw requested");
+            if self.smoke {
+                event_loop.exit();
+            }
         }
     }
 }
@@ -57,11 +65,26 @@ fn should_exit(event: &WindowEvent) -> bool {
     matches!(event, WindowEvent::CloseRequested)
 }
 
-/// Creates the event loop and runs the application.
+/// Creates the event loop and runs the window, optionally until its first redraw.
+///
+/// # Errors
+///
+/// Returns an error if window/event-loop initialization fails or a smoke run
+/// finishes without a redraw.
 fn main() -> anyhow::Result<()> {
     let event_loop = EventLoop::new()?;
     event_loop.set_control_flow(ControlFlow::Wait);
-    event_loop.run_app(&mut App::default())?;
+    let smoke = std::env::var_os("RUST_HOWTO_SMOKE_TEST").is_some();
+    let mut app = App {
+        smoke,
+        ..Default::default()
+    };
+    event_loop.run_app(&mut app)?;
+    anyhow::ensure!(app.window.is_some(), "window creation did not succeed");
+    anyhow::ensure!(
+        !smoke || app.redraws > 0,
+        "native smoke run received no redraw"
+    );
     Ok(())
 }
 // ANCHOR_END: example

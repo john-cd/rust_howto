@@ -27,6 +27,10 @@ struct App {
 
     /// Optional error used by app; `None` means the value is not configured or unavailable.
     error: Option<Box<dyn std::error::Error>>,
+    /// Stops the smoke check after a successful nonzero frame presentation.
+    smoke: bool,
+    /// Number of frames successfully submitted to the native surface.
+    presented: usize,
 }
 
 /// The solid color of the frame, in the 0x00RRGGBB format.
@@ -44,17 +48,23 @@ fn non_zero_size(width: u32, height: u32) -> Option<(NonZeroU32, NonZeroU32)> {
 }
 
 /// Presents a solid blue frame, skipping zero-sized minimized windows.
-fn draw(surface: &mut Surface<Rc<Window>, Rc<Window>>) -> Result<(), Box<dyn std::error::Error>> {
+///
+/// Returns `true` only after a nonzero buffer is successfully presented.
+///
+/// # Errors
+///
+/// Returns an error if resizing, mapping, or presenting the native surface fails.
+fn draw(surface: &mut Surface<Rc<Window>, Rc<Window>>) -> Result<bool, Box<dyn std::error::Error>> {
     let size = surface.window().inner_size();
     let Some((width, height)) = non_zero_size(size.width, size.height) else {
-        return Ok(());
+        return Ok(false);
     };
     surface.resize(width, height)?;
     let mut buffer = surface.buffer_mut()?;
     // Softbuffer pixels use 0x00RRGGBB; the high byte is unused.
     buffer.fill(BLUE);
     buffer.present()?;
-    Ok(())
+    Ok(true)
 }
 
 impl ApplicationHandler for App {
@@ -92,11 +102,20 @@ impl ApplicationHandler for App {
                 }
             }
             WindowEvent::RedrawRequested => {
-                if let Some(surface) = &mut self.surface
-                    && let Err(error) = draw(surface)
-                {
-                    self.error = Some(error);
-                    event_loop.exit();
+                if let Some(surface) = &mut self.surface {
+                    match draw(surface) {
+                        Ok(true) => {
+                            self.presented += 1;
+                            if self.smoke {
+                                event_loop.exit();
+                            }
+                        }
+                        Ok(false) => {}
+                        Err(error) => {
+                            self.error = Some(error);
+                            event_loop.exit();
+                        }
+                    }
                 }
             }
             _ => {}
@@ -107,8 +126,16 @@ impl ApplicationHandler for App {
 /// Runs the event loop until the window closes or drawing fails.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let event_loop = EventLoop::new()?;
-    let mut app = App::default();
+    let smoke = std::env::var_os("RUST_HOWTO_SMOKE_TEST").is_some();
+    let mut app = App {
+        smoke,
+        ..Default::default()
+    };
     event_loop.run_app(&mut app)?;
+    if smoke && app.error.is_none() && app.presented == 0 {
+        return Err(std::io::Error::other("no native frame was presented").into());
+    }
+    println!("Presented {} softbuffer frame(s).", app.presented);
     match app.error {
         Some(error) => Err(error),
         None => Ok(()),

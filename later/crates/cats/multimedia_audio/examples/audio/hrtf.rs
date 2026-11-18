@@ -26,7 +26,6 @@ const SOURCE_LEN: usize = 512;
 const HRIR_FIXTURE_BYTES: &[u8] = include_bytes!("fixture.hrir");
 
 /// Returns the root mean square (RMS) of a signal stream.
-/// Spatializes a 440 Hz tone and compares the sound level in both ears.
 fn rms(samples: impl Iterator<Item = f32>) -> f32 {
     let (sum, count) = samples.fold((0.0, 0), |(sum, count), s| (sum + s * s, count + 1));
     (sum / count as f32).sqrt()
@@ -48,7 +47,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     // The output is stereo: processed samples are mixed into it.
     let mut output = vec![(0.0_f32, 0.0_f32); source.len()];
 
-    // The vector points from the listener to the source.
+    // In listener coordinates, the vector points from the source toward the listener.
     let direction = Vec3::new(1.0, 1.0, 1.0);
     // The processor keeps the convolution history between frames of this source.
     let mut history = Vec::new();
