@@ -836,9 +836,17 @@
 
 ## Multimedia: Images
 
+### Color Handling
+
+{{#include ../categories/multimedia_images/color_handling.incl.md}}
+
 ### Images
 
 {{#include ../categories/multimedia_images/images.incl.md}}
+
+### Pixel Buffers
+
+{{#include ../categories/multimedia_images/pixel_buffers.incl.md}}
 
 ## Network Programming
 

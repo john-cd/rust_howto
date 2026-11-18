@@ -22,10 +22,21 @@ name = "images"
 path = "examples/images/main.rs"
 test = true
 
+[[example]]
+name = "color_handling"
+path = "examples/color_handling/main.rs"
+test = true
+
+[[example]]
+name = "pixel_buffers"
+path = "examples/pixel_buffers/main.rs"
+test = true
+
 [dependencies]
 clap = "4.6.7"
 # Imaging library. Provides basic image processing and encoders/decoders for common image formats.
 image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
+palette = "0.7.7"
 # Exif parsing library written in pure Rust
 kamadak-exif = "0.6.2"
 # A lossless PNG compression optimizer
