@@ -132,6 +132,10 @@
   - [Search](categories/database/search.md)
   - [AMQP and Message Queues](categories/database/amqp.md)
 
+- [Database Implementations](categories/database-implementations/index.md)
+  - [Databases Written in Rust](categories/database-implementations/databases.md)
+  - [Search Engines Written in Rust](categories/database-implementations/rust_search_engines.md)
+
 - [Concurrency](categories/concurrency/index.md)
   - [Explicit Threads](categories/concurrency/explicit_threads.md)
   - [Threadpools](categories/concurrency/threadpool.md)

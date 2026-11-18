@@ -350,6 +350,16 @@
 
 {{#include ../categories/database/sqlite.incl.md}}
 
+## Database Implementations
+
+### Databases
+
+{{#include ../categories/database-implementations/databases.incl.md}}
+
+### Rust Search Engines
+
+{{#include ../categories/database-implementations/rust_search_engines.incl.md}}
+
 ## Date and Time
 
 ### Duration
