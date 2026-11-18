@@ -33,10 +33,6 @@ path = "examples/datafusion/main.rs"
 test = true
 required-features = ["datafusion"]
 
-[features]
-arrow = ["dep:arrow", "dep:arrow-array", "dep:arrow-cast", "dep:arrow-ipc", "dep:clap", "dep:serde", "dep:serde_json"]
-datafusion = ["dep:datafusion", "dep:tokio"]
-
 [dependencies]
 anyhow = "1.0.104"
 # Keep the Arrow major version aligned with DataFusion for compatible record batches.
@@ -50,6 +46,10 @@ polars = { version = "0.55.2", default-features = false, features = ["lazy"] }
 serde = { version = "1.0.229", features = ["derive"], optional = true }
 serde_json = { version = "1.0.154", optional = true }
 tokio = { version = "1.54.1", features = ["rt"], optional = true }
+
+[features]
+arrow = ["dep:arrow", "dep:arrow-array", "dep:arrow-cast", "dep:arrow-ipc", "dep:clap", "dep:serde", "dep:serde_json"]
+datafusion = ["dep:datafusion", "dep:tokio"]
 
 [lints]
 workspace = true

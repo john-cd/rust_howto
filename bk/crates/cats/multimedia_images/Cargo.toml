@@ -34,13 +34,10 @@ test = true
 
 [dependencies]
 clap = "4.6.7"
-# Imaging library. Provides basic image processing and encoders/decoders for common image formats.
 image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
-palette = "0.7.7"
-# Exif parsing library written in pure Rust
 kamadak-exif = "0.6.2"
-# A lossless PNG compression optimizer
 oxipng = { version = "10.2.1", default-features = false }
+palette = "0.7.7"
 
 [dev-dependencies]
 # Isolate generated image files during tests.
