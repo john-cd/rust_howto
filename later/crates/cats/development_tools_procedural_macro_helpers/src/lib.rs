@@ -90,6 +90,7 @@ pub fn my_darling_macro_derive(input: TokenStream) -> TokenStream {
 
     let expanded = quote! {
         impl MyDarlingTrait for #struct_name {
+            /// Prints the greeting configured by the derive input.
             fn hello() {
                 println!("Hello, {}!", #name);
             }
@@ -135,6 +136,7 @@ pub fn derive_debug(input: TokenStream) -> TokenStream {
 pub fn watt_macro(input: TokenStream) -> TokenStream {
     let input_str = input.to_string();
     let expanded = quote! {
+        /// Prints the input tokens received by the function-like macro.
         fn watt_demo() {
             println!("Watt macro received: {}", #input_str);
         }
