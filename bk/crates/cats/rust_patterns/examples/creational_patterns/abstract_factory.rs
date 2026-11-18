@@ -59,7 +59,7 @@ mod light {
     struct LightTextBox;
 
     impl TextBox for LightTextBox {
-        /// Handles the display text behavior for this component.
+        /// Prints the supplied text using the light-themed widget demonstration.
         fn display_text(&self, text: &str) {
             println!("Displaying '{text}' in a light text box.");
         }
@@ -106,7 +106,7 @@ mod dark {
     struct DarkTextBox;
 
     impl TextBox for DarkTextBox {
-        /// Handles the display text behavior for this component.
+        /// Prints the supplied text using the dark-themed widget demonstration.
         fn display_text(&self, text: &str) {
             println!("Displaying '{text}' in a dark text box.");
         }

@@ -12,7 +12,7 @@ use std::io::Read;
 
 /// A reader decorator that counts the bytes returned by its inner reader.
 struct CountingReader<R> {
-    /// Shared internal state.
+    /// Reader owned by the decorator; all reads are delegated to it.
     inner: R,
 
     /// Number of bytes read so far.
@@ -28,7 +28,7 @@ impl<R> CountingReader<R> {
         }
     }
 
-    /// Handles the bytes read behavior for this component.
+    /// Returns the total bytes reported by successful reads through this wrapper.
     fn bytes_read(&self) -> usize {
         self.bytes_read
     }

@@ -28,14 +28,14 @@ impl Add for Meters {
     /// Alias for `Self` used to represent output.
     type Output = Self;
 
-    /// Adds the supplied value to the current collection or state.
+    /// Adds two lengths and preserves meters as the result unit.
     fn add(self, rhs: Self) -> Self {
         Self(self.0 + rhs.0)
     }
 }
 
 impl AddAssign for Meters {
-    /// Adds the supplied assign to the current collection or state.
+    /// Increases this length by another length measured in meters.
     fn add_assign(&mut self, rhs: Self) {
         self.0 += rhs.0;
     }
@@ -45,14 +45,14 @@ impl Sub for Meters {
     /// Alias for `Self` used to represent output.
     type Output = Self;
 
-    /// Handles the sub behavior for this component.
+    /// Subtracts two lengths and preserves meters as the result unit.
     fn sub(self, rhs: Self) -> Self {
         Self(self.0 - rhs.0)
     }
 }
 
 impl SubAssign for Meters {
-    /// Scaling by a plain number is fine: meters * 2.0 is still meters.
+    /// Subtracts another meter-valued length in place.
     fn sub_assign(&mut self, rhs: Self) {
         self.0 -= rhs.0;
     }
@@ -63,7 +63,7 @@ impl Mul<f64> for Meters {
     /// Alias for `Self` used to represent output.
     type Output = Self;
 
-    /// Dividing two lengths gives a dimensionless ratio.
+    /// Scales a length by a dimensionless factor, retaining meters.
     fn mul(self, rhs: f64) -> Self {
         Self(self.0 * rhs)
     }
@@ -74,7 +74,7 @@ impl Div for Meters {
     /// Alias for `f64` used to represent output.
     type Output = f64;
 
-    /// Handles the div behavior for this component.
+    /// Divides two lengths to produce a dimensionless floating-point ratio.
     fn div(self, rhs: Self) -> f64 {
         self.0 / rhs.0
     }

@@ -23,7 +23,10 @@ enum Expression {
 }
 
 impl Expression {
-    /// Handles the evaluate behavior for this component.
+    /// Recursively adds leaf values, treating an empty Sum as zero.
+    ///
+    /// Visits each node once and uses call-stack space proportional to tree depth.
+    /// Integer addition follows the build profile's overflow-checking behavior.
     fn evaluate(&self) -> i64 {
         match self {
             Self::Value(value) => *value,

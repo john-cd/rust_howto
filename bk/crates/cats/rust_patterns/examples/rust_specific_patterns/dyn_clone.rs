@@ -20,7 +20,7 @@ trait MyTrait: DynClone {
 
 // Implement `MyTrait` for `String``.
 impl MyTrait for String {
-    /// Handles the recite behavior for this component.
+    /// Prints the string with a musical suffix to demonstrate dynamic dispatch.
     fn recite(&self) {
         println!("{self} ♫");
     }
@@ -69,7 +69,7 @@ mod tests {
     );
 
     impl MyTrait for Counter {
-        /// Handles the recite behavior for this component.
+        /// Increments shared state so the test can observe calls through both cloned objects.
         fn recite(&self) {
             self.0.set(self.0.get() + 1);
         }
