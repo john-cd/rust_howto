@@ -252,11 +252,11 @@
 
 ### Dataframes
 
-{{#include ../categories/data-processing/dataframes.incl.md}}
+{{#include ../other/data-processing/dataframes.incl.md}}
 
 ### Data Engineering
 
-{{#include ../categories/data-processing/data_engineering.incl.md}}
+{{#include ../other/data-processing/data_engineering.incl.md}}
 
 ## Data Structures
 
@@ -1032,23 +1032,23 @@
 
 ### Inheritance
 
-{{#include ../categories/standalone/inheritance.incl.md}}
+{{#include ../other/standalone/inheritance.incl.md}}
 
 ### Overflow
 
-{{#include ../categories/standalone/overflow.incl.md}}
+{{#include ../other/standalone/overflow.incl.md}}
 
 ### Plugin
 
-{{#include ../categories/standalone/plugin.incl.md}}
+{{#include ../other/standalone/plugin.incl.md}}
 
 ### Predicates
 
-{{#include ../categories/standalone/predicates.incl.md}}
+{{#include ../other/standalone/predicates.incl.md}}
 
 ### Self Referential
 
-{{#include ../categories/standalone/self_referential.incl.md}}
+{{#include ../other/standalone/self_referential.incl.md}}
 
 ## Template Engine
 

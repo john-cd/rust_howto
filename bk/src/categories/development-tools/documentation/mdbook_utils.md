@@ -18,7 +18,7 @@ The following local-book commands use the source directory and write their
 reports to explicit files:
 
 ```console
-{{#include ../../../../crates/cats/development_tools_documentation/examples/mdbook_utils/link_reports.sh}}
+{{#include ../../../../crates/cats/development_tools/documentation/examples/mdbook_utils/link_reports.sh}}
 ```
 
 `links write-inline` also reports external inline links and autolinks. Choose
@@ -43,7 +43,7 @@ conflict instead of overwriting a changed output file. The replacement command
 modifies Markdown after confirmation, so review a diff before accepting it.
 
 ```console
-{{#include ../../../../crates/cats/development_tools_documentation/examples/mdbook_utils/code_examples.sh}}
+{{#include ../../../../crates/cats/development_tools/documentation/examples/mdbook_utils/code_examples.sh}}
 ```
 
 Use `replace-includes-by-contents` to expand includes for tools that do not
@@ -55,7 +55,7 @@ Markdown build, for example before passing that output to a renderer that does
 not understand mdBook helpers.
 
 ```console
-{{#include ../../../../crates/cats/development_tools_documentation/examples/mdbook_utils/find_unreferenced_files.sh}}
+{{#include ../../../../crates/cats/development_tools/documentation/examples/mdbook_utils/find_unreferenced_files.sh}}
 ```
 
 ## Generate Indexes and a Sitemap {#generate-indexes-and-sitemap}
@@ -68,7 +68,7 @@ Use `debug` to write the parser events for a source tree when diagnosing a
 Markdown parsing issue; it also operates entirely on local files.
 
 ```console
-{{#include ../../../../crates/cats/development_tools_documentation/examples/mdbook_utils/indexes_and_sitemap.sh}}
+{{#include ../../../../crates/cats/development_tools/documentation/examples/mdbook_utils/indexes_and_sitemap.sh}}
 ```
 
 For installation, configuration precedence, and every command option, see the

@@ -37,7 +37,7 @@ just cargo run --manifest-path bk/crates/Cargo.toml --locked -p science --exampl
 The seeded decision-tree recipe uses a synthetic, linearly separable dataset and checks accuracy on a held-out split.
 
 ```rust,editable
-{{#include ../../../crates/cats/science/examples/ml/smartcore.rs:example}}
+{{#include ../../../crates/other/machine_learning/examples/ml/smartcore.rs:example}}
 ```
 
 ## Cluster with Linfa
@@ -45,7 +45,7 @@ The seeded decision-tree recipe uses a synthetic, linearly separable dataset and
 K-means needs only feature rows. This example creates two small synthetic groups, seeds its random initializer, and tests that every point receives a label across exactly two clusters.
 
 ```rust,editable
-{{#include ../../../crates/cats/science/examples/ml/kmeans.rs:example}}
+{{#include ../../../crates/other/machine_learning/examples/ml/kmeans.rs:example}}
 ```
 
 ## Predict Numeric Values with Linfa
@@ -53,7 +53,7 @@ K-means needs only feature rows. This example creates two small synthetic groups
 Linear regression fits a numeric target and predicts values for new feature rows.
 
 ```rust,editable
-{{#include ../../../crates/cats/science/examples/ml/linfa.rs:example}}
+{{#include ../../../crates/other/machine_learning/examples/ml/linfa.rs:example}}
 ```
 
 ## Prepare and Evaluate Data

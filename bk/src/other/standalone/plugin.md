@@ -16,7 +16,7 @@ This example uses trait objects to dispatch among plugins already linked into th
 {{#include ../../../crates/standard_library/examples/any/plugin.rs:example}}
 ```
 
-For an application that only needs independently developed components to register with the host at compile time, an in-process registry is usually simpler and safer than dynamic loading. See [explicit and inventory-based plugin registration](../rust-patterns/plugin_registration.md).
+For an application that only needs independently developed components to register with the host at compile time, an in-process registry is usually simpler and safer than dynamic loading. See [explicit and inventory-based plugin registration](../../categories/rust-patterns/plugin_registration.md).
 
 ## Load Native Plugins at Runtime
 
@@ -31,7 +31,7 @@ WebAssembly can provide a portable guest-host boundary, but the format alone doe
 ## Related Topics {#related-topics .skip}
 
 - [Dynamic Typing](../../standard-library/dynamic_typing.md).
-- [Explicit and Inventory-Based Plugin Registration](../rust-patterns/plugin_registration.md).
+- [Explicit and Inventory-Based Plugin Registration](../../categories/rust-patterns/plugin_registration.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

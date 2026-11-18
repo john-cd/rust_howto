@@ -158,6 +158,16 @@ site-url = "/rust_howto/"
 
 [output.html.redirect]
 "/introduction/index.html" = "../introduction.html"
+"/categories/cloud/aws_lambda.html" = "../../other/cloud/aws_lambda.html"
+"/categories/data-processing/data_engineering.html" = "../../other/data-processing/data_engineering.html"
+"/categories/data-processing/dataframes.html" = "../../other/data-processing/dataframes.html"
+"/categories/data-processing/index.html" = "../../other/data-processing/index.html"
+"/categories/standalone/index.html" = "../../other/standalone/index.html"
+"/categories/standalone/inheritance.html" = "../../other/standalone/inheritance.html"
+"/categories/standalone/overflow.html" = "../../other/standalone/overflow.html"
+"/categories/standalone/plugin.html" = "../../other/standalone/plugin.html"
+"/categories/standalone/predicates.html" = "../../other/standalone/predicates.html"
+"/categories/standalone/self_referential.html" = "../../other/standalone/self_referential.html"
 
 # cname = "john-cd.com"
 # input-404 = "not-found.md"

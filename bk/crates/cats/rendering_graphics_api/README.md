@@ -32,5 +32,4 @@ just cargo test --manifest-path bk/crates/Cargo.toml --locked -p rendering_graph
 ```
 
 It tests checked RGBA8 row padding/unpacking, aspect-preserving viewports, and pointer
-mapping. See `bk/src/categories/rendering_graphics-api/frame_layout.md`. The separate
-`offscreen_render` example performs real GPU render/map/pixel checks.
+mapping. See `bk/src/categories/rendering_graphics-api/frame_layout.md`.

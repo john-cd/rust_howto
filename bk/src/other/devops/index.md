@@ -12,7 +12,7 @@ DevOps connects software development and operations through practices for versio
 | [CI/CD](cd_ci.md) | Run automated checks and promote verified artifacts. |
 | [GitHub Actions](github_actions.md) | Configure Rust toolchains, caches, and workflows on GitHub. |
 | [Release Automation](release_automation.md) | Version, validate, package, and publish a release. |
-| [AWS Lambda](../../categories/cloud/aws_lambda.md) | Deploy a Rust function to a cloud platform. |
+| [AWS Lambda](../../other/cloud/aws_lambda.md) | Deploy a Rust function to a cloud platform. |
 
 ## Infrastructure as Code {#infrastructure-as-code}
 
@@ -36,7 +36,7 @@ For Docker or Podman API access from Rust, see [Bollard][infra~bollard-repo]↗,
 
 - [Configuration][p~configuration] for configuration inside Rust applications.
 - [Testing][p~testing] and [Cargo auditing][p~maintaining] for checks that run before release.
-- [AWS Lambda deployment](../../categories/cloud/aws_lambda.md) as one example of a cloud release target.
+- [AWS Lambda deployment](../../other/cloud/aws_lambda.md) as one example of a cloud release target.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

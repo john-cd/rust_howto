@@ -17,7 +17,7 @@ When many modules need to register implementations independently, consider
 Define a contract for duplicate registrations and ordering before dispatching
 to a plugin. Runtime loading of external libraries requires a separate ABI
 and versioning strategy. See [Register Commands Explicitly or with Inventory](../../categories/rust-patterns/plugin_registration.md)
-for a tested registration example and [Plugin Architecture](../../categories/standalone/plugin.md)
+for a tested registration example and [Plugin Architecture](../../other/standalone/plugin.md)
 for extension boundaries and trust considerations.
 
 {{#include refs.incl.md}}

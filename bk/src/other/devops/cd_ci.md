@@ -68,7 +68,7 @@ For an example of a mature Rust release workflow, see [ripgrep's release workflo
 - [Version Control](version_control.md).
 - [Testing](../../categories/development-tools_testing/testing.md).
 - [Code Formatting and Linting](../../categories/development-tools/formatting/formatting.md).
-- [AWS Lambda deployment](../../categories/cloud/aws_lambda.md).
+- [AWS Lambda deployment](../../other/cloud/aws_lambda.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

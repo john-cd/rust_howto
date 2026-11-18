@@ -6,6 +6,7 @@ Book code examples for Asynchronous programming with Tokio, Smol, and Rayon. It 
 
 ## Examples Covered
 
+- **Await Tree** (`examples/await_tree.rs`): Prints the relationships between asynchronous tasks and what they await.
 - **Async** (`examples/async/`): Demonstrates concepts like `async1`, `async2`, `async3`.
 - **Async Channels** (`examples/async_channels/`): Demonstrates concepts like `async_channel`, `async_channels_mpsc`, `async_channels_oneshot`, `async_channels_oneshot2`, `kanal`, `postage`.
 - **Async Traits** (`examples/async_traits/`): Demonstrates concepts like `afit`, `async_trait_dyn`, `async_traits`, `async_traits2`, `async_traits3`, `rpitit_send`.

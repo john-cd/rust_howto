@@ -65,7 +65,7 @@ Pipelines pass data through ordered stages that each transform or filter the inp
 {{#include ../../../crates/other/examples/architecture/pipeline.rs:example}}
 ```
 
-See [Data Parallelism](../../categories/concurrency/data_parallelism.md) and [Data Processing](../../categories/data-processing/index.md).
+See [Data Parallelism](../../categories/concurrency/data_parallelism.md) and [Data Processing](../../other/data-processing/index.md).
 
 ## Event Sourcing {#event-sourcing}
 
@@ -77,7 +77,7 @@ Event sourcing stores an ordered sequence of domain events as the source of trut
 
 ## Plugin Architecture {#plugin-architecture}
 
-A plugin architecture separates a host's stable extension points from implementations that provide optional behavior. Use it when applications need to select capabilities independently, such as importers or command handlers. Rust traits and explicit registration work for plugins compiled with the host; [`inventory`][c~inventory~docs]↗{{hi:inventory}} can collect registrations, while [`libloading`][architecture~libloading]↗ can load native libraries across a separately defined ABI. Plugins run with the host's privileges, so untrusted code needs a separate isolation boundary. See [Plugin Architecture](../../categories/standalone/plugin.md) for extension boundaries and trust considerations.
+A plugin architecture separates a host's stable extension points from implementations that provide optional behavior. Use it when applications need to select capabilities independently, such as importers or command handlers. Rust traits and explicit registration work for plugins compiled with the host; [`inventory`][c~inventory~docs]↗{{hi:inventory}} can collect registrations, while [`libloading`][architecture~libloading]↗ can load native libraries across a separately defined ABI. Plugins run with the host's privileges, so untrusted code needs a separate isolation boundary. See [Plugin Architecture](../../other/standalone/plugin.md) for extension boundaries and trust considerations.
 
 ## Entity-Component-System Architecture {#entity-component-system}
 
@@ -85,9 +85,9 @@ An entity-component system (ECS) represents objects as entities with components,
 
 ## Related Topics {#related-topics .skip}
 
-- [Cloud deployment](../../categories/cloud/aws_lambda.md).
+- [Cloud deployment](../../other/cloud/aws_lambda.md).
 - [Concurrency](../../categories/concurrency/index.md).
-- [Data Processing](../../categories/data-processing/index.md).
+- [Data Processing](../../other/data-processing/index.md).
 - [Web Programming](../../categories/web-programming_http-server/index.md).
 
 {{#include refs.incl.md}}

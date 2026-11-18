@@ -14,12 +14,12 @@ The example adapts a substring check and a numeric comparison to fields on a fil
 {{#include ../../../crates/cats/development_tools_testing/examples/predicates/composite_predicate.rs:example}}
 ```
 
-The same predicate building blocks can support validation or assertions, but keep error reporting at the boundary that knows how to explain a failed check. For tests that assert command output, see [Assertions](../development-tools_testing/assertions.md).
+The same predicate building blocks can support validation or assertions, but keep error reporting at the boundary that knows how to explain a failed check. For tests that assert command output, see [Assertions](../../categories/development-tools_testing/assertions.md).
 
 ## Related Topics {#related-topics .skip}
 
-- [Assertions](../development-tools_testing/assertions.md).
-- [String Search and Fuzzy Matching](../text-processing/string_search.md).
+- [Assertions](../../categories/development-tools_testing/assertions.md).
+- [String Search and Fuzzy Matching](../../categories/text-processing/string_search.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

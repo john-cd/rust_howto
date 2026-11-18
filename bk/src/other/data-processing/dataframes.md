@@ -13,7 +13,7 @@ selects columns, sums revenue by region, sorts the summary, and joins regional
 targets. Schema and value assertions keep the example self-checking.
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/data_processing/examples/dataframes/dataframes.rs:example}}
+{{#include ../../../crates/other/data_processing/examples/dataframes/dataframes.rs:example}}
 ```
 
 From `bk/crates`, run the example without any input files:

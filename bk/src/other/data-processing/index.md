@@ -10,7 +10,7 @@ project links for larger workflows.
 
 | Need | Common crates | Start here |
 | --- | --- | --- |
-| Validate or transform rows in a delimited file | [`csv`](https://docs.rs/csv/) and [`serde`](https://docs.rs/serde/) | Stream rows in the [CSV recipe](../encoding/csv.md#read-and-write-csv-files). |
+| Validate or transform rows in a delimited file | [`csv`](https://docs.rs/csv/) and [`serde`](https://docs.rs/serde/) | Stream rows in the [CSV recipe](../../categories/encoding/csv.md#read-and-write-csv-files). |
 | Filter, group, or join a table | [`polars`](https://docs.rs/polars/) | The [DataFrames chapter](dataframes.md) covers lazy file scans. |
 | Exchange typed columns with another program | [`arrow`](https://docs.rs/arrow/) | Use [Arrow IPC](data_engineering.md#arrow-ipc) when the reader consumes Arrow batches. |
 | Store compressed columnar data on disk | [`parquet`](https://docs.rs/parquet/) | Use Parquet for file-backed analytics that read a subset of columns. |
@@ -19,7 +19,7 @@ project links for larger workflows.
 
 ## Import and transform files
 
-The [CSV chapter](../encoding/csv.md) covers typed streaming in Rust and command-line
+The [CSV chapter](../../categories/encoding/csv.md) covers typed streaming in Rust and command-line
 tools for inspecting, slicing, and joining delimited files.
 
 ## Work with tabular data
@@ -76,8 +76,8 @@ Use [Evcxr Jupyter][evcxr~jupyter~guide]↗ to explore small Rust data examples 
 
 ## Related topics
 
-- [Web Programming](../web-programming/index.md) for serving data over HTTP.
-- [Database Access](../database/index.md) for querying a database from Rust.
+- [Web Programming](../../categories/web-programming/index.md) for serving data over HTTP.
+- [Database Access](../../categories/database/index.md) for querying a database from Rust.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

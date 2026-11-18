@@ -9,15 +9,15 @@
 The repository's [`templ` helper][templ~source]↗ generates Markdown fragments for the book. Build the helper with `just release` from `tools/`, then run the examples from the repository root. The help and category-badge commands use local templates and reference data; `rbe` formats a supplied Rust by Example chapter name.
 
 ```bash
-bash bk/crates/cats/development_tools_documentation/examples/templ/help.sh
+bash bk/crates/cats/development_tools/documentation/examples/templ/help.sh
 ```
 
 ```bash
-bash bk/crates/cats/development_tools_documentation/examples/templ/category_badge.sh
+bash bk/crates/cats/development_tools/documentation/examples/templ/category_badge.sh
 ```
 
 ```bash
-bash bk/crates/cats/development_tools_documentation/examples/templ/rbe.sh
+bash bk/crates/cats/development_tools/documentation/examples/templ/rbe.sh
 ```
 
 Commands that fetch crate metadata depend on crates.io and are omitted from these offline examples.
@@ -29,25 +29,25 @@ Commands that fetch crate metadata depend on crates.io and are omitted from thes
 [`mdbook-utils`][mdbook-utils~repo]↗ manages reference definitions, links, code examples, and sitemaps. See the [user guide][mdbook-utils~user-guide] for installation and command options. Run the examples from `bk/`; the link and reference reports are local and repeatable. The online `broken-links` command is omitted from the script because its results depend on external HTTP services.
 
 ```bash
-bash crates/cats/development_tools_documentation/examples/mdbook_utils/link_reports.sh
+bash crates/cats/development_tools/documentation/examples/mdbook_utils/link_reports.sh
 ```
 
 Build the book before generating a sitemap. The fixed base URL keeps the output stable:
 
 ```bash
-bash crates/cats/development_tools_documentation/examples/mdbook_utils/indexes_and_sitemap.sh
+bash crates/cats/development_tools/documentation/examples/mdbook_utils/indexes_and_sitemap.sh
 ```
 
 Find pages missing from the book summary and Rust examples that are not included:
 
 ```bash
-bash crates/cats/development_tools_documentation/examples/mdbook_utils/find_unreferenced_files.sh
+bash crates/cats/development_tools/documentation/examples/mdbook_utils/find_unreferenced_files.sh
 ```
 
 Extract code examples and resolve includes in a scratch `drafts/` directory before changing book sources:
 
 ```bash
-bash crates/cats/development_tools_documentation/examples/mdbook_utils/code_examples.sh
+bash crates/cats/development_tools/documentation/examples/mdbook_utils/code_examples.sh
 ```
 
 Use `just docs docall` to generate the code [documentation](../../categories/development-tools/documentation/documentation.md) in the [`docs.rs`][docs.rs~website]↗{{hi:docs.rs}} format.

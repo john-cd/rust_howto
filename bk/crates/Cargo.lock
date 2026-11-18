@@ -1996,10 +1996,12 @@ dependencies = [
  "anyhow",
  "async-channel 2.5.0",
  "async-trait",
+ "await-tree",
  "clap",
  "futures",
  "futures-executor",
  "futures-util",
+ "itertools 0.15.0",
  "kanal",
  "mio 1.2.5",
  "postage",
@@ -5114,7 +5116,6 @@ version = "0.1.2"
 dependencies = [
  "actix",
  "anyhow",
- "await-tree",
  "clap",
  "crossbeam-channel",
  "crossbeam-queue",
@@ -5125,7 +5126,6 @@ dependencies = [
  "futures",
  "glob",
  "image 0.25.10",
- "itertools 0.15.0",
  "loom 0.7.3",
  "num",
  "num_cpus",
@@ -11441,11 +11441,13 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "clap",
+ "fontdue",
  "glam 0.34.3",
  "lyon",
  "resvg",
  "skrifa",
  "tiny-skia 0.12.0",
+ "ttf-parser 0.25.1",
  "usvg",
 ]
 
@@ -22111,10 +22113,10 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "clap",
- "fontdue",
+ "pollster 1.0.1",
  "three-d",
  "three-d-asset",
- "ttf-parser 0.25.1",
+ "wgpu",
 ]
 
 [[package]]

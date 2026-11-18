@@ -16,7 +16,7 @@ These short guides cover Rust features and design choices that do not belong to 
 
 - [Language](../../language/index.md).
 - [Standard Library](../../standard-library/index.md).
-- [Rust Patterns](../rust-patterns/index.md).
+- [Rust Patterns](../../categories/rust-patterns/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

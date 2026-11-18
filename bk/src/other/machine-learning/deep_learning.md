@@ -56,7 +56,7 @@ or feature transform. CUDA/Metal features and LibTorch dependencies require sepa
 platform checks; CPU success establishes none of those backends.
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/science/examples/ml/candle.rs:example}}
+{{#include ../../../crates/other/machine_learning/examples/ml/candle.rs:example}}
 ```
 
 ## `burn` {#burn .skip}

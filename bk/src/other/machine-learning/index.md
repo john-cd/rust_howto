@@ -26,7 +26,7 @@ fixture, not evidence of generalization on noisy observations. A separate valida
 split is needed when selecting models or tuning hyperparameters.
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/science/examples/feature_pipeline.rs:example}}
+{{#include ../../../crates/other/machine_learning/examples/feature_pipeline.rs:example}}
 ```
 
 ```sh
@@ -47,7 +47,7 @@ all-unknown queries have zero similarity. Matching complete tokens avoids accide
 substring matches, such as treating "rusty" as the word "rust".
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/science/examples/text_features.rs:example}}
+{{#include ../../../crates/other/machine_learning/examples/text_features.rs:example}}
 ```
 
 ```sh
@@ -66,7 +66,7 @@ Evaluate retrieval with labeled queries and ranking metrics rather than classifi
 
 | Task | Common crates | Recipe coverage |
 | --- | --- | --- |
-| Feature arrays and table preparation | `ndarray`, `polars` | Executable array preprocessing here; dataframe workflows in [Data Processing](../../categories/data-processing/index.md). |
+| Feature arrays and table preparation | `ndarray`, `polars` | Executable array preprocessing here; dataframe workflows in [Data Processing](../../other/data-processing/index.md). |
 | Classical fitting | `smartcore`, `linfa` | Held-out classification, regression and seeded clustering examples. |
 | Neural-network training | `candle-core`, `candle-nn`, `burn`, `tch` | Candle CPU training and checkpoint parity in [Deep Learning](deep_learning.md); Burn and tch have framework/prerequisite descriptions, not validated local training recipes. |
 | Exported-model inference | `ort`, `tract` | Executable ONNX Runtime inference and replacement; tract is an alternative discussed in [inference](inference.md). |

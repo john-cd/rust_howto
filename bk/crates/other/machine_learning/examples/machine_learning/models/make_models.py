@@ -1,7 +1,7 @@
 # TODO Reviewed ??-??-2026.
 
 # Purpose: Regenerates the tiny ONNX test fixtures.
-# Usage: Run with python bk/crates/cats/science/examples/machine_learning/models/make_models.py and provide any required arguments.
+# Usage: Run with python bk/crates/other/machine_learning/examples/machine_learning/models/make_models.py and provide any required arguments.
 #
 """Regenerates the tiny ONNX test fixtures.
 

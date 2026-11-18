@@ -7,7 +7,7 @@
 [ex~cloud~aws-lambda-invoke]: aws.md#aws-lambda-invoke
 [ex~cloud~aws-s3-compatible]: aws.md#aws-s3-compatible
 [ex~cloud~aws-message-bus]: aws.md#aws-message-bus
-[ex~cloud~lambda]: ../../categories/cloud/aws_lambda.md
+[ex~cloud~lambda]: ../../other/cloud/aws_lambda.md
 [ex~cloud~shuttle]: rust_native_cloud_development.md#shuttle
 [aws-app-runner~availability]: https://docs.aws.amazon.com/apprunner/latest/dg/apprunner-availability-change.html
 [aws-ecs~express-mode~docs]: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-create-full.html
@@ -30,7 +30,7 @@
 [p~aws]: aws.md
 [p~cloud]: index.md
 [p~container]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/containers.md
-[p~data-processing]: ../../categories/data-processing/index.md
+[p~data-processing]: ../../other/data-processing/index.md
 [p~devops]: ../devops/index.md
 [p~microservices]: ../architecture/common_architectures.md#microservices
 [p~network-programming]: ../../categories/network-programming/index.md

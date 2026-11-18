@@ -14,13 +14,8 @@ homepage.workspace = true
 repository.workspace = true
 publish.workspace = true
 keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
-categories = ["rendering"]
+categories = ["rendering::engine"]
 autolib = false
-
-[[example]]
-name = "text_rendering"
-path = "examples/text_rendering/main.rs"
-test = true
 
 [[example]]
 name = "engine_scene"
@@ -28,21 +23,27 @@ path = "examples/engine_scene.rs"
 required-features = ["engine-scene"]
 test = true
 
+[[example]]
+name = "offscreen_render"
+path = "examples/offscreen_render.rs"
+required-features = ["wgpu"]
+test = true
+
 [dependencies]
 clap = "4.6.7"
+pollster = { version = "1.0.1", optional = true }
 three-d = { version = "=0.19.0", optional = true }
 three-d-asset = { version = "=0.10.0", optional = true, features = ["obj"] }
+
+wgpu = { version = "30.0.1", optional = true }
 
 [dev-dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104" # Provides a fallible entry point for the example runner.
-# A simple no_std font parser and rasterizer.
-fontdue = "0.9.5" # Rasterizes a glyph without a window or GPU.
-# A high-level, safe, zero-allocation font parser for TrueType, OpenType, and AAT.
-ttf-parser = "0.25.1" # Reads font metrics without rasterizing.
 
 [features]
 engine-scene = ["dep:three-d", "dep:three-d-asset"]
+wgpu = ["dep:pollster", "dep:wgpu"]
 
 [lints]
 workspace = true
