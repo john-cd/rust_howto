@@ -22,7 +22,7 @@ just cargo run --manifest-path later/crates/Cargo.toml --locked -p science --exa
 ```
 
 The `candle` feature adds CPU training and a temporary checkpoint round trip; it does
-not validate an accelerator. The practical ML guide is in `later/src/other/machine-learning`.
+not validate an accelerator. See the [Machine Learning in Practice chapter](../../../../bk/src/other/machine-learning/index.md).
 
 ## Usage
 

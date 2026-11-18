@@ -117,7 +117,7 @@ For [[mathematics | Mathematics]], use the following crates for general numerica
 
 ### Science
 
-See [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [Machine Learning](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/machine-learning/index.md), [Geoscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_geo/index.md), [Neuroscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_neuroscience/index.md), [Science Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md), and [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md).
+See [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [Machine Learning](../../other/machine-learning/index.md), [Geoscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_geo/index.md), [Neuroscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_neuroscience/index.md), [Science Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md), and [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md).
 
 ## References
 

@@ -16,21 +16,8 @@ coordinate system, and sampling assumptions before choosing a numerical method.
 3. Use [Geo](../science_geo/geo.md) for geographic coordinates or
    [sampled signal analysis](../science_neuroscience/neuroscience.md#fft-signal)
    for measurements recorded at a known rate.
-
-For a distinct learning path through training, evaluation, and inference, see
-[Machine Learning in Practice](../../other/machine-learning/index.md).
-
-## Classical Machine Learning
-
-The [Classical Machine Learning][p~classical-machine-learning] chapter covers common algorithms and links to runnable examples.
-
-{{#include classical_machine_learning.incl.md}}
-
-## Neural Networks and Deep Learning
-
-The [Deep Learning][p~deep-learning] chapter covers model training and inference. Its [crate comparison table][p~deep-learning-comparison] summarizes framework support, accelerator backends, and recent project activity.
-
-{{#include deep_learning.incl.md}}
+4. Use [Machine Learning in Practice](https://john-cd.com/rust_howto/other/machine-learning/index.html) to choose a model,
+   evaluate predictions, or run a trained model in Rust.
 
 ## Related Science Categories
 
@@ -45,8 +32,6 @@ For complementary methods and tools, see [[computer-vision | Computer Vision]], 
 ## Further Reading
 
 Rust's experimental [`std::autodiff`][c~std::autodiff~docs]↗ is a nightly, Enzyme-based feature tracked in [rust-lang/rust#124509][rust-autodiff~tracking-issue].
-
-Learn more: [Awesome Rust Neural Network][awesome-rust-neural-network~project-list]↗ is a curated list of Rust neural-network projects.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

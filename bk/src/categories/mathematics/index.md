@@ -108,8 +108,8 @@ The [Units of Measurement chapter][p~units] demonstrates dimensional types and c
 
 ## Applications
 
-- [Classical Machine Learning](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/classical_machine_learning.md).
-- [Deep Learning](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/deep_learning.md).
+- [Classical Machine Learning](../../other/machine-learning/classical_machine_learning.md).
+- [Deep Learning](../../other/machine-learning/deep_learning.md).
 - [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md).
   - [Geoscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_geo/index.md).
   - [Neuroscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_neuroscience/index.md).
