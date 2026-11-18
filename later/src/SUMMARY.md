@@ -137,7 +137,7 @@
     - [Using Containers](categories/virtualization/using_containers.md)
 
 - [Visualization](categories/visualization/index.md)
-  - [Visualization](categories/visualization/visualization.md)
+  - [Plot Static and Interactive Charts](categories/visualization/visualization.md)
   - [Present Measurements in a Terminal Table](categories/visualization/terminal_tables.md)
 
 - [Web assembly](categories/wasm/index.md)

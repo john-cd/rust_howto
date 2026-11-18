@@ -9,41 +9,38 @@
 //! A scatter plot shows the relationship between two variables as points.
 
 use std::fs;
+use std::path::Path;
 
+use anyhow::Context;
 use plotly::Layout;
 use plotly::Plot;
 use plotly::Scatter;
 use plotly::common::Mode;
+use plotly::layout::Axis;
 
-/// Creates a scatter plot and saves it to an HTML file.
-fn main() -> anyhow::Result<()> {
-    // Sample data.
-    let x_data = vec![1, 2, 3, 4, 5];
-    let y_data = vec![10, 15, 13, 17, 14];
-
-    // Create a `Scatter` plot.
-    let trace = Scatter::new(x_data, y_data)
-        .mode(Mode::LinesMarkers)
-        .name("Sample Data");
-
-    // Create a `Plot` and add the `Scatter` plot.
-    // `Plot` is a container for structs that implement the `Trace` trait.
-    // Optionally a `Layout` can also be specified. Its function is to serialize
-    // `Trace`s and the `Layout` in html format and display and/or persist the
-    // resulting plot.
+/// Builds the HTML document for the sample scatter plot.
+fn scatter_plot_html() -> String {
+    let trace = Scatter::new(vec![1, 2, 3, 4, 5], vec![10, 15, 13, 17, 14])
+        .mode(Mode::Markers)
+        .name("Sample data");
     let mut plot = Plot::new();
     plot.add_trace(trace);
+    plot.set_layout(
+        Layout::new()
+            .title("Sample readings")
+            .x_axis(Axis::new().title("Sample number"))
+            .y_axis(Axis::new().title("Reading")),
+    );
+    plot.to_html()
+}
 
-    let layout = Layout::new().title("<b>Scatter Plot</b>");
-    plot.set_layout(layout);
-
-    if !fs::exists("temp")? {
-        fs::create_dir("temp")?;
-    }
-    // Save the plot as an HTML file.
-    plot.write_html("temp/plot.html");
-
-    println!("Plot saved as plot.html");
+/// Saves the plot and reports the path when writing succeeds.
+fn main() -> anyhow::Result<()> {
+    let output = Path::new("temp/plot.html");
+    fs::create_dir_all("temp").context("create plot output directory")?;
+    fs::write(output, scatter_plot_html())
+        .with_context(|| format!("write {}", output.display()))?;
+    println!("Plot saved to {}", output.display());
     Ok(())
 }
 // ANCHOR_END: example
@@ -57,18 +54,18 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
-/// Tests behavior implemented by the surrounding module.
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::scatter_plot_html;
 
-    /// Runs the plotly example and checks the HTML that it writes.
+    /// Exports the samples, axis labels, and Plotly JavaScript bootstrap.
     #[test]
-    fn test_plotly_example_entry_point() -> anyhow::Result<()> {
-        main()?;
-        let html = fs::read_to_string("temp/plot.html")?;
-        assert!(html.contains("Sample Data"));
-        assert!(html.contains("Scatter Plot"));
-        Ok(())
+    fn exports_a_labeled_scatter_plot() {
+        let html = scatter_plot_html();
+        assert!(html.contains("Sample readings"));
+        assert!(html.contains("Sample number"));
+        assert!(html.contains("Reading"));
+        assert!(html.contains("[10,15,13,17,14]"));
+        assert!(html.contains("Plotly.newPlot"));
     }
 }

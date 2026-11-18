@@ -14,7 +14,10 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let mut command = clap::Command::new("examples");
     command = command.subcommand(clap::Command::new("plotly"));
     command = command.subcommand(clap::Command::new("plotters"));
-    command = command.subcommand(clap::Command::new("leptos-chartistry"));
+    command = command.subcommand(
+        clap::Command::new("leptos-chartistry")
+            .about("Check the Leptos component without mounting an app"),
+    );
     let matches = command
         .subcommand_required(true)
         .arg_required_else_help(true)

@@ -2,14 +2,10 @@
 
 <!-- markdownlint-disable MD057 -->
 
-[ex~visualization~charming]: visualization.md#charming
-[ex~visualization~egui-plot]: visualization.md#egui-plot
 [ex~visualization~graph-data]: visualization.md#graph-data
-[ex~visualization~leptos-chartistry]: visualization.md#leptos-chartistry
 [ex~visualization~plotters]: visualization.md#plotters
-[ex~visualization~plotters-wasm]: visualization.md#plotters-wasm
+[ex~visualization~terminal-table]: terminal_tables.md
 [p~egui-add-ons]: ../gui/egui_ecosystem.md#egui-plot
-[p~wasm]: ../wasm/index.md
 [plotters-wasm-demo~repo]: https://github.com/plotters-rs/plotters-wasm-demo
 [c~layout-rs~docs]: https://docs.rs/layout-rs
 [c~leptos-chartistry~docs]: https://docs.rs/leptos-chartistry
@@ -32,8 +28,4 @@
 
 [c~leptos-chartistry~docs~badge]: https://img.shields.io/crates/v/leptos-chartistry
 [p~data-processing]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/data-processing/index.md
-[p~development_tools]: https://john-cd.com/rust_howto/other/written-in-rust/development_tools.html
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
-[p~gui]: ../gui/index.md
-[p~multimedia_video]: https://john-cd.com/rust_howto/categories/multimedia_video/index.html
-[p~rendering]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/index.md

@@ -1,66 +1,60 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Visualization
+# Plot Static and Interactive Charts
 
-{{#include visualization.incl.md}}
+## Write an SVG line chart with Plotters {#plotters}
 
-## Plot a Chart to an Image or Vector File with `plotters` {#plotters}
+[`plotters`][c~plotters~docs]↗{{hi:plotters}} can draw to SVG, bitmap, or browser canvas backends. This recipe plots `y = x²` into an SVG string and writes the document to standard output. The SVG backend runs without a display or GPU.
 
-[![plotters~website][c~plotters~website~badge]][c~plotters~website] {{#badges plotters}} {{hi:Drawing}} {{hi:Plotting}} {{hi:Visualization}} {{hi:Webassembly}} {{#categories visualization=Visualization}}
+From `later/crates`, run:
 
-[`plotters`][c~plotters~docs]↗{{hi:plotters}} is a drawing library focused on data plotting for native applications and WebAssembly. It supports bitmap images, SVG, and browser canvas backends. The SVG example below builds its output in memory and needs no GPU, display, or output file.
+```console
+cargo run --quiet --locked -p visualization --example visualization -- plotters > chart.svg
+```
 
-The following example constructs a Cartesian 2D chart and renders a line series into an in-memory SVG string buffer using `plotters::backend::SVGBackend`:
+Open `chart.svg` to see the labeled axes and the curve. Call `present()` before releasing the drawing area so the SVG document is finalized.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/visualization/examples/visualization/plotters.rs:example}}
 ```
 
-## Interactive Charts in the Browser {#browser-charts}
+## Export an interactive scatter plot with Plotly {#graph-data}
 
-Interactive web charts render data inside WebAssembly applications or export interactive HTML pages powered by JavaScript visualization engines.
+[`plotly`][c~plotly~docs]↗{{hi:plotly}} turns a Rust chart description into HTML using [Plotly.js][plotly.js~website]. This recipe places one marker per sample and labels both axes.
 
-### Interactive HTML Plots with `plotly` {#graph-data}
+From `later/crates`, run:
 
-{{#badges plotly}}{{hi:plotly}}{{hi:Visualization}}
+```console
+cargo run --locked -p visualization --example visualization -- plotly
+```
 
-[`plotly`][c~plotly~docs]↗{{hi:plotly}} brings the capabilities of [Plotly.js][plotly.js~website]↗ to Rust, providing declarative data structures for building interactive scatter plots, bar charts, and 3D surfaces that export directly to HTML documents.
+Open `temp/plot.html` relative to that working directory. The command writes the HTML locally. The browser needs access to Plotly’s CDN to load the default JavaScript bundle. Once the chart loads, hover over a marker to inspect its values or drag across the plot to zoom.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/visualization/examples/visualization/plotly.rs:example}}
 ```
 
-### Reactive Leptos Charts with `leptos-chartistry` {#leptos-chartistry}
+## Browser and desktop alternatives {#application-charts}
 
-[`leptos-chartistry`][c~leptos-chartistry~docs]↗{{hi:leptos-chartistry}} provides an SVG chart component for Leptos applications. This example defines a reactive line chart component; mount it from a Leptos application to render it in a browser.
+### Chartistry in a Leptos application {#leptos-chartistry}
 
-```rust,editable
+[`leptos-chartistry`][c~leptos-chartistry~docs]↗{{hi:leptos-chartistry}} provides an SVG chart component for a Leptos application. This component uses fixed response-time samples. The native example checks that the component compiles. To see a mounted chart and tooltips, use the upstream examples linked from the crate documentation.
+
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/visualization/examples/visualization/leptos_chartistry.rs:example}}
 ```
 
-### Declarative ECharts with `charming` {#charming}
+### ECharts with Charming {#charming}
 
-{{#badges charming}}{{hi:charming}}{{hi:Visualization}}
+[`charming`][c~charming~docs]↗{{hi:charming}} builds Apache ECharts configurations in Rust. Consult its documentation for the rendering features and dependencies for your target.
 
-[`charming`][c~charming~docs]↗{{hi:charming}} is a Rust visualization library built on Apache ECharts. It provides a declarative Rust API to build interactive charts and can render to multiple backends, including HTML documents, SVG, image buffers, and WebAssembly canvas targets.
+### Plotters on browser canvas {#plotters-wasm}
 
-### WebAssembly Canvas Plotting with `plotters` {#plotters-wasm}
+The [Plotters WebAssembly demo][plotters-wasm-demo~repo] shows how to attach its canvas backend to an HTML canvas. Use this route when drawing within a WebAssembly application.
 
-For WebAssembly applications, `plotters-canvas` supplies `CanvasBackend` to draw onto an HTML `<canvas>` element. See the [`plotters-wasm-demo`][plotters-wasm-demo~repo]↗ repository for examples of embedding charts into WebAssembly frontend applications.
+### Desktop plots with egui_plot {#egui-plot}
 
-## Plots in a Desktop GUI with `egui_plot` {#egui-plot}
-
-{{#badges egui_plot}}{{hi:egui_plot}}{{hi:Plot}}{{hi:Chart}}
-
-[`egui_plot`][c~egui_plot~docs]↗{{hi:egui_plot}} provides immediate-mode 2D plotting widgets for [`egui`][c~egui~docs]↗ desktop applications. It supports panning, zooming, hovering, line plots, scatter plots, bar charts, and custom annotations directly within native GUI windows. See the [Immediate-mode GUI `egui` add-ons][p~egui-add-ons] chapter for examples of embedding interactive plots in desktop applications.
-
-## Related Topics {#related-topics .skip}
-
-- [[graphics | Graphics]].
-- [[gui | GUI]].
-- [[rendering | Rendering]].
-- [[wasm | WASM]].
-- [[development_tools | Development Tools]].
+[`egui_plot`][c~egui_plot~docs]↗{{hi:egui_plot}} adds plots with pan, zoom, and hover to an egui application. See [egui add-ons][p~egui-add-ons] for library and host-version compatibility.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
