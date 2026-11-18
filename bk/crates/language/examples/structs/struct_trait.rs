@@ -149,7 +149,7 @@ mod tests {
                 String::new()
             }
 
-            /// Handles the assoc func behavior for this component.
+            /// Supplies the unit-returning associated function required by the test implementation.
             fn assoc_func() -> Self::Output {}
         }
         assert_eq!(Defaults::CONSTANT, 42);

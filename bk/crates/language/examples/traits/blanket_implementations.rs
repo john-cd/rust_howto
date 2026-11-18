@@ -19,7 +19,7 @@ mod my {
 
     // Blanket implementation for ALL types that implement `Display`:
     impl<T: Display> VeryUsefulTrait for T {
-        /// Handles the my method behavior for this component.
+        /// Formats any Display implementor into an owned string through the blanket implementation.
         fn my_method(&self) -> String {
             format!("{self}")
         }

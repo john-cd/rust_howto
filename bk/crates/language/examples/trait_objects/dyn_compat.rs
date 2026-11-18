@@ -81,7 +81,7 @@ struct Circle {
 }
 
 impl ObjectSafeClone for Circle {
-    /// Handles the clone boxed behavior for this component.
+    /// Copies the circle into a boxed trait object with an object-safe return type.
     fn clone_boxed(&self) -> Box<dyn ObjectSafeClone> {
         Box::new(Self {
             radius: self.radius,
@@ -154,7 +154,7 @@ trait TraitMethods {
 }
 
 impl TraitMethods for Circle {
-    /// Handles the returns behavior for this component.
+    /// Returns another concrete circle; the Sized bound excludes this method from dyn calls.
     fn returns(&self) -> Self
     where
         Self: Sized,
@@ -177,12 +177,13 @@ impl NotObjectSafe2 for Circle {
 impl NotObjectSafe3 for Circle {}
 
 impl NotObjectSafe4 for Circle {
-    /// Handles the do stuff behavior for this component.
+    /// Accepts any T without using it, demonstrating a generic method that prevents dyn
+    /// compatibility.
     fn do_stuff<T>(&self, _t: T) {}
 }
 
 impl NotObjectSafe5 for Circle {
-    /// Handles the clone me behavior for this component.
+    /// Copies the circle as Self, demonstrating a return type unavailable through a trait object.
     fn clone_me(&self) -> Self {
         Self {
             radius: self.radius,
@@ -191,7 +192,7 @@ impl NotObjectSafe5 for Circle {
 }
 
 impl NotObjectSafe6 for Circle {
-    /// Handles the clone boxed behavior for this component.
+    /// Boxes a concrete Self, which still exposes Self and prevents dyn compatibility.
     fn clone_boxed(&self) -> Box<Self> {
         Box::new(Self {
             radius: self.radius,

@@ -10,11 +10,11 @@ const COUNT: u8 = 2;
 #[deprecated(note = "Use COUNT instead.")]
 const OLD_COUNT: u8 = 2;
 
-/// Data carried by label operations.
+/// Unit struct demonstrating generated Debug formatting.
 #[derive(Debug)]
 struct Label;
 
-/// Data carried by number operations.
+/// Numeric wrapper demonstrating derived equality for its stored value.
 #[derive(PartialEq, Eq)]
 struct Number(
     /// Numeric value stored by the Number wrapper.
@@ -31,7 +31,7 @@ mod lint_settings {
     // ANCHOR_END: inner_lint
     #![deny(unsafe_code)]
 
-    /// Handles the unused helper behavior for this component.
+    /// Intentionally unused function showing an item-level dead-code lint exception.
     #[allow(dead_code, reason = "Demonstrates an unused item.")]
     fn unused_helper() {}
 

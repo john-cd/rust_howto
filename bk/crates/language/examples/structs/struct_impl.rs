@@ -25,7 +25,7 @@ impl Rectangle {
         self.width * self.height
     }
 
-    /// Handles the square behavior for this component.
+    /// Constructs a rectangle with equal width and height.
     fn square(size: u32) -> Self {
         Self {
             width: size,

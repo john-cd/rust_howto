@@ -22,7 +22,7 @@ impl<T: std::marker::Copy, const N: usize> InnerArray<T, N> {
         Self([val; N])
     }
 
-    /// Handles the len behavior for this component.
+    /// Returns the array length encoded in the const generic type parameter.
     fn len(&self) -> usize {
         N // The size N is known at compile time.
     }

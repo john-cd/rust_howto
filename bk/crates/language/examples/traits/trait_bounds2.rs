@@ -37,7 +37,7 @@ struct Article {
 }
 
 impl Summary for Article {
-    /// Handles the summarize behavior for this component.
+    /// Clones the article text as the value satisfying the Summary bound.
     fn summarize(&self) -> String {
         self.txt.clone()
     }

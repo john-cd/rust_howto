@@ -33,7 +33,7 @@ impl Greet for Person {}
 
 // The struct must also implement the supertrait:
 impl Message for Person {
-    /// Handles the message behavior for this component.
+    /// Prefixes the supplied message with the person's name.
     fn message(&self, msg: &str) -> String {
         format!("{}: {msg}", self.name)
     }
