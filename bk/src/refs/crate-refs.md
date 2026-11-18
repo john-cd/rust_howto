@@ -8359,6 +8359,14 @@
 [c~skiplist~repo~badge]: https://img.shields.io/badge/skiplist-steelblue?logo=github
 [c~skiplist~website]: https://jpellis.me/projects/rust-skiplist
 [c~skiplist~website~badge]: https://img.shields.io/badge/skiplist-coral
+[c~skrifa~crates.io]: https://crates.io/crates/skrifa
+[c~skrifa~crates.io~badge]: https://img.shields.io/badge/crates.io-skrifa-crimson
+[c~skrifa~docs]: https://docs.rs/skrifa
+[c~skrifa~docs~badge]: https://img.shields.io/crates/v/skrifa?label=skrifa
+[c~skrifa~lib.rs]: https://lib.rs/crates/skrifa
+[c~skrifa~lib.rs~badge]: https://img.shields.io/badge/lib.rs-skrifa-yellow
+[c~skrifa~repo]: https://github.com/googlefonts/fontations
+[c~skrifa~repo~badge]: https://img.shields.io/badge/skrifa-steelblue?logo=github
 [c~slab~crates.io]: https://crates.io/crates/slab
 [c~slab~crates.io~badge]: https://img.shields.io/badge/crates.io-slab-crimson
 [c~slab~docs]: https://docs.rs/slab
