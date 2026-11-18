@@ -64,7 +64,7 @@
 [p~asynchronous]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/asynchronous/index.md
 [p~audio]: https://john-cd.com/rust_howto/categories/multimedia_audio/audio.html
 [p~containers]: ../virtualization/containers.md
-[p~cross-platform]: ../../other/cross-platform/index.md
+[p~cross-platform]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/cross-platform/index.md
 [p~data-formats]: https://john-cd.com/rust_howto/categories/rendering_data-formats/index.html
 [p~documentation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools/documentation/documentation.md
 [p~embedded]: # "../embedded/index.md"

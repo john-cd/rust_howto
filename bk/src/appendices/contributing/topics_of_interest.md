@@ -11,7 +11,7 @@ The following are topics that deserve (additional) coverage and examples:
 - Rust [[macros | Macros]].
 - [[data-structures | Data Structures]].
 - [Testing](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_testing/testing.md).
-- [GPU](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/gpu/index.md) processing, CUDA.
+- [GPU](../../other/gpu/index.md) processing, CUDA.
 - [Machine Learning](../../other/machine-learning/index.md), for example [Burn][c~burn~docs]↗, [Candle][candle~repo]↗, and [tch][c~tch~docs]↗.
 - [Email](../../categories/email/index.md).
 - [Template Engines](../../categories/template-engine/index.md).
@@ -20,9 +20,9 @@ The following are topics that deserve (additional) coverage and examples:
 - [WASM](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md).
 - [[algorithms | Algorithms]].
 - [Authentication](../../categories/authentication/index.md) and authorization: OAuth 2.0, LDAP/Active Directory.
-- Continuous Deployment & Integration ([CD / CI](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/devops/cd_ci.md)) for Rust projects.
-- Use of Rust in [AWS](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/aws.md) and other [Cloud](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/index.md) services.
-- [Serverless](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/rust_native_cloud_development.md#write-serverless-functions) Rust.
+- Continuous Deployment & Integration ([CD / CI](../../other/devops/cd_ci.md)) for Rust projects.
+- Use of Rust in [AWS](../../other/cloud/aws.md) and other [Cloud](../../other/cloud/index.md) services.
+- [Serverless](../../other/cloud/rust_native_cloud_development.md#write-serverless-functions) Rust.
 - More [database](../../categories/database/index.md) examples, including object databases, graph databases, e.g. BonsaiDB, neo4j.
 - [Embedded](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md) systems.
 - [Visualization](../../categories/visualization/index.md).
@@ -32,11 +32,11 @@ The following are topics that deserve (additional) coverage and examples:
 - [Compression](../../categories/compression/index.md): Zip files and other archives.
 - Buffer pools, garbage collection, or other reference-counted examples.
 - IPv6 address processing.
-- [Cloud](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/index.md): load balancers, status reporting (Vigil), routing, orchestration, containers.
+- [Cloud](../../other/cloud/index.md): load balancers, status reporting (Vigil), routing, orchestration, containers.
 - Reverse proxies.
 - [Web programming](../../categories/web-programming/index.md).
 - [Virtualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md).
-- [Version Control](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/devops/version_control.md): libgit2: clone, change branches, create commits, push, pull.
+- [Version Control](../../other/devops/version_control.md): libgit2: clone, change branches, create commits, push, pull.
 - [Cryptography](../../categories/cryptography/index.md), SSL, SSH, other public key [encryption](../../categories/cryptography/encryption.md), X.509, RusTLS.
 - [Network Programming](../../categories/network-programming/index.md): Basic and advanced TCP/IP networking.
 - DNS lookups and resolution.

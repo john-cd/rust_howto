@@ -1874,6 +1874,9 @@
 [c~cmaes~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cmaes-yellow
 [c~cmaes~repo]: https://github.com/pengowen123/cmaes
 [c~cmaes~repo~badge]: https://img.shields.io/badge/cmaes-steelblue?logo=github
+[c~code_organization~crates.io]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/code_organization
+[c~code_organization~docs]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/code_organization
+[c~code_organization~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/code_organization
 [c~color-eyre~crates.io]: https://crates.io/crates/color-eyre
 [c~color-eyre~crates.io~badge]: https://img.shields.io/badge/crates.io-color--eyre-crimson
 [c~color-eyre~docs]: https://docs.rs/color-eyre
@@ -3315,7 +3318,9 @@
 [c~fltk~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fltk-yellow
 [c~fltk~repo]: https://github.com/fltk-rs/fltk-rs
 [c~fltk~repo~badge]: https://img.shields.io/badge/fltk-steelblue?logo=github
+[c~fluent-bundle~crates.io]: https://crates.io/crates/fluent-bundle
 [c~fluent-bundle~docs]: https://docs.rs/fluent-bundle
+[c~fluent-bundle~repo]: https://github.com/projectfluent/fluent-rs
 [c~fluent~crates.io]: https://crates.io/crates/fluent
 [c~fluent~crates.io~badge]: https://img.shields.io/badge/crates.io-fluent-crimson
 [c~fluent~docs]: https://docs.rs/fluent
@@ -3804,6 +3809,9 @@
 [c~glsl-to-spirv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-glsl--to--spirv-yellow
 [c~glsl-to-spirv~repo]: https://github.com/vulkano-rs/vulkano
 [c~glsl-to-spirv~repo~badge]: https://img.shields.io/badge/glsl--to--spirv-steelblue?logo=github
+[c~gltf~crates.io]: https://crates.io/crates/gltf
+[c~gltf~docs]: https://docs.rs/gltf
+[c~gltf~repo]: https://github.com/gltf-rs/gltf
 [c~glyph_brush~crates.io]: https://crates.io/crates/glyph_brush
 [c~glyph_brush~crates.io~badge]: https://img.shields.io/badge/crates.io-glyph__brush-crimson
 [c~glyph_brush~docs]: https://docs.rs/glyph_brush
@@ -4451,6 +4459,8 @@
 [c~ipnet~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ipnet-yellow
 [c~ipnet~repo]: https://github.com/krisprice/ipnet
 [c~ipnet~repo~badge]: https://img.shields.io/badge/ipnet-steelblue?logo=github
+[c~iroh_loopback~crates.io]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/cats/iroh_loopback
+[c~iroh_loopback~docs]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/cats/iroh_loopback
 [c~iroh~crates.io]: https://crates.io/crates/iroh
 [c~iroh~docs]: https://docs.rs/iroh
 [c~iroh~repo]: https://github.com/n0-computer/iroh
@@ -4855,6 +4865,9 @@
 [c~libxml~repo]: https://github.com/KWARC/rust-libxml
 [c~libxml~repo~badge]: https://img.shields.io/badge/libxml-steelblue?logo=github
 [c~linear-map::LinearMap~docs]: https://docs.rs/linear-map/latest/linear-map/struct.LinearMap.html
+[c~linfa-clustering~crates.io]: https://crates.io/crates/linfa-clustering
+[c~linfa-clustering~docs]: https://docs.rs/linfa-clustering
+[c~linfa-clustering~repo]: https://github.com/rust-ml/linfa
 [c~linfa-linear~crates.io]: https://crates.io/crates/linfa-linear
 [c~linfa-linear~crates.io~badge]: https://img.shields.io/badge/crates.io-linfa--linear-crimson
 [c~linfa-linear~docs]: https://docs.rs/linfa-linear
@@ -5586,6 +5599,9 @@
 [c~movable-ref~recent-downloads~badge]: https://img.shields.io/crates/dr/movable-ref
 [c~movable-ref~repo]: https://github.com/engali94/movable-ref
 [c~movable-ref~repo~badge]: https://img.shields.io/badge/movable--ref-steelblue?logo=github
+[c~mp4~crates.io]: https://crates.io/crates/mp4
+[c~mp4~docs]: https://docs.rs/mp4
+[c~mp4~repo]: https://github.com/alfg/mp4-rust
 [c~mpi~crates.io]: https://crates.io/crates/mpi
 [c~mpi~crates.io~badge]: https://img.shields.io/badge/crates.io-mpi-crimson
 [c~mpi~docs]: https://docs.rs/mpi
@@ -5624,6 +5640,8 @@
 [c~multiversion~lib.rs~badge]: https://img.shields.io/badge/lib.rs-multiversion-yellow
 [c~multiversion~repo]: https://github.com/calebzulawski/multiversion
 [c~multiversion~repo~badge]: https://img.shields.io/badge/multiversion-steelblue?logo=github
+[c~mutation_boundary~crates.io]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/cats/mutation_boundary
+[c~mutation_boundary~docs]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/cats/mutation_boundary
 [c~mysql_async~crates.io]: https://crates.io/crates/mysql_async
 [c~mysql_async~crates.io~badge]: https://img.shields.io/badge/crates.io-mysql__async-crimson
 [c~mysql_async~docs]: https://docs.rs/mysql_async
@@ -6037,6 +6055,7 @@
 [c~openssl~lib.rs~badge]: https://img.shields.io/badge/lib.rs-openssl-yellow
 [c~openssl~repo]: https://github.com/sfackler/rust-openssl
 [c~openssl~repo~badge]: https://img.shields.io/badge/openssl-steelblue?logo=github
+[c~opentelemetry-http~docs]: https://docs.rs/opentelemetry-http
 [c~opentelemetry-jaeger~crates.io]: https://crates.io/crates/opentelemetry-jaeger
 [c~opentelemetry-jaeger~crates.io~badge]: https://img.shields.io/badge/crates.io-opentelemetry--jaeger-crimson
 [c~opentelemetry-jaeger~docs]: https://docs.rs/opentelemetry-jaeger
@@ -6510,8 +6529,11 @@
 [c~plotters~repo~badge]: https://img.shields.io/badge/plotters-steelblue?logo=github
 [c~plotters~website]: https://plotters-rs.github.io
 [c~plotters~website~badge]: https://img.shields.io/badge/plotters-coral
-[c~plugin_registry~crates.io]: https://crates.io/crates/plugin_registry
-[c~plugin_registry~docs]: https://docs.rs/plugin_registry
+[c~plugin_extension~crates.io]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/cats/plugin_extension
+[c~plugin_extension~docs]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/cats/plugin_extension
+[c~plugin_registry~crates.io]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/cats/plugin_registry
+[c~plugin_registry~docs]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/cats/plugin_registry
+[c~plugin_registry~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/cats/plugin_registry
 [c~poem~crates.io]: https://crates.io/crates/poem
 [c~poem~crates.io~badge]: https://img.shields.io/badge/crates.io-poem-crimson
 [c~poem~docs]: https://docs.rs/poem
@@ -7521,6 +7543,9 @@
 [c~rtrb~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rtrb-yellow
 [c~rtrb~repo]: https://github.com/mgeier/rtrb
 [c~rtrb~repo~badge]: https://img.shields.io/badge/rtrb-steelblue?logo=github
+[c~rubato~crates.io]: https://crates.io/crates/rubato
+[c~rubato~docs]: https://docs.rs/rubato
+[c~rubato~repo]: https://github.com/HEnquist/rubato
 [c~ruff~crates.io]: https://crates.io/crates/ruff
 [c~ruff~crates.io~badge]: https://img.shields.io/badge/crates.io-ruff-crimson
 [c~ruff~docs]: https://docs.rs/ruff
@@ -7716,6 +7741,9 @@
 [c~rustdesk~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rustdesk-yellow
 [c~rustdesk~repo]: https://github.com/rustdesk/rustdesk
 [c~rustdesk~repo~badge]: https://img.shields.io/badge/rustdesk-steelblue?logo=github
+[c~rustfft~crates.io]: https://crates.io/crates/rustfft
+[c~rustfft~docs]: https://docs.rs/rustfft
+[c~rustfft~repo]: https://github.com/ejmahler/RustFFT
 [c~rustfix~crates.io]: https://crates.io/crates/rustfix
 [c~rustfix~crates.io~badge]: https://img.shields.io/badge/crates.io-rustfix-crimson
 [c~rustfix~docs]: https://docs.rs/rustfix
@@ -8916,6 +8944,9 @@
 [c~stdx~repo~badge]: https://img.shields.io/badge/stdx-steelblue?logo=github
 [c~std~docs]: https://doc.rust-lang.org/std
 [c~std~docs~badge]: https://img.shields.io/badge/std-firebrick?logo=rust
+[c~str0m~crates.io]: https://crates.io/crates/str0m
+[c~str0m~docs]: https://docs.rs/str0m
+[c~str0m~repo]: https://github.com/algesten/str0m
 [c~string_cache~crates.io]: https://crates.io/crates/string_cache
 [c~string_cache~crates.io~badge]: https://img.shields.io/badge/crates.io-string__cache-crimson
 [c~string_cache~docs]: https://docs.rs/string_cache
@@ -9090,6 +9121,9 @@
 [c~ta-statistics~lib.rs~badge]: https://img.shields.io/badge/lib.rs-ta--statistics-yellow
 [c~ta-statistics~repo]: https://github.com/l33tquant/ta-statistics
 [c~ta-statistics~repo~badge]: https://img.shields.io/badge/ta--statistics-steelblue?logo=github
+[c~tabled~crates.io]: https://crates.io/crates/tabled
+[c~tabled~docs]: https://docs.rs/tabled
+[c~tabled~repo]: https://github.com/zhiburt/tabled
 [c~taffy~crates.io]: https://crates.io/crates/taffy
 [c~taffy~crates.io~badge]: https://img.shields.io/badge/crates.io-taffy-crimson
 [c~taffy~docs]: https://docs.rs/taffy
@@ -9534,14 +9568,13 @@
 [c~tokio::task::LocalSet~docs]: https://docs.rs/tokio/latest/tokio/task/struct.LocalSet.html
 [c~tokio::task::spawn_blocking~docs]: https://docs.rs/tokio/latest/tokio/task/fn.spawn_blocking.html
 [c~tokio::task::spawn~docs]: https://docs.rs/tokio/latest/tokio/task/fn.spawn.html
+[c~tokio::test~docs]: https://docs.rs/tokio/latest/tokio/attr.test.html
 [c~tokio_util::sync::CancellationToken~docs]: https://docs.rs/tokio-util/latest/tokio_util/sync/struct.CancellationToken.html
 [c~tokio_util::task::TaskTracker~docs]: https://docs.rs/tokio-util/latest/tokio_util/task/task_tracker/struct.TaskTracker.html
 [c~tokio~bridging-with-sync-code~website]: https://tokio.rs/tokio/topics/bridging
 [c~tokio~crates.io]: https://crates.io/crates/tokio
 [c~tokio~crates.io~badge]: https://img.shields.io/badge/crates.io-tokio-crimson
 [c~tokio~docs]: https://docs.rs/tokio
-[c~tokio::test~docs]: https://docs.rs/tokio/latest/tokio/attr.test.html
-[c~opentelemetry-http~docs]: https://docs.rs/opentelemetry-http
 [c~tokio~docs~badge]: https://img.shields.io/crates/v/tokio?label=tokio
 [c~tokio~examples~docs]: https://github.com/tokio-rs/tokio/tree/master/examples
 [c~tokio~examples~docs~badge]: https://img.shields.io/badge/Tokio_examples-steelblue?logo=github

@@ -20,7 +20,7 @@
 [p~audio]: https://john-cd.com/rust_howto/categories/multimedia_audio/audio.html
 [p~building]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/building.md
 [p~caching]: ../../../src/categories/caching/index.md
-[p~cross-platform]: ../../other/cross-platform/index.md
+[p~cross-platform]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/cross-platform/index.md
 [p~embedded]: ../embedded/index.md
 [p~emulators]: ../emulators/index.md
 [p~functions]: https://john-cd.com/rust_howto/language/functions.html

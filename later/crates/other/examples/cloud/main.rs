@@ -8,29 +8,6 @@ use anyhow::Result;
 use clap::Parser;
 use clap::Subcommand;
 
-/// Publish a custom metric with dimensions to Amazon CloudWatch.
-mod aws_cloudwatch;
-/// This is a basic example of an AWS Lambda function written in Rust.
-mod aws_lambda;
-/// Invoke an AWS Lambda function synchronously and asynchronously.
-mod aws_lambda_invoke;
-
-/// A typed message bus: publish Protobuf messages through a trait, with an in-memory implementation
-/// for tests and AWS SQS / SNS implementations for production.
-mod aws_message_bus;
-
-/// Point the S3 client at an S3-compatible store (MinIO, RustFS, LocalStack), optionally over HTTPS
-/// with a private certificate authority.
-mod aws_s3_compatible;
-/// This example demonstrates how to use the AWS SDK for Rust to list Amazon S3
-mod aws_sdk;
-/// Send an HTML and plain-text email with Amazon SES v2.
-mod aws_ses;
-
-/// Loads and validates the settings that control cloud behavior. Composition code uses this module
-/// before starting services so invalid configuration is reported early.
-mod aws_shared_config;
-
 /// A minimal Kubernetes operator with `kube-rs`: a custom resource (`Echo`), a pure function that
 /// computes the desired `Deployment`, and a controller loop that applies it and reports the status.
 mod kubernetes;
@@ -48,22 +25,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-    /// Runs the `aws_lambda` example.
-    #[command(name = "aws_lambda")]
-    AwsLambda,
-
-    /// Runs the in-memory message bus example (no AWS calls).
-    #[command(name = "aws_message_bus")]
-    AwsMessageBus,
-
-    /// Prints the region of clients built from one shared configuration.
-    #[command(name = "aws_shared_config")]
-    AwsSharedConfig,
-
-    /// Runs the `aws_sdk` example.
-    #[command(name = "aws_sdk")]
-    AwsSdk,
-
     /// Prints the CRD or starts the controller against an explicit kubeconfig.
     #[command(name = "kubernetes")]
     Kubernetes {
@@ -86,10 +47,6 @@ fn main() -> Result<()> {
 fn dispatch(cli: Cli) -> Result<()> {
     if let Some(command) = cli.command {
         match command {
-            Commands::AwsLambda => aws_lambda::run()?,
-            Commands::AwsMessageBus => aws_message_bus::run()?,
-            Commands::AwsSharedConfig => aws_shared_config::run()?,
-            Commands::AwsSdk => aws_sdk::run()?,
             Commands::Kubernetes { kubeconfig } => kubernetes::run(kubeconfig.as_deref())?,
             Commands::Shuttle => shuttle::run(),
         }

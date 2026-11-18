@@ -37,9 +37,7 @@ Use the [deployment guide][ex~cloud~shuttle] to choose a container, function run
 
 ## Operate Kubernetes
 
-The [Kubernetes operators chapter][ex~cloud~kubernetes]↗ shows how to write an operator with `kube-rs`.
-
-{{#include kubernetes.incl.md}}
+Use [`kube`][cloud~kube] for Kubernetes clients and controllers. A controller watches resources and reconciles the cluster with the state they describe.
 
 ## Integrate a distributed application runtime {#dapr}
 

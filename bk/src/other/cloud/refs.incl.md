@@ -1,0 +1,39 @@
+<!-- TODO Reviewed ??-??-2026. -->
+
+[ex~cloud~aws-sdk-rust]: aws.md#aws-sdk-rust
+[ex~cloud~aws-shared-config]: aws.md#aws-shared-config
+[ex~cloud~aws-ses]: aws.md#aws-ses
+[ex~cloud~aws-cloudwatch]: aws.md#aws-cloudwatch
+[ex~cloud~aws-lambda-invoke]: aws.md#aws-lambda-invoke
+[ex~cloud~aws-s3-compatible]: aws.md#aws-s3-compatible
+[ex~cloud~aws-message-bus]: aws.md#aws-message-bus
+[ex~cloud~lambda]: ../../categories/cloud/aws_lambda.md
+[ex~cloud~shuttle]: rust_native_cloud_development.md#shuttle
+[aws-app-runner~availability]: https://docs.aws.amazon.com/apprunner/latest/dg/apprunner-availability-change.html
+[aws-ecs~express-mode~docs]: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-create-full.html
+[aws-ecs~capacity-options~docs]: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/capacity-launch-type-comparison.html
+[aws-eks~deployment-options~docs]: https://docs.aws.amazon.com/eks/latest/userguide/eks-deployment-options.html
+[aws-ec2~user-guide]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html
+[aws-sqs~quotas]: https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html
+[aws-sns~quotas]: https://docs.aws.amazon.com/general/latest/gr/sns.html
+[aws-sns~raw]: https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html
+[cloud~axum]: ../../categories/web-programming_http-server/axum.md
+[cloud~spin]: https://spinframework.dev/v3/index
+[cloud~wasmcloud]: https://wasmcloud.com/docs/
+[cloud~workers-rust]: https://developers.cloudflare.com/workers/languages/rust/
+[cloud~kube]: https://kube.rs/
+[cloud~kube-controller]: https://kube.rs/controllers/intro/
+[dapr~rust~sdk~docs]: https://docs.dapr.io/developing-applications/sdks/rust/
+[shuttle~shutdown]: https://docs.shuttle.dev/docs/shuttle-shutdown
+
+[p~architecture]: ../architecture/index.md
+[p~aws]: aws.md
+[p~cloud]: index.md
+[p~container]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/containers.md
+[p~data-processing]: ../../categories/data-processing/index.md
+[p~devops]: ../devops/index.md
+[p~microservices]: ../architecture/common_architectures.md#microservices
+[p~network-programming]: ../../categories/network-programming/index.md
+[p~using_containers]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/using_containers.md
+[p~virtualization]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md
+[p~written-in-rust]: ../written-in-rust/index.md

@@ -40,7 +40,7 @@ The example is headless: it needs a compatible adapter but no window. Run it wit
 
 ### Related Topics {#related-topics .skip}
 
-- For Rust shader authoring, see [Shaders][p~shaders]; for GPU programming and compute options, see [GPU programming][p~gpu].
+- For Rust shader authoring, see [Shaders][p~shaders]; for GPU programming and compute options, see [GPU programming](../../other/gpu/index.md).
 - [[graphics | Graphics]].
 - [[mathematics | Mathematics]].
 

@@ -30,17 +30,19 @@ Crux is a good fit when several clients need the same business rules but need di
 
 In this example, two `Increment` events update the model and each requests a render. The shell reads the view and displays `Count is: 2`. The test checks the render effect as well as the final value. See the [upstream counter example](https://github.com/redbadger/crux/blob/master/examples/counter/README.md) for platform shells.
 
-```rust,editable
+From `bk/crates`, run `cargo run --locked -p other --example cross_platform -- crux`.
+
+```rust,noplayground
 {{#include ../../../crates/other/examples/cross_platform/crux.rs:example}}
 ```
 
 ## Related Topics {#related-topics .skip}
 
 - [Cross-platform Development](index.md).
-- [Architecture](https://github.com/john-cd/rust_howto/blob/c9d457b66ed12377a6ff5e0e1377af71cc9dde0b/bk/src/other/architecture/index.md).
+- [Architecture](../architecture/index.md).
 - [Software Architecture Process][p~architecture-process].
-- [WebAssembly](../../categories/wasm/index.md).
-- Programming Languages<!-- Cross-book topic: bk/src/categories/parser-implementations/programming_languages.md; not included in this preview. -->.
+- [WebAssembly](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md).
+- [Programming Languages](../../categories/parser-implementations/programming_languages.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -25,18 +25,12 @@
 
 - [API bindings](categories/api-bindings/index.md)
 
-- [Cloud](other/cloud/index.md)
-  - [Rust on AWS](other/cloud/aws.md)
-  - [Deploy Rust applications](other/cloud/rust_native_cloud_development.md)
-  - [Kubernetes operators](other/cloud/kubernetes.md)
+- [Kubernetes Operators](other/cloud/kubernetes.md)
 
 - [Compilers](categories/compilers/index.md)
   - [Tokenizing Input with Logos](categories/compilers/tokenization.md)
   - [Render a Diagnostic with a Source Span](categories/compilers/source_diagnostics.md)
   - [Incremental computation](categories/compilers/incremental_computation.md)
-
-- [Cross-platform Development](other/cross-platform/index.md)
-  - [Crux](other/cross-platform/crux.md)
 
 - [Cryptocurrencies](categories/cryptography_cryptocurrencies/index.md)
   - [Cryptocurrencies](categories/cryptography_cryptocurrencies/cryptocurrencies.md)
@@ -84,8 +78,7 @@
 - [Game engines](categories/game-engines/index.md)
   - [Game engines](categories/game-engines/game_engines.md)
 
-- [GPU programming](other/gpu/index.md)
-  - [GPU](other/gpu/gpu.md)
+- [GPU Compute Recipes](other/gpu/gpu.md)
 
 - [GUI](categories/gui/index.md)
   - [Responsive Background Work](categories/gui/background_work.md)
@@ -118,13 +111,6 @@
 
 - [Science - Biology and Neuroscience](categories/science_neuroscience/index.md)
   - [Neuroscience and Neuroimaging](categories/science_neuroscience/neuroscience.md)
-
-- [Scheduling](other/scheduling/index.md)
-  - [Scheduling](other/scheduling/scheduling.md)
-
-- [Scripting](other/scripting/index.md)
-  - [Rhai](other/scripting/rhai.md)
-  - [Task Automation with Rust](other/scripting/task_automation.md)
 
 - [Simulation](categories/simulation/index.md)
   - [Simulation](categories/simulation/simulation.md)

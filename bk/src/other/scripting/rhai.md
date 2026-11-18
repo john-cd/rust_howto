@@ -12,7 +12,7 @@
 
 Add it with `cargo add rhai`. In this example, `Engine::register_fn` makes a Rust function available to scripts, `eval` returns a typed result, and `Scope` passes values from the host to an expression. The registered `add` function produces `100`, and the scoped expression produces `430`.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/other/examples/scripting/rhai.rs:example}}
 ```
 
@@ -30,7 +30,7 @@ its own limits, especially if it can block or allocate. Review the
 [Rhai safety guide](https://rhai.rs/book/safety/index.html) before exposing a
 script interface to untrusted callers.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/other/examples/scripting/rhai_types_and_limits.rs:example}}
 ```
 

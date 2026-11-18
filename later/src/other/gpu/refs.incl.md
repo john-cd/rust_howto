@@ -1,6 +1,8 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
 [ex~gpu~rust-gpu]: gpu.md#rust-gpu
+[gpu~compute]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/rendering_graphics-api/gpu_abstraction_layers.md#wgpu
+[gpu~survey]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/gpu/index.md
 [rust-gpu~shader-guide]: https://github.com/Rust-GPU/rust-gpu/blob/main/docs/src/writing-shader-crates.md
 [c~cudarc~docs]: https://docs.rs/cudarc
 [c~cudarc~docs~badge]: https://img.shields.io/crates/v/cudarc?label=cudarc

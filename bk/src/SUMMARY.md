@@ -110,9 +110,17 @@
   - [Networking Utilities](categories/command-line-utilities/networking_cli.md)
   - [Shells and Related Utilities](categories/command-line-utilities/shells.md)
 
+- [Cloud](other/cloud/index.md)
+  - [Rust on AWS](other/cloud/aws.md)
+    - [Test an AWS Lambda Handler Locally](categories/cloud/aws_lambda.md)
+  - [Deploy Rust Applications](other/cloud/rust_native_cloud_development.md)
+
 - [Compression](categories/compression/index.md)
   - [Working with Tarballs](categories/compression/tar.md)
   - [Compression and Decompression](categories/compression/compression.md)
+
+- [Cross-platform Development](other/cross-platform/index.md)
+  - [Crux](other/cross-platform/crux.md)
 
 - [Cryptography](categories/cryptography/index.md)
   - [Encryption](categories/cryptography/encryption.md)
@@ -347,6 +355,8 @@
 - [Operating systems - Unix](categories/os_unix-apis/index.md)
   - [Unix APIs](categories/os_unix-apis/unix.md)
 
+- [GPU Programming](other/gpu/index.md)
+
 - [Graphics](categories/graphics/index.md)
   - [2D Renderers](categories/graphics/2d_renderers.md)
   - [Pixel-Based (Raster) 2D Graphics](categories/graphics/2d_raster_graphics.md)
@@ -444,6 +454,13 @@
   - [Custom Errors and Reports](categories/rust-patterns/custom_errors.md)
   - [Register Commands Explicitly or with Inventory](categories/rust-patterns/plugin_registration.md)
 
+- [Scheduling](other/scheduling/index.md)
+  - [Schedule Jobs in Rust](other/scheduling/scheduling.md)
+
+- [Scripting and Rust](other/scripting/index.md)
+  - [Rhai](other/scripting/rhai.md)
+  - [Task Automation with Rust](other/scripting/task_automation.md)
+
 - [Standalone Topics](categories/standalone/index.md)
   - [Integer Overflow](categories/standalone/overflow.md)
   - [Inheritance](categories/standalone/inheritance.md)
@@ -452,7 +469,6 @@
   - [Self-Referential Types](categories/standalone/self_referential.md)
 
 - [Date and Time](categories/date-and-time/jiff_dst.md)
-- [Test an AWS Lambda Handler Locally](categories/cloud/aws_lambda.md)
 - [Text Processing](categories/text-processing/index.md)
   - [Regular Expressions](categories/text-processing/regex.md)
   - [String Parsing](categories/text-processing/string_parsing.md)

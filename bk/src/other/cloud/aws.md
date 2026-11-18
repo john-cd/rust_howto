@@ -6,21 +6,15 @@
 
 Use the AWS SDK for Rust to call services from a Rust program. Load shared configuration once, then create a client for each service you call. The same approach works in a command-line tool, on a container host, and inside a Lambda handler.
 
-## Implement AWS Lambda Functions in Rust {#lambda}
+From `bk/crates`, run the offline SDK example tests with:
 
-Use `lambda_runtime` to receive events and return responses. Keep event-to-response logic in a separate handler so it can be tested without deploying the function. The published [local Lambda recipe][cloud~local-lambda] walks through testing a handler with Cargo Lambda.
-
-The following example provides a testable Lambda handler written in Rust. Install [Cargo Lambda][cargo-lambda~website]↗ to build and deploy it, then use `cargo lambda watch` to run it locally. Before deploying, configure AWS credentials and a deployment role.
-
-You can also use the AWS SDK from within a Lambda function to interact with AWS services like S3 or CloudWatch (see the example below).
-
-```rust,editable
-{{#include ../../../crates/other/examples/cloud/aws_lambda.rs:example}}
+```console
+cargo test --locked -p other --features aws-sdk --example aws_sdk
 ```
 
-See also the ["Create Lambda Functions with Rust"][aws-create-lambda-functions-with-rust~website]↗ and ["AWS Lambda Rust Runtime Examples"][aws-lambda-rust-runtime~examples~repo]↗ webpages.
+## Implement AWS Lambda Functions in Rust {#lambda}
 
-The [Cargo Lambda getting-started guide][cargo-lambda~getting-started]↗ covers the local watch and invoke workflow. The [AWS Lambda Rust walkthrough][aws~rust-lambda~walkthrough]↗ shows the deployment path and AWS prerequisites.
+Use [Test an AWS Lambda Handler Locally][ex~cloud~lambda] to build a `lambda_runtime` handler, run it with Cargo Lambda, and deploy it when you need a live function. To call services from inside a handler, reuse the AWS service clients across invocations.
 
 ## Interact with AWS Services with the AWS SDK for Rust {#aws-sdk-rust}
 
@@ -34,8 +28,8 @@ See, for example:
 - [AWS Rust SDK][aws-rust-sdk~website]↗{{hi:AWS}}.
 - [AWS SDK examples][aws-doc-sdk~examples~repo]↗.
 
-```rust,editable
-{{#include ../../../crates/other/examples/cloud/aws_sdk.rs:example}}
+```rust,no_run,noplayground
+{{#include ../../../crates/other/examples/aws_sdk/aws_sdk.rs:example}}
 ```
 
 ## Share the AWS Configuration Across Clients {#aws-shared-config}
@@ -44,8 +38,8 @@ See, for example:
 
 Load the `SdkConfig` once, then build every service client from it. The default credential provider chain checks environment variables, shared profiles, SSO, and container or instance roles, so code never contains keys. Pin a `BehaviorVersion`, and set retries and timeouts explicitly.
 
-```rust,no_run
-{{#include ../../../crates/other/examples/cloud/aws_shared_config.rs:example}}
+```rust,no_run,noplayground
+{{#include ../../../crates/other/examples/aws_sdk/aws_shared_config.rs:example}}
 ```
 
 ## Send Email with Amazon SES {#aws-ses}
@@ -54,8 +48,8 @@ Load the `SdkConfig` once, then build every service client from it. The default 
 
 Send a multipart message with an HTML body and a plain-text fallback. The sender must be a verified identity. Request construction is separated from sending so the unit test needs no AWS account.
 
-```rust,no_run
-{{#include ../../../crates/other/examples/cloud/aws_ses.rs:example}}
+```rust,no_run,noplayground
+{{#include ../../../crates/other/examples/aws_sdk/aws_ses.rs:example}}
 ```
 
 ## Publish Metrics to Amazon CloudWatch {#aws-cloudwatch}
@@ -64,18 +58,18 @@ Send a multipart message with an HTML body and a plain-text fallback. The sender
 
 Send custom metrics with dimensions. Every unique combination of dimension values is billed as a separate metric, so avoid unbounded values such as user identifiers. Compare CloudWatch's push model and dimension pricing with Prometheus's pull-based scraping and PromQL querying when designing observability for cross-cloud or AWS-native workloads.
 
-```rust,no_run
-{{#include ../../../crates/other/examples/cloud/aws_cloudwatch.rs:example}}
+```rust,no_run,noplayground
+{{#include ../../../crates/other/examples/aws_sdk/aws_cloudwatch.rs:example}}
 ```
 
 ## Invoke an AWS Lambda Function {#aws-lambda-invoke}
 
 [![aws-sdk-lambda][c~aws-sdk-lambda~docs~badge]][c~aws-sdk-lambda~docs]{{hi:aws-sdk-lambda}}
 
-Invoke a function synchronously (`RequestResponse`) and parse its JSON payload, or fire and forget with `InvocationType::Event`. For synchronous calls, check `function_error` before decoding the response. An asynchronous success response means Lambda accepted the event. Check the function's logs or failure destination for the outcome. See the function example [above](#lambda) for the handler.
+Invoke a function synchronously (`RequestResponse`) and parse its JSON payload, or fire and forget with `InvocationType::Event`. For synchronous calls, check `function_error` before decoding the response. An asynchronous success response means Lambda accepted the event. Check the function's logs or failure destination for the outcome. The [local Lambda walkthrough][ex~cloud~lambda] supplies the handler that accepts the request.
 
-```rust,no_run
-{{#include ../../../crates/other/examples/cloud/aws_lambda_invoke.rs:example}}
+```rust,no_run,noplayground
+{{#include ../../../crates/other/examples/aws_sdk/aws_lambda_invoke.rs:example}}
 ```
 
 ## Use an S3-compatible Store {#aws-s3-compatible}
@@ -84,8 +78,8 @@ Invoke a function synchronously (`RequestResponse`) and parse its JSON payload, 
 
 MinIO, RustFS and LocalStack speak the S3 protocol. Point the client at the store's endpoint, supply static development credentials, and enable path-style addressing. The integration test is `#[ignore]`d unless a server is running.
 
-```rust,no_run
-{{#include ../../../crates/other/examples/cloud/aws_s3_compatible.rs:example}}
+```rust,no_run,noplayground
+{{#include ../../../crates/other/examples/aws_sdk/aws_s3_compatible.rs:example}}
 ```
 
 ### Trust a Private Certificate Authority {#aws-s3-tls}
@@ -100,10 +94,10 @@ A store reached over HTTPS with a certificate from an internal CA fails with a c
 
 Hide the queue behind `MessagePublisher` and `MessageSubscriber` traits so business code and tests use an in-memory implementation, while production uses SQS (point-to-point) or SNS (fan-out to several queues). Payloads are Protobuf messages encoded with `prost` and base64, with a 256 KiB encoded-body cap chosen by this example for SQS and SNS. Check the [SQS queue quota][aws-sqs~quotas] and [SNS topic quota][aws-sns~quotas] for the resources you use. Base64 adds about one third to the payload size, so apply the cap after encoding. SQS delivers at least once: acknowledge (delete) a message only after it is handled, make handlers idempotent, tune the visibility timeout, and configure a dead-letter queue for messages that keep failing.
 
-For SNS-to-SQS fan-out, turn on [raw message delivery][aws-sns~raw] on the subscription so the queue receives the base64 body that the decoder expects. Allow the specific SNS topic to send to the queue in its resource policy.
+The `aws_message_bus` subcommand runs the in-memory demonstration without AWS. For SNS-to-SQS fan-out, turn on [raw message delivery][aws-sns~raw] on the subscription so the queue receives the base64 body that the decoder expects. Allow the specific SNS topic to send to the queue in its resource policy.
 
-```rust,editable
-{{#include ../../../crates/other/examples/cloud/aws_message_bus.rs:example}}
+```rust,no_run,noplayground
+{{#include ../../../crates/other/examples/aws_sdk/aws_message_bus.rs:example}}
 ```
 
 ## Deploy a Rust Service {#deploy-rust-service}

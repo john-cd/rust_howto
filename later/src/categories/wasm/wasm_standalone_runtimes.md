@@ -100,7 +100,7 @@ target indicates that the guest did not execute.
 ## Related Topics {#related-topics .skip}
 
 - [WebAssembly overview](index.md) and [development tools](wasm_development.md).
-- [Cloud development](../../other/cloud/rust_native_cloud_development.md).
+- [Cloud development](https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/cloud/rust_native_cloud_development.md).
 - [Virtualization](../virtualization/index.md).
 
 {{#include refs.incl.md}}
