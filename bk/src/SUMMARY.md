@@ -180,6 +180,11 @@
   - [Parsing and Displaying](categories/date-and-time/parse.md)
   - [`time` Crate](categories/date-and-time/time_crate.md)
 
+- [DevOps and Rust](other/devops/index.md)
+  - [Version Control](other/devops/version_control.md)
+  - [CI/CD](other/devops/cd_ci.md)
+  - [GitHub Actions](other/devops/github_actions.md)
+  - [Release Automation](other/devops/release_automation.md)
 - [Email](categories/email/index.md)
   - [Send Emails](categories/email/send_emails.md)
   - [Email Parsing](categories/email/email_parsing.md)
