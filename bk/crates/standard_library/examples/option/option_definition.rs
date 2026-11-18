@@ -3,12 +3,13 @@
 //! TODO Reviewed ??-??-2026.
 
 // ANCHOR: definition
+/// Simplified optional-value model: either no value or one owned payload.
 enum Option<T> {
-    /// Represents the none case of option.
+    /// No value is present.
     None,
-    /// Represents the some case of option.
+    /// One value is present.
     Some(
-        /// Successful result value returned to the caller.
+        /// Owned value represented by the optional container.
         T,
     ),
 }
