@@ -8,21 +8,22 @@ use anyhow::Context;
 use thiserror::Error;
 
 // ANCHOR: example
+/// Distinguishes malformed or out-of-range counts from the forbidden zero value.
 #[derive(Debug, Error)]
 enum CountError {
-    /// Represents the invalid integer case of count error.
+    /// Parsing failed because the input is not a representable unsigned integer.
     #[error("count must be a positive integer")]
     InvalidInteger(
         /// Underlying error preserved by the InvalidInteger case.
         #[source]
         std::num::ParseIntError,
     ),
-    /// Represents the zero case of count error.
+    /// Parsing succeeded, but zero is outside the application domain.
     #[error("count must be greater than zero")]
     Zero,
 }
 
-/// Parses a count representation into this type.
+/// Parses a positive u32 while preserving the original integer parsing error.
 fn parse_count(input: &str) -> Result<u32, CountError> {
     let count = input.parse().map_err(CountError::InvalidInteger)?;
     if count == 0 {
@@ -31,7 +32,7 @@ fn parse_count(input: &str) -> Result<u32, CountError> {
     Ok(count)
 }
 
-/// Handles the calculate behavior for this component.
+/// Doubles a parsed count, adding input context and rejecting arithmetic overflow.
 fn calculate(input: &str) -> anyhow::Result<String> {
     let count = parse_count(input).with_context(|| format!("reading count from {input:?}"))?;
     let doubled = count
@@ -40,7 +41,10 @@ fn calculate(input: &str) -> anyhow::Result<String> {
     Ok(format!("twice the count: {doubled}"))
 }
 
-/// Runs the example logic exposed by this module.
+/// Writes a result to stdout or a contextual error chain to stderr.
+///
+/// Missing or invalid input produces a failure exit code. Writer failures remain
+/// I/O errors so the application boundary can report them separately.
 fn run(input: Option<&str>, out: &mut impl Write, err: &mut impl Write) -> io::Result<ExitCode> {
     let Some(input) = input else {
         writeln!(err, "usage: typed_errors <positive-count>")?;
@@ -62,6 +66,7 @@ fn run(input: Option<&str>, out: &mut impl Write, err: &mut impl Write) -> io::R
 }
 // ANCHOR_END: example
 
+/// Connects the first CLI argument and process streams to the diagnostic boundary.
 fn main() -> io::Result<ExitCode> {
     run(
         std::env::args().nth(1).as_deref(),

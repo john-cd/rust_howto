@@ -9,8 +9,7 @@
 
 // The unit type is used when there is nothing to return:
 
-/// Returns the unit type explicitly.
-/// Never returns; it panics.
+/// Prints a message and returns the unit value explicitly.
 #[allow(clippy::unused_unit)]
 fn a_func() -> () {
     println!("a_func was called.");
@@ -19,18 +18,21 @@ fn a_func() -> () {
 // `()` is most commonly seen implicitly.
 // Functions without a `-> ...` implicitly have return type `()`.
 
-/// Returns the unit type implicitly.
 // The following is equivalent to the above:
+/// Prints a message with an implicit unit return type.
 fn b_func() {
     println!("b_func was called.");
 }
 // The semicolon ; discards the result of an expression at the end of a block,
 // so that the block returns `()`.
 
-// The `!` type, also called "never", represents the type of computations which
+// The `!` type represents computations that never resolve to a value.
 
-/// Never returns; it panics.
-// never resolve to any value at all.
+/// Demonstrates the never return type by unconditionally panicking.
+///
+/// # Panics
+///
+/// Always panics with a message explaining that this function never returns.
 fn diverge() -> ! {
     panic!("This function never returns!")
 }
