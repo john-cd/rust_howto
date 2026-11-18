@@ -7,20 +7,21 @@ use serde::Deserialize;
 use serde::Serialize;
 
 // ANCHOR: example
+/// JSON event payload containing the name to greet.
 #[derive(Deserialize)]
 struct Request {
-    /// Name stored for this value.
+    /// Recipient name read from the Lambda event payload.
     name: String,
 }
 
-/// Data for response operations, including message.
+/// JSON response returned to the Lambda caller.
 #[derive(Debug, PartialEq, Serialize)]
 struct Response {
-    /// Message stored for this value.
+    /// Greeting constructed from the event's recipient name.
     message: String,
 }
 
-/// Handles the handle behavior for this component.
+/// Converts the event payload into a greeting without using AWS-specific context.
 async fn handle(event: LambdaEvent<Request>) -> Result<Response, Error> {
     let (request, _) = event.into_parts();
     Ok(Response {
@@ -29,6 +30,7 @@ async fn handle(event: LambdaEvent<Request>) -> Result<Response, Error> {
 }
 // ANCHOR_END: example
 
+/// Starts the Lambda polling runtime and delegates each event to the greeting handler.
 #[tokio::main]
 async fn main() -> Result<(), Error> {
     lambda_runtime::run(service_fn(handle)).await
