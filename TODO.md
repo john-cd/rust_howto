@@ -7,7 +7,47 @@
 Track implementation, acceptance criteria, and validation evidence in
 [GitHub Issues][issues]. Recheck the live issue before starting work.
 
-## Book review, November 16, 2026
+## Current review, November 17, 2026
+
+The current work below supersedes the historical snapshots that follow. Recheck live issues
+before implementation; a historical TODO link is not proof that an issue remains open.
+
+### Ready
+
+- **P2 — [#2364](https://github.com/john-cd/rust_howto/issues/2364):** Reject missing, empty,
+  and incomplete rendered output in the all-chapters release check. Missing and empty
+  directories currently return success.
+- **P3 — [#2264](https://github.com/john-cd/rust_howto/issues/2264):** Add a Creusot contract
+  example. This remains open in the live issue snapshot.
+- Related tooling: **P1** [book_tooling#89](https://github.com/john-cd/book_tooling/issues/89)
+  tracks deletion of used Unicode reference definitions; **P2**
+  [mdbook-utils#278](https://github.com/john-cd/mdbook-utils/issues/278) tracks invalid extracted
+  Rust from hidden hash markers.
+
+### Validation and owner follow-ups
+
+- [#2207][i2207] now tracks remaining hosted checks and Book Tooling checkout failures.
+  Actions is running jobs in this repository; it is not uniformly unavailable. The recent
+  Windows run failed at `Check out Book Tooling`. PR #2303 is closed and unmerged.
+- [#2116][i2116], [#2247](https://github.com/john-cd/rust_howto/issues/2247), and
+  [#2245](https://github.com/john-cd/rust_howto/issues/2245) own dependency/advisory follow-ups;
+  [#2282](https://github.com/john-cd/rust_howto/issues/2282) and
+  [#2283](https://github.com/john-cd/rust_howto/issues/2283) own license metadata decisions.
+- [#2216][i2216] and [#2215][i2215] retain human editorial and maintainer decisions.
+  Automated review does not replace those decisions or date human review markers.
+- [#2240][i2240], [#2211][i2211], [#2213][i2213], [#2214][i2214], and [#2202][i2202]
+  retain host, credential, hardware, and platform acceptance work.
+- The other chat owns the `later/` migration plan and its migration/readiness issues.
+  This review does not change that plan or duplicate its checklist.
+
+The fresh published HTML contains 397 HTML files and passes the current all-chapters and
+word-index checks. The full mdBook command failed after HTML/linkcheck, in the installed
+Pandoc backend (Windows error 206); it is not a successful full book build. The search index
+is about 18.97 MB uncompressed; browser startup measurements remain unverified. The tooling
+repositories pass 628 tests combined and strict all-target Clippy. Full book-example Cargo
+tests, external links, PDF, deployment, and native Linux/macOS checks were not run here.
+
+## Historical book review, November 16, 2026
 
 Reviewed the committed `develop` revision [`31b76b925`][baseline], which
 matched `origin/develop`. The inventory covers 133 published, 245 draft, and
@@ -53,7 +93,7 @@ through `&mut str`. Locked offline tests passed for WebSockets,
 No Allocation, and Unicode (four tests). Full workspace tests and external
 links were outside this review.
 
-## Publication follow-ups
+## Historical publication follow-ups
 
 The former draft book is retired under [#2349](https://github.com/john-cd/rust_howto/issues/2349). Its chapter migrations are complete; published chapters live in `bk/src`, and unpublished material stays in `later/src`. The historical migration and curation records remain in Git history. Publication alone does not close an issue's remaining runtime or acceptance checks.
 
@@ -63,7 +103,7 @@ The former draft book is retired under [#2349](https://github.com/john-cd/rust_h
 
 For each promotion, move the chosen prose and references with its runnable example, update the published contents and indexes, and repair staging links. Run targeted locked tests, render the affected books, and record validation on the owning issue. Preserve human review markers and record review decisions on [#2216][i2216].
 
-## Other coverage follow-ups
+## Historical coverage follow-ups
 
 The earlier [coverage audit #2249][i2249] and the [Clippy chapter #2248][i2248]
 are complete. Pointer provenance [#2270][i2270], CI benchmarking
@@ -84,7 +124,7 @@ are complete. Pointer provenance [#2270][i2270], CI benchmarking
 
 <!-- recommended-issue-order:start -->
 
-## Ready and blocked issues
+## Historical ready and blocked snapshot
 
 ### Ready
 
