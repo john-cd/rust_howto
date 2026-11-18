@@ -170,6 +170,7 @@
   - [Simulation and Visualization](categories/science_robotics/simulation_visualization.md)
 
 - [Science](categories/science/index.md)
+  - [Compare Route Measurements with a Model](categories/science/route_measurements.md)
   - [Neural Networks and Deep Learning](categories/science/deep_learning.md)
 
 - [Science - Geo](categories/science_geo/index.md)

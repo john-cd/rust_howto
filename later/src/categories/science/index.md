@@ -4,7 +4,21 @@
 
 [![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
 
-This section collects Rust crates and examples for scientific computing, machine learning, geospatial data, and neuroscience. Compare runtime and accelerator requirements, model or data compatibility, and project activity before choosing a crate.
+Start with the quantity you want to measure or predict. Record the units,
+coordinate system, and sampling assumptions before choosing a numerical method.
+
+## Work with Measurements and Models
+
+1. [Compare route measurements with a model](route_measurements.md). Measure a
+   synthetic route and check the assumptions behind a time prediction.
+2. [Simulate a process](../simulation/simulation.md) when the state evolves
+   over time or events change the model's state.
+3. Use [Geo](../science_geo/geo.md) for geographic coordinates or
+   [sampled signal analysis](../science_neuroscience/neuroscience.md#fft-signal)
+   for measurements recorded at a known rate.
+
+For a distinct learning path through training, evaluation, and inference, see
+[Machine Learning in Practice](../../other/machine-learning/index.md).
 
 ## Classical Machine Learning
 
