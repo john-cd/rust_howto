@@ -3,12 +3,20 @@
 use plugin_registry::Command;
 use plugin_registry::registry;
 
-/// Handles the local behavior for this component.
+/// Supplies a command handler for explicit registration and duplicate-name tests.
 fn local() -> &'static str {
     "local"
 }
 
 // ANCHOR: example
+/// Validates an explicit registry, then runs commands discovered through inventory.
+///
+/// Linking the extension makes its registrations available; the registry sorts
+/// commands by name so discovery does not expose linker-dependent ordering.
+///
+/// # Errors
+///
+/// Returns the duplicate command name if either registry contains a collision.
 fn commands() -> Result<Vec<(&'static str, &'static str)>, &'static str> {
     // Explicit registration is easy to inspect and works without constructors.
     let local_command = Command {
@@ -28,6 +36,7 @@ fn commands() -> Result<Vec<(&'static str, &'static str)>, &'static str> {
 }
 // ANCHOR_END: example
 
+/// Checks the expected names and outputs of the linked extension commands.
 fn main() {
     assert_eq!(
         commands(),
@@ -35,7 +44,7 @@ fn main() {
     );
 }
 
-/// Tests behavior implemented by the surrounding module.
+/// Checks deterministic discovery and duplicate-name rejection.
 #[cfg(test)]
 mod tests {
     use super::*;
