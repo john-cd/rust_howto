@@ -1,19 +1,18 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Starts the hals application and connects its top-level components.
-//! The executable uses this module to initialize services and hand control to the application.
+//! Exercises the embedded-hal OutputPin interface using an in-memory pin.
 
 use embedded_hal::digital::ErrorType;
 use embedded_hal::digital::OutputPin;
 
-/// Data for mock pin operations, including high and transitions.
+/// Records logical output-pin state and every write for device-free blink assertions.
 #[derive(Default)]
 struct MockPin {
-    /// Flag indicating whether the mock pin satisfies the high condition.
+    /// Last logical level written through the output-pin interface.
     high: bool,
 
-    /// Collection of transitions values consumed by mock pin operations.
+    /// Ordered levels requested by set_high and set_low, including repeated levels.
     transitions: Vec<bool>,
 }
 
