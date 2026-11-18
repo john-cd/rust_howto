@@ -169,7 +169,7 @@ The current Windows defaults below can be overridden per machine or shell with e
 - CODE_REPOS_ROOT: D:/code on Windows; ~/code by default on Unix.
 - CODE_BUILD_ROOT: D:/code_build on Windows; XDG cache or ~/.cache/cargo-build by default on Unix.
 - CODE_TARGET_ROOT: D:/target on Windows; XDG cache or ~/.cache/cargo-target by default on Unix.
-- CODE_SCCACHE_ROOT: D:/sccache on Windows; XDG cache or ~/.cache/sccache by default on Unix.
+- CODE_SCCACHE_ROOT: D:/cache/sccache on Windows; XDG cache or ~/.cache/sccache by default on Unix.
 - CODE_TEMP_ROOT: C:/temp on Windows; Unix uses the existing TMPDIR or /tmp.
 - CODE_PACKAGES_ROOT: D:/packages on Windows; ~/.local/share by default on Unix.
 - CODE_TOOLS_ROOT: C:/tools on Windows; ~/.local/tools by default on Unix.

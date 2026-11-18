@@ -73,7 +73,7 @@ if ($LinkOutputs) {
     $repo = if ($slot -eq 'main') { Split-Path -Leaf $checkout } else { Split-Path -Leaf (Split-Path -Parent $parent) }
     $cacheHome = if ($env:XDG_CACHE_HOME) { $env:XDG_CACHE_HOME } else { Join-Path $HOME '.cache' }
     $targetRoot = if ($env:CODE_TARGET_ROOT) { $env:CODE_TARGET_ROOT } elseif ($IsWindows) { 'D:/target' } else { Join-Path $cacheHome 'cargo-target' }
-    $cacheRoot = if ($env:CODE_SCCACHE_ROOT) { $env:CODE_SCCACHE_ROOT } elseif ($env:SCCACHE_DIR) { $env:SCCACHE_DIR } elseif ($IsWindows) { 'D:/sccache' } else { Join-Path $cacheHome 'sccache' }
+    $cacheRoot = if ($env:CODE_SCCACHE_ROOT) { $env:CODE_SCCACHE_ROOT } elseif ($env:SCCACHE_DIR) { $env:SCCACHE_DIR } elseif ($IsWindows) { 'D:/cache/sccache' } else { Join-Path $cacheHome 'sccache' }
     $outputs = [ordered]@{
         target = Join-Path (Join-Path $targetRoot $repo) $slot
         build = Join-Path (Join-Path $fullBuildRoot $repo) $slot

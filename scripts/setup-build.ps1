@@ -18,7 +18,7 @@ if ($LASTEXITCODE) { throw 'Could not locate the shared Git directory.' }
 $mainRepo = Split-Path -Parent $commonGitDir.Trim()
 $codeTargetRoot = if ($env:CODE_TARGET_ROOT) { $env:CODE_TARGET_ROOT } else { 'D:\target' }
 $codeBuildRoot = if ($env:CODE_BUILD_ROOT) { $env:CODE_BUILD_ROOT } else { 'D:\code_build' }
-$codeSccacheRoot = if ($env:CODE_SCCACHE_ROOT) { $env:CODE_SCCACHE_ROOT } elseif ($env:SCCACHE_DIR) { $env:SCCACHE_DIR } else { 'D:\sccache' }
+$codeSccacheRoot = if ($env:CODE_SCCACHE_ROOT) { $env:CODE_SCCACHE_ROOT } elseif ($env:SCCACHE_DIR) { $env:SCCACHE_DIR } else { 'D:\cache\sccache' }
 $env:SCCACHE_CACHE_SIZE = '45G'
 
 function Get-CacheBaseDirs {

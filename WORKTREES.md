@@ -23,7 +23,7 @@ Windows defaults are `CODE_REPOS_ROOT=D:/code`,
 `CODE_TEMP_ROOT=C:/temp`,
 `CODE_PACKAGES_ROOT=D:/packages`, and `CODE_TOOLS_ROOT=C:/tools`.
 Unix uses native home/cache/temp directories. Root overrides do not move existing
-installations or rewrite independent package-manager settings. Use `D:/temp`
+installations or rewrite independent package-manager settings. Use `C:/temp`
 for explicitly isolated test caches and remove them when finished.
 
 ## Rust
