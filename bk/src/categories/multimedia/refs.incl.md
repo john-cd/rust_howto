@@ -17,7 +17,7 @@
 [p~hardware-support]: ../hardware-support/index.md
 [p~memory-management]: ../memory-management/index.md
 [p~network-programming]: ../network-programming/index.md
-[p~rendering]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/index.md
-[p~rendering_data-formats]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering_data-formats/index.md
-[p~rendering_graphics-api]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering_graphics-api/index.md
+[p~rendering]: ../graphics/index.md
+[p~rendering_data-formats]: ../rendering_data-formats/index.md
+[p~rendering_graphics-api]: ../rendering_graphics-api/index.md
 [p~wasm]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md

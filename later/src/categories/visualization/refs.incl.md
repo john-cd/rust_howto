@@ -36,4 +36,4 @@
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
 [p~gui]: ../gui/index.md
 [p~multimedia_video]: https://john-cd.com/rust_howto/categories/multimedia_video/index.html
-[p~rendering]: ../rendering/index.md
+[p~rendering]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/index.md

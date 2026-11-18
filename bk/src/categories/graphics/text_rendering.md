@@ -26,6 +26,20 @@ Glyph rasterization does not perform text shaping or layout. Bidirectional
 text, ligatures, script shaping, line breaking, and fallback fonts require a
 text-layout layer.
 
+## Rasterize with fontdue and Read Design Metrics {#fontdue}
+
+[`fontdue`][c~fontdue~docs] provides a coverage bitmap directly from a character and pixel size. The example also uses [`ttf-parser`][c~ttf-parser~docs] to read the unscaled advance in font units, which is useful when measuring glyphs before choosing a pixel size. Both examples use the same bundled font.
+
+From `bk/crates`, run:
+
+```console
+cargo run --locked -p rendering --example text_rendering
+```
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/rendering/examples/text_rendering/rasterize_glyph.rs:example}}
+```
+
 ## Related Topics
 
 - [Image Processing](../multimedia_images/images.md) covers raster image data.

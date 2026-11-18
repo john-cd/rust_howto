@@ -102,27 +102,7 @@
   - [UI layout](categories/gui/ui_layout.md)
   - [Web-based GUI](categories/gui/web_based_gui.md)
   - [Window creation](categories/gui/window_creation.md)
-
-- [Rendering](categories/rendering/index.md)
-  - [2D Vector Graphics](categories/rendering/2d_vector_graphics.md)
-  - [3D Renderers](categories/rendering/3d_renderers.md)
-  - [Text Rendering](categories/rendering/text_rendering.md)
-
-- [Rendering - data formats](categories/rendering_data-formats/index.md)
-  - [3D model formats](categories/rendering_data-formats/3d_model_formats.md)
-  - [Vector formats](categories/rendering_data-formats/vector_formats.md)
-  - [Texture formats](categories/rendering_data-formats/texture_formats.md)
-
-- [Rendering engines](categories/rendering_engine/index.md)
-  - [Rendering engines](categories/rendering_engine/rendering_engines.md)
-
-- [Rendering - graphics APIs](categories/rendering_graphics-api/index.md)
-  - [Viewports and GPU Readback Layout](categories/rendering_graphics-api/frame_layout.md)
-  - [Native Graphics APIs](categories/rendering_graphics-api/native_graphics_apis.md)
-  - [GPU Abstraction Layers](categories/rendering_graphics-api/gpu_abstraction_layers.md)
-  - [Vulkan](categories/rendering_graphics-api/vulkan.md)
-  - [OpenGL](categories/rendering_graphics-api/opengl.md)
-  - [Shaders](categories/rendering_graphics-api/shaders.md)
+  - [Vector Renderers for GUIs](categories/gui/vector_renderers.md)
 
 - [Robotics](categories/science_robotics/index.md)
   - [Robot Operating Systems](categories/science_robotics/robot_operating_systems.md)

@@ -2,7 +2,7 @@
 
 # GPU Programming
 
-This index covers general-purpose computing on GPUs from Rust. Graphics APIs for drawing are covered in [[rendering_graphics-api | Rendering: Graphics API]] and shader authoring is covered in [[shaders | Shaders]]. Choose an approach based on the hardware, deployment platforms, and runtime you need.
+This index covers general-purpose computing on GPUs from Rust. Graphics APIs for drawing are covered in [[rendering_graphics-api | Graphics APIs]] and shader authoring is covered in [[shaders | Shaders]]. Choose an approach based on the hardware, deployment platforms, and runtime you need.
 
 ## Choose an Approach
 
@@ -24,7 +24,7 @@ successful compilation only cover setup.
 
 ## Related Topics {#related-topics .skip}
 
-- [[rendering_graphics-api | Rendering: Graphics API]].
+- [[rendering_graphics-api | Graphics APIs]].
 - [[shaders | Shaders]].
 - [Deep learning in Rust][ex~gpu~deep-learning].
 

@@ -37,6 +37,10 @@ Keep device-pixel scaling separate from design coordinates. For interactive
 diagrams and editors, retaining the source paths also makes updates and hit
 testing simpler than reconstructing shapes from pixels.
 
+## Choose a Drawing Backend
+
+Use Lyon when you need tessellated geometry for your own pipeline. A canvas renderer such as [`femtovg`][c~femtovg~docs] draws paths to an OpenGL context. [`vello`][c~vello~docs] uses GPU compute to draw a vector scene, while [`skia-safe`][c~skia-safe~docs] exposes Skia's CPU and GPU drawing APIs. Choose against the target and the context or device your application can supply.
+
 ## Related Topics
 
 - [Tessellate, Then Rasterize](2d_renderers.md#tessellate-and-rasterize) passes

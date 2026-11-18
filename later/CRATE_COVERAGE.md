@@ -13,7 +13,7 @@ reader task. Other categories have no candidate in this review.
 | Crate | Proposed recipe | Scope |
 | --- | --- | --- |
 | [`gdbstub`](https://docs.rs/gdbstub/latest/gdbstub/) | Single step a toy emulator in GDB and inspect its simulated registers. | Extend the existing [emulator](src/categories/emulators/emulators.md) with a local debugger session. The existing recipe already explains instruction execution and ROM loading. |
-| [`meshopt`](https://docs.rs/meshopt/latest/meshopt/optimize/index.html) | Reorder indices in a small triangle mesh for the vertex cache. | Verify that the triangle multiset stays the same, including winding. The existing [3D model recipe](src/categories/rendering_data-formats/3d_model_formats.md) covers loading and inspecting a scene. |
+| [`meshopt`](https://docs.rs/meshopt/latest/meshopt/optimize/index.html) | Reorder indices in a small triangle mesh for the vertex cache. | Verify that the triangle multiset stays the same, including winding. The existing [3D model recipe](../bk/src/categories/rendering_data-formats/3d_model_formats.md) covers loading and inspecting a scene. |
 | [`turmoil`](https://docs.rs/turmoil/latest/turmoil/) | Partition and repair a link between two simulated hosts and verify that delivery resumes. | Exercise a two-host network lifecycle. The existing [simulation recipes](src/categories/simulation/simulation.md) cover event queues, ODEs, and sampling. |
 
 ## Registry Snapshot

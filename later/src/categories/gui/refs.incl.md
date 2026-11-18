@@ -36,7 +36,7 @@
 [ex~gui~taffy]: ui_layout.md#taffy
 [ex~gui~tao]: window_creation.md#tao
 [ex~gui~tauri]: web_based_gui.md#tauri
-[ex~gui~text-rendering]: ../rendering/text_rendering.md
+[ex~gui~text-rendering]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/text_rendering.md
 [ex~gui~vizia]: retained_mode_gui.md#vizia
 [ex~gui~webassembly-wasm-considerations-clipboard]: clipboard.md#webassembly-wasm-considerations
 [ex~gui~webassembly-wasm-considerations-file-dialogs]: file_dialogs.md#webassembly-wasm-considerations
@@ -65,7 +65,7 @@
 [p~audio]: https://john-cd.com/rust_howto/categories/multimedia_audio/audio.html
 [p~containers]: ../virtualization/containers.md
 [p~cross-platform]: ../../other/cross-platform/index.md
-[p~data-formats]: ../rendering_data-formats/index.md
+[p~data-formats]: https://john-cd.com/rust_howto/categories/rendering_data-formats/index.html
 [p~documentation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools/documentation/documentation.md
 [p~embedded]: # "../embedded/index.md"
 [p~game-development]: ../game-development/game_development.md
@@ -79,7 +79,7 @@
 [p~main]: https://john-cd.com/rust_howto/language/entry_points.html
 [p~option]: https://john-cd.com/rust_howto/standard-library/optional_values.html
 [p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
-[p~rendering]: ../rendering/index.md
+[p~rendering]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/index.md
 [p~ui-layout]: ui_layout.md
 [p~wasm]: ../wasm/index.md
 [p~windows]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/os_windows-apis/windows.md

@@ -15,5 +15,5 @@
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
 [p~linear_algebra]: https://john-cd.com/rust_howto/categories/mathematics/linear_algebra.html
 [p~mathematics]: https://john-cd.com/rust_howto/categories/mathematics/index.html
-[p~rendering]: ../rendering/index.md
-[p~rendering_graphics-api]: ../rendering_graphics-api/index.md
+[p~rendering]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/index.md
+[p~rendering_graphics-api]: https://john-cd.com/rust_howto/categories/rendering_graphics-api/index.html

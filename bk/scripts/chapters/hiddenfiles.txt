@@ -42,10 +42,6 @@
 ./src/categories/os_unix-apis/index.md
 ./src/categories/parser-implementations/index.md
 ./src/categories/parsing/index.md
-./src/categories/rendering/index.md
-./src/categories/rendering_data-formats/index.md
-./src/categories/rendering_engine/index.md
-./src/categories/rendering_graphics-api/index.md
 ./src/categories/science/index.md
 ./src/categories/science/machine_learning.incl.md
 ./src/categories/science/machine_learning.md

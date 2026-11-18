@@ -9,3 +9,4 @@
 [ex~graphics~tiny-skia]: 2d_raster_graphics.md#draw-a-cpu-raster-scene
 [ex~graphics~usvg]: svg_rendering.md#usvg
 [p~linear-algebra]: ../mathematics/linear_algebra.md
+[ex~graphics~fontdue]: text_rendering.md#fontdue

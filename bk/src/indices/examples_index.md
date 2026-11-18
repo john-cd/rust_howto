@@ -742,6 +742,26 @@
 
 {{#include ../categories/graphics/text_rendering.incl.md}}
 
+### Rendering Data Formats
+
+{{#include ../categories/rendering_data-formats/data_formats.incl.md}}
+
+### Rendering Engines
+
+{{#include ../categories/rendering_engine/rendering_engines.incl.md}}
+
+### Graphics APIs
+
+{{#include ../categories/rendering_graphics-api/gpu_abstraction_layers.incl.md}}
+
+{{#include ../categories/rendering_graphics-api/native_graphics_apis.incl.md}}
+
+{{#include ../categories/rendering_graphics-api/opengl.incl.md}}
+
+{{#include ../categories/rendering_graphics-api/shaders.incl.md}}
+
+{{#include ../categories/rendering_graphics-api/vulkan.incl.md}}
+
 ## Hardware Support
 
 ### Peripherals
