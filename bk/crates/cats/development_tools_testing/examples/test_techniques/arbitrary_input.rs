@@ -14,16 +14,18 @@
 use arbitrary::Arbitrary;
 use arbitrary::Unstructured;
 
-/// Data for request operations, including method and path.
+/// Structured fuzz input whose path borrows directly from the input bytes.
 #[derive(Arbitrary, Debug)]
 struct Request<'a> {
-    /// Method stored for this value.
+    /// Arbitrary method discriminator; zero enables the sample invariant check.
     method: u8,
-    /// Path stored for this value.
+    /// UTF-8 path borrowed from the decoder's input buffer.
     path: &'a str,
 }
 
-/// Checks input before the operation proceeds.
+/// Decodes fuzz bytes and checks a sample invariant for method-zero absolute paths.
+///
+/// Returns a decoding error when the bytes cannot form a valid Request.
 fn check_input(bytes: &[u8]) -> arbitrary::Result<()> {
     let request = Request::arbitrary(&mut Unstructured::new(bytes))?;
     if request.method == 0 && request.path.starts_with('/') {
@@ -43,6 +45,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Exercises the fixed fuzz input through the example's decoding path.
 #[cfg(test)]
 mod tests {
     /// Checks that sample input is reproducible.

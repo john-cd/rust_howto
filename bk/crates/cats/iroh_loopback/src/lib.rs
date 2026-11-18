@@ -9,10 +9,13 @@ use iroh::EndpointAddr;
 use iroh::endpoint::RelayMode;
 use iroh::endpoint::presets;
 
-/// Defines the alpn value used by this code.
+/// Protocol identifier negotiated by both endpoints during the QUIC handshake.
 const ALPN: &[u8] = b"rust-howto/loopback/1";
 
-/// Handles the local endpoint behavior for this component.
+/// Binds an endpoint to loopback with relays and address discovery disabled.
+///
+/// Registers the example protocol only when accepting incoming connections.
+/// Propagates socket address and endpoint initialization errors.
 async fn local_endpoint(accept: bool) -> Result<Endpoint> {
     let mut builder = Endpoint::builder(presets::N0)
         .relay_mode(RelayMode::Disabled)
@@ -25,7 +28,21 @@ async fn local_endpoint(accept: bool) -> Result<Endpoint> {
 }
 
 // ANCHOR: example
-/// Exchange a small request and response with an explicitly addressed peer.
+/// Exchanges ping/pong between authenticated peers using an explicit loopback address.
+///
+/// First verifies that peer identity alone cannot connect without discovery.
+/// Server and client futures then run together so accepting and opening the
+/// bidirectional stream can make progress. Reads are capped at 32 bytes and the
+/// whole exchange has a ten-second deadline; endpoints close after the exchange.
+///
+/// # Errors
+///
+/// Propagates endpoint setup, connection, stream, and timeout failures.
+///
+/// # Panics
+///
+/// Panics if peer identities, messages, or the missing-address failure differ
+/// from the expected local demonstration.
 pub async fn round_trip() -> Result<()> {
     let server = local_endpoint(true).await?;
     let client = local_endpoint(false).await?;
@@ -79,6 +96,7 @@ pub async fn round_trip() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Verifies explicit loopback connectivity and failure without a peer address.
 #[cfg(test)]
 mod tests {
     /// Checks that loopback and missing address.

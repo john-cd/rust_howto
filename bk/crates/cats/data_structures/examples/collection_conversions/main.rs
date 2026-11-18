@@ -7,8 +7,10 @@
 //! sets do not guarantee iteration order, so sort their values when output
 //! order matters.
 
-use std::collections::{HashMap, HashSet};
+use std::collections::HashMap;
+use std::collections::HashSet;
 
+/// Collects iterators into sets and maps, sorting set output for deterministic checks.
 fn main() {
     let numbers = [1, 2, 3, 2, 1];
     let unique: HashSet<i32> = numbers.into_iter().collect();
@@ -28,6 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Checks the collection conversions through the example's assertions.
 #[cfg(test)]
 mod tests {
     /// Runs the conversion example and checks its assertions.
