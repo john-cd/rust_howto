@@ -19,7 +19,7 @@ build_code_packages_root := env("CODE_PACKAGES_ROOT", if os_family() == "windows
 build_code_tools_root := env("CODE_TOOLS_ROOT", if os_family() == "windows" { "C:/tools" } else { join(home_directory(), ".local/tools") })
 build_code_target_root := env("CODE_TARGET_ROOT", if os_family() == "windows" { "D:/target" } else { join(build_cache_home, "cargo-target") })
 build_code_build_root := env("CODE_BUILD_ROOT", if os_family() == "windows" { "D:/code_build" } else { join(build_cache_home, "cargo-build") })
-build_code_sccache_root := env("CODE_SCCACHE_ROOT", env("SCCACHE_DIR", if os_family() == "windows" { "D:/sccache" } else { join(build_cache_home, "sccache") }))
+build_code_sccache_root := env("CODE_SCCACHE_ROOT", env("SCCACHE_DIR", if os_family() == "windows" { "D:/cache/sccache" } else { join(build_cache_home, "sccache") }))
 build_target_base := join(build_code_target_root, "rust_howto")
 build_intermediate_base := join(build_code_build_root, "rust_howto")
 build_inherited_target := env("CARGO_TARGET_DIR", "")
