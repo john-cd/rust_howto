@@ -8,6 +8,7 @@ pub fn classify(value: u8) -> &'static str {
 }
 // ANCHOR_END: example
 
+/// Checks values below the threshold and the equality boundary at ten.
 #[cfg(test)]
 mod tests {
     use super::classify;

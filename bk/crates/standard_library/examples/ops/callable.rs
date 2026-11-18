@@ -57,6 +57,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Checks callable syntax, repeated calls, and the three closure trait bounds.
 #[cfg(test)]
 mod tests {
     use super::*;

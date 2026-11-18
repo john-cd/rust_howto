@@ -38,6 +38,7 @@ pub fn allocate_with_system() -> (Vec<u8, std::alloc::System>, Box<u8, std::allo
 }
 // ANCHOR_END: allocator
 
+/// Verifies infallible results, cleanup on early returns, and system-allocator values.
 #[cfg(test)]
 mod tests {
     use super::*;
