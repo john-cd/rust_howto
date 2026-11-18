@@ -49,40 +49,53 @@ pub fn main_fs(#[spirv(location = 0)] output: &mut Vec4) {
 3. In a host crate in that project, add the matching `spirv-builder` as a build dependency. Its `build.rs` compiles the shader crate for a SPIR-V target such as `spirv-unknown-vulkan1.1`; follow the [shader build guide][rust-gpu~shader-guide] for the builder API and required toolchain components of the chosen version.
 4. Load the generated SPIR-V module in a compatible graphics application, select `main_vs` and `main_fs` as the pipeline entry points, and draw three vertices. A shader defines GPU stages; the host must still create the device, pipeline, render target, and draw commands.
 
-SPIR-V uses rust-gpu's target backend. Gating these entry points behind `target_arch = "wasm32"` would select WebAssembly rather than compile them as SPIR-V. The shared `other` crate therefore has no rust-gpu example target or shader dependency.
+Check the generated SPIR-V module before loading it. Validate it for the target Vulkan environment and inspect the vertex and fragment entry points. A runtime check should render to an offscreen target and compare a pixel inside the triangle with the expected red and a background pixel with the clear color. The shader source alone cannot exercise pipeline state, vertex ordering, or readback.
+
+SPIR-V uses rust-gpu's target backend. Gating these entry points behind `target_arch = "wasm32"` selects WebAssembly. Keep the shader project and its compiler pin separate from the book's stable Cargo workspace.
 
 ## Call CUDA from Rust with `cudarc` {#cudarc}
 
 [![cudarc][c~cudarc~docs~badge]][c~cudarc~docs] [![cudarc~crates.io][c~cudarc~crates.io~badge]][c~cudarc~crates.io]{{hi:cudarc}}{{hi:CUDA}}
 
-Use [`cudarc`][c~cudarc~docs]↗{{hi:cudarc}} when targeting NVIDIA CUDA and calling its driver or runtime APIs from a Rust host program. It requires a compatible NVIDIA driver and CUDA setup; kernel code still needs to be compiled or loaded for the selected device.
+This example compiles CUDA C to PTX at runtime with NVRTC, loads the module through the NVIDIA driver, and launches the kernel on one stream. It uploads 130 integers, doubles them in place, and compares the full readback against a CPU reference.
 
-```rust,ignore
-use cudarc::driver::CudaContext;
+Create a binary Cargo package, save the snippet as `src/main.rs`, and use the following dependency for CUDA 12.8. The NVIDIA driver must support the CUDA version you select. Install the matching NVRTC library and ensure the dynamic loader can find it. For a deployment that already ships PTX, see the [precompiled-kernel example][cudarc~launch].
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let context = CudaContext::new(0)?;
-    let _stream = context.default_stream();
-    Ok(())
-}
+```toml
+[dependencies]
+cudarc = { version = "=0.19.10", default-features = false, features = [
+  "std",
+  "driver",
+  "nvrtc",
+  "dynamic-loading",
+  "cuda-12080",
+] }
 ```
 
-This checks whether CUDA can open the first device and obtain its default stream. Follow the [`cudarc` launch example][cudarc~launch] to load compiled kernel code, move buffers to the device, and launch work on the stream.
+```rust,ignore,noplayground
+{{#include examples/cuda_double.rs}}
+```
+
+Run `cargo run`. The program prints the device name and `Verified 130 doubled values` on success. A missing driver and a missing NVRTC library are different setup problems. If runtime compilation fails after both load, inspect the NVRTC compile error before debugging the launch.
 
 ## Use OpenCL with `opencl3` {#opencl3}
 
 [![opencl3][c~opencl3~docs~badge]][c~opencl3~docs] [![opencl3~crates.io][c~opencl3~crates.io~badge]][c~opencl3~crates.io]{{hi:opencl3}}{{hi:OpenCL}}
 
-Use [`opencl3`][c~opencl3~docs]↗{{hi:opencl3}} to call the OpenCL 3.0 API across devices that provide an OpenCL implementation. The host selects a platform and device, builds a kernel program, and enqueues its work on a command queue; OpenCL feature support varies by device.
+Use [`opencl3`][c~opencl3~docs]↗{{hi:opencl3}} to run a kernel on devices that provide OpenCL. You need both the [OpenCL loader][opencl~loader] and a device implementation (ICD). If the loader is present but no GPU is enumerated, check the vendor runtime and GPU support. OpenCL 3.0 devices can expose different optional features.
 
-```c
-__kernel void double_values(__global uint *values) {
-    size_t index = get_global_id(0);
-    values[index] *= 2;
-}
+Create a binary Cargo package, save the snippet as `src/main.rs`, and add the dependency below. The host builds the kernel from source and prints the selected device. The padded dispatch submits 192 work-items for 130 elements. The guard keeps the remaining 62 work-items from accessing the buffer. The example uses blocking host transfers and waits for the kernel event before reading back.
+
+```toml
+[dependencies]
+opencl3 = "=0.12.4"
 ```
 
-Launch this kernel with one work-item per element. If the host pads the global size to a workgroup boundary, pass the element count and guard the index before accessing the buffer. See the [`opencl3` host example][opencl3~example] for the full device, queue, buffer, and readback sequence. [`ocl`][c~ocl~docs] offers a higher-level OpenCL interface.
+```rust,ignore,noplayground
+{{#include examples/opencl_double.rs}}
+```
+
+Run `cargo run` and look for `Verified 130 doubled values`. For event profiling or nonblocking transfers, see the [upstream OpenCL example][opencl3~example]. An asynchronous transfer requires its host memory to remain valid until the completion event. [`ocl`][c~ocl~docs] offers a higher-level OpenCL interface.
 
 ## Further Reading {#further-reading .skip}
 

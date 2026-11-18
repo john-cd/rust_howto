@@ -20,11 +20,15 @@ For most Rust graphics applications, start with [`wgpu`][c~wgpu~docs]↗{{hi:wgp
 
 [![wgpu~website][c~wgpu~website~badge]][c~wgpu~website] {{#badges wgpu}} {{hi:Graphics}} {{#categories graphics=Graphics}}
 
-[`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is a safe, portable Rust API based on the [WebGPU standard][webgpu~website]↗{{hi:WebGPU}}. On native targets it can use Vulkan, Metal, Direct3D 12, or OpenGL; in browsers, WebAssembly applications can use WebGPU or WebGL2. Backend availability depends on the target platform and device.
+[`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is a safe, portable Rust API based on the [WebGPU standard][webgpu~website]↗{{hi:WebGPU}}. On native targets it can use Vulkan, Metal, Direct3D 12, or OpenGL; in browsers, WebAssembly applications can use WebGPU or a WebGL2 rendering fallback. Compute shaders in the browser require WebGPU. Backend availability depends on the target platform and device.
 
 The same API covers graphics and compute workloads while leaving resource creation, pipelines, command submission, and shader dispatch explicit. This makes `wgpu` a practical default: it handles backend differences while preserving a consistent Rust interface, and it can target browser builds as well as native applications.
 
 The example is headless: it needs a compatible adapter but no window. Run it with `cargo test --locked -p rendering_graphics_api --features wgpu --example gpu_abstraction_layers -- --include-ignored wgpu` from `bk/crates`. On a machine without a GPU, install a software Vulkan driver (on Debian or Ubuntu, `sudo apt install mesa-vulkan-drivers`) and set `VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/lvp_icd.json`. The WGSL shader is also validated with `naga` in a test that needs no adapter.
+
+The example uploads eight `u32` values to a storage buffer. It dispatches one group of 64 invocations, and the shader skips the 56 indices beyond the array. Then it copies the storage buffer into a separate, CPU-mappable buffer. The example waits for the mapping callback, decodes the values, and checks that the result is `[2, 4, 6, 8, 10, 12, 14, 16]`.
+
+If adapter selection fails, check that the machine has a compute-capable driver for one of the primary backends enabled by the example. If pipeline creation fails, check shader diagnostics, binding types, and device limits. If readback succeeds with incorrect values, check element counts, workgroup rounding, data layout, and operation order before profiling the kernel.
 
 ```rust,ignore,noplayground
 {{#include ../../../crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs:example}}
