@@ -9,5 +9,5 @@
 | Payments | [Payments][ex~written-in-rust~payments] |
 | Social media | [Social media][ex~written-in-rust~social-media] |
 | Mail servers | [Mail servers][ex~written-in-rust~mail-servers] |
-| Observability | [Telemetry tools][ex~written-in-rust~observability] |
+| Observability | [Vector, OpenObserve, and OpenTelemetry Rust][ex~written-in-rust~observability] |
 | Automation | [Notebooks, agents, and robotics][ex~written-in-rust~other-applications] |

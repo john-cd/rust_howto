@@ -1,5 +1,15 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
+[agave~repo]: https://github.com/anza-xyz/agave
+[bat~repo]: https://github.com/sharkdp/bat
+[biome~repo]: https://github.com/biomejs/biome
+[book-cli~source]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/command-line-utilities/index.md
+[bun~rust-release]: https://bun.com/blog/bun-v1.4
+[bun~website]: https://bun.com/
+[c~sniffnet~repo]: https://github.com/gyulyvgc/sniffnet
+[cloud-hypervisor~repo]: https://github.com/cloud-hypervisor/cloud-hypervisor
+[cosmic-desktop~website]: https://system76.com/cosmic
+[evcxr-jupyter~repo]: https://github.com/evcxr/evcxr/tree/main/evcxr_jupyter
 [ex~written-in-rust~build-tools]: development_tools.md#build-tools
 [ex~written-in-rust~code-editors]: development_tools.md#code-editors
 [ex~written-in-rust~email-applications]: other_tools.md#email-applications
@@ -7,49 +17,54 @@
 [ex~written-in-rust~javascript-tooling]: development_tools.md#javascript-tooling
 [ex~written-in-rust~jujutsu]: development_tools.md#jujutsu
 [ex~written-in-rust~lapce]: development_tools.md#lapce
+[ex~written-in-rust~mail-servers]: other_tools.md#mail-servers
+[ex~written-in-rust~maturin]: python_tools.md#maturin
 [ex~written-in-rust~news]: other_tools.md#news
+[ex~written-in-rust~observability]: other_tools.md#observability
+[ex~written-in-rust~other-applications]: other_tools.md#other-applications
+[ex~written-in-rust~package-tools]: development_tools.md#package-tools
 [ex~written-in-rust~payments]: other_tools.md#payments
+[ex~written-in-rust~pixi]: python_tools.md#pixi
 [ex~written-in-rust~pyoxidizer]: python_tools.md#pyoxidizer
 [ex~written-in-rust~remote-desktops]: other_tools.md#remote-desktops
 [ex~written-in-rust~ruff]: python_tools.md#ruff
 [ex~written-in-rust~rustpython]: python_tools.md#rustpython
 [ex~written-in-rust~social-media]: other_tools.md#social-media
 [ex~written-in-rust~swc]: development_tools.md#swc
-[ex~written-in-rust~television]: development_tools.md#utilities
+[ex~written-in-rust~television]: development_tools.md#terminal-utilities
+[ex~written-in-rust~terminal-emulators]: development_tools.md#terminal-emulators
+[ex~written-in-rust~ty]: python_tools.md#ty
 [ex~written-in-rust~utilities]: development_tools.md#utilities
-[ex~written-in-rust~mail-servers]: other_tools.md#mail-servers
-[ex~written-in-rust~observability]: other_tools.md#observability
 [ex~written-in-rust~uv]: python_tools.md#uv
 [ex~written-in-rust~zed]: development_tools.md#zed
-[jj~repo]: https://github.com/jj-vcs/jj
-[bun~runtime~docs]: https://github.com/oven-sh/bun/blob/main/docs/runtime/index.mdx
-[pants~engine~docs]: https://www.pantsbuild.org/dev/docs/introduction/how-does-pants-work
-[volta~project~repo]: https://github.com/volta-cli/volta
-[pyoxidizer~releases~repo]: https://github.com/indygreg/PyOxidizer/releases
-[ruff~formatter~website]: https://docs.astral.sh/ruff/formatter/
-[ruff~linter~website]: https://docs.astral.sh/ruff/linter/
-[p~cross-platform]: # "../cross-platform/index.md"
-[p~embedded]: # "../../categories/embedded/index.md"
-[p~environment-variables]: # "../../categories/config/environment_variables.md"
-[p~filesystem]: # "../../categories/filesystem/index.md"
-[p~gui]: # "../../categories/gui/index.md"
-[p~language]: # "../../language/index.md"
-[p~python]: # "../../categories/development-tools_ffi/python.md"
-[p~scripting]: # "../scripting/index.md"
-[p~search]: # "../../categories/database/search.md"
-[p~written-in-rust]: index.md
-
-[lapce~website~badge]: https://img.shields.io/badge/lapce-coral
-[servo~repo]: https://github.com/servo/servo
-[stratis~repo]: https://github.com/stratis-storage/stratisd
-
-[evcxr-jupyter~repo]: https://github.com/evcxr/evcxr/tree/main/evcxr_jupyter
-
-[c~sniffnet~repo]: https://github.com/gyulyvgc/sniffnet
-[ex~written-in-rust~other-applications]: other_tools.md#other-applications
+[fd~repo]: https://github.com/sharkdp/fd
+[firefox-rust~docs]: https://firefox-source-docs.mozilla.org/contributing/contributing_to_mozilla.html
+[gitoxide~repo]: https://github.com/GitoxideLabs/gitoxide
 [goose~project~repo]: https://github.com/aaif-goose/goose
-[stalwart~project~repo]: https://github.com/stalwartlabs/stalwart
-
+[influxdb3~repo]: https://github.com/influxdata/influxdb
+[jj~repo]: https://github.com/jj-vcs/jj
+[kernel-rust~docs]: https://docs.kernel.org/rust/
+[linkerd-proxy~repo]: https://github.com/linkerd/linkerd2-proxy
+[maturin~website]: https://www.maturin.rs/
+[oxc~repo]: https://github.com/oxc-project/oxc
 [p~development_tools]: development_tools.md
 [p~programming_languages]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parser-implementations/programming_languages.md
 [p~version_control]: https://github.com/john-cd/rust_howto/blob/c9d457b66ed12377a6ff5e0e1377af71cc9dde0b/bk/src/other/devops/version_control.md
+[p~written-in-rust]: index.md
+[pants~engine~docs]: https://www.pantsbuild.org/dev/docs/introduction/how-does-pants-work
+[pixi~repo]: https://github.com/prefix-dev/pixi
+[polkadot-sdk~repo]: https://github.com/paritytech/polkadot-sdk
+[pyoxidizer~releases~repo]: https://github.com/indygreg/PyOxidizer/releases
+[ripgrep~repo]: https://github.com/BurntSushi/ripgrep
+[ruff~formatter~website]: https://docs.astral.sh/ruff/formatter/
+[ruff~linter~website]: https://docs.astral.sh/ruff/linter/
+[rust-analyzer~repo]: https://github.com/rust-lang/rust-analyzer
+[rustls~repo]: https://github.com/rustls/rustls
+[servo~repo]: https://github.com/servo/servo
+[stalwart~project~repo]: https://github.com/stalwartlabs/stalwart
+[stratis~repo]: https://github.com/stratis-storage/stratisd
+[ty~repo]: https://github.com/astral-sh/ty
+[uutils-coreutils~repo]: https://github.com/uutils/coreutils
+[vector-observability~repo]: https://github.com/vectordotdev/vector
+[volta~project~repo]: https://github.com/volta-cli/volta
+[wasmtime~repo]: https://github.com/bytecodealliance/wasmtime

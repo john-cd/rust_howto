@@ -2,60 +2,55 @@
 
 # Software Built in Rust
 
-This overview highlights a small set of software projects that demonstrate where Rust is used. It is a curated introduction, not a complete catalog.
+Rust powers projects ranging from command-line utilities to databases and virtual machine monitors. This guide highlights standalone Rust projects and identifies the Rust components in software that uses several languages.
 
 ## Systems Programming
 
 | Area | Examples and details |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Operating systems and isolation | [Redox OS][redox~repo]↗, [Stratis][stratis~repo]↗, [youki][youki~repo]↗, [Kata Containers][kata-containers~repo]↗, [Firecracker][firecracker~repo]↗, [Bottlerocket][c~bottlerocket~repo]↗, [Hyperlight][hyperlight~repo]↗, and [Rust for Linux][rust-for-linux~repo]↗; see [Virtualization](../../categories/virtualization/index.md). |
+| --- | --- |
+| Operating systems | [Redox OS][redox~repo]↗ is a Rust operating system. [Bottlerocket][c~bottlerocket~repo]↗ is a Linux distribution for containers, and [Rust for Linux][kernel-rust~docs]↗ brings Rust support to the Linux kernel. |
+| Containers and virtualization | [youki][youki~repo]↗ is an OCI container runtime. [Kata Containers][kata-containers~repo]↗ includes a Rust agent. [Firecracker][firecracker~repo]↗ and [Cloud Hypervisor][cloud-hypervisor~repo]↗ are virtual machine monitors, and [Hyperlight][hyperlight~repo]↗ isolates workloads in micro-VMs. See [Virtualization](../../categories/virtualization/index.md). |
+| Storage | [Stratis][stratis~repo]↗ provides a storage management daemon for Linux. |
 | Embedded systems | [Tock OS][tock~repo]↗, [`esp-rs`][espressif~repo]↗, and [OxidOS Automotive][oxidos~website]↗; see [Embedded Systems](../../categories/embedded/index.md). |
-| Command-line utilities | See Command-line Utilities<!-- Cross-book topic: bk/src/categories/command-line-utilities/index.md; not included in this preview. --> for command-line tools; see the [additional command-line examples](development_tools.md#utilities) and File Listing and Display<!-- Cross-book topic: bk/src/categories/command-line-utilities/filesystem_cli.md; not included in this preview. -->. |
+| Command-line utilities | See the [command-line tools](development_tools.md#utilities) for examples such as `ripgrep`, `fd`, and `bat`. |
 
 ## Web Development and Networking
 
 | Area | Examples and details |
-| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --- | --- |
 | Search | [Tantivy][c~tantivy~docs]↗ and [Meilisearch][c~meilisearch~docs]↗. |
-| Web and front-end applications | [Yew][c~yew~docs]↗, [Leptos][c~leptos~docs]↗, [Perseus][perseus~website]↗, and [Cloudflare `workers-rs`][workers-rs~repo]↗, which supports writing Workers in Rust. Cloudflare also runs Rust services. |
-| WebAssembly and runtimes | [Deno][c~deno~docs]↗ and [Wasmer][c~wasmer~docs]↗; see [WebAssembly](../../categories/wasm/index.md). |
-| Networking | [Hickory DNS][hickory-dns~repo]↗, [BoringTun][boringtun~repo]↗, [Pingora][c~pingora~docs]↗, [Linkerd][linkerd2~repo]↗, [shoes][c~shoes~repo]↗, [RustScan][rustscan~repo]↗, and [mail servers](other_tools.md#mail-servers). |
+| Web applications | [Yew][c~yew~docs]↗, [Leptos][c~leptos~docs]↗, and [Perseus][c~perseus~repo]↗ are web frameworks. Cloudflare's [`workers-rs`][workers-rs~repo]↗ SDK lets developers write Workers in Rust. |
+| WebAssembly runtimes | [Wasmtime][wasmtime~repo]↗ and [Wasmer][c~wasmer~docs]↗ run WebAssembly outside the browser. See [WebAssembly](../../categories/wasm/index.md). |
+| Networking | [Hickory DNS][hickory-dns~repo]↗ implements DNS, [BoringTun][boringtun~repo]↗ implements WireGuard, and [Rustls][rustls~repo]↗ implements TLS. [Pingora][c~pingora~docs]↗ is Cloudflare's proxy framework, and [Linkerd][linkerd-proxy~repo]↗ uses a Rust data-plane proxy. Other examples include the [shoes proxy][c~shoes~repo]↗, the [RustScan port scanner][rustscan~repo]↗, and [mail servers](other_tools.md#mail-servers). |
 
 ## Application Software
 
 | Area | Examples and details |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Browsers | [Firefox][mozilla-firefox~website]↗ and the [Servo engine][servo~repo]↗. |
-| Databases and analytics | [TiKV][tikv~repo]↗, [Neon][neon~repo]↗, [ArangoDB][arangodb.com~website]↗, [Databend][databend~repo]↗, [Qdrant][qdrant~repo]↗, [InfluxDB][influxdb~repo]↗, [DataFusion][c~datafusion~docs]↗, and [Polars][c~polars~docs]↗. |
-| Distributed systems | [Substrate][substrate~repo]↗ and [Solana][c~solana~repo]↗. |
-| Desktop applications | [Tauri][c~tauri~repo]↗, [file managers](other_tools.md#file-managers), [remote desktops](other_tools.md#remote-desktops), and [Sniffnet][c~sniffnet~repo]↗. |
-| Games and visualization | [Bevy][c~bevy~repo]↗, [Veloren][veloren~repo]↗, and [Rerun][c~rerun~docs]↗. |
+| --- | --- |
+| Browsers | [Servo][servo~repo]↗ is a browser engine written in Rust. [Firefox][firefox-rust~docs]↗ uses Rust for components including Stylo, its CSS engine, and WebRender, its GPU rendering engine. |
+| Databases and analytics | [TiKV][tikv~repo]↗ is a distributed key-value store. [Neon][neon~repo]↗ uses Rust for its PostgreSQL storage layer. [Databend][databend~repo]↗, [Qdrant][qdrant~repo]↗, [InfluxDB 3][influxdb3~repo]↗, [Apache DataFusion][c~datafusion~docs]↗, and [Polars][c~polars~docs]↗ cover cloud analytics, vector search, time-series data, SQL execution, and DataFrames. |
+| Blockchains | [Polkadot SDK][polkadot-sdk~repo]↗ includes Substrate, a framework for building blockchains. [Agave][agave~repo]↗ is a Rust validator client for Solana. |
+| Desktop software | [COSMIC][cosmic-desktop~website]↗ is a Wayland desktop environment. [Tauri][c~tauri~repo]↗ is a framework for building apps with a Rust backend and a web-based interface. [Sniffnet][c~sniffnet~repo]↗ monitors network traffic. See also [file managers](other_tools.md#file-managers) and [remote desktop tools](other_tools.md#remote-desktops). |
+| Games and visualization | [Bevy][c~bevy~repo]↗, [Veloren][veloren~repo]↗, and [Rerun][c~rerun~docs]↗ are a game engine, a multiplayer voxel RPG, and a visualization toolkit for time-series data, respectively. |
 
 ## Development Tools
 
 {{#include development_tools.incl.md}}
 
-See the [development tools detail page](development_tools.md) for version control, build systems, editors, and JavaScript tooling.
-
 ## Python Tools Written in Rust
 
 {{#include python_tools.incl.md}}
-
-See the [Python tooling detail page](python_tools.md) for interpreters, package tools, and Python bindings.
 
 ## Other Tools Written in Rust
 
 {{#include other_tools.incl.md}}
 
-The [other tools detail page](other_tools.md) groups file managers, remote desktops, email, news, payments, observability, and other applications.
-
 ## Related Topics
 
 | Topic | Why it is related |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| --- | --- |
 | [Awesome Rust][awesome-rust~repo]↗ | Broader catalog of projects, libraries, and tools. |
 | [Awesome Rust Tools][awesome-rust-tools~repo]↗ and [Awesome Alternatives in Rust][awesome-alternatives-in-rust~repo]↗ | Curated lists of Rust-built tools and alternatives. |
-| [Development Tools](development_tools.md) | Tools built with or used alongside Rust. |
 | [Scripting and Rust](../scripting/index.md) | Scripting engines and language integration. |
 | [Embedded Systems](../../categories/embedded/index.md) | Firmware and constrained applications. |
 | [WebAssembly](../../categories/wasm/index.md) | Servers, clients, and web tooling. |

@@ -2,31 +2,23 @@
 
 # Python Tools Written in Rust
 
-Rust is used to build tools across the Python workflow: an interpreter, an application packager, a linter and formatter, and a project and environment manager. These tools still work with Python programs; they do not translate Python source code into Rust.
+Rust powers Python interpreters, code-quality tools, environment managers, and tools for shipping native extensions.
 
 {{#include python_tools.incl.md}}
 
-## `rustpython` {#rustpython}
+## RustPython {#rustpython}
 
 {{#badges rustpython}}
 
-[`RustPython`][rustpython~repo]↗{{hi:RustPython}} is a Python interpreter implemented in Rust. It is a separate implementation of the language, rather than a way to compile arbitrary Python programs to native Rust.
+[RustPython][rustpython~repo]↗{{hi:RustPython}} is a Python interpreter that can run inside a Rust application or in the browser through WebAssembly. The repository documents which CPython features it supports.
 
-The project is still in development and does not claim full compatibility with CPython. Its repository documents embedding and WebAssembly use cases; check its current compatibility and platform notes before depending on a feature.
+## PyOxidizer {#pyoxidizer}
 
-For current build and installation instructions, see the [RustPython repository][rustpython~repo]↗.
+[PyOxidizer][c~pyoxidizer~repo]↗{{hi:PyOxidizer}} packages a Python application, its interpreter, and its resources together. Its [latest tagged release][pyoxidizer~releases~repo]↗, 0.24.0, dates to 2022.
 
-## `pyOxidizer` {#pyoxidizer}
+## Ruff {#ruff}
 
-[![pyOxidizer][c~pyoxidizer~docs~badge]][c~pyoxidizer~repo]↗{{hi:pyOxidizer}}.
-
-[`PyOxidizer`][c~pyoxidizer~repo]↗{{hi:PyOxidizer}} is a tool for packaging Python applications with an embedded interpreter and resources. It can also embed Python in a Rust application. Packaging and embedding approaches are sensitive to the Python version and target platform, so verify those details against the project's documentation before adopting it.
-
-The [upstream releases page][pyoxidizer~releases~repo]↗ currently lists version 0.24.0, released in 2022. Check project activity and compatibility before choosing it for a new application.
-
-## `Ruff` {#ruff}
-
-[`Ruff`][c~ruff~docs]↗{{hi:Ruff}} is a Python linter and formatter implemented in Rust. It can replace several common linting tools in one fast command-line tool.
+[Ruff][c~ruff~docs]↗{{hi:Ruff}} lints and formats Python code. Use `ruff check` for diagnostics and `ruff format` to apply formatting.
 
 ```bash
 ruff check .
@@ -35,9 +27,13 @@ ruff format .
 
 See the [Ruff linter documentation][ruff~linter~website]↗ for rule configuration and the [formatter documentation][ruff~formatter~website]↗ for formatting options.
 
-## `uv` {#uv}
+## ty {#ty}
 
-[`uv`][uv~repo]↗{{hi:uv}} is a Python version, project, dependency, and environment manager. It can create projects, resolve and install dependencies, manage virtual environments and Python versions, and run project commands. Its command surface covers workflows that otherwise use several tools; check the [uv documentation][uv~docs~website]↗ for details and supported behavior.
+[ty][ty~repo]↗ checks Python types and provides an editor language server. Run `ty check` to check a project from the terminal.
+
+## uv {#uv}
+
+[`uv`][uv~docs~website]↗{{hi:uv}} manages Python projects, dependencies, virtual environments, and Python versions.
 
 For example, these commands create a project, add a dependency, and run a Python command in its environment:
 
@@ -48,19 +44,21 @@ uv add requests
 uv run python -c "print('hello')"
 ```
 
+## Pixi {#pixi}
+
+[Pixi][pixi~repo]↗ manages project environments and tasks. It can install dependencies from Conda channels and PyPI in the same environment.
+
 ## Build a Python Wheel for a Rust Extension {#maturin}
 
-[Maturin](https://www.maturin.rs/) builds wheels for Rust extensions. PyO3
+[Maturin][maturin~website]↗ builds wheels for Rust extensions. PyO3
 defines the extension interface, while Maturin handles the Python package
 build. Follow the existing [PyO3 and Maturin recipe](../../categories/development-tools_ffi/python.md#calling-rust-from-python)
 to build and import the extension with the intended Python interpreter.
 
 ## Related Topics {#related-topics .skip}
 
-- [[development_tools | Development Tools]].
-- [[scripting | Scripting]].
-- [[cross-platform | Cross-platform Development]].
-- [[programming_languages | Programming Languages]].
+- [Development tools](development_tools.md) covers editors, build systems, and general-purpose command-line tools.
+- [Scripting and Rust](../scripting/index.md) covers embedding scripting languages in Rust applications.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

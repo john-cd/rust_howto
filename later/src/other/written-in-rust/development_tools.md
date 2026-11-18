@@ -4,11 +4,9 @@
 
 {{#include development_tools.incl.md}}
 
-This page maps developer-facing tools written wholly or partly in Rust, along with companion projects that help use them. Some projects use Rust for performance-critical components and another language for plugins; check each project's documentation for its architecture and current maintenance status.
-
 ## Version control tools {#jujutsu}
 
-[Jujutsu (`jj`)][jj~repo] is a Git-compatible version control system written in Rust. [Steve Klabnik's Jujutsu tutorial][jujutsu-tutorial~website] and the [JJ workshop][jj-workshop~repo] provide guided introductions. [`gg`][gg~repo] is a graphical companion for JJ.
+[Jujutsu (`jj`)][jj~repo] is a Git-compatible version control system written in Rust. [Steve Klabnik's Jujutsu tutorial][jujutsu-tutorial~website] and the [JJ workshop][jj-workshop~repo] provide guided introductions. [`gg`][gg~repo] provides a graphical interface for Jujutsu. [Gitoxide][gitoxide~repo] implements Git in Rust and exposes its functionality through libraries and command-line tools.
 
 ## Build tools {#build-tools}
 
@@ -18,37 +16,33 @@ This page maps developer-facing tools written wholly or partly in Rust, along wi
 
 ## JavaScript tooling {#javascript-tooling}
 
-[Volta][volta~project~repo] is a Rust-based JavaScript toolchain manager. Its README now marks the project unmaintained and recommends migration, so check its current status before adopting it.
+[Volta][volta~project~repo] is a JavaScript toolchain manager written in Rust. Its maintainers have ended active development.
 
 [Deno][deno~website]↗ is a JavaScript, TypeScript, and WebAssembly runtime built on V8, Rust, and Tokio.
 
-[Bun][bun.sh~website]↗ uses JavaScriptCore; its current runtime documentation describes the runtime and transpiler as written in Rust. See the [Bun runtime documentation][bun~runtime~docs] for the current architecture.
+[Bun][bun~website]↗ combines a JavaScript runtime, package manager, bundler, and test runner. [Bun 1.4][bun~rust-release]↗ moved the runtime and tools from Zig to Rust and retained JavaScriptCore as the JavaScript engine.
+
+[Biome][biome~repo]↗ provides a formatter and linter for web projects. [Oxc][oxc~repo]↗ provides JavaScript and TypeScript tooling, including a parser, linter, and transformer.
 
 ### SWC compiler {#swc}
 
 {{#badges swc}}
 
-[`swc`][c~swc~repo]↗ (Speedy Web Compiler) is a Rust compiler and toolkit for JavaScript and TypeScript. See also [[programming_languages | Programming Languages]] and its parser tools.
+[`swc`][c~swc~repo]↗ (Speedy Web Compiler) is a Rust compiler and toolkit for JavaScript and TypeScript. See also the [book's guide to language parsers and compilers][p~programming_languages].
 
 ## Code editors {#code-editors}
 
 ### Lapce {#lapce}
 
-[![lapce~website][lapce~website~badge]][lapce~website]{{hi:Lapce}}
-
 [Lapce][lapce~website]↗ is a cross-platform code editor written in Rust.
 
 ### Zed {#zed}
 
-[![zed~crates.io][c~zed~crates.io~badge]][c~zed~crates.io]
-[![zed~repo][c~zed~repo~badge]][c~zed~repo]
-[![zed~lib.rs][c~zed~lib.rs~badge]][c~zed~lib.rs]
-
-[`Zed`][c~zed~repo]↗ is a high-performance, collaborative code editor from the creators of Atom and Tree-sitter.
+[Zed][c~zed~repo]↗ is a code editor with built-in collaboration.
 
 ### Helix {#helix}
 
-[`Helix`][helix~repo]↗ is a modal text editor with built-in language-server support.
+[Helix][helix~repo]↗ is a modal text editor with built-in language-server support. [rust-analyzer][rust-analyzer~repo]↗ provides Rust diagnostics, completion, and navigation to editors through the Language Server Protocol.
 
 ## Terminal emulators {#terminal-emulators}
 
@@ -56,11 +50,14 @@ This page maps developer-facing tools written wholly or partly in Rust, along wi
 
 [`WezTerm`][wezterm~repo]↗ is a GPU-accelerated, cross-platform terminal emulator and multiplexer.
 
-[`Warp`][warp~repo]↗ is a terminal application whose Rust codebase is linked from its project repository.
+[Warp][warp~repo]↗ is a terminal application with AI-assisted workflows.
 
 ## Command-line utilities {#utilities}
 
-These command-line tools cover shells, file navigation, search, monitoring, prompts, and downloads:
+- [`ripgrep`][ripgrep~repo]↗ searches directory trees for regular expressions and respects Git ignore rules.
+- [`fd`][fd~repo]↗ searches for files and directories by name.
+- [`bat`][bat~repo]↗ displays files with syntax highlighting and Git change markers.
+- [uutils coreutils][uutils-coreutils~repo]↗ reimplements GNU core utilities such as `cp` and `sort` in Rust.
 
 - [`lsd`][c~lsd~repo]↗ is a modern `ls` alternative.
 - [`fish`][fish-shell~repo]↗ is a command-line shell. The fish team's [“Fish 4.0: The Fish of Theseus”][blog~fishshell-rustport] article describes its component-by-component Rust port.
@@ -80,11 +77,11 @@ These command-line tools cover shells, file navigation, search, monitoring, prom
 
   [![cat~network-programming][cat~network-programming~badge]][cat~network-programming]{{hi:Network programming}} [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}} [![cat~command-line-utilities][cat~command-line-utilities~badge]][cat~command-line-utilities]{{hi:Command-line utilities}}
 
-## Terminal utilities
+## Repository summaries and fuzzy finding {#terminal-utilities}
 
 [`onefetch`][c~onefetch~repo]↗ is a command-line Git information tool that summarizes a repository in the terminal.
 
-[`television`][c~television~docs]↗ is a general-purpose fuzzy finder TUI. It integrates with your shell and can search files, Git repositories, [environment variables][p~environment-variables], container images, and other configured data sources.
+[`television`][c~television~docs]↗ is a general-purpose fuzzy finder TUI. It integrates with your shell and can search files, Git repositories, environment variables, container images, and other configured data sources.
 
 ## Package and project tools {#package-tools}
 
@@ -96,15 +93,13 @@ These command-line tools cover shells, file navigation, search, monitoring, prom
 
 [`kondo`][kondo~repo]↗ finds build artifacts and dependency directories that can be cleaned from projects.
 
-[`Habitat`][habitat~repo]↗ is a project for building, deploying, and managing applications.
+[Chef Habitat][habitat~repo]↗ packages, deploys, and supervises applications.
 
 ## Related Topics {#related-topics .skip}
 
-- [[programming_languages | Programming Languages]].
-- Command Line Interface<!-- Cross-book topic: bk/src/categories/command-line-interface/index.md; not included in this preview. -->.
-- [[version_control | Version Control]].
-- [[cross-platform | Cross-platform Development]].
-- [[gui | GUI]].
+- [Version control][p~version_control] covers Git tasks in the main book.
+- [Shells and command-line utilities][book-cli~source] lists more tools in the main book source.
+- [Python tools](python_tools.md) covers Python environments, linting, and packaging.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
