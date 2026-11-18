@@ -18,19 +18,19 @@ static CONSOLE_LOGGER: ConsoleLogger = ConsoleLogger;
 struct ConsoleLogger;
 
 impl log::Log for ConsoleLogger {
-    /// Handles the enabled behavior for this component.
+    /// Accepts error, warning, and info metadata while filtering debug and trace.
     fn enabled(&self, metadata: &Metadata) -> bool {
         metadata.level() <= Level::Info
     }
 
-    /// Handles the log behavior for this component.
+    /// Rechecks the filter and prints each accepted record with its severity.
     fn log(&self, record: &Record) {
         if self.enabled(record.metadata()) {
             println!("Rust says: {} - {}", record.level(), record.args());
         }
     }
 
-    /// Flushes the current value.
+    /// Performs no extra flushing because this logger keeps no private output buffer.
     fn flush(&self) {}
 }
 

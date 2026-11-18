@@ -85,7 +85,7 @@ mod tests {
         main();
     }
 
-    /// Data carried by buf operations.
+    /// Cloneable writer sharing one locked byte buffer for formatted tracing assertions.
     #[derive(Clone, Default)]
     struct Buf(
         /// Shared output buffer used by cloned writers to capture formatted bytes safely.
