@@ -49,3 +49,6 @@
 [p~trait-objects]: ../../language/trait_objects_and_dynamic_dispatch.md
 
 [book~rust-reference~type-coercions]: https://doc.rust-lang.org/reference/type-coercions.html
+
+[ex~encoding~csv-stream]: csv.md#read-and-write-csv-files
+[ex~encoding~qsv]: csv.md#manipulate-csv-files-from-the-command-line

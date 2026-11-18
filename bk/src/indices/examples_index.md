@@ -242,6 +242,10 @@
 
 {{#include ../categories/data-processing/dataframes.incl.md}}
 
+### Data Engineering
+
+{{#include ../categories/data-processing/data_engineering.incl.md}}
+
 ## Data Structures
 
 ### B-Trees

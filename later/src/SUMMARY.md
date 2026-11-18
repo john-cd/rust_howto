@@ -49,10 +49,6 @@
 - [Cryptocurrencies](categories/cryptography_cryptocurrencies/index.md)
   - [Cryptocurrencies](categories/cryptography_cryptocurrencies/cryptocurrencies.md)
 
-- [Data processing](other/data-processing/index.md)
-  - [CSV](other/data-processing/csv.md)
-  - [Data engineering](other/data-processing/data_engineering.md)
-
 - [Development tools - FFI](categories/development-tools_ffi/index.md)
   - [Generating FFI bindings for C and C++](categories/development-tools_ffi/generate_ffi_bindings.md)
   - [Python](categories/development-tools_ffi/python.md)

@@ -175,6 +175,7 @@
 
 - [Data Processing](categories/data-processing/index.md)
   - [DataFrames](categories/data-processing/dataframes.md)
+  - [Data Engineering](categories/data-processing/data_engineering.md)
 
 - [Date and Time](categories/date-and-time/index.md)
   - [Duration and Calculation](categories/date-and-time/duration.md)

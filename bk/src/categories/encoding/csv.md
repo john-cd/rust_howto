@@ -15,11 +15,23 @@ Reads standard [CSV][p~csv] records into [`csv::StringRecord`][c~csv::StringReco
 {{#include ../../../crates/cats/encoding/examples/csv/read.rs:example}}
 ```
 
-[`serde`][c~serde~docs]↗{{hi:serde}} deserializes data into strongly type structures. See the [`csv::Reader::deserialize`][c~csv::Reader::deserialize~docs]↗{{hi:csv::Reader::deserialize}} method.
+[`serde`][c~serde~docs]↗{{hi:serde}} deserializes data into strongly typed structures. See the [`csv::Reader::deserialize`][c~csv::Reader::deserialize~docs]↗{{hi:csv::Reader::deserialize}} method.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/csv/read1.rs:example}}
 ```
+
+## Stream and Round-Trip Typed CSV Records {#read-and-write-csv-files}
+
+The [`csv`][c~csv~docs]↗{{hi:csv}} crate reads and writes records, while [`serde`][c~serde~docs]↗{{hi:serde}} maps records to typed Rust values. This example processes each input row as it is read, then writes and reads back one typed record. It uses in-memory bytes so it runs without fixture files or network access. To stream a large file with the same loop, pass its path to `Reader::from_path` or an open `File` to `Reader::from_reader`.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/encoding/examples/csv/stream_and_round_trip.rs:example}}
+```
+
+From `bk/crates`, run `cargo run --locked -p encoding --example csv -- stream-and-round-trip`.
+
+Use `Reader::records()` to handle fields by position. To select fields by name, resolve their positions from the header first. Use `Reader::deserialize()` when the CSV headers map cleanly to a struct. Both return iterators, so process rows as they arrive unless a later step needs to retain them.
 
 ## Read CSV Records with Different Delimiters {#read-csv-different-delimiter}
 
@@ -57,7 +69,7 @@ CSV files often contain invalid data{{hi:Invalid data}}. For these cases, the [`
 
 [![csv][c~csv~docs~badge]][c~csv~docs]{{hi:csv}} [![cat~encoding][cat~encoding~badge]][cat~encoding]{{hi:Encoding}}
 
-This example shows how to serialize a Rust tuple. [`csv::writer`][c~csv::Writer~docs]↗{{hi:csv::Writer}} supports automatic serialization{{hi:Serialization}} from Rust types into CSV records. [`csv::Writer::write_record`][c~csv::Writer::write_record~docs]↗{{hi:csv::Writer::write_record}} writes a simple record containing string data only. Data with more complex values such as numbers, floats, and options use [`csv::Writer::serialize`][c~csv::Writer::serialize~docs]↗{{hi:csv::Writer::serialize}}. Since CSV writer uses an internal buffer, always explicitly [`csv::Writer::flush`][c~csv::Writer::flush~docs]↗{{hi:csv::Writer::flush}} when done.
+This example shows how to serialize a Rust tuple. [`csv::Writer`][c~csv::Writer~docs]↗{{hi:csv::Writer}} supports automatic serialization{{hi:Serialization}} from Rust types into CSV records. [`csv::Writer::write_record`][c~csv::Writer::write_record~docs]↗{{hi:csv::Writer::write_record}} writes a simple record containing string data only. Data with more complex values such as numbers, floats, and options use [`csv::Writer::serialize`][c~csv::Writer::serialize~docs]↗{{hi:csv::Writer::serialize}}. Since CSV writer uses an internal buffer, always explicitly [`csv::Writer::flush`][c~csv::Writer::flush~docs]↗{{hi:csv::Writer::flush}} when done.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/csv/serialize.rs:example}}
@@ -85,10 +97,19 @@ See [`csv::Reader::deserialize`][c~csv::Reader::deserialize~docs]↗{{hi:csv::Re
 {{#include ../../../crates/cats/encoding/examples/csv/transform.rs:example}}
 ```
 
+## Manipulate CSV Files from the Command Line {#manipulate-csv-files-from-the-command-line}
+
+{{#badges qsv}}
+
+Use [`qsv`][c~qsv~repo]↗{{hi:qsv}} to inspect or reshape a file from the shell. For example, `qsv headers data.csv` lists the column names, `qsv stats data.csv` summarizes the columns, and `qsv slice --len 10 data.csv` writes the first ten data rows with the header. See the project's installation instructions for prebuilt binaries.
+
+[`xan`][c~xan~repo]↗{{hi:xan}} also supports CSV inspection, joins, and filtering with expressions. Both tools descend from [`xsv`][c~xsv~repo]↗. Check the selected tool's help before reusing older scripts, since flags and commands can differ.
+
 ## Related Topics {#related-topics .skip}
 
 - [Serde][c~serde~docs]↗{{hi:serde}} for mapping CSV fields to typed Rust data.
-- [Polars][c~polars~docs]↗{{hi:polars}} for DataFrame-based CSV ingestion and analytical transformations.
+- [DataFrames](../data-processing/dataframes.md) for CSV analytics with Polars.
+- [Data Engineering](../data-processing/data_engineering.md#arrow-csv) for reading CSV into typed Arrow columns.
 - [Encoding index][p~encoding] for text, binary, and format-specific serialization guidance.
 
 {{#include refs.incl.md}}

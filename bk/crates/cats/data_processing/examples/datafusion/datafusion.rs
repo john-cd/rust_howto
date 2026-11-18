@@ -1,4 +1,3 @@
-#![cfg(feature = "datafusion")]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example

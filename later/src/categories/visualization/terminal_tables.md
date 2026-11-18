@@ -19,6 +19,6 @@ just cargo run --manifest-path later/crates/Cargo.toml --locked -p visualization
 
 The table reports North at 12.5 m and South at 8.0 m. Keep the original numeric
 values for calculations and use the formatted table for human output. For
-machine consumption, use [CSV](../../other/data-processing/csv.md). When the
+machine consumption, use [CSV](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/encoding/csv.md). When the
 shape of a trend matters more than individual values, use
 [Plotters](visualization.md#plotters).

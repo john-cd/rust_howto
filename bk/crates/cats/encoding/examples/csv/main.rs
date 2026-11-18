@@ -19,6 +19,8 @@ mod read1;
 mod serde_serialize;
 /// This example shows how to serialize data to a CSV file.
 mod serialize;
+/// Streams typed CSV records and round-trips a row.
+mod stream_and_round_trip;
 /// This example shows how to transform CSV data from one format to
 mod transform;
 
@@ -61,6 +63,9 @@ enum Commands {
     #[command(name = "serialize")]
     Serialize,
 
+    /// Streams typed CSV records and round-trips a row.
+    StreamAndRoundTrip,
+
     /// Runs the `transform` example.
     #[command(name = "transform")]
     Transform,
@@ -91,6 +96,9 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
             Commands::Serialize => {
                 serialize::run()?;
             }
+            Commands::StreamAndRoundTrip => {
+                stream_and_round_trip::run()?;
+            }
             Commands::Transform => {
                 transform::run()?;
             }
@@ -120,6 +128,7 @@ mod tests {
         "read1",
         "serde_serialize",
         "serialize",
+        "stream-and-round-trip",
         "transform",
     ];
 

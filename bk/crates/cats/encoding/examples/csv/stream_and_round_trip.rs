@@ -50,7 +50,12 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// Runs the CSV read/write example.
+/// Reads typed CSV rows and verifies a serialized row can be read back.
+///
+/// # Errors
+///
+/// Returns an error if CSV parsing, serialization, or flushing fails, or if the total exceeds
+/// `u64`.
 pub fn run() -> anyhow::Result<()> {
     main()
 }
