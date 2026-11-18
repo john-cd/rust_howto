@@ -3315,6 +3315,7 @@
 [c~fltk~lib.rs~badge]: https://img.shields.io/badge/lib.rs-fltk-yellow
 [c~fltk~repo]: https://github.com/fltk-rs/fltk-rs
 [c~fltk~repo~badge]: https://img.shields.io/badge/fltk-steelblue?logo=github
+[c~fluent-bundle~docs]: https://docs.rs/fluent-bundle
 [c~fluent~crates.io]: https://crates.io/crates/fluent
 [c~fluent~crates.io~badge]: https://img.shields.io/badge/crates.io-fluent-crimson
 [c~fluent~docs]: https://docs.rs/fluent
