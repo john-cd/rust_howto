@@ -26,7 +26,9 @@ Build the shell with the UI framework that fits each target, such as SwiftUI, Je
 
 Drive the core with representative events and assert the resulting model, view model, and requested effects. These tests can run without a phone, browser, or live service. Add shell-level tests for the platform work itself, including effect execution, permission handling, serialization, and error mapping.
 
-Crux is a good fit when several clients need the same business rules but need different interfaces. It adds a message and binding boundary, so applications with one target or heavily platform-specific behavior may be simpler without it. Crux is still pre-1.0; check the current documentation and release notes before choosing versions or APIs.
+Crux is a good fit when several clients need the same business rules but need different interfaces. It adds a message and binding boundary, so applications with one target or heavily platform-specific behavior may be simpler without it. Crux is still pre-1.0. Keep the core and generated bindings on compatible versions.
+
+In this example, two `Increment` events update the model and each requests a render. The shell reads the view and displays `Count is: 2`. The test checks the render effect as well as the final value. See the [upstream counter example](https://github.com/redbadger/crux/blob/master/examples/counter/README.md) for platform shells.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/cross_platform/crux.rs:example}}

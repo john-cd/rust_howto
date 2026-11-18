@@ -4,7 +4,7 @@
 
 {{#include kubernetes.incl.md}}
 
-An operator is a program that watches custom resources and keeps the cluster in the state they describe. Rust is a good fit: the type system models the resource, and the controller runtime handles watching, caching and retries.
+An operator watches custom resources and reconciles the cluster with the state they describe. In this recipe, setting `spec.replicas` on an `Echo` requests that many replicas in an owned Deployment. The operator reports the number that are ready in the resource's status.
 
 ## Write an Operator with `kube-rs` {#kubernetes}
 
@@ -33,7 +33,7 @@ is `echos.example.com`.
 
 Use [kind](https://kind.sigs.k8s.io/) with a running Docker engine and `kubectl`.
 From the repository root, create a test cluster and direct each command to its
-own kubeconfig file. The CRD is cluster-wide even though each `Echo` is namespaced.
+own kubeconfig file. The CRD is cluster-wide even though each `Echo` is namespaced. Use Cargo directly when redirecting the CRD so the output contains only JSON. For this repository on Windows, use the checkout's configured Cargo target and build paths.
 
 ```sh
 kind create cluster --name howto-echo --kubeconfig echo-kubeconfig.yaml
@@ -63,10 +63,10 @@ Deleting the `Echo` should also remove the Deployment it owns.
 kubectl --kubeconfig echo-kubeconfig.yaml apply -f echo.yaml
 kubectl --kubeconfig echo-kubeconfig.yaml wait '--for=jsonpath={.status.ready_replicas}=1' echo/staged-echo --timeout=120s
 kubectl --kubeconfig echo-kubeconfig.yaml delete echo staged-echo --cascade=foreground --wait=true --timeout=45s
-kubectl --kubeconfig echo-kubeconfig.yaml wait --for=delete deployment/staged-echo --timeout=45s
+kubectl --kubeconfig echo-kubeconfig.yaml get deployment staged-echo --ignore-not-found
 ```
 
-The second wait allows time for the cluster to garbage collect the Deployment.
+Foreground deletion waits for the owned Deployment to be removed. The final command should produce no output.
 Stop the controller with Ctrl+C and
 run `kind delete cluster --name howto-echo --kubeconfig echo-kubeconfig.yaml`.
 

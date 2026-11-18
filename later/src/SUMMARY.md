@@ -27,7 +27,7 @@
 
 - [Cloud](other/cloud/index.md)
   - [Rust on AWS](other/cloud/aws.md)
-  - [Rust-native cloud development](other/cloud/rust_native_cloud_development.md)
+  - [Deploy Rust applications](other/cloud/rust_native_cloud_development.md)
   - [Kubernetes operators](other/cloud/kubernetes.md)
 
 - [Compilers](categories/compilers/index.md)

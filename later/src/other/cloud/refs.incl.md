@@ -37,6 +37,10 @@
 [cloud~wasmcloud]: https://wasmcloud.com/docs/
 [cloud~workers-rust]: https://developers.cloudflare.com/workers/languages/rust/
 [cloud~kube]: https://kube.rs/
+[cloud~local-lambda]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/cloud/aws_lambda.md
+[aws-sqs~quotas]: https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html
+[aws-sns~quotas]: https://docs.aws.amazon.com/general/latest/gr/sns.html
+[aws-sns~raw]: https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html
 
 [p~architecture]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/other/architecture/index.md
 [p~container]: ../../categories/virtualization/containers.md

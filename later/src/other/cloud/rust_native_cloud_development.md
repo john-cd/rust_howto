@@ -1,10 +1,10 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Rust-native Cloud Development
+# Deploy Rust Applications
 
 {{#include rust_native_cloud_development.incl.md}}
 
-Rust-native cloud development uses Rust APIs, build tools, or WebAssembly components to describe application behavior and integrate it with a hosting environment. A Rust service can also run on an ordinary VM or container platform; a Rust-first SDK does not remove the need to manage configuration, credentials, resource limits, and deployment lifecycle.
+Start with what the host needs to run. A web service listens for requests, an event handler runs when invoked, and a controller watches for changes. Each deployment model gives the application a different entry point and way to obtain configuration and credentials.
 
 ## Choose a Deployment Model {#shuttle}
 
@@ -17,7 +17,7 @@ Rust-native cloud development uses Rust APIs, build tools, or WebAssembly compon
 
 Keep business logic and request handlers independent of a provider entry point. For a new service, start with the [Axum chapter][cloud~axum], then package it for a supported container or serverless target. Select that target from its current runtime, region, persistence, pricing, and operational requirements.
 
-For a local container workflow, follow [Using Containers](../../categories/virtualization/using_containers.md).
+For a local container workflow, follow [Using Containers](../../categories/virtualization/using_containers.md). For an HTTP service, bind to the interface the host can reach, read the port from its configuration, and verify a health endpoint through the mapped port. A working request from the host checks both the server and the container's port mapping.
 For historical context, Shuttle paired Axum integration with managed hosting.
 See its [shutdown notice][shuttle~shutdown] when maintaining an existing project.
 

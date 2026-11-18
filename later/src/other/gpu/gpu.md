@@ -10,23 +10,13 @@ GPU work can mean portable compute, vendor-specific compute, or shader code comp
 
 [![wgpu~website][c~wgpu~website~badge]][c~wgpu~website] [![wgpu][c~wgpu~docs~badge]][c~wgpu~docs] [![wgpu~crates.io][c~wgpu~crates.io~badge]][c~wgpu~crates.io] [![wgpu~repo][c~wgpu~repo~badge]][c~wgpu~repo]{{hi:wgpu}}{{hi:GPU}}
 
-Use [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} for portable GPU compute with WGSL shaders. The linked example starts an adapter and device; a compute pass binds storage buffers and dispatches workgroups, as in this WGSL kernel that doubles each value:
+Use [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} for portable GPU compute with WGSL shaders. The headless compute example from the Graphics APIs chapter uses a storage buffer for the kernel, then copies the results into a separate buffer that the CPU can map. The GPU dispatch rounds up to whole workgroups, so the shader checks the buffer bounds before writing. The test checks the values after readback and needs a compute-capable adapter, including a compatible software adapter.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../../bk/crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs:example}}
 ```
 
-```wgsl
-@group(0) @binding(0)
-var<storage, read_write> values: array<u32>;
-
-@compute @workgroup_size(64)
-fn double_values(@builtin(global_invocation_id) id: vec3<u32>) {
-    if (id.x < arrayLength(&values)) {
-        values[id.x] *= 2;
-    }
-}
-```
+When deciding whether to move work to the GPU, measure the complete operation, including copying the data to the device and reading the result back. For kernels written in a Rust-based language with a choice of runtimes, see [`cubecl`][c~cubecl~docs].
 
 ## `rust-gpu` {#rust-gpu}
 
@@ -78,9 +68,16 @@ SPIR-V uses rust-gpu's target backend. Gating these entry points behind `target_
 Use [`cudarc`][c~cudarc~docs]↗{{hi:cudarc}} when targeting NVIDIA CUDA and calling its driver or runtime APIs from a Rust host program. It requires a compatible NVIDIA driver and CUDA setup; kernel code still needs to be compiled or loaded for the selected device.
 
 ```rust,ignore
-let context = cudarc::driver::CudaContext::new(0)?;
-let stream = context.default_stream();
+use cudarc::driver::CudaContext;
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let context = CudaContext::new(0)?;
+    let _stream = context.default_stream();
+    Ok(())
+}
 ```
+
+This checks whether CUDA can open the first device and obtain its default stream. Follow the [`cudarc` launch example][cudarc~launch] to load compiled kernel code, move buffers to the device, and launch work on the stream.
 
 ## Use OpenCL with `opencl3` {#opencl3}
 
@@ -94,6 +91,8 @@ __kernel void double_values(__global uint *values) {
     values[index] *= 2;
 }
 ```
+
+Launch this kernel with one work-item per element. If the host pads the global size to a workgroup boundary, pass the element count and guard the index before accessing the buffer. See the [`opencl3` host example][opencl3~example] for the full device, queue, buffer, and readback sequence. [`ocl`][c~ocl~docs] offers a higher-level OpenCL interface.
 
 ## Further Reading {#further-reading .skip}
 
