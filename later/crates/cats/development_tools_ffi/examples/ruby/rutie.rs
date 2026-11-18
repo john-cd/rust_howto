@@ -24,6 +24,7 @@ class!(RustGreeter);
 methods!(
     RustGreeter,
     _rtself,
+    // Returns the Ruby string exposed by RustGreeter#greeting.
     fn greeting() -> RString {
         RString::new_utf8("Hello from Rutie!")
     }
