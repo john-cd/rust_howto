@@ -22,7 +22,7 @@
 | [`linfa`][c~linfa~docs] | Modular crates: `linfa-clustering`, `linfa-linear`. | `ndarray` records in `DatasetBase`. | Review updates across algorithm crates; see [Linfa releases][linfa~releases]. |
 | [`smartcore`][c~smartcore~docs] | Broad suite in one crate. | `DenseMatrix`; optional `ndarray` integration. | Follow the main crate's [release history][smartcore~releases]. |
 
-This chapter's examples use Linfa 0.8.1 and SmartCore 0.6.16.
+This chapter's examples use Linfa 0.8.1 and SmartCore 0.7.0.
 
 ## Classify with SmartCore
 

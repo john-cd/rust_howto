@@ -65,27 +65,66 @@ impl Engine {
     /// Returns an error if initializing the ONNX runtime or loading the model fails.
     fn new(version: u32, bytes: &[u8]) -> Result<Self> {
         let env = ort::init().build()?;
-        let model = ArcSwap::from_pointee(Model::load(&env, version, bytes)?);
+        let initial = Model::load(&env, version, bytes)?;
+        Self::score_model(&initial, [0.0, 0.0])?;
+        let model = ArcSwap::from_pointee(initial);
         Ok(Self { env, model })
     }
 
-    /// Replaces the model. Calls in flight finish on the old one.
+    /// Validates a replacement before publishing it; in-flight calls retain the old model.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the candidate cannot load or score the expected input.
+    /// The previously published model remains available on failure.
     fn hot_swap(&self, version: u32, bytes: &[u8]) -> Result<()> {
-        self.model
-            .store(Arc::new(Model::load(&self.env, version, bytes)?));
+        let candidate = Arc::new(Model::load(&self.env, version, bytes)?);
+        Self::score_model(&candidate, [0.0, 0.0])?;
+        self.model.store(candidate);
         Ok(())
     }
 
-    /// Returns the model version and the probability of class 1.
+    /// Returns the model version and class-1 probability from one model snapshot.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error for non-finite input, inference failure, or invalid output.
     fn score(&self, features: [f32; 2]) -> Result<(u32, f32)> {
-        let model = self.model.load();
+        let model = self.model.load_full();
+        Self::score_model(&model, features)
+    }
+
+    /// Validates and scores a model without publishing it to other readers.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error for invalid features, runtime failure, or unexpected output.
+    fn score_model(model: &Model, features: [f32; 2]) -> Result<(u32, f32)> {
+        anyhow::ensure!(
+            features.iter().all(|value| value.is_finite()),
+            "features must be finite"
+        );
         let input = Tensor::from_array(([1_usize, 2], features.to_vec()))?;
         let mut session = model
             .session
             .lock()
             .map_err(|_| anyhow!("poisoned session"))?;
         let outputs = session.run(ort::inputs!["X" => input])?;
-        let (_shape, probabilities) = outputs["probabilities"].try_extract_tensor::<f32>()?;
+        let output = outputs
+            .get("probabilities")
+            .ok_or_else(|| anyhow!("model has no probabilities output"))?;
+        let (shape, probabilities) = output.try_extract_tensor::<f32>()?;
+        anyhow::ensure!(
+            shape.as_ref() == [1, 2],
+            "expected probabilities shaped [1, 2], got {shape:?}"
+        );
+        anyhow::ensure!(
+            probabilities.len() == 2
+                && probabilities
+                    .iter()
+                    .all(|p| p.is_finite() && (0.0..=1.0).contains(p)),
+            "invalid class probabilities"
+        );
         Ok((model.version, probabilities[1]))
     }
 }
@@ -132,5 +171,49 @@ mod tests {
     #[test]
     fn test_onnx_infer_example_entry_point() -> Result<()> {
         main()
+    }
+    /// Keeps the previous model available after a replacement fails to load.
+    #[test]
+    fn rejected_replacement_preserves_the_model() -> Result<()> {
+        let engine = Engine::new(1, include_bytes!("models/logreg_a.onnx"))?;
+        let before = engine.score([1.5, 1.5])?;
+        assert!(engine.hot_swap(2, b"invalid ONNX model").is_err());
+        assert_eq!(engine.score([1.5, 1.5])?, before);
+        assert!(engine.score([f32::NAN, 0.0]).is_err());
+        Ok(())
+    }
+    /// Rejects a valid ONNX graph whose output name violates the scoring contract.
+    #[test]
+    fn rejects_incompatible_replacement_before_publication() -> Result<()> {
+        let bytes = include_bytes!("models/logreg_a.onnx");
+        let engine = Engine::new(1, bytes)?;
+        let before = engine.score([1.5, 1.5])?;
+        // Renaming every occurrence preserves graph references and protobuf lengths.
+        let mut renamed = bytes.to_vec();
+        let offsets: Vec<_> = renamed
+            .windows(b"probabilities".len())
+            .enumerate()
+            .filter_map(|(i, value)| (value == b"probabilities").then_some(i))
+            .collect();
+        assert!(!offsets.is_empty());
+        for offset in offsets {
+            renamed[offset] = b'P';
+        }
+        Model::load(&engine.env, 2, &renamed)?;
+        assert!(engine.hot_swap(2, &renamed).is_err());
+        assert_eq!(engine.score([1.5, 1.5])?, before);
+        Ok(())
+    }
+
+    /// An acquired snapshot continues scoring with its own version after publication.
+    #[test]
+    fn old_snapshot_survives_a_successful_swap() -> Result<()> {
+        let engine = Engine::new(1, include_bytes!("models/logreg_a.onnx"))?;
+        let old = engine.model.load_full();
+        let before = Engine::score_model(&old, [1.5, 1.5])?;
+        engine.hot_swap(2, include_bytes!("models/logreg_b.onnx"))?;
+        assert_eq!(Engine::score_model(&old, [1.5, 1.5])?, before);
+        assert_eq!(engine.score([1.5, 1.5])?.0, 2);
+        Ok(())
     }
 }

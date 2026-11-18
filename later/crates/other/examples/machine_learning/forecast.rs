@@ -15,8 +15,8 @@ use augurs::ets::AutoETS;
 use augurs::mstl::MSTLModel;
 
 /// A synthetic series: a linear trend plus a weekly pattern.
-fn series() -> Vec<f64> {
-    (0..56)
+fn series(length: usize) -> Vec<f64> {
+    (0..length)
         .map(|i| {
             let weekly = [0.0, 1.0, 2.0, 3.0, 2.0, 1.0, 0.0][i % 7];
             10.0 + 0.1 * (i as f64) + weekly
@@ -26,25 +26,50 @@ fn series() -> Vec<f64> {
 
 /// Fits the model and forecasts two weeks ahead, with a 95% interval.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let y = series();
+    let y = series(70);
+    let (training, held_out) = y.split_at(56);
     let trend = AutoETS::non_seasonal().into_trend_model();
     let model = MSTLModel::new(vec![7], trend);
-    let fitted = model.fit(&y)?;
+    let fitted = model.fit(training)?;
 
     let horizon = 14;
     let forecast = fitted.predict(horizon, 0.95)?;
-    let intervals = forecast.intervals.as_ref().expect("requested");
+    let intervals = forecast
+        .intervals
+        .as_ref()
+        .ok_or("forecast intervals were not returned")?;
     println!("point forecast: {:.2?}", forecast.point);
 
     assert_eq!(forecast.point.len(), horizon);
+    assert_eq!(intervals.lower.len(), horizon);
+    assert_eq!(intervals.upper.len(), horizon);
     for ((lo, point), hi) in intervals
         .lower
         .iter()
         .zip(&forecast.point)
         .zip(&intervals.upper)
     {
+        assert!(lo.is_finite() && point.is_finite() && hi.is_finite());
         assert!(lo <= point && point <= hi);
     }
+    // Evaluate later timestamps only; the model never sees these observations.
+    let mae = held_out
+        .iter()
+        .zip(&forecast.point)
+        .map(|(actual, predicted)| (actual - predicted).abs())
+        .sum::<f64>()
+        / horizon as f64;
+    let naive_mae = held_out
+        .iter()
+        .enumerate()
+        .map(|(i, actual)| (actual - training[49 + i % 7]).abs())
+        .sum::<f64>()
+        / horizon as f64;
+    println!("Held-out MAE: {mae:.4}; seasonal-naive MAE: {naive_mae:.4}");
+    assert!(
+        mae < naive_mae,
+        "forecast must beat repeating the last training week"
+    );
     Ok(())
 }
 // ANCHOR_END: example
@@ -63,7 +88,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Runs the forecast example through its entry point.
+    /// Beats a seasonal-naive baseline on the next two unseen weeks.
     #[test]
     fn test_forecast_example_entry_point() {
         main().expect("the model fits");
