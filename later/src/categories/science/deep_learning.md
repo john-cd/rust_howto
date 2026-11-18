@@ -8,21 +8,25 @@
 
 ## Choosing a Deep Learning Crate {#choosing}
 
-This snapshot was checked against current crate documentation and release records on 2026-10-26. Optional backends and native runtime requirements vary by feature and platform.
+Choose the execution contract before a framework: train in Rust, load a model
+exported elsewhere, or bind an existing native runtime. Accelerator availability is
+feature-, operator-, and platform-dependent; a backend name does not establish that
+a particular model runs there. Use the exact versions/features in the Cargo manifest.
 
-| Crate | Training | Inference | GPU backends / role | Maintenance and notes |
-| --- | --- | --- | --- | --- |
-| [`candle`][c~candle-core~repo]↗ | Basic | Yes; includes pre-trained models | CUDA, Metal | Active; `candle-core` 0.11.0 (2026-06-26). |
-| [`burn`][c~burn~repo]↗ | Yes | Yes | wgpu, CUDA, ROCm, Metal, Vulkan | Active; 0.22.1 (2026-10-20). |
-| [`tch`][c~tch~repo]↗ | Yes | Yes | CUDA, Apple MPS, Vulkan | Active; 0.26.0; bindings to the C++ PyTorch library. |
-| [`ort`][c~ort~repo]↗ | Yes; ONNX Runtime training APIs | Yes; ONNX models | CUDA, TensorRT, CoreML, and other providers | Active; 2.0.0-rc.15 (2026-10-19), a release candidate. |
-| [`tract`][c~tract~repo]↗ | No | Yes; ONNX and NNEF | CPU; optional CUDA, Metal, and WebGPU | Active; 0.23.9 (2026-10-15); Rust inference engine. |
-| [`rust-bert`][c~rust-bert~repo]↗ | Custom training through `tch` | Yes; ready-to-use NLP pipelines | Through LibTorch or ONNX Runtime | No recent release; 0.23.0 (2024-09-29). |
-| [`tensorflow`][tensorflow-rust~repo]↗ | Yes | Yes | CUDA via the TensorFlow runtime | Archived upstream on 2026-03-17; consider for legacy work. |
-| [`cudarc`][c~cudarc~repo]↗ | N/A | N/A | CUDA driver/runtime bindings; not a model framework | Active; current docs list 0.19.10. |
-| [`dfdx`][c~dfdx~repo]↗ | Yes | Yes | CPU and CUDA | Inactive; latest release 0.13.0 (2023-07-27). |
+| Crate | Primary integration boundary | What the example or application must supply |
+| --- | --- | --- |
+| [`candle`][c~candle-core~repo]↗ | Rust tensors, autograd, layers and model implementations | Architecture, weights, preprocessing, and explicit CPU/accelerator choice. The CPU training/checkpoint recipe below is executable. |
+| [`burn`][c~burn~repo]↗ | Training and inference with a selectable backend | Compatible backend/autodiff configuration, model record format and training loop. Framework overview only in this chapter. |
+| [`tch`][c~tch~repo]↗ | Rust bindings to LibTorch | A compatible LibTorch installation, library discovery and model/tensor contracts. Not validated by the Candle test. |
+| [`ort`][c~ort~repo]↗ | ONNX Runtime sessions and execution providers | Compatible native runtime, supported graph operators and tensor contracts. See the [ONNX recipe](../../other/machine-learning/inference.md). |
+| [`tract`][c~tract~repo]↗ | Rust graph inference, including ONNX/NNEF | Operator and shape compatibility for the exact exported graph. An alternative to evaluate, not a tested substitute for this ONNX Runtime session. |
+| [`tokenizers`](https://docs.rs/tokenizers/) | Pretrained text preprocessing | The tokenizer artifact and configuration belonging to the model revision. Tokenization alone does not run a language model. |
+| [`cudarc`][c~cudarc~repo]↗ | CUDA driver/runtime interaction | Device/toolkit setup and your kernels or framework integration; it is not itself a model/training framework. |
 
-Train with `burn`, `candle`, or `tch`, or train elsewhere and run an exported model with `ort` or `tract`. For a quick reference, use `candle`'s CPU support; GPU execution depends on the selected backend and its native runtime.
+Keep model artifacts, tokenizer/preprocessing configuration, feature/class order and
+runtime requirements together. Do not infer model compatibility from matching file
+extensions. Start with a CPU fixture whose output can be checked, then validate the
+actual accelerator/provider and model operators required by deployment.
 
 ## `candle` {#deep-learning}
 
@@ -50,7 +54,7 @@ an explicit architecture, a training/validation protocol, and a compatible token
 or feature transform. CUDA/Metal features and LibTorch dependencies require separate
 platform checks; CPU success establishes none of those backends.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/science/examples/ml/candle.rs:example}}
 ```
 
@@ -72,8 +76,8 @@ platform checks; CPU success establishes none of those backends.
 
 ## Related Topics {#related-topics .skip}
 
-- [[computer-vision | Computer Vision]].
-- [[linear_algebra | Linear Algebra]].
+- [Computer Vision](../computer-vision/index.md).
+- [Linear Algebra](https://john-cd.com/rust_howto/categories/mathematics/linear_algebra.html).
 - [Machine Learning][p~classical-machine-learning].
 - [Artificial Intelligence for Robotics][p~robotics-ai].
 
