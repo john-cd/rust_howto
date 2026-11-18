@@ -33,13 +33,13 @@ impl Pane {
 struct TreeBehavior;
 
 impl Behavior<Pane> for TreeBehavior {
-    /// Handles the pane ui behavior for this component.
+    /// Draws the pane title as a heading without requesting a layout interaction.
     fn pane_ui(&mut self, ui: &mut egui::Ui, _tile_id: TileId, pane: &mut Pane) -> UiResponse {
         ui.heading(&pane.title);
         UiResponse::None
     }
 
-    /// Handles the tab title for pane behavior for this component.
+    /// Uses the pane's stored title as the dock tab label.
     fn tab_title_for_pane(&mut self, pane: &Pane) -> egui::WidgetText {
         pane.title.as_str().into()
     }

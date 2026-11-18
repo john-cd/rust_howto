@@ -82,7 +82,7 @@ impl ApplicationHandler for App {
         }
     }
 
-    /// Handles the window event behavior for this component.
+    /// Schedules repaint after resizing and exits while preserving any drawing error.
     fn window_event(&mut self, event_loop: &ActiveEventLoop, _id: WindowId, event: WindowEvent) {
         match event {
             WindowEvent::CloseRequested => event_loop.exit(),

@@ -68,7 +68,7 @@ impl SimpleComponent for CounterModel {
         }
     }
 
-    /// Handles the init behavior for this component.
+    /// Initializes the counter from its input and constructs the generated GTK widgets.
     fn init(
         init: Self::Init,
         root: Self::Root,
@@ -80,7 +80,7 @@ impl SimpleComponent for CounterModel {
         ComponentParts { model, widgets }
     }
 
-    /// Handles the update behavior for this component.
+    /// Applies a counter message; watched widget properties refresh from model state.
     fn update(&mut self, message: Self::Input, _sender: ComponentSender<Self>) {
         self.apply(message);
     }
