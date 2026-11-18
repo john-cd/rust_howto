@@ -46,8 +46,12 @@ For example, in a Linux shell with ROS 2 Jazzy and libclang installed, run from 
 
 ```bash
 source /opt/ros/jazzy/setup.bash
-cargo run -p science_robotics --example robot_operating_systems --features ros2
+IDL_PACKAGE_FILTER=std_msgs cargo run --locked -p science_robotics --example robot_operating_systems --features ros2
 ```
+
+The package filter limits binding generation to the message package used
+here. The CLI prints `received: hello from Rust #1` through
+`received: hello from Rust #5` and exits.
 
 On macOS or Windows, load the installed ROS 2 distribution's environment using its platform-specific setup instructions, then use the same Cargo command. No ROS 1 master (`roscore`) is involved. An external ROS 2 observer in the same ROS domain can also receive the greetings:
 
@@ -58,7 +62,7 @@ ros2 topic echo /rust_howto/hello std_msgs/msg/String
 The existing example test is ignored because it needs ROS 2 and working DDS discovery. To run it explicitly in a configured environment:
 
 ```bash
-cargo test -p science_robotics --example robot_operating_systems --features ros2 -- --ignored
+IDL_PACKAGE_FILTER=std_msgs cargo test --locked -p science_robotics --example robot_operating_systems --features ros2 -- --ignored --nocapture
 ```
 
 If the example times out, check the selected ROS domain, middleware configuration, and local discovery/firewall settings.
