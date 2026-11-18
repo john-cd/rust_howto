@@ -9,7 +9,7 @@
 //!
 //! Run it with:
 //!
-//! ```
+//! ```console
 //! cargo run --example emulators -- <path-to-guest.polkavm>
 //! ```
 //!
