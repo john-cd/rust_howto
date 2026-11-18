@@ -65,7 +65,7 @@ impl App for Counter {
     /// Alias for `ViewModel` used to represent view model.
     type ViewModel = ViewModel;
 
-    /// Handles the update behavior for this component.
+    /// Applies the counter event to core state and asks the platform shell to render again.
     fn update(&self, event: Self::Event, model: &mut Self::Model) -> Command<Effect, Event> {
         match event {
             Event::Increment => model.count += 1,
@@ -75,7 +75,7 @@ impl App for Counter {
         render()
     }
 
-    /// Handles the view behavior for this component.
+    /// Projects platform-independent counter state into text for the shell to display.
     fn view(&self, model: &Self::Model) -> Self::ViewModel {
         ViewModel {
             count: format!("Count is: {}", model.count),

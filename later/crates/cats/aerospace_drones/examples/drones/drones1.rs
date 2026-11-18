@@ -4,7 +4,7 @@
 //! Sending a flight plan to a Tello drone.
 //!
 //! The plan is checked before any command is sent. The `tello` crate is bound
-//! to the drone through the [`Flyer`] trait, so the plan can also run against
+//! to the drone through the `Flyer` trait, so the plan can also run against
 //! a test double.
 //!
 //! The Tello is a small consumer quadcopter. It creates its own Wi-Fi network
@@ -23,7 +23,7 @@ use tello::Drone;
 // The longest total hover time the plan may contain.
 // Safety limit: a small drone has only a few minutes of battery.
 
-/// Shared `max hover` used by this module.
+/// Maximum total hovering allowed by flight-plan validation.
 const MAX_HOVER: Duration = Duration::from_secs(30);
 
 /// One step of a flight plan.
@@ -52,12 +52,12 @@ trait Flyer {
 }
 
 impl Flyer for Drone {
-    /// Handles the take off behavior for this component.
+    /// Sends takeoff to the device and adds context to its unit error.
     fn take_off(&mut self) -> Result<()> {
         Self::take_off(self).map_err(|()| anyhow::anyhow!("the drone rejected `take_off`"))
     }
 
-    /// Handles the land behavior for this component.
+    /// Sends landing to the device and adds context to its unit error.
     fn land(&mut self) -> Result<()> {
         Self::land(self).map_err(|()| anyhow::anyhow!("the drone rejected `land`"))
     }
@@ -148,13 +148,13 @@ mod tests {
     );
 
     impl Flyer for Recorder {
-        /// Handles the take off behavior for this component.
+        /// Records takeoff without connecting to or moving a drone.
         fn take_off(&mut self) -> Result<()> {
             self.0.push("take_off");
             Ok(())
         }
 
-        /// Handles the land behavior for this component.
+        /// Records landing so tests can assert command order without hardware.
         fn land(&mut self) -> Result<()> {
             self.0.push("land");
             Ok(())

@@ -38,7 +38,7 @@ struct Rocket {
 }
 
 impl Rocket {
-    /// Handles the total mass behavior for this component.
+    /// Returns dry mass plus the remaining propellant mass for force-to-acceleration conversion.
     fn total_mass(&self) -> f64 {
         self.mass_empty + self.fuel_mass
     }
@@ -153,7 +153,7 @@ use ode_solvers::Vector2;
 struct ConstantGravity;
 
 impl System<f64, Vector2<f64>> for ConstantGravity {
-    /// Handles the system behavior for this component.
+    /// Supplies the ODE derivatives: height changes at velocity and velocity at constant -g.
     fn system(&self, _time: f64, y: &Vector2<f64>, dy: &mut Vector2<f64>) {
         dy[0] = y[1];
         dy[1] = -9.81;
