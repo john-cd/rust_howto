@@ -35,6 +35,11 @@ path = "examples/cross_platform/main.rs"
 test = true
 
 [[example]]
+name = "csv"
+path = "examples/data_processing/csv/main.rs"
+test = true
+
+[[example]]
 name = "data_processing"
 path = "examples/data_processing/main.rs"
 test = true
@@ -137,6 +142,8 @@ chrono = "0.4.45"
 clap = { version = "4.6.7", features = ["derive"] }
 # A cron expression parser and schedule explorer.
 cron = "0.17.0"
+# Flexible CSV reader and writer with Serde support.
+csv = "1.4.0"
 # Cross-platform app development in Rust
 crux_core = "0.20.0"
 # DataFusion is an in-memory query engine that uses Apache Arrow as the memory model

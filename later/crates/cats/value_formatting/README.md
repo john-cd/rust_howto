@@ -6,4 +6,5 @@ Run the staging example from `later/crates`.
 
 ```console
 cargo run --locked -p value_formatting --example case_conversion
+cargo run --locked -p value_formatting --example number_formatting
 ```

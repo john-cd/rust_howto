@@ -6,7 +6,7 @@ This crate contains standalone code examples and snippets that do not fit direct
 
 ## Examples Covered
 
-- **Data Processing & Apache Arrow**: Manipulating in-memory tabular data using `arrow` arrays, CSV/JSON I/O, and record batches.
+- **Data Processing**: Streaming typed CSV records with `csv` and manipulating in-memory tabular data with Apache Arrow arrays, CSV/JSON I/O, and record batches.
 
 ## Usage
 
@@ -17,4 +17,4 @@ cargo check --package other --examples
 cargo test --package other
 ```
 
-Code examples correspond to standalone chapters in `bk/src/other/` or supplementary sections.
+Code examples correspond to standalone chapters in `bk/src/other/`, staged chapters in `later/src/other/`, or supplementary sections.

@@ -4,6 +4,7 @@
 
 [ex~simulation~simul]: simulation.md#simul
 [ex~simulation~ode]: simulation.md#ode-solving
+[ex~simulation~monte-carlo]: simulation.md#monte-carlo
 [ex~simulation~rapier]: physics_engines.md#rapier
 [ex~simulation~parry]: physics_engines.md#parry
 [ex~simulation~avian]: physics_engines.md#avian

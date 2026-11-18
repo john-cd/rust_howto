@@ -31,6 +31,8 @@ test = true
 clap = "4.6.7"
 # Numerical methods to solve ordinary differential equations (ODEs) in Rust.
 ode_solvers = "0.6.2"
+# Random-number generation for the Monte Carlo example.
+rand = "0.10.4"
 # 2-dimensional physics engine in Rust.
 rapier2d = "0.36.1"
 

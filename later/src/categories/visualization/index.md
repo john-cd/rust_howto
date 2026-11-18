@@ -4,7 +4,7 @@
 
 [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}}
 
-View, plot or graph data.
+Turn structured data into a visual output for inspection, reporting, or interaction. Choose the output format and host first; many visualization libraries do not provide an application shell or data-processing pipeline.
 
 | Topic | Rust Crates | Notes |
 | --- | --- | --- |
@@ -19,10 +19,8 @@ View, plot or graph data.
 ## Web Visualization
 
 - Rust (compiled to WASM) can use the Canvas API via [`web-sys`][c~web-sys~crates.io]↗{{hi:web-sys}} to draw 2D graphics directly in the browser. This is suitable for simpler visualizations and interactive graphics.
-- For 3D visualizations and high-performance graphics, Rust can leverage WebGL through [`web-sys`][c~web-sys~crates.io]↗{{hi:web-sys}}.
-- Libraries like [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} and [`three-d`][c~three-d~crates.io]↗{{hi:three-d}} simplify WebGL development in Rust.
-  - [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} is a WebGPU implementation that allows you to write portable graphics code that can run on WebGL, Vulkan, Metal, and DirectX 12. It provides a efficient way to perform GPU accelerated computations and rendering. This is important for complex 3D rendering and large datasets.
-  - [`three-d`][c~three-d~crates.io]↗{{hi:three-d}} is a 2D/3D renderer using OpenGL, OpenGL ES, and WebGL. It offers a higher-level API for interactive visualizations.
+- For GPU-backed browser visualizations, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} can target WebGPU or WebGL 2, depending on browser support and enabled features. WebGL 2 exposes a smaller feature set, so test the required operations on the actual browser backend.
+- [`three-d`][c~three-d~crates.io]↗{{hi:three-d}} provides a higher-level renderer for interactive visualizations; check its current browser and backend requirements before choosing it.
 
 [`yew`][c~yew~docs]↗{{hi:yew}} (a front-end framework) and [`egui`][c~egui~docs]↗{{hi:egui}} (an immediate mode GUI) may also be useful.
 
@@ -34,7 +32,9 @@ Choose by output: static image or SVG (`plotters`), interactive HTML (`charming`
 
 | Topic | Rust Crates (Examples) | Notes |
 | --- | --- | --- |
-| Image Processing | [`image`][c~image~docs]↗{{hi:image}} , [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} | These crates are used for image processing and manipulation, which can be part of a data visualization pipeline. |
+| Image and video data | [`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} | Decode and prepare raster data before drawing; see [Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html) and [[multimedia_video | Multimedia: Video]]. |
+| Data preparation | [`polars`][c~polars~docs]↗{{hi:polars}}, [`arrow`][c~arrow~docs]↗{{hi:arrow}} | Filter and aggregate data before selecting a chart or rendering backend; see [[data-processing | Data and ETL]]. |
+| Application host | [`egui_plot`][c~egui_plot~docs]↗{{hi:egui_plot}}, [`plotters`][c~plotters~docs]↗{{hi:plotters}}, [`plotly`][c~plotly~docs]↗{{hi:plotly}} | Match the renderer to a desktop GUI, static file, or browser application. |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

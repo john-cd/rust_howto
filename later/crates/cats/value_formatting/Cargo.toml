@@ -22,6 +22,11 @@ name = "case_conversion"
 path = "examples/case_conversion/main.rs"
 test = true
 
+[[example]]
+name = "number_formatting"
+path = "examples/number_formatting/main.rs"
+test = true
+
 [dependencies]
 clap = "4.6.7"
 # Case conversion used by the identifier formatting example.
