@@ -4,7 +4,7 @@
 
 {{#include internationalization.incl.md}}
 
-Internationalization (i18n) prepares software for different languages and regions. Select a locale from user preferences with a documented fallback, and keep it overridable. Localization (l10n) adapts translated messages and presentation for a particular audience.
+Internationalization (i18n) prepares software for different languages and regions. Select a locale from user preferences with a documented fallback, and keep it overridable. [Localization](../localization/index.md) adapts translated messages and presentation for a particular audience.
 
 ## Format Numbers and Dates by Locale {#internationalization}
 
@@ -34,6 +34,7 @@ Test fallback locales, plural categories, long translated strings, dates around 
 
 ## Related Topics {#related-topics .skip}
 
+- [Localization](../localization/index.md).
 - [Value Formatting](../value-formatting/number_formatting.md).
 - [Date and Time](../date-and-time/index.md).
 - [Unicode Text](../text-processing/unicode.md).

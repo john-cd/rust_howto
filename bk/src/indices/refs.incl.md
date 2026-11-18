@@ -877,6 +877,7 @@
 [ex~links~videos]: ../links/videos_and_podcasts.md#videos
 [ex~links~wasm]: ../links/books.md#wasm
 [ex~links~web]: ../links/books.md#web
+[ex~localization~localization]: ../categories/localization/localization.md#localization
 [ex~mathematics~abstracting-over-number-types]: ../categories/mathematics/additional_numeric_types.md#abstracting-over-number-types
 [ex~mathematics~adding-complex-numbers]: ../categories/mathematics/complex_numbers.md#adding-complex-numbers
 [ex~mathematics~adding-matrices]: ../categories/mathematics/linear_algebra.md#adding-matrices

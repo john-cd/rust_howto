@@ -1,0 +1,32 @@
+# Reviewed 2026-11-17.
+
+[package]
+name = "localization"
+version.workspace = true
+description = "Book code examples and their crate dependencies - localization"
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish.workspace = true
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
+categories = ["localization"]
+autolib = false
+
+[[example]]
+name = "localization"
+path = "examples/localization/main.rs"
+test = true
+
+[dependencies]
+# Fluent implementation for localization messages.
+fluent-bundle = "0.16.0"
+# Parse and create Unicode language identifiers.
+unic-langid = "0.9.6"
+
+[lints]
+workspace = true

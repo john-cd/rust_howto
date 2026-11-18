@@ -340,6 +340,9 @@
 - [Internationalization](categories/internationalization/index.md)
   - [Internationalization](categories/internationalization/internationalization.md)
 
+- [Localization](categories/localization/index.md)
+  - [Localization](categories/localization/localization.md)
+
 - [Number Formatting](categories/value-formatting/number_formatting.md)
 
 - [Web Programming](categories/web-programming/index.md)

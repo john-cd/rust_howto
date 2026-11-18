@@ -33,6 +33,7 @@ members = [
     "cats/hardware_support",
     "cats/internationalization",
     "cats/iroh_loopback",
+    "cats/localization",
     "cats/mathematics",
     "cats/memory_management",
     "cats/multimedia_images",
