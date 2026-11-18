@@ -16,7 +16,7 @@ use core::fmt;
 enum EmuError {
     /// The instruction pointer is outside the loaded program.
     InvalidAddress(
-        /// Memory address that does not map to a valid register.
+        /// Instruction index outside the loaded program, not a register index.
         usize,
     ),
 
@@ -143,7 +143,7 @@ pub fn run() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     Ok(main()?)
 }
 
-/// fetch/decode/execute loop.
+/// Checks register arithmetic, instruction decoding, branches, and execution limits.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -156,7 +156,7 @@ mod tests {
         }
     }
 
-    /// Handles the cpu behavior for this component.
+    /// Creates a reset CPU borrowing the supplied test program.
     fn cpu(program: &[[u8; 2]]) -> Cpu<'_> {
         Cpu {
             program,

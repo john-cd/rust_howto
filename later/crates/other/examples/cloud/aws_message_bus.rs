@@ -154,7 +154,8 @@ pub async fn publish<M: Message>(publisher: &dyn MessagePublisher, message: &M) 
 ///
 /// # Errors
 ///
-/// Returns an error if receiving, decoding, handling, or acknowledging fails.
+/// Returns an error if receiving or acknowledging fails. Decoding and handler
+/// failures leave messages unacknowledged and processing continues with the batch.
 pub async fn consume<M, F>(subscriber: &dyn MessageSubscriber, mut handler: F) -> Result<usize>
 where
     M: Message + Default,
@@ -191,12 +192,12 @@ impl MessagePublisher for InMemoryBus {
 
 #[async_trait]
 impl MessageSubscriber for InMemoryBus {
-    /// Handles the receive behavior for this component.
+    /// Clones all queued messages without removing them or simulating visibility delays.
     async fn receive(&self) -> Result<Vec<Received>> {
         Ok(self.messages.lock().expect("queue lock poisoned").clone())
     }
 
-    /// Handles the ack behavior for this component.
+    /// Removes every in-memory message with the supplied receipt; unknown receipts are a no-op.
     async fn ack(&self, receipt: &str) -> Result<()> {
         self.messages
             .lock()
@@ -239,7 +240,9 @@ impl MessagePublisher for SqsBus {
 
 #[async_trait]
 impl MessageSubscriber for SqsBus {
-    /// Handles the receive behavior for this component.
+    /// Long-polls SQS for up to ten messages, hiding received messages for 30 seconds.
+    ///
+    /// Entries missing a body or receipt handle are omitted from the returned batch.
     async fn receive(&self) -> Result<Vec<Received>> {
         let output = self
             .client
@@ -265,7 +268,7 @@ impl MessageSubscriber for SqsBus {
             .collect())
     }
 
-    /// Handles the ack behavior for this component.
+    /// Deletes the SQS message identified by its current receipt handle.
     async fn ack(&self, receipt: &str) -> Result<()> {
         self.client
             .delete_message()
