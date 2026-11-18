@@ -9,9 +9,9 @@ Rust powers projects ranging from command-line utilities to databases and virtua
 | Area | Examples and details |
 | --- | --- |
 | Operating systems | [Redox OS][redox~repo]↗ is a Rust operating system. [Bottlerocket][c~bottlerocket~repo]↗ is a Linux distribution for containers, and [Rust for Linux][kernel-rust~docs]↗ brings Rust support to the Linux kernel. |
-| Containers and virtualization | [youki][youki~repo]↗ is an OCI container runtime. [Kata Containers][kata-containers~repo]↗ includes a Rust agent. [Firecracker][firecracker~repo]↗ and [Cloud Hypervisor][cloud-hypervisor~repo]↗ are virtual machine monitors, and [Hyperlight][hyperlight~repo]↗ isolates workloads in micro-VMs. See [Virtualization](../../categories/virtualization/index.md). |
+| Containers and virtualization | [youki][youki~repo]↗ is an OCI container runtime. [Kata Containers][kata-containers~repo]↗ includes a Rust agent. [Firecracker][firecracker~repo]↗ and [Cloud Hypervisor][cloud-hypervisor~repo]↗ are virtual machine monitors, and [Hyperlight][hyperlight~repo]↗ isolates workloads in micro-VMs. See [Virtualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md). |
 | Storage | [Stratis][stratis~repo]↗ provides a storage management daemon for Linux. |
-| Embedded systems | [Tock OS][tock~repo]↗, [`esp-rs`][espressif~repo]↗, and [OxidOS Automotive][oxidos~website]↗; see [Embedded Systems](../../categories/embedded/index.md). |
+| Embedded systems | [Tock OS][tock~repo]↗, [`esp-rs`][espressif~repo]↗, and [OxidOS Automotive][oxidos~website]↗; see [Embedded Systems](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md). |
 | Command-line utilities | See the [command-line tools](development_tools.md#utilities) for examples such as `ripgrep`, `fd`, and `bat`. |
 
 ## Web Development and Networking
@@ -20,7 +20,7 @@ Rust powers projects ranging from command-line utilities to databases and virtua
 | --- | --- |
 | Search | [Tantivy][c~tantivy~docs]↗ and [Meilisearch][c~meilisearch~docs]↗. |
 | Web applications | [Yew][c~yew~docs]↗, [Leptos][c~leptos~docs]↗, and [Perseus][c~perseus~repo]↗ are web frameworks. Cloudflare's [`workers-rs`][workers-rs~repo]↗ SDK lets developers write Workers in Rust. |
-| WebAssembly runtimes | [Wasmtime][wasmtime~repo]↗ and [Wasmer][c~wasmer~docs]↗ run WebAssembly outside the browser. See [WebAssembly](../../categories/wasm/index.md). |
+| WebAssembly runtimes | [Wasmtime][wasmtime~repo]↗ and [Wasmer][c~wasmer~docs]↗ run WebAssembly outside the browser. See [WebAssembly](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md). |
 | Networking | [Hickory DNS][hickory-dns~repo]↗ implements DNS, [BoringTun][boringtun~repo]↗ implements WireGuard, and [Rustls][rustls~repo]↗ implements TLS. [Pingora][c~pingora~docs]↗ is Cloudflare's proxy framework, and [Linkerd][linkerd-proxy~repo]↗ uses a Rust data-plane proxy. Other examples include the [shoes proxy][c~shoes~repo]↗, the [RustScan port scanner][rustscan~repo]↗, and [mail servers](other_tools.md#mail-servers). |
 
 ## Application Software
@@ -51,10 +51,10 @@ Rust powers projects ranging from command-line utilities to databases and virtua
 | --- | --- |
 | [Awesome Rust][awesome-rust~repo]↗ | Broader catalog of projects, libraries, and tools. |
 | [Awesome Rust Tools][awesome-rust-tools~repo]↗ and [Awesome Alternatives in Rust][awesome-alternatives-in-rust~repo]↗ | Curated lists of Rust-built tools and alternatives. |
-| [Scripting and Rust](../scripting/index.md) | Scripting engines and language integration. |
-| [Embedded Systems](../../categories/embedded/index.md) | Firmware and constrained applications. |
-| [WebAssembly](../../categories/wasm/index.md) | Servers, clients, and web tooling. |
-| [Virtualization](../../categories/virtualization/index.md) | Runtime and isolation projects. |
+| [Scripting and Rust](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/scripting/index.md) | Scripting engines and language integration. |
+| [Embedded Systems](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md) | Firmware and constrained applications. |
+| [WebAssembly](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md) | Servers, clients, and web tooling. |
+| [Virtualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md) | Runtime and isolation projects. |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

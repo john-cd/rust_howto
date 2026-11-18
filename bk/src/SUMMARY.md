@@ -448,6 +448,11 @@
   - [Current State of the Art](crate-selection/current_state_of_the_art.md)
   - [Generate Crate Indices Offline](crate-selection/crate_indices.md)
 
+- [Written in Rust](other/written-in-rust/index.md)
+  - [Development Tools](other/written-in-rust/development_tools.md)
+  - [Python Tools](other/written-in-rust/python_tools.md)
+  - [Other Tools](other/written-in-rust/other_tools.md)
+
 - [Links](links/index.md)
   - [Rust Cheat Sheets](links/rust_cheatsheets.md)
   - [Learning Rust](links/learning_rust.md)

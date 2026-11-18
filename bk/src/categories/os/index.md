@@ -53,6 +53,8 @@ This section lists operating systems and system projects implemented in Rust. Th
 
 ## Related Topics {#related-topics .skip}
 
+- [Systems software built in Rust](../../other/written-in-rust/index.md#systems-programming) covers operating systems, storage, and virtualization.
+
 - [File System](../filesystem/index.md) covers portable file and directory operations.
 - [Command-line Interface](../command-line-interface/index.md) covers command arguments and user interaction.
 - [Network Programming](../network-programming/index.md) covers networking beyond the standard library primitives.

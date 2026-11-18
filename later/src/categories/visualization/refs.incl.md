@@ -32,7 +32,7 @@
 
 [c~leptos-chartistry~docs~badge]: https://img.shields.io/crates/v/leptos-chartistry
 [p~data-processing]: ../../other/data-processing/index.md
-[p~development_tools]: ../../other/written-in-rust/development_tools.md
+[p~development_tools]: https://john-cd.com/rust_howto/other/written-in-rust/development_tools.html
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
 [p~gui]: ../gui/index.md
 [p~multimedia_video]: ../multimedia_video/index.md

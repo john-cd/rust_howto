@@ -21,7 +21,7 @@
 
 [p~cloud]: ../cloud/index.md
 [p~data_processing]: index.md
-[p~development_tools]: ../written-in-rust/development_tools.md
+[p~development_tools]: https://john-cd.com/rust_howto/other/written-in-rust/development_tools.html
 [p~parsing]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parsing/index.md
 [p~visualization]: ../../categories/visualization/index.md
 [p~web-programming]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming/index.md
