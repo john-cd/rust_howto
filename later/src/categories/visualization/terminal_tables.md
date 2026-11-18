@@ -7,7 +7,7 @@ distance measured at two stations. [tabled](https://docs.rs/tabled/) provides
 a builder for a number of rows known only at runtime. This example labels the
 units in the header and renders plain ASCII without terminal escape codes.
 
-```rust,editable
+```rust,ignore,noplayground
 {{#include ../../../crates/cats/visualization/examples/terminal_table.rs:example}}
 ```
 

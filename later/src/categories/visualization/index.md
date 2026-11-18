@@ -4,38 +4,20 @@
 
 [![cat~visualization][cat~visualization~badge]][cat~visualization]{{hi:Visualization}}
 
-Turn structured data into a visual output for inspection, reporting, or interaction. Choose the output format and host first; many visualization libraries do not provide an application shell or data-processing pipeline.
-
-| Topic | Rust Crates | Notes |
-| --- | --- | --- |
-| Charts and plots | [`plotters`][c~plotters~docs]↗{{hi:plotters}}, [`charming`][c~charming~docs]↗{{hi:charming}}, [`plotly`][c~plotly~docs]↗{{hi:plotly}} | `plotters` draws static 2D charts to bitmaps, SVG or a canvas; `charming` and `plotly` wrap the ECharts and Plotly.js libraries for interactive HTML output. |
-| Exact text output | [tabled](https://docs.rs/tabled/) | Show individual values and units in a [terminal table](terminal_tables.md). |
-| Interactive plots in a GUI | [`egui_plot`][c~egui_plot~docs]↗{{hi:egui_plot}} | Live plots inside an [`egui`][c~egui~docs]↗{{hi:egui}} application. See [GUI](../gui/index.md). |
-| 3D and custom rendering | [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}, [`three-d`][c~three-d~crates.io]↗{{hi:three-d}}, [`glium`][c~glium~docs]↗{{hi:glium}} | Use a graphics library when `plotters` is not enough. |
-| Graph (network) diagrams | [`petgraph`][c~petgraph~docs]↗{{hi:petgraph}}, [`layout-rs`][c~layout-rs~docs]↗{{hi:layout-rs}} | `petgraph::dot` writes DOT for [Graphviz][graphviz~website]↗{{hi:Graphviz}}; `layout-rs` renders DOT-style graphs to SVG in pure Rust. |
-| Data exploration | [`rerun`][c~rerun~docs]↗{{hi:rerun}}, [`polars`][c~polars~docs]↗{{hi:polars}} | `rerun` logs and visualizes time-series, images and 3D data; `polars` prepares the data. |
+Choose an output based on what the reader needs to see. A table preserves exact reported values and units. A chart brings out patterns such as trends or relationships. Interactive charts let readers inspect individual points.
 
 {{#include visualization.incl.md}}
 
-## Web Visualization
+## Choose an output
 
-- Rust (compiled to WASM) can use the Canvas API via [`web-sys`][c~web-sys~crates.io]↗{{hi:web-sys}} to draw 2D graphics directly in the browser. This is suitable for simpler visualizations and interactive graphics.
-- For GPU-backed browser visualizations, [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} can target WebGPU or WebGL 2, depending on browser support and enabled features. WebGL 2 exposes a smaller feature set, so test the required operations on the actual browser backend.
-- [`three-d`][c~three-d~crates.io]↗{{hi:three-d}} provides a higher-level renderer for interactive visualizations; check its current browser and backend requirements before choosing it.
-
-[`yew`][c~yew~docs]↗{{hi:yew}} (a front-end framework) and [`egui`][c~egui~docs]↗{{hi:egui}} (an immediate mode GUI) may also be useful.
-
-See [[gui | GUI]] and [[wasm | WASM]].
-
-Choose by output: static image or SVG (`plotters`), interactive HTML (`charming`, `plotly`), desktop GUI (`egui_plot`, [`iced`][c~iced~docs]↗{{hi:iced}}), or the browser (the Web Visualization section above).
-
-## Related Topics
-
-| Topic | Rust Crates (Examples) | Notes |
+| Goal | Start with | Requirements |
 | --- | --- | --- |
-| Image and video data | [`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} | Decode and prepare raster data before drawing; see [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md) and [[multimedia_video | Multimedia: Video]]. |
-| Data preparation | [`polars`][c~polars~docs]↗{{hi:polars}}, [`arrow`][c~arrow~docs]↗{{hi:arrow}} | Filter and aggregate data before selecting a chart or rendering backend; see [[data-processing | Data and ETL]]. |
-| Application host | [`egui_plot`][c~egui_plot~docs]↗{{hi:egui_plot}}, [`plotters`][c~plotters~docs]↗{{hi:plotters}}, [`plotly`][c~plotly~docs]↗{{hi:plotly}} | Match the renderer to a desktop GUI, static file, or browser application. |
+| Share a static chart | [Plotters SVG](visualization.md#plotters) | Generate on the command line and open the SVG in a viewer or browser. |
+| Inspect points interactively | [Plotly HTML](visualization.md#graph-data) | Generate on the command line and open in a browser that can load Plotly.js. |
+| Report exact readings and units | [Terminal table](terminal_tables.md) | Print plain text with `tabled`. |
+| Embed charts in an application | [Browser and desktop alternatives](visualization.md#application-charts) | Choose a library that fits your GUI or web application. |
+
+Label axes and units, make the series legible in grayscale, and offer a table or source data when readers need exact values. See [Data Processing][p~data-processing] for aggregating and preparing data and [Graphics][p~graphics] for drawing and rendering primitives.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

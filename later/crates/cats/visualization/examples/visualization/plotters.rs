@@ -26,7 +26,11 @@ fn generate_line_chart_svg() -> Result<String, Box<dyn std::error::Error + Send 
             .y_label_area_size(30)
             .build_cartesian_2d(-5.0f32..5.0f32, 0.0f32..25.0f32)?;
 
-        chart.configure_mesh().draw()?;
+        chart
+            .configure_mesh()
+            .x_desc("x")
+            .y_desc("x squared")
+            .draw()?;
 
         // Draw line series for Y = X^2.
         chart.draw_series(LineSeries::new(
@@ -40,10 +44,10 @@ fn generate_line_chart_svg() -> Result<String, Box<dyn std::error::Error + Send 
     Ok(buffer)
 }
 
-/// Renders the chart without opening a window or writing an output file.
+/// Writes the complete SVG document to standard output.
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let svg_content = generate_line_chart_svg()?;
-    println!("Generated SVG length: {} bytes.", svg_content.len());
+    print!("{svg_content}");
     Ok(())
 }
 // ANCHOR_END: example

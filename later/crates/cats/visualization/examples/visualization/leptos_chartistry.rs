@@ -75,9 +75,10 @@ fn main() {
 }
 // ANCHOR_END: example
 
-/// References the component from the visualization example entry point.
+/// Reports that the component compiled and points readers to a mounted example.
 pub fn run() {
     main();
+    println!("Chartistry component compiled. See the crate examples for a mounted browser chart.");
 }
 
 /// Tests behavior implemented by the surrounding module.

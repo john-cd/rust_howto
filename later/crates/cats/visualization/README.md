@@ -2,22 +2,15 @@
 
 # Visualization
 
-Run `cargo run --locked -p visualization --example terminal_table` from
-`later/crates` to display exact readings and units in a plain text table.
-
-This crate contains code examples for the **Visualization** category on crates.io. It demonstrates integration with key ecosystem crates including `anyhow`, `plotly`.
-
-## Examples Covered
-
-- **Visualization** (`examples/visualization/`): Demonstrates concepts like `plotly`.
-
-## Usage
-
-To check or run examples in this crate:
+Run from `later/crates`:
 
 ```console
-cargo check --package visualization --examples
-cargo test --package visualization
+cargo run --quiet --locked -p visualization --example visualization -- plotters > chart.svg
+cargo run --locked -p visualization --example visualization -- plotly
+cargo run --locked -p visualization --example terminal_table
+cargo test --locked -p visualization --examples
 ```
 
-Code examples correspond to chapters in `bk/src/categories/visualization` or related book sections.
+Open `chart.svg` to inspect the static chart. Open `temp/plot.html` in a browser with access to Plotly's CDN for the interactive example. The terminal table prints exact reported values and units.
+
+The Chartistry subcommand builds a Leptos component for reference. The upstream examples show how to mount it in a browser. The recipes are in [Visualization](../../../src/categories/visualization/index.md).
