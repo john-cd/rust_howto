@@ -12,7 +12,7 @@ Install the Rust toolchain with [`rustup`][rustup~website]↗ and open the direc
 
 [![cat~text-editors][cat~text-editors~badge]][cat~text-editors]
 
-- **Setup:** Install Rust with `rustup`, then install the `rust-analyzer` extension (`rust-lang.rust-analyzer`) from the [Visual Studio Marketplace][rust-analyzer~plugin]↗ and open the folder containing the workspace `Cargo.toml`. The extension bundles the language server.
+- **Setup:** Install Rust with `rustup`, then install the `rust-analyzer` extension (`rust-lang.rust-analyzer`) from the [Visual Studio Marketplace][rust-analyzer~plugin]↗ and open the folder containing the workspace `Cargo.toml`. The extension bundles the language server. For this repository's multi-workspace setup, see [VS Code Configuration](../../appendices/contributing/vscode.md).
 - **Debugging:** Install CodeLLDB on macOS or Linux, or CodeLLDB / Microsoft C++ on Windows. Start a session with the Rust Analyzer: Debug command or the Run/Debug CodeLens.
 - **Tip:** Set `rust-analyzer.check.command` to `clippy` to see Clippy diagnostics while editing.
 

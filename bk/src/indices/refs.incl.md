@@ -262,6 +262,7 @@
 [ex~contributing~preprocessors]: ../appendices/contributing/mdBook_pre-processors.md#preprocessors
 [ex~contributing~publication-steps]: ../appendices/contributing/publication_to_crates.io.md#publication-steps
 [ex~contributing~push-image-to-docker-hub]: ../appendices/contributing/dev_container_and_docker.md#push-image-to-docker-hub
+[ex~contributing~rust-analyzer-configuration]: ../appendices/contributing/vscode.md#rust-analyzer-configuration
 [ex~contributing~templ]: ../appendices/contributing/documentation_generation.md#templ
 [ex~contributing~using-vs-code]: ../appendices/contributing/development_environment_setup.md#using-vs-code
 [ex~contributing~windows-install]: ../appendices/contributing/development_environment_setup.md#windows-install
