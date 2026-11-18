@@ -55,7 +55,7 @@ fn demo_tuples() {
 
     // Functions with tuples.
     // Tuples can be passed to and returned from functions.
-    // Returns a two-element tuple with its values swapped.
+    /// Returns a two-element tuple with its values swapped.
     fn swap_tuple(tuple: (i32, i32)) -> (i32, i32) {
         (tuple.1, tuple.0)
     }
