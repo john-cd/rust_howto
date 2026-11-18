@@ -3,6 +3,7 @@
 <!-- markdownlint-disable MD057 -->
 
 [intellij-idea~website]: https://www.jetbrains.com/idea/
+[clion~website]: https://www.jetbrains.com/clion/
 [kate-editor~website]: https://kate-editor.org
 [ex~text-editors~helix]: ides.md#helix
 [ex~text-editors~emacs]: ides.md#emacs
@@ -16,7 +17,6 @@
 [editor~rustrover~debugging]: https://www.jetbrains.com/help/rust/debugging-code.html
 [editor~rustrover~install]: https://www.jetbrains.com/help/rust/installation-guide.html
 [editor~zed~rust]: https://zed.dev/docs/languages/rust
-[p~cargo]: ../development-tools/cargo/cargo.md
 [p~development-tools]: ../development-tools/index.md
 [ex~text-editors~lsp]: language_server_protocol.md#lsp
 [ex~text-editors~lsp-client]: language_server_protocol.md#lsp-client
