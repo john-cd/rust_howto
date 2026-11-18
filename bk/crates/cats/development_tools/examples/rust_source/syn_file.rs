@@ -69,15 +69,17 @@ fn count_items(source: &str) -> syn::Result<(usize, usize)> {
 fn main() -> syn::Result<()> {
     let source = "
 
-        /// Groups the data required by rust source operations.
+        /// Two-dimensional sample type visited by the syntax counter.
         struct Point { x: f64, y: f64 }
 
         impl Point {
+            /// Computes the sample point's Euclidean distance from the origin.
             fn norm(&self) -> f64 { (self.x * self.x + self.y * self.y).sqrt() }
         }
 
 /// Runs the example.
         fn main() {
+            /// Nested function included to verify recursive function counting.
             fn helper() {}
             helper();
         }
