@@ -30,7 +30,7 @@ Type [`just`][c~just~docs]↗{{hi:just}} at the command line for a list of short
 
 For subsequent releases, crates.io supports [Trusted Publishing][crates-io~trusted-publishing~guide]↗ from supported CI environments using short-lived credentials. The [crates.io development update][rust-blog~crates-io-2025-07]↗ also covers triggering a docs.rs rebuild from a version's crates.io page.
 
-For planning a release workflow that runs from CI, see [Release Automation (draft)](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/devops/release_automation.md).
+For planning a release workflow that runs from CI, see [Release Automation](../../other/devops/release_automation.md).
 
 Configure the trusted publisher for the exact repository and workflow in crates.io, grant the CI job `id-token: write`, and request a short-lived publishing token with the [documented authentication action][crates-io~trusted-publishing~guide]↗. Keep the manual first publish and the release permission review separate from dependency resolution. A docs.rs rebuild republishes documentation for an existing version; it does not change the crate artifact or its dependencies. Crate owners can request one from the version list on crates.io when a documentation build failed or docs.rs gained a useful feature.
 
