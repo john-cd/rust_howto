@@ -14,7 +14,7 @@ use argmin::core::Executor;
 use argmin::core::State;
 use argmin::solver::brent::BrentOpt;
 
-/// Data carried by quadratic operations.
+/// Convex objective with its unique minimum at x = 2.5 and cost 4.
 #[derive(Clone, Copy)]
 struct Quadratic;
 
@@ -24,13 +24,17 @@ impl CostFunction for Quadratic {
     /// Alias for `f64` used to represent param.
     type Param = f64;
 
-    /// Handles the cost behavior for this component.
+    /// Evaluates the squared distance from 2.5 plus the constant baseline cost.
     fn cost(&self, x: &Self::Param) -> Result<Self::Output, Error> {
         Ok((x - 2.5).powi(2) + 4.0)
     }
 }
 
 /// Finds the minimum of the quadratic function within `[-5, 8]`.
+///
+/// Brent minimization uses parabolic interpolation for fast progress and
+/// golden-section steps when interpolation is unsuitable, without derivatives.
+/// The executor caps work at 100 iterations and returns its best input estimate.
 ///
 /// # Panics
 ///
