@@ -283,7 +283,7 @@ mod tests {
 
     use super::*;
 
-    /// Handles the test app behavior for this component.
+    /// Builds a router with two hashed-password fixtures and distinct permission sets.
     fn test_app() -> anyhow::Result<Router> {
         let user = |id, name: &str, perms: &[&str]| -> anyhow::Result<User> {
             Ok(User {
