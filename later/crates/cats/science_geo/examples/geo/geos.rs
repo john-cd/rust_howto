@@ -68,15 +68,9 @@ pub fn run() -> Result<(), Box<dyn std::error::Error>> {
 mod tests {
     use super::*;
 
-    /// Runs succeeds.
+    /// Runs the GEOS example through its public entry point.
     #[test]
     fn run_succeeds() -> Result<(), Box<dyn std::error::Error>> {
         run()
-    }
-
-    /// Runs the example through its entry point without error.
-    #[test]
-    fn test_main_entry_point() -> Result<(), Box<dyn std::error::Error>> {
-        main()
     }
 }
