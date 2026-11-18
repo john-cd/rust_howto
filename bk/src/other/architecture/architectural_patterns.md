@@ -43,7 +43,7 @@ See [Plugin Registration](index.md#plugin-registration).
 - Logging and monitoring: use [`tracing`][c~tracing~docs]↗{{hi:tracing}} or [`log`][c~log~docs]↗{{hi:log}}; see [Development Tools: Debugging](../../categories/development-tools_debugging/index.md).
 - [Recoverable Error Handling](../../standard-library/recoverable_error_handling.md).
 - [Testing](../../categories/development-tools_testing/index.md) and quality assurance.
-- [Profiling and Performance](../../categories/development-tools/profiling.md).
+- [Profiling and Performance](../../categories/development-tools_profiling/index.md).
 - Plan deployment and operations around the system's reliability and support requirements.
 
 {{#include refs.incl.md}}
