@@ -24,17 +24,14 @@ Prefer a WebRTC or media pipeline library over implementing RTP packetization di
 
 ## Negotiate a WebRTC Session with `str0m` {#str0m}
 
-[`str0m`][c~str0m~docs]↗{{hi:str0m}} does no network I/O of its own, so the offer and answer can be exchanged in a single process. This example negotiates a send-only audio stream between two peers; a real application would carry the SDP over its signaling service and then move UDP packets between the peers.
+[`str0m`][c~str0m~docs]↗{{hi:str0m}} leaves network I/O to the caller, so the offer and answer can be exchanged in a single process. This example demonstrates signaling only. It negotiates a send-only audio stream and exits before forwarding UDP packets or delivering media. A complete session needs caller-driven packet I/O, timers, and teardown.
 
 ```rust,editable
 {{#include ../../../crates/cats/multimedia/examples/streaming/webrtc_audio_negotiation.rs:example}}
 ```
 
+Use the [generated media fixture](multimedia.md#media-round-trip) to verify the
+audio and video extraction steps independently of network delivery.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-The example advances frame sequence numbers and media timestamps before a protocol-specific packetizer sends them. It illustrates timing metadata only; it is not an RTP implementation.
-
-```rust,noplayground
-{{#include ../../../crates/cats/multimedia/examples/streaming/webrtc_audio_negotiation.rs:example}}
-```

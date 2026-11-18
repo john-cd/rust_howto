@@ -2,6 +2,10 @@
 
 # Video
 
+Run the [generated media fixture](../multimedia/multimedia.md#media-round-trip)
+to encode a clip and verify its extracted thumbnail and audio before working
+with external video files.
+
 {{#include video.incl.md}}
 
 Video applications commonly combine a decoder, frame processing, an encoder, and a container muxer. A codec describes how frames are compressed; a container such as Matroska or MP4 packages video, audio, and timing metadata. Pick libraries based on the formats you need and whether you can install native multimedia libraries on the target system.

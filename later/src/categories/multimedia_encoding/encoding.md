@@ -6,6 +6,11 @@
 
 Multimedia encoding encompasses transforming raw sample or frame streams into compressed codec formats, packaging encoded bitstreams into container structures, and inspecting container metadata.
 
+The [generated media fixture](../multimedia/multimedia.md#media-round-trip)
+connects these steps with a one-second clip and verifies the decoded output. It
+uses Matroska with FFV1 and PCM. The MP4 metadata recipe below reads a different
+container and does not decode either stream.
+
 For higher-level image processing and codec handling, see the [Image Formats page][ex~multimedia_encoding~images]. For video streams and pipeline architectures, see the [Video Encoding page][ex~multimedia_encoding~video].
 
 ## Decode Audio Formats to PCM {#decode-audio}

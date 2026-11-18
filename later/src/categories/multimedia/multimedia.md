@@ -18,6 +18,28 @@ The tone is built by a separate function, so a unit test can check its format wi
 
 From `later/crates`, run `cargo run -p multimedia --example multimedia` on a machine with an audio output device.
 
+## Generate and Verify a Media Fixture {#media-round-trip}
+
+Use the same one-second Matroska clip to exercise the encoding, audio extraction,
+and thumbnail steps. The runner needs Python 3.10 or newer and an FFmpeg build
+with the lavfi sources, FFV1, PCM, and PNG enabled. The standalone executable
+suffices for this workflow. FFmpeg development libraries are needed only for
+native Rust bindings.
+
+```console
+python later/crates/cats/multimedia/examples/media_round_trip.py
+```
+
+Run it from the repository root. Pass `--ffmpeg PATH` when the executable is
+outside PATH. The script prints the verified frame size and sample count, and
+removes its temporary files when it exits. A missing executable or failed media
+command produces an error and a nonzero exit code.
+
+The container carries two independent streams, FFV1 video and mono 16-bit PCM
+audio. The checks expect a 64 by 48 PNG, one second of audio at 8 kHz, and a red
+pixel within a small color-conversion tolerance. The selected codecs are
+lossless, so these checks do not establish tolerances for a lossy format.
+
 ## Extract Audio from a Video
 
 [FFmpeg][ffmpeg~manual] works at the boundary between video containers and audio/image tools. Install an FFmpeg build with the required decoders, then extract the first audio stream into a WAV file:
