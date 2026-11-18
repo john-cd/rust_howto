@@ -15,14 +15,19 @@ use std::time::Instant;
 /// One result tied to the exact input revision used by its worker.
 #[derive(Debug)]
 struct Reply {
+    /// Input revision captured before the worker began.
     revision: u64,
+    /// Computed sum of squares or a validation error for that snapshot.
     value: Result<u64, String>,
 }
 
 /// One owned worker, one reply slot, and a cooperative shutdown flag.
 struct Worker {
+    /// Receives the worker’s single terminal reply.
     result: mpsc::Receiver<Reply>,
+    /// Owns the thread until polling or shutdown joins it.
     handle: Option<JoinHandle<()>>,
+    /// Signals that the worker should exit during its next cancellation check.
     cancelled: Arc<AtomicBool>,
 }
 
@@ -71,6 +76,7 @@ impl Worker {
 }
 
 impl Drop for Worker {
+    /// Requests cooperative cancellation and joins the bounded worker before releasing its state.
     fn drop(&mut self) {
         self.cancelled.store(true, Ordering::Relaxed);
         if let Some(handle) = self.handle.take() {
@@ -83,11 +89,17 @@ impl Drop for Worker {
 /// UI-owned state; workers never mutate widgets or the current input revision.
 #[derive(Default)]
 struct App {
+    /// Current input revision, incremented whenever the slider changes.
     revision: u64,
+    /// Number of integers included in the next sum of squares.
     limit: u32,
+    /// Outstanding computation, if any. The UI allows one worker at a time.
     worker: Option<Worker>,
+    /// Latest result, validation error, or stale-result notice shown in the window.
     message: String,
+    /// Records success for the native smoke run before its window closes.
     smoke_completion: Option<Arc<AtomicBool>>,
+    /// Clock start for enforcing the smoke run’s deadline.
     started: Option<Instant>,
 }
 
@@ -106,6 +118,8 @@ impl App {
 }
 
 impl eframe::App for App {
+    /// Polls for completion before drawing controls and invalidates old results when the input
+    /// changes.
     fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
         if let Some(reply) = self.worker.as_mut().and_then(Worker::poll) {
             self.worker = None;

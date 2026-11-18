@@ -9,9 +9,13 @@ use anyhow::ensure;
 /// A byte layout for a single-layer RGBA8 texture copied into a staging buffer.
 #[derive(Debug)]
 struct CopyLayout {
+    /// Number of bytes of actual RGBA8 pixels in one row.
     row_bytes: usize,
+    /// Row stride in the staging buffer, rounded up to the GPU copy alignment.
     padded_row_bytes: usize,
+    /// Number of texture rows to unpack.
     height: usize,
+    /// Total mapped byte count, including row padding.
     buffer_bytes: usize,
 }
 

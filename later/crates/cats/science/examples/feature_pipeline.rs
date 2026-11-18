@@ -17,7 +17,9 @@ use ndarray_016::array;
 /// Training-set means and population standard deviations in fixed feature order.
 #[derive(Debug)]
 struct Standardizer {
+    /// Population mean of each training feature, in input column order.
     mean: Array1<f64>,
+    /// Population standard deviation per feature, with a scale of one for constant columns.
     scale: Array1<f64>,
 }
 

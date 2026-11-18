@@ -66,6 +66,7 @@ pub fn run() -> io::Result<()> {
     main()
 }
 
+/// Tests file metadata extraction with Linux statx.
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -10,6 +10,7 @@ use ndarray_016::Array1;
 
 /// A deterministic feature order learned only from the training documents.
 struct Vocabulary {
+    /// Maps each training token to its fixed feature column.
     columns: HashMap<String, usize>,
 }
 
