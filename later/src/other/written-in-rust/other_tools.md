@@ -4,11 +4,9 @@
 
 {{#include other_tools.incl.md}}
 
-This catalog groups applications and services that use Rust for all or part of their implementation. It complements the [development tools](development_tools.md) and [Python tools](python_tools.md) pages. Upstream links describe each project's architecture, installation, license, and supported platforms; inclusion here is not a maintenance guarantee.
+These applications and services use Rust for tasks such as browsing files, processing payments, and moving telemetry.
 
 ## Desktop and Communication {#desktop-and-communication}
-
-Some applications pair a Rust core with a user interface written in another language. Check the linked project before choosing a deployment or installation method.
 
 | Tool | What it does | Project |
 | --- | --- | --- |
@@ -21,13 +19,12 @@ Some applications pair a Rust core with a user interface written in another lang
 
 ## Payments and Observability {#services-and-observability}
 
-These projects run as services or integrate into an application. An observability platform stores and queries telemetry; an instrumentation library produces and exports it.
-
 | Tool | What it does | Project |
 | --- | --- | --- |
 | <span id="payments"></span>Hyperswitch | Payment orchestration platform that connects applications to payment providers. | [Repository][hyperswitch~repo]↗ |
 | <span id="observability"></span>OpenObserve | Observability platform for collecting and querying logs, metrics, and traces. | [Repository][openobserve~repo]↗ |
-| OpenTelemetry Rust | Instrumentation APIs, SDKs, and exporters for Rust applications; a library suite rather than a standalone monitoring server. | [Repository][opentelemetry-rust~repo]↗ |
+| Vector | Collects, transforms, and routes logs and metrics. | [Repository][vector-observability~repo]↗ |
+| OpenTelemetry Rust | Provides instrumentation APIs, SDKs, and exporters for Rust applications. | [Repository][opentelemetry-rust~repo]↗ |
 
 ## Interactive Computing, Automation, and Robotics {#other-applications}
 
@@ -46,4 +43,4 @@ The [Ratatui app showcase][ratatui-showcase-apps~website]↗ collects more termi
 - [Python Tools Written in Rust](python_tools.md) for Python interpreters, packaging, linting, and environment management.
 
 {{#include refs.incl.md}}
-{{#include ../../../../bk/src/refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
