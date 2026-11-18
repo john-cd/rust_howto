@@ -29,7 +29,7 @@ See the [rendering data formats index](index.md) for image, font, vector, and te
 - [[rendering | Rendering]].
 - [[rendering_engine | Rendering Engine]].
 - [[3d_renderers | 3D Renderers]].
-- [[multimedia_images | Multimedia Images]].
+- [Multimedia Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

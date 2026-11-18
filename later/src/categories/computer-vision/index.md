@@ -24,7 +24,7 @@ For image I/O and manipulation, [`image`][c~image~docs]↗{{hi:image}} and [`ima
 See:
 
 - [[multimedia | Multimedia]].
-- [[multimedia_images | Multimedia: Images]].
+- [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html).
 - [[multimedia_video | Multimedia: Video]].
 
 ## Image Processing
@@ -33,7 +33,7 @@ See:
 - [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}}: Building on the [`image`][c~image~docs]↗{{hi:image}} crate, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} provides image processing algorithms, such as filtering, resizing, color manipulation, and drawing. It is useful for image preprocessing and basic image manipulation tasks.
 - [`fast-image-resize`][c~fast_image_resize~docs]↗{{hi:fast-image-resize}} provides a fast image resizing implementation, which can be useful when performance is critical.
 
-See [[multimedia_images | Multimedia: Images]].
+See [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html).
 
 ## Linear Algebra
 

@@ -11,7 +11,7 @@ Reading, writing, filtering, transforming and (de)serializing CSV records with [
 For data processing, keep two points in mind:
 
 - **Stream large files.** `csv::Reader::records()` and `deserialize()` return iterators that process records incrementally. Memory still depends on the largest record and on anything your application retains; avoid collecting every row into a `Vec` unless needed.
-- **Load into a frame for analysis.** To filter, group or join CSV data, read it into a dataframe instead of hand-written loops: see [[dataframes | Dataframes]].
+- **Load into a frame for analysis.** To filter, group or join CSV data, read it into a dataframe instead of hand-written loops: see [Dataframes](https://john-cd.com/rust_howto/categories/data-processing/dataframes.html).
 
 ## Manipulate CSV Files from the Command Line {#manipulate-csv-files-from-the-command-line}
 
@@ -31,7 +31,7 @@ If you want a smaller tool with a built-in expression language, [`xan`][c~xan~re
 ## Related Topics {#related-topics .skip}
 
 - [[data_processing | Data and ETL]].
-- [[dataframes | Dataframes]].
+- [Dataframes](https://john-cd.com/rust_howto/categories/data-processing/dataframes.html).
 - [[development_tools | Development Tools]].
 - [[parsing | Parsing]].
 

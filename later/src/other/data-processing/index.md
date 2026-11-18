@@ -17,7 +17,7 @@ splitting, and joining delimited files.
 
 ## Work with tabular data
 
-The [dataframes chapter](dataframes.md) uses Polars for columnar, dataframe-style
+The [dataframes chapter](https://john-cd.com/rust_howto/categories/data-processing/dataframes.html) uses Polars for columnar, dataframe-style
 operations over structured data.
 
 ## Build data systems

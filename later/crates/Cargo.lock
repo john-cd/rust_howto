@@ -17836,15 +17836,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "multimedia_images"
-version = "0.1.2"
-dependencies = [
- "clap",
- "image 0.25.10",
- "palette",
-]
-
-[[package]]
 name = "multimedia_video"
 version = "0.1.2"
 dependencies = [
@@ -19756,36 +19747,6 @@ dependencies = [
  "primeorder",
  "sha2 0.11.1",
 ]
-
-[[package]]
-name = "palette"
-version = "0.7.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ddeed8580d347d2abf3dcf06a5f0b3dc020258338526b277847cd4248a70fc64"
-dependencies = [
- "approx",
- "palette_derive",
- "palette_math",
- "phf 0.13.1",
-]
-
-[[package]]
-name = "palette_derive"
-version = "0.7.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "88537020289b719d81be994ccf1bbf4990f477e2f69ee52fe3e45f43a02e56be"
-dependencies = [
- "by_address",
- "proc-macro2",
- "quote",
- "syn 2.0.119",
-]
-
-[[package]]
-name = "palette_math"
-version = "0.7.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6e6eb142958d64335fb0e345c5b9ead2ecd6fc438c307e9d7d3c4fd428dbaf12"
 
 [[package]]
 name = "pango"
@@ -22330,12 +22291,7 @@ dependencies = [
  "anyhow",
  "clap",
  "fontdue 0.9.5",
- "glam 0.34.3",
- "lyon",
- "resvg 0.49.0",
- "tiny-skia 0.12.0",
  "ttf-parser 0.25.1",
- "usvg 0.49.0",
 ]
 
 [[package]]

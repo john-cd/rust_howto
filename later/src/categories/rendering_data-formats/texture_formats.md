@@ -4,7 +4,7 @@
 
 [![cat~rendering::data-formats][cat~rendering::data-formats~badge]][cat~rendering::data-formats]{{hi:Texture formats}}{{hi:Rendering data formats}}
 
-Separate image decoding from GPU texture containers. Common raster assets such as PNG, JPEG, GIF, and WebP are covered in [[multimedia_images | Multimedia: Images]]. KTX2 and DDS store texture metadata and payloads in containers that graphics applications can upload or transcode for their target devices.
+Separate image decoding from GPU texture containers. Common raster assets such as PNG, JPEG, GIF, and WebP are covered in [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html). KTX2 and DDS store texture metadata and payloads in containers that graphics applications can upload or transcode for their target devices.
 
 | Format | Rust crate | Role |
 | --- | --- | --- |
@@ -24,7 +24,7 @@ This example writes a DDS container with a seven-level mip chain and reads it ba
 
 ## Related Topics {#related-topics .skip}
 
-- [[multimedia_images | Multimedia: Images]].
+- [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html).
 - [[rendering_graphics-api | Rendering: Graphics API]].
 - [[gpu_abstraction_layers | GPU Abstraction Layers]].
 

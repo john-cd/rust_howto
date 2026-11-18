@@ -63,7 +63,7 @@
 [p~development-tools]: ../../categories/development-tools/index.md
 [p~formatting]: ../../categories/development-tools/formatting/formatting.md
 [p~github-actions]: github_actions.md
-[p~images]: ../../categories/multimedia_images/images.md
+[p~images]: https://john-cd.com/rust_howto/categories/multimedia_images/images.html
 [p~language]: ../../language/index.md
 [p~maintaining]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/maintaining.md
 [p~mdbook]: ../../categories/development-tools/documentation/mdbook.md
