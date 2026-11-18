@@ -12,14 +12,19 @@ use rustfft::num_complex::Complex;
 
 /// A reusable FFT plan with fixed frame length and sampling rate.
 struct Analyzer {
+    /// Reusable forward transform sized for the input frame.
     fft: Arc<dyn Fft<f32>>,
+    /// Periodic Hann weights applied to the frame before transforming it.
     window: Vec<f32>,
+    /// Input sampling rate in hertz.
     sample_rate: f32,
 }
 
 /// Linear peak amplitudes with frequency spacing in hertz.
 struct Spectrum {
+    /// One-sided linear peak amplitudes, indexed from the DC bin.
     amplitudes: Vec<f32>,
+    /// Frequency in hertz between adjacent bins.
     bin_hz: f32,
 }
 
@@ -51,11 +56,13 @@ impl Analyzer {
             .map(|(sample, weight)| Complex::new(sample * weight, 0.0))
             .collect();
         self.fft.process(&mut buffer);
+        // The window sum restores the peak amplitude of a bin-centered tone.
         let gain: f32 = self.window.iter().sum();
         let amplitudes: Vec<_> = buffer[..=samples.len() / 2]
             .iter()
             .enumerate()
             .map(|(bin, value)| {
+                // Interior bins have a negative-frequency partner. DC and Nyquist stand alone.
                 let edge =
                     bin == 0 || (samples.len().is_multiple_of(2) && bin == samples.len() / 2);
                 value.norm() / gain * if edge { 1.0 } else { 2.0 }
