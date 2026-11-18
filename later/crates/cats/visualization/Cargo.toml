@@ -27,15 +27,18 @@ name = "visualization"
 path = "examples/visualization/main.rs"
 test = true
 
+[features]
+chartistry = ["dep:leptos", "dep:leptos-chartistry"]
+
 [dependencies]
 ## General
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 clap = "4.6.7"
 # Leptos is a full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
-leptos = { version = "0.8.23", features = ["ssr"] }
+leptos = { version = "0.8.23", features = ["ssr"], optional = true }
 # Chartistry is a charting library for Leptos
-leptos-chartistry = "0.2.3"
+leptos-chartistry = { version = "0.2.3", optional = true }
 # A plotting library powered by Plotly.js
 plotly = "0.14.1"
 # A Rust drawing library focus on data plotting for both WASM and native applications

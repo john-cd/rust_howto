@@ -38,7 +38,7 @@ Open `temp/plot.html` relative to that working directory. The command writes the
 
 ### Chartistry in a Leptos application {#leptos-chartistry}
 
-[`leptos-chartistry`][c~leptos-chartistry~docs]↗{{hi:leptos-chartistry}} provides an SVG chart component for a Leptos application. This component uses fixed response-time samples. The native example checks that the component compiles. To see a mounted chart and tooltips, use the upstream examples linked from the crate documentation.
+[`leptos-chartistry`][c~leptos-chartistry~docs]↗{{hi:leptos-chartistry}} provides an SVG chart component for a Leptos application. This component uses fixed response-time samples. The optional `chartistry` Cargo feature checks that this component compiles. From `later/crates`, run `cargo check --locked -p visualization --features chartistry --example visualization`. To see a mounted chart and tooltips, use the upstream examples linked from the crate documentation.
 
 ```rust,ignore,noplayground
 {{#include ../../../crates/cats/visualization/examples/visualization/leptos_chartistry.rs:example}}
