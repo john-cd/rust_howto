@@ -28,7 +28,13 @@ Features:
 
 Register a Rust type with `register_type_with_name`, then add a constructor, methods (`register_fn`) and property getters (`register_get`). Reuse a `Scope` across calls to keep script variables between runs.
 
-Untrusted scripts must not run forever. `set_max_operations` and `set_max_call_levels` bound the work and recursion depth, and `disable_symbol("eval")` removes `eval` from the language. A script that exceeds the operation limit fails with `ErrorTooManyOperations`.
+The example bounds interpreted operations with `set_max_operations` and call
+depth with `set_max_call_levels`. It disables `eval` with `disable_symbol("eval")`.
+A script that exceeds the operation limit fails with `ErrorTooManyOperations`.
+These settings apply to the evaluator. Give each registered Rust callback
+its own limits, especially if it can block or allocate. Review the
+[Rhai safety guide](https://rhai.rs/book/safety/index.html) before exposing a
+script interface to untrusted callers.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/scripting/rhai_types_and_limits.rs:example}}

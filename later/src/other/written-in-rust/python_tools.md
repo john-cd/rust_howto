@@ -48,7 +48,12 @@ uv add requests
 uv run python -c "print('hello')"
 ```
 
-For Python extensions written in Rust, see [[python | Python FFI and extensions]] for the separate interoperability workflow.
+## Build a Python Wheel for a Rust Extension {#maturin}
+
+[Maturin](https://www.maturin.rs/) builds wheels for Rust extensions. PyO3
+defines the extension interface, while Maturin handles the Python package
+build. Follow the existing [PyO3 and Maturin recipe](../../categories/development-tools_ffi/python.md#calling-rust-from-python)
+to build and import the extension with the intended Python interpreter.
 
 ## Related Topics {#related-topics .skip}
 

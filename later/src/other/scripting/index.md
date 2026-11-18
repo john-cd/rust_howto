@@ -22,7 +22,7 @@ cargo +nightly -Zscript config_path.rs --config local.toml
 
 | Language | Crate | Typing | Sandboxing and embedding notes |
 | ------------------------ | ----------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Rhai | [`rhai`][c~rhai~docs]↗{{hi:rhai}} | Dynamic | Rust-oriented syntax; configure operation and data limits for untrusted scripts. |
+| Rhai | [`rhai`][c~rhai~docs]↗{{hi:rhai}} | Dynamic | Start with the [embedded evaluator](rhai.md#rust-scripting) and its example of limiting script work. |
 | Lua | [`mlua`][c~mlua~docs]↗{{hi:mlua}} | Dynamic | Bindings for Lua and Luau; select a runtime and features explicitly. See [[lua | Lua]]. |
 | Rune | [`rune`][c~rune~docs]↗{{hi:rune}} | Dynamic | Embeddable scripting language with host functions and modules. |
 | Koto | [`koto`][c~koto~docs]↗{{hi:koto}} | Dynamic | Small language designed for embedding. |
@@ -33,7 +33,11 @@ cargo +nightly -Zscript config_path.rs --config local.toml
 | Python bindings | [`cpython`][c~cpython~docs]↗{{hi:cpython}} | Dynamic | Older CPython bindings; compare with PyO3 for new integrations. |
 | WebAssembly runtimes | [`wasmtime`][c~wasmtime~docs]↗{{hi:wasmtime}}, [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}} | Varies | Embed a WebAssembly runtime or interpreter when scripts can be compiled to WASM; sandboxing still depends on the host configuration. |
 
-An embedded interpreter is not automatically a security boundary. Restrict exposed host functions, filesystem and network access, execution time, and memory according to the threat model.
+Define the script's permissions when you choose an engine. Make host callbacks
+small and bound the work they perform separately from interpreter operations.
+Use an explicit import policy and enable filesystem or network access only
+for tasks that need it. For stronger isolation, run the interpreter under
+separate process permissions and resource limits.
 
 ## Build a Language
 
