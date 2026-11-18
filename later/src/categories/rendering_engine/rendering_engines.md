@@ -17,6 +17,34 @@ A rendering engine owns scene objects, camera transforms, materials, asset lifet
 
 The [3D renderers chapter](../rendering/3d_renderers.md) surveys engine options and demonstrates camera projection. A crate appearing in that catalog is not evidence that it has been launched on every platform. Keep engine versions and plugins aligned and test the actual window or offscreen workflow used by the application.
 
+## Load and Display a Scene with three-d {#windowed-scene}
+
+This example reads a local OBJ file into a CPU model before it opens a window.
+The default fixture contains one triangle. three-d uploads the model to the
+OpenGL context once, then draws it with a red material and a perspective
+camera. The frame callback updates the camera viewport after a resize and
+skips drawing when the drawable has no area. The window event loop handles
+the close request.
+
+Run from the repository root on a desktop with OpenGL support:
+
+```console
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p rendering --features engine-scene --example engine_scene
+```
+
+Expect a red triangle on a black background. Resize, minimize, and restore
+the window to see the camera use the current viewport. Close it through the
+window manager. A file path after `--` overrides the bundled OBJ. A missing
+file returns an error naming the path before a window opens.
+
+```rust,ignore
+{{#include ../../../crates/cats/rendering/examples/engine_scene.rs:example}}
+```
+
+The example pins three-d 0.19.0 and three-d-asset 0.10.0. Keep the camera
+and GPU model for the life of the window. Recreating them in the frame
+callback would repeat allocation and mesh upload.
+
 ## Render and Verify an Offscreen Frame {#offscreen}
 
 This bounded example implements a small rendering core with `wgpu`. It draws a red triangle over a blue clear color, copies a 64×64 RGBA texture into CPU-visible memory, and verifies an interior triangle pixel and an exterior background pixel. It exercises shader compilation, an actual render pass, GPU completion, and readback without opening a window.

@@ -31,7 +31,7 @@ version = "0.1.2"
 dependencies = [
  "accesskit 0.25.2",
  "accesskit_winit 0.34.2",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -373,7 +373,7 @@ dependencies = [
  "accesskit_unix 0.17.2",
  "accesskit_windows 0.29.2",
  "raw-window-handle 0.6.2",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -387,7 +387,7 @@ dependencies = [
  "accesskit_unix 0.21.1",
  "accesskit_windows 0.32.1",
  "raw-window-handle 0.6.2",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -402,7 +402,7 @@ dependencies = [
  "accesskit_unix 0.22.1",
  "accesskit_windows 0.34.0",
  "raw-window-handle 0.6.2",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -417,7 +417,7 @@ dependencies = [
  "accesskit_unix 0.24.1",
  "accesskit_windows 0.35.2",
  "raw-window-handle 0.6.2",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -638,7 +638,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c1c4f6f6f020f38a4ef079428b5c7009e913bf8102e4d65a90c6cb2cf93800eb"
 dependencies = [
  "alloy-primitives",
- "num_enum",
+ "num_enum 0.7.6",
  "phf 0.14.0",
 ]
 
@@ -1278,6 +1278,24 @@ dependencies = [
 
 [[package]]
 name = "android-activity"
+version = "0.4.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "64529721f27c2314ced0890ce45e469574a73e5e6fdd6e9da1860eb29285f5e0"
+dependencies = [
+ "android-properties",
+ "bitflags 1.3.2",
+ "cc",
+ "jni-sys 0.3.1",
+ "libc",
+ "log",
+ "ndk 0.7.0",
+ "ndk-context",
+ "ndk-sys 0.4.1+23.1.7779620",
+ "num_enum 0.6.1",
+]
+
+[[package]]
+name = "android-activity"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ee91c0c2905bae44f84bfa4e044536541df26b7703fd0888deeb9060fcc44289"
@@ -1293,7 +1311,7 @@ dependencies = [
  "ndk 0.8.0",
  "ndk-context",
  "ndk-sys 0.5.0+25.2.9519653",
- "num_enum",
+ "num_enum 0.7.6",
  "thiserror 1.0.69",
 ]
 
@@ -1312,7 +1330,7 @@ dependencies = [
  "ndk 0.9.0",
  "ndk-context",
  "ndk-sys 0.6.0+11769913",
- "num_enum",
+ "num_enum 0.7.6",
  "thiserror 2.0.21",
 ]
 
@@ -1462,6 +1480,15 @@ name = "api_bindings"
 version = "0.1.2"
 dependencies = [
  "flate2",
+]
+
+[[package]]
+name = "approx"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3f2a05fd1bd10b2527e20a2cd32d8873d115b8b39fe219ee25f42a8aca6ba278"
+dependencies = [
+ "num-traits",
 ]
 
 [[package]]
@@ -4000,7 +4027,7 @@ version = "0.20.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8d9f08cbe2876a34d0ad0534a5b18c4c77da2dafc1cefd744ece45c79e029196"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "bevy_math",
  "bevy_reflect",
  "itertools 0.14.0",
@@ -4292,7 +4319,7 @@ version = "0.20.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "17b8450e5d05ddd0cbba76e439c769f030a354a685630b919301071943487294"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "bevy_reflect",
  "derive_more",
  "glam 0.33.12",
@@ -4898,11 +4925,30 @@ dependencies = [
 
 [[package]]
 name = "block-sys"
+version = "0.1.0-beta.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0fa55741ee90902547802152aaf3f8e5248aab7e21468089560d4c8840561146"
+dependencies = [
+ "objc-sys 0.2.0-beta.2",
+]
+
+[[package]]
+name = "block-sys"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ae85a0696e7ea3b835a453750bf002770776609115e6d25c6d2ff28a8200f7e7"
 dependencies = [
- "objc-sys",
+ "objc-sys 0.3.5",
+]
+
+[[package]]
+name = "block2"
+version = "0.2.0-alpha.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8dd9e63c1744f755c2f60332b88de39d341e5e86239014ad839bd71c106dec42"
+dependencies = [
+ "block-sys 0.1.0-beta.1",
+ "objc2-encode 2.0.0-pre.2",
 ]
 
 [[package]]
@@ -4911,7 +4957,7 @@ version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "15b55663a85f33501257357e6421bb33e769d5c9ffb5ba0921c975a123e35e68"
 dependencies = [
- "block-sys",
+ "block-sys 0.2.1",
  "objc2 0.4.1",
 ]
 
@@ -5264,6 +5310,20 @@ dependencies = [
 
 [[package]]
 name = "calloop"
+version = "0.10.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "52e0d00eb1ea24371a97d2da6201c6747a633dc6dc1988ef503403b4c59504a8"
+dependencies = [
+ "bitflags 1.3.2",
+ "log",
+ "nix 0.25.1",
+ "slotmap",
+ "thiserror 1.0.69",
+ "vec_map",
+]
+
+[[package]]
+name = "calloop"
 version = "0.12.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fba7adb4dd5aa98e5553510223000e7148f621165ec5f9acd7113f6ca4995298"
@@ -5312,7 +5372,7 @@ dependencies = [
  "calloop 0.12.4",
  "rustix 0.38.44",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
 ]
 
 [[package]]
@@ -5324,7 +5384,7 @@ dependencies = [
  "calloop 0.13.0",
  "rustix 0.38.44",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
 ]
 
 [[package]]
@@ -5336,7 +5396,7 @@ dependencies = [
  "calloop 0.14.4",
  "rustix 1.1.6",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
 ]
 
 [[package]]
@@ -5548,6 +5608,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0ced0551234e87afee12411d535648dd89d2e7f34c78b753395567aff3d447ff"
 dependencies = [
  "libc",
+]
+
+[[package]]
+name = "cgmath"
+version = "0.18.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1a98d30140e3296250832bbaaff83b27dcd6fa3cc70fb6f1f3e5c9c0023b5317"
+dependencies = [
+ "approx 0.4.0",
+ "num-traits",
 ]
 
 [[package]]
@@ -6331,6 +6401,19 @@ name = "core-foundation-sys"
 version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "773648b94d0e5d620f64f280777445740e61fe701025087ec8b57f45c791888b"
+
+[[package]]
+name = "core-graphics"
+version = "0.22.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2581bbab3b8ffc6fcbd550bf46c355135d16e9ff2a6ea032ad6b9bf1d7efe4fb"
+dependencies = [
+ "bitflags 1.3.2",
+ "core-foundation 0.9.4",
+ "core-graphics-types 0.1.3",
+ "foreign-types 0.3.2",
+ "libc",
+]
 
 [[package]]
 name = "core-graphics"
@@ -9127,7 +9210,7 @@ dependencies = [
  "egui-wgpu 0.34.3",
  "egui-winit 0.34.3",
  "egui_glow 0.34.3",
- "glutin",
+ "glutin 0.32.3",
  "glutin-winit",
  "image 0.25.10",
  "js-sys",
@@ -9147,7 +9230,7 @@ dependencies = [
  "web-time",
  "wgpu 29.0.4",
  "windows-sys 0.61.2",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -9163,7 +9246,7 @@ dependencies = [
  "egui-wgpu 0.36.2",
  "egui-winit 0.36.2",
  "egui_glow 0.36.2",
- "glutin",
+ "glutin 0.32.3",
  "glutin-winit",
  "image 0.25.10",
  "js-sys",
@@ -9182,7 +9265,7 @@ dependencies = [
  "web-time",
  "wgpu 30.0.1",
  "windows-sys 0.61.2",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -9199,7 +9282,7 @@ dependencies = [
  "egui-winit 0.37.0",
  "egui_glow 0.37.0",
  "egui_system_font_provider",
- "glutin",
+ "glutin 0.32.3",
  "glutin-winit",
  "image 0.25.10",
  "js-sys",
@@ -9219,7 +9302,7 @@ dependencies = [
  "web-time",
  "wgpu 30.0.1",
  "windows-sys 0.61.2",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -9316,7 +9399,7 @@ dependencies = [
  "type-map",
  "web-time",
  "wgpu 29.0.4",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -9336,7 +9419,7 @@ dependencies = [
  "type-map",
  "web-time",
  "wgpu 30.0.1",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -9356,7 +9439,7 @@ dependencies = [
  "type-map",
  "web-time",
  "wgpu 30.0.1",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -9378,7 +9461,7 @@ dependencies = [
  "smithay-clipboard",
  "web-time",
  "webbrowser",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -9400,7 +9483,7 @@ dependencies = [
  "smithay-clipboard",
  "web-time",
  "webbrowser",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -9425,7 +9508,7 @@ dependencies = [
  "web-time",
  "webbrowser",
  "windows-sys 0.61.2",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -9466,11 +9549,11 @@ dependencies = [
  "egui 0.34.3",
  "glow 0.17.0",
  "log",
- "memoffset",
+ "memoffset 0.9.1",
  "profiling",
  "wasm-bindgen",
  "web-sys",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -9484,7 +9567,7 @@ dependencies = [
  "glow 0.17.0",
  "log",
  "profiling",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -9498,7 +9581,7 @@ dependencies = [
  "glow 0.17.0",
  "log",
  "profiling",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -10435,7 +10518,7 @@ version = "0.3.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "38e2275cc4e4fc009b0669731a1e5ab7ebf11f469eaede2bab9309a5b4d6057f"
 dependencies = [
- "memoffset",
+ "memoffset 0.9.1",
  "rustc_version 0.4.1",
 ]
 
@@ -10668,7 +10751,7 @@ dependencies = [
  "calloop 0.12.4",
  "cfg_aliases 0.1.1",
  "core-foundation 0.9.4",
- "core-graphics",
+ "core-graphics 0.23.2",
  "cursor-icon",
  "icrate",
  "js-sys",
@@ -10692,7 +10775,7 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-protocols 0.31.2",
  "wayland-protocols-plasma 0.2.0",
  "web-sys",
@@ -11348,7 +11431,7 @@ dependencies = [
  "fyrox-math",
  "instant",
  "js-sys",
- "memoffset",
+ "memoffset 0.9.1",
  "nalgebra 0.34.2",
  "notify",
  "num-traits",
@@ -11412,13 +11495,13 @@ dependencies = [
  "fyrox-core",
  "fyrox-graphics",
  "glow 0.17.0",
- "glutin",
+ "glutin 0.32.3",
  "glutin-winit",
  "raw-window-handle 0.6.2",
  "regex",
  "serde",
  "serde-wasm-bindgen",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -11427,7 +11510,7 @@ version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7291a70cf26e78133aeee099958a75e328975359b200070c90a3e806afa74902"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "base64 0.22.1",
  "bitflags 2.13.2",
  "bytemuck",
@@ -11472,7 +11555,7 @@ dependencies = [
  "uvgen",
  "walkdir",
  "wide 0.7.33",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -11887,7 +11970,7 @@ version = "0.7.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "777d18aa0f12f8b285331cd867133ee14422b3f023f6d388034c47d43e28786a"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "num-traits",
  "rayon",
  "rstar 0.10.0",
@@ -12018,7 +12101,7 @@ version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f26dff5bfc8b251e7f25786bfc31774d68dcfb6c0cbdc0bcd53211e10c81bd53"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "bitflags 2.13.2",
  "bytemuck",
  "crevice",
@@ -12029,7 +12112,7 @@ dependencies = [
  "image 0.25.10",
  "log",
  "lyon",
- "memoffset",
+ "memoffset 0.9.1",
  "mint",
  "num-traits",
  "ordered-float 5.5.1",
@@ -12038,7 +12121,7 @@ dependencies = [
  "serde",
  "toml 1.2.1+spec-1.1.0",
  "wgpu 29.0.4",
- "winit",
+ "winit 0.30.13",
  "zip 8.6.0",
 ]
 
@@ -12286,7 +12369,7 @@ version = "0.30.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "19fc433e8437a212d1b6f1e68c7824af3aed907da60afa994e7f542d18d12aa9"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "libm",
 ]
 
@@ -12312,7 +12395,7 @@ version = "0.33.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "37bfe73dc8ec21f54d181e5a60554327ec3f1c600c455a75ccbfc65d2106a6c4"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "bytemuck",
  "encase",
  "libm",
@@ -12332,7 +12415,7 @@ version = "0.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "375b4fa374a343fef990a18a6e0413d54bd990c6d7b8c7ada2d3c884275edea3"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "glam 0.30.10",
  "nalgebra 0.34.2",
  "num-traits",
@@ -12345,7 +12428,7 @@ version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "28d74079318e3a077bd3d15faa90fde24fa37bb9f157f92f853e6019a15fd413"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "glam 0.33.12",
  "nalgebra 0.35.0",
  "num-traits",
@@ -12789,6 +12872,29 @@ dependencies = [
 
 [[package]]
 name = "glutin"
+version = "0.30.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8fc93b03242719b8ad39fb26ed2b01737144ce7bd4bfc7adadcef806596760fe"
+dependencies = [
+ "bitflags 1.3.2",
+ "cfg_aliases 0.1.1",
+ "cgl",
+ "core-foundation 0.9.4",
+ "dispatch",
+ "glutin_egl_sys 0.5.1",
+ "glutin_glx_sys 0.4.0",
+ "glutin_wgl_sys 0.4.0",
+ "libloading 0.7.4",
+ "objc2 0.3.0-beta.3.patch-leaks.3",
+ "once_cell",
+ "raw-window-handle 0.5.2",
+ "wayland-sys 0.30.1",
+ "windows-sys 0.45.0",
+ "x11-dl",
+]
+
+[[package]]
+name = "glutin"
 version = "0.32.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "12124de845cacfebedff80e877bb37b5b75c34c5a4c89e47e1cdd67fb6041325"
@@ -12797,9 +12903,9 @@ dependencies = [
  "cfg_aliases 0.2.2",
  "cgl",
  "dispatch2",
- "glutin_egl_sys",
- "glutin_glx_sys",
- "glutin_wgl_sys",
+ "glutin_egl_sys 0.7.1",
+ "glutin_glx_sys 0.6.1",
+ "glutin_wgl_sys 0.6.1",
  "libloading 0.8.9",
  "objc2 0.6.5",
  "objc2-app-kit 0.3.2",
@@ -12807,7 +12913,7 @@ dependencies = [
  "objc2-foundation 0.3.2",
  "once_cell",
  "raw-window-handle 0.6.2",
- "wayland-sys",
+ "wayland-sys 0.31.11",
  "windows-sys 0.52.0",
  "x11-dl",
 ]
@@ -12819,9 +12925,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "85edca7075f8fc728f28cb8fbb111a96c3b89e930574369e3e9c27eb75d3788f"
 dependencies = [
  "cfg_aliases 0.2.2",
- "glutin",
+ "glutin 0.32.3",
  "raw-window-handle 0.6.2",
- "winit",
+ "winit 0.30.13",
+]
+
+[[package]]
+name = "glutin_egl_sys"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "af784eb26c5a68ec85391268e074f0aa618c096eadb5d6330b0911cf34fe57c5"
+dependencies = [
+ "gl_generator",
+ "windows-sys 0.45.0",
 ]
 
 [[package]]
@@ -12836,12 +12952,31 @@ dependencies = [
 
 [[package]]
 name = "glutin_glx_sys"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1b53cb5fe568964aa066a3ba91eac5ecbac869fb0842cd0dc9e412434f1a1494"
+dependencies = [
+ "gl_generator",
+ "x11-dl",
+]
+
+[[package]]
+name = "glutin_glx_sys"
 version = "0.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8a7bb2938045a88b612499fbcba375a77198e01306f52272e692f8c1f3751185"
 dependencies = [
  "gl_generator",
  "x11-dl",
+]
+
+[[package]]
+name = "glutin_wgl_sys"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ef89398e90033fc6bc65e9bd42fd29bbbfd483bda5b56dc5562f455550618165"
+dependencies = [
+ "gl_generator",
 ]
 
 [[package]]
@@ -12887,7 +13022,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7b1e288bfd2f6c0313f78bf5aa538356ad481a3bb97e9b7f93220ab0066c5992"
 dependencies = [
  "ab_glyph",
- "approx",
+ "approx 0.5.1",
  "xi-unicode",
 ]
 
@@ -13194,7 +13329,7 @@ dependencies = [
  "floem",
  "fontique 0.12.0",
  "fontique 0.8.0",
- "glutin",
+ "glutin 0.32.3",
  "glutin-winit",
  "gtk4",
  "i-slint-backend-testing",
@@ -13217,7 +13352,7 @@ dependencies = [
  "url",
  "vello 0.11.0",
  "wgpu 30.0.1",
- "winit",
+ "winit 0.30.13",
  "xilem",
 ]
 
@@ -13939,7 +14074,7 @@ dependencies = [
  "cfg_aliases 0.2.2",
  "drm",
  "gbm",
- "glutin",
+ "glutin 0.32.3",
  "i-slint-common",
  "i-slint-core",
  "i-slint-renderer-femtovg",
@@ -13996,7 +14131,7 @@ dependencies = [
  "cfg-if",
  "cfg_aliases 0.2.2",
  "futures",
- "glutin",
+ "glutin 0.32.3",
  "glutin-winit",
  "i-slint-common",
  "i-slint-core",
@@ -14024,7 +14159,7 @@ dependencies = [
  "web-sys",
  "webbrowser",
  "windows 0.62.2",
- "winit",
+ "winit 0.30.13",
  "zbus",
 ]
 
@@ -14062,7 +14197,7 @@ dependencies = [
  "itertools 0.15.0",
  "lyon_extra",
  "lyon_path",
- "num_enum",
+ "num_enum 0.7.6",
  "proc-macro2",
  "quote",
  "rowan",
@@ -14172,7 +14307,7 @@ dependencies = [
  "clru",
  "const-field-offset",
  "glow 0.18.0",
- "glutin",
+ "glutin 0.32.3",
  "i-slint-common",
  "i-slint-core",
  "i-slint-core-macros",
@@ -14469,7 +14604,7 @@ dependencies = [
  "wasm-bindgen-futures",
  "web-sys",
  "window_clipboard",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -14822,7 +14957,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "602b4e8a4cc3e98372b766cd184ab532999bc0e839b7469e759511ccabc65d77"
 dependencies = [
  "ab_glyph",
- "approx",
+ "approx 0.5.1",
  "getrandom 0.2.17",
  "image 0.25.10",
  "itertools 0.12.1",
@@ -16420,7 +16555,7 @@ version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "87b84e47ca7a9d63f5be24c104e216c8263bfada38080cbdfe1082e611a81fd3"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "ndarray 0.16.1",
  "num-traits",
  "rand 0.8.8",
@@ -17035,7 +17170,7 @@ dependencies = [
  "pollster 0.4.0",
  "tracing",
  "ui-events-winit",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -17151,6 +17286,15 @@ dependencies = [
 
 [[package]]
 name = "memmap2"
+version = "0.5.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "83faa42c0a078c393f6b29d5db232d8be22776a891f8f56e5284faee4a20b327"
+dependencies = [
+ "libc",
+]
+
+[[package]]
+name = "memmap2"
 version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6d28bba84adfe6646737845bc5ebbfa2c08424eb1c37e94a1fd2a82adb56a872"
@@ -17166,6 +17310,15 @@ checksum = "6b0ca1155a9ecc25aa12e8313a119f32edf0255fea2f44839c4ac0a12b2ac157"
 dependencies = [
  "libc",
  "stable_deref_trait",
+]
+
+[[package]]
+name = "memoffset"
+version = "0.6.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5aa361d4faea93603064a027415f07bd8e1d5c88c9fbf68bf56a285428fd79ce"
+dependencies = [
+ "autocfg",
 ]
 
 [[package]]
@@ -17275,8 +17428,8 @@ dependencies = [
  "tempfile",
  "wasm-bindgen",
  "wasm-bindgen-futures",
- "wayland-client",
- "wayland-cursor",
+ "wayland-client 0.31.15",
+ "wayland-cursor 0.31.14",
  "wayland-protocols 0.32.13",
  "web-sys",
  "web-time",
@@ -17327,6 +17480,18 @@ name = "mint"
 version = "0.5.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e53debba6bda7a793e5f99b8dacf19e626084f525f7829104ba9898f367d85ff"
+
+[[package]]
+name = "mio"
+version = "0.8.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a4a650543ca06a924e8b371db273b2756685faae30f8487da1b56505a8f78b0c"
+dependencies = [
+ "libc",
+ "log",
+ "wasi",
+ "windows-sys 0.48.0",
+]
 
 [[package]]
 name = "mio"
@@ -17724,7 +17889,7 @@ version = "0.30.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4fb2d0de08694bed883320212c18ee3008576bfe8c306f4c3c4a58b4876998be"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "matrixmultiply",
  "nalgebra-macros 0.1.0",
  "num-complex 0.4.6",
@@ -17740,7 +17905,7 @@ version = "0.32.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7b5c17de023a86f59ed79891b2e5d5a94c705dbe904a5b5c9c952ea6221b03e4"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "matrixmultiply",
  "num-complex 0.4.6",
  "num-rational 0.4.2",
@@ -17755,7 +17920,7 @@ version = "0.34.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "df76ea0ff5c7e6b88689085804d6132ded0ddb9de5ca5b8aeb9eeadc0508a70a"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "bytemuck",
  "glam 0.14.0",
  "glam 0.15.2",
@@ -17791,7 +17956,7 @@ version = "0.35.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "adc43a60c217b0c6ff46e47f26911015ad8d2e5a8be1af668c67e370d99a4346"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "glam 0.30.10",
  "glam 0.31.1",
  "glam 0.32.1",
@@ -17925,7 +18090,7 @@ version = "0.16.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "882ed72dce9365842bf196bdeedf5055305f11fc8c03dee7bb0194a6cad34841"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "matrixmultiply",
  "num-complex 0.4.6",
  "num-integer",
@@ -17942,7 +18107,7 @@ version = "0.17.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "520080814a7a6b4a6e9070823bb24b4531daac8c4627e08ba5de8c5ef2f2752d"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "matrixmultiply",
  "num-complex 0.4.6",
  "num-integer",
@@ -17980,6 +18145,20 @@ dependencies = [
 
 [[package]]
 name = "ndk"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "451422b7e4718271c8b5b3aadf5adedba43dc76312454b387e98fae0fc951aa0"
+dependencies = [
+ "bitflags 1.3.2",
+ "jni-sys 0.3.1",
+ "ndk-sys 0.4.1+23.1.7779620",
+ "num_enum 0.5.11",
+ "raw-window-handle 0.5.2",
+ "thiserror 1.0.69",
+]
+
+[[package]]
+name = "ndk"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2076a31b7010b17a38c01907c45b945e8f11495ee4dd588309718901b1f7a5b7"
@@ -17988,7 +18167,7 @@ dependencies = [
  "jni-sys 0.3.1",
  "log",
  "ndk-sys 0.5.0+25.2.9519653",
- "num_enum",
+ "num_enum 0.7.6",
  "raw-window-handle 0.5.2",
  "raw-window-handle 0.6.2",
  "thiserror 1.0.69",
@@ -18004,7 +18183,7 @@ dependencies = [
  "jni-sys 0.3.1",
  "log",
  "ndk-sys 0.6.0+11769913",
- "num_enum",
+ "num_enum 0.7.6",
  "raw-window-handle 0.6.2",
  "thiserror 1.0.69",
 ]
@@ -18020,6 +18199,15 @@ name = "ndk-sys"
 version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e1bcdd74c20ad5d95aacd60ef9ba40fdf77f767051040541df557b7a9b2a2121"
+
+[[package]]
+name = "ndk-sys"
+version = "0.4.1+23.1.7779620"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3cf2aae958bd232cac5069850591667ad422d263686d75b52a065f9badeee5a3"
+dependencies = [
+ "jni-sys 0.3.1",
+]
 
 [[package]]
 name = "ndk-sys"
@@ -18085,7 +18273,7 @@ version = "0.18.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "25eca0f2d7e7bc2f5f63e6f3b6b4dc5d119854c3090d93662c5f02d6fed17424"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "bytemuck",
  "byteordered",
  "either",
@@ -18096,6 +18284,31 @@ dependencies = [
  "num-traits",
  "quick-error",
  "rgb",
+]
+
+[[package]]
+name = "nix"
+version = "0.24.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fa52e972a9a719cecb6864fb88568781eb706bac2cd1d4f04a648542dbf78069"
+dependencies = [
+ "bitflags 1.3.2",
+ "cfg-if",
+ "libc",
+ "memoffset 0.6.5",
+]
+
+[[package]]
+name = "nix"
+version = "0.25.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f346ff70e7dbfd675fe90590b92d59ef2de15a8779ae305ebcbfd3f0caf59be4"
+dependencies = [
+ "autocfg",
+ "bitflags 1.3.2",
+ "cfg-if",
+ "libc",
+ "memoffset 0.6.5",
 ]
 
 [[package]]
@@ -18217,7 +18430,7 @@ dependencies = [
  "kqueue",
  "libc",
  "log",
- "mio",
+ "mio 1.2.4",
  "notify-types",
  "objc2-core-foundation",
  "objc2-core-services",
@@ -18434,12 +18647,54 @@ dependencies = [
 
 [[package]]
 name = "num_enum"
+version = "0.5.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1f646caf906c20226733ed5b1374287eb97e3c2a5c227ce668c1f2ce20ae57c9"
+dependencies = [
+ "num_enum_derive 0.5.11",
+]
+
+[[package]]
+name = "num_enum"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7a015b430d3c108a207fd776d2e2196aaf8b1cf8cf93253e3a097ff3085076a1"
+dependencies = [
+ "num_enum_derive 0.6.1",
+]
+
+[[package]]
+name = "num_enum"
 version = "0.7.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5d0bca838442ec211fa11de3a8b0e0e8f3a4522575b5c4c06ed722e005036f26"
 dependencies = [
- "num_enum_derive",
+ "num_enum_derive 0.7.6",
  "rustversion",
+]
+
+[[package]]
+name = "num_enum_derive"
+version = "0.5.11"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dcbff9bc912032c62bf65ef1d5aea88983b420f4f839db1e9b0c281a25c9c799"
+dependencies = [
+ "proc-macro-crate 1.3.1",
+ "proc-macro2",
+ "quote",
+ "syn 1.0.109",
+]
+
+[[package]]
+name = "num_enum_derive"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "96667db765a921f7b295ffee8b60472b686a51d4f21c2ee4ffdb94c7013b65a6"
+dependencies = [
+ "proc-macro-crate 1.3.1",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.119",
 ]
 
 [[package]]
@@ -18488,9 +18743,26 @@ dependencies = [
 
 [[package]]
 name = "objc-sys"
+version = "0.2.0-beta.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "df3b9834c1e95694a05a828b59f55fa2afec6288359cda67146126b3f90a55d7"
+
+[[package]]
+name = "objc-sys"
 version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cdb91bdd390c7ce1a8607f35f3ca7151b65afc0ff5ff3b34fa350f7d7c7e4310"
+
+[[package]]
+name = "objc2"
+version = "0.3.0-beta.3.patch-leaks.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7e01640f9f2cb1220bbe80325e179e532cb3379ebcd1bf2279d703c19fe3a468"
+dependencies = [
+ "block2 0.2.0-alpha.6",
+ "objc-sys 0.2.0-beta.2",
+ "objc2-encode 2.0.0-pre.2",
+]
 
 [[package]]
 name = "objc2"
@@ -18498,7 +18770,7 @@ version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "559c5a40fdd30eb5e344fbceacf7595a81e242529fb4e21cf5f43fb4f11ff98d"
 dependencies = [
- "objc-sys",
+ "objc-sys 0.3.5",
  "objc2-encode 3.0.0",
 ]
 
@@ -18508,7 +18780,7 @@ version = "0.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "19d5490aaf8f1d7cf7688dfa9b0ce07900e168852c45cd2c03f534dfd27cfd0b"
 dependencies = [
- "objc-sys",
+ "objc-sys 0.3.5",
  "objc2-encode 4.1.0",
 ]
 
@@ -18758,6 +19030,15 @@ dependencies = [
  "objc2-core-foundation",
  "objc2-core-graphics",
  "objc2-io-surface",
+]
+
+[[package]]
+name = "objc2-encode"
+version = "2.0.0-pre.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "abfcac41015b00a120608fdaa6938c44cb983fee294351cc4bac7638b4e50512"
+dependencies = [
+ "objc-sys 0.2.0-beta.2",
 ]
 
 [[package]]
@@ -19077,6 +19358,26 @@ checksum = "8d8c8b8e725ad26404d6896eb2f064294a0a7b4f1d9120210d85544684c4ca95"
 dependencies = [
  "is-wsl",
  "libc",
+]
+
+[[package]]
+name = "open-enum"
+version = "0.5.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dade6588e04b299d95e626bdb419f0331060c58f1ea585ee4cf1891e02141c47"
+dependencies = [
+ "open-enum-derive",
+]
+
+[[package]]
+name = "open-enum-derive"
+version = "0.5.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3ac466f80b5b36d07713a3d46c7a49d7ea666b857999d714ef0a1aaa1fb4ac6b"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.119",
 ]
 
 [[package]]
@@ -19603,7 +19904,7 @@ version = "0.26.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "61cb992a61782917b0876f313fceec5f50470fcf8b0e59865db816ff68cd6287"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "arrayvec",
  "bitflags 2.13.2",
  "downcast-rs 2.0.2",
@@ -19629,7 +19930,7 @@ version = "0.31.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fe1ba500175e957aaa27ddc92290ec8ff503d73331365443660816d6302e2a31"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "arrayvec",
  "bitflags 2.13.2",
  "downcast-rs 2.0.2",
@@ -19655,7 +19956,7 @@ version = "0.26.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8598fd0fa548d469b6ca4f9e90b446434fb879c12494a91e41c341d8f0f558d8"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "arrayvec",
  "bitflags 2.13.2",
  "downcast-rs 2.0.2",
@@ -21397,7 +21698,7 @@ version = "0.32.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "73edcbebd2c2a9eb0041e40b046b5136da32990fcd2ac76b9414ebff45908e18"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "arrayvec",
  "bit-vec 0.8.0",
  "bitflags 2.13.2",
@@ -21424,7 +21725,7 @@ version = "0.36.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b73d84c8e78f4fbd46fb5c800bbdb15cad6ef2bd517de6a4d31fe60edd838f8d"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "arrayvec",
  "bitflags 2.13.2",
  "glamx 0.3.1",
@@ -21446,7 +21747,7 @@ version = "0.32.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a576251c9dc2d6aff08470b7433096a04019c8b7bea9bbb7087f092c180feaea"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "arrayvec",
  "bit-vec 0.8.0",
  "bitflags 2.13.2",
@@ -21961,6 +22262,8 @@ dependencies = [
  "anyhow",
  "clap",
  "fontdue 0.9.5",
+ "three-d",
+ "three-d-asset",
  "ttf-parser 0.25.1",
 ]
 
@@ -22215,7 +22518,7 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-protocols 0.32.13",
  "web-sys",
  "windows-sys 0.61.2",
@@ -22385,7 +22688,7 @@ checksum = "14b574c58582fa59fa43a2feb6608b8744184659f08a2e0117e4b8224d95ed61"
 dependencies = [
  "countme",
  "hashbrown 0.14.5",
- "memoffset",
+ "memoffset 0.9.1",
  "rustc-hash 1.1.0",
  "text-size",
 ]
@@ -23129,6 +23432,19 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.119",
+]
+
+[[package]]
+name = "sctk-adwaita"
+version = "0.5.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cda4e97be1fd174ccc2aae81c8b694e803fa99b34e8fd0f057a9d70698e3ed09"
+dependencies = [
+ "ab_glyph",
+ "log",
+ "memmap2 0.5.10",
+ "smithay-client-toolkit 0.16.1",
+ "tiny-skia 0.8.4",
 ]
 
 [[package]]
@@ -24064,7 +24380,7 @@ version = "0.7.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2f3fd720c48c53cace224ae62bef1bbff363a70c68c4802a78b5cc6159618176"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "num-complex 0.4.6",
  "num-traits",
  "paste",
@@ -24077,7 +24393,7 @@ version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "061507c94fc6ab4ba1c9a0305018408e312e17c041eb63bef8aa726fa33aceae"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "num-complex 0.4.6",
  "num-traits",
  "paste",
@@ -24090,7 +24406,7 @@ version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c99284beb21666094ba2b75bbceda012e610f5479dfcc2d6e2426f53197ffd95"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "num-complex 0.4.6",
  "num-traits",
  "paste",
@@ -24103,7 +24419,7 @@ version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f1a7200d82ff1c7b4235efd12f11e2537a402c91cf83a5cb97ce80eef787fde7"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "num-complex 0.4.6",
  "num-traits",
  "wide 1.7.1",
@@ -24343,7 +24659,7 @@ version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8027848a0450ef3014a0d4a76c94ab7ac70bd3f94cf77ea5bacb437ef4686ba8"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "cfg-if",
  "ndarray 0.17.2",
  "num 0.4.3",
@@ -24371,6 +24687,25 @@ checksum = "e8e2fb0f499abb4d162f2bedad68f5ef91a1682b5a03596ddb67efd37768d100"
 
 [[package]]
 name = "smithay-client-toolkit"
+version = "0.16.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "870427e30b8f2cbe64bf43ec4b86e88fe39b0a84b3f15efd9c9c2d020bc86eb9"
+dependencies = [
+ "bitflags 1.3.2",
+ "calloop 0.10.6",
+ "dlib",
+ "lazy_static",
+ "log",
+ "memmap2 0.5.10",
+ "nix 0.24.3",
+ "pkg-config",
+ "wayland-client 0.29.5",
+ "wayland-cursor 0.29.5",
+ "wayland-protocols 0.29.5",
+]
+
+[[package]]
+name = "smithay-client-toolkit"
 version = "0.18.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "922fd3eeab3bd820d76537ce8f582b1cf951eceb5475c28500c7457d9d17f53a"
@@ -24385,12 +24720,12 @@ dependencies = [
  "rustix 0.38.44",
  "thiserror 1.0.69",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-csd-frame",
- "wayland-cursor",
+ "wayland-cursor 0.31.14",
  "wayland-protocols 0.31.2",
  "wayland-protocols-wlr 0.2.0",
- "wayland-scanner",
+ "wayland-scanner 0.31.11",
  "xkeysym",
 ]
 
@@ -24410,12 +24745,12 @@ dependencies = [
  "rustix 0.38.44",
  "thiserror 1.0.69",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-csd-frame",
- "wayland-cursor",
+ "wayland-cursor 0.31.14",
  "wayland-protocols 0.32.13",
  "wayland-protocols-wlr 0.3.12",
- "wayland-scanner",
+ "wayland-scanner 0.31.11",
  "xkeysym",
 ]
 
@@ -24435,14 +24770,14 @@ dependencies = [
  "rustix 1.1.6",
  "thiserror 2.0.21",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-csd-frame",
- "wayland-cursor",
+ "wayland-cursor 0.31.14",
  "wayland-protocols 0.32.13",
  "wayland-protocols-experimental",
  "wayland-protocols-misc",
  "wayland-protocols-wlr 0.3.12",
- "wayland-scanner",
+ "wayland-scanner 0.31.11",
  "xkeysym",
 ]
 
@@ -24521,8 +24856,8 @@ dependencies = [
  "tracing",
  "wasm-bindgen",
  "wayland-backend",
- "wayland-client",
- "wayland-sys",
+ "wayland-client 0.31.15",
+ "wayland-sys 0.31.11",
  "web-sys",
  "windows-sys 0.61.2",
  "x11rb",
@@ -24558,7 +24893,7 @@ dependencies = [
  "defmt",
  "delegate",
  "num-traits",
- "num_enum",
+ "num_enum 0.7.6",
  "paste",
  "serde",
  "thiserror 2.0.21",
@@ -24786,7 +25121,7 @@ version = "0.19.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c1837f9a1bd13dabbdbb04489c39451482d3cdd35a6e1a0d0f3570dea2b8c8be"
 dependencies = [
- "approx",
+ "approx 0.5.1",
  "nalgebra 0.35.0",
  "num-traits",
  "rand 0.10.4",
@@ -25943,6 +26278,40 @@ dependencies = [
 ]
 
 [[package]]
+name = "three-d"
+version = "0.19.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e73bbcfd30f69623bed55b90bcc084d316fab03a490c2087935c2aa287bd6995"
+dependencies = [
+ "cgmath",
+ "glow 0.17.0",
+ "glutin 0.30.10",
+ "instant",
+ "open-enum",
+ "raw-window-handle 0.5.2",
+ "serde",
+ "serde-wasm-bindgen",
+ "thiserror 2.0.21",
+ "three-d-asset",
+ "wasm-bindgen",
+ "web-sys",
+ "winit 0.28.7",
+]
+
+[[package]]
+name = "three-d-asset"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cd4e4e9bc05e4010efbaa0a0296870b2d28102171deffbf69de7b305cff2d47a"
+dependencies = [
+ "cgmath",
+ "half",
+ "thiserror 2.0.21",
+ "wavefront_obj",
+ "web-sys",
+]
+
+[[package]]
 name = "throw_error"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -26006,6 +26375,20 @@ dependencies = [
 
 [[package]]
 name = "tiny-skia"
+version = "0.8.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "df8493a203431061e901613751931f047d1971337153f96d0e5e363d6dbf6a67"
+dependencies = [
+ "arrayref",
+ "arrayvec",
+ "bytemuck",
+ "cfg-if",
+ "png 0.17.16",
+ "tiny-skia-path 0.8.4",
+]
+
+[[package]]
+name = "tiny-skia"
 version = "0.11.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "83d13394d44dae3207b52a326c0c85a8bf87f1541f23b0d143811088497b09ab"
@@ -26032,6 +26415,17 @@ dependencies = [
  "log",
  "png 0.18.1",
  "tiny-skia-path 0.12.0",
+]
+
+[[package]]
+name = "tiny-skia-path"
+version = "0.8.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "adbfb5d3f3dd57a0e11d12f4f13d4ebbbc1b5c15b7ab0a156d030b21da5f677c"
+dependencies = [
+ "arrayref",
+ "bytemuck",
+ "strict-num",
 ]
 
 [[package]]
@@ -26158,7 +26552,7 @@ checksum = "b52fd3255258d26fac7264ab5a76b53c13367136dc011d3d6ad4f8ed070396a3"
 dependencies = [
  "bytes",
  "libc",
- "mio",
+ "mio 1.2.4",
  "parking_lot",
  "pin-project-lite",
  "signal-hook-registry",
@@ -26907,7 +27301,7 @@ version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f2f6fb2847f6742cd76af783a2a2c49e9375d0a111c7bef6f71cd9e738c72d6e"
 dependencies = [
- "memoffset",
+ "memoffset 0.9.1",
  "tempfile",
  "windows-sys 0.61.2",
 ]
@@ -26945,7 +27339,7 @@ checksum = "e3ef6b086ceb9e4bbf0148e494959b18cf08de7604f8d8e958a94e73fc2d531e"
 dependencies = [
  "ui-events",
  "web-time",
- "winit",
+ "winit 0.30.13",
 ]
 
 [[package]]
@@ -28226,7 +28620,7 @@ dependencies = [
  "indexmap 2.14.2",
  "itertools 0.15.0",
  "more-asserts",
- "num_enum",
+ "num_enum 0.7.6",
  "rkyv",
  "sha2 0.11.1",
  "target-lexicon",
@@ -28689,6 +29083,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "wavefront_obj"
+version = "11.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "934504ea79927c25f18e980053b64269490284129b327334fc2591daf1539b9c"
+
+[[package]]
 name = "wayland-backend"
 version = "0.3.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -28699,7 +29099,23 @@ dependencies = [
  "rustix 1.1.6",
  "scoped-tls",
  "smallvec",
- "wayland-sys",
+ "wayland-sys 0.31.11",
+]
+
+[[package]]
+name = "wayland-client"
+version = "0.29.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3f3b068c05a039c9f755f881dc50f01732214f5685e379829759088967c46715"
+dependencies = [
+ "bitflags 1.3.2",
+ "downcast-rs 1.2.1",
+ "libc",
+ "nix 0.24.3",
+ "scoped-tls",
+ "wayland-commons",
+ "wayland-scanner 0.29.5",
+ "wayland-sys 0.29.5",
 ]
 
 [[package]]
@@ -28711,7 +29127,19 @@ dependencies = [
  "bitflags 2.13.2",
  "rustix 1.1.6",
  "wayland-backend",
- "wayland-scanner",
+ "wayland-scanner 0.31.11",
+]
+
+[[package]]
+name = "wayland-commons"
+version = "0.29.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8691f134d584a33a6606d9d717b95c4fa20065605f798a3f350d78dced02a902"
+dependencies = [
+ "nix 0.24.3",
+ "once_cell",
+ "smallvec",
+ "wayland-sys 0.29.5",
 ]
 
 [[package]]
@@ -28727,13 +29155,36 @@ dependencies = [
 
 [[package]]
 name = "wayland-cursor"
+version = "0.29.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6865c6b66f13d6257bef1cd40cbfe8ef2f150fb8ebbdb1e8e873455931377661"
+dependencies = [
+ "nix 0.24.3",
+ "wayland-client 0.29.5",
+ "xcursor",
+]
+
+[[package]]
+name = "wayland-cursor"
 version = "0.31.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4a52d18780be9b1314328a3de5f930b73d2200112e3849ca6cb11822793fb34d"
 dependencies = [
  "rustix 1.1.6",
- "wayland-client",
+ "wayland-client 0.31.15",
  "xcursor",
+]
+
+[[package]]
+name = "wayland-protocols"
+version = "0.29.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b950621f9354b322ee817a23474e479b34be96c2e909c14f7bc0100e9a970bc6"
+dependencies = [
+ "bitflags 1.3.2",
+ "wayland-client 0.29.5",
+ "wayland-commons",
+ "wayland-scanner 0.29.5",
 ]
 
 [[package]]
@@ -28744,8 +29195,8 @@ checksum = "8f81f365b8b4a97f422ac0e8737c438024b5951734506b0e1d775c73030561f4"
 dependencies = [
  "bitflags 2.13.2",
  "wayland-backend",
- "wayland-client",
- "wayland-scanner",
+ "wayland-client 0.31.15",
+ "wayland-scanner 0.31.11",
 ]
 
 [[package]]
@@ -28756,8 +29207,8 @@ checksum = "23d0c813de3daa2ed6520af85a3bd49b0e722a3078506899aa9686fea58dc4b6"
 dependencies = [
  "bitflags 2.13.2",
  "wayland-backend",
- "wayland-client",
- "wayland-scanner",
+ "wayland-client 0.31.15",
+ "wayland-scanner 0.31.11",
 ]
 
 [[package]]
@@ -28768,9 +29219,9 @@ checksum = "40a1f863128dcaaec790d7b4b396cc9b9a7a079e878e18c47e6c2d2c5a8dcbb1"
 dependencies = [
  "bitflags 2.13.2",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-protocols 0.32.13",
- "wayland-scanner",
+ "wayland-scanner 0.31.11",
 ]
 
 [[package]]
@@ -28781,9 +29232,9 @@ checksum = "6e9567599ef23e09b8dad6e429e5738d4509dfc46b3b21f32841a304d16b29c8"
 dependencies = [
  "bitflags 2.13.2",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-protocols 0.32.13",
- "wayland-scanner",
+ "wayland-scanner 0.31.11",
 ]
 
 [[package]]
@@ -28794,9 +29245,9 @@ checksum = "23803551115ff9ea9bce586860c5c5a971e360825a0309264102a9495a5ff479"
 dependencies = [
  "bitflags 2.13.2",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-protocols 0.31.2",
- "wayland-scanner",
+ "wayland-scanner 0.31.11",
 ]
 
 [[package]]
@@ -28807,9 +29258,9 @@ checksum = "2b6d8cf1eb2c1c31ed1f5643c88a6e53538129d4af80030c8cabd1f9fa884d91"
 dependencies = [
  "bitflags 2.13.2",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-protocols 0.32.13",
- "wayland-scanner",
+ "wayland-scanner 0.31.11",
 ]
 
 [[package]]
@@ -28820,9 +29271,9 @@ checksum = "ad1f61b76b6c2d8742e10f9ba5c3737f6530b4c243132c2a2ccc8aa96fe25cd6"
 dependencies = [
  "bitflags 2.13.2",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-protocols 0.31.2",
- "wayland-scanner",
+ "wayland-scanner 0.31.11",
 ]
 
 [[package]]
@@ -28833,9 +29284,20 @@ checksum = "eb04e52f7836d7c7976c78ca0250d61e33873c34156a2a1fc9474828ec268234"
 dependencies = [
  "bitflags 2.13.2",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-protocols 0.32.13",
- "wayland-scanner",
+ "wayland-scanner 0.31.11",
+]
+
+[[package]]
+name = "wayland-scanner"
+version = "0.29.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8f4303d8fa22ab852f789e75a967f0a2cdc430a607751c0499bada3e451cbd53"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "xml-rs",
 ]
 
 [[package]]
@@ -28847,6 +29309,29 @@ dependencies = [
  "proc-macro2",
  "quick-xml 0.41.0",
  "quote",
+]
+
+[[package]]
+name = "wayland-sys"
+version = "0.29.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "be12ce1a3c39ec7dba25594b97b42cb3195d54953ddb9d3d95a7c3902bc6e9d4"
+dependencies = [
+ "dlib",
+ "lazy_static",
+ "pkg-config",
+]
+
+[[package]]
+name = "wayland-sys"
+version = "0.30.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "96b2a02ac608e07132978689a6f9bf4214949c85998c247abadd4f4129b1aa06"
+dependencies = [
+ "dlib",
+ "lazy_static",
+ "log",
+ "pkg-config",
 ]
 
 [[package]]
@@ -29455,7 +29940,7 @@ dependencies = [
  "core-graphics-types 0.1.3",
  "d3d12",
  "glow 0.13.1",
- "glutin_wgl_sys",
+ "glutin_wgl_sys 0.6.1",
  "gpu-alloc",
  "gpu-allocator 0.26.0",
  "gpu-descriptor",
@@ -29501,7 +29986,7 @@ dependencies = [
  "cfg_aliases 0.2.2",
  "core-graphics-types 0.2.0",
  "glow 0.16.0",
- "glutin_wgl_sys",
+ "glutin_wgl_sys 0.6.1",
  "gpu-alloc",
  "gpu-allocator 0.27.0",
  "gpu-descriptor",
@@ -29549,7 +30034,7 @@ dependencies = [
  "cfg_aliases 0.2.2",
  "core-graphics-types 0.2.0",
  "glow 0.16.0",
- "glutin_wgl_sys",
+ "glutin_wgl_sys 0.6.1",
  "gpu-alloc",
  "gpu-allocator 0.27.0",
  "gpu-descriptor",
@@ -29597,7 +30082,7 @@ dependencies = [
  "cfg-if",
  "cfg_aliases 0.2.2",
  "glow 0.17.0",
- "glutin_wgl_sys",
+ "glutin_wgl_sys 0.6.1",
  "gpu-allocator 0.28.0",
  "gpu-descriptor",
  "hashbrown 0.16.1",
@@ -29626,7 +30111,7 @@ dependencies = [
  "smallvec",
  "thiserror 2.0.21",
  "wasm-bindgen",
- "wayland-sys",
+ "wayland-sys 0.31.11",
  "web-sys",
  "wgpu-naga-bridge 29.0.4",
  "wgpu-types 29.0.4",
@@ -29651,7 +30136,7 @@ dependencies = [
  "cfg-if",
  "cfg_aliases 0.2.2",
  "glow 0.17.0",
- "glutin_wgl_sys",
+ "glutin_wgl_sys 0.6.1",
  "gpu-allocator 0.28.0",
  "hashbrown 0.17.1",
  "js-sys",
@@ -29682,7 +30167,7 @@ dependencies = [
  "static_assertions",
  "thiserror 2.0.21",
  "wasm-bindgen",
- "wayland-sys",
+ "wayland-sys 0.31.11",
  "web-sys",
  "wgpu-naga-bridge 30.0.1",
  "wgpu-types 30.0.1",
@@ -30514,6 +30999,41 @@ checksum = "589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec"
 
 [[package]]
 name = "winit"
+version = "0.28.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9596d90b45384f5281384ab204224876e8e8bf7d58366d9b795ad99aa9894b94"
+dependencies = [
+ "android-activity 0.4.3",
+ "bitflags 1.3.2",
+ "cfg_aliases 0.1.1",
+ "core-foundation 0.9.4",
+ "core-graphics 0.22.3",
+ "dispatch",
+ "instant",
+ "libc",
+ "log",
+ "mio 0.8.11",
+ "ndk 0.7.0",
+ "objc2 0.3.0-beta.3.patch-leaks.3",
+ "once_cell",
+ "orbclient",
+ "percent-encoding",
+ "raw-window-handle 0.5.2",
+ "redox_syscall 0.3.5",
+ "sctk-adwaita 0.5.4",
+ "smithay-client-toolkit 0.16.1",
+ "wasm-bindgen",
+ "wayland-client 0.29.5",
+ "wayland-commons",
+ "wayland-protocols 0.29.5",
+ "wayland-scanner 0.29.5",
+ "web-sys",
+ "windows-sys 0.45.0",
+ "x11-dl",
+]
+
+[[package]]
+name = "winit"
 version = "0.30.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a6755fa58a9f8350bd1e472d4c3fcc25f824ec358933bba33306d0b63df5978d"
@@ -30528,7 +31048,7 @@ dependencies = [
  "cfg_aliases 0.2.2",
  "concurrent-queue",
  "core-foundation 0.9.4",
- "core-graphics",
+ "core-graphics 0.23.2",
  "cursor-icon",
  "dpi",
  "js-sys",
@@ -30554,7 +31074,7 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-protocols 0.32.13",
  "wayland-protocols-plasma 0.3.12",
  "web-sys",
@@ -30677,7 +31197,7 @@ dependencies = [
  "thiserror 2.0.21",
  "tree_magic_mini",
  "wayland-backend",
- "wayland-client",
+ "wayland-client 0.31.15",
  "wayland-protocols 0.32.13",
  "wayland-protocols-wlr 0.3.12",
 ]
@@ -30840,7 +31360,7 @@ dependencies = [
  "tokio",
  "tracing",
  "vello 0.6.0",
- "winit",
+ "winit 0.30.13",
  "xilem_core",
 ]
 

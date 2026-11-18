@@ -44,7 +44,7 @@ just cargo test --manifest-path later/crates/Cargo.toml --locked -p other --feat
 | [Audio](src/categories/multimedia_audio/index.md) | WAV, synthesis, resampling, parsing, and the bundled synthetic HRIR/HRTF convolution recipe. | Host tests and a one-second Windows CPAL output-stream test passed. MIDI device communication and audible quality remain distinct from pure decoding and successful streaming: [#2356](https://github.com/john-cd/rust_howto/issues/2356). |
 | [Rendering](src/categories/rendering/index.md) | The distinct fontdue glyph recipe and remaining engine catalogs. Raster/vector, tessellation, SVG, and projection recipes are already in published Graphics; staged duplicates were removed under #2361. | The earlier host tests passed before duplicate retirement. Do not promote catalog descriptions as proof that the corresponding windowed engines were run: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
 | [Graphics APIs](src/categories/rendering_graphics-api/index.md) | Adapter discovery, wgpu compute/readback, shader validation/translation, and the new offscreen triangle render. | 16 tests passed with ignored GPU tests enabled. The triangle's center/background pixels passed on both Vulkan and DirectX 12 using Intel Iris Xe. OpenGL helpers without a current context and raw Vulkan discovery do not prove a complete scene: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
-| [Rendering Engines](src/categories/rendering_engine/index.md) | The expanded engine-responsibility guide and bounded offscreen rendering core. | The new example has GPU pixel checks, strict Clippy, and a Rust 1.98.1 compile check. It uses wgpu directly; a full engine-owned scene/material/window lifecycle remains [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
+| [Rendering Engines](src/categories/rendering_engine/index.md) | The expanded engine-responsibility guide and bounded offscreen rendering core. | The wgpu example has offscreen GPU pixel checks. The separate three-d example passed the Linux OpenGL window lifecycle and pixel checks in [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
 | [Game Engines](src/categories/game-engines/index.md) | The tested Macroquad and ggez game loops on Windows. | Unit tests passed, and native loops presented three and two frames respectively before exiting. Bevy/Fyrox, input/visual inspection, and other targets were not validated: [#2357](https://github.com/john-cd/rust_howto/issues/2357), [#2359](https://github.com/john-cd/rust_howto/issues/2359). |
 
 ### Macroquad Desktop Keyboard Check
@@ -56,6 +56,17 @@ first marker, R restarted the round, and Escape exited with status zero.
 The gold marker's horizontal pixel centroid in three X11 window captures
 moved from 267 to 399 and returned to 267 on restart. This exercised the
 keyboard and rendering paths with the scripted game smoke mode disabled.
+
+### Windowed three-d Scene
+
+For [#2357](https://github.com/john-cd/rust_howto/issues/2357), Windows strict
+Clippy and both asset tests passed with Rust 1.100.0. The locked example also
+ran on Debian Trixie with Xvfb, Openbox, and Mesa OpenGL software rendering.
+A missing OBJ failed before window creation and identified the path. Window
+captures at 640 × 480 and after resizing, minimizing, and restoring at
+800 × 500 both showed a red center pixel and black corner pixel. The window
+closed through Alt+F4 and the process exited successfully. This exercises
+one Linux window backend with software rendering.
 
 ### Linux ALSA Output
 
