@@ -20,11 +20,6 @@ categories = ["development-tools"]
 autolib = false
 
 [[example]]
-name = "architecture"
-path = "examples/architecture/main.rs"
-test = true
-
-[[example]]
 name = "cloud"
 path = "examples/cloud/main.rs"
 test = true
@@ -174,8 +169,6 @@ schemars = "1.2.3"
 serde = { version = "1.0.229", features = ["derive"] }
 # A JSON serialization file format
 serde_json = "1.0.154" # Converts Arrow JSON output back into Serde rows, and parses Lambda payloads.
-# Compile Time Dependency Injection for Rust
-shaku = "0.6.3"
 # Process command line according to parsing rules of UNIX shell
 shell-words = "1.1.1"
 # Shell-like expansions in strings

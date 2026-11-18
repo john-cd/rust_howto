@@ -86,7 +86,7 @@ For system-specific APIs, use the smallest platform-specific layer possible. The
 - [GUI](../../categories/gui/index.md).
 - [Embedded Systems](../../categories/embedded/index.md).
 - [WebAssembly](../../categories/wasm/index.md).
-- [Software Architecture](../architecture/index.md).
+- [Software Architecture](https://github.com/john-cd/rust_howto/blob/c9d457b66ed12377a6ff5e0e1377af71cc9dde0b/bk/src/other/architecture/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
