@@ -7,16 +7,16 @@
 // capnp binary version: 1.0.1
 // capnpc crate version: 0.27.0
 
-/// Provides my struct behavior for the foo capnp component.
+/// Generated reader, builder, and schema metadata for the MyStruct message.
 pub mod my_struct {
-    /// Data for owned operations, including impl and generic.
+    /// Zero-sized schema marker associating MyStruct with its reader and builder types.
     #[derive(Copy, Clone)]
     pub struct Owned(
         /// Zero-sized payload used to construct the generated ownership marker.
         (),
     );
     impl ::capnp::introspect::Introspect for Owned {
-        /// Handles the introspect behavior for this component.
+        /// Returns the generated schema descriptor for dynamic Cap'n Proto inspection.
         fn introspect() -> ::capnp::introspect::Type {
             ::capnp::introspect::TypeVariant::Struct(::capnp::introspect::RawBrandedStructSchema {
                 generic: &_private::RAW_SCHEMA,
@@ -44,14 +44,14 @@ pub mod my_struct {
         type Pipeline = Pipeline;
     }
 
-    /// Data for reader operations, including reader.
+    /// Borrowed read-only view of a MyStruct message within the containing message arena.
     pub struct Reader<'a> {
         /// Reader used to access the decoded Capn Proto message.
         reader: ::capnp::private::layout::StructReader<'a>,
     }
     impl ::core::marker::Copy for Reader<'_> {}
     impl ::core::clone::Clone for Reader<'_> {
-        /// Handles the clone behavior for this component.
+        /// Copies the borrowed reader handle without duplicating the message data.
         fn clone(&self) -> Self {
             *self
         }
@@ -114,7 +114,7 @@ pub mod my_struct {
     }
 
     impl<'a> ::capnp::traits::Imbue<'a> for Reader<'a> {
-        /// Handles the imbue behavior for this component.
+        /// Associates the reader with the capability table used to resolve capability pointers.
         fn imbue(&mut self, cap_table: &'a ::capnp::private::layout::CapTable) {
             self.reader
                 .imbue(::capnp::private::layout::CapTableReader::from_ref(
@@ -196,7 +196,7 @@ pub mod my_struct {
     }
 
     impl<'a> ::capnp::traits::ImbueMut<'a> for Builder<'a> {
-        /// Handles the imbue mut behavior for this component.
+        /// Associates the builder with a mutable capability table for capability pointers.
         fn imbue_mut(&mut self, cap_table: &'a mut ::capnp::private::layout::CapTable) {
             self.builder
                 .imbue(::capnp::private::layout::CapTableBuilder::from_ref(
@@ -308,7 +308,7 @@ pub mod my_struct {
         }
     }
 
-    /// Data for pipeline operations, including typeless.
+    /// Typed wrapper around a capability pipeline for this generated message schema.
     pub struct Pipeline {
         /// typeless value tracked by this type.
         _typeless: ::capnp::any_pointer::Pipeline,
