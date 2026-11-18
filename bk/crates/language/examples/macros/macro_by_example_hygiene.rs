@@ -30,6 +30,7 @@ macro_rules! bar {
 /// Defines a function `f`, which is visible where the macro is called.
 macro_rules! baz {
     () => {
+        /// No-op function introduced by the macro and callable by its caller.
         fn f() {}
     };
 }

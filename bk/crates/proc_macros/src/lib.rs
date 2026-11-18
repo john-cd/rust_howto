@@ -78,6 +78,7 @@ pub fn debug_print_derive(input: proc_macro::TokenStream) -> proc_macro::TokenSt
     // elements.
     let expanded = quote::quote! {
         impl #impl_generics DebugPrint for #name #ty_generics #where_clause {
+            /// Prints the concrete type name and its Debug representation.
             fn debug_print(&self) {
                 // `stringify!(#name)` converts the identifier name into a string literal.
                 println!("Debugging {}: {self:?}", stringify!(#name));

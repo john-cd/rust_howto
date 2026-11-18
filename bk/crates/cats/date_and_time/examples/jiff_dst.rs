@@ -5,6 +5,15 @@ use jiff::civil::date;
 use jiff::tz::TimeZone;
 
 // ANCHOR: example
+/// Demonstrates explicit choices for repeated/skipped wall times and DST-aware arithmetic.
+///
+/// The fall-back time has two valid offsets; the spring-forward time has none.
+/// Calendar days preserve wall-clock midnight, whereas 24 elapsed hours can
+/// cross the DST transition and end at a different local hour.
+///
+/// # Errors
+///
+/// Propagates time-zone lookup, disambiguation, and checked arithmetic failures.
 fn schedule() -> Result<(), jiff::Error> {
     // The bundled IANA database makes this fixture independent of the host's zoneinfo.
     let zone = TimeZone::get("America/New_York")?;
@@ -54,6 +63,7 @@ fn schedule() -> Result<(), jiff::Error> {
 }
 // ANCHOR_END: example
 
+/// Runs the daylight-saving disambiguation and calendar arithmetic assertions.
 fn main() -> Result<(), jiff::Error> {
     schedule()
 }
