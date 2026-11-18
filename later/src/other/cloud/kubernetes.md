@@ -17,7 +17,8 @@ The recipe has three layers:
 1. The `Echo` custom resource and its CRD. The example prints the CRD as
    JSON and does not connect to a cluster.
 2. A pure function from the spec to the desired `Deployment`, unit-tested without a cluster.
-3. The `Controller` loop with `reconcile` and `error_policy`. Its test is `#[ignore]`d because it needs a cluster ([kind](https://kind.sigs.k8s.io/)↗ or [k3d](https://k3d.io/)↗).
+3. The `Controller` loop with `reconcile` and `error_policy`. It runs only when
+   you supply `--kubeconfig`.
 
 From the repository root, generate the CRD with this command.
 
@@ -26,14 +27,48 @@ just cargo run --manifest-path later/crates/Cargo.toml --locked -p other --examp
 ```
 
 Check that `kind` is `CustomResourceDefinition` and that `metadata.name`
-is `echos.example.com`. Inspect this output
-before applying it. For cluster validation, use a disposable kind or k3d
-cluster and explicitly select its kubectl context. The CRD is cluster-wide
-even though each `Echo` resource is namespaced. The ignored controller test
-starts a long-running watcher. Confirm a test resource produces a Deployment
-and updated status, then stop the watcher and tear down the disposable cluster.
-Generating the CRD and checking the desired Deployment offline establish
-different behavior from an actual reconciliation.
+is `echos.example.com`.
+
+## Verify Reconciliation in a Disposable Cluster
+
+Use [kind](https://kind.sigs.k8s.io/) with a running Docker engine and `kubectl`.
+From the repository root, create a test cluster and direct each command to its
+own kubeconfig file. The CRD is cluster-wide even though each `Echo` is namespaced.
+
+```sh
+kind create cluster --name howto-echo --kubeconfig echo-kubeconfig.yaml
+cargo run --quiet --manifest-path later/crates/Cargo.toml --locked -p other --example cloud -- kubernetes > echo-crd.json
+kubectl --kubeconfig echo-kubeconfig.yaml apply -f echo-crd.json
+kubectl --kubeconfig echo-kubeconfig.yaml wait --for=condition=Established crd/echos.example.com --timeout=45s
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p other --example cloud -- kubernetes --kubeconfig echo-kubeconfig.yaml
+```
+
+With the controller running, save the following as `echo.yaml`.
+
+```yaml
+apiVersion: example.com/v1
+kind: Echo
+metadata:
+  name: staged-echo
+  namespace: default
+spec:
+  message: hello from staged Kubernetes
+  replicas: 1
+```
+
+In a second terminal, apply it and wait for the controller to report a ready replica.
+Deleting the `Echo` should also remove the Deployment it owns.
+
+```sh
+kubectl --kubeconfig echo-kubeconfig.yaml apply -f echo.yaml
+kubectl --kubeconfig echo-kubeconfig.yaml wait '--for=jsonpath={.status.ready_replicas}=1' echo/staged-echo --timeout=120s
+kubectl --kubeconfig echo-kubeconfig.yaml delete echo staged-echo --cascade=foreground --wait=true --timeout=45s
+kubectl --kubeconfig echo-kubeconfig.yaml wait --for=delete deployment/staged-echo --timeout=45s
+```
+
+The second wait allows time for the cluster to garbage collect the Deployment.
+Stop the controller with Ctrl+C and
+run `kind delete cluster --name howto-echo --kubeconfig echo-kubeconfig.yaml`.
 
 ## Controller Design
 

@@ -2,6 +2,8 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+use std::path::PathBuf;
+
 use anyhow::Result;
 use clap::Parser;
 use clap::Subcommand;
@@ -62,9 +64,13 @@ enum Commands {
     #[command(name = "aws_sdk")]
     AwsSdk,
 
-    /// Runs the `kubernetes` example.
+    /// Prints the CRD or starts the controller against an explicit kubeconfig.
     #[command(name = "kubernetes")]
-    Kubernetes,
+    Kubernetes {
+        /// Starts the controller with this kubeconfig file.
+        #[arg(long, value_name = "FILE")]
+        kubeconfig: Option<PathBuf>,
+    },
 
     /// Runs the `shuttle` example.
     #[command(name = "shuttle")]
@@ -84,7 +90,7 @@ fn dispatch(cli: Cli) -> Result<()> {
             Commands::AwsMessageBus => aws_message_bus::run()?,
             Commands::AwsSharedConfig => aws_shared_config::run()?,
             Commands::AwsSdk => aws_sdk::run()?,
-            Commands::Kubernetes => kubernetes::run()?,
+            Commands::Kubernetes { kubeconfig } => kubernetes::run(kubeconfig.as_deref())?,
             Commands::Shuttle => shuttle::run(),
         }
     }

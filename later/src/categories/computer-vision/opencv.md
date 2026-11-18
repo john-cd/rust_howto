@@ -4,7 +4,7 @@
 
 {{#include opencv.incl.md}}
 
-The [`opencv`][c~opencv~docs] crate generates Rust bindings to the native OpenCV library. Install the native SDK, its development metadata, and libclang; the crate alone does not supply all system libraries. On Ubuntu, the examples need `libopencv-dev`, `clang`, `libclang-dev`, and `pkg-config`. This workspace enables them on Linux behind its optional `opencv` feature.
+The [`opencv`][c~opencv~docs] crate generates Rust bindings to the native OpenCV library. Install the SDK, its development metadata, and libclang. On Debian or Ubuntu, install `libopencv-dev`, `clang`, `libclang-dev`, and `pkg-config`. This workspace enables the native examples on Linux behind its optional `opencv` feature. The grayscale, Canny, and file round trip checks passed against OpenCV 4.10.0 on Debian 13.
 
 ## Load an Image and Convert to Grayscale {#opencv}
 
@@ -43,14 +43,14 @@ Set `OPENCV_HAAR_CASCADE` to the downloaded model's path before running this rec
 From `later/crates` on a configured Linux host:
 
 ```sh
-cargo run -p computer_vision --example opencv --features opencv
-cargo test -p computer_vision --all-targets --features opencv
+cargo run --locked -p computer_vision --example opencv --features opencv
+cargo test --locked -p computer_vision --example opencv --features opencv
 ```
 
 To include the classifier test after selecting a model:
 
 ```sh
-OPENCV_HAAR_CASCADE=/path/to/haarcascade_frontalface_default.xml cargo test -p computer_vision --all-targets --features opencv -- --include-ignored
+OPENCV_HAAR_CASCADE=/path/to/haarcascade_frontalface_default.xml cargo test --locked -p computer_vision --example opencv --features opencv -- --include-ignored
 ```
 
 The complete file-processing example generates an input image, reads it, converts it, detects edges, and writes the result. File and native-library errors are propagated:

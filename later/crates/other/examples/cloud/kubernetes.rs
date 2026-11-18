@@ -1,7 +1,3 @@
-#![cfg_attr(
-    not(test),
-    expect(dead_code, reason = "needs a Kubernetes cluster; the tests use mocks")
-)]
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
@@ -9,6 +5,7 @@
 //! a pure function that computes the desired `Deployment`, and a controller
 //! loop that applies it and reports the status.
 
+use std::path::Path;
 use std::sync::Arc;
 use std::time::Duration;
 
@@ -22,6 +19,8 @@ use kube::Resource as _;
 use kube::ResourceExt as _;
 use kube::api::Patch;
 use kube::api::PatchParams;
+use kube::config::KubeConfigOptions;
+use kube::config::Kubeconfig;
 use kube::runtime::controller::Action;
 use kube::runtime::controller::Controller;
 use kube::runtime::watcher::Config;
@@ -154,18 +153,27 @@ fn error_policy(_echo: Arc<Echo>, error: &ReconcileError, _ctx: Arc<Context>) ->
     Action::requeue(Duration::from_secs(15))
 }
 
-/// Runs the controller against the current cluster (kubeconfig).
-async fn run_controller() -> anyhow::Result<()> {
-    let client = Client::try_default().await?;
+/// Watches Echo resources using the explicitly supplied kubeconfig.
+async fn run_controller(path: &Path) -> anyhow::Result<()> {
+    // Other examples in this binary enable both Rustls providers. Select one
+    // before kube constructs its TLS connector, keeping an existing choice.
+    let _ = rustls::crypto::aws_lc_rs::default_provider().install_default();
+    let kubeconfig = Kubeconfig::read_from(path)?;
+    let config =
+        kube::Config::from_custom_kubeconfig(kubeconfig, &KubeConfigOptions::default()).await?;
+    let client = Client::try_from(config)?;
     let echoes: Api<Echo> = Api::all(client.clone());
     let deployments: Api<Deployment> = Api::all(client.clone());
     Controller::new(echoes, Config::default())
+        .shutdown_on_signal()
         // Also reconcile when an owned Deployment changes:
         .owns(deployments, Config::default())
         .run(reconcile, error_policy, Arc::new(Context { client }))
         .for_each(|result| async move {
             match result {
                 Ok((object, _action)) => println!("reconciled {}", object.name),
+                // An owned object can enqueue its owner while the owner is being deleted.
+                Err(kube::runtime::controller::Error::ObjectNotFound(_)) => {}
                 Err(e) => eprintln!("controller error: {e}"),
             }
         })
@@ -180,14 +188,19 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
-/// A minimal Kubernetes operator with `kube-rs`: a custom resource (`Echo`), a pure function that
-/// computes the desired `Deployment`, and a controller loop that applies it and reports the status.
+/// Prints the CRD by default or runs the controller with the given kubeconfig.
 ///
 /// # Errors
 ///
-/// Returns an error if a step of the example fails.
-pub fn run() -> anyhow::Result<()> {
-    main()
+/// Returns an error if CRD serialization, runtime startup, or cluster configuration fails.
+pub fn run(kubeconfig: Option<&Path>) -> anyhow::Result<()> {
+    match kubeconfig {
+        Some(path) => tokio::runtime::Builder::new_current_thread()
+            .enable_all()
+            .build()?
+            .block_on(run_controller(path)),
+        None => main(),
+    }
 }
 
 /// Tests behavior implemented by the surrounding module.
@@ -261,12 +274,5 @@ mod tests {
             desired_deployment(&echo),
             Err(ReconcileError::MissingMetadata)
         ));
-    }
-
-    /// Starts the Kubernetes controller with its configured reconciler.
-    #[tokio::test]
-    #[ignore = "needs a cluster (kind or k3d)"]
-    async fn controller_starts() {
-        run_controller().await.expect("cluster available");
     }
 }

@@ -19348,6 +19348,7 @@ dependencies = [
  "prost",
  "rcgen",
  "rhai",
+ "rustls",
  "schemars 1.2.3",
  "serde",
  "serde_json",
