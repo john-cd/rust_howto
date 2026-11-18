@@ -15,6 +15,8 @@ Use the standard library for portable filesystem, networking, process, and threa
 
 Check target support and platform-specific behavior in the selected crate before relying on an API. See the [API Bindings](../api-bindings/index.md) and [External FFI Bindings](../external-ffi-bindings/index.md) categories for broader choices.
 
+For shared crate selection and helper-process contracts, see [Native OS APIs and Process Boundaries](../../other/native-os/index.md).
+
 ## Example
 
 {{#include freebsd.incl.md}}
