@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Windows
+# Windows APIs
 
 [![cat~os::windows-apis][cat~os::windows-apis~badge]][cat~os::windows-apis]{{hi:Windows APIs}}
 
@@ -11,10 +11,10 @@ Use the Rust standard library for portable file, process, and socket operations 
 | Binding | Use it when |
 | --- | --- |
 | [`windows`][c~windows~docs]↗ | You want Microsoft's projected API bindings and their higher-level helpers. |
-| [`windows-sys`][windows-sys~docs]↗ | You need direct FFI declarations with minimal wrapper overhead. |
+| [`windows-sys`][windows-sys~docs]↗ | You need direct FFI declarations with minimal abstraction. |
 | [`winapi`][c~winapi~docs]↗ | You are maintaining code that already uses this older binding crate. |
 
-| Planned API area | Coverage | Relevant crates |
+| API area | Coverage | Relevant crates |
 | --- | --- | --- |
 | File and path APIs | Prefer portable standard-library operations; use Windows bindings for APIs `std` does not expose. | [`std::fs`][c~std::fs~docs]↗, [`std::path`][c~std::path~docs]↗, [`windows`][c~windows~docs]↗ |
 | Process management | Use portable process APIs for ordinary child processes and Windows bindings for platform-specific controls. | [`std::process`][c~std::process~docs]↗, [`windows`][c~windows~docs]↗ |
@@ -29,12 +29,12 @@ Use the Rust standard library for portable file, process, and socket operations 
 
 {{#include windows.incl.md}}
 
-## Related Topics
+## Related Topics {#related-topics .skip}
 
-| Topic | Rust Crates |
-| --- | --- |
-| GUI Development | [`winit`][c~winit~docs]↗{{hi:winit}}, [`iced`][c~iced~docs]↗{{hi:iced}}, [`egui`][c~egui~docs]↗{{hi:egui}}, [`tauri`][c~tauri~docs]↗{{hi:tauri}}, [`fltk-rs`][c~fltk~docs]↗{{hi:fltk-rs}} |
-| Threading | `std::thread`, [`crossbeam`][c~crossbeam~docs]↗{{hi:crossbeam}} |
+- [Operating Systems](../os/index.md) introduces portable OS services.
+- [Windows Job Objects](../os/process_management.md#job-object) controls child-process lifetimes with `windows-sys`.
+- [Unix APIs](../os_unix-apis/index.md) covers Unix-specific interfaces.
+- [Windows-specific standard-library extensions](https://doc.rust-lang.org/std/os/windows/) includes Windows path, handle, and process extensions.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -39,20 +39,25 @@ enum Commands {
 }
 
 /// Runs the example selected on the command line.
+///
+/// # Errors
+///
+/// Returns the Windows error if the message box cannot be displayed.
 #[cfg(target_os = "windows")]
-fn main() {
+fn main() -> std::io::Result<()> {
     let cli = Cli::parse();
 
     if let Some(command) = cli.command {
         match command {
             Commands::Winapi => {
-                winapi::run();
+                winapi::run()?;
             }
             Commands::Windows => {
-                windows::run();
+                windows::run()?;
             }
         }
     }
+    Ok(())
 }
 
 /// Explains that this example requires Windows when built on another platform.

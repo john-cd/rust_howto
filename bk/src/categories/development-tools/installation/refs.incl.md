@@ -4,4 +4,4 @@
 [ex~installation~cargo-install]: install.md#cargo-install
 [ex~installation~rustup]: rustup.md#rustup
 [p~cargo]: ../cargo/cargo.md
-[p~crates]: ../../../../src/crate-selection/index.md
+[p~crates]: ../../../crate-selection/index.md

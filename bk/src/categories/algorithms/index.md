@@ -6,7 +6,6 @@
 
 This category covers Rust implementations of algorithms{{hi:Algorithms}} such as sorting{{hi:Sorting}}, hashing, graph processing, and random value generation. Prefer the standard library for common operations; use a specialized crate when it adds a capability or performance your application needs.
 
-
 ## Random Value Generation
 
 {{#include random_value_generation.incl.md}}
@@ -82,7 +81,6 @@ For [[strings | Strings]], use:
 - `fancy-regex` if you need features, such as backtracking, which regex doesn't support,
 - [`aho-corasick`][c~aho-corasick~docs]↗{{hi:aho-corasick}} for finding occurrences of many patterns at once,
 - [`strsim`][c~strsim~docs]↗{{hi:strsim}} for string similarity.
-
 
 ### Cryptography
 

@@ -398,8 +398,6 @@
 
 {{#include ../categories/development-tools/cargo/package_layout.incl.md}}
 
-## Examples
-
 ## Cross Compilation
 
 ### Cross Compilation
@@ -542,10 +540,6 @@
 
 ### Debugging
 
-{{#include ../categories/development-tools_debugging/debugging.incl.md}}
-
-### Debugging Examples
-
 {{#include ../categories/development-tools_debugging/debugging_examples.incl.md}}
 
 ### Diagnostic Functions
@@ -554,10 +548,6 @@
 
 ### Distributed Telemetry
 
-{{#include ../categories/development-tools_debugging/distributed_telemetry.incl.md}}
-
-### Distributed Telemetry Examples
-
 {{#include ../categories/development-tools_debugging/distributed_telemetry_examples.incl.md}}
 
 ### Log
@@ -565,10 +555,6 @@
 {{#include ../categories/development-tools_debugging/log.incl.md}}
 
 ### Metrics
-
-{{#include ../categories/development-tools_debugging/metrics.incl.md}}
-
-### Metrics Examples
 
 {{#include ../categories/development-tools_debugging/metrics_examples.incl.md}}
 
@@ -778,7 +764,7 @@
 
 ### Differential Equations
 
-{{#include ../categories/mathematics/differential_equations.incl.md}}
+{{#include ../categories/mathematics/differential_equations_examples.incl.md}}
 
 ### Discrete Mathematics
 
@@ -905,6 +891,10 @@
 ### Unix
 
 {{#include ../categories/os_unix-apis/unix.incl.md}}
+
+## Windows APIs
+
+{{#include ../categories/os_windows-apis/windows.incl.md}}
 
 ## Parser Implementations
 

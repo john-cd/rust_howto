@@ -1229,3 +1229,27 @@
 [p~cargo]: ../categories/development-tools/cargo/cargo.md
 [p~standard-library]: ../standard-library/index.md
 [rust-howto~templ~repo]: https://github.com/john-cd/rust_howto/tree/develop/tools/templ
+
+[ex~os_windows-apis~winapi]: ../categories/os_windows-apis/windows.md#winapi
+[ex~os_windows-apis~windows]: ../categories/os_windows-apis/windows.md#windows
+
+[aquamarine~repo]: https://github.com/mersinvald/aquamarine
+[bindgen~repo]: https://github.com/rust-lang/rust-bindgen
+[c2rust~repo]: https://github.com/immunant/c2rust
+[cbindgen~repo]: https://github.com/mozilla/cbindgen
+[c~cargo-chef~repo]: https://github.com/LukeMathWalker/cargo-chef
+[c~gpio-cdev~docs]: https://docs.rs/gpio-cdev
+[c~hidapi~docs]: https://docs.rs/hidapi
+[c~nusb~docs]: https://docs.rs/nusb
+[c~openidconnect~docs~badge]: https://img.shields.io/crates/v/openidconnect?label=openidconnect
+[c~rustls-native-certs~docs]: https://docs.rs/rustls-native-certs
+[c~rustls-platform-verifier~docs]: https://docs.rs/rustls-platform-verifier
+[c~serde-saphyr~docs~badge]: https://img.shields.io/crates/v/serde-saphyr?label=serde-saphyr
+[debugger~codelldb]: https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb
+[debugger~dbg]: https://doc.rust-lang.org/std/macro.dbg.html
+[opentelemetry-http~docs]: https://docs.rs/opentelemetry-http
+[opentelemetry-otlp~docs]: https://docs.rs/opentelemetry-otlp
+[rfc~5280]: https://www.rfc-editor.org/rfc/rfc5280.html
+[rfc~7468]: https://www.rfc-editor.org/rfc/rfc7468.html
+[tracing-opentelemetry~docs]: https://docs.rs/tracing-opentelemetry
+[wasm-bindgen~repo]: https://github.com/wasm-bindgen/wasm-bindgen

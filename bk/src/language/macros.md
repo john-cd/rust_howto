@@ -79,7 +79,6 @@ Read the [procedural macros](#procedural-macros) sections below for more details
 
 [`concat!`][c~std::concat~docs]↗ concatenates literals into a static string slice.
 
-
 ### Create a Vector with `vec!` {#vec-macro}
 
 [`vec!`][c~std::vec!~docs]↗ allows for convenient creation and initialization of vectors (`Vec<T>`). For example, `vec![1, 2, 3]` creates a vector with integers `1`, `2`, and `3`.

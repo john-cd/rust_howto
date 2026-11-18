@@ -59,7 +59,6 @@ Primitive type `str` is a dynamically sized sequence of UTF-8 bytes. Most code u
 {{#include ../../crates/language/examples/data_types/string_data_types.rs:example}}
 ```
 
-
 ## Use the Unit and Never Special Types {#special-types}
 
 | Type Family | Types | Examples |

@@ -244,12 +244,7 @@ Validate on supported Unix hosts with scoped process/filesystem resources; ident
 
 ## 13. os_windows-apis
 
-Requires a Windows host and relevant APIs/permissions; Linux compilation or prose inspection does not validate Windows runtime behavior.
-
-| Chapter in draft summary | Remaining work / blockers |
-| --- | --- |
-| [Operating systems - Windows](categories/os_windows-apis/index.md) | No missing include/anchor found; category work and execution/render checks still required |
-| [Windows](categories/os_windows-apis/windows.md) | No missing include/anchor found; category work and execution/render checks still required |
+Published in `bk/src/categories/os_windows-apis`; examples already reside in `bk/crates/cats/os_windows_apis`. See [#2342](https://github.com/john-cd/rust_howto/issues/2342) for validation evidence. Interactive dialogs require a Windows desktop and remain opt-in tests.
 
 ## 14. hardware-support
 

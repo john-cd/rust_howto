@@ -93,7 +93,7 @@ See the [Rustfmt documentation for formatting attributes][rustfmt~attributes] fo
 
 ## Related Topics {#related-topics .skip}
 
-- [Code Coverage](../../../../src/categories/development-tools_testing/code_coverage.md) and [Testing](../../../../src/categories/development-tools_testing/testing.md) for the other checks run alongside formatting in CI.
+- [Code Coverage](../../development-tools_testing/code_coverage.md) and [Testing](../../development-tools_testing/testing.md) for the other checks run alongside formatting in CI.
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

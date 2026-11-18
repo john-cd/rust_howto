@@ -42,7 +42,6 @@ Use a project generator when a starter template can provide useful structure or 
 | [Loco][c~loco-rs~website]↗{{hi:Loco}} | Start a batteries-included web application with `loco new`; use `cargo loco generate` (debug builds only) for application components. |
 | [Rise][rise~repo]↗{{hi:Rise}} | Choose a community template for a web app, CLI, game, or another Rust project. |
 
-
 ## Related Topics {#related-topics .skip}
 
 - [Rust compilation and linking](../compilation/reduce_compilation_duration.md).

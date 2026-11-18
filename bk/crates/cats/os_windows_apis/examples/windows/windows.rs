@@ -13,31 +13,39 @@ use windows::Win32::UI::WindowsAndMessaging::MessageBoxW;
 use windows::core::w;
 
 /// Displays a message box saying "Hello, windows!".
-fn main() {
+///
+/// # Errors
+///
+/// Returns the Windows error if the message box cannot be displayed.
+fn main() -> std::io::Result<()> {
     // SAFETY: The `w!` macro supplies static, NUL-terminated UTF-16 strings;
     // a null owner window is valid for a standalone message box.
-    unsafe {
-        MessageBoxW(None, w!("Hello, windows!"), w!("Greetings"), MB_OK);
+    let result = unsafe { MessageBoxW(None, w!("Hello, windows!"), w!("Greetings"), MB_OK) };
+    if result.0 == 0 {
+        return Err(std::io::Error::last_os_error());
     }
+    Ok(())
 }
 // ANCHOR_END: example
 
 /// Displays a message box saying "Hello, windows!".
-pub fn run() {
-    main();
+///
+/// # Errors
+///
+/// Returns the Windows error if the message box cannot be displayed.
+pub fn run() -> std::io::Result<()> {
+    main()
 }
 
 /// Displays a message box when explicitly run on a Windows desktop.
 #[cfg(test)]
 mod tests {
-    // output-only: the example displays a message box and is ignored by
-    // default; see the other tests for its logic.
     use super::*;
 
     /// Displays a message box when explicitly run on a Windows desktop.
     #[test]
     #[ignore = "displays a Windows message box"]
     fn displays_message_box() {
-        main();
+        main().expect("message box should display successfully");
     }
 }

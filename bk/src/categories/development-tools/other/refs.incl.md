@@ -17,7 +17,7 @@
 [p~concurrency]: ../../concurrency/index.md
 [p~configuration]: ../../config/configuration.md
 [p~fuzzing]: ../../development-tools_testing/fuzzing.md
-[p~macros]: ../../../../src/language/macros.md
+[p~macros]: ../../../language/macros.md
 [p~performance]: ../../development-tools_profiling/index.md
 [p~testing]: ../../development-tools_testing/testing.md
 [miri~docs]: https://github.com/rust-lang/miri

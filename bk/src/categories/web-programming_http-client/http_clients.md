@@ -2,7 +2,9 @@
 
 # HTTP Clients
 
-{{#include http_clients.incl.md}}{{hi:HTTP client}}
+{{#include http_clients.incl.md}}
+
+{{hi:HTTP client}}
 
 ## `reqwest` {#reqwest}
 
