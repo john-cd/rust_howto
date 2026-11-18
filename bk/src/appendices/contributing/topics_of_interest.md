@@ -12,7 +12,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [[data-structures | Data Structures]].
 - [Testing](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_testing/testing.md).
 - [GPU](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/gpu/index.md) processing, CUDA.
-- [Machine Learning](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/machine-learning/index.md), for example [Burn][c~burn~docs]↗, [Candle][candle~repo]↗, and [tch][c~tch~docs]↗.
+- [Machine Learning](../../other/machine-learning/index.md), for example [Burn][c~burn~docs]↗, [Candle][candle~repo]↗, and [tch][c~tch~docs]↗.
 - [Email](../../categories/email/index.md).
 - [Template Engines](../../categories/template-engine/index.md).
 - [Caching](../../categories/caching/index.md).

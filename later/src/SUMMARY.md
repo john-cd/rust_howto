@@ -96,11 +96,6 @@
 - [Game engines](categories/game-engines/index.md)
   - [Game engines](categories/game-engines/game_engines.md)
 
-- [Machine learning in practice](other/machine-learning/index.md)
-  - [Run a model trained elsewhere (ONNX)](other/machine-learning/inference.md)
-  - [Classical machine learning](other/machine-learning/classical_ml.md)
-  - [Forecasting](other/machine-learning/forecasting.md)
-
 - [GPU programming](other/gpu/index.md)
   - [GPU](other/gpu/gpu.md)
 
@@ -116,8 +111,6 @@
   - [UI layout](categories/gui/ui_layout.md)
   - [Web-based GUI](categories/gui/web_based_gui.md)
   - [Window creation](categories/gui/window_creation.md)
-
-- [Machine learning](categories/science/classical_machine_learning.md)
 
 - [Multimedia](categories/multimedia/index.md)
   - [Multimedia](categories/multimedia/multimedia.md)
@@ -169,7 +162,6 @@
 
 - [Science](categories/science/index.md)
   - [Compare Route Measurements with a Model](categories/science/route_measurements.md)
-  - [Neural Networks and Deep Learning](categories/science/deep_learning.md)
 
 - [Science - Geo](categories/science_geo/index.md)
   - [Geo](categories/science_geo/geo.md)

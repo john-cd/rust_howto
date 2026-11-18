@@ -25,7 +25,7 @@ just cargo run --manifest-path later/crates/Cargo.toml --locked -p other --featu
 The committed models let Rust tests run without Python. `models/make_models.py` documents their optional regeneration; regenerate both artifacts deliberately and review changed predictions before committing them. Keep downloaded runtime artifacts in the configured shared `ORT_CACHE_DIR` (`D:/packages/ort` on this Windows machine), rather than beside the source.
 
 ```rust,ignore
-{{#include ../../../crates/other/examples/machine_learning/onnx_infer.rs:example}}
+{{#include ../../../../later/crates/other/examples/machine_learning/onnx_infer.rs:example}}
 ```
 
 {{#include refs.incl.md}}

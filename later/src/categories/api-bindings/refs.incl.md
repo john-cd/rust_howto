@@ -22,7 +22,7 @@
 [p~gui]: ../gui/index.md
 [p~hashing]: https://john-cd.com/rust_howto/categories/algorithms/hashing.html
 [p~http_clients]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-client/http_clients.md
-[p~machine-learning]: ../../other/machine-learning/index.md
+[p~machine-learning]: https://john-cd.com/rust_howto/other/machine-learning/index.html
 [p~multimedia]: ../multimedia/index.md
 [p~multimedia_audio]: ../multimedia_audio/index.md
 [p~multimedia_encoding]: ../multimedia_encoding/index.md

@@ -18,7 +18,7 @@ a particular model runs there. Use the exact versions/features in the Cargo mani
 | [`candle`][c~candle-core~repo]↗ | Rust tensors, autograd, layers and model implementations | Architecture, weights, preprocessing, and explicit CPU/accelerator choice. The CPU training/checkpoint recipe below is executable. |
 | [`burn`][c~burn~repo]↗ | Training and inference with a selectable backend | Compatible backend/autodiff configuration, model record format and training loop. Framework overview only in this chapter. |
 | [`tch`][c~tch~repo]↗ | Rust bindings to LibTorch | A compatible LibTorch installation, library discovery and model/tensor contracts. Not validated by the Candle test. |
-| [`ort`][c~ort~repo]↗ | ONNX Runtime sessions and execution providers | Compatible native runtime, supported graph operators and tensor contracts. See the [ONNX recipe](../../other/machine-learning/inference.md). |
+| [`ort`][c~ort~repo]↗ | ONNX Runtime sessions and execution providers | Compatible native runtime, supported graph operators and tensor contracts. See the [ONNX recipe](inference.md). |
 | [`tract`][c~tract~repo]↗ | Rust graph inference, including ONNX/NNEF | Operator and shape compatibility for the exact exported graph. An alternative to evaluate, not a tested substitute for this ONNX Runtime session. |
 | [`tokenizers`](https://docs.rs/tokenizers/) | Pretrained text preprocessing | The tokenizer artifact and configuration belonging to the model revision. Tokenization alone does not run a language model. |
 | [`cudarc`][c~cudarc~repo]↗ | CUDA driver/runtime interaction | Device/toolkit setup and your kernels or framework integration; it is not itself a model/training framework. |
@@ -30,7 +30,7 @@ actual accelerator/provider and model operators required by deployment.
 
 ## `candle` {#deep-learning}
 
-{{#badges candle-core=}} {{hi:candle}} {{hi:candle-core}} {{hi:BLAS}} {{hi:Machine-learning}} {{hi:Tensor}} {{#categories science=Science}}
+{{#badges candle-core=}} {{hi:candle}} {{hi:candle-core}} {{hi:BLAS}} {{hi:Machine-learning}} {{hi:Tensor}} [![cat~science][cat~science~badge]][cat~science]{{hi:Science}}
 
 [`candle`][c~candle-core~docs]↗{{hi:candle}} is a minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use. Candle is like PyTorch written in Rust and focuses on neural networks. Read [Candle][blog~candle]↗ for the motivation behind the project.
 
@@ -55,12 +55,12 @@ or feature transform. CUDA/Metal features and LibTorch dependencies require sepa
 platform checks; CPU success establishes none of those backends.
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/science/examples/ml/candle.rs:example}}
+{{#include ../../../../later/crates/cats/science/examples/ml/candle.rs:example}}
 ```
 
 ## `burn` {#burn .skip}
 
-{{#badges burn embedded="Embedded development" no-std="No standard library" science=Science wasm=WebAssembly}}{{hi:Deep-learning}}{{hi:Machine-learning}}{{hi:Ndarray}}{{hi:PyTorch}}{{hi:Tensor}}
+{{#badges burn embedded="Embedded development" no-std="No standard library" wasm=WebAssembly}}{{hi:Deep-learning}}{{hi:Machine-learning}}{{hi:Ndarray}}{{hi:PyTorch}}{{hi:Tensor}}
 
 [`burn`][c~burn~repo]↗ is a comprehensive, dynamic deep learning framework built using Rust with flexibility, compute efficiency and portability as its primary goals. It supports the whole workflow, from defining and training a model to deploying it, and it swaps compute backends (CPU through `ndarray`, `wgpu`, CUDA, Metal) without changing the model code. It also supports `no_std` and WebAssembly targets.
 
@@ -72,12 +72,14 @@ platform checks; CPU success establishes none of those backends.
 
 ## References {#references .skip}
 
+- [Awesome Rust Neural Network](https://github.com/BurtonQin/Awesome-Rust-Neural-Network) lists Rust neural-network projects.
+
 - [Neural Networks][are-we-learning-yet?-neural-networks~website]↗.
 
 ## Related Topics {#related-topics .skip}
 
-- [Computer Vision](../computer-vision/index.md).
-- [Linear Algebra](https://john-cd.com/rust_howto/categories/mathematics/linear_algebra.html).
+- [Computer Vision](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/computer-vision/index.md).
+- [Linear Algebra](../../categories/mathematics/linear_algebra.md).
 - [Machine Learning][p~classical-machine-learning].
 - [Artificial Intelligence for Robotics][p~robotics-ai].
 

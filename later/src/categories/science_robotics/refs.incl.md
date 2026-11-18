@@ -48,10 +48,10 @@
 [roboplc~repo]: https://github.com/roboplc/roboplc
 [rustconf2025~robotics~talk]: https://rustfoundation.org/media/rustconf-2025-program-live/
 [sophus-rs~repo]: https://github.com/sophus-vision/sophus-rs
-[p~classical-machine-learning]: ../science/classical_machine_learning.md
+[p~classical-machine-learning]: https://john-cd.com/rust_howto/other/machine-learning/classical_machine_learning.html
 [p~computer-vision]: ../computer-vision/index.md
 [p~concurrency]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/concurrency/index.md
-[p~deep-learning]: ../science/deep_learning.md
+[p~deep-learning]: https://john-cd.com/rust_howto/other/machine-learning/deep_learning.html
 [p~embedded]: ../embedded/index.md
 [p~graphics]: ../graphics/index.md
 [p~grpc]: ../../../src/categories/web-programming_http-server/_grpc.md
@@ -97,8 +97,8 @@
 [c~zmqRemoteApi~docs]: https://docs.rs/coppeliasim_zmq_remote_api
 [p~additional_numeric_types]: https://john-cd.com/rust_howto/categories/mathematics/additional_numeric_types.html
 [p~aerospace_simulation]: ../aerospace_simulation/index.md
-[p~classical_machine_learning]: ../science/classical_machine_learning.md
-[p~deep_learning]: ../science/deep_learning.md
+[p~classical_machine_learning]: https://john-cd.com/rust_howto/other/machine-learning/classical_machine_learning.html
+[p~deep_learning]: https://john-cd.com/rust_howto/other/machine-learning/deep_learning.html
 [p~development-tools_ffi]: ../development-tools_ffi/index.md
 [p~hardware-support]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/hardware-support/index.md
 [p~linear_algebra]: https://john-cd.com/rust_howto/categories/mathematics/linear_algebra.html

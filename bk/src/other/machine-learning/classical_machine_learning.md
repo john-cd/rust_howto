@@ -1,6 +1,6 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Machine Learning
+# Classical Machine Learning
 
 {{#include classical_machine_learning.incl.md}}
 
@@ -29,7 +29,7 @@ This chapter's examples use Linfa 0.8.1 and SmartCore 0.7.0.
 The seeded decision-tree recipe uses a synthetic, linearly separable dataset and checks accuracy on a held-out split.
 
 ```rust,editable
-{{#include ../../../crates/cats/science/examples/ml/smartcore.rs:example}}
+{{#include ../../../../later/crates/cats/science/examples/ml/smartcore.rs:example}}
 ```
 
 ## Cluster with Linfa
@@ -37,7 +37,7 @@ The seeded decision-tree recipe uses a synthetic, linearly separable dataset and
 K-means needs only feature rows. This example creates two small synthetic groups, seeds its random initializer, and tests that every point receives a label across exactly two clusters.
 
 ```rust,editable
-{{#include ../../../crates/cats/science/examples/ml/kmeans.rs:example}}
+{{#include ../../../../later/crates/cats/science/examples/ml/kmeans.rs:example}}
 ```
 
 ## Predict Numeric Values with Linfa
@@ -45,7 +45,7 @@ K-means needs only feature rows. This example creates two small synthetic groups
 Linear regression fits a numeric target and predicts values for new feature rows.
 
 ```rust,editable
-{{#include ../../../crates/cats/science/examples/ml/linfa.rs:example}}
+{{#include ../../../../later/crates/cats/science/examples/ml/linfa.rs:example}}
 ```
 
 ## Prepare and Evaluate Data
@@ -62,6 +62,7 @@ Linear regression fits a numeric target and predicts values for new feature rows
 - [Clustering][are-we-learning-yet?-clustering~website]↗.
 - [Decision Trees][are-we-learning-yet?-decision-trees~website]↗.
 - [Linear Classifiers][are-we-learning-yet?-linear-classifiers~website]↗.
+- [Train and evaluate a classifier](classical_ml.md).
 - [Deep learning and neural networks][ex~science~deep-learning].
 
 ## Related Topics {#related-topics .skip}

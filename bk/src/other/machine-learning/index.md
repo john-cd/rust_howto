@@ -7,7 +7,9 @@ These recipes cover training-only feature preparation, a lexical retrieval basel
 {{#include index.incl.md}}
 
 - [Run a Model Trained Elsewhere (ONNX)](inference.md): train in Python, serve in Rust.
-- [Classical Machine Learning](classical_ml.md): train a simple model in Rust.
+- [Classical Machine Learning](classical_machine_learning.md): choose an algorithm for classification, clustering, or regression.
+- [Train a Classifier](classical_ml.md): fit and evaluate a model with SmartCore.
+- [Neural Networks and Deep Learning](deep_learning.md): compare frameworks and train a model with Candle.
 - [Forecasting](forecasting.md): forecast a time series.
 
 ## Fit Preprocessing Before Evaluation
@@ -24,7 +26,7 @@ fixture, not evidence of generalization on noisy observations. A separate valida
 split is needed when selecting models or tuning hyperparameters.
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/science/examples/feature_pipeline.rs:example}}
+{{#include ../../../../later/crates/cats/science/examples/feature_pipeline.rs:example}}
 ```
 
 ```sh
@@ -45,7 +47,7 @@ all-unknown queries have zero similarity. Matching complete tokens avoids accide
 substring matches, such as treating "rusty" as the word "rust".
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/science/examples/text_features.rs:example}}
+{{#include ../../../../later/crates/cats/science/examples/text_features.rs:example}}
 ```
 
 ```sh
@@ -64,9 +66,9 @@ Evaluate retrieval with labeled queries and ranking metrics rather than classifi
 
 | Task | Common crates | Coverage in these staged chapters |
 | --- | --- | --- |
-| Feature arrays and table preparation | `ndarray`, `polars` | Executable array preprocessing here; dataframe workflows in [Data Processing](../data-processing/index.md). |
+| Feature arrays and table preparation | `ndarray`, `polars` | Executable array preprocessing here; dataframe workflows in [Data Processing](../../categories/data-processing/index.md). |
 | Classical fitting | `smartcore`, `linfa` | Held-out classification, regression and seeded clustering examples. |
-| Neural-network training | `candle-core`, `candle-nn`, `burn`, `tch` | Candle CPU training and checkpoint parity in [Deep Learning](../../categories/science/deep_learning.md); Burn and tch have framework/prerequisite descriptions, not validated local training recipes. |
+| Neural-network training | `candle-core`, `candle-nn`, `burn`, `tch` | Candle CPU training and checkpoint parity in [Deep Learning](deep_learning.md); Burn and tch have framework/prerequisite descriptions, not validated local training recipes. |
 | Exported-model inference | `ort`, `tract` | Executable ONNX Runtime inference and replacement; tract is an alternative discussed in [inference](inference.md). |
 | Forecasting | `augurs` | Chronological holdout and seasonal-naive comparison in [Forecasting](forecasting.md). |
 | Text features | `tokenizers`, `candle-transformers` | Relevant for pretrained NLP models; tokenizer files, special tokens, truncation and model revision must match the model. No downloaded NLP model is required or validated by these fixtures. |
@@ -85,8 +87,6 @@ just cargo test --manifest-path later/crates/Cargo.toml --locked -p other --exam
 ```
 
 The `other` example package shares dependencies with other future workflows, so its initial build also compiles dependencies unrelated to ML. Only the `machine_learning` example target is executed by this command. ONNX setup and commands are documented in its own recipe.
-
-See also [Machine Learning in the Science chapter][p~classical-machine-learning] and [Data Processing](../data-processing/index.md) (for example, `polars` for feature pipelines).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

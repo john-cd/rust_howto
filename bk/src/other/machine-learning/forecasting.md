@@ -19,7 +19,7 @@ just cargo run --manifest-path later/crates/Cargo.toml --locked -p other --examp
 For real observations, preserve chronological order, define how missing timestamps are handled, and evaluate rolling forecast origins before selecting a model. The example checks finite interval bounds and their ordering around each predicted point; that does not establish 95% coverage of future observations.
 
 ```rust,ignore
-{{#include ../../../crates/other/examples/machine_learning/forecast.rs:example}}
+{{#include ../../../../later/crates/other/examples/machine_learning/forecast.rs:example}}
 ```
 
 {{#include refs.incl.md}}

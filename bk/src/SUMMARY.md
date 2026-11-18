@@ -290,6 +290,13 @@
   - [User Directories and Preferred Applications](categories/filesystem/user_directories_and_preferred_applications.md)
   - [Symbolic Links](categories/filesystem/symbolic_links.md)
 
+- [Machine Learning in Practice](other/machine-learning/index.md)
+  - [Classical Machine Learning](other/machine-learning/classical_machine_learning.md)
+  - [Train and Evaluate a Classifier](other/machine-learning/classical_ml.md)
+  - [Neural Networks and Deep Learning](other/machine-learning/deep_learning.md)
+  - [Run a Model Trained Elsewhere (ONNX)](other/machine-learning/inference.md)
+  - [Forecasting](other/machine-learning/forecasting.md)
+
 - [Mathematics](categories/mathematics/index.md)
   - [Linear Algebra](categories/mathematics/linear_algebra.md)
   - [Trigonometry](categories/mathematics/trigonometry.md)

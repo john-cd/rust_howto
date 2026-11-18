@@ -15,7 +15,7 @@
 [mwa-hyperdrive~repo]: https://github.com/MWATelescope/mwa_hyperdrive
 [locksort~repo]: https://github.com/TheZoq2/locksort
 [c~ocl~docs]: https://docs.rs/ocl
-[ex~gpu~deep-learning]: ../../categories/science/deep_learning.md
+[ex~gpu~deep-learning]: https://john-cd.com/rust_howto/other/machine-learning/deep_learning.html
 [rust-cuda~repo]: https://github.com/Rust-GPU/Rust-CUDA
 
 [p~OpenCL]: gpu.md#opencl3
