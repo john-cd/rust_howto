@@ -21,8 +21,10 @@ pin_project! {
 
     /// A future whose inner future stays pinned while its counter can move.
     struct CountPolls<F> {
+        // Future projected as Pin<&mut F> so polling cannot move it.
         #[pin]
         inner: F,
+        // Number of poll calls forwarded to the inner future, including Pending.
         polls: usize,
     }
 }
@@ -31,7 +33,7 @@ impl<F: Future> Future for CountPolls<F> {
     /// Alias for `F::Output` used to represent output.
     type Output = F::Output;
 
-    /// Handles the poll behavior for this component.
+    /// Increments the movable counter and polls the structurally pinned inner future.
     fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
         let this = self.project();
         *this.polls += 1;

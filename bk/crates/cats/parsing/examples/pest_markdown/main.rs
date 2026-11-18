@@ -44,6 +44,7 @@ fn main() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Checks link extraction and complete grammar matches across Markdown constructs.
 #[cfg(test)]
 mod tests {
     use super::*;

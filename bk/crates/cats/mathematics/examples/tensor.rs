@@ -21,6 +21,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Checks that reducing the batch axis preserves row and column positions.
 #[cfg(test)]
 mod tests {
     use super::*;
