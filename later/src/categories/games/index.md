@@ -19,14 +19,30 @@ These examples show several kinds of games built with Rust. Project availability
 - [Are We Game Yet? games][are-we-game-yet?-games~website]↗ lists games by genre and links to project pages.
 - Browse the [games made with Rust on itch.io][itch.io~made-with-rust~website]↗{{hi:itch.io}} for indie releases and prototypes.
 
-## Animate a Triangle with Macroquad
+## Collect Three Markers with Macroquad {#collect-markers}
 
-This example separates game state updates from drawing. Each frame advances the
-triangle by the elapsed time, and pressing Space changes its color. Run `just cargo run --manifest-path later/crates/Cargo.toml --locked -p games --example games` from the repository root on a system with a graphical desktop.
+Move the blue player with the arrow keys. Touch the gold marker to score one
+point and reveal the next. Collect all three to win, press R to restart, or
+press Escape to quit. From a graphical desktop, run this at the repository root:
+
+```console
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p games --example games
+```
+
+Each frame reads input, updates the world in seconds, then draws the result.
+The update method normalizes diagonal movement, caps long frame durations,
+and checks the distance between the player and the marker. Drawing scales
+the same square world to the current window. Resizing changes the view while
+the positions and score remain in world coordinates.
 
 ```rust,ignore
 {{#include ../../../crates/cats/games/examples/games.rs:example}}
 ```
+
+The headless checks cover scoring, restart, diagonal speed, and world bounds.
+For a bounded desktop smoke run, set `RUST_HOWTO_SMOKE_TEST=1` in the shell.
+The example supplies scripted movement, presents three frames, and exits after
+collecting the first marker. An ordinary launch uses the keyboard.
 
 ## Related Topics
 

@@ -2,6 +2,10 @@
 
 # Game Engines
 
+For a playable Macroquad walkthrough with movement and scoring, see
+[Collect Three Markers](../games/index.md#collect-markers). The examples here
+compare how frameworks own window creation and the frame loop.
+
 Choose a complete engine when you want an editor, asset workflow, or integrated runtime. A framework gives you a smaller starting point and leaves more decisions to your application. The version column shows the dependencies used by the examples in this book's `game_engines` crate; check each project's current release and platform guides before starting a new project.
 
 ## Compare Engines
