@@ -4,3 +4,8 @@
 	path = mdbook-utils
 	url = https://github.com/john-cd/mdbook-utils
 	branch = develop
+
+[submodule "book_tooling"]
+	path = book_tooling
+	url = https://github.com/john-cd/book_tooling.git
+	branch = develop
