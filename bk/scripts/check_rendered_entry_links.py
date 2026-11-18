@@ -13,6 +13,8 @@ PAGES = (
     "index.html",
     "introduction.html",
     "introduction/index.html",
+    "categories/development-tools/benchmark_regressions.html",
+    "categories/development-tools/profiling.html",
     "appendices/contributing/mdBook_pre-processors.html",
     "appendices/contributing/documentation_generation.html",
 )
@@ -75,6 +77,9 @@ def check_chapters(
     pages: dict[Path, Page] = {}
     for source in sources:
         path = root / source
+        if not path.is_file():
+            failures.append(f"{source}: missing required page")
+            continue
         html = path.read_text(encoding="utf-8")
         prose = re.sub(r"<pre\b.*?</pre>|<script\b.*?</script>", "", html, flags=re.S)
         labels = re.findall(r"\]\[((?:p|ex|c|cat)~[^\]\s]+)\]", prose)
@@ -117,9 +122,12 @@ def main() -> int:
         sources = list(PAGES)
         if args.all_chapters:
             sources = sorted(
-                path.relative_to(root).as_posix()
-                for path in root.rglob("*.html")
-                if path.relative_to(root).as_posix() != "word_index.html"
+                set(PAGES)
+                | {
+                    path.relative_to(root).as_posix()
+                    for path in root.rglob("*.html")
+                    if path.relative_to(root).as_posix() != "word_index.html"
+                }
             )
         failures = check_chapters(root, sources, check_fragments=args.all_chapters)
     for failure in failures:
