@@ -1,214 +1,148 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! A minimal game example using the `macroquad` rendering engine.
-//!
-//! This example creates a window, animates a rotating triangle, and responds to
-//! the space bar by changing the triangle's color.
-
-use std::f32::consts::PI;
+//! Collects three markers in a small Macroquad game.
 
 use macroquad::prelude::*;
 
-/// The distance in pixels from the center of the screen to each corner.
-const TRIANGLE_RADIUS: f32 = 120.0;
+const PLAYER_RADIUS: f32 = 0.035;
+const MARKER_RADIUS: f32 = 0.025;
+const SPEED: f32 = 0.55;
+const START: Vec2 = vec2(0.15, 0.5);
+const MARKERS: [Vec2; 3] = [vec2(0.28, 0.5), vec2(0.5, 0.25), vec2(0.78, 0.72)];
 
-/// Returns the corners of an equilateral triangle centered on `center`,
-///
-/// rotated by `angle` radians.
-fn triangle_points(center: Vec2, radius: f32, angle: f32) -> [Vec2; 3] {
-    [0.0, 2.0 * PI / 3.0, 4.0 * PI / 3.0].map(|offset| {
-        let theta = angle + offset;
-        center + vec2(theta.cos(), theta.sin()) * radius
-    })
+/// The position and score live in a fixed one-unit square world.
+struct Game {
+    player: Vec2,
+    score: usize,
 }
 
-/// Represents the dynamic visual state of the game.
-/// Visual state updated by the render loop.
-#[derive(Debug, Clone, Copy, PartialEq)]
-struct GameState {
-    /// The current rotation angle of the triangle in radians.
-    angle: f32,
-
-    /// The fill color of the rotating triangle.
-    color: Color,
-}
-
-impl GameState {
-    /// Creates a new default game state with zero rotation and blue color.
+impl Game {
+    /// Starts a round at the same position and score.
     fn new() -> Self {
         Self {
-            angle: 0.0,
-            color: BLUE,
+            player: START,
+            score: 0,
         }
     }
 
-    /// Advances the rotation angle by elapsed time and updates color if requested.
-    fn update(
-        &mut self,
-        space_pressed: bool,
-        delta_time: f32,
-        color_provider: impl FnOnce() -> Color,
-    ) {
-        if space_pressed {
-            self.color = color_provider();
+    /// Applies movement and collects the current marker if the circles overlap.
+    ///
+    /// Direction components come from input, and elapsed time is in seconds.
+    fn update(&mut self, direction: Vec2, elapsed: f32) {
+        let Some(&marker) = MARKERS.get(self.score) else {
+            return;
+        };
+        self.player += direction.normalize_or_zero() * SPEED * elapsed.clamp(0.0, 0.05);
+        self.player = self
+            .player
+            .clamp(Vec2::splat(PLAYER_RADIUS), Vec2::splat(1.0 - PLAYER_RADIUS));
+
+        if self.player.distance(marker) <= PLAYER_RADIUS + MARKER_RADIUS {
+            self.score += 1;
         }
-        self.angle += delta_time;
     }
 }
 
-/// Generates a random RGBA color with full opacity.
-fn random_color() -> Color {
-    Color::new(
-        rand::gen_range(0.0, 1.0),
-        rand::gen_range(0.0, 1.0),
-        rand::gen_range(0.0, 1.0),
-        1.0,
+/// Reads the keyboard, keeping the window API outside the update method.
+fn direction() -> Vec2 {
+    let axis = |positive, negative| {
+        f32::from(u8::from(is_key_down(positive))) - f32::from(u8::from(is_key_down(negative)))
+    };
+    vec2(
+        axis(KeyCode::Right, KeyCode::Left),
+        axis(KeyCode::Down, KeyCode::Up),
     )
 }
 
-/// Renders a single frame displaying the triangle and instruction overlay.
-///
-/// # Arguments
-///
-/// * `state` - Current rotation and color displayed in the frame.
-fn draw_frame(state: &GameState) {
+/// Draws the square world centered in the current window.
+fn draw(game: &Game) {
     clear_background(BLACK);
+    let size = screen_width().min(screen_height());
+    let origin = (vec2(screen_width(), screen_height()) - Vec2::splat(size)) / 2.0;
+    let to_screen = |point: Vec2| origin + point * size;
+    draw_rectangle_lines(origin.x, origin.y, size, size, 2.0, GRAY);
 
-    let center = vec2(screen_width() / 2.0, screen_height() / 2.0);
-    let points = triangle_points(center, TRIANGLE_RADIUS, state.angle);
+    if let Some(&marker) = MARKERS.get(game.score) {
+        let position = to_screen(marker);
+        draw_circle(position.x, position.y, MARKER_RADIUS * size, GOLD);
+    }
+    let player = to_screen(game.player);
+    draw_circle(player.x, player.y, PLAYER_RADIUS * size, SKYBLUE);
 
-    draw_triangle(points[0], points[1], points[2], state.color);
-    draw_text(
-        "Press SPACE to change color",
-        16.0,
-        screen_height() - 20.0,
-        24.0,
-        WHITE,
-    );
+    let status = if game.score == MARKERS.len() {
+        "You collected all three markers! R restarts.".to_owned()
+    } else {
+        format!(
+            "{}/{}  Arrow keys move · R restarts · Esc quits",
+            game.score,
+            MARKERS.len()
+        )
+    };
+    draw_text(&status, 12.0, 26.0, 21.0, WHITE);
 }
 
-/// Draws a rotating shape whose color changes when the space key is pressed.
-#[macroquad::main("Rendering Engine Example")]
+/// Presents each updated frame and exits on Escape or window close.
+#[macroquad::main("Collect the Markers")]
 async fn main() {
-    let mut state = GameState::new();
-
+    let mut game = Game::new();
     let smoke = std::env::var_os("RUST_HOWTO_SMOKE_TEST").is_some();
-    let mut presented = 0;
-    loop {
-        let space_pressed = is_key_pressed(KeyCode::Space);
-        state.update(space_pressed, get_frame_time(), random_color);
-
-        draw_frame(&state);
-
+    let mut frames = 0;
+    while !is_key_pressed(KeyCode::Escape) {
+        if is_key_pressed(KeyCode::R) {
+            game = Game::new();
+        }
+        if smoke {
+            game.update(Vec2::X, 0.05);
+        } else {
+            game.update(direction(), get_frame_time());
+        }
+        draw(&game);
         next_frame().await;
-        presented += 1;
-        if smoke && presented == 3 {
-            println!("Presented three Macroquad frames successfully.");
-            break;
+
+        if smoke {
+            frames += 1;
+            if frames == 3 {
+                assert_eq!(game.score, 1);
+                println!("Presented three frames and collected the first marker.");
+                break;
+            }
         }
     }
 }
 // ANCHOR_END: example
 
-/// Runs the example through its program entry point.
-#[cfg_attr(
-    not(test),
-    expect(
-        clippy::main_recursion,
-        reason = "The book runner invokes Macroquad's generated entry point to initialize its window"
-    )
-)]
-pub fn run() {
-    main();
-}
-
-/// Every corner lies on the circle around the center.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Every corner lies on the circle around the center.
+    /// Counts each marker once and stops updating after the last one.
     #[test]
-    fn triangle_corners_are_on_the_circle() {
-        let center = vec2(400.0, 300.0);
-        for angle in [0.0, 0.7, PI] {
-            for point in triangle_points(center, 120.0, angle) {
-                assert!((point.distance(center) - 120.0).abs() < 1e-3);
-            }
+    fn scoring_finishes_the_round() {
+        let mut game = Game::new();
+        for (index, marker) in MARKERS.into_iter().enumerate() {
+            game.player = marker;
+            game.update(Vec2::ZERO, 0.01);
+            assert_eq!(game.score, index + 1);
+            game.update(Vec2::ZERO, 0.01);
+            assert_eq!(game.score, index + 1);
         }
+        game.update(Vec2::X, 0.05);
+        assert_eq!(game.player, MARKERS[2]);
+        game = Game::new();
+        assert_eq!(game.score, 0);
+        assert_eq!(game.player, START);
     }
 
-    /// The corners are evenly spaced and rotate with the angle.
+    /// Keeps diagonal speed consistent and clamps movement at the boundary.
     #[test]
-    fn triangle_is_equilateral_and_rotates() {
-        let center = Vec2::ZERO;
-        let [a, b, c] = triangle_points(center, 100.0, 0.0);
-        assert!((a - vec2(100.0, 0.0)).length() < 1e-3);
-        let side = a.distance(b);
-        assert!((side - b.distance(c)).abs() < 1e-3);
-        assert!((side - c.distance(a)).abs() < 1e-3);
-
-        let [rotated, ..] = triangle_points(center, 100.0, PI / 2.0);
-        assert!((rotated - vec2(0.0, 100.0)).length() < 1e-3);
-    }
-
-    /// Checks that the game state initializes with defaults.
-    #[test]
-    fn game_state_initializes_with_defaults() {
-        let state = GameState::new();
-        assert_eq!(state.angle, 0.0);
-        assert_eq!(state.color, BLUE);
-    }
-
-    /// when space is not pressed.
-    #[test]
-    fn update_advances_angle_without_changing_color_when_space_not_pressed() {
-        let mut state = GameState::new();
-        let mut provider_called = false;
-        state.update(false, 0.5, || {
-            provider_called = true;
-            RED
-        });
-
-        assert!(!provider_called);
-        assert!((state.angle - 0.5).abs() < f32::EPSILON);
-        assert_eq!(state.color, BLUE);
-    }
-
-    /// Changes the game color when the space key is pressed.
-    #[test]
-    fn update_changes_color_when_space_is_pressed() {
-        let mut state = GameState::new();
-        let mut provider_called = false;
-        state.update(true, 0.25, || {
-            provider_called = true;
-            RED
-        });
-
-        assert!(provider_called);
-        assert!((state.angle - 0.25).abs() < f32::EPSILON);
-        assert_eq!(state.color, RED);
-    }
-
-    /// 1.
-    #[test]
-    fn random_color_generates_valid_rgba_bounds() {
-        for _ in 0..100 {
-            let color = random_color();
-            assert!((0.0..=1.0).contains(&color.r));
-            assert!((0.0..=1.0).contains(&color.g));
-            assert!((0.0..=1.0).contains(&color.b));
-            assert_eq!(color.a, 1.0);
-        }
-    }
-
-    // output-only: the example draws into a window until it is closed.
-
-    /// Verifies that the `games` example runs.
-    #[test]
-    #[ignore = "requires interactive example runtime"]
-    fn test_games_example_entry_point() {
-        main();
+    fn movement_respects_speed_and_world_bounds() {
+        let mut game = Game::new();
+        game.update(vec2(1.0, 1.0), 0.05);
+        assert!((game.player.distance(START) - SPEED * 0.05).abs() < 1e-6);
+        game.player.x = PLAYER_RADIUS;
+        game.update(-Vec2::X, 0.05);
+        assert!((game.player.x - PLAYER_RADIUS).abs() < f32::EPSILON);
+        assert_eq!(game.score, 0);
     }
 }

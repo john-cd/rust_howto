@@ -4,6 +4,10 @@
 
 {{#include game_development.incl.md}}
 
+Start with [Collect Three Markers](../games/index.md#collect-markers) for a
+complete input, update, and drawing loop. Use the smaller examples here when
+you need to isolate game state or vector math from the frame loop.
+
 ## Game Development {#game-development}
 
 ```rust,editable
