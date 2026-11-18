@@ -82,7 +82,9 @@ mod tests {
         let encoded = bincode::serialize(&sample())?;
         assert_eq!(
             encoded,
-            [5, 0, 0, 0, 0, 0, 0, 0, b'A', b'l', b'i', b'c', b'e', 30, 0, 0, 0, 1],
+            [
+                5, 0, 0, 0, 0, 0, 0, 0, b'A', b'l', b'i', b'c', b'e', 30, 0, 0, 0, 1
+            ],
             "unexpected bincode wire format"
         );
         Ok(())
