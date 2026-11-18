@@ -12178,12 +12178,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "285b05858fe7d58c5eff059f7b46c228fd86996d996c59eb35fc0340d174f640"
 dependencies = [
  "futures",
- "js-sys",
  "or_poisoned",
  "pin-project-lite",
  "serde",
  "throw_error",
- "wasm-bindgen",
 ]
 
 [[package]]
@@ -24329,7 +24327,6 @@ dependencies = [
  "futures",
  "gloo-net",
  "http 1.5.0",
- "inventory",
  "js-sys",
  "or_poisoned",
  "pin-project-lite",

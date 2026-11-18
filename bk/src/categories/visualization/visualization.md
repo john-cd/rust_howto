@@ -34,15 +34,24 @@ Open `temp/plot.html` relative to that working directory. The command writes the
 {{#include ../../../crates/cats/visualization/examples/visualization/plotly.rs:example}}
 ```
 
-## Browser and desktop alternatives {#application-charts}
+## Update a Chartistry line chart in the browser {#leptos-chartistry}
 
-### Chartistry in a Leptos application {#leptos-chartistry}
+[`leptos-chartistry`][c~leptos-chartistry~docs] draws a line from a Leptos signal. The app mounts into the document body and starts with four response-time samples. **Add sample** appends a fifth point, and **Remove sample** restores the original data. Hover over the chart to inspect a sample.
 
-[`leptos-chartistry`][c~leptos-chartistry~docs]↗{{hi:leptos-chartistry}} provides an SVG chart component for a Leptos application. This component uses fixed response-time samples. The optional `chartistry` Cargo feature checks that this component compiles. From `bk/crates`, run `cargo check --locked -p visualization --features chartistry --example visualization`. To see a mounted chart and tooltips, use the upstream examples linked from the crate documentation.
+Install [Trunk][trunk~releases] and the WebAssembly target. From `bk/crates/cats/visualization`, run:
+
+```console
+rustup target add wasm32-unknown-unknown
+trunk serve examples/chartistry/index.html --locked
+```
+
+Open the local URL printed by Trunk. The HTML entry point selects the `chartistry` binary and enables its optional Cargo feature. Trunk builds the WebAssembly, generates the JavaScript loader, and serves both files.
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/visualization/examples/visualization/leptos_chartistry.rs:example}}
+{{#include ../../../crates/cats/visualization/examples/chartistry/main.rs:example}}
 ```
+
+## Browser and desktop alternatives {#application-charts}
 
 ### ECharts with Charming {#charming}
 
