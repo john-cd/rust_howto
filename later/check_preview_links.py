@@ -21,14 +21,17 @@ def main() -> int:
     parser.add_argument("--include-deferred", action="store_true")
     args = parser.parse_args()
     summary = (LATER / "src" / "SUMMARY.md").read_text(encoding="utf-8")
-    sources = sorted({
-        Path(unquote(target)).with_suffix(".html").as_posix()
-        for target in re.findall(r"^\s*-\s+\[.*?\]\(([^)]+\.md)\)", summary, re.M)
-    })
+    sources = sorted(
+        {
+            Path(unquote(target)).with_suffix(".html").as_posix()
+            for target in re.findall(r"^\s*-\s+\[.*?\]\(([^)]+\.md)\)", summary, re.M)
+        }
+    )
     if not sources:
         parser.error("the staged summary lists no chapters")
     missing = [
-        source for source in ["index.html", *sources]
+        source
+        for source in ["index.html", *sources]
         if not (args.html_dir / source).is_file()
         or not (args.html_dir / source).stat().st_size
     ]
@@ -36,8 +39,11 @@ def main() -> int:
         parser.error(f"preview output missing or empty: {', '.join(missing)}")
     if not args.include_deferred:
         sources = [
-            source for source in sources
-            if not source.startswith(("categories/aerospace", "categories/cryptography_cryptocurrencies/"))
+            source
+            for source in sources
+            if not source.startswith(
+                ("categories/aerospace", "categories/cryptography_cryptocurrencies/")
+            )
         ]
     failures = check_chapters(args.html_dir, sources, check_fragments=True)
     for failure in failures:

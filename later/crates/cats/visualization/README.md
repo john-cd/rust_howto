@@ -2,6 +2,9 @@
 
 # Visualization
 
+Run `cargo run --locked -p visualization --example terminal_table` from
+`later/crates` to display exact readings and units in a plain text table.
+
 This crate contains code examples for the **Visualization** category on crates.io. It demonstrates integration with key ecosystem crates including `anyhow`, `plotly`.
 
 ## Examples Covered

@@ -37,6 +37,7 @@
 
 - [Compilers](categories/compilers/index.md)
   - [Tokenizing Input with Logos](categories/compilers/tokenization.md)
+  - [Render a Diagnostic with a Source Span](categories/compilers/source_diagnostics.md)
   - [Incremental computation](categories/compilers/incremental_computation.md)
 
 - [Computer vision](categories/computer-vision/index.md)
@@ -205,6 +206,7 @@
 
 - [Visualization](categories/visualization/index.md)
   - [Visualization](categories/visualization/visualization.md)
+  - [Present Measurements in a Terminal Table](categories/visualization/terminal_tables.md)
 
 - [Web assembly](categories/wasm/index.md)
   - [WASM Basics](categories/wasm/wasm_basics.md)

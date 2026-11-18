@@ -22,6 +22,9 @@ An interpreter executes source code or bytecode. A transpiler translates source 
 
 ## Examples
 
+Start by tokenizing input, then [render a source diagnostic](source_diagnostics.md)
+when the lexer reports an error.
+
 {{#include tokenization.incl.md}}
 {{#include incremental_computation.incl.md}}
 

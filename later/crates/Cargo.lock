@@ -5975,6 +5975,7 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "clap",
+ "codespan-reporting 0.13.1",
  "comemo",
  "logos",
  "salsa",
@@ -19429,6 +19430,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "papergrid"
+version = "0.18.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d0984e668274d34691bc2b262ef0d115de5fa9973bcdee7ae32213f93099153e"
+dependencies = [
+ "bytecount",
+ "fnv",
+ "unicode-width 0.2.3",
+]
+
+[[package]]
 name = "parity-scale-codec"
 version = "3.7.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -25644,6 +25656,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "tabled"
+version = "0.22.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2d2596a104db1900b943f97d793a6c99addca918c4525c999f751a0f17d472eb"
+dependencies = [
+ "papergrid",
+ "testing_table",
+]
+
+[[package]]
 name = "tachys"
 version = "0.2.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -25818,6 +25840,15 @@ dependencies = [
  "tokio-stream",
  "tokio-util",
  "url",
+]
+
+[[package]]
+name = "testing_table"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0f8daae29995a24f65619e19d8d31dea5b389f3d853d8bf297bbf607cd0014cc"
+dependencies = [
+ "unicode-width 0.2.3",
 ]
 
 [[package]]
@@ -27769,6 +27800,7 @@ dependencies = [
  "leptos-chartistry",
  "plotly",
  "plotters",
+ "tabled",
 ]
 
 [[package]]

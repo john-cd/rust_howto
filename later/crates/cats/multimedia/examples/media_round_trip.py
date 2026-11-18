@@ -28,17 +28,30 @@ def round_trip(ffmpeg: str, output: Path) -> None:
         ).stdout
 
     run(
-        "-f", "lavfi", "-i", f"color=red:s={WIDTH}x{HEIGHT}:r=8:d=1",
-        "-f", "lavfi", "-i", f"sine=frequency=440:sample_rate={SAMPLE_RATE}:duration=1",
-        "-c:v", "ffv1", "-c:a", "pcm_s16le", clip,
+        "-f",
+        "lavfi",
+        "-i",
+        f"color=red:s={WIDTH}x{HEIGHT}:r=8:d=1",
+        "-f",
+        "lavfi",
+        "-i",
+        f"sine=frequency=440:sample_rate={SAMPLE_RATE}:duration=1",
+        "-c:v",
+        "ffv1",
+        "-c:a",
+        "pcm_s16le",
+        clip,
     )
     run("-i", clip, "-map", "0:v:0", "-frames:v", "1", thumbnail)
     run("-i", clip, "-map", "0:a:0", "-c:a", "pcm_s16le", audio)
 
     with wave.open(str(audio), "rb") as wav:
-        if (wav.getnchannels(), wav.getsampwidth(), wav.getframerate(), wav.getnframes()) != (
-            1, 2, SAMPLE_RATE, SAMPLE_RATE
-        ):
+        if (
+            wav.getnchannels(),
+            wav.getsampwidth(),
+            wav.getframerate(),
+            wav.getnframes(),
+        ) != (1, 2, SAMPLE_RATE, SAMPLE_RATE):
             raise ValueError("expected one second of mono 16-bit PCM at 8 kHz")
         samples = struct.iter_unpack("<h", wav.readframes(SAMPLE_RATE))
         if max(abs(sample) for (sample,) in samples) not in range(3_000, 5_000):
@@ -46,7 +59,10 @@ def round_trip(ffmpeg: str, output: Path) -> None:
 
     pixels = run("-i", thumbnail, "-pix_fmt", "rgb24", "-f", "rawvideo", "-")
     png = thumbnail.read_bytes()
-    if png[:8] != b"\x89PNG\r\n\x1a\n" or struct.unpack(">II", png[16:24]) != (WIDTH, HEIGHT):
+    if png[:8] != b"\x89PNG\r\n\x1a\n" or struct.unpack(">II", png[16:24]) != (
+        WIDTH,
+        HEIGHT,
+    ):
         raise ValueError("thumbnail must be a 64 by 48 PNG")
     if len(pixels) != WIDTH * HEIGHT * 3:
         raise ValueError("unexpected RGB frame size")

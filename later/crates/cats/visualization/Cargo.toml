@@ -18,6 +18,11 @@ categories = ["visualization"]
 autolib = false
 
 [[example]]
+name = "terminal_table"
+path = "examples/terminal_table.rs"
+test = true
+
+[[example]]
 name = "visualization"
 path = "examples/visualization/main.rs"
 test = true
@@ -35,6 +40,8 @@ leptos-chartistry = "0.2.3"
 plotly = "0.14.1"
 # A Rust drawing library focus on data plotting for both WASM and native applications
 plotters = { version = "0.3.7", default-features = false, features = ["svg_backend", "line_series"] }
+# Present exact values as a plain text table.
+tabled = { version = "0.22.0", default-features = false, features = ["std"] }
 
 [lints]
 workspace = true
