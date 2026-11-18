@@ -4,11 +4,11 @@
 
 [![cat~rendering::data-formats][cat~rendering::data-formats~badge]][cat~rendering::data-formats]{{hi:Rendering data formats}}
 
-Use a format-specific page to choose parsers for 3D models, SVG, and compressed GPU textures. Raster image decoding is covered in [[multimedia_images | Multimedia: Images]].
+Use a format-specific page to choose parsers for 3D models, SVG, and compressed GPU textures. Raster image decoding is covered in [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html).
 
 | Asset family | Crates or formats | Guide |
 | --- | --- | --- |
-| Raster images and sprites | `image`, `imageproc`, `lodepng`, `jpeg-decoder`, `gif`, `webp` | [[multimedia_images | Multimedia: Images]] |
+| Raster images and sprites | `image`, `imageproc`, `lodepng`, `jpeg-decoder`, `gif`, `webp` | [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html) |
 | 3D scenes and meshes | glTF, OBJ, STL, PLY | [3D model formats](3d_model_formats.md) |
 | Vector graphics | SVG, `usvg`, `resvg` | [Vector formats](vector_formats.md) |
 | GPU texture containers | KTX2, DDS; Basis Universal transcoding | [Texture formats](texture_formats.md) |
@@ -24,9 +24,9 @@ Use a format-specific page to choose parsers for 3D models, SVG, and compressed 
 
 - [[rendering | Rendering]].
 - [[rendering_engine | Rendering Engine]].
-- [[2d_renderers | 2D Renderers]].
+- [2D Renderers](https://john-cd.com/rust_howto/categories/graphics/2d_renderers.html).
 - [[3d_renderers | 3D Renderers]].
-- [[svg_rendering | SVG Rendering]].
+- [SVG Rendering](https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html).
 - [[rendering_graphics-api | Rendering: Graphics API]].
 
 {{#include refs.incl.md}}

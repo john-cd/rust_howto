@@ -4,7 +4,7 @@
 
 {{#include multimedia.incl.md}}
 
-This chapter connects media types: play a generated sound, extract audio from a video, and turn a video frame into an image. The [audio](../multimedia_audio/index.md), [image](../multimedia_images/images.md), [encoding](../multimedia_encoding/encoding.md), and [video](../multimedia_video/index.md) chapters own format-specific APIs and processing recipes.
+This chapter connects media types: play a generated sound, extract audio from a video, and turn a video frame into an image. The [audio](../multimedia_audio/index.md), [image](https://john-cd.com/rust_howto/categories/multimedia_images/images.html), [encoding](../multimedia_encoding/encoding.md), and [video](../multimedia_video/index.md) chapters own format-specific APIs and processing recipes.
 
 ## Play a Generated Sound {#multimedia}
 
@@ -38,13 +38,13 @@ ffmpeg -ss 1 -i input.mp4 -map 0:v:0 -frames:v 1 thumbnail.png
 
 Seeking before `-i` allows the demuxer to seek near the requested timestamp; decoder behavior and keyframes affect the result. Choose a timestamp inside the clip and inspect the output. FFmpeg asks before replacing an existing file; use distinct output names when preserving originals.
 
-Once extracted, process the image with the [Images](../multimedia_images/images.md) recipes. For application integration, invoke FFmpeg with separate process arguments and check its exit status before reading the output; do not construct a shell command from untrusted filenames.
+Once extracted, process the image with the [Images](https://john-cd.com/rust_howto/categories/multimedia_images/images.html) recipes. For application integration, invoke FFmpeg with separate process arguments and check its exit status before reading the output; do not construct a shell command from untrusted filenames.
 
 ## Related Topics {#related-topics .skip}
 
 - [Audio playback and processing](../multimedia_audio/index.md).
 - [Media codecs and container metadata](../multimedia_encoding/encoding.md).
-- [Image processing](../multimedia_images/images.md).
+- [Image processing](https://john-cd.com/rust_howto/categories/multimedia_images/images.html).
 - [Video processing](../multimedia_video/index.md).
 
 {{#include refs.incl.md}}

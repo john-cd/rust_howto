@@ -10,9 +10,7 @@ Vector graphics describe shapes and paths with coordinates, lines, and curves in
 
 A path is an ordered set of subpaths. A subpath starts at a point, adds straight or curved segments, and ends open or closed. This host-buildable example creates a closed path and tessellates it into vertices and indices:
 
-```rust,editable
-{{#include ../../../crates/cats/rendering/examples/2d_vector_graphics/vector_graphics_2d.rs:example}}
-```
+See the [published recipe and example](https://john-cd.com/rust_howto/categories/graphics/2d_vector_graphics.html).
 
 The path is geometry, not a colored image. A drawing operation also needs a fill or stroke style, a transform, and a renderer that turns the geometry into pixels.
 
@@ -80,7 +78,7 @@ The build script of `skia-safe` downloads prebuilt Skia binaries for common targ
 
 ## Choose the Rendering Boundary
 
-Use Lyon when your application needs path geometry and wants to select its own backend. Use a canvas renderer such as `femtovg` when you prefer drawing commands and the renderer's built-in path handling. Use a GPU renderer such as `vger` when its scene model and backend fit the rest of the application. For static vector assets, rendering SVG through an SVG-focused pipeline may be simpler than building paths by hand; see [SVG Rendering](svg_rendering.md).
+Use Lyon when your application needs path geometry and wants to select its own backend. Use a canvas renderer such as `femtovg` when you prefer drawing commands and the renderer's built-in path handling. Use a GPU renderer such as `vger` when its scene model and backend fit the rest of the application. For static vector assets, rendering SVG through an SVG-focused pipeline may be simpler than building paths by hand; see [SVG Rendering](https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html).
 
 ## See Also {#see-also .skip}
 
@@ -88,12 +86,12 @@ Use Lyon when your application needs path geometry and wants to select its own b
 
 ## Related Topics {#related-topics .skip}
 
-- [2D Renderers](2d_renderers.md).
-- [2D Raster Graphics](2d_raster_graphics.md).
+- [2D Renderers](https://john-cd.com/rust_howto/categories/graphics/2d_renderers.html).
+- [2D Raster Graphics](https://john-cd.com/rust_howto/categories/graphics/2d_raster_graphics.html).
 - [3D Renderers](3d_renderers.md).
 - [Rendering](index.md).
 - [Rendering Engines](../rendering_engine/index.md).
-- [SVG Rendering](svg_rendering.md).
+- [SVG Rendering](https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

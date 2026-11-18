@@ -17,5 +17,5 @@
 [c~s~d]: https://docs.rs/symphonia
 [c~zune-jpeg~docs]: https://docs.rs/zune-jpeg
 [ex~multimedia_encoding~audio]: ../multimedia_audio/audio.md
-[ex~multimedia_encoding~images]: ../multimedia_images/images.md
+[ex~multimedia_encoding~images]: https://john-cd.com/rust_howto/categories/multimedia_images/images.html
 [ex~multimedia_encoding~video]: ../multimedia_video/video.md

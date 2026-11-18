@@ -37,7 +37,7 @@ fn main() -> ! {
 }
 ```
 
-If fixed capacity is enough, prefer the [[no-std_no-alloc | No Alloc]] patterns instead of adding a heap.
+If fixed capacity is enough, prefer the [No Alloc](https://john-cd.com/rust_howto/categories/no-std/no_alloc.html) patterns instead of adding a heap.
 
 ## Provide a panic handler for a bare-metal binary {#no-std}
 
@@ -59,7 +59,7 @@ For board setup, startup, and probe workflows, see [[embedded | Embedded Systems
 
 ## Related Topics {#related-topics .skip}
 
-- [[no-std_no-alloc | No Alloc]].
+- [No Alloc](https://john-cd.com/rust_howto/categories/no-std/no_alloc.html).
 - [[embedded | Embedded Systems]].
 - [[memory-management | Memory Management]].
 - [[development_tools | Development Tools]].

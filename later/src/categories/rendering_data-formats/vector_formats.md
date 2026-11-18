@@ -22,9 +22,9 @@ A vector document has no pixel size of its own. This example scales the document
 
 ## Related Topics {#related-topics .skip}
 
-- [[svg_rendering | SVG Rendering]].
+- [SVG Rendering](https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html).
 - [[2d_vector_graphics | 2D Vector Graphics]].
-- [[multimedia_images | Multimedia: Images]].
+- [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

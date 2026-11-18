@@ -21,12 +21,12 @@ Examples:
 ## Topics
 
 - [[rendering_engine | Rendering Engine]].
-- [[2d_renderers | 2D Renderers]].
-  - [[2d_raster_graphics | 2D Raster Graphics]].
+- [2D Renderers](https://john-cd.com/rust_howto/categories/graphics/2d_renderers.html).
+  - [2D Raster Graphics](https://john-cd.com/rust_howto/categories/graphics/2d_raster_graphics.html).
   - [[2d_vector_graphics | 2D Vector Graphics]].
 - [[3d_renderers | 3d Renderers]].
 - [[rendering_data-formats | Rendering Data Formats]].
-- [[svg_rendering | SVG Rendering]].
+- [SVG Rendering](https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html).
 - [[text_rendering | Text Rendering]].
 - Low-level Graphics API: [[rendering_graphics-api | Rendering: Graphics API]].
   - [[gpu_abstraction_layers | Gpu Abstraction Layers]].
@@ -44,7 +44,7 @@ See also:
 
 ### 2D Raster Graphics
 
-{{#include 2d_raster_graphics.incl.md}}
+See the [published 2d raster graphics chapter](https://john-cd.com/rust_howto/categories/graphics/2d_raster_graphics.html).
 
 ### 2D Vector Graphics
 
@@ -56,7 +56,7 @@ See also:
 
 ### SVG Rendering
 
-{{#include svg_rendering.incl.md}}
+See the [published svg rendering chapter](https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html).
 
 ### Font Loading & Text Rendering
 
@@ -67,7 +67,7 @@ See also:
 - [[rendering_data-formats | Rendering Data Formats]]: 3D model and scene formats.
 - [[rendering_engine | Rendering Engine]]: engines built on the APIs below.
 - [[rendering_graphics-api | Rendering: Graphics API]]: OpenGL, Vulkan, `wgpu` and shaders.
-- [[game_development | Game Development]], [[gui | GUI]], [[visualization | Visualization]] and [[multimedia_images | Multimedia: Images]] / [[multimedia_video | Multimedia: Video]].
+- [[game_development | Game Development]], [[gui | GUI]], [[visualization | Visualization]] and [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html) / [[multimedia_video | Multimedia: Video]].
 - Windowing: [`winit`][c~winit~docs]↗{{hi:winit}}, the preferred cross-platform window and event library.
 
 {{#include refs.incl.md}}

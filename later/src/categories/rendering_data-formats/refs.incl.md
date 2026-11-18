@@ -13,4 +13,4 @@
 [c~tobj~docs]: https://docs.rs/tobj
 [c~tobj~docs~badge]: https://img.shields.io/crates/v/tobj?label=tobj
 
-[p~svg-rendering]: ../rendering/svg_rendering.md
+[p~svg-rendering]: https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html

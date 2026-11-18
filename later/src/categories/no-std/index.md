@@ -18,7 +18,7 @@ Under [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}}, you use [`core
 | Layer | Crate | Needs | Provides |
 | --- | --- | --- | --- |
 | `core` | [`core`][c~core~docs]↗{{hi:core}} | Nothing | Primitive types, `Option`, `Result`, iterators, atomics, formatting. Always available. |
-| `alloc` | [`alloc`][c~alloc~docs]↗{{hi:alloc}} | A global allocator | `Box`, `Vec`, `String`, `Rc`, `Arc`, `BTreeMap`. See [No Alloc](../no-std_no-alloc/index.md) for working without it. |
+| `alloc` | [`alloc`][c~alloc~docs]↗{{hi:alloc}} | A global allocator | `Box`, `Vec`, `String`, `Rc`, `Arc`, `BTreeMap`. See [No Alloc](https://john-cd.com/rust_howto/categories/no-std/no_alloc.html) for working without it. |
 | `std` | [`std`][c~std~docs]↗{{hi:std}} | Target support | Higher-level APIs such as files and threads, where the target supports them. |
 
 A freestanding `#![no_std]` binary needs a panic handler. Crates such as [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}} and [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}} supply one. See [Bare-metal Startup and Allocation](no_std.md) for a sketch.
@@ -49,7 +49,7 @@ Consult the [`no-std`][cat~no-std]↗ category on [`crates.io`][crates.io~websit
 - [[embedded | Embedded]] Systems.
 - [[memory-management | Memory Management]].
 - [[memory_usage_analysis | Memory Usage Analysis]].
-- [[no-std_no-alloc | No Alloc]].
+- [No Alloc](https://john-cd.com/rust_howto/categories/no-std/no_alloc.html).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

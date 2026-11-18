@@ -40,7 +40,7 @@ Portable APIs (WebGPU through [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}) run on every 
 | --- | --- | --- |
 | GPU memory management | [`vulkano`][c~vulkano~docs]↗{{hi:vulkano}} | Memory management depends on the chosen graphics API. |
 | Window management and input | [`winit`][c~winit~docs]↗{{hi:winit}}, `raw-window-handle` | Window handles connect a window system to graphics APIs; `winit` also provides event handling. |
-| [Image loading and manipulation](../multimedia_images/index.md) | [`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} | Load and process image data for rendering. |
+| [Image loading and manipulation](https://john-cd.com/rust_howto/categories/multimedia_images/index.html) | [`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} | Load and process image data for rendering. |
 
 - [[graphics | Graphics]].
 - [[rendering | Rendering]].

@@ -54,7 +54,6 @@
 
 - [Data processing](other/data-processing/index.md)
   - [CSV](other/data-processing/csv.md)
-  - [Dataframes](other/data-processing/dataframes.md)
   - [Data engineering](other/data-processing/data_engineering.md)
 
 - [Development tools - FFI](categories/development-tools_ffi/index.md)
@@ -126,11 +125,6 @@
   - [Web-based GUI](categories/gui/web_based_gui.md)
   - [Window creation](categories/gui/window_creation.md)
 
-- [Images](categories/multimedia_images/index.md)
-  - [Image Processing Recipes](categories/multimedia_images/images.md)
-  - [Color Handling](categories/multimedia_images/color_handling.md)
-  - [Pixel Buffers](categories/multimedia_images/pixel_buffers.md)
-
 - [Internationalization](categories/internationalization/index.md)
   - [Internationalization](categories/internationalization/internationalization.md)
 
@@ -146,9 +140,6 @@
 - [Multimedia encoding](categories/multimedia_encoding/index.md)
   - [Multimedia encoding](categories/multimedia_encoding/encoding.md)
 
-- [No `alloc`](categories/no-std_no-alloc/index.md)
-  - [No `alloc`](categories/no-std_no-alloc/no_alloc.md)
-
 - [No `std`](categories/no-std/index.md)
   - [Bare-metal Startup and Allocation](categories/no-std/no_std.md)
 
@@ -162,12 +153,9 @@
   - [macOS](categories/os_macos-apis/macos.md)
 
 - [Rendering](categories/rendering/index.md)
-  - [2D Renderers](categories/rendering/2d_renderers.md)
-    - [2D Raster Graphics](categories/rendering/2d_raster_graphics.md)
-    - [2D Vector Graphics](categories/rendering/2d_vector_graphics.md)
+  - [2D Vector Graphics](categories/rendering/2d_vector_graphics.md)
   - [3D Renderers](categories/rendering/3d_renderers.md)
   - [Text Rendering](categories/rendering/text_rendering.md)
-  - [SVG Rendering](categories/rendering/svg_rendering.md)
 
 - [Rendering - data formats](categories/rendering_data-formats/index.md)
   - [3D model formats](categories/rendering_data-formats/3d_model_formats.md)
