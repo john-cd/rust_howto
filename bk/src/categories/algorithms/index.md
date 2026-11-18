@@ -72,7 +72,7 @@ For small-scale tasks, like filtering a list of items in memory, reach first for
 - `argminmax` provides efficient argmin & argmax (in 1 function) with SIMD for floats and integers.
 - `bytecount` counts occurrences of a given byte or UTF-8 code points in a byte slice quickly.
 
-[meilisearch][c~meilisearch~repo]↗ and [tantivy][c~tantivy~repo]↗ are full-text search engines written in Rust, similar to what you'd expect from `Elasticsearch` or `Algolia`. See also [Search Engines](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database-implementations/rust_search_engines.md).
+[meilisearch][c~meilisearch~repo]↗ and [tantivy][c~tantivy~repo]↗ are full-text search engines written in Rust, similar to what you'd expect from `Elasticsearch` or `Algolia`. See also [Search Engines](../database-implementations/rust_search_engines.md).
 
 ### String Algorithms and Text Processing
 

@@ -20,5 +20,7 @@ This section covers Rust libraries for connecting to database management systems
 | Tooling | [Connection pools][ex~database~connection-pool] | [`bb8`][c~bb8~docs]↗, [`deadpool`][c~deadpool~docs]↗, [`r2d2`][c~r2d2~docs]↗ |
 | Tooling | [Query builders and ORMs][ex~database~query-builders-orms] | [`sqlx`][c~sqlx~docs]↗ (PostgreSQL, MySQL, SQLite), [`sea-orm`][c~sea-orm~docs]↗, [`diesel`][c~diesel~docs]↗, [`toasty`][c~toasty~docs]↗; migrations: [`sea-orm-cli`][c~sea-orm-cli~docs]↗, [`diesel_cli`](https://docs.rs/diesel_cli)↗, [`migrate`][c~migrate~docs]↗ |
 
+For database engines implemented in Rust, including embedded stores and search engines, see [Database Implementations](../database-implementations/index.md).
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

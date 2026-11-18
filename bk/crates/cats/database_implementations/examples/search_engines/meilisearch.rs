@@ -1,8 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! This is an example of how to use the MeiliSearch Rust SDK to index and
-//! search documents.
+//! Use the Meilisearch Rust SDK to index and search documents.
 //!
 //! Meilisearch is a search server with typo tolerance and instant results,
 //! suited to "search as you type". Documents are sent to an index, and searches
@@ -18,7 +17,7 @@ use meilisearch_sdk::tasks::Task;
 use serde::Deserialize;
 use serde::Serialize;
 
-/// A document that can be indexed in `MeiliSearch`.
+/// A document that can be indexed in `Meilisearch`.
 #[derive(Debug, Serialize, Deserialize)]
 struct MyDocument {
     /// The identifier of the document.
@@ -31,10 +30,10 @@ struct MyDocument {
     content: String,
 }
 
-/// This is an example of how to use the `MeiliSearch` Rust SDK to index and
+/// This is an example of how to use the `Meilisearch` Rust SDK to index and
 /// search documents.
 ///
-/// It requires a running `MeiliSearch` instance.
+/// It requires a running `Meilisearch` instance.
 #[tokio::main(flavor = "current_thread")]
 async fn main() -> anyhow::Result<()> {
     let meilisearch_url = env::var("MEILISEARCH_URL").unwrap_or("http://localhost:7700".into());
@@ -52,9 +51,8 @@ async fn run_with_config(
     meilisearch_url: String,
     meilisearch_api_key: Option<String>,
 ) -> anyhow::Result<()> {
-    // Create a client and connect to MeiliSearch.
-    let client = Client::new(meilisearch_url, meilisearch_api_key)
-        .expect("the meilisearch example invariant should hold");
+    // Create a client and connect to Meilisearch.
+    let client = Client::new(meilisearch_url, meilisearch_api_key)?;
 
     // Create an index.
     let index: Index = client.index("my_index");

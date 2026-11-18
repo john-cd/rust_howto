@@ -3,7 +3,7 @@
 [package]
 name = "database_implementations"
 version.workspace = true
-description = "Examples for interacting with various database backends like Sled, SurrealDB, and Meilisearch."
+description = "Examples for embedded databases and search engines written in Rust."
 authors.workspace = true
 edition.workspace = true
 rust-version.workspace = true
