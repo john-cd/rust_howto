@@ -32,12 +32,12 @@ use tower_sessions::MemoryStore;
 use tower_sessions::Session;
 use tower_sessions::SessionManagerLayer;
 
-/// Shared `token key` used by this module.
+/// Session entry holding the synchronizer token reused by rendered forms.
 const TOKEN_KEY: &str = "csrf_token";
 
 /// Returns the session's CSRF token, creating one on first use.
 async fn csrf_token(session: &Session) -> Result<String, StatusCode> {
-    /// Handles the internal behavior for this component.
+    /// Maps session-storage or randomness failures to a generic server-error response.
     fn internal<E>(_: E) -> StatusCode {
         StatusCode::INTERNAL_SERVER_ERROR
     }
@@ -54,7 +54,10 @@ async fn csrf_token(session: &Session) -> Result<String, StatusCode> {
     Ok(token)
 }
 
-/// Compares two strings in time that does not depend on where they differ.
+/// Rejects unequal lengths, then accumulates byte differences across both full inputs.
+///
+/// Avoids an early return at the first unequal byte; this source-level loop
+/// does not establish a compiler-enforced constant-time guarantee.
 fn constant_time_eq(a: &str, b: &str) -> bool {
     a.len() == b.len()
         && a.bytes()
@@ -75,13 +78,13 @@ async fn show_form(session: Session) -> Result<Html<String>, StatusCode> {
     )))
 }
 
-/// Data for change email operations, including csrf token and email.
+/// Submitted form fields carrying the session token and requested email value.
 #[derive(Deserialize)]
 struct ChangeEmail {
     /// CSRF token checked for this request.
     csrf_token: String,
 
-    /// Email address used to identify or contact the change email.
+    /// Requested email text echoed after the token check; this example does not persist it.
     email: String,
 }
 
