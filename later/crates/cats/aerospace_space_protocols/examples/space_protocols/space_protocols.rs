@@ -53,15 +53,13 @@ fn ccsds_space_packet() -> [u8; 8] {
 }
 // ANCHOR_END: ccsds-space-packet
 
-/// Runs the packet construction examples.
+/// Prints a CCSDS space packet.
 fn main() {
     let packet = ccsds_space_packet();
     println!("CCSDS packet: {packet:02X?}");
-    crate::pus_telecommand::pus_telecommand();
-    crate::pus_telemetry::pus_telemetry();
 }
 
-/// Runs the space protocols examples through the chapter entry point.
+/// Runs the CCSDS packet demonstration.
 pub fn run() {
     main();
 }

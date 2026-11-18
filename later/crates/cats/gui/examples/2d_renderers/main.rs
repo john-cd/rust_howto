@@ -43,7 +43,7 @@ fn main() -> anyhow::Result<()> {
         match command {
             #[cfg(feature = "femtovg")]
             Commands::Femtovg => {
-                femtovg::main()?;
+                femtovg::run()?;
             }
             #[cfg(feature = "skia")]
             Commands::SkiaSafe => {

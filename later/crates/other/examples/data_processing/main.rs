@@ -1,17 +1,21 @@
-//! Runs the Arrow data processing example when the `arrow` feature is enabled.
+//! Runs the selected Apache Arrow data processing recipe.
 //!
 //! TODO Reviewed ??-??-2026.
 
 use anyhow::Result;
+use clap::Parser;
 
-/// Runs six Apache Arrow examples: arrays, sub-crate arrays, IPC files, CSV, JSON, and Serde
-/// conversion.
-#[cfg(feature = "arrow")]
 mod arrow;
 
-/// Runs the example if the `arrow` feature is enabled.
+/// Command-line selector for the Arrow recipes.
+#[derive(Parser)]
+struct Cli {
+    /// Runs all Arrow recipes when no subcommand is supplied.
+    #[command(subcommand)]
+    recipe: Option<arrow::Recipe>,
+}
+
+/// Dispatches the selected recipe and reports any failure.
 fn main() -> Result<()> {
-    #[cfg(feature = "arrow")]
-    arrow::run()?;
-    Ok(())
+    arrow::run(Cli::parse().recipe.unwrap_or(arrow::Recipe::All))
 }
