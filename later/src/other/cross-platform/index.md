@@ -70,11 +70,14 @@ WebAssembly can run Rust code in browsers, but a web app still uses browser APIs
 
 ### Desktop and mobile applications
 
-Choose how much UI and platform integration to share. [`tauri`][c~tauri~docs]↗{{hi:tauri}} uses a web frontend with a Rust application layer; [`Wry`][wry-docs] is a lower-level WebView library. For a GTK-based interface, see [`gtk4`][c~gtk4~crates.io]↗{{hi:GTK-rs}}. On mobile, a native UI can call a shared Rust library through an FFI boundary; Crux is one way to share behavior while leaving each UI native.
+Choose which parts you want in common across targets.
 
-Native mobile development with Rust is still maturing. Rust is most compelling on mobile as a shared library or native module, for example behind a [Flutter][docs.flutter.dev~website]↗{{hi:Flutter}} or [React Native](https://reactnative.dev)↗{{hi:React Native}} UI, rather than as a full UI stack.
-
-[`Dioxus`][dioxus-platform-support] provides web, desktop, and mobile renderers. Their setup and platform-specific features differ, so check the current platform guide before selecting it.
+| What to share | Common crates | What to check |
+| --- | --- | --- |
+| A web interface and a Rust application layer | [`tauri`][c~tauri~docs], or [`wry`][wry-docs] for direct WebView integration | Check the target's WebView, permissions, and installer. See [Web-based desktop GUIs](../../categories/gui/index.md#web-based-guis). |
+| A Rust component model | [`dioxus`][dioxus-platform-support] | Check the feature set and prerequisites of the selected desktop, mobile, or web renderer. |
+| A desktop interface drawn from Rust | [`egui`][c~egui~docs], [`iced`][c~iced~docs], or [`slint`][c~slint~docs] | Compare the [GUI recipes](../../categories/gui/index.md) and check keyboard input, accessibility, and packaging on each target. |
+| Application rules behind a native UI | [`crux_core`][c~crux_core~docs], or a Rust library with generated bindings | Keep the UI in the platform shell or connect a [Flutter interface](../../categories/development-tools_ffi/flutter.md). Smoke check the binding and lifecycle on a real target. |
 
 ## Keep operating-system APIs local
 
@@ -82,7 +85,7 @@ For system-specific APIs, use the smallest platform-specific layer possible. The
 
 ## Related Topics
 
-- [Cross-platform Development](index.md).
+- [Native OS APIs](../native-os/index.md) for platform bindings and ownership.
 - [GUI](../../categories/gui/index.md).
 - [Embedded Systems](../../categories/embedded/index.md).
 - [WebAssembly](../../categories/wasm/index.md).

@@ -17,12 +17,17 @@ function. Its recipe table links to both examples.
 
 ### Azure and Google Cloud
 
-Rust client libraries are also available for Azure and Google Cloud. Check each
-project's current service coverage, Rust version support, and stability before choosing
-an SDK.
+Choose the SDK client for the service you call, then choose how the app
+authenticates on its deployment target.
 
-- [Azure SDK for Rust][azure-sdk-for-rust~repo]↗.
-- [Google Cloud Rust client libraries][google-cloud-rust~repo]↗.
+| Provider | Credential and client starting point |
+| --- | --- |
+| AWS | Use [`aws-config`](https://docs.rs/aws-config/) with a service crate such as [`aws-sdk-s3`](https://docs.rs/aws-sdk-s3/). See [shared AWS configuration](aws.md#aws-shared-config) for the runnable recipe. |
+| Azure | Use [`azure_identity`](https://docs.rs/azure_identity/) for credentials and select the service client from the [Azure SDK][azure-sdk-for-rust~repo]. |
+| Google Cloud | Use [`google-cloud-auth`](https://docs.rs/google-cloud-auth/) and the relevant [Google Cloud service client][google-cloud-rust~repo]. |
+
+The Azure and Google entries are SDK pointers. Check the target service,
+permissions, and supported credential source before adopting a client.
 
 ## Deploy Rust applications
 
@@ -66,7 +71,3 @@ Browse the [Rust cloud-native project catalog][rust-cloud-native~website]↗ and
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  edit
-</div>

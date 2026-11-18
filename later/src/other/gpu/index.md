@@ -17,6 +17,11 @@ This index covers general-purpose computing on GPUs from Rust. Graphics APIs for
 
 Continue to the [GPU programming guide](gpu.md) for setup details and examples.
 
+Before choosing a backend, identify the adapter, driver, and required features
+and limits. Then dispatch a small kernel, read its output back, and compare it
+with a known result. Record the backend that ran, since adapter discovery and
+successful compilation only cover setup.
+
 ## Related Topics {#related-topics .skip}
 
 - [[rendering_graphics-api | Rendering: Graphics API]].

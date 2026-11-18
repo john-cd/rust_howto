@@ -28,7 +28,6 @@
 [p~databases]: ../../../src/categories/database-implementations/databases.md
 [p~functions]: ../../language/functions.md
 [p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
-[p~serverless]: # "serverless.md"
 [p~virtualization]: # "../../categories/virtualization/index.md"
 [ex~cloud~kubernetes]: kubernetes.md#kubernetes
 [shuttle-rs~website]: https://www.shuttle.dev/

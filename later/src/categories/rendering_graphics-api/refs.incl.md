@@ -24,7 +24,6 @@
 [p~crates]: ../../crate_selection/index.md
 [p~cross-platform]: ../../other/cross-platform/index.md
 [p~debugging]: ../../../src/categories/development-tools_debugging/debugging.md
-[p~fragment]: ../../other/cloud/_fragment.md
 [p~gpu]: ../../other/gpu/gpu.md
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
 [p~images]: https://john-cd.com/rust_howto/categories/multimedia_images/images.html
