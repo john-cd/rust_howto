@@ -71,127 +71,126 @@ static RUST_FENCE: LazyLock<Regex> = LazyLock::new(|| {
         .expect("the Markdown fence regex is valid")
 });
 
-/// Data for cargo metadata operations, including packages.
+/// Subset of cargo metadata output needed to discover source targets.
 #[derive(Debug, Deserialize)]
 struct CargoMetadata {
-    /// Collection of packages values consumed by cargo metadata operations.
+    /// Packages reported by Cargo for the workspace being inspected.
     packages: Vec<CargoPackage>,
 }
 
-/// Data for cargo package operations, including name and manifest path.
+/// Package identity and targets decoded from Cargo metadata.
 #[derive(Debug, Deserialize)]
 struct CargoPackage {
-    /// Display label used to distinguish this cargo package from other entries.
+    /// Cargo package name used in target identities and diagnostics.
     name: String,
 
-    /// Manifest path value.
+    /// Manifest location used to relate Cargo metadata to repository paths.
     manifest_path: PathBuf,
 
-    /// Collection of targets values consumed by cargo package operations.
+    /// Library, binary, example, test, and other targets declared by the package.
     targets: Vec<CargoTarget>,
 }
 
-/// Data for cargo target operations, including name and kind.
+/// Cargo target metadata used to map book includes to compiled and tested sources.
 #[derive(Debug, Deserialize)]
 struct CargoTarget {
-    /// Display label used to distinguish this cargo target from other entries.
+    /// Target name used with its package and kind to construct a stable identity.
     name: String,
 
-    /// Collection of kind values consumed by cargo target operations.
+    /// Cargo target kinds, such as lib, bin, example, or test.
     kind: Vec<String>,
 
-    /// Src path value.
+    /// Source file serving as the root of this Cargo target.
     src_path: PathBuf,
     #[serde(default)]
 
-    /// Flag indicating whether the cargo target satisfies the test condition.
+    /// Whether Cargo enables a test harness for the target; not proof of a test run.
     test: bool,
     #[serde(default, rename = "required-features")]
 
-    /// Collection of required features values consumed by cargo target operations.
+    /// Features required before Cargo will build this target.
     required_features: Vec<String>,
 }
 
-/// Data for target index operations, including record and tested.
+/// Indexed target record with its declared test-harness capability.
 #[derive(Clone, Debug)]
 struct TargetIndex {
-    /// Record value.
+    /// Normalized target details emitted in the audit report.
     record: CargoTargetRecord,
 
-    /// Flag indicating whether the target index satisfies the tested condition.
+    /// Declared Cargo test flag used when classifying source coverage.
     tested: bool,
 }
 
-/// Context passed through module visit context operations, retaining source path and target
-/// identity.
+/// Traversal context preserving target identity and conditional compilation paths.
 #[derive(Clone, Debug)]
 struct ModuleVisitContext {
-    /// Source path value.
+    /// Repository-relative source file currently being visited.
     source_path: String,
 
-    /// Target identity value.
+    /// Stable Cargo target identity inherited by all modules reached from its root.
     target_identity: String,
 
-    /// Module path value.
+    /// Rust module path within the target, starting at crate.
     module_path: String,
 
-    /// Module dir value.
+    /// Directory used to resolve file-backed child module declarations.
     module_dir: PathBuf,
 
-    /// Collection of conditions values consumed by module visit context operations.
+    /// Feature and cfg conditions accumulated along the module traversal path.
     conditions: Vec<String>,
 }
 
-/// State for scan state operations that tracks repo root and report.
+/// Accumulated source inventory, include relationships, and coverage diagnostics.
 #[derive(Debug)]
 struct ScanState {
-    /// Repo root value.
+    /// Checkout root used to resolve paths and normalize report entries.
     repo_root: PathBuf,
 
-    /// Report value.
+    /// Inventory and diagnostics assembled during the scan.
     report: Report,
 
-    /// Collection of targets by source values consumed by scan state operations.
+    /// Cargo targets indexed by their repository-relative root source file.
     targets_by_source: HashMap<String, Vec<TargetIndex>>,
 
-    /// Collection of modules by source values consumed by scan state operations.
+    /// Module identities and cfg conditions indexed by their source file.
     modules_by_source: HashMap<String, Vec<(String, Vec<String>)>>,
 
-    /// Directly included value.
+    /// Rust sources referenced directly by a book include directive.
     directly_included: BTreeSet<String>,
 
-    /// Collection of fragment includers values consumed by scan state operations.
+    /// Markdown fragments mapped to the chapters that include them.
     fragment_includers: BTreeMap<String, BTreeSet<String>>,
 
-    /// Chapter has compiled example value.
+    /// Chapters whose included examples are connected to a Cargo target.
     chapter_has_compiled_example: HashSet<String>,
 
-    /// Chapter has tested example value.
+    /// Chapters whose included examples have a target with a declared test harness.
     chapter_has_tested_example: HashSet<String>,
 
-    /// Collection of exceptions values consumed by scan state operations.
+    /// Explicit exceptions applied to diagnostics during report classification.
     exceptions: Vec<ExceptionRecord>,
 
-    /// Collection of example paths values consumed by scan state operations.
+    /// Discovered Rust example paths checked for unreferenced source files.
     example_paths: Vec<String>,
 }
 
-/// Data for include options operations, including chapter path and source path.
+/// Include-site context used to attribute diagnostics and determine visibility.
 #[derive(Debug)]
 struct IncludeOptions<'a> {
-    /// Chapter path value.
+    /// Published chapter receiving the included content.
     chapter_path: &'a str,
 
-    /// Source path value.
+    /// Repository-relative source file currently being visited.
     source_path: &'a str,
 
     /// Source line number.
     line: usize,
 
-    /// Flag indicating whether the include options satisfies the visible condition.
+    /// Whether the include occurs in rendered, visible Markdown content.
     visible: bool,
 
-    /// Flag indicating whether the include options satisfies the inside fence condition.
+    /// Whether the directive appears inside an already-open code fence.
     inside_fence: bool,
 }
 
