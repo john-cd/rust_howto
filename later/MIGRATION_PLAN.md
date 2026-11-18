@@ -14,7 +14,7 @@ working recipe. Remove unsupported recipe promises or complete them before migra
 | Order | Group | Current position | Work before a single grouped migration |
 | --- | --- | --- | --- |
 | 1 | Machine Learning: practical workflows, classical algorithms, and deep learning | Practical ML and classical ML each have 9 passing tests recorded in the readiness review. Deep-learning training and accelerator paths still need an audit. ML is a high-priority group, separate from general science. | Connect preprocessing, training, held-out evaluation, model persistence and inference; complete a bounded CPU deep-learning workflow; validate the full group before migration. |
-| 4 | Games, Game Development, Game Engines | Macroquad/ggez bounded native runs passed; the surrounding category is partly discovery links and unvalidated Bevy/Fyrox descriptions. | Add a coherent small game and a tested engine workflow; give each listed engine an honest documented disposition; migrate all three categories together. |
+| 4 | Games, Game Development, Game Engines | The Macroquad game and desktop frame loops have runtime evidence. Parry and glam teach collision queries and transforms. Bevy and Fyrox cover headless logic. | Migrate all three categories together. Retarget GUI and physics links, and preserve the documented limits of the headless engine examples. |
 | 5 | Graphics and Rendering | Migrated under [Graphics](../bk/src/categories/graphics/index.md). | Keep GUI renderer examples with their GUI package. |
 | 6 | General scientific computing and geospatial processing, excluding ML | Geo has substantial recipes and a feature-gated GEOS path; the Science landing page is currently dominated by ML. | Audit numerical coverage already in the book; add a non-ML scientific workflow, validate geometry/coordinate handling, and reorganize Science navigation before a grouped migration. |
 | 7 | GUI, with accessibility and platform support | Windows presentation and headless logic checks passed. Toolkit, input/resize, accessibility, and native Linux gaps remain. | Finish a documented platform/toolkit matrix and real interaction coverage before promoting the whole category. |
@@ -62,9 +62,9 @@ and runtime evidence remains in [Platform readiness](PLATFORM_READINESS.md).
 
 ## Games and Graphics Groups
 
-- Expand the small game into an explained update/render/input loop with deterministic
-  state tests, collision/scoring, resize behavior, and bounded smoke mode. Keep the Games
-  discovery list brief and separate from the tutorial's tested behavior.
+- Keep the playable marker game, independent collision and transform recipes, and
+  engine comparison together. The marker game includes deterministic state tests and
+  a bounded desktop smoke mode.
 - Graphics and Rendering are in [the published Graphics section](../bk/src/categories/graphics/index.md). The windowed three-d recipe has prior Linux lifecycle and pixel evidence in #2357. The separate wgpu examples document shader validation, GPU readback, and offscreen rendering.
 - Keep additional engine and surface recovery work tied to the application that needs it.
 

@@ -36,9 +36,9 @@ fn main() {
         Vec3::new(4.0, 5.0, 6.0),
     );
 
-    // Transform a vector using the matrix.
-    let transformed_vector = mat.transform_point3(Vec3::new(1.0, 0.0, 0.0));
-    println!("Transformed vector: {transformed_vector:?}");
+    // Transform a local point into world coordinates.
+    let transformed_point = mat.transform_point3(Vec3::new(1.0, 0.0, 0.0));
+    println!("Transformed point: {transformed_point:?}");
 }
 // ANCHOR_END: example
 
