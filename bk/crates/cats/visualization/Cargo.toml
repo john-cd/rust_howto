@@ -28,11 +28,6 @@ name = "visualization"
 path = "examples/visualization/main.rs"
 test = true
 
-[[bin]]
-name = "chartistry"
-path = "examples/chartistry/main.rs"
-required-features = ["chartistry"]
-
 [dev-dependencies]
 ## General
 # Flexible concrete Error type built on std::error::Error
@@ -45,12 +40,9 @@ plotters = { version = "0.3.7", default-features = false, features = ["svg_backe
 # Present exact values as a plain text table.
 tabled = { version = "0.22.0", default-features = false, features = ["std"] }
 
-[target.'cfg(target_arch = "wasm32")'.dependencies]
-leptos = { version = "0.8.23", features = ["csr"], optional = true }
-leptos-chartistry = { version = "0.2.3", optional = true }
-
 [features]
-chartistry = ["dep:leptos", "dep:leptos-chartistry"]
+# Exposes the browser launch instructions in the native example dispatcher.
+chartistry = []
 
 [lints]
 workspace = true

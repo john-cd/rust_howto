@@ -29885,11 +29885,17 @@ version = "0.1.2"
 dependencies = [
  "anyhow",
  "clap",
- "leptos",
- "leptos-chartistry",
  "plotly",
  "plotters",
  "tabled",
+]
+
+[[package]]
+name = "visualization_chartistry"
+version = "0.1.2"
+dependencies = [
+ "leptos",
+ "leptos-chartistry",
 ]
 
 [[package]]
