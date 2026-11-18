@@ -162,7 +162,9 @@ impl<T: ToSql, I: Iterator<Item = T> + ExactSizeIterator, F: Fn() -> I + Sync> T
         }
     }
 }
-/// Handles the downcast behavior for this component.
+/// Converts an array length to the PostgreSQL protocol's signed 32-bit dimension.
+///
+/// Returns an error instead of truncating a length larger than i32::MAX.
 fn downcast(len: usize) -> Result<i32, Box<dyn std::error::Error + Sync + Send>> {
     if len > i32::MAX as usize {
         Err("value too large to transmit".into())
