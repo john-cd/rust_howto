@@ -21,7 +21,7 @@ Use VS Code's **Preferences: Open User Settings (JSON)** command to edit setting
   "rust-analyzer.linkedProjects": [
     "bk/crates/Cargo.toml",
     "later/crates/Cargo.toml",
-    "mdbook-utils/Cargo.toml",
+    "../mdbook-utils/Cargo.toml",
     "publish/Cargo.toml",
     "tools/Cargo.toml",
     "xmpl/Cargo.toml"
@@ -33,7 +33,7 @@ Use VS Code's **Preferences: Open User Settings (JSON)** command to edit setting
 }
 ```
 
-Remove an entry if that project is not checked out locally. To reduce startup work, list only the workspace you are changing and add the others when needed. `search.exclude` keeps generated build files out of VS Code's file search; it does not change Rust analysis.
+The `mdbook-utils` checkout is a sibling of this repository. Remove an entry if that project is not checked out locally. To reduce startup work, list only the workspace you are changing and add the others when needed. `search.exclude` keeps generated build files out of VS Code's file search; it does not change Rust analysis.
 
 ### Reduce background work
 
@@ -45,7 +45,7 @@ By default, `rust-analyzer` runs Cargo checks on save and build scripts for more
 }
 ```
 
-This removes on-save Cargo diagnostics. Run the repository's `just` checks from the matching workspace when you need compiler or Clippy results.
+This stops Cargo checks on save, so compiler diagnostics from those checks are no longer refreshed after each save. Run the repository's `just` checks from the matching workspace when you need compiler or Clippy results.
 
 ### Useful optional settings
 
@@ -80,9 +80,9 @@ On Windows, the user-level `settings.json` is under `%APPDATA%\Code\User` (typic
 
 ## Related Topics {#related-topics .skip}
 
-- [[development_environment_setup | Development Environment Setup]].
-- [[repository_structure | Repository Structure]].
-- [[text-editors | Text Editors]].
+- [Development Environment Setup](development_environment_setup.md).
+- [Repository Structure](repository_structure.md).
+- [Text Editors](../../categories/text-editors/index.md).
 
 {{#include refs.incl.md}}
-{{#include ../refs/link-refs.md}}
+{{#include ../../refs/link-refs.md}}
