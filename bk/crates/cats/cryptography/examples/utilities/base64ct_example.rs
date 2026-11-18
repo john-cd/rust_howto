@@ -8,7 +8,9 @@
 use base64ct::Base64;
 use base64ct::Encoding;
 
-/// Handles the round trip behavior for this component.
+/// Allocates a Base64 representation, decodes it, and returns the recovered bytes.
+///
+/// Propagates decoder errors if encoding and decoding cease to agree.
 fn round_trip(token: &[u8]) -> Result<Vec<u8>, base64ct::Error> {
     let encoded = Base64::encode_string(token);
     Base64::decode_vec(&encoded)
