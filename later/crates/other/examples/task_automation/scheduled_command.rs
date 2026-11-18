@@ -6,6 +6,7 @@
 //! Parse the command template before substituting values so each value stays in its own
 //! argument. The executable comes directly from the trusted task definition.
 
+use std::borrow::Cow;
 use std::str::FromStr;
 
 use anyhow::Context;
@@ -56,7 +57,7 @@ impl Task {
                     "WHAT" => Ok(Some(what)),
                     _ => Err("unknown task variable"),
                 })
-                .map(|expanded| expanded.into_owned())
+                .map(Cow::into_owned)
                 .map_err(|error| anyhow::anyhow!("{error}"))
             })
             .collect::<Result<Vec<_>>>()?;
