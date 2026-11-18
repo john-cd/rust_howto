@@ -1212,6 +1212,14 @@
 
 {{#include ../code-organization/visibility.incl.md}}
 
+## Other Topics
+
+### Architecture
+
+{{#include ../other/architecture/architectural_patterns.incl.md}}
+
+{{#include ../other/architecture/common_architectures.incl.md}}
+
 ## Crate Selection
 
 ### Current State of The Art

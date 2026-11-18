@@ -57,6 +57,7 @@ members = [
     "cats/web_programming_websocket",
     "code_organization",
     "language",
+    "other",
     "proc_macros",
     "standard_library",
     "utils",
