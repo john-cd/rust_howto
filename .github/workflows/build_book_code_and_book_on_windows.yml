@@ -10,6 +10,8 @@ on:
     paths:
       - "bk/**"
       - "tools/**"
+      - "book_tooling"
+      - ".gitmodules"
       - ".devcontainer/**"
       - ".github/workflows/**"
       - ".github/actions/**"
@@ -24,6 +26,8 @@ on:
     paths:
       - "bk/**"
       - "tools/**"
+      - "book_tooling"
+      - ".gitmodules"
       - ".devcontainer/**"
       - ".github/workflows/**"
       - ".github/actions/**"
@@ -65,6 +69,10 @@ jobs:
       - name: Code checkout (clones the Git repository)
         # actions/checkout v7.0.1
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Check out Book Tooling
+        uses: ./.github/actions/checkout-book-tooling
+        with:
+          token: ${{ secrets.BOOK_TOOLING_TOKEN }}
 
       - name: Load pinned tool versions
         uses: ./.github/actions/load-pinned-versions
@@ -159,25 +167,6 @@ jobs:
           cargo +"$RUSTFMT_TOOLCHAIN" fmt --check
           cargo clippy --locked --all-targets -- --deny warnings
           cargo test --locked
-
-      - name: Configure credentials for private Cargo dependencies
-        shell: pwsh
-        env:
-          GH_TOKEN: ${{ secrets.BOOK_TOOLING_TOKEN }}
-        run: |
-          if ($env:GH_TOKEN) {
-            $authHeader = [Convert]::ToBase64String(
-              [Text.Encoding]::UTF8.GetBytes("x-access-token:$env:GH_TOKEN")
-            )
-            @(
-              "CARGO_NET_GIT_FETCH_WITH_CLI=true"
-              "GIT_CONFIG_COUNT=1"
-              "GIT_CONFIG_KEY_0=http.https://github.com/.extraheader"
-              "GIT_CONFIG_VALUE_0=AUTHORIZATION: basic $authHeader"
-            ) | Add-Content -LiteralPath $env:GITHUB_ENV -Encoding utf8
-          } else {
-            Write-Warning 'BOOK_TOOLING_TOKEN is not set; the tools workspace cannot fetch john-cd/book_tooling.'
-          }
 
       - name: Build / release the tools, incl. mdbook-scrub
         run: cargo +"$RUSTFMT_TOOLCHAIN" build --bins --locked --release -Z unstable-options --artifact-dir "../bin"

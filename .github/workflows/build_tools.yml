@@ -9,6 +9,8 @@ on:
     branches: ["develop"]
     paths:
       - "tools/**"
+      - "book_tooling"
+      - ".gitmodules"
       - ".devcontainer/**"
       - ".github/workflows/**"
       - ".github/actions/**"
@@ -21,6 +23,8 @@ on:
     branches: ["develop"]
     paths:
       - "tools/**"
+      - "book_tooling"
+      - ".gitmodules"
       - ".devcontainer/**"
       - ".github/workflows/**"
       - ".github/actions/**"
@@ -58,17 +62,16 @@ jobs:
       - name: Code checkout (clones the Git repository)
         # actions/checkout v7.0.1
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Check out Book Tooling
+        uses: ./.github/actions/checkout-book-tooling
+        with:
+          token: ${{ secrets.BOOK_TOOLING_TOKEN }}
 
       - name: Set up Docker Buildx
         # docker/setup-buildx-action v4.4.1
         uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069
 
       - name: Build local-tool-builder image
-        env:
-          # tools/ depends on the private john-cd/book_tooling repository, which the
-          # default GITHUB_TOKEN cannot read. Add a read-only PAT as the repository
-          # secret BOOK_TOOLING_TOKEN (not needed if book_tooling becomes public).
-          GH_TOKEN: ${{ secrets.BOOK_TOOLING_TOKEN }}
         run: |
           source .devcontainer/.env
           cache_scope="rust_howto_tools-${RUST_VERSION}-$(sha256sum tools/Cargo.lock | cut -c1-12)"
@@ -80,7 +83,6 @@ jobs:
             --build-arg RUSTFMT_TOOLCHAIN="$RUSTFMT_TOOLCHAIN" \
             --cache-from type=gha,scope="$cache_scope" \
             --cache-to type=gha,mode=max,scope="$cache_scope" \
-            ${GH_TOKEN:+--secret id=github_token,env=GH_TOKEN} \
             --load .
 
       - name: Run tools tests inside container

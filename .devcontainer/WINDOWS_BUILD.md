@@ -38,21 +38,20 @@ Use `.devcontainer/install_deps.ps1` for native Windows.
 uses `apt-get` and `sudo` and must run in Linux, WSL, or a Linux container. Do
 not run it through Git Bash on Windows.
 
-The dev container builds `tools/`, which depends on the private
-`john-cd/book_tooling` repository. Authenticate with GitHub CLI and provide its
-token to BuildKit for the build:
+The dev container builds `tools/` using the pinned `book_tooling/` submodule.
+Authenticate Git for access to the private `john-cd/book_tooling` repository,
+then initialize its sources before building:
 
 ```powershell
-$env:GH_TOKEN = gh auth token --hostname github.com
+git submodule update --init -- book_tooling
 docker compose `
   --env-file .devcontainer/.env `
   -f .devcontainer/compose.yaml `
   build book
-Remove-Item Env:GH_TOKEN
 ```
 
-The token is used as a BuildKit secret only while Cargo fetches the private
-dependency; it is not stored in the image or `.devcontainer/.env`.
+Docker copies the initialized submodule into the image; it does not need a
+GitHub token or fetch private Cargo Git dependencies during the build.
 
 Run the repository build setup once per checkout:
 

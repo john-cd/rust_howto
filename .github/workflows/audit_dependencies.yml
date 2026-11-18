@@ -37,6 +37,8 @@ on:
       - "publish/Cargo.toml"
       - "publish/**/Cargo.toml"
       - "tools/Cargo.lock"
+      - "book_tooling"
+      - ".gitmodules"
       - "tools/Cargo.toml"
       - "tools/**/Cargo.toml"
       - "xmpl/Cargo.lock"
@@ -76,6 +78,8 @@ on:
       - "publish/Cargo.toml"
       - "publish/**/Cargo.toml"
       - "tools/Cargo.lock"
+      - "book_tooling"
+      - ".gitmodules"
       - "tools/Cargo.toml"
       - "tools/**/Cargo.toml"
       - "xmpl/Cargo.lock"
@@ -157,14 +161,17 @@ jobs:
     continue-on-error: true
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Check out Book Tooling
+        if: matrix.workspace == 'tools'
+        uses: ./.github/actions/checkout-book-tooling
+        with:
+          token: ${{ secrets.BOOK_TOOLING_TOKEN }}
       - uses: EmbarkStudios/cargo-deny-action@3c6349835b2b7b196a839186cb8b78e02f7b5f25 # v2.1.1
         with:
           manifest-path: ${{ matrix.workspace }}/Cargo.toml
           command: check
           arguments: --workspace --config ${{ matrix.config }}
           command-arguments: --hide-inclusion-graph
-          # The tools workspace depends on the private john-cd/book_tooling repository.
-          credentials: ${{ matrix.workspace == 'tools' && secrets.BOOK_TOOLING_TOKEN != '' && format('https://{0}:{1}@github.com', github.repository_owner, secrets.BOOK_TOOLING_TOKEN) || '' }}
 env:
   ## The cargo-deny action runs in a container without sccache, which .cargo/config.toml sets as the rustc wrapper.
   RUSTC_WRAPPER: ""

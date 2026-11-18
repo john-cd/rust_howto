@@ -116,21 +116,11 @@ RUN mkdir -p /code/bin/
 ENV CARGO_TARGET_DIR=/code/target/tools/ \
     CARGO_BUILD_BUILD_DIR=/code/build/tools/
 
-## Copy only the tools source to optimize caching
+## Copy the helper workspace and its pinned Book Tooling submodule dependencies.
 COPY tools/ /code/tools/
+COPY book_tooling/ /code/book_tooling/
 
-RUN --mount=type=secret,id=github_token,required=false \
-    if [ -s /run/secrets/github_token ]; then \
-        token="$(cat /run/secrets/github_token)"; \
-        auth_header="$(printf 'x-access-token:%s' "$token" | base64 | tr -d '\r\n')"; \
-        CARGO_NET_GIT_FETCH_WITH_CLI=true \
-            GIT_CONFIG_COUNT=1 \
-            GIT_CONFIG_KEY_0=http.https://github.com/.extraheader \
-            GIT_CONFIG_VALUE_0="AUTHORIZATION: basic ${auth_header}" \
-            cargo fetch --locked --manifest-path /code/tools/Cargo.toml; \
-    else \
-        cargo fetch --locked --manifest-path /code/tools/Cargo.toml; \
-    fi
+RUN cargo fetch --locked --manifest-path /code/tools/Cargo.toml
 
 ## Build repository tools in release mode with the pinned formatter toolchain.
 RUN --mount=type=cache,target=/usr/local/cargo/registry \
