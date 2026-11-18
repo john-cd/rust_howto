@@ -1,0 +1,16 @@
+[workspace]
+
+[package]
+name = "rust_gpu_triangle"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+anyhow = "1"
+pollster = "1.0.1"
+wgpu = { version = "=30.0.1", features = ["spirv"] }
+
+[build-dependencies]
+spirv-builder = "=0.11.0"
+spirv-tools = "0.13.0"
