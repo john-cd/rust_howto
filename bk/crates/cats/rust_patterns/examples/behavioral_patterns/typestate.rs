@@ -11,7 +11,9 @@ struct Published;
 
 /// An article whose available operations depend on its state.
 struct Article<State> {
+    /// Article title carried unchanged across the publishing transition.
     title: String,
+    /// Records the compile-time state without allocating a runtime state value.
     _state: PhantomData<State>,
 }
 
@@ -53,10 +55,12 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Verifies that changing the article state preserves its content.
 #[cfg(test)]
 mod tests {
     use super::Article;
 
+    /// Publishing transfers the draft title into the published article.
     #[test]
     fn publishing_preserves_the_title() {
         let article = Article::draft("A type-safe transition").publish();

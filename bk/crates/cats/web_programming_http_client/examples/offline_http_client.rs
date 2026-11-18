@@ -7,18 +7,25 @@ use reqwest::header::ACCEPT;
 use serde::Deserialize;
 use serde::Serialize;
 
+/// JSON response returned by the greeting endpoint.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 #[cfg_attr(
     not(test),
     expect(dead_code, reason = "used by the in-process router test")
 )]
-/// Data for greeting operations, including message.
 struct Greeting {
-    /// Message stored for this value.
+    /// Greeting text decoded from the response body.
     message: String,
 }
 
 // ANCHOR: example
+/// Requests a greeting for Ada using a caller-owned, reusable HTTP client.
+///
+/// The route is appended to the base URL, and the request explicitly accepts JSON.
+///
+/// # Errors
+///
+/// Propagates request failures, non-success HTTP statuses, and JSON decoding errors.
 #[cfg_attr(
     not(test),
     expect(dead_code, reason = "used by the in-process router test")
@@ -40,6 +47,7 @@ async fn fetch_greeting(
 }
 // ANCHOR_END: example
 
+/// Exercises the client against a local server without external network access.
 #[cfg(test)]
 mod tests {
     use axum::Json;
@@ -51,7 +59,7 @@ mod tests {
 
     use super::*;
 
-    /// Handles the ok behavior for this component.
+    /// Validates the client request headers and query before returning a greeting.
     async fn ok(
         headers: HeaderMap,
         Query(query): Query<std::collections::HashMap<String, String>>,
@@ -66,7 +74,7 @@ mod tests {
         })
     }
 
-    /// Checks that success status and bad json.
+    /// Verifies successful decoding, HTTP status errors, and malformed JSON errors.
     #[tokio::test]
     async fn success_status_and_bad_json() -> anyhow::Result<()> {
         let app = Router::new()
