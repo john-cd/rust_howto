@@ -39,7 +39,7 @@ typically uses `DefaultPlugins` with the Cargo features for its window,
 input, asset, and rendering systems.
 
 ```console
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p game_engines --features bevy --example game_engines -- bevy
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_engines --features bevy --example game_engines -- bevy
 ```
 
 ## Develop Games with `fyrox` {#fyrox}
@@ -65,7 +65,7 @@ and prints one update. It exercises the counter and the compiled plugin
 interface without starting the editor or executor.
 
 ```console
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p game_engines --features fyrox --example game_engines -- fyrox
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_engines --features fyrox --example game_engines -- fyrox
 ```
 
 If `sccache` fails to launch `rustc` for Fyrox on Windows, clear the wrappers
@@ -94,7 +94,7 @@ keeps the physics step callable without creating a window.
 From a desktop at the repository root:
 
 ```console
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p game_engines --features ggez --example game_engines -- ggez
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_engines --features ggez --example game_engines -- ggez
 ```
 
 ```rust,editable
@@ -113,7 +113,7 @@ the ball using the current frame duration, draws it, then yields through
 Compare this sequence with ggez's separate callbacks.
 
 ```console
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p game_engines --example game_engines -- macroquad
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_engines --example game_engines -- macroquad
 ```
 
 For either bouncing-ball example, setting `RUST_HOWTO_SMOKE_TEST=1` in the
@@ -127,8 +127,8 @@ needs a desktop window.
 ## Related Topics {#related-topics .skip}
 
 - [Game development libraries][p~game-development].
-- [[rendering | Rendering]] and [physics engines](../simulation/index.md#physics-engines).
-- [[multimedia_audio | Audio]] and [window creation](../gui/window_creation.md).
+- [[rendering | Rendering]] and [physics engines](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md#physics-engines).
+- [[multimedia_audio | Audio]] and [window creation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/window_creation.md).
 - [[games | Games]] made with Rust.
 
 {{#include refs.incl.md}}

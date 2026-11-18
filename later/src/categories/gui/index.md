@@ -106,8 +106,8 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 
 - [Accessibility](../accessibility/index.md).
 - Command Line Interface<!-- Cross-book topic: bk/src/categories/command-line-interface/index.md; not included in this preview. -->.
-- [Game Development](../game-development/index.md).
-- [Game Engines](../game-engines/index.md).
+- [Game Development](https://john-cd.com/rust_howto/categories/game-development/index.html).
+- [Game Engines](https://john-cd.com/rust_howto/categories/game-engines/index.html).
 - [Graphics](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md).
 - [Internationalization](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/internationalization/index.md).
 - [Multimedia](https://john-cd.com/rust_howto/categories/multimedia/index.html).

@@ -13,7 +13,7 @@ Reviewed November 17, 2026, for [#2350](https://github.com/john-cd/rust_howto/is
 | [Machine Learning in Practice](src/other/machine-learning/index.md) | Held-out classification, temporal forecasting, and ONNX inference/model replacement. | 9 tests passed with the native ONNX Runtime on Windows; strict Clippy and Rust 1.98.1 compile check passed. Synthetic fixtures demonstrate software behavior, not production accuracy. |
 | [Science: Classical ML](../bk/src/other/machine-learning/classical_machine_learning.md) | SmartCore classification and Linfa clustering/regression. | 9 tests passed. This result covers classical ML. |
 | [Rendering Data Formats](../bk/src/categories/rendering_data-formats/index.md) | Inline glTF scene parsing, tested texture layout/conversion, and SVG rasterization recipes. | Included in the successful host sweep; these device-free examples do not claim every listed compressed texture format or external importer is exercised. |
-| [Games](src/categories/games/index.md) | The Macroquad marker-collection game from [#2379](https://github.com/john-cd/rust_howto/issues/2379). | Two game-state tests passed. The Windows smoke run presented three frames, scored a marker with scripted movement, and exited. A Linux X11 run exercised the normal keyboard path and checked marker pixels before scoring, after scoring, and after restart. Physical keyboard interaction and human visual review remain unverified. |
+| [Games](../bk/src/categories/games/index.md) | The Macroquad marker-collection game from [#2379](https://github.com/john-cd/rust_howto/issues/2379). | Two game-state tests passed. The Windows smoke run presented three frames, scored a marker with scripted movement, and exited. A Linux X11 run exercised the normal keyboard path and checked marker pixels before scoring, after scoring, and after restart. Physical keyboard interaction and human visual review remain unverified. |
 | [Linux APIs](../bk/src/categories/os_linux-apis/index.md) | Descriptor-based metadata with rustix and statx. | Five Linux tests and a native CLI run passed on the Docker Desktop WSL2 kernel. See the Linux commands and filesystem observations below. |
 | [macOS APIs](../bk/src/categories/os_macos-apis/macos.md) | The introductory native API example. | The actual macOS API and Objective-C CI test steps passed on macOS 15/ARM64 with Rust 1.100.0. The relevant package sources, workspace manifest, lockfile, and native workflow match the tested revision. |
 | [FreeBSD APIs](../bk/src/categories/os_freebsd-apis/freebsd.md) | The native sysctl introduction. | The actual native test step passed inside FreeBSD 14.4/x86-64 with Rust 1.100.0; the relevant source and lockfile match the tested revision. |
@@ -45,7 +45,7 @@ just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --featu
 | [Rendering](../bk/src/categories/graphics/index.md) | The distinct fontdue glyph recipe and remaining engine catalogs. Raster/vector, tessellation, SVG, and projection recipes are already in published Graphics; staged duplicates were removed under #2361. | The earlier host tests passed before duplicate retirement. Do not promote catalog descriptions as proof that the corresponding windowed engines were run: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
 | [Graphics APIs](../bk/src/categories/rendering_graphics-api/index.md) | Adapter discovery, wgpu compute/readback, shader validation/translation, and the new offscreen triangle render. | 16 tests passed with ignored GPU tests enabled. The triangle's center/background pixels passed on both Vulkan and DirectX 12 using Intel Iris Xe. OpenGL helpers without a current context and raw Vulkan discovery do not prove a complete scene: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
 | [Rendering Engines](../bk/src/categories/rendering_engine/index.md) | The expanded engine-responsibility guide and bounded offscreen rendering core. | The wgpu example has offscreen GPU pixel checks. The separate three-d example passed the Linux OpenGL window lifecycle and pixel checks in [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
-| [Game Engines](src/categories/game-engines/index.md) | Macroquad and ggez desktop loops, Bevy ECS scheduling, and Fyrox plugin logic. | Nine Windows engine tests passed with all features. The separate Macroquad and ggez smoke runs presented three and two frames. The Bevy and Fyrox commands ran headlessly. Full Bevy and Fyrox renderer and editor integration remains outside these checks. |
+| [Game Engines](../bk/src/categories/game-engines/index.md) | Macroquad and ggez desktop loops, Bevy ECS scheduling, and Fyrox plugin logic. | Nine Windows engine tests passed with all features. The separate Macroquad and ggez smoke runs presented three and two frames. The Bevy and Fyrox commands ran headlessly. Full Bevy and Fyrox renderer and editor integration remains outside these checks. |
 
 ### Games Group Editorial Recheck
 
@@ -151,7 +151,8 @@ fields or reject the call.
 Run from the repository root with the configured shared package/cache paths. Build output stays in the checkout's external slot. The Windows host used Rust 1.100.0, with Rust 1.98.1 for the two explicit baseline compile checks. Both NVIDIA RTX 3060 Laptop and Intel Iris Xe adapters are installed; the observed GPU render runs selected Intel Iris Xe. No NVIDIA runtime result is claimed.
 
 ```sh
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p science_robotics -p game_development --examples
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p science_robotics --examples
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p game_development --examples
 just cargo test --manifest-path later/crates/cats/embedded/Cargo.toml --locked --examples
 just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --features onnx --example machine_learning
 just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --example ml
@@ -173,9 +174,9 @@ $env:RUST_HOWTO_SMOKE_TEST = '1'
 just cargo run --manifest-path later/crates/Cargo.toml --locked -p gui --features minifb --example minifb_renderer
 just cargo run --manifest-path later/crates/Cargo.toml --locked -p gui --features softbuffer --example window_creation -- software-pixels
 just cargo run --manifest-path later/crates/Cargo.toml --locked -p gui --example window_creation -- winit
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p game_engines --features ggez --example game_engines -- ggez
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p game_engines --example game_engines -- macroquad
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p games --example games
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_engines --features ggez --example game_engines -- ggez
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_engines --example game_engines -- macroquad
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p games --example games
 Remove-Item Env:RUST_HOWTO_SMOKE_TEST
 ```
 

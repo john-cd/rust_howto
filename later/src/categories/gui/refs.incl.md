@@ -68,8 +68,8 @@
 [p~data-formats]: https://john-cd.com/rust_howto/categories/rendering_data-formats/index.html
 [p~documentation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools/documentation/documentation.md
 [p~embedded]: # "../embedded/index.md"
-[p~game-development]: ../game-development/game_development.md
-[p~games]: ../games/index.md
+[p~game-development]: https://john-cd.com/rust_howto/categories/game-development/game_development.html
+[p~games]: https://john-cd.com/rust_howto/categories/games/index.html
 [p~gpu]: # "../../other/gpu/gpu.md"
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
 [p~egui]: immediate_mode_gui.md

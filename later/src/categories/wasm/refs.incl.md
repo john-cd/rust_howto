@@ -24,7 +24,7 @@
 [p~embedded]: ../embedded/index.md
 [p~emulators]: ../emulators/index.md
 [p~functions]: https://john-cd.com/rust_howto/language/functions.html
-[p~game-development]: ../game-development/game_development.md
+[p~game-development]: https://john-cd.com/rust_howto/categories/game-development/game_development.html
 [p~html]: ../../../src/categories/parser-implementations/html.md
 [p~modules]: ../../../src/code_organization/modules_and_paths.md
 [p~node]: ../development-tools_ffi/node.md

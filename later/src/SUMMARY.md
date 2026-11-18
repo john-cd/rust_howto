@@ -70,14 +70,6 @@
   - [Quant](categories/finance/quant.md)
   - [Market data](categories/finance/market_data.md)
 
-- [Games](categories/games/index.md)
-
-- [Game development](categories/game-development/index.md)
-  - [Game development](categories/game-development/game_development.md)
-
-- [Game engines](categories/game-engines/index.md)
-  - [Game engines](categories/game-engines/game_engines.md)
-
 - [GPU Compute Recipes](other/gpu/gpu.md)
 
 - [GUI](categories/gui/index.md)

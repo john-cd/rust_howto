@@ -26,7 +26,7 @@ point and reveal the next. Collect all three to win, press R to restart, or
 press Escape to quit. From a graphical desktop, run this at the repository root:
 
 ```console
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p games --example games
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p games --example games
 ```
 
 Each frame reads input, updates the world in seconds, then draws the result.
@@ -54,8 +54,8 @@ collecting the first marker. An ordinary launch uses the keyboard.
 
 - [Game Engines and Frameworks](../game-engines/index.md).
 - [Game Development](../game-development/index.md).
-- [Graphics](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md).
-- [Multimedia](https://john-cd.com/rust_howto/categories/multimedia/index.html).
+- [Graphics](../graphics/index.md).
+- [Multimedia](../multimedia/index.md).
 - [Rust game libraries](../game-engines/game_engines.md).
 
 {{#include refs.incl.md}}

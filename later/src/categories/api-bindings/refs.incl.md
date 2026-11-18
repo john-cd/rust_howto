@@ -16,8 +16,8 @@
 [p~encryption]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/cryptography/encryption.md
 [p~external-ffi-bindings]: ../external-ffi-bindings/index.md
 [p~filesystem]: https://john-cd.com/rust_howto/categories/filesystem/index.html
-[p~game-engines]: ../game-engines/index.md
-[p~game_development]: ../game-development/game_development.md
+[p~game-engines]: https://john-cd.com/rust_howto/categories/game-engines/index.html
+[p~game_development]: https://john-cd.com/rust_howto/categories/game-development/game_development.html
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
 [p~gui]: ../gui/index.md
 [p~hashing]: https://john-cd.com/rust_howto/categories/algorithms/hashing.html

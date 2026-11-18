@@ -19,7 +19,7 @@ cargo test --package games
 
 Code examples correspond to chapters in `bk/src/categories/games` or related book sections.
 
-Run the staged Macroquad example from `later/crates`:
+Run the staged Macroquad example from `bk/crates`:
 
 ```console
 cargo run --locked -p games --example games
