@@ -8,7 +8,7 @@
 [ex~gui~cosmic-text]: text_layout.md#cosmic-text
 [ex~gui~dioxus]: web_based_gui.md#dioxus
 [ex~gui~druid]: retained_mode_gui.md#druid
-[ex~gui~egui]: immediate_mode_gui.md#egui
+[ex~gui~egui]: immediate_mode_gui.md#eframe
 [ex~gui~egui-headless]: egui_ecosystem.md#egui-headless
 [ex~gui~egui-kittest]: egui_ecosystem.md#egui-kittest
 [ex~gui~egui-log-viewer]: egui_ecosystem.md#egui-log-viewer
@@ -71,7 +71,7 @@
 [p~game-development]: ../game-development/game_development.md
 [p~games]: ../games/index.md
 [p~gpu]: # "../../other/gpu/gpu.md"
-[p~graphics]: # "../graphics/index.md"
+[p~graphics]: https://john-cd.com/rust_howto/categories/graphics/index.html
 [p~egui]: immediate_mode_gui.md
 [p~gui]: index.md
 [p~html]: # "../../categories/parser-implementations/html.md"
