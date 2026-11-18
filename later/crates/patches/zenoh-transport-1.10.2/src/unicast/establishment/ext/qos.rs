@@ -145,11 +145,11 @@ impl State {
         }
     }
 
-    /// Encodes [`QoS`] as a [`u64`].
+    /// Encodes the negotiated [`State`] as a [`u64`].
     /// This function is used for encoding both of [`StateAccept`] in
     /// [`establishment::cookie::Cookie::ext_qos`](crate::unicast::establishment::cookie::Cookie::ext_qos) and
     /// [`zenoh_protocol::transport::init::ext::QoS`].
-    /// The three least significant bits are used to discrimnate five states:
+    /// The three least significant bits are used to discriminate five states:
     /// 1. QoS is disabled
     /// 2. QoS is enabled but no priority range and no reliability setting are available
     /// 3. QoS is enabled and priority range is available but reliability is unavailable

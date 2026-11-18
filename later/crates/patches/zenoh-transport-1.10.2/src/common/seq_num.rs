@@ -40,7 +40,7 @@ pub(crate) fn get_mask(resolution: Bits) -> TransportSn {
 /// Zenoh sequence numbers have a negotiable resolution. Each session can
 /// ideally negotiate its resolution and use it across all priorities.
 ///
-/// The [`SeqNum`][SeqNum] encapsulates the sequence numbers along with a
+/// The [`SeqNum`] encapsulates the sequence numbers along with a
 /// the comparison operators that check whether two sequence numbers are
 /// less, equal or greater of each other.
 #[derive(Clone, Copy, Debug)]
@@ -178,7 +178,7 @@ impl SeqNum {
 
 /// Sequence Number Generator
 ///
-/// The [`SeqNumGenerator`][SeqNumGenerator] encapsulates the generation of sequence numbers.
+/// The [`SeqNumGenerator`] encapsulates the generation of sequence numbers.
 #[derive(Clone, Copy, Debug)]
 pub(crate) struct SeqNumGenerator(
     /// Next sequence number reserved by this generator.
