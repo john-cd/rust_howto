@@ -1151,6 +1151,7 @@
 [postsack~repo~badge]: https://img.shields.io/badge/postsack-steelblue?logo=github
 [practical-rust-web-projects~repo]: https://github.com/Apress/practical-rust-web-projects
 [practice.course.rs~website]: https://practice.course.rs/why-exercise.html
+[prek~repo]: https://github.com/j178/prek
 [primitive~array]: https://doc.rust-lang.org/std/primitive.array.html
 [primitive~bool]: https://doc.rust-lang.org/std/primitive.bool.html
 [primitive~char]: https://doc.rust-lang.org/std/primitive.char.html
