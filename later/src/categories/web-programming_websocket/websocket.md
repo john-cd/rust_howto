@@ -32,10 +32,10 @@ Use [tungstenite][c~tungstenite~docs]↗{{hi:tungstenite}} when blocking I/O fit
 
 ## Related Topics {#related-topics .skip}
 
-- Web Programming<!-- Cross-book topic: bk/drafts/categories/web-programming/index.md; not included in this preview. -->.
-- Web Programming: HTTP Client<!-- Cross-book topic: bk/drafts/categories/web-programming_http-client/index.md; not included in this preview. -->.
-- Web Programming: HTTP Server<!-- Cross-book topic: bk/drafts/categories/web-programming_http-server/index.md; not included in this preview. -->.
-- Network Programming<!-- Cross-book topic: bk/drafts/categories/network-programming/index.md; not included in this preview. -->.
+- Web Programming<!-- Cross-book topic: bk/src/categories/web-programming/index.md; not included in this preview. -->.
+- Web Programming: HTTP Client<!-- Cross-book topic: bk/src/categories/web-programming_http-client/index.md; not included in this preview. -->.
+- Web Programming: HTTP Server<!-- Cross-book topic: bk/src/categories/web-programming_http-server/index.md; not included in this preview. -->.
+- Network Programming<!-- Cross-book topic: bk/src/categories/network-programming/index.md; not included in this preview. -->.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

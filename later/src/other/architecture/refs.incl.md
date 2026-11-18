@@ -35,8 +35,8 @@
 [p~error-handling]: ../../../src/categories/rust-patterns/error_handling/error_handling.md
 [p~github-actions]: ../devops/github_actions.md
 [p~json]: ../../../src/categories/parser-implementations/json.md
-[p~memory-allocation]: ../../../../bk/src/categories/memory-management/memory_allocation.md
-[p~mocking]: ../../../../bk/src/categories/development-tools_testing/mocking.md
+[p~memory-allocation]: https://john-cd.com/rust_howto/categories/memory-management/memory_allocation.html
+[p~mocking]: https://john-cd.com/rust_howto/categories/development-tools_testing/mocking.html
 [p~modules]: ../../../src/code_organization/modules_and_paths.md
 [p~parsing]: ../../categories/parsing/parsing.md
 [p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md

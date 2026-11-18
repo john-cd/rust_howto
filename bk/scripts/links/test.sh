@@ -80,7 +80,7 @@ if [[ ${1:-} == "--category-only" ]]; then
 fi
 
 book_root="${tmp_root}/book root"
-mkdir -p "${book_root}/src/refs" "${book_root}/drafts"
+mkdir -p "${book_root}/src/refs"
 cat > "${book_root}/src/refs/crate-refs.md" <<'EOF'
 [c~serde~docs]: https://docs.rs/serde
 EOF
@@ -95,7 +95,7 @@ Existing inline link [`serde`](https://example.com) stays unchanged.
 let example = `serde`;
 ```
 EOF
-printf '%s\n' 'Try `tokio` later.' > "${book_root}/drafts/draft.md"
+printf '%s\n' 'Try `tokio` later.' > "${book_root}/src/unknown.md"
 
 bash "${script_dir}/insert_crate_links.sh" "${book_root}"
 rg --quiet --fixed-strings '[`serde`][c~serde~docs]↗{{hi:serde}}' "${book_root}/src/recipe.md"

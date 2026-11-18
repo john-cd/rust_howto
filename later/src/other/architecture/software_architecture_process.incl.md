@@ -171,7 +171,7 @@ Treat these as starting points to evaluate against your requirements, not as def
 | Databases | [`sqlx`][c~sqlx~docs]↗{{hi:sqlx}}, [`diesel`][c~diesel~docs]↗{{hi:diesel}} |
 | Logging and tracing | [`tracing`][c~tracing~docs]↗{{hi:tracing}}, [`log`][c~log~docs]↗{{hi:log}} |
 | Errors | [`thiserror`][c~thiserror~docs]↗{{hi:thiserror}} for library error types, [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} for application context |
-| Cryptography | The [RustCrypto](https://github.com/RustCrypto)↗ crates (see Cryptography<!-- Cross-book topic: bk/drafts/categories/cryptography/index.md; not included in this preview. -->), [`ring`][c~ring~docs]↗{{hi:ring}} |
+| Cryptography | The [RustCrypto](https://github.com/RustCrypto)↗ crates (see Cryptography<!-- Cross-book topic: bk/src/categories/cryptography/index.md; not included in this preview. -->), [`ring`][c~ring~docs]↗{{hi:ring}} |
 | Mocking | [`mockall`][c~mockall~docs]↗{{hi:mockall}} |
 | Benchmarking and profiling | [`criterion`][c~criterion~docs]↗{{hi:criterion}}, `perf`, `valgrind` |
 | Data parallelism | [`rayon`][c~rayon~docs]↗{{hi:rayon}} |

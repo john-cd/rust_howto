@@ -23,7 +23,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [ANIXE][anixe~website]↗ | Builds their travel services trading platform in Rust. |
 | [ARM][arm~website]↗ | Designs processor architectures and licenses semiconductor intellectual property. |
 | [Accelerant][accelerant~website]↗ | Provides data and technology for specialty insurance underwriting and distribution. |
-| [Actyx][actyx~website]↗ [(github)][actyx~repo]↗ | Actyx is a peer-to-peer event stream [database](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/index.md) (a.k.a. reliable durable pub-sub) written completely in Rust. |
+| [Actyx][actyx~website]↗ [(github)][actyx~repo]↗ | Actyx is a peer-to-peer event stream [database](../categories/database/index.md) (a.k.a. reliable durable pub-sub) written completely in Rust. |
 | [Adacore][adacore~website]↗ [(blog)][adacore~blog]↗ | Develops Ada and SPARK compilers and tools for safety-critical software. |
 | [Afterpay][afterpay~website]↗ | Offers buy now, pay later payment services. |
 | [Airborne Engineering][airborne-engineering~website]↗ | Develops and tests rocket propulsion systems and aerospace hardware. |
@@ -46,7 +46,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [Brave][brave~website]↗ [(github)][brave~repo]↗ | Uses Rust for its browser's ad-blocking engine. |
 | [Buoyant][buoyant~website]↗ | Builds Linkerd and provides cloud-native service-mesh software and support. |
 | [Calyptech][calyptech~website]↗ | Used for high [performance](../categories/development-tools_profiling/index.md) embedded system components as an alternative to C. |
-| [Canonical][canonical~website]↗ | Everything from server monitoring to [middleware](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/web-programming_http-server/middleware.md). |
+| [Canonical][canonical~website]↗ | Everything from server monitoring to [middleware](../categories/web-programming_http-server/middleware.md). |
 | [CarGurus][cargurus~website]↗ | Operates an online marketplace for researching and buying cars. |
 | [Cash App][cash-app~website]↗ | Provides mobile payment and other consumer financial services. |
 | [Ceph][ceph~website]↗ | Provides an open-source storage system partially written in Rust. Rust bindings for `librbd`, an interface into the Ceph storage platform. |
@@ -136,7 +136,7 @@ Please also consult the [list of Companies Using Rust][theirstack-rust~website]�
 | [OpenSource Science][os-sci~website]↗ (OS-Sci) | Promotes computer-science education through free and open-source software. |
 | [OxidOS Automotive][oxidos~website]↗ | Develops Rust-based software and tools for secure automotive electronic control units. |
 | [PUCPR][pucpr~website]↗ | A private university in Paraná, Brazil, with teaching and research programs. |
-| [Parity Technology][parity~website]↗ [(github)][paritytech~repo]↗ | Creates open-sourced networks, consensus protocols, and [cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), entirely in Rust. |
+| [Parity Technology][parity~website]↗ [(github)][paritytech~repo]↗ | Creates open-sourced networks, consensus protocols, and [cryptography](../categories/cryptography/index.md), entirely in Rust. |
 | [Personio][personio~website]↗ | Provides HR and payroll software for small and midsize businesses. |
 | [Pollen Robotics][pollen-robotics~website]↗ | Develops open-source robotics hardware and humanoid robots. |
 | [PolySync][polysync~website]↗ | Builds safety-critical runtime environments & infrastructure for autonomous vehicles. |

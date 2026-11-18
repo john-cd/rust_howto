@@ -15,6 +15,6 @@
 [c~serde_json_path~docs]: https://docs.rs/serde_json_path
 [c~serde_json_path~docs~badge]: https://img.shields.io/crates/v/serde_json_path?label=serde_json_path
 [spice.ai~website]: https://spiceai.org/docs/v2.0
-[p~csv]: ../../../../bk/src/categories/encoding/csv.md
+[p~csv]: https://john-cd.com/rust_howto/categories/encoding/csv.html
 [p~data-processing]: index.md
 [p~python]: ../../categories/development-tools_ffi/python.md

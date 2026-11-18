@@ -60,7 +60,7 @@
 [dioxus~desktop~website]: https://dioxuslabs.com/learn/0.7/guides/platforms/desktop/
 [dioxus~mobile~website]: https://dioxuslabs.com/learn/0.7/guides/platforms/mobile/
 [tauri~windows-prerequisites~website]: https://v2.tauri.app/start/prerequisites/
-[p~apis]: ../../../../bk/drafts/categories/web-programming_http-client/apis.md
+[p~apis]: https://john-cd.com/rust_howto/categories/web-programming_http-client/apis.html
 [p~asynchronous]: https://john-cd.com/rust_howto/categories/asynchronous/index.html
 [p~audio]: ../multimedia_audio/audio.md
 [p~containers]: ../virtualization/containers.md
@@ -76,13 +76,13 @@
 [p~gui]: index.md
 [p~html]: # "../../categories/parser-implementations/html.md"
 [p~immediate-mode-gui]: immediate_mode_gui.md
-[p~main]: ../../../../bk/src/language/entry_points.md
-[p~option]: ../../../../bk/src/standard-library/optional_values.md
+[p~main]: https://john-cd.com/rust_howto/language/entry_points.html
+[p~option]: https://john-cd.com/rust_howto/standard-library/optional_values.html
 [p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~rendering]: ../rendering/index.md
 [p~ui-layout]: ui_layout.md
 [p~wasm]: ../wasm/index.md
-[p~windows]: ../../../../bk/drafts/categories/os_windows-apis/windows.md
+[p~windows]: https://john-cd.com/rust_howto/categories/os_windows-apis/windows.html
 [c~bevy_egui~docs]: https://docs.rs/bevy_egui
 [c~egui-wgpu~docs]: https://docs.rs/egui-wgpu
 [c~egui-winit~docs]: https://docs.rs/egui-winit

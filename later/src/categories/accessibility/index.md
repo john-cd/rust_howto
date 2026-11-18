@@ -14,7 +14,7 @@ Use native HTML elements for their intended purpose, preserve heading and landma
 
 When generating or inspecting HTML in Rust, [`html5ever`][c~html5ever~docs]↗{{hi:html5ever}} and [`tl`][c~tl~docs]↗{{hi:tl}} parse HTML, [`css`][c~css~docs]↗{{hi:css}} parses CSS, and [`url`][c~url~docs]↗{{hi:url}} handles URLs. Use these to check generated markup, for example to confirm that images have `alt` text and form controls have labels.
 
-See Web Programming<!-- Cross-book topic: bk/drafts/categories/web-programming/index.md; not included in this preview. -->, HTTP Server<!-- Cross-book topic: bk/drafts/categories/web-programming_http-server/index.md; not included in this preview. --> and HTML<!-- Cross-book topic: bk/drafts/categories/parser-implementations/html.md; not included in this preview. -->.
+See Web Programming<!-- Cross-book topic: bk/src/categories/web-programming/index.md; not included in this preview. -->, HTTP Server<!-- Cross-book topic: bk/src/categories/web-programming_http-server/index.md; not included in this preview. --> and HTML<!-- Cross-book topic: bk/src/categories/parser-implementations/html.md; not included in this preview. -->.
 
 ## Desktop, Mobile, and Embedded GUIs
 

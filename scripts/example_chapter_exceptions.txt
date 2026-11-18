@@ -34,19 +34,8 @@ bk/src/links/
 bk/src/indices/
 bk/src/word_index.md
 bk/src/crate-selection/current_state_of_the_art.md
-bk/drafts/indices/
-bk/drafts/TOREVIEW.md
-bk/drafts/contributing/
 # Tooling and command-line pages: they describe programs run from the shell
 # (Cargo, rustup, linkers, CI services), so there is no Rust code to show.
-bk/drafts/categories/development-tools/
-bk/drafts/categories/development-tools_cargo-plugins/
-bk/drafts/categories/command-line-utilities/
-bk/drafts/categories/development-tools_build-utils/build_cache.md
-bk/drafts/categories/development-tools_debugging/debugging.md
-bk/drafts/categories/development-tools_profiling/assembly.md
-bk/drafts/categories/text-editors/
-bk/drafts/categories/web-programming_http-server/static_website_generators.md
 later/src/categories/virtualization/
 later/src/other/devops/
 later/src/other/written-in-rust/
@@ -59,4 +48,3 @@ later/src/categories/science_robotics/robotics_frameworks.md
 # Navigation page: it points to the engine coverage in 3d_renderers.md and the adapter example in native_graphics_apis.md; engine crates need a window and GPU (#2092).
 later/src/categories/rendering_engine/rendering_engines.md
 # Describes operating systems written in Rust (Redox, Bottlerocket); they are not libraries, so there is no Rust code to run (#2093).
-bk/drafts/categories/os/rust_os.md

@@ -28,10 +28,6 @@ _default:
 
 ## ---- BOOK BUILDING -----------------------------------
 
-# Render unpublished draft chapters without adding them to the published book.
-@drafts: _release_mbdbook-scrub
-    mdbook build {{ quote(root + "/drafts") }} --dest-dir {{ quote(root + "/book/drafts") }}
-
 # Render future chapters with their own summary and the shared reference definitions.
 @future: _release_mbdbook-scrub
     mdbook build {{ quote(root + "/../later") }} --dest-dir {{ quote(root + "/book/future") }}

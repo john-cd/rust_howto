@@ -53,44 +53,15 @@ through `&mut str`. Locked offline tests passed for WebSockets,
 No Allocation, and Unicode (four tests). Full workspace tests and external
 links were outside this review.
 
-## Draft migration plan
+## Publication follow-ups
 
-1. **Finish the landed promotions.** WebSockets [#2250][i2250], Number
-   Formatting [#2251][i2251], headless Images [#2252][i2252], and the host
-   `no_std` library [#2253][i2253] are already in `develop`. Their
-   issues remain open. No Allocation [#2269][i2269] is also landed and open. Verify
-   published commands, navigation, and remaining staging pages on the
-   integrated revision. The Polars DataFrames pilot [#2266][i2266] is landed
-   and closed.
-2. **Let the active draft migration finish.** The checkout has in-progress
-   moves for caching, tar and compression, map recipes, date and time,
-   encoding, parsing, and template engines. Recheck the migration branch and
-   live issues before claiming work in those areas. Review the integrated
-   published and draft tables of contents and example index before starting
-   follow-on edits.
-3. **Publish reader workflows from existing drafts.** Start with Tokio
-   task ownership and cancellation [#2257][i2257], then a loopback HTTP
-   client [#2280][http] and the Axum update endpoint [#2259][i2259]. Promote
-   bounded retries and backpressure [#2260][i2260] with its own service fixture.
-   In parallel, promote Unicode text [#2278][unicode] after the encoding
-   navigation settles. Link it from Strings and preserve the distinction
-   between grapheme count, byte length, and terminal columns.
-4. **Promote focused material from `later`.** Take macro diagnostics
-   [#2281][macro] next. For Wasm, use the
-   [Wasm basics draft][wasm] and existing WIT guest/host work [#2105][i2105]
-   to pick a single end-to-end workflow. Validate its target, build command,
-   and host or browser behavior before adding it to the book. For deployment,
-   start with local Lambda invocation [#2267][i2267]. Retain broader GUI,
-   hardware, native OS, and service material in staging until the relevant
-   checks in the blocker list are available.
+The former draft book is retired under [#2349](https://github.com/john-cd/rust_howto/issues/2349). Its chapter migrations are complete; published chapters live in `bk/src`, and unpublished material stays in `later/src`. The historical migration and curation records remain in Git history. Publication alone does not close an issue's remaining runtime or acceptance checks.
 
-For each promotion, move the chosen prose and references with the runnable
-example, update both affected tables of contents and published indices, and
-check any links left in staging. Run the documented command and targeted
-locked tests on the minimum supported Rust version where applicable. Render
-the published book and affected preview, inspect warnings and the visible
-snippets, and record the revision and results on the issue. Preserve human
-review markers and leave review decisions on [#2216][i2216].
+- Verify any remaining acceptance criteria for WebSockets [#2250][i2250], Number Formatting [#2251][i2251], Images [#2252][i2252], `no_std` [#2253][i2253], and No Allocation [#2269][i2269].
+- Continue the focused workflow work tracked by Tokio cancellation [#2257][i2257], the loopback HTTP client [#2280][http], Axum updates [#2259][i2259], bounded retries/backpressure [#2260][i2260], and Unicode [#2278][unicode]. Recheck each live issue and current published content before duplicating work.
+- Review future content through macro diagnostics [#2281][macro], [Wasm basics][wasm], WIT guest/host work [#2105][i2105], and local Lambda invocation [#2267][i2267]. Validate the documented target and host/browser behavior before promotion.
+
+For each promotion, move the chosen prose and references with its runnable example, update the published contents and indexes, and repair staging links. Run targeted locked tests, render the affected books, and record validation on the owning issue. Preserve human review markers and record review decisions on [#2216][i2216].
 
 ## Other coverage follow-ups
 

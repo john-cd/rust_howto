@@ -18,7 +18,7 @@ Use layers when the application has distinct input, domain, and persistence resp
 
 A microservices architecture divides a system into independently deployable services around business capabilities, each owning its data and communicating through network APIs. In Rust, [`axum`][c~axum~docs]↗{{hi:axum}} can build HTTP services and [`tonic`][c~tonic~docs]↗{{hi:tonic}} can build gRPC services. Use this structure when separate teams or workloads need independent deployment and scaling; account for network failures, data consistency, and operational overhead, which a modular monolith avoids. [Hydro][hydro~website]↗ is a distributed dataflow framework that generates binaries for a multi-machine program, a related but different way to build distributed systems.
 
-See Web Programming<!-- Cross-book topic: bk/drafts/categories/web-programming/index.md; not included in this preview. -->, Web Programming: HTTP Server<!-- Cross-book topic: bk/drafts/categories/web-programming_http-server/index.md; not included in this preview. -->, APIs<!-- Cross-book topic: bk/drafts/categories/web-programming_http-client/apis.md; not included in this preview. -->, and AMQP<!-- Cross-book topic: bk/drafts/categories/database/amqp.md; not included in this preview. -->.
+See Web Programming<!-- Cross-book topic: bk/src/categories/web-programming/index.md; not included in this preview. -->, Web Programming: HTTP Server<!-- Cross-book topic: bk/src/categories/web-programming_http-server/index.md; not included in this preview. -->, APIs<!-- Cross-book topic: bk/src/categories/web-programming_http-client/apis.md; not included in this preview. -->, and AMQP<!-- Cross-book topic: bk/src/categories/database/amqp.md; not included in this preview. -->.
 
 ## Hexagonal Architecture (Ports and Adapters) {#hexagonal-architecture}
 
@@ -38,7 +38,7 @@ In event-driven architecture, producers publish events for consumers to handle i
 {{#include ../../../crates/other/examples/architecture/event_bus.rs:example}}
 ```
 
-See Asynchronous<!-- Cross-book topic: bk/src/categories/asynchronous/index.md; not included in this preview. --> and AMQP<!-- Cross-book topic: bk/drafts/categories/database/amqp.md; not included in this preview. -->.
+See Asynchronous<!-- Cross-book topic: bk/src/categories/asynchronous/index.md; not included in this preview. --> and AMQP<!-- Cross-book topic: bk/src/categories/database/amqp.md; not included in this preview. -->.
 
 ## Actor Model {#actor-model}
 
@@ -88,7 +88,7 @@ An entity-component system (ECS) represents objects as entities with components,
 - [Cloud](../cloud/index.md).
 - Concurrency<!-- Cross-book topic: bk/src/categories/concurrency/index.md; not included in this preview. -->.
 - [Data Processing](../data-processing/index.md).
-- Web Programming<!-- Cross-book topic: bk/drafts/categories/web-programming/index.md; not included in this preview. -->.
+- Web Programming<!-- Cross-book topic: bk/src/categories/web-programming/index.md; not included in this preview. -->.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -21,7 +21,7 @@ normalize:
     IFS=$'\n\t'
     root={{ root }}
     # Find all Markdown ATX headings.
-    for file in $(rg -N -l -t md -g '!*.incl.md' -g'!*refs.md' '^#+\s*.+$' "${root}/src" "${root}/drafts" )
+    for file in $(rg -N -l -t md -g '!*.incl.md' -g'!*refs.md' '^#+\s*.+$' "${root}/src" )
     do
     echo ">> ${file}"
     # Capitalize all words longer than 4 letters, except a few listed below.

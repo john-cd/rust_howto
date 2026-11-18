@@ -25,7 +25,6 @@ format_chapters() {
 
     case "$file" in
       "${root}/src/"*) relative="${file#"${root}/src/"}" ;;
-      "${root}/drafts/"*) relative="../drafts/${file#"${root}/drafts/"}" ;;
       "${root}/../later/src/"*) relative="../../later/src/${file#"${root}/../later/src/"}" ;;
       *) printf 'Unexpected chapter path: %s\n' "$file" >&2; return 1 ;;
     esac
@@ -54,9 +53,9 @@ format_chapters() {
 }
 
 if [ "$keyword" == "" ]; then
-  find "${root}/src" "${root}/drafts" "${root}/../later/src" -type f -name "*.md" -not -name "*.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" -print0 |
+  find "${root}/src" "${root}/../later/src" -type f -name "*.md" -not -name "*.incl.md" -not -name "SUMMARY.md" -not -name "*refs.md" -print0 |
     format_chapters | sort -u
 else
-  rg --null -F -i --files-with-matches -g "*.md" -g "!*.incl.md" -g "!SUMMARY.md" -g "!*refs.md" "${keyword}" "${root}/src" "${root}/drafts" "${root}/../later/src" |
+  rg --null -F -i --files-with-matches -g "*.md" -g "!*.incl.md" -g "!SUMMARY.md" -g "!*refs.md" "${keyword}" "${root}/src" "${root}/../later/src" |
     format_chapters | sort -u
 fi

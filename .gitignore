@@ -15,7 +15,6 @@ mdbook-scrub.log
 
 # Local previews of unpublished books.
 /later/book/
-/bk/drafts/book/
 
 /.sccache
 
