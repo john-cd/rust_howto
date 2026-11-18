@@ -40,7 +40,7 @@ mod domain {
         }
 
         // Getters.
-        /// Handles the id behavior for this component.
+        /// Returns the stable identifier used to match commands, events, and read-model rows.
         pub fn id(&self) -> u32 {
             self.id
         }
@@ -50,7 +50,7 @@ mod domain {
             &self.name
         }
 
-        /// Handles the quantity behavior for this component.
+        /// Returns the currently projected stock quantity.
         pub fn quantity(&self) -> u32 {
             self.quantity
         }
@@ -105,7 +105,7 @@ mod events {
         /// The captured state.
         pub state: T,
 
-        /// The event count or sequence number when this snapshot was captured.
+        /// Number of prefix events represented by state; used as a replay slice offset.
         pub version: usize,
     }
 
@@ -114,26 +114,21 @@ mod events {
     /// Acts as the source of truth for the system's state.
     /// Events are stored in the Event Store.
     pub trait EventRepository {
-        /// Stores an event.
-        ///
-        /// # Arguments
-        ///
-        /// * `limit` - Bound used to limit the amount of work or data accepted by the operation.
+        /// Appends a domain event to the authoritative log in application order.
         fn apply_event(&self, event: ProductEvent);
 
-        /// Returns events.
+        /// Returns all events or the newest limit events, preserving chronological order.
         fn get_events(&self, limit: Option<usize>) -> Vec<ProductEvent>;
 
         /// Returns all events recorded after the specified version offset.
         fn get_events_since(&self, version: usize) -> Vec<ProductEvent>;
 
-        /// Handles the event count behavior for this component.
+        /// Returns the log length, which is the offset for fetching subsequently appended events.
         fn event_count(&self) -> usize;
     }
 
     impl EventRepository for SimpleEventStore {
-        /// Applies the event change to simple event store and keeps dependent state consistent for
-        /// later operations.
+        /// Appends under the write lock; read-model updates are performed separately.
         fn apply_event(&self, event: ProductEvent) {
             let mut events = self
                 .events
@@ -161,7 +156,8 @@ mod events {
             }
         }
 
-        /// Returns the events since stored by or available from this value.
+        /// Clones the suffix starting at the event-count offset; out-of-range offsets yield no
+        /// events.
         fn get_events_since(&self, version: usize) -> Vec<ProductEvent> {
             let events = self
                 .events
@@ -174,7 +170,7 @@ mod events {
             }
         }
 
-        /// Handles the event count behavior for this component.
+        /// Returns the log length, which is the offset for fetching subsequently appended events.
         fn event_count(&self) -> usize {
             self.events
                 .read()
@@ -317,7 +313,9 @@ mod commands {
             self.handle(command)
         }
 
-        /// Gets the current quantity of a product by replaying events.
+        /// Scans the log in order, retaining the last quantity recorded for this product.
+        ///
+        /// Cloning and replaying the full log costs O(number of events) per lookup.
         fn get_current_quantity(&self, product_id: u32) -> Option<u32> {
             let events = self.event_store.get_events(None);
             let mut current_quantity: Option<u32> = None;
@@ -414,11 +412,11 @@ mod read_store {
             }
         }
 
-        /// Rebuilds the read model from the event store.
+        /// Replays the supplied log into a fresh map, replacing the old projection.
         ///
-        /// # Arguments
-        ///
-        /// This is used to re-create the read model from the event store.
+        /// Builds outside the shared lock, then publishes with one write-lock
+        /// acquisition so readers cannot observe a partially rebuilt model.
+        /// Panics if a previous writer poisoned the read-model lock.
         pub fn rebuild_read_model(&self, events: Vec<ProductEvent>) {
             let mut read_model = HashMap::new();
             for event in &events {
@@ -431,7 +429,10 @@ mod read_store {
                 .expect("the read-model lock should not be poisoned") = read_model;
         }
 
-        /// Captures a snapshot of the current read model with its corresponding event version.
+        /// Clones the current projection and labels it with the caller-supplied event count.
+        ///
+        /// The caller must ensure the count matches the projected log prefix;
+        /// this method does not synchronize a snapshot with concurrent log appends.
         pub fn create_snapshot(&self, version: usize) -> Snapshot<HashMap<u32, Product>> {
             let read_model = self
                 .read_model
@@ -443,7 +444,11 @@ mod read_store {
             }
         }
 
-        /// Reconstructs the read model from an optional snapshot and any subsequent delta events.
+        /// Restores snapshot state, applies the supplied delta in order, and publishes once.
+        ///
+        /// The caller must fetch delta events starting at snapshot.version;
+        /// this method uses snapshot state but does not interpret its version.
+        /// Without a snapshot, the delta must contain the full history.
         pub fn reconstruct_from_snapshot(
             &self,
             snapshot: Option<Snapshot<HashMap<u32, Product>>>,
