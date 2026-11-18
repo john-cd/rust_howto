@@ -137,10 +137,10 @@ chrono = "0.4.45"
 clap = { version = "4.6.7", features = ["derive"] }
 # A cron expression parser and schedule explorer.
 cron = "0.17.0"
-# Flexible CSV reader and writer with Serde support.
-csv = "1.4.0"
 # Cross-platform app development in Rust
 crux_core = "0.20.0"
+# Flexible CSV reader and writer with Serde support.
+csv = "1.4.0"
 # DataFusion is an in-memory query engine that uses Apache Arrow as the memory model
 datafusion = { version = "55.2.0", default-features = false, features = [
     "sql",
