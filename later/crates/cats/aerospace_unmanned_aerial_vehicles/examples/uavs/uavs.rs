@@ -4,7 +4,7 @@
 //! Receiving telemetry from a Tello drone.
 //!
 //! Decoding a message into text is a pure function, so it can be tested
-//! without a drone; only [`connect_drone`] talks to the network.
+//! without a drone; only `connect_drone` talks to the network.
 //!
 //! A UAV (unmanned aerial vehicle) is the formal name for a drone. Besides
 //! accepting commands, a drone continuously reports telemetry, meaning
