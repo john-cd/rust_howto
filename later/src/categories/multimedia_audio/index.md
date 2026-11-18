@@ -35,9 +35,9 @@ Analysis commonly builds on decoding and digital signal processing. [`symphonia`
 
 ## Related Topics
 
-- [[multimedia | Multimedia]].
-- [[multimedia_encoding | Multimedia: Encoding]].
-- [[multimedia_video | Multimedia: Video]].
+- [Multimedia](../multimedia/index.md).
+- [Multimedia: Encoding](../multimedia_encoding/index.md).
+- [Multimedia: Video](../multimedia_video/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
