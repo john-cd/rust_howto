@@ -14,18 +14,12 @@ use std::error::Error;
 use pollster::block_on;
 use wgpu::util::DeviceExt;
 
-/// Shared `compute shader` used by this module.
+/// WGSL kernel that doubles an array of unsigned integers in place.
 const COMPUTE_SHADER: &str = "
 @group(0) @binding(0)
 var<storage, read_write> values: array<u32>;
 
 @compute @workgroup_size(64)
-
-/// Doubles the storage-array value at each in-range invocation index.
-///
-/// # Arguments
-///
-/// * `id` - Identifier used to select the wgpu record or cache entry affected by this operation.
 fn double_values(@builtin(global_invocation_id) id: vec3<u32>) {
     if (id.x < arrayLength(&values)) {
         values[id.x] *= 2u;
@@ -33,10 +27,10 @@ fn double_values(@builtin(global_invocation_id) id: vec3<u32>) {
 }
 ";
 
-/// Shared `input` used by this module.
+/// Input values used to check the computation.
 const INPUT_VALUES: [u32; 8] = [1, 2, 3, 4, 5, 6, 7, 8];
 
-/// Shared `workgroup size` used by this module.
+/// Number of invocations in one workgroup, matching the WGSL declaration.
 const WORKGROUP_SIZE: u32 = 64;
 
 /// Runs the compute example.
@@ -46,11 +40,14 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 /// Requests a headless device, doubles the storage-buffer values, and reads
 /// them back.
+///
+/// # Errors
+///
+/// Returns an error when adapter setup, dispatch verification, or readback fails.
 #[expect(
     clippy::little_endian_bytes,
     reason = "WGSL u32 storage buffers use little-endian byte order"
 )]
-/// Runs compute.
 async fn run_compute() -> Result<(), Box<dyn Error>> {
     let mut instance_desc = wgpu::InstanceDescriptor::new_without_display_handle();
     instance_desc.backends = wgpu::Backends::PRIMARY;
@@ -64,6 +61,12 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
             ..Default::default()
         })
         .await?;
+
+    let info = adapter.get_info();
+    println!(
+        "Adapter: {} ({:?}, {:?})",
+        info.name, info.backend, info.device_type
+    );
 
     let (device, queue) = adapter
         .request_device(&wgpu::DeviceDescriptor {
@@ -139,7 +142,6 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
     println!("Doubled values: {result:?}");
     Ok(())
 }
-// ANCHOR_END: example
 
 /// Maps a staging buffer and converts its little-endian words to `u32` values.
 ///
@@ -151,7 +153,6 @@ async fn run_compute() -> Result<(), Box<dyn Error>> {
     clippy::little_endian_bytes,
     reason = "WGSL u32 storage buffers use little-endian byte order"
 )]
-/// Reads u32 values.
 fn read_u32_values(
     device: &wgpu::Device,
     buffer: &wgpu::Buffer,
@@ -179,6 +180,7 @@ fn read_u32_values(
     buffer.unmap();
     Ok(values)
 }
+// ANCHOR_END: example
 
 /// Runs the example's asynchronous compute workflow on a blocking executor.
 ///
@@ -189,12 +191,12 @@ pub fn run() -> Result<(), Box<dyn Error>> {
     main()
 }
 
-/// value.
+/// Validates the shader and exercises compute on supported adapters.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// value. Exercises the complete compute workflow on an available GPU adapter.
+    /// Checks the shader without creating a device or submitting GPU work.
     #[test]
     fn test_compute_shader_is_valid_wgsl() {
         let module = naga::front::wgsl::parse_str(COMPUTE_SHADER)
