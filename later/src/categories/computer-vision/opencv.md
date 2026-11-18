@@ -61,11 +61,11 @@ The complete file-processing example generates an input image, reads it, convert
 
 ## Pure Rust Alternatives
 
-For image buffers and common processing operations without the OpenCV SDK, compare [`image`][c~image~docs] and [`imageproc`][c~imageproc~docs]. See [Images](https://john-cd.com/rust_howto/categories/multimedia_images/images.html) and the [Computer Vision index](index.md) for related processing and geometry tools.
+For image buffers and common processing operations without the OpenCV SDK, compare [`image`][c~image~docs] and [`imageproc`][c~imageproc~docs]. See [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/images.md) and the [Computer Vision index](index.md) for related processing and geometry tools.
 
 ## Related Topics {#related-topics .skip}
 
-- [Images](https://john-cd.com/rust_howto/categories/multimedia_images/images.html).
+- [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/images.md).
 - [Perception and Sensors](../science_robotics/perception_and_sensors.md).
 - [Linear algebra](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/mathematics/linear_algebra.md).
 

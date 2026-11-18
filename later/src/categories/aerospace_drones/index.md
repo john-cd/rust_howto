@@ -18,7 +18,7 @@ Sensor integration may include IMU accelerometer, gyroscope, and magnetometer pr
 
 ## Computer Vision & Image Processing
 
-Vision tasks include obstacle and landing-pad detection, image filtering and feature extraction, and simultaneous localization and mapping (SLAM). Use [`opencv`][c~opencv~docs] for computer-vision algorithms, [`image`][c~image~docs] for image loading and manipulation, and [`ndarray`][c~ndarray~docs] for n-dimensional arrays; see [[computer-vision | Computer Vision]], [Images](https://john-cd.com/rust_howto/categories/multimedia_images/images.html), and [Multimedia Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html) for broader guidance.
+Vision tasks include obstacle and landing-pad detection, image filtering and feature extraction, and simultaneous localization and mapping (SLAM). Use [`opencv`][c~opencv~docs] for computer-vision algorithms, [`image`][c~image~docs] for image loading and manipulation, and [`ndarray`][c~ndarray~docs] for n-dimensional arrays; see [[computer-vision | Computer Vision]], [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/images.md), and [Multimedia Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md) for broader guidance.
 
 ## Related Topics
 
@@ -28,9 +28,9 @@ The [[aerospace_unmanned-aerial-vehicles | Unmanned Aerial Vehicles]] page cover
 - [[algorithms | Algorithms]].
 - [[computer-vision | Computer Vision]].
 - [[hardware-support | Hardware Support]].
-- [Images](https://john-cd.com/rust_howto/categories/multimedia_images/images.html).
+- [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/images.md).
 - [[mathematics | Mathematics]].
-- [Multimedia Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html).
+- [Multimedia Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md).
 - [[linear_algebra | Linear Algebra]].
 
 Consider using:

@@ -38,7 +38,7 @@ Apply effects while the video is decoded or encoded, instead of writing your own
 
 - With FFmpeg, pass a filter graph, such as `scale=640:-1,hue=s=0`, through `ffmpeg-sidecar` or the filter API of [`ffmpeg-next`][c~ffmpeg-next~docs]↗{{hi:ffmpeg-next}}.
 - With GStreamer, insert filter elements (`videoscale`, `videobalance`, `gleffects`) into the pipeline.
-- For custom per-frame effects, decode frames to RGB buffers and process them with [`image`][c~image~docs]↗{{hi:image}} (see [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html)).
+- For custom per-frame effects, decode frames to RGB buffers and process them with [`image`][c~image~docs]↗{{hi:image}} (see [Multimedia: Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md)).
 
 ## Video Analysis {#analysis}
 
@@ -57,9 +57,9 @@ Building a full-fledged video player in Rust is a complex undertaking. You'd lik
 ## Related Topics
 
 - [[graphics | Graphics]].
-- Image Processing: see [Images](https://john-cd.com/rust_howto/categories/multimedia_images/images.html) and [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html).
+- Image Processing: see [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/images.md) and [Multimedia: Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md).
 - [[multimedia | Multimedia]].
-- [Multimedia Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html).
+- [Multimedia Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md).
 - [[rendering | Rendering]].
 - Transcoding (converting video from one format to another) - see [[multimedia_encoding | Multimedia: Encoding]].
 

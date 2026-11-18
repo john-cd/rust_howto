@@ -26,7 +26,7 @@
 [p~crates]: ../../crate_selection/index.md
 [p~macros]: https://john-cd.com/rust_howto/language/macros.html
 [p~main]: ../../language/entrypoint.md
-[p~streams]: https://john-cd.com/rust_howto/categories/asynchronous/streams.html
+[p~streams]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/asynchronous/streams.md
 [p~wasm]: # "../wasm/index.md"
 [macrotest~docs]: https://docs.rs/macrotest/latest/macrotest/
 [rust-analyzer~macro-expansion~docs]: https://rust-analyzer.github.io/book/features.html#expand-macro-recursively

@@ -13,7 +13,7 @@ While there aren't dominant, all-encompassing multimedia frameworks in Rust yet,
 ## Sub-categories
 
 - [Audio](../multimedia_audio/index.md): playback, decoding, resampling, and WAV files.
-- [Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html): loading, transforming, and encoding images.
+- [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md): loading, transforming, and encoding images.
 - [Video](../multimedia_video/index.md): FFmpeg, GStreamer, and frame analysis.
 - [Encoding](../multimedia_encoding/index.md): codecs and container formats.
 

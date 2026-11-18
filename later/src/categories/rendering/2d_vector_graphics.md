@@ -10,7 +10,7 @@ Vector graphics describe shapes and paths with coordinates, lines, and curves in
 
 A path is an ordered set of subpaths. A subpath starts at a point, adds straight or curved segments, and ends open or closed. This host-buildable example creates a closed path and tessellates it into vertices and indices:
 
-See the [published recipe and example](https://john-cd.com/rust_howto/categories/graphics/2d_vector_graphics.html).
+See the [published recipe and example](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/2d_vector_graphics.md).
 
 The path is geometry, not a colored image. A drawing operation also needs a fill or stroke style, a transform, and a renderer that turns the geometry into pixels.
 
@@ -28,7 +28,7 @@ Use bounds and clipping to limit work for large scenes. For interactive diagrams
 
 [`lyon`][c~lyon~docs]↗{{hi:lyon}} builds paths and tessellates fills and strokes into vertices and indices. It does not provide a window or final drawing backend; pass its generated geometry to a renderer such as `wgpu` or another graphics API. Lyon is useful when an application needs to inspect or control the generated geometry, or when it uses the same path data across rendering operations.
 
-Run the example from `later/crates` with `cargo run -p rendering --example 2d_vector_graphics`; it only generates and reports mesh geometry, so it needs no window or graphics device.
+Run the example from `bk/crates` with `cargo run --locked -p graphics --example 2d_vector_graphics`; it only generates and reports mesh geometry, so it needs no window or graphics device.
 
 ## `femtovg` {#femtovg}
 
@@ -78,7 +78,7 @@ The build script of `skia-safe` downloads prebuilt Skia binaries for common targ
 
 ## Choose the Rendering Boundary
 
-Use Lyon when your application needs path geometry and wants to select its own backend. Use a canvas renderer such as `femtovg` when you prefer drawing commands and the renderer's built-in path handling. Use a GPU renderer such as `vger` when its scene model and backend fit the rest of the application. For static vector assets, rendering SVG through an SVG-focused pipeline may be simpler than building paths by hand; see [SVG Rendering](https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html).
+Use Lyon when your application needs path geometry and wants to select its own backend. Use a canvas renderer such as `femtovg` when you prefer drawing commands and the renderer's built-in path handling. Use a GPU renderer such as `vger` when its scene model and backend fit the rest of the application. For static vector assets, rendering SVG through an SVG-focused pipeline may be simpler than building paths by hand; see [SVG Rendering](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/svg_rendering.md).
 
 ## See Also {#see-also .skip}
 
@@ -86,12 +86,12 @@ Use Lyon when your application needs path geometry and wants to select its own b
 
 ## Related Topics {#related-topics .skip}
 
-- [2D Renderers](https://john-cd.com/rust_howto/categories/graphics/2d_renderers.html).
-- [2D Raster Graphics](https://john-cd.com/rust_howto/categories/graphics/2d_raster_graphics.html).
+- [2D Renderers](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/2d_renderers.md).
+- [2D Raster Graphics](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/2d_raster_graphics.md).
 - [3D Renderers](3d_renderers.md).
 - [Rendering](index.md).
 - [Rendering Engines](../rendering_engine/index.md).
-- [SVG Rendering](https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html).
+- [SVG Rendering](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/svg_rendering.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

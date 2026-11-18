@@ -42,7 +42,7 @@ See [[development-tools_ffi | Development Tools: FFI]], [[external-ffi-bindings 
 
 If your target is a flight controller running on an embedded system, [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}} is essential.
 
-See [[no_std | No Std]] and [[no_alloc | No Alloc]].
+See [No Standard Library](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/no-std/no_std.md) and [No Allocation](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/no-std/no_alloc.md).
 
 ## Related Topics
 

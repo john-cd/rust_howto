@@ -42,7 +42,7 @@ See [Viewports and GPU Readback Layout](frame_layout.md) for aspect ratios, chec
 | --- | --- | --- |
 | GPU memory management | [`vulkano`][c~vulkano~docs]↗{{hi:vulkano}} | Memory management depends on the chosen graphics API. |
 | Window management and input | [`winit`][c~winit~docs]↗{{hi:winit}}, `raw-window-handle` | Window handles connect a window system to graphics APIs; `winit` also provides event handling. |
-| [Image loading and manipulation](https://john-cd.com/rust_howto/categories/multimedia_images/index.html) | [`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} | Load and process image data for rendering. |
+| [Image loading and manipulation](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md) | [`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} | Load and process image data for rendering. |
 
 - [Graphics](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md).
 - [Rendering](../rendering/index.md).

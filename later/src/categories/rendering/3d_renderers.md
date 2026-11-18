@@ -25,7 +25,7 @@ Many algorithms are implemented within engines like [`rend3`][c~rend3~docs]↗{{
 
 Every 3D renderer transforms model-space vertices by a model, view, and projection matrix, divides by `w`, and maps the result to pixels. This example performs that vertex stage on the CPU with [`glam`][c~glam~docs]↗{{hi:glam}}. It needs no window or GPU, and the same matrices are what you would upload to a shader. The camera helpers live in `glam::camera`; pick the module that matches your graphics API's handedness and depth range.
 
-See the [published recipe and example](https://john-cd.com/rust_howto/categories/graphics/3d_projection.html).
+See the [published recipe and example](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/3d_projection.md).
 
 ## `rend3` {#rend3}
 

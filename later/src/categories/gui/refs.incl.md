@@ -82,7 +82,7 @@
 [p~rendering]: ../rendering/index.md
 [p~ui-layout]: ui_layout.md
 [p~wasm]: ../wasm/index.md
-[p~windows]: https://john-cd.com/rust_howto/categories/os_windows-apis/windows.html
+[p~windows]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/os_windows-apis/windows.md
 [c~bevy_egui~docs]: https://docs.rs/bevy_egui
 [c~egui-wgpu~docs]: https://docs.rs/egui-wgpu
 [c~egui-winit~docs]: https://docs.rs/egui-winit

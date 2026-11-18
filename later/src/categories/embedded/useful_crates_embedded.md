@@ -69,7 +69,7 @@ The [`embedded-storage`][c~embedded-storage~docs]↗ traits give drivers and sto
 - [Hardware Abstraction Layers](hals.md) and [sensors](sensors.md) provide peripheral and device-driver interfaces.
 - [Real-Time Operating Systems](rtos.md) explain task scheduling and timing constraints.
 - [Flash Programming](flash.md) covers firmware downloads and application storage.
-- [No-std development](https://john-cd.com/rust_howto/categories/no-std/no_std.html) explains what is available without the standard library.
+- [No-std development](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/no-std/no_std.md) explains what is available without the standard library.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

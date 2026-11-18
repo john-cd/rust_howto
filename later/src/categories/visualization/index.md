@@ -33,7 +33,7 @@ Choose by output: static image or SVG (`plotters`), interactive HTML (`charming`
 
 | Topic | Rust Crates (Examples) | Notes |
 | --- | --- | --- |
-| Image and video data | [`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} | Decode and prepare raster data before drawing; see [Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html) and [[multimedia_video | Multimedia: Video]]. |
+| Image and video data | [`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} | Decode and prepare raster data before drawing; see [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md) and [[multimedia_video | Multimedia: Video]]. |
 | Data preparation | [`polars`][c~polars~docs]↗{{hi:polars}}, [`arrow`][c~arrow~docs]↗{{hi:arrow}} | Filter and aggregate data before selecting a chart or rendering backend; see [[data-processing | Data and ETL]]. |
 | Application host | [`egui_plot`][c~egui_plot~docs]↗{{hi:egui_plot}}, [`plotters`][c~plotters~docs]↗{{hi:plotters}}, [`plotly`][c~plotly~docs]↗{{hi:plotly}} | Match the renderer to a desktop GUI, static file, or browser application. |
 

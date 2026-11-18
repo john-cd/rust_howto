@@ -28,7 +28,7 @@ Feature flags often determine which codecs a crate supports. Check the selected 
 
 - [[multimedia | Multimedia]].
 - [[multimedia_audio | Multimedia: Audio]].
-- [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html).
+- [Multimedia: Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md).
 - [[multimedia_video | Multimedia: Video]].
 
 {{#include refs.incl.md}}

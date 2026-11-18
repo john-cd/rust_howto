@@ -4,7 +4,7 @@
 
 [ex~computer-vision~opencv]: opencv.md#opencv
 [p~cross-platform]: # "../../other/cross-platform/index.md"
-[p~images]: https://john-cd.com/rust_howto/categories/multimedia_images/images.html
+[p~images]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/images.md
 [p~machine-learning]: https://john-cd.com/rust_howto/other/machine-learning/index.html
 [p~testing]: ../development-tools_testing/testing.md
 [p~video]: ../multimedia_video/video.md

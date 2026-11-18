@@ -4,7 +4,7 @@
 
 [![cat~web-programming::websocket][cat~web-programming::websocket~badge]][cat~web-programming::websocket]{{hi:Websocket}}
 
-Read the published [WebSockets chapter](https://john-cd.com/rust_howto/categories/web-programming_websocket/websocket.html) for crate selection and a Tokio client and server. The examples below cover other client APIs.
+Read the published [WebSockets chapter](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/web-programming_websocket/websocket.md) for crate selection and a Tokio client and server. The examples below cover other client APIs.
 
 ## Code Examples
 
