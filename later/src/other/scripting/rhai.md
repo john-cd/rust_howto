@@ -8,21 +8,15 @@
 
 {{#badges rhai embedded="Embedded development" parser-implementations="Parser implementations" no-std="No standard library" wasm=WebAssembly}}
 
-[rhai][c~rhai~website]↗{{hi:rhai}} is an embedded scripting language and evaluation engine that gives a safe and easy way to add scripting to any Rust application.{{hi:Scripting in Rust}}
+[Rhai][c~rhai~website]↗{{hi:rhai}} embeds a dynamically typed language in a Rust application. Use it to let a user change a rule or formula without recompiling the host.{{hi:Scripting in Rust}}
 
-Features:
-
-- Similar to JavaScript + Rust, with dynamic typing.
-- Tight integration with native Rust [functions][p~functions] and types.
-- Function Registration: it can expose Rust functions into scripts.
-- Sandboxing: scripts only access capabilities made available to them, but registered host functions can have side effects. Configure resource limits and expose only the functions and data the script needs.
-- Robust error reporting.
+Add it with `cargo add rhai`. In this example, `Engine::register_fn` makes a Rust function available to scripts, `eval` returns a typed result, and `Scope` passes values from the host to an expression. The registered `add` function produces `100`, and the scoped expression produces `430`.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/scripting/rhai.rs:example}}
 ```
 
-## Expose Rust Types and Sandbox Scripts {#rhai-types-and-limits}
+## Expose Rust Types and Limit Script Work {#rhai-types-and-limits}
 
 [![rhai][c~rhai~docs~badge]][c~rhai~docs]{{hi:rhai}}
 

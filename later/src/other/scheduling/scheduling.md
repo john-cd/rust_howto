@@ -14,7 +14,7 @@
 
 ### Cron Syntax {#cron-syntax}
 
-`cron` expects 6 or 7 fields: `sec min hour day-of-month month day-of-week [year]`. The traditional 5-field form (no seconds) must be normalized first, for example by prefixing the string `"0 "`. Expressions are evaluated in the time zone of the `DateTime` you pass in; use [`chrono-tz`](https://docs.rs/chrono-tz)↗ for a named zone, and be careful around daylight-saving transitions.
+`cron` expects 6 or 7 fields: `sec min hour day-of-month month day-of-week [year]`. The traditional 5-field form (no seconds) must be normalized first, for example by prefixing the string `"0 "`. Expressions are evaluated in the time zone of the `DateTime` you pass in. The example starts after 09:30 UTC on Friday and finds Monday through Wednesday at 09:30 UTC. Use [`chrono-tz`](https://docs.rs/chrono-tz)↗ for a named zone. Test the transition dates explicitly when a local job can fall in a skipped or repeated hour. When importing schedules from another implementation, check the day-of-week numbering and how the two day fields combine, since adding the seconds field only adjusts the field count.
 
 ## Run a Periodic Job at a Fixed Interval {#interval-job}
 
@@ -23,7 +23,7 @@ The first tick of `tokio::time::interval` is immediate. Choose a
 for later ticks. `Burst` catches up, `Delay` shifts the schedule, and `Skip`
 skips intervening ticks while keeping future deadlines on the original grid.
 The example awaits each job before taking the next tick, so jobs stay serial.
-Its `CancellationToken` stops the loop after the current job finishes.
+Its `CancellationToken` stops the loop after the current job finishes. Each process runs its own timer, so two replicas would both run the job. Use an external scheduler or coordinate ownership when only one replica should run it.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/scheduling/interval_job.rs:example}}

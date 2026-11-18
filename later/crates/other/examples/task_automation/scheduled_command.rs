@@ -1,15 +1,10 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Describe a task as data, then schedule, expand, parse and run it.
+//! Compute a task's next scheduled time and run it once on demand.
 //!
-//! - `cron` computes when the task is due.
-//! - `shellexpand` expands `$VARIABLE` and `~` in the command template. The lookup functions are
-//!   passed in, so the result does not depend on the environment of the machine running the
-//!   example.
-//! - `shell-words` splits the expanded line into program and arguments using Unix shell quoting
-//!   rules, without starting a shell.
-//! - `duct` runs the program, captures its output and fails on a non-zero exit status.
+//! Parse the command template before substituting values so each value stays in its own
+//! argument. The executable comes directly from the trusted task definition.
 
 use std::str::FromStr;
 
@@ -43,23 +38,44 @@ impl Task {
         self.schedule.after(&after).next()
     }
 
-    /// Expands `$WHAT`, tokenizes the configured command, runs it, and returns stdout.
+    /// Parses the command template and substitutes `what` for `$WHAT` in arguments.
     ///
     /// # Errors
     ///
-    /// Returns an error if the command is empty, cannot be started, or exits unsuccessfully.
+    /// Returns an error for missing commands, invalid quoting, or unknown variables.
+    fn command_line(&self, what: &str) -> Result<(String, Vec<String>)> {
+        let words = shell_words::split(&self.command)?;
+        let mut words = words.into_iter();
+        let program = words
+            .next()
+            .filter(|word| !word.is_empty())
+            .context("empty command")?;
+        let args = words
+            .map(|arg| {
+                shellexpand::env_with_context(&arg, |name| match name {
+                    "WHAT" => Ok(Some(what)),
+                    _ => Err("unknown task variable"),
+                })
+                .map(|expanded| expanded.into_owned())
+                .map_err(|error| anyhow::anyhow!("{error}"))
+            })
+            .collect::<Result<Vec<_>>>()?;
+        Ok((program, args))
+    }
+
+    /// Runs the configured command and returns its standard output.
+    ///
+    /// # Errors
+    ///
+    /// Returns an error if the command is invalid, cannot be started, exits unsuccessfully,
+    /// or produces output that cannot be read as UTF-8.
     fn run(&self, what: &str) -> Result<String> {
-        let line = shellexpand::env_with_context_no_errors(&self.command, |name: &str| {
-            (name == "WHAT").then_some(what)
-        });
-        let words = shell_words::split(&line)?;
-        let (program, args) = words.split_first().context("empty command")?;
-        let output = duct::cmd(program, args).read()?;
-        Ok(output)
+        let (program, args) = self.command_line(what)?;
+        Ok(duct::cmd(program, args).read()?)
     }
 }
 
-/// Schedules a task and runs it once.
+/// Prints a task's next scheduled time and runs the command once on demand.
 fn main() -> Result<()> {
     example()
 }
@@ -95,22 +111,26 @@ fn example() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// Variables come from the supplied lookup, and quotes group words.
+    /// Substitution preserves spaces, quotes, and option-like text within one argument.
     #[test]
-    fn expands_variables_and_keeps_quoted_words_together() -> Result<()> {
-        let task = Task::new("0 0 * * * *", "rustc --print \"$WHAT x\"")?;
-        let line = shellexpand::env_with_context_no_errors(&task.command, |name: &str| {
-            (name == "WHAT").then_some("hi")
-        });
-        assert_eq!(shell_words::split(&line)?, ["rustc", "--print", "hi x"]);
+    fn expands_variables_without_splitting_arguments() -> Result<()> {
+        let task = Task::new("0 0 * * * *", "rustc --print $WHAT \"two words\"")?;
+        let (program, args) = task.command_line("hi \"--extra\"")?;
+        assert_eq!(program, "rustc");
+        assert_eq!(args, ["--print", "hi \"--extra\"", "two words"]);
         Ok(())
     }
 
-    /// An unterminated quote and an empty command are errors.
+    /// Malformed templates and unknown variables fail before launching a program.
     #[test]
     fn rejects_bad_commands() -> Result<()> {
         assert!(Task::new("0 0 * * * *", "echo 'oops")?.run("x").is_err());
         assert!(Task::new("0 0 * * * *", "")?.run("x").is_err());
+        assert!(
+            Task::new("0 0 * * * *", "rustc ${UNKNOWN}")?
+                .command_line("x")
+                .is_err()
+        );
         Ok(())
     }
 

@@ -2,26 +2,12 @@
 
 // ANCHOR: example
 //! Demonstrates embedding Rhai scripts in a Rust application.
-//!
-//! # Rhai scripting
-//!
-//! Rhai is a lightweight, Rust-based scripting language.
-//! It allows to embed scripting capabilities in Rust applications.
-//!
-//! In Cargo.toml, add:
-//!
-//! ```toml
-//! [dependencies]
-//! rhai = "1.21.0" # or latest version
-//! ```
 
 use rhai::Engine;
 use rhai::EvalAltResult;
 use rhai::Scope;
 
-/// Typically, you'll use Rhai as a thin dynamic wrapper layer over Rust code.
-/// Here is a simple function that we'll expose as a Rust API into Rhai for
-/// scripts to call:
+/// Adds two integers supplied by the script.
 fn add(x: i64, y: i64) -> i64 {
     x + y
 }
@@ -33,14 +19,6 @@ fn main() -> Result<(), Box<EvalAltResult>> {
 
     // Register a Rust function to be used in the script.
     engine.register_fn("add", add);
-    // With a closure:
-    engine.register_fn("foo", |x: i64, y: i64| x * 2 + y * 3);
-    // You can also register a custom type with `build_type`.
-
-    // Safety: turn the Engine into an immutable instance.
-    // See <https://rhai.rs/book/safety/sandbox.html>.
-    let engine = engine;
-
     // Define a simple script.
     // Review further examples at <https://github.com/rhaiscript/rhai/tree/main/scripts>.
     let script = "

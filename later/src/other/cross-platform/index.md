@@ -77,7 +77,7 @@ Choose which parts you want in common across targets.
 | A web interface and a Rust application layer | [`tauri`][c~tauri~docs], or [`wry`][wry-docs] for direct WebView integration | Check the target's WebView, permissions, and installer. See [Web-based desktop GUIs](../../categories/gui/index.md#web-based-guis). |
 | A Rust component model | [`dioxus`][dioxus-platform-support] | Check the feature set and prerequisites of the selected desktop, mobile, or web renderer. |
 | A desktop interface drawn from Rust | [`egui`][c~egui~docs], [`iced`][c~iced~docs], or [`slint`][c~slint~docs] | Compare the [GUI recipes](../../categories/gui/index.md) and check keyboard input, accessibility, and packaging on each target. |
-| Application rules behind a native UI | [`crux_core`][c~crux_core~docs], or a Rust library with generated bindings | Keep the UI in the platform shell or connect a [Flutter interface](../../categories/development-tools_ffi/flutter.md). Smoke check the binding and lifecycle on a real target. |
+| Application rules behind a native UI | [`crux_core`][c~crux_core~docs], or [`uniffi`][uniffi-guide] for exposing a Rust library to Swift or Kotlin | Keep the UI in the platform shell or connect a [Flutter interface](../../categories/development-tools_ffi/flutter.md). Smoke check the binding and lifecycle on a real target. |
 
 ## Keep operating-system APIs local
 
@@ -90,6 +90,8 @@ For system-specific APIs, use the smallest platform-specific layer possible. The
 - [Embedded Systems](../../categories/embedded/index.md).
 - [WebAssembly](../../categories/wasm/index.md).
 - [Software Architecture](https://github.com/john-cd/rust_howto/blob/c9d457b66ed12377a6ff5e0e1377af71cc9dde0b/bk/src/other/architecture/index.md).
+
+[uniffi-guide]: https://mozilla.github.io/uniffi-rs/
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

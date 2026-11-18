@@ -11,7 +11,7 @@ itself. Use this page to find the relevant walkthroughs and examples.
 ### AWS
 
 The [AWS chapter][p~aws]↗ covers the Rust SDK for AWS services and an AWS Lambda
-function. Its recipe table links to both examples.
+function. It also covers shared configuration, email, metrics, object storage, and messaging.
 
 {{#include aws.incl.md}}
 
@@ -31,8 +31,7 @@ permissions, and supported credential source before adopting a client.
 
 ## Deploy Rust applications
 
-The [Rust-native cloud development chapter][ex~cloud~shuttle] explains portable services, WebAssembly platforms, serverless functions, and Shuttle's shutdown. [Fly.io's Rust hosting guide][fly~rust~hosting~guide]↗ describes a
-separate deployment option.
+Use the [deployment guide][ex~cloud~shuttle] to choose a container, function runtime, WebAssembly host, or Kubernetes controller based on your workload.
 
 {{#include rust_native_cloud_development.incl.md}}
 

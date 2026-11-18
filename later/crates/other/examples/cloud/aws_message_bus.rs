@@ -22,7 +22,7 @@ use base64::Engine;
 use base64::engine::general_purpose::STANDARD;
 use prost::Message;
 
-/// SQS rejects message bodies larger than 256 KiB.
+/// Example cap for an encoded body sent through SQS or SNS.
 const MAX_BODY_BYTES: usize = 256 * 1024;
 
 /// A message published when an order is placed.
@@ -88,7 +88,7 @@ pub trait MessageSubscriber: Send + Sync {
 ///
 /// # Errors
 ///
-/// Fails when the encoded body exceeds the SQS limit.
+/// Fails when the encoded body exceeds the example's 256 KiB cap.
 ///
 /// # Arguments
 ///
@@ -101,7 +101,7 @@ pub fn encode_body<M: Message>(message: &M) -> Result<String> {
     let body = STANDARD.encode(message.encode_to_vec());
     ensure!(
         body.len() <= MAX_BODY_BYTES,
-        "message body is {} bytes; the SQS limit is {MAX_BODY_BYTES}",
+        "message body is {} bytes; the example cap is {MAX_BODY_BYTES}",
         body.len()
     );
     Ok(body)

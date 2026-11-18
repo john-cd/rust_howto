@@ -15,6 +15,9 @@
 [mwa-hyperdrive~repo]: https://github.com/MWATelescope/mwa_hyperdrive
 [locksort~repo]: https://github.com/TheZoq2/locksort
 [c~ocl~docs]: https://docs.rs/ocl
+[c~cubecl~docs]: https://docs.rs/cubecl/
+[cudarc~launch]: https://docs.rs/crate/cudarc/latest/source/examples/03-launch-kernel.rs
+[opencl3~example]: https://docs.rs/crate/opencl3/latest/source/examples/basic.rs
 [ex~gpu~deep-learning]: https://john-cd.com/rust_howto/other/machine-learning/deep_learning.html
 [rust-cuda~repo]: https://github.com/Rust-GPU/Rust-CUDA
 

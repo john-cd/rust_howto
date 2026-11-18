@@ -4,49 +4,32 @@
 
 {{#include task_automation.incl.md}}
 
-The following tested example parses a cron schedule and calculates its next occurrence without waiting or starting a background task:
+Put the task in a command that runs once and exits with a failure status when something goes wrong.
 
-```rust,noplayground
-{{#include ../../../crates/other/examples/scheduling/cron_next.rs:example}}
-```
+## Choose Where to Schedule the Task {#scheduling}
 
-You can build simple Rust applications to automate repetitive tasks. The following tools may help:
+For jobs that must run while the application is stopped, register the command with a host scheduler such as a systemd timer or Windows Task Scheduler. To run jobs within an active Rust service, see [Scheduling](../scheduling/scheduling.md).
 
-## Scheduling {#scheduling}
+## Run a Configured Command {#external-process-management}
 
-- [`cron`][c~cron~docs]↗{{hi:cron}} (cron-like scheduling).
+For a fixed executable, start with [`std::process::Command`][c~std::process~docs]↗ and pass each argument separately. [`duct`][c~duct~docs]↗ adds a convenient way to capture stdout, check the exit status, and compose pipelines. When a command reads paths or other user values, validate them for the executable's argument syntax. A value passed as one argument can still be interpreted as an option.
 
-## External Process Management {#external-process-management}
+## Parse a Command Template {#interact-with-shells}
 
-- [`duct`][c~duct~docs]↗{{hi:duct}}.
-- [`std::process`][c~std::process~docs]↗{{hi:std::process}} (standard library)↗.
-
-See [[external_commands | External Commands]].
-
-## Interact with Shells {#interact-with-shells}
-
-- [`shell-words`][c~shell-words~docs]↗{{hi:shell-words}} processes command line arguments according to the [parsing][p~parsing] rules of Unix shells.
-- [`shellexpand`][c~shellexpand~docs]↗{{hi:shellexpand}} is a library for shell-like expansion in strings. For example, it expands variables like `$A` or `${B}` into their values and to expand `~` in the beginning of a string into the home directory (given some context).
-
-See also [[shells | Shells]].
+If you control the configuration format, store the executable and arguments separately. For a text template such as the one below, [`shell-words`][c~shell-words~docs]↗ uses Unix quoting to split the template. Then [`shellexpand`][c~shellexpand~docs]↗ substitutes values inside each argument. This order preserves spaces and quotes in a substituted value. The template format does not implement a shell's pipelines, redirects, or quoting rules for variable expansion. Use templates from a trusted source because the first word selects the executable.
 
 ## Example: a Scheduled Task {#scheduled-task}
 
-This example describes a task as data: [`cron`][c~cron~docs]↗ finds the next run, [`shellexpand`][c~shellexpand~docs]↗ expands `$WHAT` from an explicit lookup, [`shell-words`][c~shell-words~docs]↗ splits the line without a shell, and [`duct`][c~duct~docs]↗ runs the program and fails on a non-zero exit status.
+This example prints the next run time, then runs `rustc --print cfg` immediately to demonstrate the command. The printed time is `2026-10-31 02:30:00 UTC`, followed by the compiler's target configuration. The example needs `rustc` on `PATH`. It exits after one run, so a separate scheduler is responsible for starting it at the intended time.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/other/examples/task_automation/scheduled_command.rs:example}}
 ```
 
-For jobs that run on a schedule, see [Scheduling](../scheduling/scheduling.md) for the scheduling side of the workflow.
-
 ## Related Topics {#related-topics .skip}
 
-- Command Line Interface<!-- Cross-book topic: bk/src/categories/command-line-interface/index.md; not included in this preview. -->.
-  - Argument Parsing<!-- Cross-book topic: bk/src/categories/command-line-interface/argument_parsing.md; not included in this preview. -->.
-  - Terminal User Interfaces<!-- Cross-book topic: bk/src/categories/command-line-interface/tui.md; not included in this preview. -->.
-  - User Interaction<!-- Cross-book topic: bk/src/categories/command-line-interface/user_interaction.md; not included in this preview. -->.
-  - [[user_interaction | User Interaction]].
+- [[external_commands | External Commands]].
+- [[shells | Shells]].
 - [[filesystem | Filesystem]].
 
 {{#include refs.incl.md}}
