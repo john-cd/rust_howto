@@ -667,6 +667,7 @@
 [ex~installation~cargo-binstall]: ../categories/development-tools/installation/install.md#cargo-binstall
 [ex~installation~cargo-install]: ../categories/development-tools/installation/install.md#cargo-install
 [ex~installation~rustup]: ../categories/development-tools/installation/rustup.md#rustup
+[ex~internationalization~internationalization]: ../categories/internationalization/internationalization.md#internationalization
 [ex~introduction~additional-examples]: ../introduction/how_to_read_this_book.md#additional-examples
 [ex~introduction~how-to-use-code-examples]: ../introduction/how_to_read_this_book.md#how-to-use-code-examples
 [ex~introduction~note-about-crate-representation]: ../introduction/how_to_read_this_book.md#note-about-crate-representation
