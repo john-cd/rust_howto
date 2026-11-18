@@ -15,6 +15,7 @@ use regex::Regex;
 /// Returns the distinct hashtags in `text`.
 fn extract_hashtags(text: &str) -> HashSet<&str> {
     lazy_static! {
+        /// Matches a hash followed by an ASCII letter and ASCII word-like characters.
         static ref HASHTAG_REGEX: Regex =
             Regex::new(r"\#[a-zA-Z][0-9a-zA-Z_]*").expect("regular expression should be valid");
     }
