@@ -10,6 +10,43 @@ These recipes cover three practical workflows: training a small classifier, fore
 - [Classical Machine Learning](classical_ml.md): train a simple model in Rust.
 - [Forecasting](forecasting.md): forecast a time series.
 
+## Fit Preprocessing Before Evaluation
+
+Split observations before fitting a scaler, imputer, vocabulary, or feature selector.
+A preprocessing transform is part of the trained model: save its feature order and
+parameters alongside the model and reuse them unchanged at inference time. For time
+series, split chronologically; a random split may put future information into training.
+
+This complete example uses `ndarray` for feature matrices and `linfa-linear` for fitting.
+It scales from training rows only, handles constant columns, rejects invalid values,
+and compares held-out RMSE with a training-mean baseline. The exact line is a software
+fixture, not evidence of generalization on noisy observations. A separate validation
+split is needed when selecting models or tuning hyperparameters.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/science/examples/feature_pipeline.rs:example}}
+```
+
+```sh
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p science --example feature_pipeline
+```
+
+The test with an extreme held-out value verifies that evaluation rows cannot change
+training statistics. RMSE has the same units as the target; classification needs
+classification metrics rather than an arbitrary RMSE threshold. Keep a final test set
+untouched by preprocessing choices and hyperparameter searches.
+
+## Choose the Execution Layer
+
+| Task | Common crates | Coverage in these staged chapters |
+| --- | --- | --- |
+| Feature arrays and table preparation | `ndarray`, `polars` | Executable array preprocessing here; dataframe workflows in [Data Processing](../data-processing/index.md). |
+| Classical fitting | `smartcore`, `linfa` | Held-out classification, regression and seeded clustering examples. |
+| Neural-network training | `candle-core`, `candle-nn`, `burn`, `tch` | Candle CPU training and checkpoint parity in [Deep Learning](../../categories/science/deep_learning.md); Burn and tch have framework/prerequisite descriptions, not validated local training recipes. |
+| Exported-model inference | `ort`, `tract` | Executable ONNX Runtime inference and replacement; tract is an alternative discussed in [inference](inference.md). |
+| Forecasting | `augurs` | Chronological holdout and seasonal-naive comparison in [Forecasting](forecasting.md). |
+| Text features | `tokenizers`, `candle-transformers` | Relevant for pretrained NLP models; tokenizer files, special tokens, truncation and model revision must match the model. No downloaded NLP model is required or validated by these fixtures. |
+
 ## Validate the Workflow
 
 - Classical classification uses rows excluded from model fitting.

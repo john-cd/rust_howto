@@ -30,7 +30,25 @@ Train with `burn`, `candle`, or `tch`, or train elsewhere and run an exported mo
 
 [`candle`][c~candle-core~docs]↗{{hi:candle}} is a minimalist ML framework for Rust with a focus on performance (including GPU support) and ease of use. Candle is like PyTorch written in Rust and focuses on neural networks. Read [Candle][blog~candle]↗ for the motivation behind the project.
 
-The example trains a one-layer model on generated values entirely on `Device::Cpu`, needs no model download, and is behind the `candle` Cargo feature of the `science` crate (`cargo test -p science --features candle`).
+The example trains a one-layer model on generated values entirely on `Device::Cpu`.
+It initializes weights explicitly, checks predictions on held-out inputs, saves a
+Safetensors checkpoint to a temporary directory, constructs a fresh model, reloads
+its parameters, and checks prediction parity before removing the directory.
+`VarMap::load` updates variables already registered by the model architecture;
+a weights file alone does not describe the architecture or preprocessing contract.
+See the [VarMap API](https://docs.rs/candle-nn/0.11.1/candle_nn/struct.VarMap.html).
+
+No model download or GPU is required. Run the feature explicitly:
+
+```sh
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p science --features candle --example ml
+```
+
+This single-layer regression teaches tensors, autograd, optimization, and persistence.
+It is not a pretrained transformer or a benchmark. A larger neural model also needs
+an explicit architecture, a training/validation protocol, and a compatible tokenizer
+or feature transform. CUDA/Metal features and LibTorch dependencies require separate
+platform checks; CPU success establishes none of those backends.
 
 ```rust,editable
 {{#include ../../../crates/cats/science/examples/ml/candle.rs:example}}

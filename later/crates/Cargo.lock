@@ -23359,6 +23359,7 @@ dependencies = [
 name = "science"
 version = "0.1.2"
 dependencies = [
+ "anyhow",
  "candle-core",
  "candle-nn",
  "clap",
@@ -23368,6 +23369,7 @@ dependencies = [
  "ndarray 0.16.1",
  "rand 0.8.8",
  "smartcore",
+ "tempfile",
 ]
 
 [[package]]

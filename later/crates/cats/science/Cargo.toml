@@ -22,6 +22,11 @@ name = "ml"
 path = "examples/ml/main.rs"
 test = true
 
+[[example]]
+name = "feature_pipeline"
+path = "examples/feature_pipeline.rs"
+test = true
+
 [dependencies]
 # Provides tensors, devices, and core operations for the Candle machine-learning framework.
 candle-core = { version = "0.11.1", optional = true }
@@ -43,6 +48,10 @@ ndarray_016 = { package = "ndarray", version = "=0.16.1" }
 rand_08 = { package = "rand", version = "=0.8.8", features = ["std", "std_rng"] }
 # Machine Learning in Rust.
 smartcore = "0.7.0"
+
+[dev-dependencies]
+anyhow = "1.0.104"
+tempfile = "3"
 
 [features]
 default = []
