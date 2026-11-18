@@ -59,6 +59,7 @@
   - [`use` Declarations](code-organization/use_declarations.md)
   - [Dependencies](code-organization/dependencies.md)
   - [No Standard Library](categories/no-std/no_std.md)
+  - [Bare-metal Startup and Allocation](categories/no-std/bare_metal.md)
   - [No Allocation](categories/no-std/no_alloc.md)
   - [Code Organization by Project Type](code-organization/code_organization_by_project_type.md)
   - [Naming Conventions](code-organization/naming_conventions.md)
