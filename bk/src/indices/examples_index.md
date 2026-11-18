@@ -848,6 +848,12 @@
 
 {{#include ../categories/multimedia_images/pixel_buffers.incl.md}}
 
+## Internationalization
+
+### Internationalization
+
+{{#include ../categories/internationalization/internationalization.incl.md}}
+
 ## Network Programming
 
 ### Iroh Loopback
