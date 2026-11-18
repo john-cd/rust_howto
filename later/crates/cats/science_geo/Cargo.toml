@@ -22,6 +22,11 @@ name = "geo"
 path = "examples/geo/main.rs"
 test = true
 
+[[example]]
+name = "route_measurements"
+path = "examples/route_measurements.rs"
+test = true
+
 [dependencies]
 clap = "4.6.7"
 # Geospatial primitives and algorithms
