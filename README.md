@@ -81,11 +81,10 @@ Unix and WSL retain their native temporary directories.
 
 ## Companion Tools
 
-Unpublished chapters have separate authoring previews. From `bk/`, run `just book drafts`
-or `just book future` after building the helper binaries with `just release` from `tools/`.
-These commands use `bk/drafts/book.toml` and `later/book.toml`, respectively, and write
-HTML under `bk/book/`. They expand includes and custom directives without adding draft
-chapters to the published book. Review build diagnostics as well as the exit status:
+Unpublished chapters live under `later/src`. From `bk/`, run `just book future` after
+building the helper binaries with `just release` from `tools/`. This command uses
+`later/book.toml` and writes HTML under `bk/book/future/`. It expands includes and custom
+directives without adding unpublished chapters to the main book. Review build diagnostics as well as the exit status:
 mdBook can report a missing include while continuing to render a chapter.
 
 The [`mdbook-utils`][c~mdbook-utils~crates.io]↗ utility ([(github)][c~mdbook-utils~repo]↗ [(docs.rs)][c~mdbook-utils~docs]↗ [(user guide)][c~mdbook-utils~user-guide]↗) helps manage links and code blocks in [`mdbook`][c~mdbook~docs]↗ source directories. It is the companion tool for this book.

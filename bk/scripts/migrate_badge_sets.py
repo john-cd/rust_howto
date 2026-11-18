@@ -10,7 +10,7 @@ badges and standalone `{{hi:...}}` terms retain their original positions. A cate
 `{{hi:<Title>}}` uses `slug=` to omit its index term. Crate groups without a crate index term use
 `crate=`.
 
-Usage (from the repository root): migrate_badge_sets.py [--check] [ROOT ...]   (default roots: bk/src later/src bk/drafts)
+Usage (from the repository root): migrate_badge_sets.py [--check] [ROOT ...]   (default roots: bk/src later/src)
 """
 
 import re
@@ -235,23 +235,16 @@ def migrate(text: str):
     return "".join(blocks), changed
 
 
-# Draft whose inline triple backticks confuse the Markdown parser; directives are not expanded there.
-EXCLUDE = {"bk/drafts/categories/development-tools_testing/testing.md"}
-
-
 def main(argv):
     """Migrate the selected Markdown roots, or report pending changes in check mode."""
     check = "--check" in argv
     roots = [a for a in argv if not a.startswith("--")] or [
         "bk/src",
         "later/src",
-        "bk/drafts",
     ]
     total = 0
     for root in roots:
         for p in sorted(Path(root).rglob("*.md")):
-            if p.as_posix() in EXCLUDE:
-                continue
             text = p.read_text(encoding="utf-8")
             new, n = migrate(text)
             if n:

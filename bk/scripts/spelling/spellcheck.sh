@@ -51,7 +51,7 @@ opt=${1:-""}
 dict_filename="$(dirname "$0")/dictionary.txt"
 book_dir="$(realpath "$(dirname -- "${BASH_SOURCE[0]}")/../..")"
 mapfile -d '' -t markdown_sources < <(
-    find "$book_dir/src" "$book_dir/drafts" "$book_dir/../later/src" \
+    find "$book_dir/src" "$book_dir/../later/src" \
         -type f -name "*.md" -not -name "refs.incl.md" -not -path "*/refs/*.md" -print0
 )
 mode="check"

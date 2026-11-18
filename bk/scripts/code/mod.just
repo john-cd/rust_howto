@@ -12,7 +12,7 @@ code_root := clean(book_root + "/crates")
 rustfmt_toolchain_default := trim(replace_regex(read(join(root, "rustfmt-toolchain.toml")), '(?s).*channel\s*=\s*"([^"]+)".*', "$1"))
 rustfmt_toolchain_override := env("RUSTFMT_TOOLCHAIN", "")
 # Features of the `database` package that build without Oracle's native OCI SDK.
-# `oracle` and `sibyl` need OCI_LIB_DIR (see bk/drafts/categories/database/oracle.md),
+# `oracle` and `sibyl` need OCI_LIB_DIR (see bk/src/categories/database/oracle.md),
 # so workspace-wide recipes add them only when it is set.
 database_features := "cassandra,diesel,elasticsearch,lapin,lmdb,mongodb,mssql,postgres,redis,rocksdb,sea_orm,sqlx,sqlite"
 current_crate := file_name(invocation_directory())

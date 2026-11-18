@@ -38,7 +38,7 @@ Crux is a good fit when several clients need the same business rules but need di
 - [Architecture](../architecture/index.md).
 - [Software Architecture Process][p~architecture-process].
 - [WebAssembly](../../categories/wasm/index.md).
-- Programming Languages<!-- Cross-book topic: bk/drafts/categories/parser-implementations/programming_languages.md; not included in this preview. -->.
+- Programming Languages<!-- Cross-book topic: bk/src/categories/parser-implementations/programming_languages.md; not included in this preview. -->.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

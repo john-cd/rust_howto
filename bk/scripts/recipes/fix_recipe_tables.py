@@ -431,7 +431,7 @@ def update_book(root: Path) -> list[Path]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "root", type=Path, help="mdBook root containing src/ and drafts/"
+        "root", type=Path, help="mdBook root containing src/ (legacy drafts/ is optional)"
     )
     args = parser.parse_args()
     root = args.root.resolve()

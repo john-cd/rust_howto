@@ -14,7 +14,7 @@ set -ue
 
 root="$(realpath $1)/"
 
-files=$(find ${root}src ${root}drafts -type f \( -name "*.md" -not -name "SUMMARY.md" -not -name "examples_index.md" -not -name "*.incl.md" \))
+files=$(find ${root}src -type f \( -name "*.md" -not -name "SUMMARY.md" -not -name "examples_index.md" -not -name "*.incl.md" \))
 
 # Search for potential page-to-page cross-links
 
@@ -61,7 +61,7 @@ do
   start_line='(^[^|[#{]*?[^a-zA-Z#/`["_=@.,:<-])'
   after='([^a-zA-Z"}/._-])'
   #echo "${start_line}${pattern}${after}"
-  for file_with_pattern in $(rg -t md -P -l -i -t md -g '!*.incl.md' -g '!*SUMMARY.md' -g '!*index.md' -g'!*refs.md' -g'!*crates*' "${start_line}(${pattern})${after}" "${root}drafts" )
+  for file_with_pattern in $(rg -t md -P -l -i -t md -g '!*.incl.md' -g '!*SUMMARY.md' -g '!*index.md' -g'!*refs.md' -g'!*crates*' "${start_line}(${pattern})${after}" "${root}src" )
   do
     # Do not self-reference
     if [ "$file_with_pattern" == "${original_files[$pattern]}" ]; then

@@ -84,7 +84,7 @@ For [[strings | Strings]], use:
 
 ### Cryptography
 
-See [Cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), [Cryptography Utilities](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/cryptography_utilities.md), and [Encryption](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/encryption.md).
+See [Cryptography](../cryptography/index.md), [Cryptography Utilities](../cryptography/cryptography_utilities.md), and [Encryption](../cryptography/encryption.md).
 
 ### Data Processing
 
@@ -124,6 +124,6 @@ See [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categ
 - [`rust-algorithms`][rust-algorithms~repo]↗: Common data structures and algorithms in Rust.
 
 See also [String Concatenation](../text-processing/string_concat.md), [String Encoding](../encoding/string_encoding.md), [String Parsing](../text-processing/string_parsing.md), and [Text Processing](../text-processing/index.md).
-[Compression](../compression/index.md), [cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), [[data-structures | data structures]], [[mathematics | mathematics]], [scientific algorithms](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [search](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/search.md), [[strings | strings]], and [text processing](../text-processing/index.md) are discussed elsewhere but are briefly mentioned below.
+[Compression](../compression/index.md), [cryptography](../cryptography/index.md), [[data-structures | data structures]], [[mathematics | mathematics]], [scientific algorithms](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [search](../database/search.md), [[strings | strings]], and [text processing](../text-processing/index.md) are discussed elsewhere but are briefly mentioned below.
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

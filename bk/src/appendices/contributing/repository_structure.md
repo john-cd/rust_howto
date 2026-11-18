@@ -14,7 +14,7 @@ This book's [GitHub repository][rust-howto~repo]↗ is structured as follows:
 - The [`bin`][rust-howto~bin~repo]↗ folder stores executables used to generate parts of the book or used by the book building process. Generate these tools using `just tools release` or `just scrub release`. These commands build the code and copy the compiled executables into `bin`.
 - The [`bk`][rust-howto~bk~repo]↗ folder contains the book itself:
   - The [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}} configuration is in [`bk/book.toml`][c~mdbook~book.toml]↗{{hi:book.toml}}.
-  - The [Markdown chapter](../../categories/parser-implementations/markdown.md) and other published book sources are in the `bk/src` folder (work-in-progress chapters are in `bk/drafts`; stub chapters are in `later/src`), the structure of which is described below.
+  - The [Markdown chapter](../../categories/parser-implementations/markdown.md) and other published book sources are in the `bk/src` folder (unpublished chapters are in `later/src`), the structure of which is described below.
   - After the book is built using [`mdbook`][c~mdbook~docs]↗{{hi:mdbook}}, the resulting HTML and Javascript are found in `bk/book/html`.
   - The templates and assets are in [`bk/theme`][rust-howto~bk-theme~repo]↗ and [`bk/static`][rust-howto~bk-static~repo]↗ respectively.
   - The Rust examples embedded in the book are found below `bk/crates` (see below for details).
@@ -47,7 +47,7 @@ Each book section or category has an introductory `index.md` file that lists its
 
 In the `bk/src/refs` folder, you will find `category-refs.md` for link references to the `crates.io` [category pages][crates.io-categories~website]↗; `crate-refs.md` for curated and dependency-derived links to [`crates.io`][crates.io~website], [`lib.rs`][lib.rs~website] and GitHub; and `other-refs.md` for links to blogs, books, company websites related to Rust. Run `just book refdefs-generate` to merge missing dependency references into `crate-refs.md`; existing curated destinations are preserved, and normal book builds check for missing definitions.
 
-The [`bk/drafts`][rust-howto~drafts~repo]↗ and [`later/src`][rust-howto~bk-later~repo]↗ folders follow the same basic organization.
+The unpublished [`later/src`][rust-howto~bk-later~repo]↗ tree follows the same basic organization.
 
 ## Code Organization {#code-organization}
 

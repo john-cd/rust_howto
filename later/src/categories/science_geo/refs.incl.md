@@ -5,7 +5,7 @@
 [ex~science_geo~haversine]: geo.md#haversine
 [ex~science_geo~us-states]: geo.md#us-states
 
-[p~rate-limited-api]: ../../../../bk/drafts/categories/web-programming_http-client/apis.md#handle-a-rate-limited-api
+[p~rate-limited-api]: https://john-cd.com/rust_howto/categories/web-programming_http-client/apis.html#handle-a-rate-limited-api
 
 [c~geo-types~docs]: https://docs.rs/geo-types
 [c~geojson~docs]: https://docs.rs/geojson

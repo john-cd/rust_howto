@@ -16,7 +16,7 @@ _default:
 
 # Check spelling in book, draft, and future Markdown on every platform.
 spell:
-    cd {{ quote(root + "/..") }}; typos --force-exclude --config {{ quote(root + "/../_typos.toml") }} bk/src bk/drafts later/src
+    cd {{ quote(root + "/..") }}; typos --force-exclude --config {{ quote(root + "/../_typos.toml") }} bk/src later/src
 
 # Run the legacy interactive Aspell checker on Unix.
 spell-aspell mode='list':

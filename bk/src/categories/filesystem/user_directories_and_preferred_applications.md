@@ -34,7 +34,7 @@ From `bk/crates`, run `cargo test --locked -p filesystem --example user_director
 
 {{#badges open}}{{hi:open}}{{hi:Xdg-open}}{{hi:Start}}{{hi:Launch}}
 
-[`open`][c~open~docs]↗{{hi:open}} opens a path or [URL](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/web-programming/url.md) using the default program configured on the system:
+[`open`][c~open~docs]↗{{hi:open}} opens a path or [URL](../web-programming/url.md) using the default program configured on the system:
 
 From `bk/crates`, run `cargo run --locked -p filesystem --example open`. Create `example.txt` in `bk/crates` first. The example opens the file and a URL using the system's default applications.
 

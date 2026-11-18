@@ -92,7 +92,7 @@ This example fixes a seed so the same input produces the same value; use randomi
 
 {{#badges xxhash-rust algorithms=Algorithms}}{{hi:XXH3}}{{hi:Checksum}}{{hi:Hash}}
 
-XXH3 is a fast, non-cryptographic hash. The example appends a 128-bit XXH3 tag to a buffer, verifies it on read, and rejects a corrupted byte. A tag like this detects accidental corruption such as a truncated or bit-flipped cache file. It is **not** a message authentication code: an attacker can forge a matching tag. For tamper resistance, use an HMAC or a signature - see [Encryption](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/encryption.md).
+XXH3 is a fast, non-cryptographic hash. The example appends a 128-bit XXH3 tag to a buffer, verifies it on read, and rejects a corrupted byte. A tag like this detects accidental corruption such as a truncated or bit-flipped cache file. It is **not** a message authentication code: an attacker can forge a matching tag. For tamper resistance, use an HMAC or a signature - see [Encryption](../cryptography/encryption.md).
 
 ```rust,ignore,noplayground
 {{#include ../../../crates/cats/algorithms/examples/hashing/xxh3_checksum.rs:example}}
@@ -126,20 +126,20 @@ For legacy applications, you may consider using the following hashing [algorithm
 
 This page covers hashes. Use the dedicated topics for other cryptographic operations:
 
-- [Password Hashing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/password_hashing.md) for password storage with Argon2id, scrypt, or bcrypt.
-- [Encryption](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/encryption.md) for authenticated encryption and message authentication.
-- [Cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md) for public-key algorithms, signatures, and certificates.
+- [Password Hashing](../cryptography/password_hashing.md) for password storage with Argon2id, scrypt, or bcrypt.
+- [Encryption](../cryptography/encryption.md) for authenticated encryption and message authentication.
+- [Cryptography](../cryptography/index.md) for public-key algorithms, signatures, and certificates.
 
 Other RustCrypto ecosystem crates include [`aes-gcm`][c~aes-gcm~docs], [`aes-gcm-siv`][c~aes-gcm-siv~docs], and [`chacha20poly1305`][c~chacha20poly1305~docs] for authenticated encryption; [`ed25519`][c~ed25519~docs], [`ecdsa`][c~ecdsa~docs], [`dsa`][c~dsa~docs], and [`rsa`][c~rsa~docs] for signatures; and [`der`][c~der~docs], [`pem-rfc7468`][c~pem-rfc7468~docs], [`pkcs8`][c~pkcs8~docs], and [`x509-cert`][c~x509-cert~docs] for key and certificate formats. [`ring`][c~ring~docs] is another general-purpose cryptography library.
 
 ## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
-- [Cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md).
+- [Cryptography](../cryptography/index.md).
 - [[data-structures | Data Structures]].
 - [[hashmaps | Hash Maps]].
-- [Encryption](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/encryption.md).
-- [Password Hashing](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/password_hashing.md).
+- [Encryption](../cryptography/encryption.md).
+- [Password Hashing](../cryptography/password_hashing.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

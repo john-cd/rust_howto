@@ -1311,7 +1311,6 @@
 [rust-howto~clap_builder_xmpl~repo]: https://github.com/john-cd/rust_howto/tree/develop/xmpl/clap_builder_xmpl
 [rust-howto~code-examples~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates
 [rust-howto~code-of-conduct~repo]: https://github.com/john-cd/rust_howto/blob/develop/CODE_OF_CONDUCT.md
-[rust-howto~drafts~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/drafts
 [rust-howto~issues]: https://github.com/john-cd/rust_howto/issues
 [rust-howto~license~repo]: https://github.com/john-cd/rust_howto/blob/develop/LICENSE
 [rust-howto~mdbook-scrub~repo]: https://github.com/john-cd/rust_howto/tree/develop/tools/mdbook-scrub

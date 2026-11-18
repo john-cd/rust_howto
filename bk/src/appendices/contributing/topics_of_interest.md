@@ -13,31 +13,31 @@ The following are topics that deserve (additional) coverage and examples:
 - [Testing](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_testing/testing.md).
 - [GPU](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/gpu/index.md) processing, CUDA.
 - [Machine Learning](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/machine-learning/index.md), for example [Burn][c~burn~docs]↗, [Candle][candle~repo]↗, and [tch][c~tch~docs]↗.
-- [Email](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/email/index.md).
+- [Email](../../categories/email/index.md).
 - [Template Engines](../../categories/template-engine/index.md).
 - [Caching](../../categories/caching/index.md).
 - [Compilers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/compilers/index.md).
 - [WASM](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md).
 - [[algorithms | Algorithms]].
-- [Authentication](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/authentication/index.md) and authorization: OAuth 2.0, LDAP/Active Directory.
+- [Authentication](../../categories/authentication/index.md) and authorization: OAuth 2.0, LDAP/Active Directory.
 - Continuous Deployment & Integration ([CD / CI](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/devops/cd_ci.md)) for Rust projects.
 - Use of Rust in [AWS](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/aws.md) and other [Cloud](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/index.md) services.
 - [Serverless](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/rust_native_cloud_development.md#write-serverless-functions) Rust.
-- More [database](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/index.md) examples, including object databases, graph databases, e.g. BonsaiDB, neo4j.
+- More [database](../../categories/database/index.md) examples, including object databases, graph databases, e.g. BonsaiDB, neo4j.
 - [Embedded](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md) systems.
 - [Visualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/visualization/index.md).
-- [Graphics](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/graphics/index.md).
+- [Graphics](../../categories/graphics/index.md).
 - [Games](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/games/index.md), [Game Engines](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/game-engines/index.md).
-- [Search](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/search.md) engines.
+- [Search](../../categories/database/search.md) engines.
 - [Compression](../../categories/compression/index.md): Zip files and other archives.
 - Buffer pools, garbage collection, or other reference-counted examples.
 - IPv6 address processing.
 - [Cloud](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/index.md): load balancers, status reporting (Vigil), routing, orchestration, containers.
 - Reverse proxies.
-- [Web programming](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/web-programming/index.md).
+- [Web programming](../../categories/web-programming/index.md).
 - [Virtualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md).
 - [Version Control](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/devops/version_control.md): libgit2: clone, change branches, create commits, push, pull.
-- [Cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md), SSL, SSH, other public key [encryption](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/encryption.md), X.509, RusTLS.
+- [Cryptography](../../categories/cryptography/index.md), SSL, SSH, other public key [encryption](../../categories/cryptography/encryption.md), X.509, RusTLS.
 - [Network Programming](../../categories/network-programming/index.md): Basic and advanced TCP/IP networking.
 - DNS lookups and resolution.
 - Interfacing with FLTK (Fast Light Tool Kit).
@@ -47,7 +47,7 @@ The following are topics that deserve (additional) coverage and examples:
 - Sound ([Multimedia - audio](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/multimedia_audio/index.md)).
 - [API bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md).
 - FFI ([Development tools - FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md)).
-- [Hardware support](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/hardware-support/index.md).
+- [Hardware support](../../categories/hardware-support/index.md).
 - [Development Tools - Build Utils](../../categories/development-tools_build-utils/index.md).
 - [Rendering](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/index.md).
 - High-performance computing: OpenMP, etc.
@@ -65,7 +65,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [Aerospace](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace/index.md)-related crates: [Drones](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace_drones/drones.md), UAVs, [Space Protocols](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace_space-protocols/space_protocols.md), simulation...
 - [Cryptocurrencies](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/cryptography_cryptocurrencies/index.md).
 
-Check the [open issues][rust-howto~issues]↗ for tracked work, and browse the [`bk/drafts`][rust-howto~drafts~repo]↗ and [`later/src`][rust-howto~bk-later~repo]↗ folders for chapters still in progress.
+Check the [open issues][rust-howto~issues]↗ for tracked work, and browse the [`later/src`][rust-howto~bk-later~repo]↗ folder for chapters still in progress.
 
 ## Related Topics {#related-topics .skip}
 

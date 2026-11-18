@@ -6,7 +6,6 @@
   "config": { "MD060": { "style": "compact" }, "extends": "bk/.markdownlint.yaml" },
   "globs": [
     "bk/src/**/*.md",
-    "bk/drafts/**/*.md",
     "later/src/**/*.md"
   ],
   "ignores": [

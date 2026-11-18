@@ -33,7 +33,7 @@
 [ex~cloud~kubernetes]: kubernetes.md#kubernetes
 [shuttle-rs~website]: https://www.shuttle.dev/
 [shuttle~shutdown]: https://docs.shuttle.dev/docs/shuttle-shutdown
-[cloud~axum]: https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/web-programming_http-server/_axum.md
+[cloud~axum]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/web-programming_http-server/axum.md
 [cloud~spin]: https://spinframework.dev/v3/index
 [cloud~wasmcloud]: https://wasmcloud.com/docs/
 [cloud~workers-rust]: https://developers.cloudflare.com/workers/languages/rust/

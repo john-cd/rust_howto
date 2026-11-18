@@ -101,7 +101,7 @@ The [Units of Measurement chapter][p~units] demonstrates dimensional types and c
 ## Related Topics
 
 - [[algorithms | Algorithms]].
-- [Cryptography](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/cryptography/index.md).
+- [Cryptography](../cryptography/index.md).
 - Plotting and Graphing: [Visualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/visualization/index.md).
 - [Randomness](../algorithms/random_value_generation.md).
 - [[sorting | Sorting]].
@@ -114,7 +114,7 @@ The [Units of Measurement chapter][p~units] demonstrates dimensional types and c
   - [Geoscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_geo/index.md).
   - [Neuroscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_neuroscience/index.md).
 - [Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md).
-- [Search](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database/search.md).
+- [Search](../database/search.md).
 - [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md).
 
 {{#include refs.incl.md}}

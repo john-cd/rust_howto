@@ -18,8 +18,8 @@ if [[ $# -ne 1 ]]; then
 fi
 
 root="$(realpath -- "$1")/"
-if [[ ! -d "$root/src" || ! -d "$root/drafts" ]]; then
-  echo "Error: '$root' must contain src/ and drafts/ directories." >&2
+if [[ ! -d "$root/src" ]]; then
+  echo "Error: '$root' must contain a src/ directory." >&2
   exit 1
 fi
 
@@ -110,7 +110,7 @@ while IFS= read -r -d '' file; do
       fi
     fi
   done < <(markdown_without_fenced_code "$file" | rg -INioP '(?<![\[`])`([^ `\[\]]+?)`(?![\]`])' -r '$1' | sort -u || true)
-done < <(find "$root/src" "$root/drafts" -type f \( -name "*.md" -not -name "SUMMARY.md" -not -name "examples_index.md" -not -name "*.incl.md" \) -print0)
+done < <(find "$root/src" -type f \( -name "*.md" -not -name "SUMMARY.md" -not -name "examples_index.md" -not -name "*.incl.md" \) -print0)
 
 # Sort and make unique
 sort -u -o "$suggest_file" "$suggest_file"

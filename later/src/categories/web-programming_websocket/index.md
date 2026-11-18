@@ -12,9 +12,9 @@ Read the published [WebSockets chapter](https://john-cd.com/rust_howto/categorie
 
 ## Related Topics
 
-- Web Programming<!-- Cross-book topic: bk/drafts/categories/web-programming/index.md; not included in this preview. -->.
-- Web Programming: HTTP Server<!-- Cross-book topic: bk/drafts/categories/web-programming_http-server/index.md; not included in this preview. -->.
-- Network Programming<!-- Cross-book topic: bk/drafts/categories/network-programming/index.md; not included in this preview. -->.
+- Web Programming<!-- Cross-book topic: bk/src/categories/web-programming/index.md; not included in this preview. -->.
+- Web Programming: HTTP Server<!-- Cross-book topic: bk/src/categories/web-programming_http-server/index.md; not included in this preview. -->.
+- Network Programming<!-- Cross-book topic: bk/src/categories/network-programming/index.md; not included in this preview. -->.
 - [WASM](../wasm/index.md).
 - [Development Tools](../../other/written-in-rust/development_tools.md).
 
