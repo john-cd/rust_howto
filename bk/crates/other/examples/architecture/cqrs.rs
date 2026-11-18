@@ -1,0 +1,815 @@
+// TODO Reviewed ??-??-2026.
+
+// ANCHOR: example
+//! CQRS (Command Query Responsibility Segregation) is an architectural
+//! pattern that separates the models for reading and writing data.
+//! This separation allows for independent scaling and optimization of the
+//! read and write sides.
+//!
+//! Separation of Concerns in CQRS:
+//! - Commands and queries are handled separately.
+//! - The write side (commands) focuses on state changes.
+//! - The read side (queries) focuses on efficient data retrieval.
+
+/// Domain Model.
+mod domain {
+
+    /// Product record stored and queried by the CQRS example.
+    #[derive(Debug, Clone)]
+    pub struct Product {
+        /// The identifier of the product.
+        id: u32,
+
+        /// The name of the product.
+        name: String,
+
+        /// The quantity in stock.
+        quantity: u32,
+    }
+
+    /// Implementation of the Product struct.
+    impl Product {
+        /// Creates a product.
+        ///
+        /// # Arguments
+        ///
+        /// * `id` - Identifier of the item.
+        /// * `name` - Name used to identify the item.
+        pub fn new(id: u32, name: String, quantity: u32) -> Self {
+            Self { id, name, quantity }
+        }
+
+        // Getters.
+        /// Returns the stable identifier used to match commands, events, and read-model rows.
+        pub fn id(&self) -> u32 {
+            self.id
+        }
+
+        /// Returns the name of the product.
+        pub fn name(&self) -> &str {
+            &self.name
+        }
+
+        /// Returns the currently projected stock quantity.
+        pub fn quantity(&self) -> u32 {
+            self.quantity
+        }
+
+        /// Sets the quantity in stock.
+        pub fn set_quantity(&mut self, quantity: u32) {
+            self.quantity = quantity;
+        }
+    }
+}
+
+/// The events, which are the source of truth of the system.
+mod events {
+
+    use std::sync::RwLock;
+
+    use serde::Deserialize;
+    use serde::Serialize;
+
+    /// Events represent facts about what has happened in the system.
+    ///
+    /// Examples:
+    /// - `ProductCreated`.
+    /// - `ProductQuantityUpdated`.
+    #[derive(Debug, Clone, Serialize, Deserialize)]
+    pub enum ProductEvent {
+        /// A product was created.
+        ProductCreated {
+            /// The identifier of the product.
+            id: u32,
+
+            /// The name of the product.
+            name: String,
+
+            /// The initial quantity.
+            quantity: u32,
+        },
+
+        /// The quantity of a product was updated.
+        ProductQuantityUpdated {
+            /// The identifier of the product.
+            id: u32,
+
+            /// The new quantity.
+            new_quantity: u32,
+        },
+    }
+
+    /// A snapshot of model state at a given event version.
+    #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+    pub struct Snapshot<T> {
+        /// The captured state.
+        pub state: T,
+
+        /// Number of prefix events represented by state; used as a replay slice offset.
+        pub version: usize,
+    }
+
+    /// `EventRepository` trait.
+    ///
+    /// Acts as the source of truth for the system's state.
+    /// Events are stored in the Event Store.
+    pub trait EventRepository {
+        /// Appends a domain event to the authoritative log in application order.
+        fn apply_event(&self, event: ProductEvent);
+
+        /// Returns all events or the newest limit events, preserving chronological order.
+        fn get_events(&self, limit: Option<usize>) -> Vec<ProductEvent>;
+
+        /// Returns all events recorded after the specified version offset.
+        fn get_events_since(&self, version: usize) -> Vec<ProductEvent>;
+
+        /// Returns the log length, which is the offset for fetching subsequently appended events.
+        fn event_count(&self) -> usize;
+    }
+
+    impl EventRepository for SimpleEventStore {
+        /// Appends under the write lock; read-model updates are performed separately.
+        fn apply_event(&self, event: ProductEvent) {
+            let mut events = self
+                .events
+                .write()
+                .expect("the cqrs example invariant should hold");
+            events.push(event);
+        }
+
+        // Get a snapshot of the events
+
+        /// Returns the latest product events, limited to the requested count when supplied.
+        ///
+        /// # Arguments
+        ///
+        /// * `limit` - Maximum number of recent events to return, or `None` for all events.
+        fn get_events(&self, limit: Option<usize>) -> Vec<ProductEvent> {
+            let events = self
+                .events
+                .read()
+                .expect("the cqrs example invariant should hold");
+            if let Some(limit) = limit {
+                events.iter().rev().take(limit).rev().cloned().collect()
+            } else {
+                events.clone()
+            }
+        }
+
+        /// Clones the suffix starting at the event-count offset; out-of-range offsets yield no
+        /// events.
+        fn get_events_since(&self, version: usize) -> Vec<ProductEvent> {
+            let events = self
+                .events
+                .read()
+                .expect("the cqrs example invariant should hold");
+            if version >= events.len() {
+                Vec::new()
+            } else {
+                events[version..].to_vec()
+            }
+        }
+
+        /// Returns the log length, which is the offset for fetching subsequently appended events.
+        fn event_count(&self) -> usize {
+            self.events
+                .read()
+                .expect("the cqrs example invariant should hold")
+                .len()
+        }
+    }
+
+    // In this example, the `EventStore` is held in memory,
+    // but in a real world application, it would be a database.
+
+    /// An event store that keeps the events in memory.
+    pub struct SimpleEventStore {
+        /// The events, in the order they were applied.
+        events: RwLock<Vec<ProductEvent>>,
+    }
+
+    impl SimpleEventStore {
+        /// Creates an empty event store.
+        pub fn new() -> Self {
+            Self {
+                events: RwLock::new(Vec::new()),
+            }
+        }
+    }
+}
+
+/// Commands module.
+mod commands {
+
+    use super::events::EventRepository;
+    use super::events::ProductEvent;
+
+    // Commands.
+    // They represent intentions to change the system's state
+    // (e.g., `CreateProduct`, `UpdateProductQuantity`).
+
+    /// A command, which is an intention to change the state of the system.
+    #[derive(Debug)]
+    pub enum Command {
+        /// Creates a product.
+        CreateProduct {
+            /// The identifier of the product.
+            id: u32,
+
+            /// The name of the product.
+            name: String,
+
+            /// The initial quantity.
+            quantity: u32,
+        },
+
+        /// Changes the quantity of a product.
+        UpdateProductQuantity {
+            /// The identifier of the product.
+            id: u32,
+
+            /// The change in quantity, which can be negative.
+            quantity_change: i32,
+        },
+    }
+
+    // Command Handler:
+    // - Receives commands.
+    // - Validates commands before applying them.
+    // - Generates events based on successful command execution.
+
+    /// A handler that validates commands and stores the resulting events.
+    pub struct CommandHandler<S: EventRepository> {
+        /// The event store.
+        pub event_store: S,
+    }
+
+    impl<S: EventRepository> CommandHandler<S> {
+        /// Creates a handler that stores events in `event_store`.
+        pub fn new(event_store: S) -> Self {
+            Self { event_store }
+        }
+
+        /// Validates a command before applying it.
+        fn validate(&self, command: &Command) -> anyhow::Result<()> {
+            match command {
+                Command::CreateProduct { quantity, .. } if *quantity == 0 => {
+                    Err(anyhow::anyhow!("Cannot create product with zero quantity!"))
+                }
+                Command::UpdateProductQuantity {
+                    quantity_change, ..
+                } if *quantity_change == 0 => {
+                    Err(anyhow::anyhow!("Change in quantity can't be zero!"))
+                }
+                _ => Ok(()),
+            }
+        }
+
+        /// Handles a command and generates events.
+        fn handle(&self, command: Command) -> anyhow::Result<()> {
+            match command {
+                Command::CreateProduct { id, name, quantity } => {
+                    let event = ProductEvent::ProductCreated { id, name, quantity };
+                    self.event_store.apply_event(event);
+                    Ok(())
+                }
+
+                Command::UpdateProductQuantity {
+                    id,
+                    quantity_change: quantity,
+                } => {
+                    let current_quantity = self.get_current_quantity(id);
+                    if let Some(current) = current_quantity {
+                        let new_quantity = current.cast_signed() + quantity;
+                        if new_quantity < 0 {
+                            return Err(anyhow::anyhow!(
+                                "Update would result in negative quantity for product {id}!"
+                            ));
+                        }
+                        let event = ProductEvent::ProductQuantityUpdated {
+                            id,
+                            new_quantity: new_quantity as u32,
+                        };
+                        self.event_store.apply_event(event);
+                        Ok(())
+                    } else {
+                        Err(anyhow::anyhow!("Product with id {id} not found"))
+                    }
+                }
+            }
+        }
+
+        /// Processes a command.
+        ///
+        /// # Arguments
+        ///
+        /// * `command` - Command selected by the caller.
+        ///
+        /// # Errors
+        ///
+        /// Returns an error if the operation cannot be completed.
+        pub fn process(&self, command: Command) -> anyhow::Result<()> {
+            self.validate(&command)?;
+            self.handle(command)
+        }
+
+        /// Scans the log in order, retaining the last quantity recorded for this product.
+        ///
+        /// Cloning and replaying the full log costs O(number of events) per lookup.
+        fn get_current_quantity(&self, product_id: u32) -> Option<u32> {
+            let events = self.event_store.get_events(None);
+            let mut current_quantity: Option<u32> = None;
+
+            for event in &events {
+                match event {
+                    ProductEvent::ProductCreated { id, quantity, .. } if *id == product_id => {
+                        current_quantity = Some(*quantity);
+                    }
+                    ProductEvent::ProductQuantityUpdated { id, new_quantity }
+                        if *id == product_id =>
+                    {
+                        current_quantity = Some(*new_quantity);
+                    }
+                    _ => {}
+                }
+            }
+            current_quantity
+        }
+    }
+}
+
+/// Read Store module.
+mod read_store {
+    use std::collections::HashMap;
+    use std::sync::RwLock;
+
+    use super::domain::Product;
+    use super::events::ProductEvent;
+    use super::events::Snapshot;
+
+    /// `ProductRepository` trait.
+    /// Repository with domain objects.
+    pub trait ProductRepository {
+        /// Returns the product with the given identifier, if any.
+        fn get_product(&self, id: u32) -> Option<Product>;
+
+        /// Returns all products.
+        fn get_all_products(&self) -> Vec<Product>;
+    }
+
+    /// `SimpleReadStore` struct.
+    ///
+    /// Data Access Layer (DAL) with database entities (events here).
+    #[derive(Clone)]
+    pub struct SimpleReadStore {
+        /// The products, by identifier.
+        read_model: std::sync::Arc<RwLock<HashMap<u32, Product>>>,
+    }
+
+    impl ProductRepository for SimpleReadStore {
+        /// Returns a cloned product from the read model for the requested ID.
+        ///
+        /// # Arguments
+        ///
+        /// * `id` - ID of the product to retrieve.
+        fn get_product(&self, id: u32) -> Option<Product> {
+            let read_model = self
+                .read_model
+                .read()
+                .expect("the cqrs example invariant should hold");
+            read_model.get(&id).cloned()
+        }
+
+        /// Returns the all products stored by or available from this value.
+        fn get_all_products(&self) -> Vec<Product> {
+            let read_model = self
+                .read_model
+                .read()
+                .expect("the cqrs example invariant should hold");
+            read_model.values().cloned().collect()
+        }
+    }
+
+    impl SimpleReadStore {
+        /// Creates an empty read store.
+        pub fn new() -> Self {
+            Self {
+                read_model: std::sync::Arc::new(RwLock::new(HashMap::new())),
+            }
+        }
+
+        /// Applies a single domain event to the read model map.
+        fn apply_event_to_map(read_model: &mut HashMap<u32, Product>, event: &ProductEvent) {
+            match event {
+                ProductEvent::ProductCreated { id, name, quantity } => {
+                    read_model.insert(*id, Product::new(*id, name.clone(), *quantity));
+                }
+                ProductEvent::ProductQuantityUpdated { id, new_quantity } => {
+                    if let Some(product) = read_model.get_mut(id) {
+                        product.set_quantity(*new_quantity);
+                    }
+                }
+            }
+        }
+
+        /// Replays the supplied log into a fresh map, replacing the old projection.
+        ///
+        /// Builds outside the shared lock, then publishes with one write-lock
+        /// acquisition so readers cannot observe a partially rebuilt model.
+        /// Panics if a previous writer poisoned the read-model lock.
+        pub fn rebuild_read_model(&self, events: Vec<ProductEvent>) {
+            let mut read_model = HashMap::new();
+            for event in &events {
+                Self::apply_event_to_map(&mut read_model, event);
+            }
+            // Publish the complete snapshot with one write-lock acquisition.
+            *self
+                .read_model
+                .write()
+                .expect("the read-model lock should not be poisoned") = read_model;
+        }
+
+        /// Clones the current projection and labels it with the caller-supplied event count.
+        ///
+        /// The caller must ensure the count matches the projected log prefix;
+        /// this method does not synchronize a snapshot with concurrent log appends.
+        pub fn create_snapshot(&self, version: usize) -> Snapshot<HashMap<u32, Product>> {
+            let read_model = self
+                .read_model
+                .read()
+                .expect("the read-model lock should not be poisoned");
+            Snapshot {
+                state: read_model.clone(),
+                version,
+            }
+        }
+
+        /// Restores snapshot state, applies the supplied delta in order, and publishes once.
+        ///
+        /// The caller must fetch delta events starting at snapshot.version;
+        /// this method uses snapshot state but does not interpret its version.
+        /// Without a snapshot, the delta must contain the full history.
+        pub fn reconstruct_from_snapshot(
+            &self,
+            snapshot: Option<Snapshot<HashMap<u32, Product>>>,
+            delta_events: Vec<ProductEvent>,
+        ) {
+            let mut read_model = match snapshot {
+                Some(s) => s.state,
+                None => HashMap::new(),
+            };
+            for event in &delta_events {
+                Self::apply_event_to_map(&mut read_model, event);
+            }
+            *self
+                .read_model
+                .write()
+                .expect("the read-model lock should not be poisoned") = read_model;
+        }
+    }
+}
+
+/// Query module.
+mod query {
+
+    use super::domain::Product;
+    use super::read_store::ProductRepository;
+
+    /// Reads product data to answer queries in the CQRS example.
+    ///
+    /// Query Handler:
+    /// - Handles read requests.
+    /// - Maintains a read-optimized representation of the data.
+    /// - Is updated by processing events from the Event Store.
+    /// - Uses a hashmap as an in-memory database for the read model.
+    ///
+    /// CQRS read handler that returns the current product state.
+    pub struct QueryHandler<R: ProductRepository> {
+        /// The repository of products to read from.
+        read_repo: R,
+    }
+
+    impl<S: ProductRepository> QueryHandler<S> {
+        /// Creates a handler that reads from `read_store`.
+        pub fn new(read_store: S) -> Self {
+            Self {
+                read_repo: read_store,
+            }
+        }
+
+        /// Gets a product by ID.
+        ///
+        /// # Arguments
+        ///
+        /// * `id` - Identifier of the item.
+        pub fn get_product(&self, id: u32) -> Option<Product> {
+            // Business logic goes here
+            self.read_repo.get_product(id)
+        }
+
+        /// Returns the all products stored by or available from this value.
+        pub fn get_all_products(&self) -> Vec<Product> {
+            self.read_repo.get_all_products()
+        }
+    }
+}
+
+use events::EventRepository as _;
+
+/// Main function.
+fn main() -> anyhow::Result<()> {
+    use commands::Command;
+
+    let event_store = events::SimpleEventStore::new();
+    let command_handler = commands::CommandHandler::new(event_store);
+
+    let read_store = read_store::SimpleReadStore::new();
+    let query_handler = query::QueryHandler::new(read_store.clone());
+
+    command_handler.process(Command::CreateProduct {
+        id: 1,
+        name: "Laptop".to_owned(),
+        quantity: 10,
+    })?;
+
+    command_handler.process(Command::UpdateProductQuantity {
+        id: 1,
+        quantity_change: -3,
+    })?;
+
+    let events = command_handler.event_store.get_events(None);
+    read_store.rebuild_read_model(events);
+
+    if let Some(product) = query_handler.get_product(1) {
+        println!("Product: {product:?}");
+        println!(
+            "#{}: {} ({} in stock)",
+            product.id(),
+            product.name(),
+            product.quantity()
+        );
+    } else {
+        println!("Product not found");
+    }
+
+    // Capture an event store snapshot of the read model at the current event version.
+    let snapshot_version = command_handler.event_store.event_count();
+    let snapshot = read_store.create_snapshot(snapshot_version);
+    println!(
+        "Captured read-model snapshot at event version {}: {} products",
+        snapshot.version,
+        snapshot.state.len()
+    );
+
+    command_handler
+        .process(Command::CreateProduct {
+            id: 2,
+            name: "Mouse".to_owned(),
+            quantity: 20,
+        })
+        .expect("the cqrs example invariant should hold");
+
+    // Reconstruct the read model using the snapshot plus subsequent delta events.
+    let delta_events = command_handler
+        .event_store
+        .get_events_since(snapshot.version);
+    read_store.reconstruct_from_snapshot(Some(snapshot), delta_events);
+
+    if let Some(product) = query_handler.get_product(2) {
+        println!("Product: {product:?}");
+    } else {
+        println!("Product not found");
+    }
+
+    let all_products = query_handler.get_all_products();
+    println!("All products: {all_products:?}");
+
+    Ok(())
+}
+// ANCHOR_END: example
+
+/// Main function.
+///
+/// # Errors
+///
+/// Returns an error if a step of the example fails.
+pub fn run() -> anyhow::Result<()> {
+    main()
+}
+
+/// Tests behavior implemented by the surrounding module.
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the cqrs example through its entry point.
+    #[test]
+    fn test_cqrs_example_entry_point() -> anyhow::Result<()> {
+        // We just execute main, which shouldn't panic
+        main()?;
+        Ok(())
+    }
+
+    /// Verifies that rebuild replaces snapshot and applies quantity updates.
+    #[test]
+    fn rebuild_replaces_snapshot_and_applies_quantity_updates() {
+        let read_store = read_store::SimpleReadStore::new();
+        let query_handler = query::QueryHandler::new(read_store.clone());
+        read_store.rebuild_read_model(vec![events::ProductEvent::ProductCreated {
+            id: 2,
+            name: "Old product".to_owned(),
+            quantity: 1,
+        }]);
+        read_store.rebuild_read_model(vec![
+            events::ProductEvent::ProductCreated {
+                id: 1,
+                name: "Laptop".to_owned(),
+                quantity: 10,
+            },
+            events::ProductEvent::ProductQuantityUpdated {
+                id: 1,
+                new_quantity: 7,
+            },
+        ]);
+
+        assert!(query_handler.get_product(2).is_none());
+        let product = query_handler
+            .get_product(1)
+            .expect("the cqrs example invariant should hold");
+        assert_eq!(product.name(), "Laptop");
+        assert_eq!(product.quantity(), 7);
+    }
+
+    /// Verifies that negative quantity update returns error.
+    #[test]
+    fn test_negative_quantity_update_returns_error() -> anyhow::Result<()> {
+        let event_store = events::SimpleEventStore::new();
+        let command_handler = commands::CommandHandler::new(event_store);
+
+        command_handler.process(commands::Command::CreateProduct {
+            id: 1,
+            name: "Test Product".to_owned(),
+            quantity: 10,
+        })?;
+
+        let result = command_handler.process(commands::Command::UpdateProductQuantity {
+            id: 1,
+            quantity_change: -11,
+        });
+
+        assert!(result.err().is_some_and(|e| {
+            e.to_string()
+                .contains("Update would result in negative quantity")
+        }));
+
+        Ok(())
+    }
+
+    /// Verifies that get all products.
+    #[test]
+    fn test_get_all_products() {
+        let read_store = read_store::SimpleReadStore::new();
+        let query_handler = query::QueryHandler::new(read_store.clone());
+
+        assert!(query_handler.get_all_products().is_empty());
+
+        read_store.rebuild_read_model(vec![
+            events::ProductEvent::ProductCreated {
+                id: 1,
+                name: "Laptop".to_owned(),
+                quantity: 10,
+            },
+            events::ProductEvent::ProductCreated {
+                id: 2,
+                name: "Mouse".to_owned(),
+                quantity: 20,
+            },
+        ]);
+
+        let products = query_handler.get_all_products();
+        assert_eq!(products.len(), 2);
+        assert!(
+            products
+                .iter()
+                .any(|p| p.id() == 1 && p.name() == "Laptop" && p.quantity() == 10)
+        );
+        assert!(
+            products
+                .iter()
+                .any(|p| p.id() == 2 && p.name() == "Mouse" && p.quantity() == 20)
+        );
+    }
+
+    /// Verifies that reconstructing from a snapshot plus delta events produces the correct state.
+    #[test]
+    fn test_snapshot_creation_and_reconstruction() {
+        let read_store = read_store::SimpleReadStore::new();
+        let initial_query = query::QueryHandler::new(read_store.clone());
+
+        read_store.rebuild_read_model(vec![
+            events::ProductEvent::ProductCreated {
+                id: 1,
+                name: "Keyboard".to_owned(),
+                quantity: 15,
+            },
+            events::ProductEvent::ProductCreated {
+                id: 2,
+                name: "Monitor".to_owned(),
+                quantity: 5,
+            },
+        ]);
+
+        assert_eq!(initial_query.get_all_products().len(), 2);
+
+        // Capture snapshot at version 2.
+        let snapshot = read_store.create_snapshot(2);
+        assert_eq!(snapshot.version, 2);
+        assert_eq!(snapshot.state.len(), 2);
+
+        // Create a new fresh read store and reconstruct using snapshot + delta events.
+        let restored_store = read_store::SimpleReadStore::new();
+        let restored_query = query::QueryHandler::new(restored_store.clone());
+
+        let delta_events = vec![
+            events::ProductEvent::ProductQuantityUpdated {
+                id: 1,
+                new_quantity: 12,
+            },
+            events::ProductEvent::ProductCreated {
+                id: 3,
+                name: "Webcam".to_owned(),
+                quantity: 8,
+            },
+        ];
+
+        restored_store.reconstruct_from_snapshot(Some(snapshot), delta_events);
+
+        let p1 = restored_query
+            .get_product(1)
+            .expect("the product should exist");
+        assert_eq!(p1.quantity(), 12);
+        assert_eq!(p1.name(), "Keyboard");
+
+        let p2 = restored_query
+            .get_product(2)
+            .expect("the product should exist");
+        assert_eq!(p2.quantity(), 5);
+
+        let p3 = restored_query
+            .get_product(3)
+            .expect("the product should exist");
+        assert_eq!(p3.quantity(), 8);
+    }
+
+    /// Verifies reconstruction when no snapshot is provided (rebuilding from delta events only).
+    #[test]
+    fn test_reconstruction_without_snapshot() {
+        let read_store = read_store::SimpleReadStore::new();
+        let query_handler = query::QueryHandler::new(read_store.clone());
+
+        let delta_events = vec![events::ProductEvent::ProductCreated {
+            id: 10,
+            name: "Desk".to_owned(),
+            quantity: 3,
+        }];
+
+        read_store.reconstruct_from_snapshot(None, delta_events);
+
+        let desk = query_handler
+            .get_product(10)
+            .expect("the product should exist");
+        assert_eq!(desk.name(), "Desk");
+        assert_eq!(desk.quantity(), 3);
+    }
+
+    /// Verifies event repository versioning methods `get_events_since` and `event_count`.
+    #[test]
+    fn test_event_store_versioning_and_slices() {
+        let event_store = events::SimpleEventStore::new();
+        assert_eq!(event_store.event_count(), 0);
+        assert!(event_store.get_events_since(0).is_empty());
+
+        event_store.apply_event(events::ProductEvent::ProductCreated {
+            id: 1,
+            name: "Item 1".to_owned(),
+            quantity: 5,
+        });
+        event_store.apply_event(events::ProductEvent::ProductCreated {
+            id: 2,
+            name: "Item 2".to_owned(),
+            quantity: 10,
+        });
+
+        assert_eq!(event_store.event_count(), 2);
+        assert_eq!(event_store.get_events_since(0).len(), 2);
+        assert_eq!(event_store.get_events_since(1).len(), 1);
+        assert_eq!(event_store.get_events_since(2).len(), 0);
+        assert_eq!(event_store.get_events_since(99).len(), 0);
+    }
+}
+// Notes:
+// - This example demonstrates event store snapshots and read-model reconstruction, allowing the
+//   read store to restore from a snapshot and only replay subsequent delta events.
+// - See the CQRS pattern for additional architecture guidance: https://martinfowler.com/bliki/CQRS.html
+//   https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-1 https://blog.cesc.cool/user-service-with-cqrs-es-example-in-rust-part-2
+//   https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs https://doc.rust-cqrs.org/intro.html

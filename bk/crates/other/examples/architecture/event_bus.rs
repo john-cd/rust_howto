@@ -1,0 +1,137 @@
+// TODO Reviewed ??-??-2026.
+
+// ANCHOR: example
+//! Event-driven architecture: producers publish events to subscribers.
+//!
+//! In an event bus, producers publish events without knowing who listens, and
+//! subscribers receive the ones they registered for. This decouples the parts
+//! of a program, at the cost of making the flow of control harder to trace.
+
+use std::sync::mpsc;
+use std::sync::mpsc::Receiver;
+use std::sync::mpsc::SyncSender;
+use std::thread;
+
+use tokio::sync::broadcast;
+
+/// Events published on the bus.
+#[derive(Debug, Clone, PartialEq)]
+enum Event {
+    /// An order was placed with this identifier.
+    OrderPlaced {
+        /// Identifier assigned to the placed order.
+        id: u32,
+    },
+    /// The order with this identifier was shipped.
+    OrderShipped {
+        /// Identifier of the order that was shipped.
+        id: u32,
+    },
+}
+
+/// A minimal in-process bus with bounded subscriber queues.
+#[derive(Default)]
+struct EventBus {
+    /// Collection of subscribers values consumed by event bus operations.
+    subscribers: Vec<SyncSender<Event>>,
+}
+
+impl EventBus {
+    /// Adds a subscriber and returns its event receiver.
+    fn subscribe(&mut self) -> Receiver<Event> {
+        let (tx, rx) = mpsc::sync_channel(16);
+        self.subscribers.push(tx);
+        rx
+    }
+
+    /// A full subscriber queue blocks until it has space or disconnects.
+    fn publish(&mut self, event: &Event) -> usize {
+        let before = self.subscribers.len();
+        self.subscribers
+            .retain(|subscriber| subscriber.send(event.clone()).is_ok());
+        before - self.subscribers.len()
+    }
+}
+
+/// Demonstrates fan-out with Tokio's bounded broadcast channel.
+fn demonstrate_tokio_broadcast() {
+    let (sender, mut billing) = broadcast::channel(16);
+    let mut audit = sender.subscribe();
+    let event = Event::OrderPlaced { id: 2 };
+
+    assert_eq!(
+        sender
+            .send(event.clone())
+            .expect("subscribers are connected"),
+        2
+    );
+    assert_eq!(
+        billing.try_recv().expect("billing receives the event"),
+        event
+    );
+    assert_eq!(audit.try_recv().expect("audit receives the event"), event);
+}
+
+/// Publishes events and collects them in two independent consumers.
+fn main() {
+    demonstrate_tokio_broadcast();
+
+    let mut bus = EventBus::default();
+    let billing = bus.subscribe();
+    let audit = bus.subscribe();
+
+    let consumers: Vec<_> = [billing, audit]
+        .into_iter()
+        .map(|rx| thread::spawn(move || rx.iter().collect::<Vec<Event>>()))
+        .collect();
+
+    assert_eq!(bus.publish(&Event::OrderPlaced { id: 1 }), 0);
+    assert_eq!(bus.publish(&Event::OrderShipped { id: 1 }), 0);
+    drop(bus); // Closes the channels, which ends the consumers.
+
+    for consumer in consumers {
+        let events = consumer.join().expect("consumer panicked");
+        assert_eq!(
+            events,
+            vec![Event::OrderPlaced { id: 1 }, Event::OrderShipped { id: 1 }]
+        );
+        println!("{events:?}");
+    }
+}
+// ANCHOR_END: example
+
+/// Runs the event-bus example.
+pub fn run() {
+    main();
+}
+
+/// Tests behavior implemented by the surrounding module.
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Runs the event bus example through its entry point.
+    #[test]
+    fn test_event_bus_example_entry_point() {
+        main();
+    }
+
+    /// Reports and removes disconnected subscribers.
+    #[test]
+    fn reports_and_removes_disconnected_subscribers() {
+        let mut bus = EventBus::default();
+        let receiver = bus.subscribe();
+        let disconnected = bus.subscribe();
+        drop(disconnected);
+
+        let event = Event::OrderPlaced { id: 42 };
+        assert_eq!(bus.publish(&event), 1);
+        assert_eq!(
+            receiver
+                .recv()
+                .expect("connected subscriber receives the event"),
+            event
+        );
+        assert_eq!(bus.publish(&event), 0);
+    }
+}

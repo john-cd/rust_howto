@@ -1,0 +1,34 @@
+# TODO Reviewed ??-??-2026.
+
+[package]
+name = "other"
+version.workspace = true
+description = "Book examples that do not fit a crates.io category"
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+readme = "README.md"
+documentation.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish = false
+keywords = ["patterns", "cookbook", "howto", "how-to", "documentation"]
+categories = ["development-tools"]
+autolib = false
+
+[[example]]
+name = "architecture"
+path = "examples/architecture/main.rs"
+test = true
+
+[dependencies]
+anyhow = "1.0.104"
+async-trait = "0.1.92"
+clap = { version = "4.6.7", features = ["derive"] }
+shaku = "0.6.3"
+serde = { version = "1.0.229", features = ["derive"] }
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "sync"] }
+
+[lints]
+workspace = true

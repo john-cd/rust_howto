@@ -72,6 +72,11 @@
   - [Hashing](categories/algorithms/hashing.md)
   - [Graph Algorithms](categories/algorithms/graph_algorithms.md)
 
+- [Architecture](other/architecture/index.md)
+  - [Architectural Patterns](other/architecture/architectural_patterns.md)
+  - [Common Architectures](other/architecture/common_architectures.md)
+  - [Software Architecture Process](other/architecture/software_architecture_process.md)
+
 - [Asynchronous Programming](categories/asynchronous/index.md)
   - [Async](categories/asynchronous/async.md)
   - [Futures Crate](categories/asynchronous/futures.md)
