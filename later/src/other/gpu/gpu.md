@@ -1,22 +1,12 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Use GPUs with Rust
+# GPU Compute Recipes
+
+See the [GPU programming survey][gpu~survey] to choose a compute API.
 
 {{#include gpu.incl.md}}
 
-GPU work can mean portable compute, vendor-specific compute, or shader code compiled from Rust. Choose the API based on the devices and runtime you must support; examples that dispatch kernels need a compatible GPU driver or software adapter.
-
-## Portable compute with `wgpu` {#wgpu}
-
-[![wgpu~website][c~wgpu~website~badge]][c~wgpu~website] [![wgpu][c~wgpu~docs~badge]][c~wgpu~docs] [![wgpu~crates.io][c~wgpu~crates.io~badge]][c~wgpu~crates.io] [![wgpu~repo][c~wgpu~repo~badge]][c~wgpu~repo]{{hi:wgpu}}{{hi:GPU}}
-
-Use [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} for portable GPU compute with WGSL shaders. The headless compute example from the Graphics APIs chapter uses a storage buffer for the kernel, then copies the results into a separate buffer that the CPU can map. The GPU dispatch rounds up to whole workgroups, so the shader checks the buffer bounds before writing. The test checks the values after readback and needs a compute-capable adapter, including a compatible software adapter.
-
-```rust,ignore,noplayground
-{{#include ../../../../bk/crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs:example}}
-```
-
-When deciding whether to move work to the GPU, measure the complete operation, including copying the data to the device and reading the result back. For kernels written in a Rust-based language with a choice of runtimes, see [`cubecl`][c~cubecl~docs].
+The recipes below require their own compiler, driver, or runtime. For portable WGSL compute, see the [book's headless wgpu example][gpu~compute].
 
 ## `rust-gpu` {#rust-gpu}
 
@@ -59,7 +49,7 @@ pub fn main_fs(#[spirv(location = 0)] output: &mut Vec4) {
 3. In a host crate in that project, add the matching `spirv-builder` as a build dependency. Its `build.rs` compiles the shader crate for a SPIR-V target such as `spirv-unknown-vulkan1.1`; follow the [shader build guide][rust-gpu~shader-guide] for the builder API and required toolchain components of the chosen version.
 4. Load the generated SPIR-V module in a compatible graphics application, select `main_vs` and `main_fs` as the pipeline entry points, and draw three vertices. A shader defines GPU stages; the host must still create the device, pipeline, render target, and draw commands.
 
-SPIR-V uses rust-gpu's target backend. Gating these entry points behind `target_arch = "wasm32"` would select WebAssembly rather than compile them as SPIR-V. The shared `other` crate therefore has no rust-gpu example target or shader dependency. For a stable host-side GPU example, use the `wgpu` compute example above.
+SPIR-V uses rust-gpu's target backend. Gating these entry points behind `target_arch = "wasm32"` would select WebAssembly rather than compile them as SPIR-V. The shared `other` crate therefore has no rust-gpu example target or shader dependency.
 
 ## Call CUDA from Rust with `cudarc` {#cudarc}
 

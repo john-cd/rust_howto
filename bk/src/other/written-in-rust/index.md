@@ -51,7 +51,7 @@ Rust powers projects ranging from command-line utilities to databases and virtua
 | --- | --- |
 | [Awesome Rust][awesome-rust~repo]↗ | Broader catalog of projects, libraries, and tools. |
 | [Awesome Rust Tools][awesome-rust-tools~repo]↗ and [Awesome Alternatives in Rust][awesome-alternatives-in-rust~repo]↗ | Curated lists of Rust-built tools and alternatives. |
-| [Scripting and Rust](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/scripting/index.md) | Scripting engines and language integration. |
+| [Scripting and Rust](../scripting/index.md) | Scripting engines and language integration. |
 | [Embedded Systems](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md) | Firmware and constrained applications. |
 | [WebAssembly](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md) | Servers, clients, and web tooling. |
 | [Virtualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md) | Runtime and isolation projects. |

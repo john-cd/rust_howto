@@ -1,12 +1,12 @@
 //! A small Lambda handler that can also be tested without AWS.
 
+// ANCHOR: example
 use lambda_runtime::Error;
 use lambda_runtime::LambdaEvent;
 use lambda_runtime::service_fn;
 use serde::Deserialize;
 use serde::Serialize;
 
-// ANCHOR: example
 /// JSON event payload containing the name to greet.
 #[derive(Deserialize)]
 struct Request {
@@ -28,13 +28,12 @@ async fn handle(event: LambdaEvent<Request>) -> Result<Response, Error> {
         message: format!("Hello, {}!", request.name),
     })
 }
-// ANCHOR_END: example
-
 /// Starts the Lambda polling runtime and delegates each event to the greeting handler.
 #[tokio::main]
 async fn main() -> Result<(), Error> {
     lambda_runtime::run(service_fn(handle)).await
 }
+// ANCHOR_END: example
 
 /// Tests behavior implemented by the surrounding module.
 #[cfg(test)]

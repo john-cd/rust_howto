@@ -92,6 +92,14 @@
 
 ## Cloud
 
+### Rust on AWS
+
+{{#include ../other/cloud/aws.incl.md}}
+
+### Deploy Rust Applications
+
+{{#include ../other/cloud/rust_native_cloud_development.incl.md}}
+
 ## Command Line Interface
 
 ### ANSI Terminal
@@ -197,6 +205,10 @@
 ### Environment Variables
 
 {{#include ../categories/config/environment_variables.incl.md}}
+
+## Cross-platform Development
+
+{{#include ../other/cross-platform/crux.incl.md}}
 
 ## Cryptography
 
@@ -1001,6 +1013,20 @@
 ### Structural Patterns
 
 {{#include ../categories/rust-patterns/structural_patterns.incl.md}}
+
+## Scheduling
+
+{{#include ../other/scheduling/scheduling.incl.md}}
+
+## Scripting
+
+### Rhai
+
+{{#include ../other/scripting/rhai.incl.md}}
+
+### Task Automation
+
+- [Run a configured command](../other/scripting/task_automation.md#scheduled-task).
 
 ## Standalone
 

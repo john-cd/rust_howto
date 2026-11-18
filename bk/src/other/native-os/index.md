@@ -66,4 +66,4 @@ administrator/root access for introductory read-only recipes.
 - [Linux APIs](../../categories/os_linux-apis/index.md).
 - [macOS APIs](../../categories/os_macos-apis/index.md).
 - [FreeBSD APIs](../../categories/os_freebsd-apis/index.md).
-- [Cross-platform Development](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cross-platform/index.md).
+- [Cross-platform Development](../cross-platform/index.md).

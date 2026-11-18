@@ -20,7 +20,7 @@ If you control the configuration format, store the executable and arguments sepa
 
 ## Example: a Scheduled Task {#scheduled-task}
 
-This example prints the next run time, then runs `rustc --print cfg` immediately to demonstrate the command. The printed time is `2026-10-31 02:30:00 UTC`, followed by the compiler's target configuration. The example needs `rustc` on `PATH`. It exits after one run, so a separate scheduler is responsible for starting it at the intended time.
+This example prints the next run time, then runs `rustc --print cfg` immediately to demonstrate the command. The printed time is `2026-10-31 02:30:00 UTC`, followed by the compiler's target configuration. The example needs `rustc` on `PATH`. From `bk/crates`, run `cargo run --locked -p other --example task_automation`. It exits after one run, so a separate scheduler is responsible for starting it at the intended time.
 
 ```rust,noplayground
 {{#include ../../../crates/other/examples/task_automation/scheduled_command.rs:example}}

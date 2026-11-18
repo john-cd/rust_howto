@@ -22,13 +22,113 @@ name = "architecture"
 path = "examples/architecture/main.rs"
 test = true
 
+[[example]]
+name = "aws_sdk"
+path = "examples/aws_sdk/main.rs"
+required-features = ["aws-sdk"]
+test = true
+
+[[example]]
+name = "cross_platform"
+path = "examples/cross_platform/main.rs"
+test = true
+
+[[example]]
+name = "scheduling"
+path = "examples/scheduling/main.rs"
+test = true
+
+[[example]]
+name = "scripting"
+path = "examples/scripting/main.rs"
+test = true
+
+[[example]]
+name = "task_automation"
+path = "examples/task_automation/main.rs"
+test = true
+
 [dependencies]
 anyhow = "1.0.104"
 async-trait = "0.1.92"
+aws-config = { optional = true, version = "1.13.2", default-features = false, features = [
+    "credentials-process",
+    "default-https-client",
+    "rt-tokio",
+    "sso",
+] }
+aws-sdk-cloudwatch = { optional = true, version = "1.142.0", default-features = false, features = [
+    "default-https-client",
+    "rt-tokio",
+] }
+aws-sdk-lambda = { optional = true, version = "1.158.0", default-features = false, features = [
+    "default-https-client",
+    "rt-tokio",
+] }
+aws-sdk-s3 = { optional = true, version = "1.159.0", default-features = false, features = [
+    "default-https-client",
+    "http-1x",
+    "rt-tokio",
+    "sigv4a",
+] }
+aws-sdk-sesv2 = { optional = true, version = "1.147.0", default-features = false, features = [
+    "default-https-client",
+    "rt-tokio",
+    "sigv4a",
+] }
+aws-sdk-sns = { optional = true, version = "1.123.0", default-features = false, features = [
+    "default-https-client",
+    "rt-tokio",
+] }
+aws-sdk-sqs = { optional = true, version = "1.121.0", default-features = false, features = [
+    "default-https-client",
+    "rt-tokio",
+] }
+aws-smithy-http-client = { optional = true, version = "1.5.2", default-features = false, features = [
+    "rustls-aws-lc",
+] } # Custom TLS trust store for S3-compatible stores.
+base64 = { version = "0.23.1", optional = true }
+chrono = "0.4.45"
 clap = { version = "4.6.7", features = ["derive"] }
+cron = "0.17.0"
+crux_core = "0.20.0"
+duct = "1.1.2"
+prost = { version = "0.14.5", optional = true }
+rcgen = { version = "0.14.10", optional = true }
+rhai = "1.27.0"
 serde = { version = "1.0.229", features = ["derive"] }
+serde_json = { version = "1.0.154", optional = true }
 shaku = "0.6.3"
-tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "sync"] }
+shell-words = "1.1.1"
+shellexpand = "3.1.2"
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "sync", "test-util", "time"] }
+tokio-rustls = { version = "0.26.6", optional = true }
+tokio-util = "0.7.20"
+tracing = { version = "0.1.44", optional = true }
+tracing-subscriber = { version = "0.3.23", optional = true }
+
+[dev-dependencies]
+crux_core = { version = "0.20.0", features = ["testing"] }
+
+[features]
+aws-sdk = [
+    "dep:aws-config",
+    "dep:aws-sdk-cloudwatch",
+    "dep:aws-sdk-lambda",
+    "dep:aws-sdk-s3",
+    "dep:aws-sdk-sesv2",
+    "dep:aws-sdk-sns",
+    "dep:aws-sdk-sqs",
+    "dep:aws-smithy-http-client",
+    "dep:base64",
+    "dep:prost",
+    "dep:rcgen",
+    "dep:serde_json",
+    "dep:tokio-rustls",
+    "dep:tracing",
+    "dep:tracing-subscriber",
+]
+typegen = ["crux_core/typegen"]
 
 [lints]
 workspace = true

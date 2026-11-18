@@ -13,7 +13,7 @@ Keep application-image and testing recipes separate from runtime implementation 
 ## Related Topics
 
 - [Virtualization](virtualization.md).
-- [Cloud deployment](../../other/cloud/index.md).
+- [Cloud deployment](https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/cloud/index.md).
 - [Containerization building blocks](containerization.md).
 - [Application images and container tests](using_containers.md).
 

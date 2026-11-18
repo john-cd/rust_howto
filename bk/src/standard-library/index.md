@@ -9,7 +9,7 @@ The table below lists stable modules of the Standard Library, highlights the mos
 | Modules | Description | See Also |
 | --- | --- | --- |
 | [`std::alloc`][c~std::alloc~docs]↗{{hi:std::alloc}} | Memory allocation APIs. For advanced users. | [Memory Management](../categories/memory-management/index.md) |
-| [`std::any`][c~std::any~docs]↗{{hi:std::any}} | Utilities for dynamic typing or type reflection. Home of [`Any`][c~std::any::Any~docs]↗. Use for plugins, extensibility, scripting. Advanced. | [Development Tools - Cargo Plugins](../categories/development-tools_cargo-plugins/index.md) [Scripting](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/scripting/index.md) |
+| [`std::any`][c~std::any~docs]↗{{hi:std::any}} | Utilities for dynamic typing or type reflection. Home of [`Any`][c~std::any::Any~docs]↗. Use for plugins, extensibility, scripting. Advanced. | [Development Tools - Cargo Plugins](../categories/development-tools_cargo-plugins/index.md) [Scripting](../other/scripting/index.md) |
 | [`std::arch`][c~std::arch~docs]↗{{hi:std::arch}} | SIMD and vendor intrinsics module. Advanced topic. | [`std::simd`][c~std::simd~docs]↗ is experimental and requires nightly Rust. |
 | [`std::array`][c~std::array~docs]↗{{hi:std::array}} | Utilities for the array primitive type `[T; N]`.{{hi:std::array}} | [[data-structures | Data Structures]], [[vectors | Vectors]], [[slices | Slices]] |
 | [`std::ascii`][c~std::ascii~docs]↗{{hi:std::ascii}} | Operations on ASCII strings and characters. You may use [`escape_default`][c~std::ascii::escape_default~docs]↗{{hi:std::ascii::escape_default}} | [Encoding](../categories/encoding/index.md) |

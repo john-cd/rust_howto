@@ -1,14 +1,16 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Scheduling
+# Schedule Jobs in Rust
 
 {{#include scheduling.incl.md}}
+
+From `bk/crates`, run `cargo test --locked -p other --example scheduling` to exercise all three recipes.
 
 ## Compute the Next Fire Times of a Cron Expression {#cron-next}
 
 [`cron`](https://docs.rs/cron)↗ parses a cron expression and iterates the instants at which it fires. The example uses a fixed `DateTime<Utc>` rather than the clock, so it is deterministic.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/other/examples/scheduling/cron_next.rs:example}}
 ```
 
@@ -25,7 +27,7 @@ skips intervening ticks while keeping future deadlines on the original grid.
 The example awaits each job before taking the next tick, so jobs stay serial.
 Its `CancellationToken` stops the loop after the current job finishes. Each process runs its own timer, so two replicas would both run the job. Use an external scheduler or coordinate ownership when only one replica should run it.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/other/examples/scheduling/interval_job.rs:example}}
 ```
 
@@ -37,7 +39,7 @@ a job are skipped. The example uses a fixed UTC origin and monotonic elapsed
 time for reproducibility. A service that follows local wall time must also
 account for clock corrections and daylight-saving changes.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/other/examples/scheduling/cron_loop.rs:example}}
 ```
 

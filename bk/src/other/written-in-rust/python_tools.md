@@ -58,7 +58,7 @@ to build and import the extension with the intended Python interpreter.
 ## Related Topics {#related-topics .skip}
 
 - [Development tools](development_tools.md) covers editors, build systems, and general-purpose command-line tools.
-- [Scripting and Rust](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/scripting/index.md) covers embedding scripting languages in Rust applications.
+- [Scripting and Rust](../scripting/index.md) covers embedding scripting languages in Rust applications.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
