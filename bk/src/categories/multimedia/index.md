@@ -21,7 +21,7 @@ Real-time streaming (RTSP, WebRTC, RTP) is covered in [Streaming Media](streamin
 
 ## Related Topics
 
-- [[graphics | Graphics]], [[rendering | Rendering]], [[rendering_data-formats | Rendering Data Formats]], [Rendering Engines](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering_engine/index.md), [[rendering_graphics-api | Rendering: Graphics API]].
+- [[graphics | Graphics]], [[rendering_data-formats | Rendering Data Formats]], [Rendering Engines](../rendering_engine/index.md), [[rendering_graphics-api | Rendering: Graphics API]].
 - [[wasm | WASM]], [[gui | GUI]] and [[embedded | Embedded Systems]] for other targets.
 - [[memory-management | Memory Management]], [[concurrency | Concurrency]], [Development Tools - Profiling](../development-tools_profiling/index.md), [Benchmarking](../development-tools_profiling/benchmarking.md), and [[hardware-support | Hardware]] acceleration for performance.
 

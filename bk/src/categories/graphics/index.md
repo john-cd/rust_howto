@@ -4,11 +4,7 @@
 
 [![cat~graphics][cat~graphics~badge]][cat~graphics]{{hi:Graphics}}
 
-Graphics code turns descriptions of shapes, paths, text, and 3D points into
-images. These recipes focus on CPU and off-screen work that can be tested
-without a display server or graphics device: drawing into a pixel buffer,
-tessellating vector paths, rasterizing SVG, and projecting a point through a
-3D camera.
+Graphics code turns shapes, text, and 3D scenes into images. Start with the CPU recipes for paths, pixels, glyphs, and camera transforms. Continue with rendering formats, GPU pipelines, or a windowed engine as your application needs them.
 
 ## Choose a Starting Point
 
@@ -22,10 +18,6 @@ tessellating vector paths, rasterizing SVG, and projecting a point through a
 
 Run the examples from `bk/crates` with `cargo run --locked -p graphics --example <name>`. The SVG example accepts either `usvg` or `resvg` after `--`; the triangle example writes SVG to standard output, so redirect it to a file before opening it in a browser.
 
-These examples do not open a window or submit GPU work. Windowing, shaders,
-graphics APIs, and game-engine integration require platform-specific setup and
-are outside this category's runnable scope.
-
 ## Chapters
 
 - [2D renderers](2d_renderers.md) compares paths, meshes, and pixel buffers.
@@ -34,6 +26,9 @@ are outside this category's runnable scope.
 - [3D projection](3d_projection.md) applies model, view, and projection transforms.
 - [SVG rendering](svg_rendering.md) parses SVG and paints it into pixels.
 - [Text rendering](text_rendering.md) rasterizes a glyph from a bundled font.
+- [Rendering Data Formats](../rendering_data-formats/index.md) covers meshes, textures, and bounded SVG rasterization.
+- [Rendering Engines](../rendering_engine/index.md) loads an OBJ scene into an OpenGL window and verifies an offscreen GPU frame.
+- [Graphics APIs](../rendering_graphics-api/index.md) covers backends, shaders, compute, and readback.
 
 ## Draw a Triangle as SVG {#draw-a-triangle-as-svg}
 

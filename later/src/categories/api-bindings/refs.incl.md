@@ -36,7 +36,7 @@
 [p~os_windows-apis]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/os_windows-apis/index.md
 [p~parser-implementations]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parser-implementations/index.md
 [p~parsing]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parsing/index.md
-[p~rendering_graphics-api]: ../rendering_graphics-api/index.md
+[p~rendering_graphics-api]: https://john-cd.com/rust_howto/categories/rendering_graphics-api/index.html
 [p~wasm]: ../wasm/index.md
 [p~web-programming]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming/index.md
 [p~web-programming_http-client]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-client/index.md

@@ -17,4 +17,4 @@
 [p~multimedia_audio]: ../multimedia_audio/index.md
 [p~multimedia_encoding]: ../multimedia_encoding/index.md
 [p~network-programming]: ../network-programming/index.md
-[p~rendering]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/index.md
+[p~rendering]: ../graphics/index.md

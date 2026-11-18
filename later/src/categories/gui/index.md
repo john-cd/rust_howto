@@ -65,7 +65,7 @@ For Dioxus internals, [Subsecond][subsecond~docs]↗ supplies hot-patching, [Gen
 
 ### 2D Renderers
 
-See [Graphics](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md) and [Rendering](../rendering/index.md).
+See [Graphics](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/index.md) for paths, images, and text.
 
 For a minimal CPU-rendered desktop window, [`minifb`][c~minifb~docs]↗{{hi:minifb}} presents a pixel buffer directly. From `later/crates`, run it with `cargo run -p gui --example minifb_renderer --features minifb`.
 
@@ -73,7 +73,7 @@ For a minimal CPU-rendered desktop window, [`minifb`][c~minifb~docs]↗{{hi:mini
 {{#include ../../../crates/cats/gui/examples/2d_renderers/minifb.rs:example}}
 ```
 
-The [Vello vector scene example](../rendering/2d_vector_graphics.md#vello) builds shapes separately from GPU rendering.
+The [Vello vector scene example](vector_renderers.md#vello) builds shapes separately from GPU rendering.
 
 ### UI Layout
 
@@ -111,7 +111,7 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 - [Graphics](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md).
 - [Internationalization](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/internationalization/index.md).
 - [Multimedia](https://john-cd.com/rust_howto/categories/multimedia/index.html).
-- [Rendering](../rendering/index.md).
+- [Rendering](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/index.md).
 - [Template Engine](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/template-engine/index.md).
 - [WASM](../wasm/index.md).
 - [Web Programming](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming/index.md).

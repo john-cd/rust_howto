@@ -20,5 +20,5 @@
 [tetra~status~repo]: https://github.com/17cupsofcoffee/tetra#status
 
 [p~multimedia_audio]: https://john-cd.com/rust_howto/categories/multimedia_audio/index.html
-[p~rendering]: ../rendering/index.md
+[p~rendering]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/index.md
 [p~window_creation]: ../gui/window_creation.md

@@ -30,7 +30,7 @@
 [p~node]: ../development-tools_ffi/node.md
 [p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
-[p~rendering]: ../../../drafts/categories/rendering/rendering.md
+[p~rendering]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/index.md
 [p~testing]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/development-tools_testing/testing.md
 [p~visualization]: ../visualization/visualization.md
 [mozilla~webassembly-concepts~website]: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts

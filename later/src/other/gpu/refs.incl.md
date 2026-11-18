@@ -19,5 +19,5 @@
 [rust-cuda~repo]: https://github.com/Rust-GPU/Rust-CUDA
 
 [p~OpenCL]: gpu.md#opencl3
-[p~rendering_graphics-api]: ../../categories/rendering_graphics-api/index.md
-[p~shaders]: ../../categories/rendering_graphics-api/shaders.md
+[p~rendering_graphics-api]: https://john-cd.com/rust_howto/categories/rendering_graphics-api/index.html
+[p~shaders]: https://john-cd.com/rust_howto/categories/rendering_graphics-api/shaders.html

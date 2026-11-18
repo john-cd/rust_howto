@@ -25,7 +25,7 @@ OpenCV's image-loading APIs normally use BGR channel order; other image librarie
 
 - [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md) and [[multimedia_video | Multimedia: Video]].
 - [Machine Learning in Practice](https://john-cd.com/rust_howto/other/machine-learning/index.html).
-- [[science_robotics | Robotics]] and [Rendering](../rendering/index.md).
+- [[science_robotics | Robotics]] and [Rendering](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/index.md).
 - [[mathematics | Mathematics]] for arrays and linear algebra.
 
 {{#include refs.incl.md}}

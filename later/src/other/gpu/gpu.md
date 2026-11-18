@@ -13,7 +13,7 @@ GPU work can mean portable compute, vendor-specific compute, or shader code comp
 Use [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}} for portable GPU compute with WGSL shaders. The linked example starts an adapter and device; a compute pass binds storage buffers and dispatches workgroups, as in this WGSL kernel that doubles each value:
 
 ```rust,editable
-{{#include ../../../crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs:example}}
+{{#include ../../../../bk/crates/cats/rendering_graphics_api/examples/gpu_abstraction_layers/wgpu.rs:example}}
 ```
 
 ```wgsl

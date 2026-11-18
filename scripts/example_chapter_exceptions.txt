@@ -46,6 +46,4 @@ later/src/other/architecture/
 later/src/other/cloud/
 # Example disabled until its dependency advisory is resolved.
 later/src/categories/science_robotics/robotics_frameworks.md
-# Navigation page: it points to the engine coverage in 3d_renderers.md and the adapter example in native_graphics_apis.md; engine crates need a window and GPU (#2092).
-later/src/categories/rendering_engine/rendering_engines.md
 # Describes operating systems written in Rust (Redox, Bottlerocket); they are not libraries, so there is no Rust code to run (#2093).

@@ -49,7 +49,7 @@ The following are topics that deserve (additional) coverage and examples:
 - FFI ([Development tools - FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md)).
 - [Hardware support](../../categories/hardware-support/index.md).
 - [Development Tools - Build Utils](../../categories/development-tools_build-utils/index.md).
-- [Rendering](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/index.md).
+- [Graphics and Rendering](../../categories/graphics/index.md).
 - High-performance computing: OpenMP, etc.
 - Social media APIs.
 - Personal file sharing: OwnCloud, etc.
