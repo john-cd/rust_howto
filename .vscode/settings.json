@@ -7,7 +7,7 @@
   "rust-analyzer.linkedProjects": [
     "bk/crates/Cargo.toml",
     "later/crates/Cargo.toml",
-    "mdbook-utils/Cargo.toml",
+    "../mdbook-utils/Cargo.toml",
     "publish/Cargo.toml",
     "tools/Cargo.toml",
     "xmpl/Cargo.toml"

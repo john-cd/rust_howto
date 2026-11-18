@@ -442,6 +442,7 @@
   - [Topics of Interest](appendices/contributing/topics_of_interest.md)
   - [Repository Structure](appendices/contributing/repository_structure.md)
   - [Development Environment Setup](appendices/contributing/development_environment_setup.md)
+  - [VS Code Configuration](appendices/contributing/vscode.md)
   - [Book Editing and Example Code Development](appendices/contributing/book_editing_and_example_code_development.md)
   - [API Documentation](appendices/contributing/api_documentation.md)
   - [mdBook Pre-processors](appendices/contributing/mdBook_pre-processors.md)

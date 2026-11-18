@@ -47,6 +47,7 @@ This repository has several workspaces and include-heavy book sources. Start wit
 
 - [Repository Structure](repository_structure.md#folders-and-key-files) maps the book sources, examples, and tools to their folders.
 - [Development Environment Setup](development_environment_setup.md) explains how to prepare a local checkout.
+- [VS Code Configuration](vscode.md) covers `rust-analyzer` project discovery and optional editor settings.
 - [Book Editing and Example Code Development](book_editing_and_example_code_development.md) covers chapter and runnable-example changes.
 - [Documentation Generation](documentation_generation.md) explains how to preview and generate the documentation.
 - [mdBook Pre-processors](mdBook_pre-processors.md) describes the book's preprocessor pipeline.
