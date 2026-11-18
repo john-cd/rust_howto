@@ -24,7 +24,7 @@ See [Viewports and GPU Readback Layout](frame_layout.md) for aspect ratios, chec
 
 ## Pages
 
-- [[native_graphics_apis | Native Graphics APIs]], [[vulkan | Vulkan]], [[opengl | OpenGL]], [[shaders | Shaders]], and [[gpu_abstraction_layers | GPU Abstraction Layers]].
+- [Native Graphics APIs](native_graphics_apis.md), [Vulkan](vulkan.md), [OpenGL](opengl.md), [Shaders](shaders.md), and [GPU Abstraction Layers](gpu_abstraction_layers.md).
 
 {{#include gpu_abstraction_layers.incl.md}}
 
@@ -44,9 +44,9 @@ See [Viewports and GPU Readback Layout](frame_layout.md) for aspect ratios, chec
 | Window management and input | [`winit`][c~winit~docs]↗{{hi:winit}}, `raw-window-handle` | Window handles connect a window system to graphics APIs; `winit` also provides event handling. |
 | [Image loading and manipulation](https://john-cd.com/rust_howto/categories/multimedia_images/index.html) | [`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} | Load and process image data for rendering. |
 
-- [[graphics | Graphics]].
-- [[rendering | Rendering]].
-- [[rendering_data-formats | Rendering: Data Formats]].
+- [Graphics](https://john-cd.com/rust_howto/categories/graphics/index.html).
+- [Rendering](../rendering/index.md).
+- [Rendering: Data Formats](../rendering_data-formats/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

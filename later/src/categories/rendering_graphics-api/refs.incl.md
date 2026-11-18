@@ -26,7 +26,7 @@
 [p~debugging]: ../../../src/categories/development-tools_debugging/debugging.md
 [p~fragment]: ../../other/cloud/_fragment.md
 [p~gpu]: ../../other/gpu/gpu.md
-[p~graphics]: ../graphics/index.md
+[p~graphics]: https://john-cd.com/rust_howto/categories/graphics/index.html
 [p~images]: https://john-cd.com/rust_howto/categories/multimedia_images/images.html
 [p~html]: ../../../src/categories/parser-implementations/html.md
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
@@ -40,3 +40,13 @@
 [c~glium~repo]: https://github.com/glium/glium
 [c~glutin-winit~docs]: https://docs.rs/glutin-winit
 [egui_glow~repo]: https://github.com/emilk/egui/tree/main/crates/egui_glow
+
+[c~glutin~docs]: https://docs.rs/glutin
+[c~glutin~docs~badge]: https://img.shields.io/crates/v/glutin?label=glutin
+
+[c~gl~docs]: https://docs.rs/gl
+[c~gl~docs~badge]: https://img.shields.io/crates/v/gl?label=gl
+
+[c~spirv-reflect~docs]: https://docs.rs/spirv-reflect
+[c~spirv-reflect~docs~badge]: https://img.shields.io/crates/v/spirv-reflect?label=spirv-reflect
+[c~objc2-metal~docs~badge]: https://img.shields.io/crates/v/objc2-metal?label=objc2-metal
