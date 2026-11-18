@@ -13,7 +13,7 @@ Reviewed November 17, 2026, for [#2350](https://github.com/john-cd/rust_howto/is
 | [Machine Learning in Practice](src/other/machine-learning/index.md) | Held-out classification, temporal forecasting, and ONNX inference/model replacement. | 9 tests passed with the native ONNX Runtime on Windows; strict Clippy and Rust 1.98.1 compile check passed. Synthetic fixtures demonstrate software behavior, not production accuracy. |
 | [Science: Classical ML](src/categories/science/classical_machine_learning.md) | SmartCore classification and Linfa clustering/regression. | 9 tests passed. Keep this as classical ML coverage rather than promoting untested deep-learning/CUDA paths. |
 | [Rendering Data Formats](src/categories/rendering_data-formats/index.md) | Inline glTF scene parsing, tested texture layout/conversion, and SVG rasterization recipes. | Included in the successful host sweep; these device-free examples do not claim every listed compressed texture format or external importer is exercised. |
-| [Games](src/categories/games/index.md) | The Macroquad marker-collection game from [#2379](https://github.com/john-cd/rust_howto/issues/2379). | Two game-state tests passed. The Windows smoke run presented three frames, scored a marker with scripted movement, and exited. Physical keyboard interaction and visual quality remain unverified. |
+| [Games](src/categories/games/index.md) | The Macroquad marker-collection game from [#2379](https://github.com/john-cd/rust_howto/issues/2379). | Two game-state tests passed. The Windows smoke run presented three frames, scored a marker with scripted movement, and exited. A Linux X11 run exercised the normal keyboard path and checked marker pixels before scoring, after scoring, and after restart. Physical keyboard interaction and human visual review remain unverified. |
 | [Linux APIs](src/categories/os_linux-apis/index.md) | Descriptor-based metadata with rustix and statx. | Five Linux tests and a native CLI run passed on the Docker Desktop WSL2 kernel. See the Linux commands and filesystem observations below. |
 | [macOS APIs](src/categories/os_macos-apis/macos.md) | The introductory native API example. | The actual macOS API and Objective-C CI test steps passed on macOS 15/ARM64 with Rust 1.100.0. The relevant package sources, workspace manifest, lockfile, and native workflow match the tested revision. |
 | [FreeBSD APIs](src/categories/os_freebsd-apis/freebsd.md) | The native sysctl introduction. | The actual native test step passed inside FreeBSD 14.4/x86-64 with Rust 1.100.0; the relevant source and lockfile match the tested revision. |
@@ -46,6 +46,16 @@ just cargo test --manifest-path later/crates/Cargo.toml --locked -p other --feat
 | [Graphics APIs](src/categories/rendering_graphics-api/index.md) | Adapter discovery, wgpu compute/readback, shader validation/translation, and the new offscreen triangle render. | 16 tests passed with ignored GPU tests enabled. The triangle's center/background pixels passed on both Vulkan and DirectX 12 using Intel Iris Xe. OpenGL helpers without a current context and raw Vulkan discovery do not prove a complete scene: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
 | [Rendering Engines](src/categories/rendering_engine/index.md) | The expanded engine-responsibility guide and bounded offscreen rendering core. | The new example has GPU pixel checks, strict Clippy, and a Rust 1.98.1 compile check. It uses wgpu directly; a full engine-owned scene/material/window lifecycle remains [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
 | [Game Engines](src/categories/game-engines/index.md) | The tested Macroquad and ggez game loops on Windows. | Unit tests passed, and native loops presented three and two frames respectively before exiting. Bevy/Fyrox, input/visual inspection, and other targets were not validated: [#2357](https://github.com/john-cd/rust_howto/issues/2357), [#2359](https://github.com/john-cd/rust_howto/issues/2359). |
+
+### Macroquad Desktop Keyboard Check
+
+At revision `f636015f6`, both locked game tests passed on Debian Trixie with
+Rust 1.100.0. With Xvfb and Mesa software rendering, the normal game executable
+accepted X11 keyboard events sent by `xdotool`: holding Right collected the
+first marker, R restarted the round, and Escape exited with status zero.
+The gold marker's horizontal pixel centroid in three X11 window captures
+moved from 267 to 399 and returned to 267 on restart. This exercised the
+keyboard and rendering paths with the scripted game smoke mode disabled.
 
 ### Linux statx
 
