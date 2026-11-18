@@ -76,6 +76,7 @@ mod tests {
     fn parses_prefix_and_default() -> darling::Result<()> {
         let options = parse_options(quote! {
             #[builder(prefix = "with_")]
+            // Unit input carrying the builder options parsed by this test.
             struct Foo;
         })?;
         assert_eq!(options.ident.to_string(), "Foo");
@@ -91,6 +92,7 @@ mod tests {
     fn rejects_unknown_attribute_keys() {
         let error = parse_options(quote! {
             #[builder(unknown = "value")]
+            // Unit input with an unsupported builder option that must be rejected.
             struct Foo;
         })
         .expect_err("unknown builder options must be rejected");

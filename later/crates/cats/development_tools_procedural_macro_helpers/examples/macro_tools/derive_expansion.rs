@@ -36,6 +36,7 @@ fn derive_named(input: TokenStream) -> syn::Result<TokenStream> {
     let name = ident.to_string();
     Ok(quote! {
         impl #impl_generics Named for #ident #ty_generics #where_clause {
+            /// Returns the schema type name as a static string.
             fn name() -> &'static str {
                 #name
             }
@@ -61,6 +62,7 @@ fn expand_to_string(tokens: TokenStream) -> Result<String> {
 /// Defines the expected constant.
 const EXPECTED: &str = "\
 impl<T: Clone> Named for Wrapper<T> {
+    /// Returns the schema type name as a static string.
     fn name() -> &'static str {
         \"Wrapper\"
     }
@@ -70,6 +72,7 @@ impl<T: Clone> Named for Wrapper<T> {
 /// Expands a derive input and checks it against the snapshot.
 fn macro_tools_example() -> Result<()> {
     let input = quote! {
+        /// Sample generic type whose bounds must survive derive expansion.
         struct Wrapper<T: Clone>(T);
     };
     let expanded = expand_to_string(derive_named(input)?)?;
