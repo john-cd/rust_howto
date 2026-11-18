@@ -6,18 +6,27 @@ Data work ranges from reading local files and shaping tables to building pipelin
 query engines, and analytics systems. Start with a recipe page, then explore the
 project links for tools that support larger workflows.
 
-Choose an entry point by the data you have and the output you need. The first sections cover local transformations and queries. The later sections cover recurring pipelines, storage, and operations.
+## Choose a Tool by Task
+
+| Need | Common crates | Start here |
+| --- | --- | --- |
+| Validate or transform rows in a delimited file | [`csv`](https://docs.rs/csv/) and [`serde`](https://docs.rs/serde/) | Stream rows in the [CSV recipe](csv.md#read-and-write-csv-files). |
+| Filter, group, or join a table | [`polars`](https://docs.rs/polars/) | The [published dataframe chapter](https://github.com/john-cd/rust_howto/blob/db7033a53e8c5f6cfdc66ad0a9c89105319ebe30/bk/src/categories/data-processing/dataframes.md) covers lazy file scans. |
+| Exchange typed columns with another program | [`arrow`](https://docs.rs/arrow/) | Use [Arrow IPC](data_engineering.md#arrow-ipc) when the reader consumes Arrow batches. |
+| Store compressed columnar data on disk | [`parquet`](https://docs.rs/parquet/) | Use Parquet for file-backed analytics that read a subset of columns. |
+| Run SQL inside a Rust process | [`datafusion`](https://docs.rs/datafusion/) | Start with the [in-memory DataFusion example](data_engineering.md#datafusion) before adding file sources. |
+| Read or write bytes in object storage | [`object_store`](https://docs.rs/object_store/) or [`opendal`](https://docs.rs/opendal/) | Keep storage credentials and connection options separate from format decoding and queries. |
 
 ## Import and transform files
 
-The [CSV chapter](csv.md) shows command-line operations for inspecting, filtering,
-splitting, and joining delimited files.
+The [CSV chapter](csv.md) covers typed streaming in Rust and command-line
+operations for inspecting, filtering, splitting, and joining delimited files.
 
 {{#include csv.incl.md}}
 
 ## Work with tabular data
 
-The [dataframes chapter](https://john-cd.com/rust_howto/categories/data-processing/dataframes.html) uses Polars for columnar, dataframe-style
+The published dataframe chapter linked above uses Polars for columnar
 operations over structured data.
 
 ## Build data systems

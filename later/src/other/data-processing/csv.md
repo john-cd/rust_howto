@@ -6,7 +6,7 @@
 
 ## Read and Write CSV Files {#read-and-write-csv-files}
 
-The [`csv`][c~csv~docs]↗{{hi:csv}} crate reads and writes records, while [`serde`][c~serde~docs]↗{{hi:serde}} maps records to typed Rust values. This example processes each input row as it is read, then writes and reads back one typed record. It uses in-memory bytes so it runs without fixture files or network access; for a large file, pass a `File` to `Reader::from_path` and keep the same row-by-row loop.
+The [`csv`][c~csv~docs]↗{{hi:csv}} crate reads and writes records, while [`serde`][c~serde~docs]↗{{hi:serde}} maps records to typed Rust values. This example processes each input row as it is read, then writes and reads back one typed record. It uses in-memory bytes so it runs without fixture files or network access. To stream a large file with the same loop, pass its path to `Reader::from_path` or an open `File` to `Reader::from_reader`.
 
 ```rust,noplayground
 {{#include ../../../crates/other/examples/data_processing/csv/csv.rs:example}}
@@ -14,7 +14,7 @@ The [`csv`][c~csv~docs]↗{{hi:csv}} crate reads and writes records, while [`ser
 
 From `later/crates`, run it with `cargo run --locked -p other --example csv`.
 
-Use `Reader::records()` when you want to handle fields by position or name, and `Reader::deserialize()` when the CSV headers map cleanly to a struct. Both return iterators, so avoid collecting every row unless the full dataset fits in memory and later processing needs it.
+Use `Reader::records()` to handle fields by position. To select fields by name, resolve their positions from the header first. Use `Reader::deserialize()` when the CSV headers map cleanly to a struct. Both return iterators, so process rows as they arrive unless a later step needs to retain them.
 
 For analysis that needs filtering, grouping, or joins across columns, load data into a dataframe rather than growing a collection of hand-written row loops; see [Dataframes](https://john-cd.com/rust_howto/categories/data-processing/dataframes.html).
 
