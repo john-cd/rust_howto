@@ -41,8 +41,8 @@ The example below runs offline: it queries an account balance through a provider
 ## Related Topics {#related-topics .skip}
 
 - [[cryptography | Cryptography]].
-- [[blockchain | Blockchain]].
-- [[security | Security]].
+- [[blockchain | Blockchain Ecosystems and Tools]].
+- [[security | Protect Secrets]].
 - [[development_tools | Development Tools]].
 
 {{#include refs.incl.md}}
