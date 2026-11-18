@@ -34,11 +34,7 @@ GitHub [sunset Atom on December 15, 2022](https://github.blog/2022-06-08-sunsett
 ## Related Topics
 
 - [Development Tools][p~development-tools]
-- [Text processing](../../../src/categories/text-processing/index.md)
+- [Text Processing](../text-processing/index.md)
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  The table distinguishes native support from plugin and LSP setups, fills in integration details, removes Atom from the current-editor list because GitHub sunset it, and replaces the unfinished related-topics placeholder. Recheck vendor setup links when updating this index.
-</div>

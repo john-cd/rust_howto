@@ -1012,6 +1012,14 @@
 [ex~text-processing~ustr]: ../categories/text-processing/other_strings.md#ustr
 [ex~text-processing~verify-and-extract-login-from-an-email-address]: ../categories/text-processing/regex.md#verify-and-extract-login-from-an-email-address
 [ex~text-processing~word-boundaries]: ../categories/text-processing/text_analysis.md#word-boundaries
+[ex~text-editors~emacs]: ../categories/text-editors/ides.md#emacs
+[ex~text-editors~helix]: ../categories/text-editors/ides.md#helix
+[ex~text-editors~lsp]: ../categories/text-editors/language_server_protocol.md#lsp
+[ex~text-editors~lsp-client]: ../categories/text-editors/language_server_protocol.md#lsp-client
+[ex~text-editors~neovim]: ../categories/text-editors/ides.md#neovim
+[ex~text-editors~rustrover]: ../categories/text-editors/ides.md#rustrover
+[ex~text-editors~vs-code]: ../categories/text-editors/ides.md#vs-code
+[ex~text-editors~zed]: ../categories/text-editors/ides.md#zed
 [ex~transcompilation~c2rust]: ../categories/development-tools/transcompilation/transpilers.md#c2rust
 [ex~value-formatting~humansize]: ../categories/value-formatting/number_formatting.md#humansize
 [ex~value-formatting~itoa]: ../categories/value-formatting/number_formatting.md#itoa

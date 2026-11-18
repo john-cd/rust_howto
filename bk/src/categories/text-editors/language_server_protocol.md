@@ -28,7 +28,7 @@ A client sends the document text with the `textDocument/didOpen` notification (n
 
 ## Related Topics {#related-topics .skip}
 
-- [[ides | Editors and IDEs]].
+- [Editors and IDEs](ides.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
