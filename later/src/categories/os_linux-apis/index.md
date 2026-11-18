@@ -19,6 +19,8 @@ Rust's FFI can call Linux interfaces and libraries that are not exposed by `std`
 
 Kernel device drivers traditionally use C APIs. The [Rust for Linux project][rust-for-linux~repo]↗ develops Rust support for Linux kernel code, including drivers, with support depending on the kernel version and subsystem. User-space programs can also communicate with device files through standard file I/O or suitable crates.
 
+For shared crate selection and helper-process contracts, see [Native OS APIs and Process Boundaries](../../other/native-os/index.md).
+
 ## Example
 
 {{#include linux.incl.md}}

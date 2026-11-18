@@ -6,6 +6,8 @@
 
 Use macOS-specific frameworks only when portable Rust APIs do not cover the required behavior. Prefer maintained safe bindings, keep platform code behind `cfg(target_os = "macos")`, and check the framework's deployment target.
 
+For shared crate selection and helper-process contracts, see [Native OS APIs and Process Boundaries](../../other/native-os/index.md).
+
 ## Frameworks and Tasks
 
 | Framework or task | Rust bindings | Common use |

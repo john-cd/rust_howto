@@ -66,14 +66,37 @@ pub fn run() -> io::Result<()> {
     main()
 }
 
-/// elsewhere.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// elsewhere.
+    /// The native query completes for an owned temporary file.
     #[test]
     fn example_runs_for_the_current_target() {
         main().expect("Linux should allow querying the temporary file with statx");
+    }
+
+    /// Returned size metadata matches bytes written through the same open descriptor.
+    #[test]
+    fn size_mask_and_value_match_written_bytes() -> io::Result<()> {
+        let mut file = NamedTempFile::new()?;
+        file.write_all(b"known payload")?;
+        let metadata = statx(file.as_file(), "", AtFlags::EMPTY_PATH, StatxFlags::SIZE)?;
+        assert!(StatxFlags::from_bits_retain(metadata.stx_mask).contains(StatxFlags::SIZE));
+        assert_eq!(metadata.stx_size, 13);
+        file.close()
+    }
+
+    /// A missing relative entry reports ENOENT rather than empty metadata.
+    #[test]
+    fn missing_entry_reports_noent() -> io::Result<()> {
+        let directory = tempfile::tempdir()?;
+        let descriptor = std::fs::File::open(directory.path())?;
+        assert!(matches!(
+            statx(&descriptor, "missing", AtFlags::empty(), StatxFlags::SIZE),
+            Err(rustix::io::Errno::NOENT)
+        ));
+        drop(descriptor);
+        directory.close()
     }
 }

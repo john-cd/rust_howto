@@ -40,6 +40,17 @@ For shared POSIX operations, check the target support of `libc`, `nix`, or `rust
 {{#include ../../../crates/cats/os_freebsd_apis/examples/freebsd/freebsd.rs:example}}
 ```
 
+## Keep Queries Separate from Administrative Changes
+
+The read-only sysctl example needs no jail creation or capability-mode transition.
+Do not silently elevate a query tool to make a privileged write work. If adding a
+Capsicum example, enter capability mode in an owned child so the parent test process
+can still report results and clean up. Entering capability mode is a one-way change
+for that process; test permitted and denied operations separately.
+
+For owned helper processes and cross-platform error boundaries, see
+[Native OS APIs and Process Boundaries](../../other/native-os/index.md).
+
 ## Related Topics {#related-topics .skip}
 
 - UNIX-like system APIs.

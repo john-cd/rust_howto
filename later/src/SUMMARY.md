@@ -140,6 +140,8 @@
 - [Multimedia encoding](categories/multimedia_encoding/index.md)
   - [Multimedia encoding](categories/multimedia_encoding/encoding.md)
 
+- [Native OS APIs and Process Boundaries](other/native-os/index.md)
+
 - [No `std`](categories/no-std/index.md)
   - [Bare-metal Startup and Allocation](categories/no-std/no_std.md)
 

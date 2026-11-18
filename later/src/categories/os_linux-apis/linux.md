@@ -38,6 +38,20 @@ From `later/crates` on Linux, run `cargo run -p os_linux_apis --example linux`. 
 {{#include ../../../crates/cats/os_linux_apis/examples/linux/statx_metadata.rs:example}}
 ```
 
+## Validate the Native Metadata Contract
+
+The native tests check the returned size mask/value against known bytes and require
+`ENOENT` for a missing directory-relative entry. They compile and execute only on Linux;
+Windows tests of the portable helper do not exercise them. Birth time remains optional,
+even when size is available. Run the native tests on the actual filesystem/kernel:
+
+```sh
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p os_linux_apis --example linux
+```
+
+For shared process/environment handling and a platform crate comparison, see
+[Native OS APIs and Process Boundaries](../../other/native-os/index.md).
+
 ## Related Topics {#related-topics .skip}
 
 - Linux system programming.

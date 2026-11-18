@@ -36,6 +36,18 @@ Put macOS-only dependencies in `[target.'cfg(target_os = "macos")'.dependencies]
 {{#include ../../../crates/cats/os_macos_apis/examples/macos/macos.rs:example}}
 ```
 
+## Separate Framework and Process Requirements
+
+Keep AppKit UI work on the main thread and follow each Objective-C API's ownership
+and autorelease requirements. A Foundation read-only query is not evidence that a
+window, Keychain entitlement, or file-watch lifecycle works. Add those native checks
+when the application uses those facilities. An available framework at link time does
+not guarantee that a user grants access at runtime.
+
+Use the [shared process recipe](../../other/native-os/index.md) when a helper program,
+rather than an Objective-C call, is the appropriate boundary. Keep its environment,
+arguments, working directory, exit status, and shutdown policy explicit.
+
 ## Related Topics {#related-topics .skip}
 
 - macOS system APIs.
