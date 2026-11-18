@@ -9,7 +9,8 @@
 //! It allows to embed scripting capabilities in Rust applications.
 //!
 //! In Cargo.toml, add:
-//! ```
+//!
+//! ```toml
 //! [dependencies]
 //! rhai = "1.21.0" # or latest version
 //! ```
