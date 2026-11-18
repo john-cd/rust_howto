@@ -8,6 +8,8 @@ Provide direct access to the hardware's or the operating system's rendering capa
 
 Portable APIs (WebGPU through [`wgpu`][c~wgpu~docs]↗{{hi:wgpu}}) run on every major platform and the web. Native APIs (Vulkan, OpenGL, Metal, DirectX 12) give finer control or access to platform-only features, at the cost of more code per platform. Start with `wgpu` unless you need something it does not expose.
 
+See [Viewports and GPU Readback Layout](frame_layout.md) for aspect ratios, checked row strides, and mapped-buffer unpacking.
+
 ## Choosing a Graphics API
 
 | API | Crate(s) | Platforms | When to use |

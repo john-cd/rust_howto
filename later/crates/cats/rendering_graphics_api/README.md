@@ -21,4 +21,16 @@ cargo check --package rendering_graphics_api --examples
 cargo test --package rendering_graphics_api
 ```
 
-Code examples correspond to chapters in `bk/src/categories/rendering_graphics_api` or related book sections.
+Code examples correspond to chapters in `later/src/categories/rendering_graphics-api` or related book sections.
+
+## Viewport and Readback Contracts
+
+The `frame_layout` example uses wgpu's alignment constant but does not request a GPU:
+
+```sh
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p rendering_graphics_api --features wgpu --example frame_layout
+```
+
+It tests checked RGBA8 row padding/unpacking, aspect-preserving viewports, and pointer
+mapping. See `later/src/categories/rendering_graphics-api/frame_layout.md`. The separate
+`offscreen_render` example performs real GPU render/map/pixel checks.

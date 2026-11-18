@@ -49,6 +49,12 @@ name = "vulkan"
 path = "examples/vulkan/main.rs"
 test = true
 
+[[example]]
+name = "frame_layout"
+path = "examples/frame_layout.rs"
+test = true
+required-features = ["wgpu"]
+
 [dependencies]
 # GL on Whatever: a set of bindings to run GL (Open GL, OpenGL ES, and WebGL) anywhere, and avoid target-specific code.
 glow = "0.18.0" # Cross-platform OpenGL, OpenGL ES, and WebGL bindings.

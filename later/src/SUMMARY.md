@@ -170,6 +170,7 @@
   - [Rendering engines](categories/rendering_engine/rendering_engines.md)
 
 - [Rendering - graphics APIs](categories/rendering_graphics-api/index.md)
+  - [Viewports and GPU Readback Layout](categories/rendering_graphics-api/frame_layout.md)
   - [Native Graphics APIs](categories/rendering_graphics-api/native_graphics_apis.md)
   - [GPU Abstraction Layers](categories/rendering_graphics-api/gpu_abstraction_layers.md)
   - [Vulkan](categories/rendering_graphics-api/vulkan.md)

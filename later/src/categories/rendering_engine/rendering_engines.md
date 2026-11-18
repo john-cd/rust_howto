@@ -34,7 +34,7 @@ On Windows, set `WGPU_BACKEND=dx12` or `WGPU_BACKEND=vulkan` in the shell to tes
 {{#include ../../../crates/cats/rendering_graphics_api/examples/offscreen_render.rs:example}}
 ```
 
-The 64-pixel RGBA row occupies 256 bytes, satisfying the texture-copy row-alignment requirement without padding. Other widths need a padded staging row and removal of that padding before image comparison. `Rgba8Unorm` gives linear byte values here; sRGB targets and antialiased edges require color-aware comparisons and tolerances. The checks deliberately sample pixels away from triangle edges.
+The 64-pixel RGBA row occupies 256 bytes, satisfying the texture-copy row-alignment requirement without padding. Other widths need a padded staging row and removal of that padding before image comparison; the [layout example](../rendering_graphics-api/frame_layout.md) tests 65-pixel rows, malformed buffers, and aspect-preserving viewports. `Rgba8Unorm` gives linear byte values here; sRGB targets and antialiased edges require color-aware comparisons and tolerances. The checks deliberately sample pixels away from triangle edges.
 
 The map callback is serviced by polling the device, with a ten-second timeout. CPU-visible bytes must not be read before mapping completes. A windowed engine additionally needs surface configuration, resize/minimize handling, device/surface-loss recovery, and an event loop. This offscreen result does not validate Bevy, `three-d`, or a window backend; those remain separate platform checks.
 
