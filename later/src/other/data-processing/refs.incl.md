@@ -18,3 +18,10 @@
 [p~csv]: https://john-cd.com/rust_howto/categories/encoding/csv.html
 [p~data-processing]: index.md
 [p~python]: ../../categories/development-tools_ffi/python.md
+
+[p~cloud]: ../cloud/index.md
+[p~data_processing]: index.md
+[p~development_tools]: ../written-in-rust/development_tools.md
+[p~parsing]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parsing/index.md
+[p~visualization]: ../../categories/visualization/index.md
+[p~web-programming]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming/index.md

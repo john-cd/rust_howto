@@ -40,7 +40,7 @@ Safetensors checkpoint to a temporary directory, constructs a fresh model, reloa
 its parameters, and checks prediction parity before removing the directory.
 `VarMap::load` updates variables already registered by the model architecture;
 a weights file alone does not describe the architecture or preprocessing contract.
-See the [VarMap API](https://docs.rs/candle-nn/0.11.1/candle_nn/struct.VarMap.html).
+See the [VarMap API](https://docs.rs/candle-nn/latest/candle_nn/var_map/struct.VarMap.html).
 
 No model download or GPU is required. Run the feature explicitly:
 

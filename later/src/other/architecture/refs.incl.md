@@ -21,13 +21,13 @@
 [ex~architecture~plugin-architecture]: common_architectures.md#plugin-architecture
 [ex~architecture~repository-pattern]: architectural_patterns.md#repository-pattern
 [ex~architecture~state-machine-pattern]: architectural_patterns.md#state-machine-pattern
-[p~actors]: ../../../src/categories/concurrency/_actors.md
+[p~actors]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/concurrency/index.md
 [p~apis]: ../../../src/categories/web-programming_http-client/apis.md
 [p~architecture]: index.md
-[p~asynchronous]: https://john-cd.com/rust_howto/categories/asynchronous/index.html
+[p~asynchronous]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/asynchronous/index.md
 [p~authentication]: ../../../src/categories/authentication/index.md
 [p~aws]: ../cloud/aws.md
-[p~concurrency]: https://john-cd.com/rust_howto/categories/concurrency/index.html
+[p~concurrency]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/concurrency/index.md
 [p~containerization]: ../../categories/virtualization/containerization.md
 [p~database]: ../../../src/categories/database/index.md
 [p~databases]: ../../../src/categories/database-implementations/databases.md

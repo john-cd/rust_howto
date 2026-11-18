@@ -55,7 +55,7 @@ Immediate-mode GUIs describe the interface as application state changes, while r
 
 ## Web Frameworks
 
-For browser-based user interfaces, see [Web Programming](https://john-cd.com/rust_howto/categories/web-programming/index.html) and [Web Programming: HTTP Server](https://john-cd.com/rust_howto/categories/web-programming_http-server/index.html).
+For browser-based user interfaces, see [Web Programming](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming/index.md) and [Web Programming: HTTP Server](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-server/index.md).
 
 ## GUI Components
 
@@ -65,7 +65,7 @@ For Dioxus internals, [Subsecond][subsecond~docs]↗ supplies hot-patching, [Gen
 
 ### 2D Renderers
 
-See [Graphics](https://john-cd.com/rust_howto/categories/graphics/index.html) and [Rendering](../rendering/index.md).
+See [Graphics](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md) and [Rendering](../rendering/index.md).
 
 For a minimal CPU-rendered desktop window, [`minifb`][c~minifb~docs]↗{{hi:minifb}} presents a pixel buffer directly. From `later/crates`, run it with `cargo run -p gui --example minifb_renderer --features minifb`.
 
@@ -108,14 +108,14 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 - Command Line Interface<!-- Cross-book topic: bk/src/categories/command-line-interface/index.md; not included in this preview. -->.
 - [Game Development](../game-development/index.md).
 - [Game Engines](../game-engines/index.md).
-- [Graphics](https://john-cd.com/rust_howto/categories/graphics/index.html).
-- [Internationalization](https://john-cd.com/rust_howto/categories/internationalization/index.html).
+- [Graphics](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md).
+- [Internationalization](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/internationalization/index.md).
 - [Multimedia](../multimedia/index.md).
 - [Rendering](../rendering/index.md).
-- [Template Engine](https://john-cd.com/rust_howto/categories/template-engine/index.html).
+- [Template Engine](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/template-engine/index.md).
 - [WASM](../wasm/index.md).
-- [Web Programming](https://john-cd.com/rust_howto/categories/web-programming/index.html).
-- [Web Programming: HTTP Server](https://john-cd.com/rust_howto/categories/web-programming_http-server/index.html).
+- [Web Programming](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming/index.md).
+- [Web Programming: HTTP Server](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-server/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

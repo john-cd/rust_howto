@@ -29,3 +29,11 @@
 [c~egui_plot~lib.rs~badge]: https://img.shields.io/badge/lib.rs-egui__plot-yellow
 [c~egui_plot~repo]: https://github.com/emilk/egui_plot
 [c~egui_plot~repo~badge]: https://img.shields.io/badge/egui__plot-steelblue?logo=github
+
+[c~leptos-chartistry~docs~badge]: https://img.shields.io/crates/v/leptos-chartistry
+[p~data-processing]: ../../other/data-processing/index.md
+[p~development_tools]: ../../other/written-in-rust/development_tools.md
+[p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
+[p~gui]: ../gui/index.md
+[p~multimedia_video]: ../multimedia_video/index.md
+[p~rendering]: ../rendering/index.md

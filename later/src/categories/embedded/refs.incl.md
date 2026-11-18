@@ -35,3 +35,8 @@
 [c~embassy-rp~docs]: https://docs.rs/embassy-rp/latest/embassy_rp/
 [embassy~repo]: https://github.com/embassy-rs/embassy
 [embassy~repo~badge]: https://img.shields.io/badge/embassy-steelblue?logo=github
+
+[p~async]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/asynchronous/async.md
+[p~hals]: hals.md
+[p~pacs]: pacs.md
+[p~rtos]: rtos.md

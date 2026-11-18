@@ -14,3 +14,11 @@
 [c~tobj~docs~badge]: https://img.shields.io/crates/v/tobj?label=tobj
 
 [p~svg-rendering]: https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html
+
+[p~2d_vector_graphics]: ../rendering/2d_vector_graphics.md
+[p~3d_renderers]: ../rendering/3d_renderers.md
+[p~gpu_abstraction_layers]: ../rendering_graphics-api/gpu_abstraction_layers.md
+[p~rendering]: ../rendering/index.md
+[p~rendering_engine]: ../rendering_engine/index.md
+[p~rendering_graphics-api]: ../rendering_graphics-api/index.md
+[p~text_rendering]: ../rendering/text_rendering.md

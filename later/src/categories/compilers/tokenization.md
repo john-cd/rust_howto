@@ -14,3 +14,5 @@ The example recognizes identifiers and an addition operator, skips spaces, and a
 
 - [[parsing | Parsing]] and [[parser-implementations | Parser Implementations]].
 - [[compilers | Compilers]].
+
+{{#include refs.incl.md}}

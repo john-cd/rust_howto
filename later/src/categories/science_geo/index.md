@@ -30,7 +30,6 @@ For polygon overlays, see the [GEOS example](geo.md#geos). It explains when a na
 - [[data-processing | Data Processing]].
 - [[visualization | Visualization]].
 - [[coordinate-systems | Coordinate Systems and Projections]].
-- [[environmental-science | Environmental Science]].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

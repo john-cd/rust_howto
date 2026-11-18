@@ -19,6 +19,20 @@ Reviewed November 17, 2026, for [#2350](https://github.com/john-cd/rust_howto/is
 
 The native CI evidence is [run 44236893654](https://github.com/john-cd/rust_howto/actions/runs/44236893654), revision `769cf9cbf2cacc22cc2ff4383b6fddf397dbbcc4`. Both job and individual native lint/test step conclusions were inspected; the workflow is advisory, so its overall green status alone would not be enough. [#2214](https://github.com/john-cd/rust_howto/issues/2214) retains the separate CI-ownership decisions.
 
+### ML Group Recheck
+
+The Windows review for [#2374](https://github.com/john-cd/rust_howto/issues/2374)
+checked the rendered Practical ML, Classical ML, and Deep Learning chapters
+together. The two commands below passed 25 tests across preprocessing, text
+features, classical algorithms, Candle CPU training and checkpoint reload, and
+the practical classification, forecasting, and ONNX model replacement recipes.
+Accelerator backends and catalog entries remain outside this result.
+
+```sh
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p science --features candle --example ml --example feature_pipeline --example text_features
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p other --features onnx --example machine_learning
+```
+
 ## Promote Narrow Recipes, Retain the Broader Category
 
 | Category | Tested, promotable subset | Remaining gap |

@@ -40,7 +40,7 @@ An interpreter executes source code or bytecode. A transpiler translates source 
 - [Development Tools: Cargo Plugins](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/index.md).
 - [[development-tools_debugging | Development Tools: Debugging]].
 - [[development-tools_procedural-macro-helpers | Development Tools: Procedural Macro Helpers]].
-- [Development Tools - Profiling](../../../../bk/src/categories/development-tools_profiling/index.md).
+- [Development Tools - Profiling](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools_profiling/index.md).
 - Development Tools - Testing<!-- Cross-book topic: bk/src/categories/development-tools_testing/index.md; not included in this preview. -->.
 - [[development-tools_ffi | Development Tools: FFI]] for bindings to compilers written in other languages.
 - [[interfacing_with_javascript | Interfacing with JavaScript]] for Rust tools that interface with JavaScript.

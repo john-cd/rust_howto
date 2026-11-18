@@ -19,17 +19,17 @@
 [ex~rendering_graphics-api~vulkan]: native_graphics_apis.md#vulkan
 [ex~rendering_graphics-api~opengl]: native_graphics_apis.md#opengl
 [ex~rendering_graphics-api~wgpu]: gpu_abstraction_layers.md#wgpu
-[p~apis]: ../../../src/categories/web-programming_http-client/apis.md
+[p~apis]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-client/apis.md
 [p~attributes]: ../../../src/language/attributes.md
 [p~crates]: ../../crate_selection/index.md
 [p~cross-platform]: ../../other/cross-platform/index.md
 [p~debugging]: ../../../src/categories/development-tools_debugging/debugging.md
 [p~fragment]: ../../other/cloud/_fragment.md
 [p~gpu]: ../../other/gpu/gpu.md
-[p~graphics]: https://john-cd.com/rust_howto/categories/graphics/index.html
+[p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
 [p~images]: https://john-cd.com/rust_howto/categories/multimedia_images/images.html
 [p~html]: ../../../src/categories/parser-implementations/html.md
-[p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
+[p~programming-languages]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parser-implementations/programming_languages.md
 [p~rendering]: ../rendering/index.md
 [p~shaders]: shaders.md
 [p~vulkan]: vulkan.md
@@ -50,3 +50,9 @@
 [c~spirv-reflect~docs]: https://docs.rs/spirv-reflect
 [c~spirv-reflect~docs~badge]: https://img.shields.io/crates/v/spirv-reflect?label=spirv-reflect
 [c~objc2-metal~docs~badge]: https://img.shields.io/crates/v/objc2-metal?label=objc2-metal
+
+[c~gl~crates.io]: https://docs.rs/gl/latest/gl/
+[c~gl~crates.io~badge]: https://img.shields.io/crates/v/gl
+[p~gpu_abstraction_layers]: gpu_abstraction_layers.md
+[p~mathematics]: https://john-cd.com/rust_howto/categories/mathematics/index.html
+[p~typecasts]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/encoding/typecasts.md

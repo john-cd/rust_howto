@@ -44,7 +44,7 @@ See [Viewports and GPU Readback Layout](frame_layout.md) for aspect ratios, chec
 | Window management and input | [`winit`][c~winit~docs]↗{{hi:winit}}, `raw-window-handle` | Window handles connect a window system to graphics APIs; `winit` also provides event handling. |
 | [Image loading and manipulation](https://john-cd.com/rust_howto/categories/multimedia_images/index.html) | [`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}} | Load and process image data for rendering. |
 
-- [Graphics](https://john-cd.com/rust_howto/categories/graphics/index.html).
+- [Graphics](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md).
 - [Rendering](../rendering/index.md).
 - [Rendering: Data Formats](../rendering_data-formats/index.md).
 

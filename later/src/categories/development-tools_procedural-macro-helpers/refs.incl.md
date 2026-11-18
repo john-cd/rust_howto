@@ -24,7 +24,7 @@
 [p~building]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/building.md
 [p~configuration]: ../config/configuration.md
 [p~crates]: ../../crate_selection/index.md
-[p~macros]: ../../../src/language/macros.md
+[p~macros]: https://john-cd.com/rust_howto/language/macros.html
 [p~main]: ../../language/entrypoint.md
 [p~streams]: https://john-cd.com/rust_howto/categories/asynchronous/streams.html
 [p~wasm]: # "../wasm/index.md"
@@ -34,3 +34,10 @@
 [watt~releases]: https://github.com/dtolnay/watt/releases
 [sccache~repo]: https://github.com/mozilla/sccache
 [cargo~timings~docs]: https://doc.rust-lang.org/cargo/reference/timings.html
+
+[p~compile_macros]: compile_macros.md
+[p~development-tools_procedural-macro-helpers]: index.md
+[p~macro_tools]: macro_tools.md
+[p~proc-macro~crate]: https://doc.rust-lang.org/proc_macro/
+[p~proc-macro~crate~badge]: https://img.shields.io/badge/proc__macro-Rust-orange
+[p~rust-patterns]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/rust-patterns/index.md

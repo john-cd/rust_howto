@@ -43,7 +43,7 @@ This API is macOS-only; initialize AppKit on the main thread and enable the corr
 - [API Bindings](../api-bindings/index.md) and [External FFI Bindings](../external-ffi-bindings/index.md).
 - [Development Tools: FFI](../development-tools_ffi/index.md).
 - [Objective-C](../development-tools_ffi/objc.md).
-- [Operating Systems](https://john-cd.com/rust_howto/categories/os/index.html).
+- [Operating Systems](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/os/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

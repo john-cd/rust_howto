@@ -32,3 +32,10 @@
 [c~bollard~docs~badge]: https://img.shields.io/crates/v/bollard?label=bollard
 [c~testcontainers~docs]: https://docs.rs/testcontainers
 [c~testcontainers~docs~badge]: https://img.shields.io/crates/v/testcontainers?label=testcontainers
+
+[p~containerization]: containerization.md
+[p~emulators]: ../emulators/index.md
+[p~os_linux-apis]: ../os_linux-apis/index.md
+[p~using_containers]: using_containers.md
+[p~virtualization]: index.md
+[p~wasm]: ../wasm/index.md

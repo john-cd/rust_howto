@@ -13,7 +13,7 @@ prints "unsupported platform" verifies portability of the package, not the nativ
 | --- | --- | --- |
 | Unix file descriptors and system calls | `rustix`, `nix`, `libc` | [Linux metadata](../../categories/os_linux-apis/linux.md) uses rustix's safe statx wrapper. Nix offers additional Unix abstractions; libc exposes raw ABI calls and requires manual safety reasoning. |
 | Linux services and asynchronous I/O | `zbus`, `io-uring`, `tokio-uring` | [Linux APIs](../../categories/os_linux-apis/linux.md) explains the service/runtime boundaries; these integrations are not tested by statx. |
-| Windows APIs | `windows`, `windows-sys` | The [published Windows category](https://john-cd.com/rust_howto/categories/os_windows-apis/index.html) owns Windows recipes; no duplicate is staged here. |
+| Windows APIs | `windows`, `windows-sys` | The [published Windows category](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/os_windows-apis/index.md) owns Windows recipes; no duplicate is staged here. |
 | macOS frameworks | `objc2`, `objc2-foundation`, `objc2-app-kit`, `core-foundation`, `security-framework` | [macOS APIs](../../categories/os_macos-apis/macos.md) introduces framework access. AppKit's main-thread requirements and Keychain entitlements are separate from Foundation queries. |
 | FreeBSD kernel state and events | `sysctl`, `nix`, `libc` | [FreeBSD APIs](../../categories/os_freebsd-apis/freebsd.md) covers a sysctl query; kqueue, jails, and Capsicum need their own runtime checks. |
 | Application change notifications | `notify`, `mio`, `polling` | Use filesystem notifications or readiness polling when those are the requirement; neither is a replacement for every platform API. |

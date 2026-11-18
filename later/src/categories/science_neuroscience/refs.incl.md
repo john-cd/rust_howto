@@ -9,3 +9,13 @@
 [c~edfplus~docs]: https://docs.rs/edfplus/latest/edfplus/
 [c~rustfft~docs]: https://docs.rs/rustfft/latest/rustfft/
 [dicom-rs~releases]: https://github.com/Enet4/dicom-rs/releases
+
+[c~rustfft~docs~badge]: https://img.shields.io/crates/v/rustfft
+[p~api-bindings]: ../api-bindings/index.md
+[p~data-processing]: ../../other/data-processing/index.md
+[p~development-tools_ffi]: ../development-tools_ffi/index.md
+[p~external-ffi-bindings]: ../external-ffi-bindings/index.md
+[p~mathematics]: https://john-cd.com/rust_howto/categories/mathematics/index.html
+[p~science]: ../science/index.md
+[p~simulation]: ../simulation/index.md
+[p~visualization]: ../visualization/index.md

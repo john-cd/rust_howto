@@ -17,3 +17,7 @@
 [c~ocl~docs]: https://docs.rs/ocl
 [ex~gpu~deep-learning]: ../../categories/science/deep_learning.md
 [rust-cuda~repo]: https://github.com/Rust-GPU/Rust-CUDA
+
+[p~OpenCL]: gpu.md#opencl3
+[p~rendering_graphics-api]: ../../categories/rendering_graphics-api/index.md
+[p~shaders]: ../../categories/rendering_graphics-api/shaders.md

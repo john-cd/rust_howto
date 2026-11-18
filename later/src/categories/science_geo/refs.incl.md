@@ -5,7 +5,7 @@
 [ex~science_geo~haversine]: geo.md#haversine
 [ex~science_geo~us-states]: geo.md#us-states
 
-[p~rate-limited-api]: https://john-cd.com/rust_howto/categories/web-programming_http-client/apis.html#handle-a-rate-limited-api
+[p~rate-limited-api]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-client/apis.md#handle-a-rate-limited-api
 
 [c~geo-types~docs]: https://docs.rs/geo-types
 [c~geojson~docs]: https://docs.rs/geojson
@@ -14,3 +14,7 @@
 [c~rstar~docs]: https://docs.rs/rstar
 [c~proj~docs]: https://docs.rs/proj
 [c~shapefile~docs]: https://docs.rs/shapefile
+
+[p~coordinate-systems]: geo.md
+[p~data-processing]: ../../other/data-processing/index.md
+[p~visualization]: ../visualization/index.md
