@@ -14,7 +14,16 @@ Widgets represent controls such as buttons and labels. Signals deliver user even
 
 [![gtk4~website][c~gtk4~website~badge]][c~gtk4~website] {{#badges gtk4}} {{hi:Gnome}} {{hi:Gtk}} {{hi:Gtk-rs}} {{hi:GUI}} {{#categories api-bindings="API bindings",gui=GUI}}
 
-Use `gtk4` when you want direct access to GTK widgets and signals. This example builds a small interactive counter window; consult the GTK API documentation alongside the gtk-rs bindings.
+Use `gtk4` when you want direct access to GTK widgets and signals. Run the
+interactive counter from the repository root:
+
+```console
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p gui --features gtk --example gtk -- gtk4
+```
+
+The outer command selects the example with Clap. Give GTK a separate argument
+list containing only the application name so GApplication does not interpret
+`gtk4` as a file to open.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/gtk/gtk4.rs:example}}
@@ -34,7 +43,8 @@ For a larger custom widget, define the hierarchy in a GTK Builder `.ui` XML file
 
 [![relm4~website][c~relm4~website~badge]][c~relm4~website] {{#badges relm4}} {{hi:Elm}} {{hi:Gtk4}} {{hi:GUI}} {{#categories gui=GUI}}
 
-[`relm4`][c~relm4~docs] is an Elm-inspired component framework built on gtk-rs. Its model, messages, and update function help organize stateful GTK applications. Run the counter example from `later/crates` with `cargo run -p gui --example gtk --features gtk -- relm4`; it requires GTK 4 development libraries and a display.
+[`relm4`][c~relm4~docs] is an Elm-inspired component framework built on gtk-rs. Its model, messages, and update function help organize stateful GTK applications. Run it with the same command and replace the final `gtk4` subcommand with
+`relm4`. Here `with_args` passes the application name through Relm4 to GTK.
 
 ```rust,editable
 {{#include ../../../crates/cats/gui/examples/gtk/relm4.rs:example}}
@@ -48,9 +58,9 @@ For a larger custom widget, define the hierarchy in a GTK Builder `.ui` XML file
 
 ## Related Topics {#related-topics .skip}
 
-- Cross-platform GUI development.
-- Native desktop toolkits.
-- Rust bindings for C libraries.
+- [GUI toolkits](index.md).
+- [Window creation](window_creation.md).
+- [API bindings](../api-bindings/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

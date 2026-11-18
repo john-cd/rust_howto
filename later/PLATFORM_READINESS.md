@@ -119,7 +119,7 @@ fields or reject the call.
 
 ## Not Ready or Already Published
 
-- GTK/Relm4: `--features gtk --example gtk` compiles on Windows only because its actual bodies and dependencies are excluded there. This is not GTK validation. The remaining native SDK/toolkit work is [#2359](https://github.com/john-cd/rust_howto/issues/2359).
+- [GTK/Relm4](src/categories/gui/gtk.md): Linux GTK 4.18.6 under Xvfb passed the GTK button assertions and Relm4 model checks. Both corrected launchers opened, resized to 400 × 300, and closed cleanly in an isolated build using the staged sources and the workspace's direct GTK, Relm4, and Clap versions. Accessibility was disabled for the virtual display run. [#2359](https://github.com/john-cd/rust_howto/issues/2359) retains the accessibility and other backend checks.
 - [No Allocation](https://john-cd.com/rust_howto/categories/no-std/no_alloc.html): the recipes and package are already published in `bk`. The published example passed its test and `--no-default-features` check. The duplicate future preview was subsequently removed in [#2361](https://github.com/john-cd/rust_howto/issues/2361); links now target the published chapter.
 - Physical embedded/robotics, drones/UAVs, MIDI-device I/O, screen-reader behavior, and untested GUI/engine backends remain excluded from broad readiness claims. Their existing or new issues name the required host/device evidence.
 

@@ -98,7 +98,8 @@ impl CounterModel {
 
 /// Runs the application.
 fn main() {
-    let app = RelmApp::new("relm4.example.counter");
+    // Keep Clap's subcommand out of GApplication's file arguments.
+    let app = RelmApp::new("relm4.example.counter").with_args(vec!["relm4-counter".into()]);
     app.run::<CounterModel>(0);
 }
 // ANCHOR_END: example

@@ -23,7 +23,8 @@ fn main() {
 
     app.connect_activate(build_ui);
 
-    app.run();
+    // Clap has consumed the subcommand. GApplication only needs argv[0].
+    app.run_with_args(&["gtk4-counter"]);
 }
 
 /// Builds the window of the application.
