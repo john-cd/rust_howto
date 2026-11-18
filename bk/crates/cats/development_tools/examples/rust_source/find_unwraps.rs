@@ -20,7 +20,7 @@ struct Finding {
     line: usize,
 }
 
-/// Data for unwrap finder operations, including findings.
+/// Syntax visitor accumulating method-name matches and their source line numbers.
 #[derive(Default)]
 struct UnwrapFinder {
     /// Calls to `unwrap` and `expect` found in the parsed source.
@@ -28,7 +28,9 @@ struct UnwrapFinder {
 }
 
 impl<'ast> Visit<'ast> for UnwrapFinder {
-    /// Handles the visit expr method call behavior for this component.
+    /// Records unwrap/expect method names, then visits receiver and arguments recursively.
+    ///
+    /// This is a syntactic match; it does not resolve which trait or type owns the method.
     fn visit_expr_method_call(&mut self, call: &'ast syn::ExprMethodCall) {
         let method = call.method.to_string();
         if method == "unwrap" || method == "expect" {

@@ -26,7 +26,7 @@ struct FileCoverage {
 }
 
 impl FileCoverage {
-    /// Handles the percent behavior for this component.
+    /// Computes hit/found as a percentage, treating no instrumented lines as fully covered.
     fn percent(&self) -> f64 {
         if self.found == 0 {
             100.0

@@ -15,7 +15,7 @@
 use pest::Parser;
 use pest_derive::Parser;
 
-/// Data carried by markdown link parser operations.
+/// Pest parser generated from the Markdown link-candidate grammar.
 #[derive(Parser)]
 #[grammar = "examples/pest_markdown/markdown_links.pest"]
 struct MarkdownLinkParser;

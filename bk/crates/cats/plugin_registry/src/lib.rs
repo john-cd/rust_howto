@@ -12,7 +12,7 @@ pub struct Command {
 
 inventory::collect!(Command);
 
-/// Handles the help behavior for this component.
+/// Returns the help text for the registry's built-in help command.
 fn help() -> &'static str {
     "help text"
 }

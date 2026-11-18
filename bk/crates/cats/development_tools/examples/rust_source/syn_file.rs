@@ -42,7 +42,7 @@ impl<'ast> Visit<'ast> for ItemCounter {
         syn::visit::visit_impl_item_fn(self, node);
     }
 
-    /// Handles the visit item struct behavior for this component.
+    /// Counts the struct declaration and traverses nested syntax using the default visitor.
     fn visit_item_struct(&mut self, node: &'ast syn::ItemStruct) {
         self.structs += 1;
         syn::visit::visit_item_struct(self, node);

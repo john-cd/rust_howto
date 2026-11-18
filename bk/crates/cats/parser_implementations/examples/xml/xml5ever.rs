@@ -40,12 +40,12 @@ struct NameRef<'a>(
 );
 
 impl ElemName for NameRef<'_> {
-    /// Handles the ns behavior for this component.
+    /// Borrows the namespace URI from the qualified element name.
     fn ns(&self) -> &Namespace {
         &self.0.ns
     }
 
-    /// Handles the local name behavior for this component.
+    /// Borrows the element name without its namespace or prefix.
     fn local_name(&self) -> &LocalName {
         &self.0.local
     }
@@ -251,7 +251,9 @@ impl TreeSink for XmlTree {
         })
     }
 
-    /// Handles the append behavior for this component.
+    /// Appends a child node or coalesces incoming text with the final text sibling.
+    ///
+    /// New text nodes receive a weak parent link so child ownership does not form an Rc cycle.
     fn append(&self, parent: &Self::Handle, child: NodeOrText<Self::Handle>) {
         match child {
             AppendNode(child) => append_child(parent, child),
@@ -323,7 +325,7 @@ impl TreeSink for XmlTree {
         }
     }
 
-    /// Handles the same node behavior for this component.
+    /// Compares allocation identity rather than structural equality of XML contents.
     fn same_node(&self, first: &Self::Handle, second: &Self::Handle) -> bool {
         Rc::ptr_eq(first, second)
     }
@@ -399,7 +401,9 @@ impl TreeSink for XmlTree {
         }
     }
 
-    /// Handles the reparent children behavior for this component.
+    /// Drains children in order and appends them to a new parent, updating parent links.
+    ///
+    /// Collecting before appending releases the source RefCell borrow before tree mutation.
     fn reparent_children(&self, node: &Self::Handle, new_parent: &Self::Handle) {
         let Some(node_children) = children(node) else {
             return;
