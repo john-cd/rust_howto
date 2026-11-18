@@ -12,7 +12,7 @@ struct AppState {
     greeting: &'static str,
 }
 
-/// Handles the bad behavior for this component.
+/// Deliberately places a body-consuming extractor before another extractor to trigger a diagnostic.
 #[debug_handler]
 async fn bad(body: String, State(state): State<AppState>) -> String {
     format!("{body}{}", state.greeting)
