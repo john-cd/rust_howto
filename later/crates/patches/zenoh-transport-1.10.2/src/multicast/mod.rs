@@ -105,6 +105,7 @@ impl TransportMulticast {
     /// # Errors
     ///
     /// Returns an error if the multicast transport has already been closed.
+    #[cfg(feature = "shared-memory")]
     #[inline(always)]
     pub fn is_shm(&self) -> ZResult<bool> {
         let transport = self.get_transport()?;
@@ -185,6 +186,7 @@ impl TransportMulticast {
     /// # Errors
     ///
     /// Returns an error if the multicast transport has already been closed.
+    #[cfg(feature = "stats")]
     pub fn get_stats(&self) -> ZResult<zenoh_stats::TransportStats> {
         Ok(self.get_transport()?.stats.clone())
     }
