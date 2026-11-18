@@ -39,7 +39,7 @@ The [`cortex-m`][c~cortex-m~docs]↗ crate describes Cortex-M core peripherals. 
 - [Hardware Abstraction Layers](hals.md) usually build on a PAC and provide higher-level peripheral APIs.
 - [Sensors](sensors.md) are normally accessed through a HAL bus implementation and a device driver.
 - [Flash programming](flash.md) uses device-specific memory maps and programming algorithms.
-- Bare-metal and [no-std development](../no-std/index.md) provide the surrounding runtime context.
+- Bare-metal and [no-std development](https://john-cd.com/rust_howto/categories/no-std/no_std.html) provide the surrounding runtime context.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

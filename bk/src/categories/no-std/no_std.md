@@ -6,6 +6,12 @@
 
 [`#![no_std]`][rust~no_std~attribute] prevents a crate from automatically linking Rust's standard library. The crate uses [`core`][c~core~docs], which provides primitive types, `Option`, `Result`, iterators, atomics, and formatting. `no_std` does not by itself prohibit heap allocation: a program can also use [`alloc`][c~alloc~docs] when its final binary supplies a global allocator.
 
+| Layer | What it provides |
+| --- | --- |
+| [`core`][c~core~docs] | Primitive types, iterators, formatting, and atomic operations where the target supports them. |
+| [`alloc`][c~alloc~docs] | Heap-backed types such as `Vec`, `String`, and `Box`. The final program supplies the allocator. |
+| [`std`][c~std~docs] | Higher-level APIs such as files and threads, where the target supports them. |
+
 ## Write a library for both `std` and `no_std`
 
 A library can enable `no_std` unless its `std` Cargo feature is selected. Dependencies that enable `std` by default should disable those defaults and re-enable the dependency's `std` feature from your crate's feature:
@@ -52,7 +58,9 @@ A consumer can select the core-only library with `no_std = { path = "../no_std",
 
 ## Related Topics {#related-topics .skip}
 
-- [No Allocation](no_alloc.md).
+- [Bare-metal Startup and Allocation](bare_metal.md) for firmware binaries.
+- [No Allocation](no_alloc.md) for fixed-capacity storage and serialization.
+- [Memory Usage Analysis](../development-tools_profiling/memory_usage_analysis.md).
 
 - [Dependencies](../../code-organization/dependencies.md).
 

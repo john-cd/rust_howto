@@ -128,9 +128,6 @@
 
 - [Native OS APIs and Process Boundaries](other/native-os/index.md)
 
-- [No `std`](categories/no-std/index.md)
-  - [Bare-metal Startup and Allocation](categories/no-std/no_std.md)
-
 - [Operating systems - FreeBSD](categories/os_freebsd-apis/index.md)
   - [FreeBSD](categories/os_freebsd-apis/freebsd.md)
 
