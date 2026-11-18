@@ -6,6 +6,8 @@
 mod humansize_example;
 /// Formats an integer with the `itoa` crate.
 mod itoa;
+/// Displays signed amounts stored in minor currency units.
+mod minor_units;
 /// Converts floating-point values to decimal strings with the `ryu` crate.
 mod ryu;
 /// Demonstrates standard Rust format syntax and locale-aware integer grouping.
@@ -16,6 +18,7 @@ fn main() {
     let mut command = clap::Command::new("examples");
     command = command.subcommand(clap::Command::new("humansize"));
     command = command.subcommand(clap::Command::new("itoa"));
+    command = command.subcommand(clap::Command::new("minor-units"));
     command = command.subcommand(clap::Command::new("ryu"));
     command = command.subcommand(clap::Command::new("standard-and-localized"));
     let matches = command
@@ -28,6 +31,9 @@ fn main() {
         }
         Some(("itoa", _)) => {
             itoa::run();
+        }
+        Some(("minor-units", _)) => {
+            minor_units::run();
         }
         Some(("ryu", _)) => {
             ryu::run();

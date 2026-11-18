@@ -89,7 +89,7 @@ See [Number Formatting](../value-formatting/number_formatting.md) for precision,
 - [[rust_search_engines | Rust Search Engines]].
 - [[template_engine | Template Engine]].
 - [[text_layout | Text Layout]].
-- [[value_formatting | Value Formatting]].
+- [Value Formatting](../value-formatting/index.md).
 
 - [Regex (Regular Expressions)](../text-processing/regex.md).
 

@@ -13,6 +13,7 @@ From `bk/crates`, run the examples with the command for the output you need:
 ```console
 cargo run --locked -p value_formatting --example number_formatting -- standard-and-localized
 cargo run --locked -p value_formatting --example number_formatting -- humansize
+cargo run --locked -p value_formatting --example number_formatting -- minor-units
 cargo run --locked -p value_formatting --example number_formatting -- itoa
 cargo run --locked -p value_formatting --example number_formatting -- ryu
 ```
@@ -23,6 +24,16 @@ This test-backed example covers alignment, precision, scientific notation, hexad
 
 ```rust,ignore,noplayground
 {{#include ../../../crates/cats/value_formatting/examples/number_formatting/standard_and_localized.rs:example}}
+```
+
+## Display Money Stored in Minor Units {#minor-units}
+
+Store an amount as an integer when the currency and scale are known. US dollars use 100 cents per dollar. Keep the currency with the amount and use the numeric value for calculations. Apply the domain's rounding rule when converting to minor units.
+
+Separate the sign before splitting the magnitude into whole and fractional parts. `unsigned_abs` also handles `i64::MIN`. The example uses a period and two fractional digits. For localized currency output, use a formatter that knows the locale and currency.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/value_formatting/examples/number_formatting/minor_units.rs:example}}
 ```
 
 ## Format a Byte Count for Display with `humansize` {#humansize}
@@ -57,6 +68,8 @@ Fast floating point to string conversion.
 
 ## Related Topics {#related-topics .skip}
 
+- [Value Formatting](index.md).
+- [Additional Numeric Types](../mathematics/additional_numeric_types.md) for decimal arithmetic.
 - [Strings](../data-structures/strings.md).
 
 {{#include refs.incl.md}}

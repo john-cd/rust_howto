@@ -59,7 +59,7 @@ The example below uses inline English and French resources, so it runs without s
 - [Internationalization](../internationalization/index.md).
 - [Localize API Errors](../web-programming_http-server/i18n.md).
 - [Template Engines](../template-engine/index.md).
-- [Value Formatting](../value-formatting/number_formatting.md).
+- [Value Formatting](../value-formatting/index.md).
 - [Web Programming](../web-programming/index.md).
 
 {{#include refs.incl.md}}

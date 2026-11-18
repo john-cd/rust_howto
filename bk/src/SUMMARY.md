@@ -347,7 +347,8 @@
 - [Localization](categories/localization/index.md)
   - [Localization](categories/localization/localization.md)
 
-- [Number Formatting](categories/value-formatting/number_formatting.md)
+- [Value Formatting](categories/value-formatting/index.md)
+  - [Number Formatting](categories/value-formatting/number_formatting.md)
 
 - [Web Programming](categories/web-programming/index.md)
   - [Extracting Links](categories/web-programming/scraping.md)

@@ -188,10 +188,6 @@
   - [Simulation](categories/simulation/simulation.md)
   - [Physics Engines](categories/simulation/physics_engines.md)
 
-- [Value formatting](categories/value-formatting/index.md)
-  - [Display Money Stored in Minor Units](categories/value-formatting/minor_units.md)
-  - [Identifier Case Conversion](categories/value-formatting/case_conversion.md)
-
 - [Video](categories/multimedia_video/index.md)
   - [Video](categories/multimedia_video/video.md)
 

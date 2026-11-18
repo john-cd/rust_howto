@@ -8,7 +8,7 @@ Internationalization (i18n) prepares software for different languages and region
 
 ## Format Numbers and Dates by Locale {#internationalization}
 
-ICU4X's `DecimalFormatter` formats basic decimal numbers using locale-specific digits and grouping separators. The example formats the same value and date for US English and German. It formats a plain decimal, not a currency or measurement amount; those need domain-specific formatting rules. See [Value Formatting](../value-formatting/number_formatting.md) for related numeric output options.
+ICU4X's `DecimalFormatter` formats basic decimal numbers using locale-specific digits and grouping separators. The example formats the same value and date for US English and German. It formats a plain decimal, not a currency or measurement amount; those need domain-specific formatting rules. See [Value Formatting](../value-formatting/index.md) for related numeric output options.
 
 ```rust,editable
 {{#include ../../../crates/cats/internationalization/examples/internationalization/icu_formatting.rs:example}}
@@ -35,7 +35,7 @@ Test fallback locales, plural categories, long translated strings, dates around 
 ## Related Topics {#related-topics .skip}
 
 - [Localization](../localization/index.md).
-- [Value Formatting](../value-formatting/number_formatting.md).
+- [Value Formatting](../value-formatting/index.md).
 - [Date and Time](../date-and-time/index.md).
 - [Unicode Text](../text-processing/unicode.md).
 - [Localize API Errors](../web-programming_http-server/i18n.md).
