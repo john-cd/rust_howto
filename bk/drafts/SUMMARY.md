@@ -14,7 +14,3 @@
 
 - [Operating systems - Windows](categories/os_windows-apis/index.md)
   - [Windows](categories/os_windows-apis/windows.md)
-
-- [Text Editors](categories/text-editors/index.md)
-  - [IDEs](categories/text-editors/ides.md)
-  - [Language Server Protocol](categories/text-editors/language_server_protocol.md)

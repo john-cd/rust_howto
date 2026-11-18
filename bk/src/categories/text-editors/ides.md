@@ -2,6 +2,10 @@
 
 # IDEs
 
+Most Rust editors use [`rust-analyzer`][rust-analyzer~website]↗, a language server that provides code completion, navigation, refactoring, and diagnostics through the Language Server Protocol. RustRover instead has a Rust analysis engine maintained by JetBrains. VS Code, RustRover, Zed, Helix, Neovim, and Emacs all support Rust; their setup and debugging workflows differ.
+
+Install the Rust toolchain with [`rustup`][rustup~website]↗ and open the directory containing the relevant `Cargo.toml`. See [Development Environment Setup](../../appendices/contributing/development_environment_setup.md) for more on the toolchain and editor setup.
+
 {{#include ides.incl.md}}
 
 ## Write Rust Code with VS Code {#vs-code}
@@ -62,10 +66,10 @@
 
 ## Related Topics {#related-topics .skip}
 
-- [Development Tools - Debugging](../../../src/categories/development-tools_debugging/index.md).
-- [[development_environment_setup | Development Environment Setup]].
-- [[syntax_highlighting | Syntax Highlighting]].
-- [[cargo | Cargo]].
+- [Debugging and Observability](../development-tools_debugging/index.md).
+- [Development Environment Setup](../../appendices/contributing/development_environment_setup.md).
+- [Syntax Highlighting](../text-processing/syntax_highlighting.md).
+- [Cargo](../development-tools/cargo/cargo.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

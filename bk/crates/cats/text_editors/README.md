@@ -17,4 +17,4 @@ cargo check --package text_editors --examples
 cargo test --package text_editors
 ```
 
-Code examples correspond to chapters in `bk/src/categories/text_editors` or related book sections.
+Code examples correspond to chapters in `bk/src/categories/text-editors` or related book sections.
