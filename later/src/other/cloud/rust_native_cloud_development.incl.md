@@ -2,4 +2,4 @@
 
 | Recipe | Links |
 | --- | --- |
-| [Evaluate Rust-native cloud platforms][ex~cloud~shuttle] | [Shuttle shutdown][shuttle~shutdown] |
+| [Choose a deployment model][ex~cloud~shuttle] | [Using Containers](../../categories/virtualization/using_containers.md) |

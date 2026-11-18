@@ -87,6 +87,16 @@ Build the guest with `rustup target add wasm32-wasip2` and `cargo build --releas
 
 The tests cover a successful call, the typed `err` results, a component that does not match the world, a core module passed where a component is required, and a fuel budget that traps the guest.
 
+From the repository root, run the host after installing the guest target:
+
+```console
+rustup target add wasm32-wasip2
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p wasm --example wasm_standalone_runtimes -- wasmtime_component
+```
+
+Look for `Hello, Ferris!` in the output. A message asking you to install the
+target indicates that the guest did not execute.
+
 ## Related Topics {#related-topics .skip}
 
 - [WebAssembly overview](index.md) and [development tools](wasm_development.md).

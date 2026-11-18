@@ -6,17 +6,20 @@
 
 Rust-native cloud development uses Rust APIs, build tools, or WebAssembly components to describe application behavior and integrate it with a hosting environment. A Rust service can also run on an ordinary VM or container platform; a Rust-first SDK does not remove the need to manage configuration, credentials, resource limits, and deployment lifecycle.
 
-## Evaluate a Rust-first Platform {#shuttle}
+## Choose a Deployment Model {#shuttle}
 
-Shuttle historically combined Rust framework integrations with resource provisioning. Its [official shutdown notice][shuttle~shutdown] says hosted operations are ceasing: the Community migration deadline was the beginning of 2026 and Pro projects stopped on January 16, 2026. The old free-tier claim and deployment recommendation are therefore obsolete. Do not choose the historical hosted service for a new application.
-
-The retained source illustrates how the former Shuttle runtime wrapped an Axum router. It is a historical integration example, not a currently verified deployment recipe. Its runtime test is ignored because it needs the provider runtime; the ordinary Axum handler should be tested independently when migrating an application.
-
-```rust,ignore
-{{#include ../../../crates/other/examples/cloud/shuttle.rs:example}}
-```
+| Workload | Starting point | Check before choosing |
+| --- | --- | --- |
+| Long-running HTTP service | Native binary in a container or VM | Port binding, health checks, shutdown, and image platform. |
+| Event handler | Provider function runtime | Event schema, timeout, retries, and permissions. |
+| WebAssembly component | Host that implements the required WIT interfaces | Host capabilities, interface versions, and deployment limits. |
+| Kubernetes controller | A local cluster and the Kubernetes API | CRD compatibility, service-account permissions, and cleanup. |
 
 Keep business logic and request handlers independent of a provider entry point. For a new service, start with the [Axum chapter][cloud~axum], then package it for a supported container or serverless target. Select that target from its current runtime, region, persistence, pricing, and operational requirements.
+
+For a local container workflow, follow [Using Containers](../../categories/virtualization/using_containers.md).
+For historical context, Shuttle paired Axum integration with managed hosting.
+See its [shutdown notice][shuttle~shutdown] when maintaining an existing project.
 
 ## Run WebAssembly in the Cloud
 
