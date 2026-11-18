@@ -73,7 +73,10 @@ impl<T: Clone> Named for Wrapper<T> {
 fn macro_tools_example() -> Result<()> {
     let input = quote! {
         /// Sample generic type whose bounds must survive derive expansion.
-        struct Wrapper<T: Clone>(T);
+        struct Wrapper<T: Clone>(
+            /// Payload whose Clone bound must remain on the generated implementation.
+            T,
+        );
     };
     let expanded = expand_to_string(derive_named(input)?)?;
     print!("{expanded}");
