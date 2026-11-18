@@ -14,22 +14,27 @@
 
 Choose client-side rendering (CSR) when the front end can be served as static files or when it talks to an existing API. The browser loads the JavaScript bindings and WebAssembly module before Leptos mounts the interface, so the initial view depends on the client loading those files.
 
-A CSR project uses the `csr` feature of `leptos` and the `wasm32-unknown-unknown` target. The [Leptos getting started guide][leptos~getting-started~book]↗ and [Trunk][leptos~trunk~website]↗ cover project setup. From a project directory containing `index.html`, install the tools and target, then serve or build the app:
+A CSR project uses the `csr` feature of `leptos` and the `wasm32-unknown-unknown` target. The [Leptos getting started guide][leptos~getting-started~book]↗ and [Trunk][leptos~trunk~website]↗ cover project setup.
 
 ```sh
 cargo install --locked trunk
 rustup target add wasm32-unknown-unknown
-cargo add leptos --features csr
-trunk serve --open
-trunk build --release
+cargo new --bin leptos-counter
+cd leptos-counter
+cargo add leptos@0.8 --features csr
 ```
 
-`trunk serve` provides a local development server. `trunk build --release` writes the deployable site to `dist/`, which can be hosted as static files. The Leptos guide describes the tradeoffs and [CSR deployment][leptos~csr-deployment~book]↗.
+Save the [minimal Trunk HTML from the Yew chapter](yew.md#start-a-browser-application)
+as `index.html` and change the page title to `Leptos counter`. Save the counter
+below as `src/main.rs`, then run
+`trunk serve --open`. The browser starts at `Count: 0` with an `even` label.
+Click **+** to see `Count: 1` and `odd`, then click **−** to restore the original values.
+Run `trunk build --release` to write the deployable site to `dist/`.
 
 The example uses a signal for the counter state and `view!` to declare the interface. Event handlers update the signal; reactive expressions read it to update the displayed count and whether it is even or odd.
 
 ```rust,editable
-{{#include ../../../../bk/crates/cats/web_programming_http_server/examples/leptos.rs:example}}
+{{#include examples/leptos_counter.rs:example}}
 ```
 
 ### Server-side rendering and hydration {#server-side-rendering}

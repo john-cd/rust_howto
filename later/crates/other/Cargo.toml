@@ -163,6 +163,8 @@ prost = "0.14.5" # Protobuf message derive.
 rcgen = "0.14.10" # Test certificates for the TLS trust store example.
 # Embedded scripting for Rust
 rhai = "1.27.0"
+# Chooses the provider for the Kubernetes client's Rustls connector.
+rustls = { version = "0.23.46", default-features = false, features = ["aws_lc_rs"] }
 # Generate JSON Schemas from Rust code
 schemars = "1.2.3"
 # A generic serialization/deserialization framework

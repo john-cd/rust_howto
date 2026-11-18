@@ -12,7 +12,7 @@
 
 ## Start a browser application
 
-[Trunk][trunk~website]↗{{hi:Trunk}} builds the Rust WebAssembly target, bundles the generated JavaScript and WebAssembly with other assets, and serves the result during development. Create a binary crate, add Yew's client-side rendering feature, install Trunk and the browser target, and serve the project:
+[Trunk][trunk~website]↗{{hi:Trunk}} builds the Rust WebAssembly target, bundles the generated JavaScript and WebAssembly with other assets, and serves the result during development. Create a binary crate and add Yew's client-side rendering feature.
 
 ```bash
 cargo new --bin counter
@@ -20,7 +20,6 @@ cd counter
 cargo add yew@0.23 --features csr
 cargo install --locked trunk
 rustup target add wasm32-unknown-unknown
-trunk serve --open
 ```
 
 Save this minimal `index.html` next to `Cargo.toml`. Trunk uses its `data-trunk` link to find and build the Rust application.
@@ -38,7 +37,7 @@ Save this minimal `index.html` next to `Cargo.toml`. Trunk uses its `data-trunk`
 </html>
 ```
 
-The counter below is the complete component example. On `wasm32`, its `main` function mounts the app in the browser. The native test uses the server renderer to check its initial HTML.
+Save the counter below as `src/main.rs`, then run `trunk serve --open` from the project directory. The browser shows `Counter: 0`. Click **+** and **−** to change it. At 6 the counter also shows “Counter is greater than 5!” The native server-rendering test checks only the initial HTML.
 
 ```rust,editable
 {{#include ../../../crates/cats/wasm/examples/yew/yew.rs:example}}
