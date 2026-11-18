@@ -14,7 +14,7 @@ Sensor integration often requires specialized crates that interact with specific
 
 ## Computer Vision and Geometry
 
-Use [`opencv`][c~opencv~docs] for bindings to native OpenCV algorithms, or [`image`][c~image~docs] and [`imageproc`][c~imageproc~docs] for image buffers and processing in Rust. [`kornia-rs`][kornia-rs~repo] provides computer-vision building blocks; [`sophus-rs`][sophus-rs~repo] covers geometry for vision and robotics. See [Computer Vision](../computer-vision/index.md) for algorithms and native-library prerequisites.
+Use [`opencv`][c~opencv~docs] for bindings to native OpenCV algorithms, or [`image`][c~image~docs] and [`imageproc`][c~imageproc~docs] for image buffers and processing in Rust. [`kornia-rs`][kornia-rs~repo] provides computer-vision building blocks; [`sophus-rs`][sophus-rs~repo] covers geometry for vision and robotics. See [Computer Vision](https://john-cd.com/rust_howto/categories/computer-vision/index.html) for algorithms and native-library prerequisites.
 
 ## Find Neighbors in a Point Cloud
 

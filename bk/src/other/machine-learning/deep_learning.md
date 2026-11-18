@@ -79,7 +79,7 @@ platform checks; CPU success establishes none of those backends.
 
 ## Related Topics {#related-topics .skip}
 
-- [Computer Vision](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/computer-vision/index.md).
+- [Computer Vision](../../categories/computer-vision/index.md).
 - [Linear Algebra](../../categories/mathematics/linear_algebra.md).
 - [Machine Learning][p~classical-machine-learning].
 - [Artificial Intelligence for Robotics][p~robotics-ai].

@@ -383,6 +383,9 @@
 - [Video](categories/multimedia_video/index.md)
   - [Video](categories/multimedia_video/video.md)
 
+- [Computer Vision](categories/computer-vision/index.md)
+  - [OpenCV](categories/computer-vision/opencv.md)
+
 - [Images](categories/multimedia_images/index.md)
   - [Image Processing](categories/multimedia_images/images.md)
   - [Color Handling](categories/multimedia_images/color_handling.md)

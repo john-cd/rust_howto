@@ -8,10 +8,11 @@ Computer-vision applications turn images or video frames into measurements, dete
 
 | Need | Common starting point | Considerations |
 | --- | --- | --- |
-| Decode, resize, crop, or filter image buffers | [`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}}, [`fast-image-resize`][c~fast_image_resize~docs]↗{{hi:fast-image-resize}} | Check pixel type, color channels, and image dimensions at each stage. See [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md). |
+| Decode, resize, crop, or filter image buffers | [`image`][c~image~docs]↗{{hi:image}}, [`imageproc`][c~imageproc~docs]↗{{hi:imageproc}}, [`fast-image-resize`][c~fast_image_resize~docs]↗{{hi:fast-image-resize}} | Check pixel type, color channels, and image dimensions at each stage. See [Images](../multimedia_images/index.md). |
 | Use a broad set of established algorithms or interoperate with existing CV systems | [`opencv`][c~opencv~docs]↗{{hi:opencv}} | The Rust crate binds the native OpenCV library; install a compatible SDK and linker toolchain. See the examples below. |
-| Run an existing trained model | [`ort`][c~ort~docs]↗{{hi:ort}}, [`tract`][c~tract~docs]↗{{hi:tract}}, or [`tch`][c~tch~docs]↗{{hi:tch}} | Match the model format, operators, device backend, and preprocessing pipeline. See [Machine Learning in Practice](https://john-cd.com/rust_howto/other/machine-learning/index.html). |
+| Run an existing trained model | [`ort`][c~ort~docs]↗{{hi:ort}}, [`tract`][c~tract~docs]↗{{hi:tract}}, or [`tch`][c~tch~docs]↗{{hi:tch}} | Match the model format, operators, device backend, and preprocessing pipeline. See [Machine Learning in Practice](../../other/machine-learning/index.md). |
 | Work with geometry and numerical arrays | [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}} or [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} | Keep coordinate conventions and units explicit when moving points or boxes between images and world coordinates. |
+| Inspect intermediate images, detections, and point clouds | [Rerun][c~rerun~docs] and its [Rust logging SDK][vision~re_sdk] | Record results on the same timeline as the input frames so you can inspect when detections change. |
 
 {{#include opencv.incl.md}}
 
@@ -23,9 +24,9 @@ OpenCV's image-loading APIs normally use BGR channel order; other image librarie
 
 ## Related Topics {#related-topics .skip}
 
-- [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md) and [[multimedia_video | Multimedia: Video]].
-- [Machine Learning in Practice](https://john-cd.com/rust_howto/other/machine-learning/index.html).
-- [[science_robotics | Robotics]] and [Rendering](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/index.md).
+- [Images](../multimedia_images/index.md) and [[multimedia_video | Multimedia: Video]].
+- [Machine Learning in Practice](../../other/machine-learning/index.md).
+- [[science_robotics | Robotics]] and [Graphics](../graphics/index.md).
 - [[mathematics | Mathematics]] for arrays and linear algebra.
 
 {{#include refs.incl.md}}

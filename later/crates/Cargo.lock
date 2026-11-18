@@ -4893,16 +4893,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "clang"
-version = "2.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b2ed30b30e1e17966b55ddd0b9dd2758fd824f0a6da6875c8abb17e6aba47c28"
-dependencies = [
- "clang-sys",
- "libc",
-]
-
-[[package]]
 name = "clang-sys"
 version = "1.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5217,16 +5207,6 @@ dependencies = [
  "comemo",
  "logos",
  "salsa",
-]
-
-[[package]]
-name = "computer_vision"
-version = "0.1.2"
-dependencies = [
- "clap",
- "image 0.25.10",
- "opencv",
- "tempfile",
 ]
 
 [[package]]
@@ -16855,40 +16835,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "opencv"
-version = "0.102.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b23fa78053560ec819ff3768f3d07768124d9338a494e9ca50325e9f1522c435"
-dependencies = [
- "cc",
- "dunce",
- "jobserver",
- "libc",
- "num-traits",
- "opencv-binding-generator",
- "pkg-config",
- "semver 1.0.28",
- "shlex 2.0.1",
- "vcpkg",
- "windows 0.62.2",
- "winsplit",
-]
-
-[[package]]
-name = "opencv-binding-generator"
-version = "0.108.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "826d04344f6e833136bd6a261a48695f3eb900e5a7dc7c111f92d6adcadc279e"
-dependencies = [
- "clang",
- "clang-sys",
- "dunce",
- "regex",
- "semver 1.0.28",
- "shlex 2.0.1",
-]
-
-[[package]]
 name = "opener"
 version = "0.8.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -27567,12 +27513,6 @@ dependencies = [
  "cfg-if",
  "windows-sys 0.48.0",
 ]
-
-[[package]]
-name = "winsplit"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3ab703352da6a72f35c39a533526393725640575bb211f61987a2748323ad956"
 
 [[package]]
 name = "wit-bindgen"

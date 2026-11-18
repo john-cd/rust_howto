@@ -7,7 +7,7 @@
 [p~_graphql]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-server/graphql.md
 [p~apis]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-client/apis.md
 [p~compression]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/compression/index.md
-[p~computer-vision]: ../computer-vision/index.md
+[p~computer-vision]: https://john-cd.com/rust_howto/categories/computer-vision/index.html
 [p~cryptography]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/cryptography/index.md
 [p~database]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/database/index.md
 [p~database-implementations]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/database-implementations/index.md

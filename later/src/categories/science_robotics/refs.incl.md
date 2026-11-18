@@ -49,7 +49,7 @@
 [rustconf2025~robotics~talk]: https://rustfoundation.org/media/rustconf-2025-program-live/
 [sophus-rs~repo]: https://github.com/sophus-vision/sophus-rs
 [p~classical-machine-learning]: https://john-cd.com/rust_howto/other/machine-learning/classical_machine_learning.html
-[p~computer-vision]: ../computer-vision/index.md
+[p~computer-vision]: https://john-cd.com/rust_howto/categories/computer-vision/index.html
 [p~concurrency]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/concurrency/index.md
 [p~deep-learning]: https://john-cd.com/rust_howto/other/machine-learning/deep_learning.html
 [p~embedded]: ../embedded/index.md
@@ -62,7 +62,7 @@
 [p~middleware]: ../../../src/categories/web-programming_http-server/middleware.md
 [p~network-programming]: ../network-programming/index.md
 [p~node]: ../development-tools_ffi/node.md
-[p~opencv]: ../computer-vision/opencv.md
+[p~opencv]: https://john-cd.com/rust_howto/categories/computer-vision/opencv.html
 [p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~python]: ../development-tools_ffi/python.md
