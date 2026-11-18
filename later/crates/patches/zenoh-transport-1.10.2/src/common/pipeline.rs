@@ -883,15 +883,15 @@ impl TransmissionPipeline {
     /// Queue capacities follow the configured priorities; a single-priority
     /// transport uses the default priority capacity. The shared status coordinates
     /// congestion and shutdown between concurrent producers and the consumer.
+    ///
+    /// # Arguments
+    ///
+    /// * `config` - Queue capacities, batching policy, and congestion/shutdown waits.
+    /// * `priority` - Per-priority transmission state used by the producer queues.
+    /// * `link_supports_priority` - Whether the link can preserve distinct message priorities.
     pub(crate) fn make(
-        /// Settings that control how this transmission pipeline is constructed or processed.
         config: TransmissionPipelineConf,
-
-        /// Transmission priority.
         priority: &[TransportPriorityTx],
-
-        /// Flag indicating whether the transmission pipeline satisfies the link supports priority
-        /// condition.
         link_supports_priority: bool,
     ) -> (TransmissionPipelineProducer, TransmissionPipelineConsumer) {
         let status = Arc::new(TransmissionPipelineStatus {
