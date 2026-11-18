@@ -98,7 +98,7 @@ mod tests {
 
         /// Shared `dropped` used by this module.
         static DROPPED: AtomicUsize = AtomicUsize::new(0);
-        /// Data carried by tracked operations.
+        /// Test payload whose destructor increments the reclamation counter.
         struct Tracked(
             /// Value whose destructor activity is recorded by the example.
             i32,

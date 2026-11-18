@@ -21,7 +21,7 @@ unsafe extern "C" {
 
     /// Returns the package version defined for the C source.
     fn app_version() -> *const c_char;
-    /// Handles the welcome is defined behavior for this component.
+    /// Returns a nonzero C integer when the WELCOME preprocessor definition was enabled.
     fn welcome_is_defined() -> i32;
 }
 

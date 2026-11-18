@@ -203,7 +203,7 @@ mod tests {
         spans
     }
 
-    /// Handles the span named behavior for this component.
+    /// Finds an exported span by name, failing the test if the expected span was not emitted.
     fn span_named<'a>(spans: &'a [SpanData], name: &str) -> &'a SpanData {
         spans
             .iter()
