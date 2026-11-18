@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Demonstrates an exclusive reborrow conflicting with a live shared borrow.
 fn main() {
     let mut value = 42;
     let exclusive = &mut value;

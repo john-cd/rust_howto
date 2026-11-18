@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+/// Couples the result to both input lifetimes.
 fn choose<'a>(first: &'a str, second: &'a str) -> &'a str {
     if first.len() >= second.len() {
         first
