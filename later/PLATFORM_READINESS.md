@@ -85,8 +85,13 @@ just cargo test --manifest-path later/crates/Cargo.toml --locked -p multimedia_a
 ```
 
 Windows listed Microsoft GS Wavetable Synth as an output and reported no
-MIDI input ports. The Linux VM exposed no ALSA sequencer device. The MIDI
-loopback example still needs a dedicated port pair for an end-to-end run.
+MIDI input ports. The Linux VM exposed no ALSA sequencer device. A separate JACK 1.9.22 test then completed a MIDI round trip in a disposable
+Debian Trixie container with 256 MiB of shared memory. A single virtual relay
+forwarded messages from its input to its output. The staging example built
+with `--features midir/jack` against a disposable workspace copy, leaving the
+committed ALSA feature configuration and lockfile intact. Running it with
+`book-loop:out book-loop:in` returned `[90, 3C, 64]` then `[80, 3C, 00]`.
+The test created and removed only its own JACK server and ports.
 
 ### Linux statx
 
