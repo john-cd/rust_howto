@@ -324,6 +324,8 @@
 
 - [Images](categories/multimedia_images/index.md)
   - [Image Processing](categories/multimedia_images/images.md)
+  - [Color Handling](categories/multimedia_images/color_handling.md)
+  - [Pixel Buffers](categories/multimedia_images/pixel_buffers.md)
 
 - [Number Formatting](categories/value-formatting/number_formatting.md)
 
