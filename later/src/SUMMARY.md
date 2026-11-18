@@ -32,6 +32,7 @@
 
 - [Audio](categories/multimedia_audio/index.md)
   - [Audio](categories/multimedia_audio/audio.md)
+  - [Analyze a Window of Audio](categories/multimedia_audio/analysis.md)
   - [Write and read a WAV file in memory](categories/multimedia_audio/wav.md)
 
 - [Cloud](other/cloud/index.md)

@@ -18,4 +18,16 @@ cargo check --package multimedia_audio --examples
 cargo test --package multimedia_audio
 ```
 
-Code examples correspond to chapters in `bk/src/categories/multimedia_audio` or related book sections.
+Code examples correspond to chapters in `later/src/categories/multimedia_audio` or related book sections.
+
+## Offline Spectrum Analysis
+
+The device-free `spectrum` example analyzes a generated mono tone with RustFFT:
+
+```sh
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example spectrum
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example spectrum
+```
+
+See `later/src/categories/multimedia_audio/analysis.md` for window/scale conventions
+and the distinction between an analysis worker and a realtime audio callback.
