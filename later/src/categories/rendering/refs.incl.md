@@ -33,7 +33,7 @@
 [p~apis]: ../web-programming_http-client/apis.md
 [p~cross-platform]: ../../other/cross-platform/index.md
 [p~gpu]: ../../other/gpu/gpu.md
-[p~graphics]: ../graphics/index.md
+[p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
 [p~images]: https://john-cd.com/rust_howto/categories/multimedia_images/images.html
 [p~option]: # "../../standard-library/option.md"
 [p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
@@ -41,3 +41,20 @@
 [p~rendering]: index.md
 [p~shaders]: ../rendering_graphics-api/shaders.md
 [p~vulkan]: ../rendering_graphics-api/vulkan.md
+
+[p~2d_vector_graphics]: 2d_vector_graphics.md
+[p~3d_renderers]: 3d_renderers.md
+[p~game-development]: ../game-development/index.md
+[p~game_development]: ../game-development/game_development.md
+[p~game_engines]: ../game-engines/game_engines.md
+[p~gpu_abstraction_layers]: ../rendering_graphics-api/gpu_abstraction_layers.md
+[p~gui]: ../gui/index.md
+[p~multimedia_video]: ../multimedia_video/index.md
+[p~native_graphics_apis]: ../rendering_graphics-api/native_graphics_apis.md
+[p~opengl]: ../rendering_graphics-api/opengl.md
+[p~rendering_data-formats]: ../rendering_data-formats/index.md
+[p~rendering_engine]: ../rendering_engine/index.md
+[p~rendering_graphics-api]: ../rendering_graphics-api/index.md
+[p~text_layout]: ../gui/text_layout.md
+[p~text_rendering]: text_rendering.md
+[p~visualization]: ../visualization/index.md

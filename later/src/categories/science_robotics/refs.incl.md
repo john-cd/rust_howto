@@ -4,15 +4,15 @@
 
 [ex~science_robotics~astar]: artificial_intelligence.md#astar
 [ex~science_robotics~bonsai-bt]: artificial_intelligence.md#bonsai-bt
-[ex~science_robotics~copper]: robotics_frameworks.md#copper
+[ex~science_robotics~copper]: robotics_frameworks.md#framework-comparison
 [ex~science_robotics~dora]: artificial_intelligence.md#dora
 [dora~website]: https://dora-rs.ai/
 [ex~science_robotics~faer]: control_systems.md#faer
 [ex~science_robotics~i2c-driver]: hardware_integration.md#embedded-hal
 [ex~science_robotics~k]: control_systems.md#k
-[ex~science_robotics~kiss3d]: simulation_visualization.md#kiss3d
+[ex~science_robotics~kiss3d]: simulation_visualization.md#other-tools
 [ex~science_robotics~nalgebra]: control_systems.md#nalgebra
-[ex~science_robotics~open-rust-robotics]: robotics_frameworks.md#open-rust-robotics
+[ex~science_robotics~open-rust-robotics]: robotics_frameworks.md#openrr
 [ex~science_robotics~openrr-planner]: control_systems.md#openrr-planner
 [ex~science_robotics~pathfinding]: control_systems.md#pathfinding
 [ex~science_robotics~physics-simulation]: simulation_visualization.md#physics-simulation
@@ -22,8 +22,8 @@
 [ex~science_robotics~rosrust]: robot_operating_systems.md#rosrust
 [ex~science_robotics~rrt]: control_systems.md#rrt
 [ex~science_robotics~rs-opw-kinematics]: control_systems.md#rs-opw-kinematics
-[ex~science_robotics~safe_drive]: robot_operating_systems.md#safe_drive
-[ex~science_robotics~urdf-viz]: simulation_visualization.md#urdf-viz
+[ex~science_robotics~safe_drive]: robot_operating_systems.md#safe-drive
+[ex~science_robotics~urdf-viz]: simulation_visualization.md#other-tools
 [ex~science_robotics~zenoh]: robotics_frameworks.md#zenoh
 [adskalman~repo]: https://github.com/strawlab/adskalman-rs
 [optimization-engine~repo]: https://github.com/alphaville/optimization-engine
@@ -50,14 +50,14 @@
 [sophus-rs~repo]: https://github.com/sophus-vision/sophus-rs
 [p~classical-machine-learning]: ../science/classical_machine_learning.md
 [p~computer-vision]: ../computer-vision/index.md
-[p~concurrency]: https://john-cd.com/rust_howto/categories/concurrency/index.html
+[p~concurrency]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/concurrency/index.md
 [p~deep-learning]: ../science/deep_learning.md
 [p~embedded]: ../embedded/index.md
 [p~graphics]: ../graphics/index.md
 [p~grpc]: ../../../src/categories/web-programming_http-server/_grpc.md
 [p~hardware-integration]: hardware_integration.md
 [p~json]: ../parser-implementations/json.md
-[p~linear-algebra]: ../../../src/categories/mathematics/linear_algebra.md
+[p~linear-algebra]: https://john-cd.com/rust_howto/categories/mathematics/linear_algebra.html
 [p~localization]: ../localization/index.md
 [p~middleware]: ../../../src/categories/web-programming_http-server/middleware.md
 [p~network-programming]: ../network-programming/index.md
@@ -92,3 +92,17 @@
 [roslibrust~repo]: https://github.com/roslibrust/roslibrust
 [ros1~eol]: https://discourse.ros.org/t/ros-noetic-end-of-life-may-31-2025/43160
 [c~static-math~docs]: https://docs.rs/static-math
+
+[c~rapier2d~docs~badge]: https://img.shields.io/crates/v/rapier2d
+[c~zmqRemoteApi~docs]: https://docs.rs/coppeliasim_zmq_remote_api
+[p~additional_numeric_types]: https://john-cd.com/rust_howto/categories/mathematics/additional_numeric_types.html
+[p~aerospace_simulation]: ../aerospace_simulation/index.md
+[p~classical_machine_learning]: ../science/classical_machine_learning.md
+[p~deep_learning]: ../science/deep_learning.md
+[p~development-tools_ffi]: ../development-tools_ffi/index.md
+[p~hardware-support]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/hardware-support/index.md
+[p~linear_algebra]: https://john-cd.com/rust_howto/categories/mathematics/linear_algebra.html
+[p~path_planning]: artificial_intelligence.md
+[p~robot_operating_systems]: robot_operating_systems.md
+[p~robotics_frameworks]: robotics_frameworks.md
+[p~simulation_visualization]: simulation_visualization.md

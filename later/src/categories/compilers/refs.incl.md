@@ -4,7 +4,7 @@
 
 [ex~compilers~comemo]: incremental_computation.md#comemo
 [ex~compilers~salsa]: incremental_computation.md#salsa
-[ex~compilers~tokenization]: tokenization.md#tokenization
+[ex~compilers~tokenization]: tokenization.md
 [writing-interpreters-rust~website]: https://rust-hosted-langs.github.io/book/
 [crafting-interpreters~website]: https://craftinginterpreters.com/
 [crafting-interpreters~ports~wiki]: https://github.com/munificent/craftinginterpreters/wiki/Lox-implementations
@@ -30,3 +30,16 @@
 [c~wasm-encoder~docs]: https://docs.rs/wasm-encoder
 [c~link-cplusplus~crates.io]: https://crates.io/crates/link-cplusplus
 [c~cucumber-expressions~crates.io]: https://crates.io/crates/cucumber-expressions
+
+[c~logos~docs]: https://docs.rs/logos
+[p~compilers]: index.md
+[p~development-tools]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools/index.md
+[p~development-tools_build-utils]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools_build-utils/index.md
+[p~development-tools_debugging]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools_debugging/index.md
+[p~development-tools_ffi]: ../development-tools_ffi/index.md
+[p~development-tools_procedural-macro-helpers]: ../development-tools_procedural-macro-helpers/index.md
+[p~interfacing_with_javascript]: ../wasm/interfacing_with_javascript.md
+[p~parser-implementations]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parser-implementations/index.md
+[p~parsing]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parsing/index.md
+[p~programming_languages]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parser-implementations/programming_languages.md
+[p~transpilers]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools/transcompilation/transpilers.md

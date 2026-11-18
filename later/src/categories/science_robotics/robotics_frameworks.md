@@ -4,6 +4,8 @@
 
 {{#include robotics_frameworks.incl.md}}
 
+## Compare Robotics Frameworks {#framework-comparison}
+
 Rust robotics libraries cover several layers: communication, runtime orchestration, robot kinematics, and numerical computation. The table compares their roles and ROS 2 connections. Release information was checked on October 27, 2026; release cadence does not by itself guarantee stability.
 
 | Project | Purpose | ROS 2 interoperability | Maturity signal |

@@ -56,12 +56,12 @@
 [nextest~running~docs]: https://nexte.st/docs/running/
 [octocrab~api~docs]: https://docs.rs/octocrab/latest/octocrab/
 [prek~repo]: https://github.com/j178/prek
-[p~cargo]: ../../../src/categories/development-tools/cargo/cargo.md
-[p~configuration]: ../../categories/config/configuration.md
+[p~cargo]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools/cargo/cargo.md
+[p~configuration]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/config/configuration.md
 [p~containers]: ../../categories/virtualization/containers.md
 [p~crates]: ../../crate_selection/index.md
 [p~development-tools]: ../../categories/development-tools/index.md
-[p~formatting]: ../../categories/development-tools/formatting/formatting.md
+[p~formatting]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools/formatting/formatting.md
 [p~github-actions]: github_actions.md
 [p~images]: https://john-cd.com/rust_howto/categories/multimedia_images/images.html
 [p~language]: ../../language/index.md
@@ -72,7 +72,7 @@
 [p~testing]: https://john-cd.com/rust_howto/categories/development-tools_testing/testing.html
 [p~toml]: ../../categories/parser-implementations/toml.md
 [p~using-containers]: ../../categories/virtualization/using_containers.md
-[p~versioning]: ../../categories/development-tools/versioning/versioning.md
+[p~versioning]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools/versioning/versioning.md
 [release-plz~quickstart]: https://release-plz.dev/docs/github/quickstart
 [ripgrep~release-workflow]: https://github.com/BurntSushi/ripgrep/blob/master/.github/workflows/release.yml
 [rust-cache~action~repo]: https://github.com/Swatinem/rust-cache
@@ -80,3 +80,5 @@
 [rust-toolchain~repo]: https://github.com/dtolnay/rust-toolchain
 [setup-rust-toolchain~repo]: https://github.com/actions-rust-lang/setup-rust-toolchain
 [zizmor~usage~docs]: https://docs.zizmor.sh/usage/
+
+[p~building]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools/compilation/building.md

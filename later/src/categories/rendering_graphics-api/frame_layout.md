@@ -45,7 +45,7 @@ coordinates. Keep model/view/projection and input hit-testing transforms consist
 | Cross-platform GPU | `wgpu`, `naga` | Shader validation, compute, offscreen rendering and CPU layout here. A visible surface needs window/lifetime and resize handling. |
 | Native API access | `ash`, `glow`, `glutin` | [Vulkan](vulkan.md), [OpenGL](opengl.md), [native APIs](native_graphics_apis.md). OpenGL calls require a current compatible context; loading functions alone is insufficient. |
 | Math and vertex data | `glam`, `nalgebra`, `bytemuck` | Projection and buffer preparation; document handedness, depth range, alignment and shader layout. A castable Rust struct is not proof of a matching WGSL layout. |
-| CPU/vector drawing | `tiny-skia`, `lyon`, `vello` | Published [Graphics](https://john-cd.com/rust_howto/categories/graphics/index.html) and staged [vector rendering](../rendering/2d_vector_graphics.md). Separate tessellation from drawing. |
+| CPU/vector drawing | `tiny-skia`, `lyon`, `vello` | Published [Graphics](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md) and staged [vector rendering](../rendering/2d_vector_graphics.md). Separate tessellation from drawing. |
 | Scene/engine ownership | `bevy`, `three-d`, `kiss3d` | [Rendering Engines](../rendering_engine/rendering_engines.md); the direct wgpu example does not test these engines. |
 | Assets and images | `gltf`, `image`, `resvg`, `usvg` | [Rendering Data Formats](../rendering_data-formats/index.md); decoding an asset is separate from uploading or presenting it. |
 

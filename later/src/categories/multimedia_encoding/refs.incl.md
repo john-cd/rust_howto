@@ -19,3 +19,7 @@
 [ex~multimedia_encoding~audio]: ../multimedia_audio/audio.md
 [ex~multimedia_encoding~images]: https://john-cd.com/rust_howto/categories/multimedia_images/images.html
 [ex~multimedia_encoding~video]: ../multimedia_video/video.md
+
+[p~multimedia]: ../multimedia/index.md
+[p~multimedia_audio]: ../multimedia_audio/index.md
+[p~multimedia_video]: ../multimedia_video/index.md

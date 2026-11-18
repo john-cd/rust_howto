@@ -71,3 +71,21 @@
 [runtime~wasmedge]: https://github.com/WasmEdge/WasmEdge
 [runtime~wamr]: https://github.com/wasm-micro-runtime/wasm-micro-runtime
 [runtime~component]: https://docs.rs/wasmtime/50.0.0/wasmtime/component/index.html
+
+[c~serde-wasm-bindgen~docs~badge]: https://img.shields.io/crates/v/serde-wasm-bindgen
+[c~wasm-bindgen-futures~docs~badge]: https://img.shields.io/crates/v/wasm-bindgen-futures
+[c~wasm-encoder~docs]: https://docs.rs/wasm-encoder
+[p~development_tools]: ../../other/written-in-rust/development_tools.md
+[p~grpc]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-server/grpc.md
+[p~gui]: ../gui/index.md
+[p~interfacing_with_javascript]: interfacing_with_javascript.md
+[p~leptos]: leptos.md
+[p~programming_languages]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parser-implementations/programming_languages.md
+[p~virtualization]: ../virtualization/index.md
+[p~wasm_basics]: wasm_basics.md
+[p~wasm_development]: wasm_development.md
+[p~wasm_standalone_runtimes]: wasm_standalone_runtimes.md
+[p~web-programming]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming/index.md
+[p~web-programming_http-server]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-server/index.md
+[p~websocket]: ../web-programming_websocket/websocket.md
+[p~yew]: yew.md

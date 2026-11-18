@@ -60,8 +60,8 @@
 [dioxus~desktop~website]: https://dioxuslabs.com/learn/0.7/guides/platforms/desktop/
 [dioxus~mobile~website]: https://dioxuslabs.com/learn/0.7/guides/platforms/mobile/
 [tauri~windows-prerequisites~website]: https://v2.tauri.app/start/prerequisites/
-[p~apis]: https://john-cd.com/rust_howto/categories/web-programming_http-client/apis.html
-[p~asynchronous]: https://john-cd.com/rust_howto/categories/asynchronous/index.html
+[p~apis]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-client/apis.md
+[p~asynchronous]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/asynchronous/index.md
 [p~audio]: ../multimedia_audio/audio.md
 [p~containers]: ../virtualization/containers.md
 [p~cross-platform]: ../../other/cross-platform/index.md
@@ -71,7 +71,7 @@
 [p~game-development]: ../game-development/game_development.md
 [p~games]: ../games/index.md
 [p~gpu]: # "../../other/gpu/gpu.md"
-[p~graphics]: https://john-cd.com/rust_howto/categories/graphics/index.html
+[p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
 [p~egui]: immediate_mode_gui.md
 [p~gui]: index.md
 [p~html]: # "../../categories/parser-implementations/html.md"
@@ -99,3 +99,6 @@
 [tinyfiledialogs~upstream~website]: https://sourceforge.net/projects/tinyfiledialogs/
 [c~softbuffer~docs]: https://docs.rs/softbuffer
 [c~softbuffer~docs~badge]: https://img.shields.io/crates/v/softbuffer?label=softbuffer
+
+[p~file_dialogs]: file_dialogs.md
+[p~web_based_gui]: web_based_gui.md

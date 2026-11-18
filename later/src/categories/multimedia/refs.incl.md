@@ -9,3 +9,15 @@
 [rfc~7826]: https://www.rfc-editor.org/rfc/rfc7826
 
 [ffmpeg~manual]: https://ffmpeg.org/ffmpeg.html
+
+[p~concurrency]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/concurrency/index.md
+[p~embedded]: ../embedded/index.md
+[p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
+[p~gui]: ../gui/index.md
+[p~hardware-support]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/hardware-support/index.md
+[p~memory-management]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/memory-management/index.md
+[p~network-programming]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/network-programming/index.md
+[p~rendering]: ../rendering/index.md
+[p~rendering_data-formats]: ../rendering_data-formats/index.md
+[p~rendering_graphics-api]: ../rendering_graphics-api/index.md
+[p~wasm]: ../wasm/index.md

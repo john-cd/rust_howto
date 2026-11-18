@@ -6,6 +6,20 @@
 
 This folder contains additional code examples, category crates, and prototype implementations currently in development or staged for future integration into the book.
 
+## Checking Preview Links
+
+From the repository root, render a fresh preview and verify its chapter links:
+
+```console
+just --justfile bk/justfile book future
+python later/check_preview_links.py bk/book/future
+```
+
+The checker requires every chapter listed in the staged summary to have rendered.
+It checks internal destinations, fragments, and unresolved reference labels in the
+publication scope. Pass `--include-deferred` to report link findings for Aerospace
+and Cryptocurrencies as well.
+
 ## Workspace Organization
 
 - **`cats/`**: Category crates matching `crates.io` taxonomy (e.g. `gui`, `embedded`, `game_engines`, `wasm`, `science`, `rendering`, etc.).

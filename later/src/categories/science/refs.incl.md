@@ -26,3 +26,8 @@
 [p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
 [p~python]: ../development-tools_ffi/python.md
 [p~robotics-ai]: ../science_robotics/artificial_intelligence.md
+
+[p~computer-vision]: ../computer-vision/index.md
+[p~data-processing]: ../../other/data-processing/index.md
+[p~linear_algebra]: https://john-cd.com/rust_howto/categories/mathematics/linear_algebra.html
+[p~visualization]: ../visualization/index.md

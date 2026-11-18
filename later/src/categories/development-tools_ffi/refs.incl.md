@@ -38,7 +38,7 @@
 [ex~development-tools_ffi~objc2]: objc.md#objc2
 [ex~development-tools_ffi~other-less-common-options]: ruby.md#other-less-common-options
 [ex~development-tools_ffi~ports]: erlang_elixir.md#ports
-[ex~development-tools_ffi~pyo3]: python.md#pyo3
+[ex~development-tools_ffi~pyo3]: python.md#calling-python-from-rust
 [ex~development-tools_ffi~use-rust-from-python]: python.md#use-rust-from-python
 [ex~development-tools_ffi~rust-side]: flutter.md#rust-side
 [ex~development-tools_ffi~rustler]: erlang_elixir.md#rustler
@@ -50,18 +50,18 @@
 [c~piccolo~docs]: https://docs.rs/piccolo/latest/piccolo/
 [rust-nomicon~ffi]: https://doc.rust-lang.org/nomicon/ffi.html
 [rust-reference~type-layout]: https://doc.rust-lang.org/reference/type-layout.html#representations
-[p~asynchronous]: https://john-cd.com/rust_howto/categories/asynchronous/index.html
-[p~concurrency]: https://john-cd.com/rust_howto/categories/concurrency/index.html
+[p~asynchronous]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/asynchronous/index.md
+[p~concurrency]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/concurrency/index.md
 [p~error-handling]: # "../../categories/rust-patterns/error_handling/error_handling.md"
-[p~functions]: ../../language/functions.md
-[p~json]: ../parser-implementations/json.md
+[p~functions]: https://john-cd.com/rust_howto/language/functions.html
+[p~json]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parser-implementations/json.md
 [p~language]: ../../language/index.md
 [p~macros]: ../../language/macros.md
 [p~modules]: ../../language/modules.md
 [p~option]: # "../../standard-library/option.md"
 [p~performance]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/performance.md
-[p~serde]: ../encoding/serde.md
-[p~strings]: ../data-structures/strings.md
+[p~serde]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/encoding/serde.md
+[p~strings]: https://john-cd.com/rust_howto/categories/data-structures/strings.html
 
 [ffi~rustler-mix]: https://rustler.hexdocs.pm/readme.html
 [ffi~rustler-nif]: https://docs.rs/rustler/latest/rustler/attr.nif.html
@@ -98,3 +98,12 @@
 [ffi~magnus-embed]: https://docs.rs/magnus/0.9.3/magnus/embed/index.html
 [ffi~ruby-ffi]: https://github.com/ffi/ffi
 [ffi~ruby-extensions]: https://guides.rubygems.org/gems-with-extensions/
+
+[p~api-bindings]: ../api-bindings/index.md
+[p~build_time_tooling]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools_build-utils/build_time_tooling.md
+[p~cargo]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools/cargo/cargo.md
+[p~complex_encoding]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/encoding/complex_encoding.md
+[p~encoding]: ../multimedia_encoding/encoding.md
+[p~external-ffi-bindings]: ../external-ffi-bindings/index.md
+[p~mathematics]: https://john-cd.com/rust_howto/categories/mathematics/index.html
+[p~wasm]: ../wasm/index.md

@@ -69,6 +69,8 @@ A topic broadcasts a stream; a service pairs one request with one response. Use 
 
 For `rclrs`, follow the [ros2-rust workspace guide][ros2-rust~repo]: source the ROS environment, install the documented `colcon` extensions including `cargo-ament-build`, and build the workspace with `colcon build`. Source the resulting `install` setup before running nodes. A standalone Cargo command does not replace ROS message generation and environment setup. The `r2r` example instead uses its own Cargo build-time generation from the installed message packages.
 
+### `safe_drive` {#safe-drive}
+
 [`safe_drive`][c~safe_drive~docs] offers another ROS 2 binding approach. Check its supported distribution and message-generation workflow before mixing it with a different client's generated types.
 
 ## Other Crates {#other-crates .skip}

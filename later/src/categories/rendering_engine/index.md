@@ -12,7 +12,7 @@ Rendering engines sit above low-level graphics APIs such as [`wgpu`][c~wgpu~docs
 
 ## Related Topics
 
-- [Graphics](https://john-cd.com/rust_howto/categories/graphics/index.html).
+- [Graphics](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md).
 - [Rendering](../rendering/index.md).
 - [Rendering Data Formats](../rendering_data-formats/index.md).
 - [Rendering Graphics APIs](../rendering_graphics-api/index.md) - 2D/3D Lower Level Graphics.
