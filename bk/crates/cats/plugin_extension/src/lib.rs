@@ -2,7 +2,7 @@
 
 use plugin_registry::Command;
 
-/// Handles the greet behavior for this component.
+/// Returns the extension greeting when its inventory-registered command is invoked.
 fn greet() -> &'static str {
     "hello"
 }
