@@ -17,6 +17,8 @@ Audio tasks include device input and output, decoding and encoding, synthesis, s
 | Synthesis and DSP | [`fundsp`][c~fundsp~docs]↗{{hi:fundsp}}, [`dasp`][c~dasp~docs]↗{{hi:dasp}}, [`rubato`][c~rubato~docs]↗{{hi:rubato}} | Synthesize, process, or resample sample streams. |
 | Audio plugins | [`nih-plug`][c~nih-plug~repo]↗{{hi:nih-plug}} | Framework for building audio plugins. |
 
+See [Analyze a Window of Audio](analysis.md) for FFT/windowing, amplitude scaling, and realtime callback boundaries.
+
 ## Audio Streaming
 
 For low-latency streaming, use a device API such as `cpal` to receive or send sample buffers. A playback library such as `rodio` can handle common output tasks; async runtimes can coordinate surrounding network or application work, but the audio callback should remain bounded and avoid blocking.

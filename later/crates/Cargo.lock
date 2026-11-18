@@ -17822,6 +17822,7 @@ dependencies = [
  "midir",
  "rodio",
  "rubato 5.0.1",
+ "rustfft",
 ]
 
 [[package]]

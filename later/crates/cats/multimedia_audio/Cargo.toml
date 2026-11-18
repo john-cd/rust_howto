@@ -27,6 +27,11 @@ name = "audio"
 path = "examples/audio/main.rs"
 test = true
 
+[[example]]
+name = "spectrum"
+path = "examples/spectrum.rs"
+test = true
+
 [dependencies]
 clap = "4.6.7"
 # Keep cpal at 0.17.1 and rodio on 0.22: cpal 0.17.2+ uses alsa-sys 0.4, which conflicts with the 0.3 line used by Bevy and Fyrox.
@@ -42,6 +47,9 @@ midir = "0.11.1"
 rodio = "0.22.2"
 # Resample audio buffers between sample rates.
 rubato = "5.0.1"
+
+# FFT planning and portable SIMD dispatch for offline spectral analysis.
+rustfft = "6.4.1"
 
 [lints]
 workspace = true
