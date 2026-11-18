@@ -2,6 +2,9 @@
 
 # Compilers
 
+Run `cargo run --locked -p compilers --example source_diagnostics` from
+`later/crates` to turn a Logos lexer error into a labeled source diagnostic.
+
 Examples focused on compiler design and incremental computation using Salsa and Comemo. It demonstrates integration with key ecosystem crates including `anyhow`, `clap`, `comemo`, `logos`, `salsa`.
 
 ## Examples Covered
