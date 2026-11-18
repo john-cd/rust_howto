@@ -30,23 +30,6 @@ path = "examples/cross_platform/main.rs"
 test = true
 
 [[example]]
-name = "csv"
-path = "examples/data_processing/csv/main.rs"
-test = true
-
-[[example]]
-name = "data_processing"
-path = "examples/data_processing/main.rs"
-test = true
-required-features = ["arrow"]
-
-[[example]]
-name = "datafusion"
-path = "examples/datafusion/main.rs"
-test = true
-required-features = ["datafusion"]
-
-[[example]]
 name = "machine_learning"
 path = "examples/machine_learning/main.rs"
 test = true
@@ -71,14 +54,6 @@ test = true
 anyhow = "1.0.104"
 # Atomically replaces shared Arc values without taking a reader-side lock.
 arc-swap = { version = "1", optional = true }
-# Minimal implementation of the Arrow specification forked from arrow2
-arrow = { version = "60.1.0", features = ["csv", "json", "prettyprint"], optional = true }
-# Array abstractions for Apache Arrow
-arrow-array = { version = "60.1.0", optional = true } # Typed columns and `RecordBatch`, without the umbrella crate.
-# Cast kernel and utilities for Apache Arrow
-arrow-cast = { version = "60.1.0", features = ["prettyprint"], optional = true } # Pretty-print record batches.
-# Support for the Arrow IPC format
-arrow-ipc = { version = "60.1.0", optional = true } # Arrow IPC file and stream formats.
 # Type erasure for async trait methods
 async-trait = "0.1.92"
 # A time-series toolkit for forecasting, outlier detection, clustering and more.
@@ -139,12 +114,6 @@ clap = { version = "4.6.7", features = ["derive"] }
 cron = "0.17.0"
 # Cross-platform app development in Rust
 crux_core = "0.20.0"
-# Flexible CSV reader and writer with Serde support.
-csv = "1.4.0"
-# DataFusion is an in-memory query engine that uses Apache Arrow as the memory model
-datafusion = { version = "55.2.0", default-features = false, features = [
-    "sql",
-], optional = true } # Enable SQL without unused native compression codecs.
 # a library for running child processes
 duct = "1.1.2"
 # An implementation of futures and streams featuring zero allocations, composability, and iterator-like interfaces.
@@ -170,7 +139,7 @@ schemars = "1.2.3"
 # A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] }
 # A JSON serialization file format
-serde_json = "1.0.154" # Converts Arrow JSON output back into Serde rows, and parses Lambda payloads.
+serde_json = "1.0.154" # Parses Lambda payloads.
 # Process command line according to parsing rules of UNIX shell
 shell-words = "1.1.1"
 # Shell-like expansions in strings
@@ -200,8 +169,6 @@ crux_core = { version = "0.20.0", features = ["testing"] } # The `expect_*` asse
 
 [features]
 onnx = ["dep:ort", "dep:arc-swap"]
-datafusion = ["dep:datafusion"]
-arrow = ["dep:arrow", "dep:arrow-array", "dep:arrow-cast", "dep:arrow-ipc"]
 typegen = ["crux_core/typegen"] # for Crux
 
 [lints]

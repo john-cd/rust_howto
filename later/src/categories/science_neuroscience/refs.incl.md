@@ -12,7 +12,7 @@
 
 [c~rustfft~docs~badge]: https://img.shields.io/crates/v/rustfft
 [p~api-bindings]: ../api-bindings/index.md
-[p~data-processing]: ../../other/data-processing/index.md
+[p~data-processing]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/data-processing/index.md
 [p~development-tools_ffi]: ../development-tools_ffi/index.md
 [p~external-ffi-bindings]: ../external-ffi-bindings/index.md
 [p~mathematics]: https://john-cd.com/rust_howto/categories/mathematics/index.html

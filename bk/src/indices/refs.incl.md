@@ -317,6 +317,10 @@
 [ex~cryptography~x509-cert]: ../categories/cryptography/certificates.md#x509-cert
 [ex~cryptography~zeroize-secrets]: ../categories/cryptography/secrets.md#zeroize-secrets
 [ex~cryptography~zeroize]: ../categories/cryptography/cryptography_utilities.md#zeroize
+[ex~data-processing~arrow]: ../categories/data-processing/data_engineering.md#arrow
+[ex~data-processing~arrow-ipc]: ../categories/data-processing/data_engineering.md#arrow-ipc
+[ex~data-processing~arrow-sub-crates]: ../categories/data-processing/data_engineering.md#arrow-sub-crates
+[ex~data-processing~datafusion]: ../categories/data-processing/data_engineering.md#datafusion
 [ex~data-processing~dataframes]: ../categories/data-processing/dataframes.md#dataframes
 [ex~data-structures~arrayvec]: ../categories/data-structures/stack-allocated.md#arrayvec
 [ex~data-structures~binary-heap]: ../categories/data-structures/binary_heaps.md#binary-heap
@@ -592,6 +596,8 @@
 [ex~encoding~ciborium]: ../categories/encoding/no_external_schema.md#ciborium
 [ex~encoding~data-encoding]: ../categories/encoding/string_encoding.md#data-encoding
 [ex~encoding~endianness]: ../categories/encoding/typecasts.md#endianness
+[ex~encoding~csv-stream]: ../categories/encoding/csv.md#read-and-write-csv-files
+[ex~encoding~qsv]: ../categories/encoding/csv.md#manipulate-csv-files-from-the-command-line
 [ex~encoding~filter-csv]: ../categories/encoding/csv.md#filter-csv
 [ex~encoding~flatbuffers]: ../categories/encoding/binary_encoders.md#flatbuffers
 [ex~encoding~form-urlencoded]: ../categories/encoding/string_encoding.md#form-urlencoded

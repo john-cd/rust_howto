@@ -41,8 +41,6 @@ later/src/other/devops/
 bk/src/other/written-in-rust/
 later/src/other/architecture/
 later/src/other/cloud/
-# Delegates to the draft CSV recipes on purpose (see the page).
-later/src/other/data-processing/csv.md
 # Example disabled until its dependency advisory is resolved.
 later/src/categories/science_robotics/robotics_frameworks.md
 # Navigation page: it points to the engine coverage in 3d_renderers.md and the adapter example in native_graphics_apis.md; engine crates need a window and GPU (#2092).

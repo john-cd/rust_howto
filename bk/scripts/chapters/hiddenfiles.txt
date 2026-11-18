@@ -62,7 +62,6 @@
 ./src/other/cloud/index.md
 ./src/other/containers/index.md
 ./src/other/cross-platform/index.md
-./src/other/data-processing/index.md
 ./src/other/devops/index.md
 ./src/other/gpu/index.md
 ./src/other/scripting/index.md

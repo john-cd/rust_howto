@@ -21,9 +21,35 @@ name = "dataframes"
 path = "examples/dataframes/main.rs"
 test = true
 
+[[example]]
+name = "data_processing"
+path = "examples/data_processing/main.rs"
+test = true
+required-features = ["arrow"]
+
+[[example]]
+name = "datafusion"
+path = "examples/datafusion/main.rs"
+test = true
+required-features = ["datafusion"]
+
+[features]
+arrow = ["dep:arrow", "dep:arrow-array", "dep:arrow-cast", "dep:arrow-ipc", "dep:clap", "dep:serde", "dep:serde_json"]
+datafusion = ["dep:datafusion", "dep:tokio"]
+
 [dependencies]
 anyhow = "1.0.104"
+# Keep the Arrow major version aligned with DataFusion for compatible record batches.
+arrow = { version = "59.3.2", features = ["csv", "json", "prettyprint"], optional = true }
+arrow-array = { version = "59.3.2", optional = true }
+arrow-cast = { version = "59.3.2", features = ["prettyprint"], optional = true }
+arrow-ipc = { version = "59.3.2", optional = true }
+clap = { version = "4.6.7", features = ["derive"], optional = true }
+datafusion = { version = "55.2.0", default-features = false, features = ["sql"], optional = true }
 polars = { version = "0.55.2", default-features = false, features = ["lazy"] }
+serde = { version = "1.0.229", features = ["derive"], optional = true }
+serde_json = { version = "1.0.154", optional = true }
+tokio = { version = "1.54.1", features = ["rt"], optional = true }
 
 [lints]
 workspace = true
