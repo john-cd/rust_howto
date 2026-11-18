@@ -13,7 +13,7 @@ use argmin::core::Executor;
 use argmin::core::State;
 use argmin::solver::brent::BrentRoot;
 
-/// Data carried by cos minus x operations.
+/// Continuous residual whose zero solves cos(x) = x.
 #[derive(Clone, Copy)]
 struct CosMinusX;
 
@@ -23,13 +23,17 @@ impl CostFunction for CosMinusX {
     /// Alias for `f64` used to represent param.
     type Param = f64;
 
-    /// Handles the cost behavior for this component.
+    /// Evaluates cos(x) - x as the residual supplied to the root solver.
     fn cost(&self, x: &Self::Param) -> Result<Self::Output, Error> {
         Ok(x.cos() - x)
     }
 }
 
 /// Finds the root of `cos(x) - x` in the interval `[0, 1]`.
+///
+/// The endpoint residuals have opposite signs, bracketing a root. Brent
+/// combines interpolation with bisection fallback to retain that bracket;
+/// this run requests 1e-12 tolerance and limits execution to 100 iterations.
 ///
 /// # Panics
 ///
