@@ -55,7 +55,7 @@ Immediate-mode GUIs describe the interface as application state changes, while r
 
 ## Web Frameworks
 
-For browser-based user interfaces, see [[web-programming | Web Programming]] and [[web-programming_http-server | Web Programming: HTTP Server]].
+For browser-based user interfaces, see [Web Programming](https://john-cd.com/rust_howto/categories/web-programming/index.html) and [Web Programming: HTTP Server](https://john-cd.com/rust_howto/categories/web-programming_http-server/index.html).
 
 ## GUI Components
 
@@ -65,7 +65,7 @@ For Dioxus internals, [Subsecond][subsecond~docs]↗ supplies hot-patching, [Gen
 
 ### 2D Renderers
 
-See [[graphics | Graphics]] and [[rendering | Rendering]].
+See [Graphics](https://john-cd.com/rust_howto/categories/graphics/index.html) and [Rendering](../rendering/index.md).
 
 For a minimal CPU-rendered desktop window, [`minifb`][c~minifb~docs]↗{{hi:minifb}} presents a pixel buffer directly. From `later/crates`, run it with `cargo run -p gui --example minifb_renderer --features minifb`.
 
@@ -104,18 +104,18 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 
 ## Related Topics
 
-- [[accessibility | Accessibility]].
+- [Accessibility](../accessibility/index.md).
 - Command Line Interface<!-- Cross-book topic: bk/src/categories/command-line-interface/index.md; not included in this preview. -->.
-- [[game_development | Game Development]].
-- [[game-engines | Game Engines]].
-- [[graphics | Graphics]].
-- [[internationalization | Internationalization]].
-- [[multimedia | Multimedia]].
-- [[rendering | Rendering]].
-- [[template-engine | Template Engine]].
-- [[wasm | WASM]].
-- [[web-programming | Web Programming]].
-- [[web-programming_http-server | Web Programming: HTTP Server]].
+- [Game Development](../game-development/index.md).
+- [Game Engines](../game-engines/index.md).
+- [Graphics](https://john-cd.com/rust_howto/categories/graphics/index.html).
+- [Internationalization](https://john-cd.com/rust_howto/categories/internationalization/index.html).
+- [Multimedia](../multimedia/index.md).
+- [Rendering](../rendering/index.md).
+- [Template Engine](https://john-cd.com/rust_howto/categories/template-engine/index.html).
+- [WASM](../wasm/index.md).
+- [Web Programming](https://john-cd.com/rust_howto/categories/web-programming/index.html).
+- [Web Programming: HTTP Server](https://john-cd.com/rust_howto/categories/web-programming_http-server/index.html).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
