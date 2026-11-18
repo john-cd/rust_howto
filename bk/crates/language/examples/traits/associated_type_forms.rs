@@ -6,25 +6,26 @@
 use std::fmt::Debug;
 use std::fmt::Display;
 
-/// Defines the operations required for tr behavior.
+/// Demonstrates bounds and parameters that can be attached to associated types.
 trait Tr {
     /// Type of the item values produced or consumed by this trait.
     type Item;
-    // Associated type with a trait bound.
+    /// Implementation-selected type that can be formatted for users.
     type Item2: Display;
-    // Associated type with multiple trait bounds.
+    /// Implementation-selected type supporting both diagnostic and user formatting.
     type Item3: Debug + Display;
-    // Generic associated type.
+    /// Family of implementation-selected types parameterized by an arbitrary T.
     type Item4<T>;
-    // Lifetime, type, and const parameters can be combined.
+    /// Type family combining a borrow lifetime, element type, and constant length.
     type Item5<'a, T: 'a, const N: usize>;
-    // An associated type can constrain its type parameter.
+    /// Type family restricted to element types that support cloning.
     type Item6<T>
     where
         T: Clone;
 }
 // ANCHOR_END: associated_types
 
+/// Selects concrete types for each associated-type form in Tr.
 struct Example;
 
 impl Tr for Example {
@@ -69,6 +70,7 @@ trait Add<Rhs = Self> {
 }
 // ANCHOR_END: add
 
+/// Numeric wrapper demonstrating Add with Self as the default right-hand type.
 struct Value(
     /// Numeric value stored by the Value wrapper.
     u32,
@@ -78,7 +80,7 @@ impl Add for Value {
     /// Alias for `u32` used to represent output.
     type Output = u32;
 
-    /// Adds the supplied value to the current collection or state.
+    /// Adds the wrapped numbers and returns the underlying u32 result.
     fn add(self, rhs: Self) -> Self::Output {
         self.0 + rhs.0
     }

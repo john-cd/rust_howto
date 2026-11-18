@@ -2,25 +2,26 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Shared behavior that permits storing different animal types behind dyn Animal.
 trait Animal {
     /// Returns the noise this animal makes.
     fn make_noise(&self) -> &'static str;
 }
 
-/// Data carried by dog operations.
+/// Animal implementation whose noise is woof.
 struct Dog;
-/// Data carried by cat operations.
+/// Animal implementation whose noise is meow.
 struct Cat;
 
 impl Animal for Dog {
-    /// Handles the make noise behavior for this component.
+    /// Returns the dog's fixed noise.
     fn make_noise(&self) -> &'static str {
         "woof"
     }
 }
 
 impl Animal for Cat {
-    /// Handles the make noise behavior for this component.
+    /// Returns the cat's fixed noise.
     fn make_noise(&self) -> &'static str {
         "meow"
     }
@@ -52,6 +53,7 @@ fn selects_an_animal_at_runtime() {
 }
 
 // ANCHOR: shape
+/// Closed set of shapes dispatched with an exhaustive match instead of a vtable.
 enum Shape {
     /// A circle whose radius determines its area.
     Circle {
@@ -90,6 +92,7 @@ fn matches_each_shape_variant() {
 }
 
 // ANCHOR: bounds
+/// Animal trait object without additional thread-safety bounds.
 type AnimalOnly = dyn Animal;
 /// Alias for `dyn Animal + Send` used to represent send animal.
 type SendAnimal = dyn Animal + Send;

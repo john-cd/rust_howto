@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// One-dimensional point used to compare implicit and explicit receiver borrowing.
 struct Point(
     /// X coordinate used by the point methods.
     i32,
