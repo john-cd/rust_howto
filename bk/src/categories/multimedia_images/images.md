@@ -76,5 +76,10 @@ The Cargo package `kamadak-exif` exposes the Rust crate `exif`. Use `Reader::rea
 {{#include ../../../crates/cats/multimedia_images/examples/images/optimize_png.rs:example}}
 ```
 
+## Related Topics {#related-topics .skip}
+
+- [Color Handling](color_handling.md) covers color spaces and compositing.
+- [Pixel Buffers](pixel_buffers.md) covers channel layout and storage.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

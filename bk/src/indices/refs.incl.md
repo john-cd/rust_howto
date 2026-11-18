@@ -898,6 +898,8 @@
 [ex~multimedia_images~image_manipulation]: ../categories/multimedia_images/images.md#resize-and-crop
 [ex~multimedia_images~image_processing]: ../categories/multimedia_images/images.md#apply-filters
 [ex~multimedia_images~optimize-pngs]: ../categories/multimedia_images/images.md#optimize-pngs
+[ex~multimedia_images~palette]: ../categories/multimedia_images/color_handling.md#palette
+[ex~multimedia_images~pixel_buffers]: ../categories/multimedia_images/pixel_buffers.md#pixel_buffers
 [ex~multimedia_images~read-exif-metadata]: ../categories/multimedia_images/images.md#read-exif-metadata
 [ex~network-programming~glommio-http-server]: ../categories/network-programming/server.md#glommio-http-server
 [ex~network-programming~iroh-loopback]: ../categories/network-programming/iroh_loopback.md
