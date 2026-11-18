@@ -55,7 +55,7 @@ The following are topics that deserve (additional) coverage and examples:
 - Personal file sharing: OwnCloud, etc.
 - [Emulators](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/emulators/index.md).
 - [Accessibility](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/accessibility/index.md).
-- [Internationalization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/internationalization/index.md) and [Localization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/localization/index.md).
+- More examples for [Internationalization](../../categories/internationalization/index.md) and [Localization](../../categories/localization/index.md).
 - [Multimedia](../../categories/multimedia/index.md).
 - [Computer Vision](../../categories/computer-vision/index.md).
 - [Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md).
