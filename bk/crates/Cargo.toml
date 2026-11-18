@@ -49,6 +49,7 @@ members = [
     "cats/plugin_registry",
     "cats/parsing",
     "cats/rust_patterns",
+    "cats/science",
     "cats/template_engine",
     "cats/text_editors",
     "cats/text_processing",
