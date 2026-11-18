@@ -18,10 +18,13 @@ package has its own Python and Maturin setup below.
 
 This example is an embedded Python executable. On Windows, set `PYTHONHOME` to
 the base Python installation before running the executable or its test so
-CPython can locate the standard library:
+CPython can locate the standard library. Add that directory to the current
+shell's PATH so the executable can also find the Python DLL:
 
 ```powershell
 $env:PYTHONHOME = (python -c "import sys; print(sys.base_prefix)").Trim()
+$env:PYO3_PYTHON = Join-Path $env:PYTHONHOME 'python.exe'
+$env:PATH = $env:PYTHONHOME + ';' + $env:PATH
 cargo run --locked -p development_tools_ffi --example python -- pyo3
 ```
 
