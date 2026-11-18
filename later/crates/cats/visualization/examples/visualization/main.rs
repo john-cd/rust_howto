@@ -2,7 +2,8 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-/// Demonstrates a Leptos component that renders a chart with
+/// Defines a chart component for a Leptos application.
+#[cfg(feature = "chartistry")]
 mod leptos_chartistry;
 /// This example demonstrates how to create a simple scatter plot using the
 mod plotly;
@@ -14,7 +15,8 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let mut command = clap::Command::new("examples");
     command = command.subcommand(clap::Command::new("plotly"));
     command = command.subcommand(clap::Command::new("plotters"));
-    command = command.subcommand(
+    #[cfg(feature = "chartistry")]
+    let command = command.subcommand(
         clap::Command::new("leptos-chartistry")
             .about("Check the Leptos component without mounting an app"),
     );
@@ -31,6 +33,7 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
             plotters::run()?;
             Ok(())
         }
+        #[cfg(feature = "chartistry")]
         Some(("leptos-chartistry", _)) => {
             leptos_chartistry::run();
             Ok(())
