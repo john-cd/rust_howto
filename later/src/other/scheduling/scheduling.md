@@ -18,7 +18,12 @@
 
 ## Run a Periodic Job at a Fixed Interval {#interval-job}
 
-`tokio::time::interval` ticks at a fixed period. Choose the `MissedTickBehavior` deliberately: `Burst` (the default) catches up, `Delay` shifts the schedule, and `Skip` stays on the original grid. Even with `Skip`, a tick missed during a run fires as soon as the run ends. Stop the loop with a `CancellationToken`.
+The first tick of `tokio::time::interval` is immediate. Choose a
+[`MissedTickBehavior`](https://docs.rs/tokio/latest/tokio/time/enum.MissedTickBehavior.html)
+for later ticks. `Burst` catches up, `Delay` shifts the schedule, and `Skip`
+skips intervening ticks while keeping future deadlines on the original grid.
+The example awaits each job before taking the next tick, so jobs stay serial.
+Its `CancellationToken` stops the loop after the current job finishes.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/scheduling/interval_job.rs:example}}
@@ -26,7 +31,11 @@
 
 ## Run a Job on a Cron Schedule {#cron-loop}
 
-Sleep until the next fire time, run the job, and recompute. Because each wake-up comes from the schedule, not from "now plus a period", the loop does not drift. Fire times that pass while the job is running are skipped.
+The loop computes each next deadline from the cron expression. It computes
+that deadline after the previous job finishes, so fire times that pass during
+a job are skipped. The example uses a fixed UTC origin and monotonic elapsed
+time for reproducibility. A service that follows local wall time must also
+account for clock corrections and daylight-saving changes.
 
 ```rust,editable
 {{#include ../../../crates/other/examples/scheduling/cron_loop.rs:example}}
