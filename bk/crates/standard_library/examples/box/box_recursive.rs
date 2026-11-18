@@ -77,7 +77,7 @@ mod tests {
         main();
     }
 
-    /// Handles the values behavior for this component.
+    /// Iteratively collects the linked list from head to tail for order assertions.
     fn values(head: &Node) -> Vec<i32> {
         let mut out = vec![head.value];
         let mut current = &head.next;

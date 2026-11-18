@@ -20,7 +20,7 @@ struct Circle {
 }
 
 impl Shape for Circle {
-    /// Handles the area behavior for this component.
+    /// Computes the circle area as pi times the squared radius.
     fn area(&self) -> f64 {
         std::f64::consts::PI * self.radius * self.radius
     }
@@ -36,7 +36,7 @@ struct Rectangle {
 }
 
 impl Shape for Rectangle {
-    /// Handles the area behavior for this component.
+    /// Computes the rectangle area as width times height.
     fn area(&self) -> f64 {
         self.width * self.height
     }

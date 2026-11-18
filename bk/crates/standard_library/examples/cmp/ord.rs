@@ -36,7 +36,7 @@ impl PartialEq for Version {
 // Implement `PartialOrd`. Since our ordering is total, `partial_cmp`
 // can simply wrap the result of `cmp` in `Some`.
 impl PartialOrd for Version {
-    /// Handles the partial cmp behavior for this component.
+    /// Reuses total ordering so PartialOrd and Ord cannot disagree.
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
         Some(self.cmp(other))
     }
@@ -45,7 +45,7 @@ impl PartialOrd for Version {
 // Implement `Ord` to define the total ordering of versions.
 // It implements a lexicographical comparison.
 impl Ord for Version {
-    /// Handles the cmp behavior for this component.
+    /// Orders major, minor, then patch, stopping at the first unequal component.
     fn cmp(&self, other: &Self) -> Ordering {
         // Compare major versions first.
         match self.major.cmp(&other.major) {
@@ -137,7 +137,7 @@ mod tests {
         main();
     }
 
-    /// Handles the v behavior for this component.
+    /// Builds version fixtures without repeating named fields in comparison assertions.
     fn v(major: u32, minor: u32, patch: u32) -> Version {
         Version {
             major,

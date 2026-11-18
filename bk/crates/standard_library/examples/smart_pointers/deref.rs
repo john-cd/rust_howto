@@ -67,7 +67,7 @@ mod tests {
     /// Verifies deref coercion to str.
     #[test]
     fn test_deref_coercion_to_str() {
-        /// Handles the takes str behavior for this component.
+        /// Accepts a str slice so the test must apply both wrapper and String deref coercions.
         fn takes_str(s: &str) -> usize {
             s.len()
         }
