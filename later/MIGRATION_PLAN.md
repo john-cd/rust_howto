@@ -13,16 +13,47 @@ working recipe. Remove unsupported recipe promises or complete them before migra
 
 | Order | Group | Current position | Work before a single grouped migration |
 | --- | --- | --- | --- |
-| 1 | Native operating-system APIs: Linux, macOS, FreeBSD, with existing Windows coverage | macOS and FreeBSD introductory native checks passed; Linux native execution remains open. Windows is already published. Small, bounded group with broad systems-programming value. | Complete native Linux validation; polish all three staged categories together; align their selection/prerequisite guidance with the published Windows chapter. |
-| 2 | Multimedia: overview, audio, encoding, video, streaming; integrate existing Images coverage | Audio has substantial deterministic coverage and a Windows CPAL stream result. Encoding/video have recipes, but end-to-end media round trips and backend prerequisites still need a joint audit. Images is already published. | Close codec/container/FFmpeg and stream lifecycle gaps; make all chapter promises match runnable examples; migrate the remaining multimedia categories together. |
-| 3 | Games, Game Development, Game Engines | Macroquad/ggez bounded native runs passed; the surrounding category is partly discovery links and unvalidated Bevy/Fyrox descriptions. | Add a coherent small game and a tested engine workflow; give each listed engine an honest documented disposition; migrate all three categories together. |
-| 4 | Rendering, Graphics APIs, Rendering Engines, Rendering Data Formats; align existing Graphics/Images | The core offscreen pipeline and format recipes have good evidence. Several engine/native API sections remain catalogs. CPU graphics recipes are already published. | Consolidate duplicated coverage; complete an engine-owned scene lifecycle and the remaining native API recipes; migrate this group as a coherent extension of published Graphics. |
-| 5 | General scientific computing and geospatial processing, excluding ML | Geo has substantial recipes and a feature-gated GEOS path; the Science landing page is currently dominated by ML. | Audit numerical coverage already in the book; add a non-ML scientific workflow, validate geometry/coordinate handling, and reorganize Science navigation before a grouped migration. |
-| 6 | GUI, with accessibility and platform support | Windows presentation and headless logic checks passed. Toolkit, input/resize, accessibility, and native Linux gaps remain. | Finish a documented platform/toolkit matrix and real interaction coverage before promoting the whole category. |
+| 1 | Machine Learning: practical workflows, classical algorithms, and deep learning | Practical ML and classical ML each have 9 passing tests recorded in the readiness review. Deep-learning training and accelerator paths still need an audit. ML is a high-priority group, separate from general science. | Connect preprocessing, training, held-out evaluation, model persistence and inference; complete a bounded CPU deep-learning workflow; validate the full group before migration. |
+| 2 | Native operating-system APIs: Linux, macOS, FreeBSD, with existing Windows coverage | macOS and FreeBSD introductory native checks passed; Linux native execution remains open. Windows is already published. Small, bounded group with broad systems-programming value. | Complete native Linux validation; polish all three staged categories together; align their selection/prerequisite guidance with the published Windows chapter. |
+| 3 | Multimedia: overview, audio, encoding, video, streaming; integrate existing Images coverage | Audio has substantial deterministic coverage and a Windows CPAL stream result. Encoding/video have recipes, but end-to-end media round trips and backend prerequisites still need a joint audit. Images is already published. | Close codec/container/FFmpeg and stream lifecycle gaps; make all chapter promises match runnable examples; migrate the remaining multimedia categories together. |
+| 4 | Games, Game Development, Game Engines | Macroquad/ggez bounded native runs passed; the surrounding category is partly discovery links and unvalidated Bevy/Fyrox descriptions. | Add a coherent small game and a tested engine workflow; give each listed engine an honest documented disposition; migrate all three categories together. |
+| 5 | Rendering, Graphics APIs, Rendering Engines, Rendering Data Formats; align existing Graphics/Images | The core offscreen pipeline and format recipes have good evidence. Several engine/native API sections remain catalogs. CPU graphics recipes are already published. | Consolidate duplicated coverage; complete an engine-owned scene lifecycle and the remaining native API recipes; migrate this group as a coherent extension of published Graphics. |
+| 6 | General scientific computing and geospatial processing, excluding ML | Geo has substantial recipes and a feature-gated GEOS path; the Science landing page is currently dominated by ML. | Audit numerical coverage already in the book; add a non-ML scientific workflow, validate geometry/coordinate handling, and reorganize Science navigation before a grouped migration. |
+| 7 | GUI, with accessibility and platform support | Windows presentation and headless logic checks passed. Toolkit, input/resize, accessibility, and native Linux gaps remain. | Finish a documented platform/toolkit matrix and real interaction coverage before promoting the whole category. |
 
-Start with group 1, then group 2. Groups 3 and 4 share windowing and rendering
-infrastructure; prepare them together when that reduces duplicated work, but do not
-hold the completed native-API or multimedia groups for a larger engine rewrite.
+Start with ML, then native APIs and multimedia. Games and graphics share windowing
+and rendering infrastructure; prepare them together when that reduces duplicated
+work. Keep ML and the completed native-API or multimedia groups moving independently
+of a larger engine rewrite.
+
+## Machine Learning Group
+
+ML is a first-priority group, not deferred scope. Group Machine Learning in Practice,
+classical ML, and deep learning into a coherent learning path; keep their migration
+separate from general scientific computing so neither group waits for unrelated work.
+
+- Explain data preparation, train/validation/test separation, leakage prevention,
+  preprocessing fitted only on training data, metric selection, and baseline comparison.
+  Connect the existing classification and chronological forecasting examples to this path.
+- Review classical classification, regression, and clustering examples for reproducible
+  seeds, meaningful assertions, and algorithm assumptions. State the limits of synthetic
+  fixtures instead of treating test accuracy as real-world model quality.
+- Complete one small deterministic CPU training-to-inference deep-learning workflow with
+  bounded runtime, a loss/quality check, saved/reloaded model parity, and malformed-input
+  handling. Audit the existing chapter before choosing which framework example to polish.
+- Explain ONNX tensor shapes, element types, preprocessing contracts, runtime setup,
+  model provenance/licensing, and inference failures. Preserve the existing model-swap
+  rejection and retained-snapshot tests; verify bundled model artifacts are reproducible.
+- Separate the tested CPU baseline from optional CUDA/other accelerators. Exercise any
+  advertised accelerator recipe on its actual backend or explicitly document it as
+  optional background; do not make every accelerator a prerequisite for the CPU group.
+- Consolidate overlapping framework comparisons and link to existing arrays, linear
+  algebra, and data-processing chapters. Give practical ML, classical ML, and deep
+  learning distinct purposes while providing one navigation path through all three.
+- Re-run the practical ONNX and classical suites, strict Clippy, baseline toolchain,
+  and the selected CPU deep-learning workflow at the final revision. Prior evidence is
+  recorded in [PLATFORM_READINESS.md](PLATFORM_READINESS.md); it does not certify all
+  deep-learning or accelerator examples.
 
 ## Native API Group
 
@@ -82,7 +113,7 @@ hold the completed native-API or multimedia groups for a larger engine rewrite.
 
 - Reorganize the Science overview around numerical computation, measurement/simulation,
   data formats, and spatial analysis. Keep existing classical/deep-learning chapters and
-  Machine Learning in Practice outside this migration batch.
+  Machine Learning in Practice in the separate first-priority ML group.
 - Reuse existing math, statistics, arrays, linear algebra, and data-processing coverage.
   Add one small physical/numerical computation with units, input assumptions, tolerance,
   and a known reference result; avoid adding another crate catalog.
@@ -116,6 +147,6 @@ hold the completed native-API or multimedia groups for a larger engine rewrite.
 ## Deferred Scope
 
 Aerospace, cryptocurrency/crypto-specific application catalogs, and other highly
-specialized domains are outside this plan. ML work remains separate. Robotics,
+specialized domains are outside this plan. ML has its own first-priority group. Robotics,
 embedded firmware, and specialized neuroscience are lower priority than the broad
 native-API, multimedia, games/graphics, and general-science groups above.
