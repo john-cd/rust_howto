@@ -16,6 +16,7 @@ fn main() {
     // let (3, y) = t; // ERROR: refutable pattern in local binding.
 
     // Destructuring with structs:
+    /// Local two-dimensional value whose fields can be bound by a let pattern.
     struct Point {
         /// The horizontal coordinate.
         x: i32,

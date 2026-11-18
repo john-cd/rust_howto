@@ -24,6 +24,7 @@ struct Number(
 
 // ANCHOR: lint_levels
 // Inner attributes configure the entire module.
+/// Demonstrates module-wide lint levels alongside individual item exceptions.
 mod lint_settings {
     // ANCHOR: inner_lint
     #![warn(missing_docs)]

@@ -3,6 +3,7 @@
 //! TODO Reviewed ??-??-2026.
 
 // ANCHOR: signature
+/// Minimal iterator contract associating each implementation with its yielded type.
 trait Iterator {
     /// Type of the item values produced or consumed by this trait.
     type Item;
@@ -12,6 +13,7 @@ trait Iterator {
 }
 // ANCHOR_END: signature
 
+/// Iterator that owns at most one value and consumes it on the first next call.
 struct Once<T>(
     /// Value still available to yield; taking it leaves None and ends the iterator.
     Option<T>,
