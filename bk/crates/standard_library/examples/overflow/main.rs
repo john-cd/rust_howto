@@ -4,10 +4,10 @@
 
 /// Demonstrates explicit primitive integer overflow operations.
 mod overflow_methods;
-/// Demonstrates wrapping arithmetic with `std::num::Wrapping`.
-mod wrapping_type;
 /// Shows the default overflow behavior for the active Cargo profile.
 mod overflow_profile;
+/// Demonstrates wrapping arithmetic with `std::num::Wrapping`.
+mod wrapping_type;
 
 /// Runs one explicit integer-overflow example.
 fn main() {

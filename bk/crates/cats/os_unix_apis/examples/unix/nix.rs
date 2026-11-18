@@ -11,6 +11,7 @@
 #![cfg(target_family = "unix")]
 
 // File descriptor:
+use std::os::fd::AsFd as _;
 use std::os::fd::OwnedFd;
 
 // Configuration options for opened files:
@@ -29,7 +30,6 @@ use nix::unistd::unlink;
 // Write to a raw file descriptor:
 use nix::unistd::write;
 use rustix::fd::BorrowedFd;
-use std::os::fd::AsFd as _;
 
 /// Creates a file, writes to it and reads it back using `nix`.
 fn main() -> nix::Result<()> {
