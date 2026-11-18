@@ -52,4 +52,4 @@
 
 [p~development_tools]: development_tools.md
 [p~programming_languages]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parser-implementations/programming_languages.md
-[p~version_control]: ../devops/version_control.md
+[p~version_control]: https://github.com/john-cd/rust_howto/blob/c9d457b66ed12377a6ff5e0e1377af71cc9dde0b/bk/src/other/devops/version_control.md

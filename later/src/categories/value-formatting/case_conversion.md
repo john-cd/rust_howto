@@ -14,7 +14,7 @@ Use this recipe when translating an identifier or field name between naming conv
 
 ## Related Topics {#related-topics .skip}
 
-- [Value Formatting](index.md) and [Number Formatting](number_formatting.md).
+- [Value Formatting](index.md) and [Display Money Stored in Minor Units](minor_units.md).
 - [[internationalization | Internationalization]] and [[localization | Localization]].
 
 {{#include refs.incl.md}}

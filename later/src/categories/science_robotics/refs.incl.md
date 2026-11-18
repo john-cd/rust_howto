@@ -58,7 +58,7 @@
 [p~hardware-integration]: hardware_integration.md
 [p~json]: ../parser-implementations/json.md
 [p~linear-algebra]: https://john-cd.com/rust_howto/categories/mathematics/linear_algebra.html
-[p~localization]: ../localization/index.md
+[p~localization]: https://github.com/john-cd/rust_howto/blob/c9d457b66ed12377a6ff5e0e1377af71cc9dde0b/bk/src/categories/localization/index.md
 [p~middleware]: ../../../src/categories/web-programming_http-server/middleware.md
 [p~network-programming]: ../network-programming/index.md
 [p~node]: ../development-tools_ffi/node.md

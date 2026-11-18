@@ -8,7 +8,7 @@ Format values for display, potentially adapting output to a user's language and 
 
 | Task | Crates | Notes |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Integer and floating-point conversion | [![itoa][c~itoa~docs~badge]][c~itoa~docs]↗{{hi:itoa}}, [![ryu][c~ryu~docs~badge]][c~ryu~docs]↗{{hi:ryu}} | Fast primitive-to-string conversion; both support allocation-free buffer formatting. See [Number Formatting](number_formatting.md). |
+| Integer and floating-point conversion | [![itoa][c~itoa~docs~badge]][c~itoa~docs]↗{{hi:itoa}}, [![ryu][c~ryu~docs~badge]][c~ryu~docs]↗{{hi:ryu}} | Fast primitive-to-string conversion; both support allocation-free buffer formatting. See [Number Formatting](https://github.com/john-cd/rust_howto/blob/c9d457b66ed12377a6ff5e0e1377af71cc9dde0b/bk/src/categories/value-formatting/number_formatting.md). |
 | Number separators and locale | [`num-format`][c~num-format~docs]↗{{hi:num-format}}, [`icu`][c~icu~docs]↗{{hi:icu}} | Use locale-aware formatting when grouping and decimal separators vary by locale. |
 | Localized messages | [`fluent`][c~fluent~docs]↗{{hi:fluent}}, [`gettext-rs`][c~gettext~docs]↗{{hi:gettext-rs}}, [`locale`][c~locale~docs]↗{{hi:locale}} | Translate messages and select locale-aware output; assess the crate's supported locale data and maintenance needs. |
 | Dates and durations | [`chrono`][c~chrono~docs]↗{{hi:chrono}}, [`time`][c~time~docs]↗{{hi:time}}, [`humantime`][c~humantime~docs]↗{{hi:humantime}} | Format calendar values or human-readable durations. |
@@ -22,7 +22,7 @@ Use Rust's `Display` implementation for ordinary text formatting. Use a locale-a
 
 ## Examples
 
-- [Format numeric values][ex~value-formatting~number-formatting].
+- [Display money stored in minor units][ex~value-formatting~number-formatting].
 - [Convert identifiers between case styles][ex~value-formatting~case-conversion].
 
 ## Related Topics

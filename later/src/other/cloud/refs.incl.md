@@ -43,7 +43,7 @@
 [p~container]: ../../categories/virtualization/containers.md
 [p~data-processing]: ../data-processing/index.md
 [p~devops]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/other/devops/index.md
-[p~microservices]: ../architecture/common_architectures.md#microservices
+[p~microservices]: https://github.com/john-cd/rust_howto/blob/c9d457b66ed12377a6ff5e0e1377af71cc9dde0b/bk/src/other/architecture/common_architectures.md#microservices
 [p~network-programming]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/network-programming/index.md
 [p~using_containers]: ../../categories/virtualization/using_containers.md
 [p~written-in-rust]: ../written-in-rust/index.md

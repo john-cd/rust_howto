@@ -35,7 +35,7 @@ Crux is a good fit when several clients need the same business rules but need di
 ## Related Topics {#related-topics .skip}
 
 - [Cross-platform Development](index.md).
-- [Architecture](../architecture/index.md).
+- [Architecture](https://github.com/john-cd/rust_howto/blob/c9d457b66ed12377a6ff5e0e1377af71cc9dde0b/bk/src/other/architecture/index.md).
 - [Software Architecture Process][p~architecture-process].
 - [WebAssembly](../../categories/wasm/index.md).
 - Programming Languages<!-- Cross-book topic: bk/src/categories/parser-implementations/programming_languages.md; not included in this preview. -->.

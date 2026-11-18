@@ -5,7 +5,7 @@
 [c~bytesize~docs]: https://docs.rs/bytesize
 [c~humansize~docs]: https://docs.rs/humansize
 [c~num-format~docs]: https://docs.rs/num-format
-[ex~value-formatting~number-formatting]: number_formatting.md#number-formatting
+[ex~value-formatting~number-formatting]: minor_units.md#number-formatting
 [ex~value-formatting~case-conversion]: case_conversion.md#case-conversion
 
 [p~additional_numeric_types]: https://john-cd.com/rust_howto/categories/mathematics/additional_numeric_types.html

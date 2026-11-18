@@ -25,11 +25,6 @@
 
 - [API bindings](categories/api-bindings/index.md)
 
-- [Architecture](other/architecture/index.md)
-  - [Architectural Patterns](other/architecture/architectural_patterns.md)
-  - [Common Architectures](other/architecture/common_architectures.md)
-  - [Software Architecture Process](other/architecture/software_architecture_process.md)
-
 - [Audio](categories/multimedia_audio/index.md)
   - [Audio](categories/multimedia_audio/audio.md)
   - [Analyze a Window of Audio](categories/multimedia_audio/analysis.md)
@@ -72,12 +67,6 @@
   - [Crates for macro development](categories/development-tools_procedural-macro-helpers/write_proc_macros.md)
   - [Tools for macro development](categories/development-tools_procedural-macro-helpers/macro_tools.md)
   - [Compiling macros ahead of time](categories/development-tools_procedural-macro-helpers/compile_macros.md)
-
-- [DevOps](other/devops/index.md)
-  - [Git Hooks](other/devops/version_control.md)
-  - [Github Actions](other/devops/github_actions.md)
-  - [Release Automation](other/devops/release_automation.md)
-  - [CD/CI](other/devops/cd_ci.md)
 
 - [Embedded development](categories/embedded/index.md)
   - [`embassy`](categories/embedded/embassy.md)
@@ -126,12 +115,6 @@
   - [UI layout](categories/gui/ui_layout.md)
   - [Web-based GUI](categories/gui/web_based_gui.md)
   - [Window creation](categories/gui/window_creation.md)
-
-- [Internationalization](categories/internationalization/index.md)
-  - [Internationalization](categories/internationalization/internationalization.md)
-
-- [Localization](categories/localization/index.md)
-  - [Localization](categories/localization/localization.md)
 
 - [Machine learning](categories/science/classical_machine_learning.md)
 
@@ -207,7 +190,7 @@
   - [Physics Engines](categories/simulation/physics_engines.md)
 
 - [Value formatting](categories/value-formatting/index.md)
-  - [Number Formatting](categories/value-formatting/number_formatting.md)
+  - [Display Money Stored in Minor Units](categories/value-formatting/minor_units.md)
   - [Identifier Case Conversion](categories/value-formatting/case_conversion.md)
 
 - [Video](categories/multimedia_video/index.md)
