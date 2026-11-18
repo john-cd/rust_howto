@@ -1,0 +1,24 @@
+# TODO Reviewed ??-??-2026.
+
+[package]
+name = "visualization_chartistry"
+version.workspace = true
+description = "A browser-based Chartistry example for the Rust How-To Book"
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+
+[[bin]]
+name = "chartistry"
+path = "main.rs"
+required-features = ["chartistry"]
+
+[features]
+chartistry = ["dep:leptos", "dep:leptos-chartistry"]
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+leptos = { version = "0.8.23", features = ["csr"], optional = true }
+leptos-chartistry = { version = "0.2.3", optional = true }
+
+[lints]
+workspace = true

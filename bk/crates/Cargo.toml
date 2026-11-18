@@ -63,6 +63,7 @@ members = [
     "cats/text_processing",
     "cats/value_formatting",
     "cats/visualization",
+    "cats/visualization/examples/chartistry",
     "cats/web_programming",
     "cats/web_programming_http_client",
     "cats/web_programming_http_server",
