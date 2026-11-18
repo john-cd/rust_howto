@@ -28,6 +28,8 @@ clap = "4.6.7"
 ndarray = "0.17.2" # Matches the ndarray type used by nifti's volume writer.
 # Rust implementation of the NIfTI file format
 nifti = { version = "0.18.0", features = ["ndarray_volumes"] }
+# Fast Fourier transforms for the sampled-signal analysis example.
+rustfft = "6.4.1"
 
 [lints]
 workspace = true

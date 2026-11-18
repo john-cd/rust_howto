@@ -16,7 +16,7 @@ Scope: this category covers software that models a system over time or space. Th
 | Numerical ODE solving | [`ode_solvers`][c~ode_solvers~docs]↗{{hi:ode_solvers}}, [`diffsol`][c~diffsol~docs]↗{{hi:diffsol}} | Runge-Kutta solvers; `diffsol` adds stiff (implicit) solvers. |
 | Monte Carlo | [`rand`][c~rand~docs]↗{{hi:rand}} | See random number generation in Related Topics. |
 
-Follow-up pages worth writing (discrete-event, agent-based models, ODE solving) are tracked in the epic [#1994](https://github.com/john-cd/rust_howto/issues/1994).
+The examples are small teaching models, not validated physical models or performance benchmarks. Add domain-specific units, solver tolerances, random seeds, and validation data before relying on a simulation's output.
 
 ## Physics Engines
 

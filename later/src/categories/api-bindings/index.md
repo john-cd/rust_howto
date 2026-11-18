@@ -4,7 +4,19 @@
 
 [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}}
 
-Idiomatic wrappers of specific APIs{{hi:APIs}} for convenient access from Rust. Includes HTTP API wrappers as well. Non-idiomatic or unsafe bindings can be found in [[external-ffi-bindings | External FFI Bindings]].
+An API binding gives Rust code a typed interface to a capability implemented elsewhere. That capability may be a native library in the same process, an operating-system service, or a remote HTTP service. Remote clients do not cross a native ABI boundary; low-level declarations for C libraries and system APIs belong in [[external-ffi-bindings | External FFI Bindings]]. Use the FFI tooling chapter when generating or maintaining bindings for an API you own.
+
+## Choose the Integration Layer
+
+| Situation | Start with | Check before adopting |
+| --- | --- | --- |
+| A remote HTTP service | A Rust client crate such as `reqwest`, `isahc`, or `surf` | Async runtime requirements, TLS defaults, retries, timeouts, and how status and transport errors are exposed. |
+| A remote database server | Its protocol client, such as `tokio-postgres` or `mongodb` | Connection pooling, server-version support, transaction behavior, and how errors are exposed. |
+| A database embedded in the application | A local database wrapper such as `rusqlite` | Whether the crate bundles or links the native library, and how the database file and connection are managed. |
+| A native library with a maintained Rust wrapper | The safe wrapper rather than its `-sys` crate | Platform support, native SDK installation, enabled features, and whether the wrapper owns foreign resources safely. |
+| An API without a suitable wrapper | The raw binding or a generated binding behind a small safe module | ABI and version compatibility, handle ownership, pointer validity, thread-safety, and link-time system dependencies. |
+
+Prefer the narrowest maintained interface that covers the required API. Keep credentials and network policy at the application boundary, and keep `unsafe` calls and foreign ownership rules inside a wrapper module.
 
 ## Safe Compression API
 

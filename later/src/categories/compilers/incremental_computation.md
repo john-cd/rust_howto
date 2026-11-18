@@ -33,7 +33,9 @@ Rust offers several frameworks and libraries to facilitate incremental computati
 
 [`comemo`][c~comemo~docs]↗{{hi:comemo}} offers incremental computation through constrained memoization.
 
-[`comemo`][c~comemo~docs]↗{{hi:comemo}} provides memoization utilities, primarily focusing on compile-time memoization. It allows you to precompute the results of [functions][p~functions] at compile time and embed them directly into the binary. This can significantly improve runtime [performance][p~performance] for functions with expensive computations but fixed inputs. [`comemo`][c~comemo~docs]↗{{hi:comemo}} uses `const` generics and procedural macros to achieve this compile-time evaluation. It's particularly useful for lookups, precomputed tables, or any situation where the function's inputs are known at compile time. Unlike runtime memoization, [`comemo`][c~comemo~docs]↗{{hi:comemo}} avoids any runtime overhead associated with checking and storing cached values. However, it does increase compile time as the computations are performed during compilation.
+[`comemo`][c~comemo~docs]↗{{hi:comemo}} performs runtime incremental computation through constrained memoization. A memoized function can receive a `Tracked<T>` value; methods marked with `#[track]` record which parts of that value the function observes. If unrelated parts change, a cached result can still be reused. The example changes an unobserved flag and then a tracked value to show the difference.
+
+Use this approach when the computation can be expressed as deterministic functions over explicit inputs and tracked accesses. Do not rely on hidden mutable state or untracked I/O to affect a memoized result: the cache cannot invalidate work for dependencies it does not observe. Unlike `salsa`, which organizes work as a query database, `comemo` adds fine-grained tracking to functions. It is not compile-time evaluation; use `const fn` and const evaluation when a value must be computed during compilation.
 
 ```rust,editable
 {{#include ../../../crates/cats/compilers/examples/incremental_computation/comemo.rs:example}}

@@ -2,12 +2,12 @@
 
 # Simulation
 
-This crate contains code examples for the **Simulation** category on crates.io. It demonstrates integration with key ecosystem crates including `ode_solvers`, `rapier2d`.
+This crate contains code examples for the staged **Simulation** category. It demonstrates integration with key ecosystem crates including `ode_solvers`, `rand`, and `rapier2d`.
 
 ## Examples Covered
 
 - **Physics Engines** (`examples/physics_engines/`): Demonstrates concepts like `rapier2d`.
-- **Simulation** (`examples/simulation/`): Demonstrates concepts like `discrete_event`, `ode_solver`.
+- **Simulation** (`examples/simulation/`): Demonstrates discrete-event simulation, ODE solving, and Monte Carlo sampling.
 
 ## Usage
 
@@ -18,4 +18,4 @@ cargo check --package simulation --examples
 cargo test --package simulation
 ```
 
-Code examples correspond to chapters in `bk/src/categories/simulation` or related book sections.
+Code examples correspond to staged chapters in `later/src/categories/simulation` or related book sections.

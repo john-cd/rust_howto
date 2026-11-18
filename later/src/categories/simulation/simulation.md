@@ -38,7 +38,13 @@ The example integrates `dy/dt = -y`, then compares the numerical value at `t = 1
 
 ## Monte Carlo Simulation {#monte-carlo}
 
-Monte Carlo methods use repeated random samples to estimate a distribution or expected value. Start with [[randomness | Random Numbers]] for Rust's `rand` ecosystem.
+Monte Carlo methods use repeated random samples to estimate a distribution or expected value. This example estimates π by sampling points in a square and measuring the fraction inside the unit circle. A fixed seed makes the estimate repeatable for the locked dependency versions; `StdRng` does not promise the same stream across releases.
+
+```rust,editable
+{{#include ../../../crates/cats/simulation/examples/simulation/monte_carlo.rs:example}}
+```
+
+Sampling error shrinks on the order of `1 / sqrt(n)`, so multiplying the number of samples by four roughly halves the typical error. See [[randomness | Random Numbers]] for Rust's `rand` ecosystem. From `later/crates`, run `cargo run --locked -p simulation --example simulation -- monte-carlo`.
 
 ## Physics Simulation {#physics-simulation}
 

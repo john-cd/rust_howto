@@ -2,6 +2,7 @@
 
 [ex~science_neuroscience~neuro]: neuroscience.md#neuro
 [ex~science_neuroscience~lif]: neuroscience.md#lif
+[ex~science_neuroscience~fft-signal]: neuroscience.md#fft-signal
 [noodles~docs]: https://docs.rs/noodles/latest/noodles/index.html
 [rust-bio~docs]: https://docs.rs/bio/latest/bio/
 [c~european-data-format~docs]: https://docs.rs/european-data-format/latest/european_data_format/

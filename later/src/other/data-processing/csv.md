@@ -6,12 +6,17 @@
 
 ## Read and Write CSV Files {#read-and-write-csv-files}
 
-Reading, writing, filtering, transforming and (de)serializing CSV records with [`csv`][c~csv~docs]↗{{hi:csv}} and [`serde`][c~serde~docs]↗{{hi:serde}} are covered in the [draft CSV recipes][p~csv]↗ in the book repository, so this page does not repeat them.
+The [`csv`][c~csv~docs]↗{{hi:csv}} crate reads and writes records, while [`serde`][c~serde~docs]↗{{hi:serde}} maps records to typed Rust values. This example processes each input row as it is read, then writes and reads back one typed record. It uses in-memory bytes so it runs without fixture files or network access; for a large file, pass a `File` to `Reader::from_path` and keep the same row-by-row loop.
 
-For data processing, keep two points in mind:
+```rust,noplayground
+{{#include ../../../crates/other/examples/data_processing/csv/csv.rs:example}}
+```
 
-- **Stream large files.** `csv::Reader::records()` and `deserialize()` return iterators that process records incrementally. Memory still depends on the largest record and on anything your application retains; avoid collecting every row into a `Vec` unless needed.
-- **Load into a frame for analysis.** To filter, group or join CSV data, read it into a dataframe instead of hand-written loops: see [Dataframes](https://john-cd.com/rust_howto/categories/data-processing/dataframes.html).
+From `later/crates`, run it with `cargo run --locked -p other --example csv`.
+
+Use `Reader::records()` when you want to handle fields by position or name, and `Reader::deserialize()` when the CSV headers map cleanly to a struct. Both return iterators, so avoid collecting every row unless the full dataset fits in memory and later processing needs it.
+
+For analysis that needs filtering, grouping, or joins across columns, load data into a dataframe rather than growing a collection of hand-written row loops; see [Dataframes](https://john-cd.com/rust_howto/categories/data-processing/dataframes.html).
 
 ## Manipulate CSV Files from the Command Line {#manipulate-csv-files-from-the-command-line}
 

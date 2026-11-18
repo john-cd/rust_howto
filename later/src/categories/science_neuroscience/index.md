@@ -27,18 +27,15 @@ Use Rust's numerical, data-processing, and visualization crates to build biology
 
 | Topic | Rust Crates (Examples) | Notes |
 | --- | --- | --- |
-| Data [[visualization | Visualization]] | | Plotting libraries can help inspect measurements and analysis results. |
+| Data [[visualization | Visualization]] | [`plotters`][c~plotters~docs]↗{{hi:plotters}}, [`rerun`][c~rerun~docs]↗{{hi:rerun}} | Inspect measurements and analysis results; keep synthetic or transformed data labeled. |
 | Machine Learning and Data [[science | Science]] | [`linfa`][c~linfa~docs]↗{{hi:linfa}}, [`tch-rs`][c~tch~docs]↗{{hi:tch-rs}} | General machine-learning libraries can support classification, prediction, and image analysis. |
 | [[mathematics | Mathematics]] and numerical computation | [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}, [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}}, [`statrs`][c~statrs~docs]↗{{hi:statrs}} | Use established numerical types and methods for scientific calculations. |
-| Data Analysis & [[data-processing | Processing]] | [`polars`][c~polars~docs]↗{{hi:polars}}, [`dataframe`][c~dataframe~docs]↗{{hi:dataframe}} | These crates are useful for working with large datasets. |
-| [[simulation | Simulation]] | | |
+| Data analysis and [[data-processing | Processing]] | [`polars`][c~polars~docs]↗{{hi:polars}}, [`arrow`][c~arrow~docs]↗{{hi:arrow}} | Work with tabular metadata and columnar measurements; preserve units and provenance when transforming them. |
+| Signal processing | [`rustfft`][c~rustfft~docs]↗{{hi:rustfft}} | Analyze sampled signals after recording the sampling rate, window, and normalization used. |
+| [[simulation | Simulation]] | [`ode_solvers`][c~ode_solvers~docs]↗{{hi:ode_solvers}} | Explore models with explicit parameters and compare results with known behavior or published validation data. |
 | FFI | | Leverage existing neuroscience libraries by creating Rust bindings using FFI. See [[development-tools_ffi | Development Tools FFI]], [[external-ffi-bindings | External FFI Bindings]], [[api-bindings | API Bindings]] |
 
 Biological data requires careful handling of identifiers, units, coordinate systems, and provenance. Validate format assumptions against the data producer and domain documentation.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
-
-<div class="hidden">
-  also cover Biology! see lib.rs categorization
-</div>

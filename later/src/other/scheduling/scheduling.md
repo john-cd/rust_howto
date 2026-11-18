@@ -34,4 +34,10 @@ Sleep until the next fire time, run the job, and recompute. Because each wake-up
 
 [`tokio-cron-scheduler`](https://docs.rs/tokio-cron-scheduler)↗ wraps this pattern in a job scheduler with an optional persistent store.
 
+## Related Topics {#related-topics .skip}
+
+- [[date-and-time | Date and Time]] for time zones and daylight-saving transitions.
+- [[asynchronous | Asynchronous]] for cancellation and task lifetimes.
+- [[task-automation | Task Automation]] for short-lived scheduled commands.
+
 {{#include refs.incl.md}}

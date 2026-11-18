@@ -19680,6 +19680,7 @@ dependencies = [
  "clap",
  "cron",
  "crux_core",
+ "csv",
  "datafusion",
  "duct",
  "futures",
@@ -23394,6 +23395,7 @@ dependencies = [
  "clap",
  "ndarray 0.17.2",
  "nifti",
+ "rustfft",
 ]
 
 [[package]]
@@ -24506,6 +24508,7 @@ version = "0.1.2"
 dependencies = [
  "clap",
  "ode_solvers",
+ "rand 0.10.4",
  "rapier2d 0.36.1",
 ]
 

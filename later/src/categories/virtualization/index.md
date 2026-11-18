@@ -4,9 +4,9 @@
 
 [![cat~virtualization][cat~virtualization~badge]][cat~virtualization]{{hi:Virtualization}}
 
-Creation and management of virtual environments and resources of any form, including containerization systems.
+Virtualization places a workload inside an isolated execution environment. A container isolates processes while sharing the host kernel; a virtual machine runs a guest kernel; a WebAssembly runtime constrains a module inside its host. The pages below distinguish application workflows from Rust libraries used to build virtualization infrastructure.
 
-The Rust virtualization ecosystem is still under development, but there's growing interest and activity.
+Before choosing a runtime or crate, check the host operating system, CPU architecture, hardware acceleration, required privileges, kernel features, and native libraries. Support for one host does not imply that a hypervisor or low-level API works on every target.
 
 ## Pages
 
@@ -30,7 +30,7 @@ The Rust virtualization ecosystem is still under development, but there's growin
 | [`tun-tap`][c~tun-tap~docs]↗{{hi:tun-tap}} | Networking | Virtual network interfaces. |
 | [`polkavm`][c~polkavm~crates.io]↗{{hi:polkavm}} | Emulator | RISC-V VM for smart contracts; see [Emulators](../emulators/index.md). |
 
-[`QEMU`][wikipedia~QEMU]↗{{hi:QEMU}} and [`KVM`][c~kvm~docs]↗{{hi:KVM}} remain the usual integration points. Rust's memory safety is a strong advantage for security-sensitive virtualization code.
+[`QEMU`][wikipedia~QEMU]↗{{hi:QEMU}} and [`KVM`][c~kvm~docs]↗{{hi:KVM}} are common integration points. Safe Rust can reduce some memory-safety risks in virtualization components, but it does not establish isolation by itself; unsafe code, FFI, configuration, the host kernel, and the hypervisor boundary still need careful review.
 
 [gVisor][gvisor~website]↗ provides a sandboxed userspace kernel for containers. Compare its supported system calls, workload needs, and deployment environment with the micro-VM choices above.
 
