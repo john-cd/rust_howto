@@ -57,6 +57,26 @@ The gold marker's horizontal pixel centroid in three X11 window captures
 moved from 267 to 399 and returned to 267 on restart. This exercised the
 keyboard and rendering paths with the scripted game smoke mode disabled.
 
+### Linux ALSA Output
+
+For [#2356](https://github.com/john-cd/rust_howto/issues/2356), the CPAL
+output-stream test passed on Debian Trixie with Rust 1.100.0. In a disposable
+container with `pkg-config` and `libasound2-dev`, a private ALSA configuration
+routed the default PCM through the file plugin to a null sink. The capture
+contained changing samples on both channels (signed 16-bit little-endian at
+48 kHz). A null sink can drain faster than real time, so the byte count does
+not establish playback duration or audible quality.
+
+With that output configured, run from the repository root:
+
+```sh
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example audio -- audio::tests::test_audio_example_entry_point --ignored --nocapture
+```
+
+Windows listed Microsoft GS Wavetable Synth as an output and reported no
+MIDI input ports. The Linux VM exposed no ALSA sequencer device. The MIDI
+loopback example still needs a dedicated port pair for an end-to-end run.
+
 ### Linux statx
 
 The native Linux checks for [#2358](https://github.com/john-cd/rust_howto/issues/2358)
