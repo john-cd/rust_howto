@@ -22,10 +22,8 @@ There are few mature physics engines in pure Rust. Many robust physics engines a
 
 See also:
 
-- [[game-development | Game Development]].
-- [[game-engines | Game Engines]].
-- [[game_development | Game Development]].
-- [[game_engines | Game Engines]].
+- [Game Development](https://john-cd.com/rust_howto/categories/game-development/index.html).
+- [Game Engines](https://john-cd.com/rust_howto/categories/game-engines/index.html).
 - [[simulation | Simulation]].
 
 ## FFI (Foreign Function Interface)
