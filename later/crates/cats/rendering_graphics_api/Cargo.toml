@@ -29,6 +29,12 @@ test = true
 required-features = ["wgpu"]
 
 [[example]]
+name = "offscreen_render"
+path = "examples/offscreen_render.rs"
+test = true
+required-features = ["wgpu"]
+
+[[example]]
 name = "opengl"
 path = "examples/opengl/main.rs"
 test = true
