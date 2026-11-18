@@ -878,7 +878,11 @@ pub(crate) struct TransmissionPipelineConf {
 /// Concurrent pipeline that moves transport batches between producers and links.
 pub(crate) struct TransmissionPipeline;
 impl TransmissionPipeline {
-    // A MPSC pipeline
+    /// Creates producer/consumer halves sharing per-priority queues and wakeup state.
+    ///
+    /// Queue capacities follow the configured priorities; a single-priority
+    /// transport uses the default priority capacity. The shared status coordinates
+    /// congestion and shutdown between concurrent producers and the consumer.
     pub(crate) fn make(
         /// Settings that control how this transmission pipeline is constructed or processed.
         config: TransmissionPipelineConf,

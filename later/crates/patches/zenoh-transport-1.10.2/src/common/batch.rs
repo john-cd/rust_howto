@@ -352,6 +352,7 @@ impl WBatch {
     }
 
     // Split (length, header, payload) internal buffer slice
+    /// Borrows length-prefix, optional header, and payload slices without copying.
     #[inline(always)]
     fn split<'a>(buffer: &'a [u8], config: &BatchConfig) -> (&'a [u8], &'a [u8], &'a [u8]) {
         zsplit!(buffer, config.is_streamed, config.has_header())
@@ -686,6 +687,7 @@ impl DecompressUring for RBatch<ZBufReader<'_>> {
 impl RBatch<ZSlice> {
     // Split (length, header, payload) internal buffer slice
 
+    /// Borrows length-prefix, optional header, and payload slices without copying.
     #[inline(always)]
     fn split<'a>(buffer: &'a [u8], config: &BatchConfig) -> (&'a [u8], &'a [u8], &'a [u8]) {
         zsplit!(buffer, config.is_streamed, config.has_header())

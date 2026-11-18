@@ -134,6 +134,10 @@ impl TransportUnicastUniversal {
         }
     }
 
+    /// Selects a link matching message reliability and priority before scheduling transmission.
+    ///
+    /// Returns false when no suitable link is available; shared-memory mapping and
+    /// traffic statistics follow the selected link and enabled feature set.
     #[allow(unused_mut)] // When feature "shared-memory" is not enabled
     #[allow(clippy::let_and_return)] // When feature "stats" is not enabled
     #[inline(always)]
