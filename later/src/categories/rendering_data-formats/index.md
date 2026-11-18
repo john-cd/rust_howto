@@ -4,11 +4,11 @@
 
 [![cat~rendering::data-formats][cat~rendering::data-formats~badge]][cat~rendering::data-formats]{{hi:Rendering data formats}}
 
-Use a format-specific page to choose parsers for 3D models, SVG, and compressed GPU textures. Raster image decoding is covered in [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html).
+Use a format-specific page to choose parsers for 3D models, SVG, and compressed GPU textures. Raster image decoding is covered in [Multimedia: Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md).
 
 | Asset family | Crates or formats | Guide |
 | --- | --- | --- |
-| Raster images and sprites | `image`, `imageproc`, `lodepng`, `jpeg-decoder`, `gif`, `webp` | [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html) |
+| Raster images and sprites | `image`, `imageproc`, `lodepng`, `jpeg-decoder`, `gif`, `webp` | [Multimedia: Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md) |
 | 3D scenes and meshes | glTF, OBJ, STL, PLY | [3D model formats](3d_model_formats.md) |
 | Vector graphics | SVG, `usvg`, `resvg` | [Vector formats](vector_formats.md) |
 | GPU texture containers | KTX2, DDS; Basis Universal transcoding | [Texture formats](texture_formats.md) |
@@ -24,9 +24,9 @@ Use a format-specific page to choose parsers for 3D models, SVG, and compressed 
 
 - [[rendering | Rendering]].
 - [[rendering_engine | Rendering Engine]].
-- [2D Renderers](https://john-cd.com/rust_howto/categories/graphics/2d_renderers.html).
+- [2D Renderers](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/2d_renderers.md).
 - [[3d_renderers | 3D Renderers]].
-- [SVG Rendering](https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html).
+- [SVG Rendering](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/svg_rendering.md).
 - [[rendering_graphics-api | Rendering: Graphics API]].
 
 {{#include refs.incl.md}}

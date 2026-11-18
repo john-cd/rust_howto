@@ -13,7 +13,7 @@
 [c~tobj~docs]: https://docs.rs/tobj
 [c~tobj~docs~badge]: https://img.shields.io/crates/v/tobj?label=tobj
 
-[p~svg-rendering]: https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html
+[p~svg-rendering]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/svg_rendering.md
 
 [p~2d_vector_graphics]: ../rendering/2d_vector_graphics.md
 [p~3d_renderers]: ../rendering/3d_renderers.md

@@ -48,7 +48,7 @@ requests and preserving errors; spawning one thread per keystroke is not that po
 | Declarative desktop | `iced`, `slint`, `floem`, `xilem` | [Retained-mode GUI](retained_mode_gui.md); framework features and native backend prerequisites differ. Slint has headless logic tests; one framework's test does not validate another. |
 | Native Linux toolkit | `gtk4`, `relm4` | [GTK](gtk.md); requires the actual GTK development/runtime libraries and native Linux execution. |
 | Web or webview UI | `dioxus`, `tauri`, `wry` | [Web-based GUI](web_based_gui.md); distinguish browser, SSR and desktop webview builds. Some webview adapters remain disabled pending dependency compatibility. |
-| Windows and pixels | `winit`, `softbuffer`, `pixels`, `minifb` | [Window Creation](window_creation.md) and [2D Renderers](https://john-cd.com/rust_howto/categories/graphics/2d_renderers.html). Window events, DPI and surface lifetime remain application responsibilities. |
+| Windows and pixels | `winit`, `softbuffer`, `pixels`, `minifb` | [Window Creation](window_creation.md) and [2D Renderers](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/2d_renderers.md). Window events, DPI and surface lifetime remain application responsibilities. |
 | Platform integration | `rfd`, `arboard`, `accesskit` | [Dialogs](file_dialogs.md), [clipboard](clipboard.md), and [accessibility](../accessibility/index.md). Device/UI tests are separate from pure state tests. |
 
 Use each toolkit's own UI-thread scheduling mechanism when porting the pattern.

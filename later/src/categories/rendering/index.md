@@ -21,12 +21,12 @@ Examples:
 ## Topics
 
 - [[rendering_engine | Rendering Engine]].
-- [2D Renderers](https://john-cd.com/rust_howto/categories/graphics/2d_renderers.html).
-  - [2D Raster Graphics](https://john-cd.com/rust_howto/categories/graphics/2d_raster_graphics.html).
+- [2D Renderers](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/2d_renderers.md).
+  - [2D Raster Graphics](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/2d_raster_graphics.md).
   - [[2d_vector_graphics | 2D Vector Graphics]].
 - [[3d_renderers | 3d Renderers]].
 - [[rendering_data-formats | Rendering Data Formats]].
-- [SVG Rendering](https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html).
+- [SVG Rendering](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/svg_rendering.md).
 - [[text_rendering | Text Rendering]].
 - Low-level Graphics API: [[rendering_graphics-api | Rendering: Graphics API]].
   - [[gpu_abstraction_layers | Gpu Abstraction Layers]].
@@ -44,7 +44,7 @@ See also:
 
 ### 2D Raster Graphics
 
-See the [published 2d raster graphics chapter](https://john-cd.com/rust_howto/categories/graphics/2d_raster_graphics.html).
+See the [published 2d raster graphics chapter](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/2d_raster_graphics.md).
 
 ### 2D Vector Graphics
 
@@ -56,7 +56,7 @@ See the [published 2d raster graphics chapter](https://john-cd.com/rust_howto/ca
 
 ### SVG Rendering
 
-See the [published svg rendering chapter](https://john-cd.com/rust_howto/categories/graphics/svg_rendering.html).
+See the [published svg rendering chapter](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/svg_rendering.md).
 
 ### Font Loading & Text Rendering
 
@@ -67,7 +67,7 @@ See the [published svg rendering chapter](https://john-cd.com/rust_howto/categor
 - [[rendering_data-formats | Rendering Data Formats]]: 3D model and scene formats.
 - [[rendering_engine | Rendering Engine]]: engines built on the APIs below.
 - [[rendering_graphics-api | Rendering: Graphics API]]: OpenGL, Vulkan, `wgpu` and shaders.
-- [[game_development | Game Development]], [[gui | GUI]], [[visualization | Visualization]] and [Multimedia: Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html) / [[multimedia_video | Multimedia: Video]].
+- [[game_development | Game Development]], [[gui | GUI]], [[visualization | Visualization]] and [Multimedia: Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md) / [[multimedia_video | Multimedia: Video]].
 - Windowing: [`winit`][c~winit~docs]↗{{hi:winit}}, the preferred cross-platform window and event library.
 
 {{#include refs.incl.md}}

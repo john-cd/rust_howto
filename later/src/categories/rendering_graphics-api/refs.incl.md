@@ -26,7 +26,7 @@
 [p~debugging]: ../../../src/categories/development-tools_debugging/debugging.md
 [p~gpu]: ../../other/gpu/gpu.md
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
-[p~images]: https://john-cd.com/rust_howto/categories/multimedia_images/images.html
+[p~images]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/images.md
 [p~html]: ../../../src/categories/parser-implementations/html.md
 [p~programming-languages]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parser-implementations/programming_languages.md
 [p~rendering]: ../rendering/index.md

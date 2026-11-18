@@ -18,7 +18,7 @@ When the business rules should match but the interfaces should feel native, put 
 
 ### Target a browser or embedded device
 
-For browser applications, compile Rust to WebAssembly and integrate with browser APIs as needed; see [WebAssembly](../../categories/wasm/index.md). Embedded projects also target specific chips and often use `no_std` libraries and hardware abstraction layers; see [Embedded Systems](../../categories/embedded/index.md) and [no_std](https://john-cd.com/rust_howto/categories/no-std/no_std.html). Crates such as [`cortex-m`][c~cortex-m~docs]↗{{hi:cortex-m}}, [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} and [`rtic`][c~rtic~docs]↗{{hi:rtic}} are common starting points.
+For browser applications, compile Rust to WebAssembly and integrate with browser APIs as needed; see [WebAssembly](../../categories/wasm/index.md). Embedded projects also target specific chips and often use `no_std` libraries and hardware abstraction layers; see [Embedded Systems](../../categories/embedded/index.md) and [no_std](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/no-std/no_std.md). Crates such as [`cortex-m`][c~cortex-m~docs]↗{{hi:cortex-m}}, [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} and [`rtic`][c~rtic~docs]↗{{hi:rtic}} are common starting points.
 
 ## Cross-compile for another target
 

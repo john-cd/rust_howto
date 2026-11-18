@@ -48,7 +48,7 @@ Bare-metal firmware can use interrupts and a main loop without an RTOS. A small 
 
 - [Hardware Abstraction Layers](hals.md) provide peripheral interfaces to tasks.
 - [Peripheral Access Crates](pacs.md) expose chip-specific registers and interrupt names.
-- Concurrency design and [no-std development](https://john-cd.com/rust_howto/categories/no-std/no_std.html) provide related Rust patterns.
+- Concurrency design and [no-std development](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/no-std/no_std.md) provide related Rust patterns.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -16,7 +16,7 @@ From `later/crates`, run it with `cargo run --locked -p other --example csv`.
 
 Use `Reader::records()` to handle fields by position. To select fields by name, resolve their positions from the header first. Use `Reader::deserialize()` when the CSV headers map cleanly to a struct. Both return iterators, so process rows as they arrive unless a later step needs to retain them.
 
-For analysis that needs filtering, grouping, or joins across columns, load data into a dataframe rather than growing a collection of hand-written row loops; see [Dataframes](https://john-cd.com/rust_howto/categories/data-processing/dataframes.html).
+For analysis that needs filtering, grouping, or joins across columns, load data into a dataframe rather than growing a collection of hand-written row loops; see [Dataframes](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/data-processing/dataframes.md).
 
 ## Manipulate CSV Files from the Command Line {#manipulate-csv-files-from-the-command-line}
 
@@ -36,7 +36,7 @@ If you want a smaller tool with a built-in expression language, [`xan`][c~xan~re
 ## Related Topics {#related-topics .skip}
 
 - [[data_processing | Data and ETL]].
-- [Dataframes](https://john-cd.com/rust_howto/categories/data-processing/dataframes.html).
+- [Dataframes](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/data-processing/dataframes.md).
 - [[development_tools | Development Tools]].
 - [[parsing | Parsing]].
 

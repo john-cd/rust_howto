@@ -61,7 +61,7 @@ Bindings for machine learning frameworks like [`TensorFlow`][tensorflow~website]
 
 ## Multimedia APIs
 
-Examples include [`ffmpeg`][c~ffmpeg~docs]↗{{hi:ffmpeg}} (bindings to the FFmpeg library) and [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}} (Bindings to the Simple DirectMedia Layer (SDL) library for multimedia applications). See [[multimedia | Multimedia]], [[multimedia_audio | Multimedia: Audio]], [[multimedia_encoding | Multimedia: Encoding]], [Multimedia Images](https://john-cd.com/rust_howto/categories/multimedia_images/index.html), and [[multimedia_video | Multimedia Video]].
+Examples include [`ffmpeg`][c~ffmpeg~docs]↗{{hi:ffmpeg}} (bindings to the FFmpeg library) and [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}} (Bindings to the Simple DirectMedia Layer (SDL) library for multimedia applications). See [[multimedia | Multimedia]], [[multimedia_audio | Multimedia: Audio]], [[multimedia_encoding | Multimedia: Encoding]], [Multimedia Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md), and [[multimedia_video | Multimedia Video]].
 
 ## Networking APIs
 

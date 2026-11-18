@@ -6,7 +6,7 @@
 
 {{#include websocket.incl.md}}
 
-See the published [WebSockets chapter](https://john-cd.com/rust_howto/categories/web-programming_websocket/websocket.html) for runtime selection, the Tokio loopback recipe, and connection lifecycle and security guidance.
+See the published [WebSockets chapter](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/web-programming_websocket/websocket.md) for runtime selection, the Tokio loopback recipe, and connection lifecycle and security guidance.
 
 ## Examples
 

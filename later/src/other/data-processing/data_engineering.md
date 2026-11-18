@@ -80,11 +80,11 @@ The Arrow IPC _file_ format supports random access and memory mapping. The IPC _
 
 [![polars][c~polars~docs~badge]][c~polars~docs]{{hi:polars}}
 
-Polars provides eager and lazy APIs for columnar data. The [DataFrames chapter](https://john-cd.com/rust_howto/categories/data-processing/dataframes.html#polars) contains the shared example for filtering, grouping, and joining rows.
+Polars provides eager and lazy APIs for columnar data. The [DataFrames chapter](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/data-processing/dataframes.md) contains the shared example for filtering, grouping, and joining rows.
 
 ## DataFrame processing {#dataframes}
 
-For in-memory table operations, see [Dataframes](https://john-cd.com/rust_howto/categories/data-processing/dataframes.html), which covers Polars. This page focuses on Arrow interchange and query engines rather than repeating DataFrame recipes.
+For in-memory table operations, see [Dataframes](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/data-processing/dataframes.md), which covers Polars. This page focuses on Arrow interchange and query engines rather than repeating DataFrame recipes.
 
 ## Data apps with Spice.ai {#spice-ai}
 
