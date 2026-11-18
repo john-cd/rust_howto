@@ -1220,6 +1220,16 @@
 
 {{#include ../other/architecture/common_architectures.incl.md}}
 
+### DevOps and Rust
+
+{{#include ../other/devops/version_control.incl.md}}
+
+{{#include ../other/devops/cd_ci.incl.md}}
+
+{{#include ../other/devops/github_actions.incl.md}}
+
+{{#include ../other/devops/release_automation.incl.md}}
+
 ## Crate Selection
 
 ### Current State of The Art
