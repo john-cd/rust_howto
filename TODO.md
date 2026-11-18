@@ -17,6 +17,9 @@ before implementation; a historical TODO link is not proof that an issue remains
 - **P2 — [#2364](https://github.com/john-cd/rust_howto/issues/2364):** Reject missing, empty,
   and incomplete rendered output in the all-chapters release check. Missing and empty
   directories currently return success.
+- **P2 — [#2365](https://github.com/john-cd/rust_howto/issues/2365):** Keep Windows non-PDF
+  builds usable when the optional Pandoc backend is installed. The current non-PDF route
+  still invokes it and fails with Windows error 206 after HTML/linkcheck succeeds.
 - **P3 — [#2264](https://github.com/john-cd/rust_howto/issues/2264):** Add a Creusot contract
   example. This remains open in the live issue snapshot.
 - Related tooling: **P1** [book_tooling#89](https://github.com/john-cd/book_tooling/issues/89)
