@@ -1152,6 +1152,7 @@
 [ex~transcompilation~c2rust]: ../categories/development-tools/transcompilation/transpilers.md#c2rust
 [ex~value-formatting~humansize]: ../categories/value-formatting/number_formatting.md#humansize
 [ex~value-formatting~itoa]: ../categories/value-formatting/number_formatting.md#itoa
+[ex~value-formatting~minor-units]: ../categories/value-formatting/number_formatting.md#minor-units
 [ex~value-formatting~ryu]: ../categories/value-formatting/number_formatting.md#ryu
 [ex~value-formatting~standard-and-locale-formatting]: ../categories/value-formatting/number_formatting.md#standard-and-locale-formatting
 [ex~versioning~check-external-command-version-for-compat]: ../categories/development-tools/versioning/versioning.md#check-external-command-version-for-compat

@@ -42,7 +42,7 @@ Test messages with missing translations and fallback locales, long translated st
 
 - [Localization](../localization/index.md)
 - [Date and Time](../date-and-time/index.md)
-- [Value Formatting](../value-formatting/number_formatting.md)
+- [Value Formatting](../value-formatting/index.md)
 - [Unicode Text](../text-processing/unicode.md)
 - [Localize API Errors](../web-programming_http-server/i18n.md)
 - [Web Programming](../web-programming/index.md)

@@ -22,7 +22,7 @@ Localization (l10n) adapts software for a particular language and region, especi
 - [Date and Time](../date-and-time/index.md)
 - [Internationalization](../internationalization/index.md)
 - [Template Engines](../template-engine/index.md)
-- [Value Formatting](../value-formatting/number_formatting.md)
+- [Value Formatting](../value-formatting/index.md)
 - [Web Programming](../web-programming/index.md)
 
 {{#include refs.incl.md}}

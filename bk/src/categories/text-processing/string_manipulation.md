@@ -10,6 +10,8 @@
 
 [`heck`][c~heck~docs]↗{{hi:heck}} is a case conversion library. This library exists to provide case conversion between common cases like `CamelCase` and `snake_case`.
 
+When converting identifiers for another language or file format, check the result against its naming rules and reserved words. A case converter only changes the spelling.
+
 The older [`Inflector`][c~inflector~crates.io] crate's latest crates.io release is `0.11.4` from January 2019, so prefer `heck` for common case conversions. Rust strings are UTF-8: the example below uppercases the first Unicode scalar value without assuming it occupies one byte. The [capitalization discussion][blog~stackoverflow~why-is-capitalizing-the-first-letter-of-a-string-so-convoluted-in-rust]↗ explains the indexing issue.
 
 ```rust,editable
