@@ -501,6 +501,10 @@ trait MapShm {
     // - shmbuf -> shminfo if partner supports shmbuf's SHM protocol
     // - shmbuf -> rawbuf if partner does not support shmbuf's SHM protocol
     // - rawbuf -> rawbuf (no changes)
+    /// Adapts outgoing payload storage to the peer's supported shared-memory protocols.
+    ///
+    /// Supported shared buffers become transferable metadata; unsupported buffers
+    /// use raw storage, while the handoff transaction tracks transferred ownership.
     fn map_to_partner<ShmCfg: PartnerShmConfig>(
         &mut self,
         partner_shm_cfg: &ShmCfg,
@@ -509,7 +513,10 @@ trait MapShm {
     );
 }
 
-/// Maps a sequence number into the peer sequence-number resolution.
+/// Marks supported shared-memory slices for peer transfer and records their handoffs.
+///
+/// Non-shared slices may be wrapped by the optional provider. Existing shared
+/// slices are marked as shared pointers only when the peer supports their protocol.
 fn map_to_partner<const ID: u8, ShmCfg: PartnerShmConfig>(
     zbuf: &mut ZBuf,
     ext_shm: &mut Option<ShmType<ID>>,
@@ -564,7 +571,10 @@ fn map_to_shmbuf<const ID: u8>(
 
 // Impl - Put
 impl MapShm for Put {
-    /// Maps a sequence number into the peer sequence-number resolution.
+    /// Marks supported shared-memory slices for peer transfer and records their handoffs.
+    ///
+    /// Non-shared slices may be wrapped by the optional provider. Existing shared
+    /// slices are marked as shared pointers only when the peer supports their protocol.
     fn map_to_partner<ShmCfg: PartnerShmConfig>(
         &mut self,
         partner_shm_cfg: &ShmCfg,
@@ -609,7 +619,10 @@ impl MapShm for Put {
 
 // Impl - Query
 impl MapShm for Query {
-    /// Maps a sequence number into the peer sequence-number resolution.
+    /// Marks supported shared-memory slices for peer transfer and records their handoffs.
+    ///
+    /// Non-shared slices may be wrapped by the optional provider. Existing shared
+    /// slices are marked as shared pointers only when the peer supports their protocol.
     fn map_to_partner<ShmCfg: PartnerShmConfig>(
         &mut self,
         partner_shm_cfg: &ShmCfg,
@@ -665,7 +678,10 @@ impl MapShm for Query {
 
 // Impl - Reply
 impl MapShm for Reply {
-    /// Maps a sequence number into the peer sequence-number resolution.
+    /// Marks supported shared-memory slices for peer transfer and records their handoffs.
+    ///
+    /// Non-shared slices may be wrapped by the optional provider. Existing shared
+    /// slices are marked as shared pointers only when the peer supports their protocol.
     fn map_to_partner<ShmCfg: PartnerShmConfig>(
         &mut self,
         partner_shm_cfg: &ShmCfg,
@@ -715,7 +731,10 @@ impl MapShm for Reply {
 
 // Impl - Err
 impl MapShm for Err {
-    /// Maps a sequence number into the peer sequence-number resolution.
+    /// Marks supported shared-memory slices for peer transfer and records their handoffs.
+    ///
+    /// Non-shared slices may be wrapped by the optional provider. Existing shared
+    /// slices are marked as shared pointers only when the peer supports their protocol.
     fn map_to_partner<ShmCfg: PartnerShmConfig>(
         &mut self,
         partner_shm_cfg: &ShmCfg,

@@ -48,6 +48,10 @@ impl TransportMulticastInner {
         Ok(false)
     }
 
+    /// Maps payloads for the shared-memory peer when enabled, then schedules the message.
+    ///
+    /// Returns whether the link accepted the message and propagates scheduling errors.
+    /// Enabled statistics distinguish accepted traffic from congestion drops.
     #[allow(unused_mut)] // When feature "shared-memory" is not enabled
     #[allow(clippy::let_and_return)] // When feature "stats" is not enabled
     #[inline(always)]

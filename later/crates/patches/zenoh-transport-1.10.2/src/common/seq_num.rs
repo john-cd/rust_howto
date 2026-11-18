@@ -25,6 +25,7 @@ const RES_U16: TransportSn = (u16::MAX >> 2) as TransportSn; // 2 bytes max when
 const RES_U32: TransportSn = (u32::MAX >> 4) as TransportSn; // 4 bytes max when encoded
 const RES_U64: TransportSn = (u64::MAX >> 1) as TransportSn; // 9 bytes max when encoded
 
+/// Selects the wraparound mask whose encoded sequence numbers fit the negotiated resolution.
 pub(crate) fn get_mask(resolution: Bits) -> TransportSn {
     match resolution {
         Bits::U8 => RES_U8,
