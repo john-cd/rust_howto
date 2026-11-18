@@ -1828,6 +1828,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "async-tungstenite"
+version = "0.35.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d6ab5b7664abf9ccae07576888c72bc93750c7090c1ff4ffee9317cc05d11618"
+dependencies = [
+ "atomic-waker",
+ "futures-core",
+ "futures-io",
+ "futures-task",
+ "futures-util",
+ "log",
+ "pin-project-lite",
+ "tokio",
+ "tungstenite 0.30.0",
+]
+
+[[package]]
 name = "async_io_stream"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -28139,9 +28156,11 @@ name = "web_programming_websocket"
 version = "0.1.2"
 dependencies = [
  "anyhow",
+ "async-tungstenite",
  "futures-util",
  "tokio",
  "tokio-tungstenite 0.30.0",
+ "tungstenite 0.30.0",
 ]
 
 [[package]]

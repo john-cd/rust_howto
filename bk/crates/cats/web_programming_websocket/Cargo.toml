@@ -22,14 +22,26 @@ name = "websocket"
 path = "examples/websocket/tokio_tungstenite.rs"
 test = true
 
+[[example]]
+name = "websocket_blocking"
+path = "examples/websocket/tungstenite.rs"
+test = true
+
+[[example]]
+name = "websocket_async_adapter"
+path = "examples/websocket/async_tungstenite.rs"
+test = true
+
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+async-tungstenite = { version = "0.35.0", features = ["tokio-runtime"] }
 # Common utilities and extension traits for the futures-rs library.
 futures-util = "0.3.34"
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
-tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net"] }
+tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net", "time"] }
 tokio-tungstenite = "0.30.0"
+tungstenite = "0.30.0"
 
 [lints]
 workspace = true

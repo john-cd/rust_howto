@@ -1212,6 +1212,8 @@
 [ex~web-programming_http-server~utoipa]: ../categories/web-programming_http-server/openapi.md#utoipa
 [ex~web-programming_http-server~when-to-configure-cors]: ../categories/web-programming_http-server/cors.md#when-to-configure-cors
 [ex~web-programming_http-server~zola]: ../categories/web-programming_http-server/static_website_generators.md#zola
+[ex~web-programming_websocket~low-level]: ../categories/web-programming_websocket/websocket.md#low-level
+[ex~web-programming_websocket~async-tungstenite]: ../categories/web-programming_websocket/websocket.md#async-tungstenite
 [ex~web-programming_websocket~general-purpose]: ../categories/web-programming_websocket/websocket.md#general-purpose
 [ex~web-programming~ammonia]: ../categories/web-programming/html_sanitization.md#ammonia
 [ex~web-programming~check-a-webpage-for-broken-links]: ../categories/web-programming/scraping.md#check-a-webpage-for-broken-links
