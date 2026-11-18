@@ -67,6 +67,7 @@ fn main() {
     // representation.
     // -----------------------------------------------------------------------
 
+    /// Two-field product type converted to and from a heterogeneous list.
     #[derive(Generic, Debug, PartialEq)]
     struct Point {
         /// The horizontal coordinate.
@@ -88,6 +89,7 @@ fn main() {
     assert_eq!(h7, hlist![3.0f64, 4.0f64]);
 
     // Convert between two structurally identical types using `convert_from`.
+    /// Source product type whose field types match Vec3 in declaration order.
     #[derive(Generic)]
     struct Point3D {
         /// The horizontal coordinate.
@@ -100,7 +102,7 @@ fn main() {
         z: f64,
     }
 
-    /// Data for vec3 operations, including x and y.
+    /// Target product type used for structural conversion from Point3D.
     #[derive(Generic, Debug, PartialEq)]
     struct Vec3 {
         /// The horizontal coordinate.
@@ -134,6 +136,7 @@ fn main() {
     // converted without any hand-written boilerplate.
     // -----------------------------------------------------------------------
 
+    /// Input record whose field labels participate in compile-time conversion.
     #[derive(LabelledGeneric)]
     struct NewUser<'a> {
         /// The first name.
@@ -146,7 +149,7 @@ fn main() {
         age: usize,
     }
 
-    /// Data for saved user operations, including first name and last name.
+    /// Equivalent named-field record accepted by labelled_convert_from.
     #[derive(LabelledGeneric, Debug, PartialEq)]
     struct SavedUser<'a> {
         /// The first name.
@@ -172,6 +175,7 @@ fn main() {
     assert_eq!(saved.age, 28);
 
     // `transform_from` additionally handles reordered fields via `Sculptor`.
+    /// Reordered record demonstrating label-based transformation across field order.
     #[derive(LabelledGeneric, Debug, PartialEq)]
     struct ArchivedUser<'a> {
         /// Age in years.

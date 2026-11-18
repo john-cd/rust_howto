@@ -28,6 +28,7 @@ mod a_module {
     // Implement the trait for specified types only, here `usize`:
     impl MySealedTrait for usize {
         // Trait items always share the visibility of their trait.
+        /// Supplies the no-op implementation permitted by the private sealing trait.
         fn some_public_method(&self) {}
     }
 
