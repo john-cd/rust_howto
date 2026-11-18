@@ -40,7 +40,7 @@ just cargo test --manifest-path later/crates/Cargo.toml --locked -p other --feat
 | --- | --- | --- |
 | [GUI](src/categories/gui/index.md) | egui interaction/layout/text logic; Windows Winit creation, minifb pixels, and Softbuffer presentation. | 36 default/minifb/Softbuffer tests passed with 7 interactive tests ignored; Slint added 5 headless tests with 1 interactive test ignored. Native self-closing presentation checks passed. No screenshot, full input/resize matrix, screen reader, or cross-platform toolkit certification: [#2359](https://github.com/john-cd/rust_howto/issues/2359), [#2213](https://github.com/john-cd/rust_howto/issues/2213). |
 | [Embedded](src/categories/embedded/index.md) | Explicitly host-side HAL mocks, bounded messages, protocol/storage logic, and the Embassy host-task example. | 18 host tests passed after fixing deadline-task reuse. No board, firmware target, probe, pin map, flash operation, or physical reading was validated: [#2355](https://github.com/john-cd/rust_howto/issues/2355). |
-| [Robotics](src/categories/science_robotics/index.md) | PID/control, pathfinding, kinematics, nearest-neighbor, mock-I2C, and physics simulation recipes. | Default host tests passed. ROS 2 feature compilation fails because `ROS_DISTRO` is not set; no physical robot/device or middleware round trip is established: [#2355](https://github.com/john-cd/rust_howto/issues/2355). |
+| [Robotics](src/categories/science_robotics/index.md) | PID/control, pathfinding, kinematics, nearest-neighbor, mock-I2C, and physics simulation recipes. | Default host tests passed. A Jazzy container verified the ROS 2 round trip. Physical robot/device validation remains in [#2355](https://github.com/john-cd/rust_howto/issues/2355). |
 | [Audio](src/categories/multimedia_audio/index.md) | WAV, synthesis, resampling, parsing, and the bundled synthetic HRIR/HRTF convolution recipe. | Host tests and a one-second Windows CPAL output-stream test passed. MIDI device communication and audible quality remain distinct from pure decoding and successful streaming: [#2356](https://github.com/john-cd/rust_howto/issues/2356). |
 | [Rendering](src/categories/rendering/index.md) | The distinct fontdue glyph recipe and remaining engine catalogs. Raster/vector, tessellation, SVG, and projection recipes are already in published Graphics; staged duplicates were removed under #2361. | The earlier host tests passed before duplicate retirement. Do not promote catalog descriptions as proof that the corresponding windowed engines were run: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
 | [Graphics APIs](src/categories/rendering_graphics-api/index.md) | Adapter discovery, wgpu compute/readback, shader validation/translation, and the new offscreen triangle render. | 16 tests passed with ignored GPU tests enabled. The triangle's center/background pixels passed on both Vulkan and DirectX 12 using Intel Iris Xe. OpenGL helpers without a current context and raw Vulkan discovery do not prove a complete scene: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
@@ -92,6 +92,20 @@ with `--features midir/jack` against a disposable workspace copy, leaving the
 committed ALSA feature configuration and lockfile intact. Running it with
 `book-loop:out book-loop:in` returned `[90, 3C, 64]` then `[80, 3C, 00]`.
 The test created and removed only its own JACK server and ports.
+
+### ROS 2 Jazzy Round Trip
+
+For [#2355](https://github.com/john-cd/rust_howto/issues/2355), the locked ROS
+test and CLI passed at revision `a4eb4a687` with Rust 1.100.0, r2r 0.9.7, and
+the `ros:jazzy-ros-base` Ubuntu Noble container (image digest
+`sha256:00b8d47a6e6384a2834e3d01fa87ae767876543baa574f2d64a75c04ea33c698`).
+Install libclang, source `/opt/ros/jazzy/setup.bash`, and set
+`IDL_PACKAGE_FILTER=std_msgs`. The run used `ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST`
+and `ROS_DOMAIN_ID=78` within the disposable container. Both the ignored test
+and the CLI received greetings #1 through #5 and exited successfully. See
+[Robot Operating Systems](src/categories/science_robotics/robot_operating_systems.md)
+for the commands. The run exercised a local DDS round trip. Firmware and a
+physical robot remain separate checks.
 
 ### Linux statx
 
