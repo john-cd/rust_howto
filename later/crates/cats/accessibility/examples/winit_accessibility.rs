@@ -54,7 +54,7 @@ struct App {
 }
 
 impl ApplicationHandler<AccessEvent> for App {
-    /// Reports whether the suspended operation has resumed.
+    /// Creates the hidden window and accessibility adapter on the first resume event.
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
         if self.window.is_some() {
             return;
@@ -78,7 +78,7 @@ impl ApplicationHandler<AccessEvent> for App {
         }
     }
 
-    /// Handles the window event behavior for this component.
+    /// Forwards matching window events to AccessKit and exits on close requests.
     fn window_event(&mut self, event_loop: &ActiveEventLoop, id: WindowId, event: WindowEvent) {
         if let (Some(window), Some(adapter)) = (&self.window, &mut self.adapter)
             && window.id() == id
@@ -90,7 +90,7 @@ impl ApplicationHandler<AccessEvent> for App {
         }
     }
 
-    /// Handles the user event behavior for this component.
+    /// Supplies the semantic tree when assistive technology requests initialization.
     fn user_event(&mut self, _event_loop: &ActiveEventLoop, event: AccessEvent) {
         if let Some(adapter) = &mut self.adapter
             && matches!(event.window_event, AccessWindowEvent::InitialTreeRequested)
@@ -114,6 +114,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 // ANCHOR_END: example
 
+/// Checks button role, accessible label, and initial focus without opening a window.
 #[cfg(test)]
 mod tests {
     use super::*;

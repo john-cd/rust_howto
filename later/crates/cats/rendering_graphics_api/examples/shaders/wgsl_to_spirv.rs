@@ -53,6 +53,7 @@ fn example() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Checks SPIR-V output identification and rejection of malformed WGSL source.
 #[cfg(test)]
 mod tests {
     use super::*;

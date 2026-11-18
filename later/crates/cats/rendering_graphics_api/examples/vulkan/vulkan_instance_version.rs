@@ -47,6 +47,7 @@ fn example() -> anyhow::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Checks packed version decoding and conditionally validates an installed loader.
 #[cfg(test)]
 mod tests {
     use super::*;

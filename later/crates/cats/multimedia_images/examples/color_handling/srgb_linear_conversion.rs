@@ -30,6 +30,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Checks the nonlinear-to-linear conversion and round-trip error of 8-bit channels.
 #[cfg(test)]
 mod tests {
     use palette::Srgb;
@@ -37,7 +38,7 @@ mod tests {
     use super::decode_srgb;
     use super::encode_srgb;
 
-    /// Converts sRGB values to linear light and back without losing precision.
+    /// Keeps the encoded round trip within one quantization step per color channel.
     #[test]
     fn srgb_round_trips_through_linear_light() {
         let stored = Srgb::<u8>::new(128, 64, 32);
