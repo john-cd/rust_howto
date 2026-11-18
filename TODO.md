@@ -7,7 +7,43 @@
 Track implementation, acceptance criteria, and validation evidence in
 [GitHub Issues][issues]. Recheck the live issue before starting work.
 
-## Current review, November 17, 2026
+## Publication review, November 18, 2026
+
+The book needs another editorial pass before publication. The [review on #2216][nov18-review] records the
+chapter assessment and a crate-by-crate comparison for all 61 crates.io categories in the published sidebar.
+The audit used local develop revision `5ca1a6f3d`. Its 471 TOC entries rendered successfully with mdBook 0.5.4.
+All-chapters, word-index and search-index checks passed. Of the 336 pages with Rust code, 35 had no
+incoming link from the example index. Some are overview pages that share recipes.
+
+| Priority | Reader-facing work |
+| --- | --- |
+| P2 | Repair [stale draft links][nov18-links] and [missing profiling redirects][nov18-redirects]. |
+| P2 | Reconcile [recipe and crate indices][nov18-indices] and [Playground eligibility][nov18-play]. |
+| P2 | Fix the [benchmark correctness check][nov18-bench], [broadcast task completion][nov18-broadcast] and [standalone Moka setup][nov18-cache]. |
+| P2 | Make the [example integrity report][nov18-integrity] distinguish command walkthroughs, retired roots and genuinely untested Rust. |
+| P3 | Improve [sidebar and related-topic navigation][nov18-nav] and the [worked A* explanation][nov18-astar]. |
+| P3 | Add recipes for [borrowed and owned JSON input][nov18-serde] and [streaming Zstandard][nov18-zstd]. |
+
+The locked, offline Windows example targets for caching, async channels and graph algorithms passed 50 tests.
+Removing both sorts from a temporary copy of the benchmark still passed its checksum test. Workspace tests alone
+also miss setup instructions that omit a required feature. The full example workspace, other platforms and PDF
+were outside this audit. The November 17 ready list is historical; #2364 and #2365 have since closed.
+
+[nov18-review]: https://github.com/john-cd/rust_howto/issues/2216#issuecomment-6994339621
+[nov18-links]: https://github.com/john-cd/rust_howto/issues/2389
+[nov18-redirects]: https://github.com/john-cd/rust_howto/issues/2390
+[nov18-indices]: https://github.com/john-cd/rust_howto/issues/2387
+[nov18-play]: https://github.com/john-cd/rust_howto/issues/2393
+[nov18-bench]: https://github.com/john-cd/rust_howto/issues/2382
+[nov18-broadcast]: https://github.com/john-cd/rust_howto/issues/2383
+[nov18-cache]: https://github.com/john-cd/rust_howto/issues/2384
+[nov18-integrity]: https://github.com/john-cd/rust_howto/issues/2392
+[nov18-nav]: https://github.com/john-cd/rust_howto/issues/2388
+[nov18-astar]: https://github.com/john-cd/rust_howto/issues/2385
+[nov18-serde]: https://github.com/john-cd/rust_howto/issues/2386
+[nov18-zstd]: https://github.com/john-cd/rust_howto/issues/2391
+
+## Historical review, November 17, 2026
 
 The current work below supersedes the historical snapshots that follow. Recheck live issues
 before implementation; a historical TODO link is not proof that an issue remains open.
