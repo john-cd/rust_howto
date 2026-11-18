@@ -26,5 +26,5 @@
 [c~egui_plot~repo~badge]: https://img.shields.io/badge/egui__plot-steelblue?logo=github
 
 [c~leptos-chartistry~docs~badge]: https://img.shields.io/crates/v/leptos-chartistry
-[p~data-processing]: ../../other/data-processing/index.md
+[p~data-processing]: ../data-processing/index.md
 [p~graphics]: ../graphics/index.md
