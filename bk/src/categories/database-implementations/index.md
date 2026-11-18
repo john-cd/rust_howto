@@ -4,7 +4,7 @@
 
 [![cat~database-implementations][cat~database-implementations~badge]][cat~database-implementations]{{hi:Database implementations}}
 
-This index covers database and data-system implementations written in Rust. Rust libraries that connect to other database servers are listed under [Database interfaces][p~database].
+This index covers database and data-system implementations written in Rust. Rust libraries that connect to other database servers are listed in [Database Access][p~database].
 
 | Kind | Examples | Chapter |
 | --- | --- | --- |

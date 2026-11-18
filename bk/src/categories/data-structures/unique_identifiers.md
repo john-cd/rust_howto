@@ -8,7 +8,7 @@
 
 {{#badges uuid wasm=WebAssembly data-structures="Data structures" no-std="No standard library" parser-implementations="Parser implementations"}}{{hi:Guid}}{{hi:Unique}}{{hi:uuid}}
 
-A UUID is a unique 128-bit value, stored as 16 octets, and regularly formatted as a hex string in five groups. UUIDs are used to assign unique identifiers to entities without requiring a central allocating authority. They are particularly useful in distributed systems, though can be used in disparate areas, such as [databases](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/database-implementations/databases.md) and network protocols.
+A UUID is a unique 128-bit value, stored as 16 octets, and regularly formatted as a hex string in five groups. UUIDs are used to assign unique identifiers to entities without requiring a central allocating authority. They are particularly useful in distributed systems, though can be used in disparate areas, such as [databases](../database-implementations/databases.md) and network protocols.
 
 [`uuid`][c~uuid~docs]↗{{hi:uuid}} generates and parses UUIDs and implements a number of utility functions.
 

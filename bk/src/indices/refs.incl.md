@@ -4,6 +4,8 @@
 [c~accept-language~docs~badge]: https://img.shields.io/crates/v/accept-language?label=accept-language
 [c~imbl~docs~badge]: https://img.shields.io/crates/v/imbl?label=imbl
 [c~opentelemetry-http~docs]: https://docs.rs/opentelemetry-http
+[c~redb~docs]: https://docs.rs/redb
+[c~redb~docs~badge]: https://img.shields.io/crates/v/redb?label=redb
 [c~rust-i18n~docs~badge]: https://img.shields.io/crates/v/rust-i18n?label=rust-i18n
 [ex~algorithms~blake3]: ../categories/algorithms/hashing.md#blake3
 [ex~algorithms~create-random-passwords-from-a-set-of-user-defined-characters]: ../categories/algorithms/random_value_generation.md#create-random-passwords-from-a-set-of-user-defined-characters
@@ -339,6 +341,14 @@
 [ex~data-structures~tinyvec]: ../categories/data-structures/stack-allocated.md#smallvec-tinyvec
 [ex~data-structures~ulid]: ../categories/data-structures/unique_identifiers.md#ulid
 [ex~data-structures~vec]: ../categories/data-structures/vectors.md#vec
+[ex~database-implementations~databases]: ../categories/database-implementations/databases.md
+[ex~database-implementations~index]: ../categories/database-implementations/index.md
+[ex~database-implementations~meilisearch]: ../categories/database-implementations/rust_search_engines.md#meilisearch
+[ex~database-implementations~redb]: ../categories/database-implementations/databases.md#redb
+[ex~database-implementations~search-engines]: ../categories/database-implementations/rust_search_engines.md
+[ex~database-implementations~sled]: ../categories/database-implementations/databases.md#sled
+[ex~database-implementations~surrealdb]: ../categories/database-implementations/databases.md#surrealdb
+[ex~database-implementations~tantivy]: ../categories/database-implementations/rust_search_engines.md#tantivy
 [ex~database~aggregate-data-postgres]: ../categories/database/postgres.md#aggregate-data-postgres
 [ex~database~cassandra-protocol]: ../categories/database/nosql.md#cassandra-protocol
 [ex~database~cdrs-tokio]: ../categories/database/nosql.md#cdrs-tokio

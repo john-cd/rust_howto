@@ -7,7 +7,7 @@ use clap::Parser;
 #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
 use clap::Subcommand;
 
-/// This is an example of how to use the MeiliSearch Rust SDK to index and
+/// Use the Meilisearch Rust SDK to index and search documents.
 #[cfg(feature = "meilisearch")]
 mod meilisearch;
 
@@ -53,7 +53,7 @@ fn main() -> anyhow::Result<()> {
                 }
                 #[cfg(feature = "tantivy")]
                 Commands::Tantivy => {
-                    tantivy::run().map_err(|e| anyhow::anyhow!(e.to_string()))?;
+                    tantivy::run()?;
                 }
             }
         }
