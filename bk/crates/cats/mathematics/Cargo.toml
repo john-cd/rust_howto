@@ -139,7 +139,8 @@ rust_decimal_macros = "1.40.0"
 # A JSON serialization file format
 serde_json = "1.0.154"
 # A sparse matrix library
-sprs = "0.11.6"
+# Linfa 0.8.1 pins sprs to 0.11.2 in this workspace.
+sprs = "0.11.2"
 # Typenum is a Rust library for type-level numbers evaluated at compile time. It currently supports bits, unsigned integers, and signed integers....
 typenum = "1.20.1"
 # Provides unit-aware quantities and dimensional analysis for physical measurements.

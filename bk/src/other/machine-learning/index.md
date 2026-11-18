@@ -26,11 +26,11 @@ fixture, not evidence of generalization on noisy observations. A separate valida
 split is needed when selecting models or tuning hyperparameters.
 
 ```rust,ignore,noplayground
-{{#include ../../../../later/crates/cats/science/examples/feature_pipeline.rs:example}}
+{{#include ../../../crates/cats/science/examples/feature_pipeline.rs:example}}
 ```
 
 ```sh
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p science --example feature_pipeline
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --example feature_pipeline
 ```
 
 The test with an extreme held-out value verifies that evaluation rows cannot change
@@ -47,11 +47,11 @@ all-unknown queries have zero similarity. Matching complete tokens avoids accide
 substring matches, such as treating "rusty" as the word "rust".
 
 ```rust,ignore,noplayground
-{{#include ../../../../later/crates/cats/science/examples/text_features.rs:example}}
+{{#include ../../../crates/cats/science/examples/text_features.rs:example}}
 ```
 
 ```sh
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p science --example text_features
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --example text_features
 ```
 
 This is a small reference baseline, not a pretrained tokenizer or semantic search model.
@@ -64,7 +64,7 @@ Evaluate retrieval with labeled queries and ranking metrics rather than classifi
 
 ## Choose the Execution Layer
 
-| Task | Common crates | Coverage in these staged chapters |
+| Task | Common crates | Recipe coverage |
 | --- | --- | --- |
 | Feature arrays and table preparation | `ndarray`, `polars` | Executable array preprocessing here; dataframe workflows in [Data Processing](../../categories/data-processing/index.md). |
 | Classical fitting | `smartcore`, `linfa` | Held-out classification, regression and seeded clustering examples. |
@@ -83,10 +83,10 @@ Evaluate retrieval with labeled queries and ranking metrics rather than classifi
 Run the default Rust tests from the repository root:
 
 ```sh
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p other --example machine_learning
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --examples
 ```
 
-The `other` example package shares dependencies with other future workflows, so its initial build also compiles dependencies unrelated to ML. Only the `machine_learning` example target is executed by this command. ONNX setup and commands are documented in its own recipe.
+The [ONNX recipe](inference.md) covers the optional runtime setup and inference commands.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

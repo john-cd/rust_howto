@@ -30,8 +30,8 @@ the practical classification, forecasting, and ONNX model replacement recipes.
 Accelerator backends and catalog entries remain outside this result.
 
 ```sh
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p science --features candle --example ml --example feature_pipeline --example text_features
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p other --features onnx --example machine_learning
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --features candle --example ml --example feature_pipeline --example text_features
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --features onnx --example machine_learning
 ```
 
 ## Promote Narrow Recipes, Retain the Broader Category
@@ -144,13 +144,13 @@ Run from the repository root with the configured shared package/cache paths. Bui
 ```sh
 just cargo test --manifest-path later/crates/Cargo.toml --locked -p rendering -p science_robotics -p multimedia_audio -p rendering_data_formats -p game_development --examples
 just cargo test --manifest-path later/crates/cats/embedded/Cargo.toml --locked --examples
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p other --features onnx --example machine_learning
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p science --example ml
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --features onnx --example machine_learning
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --example ml
 just cargo test --manifest-path later/crates/Cargo.toml --locked -p rendering_graphics_api --features wgpu --examples -- --include-ignored --nocapture
 just cargo test --manifest-path later/crates/Cargo.toml --locked -p gui --features minifb,softbuffer --examples
 just cargo test --manifest-path later/crates/Cargo.toml --locked -p gui --features slint --example retained_mode_gui
 just cargo test --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example audio -- --ignored --nocapture
-just cargo +1.98.1 check --manifest-path later/crates/Cargo.toml --locked -p other --features onnx --example machine_learning
+just cargo +1.98.1 check --manifest-path bk/crates/Cargo.toml --locked -p science --features onnx --example machine_learning
 just cargo +1.98.1 check --manifest-path later/crates/Cargo.toml --locked -p rendering_graphics_api --features wgpu --example offscreen_render
 ```
 

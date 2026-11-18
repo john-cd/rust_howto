@@ -13,13 +13,13 @@
 From the repository root:
 
 ```sh
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p other --example machine_learning -- forecast
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p science --example machine_learning -- forecast
 ```
 
 For real observations, preserve chronological order, define how missing timestamps are handled, and evaluate rolling forecast origins before selecting a model. The example checks finite interval bounds and their ordering around each predicted point; that does not establish 95% coverage of future observations.
 
 ```rust,ignore
-{{#include ../../../../later/crates/other/examples/machine_learning/forecast.rs:example}}
+{{#include ../../../crates/cats/science/examples/machine_learning/forecast.rs:example}}
 ```
 
 {{#include refs.incl.md}}

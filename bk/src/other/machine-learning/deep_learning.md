@@ -45,7 +45,8 @@ See the [VarMap API](https://docs.rs/candle-nn/latest/candle_nn/var_map/struct.V
 No model download or GPU is required. Run the feature explicitly:
 
 ```sh
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p science --features candle --example ml
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --features candle --example ml
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p science --features candle --example ml -- candle
 ```
 
 This single-layer regression teaches tensors, autograd, optimization, and persistence.
@@ -55,7 +56,7 @@ or feature transform. CUDA/Metal features and LibTorch dependencies require sepa
 platform checks; CPU success establishes none of those backends.
 
 ```rust,ignore,noplayground
-{{#include ../../../../later/crates/cats/science/examples/ml/candle.rs:example}}
+{{#include ../../../crates/cats/science/examples/ml/candle.rs:example}}
 ```
 
 ## `burn` {#burn .skip}
