@@ -113,7 +113,7 @@ mod tests {
             /// Alias for `u8` used to represent out.
             type Out = u8;
 
-            /// Handles the method behavior for this component.
+            /// Supplies the concrete return value through a trait item with public visibility.
             fn method(&self) -> u8 {
                 2
             }

@@ -4,7 +4,7 @@
 use std::future::pending;
 use std::rc::Rc;
 
-/// Handles the require send behavior for this component.
+/// Requires Send so the fixture diagnoses an Rc retained across an await.
 fn require_send<T: Send>(_: T) {}
 
 /// Runs the example demonstrated by this module.
