@@ -27,7 +27,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [Embedded](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md) systems.
 - [Visualization](../../categories/visualization/index.md).
 - [Graphics](../../categories/graphics/index.md).
-- [Games](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/games/index.md), [Game Engines](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/game-engines/index.md).
+- [Games](../../categories/games/index.md), [Game Engines](../../categories/game-engines/index.md).
 - [Search](../../categories/database/search.md) engines.
 - [Compression](../../categories/compression/index.md): Zip files and other archives.
 - Buffer pools, garbage collection, or other reference-counted examples.

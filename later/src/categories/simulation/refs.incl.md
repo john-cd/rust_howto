@@ -32,8 +32,8 @@
 [c~ode_solvers~docs~badge]: https://img.shields.io/crates/v/ode_solvers
 [p~concurrency]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/concurrency/index.md
 [p~development-tools_ffi]: ../development-tools_ffi/index.md
-[p~game-development]: ../game-development/index.md
-[p~game_engines]: ../game-engines/game_engines.md
+[p~game-development]: https://john-cd.com/rust_howto/categories/game-development/index.html
+[p~game_engines]: https://john-cd.com/rust_howto/categories/game-engines/game_engines.html
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
 [p~linear_algebra]: https://john-cd.com/rust_howto/categories/mathematics/linear_algebra.html
 [p~physics]: physics_engines.md

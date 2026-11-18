@@ -357,6 +357,14 @@
 
 - [GPU Programming](other/gpu/index.md)
 
+- [Games](categories/games/index.md)
+
+- [Game Development](categories/game-development/index.md)
+  - [Game Development](categories/game-development/game_development.md)
+
+- [Game Engines](categories/game-engines/index.md)
+  - [Game Engines](categories/game-engines/game_engines.md)
+
 - [Graphics](categories/graphics/index.md)
   - [2D Renderers](categories/graphics/2d_renderers.md)
   - [Pixel-Based (Raster) 2D Graphics](categories/graphics/2d_raster_graphics.md)

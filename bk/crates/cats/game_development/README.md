@@ -17,4 +17,4 @@ cargo check --package game_development --examples
 cargo test --package game_development
 ```
 
-Code examples correspond to chapters in `bk/src/categories/game_development` or related book sections.
+Code examples correspond to chapters in `bk/src/categories/game-development` or related book sections.

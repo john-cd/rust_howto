@@ -13,12 +13,12 @@
 [macroquad~activity~repo]: https://github.com/not-fl3/macroquad/activity
 [macroquad~platforms~repo]: https://github.com/not-fl3/macroquad#supported-platforms
 [p~game-development]: ../game-development/game_development.md
-[p~games]: # "../games/games.md"
-[p~graphics]: # "../graphics/index.md"
-[p~gui]: # "../gui/index.md"
+[p~games]: ../games/index.md
+[p~graphics]: ../graphics/index.md
+[p~gui]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/index.md
 [p~option]: # "../../standard-library/option.md"
 [tetra~status~repo]: https://github.com/17cupsofcoffee/tetra#status
 
-[p~multimedia_audio]: https://john-cd.com/rust_howto/categories/multimedia_audio/index.html
-[p~rendering]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/graphics/index.md
-[p~window_creation]: ../gui/window_creation.md
+[p~multimedia_audio]: ../multimedia_audio/index.md
+[p~rendering]: ../graphics/index.md
+[p~window_creation]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/window_creation.md

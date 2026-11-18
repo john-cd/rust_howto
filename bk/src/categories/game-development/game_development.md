@@ -22,12 +22,12 @@ returns zero, and the contact reports a negative signed separation. Use the
 contact normal to identify the surface direction. Its prediction distance
 also lets the query report near contacts before the shapes touch. A physics
 engine adds the time integration and collision response when you need bodies
-to move and react. See [Physics Engines](../simulation/index.md#physics-engines).
+to move and react. See [Physics Engines](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md#physics-engines).
 
 Run from the repository root:
 
 ```console
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p game_development --example game_development -- game_development1
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_development --example game_development -- game_development1
 ```
 
 ```rust,editable
@@ -58,7 +58,7 @@ library, and compare computed floating-point coordinates with a tolerance.
 Run the example to see the vector arithmetic and transformed point:
 
 ```console
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p game_development --example game_development -- glam
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_development --example game_development -- glam
 ```
 
 ```rust,editable
