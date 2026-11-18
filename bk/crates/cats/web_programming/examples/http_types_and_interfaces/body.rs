@@ -39,6 +39,7 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
+/// Verifies the complete in-memory body example through its public entry flow.
 #[cfg(test)]
 mod tests {
     use super::*;

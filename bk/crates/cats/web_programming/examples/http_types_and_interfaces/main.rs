@@ -2,8 +2,9 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Builds and collects an in-memory HTTP body using the Body adapters.
 mod body;
-/// This example demonstrates the basic usage of the `http` crate for creating
+/// Constructs HTTP requests, responses, and headers with the http crate.
 mod http;
 
 /// Runs the HTTP types and interfaces example.
