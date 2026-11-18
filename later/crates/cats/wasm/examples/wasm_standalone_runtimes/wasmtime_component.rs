@@ -54,7 +54,7 @@ struct State {
 }
 
 impl WasiView for State {
-    /// Handles the ctx behavior for this component.
+    /// Borrows the host WASI configuration and resource table together for guest calls.
     fn ctx(&mut self) -> WasiCtxView<'_> {
         WasiCtxView {
             ctx: &mut self.wasi,

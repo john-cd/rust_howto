@@ -15,7 +15,7 @@ use cxx::let_cxx_string;
 // target.
 #[link(name = "development_tools_ffi_cxx", kind = "static")]
 unsafe extern "C" {
-    /// Handles the cxx link anchor behavior for this component.
+    /// References the native archive so the example links its C++ bridge functions.
     fn cxx_link_anchor();
 }
 
@@ -29,21 +29,21 @@ mod ffi {
     unsafe extern "C++" {
         include!("development_tools_ffi/examples/cpp/hello.h");
 
-        /// Converts the C++ string argument into a Rust greeting.
+        /// Prints a greeting from C++ using a borrowed C++ string.
         ///
         /// # Arguments
         ///
         /// * `name` - Human-readable value used to identify or display the selected cxx.
         fn hello(name: &CxxString);
-        /// Handles the cpp multiply behavior for this component.
+        /// Multiplies two integers in C++; callers must keep the product within i32 range.
         fn cpp_multiply(left: i32, right: i32) -> i32;
-        /// Handles the cpp add via rust behavior for this component.
+        /// Calls C++, which delegates addition back to the exported Rust bridge function.
         fn cpp_add_via_rust(left: i32, right: i32) -> i32;
     }
 
     // Declares foreign functions and types linked from this module.
     extern "Rust" {
-        /// Handles the rust add behavior for this component.
+        /// Exposes Rust integer addition for callbacks made by the C++ implementation.
         fn rust_add(left: i32, right: i32) -> i32;
     }
 }

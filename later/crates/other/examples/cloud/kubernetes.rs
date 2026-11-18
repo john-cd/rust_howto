@@ -196,7 +196,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Handles the echo behavior for this component.
+    /// Builds a namespaced Echo fixture with stable identity and two requested replicas.
     fn echo() -> Echo {
         let mut echo = Echo::new(
             "hello",

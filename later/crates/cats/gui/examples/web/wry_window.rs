@@ -184,7 +184,7 @@ mod tests {
         assert!(!called);
     }
 
-    /// Handles the opener receives the validated url behavior for this component.
+    /// Verifies the opener receives the parsed local file URL after validation succeeds.
     fn opener_receives_the_validated_url() -> Result<(), Box<dyn Error>> {
         let mut opened = None;
         open_validated_uri("file:///tmp/a.html", |url| {
