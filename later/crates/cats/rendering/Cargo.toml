@@ -22,8 +22,19 @@ name = "text_rendering"
 path = "examples/text_rendering/main.rs"
 test = true
 
+[[example]]
+name = "engine_scene"
+path = "examples/engine_scene.rs"
+required-features = ["engine-scene"]
+test = true
+
+[features]
+engine-scene = ["dep:three-d", "dep:three-d-asset"]
+
 [dependencies]
 clap = "4.6.7"
+three-d = { version = "=0.19.0", optional = true }
+three-d-asset = { version = "=0.10.0", optional = true, features = ["obj"] }
 
 [dev-dependencies]
 # Flexible concrete Error type built on std::error::Error

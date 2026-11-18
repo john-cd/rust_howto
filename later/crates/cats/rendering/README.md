@@ -13,3 +13,16 @@ just cargo test --manifest-path later/crates/Cargo.toml --locked -p rendering --
 ```
 
 The chapter is in `later/src/categories/rendering/text_rendering.md`.
+
+## Windowed Scene
+
+The `engine_scene` example uses three-d to load the bundled OBJ and present
+it on an OpenGL desktop:
+
+```console
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p rendering --features engine-scene --example engine_scene
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p rendering --features engine-scene --example engine_scene
+```
+
+The asset tests need no display. The application requires an OpenGL-capable
+desktop. See `later/src/categories/rendering_engine/rendering_engines.md`.

@@ -1,0 +1,6 @@
+# A centered triangle in the XY plane.
+o marker
+v -0.65 -0.55 0
+v 0.65 -0.55 0
+v 0 0.70 0
+f 1 2 3
