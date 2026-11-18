@@ -1,6 +1,11 @@
 //! Fixed-input sorting workload for benchmark comparison examples.
 
 // ANCHOR: example
+/// Sorts the same reversed integer sequence with the selected algorithm.
+///
+/// `black_box` discourages replacing the measured work with a known result.
+/// The checksum consumes the sorted values and gives both algorithms the same
+/// observable output; it does not by itself prove the sequence is sorted.
 fn checksum(stable_sort: bool) -> u64 {
     let mut values: Vec<u64> = (0..100_000).rev().map(std::hint::black_box).collect();
     if stable_sort {
@@ -12,8 +17,13 @@ fn checksum(stable_sort: bool) -> u64 {
     checksum
 }
 
+/// Selects stable or unstable sorting from the CLI and prints the checksum.
+///
+/// Exits with status 2 when the algorithm name is unsupported.
 fn main() {
-    let algorithm = std::env::args().nth(1).unwrap_or_else(|| "unstable".to_owned());
+    let algorithm = std::env::args()
+        .nth(1)
+        .unwrap_or_else(|| "unstable".to_owned());
     let stable_sort = match algorithm.as_str() {
         "stable" => true,
         "unstable" => false,
@@ -26,6 +36,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Confirms both algorithm choices preserve the fixed input checksum.
 #[cfg(test)]
 mod tests {
     use super::checksum;
