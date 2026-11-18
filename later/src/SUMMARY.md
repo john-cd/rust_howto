@@ -35,9 +35,6 @@
   - [Render a Diagnostic with a Source Span](categories/compilers/source_diagnostics.md)
   - [Incremental computation](categories/compilers/incremental_computation.md)
 
-- [Computer vision](categories/computer-vision/index.md)
-  - [Open CV](categories/computer-vision/opencv.md)
-
 - [Cross-platform Development](other/cross-platform/index.md)
   - [Crux](other/cross-platform/crux.md)
 

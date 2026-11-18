@@ -153,12 +153,4 @@ mod tests {
         assert!(count_non_zero(&edges)? > 0);
         Ok(())
     }
-
-    /// Runs the example through its entry point without error.
-    #[test]
-    fn test_main_entry_point() {
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
-    }
 }

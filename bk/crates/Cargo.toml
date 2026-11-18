@@ -11,6 +11,7 @@ members = [
     "cats/cloud_lambda",
     "cats/command_line_interface",
     "cats/compression",
+    "cats/computer_vision",
     "cats/concurrency",
     "cats/config",
     "cats/cryptography",

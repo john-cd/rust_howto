@@ -57,7 +57,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [Accessibility](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/accessibility/index.md).
 - [Internationalization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/internationalization/index.md) and [Localization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/localization/index.md).
 - [Multimedia](../../categories/multimedia/index.md).
-- [Computer Vision](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/computer-vision/index.md).
+- [Computer Vision](../../categories/computer-vision/index.md).
 - [Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md).
 - [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md).
 - [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md) ([Geo](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_geo/geo.md), [Neuro](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_neuroscience/neuroscience.md)).

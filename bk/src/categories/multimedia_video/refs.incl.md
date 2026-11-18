@@ -11,7 +11,7 @@
 [gst-plugins-rs~repo]: https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
 
 [p~asynchronous]: ../asynchronous/index.md
-[p~computer-vision]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/computer-vision/index.md
+[p~computer-vision]: ../computer-vision/index.md
 [p~graphics]: ../graphics/index.md
 [p~multimedia]: ../multimedia/index.md
 [p~multimedia_audio]: ../multimedia_audio/index.md
