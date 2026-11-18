@@ -63,7 +63,45 @@ A closure implements the call traits its body supports. The traits form a hierar
 
 Every closure implements `FnOnce`. Whether it also implements `FnMut` or `Fn` depends on what its body does with captured values, not on whether it uses `move`. A `move` closure that only reads its captures can still implement `Fn`.
 
-Additionally, for any type `F` that implements `Fn` / `FnMut` / `FnOnce`, `&F` implements them, too.
+A shared reference `&F` implements all three call traits when `F: Fn`. A mutable
+reference `&mut F` implements `FnMut` and `FnOnce` when `F: FnMut`. It also
+implements `Fn` when `F: Fn`. An owned `F: FnOnce` can be called by value,
+consuming the callable. See the implementations listed in the standard library
+documentation for the three traits above.
+
+```rust
+let read = || 42;
+assert_eq!((&read)(), 42);
+
+let mut count = 0;
+let mut increment = || {
+    count += 1;
+    count
+};
+assert_eq!((&mut increment)(), 1);
+assert_eq!((&mut increment)(), 2);
+
+let text = String::from("hello");
+let consume = move || drop(text);
+consume();
+```
+
+A shared reference cannot call a closure that needs to mutate its captures.
+
+```rust,compile_fail,E0596
+let mut count = 0;
+let increment = || count += 1;
+let shared = &increment;
+shared();
+```
+
+A reference also cannot call a closure that must move a capture out of itself.
+
+```rust,compile_fail,E0507
+let text = String::from("hello");
+let consume = move || drop(text);
+(&consume)();
+```
 
 When defining a function that accepts a closure, you use the `Fn`, `FnMut`, or `FnOnce` traits as bounds:
 
