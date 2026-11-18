@@ -2,9 +2,9 @@
 
 # OS - Linux APIs
 
-{{#include linux.incl.md}}{{hi:Linux APIs}}
+{{#include linux.incl.md}}
 
-The index summarizes the available Linux-specific crates. These recipes show when to use them, what the host must provide, and how to keep Linux-only code separate from portable paths.
+The index summarizes the available Linux-specific crates. These recipes show when to use them, what the host must provide, and how to keep Linux-only code separate from portable paths. {{hi:Linux APIs}}
 
 ## Use Linux system calls with `rustix`
 
@@ -14,7 +14,7 @@ The included `statx` example creates a temporary file, writes a known message, a
 
 `statx` requires Linux 4.11 or later and may be denied by a host's syscall policy. A missing birth-time field is reported as unavailable; syscall errors are propagated rather than replaced by zero metadata. The example and its dependencies are gated to Linux, and other targets print a message.
 
-From `later/crates` on Linux, run `cargo run -p os_linux_apis --example linux`. The file size is 23 bytes; the birth-time output depends on the host filesystem.
+From `bk/crates` on Linux, run `cargo run -p os_linux_apis --example linux`. The file size is 23 bytes; the birth-time output depends on the host filesystem.
 
 ## Choose an `io_uring` runtime
 
@@ -46,7 +46,7 @@ Windows tests of the portable helper do not exercise them. Birth time remains op
 even when size is available. Run the native tests on the actual filesystem/kernel:
 
 ```sh
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p os_linux_apis --example linux
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p os_linux_apis --example linux
 ```
 
 For shared process/environment handling and a platform crate comparison, see

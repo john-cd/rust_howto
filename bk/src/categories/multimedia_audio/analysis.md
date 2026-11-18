@@ -20,8 +20,8 @@ amplitude, silence, Nyquist scaling, and invalid input.
 ```
 
 ```sh
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example spectrum
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example spectrum
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p multimedia_audio --example spectrum
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p multimedia_audio --example spectrum
 ```
 
 The 1024-sample frame at 8192 Hz has 8 Hz bin spacing. The generated 1024 Hz tone is
@@ -67,4 +67,4 @@ pipeline checks on each advertised platform.
 - [Audio](audio.md) and [WAV](wav.md).
 - [Encoding](../multimedia_encoding/encoding.md).
 - [Video](../multimedia_video/video.md).
-- [Background UI Work](../gui/background_work.md).
+- [Background UI Work](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/background_work.md).

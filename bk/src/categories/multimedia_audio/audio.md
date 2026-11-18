@@ -7,8 +7,8 @@
 These examples run in the local example package and cannot access native devices or bundled fixture files in the browser Playground. From the repository root, run device-free checks with:
 
 ```sh
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --examples
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example audio -- hrtf
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p multimedia_audio --examples
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p multimedia_audio --example audio -- hrtf
 ```
 
 The default tests leave device-dependent playback ignored. The `audio` subcommand opens the default output device and plays a one-second tone; MIDI communication needs a selected port. Successful stream setup does not establish audible quality.
@@ -133,7 +133,7 @@ loopback so the probe cannot trigger an instrument or interfere with other MIDI
 traffic.
 
 ```console
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example midi_loopback -- "INPUT_PORT" "OUTPUT_PORT"
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p multimedia_audio --example midi_loopback -- "INPUT_PORT" "OUTPUT_PORT"
 ```
 
 A successful round trip prints `Received [90, 3C, 64]` and then

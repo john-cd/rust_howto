@@ -10,11 +10,11 @@
 [gstreamer~installing~website]: https://gstreamer.freedesktop.org/documentation/installing/index.html
 [gst-plugins-rs~repo]: https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs
 
-[p~asynchronous]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/asynchronous/index.md
-[p~computer-vision]: ../computer-vision/index.md
-[p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
+[p~asynchronous]: ../asynchronous/index.md
+[p~computer-vision]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/computer-vision/index.md
+[p~graphics]: ../graphics/index.md
 [p~multimedia]: ../multimedia/index.md
 [p~multimedia_audio]: ../multimedia_audio/index.md
 [p~multimedia_encoding]: ../multimedia_encoding/index.md
-[p~network-programming]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/network-programming/index.md
-[p~rendering]: ../rendering/index.md
+[p~network-programming]: ../network-programming/index.md
+[p~rendering]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/rendering/index.md

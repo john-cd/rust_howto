@@ -13,10 +13,10 @@ prints "unsupported platform" verifies portability of the package, not the nativ
 | --- | --- | --- |
 | Unix file descriptors and system calls | `rustix`, `nix`, `libc` | [Linux metadata](../../categories/os_linux-apis/linux.md) uses rustix's safe statx wrapper. Nix offers additional Unix abstractions; libc exposes raw ABI calls and requires manual safety reasoning. |
 | Linux services and asynchronous I/O | `zbus`, `io-uring`, `tokio-uring` | [Linux APIs](../../categories/os_linux-apis/linux.md) explains the service/runtime boundaries; these integrations are not tested by statx. |
-| Windows APIs | `windows`, `windows-sys` | The [published Windows category](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/os_windows-apis/index.md) owns Windows recipes; no duplicate is staged here. |
+| Windows APIs | `windows`, `windows-sys` | The [Windows category](../../categories/os_windows-apis/index.md) owns Windows recipes. |
 | macOS frameworks | `objc2`, `objc2-foundation`, `objc2-app-kit`, `core-foundation`, `security-framework` | [macOS APIs](../../categories/os_macos-apis/macos.md) introduces framework access. AppKit's main-thread requirements and Keychain entitlements are separate from Foundation queries. |
 | FreeBSD kernel state and events | `sysctl`, `nix`, `libc` | [FreeBSD APIs](../../categories/os_freebsd-apis/freebsd.md) covers a sysctl query; kqueue, jails, and Capsicum need their own runtime checks. |
-| Application change notifications | `notify`, `mio`, `polling` | Start with the [published file watcher](https://github.com/john-cd/rust_howto/blob/db7033a53e8c5f6cfdc66ad0a9c89105319ebe30/bk/src/categories/filesystem/file_watching.md) for path changes. Use an I/O readiness API when waiting for file descriptors or sockets to become ready. |
+| Application change notifications | `notify`, `mio`, `polling` | Start with the [published file watcher](../../categories/filesystem/file_watching.md) for path changes. Use an I/O readiness API when waiting for file descriptors or sockets to become ready. |
 
 Prefer an owned descriptor/handle wrapper over a raw integer or pointer. Document
 which side closes it and what happens after partial initialization. Match error codes
@@ -36,8 +36,8 @@ It changes neither the parent's current directory nor its environment.
 ```
 
 ```sh
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p os_linux_apis --example process_environment
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p os_linux_apis --example process_environment
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p os_linux_apis --example process_environment
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p os_linux_apis --example process_environment
 ```
 
 The package contains the Linux statx recipe too, but this helper example is portable.
@@ -66,4 +66,4 @@ administrator/root access for introductory read-only recipes.
 - [Linux APIs](../../categories/os_linux-apis/index.md).
 - [macOS APIs](../../categories/os_macos-apis/index.md).
 - [FreeBSD APIs](../../categories/os_freebsd-apis/index.md).
-- [Cross-platform Development](../cross-platform/index.md).
+- [Cross-platform Development](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cross-platform/index.md).

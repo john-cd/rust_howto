@@ -2,9 +2,9 @@
 
 # OS - FreeBSD APIs
 
-{{#include freebsd.incl.md}}{{hi:Operating systems::FreeBSD APIs}}
+{{#include freebsd.incl.md}}
 
-Use the standard library for portable filesystem, process, and networking work. For POSIX interfaces, [`libc`][c~libc~docs], [`nix`][c~nix~docs], and [`rustix`][c~rustix~docs] provide APIs that also work on FreeBSD. Reach for FreeBSD-specific interfaces when an application needs kernel state, capability-mode confinement, jails, or kernel event notification.
+Use the standard library for portable filesystem, process, and networking work. For POSIX interfaces, [`libc`][c~libc~docs], [`nix`][c~nix~docs], and [`rustix`][c~rustix~docs] provide APIs that also work on FreeBSD. Reach for FreeBSD-specific interfaces when an application needs kernel state, capability-mode confinement, jails, or kernel event notification. {{hi:Operating systems::FreeBSD APIs}}
 
 ## Read kernel state with `sysctl`
 
@@ -30,7 +30,7 @@ FreeBSD jails provide operating-system-level isolation for process, filesystem, 
 
 The `freebsd` module is gated with `#[cfg(target_os = "freebsd")]`, and its `sysctl` dependency uses a matching Cargo target section. Other targets run a message-only fallback without loading the module or dependency. That fallback does not exercise the FreeBSD path. The advisory `native_platform_examples.yml` workflow runs this package's Clippy and tests inside a FreeBSD VM; inspect its native step results rather than treating a passing fallback on another operating system as validation.
 
-From `later/crates` on FreeBSD, run `cargo run -p os_freebsd_apis --example freebsd`. The expected output includes `Kernel operating-system type: FreeBSD`.
+From `bk/crates` on FreeBSD, run `cargo run -p os_freebsd_apis --example freebsd`. The expected output includes `Kernel operating-system type: FreeBSD`.
 
 For shared POSIX operations, check the target support of `libc`, `nix`, or `rustix` before adding direct FFI. Keep unsafe calls and platform-specific behavior behind a narrow boundary.
 

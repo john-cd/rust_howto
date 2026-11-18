@@ -110,7 +110,7 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 - [Game Engines](../game-engines/index.md).
 - [Graphics](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md).
 - [Internationalization](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/internationalization/index.md).
-- [Multimedia](../multimedia/index.md).
+- [Multimedia](https://john-cd.com/rust_howto/categories/multimedia/index.html).
 - [Rendering](../rendering/index.md).
 - [Template Engine](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/template-engine/index.md).
 - [WASM](../wasm/index.md).

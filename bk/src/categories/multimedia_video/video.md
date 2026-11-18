@@ -71,7 +71,7 @@ A video player also needs audio and video synchronization, a clock, buffering, s
 
 Filters can crop, scale, color-convert, deinterlace, or composite frames. FFmpeg and GStreamer provide filter and pipeline options; application-specific image operations can also run on decoded frames.
 
-[`av-scenechange`][c~av-scenechange~docs]↗{{hi:av-scenechange}} analyzes decoded video and reports candidate scene-change points useful for encoder keyframe placement. Scene-change detection is one form of analysis; object recognition, motion estimation, and human-oriented scene labels require different models and goals. Extract frames for pixel operations with `image` or computer-vision workflows with `opencv`; see the [Computer Vision chapter](../computer-vision/index.md). Preserve frame timestamps when analysis results must align with the source.
+[`av-scenechange`][c~av-scenechange~docs]↗{{hi:av-scenechange}} analyzes decoded video and reports candidate scene-change points useful for encoder keyframe placement. Scene-change detection is one form of analysis; object recognition, motion estimation, and human-oriented scene labels require different models and goals. Extract frames for pixel operations with `image` or computer-vision workflows with `opencv`; see the [Computer Vision chapter](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/computer-vision/index.md). Preserve frame timestamps when analysis results must align with the source.
 
 ## Related Topics {#related-topics .skip}
 

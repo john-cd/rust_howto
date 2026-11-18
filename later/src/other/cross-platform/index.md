@@ -81,11 +81,11 @@ Choose which parts you want in common across targets.
 
 ## Keep operating-system APIs local
 
-For system-specific APIs, use the smallest platform-specific layer possible. The book has guides for [FreeBSD](../../categories/os_freebsd-apis/index.md), [Linux](../../categories/os_linux-apis/index.md), and [macOS](../../categories/os_macos-apis/index.md).
+For system-specific APIs, use the smallest platform-specific layer possible. The book has guides for [FreeBSD](https://john-cd.com/rust_howto/categories/os_freebsd-apis/index.html), [Linux](https://john-cd.com/rust_howto/categories/os_linux-apis/index.html), and [macOS](https://john-cd.com/rust_howto/categories/os_macos-apis/index.html).
 
 ## Related Topics
 
-- [Native OS APIs](../native-os/index.md) for platform bindings and ownership.
+- [Native OS APIs](https://john-cd.com/rust_howto/other/native-os/index.html) for platform bindings and ownership.
 - [GUI](../../categories/gui/index.md).
 - [Embedded Systems](../../categories/embedded/index.md).
 - [WebAssembly](../../categories/wasm/index.md).

@@ -49,7 +49,7 @@ collecting the first marker. An ordinary launch uses the keyboard.
 - [Game Engines and Frameworks](../game-engines/index.md).
 - [Game Development](../game-development/index.md).
 - [Graphics](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md).
-- [Multimedia](../multimedia/index.md).
+- [Multimedia](https://john-cd.com/rust_howto/categories/multimedia/index.html).
 - [Rust game libraries](../game-engines/game_engines.md).
 
 {{#include refs.incl.md}}

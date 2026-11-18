@@ -13,5 +13,10 @@ blur, EXIF orientation, and lossless PNG optimization with generated inputs.
 {{#include color_handling.incl.md}}
 {{#include pixel_buffers.incl.md}}
 
+## Related Topics {#related-topics .skip}
+
+- [Multimedia](../multimedia/index.md) connects image, audio, video, and encoding workflows.
+- [Video](../multimedia_video/index.md) covers frame extraction and processing.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

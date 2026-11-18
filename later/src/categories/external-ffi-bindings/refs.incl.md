@@ -14,7 +14,7 @@
 [p~development-tools_ffi]: ../development-tools_ffi/index.md
 [p~external-ffi-bindings]: index.md
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
-[p~multimedia_audio]: ../multimedia_audio/index.md
+[p~multimedia_audio]: https://john-cd.com/rust_howto/categories/multimedia_audio/index.html
 [p~network-programming]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/network-programming/index.md
 [p~os]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/os/index.md
 [p~os_windows-apis]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/os_windows-apis/index.md

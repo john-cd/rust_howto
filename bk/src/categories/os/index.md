@@ -43,7 +43,7 @@ Direct system calls and Foreign Function Interface (FFI) bindings are lower-leve
 
 {{#include low_level_system_calls.incl.md}}
 
-For Unix-specific interfaces, see [Unix APIs](../os_unix-apis/index.md). For Windows, consult the [Windows API Bindings](../os_windows-apis/windows.md) documentation.
+See [Native OS APIs and Process Boundaries](../../other/native-os/index.md) to choose a platform API and launch a helper with an explicit environment. For Unix-specific interfaces, see [Unix APIs](../os_unix-apis/index.md). For Windows, consult the [Windows API Bindings](../os_windows-apis/windows.md) documentation.
 
 ## Operating Systems Written in Rust
 

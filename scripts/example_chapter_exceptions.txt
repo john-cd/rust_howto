@@ -11,6 +11,9 @@ bk/crates/cats/concurrency/examples/actors/riker.rs
 # Placeholder entry point; the chapter is deferred (#1748).
 bk/crates/cats/graphics/examples/graphics.rs
 # Support modules for examples whose entry point is included under another name.
+# Alternate entry modules report a platform mismatch for the native OS examples.
+bk/crates/cats/os_freebsd_apis/examples/freebsd/unsupported.rs
+bk/crates/cats/os_macos_apis/examples/macos/unsupported.rs
 # Test helper that re-runs a test in a child process; not an example.
 bk/crates/cats/development_tools_debugging/examples/support/isolated.rs
 bk/crates/cats/development_tools/examples/crate_indices/fixtures.rs

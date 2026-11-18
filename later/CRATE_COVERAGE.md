@@ -91,6 +91,6 @@ These recipes were added or updated during the coverage review.
   to compare a measured route with a simple model.
 - [Collect Three Markers](src/categories/games/index.md#collect-markers) uses
   Macroquad to introduce an input, update, and draw loop.
-- [Media fixture](src/categories/multimedia/multimedia.md#media-round-trip)
+- [Media fixture](../bk/src/categories/multimedia/multimedia.md#media-round-trip)
   connects the existing multimedia crates and format chapters to an executed
   FFmpeg workflow.

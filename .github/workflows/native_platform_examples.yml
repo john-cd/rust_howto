@@ -7,7 +7,8 @@ on:
     branches: [develop]
     paths:
       - "later/crates/Cargo.*"
-      - "later/crates/cats/os_*/**"
+      - "bk/crates/Cargo.*"
+      - "bk/crates/cats/os_*/**"
       - "later/crates/cats/development_tools_ffi/**"
       - ".github/workflows/native_platform_examples.yml"
       - ".github/actions/**"
@@ -16,7 +17,8 @@ on:
     branches: [develop]
     paths:
       - "later/crates/Cargo.*"
-      - "later/crates/cats/os_*/**"
+      - "bk/crates/Cargo.*"
+      - "bk/crates/cats/os_*/**"
       - "later/crates/cats/development_tools_ffi/**"
       - ".github/workflows/native_platform_examples.yml"
       - ".github/actions/**"
@@ -62,14 +64,15 @@ jobs:
           toolchain: ${{ env.RUST_VERSION }}
           nightly: skip
           cache-workspaces: |
+            bk/crates -> ../../target/later-native
             later/crates -> ../../target/later-native
           cache-key: native-macos
       - name: Lint native macOS APIs
         run: cargo clippy -p os_macos_apis --all-targets --locked -- --deny warnings
-        working-directory: later/crates
+        working-directory: bk/crates
       - name: Test native macOS APIs
         run: cargo test -p os_macos_apis --all-targets --locked
-        working-directory: later/crates
+        working-directory: bk/crates
       - name: Lint Objective-C integration
         run: cargo clippy -p development_tools_ffi --example objc --features objc --locked -- --deny warnings
         working-directory: later/crates
@@ -106,6 +109,6 @@ jobs:
             export CARGO_TARGET_DIR="$PWD/target/freebsd"
             export CARGO_BUILD_BUILD_DIR="$PWD/build/freebsd"
             export RUSTC_WRAPPER=""
-            cd later/crates
+            cd bk/crates
             cargo clippy -p os_freebsd_apis --all-targets --locked -- --deny warnings
             cargo test -p os_freebsd_apis --all-targets --locked
