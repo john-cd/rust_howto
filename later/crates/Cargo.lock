@@ -502,6 +502,7 @@ name = "aerospace_space_protocols"
 version = "0.1.2"
 dependencies = [
  "arbitrary-int",
+ "clap",
  "spacepackets",
 ]
 

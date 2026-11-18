@@ -10,6 +10,14 @@
 
 [`arrow`][c~arrow~docs]↗{{hi:arrow}} is the official Rust implementation of `Apache Arrow`{{hi:In-memory}}. These examples build typed arrays and record batches, read and write CSV and newline-delimited JSON, and convert Serde-compatible Rust rows to and from Arrow.
 
+Run the Arrow examples from the repository root. Use `--help` to list the
+recipes, or omit the recipe to run them all.
+
+```console
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p other --features arrow --example data_processing -- --help
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p other --features arrow --example data_processing -- ipc
+```
+
 ### Build typed arrays and record batches {#arrow-arrays}
 
 ```rust,editable

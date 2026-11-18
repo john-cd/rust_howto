@@ -38,6 +38,11 @@ pub fn pus_telemetry() {
 }
 // ANCHOR_END: pus-telemetry
 
+/// Runs the PUS-C telemetry demonstration.
+pub fn run() {
+    pus_telemetry();
+}
+
 /// Checks telemetry serialization and decoding with a deterministic timestamp.
 #[cfg(test)]
 mod tests {

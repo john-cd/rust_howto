@@ -42,3 +42,8 @@ pub fn pus_telecommand() {
     assert_eq!(parsed.user_data(), app_data);
 }
 // ANCHOR_END: pus-telecommand
+
+/// Runs the PUS-C telecommand demonstration.
+pub fn run() {
+    pus_telecommand();
+}

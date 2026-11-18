@@ -129,17 +129,6 @@ impl ApplicationHandler for FemtoVgApp {
     }
 }
 
-/// Opens an OpenGL window and renders a simple FemtoVG path until it closes.
-/// Starts the interactive window example as a Cargo example target.
-///
-/// # Errors
-///
-/// Returns an error if a step of the example fails.
-pub fn main() -> Result<()> {
-    run()
-}
-// ANCHOR_END: example
-
 /// Draw a vector shape in an OpenGL window with FemtoVG.
 ///
 /// # Errors
@@ -198,6 +187,13 @@ pub fn run() -> Result<()> {
     Ok(())
 }
 
+/// Starts the standalone FemtoVG example.
+#[allow(dead_code, reason = "the combined renderer runner calls run directly")]
+fn main() -> Result<()> {
+    run()
+}
+// ANCHOR_END: example
+
 /// Starts the interactive window example as a Cargo example target.
 ///
 /// The interactive renderer requires a desktop display and OpenGL context.
@@ -218,6 +214,6 @@ mod tests {
     #[test]
     #[ignore = "requires an interactive desktop display and OpenGL context"]
     fn test_femtovg_example_entry_point() -> anyhow::Result<()> {
-        super::main()
+        super::run()
     }
 }
