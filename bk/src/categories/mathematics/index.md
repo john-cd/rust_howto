@@ -102,7 +102,7 @@ The [Units of Measurement chapter][p~units] demonstrates dimensional types and c
 
 - [[algorithms | Algorithms]].
 - [Cryptography](../cryptography/index.md).
-- Plotting and Graphing: [Visualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/visualization/index.md).
+- Plotting and Graphing: [Visualization](../visualization/index.md).
 - [Randomness](../algorithms/random_value_generation.md).
 - [[sorting | Sorting]].
 

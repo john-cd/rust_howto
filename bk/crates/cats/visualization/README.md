@@ -2,7 +2,7 @@
 
 # Visualization
 
-Run from `later/crates`:
+Run from `bk/crates`:
 
 ```console
 cargo run --quiet --locked -p visualization --example visualization -- plotters > chart.svg

@@ -1092,6 +1092,10 @@
 
 {{#include ../categories/value-formatting/number_formatting.incl.md}}
 
+## Visualization
+
+{{#include ../categories/visualization/visualization.incl.md}}
+
 ## Web Programming
 
 ### HTML Sanitization

@@ -51,7 +51,6 @@
 ./src/categories/simulation/index.md
 ./src/categories/value-formatting/index.md
 ./src/categories/virtualization/index.md
-./src/categories/visualization/index.md
 ./src/categories/wasm/index.md
 ./src/categories/web-programming_websocket/index.md
 ./src/other/architecture/index.md

@@ -46,7 +46,7 @@ For spectral analysis, [`rustfft`][c~rustfft~docs]↗{{hi:rustfft}} provides pur
 
 - [Science and machine learning](../science/index.md).
 - [Computer vision](https://john-cd.com/rust_howto/categories/computer-vision/opencv.html).
-- [Data visualization](../visualization/visualization.md).
+- [Data visualization](https://john-cd.com/rust_howto/categories/visualization/visualization.html).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
