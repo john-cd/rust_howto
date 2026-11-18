@@ -89,6 +89,18 @@ mdBook can report a missing include while continuing to render a chapter.
 
 The [`mdbook-utils`][c~mdbook-utils~crates.io]↗ utility ([(github)][c~mdbook-utils~repo]↗ [(docs.rs)][c~mdbook-utils~docs]↗ [(user guide)][c~mdbook-utils~user-guide]↗) helps manage links and code blocks in [`mdbook`][c~mdbook~docs]↗ source directories. It is the companion tool for this book.
 
+The `book_tooling/` Git submodule provides the companion Markdown parser and authoring-tool sources.
+Initializing it requires GitHub access to the private `john-cd/book_tooling` repository:
+
+```sh
+git submodule update --init --recursive -- book_tooling
+```
+
+Initialization checks out the commit recorded by this repository. To review a newer `develop`
+revision, run `git submodule update --remote -- book_tooling`, inspect the changes, and commit
+the updated submodule reference. Cargo dependency revisions are recorded independently in
+`tools/Cargo.toml`.
+
 There are also a number of utilities and pre-processors in the [`tools`][rust-howto~tools~repo]↗ folder of this repo.
 
 ## Legal
