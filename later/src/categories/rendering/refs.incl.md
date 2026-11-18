@@ -49,7 +49,7 @@
 [p~game_engines]: ../game-engines/game_engines.md
 [p~gpu_abstraction_layers]: ../rendering_graphics-api/gpu_abstraction_layers.md
 [p~gui]: ../gui/index.md
-[p~multimedia_video]: ../multimedia_video/index.md
+[p~multimedia_video]: https://john-cd.com/rust_howto/categories/multimedia_video/index.html
 [p~native_graphics_apis]: ../rendering_graphics-api/native_graphics_apis.md
 [p~opengl]: ../rendering_graphics-api/opengl.md
 [p~rendering_data-formats]: ../rendering_data-formats/index.md

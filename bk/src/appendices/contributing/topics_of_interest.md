@@ -44,7 +44,7 @@ The following are topics that deserve (additional) coverage and examples:
 - Raft Consensus library.
 - Network file systems.
 - [[statistics | Statistics]], math.
-- Sound ([Multimedia - audio](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/multimedia_audio/index.md)).
+- Sound ([Multimedia - audio](../../categories/multimedia_audio/index.md)).
 - [API bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md).
 - FFI ([Development tools - FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md)).
 - [Hardware support](../../categories/hardware-support/index.md).
@@ -56,7 +56,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [Emulators](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/emulators/index.md).
 - [Accessibility](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/accessibility/index.md).
 - [Internationalization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/internationalization/index.md) and [Localization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/localization/index.md).
-- [Multimedia](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/multimedia/index.md).
+- [Multimedia](../../categories/multimedia/index.md).
 - [Computer Vision](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/computer-vision/index.md).
 - [Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md).
 - [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md).

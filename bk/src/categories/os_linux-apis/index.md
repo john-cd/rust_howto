@@ -13,7 +13,7 @@ Linux-specific interfaces are useful when a program needs kernel or service feat
 | eBPF | [`aya`][c~aya~docs]↗{{hi:aya}} | Load and manage eBPF programs from Rust. |
 | Desktop services | [`zbus`][c~zbus~docs]↗{{hi:zbus}} for D-Bus; systemd notification and journal bindings | Check the service and systemd versions you need to support. |
 | File and device events | [`notify`][c~notify~docs]↗{{hi:notify}}; inotify; udev and evdev bindings | `notify` offers a cross-platform watcher; use the Linux interfaces for kernel-specific details. |
-| Isolation and resource control | Namespaces and cgroups; see [Virtualization](../virtualization/index.md) | These interfaces require careful privilege and lifecycle handling; see the [Virtualization](../virtualization/index.md) work tracked by [issue #968](https://github.com/john-cd/rust_howto/issues/968). |
+| Isolation and resource control | Namespaces and cgroups; see [Virtualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md) | These interfaces require careful privilege and lifecycle handling; see the [Virtualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md) work tracked by [issue #968](https://github.com/john-cd/rust_howto/issues/968). |
 
 Rust's FFI can call Linux interfaces and libraries that are not exposed by `std` or a safe binding. Prefer an existing safe wrapper where possible, and keep direct `unsafe` calls small and audited.
 
@@ -27,9 +27,9 @@ For shared crate selection and helper-process contracts, see [Native OS APIs and
 
 ## Related Topics
 
-- [API Bindings](../api-bindings/index.md) and [External FFI Bindings](../external-ffi-bindings/index.md).
-- [Operating Systems](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/os/index.md).
-- [Virtualization](../virtualization/index.md).
+- [API Bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md) and [External FFI Bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/external-ffi-bindings/index.md).
+- [Operating Systems](../os/index.md).
+- [Virtualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md).
 - [Linux](linux.md).
 
 For an eBPF learning path, see [Building eBPF Programs with Aya][aya~book]↗. Check the documented kernel and privilege requirements before running a program.

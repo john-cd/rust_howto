@@ -4,7 +4,7 @@
 
 Reviewed November 17, 2026, for [#2350](https://github.com/john-cd/rust_howto/issues/2350), [#2351](https://github.com/john-cd/rust_howto/issues/2351), and [#2352](https://github.com/john-cd/rust_howto/issues/2352). This review covers the requested GUI, embedded, robotics, audio, graphics, native-API, Games, Rendering Engines, and ML material. It does not certify every category under `later`.
 
-“Ready” means the named introductory recipe has sufficient prose and executable evidence to propose a focused migration. It still needs the normal `bk` manifest/feature, navigation, reference, and integration checks when moved. A successful mock, compiler fallback, or headless test does not establish real device or visual behavior. No chapters were moved into `bk` by this review.
+“Ready” means the named introductory recipe has sufficient prose and executable evidence to propose a focused migration. It still needs the normal `bk` manifest/feature, navigation, reference, and integration checks when moved. A successful mock, compiler fallback, or headless test does not establish real device or visual behavior. Native OS and Multimedia now live in `bk`. This document retains their test evidence.
 
 ## Ready for Focused Migration
 
@@ -14,9 +14,9 @@ Reviewed November 17, 2026, for [#2350](https://github.com/john-cd/rust_howto/is
 | [Science: Classical ML](../bk/src/other/machine-learning/classical_machine_learning.md) | SmartCore classification and Linfa clustering/regression. | 9 tests passed. This result covers classical ML. |
 | [Rendering Data Formats](src/categories/rendering_data-formats/index.md) | Inline glTF scene parsing, tested texture layout/conversion, and SVG rasterization recipes. | Included in the successful host sweep; these device-free examples do not claim every listed compressed texture format or external importer is exercised. |
 | [Games](src/categories/games/index.md) | The Macroquad marker-collection game from [#2379](https://github.com/john-cd/rust_howto/issues/2379). | Two game-state tests passed. The Windows smoke run presented three frames, scored a marker with scripted movement, and exited. A Linux X11 run exercised the normal keyboard path and checked marker pixels before scoring, after scoring, and after restart. Physical keyboard interaction and human visual review remain unverified. |
-| [Linux APIs](src/categories/os_linux-apis/index.md) | Descriptor-based metadata with rustix and statx. | Five Linux tests and a native CLI run passed on the Docker Desktop WSL2 kernel. See the Linux commands and filesystem observations below. |
-| [macOS APIs](src/categories/os_macos-apis/macos.md) | The introductory native API example. | The actual macOS API and Objective-C CI test steps passed on macOS 15/ARM64 with Rust 1.100.0. The relevant package sources, workspace manifest, lockfile, and native workflow match the tested revision. |
-| [FreeBSD APIs](src/categories/os_freebsd-apis/freebsd.md) | The native sysctl introduction. | The actual native test step passed inside FreeBSD 14.4/x86-64 with Rust 1.100.0; the relevant source and lockfile match the tested revision. |
+| [Linux APIs](../bk/src/categories/os_linux-apis/index.md) | Descriptor-based metadata with rustix and statx. | Five Linux tests and a native CLI run passed on the Docker Desktop WSL2 kernel. See the Linux commands and filesystem observations below. |
+| [macOS APIs](../bk/src/categories/os_macos-apis/macos.md) | The introductory native API example. | The actual macOS API and Objective-C CI test steps passed on macOS 15/ARM64 with Rust 1.100.0. The relevant package sources, workspace manifest, lockfile, and native workflow match the tested revision. |
+| [FreeBSD APIs](../bk/src/categories/os_freebsd-apis/freebsd.md) | The native sysctl introduction. | The actual native test step passed inside FreeBSD 14.4/x86-64 with Rust 1.100.0; the relevant source and lockfile match the tested revision. |
 
 The native CI evidence is [run 44236893654](https://github.com/john-cd/rust_howto/actions/runs/44236893654), revision `769cf9cbf2cacc22cc2ff4383b6fddf397dbbcc4`. Both job and individual native lint/test step conclusions were inspected; the workflow is advisory, so its overall green status alone would not be enough. [#2214](https://github.com/john-cd/rust_howto/issues/2214) retains the separate CI-ownership decisions.
 
@@ -41,7 +41,7 @@ just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --featu
 | [GUI](src/categories/gui/index.md) | egui interaction/layout/text logic; Windows Winit creation, minifb pixels, and Softbuffer presentation. | 36 default/minifb/Softbuffer tests passed with 7 interactive tests ignored; Slint added 5 headless tests with 1 interactive test ignored. Native self-closing presentation checks passed. No screenshot, full input/resize matrix, screen reader, or cross-platform toolkit certification: [#2359](https://github.com/john-cd/rust_howto/issues/2359), [#2213](https://github.com/john-cd/rust_howto/issues/2213). |
 | [Embedded](src/categories/embedded/index.md) | Explicitly host-side HAL mocks, bounded messages, protocol/storage logic, and the Embassy host-task example. | 18 host tests passed after fixing deadline-task reuse. No board, firmware target, probe, pin map, flash operation, or physical reading was validated: [#2355](https://github.com/john-cd/rust_howto/issues/2355). |
 | [Robotics](src/categories/science_robotics/index.md) | PID/control, pathfinding, kinematics, nearest-neighbor, mock-I2C, and physics simulation recipes. | Default host tests passed. A Jazzy container verified the ROS 2 round trip. Physical robot/device validation remains in [#2355](https://github.com/john-cd/rust_howto/issues/2355). |
-| [Audio](src/categories/multimedia_audio/index.md) | WAV, synthesis, resampling, parsing, and the bundled synthetic HRIR/HRTF convolution recipe. | Host tests and a one-second Windows CPAL output-stream test passed. MIDI device communication and audible quality remain distinct from pure decoding and successful streaming: [#2356](https://github.com/john-cd/rust_howto/issues/2356). |
+| [Audio](../bk/src/categories/multimedia_audio/index.md) | WAV, synthesis, resampling, parsing, and the bundled synthetic HRIR/HRTF convolution recipe. | Host tests and a one-second Windows CPAL output-stream test passed. Linux JACK loopback and ALSA output also passed. Audible quality remains outside the automated checks: [#2356](https://github.com/john-cd/rust_howto/issues/2356). |
 | [Rendering](src/categories/rendering/index.md) | The distinct fontdue glyph recipe and remaining engine catalogs. Raster/vector, tessellation, SVG, and projection recipes are already in published Graphics; staged duplicates were removed under #2361. | The earlier host tests passed before duplicate retirement. Do not promote catalog descriptions as proof that the corresponding windowed engines were run: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
 | [Graphics APIs](src/categories/rendering_graphics-api/index.md) | Adapter discovery, wgpu compute/readback, shader validation/translation, and the new offscreen triangle render. | 16 tests passed with ignored GPU tests enabled. The triangle's center/background pixels passed on both Vulkan and DirectX 12 using Intel Iris Xe. OpenGL helpers without a current context and raw Vulkan discovery do not prove a complete scene: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
 | [Rendering Engines](src/categories/rendering_engine/index.md) | The expanded engine-responsibility guide and bounded offscreen rendering core. | The wgpu example has offscreen GPU pixel checks. The separate three-d example passed the Linux OpenGL window lifecycle and pixel checks in [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
@@ -81,7 +81,7 @@ not establish playback duration or audible quality.
 With that output configured, run from the repository root:
 
 ```sh
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example audio -- audio::tests::test_audio_example_entry_point --ignored --nocapture
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p multimedia_audio --example audio -- audio::tests::test_audio_example_entry_point --ignored --nocapture
 ```
 
 Windows listed Microsoft GS Wavetable Synth as an output and reported no
@@ -115,10 +115,10 @@ Trixie container on Docker Desktop's Linux 6.18.58.1 WSL2 kernel. Run from the
 repository root on Linux with the repository's build paths configured:
 
 ```sh
-just cargo clippy --manifest-path later/crates/Cargo.toml --locked -p os_linux_apis --examples --tests -- -D warnings
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p os_linux_apis --examples -- --nocapture
+just cargo clippy --manifest-path bk/crates/Cargo.toml --locked -p os_linux_apis --examples --tests -- -D warnings
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p os_linux_apis --examples -- --nocapture
 fixture_dir=$(mktemp -d)
-TMPDIR="$fixture_dir" just cargo run --manifest-path later/crates/Cargo.toml --locked -p os_linux_apis --example linux
+TMPDIR="$fixture_dir" just cargo run --manifest-path bk/crates/Cargo.toml --locked -p os_linux_apis --example linux
 rmdir "$fixture_dir"
 ```
 
@@ -142,14 +142,14 @@ fields or reject the call.
 Run from the repository root with the configured shared package/cache paths. Build output stays in the checkout's external slot. The Windows host used Rust 1.100.0, with Rust 1.98.1 for the two explicit baseline compile checks. Both NVIDIA RTX 3060 Laptop and Intel Iris Xe adapters are installed; the observed GPU render runs selected Intel Iris Xe. No NVIDIA runtime result is claimed.
 
 ```sh
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p rendering -p science_robotics -p multimedia_audio -p rendering_data_formats -p game_development --examples
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p rendering -p science_robotics -p rendering_data_formats -p game_development --examples
 just cargo test --manifest-path later/crates/cats/embedded/Cargo.toml --locked --examples
 just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --features onnx --example machine_learning
 just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --example ml
 just cargo test --manifest-path later/crates/Cargo.toml --locked -p rendering_graphics_api --features wgpu --examples -- --include-ignored --nocapture
 just cargo test --manifest-path later/crates/Cargo.toml --locked -p gui --features minifb,softbuffer --examples
 just cargo test --manifest-path later/crates/Cargo.toml --locked -p gui --features slint --example retained_mode_gui
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example audio -- --ignored --nocapture
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p multimedia_audio --example audio -- --ignored --nocapture
 just cargo +1.98.1 check --manifest-path bk/crates/Cargo.toml --locked -p science --features onnx --example machine_learning
 just cargo +1.98.1 check --manifest-path later/crates/Cargo.toml --locked -p rendering_graphics_api --features wgpu --example offscreen_render
 ```

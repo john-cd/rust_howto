@@ -2,17 +2,17 @@
 
 # OS - macOS APIs
 
-{{#include macos.incl.md}}{{hi:Operating systems::macOS APIs}}
+{{#include macos.incl.md}}
 
-Use portable Rust APIs when they cover the task. For native frameworks, prefer the current `objc2-*` bindings over the older `cocoa`, `core-foundation`, and `objc` wrappers. Framework APIs and their dependencies must be gated for `target_os = "macos"`.
+Use portable Rust APIs when they cover the task. For native frameworks, prefer the current `objc2-*` bindings over the older `cocoa`, `core-foundation`, and `objc` wrappers. Framework APIs and their dependencies must be gated for `target_os = "macos"`. {{hi:Operating systems::macOS APIs}}
 
 ## Call Foundation and AppKit
 
-Use [`objc2-foundation`][c~objc2-foundation~docs] for Foundation objects and [`objc2-app-kit`][c~objc2-app-kit~docs] for native windows, menus, and application lifecycle. AppKit APIs are main-thread-only; obtain an `objc2::MainThreadMarker` on the main thread and pass it to APIs that require one. For a small system-information task, Foundation's `NSProcessInfo` exposes the operating-system version string. See the [Objective-C](../development-tools_ffi/objc.md) chapter and [#1075](https://github.com/john-cd/rust_howto/issues/1075) for the broader binding patterns.
+Use [`objc2-foundation`][c~objc2-foundation~docs] for Foundation objects and [`objc2-app-kit`][c~objc2-app-kit~docs] for native windows, menus, and application lifecycle. AppKit APIs are main-thread-only; obtain an `objc2::MainThreadMarker` on the main thread and pass it to APIs that require one. For a small system-information task, Foundation's `NSProcessInfo` exposes the operating-system version string. See the [Objective-C](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/objc.md) chapter and [#1075](https://github.com/john-cd/rust_howto/issues/1075) for the broader binding patterns.
 
 The included example reads `NSProcessInfo::processInfo().operatingSystemVersionString()` through the typed, safe `objc2-foundation` methods. The bindings return retained objects, and the example copies the version into a Rust `String` before printing. It reports an empty result as an error and needs no application window, user data, or direct unsafe Objective-C calls.
 
-The package enables only the Foundation `std`, `NSProcessInfo`, and `NSString` features explicitly. From `later/crates` on macOS, run `cargo run -p os_macos_apis --example macos`. The version string depends on the installed operating system; other hosts run a message-only fallback.
+The package enables only the Foundation `std`, `NSProcessInfo`, and `NSString` features explicitly. From `bk/crates` on macOS, run `cargo run -p os_macos_apis --example macos`. The version string depends on the installed operating system; other hosts run a message-only fallback.
 
 ## Store credentials in the Keychain
 

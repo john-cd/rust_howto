@@ -19,6 +19,6 @@
 [p~option]: # "../../standard-library/option.md"
 [tetra~status~repo]: https://github.com/17cupsofcoffee/tetra#status
 
-[p~multimedia_audio]: ../multimedia_audio/index.md
+[p~multimedia_audio]: https://john-cd.com/rust_howto/categories/multimedia_audio/index.html
 [p~rendering]: ../rendering/index.md
 [p~window_creation]: ../gui/window_creation.md

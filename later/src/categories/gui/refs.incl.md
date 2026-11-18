@@ -62,7 +62,7 @@
 [tauri~windows-prerequisites~website]: https://v2.tauri.app/start/prerequisites/
 [p~apis]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-client/apis.md
 [p~asynchronous]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/asynchronous/index.md
-[p~audio]: ../multimedia_audio/audio.md
+[p~audio]: https://john-cd.com/rust_howto/categories/multimedia_audio/audio.html
 [p~containers]: ../virtualization/containers.md
 [p~cross-platform]: ../../other/cross-platform/index.md
 [p~data-formats]: ../rendering_data-formats/index.md

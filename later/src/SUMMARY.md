@@ -25,11 +25,6 @@
 
 - [API bindings](categories/api-bindings/index.md)
 
-- [Audio](categories/multimedia_audio/index.md)
-  - [Audio](categories/multimedia_audio/audio.md)
-  - [Analyze a Window of Audio](categories/multimedia_audio/analysis.md)
-  - [Write and read a WAV file in memory](categories/multimedia_audio/wav.md)
-
 - [Cloud](other/cloud/index.md)
   - [Rust on AWS](other/cloud/aws.md)
   - [Rust-native cloud development](other/cloud/rust_native_cloud_development.md)
@@ -108,24 +103,6 @@
   - [Web-based GUI](categories/gui/web_based_gui.md)
   - [Window creation](categories/gui/window_creation.md)
 
-- [Multimedia](categories/multimedia/index.md)
-  - [Multimedia](categories/multimedia/multimedia.md)
-  - [Streaming Media](categories/multimedia/streaming.md)
-
-- [Multimedia encoding](categories/multimedia_encoding/index.md)
-  - [Multimedia encoding](categories/multimedia_encoding/encoding.md)
-
-- [Native OS APIs and Process Boundaries](other/native-os/index.md)
-
-- [Operating systems - FreeBSD](categories/os_freebsd-apis/index.md)
-  - [FreeBSD](categories/os_freebsd-apis/freebsd.md)
-
-- [Operating systems - Linux](categories/os_linux-apis/index.md)
-  - [Linux](categories/os_linux-apis/linux.md)
-
-- [Operating systems - macOS](categories/os_macos-apis/index.md)
-  - [macOS](categories/os_macos-apis/macos.md)
-
 - [Rendering](categories/rendering/index.md)
   - [2D Vector Graphics](categories/rendering/2d_vector_graphics.md)
   - [3D Renderers](categories/rendering/3d_renderers.md)
@@ -175,9 +152,6 @@
 - [Simulation](categories/simulation/index.md)
   - [Simulation](categories/simulation/simulation.md)
   - [Physics Engines](categories/simulation/physics_engines.md)
-
-- [Video](categories/multimedia_video/index.md)
-  - [Video](categories/multimedia_video/video.md)
 
 - [Virtualization](categories/virtualization/index.md)
   - [Virtualization](categories/virtualization/virtualization.md)

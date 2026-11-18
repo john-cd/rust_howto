@@ -103,7 +103,7 @@
 [p~build_time_tooling]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools_build-utils/build_time_tooling.md
 [p~cargo]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools/cargo/cargo.md
 [p~complex_encoding]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/encoding/complex_encoding.md
-[p~encoding]: ../multimedia_encoding/encoding.md
+[p~encoding]: https://john-cd.com/rust_howto/categories/multimedia_encoding/encoding.html
 [p~external-ffi-bindings]: ../external-ffi-bindings/index.md
 [p~mathematics]: https://john-cd.com/rust_howto/categories/mathematics/index.html
 [p~wasm]: ../wasm/index.md

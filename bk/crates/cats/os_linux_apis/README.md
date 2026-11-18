@@ -17,15 +17,15 @@ cargo check --package os_linux_apis --examples
 cargo test --package os_linux_apis
 ```
 
-Code examples correspond to chapters in `later/src/categories/os_linux-apis` or related book sections.
+Code examples correspond to chapters in `bk/src/categories/os_linux-apis` or related book sections.
 
 ## Portable Helper Contract
 
 The `process_environment` example runs on Windows and Unix without exercising statx:
 
 ```sh
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p os_linux_apis --example process_environment
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p os_linux_apis --example process_environment
 ```
 
-Its chapter is `later/src/other/native-os/index.md`. Native statx tests require Linux;
+Its chapter is `bk/src/other/native-os/index.md`. Native statx tests require Linux;
 a successful fallback or cross-target check does not establish Linux runtime behavior.

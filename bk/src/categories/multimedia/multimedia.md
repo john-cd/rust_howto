@@ -4,19 +4,19 @@
 
 {{#include multimedia.incl.md}}
 
-This chapter connects media types: play a generated sound, extract audio from a video, and turn a video frame into an image. The [audio](../multimedia_audio/index.md), [image](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/images.md), [encoding](../multimedia_encoding/encoding.md), and [video](../multimedia_video/index.md) chapters own format-specific APIs and processing recipes.
+This chapter connects media types: play a generated sound, extract audio from a video, and turn a video frame into an image. The [audio](../multimedia_audio/index.md), [image](../multimedia_images/images.md), [encoding](../multimedia_encoding/encoding.md), and [video](../multimedia_video/index.md) chapters own format-specific APIs and processing recipes.
 
 ## Play a Generated Sound {#multimedia}
 
 The `rodio` example generates a 440 Hz sine wave and plays it for two seconds through the default output device. No input file or network service is needed. Its test is ignored because opening a real audio device is unsuitable for a headless test runner; errors from device initialization are propagated.
 
-The tone is built by a separate function, so a unit test can check its format without a device. The tests that open the default output are ignored; run them with `cargo test -p multimedia --example multimedia -- --include-ignored` from `later/crates`. On Linux without sound hardware (for example in CI), install `libasound2-plugins` and route the default device to ALSA's `null` sink with a `~/.asoundrc` containing `pcm.!default { type null }` and `ctl.!default { type null }`.
+The tone is built by a separate function, so a unit test can check its format without a device. The tests that open the default output are ignored; run them with `cargo test -p multimedia --example multimedia -- --include-ignored` from `bk/crates`. On Linux without sound hardware (for example in CI), install `libasound2-plugins` and route the default device to ALSA's `null` sink with a `~/.asoundrc` containing `pcm.!default { type null }` and `ctl.!default { type null }`.
 
 ```rust,editable
 {{#include ../../../crates/cats/multimedia/examples/multimedia/play_sound.rs:example}}
 ```
 
-From `later/crates`, run `cargo run -p multimedia --example multimedia` on a machine with an audio output device.
+From `bk/crates`, run `cargo run -p multimedia --example multimedia` on a machine with an audio output device.
 
 ## Generate and Verify a Media Fixture {#media-round-trip}
 
@@ -27,7 +27,7 @@ suffices for this workflow. FFmpeg development libraries are needed only for
 native Rust bindings.
 
 ```console
-python later/crates/cats/multimedia/examples/media_round_trip.py
+python bk/crates/cats/multimedia/examples/media_round_trip.py
 ```
 
 Run it from the repository root. Pass `--ffmpeg PATH` when the executable is
@@ -60,13 +60,13 @@ ffmpeg -ss 1 -i input.mp4 -map 0:v:0 -frames:v 1 thumbnail.png
 
 Seeking before `-i` allows the demuxer to seek near the requested timestamp; decoder behavior and keyframes affect the result. Choose a timestamp inside the clip and inspect the output. FFmpeg asks before replacing an existing file; use distinct output names when preserving originals.
 
-Once extracted, process the image with the [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/images.md) recipes. For application integration, invoke FFmpeg with separate process arguments and check its exit status before reading the output; do not construct a shell command from untrusted filenames.
+Once extracted, process the image with the [Images](../multimedia_images/images.md) recipes. For application integration, invoke FFmpeg with separate process arguments and check its exit status before reading the output; do not construct a shell command from untrusted filenames.
 
 ## Related Topics {#related-topics .skip}
 
 - [Audio playback and processing](../multimedia_audio/index.md).
 - [Media codecs and container metadata](../multimedia_encoding/encoding.md).
-- [Image processing](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/images.md).
+- [Image processing](../multimedia_images/images.md).
 - [Video processing](../multimedia_video/index.md).
 
 {{#include refs.incl.md}}

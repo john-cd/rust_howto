@@ -17,7 +17,7 @@
 [ex~wasm~wasmtime]: wasm_standalone_runtimes.md#wasmtime
 [ex~wasm~yew]: yew.md#yew
 [p~apis]: ../../../src/categories/web-programming_http-client/apis.md
-[p~audio]: ../multimedia_audio/audio.md
+[p~audio]: https://john-cd.com/rust_howto/categories/multimedia_audio/audio.html
 [p~building]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/building.md
 [p~caching]: ../../../src/categories/caching/index.md
 [p~cross-platform]: ../../other/cross-platform/index.md

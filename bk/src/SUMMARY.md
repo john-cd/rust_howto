@@ -330,6 +330,17 @@
   - [Low-level System Calls](categories/os/low_level_system_calls.md)
   - [Operating Systems Written in Rust](categories/os/rust_os.md)
 
+- [Native OS APIs and Process Boundaries](other/native-os/index.md)
+
+- [Operating systems - Linux](categories/os_linux-apis/index.md)
+  - [Linux](categories/os_linux-apis/linux.md)
+
+- [Operating systems - macOS](categories/os_macos-apis/index.md)
+  - [macOS](categories/os_macos-apis/macos.md)
+
+- [Operating systems - FreeBSD](categories/os_freebsd-apis/index.md)
+  - [FreeBSD](categories/os_freebsd-apis/freebsd.md)
+
 - [Windows APIs](categories/os_windows-apis/index.md)
   - [Windows API Bindings](categories/os_windows-apis/windows.md)
 
@@ -343,6 +354,21 @@
   - [Project 3D Points to Screen Coordinates](categories/graphics/3d_projection.md)
   - [SVG Rendering](categories/graphics/svg_rendering.md)
   - [Rasterize a Font Glyph](categories/graphics/text_rendering.md)
+
+- [Multimedia](categories/multimedia/index.md)
+  - [Multimedia](categories/multimedia/multimedia.md)
+  - [Streaming Media](categories/multimedia/streaming.md)
+
+- [Audio](categories/multimedia_audio/index.md)
+  - [Audio](categories/multimedia_audio/audio.md)
+  - [Analyze a Window of Audio](categories/multimedia_audio/analysis.md)
+  - [Write and read a WAV file in memory](categories/multimedia_audio/wav.md)
+
+- [Multimedia encoding](categories/multimedia_encoding/index.md)
+  - [Multimedia encoding](categories/multimedia_encoding/encoding.md)
+
+- [Video](categories/multimedia_video/index.md)
+  - [Video](categories/multimedia_video/video.md)
 
 - [Images](categories/multimedia_images/index.md)
   - [Image Processing](categories/multimedia_images/images.md)

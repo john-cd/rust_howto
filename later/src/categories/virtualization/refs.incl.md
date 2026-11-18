@@ -35,7 +35,7 @@
 
 [p~containerization]: containerization.md
 [p~emulators]: ../emulators/index.md
-[p~os_linux-apis]: ../os_linux-apis/index.md
+[p~os_linux-apis]: https://john-cd.com/rust_howto/categories/os_linux-apis/index.html
 [p~using_containers]: using_containers.md
 [p~virtualization]: index.md
 [p~wasm]: ../wasm/index.md
