@@ -1,27 +1,33 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Starts the rtos application and connects its top-level components.
-//! The executable uses this module to initialize services and hand control to the application.
+//! Simulates preemptive fixed-priority scheduling on integer ticks without an RTOS.
 
+/// One job with a release time, fixed priority, and remaining execution cost.
 #[derive(Clone, Copy)]
 struct Job {
     /// Display label used to distinguish this job from other entries.
     name: &'static str,
 
-    /// Transmission priority.
+    /// Scheduling priority; smaller numeric values are selected first.
     priority: u8,
 
-    /// Tick at which the resource is released.
+    /// First tick at which this job becomes eligible to execute.
     release_tick: u8,
 
-    /// Number of timer ticks remaining.
+    /// Execution ticks still required; scheduling a tick decrements this count.
     remaining_ticks: u8,
 }
 
-/// Runs one discrete tick per job, always choosing the highest-priority ready
+/// Executes at most one ready job per tick, preempting lower-priority work.
 ///
-/// job.
+/// Selects the smallest priority number among released, unfinished jobs; equal
+/// priorities retain slice order. Mutates each selected job's remaining cost and
+/// records only busy ticks, so idle ticks produce no output entry. Jobs still
+/// unfinished at `horizon` retain their remaining cost for inspection.
+///
+/// Scanning all jobs each tick costs O(horizon * jobs.len()) time. This is a
+/// deterministic teaching simulator, rather than an RTOS timing guarantee.
 fn fixed_priority_schedule(jobs: &mut [Job], horizon: u8) -> Vec<(u8, &'static str)> {
     let mut schedule = Vec::new();
 
