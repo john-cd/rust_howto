@@ -48,6 +48,7 @@ typ/
 tmp/
 
 # Repository metadata and worktree state
+**/.git
 **/.git/
 /.worktrees/
 **/.worktrees/

@@ -19,12 +19,22 @@ on:
         description: "Build the optional Pandoc PDF output"
         type: boolean
         default: false
+    secrets:
+      DOCKERHUB_USERNAME:
+        required: false
+      DOCKERHUB_TOKEN:
+        required: false
+      BOOK_TOOLING_TOKEN:
+        description: Read-only access to the private Book Tooling submodule.
+        required: true
   ## Runs on pushes targeting the default branch
   push:
     branches: ["develop"]
     paths:
       - "bk/**"
       - "tools/**"
+      - "book_tooling"
+      - ".gitmodules"
       - ".devcontainer/**"
       - ".github/workflows/**"
       - ".github/actions/**"
@@ -40,6 +50,8 @@ on:
     paths:
       - "bk/**"
       - "tools/**"
+      - "book_tooling"
+      - ".gitmodules"
       - ".devcontainer/**"
       - ".github/workflows/**"
       - ".github/actions/**"
@@ -99,6 +111,10 @@ jobs:
       - name: Code checkout
         # actions/checkout v7.0.1
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Check out Book Tooling
+        uses: ./.github/actions/checkout-book-tooling
+        with:
+          token: ${{ secrets.BOOK_TOOLING_TOKEN }}
       - name: Reject repository links to the empty main branch
         shell: bash
         run: |
@@ -119,9 +135,6 @@ jobs:
         # docker/setup-buildx-action v4.4.1
         uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069
       - name: Build, test, lint, and render through Compose
-        env:
-          # Build secret for fetching the private john-cd/book_tooling repository.
-          GH_TOKEN: ${{ secrets.BOOK_TOOLING_TOKEN }}
         run: |
           docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml run \
             --rm --build --pull never \
@@ -153,6 +166,10 @@ jobs:
       - name: Code checkout (clones the Git repository)
         # actions/checkout v7.0.1
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Check out Book Tooling
+        uses: ./.github/actions/checkout-book-tooling
+        with:
+          token: ${{ secrets.BOOK_TOOLING_TOKEN }}
       - name: Set build cache scope
         uses: ./.github/actions/set-cache-scope
       # - name: Validate YAML files
@@ -173,10 +190,6 @@ jobs:
       # - name: List Docker builders (debug)
       #   run: docker buildx ls
       - name: Build, cache (type=gha), and push to DockerHub
-        env:
-          # compose.yaml passes GH_TOKEN as the `github_token` build secret so cargo can
-          # fetch the private john-cd/book_tooling repository (see build_tools.yml).
-          GH_TOKEN: ${{ secrets.BOOK_TOOLING_TOKEN }}
         run: |
           docker buildx bake -f compose.yaml -f compose.ci.yaml \
             --push --allow=fs.read=.. \

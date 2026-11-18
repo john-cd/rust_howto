@@ -55,10 +55,3 @@ services:
         PANDOC_LINUX_AMD64_DEB_SHA256: ${PANDOC_LINUX_AMD64_DEB_SHA256:?Set PANDOC_LINUX_AMD64_DEB_SHA256 in .devcontainer/.env or the host environment}
         EMAIL: ${EMAIL:?Set EMAIL in .devcontainer/.env or the host environment}
         GIT_AUTHOR_NAME: ${GIT_AUTHOR_NAME:?Set GIT_AUTHOR_NAME in .devcontainer/.env or the host environment}
-      secrets:
-        - source: github_token
-          target: github_token
-
-secrets:
-  github_token:
-    environment: GH_TOKEN

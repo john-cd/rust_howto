@@ -187,17 +187,14 @@ dependencies = [
 [[package]]
 name = "book_templates"
 version = "0.1.3"
-source = "git+https://github.com/john-cd/book_tooling?rev=f350d220d567a5d5c905a061730ab761c185ddc1#f350d220d567a5d5c905a061730ab761c185ddc1"
 
 [[package]]
 name = "book_tool"
 version = "0.1.3"
-source = "git+https://github.com/john-cd/book_tooling?rev=f350d220d567a5d5c905a061730ab761c185ddc1#f350d220d567a5d5c905a061730ab761c185ddc1"
 dependencies = [
  "anyhow",
  "book_templates",
  "parse_lib",
- "regex",
  "serde",
  "tempfile",
  "toml",
@@ -1780,7 +1777,6 @@ dependencies = [
 [[package]]
 name = "parse_lib"
 version = "0.1.3"
-source = "git+https://github.com/john-cd/book_tooling?rev=f350d220d567a5d5c905a061730ab761c185ddc1#f350d220d567a5d5c905a061730ab761c185ddc1"
 dependencies = [
  "annotate-snippets",
  "fmt2io",

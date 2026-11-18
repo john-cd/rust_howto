@@ -1,0 +1,29 @@
+name: Check out Book Tooling
+description: Initialize the pinned Book Tooling submodule for the tools workspace.
+inputs:
+  token:
+    description: Read-only token with Contents access to the private john-cd/book_tooling repository.
+    required: false
+runs:
+  using: composite
+  steps:
+    - name: Initialize pinned Book Tooling sources
+      shell: bash
+      env:
+        BOOK_TOOLING_TOKEN: ${{ inputs.token }}
+      run: |
+        set -euo pipefail
+        if [ -n "$BOOK_TOOLING_TOKEN" ]; then
+          auth_header="$(printf 'x-access-token:%s' "$BOOK_TOOLING_TOKEN" | base64 | tr -d '\r\n')"
+          echo "::add-mask::$auth_header"
+          export GIT_CONFIG_COUNT=2
+          export GIT_CONFIG_KEY_0=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_0=
+          export GIT_CONFIG_KEY_1=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_1="AUTHORIZATION: basic $auth_header"
+        fi
+        git submodule sync -- book_tooling
+        if ! git submodule update --init -- book_tooling; then
+          echo '::error::Cannot initialize book_tooling. Set BOOK_TOOLING_TOKEN to a token with read access to john-cd/book_tooling; the default GITHUB_TOKEN cannot read another private repository.'
+          exit 1
+        fi

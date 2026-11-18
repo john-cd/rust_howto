@@ -98,8 +98,8 @@ git submodule update --init --recursive -- book_tooling
 
 Initialization checks out the commit recorded by this repository. To review a newer `develop`
 revision, run `git submodule update --remote -- book_tooling`, inspect the changes, and commit
-the updated submodule reference. Cargo dependency revisions are recorded independently in
-`tools/Cargo.toml`.
+the updated submodule reference. The `tools/` workspace uses these checked-out sources as path dependencies, so
+initializing the submodule is required before building the tools or Docker images.
 
 There are also a number of utilities and pre-processors in the [`tools`][rust-howto~tools~repo]↗ folder of this repo.
 
