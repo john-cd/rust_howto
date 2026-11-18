@@ -41,6 +41,7 @@ pub fn run() {
 // Local tests are omitted since shuttle depends on a specific runtime.
 // The code itself is type-checked during compilation.
 
+/// Checks the greeting handler locally and leaves the Shuttle runtime test opt-in.
 #[cfg(test)]
 mod tests {
     use super::*;

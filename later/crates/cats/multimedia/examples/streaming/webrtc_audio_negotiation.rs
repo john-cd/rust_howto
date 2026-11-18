@@ -102,6 +102,7 @@ fn main() -> Result<()> {
 }
 // ANCHOR_END: example
 
+/// Checks audio signaling metadata and wrapping media sequence/timestamp counters.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -116,7 +117,7 @@ mod tests {
         Ok(())
     }
 
-    /// widths.
+    /// Sequence and timestamp counters wrap at their respective integer widths.
     #[test]
     fn frame_metadata_advances_and_wraps() {
         let frames = timestamped_frames(u16::MAX, u32::MAX - 3, 4, [vec![0x10], vec![0x20]])

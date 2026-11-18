@@ -38,6 +38,7 @@ pub fn pus_telemetry() {
 }
 // ANCHOR_END: pus-telemetry
 
+/// Checks telemetry serialization and decoding with a deterministic timestamp.
 #[cfg(test)]
 mod tests {
 

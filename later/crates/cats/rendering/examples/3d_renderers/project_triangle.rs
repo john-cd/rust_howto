@@ -79,6 +79,7 @@ fn main() {
 }
 // ANCHOR_END: example
 
+/// Checks screen-center projection and clipping behind the camera.
 #[cfg(test)]
 mod tests {
     use super::*;
