@@ -10,7 +10,5 @@
   - [Databases](categories/database-implementations/databases.md)
   - [Search](categories/database-implementations/rust_search_engines.md)
 
-- [Graphics](categories/graphics/index.md)
-
 - [Operating systems - Windows](categories/os_windows-apis/index.md)
   - [Windows](categories/os_windows-apis/windows.md)

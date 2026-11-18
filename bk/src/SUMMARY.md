@@ -310,6 +310,14 @@
 - [Operating systems - Unix](categories/os_unix-apis/index.md)
   - [Unix APIs](categories/os_unix-apis/unix.md)
 
+- [Graphics](categories/graphics/index.md)
+  - [2D Renderers](categories/graphics/2d_renderers.md)
+  - [Pixel-Based (Raster) 2D Graphics](categories/graphics/2d_raster_graphics.md)
+  - [Vector Graphics in 2D](categories/graphics/2d_vector_graphics.md)
+  - [Project 3D Points to Screen Coordinates](categories/graphics/3d_projection.md)
+  - [SVG Rendering](categories/graphics/svg_rendering.md)
+  - [Rasterize a Font Glyph](categories/graphics/text_rendering.md)
+
 - [Images](categories/multimedia_images/index.md)
   - [Image Processing](categories/multimedia_images/images.md)
 
