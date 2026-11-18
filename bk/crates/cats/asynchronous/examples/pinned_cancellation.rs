@@ -4,9 +4,9 @@ use std::future::pending;
 
 use tokio::sync::oneshot;
 
-/// Data carried by drop notice operations.
+/// Scope guard that signals when its owning future is dropped.
 struct DropNotice(
-    /// One-shot signal sender used to notify the task that it should drop its resource.
+    /// Sender consumed during drop to report destruction; receiver closure is harmless.
     Option<oneshot::Sender<()>>,
 );
 
@@ -20,6 +20,7 @@ impl Drop for DropNotice {
 }
 
 // ANCHOR: example
+/// Stays pending while owning a drop guard that reports cancellation by destruction.
 async fn wait_forever(on_drop: oneshot::Sender<()>) {
     let _notice = DropNotice(Some(on_drop));
     pending::<()>().await;
@@ -40,7 +41,9 @@ async fn cancel_borrowed_future() -> Result<(), oneshot::error::RecvError> {
     dropped.await
 }
 
-/// Handles the own spawned task behavior for this component.
+/// Joins one completed task, then explicitly aborts and joins a pending task.
+///
+/// Awaiting the aborted handle confirms cancellation instead of merely requesting it.
 async fn own_spawned_task() {
     let completed = tokio::spawn(async { 7_u8 });
     assert_eq!(completed.await.expect("task completed"), 7);
@@ -51,6 +54,7 @@ async fn own_spawned_task() {
 }
 // ANCHOR_END: example
 
+/// Runs the borrowed-future and owned-task cancellation demonstrations.
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let runtime = tokio::runtime::Builder::new_current_thread().build()?;
     runtime.block_on(async {

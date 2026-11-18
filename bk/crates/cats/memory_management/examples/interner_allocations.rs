@@ -14,34 +14,34 @@ use std::cell::Cell;
 
 // This module is the same implementation used in the interning example.
 
-/// String interning: store each distinct string once and compare, hash and
+/// Reuses the hand-written interner whose allocation behavior is measured here.
 mod interning;
 
-/// Data carried by counting allocator operations.
+/// System allocator adapter recording successful allocation/reallocation calls per thread.
 struct CountingAllocator;
 
 thread_local! {
     // Counts per thread, so that other threads (such as a test harness) do
     // not disturb the measurement. A `const` initializer never allocates.
 
-    /// Shared `allocations` used by this module.
+    /// Per-thread count initialized without allocating, isolating other test threads.
     static ALLOCATIONS: Cell<usize> = const { Cell::new(0) };
 }
 
-/// Handles the allocations behavior for this component.
+/// Reads this thread's cumulative count for before/after measurement snapshots.
 fn allocations() -> usize {
     ALLOCATIONS.with(Cell::get)
 }
 
-/// Counts the allocation in the supplied input.
+/// Increments the current thread's count without allocating memory.
 fn count_allocation() {
     ALLOCATIONS.with(|count| count.set(count.get() + 1));
 }
 
 // SAFETY: Each operation forwards the original pointer and layout to System;
-// the counter uses only atomics and never allocates.
+// the counter uses a thread-local Cell and never allocates.
 unsafe impl GlobalAlloc for CountingAllocator {
-    /// Handles the alloc behavior for this component.
+    /// Delegates allocation to System and counts only non-null results.
     unsafe fn alloc(&self, layout: Layout) -> *mut u8 {
         // SAFETY: The caller supplies the layout required by GlobalAlloc.
         let ptr = unsafe { System.alloc(layout) };
@@ -51,13 +51,13 @@ unsafe impl GlobalAlloc for CountingAllocator {
         ptr
     }
 
-    /// Handles the dealloc behavior for this component.
+    /// Releases the allocation through System without changing the allocation-call count.
     unsafe fn dealloc(&self, ptr: *mut u8, layout: Layout) {
         // SAFETY: The caller supplies the original allocation and layout.
         unsafe { System.dealloc(ptr, layout) };
     }
 
-    /// Handles the realloc behavior for this component.
+    /// Delegates resizing and counts successful calls, even when the pointer stays unchanged.
     unsafe fn realloc(&self, ptr: *mut u8, layout: Layout, new_size: usize) -> *mut u8 {
         // SAFETY: The caller supplies the original allocation, layout, and new
         // size.
@@ -69,7 +69,7 @@ unsafe impl GlobalAlloc for CountingAllocator {
     }
 }
 
-/// Shared `global` used by this module.
+/// Installs the counting adapter for allocations throughout this example process.
 #[global_allocator]
 static GLOBAL: CountingAllocator = CountingAllocator;
 
