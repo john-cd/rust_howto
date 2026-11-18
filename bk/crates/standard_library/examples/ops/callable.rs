@@ -22,7 +22,7 @@ impl FnOnce<(i32,)> for Adder {
     /// Alias for `i32` used to represent output.
     type Output = i32;
 
-    /// Handles the call once behavior for this component.
+    /// Consumes the callable and adds its offset to the tuple-wrapped argument.
     extern "rust-call" fn call_once(self, args: (i32,)) -> i32 {
         // args is a 1-tuple: `(i32,)`.
         self.offset + args.0
@@ -32,7 +32,7 @@ impl FnOnce<(i32,)> for Adder {
 use std::ops::FnMut;
 
 impl FnMut<(i32,)> for Adder {
-    /// Handles the call mut behavior for this component.
+    /// Adds the offset through a mutable receiver without changing stored state.
     extern "rust-call" fn call_mut(&mut self, args: (i32,)) -> i32 {
         self.offset + args.0
     }
@@ -41,7 +41,7 @@ impl FnMut<(i32,)> for Adder {
 use std::ops::Fn;
 
 impl Fn<(i32,)> for Adder {
-    /// Handles the call behavior for this component.
+    /// Adds the offset through a shared receiver so calls can be repeated.
     extern "rust-call" fn call(&self, args: (i32,)) -> i32 {
         self.offset + args.0
     }
@@ -81,15 +81,15 @@ mod tests {
     /// Verifies adder as fn trait bounds.
     #[test]
     fn test_adder_as_fn_trait_bounds() {
-        /// Handles the call fn behavior for this component.
+        /// Calls a shared callable with 1 to exercise the Fn bound.
         fn call_fn(f: impl Fn(i32) -> i32) -> i32 {
             f(1)
         }
-        /// Handles the call fn mut behavior for this component.
+        /// Calls a mutable callable with 1 to exercise the FnMut bound.
         fn call_fn_mut(mut f: impl FnMut(i32) -> i32) -> i32 {
             f(1)
         }
-        /// Handles the call fn once behavior for this component.
+        /// Consumes a callable with argument 1 to exercise the FnOnce bound.
         fn call_fn_once(f: impl FnOnce(i32) -> i32) -> i32 {
             f(1)
         }

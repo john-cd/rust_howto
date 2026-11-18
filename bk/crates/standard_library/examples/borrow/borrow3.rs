@@ -29,7 +29,7 @@ mod cis {
 
     // Implement `Borrow<str>` to allow lookup by the canonical lowercase form.
     impl Borrow<str> for CaseInsensitiveString {
-        /// Handles the borrow behavior for this component.
+        /// Exposes canonical lowercase storage with the same equality and hash semantics.
         fn borrow(&self) -> &str {
             &self.0
         }

@@ -145,7 +145,7 @@ impl PluginManager {
         self.plugins.push(plugin);
     }
 
-    /// Handles the initialize behavior for this component.
+    /// Executes plugins in registration order against the same mutable service context.
     fn initialize(&mut self) {
         for plugin in &mut self.plugins {
             println!("Initializing plugin '{}'", plugin.name());
