@@ -14,6 +14,8 @@
 
 Use its event stream when processing Markdown without retaining a full syntax tree.
 
+<!-- Keep four backticks: the included Rust raw string contains triple-backtick fences. -->
+<!-- dprint-ignore -->
 ````rust,editable
 {{#include ../../../crates/cats/parser_implementations/examples/markdown/pulldown_cmark.rs:example}}
 ````
