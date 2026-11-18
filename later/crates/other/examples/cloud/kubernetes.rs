@@ -42,7 +42,6 @@ use serde_json::json;
     namespaced,
     status = "EchoStatus"
 )]
-/// Desired state stored in the Kubernetes `Echo` custom resource.
 pub struct EchoSpec {
     /// The message the pods echo.
     pub message: String,

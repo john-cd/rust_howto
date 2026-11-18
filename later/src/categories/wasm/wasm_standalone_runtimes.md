@@ -79,7 +79,7 @@ The guest is an ordinary Rust library. [`wit-bindgen`](https://docs.rs/wit-bindg
 {{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/src/lib.rs:example}}
 ```
 
-Build the guest with `rustup target add wasm32-wasip2` and `cargo build --release --target wasm32-wasip2` in `components/guest`; the result is a component, not a core module, so no adapter or `wasm-tools component new` step is needed. The host builds the guest with that command, so no opaque binary is checked in. `wasm32-wasip2` components import a few WASI interfaces for the standard library; the host links them but gives the guest an empty `WasiCtx`, so it has no files, environment, network or output. A browser guest built with `wasm-bindgen` is a different artifact: it talks to JavaScript, not to a WIT world.
+Build the guest with `rustup target add wasm32-wasip2` and `cargo build --locked --release --target wasm32-wasip2` in `components/guest`; the result is a component, not a core module, so no adapter or `wasm-tools component new` step is needed. The host builds the guest with that command, so no opaque binary is checked in. `wasm32-wasip2` components import a few WASI interfaces for the standard library; the host links them but gives the guest an empty `WasiCtx`, so it has no files, environment, network or output. A browser guest built with `wasm-bindgen` is a different artifact: it talks to JavaScript, not to a WIT world.
 
 ```rust,editable
 {{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmtime_component.rs:example}}
@@ -91,7 +91,7 @@ From the repository root, run the host after installing the guest target:
 
 ```console
 rustup target add wasm32-wasip2
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p wasm --example wasm_standalone_runtimes -- wasmtime_component
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p wasm --features wasmtime --example wasm_standalone_runtimes -- wasmtime_component
 ```
 
 Look for `Hello, Ferris!` in the output. A message asking you to install the

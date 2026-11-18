@@ -14,11 +14,28 @@ An operator is a program that watches custom resources and keeps the cluster in 
 
 The recipe has three layers:
 
-1. The `Echo` custom resource and its CRD. Running the example prints the CRD, which you can pipe to `kubectl apply -f -`; no cluster is needed to generate it.
+1. The `Echo` custom resource and its CRD. The example prints the CRD as
+   JSON and does not connect to a cluster.
 2. A pure function from the spec to the desired `Deployment`, unit-tested without a cluster.
 3. The `Controller` loop with `reconcile` and `error_policy`. Its test is `#[ignore]`d because it needs a cluster ([kind](https://kind.sigs.k8s.io/)↗ or [k3d](https://k3d.io/)↗).
 
-Design notes:
+From the repository root, generate the CRD with this command.
+
+```console
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p other --example cloud -- kubernetes
+```
+
+Check that `kind` is `CustomResourceDefinition` and that `metadata.name`
+is `echos.example.com`. Inspect this output
+before applying it. For cluster validation, use a disposable kind or k3d
+cluster and explicitly select its kubectl context. The CRD is cluster-wide
+even though each `Echo` resource is namespaced. The ignored controller test
+starts a long-running watcher. Confirm a test resource produces a Deployment
+and updated status, then stop the watcher and tear down the disposable cluster.
+Generating the CRD and checking the desired Deployment offline establish
+different behavior from an actual reconciliation.
+
+## Controller Design
 
 - **Reconciliation must be idempotent**: it runs repeatedly, and may run for events it has already handled. Server-side apply creates or updates the same object.
 - **Owner references** let Kubernetes delete the children of a deleted resource. Use _finalizers_ when you must clean up something outside the cluster first.

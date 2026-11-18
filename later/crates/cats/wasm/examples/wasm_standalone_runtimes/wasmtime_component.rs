@@ -11,7 +11,7 @@
 //! component that does not match the world is rejected before it runs.
 //!
 //! The guest in `components/guest` is built with
-//! `cargo build --release --target wasm32-wasip2`.
+//! `cargo build --locked --release --target wasm32-wasip2`.
 
 use std::path::PathBuf;
 use std::process::Command;
@@ -113,9 +113,17 @@ fn instantiate(engine: &Engine, component: &Component) -> Result<(Store<State>, 
 fn build_guest() -> Result<Option<PathBuf>> {
     let manifest_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .join("examples/wasm_standalone_runtimes/components/guest");
-    let target_dir = std::env::temp_dir().join("rust_howto_greeter_guest");
+    let target_dir = std::env::var_os("CARGO_TARGET_DIR")
+        .map_or_else(std::env::temp_dir, PathBuf::from)
+        .join("rust_howto_greeter_guest");
     let status = Command::new("cargo")
-        .args(["build", "--release", "--target", "wasm32-wasip2"])
+        .args([
+            "build",
+            "--locked",
+            "--release",
+            "--target",
+            "wasm32-wasip2",
+        ])
         .arg("--manifest-path")
         .arg(manifest_dir.join("Cargo.toml"))
         .arg("--target-dir")
