@@ -39,7 +39,7 @@ impl Task {
         }
     }
 
-    /// Handles the task id behavior for this component.
+    /// Returns the identifier used to correlate this task's progress and final response.
     pub fn task_id(&self) -> u64 {
         self.task_id
     }
@@ -67,7 +67,6 @@ impl Task {
 }
 
 impl Default for Task {
-    /// Returns a task with the default cancellation state.
     fn default() -> Self {
         Self::new()
     }
