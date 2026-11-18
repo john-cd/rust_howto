@@ -34,12 +34,13 @@ clap = "4.6.7"
 pollster = { version = "1.0.1", optional = true }
 three-d = { version = "=0.19.0", optional = true }
 three-d-asset = { version = "=0.10.0", optional = true, features = ["obj"] }
-
 wgpu = { version = "30.0.1", optional = true }
 
 [dev-dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104" # Provides a fallible entry point for the example runner.
+# Parses and validates the offscreen example shader without a GPU.
+naga = { version = "30.0.1", features = ["wgsl-in"] }
 
 [features]
 engine-scene = ["dep:three-d", "dep:three-d-asset"]
