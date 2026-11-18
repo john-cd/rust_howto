@@ -12,7 +12,7 @@ extern crate alloc;
 #[allow(unused_imports, dead_code)]
 pub mod my_game {
 
-    /// Defines outcomes handled by the binary encoders workflow.
+    /// Zero-variant marker distinguishing serialized Monster offsets at the type level.
     pub enum MonsterOffset {}
 
     /// Read-only view of a monster record encoded by FlatBuffers.
@@ -27,7 +27,11 @@ pub mod my_game {
         /// Alias for `Monster<'a>` used to represent inner.
         type Inner = Monster<'a>;
 
-        /// Handles the follow behavior for this component.
+        /// Creates a borrowed Monster table view at the supplied buffer location.
+        ///
+        /// # Safety
+        ///
+        /// The buffer location must identify a valid FlatBuffers table for this schema.
         #[inline]
         unsafe fn follow(buf: &'a [u8], loc: usize) -> Self::Inner {
             Self {
