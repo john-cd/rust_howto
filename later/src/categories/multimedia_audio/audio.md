@@ -122,6 +122,29 @@ Choose `cpal` directly when you need control over buffers, formats and latency, 
 
 The `midir` callback also runs on a thread of the library: apply the real-time rules above, and forward the decoded messages to the application through a channel.
 
+### Verify a MIDI loopback
+
+Use an existing, dedicated virtual MIDI port or a physical pair connected back
+to itself. Run with `--list` to find the backend's exact input and output port
+names, then pass both names. The example
+opens both endpoints before sending a middle-C note-on and note-off. It checks
+the returned bytes in order and exits on a receive timeout. Use an isolated
+loopback so the probe cannot trigger an instrument or interfere with other MIDI
+traffic.
+
+```console
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example midi_loopback -- "INPUT_PORT" "OUTPUT_PORT"
+```
+
+A successful round trip prints `Received [90, 3C, 64]` and then
+`Received [80, 3C, 00]`. Replace both placeholders with your endpoint names.
+Linux needs the ALSA development headers and access to the ALSA sequencer.
+The example uses the existing port routing and closes its connections on exit.
+
+```rust,ignore
+{{#include ../../../crates/cats/multimedia_audio/examples/midi_loopback.rs:example}}
+```
+
 ## Binaural Audio with `hrtf` {#hrtf}
 
 [`hrtf`][c~hrtf~docs]↗{{hi:hrtf}} renders a mono source as binaural stereo from a head-related impulse response (HRIR) sphere file, which gives the impression of a position in 3D space over headphones. The crate does not ship HRIR data: download a sphere in the format that `HrirSphere` loads or bundle a fixture file. The example below loads a small HRIR sphere fixture shipped as a binary file via `include_bytes!` (four directions, one impulse per ear) to spatialize a mono buffer.

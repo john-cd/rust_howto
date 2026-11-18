@@ -31,3 +31,15 @@ just cargo run --manifest-path later/crates/Cargo.toml --locked -p multimedia_au
 
 See `later/src/categories/multimedia_audio/analysis.md` for window/scale conventions
 and the distinction between an analysis worker and a realtime audio callback.
+
+## MIDI Loopback
+
+List the native MIDI ports from the repository root:
+
+```sh
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example midi_loopback -- --list
+```
+
+Use the two exact endpoint names from a dedicated loopback route to run the
+round trip. See the MIDI section in
+`later/src/categories/multimedia_audio/audio.md` for expected bytes and prerequisites.
