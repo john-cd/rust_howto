@@ -14,7 +14,8 @@ trait MyHash {
 /// Implement the `MyHash` trait for preexisting type `i64`,
 /// which is defined in the standard library.
 impl MyHash for i64 {
-    /// Handles the myhash behavior for this component.
+    /// Reinterprets the signed integer as u64; this illustrates an extension method, not a robust
+    /// hash.
     fn myhash(&self) -> u64 {
         *self as u64
     }

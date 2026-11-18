@@ -16,7 +16,7 @@ struct SomeStruct;
 /// Generic implementation of a generic trait for a `struct`.
 // Note that the `<>` brackets appear in two places.
 impl<T> Test<T> for SomeStruct {
-    /// Handles the test behavior for this component.
+    /// Accepts any T and prints a message, demonstrating one implementation for every T.
     fn test(_t: T) {
         println!("This is the test function.");
     }

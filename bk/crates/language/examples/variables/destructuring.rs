@@ -14,7 +14,7 @@ fn main() {
 
     println!("x: {x}, y: {y}");
 
-    /// Data for point operations, including x and y.
+    /// Local point whose fields are unpacked into separate let bindings.
     struct Point {
         /// The horizontal coordinate.
         x: i32,

@@ -31,7 +31,7 @@ pub struct NewsArticle {
 
 // Implement the `Summary` trait on the `NewsArticle` type.
 impl Summary for NewsArticle {
-    /// Handles the summarize behavior for this component.
+    /// Formats headline, author, and location into the article's summary.
     fn summarize(&self) -> String {
         format!("{}, by {} ({})", self.headline, self.author, self.location)
     }
