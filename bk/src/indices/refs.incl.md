@@ -605,10 +605,10 @@
 [ex~formatting~rustfmt-config]: ../categories/development-tools/formatting/formatting.md#rustfmt-config
 [ex~formatting~rustfmt]: ../categories/development-tools/formatting/formatting.md#rustfmt
 [ex~graphics~draw-a-triangle-as-svg]: ../categories/graphics/index.md#draw-a-triangle-as-svg
-[ex~graphics~fontdue]: ../categories/graphics/text_rendering.md#rasterize-a-glyph
 [ex~graphics~lyon]: ../categories/graphics/2d_vector_graphics.md#tessellate-a-vector-path
 [ex~graphics~project-a-vertex]: ../categories/graphics/3d_projection.md#project-a-vertex-to-the-screen
 [ex~graphics~resvg]: ../categories/graphics/svg_rendering.md#resvg
+[ex~graphics~skrifa]: ../categories/graphics/text_rendering.md#rasterize-a-glyph
 [ex~graphics~tessellate-and-rasterize]: ../categories/graphics/2d_renderers.md#tessellate-and-rasterize
 [ex~graphics~tiny-skia]: ../categories/graphics/2d_raster_graphics.md#draw-a-cpu-raster-scene
 [ex~graphics~usvg]: ../categories/graphics/svg_rendering.md#usvg

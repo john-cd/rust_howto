@@ -12,7 +12,7 @@ This crate contains the runnable examples in the book's **Graphics** category.
 - `2d_renderers`: tessellate a path with `lyon` and rasterize it with `tiny-skia`.
 - `3d_projection`: project a 3D point with `glam`.
 - `svg_rendering`: parse SVG with `usvg` or rasterize it with `resvg`.
-- `text_rendering`: rasterize a glyph with `fontdue` and read font metrics with `ttf-parser`.
+- `text_rendering`: scale a glyph outline and rasterize it with `skrifa` and `tiny-skia`.
 
 ## Usage
 

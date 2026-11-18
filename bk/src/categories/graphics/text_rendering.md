@@ -6,10 +6,11 @@ Glyph rasterization converts one character from a font into a coverage bitmap.
 Coverage describes how much each pixel is covered by the glyph; an application
 combines those values with a text color to paint the glyph.
 
-This example uses [`fontdue`][c~fontdue~docs]↗{{hi:fontdue}} to rasterize a
-glyph and [`ttf-parser`][c~ttf-parser~docs]↗{{hi:ttf-parser}} to read its
-design metrics. It bundles Roboto Regular under the SIL Open Font License 1.1;
-the license text is at bk/crates/cats/graphics/assets/OFL.txt.
+This example uses [`skrifa`][c~skrifa~docs]↗{{hi:skrifa}} to scale a glyph
+outline and read its advance, then [`tiny-skia`][c~tiny-skia~docs]↗{{hi:tiny-skia}}
+to rasterize the path into a pixmap. It bundles Roboto Regular under the SIL
+Open Font License 1.1; the license text is at
+bk/crates/cats/graphics/assets/OFL.txt.
 
 ## Rasterize a Glyph and Read Its Metrics {#rasterize-a-glyph}
 

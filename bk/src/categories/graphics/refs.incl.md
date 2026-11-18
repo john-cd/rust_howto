@@ -1,7 +1,7 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
 [ex~graphics~draw-a-triangle-as-svg]: index.md#draw-a-triangle-as-svg
-[ex~graphics~fontdue]: text_rendering.md#rasterize-a-glyph
+[ex~graphics~skrifa]: text_rendering.md#rasterize-a-glyph
 [ex~graphics~lyon]: 2d_vector_graphics.md#tessellate-a-vector-path
 [ex~graphics~project-a-vertex]: 3d_projection.md#project-a-vertex-to-the-screen
 [ex~graphics~resvg]: svg_rendering.md#resvg
