@@ -52,6 +52,8 @@ See also [Rust tools][rust-tools]↗{{hi:Rust tools}}.
 
 ## Related Topics {#related-topics .skip}
 
+- [Development tools built in Rust](../../other/written-in-rust/development_tools.md) covers editors, build systems, and language tooling.
+
 - [Development Tools - Build Utils](../development-tools_build-utils/index.md) for build scripts, native code, and build caches.
 - [Development Tools - Cargo Plugins](../development-tools_cargo-plugins/index.md) for community Cargo subcommands and task runners.
 - [Development Tools - Debugging](../development-tools_debugging/index.md) for debuggers, logs, traces, and diagnostics.

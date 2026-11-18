@@ -16,7 +16,7 @@ Read the published [WebSockets chapter](https://github.com/john-cd/rust_howto/bl
 - Web Programming: HTTP Server<!-- Cross-book topic: bk/src/categories/web-programming_http-server/index.md; not included in this preview. -->.
 - Network Programming<!-- Cross-book topic: bk/src/categories/network-programming/index.md; not included in this preview. -->.
 - [WASM](../wasm/index.md).
-- [Development Tools](../../other/written-in-rust/development_tools.md).
+- [Development Tools](https://john-cd.com/rust_howto/other/written-in-rust/development_tools.html).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

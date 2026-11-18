@@ -3,7 +3,7 @@
 [agave~repo]: https://github.com/anza-xyz/agave
 [bat~repo]: https://github.com/sharkdp/bat
 [biome~repo]: https://github.com/biomejs/biome
-[book-cli~source]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/command-line-utilities/index.md
+[book-cli~chapter]: ../../categories/command-line-utilities/index.md
 [bun~rust-release]: https://bun.com/blog/bun-v1.4
 [bun~website]: https://bun.com/
 [c~sniffnet~repo]: https://github.com/gyulyvgc/sniffnet
@@ -48,8 +48,8 @@
 [maturin~website]: https://www.maturin.rs/
 [oxc~repo]: https://github.com/oxc-project/oxc
 [p~development_tools]: development_tools.md
-[p~programming_languages]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parser-implementations/programming_languages.md
-[p~version_control]: https://github.com/john-cd/rust_howto/blob/c9d457b66ed12377a6ff5e0e1377af71cc9dde0b/bk/src/other/devops/version_control.md
+[p~programming_languages]: ../../categories/parser-implementations/programming_languages.md
+[p~version_control]: ../devops/version_control.md
 [p~written-in-rust]: index.md
 [pants~engine~docs]: https://www.pantsbuild.org/dev/docs/introduction/how-does-pants-work
 [pixi~repo]: https://github.com/prefix-dev/pixi

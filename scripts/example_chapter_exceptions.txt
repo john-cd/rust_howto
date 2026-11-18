@@ -38,7 +38,7 @@ bk/src/crate-selection/current_state_of_the_art.md
 # (Cargo, rustup, linkers, CI services), so there is no Rust code to show.
 later/src/categories/virtualization/
 later/src/other/devops/
-later/src/other/written-in-rust/
+bk/src/other/written-in-rust/
 later/src/other/architecture/
 later/src/other/cloud/
 # Delegates to the draft CSV recipes on purpose (see the page).

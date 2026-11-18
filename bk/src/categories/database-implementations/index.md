@@ -26,5 +26,7 @@ Check each project's current releases, support policy, and migration guidance be
 
 {{#include rust_search_engines.incl.md}}
 
+See [more databases and analytics projects built in Rust](../../other/written-in-rust/index.md#application-software).
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -203,8 +203,3 @@
 
 - [Web programming - websocket](categories/web-programming_websocket/index.md)
   - [Websocket](categories/web-programming_websocket/websocket.md)
-
-- [Written in Rust](other/written-in-rust/index.md)
-  - [Development tools](other/written-in-rust/development_tools.md)
-  - [Python tools](other/written-in-rust/python_tools.md)
-  - [Others](other/written-in-rust/other_tools.md)

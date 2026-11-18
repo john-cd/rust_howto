@@ -40,6 +40,7 @@ This index collects Rust command-line programs that replace familiar utilities o
 
 - [Command-line Interface](../command-line-interface/index.md).
 - [Filesystem](../filesystem/index.md) for portable file and directory operations.
+- [Command-line tools built in Rust](../../other/written-in-rust/development_tools.md#utilities).
 - [Rust Links and Resources](../../links/index.md).
 
 {{#include refs.incl.md}}

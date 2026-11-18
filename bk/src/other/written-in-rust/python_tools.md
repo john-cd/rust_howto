@@ -52,13 +52,13 @@ uv run python -c "print('hello')"
 
 [Maturin][maturin~website]↗ builds wheels for Rust extensions. PyO3
 defines the extension interface, while Maturin handles the Python package
-build. Follow the existing [PyO3 and Maturin recipe](../../categories/development-tools_ffi/python.md#calling-rust-from-python)
+build. Follow the existing [PyO3 and Maturin recipe](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/python.md)
 to build and import the extension with the intended Python interpreter.
 
 ## Related Topics {#related-topics .skip}
 
 - [Development tools](development_tools.md) covers editors, build systems, and general-purpose command-line tools.
-- [Scripting and Rust](../scripting/index.md) covers embedding scripting languages in Rust applications.
+- [Scripting and Rust](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/scripting/index.md) covers embedding scripting languages in Rust applications.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

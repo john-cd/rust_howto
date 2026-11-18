@@ -98,7 +98,7 @@
 ## Related Topics {#related-topics .skip}
 
 - [Version control][p~version_control] covers Git tasks in the main book.
-- [Shells and command-line utilities][book-cli~source] lists more tools in the main book source.
+- [Shells and command-line utilities][book-cli~chapter] covers more command-line tools.
 - [Python tools](python_tools.md) covers Python environments, linting, and packaging.
 
 {{#include refs.incl.md}}
