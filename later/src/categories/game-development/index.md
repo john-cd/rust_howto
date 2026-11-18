@@ -10,7 +10,9 @@ For a small example, open the [game development recipes][ex~game-development~gam
 
 ## Game Development Recipes
 
-The table is maintained in a separate include so the recipe links stay aligned with the examples:
+Try [Collect Three Markers](../games/index.md#collect-markers) to see these
+building blocks in a complete frame loop. Then use the recipes below to study
+collision queries and coordinate transforms in isolation.
 
 {{#include game_development.incl.md}}
 

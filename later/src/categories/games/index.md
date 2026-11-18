@@ -35,6 +35,12 @@ and checks the distance between the player and the marker. Drawing scales
 the same square world to the current window. Resizing changes the view while
 the positions and score remain in world coordinates.
 
+To experiment, move one marker in the source and run again. The layout
+changes while scoring follows the same overlap rule. To add a fourth
+marker, extend the marker list. The displayed total and the win condition
+both come from its length. Use the [Game Development recipes](../game-development/game_development.md)
+to explore collision queries and transforms independently of the window.
+
 ```rust,ignore
 {{#include ../../../crates/cats/games/examples/games.rs:example}}
 ```

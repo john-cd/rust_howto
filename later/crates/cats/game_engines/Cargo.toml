@@ -24,8 +24,7 @@ test = true
 
 [dependencies]
 # A refreshingly simple data-driven game engine and app framework
-bevy = { version = "0.20.1", default-features = false, features = ["default_app"], optional = true ,
-}
+bevy = { version = "0.20.1", default-features = false, features = ["default_app"], optional = true }
 # A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
 # Feature-rich, easy-to-use, 2D/3D game engine with a scene editor. Like Godot, but in Rust.

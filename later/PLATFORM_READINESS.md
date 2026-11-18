@@ -45,7 +45,16 @@ just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --featu
 | [Rendering](../bk/src/categories/graphics/index.md) | The distinct fontdue glyph recipe and remaining engine catalogs. Raster/vector, tessellation, SVG, and projection recipes are already in published Graphics; staged duplicates were removed under #2361. | The earlier host tests passed before duplicate retirement. Do not promote catalog descriptions as proof that the corresponding windowed engines were run: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
 | [Graphics APIs](../bk/src/categories/rendering_graphics-api/index.md) | Adapter discovery, wgpu compute/readback, shader validation/translation, and the new offscreen triangle render. | 16 tests passed with ignored GPU tests enabled. The triangle's center/background pixels passed on both Vulkan and DirectX 12 using Intel Iris Xe. OpenGL helpers without a current context and raw Vulkan discovery do not prove a complete scene: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
 | [Rendering Engines](../bk/src/categories/rendering_engine/index.md) | The expanded engine-responsibility guide and bounded offscreen rendering core. | The wgpu example has offscreen GPU pixel checks. The separate three-d example passed the Linux OpenGL window lifecycle and pixel checks in [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
-| [Game Engines](src/categories/game-engines/index.md) | The tested Macroquad and ggez game loops on Windows. | Unit tests passed, and native loops presented three and two frames respectively before exiting. Bevy/Fyrox, input/visual inspection, and other targets were not validated: [#2357](https://github.com/john-cd/rust_howto/issues/2357), [#2359](https://github.com/john-cd/rust_howto/issues/2359). |
+| [Game Engines](src/categories/game-engines/index.md) | Macroquad and ggez desktop loops, Bevy ECS scheduling, and Fyrox plugin logic. | Nine Windows engine tests passed with all features. The separate Macroquad and ggez smoke runs presented three and two frames. The Bevy and Fyrox commands ran headlessly. Full Bevy and Fyrox renderer and editor integration remains outside these checks. |
+
+### Games Group Editorial Recheck
+
+The staged Games, Game Development, and Game Engines group passed strict
+Clippy with all features and 20 tests on Windows. The two window tests were
+ignored by the automated suite and exercised separately through the bounded
+desktop commands. The Parry and glam commands printed the expected overlap,
+separation, and transformed point. The staged HTML check passed all 99
+chapters with zero link findings.
 
 ### Macroquad Desktop Keyboard Check
 

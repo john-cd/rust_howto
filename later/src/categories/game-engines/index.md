@@ -18,7 +18,11 @@ This category covers full game engines, game frameworks, and bindings that conne
 
 Before choosing, check the project's current release activity, platform support, renderer, editor and asset workflows, and deployment requirements. The [Are We Game Yet? engine catalog][are-we-game-yet?~engines~website]↗ tracks a broader set of engines and frameworks.
 
-Start with the engine comparison, then use the recipes to see how each project handles startup, drawing, and the event loop:
+Use the [engine comparison](game_engines.md#compare-engines) to choose a
+starting point. The Macroquad and ggez recipes show desktop frame loops.
+The Bevy example runs ECS systems headlessly, and Fyrox demonstrates the
+logic behind a scene plugin. Their renderers and editor workflows require a
+full application.
 
 {{#include game_engines.incl.md}}
 
