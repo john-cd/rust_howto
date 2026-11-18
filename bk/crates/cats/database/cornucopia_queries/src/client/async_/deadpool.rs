@@ -15,7 +15,7 @@ use tokio_postgres::types::BorrowToSql;
 
 use super::generic_client::GenericClient;
 impl GenericClient for DeadpoolClient {
-    /// Handles the stmt cache behavior for this component.
+    /// Enables helper-level preparation through the pooled client's statement cache.
     fn stmt_cache() -> bool {
         true
     }
@@ -85,7 +85,7 @@ impl GenericClient for DeadpoolClient {
     }
 }
 impl GenericClient for DeadpoolTransaction<'_> {
-    /// Handles the stmt cache behavior for this component.
+    /// Leaves automatic helper-level preparation disabled for this transaction adapter.
     fn stmt_cache() -> bool {
         false
     }

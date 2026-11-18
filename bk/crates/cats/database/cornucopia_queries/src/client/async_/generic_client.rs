@@ -21,7 +21,7 @@ use tokio_postgres::types::ToSql;
 /// In addition, when the `deadpool` feature is enabled (default), this trait
 /// also abstracts over deadpool clients and transactions
 pub trait GenericClient: Send + Sync {
-    /// Handles the stmt cache behavior for this component.
+    /// Reports whether query helpers should prepare SQL through this client's statement cache.
     fn stmt_cache() -> bool {
         false
     }

@@ -53,7 +53,7 @@ impl managed::Manager for Manager {
         Ok(Server) // In a real-world scenario, this would establish a connection.
     }
 
-    /// Handles the recycle behavior for this component.
+    /// Accepts the stateless mock server for reuse without a health check or reset.
     async fn recycle(&self, _: &mut Server, _: &managed::Metrics) -> managed::RecycleResult<Error> {
         Ok(())
     }

@@ -122,10 +122,10 @@ where
 pub struct AddGreetingStmt(
     /// SQL text used to insert a greeting.
     &'static str,
-    /// Prepared PostgreSQL statement cached after the first execution.
+    /// Optional prepared statement populated by an explicit prepare call.
     Option<tokio_postgres::Statement>,
 );
-/// Adds the supplied greeting to the current collection or state.
+/// Constructs an INSERT statement that ignores an already-stored identical greeting.
 pub fn add_greeting() -> AddGreetingStmt {
     AddGreetingStmt(
         "INSERT INTO cornucopia_greetings (message) VALUES ($1) ON CONFLICT (message) DO NOTHING",
@@ -142,7 +142,9 @@ impl AddGreetingStmt {
         Ok(self)
     }
 
-    /// Handles the bind behavior for this component.
+    /// Executes the insert with a borrowed message and returns the affected-row count.
+    ///
+    /// Duplicate messages produce zero inserted rows; encoding and database errors propagate.
     pub async fn bind<'c, 'a, 's, C: GenericClient, T1: crate::StringSql>(
         &'s self,
         client: &'c C,
@@ -159,7 +161,7 @@ pub struct ListGreetingsStmt(
     /// Prepared PostgreSQL statement cached after the first execution.
     Option<tokio_postgres::Statement>,
 );
-/// Handles the list greetings behavior for this component.
+/// Constructs a SELECT statement yielding messages in lexicographic database order.
 pub fn list_greetings() -> ListGreetingsStmt {
     ListGreetingsStmt(
         "SELECT message FROM cornucopia_greetings ORDER BY message",
@@ -176,7 +178,7 @@ impl ListGreetingsStmt {
         Ok(self)
     }
 
-    /// Handles the bind behavior for this component.
+    /// Creates a lazy query mapping each returned message column into an owned string.
     pub fn bind<'c, 'a, 's, C: GenericClient>(
         &'s self,
         client: &'c C,

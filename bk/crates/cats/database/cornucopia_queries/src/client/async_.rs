@@ -20,7 +20,7 @@ use tokio_postgres::types::ToSql;
 /// This trait allows you to bind parameters to a query using a single
 /// struct, rather than passing each bind parameter as a function parameter.
 pub trait Params<'c, 'a, 's, P, O, C> {
-    /// Handles the params behavior for this component.
+    /// Binds the borrowed parameter record and client to the generated query output type.
     fn params(&'s self, client: &'c C, params: &'a P) -> O;
 }
 
