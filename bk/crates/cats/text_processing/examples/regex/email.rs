@@ -10,9 +10,13 @@
 use lazy_static::lazy_static;
 use regex::Regex;
 
-/// Returns the login part of the first email address in `input`.
+/// Returns the login only when the entire input matches the example email pattern.
+///
+/// This intentionally simplified pattern is an extraction example, not a full
+/// email-address validator. The returned slice borrows from input.
 fn extract_login(input: &str) -> Option<&str> {
     lazy_static! {
+        /// Anchored login/domain pattern reused across calls to avoid recompilation.
         static ref RE: Regex = Regex::new(
             r"(?x)
             ^(?P<login>[^@\s]+)@

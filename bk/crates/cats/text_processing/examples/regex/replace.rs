@@ -11,9 +11,12 @@ use std::borrow::Cow;
 use lazy_static::lazy_static;
 use regex::Regex;
 
-/// Rewrites the ISO 8601 dates in `before` as `MM/DD/YYYY`.
+/// Reorders YYYY-MM-DD-shaped substrings as MM/DD/YYYY without calendar validation.
+///
+/// Returns borrowed text when no match needs replacing and an owned string otherwise.
 fn reformat_dates(before: &str) -> Cow<'_, str> {
     lazy_static! {
+        /// Captures year/month/day digit groups once for reuse by replacements.
         static ref ISO8601_DATE_REGEX: Regex =
             Regex::new(r"(?P<y>\d{4})-(?P<m>\d{2})-(?P<d>\d{2})")
                 .expect("regular expression should be valid");

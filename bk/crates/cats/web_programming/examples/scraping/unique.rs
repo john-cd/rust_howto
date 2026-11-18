@@ -13,15 +13,18 @@ use anyhow::Result;
 use lazy_static::lazy_static;
 use regex::Regex;
 
-/// Returns the unique internal and external links found in the wiki markup
+/// Extracts unique link targets from a limited set of MediaWiki markup forms.
 ///
-/// `content`.
+/// Internal targets are lowercased into owned strings; external URLs borrow
+/// from the source. A hash set removes repeated targets without preserving order.
+/// This regex handles the demonstrated forms rather than the full MediaWiki grammar.
 ///
 /// # Panics
 ///
-/// Panics if the fixed MediaWiki link regex is valid.
+/// Panics if a future edit makes the fixed MediaWiki link regex invalid.
 fn extract_links(content: &str) -> HashSet<Cow<'_, str>> {
     lazy_static! {
+        /// Compiled once to capture internal links, bracketed URLs, and URL templates.
         static ref WIKI_REGEX: Regex = Regex::new(
             r"(?x)
                 \[\[
