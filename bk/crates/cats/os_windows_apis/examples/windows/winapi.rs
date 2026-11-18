@@ -21,21 +21,31 @@ fn nul_terminated_wide(value: &str) -> Vec<u16> {
 }
 
 /// Displays a message box using NUL-terminated UTF-16 strings.
-fn main() {
+///
+/// # Errors
+///
+/// Returns the Windows error if the message box cannot be displayed.
+fn main() -> std::io::Result<()> {
     let message = nul_terminated_wide("Hello from winapi!");
     let caption = nul_terminated_wide("Windows API example");
 
     // SAFETY: Both strings are NUL-terminated and stay alive for the call;
     // a null owner window is valid for a standalone message box.
-    unsafe {
-        MessageBoxW(null_mut(), message.as_ptr(), caption.as_ptr(), MB_OK);
+    let result = unsafe { MessageBoxW(null_mut(), message.as_ptr(), caption.as_ptr(), MB_OK) };
+    if result == 0 {
+        return Err(std::io::Error::last_os_error());
     }
+    Ok(())
 }
 // ANCHOR_END: example
 
 /// Runs the message-box example.
-pub fn run() {
-    main();
+///
+/// # Errors
+///
+/// Returns the Windows error if the message box cannot be displayed.
+pub fn run() -> std::io::Result<()> {
+    main()
 }
 
 /// Tests behavior implemented by the surrounding module.
@@ -61,10 +71,10 @@ mod tests {
         );
     }
 
-    /// Verifies that the displays message box.
+    /// Displays a dialog successfully on an interactive desktop.
     #[test]
     #[ignore = "displays a Windows message box"]
     fn displays_message_box() {
-        main();
+        main().expect("message box should display successfully");
     }
 }

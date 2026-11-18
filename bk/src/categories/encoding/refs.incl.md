@@ -47,3 +47,5 @@
 [p~structs]: ../../language/structs.md
 [p~toml]: ../parser-implementations/toml.md
 [p~trait-objects]: ../../language/trait_objects_and_dynamic_dispatch.md
+
+[book~rust-reference~type-coercions]: https://doc.rust-lang.org/reference/type-coercions.html

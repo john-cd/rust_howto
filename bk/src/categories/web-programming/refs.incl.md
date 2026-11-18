@@ -16,7 +16,7 @@
 [ex~web-programming~parse-a-url-from-a-string-to-a-url-type]: url.md#parse-a-url-from-a-string-to-a-url-type
 [ex~web-programming~parse-the-mime-type-of-a-http-response]: mime.md#parse-the-mime-type-of-a-http-response
 [ex~web-programming~remove-fragment-identifiers-and-query-pairs]: url.md#remove-fragment-identifiers-and-query-pairs
-[p~links]: ../../../src/links/index.md
+[p~links]: ../../links/index.md
 [p~parse]: ../date-and-time/parse.md
 [p~url]: url.md
 [c~scraper::html::parse_document~docs]: https://docs.rs/scraper/latest/scraper/html/struct.Html.html#method.parse_document

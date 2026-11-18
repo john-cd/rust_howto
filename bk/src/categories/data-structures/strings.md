@@ -43,7 +43,6 @@ You may also use [`dbg`][c~std::dbg~docs]↗{{hi:std::dbg}} for debug output.{{h
 
 ## Concatenate Strings {#string-concatenation}
 
-
 ## String Manipulation {#string-manipulation .skip}
 
 See:
@@ -93,5 +92,7 @@ See [Number Formatting](../value-formatting/number_formatting.md) for precision,
 - [[value_formatting | Value Formatting]].
 
 - [Regex (Regular Expressions)](../text-processing/regex.md).
+
 See the [String Concatenation](../text-processing/string_concat.md) chapter and the [Concatenation Benchmark][concatenation_benchmarks~repo]↗ repository.
+
 </div>

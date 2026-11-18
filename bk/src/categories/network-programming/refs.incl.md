@@ -9,3 +9,5 @@
 [c~email_address~crates.io]: https://crates.io/crates/email_address
 [c~fast_chemail~crates.io]: https://crates.io/crates/fast_chemail
 [c~ipnet~docs]: https://docs.rs/ipnet
+
+[nginx~website]: https://nginx.org/

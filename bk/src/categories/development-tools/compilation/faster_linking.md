@@ -87,12 +87,12 @@ When comparing linkers, use the same clean or incremental build scenario and com
 ## Related Topics {#related-topics .skip}
 
 - [Development Tools](../index.md).
-- [Development Tools - Build Utils](../../../../src/categories/development-tools_build-utils/index.md).
-- [Development Tools - Cargo Plugins](../../../../src/categories/development-tools_cargo-plugins/index.md).
-- [Development Tools - Debugging](../../../../src/categories/development-tools_debugging/index.md).
+- [Development Tools - Build Utils](../../development-tools_build-utils/index.md).
+- [Development Tools - Cargo Plugins](../../development-tools_cargo-plugins/index.md).
+- [Development Tools - Debugging](../../development-tools_debugging/index.md).
 - [Development Tools: FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md).
 - [Development Tools Procedural Macro Helpers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_procedural-macro-helpers/index.md).
-- [Development Tools - Testing](../../../../src/categories/development-tools_testing/index.md).
+- [Development Tools - Testing](../../development-tools_testing/index.md).
 - [Development Tools - Profiling](../../development-tools_profiling/index.md).
 
 {{#include refs.incl.md}}

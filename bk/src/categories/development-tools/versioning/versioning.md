@@ -9,7 +9,7 @@ This chapter follows the [Development Tools](../index.md) overview. It focuses o
 | Topic | Rust Crates |
 | --- | --- |
 | Version Parsing and Comparison | [`semver`][c~semver~docs]↗{{hi:semver}} parses, compares, and manipulates SemVer (Semantic Versioning) strings. |
-| Version Bumping | [`cargo-bump`][c~cargo-bump~docs]↗{{hi:cargo-bump}} automates version bumps in `Cargo.toml` according to SemVer rules. See [Development Tools - Cargo Plugins](../../../../src/categories/development-tools_cargo-plugins/index.md). |
+| Version Bumping | [`cargo-bump`][c~cargo-bump~docs]↗{{hi:cargo-bump}} automates version bumps in `Cargo.toml` according to SemVer rules. See [Development Tools - Cargo Plugins](../../development-tools_cargo-plugins/index.md). |
 | Dependency Management (with version constraints) | [Cargo](../cargo/cargo.md) uses SemVer for specifying dependencies in `Cargo.toml`. See the [Cargo chapter](../cargo/cargo.md) for more details. |
 | Release Management | Often involves tagging [`git`][git~website]↗{{hi:git}} releases. |
 | Changelog Generation | Often handled with tools outside of the Rust ecosystem, but some crates might assist with [parsing][p~parsing] commit messages, etc. |
@@ -70,7 +70,7 @@ Runs [`git --version`][git~website]↗{{hi:git}} using [`std::process::Command`]
 ## Related Topics {#related-topics .skip}
 
 - [Cargo][p~cargo] dependency requirements.
-- [Development Tools - Cargo Plugins](../../../../src/categories/development-tools_cargo-plugins/index.md), including `cargo-semver-checks` and release automation.
+- [Development Tools - Cargo Plugins](../../development-tools_cargo-plugins/index.md), including `cargo-semver-checks` and release automation.
 - [Cross-compilation with Cargo](../cross-compilation/cross_compilation.md) for target-specific version and build constraints.
 
 {{#include refs.incl.md}}

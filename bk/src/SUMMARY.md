@@ -321,6 +321,9 @@
   - [Low-level System Calls](categories/os/low_level_system_calls.md)
   - [Operating Systems Written in Rust](categories/os/rust_os.md)
 
+- [Windows APIs](categories/os_windows-apis/index.md)
+  - [Windows API Bindings](categories/os_windows-apis/windows.md)
+
 - [Operating systems - Unix](categories/os_unix-apis/index.md)
   - [Unix APIs](categories/os_unix-apis/unix.md)
 

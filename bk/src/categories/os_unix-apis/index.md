@@ -29,7 +29,7 @@ The [Unix APIs](unix.md) chapter compares [`rustix`][c~rustix~docs]↗ and [`nix
 - [Operating Systems](../os/index.md) covers portable OS services.
 - [Linux userspace APIs](https://docs.kernel.org/userspace-api/index.html) documents Linux-specific interfaces.
 - [Apple system frameworks](https://developer.apple.com/documentation/technologies) documents macOS APIs.
-- [Rust Windows APIs](https://doc.rust-lang.org/std/os/windows/) covers Windows-specific interfaces.
+- [Windows API Bindings](../os_windows-apis/windows.md) covers Windows-specific interfaces.
 - [Low-level System Calls](../os/low_level_system_calls.md) compares standard-library, wrapper, and C-library interfaces.
 - [The Rust Reference: External blocks](https://doc.rust-lang.org/reference/items/external-blocks.html) covers declaring foreign functions and types.
 

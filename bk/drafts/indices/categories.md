@@ -68,7 +68,7 @@
 | [![os::linux-apis][cat~os::linux-apis~badge]][cat~os::linux-apis] | Bindings to Linux-specific APIs. | - |
 | [![os::macos-apis][cat~os::macos-apis~badge]][cat~os::macos-apis] | Bindings to macOS-specific APIs. | - |
 | [![os::unix-apis][cat~os::unix-apis~badge]][cat~os::unix-apis] | Bindings to Unix-specific APIs. | [Unix APIs](../categories/os_unix-apis/index.md) |
-| [![os::windows-apis][cat~os::windows-apis~badge]][cat~os::windows-apis] | Bindings to Windows-specific APIs. | [Windows APIs](../categories/os_windows-apis/index.md) |
+| [![os::windows-apis][cat~os::windows-apis~badge]][cat~os::windows-apis] | Bindings to Windows-specific APIs. | [Windows APIs](https://john-cd.com/rust_howto/categories/os_windows-apis/index.html) |
 | [![parser-implementations][cat~parser-implementations~badge]][cat~parser-implementations] | Parsers implemented for particular formats or languages. | [Parser Implementations](../../src/categories/parser-implementations/index.md) |
 | [![parsing][cat~parsing~badge]][cat~parsing] | Creating parsers of binary and text formats. Format-specific parsers belong in other, more specific categories. | [Parsing](../categories/parsing/index.md) |
 | [![rendering][cat~rendering~badge]][cat~rendering] | Real-time or offline rendering of 2D or 3D graphics, usually with the help of a graphics card. | - |

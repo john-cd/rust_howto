@@ -112,13 +112,13 @@ cargo install --locked cargo-zigbuild
 cargo zigbuild --target x86_64-unknown-linux-gnu.2.17
 ```
 
-For target setup, use Cargo's built-in support in this chapter. For additional Cargo plugins, see [cross-compilation with Cargo tools](../../../../src/categories/development-tools_cargo-plugins/cross_compiling.md).
+For target setup, use Cargo's built-in support in this chapter. For additional Cargo plugins, see [cross-compilation with Cargo tools](../../development-tools_cargo-plugins/cross_compiling.md).
 
 ## Related Topics {#related-topics .skip}
 
-- [Compiler Feature Detection with `autocfg`](../../../../src/categories/development-tools_build-utils/autocfg.md).
-- [Build-time Tooling](../../../../src/categories/development-tools_build-utils/build_time_tooling.md).
-- [Development Tools - Build Utils](../../../../src/categories/development-tools_build-utils/index.md).
+- [Compiler Feature Detection with `autocfg`](../../development-tools_build-utils/autocfg.md).
+- [Build-time Tooling](../../development-tools_build-utils/build_time_tooling.md).
+- [Development Tools - Build Utils](../../development-tools_build-utils/index.md).
 - [Rust Platform Support](https://doc.rust-lang.org/rustc/platform-support.html) for the target architectures and operating systems supported by the compiler.
 
 {{#include refs.incl.md}}

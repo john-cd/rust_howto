@@ -54,7 +54,7 @@ A badge{{hi:Badges}} is a small image that displays status information about a c
 
 Check the service's current badge URL and repository settings before adding a badge. A badge reports only the state its source service exposes; it does not replace release, CI, or coverage checks.
 
-Crate badges use links generated from the repository's central crate-reference data. See the [contributor guide to repository structure](../../../../src/appendices/contributing/repository_structure.md#folders-and-key-files) for the reference generation workflow; update its source data instead of copying badge URLs into chapter references.
+Crate badges use links generated from the repository's central crate-reference data. See the [contributor guide to repository structure](../../../appendices/contributing/repository_structure.md#folders-and-key-files) for the reference generation workflow; update its source data instead of copying badge URLs into chapter references.
 
 See the [Shields.io badge catalog][shields~badge-reference~docs], [docs.rs badge guidance][docsrs~badge~docs], and [GitHub workflow status badge documentation][github-actions~status-badge~docs] for current service options.
 

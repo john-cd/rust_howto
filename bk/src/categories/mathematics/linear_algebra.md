@@ -159,7 +159,6 @@ From `bk/crates`, run `cargo test --locked -p mathematics --example linear_algeb
 
 {{#badges nalgebra data-structures="Data structures" science=}}
 
-
 Note that serialization followed by deserialization gives back the original matrix.
 
 ```rust,editable

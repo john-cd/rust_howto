@@ -18,7 +18,7 @@
 [ex~web-programming_http-client~retry]: rate_limiting_and_retries.md#retry
 [ex~web-programming_http-client~retry-after]: rate_limiting_and_retries.md#retry-after
 [ex~web-programming_http-client~ureq]: http_clients.md#ureq
-[p~json]: ../../../src/categories/parser-implementations/json.md
+[p~json]: ../parser-implementations/json.md
 [p~http-clients]: http_clients.md
 [p~requests]: requests.md
 [p~url]: ../web-programming/url.md

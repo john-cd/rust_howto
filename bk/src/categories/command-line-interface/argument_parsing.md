@@ -32,7 +32,7 @@ The builder API describes a command with a `Command` and one `Arg` for each opti
 
 [![clap][c~clap~docs~badge]][c~clap~docs]{{hi:clap}} [![clap~examples][c~clap~examples~badge]][c~clap~examples] [![clap~repo][c~clap~repo~badge]][c~clap~repo] [![cat~command-line-interface][cat~command-line-interface~badge]][cat~command-line-interface]{{hi:Command-line interface}}
 
-The multi-module example in [`bk/crates/cats/command_line_interface/examples/clap_builder_xmpl`](../../../crates/cats/command_line_interface/examples/clap_builder_xmpl/main.rs) demonstrates a larger builder-based CLI using [`clap`][c~clap~docs]↗{{hi:clap}}. It includes subcommands, global flags, environment-backed values, custom help styling, and parsing tests.
+The multi-module example in [`bk/crates/cats/command_line_interface/examples/clap_builder_xmpl`](https://github.com/john-cd/rust_howto/blob/develop/bk/crates/cats/command_line_interface/examples/clap_builder_xmpl/main.rs) demonstrates a larger builder-based CLI using [`clap`][c~clap~docs]↗{{hi:clap}}. It includes subcommands, global flags, environment-backed values, custom help styling, and parsing tests.
 
 It showcases:
 

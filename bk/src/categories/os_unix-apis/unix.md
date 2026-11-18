@@ -2,7 +2,9 @@
 
 # Unix APIs
 
-{{#include unix.incl.md}}{{hi:Operating systems::Unix APIs}}
+{{#include unix.incl.md}}
+
+{{hi:Operating systems::Unix APIs}}
 
 ## Bind to Unix-specific APIs with `rustix` {#rustix}
 
@@ -34,7 +36,7 @@ Use `nix` when its API and enabled features match the required interface. Its AP
 
 - [Operating Systems](../os/index.md) introduces portable operating-system services.
 - [Low-level System Calls](../os/low_level_system_calls.md) compares standard-library, wrapper, and C-library interfaces.
-- [Rust Windows APIs](https://doc.rust-lang.org/std/os/windows/) covers Windows-specific bindings.
+- [Windows API Bindings](../os_windows-apis/windows.md) covers Windows-specific bindings.
 - [The Rust Reference: External blocks](https://doc.rust-lang.org/reference/items/external-blocks.html) covers declaring foreign functions and types.
 
 {{#include refs.incl.md}}

@@ -34,8 +34,7 @@ For CI, install the nightly toolchain with the Miri component, run `cargo +night
 ## Related Topics {#related-topics .skip}
 
 - [Code Verification](code_verification.md).
-- [Testing](../../../../src/categories/development-tools_testing/testing.md).
+- [Testing](../../development-tools_testing/testing.md).
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}
-

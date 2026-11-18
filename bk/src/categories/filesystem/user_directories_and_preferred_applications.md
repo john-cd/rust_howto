@@ -8,7 +8,7 @@
 
 {{#badges dirs}}{{hi:App_dirs}}{{hi:Xdg}}{{hi:Path}}{{hi:Folder}}{{hi:Basedir}}
 
-[`dirs`][c~dirs~docs]↗{{hi:dirs}} is a tiny, low-level library with a minimal API that provides platform-specific standard locations of directories for [configuration](../config/index.md), cache, and other data. It follows the XDG base/user directory specifications on Linux, the "Known Folder" API on [Windows](https://github.com/john-cd/rust_howto/blob/develop/bk/drafts/categories/os_windows-apis/windows.md), and the Standard Directory guidelines on macOS.
+[`dirs`][c~dirs~docs]↗{{hi:dirs}} is a tiny, low-level library with a minimal API that provides platform-specific standard locations of directories for [configuration](../config/index.md), cache, and other data. It follows the XDG base/user directory specifications on Linux, the "Known Folder" API on [Windows](../os_windows-apis/windows.md), and the Standard Directory guidelines on macOS.
 
 The following example gets paths to standard (home, configuration, data, cache, executables) directories on the file system:
 

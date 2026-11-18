@@ -153,10 +153,10 @@ To find old checkout-specific build outputs, [`cargo-clean-all`][cargo-clean-all
 ### Related Topics {#related-topics}
 
 - [Benchmarking](../../development-tools_profiling/benchmarking.md).
-- [Development Tools - Build Utils](../../../../src/categories/development-tools_build-utils/index.md).
+- [Development Tools - Build Utils](../../development-tools_build-utils/index.md).
 - [Development Tools](../index.md).
-- [Development Tools - Cargo Plugins](../../../../src/categories/development-tools_cargo-plugins/index.md).
-- [Development Tools - Profiling](../../../../src/categories/development-tools_profiling/index.md).
+- [Development Tools - Cargo Plugins](../../development-tools_cargo-plugins/index.md).
+- [Development Tools - Profiling](../../development-tools_profiling/index.md).
 - [Faster Linking](faster_linking.md).
 - [Development Tools - Cargo Plugins](../../development-tools_cargo-plugins/performance.md) for Cargo-specific build tools.
 
