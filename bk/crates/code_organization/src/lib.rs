@@ -10,6 +10,7 @@ pub mod module2;
 // ANCHOR_END: public_modules
 
 // ANCHOR: inline_module
+/// Groups file-backed submodules inside an inline module declaration.
 mod inline_layout {
     /// Provides submodule1 behavior for the src component.
     pub mod submodule1;

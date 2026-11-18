@@ -2,6 +2,7 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+/// Reexports Option and its constructors for a single convenient import path.
 mod prelude {
     // ANCHOR: option_exports
     pub use std::option::Option::None;

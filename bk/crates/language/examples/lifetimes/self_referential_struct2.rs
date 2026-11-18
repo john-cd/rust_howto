@@ -7,6 +7,7 @@
 //! uses `unsafe` to establish the pointer invariant after the value has a stable
 //! address, then keeps the fields private so safe callers cannot break it.
 
+/// Encapsulates the unsafe self-pointer invariant behind a pinned public API.
 mod selfref {
     use std::marker::PhantomPinned;
     use std::pin::Pin;
@@ -14,8 +15,11 @@ mod selfref {
 
     /// A string together with a pointer to its own `String` field.
     pub struct SelfRef {
+        /// Owned text whose String field must remain at the pinned address.
         data: String,
+        /// Pointer to data, initialized before construction returns and never reassigned.
         data_ptr: Option<NonNull<String>>,
+        /// Prevents Unpin so safe code cannot move the self-referential value.
         _pin: PhantomPinned,
     }
 

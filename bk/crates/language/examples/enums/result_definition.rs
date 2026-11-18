@@ -3,13 +3,14 @@
 //! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+/// Simplified operation outcome carrying either a success value or an error.
 enum Result<T, E> {
-    /// Represents the ok case of result.
+    /// The operation succeeded with a value of type T.
     Ok(
         /// Value produced when the operation succeeds.
         T,
     ),
-    /// Represents the err case of result.
+    /// The operation failed with an error of type E.
     Err(
         /// Error produced when the operation fails.
         E,

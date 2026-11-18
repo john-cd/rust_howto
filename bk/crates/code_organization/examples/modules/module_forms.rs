@@ -3,10 +3,10 @@
 //! TODO Reviewed ??-??-2026.
 
 // ANCHOR: declarations
-// The contents come from module_forms/a_file.rs.
+/// Loads a sibling module from module_forms/a_file.rs.
 mod a_file;
 
-// The contents are written inline.
+/// Defines a module directly in the containing source file.
 mod inline_module {
     /// Returns a value through an inline module.
     pub(super) fn some_function() -> u8 {
@@ -16,11 +16,12 @@ mod inline_module {
 // ANCHOR_END: declarations
 
 // ANCHOR: nested
+/// Groups nested external-file and inline modules under a common parent.
 mod a {
-    // The contents come from module_forms/a/b.rs.
+    /// Loads the nested file module and exposes it to the parent module.
     pub(super) mod b;
 
-    /// Provides c behavior for the module forms component.
+    /// Inline sibling of b demonstrating visibility restricted to the enclosing example.
     pub(super) mod c {
         /// Returns a value from a nested inline module.
         pub(in crate::module_forms) fn value() -> u8 {
@@ -41,6 +42,7 @@ fn relative_paths() -> (u8, u8) {
 // ANCHOR_END: relative
 
 // ANCHOR: parent
+/// Demonstrates using super to call a private function in the parent module.
 mod child {
     /// Calls a function in the enclosing module.
     pub(super) fn in_child() -> u8 {
@@ -61,13 +63,14 @@ fn absolute_path() -> u8 {
 }
 // ANCHOR_END: absolute
 
+/// Example enum used to resolve variant, constructor, constant, and type paths.
 enum Direction {
     /// Represents the north case of direction.
     North,
 }
 
 impl Direction {
-    /// Sets the default bound or default used by this code.
+    /// Associated constant naming the example's default direction.
     const DEFAULT: Self = Self::North;
 
     /// Constructs the north direction.
