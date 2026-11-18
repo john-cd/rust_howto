@@ -94,18 +94,30 @@ fn throttle_frame_rate(last_frame: Instant, target_duration: Duration) -> Instan
     Instant::now()
 }
 
-/// Opens a window and draws into a pixel buffer until the window is closed.
-fn run_window() -> Result<()> {
+/// Opens a window and presents an animated pixel buffer.
+///
+/// With `smoke` enabled, requests completion after two successful presentations.
+///
+/// # Errors
+///
+/// Returns an error if window creation or native buffer presentation fails.
+fn run_window(smoke: bool) -> Result<()> {
     // The window owns the OS surface; the buffer is our own CPU-side
     // framebuffer with one `0xAARRGGBB` value per pixel.
     let mut window = create_window()?;
     let mut buffer = vec![0u32; WIDTH * HEIGHT];
     let mut offset = 0u32;
     let mut last_frame = Instant::now();
+    let mut presented = 0;
 
     // Redraw every frame until the user closes the window or presses Escape.
     while window.is_open() && !window.is_key_down(Key::Escape) {
         render_frame(&mut window, &mut buffer, &mut offset)?;
+        presented += 1;
+        if smoke && presented == 2 {
+            println!("Presented two minifb frames successfully.");
+            break;
+        }
         last_frame = throttle_frame_rate(last_frame, TARGET_FRAME_DURATION);
     }
 
@@ -114,7 +126,7 @@ fn run_window() -> Result<()> {
 
 /// Starts the standalone minifb example target.
 fn main() -> Result<()> {
-    run_window()
+    run_window(std::env::var_os("RUST_HOWTO_SMOKE_TEST").is_some())
 }
 // ANCHOR_END: example
 
@@ -124,7 +136,7 @@ fn main() -> Result<()> {
 ///
 /// Returns an error if a step of the example fails.
 pub fn run() -> Result<()> {
-    run_window()
+    run_window(std::env::var_os("RUST_HOWTO_SMOKE_TEST").is_some())
 }
 
 /// Checks the color of a few pixels.
@@ -166,6 +178,6 @@ mod tests {
     #[test]
     #[ignore = "requires interactive example runtime"]
     fn test_minifb_example_entry_point() -> Result<()> {
-        run_window()
+        run_window(false)
     }
 }

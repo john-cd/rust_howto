@@ -10,7 +10,7 @@ Avoid heap-allocating types such as `Box`, `Vec`, `Rc`, `Arc`, and `HashMap` whe
 
 ## Fixed-Capacity Collections
 
-Use arrays or fixed-capacity collections when the maximum size is known. [heapless][c~heapless~docs]↗{{hi:heapless}} provides collections and strings that do not allocate; [arrayvec][c~arrayvec~docs]↗{{hi:arrayvec}} provides array-backed vectors and strings. Operations beyond capacity return an error instead of growing the collection.
+Use arrays or fixed-capacity collections when the maximum size is known. [heapless][c~heapless~docs]↗{{hi:heapless}} provides collections and strings that do not allocate; [arrayvec][c~arrayvec~docs]↗{{hi:arrayvec}} provides array-backed vectors and strings. Use fallible insertion methods such as `heapless::Vec::push` and `arrayvec::ArrayVec::try_push` to handle full capacity explicitly; some infallible insertion methods panic.
 
 ## Formatting and Serialization
 
@@ -21,18 +21,18 @@ Use arrays or fixed-capacity collections when the maximum size is known. [heaple
 
 See the [published No Allocation chapter](https://john-cd.com/rust_howto/categories/no-std/no_alloc.html) for collections, bounded queues, and formatting without heap allocation.
 
-For embedded hardware interfaces, see [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}}. Small panic handlers such as [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}} and [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}} provide target-appropriate panic behavior; choose one that matches the platform. Static allocation is another option for values whose storage can live for the program's duration; see [[static allocation | Static Allocation]].
+For embedded hardware interfaces, see [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}}. Small panic handlers such as [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}} and [`panic-abort`][c~panic-abort~docs]↗{{hi:panic-abort}} provide target-appropriate panic behavior; choose one that matches the platform. Static allocation is another option for values whose storage can live for the program's duration; see [static items in the Rust Reference](https://doc.rust-lang.org/reference/items/static-items.html).
 
-## Example
+## Published Examples
 
-{{#include no_alloc.incl.md}}
+The fixed-capacity collection, bounded queue, and formatting recipes now live in the [published No Allocation chapter](https://john-cd.com/rust_howto/categories/no-std/no_alloc.html). Their tested sources are in `bk/crates/cats/no_std_no_alloc`; this preview does not duplicate the moved recipe table.
 
 ## Related Topics
 
-- [[no-std | No `std`]].
-- [[embedded | Embedded Systems]].
-- [[memory-management | Memory Management]].
-- [[memory_usage_analysis | Memory Usage Analysis]].
+- [No `std`](../no-std/index.md).
+- [Embedded Systems](../embedded/index.md).
+- [Memory Management](https://john-cd.com/rust_howto/categories/memory-management/index.html).
+- [Memory Usage Analysis](https://john-cd.com/rust_howto/categories/development-tools_profiling/memory_usage_analysis.html).
 - [The crates.io no-allocation category][cat~no-std::no-alloc]↗ lists crates tagged for no-alloc use.
 
 {{#include refs.incl.md}}

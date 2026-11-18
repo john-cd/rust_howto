@@ -4,9 +4,18 @@
 
 {{#include audio.incl.md}}
 
+These examples run in the local example package and cannot access native devices or bundled fixture files in the browser Playground. From the repository root, run device-free checks with:
+
+```sh
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --examples
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p multimedia_audio --example audio -- hrtf
+```
+
+The default tests leave device-dependent playback ignored. The `audio` subcommand opens the default output device and plays a one-second tone; MIDI communication needs a selected port. Successful stream setup does not establish audible quality.
+
 ## Record, Output, or Process Audio {#audio}
 
-```rust,editable
+```rust,ignore
 {{#include ../../../crates/cats/multimedia_audio/examples/audio/audio.rs:example}}
 ```
 
@@ -16,7 +25,7 @@ Also see [Write and read a WAV file in memory](wav.md) for an example that does 
 
 [`rodio`][c~rodio~docs]↗{{hi:rodio}} decodes audio files and sends samples to an output device. Keep the device sink alive until playback ends; dropping it stops the sound. The test decodes generated WAV bytes in memory, while the `play_file` function demonstrates device playback.
 
-```rust,editable
+```rust,ignore
 {{#include ../../../crates/cats/multimedia_audio/examples/audio/rodio_file.rs:example}}
 ```
 
@@ -24,7 +33,7 @@ Also see [Write and read a WAV file in memory](wav.md) for an example that does 
 
 `rodio::source::SineWave` generates a tone as a stream of samples. This example pulls a short buffer directly, so it can be tested without a speaker.
 
-```rust,editable
+```rust,ignore
 {{#include ../../../crates/cats/multimedia_audio/examples/audio/tone.rs:example}}
 ```
 
@@ -75,7 +84,7 @@ fn capture_for_one_second() -> Result<(), Box<dyn std::error::Error>> {
 
 Sample rates must match before mixing or writing a stream to a target format. This example converts a 48 kHz mono chunk to 44.1 kHz; real-time code should reuse `rubato`'s preallocated buffers.
 
-```rust,editable
+```rust,ignore
 {{#include ../../../crates/cats/multimedia_audio/examples/audio/resampling.rs:example}}
 ```
 
@@ -107,7 +116,7 @@ Choose `cpal` directly when you need control over buffers, formats and latency, 
 
 [`midir`][c~midir~docs]↗{{hi:midir}} is a cross-platform library for realtime MIDI input and output. `MidiInput::ports` lists the ports, and `connect` registers a callback that receives raw messages. A MIDI message is a few bytes: a status byte, whose high nibble is the message kind and whose low nibble is the channel, followed by data bytes. Decoding is a pure function, which is easy to test without any hardware.
 
-```rust,editable
+```rust,ignore
 {{#include ../../../crates/cats/multimedia_audio/examples/audio/midi_ports.rs:example}}
 ```
 
@@ -115,23 +124,23 @@ The `midir` callback also runs on a thread of the library: apply the real-time r
 
 ## Binaural Audio with `hrtf` {#hrtf}
 
-[`hrtf`][c~hrtf~docs]↗{{hi:hrtf}} renders a mono source as binaural stereo from a head-related impulse response (HRIR) sphere file, which gives the impression of a position in 3D space over headphones. The crate does not ship HRIR data: download a sphere in the format that `HrirSphere` loads or bundle a fixture file. The example below loads a small HRIR sphere fixture shipped as a binary file via `include_bytes!` (four directions, one impulse per ear) to spatialise a mono buffer.
+[`hrtf`][c~hrtf~docs]↗{{hi:hrtf}} renders a mono source as binaural stereo from a head-related impulse response (HRIR) sphere file, which gives the impression of a position in 3D space over headphones. The crate does not ship HRIR data: download a sphere in the format that `HrirSphere` loads or bundle a fixture file. The example below loads a small HRIR sphere fixture shipped as a binary file via `include_bytes!` (four directions, one impulse per ear) to spatialize a mono buffer.
 
-```rust,editable
+```rust,ignore
 {{#include ../../../crates/cats/multimedia_audio/examples/audio/hrtf.rs:example}}
 ```
 
 Points to remember:
 
-- [`hrtf::HrtfProcessor::process_samples`][c~hrtf::HrtfProcessor~docs]↗{{hi:hrtf::HrtfProcessor}} takes exactly `interpolation_steps * block_len` mono samples per call and mixes stereo output into the buffer you give it. Keep the `prev_left_samples` and `prev_right_samples` buffers of a source between calls.
+- [`hrtf::HrtfProcessor::process_samples`][c~hrtf::HrtfProcessor~docs]↗{{hi:hrtf::HrtfProcessor}} takes the configured `source_len` mono samples per call and mixes stereo output into the supplied buffer. With HRTF 0.10, retain the source's `HrtfContext::history` vector between calls.
 - Pass the previous and the new direction so the filter interpolates between them; moving a source without that produces clicks.
 - Responses are resampled when the sphere is loaded, so the sphere's sample rate does not need to match your device.
 
 ## Related Topics {#related-topics .skip}
 
-- [[multimedia | Multimedia]].
-- [[multimedia_encoding | Multimedia: Encoding]].
-- [[multimedia_video | Multimedia: Video]].
+- [Multimedia](../multimedia/index.md).
+- [Multimedia Encoding](../multimedia_encoding/index.md).
+- [Video](../multimedia_video/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -22,19 +22,18 @@ These examples show several kinds of games built with Rust. Project availability
 ## Animate a Triangle with Macroquad
 
 This example separates game state updates from drawing. Each frame advances the
-triangle by the elapsed time, and pressing Space changes its color. From
-`later/crates`, run `cargo run -p games --example games` on a system with a graphical desktop.
+triangle by the elapsed time, and pressing Space changes its color. Run `just cargo run --manifest-path later/crates/Cargo.toml --locked -p games --example games` from the repository root on a system with a graphical desktop.
 
-```rust,editable
+```rust,ignore
 {{#include ../../../crates/cats/games/examples/games.rs:example}}
 ```
 
 ## Related Topics
 
-- [[game-engines | Game engines and frameworks]].
-- [[game-development | Game development]].
-- [[graphics | Graphics]].
-- [[multimedia | Multimedia]].
+- [Game Engines and Frameworks](../game-engines/index.md).
+- [Game Development](../game-development/index.md).
+- [Graphics](https://john-cd.com/rust_howto/categories/graphics/index.html).
+- [Multimedia](../multimedia/index.md).
 - [Rust game libraries](../game-engines/game_engines.md).
 
 {{#include refs.incl.md}}

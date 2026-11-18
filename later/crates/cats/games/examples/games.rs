@@ -93,10 +93,8 @@ fn draw_frame(state: &GameState) {
 async fn main() {
     let mut state = GameState::new();
 
-    #[expect(
-        clippy::infinite_loop,
-        reason = "The frame loop runs until the window is closed and the process exits"
-    )]
+    let smoke = std::env::var_os("RUST_HOWTO_SMOKE_TEST").is_some();
+    let mut presented = 0;
     loop {
         let space_pressed = is_key_pressed(KeyCode::Space);
         state.update(space_pressed, get_frame_time(), random_color);
@@ -104,6 +102,11 @@ async fn main() {
         draw_frame(&state);
 
         next_frame().await;
+        presented += 1;
+        if smoke && presented == 3 {
+            println!("Presented three Macroquad frames successfully.");
+            break;
+        }
     }
 }
 // ANCHOR_END: example
