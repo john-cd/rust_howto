@@ -35,7 +35,6 @@ bk/src/indices/
 bk/src/word_index.md
 bk/src/crate-selection/current_state_of_the_art.md
 bk/drafts/indices/
-bk/drafts/FRAGMENTS.md
 bk/drafts/TOREVIEW.md
 bk/drafts/contributing/
 # Tooling and command-line pages: they describe programs run from the shell
