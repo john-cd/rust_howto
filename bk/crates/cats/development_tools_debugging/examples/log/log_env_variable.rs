@@ -74,6 +74,7 @@ pub fn run() {
 //             .try_init();
 // }
 
+/// Ensures the logging example runs without requiring captured global log output.
 #[cfg(test)]
 mod tests {
     use super::*;

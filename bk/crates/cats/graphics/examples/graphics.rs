@@ -31,6 +31,7 @@ fn main() -> io::Result<()> {
 }
 // ANCHOR_END: example
 
+/// Checks SVG painter order so the foreground triangle follows the background.
 #[cfg(test)]
 mod tests {
     use super::*;
