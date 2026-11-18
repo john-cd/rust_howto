@@ -13,4 +13,15 @@ cargo test --locked -p visualization --examples
 
 Open `chart.svg` to inspect the static chart. Open `temp/plot.html` in a browser with access to Plotly's CDN for the interactive example. The terminal table prints exact reported values and units.
 
-Enable `--features chartistry` to build the reference Leptos component. The optional `leptos-chartistry` subcommand confirms it compiled. The upstream examples show how to mount it in a browser. The recipes are in [Visualization](../../../src/categories/visualization/index.md).
+## Chartistry browser example
+
+Install [Trunk](https://github.com/trunk-rs/trunk/releases). From `bk/crates/cats/visualization`:
+
+```console
+rustup target add wasm32-unknown-unknown
+trunk serve examples/chartistry/index.html --locked
+```
+
+Open the URL printed by Trunk and use **Add sample** to update the chart. The HTML entry point enables the optional `chartistry` feature.
+
+The recipes are in [Visualization](../../../src/categories/visualization/index.md).

@@ -2,9 +2,6 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-/// Defines a chart component for a Leptos application.
-#[cfg(feature = "chartistry")]
-mod leptos_chartistry;
 /// This example demonstrates how to create a simple scatter plot using the
 mod plotly;
 /// Demonstrates rendering a 2D line plot into an SVG string using `plotters`.
@@ -18,7 +15,7 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     #[cfg(feature = "chartistry")]
     let command = command.subcommand(
         clap::Command::new("leptos-chartistry")
-            .about("Check the Leptos component without mounting an app"),
+            .about("Show how to start the Chartistry browser example"),
     );
     let matches = command
         .subcommand_required(true)
@@ -35,7 +32,9 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         }
         #[cfg(feature = "chartistry")]
         Some(("leptos-chartistry", _)) => {
-            leptos_chartistry::run();
+            println!(
+                "From bk/crates/cats/visualization, run: trunk serve examples/chartistry/index.html --locked"
+            );
             Ok(())
         }
         _ => unreachable!("Clap requires one of the declared subcommands"),

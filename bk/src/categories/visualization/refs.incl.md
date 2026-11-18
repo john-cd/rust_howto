@@ -1,8 +1,10 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
 [ex~visualization~graph-data]: visualization.md#graph-data
+[ex~visualization~chartistry]: visualization.md#leptos-chartistry
 [ex~visualization~plotters]: visualization.md#plotters
 [ex~visualization~terminal-table]: terminal_tables.md
+[trunk~releases]: https://github.com/trunk-rs/trunk/releases
 [plotters-wasm-demo~repo]: https://github.com/plotters-rs/plotters-wasm-demo
 [c~layout-rs~docs]: https://docs.rs/layout-rs
 [c~leptos-chartistry~docs]: https://docs.rs/leptos-chartistry
@@ -24,5 +26,5 @@
 [c~egui_plot~repo~badge]: https://img.shields.io/badge/egui__plot-steelblue?logo=github
 
 [c~leptos-chartistry~docs~badge]: https://img.shields.io/crates/v/leptos-chartistry
-[p~data-processing]: ../data-processing/index.md
+[p~data-processing]: ../../other/data-processing/index.md
 [p~graphics]: ../graphics/index.md

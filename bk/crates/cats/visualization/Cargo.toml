@@ -16,6 +16,7 @@ publish.workspace = true
 keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bible"]
 categories = ["visualization"]
 autolib = false
+autoexamples = false
 
 [[example]]
 name = "terminal_table"
@@ -27,24 +28,29 @@ name = "visualization"
 path = "examples/visualization/main.rs"
 test = true
 
-[features]
-chartistry = ["dep:leptos", "dep:leptos-chartistry"]
+[[bin]]
+name = "chartistry"
+path = "examples/chartistry/main.rs"
+required-features = ["chartistry"]
 
-[dependencies]
+[dev-dependencies]
 ## General
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 clap = "4.6.7"
-# Leptos is a full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
-leptos = { version = "0.8.23", features = ["ssr"], optional = true }
-# Chartistry is a charting library for Leptos
-leptos-chartistry = { version = "0.2.3", optional = true }
 # A plotting library powered by Plotly.js
 plotly = "0.14.1"
 # A Rust drawing library focus on data plotting for both WASM and native applications
 plotters = { version = "0.3.7", default-features = false, features = ["svg_backend", "line_series"] }
 # Present exact values as a plain text table.
 tabled = { version = "0.22.0", default-features = false, features = ["std"] }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+leptos = { version = "0.8.23", features = ["csr"], optional = true }
+leptos-chartistry = { version = "0.2.3", optional = true }
+
+[features]
+chartistry = ["dep:leptos", "dep:leptos-chartistry"]
 
 [lints]
 workspace = true
