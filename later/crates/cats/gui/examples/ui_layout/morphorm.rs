@@ -75,7 +75,7 @@ pub struct SimpleStore {
 /// The computed positions and sizes.
 #[derive(Default)]
 pub struct SimpleCache {
-    /// The computed rectangle of each node.
+    /// Computed (x, y, width, height) rectangles indexed by stable entity ID.
     pub rects: std::collections::HashMap<Entity, (f32, f32, f32, f32)>,
 }
 
@@ -83,22 +83,22 @@ impl Cache for SimpleCache {
     /// Alias for `Entity` used to represent node.
     type Node = Entity;
 
-    /// Handles the width behavior for this component.
+    /// Returns the computed width, or zero before this node has cached bounds.
     fn width(&self, node: &Self::Node) -> f32 {
         self.rects.get(node).map_or(0.0, |r| r.2)
     }
 
-    /// Handles the height behavior for this component.
+    /// Returns the computed height, or zero before this node has cached bounds.
     fn height(&self, node: &Self::Node) -> f32 {
         self.rects.get(node).map_or(0.0, |r| r.3)
     }
 
-    /// Handles the posx behavior for this component.
+    /// Returns the cached horizontal position, defaulting to zero before layout.
     fn posx(&self, node: &Self::Node) -> f32 {
         self.rects.get(node).map_or(0.0, |r| r.0)
     }
 
-    /// Handles the posy behavior for this component.
+    /// Returns the cached vertical position, defaulting to zero before layout.
     fn posy(&self, node: &Self::Node) -> f32 {
         self.rects.get(node).map_or(0.0, |r| r.1)
     }
@@ -157,12 +157,12 @@ impl Node for Entity {
     /// Alias for `SimpleTree` used to represent tree.
     type Tree = SimpleTree;
 
-    /// Handles the key behavior for this component.
+    /// Uses the stable entity ID to index computed layout bounds.
     fn key(&self) -> Self::CacheKey {
         *self
     }
 
-    /// Handles the children behavior for this component.
+    /// Borrows children in insertion order; leaf nodes share an empty child list.
     fn children<'t>(&self, tree: &'t Self::Tree) -> Self::ChildIter<'t> {
         /// Empty child list shared by nodes with no children.
         static EMPTY: Vec<Entity> = Vec::new();
@@ -171,63 +171,64 @@ impl Node for Entity {
         }
     }
 
-    /// Handles the parent behavior for this component.
+    /// Borrows the parent ID, or returns None for a root or unregistered entity.
     fn parent<'t>(&'t self, tree: &'t Self::Tree) -> Option<&'t Self> {
         tree.parents.get(self)
     }
 
-    /// Handles the layout type behavior for this component.
+    /// Arranges children in a horizontal row for this minimal layout adapter.
     fn layout_type(&self, _store: &Self::Store) -> Option<LayoutType> {
         Some(LayoutType::Row)
     }
 
-    /// Handles the width behavior for this component.
+    /// Reads the configured width constraint, leaving unspecified widths to the engine.
     fn width(&self, store: &Self::Store) -> Option<Units> {
         store.width.get(self).copied()
     }
 
-    /// Handles the height behavior for this component.
+    /// Reads the configured height constraint, leaving unspecified heights to the engine.
     fn height(&self, store: &Self::Store) -> Option<Units> {
         store.height.get(self).copied()
     }
 
     // Required methods with default/stub implementations
 
+    /// Includes every node in layout; the example has no visibility state.
     fn visible(&self, _: &Self::Store) -> bool {
         true
     }
 
-    /// Handles the position type behavior for this component.
+    /// Keeps every node in the normal relative layout flow.
     fn position_type(&self, _: &Self::Store) -> Option<PositionType> {
         Some(PositionType::Relative)
     }
 
-    /// Handles the alignment behavior for this component.
+    /// Leaves alignment unspecified so the engine applies its default.
     fn alignment(&self, _: &Self::Store) -> Option<Alignment> {
         None
     }
 
-    /// Handles the left behavior for this component.
+    /// Fixes the left to zero pixels so this adapter adds no extra spacing.
     fn left(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the right behavior for this component.
+    /// Fixes the right to zero pixels so this adapter adds no extra spacing.
     fn right(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the top behavior for this component.
+    /// Fixes the top to zero pixels so this adapter adds no extra spacing.
     fn top(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the bottom behavior for this component.
+    /// Fixes the bottom to zero pixels so this adapter adds no extra spacing.
     fn bottom(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the content size behavior for this component.
+    /// Supplies no intrinsic content measurement; sizing comes from stored constraints.
     fn content_size(
         &self,
         _: &Self::Store,
@@ -238,102 +239,102 @@ impl Node for Entity {
         None
     }
 
-    /// Handles the padding left behavior for this component.
+    /// Fixes the padding left to zero pixels so this adapter adds no extra spacing.
     fn padding_left(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the padding right behavior for this component.
+    /// Fixes the padding right to zero pixels so this adapter adds no extra spacing.
     fn padding_right(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the padding top behavior for this component.
+    /// Fixes the padding top to zero pixels so this adapter adds no extra spacing.
     fn padding_top(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the padding bottom behavior for this component.
+    /// Fixes the padding bottom to zero pixels so this adapter adds no extra spacing.
     fn padding_bottom(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the vertical gap behavior for this component.
+    /// Fixes the vertical gap to zero pixels so this adapter adds no extra spacing.
     fn vertical_gap(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the horizontal gap behavior for this component.
+    /// Fixes the horizontal gap to zero pixels so this adapter adds no extra spacing.
     fn horizontal_gap(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the min vertical gap behavior for this component.
+    /// Fixes the min vertical gap to zero pixels so this adapter adds no extra spacing.
     fn min_vertical_gap(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the min horizontal gap behavior for this component.
+    /// Fixes the min horizontal gap to zero pixels so this adapter adds no extra spacing.
     fn min_horizontal_gap(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the max vertical gap behavior for this component.
+    /// Fixes the max vertical gap to zero pixels so this adapter adds no extra spacing.
     fn max_vertical_gap(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the max horizontal gap behavior for this component.
+    /// Fixes the max horizontal gap to zero pixels so this adapter adds no extra spacing.
     fn max_horizontal_gap(&self, _: &Self::Store) -> Option<Units> {
         Some(Units::Pixels(0.0))
     }
 
-    /// Handles the min width behavior for this component.
+    /// Leaves min width unspecified; the example only configures row layout and sizes.
     fn min_width(&self, _: &Self::Store) -> Option<Units> {
         None
     }
 
-    /// Handles the min height behavior for this component.
+    /// Leaves min height unspecified; the example only configures row layout and sizes.
     fn min_height(&self, _: &Self::Store) -> Option<Units> {
         None
     }
 
-    /// Handles the max width behavior for this component.
+    /// Leaves max width unspecified; the example only configures row layout and sizes.
     fn max_width(&self, _: &Self::Store) -> Option<Units> {
         None
     }
 
-    /// Handles the max height behavior for this component.
+    /// Leaves max height unspecified; the example only configures row layout and sizes.
     fn max_height(&self, _: &Self::Store) -> Option<Units> {
         None
     }
 
-    /// Handles the grid columns behavior for this component.
+    /// Leaves grid columns unspecified; the example only configures row layout and sizes.
     fn grid_columns(&self, _: &Self::Store) -> Option<Vec<Units>> {
         None
     }
 
-    /// Handles the grid rows behavior for this component.
+    /// Leaves grid rows unspecified; the example only configures row layout and sizes.
     fn grid_rows(&self, _: &Self::Store) -> Option<Vec<Units>> {
         None
     }
 
-    /// Handles the column start behavior for this component.
+    /// Leaves column start unspecified; the example only configures row layout and sizes.
     fn column_start(&self, _: &Self::Store) -> Option<usize> {
         None
     }
 
-    /// Handles the row start behavior for this component.
+    /// Leaves row start unspecified; the example only configures row layout and sizes.
     fn row_start(&self, _: &Self::Store) -> Option<usize> {
         None
     }
 
-    /// Handles the column span behavior for this component.
+    /// Leaves column span unspecified; the example only configures row layout and sizes.
     fn column_span(&self, _: &Self::Store) -> Option<usize> {
         None
     }
 
-    /// Handles the row span behavior for this component.
+    /// Leaves row span unspecified; the example only configures row layout and sizes.
     fn row_span(&self, _: &Self::Store) -> Option<usize> {
         None
     }

@@ -23,7 +23,7 @@ struct App {
 }
 
 impl ApplicationHandler for App {
-    /// Reports whether the suspended operation has resumed.
+    /// Creates the window once when the event loop resumes; exits if creation fails.
     fn resumed(&mut self, event_loop: &ActiveEventLoop) {
         if self.window.is_none() {
             let attributes = Window::default_attributes().with_title("Winit window");
@@ -37,7 +37,7 @@ impl ApplicationHandler for App {
         }
     }
 
-    /// Handles the window event behavior for this component.
+    /// Exits on a close request and reports redraw requests without drawing pixels.
     fn window_event(
         &mut self,
         event_loop: &ActiveEventLoop,

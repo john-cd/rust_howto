@@ -31,14 +31,14 @@ use baseview::dpi::LogicalSize;
 struct BaseviewExample;
 
 impl WindowHandler for BaseviewExample {
-    /// Draws the next sample from the configured distribution.
+    /// Completes a draw callback without rendering; this example only demonstrates events.
     fn draw(&self) -> Result<(), HandlerError> {
         // No drawing is performed in this example; just keep the window
         // responsive.
         Ok(())
     }
 
-    /// Handles the resized behavior for this component.
+    /// Prints the new physical pixel dimensions reported by the window backend.
     fn resized(&self, new_size: WindowSize) -> Result<(), HandlerError> {
         println!(
             "Window resized to: {}x{}",
@@ -47,7 +47,7 @@ impl WindowHandler for BaseviewExample {
         Ok(())
     }
 
-    /// Handles the on event behavior for this component.
+    /// Logs each native event and marks it captured by this handler.
     fn on_event(&self, event: Event) -> EventStatus {
         println!("Window event: {event:?}");
         EventStatus::Captured

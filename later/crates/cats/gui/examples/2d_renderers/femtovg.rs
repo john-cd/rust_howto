@@ -67,18 +67,18 @@ fn draw_frame(canvas: &mut Canvas<OpenGl>, width: u32, height: u32, scale: f32) 
     canvas.flush();
 }
 
-/// Data for femto vg app operations, including window and surface.
+/// Owns the native window and OpenGL resources needed for vector rendering.
 struct FemtoVgApp {
-    /// Window value.
+    /// Native window that receives events and determines the drawable size.
     window: Window,
 
-    /// Surface value.
+    /// Window-backed OpenGL surface resized and presented after drawing.
     surface: Surface<WindowSurface>,
 
-    /// Context value.
+    /// Current OpenGL context used when issuing canvas rendering commands.
     context: PossiblyCurrentContext,
 
-    /// Canvas value.
+    /// Vector drawing context backed by the window's OpenGL renderer.
     canvas: Canvas<OpenGl>,
 }
 
