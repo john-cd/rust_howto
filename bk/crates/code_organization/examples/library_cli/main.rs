@@ -3,6 +3,7 @@
 //! TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+/// Interprets the optional CLI name before delegating to library formatting.
 mod cli;
 
 use code_organization::format_welcome;
