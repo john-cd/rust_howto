@@ -1,6 +1,5 @@
 # TODO Reviewed ??-??-2026.
 
-temp/*
-!temp/.gitkeep
+temp/
 target/
 generated_image.png
