@@ -7,7 +7,7 @@
 ///
 /// # Arguments
 ///
-/// * `bytes` - Input bytes to decode or write.
+/// * `bytes` - Bytes whose wrapping sum is computed without copying or allocation.
 pub fn checksum(bytes: &[u8]) -> u8 {
     bytes.iter().fold(0_u8, |sum, byte| sum.wrapping_add(*byte))
 }
@@ -27,7 +27,7 @@ fn run() -> u8 {
     checksum(b"Rust")
 }
 
-/// services.
+/// Verifies empty input and overflow behavior without operating-system services.
 #[cfg(test)]
 mod tests {
     use super::*;

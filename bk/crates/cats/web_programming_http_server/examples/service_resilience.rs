@@ -11,36 +11,47 @@ use tower::ServiceExt;
 use tower::service_fn;
 
 // ANCHOR: example
+/// Selects the simulated upstream behavior used to exercise retry decisions.
 #[derive(Clone, Copy, PartialEq, Eq)]
 #[cfg_attr(
     not(test),
     expect(dead_code, reason = "failure cases are exercised in the tests")
 )]
 enum Operation {
-    /// Represents the read case of operation.
+    /// Idempotent request that succeeds after the configured transient failures.
     Read,
-    /// Represents the write case of operation.
+    /// Non-idempotent request whose transient failure must not trigger a retry.
     Write,
-    /// Represents the permanent failure case of operation.
+    /// Request that fails immediately with a non-retryable error.
     PermanentFailure,
-    /// Represents the stall case of operation.
+    /// Request that never completes and must be cancelled by the total deadline.
     Stall,
 }
 
-/// Defines the possible failure cases handled by this code.
+/// Distinguishes upstream errors from exhaustion of the caller's retry budget.
 #[derive(Debug, PartialEq, Eq)]
 enum Failure {
-    /// Represents the transient case of failure.
+    /// Upstream failure that can be retried only for an idempotent read.
     Transient,
-    /// Represents the permanent case of failure.
+    /// Non-retryable upstream failure or failure to construct the example runtime.
     Permanent,
-    /// Represents the retry exhausted case of failure.
+    /// All three read attempts returned a transient error.
     RetryExhausted,
-    /// Represents the deadline case of failure.
+    /// The total time budget elapsed while waiting for admission or a response.
     Deadline,
 }
 
-/// Handles the call with budget behavior for this component.
+/// Calls a simulated upstream with at most three attempts and one total deadline.
+///
+/// Only reads are retried, preventing duplicate effects for writes. The shared
+/// counter determines which read attempt first succeeds (`fail_first`) and lets
+/// tests observe actual calls. Cloned services share a two-request concurrency
+/// limit; this example issues attempts sequentially without backoff.
+///
+/// # Errors
+///
+/// Returns the first non-retryable failure, retry exhaustion after three failed
+/// reads, or a deadline error when the timeout cancels the entire retry future.
 async fn call_with_budget(
     operation: Operation,
     fail_first: usize,
@@ -79,6 +90,7 @@ async fn call_with_budget(
 }
 // ANCHOR_END: example
 
+/// Demonstrates a read succeeding after one transient upstream failure.
 fn main() -> Result<(), Failure> {
     let runtime = tokio::runtime::Builder::new_current_thread()
         .build()
@@ -94,7 +106,7 @@ fn main() -> Result<(), Failure> {
     Ok(())
 }
 
-/// Tests behavior implemented by the surrounding module.
+/// Verifies retry counts, total deadlines, and non-idempotent write handling.
 #[cfg(test)]
 mod tests {
     use super::*;

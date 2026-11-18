@@ -14,14 +14,15 @@ use serde::Deserializer;
 use serde::Serialize;
 
 // ANCHOR: example
+/// Preserves the distinction between an omitted JSON field and explicit null.
 #[derive(Default, Debug)]
 enum Field<T> {
-    /// Represents the absent case of field.
+    /// No key was supplied; retain the stored value through `serde(default)`.
     #[default]
     Absent,
-    /// Represents the null case of field.
+    /// An explicit JSON null requests clearing the stored value.
     Null,
-    /// Represents the value case of field.
+    /// A non-null JSON value requests replacing the stored value.
     Value(
         /// Replacement value carried by this JSON patch operation.
         T,
@@ -29,7 +30,7 @@ enum Field<T> {
 }
 
 impl<'de, T: Deserialize<'de>> Deserialize<'de> for Field<T> {
-    /// Handles the deserialize behavior for this component.
+    /// Maps a present JSON value to replacement or clear; missing keys use Default.
     fn deserialize<D: Deserializer<'de>>(deserializer: D) -> Result<Self, D::Error> {
         Ok(match Option::<T>::deserialize(deserializer)? {
             Some(value) => Self::Value(value),
@@ -38,32 +39,36 @@ impl<'de, T: Deserialize<'de>> Deserialize<'de> for Field<T> {
     }
 }
 
-/// Data for profile patch operations, including nickname.
+/// Incoming partial update whose missing fields leave the profile unchanged.
 #[derive(Deserialize)]
 struct ProfilePatch {
-    /// Nickname stored for this value.
+    /// Requested nickname change: retain, clear, or replace the stored text.
     #[serde(default)]
     nickname: Field<String>,
 }
 
-/// Data for profile operations, including nickname.
+/// Stored profile serialized after a successful partial update.
 #[derive(Clone, Serialize)]
 struct Profile {
-    /// Nickname stored for this value.
+    /// Current nickname, or None when no nickname is configured.
     nickname: Option<String>,
 }
 
-/// Alias for `Arc<Mutex<Profile>>` used to represent shared profile.
+/// Shared in-memory state protected during a synchronous profile mutation.
 type SharedProfile = Arc<Mutex<Profile>>;
-/// Alias for `(StatusCode, Json<serde_json::Value>)` used to represent api error.
+/// HTTP error status paired with a JSON object containing an error message.
 type ApiError = (StatusCode, Json<serde_json::Value>);
 
-/// Handles the api error behavior for this component.
+/// Builds the common JSON error envelope with the supplied HTTP status.
 fn api_error(status: StatusCode, message: &str) -> ApiError {
     (status, Json(serde_json::json!({ "error": message })))
 }
 
-/// Handles the update behavior for this component.
+/// Applies a validated nickname patch while holding the profile lock.
+///
+/// Rejects malformed JSON with 400, empty or over-32-byte names with 422, and a
+/// poisoned state lock with 500. Validation precedes mutation; omitted keys
+/// retain state, null clears it, and strings replace it.
 async fn update(
     State(profile): State<SharedProfile>,
     body: Result<Json<ProfilePatch>, JsonRejection>,
@@ -88,7 +93,7 @@ async fn update(
     Ok(Json(current.clone()))
 }
 
-/// Handles the app behavior for this component.
+/// Wires PATCH /profile to the supplied shared profile without starting a server.
 fn app(profile: SharedProfile) -> Router {
     Router::new()
         .route("/profile", patch(update))
@@ -96,6 +101,7 @@ fn app(profile: SharedProfile) -> Router {
 }
 // ANCHOR_END: example
 
+/// Builds a sample router and prints the command for its in-process tests.
 fn main() {
     let _router = app(Arc::new(Mutex::new(Profile {
         nickname: Some("Ada".into()),
@@ -105,7 +111,7 @@ fn main() {
     );
 }
 
-/// Tests behavior implemented by the surrounding module.
+/// Exercises patch semantics and rejection paths through the in-process router.
 #[cfg(test)]
 mod tests {
     use axum::body::Body;
@@ -115,7 +121,7 @@ mod tests {
 
     use super::*;
 
-    /// Handles the request behavior for this component.
+    /// Sends a JSON PATCH through the router and collects its status and JSON body.
     async fn request(router: Router, body: &str) -> (StatusCode, serde_json::Value) {
         let response = router
             .oneshot(
