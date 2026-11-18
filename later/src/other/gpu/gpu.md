@@ -14,44 +14,22 @@ The recipes below require their own compiler, driver, or runtime. For portable W
 
 [`rust-gpu`][rust-gpu~repo]↗{{hi:rust-gpu}} compiles Rust shader crates to SPIR-V for Vulkan. It is experimental and requires a nightly toolchain plus `spirv-builder`; follow its [development guide][rust-gpu~book]↗ for the matching setup and compiler version.
 
-The following is shader-crate source, shown as an ignored snippet because it requires the rust-gpu compiler backend. It emits a triangle with a solid red fragment color. It belongs in a separate shader crate's `src/lib.rs`, outside the shared `later/crates` workspace.
+The standalone project at `later/crates/gpu/rust_gpu_triangle` builds this pair of shaders and embeds their SPIR-V in a wgpu host. The vertex shader supplies three positions and the fragment shader writes opaque red.
 
 ```rust,ignore
-#![no_std]
-
-use spirv_std::glam::{vec4, Vec4};
-use spirv_std::spirv;
-
-/// Writes the clip-space position for each of the triangle's three vertices.
-#[spirv(vertex)]
-pub fn main_vs(
-    #[spirv(vertex_index)] vertex_index: i32,
-    #[spirv(position)] position: &mut Vec4,
-) {
-    *position = match vertex_index {
-        0 => vec4(-0.5, -0.5, 0.0, 1.0),
-        1 => vec4(0.5, -0.5, 0.0, 1.0),
-        _ => vec4(0.0, 0.5, 0.0, 1.0),
-    };
-}
-
-/// Writes opaque red to the first color attachment.
-#[spirv(fragment)]
-pub fn main_fs(#[spirv(location = 0)] output: &mut Vec4) {
-    *output = vec4(1.0, 0.0, 0.0, 1.0);
-}
+{{#include ../../../crates/gpu/rust_gpu_triangle/shader/src/lib.rs}}
 ```
 
 ### Build the shader separately {#rust-gpu-build}
 
-1. Select a rust-gpu release or Git revision and copy its `rust-toolchain.toml` into a separate project. The compiler backend requires that exact nightly; the book's stable toolchain and nightly formatter pin serve different purposes.
-2. Create a shader library with `crate-type = ["dylib"]` and a `spirv-std` dependency matching the selected release or revision. Keep it in its own workspace so its toolchain and dependencies are independent of this book's examples.
-3. In a host crate in that project, add the matching `spirv-builder` as a build dependency. Its `build.rs` compiles the shader crate for a SPIR-V target such as `spirv-unknown-vulkan1.1`; follow the [shader build guide][rust-gpu~shader-guide] for the builder API and required toolchain components of the chosen version.
-4. Load the generated SPIR-V module in a compatible graphics application, select `main_vs` and `main_fs` as the pipeline entry points, and draw three vertices. A shader defines GPU stages; the host must still create the device, pipeline, render target, and draw commands.
+The project pins Rust-GPU 0.11.0 and `nightly-2026-08-15` with `rust-src`, `rustc-dev`, and `llvm-tools`. The first build needs a C++ compiler for the bundled SPIR-V Tools. It compiles the shader to `spirv-unknown-vulkan1.1`, validates the resulting module for Vulkan 1.1, and embeds it in the host. See the [shader build guide][rust-gpu~shader-guide] for the toolchain details.
 
-Check the generated SPIR-V module before loading it. Validate it for the target Vulkan environment and inspect the vertex and fragment entry points. A runtime check should render to an offscreen target and compare a pixel inside the triangle with the expected red and a background pixel with the clear color. The shader source alone cannot exercise pipeline state, vertex ordering, or readback.
+```console
+rustup toolchain install nightly-2026-08-15 --profile minimal --component rust-src,rustc-dev,llvm-tools
+just cargo +nightly-2026-08-15 test --locked --manifest-path later/crates/gpu/rust_gpu_triangle/Cargo.toml -- --include-ignored --nocapture
+```
 
-SPIR-V uses rust-gpu's target backend. Gating these entry points behind `target_arch = "wasm32"` selects WebAssembly. Keep the shader project and its compiler pin separate from the book's stable Cargo workspace.
+The host selects a Vulkan adapter and the `main_vs` and `main_fs` entry points. It renders to a 64-by-64 RGBA texture, copies it to a mappable buffer, and checks a red interior pixel and a blue exterior pixel. The checked-in project can build and validate SPIR-V without rendering. Run the ignored test to check the pipeline and readback on a GPU. Keep the Rust-GPU nightly isolated from the stable book workspace.
 
 ## Call CUDA from Rust with `cudarc` {#cudarc}
 
@@ -96,6 +74,40 @@ opencl3 = "=0.12.4"
 ```
 
 Run `cargo run` and look for `Verified 130 doubled values`. For event profiling or nonblocking transfers, see the [upstream OpenCL example][opencl3~example]. An asynchronous transfer requires its host memory to remain valid until the completion event. [`ocl`][c~ocl~docs] offers a higher-level OpenCL interface.
+
+## Compare CPU and GPU Image Blur {#image-blur}
+
+The standalone project at `later/crates/gpu/image_blur` blurs a grayscale image with the same separable five-tap Gaussian approximation on both devices. The first pass sums neighboring columns with weights `[1, 4, 6, 4, 1]`. The second pass uses the same weights on rows and rounds once, after both passes. Image edges clamp to the nearest pixel. This integer formulation lets the benchmark compare every pixel exactly.
+
+```wgsl
+{{#include ../../../crates/gpu/image_blur/src/blur.wgsl}}
+```
+
+Run an optimized build from the repository root:
+
+```console
+just cargo run --release --locked --manifest-path later/crates/gpu/image_blur/Cargo.toml
+```
+
+The CPU path distributes independent rows across Rayon workers and reuses its scratch buffers. The GPU path reuses its pipelines and buffers. Each end-to-end sample includes upload, both compute passes, synchronization, and readback into a host buffer. The resident-data column measures submission and completion for input already on the GPU. Both columns use host wall-clock time. Setup and warm-up are outside the measurement, and every end-to-end readback is checked before the next sample.
+
+The program prints the adapter and median of seven samples at each size. A CPU-to-GPU ratio above 1 means the GPU was faster **with transfers included**. A smaller resident-data time shows what can change when the next stage also runs on the GPU.
+
+In one Windows run using 20 Rayon threads and an RTX 3060 Laptop GPU over Vulkan, the 512-pixel case completed in 0.58 ms on the CPU and 0.47 ms on the GPU including transfers. At 2,048 pixels per row, the times were 2.20 ms on the CPU, 5.26 ms on the GPU including transfers, and 0.55 ms with the data already on the GPU. This run illustrates why input size alone cannot predict a crossover. Compare your own driver, transfer path, thread count, and workload.
+
+Set `WGPU_BACKEND` to `vulkan`, `dx12`, or `metal` on a host with that backend. Set `WGPU_ADAPTER_NAME` to a substring of the adapter name, such as `NVIDIA`, `Intel`, or `AMD`. Record the actual device and backend printed by the program when comparing runs.
+
+## Check the Shader in Browser WebGPU {#webgpu-smoke}
+
+Serve the image-blur project on loopback and open `http://127.0.0.1:8000/web/` in a WebGPU-capable browser.
+
+```sh
+python -m http.server 8000 --bind 127.0.0.1 --directory later/crates/gpu/image_blur
+```
+
+The page dispatches the same WGSL as the Rust benchmark. It checks every pixel of a 130-by-130 image against a separate, direct 5-by-5 JavaScript reference. The odd width tests the workgroup bounds checks. A successful run reports 16,900 verified pixels and the browser's adapter information. Stop the server with Ctrl+C when the check finishes.
+
+The staged checks exercised the native blur on NVIDIA and Intel adapters over Vulkan and Direct3D 12, the Rust-GPU triangle on Intel Vulkan, and browser WebGPU in Chrome on the Intel adapter. The native benchmark can also check AMD Vulkan and Apple Metal when those devices and drivers are available.
 
 ## Further Reading {#further-reading .skip}
 

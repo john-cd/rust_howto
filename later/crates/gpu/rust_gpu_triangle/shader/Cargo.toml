@@ -1,0 +1,13 @@
+[workspace]
+
+[package]
+name = "triangle_shader"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[lib]
+crate-type = ["dylib"]
+
+[dependencies]
+spirv-std = "=0.11.0"
