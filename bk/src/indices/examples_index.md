@@ -840,6 +840,10 @@
 
 {{#include ../categories/internationalization/internationalization.incl.md}}
 
+## Localization
+
+{{#include ../categories/localization/localization.incl.md}}
+
 ## Network Programming
 
 ### Iroh Loopback

@@ -4,7 +4,7 @@
 
 [![cat~internationalization][cat~internationalization~badge]][cat~internationalization]{{hi:Internationalization}}
 
-Internationalization (i18n) is the design of software so it can be adapted to different languages and regions. Localization (l10n) is the work of adapting a product for a particular audience, including translated messages, formats, and cultural conventions. Plan for both when designing user-facing text and data.
+Internationalization (i18n) is the design of software so it can be adapted to different languages and regions. [Localization](../localization/index.md) adapts a product for a particular audience, including translated messages, formats, and cultural conventions. Plan for both when designing user-facing text and data.
 
 ## Choose Locale and Fallbacks
 
@@ -40,6 +40,7 @@ Test messages with missing translations and fallback locales, long translated st
 
 ## Related Topics
 
+- [Localization](../localization/index.md)
 - [Date and Time](../date-and-time/index.md)
 - [Value Formatting](../value-formatting/number_formatting.md)
 - [Unicode Text](../text-processing/unicode.md)
