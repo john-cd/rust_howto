@@ -25,7 +25,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [Serverless](https://github.com/john-cd/rust_howto/blob/develop/later/src/other/cloud/rust_native_cloud_development.md#write-serverless-functions) Rust.
 - More [database](../../categories/database/index.md) examples, including object databases, graph databases, e.g. BonsaiDB, neo4j.
 - [Embedded](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md) systems.
-- [Visualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/visualization/index.md).
+- [Visualization](../../categories/visualization/index.md).
 - [Graphics](../../categories/graphics/index.md).
 - [Games](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/games/index.md), [Game Engines](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/game-engines/index.md).
 - [Search](../../categories/database/search.md) engines.

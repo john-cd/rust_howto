@@ -39,4 +39,4 @@
 [p~physics]: physics_engines.md
 [p~randomness]: https://john-cd.com/rust_howto/categories/algorithms/random_value_generation.html
 [p~science_robotics]: ../science_robotics/index.md
-[p~visualization]: ../visualization/index.md
+[p~visualization]: https://john-cd.com/rust_howto/categories/visualization/index.html

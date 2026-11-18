@@ -400,6 +400,10 @@
 - [Value Formatting](categories/value-formatting/index.md)
   - [Number Formatting](categories/value-formatting/number_formatting.md)
 
+- [Visualization](categories/visualization/index.md)
+  - [Plot Static and Interactive Charts](categories/visualization/visualization.md)
+  - [Present Measurements in a Terminal Table](categories/visualization/terminal_tables.md)
+
 - [Web Programming](categories/web-programming/index.md)
   - [Extracting Links](categories/web-programming/scraping.md)
   - [HTTP Types and Interfaces](categories/web-programming/http_types_and_interfaces.md)

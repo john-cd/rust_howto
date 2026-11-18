@@ -85,7 +85,7 @@ These recipes were added or updated during the coverage review.
 
 - [Source diagnostics](src/categories/compilers/source_diagnostics.md) combines
   Logos byte spans with codespan-reporting labels.
-- [Terminal tables](src/categories/visualization/terminal_tables.md) uses tabled
+- [Terminal tables](../bk/src/categories/visualization/terminal_tables.md) uses tabled
   when readers need exact values and units.
 - [Route measurements](src/categories/science/route_measurements.md) uses geo
   to compare a measured route with a simple model.

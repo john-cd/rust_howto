@@ -18,4 +18,4 @@
 [p~mathematics]: https://john-cd.com/rust_howto/categories/mathematics/index.html
 [p~science]: ../science/index.md
 [p~simulation]: ../simulation/index.md
-[p~visualization]: ../visualization/index.md
+[p~visualization]: https://john-cd.com/rust_howto/categories/visualization/index.html

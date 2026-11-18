@@ -1299,3 +1299,6 @@
 [c~objc2-metal~docs~badge]: https://img.shields.io/crates/v/objc2-metal?label=objc2-metal
 [c~spirv-reflect~docs]: https://docs.rs/spirv-reflect
 [c~spirv-reflect~docs~badge]: https://img.shields.io/crates/v/spirv-reflect?label=spirv-reflect
+[ex~visualization~graph-data]: ../categories/visualization/visualization.md#graph-data
+[ex~visualization~plotters]: ../categories/visualization/visualization.md#plotters
+[ex~visualization~terminal-table]: ../categories/visualization/terminal_tables.md

@@ -136,10 +136,6 @@
     - [Containerization](categories/virtualization/containerization.md)
     - [Using Containers](categories/virtualization/using_containers.md)
 
-- [Visualization](categories/visualization/index.md)
-  - [Plot Static and Interactive Charts](categories/visualization/visualization.md)
-  - [Present Measurements in a Terminal Table](categories/visualization/terminal_tables.md)
-
 - [Web assembly](categories/wasm/index.md)
   - [WASM Basics](categories/wasm/wasm_basics.md)
   - [WASM Development](categories/wasm/wasm_development.md)
