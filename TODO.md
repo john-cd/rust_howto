@@ -17,6 +17,7 @@ incoming link from the example index. Some are overview pages that share recipes
 
 | Priority | Reader-facing work |
 | --- | --- |
+| P2 | Correct the [shared-reference call-trait rule](https://github.com/john-cd/rust_howto/issues/2394) in Closures. |
 | P2 | Repair [stale draft links][nov18-links] and [missing profiling redirects][nov18-redirects]. |
 | P2 | Reconcile [recipe and crate indices][nov18-indices] and [Playground eligibility][nov18-play]. |
 | P2 | Fix the [benchmark correctness check][nov18-bench], [broadcast task completion][nov18-broadcast] and [standalone Moka setup][nov18-cache]. |
