@@ -38,7 +38,7 @@ window manager. A file path after `--` overrides the bundled OBJ. A missing
 file returns an error naming the path before a window opens.
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/rendering/examples/engine_scene.rs:example}}
+{{#include ../../../crates/cats/rendering_engine/examples/engine_scene.rs:example}}
 ```
 
 The example pins three-d 0.19.0 and three-d-asset 0.10.0. Keep the camera
@@ -52,14 +52,14 @@ This bounded example implements a small rendering core with `wgpu`. It draws a r
 From the repository root:
 
 ```sh
-just cargo run --manifest-path bk/crates/Cargo.toml --locked -p rendering_graphics_api --features wgpu --example offscreen_render
-just cargo test --manifest-path bk/crates/Cargo.toml --locked -p rendering_graphics_api --features wgpu --example offscreen_render -- --include-ignored
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p rendering --features wgpu --example offscreen_render
+just cargo test --manifest-path bk/crates/Cargo.toml --locked -p rendering --features wgpu --example offscreen_render -- --include-ignored
 ```
 
 On Windows, set `WGPU_BACKEND=dx12` or `WGPU_BACKEND=vulkan` in the shell to test a specific native backend. A supported native GPU adapter and driver are required. The explicit GPU test is ignored by default; the shader-validation and malformed-frame tests run without accessing a GPU. Failure to obtain an adapter is an error, not a skipped success.
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/rendering_graphics_api/examples/offscreen_render.rs:example}}
+{{#include ../../../crates/cats/rendering_engine/examples/offscreen_render.rs:example}}
 ```
 
 The 64-pixel RGBA row occupies 256 bytes, satisfying the texture-copy row-alignment requirement without padding. Other widths need a padded staging row and removal of that padding before image comparison; the [layout example](../rendering_graphics-api/frame_layout.md) tests 65-pixel rows, malformed buffers, and aspect-preserving viewports. `Rgba8Unorm` gives linear byte values here; sRGB targets and antialiased edges require color-aware comparisons and tolerances. The checks deliberately sample pixels away from triangle edges.

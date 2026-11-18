@@ -2,7 +2,7 @@
 
 # Concurrency
 
-This crate contains code examples for the **Concurrency** category on crates.io. It demonstrates integration with key ecosystem crates including `actix`, `anyhow`, `await-tree`, `clap`, `crossbeam`, `crossbeam-channel`.
+This crate contains code examples for the **Concurrency** category on crates.io. It demonstrates integration with key ecosystem crates including `actix`, `anyhow`, `clap`, `crossbeam`, `crossbeam-channel`.
 
 ## Examples Covered
 
@@ -18,7 +18,6 @@ This crate contains code examples for the **Concurrency** category on crates.io.
 - **Shared State** (`examples/shared_state/`): Demonstrates concepts like `arc_make_mut`, `global_mut_state`, `send_sync`, `shared_state_mutex`, `shared_state_parking_lot`, `shared_state_parking_lot2`.
 - **Spsc** (`examples/spsc/`): Demonstrates concepts like `ringbuf`, `rtrb`.
 - **Threadpool** (`examples/threadpool/`): Demonstrates concepts like `threadpool_fractal`, `threadpool_walk`.
-- **Standalone Examples**: `await_tree`.
 
 ## Usage
 

@@ -108,8 +108,8 @@ Use [`qsv`][c~qsv~repo]↗{{hi:qsv}} to inspect or reshape a file from the shell
 ## Related Topics {#related-topics .skip}
 
 - [Serde][c~serde~docs]↗{{hi:serde}} for mapping CSV fields to typed Rust data.
-- [DataFrames](../data-processing/dataframes.md) for CSV analytics with Polars.
-- [Data Engineering](../data-processing/data_engineering.md#arrow-csv) for reading CSV into typed Arrow columns.
+- [DataFrames](../../other/data-processing/dataframes.md) for CSV analytics with Polars.
+- [Data Engineering](../../other/data-processing/data_engineering.md#arrow-csv) for reading CSV into typed Arrow columns.
 - [Encoding index][p~encoding] for text, binary, and format-specific serialization guidance.
 
 {{#include refs.incl.md}}

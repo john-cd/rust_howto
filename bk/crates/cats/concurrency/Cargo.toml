@@ -28,11 +28,6 @@ path = "examples/atomics/main.rs"
 test = true
 
 [[example]]
-name = "await_tree"
-path = "examples/await_tree.rs"
-test = true
-
-[[example]]
 name = "concurrent_data_structures"
 path = "examples/concurrent_data_structures/main.rs"
 test = true
@@ -87,8 +82,6 @@ test = true
 actix = "0.13.6"
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
-# Generate accurate and informative tree dumps of asynchronous tasks.
-await-tree = { version = "0.3.1", features = ["tokio"] }
 # A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
 # Multi-producer multi-consumer channels for message passing
@@ -109,8 +102,6 @@ futures = "0.3.34"
 glob = "0.3.4"
 # JPEG and PNG are the only codecs used by the thumbnail and fractal examples.
 image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
-# Extra iterator adaptors, iterator methods, free functions, and macros.
-itertools = "0.15.0"
 # A collection of numeric types and traits for Rust, including bigint, complex, rational, range iterators, generic integers, and more!
 num = "0.4.3"
 # Get the number of CPUs on a machine.

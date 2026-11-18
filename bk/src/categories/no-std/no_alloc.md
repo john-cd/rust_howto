@@ -33,7 +33,7 @@ Use [`heapless::pool`][c~heapless::pool~docs] when a bounded set of objects must
 The example fills a `heapless::Vec<u8, 8>`, handles the rejected ninth item, and formats the count into a `heapless::String<32>`. A failed push returns the item without changing the vector; `write!` propagates formatting failure. The snippet uses only `core` and `heapless` with default features disabled, so its storage operations do not require `std` or an allocator. The surrounding example binary runs on the host.
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/no_std_no_alloc/examples/no_alloc/no_alloc.rs:example}}
+{{#include ../../../crates/cats/no_std/no_alloc/examples/no_alloc/no_alloc.rs:example}}
 ```
 
 From `bk/crates`, run `cargo run --locked -p no_std_no_alloc --example no_alloc`. The assertions demonstrate full-vector behavior and the formatted content.

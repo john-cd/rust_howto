@@ -6,6 +6,7 @@ Book code examples for creating and using Cargo plugins and automating tasks wit
 
 ## Examples Covered
 
+- **Maintaining** (`examples/maintaining/`): Shell recipes for Cargo SemVer Checks and Cargo Hack.
 - **Building** (`examples/building/`): Demonstrates concepts like `xshell`.
 - **Write Cargo Plugin** (`examples/write_cargo_plugin/`): Demonstrates concepts like `cargo_subcommand`.
 

@@ -31,7 +31,7 @@ or engineering question.
 
 ## Related topics
 
-- [AWS Lambda](../../categories/cloud/aws_lambda.md) and deployment environments.
+- [AWS Lambda](../../other/cloud/aws_lambda.md) and deployment environments.
 - [Concurrency](../../categories/concurrency/index.md) and asynchronous behavior.
-- [Data Processing](../../categories/data-processing/index.md) and storage choices.
+- [Data Processing](../../other/data-processing/index.md) and storage choices.
 - [Web Programming](../../categories/web-programming_http-server/index.md) and service interfaces.

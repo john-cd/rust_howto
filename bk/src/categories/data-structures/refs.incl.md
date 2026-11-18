@@ -46,7 +46,7 @@
 [p~b-trees]: b-trees.md
 [p~binary_heaps]: binary_heaps.md
 [p~data-structures]: index.md
-[p~dataframes]: ../data-processing/dataframes.md
+[p~dataframes]: ../../other/data-processing/dataframes.md
 [p~data_types]: ../../language/data_types.md
 [p~graphs]: graphs.md
 [p~hashmaps]: hashmaps.md

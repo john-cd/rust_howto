@@ -13,7 +13,7 @@ Use Cargo's built-in commands for routine build, test, and publish tasks. These 
 [`cargo-semver-checks`][c~cargo-semver-checks~docs] checks a crate's public API against a compatibility baseline. Run it before publishing a library release; review the reported changes because a detected API difference still needs human SemVer judgment.
 
 ```sh
-{{#include ../../../crates/cats/development_tools/examples/cargo_plugins/semver_checks.sh:example}}
+{{#include ../../../crates/cats/development_tools_cargo_plugins/examples/maintaining/semver_checks.sh:example}}
 ```
 
 ## Inspect Macro Expansion with `cargo-expand` {#cargo-expand}
@@ -35,7 +35,7 @@ Use Cargo's built-in commands for routine build, test, and publish tasks. These 
 `cargo-hack` can check each feature independently or test feature combinations. Feature powersets grow exponentially, so reserve a full powerset run for crates with a manageable number of features.
 
 ```sh
-{{#include ../../../crates/cats/development_tools/examples/cargo_plugins/cargo_hack.sh:example}}
+{{#include ../../../crates/cats/development_tools_cargo_plugins/examples/maintaining/cargo_hack.sh:example}}
 ```
 
 ## Background on SemVer Diagnostics

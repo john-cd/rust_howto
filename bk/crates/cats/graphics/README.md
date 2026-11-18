@@ -6,6 +6,7 @@ This crate contains the runnable examples in the book's **Graphics** category.
 
 ## Examples Covered
 
+- **Fontdue Glyph** (`examples/fontdue_glyph/`): Rasterizes a glyph and reads its font metrics.
 - `graphics`: write a simple SVG scene.
 - `2d_raster_graphics`: draw a CPU-backed pixmap with `tiny-skia`.
 - `2d_vector_graphics`: tessellate a path with `lyon`.

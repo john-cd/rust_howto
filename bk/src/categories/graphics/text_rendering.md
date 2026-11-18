@@ -33,11 +33,11 @@ text-layout layer.
 From `bk/crates`, run:
 
 ```console
-cargo run --locked -p rendering --example text_rendering
+cargo run --locked -p graphics --example fontdue_glyph
 ```
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/rendering/examples/text_rendering/rasterize_glyph.rs:example}}
+{{#include ../../../crates/cats/graphics/examples/fontdue_glyph/rasterize_glyph.rs:example}}
 ```
 
 ## Related Topics

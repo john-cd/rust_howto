@@ -112,7 +112,7 @@
 
 - [Cloud](other/cloud/index.md)
   - [Rust on AWS](other/cloud/aws.md)
-    - [Test an AWS Lambda Handler Locally](categories/cloud/aws_lambda.md)
+    - [Test an AWS Lambda Handler Locally](other/cloud/aws_lambda.md)
   - [Deploy Rust Applications](other/cloud/rust_native_cloud_development.md)
 
 - [Compression](categories/compression/index.md)
@@ -181,9 +181,9 @@
   - [Stack-allocated Data Structures](categories/data-structures/stack-allocated.md)
   - [Unique Identifiers](categories/data-structures/unique_identifiers.md)
 
-- [Data Processing](categories/data-processing/index.md)
-  - [DataFrames](categories/data-processing/dataframes.md)
-  - [Data Engineering](categories/data-processing/data_engineering.md)
+- [Data Processing](other/data-processing/index.md)
+  - [DataFrames](other/data-processing/dataframes.md)
+  - [Data Engineering](other/data-processing/data_engineering.md)
 
 - [Date and Time](categories/date-and-time/index.md)
   - [Duration and Calculation](categories/date-and-time/duration.md)
@@ -461,12 +461,12 @@
   - [Rhai](other/scripting/rhai.md)
   - [Task Automation with Rust](other/scripting/task_automation.md)
 
-- [Standalone Topics](categories/standalone/index.md)
-  - [Integer Overflow](categories/standalone/overflow.md)
-  - [Inheritance](categories/standalone/inheritance.md)
-  - [Plugin Architecture](categories/standalone/plugin.md)
-  - [Predicates](categories/standalone/predicates.md)
-  - [Self-Referential Types](categories/standalone/self_referential.md)
+- [Standalone Topics](other/standalone/index.md)
+  - [Integer Overflow](other/standalone/overflow.md)
+  - [Inheritance](other/standalone/inheritance.md)
+  - [Plugin Architecture](other/standalone/plugin.md)
+  - [Predicates](other/standalone/predicates.md)
+  - [Self-Referential Types](other/standalone/self_referential.md)
 
 - [Date and Time](categories/date-and-time/jiff_dst.md)
 - [Text Processing](categories/text-processing/index.md)

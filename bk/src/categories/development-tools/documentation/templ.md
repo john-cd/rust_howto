@@ -10,7 +10,7 @@ Use `templ --help` to list its commands and options. This does not contact
 crates.io:
 
 ```console
-{{#include ../../../../crates/cats/development_tools_documentation/examples/templ/help.sh}}
+{{#include ../../../../crates/cats/development_tools/documentation/examples/templ/help.sh}}
 ```
 
 ## Generate a Rust by Example Badge Offline {#templ-rbe}
@@ -20,7 +20,7 @@ Example book. Its output is built from the supplied chapter name, so this
 command is deterministic and does not contact a service:
 
 ```console
-{{#include ../../../../crates/cats/development_tools_documentation/examples/templ/rbe.sh}}
+{{#include ../../../../crates/cats/development_tools/documentation/examples/templ/rbe.sh}}
 ```
 
 ## Generate a Known Category Badge Offline {#templ-category-badge}

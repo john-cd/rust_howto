@@ -7,7 +7,7 @@ use fontdue::Font;
 use fontdue::FontSettings;
 
 /// A font bundled with the repository (SIL Open Font License 1.1).
-const FONT_BYTES: &[u8] = include_bytes!("../../../graphics/assets/Roboto-Regular.ttf");
+const FONT_BYTES: &[u8] = include_bytes!("../../assets/Roboto-Regular.ttf");
 
 /// Rasterizes `'A'` at 32 pixels and returns its bitmap size and coverage.
 fn rasterize_glyph() -> anyhow::Result<(usize, usize, u32)> {

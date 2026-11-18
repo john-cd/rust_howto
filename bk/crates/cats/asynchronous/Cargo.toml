@@ -18,6 +18,11 @@ categories = ["asynchronous"]
 autolib = false
 
 [[example]]
+name = "await_tree"
+path = "examples/await_tree.rs"
+test = true
+
+[[example]]
 name = "async"
 path = "examples/async/main.rs"
 test = true
@@ -96,6 +101,7 @@ async-channel = "2.5.0"
 # Deferred (#1748): add `async-stream = "0.3.6"` only when a streams recipe needs it;
 # `futures::stream` covers the current recipes.
 async-trait = "0.1.92"
+# Generate informative tree dumps of asynchronous tasks.await-tree = { version = "0.3.1", features = ["tokio"] }
 # A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
 # An implementation of futures and streams featuring zero allocations, composability, and iterator-like interfaces.
@@ -104,6 +110,7 @@ futures = "0.3.34"
 futures-executor = "0.3.34"
 # Common utilities and extension traits for the futures-rs library.
 futures-util = "0.3.34"
+# Extra iterator adaptors, iterator methods, free functions, and macros.itertools = "0.15.0"
 # The fast sync and async channel that Rust deserves
 kanal = "0.1.1"
 # Enable readiness polling and wakers for the Mio example.

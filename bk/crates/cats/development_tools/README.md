@@ -7,7 +7,6 @@ This crate contains code examples for the **Development Tools** category on crat
 ## Examples Covered
 
 - **Automation** (`examples/automation/`): Demonstrates concepts like `git_churn`, `workspace_lints`.
-- **Cargo Plugins** (`examples/cargo_plugins/`): Code examples covering cargo plugins.
 - **Crate Indices** (`examples/crate_indices/`): Demonstrates concepts like `alphabetical_page`, `category_page`, `dependencies`, `fixtures`, `published_recipes`.
 - **Crate Registries** (`examples/crate_registries/`): Demonstrates concepts like `crates_io`.
 - **Documentation** (`examples/documentation/`): Demonstrates concepts like `doc_comment`, `rustdoc`, `rustdoc2`, `rustdoc3`.

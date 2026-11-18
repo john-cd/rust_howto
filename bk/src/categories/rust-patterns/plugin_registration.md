@@ -5,7 +5,7 @@
 For a small, closed command set, construct a list explicitly. This makes membership and initialization order visible. When independent crates must contribute commands without editing a central list, [`inventory`](https://docs.rs/inventory/latest/inventory/) can collect statically linked registrations. The example uses two crates: `plugin_registry` owns the declaration and `plugin_extension` submits `greet`.
 
 ```rust,ignore,noplayground
-{{#include ../../../crates/cats/plugin_registry/examples/plugins.rs:example}}
+{{#include ../../../crates/cats/rust_patterns/plugin_registry/examples/plugins.rs:example}}
 ```
 
 Run `cargo test -p plugin_registry --example plugins` from `bk/crates`. The registry sorts by name before producing output because inventory iteration order is unspecified. It rejects a duplicate name instead of silently selecting whichever entry the linker visits first. Keep a linked reference to each extension crate; registration does not load a crate that is absent from the binary. Inventory uses startup constructors, and unusual linker settings, dynamic loading, and WebAssembly targets deserve a target-specific check before relying on discovery. Its [documentation](https://docs.rs/inventory/latest/inventory/) describes those caveats.

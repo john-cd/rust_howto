@@ -37,11 +37,10 @@
 [p~algorithms]: index.md
 [p~complex_numbers]: ../mathematics/complex_numbers.md
 [p~data-structures]: ../data-structures/index.md
-[p~data-processing]: ../data-processing/index.md
+[p~data-processing]: ../../other/data-processing/index.md
 [p~graphs]: ../data-structures/graphs.md
 [p~linear_algebra]: ../mathematics/linear_algebra.md
 [p~mathematics]: ../mathematics/index.md
-[p~data-processing]: ../data-processing/index.md
 [p~stack-allocated]: ../data-structures/stack-allocated.md
 [p~statistics]: ../mathematics/statistics.md
 [p~strings]: ../data-structures/strings.md
