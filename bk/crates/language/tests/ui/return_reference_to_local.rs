@@ -1,6 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
+/// Intentionally returns a reference to a local allocation.
 fn try_create<'a>() -> &'a String {
     let s = String::new();
     &s
