@@ -8,6 +8,8 @@ Libraries and bindings for building graphical user interfaces in desktop and bro
 
 Start with a framework if you need a complete application and event loop. For a specific part of an existing application, the components section covers rendering, layout, windows, file dialogs, and clipboard integration.
 
+Start with [responsive background work](background_work.md) for worker ownership, stale results, and repaint scheduling.
+
 ## Choosing the Right Framework
 
 Framework maturity, maintenance, accessibility, styling, and platform support vary. Check the project's current documentation and native prerequisites against your deployment needs.

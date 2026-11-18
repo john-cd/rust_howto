@@ -27,4 +27,17 @@ cargo check --package gui --examples
 cargo test --package gui
 ```
 
-Code examples correspond to chapters in `bk/src/categories/gui` or related book sections.
+Code examples correspond to chapters in `later/src/categories/gui` or related book sections.
+
+## Bounded Background Work
+
+The `background_work` example demonstrates revision-tagged replies, errors and shutdown:
+
+```sh
+just cargo test --manifest-path later/crates/Cargo.toml --locked -p gui --example background_work
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p gui --example background_work -- --smoke
+```
+
+The smoke mode needs a native desktop, completes one calculation and closes the window.
+See `later/src/categories/gui/background_work.md`; headless state tests do not certify
+screen-reader, keyboard or resize behavior.
