@@ -35,7 +35,7 @@ For a real client or server, decide how to detect an idle or dead peer, how to p
 
 See the [OWASP WebSocket Security Cheat Sheet][owasp-websocket-security] for a security checklist.
 
-## Example
+## Examples
 
 ### Asynchronous echo client and server with Tokio {#general-purpose}
 
@@ -54,6 +54,40 @@ The client prints `Received: Hello WebSocket` after the server echoes its messag
 ```rust,ignore,noplayground
 {{#include ../../../crates/cats/web_programming_websocket/examples/websocket/tokio_tungstenite.rs:example}}
 ```
+
+### Blocking echo with Tungstenite {#low-level}
+
+Use [`tungstenite`][c~tungstenite~docs] when synchronous I/O fits your application or you need control over the underlying stream. The example wraps an already connected TCP stream, bounds blocking reads and writes, and exchanges close frames. The echo stays on loopback.
+
+From `bk/crates`, run:
+
+```console
+cargo run --locked -p web_programming_websocket --example websocket_blocking
+```
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/web_programming_websocket/examples/websocket/tungstenite.rs:example}}
+```
+
+### Asynchronous echo with async-tungstenite {#async-tungstenite}
+
+[`async-tungstenite`][c~async-tungstenite~docs] offers adapters for several runtimes. This example uses the Tokio adapter. It runs the client and server together under one deadline and checks the text reply before closing the connection.
+
+From `bk/crates`, run:
+
+```console
+cargo run --locked -p web_programming_websocket --example websocket_async_adapter
+```
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/web_programming_websocket/examples/websocket/async_tungstenite.rs:example}}
+```
+
+## Related Topics {#related-topics .skip}
+
+- [Web Programming](../web-programming/index.md) for HTTP fundamentals.
+- [HTTP Servers](../web-programming_http-server/index.md) for building applications that handle upgrades.
+- [Network Programming](../network-programming/index.md) for working with TCP.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

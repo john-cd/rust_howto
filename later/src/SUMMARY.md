@@ -170,6 +170,3 @@
   - [Leptos](categories/wasm/leptos.md)
   - [Yew](categories/wasm/yew.md)
   - [Others](categories/wasm/wasm_standalone_runtimes.md)
-
-- [Web programming - websocket](categories/web-programming_websocket/index.md)
-  - [Websocket](categories/web-programming_websocket/websocket.md)

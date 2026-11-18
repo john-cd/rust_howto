@@ -86,5 +86,5 @@
 [p~wasm_standalone_runtimes]: wasm_standalone_runtimes.md
 [p~web-programming]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming/index.md
 [p~web-programming_http-server]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-server/index.md
-[p~websocket]: ../web-programming_websocket/websocket.md
+[p~websocket]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/web-programming_websocket/websocket.md
 [p~yew]: yew.md

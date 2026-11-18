@@ -2,9 +2,11 @@
 
 # WebSockets
 
-Run the Tokio loopback echo client and server from `bk/crates`.
+Run the WebSocket echo examples from `bk/crates`. All three use a local loopback connection.
 
 ```console
 cargo run --locked -p web_programming_websocket --example websocket
-cargo test --locked -p web_programming_websocket
+cargo run --locked -p web_programming_websocket --example websocket_blocking
+cargo run --locked -p web_programming_websocket --example websocket_async_adapter
+cargo test --locked -p web_programming_websocket --examples
 ```
