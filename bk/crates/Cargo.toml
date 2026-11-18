@@ -31,6 +31,7 @@ members = [
     "cats/filesystem",
     "cats/graphics",
     "cats/hardware_support",
+    "cats/internationalization",
     "cats/iroh_loopback",
     "cats/mathematics",
     "cats/memory_management",

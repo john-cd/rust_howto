@@ -337,6 +337,9 @@
   - [Color Handling](categories/multimedia_images/color_handling.md)
   - [Pixel Buffers](categories/multimedia_images/pixel_buffers.md)
 
+- [Internationalization](categories/internationalization/index.md)
+  - [Internationalization](categories/internationalization/internationalization.md)
+
 - [Number Formatting](categories/value-formatting/number_formatting.md)
 
 - [Web Programming](categories/web-programming/index.md)
