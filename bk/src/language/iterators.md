@@ -67,6 +67,14 @@ Advantageously, this also allows changing the implementation of the iterator wit
 {{#include ../../crates/language/examples/iterators/return_iterator.rs:example}}
 ```
 
+## Return Different Iterators with a Generated Enum {#iterator-branches}
+
+[Return an Iterator from a Function or Method](#return-an-iterator) explains that return-position `impl Iterator` needs one concrete return type. `#[auto_enum(Iterator)]` generates that type as an enum with one variant per branch. Here it wraps either `Once<u64>` or the iterator from a fixed-size array. Both yield the same item type.
+
+```rust,ignore,noplayground
+{{#include ../../crates/language/examples/iterator_branches.rs:example}}
+```
+
 ## Accept Various Iterable Types as the Input of a Function or Method {#accept-various-iterable-types}
 
 Many collection types in Rust implement [`IntoIterator`][c~std::iter::IntoIterator~docs]↗{{hi:std::iter::IntoIterator}}, which provides a method `into_iter()` that returns an iterator.

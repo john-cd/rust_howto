@@ -949,6 +949,7 @@
 [ex~language~impl-trait]: ../language/impl_trait.md#impl-trait
 [ex~language~implement-intoiterator]: ../language/iterators.md#implement-intoiterator
 [ex~language~implement-trait-for-struct]: ../language/structs.md#implement-trait-for-struct
+[ex~language~iterator-branches]: ../language/iterators.md#iterator-branches
 [ex~language~iterator-trait]: ../language/iterators.md#iterator-trait
 [ex~language~labeled-block-expressions]: ../language/control_flow.md#labeled-block-expressions
 [ex~language~let-else]: ../language/pattern_matching.md#let-else

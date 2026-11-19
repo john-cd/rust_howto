@@ -489,6 +489,9 @@
 [c~augurs~lib.rs~badge]: https://img.shields.io/badge/lib.rs-augurs-yellow
 [c~augurs~repo]: https://github.com/grafana/augurs
 [c~augurs~repo~badge]: https://img.shields.io/badge/augurs-steelblue?logo=github
+[c~auto_enums~crates.io]: https://crates.io/crates/auto_enums
+[c~auto_enums~docs]: https://docs.rs/auto_enums
+[c~auto_enums~repo]: https://github.com/taiki-e/auto_enums
 [c~autocfg~crates.io]: https://crates.io/crates/autocfg
 [c~autocfg~crates.io~badge]: https://img.shields.io/badge/crates.io-autocfg-crimson
 [c~autocfg~docs]: https://docs.rs/autocfg

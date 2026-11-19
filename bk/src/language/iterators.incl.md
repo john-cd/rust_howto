@@ -9,3 +9,4 @@
 | [Return an Iterator from a Function or Method][ex~language~return-an-iterator] |
 | [Accept Various Iterable Types as the Input of a Function or Method][ex~language~accept-various-iterable-types] |
 | [Make a Collection Iterable by Implementing `IntoIterator`][ex~language~implement-intoiterator] |
+| [Return Different Iterators with a Generated Enum][ex~language~iterator-branches] |

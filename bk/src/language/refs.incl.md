@@ -175,3 +175,4 @@
 [p~recoverable_error_handling]: ../standard-library/recoverable_error_handling.md
 [p~trait_objects_and_dynamic_dispatch]: trait_objects_and_dynamic_dispatch.md
 [ex~language~rustversion]: attributes.md#rustversion
+[ex~language~iterator-branches]: iterators.md#iterator-branches
