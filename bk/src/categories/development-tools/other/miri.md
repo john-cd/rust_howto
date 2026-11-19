@@ -33,6 +33,7 @@ For CI, install the nightly toolchain with the Miri component, run `cargo +night
 
 ## Related Topics {#related-topics .skip}
 
+- [Unsafe Contracts](../../../language/unsafe_contracts.md) walks through a raw-pointer test suitable for Miri.
 - [Code Verification](code_verification.md).
 - [Testing](../../development-tools_testing/testing.md).
 

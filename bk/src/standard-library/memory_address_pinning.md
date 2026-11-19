@@ -50,6 +50,7 @@ For a runnable Tokio example that pins a future, cancels it by dropping it, and 
 
 ## Related Topics {#related-topics .skip}
 
+- [Unsafe Contracts](../language/unsafe_contracts.md) explains how to state and justify safety requirements.
 - [Futures](../categories/asynchronous/futures.md).
 - [[traits | Traits]].
 
