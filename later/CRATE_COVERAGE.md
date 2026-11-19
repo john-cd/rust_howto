@@ -89,7 +89,7 @@ These recipes were added or updated during the coverage review.
   when readers need exact values and units.
 - [Route measurements](../bk/src/categories/science/route_measurements.md) uses geo
   to compare a measured route with a simple model.
-- [Collect Three Markers](src/categories/games/index.md#collect-markers) uses
+- [Collect Three Markers](../bk/src/categories/games/index.md#collect-markers) uses
   Macroquad to introduce an input, update, and draw loop.
 - [Media fixture](../bk/src/categories/multimedia/multimedia.md#media-round-trip)
   connects the existing multimedia crates and format chapters to an executed
