@@ -1,0 +1,18 @@
+[workspace]
+
+[package]
+name = "sqlite_session"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.98.1"
+publish = false
+
+[dependencies]
+anyhow = "1.0.104"
+axum = "0.8.9"
+http-body-util = "0.1.5"
+tempfile = "3.27.0"
+tokio = { version = "1.54.1", features = ["macros", "rt"] }
+tower = { version = "0.5.3", features = ["util"] }
+tower-sessions = { version = "=0.14.0", default-features = false, features = ["axum-core"] }
+tower-sessions-sqlx-store = { version = "=0.15.0", features = ["sqlite"] }

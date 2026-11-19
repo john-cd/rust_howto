@@ -25,3 +25,4 @@
 [c~openidconnect~repo~badge]: https://img.shields.io/badge/openidconnect-steelblue?logo=github
 [owasp~session-management]: https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html
 [owasp~password-storage]: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
+[ex~authentication~sqlite-session]: session_login.md#sqlite-session

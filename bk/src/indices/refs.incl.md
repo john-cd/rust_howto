@@ -137,6 +137,7 @@
 [ex~authentication~oidc-authorization-code]: ../categories/authentication/oidc_authorization_code.md#oidc-authorization-code
 [ex~authentication~passkeys]: ../categories/authentication/passkeys.md#passkeys
 [ex~authentication~session-login]: ../categories/authentication/session_login.md#session-login
+[ex~authentication~sqlite-session]: ../categories/authentication/session_login.md#sqlite-session
 [ex~automation~find-unwraps]: ../categories/development-tools/automation/xtask.md#find-unwraps
 [ex~automation~git-churn]: ../categories/development-tools/automation/git.md#git-churn
 [ex~automation~workspace-lints]: ../categories/development-tools/automation/xtask.md#workspace-lints

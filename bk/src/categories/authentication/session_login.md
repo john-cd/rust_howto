@@ -62,6 +62,16 @@ The example generates 32 random bytes with [`getrandom`][c~getrandom~docs]↗{{h
 - For JSON APIs called by scripts, send the token in a custom header, or require a header that browsers will not send cross-site without a CORS preflight; see [Cross-origin Resource Sharing](../web-programming_http-server/cors.md).
 - Rotate the token when the user logs in, so it is tied to the authenticated session.
 
+## Persist an Axum Session in SQLite {#sqlite-session}
+
+Use `SqliteStore` in the session middleware in place of the in-memory store. The example sends a session cookie to a rebuilt router after closing and reopening the database pool. It uses local HTTP requests in memory. Keep secure cookies enabled when serving over HTTPS.
+
+This fixture has its own Cargo workspace because the SQLx version used by `tower-sessions-sqlx-store` links a different SQLite library version than the main book workspace. From the repository root, run `cargo test --locked --manifest-path bk/crates/cats/authentication/sqlite_session/Cargo.toml`.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/authentication/sqlite_session/src/main.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Authentication](index.md).
