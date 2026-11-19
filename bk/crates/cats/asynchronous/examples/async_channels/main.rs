@@ -78,7 +78,7 @@ fn dispatch(cli: Cli) -> anyhow::Result<()> {
                 kanal::run()?;
             }
             Commands::Postage => {
-                postage::run();
+                postage::run()?;
             }
         }
     }
