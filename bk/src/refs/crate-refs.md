@@ -4505,6 +4505,7 @@
 [c~jemalloc~repo~badge]: https://img.shields.io/badge/jemalloc-steelblue?logo=github
 [c~jiff~crates.io]: https://crates.io/crates/jiff
 [c~jiff~docs]: https://docs.rs/jiff
+[c~jiff~docs~badge]: https://img.shields.io/crates/v/jiff?label=jiff
 [c~jiff~repo]: https://github.com/BurntSushi/jiff
 [c~jnix~crates.io]: https://crates.io/crates/jnix
 [c~jnix~crates.io~badge]: https://img.shields.io/badge/crates.io-jnix-crimson
