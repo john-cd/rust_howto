@@ -7,6 +7,7 @@
 set -euo pipefail
 
 : "${ONNXRUNTIME_VERSION:?Set ONNXRUNTIME_VERSION from .devcontainer/.env}"
+: "${ONNXRUNTIME_NUGET_SHA512:?Set ONNXRUNTIME_NUGET_SHA512 from .devcontainer/.env}"
 
 install_root="${1:-/opt/onnxruntime}"
 runtime_arch="${ONNXRUNTIME_ARCH:-$(uname -m)}"
@@ -14,11 +15,11 @@ runtime_arch="${ONNXRUNTIME_ARCH:-$(uname -m)}"
 case "$runtime_arch" in
     amd64|x86_64)
         archive_arch="x64"
-        checksum="$ONNXRUNTIME_LINUX_X64_SHA256"
+        package_arch="x64"
         ;;
     arm64|aarch64)
         archive_arch="aarch64"
-        checksum="$ONNXRUNTIME_LINUX_AARCH64_SHA256"
+        package_arch="arm64"
         ;;
     *)
         printf 'Unsupported ONNX Runtime architecture: %s\n' "$runtime_arch" >&2
@@ -43,15 +44,19 @@ fi
 mkdir -p "$install_root"
 stage_directory="$(mktemp -d "$install_root/.onnxruntime.XXXXXX")"
 trap 'rm -rf -- "$stage_directory"' EXIT
-archive="$stage_directory/$archive_name.tgz"
+package="$stage_directory/Microsoft.ML.OnnxRuntime.$ONNXRUNTIME_VERSION.nupkg"
 
 curl --fail --location --proto '=https' --tlsv1.2 --retry 3 \
-    "https://github.com/microsoft/onnxruntime/releases/download/v$ONNXRUNTIME_VERSION/$archive_name.tgz" \
-    --output "$archive"
-printf '%s  %s\n' "$checksum" "$archive" | sha256sum --check
+    "https://www.nuget.org/api/v2/package/Microsoft.ML.OnnxRuntime/$ONNXRUNTIME_VERSION" \
+    --output "$package"
+printf '%s  %s\n' "$ONNXRUNTIME_NUGET_SHA512" "$package" | sha512sum --check
 
-tar -xzf "$archive" -C "$stage_directory"
-test -f "$stage_directory/$archive_name/lib/libonnxruntime.so"
+unzip -q "$package" "runtimes/linux-$package_arch/native/*.so" -d "$stage_directory/package"
+native_directory="$stage_directory/package/runtimes/linux-$package_arch/native"
+test -f "$native_directory/libonnxruntime.so"
+test -f "$native_directory/libonnxruntime_providers_shared.so"
+mkdir -p "$stage_directory/$archive_name/lib"
+cp -a -- "$native_directory"/*.so "$stage_directory/$archive_name/lib/"
 mv -- "$stage_directory/$archive_name" "$runtime_directory"
 ln -sfn -- "$runtime_directory" "$install_root/current"
 
