@@ -89,7 +89,7 @@ jobs:
         run: |
           docker run --rm rust_howto_tools_app_builder:latest bash -lc '
             set -euo pipefail
-            RUSTFMT_TOOLCHAIN="$(sed -n "s/^channel *= *\"\([^\"]*\)\".*/\1/p" "$RUSTFMT_TOOLCHAIN_FILE")"
+            : "${RUSTFMT_TOOLCHAIN:?RUSTFMT_TOOLCHAIN must be set in the image}"
             cd /code/tools
             cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
             rustup toolchain install 1.98.1 --profile minimal
