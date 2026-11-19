@@ -36,7 +36,7 @@
 [c~testcontainers~docs~badge]: https://img.shields.io/crates/v/testcontainers?label=testcontainers
 
 [p~containerization]: containerization.md
-[p~emulators]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/emulators/index.md
+[p~emulators]: ../emulators/index.md
 [p~os_linux-apis]: ../os_linux-apis/index.md
 [p~using_containers]: using_containers.md
 [p~virtualization]: index.md

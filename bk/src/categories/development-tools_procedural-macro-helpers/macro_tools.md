@@ -51,7 +51,7 @@ cargo test
 
 `macrotest` needs the compiler's expansion interface. When a macro's logic lives in an ordinary function from `proc_macro2::TokenStream` to `TokenStream`, a plain unit test can do the same job: format the output with [`prettyplease`][c~prettyplease~docs]↗{{hi:prettyplease}} and compare it with the expected source.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/macro_tools/derive_expansion.rs:example}}
 ```
 

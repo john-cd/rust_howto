@@ -2453,6 +2453,9 @@
 [c~der~repo~badge]: https://img.shields.io/badge/der-steelblue?logo=github
 [c~der~website]: https://github.com/RustCrypto/formats/blob/master/der/README.md
 [c~der~website~badge]: https://img.shields.io/badge/der-coral
+[c~development_tools_procedural_macro_helpers~crates.io]: https://crates.io/crates/development_tools_procedural_macro_helpers
+[c~development_tools_procedural_macro_helpers~docs]: https://docs.rs/development_tools_procedural_macro_helpers
+[c~development_tools_procedural_macro_helpers~repo]: https://github.com/john-cd/rust_howto
 [c~development_tools~crates.io]: https://crates.io/crates/development_tools
 [c~development_tools~docs]: https://docs.rs/development_tools
 [c~development_tools~repo]: https://github.com/john-cd/rust_howto
@@ -6564,6 +6567,9 @@
 [c~polars~repo~badge]: https://img.shields.io/badge/polars-steelblue?logo=github
 [c~polars~website]: https://pola.rs
 [c~polars~website~badge]: https://img.shields.io/badge/polars-coral
+[c~polkavm-common~crates.io]: https://crates.io/crates/polkavm-common
+[c~polkavm-common~docs]: https://docs.rs/polkavm-common
+[c~polkavm-common~repo]: https://github.com/koute/polkavm
 [c~polkavm~crates.io]: https://crates.io/crates/polkavm
 [c~polkavm~crates.io~badge]: https://img.shields.io/badge/crates.io-polkavm-crimson
 [c~polkavm~docs]: https://docs.rs/polkavm

@@ -269,6 +269,11 @@
   - [Memory Usage Analysis](categories/development-tools_profiling/memory_usage_analysis.md)
   - [Compare Benchmark Results in CI](categories/development-tools_profiling/benchmark_regressions.md)
 
+- [Development Tools - Procedural Macro Helpers](categories/development-tools_procedural-macro-helpers/index.md)
+  - [Crates for macro development](categories/development-tools_procedural-macro-helpers/write_proc_macros.md)
+  - [Tools for macro development](categories/development-tools_procedural-macro-helpers/macro_tools.md)
+  - [Compiling macros ahead of time](categories/development-tools_procedural-macro-helpers/compile_macros.md)
+
 - [Development Tools - Testing](categories/development-tools_testing/index.md)
   - [Testing](categories/development-tools_testing/testing.md)
   - [Assertions](categories/development-tools_testing/assertions.md)
@@ -361,6 +366,9 @@
 
 - [Operating systems - Unix](categories/os_unix-apis/index.md)
   - [Unix APIs](categories/os_unix-apis/unix.md)
+
+- [Emulators](categories/emulators/index.md)
+  - [Run a Guest and Load ROM Data](categories/emulators/emulators.md)
 
 - [Virtualization](categories/virtualization/index.md)
   - [Virtualization](categories/virtualization/virtualization.md)

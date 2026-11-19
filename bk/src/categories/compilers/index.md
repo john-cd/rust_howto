@@ -42,7 +42,7 @@ when the lexer reports an error.
 - [[development-tools_build-utils | Development Tools: Build Utils]].
 - [Development Tools: Cargo Plugins](../development-tools_cargo-plugins/index.md).
 - [[development-tools_debugging | Development Tools: Debugging]].
-- [Procedural Macro Helpers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_procedural-macro-helpers/index.md).
+- [Procedural Macro Helpers](../development-tools_procedural-macro-helpers/index.md).
 - [Development Tools - Profiling](../development-tools_profiling/index.md).
 - [Development Tools: Testing](../development-tools_testing/index.md).
 - [Development Tools: FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md) for bindings to compilers written in other languages.

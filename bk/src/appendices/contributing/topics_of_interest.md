@@ -53,7 +53,7 @@ The following are topics that deserve (additional) coverage and examples:
 - High-performance computing: OpenMP, etc.
 - Social media APIs.
 - Personal file sharing: OwnCloud, etc.
-- [Emulators](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/emulators/index.md).
+- [Emulators](../../categories/emulators/index.md).
 - [Accessibility](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/accessibility/index.md).
 - More examples for [Internationalization](../../categories/internationalization/index.md) and [Localization](../../categories/localization/index.md).
 - [Multimedia](../../categories/multimedia/index.md).

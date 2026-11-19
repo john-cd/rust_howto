@@ -8804,6 +8804,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "development_tools_procedural_macro_helpers"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "clap",
+ "darling 0.24.1",
+ "paste",
+ "prettyplease 0.3.0",
+ "proc-macro2",
+ "quote",
+ "syn 3.0.10",
+]
+
+[[package]]
 name = "development_tools_profiling"
 version = "0.1.2"
 dependencies = [
@@ -9724,6 +9738,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "589871e639330783bc20ad89d32ac1b049e02c273d96c907ca27478c8bc674a2"
 dependencies = [
  "phf 0.13.1",
+]
+
+[[package]]
+name = "emulators"
+version = "0.1.2"
+dependencies = [
+ "clap",
+ "ihex",
+ "polkavm",
+ "polkavm-common",
 ]
 
 [[package]]
@@ -14876,6 +14900,12 @@ dependencies = [
  "walkdir",
  "winapi-util",
 ]
+
+[[package]]
+name = "ihex"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "365a784774bb381e8c19edb91190a90d7f2625e057b55de2bc0f6b57bc779ff2"
 
 [[package]]
 name = "image"
@@ -21863,6 +21893,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5be167a7af36ee22fe3115051bc51f6e6c7054c9348e28deb4f49bd6f705a315"
 
 [[package]]
+name = "picosimd"
+version = "0.9.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7823ffd00d2b55ebe51750a19f47f2a33cb1f1d135f5cba893379b81c4d44856"
+
+[[package]]
 name = "pin-project"
 version = "1.1.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -22861,6 +22897,46 @@ dependencies = [
  "uuid",
  "version_check",
 ]
+
+[[package]]
+name = "polkavm"
+version = "0.38.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "053068016d5c59042e1607a54c16da3e72a0a2c4e5d57ad19ca1eb40a681d13a"
+dependencies = [
+ "libc",
+ "log",
+ "picosimd",
+ "polkavm-assembler",
+ "polkavm-common",
+ "polkavm-linux-raw",
+]
+
+[[package]]
+name = "polkavm-assembler"
+version = "0.38.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c4307946f8468993c33899720975e1e8e5f6950bc6d41a9b95ac7ec090992519"
+dependencies = [
+ "log",
+]
+
+[[package]]
+name = "polkavm-common"
+version = "0.38.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2ef35bc7f93dff55723e05cde93c618a2ba4bba2b92947136091220671fe8718"
+dependencies = [
+ "log",
+ "picosimd",
+ "polkavm-assembler",
+]
+
+[[package]]
+name = "polkavm-linux-raw"
+version = "0.38.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2ccde7555db1eb513da81c4bcc036ad0e2eca56aaff74fb477a04a3025883e26"
 
 [[package]]
 name = "polling"

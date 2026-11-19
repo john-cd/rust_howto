@@ -820,6 +820,20 @@
 
 ### [Compare Benchmark Results in CI](../categories/development-tools_profiling/benchmark_regressions.md)
 
+## Development Tools - Procedural Macro Helpers
+
+### [Write Procedural Macros](../categories/development-tools_procedural-macro-helpers/write_proc_macros.md)
+
+{{#include ../categories/development-tools_procedural-macro-helpers/write_proc_macros.incl.md}}
+
+### [Tools for Macro Development](../categories/development-tools_procedural-macro-helpers/macro_tools.md)
+
+{{#include ../categories/development-tools_procedural-macro-helpers/macro_tools.incl.md}}
+
+### [Compile Macros Ahead of Time](../categories/development-tools_procedural-macro-helpers/compile_macros.md)
+
+{{#include ../categories/development-tools_procedural-macro-helpers/compile_macros.incl.md}}
+
 ## Development Tools - Testing
 
 ### [Testing](../categories/development-tools_testing/testing.md)
@@ -1107,6 +1121,12 @@
 ### [Unix APIs](../categories/os_unix-apis/unix.md)
 
 {{#include ../categories/os_unix-apis/unix.incl.md}}
+
+## Emulators
+
+### [Run a Guest and Load ROM Data](../categories/emulators/emulators.md)
+
+{{#include ../categories/emulators/emulators.incl.md}}
 
 ## Virtualization
 

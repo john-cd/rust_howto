@@ -30,7 +30,7 @@ From the repository root in PowerShell, rebuild the guest and its standard libra
 
 ```powershell
 rustup toolchain install nightly-2026-11-11 --profile minimal --component rust-src
-$demo = "later/crates/cats/development_tools_procedural_macro_helpers/watt_round_trip"
+$demo = "bk/crates/cats/development_tools_procedural_macro_helpers/watt_round_trip"
 $env:CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_RUSTFLAGS = "-C target-cpu=mvp"
 cargo +nightly-2026-11-11 build -Z build-std=std,panic_abort --locked --release `
   --target wasm32-unknown-unknown --target-dir target/watt-demo --manifest-path "$demo/guest/Cargo.toml"
