@@ -29,3 +29,4 @@
 [ex~rust_source~find-unwraps]: rust_source.md#find-unwraps
 [ex~rust_source~wasm-roundtrip]: rust_source.md#wasm-roundtrip
 [ex~rust_source~rowan-lossless-edit]: rust_source.md#rowan-lossless-edit
+[ex~rust_source~parser-diagnostic]: rust_source.md#parser-diagnostic

@@ -8828,6 +8828,7 @@ checksum = "abd57806937c9cc163efc8ea3910e00a62e2aeb0b8119f1793a978088f8f6b04"
 name = "development_tools"
 version = "0.1.2"
 dependencies = [
+ "annotate-snippets",
  "anyhow",
  "cargo_metadata 0.23.1",
  "clap",

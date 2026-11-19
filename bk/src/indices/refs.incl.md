@@ -1307,6 +1307,7 @@
 [ex~rust-patterns~validated-newtype]: ../categories/rust-patterns/rust_specific_patterns.md#validated-newtype
 [ex~rust_source~cargo-metadata]: ../categories/development-tools/other/rust_source.md#cargo-metadata
 [ex~rust_source~find-unwraps]: ../categories/development-tools/other/rust_source.md#find-unwraps
+[ex~rust_source~parser-diagnostic]: ../categories/development-tools/other/rust_source.md#parser-diagnostic
 [ex~rust_source~quote-prettyplease]: ../categories/development-tools/other/rust_source.md#quote-prettyplease
 [ex~rust_source~rowan-lossless-edit]: ../categories/development-tools/other/rust_source.md#rowan-lossless-edit
 [ex~rust_source~syn-parse-file]: ../categories/development-tools/other/rust_source.md#syn-parse-file

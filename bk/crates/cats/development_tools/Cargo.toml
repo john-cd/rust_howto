@@ -101,7 +101,13 @@ name = "lossless_tree"
 path = "examples/lossless_tree.rs"
 test = true
 
+[[example]]
+name = "parser_diagnostic"
+path = "examples/parser_diagnostic.rs"
+test = true
+
 [dependencies]
+annotate-snippets = "0.12.18"
 rowan = "0.17.0"
 # Application-level tracing for Rust.
 tracing = "0.1.44"

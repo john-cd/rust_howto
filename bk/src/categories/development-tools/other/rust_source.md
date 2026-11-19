@@ -78,6 +78,14 @@ A lossless syntax tree stores whitespace and comments as tokens alongside syntax
 
 Use [`unicode-ident`][c~unicode-ident~docs] when scanning identifiers and checking Unicode `XID_Start` and `XID_Continue` classes.
 
+## Render a Parser Diagnostic with Source Spans {#parser-diagnostic}
+
+Use `annotate-snippets` to label the offending token and the related setting, then add a hint. Spans are byte ranges into the exact source string, so pass ranges from your parser and keep them on UTF-8 character boundaries.
+
+```rust,ignore,noplayground
+{{#include ../../../../crates/cats/development_tools/examples/parser_diagnostic.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Parsing Utilities](../../parsing/index.md).
