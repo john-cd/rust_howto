@@ -1,36 +1,23 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Basic usage of the `moka` crate for high-performance concurrent caching.
-//!
-//! ### Purpose and Architecture of `moka`
-//!
-//! `moka` is a fast, feature-rich, concurrent caching library for Rust inspired
-//! by Java's Caffeine:
-//! - **High Concurrency**: Provides lock-free or highly concurrent read/write operations using lock
-//!   striping and lock-free data structures.
-//! - **TinyLFU Eviction Policy**: Uses TinyLFU (Frequency-based eviction) to achieve near-optimal
-//!   hit ratios compared to basic LRU policies.
-//! - **TTL & TTI Expiration**: Supports Time-To-Live (TTL) and Time-To-Idle (TTI) entry expiration
-//!   policies.
-//! - **Synchronous & Asynchronous**: Provides both synchronous (`moka::sync::Cache`) and async
-//!   (`moka::future::Cache`) interfaces.
-//!
-//! `moka` also provides an asynchronous (futures aware) cache in its `future`
-//! module.
-//!
-//! Remember to add `moka = "0.12.10"` or latest to your `Cargo.toml`.
+//! Uses a synchronous Moka cache with idle expiration and a fallible loader.
 
+use std::sync::Barrier;
+use std::sync::atomic::AtomicUsize;
+use std::sync::atomic::Ordering;
+use std::thread;
 use std::time::Duration;
 
 use moka::sync::Cache;
 
-/// Builds a `moka` cache with a size limit and an idle timeout, then inserts
+/// Builds a cache, reads an entry, then demonstrates retrying a failed load.
 ///
-/// and reads entries.
+/// # Panics
+///
+/// Panics if the always-successful retry fails or a worker panics.
 fn main() {
-    // Create a cache with a maximum of 100 entries.
-    // Entries will be evicted after 10 minutes of not being accessed.
+    // Target at most 100 entries and expire an entry after 10 minutes idle.
     //
     // The `sync::Cache` struct provides a synchronous cache.
     let cache = Cache::builder()
@@ -60,10 +47,45 @@ fn main() {
         cache_clone.insert("key2", "value2");
     });
     handle.join().expect("worker thread should not panic");
+
+    let (values, loads) = retry_and_share_load();
+    println!("Loaded {values:?} with {loads} successful initializer call");
+}
+
+/// Retries a failed initialization and reports the values and initialization count.
+///
+/// # Panics
+///
+/// Panics if the fixed, successful loader returns an error or a worker panics.
+fn retry_and_share_load() -> ([&'static str; 2], usize) {
+    let cache = Cache::new(10);
+    let failed = cache.try_get_with("resource", || Err::<&str, _>("temporary failure"));
+    assert!(failed.is_err());
+
+    let ready = Barrier::new(2);
+    let loads = AtomicUsize::new(0);
+    let load = || {
+        ready.wait();
+        cache
+            .try_get_with("resource", || {
+                loads.fetch_add(1, Ordering::Relaxed);
+                Ok::<_, &str>("loaded")
+            })
+            .expect("the retry loader always succeeds")
+    };
+    let values = thread::scope(|scope| {
+        let worker = scope.spawn(load);
+        [load(), worker.join().expect("the loader should not panic")]
+    });
+    (values, loads.load(Ordering::Relaxed))
 }
 // ANCHOR_END: example
 
-/// Builds a `moka` cache with a size limit and an idle timeout, then inserts
+/// Runs the idle-expiration and fallible-loader examples.
+///
+/// # Panics
+///
+/// Panics if a demonstration worker fails.
 pub fn run() {
     main();
 }
@@ -104,7 +126,13 @@ mod tests {
         assert_eq!(cache.get("key2"), Some("value2"));
     }
 
-    /// Confirms that the capacity is bounded.
+    /// Retries a failed load and initializes the shared key only once.
+    #[test]
+    fn retry_load_is_shared() {
+        assert_eq!(retry_and_share_load(), (["loaded", "loaded"], 1));
+    }
+
+    /// Observes eviction after the cache processes pending maintenance.
     #[test]
     fn capacity_is_bounded() {
         let cache: Cache<u32, u32> = Cache::new(5);
