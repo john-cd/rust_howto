@@ -39,7 +39,7 @@ use crate::model::SnippetRecord;
 const BOOK_ROOTS: &[(&str, &str)] = &[("bk/src", "published"), ("later/src", "future")];
 
 /// Shared `example roots` used by this module.
-const EXAMPLE_ROOTS: &[&str] = &["bk/crates", "later/crates"];
+const EXAMPLE_ROOTS: &[&str] = &["bk/crates", "bk/platform", "later/crates"];
 
 /// Shared `entry points` used by this module.
 const ENTRY_POINTS: &[&str] = &["main.rs", "lib.rs", "mod.rs", "build.rs"];
@@ -1768,6 +1768,56 @@ mod tests {
         assert_eq!(report.diagnostics.len(), 1);
         assert_eq!(report.diagnostics[0].code, "chapter-without-example");
         assert_eq!(report.diagnostics[0].path, "bk/src/missing.md");
+    }
+
+    /// Cargo targets from the separate platform workspace cover its included modules.
+    #[test]
+    fn platform_workspace_targets_cover_included_examples() {
+        let directory = tempfile::tempdir().expect("temporary repository is created");
+        let root = directory.path();
+        write_fixture(
+            root,
+            "bk/platform/Cargo.toml",
+            "[workspace]\nresolver = \"3\"\nmembers = [\"cats/demo\"]\n",
+        );
+        write_fixture(
+            root,
+            "bk/platform/cats/demo/Cargo.toml",
+            "[package]\nname = \"platform-demo\"\nversion = \"0.1.0\"\nedition = \"2024\"\n\n[[example]]\nname = \"demo\"\npath = \"examples/demo.rs\"\ntest = true\n",
+        );
+        write_fixture(
+            root,
+            "bk/platform/cats/demo/examples/demo.rs",
+            "// ANCHOR: example\nfn main() {}\n// ANCHOR_END: example\n",
+        );
+        write_fixture(
+            root,
+            "bk/src/SUMMARY.md",
+            "# Summary\n\n- [Platform example](platform.md)\n",
+        );
+        write_fixture(
+            root,
+            "bk/src/platform.md",
+            "# Platform example\n\n```rust,noplayground\n{{#include ../platform/cats/demo/examples/demo.rs:example}}\n```\n",
+        );
+        write_fixture(root, "later/src/SUMMARY.md", "# Summary\n");
+
+        let report = build_report(root).expect("fixture report builds");
+
+        assert!(
+            report.cargo_targets.iter().any(|target| {
+                target.identity == "bk/platform/cats/demo/Cargo.toml#example:demo"
+            })
+        );
+        assert!(
+            report.chapters.iter().any(|chapter| {
+                chapter.path == "bk/src/platform.md" && chapter.has_tested_example
+            })
+        );
+        assert!(!report.diagnostics.iter().any(|diagnostic| {
+            diagnostic.code == "included-example-untested"
+                || diagnostic.code == "chapter-without-example"
+        }));
     }
 
     /// The inventory uses canonical paths across nested includes and duplicate basenames.
