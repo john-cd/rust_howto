@@ -16,6 +16,14 @@ This example demonstrates how to watch for file system events. It sets up a file
 {{#include ../../../crates/cats/filesystem/examples/file_watching/notify.rs:example}}
 ```
 
+## Watch an Editor-Style File Replacement {#debounced-save}
+
+Use `notify-debouncer-full` to receive batches after a short delay. Watch the containing directory because editors often write to a staging file and replace the destination. Check the paths in the delivered batch and use a deadline so the test reports a missing notification.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/filesystem/examples/debounced_save.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[directories | Directories]].

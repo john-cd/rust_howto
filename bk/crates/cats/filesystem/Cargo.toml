@@ -77,7 +77,13 @@ name = "user_directories"
 path = "examples/user_directories/main.rs"
 test = true
 
+[[example]]
+name = "debounced_save"
+path = "examples/debounced_save.rs"
+test = true
+
 [dependencies]
+notify-debouncer-full = "0.7.0"
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # Atomic file-writes.
