@@ -47,6 +47,10 @@ path = "examples/no_external_schema_file/main.rs"
 test = true
 
 [[example]]
+name = "borrowed_json"
+test = true
+
+[[example]]
 name = "serde"
 path = "examples/serde/main.rs"
 test = true

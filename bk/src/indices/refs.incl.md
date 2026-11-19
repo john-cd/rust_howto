@@ -650,6 +650,7 @@
 [ex~encoding~rkyv]: ../categories/encoding/no_external_schema.md#rkyv
 [ex~encoding~rmp-serde]: ../categories/encoding/no_external_schema.md#rmp-serde
 [ex~encoding~serde-ignored]: ../categories/encoding/serde.md#serde-ignored
+[ex~encoding~borrowed-json]: ../categories/encoding/serde.md#borrowed-json
 [ex~encoding~serde-json2]: ../categories/encoding/serde.md#serde-json2
 [ex~encoding~serde-json]: ../categories/encoding/complex_encoding.md#serde-json
 [ex~encoding~serde]: ../categories/encoding/serde.md#serde

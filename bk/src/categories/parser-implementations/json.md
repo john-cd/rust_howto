@@ -41,6 +41,7 @@ Use `serde_json` for the usual Serde-based typed or dynamic JSON data model. Cho
 ## Related Topics {#related-topics .skip}
 
 - [Serde](../encoding/serde.md) demonstrates mapping structured data into application types.
+- [Choose Borrowed or Owned JSON Fields](../encoding/serde.md#borrowed-json) compares parsing from a byte slice and a reader.
 - [Parsing Utilities](../parsing/parsing.md) covers custom grammars and parser construction.
 
 {{#include refs.incl.md}}
