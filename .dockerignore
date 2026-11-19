@@ -26,6 +26,8 @@ build/
 bin/
 **/target/
 **/book/
+!bk/scripts/book/
+!bk/scripts/book/**
 **/doctest_cache/
 **/temp/
 
