@@ -84,7 +84,7 @@ def check_chapters(
             continue
         html = path.read_text(encoding="utf-8")
         prose = re.sub(r"<pre\b.*?</pre>|<script\b.*?</script>", "", html, flags=re.S)
-        labels = re.findall(r"\]\[((?:p|ex|c|cat)~[^\]\s]+)\]", prose)
+        labels = re.findall(r"\]\[([a-z][a-z0-9_-]*~[^\]\s]+)\]", prose)
         for label in sorted(set(labels)):
             failures.append(f"{source}: unresolved reference {label}")
         if path not in pages:
