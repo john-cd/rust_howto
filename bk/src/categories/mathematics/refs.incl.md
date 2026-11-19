@@ -82,3 +82,4 @@
 [p~numerical_analysis]: numerical_analysis.md
 [p~sorting]: ../algorithms/sorting.md
 [p~trigonometry]: trigonometry.md
+[ex~mathematics~normal-tail]: statistics.md#normal-tail

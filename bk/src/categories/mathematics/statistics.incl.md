@@ -4,3 +4,4 @@
 | --- | --- | --- |
 | [Calculate Measures of Central Tendency][ex~mathematics~measures-of-central-tendency] | {{#crate std}} | {{#categories mathematics=Mathematics}} |
 | [Compute the Standard Deviation][ex~mathematics~standard-deviation] | {{#crate std}} | {{#categories science=Science mathematics=Mathematics}} |
+| [Compute a Standard Normal Tail Probability][ex~mathematics~normal-tail] | {{#crate statrs}} | {{#categories mathematics=Mathematics}} |

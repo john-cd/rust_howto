@@ -17623,6 +17623,7 @@ dependencies = [
  "rust_decimal_macros",
  "serde_json",
  "sprs",
+ "statrs",
  "typenum",
  "uom",
 ]

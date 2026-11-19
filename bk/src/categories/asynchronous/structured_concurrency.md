@@ -39,7 +39,7 @@ The example builds its runtime with `start_paused(true)`. Tokio's clock then adv
 
 {{#badges tokio-util asynchronous=Asynchronous concurrency=Concurrency}}{{hi:CancellationToken}}{{hi:TaskTracker}}{{hi:Graceful shutdown}}
 
-Cancelling a parent token cancels its children, but cancelling a child does not affect its parent or siblings. Each worker waits on `token.cancelled()` in a `select!` next to its work. [`TaskTracker`][c~tokio_util::task::TaskTracker~docs]↗{{hi:TaskTracker}} lets the owner wait until a group of tasks has finished, which is what a graceful shutdown needs.
+Clones share one cancellation signal, so calling `cancel()` on any clone wakes all tasks waiting on that token. Use `child_token()` for a subgroup that can stop independently. Cancelling the parent also cancels its children, while cancelling a child leaves its parent and siblings running. Each worker waits on `token.cancelled()` in a `select!` next to its work. [`TaskTracker`][c~tokio_util::task::TaskTracker~docs]↗{{hi:TaskTracker}} lets the owner wait until a group of tasks has finished, after sending the cancellation signal. Keep both steps in the shutdown path so tasks have time to clean up before their owner returns.
 
 ```rust,ignore,noplayground
 {{#include ../../../crates/cats/asynchronous/examples/structured_concurrency/cancellation_tree.rs:example}}

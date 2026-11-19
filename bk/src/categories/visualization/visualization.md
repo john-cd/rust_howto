@@ -63,7 +63,7 @@ The [Plotters WebAssembly demo][plotters-wasm-demo~repo] shows how to attach its
 
 ### Desktop plots with egui_plot {#egui-plot}
 
-[`egui_plot`][c~egui_plot~docs]↗{{hi:egui_plot}} adds plots with pan, zoom, and hover to an egui application. Check the [egui_plot project][c~egui_plot~repo] for examples and compatible egui versions.
+Use [`eframe`][c~eframe~docs]↗{{hi:eframe}} to run a standalone egui application. [`egui_plot`][c~egui_plot~docs]↗{{hi:egui_plot}} adds plots with pan, zoom, and hover to an egui application. Check the [egui_plot project][c~egui_plot~repo] for examples and compatible egui versions.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

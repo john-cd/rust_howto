@@ -42,6 +42,18 @@ The z-score is the number of standard deviations a single measurement spans away
 {{#include ../../../crates/cats/mathematics/examples/stats/standard_deviation.rs:example}}
 ```
 
+## Compute a Standard Normal Tail Probability {#normal-tail}
+
+{{#badges statrs mathematics=Mathematics}}
+
+Use `ContinuousCDF::sf` to compute the probability above a threshold. The survival function gives the upper tail directly. For a standard normal variable, the probability of exceeding 1.96 is about 2.5%. The example allows an absolute error of 0.00001 because 1.96 is a rounded threshold.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/mathematics/examples/stats/normal_tail.rs:example}}
+```
+
+To draw random samples from a distribution, see [Random Value Generation](../algorithms/random_value_generation.md#generate-random-numbers-within-a-given-distribution).
+
 ## Related Topics {#related-topics .skip}
 
 - [[complex_numbers | Complex Numbers]].

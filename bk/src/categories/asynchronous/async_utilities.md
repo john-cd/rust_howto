@@ -32,7 +32,7 @@ Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p asy
 
 ## Cancel Related Tasks {#cancellation-token}
 
-[`CancellationToken`][c~tokio_util::sync::CancellationToken~docs]↗{{hi:CancellationToken}} lets one task signal cancellation to other tasks. Child tokens are cancelled when their parent is cancelled, which is useful for coordinating shutdown across a group of tasks. For a server-wide shutdown signal, see [graceful shutdown][ex~asynchronous~graceful-shutdown].
+[`CancellationToken`][c~tokio_util::sync::CancellationToken~docs]↗{{hi:CancellationToken}} lets one task signal cancellation to other tasks. Child tokens are cancelled when their parent is cancelled, which is useful for coordinating shutdown across a group of tasks. See [Cancel a Tree of Tasks with `CancellationToken`][ex~asynchronous~cancellation-tree] for a runnable example that signals cancellation and waits for cleanup. For a server-wide shutdown signal, see [graceful shutdown][ex~asynchronous~graceful-shutdown].
 
 ```rust,editable
 {{#include ../../../crates/cats/asynchronous/examples/cancellation_token.rs:example}}

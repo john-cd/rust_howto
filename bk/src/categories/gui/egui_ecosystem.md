@@ -46,7 +46,7 @@ Use the same `egui_kittest` version as `egui`: the crate releases in lockstep.
 
 [![egui_plot][c~egui_plot~docs~badge]][c~egui_plot~docs]{{hi:egui_plot}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:Plot}}{{hi:Chart}}
 
-[`egui_plot::Plot`][c~egui_plot::Plot~docs]↗{{hi:egui_plot::Plot}} shows interactive 2D plots: the user can pan, zoom and hover. Add items to the `PlotUi`: [`Line`][c~egui_plot::Line~docs]↗{{hi:egui_plot::Line}} from a `Vec<[f64; 2]>`, [`BarChart`][c~egui_plot::BarChart~docs]↗{{hi:egui_plot::BarChart}}, `VLine` markers, and more. The plot fits its bounds to the data unless you set them.
+For a standalone desktop window, start with [Build a Desktop App with `eframe`][ex~gui~egui] and place the plot inside the app's UI. [`egui_plot::Plot`][c~egui_plot::Plot~docs]↗{{hi:egui_plot::Plot}} shows interactive 2D plots: the user can pan, zoom and hover. Add items to the `PlotUi`: [`Line`][c~egui_plot::Line~docs]↗{{hi:egui_plot::Line}} from a `Vec<[f64; 2]>`, [`BarChart`][c~egui_plot::BarChart~docs]↗{{hi:egui_plot::BarChart}}, `VLine` markers, and more. The plot fits its bounds to the data unless you set them.
 
 ```rust,noplayground
 {{#include ../../../platform/cats/gui/examples/immediate_mode_gui/egui_plot.rs:example}}

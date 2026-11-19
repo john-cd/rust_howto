@@ -122,6 +122,12 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 {{#include ../../crates/language/examples/attributes/cfg_if.rs:example}}
 ```
 
+### Select Code by Rust Compiler Version {#rustversion}
+
+Use [`rustversion`][rustversion-docs] alongside `#[cfg]` and `cfg-if` when the condition is a compiler release. For example, put `#[rustversion::since(1.100)]` on an implementation that needs an API first available in Rust 1.100 and `#[rustversion::before(1.100)]` on the fallback. Cargo's `rust-version` field declares the minimum supported compiler. Test the fallback on that minimum and the newer implementation on a compiler that provides the API.
+
+[rustversion-docs]: https://docs.rs/rustversion/
+
 ## References {#references .skip}
 
 - [Attributes reference][book~rust-reference~attributes]↗.

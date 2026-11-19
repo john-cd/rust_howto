@@ -11,6 +11,9 @@ mod central_tendency;
 mod central_tendency1;
 /// Calculates the mode of a dataset.
 mod central_tendency2;
+
+/// Computes an upper-tail probability for the standard normal distribution.
+mod normal_tail;
 /// Computing the mean and the standard deviation of a list of integers.
 mod standard_deviation;
 
@@ -37,6 +40,10 @@ enum Commands {
     #[command(name = "central_tendency2")]
     CentralTendency2,
 
+    /// Runs the `normal_tail` example.
+    #[command(name = "normal_tail")]
+    NormalTail,
+
     /// Runs the `standard_deviation` example.
     #[command(name = "standard_deviation")]
     StandardDeviation,
@@ -54,6 +61,9 @@ fn dispatch(cli: Cli) {
             }
             Commands::CentralTendency2 => {
                 central_tendency2::run();
+            }
+            Commands::NormalTail => {
+                normal_tail::run();
             }
             Commands::StandardDeviation => {
                 standard_deviation::run();
@@ -79,6 +89,7 @@ mod tests {
         "central_tendency",
         "central_tendency1",
         "central_tendency2",
+        "normal_tail",
         "standard_deviation",
     ];
 
