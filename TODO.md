@@ -7,6 +7,18 @@
 Track implementation, acceptance criteria, and validation evidence in
 [GitHub Issues][issues]. Recheck the live issue before starting work.
 
+## Publication fixes, November 18, 2026
+
+Implemented issues [#2382](https://github.com/john-cd/rust_howto/issues/2382) through
+[#2396](https://github.com/john-cd/rust_howto/issues/2396) in focused local commits.
+The [owner review][nov18-review] records the original evidence. GitHub remains
+the tracker for publication and any follow-up.
+
+- The fresh mdBook HTML render contains 488 HTML files. The internal-link, word-index, search, and Playground checks passed.
+- All 60 focused example tests, targeted strict Clippy, and the pointer-provenance Miri test passed.
+- The example-integrity release command passed. The index generator fixture covers standalone and nested recipes.
+- Nightly format checks passed in all 77 book packages when run individually. The single book-wide Rustfmt invocation hit Windows error 206.
+
 ## Publication review, November 18, 2026
 
 The book needs another editorial pass before publication. The [review on #2216][nov18-review] records the
