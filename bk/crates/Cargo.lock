@@ -16285,6 +16285,7 @@ dependencies = [
  "cfg-if",
  "clap",
  "proc_macros",
+ "rustversion",
  "strum 0.28.0",
  "tokio",
  "trybuild",

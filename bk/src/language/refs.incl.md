@@ -174,3 +174,4 @@
 [p~ownership_and_borrowing]: ownership_and_borrowing.md
 [p~recoverable_error_handling]: ../standard-library/recoverable_error_handling.md
 [p~trait_objects_and_dynamic_dispatch]: trait_objects_and_dynamic_dispatch.md
+[ex~language~rustversion]: attributes.md#rustversion

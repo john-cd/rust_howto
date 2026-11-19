@@ -985,6 +985,7 @@
 [ex~language~return-an-iterator]: ../language/iterators.md#return-an-iterator
 [ex~language~return-position-impl-trait]: ../language/impl_trait.md#return-position-impl-trait
 [ex~language~return-reference]: ../language/functions.md#return-reference
+[ex~language~rustversion]: ../language/attributes.md#rustversion
 [ex~language~scalar-data-types]: ../language/data_types.md#scalar-data-types
 [ex~language~sealed-trait-pattern]: ../language/traits.md#sealed-trait-pattern
 [ex~language~self-referential-structs]: ../language/lifetimes.md#self-referential-structs

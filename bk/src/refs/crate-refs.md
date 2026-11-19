@@ -7852,6 +7852,9 @@
 [c~rusttype~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rusttype-yellow
 [c~rusttype~repo]: https://gitlab.redox-os.org/redox-os/rusttype
 [c~rusttype~repo~badge]: https://img.shields.io/badge/rusttype-steelblue?logo=github
+[c~rustversion~crates.io]: https://crates.io/crates/rustversion
+[c~rustversion~docs]: https://docs.rs/rustversion
+[c~rustversion~repo]: https://github.com/dtolnay/rustversion
 [c~rusty-money~crates.io]: https://crates.io/crates/rusty-money
 [c~rusty-money~crates.io~badge]: https://img.shields.io/badge/crates.io-rusty--money-crimson
 [c~rusty-money~docs]: https://docs.rs/rusty-money

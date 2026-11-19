@@ -124,9 +124,16 @@ For complicated conditional compilation scenarios, consider using the `cfg-if` c
 
 ### Select Code by Rust Compiler Version {#rustversion}
 
-Use [`rustversion`][rustversion-docs] alongside `#[cfg]` and `cfg-if` when the condition is a compiler release. For example, put `#[rustversion::since(1.100)]` on an implementation that needs an API first available in Rust 1.100 and `#[rustversion::before(1.100)]` on the fallback. Cargo's `rust-version` field declares the minimum supported compiler. Test the fallback on that minimum and the newer implementation on a compiler that provides the API.
+Use [`rustversion`][rustversion-docs] alongside `#[cfg]` and `cfg-if` when the condition is a compiler release. Rust 1.100 added [`bool::toggle`][bool-toggle-docs]. On earlier compilers, the fallback flips the flag with `!flag`. Cargo's `rust-version` field declares the minimum compiler the package supports.
+
+```rust,ignore,noplayground
+{{#include ../../crates/language/examples/compiler_version.rs:example}}
+```
+
+Run the same example test on the package's minimum Rust version and on Rust 1.100 to exercise both branches.
 
 [rustversion-docs]: https://docs.rs/rustversion/
+[bool-toggle-docs]: https://doc.rust-lang.org/1.100.0/std/primitive.bool.html#method.toggle
 
 ## References {#references .skip}
 
