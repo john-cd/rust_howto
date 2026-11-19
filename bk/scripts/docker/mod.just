@@ -5,6 +5,12 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+[unix]
+set script-interpreter := ["bash"]
+
+[windows]
+set script-interpreter := ["C:/Program Files/Git/bin/bash.exe"]
+
 root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 # ---- Docker image and service tasks ----------------------------------------
@@ -16,8 +22,8 @@ _default:
 
 # Build the CI Docker image, then push it to DockerHub.
 [group('push')]
+[script]
 push_ci:
-    #!/usr/bin/env bash
     set -euo pipefail
     ## Access private images in DockerHub
     docker login
@@ -32,8 +38,8 @@ push_ci:
     docker push johncd/rust_howto_dev:latest
 
 # List containers / Docker Compose services
+[script]
 list_services:
-    #!/usr/bin/env bash
     set -euo pipefail
     d="{{ root }}/.devcontainer/"
     docker compose -f ${d}compose.yaml \

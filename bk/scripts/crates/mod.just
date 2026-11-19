@@ -5,6 +5,12 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+[unix]
+set script-interpreter := ["bash"]
+
+[windows]
+set script-interpreter := ["C:/Program Files/Git/bin/bash.exe"]
+
 set tempdir := "."
 book_root := replace(clean(join(source_directory(), "../..")), "\\", "/")
 
@@ -18,8 +24,8 @@ _default:
 ## ---- CRATE MANAGEMENT -----------------------------------
 
 # (BEWARE: modifies many files; manual review required) Put all crate names in the book's Markdown between ` `
+[script]
 backtick:
-    #! /usr/bin/env bash
     set -euo pipefail
     for crate in $( cat {{ book_root }}/master/crates.txt | sed -E -e '/^\s*(vision|markup|combine|matrix|derive|raster|job|thumbnails|digest|encoding|ping|clear|can|core|fetch|find|atomic|protobuf|ignore|select|windows|tracing|heapless|bytes|regex|futures|cached|config|diff|which|fake|glob|markdown|insta|similar|time|just|directories|image|open|log|either|which|similar|cargo|just|cross|colored|console)\s*$/d' )
     do
@@ -29,8 +35,8 @@ backtick:
     done
 
 # Check the master list of crates against `crates.io` and print invalid names (slow).
+[script]
 check:
-    #! /usr/bin/env bash
     set -uo pipefail
     for crate in $( cat {{ book_root }}/master/crates.txt )
     do
@@ -39,8 +45,8 @@ check:
     echo "DONE"
 
 # Extract crate names from [c~<name>::optional::path~suffix] link labels in all Markdown files in `src` (except refdef files) and compare with the master list.
+[script]
 compare_with_markdown:
-    #! /usr/bin/env bash
     set -euo pipefail
     root={{ book_root }}/
     # Extract crate name from labels [c~<name>::optional::path~suffix] in all Markdown files (except refdef files).

@@ -5,6 +5,12 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+[unix]
+set script-interpreter := ["bash"]
+
+[windows]
+set script-interpreter := ["C:/Program Files/Git/bin/bash.exe"]
+
 exe := if os_family() == "windows" { ".exe" } else { "" }
 root := replace(clean(source_directory() + "/../../.."), "\\", "/")
 book_root := clean(root + "/bk")
@@ -178,8 +184,8 @@ _default:
 
 # Run all tests that require external services
 [group('heavy tests')]
+[script]
 heavytestall:
-    #!/usr/bin/env bash
     set -euo pipefail
     echo "Run all tests that require external services"
     for feature in "amqp" "cassandra" "elasticsearch" "meilisearch" "mongodb" "mssql" "postgres" "redis"

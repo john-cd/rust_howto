@@ -6,6 +6,12 @@
 #set shell := ["bash", "-uc"]
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+[unix]
+set script-interpreter := ["bash"]
+
+[windows]
+set script-interpreter := ["C:/Program Files/Git/bin/bash.exe"]
+
 root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 # List the available recipes and task modules.
@@ -24,8 +30,8 @@ _default:
 # A few files e.g. `main.rs` and `mod.rs` are not true examples and should not be included into the book.
 
 # List examples (.rs files) in `crates/**/tests` that were not included into a module somehow and that are therefore not tested
+[script]
 list_not_tested:
-    #!/usr/bin/env bash
     root="{{ root }}/"
     comm -1 -3 <(find "${root}crates" -type f \( -name "*.rs" \) -exec sed -nE 's/^mod (\w*)\s*?;/\1/pg' {} \; | sort -u) \
           <(find "${root}crates" -type f -wholename "*/examples/*/*.rs" -exec basename -s '.rs' {} \; | sed '/main/d; /mod/d; /lib/d; /cat/d; /lang/d; /topic/d; /build/d' | sort -u)

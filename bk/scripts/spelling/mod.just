@@ -5,6 +5,12 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+[unix]
+set script-interpreter := ["bash"]
+
+[windows]
+set script-interpreter := ["C:/Program Files/Git/bin/bash.exe"]
+
 root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 # List the available recipes and task modules.
@@ -23,8 +29,8 @@ spell-aspell mode='list':
     ./spellcheck.sh {{ mode }}
 
 # Add a word to the book spelling dictionary and sort the word list.
+[script]
 aspell-add-word word:
-    #!/usr/bin/env bash
     dic="{{ replace(join(source_directory(), "dictionary.txt"), "\\", "/") }}"
     echo "{{ word }}" >> ${dic}
     sort -u -o ${dic} ${dic}

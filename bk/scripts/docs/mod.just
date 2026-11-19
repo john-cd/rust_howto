@@ -5,6 +5,12 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+[unix]
+set script-interpreter := ["bash"]
+
+[windows]
+set script-interpreter := ["C:/Program Files/Git/bin/bash.exe"]
+
 python := if os_family() == "windows" { "python" } else { "python3" }
 book_root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
@@ -18,8 +24,8 @@ _default:
 ## ---- CODE DOCUMENTATION -----------------------------------
 
 # Build and display the `cargo doc` documentation for a specific package
+[script]
 @doc pkg:
-    #!/usr/bin/env bash
     set -euo pipefail
     cd {{ book_root }}/crates/
     cargo clean --doc
@@ -27,8 +33,8 @@ _default:
     cd {{ book_root }}/../target/bk/doc/ ; {{ python }} -m http.server 9000
 
 # Build all package documentation.
+[script]
 @_builddocall:
-    #!/usr/bin/env bash
     set -euo pipefail
     cd {{ book_root }}/crates/
     cargo clean --doc

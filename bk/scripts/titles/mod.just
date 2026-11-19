@@ -5,6 +5,12 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+[unix]
+set script-interpreter := ["bash"]
+
+[windows]
+set script-interpreter := ["C:/Program Files/Git/bin/bash.exe"]
+
 root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 # List the available recipes and task modules.
@@ -15,8 +21,8 @@ _default:
 ## ---- TITLE MANAGEMENT -----------------------------------
 
 # (Manual review required) Capitalize titles in the book's Markdown.
+[script]
 normalize:
-    #! /usr/bin/env bash
     set -euo pipefail
     IFS=$'\n\t'
     root={{ root }}

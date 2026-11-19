@@ -5,6 +5,12 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+[unix]
+set script-interpreter := ["bash"]
+
+[windows]
+set script-interpreter := ["C:/Program Files/Git/bin/bash.exe"]
+
 exe := if os_family() == "windows" { ".exe" } else { "" }
 root := replace(clean(source_directory() + "/../.."), "\\", "/")
 help := 'help'
@@ -62,8 +68,8 @@ generate_language_index:
 # Usage: just indices generate_language_index >> ./src/language/index.incl.md
 
 # Generate the summary references for the dev tool category
+[script]
 generate_dev_tools_refdefs:
-    #!/usr/bin/env bash
     set -euo pipefail
     root="{{ root }}/src/categories/development-tools/"
     mv -f ${root}refs.incl.md ${root}refs.incl.md.bak

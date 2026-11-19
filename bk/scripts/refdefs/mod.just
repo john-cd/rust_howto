@@ -6,6 +6,12 @@
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 set tempdir := "."
 
+[unix]
+set script-interpreter := ["bash"]
+
+[windows]
+set script-interpreter := ["C:/Program Files/Git/bin/bash.exe"]
+
 root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 # List the available recipes and task modules.
@@ -24,8 +30,8 @@ _default:
     ./check_refdefs.sh {{ root }}
 
 # Collect reference definitions scattered in the Markdown files (excluding the refdefs files) and print them
+[script]
 collect:
-    #!/usr/bin/env bash
     set -uo pipefail
     root="$(realpath {{ root }})/"
     for file in $(find ${root}src ${root}../later/src -type f \( -name "*.md" -not -name "SUMMARY.md" -not -name "*.incl.md" -not -name "*-refs.md" \))
@@ -36,8 +42,8 @@ collect:
     echo "DONE"
 
 # Update the label of a reference-style link and its reference definition.
+[script]
 relabel old new:
-    #!/usr/bin/env bash
     set -uo pipefail
     root="$(realpath {{ root }})/"
     for file in $(find ${root}src ${root}../later/src -type f \( -name "*.md" -not -name "SUMMARY.md" \))

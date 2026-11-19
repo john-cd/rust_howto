@@ -85,8 +85,8 @@ _default:
 # link crates to published recipes
 
 # Generate the alphabetical crate index with links to published recipes.
+[script]
 @_generate-index-alphabetical:
-    #!/usr/bin/env bash
     set -euo pipefail
     cd "{{ root }}/../tools"
     tmp="$(mktemp)"

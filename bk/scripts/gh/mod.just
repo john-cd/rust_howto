@@ -5,6 +5,12 @@
 
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+[unix]
+set script-interpreter := ["bash"]
+
+[windows]
+set script-interpreter := ["C:/Program Files/Git/bin/bash.exe"]
+
 root := replace(clean(source_directory() + "/../.."), "\\", "/")
 
 set tempdir := "."
@@ -25,8 +31,8 @@ _default:
     gh issue create --title {{ quote(title) }} --body ''
 
 # Return a list of GitHub issues with the same title
+[script]
 find_dupe_issues:
-    #!/usr/bin/env bash
     set -euo pipefail
     IFS=$'\t\n'
     gh issue list -L 2000 --json title --jq '.[] | [.title]' | sed -E 's/\["(.*)(\(P[0-9]\))?"]/\1/g' | sort | uniq --repeated
