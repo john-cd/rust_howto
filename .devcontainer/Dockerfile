@@ -260,6 +260,8 @@ RUN PYTHON_VERSION="$PYTHON_VERSION" \
     /usr/local/bin/install_python_3_15.sh
 ENV PYTHON=/usr/local/bin/python \
     PYTHON_VERSION=${PYTHON_VERSION}
+RUN test "$(python --version)" = "Python ${PYTHON_VERSION}" \
+    && test "$(python3 --version)" = "Python ${PYTHON_VERSION}"
 
 ## Install the hash-pinned Oracle Instant Client runtime and SDK for OCI examples.
 COPY --link --chmod=755 .devcontainer/install_oracle_client.sh /usr/local/bin/install_oracle_client.sh
