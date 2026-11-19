@@ -3,11 +3,6 @@
 [workspace]
 resolver = "3"
 members = ["cats/*", "other"]
-exclude = [
-    "cats/embedded",
-    "patches/proc-macro-error2",
-    "patches/zenoh-transport-1.10.2",
-]
 
 [workspace.package]
 version = "0.1.2"
@@ -1377,6 +1372,4 @@ while_float = "warn"
 # Keep this local fix until all active dependency paths can use the maintained v3 crate.
 [patch.crates-io]
 # Almost drop-in replacement to panics in proc-macros
-proc-macro-error2 = { path = "patches/proc-macro-error2" }
-# Backport Zenoh's 0.11.6 lz4_flex bump to the 1.10.2 crate until a release is published.
-zenoh-transport = { path = "patches/zenoh-transport-1.10.2" }
+proc-macro-error2 = { path = "../../bk/platform/patches/proc-macro-error2" }

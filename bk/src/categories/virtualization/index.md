@@ -42,9 +42,9 @@ Before choosing a runtime or crate, check the host operating system, CPU archite
 
 | Topic | Rust Crates | Notes |
 | ---------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| Sandboxing with [Wasm](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md) | [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}}, [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}} | `wasmi` interprets WebAssembly; `wasi-rs` provides WASI bindings. |
+| Sandboxing with [Wasm](../wasm/index.md) | [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}}, [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}} | `wasmi` interprets WebAssembly; `wasi-rs` provides WASI bindings. |
 | [Emulators](../emulators/index.md) | [`qemu-rs`][c~qemu~docs]↗{{hi:qemu-rs}} | QEMU bindings for emulation and virtualization. |
-| FFI | | See [Development Tools: FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md). |
+| FFI | | See [Development Tools: FFI](../development-tools_ffi/index.md). |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

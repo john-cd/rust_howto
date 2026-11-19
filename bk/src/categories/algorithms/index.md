@@ -117,13 +117,13 @@ For [[mathematics | Mathematics]], use the following crates for general numerica
 
 ### Science
 
-See [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [Machine Learning](../../other/machine-learning/index.md), [Geoscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_geo/index.md), [Neuroscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_neuroscience/index.md), [Science Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md), and [Simulation](../simulation/index.md).
+See [Science](../science/index.md), [Machine Learning](../../other/machine-learning/index.md), [Geoscience](../science_geo/index.md), [Neuroscience](../science_neuroscience/index.md), [Science Robotics](../science_robotics/index.md), and [Simulation](../simulation/index.md).
 
 ## References
 
 - [`rust-algorithms`][rust-algorithms~repo]↗: Common data structures and algorithms in Rust.
 
 See also [String Concatenation](../text-processing/string_concat.md), [String Encoding](../encoding/string_encoding.md), [String Parsing](../text-processing/string_parsing.md), and [Text Processing](../text-processing/index.md).
-[Compression](../compression/index.md), [cryptography](../cryptography/index.md), [[data-structures | data structures]], [[mathematics | mathematics]], [scientific algorithms](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md), [search](../database/search.md), [[strings | strings]], and [text processing](../text-processing/index.md) are discussed elsewhere but are briefly mentioned below.
+[Compression](../compression/index.md), [cryptography](../cryptography/index.md), [[data-structures | data structures]], [[mathematics | mathematics]], [scientific algorithms](../science/index.md), [search](../database/search.md), [[strings | strings]], and [text processing](../text-processing/index.md) are discussed elsewhere but are briefly mentioned below.
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -6,7 +6,7 @@
 
 The following are topics that deserve (additional) coverage and examples:
 
-- Rust [GUI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/index.md).
+- Rust [GUI](../../categories/gui/index.md).
 - [Rust Patterns](../../categories/rust-patterns/index.md).
 - Rust [[macros | Macros]].
 - [[data-structures | Data Structures]].
@@ -17,14 +17,14 @@ The following are topics that deserve (additional) coverage and examples:
 - [Template Engines](../../categories/template-engine/index.md).
 - [Caching](../../categories/caching/index.md).
 - [Compilers](../../categories/compilers/index.md).
-- [WASM](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md).
+- [WASM](../../categories/wasm/index.md).
 - [[algorithms | Algorithms]].
 - [Authentication](../../categories/authentication/index.md) and authorization: OAuth 2.0, LDAP/Active Directory.
 - Continuous Deployment & Integration ([CD / CI](../../other/devops/cd_ci.md)) for Rust projects.
 - Use of Rust in [AWS](../../other/cloud/aws.md) and other [Cloud](../../other/cloud/index.md) services.
 - [Serverless](../../other/cloud/rust_native_cloud_development.md#write-serverless-functions) Rust.
 - More [database](../../categories/database/index.md) examples, including object databases, graph databases, e.g. BonsaiDB, neo4j.
-- [Embedded](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md) systems.
+- [Embedded](../../categories/embedded/index.md) systems.
 - [Visualization](../../categories/visualization/index.md).
 - [Graphics](../../categories/graphics/index.md).
 - [Games](../../categories/games/index.md), [Game Engines](../../categories/game-engines/index.md).
@@ -46,7 +46,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [[statistics | Statistics]], math.
 - Sound ([Multimedia - audio](../../categories/multimedia_audio/index.md)).
 - [API bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md).
-- FFI ([Development tools - FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md)).
+- FFI ([Development tools - FFI](../../categories/development-tools_ffi/index.md)).
 - [Hardware support](../../categories/hardware-support/index.md).
 - [Development Tools - Build Utils](../../categories/development-tools_build-utils/index.md).
 - [Graphics and Rendering](../../categories/graphics/index.md).
@@ -54,14 +54,14 @@ The following are topics that deserve (additional) coverage and examples:
 - Social media APIs.
 - Personal file sharing: OwnCloud, etc.
 - [Emulators](../../categories/emulators/index.md).
-- [Accessibility](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/accessibility/index.md).
+- [Accessibility](../../categories/accessibility/index.md).
 - More examples for [Internationalization](../../categories/internationalization/index.md) and [Localization](../../categories/localization/index.md).
 - [Multimedia](../../categories/multimedia/index.md).
 - [Computer Vision](../../categories/computer-vision/index.md).
-- [Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md).
+- [Robotics](../../categories/science_robotics/index.md).
 - [Simulation](../../categories/simulation/index.md).
-- [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md) ([Geo](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_geo/geo.md), [Neuro](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_neuroscience/neuroscience.md)).
-- [Finance](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/finance/index.md).
+- [Science](../../categories/science/index.md) ([Geo](../../categories/science_geo/geo.md), [Neuro](../../categories/science_neuroscience/neuroscience.md)).
+- [Finance](../../categories/finance/index.md).
 - [Aerospace](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace/index.md)-related crates: [Drones](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace_drones/drones.md), UAVs, [Space Protocols](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace_space-protocols/space_protocols.md), simulation...
 - [Cryptocurrencies](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/cryptography_cryptocurrencies/index.md).
 

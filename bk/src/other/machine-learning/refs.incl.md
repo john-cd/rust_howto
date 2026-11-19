@@ -16,4 +16,4 @@
 
 [p~classical-machine-learning]: classical_machine_learning.md
 
-[p~robotics-ai]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/artificial_intelligence.md
+[p~robotics-ai]: ../../categories/science_robotics/artificial_intelligence.md

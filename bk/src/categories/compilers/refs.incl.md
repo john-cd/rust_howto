@@ -36,9 +36,9 @@
 [p~development-tools]: ../development-tools/index.md
 [p~development-tools_build-utils]: ../development-tools_build-utils/index.md
 [p~development-tools_debugging]: ../development-tools_debugging/index.md
-[p~development-tools_ffi]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md
+[p~development-tools_ffi]: ../development-tools_ffi/index.md
 [p~development-tools_procedural-macro-helpers]: ../development-tools_procedural-macro-helpers/index.md
-[p~interfacing_with_javascript]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/interfacing_with_javascript.md
+[p~interfacing_with_javascript]: ../wasm/interfacing_with_javascript.md
 [p~parser-implementations]: ../parser-implementations/index.md
 [p~parsing]: ../parsing/index.md
 [p~programming_languages]: ../parser-implementations/programming_languages.md

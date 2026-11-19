@@ -18,7 +18,7 @@ When the business rules should match but the interfaces should feel native, put 
 
 ### Target a browser or embedded device
 
-For browser applications, compile Rust to WebAssembly and integrate with browser APIs as needed; see [WebAssembly](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md). Embedded projects also target specific chips and often use `no_std` libraries and hardware abstraction layers; see [Embedded Systems](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md) and [no_std](../../categories/no-std/no_std.md). Crates such as [`cortex-m`][c~cortex-m~docs]↗{{hi:cortex-m}}, [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} and [`rtic`][c~rtic~docs]↗{{hi:rtic}} are common starting points.
+For browser applications, compile Rust to WebAssembly and integrate with browser APIs as needed; see [WebAssembly](../../categories/wasm/index.md). Embedded projects also target specific chips and often use `no_std` libraries and hardware abstraction layers; see [Embedded Systems](../../categories/embedded/index.md) and [no_std](../../categories/no-std/no_std.md). Crates such as [`cortex-m`][c~cortex-m~docs]↗{{hi:cortex-m}}, [`embedded-hal`][c~embedded-hal~docs]↗{{hi:embedded-hal}} and [`rtic`][c~rtic~docs]↗{{hi:rtic}} are common starting points.
 
 ## Cross-compile for another target
 
@@ -66,7 +66,7 @@ Prefer portable APIs and dependencies that support all your targets. Isolate una
 
 ### Web applications
 
-WebAssembly can run Rust code in browsers, but a web app still uses browser APIs for tasks such as the DOM, storage, and networking. See the [WebAssembly](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md) chapter for browser integration and framework examples.
+WebAssembly can run Rust code in browsers, but a web app still uses browser APIs for tasks such as the DOM, storage, and networking. See the [WebAssembly](../../categories/wasm/index.md) chapter for browser integration and framework examples.
 
 ### Desktop and mobile applications
 
@@ -74,10 +74,10 @@ Choose which parts you want in common across targets.
 
 | What to share | Common crates | What to check |
 | --- | --- | --- |
-| A web interface and a Rust application layer | [`tauri`][c~tauri~docs], or [`wry`][wry-docs] for direct WebView integration | Check the target's WebView, permissions, and installer. See [Web-based desktop GUIs](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/web_based_gui.md). |
+| A web interface and a Rust application layer | [`tauri`][c~tauri~docs], or [`wry`][wry-docs] for direct WebView integration | Check the target's WebView, permissions, and installer. See [Web-based desktop GUIs](../../categories/gui/web_based_gui.md). |
 | A Rust component model | [`dioxus`][dioxus-platform-support] | Check the feature set and prerequisites of the selected desktop, mobile, or web renderer. |
-| A desktop interface drawn from Rust | [`egui`][c~egui~docs], [`iced`][c~iced~docs], or [`slint`][c~slint~docs] | Compare the [GUI recipes](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/index.md) and check keyboard input, accessibility, and packaging on each target. |
-| Application rules behind a native UI | [`crux_core`][c~crux_core~docs], or [`uniffi`][uniffi-guide] for exposing a Rust library to Swift or Kotlin | Keep the UI in the platform shell or connect a [Flutter interface](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/flutter.md). Smoke check the binding and lifecycle on a real target. |
+| A desktop interface drawn from Rust | [`egui`][c~egui~docs], [`iced`][c~iced~docs], or [`slint`][c~slint~docs] | Compare the [GUI recipes](../../categories/gui/index.md) and check keyboard input, accessibility, and packaging on each target. |
+| Application rules behind a native UI | [`crux_core`][c~crux_core~docs], or [`uniffi`][uniffi-guide] for exposing a Rust library to Swift or Kotlin | Keep the UI in the platform shell or connect a [Flutter interface](../../categories/development-tools_ffi/flutter.md). Smoke check the binding and lifecycle on a real target. |
 
 ## Keep operating-system APIs local
 
@@ -86,9 +86,9 @@ For system-specific APIs, use the smallest platform-specific layer possible. The
 ## Related Topics
 
 - [Native OS APIs](../native-os/index.md) for platform bindings and ownership.
-- [GUI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/index.md).
-- [Embedded Systems](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md).
-- [WebAssembly](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md).
+- [GUI](../../categories/gui/index.md).
+- [Embedded Systems](../../categories/embedded/index.md).
+- [WebAssembly](../../categories/wasm/index.md).
 - [Software Architecture](../architecture/index.md).
 
 [uniffi-guide]: https://mozilla.github.io/uniffi-rs/

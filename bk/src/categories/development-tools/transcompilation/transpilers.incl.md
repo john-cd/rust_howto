@@ -9,7 +9,7 @@ A transpiler translates source code into source code while retaining much of its
 | [cbindgen][cbindgen~repo] | Rust public C API to C/C++ headers | Mozilla project; generates headers for Rust libraries exposing a C ABI. |
 | [wasm-bindgen][wasm-bindgen~repo] | Rust and JavaScript/WebAssembly glue | Maintained project; generates bindings that connect Rust WebAssembly modules to JavaScript. |
 
-See [Development Tools: FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md) for native interfaces and [WebAssembly](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md) for compiling and running Rust modules in a web environment.
+See [Development Tools: FFI](../../development-tools_ffi/index.md) for native interfaces and [WebAssembly](../../wasm/index.md) for compiling and running Rust modules in a web environment.
 
 | Recipe | Crates | Categories |
 | --- | --- | --- |

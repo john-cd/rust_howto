@@ -27,7 +27,7 @@
 [p~macros]: ../../language/macros.md
 [p~main]: ../../language/entry_points.md
 [p~streams]: ../asynchronous/streams.md
-[p~wasm]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md
+[p~wasm]: ../wasm/index.md
 [macrotest~docs]: https://docs.rs/macrotest/latest/macrotest/
 [rust-analyzer~macro-expansion~docs]: https://rust-analyzer.github.io/book/features.html#expand-macro-recursively
 

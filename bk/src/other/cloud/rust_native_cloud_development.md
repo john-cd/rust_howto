@@ -25,7 +25,7 @@ See its [shutdown notice][shuttle~shutdown] when maintaining an existing project
 
 [Spin][cloud~spin] provides an application model for WebAssembly components, including Rust SDK support and local development commands. [wasmCloud][cloud~wasmcloud] combines components with host capabilities and distributed application operation. Their component interfaces and deployment models differ; test the exact capability providers and host configuration the application needs.
 
-See [standalone Wasm runtimes](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/wasm_standalone_runtimes.md) for embedding and WASI, and distinguish a core Wasm module from a component with WIT-defined interfaces.
+See [standalone Wasm runtimes](../../categories/wasm/wasm_standalone_runtimes.md) for embedding and WASI, and distinguish a core Wasm module from a component with WIT-defined interfaces.
 
 ## Write Serverless Functions
 
@@ -41,7 +41,7 @@ The [`kube` project][cloud~kube] supplies Kubernetes clients and controller-runt
 
 - [Cloud overview](index.md) and [AWS](aws.md).
 - [Containers](../../categories/virtualization/containers.md).
-- [WebAssembly runtimes](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/wasm_standalone_runtimes.md).
+- [WebAssembly runtimes](../../categories/wasm/wasm_standalone_runtimes.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -15,10 +15,10 @@
 [p~game-development]: ../game-development/game_development.md
 [p~games]: ../games/index.md
 [p~graphics]: ../graphics/index.md
-[p~gui]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/index.md
+[p~gui]: ../gui/index.md
 [p~option]: # "../../standard-library/option.md"
 [tetra~status~repo]: https://github.com/17cupsofcoffee/tetra#status
 
 [p~multimedia_audio]: ../multimedia_audio/index.md
 [p~rendering]: ../graphics/index.md
-[p~window_creation]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/window_creation.md
+[p~window_creation]: ../gui/window_creation.md

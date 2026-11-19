@@ -8,7 +8,7 @@
 [p~crates]: ../../crate_selection/index.md
 [tetra~status~repo]: https://github.com/17cupsofcoffee/tetra#status
 
-[p~artificial_intelligence]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/artificial_intelligence.md
+[p~artificial_intelligence]: ../science_robotics/artificial_intelligence.md
 [p~game-development]: index.md
 [p~game-engines]: ../game-engines/index.md
 [p~games]: ../games/index.md

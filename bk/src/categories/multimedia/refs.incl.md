@@ -11,13 +11,13 @@
 [ffmpeg~manual]: https://ffmpeg.org/ffmpeg.html
 
 [p~concurrency]: ../concurrency/index.md
-[p~embedded]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md
+[p~embedded]: ../embedded/index.md
 [p~graphics]: ../graphics/index.md
-[p~gui]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/index.md
+[p~gui]: ../gui/index.md
 [p~hardware-support]: ../hardware-support/index.md
 [p~memory-management]: ../memory-management/index.md
 [p~network-programming]: ../network-programming/index.md
 [p~rendering]: ../graphics/index.md
 [p~rendering_data-formats]: ../rendering_data-formats/index.md
 [p~rendering_graphics-api]: ../rendering_graphics-api/index.md
-[p~wasm]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md
+[p~wasm]: ../wasm/index.md

@@ -41,7 +41,7 @@ From `bk/crates`, run `cargo run --locked -p other --example cross_platform -- c
 - [Cross-platform Development](index.md).
 - [Architecture](../architecture/index.md).
 - [Software Architecture Process][p~architecture-process].
-- [WebAssembly](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md).
+- [WebAssembly](../../categories/wasm/index.md).
 - [Programming Languages](../../categories/parser-implementations/programming_languages.md).
 
 {{#include refs.incl.md}}

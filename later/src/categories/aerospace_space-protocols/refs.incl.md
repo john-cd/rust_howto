@@ -11,6 +11,6 @@
 [p~aerospace]: ../aerospace/index.md
 [p~aerospace_protocols]: ../aerospace_protocols/index.md
 [p~data-structures]: https://john-cd.com/rust_howto/categories/data-structures/index.html
-[p~development-tools_ffi]: ../development-tools_ffi/index.md
+[p~development-tools_ffi]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_ffi/index.md
 [p~encoding]: https://john-cd.com/rust_howto/categories/encoding/index.html
 [p~parsing]: https://john-cd.com/rust_howto/categories/parsing/index.html
