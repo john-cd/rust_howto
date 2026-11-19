@@ -8186,6 +8186,9 @@
 [c~serde_json~lib.rs~badge]: https://img.shields.io/badge/lib.rs-serde__json-yellow
 [c~serde_json~repo]: https://github.com/serde-rs/json
 [c~serde_json~repo~badge]: https://img.shields.io/badge/serde__json-steelblue?logo=github
+[c~serde_path_to_error~crates.io]: https://crates.io/crates/serde_path_to_error
+[c~serde_path_to_error~docs]: https://docs.rs/serde_path_to_error
+[c~serde_path_to_error~repo]: https://github.com/dtolnay/path-to-error
 [c~serde_toml~crates.io]: https://crates.io/crates/serde_toml
 [c~serde_toml~crates.io~badge]: https://img.shields.io/badge/crates.io-serde__toml-crimson
 [c~serde_toml~docs]: https://docs.rs/serde_toml/0.0.1/serde_toml

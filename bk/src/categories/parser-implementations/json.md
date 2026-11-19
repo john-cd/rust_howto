@@ -40,6 +40,14 @@ Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p par
 {{#include ../../../crates/cats/parser_implementations/examples/json/simd_json.rs:example}}
 ```
 
+## Locate a JSON Deserialization Error {#json-error-path}
+
+Use `serde_path_to_error` with the JSON deserializer to distinguish the field path from the original Serde error. In this example, `servers[1].port` identifies the second server’s port. `inner()` retains the cause, including Serde’s line and column when available. For a different problem, see [reporting unknown fields](../encoding/serde.md#serde-ignored).
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/parser_implementations/examples/json_error_path.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Serde](../encoding/serde.md) demonstrates mapping structured data into application types.

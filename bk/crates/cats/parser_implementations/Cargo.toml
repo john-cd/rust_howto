@@ -71,6 +71,11 @@ name = "yaml"
 path = "examples/yaml/main.rs"
 test = true
 
+[[example]]
+name = "json_error_path"
+path = "examples/json_error_path.rs"
+test = true
+
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
@@ -106,6 +111,7 @@ serde = { version = "1.0.229", features = ["derive"] }
 serde-saphyr = "2.1.1"
 # A JSON serialization file format
 serde_json = "1.0.154"
+serde_path_to_error = "0.1.20"
 # High performance JSON parser based on a port of simdjson
 simd-json = "0.19.0"
 # Extensible SQL Lexer and Parser with support for ANSI SQL:2011

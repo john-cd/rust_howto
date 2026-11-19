@@ -37,3 +37,4 @@
 [ex~parser-implementations~xml5ever]: xml.md#xml5ever
 [ex~parser-implementations~xmlparser]: xml.md#xmlparser
 [ex~parser-implementations~sql_readonly]: programming_languages.md#sql_readonly
+[ex~parser-implementations~json-error-path]: json.md#json-error-path

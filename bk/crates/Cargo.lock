@@ -21352,6 +21352,7 @@ dependencies = [
  "serde",
  "serde-saphyr 2.1.1",
  "serde_json",
+ "serde_path_to_error",
  "simd-json",
  "sqlparser 0.64.0",
  "swc_common 27.0.0",

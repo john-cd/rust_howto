@@ -88,6 +88,8 @@ Serde supports many formats through separate crates. See [Serde's data formats](
 
 - [`serde_with`][c~serde_with~lib.rs]↗ for adapters and common serialization patterns.
 
+For the path to a field that fails to deserialize, see [Locate a JSON Deserialization Error](../parser-implementations/json.md#json-error-path).
+
 ## Related Topics {#related-topics .skip}
 
 - [CSV](csv.md).

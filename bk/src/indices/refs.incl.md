@@ -1219,6 +1219,7 @@
 [ex~parser-implementations~html5ever]: ../categories/parser-implementations/html.md#html5ever
 [ex~parser-implementations~ini]: ../categories/parser-implementations/ini.md#ini
 [ex~parser-implementations~javascript_parsing]: ../categories/parser-implementations/programming_languages.md#javascript_parsing
+[ex~parser-implementations~json-error-path]: ../categories/parser-implementations/json.md#json-error-path
 [ex~parser-implementations~json5]: ../categories/parser-implementations/json.md#json5
 [ex~parser-implementations~markdown]: ../categories/parser-implementations/markdown.md#markdown
 [ex~parser-implementations~pulldown-cmark]: ../categories/parser-implementations/markdown.md#pulldown-cmark
