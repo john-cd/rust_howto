@@ -15,7 +15,9 @@ in-memory pixmap on the CPU. This example fills a circle, draws a diagonal
 stroke over it, and samples pixels to verify the result. It needs no display
 server or GPU.
 
-```rust,editable
+From `bk/crates`, check this example with `cargo test --locked -p graphics --example 2d_raster_graphics`.
+
+```rust,noplayground
 {{#include ../../../crates/cats/graphics/examples/2d_raster_graphics/tiny_skia.rs:example}}
 ```
 

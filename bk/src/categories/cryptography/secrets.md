@@ -51,7 +51,9 @@ Zeroizing has limits: it clears only the memory it owns. A `clone()`, a `String`
 
 [`keyring`][c~keyring~docs]↗{{hi:keyring}} stores, loads, and deletes secrets in Windows Credential Manager, the macOS Keychain, or the Linux Secret Service. The secret never touches your configuration files. The test that talks to the real store is marked `#[ignore]` because CI machines and containers often have none; a second test checks the wrapper without touching the store.
 
-```rust,editable
+From `bk/crates`, check this example with `cargo test --locked -p cryptography --example secrets`.
+
+```rust,noplayground
 {{#include ../../../crates/cats/cryptography/examples/secrets/keyring.rs:example}}
 ```
 
