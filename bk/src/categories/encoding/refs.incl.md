@@ -54,3 +54,4 @@
 [ex~encoding~csv-stream]: csv.md#read-and-write-csv-files
 [ex~encoding~qsv]: csv.md#manipulate-csv-files-from-the-command-line
 [ex~encoding~stream-windows-1252]: string_encoding.md#stream-windows-1252
+[ex~encoding~integer-enum]: serde.md#integer-enum

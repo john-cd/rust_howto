@@ -741,6 +741,7 @@
 [ex~encoding~form-urlencoded]: ../categories/encoding/string_encoding.md#form-urlencoded
 [ex~encoding~handle-invalid-csv]: ../categories/encoding/csv.md#handle-invalid-csv
 [ex~encoding~hex]: ../categories/encoding/string_encoding.md#hex
+[ex~encoding~integer-enum]: ../categories/encoding/serde.md#integer-enum
 [ex~encoding~monostate]: ../categories/encoding/serde.md#monostate
 [ex~encoding~percent-encoding]: ../categories/encoding/string_encoding.md#percent-encoding
 [ex~encoding~postcard]: ../categories/encoding/no_external_schema.md#postcard

@@ -80,6 +80,14 @@ Use this for a protocol field that must contain one exact sentinel value, for ex
 {{#include ../../../crates/cats/encoding/examples/serde/monostate.rs:example}}
 ```
 
+## Serialize a Protocol Enum as Integers {#integer-enum}
+
+Use `serde_repr` when a protocol assigns numeric codes to enum variants. The `repr(u8)` discriminants specify the wire values, even if the variants are reordered or renamed. The example round-trips both assigned codes and rejects an unassigned one.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/encoding/examples/integer_enum.rs:example}}
+```
+
 ## Choosing a Format
 
 Serde supports many formats through separate crates. See [Serde's data formats](https://serde.rs/#data-formats) and the book's [CSV](csv.md) chapter. Choose and document a format based on interoperability, schema evolution, human readability, and size requirements.

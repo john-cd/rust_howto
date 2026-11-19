@@ -75,6 +75,11 @@ name = "stream_windows_1252"
 path = "examples/stream_windows_1252.rs"
 test = true
 
+[[example]]
+name = "integer_enum"
+path = "examples/integer_enum.rs"
+test = true
+
 [dependencies]
 encoding_rs = "0.8.44"
 encoding_rs_io = "0.1.8"
@@ -126,6 +131,7 @@ serde = { version = "1.0.229", features = ["derive"] }
 serde_ignored = "0.1.14"
 # A JSON serialization file format
 serde_json = "1.0.154"
+serde_repr = "0.1.21"
 # Serializes and deserializes URL-encoded form data with Serde.
 serde_urlencoded = "0.7.1" # `application/x-www-form-urlencoded` (de)serialization.
 # A native Rust encoder and decoder of TOML-formatted files and streams. Provides implementations of the standard Serialize/Deserialize traits for...
