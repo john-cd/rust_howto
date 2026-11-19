@@ -2,13 +2,11 @@
 
 [c~cudarc~crates.io]: https://crates.io/crates/cudarc
 [c~cudarc~crates.io~badge]: https://img.shields.io/badge/crates.io-cudarc-crimson
-[c~cudarc~docs]: https://docs.rs/cudarc/
 [c~cudarc~docs~badge]: https://img.shields.io/crates/v/cudarc?label=cudarc
 [c~objc2-metal~docs]: https://docs.rs/objc2-metal/
 [c~ocl~docs]: https://docs.rs/ocl/
 [c~opencl3~crates.io]: https://crates.io/crates/opencl3
 [c~opencl3~crates.io~badge]: https://img.shields.io/badge/crates.io-opencl3-crimson
-[c~opencl3~docs]: https://docs.rs/opencl3/
 [c~opencl3~docs~badge]: https://img.shields.io/crates/v/opencl3?label=opencl3
 [cudarc~launch]: https://docs.rs/crate/cudarc/0.19.10/source/examples/03-launch-kernel.rs
 [ex~gpu~cuda]: gpu.md#cudarc
