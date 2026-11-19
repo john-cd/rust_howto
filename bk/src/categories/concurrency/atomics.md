@@ -34,7 +34,7 @@ To share ownership of an atomic variable across threads, put it in an [`std::syn
 
 {{#badges arc-swap data-structures="Data structures" memory-management="Memory management"}}{{hi:Arc}}{{hi:Atomic}}
 
-The [`arc-swap::ArcSwap`][c~arc-swap::ArcSwap~docs]↗{{hi:arc-swap::ArcSwap}} type in [`arc-swap`][c~arc-swap~docs]↗{{hi:arc-swap}} stores an `Arc` that can be replaced atomically. Readers can keep using the snapshot they loaded while a writer publishes a replacement. It is designed for read-mostly shared state; use a mutex when callers need to mutate the value in place. This page describes the API but does not include a runnable `arc-swap` recipe.
+The [`arc-swap::ArcSwap`][c~arc-swap::ArcSwap~docs]↗{{hi:arc-swap::ArcSwap}} type in [`arc-swap`][c~arc-swap~docs]↗{{hi:arc-swap}} stores an `Arc` that can be replaced atomically. Readers can keep using the snapshot they loaded while a writer publishes a replacement. It is designed for read-mostly shared state; use a mutex when callers need to mutate the value in place. The [ONNX inference recipe](../../other/machine-learning/inference.md#onnx) uses this pattern to hot-swap a model while readers retain their earlier snapshots.
 
 ## Build a Spinlock Using Atomics {#spinlock}
 

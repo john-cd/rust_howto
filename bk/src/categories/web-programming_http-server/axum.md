@@ -27,6 +27,8 @@ For examples of middleware and other extensions, see [Axum Extras](axum_extras.m
 - Explore [`realworld.how`][realworld.how]↗ for additional examples.
 - [`crates.io` example source code (using Axum)][crates.io~example-source-code~repo]↗.
 
+[`rust-embed`][c~rust-embed~docs] can bundle static assets in the application binary. The [Localization chapter](../localization/localization.md) shows the same approach for translation catalogs.
+
 ## Related Topics {#related-topics .skip}
 
 - [Asynchronous Programming](../asynchronous/index.md) for Tokio runtimes, async functions, and task scheduling.

@@ -68,6 +68,8 @@ Atomic visibility and durability after power loss are different guarantees. The 
 {{#include ../../../crates/cats/filesystem/examples/atomic_write/atomic_write.rs:example}}
 ```
 
+[`fs-err`][c~fs-err~docs] adds the failed filesystem operation and path to error messages while retaining `io::ErrorKind` for programmatic handling.
+
 ## Related Topics {#related-topics .skip}
 
 - [[file_watching | File Watching]].

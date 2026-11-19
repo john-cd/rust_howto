@@ -18,6 +18,8 @@ The nodes of this binary search tree live in a [`bumpalo`][c~bumpalo~docs]↗{{h
 
 Beware that `Drop` does not run for values allocated with `Bump::alloc`. Enable the `boxed` feature and use `bumpalo::boxed::Box` when destructors matter, for example for a value that owns a file handle.
 
+[`id-arena`][c~id-arena~docs] gives graph nodes typed IDs when they share an arena lifetime.
+
 ## Related Topics {#related-topics .skip}
 
 - [Custom Memory Allocation](memory_allocation.md).

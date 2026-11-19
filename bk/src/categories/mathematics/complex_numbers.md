@@ -30,6 +30,8 @@ The complex exponential demonstrates Euler's identity: mathematically, `e^(2πi)
 {{#include ../../../crates/cats/mathematics/examples/complex_numbers/mathematical_functions.rs:example}}
 ```
 
+`num-complex` is also part of the [Num family](additional_numeric_types.md#num).
+
 ## Related Topics {#related-topics .skip}
 
 - [[additional_numeric_types | Additional Numeric Types]].

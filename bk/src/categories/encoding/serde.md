@@ -98,6 +98,8 @@ Serde supports many formats through separate crates. See [Serde's data formats](
 
 For the path to a field that fails to deserialize, see [Locate a JSON Deserialization Error](../parser-implementations/json.md#json-error-path).
 
+Use [`serde_bytes`][c~serde_bytes~docs] for byte buffers when the format distinguishes byte strings from sequences of integers. [`typetag`][c~typetag~docs] adds tags for serializable trait objects and uses registration like the [Inventory example](../rust-patterns/plugin_registration.md). [`erased-serde`][c~erased-serde~docs] provides type-erased Serde operations for trait-object use.
+
 ## Related Topics {#related-topics .skip}
 
 - [CSV](csv.md).

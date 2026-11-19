@@ -40,6 +40,8 @@ Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p asy
 
 Use the same crate's codec support to [decode length-prefixed TCP messages](../network-programming/server.md#length-delimited-frames).
 
+[`async-lock`][c~async-lock~docs] provides executor-independent asynchronous locks and semaphores.
+
 ## Related Topics {#related-topics .skip}
 
 - [Concurrency](../concurrency/index.md).

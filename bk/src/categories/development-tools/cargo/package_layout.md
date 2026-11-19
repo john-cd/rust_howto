@@ -81,6 +81,8 @@ serde = { workspace = true }
 
 Commit the workspace lockfile so members and CI use the same resolved dependency versions. For a standalone reusable library, maintainers commonly omit its lockfile from version control; applications generally commit theirs.
 
+Use [`cargo_toml`][c~cargo_toml~docs] to inspect a local manifest and its inherited workspace settings. Use [`cargo-config2`][c~cargo-config2~docs] to resolve Cargo configuration.
+
 ## Related Topics {#related-topics .skip}
 
 - [Cargo commands][ex~cargo~basic-cargo-usage], including package selection.

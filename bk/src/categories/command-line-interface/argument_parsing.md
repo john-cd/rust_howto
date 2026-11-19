@@ -117,6 +117,8 @@ The structopt project has been superseded by clap's derive API. For existing app
 
 - [Parsing arguments in Rust, without using dependencies][blog~parsing-arguments-rust-no-dep]↗.
 
+For Windows wildcard expansion before parsing paths, see the existing [`wild` use in CSV Processing](../encoding/csv.md).
+
 ## Related Topics {#related-topics .skip}
 
 - [Parsing](../parsing/index.md).

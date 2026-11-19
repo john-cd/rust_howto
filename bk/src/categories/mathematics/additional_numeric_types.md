@@ -108,6 +108,8 @@ From `bk/crates`, run `cargo test --locked -p mathematics --example additional_n
 {{#include ../../../crates/cats/mathematics/examples/additional_numeric_types/half_precision.rs:example}}
 ```
 
+The `num` umbrella covers [generic numeric traits](#abstracting-over-number-types) through `num-traits`, [arbitrary-precision integers](#num-bigint) through `num-bigint`, [exact fractions](#rational-numbers) through `num-rational`, and [complex arithmetic](complex_numbers.md) through `num-complex`. Use [`num-integer`][c~num-integer~docs] for operations such as GCD and LCM.
+
 ## Related Topics {#related-topics .skip}
 
 - [[complex_numbers | Complex Numbers]].

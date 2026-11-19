@@ -5,7 +5,6 @@
 [c~fluent-templates~docs]: https://docs.rs/fluent-templates
 [c~gettext-rs~docs]: https://docs.rs/gettext-rs
 [c~i18n-embed~docs]: https://docs.rs/i18n-embed
-[c~rust-embed~docs]: https://docs.rs/rust-embed
 [c~sys-locale~docs]: https://docs.rs/sys-locale
 
 [ex~localization~localization]: localization.md#localization

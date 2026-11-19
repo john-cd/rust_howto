@@ -39,6 +39,12 @@ Choose a binding generator for the direction and languages involved; these tools
 
 [`cxx`][c~cxx~docs]↗{{hi:cxx}} provides safe C++ <-> Rust interop by generating code for both sides. [`cxx`][c~cxx~docs]↗{{hi:cxx}} handles a lot of the boilerplate and memory management. Strongly recommended for C++ interop.
 
+Install a C++17-capable compiler for the Rust target. Cargo runs the package's build script when the `cpp` feature is enabled. The build dependency `cxx-build` generates the bridge and compiles the C++ sources. From the repository root, run the bridge tests with:
+
+```console
+cargo test --locked --manifest-path bk/platform/Cargo.toml -p development_tools_ffi --features cpp --example cpp
+```
+
 The example uses a C++17 build and calls functions in both directions across the bridge.
 
 While tools like 'SWIG' exist, [`cxx`][c~cxx~docs]↗{{hi:cxx}} is generally preferred for modern C++ interop with Rust, because it's more idiomatic and safer.

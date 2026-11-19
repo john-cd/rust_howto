@@ -24,6 +24,8 @@ From `bk/crates`, run `cargo test --locked -p filesystem --example metadata`. Th
 {{#include ../../../crates/cats/filesystem/examples/metadata/infer.rs:example}}
 ```
 
+[`filetime`][c~filetime~docs] sets timestamps by path. Use `set_symlink_file_times` to modify a symbolic link’s own timestamps.
+
 ## Related Topics {#related-topics .skip}
 
 - [[reading_and_writing_files | Reading and Writing Files]].

@@ -103,6 +103,8 @@ cargo test -p text_processing --example regex phone::
 cargo test -p text_processing --example regex replace::
 ```
 
+[`regex-lite`][c~regex-lite~docs] reduces compile time and binary size for patterns that fit its smaller Unicode feature set.
+
 ## Related Topics {#related-topics .skip}
 
 - [Strings](../data-structures/strings.md).

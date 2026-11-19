@@ -24,6 +24,8 @@ Procedural macros run at compile time and transform token streams into generated
 
 {{#include compile_macros.incl.md}}
 
+Alongside `syn`, `quote`, and `proc-macro2`, use [`proc-macro-crate`][c~proc-macro-crate~docs] when a derive macro needs to find a runtime dependency that its caller renamed in `Cargo.toml`.
+
 ## Related Topics
 
 - [Declarative macros][p~macros].

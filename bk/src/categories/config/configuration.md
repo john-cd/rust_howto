@@ -46,6 +46,8 @@ The crate also supports other file formats when their features are enabled, alon
 {{#include ../../../crates/cats/config/examples/configuration/confy.rs:example}}
 ```
 
+To publish and validate the shape of a JSON configuration file, see [OpenAPI and JSON Schema](../web-programming_http-server/openapi.md). The worked recipe derives a schema with `schemars` and validates JSON with `jsonschema`.
+
 ## Related Topics {#related-topics .skip}
 
 - [Environment variables][p~environment-variables], including `.env` files with `dotenvy`.

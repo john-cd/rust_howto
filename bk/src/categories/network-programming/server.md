@@ -46,6 +46,8 @@ TCP provides a byte stream. Use `LengthDelimitedCodec` to recover message bounda
 
 To exercise connection failures without real network sockets, see [Test Recovery from a Simulated Network Partition](../development-tools_testing/testing.md#turmoil-recovery).
 
+Use [`socket2`][c~socket2~docs] when the listener needs an option set before `bind`. After configuring, binding, and listening, hand the socket to `std::net::TcpListener`.
+
 ## Related Topics {#related-topics .skip}
 
 - [Asynchronous Programming](../asynchronous/index.md) explains async runtimes and I/O.

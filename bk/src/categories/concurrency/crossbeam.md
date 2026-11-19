@@ -28,6 +28,8 @@ A bounded channel limits queued work; cloned receivers let multiple workers comp
 {{#include ../../../crates/cats/concurrency/examples/crossbeam/crossbeam_complex.rs:example}}
 ```
 
+The [`crossbeam`][c~crossbeam~docs] umbrella crate gathers several concurrency utilities. Depend on `crossbeam-channel` for [channel selection](#select-channels) or a [bounded work pipeline](#parallel-pipeline), `crossbeam-queue` for a [bounded queue](concurrent_data_structures.md#crossbeam-queue), and `crossbeam-utils` for [`AtomicCell`](atomics.md#crossbeam-atomics). [`crossbeam-deque`][c~crossbeam-deque~docs] provides work-stealing queues, and [`crossbeam-epoch`][c~crossbeam-epoch~docs] provides epoch-based memory reclamation for lock-free structures. For application-level data parallelism, see [Rayon](data_parallelism.md).
+
 ## Related Topics {#related-topics .skip}
 
 - [Explicit Threads](explicit_threads.md) for `std::thread::scope`

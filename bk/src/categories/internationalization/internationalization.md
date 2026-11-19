@@ -44,6 +44,8 @@ For canonical equivalence in string comparison, see [Normalize Canonically Equiv
 {{#include ../../../crates/cats/internationalization/examples/locale_collation.rs:example}}
 ```
 
+Use [`icu_properties`][c~icu_properties~docs] for Unicode script and character property queries. For custom ICU4X data, [`zerovec`][c~zerovec~docs] can borrow typed collections from serialized bytes. [`yoke`][c~yoke~docs] keeps a borrowed view together with the storage that owns those bytes.
+
 ## Related Topics {#related-topics .skip}
 
 - [Localization](../localization/index.md).

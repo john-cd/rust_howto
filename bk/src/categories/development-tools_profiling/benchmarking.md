@@ -28,6 +28,8 @@ The script writes separate files for the example and benchmark:
 {{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/flamegraph.sh}}
 ```
 
+Use [`inferno`][c~inferno~docs] to render a flame graph from folded stacks you already captured.
+
 ## `criterion` {#criterion}
 
 {{#badges criterion development-tools::profiling=Profiling}}

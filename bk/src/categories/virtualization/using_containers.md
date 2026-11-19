@@ -67,6 +67,8 @@ The first command builds the examples and skips the two Docker-dependent tests. 
 
 Mockito mocks HTTP APIs; it does not replace Docker integration or a real database protocol. Use [mocking tools][containers~mocking] for application-unit boundaries and actual services for integration checks.
 
+[`docker_credential`][c~docker_credential~docs] lets Rust clients follow Docker registry authentication configuration and delegate lookups to credential helpers.
+
 ## Related Topics {#related-topics .skip}
 
 - [Containers](containers.md), [Containerization](containerization.md), and [Virtualization](index.md).

@@ -76,6 +76,8 @@ A lossless syntax tree stores whitespace and comments as tokens alongside syntax
 {{#include ../../../../crates/cats/development_tools/examples/lossless_tree.rs:example}}
 ```
 
+Use [`unicode-ident`][c~unicode-ident~docs] when scanning identifiers and checking Unicode `XID_Start` and `XID_Continue` classes.
+
 ## Related Topics {#related-topics .skip}
 
 - [Parsing Utilities](../../parsing/index.md).

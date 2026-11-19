@@ -26,6 +26,8 @@ Normalize both spellings to NFC with `icu_normalizer` before comparing them. The
 {{#include ../../../crates/cats/text_processing/examples/unicode_nfc.rs:example}}
 ```
 
+Use [`icu_properties`][c~icu_properties~docs] for script and character properties. See [Internationalization](../internationalization/internationalization.md) for locale-aware collation.
+
 ## Related Topics {#related-topics .skip}
 
 - [String Manipulation](string_manipulation.md).

@@ -50,6 +50,8 @@ Use `http-cache-semantics` to decide whether a stored response can satisfy a req
 
 - [`hyper` Examples][c~hyper~examples~repo]↗.
 
+Use [`cookie_store`][c~cookie_store~docs] to save and reload cookies between client instances. [`reqwest_cookie_store`][c~reqwest_cookie_store~docs] adapts that store to Reqwest. Treat persisted cookies as credentials when they carry session tokens.
+
 ## Related Topics {#related-topics .skip}
 
 - [Asynchronous Programming](../asynchronous/index.md) for async runtimes and I/O.

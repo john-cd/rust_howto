@@ -91,6 +91,8 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 [`druid`][c~druid~docs] was a data-first native toolkit. Its maintainers discontinued the project and recommend Xilem for new applications; use Druid only when its existing feature set and lack of future fixes are acceptable.
 
+For a separate `.slint` file, add [`slint-build`][c~slint-build~docs] as a build dependency. Call `slint_build::compile` from `build.rs`, then use `slint::include_modules!()` in Rust to include the generated code.
+
 ## Related Topics {#related-topics .skip}
 
 - [Immediate-mode GUIs](immediate_mode_gui.md).

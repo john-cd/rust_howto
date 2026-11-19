@@ -13,5 +13,7 @@ Run `cargo test -p plugin_registry --example plugins` from `bk/crates`. The regi
 An enum is a straightforward choice for a closed set of commands, and a trait object can hold runtime-selected implementations. Generics are useful when the concrete type is known at compile time. Inventory changes how implementations are _found_ across linked crates; it does not replace the behavior interface. See [traits](../../language/traits.md), [trait objects and dynamic dispatch](../../language/trait_objects_and_dynamic_dispatch.md), and the [architecture chapters](../../other/architecture/index.md) for broader extension boundaries.
 
 {{#include plugin_registration.incl.md}}
+[`linkme`][c~linkme~docs] collects static descriptors across linked crates using distributed slices. Use it when each registration is a static value and the linker can assemble the slice.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

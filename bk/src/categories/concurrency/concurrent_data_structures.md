@@ -73,6 +73,8 @@ Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p con
 
 For applications that need a synchronous or asynchronous concurrent map with bucket-level locking, consider [`scc`][c~scc~docs]↗{{hi:scc}}. Its map uses read-write locks for entry access while resizing proceeds lock-free.
 
+[`evmap`][c~evmap~docs] uses [`left-right`][c~left-right~docs] to let a writer explicitly publish updates, giving readers a consistent snapshot until the next publication.
+
 ## Related Topics {#related-topics .skip}
 
 - [Data Structures](../data-structures/index.md).
