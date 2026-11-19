@@ -55,3 +55,4 @@
 [redis~docker~docs]: https://redis.io/docs/latest/operate/oss_and_stack/install/install-stack/docker/
 [cassandra~docker~docs]: https://hub.docker.com/_/cassandra
 [scylla~docs]: https://docs.rs/scylla
+[ex~database~postgres-enum]: postgres.md#postgres-enum

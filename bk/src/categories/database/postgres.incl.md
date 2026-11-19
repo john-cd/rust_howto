@@ -7,3 +7,4 @@
 | [Aggregate Data][ex~database~aggregate-data-postgres] | {{#crate postgres}} | {{#categories database="Database interfaces"}} |
 | [Connect to and Query Postgres Asynchronously with `tokio-postgres`][ex~database~tokio-postgres] | {{#crate tokio-postgres}} | {{#categories database="Database interfaces"}} |
 | [`cornucopia` 1.0 for Postgres][ex~database~cornucopia] | [cornucopia][c~cornucopia~crates.io]↗ | {{#categories database="Database interfaces"}} |
+| [Round-Trip a PostgreSQL Enum][ex~database~postgres-enum] | `postgres-types` | {{#categories database=Database}} |

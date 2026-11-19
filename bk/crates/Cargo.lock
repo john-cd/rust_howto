@@ -8852,6 +8852,7 @@ dependencies = [
  "insta",
  "lcov",
  "mockall",
+ "postgres-types",
  "predicates",
  "proptest",
  "rstest",

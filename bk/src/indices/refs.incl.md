@@ -441,6 +441,7 @@
 [ex~database~mysql_async]: ../categories/database/mysql.md#mysql_async
 [ex~database~nats-jetstream]: ../categories/database/amqp.md#nats-jetstream
 [ex~database~oracle]: ../categories/database/oracle.md#oracle
+[ex~database~postgres-enum]: ../categories/database/postgres.md#postgres-enum
 [ex~database~query-builders-orms]: ../categories/database/query_builders_orms.md
 [ex~database~redis]: ../categories/database/nosql.md#redis
 [ex~database~rocksdb]: ../categories/database/key_value_stores.md#rocksdb

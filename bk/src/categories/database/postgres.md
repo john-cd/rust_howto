@@ -90,6 +90,20 @@ The workflow is:
 
 Cornucopia 1.0 incorporated the Clorinde fork's rewritten code generator, so projects upgrading from 0.9 must regenerate their bindings. See the [Cornucopia migration guide][c~cornucopia~migration~1.0].
 
+## Round-Trip a PostgreSQL Enum {#postgres-enum}
+
+Use `postgres-types` derives to bind a Rust enum as a query parameter and read it back as the same type. `name` identifies the SQL type and `rename_all` maps Rust variants to the SQL labels. The example reuses `start_postgres` and its pinned image, readiness check, and teardown from [Testing](../development-tools_testing/testing.md#postgres-container).
+
+From `bk/`, run the ignored test with Docker running.
+
+```console
+just cargo test --manifest-path crates/Cargo.toml -p development_tools_testing --features postgres-container --test postgres_container round_trips_postgres_enum -- --ignored
+```
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/development_tools_testing/tests/postgres_container.rs:postgres_enum}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Connection Pools][ex~database~connection-pool]

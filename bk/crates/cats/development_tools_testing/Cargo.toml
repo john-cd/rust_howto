@@ -111,6 +111,7 @@ path = "examples/testing/main.rs"
 test = true
 
 [dependencies]
+postgres-types = { version = "0.2.14", features = ["derive"], optional = true }
 tokio-postgres = { version = "0.7.18", optional = true }
 # The published 0.15.0 release uses testcontainers 0.27, which conflicts with the workspace's Bollard version.
 testcontainers-modules = { git = "https://github.com/testcontainers/testcontainers-rs-modules-community.git", rev = "d69e3a09397532accea9d9e907fecc280b1513a8", features = ["postgres"], optional = true }
@@ -161,7 +162,7 @@ path = "tests/postgres_container.rs"
 required-features = ["postgres-container"]
 
 [features]
-postgres-container = ["dep:testcontainers-modules", "dep:tokio-postgres"]
+postgres-container = ["dep:postgres-types", "dep:testcontainers-modules", "dep:tokio-postgres"]
 afl-fuzzing = ["dep:afl"]
 
 [target.'cfg(not(windows))'.dependencies]
