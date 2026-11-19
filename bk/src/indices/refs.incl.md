@@ -1001,6 +1001,7 @@
 [ex~game-engines~fyrox]: ../categories/game-engines/game_engines.md#fyrox
 [ex~game-engines~ggez]: ../categories/game-engines/game_engines.md#ggez
 [ex~game-engines~macroquad]: ../categories/game-engines/game_engines.md#macroquad
+[ex~multimedia_audio~wav]: ../categories/multimedia_audio/wav.md
 [ex~multimedia_encoding~wav]: ../categories/multimedia_encoding/encoding.md#encode-wav
 [ex~multimedia_images~convert-formats]: ../categories/multimedia_images/images.md#convert-formats
 [ex~multimedia_images~image_loading_and_saving]: ../categories/multimedia_images/images.md#create-image
