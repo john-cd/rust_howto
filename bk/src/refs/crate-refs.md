@@ -3925,6 +3925,7 @@
 [c~grep-searcher~crates.io]: https://crates.io/crates/grep-searcher
 [c~grep-searcher~docs]: https://docs.rs/grep-searcher
 [c~grep-searcher~repo]: https://github.com/BurntSushi/ripgrep/tree/master/crates/searcher
+[c~grep~docs]: https://docs.rs/grep/latest/grep/
 [c~grex~crates.io]: https://crates.io/crates/grex
 [c~grex~crates.io~badge]: https://img.shields.io/badge/crates.io-grex-crimson
 [c~grex~docs]: https://docs.rs/grex
