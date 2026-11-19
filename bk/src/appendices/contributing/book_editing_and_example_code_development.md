@@ -41,6 +41,10 @@ For the lint settings behind the example checks, see [Configure Clippy for a Wor
 
 A `rust` code block can show a play button that runs the code in the [Rust Playground][rust-playground~website]↗{{hi:Rust Playground}}. Add the `mdbook-runnable` attribute to keep the button when `ignore` is set. The Playground supports a limited set of libraries; use `noplayground` when an example cannot run there.
 
+Test rendered Run buttons with `python bk/scripts/check_rendered_entry_links.py bk/book/html --playground` from the repository root. The check compares visible Rust imports with the pinned package IDs in `bk/master/playground-crates.txt` and with the resolved book workspace dependencies. For an example that needs a local dependency or a feature the Playground lacks, mark its fence `noplayground` and document the owning Cargo command and any setup requirements.
+
+To refresh the fixture, fetch [the Playground crate list](https://play.rust-lang.org/meta/crates). Extract each `crates[].id`, replace hyphens with underscores, and write the sorted unique names one per line. Review changes before rerunning the rendered check. Confirm that a supported example still runs through the Playground and that any newly unavailable example has an equivalent local path.
+
 ## Related Topics {#related-topics .skip}
 
 - [[dev_container_and_docker | Dev Container and Docker]].

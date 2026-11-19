@@ -10,7 +10,9 @@
 
 This recipe walks the current directory, submits `.iso` files to a fixed-size pool, and computes SHA-256 digests with the pure-Rust `sha2` crate. The worker count comes from `num_cpus::get`; the example requires matching ISO files in its working directory.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p concurrency --example threadpool`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/threadpool/threadpool_walk.rs:example}}
 ```
 

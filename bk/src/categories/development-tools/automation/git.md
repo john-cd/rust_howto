@@ -12,7 +12,9 @@
 
 `gix` is split into many optional features. Enable only what you need, such as `revision` for history walks and `blob-diff` for tree diffs, plus one hash implementation (`sha1`). For line counts, see [`tokei`][c~tokei~docs]↗{{hi:tokei}}.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools --example git_churn`.
+
+```rust,editable,noplayground
 {{#include ../../../../crates/cats/development_tools/examples/automation/git_churn.rs:example}}
 ```
 

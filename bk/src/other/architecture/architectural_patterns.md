@@ -33,7 +33,9 @@ also sets the conversation parameters. A plugin registry serves a different purp
 discovering implementations registered by different parts of the application.
 See [Plugin Registration](index.md#plugin-registration).
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p other --example architecture`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/other/examples/architecture/di.rs:example}}
 ```
 

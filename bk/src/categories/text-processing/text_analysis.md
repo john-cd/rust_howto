@@ -12,7 +12,9 @@ Recipes for finding things inside text beyond what `regex` offers: ranking by fu
 
 [`nucleo`][c~nucleo~docs]↗{{hi:nucleo}} is the fuzzy matcher used by the Helix editor. A `Pattern` parsed from the user's query scores each candidate, and `match_list` returns the matches sorted by descending score. Create the `Matcher` once and reuse it, since it owns scratch memory. For a smaller dependency, see [`fuzzy-matcher`][c~fuzzy-matcher~docs]↗{{hi:fuzzy-matcher}} in [String Search and Fuzzy Matching](string_search.md).
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p text_processing --example fuzzy_search`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/text_analysis/fuzzy_search.rs:example}}
 ```
 
@@ -22,7 +24,9 @@ Recipes for finding things inside text beyond what `regex` offers: ranking by fu
 
 [`rake`][c~rake~docs]↗{{hi:rake}} implements Rapid Automatic Keyword Extraction: it splits text into candidate phrases at stop words and punctuation, then scores phrases by how often their words occur and co-occur. It needs a stop-word list for the text's language. Phrases with equal scores come back in no particular order.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p text_processing --example keyword_extraction`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/text_analysis/keyword_extraction.rs:example}}
 ```
 

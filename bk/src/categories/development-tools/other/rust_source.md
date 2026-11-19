@@ -32,7 +32,9 @@ Tools that read or write Rust source need a parser, a code builder and a way to 
 
 [`cargo_metadata`][c~cargo_metadata~docs]↗{{hi:cargo_metadata}} runs `cargo metadata` and deserializes its JSON output into typed structures: packages, targets, features, and the resolved dependency graph. Tools that inspect a project use it instead of parsing `Cargo.toml` by hand. Use `no_deps` when the dependency graph is not needed; it reduces the returned data and can avoid resolving every dependency.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools --example cargo_metadata`.
+
+```rust,editable,noplayground
 {{#include ../../../../crates/cats/development_tools/examples/rust_source/cargo_metadata.rs:example}}
 ```
 
@@ -52,7 +54,9 @@ Project-specific rules that `clippy` does not cover can be written in Rust, for 
 
 The [Bytecode Alliance `wasm-tools`](https://github.com/bytecodealliance/wasm-tools)↗ crates read and write WebAssembly without a runtime. [`wat`][c~wat~docs]↗{{hi:wat}} assembles the text format into a binary module, [`wasmparser`][c~wasmparser~docs]↗{{hi:wasmparser}} validates a binary and iterates over its sections as `Payload` values, and [`wasmprinter`][c~wasmprinter~docs]↗{{hi:wasmprinter}} turns a binary back into text. Together they make small test fixtures easy to write and let a build tool inspect a module's imports and exports. Note that `wat` only checks syntax: validation is a separate step.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools --example wasm_roundtrip`.
+
+```rust,editable,noplayground
 {{#include ../../../../crates/cats/development_tools/examples/rust_source/wasm_roundtrip.rs:example}}
 ```
 

@@ -21,7 +21,9 @@ cargo run -p development_tools_debugging --features opentelemetry --example othe
 
 The span attribute key comes from [`opentelemetry-semantic-conventions`][c~opentelemetry-semantic-conventions~docs]↗{{hi:opentelemetry-semantic-conventions}}, which provides constants such as `HTTP_ROUTE` for the standard attribute names. Using them, rather than retyping strings like `"http.route"`, keeps your telemetry consistent with other services and lets backends recognize the attributes. Only the stable conventions are available by default; the crate's `semconv_experimental` feature adds the rest.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools_debugging --example other`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/open_telemetry.rs:example}}
 ```
 
@@ -44,7 +46,7 @@ Run the local version with no collector:
 cargo run -p development_tools_debugging --features opentelemetry --example other -- trace_context
 ```
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/trace_context.rs:example}}
 ```
 
@@ -72,7 +74,7 @@ cargo run -p development_tools_debugging --features opentelemetry --example othe
 
 Keep real credentials in a secret store or local environment; do not commit them.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/open_observe.rs:example}}
 ```
 

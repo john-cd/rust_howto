@@ -20,7 +20,9 @@ This separation keeps input behavior testable without a real terminal. Handle es
 
 [`ratatui`][c~ratatui~website]↗ is a high-level library of widgets, layouts, and rendering utilities. It draws a frame from application state; pair it with a backend such as `crossterm` to read terminal events and manage terminal modes.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p command_line_interface --example ratatui`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/command_line_interface/examples/ratatui.rs:example}}
 ```
 

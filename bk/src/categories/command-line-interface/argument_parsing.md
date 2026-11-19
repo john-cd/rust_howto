@@ -75,7 +75,9 @@ Use field types to express the interface: `Option<T>` makes an argument optional
 
 This example defines a `clap::Command`, writes a Bash completion script to a temporary directory, and prints the generated file path. Install the generated completion using the target shell's conventions, and regenerate it when the CLI changes.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p command_line_interface --example arguments`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/command_line_interface/examples/arguments/clap_complete.rs:example}}
 ```
 
@@ -87,7 +89,7 @@ This example defines a `clap::Command`, writes a Bash completion script to a tem
 
 lexopt is a small, low-level parser for applications that need to control the parsing loop. It leaves help generation and much of the interface design to the application.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/command_line_interface/examples/arguments/lexopt.rs:example}}
 ```
 
@@ -103,7 +105,7 @@ pico-args has a compact API for simple command-line interfaces. It has fewer bui
 - A small set of argument forms and parsing helpers.
 - Non-Unicode argument support.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/command_line_interface/examples/arguments/pico_args.rs:example}}
 ```
 

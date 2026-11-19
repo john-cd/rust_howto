@@ -4,6 +4,8 @@
 
 import argparse
 import re
+import tomllib
+from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
@@ -107,16 +109,51 @@ def check_chapters(
     return failures
 
 
+def unavailable_playground_imports(code: str, dependencies: set[str], available: set[str]) -> set[str]:
+    """Find imports of known Cargo packages that the Playground does not supply."""
+    imports = set(re.findall(r"(?m)^\s*(?:pub\s+)?use\s+(?:::)?(\w+)\s*::", code))
+    imports.update(re.findall(r"(?m)^\s*(?:pub\s+)?extern\s+crate\s+(\w+)", code))
+    modules = set(re.findall(r"(?m)^\s*(?:pub\s+)?mod\s+(\w+)\s*[{;]", code))
+    return (imports & dependencies) - available - modules
+
+
+def check_playground(root: Path) -> list[str]:
+    """Check rendered runnable blocks against the pinned Playground crate list."""
+    book = Path(__file__).resolve().parents[1]
+    crates = tomllib.loads((book / "crates" / "Cargo.lock").read_text(encoding="utf-8"))
+    dependencies = {package["name"].replace("-", "_") for package in crates["package"]}
+    available = set((book / "master" / "playground-crates.txt").read_text(encoding="utf-8").split())
+    blocks = re.compile(r'<pre class="playground"><code\b([^>]*)>(.*?)</code>', re.S)
+
+    failures = []
+    if not (root / "index.html").is_file():
+        return [f"{root}: missing book index"]
+    for page in sorted(root.rglob("*.html")):
+        html = page.read_text(encoding="utf-8")
+        for number, (attributes, markup) in enumerate(blocks.findall(html), start=1):
+            if "no_run" in attributes:
+                continue
+            code = unescape(re.sub("<[^>]+>", "", markup))
+            missing = unavailable_playground_imports(code, dependencies, available)
+            if missing:
+                crates_label = ", ".join(sorted(missing))
+                failures.append(f"{page.relative_to(root)}: runnable block {number} imports {crates_label}")
+    return failures
+
+
 def main() -> int:
     """Report unresolved chapter references and invalid local targets."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("html_dir", type=Path)
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--word-index", action="store_true")
+    mode.add_argument("--playground", action="store_true")
     mode.add_argument("--all-chapters", action="store_true")
     args = parser.parse_args()
     root = args.html_dir
-    if args.word_index:
+    if args.playground:
+        failures = check_playground(root)
+    elif args.word_index:
         failures = check_word_index(root)
     else:
         sources = list(PAGES)

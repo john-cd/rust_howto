@@ -27,7 +27,9 @@ Rules of thumb:
 
 A newtype whose `Debug` and `Display` implementations print a placeholder lets a configuration struct derive `Debug` without leaking its credentials. Reading the value requires an explicit `expose_secret` call, which is easy to find in a code review. [`secrecy`][c~secrecy~docs]↗{{hi:secrecy}} provides a maintained version of the same idea that also wipes the value on drop.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p cryptography --example secrets`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/cryptography/examples/secrets/redacted_secret.rs:example}}
 ```
 
@@ -61,7 +63,7 @@ When a secret must be written to a file or shipped in an archive, encrypt it wit
 
 The version label and a caller-supplied context go in as associated data. They are not encrypted, but they are authenticated: moving the envelope to another context, or downgrading its version, makes decryption fail. The envelope stores the Argon2 cost so it can be raised later, and the code that reads it should bound those values so an untrusted file cannot demand unbounded memory. There is no recovery: a lost passphrase means entering the secret again.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/cryptography/examples/secrets/sealed_envelope.rs:example}}
 ```
 

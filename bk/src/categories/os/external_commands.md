@@ -96,7 +96,9 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 
 [`duct`][c~duct~repo]↗{{hi:duct}} is a library for running child processes. [`duct`][c~duct~docs]↗{{hi:duct}} makes it easy to build pipelines and redirect I/O like a shell. At the same time, [`duct`][c~duct~docs]↗{{hi:duct}} helps write correct, portable code: whitespace is never significant, errors from child processes get reported by default, and a variety of [gotchas, bugs, and platform inconsistencies][c~duct~gotchas~repo]↗ are handled for you.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p os --example external_commands`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/os/examples/external_commands/duct_example.rs:example}}
 ```
 
@@ -104,7 +106,7 @@ Reads an environment variable{{hi:Environment variables}} via [`std::env::var`][
 
 [`xshell`][c~xshell~docs]↗ offers shell-like command composition and interpolation for Rust scripts. Its command helpers report spawn and nonzero-exit failures; use this style for build or maintenance scripts, while `std::process::Command` keeps application code explicit about arguments and process I/O.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/os/examples/external_commands/xshell_example.rs:example}}
 ```
 

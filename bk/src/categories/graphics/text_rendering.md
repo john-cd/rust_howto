@@ -14,7 +14,9 @@ bk/crates/cats/graphics/assets/OFL.txt.
 
 ## Rasterize a Glyph and Read Its Metrics {#rasterize-a-glyph}
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p graphics --example text_rendering`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/graphics/examples/text_rendering/rasterize_glyph.rs:example}}
 ```
 

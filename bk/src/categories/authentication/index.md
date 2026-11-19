@@ -38,7 +38,9 @@ This example uses a signed JSON Web Token (JWT) to carry claims. The payload is 
 
 [![jsonwebtoken][c~jsonwebtoken~docs~badge]][c~jsonwebtoken~docs]↗{{hi:jsonwebtoken}}
 
-```rust,editable
+Test these JWT snippets from `bk/crates` with `cargo test --locked -p authentication --example jwt_authentication`.
+
+```rust,noplayground
 {{#include ../../../crates/cats/authentication/examples/jwt_authentication/jwt.rs:example}}
 ```
 
@@ -46,7 +48,7 @@ This example uses a signed JSON Web Token (JWT) to carry claims. The payload is 
 
 The Axum extractor reads only the `Authorization: Bearer` header; it does not accept query-string tokens, which can leak through URL logs. It returns 401 for a missing or invalid token, then the route returns 403 when a valid subject lacks the required role. The example installs its key as an Axum extension; keep production signing keys in server-side configuration and never put them in a token or log them.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/authentication/examples/jwt_authentication/jwt_axum_extractor.rs:example}}
 ```
 

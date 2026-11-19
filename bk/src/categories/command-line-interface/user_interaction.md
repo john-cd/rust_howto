@@ -18,7 +18,9 @@ It offers a range of built-in prompts for various data types, including text inp
 
 Handle prompt cancellation and input errors as normal outcomes instead of panicking. Do not request a secret with a plain-text prompt; use a password prompt that disables echo, and avoid printing the returned value. Check whether a prompt is appropriate before asking for input so a command does not hang when run unattended.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p command_line_interface --example user_interaction`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/command_line_interface/examples/user_interaction/inquire.rs:example}}
 ```
 

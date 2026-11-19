@@ -10,7 +10,9 @@
 
 [`lapin`][c~lapin~docs]↗{{hi:lapin}} is a pure Rust AMQP 0-9-1 client that integrates with [Tokio][p~tokio].
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p database --example amqp`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/amqp/lapin.rs:example}}
 ```
 
@@ -32,7 +34,9 @@ cargo test -p database --example amqp --features lapin rabbitmq_round_trip -- --
 
 JetStream stores published messages in a stream. A durable pull consumer remembers its position on the server, so a restarted worker resumes where the previous one stopped. The recipe publishes with the server's acknowledgement and a `Nats-Msg-Id` header (the server ignores duplicate ids within its duplicate window), pulls bounded batches with a wait time, acknowledges a message only after handling it, terminates malformed messages instead of redelivering them forever, and stops cleanly on Ctrl-C. Because delivery is at least once, the handler records processed order ids so that a redelivered order is acknowledged but not applied twice.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p database --example nats`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/nats/jetstream.rs:example}}
 ```
 

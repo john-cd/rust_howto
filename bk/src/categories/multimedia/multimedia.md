@@ -12,7 +12,9 @@ The `rodio` example generates a 440 Hz sine wave and plays it for two seconds th
 
 The tone is built by a separate function, so a unit test can check its format without a device. The tests that open the default output are ignored; run them with `cargo test -p multimedia --example multimedia -- --include-ignored` from `bk/crates`. On Linux without sound hardware (for example in CI), install `libasound2-plugins` and route the default device to ALSA's `null` sink with a `~/.asoundrc` containing `pcm.!default { type null }` and `ctl.!default { type null }`.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p multimedia --example multimedia`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/multimedia/examples/multimedia/play_sound.rs:example}}
 ```
 

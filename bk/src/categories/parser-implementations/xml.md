@@ -12,7 +12,9 @@ Choose a streaming parser when documents may be large or should be processed inc
 
 [`xml`][c~xml~docs]↗{{hi:xml}} is an XML library written in pure Rust.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p parser_implementations --example xml`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/parser_implementations/examples/xml/xml.rs:example}}
 ```
 
@@ -22,7 +24,7 @@ Choose a streaming parser when documents may be large or should be processed inc
 
 [`quick-xml`][c~quick-xml~docs]↗{{hi:quick-xml}} is a high-performance reader and writer for streaming XML processing.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/parser_implementations/examples/xml/quick_xml.rs:example}}
 ```
 
@@ -32,7 +34,7 @@ Choose a streaming parser when documents may be large or should be processed inc
 
 [`xmlparser`][c~xmlparser~docs]↗{{hi:xmlparser}} is a pull-based, zero-allocation XML parser.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/parser_implementations/examples/xml/xmlparser.rs:example}}
 ```
 
@@ -42,7 +44,7 @@ Choose a streaming parser when documents may be large or should be processed inc
 
 [`xml5ever`][c~xml5ever~docs]↗{{hi:xml5ever}} is a push-based streaming parser for XML.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/parser_implementations/examples/xml/xml5ever.rs:example}}
 ```
 
@@ -52,7 +54,7 @@ Choose a streaming parser when documents may be large or should be processed inc
 
 [`roxmltree`][c~roxmltree~docs]↗{{hi:roxmltree}} represents an XML as a read-only tree. It is good for simple parsing.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/parser_implementations/examples/xml/roxmltree.rs:example}}
 ```
 

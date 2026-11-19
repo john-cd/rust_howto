@@ -77,7 +77,9 @@ Fuzz testing provides pseudo-random input to find crashes and stability issues. 
 
 [`bolero`][c~bolero~docs]↗{{hi:bolero}} provides a unified interface for multiple fuzzing engines. It is particularly useful because it allows you to run your fuzz targets as regular unit tests during development, ensuring that they don't bit-rot.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools_testing --example fuzzing --features development_tools_testing/afl-fuzzing`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_testing/examples/fuzzing/bolero_example.rs:example}}
 ```
 

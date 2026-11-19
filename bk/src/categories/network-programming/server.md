@@ -30,7 +30,9 @@ The example binds to the loopback address and port `0`, so the operating system 
 
 The current dependency graph includes `owned-alloc`, affected by [RUSTSEC-2026-0291](https://rustsec.org/advisories/RUSTSEC-2026-0291.html), with no fixed upstream release. This educational sample must not be copied into production services until a compatible upstream dependency path is available.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p network_programming --example server`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/network_programming/examples/server/glommio.rs:example}}
 ```
 

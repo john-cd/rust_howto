@@ -42,7 +42,9 @@ mode with:
 {{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/run_criterion.sh}}
 ```
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools_profiling --example benchmarking`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/criterion.rs:example}}
 ```
 
@@ -99,7 +101,9 @@ Compare hash functions over small and medium byte buffers:
 cargo bench --package algorithms --bench hashing
 ```
 
-```rust,editable
+Run this benchmark from `bk/crates` with `cargo bench --locked -p algorithms --bench hashing`.
+
+```rust,noplayground
 {{#include ../../../crates/cats/algorithms/benches/hashing.rs:example}}
 ```
 
@@ -111,7 +115,9 @@ Compare `bumpalo` arena allocation with `Box` allocation:
 cargo bench --package memory_management --bench arena
 ```
 
-```rust,editable
+Run this benchmark from `bk/crates` with `cargo bench --locked -p memory_management --bench arena`.
+
+```rust,noplayground
 {{#include ../../../crates/cats/memory_management/benches/arena.rs:example}}
 ```
 
@@ -124,7 +130,9 @@ keys:
 cargo bench --package data_structures --bench hashmap
 ```
 
-```rust,editable
+Run this benchmark from `bk/crates` with `cargo bench --locked -p data_structures --bench hashmap`.
+
+```rust,noplayground
 {{#include ../../../crates/cats/data_structures/benches/hashmap.rs:example}}
 ```
 

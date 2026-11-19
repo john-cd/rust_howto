@@ -32,7 +32,9 @@ Put macOS-only dependencies in `[target.'cfg(target_os = "macos")'.dependencies]
 
 ## Example {#macos}
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p os_macos_apis --example macos`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/os_macos_apis/examples/macos/macos.rs:example}}
 ```
 

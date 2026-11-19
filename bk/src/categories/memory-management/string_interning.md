@@ -15,7 +15,9 @@ The example shows two interners:
 - A hand-written one: a `HashMap<String, u32>` maps each string to an id, and a `Vec<String>` maps the id back to the string. Ids are small, `Copy`, and compare as integers.
 - The [`ustr`][c~ustr~docs]↗{{hi:ustr}} crate. A `Ustr` is a pointer into a global string pool, so equality and hashing are pointer operations. The pool is never freed: the memory of an interned string is not reclaimed until the process exits.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p memory_management --example interner_allocations`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/memory_management/examples/interning.rs:example}}
 ```
 

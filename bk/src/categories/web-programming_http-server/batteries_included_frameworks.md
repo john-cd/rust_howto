@@ -16,7 +16,9 @@ Choose a batteries-included framework or architecture when you want common appli
 
 [`loco`][c~loco-rs~docs]↗{{hi:loco}} is an Axum-based, Rails-inspired application framework. Its CLI generates a project structure for routes, database models, background jobs, mailers, authentication, and tasks. The example implements `Hooks::boot` by delegating to `create_app`; its route lives under `/home/hello`. Build the optional integration with `--features loco-support`. To run a complete service, put the hooks and configuration in a generated Loco application and start it with `cargo loco start`.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p web_programming_http_server --example loco`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/web_programming_http_server/examples/loco/loco_routes.rs:example}}
 ```
 

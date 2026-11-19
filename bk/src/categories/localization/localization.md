@@ -44,7 +44,9 @@ Use [`fluent-bundle`][c~fluent-bundle~docs]↗{{hi:fluent-bundle}} when the appl
 
 The example below uses inline English and French resources, so it runs without system-locale or network dependencies. It formats greetings and singular and plural counts with `fluent-bundle`; use [`unic-langid`][c~unic-langid~docs]↗{{hi:unic-langid}} to parse or construct locale identifiers in your application. For locale-aware number and date formatting with ICU4X, see [Internationalization](../internationalization/index.md).
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p localization --example localization`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/localization/examples/localization/fluent.rs:example}}
 ```
 

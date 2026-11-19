@@ -31,7 +31,9 @@ In `build.rs`:
 
 In `examples/build_info/build_info.rs`:
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools_build_utils --example build_info`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_build_utils/examples/build_info/build_info.rs:example}}
 ```
 

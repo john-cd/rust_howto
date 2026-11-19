@@ -28,7 +28,9 @@ Check the crate's target support and feature flags because Unix does not mean ev
 
 Use `nix` when its API and enabled features match the required interface. Its API surface and supported targets differ from `rustix`; review the crate documentation and target-specific behavior before choosing between them. Avoid raw syscalls unless neither `std` nor a maintained wrapper exposes the required operation.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p os_unix_apis --example unix`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/os_unix_apis/examples/unix/nix.rs:example}}
 ```
 

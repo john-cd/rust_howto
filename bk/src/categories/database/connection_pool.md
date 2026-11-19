@@ -41,13 +41,15 @@ The ignored PostgreSQL integration test submits only `SELECT` queries and
 doesn't create tables or rows, so dropping its pool is sufficient cleanup. Both
 the example and test propagate checkout and query failures with `?`.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p database --example connection_pool`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/connection_pool/deadpool.rs:example}}
 ```
 
 Here is an example demonstrating the use of [`deadpool`][c~deadpool~docs]↗{{hi:deadpool}} to connect to a [Postgres][p~postgres] database:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/connection_pool/deadpool2.rs:example}}
 ```
 

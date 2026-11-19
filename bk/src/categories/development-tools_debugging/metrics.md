@@ -12,7 +12,9 @@ Examples include request totals, in-flight work, latency distributions, cache hi
 
 Most services expose the payload on a `/metrics` route that Prometheus scrapes. The handler only calls `handle.render()`; the test drives the router with `tower::ServiceExt::oneshot`, so no port is opened.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools_debugging --example metrics`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/metrics/metrics_route.rs:example}}
 ```
 

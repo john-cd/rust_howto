@@ -36,7 +36,9 @@ For shared POSIX operations, check the target support of `libc`, `nix`, or `rust
 
 ## Example {#freebsd}
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p os_freebsd_apis --example freebsd`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/os_freebsd_apis/examples/freebsd/freebsd.rs:example}}
 ```
 

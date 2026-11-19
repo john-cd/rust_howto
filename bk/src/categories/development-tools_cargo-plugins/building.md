@@ -73,7 +73,9 @@ The following example executes shell commands and interacts with the file system
 - Path manipulations,
 - File removal.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p cargo --example building`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_cargo_plugins/examples/building/xshell.rs}}
 ```
 

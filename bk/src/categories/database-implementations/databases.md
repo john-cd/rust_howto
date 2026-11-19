@@ -18,7 +18,9 @@ An embedded database engine runs in the application process and stores data loca
 - Concurrent readers without blocking writers.
 - One process owns a database file; share its database handle for concurrent transactions.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p database_implementations --example databases`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/database_implementations/examples/databases/redb.rs:example}}
 ```
 
@@ -46,7 +48,7 @@ An embedded database engine runs in the application process and stores data loca
 
 SurrealDB is a scalable, distributed, multi-model document-graph [database][p~database] that can run either in-process or as a standalone server.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/database_implementations/examples/databases/surrealdb.rs:example}}
 ```
 

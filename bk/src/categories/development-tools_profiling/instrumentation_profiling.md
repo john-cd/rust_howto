@@ -27,7 +27,9 @@ profiling = { version = "1", features = ["profile-with-puffin"] }
 
 [`puffin`][c~puffin~docs]↗{{hi:puffin}} records scopes into frames. Turn recording on with `puffin::set_scopes_on(true)`, mark the end of each loop iteration with `puffin::GlobalProfiler::lock().new_frame()`, and start a [`puffin_http::Server`][c~puffin_http::Server~docs]↗{{hi:puffin_http::Server}} to stream the frames to `puffin_viewer`.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools_profiling --example puffin_server`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_profiling/examples/puffin_server.rs:example}}
 ```
 
@@ -41,7 +43,9 @@ To test instrumented code without a server or a viewer, add a sink with `puffin:
 
 [`measure_time`][c~measure_time~docs]↗{{hi:measure_time}} is a lightweight form of instrumentation: `print_time!("label")` starts a timer that prints the elapsed time when the enclosing scope ends. Use it for a quick look at how long a block takes, not for statistically sound measurements; for those, see [Benchmarking](benchmarking.md).
 
-```rust,editable
+Build the profiling library from `bk/crates` with `cargo test --locked -p development_tools_profiling --lib`.
+
+```rust,noplayground
 {{#include ../../../crates/cats/development_tools_profiling/src/memory_usage_analysis/measure_time.rs:example}}
 ```
 

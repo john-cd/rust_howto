@@ -15,7 +15,9 @@ secure random source; they do not need an external service.
 
 [`aes-gcm`][c~aes-gcm~docs]↗ provides AES-GCM authenticated encryption. The example generates a key and nonce from the operating system's random source, encrypts and decrypts a message, and tests that modified ciphertext is rejected.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p cryptography --example encryption`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/cryptography/examples/encryption/aes_gcm.rs:example}}
 ```
 
@@ -23,7 +25,7 @@ secure random source; they do not need an external service.
 
 [`chacha20poly1305`][c~chacha20poly1305~docs]↗ provides ChaCha20-Poly1305 authenticated encryption. The example verifies a round trip and confirms that modified tags and associated data fail authentication.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/cryptography/examples/encryption/chacha20poly1305.rs:example}}
 ```
 
@@ -33,7 +35,9 @@ secure random source; they do not need an external service.
 
 `rsa` implements RSA public-key operations. RSA encryption is limited to short messages, so protocols usually use it only to protect a symmetric key and use AEAD for the data. This example demonstrates PKCS#1 v1.5 padding for compatibility; it is not a recommendation for a new protocol. The direct `rsa` 0.10 dependency includes the fix for [RUSTSEC-2023-0071](https://rustsec.org/advisories/RUSTSEC-2023-0071.html), but that does not make this legacy padding scheme suitable for a new protocol. Do not expose decryption errors or timing to an attacker, because that can create a padding oracle. If a protocol requires RSA encryption, use a maintained library and its RSA-OAEP support; prefer an established protocol over designing a hybrid scheme yourself.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p cryptography --example rsa`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/cryptography/examples/rsa.rs:example}}
 ```
 

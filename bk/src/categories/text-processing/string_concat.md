@@ -14,7 +14,9 @@ For runtime data, choose a method that fits the ownership and allocation needs. 
 
 The example compares `+`, `format!`, `push_str`, capacity reservation, slice `concat` and `join`, and the `concat_string!` and `joinery` crate APIs.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p text_processing --example string_concat`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/string_concat/string_concat.rs:example}}
 ```
 
@@ -24,7 +26,7 @@ The example compares `+`, `format!`, `push_str`, capacity reservation, slice `co
 
 When the parts are constant string slices, [`constcat`][c~constcat~docs]↗{{hi:constcat}} provides a `concat!` macro that accepts constants and produces the combined string during compilation. Use the standard `concat!` macro for literals; use `constcat` when the inputs are named `const` values.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/string_concat/string_concat2.rs:example}}
 ```
 

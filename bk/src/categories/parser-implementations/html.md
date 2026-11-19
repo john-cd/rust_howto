@@ -30,7 +30,9 @@ tl = "0.7.8"
 tl = { version = "0.7.8", features = ["simd"] }
 ```
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p parser_implementations --example html`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/parser_implementations/examples/html/tl.rs:example}}
 ```
 

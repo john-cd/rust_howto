@@ -30,7 +30,9 @@ so it requires network access. When the display name and slug are already
 known, the shared template renderer can generate the same badge without
 fetching registry metadata:
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools --example templ_category_badge`.
+
+```rust,editable,noplayground
 {{#include ../../../../crates/cats/development_tools/examples/documentation/templ_category_badge.rs:example}}
 ```
 

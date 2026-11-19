@@ -12,7 +12,9 @@ Editors, code-review bots and IDE-like features in custom applications talk to l
 
 The Language Server Protocol (LSP) is JSON-RPC with `Content-Length` framing, used between editors and language servers such as `rust-analyzer`. [`lsp-types`][c~lsp-types~docs]↗{{hi:lsp-types}} defines the message types; [`lsp-server`][c~lsp-server~docs]↗{{hi:lsp-server}} provides the transport (`Connection::stdio()` for a real process, `Connection::memory()` for tests) and the `initialize` / `shutdown` handshakes. The same crates serve both ends: write a server, or drive an existing one from a custom tool. Responses are matched to requests by `RequestId`. Async alternatives include `tower-lsp` and `async-lsp`.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p text_editors --example lsp_server_minimal`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_editors/examples/language_server_protocol/lsp_server_minimal.rs:example}}
 ```
 
@@ -22,7 +24,9 @@ The Language Server Protocol (LSP) is JSON-RPC with `Content-Length` framing, us
 
 A client sends the document text with the `textDocument/didOpen` notification (notifications have no response), then asks questions such as `textDocument/documentSymbol`. The server advertises what it supports in the `initialize` response (`document_symbol_provider` here), and a client should only send requests the capabilities allow. To drive a real server such as `rust-analyzer`, spawn it with piped stdin and stdout, read and write messages with `Message::read` and `Message::write` (the `Content-Length` framing shown at the end of the example), finish with `shutdown` then `exit`, and wait for the child process. The example's `#[ignore]`d test does exactly that against a real `rust-analyzer` (`rustup component add rust-analyzer`, then `cargo test -- --ignored`). Servers may send requests and notifications of their own (`window/workDoneProgress/create`, `$/progress`, logs) at any time, so loop until the response with your `RequestId` arrives.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p text_editors --example lsp_client`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_editors/examples/language_server_protocol/lsp_client.rs:example}}
 ```
 

@@ -16,7 +16,9 @@ The [`await-tree`][c~await-tree~docs]↗{{hi:await-tree}} crate provides a conve
 
 An `async` task's future can call other futures and spawn child tasks, forming a tree of work that changes as tasks are polled, complete, or are cancelled. [`await-tree`][c~await-tree~docs]↗{{hi:await-tree}} can record and display this structure; its `instrument_await` attribute adds task context to selected futures.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p asynchronous --example await_tree`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/asynchronous/examples/await_tree.rs:example}}
 ```
 

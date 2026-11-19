@@ -43,7 +43,9 @@ It offers a wide range of functions for combining, grouping, and manipulating it
 
 [`imbl`][c~imbl~docs]↗{{hi:imbl}} provides persistent collections such as vectors, maps, and sets. Updates produce a new version that shares unchanged structure with the old one. This is useful when keeping multiple related versions is more important than in-place mutation. The example imports the crate by its package name, `imbl`.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p rust_patterns --example functional_programming`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/imbl.rs:example}}
 ```
 
@@ -53,7 +55,7 @@ It offers a wide range of functions for combining, grouping, and manipulating it
 
 [`rpds`][c~rpds~docs]↗{{hi:rpds}} provides persistent data structures with structural sharing. Like `imbl`, it can make it inexpensive to retain related versions of a collection; choose a collection based on its API and workload.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/rust_patterns/examples/functional_programming/rpds.rs:example}}
 ```
 
