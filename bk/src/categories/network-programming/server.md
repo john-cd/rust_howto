@@ -36,6 +36,14 @@ Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p net
 {{#include ../../../crates/cats/network_programming/examples/server/glommio.rs:example}}
 ```
 
+## Decode Length-Prefixed TCP Messages {#length-delimited-frames}
+
+TCP provides a byte stream. Use `LengthDelimitedCodec` to recover message boundaries from a length prefix. The default prefix is a big-endian `u32`, and this example limits each payload to 16 bytes. An in-memory stream lets the example force a partial read and then send two frames together. The same codec works with a Tokio TCP stream.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/network_programming/examples/length_delimited_frames.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Asynchronous Programming](../asynchronous/index.md) explains async runtimes and I/O.

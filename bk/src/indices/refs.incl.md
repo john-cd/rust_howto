@@ -1171,6 +1171,7 @@
 [ex~multimedia~multimedia]: ../categories/multimedia/multimedia.md#multimedia
 [ex~network-programming~glommio-http-server]: ../categories/network-programming/server.md#glommio-http-server
 [ex~network-programming~iroh-loopback]: ../categories/network-programming/iroh_loopback.md
+[ex~network-programming~length-delimited-frames]: ../categories/network-programming/server.md#length-delimited-frames
 [ex~network-programming~listen-on-unused-port]: ../categories/network-programming/server.md#listen-on-unused-port
 [ex~network-programming~ngrok]: ../categories/network-programming/reverse_proxy.md#ngrok
 [ex~network-programming~pingora]: ../categories/network-programming/reverse_proxy.md#pingora

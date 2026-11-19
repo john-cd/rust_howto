@@ -38,6 +38,8 @@ Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p asy
 {{#include ../../../crates/cats/asynchronous/examples/cancellation_token.rs:example}}
 ```
 
+Use the same crate's codec support to [decode length-prefixed TCP messages](../network-programming/server.md#length-delimited-frames).
+
 ## Related Topics {#related-topics .skip}
 
 - [Concurrency](../concurrency/index.md).

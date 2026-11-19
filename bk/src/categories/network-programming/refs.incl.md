@@ -11,3 +11,4 @@
 [c~ipnet~docs]: https://docs.rs/ipnet
 
 [nginx~website]: https://nginx.org/
+[ex~network-programming~length-delimited-frames]: server.md#length-delimited-frames
