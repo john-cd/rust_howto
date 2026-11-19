@@ -46,7 +46,15 @@ TCP provides a byte stream. Use `LengthDelimitedCodec` to recover message bounda
 
 To exercise connection failures without real network sockets, see [Test Recovery from a Simulated Network Partition](../development-tools_testing/testing.md#turmoil-recovery).
 
-Use [`socket2`][c~socket2~docs] when the listener needs an option set before `bind`. After configuring, binding, and listening, hand the socket to `std::net::TcpListener`.
+## Create a TCP Listener with `socket2` {#socket2-listener}
+
+Use [`socket2`][c~socket2~docs] when a server must set socket options before it binds and listens. This recipe enables address reuse, binds to an operating-system-selected loopback port, listens, and then converts the socket into `std::net::TcpListener`. The test connects locally so the example runs without a permanent server or an external network.
+
+```rust,editable
+{{#include ../../../crates/cats/network_programming/examples/socket2_listener.rs:example}}
+```
+
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p network_programming --example socket2_listener`.
 
 ## Related Topics {#related-topics .skip}
 

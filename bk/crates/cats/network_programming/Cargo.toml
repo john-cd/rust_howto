@@ -32,6 +32,11 @@ name = "length_delimited_frames"
 path = "examples/length_delimited_frames.rs"
 test = true
 
+[[example]]
+name = "socket2_listener"
+path = "examples/socket2_listener.rs"
+test = true
+
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
@@ -44,6 +49,7 @@ ngrok = { version = "0.19.0", default-features = false, features = [
     "axum",
     "ring",
 ] } # Share the ring TLS backend across Windows dependencies.
+socket2 = "0.6"
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["io-util", "macros", "rt-multi-thread", "signal"] }
 tokio-util = { version = "0.7.20", features = ["codec"] }

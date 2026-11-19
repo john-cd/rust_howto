@@ -19301,6 +19301,7 @@ dependencies = [
  "glommio",
  "ngrok",
  "pingora",
+ "socket2 0.6.5",
  "tokio",
  "tokio-util",
  "tower",
