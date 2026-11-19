@@ -53,6 +53,8 @@ bk/src/categories/development-tools/profiling.md
 # Project and edition introductions describe the scope of each book.
 bk/src/introduction.md
 later/src/introduction.md
+# This editorial introduction uses a prose brief as its worked example.
+bk/src/introduction/in_the_age_of_ai.md
 # Reference pages about Cargo layout, install choices, output resources, or command inventories.
 bk/src/categories/development-tools/cargo/package_layout.md
 bk/src/categories/development-tools/documentation/badges.md
