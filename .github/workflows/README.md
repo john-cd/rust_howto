@@ -53,10 +53,6 @@ gitlink using `checkout-book-tooling`. Cargo uses path dependencies from that
 checkout, and Docker copies the same sources into its build context. CI never
 uses `--remote` to advance the submodule.
 
-The submodule is private. Configure the repository secret `BOOK_TOOLING_TOKEN`
-with read-only Contents access to `john-cd/book_tooling`. Adding a submodule does
-not grant the default `GITHUB_TOKEN` access to another private repository.
-Reusable-workflow callers must pass this secret; fork PRs do not receive it.
-Authentication is used only for submodule initialization, not inside Docker or
-Cargo. For local Docker builds, initialize the submodule with your Git credentials
-first.
+The submodule is public, so CI can initialize it without a repository secret.
+`BOOK_TOOLING_TOKEN` remains an optional input for authenticated access. For
+local Docker builds, initialize the submodule with your Git credentials first.

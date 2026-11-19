@@ -1,8 +1,8 @@
 name: Check out Book Tooling
-description: Initialize the pinned Book Tooling submodule for the tools workspace.
+description: Initialize the pinned public Book Tooling submodule for the tools workspace.
 inputs:
   token:
-    description: Read-only token with Contents access to the private john-cd/book_tooling repository.
+    description: Optional token with read access to john-cd/book_tooling.
     required: false
 runs:
   using: composite
@@ -24,6 +24,6 @@ runs:
         fi
         git submodule sync -- book_tooling
         if ! git submodule update --init -- book_tooling; then
-          echo '::error::Cannot initialize book_tooling. Set BOOK_TOOLING_TOKEN to a token with read access to john-cd/book_tooling; the default GITHUB_TOKEN cannot read another private repository.'
+          echo '::error::Cannot initialize book_tooling. Confirm the public john-cd/book_tooling repository and pinned revision are reachable; optionally set BOOK_TOOLING_TOKEN for authenticated access.'
           exit 1
         fi
