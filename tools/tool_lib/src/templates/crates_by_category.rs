@@ -22,6 +22,9 @@ const UNCATEGORIZED_DESCRIPTION: &str =
 const CATEGORY_PAGE_HEADER: &str =
     "# Crates by Category\n\n| Category | Description | Crates |\n| --- | --- | --- |\n";
 
+/// Number of crate entries per row to keep generated Markdown cells manageable.
+const CRATES_PER_ROW: usize = 32;
+
 /// The footer of the generated page: a link reference and the includes.
 const CATEGORY_PAGE_FOOTER: &str = "\n[All Valid Categories][crates.io~category_slugs]\u{2197}.\n\n{{#include refs.incl.md}}\n{{#include ../refs/link-refs.md}}\n\n<div class=\"hidden\">\n</div>\n";
 
@@ -172,7 +175,7 @@ pub fn create_category_page_from_metadata(
 ///
 /// Each listed crate links to its published recipes when an entry exists in
 /// `recipe_links`. Crates missing from the metadata appear in the uncategorized
-/// row; stale metadata entries are ignored.
+/// rows; stale metadata entries are ignored.
 ///
 /// # Arguments
 ///
@@ -265,15 +268,17 @@ pub fn create_category_page_from_metadata_with_recipe_links(
         if names.is_empty() {
             continue;
         }
-        let crate_names = names.iter().map(String::as_str).collect();
-        markdown.push_str(&create_category_row(
-            &category,
-            &slug,
-            &description,
-            crate_names,
-            recipe_links,
-        )?);
-        markdown.push('\n');
+        let crate_names: Vec<_> = names.iter().map(String::as_str).collect();
+        for chunk in crate_names.chunks(CRATES_PER_ROW) {
+            markdown.push_str(&create_category_row(
+                &category,
+                &slug,
+                &description,
+                chunk.to_vec(),
+                recipe_links,
+            )?);
+            markdown.push('\n');
+        }
     }
     markdown.push_str(CATEGORY_PAGE_FOOTER);
     Ok(markdown)
@@ -437,6 +442,23 @@ mod tests {
         assert!(page.contains(
             "| Uncategorized | No crates.io category is recorded for these crates in the book's current inventory. | [![recipe-only][c~recipe-only~docs~badge]][c~recipe-only~docs]{{hi:recipe-only}}<br>&nbsp;&nbsp;\u{21b3} [Use recipe-only][ex~examples~recipe-only]|"
         ));
+    }
+
+    /// Splits large categories across rows without dropping the final crate.
+    #[test]
+    fn splits_large_category_rows() -> Result<()> {
+        let names: Vec<_> = (0..=CRATES_PER_ROW)
+            .map(|index| format!("sample-{index:02}"))
+            .collect();
+        let page = create_category_page_from_metadata(&names, "categories = []")?;
+        assert_eq!(
+            page.lines()
+                .filter(|line| line.starts_with("| Uncategorized |"))
+                .count(),
+            2
+        );
+        assert!(page.contains(&format!("[![sample-{CRATES_PER_ROW:02}]")));
+        Ok(())
     }
 
     /// Produces identical category output from identical metadata.
