@@ -89,7 +89,11 @@ cargo clippy --workspace --all-targets --locked --profile ci --all-features -- -
 if [ "${SKIP_TESTS:-false}" != "true" ]; then
     ## Test all code examples (except heavy tests and "ignore_in_ci" tests)
     ## NEXTEST_ARGS can be used to pass --partition hash:K/N
-    cargo nextest run --config-file .config/nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar --all-features --status-level pass ${NEXTEST_ARGS:-}
+    nextest_args=()
+    if [[ -n "${NEXTEST_ARGS:-}" ]]; then
+        read -r -a nextest_args <<< "$NEXTEST_ARGS"
+    fi
+    cargo nextest run --config-file .config/nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar --all-features --status-level pass "${nextest_args[@]}"
 
     ## `nextest` does not handle doctests.
     cargo test --workspace --doc --locked --profile ci -- --show-output
