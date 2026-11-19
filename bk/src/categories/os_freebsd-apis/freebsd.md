@@ -53,10 +53,8 @@ For owned helper processes and cross-platform error boundaries, see
 
 ## Related Topics {#related-topics .skip}
 
-- UNIX-like system APIs.
-- Platform-specific Rust bindings.
-- System programming and compatibility.
-- Application portability.
+- [Unix APIs](../os_unix-apis/unix.md) covers portable Unix interfaces.
+- [Linux APIs](../os_linux-apis/linux.md) provides a comparison with Linux-specific facilities.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -75,10 +75,8 @@ Linear regression fits a numeric target and predicts values for new feature rows
 
 ## Related Topics {#related-topics .skip}
 
-- Data science and analytics.
-- Deep learning and neural networks.
-- Statistical modeling.
-- Scientific computing in Rust.
+- [Neural Networks and Deep Learning](deep_learning.md) covers neural models.
+- [Mathematics](../../categories/mathematics/index.md) covers numerical methods used in modeling.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
