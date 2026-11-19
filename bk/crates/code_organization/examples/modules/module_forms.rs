@@ -2,6 +2,11 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+#![expect(
+    clippy::self_named_module_files,
+    reason = "This example teaches the named-file module form with a sibling module directory"
+)]
+
 // ANCHOR: declarations
 /// Loads a sibling module from module_forms/a_file.rs.
 mod a_file;
