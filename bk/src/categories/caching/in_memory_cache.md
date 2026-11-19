@@ -34,7 +34,16 @@ From `bk/crates`, run `cargo test --locked -p caching --example in_memory_cache`
 
 {{#badges moka caching=Caching concurrency=Concurrency}}{{hi:Cache}}{{hi:Concurrent}}
 
-[`moka`][c~moka~docs]↗{{hi:moka}} provides synchronous and asynchronous concurrent caches. Its policies include maximum capacity, expiration by time-to-live or time-to-idle, and size-aware weighting. Select the `sync` or `future` cache to match the surrounding code, and remember that maintenance and eviction are cache-policy behavior rather than durable storage.
+[`moka`][c~moka~docs]↗{{hi:moka}} provides synchronous and asynchronous concurrent caches. Capacity is a best-effort eviction target. TTL measures time since creation or replacement, and time-to-idle measures time since last access. Select `sync` for synchronous code or `future` for async code.
+
+To run this example in a standalone package, add the following dependency to `Cargo.toml`:
+
+```toml
+[dependencies]
+moka = { version = "0.12.16", features = ["sync"] }
+```
+
+`try_get_with` shares an in-flight initialization among callers for the same missing key. The example starts two retry callers together and counts successful initializations. A failed initializer returns an error without inserting a value, so a later call can retry.
 
 ```rust,ignore,noplayground
 {{#include ../../../crates/cats/caching/examples/in_memory_cache/moka.rs:example}}
