@@ -27,4 +27,4 @@
 - [Kubernetes Operators](other/cloud/kubernetes.md)
 
 - [Cryptocurrencies](categories/cryptography_cryptocurrencies/index.md)
-  - [Cryptocurrencies](categories/cryptography_cryptocurrencies/cryptocurrencies.md)
+  - [Offline Ethereum, Bitcoin, and Solana Examples](categories/cryptography_cryptocurrencies/cryptocurrencies.md)

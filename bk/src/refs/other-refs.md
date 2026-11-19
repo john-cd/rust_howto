@@ -1729,8 +1729,20 @@
 [trippy~repo]: https://github.com/fujiapple852/trippy
 [xh~repo]: https://github.com/ducaale/xh
 
+[c~alloy~docs]: https://docs.rs/alloy
+[c~alloy~docs~badge]: https://img.shields.io/crates/v/alloy?label=alloy
+[c~anchor-lang~docs]: https://docs.rs/anchor-lang
+[c~anchor-lang~docs~badge]: https://img.shields.io/crates/v/anchor-lang?label=anchor-lang
+[c~bdk_wallet~docs]: https://docs.rs/bdk_wallet
+[c~bdk_wallet~docs~badge]: https://img.shields.io/crates/v/bdk_wallet?label=bdk_wallet
+[c~k256~docs]: https://docs.rs/k256
+[c~k256~docs~badge]: https://img.shields.io/crates/v/k256?label=k256
 [c~sgp4~docs]: https://docs.rs/sgp4
+[c~solana-pubkey~docs]: https://docs.rs/solana-pubkey
+[c~solana-sdk~docs]: https://docs.rs/solana-sdk
+[c~solana-sdk~docs~badge]: https://img.shields.io/crates/v/solana-sdk?label=solana-sdk
 [c~tello~docs]: https://docs.rs/tello
+[ethers-rs~repo]: https://github.com/gakonst/ethers-rs
 [mavlink~packet-loss]: https://mavlink.io/en/guide/packet_loss.html
 [rust-howto~game-development]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/game-development/index.md
 [rust-howto~game-engines]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/game-engines/index.md
@@ -1739,3 +1751,4 @@
 [rust-howto~no-std]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/no-std/no_std.md
 [rust-howto~no-std~no-allocation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/no-std/no_alloc.md
 [rust-howto~testing]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_testing/testing.md
+[solana~pda]: https://solana.com/docs/core/pda

@@ -29,6 +29,10 @@ test = true
 alloy = { version = "2.5.0", default-features = false, features = ["std", "contract", "sol-types", "provider-http", "reqwest", "reqwest-rustls-tls", "signer-local"] }
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
+# Parse Bitcoin addresses and construct output scripts.
+bitcoin = { version = "0.32.102", default-features = false, features = ["std"] }
+# Derive and verify Solana program addresses on the host.
+solana-pubkey = { version = "4.4.0", features = ["curve25519"] }
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net", "io-util", "time"] }
 
