@@ -38,7 +38,8 @@ fi
 build_directory="$(mktemp -d "${TMPDIR:-/tmp}/python-build.XXXXXX")"
 trap 'rm -rf -- "$build_directory"' EXIT
 
-curl --fail --location --proto '=https' --tlsv1.2 --retry 3 \
+curl --fail --location --proto '=https' --tlsv1.2 \
+    --retry 5 --retry-all-errors --retry-delay 2 --retry-max-time 120 --connect-timeout 30 \
     "https://www.python.org/ftp/python/${PYTHON_VERSION}/${python_archive}" \
     --output "${build_directory}/${python_archive}"
 printf '%s  %s\n' "$PYTHON_LINUX_SOURCE_SHA256" "${build_directory}/${python_archive}" | sha256sum --check --status
