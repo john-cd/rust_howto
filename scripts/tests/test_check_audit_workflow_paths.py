@@ -21,7 +21,7 @@ class AuditWorkflowPathTests(unittest.TestCase):
 
     def test_dropping_a_nested_workspace_lockfile_is_reported(self) -> None:
         lockfile = (
-            "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.lock"
+            "bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.lock"
         )
         text = WORKFLOW.read_text().replace(f'      - "{lockfile}"\n', "")
         problems = missing(trigger_paths(text))

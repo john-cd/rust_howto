@@ -16,18 +16,19 @@ updates:
           - "*"
     directories:
       - /bk/crates
+      - /bk/platform
       - /bk/crates/cats/database/examples/query_builders_orms/toasty_validation
       - /bk/crates/cats/memory_management/allocator_selection
       - /later/crates
-      - /later/crates/cats/development_tools_ffi/python_extension
-      - /later/crates/cats/embedded
-      - /later/crates/cats/gui/vizia
-      - /later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest
+      - /bk/platform/cats/development_tools_ffi/python_extension
+      - /bk/platform/cats/embedded
+      - /bk/platform/cats/gui/vizia
+      - /bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest
       - /publish
       - /tools
       - /xmpl
   - package-ecosystem: uv
-    directory: /later/crates/cats/development_tools_ffi/python_extension
+    directory: /bk/platform/cats/development_tools_ffi/python_extension
     schedule:
       interval: monthly
       day: monday

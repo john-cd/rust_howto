@@ -46,21 +46,21 @@ _default:
 
 # Format Cargo manifests in every independent Rust workspace.
 @fmt-toml:
-    set -e; for workspace in bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest tools xmpl publish; do \
+    set -e; for workspace in bk/platform bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates bk/platform/cats/gui/vizia bk/platform/cats/development_tools_ffi/python_extension bk/platform/cats/embedded bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest tools xmpl publish; do \
       echo "Formatting Cargo manifests in ${workspace}"; \
       cargo fmt-toml --workspace-path "${workspace}"; \
     done
 
 # Check Cargo manifest formatting in every independent Rust workspace.
 @fmt-toml-check:
-    set -e; for workspace in bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest tools xmpl publish; do \
+    set -e; for workspace in bk/platform bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates bk/platform/cats/gui/vizia bk/platform/cats/development_tools_ffi/python_extension bk/platform/cats/embedded bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest tools xmpl publish; do \
       echo "Checking Cargo manifests in ${workspace}"; \
       cargo fmt-toml --check --workspace-path "${workspace}"; \
     done
 
 # Check dependency advisories, licenses, duplicate versions, and registry sources.
 @deny:
-    set -e; for workspace in bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates later/crates/cats/gui/vizia later/crates/cats/development_tools_ffi/python_extension later/crates/cats/embedded later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest tools xmpl publish mdbook-utils; do \
+    set -e; for workspace in bk/platform bk/crates bk/crates/cats/memory_management/allocator_selection bk/scripts/book/testdata/refdefs/crates bk/crates/cats/database/examples/query_builders_orms/toasty_validation later/crates bk/platform/cats/gui/vizia bk/platform/cats/development_tools_ffi/python_extension bk/platform/cats/embedded bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest tools xmpl publish mdbook-utils; do \
       if [ "$workspace" = "mdbook-utils" ] && [ ! -f "$workspace/Cargo.toml" ]; then \
         echo "Skipping optional workspace mdbook-utils (submodule not initialized)"; \
         continue; \

@@ -11,7 +11,7 @@ Point your browser to [`https://john-cd.com/rust_howto`][rust-howto~website]↗ 
 
 ## Local Rust checks
 
-Install the toolchain from `rust-toolchain.toml` with `rustup show` in the checkout. From the repository root, run `just check` and `just test`. For targeted Cargo work, use `bk/crates`, `publish`, `tools`, `xmpl`, or `later/crates` for deferred examples. For formatting, use the nightly pin in `rustfmt-toolchain.toml`.
+Install the toolchain from `rust-toolchain.toml` with `rustup show` in the checkout. From the repository root, run `just check` and `just test`. For targeted Cargo work, use `bk/crates`, `bk/platform`, `publish`, `tools`, `xmpl`, or `later/crates` for deferred examples. For formatting, use the nightly pin in `rustfmt-toolchain.toml`.
 
 ## Work In Progress
 
@@ -119,7 +119,7 @@ Please refer to the LICENSE file.
 
 ## Python development
 
-The Python extension example lives in `later/crates/cats/development_tools_ffi/python_extension` and uses the committed `uv.lock` and `.python-version`. From the repository root, use `just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile env`, then `just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile sync` and `just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile uv run <command>`. Use `just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile hooks` for hooks. See [`later/crates/cats/development_tools_ffi/python_extension/README.md`](later/crates/cats/development_tools_ffi/python_extension/README.md) for project details.
+The Python extension example lives in `bk/platform/cats/development_tools_ffi/python_extension` and uses the committed `uv.lock` and `.python-version`. From the repository root, use `just --justfile bk/platform/cats/development_tools_ffi/python_extension/justfile env`, then `just --justfile bk/platform/cats/development_tools_ffi/python_extension/justfile sync` and `just --justfile bk/platform/cats/development_tools_ffi/python_extension/justfile uv run <command>`. Use `just --justfile bk/platform/cats/development_tools_ffi/python_extension/justfile hooks` for hooks. See [`bk/platform/cats/development_tools_ffi/python_extension/README.md`](bk/platform/cats/development_tools_ffi/python_extension/README.md) for project details.
 
 Python environments, caches, and generated outputs use the configurable `CODE_PYTHON_ENV_ROOT`, `CODE_PYTHON_BUILD_ROOT`, and `CODE_PYTHON_OUTPUT_ROOT`; package data uses `CODE_PACKAGES_ROOT`. These are separate from the Rust-specific `CODE_BUILD_ROOT`, `CODE_TARGET_ROOT`, and `CODE_SCCACHE_ROOT`.
 
@@ -129,7 +129,7 @@ Install Just and uv; Windows recipes use Git Bash. Each Python project has a
 Justfile. Environment variables are defined in `scripts/env.just`, imported
 by those Justfiles; no Python environment wrapper is required.
 
-- `just --justfile later/crates/cats/development_tools_ffi/python_extension/justfile env` — `later/crates/cats/development_tools_ffi/python_extension`.
+- `just --justfile bk/platform/cats/development_tools_ffi/python_extension/justfile env` — `bk/platform/cats/development_tools_ffi/python_extension`.
 
 From a project's directory, run `just sync`, `just fmt`, `just lint`, or
 `just check`. `just --list` shows its available tasks. Named validation tasks

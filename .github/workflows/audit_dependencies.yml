@@ -10,6 +10,10 @@ on:
     branches: [develop]
     paths:
       - "bk/crates/Cargo.lock"
+      - "bk/platform/Cargo.lock"
+      - "bk/platform/Cargo.toml"
+      - "bk/platform/**/Cargo.toml"
+      - "bk/platform/deny.toml"
       - "bk/crates/Cargo.toml"
       - "bk/crates/**/Cargo.toml"
       - "bk/crates/cats/database/examples/query_builders_orms/toasty_validation/Cargo.lock"
@@ -21,18 +25,18 @@ on:
       - "later/crates/Cargo.lock"
       - "later/crates/Cargo.toml"
       - "later/crates/**/Cargo.toml"
-      - "later/crates/cats/development_tools_ffi/python_extension/Cargo.lock"
-      - "later/crates/cats/development_tools_ffi/python_extension/Cargo.toml"
-      - "later/crates/cats/development_tools_ffi/python_extension/**/Cargo.toml"
-      - "later/crates/cats/embedded/Cargo.lock"
-      - "later/crates/cats/embedded/Cargo.toml"
-      - "later/crates/cats/embedded/**/Cargo.toml"
-      - "later/crates/cats/gui/vizia/Cargo.lock"
-      - "later/crates/cats/gui/vizia/Cargo.toml"
-      - "later/crates/cats/gui/vizia/**/Cargo.toml"
-      - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.lock"
-      - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.toml"
-      - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/**/Cargo.toml"
+      - "bk/platform/cats/development_tools_ffi/python_extension/Cargo.lock"
+      - "bk/platform/cats/development_tools_ffi/python_extension/Cargo.toml"
+      - "bk/platform/cats/development_tools_ffi/python_extension/**/Cargo.toml"
+      - "bk/platform/cats/embedded/Cargo.lock"
+      - "bk/platform/cats/embedded/Cargo.toml"
+      - "bk/platform/cats/embedded/**/Cargo.toml"
+      - "bk/platform/cats/gui/vizia/Cargo.lock"
+      - "bk/platform/cats/gui/vizia/Cargo.toml"
+      - "bk/platform/cats/gui/vizia/**/Cargo.toml"
+      - "bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.lock"
+      - "bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.toml"
+      - "bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest/**/Cargo.toml"
       - "publish/Cargo.lock"
       - "publish/Cargo.toml"
       - "publish/**/Cargo.toml"
@@ -51,6 +55,10 @@ on:
     branches: [develop]
     paths:
       - "bk/crates/Cargo.lock"
+      - "bk/platform/Cargo.lock"
+      - "bk/platform/Cargo.toml"
+      - "bk/platform/**/Cargo.toml"
+      - "bk/platform/deny.toml"
       - "bk/crates/Cargo.toml"
       - "bk/crates/**/Cargo.toml"
       - "bk/crates/cats/database/examples/query_builders_orms/toasty_validation/Cargo.lock"
@@ -62,18 +70,18 @@ on:
       - "later/crates/Cargo.lock"
       - "later/crates/Cargo.toml"
       - "later/crates/**/Cargo.toml"
-      - "later/crates/cats/development_tools_ffi/python_extension/Cargo.lock"
-      - "later/crates/cats/development_tools_ffi/python_extension/Cargo.toml"
-      - "later/crates/cats/development_tools_ffi/python_extension/**/Cargo.toml"
-      - "later/crates/cats/embedded/Cargo.lock"
-      - "later/crates/cats/embedded/Cargo.toml"
-      - "later/crates/cats/embedded/**/Cargo.toml"
-      - "later/crates/cats/gui/vizia/Cargo.lock"
-      - "later/crates/cats/gui/vizia/Cargo.toml"
-      - "later/crates/cats/gui/vizia/**/Cargo.toml"
-      - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.lock"
-      - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.toml"
-      - "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest/**/Cargo.toml"
+      - "bk/platform/cats/development_tools_ffi/python_extension/Cargo.lock"
+      - "bk/platform/cats/development_tools_ffi/python_extension/Cargo.toml"
+      - "bk/platform/cats/development_tools_ffi/python_extension/**/Cargo.toml"
+      - "bk/platform/cats/embedded/Cargo.lock"
+      - "bk/platform/cats/embedded/Cargo.toml"
+      - "bk/platform/cats/embedded/**/Cargo.toml"
+      - "bk/platform/cats/gui/vizia/Cargo.lock"
+      - "bk/platform/cats/gui/vizia/Cargo.toml"
+      - "bk/platform/cats/gui/vizia/**/Cargo.toml"
+      - "bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.lock"
+      - "bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest/Cargo.toml"
+      - "bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest/**/Cargo.toml"
       - "publish/Cargo.lock"
       - "publish/Cargo.toml"
       - "publish/**/Cargo.toml"
@@ -138,6 +146,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - workspace: bk/platform
+            config: bk/platform/deny.toml
           - workspace: later/crates
             config: later/crates/deny.toml
           - workspace: tools
@@ -148,14 +158,14 @@ jobs:
             config: bk/crates/deny.toml
           - workspace: bk/crates/cats/memory_management/allocator_selection
             config: bk/crates/deny.toml
-          - workspace: later/crates/cats/development_tools_ffi/python_extension
-            config: later/crates/deny.toml
-          - workspace: later/crates/cats/embedded
-            config: later/crates/deny.toml
-          - workspace: later/crates/cats/gui/vizia
-            config: later/crates/deny.toml
-          - workspace: later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest
-            config: later/crates/deny.toml
+          - workspace: bk/platform/cats/development_tools_ffi/python_extension
+            config: bk/platform/deny.toml
+          - workspace: bk/platform/cats/embedded
+            config: bk/platform/deny.toml
+          - workspace: bk/platform/cats/gui/vizia
+            config: bk/platform/deny.toml
+          - workspace: bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest
+            config: bk/platform/deny.toml
           - workspace: publish
             config: bk/crates/deny.toml
     continue-on-error: true

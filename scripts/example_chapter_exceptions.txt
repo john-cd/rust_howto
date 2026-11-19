@@ -4,8 +4,8 @@
 
 # --- Examples without a chapter -------------------------------------------
 # Disabled on purpose: the dependency is affected by an advisory (see the table in the chapter).
-later/crates/cats/science_robotics/examples/robotics_frameworks/openrr.rs
-later/crates/cats/science_robotics/examples/robotics_frameworks/zenoh.rs
+bk/platform/cats/science_robotics/examples/robotics_frameworks/openrr.rs
+bk/platform/cats/science_robotics/examples/robotics_frameworks/zenoh.rs
 # riker is unmaintained; its source is kept for reference and the dependency stays disabled.
 bk/crates/cats/concurrency/examples/actors/riker.rs
 # Placeholder entry point; the chapter is deferred (#1748).
@@ -17,19 +17,19 @@ bk/crates/cats/os_macos_apis/examples/macos/unsupported.rs
 # Test helper that re-runs a test in a child process; not an example.
 bk/crates/cats/development_tools_debugging/examples/support/isolated.rs
 bk/crates/cats/development_tools/examples/crate_indices/fixtures.rs
-later/crates/cats/development_tools_ffi/examples/ruby/greeting.rs
+bk/platform/cats/development_tools_ffi/examples/ruby/greeting.rs
 bk/crates/cats/authentication/examples/jwt_authentication/jwt_service.rs
 # Cargo entry points that only `mod` the chapter-included napi.rs, neon.rs and xilem.rs.
-later/crates/cats/development_tools_ffi/examples/node/napi_main.rs
-later/crates/cats/development_tools_ffi/examples/node/neon_main.rs
-later/crates/cats/gui/examples/retained_mode_gui/xilem_main.rs
+bk/platform/cats/development_tools_ffi/examples/node/napi_main.rs
+bk/platform/cats/development_tools_ffi/examples/node/neon_main.rs
+bk/platform/cats/gui/examples/retained_mode_gui/xilem_main.rs
 # The gRPC page describes this generated-code check in prose.
 bk/crates/cats/web_programming_http_server/examples/grpc/echo.rs
 # This `Fn` implementation requires nightly-only `fn_traits` and is shown as an ignored snippet.
 bk/crates/standard_library/examples/ops/callable.rs
 # GTK 3 and the affected glib 0.18 dependency chain currently keep these native GUI targets disabled.
-later/crates/cats/gui/examples/web/wry_window.rs
-later/crates/cats/gui/examples/window_creation/tao.rs
+bk/platform/cats/gui/examples/web/wry_window.rs
+bk/platform/cats/gui/examples/window_creation/tao.rs
 # --- Chapters without an example ------------------------------------------
 # Meta pages: contribution guides, link lists, indices and credits.
 bk/src/appendices/
@@ -46,7 +46,7 @@ bk/src/other/written-in-rust/
 later/src/other/architecture/
 later/src/other/cloud/
 # Example disabled until its dependency advisory is resolved.
-later/src/categories/science_robotics/robotics_frameworks.md
+bk/src/categories/science_robotics/robotics_frameworks.md
 # Legacy source notices. The rendered paths are supplied by the mdBook redirect configuration.
 bk/src/categories/development-tools/benchmark_regressions.md
 bk/src/categories/development-tools/profiling.md
@@ -71,7 +71,7 @@ bk/src/other/cloud/rust_native_cloud_development.md
 bk/src/other/devops/github_actions.md
 bk/src/other/devops/version_control.md
 # The staged Leptos recipe uses an independent Trunk project and browser checks.
-later/src/categories/wasm/examples/leptos_counter.rs
+bk/src/categories/wasm/examples/leptos_counter.rs
 # Optional staged device examples require vendor SDKs and hardware outside the ordinary Cargo gate.
 later/src/other/gpu/examples/cuda_double.rs
 later/src/other/gpu/examples/opencl_double.rs

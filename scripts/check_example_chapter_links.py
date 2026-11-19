@@ -4,7 +4,7 @@
 
 """Report examples that no chapter uses, and chapters that have no example.
 
-* An *orphan example* is a `.rs` file under `*/examples/` in `bk/crates` or
+* An *orphan example* is a `.rs` file under `*/examples/` in `bk/crates`, `bk/platform`, or
   `later/crates` that no chapter includes with `{{#include path.rs[:anchor]}}`
   (or `{{#rustdoc_include ...}}`). Entry points named `main.rs`, `lib.rs` and
   `mod.rs` are skipped (they only dispatch to sibling files), as are generated
@@ -35,7 +35,7 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-EXAMPLE_ROOTS = ["bk/crates", "later/crates"]
+EXAMPLE_ROOTS = ["bk/crates", "bk/platform", "later/crates"]
 BOOK_ROOTS = ["bk/src", "bk/drafts", "later/src"]
 SKIP_PARTS = {"target", ".git", "node_modules", "temp"}
 ENTRY_POINTS = {"main.rs", "lib.rs", "mod.rs", "build.rs"}
