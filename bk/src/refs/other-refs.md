@@ -1156,6 +1156,7 @@
 [practice.course.rs~website]: https://practice.course.rs/why-exercise.html
 [prek~repo]: https://github.com/j178/prek
 [primitive~array]: https://doc.rust-lang.org/std/primitive.array.html
+[primitive~bool::toggle]: https://doc.rust-lang.org/1.100.0/std/primitive.bool.html#method.toggle
 [primitive~bool]: https://doc.rust-lang.org/std/primitive.bool.html
 [primitive~char]: https://doc.rust-lang.org/std/primitive.char.html
 [primitive~f32::sqrt]: https://doc.rust-lang.org/std/primitive.f32.html#method.sqrt

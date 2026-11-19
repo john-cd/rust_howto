@@ -20,7 +20,7 @@ For repeatable team measurements, a small [`cargo xtask`](https://github.com/mat
 
 ## Compare Generic Instantiations with `cargo-llvm-lines` {#cargo-llvm-lines}
 
-[`cargo-llvm-lines`][llvm-lines] groups emitted LLVM IR by function. In this fixture, the same generic function is called with `u32` and `u64`. The calls use `black_box` and prevent inlining so both instantiations stay visible in the report.
+[`cargo-llvm-lines`][c~cargo-llvm-lines~repo] groups emitted LLVM IR by function. In this fixture, the same generic function is called with `u32` and `u64`. The calls use `black_box` and prevent inlining so both instantiations stay visible in the report.
 
 ```rust,ignore,noplayground
 {{#include ../../../crates/cats/development_tools/examples/generic_ir.rs:example}}
@@ -34,4 +34,4 @@ just cargo llvm-lines --locked --manifest-path crates/Cargo.toml -p development_
 
 The report should account for two copies of `double`. With Rust 1.100, it lists `double::<u32>` and `double::<u64>` separately, with one copy each. **Lines** counts the emitted LLVM IR lines for each reported row. The exact count can vary with the toolchain and profile. Use this count to investigate code generation, Cargo timings to measure compilation time, and [Low-level Profiling Tools](../development-tools_profiling/assembly.md) to inspect generated assembly.
 
-[llvm-lines]: https://github.com/dtolnay/cargo-llvm-lines
+{{#include ../../refs/link-refs.md}}

@@ -1374,6 +1374,7 @@
 [c~cargo-machete~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cargo--machete-yellow
 [c~cargo-machete~repo]: https://github.com/bnjbvr/cargo-machete
 [c~cargo-machete~repo~badge]: https://img.shields.io/badge/cargo--machete-steelblue?logo=github
+[c~cargo-llvm-lines~repo]: https://github.com/dtolnay/cargo-llvm-lines
 [c~cargo-make~blog]: https://medium.com/@sagiegurari/automating-your-rust-workflows-with-cargo-make-part-1-of-5-introduction-and-basics-b19ced7e7057
 [c~cargo-make~crates.io]: https://crates.io/crates/cargo-make
 [c~cargo-make~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--make-crimson
