@@ -21,15 +21,11 @@
 [ex~compilation~apple-linker]: faster_linking.md#apple-linker
 [ex~compilation~verify-linker]: faster_linking.md#verify-linker
 [ex~compilation~optimization-levels]: reduce_compilation_duration.md#optimization-levels
-[apple~xcode-15~release-notes]: https://developer.apple.com/documentation/xcode-release-notes/xcode-15-release-notes/
 [blog~rust-lld~1.90]: https://blog.rust-lang.org/2025/09/01/rust-lld-on-1.90.0-stable/
 [mold-macho~repo]: https://github.com/rui314/mold-macho
 [sold~repo]: https://github.com/bluewhalesystems/sold
 [zld~repo]: https://github.com/michaeleisel/zld
-[wild~repo]: https://github.com/wild-linker/wild
-[book~cargo~build-performance]: https://doc.rust-lang.org/cargo/guide/build-performance.html
 [book~cargo~check]: https://doc.rust-lang.org/cargo/commands/cargo-check.html
-[book~cargo~profiles]: https://doc.rust-lang.org/cargo/reference/profiles.html
 [p~cargo]: ../cargo/cargo.md
 [p~cross-compilation]: ../cross-compilation/cross_compilation.md
 [p~building]: ../../development-tools_cargo-plugins/building.md
