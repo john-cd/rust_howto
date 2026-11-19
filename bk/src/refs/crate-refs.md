@@ -5958,6 +5958,9 @@
 [c~num_cpus~lib.rs~badge]: https://img.shields.io/badge/lib.rs-num__cpus-yellow
 [c~num_cpus~repo]: https://github.com/seanmonstar/num_cpus
 [c~num_cpus~repo~badge]: https://img.shields.io/badge/num__cpus-steelblue?logo=github
+[c~num_threads~crates.io]: https://crates.io/crates/num_threads
+[c~num_threads~docs]: https://docs.rs/num_threads
+[c~num_threads~repo]: https://github.com/jhpratt/num_threads
 [c~numpy~crates.io]: https://crates.io/crates/numpy
 [c~numpy~crates.io~badge]: https://img.shields.io/badge/crates.io-numpy-crimson
 [c~numpy~docs]: https://docs.rs/numpy
