@@ -4121,6 +4121,9 @@
 [c~http-body~lib.rs~badge]: https://img.shields.io/badge/lib.rs-http--body-yellow
 [c~http-body~repo]: https://github.com/hyperium/http-body
 [c~http-body~repo~badge]: https://img.shields.io/badge/http--body-steelblue?logo=github
+[c~http-cache-semantics~crates.io]: https://crates.io/crates/http-cache-semantics
+[c~http-cache-semantics~docs]: https://docs.rs/http-cache-semantics
+[c~http-cache-semantics~repo]: https://github.com/kornelski/rusty-http-cache-semantics
 [c~httpmock~crates.io]: https://crates.io/crates/httpmock
 [c~httpmock~crates.io~badge]: https://img.shields.io/badge/crates.io-httpmock-crimson
 [c~httpmock~docs]: https://docs.rs/httpmock

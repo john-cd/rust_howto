@@ -38,6 +38,14 @@ For a complete async GET, see [Make an HTTP Request](requests.md#make-a-http-get
 {{#include ../../../crates/cats/web_programming_http_client/examples/http_clients/hyper.rs:example}}
 ```
 
+## Reuse and Revalidate an HTTP Cache Entry {#cache-revalidation}
+
+Use `http-cache-semantics` to decide whether a stored response can satisfy a request. The synthetic response has `max-age=60` and an `ETag`. At 30 seconds the policy allows reuse. At 61 seconds it produces a request with `If-None-Match`. A `304 Not Modified` response lets the client retain the cached body and update its metadata. The application owns cache storage and HTTP transport.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/web_programming_http_client/examples/cache_revalidation.rs:example}}
+```
+
 ## References {#references .skip}
 
 - [`hyper` Examples][c~hyper~examples~repo]↗.

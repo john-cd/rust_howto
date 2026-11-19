@@ -57,6 +57,11 @@ name = "retry_after"
 path = "examples/retry_after/main.rs"
 test = true
 
+[[example]]
+name = "cache_revalidation"
+path = "examples/cache_revalidation.rs"
+test = true
+
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
@@ -71,6 +76,8 @@ futures-util = "0.3.34"
 governor = "0.10.4"
 # Combinators and adapters for HTTP request or response bodies.
 http-body-util = "0.1.5"
+http = "1.5.0"
+http-cache-semantics = { version = "3.0.0", default-features = false }
 # A protective and efficient HTTP library for all.
 hyper = "1.12.0"
 # Provides runtime, client, server, and protocol utilities for Hyper applications.

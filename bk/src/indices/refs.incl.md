@@ -1495,6 +1495,7 @@
 [ex~wasm~wasmtime]: ../categories/wasm/wasm_standalone_runtimes.md#wasmtime
 [ex~wasm~web-sys]: ../categories/wasm/interfacing_with_javascript.md#web-sys
 [ex~wasm~yew]: ../categories/wasm/yew.md#yew
+[ex~web-programming_http-client~cache-revalidation]: ../categories/web-programming_http-client/http_clients.md#cache-revalidation
 [ex~web-programming_http-client~check-if-an-api-resource-exists]: ../categories/web-programming_http-client/apis.md#check-if-an-api-resource-exists
 [ex~web-programming_http-client~consume-a-paginated-restful-api]: ../categories/web-programming_http-client/apis.md#consume-a-paginated-restful-api
 [ex~web-programming_http-client~create-and-delete-gist-with~repo-api]: ../categories/web-programming_http-client/apis.md#create-and-delete-gist-with~repo-api

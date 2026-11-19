@@ -14142,6 +14142,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "http-cache-semantics"
+version = "3.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0603b99309a1e404c2c0945650c0f775b50bb72ac90ae570cb93f9ff05d9efe7"
+dependencies = [
+ "http 1.5.0",
+ "time",
+]
+
+[[package]]
 name = "http-range-header"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -33892,7 +33902,9 @@ dependencies = [
  "clap",
  "futures-util",
  "governor",
+ "http 1.5.0",
  "http-body-util",
+ "http-cache-semantics",
  "hyper",
  "hyper-util",
  "mockito",
