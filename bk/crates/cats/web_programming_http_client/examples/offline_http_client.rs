@@ -47,6 +47,9 @@ async fn fetch_greeting(
 }
 // ANCHOR_END: example
 
+/// Provides the example binary entry point. Run the tests to exercise the client.
+fn main() {}
+
 /// Exercises the client against a local server without external network access.
 #[cfg(test)]
 mod tests {
@@ -111,6 +114,3 @@ mod tests {
         Ok(())
     }
 }
-
-/// Runs the example demonstrated by this module.
-fn main() {}

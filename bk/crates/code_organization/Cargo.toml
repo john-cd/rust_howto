@@ -58,7 +58,7 @@ test = true
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
+[dev-dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # A simple to use, efficient, and full-featured Command Line Argument Parser

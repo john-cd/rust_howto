@@ -61,8 +61,9 @@ fn run_with_endpoint(endpoint: Option<&str>) -> anyhow::Result<()> {
 
     let headers = std::env::var("OPENOBSERVE_AUTHORIZATION")
         .ok()
-        .map(|value| HashMap::from([("Authorization".to_owned(), value)]))
-        .unwrap_or_default();
+        .map_or_else(HashMap::new, |value| {
+            HashMap::from([("Authorization".to_owned(), value)])
+        });
 
     let exporter = SpanExporter::builder()
         .with_http()
