@@ -4,6 +4,7 @@
 
 import argparse
 import re
+import sys
 import tomllib
 from html import unescape
 from html.parser import HTMLParser
@@ -48,6 +49,10 @@ class Page(HTMLParser):
 def check_word_index(root: Path) -> list[str]:
     """Verify each local fragment against the emitted chapter HTML."""
     source = root / "word_index.html"
+    if not source.is_file():
+        return [f"missing required page: {source.name}"]
+    if source.stat().st_size == 0:
+        return [f"empty required page: {source.name}"]
     targets = set(Page(source.read_text(encoding="utf-8")).targets)
     chapters: dict[Path, set[str]] = {}
     failures = []
@@ -82,6 +87,9 @@ def check_chapters(
         if not path.is_file():
             failures.append(f"{source}: missing required page")
             continue
+        if source in PAGES and path.stat().st_size == 0:
+            failures.append(f"{source}: empty required page")
+            continue
         html = path.read_text(encoding="utf-8")
         prose = re.sub(r"<pre\b.*?</pre>|<script\b.*?</script>", "", html, flags=re.S)
         labels = re.findall(r"\]\[([a-z][a-z0-9_-]*~[^\]\s]+)\]", prose)
@@ -109,9 +117,13 @@ def check_chapters(
     return failures
 
 
-def unavailable_playground_imports(code: str, dependencies: set[str], available: set[str]) -> set[str]:
+def unavailable_playground_imports(
+    code: str, dependencies: set[str], available: set[str]
+) -> set[str]:
     """Find imports of known Cargo packages that the Playground does not supply."""
-    imports = set(re.findall(r"(?m)^\s*(?:pub\s+)?use\s+(?:::)?(\w+)\s*(?=::|\bas\b|;)", code))
+    imports = set(
+        re.findall(r"(?m)^\s*(?:pub\s+)?use\s+(?:::)?(\w+)\s*(?=::|\bas\b|;)", code)
+    )
     imports.update(re.findall(r"(?m)^\s*(?:pub\s+)?extern\s+crate\s+(\w+)", code))
     modules = set(re.findall(r"(?m)^\s*(?:pub\s+)?mod\s+(\w+)\s*[{;]", code))
     return (imports & dependencies) - available - modules
@@ -122,12 +134,16 @@ def check_playground(root: Path) -> list[str]:
     book = Path(__file__).resolve().parents[1]
     crates = tomllib.loads((book / "crates" / "Cargo.lock").read_text(encoding="utf-8"))
     dependencies = {package["name"].replace("-", "_") for package in crates["package"]}
-    available = set((book / "master" / "playground-crates.txt").read_text(encoding="utf-8").split())
+    available = set(
+        (book / "master" / "playground-crates.txt").read_text(encoding="utf-8").split()
+    )
     blocks = re.compile(r'<pre class="playground"><code\b([^>]*)>(.*?)</code>', re.S)
 
     failures = []
     if not (root / "index.html").is_file():
         return [f"{root}: missing book index"]
+    if (root / "index.html").stat().st_size == 0:
+        return [f"{root}: empty book index"]
     for page in sorted(root.rglob("*.html")):
         html = page.read_text(encoding="utf-8")
         for number, (attributes, markup) in enumerate(blocks.findall(html), start=1):
@@ -137,7 +153,9 @@ def check_playground(root: Path) -> list[str]:
             missing = unavailable_playground_imports(code, dependencies, available)
             if missing:
                 crates_label = ", ".join(sorted(missing))
-                failures.append(f"{page.relative_to(root)}: runnable block {number} imports {crates_label}")
+                failures.append(
+                    f"{page.relative_to(root)}: runnable block {number} imports {crates_label}"
+                )
     return failures
 
 
@@ -151,6 +169,9 @@ def main() -> int:
     mode.add_argument("--all-chapters", action="store_true")
     args = parser.parse_args()
     root = args.html_dir
+    if not root.is_dir():
+        print(f"HTML directory does not exist: {root}", file=sys.stderr)
+        return 1
     if args.playground:
         failures = check_playground(root)
     elif args.word_index:
