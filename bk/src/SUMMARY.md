@@ -4,6 +4,7 @@
 
 [Introduction](introduction.md)
 [How to Read This Book](introduction/how_to_read_this_book.md)
+[In the age of AI](introduction/in_the_age_of_ai.md)
 
 ## Core Concepts
 
