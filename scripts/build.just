@@ -34,6 +34,8 @@ build_sccache_basedirs := trim(shell('''
 set -euo pipefail
 root=$1
 printf '%s' "$root"
+# Source-only builds, including the CI image, have no registered worktrees.
+[[ -e "$root/.git" ]] || exit 0
 git -C "$root" -c core.fsmonitor=false worktree list --porcelain | while IFS= read -r line; do
     case "$line" in
         "worktree $root/.worktrees/"*)
