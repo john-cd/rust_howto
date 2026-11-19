@@ -140,7 +140,18 @@ jobs:
         working-directory: bk/crates
 
       - name: Format
-        run: cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
+        run: |
+          # cargo fmt --all can exceed the Windows command-line length limit.
+          package_names=$(cargo +"$RUSTFMT_TOOLCHAIN" metadata --no-deps --locked --format-version 1 | jq -br '.packages[].name')
+          test -n "$package_names"
+          mapfile -t packages <<< "$package_names"
+          for ((offset = 0; offset < ${#packages[@]}; offset += 8)); do
+            package_args=()
+            for package in "${packages[@]:offset:8}"; do
+              package_args+=(-p "$package")
+            done
+            cargo +"$RUSTFMT_TOOLCHAIN" fmt --check "${package_args[@]}"
+          done
         working-directory: bk/crates
 
       - name: Fetch
@@ -187,3 +198,4 @@ jobs:
           just bb
           python scripts/book/check_search_index.py
         working-directory: bk
+
