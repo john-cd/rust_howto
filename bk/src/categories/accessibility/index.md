@@ -6,7 +6,7 @@
 
 Accessibility means people can perceive, understand, navigate, and operate an application with different abilities and assistive technology. Treat it as a design and implementation concern from the start: use semantic controls, support keyboard operation, expose meaningful names and state, and give users alternatives to information conveyed only through color, sound, or motion.
 
-The [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/) provide testable guidance for web content. Their principles also help when reviewing desktop, terminal, and embedded interfaces, though platform accessibility APIs and requirements differ.
+The [Web Content Accessibility Guidelines (WCAG)][wcag~website] provide testable guidance for web content. Their principles also help when reviewing desktop, terminal, and embedded interfaces, though platform accessibility APIs and requirements differ.
 
 ## Web Content
 

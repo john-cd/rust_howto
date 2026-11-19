@@ -104,7 +104,7 @@ See also:
 
 The [`numpy`][c~numpy~docs]↗{{hi:numpy}} crate provides `PyReadonlyArray1` and related types for borrowing NumPy arrays. Convert the borrowed array to an `ndarray` view with `as_array()` to read its elements without copying; keep the Python array alive for the lifetime of that view. Use an owned `ndarray` array when Rust needs to retain or mutate the data independently. See [[mathematics | Mathematics]].
 
-For DataFrame-oriented workloads, see the [Polars plugin documentation](https://docs.pola.rs/user-guide/plugins/)↗; plugins extend Polars operations and use a different integration path from PyO3 extension modules.
+For DataFrame-oriented workloads, see the [Polars plugin documentation][polars~plugins~docs]↗; plugins extend Polars operations and use a different integration path from PyO3 extension modules.
 
 ## Build Tools {#build-tools .skip}
 

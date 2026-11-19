@@ -2904,6 +2904,7 @@
 [c~egui~docs~badge]: https://img.shields.io/crates/v/egui?label=egui
 [c~egui~lib.rs]: https://lib.rs/crates/egui
 [c~egui~lib.rs~badge]: https://img.shields.io/badge/lib.rs-egui-yellow
+[c~egui~request-repaint~docs]: https://docs.rs/egui/0.37.0/egui/struct.Context.html#method.request_repaint
 [c~egui~repo]: https://github.com/emilk/egui
 [c~egui~repo~badge]: https://img.shields.io/badge/egui-steelblue?logo=github
 [c~egui~website]: https://egui.rs
@@ -2962,6 +2963,8 @@
 [c~embassy~repo~badge]: https://img.shields.io/badge/embassy-steelblue?logo=github
 [c~embassy~website]: https://embassy.dev
 [c~embassy~website~badge]: https://img.shields.io/badge/embassy-coral
+[c~embedded-hal-async~docs]: https://docs.rs/embedded-hal-async
+[c~embedded-hal-nb~docs]: https://docs.rs/embedded-hal-nb
 [c~embedded-hal~crates.io]: https://crates.io/crates/embedded-hal
 [c~embedded-hal~crates.io~badge]: https://img.shields.io/badge/crates.io-embedded--hal-crimson
 [c~embedded-hal~docs]: https://docs.rs/embedded-hal
@@ -10523,6 +10526,7 @@
 [c~winres~crates.io~badge]: https://img.shields.io/crates/v/winres?label=winres
 [c~winres~docs]: https://docs.rs/winres
 [c~winres~docs~badge]: https://img.shields.io/crates/v/winres?label=winres
+[c~wit-bindgen~docs]: https://docs.rs/wit-bindgen
 [c~wkt~crates.io]: https://crates.io/crates/wkt
 [c~wkt~crates.io~badge]: https://img.shields.io/badge/crates.io-wkt-crimson
 [c~wkt~docs]: https://docs.rs/wkt

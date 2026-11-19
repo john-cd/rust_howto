@@ -83,7 +83,7 @@ While widely used with other languages, [`SWIG`][swig~website]↗{{hi:SWIG}} (Si
 
 Usually handled with build scripts ([`build.rs`][book~cargo~build-script]↗{{hi:build.rs}}) and the [`cc`][c~cc~docs]↗{{hi:cc}} crate for compiling C/C++ code, if necessary.
 
-See the [platform and SDK validation tracker](https://github.com/john-cd/rust_howto/issues/2398) for the remaining runtime checks.
+See the [platform and SDK validation tracker][rust-howto~issue-2398] for the remaining runtime checks.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

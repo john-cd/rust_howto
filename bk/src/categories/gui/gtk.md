@@ -60,7 +60,7 @@ For a larger custom widget, define the hierarchy in a GTK Builder `.ui` XML file
 
 - [GUI toolkits](index.md).
 - [Window creation](window_creation.md).
-- [API bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md).
+- [API bindings][rust-howto~staged-api-bindings].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

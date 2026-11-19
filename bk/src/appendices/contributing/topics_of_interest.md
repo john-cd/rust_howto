@@ -45,7 +45,7 @@ The following are topics that deserve (additional) coverage and examples:
 - Network file systems.
 - [[statistics | Statistics]], math.
 - Sound ([Multimedia - audio](../../categories/multimedia_audio/index.md)).
-- [API bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md).
+- [API bindings][rust-howto~staged-api-bindings].
 - FFI ([Development tools - FFI](../../categories/development-tools_ffi/index.md)).
 - [Hardware support](../../categories/hardware-support/index.md).
 - [Development Tools - Build Utils](../../categories/development-tools_build-utils/index.md).

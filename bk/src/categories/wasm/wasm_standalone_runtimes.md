@@ -83,7 +83,7 @@ The WIT file below is the contract between the guest and the host. It is version
 {{#include ../../../platform/cats/wasm/examples/wasm_standalone_runtimes/components/wit/greeter.wit}}
 ```
 
-The guest is an ordinary Rust library. [`wit-bindgen`](https://docs.rs/wit-bindgen) generates the trait to implement and the import to call:
+The guest is an ordinary Rust library. [`wit-bindgen`][c~wit-bindgen~docs] generates the trait to implement and the import to call:
 
 ```rust,noplayground
 {{#include ../../../platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest/src/lib.rs:example}}

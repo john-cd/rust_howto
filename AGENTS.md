@@ -12,6 +12,7 @@
 - Keep answers concise, use American spelling, use Unix-style line endings.
 - Read this file, the root `README.md`, `TODO.md` when present, the relevant `justfile` and Cargo manifests, and `git status` before editing. Follow the owning component's documentation and existing architecture.
 - Keep updates concise and actionable, with links to relevant files. Whenever you change the active branch or worktree, immediately state the current branch name and worktree path in your next update. Include the current issue when ownership changes.
+- Use reference-style links for external URLs in book chapters. Put their definitions in `bk/src/refs` and use relative links for other chapters in the same book.
 - Preserve unrelated staged, unstaged, and untracked work. Keep edits and commits scoped to the requested task.
 - Track implementation work in GitHub Issues. Link acceptance criteria to source and validation evidence; record blockers and concrete remaining work on the issue. Use priorities `P0` through `P4` where the tracker supports them.
 - Reconcile actionable `TODO` and `LATER` entries with issues instead of maintaining duplicate backlogs. Do not delete unresolved comments or rename a `TODO` to a `NOTE` to hide unfinished work.

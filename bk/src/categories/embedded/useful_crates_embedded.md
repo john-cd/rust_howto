@@ -60,8 +60,8 @@ The [`embedded-storage`][c~embedded-storage~docs]↗ traits give drivers and sto
 
 ## Other Useful Crates {#other-useful-crates .skip}
 
-- [`embedded-hal-async`](https://docs.rs/embedded-hal-async) Async peripheral traits for compatible HALs and drivers.
-- [`embedded-hal-nb`](https://docs.rs/embedded-hal-nb) Polling peripheral traits based on non-blocking operations.
+- [`embedded-hal-async`][c~embedded-hal-async~docs] provides async peripheral traits for compatible HALs and drivers.
+- [`embedded-hal-nb`][c~embedded-hal-nb~docs] provides polling traits for non-blocking peripheral operations.
 - [`panic-halt`][c~panic-halt~docs]↗{{hi:panic-halt}}: A minimal panic handler that halts the processor; choose panic behavior deliberately for the product.
 
 ## Related Topics {#related-topics .skip}

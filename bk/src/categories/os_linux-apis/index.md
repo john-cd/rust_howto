@@ -27,7 +27,7 @@ For shared crate selection and helper-process contracts, see [Native OS APIs and
 
 ## Related Topics
 
-- [API Bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md) and [External FFI Bindings](../external-ffi-bindings/index.md).
+- [API Bindings][rust-howto~staged-api-bindings] and [External FFI Bindings](../external-ffi-bindings/index.md).
 - [Operating Systems](../os/index.md).
 - [Virtualization](../virtualization/index.md).
 - [Linux](linux.md).

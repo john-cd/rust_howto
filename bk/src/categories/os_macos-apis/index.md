@@ -32,7 +32,7 @@ let marker = MainThreadMarker::new().expect("called on the main thread");
 let application = NSApplication::sharedApplication(marker);
 ```
 
-This API is macOS-only; initialize AppKit on the main thread and enable the corresponding `objc2-app-kit` feature in `Cargo.toml`. See the related [Objective-C bindings issue #1075](https://github.com/john-cd/rust_howto/issues/1075).
+This API is macOS-only; initialize AppKit on the main thread and enable the corresponding `objc2-app-kit` feature in `Cargo.toml`. See the related [Objective-C bindings issue #1075][rust-howto~issue-1075].
 
 ## Example
 
@@ -40,7 +40,7 @@ This API is macOS-only; initialize AppKit on the main thread and enable the corr
 
 ## Related Topics
 
-- [API Bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md) and [External FFI Bindings](../external-ffi-bindings/index.md).
+- [API Bindings][rust-howto~staged-api-bindings] and [External FFI Bindings](../external-ffi-bindings/index.md).
 - [Development Tools: FFI](../development-tools_ffi/index.md).
 - [Objective-C](../development-tools_ffi/objc.md).
 - [Operating Systems](../os/index.md).

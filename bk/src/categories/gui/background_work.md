@@ -29,7 +29,7 @@ The optional `--smoke` mode launches a calculation, applies the expected reply, 
 closes the native window automatically. It fails if the expected result is not applied;
 it does not certify keyboard, screen-reader, or visual behavior.
 
-The worker uses [`Context::request_repaint`](https://docs.rs/egui/0.37.0/egui/struct.Context.html#method.request_repaint)
+The worker uses [`Context::request_repaint`][c~egui~request-repaint~docs]
 to wake eframe; the short repaint deadline also covers the send/thread-completion race.
 No UI widget is accessed from the worker. The tests cover stale/current replies,
 visible failure, actual worker completion, and owned-thread cleanup without a display.
@@ -62,3 +62,5 @@ passing state tests does not certify those interactions.
 - [Retained-mode GUI](retained_mode_gui.md).
 - [Window Creation](window_creation.md).
 - [Accessibility](../accessibility/index.md).
+
+{{#include ../../refs/link-refs.md}}

@@ -50,7 +50,7 @@ For component interfaces, see the [WIT reference][wasm~wit-reference]↗. For po
 - [[web-programming | Web Programming]].
 - [[virtualization | Virtualization]].
 
-See the [platform and SDK validation tracker](https://github.com/john-cd/rust_howto/issues/2398) for the remaining runtime checks.
+See the [platform and SDK validation tracker][rust-howto~issue-2398] for the remaining runtime checks.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

@@ -1146,6 +1146,7 @@
 [podcast~the-rust-workshop-podcast]: https://podcasts.apple.com/us/podcast/the-rust-workshop-podcast/id1644007146
 [podman~repo]: https://github.com/containers/podman
 [podman~website]: https://podman.io
+[polars~plugins~docs]: https://docs.pola.rs/user-guide/plugins/
 [pollen-robotics~website]: https://pollen-robotics.com
 [polysync~website]: https://polysync.io
 [postmates~website]: https://postmates.com
@@ -1263,6 +1264,7 @@
 [rocket~realworld-example~repo~badge]: https://img.shields.io/badge/realworld_rocket_example-steelblue?logo=github
 [ros2_rust~repo]: https://github.com/ros2-rust/ros2_rust
 [routific~website]: https://routific.com
+[rust-1.99~release-notes]: https://blog.rust-lang.org/releases/1.99.0/
 [rust-algorithms~repo]: https://github.com/EbTech/rust-algorithms
 [rust-analyzer~helix~website]: https://rust-analyzer.github.io/manual.html#helix
 [rust-analyzer~plugin]: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer
@@ -1314,6 +1316,10 @@
 [rust-howto~clap_builder_xmpl~repo]: https://github.com/john-cd/rust_howto/tree/develop/xmpl/clap_builder_xmpl
 [rust-howto~code-examples~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates
 [rust-howto~code-of-conduct~repo]: https://github.com/john-cd/rust_howto/blob/develop/CODE_OF_CONDUCT.md
+[rust-howto~issue-1075]: https://github.com/john-cd/rust_howto/issues/1075
+[rust-howto~issue-2398]: https://github.com/john-cd/rust_howto/issues/2398
+[rust-howto~issue-385]: https://github.com/john-cd/rust_howto/issues/385
+[rust-howto~issue-389]: https://github.com/john-cd/rust_howto/issues/389
 [rust-howto~issues]: https://github.com/john-cd/rust_howto/issues
 [rust-howto~license~repo]: https://github.com/john-cd/rust_howto/blob/develop/LICENSE
 [rust-howto~mdbook-scrub~repo]: https://github.com/john-cd/rust_howto/tree/develop/tools/mdbook-scrub
@@ -1322,6 +1328,7 @@
 [rust-howto~readme~repo]: https://github.com/john-cd/rust_howto/blob/develop/README.md
 [rust-howto~repo]: https://github.com/john-cd/rust_howto
 [rust-howto~src~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/src
+[rust-howto~staged-api-bindings]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md
 [rust-howto~summary~repo]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/SUMMARY.md
 [rust-howto~todo~repo]: https://github.com/john-cd/rust_howto/blob/develop/TODO.md
 [rust-howto~tools~repo]: https://github.com/john-cd/rust_howto/tree/develop/tools
@@ -1566,6 +1573,7 @@
 [wasmer~website]: https://wasmer.io
 [watchful~website]: https://watchful.io
 [wayofthecrab~website]: https://wayofthecrab.com
+[wcag~website]: https://www.w3.org/WAI/standards-guidelines/wcag/
 [web-application/x-www-form-urlencoded]: https://url.spec.whatwg.org/#application/x-www-form-urlencoded
 [web-julia-set]: https://cloud.githubusercontent.com/assets/221000/26546700/9be34e80-446b-11e7-81dc-dd9871614ea1.png
 [webassembly~website]: https://webassembly.org

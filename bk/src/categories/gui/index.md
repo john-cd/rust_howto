@@ -106,18 +106,18 @@ While primarily for window creation, [`winit`][c~winit~docs]↗{{hi:winit}} is o
 
 - [Accessibility](../accessibility/index.md).
 - Command Line Interface<!-- Cross-book topic: bk/src/categories/command-line-interface/index.md; not included in this preview. -->.
-- [Game Development](https://john-cd.com/rust_howto/categories/game-development/index.html).
-- [Game Engines](https://john-cd.com/rust_howto/categories/game-engines/index.html).
+- [Game Development](../game-development/index.md).
+- [Game Engines](../game-engines/index.md).
 - [Graphics](../graphics/index.md).
 - [Internationalization](../internationalization/index.md).
-- [Multimedia](https://john-cd.com/rust_howto/categories/multimedia/index.html).
+- [Multimedia](../multimedia/index.md).
 - [Rendering](../graphics/index.md).
 - [Template Engine](../template-engine/index.md).
 - [WASM](../wasm/index.md).
 - [Web Programming](../web-programming/index.md).
 - [Web Programming: HTTP Server](../web-programming_http-server/index.md).
 
-See the [platform and SDK validation tracker](https://github.com/john-cd/rust_howto/issues/2398) for the remaining runtime checks.
+See the [platform and SDK validation tracker][rust-howto~issue-2398] for the remaining runtime checks.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

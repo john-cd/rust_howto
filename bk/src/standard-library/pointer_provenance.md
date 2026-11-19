@@ -16,4 +16,6 @@ For a walkthrough of each caller and callee obligation, see [Unsafe Contracts](.
 
 See [This Week in Rust #677](https://this-week-in-rust.org/blog/2026/11/11/this-week-in-rust-677/) for the pointer-provenance walkthrough that motivated this recipe.
 
-Rust 1.99 also stabilized defining C-ABI variadic functions and raw-pointer size/alignment queries. Those APIs have separate argument-type and validity contracts; see the [Rust 1.99 release notes](https://blog.rust-lang.org/releases/1.99.0/) and the [staging FFI guide](../categories/development-tools_ffi/index.md) before using them at a foreign boundary.
+Rust 1.99 also stabilized defining C-ABI variadic functions and raw-pointer size/alignment queries. Those APIs have separate argument-type and validity contracts; see the [Rust 1.99 release notes][rust-1.99~release-notes] and the [staging FFI guide](../categories/development-tools_ffi/index.md) before using them at a foreign boundary.
+
+{{#include ../refs/link-refs.md}}

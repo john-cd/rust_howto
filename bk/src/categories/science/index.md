@@ -16,7 +16,7 @@ coordinate system, and sampling assumptions before choosing a numerical method.
 3. Use [Geo](../science_geo/geo.md) for geographic coordinates or
    [sampled signal analysis](../science_neuroscience/neuroscience.md#fft-signal)
    for measurements recorded at a known rate.
-4. Use [Machine Learning in Practice](https://john-cd.com/rust_howto/other/machine-learning/index.html) to choose a model,
+4. Use [Machine Learning in Practice](../../other/machine-learning/index.md) to choose a model,
    evaluate predictions, or run a trained model in Rust.
 
 ## Related Science Categories
