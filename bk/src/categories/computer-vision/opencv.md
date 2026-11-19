@@ -68,7 +68,7 @@ For image buffers and common processing operations without the OpenCV SDK, compa
 ## Related Topics {#related-topics .skip}
 
 - [Images](../multimedia_images/images.md).
-- [Perception and Sensors](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/perception_and_sensors.md).
+- [Perception and Sensors](../science_robotics/perception_and_sensors.md).
 - [Linear algebra](../mathematics/linear_algebra.md).
 
 {{#include refs.incl.md}}

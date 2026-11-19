@@ -45,8 +45,8 @@ when the lexer reports an error.
 - [Procedural Macro Helpers](../development-tools_procedural-macro-helpers/index.md).
 - [Development Tools - Profiling](../development-tools_profiling/index.md).
 - [Development Tools: Testing](../development-tools_testing/index.md).
-- [Development Tools: FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md) for bindings to compilers written in other languages.
-- [Interfacing with JavaScript](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/interfacing_with_javascript.md) for Rust tools that interface with JavaScript.
+- [Development Tools: FFI](../development-tools_ffi/index.md) for bindings to compilers written in other languages.
+- [Interfacing with JavaScript](../wasm/interfacing_with_javascript.md) for Rust tools that interface with JavaScript.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

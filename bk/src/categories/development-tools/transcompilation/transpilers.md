@@ -27,8 +27,8 @@ The compilation database must be named `compile_commands.json` and include the c
 
 ## Related Topics {#related-topics .skip}
 
-- [Development Tools: FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md).
-- [WebAssembly](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md).
+- [Development Tools: FFI](../../development-tools_ffi/index.md).
+- [WebAssembly](../../wasm/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../../refs/link-refs.md}}

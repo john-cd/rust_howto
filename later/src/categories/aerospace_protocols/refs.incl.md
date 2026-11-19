@@ -10,8 +10,8 @@
 [p~aerospace_simulation]: ../aerospace_simulation/index.md
 [p~aerospace_space-protocols]: ../aerospace_space-protocols/index.md
 [p~aerospace_unmanned-aerial-vehicles]: ../aerospace_unmanned-aerial-vehicles/index.md
-[p~development-tools_ffi]: ../development-tools_ffi/index.md
-[p~embedded]: ../embedded/index.md
+[p~development-tools_ffi]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_ffi/index.md
+[p~embedded]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/embedded/index.md
 [p~hardware-support]: https://john-cd.com/rust_howto/categories/hardware-support/index.html
 [p~simulation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/simulation/index.md
 [p~space_protocols]: ../aerospace_space-protocols/space_protocols.md

@@ -40,4 +40,4 @@
 [p~os_linux-apis]: ../os_linux-apis/index.md
 [p~using_containers]: using_containers.md
 [p~virtualization]: index.md
-[p~wasm]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md
+[p~wasm]: ../wasm/index.md

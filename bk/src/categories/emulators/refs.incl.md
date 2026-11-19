@@ -10,7 +10,7 @@
 
 [p~audio]: ../multimedia_audio/audio.md
 [p~development-tools_debugging]: ../development-tools_debugging/index.md
-[p~embedded]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md
+[p~embedded]: ../embedded/index.md
 [p~graphics]: ../graphics/index.md
 [p~hardware-support]: ../hardware-support/index.md
 [p~virtualization]: ../virtualization/index.md

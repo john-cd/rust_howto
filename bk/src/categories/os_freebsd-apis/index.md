@@ -13,7 +13,7 @@ Use the standard library for portable filesystem, networking, process, and threa
 | kqueue | `nix`, `mio`, or a runtime abstraction | Monitor file descriptors and events. |
 | sysctl | `sysctl` bindings or `libc` | Read and, where supported, configure kernel and device state. |
 
-Check target support and platform-specific behavior in the selected crate before relying on an API. See the [API Bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md) and [External FFI Bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/external-ffi-bindings/index.md) categories for broader choices.
+Check target support and platform-specific behavior in the selected crate before relying on an API. See the [API Bindings](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/api-bindings/index.md) and [External FFI Bindings](../external-ffi-bindings/index.md) categories for broader choices.
 
 For shared crate selection and helper-process contracts, see [Native OS APIs and Process Boundaries](../../other/native-os/index.md).
 
@@ -27,7 +27,7 @@ For shared crate selection and helper-process contracts, see [Native OS APIs and
 - [OS: Linux APIs](../os_linux-apis/index.md).
 - [OS: macOS APIs](../os_macos-apis/index.md).
 - [OS: Unix APIs](../os_unix-apis/index.md).
-- [Development Tools: FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md).
+- [Development Tools: FFI](../development-tools_ffi/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

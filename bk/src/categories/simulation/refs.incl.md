@@ -9,7 +9,7 @@
 [ex~simulation~parry]: physics_engines.md#parry
 [ex~simulation~avian]: physics_engines.md#avian
 [ex~simulation~bevy-rapier]: physics_engines.md#bevy-rapier
-[p~robotics-simulation]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/simulation_visualization.md#physics-simulation
+[p~robotics-simulation]: ../science_robotics/simulation_visualization.md#physics-simulation
 [p~asynchronous]: ../asynchronous/index.md
 [c~ode_solvers~docs]: https://docs.rs/ode_solvers/latest/ode_solvers/
 [c~nexosim~docs]: https://docs.rs/nexosim
@@ -31,13 +31,13 @@
 [c~nexosim~docs~badge]: https://img.shields.io/crates/v/nexosim
 [c~ode_solvers~docs~badge]: https://img.shields.io/crates/v/ode_solvers
 [p~concurrency]: ../concurrency/index.md
-[p~development-tools_ffi]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md
+[p~development-tools_ffi]: ../development-tools_ffi/index.md
 [p~game-development]: ../game-development/index.md
 [p~game_engines]: ../game-engines/game_engines.md
 [p~graphics]: ../graphics/index.md
 [p~linear_algebra]: ../mathematics/linear_algebra.md
 [p~physics]: physics_engines.md
 [p~randomness]: ../algorithms/random_value_generation.md
-[p~science_robotics]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md
+[p~science_robotics]: ../science_robotics/index.md
 [p~visualization]: ../visualization/index.md
 [c~rapier2d~docs~badge]: https://img.shields.io/crates/v/rapier2d?label=rapier2d

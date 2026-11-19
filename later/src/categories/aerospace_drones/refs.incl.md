@@ -8,7 +8,7 @@
 [p~aerospace_unmanned-aerial-vehicles]: ../aerospace_unmanned-aerial-vehicles/index.md
 [p~algorithms]: https://john-cd.com/rust_howto/categories/algorithms/index.html
 [p~computer-vision]: https://john-cd.com/rust_howto/categories/computer-vision/index.html
-[p~embedded]: ../embedded/index.md
+[p~embedded]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/embedded/index.md
 [p~hardware-support]: https://john-cd.com/rust_howto/categories/hardware-support/index.html
 [p~linear_algebra]: https://john-cd.com/rust_howto/categories/mathematics/linear_algebra.html
 [p~mathematics]: https://john-cd.com/rust_howto/categories/mathematics/index.html

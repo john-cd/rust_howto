@@ -13,6 +13,6 @@
 
 [p~mathematics]: ../mathematics/index.md
 [p~multimedia_video]: ../multimedia_video/index.md
-[p~science_robotics]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md
+[p~science_robotics]: ../science_robotics/index.md
 
 [vision~re_sdk]: https://docs.rs/re_sdk

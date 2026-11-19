@@ -11,15 +11,15 @@
 [p~cryptography]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/cryptography/index.md
 [p~database]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/database/index.md
 [p~database-implementations]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/database-implementations/index.md
-[p~development-tools_ffi]: ../development-tools_ffi/index.md
+[p~development-tools_ffi]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_ffi/index.md
 [p~email]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/email/index.md
 [p~encryption]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/cryptography/encryption.md
-[p~external-ffi-bindings]: ../external-ffi-bindings/index.md
+[p~external-ffi-bindings]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/external-ffi-bindings/index.md
 [p~filesystem]: https://john-cd.com/rust_howto/categories/filesystem/index.html
 [p~game-engines]: https://john-cd.com/rust_howto/categories/game-engines/index.html
 [p~game_development]: https://john-cd.com/rust_howto/categories/game-development/game_development.html
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
-[p~gui]: ../gui/index.md
+[p~gui]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/gui/index.md
 [p~hashing]: https://john-cd.com/rust_howto/categories/algorithms/hashing.html
 [p~http_clients]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-client/http_clients.md
 [p~machine-learning]: https://john-cd.com/rust_howto/other/machine-learning/index.html
@@ -37,7 +37,7 @@
 [p~parser-implementations]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parser-implementations/index.md
 [p~parsing]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parsing/index.md
 [p~rendering_graphics-api]: https://john-cd.com/rust_howto/categories/rendering_graphics-api/index.html
-[p~wasm]: ../wasm/index.md
+[p~wasm]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/wasm/index.md
 [p~web-programming]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming/index.md
 [p~web-programming_http-client]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-client/index.md
 [p~web-programming_http-server]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/web-programming_http-server/index.md

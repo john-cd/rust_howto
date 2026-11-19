@@ -274,6 +274,17 @@
   - [Tools for macro development](categories/development-tools_procedural-macro-helpers/macro_tools.md)
   - [Compiling macros ahead of time](categories/development-tools_procedural-macro-helpers/compile_macros.md)
 
+- [Development Tools - FFI](categories/development-tools_ffi/index.md)
+  - [Generating FFI bindings for C and C++](categories/development-tools_ffi/generate_ffi_bindings.md)
+  - [Python](categories/development-tools_ffi/python.md)
+  - [Erlang, Elixir](categories/development-tools_ffi/erlang_elixir.md)
+  - [Flutter](categories/development-tools_ffi/flutter.md)
+  - [Java](categories/development-tools_ffi/java.md)
+  - [Lua](categories/development-tools_ffi/lua.md)
+  - [Node](categories/development-tools_ffi/node.md)
+  - [Objective-C](categories/development-tools_ffi/objc.md)
+  - [Ruby](categories/development-tools_ffi/ruby.md)
+
 - [Development Tools - Testing](categories/development-tools_testing/index.md)
   - [Testing](categories/development-tools_testing/testing.md)
   - [Assertions](categories/development-tools_testing/assertions.md)
@@ -314,6 +325,24 @@
   - [Run a Model Trained Elsewhere (ONNX)](other/machine-learning/inference.md)
   - [Forecasting](other/machine-learning/forecasting.md)
 
+- [Science](categories/science/index.md)
+  - [Compare Route Measurements with a Model](categories/science/route_measurements.md)
+
+- [Science - Geo](categories/science_geo/index.md)
+  - [Geo](categories/science_geo/geo.md)
+
+- [Science - Biology and Neuroscience](categories/science_neuroscience/index.md)
+  - [Neuroscience and Neuroimaging](categories/science_neuroscience/neuroscience.md)
+
+- [Robotics](categories/science_robotics/index.md)
+  - [Robot Operating Systems](categories/science_robotics/robot_operating_systems.md)
+  - [Useful robotics tools and libraries](categories/science_robotics/robotics_frameworks.md)
+  - [Hardware Integration](categories/science_robotics/hardware_integration.md)
+  - [Control Systems](categories/science_robotics/control_systems.md)
+  - [Perception and Sensors](categories/science_robotics/perception_and_sensors.md)
+  - [Artificial Intelligence for Robotics](categories/science_robotics/artificial_intelligence.md)
+  - [Simulation and Visualization](categories/science_robotics/simulation_visualization.md)
+
 - [Mathematics](categories/mathematics/index.md)
   - [Linear Algebra](categories/mathematics/linear_algebra.md)
   - [Trigonometry](categories/mathematics/trigonometry.md)
@@ -327,6 +356,10 @@
   - [Discrete Mathematics](categories/mathematics/discrete_mathematics.md)
   - [Graph Theory](categories/mathematics/graph_theory.md)
   - [Differential Equations](categories/mathematics/differential_equations.md)
+
+- [Finance](categories/finance/index.md)
+  - [Quant](categories/finance/quant.md)
+  - [Market data](categories/finance/market_data.md)
 
 - [Simulation](categories/simulation/index.md)
   - [Simulation](categories/simulation/simulation.md)
@@ -342,6 +375,18 @@
   - [Server](categories/network-programming/server.md)
   - [Reverse Proxies and Ingress](categories/network-programming/reverse_proxy.md)
   - [Connect Two Iroh Endpoints on Loopback](categories/network-programming/iroh_loopback.md)
+
+- [External FFI bindings](categories/external-ffi-bindings/index.md)
+  - [External FFI bindings](categories/external-ffi-bindings/external_ffi_bindings.md)
+
+- [Embedded development](categories/embedded/index.md)
+  - [`embassy`](categories/embedded/embassy.md)
+  - [Flash programming](categories/embedded/flash.md)
+  - [Hardware abstraction layers](categories/embedded/hals.md)
+  - [Peripheral access crates](categories/embedded/pacs.md)
+  - [Real-time operating systems](categories/embedded/rtos.md)
+  - [Sensors](categories/embedded/sensors.md)
+  - [Useful crates](categories/embedded/useful_crates_embedded.md)
 
 - [Operating Systems](categories/os/index.md)
   - [External Commands](categories/os/external_commands.md)
@@ -386,6 +431,23 @@
 
 - [Game Engines](categories/game-engines/index.md)
   - [Game Engines](categories/game-engines/game_engines.md)
+
+- [Accessibility](categories/accessibility/index.md)
+  - [Enable screen readers](categories/accessibility/screen_readers.md)
+
+- [GUI](categories/gui/index.md)
+  - [Responsive Background Work](categories/gui/background_work.md)
+  - [Clipboard](categories/gui/clipboard.md)
+  - [File Dialogs](categories/gui/file_dialogs.md)
+  - [GTK](categories/gui/gtk.md)
+  - [Immediate-mode GUI](categories/gui/immediate_mode_gui.md)
+  - [`egui` Add-on Crates](categories/gui/egui_ecosystem.md)
+  - [Retained-mode GUI](categories/gui/retained_mode_gui.md)
+  - [Text layout](categories/gui/text_layout.md)
+  - [UI layout](categories/gui/ui_layout.md)
+  - [Web-based GUI](categories/gui/web_based_gui.md)
+  - [Window creation](categories/gui/window_creation.md)
+  - [Vector Renderers for GUIs](categories/gui/vector_renderers.md)
 
 - [Graphics](categories/graphics/index.md)
   - [2D Renderers](categories/graphics/2d_renderers.md)
@@ -457,6 +519,14 @@
     - [Call an API](categories/web-programming_http-client/apis.md)
     - [Rate Limiting and Retries](categories/web-programming_http-client/rate_limiting_and_retries.md)
     - [Download and Upload](categories/web-programming_http-client/download.md)
+
+- [WebAssembly](categories/wasm/index.md)
+  - [WASM Basics](categories/wasm/wasm_basics.md)
+  - [WASM Development](categories/wasm/wasm_development.md)
+  - [Interfacing with JavaScript](categories/wasm/interfacing_with_javascript.md)
+  - [Leptos](categories/wasm/leptos.md)
+  - [Yew](categories/wasm/yew.md)
+  - [Others](categories/wasm/wasm_standalone_runtimes.md)
 
 - [WebSockets](categories/web-programming_websocket/index.md)
   - [Echo Client and Server](categories/web-programming_websocket/websocket.md)

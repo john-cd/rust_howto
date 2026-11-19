@@ -67,4 +67,4 @@ pipeline checks on each advertised platform.
 - [Audio](audio.md) and [WAV](wav.md).
 - [Encoding](../multimedia_encoding/encoding.md).
 - [Video](../multimedia_video/video.md).
-- [Background UI Work](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/background_work.md).
+- [Background UI Work](../gui/background_work.md).
