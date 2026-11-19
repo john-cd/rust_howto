@@ -55,7 +55,13 @@ crates = ["just"]
 category = "Compression"
 slug = "compression"
 description = "Algorithms for making data smaller."
-crates = ["bzip2", "flate2", "gzip", "xz2"]
+crates = ["bzip2", "flate2", "gzip", "xz2", "zstd"]
+
+[[categories]]
+category = "Date and time"
+slug = "date-and-time"
+description = "Calendars, civil time, time zones, and timestamps."
+crates = ["jiff"]
 
 [[categories]]
 category = "Concurrency"

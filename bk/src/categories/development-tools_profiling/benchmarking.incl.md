@@ -9,7 +9,7 @@ process.
 
 | Recipe | Crates | Categories |
 | --- | --- | --- |
-| [`cargo flamegraph`][ex~development-tools_profiling~cargo-flamegraph] | [![cargo-flamegraph][c~flamegraph~docs~badge]][c~flamegraph~docs] | {{#categories development-tools::profiling=Profiling}} |
+| [`cargo flamegraph`][ex~development-tools_profiling~cargo-flamegraph] | [![flamegraph][c~flamegraph~docs~badge]][c~flamegraph~docs] | {{#categories development-tools::profiling=Profiling}} |
 | [`criterion`][ex~development-tools_profiling~criterion] | {{#crate criterion}} | {{#categories development-tools::profiling=Profiling}} |
 | [`divan`][ex~development-tools_profiling~divan] | {{#crate divan}} | {{#categories development-tools::profiling=Profiling}} |
 | [`hyperfine`][ex~development-tools_profiling~hyperfine] | {{#crate hyperfine}} | {{#categories development-tools::profiling=Profiling}} |

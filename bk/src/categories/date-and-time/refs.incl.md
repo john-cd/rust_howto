@@ -5,6 +5,7 @@
 [ex~date-and-time~convert-local-time]: duration.md#convert-local-time
 [ex~date-and-time~display-formatted-date-time]: parse.md#display-formatted-date-time
 [ex~date-and-time~examine-date-and-time]: parse.md#examine-date-and-time
+[ex~date-and-time~jiff-dst]: jiff_dst.md
 [ex~date-and-time~humantime]: parse.md#humantime
 [ex~date-and-time~measure-elapsed-time]: duration.md#measure-elapsed-time
 [ex~date-and-time~parse-string-into-datetime-struct]: parse.md#parse-string-into-datetime-struct

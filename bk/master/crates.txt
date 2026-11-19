@@ -34,6 +34,7 @@ im
 indexmap
 indextree
 itertools
+jiff
 just
 leptos
 mdbook
@@ -96,3 +97,4 @@ windows
 xz2
 yew
 zip
+zstd

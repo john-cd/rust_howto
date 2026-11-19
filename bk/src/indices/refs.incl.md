@@ -438,6 +438,7 @@
 [ex~date-and-time~convert-local-time]: ../categories/date-and-time/duration.md#convert-local-time
 [ex~date-and-time~display-formatted-date-time]: ../categories/date-and-time/parse.md#display-formatted-date-time
 [ex~date-and-time~examine-date-and-time]: ../categories/date-and-time/parse.md#examine-date-and-time
+[ex~date-and-time~jiff-dst]: ../categories/date-and-time/jiff_dst.md
 [ex~date-and-time~humantime]: ../categories/date-and-time/parse.md#humantime
 [ex~date-and-time~measure-elapsed-time]: ../categories/date-and-time/duration.md#measure-elapsed-time
 [ex~date-and-time~parse-string-into-datetime-struct]: ../categories/date-and-time/parse.md#parse-string-into-datetime-struct
@@ -994,6 +995,12 @@
 [ex~multimedia_encoding~images]: ../categories/multimedia_images/images.md
 [ex~multimedia_encoding~mp4]: ../categories/multimedia_encoding/encoding.md#mp4-metadata
 [ex~multimedia_encoding~video]: ../categories/multimedia_video/video.md
+[ex~game-development~game-development]: ../categories/game-development/game_development.md#game-development
+[ex~game-development~glam]: ../categories/game-development/game_development.md#glam
+[ex~game-engines~bevy]: ../categories/game-engines/game_engines.md#bevy
+[ex~game-engines~fyrox]: ../categories/game-engines/game_engines.md#fyrox
+[ex~game-engines~ggez]: ../categories/game-engines/game_engines.md#ggez
+[ex~game-engines~macroquad]: ../categories/game-engines/game_engines.md#macroquad
 [ex~multimedia_encoding~wav]: ../categories/multimedia_encoding/encoding.md#encode-wav
 [ex~multimedia_images~convert-formats]: ../categories/multimedia_images/images.md#convert-formats
 [ex~multimedia_images~image_loading_and_saving]: ../categories/multimedia_images/images.md#create-image
