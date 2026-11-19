@@ -45,7 +45,7 @@
 [p~visibility]: visibility.md
 [ex~code-organization~monorepos-and-git-submodules]: code_organization_by_project_type.md#monorepos-and-git-submodules
 
-[blog~stricter-clippy]: https://emschwartz.me/your-clippy-config-should-be-stricter/
+[clippy~lint-categories]: https://doc.rust-lang.org/clippy/lints.html
 [book~clippy~configuration]: https://doc.rust-lang.org/clippy/configuration.html
 [book~clippy~lint-groups]: https://doc.rust-lang.org/clippy/lints.html
 [cargo~workspace-lints]: https://doc.rust-lang.org/cargo/reference/workspaces.html#the-lints-table

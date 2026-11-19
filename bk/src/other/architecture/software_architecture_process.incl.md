@@ -192,4 +192,4 @@ tests/            (integration tests)
 
 ## Related topics {#related-topics .skip}
 
-[Building a SaaS with Rust and Next.js][blog~building-a-saas-with-rust-and-next-js]↗{{hi:SaaS}}
+- [Batteries-included Web Frameworks](../../categories/web-programming_http-server/batteries_included_frameworks.md) for frameworks that integrate common web application components.

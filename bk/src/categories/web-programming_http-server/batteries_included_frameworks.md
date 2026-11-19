@@ -37,7 +37,6 @@ Rust on Nails is an opinionated full-stack architecture and project template. It
 - [Loco guide][c~loco-rs~website]↗ and [Loco repository][c~loco-rs~repo]↗.
 - [Cot guide][cot~guide]↗ and [Cot repository][c~cot~repo]↗.
 - [Rust on Nails website][rust-on-nails~website]↗ and [source repository][rust-on-nails~repo]↗.
-- [Building a SaaS with Rust and Next.js][blog~building-a-saas-with-rust-and-next-js]↗.
 
 ## Related Topics {#related-topics .skip}
 
