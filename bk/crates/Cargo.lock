@@ -26028,6 +26028,7 @@ dependencies = [
  "miette",
  "pin-project",
  "pin-project-lite",
+ "ref-cast",
  "rpds",
  "scopeguard",
  "serde",

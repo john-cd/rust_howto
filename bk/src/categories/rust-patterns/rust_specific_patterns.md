@@ -93,6 +93,14 @@ When a value has a field that only affects how it is shown, such as a display st
 {{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/newtype_equality.rs:example}}
 ```
 
+## Borrow a Transparent Byte-Slice Newtype {#borrow-byte-view}
+
+Use `ref-cast` to borrow a `#[repr(transparent)]` wrapper around `[u8]`. The wrapper accepts every byte slice, so construction needs no validation. Checking the signature is a separate operation. The pointer assertion checks that the view borrows the original bytes.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/rust_patterns/examples/borrow_byte_view.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Asynchronous](../asynchronous/index.md): `Pin` and `pin-project` are frequently used when manually implementing `Future`s and async state machines.

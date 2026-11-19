@@ -7155,6 +7155,9 @@
 [c~redis~lib.rs~badge]: https://img.shields.io/badge/lib.rs-redis-yellow
 [c~redis~repo]: https://github.com/redis-rs/redis-rs
 [c~redis~repo~badge]: https://img.shields.io/badge/redis-steelblue?logo=github
+[c~ref-cast~crates.io]: https://crates.io/crates/ref-cast
+[c~ref-cast~docs]: https://docs.rs/ref-cast
+[c~ref-cast~repo]: https://github.com/dtolnay/ref-cast
 [c~reflect~crates.io]: https://crates.io/crates/reflect
 [c~reflect~crates.io~badge]: https://img.shields.io/badge/crates.io-reflect-crimson
 [c~reflect~dependents~badge]: https://img.shields.io/crates/dependents/reflect

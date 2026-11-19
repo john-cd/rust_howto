@@ -46,3 +46,4 @@
 [c~imbl~crates.io~badge]: https://img.shields.io/badge/crates.io-imbl-crimson
 
 [book~rust~closures]: https://doc.rust-lang.org/book/ch13-01-closures.html
+[ex~rust-patterns~borrow-byte-view]: rust_specific_patterns.md#borrow-byte-view

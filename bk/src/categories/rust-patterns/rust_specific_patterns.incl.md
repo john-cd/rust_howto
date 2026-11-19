@@ -8,3 +8,4 @@
 | [Newtypes That Carry a Unit][ex~rust-patterns~newtype-units] | {{#crate std}} | {{#categories rust-patterns="Rust patterns"}} |
 | [A Validated Newtype][ex~rust-patterns~validated-newtype] | {{#crate serde}} | {{#categories rust-patterns="Rust patterns"}} |
 | [Equality That Ignores Presentation Fields][ex~rust-patterns~newtype-equality] | {{#crate std}} | {{#categories rust-patterns="Rust patterns"}} |
+| [Borrow a Transparent Byte-Slice Newtype][ex~rust-patterns~borrow-byte-view] | `ref-cast` | {{#categories rust-patterns="Rust patterns"}} |

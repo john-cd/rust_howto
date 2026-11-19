@@ -1276,6 +1276,7 @@
 [ex~rust-patterns~anyhow]: ../categories/rust-patterns/custom_errors.md#anyhow
 [ex~rust-patterns~backtraces]: ../categories/rust-patterns/custom_errors.md#backtraces
 [ex~rust-patterns~basic-builder-pattern]: ../categories/rust-patterns/builder_pattern.md#basic-builder-pattern
+[ex~rust-patterns~borrow-byte-view]: ../categories/rust-patterns/rust_specific_patterns.md#borrow-byte-view
 [ex~rust-patterns~business-rules]: ../categories/rust-patterns/behavioral_patterns.md#business-rules
 [ex~rust-patterns~color-eyre]: ../categories/rust-patterns/custom_errors.md#color-eyre
 [ex~rust-patterns~compose-iterators-with-itertools]: ../categories/rust-patterns/functional_programming.md#compose-iterators-with-itertools

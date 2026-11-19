@@ -62,7 +62,13 @@ name = "scopeguard"
 path = "examples/scopeguard.rs"
 test = true
 
+[[example]]
+name = "borrow_byte_view"
+path = "examples/borrow_byte_view.rs"
+test = true
+
 [dependencies]
+ref-cast = "1.0.27"
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # A simple to use, efficient, and full-featured Command Line Argument Parser
