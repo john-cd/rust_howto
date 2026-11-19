@@ -4,6 +4,8 @@
 
 This read-only tool inventories the book's Markdown chapters, recursive includes,
 Rust code snippets, Cargo targets, reachable Rust modules, and documented exceptions.
+It inventories `bk/src` and `later/src` and recognizes visible command walkthroughs
+independently of Cargo-backed examples.
 It emits stable JSON to stdout. Pass `--fail` to return a failing status when the
 report contains integrity errors.
 
