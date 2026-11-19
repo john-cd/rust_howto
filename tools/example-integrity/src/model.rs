@@ -56,7 +56,7 @@ pub struct ChapterRecord {
     /// Canonical repository-relative page path.
     pub path: String,
 
-    /// Content area: published, draft, or future.
+    /// Content area: published or future.
     pub edition: String,
 
     /// Whether a Summary file links to the page.
@@ -71,7 +71,10 @@ pub struct ChapterRecord {
     /// Whether visible content includes a source file compiled by a test target.
     pub has_tested_example: bool,
 
-    /// Number of standalone Rust fences on the page.
+    /// Whether visible content includes a shell or console demonstration.
+    pub has_command_walkthrough: bool,
+
+    /// Number of visible standalone Rust fences on the page.
     pub standalone_rust_fences: usize,
 
     /// A human-readable reason when the page has an accepted exception.

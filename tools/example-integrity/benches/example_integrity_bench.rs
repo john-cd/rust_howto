@@ -72,7 +72,6 @@ fn create_synthetic_book_tree(num_packages: usize, num_chapters: usize) -> TempD
         summary.push_str(&format!("- [Chapter {i}](chapter_{i}.md)\n"));
     }
     write_fixture(root, "bk/src/SUMMARY.md", &summary);
-    write_fixture(root, "bk/drafts/SUMMARY.md", "# Summary\n");
     write_fixture(root, "later/src/SUMMARY.md", "# Summary\n");
     write_fixture(
         root,

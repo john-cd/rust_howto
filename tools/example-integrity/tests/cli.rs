@@ -21,7 +21,7 @@ fn run(root: &Path, fail: bool) -> Output {
 
 /// Writes the three empty book summaries that a valid repository needs.
 fn write_clean_fixture(root: &Path) {
-    for book in ["bk/src", "bk/drafts", "later/src"] {
+    for book in ["bk/src", "later/src"] {
         let dir = root.join(book);
         fs::create_dir_all(&dir).expect("directory should be created");
         fs::write(

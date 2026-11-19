@@ -36,11 +36,7 @@ use crate::model::Report;
 use crate::model::SnippetRecord;
 
 /// Shared `book roots` used by this module.
-const BOOK_ROOTS: &[(&str, &str)] = &[
-    ("bk/src", "published"),
-    ("bk/drafts", "draft"),
-    ("later/src", "future"),
-];
+const BOOK_ROOTS: &[(&str, &str)] = &[("bk/src", "published"), ("later/src", "future")];
 
 /// Shared `example roots` used by this module.
 const EXAMPLE_ROOTS: &[&str] = &["bk/crates", "later/crates"];
@@ -168,6 +164,9 @@ struct ScanState {
     /// Chapters whose included examples have a target with a declared test harness.
     chapter_has_tested_example: HashSet<String>,
 
+    /// Chapters with a visible shell or console walkthrough.
+    chapter_has_command_fence: HashSet<String>,
+
     /// Explicit exceptions applied to diagnostics during report classification.
     exceptions: Vec<ExceptionRecord>,
 
@@ -217,6 +216,7 @@ pub fn build_report(repo_root: &Path) -> Result<Report> {
         fragment_includers: BTreeMap::new(),
         chapter_has_compiled_example: HashSet::new(),
         chapter_has_tested_example: HashSet::new(),
+        chapter_has_command_fence: HashSet::new(),
         exceptions,
         example_paths: Vec::new(),
     };
@@ -278,6 +278,7 @@ pub fn build_report(repo_root: &Path) -> Result<Report> {
         .report
         .example_sources
         .sort_by(|left, right| left.path.cmp(&right.path));
+    state.report.exceptions = state.exceptions;
     state
         .report
         .exceptions
@@ -624,11 +625,12 @@ impl ScanState {
                 hidden,
                 has_example,
                 has_tested_example,
+                has_command_walkthrough: self.chapter_has_command_fence.contains(&page_path),
                 standalone_rust_fences: self
                     .report
                     .standalone_snippets
                     .iter()
-                    .filter(|snippet| snippet.chapter_path == page_path)
+                    .filter(|snippet| snippet.visible && snippet.chapter_path == page_path)
                     .count(),
                 disposition: disposition.clone(),
             });
@@ -641,12 +643,17 @@ impl ScanState {
                     "chapter file is missing from its book SUMMARY.md",
                 );
             }
-            if is_listed && !has_example && disposition.is_none() {
+            if is_listed
+                && !hidden
+                && !has_example
+                && !self.chapter_has_command_fence.contains(&page_path)
+                && disposition.is_none()
+            {
                 let has_inline_rust = self
                     .report
                     .standalone_snippets
                     .iter()
-                    .any(|snippet| snippet.chapter_path == page_path);
+                    .any(|snippet| snippet.visible && snippet.chapter_path == page_path);
                 self.diagnostic(
                     if has_inline_rust { "warning" } else { "error" },
                     if has_inline_rust {
@@ -737,6 +744,22 @@ impl ScanState {
                         language.split(',').next().unwrap_or_default(),
                         "rust" | "rs"
                     );
+                    if visible
+                        && matches!(
+                            language.as_str(),
+                            "bash"
+                                | "console"
+                                | "powershell"
+                                | "pwsh"
+                                | "sh"
+                                | "shell"
+                                | "shell-session"
+                                | "zsh"
+                        )
+                    {
+                        self.chapter_has_command_fence
+                            .insert(chapter_path.to_owned());
+                    }
                     fence = Some((
                         marker_char,
                         marker.len(),
@@ -1702,6 +1725,51 @@ mod tests {
         fs::write(path, contents).expect("fixture file is written");
     }
 
+    /// Distinguishes command walkthroughs, reference exceptions, and missing examples.
+    #[test]
+    fn classifies_published_pages_without_a_draft_root() {
+        let directory = tempfile::tempdir().expect("temporary repository is created");
+        let root = directory.path();
+        write_fixture(
+            root,
+            "bk/src/SUMMARY.md",
+            "# Summary\n- [Command](command.md)\n- [Reference](reference.md)\n- [Missing](missing.md)\n",
+        );
+        write_fixture(root, "later/src/SUMMARY.md", "# Summary\n");
+        write_fixture(
+            root,
+            "bk/src/command.md",
+            "# Command\n\n```console\ncargo build\n```\n",
+        );
+        write_fixture(
+            root,
+            "bk/src/reference.md",
+            "# Reference\n\nConcepts and links.\n",
+        );
+        write_fixture(
+            root,
+            "bk/src/missing.md",
+            "# Missing\n\nAn example is still needed.\n",
+        );
+        write_fixture(
+            root,
+            "scripts/example_chapter_exceptions.txt",
+            "# Reference directory.\nbk/src/reference.md\n",
+        );
+        let report = build_report(root).expect("fixture report builds");
+        assert!(
+            report
+                .chapters
+                .iter()
+                .any(|chapter| chapter.path == "bk/src/command.md"
+                    && chapter.has_command_walkthrough)
+        );
+        assert_eq!(report.exceptions.len(), 1);
+        assert_eq!(report.diagnostics.len(), 1);
+        assert_eq!(report.diagnostics[0].code, "chapter-without-example");
+        assert_eq!(report.diagnostics[0].path, "bk/src/missing.md");
+    }
+
     /// The inventory uses canonical paths across nested includes and duplicate basenames.
     #[test]
     fn fixture_finds_integrity_gaps_and_tracks_cfg_modules() {
@@ -1749,15 +1817,14 @@ mod tests {
         write_fixture(root, "bk/src/unlisted.md", "# Unlisted\n\nPlain prose.\n");
         write_fixture(
             root,
-            "bk/drafts/SUMMARY.md",
+            "later/src/SUMMARY.md",
             "# Summary\n\n- [Hidden](_hidden.md)\n",
         );
         write_fixture(
             root,
-            "bk/drafts/_hidden.md",
-            "# Hidden\n\n```rust\n{{#include ../crates/one/examples/first/main.rs:example}}\n```\n",
+            "later/src/_hidden.md",
+            "# Hidden\n\n```rust\n{{#include ../../bk/crates/one/examples/first/main.rs:example}}\n```\n",
         );
-        write_fixture(root, "later/src/SUMMARY.md", "# Summary\n");
         write_fixture(
             root,
             "scripts/example_chapter_exceptions.txt",
@@ -1809,7 +1876,7 @@ mod tests {
         let hidden_chapter = report
             .chapters
             .iter()
-            .find(|chapter| chapter.path == "bk/drafts/_hidden.md")
+            .find(|chapter| chapter.path == "later/src/_hidden.md")
             .expect("Summary-listed hidden chapter is inventoried");
         assert!(hidden_chapter.listed);
         assert!(hidden_chapter.hidden);

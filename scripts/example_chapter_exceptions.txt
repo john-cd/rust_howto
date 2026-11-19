@@ -46,4 +46,31 @@ later/src/other/architecture/
 later/src/other/cloud/
 # Example disabled until its dependency advisory is resolved.
 later/src/categories/science_robotics/robotics_frameworks.md
-# Describes operating systems written in Rust (Redox, Bottlerocket); they are not libraries, so there is no Rust code to run (#2093).
+# Legacy source notices. The rendered paths are supplied by the mdBook redirect configuration.
+bk/src/categories/development-tools/benchmark_regressions.md
+bk/src/categories/development-tools/profiling.md
+# Project and edition introductions describe the scope of each book.
+bk/src/introduction.md
+later/src/introduction.md
+# Reference pages about Cargo layout, install choices, output resources, or command inventories.
+bk/src/categories/development-tools/cargo/package_layout.md
+bk/src/categories/development-tools/documentation/badges.md
+bk/src/categories/development-tools/installation/rustup.md
+bk/src/categories/development-tools_build-utils/build_cache.md
+bk/src/categories/development-tools_cargo-plugins/dependency_management.md
+bk/src/categories/development-tools_cargo-plugins/performance.md
+bk/src/categories/development-tools_cargo-plugins/watching_for_changes.md
+bk/src/categories/development-tools_profiling/assembly.md
+# Tool and platform surveys link to the relevant setup guides and dedicated recipes.
+bk/src/categories/os/rust_os.md
+bk/src/categories/text-editors/ides.md
+bk/src/categories/web-programming_http-server/static_website_generators.md
+bk/src/other/architecture/software_architecture_process.md
+bk/src/other/cloud/rust_native_cloud_development.md
+bk/src/other/devops/github_actions.md
+bk/src/other/devops/version_control.md
+# The staged Leptos recipe uses an independent Trunk project and browser checks.
+later/src/categories/wasm/examples/leptos_counter.rs
+# Optional staged device examples require vendor SDKs and hardware outside the ordinary Cargo gate.
+later/src/other/gpu/examples/cuda_double.rs
+later/src/other/gpu/examples/opencl_double.rs
