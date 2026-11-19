@@ -4213,7 +4213,7 @@ dependencies = [
  "crossbeam-queue",
  "derive_more",
  "futures-lite 2.6.1",
- "heapless 0.9.3",
+ "heapless 0.9.4",
  "web-task",
 ]
 
@@ -7273,7 +7273,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d045de693cb712d0b22c6a64be5b953f67b3ce00ab5ad3dd5d8b441886ab8e1a"
 dependencies = [
  "quote",
- "syn 3.0.10",
+ "syn 2.0.119",
 ]
 
 [[package]]
@@ -7758,7 +7758,7 @@ dependencies = [
  "fixedbitset 0.5.9",
  "flagset",
  "fnv",
- "heapless 0.9.3",
+ "heapless 0.9.4",
  "indexmap 2.14.2",
  "linked-hash-map",
  "multimap",
@@ -13907,9 +13907,9 @@ dependencies = [
 
 [[package]]
 name = "heapless"
-version = "0.9.3"
+version = "0.9.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "25ba4bd83f9415b58b4ed8dc5714c76e626a105be4646c02630ad730ad3b5aa4"
+checksum = "411fdef4df93751117bd9ef8caa0e7f99c65dafec5bd84313eb8e2fdd75e32f2"
 dependencies = [
  "hash32 0.3.1",
  "portable-atomic",
@@ -19686,7 +19686,7 @@ dependencies = [
 name = "no_std_no_alloc"
 version = "0.1.2"
 dependencies = [
- "heapless 0.9.3",
+ "heapless 0.9.4",
 ]
 
 [[package]]
