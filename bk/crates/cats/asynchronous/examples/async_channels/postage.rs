@@ -1,87 +1,80 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! A broadcast channel from the `postage` crate: several receivers get every
-//! message.
-//!
-//! A broadcast channel delivers every message to every receiver, like a notice
-//! board, instead of to just one of them. It suits events that several parts of
-//! a program react to, such as a shutdown signal.
+//! Sends each message to the receivers subscribed when it is sent.
 
+use anyhow::Result;
 use postage::broadcast;
 use postage::prelude::Sink as _;
 use postage::prelude::Stream as _;
 use tokio::task;
-use tokio::time::Duration;
 
-/// This function simulates a broadcaster that sends messages to a broadcast
-/// channel. The broadcaster sends two messages, each with a unique identifier,
-/// and then sleeps for a short duration.
-async fn broadcaster(id: usize, mut tx: broadcast::Sender<String>) {
+/// Sends two labeled messages, returning an error if the channel closes.
+async fn broadcaster(id: usize, mut tx: broadcast::Sender<String>) -> Result<()> {
     for i in 0..2 {
-        let msg = format!("Broadcaster {id}'s message {i}");
-        if let Err(err) = tx.send(msg.clone()).await {
-            // `send` returns Err(SendError(value))
-            // if the sink rejected the message.
-            eprintln!("Failed to send message: {err}");
-            break;
-        }
-        println!("Sent: {msg}");
-        // Simulate work:
-        tokio::time::sleep(Duration::from_millis(10)).await;
+        tx.send(format!("Broadcaster {id}'s message {i}")).await?;
     }
+    Ok(())
 }
 
-/// This function simulates a receiver that receives messages from a broadcast
-/// channel. The receiver continuously receives messages and prints them until
-/// the channel is closed.
-async fn receiver(name: &'static str, mut rx: broadcast::Receiver<String>) {
-    while let Some(msg) = rx.recv().await {
-        println!("{name} receive {msg}");
+/// Drains the receiver until every sender has been dropped.
+async fn receive_all(mut rx: broadcast::Receiver<String>) -> Vec<String> {
+    let mut messages = Vec::new();
+    while let Some(message) = rx.recv().await {
+        messages.push(message);
     }
+    messages
 }
 
-/// Spawns broadcasters and receivers on one channel and waits for them to
-/// finish.
+/// Sends an initial batch to A and B, then sends one message to A, B, and C.
+///
+/// # Errors
+///
+/// Returns a send error if the channel closes or a join error if a task fails.
+async fn exchange() -> Result<[Vec<String>; 3]> {
+    let (mut tx, rx) = broadcast::channel(10);
+    let receiver_b = task::spawn(receive_all(rx.clone()));
+    let receiver_a = task::spawn(receive_all(rx));
+
+    let (first, second) = tokio::join!(
+        task::spawn(broadcaster(0, tx.clone())),
+        task::spawn(broadcaster(1, tx.clone())),
+    );
+    first??;
+    second??;
+
+    // C subscribes after both producers finish, so it only sees the last message.
+    let receiver_c = task::spawn(receive_all(tx.subscribe()));
+    tx.send("Last message".to_owned()).await?;
+    drop(tx);
+
+    let (a, b, c) = tokio::join!(receiver_a, receiver_b, receiver_c);
+    Ok([a?, b?, c?])
+}
+
+/// Prints each subscriber's messages after the exchange completes.
+///
+/// # Errors
+///
+/// Returns any send or join error from the exchange.
 #[tokio::main]
-async fn main() {
-    // Create a broadcast channel with a capacity of 10 messages.
-    // The broadcast channel provides reliable broadcast delivery between
-    // multiple senders and multiple receivers. The channel has a fixed
-    // capacity, and senders are suspended if the buffer is filled.
-    let (tx, rx) = broadcast::channel(10);
-
-    let mut broadcaster_tasks = vec![];
-    for i in 0..2 {
-        let tx = tx.clone();
-        broadcaster_tasks.push(task::spawn(broadcaster(i, tx)));
+async fn main() -> Result<()> {
+    for (subscriber, messages) in ["A", "B", "C"].into_iter().zip(exchange().await?) {
+        for message in messages {
+            println!("{subscriber} received {message}");
+        }
     }
-
-    // Create a couple of receivers:
-    let rx2 = rx.clone();
-    task::spawn(receiver("A", rx));
-    task::spawn(receiver("B", rx2));
-
-    // Let the broadcasters and receivers run for a short duration:
-    tokio::time::sleep(Duration::from_millis(50)).await;
-
-    // Subscribe to the channel.
-    // The receiver will observe all messages sent _after the call to
-    // subscribe_. Messages currently in the buffer will not be received.
-    let rx3 = tx.subscribe();
-    task::spawn(receiver("C", rx3));
-    // Send a last message to the channel.
-    let mut tx2 = tx.clone();
-    tx2.send("Last message".into()).await.ok();
-
-    // Wait for all the receivers to print:
-    tokio::time::sleep(Duration::from_millis(25)).await;
+    Ok(())
 }
 // ANCHOR_END: example
 
-/// Runs the example.
-pub fn run() {
-    main();
+/// Runs the broadcast example.
+///
+/// # Errors
+///
+/// Returns any send or join error from the exchange.
+pub fn run() -> Result<()> {
+    main()
 }
 
 /// Tests behavior implemented by the surrounding module.
@@ -91,8 +84,28 @@ mod tests {
 
     /// Runs the postage example through its entry point.
     #[test]
-    fn test_postage_example_entry_point() {
-        main();
+    fn test_postage_example_entry_point() -> anyhow::Result<()> {
+        main()
+    }
+
+    /// Confirms the early and late subscribers drain the messages intended for them.
+    #[tokio::test]
+    async fn subscribers_drain_their_batches() -> anyhow::Result<()> {
+        let [mut a, mut b, c] = exchange().await?;
+        assert_eq!(a.pop().as_deref(), Some("Last message"));
+        assert_eq!(b.pop().as_deref(), Some("Last message"));
+        let expected = [
+            "Broadcaster 0's message 0",
+            "Broadcaster 0's message 1",
+            "Broadcaster 1's message 0",
+            "Broadcaster 1's message 1",
+        ];
+        a.sort_unstable();
+        b.sort_unstable();
+        assert_eq!(a, expected);
+        assert_eq!(b, expected);
+        assert_eq!(c, ["Last message"]);
+        Ok(())
     }
 
     /// Delivers each broadcast message to every subscriber.

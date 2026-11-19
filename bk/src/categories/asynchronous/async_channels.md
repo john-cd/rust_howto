@@ -71,9 +71,11 @@ When all senders or all receivers are dropped, the channel becomes closed. A clo
 
 {{#badges postage}}
 
-[`postage`][c~postage~docs]↗ includes async channel types such as [`postage::broadcast`][c~postage::broadcast~docs]↗{{hi:postage::broadcast}}. Start with the delivery model: use the work-queue and one-shot recipes above for those cases, and use this recipe when each subscriber should receive the same messages. Check the selected channel's buffer, backpressure, and receiver-lifecycle guarantees.
+[`postage`][c~postage~docs]↗ includes async channel types such as [`postage::broadcast`][c~postage::broadcast~docs]↗{{hi:postage::broadcast}}. Start with the delivery model: use the work-queue and one-shot recipes above for those cases, and use this recipe when each subscriber should receive the same messages. A and B subscribe before either producer sends. The program joins both producers before subscribing C. After sending the final message, it drops the last sender and joins the receivers once they have drained the channel. See [Cancellation and Structured Concurrency](structured_concurrency.md) for more on task ownership.
 
-```rust,editable
+From `bk/crates`, run `cargo run --locked -p asynchronous --example async_channels -- postage`.
+
+```rust,noplayground
 {{#include ../../../crates/cats/asynchronous/examples/async_channels/postage.rs:example}}
 ```
 
