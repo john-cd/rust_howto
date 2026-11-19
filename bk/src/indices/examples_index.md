@@ -932,6 +932,12 @@
 
 {{#include ../categories/filesystem/symbolic_links.incl.md}}
 
+## GPU Programming
+
+### [GPU Compute Recipes](../other/gpu/gpu.md)
+
+{{#include ../other/gpu/gpu.incl.md}}
+
 ## Machine Learning in Practice
 
 ### [Machine Learning in Practice](../other/machine-learning/index.md)

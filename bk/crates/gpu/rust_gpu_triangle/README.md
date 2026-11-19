@@ -5,8 +5,8 @@ This standalone project uses Rust-GPU 0.11.0 on its pinned nightly, `nightly-202
 From the repository root:
 
 ```console
-just cargo +nightly-2026-08-15 test --locked --manifest-path later/crates/gpu/rust_gpu_triangle/Cargo.toml
-just cargo +nightly-2026-08-15 test --locked --manifest-path later/crates/gpu/rust_gpu_triangle/Cargo.toml -- --include-ignored --nocapture
+just cargo +nightly-2026-08-15 test --locked --manifest-path bk/crates/gpu/rust_gpu_triangle/Cargo.toml
+just cargo +nightly-2026-08-15 test --locked --manifest-path bk/crates/gpu/rust_gpu_triangle/Cargo.toml -- --include-ignored --nocapture
 ```
 
 The second command runs the offscreen test. It checks an interior red pixel and an exterior blue pixel in a 64-by-64 RGBA readback. Success proves this shader and pipeline on the printed Vulkan adapter. The host takes no vertex buffer because the Rust shader derives positions from the vertex index.
