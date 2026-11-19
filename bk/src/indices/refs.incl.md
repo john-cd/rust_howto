@@ -1587,6 +1587,8 @@
 [p~proc-macro~crate]: https://doc.rust-lang.org/proc_macro/
 [p~proc-macro~crate~badge]: https://img.shields.io/badge/proc__macro-Rust-orange
 [p~standard-library]: ../standard-library/index.md
+[p~transpilers-ffi]: ../categories/development-tools_ffi/index.md
+[p~transpilers-wasm]: ../categories/wasm/index.md
 [p~using_containers]: ../categories/virtualization/using_containers.md
 [rfc~5280]: https://www.rfc-editor.org/rfc/rfc5280.html
 [rfc~7468]: https://www.rfc-editor.org/rfc/rfc7468.html

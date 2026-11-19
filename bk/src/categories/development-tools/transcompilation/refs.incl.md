@@ -5,3 +5,6 @@
 [bindgen~repo]: https://github.com/rust-lang/rust-bindgen
 [cbindgen~repo]: https://github.com/mozilla/cbindgen
 [wasm-bindgen~repo]: https://github.com/wasm-bindgen/wasm-bindgen
+
+[p~transpilers-ffi]: ../../development-tools_ffi/index.md
+[p~transpilers-wasm]: ../../wasm/index.md
