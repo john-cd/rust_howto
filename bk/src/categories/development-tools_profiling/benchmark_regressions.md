@@ -2,7 +2,7 @@
 
 # Compare Benchmark Results in CI {#compare-benchmark-results-in-ci}
 
-A benchmark compares the same representative workload at two revisions under the same build profile, toolchain, and machine. This example sorts a fixed input and prints a checksum so the comparison can reject a change in output:
+A benchmark compares the same representative workload at two revisions under the same build profile, toolchain, and machine. This example reverses a fixed sequence, sorts it, and checks every value against the expected ascending sequence. Skipping the sort leaves the same values in descending order and causes a nonzero exit. Both sorting choices print the same success message. The timings include process startup, input construction, sorting, validation, and output.
 
 ```rust
 {{#include ../../../crates/cats/development_tools_profiling/examples/benchmarking/regression_workload.rs:example}}
