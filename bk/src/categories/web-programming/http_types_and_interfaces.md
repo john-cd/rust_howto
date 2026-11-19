@@ -36,7 +36,7 @@ The `Body` trait yields frames asynchronously. Data frames carry byte buffers, a
 
 {{#badges http-body-util web-programming="Web programming"}}{{hi:Http}}
 
-[`http-body-util`][c~http-body-util~docs]↗{{hi:http-body-util}} provides adapters for the `http_body::Body` trait. `Full` and `Empty` represent a single payload or no payload; `StreamBody` adapts a stream of frames. Its `BodyExt` extension trait includes `collect`, which is useful for small, known-size responses but buffers the full body in memory.
+[`http-body-util`][c~http-body-util~docs]↗{{hi:http-body-util}} provides adapters for the `http_body::Body` trait. `Full` and `Empty` represent a single payload or no payload; `StreamBody` adapts a stream of frames. Its `BodyExt` extension trait includes `collect`, which buffers all data frames in memory. Wrap the body in `Limited` before collecting to enforce a byte budget on the bytes received across frames. This example accepts a body exactly at the limit and checks for `LengthLimitError` when a body exceeds it.
 
 ```rust,noplayground
 {{#include ../../../crates/cats/web_programming/examples/http_types_and_interfaces/body.rs:example}}
