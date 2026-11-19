@@ -1165,6 +1165,7 @@
 [ex~multimedia_encoding~mp4]: ../categories/multimedia_encoding/encoding.md#mp4-metadata
 [ex~multimedia_encoding~video]: ../categories/multimedia_video/video.md
 [ex~multimedia_encoding~wav]: ../categories/multimedia_encoding/encoding.md#encode-wav
+[ex~multimedia_images~avif-round-trip]: ../categories/multimedia_images/images.md#avif-round-trip
 [ex~multimedia_images~convert-formats]: ../categories/multimedia_images/images.md#convert-formats
 [ex~multimedia_images~image_loading_and_saving]: ../categories/multimedia_images/images.md#create-image
 [ex~multimedia_images~image_manipulation]: ../categories/multimedia_images/images.md#resize-and-crop

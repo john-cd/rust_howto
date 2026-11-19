@@ -9,3 +9,4 @@
 [ex~multimedia_images~palette]: color_handling.md#palette
 [ex~multimedia_images~pixel_buffers]: pixel_buffers.md#pixel_buffers
 [ex~multimedia_images~read-exif-metadata]: images.md#read-exif-metadata
+[ex~multimedia_images~avif-round-trip]: images.md#avif-round-trip

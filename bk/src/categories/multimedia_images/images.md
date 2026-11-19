@@ -76,6 +76,16 @@ The Cargo package `kamadak-exif` exposes the Rust crate `exif`. Use `Reader::rea
 {{#include ../../../crates/cats/multimedia_images/examples/images/optimize_png.rs:example}}
 ```
 
+## Encode and Decode an AVIF Image {#avif-round-trip}
+
+Build a tiny RGBA image with `rgb::RGBA8` pixels and wrap the borrowed buffer in `imgref::Img` so `ravif` can read its dimensions and row layout. Encode to an in-memory AVIF file, decode it with `avif-decode`, and check the decoded dimensions. The fixture uses an 8-bit image with alpha. This check allows lossy compression to change color values.
+
+See [Pixel Buffers](pixel_buffers.md) for layout and stride.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/multimedia_images/examples/avif_round_trip.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Color Handling](color_handling.md) covers color spaces and compositing.

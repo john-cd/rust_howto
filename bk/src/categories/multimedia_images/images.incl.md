@@ -8,3 +8,4 @@
 | [Apply Filters][ex~multimedia_images~image_processing] | {{#crate image}} | {{#categories multimedia::images=Images}} |
 | [Read EXIF Metadata][ex~multimedia_images~read-exif-metadata] | [`kamadak-exif`][c~kamadak-exif~docs] | {{#categories multimedia::images=Images}} |
 | [Optimize PNGs][ex~multimedia_images~optimize-pngs] | [`oxipng`][c~oxipng~docs] | {{#categories multimedia::images=Images}} |
+| [Encode and Decode an AVIF Image][ex~multimedia_images~avif-round-trip] | `ravif`, `imgref`, `rgb`, `avif-decode` | {{#categories multimedia::images=Images}} |

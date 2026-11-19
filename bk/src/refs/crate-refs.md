@@ -500,6 +500,9 @@
 [c~autocfg~lib.rs~badge]: https://img.shields.io/badge/lib.rs-autocfg-yellow
 [c~autocfg~repo]: https://github.com/cuviper/autocfg
 [c~autocfg~repo~badge]: https://img.shields.io/badge/autocfg-steelblue?logo=github
+[c~avif-decode~crates.io]: https://crates.io/crates/avif-decode
+[c~avif-decode~docs]: https://docs.rs/avif-decode
+[c~avif-decode~repo]: https://github.com/kornelski/avif-decode
 [c~await-tree~crates.io]: https://crates.io/crates/await-tree
 [c~await-tree~crates.io~badge]: https://img.shields.io/badge/crates.io-await--tree-crimson
 [c~await-tree~docs]: https://docs.rs/await-tree
@@ -4370,6 +4373,9 @@
 [c~imbl~crates.io]: https://crates.io/crates/imbl
 [c~imbl~docs]: https://docs.rs/imbl
 [c~imbl~repo]: https://github.com/jneem/imbl
+[c~imgref~crates.io]: https://crates.io/crates/imgref
+[c~imgref~docs]: https://docs.rs/imgref
+[c~imgref~repo]: https://github.com/kornelski/imgref
 [c~im~crates.io]: https://crates.io/crates/im
 [c~im~crates.io~badge]: https://img.shields.io/badge/crates.io-im-crimson
 [c~im~docs]: https://docs.rs/im/latest/im
@@ -7105,6 +7111,9 @@
 [c~rav1e~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rav1e-yellow
 [c~rav1e~repo]: https://github.com/xiph/rav1e
 [c~rav1e~repo~badge]: https://img.shields.io/badge/rav1e-steelblue?logo=github
+[c~ravif~crates.io]: https://crates.io/crates/ravif
+[c~ravif~docs]: https://docs.rs/ravif
+[c~ravif~repo]: https://github.com/kornelski/cavif-rs
 [c~rayon::ThreadPool~docs]: https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html
 [c~rayon::iter::IntoParallelIterator::into_par_iter~docs]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelIterator.html#tymethod.into_par_iter
 [c~rayon::iter::IntoParallelRefIterator::par_iter~docs]: https://docs.rs/rayon/latest/rayon/iter/trait.IntoParallelRefIterator.html#tymethod.par_iter
@@ -7312,6 +7321,9 @@
 [c~rfd~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rfd-yellow
 [c~rfd~repo]: https://github.com/PolyMeilex/rfd
 [c~rfd~repo~badge]: https://img.shields.io/badge/rfd-steelblue?logo=github
+[c~rgb~crates.io]: https://crates.io/crates/rgb
+[c~rgb~docs]: https://docs.rs/rgb
+[c~rgb~repo]: https://github.com/kornelski/rust-rgb
 [c~rhai~crates.io]: https://crates.io/crates/rhai
 [c~rhai~crates.io~badge]: https://img.shields.io/badge/crates.io-rhai-crimson
 [c~rhai~docs]: https://docs.rs/rhai
