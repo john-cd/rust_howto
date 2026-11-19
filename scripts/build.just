@@ -36,6 +36,9 @@ root=$1
 printf '%s' "$root"
 # Source-only builds, including the CI image, have no registered worktrees.
 [[ -e "$root/.git" ]] || exit 0
+if ! git -C "$root" -c core.fsmonitor=false rev-parse --show-toplevel >/dev/null 2>&1; then
+    exit 0
+fi
 git -C "$root" -c core.fsmonitor=false worktree list --porcelain | while IFS= read -r line; do
     case "$line" in
         "worktree $root/.worktrees/"*)
