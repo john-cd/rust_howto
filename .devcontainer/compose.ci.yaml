@@ -68,14 +68,6 @@ services:
         ##  In the `max` cache mode, all docker layers are cached, even those of intermediate steps.
         - type=gha,mode=max,scope=${GHA_CACHE_SCOPE:?Set GHA_CACHE_SCOPE in .devcontainer/.env or the host environment},ignore-error=true
     volumes:
-      ## The root Justfile and CI audit load the staging workspace modules. Keep their sources
-      ## out of the image build context, but expose the checked-out tree to the CI container.
-      - type: bind
-        source: ../later
-        target: /code/later
-        read_only: true
-        bind:
-          create_host_path: false
       ## Path where the container will write the book HTML / JS to, on the CI host (provided by GitHub Action)
       - type: bind
         source: ../book

@@ -36,9 +36,13 @@ __pycache__/
 
 # Project specific
 bk/drafts/
-later/
+# Keep staging prose out of the CI build context, but include the Justfile
+# module and Cargo workspace that the Linux CI container validates.
+later/*
+!later/justfile
+!later/crates/
+!later/crates/**
 mdbook-utils/
-publish/
 typ/
 /*.md
 /*.html
