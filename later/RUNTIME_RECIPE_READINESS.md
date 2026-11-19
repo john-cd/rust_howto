@@ -2,6 +2,8 @@
 
 # Runtime Recipe Readiness
 
+Post-migration host, SDK, and CI checks are tracked in [#2398](https://github.com/john-cd/rust_howto/issues/2398).
+
 The Windows and container runs documented in [#2377](https://github.com/john-cd/rust_howto/issues/2377)
 used the workspace lockfile and Rust 1.100.0. Subsequent checks below use the
 lockfile for each recipe. A build or an available command
@@ -28,19 +30,19 @@ session with the intended Python on PATH:
 $env:PYTHONHOME = (python -c "import sys; print(sys.base_prefix)").Trim()
 $env:PYO3_PYTHON = Join-Path $env:PYTHONHOME 'python.exe'
 $env:PATH = $env:PYTHONHOME + ';' + $env:PATH
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p development_tools_ffi --example python -- pyo3
+just cargo run --manifest-path bk/platform/Cargo.toml --locked -p development_tools_ffi --example python -- pyo3
 ```
 
 For the Windows Wasmtime retry, the wrapper overrides apply only to this command.
 
 ```console
-just RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= cargo run --manifest-path later/crates/Cargo.toml --locked -p wasm --features wasmtime --example wasm_standalone_runtimes -- wasmtime_component
+just RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= cargo run --manifest-path bk/platform/Cargo.toml --locked -p wasm --features wasmtime --example wasm_standalone_runtimes -- wasmtime_component
 ```
 
 ## Browser, Docker, and OpenCV Checks
 
-- Build the [Yew](src/categories/wasm/yew.md#start-a-browser-application) and
-  [Leptos](src/categories/wasm/leptos.md#client-side-rendering) counters with
+- Build the [Yew](../bk/src/categories/wasm/yew.md#start-a-browser-application) and
+  [Leptos](../bk/src/categories/wasm/leptos.md#client-side-rendering) counters with
   `trunk build` or start each with `trunk serve`. In Yew, go from 0 to 6 and
   back to 5 and check that the threshold appears and disappears. In Leptos,
   verify 0/even, 1/odd, and 0/even, then increase to 6 to check the threshold message.

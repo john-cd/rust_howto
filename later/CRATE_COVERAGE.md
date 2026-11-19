@@ -87,7 +87,7 @@ These recipes were added or updated during the coverage review.
   Logos byte spans with codespan-reporting labels.
 - [Terminal tables](../bk/src/categories/visualization/terminal_tables.md) uses tabled
   when readers need exact values and units.
-- [Route measurements](src/categories/science/route_measurements.md) uses geo
+- [Route measurements](../bk/src/categories/science/route_measurements.md) uses geo
   to compare a measured route with a simple model.
 - [Collect Three Markers](src/categories/games/index.md#collect-markers) uses
   Macroquad to introduce an input, update, and draw loop.

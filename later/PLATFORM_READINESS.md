@@ -1,6 +1,8 @@
 <!-- TODO Reviewed ??-??-2026. -->
 
-# Staged Platform and ML Migration Readiness
+# Platform and ML Validation Record
+
+Post-migration host, SDK, and CI checks are tracked in [#2398](https://github.com/john-cd/rust_howto/issues/2398).
 
 Reviewed November 17, 2026, for [#2350](https://github.com/john-cd/rust_howto/issues/2350), [#2351](https://github.com/john-cd/rust_howto/issues/2351), and [#2352](https://github.com/john-cd/rust_howto/issues/2352). This review covers the requested GUI, embedded, robotics, audio, graphics, native-API, Games, Rendering Engines, and ML material. It does not certify every category under `later`.
 
@@ -34,13 +36,13 @@ just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --featu
 just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --features onnx --example machine_learning
 ```
 
-## Promote Narrow Recipes, Retain the Broader Category
+## Platform Validation and Follow-ups
 
 | Category | Tested, promotable subset | Remaining gap |
 | --- | --- | --- |
-| [GUI](src/categories/gui/index.md) | egui interaction/layout/text logic; Windows Winit creation, minifb pixels, and Softbuffer presentation. | 36 default/minifb/Softbuffer tests passed with 7 interactive tests ignored; Slint added 5 headless tests with 1 interactive test ignored. Native self-closing presentation checks passed. The egui harness also passed Tab/Enter activation and state retention after a narrower viewport. Platform screen readers and the wider native-backend matrix remain open in [#2359](https://github.com/john-cd/rust_howto/issues/2359), [#2213](https://github.com/john-cd/rust_howto/issues/2213). |
-| [Embedded](src/categories/embedded/index.md) | Explicitly host-side HAL mocks, bounded messages, protocol/storage logic, and the Embassy host-task example. | 18 host tests passed after fixing deadline-task reuse. The standalone RP2040 firmware linked for `thumbv6m-none-eabi`. The ARM ELF contains a boot stage and vector table. Physical board, probe, flash, and sensor checks remain in [#2355](https://github.com/john-cd/rust_howto/issues/2355). |
-| [Robotics](src/categories/science_robotics/index.md) | PID/control, pathfinding, kinematics, nearest-neighbor, mock-I2C, and physics simulation recipes. | Default host tests passed. A Jazzy container verified the ROS 2 round trip. Physical robot/device validation remains in [#2355](https://github.com/john-cd/rust_howto/issues/2355). |
+| [GUI](../bk/src/categories/gui/index.md) | egui interaction/layout/text logic; Windows Winit creation, minifb pixels, and Softbuffer presentation. | 36 default/minifb/Softbuffer tests passed with 7 interactive tests ignored; Slint added 5 headless tests with 1 interactive test ignored. Native self-closing presentation checks passed. The egui harness also passed Tab/Enter activation and state retention after a narrower viewport. Platform screen readers and the wider native-backend matrix remain open in [#2359](https://github.com/john-cd/rust_howto/issues/2359), [#2213](https://github.com/john-cd/rust_howto/issues/2213). |
+| [Embedded](../bk/src/categories/embedded/index.md) | Explicitly host-side HAL mocks, bounded messages, protocol/storage logic, and the Embassy host-task example. | 18 host tests passed after fixing deadline-task reuse. The standalone RP2040 firmware linked for `thumbv6m-none-eabi`. The ARM ELF contains a boot stage and vector table. Physical board, probe, flash, and sensor checks remain in [#2355](https://github.com/john-cd/rust_howto/issues/2355). |
+| [Robotics](../bk/src/categories/science_robotics/index.md) | PID/control, pathfinding, kinematics, nearest-neighbor, mock-I2C, and physics simulation recipes. | Default host tests passed. A Jazzy container verified the ROS 2 round trip. Physical robot/device validation remains in [#2355](https://github.com/john-cd/rust_howto/issues/2355). |
 | [Audio](../bk/src/categories/multimedia_audio/index.md) | WAV, synthesis, resampling, parsing, and the bundled synthetic HRIR/HRTF convolution recipe. | Host tests and a one-second Windows CPAL output-stream test passed. Linux JACK loopback and ALSA output also passed. Audible quality remains outside the automated checks: [#2356](https://github.com/john-cd/rust_howto/issues/2356). |
 | [Rendering](../bk/src/categories/graphics/index.md) | The distinct fontdue glyph recipe and remaining engine catalogs. Raster/vector, tessellation, SVG, and projection recipes are already in published Graphics; staged duplicates were removed under #2361. | The earlier host tests passed before duplicate retirement. Do not promote catalog descriptions as proof that the corresponding windowed engines were run: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
 | [Graphics APIs](../bk/src/categories/rendering_graphics-api/index.md) | Adapter discovery, wgpu compute/readback, shader validation/translation, and the new offscreen triangle render. | 16 tests passed with ignored GPU tests enabled. The triangle's center/background pixels passed on both Vulkan and DirectX 12 using Intel Iris Xe. OpenGL helpers without a current context and raw Vulkan discovery do not prove a complete scene: [#2357](https://github.com/john-cd/rust_howto/issues/2357). |
@@ -112,7 +114,7 @@ Install libclang, source `/opt/ros/jazzy/setup.bash`, and set
 `IDL_PACKAGE_FILTER=std_msgs`. The run used `ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST`
 and `ROS_DOMAIN_ID=78` within the disposable container. Both the ignored test
 and the CLI received greetings #1 through #5 and exited successfully. See
-[Robot Operating Systems](src/categories/science_robotics/robot_operating_systems.md)
+[Robot Operating Systems](../bk/src/categories/science_robotics/robot_operating_systems.md)
 for the commands. The run exercised a local DDS round trip. Firmware and a
 physical robot remain separate checks.
 
@@ -142,7 +144,7 @@ fields or reject the call.
 
 ## Not Ready or Already Published
 
-- [GTK/Relm4](src/categories/gui/gtk.md): Linux GTK 4.18.6 under Xvfb passed the GTK button assertions and Relm4 model checks. Both corrected launchers opened, resized to 400 × 300, and closed cleanly in an isolated build using the staged sources and the workspace's direct GTK, Relm4, and Clap versions. Accessibility was disabled for the virtual display run. [#2359](https://github.com/john-cd/rust_howto/issues/2359) retains the accessibility and other backend checks.
+- [GTK/Relm4](../bk/src/categories/gui/gtk.md): Linux GTK 4.18.6 under Xvfb passed the GTK button assertions and Relm4 model checks. Both corrected launchers opened, resized to 400 × 300, and closed cleanly in an isolated build using the staged sources and the workspace's direct GTK, Relm4, and Clap versions. Accessibility was disabled for the virtual display run. [#2359](https://github.com/john-cd/rust_howto/issues/2359) retains the accessibility and other backend checks.
 - [No Allocation](https://john-cd.com/rust_howto/categories/no-std/no_alloc.html): the recipes and package are already published in `bk`. The published example passed its test and `--no-default-features` check. The duplicate future preview was subsequently removed in [#2361](https://github.com/john-cd/rust_howto/issues/2361); links now target the published chapter.
 - Physical embedded/robotics, drones/UAVs, MIDI-device I/O, screen-reader behavior, and untested GUI/engine backends remain excluded from broad readiness claims. Their existing or new issues name the required host/device evidence.
 
@@ -151,15 +153,15 @@ fields or reject the call.
 Run from the repository root with the configured shared package/cache paths. Build output stays in the checkout's external slot. The Windows host used Rust 1.100.0, with Rust 1.98.1 for the two explicit baseline compile checks. Both NVIDIA RTX 3060 Laptop and Intel Iris Xe adapters are installed; the observed GPU render runs selected Intel Iris Xe. No NVIDIA runtime result is claimed.
 
 ```sh
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p science_robotics --examples
+just cargo test --manifest-path bk/platform/Cargo.toml --locked -p science_robotics --examples
 just cargo test --manifest-path bk/crates/Cargo.toml --locked -p game_development --examples
-just cargo test --manifest-path later/crates/cats/embedded/Cargo.toml --locked --examples
+just cargo test --manifest-path bk/platform/cats/embedded/Cargo.toml --locked --examples
 just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --features onnx --example machine_learning
 just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --example ml
 just cargo test --manifest-path bk/crates/Cargo.toml --locked -p rendering -p rendering_data_formats --examples
 just cargo test --manifest-path bk/crates/Cargo.toml --locked -p rendering_graphics_api --features wgpu --examples -- --include-ignored --nocapture
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p gui --features minifb,softbuffer --examples
-just cargo test --manifest-path later/crates/Cargo.toml --locked -p gui --features slint --example retained_mode_gui
+just cargo test --manifest-path bk/platform/Cargo.toml --locked -p gui --features minifb,softbuffer --examples
+just cargo test --manifest-path bk/platform/Cargo.toml --locked -p gui --features slint --example retained_mode_gui
 just cargo test --manifest-path bk/crates/Cargo.toml --locked -p multimedia_audio --example audio -- --ignored --nocapture
 just cargo +1.98.1 check --manifest-path bk/crates/Cargo.toml --locked -p science --features onnx --example machine_learning
 just cargo +1.98.1 check --manifest-path bk/crates/Cargo.toml --locked -p rendering_graphics_api --features wgpu --example offscreen_render
@@ -171,9 +173,9 @@ For self-closing Windows presentation checks, set the process environment variab
 
 ```powershell
 $env:RUST_HOWTO_SMOKE_TEST = '1'
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p gui --features minifb --example minifb_renderer
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p gui --features softbuffer --example window_creation -- software-pixels
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p gui --example window_creation -- winit
+just cargo run --manifest-path bk/platform/Cargo.toml --locked -p gui --features minifb --example minifb_renderer
+just cargo run --manifest-path bk/platform/Cargo.toml --locked -p gui --features softbuffer --example window_creation -- software-pixels
+just cargo run --manifest-path bk/platform/Cargo.toml --locked -p gui --example window_creation -- winit
 just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_engines --features ggez --example game_engines -- ggez
 just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_engines --example game_engines -- macroquad
 just cargo run --manifest-path bk/crates/Cargo.toml --locked -p games --example games
