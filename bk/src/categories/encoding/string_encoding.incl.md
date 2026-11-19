@@ -10,3 +10,4 @@
 | [Encode and Decode with `base64`][ex~encoding~base64] | {{#crate base64}} | {{#categories encoding=Encoding}} |
 | [Encode and Decode Hexadecimal with `hex`][ex~encoding~hex] | {{#crate hex}} | {{#categories encoding=Encoding}} |
 | [Encode Forms and Path Segments with `serde_urlencoded` and `urlencoding`][ex~encoding~form-urlencoded] | {{#crate serde_urlencoded}} {{#crate urlencoding}} | {{#categories encoding=Encoding}} |
+| [Decode a Windows-1252 File Line by Line][ex~encoding~stream-windows-1252] | `encoding_rs_io` | {{#categories encoding=Encoding}} |

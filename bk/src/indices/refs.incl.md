@@ -756,6 +756,7 @@
 [ex~encoding~serde]: ../categories/encoding/serde.md#serde
 [ex~encoding~serialize-to-csv-using-serde]: ../categories/encoding/csv.md#serialize-to-csv-using-serde
 [ex~encoding~serialize-to-csv]: ../categories/encoding/csv.md#serialize-to-csv
+[ex~encoding~stream-windows-1252]: ../categories/encoding/string_encoding.md#stream-windows-1252
 [ex~encoding~text-and-utf-8]: ../categories/encoding/string_encoding.md#text-and-utf-8
 [ex~encoding~toml]: ../categories/encoding/complex_encoding.md#toml
 [ex~encoding~transform-csv-column]: ../categories/encoding/csv.md#transform-csv-column

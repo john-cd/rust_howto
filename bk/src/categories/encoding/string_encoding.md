@@ -82,6 +82,14 @@ From `bk/crates`, run `cargo test --locked -p encoding --example string_encoding
 {{#include ../../../crates/cats/encoding/examples/string_encoding/form_urlencoded.rs:example}}
 ```
 
+## Decode a Windows-1252 File Line by Line {#stream-windows-1252}
+
+Wrap the input file in `DecodeReaderBytesBuilder` with an explicit Windows-1252 encoding, then put `BufReader` around the decoder to read UTF-8 lines. The fixture contains an accented letter and a euro sign encoded as Windows-1252 bytes. When the chosen encoding permits malformed sequences, the decoder replaces malformed input with `U+FFFD`. Choose a strict decoder if malformed input should fail the import.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/encoding/examples/stream_windows_1252.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Rust strings](../data-structures/strings.md).

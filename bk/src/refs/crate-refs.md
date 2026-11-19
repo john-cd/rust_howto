@@ -2970,6 +2970,9 @@
 [c~embedded-hal~lib.rs~badge]: https://img.shields.io/badge/lib.rs-embedded--hal-yellow
 [c~embedded-hal~repo]: https://github.com/rust-embedded/embedded-hal
 [c~embedded-hal~repo~badge]: https://img.shields.io/badge/embedded--hal-steelblue?logo=github
+[c~encoding_rs_io~crates.io]: https://crates.io/crates/encoding_rs_io
+[c~encoding_rs_io~docs]: https://docs.rs/encoding_rs_io
+[c~encoding_rs_io~repo]: https://github.com/BurntSushi/encoding_rs_io
 [c~encoding_rs~crates.io]: https://crates.io/crates/encoding_rs
 [c~encoding_rs~crates.io~badge]: https://img.shields.io/badge/crates.io-encoding__rs-crimson
 [c~encoding_rs~docs]: https://docs.rs/encoding_rs

@@ -70,7 +70,14 @@ name = "typecasts"
 path = "examples/typecasts/main.rs"
 test = true
 
+[[example]]
+name = "stream_windows_1252"
+path = "examples/stream_windows_1252.rs"
+test = true
+
 [dependencies]
+encoding_rs = "0.8.44"
+encoding_rs_io = "0.1.8"
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # encodes and decodes base64 as bytes or utf8

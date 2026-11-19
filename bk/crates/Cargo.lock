@@ -9833,6 +9833,8 @@ dependencies = [
  "clap",
  "csv",
  "data-encoding",
+ "encoding_rs",
+ "encoding_rs_io",
  "flatbuffers",
  "hex",
  "monostate 1.0.3",
