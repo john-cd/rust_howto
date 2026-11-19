@@ -70,7 +70,7 @@
 [p~embedded]: # "../embedded/index.md"
 [p~game-development]: https://john-cd.com/rust_howto/categories/game-development/game_development.html
 [p~games]: https://john-cd.com/rust_howto/categories/games/index.html
-[p~gpu]: # "../../other/gpu/gpu.md"
+[p~gpu]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/gpu/index.md
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
 [p~egui]: immediate_mode_gui.md
 [p~gui]: index.md

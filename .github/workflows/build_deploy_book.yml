@@ -235,6 +235,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Check portable GPU examples
+        if: ${{ matrix.partition == 1 }}
+        run: |
+          cargo test --locked --manifest-path bk/crates/gpu/image_blur/Cargo.toml
+          cargo check --locked --manifest-path bk/crates/gpu/vendor_compute/Cargo.toml --all-targets --all-features
       - name: Run partitioned tests
         run: |
           docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml run --rm \

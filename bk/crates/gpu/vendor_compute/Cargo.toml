@@ -1,0 +1,29 @@
+[workspace]
+
+[package]
+name = "vendor_compute"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[[example]]
+name = "cuda_double"
+required-features = ["cuda"]
+
+[[example]]
+name = "opencl_double"
+required-features = ["opencl"]
+
+[dependencies]
+cudarc = { version = "=0.19.10", default-features = false, optional = true, features = [
+    "std",
+    "driver",
+    "nvrtc",
+    "dynamic-loading",
+    "cuda-12080",
+] }
+opencl3 = { version = "=0.12.4", optional = true }
+
+[features]
+cuda = ["dep:cudarc"]
+opencl = ["dep:opencl3"]

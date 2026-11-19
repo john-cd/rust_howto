@@ -72,8 +72,6 @@
   - [Quant](categories/finance/quant.md)
   - [Market data](categories/finance/market_data.md)
 
-- [GPU Compute Recipes](other/gpu/gpu.md)
-
 - [GUI](categories/gui/index.md)
   - [Responsive Background Work](categories/gui/background_work.md)
   - [Clipboard](categories/gui/clipboard.md)

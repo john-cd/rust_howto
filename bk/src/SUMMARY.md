@@ -358,6 +358,7 @@
   - [Unix APIs](categories/os_unix-apis/unix.md)
 
 - [GPU Programming](other/gpu/index.md)
+  - [GPU Compute Recipes](other/gpu/gpu.md)
 
 - [Games](categories/games/index.md)
 

@@ -15,7 +15,7 @@ This index covers general-purpose computing on GPUs from Rust. Graphics APIs for
 | Machine-learning tensors and kernels | [`CubeCL`][c~cubecl~docs], [`Burn`][c~burn~docs], [`Candle`][c~candle-core~docs]. | Burn lists CUDA, ROCm, Metal, Vulkan, WebGPU, and CPU backends; Candle provides CPU, CUDA, and Metal devices. Backend availability depends on framework features and devices. | CubeCL is in alpha; framework APIs and backend support evolve. Select Cargo features and native SDKs for the chosen device. See the [deep-learning guide](../machine-learning/deep_learning.md). |
 | OpenCL compute | [`opencl3`][c~opencl3~docs] or [`ocl`][c~ocl~docs]. | Any CPU, GPU, DSP, FPGA, or accelerator with a compatible OpenCL implementation, including vendor-provided runtimes. | `opencl3` exposes OpenCL 3.0. OpenCL 2.x and 3.0 capabilities are optional and vary by device; `ocl` is an older, slower-moving alternative. Check its maintenance and runtime compatibility before adopting it. |
 
-Start with the [headless wgpu compute example][gpu~compute] for a complete dispatch and readback. It includes an adapter-free WGSL validation test and a separate run that needs a compute-capable adapter.
+Start with the [headless wgpu compute example][gpu~compute] for a complete dispatch and readback. It includes an adapter-free WGSL validation test and a separate run that needs a compute-capable adapter. The [GPU compute recipes](gpu.md) cover CUDA, OpenCL, Rust-authored shaders, and benchmarking the same blur on the CPU and GPU.
 
 ## Run a first compute kernel
 
