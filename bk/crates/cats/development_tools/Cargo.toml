@@ -96,7 +96,13 @@ name = "generic_ir"
 path = "examples/generic_ir.rs"
 test = true
 
+[[example]]
+name = "lossless_tree"
+path = "examples/lossless_tree.rs"
+test = true
+
 [dependencies]
+rowan = "0.17.0"
 # Application-level tracing for Rust.
 tracing = "0.1.44"
 # Utilities for implementing and composing `tracing` subscribers.

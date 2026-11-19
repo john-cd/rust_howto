@@ -68,6 +68,14 @@ The compiler's `proc_macro` crate can only be used inside a procedural macro, so
 
 `syn` is modular, so enable only the features you use. `parsing`, `printing`, `derive` and `proc-macro` are on by default. Add `full` to parse items, function bodies and statements (needed to parse a whole file), `visit` or `visit-mut` for visitors, `fold` for tree rewriting, `extra-traits` for `Debug` and `PartialEq` on syntax nodes, and `proc-macro2`'s `span-locations` for line and column numbers outside a macro. Parsing a file with `full` compiles noticeably slower than a `derive`-only build.
 
+## Edit a Lossless Syntax Tree with Rowan {#rowan-lossless-edit}
+
+A lossless syntax tree stores whitespace and comments as tokens alongside syntax. This example builds a small tree directly so the node replacement is visible. A real parser would emit the same kinds of nodes and tokens from source. Replacing the value node returns a new root and preserves the untouched tokens and original tree.
+
+```rust,ignore,noplayground
+{{#include ../../../../crates/cats/development_tools/examples/lossless_tree.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Parsing Utilities](../../parsing/index.md).

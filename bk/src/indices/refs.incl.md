@@ -1306,6 +1306,7 @@
 [ex~rust_source~cargo-metadata]: ../categories/development-tools/other/rust_source.md#cargo-metadata
 [ex~rust_source~find-unwraps]: ../categories/development-tools/other/rust_source.md#find-unwraps
 [ex~rust_source~quote-prettyplease]: ../categories/development-tools/other/rust_source.md#quote-prettyplease
+[ex~rust_source~rowan-lossless-edit]: ../categories/development-tools/other/rust_source.md#rowan-lossless-edit
 [ex~rust_source~syn-parse-file]: ../categories/development-tools/other/rust_source.md#syn-parse-file
 [ex~rust_source~wasm-roundtrip]: ../categories/development-tools/other/rust_source.md#wasm-roundtrip
 [ex~scheduling~cron-loop]: ../other/scheduling/scheduling.md#cron-loop

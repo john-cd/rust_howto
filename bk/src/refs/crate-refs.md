@@ -7506,6 +7506,9 @@
 [c~roto~repo~badge]: https://img.shields.io/badge/roto-steelblue?logo=github
 [c~roto~website]: https://www.nlnetlabs.nl/projects/routing/rotonda
 [c~roto~website~badge]: https://img.shields.io/badge/roto-coral
+[c~rowan~crates.io]: https://crates.io/crates/rowan
+[c~rowan~docs]: https://docs.rs/rowan
+[c~rowan~repo]: https://github.com/rust-analyzer/rowan
 [c~roxmltree~crates.io]: https://crates.io/crates/roxmltree
 [c~roxmltree~crates.io~badge]: https://img.shields.io/badge/crates.io-roxmltree-crimson
 [c~roxmltree~docs]: https://docs.rs/roxmltree
