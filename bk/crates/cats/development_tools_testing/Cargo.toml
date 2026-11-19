@@ -24,6 +24,11 @@ name = "cli-demo"
 path = "examples/cli_testing/cli_demo.rs"
 test = true
 
+[[test]]
+name = "postgres_container"
+path = "tests/postgres_container.rs"
+required-features = ["postgres-container"]
+
 [[example]]
 name = "env_vars"
 path = "examples/test_techniques/env_vars.rs"
@@ -116,23 +121,16 @@ path = "examples/network_recovery.rs"
 test = true
 
 [dependencies]
-turmoil = "0.7.2"
-postgres-types = { version = "0.2.14", features = ["derive"], optional = true }
-tokio-postgres = { version = "0.7.18", optional = true }
-# The published 0.15.0 release uses testcontainers 0.27, which conflicts with the workspace's Bollard version.
-testcontainers-modules = { git = "https://github.com/testcontainers/testcontainers-rs-modules-community.git", rev = "d69e3a09397532accea9d9e907fecc280b1513a8", features = ["postgres"], optional = true }
-# Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
-# A simple to use, efficient, and full-featured Command Line Argument Parser
 clap = { version = "4.6.7", features = ["derive"] }
-# Floating point approximate comparison traits
 float-cmp = "0.10.0"
-# Match command-line output and diagnostics in tests.
+postgres-types = { version = "0.2.14", features = ["derive"], optional = true }
 predicates = "3.1.4"
-# A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] }
-# An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
+testcontainers-modules = { git = "https://github.com/testcontainers/testcontainers-rs-modules-community.git", rev = "d69e3a09397532accea9d9e907fecc280b1513a8", features = ["postgres"], optional = true }
 tokio = { version = "1.54.1", features = ["io-util", "macros", "rt", "time", "test-util"] }
+tokio-postgres = { version = "0.7.18", optional = true }
+turmoil = "0.7.2"
 
 [dev-dependencies]
 # Approximate floating point equality comparisons and assertions.
@@ -161,11 +159,6 @@ proptest = "1.12.0"
 rstest = "0.28.0"
 # Simple, safe HTTP client
 ureq = "3.5.1"
-
-[[test]]
-name = "postgres_container"
-path = "tests/postgres_container.rs"
-required-features = ["postgres-container"]
 
 [features]
 postgres-container = ["dep:postgres-types", "dep:testcontainers-modules", "dep:tokio-postgres"]

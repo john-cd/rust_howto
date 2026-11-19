@@ -39,14 +39,14 @@ test = true
 
 [dependencies]
 avif-decode = { version = "3.0.0", default-features = false }
-imgref = "1.12.3"
-ravif = { version = "0.13.0", default-features = false }
-rgb = "0.8.53"
 clap = "4.6.7"
 image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
+imgref = "1.12.3"
 kamadak-exif = "0.6.2"
 oxipng = { version = "10.2.1", default-features = false }
 palette = "0.7.7"
+ravif = { version = "0.13.0", default-features = false }
+rgb = "0.8.53"
 
 [dev-dependencies]
 # Isolate generated image files during tests.

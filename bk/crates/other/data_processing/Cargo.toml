@@ -40,20 +40,19 @@ test = true
 required-features = ["object-storage"]
 
 [dependencies]
-tempfile = { version = "3.27.0", optional = true }
-futures-util = { version = "0.3.34", optional = true }
-object_store = { version = "0.14.2", features = ["fs"], optional = true }
 anyhow = "1.0.104"
-# Keep the Arrow major version aligned with DataFusion for compatible record batches.
 arrow = { version = "59.3.2", features = ["csv", "json", "prettyprint"], optional = true }
 arrow-array = { version = "59.3.2", optional = true }
 arrow-cast = { version = "59.3.2", features = ["prettyprint"], optional = true }
 arrow-ipc = { version = "59.3.2", optional = true }
 clap = { version = "4.6.7", features = ["derive"], optional = true }
 datafusion = { version = "55.2.0", default-features = false, features = ["sql"], optional = true }
+futures-util = { version = "0.3.34", optional = true }
+object_store = { version = "0.14.2", features = ["fs"], optional = true }
 polars = { version = "0.55.2", default-features = false, features = ["lazy"] }
 serde = { version = "1.0.229", features = ["derive"], optional = true }
 serde_json = { version = "1.0.154", optional = true }
+tempfile = { version = "3.27.0", optional = true }
 tokio = { version = "1.54.1", features = ["macros", "rt"], optional = true }
 
 [features]
