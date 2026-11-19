@@ -64,8 +64,8 @@ A closure implements the call traits its body supports. The traits form a hierar
 Every closure implements `FnOnce`. Whether it also implements `FnMut` or `Fn` depends on what its body does with captured values, not on whether it uses `move`. A `move` closure that only reads its captures can still implement `Fn`.
 
 A shared reference `&F` implements all three call traits when `F: Fn`. A mutable
-reference `&mut F` implements `FnMut` and `FnOnce` when `F: FnMut`. It also
-implements `Fn` when `F: Fn`. An owned `F: FnOnce` can be called by value,
+reference `&mut F` implements `FnMut` and `FnOnce` when `F: FnMut`. Use a shared reference when
+an API requires `Fn`. An owned `F: FnOnce` can be called by value,
 consuming the callable. See the implementations listed in the standard library
 documentation for the three traits above.
 
