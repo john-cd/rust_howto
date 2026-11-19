@@ -67,6 +67,7 @@
 [ex~algorithms~petgraph-dijkstra]: ../categories/algorithms/graph_algorithms.md#petgraph-dijkstra
 [ex~algorithms~petgraph-mst]: ../categories/algorithms/graph_algorithms.md#petgraph-mst
 [ex~algorithms~petgraph-toposort]: ../categories/algorithms/graph_algorithms.md#petgraph-toposort
+[ex~algorithms~replay-chacha]: ../categories/algorithms/random_value_generation.md#replay-chacha
 [ex~algorithms~sha1]: ../categories/algorithms/hashing.md#sha1
 [ex~algorithms~sha256]: ../categories/algorithms/hashing.md#sha256
 [ex~algorithms~sha2]: ../categories/algorithms/hashing.md#sha2
@@ -620,6 +621,7 @@
 [ex~development-tools_profiling~process-memory]: ../categories/development-tools_profiling/memory_usage_analysis.md#process-memory
 [ex~development-tools_profiling~profiling-scopes]: ../categories/development-tools_profiling/instrumentation_profiling.md#profiling-scopes
 [ex~development-tools_profiling~puffin-server]: ../categories/development-tools_profiling/instrumentation_profiling.md#puffin-server
+[ex~development-tools_profiling~request-percentiles]: ../categories/development-tools_profiling/benchmarking.md#request-percentiles
 [ex~development-tools_profiling~tracing]: ../categories/development-tools_profiling/memory_usage_analysis.md#tracing
 [ex~development-tools_testing~afl]: ../categories/development-tools_testing/fuzzing.md#afl
 [ex~development-tools_testing~approx]: ../categories/development-tools_testing/assertions.md#approx
@@ -646,6 +648,7 @@
 [ex~development-tools_testing~mocking]: ../categories/development-tools_testing/mocking.md#mocking
 [ex~development-tools_testing~mutation-testing]: ../categories/development-tools_testing/mutation_testing.md#mutation-testing
 [ex~development-tools_testing~paused-time]: ../categories/development-tools_testing/testing.md#paused-time
+[ex~development-tools_testing~postgres-container]: ../categories/development-tools_testing/testing.md#postgres-container
 [ex~development-tools_testing~proptest-strategy]: ../categories/development-tools_testing/testing.md#proptest-strategy
 [ex~development-tools_testing~proptesting]: ../categories/development-tools_testing/property_based_testing.md#proptesting
 [ex~development-tools_testing~rstest]: ../categories/development-tools_testing/testing.md#rstest
@@ -872,6 +875,7 @@
 [ex~installation~cargo-install]: ../categories/development-tools/installation/install.md#cargo-install
 [ex~installation~rustup]: ../categories/development-tools/installation/rustup.md#rustup
 [ex~internationalization~internationalization]: ../categories/internationalization/internationalization.md#internationalization
+[ex~internationalization~locale-collation]: ../categories/internationalization/internationalization.md#locale-collation
 [ex~introduction~additional-examples]: ../introduction/how_to_read_this_book.md#additional-examples
 [ex~introduction~how-to-use-code-examples]: ../introduction/how_to_read_this_book.md#how-to-use-code-examples
 [ex~introduction~note-about-crate-representation]: ../introduction/how_to_read_this_book.md#note-about-crate-representation
@@ -1111,6 +1115,7 @@
 [ex~mathematics~nalgebra-svd]: ../categories/mathematics/linear_algebra.md#nalgebra-svd
 [ex~mathematics~nalgebra-transformations]: ../categories/mathematics/linear_algebra.md#nalgebra-transformations
 [ex~mathematics~nalgebra-vectors]: ../categories/mathematics/linear_algebra.md#nalgebra-vectors
+[ex~mathematics~normal-tail]: ../categories/mathematics/statistics.md#normal-tail
 [ex~mathematics~num-bigint]: ../categories/mathematics/additional_numeric_types.md#num-bigint
 [ex~mathematics~num]: ../categories/mathematics/additional_numeric_types.md#num
 [ex~mathematics~rational-numbers]: ../categories/mathematics/additional_numeric_types.md#rational-numbers

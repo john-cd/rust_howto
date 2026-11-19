@@ -136,6 +136,14 @@ Run this benchmark from `bk/crates` with `cargo bench --locked -p data_structure
 {{#include ../../../crates/cats/data_structures/benches/hashmap.rs:example}}
 ```
 
+## Measure Request Latency Percentiles {#request-percentiles}
+
+Record durations in milliseconds. This histogram is configured to cover 1 through 60,000 ms with three significant digits. A percentile is the approximate duration at or below which the specified share of requests finished. Adding three slow requests moves p99 into the slow group while p50 stays nearly the same. See [Statistics](../mathematics/statistics.md) for descriptive statistics.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/development_tools_profiling/examples/request_percentiles.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Development Tools - Debugging](../development-tools_debugging/index.md).

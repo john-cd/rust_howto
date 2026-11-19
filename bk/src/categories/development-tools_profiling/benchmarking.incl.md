@@ -17,3 +17,4 @@ process.
 | [Benchmark Arena and Heap Allocation][ex~development-tools_profiling~arena-benchmark] | {{#crate bumpalo}} | {{#categories development-tools::profiling=Profiling}} |
 | [Benchmark Hash Map Implementations][ex~development-tools_profiling~hashmap-benchmark] | {{#crate ahash}} | {{#categories development-tools::profiling=Profiling}} |
 | [Compare Benchmark Results in CI][ex~development-tools_profiling~benchmark-regression] | {{#crate std}} | {{#categories development-tools::profiling=Profiling}} |
+| [Measure Request Latency Percentiles][ex~development-tools_profiling~request-percentiles] | `hdrhistogram` | {{#categories development-tools::profiling=Profiling}} |

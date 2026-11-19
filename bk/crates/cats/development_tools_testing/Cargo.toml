@@ -111,6 +111,9 @@ path = "examples/testing/main.rs"
 test = true
 
 [dependencies]
+tokio-postgres = { version = "0.7.18", optional = true }
+# The published 0.15.0 release uses testcontainers 0.27, which conflicts with the workspace's Bollard version.
+testcontainers-modules = { git = "https://github.com/testcontainers/testcontainers-rs-modules-community.git", rev = "d69e3a09397532accea9d9e907fecc280b1513a8", features = ["postgres"], optional = true }
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # A simple to use, efficient, and full-featured Command Line Argument Parser
@@ -152,7 +155,13 @@ rstest = "0.28.0"
 # Simple, safe HTTP client
 ureq = "3.5.1"
 
+[[test]]
+name = "postgres_container"
+path = "tests/postgres_container.rs"
+required-features = ["postgres-container"]
+
 [features]
+postgres-container = ["dep:testcontainers-modules", "dep:tokio-postgres"]
 afl-fuzzing = ["dep:afl"]
 
 [target.'cfg(not(windows))'.dependencies]

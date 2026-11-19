@@ -474,6 +474,7 @@ dependencies = [
  "pathfinding",
  "petgraph 0.8.3",
  "rand 0.10.4",
+ "rand_chacha 0.10.0",
  "rand_distr 0.6.0",
  "ring",
  "rustc-hash 2.1.3",
@@ -8821,10 +8822,12 @@ dependencies = [
 name = "development_tools_profiling"
 version = "0.1.2"
 dependencies = [
+ "anyhow",
  "clap",
  "criterion",
  "dhat",
  "divan",
+ "hdrhistogram",
  "measure_time",
  "profiling",
  "puffin",
@@ -8853,7 +8856,9 @@ dependencies = [
  "proptest",
  "rstest",
  "serde",
+ "testcontainers-modules",
  "tokio",
+ "tokio-postgres",
  "ureq",
 ]
 
@@ -13633,6 +13638,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "hdrhistogram"
+version = "7.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f49d1053f4708f0af3cf9fc5bffc7e68a914a3c45becb231c80068c9c3f78bea"
+dependencies = [
+ "byteorder",
+ "num-traits",
+]
+
+[[package]]
 name = "headers"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -15279,7 +15294,9 @@ dependencies = [
 name = "internationalization"
 version = "0.1.2"
 dependencies = [
+ "anyhow",
  "icu",
+ "icu_collator",
 ]
 
 [[package]]
@@ -30900,6 +30917,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "testcontainers-modules"
+version = "0.15.0"
+source = "git+https://github.com/testcontainers/testcontainers-rs-modules-community.git?rev=d69e3a09397532accea9d9e907fecc280b1513a8#d69e3a09397532accea9d9e907fecc280b1513a8"
+dependencies = [
+ "testcontainers",
+]
+
+[[package]]
 name = "testing_table"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -30934,6 +30959,7 @@ dependencies = [
  "fuzzy-matcher",
  "heck 0.5.0",
  "hyphenation",
+ "icu_normalizer",
  "indoc",
  "joinery",
  "lazy_static",

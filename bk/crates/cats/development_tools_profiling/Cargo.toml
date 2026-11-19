@@ -46,7 +46,14 @@ name = "puffin_server"
 path = "examples/puffin_server.rs"
 test = true
 
+[[example]]
+name = "request_percentiles"
+path = "examples/request_percentiles.rs"
+test = true
+
 [dependencies]
+hdrhistogram = { version = "7.6.0", default-features = false }
+anyhow = "1.0.104"
 clap = "4.6.7"
 # A library for heap profiling and ad hoc profiling with DHAT.
 dhat = "0.3.3"

@@ -54,6 +54,8 @@ Use `ContinuousCDF::sf` to compute the probability above a threshold. The surviv
 
 To draw random samples from a distribution, see [Random Value Generation](../algorithms/random_value_generation.md#generate-random-numbers-within-a-given-distribution).
 
+For latency percentiles, see [Measure Request Latency Percentiles](../development-tools_profiling/benchmarking.md#request-percentiles).
+
 ## Related Topics {#related-topics .skip}
 
 - [[complex_numbers | Complex Numbers]].

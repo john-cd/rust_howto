@@ -120,6 +120,20 @@ Deriving `Arbitrary` lets a fuzz target map raw input bytes to a typed request. 
 {{#include ../../../crates/cats/development_tools_testing/tests/cli_test.rs:example}}
 ```
 
+## Test a Query Against Disposable PostgreSQL {#postgres-container}
+
+This test requires a running Docker daemon in Linux container mode. `testcontainers-modules` supplies the PostgreSQL image configuration and readiness check. `testcontainers` starts the pinned `postgres:17.6-alpine` image, waits for readiness, and removes the container when its handle drops. The test uses the mapped host port and credentials for this disposable database. See [Postgres](../database/postgres.md) for database recipes.
+
+From `bk/`, enable the example and run the ignored test explicitly.
+
+```console
+just cargo test --manifest-path crates/Cargo.toml -p development_tools_testing --features postgres-container --test postgres_container -- --ignored
+```
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/development_tools_testing/tests/postgres_container.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Model-Checking with Loom](../concurrency/loom.md) explores thread interleavings that ordinary tests miss.

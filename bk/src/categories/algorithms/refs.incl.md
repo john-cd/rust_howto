@@ -48,3 +48,4 @@
 [p~b-trees]: ../data-structures/b-trees.md
 [p~binary_heaps]: ../data-structures/binary_heaps.md
 [p~vectors]: ../data-structures/vectors.md
+[ex~algorithms~replay-chacha]: random_value_generation.md#replay-chacha

@@ -18,6 +18,14 @@ The example compares byte length, scalar values, grapheme clusters, and estimate
 
 For string ownership and mutation, see [Strings](../data-structures/strings.md). For byte encodings, see [Character Encoding](../encoding/string_encoding.md).
 
+## Normalize Canonically Equivalent Text {#unicode-nfc}
+
+Normalize both spellings to NFC with `icu_normalizer` before comparing them. The original strings compare unequal because their UTF-8 bytes differ. For sorting according to language rules, see [Sort Text with Locale Rules](../internationalization/internationalization.md#locale-collation).
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/text_processing/examples/unicode_nfc.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [String Manipulation](string_manipulation.md).

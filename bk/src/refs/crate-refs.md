@@ -3997,6 +3997,9 @@
 [c~haversine~lib.rs~badge]: https://img.shields.io/badge/lib.rs-haversine-yellow
 [c~haversine~repo]: https://github.com/visualjeff/haversine
 [c~haversine~repo~badge]: https://img.shields.io/badge/haversine-steelblue?logo=github
+[c~hdrhistogram~crates.io]: https://crates.io/crates/hdrhistogram
+[c~hdrhistogram~docs]: https://docs.rs/hdrhistogram
+[c~hdrhistogram~repo]: https://github.com/HdrHistogram/HdrHistogram_rust
 [c~headers~crates.io]: https://crates.io/crates/headers
 [c~headers~crates.io~badge]: https://img.shields.io/badge/crates.io-headers-crimson
 [c~headers~docs]: https://docs.rs/headers
@@ -4272,6 +4275,9 @@
 [c~iconv~lib.rs~badge]: https://img.shields.io/badge/lib.rs-iconv-yellow
 [c~iconv~repo]: https://github.com/andelf/rust-iconv
 [c~iconv~repo~badge]: https://img.shields.io/badge/iconv-steelblue?logo=github
+[c~icu_collator~crates.io]: https://crates.io/crates/icu_collator
+[c~icu_collator~docs]: https://docs.rs/icu_collator
+[c~icu_collator~repo]: https://github.com/unicode-org/icu4x
 [c~icu_datetime~crates.io]: https://crates.io/crates/icu_datetime
 [c~icu_datetime~crates.io~badge]: https://img.shields.io/badge/crates.io-icu__datetime-crimson
 [c~icu_datetime~docs]: https://docs.rs/icu_datetime
@@ -4282,6 +4288,9 @@
 [c~icu_datetime~repo~badge]: https://img.shields.io/badge/icu__datetime-steelblue?logo=github
 [c~icu_datetime~website]: https://icu4x.unicode.org
 [c~icu_datetime~website~badge]: https://img.shields.io/badge/icu__datetime-coral
+[c~icu_normalizer~crates.io]: https://crates.io/crates/icu_normalizer
+[c~icu_normalizer~docs]: https://docs.rs/icu_normalizer
+[c~icu_normalizer~repo]: https://github.com/unicode-org/icu4x
 [c~icu~crates.io]: https://crates.io/crates/icu
 [c~icu~crates.io~badge]: https://img.shields.io/badge/crates.io-icu-crimson
 [c~icu~docs]: https://docs.rs/icu
@@ -6982,6 +6991,9 @@
 [c~rake~repo]: https://github.com/yaa110/rake-rs
 [c~rake~repo~badge]: https://img.shields.io/badge/rake-steelblue?logo=github
 [c~rand::Rng~docs]: https://docs.rs/rand/latest/rand/trait.Rng.html
+[c~rand_chacha~crates.io]: https://crates.io/crates/rand_chacha
+[c~rand_chacha~docs]: https://docs.rs/rand_chacha
+[c~rand_chacha~repo]: https://github.com/rust-random/rand
 [c~rand_core~crates.io]: https://crates.io/crates/rand_core
 [c~rand_core~docs]: https://docs.rs/rand_core
 [c~rand_core~repo]: https://github.com/rust-random/rand_core

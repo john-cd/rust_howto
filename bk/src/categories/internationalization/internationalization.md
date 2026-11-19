@@ -34,6 +34,16 @@ Keep user-facing messages in translation resources instead of concatenating tran
 
 Test fallback locales, plural categories, long translated strings, dates around calendar boundaries, and right-to-left layouts where supported. Automated checks cannot replace review by native speakers or testing with the target operating system and assistive technologies.
 
+## Sort Text with Locale Rules {#locale-collation}
+
+Compare the same words using German and Swedish collation. German sorts `ä` with `a`, while Swedish sorts it after `z`. This example uses compiled ICU4X data. For custom data, `icu_provider` supplies the provider interfaces used by ICU4X constructors.
+
+For canonical equivalence in string comparison, see [Normalize Canonically Equivalent Text](../text-processing/unicode.md#unicode-nfc).
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/internationalization/examples/locale_collation.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Localization](../localization/index.md).

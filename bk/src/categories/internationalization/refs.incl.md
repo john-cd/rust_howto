@@ -4,3 +4,4 @@
 [c~unic-langid~docs]: https://docs.rs/unic-langid
 
 [ex~internationalization~internationalization]: internationalization.md#internationalization
+[ex~internationalization~locale-collation]: internationalization.md#locale-collation

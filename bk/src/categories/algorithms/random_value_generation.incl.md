@@ -9,3 +9,4 @@
 | [Create Random Passwords from a Set of Alphanumeric Characters][ex~algorithms~generate-random-values-from-set-alphanumeric] | {{#crate rand}} | {{#categories algorithms=Algorithms os="Operating systems"}} |
 | [Create Random Passwords from a Set of User-defined Characters][ex~algorithms~create-random-passwords-from-a-set-of-user-defined-characters] | {{#crate rand}} | {{#categories algorithms=Algorithms os="Operating systems"}} |
 | [Generate Random Numbers with `fastrand`][ex~algorithms~fastrand] | {{#crate fastrand}} | {{#categories algorithms=Algorithms}} |
+| [Replay Random Draws with ChaCha12][ex~algorithms~replay-chacha] | `rand_chacha` | {{#categories algorithms=Algorithms}} |

@@ -20,3 +20,4 @@
 [ex~development-tools_profiling~leaks]: memory_usage_analysis.md#leaks
 [ex~development-tools_profiling~debugging]: memory_usage_analysis.md#debugging
 [ex~development-tools_profiling~tracing]: memory_usage_analysis.md#tracing
+[ex~development-tools_profiling~request-percentiles]: benchmarking.md#request-percentiles

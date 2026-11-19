@@ -13,3 +13,4 @@
 | [Test Timeouts Instantly with Paused Time][ex~development-tools_testing~paused-time] | [![tokio][c~tokio~docs~badge]][c~tokio~docs]{{hi:tokio}} | {{#categories development-tools::testing=Testing}} |
 | [Generate Valid Test Inputs with a Custom `proptest` Strategy][ex~development-tools_testing~proptest-strategy] | [![proptest][c~proptest~docs~badge]][c~proptest~docs]{{hi:proptest}} | {{#categories development-tools::testing=Testing}} |
 | [Test a Command-line Program with `assert_cmd`][ex~development-tools_testing~cli-testing] | {{#crate assert_cmd}} {{#crate predicates}} | {{#categories development-tools::testing=Testing}} |
+| [Test a Query Against Disposable PostgreSQL][ex~development-tools_testing~postgres-container] | `testcontainers`, `testcontainers-modules` | {{#categories development-tools::testing=Testing}} |

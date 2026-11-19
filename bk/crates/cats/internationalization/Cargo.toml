@@ -22,7 +22,14 @@ name = "internationalization"
 path = "examples/internationalization/main.rs"
 test = true
 
+[[example]]
+name = "locale_collation"
+path = "examples/locale_collation.rs"
+test = true
+
 [dependencies]
+icu_collator = "2.4.0"
+anyhow = "1.0.104"
 # ICU4X: International Components for Unicode, written in Rust
 icu = { version = "2.4.0", features = ["compiled_data"] }
 

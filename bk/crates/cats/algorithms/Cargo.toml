@@ -41,7 +41,13 @@ name = "sort"
 path = "examples/sort/main.rs"
 test = true
 
+[[example]]
+name = "replay_chacha"
+path = "examples/replay_chacha.rs"
+test = true
+
 [dependencies]
+rand_chacha = "=0.10.0"
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # Pure Rust implementation of Base16 a.k.a hexadecimal (RFC 4648) which avoids any usages of data-dependent branches/LUTs and thereby provides...

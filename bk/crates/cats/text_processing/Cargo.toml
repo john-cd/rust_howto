@@ -92,7 +92,13 @@ name = "unicode"
 path = "examples/unicode/main.rs"
 test = true
 
+[[example]]
+name = "unicode_nfc"
+path = "examples/unicode_nfc.rs"
+test = true
+
 [dependencies]
+icu_normalizer = "2.4.0"
 # Fast multiple substring searching.
 aho-corasick = "1.1.5"
 # Flexible concrete Error type built on std::error::Error

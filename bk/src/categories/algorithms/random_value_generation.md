@@ -90,6 +90,16 @@ Alternatively, the [`passwords`][c~passwords~docs]↗{{hi:passwords}} crate prov
 
 You should also read the [`oorandom` README file][c~oorandom~lib.rs]↗ for a comparison of `rand` alternatives and a brief history of random number generation.
 
+## Replay Random Draws with ChaCha12 {#replay-chacha}
+
+Use `rand_chacha` 0.10.0 and a named `ChaCha12Rng` to replay a randomized test. The array holds the raw words the test expects, so the assertion catches a change even if two generators started in the same run still agree. Keep this fixed seed in test fixtures. Generate fresh secret randomness from an operating system source.
+
+`rand_core` defines the generator traits, `rand` samples values, `rand_distr` adds distributions, and `getrandom` reads directly from the operating system. `StdRng` can change its implementation across releases.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/algorithms/examples/replay_chacha.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [[algorithms | Algorithms]].
