@@ -21,16 +21,15 @@ use mdbook_scrub::Preproc;
 /// Markdown with one hidden section and one hidden include between visible text.
 const SAMPLE: &str = "Visible intro.\n\n<div class=\"hidden\">secret notes</div>\n\n{{#include _hidden.rs}}\n\nVisible outro.\n";
 
-#[expect(
-    clippy::print_stdout,
-    reason = "Example reports the scrubbed chapter on standard output"
-)]
-
 /// Preprocesses a sample mdBook chapter with the scrubber.
 ///
 /// # Errors
 ///
 /// Returns an error if chapter preprocessing fails.
+#[expect(
+    clippy::print_stdout,
+    reason = "Example reports the scrubbed chapter on standard output"
+)]
 fn main() -> anyhow::Result<()> {
     let mut book = Book::new();
     book.push_item(Chapter::new(
