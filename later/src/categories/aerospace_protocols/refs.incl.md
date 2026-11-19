@@ -13,5 +13,5 @@
 [p~development-tools_ffi]: ../development-tools_ffi/index.md
 [p~embedded]: ../embedded/index.md
 [p~hardware-support]: https://john-cd.com/rust_howto/categories/hardware-support/index.html
-[p~simulation]: ../simulation/index.md
+[p~simulation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/simulation/index.md
 [p~space_protocols]: ../aerospace_space-protocols/space_protocols.md

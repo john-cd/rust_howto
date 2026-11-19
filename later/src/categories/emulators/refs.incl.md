@@ -13,4 +13,4 @@
 [p~embedded]: ../embedded/index.md
 [p~graphics]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/graphics/index.md
 [p~hardware-support]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/hardware-support/index.md
-[p~virtualization]: ../virtualization/index.md
+[p~virtualization]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/virtualization/index.md

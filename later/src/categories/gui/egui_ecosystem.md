@@ -16,15 +16,19 @@ An `egui::Context` does not need a window. `Context::run_ui` runs one frame from
 {{#include ../../../crates/cats/gui/examples/immediate_mode_gui/egui_headless.rs:example}}
 ```
 
-### Click a Button by Label {#egui-kittest}
+### Test Pointer and Keyboard Interaction {#egui-kittest}
 
 [![egui_kittest][c~egui_kittest~docs~badge]][c~egui_kittest~docs]{{hi:egui_kittest}} [![cat~gui][cat~gui~badge]][cat~gui]{{hi:GUI}}{{hi:Testing}}
 
-[`egui_kittest::Harness`][c~egui_kittest::Harness~docs]↗{{hi:egui_kittest::Harness}} owns an `egui` context and runs your UI headless. Its queries use the accessibility tree, so `get_by_label("Increment")` finds a widget the way a screen reader user would, and `click` simulates a pointer press. Call `run` after an action to let the UI settle.
+[`egui_kittest::Harness`][c~egui_kittest::Harness~docs]↗{{hi:egui_kittest::Harness}} owns an `egui` context and runs your UI headless. Its queries use the accessibility tree, so `get_by_label("Increment")` finds a widget by its exposed accessible name, and `click` simulates a pointer press. Call `run` after an action to let the UI settle.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/gui/examples/immediate_mode_gui/egui_kittest.rs:example}}
 ```
+
+The harness clicks the accessible `Increment` label twice, then starts a fresh counter and activates the button with Tab and Enter. It shrinks the viewport and checks that both labels and the count remain available. Run it from `later/crates` with `cargo run --locked -p gui --example immediate_mode_gui -- egui-kittest`.
+
+A headless check can catch a lost focus target or state reset quickly. On a supported desktop, also try Tab, Shift+Tab, and Enter with the actual window focused, then shrink, minimize, and restore it. Check that focus remains visible and the UI can still be used. A platform screen-reader check belongs to the separate [accessibility walkthrough](../accessibility/screen_readers.md).
 
 Use the same `egui_kittest` version as `egui`: the crate releases in lockstep.
 

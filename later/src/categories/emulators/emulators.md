@@ -12,17 +12,27 @@ The two-register VM below fetches an instruction from program memory, decodes it
 {{#include ../../../crates/cats/emulators/examples/emulators/register_vm.rs:example}}
 ```
 
-The hidden host runner loads a six-instruction program that sums 5 down to 1, prints `15`, and limits execution to 64 instructions so a looping guest cannot run forever. Run it from `later/crates` with `cargo run -p emulators --example emulators`.
+The hidden host runner loads a six-instruction program that sums 5 down to 1, prints `15`, and limits execution to 64 instructions so a looping guest cannot run forever. Run it from `later/crates` with `cargo run --locked -p emulators --example emulators -- register-vm`.
 
 ## RISC-V Virtual Machines {#virtual-machines-cpu-emulators}
 
 [`PolkaVM`][polkavm~repo]{{hi:polkavm}} is a general-purpose, user-level virtual machine based on RISC-V. Its maintainers list sandboxing among its design goals and describe the project as unfinished, so check the upstream documentation for its current status before choosing it.
 
-The host below registers a typed callback, instantiates a guest module, and calls an exported guest function. The guest must import `host_increment` and export `add_one_with_host`. Supply a compatible guest with `cargo run -p emulators --example emulators -- path/to/guest.polkavm`; without a guest path it prints usage after the register VM runs.
+The host builds a tiny 32-bit guest from two instructions. The guest calls import zero, `host_increment`, then returns to the host. The calling convention passes both the argument and the result in register A0. The callback adds one to the argument and counts how often the guest calls it.
 
-```rust,editable,noplayground
+```rust,noplayground
 {{#include ../../../crates/cats/emulators/examples/emulators/polkavm_host.rs:example}}
 ```
+
+From `later/crates`, run:
+
+```sh
+cargo run --locked -p emulators --example emulators -- polkavm-host
+```
+
+Expect `Guest returned 42; host callback calls: 1.` The recipe generates its guest in memory. To load a local replacement, add its path after `polkavm-host`. The program must export `add_one_with_host` with the same calling convention and use only imports registered by the host.
+
+The interpreter uses synchronous gas metering so a guest that exhausts its budget returns an error. Gas limits guest execution. Account separately for work triggered inside a host callback and keep the capabilities you register small.
 
 ## ROM Loading {#rom-loading}
 
@@ -31,6 +41,8 @@ Intel HEX (IHEX) is a text format for program data used by microcontrollers, fla
 ```rust,editable
 {{#include ../../../crates/cats/emulators/examples/emulators/intel_hex.rs:example}}
 ```
+
+Run `cargo run --locked -p emulators --example emulators -- intel-hex` to print the decoded record. Real loaders must also resolve extended addresses and reject writes outside the emulated memory map.
 
 See the [`ihex` documentation][c~ihex~docs] and the [parsing chapter][p~parsing] for more formats and parser design.
 

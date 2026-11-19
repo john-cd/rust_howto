@@ -10,6 +10,8 @@
 
 Tools such as [`probe-rs`][c~probe-rs~docs]↗{{hi:probe-rs}} connect to a supported target through a debug probe, identify its chip, and program an ELF, Intel HEX, or binary image using the target's flash algorithm. Confirm the exact chip and probe, build for the correct target, and use the tool's documented target and permission settings. A successful download confirms that programming completed; still verify that the firmware boots and that its configuration matches the board.
 
+To link and program a concrete target, follow the [RP2040 Pico blinky example](embassy.md#rp2040-blinky-firmware).
+
 Keep bootloader, application, metadata, and reserved regions within the memory map. A binary file may not carry address information, so check its load address before using it. Never write an application image over a bootloader or persistent-data partition by assuming that the entire chip is available.
 
 ## Store Application Data in NOR Flash {#application-storage}

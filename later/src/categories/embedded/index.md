@@ -16,8 +16,9 @@ Embedded applications interact with device peripherals under limits on memory, e
 
 1. Inspect a chip's [PAC][ex~embedded~pacs], often generated from an SVD with [`svd2rust`][svd2rust~repo], then use [HALs and `embedded-hal` traits][ex~embedded~embedded-hal] to work with peripherals.
 2. Choose startup and concurrency tools for the target: `cortex-m-rt` provides Cortex-M startup, while [RTIC][ex~embedded~rtos~rtic] and [Embassy][ex~embedded~embassy] offer different task models; compare the [RTOS options](rtos.md).
-3. Add [sensor drivers][ex~embedded~sensors], [flash storage][ex~embedded~flash~storage], and [probe-based firmware programming][ex~embedded~flash~probe-rs] as needed by the board.
-4. Review [embedded logging and support crates][ex~embedded~defmt] for `defmt`, panic handlers such as `panic-halt`, memory, and serialization.
+3. Link the [RP2040 blinky firmware](embassy.md#rp2040-blinky-firmware) to see how the target, linker script, executor, and timer driver fit together.
+4. Add [sensor drivers][ex~embedded~sensors], [flash storage][ex~embedded~flash~storage], and [probe-based firmware programming][ex~embedded~flash~probe-rs] as needed by the board.
+5. Review [embedded logging and support crates][ex~embedded~defmt] for `defmt`, panic handlers such as `panic-halt`, memory, and serialization.
 
 For broader project discovery, browse [Awesome Embedded Rust][awesome-embedded-rust~repo] and [Are We RTOS Yet?][arewertosyet~website]. Check maintenance, target support, and feature compatibility in each project's current documentation before choosing a dependency.
 

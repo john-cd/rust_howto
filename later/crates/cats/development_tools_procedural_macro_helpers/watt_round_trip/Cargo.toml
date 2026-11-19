@@ -1,0 +1,15 @@
+# TODO Reviewed ??-??-2026.
+
+[package]
+name = "watt_round_trip"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[lib]
+proc-macro = true
+
+[dependencies]
+watt = "=0.5.0"
+
+[workspace]

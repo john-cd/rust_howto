@@ -15,7 +15,9 @@ same Maturin version.
 - **Java/JNI:** Rust code can compile without a JDK. Running the Java caller
   requires `java` and `javac` on `PATH`; set `JAVA_HOME` to the JDK root when
   another tool needs an explicit JDK path. The Windows setup script configures
-  it when the Temurin installer does not.
+  it when the Temurin installer does not. Build the `jni_greeting` example as a
+  dynamic library and use the [Java chapter](../../../src/categories/development-tools_ffi/java.md#build-tools)
+  to check a Unicode round trip in a JVM.
 - **Ruby:** `ruby-dev` supplies headers on Debian; RubyInstaller 4.0 supplies the
   Ruby runtime, headers, and libraries on Windows. The Rutie embedding example
   builds and runs on Windows with Ruby 4.0. Magnus stays gated to non-Windows

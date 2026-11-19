@@ -1,0 +1,17 @@
+# TODO Reviewed ??-??-2026.
+
+[package]
+name = "rp2040_blinky"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.98.1"
+publish = false
+
+[dependencies]
+cortex-m-rt = "0.7.5"
+embassy-executor = { version = "0.10.0", features = ["executor-thread"] }
+embassy-rp = { version = "0.10.0", features = ["critical-section-impl", "executor-thread", "rp2040", "time-driver"] }
+embassy-time = "0.5.1"
+panic-halt = "1.0.0"
+
+[workspace]

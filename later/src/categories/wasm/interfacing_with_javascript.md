@@ -73,19 +73,34 @@ This example accepts a JavaScript object, deserializes it, increments a field, a
 {{#include ../../../crates/cats/wasm/examples/interfacing_with_javascript/promises.rs:example}}
 ```
 
-## Build and test
+## Run a JavaScript Round Trip in Node.js {#node-round-trip}
 
-For a browser library crate, install the target and `wasm-pack`, then build the JavaScript package for the browser's native ES module loader:
+This standalone crate exports a greeting as a JavaScript function. The generated glue converts a JavaScript string to Rust UTF-8 and turns `Err(JsError)` into a JavaScript exception.
+
+```rust,noplayground
+{{#include ../../../crates/cats/wasm/js_round_trip/src/lib.rs:example}}
+```
+
+The Node script checks both paths. The Unicode greeting exercises string conversion on both sides of the boundary.
+
+```javascript
+{{#include ../../../crates/cats/wasm/js_round_trip/smoke.cjs:example}}
+```
+
+Install Node.js, the Wasm target, and the version of the CLI that matches the pinned `wasm-bindgen` dependency. From the repository root, run:
 
 ```sh
 rustup target add wasm32-unknown-unknown
-cargo install --locked wasm-pack
-wasm-pack build --target web
+cargo install --locked wasm-bindgen-cli --version 0.2.130
+cargo build --locked --release --target wasm32-unknown-unknown \
+  --target-dir target/wasm-js-demo --manifest-path later/crates/cats/wasm/js_round_trip/Cargo.toml
+wasm-bindgen --target nodejs --out-dir target/wasm-js-demo/node \
+  target/wasm-js-demo/wasm32-unknown-unknown/release/wasm_js_round_trip.wasm
+node later/crates/cats/wasm/js_round_trip/smoke.cjs \
+  target/wasm-js-demo/node/wasm_js_round_trip.js
 ```
 
-The resulting package includes generated JavaScript glue and a WebAssembly module. Import its generated JavaScript module, call its async initializer, and then use the exported functions. This repository's examples crate is not a library package for `wasm-pack`; build its examples with Cargo and the `wasm32-unknown-unknown` target instead.
-
-Keep pure logic separate from JavaScript calls so native Cargo tests can exercise it. For behavior that needs JavaScript or browser APIs, add `wasm-bindgen-test` and run the tests in Node.js or a browser, for example with `wasm-pack test --node` or `wasm-pack test --headless --chrome`. See the [browser test guide][wasm-bindgen-test~guide]↗.
+The test prints `Wasm greeting and JavaScript error checked.` after both assertions. For browser delivery, use `--target web` instead and import and await the generated module's initializer before calling `greet`. Test DOM interactions in a browser with [`wasm-bindgen-test`][wasm-bindgen-test~guide]↗.
 
 ## Related topics {#related-topics .skip}
 

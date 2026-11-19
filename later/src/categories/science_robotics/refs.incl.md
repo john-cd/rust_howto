@@ -69,10 +69,10 @@
 [p~robotics-ai]: artificial_intelligence.md
 [p~robotics]: robot_operating_systems.md
 [p~sensors]: ../embedded/sensors.md
-[p~simulation]: ../simulation/simulation.md
+[p~simulation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/simulation/simulation.md
 [p~unix]: ../os_unix-apis/unix.md
 [p~visualization]: https://john-cd.com/rust_howto/categories/visualization/visualization.html
-[p~physics-engines]: ../simulation/index.md#physics-engines
+[p~physics-engines]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/simulation/physics_engines.md
 
 [c~embedded-hal-mock~docs]: https://docs.rs/embedded-hal-mock/0.11.1/embedded_hal_mock/eh1/i2c/
 [c~kiddo~docs]: https://docs.rs/kiddo/6.3.0/kiddo/

@@ -6,7 +6,7 @@
 
 Emulators reproduce another system's behavior so its software can run in a different environment. Implementations vary with the target's CPU, memory map, timing, and peripherals.
 
-Use the [Emulators chapter][ex~emulators~emulators] for the instruction interpreter and ROM-loading example. For broader context, review [[virtualization | Virtualization]].
+Use the [Emulators chapter][ex~emulators~emulators] for the instruction interpreter, a PolkaVM host and guest round trip, and an Intel HEX loader. For broader context, review [[virtualization | Virtualization]].
 
 {{#include emulators.incl.md}}
 

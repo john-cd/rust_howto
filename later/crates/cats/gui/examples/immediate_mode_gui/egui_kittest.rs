@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Finds a button by its label and clicks it with `egui_kittest`.
+//! Drives a counter with pointer and keyboard events through `egui_kittest`.
 //!
 //! `egui_kittest` runs the UI headless, like the previous recipe, and adds
 //! queries based on the accessibility tree (AccessKit), so a test reads like
@@ -24,7 +24,7 @@ fn counter_ui(ui: &mut egui::Ui, count: &mut u32) {
     }
 }
 
-/// Clicks the button twice and checks the label.
+/// Checks pointer clicks, keyboard activation and state after resizing.
 fn main() {
     // The state lives in the harness. The closure draws one frame at a time.
     let mut harness = Harness::new_ui_state(counter_ui, 0_u32);
@@ -40,10 +40,24 @@ fn main() {
 
     assert!(harness.query_by_label("Count: 2").is_some());
     assert_eq!(*harness.state(), 2);
+
+    // Use a fresh UI to verify keyboard-only interaction.
+    let mut keyboard = Harness::new_ui_state(counter_ui, 0_u32);
+    keyboard.key_press(egui::Key::Tab);
+    keyboard.run();
+    keyboard.key_press(egui::Key::Enter);
+    keyboard.run();
+    assert_eq!(*keyboard.state(), 1);
+
+    // A narrower viewport preserves the user's state and the button label.
+    keyboard.set_size(egui::vec2(240.0, 160.0));
+    keyboard.run();
+    assert!(keyboard.query_by_label("Count: 1").is_some());
+    assert!(keyboard.query_by_label("Increment").is_some());
 }
 // ANCHOR_END: example
 
-/// Clicks the button twice and checks the label.
+/// Runs the counter interaction checks.
 pub fn run() {
     // Call through a binding: calling `main` directly trips
     // `clippy::main_recursion`.

@@ -27,6 +27,6 @@ can miss curves. For longitude and latitude, follow the
 the Rust geometry algorithms and needs no GEOS installation. For operations
 that use the optional native library, see the Geo chapter's prerequisites.
 
-Use the [simulation chapter](../simulation/simulation.md) when the model needs
+Use the [simulation chapter](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/simulation/simulation.md) when the model needs
 time steps or state. For a sampled signal whose frequency is the quantity of
 interest, follow the [sample analysis recipe](../science_neuroscience/neuroscience.md#fft-signal).

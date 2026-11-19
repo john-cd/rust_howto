@@ -1,0 +1,16 @@
+# TODO Reviewed ??-??-2026.
+
+[package]
+name = "wasm_js_round_trip"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.98.1"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "=0.2.130"
+
+[workspace]

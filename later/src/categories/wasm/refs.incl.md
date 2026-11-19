@@ -80,7 +80,7 @@
 [p~interfacing_with_javascript]: interfacing_with_javascript.md
 [p~leptos]: leptos.md
 [p~programming_languages]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/parser-implementations/programming_languages.md
-[p~virtualization]: ../virtualization/index.md
+[p~virtualization]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/virtualization/index.md
 [p~wasm_basics]: wasm_basics.md
 [p~wasm_development]: wasm_development.md
 [p~wasm_standalone_runtimes]: wasm_standalone_runtimes.md

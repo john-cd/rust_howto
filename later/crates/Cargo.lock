@@ -5770,6 +5770,7 @@ dependencies = [
  "clap",
  "ihex",
  "polkavm",
+ "polkavm-common",
 ]
 
 [[package]]

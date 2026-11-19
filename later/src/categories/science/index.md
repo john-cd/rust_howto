@@ -11,7 +11,7 @@ coordinate system, and sampling assumptions before choosing a numerical method.
 
 1. [Compare route measurements with a model](route_measurements.md). Measure a
    synthetic route and check the assumptions behind a time prediction.
-2. [Simulate a process](../simulation/simulation.md) when the state evolves
+2. [Simulate a process](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/simulation/simulation.md) when the state evolves
    over time or events change the model's state.
 3. Use [Geo](../science_geo/geo.md) for geographic coordinates or
    [sampled signal analysis](../science_neuroscience/neuroscience.md#fft-signal)

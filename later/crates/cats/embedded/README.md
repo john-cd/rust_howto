@@ -21,11 +21,11 @@ cargo check --package embedded --examples
 cargo test --package embedded
 ```
 
-Code examples correspond to chapters in `bk/src/categories/embedded` or related book sections.
+Code examples correspond to chapters in `later/src/categories/embedded` or related book sections.
 
 This package is a standalone workspace, kept outside the broad `later/crates` workspace so its host examples have independent package metadata and a lockfile.
 
-The default examples run on the host and use a simulated pin, I2C bus, scheduler, and NOR flash. The registered Embassy example uses Embassy's standard-library executor and timer driver to test two async tasks exchanging messages through a bounded channel. The RP2040 firmware remains a non-compiled book snippet.
+The default examples run on the host and use a simulated pin, I2C bus, scheduler, and NOR flash. The registered Embassy example uses Embassy's standard-library executor and timer driver to test two async tasks exchanging messages through a bounded channel. The RP2040 firmware has a separate, locked Cargo project under `rp2040_blinky/`. Build it for `thumbv6m-none-eabi` before programming a Pico.
 
 From the repository root, validate them with:
 

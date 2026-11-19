@@ -23,13 +23,23 @@ This support snapshot was reviewed on October 29, 2026. Core Wasm execution, WAS
 
 [![wasmer][c~wasmer~docs~badge]][c~wasmer~docs]
 
-The optional `wasmer` feature uses Wasmer 7.5's single-pass compiler. This example compiles inline WAT, instantiates a module with no imports, and calls a typed export. Its assertion checks the guest result rather than merely reporting successful instantiation.
+The optional `wasmer` feature uses Wasmer 7.5 with the Singlepass backend on Linux and macOS and the V8 backend on Windows. This example compiles inline WAT, instantiates a module with no imports, and calls a typed export. Its assertion checks the guest result rather than merely reporting successful instantiation.
 
 ```rust,editable
 {{#include ../../../crates/cats/wasm/examples/wasm_standalone_runtimes/wasmer.rs:example}}
 ```
 
-From `later/crates`, run `cargo test -p wasm --example wasm_standalone_runtimes --features wasmer`. It needs no files, network access, or WASI host implementation. Wasmer's single-pass backend does not build on Windows, so run the example on Linux or macOS (or in WSL), or select another backend such as V8.
+The tests check normal addition, wrapping arithmetic, and rejection of malformed WAT. The guest needs no files, network access, or WASI host implementation.
+
+On Linux or macOS, run `cargo test --locked -p wasm --example wasm_standalone_runtimes --features wasmer` from `later/crates`. For the Windows x64 MSVC build, match the static C runtime used by the Wasmer V8 archive. Cargo may download the archive on the first build.
+
+```powershell
+$env:CARGO_TARGET_X86_64_PC_WINDOWS_MSVC_RUSTFLAGS = "-C target-feature=+crt-static"
+cargo test --locked -p wasm --example wasm_standalone_runtimes --features wasmer `
+  --target x86_64-pc-windows-msvc
+```
+
+The explicit target keeps the static C runtime setting on the example and its target dependencies. Use this setting for the recipe in a separate shell.
 
 ## Embed Wasmtime {#wasmtime}
 
@@ -101,7 +111,7 @@ target indicates that the guest did not execute.
 
 - [WebAssembly overview](index.md) and [development tools](wasm_development.md).
 - [Cloud development](https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/cloud/rust_native_cloud_development.md).
-- [Virtualization](../virtualization/index.md).
+- [Virtualization](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/virtualization/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
