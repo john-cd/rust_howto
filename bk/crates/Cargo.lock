@@ -6298,6 +6298,7 @@ dependencies = [
  "loom 0.7.3",
  "num",
  "num_cpus",
+ "num_threads",
  "papaya",
  "parking_lot 0.13.0",
  "ractor",

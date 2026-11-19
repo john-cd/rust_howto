@@ -48,6 +48,11 @@ path = "examples/explicit_threads/main.rs"
 test = true
 
 [[example]]
+name = "process_thread_count"
+path = "examples/process_thread_count.rs"
+test = true
+
+[[example]]
 name = "loom_model"
 path = "examples/loom_model.rs"
 test = true
@@ -106,6 +111,8 @@ image = { version = "0.25.10", default-features = false, features = ["jpeg", "pn
 num = "0.4.3"
 # Get the number of CPUs on a machine.
 num_cpus = "1.17.0"
+# Queries the current process thread count on supported operating systems.
+num_threads = "0.1"
 # A fast and ergonomic concurrent hash-table for read-heavy workloads.
 papaya = "0.2.5"
 # More compact and efficient implementations of the standard synchronization primitives.
