@@ -216,7 +216,7 @@ Start with the fixes and promotions listed above.
 
 [issues]: https://github.com/john-cd/rust_howto/issues
 [baseline]: https://github.com/john-cd/rust_howto/tree/31b76b925db6aaff1d57de64d01588d77fdd2655
-[wasm]: later/src/categories/wasm/wasm_basics.md
+[wasm]: bk/src/categories/wasm/wasm_basics.md
 [i2105]: https://github.com/john-cd/rust_howto/issues/2105
 [i2116]: https://github.com/john-cd/rust_howto/issues/2116
 [i2202]: https://github.com/john-cd/rust_howto/issues/2202
