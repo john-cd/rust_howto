@@ -6,20 +6,20 @@ on:
   push:
     branches: [develop]
     paths:
-      - "later/crates/Cargo.*"
+      - "bk/platform/Cargo.*"
       - "bk/crates/Cargo.*"
       - "bk/crates/cats/os_*/**"
-      - "later/crates/cats/development_tools_ffi/**"
+      - "bk/platform/cats/development_tools_ffi/**"
       - ".github/workflows/native_platform_examples.yml"
       - ".github/actions/**"
       - ".devcontainer/.env"
   pull_request:
     branches: [develop]
     paths:
-      - "later/crates/Cargo.*"
+      - "bk/platform/Cargo.*"
       - "bk/crates/Cargo.*"
       - "bk/crates/cats/os_*/**"
-      - "later/crates/cats/development_tools_ffi/**"
+      - "bk/platform/cats/development_tools_ffi/**"
       - ".github/workflows/native_platform_examples.yml"
       - ".github/actions/**"
       - ".devcontainer/.env"
@@ -65,7 +65,7 @@ jobs:
           nightly: skip
           cache-workspaces: |
             bk/crates -> ../../target/later-native
-            later/crates -> ../../target/later-native
+            bk/platform -> ../../target/later-native
           cache-key: native-macos
       - name: Lint native macOS APIs
         run: cargo clippy -p os_macos_apis --all-targets --locked -- --deny warnings
@@ -75,10 +75,10 @@ jobs:
         working-directory: bk/crates
       - name: Lint Objective-C integration
         run: cargo clippy -p development_tools_ffi --example objc --features objc --locked -- --deny warnings
-        working-directory: later/crates
+        working-directory: bk/platform
       - name: Test Objective-C integration
         run: cargo test -p development_tools_ffi --example objc --features objc --locked
-        working-directory: later/crates
+        working-directory: bk/platform
 
   freebsd:
     name: FreeBSD APIs (advisory)

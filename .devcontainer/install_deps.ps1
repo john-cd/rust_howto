@@ -421,7 +421,7 @@ Expand-Archive -LiteralPath $tectonicArchive -DestinationPath $tectonicDirectory
 Remove-Item -LiteralPath $tectonicArchive -ErrorAction SilentlyContinue
 Add-UserPath -Directory $tectonicDirectory
 
-# The GTK 4 and Relm4 examples are Linux-only in later/crates/cats/gui.
+# The GTK 4 and Relm4 examples are Linux-only in bk/platform/cats/gui.
 
 # Install cargo-binstall for Rust-based tools
 $binstallVersion = $toolVersions["CARGO_BINSTALL_VERSION"]

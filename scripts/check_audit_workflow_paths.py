@@ -22,13 +22,14 @@ WORKFLOW = ROOT / ".github" / "workflows" / "audit_dependencies.yml"
 # Audited workspace -> policy file.
 WORKSPACES = {
     "bk/crates": "bk/crates/deny.toml",
+    "bk/platform": "bk/platform/deny.toml",
     "bk/crates/cats/database/examples/query_builders_orms/toasty_validation": "bk/crates/deny.toml",
     "bk/crates/cats/memory_management/allocator_selection": "bk/crates/deny.toml",
     "later/crates": "later/crates/deny.toml",
-    "later/crates/cats/development_tools_ffi/python_extension": "later/crates/deny.toml",
-    "later/crates/cats/embedded": "later/crates/deny.toml",
-    "later/crates/cats/gui/vizia": "later/crates/deny.toml",
-    "later/crates/cats/wasm/examples/wasm_standalone_runtimes/components/guest": "later/crates/deny.toml",
+    "bk/platform/cats/development_tools_ffi/python_extension": "bk/platform/deny.toml",
+    "bk/platform/cats/embedded": "bk/platform/deny.toml",
+    "bk/platform/cats/gui/vizia": "bk/platform/deny.toml",
+    "bk/platform/cats/wasm/examples/wasm_standalone_runtimes/components/guest": "bk/platform/deny.toml",
     "publish": "bk/crates/deny.toml",
     "tools": "bk/crates/deny.toml",
     "xmpl": "bk/crates/deny.toml",
