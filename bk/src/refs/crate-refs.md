@@ -6278,6 +6278,9 @@
 [c~parley~lib.rs~badge]: https://img.shields.io/badge/lib.rs-parley-yellow
 [c~parley~repo]: https://github.com/linebender/parley
 [c~parley~repo~badge]: https://img.shields.io/badge/parley-steelblue?logo=github
+[c~parry2d~crates.io]: https://crates.io/crates/parry2d
+[c~parry2d~docs]: https://docs.rs/parry2d
+[c~parry2d~repo]: https://github.com/dimforge/parry
 [c~password-auth~crates.io]: https://crates.io/crates/password-auth
 [c~password-auth~crates.io~badge]: https://img.shields.io/badge/crates.io-password--auth-crimson
 [c~password-auth~docs]: https://docs.rs/password-auth
