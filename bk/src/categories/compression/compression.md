@@ -60,6 +60,25 @@ Use `async_zip` when archive reads or writes need to participate in an async tas
 {{#include ../../../crates/cats/compression/examples/compression/async_zip.rs:example}}
 ```
 
+## Stream Zstandard Data {#zstd-stream}
+
+Use [`zstd`](https://docs.rs/zstd/latest/zstd/) to encode a Zstandard frame.
+`io::copy` transfers bytes in chunks so the recipe can read and write files
+without buffering the entire payload. The example uses vectors as fixtures.
+
+Call `finish()` to complete the frame, report errors from final writes, and
+recover the inner writer. If the writer itself buffers data, flush it separately
+when required. Flushing the encoder alone does not finish the frame.
+
+```rust,noplayground
+{{#include ../../../crates/cats/compression/examples/zstd_stream.rs:example}}
+```
+
+From `bk/crates`, run `cargo test --locked -p compression --example zstd_stream`.
+The default `zstd` configuration builds native Zstandard through `zstd-sys`.
+Use a C toolchain that targets the same platform as the Rust build.
+To package named files in a compressed archive, see [Working with Tarballs](tar.md).
+
 ## Related Topics {#related-topics .skip}
 
 - [Filesystem](../filesystem/index.md).

@@ -6,7 +6,7 @@
 
 The examples below read and write local filesystem paths, so their code blocks are marked `noplayground`. Prepare the source directory or archive at the paths shown before running an example.
 
-Tar groups files and metadata but does not compress them. A `.tar.gz` file combines a tar archive with gzip compression. Other combinations include tar with [`zstd`][c~zstd~docs]↗, [`xz2`][c~xz2~docs]↗, or [`bzip2`][c~bzip2~docs]↗. ZIP is a separate archive format, provided by [`zip`][c~zip~docs]↗.
+Tar groups files and metadata but does not compress them. A `.tar.gz` file combines a tar archive with gzip compression. Other combinations include tar with [`zstd`][c~zstd~docs]↗, [`xz2`][c~xz2~docs]↗, or [`bzip2`][c~bzip2~docs]↗. ZIP is a separate archive format, provided by [`zip`][c~zip~docs]↗. For a `.tar.zst` archive, write the tar stream through the [Zstandard encoder](compression.md#zstd-stream) and finish the tar stream before finishing the compressed frame.
 
 The default `flate2` backend uses Rust code. Some alternatives involve native code: `zstd` builds its C library, `xz2` binds to `liblzma`, and `bzip2` offers an optional native `libbz2` backend alongside a Rust backend. Those configurations may require a C compiler or target libraries when cross-compiling; check the selected backend and features.
 

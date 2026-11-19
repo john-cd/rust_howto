@@ -27,6 +27,10 @@ name = "tar"
 path = "examples/tar/main.rs"
 test = true
 
+[[example]]
+name = "zstd_stream"
+test = true
+
 [dependencies]
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
@@ -52,6 +56,8 @@ zip = "9.6.0"
 [dev-dependencies]
 # Creates automatically cleaned temporary directories and files for the examples.
 tempfile = "3.27.0"
+# Zstandard streaming encoder and decoder used by the stream example.
+zstd = "0.14.4"
 
 [lints]
 workspace = true
