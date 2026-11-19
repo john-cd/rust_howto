@@ -122,7 +122,7 @@ Deriving `Arbitrary` lets a fuzz target map raw input bytes to a typed request. 
 
 ## Test a Query Against Disposable PostgreSQL {#postgres-container}
 
-This test requires a running Docker daemon in Linux container mode. `testcontainers-modules` supplies the PostgreSQL image configuration and readiness check. `testcontainers` starts the pinned `postgres:17.6-alpine` image, waits for readiness, and removes the container when its handle drops. The test uses the mapped host port and credentials for this disposable database. See [Postgres](../database/postgres.md) for database recipes.
+This test requires a running Docker daemon in Linux container mode. `testcontainers-modules` supplies the PostgreSQL image configuration and readiness check. `testcontainers` starts the pinned `postgres:18.7-trixie` image, waits for readiness, and removes the container when its handle drops. The test uses the mapped host port and credentials for this disposable database. See [Postgres](../database/postgres.md) for database recipes.
 
 From `bk/`, enable the example and run the ignored test explicitly.
 

@@ -50,7 +50,7 @@ Start a local Redis Open Source server with the [official Docker image][redis~do
 
 ```bash
 docker run --detach --rm --name rust-howto-redis \
-  -p 127.0.0.1:6379:6379 redis:8.2
+  -p 127.0.0.1:6379:6379 redis:8.10.3-trixie
 ```
 
 The example defaults to `127.0.0.1:6379`. Set `REDIS_HOSTNAME` and, when the
