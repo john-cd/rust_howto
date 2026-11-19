@@ -790,7 +790,7 @@
 [docker~desktop~website]: https://docker.com/products/docker-desktop
 [docker~getting-started]: https://docs.docker.com/go/get-started-sharing
 [docker~github-action]: https://docs.docker.com/build/ci/github-actions
-[docker~rust-guide]: https://docs.docker.com/language/rust
+[docker~rust-guide]: https://docs.docker.com/guides/
 [docker~website]: https://docker.com
 [docs.flutter.dev~website]: https://docs.flutter.dev
 [docs.realworld.build~website]: https://docs.realworld.build

@@ -29,7 +29,7 @@ Containers isolate application processes and package the files they need, while 
 ### Docker {#docker}
 
 - [Docker][docker~website]↗.
-- [Docker's Rust guide][docker~rust-guide]↗.
+- For containerizing a Rust application, see Docker's [language-specific guides][docker~rust-guide]↗.
 - [Docker Desktop][docker~desktop~website]↗.
 
 ### Docker Compose {#docker-compose}

@@ -62,13 +62,13 @@
 [tauri~windows-prerequisites~website]: https://v2.tauri.app/start/prerequisites/
 [p~apis]: ../web-programming_http-client/apis.md
 [p~asynchronous]: ../asynchronous/index.md
-[p~audio]: https://john-cd.com/rust_howto/categories/multimedia_audio/audio.html
+[p~audio]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/multimedia_audio/audio.md
 [p~containers]: ../virtualization/containers.md
 [p~cross-platform]: ../../other/cross-platform/index.md
 [p~data-formats]: https://john-cd.com/rust_howto/categories/rendering_data-formats/index.html
 [p~documentation]: ../development-tools/documentation/documentation.md
 [p~embedded]: # "../embedded/index.md"
-[p~game-development]: https://john-cd.com/rust_howto/categories/game-development/game_development.html
+[p~game-development]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/game-development/game_development.md
 [p~games]: https://john-cd.com/rust_howto/categories/games/index.html
 [p~gpu]: ../../other/gpu/index.md
 [p~graphics]: ../graphics/index.md

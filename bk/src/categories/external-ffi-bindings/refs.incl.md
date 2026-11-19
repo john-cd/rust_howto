@@ -14,7 +14,7 @@
 [p~development-tools_ffi]: ../development-tools_ffi/index.md
 [p~external-ffi-bindings]: index.md
 [p~graphics]: ../graphics/index.md
-[p~multimedia_audio]: https://john-cd.com/rust_howto/categories/multimedia_audio/index.html
+[p~multimedia_audio]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/multimedia_audio/index.md
 [p~network-programming]: ../network-programming/index.md
 [p~os]: ../os/index.md
 [p~os_windows-apis]: ../os_windows-apis/index.md

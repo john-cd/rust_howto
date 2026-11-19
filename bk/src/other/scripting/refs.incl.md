@@ -17,7 +17,7 @@
 [c~koto~docs]: https://docs.rs/koto
 [c~rune~docs]: https://docs.rs/rune
 [c~object~docs]: https://docs.rs/object
-[c~quickjs-rs~docs]: https://docs.rs/quickjs-rs
+[c~quickjs-rs~docs]: https://docs.rs/quick-js/latest/quick_js/
 [c~v8~docs]: https://docs.rs/v8
 
 [c~rhai-fs~docs]: https://docs.rs/rhai-fs

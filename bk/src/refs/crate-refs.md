@@ -235,7 +235,7 @@
 [c~arboard~lib.rs~badge]: https://img.shields.io/badge/lib.rs-arboard-yellow
 [c~arboard~repo]: https://github.com/1Password/arboard
 [c~arboard~repo~badge]: https://img.shields.io/badge/arboard-steelblue?logo=github
-[c~arc-swap::ArcSwap~docs]: https://docs.rs/arc-swap/latest/arc-swap/type.ArcSwap.html
+[c~arc-swap::ArcSwap~docs]: https://docs.rs/arc-swap/latest/arc_swap/type.ArcSwap.html
 [c~arc-swap~crates.io]: https://crates.io/crates/arc-swap
 [c~arc-swap~crates.io~badge]: https://img.shields.io/badge/crates.io-arc--swap-crimson
 [c~arc-swap~docs]: https://docs.rs/arc-swap
@@ -1575,7 +1575,7 @@
 [c~cargo-workspaces~repo~badge]: https://img.shields.io/badge/cargo--workspaces-steelblue?logo=github
 [c~cargo-xtask~crates.io]: https://crates.io/crates/cargo-xtask
 [c~cargo-xtask~crates.io~badge]: https://img.shields.io/badge/crates.io-cargo--xtask-crimson
-[c~cargo-xtask~docs]: https://docs.rs/cargo-xtask
+[c~cargo-xtask~docs]: https://github.com/matklad/cargo-xtask
 [c~cargo-xtask~docs~badge]: https://img.shields.io/crates/v/cargo-xtask?label=cargo-xtask
 [c~cargo-xtask~repo]: https://github.com/matklad/cargo-xtask
 [c~cargo-xtask~repo~badge]: https://img.shields.io/badge/cargo--xtask-steelblue?logo=github
@@ -1824,7 +1824,7 @@
 [c~clap~tutorial]: https://docs.rs/clap/latest/clap/_derive/_tutorial
 [c~clear~crates.io]: https://crates.io/crates/clear
 [c~clear~crates.io~badge]: https://img.shields.io/badge/crates.io-clear-crimson
-[c~clear~docs]: https://docs.rs/clear
+[c~clear~docs]: https://crates.io/crates/clear
 [c~clear~docs~badge]: https://img.shields.io/crates/v/clear?label=clear
 [c~clear~repo]: https://github.com/qe/clear
 [c~clear~repo~badge]: https://img.shields.io/badge/clear-steelblue?logo=github
@@ -1959,8 +1959,8 @@
 [c~com~repo~badge]: https://img.shields.io/badge/com-steelblue?logo=github
 [c~concat-string~crates.io]: https://crates.io/crates/concat-string
 [c~concat-string~crates.io~badge]: https://img.shields.io/badge/crates.io-concat~-string-crimson
-[c~concat-string~docs]: https://docs.rs/concat~string
-[c~concat-string~docs~badge]: https://img.shields.io/crates/v/concat~string?label=concat~string
+[c~concat-string~docs]: https://docs.rs/concat-string/latest/concat_string/
+[c~concat-string~docs~badge]: https://img.shields.io/crates/v/concat-string?label=concat-string
 [c~concat-string~lib.rs]: https://lib.rs/crates/concat~string
 [c~concat-string~lib.rs~badge]: https://img.shields.io/badge/lib.rs-concat~-string-yellow
 [c~concat-string~repo]: https://github.com/FaultyRAM/concat~string
@@ -2072,7 +2072,7 @@
 [c~cosmic-text~crates.io~badge]: https://img.shields.io/badge/crates.io-cosmic--text-crimson
 [c~cosmic-text~docs]: https://docs.rs/cosmic-text
 [c~cosmic-text~docs~badge]: https://img.shields.io/crates/v/cosmic-text?label=cosmic-text
-[c~cosmic-text~lib.rs]: https://lib.rs/crates/cosmic-text
+[c~cosmic-text~lib.rs]: https://docs.rs/cosmic-text/latest/cosmic_text/
 [c~cosmic-text~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cosmic--text-yellow
 [c~cosmic-text~repo]: https://github.com/pop-os/cosmic-text
 [c~cosmic-text~repo~badge]: https://img.shields.io/badge/cosmic--text-steelblue?logo=github
@@ -2507,7 +2507,7 @@
 [c~dicom~lib.rs~badge]: https://img.shields.io/badge/lib.rs-dicom-yellow
 [c~dicom~repo]: https://github.com/Enet4/dicom-rs
 [c~dicom~repo~badge]: https://img.shields.io/badge/dicom-steelblue?logo=github
-[c~diesel-async~docs]: https://docs.rs/diesel-async/latest/diesel-async
+[c~diesel-async~docs]: https://docs.rs/diesel-async/latest/diesel_async/
 [c~diesel-oci~crates.io]: https://crates.io/crates/diesel-oci
 [c~diesel-oci~crates.io~badge]: https://img.shields.io/badge/crates.io-diesel--oci-crimson
 [c~diesel-oci~docs]: https://docs.rs/diesel-oci
@@ -2905,7 +2905,7 @@
 [c~egui_tiles~lib.rs~badge]: https://img.shields.io/badge/lib.rs-egui__tiles-yellow
 [c~egui_tiles~repo]: https://github.com/rerun-io/egui_crates
 [c~egui_tiles~repo~badge]: https://img.shields.io/badge/egui__tiles-steelblue?logo=github
-[c~egui_tracing::EventCollector~docs]: https://docs.rs/egui_tracing/latest/egui_tracing/struct.EventCollector.html
+[c~egui_tracing::EventCollector~docs]: https://docs.rs/egui_tracing/latest/egui_tracing/tracing/collector/struct.EventCollector.html
 [c~egui_tracing~crates.io]: https://crates.io/crates/egui_tracing
 [c~egui_tracing~crates.io~badge]: https://img.shields.io/badge/crates.io-egui__tracing-crimson
 [c~egui_tracing~docs]: https://docs.rs/egui_tracing
@@ -3516,13 +3516,13 @@
 [c~futures-util~website~badge]: https://img.shields.io/badge/futures--util-coral
 [c~futures::future::Select~docs]: https://docs.rs/futures/latest/futures/future/struct.Select.html
 [c~futures::join~docs]: https://docs.rs/futures/latest/futures/macro.join.html
-[c~futures::prelude::stream::StreamExt::filter~docs]: https://docs.rs/futures/latest/futures/prelude/stream/trait.StreamExt.html#method.filter
-[c~futures::prelude::stream::StreamExt::fold~docs]: https://docs.rs/futures/latest/futures/prelude/stream/trait.StreamExt.html#method.fold
-[c~futures::prelude::stream::StreamExt::for_each_concurrent~docs]: https://docs.rs/futures/latest/futures/prelude/stream/trait.StreamExt.html#method.for_each_concurrent
-[c~futures::prelude::stream::StreamExt::map~docs]: https://docs.rs/futures/latest/futures/future/trait.FutureExt.html#method.map
-[c~futures::prelude::stream::TryStreamExt::try_filter~docs]: https://docs.rs/futures/latest/futures/prelude/stream/trait.TryStreamExt.html#method.try_filter
-[c~futures::prelude::stream::TryStreamExt::try_fold~docs]: https://docs.rs/futures/latest/futures/prelude/stream/trait.TryStreamExt.html#method.try_fold
-[c~futures::prelude::stream::TryStreamExt::try_for_each_concurrent~docs]: https://docs.rs/futures/latest/futures/prelude/stream/trait.TryStreamExt.html#method.try_for_each_concurrent
+[c~futures::prelude::stream::StreamExt::filter~docs]: https://docs.rs/futures/latest/futures/stream/trait.StreamExt.html#method.filter
+[c~futures::prelude::stream::StreamExt::fold~docs]: https://docs.rs/futures/latest/futures/stream/trait.StreamExt.html#method.fold
+[c~futures::prelude::stream::StreamExt::for_each_concurrent~docs]: https://docs.rs/futures/latest/futures/stream/trait.StreamExt.html#method.for_each_concurrent
+[c~futures::prelude::stream::StreamExt::map~docs]: https://docs.rs/futures/latest/futures/stream/trait.StreamExt.html#method.map
+[c~futures::prelude::stream::TryStreamExt::try_filter~docs]: https://docs.rs/futures/latest/futures/stream/trait.TryStreamExt.html#method.try_filter
+[c~futures::prelude::stream::TryStreamExt::try_fold~docs]: https://docs.rs/futures/latest/futures/stream/trait.TryStreamExt.html#method.try_fold
+[c~futures::prelude::stream::TryStreamExt::try_for_each_concurrent~docs]: https://docs.rs/futures/latest/futures/stream/trait.TryStreamExt.html#method.try_for_each_concurrent
 [c~futures::stream::Stream~docs]: https://docs.rs/futures/latest/futures/stream/trait.Stream.html
 [c~futures_executor::block_on~docs]: https://docs.rs/futures-executor/latest/futures_executor/fn.block_on.html
 [c~futures~crates.io]: https://crates.io/crates/futures
@@ -3588,9 +3588,9 @@
 [c~gdk~repo~badge]: https://img.shields.io/badge/gdk-steelblue?logo=github
 [c~gdk~website]: https://gtk-rs.org/gtk3-rs/stable/latest/docs/gdk
 [c~gdk~website~badge]: https://img.shields.io/badge/gdk-coral
-[c~geo::Haversine~docs]: https://docs.rs/geo/latest/geo/struct.Haversine.html
+[c~geo::Haversine~docs]: https://docs.rs/geo/latest/geo/algorithm/line_measures/metric_spaces/constant.Haversine.html
 [c~geocoding::Forward~docs]: https://docs.rs/geocoding/latest/geocoding/trait.Forward.html
-[c~geocoding::Openstreetmap~docs]: https://docs.rs/geocoding/latest/geocoding/struct.Openstreetmap.html
+[c~geocoding::Openstreetmap~docs]: https://docs.rs/geocoding/latest/geocoding/openstreetmap/struct.Openstreetmap.html
 [c~geocoding~crates.io]: https://crates.io/crates/geocoding
 [c~geocoding~crates.io~badge]: https://img.shields.io/badge/crates.io-geocoding-crimson
 [c~geocoding~docs]: https://docs.rs/geocoding
@@ -6323,7 +6323,7 @@
 [c~parity-wasm~lib.rs~badge]: https://img.shields.io/badge/lib.rs-parity--wasm-yellow
 [c~parity-wasm~repo]: https://github.com/paritytech/parity-wasm
 [c~parity-wasm~repo~badge]: https://img.shields.io/badge/parity--wasm-steelblue?logo=github
-[c~parking_lot::Condvar~docs]: https://docs.rs/parking_lot/latest/parking_lot/struct.Condvar.html
+[c~parking_lot::Condvar~docs]: https://docs.rs/parking_lot/latest/parking_lot/type.Condvar.html
 [c~parking_lot::Mutex~docs]: https://docs.rs/parking_lot/latest/parking_lot/type.Mutex.html
 [c~parking_lot::Once~docs]: https://docs.rs/parking_lot/latest/parking_lot/struct.Once.html
 [c~parking_lot::ReentrantMutex~docs]: https://docs.rs/parking_lot/latest/parking_lot/type.ReentrantMutex.html
@@ -7801,7 +7801,7 @@
 [c~rust_xlsxwriter::ExcelDateTime~docs]: https://docs.rs/rust_xlsxwriter/latest/rust_xlsxwriter/struct.ExcelDateTime.html
 [c~rust_xlsxwriter::Format~docs]: https://docs.rs/rust_xlsxwriter/latest/rust_xlsxwriter/struct.Format.html
 [c~rust_xlsxwriter::Formula~docs]: https://docs.rs/rust_xlsxwriter/latest/rust_xlsxwriter/struct.Formula.html
-[c~rust_xlsxwriter::Workbook~docs]: https://docs.rs/rust_xlsxwriter/latest/rust_xlsxwriter/struct.Workbook.html
+[c~rust_xlsxwriter::Workbook~docs]: https://docs.rs/rust_xlsxwriter/latest/rust_xlsxwriter/workbook/struct.Workbook.html
 [c~rust_xlsxwriter~crates.io]: https://crates.io/crates/rust_xlsxwriter
 [c~rust_xlsxwriter~crates.io~badge]: https://img.shields.io/badge/crates.io-rust__xlsxwriter-crimson
 [c~rust_xlsxwriter~docs]: https://docs.rs/rust_xlsxwriter
@@ -7968,8 +7968,8 @@
 [c~salsa~repo]: https://github.com/salsa-rs/salsa
 [c~salsa~repo~badge]: https://img.shields.io/badge/salsa-steelblue?logo=github
 [c~salsa~website]: https://salsa-rs.github.io/salsa/overview.html
-[c~same-file::Handle~docs]: https://docs.rs/same-file/latest/same-file/struct.Handle.html
-[c~same-file::is_same-file~docs]: https://docs.rs/same-file/latest/same-file/fn.is_same-file.html
+[c~same-file::Handle~docs]: https://docs.rs/same-file/latest/same_file/struct.Handle.html
+[c~same-file::is_same-file~docs]: https://docs.rs/same-file/latest/same_file/fn.is_same_file.html
 [c~same-file~crates.io]: https://crates.io/crates/same-file
 [c~same-file~crates.io~badge]: https://img.shields.io/badge/crates.io-same--file-crimson
 [c~same-file~docs]: https://docs.rs/same-file
@@ -8080,7 +8080,7 @@
 [c~sd~website~badge]: https://img.shields.io/badge/sd-coral
 [c~sea-orm-cli~crates.io]: https://crates.io/crates/sea-orm-cli
 [c~sea-orm-cli~crates.io~badge]: https://img.shields.io/badge/crates.io-sea--orm--cli-crimson
-[c~sea-orm-cli~docs]: https://docs.rs/sea-orm-cli/latest/sea-orm-cli
+[c~sea-orm-cli~docs]: https://docs.rs/sea-orm-cli/latest/sea_orm_cli/
 [c~sea-orm-cli~docs~badge]: https://img.shields.io/crates/v/sea-orm-cli?label=sea-orm-cli
 [c~sea-orm-cli~lib.rs]: https://lib.rs/crates/sea-orm-cli
 [c~sea-orm-cli~lib.rs~badge]: https://img.shields.io/badge/lib.rs-sea--orm--cli-yellow
@@ -9506,7 +9506,7 @@
 [c~time~crates.io~badge]: https://img.shields.io/badge/crates.io-time-crimson
 [c~time~docs]: https://docs.rs/time
 [c~time~docs~badge]: https://img.shields.io/crates/v/time?label=time
-[c~time~lib.rs]: https://lib.rs/crates/time
+[c~time~lib.rs]: https://docs.rs/time/latest/time/
 [c~time~lib.rs~badge]: https://img.shields.io/badge/lib.rs-time-yellow
 [c~time~repo]: https://github.com/time-rs/time
 [c~time~repo~badge]: https://img.shields.io/badge/time-steelblue?logo=github
@@ -10119,7 +10119,7 @@
 [c~url~lib.rs~badge]: https://img.shields.io/badge/lib.rs-url-yellow
 [c~url~repo]: https://github.com/servo/rust-url
 [c~url~repo~badge]: https://img.shields.io/badge/url-steelblue?logo=github
-[c~us-state-info::State~docs]: https://docs.rs/us-state-info/latest/us_state_info/enum.State.html
+[c~us-state-info::State~docs]: https://docs.rs/us-state-info/latest/us_state_info/states/enum.State.html
 [c~us-state-info~crates.io]: https://crates.io/crates/us-state-info
 [c~us-state-info~crates.io~badge]: https://img.shields.io/badge/crates.io-us--state--info-crimson
 [c~us-state-info~docs]: https://docs.rs/us-state-info
@@ -10564,7 +10564,7 @@
 [c~winnow~crates.io~badge]: https://img.shields.io/badge/crates.io-winnow-crimson
 [c~winnow~docs]: https://docs.rs/winnow
 [c~winnow~docs~badge]: https://img.shields.io/crates/v/winnow?label=winnow
-[c~winnow~lib.rs]: https://lib.rs/crates/winnow
+[c~winnow~lib.rs]: https://docs.rs/winnow/latest/winnow/
 [c~winnow~lib.rs~badge]: https://img.shields.io/badge/lib.rs-winnow-yellow
 [c~winnow~repo]: https://github.com/winnow-rs/winnow
 [c~winnow~repo~badge]: https://img.shields.io/badge/winnow-steelblue?logo=github
@@ -10782,7 +10782,7 @@
 [c~yew~docs~badge]: https://img.shields.io/crates/v/yew?label=yew
 [c~yew~lib.rs]: https://lib.rs/crates/yew
 [c~yew~lib.rs~badge]: https://img.shields.io/badge/lib.rs-yew-yellow
-[c~yew~realworld~example]: https://github.com/jetli/rust-yew~realworld-example-app
+[c~yew~realworld~example]: https://github.com/jetli/rust-yew-realworld-example-app/
 [c~yew~realworld~example~badge]: https://img.shields.io/badge/rust_yew_realworld_example-steelblue?logo=github
 [c~yew~repo]: https://github.com/yewstack/yew
 [c~yew~repo~badge]: https://img.shields.io/badge/yew-steelblue?logo=github

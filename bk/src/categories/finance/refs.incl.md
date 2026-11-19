@@ -19,4 +19,4 @@
 [p~mathematics]: https://john-cd.com/rust_howto/categories/mathematics/index.html
 [p~quant]: quant.md
 [p~statistics]: https://john-cd.com/rust_howto/categories/mathematics/statistics.html
-[p~visualization]: https://john-cd.com/rust_howto/categories/visualization/index.html
+[p~visualization]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/visualization/index.md

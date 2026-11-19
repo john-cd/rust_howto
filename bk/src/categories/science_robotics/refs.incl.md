@@ -48,10 +48,10 @@
 [roboplc~repo]: https://github.com/roboplc/roboplc
 [rustconf2025~robotics~talk]: https://rustfoundation.org/media/rustconf-2025-program-live/
 [sophus-rs~repo]: https://github.com/sophus-vision/sophus-rs
-[p~classical-machine-learning]: https://john-cd.com/rust_howto/other/machine-learning/classical_machine_learning.html
-[p~computer-vision]: https://john-cd.com/rust_howto/categories/computer-vision/index.html
+[p~classical-machine-learning]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/machine-learning/classical_machine_learning.md
+[p~computer-vision]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/computer-vision/index.md
 [p~concurrency]: ../concurrency/index.md
-[p~deep-learning]: https://john-cd.com/rust_howto/other/machine-learning/deep_learning.html
+[p~deep-learning]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/machine-learning/deep_learning.md
 [p~embedded]: ../embedded/index.md
 [p~graphics]: ../graphics/index.md
 [p~grpc]: ../web-programming_http-server/grpc.md
@@ -71,15 +71,15 @@
 [p~sensors]: ../embedded/sensors.md
 [p~simulation]: ../simulation/simulation.md
 [p~unix]: ../os_unix-apis/unix.md
-[p~visualization]: https://john-cd.com/rust_howto/categories/visualization/visualization.html
+[p~visualization]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/visualization/visualization.md
 [p~physics-engines]: ../simulation/physics_engines.md
 
 [c~embedded-hal-mock~docs]: https://docs.rs/embedded-hal-mock/0.11.1/embedded_hal_mock/eh1/i2c/
 [c~kiddo~docs]: https://docs.rs/kiddo/6.3.0/kiddo/
 [c~nokhwa~docs]: https://docs.rs/nokhwa
 [c~dynpick-force-torque-sensor~docs]: https://docs.rs/dynpick-force-torque-sensor
-[c~freenect-rs~docs]: https://docs.rs/freenect-rs
-[c~hls_lfcd_lds_rs~docs]: https://docs.rs/hls_lfcd_lds_rs
+[c~freenect-rs~docs]: https://docs.rs/freenectrs/latest/freenectrs/
+[c~hls_lfcd_lds_rs~docs]: https://github.com/gabrik/hls_lfcd_lds_rs
 [c~leptrino-force-torque-sensor~docs]: https://docs.rs/leptrino-force-torque-sensor
 [c~realsense-rust~docs]: https://docs.rs/realsense-rust
 [c~safe_drive~docs]: https://docs.rs/safe_drive
@@ -97,8 +97,8 @@
 [c~zmqRemoteApi~docs]: https://docs.rs/coppeliasim_zmq_remote_api
 [p~additional_numeric_types]: https://john-cd.com/rust_howto/categories/mathematics/additional_numeric_types.html
 [p~aerospace_simulation]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace_simulation/index.md
-[p~classical_machine_learning]: https://john-cd.com/rust_howto/other/machine-learning/classical_machine_learning.html
-[p~deep_learning]: https://john-cd.com/rust_howto/other/machine-learning/deep_learning.html
+[p~classical_machine_learning]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/machine-learning/classical_machine_learning.md
+[p~deep_learning]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/machine-learning/deep_learning.md
 [p~development-tools_ffi]: ../development-tools_ffi/index.md
 [p~hardware-support]: ../hardware-support/index.md
 [p~linear_algebra]: https://john-cd.com/rust_howto/categories/mathematics/linear_algebra.html

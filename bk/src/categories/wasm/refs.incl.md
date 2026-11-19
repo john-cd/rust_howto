@@ -17,14 +17,14 @@
 [ex~wasm~wasmtime]: wasm_standalone_runtimes.md#wasmtime
 [ex~wasm~yew]: yew.md#yew
 [p~apis]: ../../../src/categories/web-programming_http-client/apis.md
-[p~audio]: https://john-cd.com/rust_howto/categories/multimedia_audio/audio.html
+[p~audio]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/multimedia_audio/audio.md
 [p~building]: ../development-tools_cargo-plugins/building.md
 [p~caching]: ../../../src/categories/caching/index.md
 [p~cross-platform]: ../../other/cross-platform/index.md
 [p~embedded]: ../embedded/index.md
 [p~emulators]: ../emulators/index.md
 [p~functions]: https://john-cd.com/rust_howto/language/functions.html
-[p~game-development]: https://john-cd.com/rust_howto/categories/game-development/game_development.html
+[p~game-development]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/game-development/game_development.md
 [p~html]: ../../../src/categories/parser-implementations/html.md
 [p~modules]: ../../code-organization/modules_and_paths.md
 [p~node]: ../development-tools_ffi/node.md
@@ -32,7 +32,7 @@
 [p~programming-languages]: ../../../src/categories/parser-implementations/programming_languages.md
 [p~rendering]: ../graphics/index.md
 [p~testing]: ../development-tools_testing/testing.md
-[p~visualization]: https://john-cd.com/rust_howto/categories/visualization/visualization.html
+[p~visualization]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/visualization/visualization.md
 [mozilla~webassembly-concepts~website]: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Concepts
 [rustc~wasm32-unknown-unknown~website]: https://doc.rust-lang.org/rustc/platform-support/wasm32-unknown-unknown.html
 [rustc~wasm32-wasip1~website]: https://doc.rust-lang.org/rustc/platform-support/wasm32-wasip1.html
@@ -74,7 +74,7 @@
 [c~serde-wasm-bindgen~docs~badge]: https://img.shields.io/crates/v/serde-wasm-bindgen
 [c~wasm-bindgen-futures~docs~badge]: https://img.shields.io/crates/v/wasm-bindgen-futures
 [c~wasm-encoder~docs]: https://docs.rs/wasm-encoder
-[p~development_tools]: https://john-cd.com/rust_howto/other/written-in-rust/development_tools.html
+[p~development_tools]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/written-in-rust/development_tools.md
 [p~grpc]: ../web-programming_http-server/grpc.md
 [p~gui]: ../gui/index.md
 [p~interfacing_with_javascript]: interfacing_with_javascript.md

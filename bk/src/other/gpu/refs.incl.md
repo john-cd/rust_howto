@@ -17,7 +17,7 @@
 [gpu~compute]: ../../categories/rendering_graphics-api/gpu_abstraction_layers.md#wgpu
 [gpu~survey]: index.md
 [locksort~repo]: https://github.com/TheZoq2/locksort
-[mwa-hyperdrive~repo]: https://github.com/MWATelescope/mwa-hyperdrive
+[mwa-hyperdrive~repo]: https://github.com/MWATelescope/mwa_hyperdrive
 [opencl3~example]: https://docs.rs/crate/opencl3/0.12.4/source/examples/basic.rs
 [opencl~loader]: https://github.com/KhronosGroup/OpenCL-ICD-Loader
 [p~rendering_graphics-api]: ../../categories/rendering_graphics-api/index.md
