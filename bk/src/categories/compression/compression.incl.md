@@ -4,6 +4,7 @@ Use `flate2` for common gzip, zlib, and raw DEFLATE streams. Add `async-compress
 
 | Recipe | Crates | Categories |
 | --- | --- | --- |
+| [Stream Zstandard Data][ex~compression~zstd-stream] | {{#crate zstd}} | {{#categories compression=Compression}} |
 | [Compress or Decompress Data with `flate2`][ex~compression~compress-decompress] | {{#crate flate2}} | {{#categories compression=Compression}} |
 | [Compress and Decompress a File with Gzip][ex~compression~gzip-file] | {{#crate flate2}} | {{#categories compression=Compression}} |
 | [Compress and Decompress Files Asynchronously with `async-compression`][ex~compression~async-gzip-file] | {{#crate async-compression}} | {{#categories compression=Compression asynchronous=Asynchronous}} |

@@ -6013,6 +6013,7 @@ dependencies = [
  "tokio",
  "tokio-util",
  "zip 9.6.0",
+ "zstd 0.14.4",
 ]
 
 [[package]]

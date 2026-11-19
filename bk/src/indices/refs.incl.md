@@ -232,6 +232,7 @@
 [ex~compression~async-gzip-file]: ../categories/compression/compression.md#async-gzip-file
 [ex~compression~async-zip]: ../categories/compression/compression.md#async-zip
 [ex~compression~compress-a-directory-into-a-tarball]: ../categories/compression/tar.md#compress-a-directory-into-a-tarball
+[ex~compression~zstd-stream]: ../categories/compression/compression.md#zstd-stream
 [ex~compression~compress-decompress]: ../categories/compression/compression.md#compress-decompress
 [ex~compression~decompress-a-tarball-removing-prefix]: ../categories/compression/tar.md#decompress-a-tarball-removing-prefix
 [ex~compression~decompress-a-tarball]: ../categories/compression/tar.md#decompress-a-tarball
