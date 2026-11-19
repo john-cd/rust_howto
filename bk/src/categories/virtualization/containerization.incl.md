@@ -10,7 +10,7 @@ The [OCI Runtime Specification][oci-runtime-spec~repo]↗ defines the bundle and
 
 ## Linux Resource Controls and Namespaces {#linux-isolation}
 
-[![cgroups-rs][c~cgroups-rs~crates.io~badge]][c~cgroups-rs~crates.io]↗ manages Linux control groups (cgroups), which group processes and apply resource limits. Its current documentation exposes both v1 and v2 hierarchy APIs; available controllers and permissions still depend on the host.
+[![cgroups-rs][c~cgroups-rs~crates.io~badge]][c~cgroups-rs~docs]↗ manages Linux control groups (cgroups), which group processes and apply resource limits. Its current documentation exposes both v1 and v2 hierarchy APIs; available controllers and permissions still depend on the host.
 
 [![nix][c~nix~crates.io~badge]][c~nix~docs]↗ and [![rustix][c~rustix~crates.io~badge]][c~rustix~docs]↗ expose low-level system calls for namespace operations. Current APIs include `nix::sched::unshare` (with the `sched` feature) and `rustix::thread::unshare_unsafe` (with the `thread` feature). These crates are building blocks, not container managers: creating a usable container also involves mounts, user mappings, capabilities, networking, and cgroup configuration. Required privileges and kernel support vary by operation and host policy.
 

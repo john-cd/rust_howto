@@ -40,7 +40,8 @@ just RUSTC_WRAPPER= CARGO_BUILD_RUSTC_WRAPPER= cargo run --manifest-path later/c
   back to 5 and check that the threshold appears and disappears. In Leptos,
   verify 0/even, 1/odd, and 0/even, then increase to 6 to check the threshold message.
 - From the repository root, run the live local Docker tests with
-  `just cargo test --manifest-path later/crates/Cargo.toml --locked -p virtualization --features containers --example using_containers -- --ignored`.
+  `just cargo test --manifest-path bk/crates/Cargo.toml --locked -p virtualization --features containers --example using_containers -- --ignored`.
+  Both tests passed again after the move to the book workspace, against Docker Desktop's Linux daemon (Engine 29.9.3).
 - Follow the [disposable cluster walkthrough](src/other/cloud/kubernetes.md#verify-reconciliation-in-a-disposable-cluster)
   to run the controller with an explicit kubeconfig, verify status, and check
   garbage collection.

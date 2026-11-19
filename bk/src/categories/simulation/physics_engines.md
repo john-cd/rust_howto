@@ -6,13 +6,15 @@
 
 ## Rapier {#rapier}
 
-[![rapier][rapier~badge]][rapier~website]{{hi:rapier}}
+[![rapier2d][c~rapier2d~docs~badge]][c~rapier2d~docs]{{hi:rapier}}
 
 Rapier provides 2D and 3D rigid-body dynamics, joints, collision detection, and geometric queries. Use `rapier2d` or `rapier3d` directly when your application owns the simulation loop and does not need Bevy integration.
 
 The following standalone 2D example steps a falling ball on a fixed ground. It uses the pinned `rapier2d` crate without a GUI backend and compiles on Windows.
 
-```rust,editable
+From `bk/crates`, run `cargo run --locked -p simulation --example physics_engines` to see the simulated body fall and settle.
+
+```rust,noplayground
 {{#include ../../../crates/cats/simulation/examples/physics_engines/rapier2d.rs:example}}
 ```
 

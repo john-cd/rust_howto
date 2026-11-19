@@ -14,7 +14,7 @@ reader task. Other categories have no candidate in this review.
 | --- | --- | --- |
 | [`gdbstub`](https://docs.rs/gdbstub/latest/gdbstub/) | Single step a toy emulator in GDB and inspect its simulated registers. | Extend the existing [emulator](src/categories/emulators/emulators.md) with a local debugger session. The existing recipe already explains instruction execution and ROM loading. |
 | [`meshopt`](https://docs.rs/meshopt/latest/meshopt/optimize/index.html) | Reorder indices in a small triangle mesh for the vertex cache. | Verify that the triangle multiset stays the same, including winding. The existing [3D model recipe](../bk/src/categories/rendering_data-formats/3d_model_formats.md) covers loading and inspecting a scene. |
-| [`turmoil`](https://docs.rs/turmoil/latest/turmoil/) | Partition and repair a link between two simulated hosts and verify that delivery resumes. | Exercise a two-host network lifecycle. The existing [simulation recipes](src/categories/simulation/simulation.md) cover event queues, ODEs, and sampling. |
+| [`turmoil`](https://docs.rs/turmoil/latest/turmoil/) | Partition and repair a link between two simulated hosts and verify that delivery resumes. | Exercise a two-host network lifecycle. The existing [simulation recipes](../bk/src/categories/simulation/simulation.md) cover event queues, ODEs, and sampling. |
 
 ## Registry Snapshot
 
@@ -79,11 +79,11 @@ above.
 | Written in Rust | [development-tools](https://crates.io/categories/development-tools) | [syn](https://crates.io/crates/syn) (918,602,034), [quote](https://crates.io/crates/quote) (500,441,825), [proc-macro2](https://crates.io/crates/proc-macro2) (493,168,046) | [syn](https://crates.io/crates/syn) (3,100,312,688) |
 | Command-line Utilities (published comparison) | [command-line-utilities](https://crates.io/categories/command-line-utilities) | [crossterm](https://crates.io/crates/crossterm) (60,213,403), [is-wsl](https://crates.io/crates/is-wsl) (19,878,180), [is-docker](https://crates.io/crates/is-docker) (19,877,555) | [crossterm](https://crates.io/crates/crossterm) (236,757,069) |
 
-## Examples Already in the Staged Book
+## Examples from the Coverage Review
 
 These recipes were added or updated during the coverage review.
 
-- [Source diagnostics](src/categories/compilers/source_diagnostics.md) combines
+- [Source diagnostics](../bk/src/categories/compilers/source_diagnostics.md) combines
   Logos byte spans with codespan-reporting labels.
 - [Terminal tables](../bk/src/categories/visualization/terminal_tables.md) uses tabled
   when readers need exact values and units.

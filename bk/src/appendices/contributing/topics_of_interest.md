@@ -16,7 +16,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [Email](../../categories/email/index.md).
 - [Template Engines](../../categories/template-engine/index.md).
 - [Caching](../../categories/caching/index.md).
-- [Compilers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/compilers/index.md).
+- [Compilers](../../categories/compilers/index.md).
 - [WASM](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md).
 - [[algorithms | Algorithms]].
 - [Authentication](../../categories/authentication/index.md) and authorization: OAuth 2.0, LDAP/Active Directory.
@@ -35,7 +35,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [Cloud](../../other/cloud/index.md): load balancers, status reporting (Vigil), routing, orchestration, containers.
 - Reverse proxies.
 - [Web programming](../../categories/web-programming/index.md).
-- [Virtualization](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md).
+- [Virtualization](../../categories/virtualization/index.md).
 - [Version Control](../../other/devops/version_control.md): libgit2: clone, change branches, create commits, push, pull.
 - [Cryptography](../../categories/cryptography/index.md), SSL, SSH, other public key [encryption](../../categories/cryptography/encryption.md), X.509, RusTLS.
 - [Network Programming](../../categories/network-programming/index.md): Basic and advanced TCP/IP networking.
@@ -59,7 +59,7 @@ The following are topics that deserve (additional) coverage and examples:
 - [Multimedia](../../categories/multimedia/index.md).
 - [Computer Vision](../../categories/computer-vision/index.md).
 - [Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md).
-- [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md).
+- [Simulation](../../categories/simulation/index.md).
 - [Science](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science/index.md) ([Geo](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_geo/geo.md), [Neuro](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_neuroscience/neuroscience.md)).
 - [Finance](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/finance/index.md).
 - [Aerospace](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace/index.md)-related crates: [Drones](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace_drones/drones.md), UAVs, [Space Protocols](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/aerospace_space-protocols/space_protocols.md), simulation...

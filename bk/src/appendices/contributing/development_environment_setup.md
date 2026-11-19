@@ -143,7 +143,7 @@ sudo apt-get -y install just
 
 ## Related Topics {#related-topics .skip}
 
-- [Containers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/containers.md).
+- [Containers](../../categories/virtualization/containers.md).
 - [Development Tools](../../categories/development-tools/index.md).
 - [[rust-installation | Rust Installation]].
 - [Text Editors](../../categories/text-editors/index.md).

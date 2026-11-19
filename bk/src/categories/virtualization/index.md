@@ -28,7 +28,7 @@ Before choosing a runtime or crate, check the host operating system, CPU archite
 | [`vmm-sys-util`][rust-vmm~vmm-sys-util~repo]↗{{hi:vmm-sys-util}} | Utilities | Helpers shared by `rust-vmm` components. |
 | [`virt`][c~virt~docs]↗{{hi:virt}} | libvirt bindings | Manage QEMU/KVM and other hypervisors through `libvirt`. |
 | [`tun-tap`][c~tun-tap~docs]↗{{hi:tun-tap}} | Networking | Virtual network interfaces. |
-| [`polkavm`][c~polkavm~crates.io]↗{{hi:polkavm}} | Emulator | RISC-V VM for smart contracts; see [Emulators](../emulators/index.md). |
+| [`polkavm`][c~polkavm~crates.io]↗{{hi:polkavm}} | Emulator | RISC-V VM for smart contracts; see [Emulators](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/emulators/index.md). |
 
 [`QEMU`][wikipedia~QEMU]↗{{hi:QEMU}} and [`KVM`][c~kvm~docs]↗{{hi:KVM}} are common integration points. Safe Rust can reduce some memory-safety risks in virtualization components, but it does not establish isolation by itself; unsafe code, FFI, configuration, the host kernel, and the hypervisor boundary still need careful review.
 
@@ -42,9 +42,9 @@ Before choosing a runtime or crate, check the host operating system, CPU archite
 
 | Topic | Rust Crates | Notes |
 | ---------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| Sandboxing with [Wasm](../wasm/index.md) | [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}}, [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}} | `wasmi` interprets WebAssembly; `wasi-rs` provides WASI bindings. |
-| [Emulators](../emulators/index.md) | [`qemu-rs`][c~qemu~docs]↗{{hi:qemu-rs}} | QEMU bindings for emulation and virtualization. |
-| FFI | | See [Development Tools: FFI](../development-tools_ffi/index.md). |
+| Sandboxing with [Wasm](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md) | [`wasmi`][c~wasmi~docs]↗{{hi:wasmi}}, [`wasi-rs`][c~wasi~docs]↗{{hi:wasi-rs}} | `wasmi` interprets WebAssembly; `wasi-rs` provides WASI bindings. |
+| [Emulators](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/emulators/index.md) | [`qemu-rs`][c~qemu~docs]↗{{hi:qemu-rs}} | QEMU bindings for emulation and virtualization. |
+| FFI | | See [Development Tools: FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md). |
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

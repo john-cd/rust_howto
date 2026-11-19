@@ -7,14 +7,14 @@ expected. [Logos](https://docs.rs/logos/) reports a byte range into the original
 UTF-8 source. [codespan-reporting](https://docs.rs/codespan-reporting/) maps that
 range to a displayed line and column, then draws a label under the error.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/compilers/examples/source_diagnostics.rs:example}}
 ```
 
 Run from the repository root:
 
 ```console
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p compilers --example source_diagnostics
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p compilers --example source_diagnostics
 ```
 
 The report identifies `@` at column 8 even though `é` occupies two bytes. Preserve

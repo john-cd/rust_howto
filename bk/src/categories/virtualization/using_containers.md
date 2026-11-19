@@ -56,14 +56,14 @@ Testcontainers starts a service with a dynamically mapped host port. The example
 {{#include ../../../crates/cats/virtualization/examples/using_containers/redis_test.rs:example}}
 ```
 
-From `later/crates`, compile the optional examples and run the daemon-dependent tests explicitly:
+From `bk/crates`, compile the optional examples and run the daemon-dependent tests explicitly:
 
 ```sh
-cargo test -p virtualization --example using_containers --features containers
-cargo test -p virtualization --example using_containers --features containers -- --ignored
+cargo test --locked -p virtualization --example using_containers --features containers
+cargo test --locked -p virtualization --example using_containers --features containers -- --ignored
 ```
 
-The first command compiles the tests and reports them as ignored. The second requires a reachable Docker daemon and permission to pull public images and create containers. A missing daemon is an error, not a passing skipped test. Testcontainers uses its documented Docker host resolution; configure the intended daemon explicitly when it differs from the local default.
+The first command builds the examples and skips the two Docker-dependent tests. The second requires a reachable Docker daemon and permission to pull public images and create containers. A missing daemon is an error, not a passing skipped test. Testcontainers uses its documented Docker host resolution; configure the intended daemon explicitly when it differs from the local default.
 
 Mockito mocks HTTP APIs; it does not replace Docker integration or a real database protocol. Use [mocking tools][containers~mocking] for application-unit boundaries and actual services for integration checks.
 

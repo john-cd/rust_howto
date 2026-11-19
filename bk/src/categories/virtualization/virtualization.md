@@ -53,9 +53,9 @@ Rust code can implement VMMs and the components around them, such as device mode
 
 A WebAssembly runtime runs a module inside a constrained execution environment. It is useful for sandboxing portable modules, but it does not virtualize a complete operating system or replace a VM's guest-kernel boundary. Limit the host functions and resources made available to untrusted modules.
 
-The example below loads a small WebAssembly module with wasmi and calls its exported function.
+The example below loads a small WebAssembly module with wasmi and calls its exported function. From `bk/crates`, run `cargo run --locked -p virtualization --example virtualization`.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/virtualization/examples/virtualization/virtualization1.rs:example}}
 ```
 

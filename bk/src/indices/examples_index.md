@@ -1012,6 +1012,16 @@
 
 ### [Differential Equations](../categories/mathematics/differential_equations.md)
 
+## Simulation
+
+### [Simulation Models](../categories/simulation/simulation.md)
+
+{{#include ../categories/simulation/simulation.incl.md}}
+
+### [Physics Engines](../categories/simulation/physics_engines.md)
+
+{{#include ../categories/simulation/physics_engines.incl.md}}
+
 ## Memory Management
 
 ### [Lazy Initialization](../categories/memory-management/lazy_initialization.md)
@@ -1097,6 +1107,18 @@
 ### [Unix APIs](../categories/os_unix-apis/unix.md)
 
 {{#include ../categories/os_unix-apis/unix.incl.md}}
+
+## Virtualization
+
+### [Virtual Machines and WebAssembly](../categories/virtualization/virtualization.md)
+
+{{#include ../categories/virtualization/virtualization.incl.md}}
+
+### [Use Containers with Rust Applications](../categories/virtualization/using_containers.md)
+
+{{#include ../categories/virtualization/using_containers.incl.md}}
+
+{{#include ../categories/virtualization/using_containers.incl.md}}
 
 ## Games
 
@@ -1343,6 +1365,18 @@
 ### [General Programming Language Parsing](../categories/parser-implementations/programming_languages.md)
 
 {{#include ../categories/parser-implementations/programming_languages.incl.md}}
+
+## Compilers
+
+### [Tokenize Input with Logos](../categories/compilers/tokenization.md)
+
+{{#include ../categories/compilers/tokenization.incl.md}}
+
+### [Render a Diagnostic with a Source Span](../categories/compilers/source_diagnostics.md)
+
+### [Incremental Computation](../categories/compilers/incremental_computation.md)
+
+{{#include ../categories/compilers/incremental_computation.incl.md}}
 
 ## Rust Patterns
 

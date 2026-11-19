@@ -17,7 +17,7 @@ Start with what the host needs to run. A web service listens for requests, an ev
 
 Keep business logic and request handlers independent of a provider entry point. For a new service, start with the [Axum chapter][cloud~axum], then package it for a supported container or serverless target. Select that target from its current runtime, region, persistence, pricing, and operational requirements.
 
-For a local container workflow, follow [Using Containers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/using_containers.md). For an HTTP service, bind to the interface the host can reach, read the port from its configuration, and verify a health endpoint through the mapped port. A working request from the host checks both the server and the container's port mapping.
+For a local container workflow, follow [Using Containers](../../categories/virtualization/using_containers.md). For an HTTP service, bind to the interface the host can reach, read the port from its configuration, and verify a health endpoint through the mapped port. A working request from the host checks both the server and the container's port mapping.
 For historical context, Shuttle paired Axum integration with managed hosting.
 See its [shutdown notice][shuttle~shutdown] when maintaining an existing project.
 
@@ -40,7 +40,7 @@ The [`kube` project][cloud~kube] supplies Kubernetes clients and controller-runt
 ## Related Topics {#related-topics .skip}
 
 - [Cloud overview](index.md) and [AWS](aws.md).
-- [Containers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/containers.md).
+- [Containers](../../categories/virtualization/containers.md).
 - [WebAssembly runtimes](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/wasm_standalone_runtimes.md).
 
 {{#include refs.incl.md}}
