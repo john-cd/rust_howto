@@ -13,11 +13,11 @@ use clap::Subcommand;
 #[cfg(feature = "lua")]
 mod mlua;
 
-/// Calls an embedded Lua chunk and a Rust function while exposing only a
+/// Runs a Lua chunk with a restricted set of standard libraries.
 #[cfg(feature = "lua")]
 mod mlua_scripting;
 
-/// Exposes a Rust counter as Lua userdata with a method, using vendored Lua.
+/// Exposes a Rust counter and its methods as Lua userdata.
 #[cfg(feature = "lua")]
 mod mlua_userdata;
 

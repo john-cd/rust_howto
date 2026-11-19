@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Exposes a Rust counter as Lua userdata with a method, using vendored Lua.
+//! Exposes a Rust counter and its methods as Lua userdata.
 //!
 //! Userdata is a Rust value that Lua code holds as an opaque object. Methods
 //! registered on it let scripts call back into Rust, while the data stays in

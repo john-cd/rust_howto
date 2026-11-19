@@ -12,7 +12,19 @@ Interfacing with Lua from Rust is typically done using the Lua C API, and there 
 
 [`mlua`][c~mlua~docs]↗{{hi:mlua}} provides high-level bindings to Lua 5.5/5.4/5.3/5.2/5.1 (including `LuaJIT`) and Roblox Luau, with async/await support and the option to write native Lua modules in Rust.
 
-The first three examples use standalone mode with Lua 5.4 and the `vendored` feature, so Cargo builds Lua from source and the Rust application owns the interpreter. Keep the library set small for scripts that should not access files or processes; the base library is always present, so the scripting example clears its file-loading globals explicitly. These choices limit capabilities but do not create a complete sandbox for hostile code. For untrusted scripts, use an isolated process or a runtime with a dedicated sandbox API.
+The first three examples link against the system Lua 5.4 library. Each creates its own interpreter in the Rust process. Install the Lua 5.4 development files for your target before building. On Debian, `liblua5.4-dev` and `pkg-config` let Cargo find the library. On Windows with MSVC, use the import library and DLL from the same Lua 5.4 SDK.
+
+For example, with an x64 MSVC Lua SDK installed under `C:\Tools\lua-5.4.9`, set the library directory, import library name, and runtime path in PowerShell. Run these commands from the repository root.
+
+```powershell
+$luaSdk = 'C:\Tools\lua-5.4.9'
+$env:LUA_LIB = Join-Path $luaSdk 'lib'
+$env:LUA_LIB_NAME = 'lua54'
+$env:PATH = (Join-Path $luaSdk 'bin') + ';' + $env:PATH
+just cargo test --manifest-path bk/platform/Cargo.toml --locked -p development_tools_ffi --features lua --example lua
+```
+
+Keep the library set small for scripts that should not access files or processes; the base library is always present, so the scripting example clears its file-loading globals explicitly. These choices limit capabilities but do not create a complete sandbox for hostile code. For untrusted scripts, use an isolated process or a runtime with a dedicated sandbox API.
 
 ```rust,noplayground
 {{#include ../../../platform/cats/development_tools_ffi/examples/lua/mlua.rs:example}}
@@ -28,7 +40,7 @@ Register Rust functions with `create_function`, evaluate a chunk with `load`, an
 
 ### Expose Rust Userdata
 
-Implement `UserData` to expose Rust-owned values and methods to scripts. The example uses the package's vendored Lua 5.4 configuration.
+Implement `UserData` to expose Rust-owned values and methods to scripts. The embedded interpreter owns the Lua value and checks its type when Lua calls Rust.
 
 ```rust,noplayground
 {{#include ../../../platform/cats/development_tools_ffi/examples/lua/mlua_userdata.rs:example}}
@@ -36,7 +48,19 @@ Implement `UserData` to expose Rust-owned values and methods to scripts. The exa
 
 ### Build a Lua Module
 
-Use `mlua`'s separate `module` feature when a Lua runtime should load the Rust `cdylib` with `require`. The module target is feature-gated in the example crate; module builds have different linking requirements from embedded applications, especially on Windows. Select either the `lua` feature (vendored standalone mode) or `lua-module` feature (external runtime module mode), because `mlua-sys` does not support both modes in one build.
+Enable the `lua-module` feature and build the `lua_module` example as a dynamic library. This mode uses the interpreter that loads the library. The module and interpreter must use the same Lua ABI. On Windows, set `LUA_LIB` and `LUA_LIB_NAME` as above so the module links against the host's import library.
+
+```powershell
+just cargo build --manifest-path bk/platform/Cargo.toml --locked -p development_tools_ffi --features lua-module --example lua_module
+```
+
+Use the resulting `lua_module.dll` from the `debug/examples` directory under Cargo's configured target directory. From that directory, the Lua interpreter can load the DLL through `package.loadlib`. This calls the C entry point that `require` would find for a module named `lua_module`.
+
+```lua
+local open_module = assert(package.loadlib("./lua_module.dll", "luaopen_lua_module"))
+local example = open_module()
+assert(example.double(21) == 42)
+```
 
 ```rust,noplayground
 {{#include ../../../platform/cats/development_tools_ffi/examples/lua/module.rs:example}}
