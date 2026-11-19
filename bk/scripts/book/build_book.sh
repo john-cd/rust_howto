@@ -29,6 +29,9 @@ case "${BUILD_PDF:-0}" in
         export MDBOOK_OUTPUT__PANDOC__OPTIONAL=false
         ;;
     *)
+        # Skip the optional renderer even when installed, including on Windows.
+        export MDBOOK_OUTPUT__PANDOC__OPTIONAL=true
+        export MDBOOK_OUTPUT__PANDOC__COMMAND=mdbook-pandoc-disabled-for-html-build
         export MDBOOK_OUTPUT__PANDOC__PROFILE__PDF__TO=gfm
         export MDBOOK_OUTPUT__PANDOC__PROFILE__PDF__OUTPUT_FILE=book.md
         ;;
