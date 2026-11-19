@@ -1449,6 +1449,7 @@
 [ex~text-processing~osstring]: ../categories/text-processing/other_strings.md#osstring
 [ex~text-processing~rake]: ../categories/text-processing/text_analysis.md#rake
 [ex~text-processing~replace-all-occurrences-of-one-text-pattern-with-another-pattern]: ../categories/text-processing/regex.md#replace-all-occurrences-of-one-text-pattern-with-another-pattern
+[ex~text-processing~search-lines]: ../categories/text-processing/string_search.md#search-lines
 [ex~text-processing~similar]: ../categories/text-processing/diffing.md#similar
 [ex~text-processing~slug]: ../categories/text-processing/string_manipulation.md#slug
 [ex~text-processing~string-concat]: ../categories/text-processing/string_concat.md#string-concat

@@ -36,3 +36,4 @@
 [ex~text-processing~word-boundaries]: text_analysis.md#word-boundaries
 [tree-sitter-json~crates.io]: https://crates.io/crates/tree-sitter-json
 [unicode~uax29]: https://www.unicode.org/reports/tr29/
+[ex~text-processing~search-lines]: string_search.md#search-lines

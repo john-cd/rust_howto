@@ -70,6 +70,14 @@ The example also shows one accent-insensitive comparison policy: apply canonical
 {{#include ../../../crates/cats/text_processing/examples/string_search/strsim.rs:example}}
 ```
 
+## Search Lines with the Ripgrep Libraries {#search-lines}
+
+Use `grep-regex` to compile the pattern and `grep-searcher` to search a byte source and send each matching line to a sink. This example uses the `UTF8` sink to collect one-based line numbers and text. The sink reports an error if a matching line contains invalid UTF-8. For recursive file searches from the terminal, see the [ripgrep command-line example](../command-line-utilities/filesystem_cli.md#search-file-contents).
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/text_processing/examples/search_lines.rs:example}}
+```
+
 ## Related topics {#related-topics .skip}
 
 - Full-text search engines and indexes.

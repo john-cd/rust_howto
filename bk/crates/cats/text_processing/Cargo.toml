@@ -97,7 +97,14 @@ name = "unicode_nfc"
 path = "examples/unicode_nfc.rs"
 test = true
 
+[[example]]
+name = "search_lines"
+path = "examples/search_lines.rs"
+test = true
+
 [dependencies]
+grep-regex = "0.1.14"
+grep-searcher = "0.1.17"
 icu_normalizer = "2.4.0"
 # Fast multiple substring searching.
 aho-corasick = "1.1.5"

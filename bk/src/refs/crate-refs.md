@@ -3910,6 +3910,12 @@
 [c~grep-cli~lib.rs~badge]: https://img.shields.io/badge/lib.rs-grep--cli-yellow
 [c~grep-cli~repo]: https://github.com/BurntSushi/ripgrep/tree/master/crates/cli
 [c~grep-cli~repo~badge]: https://img.shields.io/badge/grep--cli-steelblue?logo=github
+[c~grep-regex~crates.io]: https://crates.io/crates/grep-regex
+[c~grep-regex~docs]: https://docs.rs/grep-regex
+[c~grep-regex~repo]: https://github.com/BurntSushi/ripgrep/tree/master/crates/regex
+[c~grep-searcher~crates.io]: https://crates.io/crates/grep-searcher
+[c~grep-searcher~docs]: https://docs.rs/grep-searcher
+[c~grep-searcher~repo]: https://github.com/BurntSushi/ripgrep/tree/master/crates/searcher
 [c~grex~crates.io]: https://crates.io/crates/grex
 [c~grex~crates.io~badge]: https://img.shields.io/badge/crates.io-grex-crimson
 [c~grex~docs]: https://docs.rs/grex

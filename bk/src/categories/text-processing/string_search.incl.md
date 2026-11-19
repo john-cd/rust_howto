@@ -7,3 +7,4 @@
 | [`fuzzy-matcher`][ex~text-processing~fuzzy-matcher] | [![fuzzy-matcher][c~fuzzy-matcher~docs~badge]][c~fuzzy-matcher~docs]{{hi:fuzzy-matcher}} | {{#categories text-processing="Text processing"}} |
 | [`memchr`][ex~text-processing~memchr] | [![memchr][c~memchr~docs~badge]][c~memchr~docs]{{hi:memchr}} | {{#categories text-processing="Text processing"}} |
 | [`strsim`][ex~text-processing~strsim] | [![strsim][c~strsim~docs~badge]][c~strsim~docs]{{hi:strsim}} | {{#categories text-processing="Text processing"}} |
+| [Search Lines with the Ripgrep Libraries][ex~text-processing~search-lines] | `grep-searcher`, `grep-regex` | {{#categories text-processing="Text processing"}} |
