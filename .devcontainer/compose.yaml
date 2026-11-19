@@ -49,8 +49,7 @@ services:
         ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256: ${ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256:?Set ORACLE_CLIENT_LINUX_ARM64_BASICLITE_SHA256 in .devcontainer/.env or the host environment}
         ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256: ${ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256:?Set ORACLE_CLIENT_LINUX_ARM64_SDK_SHA256 in .devcontainer/.env or the host environment}
         ONNXRUNTIME_VERSION: ${ONNXRUNTIME_VERSION:?Set ONNXRUNTIME_VERSION in .devcontainer/.env or the host environment}
-        ONNXRUNTIME_LINUX_X64_SHA256: ${ONNXRUNTIME_LINUX_X64_SHA256:?Set ONNXRUNTIME_LINUX_X64_SHA256 in .devcontainer/.env or the host environment}
-        ONNXRUNTIME_LINUX_AARCH64_SHA256: ${ONNXRUNTIME_LINUX_AARCH64_SHA256:?Set ONNXRUNTIME_LINUX_AARCH64_SHA256 in .devcontainer/.env or the host environment}
+        ONNXRUNTIME_NUGET_SHA512: ${ONNXRUNTIME_NUGET_SHA512:?Set ONNXRUNTIME_NUGET_SHA512 in .devcontainer/.env or the host environment}
         PANDOC_VERSION: ${PANDOC_VERSION:?Set PANDOC_VERSION in .devcontainer/.env or the host environment}
         PANDOC_LINUX_AMD64_DEB_SHA256: ${PANDOC_LINUX_AMD64_DEB_SHA256:?Set PANDOC_LINUX_AMD64_DEB_SHA256 in .devcontainer/.env or the host environment}
         EMAIL: ${EMAIL:?Set EMAIL in .devcontainer/.env or the host environment}
