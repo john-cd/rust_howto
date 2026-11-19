@@ -18,6 +18,7 @@ the tracker for publication and any follow-up.
 - All 60 focused example tests, targeted strict Clippy, and the pointer-provenance Miri test passed.
 - The example-integrity release command passed. The index generator fixture covers standalone and nested recipes.
 - Nightly format checks passed in all 77 book packages when run individually. The single book-wide Rustfmt invocation hit Windows error 206.
+- Workspace lint checks passed. The book needed a run with the compiler wrappers disabled to work around the Windows command-length failure in sccache. The strict dependency reference check also passed.
 
 ## Publication review, November 18, 2026
 
