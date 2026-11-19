@@ -24,7 +24,7 @@ Under the covers, a trait object pointer is a "fat pointer" consisting of two pa
 
 Trait objects permit "late binding" of methods. Calling a method on a trait object results in dynamic dispatch at runtime: that is, a function pointer is loaded from the trait object vtable and invoked indirectly. The actual implementation for each vtable entry can vary on an object-by-object basis.
 
-The following example demonstrates the use of trait objects to store a heterogenous collection of UI widgets and dynamic dispatch:
+The following example demonstrates the use of trait objects to store a heterogeneous collection of UI widgets and dynamic dispatch:
 
 ```rust,editable
 {{#include ../../crates/language/examples/trait_objects/trait_objects.rs:example}}

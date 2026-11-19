@@ -50,9 +50,11 @@ shopt -s nullglob
 opt=${1:-""}
 dict_filename="$(dirname "$0")/dictionary.txt"
 book_dir="$(realpath "$(dirname -- "${BASH_SOURCE[0]}")/../..")"
+# Generated indexes repeat crate names and link labels rather than authored prose.
 mapfile -d '' -t markdown_sources < <(
     find "$book_dir/src" "$book_dir/../later/src" \
-        -type f -name "*.md" -not -name "refs.incl.md" -not -path "*/refs/*.md" -print0
+        -type f -name "*.md" -not -name "refs.incl.md" -not -path "*/refs/*.md" \
+        -not -path "$book_dir/src/indices/*" -not -path "$book_dir/../later/src/indices/*" -print0
 )
 mode="check"
 
