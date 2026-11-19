@@ -67,6 +67,7 @@
 [app.codecrafters.io~rust]: https://app.codecrafters.io/tracks/rust
 [appflowy~website]: https://appflowy.io
 [apple~website]: https://apple.com
+[apple~xcode-15~release-notes]: https://developer.apple.com/documentation/xcode-release-notes/xcode-15-release-notes/
 [appsignal~website]: https://appsignal.com
 [aptoslabs~website]: https://aptoslabs.com
 [arangodb.com~website]: https://arangodb.com
@@ -318,6 +319,7 @@
 [book~asynchronous-programming-in-rust]: https://rust-lang.github.io/async-book
 [book~autocxx]: https://google.github.io/autocxx
 [book~cargo~build-cache]: https://doc.rust-lang.org/cargo/reference/build-cache.html
+[book~cargo~build-performance]: https://doc.rust-lang.org/cargo/guide/build-performance.html
 [book~cargo~build-script]: https://doc.rust-lang.org/cargo/reference/build-scripts.html
 [book~cargo~cargo-add]: https://doc.rust-lang.org/cargo/commands/cargo-add.html
 [book~cargo~cargo-bench]: https://doc.rust-lang.org/cargo/commands/cargo-bench.html
@@ -342,6 +344,7 @@
 [book~cargo~env]: https://doc.rust-lang.org/cargo/reference/environment-variables.html
 [book~cargo~profiles-lto]: https://doc.rust-lang.org/cargo/reference/profiles.html#lto
 [book~cargo~profiles-strip]: https://doc.rust-lang.org/cargo/reference/profiles.html#strip
+[book~cargo~profiles]: https://doc.rust-lang.org/cargo/reference/profiles.html
 [book~cargo~project-layout]: https://doc.rust-lang.org/cargo/guide/project-layout.html
 [book~cargo~reference-semver]: https://doc.rust-lang.org/cargo/reference/semver.html
 [book~cargo~registries]: https://doc.rust-lang.org/cargo/reference/registries.html
@@ -1592,6 +1595,7 @@
 [wikipedia~unix-timestamp]: https://en.wikipedia.org/wiki/Unix_time
 [wikipedia~webgpu]: https://en.wikipedia.org/wiki/WebGPU
 [wildfish~website]: https://wildfish.com
+[wild~repo]: https://github.com/wild-linker/wild
 [winget~website]: https://learn.microsoft.com/en-us/windows/package-manager/winget
 [wolfram~l1-norm]: http://mathworld.wolfram.com/L1-Norm.html
 [wolfram~l2-norm]: http://mathworld.wolfram.com/L2-Norm.html
