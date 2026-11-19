@@ -18,6 +18,18 @@ On Unix, the following example calls [`libc::getpid`][ffi~getpid] and compares i
 
 Other C functions can require valid pointers, matching allocation/deallocation functions, and an explicit check of their return value and `errno`. A declaration in `libc` does not enforce those contracts. Keep a native allocation's owner alive while Rust borrows it, and use `CStr` or `CString` when the API requires a null-terminated string.
 
+## Load a System Library Dynamically {#load-a-system-library-dynamically}
+
+[`libloading`][c~libloading~docs] resolves a symbol at runtime rather than linking it when the program is built. Loading a native library can execute its initialization code, so `Library::new` is `unsafe`; this example uses only fixed, operating-system-supplied libraries. A `Symbol` borrows its `Library`, which must remain alive while the function pointer is used. Do not pass untrusted plug-in paths to an in-process loader.
+
+The example calls `GetCurrentProcessId` from Windows `kernel32.dll`, or `strlen` from the C library on GNU/Linux and macOS.
+
+```rust,noplayground
+{{#include ../../../platform/cats/external_ffi_bindings/examples/libloading.rs:example}}
+```
+
+Test this Cargo-backed example from `bk/platform` with `cargo test --locked -p external_ffi_bindings --example libloading`.
+
 ## Use Safe Unix Wrappers {#unix-wrappers}
 
 [`nix`][ffi~nix] wraps many Unix APIs with Rust types and `Result` errors. Enable its task-specific features, such as `process` or `fs`, and check which operating systems implement the operation. These wrappers reduce the amount of application-level `unsafe`; they do not make every Unix API portable to Windows.

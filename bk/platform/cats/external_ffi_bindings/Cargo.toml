@@ -21,7 +21,16 @@ name = "external_ffi_bindings"
 path = "examples/external_ffi_bindings.rs"
 test = true
 
+[[example]]
+name = "libloading"
+path = "examples/libloading.rs"
+test = true
+
 # autolib = false
+
+[dependencies]
+# Runtime loading of trusted native libraries and symbols.
+libloading = "0.8"
 
 [target.'cfg(unix)'.dependencies]
 # Raw FFI bindings to platform libraries like libc.
