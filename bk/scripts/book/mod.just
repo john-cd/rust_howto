@@ -6,6 +6,12 @@
 set unstable
 set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
+[unix]
+set script-interpreter := ["bash", "-eu"]
+
+[windows]
+set script-interpreter := ["C:/Program Files/Git/bin/bash.exe", "-eu"]
+
 root := replace(clean(source_directory() + "/../.."), "\\", "/")
 # Executable suffix and Python launcher differ on Windows; recipes themselves run in Bash everywhere.
 exe := if os_family() == "windows" { ".exe" } else { "" }
@@ -57,8 +63,8 @@ _default:
     cargo install --locked --version {{ mdbook_indexing_version }} mdbook-indexing
 
 # Generate the external crates.io category page from its checked-in snapshot.
+[script]
 @_generate-index-category:
-    #!/usr/bin/env bash
     set -euo pipefail
     cd "{{ root }}/../tools"
     tmp="$(mktemp)"

@@ -115,7 +115,7 @@ Remove-Item -LiteralPath $echoConfig
 - **Status subresource**: write observed state with `patch_status`, and skip the write when nothing changed, or you will trigger another reconcile.
 - **Requeue strategy**: return `Action::requeue(..)` for periodic resync, and use `error_policy` to retry failures after a delay.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/other/examples/cloud/kubernetes.rs:example}}
 ```
 

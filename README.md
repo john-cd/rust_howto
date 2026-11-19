@@ -4,14 +4,20 @@
 
 [![Build and deploy (Linux)](https://github.com/john-cd/rust_howto/actions/workflows/build_deploy_book.yml/badge.svg)](https://github.com/john-cd/rust_howto/actions/workflows/build_deploy_book.yml)[![(Windows)](https://github.com/john-cd/rust_howto/actions/workflows/build_book_code_and_book_on_windows.yml/badge.svg)](https://github.com/john-cd/rust_howto/actions/workflows/build_book_code_and_book_on_windows.yml)
 
-**A documentation summary and a compendium of recipes for the Rust language and ecosystem.**
-**Everything you need for day-to-day Rust coding, all in one place.**
+**A documentation summary and a compendium of recipes for the Rust language and
+ecosystem.** **Everything you need for day-to-day Rust coding, all in one
+place.**
 
-Point your browser to [`https://john-cd.com/rust_howto`][rust-howto~website]↗ to read the [Rust How-to][rust-howto~website]↗ book.
+Point your browser to [`https://john-cd.com/rust_howto`][rust-howto~website]↗ to
+read the [Rust How-to][rust-howto~website]↗ book.
 
 ## Local Rust checks
 
-Install the toolchain from `rust-toolchain.toml` with `rustup show` in the checkout. From the repository root, run `just check` and `just test`. For targeted Cargo work, use `bk/crates`, `bk/platform`, `publish`, `tools`, `xmpl`, or `later/crates` for deferred examples. For formatting, use the nightly pin in `rustfmt-toolchain.toml`.
+Install the toolchain from `rust-toolchain.toml` with `rustup show` in the
+checkout. From the repository root, run `just check` and `just test`. For
+targeted Cargo work, use `bk/crates`, `bk/platform`, `publish`, `tools`, `xmpl`,
+or `later/crates` for deferred examples. For formatting, use the nightly pin in
+`rustfmt-toolchain.toml`.
 
 ## Work In Progress
 
@@ -19,19 +25,23 @@ This book is going through _heavy edits_. Pardon the dust.
 
 ## Contributing
 
-Contributions are most welcome! Please review the [contributing][rust-howto~contributing~website]↗ section of the book and peruse the book's [GitHub repo][rust-howto~repo]↗.
+Contributions are most welcome! Please review the
+[contributing][rust-howto~contributing~website]↗ section of the book and peruse
+the book's [GitHub repo][rust-howto~repo]↗.
 
 ## Rust tooling
 
-Use the pinned Rust 1.100.0 toolchain from [rust-toolchain.toml](rust-toolchain.toml) with
-`just` for build, lint, and test tasks. Install Rust, sccache, and Just. Windows recipes require Git Bash.
-Build paths and diagnostics are implemented directly in the justfile.
+Use the pinned Rust 1.100.0 toolchain from
+[rust-toolchain.toml](rust-toolchain.toml) with `just` for build, lint, and test
+tasks. Install Rust, sccache, and Just. Windows recipes require Git Bash. Build
+paths and diagnostics are implemented directly in the justfile.
 
 - `just build-env` displays the effective environment, checkout, and branch.
-- `just cargo <subcommand> [args...]` runs Cargo with this checkout's output paths.
+- `just cargo <subcommand> [args...]` runs Cargo with this checkout's output
+  paths.
 
-The repository root is not a Cargo workspace. Use the owning workspace
-justfile, or select a manifest from the root, for example:
+The repository root is not a Cargo workspace. Use the owning workspace justfile,
+or select a manifest from the root, for example:
 
 ```sh
 just cargo check --manifest-path tools/Cargo.toml
@@ -49,13 +59,14 @@ disabled and a 45G cache limit. The runner exports `RUSTC_WRAPPER=sccache`,
 `SCCACHE_CACHE_SIZE=45G`, replacing inherited values. Explicit shell or Cargo
 command-line overrides still take precedence for direct Cargo invocations.
 
-`CODE_SCCACHE_ROOT` overrides `SCCACHE_DIR`; otherwise the default below applies.
-The task runner sets `SCCACHE_BASEDIRS` to the main checkout and registered `.worktrees/a`, `.worktrees/b`, and `.worktrees/c`,
-discarding inherited unrelated paths. sccache reads daemon settings at startup;
-wait for all builds to finish before restarting a daemon with stale settings.
+`CODE_SCCACHE_ROOT` overrides `SCCACHE_DIR`; otherwise the default below
+applies. The task runner sets `SCCACHE_BASEDIRS` to the main checkout and
+registered `.worktrees/a`, `.worktrees/b`, and `.worktrees/c`, discarding
+inherited unrelated paths. sccache reads daemon settings at startup; wait for
+all builds to finish before restarting a daemon with stale settings.
 
-Use `just cache-setup` to refresh the daemon configuration after all Rust
-builds have stopped.
+Use `just cache-setup` to refresh the daemon configuration after all Rust builds
+have stopped.
 
 ### Output paths and worktrees
 
@@ -64,15 +75,15 @@ Keep the primary checkout on `develop`. Use `.worktrees/a`, `.worktrees/b`, and
 reusing slots, and keep each slot's build cache. The primary checkout's output
 slot is `main`, regardless of its branch name.
 
-| Variable            | Windows default | Linux/macOS default                                       |
-| ------------------- | --------------- | --------------------------------------------------------- |
-| `CODE_TARGET_ROOT`  | `D:/target`     | `$XDG_CACHE_HOME/cargo-target` or `~/.cache/cargo-target` |
-| `CODE_BUILD_ROOT`   | `D:/code_build` | `$XDG_CACHE_HOME/cargo-build` or `~/.cache/cargo-build`   |
-| `CODE_SCCACHE_ROOT` | `D:/cache/sccache`    | `$XDG_CACHE_HOME/sccache` or `~/.cache/sccache`           |
-| `CODE_TEMP_ROOT`    | `C:/temp`       | Existing native `TMPDIR` or `/tmp`                        |
+| Variable | Windows default | Linux/macOS default |
+| ------------------- | ------------------ | --------------------------------------------------------- |
+| `CODE_TARGET_ROOT` | `D:/target` | `$XDG_CACHE_HOME/cargo-target` or `~/.cache/cargo-target` |
+| `CODE_BUILD_ROOT` | `D:/code_build` | `$XDG_CACHE_HOME/cargo-build` or `~/.cache/cargo-build` |
+| `CODE_SCCACHE_ROOT` | `D:/cache/sccache` | `$XDG_CACHE_HOME/sccache` or `~/.cache/sccache` |
+| `CODE_TEMP_ROOT` | `C:/temp` | Existing native `TMPDIR` or `/tmp` |
 
-Set roots to absolute paths and create the directories before building. Targets use
-`CODE_TARGET_ROOT/rust_howto/<slot>` and intermediate files use
+Set roots to absolute paths and create the directories before building. Targets
+use `CODE_TARGET_ROOT/rust_howto/<slot>` and intermediate files use
 `CODE_BUILD_ROOT/rust_howto/<slot>`. The runner exports these as
 `CARGO_TARGET_DIR`, `CARGO_BUILD_TARGET_DIR`, and `CARGO_BUILD_BUILD_DIR`.
 
@@ -81,27 +92,35 @@ Unix and WSL retain their native temporary directories.
 
 ## Companion Tools
 
-Unpublished chapters live under `later/src`. From `bk/`, run `just book future` after
-building the helper binaries with `just release` from `tools/`. This command uses
-`later/book.toml` and writes HTML under `bk/book/future/`. It expands includes and custom
-directives without adding unpublished chapters to the main book. Review build diagnostics as well as the exit status:
-mdBook can report a missing include while continuing to render a chapter.
+Unpublished chapters live under `later/src`. From `bk/`, run `just book future`
+after building the helper binaries with `just release` from `tools/`. This
+command uses `later/book.toml` and writes HTML under `bk/book/future/`. It
+expands includes and custom directives without adding unpublished chapters to
+the main book. Review build diagnostics as well as the exit status: mdBook can
+report a missing include while continuing to render a chapter.
 
-The [`mdbook-utils`][c~mdbook-utils~crates.io]↗ utility ([(github)][c~mdbook-utils~repo]↗ [(docs.rs)][c~mdbook-utils~docs]↗ [(user guide)][c~mdbook-utils~user-guide]↗) helps manage links and code blocks in [`mdbook`][c~mdbook~docs]↗ source directories. It is the companion tool for this book.
+The [`mdbook-utils`][c~mdbook-utils~crates.io]↗ utility
+([(github)][c~mdbook-utils~repo]↗ [(docs.rs)][c~mdbook-utils~docs]↗
+[(user guide)][c~mdbook-utils~user-guide]↗) helps manage links and code blocks
+in [`mdbook`][c~mdbook~docs]↗ source directories. It is the companion tool for
+this book.
 
-The `book_tooling/` Git submodule provides the companion Markdown parser and authoring-tool sources.
-Initializing it requires GitHub access to the private `john-cd/book_tooling` repository:
+The `book_tooling/` Git submodule provides the companion Markdown parser and
+authoring-tool sources. Initializing it requires GitHub access to the private
+`john-cd/book_tooling` repository:
 
 ```sh
 git submodule update --init --recursive -- book_tooling
 ```
 
-Initialization checks out the commit recorded by this repository. To review a newer `develop`
-revision, run `git submodule update --remote -- book_tooling`, inspect the changes, and commit
-the updated submodule reference. The `tools/` workspace uses these checked-out sources as path dependencies, so
-initializing the submodule is required before building the tools or Docker images.
+Initialization checks out the commit recorded by this repository. To review a
+newer `develop` revision, run `git submodule update --remote -- book_tooling`,
+inspect the changes, and commit the updated submodule reference. The `tools/`
+workspace uses these checked-out sources as path dependencies, so initializing
+the submodule is required before building the tools or Docker images.
 
-There are also a number of utilities and pre-processors in the [`tools`][rust-howto~tools~repo]↗ folder of this repo.
+There are also a number of utilities and pre-processors in the
+[`tools`][rust-howto~tools~repo]↗ folder of this repo.
 
 ## Legal
 
@@ -119,60 +138,84 @@ Please refer to the LICENSE file.
 
 ## Python development
 
-The Python extension example lives in `bk/platform/cats/development_tools_ffi/python_extension` and uses the committed `uv.lock` and `.python-version`. From the repository root, use `just --justfile bk/platform/cats/development_tools_ffi/python_extension/justfile env`, then `just --justfile bk/platform/cats/development_tools_ffi/python_extension/justfile sync` and `just --justfile bk/platform/cats/development_tools_ffi/python_extension/justfile uv run <command>`. Use `just --justfile bk/platform/cats/development_tools_ffi/python_extension/justfile hooks` for hooks. See [`bk/platform/cats/development_tools_ffi/python_extension/README.md`](bk/platform/cats/development_tools_ffi/python_extension/README.md) for project details.
+The Python extension example lives in
+`bk/platform/cats/development_tools_ffi/python_extension` and uses the committed
+`uv.lock` and `.python-version`. From the repository root, use `just --justfile
+bk/platform/cats/development_tools_ffi/python_extension/justfile env`, then
+`just --justfile
+bk/platform/cats/development_tools_ffi/python_extension/justfile sync` and `just
+--justfile bk/platform/cats/development_tools_ffi/python_extension/justfile uv
+run <command>`. Use `just --justfile
+bk/platform/cats/development_tools_ffi/python_extension/justfile hooks` for
+hooks. See
+[`bk/platform/cats/development_tools_ffi/python_extension/README.md`](bk/platform/cats/development_tools_ffi/python_extension/README.md)
+for project details.
 
-Python environments, caches, and generated outputs use the configurable `CODE_PYTHON_ENV_ROOT`, `CODE_PYTHON_BUILD_ROOT`, and `CODE_PYTHON_OUTPUT_ROOT`; package data uses `CODE_PACKAGES_ROOT`. These are separate from the Rust-specific `CODE_BUILD_ROOT`, `CODE_TARGET_ROOT`, and `CODE_SCCACHE_ROOT`.
+Python environments, caches, and generated outputs use the configurable
+`CODE_PYTHON_ENV_ROOT`, `CODE_PYTHON_BUILD_ROOT`, and `CODE_PYTHON_OUTPUT_ROOT`;
+package data uses `CODE_PACKAGES_ROOT`. These are separate from the
+Rust-specific `CODE_BUILD_ROOT`, `CODE_TARGET_ROOT`, and `CODE_SCCACHE_ROOT`.
 
 ## Python tooling
 
 Install Just and uv; Windows recipes use Git Bash. Each Python project has a
-Justfile. Environment variables are defined in `scripts/env.just`, imported
-by those Justfiles; no Python environment wrapper is required.
+Justfile. Environment variables are defined in `scripts/env.just`, imported by
+those Justfiles; no Python environment wrapper is required.
 
-- `just --justfile bk/platform/cats/development_tools_ffi/python_extension/justfile env` — `bk/platform/cats/development_tools_ffi/python_extension`.
+- `just --justfile
+  bk/platform/cats/development_tools_ffi/python_extension/justfile env` —
+  `bk/platform/cats/development_tools_ffi/python_extension`.
 
-From a project's directory, run `just sync`, `just fmt`, `just lint`, or
-`just check`. `just --list` shows its available tasks. Named validation tasks
-use `uv run --locked`. Ruff formatting and linting use a separate `<slot>-lint`
+From a project's directory, run `just sync`, `just fmt`, `just lint`, or `just
+check`. `just --list` shows its available tasks. Named validation tasks use `uv
+run --locked`. Ruff formatting and linting use a separate `<slot>-lint`
 environment synchronized from the locked `lint` dependency group only; they do
-not install or build the Python extension. `just uv <args...>` forwards arbitrary
-uv commands and `just run <command...>` runs a command in the development environment.
+not install or build the Python extension. `just uv <args...>` forwards
+arbitrary uv commands and `just run <command...>` runs a command in the
+development environment.
 
-From the repository root, `just hooks-install` installs the prek hooks and
-`just hooks-run` runs them on staged files. The Rust hook formats only staged
-Rust files with the pinned nightly formatter. From the Python project directory,
+From the repository root, `just hooks-install` installs the prek hooks and `just
+hooks-run` runs them on staged files. The Rust hook formats only staged Rust
+files with the pinned nightly formatter. From the Python project directory,
 `just hooks` runs all repository hooks against tracked files. Install prek first
 if needed with `just uv tool install prek`.
 
-Virtual environments use `CODE_PYTHON_ENV_ROOT/<repo>/<project>/<slot>`.
-Caches and generated files use matching paths under `CODE_PYTHON_BUILD_ROOT`
-and `CODE_PYTHON_OUTPUT_ROOT`. The main checkout uses slot `main`; linked
-worktrees use their letter. Configure `CODE_PACKAGES_ROOT` for uv/pip/prek
-caches and `CODE_TOOLS_ROOT` for uv-managed interpreters and tools.
-Windows defaults are `D:/packages`, `C:/tools`, and `C:/temp` for temporary
-files; Unix uses `~/.local/share`, `~/.local/tools`, and native temporary paths.
-`CODE_PYTHON_ENV_ROOT` defaults to `<packages>/uv/environments`; build and output
-roots default to `<temp>/python-build` and `<temp>/python-output`.
-`just env` prints the resolved values. `just uv build` routes distributions to the external
-output directory unless an explicit `--out-dir` or `-o` is supplied.
+Virtual environments use `CODE_PYTHON_ENV_ROOT/<repo>/<project>/<slot>`. Caches
+and generated files use matching paths under `CODE_PYTHON_BUILD_ROOT` and
+`CODE_PYTHON_OUTPUT_ROOT`. The main checkout uses slot `main`; linked worktrees
+use their letter. Configure `CODE_PACKAGES_ROOT` for uv/pip/prek caches and
+`CODE_TOOLS_ROOT` for uv-managed interpreters and tools. Windows defaults are
+`D:/packages`, `C:/tools`, and `C:/temp` for temporary files; Unix uses
+`~/.local/share`, `~/.local/tools`, and native temporary paths.
+`CODE_PYTHON_ENV_ROOT` defaults to `<packages>/uv/environments`; build and
+output roots default to `<temp>/python-build` and `<temp>/python-output`. `just
+env` prints the resolved values. `just uv build` routes distributions to the
+external output directory unless an explicit `--out-dir` or `-o` is supplied.
 
 ## Checkout and storage policy
 
 The primary checkout uses `develop`; `main` is an independent empty branch.
-Auxiliary worktrees belong under `.worktrees/`, with names a and b only.
-Storage roots are configurable through `CODE_REPOS_ROOT`, `CODE_TEMP_ROOT`,
+Auxiliary worktrees belong under `.worktrees/`, with names a and b only. Storage
+roots are configurable through `CODE_REPOS_ROOT`, `CODE_TEMP_ROOT`,
 `CODE_PACKAGES_ROOT`, and `CODE_TOOLS_ROOT`. Windows defaults are `D:/code`,
-`C:/temp`, `D:/packages`, and `C:/tools` respectively.
-Unix uses native home/cache/temp paths. A root override changes destinations;
-it does not move existing installations. Tool-specific overrides such as
-`CARGO_HOME`, `npm_config_cache`, and `NUGET_PACKAGES` remain independent.
-Rust builds also read `CODE_BUILD_ROOT`, `CODE_TARGET_ROOT`, and
-`CODE_SCCACHE_ROOT`. Their Windows defaults are `D:/code_build`, `D:/target`,
-and `D:/cache/sccache`. The runner supports NTFS and ReFS intermediate volumes with
-Rust 1.100.0 or newer.
-Run `just configure-cargo-host` once per host (PowerShell 7 is required), and rerun it after changing roots. It preserves other Cargo settings, keeps the shared sccache and incremental defaults in `CARGO_HOME/config.toml`, and removes global output-directory overrides. Each checkout's Cargo config routes `target` and `build` through checkout-local links to `D:/target/<repo>/<slot>` and `D:/code_build/<repo>/<slot>`. Run the build-setup recipe once per checkout before using plain Cargo or rust-analyzer; task-runner Cargo commands supply the same per-slot paths and repository sccache settings.
+`C:/temp`, `D:/packages`, and `C:/tools` respectively. Unix uses native
+home/cache/temp paths. A root override changes destinations; it does not move
+existing installations. Tool-specific overrides such as `CARGO_HOME`,
+`npm_config_cache`, and `NUGET_PACKAGES` remain independent. Rust builds also
+read `CODE_BUILD_ROOT`, `CODE_TARGET_ROOT`, and `CODE_SCCACHE_ROOT`. Their
+Windows defaults are `D:/code_build`, `D:/target`, and `D:/cache/sccache`. The
+runner supports NTFS and ReFS intermediate volumes with Rust 1.100.0 or newer.
+Run `just configure-cargo-host` once per host (PowerShell 7 is required), and
+rerun it after changing roots. It preserves other Cargo settings, keeps the
+shared sccache and incremental defaults in `CARGO_HOME/config.toml`, and removes
+global output-directory overrides. Each checkout's Cargo config routes `target`
+and `build` through checkout-local links to `D:/target/<repo>/<slot>` and
+`D:/code_build/<repo>/<slot>`. Run the build-setup recipe once per checkout
+before using plain Cargo or rust-analyzer; task-runner Cargo commands supply the
+same per-slot paths and repository sccache settings.
 
 ## Repository configuration
 
-See [CONFIGURATION.md](CONFIGURATION.md) for shared formatting, lint, dependency-update,
-build-profile, cache, linker, and editor conventions. Keep it synchronized with configuration changes.
+See [CONFIGURATION.md](CONFIGURATION.md) for shared formatting, lint,
+dependency-update, build-profile, cache, linker, and editor conventions. Keep it
+synchronized with configuration changes.
