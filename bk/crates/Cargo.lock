@@ -7722,9 +7722,12 @@ dependencies = [
  "arrow-ipc",
  "clap",
  "datafusion",
+ "futures-util",
+ "object_store 0.14.2",
  "polars",
  "serde",
  "serde_json",
+ "tempfile",
  "tokio",
 ]
 

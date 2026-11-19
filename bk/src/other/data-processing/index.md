@@ -74,6 +74,14 @@ and tools for distributed queries.
 
 Use [Evcxr Jupyter][evcxr~jupyter~guide]↗ to explore small Rust data examples interactively. See [LakeSail][lakesail~website]↗ for a Spark-compatible engine and the [ClickHouse Rust client][clickhouse~rust-client~guide]↗ for a service-based OLAP workflow. [Awesome Rust Data Science][awesome-rust-datascience~repo]↗ collects libraries by task.
 
+## Put, List, and Fetch Objects {#object-storage}
+
+Use one `ObjectStore` interface for writing, listing by prefix, and reading bytes. The runnable example uses a local filesystem store rooted in a temporary directory. The test runs the same operations with both that store and an in-memory store. Run it from `bk/` with `just cargo run --manifest-path crates/Cargo.toml -p data_processing --features object-storage --example object_store_round_trip`.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/other/data_processing/examples/object_store_round_trip.rs:example}}
+```
+
 ## Related topics
 
 - [Web Programming](../../categories/web-programming/index.md) for serving data over HTTP.
