@@ -20,8 +20,7 @@ fn main() -> anyhow::Result<()> {
         .version_control
         .as_ref()
         .and_then(VersionControl::git)
-        .map(|git| git.commit_short_id.as_str())
-        .unwrap_or("unavailable");
+        .map_or("unavailable", |git| git.commit_short_id.as_str());
     let build_timestamp = info.timestamp.to_string();
     let compiler_version = info.compiler.version.to_string();
 
