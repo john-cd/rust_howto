@@ -35,7 +35,7 @@ testcontainers = { version = "0.28.0", optional = true }
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread", "net", "io-util", "time"], optional = true }
 # Interprets WebAssembly modules in a lightweight embedded runtime.
-wasmi = "2.0.0"
+wasmi = "2.0.1"
 
 [[example]]
 name = "using_containers"

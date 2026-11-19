@@ -29,11 +29,6 @@
 
 - [Kubernetes Operators](other/cloud/kubernetes.md)
 
-- [Compilers](categories/compilers/index.md)
-  - [Tokenizing Input with Logos](categories/compilers/tokenization.md)
-  - [Render a Diagnostic with a Source Span](categories/compilers/source_diagnostics.md)
-  - [Incremental computation](categories/compilers/incremental_computation.md)
-
 - [Cryptocurrencies](categories/cryptography_cryptocurrencies/index.md)
   - [Cryptocurrencies](categories/cryptography_cryptocurrencies/cryptocurrencies.md)
 
@@ -103,16 +98,6 @@
 
 - [Science - Biology and Neuroscience](categories/science_neuroscience/index.md)
   - [Neuroscience and Neuroimaging](categories/science_neuroscience/neuroscience.md)
-
-- [Simulation](categories/simulation/index.md)
-  - [Simulation](categories/simulation/simulation.md)
-  - [Physics Engines](categories/simulation/physics_engines.md)
-
-- [Virtualization](categories/virtualization/index.md)
-  - [Virtualization](categories/virtualization/virtualization.md)
-  - [Containers](categories/virtualization/containers.md)
-    - [Containerization](categories/virtualization/containerization.md)
-    - [Using Containers](categories/virtualization/using_containers.md)
 
 - [Web assembly](categories/wasm/index.md)
   - [WASM Basics](categories/wasm/wasm_basics.md)

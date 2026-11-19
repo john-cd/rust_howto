@@ -15,8 +15,8 @@ This category covers libraries for building compilers, interpreters, and transpi
 | Code generation | [cranelift][c~cranelift~docs]↗{{hi:cranelift}}, [inkwell][c~inkwell~docs]↗{{hi:inkwell}}, [wasm-encoder][c~wasm-encoder~docs]↗{{hi:wasm-encoder}} | Generate machine code, LLVM IR, or WebAssembly. |
 | Incremental computation | [salsa][c~salsa~docs]↗{{hi:salsa}}, [comemo][c~comemo~docs]↗{{hi:comemo}} | Reuse work when only part of a program changes. |
 | Schema and protocol tools | [typify][c~typify~docs]↗{{hi:typify}}, [protox][c~protox~docs]↗{{hi:protox}} | Generate Rust types from JSON Schema or compile Protocol Buffers. |
-| Foreign-language bindings | [link-cplusplus][c~link-cplusplus~crates.io]↗{{hi:link-cplusplus}}, [clang][c~clang~docs]↗{{hi:clang}}, [swift-rs][c~swift-rs~docs]↗{{hi:swift-rs}} | Link C++ libraries, use libclang, or call Swift from Rust; these integrations may require native toolchains. |
-| Language and test support | [gherkin][c~gherkin~docs]↗{{hi:gherkin}}, [cucumber-expressions][c~cucumber-expressions~crates.io]↗{{hi:cucumber-expressions}}, [polonius-engine][c~polonius-engine~docs]↗{{hi:polonius-engine}}, [oxc][c~oxc~docs]↗{{hi:oxc}} | Parse Gherkin and Cucumber expressions, experiment with borrow-checking analysis, or work with the Oxc JavaScript toolchain. |
+| Foreign-language bindings | [link-cplusplus][c~link-cplusplus~docs]↗{{hi:link-cplusplus}}, [clang][c~clang~docs]↗{{hi:clang}}, [swift-rs][c~swift-rs~docs]↗{{hi:swift-rs}} | Link C++ libraries, use libclang, or call Swift from Rust; these integrations may require native toolchains. |
+| Language and test support | [gherkin][c~gherkin~docs]↗{{hi:gherkin}}, [cucumber-expressions][c~cucumber-expressions~docs]↗{{hi:cucumber-expressions}}, [polonius-engine][c~polonius-engine~docs]↗{{hi:polonius-engine}}, [oxc][c~oxc~docs]↗{{hi:oxc}} | Parse Gherkin and Cucumber expressions, experiment with borrow-checking analysis, or work with the Oxc JavaScript toolchain. |
 
 An interpreter executes source code or bytecode. A transpiler translates source from one language or representation to another. Parser choice depends on the grammar and desired error recovery; the [[parsing | Parsing]] chapter covers the concepts and links to more implementations.
 
@@ -40,13 +40,13 @@ when the lexer reports an error.
 - [[programming_languages | Programming Languages]].
 - [[development-tools | Development Tools]].
 - [[development-tools_build-utils | Development Tools: Build Utils]].
-- [Development Tools: Cargo Plugins](https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/index.md).
+- [Development Tools: Cargo Plugins](../development-tools_cargo-plugins/index.md).
 - [[development-tools_debugging | Development Tools: Debugging]].
-- [[development-tools_procedural-macro-helpers | Development Tools: Procedural Macro Helpers]].
-- [Development Tools - Profiling](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/development-tools_profiling/index.md).
-- Development Tools - Testing<!-- Cross-book topic: bk/src/categories/development-tools_testing/index.md; not included in this preview. -->.
-- [[development-tools_ffi | Development Tools: FFI]] for bindings to compilers written in other languages.
-- [[interfacing_with_javascript | Interfacing with JavaScript]] for Rust tools that interface with JavaScript.
+- [Procedural Macro Helpers](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_procedural-macro-helpers/index.md).
+- [Development Tools - Profiling](../development-tools_profiling/index.md).
+- [Development Tools: Testing](../development-tools_testing/index.md).
+- [Development Tools: FFI](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md) for bindings to compilers written in other languages.
+- [Interfacing with JavaScript](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/interfacing_with_javascript.md) for Rust tools that interface with JavaScript.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

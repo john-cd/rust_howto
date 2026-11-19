@@ -23,7 +23,7 @@
 [c~rhai-fs~docs]: https://docs.rs/rhai-fs
 [c~rhai-rand~docs]: https://docs.rs/rhai-rand
 [c~rhai-sci~docs]: https://docs.rs/rhai-sci
-[p~compilers]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/compilers/index.md
+[p~compilers]: ../../categories/compilers/index.md
 [p~development-tools_ffi]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/development-tools_ffi/index.md
 [p~embedded]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/embedded/index.md
 [p~external-process-management]: ../../categories/os/process_management.md

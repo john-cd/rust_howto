@@ -1877,6 +1877,9 @@
 [c~code_organization~crates.io]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/code_organization
 [c~code_organization~docs]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/code_organization
 [c~code_organization~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/crates/code_organization
+[c~codespan-reporting~crates.io]: https://crates.io/crates/codespan-reporting
+[c~codespan-reporting~docs]: https://docs.rs/codespan-reporting
+[c~codespan-reporting~repo]: https://github.com/brendanzab/codespan
 [c~color-eyre~crates.io]: https://crates.io/crates/color-eyre
 [c~color-eyre~crates.io~badge]: https://img.shields.io/badge/crates.io-color--eyre-crimson
 [c~color-eyre~docs]: https://docs.rs/color-eyre
@@ -7019,6 +7022,9 @@
 [c~rangemap~lib.rs~badge]: https://img.shields.io/badge/lib.rs-rangemap-yellow
 [c~rangemap~repo]: https://github.com/jeffparsons/rangemap
 [c~rangemap~repo~badge]: https://img.shields.io/badge/rangemap-steelblue?logo=github
+[c~rapier2d~crates.io]: https://crates.io/crates/rapier2d
+[c~rapier2d~docs]: https://docs.rs/rapier2d
+[c~rapier2d~repo]: https://github.com/dimforge/rapier
 [c~raqote~crates.io]: https://crates.io/crates/raqote
 [c~raqote~crates.io~badge]: https://img.shields.io/badge/crates.io-raqote-crimson
 [c~raqote~docs]: https://docs.rs/raqote

@@ -15,7 +15,7 @@ From `bk/crates`, run `cargo test --locked -p mathematics --example differential
 ## Related Topics {#related-topics .skip}
 
 - [[numerical_analysis | Numerical Analysis]].
-- [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md).
+- [Simulation](../simulation/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

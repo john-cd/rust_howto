@@ -14,7 +14,7 @@ The bank has one server and a first-in, first-out waiting line. Fixed arrival ti
 
 The five customers wait `[0, 2, 3, 0, 0]` seconds before service, so the reported average is `5 / 5 = 1.0` seconds. All five are served, including the customers who arrive after the server becomes idle. The simulation drains the event schedule, including the final departure, before reporting its result.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/simulation/examples/simulation/discrete_event.rs:example}}
 ```
 
@@ -32,7 +32,7 @@ The five customers wait `[0, 2, 3, 0, 0]` seconds before service, so the reporte
 
 The example integrates `dy/dt = -y`, then compares the numerical value at `t = 1` with the analytic solution `exp(-1)`.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/simulation/examples/simulation/ode_solver.rs:example}}
 ```
 
@@ -40,22 +40,21 @@ The example integrates `dy/dt = -y`, then compares the numerical value at `t = 1
 
 Monte Carlo methods use repeated random samples to estimate a distribution or expected value. This example estimates π by sampling points in a square and measuring the fraction inside the unit circle. A fixed seed makes the estimate repeatable for the locked dependency versions; `StdRng` does not promise the same stream across releases.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/simulation/examples/simulation/monte_carlo.rs:example}}
 ```
 
-Sampling error shrinks on the order of `1 / sqrt(n)`, so multiplying the number of samples by four roughly halves the typical error. See [[randomness | Random Numbers]] for Rust's `rand` ecosystem. From `later/crates`, run `cargo run --locked -p simulation --example simulation -- monte-carlo`.
+Sampling error shrinks on the order of `1 / sqrt(n)`, so multiplying the number of samples by four roughly halves the typical error. See [[randomness | Random Numbers]] for Rust's `rand` ecosystem. From `bk/crates`, run `cargo run --locked -p simulation --example simulation -- monte-carlo`.
 
 ## Physics Simulation {#physics-simulation}
 
-For rigid-body simulation and physics engines, see the [Physics Engines overview](index.md#physics-engines).
+For rigid-body simulation and physics engines, see [Physics Engines](physics_engines.md).
 
 ## Related Topics {#related-topics .skip}
 
 - [[science_robotics | Robotics]].
 - [[game-development | Game Development]].
 - [[visualization | Visualization]].
-- [Physics Engines](index.md#physics-engines).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

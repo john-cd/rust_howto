@@ -322,6 +322,10 @@
   - [Graph Theory](categories/mathematics/graph_theory.md)
   - [Differential Equations](categories/mathematics/differential_equations.md)
 
+- [Simulation](categories/simulation/index.md)
+  - [Simulation](categories/simulation/simulation.md)
+  - [Physics Engines](categories/simulation/physics_engines.md)
+
 - [Memory Management](categories/memory-management/index.md)
   - [Lazy Initialization](categories/memory-management/lazy_initialization.md)
   - [Memory Allocation](categories/memory-management/memory_allocation.md)
@@ -356,6 +360,12 @@
 
 - [Operating systems - Unix](categories/os_unix-apis/index.md)
   - [Unix APIs](categories/os_unix-apis/unix.md)
+
+- [Virtualization](categories/virtualization/index.md)
+  - [Virtualization](categories/virtualization/virtualization.md)
+  - [Containers](categories/virtualization/containers.md)
+    - [Containerization](categories/virtualization/containerization.md)
+    - [Using Containers](categories/virtualization/using_containers.md)
 
 - [GPU Programming](other/gpu/index.md)
   - [GPU Compute Recipes](other/gpu/gpu.md)
@@ -455,6 +465,11 @@
   - [XML Parsing](categories/parser-implementations/xml.md)
   - [YAML Parsing](categories/parser-implementations/yaml.md)
   - [General Programming Language Parsing](categories/parser-implementations/programming_languages.md)
+
+- [Compilers](categories/compilers/index.md)
+  - [Tokenizing Input with Logos](categories/compilers/tokenization.md)
+  - [Render a Diagnostic with a Source Span](categories/compilers/source_diagnostics.md)
+  - [Incremental computation](categories/compilers/incremental_computation.md)
 
 - [Rust Patterns](categories/rust-patterns/index.md)
   - [Creational Patterns](categories/rust-patterns/creational_patterns.md)

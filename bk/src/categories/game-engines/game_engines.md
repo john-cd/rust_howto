@@ -129,7 +129,7 @@ needs a desktop window.
 ## Related Topics {#related-topics .skip}
 
 - [Game development libraries][p~game-development].
-- [[rendering | Rendering]] and [physics engines](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md#physics-engines).
+- [[rendering | Rendering]] and [physics engines](../simulation/physics_engines.md).
 - [[multimedia_audio | Audio]] and [window creation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/gui/window_creation.md).
 - [[games | Games]] made with Rust.
 

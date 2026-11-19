@@ -18,4 +18,4 @@ cargo check --package simulation --examples
 cargo test --package simulation
 ```
 
-Code examples correspond to staged chapters in `later/src/categories/simulation` or related book sections.
+Code examples correspond to chapters in `bk/src/categories/simulation` or related book sections.

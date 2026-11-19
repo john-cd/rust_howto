@@ -22,7 +22,7 @@ returns zero, and the contact reports a negative signed separation. Use the
 contact normal to identify the surface direction. Its prediction distance
 also lets the query report near contacts before the shapes touch. A physics
 engine adds the time integration and collision response when you need bodies
-to move and react. See [Physics Engines](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md#physics-engines).
+to move and react. See [Physics Engines](../simulation/physics_engines.md).
 
 Run from the repository root:
 

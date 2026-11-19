@@ -39,7 +39,8 @@ bk/src/word_index.md
 bk/src/crate-selection/current_state_of_the_art.md
 # Tooling and command-line pages: they describe programs run from the shell
 # (Cargo, rustup, linkers, CI services), so there is no Rust code to show.
-later/src/categories/virtualization/
+bk/src/categories/virtualization/containerization.md
+bk/src/categories/virtualization/containers.md
 later/src/other/devops/
 bk/src/other/written-in-rust/
 later/src/other/architecture/

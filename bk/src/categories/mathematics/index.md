@@ -115,7 +115,7 @@ The [Units of Measurement chapter][p~units] demonstrates dimensional types and c
   - [Neuroscience](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_neuroscience/index.md).
 - [Robotics](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/science_robotics/index.md).
 - [Search](../database/search.md).
-- [Simulation](https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/simulation/index.md).
+- [Simulation](../simulation/index.md).
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

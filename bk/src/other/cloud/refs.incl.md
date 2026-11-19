@@ -29,11 +29,11 @@
 [p~architecture]: ../architecture/index.md
 [p~aws]: aws.md
 [p~cloud]: index.md
-[p~container]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/containers.md
+[p~container]: ../../categories/virtualization/containers.md
 [p~data-processing]: ../../other/data-processing/index.md
 [p~devops]: ../devops/index.md
 [p~microservices]: ../architecture/common_architectures.md#microservices
 [p~network-programming]: ../../categories/network-programming/index.md
-[p~using_containers]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/using_containers.md
-[p~virtualization]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/virtualization/index.md
+[p~using_containers]: ../../categories/virtualization/using_containers.md
+[p~virtualization]: ../../categories/virtualization/index.md
 [p~written-in-rust]: ../written-in-rust/index.md
