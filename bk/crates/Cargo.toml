@@ -5,6 +5,7 @@ resolver = "3"
 members = [
     "about",
     "cats/algorithms",
+    "cats/api_bindings",
     "cats/asynchronous",
     "cats/authentication",
     "cats/caching",

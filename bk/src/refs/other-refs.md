@@ -1771,7 +1771,9 @@
 [api-bindings~tcp-server]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/network-programming/server.md
 [api-bindings~telemetry]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_debugging/distributed_telemetry.md
 [api-bindings~tls]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/cryptography/tls.md
-[api-bindings~zstd-stream]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/compression/compression.md#stream-zstandard-data-zstd-stream
+[api-bindings~zstd-stream]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/compression/compression.md#zstd-stream
+[rustsec~2026-0291]: https://rustsec.org/advisories/RUSTSEC-2026-0291.html
+[zlib~website]: https://zlib.net/
 [c~num_threads~docs]: https://docs.rs/num_threads
 [c~zstd-safe~docs]: https://docs.rs/zstd-safe
 [c~zstd-sys~docs]: https://docs.rs/zstd-sys

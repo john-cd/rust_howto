@@ -10,7 +10,7 @@
 
 [`flate2`][c~flate2~docs]↗{{hi:flate2}} provides DEFLATE compression and decompression, exposed as Read / BufRead / Write streams. It supports zlib, gzip, and raw deflate streams.
 
-[`flate2`][c~flate2~docs]↗{{hi:flate2}} uses a pure-Rust implementation by default. Use feature flags to opt in to system [`zlib`](https://zlib.net/)↗{{hi:zlib}}.
+[`flate2`][c~flate2~docs]↗{{hi:flate2}} uses a pure-Rust implementation by default. Use feature flags to opt in to system [`zlib`][zlib~website]↗{{hi:zlib}}.
 
 Its `Read`, `BufRead`, and `Write` adapters compose with files, sockets, and in-memory buffers. Select the matching encoder and decoder for the format expected by the other side; gzip and zlib add format metadata around DEFLATE data.
 
@@ -62,7 +62,7 @@ Use `async_zip` when archive reads or writes need to participate in an async tas
 
 ## Stream Zstandard Data {#zstd-stream}
 
-Use [`zstd`](https://docs.rs/zstd/latest/zstd/) to encode a Zstandard frame.
+Use [`zstd`][c~zstd~docs] to encode a Zstandard frame.
 `io::copy` transfers bytes in chunks so the recipe can read and write files
 without buffering the entire payload. The example uses vectors as fixtures.
 

@@ -17,4 +17,4 @@ cargo check --package api_bindings --examples
 cargo test --package api_bindings
 ```
 
-Code examples correspond to chapters in `bk/src/categories/api_bindings` or related book sections.
+Code examples correspond to chapters in `bk/src/categories/api-bindings` or related book sections.

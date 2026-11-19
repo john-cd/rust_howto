@@ -75,6 +75,8 @@
   - [Hashing](categories/algorithms/hashing.md)
   - [Graph Algorithms](categories/algorithms/graph_algorithms.md)
 
+- [API Bindings](categories/api-bindings/index.md)
+
 - [Architecture](other/architecture/index.md)
   - [Architectural Patterns](other/architecture/architectural_patterns.md)
   - [Common Architectures](other/architecture/common_architectures.md)

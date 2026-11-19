@@ -22,8 +22,5 @@
 - [Aerospace - Unmanned Aerial Vehicles](categories/aerospace_unmanned-aerial-vehicles/index.md)
   - [Tello Flight Telemetry](categories/aerospace_unmanned-aerial-vehicles/uavs.md)
 
-- [API bindings](categories/api-bindings/index.md)
-
-
 - [Cryptocurrencies](categories/cryptography_cryptocurrencies/index.md)
   - [Offline Ethereum, Bitcoin, and Solana Examples](categories/cryptography_cryptocurrencies/cryptocurrencies.md)
