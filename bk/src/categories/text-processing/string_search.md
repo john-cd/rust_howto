@@ -72,6 +72,10 @@ The example also shows one accent-insensitive comparison policy: apply canonical
 
 ## Search Lines with the Ripgrep Libraries {#search-lines}
 
+The [`grep` facade][ripgrep-library] provides one dependency for ripgrep's search components. It re-exports these APIs as `grep::regex::RegexMatcher`, `grep::searcher::SearcherBuilder`, and `grep::searcher::sinks::UTF8`. Use the facade when you also need components such as `grep::printer` for formatting results. This example depends directly on the two crates it uses to match patterns and collect lines.
+
+[ripgrep-library]: https://docs.rs/grep/latest/grep/
+
 Use `grep-regex` to compile the pattern and `grep-searcher` to search a byte source and send each matching line to a sink. This example uses the `UTF8` sink to collect one-based line numbers and text. The sink reports an error if a matching line contains invalid UTF-8. For recursive file searches from the terminal, see the [ripgrep command-line example](../command-line-utilities/filesystem_cli.md#search-file-contents).
 
 ```rust,ignore,noplayground
