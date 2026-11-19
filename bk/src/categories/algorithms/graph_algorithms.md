@@ -52,7 +52,11 @@ Topological sort{{hi:Topological sort}} produces a linear ordering of the nodes 
 
 {{#badges petgraph algorithms=Algorithms}}{{hi:A* Search}}{{hi:Shortest path}}
 
-A\* Search{{hi:A* Search}} is a pathfinding algorithm that computes the shortest path by utilizing a heuristic to guide the search towards the target.
+A\* Search{{hi:A* Search}} chooses a candidate using the cost already incurred, `g`, plus an estimate of the remaining cost, `h`. In this graph, going from A to B gives `g = 1` and `h = 2`. Going from A to D gives `g = 2` and `h = 1`. Both candidates have score 3, and either can lead to an optimal route.
+
+To guarantee an optimal result with [`petgraph::algo::astar`](https://docs.rs/petgraph/latest/petgraph/algo/astar/fn.astar.html), use nonnegative edge costs and an estimate that never exceeds the cheapest remaining path. Here every edge costs at least the Manhattan distance it covers, so that distance is a lower bound on the remaining cost. A diagonal from `(0, 0)` to `(1, 1)` costing 1 would invalidate that bound. When you cannot justify a lower bound, use zero. This makes A* prioritize accumulated costs like [Dijkstra's algorithm](#petgraph-dijkstra).
+
+This example stores the graph explicitly. The [grid recipe](#pathfinding-astar) generates its neighbors on demand.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/algorithms/examples/graph/petgraph_astar.rs:example}}

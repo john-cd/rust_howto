@@ -1,69 +1,18 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Shortest path search on a weighted graph using the A* algorithm with
-//! `petgraph`.
-//!
-//! ### Graph Structure and Search Setup
-//!
-//! In this example, nodes are represented as 2D coordinate positions `(x, y)`
-//! on a plane, and directed edges represent valid travel segments between nodes
-//! with associated numerical costs:
-//! - Node `A` `(0, 0)` connects to `B` `(1, 0)` (cost 1) and `D` `(1, 1)` (cost 2).
-//! - Node `B` `(1, 0)` connects to `C` `(2, 0)` (cost 1).
-//! - Node `C` `(2, 0)` connects to `E` `(2, 1)` (cost 1).
-//! - Node `D` `(1, 1)` connects to `E` `(2, 1)` (cost 1).
-//!
-//! ### Heuristic Function & Path Finding
-//!
-//! The heuristic function estimates the remaining distance from any node to the
-//! target goal `E` `(2, 1)` using Manhattan distance (`|x1 - x2| + |y1 - y2|`).
-//! Because Manhattan distance never overestimates true grid movement cost, it
-//! is an admissible heuristic that guarantees finding the optimal path.
-//! A* evaluates candidate paths and computes the shortest path from `A` to `E`
-//! with total cost 3 (`A` -> `D` -> `E` or `A` -> `B` -> `C` -> `E`).
-//!
-//! ### What is the A* Search Algorithm?
-//!
-//! A* (pronounced "A-star") is an informed graph traversal and pathfinding
-//! algorithm that computes the shortest path between a starting node and a
-//! target goal node.
-//!
-//! ### How Does A* Work?
-//!
-//! A* extends Dijkstra's algorithm by using a heuristic function $h(n)$ to
-//! guide its search toward the target. It evaluates candidate nodes using the
-//! cost function:
-//! $$f(n) = g(n) + h(n)$$
-//! - **$g(n)$**: The exact cost incurred to travel from the start node to node $n$.
-//! - **$h(n)$**: An estimated cost (heuristic) to travel from node $n$ to the goal.
-//! - **$f(n)$**: The estimated total cost of a path passing through node $n$.
-//!
-//! ### Heuristic Admissibility
-//!
-//! For A* to guarantee finding the optimal (shortest) path, the heuristic
-//! function $h(n)$ must be **admissible**. An admissible heuristic never
-//! overestimates the true remaining cost to reach the goal. Common admissible
-//! heuristics include Manhattan distance for grid movements and Euclidean
-//! straight-line distance.
-//!
-//! ### Comparison with Dijkstra's Algorithm
-//!
-//! Dijkstra's algorithm searches blindly in all directions ($h(n) = 0$). By
-//! contrast, A* uses $h(n)$ to prioritize exploring nodes closest to the
-//! goal, dramatically reducing search effort on large graphs.
-//!
-//! ### Typical Use Cases
-//!
-//! - Game development for non-player character (NPC) pathfinding.
-//! - GPS and map routing for vehicles and pedestrians.
-//! - Robot motion planning and spatial navigation.
+//! Finds a lowest-cost route through an explicitly stored graph.
 
 use petgraph::Graph;
 use petgraph::algo::astar;
+use petgraph::graph::NodeIndex;
 
 /// Demonstrates finding the shortest path on a weighted graph using A* and
 /// Manhattan distance.
+///
+/// # Panics
+///
+/// Panics if the connected fixture fails to produce either expected shortest route.
 fn main() {
     // Create an explicit directed graph where each node stores 2D grid
     // coordinates `(x, y)` and each edge stores a traversal cost (`u32`).
@@ -83,36 +32,37 @@ fn main() {
     graph.add_edge(d, e, 1);
     graph.add_edge(c, e, 1);
 
-    let goal = e;
+    let (cost, route) =
+        shortest_route(&graph, a, e).expect("the connected fixture has two shortest routes to E");
+    assert_eq!(cost, 3);
+    assert!(route == [a, d, e] || route == [a, b, c, e]);
 
-    // Run A* search from starting node `a` to goal node `e`.
-    // The closures define:
-    // 1. Goal test (`|finish| finish == goal`).
-    // 2. Edge cost extractor (`|edge| *edge.weight()`).
-    // 3. Admissible heuristic (`|node| ...` calculating Manhattan distance).
-    let path = astar(
-        &graph,
-        a,
-        |finish| finish == goal,
+    println!("Shortest path from A to E (cost {cost}):");
+    for node in route {
+        println!("  Node: {:?}", graph[node]);
+    }
+}
+
+/// Finds the cost and node sequence, or returns `None` if the goal is unreachable.
+///
+/// Each edge must cost at least its Manhattan displacement for this heuristic
+/// to be admissible.
+fn shortest_route(
+    graph: &Graph<(i32, i32), u32>,
+    start: NodeIndex,
+    goal: NodeIndex,
+) -> Option<(u32, Vec<NodeIndex>)> {
+    astar(
+        graph,
+        start,
+        |node| node == goal,
         |edge| *edge.weight(),
         |node| {
             let (x, y) = graph[node];
             let (goal_x, goal_y) = graph[goal];
             x.abs_diff(goal_x) + y.abs_diff(goal_y)
         },
-    );
-
-    println!("Shortest path from A to E:");
-    if let Some((cost, path_nodes)) = path {
-        println!("  Cost: {cost}");
-        for node in path_nodes {
-            println!("  Node: {:?}", graph[node]);
-        }
-        // Verify path cost: A -> D (2) -> E (1) = total cost 3.
-        assert_eq!(cost, 3);
-    } else {
-        println!("No path found.");
-    }
+    )
 }
 // ANCHOR_END: example
 
@@ -126,9 +76,18 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Verifies that the `petgraph astar` example runs.
+    /// Verifies the connected fixture produces an optimal route.
     #[test]
     fn test_petgraph_astar_example_entry_point() {
         main();
+    }
+
+    /// Returns no path for a goal with no incoming edges.
+    #[test]
+    fn unreachable_goal_has_no_route() {
+        let mut graph = Graph::new();
+        let start = graph.add_node((0, 0));
+        let goal = graph.add_node((1, 0));
+        assert_eq!(shortest_route(&graph, start, goal), None);
     }
 }
