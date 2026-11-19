@@ -41,6 +41,37 @@ Consult the [Kani documentation][c~kani~docs]↗ for current host requirements a
 {{#include ../../../../crates/cats/development_tools/src/kani.rs:example}}
 ```
 
+## Prove a Function Contract with Creusot {#creusot-contracts}
+
+[`Creusot`][creusot~repo]↗ is a deductive verifier that checks whether Rust code satisfies stated preconditions and postconditions. It complements tests and Miri, which execute selected inputs, and bounded model checking with Kani, which explores a harness's bounded inputs: Creusot attempts to prove the contract for every input that satisfies its precondition. The result applies only to the stated contract and code that Creusot supports; an incomplete contract does not establish a broader behavior.
+
+This independent example pins Creusot 0.14.0, `creusot-std` 0.14.0, and the required Rust toolchain `nightly-2026-08-03`. On a supported Linux or macOS host with Cargo, Opam, `curl`, and the [Creusot build prerequisites][creusot~guide~v0.14.0], initialize Opam and install the tagged release:
+
+```sh
+opam init --disable-sandboxing --bare --yes
+git clone --depth 1 --branch v0.14.0 https://github.com/creusot-rs/creusot.git
+cd creusot
+./INSTALL
+```
+
+From `bk/crates/cats/development_tools/examples/creusot_contract`, run the accepted proof:
+
+```sh
+cargo creusot -- --locked
+```
+
+The precondition excludes exactly `i64::MAX`, so `x + 1` cannot overflow. The postcondition compares mathematical integer views of the input and result. The feature-gated version deliberately returns `x`; enabling it adds a failing postcondition obligation:
+
+```sh
+cargo creusot -- --locked --features deliberately-fails
+```
+
+The deliberately failing command returns a nonzero status because the postcondition for `add_one_wrong` is unproved. This proof covers only `add_one` for inputs satisfying its precondition. It complements, rather than replaces, tests, Miri, and Kani's bounded harnesses. The [Verify Rust Standard Library effort][verify-rust-std~guide]↗ provides upstream context for applying verification to Rust code.
+
+```rust,editable
+{{#include ../../../../crates/cats/development_tools/examples/creusot_contract/src/lib.rs:example}}
+```
+
 ## Concurrent Code Verification {#concurrent-code-verification}
 
 Concurrency testing tools explore schedules through a model of the program. [`loom`][c~loom~docs]↗{{hi:loom}} systematically explores executions represented by its synchronization primitives, while [`shuttle`][c~shuttle~docs]↗{{hi:shuttle}} runs concurrent tests under a controlled scheduler and can explore many schedules. Both require the test to use the tool's modeled APIs; neither proves arbitrary concurrent code correct.

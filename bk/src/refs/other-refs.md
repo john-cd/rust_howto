@@ -1679,6 +1679,7 @@
 [corrode~build-timings]: https://corrode.dev/blog/tips-for-faster-rust-compile-times/#find-the-slow-crate-in-your-codebase
 [crates-io~trusted-publishing~guide]: https://crates.io/docs/trusted-publishing
 [creusot~guide]: https://creusot.rs/
+[creusot~guide~v0.14.0]: https://guide.creusot.rs/v0.14.0/
 [crubit~repo]: https://github.com/google/crubit
 [czkawka~repo]: https://github.com/qarmin/czkawka
 [dropshot~repo]: https://github.com/oxidecomputer/dropshot

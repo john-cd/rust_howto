@@ -117,8 +117,6 @@ This snapshot records the findings and priorities at the time of the review. See
 - **P2 — [#2365](https://github.com/john-cd/rust_howto/issues/2365):** Keep Windows non-PDF
   builds usable when the optional Pandoc backend is installed. The current non-PDF route
   still invokes it and fails with Windows error 206 after HTML/linkcheck succeeds.
-- **P3 — [#2264](https://github.com/john-cd/rust_howto/issues/2264):** Add a Creusot contract
-  example. This remains open in the live issue snapshot.
 - Related tooling: **P1** [book_tooling#89](https://github.com/john-cd/book_tooling/issues/89)
   tracks deletion of used Unicode reference definitions; **P2**
   [mdbook-utils#278](https://github.com/john-cd/mdbook-utils/issues/278) tracks invalid extracted
@@ -218,7 +216,6 @@ are complete. Pointer provenance [#2270][i2270], CI benchmarking
 - **P3** [#2261][i2261] · Compare explicit and distributed registration.
 - **P3** [#2262][i2262] · Explain floating-point summation and SIMD trade-offs.
 - **P3** [#2263][i2263] · Show Jiff DST ambiguity and nonexistent times.
-- **P3** [#2264][i2264] · Add a small Creusot contract proof.
 - **P3** [#2265][i2265] · Show a surviving mutation and the assertion that
   detects it.
 - **P3** [#2268][i2268] · Test a local Iroh peer round trip and failure cases.
@@ -252,7 +249,6 @@ are complete. Pointer provenance [#2270][i2270], CI benchmarking
 [i2261]: https://github.com/john-cd/rust_howto/issues/2261
 [i2262]: https://github.com/john-cd/rust_howto/issues/2262
 [i2263]: https://github.com/john-cd/rust_howto/issues/2263
-[i2264]: https://github.com/john-cd/rust_howto/issues/2264
 [i2265]: https://github.com/john-cd/rust_howto/issues/2265
 [i2266]: https://github.com/john-cd/rust_howto/issues/2266
 [i2267]: https://github.com/john-cd/rust_howto/issues/2267
