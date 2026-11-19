@@ -14,5 +14,5 @@
 [p~concurrency]: https://john-cd.com/rust_howto/categories/concurrency/index.html
 [p~hardware-support]: https://john-cd.com/rust_howto/categories/hardware-support/index.html
 [p~science_geo]: ../science_geo/index.md
-[p~simulation]: ../simulation/index.md
+[p~simulation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/simulation/index.md
 [p~uavs]: ../aerospace_unmanned-aerial-vehicles/uavs.md

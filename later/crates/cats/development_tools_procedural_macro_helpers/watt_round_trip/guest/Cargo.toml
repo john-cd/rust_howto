@@ -1,0 +1,18 @@
+# TODO Reviewed ??-??-2026.
+
+[package]
+name = "watt_guest"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+proc-macro2 = "=1.0.67"
+
+[patch.crates-io]
+proc-macro2 = { git = "https://github.com/dtolnay/watt", rev = "bbc76489df8ebc4af304b8f2875dd5ede90420a5" }
+
+[workspace]

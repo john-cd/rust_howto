@@ -28,6 +28,8 @@ clap = "4.6.7"
 ihex = "3.0.0"
 # A fast and secure RISC-V based virtual machine
 polkavm = "0.38.0"
+# Writes the small example guest blob from PolkaVM instructions.
+polkavm-common = "0.38.0"
 
 [lints]
 workspace = true

@@ -77,6 +77,7 @@ struct MyMacroOpts {
 /// # Arguments
 ///
 /// * `input` - Input value to validate or transform.
+#[cfg_attr(doc, doc = include_str!("../derive_contract.md"))]
 #[proc_macro_derive(MyDarlingMacro, attributes(my_macro))]
 pub fn my_darling_macro_derive(input: TokenStream) -> TokenStream {
     let input = parse_macro_input!(input as DeriveInput);

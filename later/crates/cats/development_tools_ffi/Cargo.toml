@@ -52,6 +52,12 @@ required-features = ["java"]
 test = true
 
 [[example]]
+name = "jni_greeting"
+path = "examples/java/jni.rs"
+crate-type = ["cdylib"]
+required-features = ["java"]
+
+[[example]]
 name = "lua"
 path = "examples/lua/main.rs"
 test = true

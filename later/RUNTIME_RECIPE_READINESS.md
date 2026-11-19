@@ -2,8 +2,9 @@
 
 # Runtime Recipe Readiness
 
-Windows checks in [#2377](https://github.com/john-cd/rust_howto/issues/2377)
-use the workspace lockfile and Rust 1.100.0. A build or an available command
+The Windows and container runs documented in [#2377](https://github.com/john-cd/rust_howto/issues/2377)
+used the workspace lockfile and Rust 1.100.0. Subsequent checks below use the
+lockfile for each recipe. A build or an available command
 does not establish an interactive or service result.
 
 | Workflow | Result | Next verification |
@@ -11,6 +12,10 @@ does not establish an interactive or service result.
 | Embedded PyO3 | Executed with CPython 3.15.2. The launch exited successfully after adding the Python installation directory to PATH. | The separate Maturin/devcontainer workflow remains [#2211](https://github.com/john-cd/rust_howto/issues/2211). |
 | Wasmtime typed component | Built the guest for wasm32-wasip2 and called it from the Windows host. The run printed “Hello, Ferris!” and passed its typed error and logger callback assertions. | The review used direct rustc after sccache could not launch the compiler for web-sys. |
 | Yew and Leptos | Trunk 0.22.2 built both standalone counters with Yew 0.23.0, Leptos 0.8.23, and wasm-bindgen 0.2.130. Browser clicks in Edge 157 exercised increment, decrement, threshold visibility, and Leptos parity. | The check served the built sites over loopback HTTP. |
+| Java/JNI | OpenJDK 21 loaded the Rust `jni_greeting` library on Windows and verified a greeting with an accented character and an emoji. | The example checks the JVM native symbol and string conversion. |
+| Wasmer / V8 | Six runtime-example tests passed on Windows x64 MSVC, including the typed call, wrapping arithmetic, and malformed WAT. The static C runtime build completed without the default-runtime linker warning. | The Singlepass backend on Linux and macOS has separate prerequisites. |
+| Wasm / JavaScript | Generated Node.js bindings with wasm-bindgen 0.2.130. The Node smoke test checked the Unicode result and thrown error. | The existing browser workflows cover Yew and Leptos separately. |
+| Watt | The pinned nightly built the guest with an MVP standard library. Rust compiled the caller through the Watt 0.5.0 shim, and the precedence assertion passed. | The guest lockfile pins the token ABI patch. |
 | Docker | Both daemon-dependent tests passed against Docker Engine 29.9.3 in Linux container mode. Bollard ran its temporary container, and Testcontainers sent a Redis PING and observed PONG. | Use the documented Docker endpoint for your daemon. |
 | Kubernetes | The controller used explicit kubeconfig credentials against kind v0.33.0 and Kubernetes v1.35.1. It created the owned Deployment, reported one ready replica, and Kubernetes removed the Deployment after the Echo was deleted. Five offline tests passed. | The disposable cluster was removed after the run. |
 | OpenCV | All five native tests passed in a Debian 13 Linux container using OpenCV 4.10.0 and crate 0.102.0. They covered grayscale, Canny, an image-file round trip, and a Haar cascade check on a blank frame. | The classifier used the frontal-face XML supplied by Debian's `opencv-data` package. |

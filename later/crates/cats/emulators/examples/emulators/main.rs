@@ -13,7 +13,14 @@ mod register_vm;
 fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let mut command = clap::Command::new("examples");
     command = command.subcommand(clap::Command::new("register-vm"));
-    command = command.subcommand(clap::Command::new("polkavm-host"));
+    command = command.subcommand(
+        clap::Command::new("polkavm-host").arg(
+            clap::Arg::new("guest")
+                .value_name("GUEST")
+                .value_parser(clap::value_parser!(std::path::PathBuf))
+                .help("Use this guest blob instead of the bundled example"),
+        ),
+    );
     command = command.subcommand(clap::Command::new("intel-hex"));
     let matches = command
         .subcommand_required(true)
@@ -24,8 +31,12 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
             register_vm::run()?;
             Ok(())
         }
-        Some(("polkavm-host", _)) => {
-            polkavm_host::run()?;
+        Some(("polkavm-host", matches)) => {
+            polkavm_host::run(
+                matches
+                    .get_one::<std::path::PathBuf>("guest")
+                    .map(std::path::PathBuf::as_path),
+            )?;
             Ok(())
         }
         Some(("intel-hex", _)) => {

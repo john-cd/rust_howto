@@ -10,38 +10,41 @@
 
 [`watt`][c~watt~repo] runs procedural macros compiled to WebAssembly. Its documented workflow uses two crates: an implementation crate compiled to `wasm32-unknown-unknown`, and a small `proc-macro` shim that embeds and invokes the resulting `.wasm` file.
 
-The following compiled helper demonstrates the token transformation that a Wasm implementation could call. It uses `proc_macro2` so the transformation can run and be tested outside the compiler; the example does not build the Wasm artifact or the Watt shim.
+The demo wraps an expression in parentheses. Watt loads the guest at compile time, hands it the compiler's input tokens, and returns the output tokens for normal compilation.
 
-```rust,editable
-{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/compile_macros/watt.rs:example}}
+### Build and call the guest
+
+The guest uses Watt's pinned `proc-macro2` fork for its token ABI. Keep that patch in the guest workspace so the native procedural-macro examples continue to use the upstream crate.
+
+```rust,noplayground
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/watt_round_trip/guest/src/lib.rs:example}}
 ```
 
-1. Implement and test the macro normally. For the WebAssembly crate, expose each macro as an `extern "C"` function taking and returning `proc_macro2::TokenStream`, set `[lib] crate-type = ["cdylib"]`, and apply Watt's documented `proc-macro2` patch.
-2. Build the implementation for the Wasm target:
+The native shim embeds the artifact by absolute path and calls the exported function of the same name.
 
-   ```sh
-   rustup target add wasm32-unknown-unknown
-   cargo build --release --target wasm32-unknown-unknown --manifest-path path/to/macro_impl/Cargo.toml
-   ```
+```rust,noplayground
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/watt_round_trip/src/lib.rs:example}}
+```
 
-3. Copy `target/wasm32-unknown-unknown/release/macro_impl.wasm` into the shim crate. Add `watt` to the shim and define a normal procedural-macro entry point:
+From the repository root in PowerShell, rebuild the guest and its standard library for the WebAssembly MVP instruction set. The standard library shipped with current Rust targets newer Wasm features, which Watt 0.5 may reject during decoding.
 
-   ```rust
-   use proc_macro::TokenStream;
-   use watt::WasmMacro;
+```powershell
+rustup toolchain install nightly-2026-11-11 --profile minimal --component rust-src
+$demo = "later/crates/cats/development_tools_procedural_macro_helpers/watt_round_trip"
+$env:CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_RUSTFLAGS = "-C target-cpu=mvp"
+cargo +nightly-2026-11-11 build -Z build-std=std,panic_abort --locked --release `
+  --target wasm32-unknown-unknown --target-dir target/watt-demo --manifest-path "$demo/guest/Cargo.toml"
+$env:WATT_DEMO_WASM = (Resolve-Path target/watt-demo/wasm32-unknown-unknown/release/watt_guest.wasm).Path
+cargo test --locked --manifest-path "$demo/Cargo.toml" --target-dir target/watt-demo
+```
 
-   static WASM: &[u8] = include_bytes!("macro_impl.wasm");
-   static MACRO: WasmMacro = WasmMacro::new(WASM);
+The test compiles a caller and checks that `2 * parenthesize!(20 + 1)` produces `42`. Without parentheses, the corresponding Rust expression evaluates to `41`.
 
-   #[proc_macro]
-   pub fn the_macro(input: TokenStream) -> TokenStream {
-       MACRO.proc_macro("the_macro", input)
-   }
-   ```
+```rust,noplayground
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/watt_round_trip/tests/expansion.rs:example}}
+```
 
-The `proc-macro2` patch and artifact-copy step are part of the build workflow. Pin and review the implementation and shim dependencies together, and make the Wasm build reproducible in CI before publishing. Do not assume that moving compilation to Wasm improves a particular workspace's build time: compare clean and cached builds with [`cargo build --timings`][cargo~timings~docs] and consider [`sccache`][sccache~repo] first.
-
-The Watt README describes faster downstream compilation as a goal and notes that Wasm execution can add macro-expansion overhead. As of 2026-10-26, its releases page lists `0.5.0` as a pre-release; the release notes include `syn` 2 support. Review the implementation and shim dependencies together before adopting it. See the [Watt repository][c~watt~repo] and [release history][watt~releases].
+Treat Watt as an advanced deployment option for macros that work entirely through tokens. Keep the guest, shim, lockfiles, and artifact build together so downstream users can trace the embedded Wasm to its source. Use [`cargo build --timings`][cargo~timings~docs] to compare clean and cached builds before adopting it for performance. The [release history][watt~releases] documents the runtime and token ABI.
 
 ## Related Topics {#related-topics .skip}
 

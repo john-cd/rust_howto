@@ -17,5 +17,5 @@
 [p~external-ffi-bindings]: ../external-ffi-bindings/index.md
 [p~mathematics]: https://john-cd.com/rust_howto/categories/mathematics/index.html
 [p~science]: ../science/index.md
-[p~simulation]: ../simulation/index.md
+[p~simulation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/simulation/index.md
 [p~visualization]: https://john-cd.com/rust_howto/categories/visualization/index.html

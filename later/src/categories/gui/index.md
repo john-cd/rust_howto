@@ -23,7 +23,7 @@ Framework maturity, maintenance, accessibility, styling, and platform support va
 | GUI that runs in a web browser | [`yew`][c~yew~docs]↗{{hi:yew}}, [`seed`][c~seed~docs]↗{{hi:seed}}, [`dioxus`][c~dioxus~docs]↗{{hi:dioxus}} | [Web Frameworks](#web-frameworks) |
 | Custom window and renderer | [`winit`][c~winit~docs]↗{{hi:winit}}, [`minifb`][c~minifb~docs]↗{{hi:minifb}} | [Window creation](#window-creation) and [2D renderers](#2d-renderers) |
 
-GTK and Tauri are the options that are most production-ready without caveats; the Rust-native toolkits are usable for simple projects but are still maturing. For web front ends that also generate static pages, see [`perseus`][c~perseus~docs]↗{{hi:perseus}}.
+GTK uses a native toolkit and has platform-specific installation requirements. Tauri pairs a Rust process with a system webview, so check behavior with the webview that users will have. For a Rust widget toolkit, try the counter examples and verify keyboard navigation and focus on your target platforms. For web front ends that also generate static pages, see [`perseus`][c~perseus~docs]↗{{hi:perseus}}.
 
 For broader catalogs and surveys, see [Are We GUI Yet?][are-we-gui-yet?~website]↗, the GUI section of [Blessed.rs][blessed-rs~website]↗, and [The State of Rust GUI libraries][blog~state-rust-gui-libraries]↗.
 

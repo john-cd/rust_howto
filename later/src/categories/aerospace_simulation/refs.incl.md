@@ -9,5 +9,5 @@
 [p~generate_ffi_bindings]: ../development-tools_ffi/generate_ffi_bindings.md
 [p~linear_algebra]: https://john-cd.com/rust_howto/categories/mathematics/linear_algebra.html
 [p~mathematics]: https://john-cd.com/rust_howto/categories/mathematics/index.html
-[p~simulation]: ../simulation/index.md
+[p~simulation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/simulation/index.md
 [p~visualization]: https://john-cd.com/rust_howto/categories/visualization/index.html

@@ -79,6 +79,12 @@ When validation finds more than one problem, combine the errors where possible s
 
 Unit-test parsing and generation helpers that use `proc-macro2`. Add compile-pass and compile-fail cases for the public macro interface, and keep expected diagnostics under review. See the [macro development tools][p~macro-tools] chapter for expansion inspection, compile-fail testing, snapshots, and Rust Analyzer.
 
+The following pair exercises the public derive in the compiler. The success case proves the import, attribute, generated implementation, and call all work. The failure case keeps the same required `name` attribute so the extra key is the input error under test.
+
+{{#include ../../../crates/cats/development_tools_procedural_macro_helpers/derive_contract.md}}
+
+From `later/crates`, run `cargo test --locked -p development_tools_procedural_macro_helpers --doc`. A `compile_fail` doctest checks that the compiler rejects the input. Use the diagnostic snapshot workflow under [macro development tools][p~macro-tools] when the exact error message or span is part of the contract.
+
 The [procedural macro workshop][proc-macro-workshop~repo] is a hands-on learning resource.
 
 ## Document the Macro Contract {#documentation}
