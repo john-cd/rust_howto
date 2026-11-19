@@ -58,13 +58,18 @@ path = "examples/tls/main.rs"
 test = true
 
 [[example]]
+name = "openssl_tls"
+path = "examples/tls/openssl_tls.rs"
+test = true
+
+[[example]]
 name = "utilities"
 path = "examples/utilities/main.rs"
 test = true
 
 [dependencies]
-# These RustCrypto examples have no external crypto-library build dependency;
-# running key-generation examples uses the operating system's secure RNG.
+# RustCrypto examples have no external crypto-library build dependency. The OpenSSL TLS
+# example links to native OpenSSL; key-generation examples use the operating system's secure RNG.
 aes-gcm = "0.11.1"
 # Pure Rust implementation of the AES-GCM-SIV Misuse-Resistant Authenticated Encryption Cipher (RFC 8452) with optional architecture-specific...
 aes-gcm-siv = "0.12.1"
@@ -103,6 +108,8 @@ hex = "0.4.3"
 # Reads and writes secrets through the operating system's credential store.
 keyring = "4.2.0"
 # A wrapper over a platform's native TLS implementation
+# OpenSSL TLS client and certificate APIs; requires the native OpenSSL library.
+openssl = "0.10"
 native-tls = "0.2.18"
 # Pure Rust implementation of the NIST P-256 (a.k.a. secp256r1, prime256v1) elliptic curve as defined in SP 800-186, with support for ECDH, ECDSA...
 p256 = { version = "0.14.0", features = ["pkcs8"] }

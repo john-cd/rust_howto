@@ -50,6 +50,18 @@ Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p cry
 {{#include ../../../crates/cats/cryptography/examples/tls/native_tls.rs:example}}
 ```
 
+## OpenSSL TLS Client {#openssl-tls-client}
+
+[`openssl`][c~openssl~docs] exposes OpenSSL's TLS and certificate APIs to Rust. It links to a native OpenSSL installation, so builds need a compatible SDK or system library. The connector loads default trust paths, verifies the peer certificate, and uses the supplied host name for certificate validation. The example does not make a network connection unless `TLS_HOST` is set; `TLS_PORT` defaults to `443`.
+
+```rust,editable
+{{#include ../../../crates/cats/cryptography/examples/tls/openssl_tls.rs:example}}
+```
+
+The test generates a temporary localhost certificate and completes a verified TLS exchange on loopback. It does not disable certificate or host-name verification. On Windows, vcpkg's `openssl` package supplies the native dependency used by this workspace.
+
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p cryptography --example openssl_tls`.
+
 ## Related Topics {#related-topics .skip}
 
 - [Certificates](certificates.md).
