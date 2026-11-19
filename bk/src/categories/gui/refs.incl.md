@@ -102,3 +102,4 @@
 
 [p~file_dialogs]: file_dialogs.md
 [p~web_based_gui]: web_based_gui.md
+[ex~gui~responsive-picker]: file_dialogs.md#responsive-picker

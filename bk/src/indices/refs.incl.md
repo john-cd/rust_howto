@@ -859,6 +859,7 @@
 [ex~gui~parley]: ../categories/gui/text_layout.md#parley
 [ex~gui~related-gtk-crates]: ../categories/gui/gtk.md#related-gtk-crates
 [ex~gui~relm4]: ../categories/gui/gtk.md#relm4
+[ex~gui~responsive-picker]: ../categories/gui/file_dialogs.md#responsive-picker
 [ex~gui~retained-mode]: ../categories/gui/retained_mode_gui.md
 [ex~gui~rfd]: ../categories/gui/file_dialogs.md#rfd
 [ex~gui~slint]: ../categories/gui/retained_mode_gui.md#slint
@@ -1485,6 +1486,7 @@
 [ex~virtualization~virt]: ../categories/virtualization/virtualization.md#virt
 [ex~visualization~chartistry]: ../categories/visualization/visualization.md#leptos-chartistry
 [ex~visualization~graph-data]: ../categories/visualization/visualization.md#graph-data
+[ex~visualization~live-plot]: ../categories/visualization/visualization.md#live-plot
 [ex~visualization~plotters]: ../categories/visualization/visualization.md#plotters
 [ex~visualization~terminal-table]: ../categories/visualization/terminal_tables.md
 [ex~wasm~gloo-net]: ../categories/wasm/leptos.md#gloo-net

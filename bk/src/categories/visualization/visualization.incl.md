@@ -6,3 +6,4 @@
 | [Export an interactive scatter plot][ex~visualization~graph-data] | {{#crate plotly}} | {{#categories visualization=Visualization}} |
 | [Update a line chart in the browser][ex~visualization~chartistry] | {{#crate leptos-chartistry}} | {{#categories visualization=Visualization}} |
 | [Present measurements in a terminal table][ex~visualization~terminal-table] | [`tabled`](https://docs.rs/tabled/) | {{#categories visualization=Visualization}} |
+| [Add Samples to a Live Desktop Plot][ex~visualization~live-plot] | `eframe`, `egui_plot` | {{#categories visualization=Visualization}} |

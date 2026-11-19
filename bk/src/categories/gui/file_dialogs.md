@@ -44,6 +44,16 @@ Browsers support asynchronous file picking, but not folder selection or a native
 
 [`tinyfiledialogs`][c~tinyfiledialogs~docs]↗{{hi:tinyfiledialogs}} is a small Rust binding to a bundled C library. The [Rust wrapper][c~tinyfiledialogs~repo] describes updates as sporadic; the [C upstream][tinyfiledialogs~upstream~website] continues to release separately, so check the wrapper and library versions before adopting it.
 
+## Pick and Read a Text File Without Blocking the UI {#responsive-picker}
+
+Run the native picker and file read on a worker thread. The UI disables the button while the worker is active and polls the result without waiting. Cancelling the picker preserves the current text. See [Responsive Background Work](background_work.md) for a longer worker lifecycle example.
+
+From `bk/`, run `just cargo run --manifest-path platform/Cargo.toml -p gui --example responsive_picker` in a desktop session.
+
+```rust,ignore,noplayground
+{{#include ../../../platform/cats/gui/examples/responsive_picker.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [GUI frameworks][p~gui].

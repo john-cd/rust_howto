@@ -28,3 +28,4 @@
 [c~leptos-chartistry~docs~badge]: https://img.shields.io/crates/v/leptos-chartistry
 [p~data-processing]: ../../other/data-processing/index.md
 [p~graphics]: ../graphics/index.md
+[ex~visualization~live-plot]: visualization.md#live-plot

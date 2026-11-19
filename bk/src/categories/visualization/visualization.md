@@ -65,5 +65,15 @@ The [Plotters WebAssembly demo][plotters-wasm-demo~repo] shows how to attach its
 
 Use [`eframe`][c~eframe~docs]↗{{hi:eframe}} to run a standalone egui application. [`egui_plot`][c~egui_plot~docs]↗{{hi:egui_plot}} adds plots with pan, zoom, and hover to an egui application. Check the [egui_plot project][c~egui_plot~repo] for examples and compatible egui versions.
 
+## Add Samples to a Live Desktop Plot {#live-plot}
+
+This `eframe` app keeps samples in application state. Click **Add sample** to generate the next point and redraw the `egui_plot` line. The sample model is testable without opening a window. See [GUI](../gui/egui_ecosystem.md#egui-plot) for additional plot widgets.
+
+From `bk/`, run `just cargo run --manifest-path platform/Cargo.toml -p gui --example live_plot` in a desktop session.
+
+```rust,ignore,noplayground
+{{#include ../../../platform/cats/gui/examples/live_plot.rs:example}}
+```
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

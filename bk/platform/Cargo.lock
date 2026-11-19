@@ -6788,6 +6788,7 @@ dependencies = [
  "slint",
  "softbuffer",
  "taffy 0.15.1",
+ "tempfile",
  "tracing",
  "tracing-subscriber",
  "url",
