@@ -20,6 +20,8 @@ Inspect a function after profiling or benchmarking has identified it as a meanin
 
 Generated output depends on the compiler version, target, features, profile, and build flags. Record those inputs when sharing an assembly listing, and avoid treating a listing from one build as a guarantee about another.
 
+To see how much LLVM IR a generic function produces across its instantiations, see [Compare Generic Instantiations with `cargo-llvm-lines`](../development-tools/build_time_diagnosis.md#cargo-llvm-lines).
+
 ## Related Topics {#related-topics .skip}
 
 - [Benchmarking](benchmarking.md) to measure the workload before and after a change.

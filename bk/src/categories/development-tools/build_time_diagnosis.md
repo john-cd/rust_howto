@@ -17,3 +17,21 @@ Measure three scenarios separately. Start with an empty checkout-specific target
 Change one variable at a time, then repeat the same workload. Development profiles trade debug information and runtime speed for compilation speed. Incremental artifacts help many edited builds, while `sccache` can reuse matching compiler work across clean builds; inspect cache hit statistics before crediting either. A linker change is worth keeping only after measuring its effect on the project's target and profile. [Feldera's case study](https://www.feldera.com/blog/cutting-down-rust-compile-times-from-30-to-2-minutes-with-one-thousand-crates) shows how dependency choices can dominate. [Reduce Compilation Duration](compilation/reduce_compilation_duration.md) covers profile, nightly, and linker options in more detail.
 
 For repeatable team measurements, a small [`cargo xtask`](https://github.com/matklad/cargo-xtask) command can pin the package, features, profile, and output path. If old outputs need removal, [`cargo-clean-all`](https://github.com/dnlmlr/cargo-clean-all) can list candidates; review its selected root and interactive choices before deleting anything. Keep each checkout's build output separate and retain shared package caches.
+
+## Compare Generic Instantiations with `cargo-llvm-lines` {#cargo-llvm-lines}
+
+[`cargo-llvm-lines`][llvm-lines] groups emitted LLVM IR by function. In this fixture, the same generic function is called with `u32` and `u64`. The calls use `black_box` and prevent inlining so both instantiations stay visible in the report.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/development_tools/examples/generic_ir.rs:example}}
+```
+
+Install the tool with `cargo install cargo-llvm-lines --locked`, then run this from `bk/`.
+
+```console
+just cargo llvm-lines --locked --manifest-path crates/Cargo.toml -p development_tools --example generic_ir --filter '::double'
+```
+
+The report should account for two copies of `double`. With Rust 1.100, it lists `double::<u32>` and `double::<u64>` separately, with one copy each. **Lines** counts the emitted LLVM IR lines for each reported row. The exact count can vary with the toolchain and profile. Use this count to investigate code generation, Cargo timings to measure compilation time, and [Low-level Profiling Tools](../development-tools_profiling/assembly.md) to inspect generated assembly.
+
+[llvm-lines]: https://github.com/dtolnay/cargo-llvm-lines

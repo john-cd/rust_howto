@@ -91,6 +91,11 @@ name = "mdbook_utils_broken_links"
 path = "examples/documentation/mdbook_utils_broken_links.rs"
 test = true
 
+[[example]]
+name = "generic_ir"
+path = "examples/generic_ir.rs"
+test = true
+
 [dependencies]
 # Application-level tracing for Rust.
 tracing = "0.1.44"
