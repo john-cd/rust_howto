@@ -67,7 +67,7 @@ services:
         - type=gha,scope=${GHA_CACHE_SCOPE:?Set GHA_CACHE_SCOPE in .devcontainer/.env or the host environment}
       cache_to:
         ##  In the `max` cache mode, all docker layers are cached, even those of intermediate steps.
-        - type=gha,mode=max,scope=${GHA_CACHE_SCOPE:?Set GHA_CACHE_SCOPE in .devcontainer/.env or the host environment}
+        - type=gha,mode=max,scope=${GHA_CACHE_SCOPE:?Set GHA_CACHE_SCOPE in .devcontainer/.env or the host environment},ignore-error=true
     volumes:
       ## Path where the container will write the book HTML / JS to, on the CI host (provided by GitHub Action)
       - type: bind
