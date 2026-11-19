@@ -111,7 +111,7 @@ def check_chapters(
 
 def unavailable_playground_imports(code: str, dependencies: set[str], available: set[str]) -> set[str]:
     """Find imports of known Cargo packages that the Playground does not supply."""
-    imports = set(re.findall(r"(?m)^\s*(?:pub\s+)?use\s+(?:::)?(\w+)\s*::", code))
+    imports = set(re.findall(r"(?m)^\s*(?:pub\s+)?use\s+(?:::)?(\w+)\s*(?=::|\bas\b|;)", code))
     imports.update(re.findall(r"(?m)^\s*(?:pub\s+)?extern\s+crate\s+(\w+)", code))
     modules = set(re.findall(r"(?m)^\s*(?:pub\s+)?mod\s+(\w+)\s*[{;]", code))
     return (imports & dependencies) - available - modules
