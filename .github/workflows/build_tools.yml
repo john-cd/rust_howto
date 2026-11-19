@@ -88,7 +88,10 @@ jobs:
       - name: Run tools tests inside container
         run: |
           # Keep the Rust image's PATH instead of replacing it with login profile values.
-          docker run --rm rust_howto_tools_app_builder:latest bash -c '
+          docker run --rm \
+            --mount "type=bind,source=$GITHUB_WORKSPACE/bk,target=/code/bk,readonly" \
+            --mount "type=bind,source=$GITHUB_WORKSPACE/later,target=/code/later,readonly" \
+            rust_howto_tools_app_builder:latest bash -c '
             set -euo pipefail
             : "${RUSTFMT_TOOLCHAIN:?RUSTFMT_TOOLCHAIN must be set in the image}"
             cd /code/tools
