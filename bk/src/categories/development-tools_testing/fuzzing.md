@@ -89,9 +89,9 @@ Fuzz testing provides pseudo-random input to find crashes and stability issues. 
 
 ## Memory Testing with Valgrind {#valgrind}
 
-[![valgrind][c~valgrind~docs~badge]][c~valgrind~docs] [![valgrind~crates.io][c~valgrind~crates.io~badge]][c~valgrind~crates.io] [![valgrind~repo][c~valgrind~repo~badge]][c~valgrind~repo]{{hi:valgrind}}
+[![valgrind][c~valgrind~docs~badge]][c~valgrind~docs] [![valgrind~crates.io][c~valgrind~crates.io~badge]][c~valgrind~crates.io]{{hi:valgrind}}
 
-While not a fuzzer itself, [`valgrind`][c~valgrind~docs]↗{{hi:valgrind}} is an instrumentation framework for building dynamic analysis tools. It is commonly used to detect memory leaks and memory management bugs, which are often what fuzzers are trying to trigger.
+[Valgrind's Memcheck manual](https://valgrind.org/docs/manual/mc-manual.html) explains how to detect invalid memory access and leaks in a running program. You can pass a reproducible input found by a fuzzer to the program under Memcheck to investigate its memory behavior.
 
 ## Related Topics {#related-topics .skip}
 

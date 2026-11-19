@@ -2,7 +2,7 @@
 
 # Configure Clippy for a Workspace
 
-`cargo clippy` catches patterns the compiler accepts, such as holding a lock across `.await` or dropping a future by assigning it to `_`. Put lint levels in Cargo manifests so local runs and CI start from the same policy. Pick additional lints for mistakes that matter to your project. [Evan Schwartz's stricter Clippy configuration][blog~stricter-clippy]↗ groups opt-in lints by the failure they help catch.
+`cargo clippy` catches patterns the compiler accepts, such as holding a lock across `.await` or dropping a future by assigning it to `_`. Put lint levels in Cargo manifests so local runs and CI start from the same policy. Pick additional lints for mistakes that matter to your project. The [Clippy lint categories][clippy~lint-categories] describe which kinds of issues each group detects.
 
 {{#include clippy.incl.md}}
 

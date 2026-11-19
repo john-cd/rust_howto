@@ -134,7 +134,7 @@
 [awesome-rust~repo]: https://github.com/rust-unofficial/awesome-rust
 [awesome-wasm-langs-typescript~repo]: https://github.com/appcypher/awesome-wasm-langs#typescript
 [aws-create-lambda-functions-with-rust~website]: https://docs.aws.amazon.com/sdk-for-rust/latest/dg/lambda.html
-[aws-doc-sdk~examples~repo]: https://github.com/awsdocs/aws-doc-sdk~examples
+[aws-doc-sdk~examples~repo]: https://github.com/awsdocs/aws-doc-sdk-examples
 [aws-lambda-rust-runtime~examples~repo]: https://github.com/awslabs/aws-lambda-rust-runtime/tree/main/examples
 [aws-rust-sdk~website]: https://aws.amazon.com/sdk-for-rust
 [axum-rest-api-sample~repo]: https://github.com/sheroz/axum-rest-api-sample
@@ -177,7 +177,6 @@
 [blog~bon-v3-release]: https://bon-rs.com/blog/bon-v3-release
 [blog~brson]: https://brson.github.io/blog
 [blog~building-a-crawler-in-rust]: https://kerkour.com/rust-crawler-associated-types
-[blog~building-a-saas-with-rust-and-next-js]: https://joshmo.bearblog.dev/lets-build-a-saas-with-rust/
 [blog~bytecodealliance-wasm]: https://bytecodealliance.org/articles
 [blog~candle]: https://marktechpost.com/2024/04/04/meet-candle-a-minimalist-machine-learning-framework-for-rust-that-focuses-on-performance-including-gpu-support-and-ease-of-use
 [blog~cargo-machete]: https://blog.benj.me/2022/04/27/cargo-machete
@@ -1304,7 +1303,7 @@
 [rust-howto~bk-scripts~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/scripts
 [rust-howto~bk-src-language~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/src/language
 [rust-howto~bk-src-links~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/src/links
-[rust-howto~bk-src-standard_library~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/src/standard_library
+[rust-howto~bk-src-standard_library~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/src/standard-library
 [rust-howto~bk-static~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/static
 [rust-howto~bk-theme~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk/theme
 [rust-howto~bk~repo]: https://github.com/john-cd/rust_howto/tree/develop/bk
@@ -1600,7 +1599,7 @@
 [wyeworks~website]: https://wyeworks.com
 [wyliodrin~website]: https://wyliodrin.com
 [xcode~website]: https://developer.apple.com/xcode
-[xdg-utils~website]: https://github.com/xgqt-org/xdg-utils
+[xdg-utils~website]: https://gitlab.freedesktop.org/xdg/xdg-utils
 [xfusion~website]: https://xfusion.com
 [yazi~repo]: https://github.com/sxyazi/yazi
 [yelp~website]: https://yelp.com

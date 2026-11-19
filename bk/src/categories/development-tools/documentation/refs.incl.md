@@ -25,7 +25,6 @@
 [mdbook-utils~repo]: https://github.com/john-cd/mdbook-utils
 [mdbook-utils~repo~badge]: https://img.shields.io/badge/mdbook--utils-steelblue?logo=github
 [mdbook-utils~guide]: https://john-cd.github.io/mdbook-utils
-[book_tooling~repo]: https://github.com/john-cd/book_tooling
 [rust-howto~templ~repo]: https://github.com/john-cd/rust_howto/tree/develop/tools/templ
 [shields~badge-reference~docs]: https://shields.io/badges
 [docsrs~badge~docs]: https://docs.rs/about/badges
