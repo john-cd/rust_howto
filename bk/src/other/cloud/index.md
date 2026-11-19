@@ -37,7 +37,7 @@ Use the [deployment guide][ex~cloud~shuttle] to choose a container, function run
 
 ## Operate Kubernetes
 
-Use [`kube`][cloud~kube] for Kubernetes clients and controllers. A controller watches resources and reconciles the cluster with the state they describe.
+Use [`kube`][cloud~kube] for Kubernetes clients and controllers. [Kubernetes Operators](kubernetes.md#kubernetes) walks through a custom resource, an idempotent reconciler, and local-cluster validation.
 
 ## Integrate a distributed application runtime {#dapr}
 

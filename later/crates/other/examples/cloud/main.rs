@@ -2,15 +2,10 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
-use std::path::PathBuf;
-
 use anyhow::Result;
 use clap::Parser;
 use clap::Subcommand;
 
-/// A minimal Kubernetes operator with `kube-rs`: a custom resource (`Echo`), a pure function that
-/// computes the desired `Deployment`, and a controller loop that applies it and reports the status.
-mod kubernetes;
 /// This example demonstrates a simple web application using the
 mod shuttle;
 
@@ -25,14 +20,6 @@ struct Cli {
 /// The examples that can be run.
 #[derive(Subcommand)]
 enum Commands {
-    /// Prints the CRD or starts the controller against an explicit kubeconfig.
-    #[command(name = "kubernetes")]
-    Kubernetes {
-        /// Starts the controller with this kubeconfig file.
-        #[arg(long, value_name = "FILE")]
-        kubeconfig: Option<PathBuf>,
-    },
-
     /// Runs the `shuttle` example.
     #[command(name = "shuttle")]
     Shuttle,
@@ -47,7 +34,6 @@ fn main() -> Result<()> {
 fn dispatch(cli: Cli) -> Result<()> {
     if let Some(command) = cli.command {
         match command {
-            Commands::Kubernetes { kubeconfig } => kubernetes::run(kubeconfig.as_deref())?,
             Commands::Shuttle => shuttle::run(),
         }
     }

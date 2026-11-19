@@ -8,6 +8,7 @@
 [ex~cloud~aws-s3-compatible]: aws.md#aws-s3-compatible
 [ex~cloud~aws-message-bus]: aws.md#aws-message-bus
 [ex~cloud~lambda]: ../../other/cloud/aws_lambda.md
+[ex~cloud~kubernetes]: kubernetes.md#kubernetes
 [ex~cloud~shuttle]: rust_native_cloud_development.md#shuttle
 [aws-app-runner~availability]: https://docs.aws.amazon.com/apprunner/latest/dg/apprunner-availability-change.html
 [aws-ecs~express-mode~docs]: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/express-service-create-full.html

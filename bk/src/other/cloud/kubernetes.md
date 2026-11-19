@@ -23,7 +23,7 @@ The recipe has three layers:
 From the repository root, generate the CRD with this command.
 
 ```console
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p other --example cloud -- kubernetes
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p other --features kubernetes --example kubernetes_operator
 ```
 
 Check that `kind` is `CustomResourceDefinition` and that `metadata.name`
@@ -37,10 +37,10 @@ own kubeconfig file. The CRD is cluster-wide even though each `Echo` is namespac
 
 ```sh
 kind create cluster --name howto-echo --kubeconfig echo-kubeconfig.yaml
-cargo run --quiet --manifest-path later/crates/Cargo.toml --locked -p other --example cloud -- kubernetes > echo-crd.json
+cargo run --quiet --manifest-path bk/crates/Cargo.toml --locked -p other --features kubernetes --example kubernetes_operator > echo-crd.json
 kubectl --kubeconfig echo-kubeconfig.yaml apply -f echo-crd.json
 kubectl --kubeconfig echo-kubeconfig.yaml wait --for=condition=Established crd/echos.example.com --timeout=45s
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p other --example cloud -- kubernetes --kubeconfig echo-kubeconfig.yaml
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p other --features kubernetes --example kubernetes_operator -- --kubeconfig echo-kubeconfig.yaml
 ```
 
 With the controller running, save the following as `echo.yaml`.
@@ -51,7 +51,7 @@ kind: Echo
 metadata:
   name: staged-echo
 spec:
-  message: hello from staged Kubernetes
+  message: hello from the book Kubernetes example
   replicas: 1
 ```
 
@@ -95,7 +95,7 @@ kubectl --context docker-desktop config view --raw --minify --flatten |
 kubectl --context docker-desktop create namespace rust-howto-echo
 kubectl --context docker-desktop create -f echo-crd.json
 kubectl --context docker-desktop wait --for=condition=Established crd/echos.example.com --timeout=45s
-just cargo run --manifest-path later/crates/Cargo.toml --locked -p other --example cloud -- kubernetes --kubeconfig $echoConfig
+just cargo run --manifest-path bk/crates/Cargo.toml --locked -p other --features kubernetes --example kubernetes_operator -- --kubeconfig $echoConfig
 ```
 
 In a second terminal, repeat the apply, readiness, and recreation commands above with `kubectl --context docker-desktop --namespace rust-howto-echo` in place of `kubectl --kubeconfig echo-kubeconfig.yaml`. Stop the controller before repeating the deletion check with the same namespace.

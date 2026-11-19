@@ -82,15 +82,16 @@ pub enum ReconcileError {
 
 /// Shared state for the reconciler.
 struct Context {
-    /// Database client used to execute the query.
+    /// Kubernetes client used to read and write resources.
     client: Client,
 }
 
-/// A pure function from the spec to the desired `Deployment`: it is
+/// Builds an idempotent `Deployment` from an `Echo` resource.
 ///
-/// # Arguments
+/// # Errors
 ///
-/// idempotent and can be unit-tested without a cluster.
+/// Returns an error if the resource lacks the metadata needed for ownership or
+/// if the desired Deployment cannot be serialized.
 pub fn desired_deployment(echo: &Echo) -> Result<Deployment, ReconcileError> {
     let name = echo.name_any();
     // The owner reference makes Kubernetes garbage-collect the Deployment

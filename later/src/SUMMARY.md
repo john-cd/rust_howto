@@ -24,7 +24,6 @@
 
 - [API bindings](categories/api-bindings/index.md)
 
-- [Kubernetes Operators](other/cloud/kubernetes.md)
 
 - [Cryptocurrencies](categories/cryptography_cryptocurrencies/index.md)
   - [Offline Ethereum, Bitcoin, and Solana Examples](categories/cryptography_cryptocurrencies/cryptocurrencies.md)

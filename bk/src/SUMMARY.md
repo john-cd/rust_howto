@@ -116,6 +116,7 @@
   - [Rust on AWS](other/cloud/aws.md)
     - [Test an AWS Lambda Handler Locally](other/cloud/aws_lambda.md)
   - [Deploy Rust Applications](other/cloud/rust_native_cloud_development.md)
+  - [Kubernetes Operators](other/cloud/kubernetes.md)
 
 - [Compression](categories/compression/index.md)
   - [Working with Tarballs](categories/compression/tar.md)
