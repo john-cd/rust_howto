@@ -47,10 +47,8 @@ For higher-level image processing and codec handling, see the [Image Formats pag
 
 ## Related Topics {#related-topics .skip}
 
-- Audio and video codecs.
-- Container formats and demuxing.
-- File formats and serialization.
-- Performance-sensitive multimedia pipelines.
+- [Streaming Media](../multimedia/streaming.md) covers media delivery and container handling.
+- [Audio](../multimedia_audio/index.md) covers audio processing and format examples.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

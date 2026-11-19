@@ -50,10 +50,8 @@ arguments, working directory, exit status, and shutdown policy explicit.
 
 ## Related Topics {#related-topics .skip}
 
-- macOS system APIs.
-- Cocoa and native GUI development.
-- Platform-specific bindings.
-- Cross-platform Rust on desktop.
+- [Unix APIs](../os_unix-apis/unix.md) covers portable Unix interfaces.
+- [Windowed and Offscreen Rendering](../rendering_engine/rendering_engines.md) compares rendering setups.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

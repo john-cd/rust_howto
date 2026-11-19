@@ -54,10 +54,8 @@ For shared process/environment handling and a platform crate comparison, see
 
 ## Related Topics {#related-topics .skip}
 
-- Linux system programming.
-- OS-level APIs and bindings.
-- Cross-platform compatibility.
-- Performance and low-level Rust.
+- [Unix APIs](../os_unix-apis/unix.md) covers interfaces shared across Unix systems.
+- [Process Management](../os/process_management.md) covers subprocess lifetimes.
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

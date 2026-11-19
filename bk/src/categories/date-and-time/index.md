@@ -29,6 +29,7 @@ Manage the complexity of dealing with the fourth dimension.
 
 {{#include time_crate.incl.md}}
 
+For a worked example, see [Resolve Daylight Saving Time with Jiff](jiff_dst.md).
 For scheduling by local civil time, [Jiff's time-zone documentation](https://docs.rs/jiff/latest/jiff/tz/index.html) explains how a time zone can map one clock reading to zero, one, or two instants.
 
 {{#include refs.incl.md}}

@@ -11,7 +11,7 @@ for a higher-level client with blocking and asynchronous APIs, or
 messages. The examples use local fixtures where possible; network demos that
 need a public service are opt-in tests.
 
-The request recipes cover headers and query parameters. The API recipes add
+The request recipes cover headers and query parameters. Start with [a local HTTP service](offline_http_client.md) to exercise status handling and JSON decoding without a remote dependency. The API recipes add
 JSON, pagination, and status handling. The reliability recipes show when to
 limit requests, retry with backoff, and honor `Retry-After`. Use the file
 transfer recipes for streams and byte ranges.

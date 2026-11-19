@@ -189,6 +189,7 @@
   - [Duration and Calculation](categories/date-and-time/duration.md)
   - [Parsing and Displaying](categories/date-and-time/parse.md)
   - [`time` Crate](categories/date-and-time/time_crate.md)
+  - [Resolve Daylight Saving Time with Jiff](categories/date-and-time/jiff_dst.md)
 
 - [DevOps and Rust](other/devops/index.md)
   - [Version Control](other/devops/version_control.md)
@@ -431,6 +432,7 @@
   - [HTTP Clients](categories/web-programming_http-client/index.md)
     - [HTTP Client Libraries](categories/web-programming_http-client/http_clients.md)
     - [Make HTTP Requests](categories/web-programming_http-client/requests.md)
+    - [Make an HTTP Request Against a Local Service](categories/web-programming_http-client/offline_http_client.md)
     - [Call an API](categories/web-programming_http-client/apis.md)
     - [Rate Limiting and Retries](categories/web-programming_http-client/rate_limiting_and_retries.md)
     - [Download and Upload](categories/web-programming_http-client/download.md)
@@ -476,7 +478,6 @@
   - [Predicates](other/standalone/predicates.md)
   - [Self-Referential Types](other/standalone/self_referential.md)
 
-- [Date and Time](categories/date-and-time/jiff_dst.md)
 - [Text Processing](categories/text-processing/index.md)
   - [Regular Expressions](categories/text-processing/regex.md)
   - [String Parsing](categories/text-processing/string_parsing.md)
@@ -491,7 +492,6 @@
 - [Text Editors](categories/text-editors/index.md)
   - [IDEs](categories/text-editors/ides.md)
   - [Language Server Protocol](categories/text-editors/language_server_protocol.md)
-- [Make an HTTP Request Against a Local Service](categories/web-programming_http-client/offline_http_client.md)
 - [HTTP Servers](categories/web-programming_http-server/index.md)
   - [Axum](categories/web-programming_http-server/axum.md)
   - [Actix Web](categories/web-programming_http-server/actix.md)
