@@ -43,11 +43,6 @@
   - [Objective-C](categories/development-tools_ffi/objc.md)
   - [Ruby](categories/development-tools_ffi/ruby.md)
 
-- [Development tools - procedural macro helpers](categories/development-tools_procedural-macro-helpers/index.md)
-  - [Crates for macro development](categories/development-tools_procedural-macro-helpers/write_proc_macros.md)
-  - [Tools for macro development](categories/development-tools_procedural-macro-helpers/macro_tools.md)
-  - [Compiling macros ahead of time](categories/development-tools_procedural-macro-helpers/compile_macros.md)
-
 - [Embedded development](categories/embedded/index.md)
   - [`embassy`](categories/embedded/embassy.md)
   - [Flash programming](categories/embedded/flash.md)
@@ -56,9 +51,6 @@
   - [Real-time operating systems](categories/embedded/rtos.md)
   - [Sensors](categories/embedded/sensors.md)
   - [Useful crates](categories/embedded/useful_crates_embedded.md)
-
-- [Emulators](categories/emulators/index.md)
-  - [Emulators](categories/emulators/emulators.md)
 
 - [External FFI bindings](categories/external-ffi-bindings/index.md)
   - [External FFI bindings](categories/external-ffi-bindings/external_ffi_bindings.md)

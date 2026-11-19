@@ -16,7 +16,7 @@ A procedural macro crate uses the compiler-provided [`proc_macro`][c~proc_macro~
 
 Use [`proc-macro2`][c~proc-macro2~docs] types in reusable parsing and generation code. They work in ordinary libraries and tests as well as proc-macro crates, so most behavior can be tested without invoking the compiler's macro interface.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/proc_macro2.rs:example}}
 ```
 
@@ -26,7 +26,7 @@ Use [`proc-macro2`][c~proc-macro2~docs] types in reusable parsing and generation
 
 [`syn`][c~syn~docs] parses Rust tokens into syntax-tree types such as `DeriveInput`, `Item`, and `Expr`. Parse only the syntax your macro needs, then validate its shape before generating code.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/syn.rs:example}}
 ```
 
@@ -49,7 +49,7 @@ pub fn describe(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 
 [`quote`][c~quote~docs] builds `proc_macro2::TokenStream` values from Rust-like syntax. Use interpolation for parsed identifiers and types instead of assembling generated source as strings.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/quote.rs:example}}
 ```
 
@@ -59,7 +59,7 @@ pub fn describe(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 
 [`darling`][c~darling~docs] derives parsers for common derive-macro inputs and attributes. Use it when its input model fits the macro; direct `syn` parsing remains available for custom syntax.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/darling.rs:example}}
 ```
 
@@ -83,7 +83,7 @@ The following pair exercises the public derive in the compiler. The success case
 
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/derive_contract.md}}
 
-From `later/crates`, run `cargo test --locked -p development_tools_procedural_macro_helpers --doc`. A `compile_fail` doctest checks that the compiler rejects the input. Use the diagnostic snapshot workflow under [macro development tools][p~macro-tools] when the exact error message or span is part of the contract.
+From `bk/crates`, run `cargo test --locked -p development_tools_procedural_macro_helpers --doc`. A `compile_fail` doctest checks that the compiler rejects the input. Use the diagnostic snapshot workflow under [macro development tools][p~macro-tools] when the exact error message or span is part of the contract.
 
 The [procedural macro workshop][proc-macro-workshop~repo] is a hands-on learning resource.
 
@@ -103,7 +103,7 @@ Document each macro's accepted syntax, generated behavior, attributes, limitatio
 
 [`paste`][c~paste~docs] helps concatenate identifiers in `macro_rules!` definitions; it is an adjacent tool rather than a required step in procedural-macro authoring.
 
-```rust,editable
+```rust,noplayground
 {{#include ../../../crates/cats/development_tools_procedural_macro_helpers/examples/write_proc_macros/paste.rs:example}}
 ```
 

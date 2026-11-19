@@ -20,14 +20,14 @@
 [p~macro-tools]: macro_tools.md
 [p~write-proc-macros]: write_proc_macros.md
 [ex~development-tools_procedural-macro-helpers~watt]: compile_macros.md#watt
-[p~attributes]: ../../../src/language/attributes.md
-[p~building]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_cargo-plugins/building.md
+[p~attributes]: ../../language/attributes.md
+[p~building]: ../development-tools_cargo-plugins/building.md
 [p~configuration]: ../config/configuration.md
-[p~crates]: ../../crate_selection/index.md
-[p~macros]: https://john-cd.com/rust_howto/language/macros.html
-[p~main]: ../../language/entrypoint.md
-[p~streams]: https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/asynchronous/streams.md
-[p~wasm]: # "../wasm/index.md"
+[p~crates]: ../../crate-selection/index.md
+[p~macros]: ../../language/macros.md
+[p~main]: ../../language/entry_points.md
+[p~streams]: ../asynchronous/streams.md
+[p~wasm]: https://github.com/john-cd/rust_howto/blob/develop/later/src/categories/wasm/index.md
 [macrotest~docs]: https://docs.rs/macrotest/latest/macrotest/
 [rust-analyzer~macro-expansion~docs]: https://rust-analyzer.github.io/book/features.html#expand-macro-recursively
 
@@ -40,4 +40,4 @@
 [p~macro_tools]: macro_tools.md
 [p~proc-macro~crate]: https://doc.rust-lang.org/proc_macro/
 [p~proc-macro~crate~badge]: https://img.shields.io/badge/proc__macro-Rust-orange
-[p~rust-patterns]: https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/rust-patterns/index.md
+[p~rust-patterns]: ../rust-patterns/index.md

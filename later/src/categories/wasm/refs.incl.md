@@ -22,7 +22,7 @@
 [p~caching]: ../../../src/categories/caching/index.md
 [p~cross-platform]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/cross-platform/index.md
 [p~embedded]: ../embedded/index.md
-[p~emulators]: ../emulators/index.md
+[p~emulators]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/emulators/index.md
 [p~functions]: https://john-cd.com/rust_howto/language/functions.html
 [p~game-development]: https://john-cd.com/rust_howto/categories/game-development/game_development.html
 [p~html]: ../../../src/categories/parser-implementations/html.md
