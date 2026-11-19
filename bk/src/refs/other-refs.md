@@ -1755,3 +1755,23 @@
 [rust-howto~no-std~no-allocation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/no-std/no_alloc.md
 [rust-howto~testing]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_testing/testing.md
 [solana~pda]: https://solana.com/docs/core/pda
+
+[api-bindings~aws]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/cloud/aws.md
+[api-bindings~compression]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/compression/compression.md
+[api-bindings~external-ffi]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/external-ffi-bindings/external_ffi_bindings.md
+[api-bindings~ffi-tools]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_ffi/index.md
+[api-bindings~http]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/web-programming_http-client/apis.md
+[api-bindings~hyper]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/web-programming_http-server/hyper.md
+[api-bindings~java]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_ffi/java.md
+[api-bindings~macos]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/os_macos-apis/macos.md
+[api-bindings~objc]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_ffi/objc.md
+[api-bindings~plugins]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/other/standalone/plugin.md
+[api-bindings~python]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_ffi/python.md
+[api-bindings~sqlite]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/database/sqlite.md
+[api-bindings~tcp-server]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/network-programming/server.md
+[api-bindings~telemetry]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_debugging/distributed_telemetry.md
+[api-bindings~tls]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/cryptography/tls.md
+[api-bindings~zstd-stream]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/compression/compression.md#stream-zstandard-data-zstd-stream
+[c~num_threads~docs]: https://docs.rs/num_threads
+[c~zstd-safe~docs]: https://docs.rs/zstd-safe
+[c~zstd-sys~docs]: https://docs.rs/zstd-sys

@@ -4,133 +4,44 @@
 
 [![cat~api-bindings][cat~api-bindings~badge]][cat~api-bindings]{{hi:API bindings}}
 
-An API binding gives Rust code a typed interface to a capability implemented elsewhere. That capability may be a native library in the same process, an operating-system service, or a remote HTTP service. Remote clients do not cross a native ABI boundary; low-level declarations for C libraries and system APIs belong in [[external-ffi-bindings | External FFI Bindings]]. Use the FFI tooling chapter when generating or maintaining bindings for an API you own.
+API bindings are idiomatic Rust wrappers for specific APIs. They let you work with Rust types, ownership, and errors when calling a native library, an operating-system service, or a remote HTTP API. Browse the recipes below by the capability you need. For raw, non-idiomatic, or unsafe interfaces, see [External FFI Bindings][api-bindings~external-ffi]. For generating and maintaining bindings, see [FFI tooling][api-bindings~ffi-tools].
 
-## Choose the Integration Layer
+## Service APIs
 
-| Situation | Start with | Check before adopting |
+| API | Rust entry point | Start here |
 | --- | --- | --- |
-| A remote HTTP service | A Rust client crate such as `reqwest`, `isahc`, or `surf` | Async runtime requirements, TLS defaults, retries, timeouts, and how status and transport errors are exposed. |
-| A remote database server | Its protocol client, such as `tokio-postgres` or `mongodb` | Connection pooling, server-version support, transaction behavior, and how errors are exposed. |
-| A database embedded in the application | A local database wrapper such as `rusqlite` | Whether the crate bundles or links the native library, and how the database file and connection are managed. |
-| A native library with a maintained Rust wrapper | The safe wrapper rather than its `-sys` crate | Platform support, native SDK installation, enabled features, and whether the wrapper owns foreign resources safely. |
-| An API without a suitable wrapper | The raw binding or a generated binding behind a small safe module | ABI and version compatibility, handle ownership, pointer validity, thread-safety, and link-time system dependencies. |
+| AWS and S3-compatible object stores | `aws-sdk-s3` | [Rust on AWS][api-bindings~aws] covers typed requests, shared SDK configuration, and S3-compatible endpoints. |
+| Kubernetes | `kube` | [Kubernetes Operators][api-bindings~staged-kubernetes] uses typed resources to reconcile a Deployment. |
 
-Prefer the narrowest maintained interface that covers the required API. Keep credentials and network policy at the application boundary, and keep `unsafe` calls and foreign ownership rules inside a wrapper module.
+To call an HTTP API directly or write a small typed client of your own, start with [Call an API][api-bindings~http]. Its `reqwest` recipes cover JSON responses, pagination, HTTP errors, and rate limits. Service-specific clients such as `aws-sdk-s3` package the service's operations and types.
 
-## Safe Compression API
+## Native Libraries, Operating Systems, and Language Runtimes
 
-This example uses [`flate2`][c~flate2~docs]↗ to compress and restore a byte
-string with gzip. The encoder and decoder expose ordinary Rust I/O traits, so
-callers can handle failures with `Result` without calling the underlying C API
-directly:
+| Crate | Book coverage |
+| --- | --- |
+| `flate2` | [Compression and Decompression][api-bindings~compression] includes stream and gzip file round trips. |
+| `zstd` | [Stream Zstandard Data][api-bindings~zstd-stream] composes an encoder and decoder with Rust I/O and explains why the writer must finish the frame. |
+| `rusqlite` | [SQLite][api-bindings~sqlite] shows how to open an embedded database, bind parameters, and read rows. |
+| `opentelemetry` | [Distributed Telemetry][api-bindings~telemetry] records and exports spans and propagates trace context across HTTP. |
+| `jni` | [Java][api-bindings~java] builds a Rust native library that a JVM loads and calls. |
+| `pyo3` | [Python][api-bindings~python] embeds Python, exposes Rust types to the embedded interpreter, and builds an importable extension. |
+| `objc2` and `objc2-foundation` | [Objective-C][api-bindings~objc] uses typed Objective-C bindings. The [macOS API example][api-bindings~macos] reads the operating-system version through Foundation. |
+| `socket2` | [TCP Servers][api-bindings~tcp-server] explains setting socket options before binding and handing the socket to `std::net::TcpListener`. The code examples on that page use other APIs. |
+| `openssl` | [TLS][api-bindings~tls] discusses OpenSSL as a `native-tls` backend. [Hyper][api-bindings~hyper] lists `hyper-openssl` as an adapter. Direct `openssl` use has no recipe. |
+| `libloading` | [Plugin Architecture][api-bindings~plugins] discusses native symbol lookup and library lifetimes. It has no dynamic-loading example. Loading a library and trusting a symbol's type are unsafe operations. See [External FFI Bindings][api-bindings~external-ffi] for the raw boundary. |
+| `zstd-safe` and `zstd-sys` | [Compression and Decompression][api-bindings~compression] mentions the `zstd-sys` backend. [`zstd-safe`][c~zstd-safe~docs] is the lower-level safe wrapper and [`zstd-sys`][c~zstd-sys~docs] exposes raw bindings. The book example uses `zstd`. |
+| `num_threads` | The lockfile includes it as a dependency. [`num_threads`][c~num_threads~docs] queries the current process's thread count. There is no book recipe for it. |
+
+<details>
+<summary>Try the staged <code>flate2</code> example</summary>
+
+This short example writes and reads gzip bytes through Rust's `Write` and `Read` traits.
 
 ```rust
 {{#include ../../../crates/cats/api_bindings/examples/api_bindings/gzip_round_trip.rs:example}}
 ```
 
-## Database Bindings
-
-Bindings for popular databases like PostgreSQL, MySQL, and SQLite. Numerous crates exist, including [`tokio-postgres`][c~tokio-postgres~docs]↗{{hi:tokio-postgres}}, [`rusqlite`][c~rusqlite~docs]↗{{hi:rusqlite}}, [`mongodb`][c~mongodb~docs]↗{{hi:mongodb}}, etc.
-
-Refer to [[database | Database]] and [[database-implementations | Database Implementations]].
-
-## Compression APIs
-
-Bindings to data compression libraries: see [[compression | Compression]].
-
-## Computer Vision APIs
-
-See [[computer-vision | Computer Vision]].
-
-## Email APIs
-
-See [[email | Email]].
-
-## Filesystem APIs
-
-Bindings for filesystem operations and libraries, including [`inotify`][c~inotify~docs]↗{{hi:inotify}} (bindings to the 'inotify' API for monitoring filesystem events on Linux). See [[filesystem | Filesystem]].
-
-## Graphics APIs
-
-Bindings for graphics libraries such as Vulkan and OpenGL: see [[graphics | Graphics]] and [[rendering_graphics-api | Rendering: Graphics API]].
-
-## Machine Learning APIs
-
-Bindings for machine learning frameworks like [`TensorFlow`][tensorflow~website]↗{{hi:TensorFlow}} and `PyTorch` (e.g. [`tch-rs`][c~tch~docs]↗{{hi:tch-rs}}): See [[machine-learning | Machine Learning]].
-
-## Multimedia APIs
-
-Examples include [`ffmpeg`][c~ffmpeg~docs]↗{{hi:ffmpeg}} (bindings to the FFmpeg library) and [`sdl2`][c~sdl2~docs]↗{{hi:sdl2}} (Bindings to the Simple DirectMedia Layer (SDL) library for multimedia applications). See [[multimedia | Multimedia]], [[multimedia_audio | Multimedia: Audio]], [[multimedia_encoding | Multimedia: Encoding]], [Multimedia Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md), and [[multimedia_video | Multimedia Video]].
-
-## Networking APIs
-
-Bindings for networking libraries and protocols, such as [`curl`][c~curl~docs]↗{{hi:curl}} (bindings to the libcurl library for transferring data via URLs): see [[network-programming | Network Programming]].
-
-## Operating System APIs
-
-See [[os | OS]].
-
-## Operating System-specific APIs
-
-Bindings for OS-specific functionality and system calls: you will often use [`std::os`][c~std::os~docs]↗{{hi:std::os}} or crates like [`nix`][c~nix~docs]↗{{hi:nix}} (Unix-like API bindings) or `users`{{hi:users}} (a library to query user and group information on Unix-like systems). Refer to:
-
-- [[os_freebsd-apis | OS Freebsd APIs]].
-- [[os_linux-apis | OS Linux APIs]].
-- [[os_macos-apis | OS Macos APIs]].
-- [[os_unix-apis | OS Unix APIs]].
-- [[os_windows-apis | OS Windows APIs]].
-
-Use the [`sysinfo`][c~sysinfo~docs]↗{{hi:sysinfo}} cross-platform library to fetch system information.
-
-## Parsing APIs
-
-Consider [`libxml`][c~libxml~docs]↗{{hi:libxml2}} (bindings to the libxml2 library) for XML parsing. See [[parsing | Parsing]] and [[parser-implementations | Parser Implementations]].
-
-## Programming Language Bindings
-
-See [[development-tools_ffi | Development Tools FFI]].
-
-## Web APIs (Client)
-
-Consider using [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}} (or [`isahc`][c~isahc~docs]↗{{hi:isahc}} or [`surf`][c~surf~docs]↗{{hi:surf}}). Refer to:
-
-- [[http_clients | HTTP Clients]].
-- [[web-programming_http-client | Web Programming HTTP Client]].
-
-## Web APIs (Server)
-
-Commonly used crates include [`axum`][c~axum~docs]↗{{hi:axum}}, [`actix-web`][c~actix-web~docs]↗{{hi:actix-web}}, [`warp`][c~warp~docs]↗{{hi:warp}}, and [`rocket`][c~rocket~docs]↗{{hi:rocket}}. See:
-
-- [[web-programming_http-server | Web Programming HTTP Server]].
-- [[apis | APIs]].
-- [[web-programming | Web Programming]].
-- [[_graphql | GraphQL]].
-
-## Game Development APIs
-
-Bindings for game development libraries and engines - see [[game_development | Game Development]] and [[game-engines | Game Engines]].
-
-## Cryptography APIs
-
-Bindings for cryptographic libraries and protocols, such as [`sodiumoxide`][c~sodiumoxide~docs]↗{{hi:sodiumoxide}} (a safe Rust binding to the Networking and Cryptography (NaCl / Sodium) library) or [`openssl`][c~openssl~docs]↗{{hi:openssl}} (bindings to the OpenSSL library). See:
-
-- [[cryptography | Cryptography]].
-- [[encryption | Encryption]].
-- [[hashing | Hashing]].
-
-## WebAssembly APIs
-
-Bindings for WebAssembly and related technologies - refer to [[wasm | WASM]].
-
-## GUI APIs
-
-Bindings to Graphical User Interfaces, such as bindings to the GTK library - see [[gui | GUI]].
-
-## Related Topics
-
-- [[external-ffi-bindings | External FFI Bindings]]
-- [[development-tools_ffi | Development Tools FFI]]
+</details>
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
