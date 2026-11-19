@@ -30,6 +30,7 @@
   - [Generics](language/generics.md)
   - [Attributes](language/attributes.md)
   - [Macros](language/macros.md)
+  - [Unsafe Contracts](language/unsafe_contracts.md)
 
 - [Standard Library](standard-library/index.md)
   - [Optional Values](standard-library/optional_values.md)

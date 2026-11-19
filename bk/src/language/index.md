@@ -86,6 +86,10 @@ It is not intended to be a beginner's book nor a comprehensive guide, but rather
 
 {{#include macros.incl.md}}
 
+## Unsafe Rust
+
+[Unsafe Contracts](unsafe_contracts.md) shows how callers and implementations share the proof obligations at an unsafe boundary.
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 
