@@ -1742,7 +1742,9 @@
 [c~solana-sdk~docs]: https://docs.rs/solana-sdk
 [c~solana-sdk~docs~badge]: https://img.shields.io/crates/v/solana-sdk?label=solana-sdk
 [c~tello~docs]: https://docs.rs/tello
+[docker-desktop~kubernetes]: https://docs.docker.com/desktop/use-desktop/kubernetes/
 [ethers-rs~repo]: https://github.com/gakonst/ethers-rs
+[kind~website]: https://kind.sigs.k8s.io/
 [mavlink~packet-loss]: https://mavlink.io/en/guide/packet_loss.html
 [rust-howto~game-development]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/game-development/index.md
 [rust-howto~game-engines]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/game-engines/index.md
