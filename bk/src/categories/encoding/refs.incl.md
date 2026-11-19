@@ -24,6 +24,7 @@
 [ex~encoding~rmp-serde]: no_external_schema.md#rmp-serde
 [ex~encoding~serde-ignored]: serde.md#serde-ignored
 [ex~encoding~serde-json]: complex_encoding.md#serde-json
+[ex~encoding~borrowed-json]: serde.md#borrowed-json
 [ex~encoding~serde-json2]: serde.md#serde-json2
 [ex~encoding~serde]: serde.md#serde
 [ex~encoding~serialize-to-csv]: csv.md#serialize-to-csv

@@ -133,6 +133,7 @@ A method returning `&T` from `&mut self` has the same rule. The returned referen
 ## Related Topics {#related-topics .skip}
 
 - [[clone-on-write | COW]].
+- [Choose Borrowed or Owned JSON Fields](../categories/encoding/serde.md#borrowed-json) shows a deserialization result borrowing from its input.
 - [Memory Management](../categories/memory-management/index.md).
 - [[ownership_and_borrowing | Ownership & Borrowing]].
 - [Rust Patterns](../categories/rust-patterns/index.md).

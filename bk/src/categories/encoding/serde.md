@@ -30,6 +30,27 @@ Use `serde_json::to_string` or `to_vec` to serialize and `from_str` or `from_sli
 {{#include ../../../crates/cats/encoding/examples/serde/serde_json.rs:example}}
 ```
 
+## Choose Borrowed or Owned JSON Fields {#borrowed-json}
+
+When the caller supplies a byte slice, `T: Deserialize<'de>` lets the returned
+value borrow from the slice for its lifetime `'de`. A `Cow<'_, str>` with
+`#[serde(borrow)]` can borrow unescaped text and own text that has to be decoded.
+For example, JSON `"Ada"` can borrow the original bytes, while `"\u0041da"`
+requires an owned decoded string.
+
+A reader's buffer can be reused or dropped before the caller sees the result.
+`DeserializeOwned` requires that the result own any data obtained from the reader.
+This recipe wraps the reader in `BufReader` and reads one complete JSON value.
+
+```rust,noplayground
+{{#include ../../../crates/cats/encoding/examples/borrowed_json.rs:example}}
+```
+
+Enable Serde's `derive` feature and use `serde_json` with its default features.
+From `bk/crates`, run `cargo test --locked -p encoding --example borrowed_json`.
+See [Lifetimes](../../language/lifetimes.md), [JSON Parsing](../parser-implementations/json.md),
+and [Serde's guide to deserializer lifetimes](https://serde.rs/lifetimes.html).
+
 ## Handle Unknown Fields When Deserializing, with `serde-ignored` {#serde-ignored}
 
 [![serde-ignored][c~serde_ignored~docs~badge]][c~serde_ignored~docs]{{hi:serde-ignored}}
