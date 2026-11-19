@@ -74,6 +74,13 @@ services:
         target: /code/bk/book
         bind:
           create_host_path: true
+      # Spellcheck reads published and staging prose. Keep staging prose out of the CI image.
+      - type: bind
+        source: ../later/src
+        target: /code/later/src
+        read_only: true
+        bind:
+          create_host_path: false
       # Use a tmpfs (in-RAM) mount for the Rust build target directory.
       # This provides maximum I/O speed for compilation artifacts.
       ## The GitHub Actions ubuntu-latest runner has ~7 GB RAM; folder sizes are reported at the end
