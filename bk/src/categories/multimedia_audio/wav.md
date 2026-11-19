@@ -14,7 +14,9 @@
 
 A `WavSpec` describes the format of the file: channels, sample rate, bits per sample and whether the samples are integers or floats. The writer streams the samples one at a time, so a rendered composition does not have to fit in memory; wrap a `File` in a `BufWriter` to write to disk. The header holds the length of the data, which is only known at the end: call `finalize`.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p multimedia_audio --example audio`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/multimedia_audio/examples/audio/wav_write_read.rs:example}}
 ```
 

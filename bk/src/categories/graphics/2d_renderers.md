@@ -24,7 +24,9 @@ This example sends a triangle path through both stages. Lyon produces vertices
 and indices; the application passes those triangles to tiny-skia's CPU
 rasterizer. No window or GPU is needed.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p graphics --example 2d_renderers`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/graphics/examples/2d_renderers/tessellate_and_rasterize.rs:example}}
 ```
 

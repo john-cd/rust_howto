@@ -12,7 +12,9 @@ A diff describes how two versions of text differ. It usually groups content as u
 
 [`diff`][c~diff~docs]↗{{hi:diff}} computes differences between slices and strings. Use `diff::lines` for a simple line-oriented result, or `diff::chars` when character-level changes are useful. Each result is unchanged content (`Both`), content only in the old input (`Left`), or content only in the new input (`Right`). The example prints these as context, removal, and insertion lines.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p text_processing --example diffing`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/diffing/diff.rs:example}}
 ```
 
@@ -24,7 +26,7 @@ A diff describes how two versions of text differ. It usually groups content as u
 
 The example compares lines and words, then renders a unified diff. The output is for review; it does not validate that a later patch still applies to the expected input.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/diffing/similar.rs:example}}
 ```
 

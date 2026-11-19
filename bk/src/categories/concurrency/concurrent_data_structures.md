@@ -47,7 +47,9 @@ An entry guard returned by `get` or `get_mut` holds a shard lock. Drop guards pr
 
 [`flurry`][c~flurry~docs]↗{{hi:flurry}} is a concurrent hash table designed for high performance. It allows fully concurrent reads and highly concurrent updates. Its main type is functionally very similar to [`std::collections::HashMap`][c~std::collections::HashMap~docs]↗{{hi:std::collections::HashMap}}. Its implementation is closely based on Java's `java.util.concurrent.ConcurrentHashMap`. Even though all operations on the map are thread-safe and operate on shared references, retrieval operations do not entail locking, and there is not any support for locking the entire table in a way that prevents all access ([doc][c~flurry~docs]↗).
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p concurrency --example concurrent_data_structures`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/flurry.rs:example}}
 ```
 
@@ -65,7 +67,7 @@ An entry guard returned by `get` or `get_mut` holds a shard lock. Drop guards pr
 - Efficient memory usage, with garbage collection powered by [`seize`][c~seize~docs]↗{{hi:seize}}.
   ([doc][c~papaya~docs]↗).
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/concurrent_data_structures/papaya.rs:example}}
 ```
 

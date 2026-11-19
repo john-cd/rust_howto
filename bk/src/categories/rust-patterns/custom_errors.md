@@ -65,7 +65,9 @@ Use `#[error("...")]` to define a `Display` message. Named fields can be interpo
 
 [`miette`][c~miette~docs]↗{{hi:miette}} is a fancy diagnostic reporting library and protocol.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p rust_patterns --example error`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/rust_patterns/examples/error/miette.rs:example}}
 ```
 
@@ -75,7 +77,7 @@ Use `#[error("...")]` to define a `Display` message. Named fields can be interpo
 
 [`color-eyre`][c~color-eyre~docs]↗{{hi:color-eyre}} installs panic and report hooks for [`eyre`][c~eyre~docs]↗{{hi:eyre}}. It captures diagnostic context and formats error chains for terminal applications. Choose it when the application owns top-level error presentation; use `anyhow` when contextual propagation is enough and a custom report handler is not needed.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/rust_patterns/examples/error/color_eyre.rs:example}}
 ```
 

@@ -12,7 +12,9 @@
 
 The example binds to `127.0.0.1:8080` for local access. The accompanying test initializes the `App` directly and exercises the handler without opening a network listener. Select a framework by the APIs, middleware, runtime, and integration points your application needs; compare performance only with measurements for the workload you intend to serve.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p web_programming_http_server --example actix_web`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/web_programming_http_server/examples/actix_web.rs:example}}
 ```
 

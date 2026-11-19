@@ -26,7 +26,9 @@ The [`dyn-clone`][c~dyn-clone~docs]↗{{hi:dyn-clone}} crate provides a [`DynClo
 
 Future implementations can be `!Unpin`, so a wrapper must poll the inner future through a pinned projection. Other wrapper state, such as a poll counter, can remain movable.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p rust_patterns --example rust_specific_patterns`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/rust_patterns/examples/rust_specific_patterns/pin_project.rs:example}}
 ```
 

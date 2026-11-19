@@ -71,7 +71,9 @@ Reads `temp/application.log` and prints lines containing a version, an IP addres
 
 The standard `regex` crate does not support backtracking features such as backreferences and look-arounds. Use [`fancy-regex`][c~fancy-regex~docs]↗{{hi:fancy-regex}} when a pattern requires them. Backtracking can take much longer than a linear-time regex, so bound the input and test patterns against worst-case data.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p text_processing --example regex`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/regex/fancy_regex.rs:example}}
 ```
 

@@ -34,7 +34,9 @@ Rust code fences in rustdoc comments are compiled as doctests by `cargo test`. P
 
 [`doc-comment`][c~doc-comment~docs]↗{{hi:doc-comment}} provides macros for attaching documentation text to Rust items and for running Markdown files such as a README as doctests. This crate already includes a compiled example of its `doc_comment!` macro:
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools --example documentation_doc_comment`.
+
+```rust,editable,noplayground
 {{#include ../../../../crates/cats/development_tools/examples/documentation/doc_comment.rs:example}}
 ```
 

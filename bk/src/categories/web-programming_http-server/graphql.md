@@ -22,7 +22,9 @@ A query can request just the `hello` field:
 
 The HTTP request body wraps that document in JSON, for example `{"query":"{ hello }"}`.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p web_programming_http_server --example async_graphql --features web_programming_http_server/async-graphql-support`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/web_programming_http_server/examples/async_graphql.rs:example}}
 ```
 

@@ -40,7 +40,9 @@ This example also uses `tick` and `after` to schedule periodic work and a timeou
 
 The [`flume`][c~flume~docs]↗{{hi:flume}} crate is a library that provides multiple-producer, multiple-consumer (MPMC) channels. It is similar to the [`std::sync::mpsc`][c~std::sync::mpsc::channel~docs]↗{{hi:std::sync::mpsc}} module, but with additional features and improved performance. It is smaller and simpler than [`crossbeam-channel`][c~crossbeam-channel~docs]↗{{hi:crossbeam-channel}} and almost as fast.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p concurrency --example message_passing`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/message_passing/flume.rs:example}}
 ```
 
@@ -50,7 +52,7 @@ The [`flume`][c~flume~docs]↗{{hi:flume}} crate is a library that provides mult
 
 A game loop, a UI frame or a control cycle handles pending commands once per _tick_ and must not wait for more. A bounded [`flume`][c~flume~docs]↗{{hi:flume}} channel fits: `send` blocks when the channel is full (back-pressure), `try_iter` drains only the messages already queued, and `recv_timeout` waits at most one tick for new work.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/message_passing/flume_tick.rs:example}}
 ```
 
@@ -66,7 +68,9 @@ Use an ordinary channel for commands and telemetry, and a ring buffer only for t
 
 [`rtrb`][c~rtrb~docs]↗{{hi:rtrb}} (real-time ring buffer) is a wait-free SPSC queue. The example sends samples from a producer thread and drains them in fixed-size blocks on the consumer side. It also shows what `push` and `pop` return when the buffer is full or empty.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p concurrency --example spsc`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/spsc/rtrb.rs:example}}
 ```
 
@@ -78,7 +82,7 @@ Use an ordinary channel for commands and telemetry, and a ring buffer only for t
 
 [`ringbuf`][c~ringbuf~docs]↗{{hi:ringbuf}} is a lock-free SPSC ring buffer with a trait-based API (`Producer`, `Consumer`, `Split`).
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/spsc/ringbuf.rs:example}}
 ```
 
@@ -88,7 +92,7 @@ Use an ordinary channel for commands and telemetry, and a ring buffer only for t
 
 A real-time thread often also needs a higher scheduling priority. [`thread-priority`][c~thread-priority~docs]↗{{hi:thread-priority}} sets it, either on the current thread (`ThreadPriority::Max.set_for_current()`) or when spawning with `ThreadBuilder`. The call is platform-dependent and may require privileges, so the example reports whether the request was granted and carries on at the normal priority otherwise.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/spsc/thread_priority.rs:example}}
 ```
 

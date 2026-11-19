@@ -22,7 +22,9 @@ Consider these libraries:
 
 `mockall` can generate mocks for traits and set expectations for arguments, call counts, and return values. The example injects a repository into a service and verifies a persistence interaction as well as the returned behavior.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools_testing --example mocking`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_testing/examples/mocking/mockall.rs:example}}
 ```
 

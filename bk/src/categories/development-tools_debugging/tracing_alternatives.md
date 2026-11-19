@@ -18,7 +18,9 @@
 
 [`slog`][c~slog~docs]↗{{hi:slog}} provides structured, composable logging. It can be a reasonable choice when it is already established in a project; evaluate its ecosystem and maintenance needs before choosing it for new work. Its current example is included from the book's tested example crate.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools_debugging --example other`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_debugging/examples/other/slog.rs:example}}
 ```
 

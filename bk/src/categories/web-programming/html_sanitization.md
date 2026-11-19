@@ -12,7 +12,9 @@ Strip dangerous markup from user-supplied or scraped HTML before showing or stor
 
 [`ammonia`][c~ammonia~docs]↗{{hi:ammonia}} cleans HTML with an allow list of tags, attributes and URL schemes, which removes `<script>` elements, event-handler attributes and `javascript:` links. `ammonia::clean` uses safe defaults; a `Builder` narrows or widens the policy. Sanitizing is for HTML you render; it does not replace escaping in a template engine.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p web_programming --example ammonia_clean`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/web_programming/examples/html_text/ammonia_clean.rs:example}}
 ```
 
@@ -22,7 +24,9 @@ Strip dangerous markup from user-supplied or scraped HTML before showing or stor
 
 Markdown allows raw HTML, so cleaning the Markdown source is not enough. Render with [`pulldown-cmark`][c~pulldown-cmark~docs]↗{{hi:pulldown-cmark}} first, then pass the HTML output through [`ammonia`][c~ammonia~docs]↗{{hi:ammonia}}.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p web_programming --example markdown_to_safe_html`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/web_programming/examples/html_text/markdown_to_safe_html.rs:example}}
 ```
 

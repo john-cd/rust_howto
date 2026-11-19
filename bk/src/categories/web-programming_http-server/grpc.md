@@ -27,7 +27,9 @@ tonic-prost-build = "0.14"
 
 `MyGreeter` implements the generated `Greeter` trait. Each RPC receives a `Request<T>` and returns either a `Response<T>` or a `Status`; `Server::builder().add_service(...)` registers the implementation, and `.serve(addr).await` runs the server. The example binds to the IPv6 loopback address on port 50051 for local use.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p web_programming_http_server --example grpc`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/web_programming_http_server/examples/grpc/tonic.rs:example}}
 ```
 

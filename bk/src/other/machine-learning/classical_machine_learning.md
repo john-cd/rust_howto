@@ -36,7 +36,9 @@ just cargo run --manifest-path bk/crates/Cargo.toml --locked -p science --exampl
 
 The seeded decision-tree recipe uses a synthetic, linearly separable dataset and checks accuracy on a held-out split.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p science --example ml`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/other/machine_learning/examples/ml/smartcore.rs:example}}
 ```
 
@@ -44,7 +46,7 @@ The seeded decision-tree recipe uses a synthetic, linearly separable dataset and
 
 K-means needs only feature rows. This example creates two small synthetic groups, seeds its random initializer, and tests that every point receives a label across exactly two clusters.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/other/machine_learning/examples/ml/kmeans.rs:example}}
 ```
 
@@ -52,7 +54,7 @@ K-means needs only feature rows. This example creates two small synthetic groups
 
 Linear regression fits a numeric target and predicts values for new feature rows.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/other/machine_learning/examples/ml/linfa.rs:example}}
 ```
 

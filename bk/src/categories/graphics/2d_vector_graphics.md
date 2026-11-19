@@ -13,7 +13,9 @@ describes a filled region, and ask [`lyon`][c~lyon~docs]↗{{hi:lyon}} to
 tessellate the fill into vertices and indices. The example reports the
 generated mesh; it does not draw the mesh.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p graphics --example 2d_vector_graphics`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/graphics/examples/2d_vector_graphics/vector_graphics_2d.rs:example}}
 ```
 

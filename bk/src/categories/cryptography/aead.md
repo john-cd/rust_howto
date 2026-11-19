@@ -35,7 +35,9 @@ AEAD is commonly used in secure communication protocols such as [TLS][p~tls] (Tr
 
 AES-GCM-SIV (Advanced [Encryption][p~encryption] Standard - Galois/Counter Mode - Synthetic Initialization Vector) is a mode of operation for AES that provides nonce misuse resistance. This means it can securely handle situations where a cryptographic nonce (a number used only once) might be reused accidentally.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p cryptography --example aead`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/cryptography/examples/aead/aes_gcm_siv.rs:example}}
 ```
 

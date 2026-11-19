@@ -34,7 +34,9 @@ For FFI declarations, use the pointer type required by the API, such as `*const 
 
 [`bstr`][c~bstr~docs]↗{{hi:bstr}} provides string-like operations on byte sequences that may be invalid UTF-8. Use it when the input is byte-oriented and must be preserved, such as data read from a file or external process. Operations on bytes do not automatically correspond to Unicode characters or grapheme clusters.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p text_processing --example other_strings`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/other_strings/bstr.rs:example}}
 ```
 
@@ -44,7 +46,7 @@ For FFI declarations, use the pointer type required by the API, such as `*const 
 
 The [`ustr`][c~ustr~docs]↗{{hi:ustr}} crate interns strings so equal values can share a stored representation. This can reduce repeated string storage and make equality checks inexpensive, at the cost of interning-table lookups and retained entries. It is useful when strings are reused often and are not frequently assembled or changed; measure with the application's workload.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/other_strings/ustr.rs:example}}
 ```
 

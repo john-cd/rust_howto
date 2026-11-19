@@ -12,7 +12,9 @@ TextMate grammars (`syntect`) and real parse trees (`tree-sitter`) are two appro
 
 [`syntect`][c~syntect~docs]↗{{hi:syntect}} highlights text with Sublime Text / TextMate grammars and themes, producing HTML or terminal escape codes. Loading the bundled `SyntaxSet` and `ThemeSet` is slow, so load them once (for example in a `LazyLock`). The `default-fancy` feature selects a pure-Rust regex engine instead of linking Oniguruma. Sanitize generated HTML before inserting it into a page when the source can be untrusted.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p text_processing --example syntect_html`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/text_analysis/syntect_html.rs:example}}
 ```
 
@@ -22,7 +24,9 @@ TextMate grammars (`syntect`) and real parse trees (`tree-sitter`) are two appro
 
 [`tree-sitter`][c~tree-sitter~docs]↗{{hi:tree-sitter}} builds a concrete syntax tree, so a highlighter can classify tokens by their role (a string literal, a number, a keyword) instead of matching regular expressions. The example walks the tree and collects a byte range per class. After an edit, describe the change with `Tree::edit` and pass the old tree to the next `parse` call: Tree-sitter reuses unchanged subtrees, which keeps highlighting fast in an editor. For production use, see the `tree-sitter-highlight` crate, which runs the grammar's `highlights.scm` query. Grammars are separate crates, such as `tree-sitter-rust`.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p text_processing --example tree_sitter_json_spans`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/text_analysis/tree_sitter_json_spans.rs:example}}
 ```
 

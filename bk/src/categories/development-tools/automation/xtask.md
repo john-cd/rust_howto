@@ -32,7 +32,9 @@ members = ["xtask", "crates/*"]
 
 A `[workspace.lints]` table is only applied to members that opt in with `[lints] workspace = true`. [`cargo_metadata`][c~cargo_metadata~docs]↗{{hi:cargo_metadata}} lists the manifests of the members, and [`toml_edit`][c~toml_edit~docs]↗{{hi:toml_edit}} parses them. Unlike `toml`, `toml_edit` preserves comments and formatting, so the check can print a candidate repair without rewriting manifests automatically.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools --example workspace_lints`.
+
+```rust,editable,noplayground
 {{#include ../../../../crates/cats/development_tools/examples/automation/workspace_lints.rs:example}}
 ```
 

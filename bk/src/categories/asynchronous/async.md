@@ -70,7 +70,9 @@ Other relevant projects include:
 
 This example runs two asynchronous tasks and awaits both results:
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p asynchronous --example smol`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/asynchronous/examples/smol.rs:example}}
 ```
 

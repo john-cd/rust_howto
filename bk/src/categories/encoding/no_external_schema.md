@@ -38,7 +38,9 @@ The example pins [Bincode 1.3.3](https://docs.rs/bincode/1.3.3/bincode/), which 
 
 [`postcard`][c~postcard~docs]↗{{hi:postcard}} is a [`#![no_std]`][book~rust-reference~no_std] and [`serde`][c~serde~docs]↗{{hi:serde}}-compatible message library for Rust. It targets constrained environments and provides a stable wire format; its `heapless` and `alloc` features let an application choose how to buffer encoded messages.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p encoding --example no_external_schema_file`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/encoding/examples/no_external_schema_file/postcard.rs:example}}
 ```
 
@@ -48,7 +50,9 @@ The example pins [Bincode 1.3.3](https://docs.rs/bincode/1.3.3/bincode/), which 
 
 Concise Binary Object Representation (CBOR) is a binary serialization format with a standardized data model. [`ciborium`][c~ciborium~docs]↗{{hi:ciborium}} implements CBOR with [`serde`][c~serde~docs]↗{{hi:serde}}.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p encoding --example binary_encoders`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/encoding/examples/binary_encoders/ciborium.rs:example}}
 ```
 

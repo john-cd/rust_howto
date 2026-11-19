@@ -30,7 +30,9 @@ Run from the repository root:
 just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_development --example game_development -- game_development1
 ```
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p game_development --example game_development`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/game_development/examples/game_development/game_development1.rs:example}}
 ```
 
@@ -61,7 +63,7 @@ Run the example to see the vector arithmetic and transformed point:
 just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_development --example game_development -- glam
 ```
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/game_development/examples/game_development/glam.rs:example}}
 ```
 

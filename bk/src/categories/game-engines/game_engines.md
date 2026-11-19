@@ -27,7 +27,9 @@ These options differ in scope and platform support. For individual game-developm
 
 Bevy is a data-driven engine and app framework with an integrated entity-component-system (ECS). It supports both 2D and 3D games, and its modular plugins let an app choose which engine services to include.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p game_engines --example game_engines`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/game_engines/examples/game_engines/bevy.rs:example}}
 ```
 
@@ -76,7 +78,7 @@ $env:RUSTC_WRAPPER = ''
 $env:CARGO_BUILD_RUSTC_WRAPPER = ''
 ```
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/game_engines/examples/game_engines/fyrox.rs:example}}
 ```
 
@@ -97,7 +99,7 @@ From a desktop at the repository root:
 just cargo run --manifest-path bk/crates/Cargo.toml --locked -p game_engines --features ggez --example game_engines -- ggez
 ```
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/game_engines/examples/game_engines/ggez.rs:example}}
 ```
 
@@ -120,7 +122,7 @@ For either bouncing-ball example, setting `RUST_HOWTO_SMOKE_TEST=1` in the
 launching shell bounds the run to a few presented frames. That mode still
 needs a desktop window.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/game_engines/examples/game_engines/macroquad.rs:example}}
 ```
 

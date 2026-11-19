@@ -34,7 +34,9 @@ Use its event stream when processing Markdown without retaining a full syntax tr
 
 Choose this crate when an owned abstract syntax tree is useful to later transformations.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p parser_implementations --example markdown`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/parser_implementations/examples/markdown/markdown.rs:example}}
 ```
 
@@ -46,7 +48,7 @@ Choose this crate when an owned abstract syntax tree is useful to later transfor
 
 Use `comrak` when GitHub Flavored Markdown extensions or rendering and formatting are part of the task.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/parser_implementations/examples/markdown/comrak.rs:example}}
 ```
 

@@ -22,7 +22,9 @@ See also: [Typestate Pattern][blog~typestate-pattern]↗.
 
 When rules change more often than releases, or are owned by non-developers, keep them as data. [`zen-engine`][c~zen-engine~docs]↗{{hi:zen-engine}} evaluates JSON Decision Model (JDM) documents (decision tables, expressions and graphs of them) against a JSON context. Compared with a `match`, rules as data can be edited in a visual editor, reloaded without a deploy and tested independently. Validate required fields and turn an unmatched result into a clear application error. Rule evaluation adds parsing and runtime work, so benchmark with realistic rule counts and input sizes before using it on a latency-sensitive path.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p rust_patterns --example decision_table`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/rust_patterns/examples/business_rules/decision_table.rs:example}}
 ```
 

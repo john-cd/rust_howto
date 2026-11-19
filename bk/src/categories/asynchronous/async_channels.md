@@ -63,7 +63,9 @@ Sender and receiver handles are cloneable and can be shared among tasks or threa
 
 When all senders or all receivers are dropped, the channel becomes closed. A closed channel accepts no new messages, but queued values may still be received. Use a bounded channel unless an unbounded queue is a deliberate, measured choice.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p asynchronous --example async_channels`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/asynchronous/examples/async_channels/async_channel.rs:example}}
 ```
 
@@ -85,7 +87,7 @@ From `bk/crates`, run `cargo run --locked -p asynchronous --example async_channe
 
 [`kanal`][c~kanal~docs]↗{{hi:kanal}} offers fast sync and async channels:
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/asynchronous/examples/async_channels/kanal.rs:example}}
 ```
 

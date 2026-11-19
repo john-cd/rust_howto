@@ -10,7 +10,9 @@ An Internet email message has headers, a blank line, and a body. [RFC 5322][rfc~
 
 [`mailparse`][c~mailparse~docs]↗{{hi:mailparse}} parses raw message bytes into a `ParsedMail` tree. The parsed value borrows the input bytes, so keep the input alive while reading headers and bodies. It does not connect to a mailbox or establish who sent the message.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p email --example mailparse`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/email/examples/mailparse.rs:example}}
 ```
 

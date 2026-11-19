@@ -36,7 +36,9 @@ An easy to use library and command line for generating fake data like name, numb
 
 Custom [functions](../../language/functions.md) and data structures can generate test data; [`fake`][c~fake~docs]↗{{hi:fake}} is useful when examples need realistic names, addresses, or other values.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p development_tools_testing --example property_based_testing`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_testing/examples/property_based_testing/fake.rs:example}}
 ```
 

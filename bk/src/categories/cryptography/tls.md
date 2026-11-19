@@ -44,7 +44,9 @@ The example builds a connector without network access by default. Set `NATIVE_TL
 
 Choose [`native-tls`][c~native-tls~docs]↗{{hi:native-tls}} when integration with the system's TLS configuration and certificate store is important. With [`reqwest`][c~reqwest~docs]↗{{hi:reqwest}}, enable the `native-tls` Cargo feature; its default TLS backend is Rustls. For lower-level Hyper clients, use a connector such as [`hyper-tls`][c~hyper-tls~docs]↗{{hi:hyper-tls}} or [`hyper-rustls`][c~hyper-rustls~docs]↗{{hi:hyper-rustls}}.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p cryptography --example tls`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/cryptography/examples/tls/native_tls.rs:example}}
 ```
 

@@ -24,7 +24,7 @@ The older `cocoa`, `core-foundation`, and `objc` crates are legacy interfaces. F
 
 A short AppKit entry point uses the current main-thread marker API:
 
-```rust
+```rust,noplayground
 use objc2::MainThreadMarker;
 use objc2_app_kit::NSApplication;
 

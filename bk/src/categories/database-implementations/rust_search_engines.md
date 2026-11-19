@@ -10,7 +10,9 @@
 
 [Meilisearch][c~meilisearch~repo]↗ is an HTTP search service with typo-tolerant search-as-you-type. The [`meilisearch-sdk`][c~meilisearch-sdk~docs]↗ crate used here is its Rust client. Start a local Meilisearch service before running this recipe; set `MEILISEARCH_URL` and, when required, `MEILI_MASTER_KEY` to configure the connection. The service-backed test is ignored by default.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p database_implementations --example search_engines`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/database_implementations/examples/search_engines/meilisearch.rs:example}}
 ```
 
@@ -20,7 +22,7 @@
 
 [tantivy][c~tantivy~repo]↗ is a full-text [search][p~search] engine library inspired by Apache Lucene.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/database_implementations/examples/search_engines/tantivy.rs:example}}
 ```
 

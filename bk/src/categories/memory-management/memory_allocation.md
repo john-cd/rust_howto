@@ -12,7 +12,9 @@
 
 `tikv-jemallocator` is a Rust wrapper around jemalloc, a widely used allocator written in C. It can serve as the process-wide allocator for Rust allocations.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p memory_management --example jemalloc`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/memory_management/examples/jemalloc.rs:example}}
 ```
 
@@ -22,7 +24,9 @@
 
 Mimalloc is a general-purpose, performance-oriented allocator developed by Microsoft. It can serve as the process-wide allocator for Rust allocations.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p memory_management --example mimalloc`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/memory_management/examples/mimalloc.rs:example}}
 ```
 
@@ -72,7 +76,9 @@ The key types are:
 - `Guard` (returned by `collector.enter()`): keeps protected objects from being reclaimed while the guard is held.
 - `collector.retire(ptr, reclaim::boxed)`: schedules a pointer for deferred reclamation once no threads hold a guard that could have seen it.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p memory_management --example seize`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/memory_management/examples/seize.rs:example}}
 ```
 

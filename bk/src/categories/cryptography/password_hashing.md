@@ -26,7 +26,9 @@ For new applications, prefer Argon2id and tune its memory, iteration, and parall
 
 The [`scrypt`][c~scrypt~docs]↗{{hi:scrypt}} key derivation function uses a memory-hard design intended to raise the cost of large-scale password guessing. Choose its parameters for the deployment environment and compare them with the alternatives you support; it is not universally more secure than [`PBKDF2`][c~ring::pbkdf2~docs]↗{{hi:PBKDF2}} or [bcrypt](#bcrypt).
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p cryptography --example password_hashing`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/cryptography/examples/password_hashing/scrypt.rs:example}}
 ```
 
@@ -38,7 +40,7 @@ The [`scrypt`][c~scrypt~docs]↗{{hi:scrypt}} key derivation function uses a mem
 
 [`bcrypt`][c~bcrypt~docs]↗{{hi:bcrypt}}
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/cryptography/examples/password_hashing/bcrypt.rs:example}}
 ```
 

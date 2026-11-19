@@ -55,7 +55,9 @@ With the sample addresses, traffic accepted by the server on `127.0.0.1:5202` re
 
 Use [ngrok][c~ngrok~website]↗ when a managed ingress service is appropriate. Its Rust crate can expose a local HTTP application through an ngrok endpoint; the included example reads the authentication token from `NGROK_AUTHTOKEN`.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p network_programming --example reverse_proxy`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/network_programming/examples/reverse_proxy/ngrok.rs:example}}
 ```
 
@@ -69,7 +71,7 @@ For a conventional HTTP reverse proxy, [`nginx`][nginx~website]↗{{hi:nginx}} a
 
 [`Pingora`][c~pingora~docs]↗{{hi:pingora}} is a Rust framework for programmable HTTP/1 and HTTP/2 proxies, including gRPC and WebSocket traffic. It fits custom proxy logic, load balancing, and observability needs; it is a service framework rather than a ready-made reverse-proxy binary. Linux is its primary supported environment, Unix-like platforms receive best-effort support, and Windows support is preliminary.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/network_programming/examples/reverse_proxy/pingora.rs:example}}
 ```
 

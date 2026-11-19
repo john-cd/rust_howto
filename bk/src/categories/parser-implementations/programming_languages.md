@@ -12,7 +12,9 @@ Choose a parser that matches the language and the task. [`syn`][c~syn~docs]↗{{
 
 [swc_ecma_parser][c~swc_ecma_parser~crates.io]↗{{hi:swc_ecma_parser}} is a feature-complete ECMAScript / TypeScript parser written in Rust.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p parser_implementations --example javascript`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/parser_implementations/examples/javascript/swc_ecma_parser.rs:example}}
 ```
 
@@ -22,7 +24,9 @@ Choose a parser that matches the language and the task. [`syn`][c~syn~docs]↗{{
 
 [`sqlparser`][c~sqlparser~docs]↗{{hi:sqlparser}} is a general SQL lexer and parser with support for ANSI SQL:2011.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p parser_implementations --example programming_languages`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/parser_implementations/examples/programming_languages/sqlparser.rs:example}}
 ```
 
@@ -50,7 +54,9 @@ Parse SQL before it reaches a database and accept only exactly one top-level `St
 
 This is a syntax classifier, not proof that execution is read-only. A query can call a function with side effects: PostgreSQL's [`nextval`][postgresql~sequence-functions] advances a sequence even when called from `SELECT`. Use a restricted database role and [read-only transactions][postgresql~read-only-transactions] to enforce the database execution policy, and parameterized queries for separately supplied values.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p parser_implementations --example sql_readonly --features parser_implementations/sqlparser`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/parser_implementations/examples/programming_languages/sql_readonly.rs:example}}
 ```
 

@@ -22,7 +22,9 @@ A Tokio task and channels can implement a small actor without an actor-framework
 
 [`actix`][c~actix~docs]↗ uses typed messages and an actor system for synchronous or asynchronous message handling, with supervision support.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p concurrency --example actors`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/actors/actix.rs:example}}
 ```
 
@@ -32,7 +34,7 @@ A Tokio task and channels can implement a small actor without an actor-framework
 
 [`ractor`][c~ractor~docs]↗ is an Erlang-inspired actor framework with actor lifecycle and supervision primitives, and support for Tokio or async-std runtimes.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/actors/ractor.rs:example}}
 ```
 
@@ -48,7 +50,7 @@ A Tokio task and channels can implement a small actor without an actor-framework
 
 [`stakker`][c~stakker~docs]↗ is a lightweight, single-threaded actor runtime that uses deferred calls and callbacks for message replies.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/concurrency/examples/actors/stakker.rs:example}}
 ```
 

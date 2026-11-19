@@ -12,7 +12,9 @@
 
 This example shows those pieces together: route registration, a fallback, a stateful handler, and serving the router on a Tokio TCP listener. It binds to loopback for local use. Configure the bind address for your deployment environment when the service should accept connections from outside the machine.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p web_programming_http_server --example axum`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/web_programming_http_server/examples/axum.rs:example}}
 ```
 

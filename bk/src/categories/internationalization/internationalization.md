@@ -10,7 +10,9 @@ Internationalization (i18n) prepares software for different languages and region
 
 ICU4X's `DecimalFormatter` formats basic decimal numbers using locale-specific digits and grouping separators. The example formats the same value and date for US English and German. It formats a plain decimal, not a currency or measurement amount; those need domain-specific formatting rules. See [Value Formatting](../value-formatting/index.md) for related numeric output options.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p internationalization --example internationalization`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/internationalization/examples/internationalization/icu_formatting.rs:example}}
 ```
 

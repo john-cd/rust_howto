@@ -16,7 +16,9 @@ These libraries define a schema separately from the application types. They gene
 
 In the `main.rs` file:
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p encoding --example binary_encoders`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/encoding/examples/binary_encoders/prost.rs:example}}
 ```
 
@@ -40,7 +42,7 @@ In `build.rs`:
 
 From the repository root, compile the schema with `flatc --rust -o bk/crates/cats/encoding/examples/binary_encoders bk/crates/cats/encoding/examples/binary_encoders/my_game.fbs`. The generated Rust source is checked in beside the example so builds do not need `flatc`.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/encoding/examples/binary_encoders/flatbuffers.rs:example}}
 ```
 
@@ -56,7 +58,7 @@ In `my_game.fbs`:
 
 [`capnp`][c~capnp~docs]↗{{hi:capnp}} is the runtime library for Cap'n Proto data encoding. [`capnpc`][c~capnpc~docs]↗{{hi:capnpc}} is used for Cap'n Proto code generation.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/encoding/examples/binary_encoders/capnp.rs:example}}
 ```
 

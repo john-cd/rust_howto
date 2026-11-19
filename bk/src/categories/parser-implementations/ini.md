@@ -18,7 +18,9 @@ When you control the format, consider whether a more explicit format such as TOM
 
 `read` and `load` replace the current contents. Use `read_and_append` or `load_and_append` when later configuration should overlay earlier values. The parser exposes settings for comment characters, delimiters, and other syntax choices, so configure them to match the producer rather than assuming all INI dialects behave alike.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p parser_implementations --example ini`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/parser_implementations/examples/ini/configparser_ini.rs:example}}
 ```
 

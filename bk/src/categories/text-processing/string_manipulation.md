@@ -32,7 +32,9 @@ This helper uses `char::to_uppercase`, which can produce more than one character
 
 [`textwrap`][c~textwrap~docs]↗{{hi:textwrap}} provides word wrapping, indenting, and dedenting strings. It has optional support for Unicode and emojis, as well as machine hyphenation.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p text_processing --example string_manipulation`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/string_manipulation/textwrap.rs:example}}
 ```
 
@@ -49,7 +51,7 @@ The [`indoc`][c~indoc~docs]↗{{hi:indoc}} crate exports five additional macros 
 `writedoc!($dest, $fmt, ...)` equivalent to `write!($dest, indoc!($fmt), ...)`
 `concatdoc!(...)` equivalent to `concat!(...)` with each string literal wrapped in `indoc!`
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/string_manipulation/indoc.rs:example}}
 ```
 
@@ -59,7 +61,7 @@ The [`indoc`][c~indoc~docs]↗{{hi:indoc}} crate exports five additional macros 
 
 [`slug::slugify`][c~slug~docs]↗{{hi:slug}} turns a title into a lowercase ASCII string made of words separated by hyphens: it drops punctuation, collapses whitespace and transliterates accented characters. The result is suitable for URLs and stable references; two different titles can produce the same slug, so check for collisions if the slug is a key.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/string_manipulation/slug.rs:example}}
 ```
 

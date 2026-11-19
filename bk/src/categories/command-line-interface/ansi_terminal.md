@@ -51,7 +51,9 @@ For more than a foreground color, construct a `nu_ansi_term::Style` and chain th
 - Terminal handling.
 - Events (key inputs, mouse...).
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p command_line_interface --example crossterm`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/command_line_interface/examples/crossterm.rs:example}}
 ```
 
@@ -119,7 +121,9 @@ Termion targets Unix-like terminals and provides low-level cursor, color, and ra
 
 [`colored`][c~colored~docs]↗{{hi:colored}} adds color and style methods to strings through its `Colorize` trait. This example prints success, warning, and error messages with different styles:
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p command_line_interface --example ansi_term`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/command_line_interface/examples/ansi_term/colored.rs:example}}
 ```
 
@@ -129,7 +133,7 @@ Termion targets Unix-like terminals and provides low-level cursor, color, and ra
 
 [`comfy-table`][c~comfy-table~docs]↗{{hi:comfy-table}} renders rows and columns as aligned text. With `ContentArrangement::Dynamic`, long cells wrap to fit the table width, which defaults to the width of the attached terminal; the example sets an explicit width so its output is the same everywhere. A style preset, loaded with `load_style`, selects the border characters: the plain-ASCII `ASCII_FULL` below, or `UTF8_FULL` for box-drawing characters. Table output is for people: for scripts, print JSON or one record per line instead. `prettytable-rs` has not been updated since 2022, and `term-table` is smaller and simpler, so this book shows `comfy-table`; `tabled` is a popular alternative that builds tables from your structs.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/command_line_interface/examples/ansi_term/comfy_table.rs:example}}
 ```
 

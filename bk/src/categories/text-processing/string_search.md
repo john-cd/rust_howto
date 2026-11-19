@@ -52,7 +52,9 @@ Building the automaton is the expensive step, so build it once and reuse it for 
 
 [`fuzzy-matcher`][c~fuzzy-matcher~docs]↗{{hi:fuzzy-matcher}} scores candidates that contain a query's characters in order, even when those characters are separated. Use it for ranking choices such as filenames or commands. `fuzzy_indices` can also return matched character positions for highlighting; map them as character indices rather than using them as byte offsets.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p text_processing --example string_search`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/text_processing/examples/string_search/fuzzy_matcher.rs:example}}
 ```
 

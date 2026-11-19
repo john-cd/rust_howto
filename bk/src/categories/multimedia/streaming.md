@@ -26,7 +26,9 @@ Prefer a WebRTC or media pipeline library over implementing RTP packetization di
 
 [`str0m`][c~str0m~docs]↗{{hi:str0m}} leaves network I/O to the caller, so the offer and answer can be exchanged in a single process. This example demonstrates signaling only. It negotiates a send-only audio stream and exits before forwarding UDP packets or delivering media. A complete session needs caller-driven packet I/O, timers, and teardown.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p multimedia --example streaming`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/multimedia/examples/streaming/webrtc_audio_negotiation.rs:example}}
 ```
 

@@ -17,7 +17,9 @@ For higher-level image processing and codec handling, see the [Image Formats pag
 
 [`symphonia`][c~symphonia~docs]↗{{hi:symphonia}} probes and decodes compressed or uncompressed audio streams into uncompressed linear PCM sample buffers. It handles format detection, container demuxing, and codec decoding across various formats like WAV, MP3, FLAC, and AAC.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p multimedia_encoding --example encoding`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/multimedia_encoding/examples/encoding/audio_decode.rs:example}}
 ```
 
@@ -25,7 +27,7 @@ For higher-level image processing and codec handling, see the [Image Formats pag
 
 [`hound`][c~hound~docs]↗{{hi:hound}} writes raw linear PCM sample buffers into WAV container files. WAV is standard uncompressed audio format widely supported by digital audio workstations and media players.
 
-```rust,editable
+```rust,editable,noplayground
 {{#include ../../../crates/cats/multimedia_encoding/examples/encoding/wav_encode.rs:example}}
 ```
 

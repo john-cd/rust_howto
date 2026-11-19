@@ -11,7 +11,9 @@ match the graphics API that will consume the matrices.
 
 This example performs the vertex transform on the CPU with [`glam`][c~glam~docs]↗{{hi:glam}}. It prints the screen coordinates and normalized depth for a triangle; it does not create a window or render pixels.
 
-```rust,editable
+Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p graphics --example 3d_projection`.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/graphics/examples/3d_projection/project_triangle.rs:example}}
 ```
 
