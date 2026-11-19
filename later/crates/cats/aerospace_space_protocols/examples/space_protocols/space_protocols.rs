@@ -23,7 +23,6 @@ fn ccsds_space_packet() -> [u8; 8] {
     use arbitrary_int::u11;
     use arbitrary_int::u14;
     use spacepackets::CcsdsPacket as _;
-    use spacepackets::PacketType;
     use spacepackets::SequenceFlags;
     use spacepackets::SpHeader;
 
@@ -44,12 +43,25 @@ fn ccsds_space_packet() -> [u8; 8] {
     packet[header_len..header_len + payload.len()].copy_from_slice(&payload);
 
     let (parsed_header, parsed_payload) =
-        SpHeader::from_be_bytes(&packet).expect("serialized CCSDS header should parse");
+        first_telemetry_packet(&packet).expect("serialized CCSDS packet should parse");
     assert_eq!(parsed_header.apid().value(), 0x10);
     assert_eq!(parsed_header.seq_count().value(), 1);
-    assert_eq!(parsed_header.packet_type(), PacketType::Tm);
     assert_eq!(parsed_payload, payload);
     packet
+}
+/// Reads the first complete telemetry packet in a byte slice.
+fn first_telemetry_packet(bytes: &[u8]) -> Option<(spacepackets::SpHeader, &[u8])> {
+    use spacepackets::CCSDS_HEADER_LEN;
+    use spacepackets::CcsdsPacket as _;
+    use spacepackets::PacketType;
+    use spacepackets::SpHeader;
+
+    let (header, _) = SpHeader::from_be_bytes(bytes).ok()?;
+    if header.ccsds_version().value() != 0 || header.packet_type() != PacketType::Tm {
+        return None;
+    }
+    let payload = bytes.get(CCSDS_HEADER_LEN..header.packet_len())?;
+    Some((header, payload))
 }
 // ANCHOR_END: ccsds-space-packet
 
@@ -80,6 +92,18 @@ mod tests {
     fn ccsds_packet_round_trips_header_and_payload() {
         let packet = ccsds_space_packet();
         assert_eq!(&packet[6..], &[0xCA, 0xFE]);
+    }
+
+    /// Reads one packet from a capture and rejects an incomplete packet.
+    #[test]
+    fn respects_packet_boundaries() {
+        let packet = ccsds_space_packet();
+        let capture = [packet, packet].concat();
+        assert_eq!(
+            first_telemetry_packet(&capture).map(|(_, data)| data),
+            Some(&packet[6..]),
+        );
+        assert!(first_telemetry_packet(&packet[..7]).is_none());
     }
 
     /// Preserves service and payload fields through PUS telecommand encoding.

@@ -40,9 +40,9 @@ See [[development-tools_ffi | Development Tools: FFI]], [[external-ffi-bindings 
 
 ## `#![no_std]` (for Embedded systems)
 
-If your target is a flight controller running on an embedded system, [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}} is essential.
+When the target lacks the facilities required by Rust's standard library, use [`#![no_std]`][book~rust-reference~no_std]↗{{hi:no_std}} and check that each dependency supports that target.
 
-See [No Standard Library](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/no-std/no_std.md) and [No Allocation](https://github.com/john-cd/rust_howto/blob/86dcf0197f8d6810877a6021ffedcf84aa9230c8/bk/src/categories/no-std/no_alloc.md).
+See [No Standard Library][rust-howto~no-std] and [No Allocation][rust-howto~no-std~no-allocation].
 
 ## Related Topics
 

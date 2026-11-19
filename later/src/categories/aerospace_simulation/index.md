@@ -6,24 +6,21 @@
 
 {{#include aerospace_simulation.incl.md}}
 
-- Flight Dynamics :Simulating the motion of aircraft or spacecraft, including forces (lift, drag, thrust, gravity), equations of motion, and aerodynamic models.
-- Orbital Mechanics: Simulating the motion of satellites or other objects in orbit, including orbital parameters, Kepler's laws, and perturbation effects.
-- Control Systems: Simulating the behavior of control systems, such as PID controllers, attitude control systems, and guidance algorithms.
-- Environment Modeling: Creating models of the environment, including terrain, atmosphere, and other objects (e.g., other aircraft, obstacles).
-- Sensor Simulation: Simulating the behavior of sensors, such as IMUs, GPS receivers, and cameras.
-- Multi-body Dynamics: Simulating the interaction of multiple bodies.
+Choose the model according to the data you need. An orbital propagator predicts position and velocity at a specified time. An ordinary differential equation integrator advances a user-defined state through small time steps. Sensor models can add sample timing, measurement noise, and missing readings to simulated data.
+
+Start with the [SGP4 recipe](aerospace_simulation.md#sgp4-tle-propagation). Keep the initial conditions, units, time scale, and coordinate frame with the simulation output so someone else can reproduce it.
 
 ## Physics Engines
 
-There are few mature physics engines in pure Rust. Many robust physics engines are written in C/C++.
+A physics engine is useful for collision or visual simulations. Orbital predictions use a propagator with a gravity model, a time scale, and a coordinate frame appropriate for the data.
 
 - [`rapier`][rapier.rs~website]↗{{hi:rapier}}: A 2D and 3D physics engine written in Rust. It might be suitable for some aerospace simulations, especially if you don't need highly specialized aerospace physics.
 - `bevy_rapier`: Integration between [`rapier`][rapier.rs~website]↗{{hi:rapier}} and the [`bevy`][c~bevy~docs]↗{{hi:bevy}} game engine.
 
 See also:
 
-- [Game Development](https://john-cd.com/rust_howto/categories/game-development/index.html).
-- [Game Engines](https://john-cd.com/rust_howto/categories/game-engines/index.html).
+- [Game Development][rust-howto~game-development].
+- [Game Engines][rust-howto~game-engines].
 - [[simulation | Simulation]].
 
 ## FFI (Foreign Function Interface)

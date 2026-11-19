@@ -14,7 +14,7 @@ Use these guides as starting points for aerospace software topics; check the lin
 
 See the [Drones][p~aerospace-drones] guide.
 
-This guide focuses on flight-control algorithms, sensor integration, and computer-vision software.
+Start with the offline test that checks a small plan against an in-memory recorder. The guide also links crates for devices and sensor data.
 
 ## Protocols
 
@@ -38,7 +38,7 @@ Find CCSDS packet and ECSS PUS examples, plus related on-board software support,
 
 See the [Unmanned Aerial Vehicles][p~aerospace-uavs] guide.
 
-This guide focuses on vehicle communication and radio-control protocols; the Drones guide emphasizes control, sensors, and vision software.
+Replay a synthetic battery and height message, or connect to a compatible device to read telemetry.
 
 ## Related Topics
 
@@ -48,7 +48,7 @@ This guide focuses on vehicle communication and radio-control protocols; the Dro
 - **Geoscience:** See [[science_geo | Geoscience]]; [`geo`][c~geo~docs] supports distances, bearings, and geometry, while [`proj`][c~proj~docs] converts coordinate systems such as latitude/longitude to UTM.
 - **Hardware:** See [[hardware-support | Hardware Support]].
 - **Mathematics:** Kalman filters, matrices and rotations with [`nalgebra`][c~nalgebra~docs], numerical integration, and quaternion representations.
-- **Testing:** See Testing<!-- Cross-book topic: bk/src/categories/development-tools_testing/testing.md; not included in this preview. --> for unit and property tests with [`proptest`][c~proptest~docs].
+- **Testing:** See [Testing][rust-howto~testing] for unit and property tests with [`proptest`][c~proptest~docs].
 
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

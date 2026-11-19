@@ -4,7 +4,7 @@
 
 [![cat~aerospace::drones][cat~aerospace::drones~badge]][cat~aerospace::drones]{{hi:Aerospace::Drones}}
 
-Rust's memory safety, zero-cost abstractions, and fearless concurrency make it a highly compelling language for aerospace and drone applications. Drones (Unmanned Aerial Vehicles) require real-time processing, extreme reliability, and efficient resource management. This chapter covers the ecosystem of crates suitable for writing flight control software, handling sensor integration, implementing communication protocols, and processing data for computer vision.
+A drone application often combines a controller, device drivers, and a ground application. Choose drivers for the board and firmware, then build separate tests for data decoding and hardware I/O.
 
 {{#include drones.incl.md}}
 
@@ -18,7 +18,7 @@ Sensor integration may include IMU accelerometer, gyroscope, and magnetometer pr
 
 ## Computer Vision & Image Processing
 
-Vision tasks include obstacle and landing-pad detection, image filtering and feature extraction, and simultaneous localization and mapping (SLAM). Use [`opencv`][c~opencv~docs] for computer-vision algorithms, [`image`][c~image~docs] for image loading and manipulation, and [`ndarray`][c~ndarray~docs] for n-dimensional arrays; see [[computer-vision | Computer Vision]], [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/images.md), and [Multimedia Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md) for broader guidance.
+Vision tasks include obstacle and landing-pad detection, image filtering and feature extraction, and simultaneous localization and mapping (SLAM). Use [`opencv`][c~opencv~docs] for computer-vision algorithms, [`image`][c~image~docs] for image loading and manipulation, and [`ndarray`][c~ndarray~docs] for n-dimensional arrays; see [[computer-vision | Computer Vision]], [Images][rust-howto~multimedia-images~recipe], and [Multimedia Images][rust-howto~multimedia-images] for broader guidance.
 
 ## Related Topics
 
@@ -28,9 +28,9 @@ The [[aerospace_unmanned-aerial-vehicles | Unmanned Aerial Vehicles]] page cover
 - [[algorithms | Algorithms]].
 - [[computer-vision | Computer Vision]].
 - [[hardware-support | Hardware Support]].
-- [Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/images.md).
+- [Images][rust-howto~multimedia-images~recipe].
 - [[mathematics | Mathematics]].
-- [Multimedia Images](https://github.com/john-cd/rust_howto/blob/ceaf4b050e21e3981d121bb1414fc26b01e16a4b/bk/src/categories/multimedia_images/index.md).
+- [Multimedia Images][rust-howto~multimedia-images].
 - [[linear_algebra | Linear Algebra]].
 
 Consider using:

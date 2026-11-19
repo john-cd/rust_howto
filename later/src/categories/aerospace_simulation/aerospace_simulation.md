@@ -14,13 +14,19 @@ This from-scratch rocket example demonstrates a simple time-stepped model, with 
 
 ## Propagate a TLE with SGP4 {#sgp4-tle-propagation}
 
+Run the simulation examples locally from the repository root. They use built-in inputs.
+
+```console
+just cargo run --manifest-path later/crates/Cargo.toml --locked -p aerospace_simulation --example aerospace_simulation
+```
+
 SGP4 propagates a satellite's two-line element (TLE) set from its epoch. This fixed example evaluates the ISS TLE sixty minutes after epoch; the returned position is in kilometers in the TEME frame. TLEs and predictions are time-sensitive, so use current orbital elements for operational work.
 
 ```rust,editable
 {{#include ../../../crates/cats/aerospace_simulation/examples/aerospace_simulation/aero_simulation.rs:sgp4-tle-propagation}}
 ```
 
-The [`sgp4`][c~sgp4~docs] crate provides the propagator. For more precise time-scale and date-time handling, consider [`hifitime`][c~hifitime~docs], which supports time scales such as UTC, TAI, and TDB. The [`uom`][c~uom~docs] crate can represent physical quantities with units and dimensions. Both crates continue to publish updated releases; check their current documentation and features for the target application.
+The [`sgp4`][c~sgp4~docs] crate provides the propagator. For more precise time-scale and date-time handling, consider [`hifitime`][c~hifitime~docs], which supports time scales such as UTC, TAI, and TDB. The [`uom`][c~uom~docs] crate can represent physical quantities with units and dimensions. Use hifitime when observation timestamps and orbital epochs come from different time scales. Use uom when a model combines inputs such as meters and kilometers. This example passes minutes to SGP4 and keeps the units explicit at the call site.
 
 ## Solve equations of motion with RK4 {#rk4-ballistic-trajectory}
 

@@ -1728,3 +1728,14 @@
 [oha~repo]: https://github.com/hatoo/oha
 [trippy~repo]: https://github.com/fujiapple852/trippy
 [xh~repo]: https://github.com/ducaale/xh
+
+[c~sgp4~docs]: https://docs.rs/sgp4
+[c~tello~docs]: https://docs.rs/tello
+[mavlink~packet-loss]: https://mavlink.io/en/guide/packet_loss.html
+[rust-howto~game-development]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/game-development/index.md
+[rust-howto~game-engines]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/game-engines/index.md
+[rust-howto~multimedia-images]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/multimedia_images/index.md
+[rust-howto~multimedia-images~recipe]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/multimedia_images/images.md
+[rust-howto~no-std]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/no-std/no_std.md
+[rust-howto~no-std~no-allocation]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/no-std/no_alloc.md
+[rust-howto~testing]: https://github.com/john-cd/rust_howto/blob/develop/bk/src/categories/development-tools_testing/testing.md
