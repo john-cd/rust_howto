@@ -44,6 +44,8 @@ TCP provides a byte stream. Use `LengthDelimitedCodec` to recover message bounda
 {{#include ../../../crates/cats/network_programming/examples/length_delimited_frames.rs:example}}
 ```
 
+To exercise connection failures without real network sockets, see [Test Recovery from a Simulated Network Partition](../development-tools_testing/testing.md#turmoil-recovery).
+
 ## Related Topics {#related-topics .skip}
 
 - [Asynchronous Programming](../asynchronous/index.md) explains async runtimes and I/O.

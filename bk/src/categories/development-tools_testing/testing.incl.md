@@ -14,3 +14,4 @@
 | [Generate Valid Test Inputs with a Custom `proptest` Strategy][ex~development-tools_testing~proptest-strategy] | [![proptest][c~proptest~docs~badge]][c~proptest~docs]{{hi:proptest}} | {{#categories development-tools::testing=Testing}} |
 | [Test a Command-line Program with `assert_cmd`][ex~development-tools_testing~cli-testing] | {{#crate assert_cmd}} {{#crate predicates}} | {{#categories development-tools::testing=Testing}} |
 | [Test a Query Against Disposable PostgreSQL][ex~development-tools_testing~postgres-container] | `testcontainers`, `testcontainers-modules` | {{#categories development-tools::testing=Testing}} |
+| [Test Recovery from a Simulated Network Partition][ex~development-tools_testing~turmoil-recovery] | `turmoil` | {{#categories development-tools::testing=Testing}} |

@@ -110,7 +110,13 @@ name = "testing"
 path = "examples/testing/main.rs"
 test = true
 
+[[example]]
+name = "network_recovery"
+path = "examples/network_recovery.rs"
+test = true
+
 [dependencies]
+turmoil = "0.7.2"
 postgres-types = { version = "0.2.14", features = ["derive"], optional = true }
 tokio-postgres = { version = "0.7.18", optional = true }
 # The published 0.15.0 release uses testcontainers 0.27, which conflicts with the workspace's Bollard version.
@@ -126,7 +132,7 @@ predicates = "3.1.4"
 # A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] }
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
-tokio = { version = "1.54.1", features = ["macros", "rt", "time", "test-util"] }
+tokio = { version = "1.54.1", features = ["io-util", "macros", "rt", "time", "test-util"] }
 
 [dev-dependencies]
 # Approximate floating point equality comparisons and assertions.

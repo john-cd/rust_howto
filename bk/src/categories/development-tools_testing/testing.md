@@ -134,6 +134,14 @@ just cargo test --manifest-path crates/Cargo.toml -p development_tools_testing -
 {{#include ../../../crates/cats/development_tools_testing/tests/postgres_container.rs:example}}
 ```
 
+## Test Recovery from a Simulated Network Partition {#turmoil-recovery}
+
+Use `turmoil` TCP sockets and Tokio timers to run a client and server on a simulated network. A fixed seed makes simulated timing repeatable. The client first receives a greeting, then observes a refused connection while the link drops traffic. A timeout bounds each attempt. After the link is repaired, it opens a fresh connection and receives the greeting again. The whole test runs without binding an operating-system port. See [Network Programming](../network-programming/server.md) for the lifecycle of a real TCP server.
+
+```rust,ignore,noplayground
+{{#include ../../../crates/cats/development_tools_testing/examples/network_recovery.rs:example}}
+```
+
 ## Related Topics {#related-topics .skip}
 
 - [Model-Checking with Loom](../concurrency/loom.md) explores thread interleavings that ordinary tests miss.

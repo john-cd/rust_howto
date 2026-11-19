@@ -42,3 +42,4 @@
 [c~honggfuzz~repo]: https://github.com/rust-fuzz/honggfuzz-rs
 [c~honggfuzz~repo~badge]: https://img.shields.io/badge/honggfuzz-steelblue?logo=github
 [ex~development-tools_testing~postgres-container]: testing.md#postgres-container
+[ex~development-tools_testing~turmoil-recovery]: testing.md#turmoil-recovery

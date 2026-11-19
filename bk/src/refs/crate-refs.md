@@ -9918,6 +9918,9 @@
 [c~tungstenite~lib.rs~badge]: https://img.shields.io/badge/lib.rs-tungstenite-yellow
 [c~tungstenite~repo]: https://github.com/snapview/tungstenite-rs
 [c~tungstenite~repo~badge]: https://img.shields.io/badge/tungstenite-steelblue?logo=github
+[c~turmoil~crates.io]: https://crates.io/crates/turmoil
+[c~turmoil~docs]: https://docs.rs/turmoil
+[c~turmoil~repo]: https://github.com/tokio-rs/turmoil
 [c~twiggy~crates.io]: https://crates.io/crates/twiggy
 [c~twiggy~crates.io~badge]: https://img.shields.io/badge/crates.io-twiggy-crimson
 [c~twiggy~docs]: https://docs.rs/twiggy

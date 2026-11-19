@@ -655,6 +655,7 @@
 [ex~development-tools_testing~rstest]: ../categories/development-tools_testing/testing.md#rstest
 [ex~development-tools_testing~standard-assertions]: ../categories/development-tools_testing/assertions.md#standard-library-macros
 [ex~development-tools_testing~test_data_generation]: ../categories/development-tools_testing/property_based_testing.md#test_data_generation
+[ex~development-tools_testing~turmoil-recovery]: ../categories/development-tools_testing/testing.md#turmoil-recovery
 [ex~development-tools_testing~unit_testing]: ../categories/development-tools_testing/testing.md#unit_testing
 [ex~devops~automate-github-from-rust]: ../other/devops/github_actions.md#automate-github-from-rust
 [ex~devops~automation]: ../other/devops/release_automation.md#automation
