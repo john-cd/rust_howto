@@ -40,6 +40,11 @@ _default:
 generate_index_of_examples:
     ./generate_index_of_examples.sh {{ root }}
 
+# Verify that standalone and nested example entries appear in the generated index.
+[group('index of examples')]
+test_generate_index_of_examples:
+    bash ./test_generate_index_of_examples.sh
+
 # Usage: just generate_index_of_examples
 
 # Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
