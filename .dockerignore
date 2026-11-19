@@ -7,6 +7,7 @@
 # https://docs.docker.com/go/build-context-dockerignore/
 
 # Git and CI
+/.git
 .git/
 .github/
 
