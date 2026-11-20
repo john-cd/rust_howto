@@ -63,7 +63,7 @@ fn main() -> anyhow::Result<()> {
 }
 
 /// Verifies command-line selection and execution of the documented examples.
-#[cfg(test)]
+#[cfg(all(test, any(feature = "meilisearch", feature = "tantivy")))]
 mod tests {
     use super::*;
 
@@ -82,7 +82,6 @@ mod tests {
     }
 
     /// Unknown subcommands are rejected.
-    #[cfg(any(feature = "meilisearch", feature = "tantivy"))]
     #[test]
     fn test_unknown_subcommand_is_rejected() {
         assert!(Cli::try_parse_from(["example", "no-such-example"]).is_err());
