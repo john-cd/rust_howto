@@ -84,7 +84,7 @@ cargo build --workspace --all-targets --locked --profile ci --all-features
 
 ## Make sure that all examples are linted
 ## - Elevate clippy warnings to errors, which will in turn fail the build.
-cargo clippy --workspace --all-targets --locked --profile ci --all-features -- --deny warnings
+cargo clippy --workspace --all-targets --locked --profile ci --all-features --keep-going -- --deny warnings
 
 if [ "${SKIP_TESTS:-false}" != "true" ]; then
     ## Test all code examples (except heavy tests and "ignore_in_ci" tests)
