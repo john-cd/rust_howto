@@ -7,6 +7,50 @@
 Track implementation, acceptance criteria, and validation evidence in
 [GitHub Issues][issues]. Recheck the live issue before starting work.
 
+<!-- recommended-issue-order:start -->
+
+## Current epics and work that can start
+
+Snapshot from GitHub on November 20, 2026. Open each epic for its full subissue list, current blockers, and acceptance criteria.
+
+### Upstream waits and security remediation ([#2116](https://github.com/john-cd/rust_howto/issues/2116))
+
+- Check whether new upstream releases unblock any locked dependency paths. The ZIP, SQLite, and other compatibility upgrades remain gated by upstream releases. Direct example migrations are listed under code examples below.
+
+### Maintainer decisions ([#2215](https://github.com/john-cd/rust_howto/issues/2215))
+
+- Decide licensing and analytics policy ([#2408](https://github.com/john-cd/rust_howto/issues/2408), [#2409](https://github.com/john-cd/rust_howto/issues/2409)).
+- Decide external listings, NLP and DSL coverage, and first-edition PDF scope ([#2413](https://github.com/john-cd/rust_howto/issues/2413), [#2416](https://github.com/john-cd/rust_howto/issues/2416), [#2417](https://github.com/john-cd/rust_howto/issues/2417)).
+- Supply or defer the Chrome bookmarks export and choose reviewed drafts to promote ([#2415](https://github.com/john-cd/rust_howto/issues/2415), [#2414](https://github.com/john-cd/rust_howto/issues/2414)).
+
+### Human review ([#2216](https://github.com/john-cd/rust_howto/issues/2216))
+
+- Review the five priority chapters ([#2418](https://github.com/john-cd/rust_howto/issues/2418)) or one recipe group ([#2421](https://github.com/john-cd/rust_howto/issues/2421), [#2422](https://github.com/john-cd/rust_howto/issues/2422)).
+- Review repository tooling, workflows, scripts, and metadata ([#2420](https://github.com/john-cd/rust_howto/issues/2420)). Record editorial decisions in the issue and update review markers after the actual review.
+
+### Hardware, platform, and SDK validation ([#2240](https://github.com/john-cd/rust_howto/issues/2240))
+
+- With an appropriate runner, validate the migrated browser and WASI walkthroughs ([#2429](https://github.com/john-cd/rust_howto/issues/2429)) or get a native Flutter/Dart consumer running ([#2430](https://github.com/john-cd/rust_howto/issues/2430)).
+- With a native desktop, check Slint rendering and input ([#2427](https://github.com/john-cd/rust_howto/issues/2427)). A desktop with WebKitGTK can also exercise the Wry IPC path ([#2213](https://github.com/john-cd/rust_howto/issues/2213)).
+- Pick a documented native FFI, GEOS, science, or finance path with its SDK or service available ([#2432](https://github.com/john-cd/rust_howto/issues/2432), [#2433](https://github.com/john-cd/rust_howto/issues/2433)).
+- Select a board or emulator and prepare a bounded firmware run ([#2355](https://github.com/john-cd/rust_howto/issues/2355)). Physical evidence still needs the board, probe, or device. The development image needs Docker engine access ([#2211](https://github.com/john-cd/rust_howto/issues/2211)).
+
+### Code examples and example fixes ([#2435](https://github.com/john-cd/rust_howto/issues/2435))
+
+- Migrate one direct `chrono` or `humantime` example, or one `bincode` 1 example ([#2419](https://github.com/john-cd/rust_howto/issues/2419), [#2424](https://github.com/john-cd/rust_howto/issues/2424)).
+- Enable and run one dormant GUI example path ([#2423](https://github.com/john-cd/rust_howto/issues/2423)).
+- Prototype a client-only SurrealDB example and audit the resulting license graph ([#2282](https://github.com/john-cd/rust_howto/issues/2282)).
+
+### Book prose fixes ([#2436](https://github.com/john-cd/rust_howto/issues/2436))
+
+- Correct the SQLite transaction recipe's error documentation and check the rendered recipe ([#2438](https://github.com/john-cd/rust_howto/issues/2438)).
+
+### Infrastructure fixes and improvements ([#2437](https://github.com/john-cd/rust_howto/issues/2437))
+
+- Dispatch the book workflow with deployment disabled and rerun the cancelled macOS advisory check ([#2207](https://github.com/john-cd/rust_howto/issues/2207)). Coordinate the separate deployment-enabled run.
+
+<!-- recommended-issue-order:end -->
+
 ## Publication fixes, November 18, 2026
 
 Implemented issues [#2382](https://github.com/john-cd/rust_howto/issues/2382) through
@@ -45,7 +89,7 @@ The other 1,893 were inconclusive, including requests deferred after host rate l
 The locked, offline Windows example targets for caching, async channels and graph algorithms passed 50 tests.
 Removing both sorts from a temporary copy of the benchmark still passed its checksum test. Workspace tests alone
 also miss setup instructions that omit a required feature. The full example workspace, other platforms and PDF
-were outside this audit. The November 17 ready list is historical; #2364 and #2365 have since closed.
+were outside this audit. The November 17 snapshot is historical. #2364 and #2365 have since closed.
 
 [nov18-review]: https://github.com/john-cd/rust_howto/issues/2216#issuecomment-6994339621
 [nov18-links]: https://github.com/john-cd/rust_howto/issues/2389
@@ -63,10 +107,9 @@ were outside this audit. The November 17 ready list is historical; #2364 and #23
 
 ## Historical review, November 17, 2026
 
-The current work below supersedes the historical snapshots that follow. Recheck live issues
-before implementation; a historical TODO link is not proof that an issue remains open.
+This snapshot records the findings and priorities at the time of the review. See the current epics above for active work.
 
-### Ready
+### Findings at the time
 
 - **P2 — [#2364](https://github.com/john-cd/rust_howto/issues/2364):** Reject missing, empty,
   and incomplete rendered output in the all-chapters release check. Missing and empty
@@ -180,41 +223,6 @@ are complete. Pointer provenance [#2270][i2270], CI benchmarking
   detects it.
 - **P3** [#2268][i2268] · Test a local Iroh peer round trip and failure cases.
 
-<!-- recommended-issue-order:start -->
-
-## Historical ready and blocked snapshot
-
-### Ready
-
-Start with the fixes and promotions listed above.
-
-### Blocked
-
-#### CI unavailable ([#2207][i2207])
-
-- See the deferred hosted checks in the issue.
-
-#### Human decisions and reviews ([#2239][i2239])
-
-- [#2216][i2216] · Owner review of chapters, recipes, and tools.
-- [#2215][i2215] · Licensing, analytics, scope, and tooling ownership.
-
-#### Waiting for upstream or dependency ([#2116][i2116])
-
-- See the upstream and advisory waits in the issue.
-
-#### Hardware, external host or account ([#2240][i2240])
-
-- [#2211][i2211] · The locked Windows Maturin/PyO3 extension builds and
-  imports with CPython 3.15.2 and Maturin 1.16.0. Hosted Linux CI built the shared
-  Dockerfile base and passed its exact `python`/`python3` version checks; the separate
-  `development` image target still needs a Docker Desktop build.
-- [#2214][i2214] · Validate macOS and FreeBSD native examples.
-- [#2213][i2213] · Validate GUI, window, and hardware examples on a desktop
-  or device.
-
-<!-- recommended-issue-order:end -->
-
 [issues]: https://github.com/john-cd/rust_howto/issues
 [baseline]: https://github.com/john-cd/rust_howto/tree/31b76b925db6aaff1d57de64d01588d77fdd2655
 [wasm]: bk/src/categories/wasm/wasm_basics.md
@@ -227,7 +235,6 @@ Start with the fixes and promotions listed above.
 [i2214]: https://github.com/john-cd/rust_howto/issues/2214
 [i2215]: https://github.com/john-cd/rust_howto/issues/2215
 [i2216]: https://github.com/john-cd/rust_howto/issues/2216
-[i2239]: https://github.com/john-cd/rust_howto/issues/2239
 [i2240]: https://github.com/john-cd/rust_howto/issues/2240
 [i2248]: https://github.com/john-cd/rust_howto/issues/2248
 [i2249]: https://github.com/john-cd/rust_howto/issues/2249
