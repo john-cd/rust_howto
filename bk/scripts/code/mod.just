@@ -167,7 +167,11 @@ _default:
 # Clean the `crates/**/temp` folders of most files prior / after testing
 @_clean_temp_dir:
     echo "Clean temp folders"
-    {{ quote(root + "/bin/clean" + exe) }} {{ quote(code_root) }}
+    if [ -f {{ quote(root + "/bin/clean" + exe) }} ]; then \
+        {{ quote(root + "/bin/clean" + exe) }} {{ quote(code_root) }}; \
+    else \
+        cargo run --quiet --locked --manifest-path {{ quote(root + "/tools/clean/Cargo.toml") }} -- {{ quote(code_root) }}; \
+    fi
 
 # Run an example
 [no-cd]
