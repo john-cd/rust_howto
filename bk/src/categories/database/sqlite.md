@@ -32,11 +32,11 @@ Use the [`rusqlite`][c~rusqlite~docs]↗{{hi:rusqlite}} crate to open SQLite dat
 
 [![rusqlite][c~rusqlite~docs~badge]][c~rusqlite~docs]{{hi:rusqlite}} [![cat~database][cat~database~badge]][cat~database]{{hi:Databases}}
 
-[`rusqlite::Connection::open`][c~rusqlite::Connection::open~docs]↗{{hi:rusqlite::Connection::open}} will open the `cats.db` database from the top recipe.
+This example opens an in-memory database and creates the tables before starting the transactions.
 
-Begin a transaction with [`rusqlite::Connection::transaction`][c~rusqlite::Connection::transaction~docs]↗{{hi:rusqlite::Connection::transaction}} Transactions will roll back unless committed explicitly with [`rusqlite::Transaction::commit`][c~rusqlite::Transaction::commit~docs]↗{{hi:rusqlite::Transaction::commit}}.
+Begin a transaction with [`rusqlite::Connection::transaction`][c~rusqlite::Connection::transaction~docs]↗{{hi:rusqlite::Connection::transaction}}. Transactions will roll back unless committed explicitly with [`rusqlite::Transaction::commit`][c~rusqlite::Transaction::commit~docs]↗{{hi:rusqlite::Transaction::commit}}.
 
-In the following example, colors add to a table having a unique constraint on the color name. When an attempt to insert a duplicate color is made, the transaction rolls back.
+The first transaction inserts two colors and commits. The second transaction attempts to insert a duplicate color. SQLite rejects the insert because color names must be unique, and dropping the uncommitted transaction rolls back its changes.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/database/examples/sqlite/transactions.rs:example}}

@@ -60,13 +60,12 @@ fn main() -> Result<()> {
     Ok(())
 }
 
-/// Inserts two colors and commits them in a single transaction.
+/// Clears the existing cats and colors, inserts two colors, and commits the transaction.
 ///
 /// # Errors
 ///
-/// Returns a SQLite error if any statement or the commit fails.
-/// state.
-/// Returns a SQLite error if the query cannot be prepared or read.
+/// Returns a SQLite error if the transaction cannot begin, a DELETE or INSERT
+/// statement fails, or the transaction cannot commit.
 ///
 /// # Arguments
 ///
@@ -80,15 +79,12 @@ fn successful_tx(connection: &mut Connection) -> rusqlite::Result<()> {
     transaction.commit()
 }
 
-/// Attempts duplicate inserts so SQLite returns an error and the transaction
-///
-/// is rolled back when it is dropped.
-///
-/// Returns the unique-constraint error for the duplicate color, or another
+/// Attempts to insert a duplicate color so the transaction rolls back when dropped.
 ///
 /// # Errors
 ///
-/// SQLite error if an earlier statement fails.
+/// Returns the unique-constraint error for the duplicate color, or an earlier
+/// SQLite error if the transaction cannot begin or a statement fails.
 ///
 /// # Arguments
 ///
