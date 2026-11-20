@@ -150,7 +150,7 @@ trivial_numeric_casts = "allow"
 
 # Catch unexpected cfg condition names or values. `cargo llvm-cov` supplies `coverage`
 # when it instruments a build, allowing timing tests to distinguish measurement from execution.
-unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage)"] }
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage)", "cfg(fuzzing)"] }
 
 # Require unsafe operations inside unsafe fn to be wrapped in unsafe blocks
 unsafe_op_in_unsafe_fn = "warn"
