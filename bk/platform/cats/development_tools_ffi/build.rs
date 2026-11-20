@@ -31,19 +31,41 @@ fn bindgen(manifest_dir: &Path, out_dir: &Path) -> Result<(), Box<dyn Error>> {
 
 // ANCHOR: CBINDGEN
 
-/// Generates a C header from the Rust C-ABI library example.
+/// Generates a C header from the Rust C-ABI library example and checks that
+/// the generated header compiles as C.
 ///
 /// # Errors
 ///
-/// Returns an error if cbindgen cannot parse the crate or the generated header
-/// cannot be written.
+/// Returns an error if cbindgen cannot parse the crate, the generated header
+/// cannot be written, or the C compiler rejects the generated header.
 fn cbindgen(manifest_dir: &Path, out_dir: &Path) -> Result<(), Box<dyn Error>> {
     let bindings = cbindgen::Builder::new()
         .with_crate(manifest_dir)
+        .with_language(cbindgen::Language::C)
+        .with_cpp_compat(true)
         .generate()?;
     let mut header_contents = Vec::new();
     bindings.write(&mut header_contents);
     std::fs::write(out_dir.join("bindings.h"), header_contents)?;
+
+    validate_cbindgen_header(out_dir)?;
+    Ok(())
+}
+
+/// Compiles a C translation unit that includes the generated header.
+///
+/// # Errors
+///
+/// Returns an error if the C compiler rejects the generated header.
+fn validate_cbindgen_header(out_dir: &Path) -> Result<(), Box<dyn Error>> {
+    let source = out_dir.join("cbindgen_header_smoke.c");
+    std::fs::write(&source, "#include \"bindings.h\"\n")?;
+
+    cc::Build::new()
+        .file(source)
+        .include(out_dir)
+        .cargo_metadata(false)
+        .try_compile("cbindgen_header_smoke")?;
     Ok(())
 }
 // ANCHOR_END: CBINDGEN
