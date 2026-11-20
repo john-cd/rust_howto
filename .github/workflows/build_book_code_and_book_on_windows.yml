@@ -194,6 +194,8 @@ jobs:
         working-directory: tools
 
       - name: Build the book
+        env:
+          MDBOOK_TOOLS_PREINSTALLED: "true"
         run: |
           python scripts/book/test_refdefs.py
           just bb
