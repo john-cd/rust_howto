@@ -160,6 +160,7 @@
 [ex~cloud~aws-sdk-rust]: ../other/cloud/aws.md#aws-sdk-rust
 [ex~cloud~aws-ses]: ../other/cloud/aws.md#aws-ses
 [ex~cloud~aws-shared-config]: ../other/cloud/aws.md#aws-shared-config
+[ex~cloud~kubernetes]: ../other/cloud/kubernetes.md#kubernetes
 [ex~cloud~lambda]: ../other/cloud/aws_lambda.md
 [ex~cloud~shuttle]: ../other/cloud/rust_native_cloud_development.md#shuttle
 [ex~code-organization~binary-crate-organization]: ../code-organization/code_organization_by_project_type.md#binary-crate-organization
