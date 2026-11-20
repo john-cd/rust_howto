@@ -63,7 +63,6 @@ pub fn run(work_dir: &Path) -> io::Result<()> {
 }
 
 /// Tests archive creation and workspace isolation.
-
 #[cfg(test)]
 mod tests {
     use std::fs;
