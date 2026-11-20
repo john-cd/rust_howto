@@ -46,6 +46,11 @@ ENV RUSTFMT_TOOLCHAIN=${RUSTFMT_TOOLCHAIN}
 
 FROM rust-core AS tool-builder
 
+# The vendored OpenSSL build needs make when cargo-binstall falls back to source.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends make \
+    && rm -rf /var/lib/apt/lists/*
+
 # Tool versions are passed as build args by compose.yaml and set in
 # `.devcontainer/.env`.
 ARG MDBOOK_VERSION
