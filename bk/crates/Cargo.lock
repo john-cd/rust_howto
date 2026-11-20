@@ -21226,6 +21226,7 @@ dependencies = [
  "nix 0.31.3",
  "regex",
  "shlex 2.0.1",
+ "tempfile",
  "tokio",
  "wait-timeout",
  "which",

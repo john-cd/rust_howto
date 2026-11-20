@@ -81,13 +81,6 @@ services:
         read_only: true
         bind:
           create_host_path: false
-      # Use a tmpfs (in-RAM) mount for the Rust build target directory.
-      # This provides maximum I/O speed for compilation artifacts.
-      ## The GitHub Actions ubuntu-latest runner has ~7 GB RAM; folder sizes are reported at the end
-      ## of ci.sh (du) and at the start of the CI workflow (free/df) so that the size can be monitored.
-      ## Note: tmpfs and bind mounts are NOT suitable for /usr/local/cargo/ because they would obscure
-      ## the cargo binaries (mdbook, nextest, …) and the package registry that are cached.
-      - type: tmpfs
-        target: /code/target/
-        tmpfs:
-          size: 5G
+    # Integration tests launch binaries from Cargo's target directory.
+    tmpfs:
+      - /code/target:rw,nosuid,nodev,exec,size=5g
