@@ -11,9 +11,8 @@
 #[cfg(all(feature = "use-mimalloc", feature = "use-jemalloc"))]
 compile_error!("select only one global allocator feature");
 
-#[cfg(feature = "use-mimalloc")]
-
 /// Shared `global` used by this module.
+#[cfg(feature = "use-mimalloc")]
 #[global_allocator]
 static GLOBAL: mimalloc::MiMalloc = mimalloc::MiMalloc;
 

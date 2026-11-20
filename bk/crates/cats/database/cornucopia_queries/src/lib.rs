@@ -20,21 +20,19 @@ pub mod client;
 
 /// This module provides the `domain` implementation used by its parent.
 mod domain;
+/// This module provides the `queries` implementation used by its parent.
 #[allow(clippy::all, clippy::pedantic)]
 #[allow(unused_variables)]
 #[allow(unused_imports)]
-
-/// This module provides the `queries` implementation used by its parent.
 #[allow(dead_code)]
 pub mod queries;
 
 /// This module provides the `type_traits` implementation used by its parent.
 mod type_traits;
+/// This module provides the `types` implementation used by its parent.
 #[allow(clippy::all, clippy::pedantic)]
 #[allow(unused_variables)]
 #[allow(unused_imports)]
-
-/// This module provides the `types` implementation used by its parent.
 #[allow(dead_code)]
 pub mod types;
 

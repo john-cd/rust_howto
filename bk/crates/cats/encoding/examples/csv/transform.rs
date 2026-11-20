@@ -24,9 +24,8 @@ struct Row {
     /// The color.
     color: HexColor,
 }
-#[derive(Debug)]
-
 /// A color represented as a hex triplet.
+#[derive(Debug)]
 struct HexColor {
     /// The red component.
     red: u8,

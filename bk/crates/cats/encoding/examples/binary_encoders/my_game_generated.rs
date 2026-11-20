@@ -17,7 +17,6 @@ pub mod my_game {
 
     /// Read-only view of a monster record encoded by FlatBuffers.
     #[derive(Copy, Clone, PartialEq)]
-
     pub struct Monster<'a> {
         /// Tab in `Monster`.
         pub _tab: ::flatbuffers::Table<'a>,

@@ -10,9 +10,8 @@
 
 use logos::Logos;
 
-#[derive(Debug, Logos, PartialEq)]
-
 /// Defines the outcomes available to the tokenization workflow, including identifier, plus.
+#[derive(Debug, Logos, PartialEq)]
 #[logos(skip r"[ \t]+")]
 enum Token {
     /// An identifier made from ASCII letters.
