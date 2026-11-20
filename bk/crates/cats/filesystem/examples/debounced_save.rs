@@ -18,7 +18,8 @@ use notify_debouncer_full::notify::RecursiveMode;
 /// Returns an error if the file operations, watcher, or bounded wait fails.
 fn main() -> anyhow::Result<()> {
     let directory = tempfile::tempdir()?;
-    let target = directory.path().join("notes.txt");
+    let path = directory.path().canonicalize()?;
+    let target = path.join("notes.txt");
     std::fs::write(&target, b"old")?;
     let (sender, receiver) = mpsc::channel();
     let mut debouncer = new_debouncer(
@@ -28,9 +29,9 @@ fn main() -> anyhow::Result<()> {
             let _ = sender.send(batch);
         },
     )?;
-    debouncer.watch(directory.path(), RecursiveMode::NonRecursive)?;
+    debouncer.watch(&path, RecursiveMode::NonRecursive)?;
 
-    let mut staging = tempfile::NamedTempFile::new_in(directory.path())?;
+    let mut staging = tempfile::NamedTempFile::new_in(&path)?;
     staging.write_all(b"new ")?;
     staging.write_all(b"contents")?;
     staging.persist(&target)?;

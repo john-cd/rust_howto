@@ -10,6 +10,7 @@
 use std::path::Path;
 use std::sync::mpsc;
 use std::time::Duration;
+use std::time::Instant;
 
 use notify::RecursiveMode;
 use notify::Watcher as _;
@@ -23,24 +24,27 @@ fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-/// Watches `dir`, creates a file in it, and returns the first event.
+/// Watches `dir`, creates a file in it, and returns the first event for that file.
+///
+/// # Errors
+///
+/// Returns an error if the directory, watcher, write, or bounded wait fails.
 fn watch_for_write(dir: &Path) -> anyhow::Result<notify::Event> {
+    let dir = dir.canonicalize()?;
     let (sender, receiver) = mpsc::channel();
     let mut watcher = notify::recommended_watcher(sender)?;
-    watcher.watch(dir, RecursiveMode::Recursive)?;
+    watcher.watch(&dir, RecursiveMode::Recursive)?;
 
     // Create a file after starting the watcher so it can report the event.
     let path = dir.join("example.txt");
-    std::fs::write(path, "trigger an event")?;
+    std::fs::write(&path, "trigger an event")?;
 
-    match receiver.recv_timeout(Duration::from_secs(5)) {
-        Ok(event) => Ok(event?),
-        Err(mpsc::RecvTimeoutError::Timeout) => Err(std::io::Error::new(
-            std::io::ErrorKind::TimedOut,
-            "No file-system event received within five seconds.",
-        )
-        .into()),
-        Err(error) => Err(error.into()),
+    let deadline = Instant::now() + Duration::from_secs(5);
+    loop {
+        let event = receiver.recv_timeout(deadline.saturating_duration_since(Instant::now()))??;
+        if event.paths.contains(&path) {
+            return Ok(event);
+        }
     }
 }
 
