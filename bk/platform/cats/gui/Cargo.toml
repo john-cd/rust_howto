@@ -176,7 +176,7 @@ egui_plot = "0.38.0"
 # A tiling layout engine for egui with drag-and-drop and resizing
 egui_tiles = { version = "0.18.0", optional = true }
 # Integrates tracing and logging with egui for event collection/visualization
-egui_tracing = { version = "0.3.0", optional = true } # Latest release; depends on egui 0.34, so it is paired with eframe_034 (egui_log_viewer).
+egui_tracing = { version = "0.4.0", optional = true } # Enables the browser clock automatically; pairs with eframe_036 (egui_log_viewer).
 # Antialiased 2D vector drawing library
 femtovg = { version = "0.28.0", optional = true }
 # A native Rust UI library with fine-grained reactivity

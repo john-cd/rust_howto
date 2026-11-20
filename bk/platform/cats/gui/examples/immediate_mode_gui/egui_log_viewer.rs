@@ -8,7 +8,7 @@
 //! `egui` is an immediate-mode GUI: the interface is rebuilt by code on every
 //! frame.
 
-use eframe_034::egui;
+use eframe_036::egui;
 use egui_tracing::EventCollector;
 use egui_tracing::Logs;
 use tracing_subscriber::prelude::*;
@@ -45,11 +45,11 @@ fn run_example() {
     let _output = ctx.run_ui(input, |ui| {
         egui::Panel::bottom("log_panel")
             .resizable(true)
-            .show_inside(ui, |ui| {
+            .show(ui, |ui| {
                 // `Logs` is a widget with a filter by level and by target.
                 ui.add(Logs::new(collector.clone()));
             });
-        egui::CentralPanel::default().show_inside(ui, |ui| {
+        egui::CentralPanel::default().show(ui, |ui| {
             ui.label("Main content");
         });
     });

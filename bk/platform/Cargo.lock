@@ -4153,13 +4153,14 @@ dependencies = [
 
 [[package]]
 name = "egui_extras"
-version = "0.34.3"
+version = "0.36.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "598d8675f6fd9088db8a93d8c7aacda936b2f3d0c2b0660ad1744a45b5caf922"
+checksum = "05cbdc785020861553f230f23d330ba1fb72613b9d8e0e457f3bdc8ba6db6dcf"
 dependencies = [
  "ahash",
- "egui 0.34.3",
+ "egui 0.36.2",
  "enum-map 2.7.3",
+ "itertools 0.15.0",
  "log",
  "profiling",
 ]
@@ -4279,13 +4280,13 @@ dependencies = [
 
 [[package]]
 name = "egui_tracing"
-version = "0.3.0"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "085bbf5dd0cd689edf1d5d1161dd95b1dc487e2dd546363239bd5b233de65110"
+checksum = "02f1de00a8e628d21ac74248dec056a0578a061255d84530de87778d52a09107"
 dependencies = [
  "chrono",
- "egui 0.34.3",
- "egui_extras 0.34.3",
+ "egui 0.36.2",
+ "egui_extras 0.36.2",
  "globset",
  "imbl",
  "tracing",
