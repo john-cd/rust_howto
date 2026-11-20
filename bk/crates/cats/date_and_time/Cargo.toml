@@ -33,6 +33,11 @@ path = "examples/humantime.rs"
 test = true
 
 [[example]]
+name = "jiff_basics"
+path = "examples/jiff_basics.rs"
+test = true
+
+[[example]]
 name = "jiff_dst"
 path = "examples/jiff_dst.rs"
 test = true
