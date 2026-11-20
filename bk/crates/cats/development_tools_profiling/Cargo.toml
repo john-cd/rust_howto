@@ -55,7 +55,6 @@ test = true
 anyhow = "1.0.104"
 clap = "4.6.7"
 dhat = "0.3.3"
-hdrhistogram = { version = "7.6.0", default-features = false }
 measure_time = "0.9.0"
 puffin = "0.20.0"
 
@@ -64,6 +63,7 @@ puffin = "0.20.0"
 criterion = "0.8.2"
 # Provides statistical microbenchmarking, output formatting, and benchmark comparison tools.
 divan = "0.1.21"
+hdrhistogram = { version = "7.6.0", default-features = false }
 # This crate provides a very thin abstraction over other profiler crates.
 profiling = "1.0.18"
 # TCP server/client for puffin profiler data
