@@ -55,9 +55,14 @@ fn main() -> Result<(), Error> {
     example()
 }
 
-/// Demonstrates scope-exit cleanup and writes a sample file.
+/// Creates the sample output directory and demonstrates scope-exit cleanup.
+///
+/// # Errors
+///
+/// Returns an error if the output directory or sample file cannot be created or written.
 fn example() -> Result<(), Error> {
     defer();
+    std::fs::create_dir_all("temp")?;
     process_file("temp/my_document.txt")?;
     Ok(())
 }
