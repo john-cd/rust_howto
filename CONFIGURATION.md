@@ -196,9 +196,18 @@ Cargo dependency-policy roots after the `pulldown-cmark` security update and sco
 `mdbook-utils` checkout was skipped because its submodule is uninitialized. The repository-wide
 `dprint check` also passes. A native Ubuntu WSL smoke link with Rust 1.99.1 on
 `x86_64-unknown-linux-gnu` invoked GCC's LLD 23.1.1; this confirms the compiler default, not the
-repository's full Linux workspace matrix. The Apple linker and macOS workspace checks remain
-unverified because no macOS runner is available. Warm-cache timings varied substantially, so no
-cross-platform performance improvement is claimed from these measurements.
+repository's full Linux workspace matrix.
+
+Hosted validation on 2026-11-20 exercised Linux and macOS at PR #2401's tested head
+`0b7b3d515f6c1d57ea752eb3e5b49c39ded93d6e`, which was merged with the same tree. The [Linux
+run](https://github.com/john-cd/rust_howto/actions/runs/44764535075) built the Compose `ci`
+target and passed the workspace Clippy, nextest, doctest, book-render, and link-check stages;
+nextest reported 2,993 passed and 91 skipped, with one flaky test passing on retry. The [macOS
+run](https://github.com/john-cd/rust_howto/actions/runs/44764535619) completed the workspace
+Clippy and nextest checks on a hosted macOS runner; nextest reported 2,845 passed and 50 skipped.
+These runs provide hosted Linux-container and native macOS workspace evidence, including builds
+with each platform's default linker. Warm-cache timings varied substantially, so no cross-platform
+performance improvement is claimed from these measurements.
 
 On Windows slot `a`, `just cargo rustc --locked --package mdbook-scrub --bin mdbook-scrub --
 --print link-args` selected Visual Studio 2022 Build Tools MSVC 14.44.35207's

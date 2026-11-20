@@ -83,16 +83,17 @@ before implementation; a historical TODO link is not proof that an issue remains
 
 ### Validation and owner follow-ups
 
-- [#2207][i2207] now tracks remaining hosted checks and Book Tooling checkout failures.
-  Actions is running jobs in this repository; it is not uniformly unavailable. The recent
-  Windows run failed at `Check out Book Tooling`. PR #2303 is closed and unmerged.
+- [#2207][i2207] tracks the remaining manual `build_deploy_book.yml` dispatch with deployment
+  disabled and then enabled, plus native-platform advisory follow-up. The hosted Linux and macOS
+  checks passed on PR #2401's tested tree; Book Tooling CI and mdbook-utils CI and Pages runs also
+  pass. PR #2303 is closed and unmerged.
 - [#2116][i2116], [#2247](https://github.com/john-cd/rust_howto/issues/2247), and
   [#2245](https://github.com/john-cd/rust_howto/issues/2245) own dependency/advisory follow-ups;
   [#2282](https://github.com/john-cd/rust_howto/issues/2282) and
   [#2283](https://github.com/john-cd/rust_howto/issues/2283) own license metadata decisions.
 - [#2216][i2216] and [#2215][i2215] retain human editorial and maintainer decisions.
   Automated review does not replace those decisions or date human review markers.
-- [#2240][i2240], [#2211][i2211], [#2213][i2213], [#2214][i2214], and [#2202][i2202]
+- [#2240][i2240], [#2211][i2211], [#2213][i2213], and [#2214][i2214]
   retain host, credential, hardware, and platform acceptance work.
 - The other chat owns the `later/` migration plan and its migration/readiness issues.
   This review does not change that plan or duplicate its checklist.
@@ -205,12 +206,12 @@ Start with the fixes and promotions listed above.
 #### Hardware, external host or account ([#2240][i2240])
 
 - [#2211][i2211] · The locked Windows Maturin/PyO3 extension builds and
-  imports with CPython 3.15.2 and Maturin 1.16.0. The full devcontainer build
-  needs a valid GitHub read token for `john-cd/book_tooling`.
+  imports with CPython 3.15.2 and Maturin 1.16.0. Hosted Linux CI built the shared
+  Dockerfile base and passed its exact `python`/`python3` version checks; the separate
+  `development` image target still needs a Docker Desktop build.
 - [#2214][i2214] · Validate macOS and FreeBSD native examples.
 - [#2213][i2213] · Validate GUI, window, and hardware examples on a desktop
   or device.
-- [#2202][i2202] · Run native Linux and macOS linker and workspace checks.
 
 <!-- recommended-issue-order:end -->
 
