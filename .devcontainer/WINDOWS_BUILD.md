@@ -39,19 +39,18 @@ uses `apt-get` and `sudo` and must run in Linux, WSL, or a Linux container. Do
 not run it through Git Bash on Windows.
 
 The dev container builds `tools/` using the pinned `book_tooling/` submodule.
-Authenticate Git for access to the private `john-cd/book_tooling` repository,
-then initialize its sources before building:
+Initialize the public `john-cd/book_tooling` submodule before building:
 
 ```powershell
-git submodule update --init -- book_tooling
+git submodule update --init --recursive -- book_tooling
 docker compose `
   --env-file .devcontainer/.env `
   -f .devcontainer/compose.yaml `
   build book
 ```
 
-Docker copies the initialized submodule into the image; it does not need a
-GitHub token or fetch private Cargo Git dependencies during the build.
+Docker copies the initialized submodule into the image. Public checkout works
+anonymously. Keep any credentials for authenticated Git access outside tracked files.
 
 Run the repository build setup once per checkout:
 

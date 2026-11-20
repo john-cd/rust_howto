@@ -106,8 +106,7 @@ in [`mdbook`][c~mdbook~docs]↗ source directories. It is the companion tool for
 this book.
 
 The `book_tooling/` Git submodule provides the companion Markdown parser and
-authoring-tool sources. Initializing it requires GitHub access to the private
-`john-cd/book_tooling` repository:
+authoring-tool sources. Initialize the public `john-cd/book_tooling` repository from the checkout root:
 
 ```sh
 git submodule update --init --recursive -- book_tooling

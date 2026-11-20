@@ -81,7 +81,7 @@ suite are separate from this book's examples.
 
 - [Create and Build a Book][ex~documentation~mdbook]
 - [Generate Markdown Fragments with `templ`][ex~documentation~templ]
-- The private `book_tooling` dependency handles in-place inline-link rewrites,
+- The public `book_tooling` submodule handles in-place inline-link rewrites,
   reference cleanup, and HTTP link checking. See [Dev Containers and Docker](../../../appendices/contributing/dev_container_and_docker.md) for contributor access requirements.
 
 {{#include refs.incl.md}}
