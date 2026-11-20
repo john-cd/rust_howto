@@ -48,6 +48,9 @@ env:
   CODE_BUILD_ROOT: ${{ github.workspace }}/.ci/build
   CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/main
   CARGO_INCREMENTAL: "0"
+  # Let Cargo pass oversized argument lists directly to rustc via response files.
+  RUSTC_WRAPPER: ""
+  CARGO_BUILD_RUSTC_WRAPPER: ""
 permissions:
   contents: read
 
@@ -112,8 +115,6 @@ jobs:
 
       - name: Check minimum supported Rust
         env:
-          RUSTC_WRAPPER: ""
-          CARGO_BUILD_RUSTC_WRAPPER: ""
           CARGO_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/msrv/book
           CARGO_BUILD_TARGET_DIR: ${{ github.workspace }}/.ci/target/rust_howto/msrv/book
           CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/msrv/book
