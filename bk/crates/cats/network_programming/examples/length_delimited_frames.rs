@@ -31,7 +31,7 @@ async fn main() -> anyhow::Result<()> {
         .await
         .transpose()?
         .ok_or_else(|| anyhow::anyhow!("missing first frame"))?;
-    assert_eq!(&first[..], b"cat");
+    assert_eq!(&*first, b"cat");
 
     writer
         .write_all(b"\x00\x00\x00\x03dog\x00\x00\x00\x03owl")
@@ -44,7 +44,7 @@ async fn main() -> anyhow::Result<()> {
             .await
             .transpose()?
             .ok_or_else(|| anyhow::anyhow!("missing frame"))?;
-        assert_eq!(&frame[..], expected);
+        assert_eq!(&*frame, expected);
     }
     assert!(frames.next().await.is_none());
     Ok(())
