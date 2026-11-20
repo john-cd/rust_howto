@@ -7,6 +7,8 @@
 //!
 //! TODO Reviewed ??-??-2026.
 
+use std::path::PathBuf;
+
 use clap::Parser;
 use clap::Subcommand;
 
@@ -30,11 +32,17 @@ struct Cli {
 enum Commands {
     /// Runs the `tar_compress` example.
     #[command(name = "tar_compress")]
-    Compress,
+    Compress {
+        /// A new directory for the sample inputs and archive.
+        workspace: PathBuf,
+    },
 
     /// Runs the `tar_decompress` example.
     #[command(name = "tar_decompress")]
-    Decompress,
+    Decompress {
+        /// The workspace created by the compression example.
+        workspace: PathBuf,
+    },
 
     /// Runs the `tar_strip_prefix` example.
     #[command(name = "tar_strip_prefix")]
@@ -47,11 +55,11 @@ fn main() -> anyhow::Result<()> {
 
     if let Some(command) = cli.command {
         match command {
-            Commands::Compress => {
-                tar_compress::run()?;
+            Commands::Compress { workspace } => {
+                tar_compress::run(&workspace)?;
             }
-            Commands::Decompress => {
-                tar_decompress::run()?;
+            Commands::Decompress { workspace } => {
+                tar_decompress::run(&workspace)?;
             }
             Commands::StripPrefix => {
                 tar_strip_prefix::run()?;

@@ -20,8 +20,7 @@ use tar::Archive;
 ///
 /// Returns an I/O error if the archive cannot be opened or its entries cannot
 /// be extracted.
-fn main() -> io::Result<()> {
-    let work_dir = std::env::temp_dir().join("rust_howto_tar_compress_example");
+fn main(work_dir: &Path) -> io::Result<()> {
     decompress_archive(&work_dir.join("archive.tar.gz"), &work_dir.join("unpacked"))
 }
 
@@ -36,7 +35,7 @@ fn decompress_archive(archive_path: &Path, destination: &Path) -> io::Result<()>
     let tar_gz = File::open(archive_path)?;
     let tar = GzDecoder::new(tar_gz);
     let mut archive = Archive::new(tar);
-    std::fs::create_dir_all(destination)?;
+    std::fs::create_dir(destination)?;
     archive.unpack(destination)?;
     println!("Archive extracted to {}", destination.display());
     Ok(())
@@ -48,8 +47,8 @@ fn decompress_archive(archive_path: &Path, destination: &Path) -> io::Result<()>
 /// # Errors
 ///
 /// Returns an I/O error if the archive cannot be read or extracted.
-pub fn run() -> Result<(), std::io::Error> {
-    main()
+pub fn run(work_dir: &Path) -> io::Result<()> {
+    main(work_dir)
 }
 
 /// Tests archive decompression, including missing and malformed input.
@@ -94,14 +93,20 @@ mod tests {
     /// Runs the example through its entry point without error.
     #[test]
     fn test_main_entry_point() -> io::Result<()> {
-        let _guard = crate::tar_compress::SAMPLE_ARCHIVE_LOCK
-            .lock()
-            .unwrap_or_else(std::sync::PoisonError::into_inner);
-        // `main` unpacks the archive that the compression example creates.
-        crate::tar_compress::run()?;
-        main()?;
-        let unpacked = std::env::temp_dir()
-            .join("rust_howto_tar_compress_example/unpacked/backup/logs/example.txt");
+        let temporary = tempfile::tempdir()?;
+        let work_dir = temporary.path().join("sample");
+        crate::tar_compress::run(&work_dir)?;
+        main(&work_dir)?;
+        let marker = work_dir.join("unpacked/keep.txt");
+        fs::write(&marker, "user data")?;
+        assert_eq!(
+            main(&work_dir)
+                .expect_err("destination already exists")
+                .kind(),
+            io::ErrorKind::AlreadyExists
+        );
+        assert_eq!(fs::read_to_string(marker)?, "user data");
+        let unpacked = work_dir.join("unpacked/backup/logs/example.txt");
         assert_eq!(fs::read(unpacked)?, b"A file in the sample archive.\n");
         Ok(())
     }

@@ -4,7 +4,7 @@
 
 {{#include tar.incl.md}}
 
-The examples below read and write local filesystem paths, so their code blocks are marked `noplayground`. Prepare the source directory or archive at the paths shown before running an example.
+The examples below read and write local filesystem paths, so their code blocks are marked `noplayground`. Run the compression and decompression examples in order against a fresh workspace. The prefix-stripping example below uses its own input archive.
 
 Tar groups files and metadata but does not compress them. A `.tar.gz` file combines a tar archive with gzip compression. Other combinations include tar with [`zstd`][c~zstd~docs]↗, [`xz2`][c~xz2~docs]↗, or [`bzip2`][c~bzip2~docs]↗. ZIP is a separate archive format, provided by [`zip`][c~zip~docs]↗. For a `.tar.zst` archive, write the tar stream through the [Zstandard encoder](compression.md#zstd-stream) and finish the tar stream before finishing the compressed frame.
 
@@ -14,7 +14,7 @@ The default `flate2` backend uses Rust code. Some alternatives involve native co
 
 [![flate2][c~flate2~docs~badge]][c~flate2~docs] [![flate2~crates.io][c~flate2~crates.io~badge]][c~flate2~crates.io] [![flate2~repo][c~flate2~repo~badge]][c~flate2~repo]{{hi:flate2}} [![tar][c~tar~docs~badge]][c~tar~docs] [![tar~crates.io][c~tar~crates.io~badge]][c~tar~crates.io] [![tar~repo][c~tar~repo~badge]][c~tar~repo]{{hi:tar}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
 
-Read a gzip-compressed tar archive with [`flate2::read::GzDecoder`][c~flate2::read::GzDecoder~docs]↗{{hi:flate2::read::GzDecoder}}, then extract its entries with [`tar::Archive::unpack`][c~tar::Archive::unpack~docs]↗{{hi:tar::Archive::unpack}}. The example reads the archive created by the compression example from the system temporary directory and extracts files into an `unpacked` subdirectory there. The decompression helper accepts explicit archive and destination paths. Only extract archives you trust.
+Read a gzip-compressed tar archive with [`flate2::read::GzDecoder`][c~flate2::read::GzDecoder~docs]↗{{hi:flate2::read::GzDecoder}}, then extract its entries with [`tar::Archive::unpack`][c~tar::Archive::unpack~docs]↗{{hi:tar::Archive::unpack}}. The example reads `archive.tar.gz` from the specified workspace and creates its `unpacked` subdirectory. Extraction refuses an existing destination. The decompression helper accepts explicit archive and destination paths. Only extract archives you trust.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/compression/examples/tar/tar_decompress.rs:example}}
@@ -24,7 +24,14 @@ Read a gzip-compressed tar archive with [`flate2::read::GzDecoder`][c~flate2::re
 
 [![flate2][c~flate2~docs~badge]][c~flate2~docs] [![flate2~crates.io][c~flate2~crates.io~badge]][c~flate2~crates.io] [![flate2~repo][c~flate2~repo~badge]][c~flate2~repo]{{hi:flate2}} [![tar][c~tar~docs~badge]][c~tar~docs] [![tar~crates.io][c~tar~crates.io~badge]][c~tar~crates.io] [![tar~repo][c~tar~repo~badge]][c~tar~repo]{{hi:tar}} [![cat~compression][cat~compression~badge]][cat~compression]{{hi:Compression}}
 
-The example creates a small source directory in the system temporary directory and writes `archive.tar.gz` there. Adapt `compress_directory` to use your own source and archive paths.
+The example creates a new workspace, a small `source` directory, and `archive.tar.gz`. From the compression crate directory, run these commands with a workspace name that does not exist yet:
+
+```sh
+cargo run --example tar -- tar_compress tar-sample
+cargo run --example tar -- tar_decompress tar-sample
+```
+
+The extracted file is `tar-sample/unpacked/backup/logs/example.txt`. Choose a new workspace name for each run.
 
 Creates a [`std::fs::File`][c~std::fs::File~docs]↗{{hi:std::fs::File}} wrapped in [`flate2::write::GzEncoder`][c~flate2::write::GzEncoder~docs]↗{{hi:flate2::write::GzEncoder}} and [`tar::Builder`][c~tar::Builder~docs]↗{{hi:tar::Builder}}.
 

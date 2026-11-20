@@ -16,17 +16,15 @@ use std::path::Path;
 use flate2::Compression;
 use flate2::write::GzEncoder;
 
-/// Creates a sample input directory and archive under the system temp
-///
-/// directory.
+/// Creates a sample input directory and archive in a new workspace.
 ///
 /// # Errors
 ///
 /// Returns an I/O error if the sample directory or archive cannot be written.
-fn main() -> io::Result<()> {
-    let work_dir = std::env::temp_dir().join("rust_howto_tar_compress_example");
+fn main(work_dir: &Path) -> io::Result<()> {
+    fs::create_dir(work_dir)?;
     let source_dir = work_dir.join("source");
-    fs::create_dir_all(&source_dir)?;
+    fs::create_dir(&source_dir)?;
     fs::write(
         source_dir.join("example.txt"),
         b"A file in the sample archive.\n",
@@ -44,7 +42,7 @@ fn main() -> io::Result<()> {
 /// Returns an I/O error if the archive cannot be created, the directory cannot
 /// be added, or the compressed stream cannot be finished.
 fn compress_directory(source_dir: &Path, archive_path: &Path) -> io::Result<()> {
-    let archive_file = File::create(archive_path)?;
+    let archive_file = File::create_new(archive_path)?;
     let encoder = GzEncoder::new(archive_file, Compression::default());
     let mut builder = tar::Builder::new(encoder);
     builder.append_dir_all("backup/logs", source_dir)?;
@@ -53,30 +51,19 @@ fn compress_directory(source_dir: &Path, archive_path: &Path) -> io::Result<()> 
     Ok(())
 }
 
-/// Serializes the tests that use the shared sample archive in the system
-/// temporary directory.
-#[cfg(test)]
-pub(crate) static SAMPLE_ARCHIVE_LOCK: std::sync::Mutex<()> = std::sync::Mutex::new(());
 // ANCHOR_END: example
 
-/// Creates and verifies a gzip-compressed tar archive from a sample directory.
+/// Creates a fresh workspace and writes the sample archive.
 ///
 /// # Errors
 ///
-/// This function creates a gzip-compressed tar archive from a directory.
-///
-/// Returns an I/O error if the sample source or archive cannot be written.
-///
-/// # Errors
-///
-/// Returns an error if a step of the example fails.
-pub fn run() -> Result<(), std::io::Error> {
-    main()
+/// Returns an I/O error if the workspace already exists or a write fails.
+pub fn run(work_dir: &Path) -> io::Result<()> {
+    main(work_dir)
 }
 
-/// Serializes the tests that use the shared sample archive in the system
-/// temporary directory.
-/// Archives a temporary directory and verifies the finished gzip tarball.
+/// Tests archive creation and workspace isolation.
+
 #[cfg(test)]
 mod tests {
     use std::fs;
@@ -110,15 +97,27 @@ mod tests {
         Ok(())
     }
 
-    /// Runs the example through its entry point without error.
+    /// Independent workspaces archive only their own files and reject reuse.
     #[test]
-    fn test_main_entry_point() {
-        let _guard = SAMPLE_ARCHIVE_LOCK
-            .lock()
-            .unwrap_or_else(std::sync::PoisonError::into_inner);
-        if let Err(err) = main() {
-            panic!("main failed: {err:?}");
-        }
+    fn sample_runs_use_fresh_workspaces() -> io::Result<()> {
+        let temporary = tempfile::tempdir()?;
+        let first = temporary.path().join("first");
+        let second = temporary.path().join("second");
+        main(&first)?;
+        fs::write(first.join("source/stale.txt"), "previous run")?;
+        let original = fs::read(first.join("archive.tar.gz"))?;
+        assert_eq!(
+            main(&first).expect_err("workspace already exists").kind(),
+            io::ErrorKind::AlreadyExists
+        );
+        main(&second)?;
+
+        let archive_file = File::open(second.join("archive.tar.gz"))?;
+        let destination = second.join("output");
+        Archive::new(GzDecoder::new(archive_file)).unpack(&destination)?;
+        assert!(destination.join("backup/logs/example.txt").is_file());
+        assert!(!destination.join("backup/logs/stale.txt").exists());
+        assert_eq!(fs::read(first.join("archive.tar.gz"))?, original);
+        Ok(())
     }
 }
-// [review; tar_compress.rs is noplayground - fix?](https://github.com/john-cd/rust_howto/issues/255)
