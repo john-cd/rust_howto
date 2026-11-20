@@ -141,7 +141,7 @@ _default:
 
 # Test only tests that match a given keyword
 @nextestthis test:
-    cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --locked --no-fail-fast --success-output final -E 'test(~{{ test }})'
+    cd {{ quote(code_root) }} && cargo nextest run --config-file {{ quote(code_root + "/.config/nextest.toml") }} --all-targets --locked --no-fail-fast --success-output final -E 'test(~{{ test }})'
 
 # Test in the current directory (or the default packages of the workspace if in the root) (all features)
 [no-cd]
