@@ -17,7 +17,12 @@ use walkdir::WalkDir;
 /// Calculates the total size of all files within a directory tree
 /// (within a given depth).
 fn main() -> Result<()> {
-    let total_size = total_size(Path::new("."))?;
+    print_total_size(Path::new("."))
+}
+
+/// Prints the total size of files below `root`.
+fn print_total_size(root: &Path) -> Result<()> {
+    let total_size = total_size(root)?;
     println!("Total size: {total_size} bytes.");
     Ok(())
 }
@@ -62,8 +67,8 @@ mod tests {
     /// Verifies the example can traverse the current directory.
     #[test]
     fn test_sizes_example_entry_point() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
+        let dir = tempfile::tempdir()?;
+        print_total_size(dir.path())
     }
 
     /// Sizes are summed to depth 3 only; directories do not count.

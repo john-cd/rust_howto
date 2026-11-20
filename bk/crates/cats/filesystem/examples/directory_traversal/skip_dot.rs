@@ -26,7 +26,12 @@ fn is_not_hidden(entry: &DirEntry) -> bool {
 /// Prints the paths of the current directory tree, skipping hidden files and
 /// directories.
 fn main() -> Result<()> {
-    for path in visible_paths(Path::new("."))? {
+    print_visible_paths(Path::new("."))
+}
+
+/// Prints visible paths below `root`.
+fn print_visible_paths(root: &Path) -> Result<()> {
+    for path in visible_paths(root)? {
         println!("{}", path.display());
     }
     Ok(())
@@ -60,8 +65,8 @@ mod tests {
     /// Verifies the example can traverse the current directory.
     #[test]
     fn test_skip_dot_example_entry_point() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
+        let dir = tempfile::tempdir()?;
+        print_visible_paths(dir.path())
     }
 
     /// Hidden files and the contents of hidden directories are skipped.

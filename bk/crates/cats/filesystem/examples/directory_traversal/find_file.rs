@@ -17,7 +17,12 @@ use walkdir::WalkDir;
 /// Walks the current directory tree and prints the files that were modified
 /// recently.
 fn main() -> Result<()> {
-    for path in recently_modified(Path::new("."))? {
+    print_recently_modified(Path::new("."))
+}
+
+/// Prints the recently modified files below `root`.
+fn print_recently_modified(root: &Path) -> Result<()> {
+    for path in recently_modified(root)? {
         println!("{}", path.display());
     }
     Ok(())
@@ -70,8 +75,8 @@ mod tests {
     /// Verifies the example can traverse the current directory.
     #[test]
     fn test_find_file_example_entry_point() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
+        let dir = tempfile::tempdir()?;
+        print_recently_modified(dir.path())
     }
 
     /// Only fresh files are returned; old files and directories are not.

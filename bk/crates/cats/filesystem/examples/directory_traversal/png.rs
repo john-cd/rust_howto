@@ -15,10 +15,14 @@ use glob::glob;
 /// Prints the paths of all the PNG files in the current directory tree.
 fn main() -> Result<()> {
     // Find all PNG files in the current directory and its subdirectories.
-    for path in find_pngs("**/*.png")? {
+    print_pngs("**/*.png")
+}
+
+/// Prints the paths that match `pattern`.
+fn print_pngs(pattern: &str) -> Result<()> {
+    for path in find_pngs(pattern)? {
         println!("{}", path.display());
     }
-
     Ok(())
 }
 
@@ -46,10 +50,15 @@ pub fn run() -> Result<()> {
 mod tests {
     use super::*;
 
-    /// The example runs against the current tree.
+    /// The example prints matches from an isolated directory tree.
     #[test]
     fn test_png_example_entry_point() -> Result<()> {
-        main()
+        let dir = tempfile::tempdir()?;
+        std::fs::create_dir(dir.path().join("nested"))?;
+        std::fs::write(dir.path().join("image.png"), "")?;
+        std::fs::write(dir.path().join("nested/image.png"), "")?;
+        let pattern = format!("{}/**/*.png", dir.path().display());
+        print_pngs(&pattern)
     }
 
     /// Only PNG files at any depth match; an invalid pattern is an error.

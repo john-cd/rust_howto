@@ -17,7 +17,12 @@ use walkdir::WalkDir;
 /// Prints the file names that appear more than once in the current directory
 /// tree.
 fn main() -> Result<()> {
-    for name in duplicate_names(Path::new("."))? {
+    print_duplicate_names(Path::new("."))
+}
+
+/// Prints repeated file names under `root`.
+fn print_duplicate_names(root: &Path) -> Result<()> {
+    for name in duplicate_names(root)? {
         println!("{}", name.to_string_lossy());
     }
     Ok(())
@@ -73,8 +78,8 @@ mod tests {
     /// Verifies the example can traverse the current directory.
     #[test]
     fn test_duplicate_name_example_entry_point() -> anyhow::Result<()> {
-        main()?;
-        Ok(())
+        let dir = tempfile::tempdir()?;
+        print_duplicate_names(dir.path())
     }
 
     /// Names repeated in different directories are reported exactly once.
