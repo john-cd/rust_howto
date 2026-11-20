@@ -76,6 +76,23 @@ def check_word_index(root: Path) -> list[str]:
     return failures
 
 
+def rendered_chapter_paths(root: Path) -> set[str]:
+    """Read the chapter inventory mdBook emits from its processed book."""
+    toc = root / "toc.html"
+    if not toc.is_file():
+        raise ValueError("toc.html: missing rendered chapter inventory")
+    targets = Page(toc.read_text(encoding="utf-8")).targets
+    chapters = {
+        unquote(link.path)
+        for href in targets
+        if (link := urlsplit(href)).path.endswith(".html")
+        and not (link.scheme or link.netloc)
+    }
+    if not chapters:
+        raise ValueError("toc.html: empty rendered chapter inventory")
+    return chapters
+
+
 def check_chapters(
     root: Path, sources: list[str], *, check_fragments: bool
 ) -> list[str]:
@@ -87,7 +104,7 @@ def check_chapters(
         if not path.is_file():
             failures.append(f"{source}: missing required page")
             continue
-        if source in PAGES and path.stat().st_size == 0:
+        if path.stat().st_size == 0:
             failures.append(f"{source}: empty required page")
             continue
         html = path.read_text(encoding="utf-8")
@@ -178,16 +195,25 @@ def main() -> int:
         failures = check_word_index(root)
     else:
         sources = list(PAGES)
+        inventory_failures = []
         if args.all_chapters:
+            try:
+                chapters = rendered_chapter_paths(root)
+            except ValueError as error:
+                inventory_failures.append(str(error))
+                chapters = set()
             sources = sorted(
                 set(PAGES)
+                | chapters
                 | {
                     path.relative_to(root).as_posix()
                     for path in root.rglob("*.html")
                     if path.relative_to(root).as_posix() != "word_index.html"
                 }
             )
-        failures = check_chapters(root, sources, check_fragments=args.all_chapters)
+        failures = inventory_failures + check_chapters(
+            root, sources, check_fragments=args.all_chapters
+        )
     for failure in failures:
         print(failure)
     return int(bool(failures))

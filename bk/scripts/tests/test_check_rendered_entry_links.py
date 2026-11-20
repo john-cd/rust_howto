@@ -82,11 +82,30 @@ class RenderedEntryLinksTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             self.write_required_pages(root)
+            (root / "toc.html").write_text(
+                '<a href="extra.html">Extra</a>', encoding="utf-8"
+            )
             (root / "extra.html").write_text("<html></html>\n", encoding="utf-8")
 
             result = self.run_checker(root, "--all-chapters")
 
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def test_inventory_rejects_missing_and_empty_chapter(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self.write_required_pages(root)
+            (root / "toc.html").write_text(
+                '<a href="chapter%20name.html">Chapter</a>', encoding="utf-8"
+            )
+            missing = self.run_checker(root, "--all-chapters")
+            self.assertEqual(missing.returncode, 1)
+            self.assertIn("chapter name.html: missing required page", missing.stdout)
+
+            (root / "chapter name.html").touch()
+            empty = self.run_checker(root, "--all-chapters")
+            self.assertEqual(empty.returncode, 1)
+            self.assertIn("chapter name.html: empty required page", empty.stdout)
 
     def test_word_index_mode_requires_its_input(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

@@ -139,6 +139,8 @@ jobs:
           docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml run \
             --rm --build --pull never \
             rust-howto-book
+      - name: Check rendered chapter links and completeness
+        run: python bk/scripts/check_rendered_entry_links.py book/html --all-chapters
 
   ## Introduction to GitHub Actions with Docker: https://docs.docker.com/guides/gha/
   build-image:
@@ -288,7 +290,7 @@ jobs:
             -e SKIP_TESTS="true" \
             -e BUILD_PDF="${{ inputs.build_pdf || false }}" \
             rust-howto-book
-      - name: Check rendered chapter links
+      - name: Check rendered chapter links and completeness
         run: python bk/scripts/check_rendered_entry_links.py book/html --all-chapters
       - name: Check rendered word index fragments
         run: python bk/scripts/check_rendered_entry_links.py book/html --word-index
