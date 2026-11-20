@@ -15,7 +15,7 @@ Choose a representation that matches the data's audience and compatibility needs
 | Read structured JSON or TOML values | [Structured Data](complex_encoding.md) | `serde_json`, `toml`, `byteorder` |
 | Convert between numeric types and byte layouts | [Typecasts and Byte Layout](typecasts.md) | `TryFrom`, `bytemuck`, `zerocopy`, `byteorder` |
 | Encode data with a separate schema | [Binary Encoders](binary_encoders.md) | `prost`, `capnp`, `flatbuffers` |
-| Encode typed values without a separate schema | [Binary Encoders Without External Schemas](no_external_schema.md) | `postcard`, `bincode`, `rmp-serde`, `ciborium`, `rkyv` |
+| Encode typed values without a separate schema | [Binary Encoders Without External Schemas](no_external_schema.md) | `postcard`, `rmp-serde`, `ciborium`, `rkyv` |
 
 Use a format-specific library when one is available. Before persisting or exchanging data, decide how readers handle unknown fields, schema changes, invalid input, and numeric precision.
 

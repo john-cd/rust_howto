@@ -10,13 +10,17 @@ These formats contrast with [schema-first binary encoders][p~binary-encoders], w
 
 {{#include no_external_schema.incl.md}}
 
-## `bincode` {#bincode}
+## Bincode 1.3.3 (historical) {#bincode}
 
 {{#badges bincode encoding=Encoding network-programming="Network programming"}}{{hi:Deserialize}}{{hi:Serialize}}{{hi:Binary}}{{hi:Encode}}{{hi:Decode}}
 
 [`bincode`][c~bincode~docs]↗{{hi:bincode}} encodes and decodes Rust values as compact binary data. The receiver must use a compatible type definition and configuration; the byte stream does not carry field names or an independent schema.
 
-The example pins [Bincode 1.3.3](https://docs.rs/bincode/1.3.3/bincode/), which its maintainers consider a complete release. Bincode 2 is unmaintained; consider actively maintained alternatives for new systems.
+**Historical example.** Bincode development has ended. This example retains the pinned [Bincode 1.3.3 API](https://docs.rs/bincode/1.3.3/bincode/) and its byte-level test for readers who need to understand existing data. See the [RustSec maintenance advisory](https://rustsec.org/advisories/RUSTSEC-2025-0141.html).
+
+For new compact binary messages using Serde, start with [Postcard](#postcard). Consider [rkyv](#rkyv) when you need direct access to archived data. Serde supplies the serialization traits, and the format implementation defines the bytes. For interchange with other languages, consider [CBOR](#ciborium) or [MessagePack](#rmp-serde) and agree on a format both sides support.
+
+Postcard and rkyv use different encodings from Bincode 1.3.3. To migrate existing data, decode it with the original Bincode version, type layout, and options, then encode it in the new format. Version the persisted data or wire protocol so readers can select the right decoder.
 
 ```rust,editable
 {{#include ../../../crates/cats/encoding/examples/binary_encoders/bincode.rs:example}}
