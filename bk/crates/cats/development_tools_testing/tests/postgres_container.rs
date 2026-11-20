@@ -16,7 +16,7 @@ async fn start_postgres() -> anyhow::Result<(ContainerAsync<Postgres>, tokio_pos
     let container = Postgres::default().with_tag("17.6-alpine").start().await?;
     let mut config = tokio_postgres::Config::new();
     config
-        .host(&container.get_host().await?.to_string())
+        .host(container.get_host().await?.to_string())
         .port(container.get_host_port_ipv4(5432).await?)
         .user("postgres")
         .password("postgres")
