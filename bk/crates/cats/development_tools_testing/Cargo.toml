@@ -130,7 +130,6 @@ serde = { version = "1.0.229", features = ["derive"] }
 testcontainers-modules = { git = "https://github.com/testcontainers/testcontainers-rs-modules-community.git", rev = "d69e3a09397532accea9d9e907fecc280b1513a8", features = ["postgres"], optional = true }
 tokio = { version = "1.54.1", features = ["io-util", "macros", "rt", "time", "test-util"] }
 tokio-postgres = { version = "0.7.18", optional = true }
-turmoil = "0.7.2"
 
 [dev-dependencies]
 # Approximate floating point equality comparisons and assertions.
@@ -157,6 +156,7 @@ mockall = "0.15.0"
 proptest = "1.12.0"
 # Rust fixture based test framework. It use procedural macro to implement fixtures and table based tests.
 rstest = "0.28.0"
+turmoil = "0.7.2"
 # Simple, safe HTTP client
 ureq = "3.5.1"
 

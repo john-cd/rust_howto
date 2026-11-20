@@ -107,14 +107,13 @@ path = "examples/parser_diagnostic.rs"
 test = true
 
 [dependencies]
-annotate-snippets = "0.12.18"
-rowan = "0.17.0"
 # Application-level tracing for Rust.
 tracing = "0.1.44"
 # Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 
 [dev-dependencies]
+annotate-snippets = "0.12.18"
 # Flexible concrete Error type built on std::error::Error
 anyhow = "1.0.104"
 # structured access to the output of `cargo metadata`
@@ -133,6 +132,7 @@ prettyplease = "0.3.0"
 proc-macro2 = { version = "1.0.107", features = ["span-locations"] }
 # Builds Rust token streams with quasi-quoting macros for procedural macros.
 quote = "1.0.47"
+rowan = "0.17.0"
 # Parser and evaluator for Cargo's flavor of Semantic Versioning
 semver = "1.0.28"
 # Parser for Rust source code
