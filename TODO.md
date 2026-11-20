@@ -1,6 +1,4 @@
-<!-- TODO Reviewed ??-??-2026. -->
-
-<!-- TODO Reviewed 10-25-2026 -->
+<!-- TODO Reviewed 2026-11-20. -->
 
 # Task tracking
 
@@ -33,7 +31,7 @@ Snapshot from GitHub on November 20, 2026. Open each epic for its full subissue 
 - With an appropriate runner, validate the migrated browser and WASI walkthroughs ([#2429](https://github.com/john-cd/rust_howto/issues/2429)) or get a native Flutter/Dart consumer running ([#2430](https://github.com/john-cd/rust_howto/issues/2430)).
 - With a native desktop, check Slint rendering and input ([#2427](https://github.com/john-cd/rust_howto/issues/2427)). A desktop with WebKitGTK can also exercise the Wry IPC path ([#2213](https://github.com/john-cd/rust_howto/issues/2213)).
 - Pick a documented native FFI, GEOS, science, or finance path with its SDK or service available ([#2432](https://github.com/john-cd/rust_howto/issues/2432), [#2433](https://github.com/john-cd/rust_howto/issues/2433)).
-- Select a board or emulator and prepare a bounded firmware run ([#2355](https://github.com/john-cd/rust_howto/issues/2355)). Physical evidence still needs the board, probe, or device. The development image needs Docker engine access ([#2211](https://github.com/john-cd/rust_howto/issues/2211)).
+- Select a board or emulator and prepare a bounded firmware run ([#2355](https://github.com/john-cd/rust_howto/issues/2355)). Physical evidence still needs the board, probe, or device.
 
 ### Code examples and example fixes ([#2435](https://github.com/john-cd/rust_howto/issues/2435))
 
@@ -47,7 +45,7 @@ Snapshot from GitHub on November 20, 2026. Open each epic for its full subissue 
 
 ### Infrastructure fixes and improvements ([#2437](https://github.com/john-cd/rust_howto/issues/2437))
 
-- Dispatch the book workflow with deployment disabled and rerun the cancelled macOS advisory check ([#2207](https://github.com/john-cd/rust_howto/issues/2207)). Coordinate the separate deployment-enabled run.
+- Dispatch the book workflow with deployment disabled ([#2207](https://github.com/john-cd/rust_howto/issues/2207)). Coordinate the separate deployment-enabled run and record the Pages result.
 
 <!-- recommended-issue-order:end -->
 
@@ -125,17 +123,17 @@ This snapshot records the findings and priorities at the time of the review. See
 ### Validation and owner follow-ups
 
 - [#2207][i2207] tracks the remaining manual `build_deploy_book.yml` dispatch with deployment
-  disabled and then enabled, plus native-platform advisory follow-up. The hosted Linux and macOS
-  checks passed on PR #2401's tested tree; Book Tooling CI and mdbook-utils CI and Pages runs also
-  pass. PR #2303 is closed and unmerged.
+  disabled and then enabled, plus the Pages result. The hosted Linux, Windows, and macOS checks
+  passed on PR #2401's tested tree; the post-merge macOS and FreeBSD advisory run passed, and
+  Book Tooling CI plus mdbook-utils CI and Pages runs also pass. PR #2303 is closed and unmerged.
 - [#2116][i2116], [#2247](https://github.com/john-cd/rust_howto/issues/2247), and
   [#2245](https://github.com/john-cd/rust_howto/issues/2245) own dependency/advisory follow-ups;
   [#2282](https://github.com/john-cd/rust_howto/issues/2282) and
   [#2283](https://github.com/john-cd/rust_howto/issues/2283) own license metadata decisions.
 - [#2216][i2216] and [#2215][i2215] retain human editorial and maintainer decisions.
   Automated review does not replace those decisions or date human review markers.
-- [#2240][i2240], [#2211][i2211], [#2213][i2213], and [#2214][i2214]
-  retain host, credential, hardware, and platform acceptance work.
+- [#2240][i2240] and [#2213][i2213] retain host, hardware, desktop, and accessibility
+  acceptance work.
 - The other chat owns the `later/` migration plan and its migration/readiness issues.
   This review does not change that plan or duplicate its checklist.
 
