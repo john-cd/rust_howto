@@ -20,7 +20,6 @@ import tempfile
 import tomllib
 
 MD_BOOK_UTILS_VERSION = "0.1.4"
-MD_BOOK_UTILS_REV = "dedddf3699e461cd418c1a044d82aabd3fec62e0"
 MD_BOOK_UTILS_REPO = "https://github.com/john-cd/mdbook-utils"
 
 
@@ -28,12 +27,45 @@ def _book_root_default() -> Path:
     return Path(__file__).resolve().parents[2]
 
 
+def _pinned_revision() -> str:
+    """Read the same tool revision used by the container and host installers."""
+    config = _book_root_default().parent / ".devcontainer" / ".env"
+    if config.is_file():
+        match = re.search(
+            r'^MDBOOK_UTILS_REV="([0-9a-f]{40})"$',
+            config.read_text(encoding="utf-8"),
+            re.MULTILINE,
+        )
+        revision = match[1] if match else ""
+    else:
+        # The container embeds the build argument and omits dotenv files.
+        revision = os.environ.get("MDBOOK_UTILS_REV", "")
+    if not re.fullmatch(r"[0-9a-f]{40}", revision):
+        raise RuntimeError(
+            f"Missing pinned MDBOOK_UTILS_REV in {config} or the build environment"
+        )
+    return revision
+
+
+def _install_command(revision: str) -> list[str]:
+    """Build Cargo's pinned installation command."""
+    return [
+        "cargo",
+        "install",
+        "--force",
+        "--git",
+        MD_BOOK_UTILS_REPO,
+        "--rev",
+        revision,
+        "--locked",
+        "mdbook-utils",
+    ]
+
+
 def _resolve_tool() -> str:
     tool = os.environ.get("MDBOOK_UTILS") or shutil.which("mdbook-utils")
-    install = (
-        f"cargo install --git {MD_BOOK_UTILS_REPO} --rev {MD_BOOK_UTILS_REV} "
-        "--locked --force mdbook-utils"
-    )
+    revision = _pinned_revision()
+    install = " ".join(_install_command(revision))
     if not tool:
         raise RuntimeError(
             f"mdbook-utils is not installed; install the pinned revision with:\n{install}"
@@ -52,7 +84,7 @@ def _resolve_tool() -> str:
     ):
         raise RuntimeError(
             f"Expected mdbook-utils {MD_BOOK_UTILS_VERSION} from revision "
-            f"{MD_BOOK_UTILS_REV}; found {version_output.strip() or 'no version output'}.\n"
+            f"{revision}; found {version_output.strip() or 'no version output'}.\n"
             f"Install the pinned revision with:\n{install}"
         )
     return tool
@@ -96,9 +128,7 @@ def _generated_bytes(book_root: Path, tool: str) -> bytes:
             )
             raise RuntimeError(f"mdbook-utils refdefs generation failed:\n{detail}")
         if not generated.is_file():
-            raise RuntimeError(
-                "mdbook-utils completed without creating crate-refs.md"
-            )
+            raise RuntimeError("mdbook-utils completed without creating crate-refs.md")
         return generated.read_bytes().rstrip(b"\r\n") + b"\n"
 
 
@@ -115,14 +145,18 @@ def _dependency_names(book_root: Path, current: str) -> dict[str, str]:
         for table in tables:
             for kind in ("dependencies", "dev-dependencies", "build-dependencies"):
                 for alias, spec in table.get(kind, {}).items():
-                    package = spec.get("package", alias) if isinstance(spec, dict) else alias
+                    package = (
+                        spec.get("package", alias) if isinstance(spec, dict) else alias
+                    )
                     names.setdefault(package.replace("-", "_"), package)
     for package in re.findall(r"^\[c~([^~]+)~crates\.io\]:", current, re.MULTILINE):
         names[package.replace("-", "_")] = package
     return names
 
 
-def _normalized_refs(book_root: Path, current: str, generated: str) -> tuple[dict[str, str], dict[str, str]]:
+def _normalized_refs(
+    book_root: Path, current: str, generated: str
+) -> tuple[dict[str, str], dict[str, str]]:
     """Convert legacy dependency labels and URLs to the book's crate style."""
     names = _dependency_names(book_root, current)
     definitions = {}
@@ -131,7 +165,7 @@ def _normalized_refs(book_root: Path, current: str, generated: str) -> tuple[dic
         name, suffix = old, "docs"
         for ending, kind in (("-crate", "crates.io"), ("-github", "repo")):
             if old.endswith(ending):
-                name, suffix = old[:-len(ending)], kind
+                name, suffix = old[: -len(ending)], kind
                 break
         if not name:
             continue
@@ -153,12 +187,18 @@ def _merge_refs(book_root: Path, current: bytes, generated: bytes) -> bytes:
     text = current.decode("utf-8")
     definitions, _ = _normalized_refs(book_root, text, generated.decode("utf-8"))
     existing = dict(re.findall(r"^\[([^\]]+)\]:\s+(.+)$", text, re.MULTILINE))
-    missing = {label: url for label, url in definitions.items() if label not in existing}
+    missing = {
+        label: url for label, url in definitions.items() if label not in existing
+    }
     if not missing:
         return current
     existing.update(missing)
-    header = "\n".join(line for line in text.splitlines() if not re.match(r"^\[[^\]]+\]:", line)).strip()
-    body = "\n".join(f"[{label}]: {url.rstrip()}" for label, url in sorted(existing.items()))
+    header = "\n".join(
+        line for line in text.splitlines() if not re.match(r"^\[[^\]]+\]:", line)
+    ).strip()
+    body = "\n".join(
+        f"[{label}]: {url.rstrip()}" for label, url in sorted(existing.items())
+    )
     return ((header + "\n\n" if header else "") + body + "\n").encode("utf-8")
 
 
@@ -217,10 +257,26 @@ def process(book_root: Path, action: str, tool: str) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("check", "generate"))
+    parser.add_argument(
+        "action", choices=("check", "generate", "install", "verify-pin")
+    )
     parser.add_argument("--book-root", type=Path, default=_book_root_default())
     args = parser.parse_args(argv)
     try:
+        if args.action == "verify-pin":
+            entry = subprocess.check_output(
+                ["git", "ls-tree", "HEAD", "--", "mdbook-utils"],
+                cwd=_book_root_default().parent,
+                text=True,
+            )
+            if not entry.startswith(f"160000 commit {_pinned_revision()}\t"):
+                raise RuntimeError(
+                    "MDBOOK_UTILS_REV must match the mdbook-utils gitlink"
+                )
+            return 0
+        if args.action == "install":
+            subprocess.run(_install_command(_pinned_revision()), check=True)
+            return 0
         return process(args.book_root, args.action, _resolve_tool())
     except (OSError, RuntimeError, subprocess.SubprocessError) as error:
         print(error, file=sys.stderr)

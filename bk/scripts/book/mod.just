@@ -16,7 +16,6 @@ root := replace(clean(source_directory() + "/../.."), "\\", "/")
 # Executable suffix and Python launcher differ on Windows; recipes themselves run in Bash everywhere.
 exe := if os_family() == "windows" { ".exe" } else { "" }
 python := if os_family() == "windows" { "python" } else { "python3" }
-mdbook_utils_rev := env("MDBOOK_UTILS_REV", "dedddf3699e461cd418c1a044d82aabd3fec62e0")
 mdbook_indexing_version := env("MDBOOK_INDEXING_VERSION", "0.2.0")
 
 # ---- Task aliases -----------------------------------------------------------
@@ -58,7 +57,7 @@ _default:
     if [ "${MDBOOK_TOOLS_PREINSTALLED:-false}" = true ]; then \
         command -v mdbook-utils >/dev/null; \
     else \
-        cargo install --git https://github.com/john-cd/mdbook-utils --rev {{ mdbook_utils_rev }} --locked mdbook-utils; \
+        {{ python }} "{{ source_directory() }}/refdefs.py" install; \
     fi
 
 # Use the pinned indexing preprocessor installed by CI, or install it locally.

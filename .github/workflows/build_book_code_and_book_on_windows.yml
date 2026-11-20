@@ -72,6 +72,8 @@ jobs:
       - name: Code checkout (clones the Git repository)
         # actions/checkout v7.0.1
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Check the mdbook-utils pin against the submodule
+        run: python bk/scripts/book/refdefs.py verify-pin
       - name: Check out Book Tooling
         uses: ./.github/actions/checkout-book-tooling
         with:
