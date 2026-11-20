@@ -1,4 +1,4 @@
-//! Adapted from <https://dystroy.org/btracing::info!/cancelable-background-task/>.
+//! Adapted from <https://dystroy.org/blog/cancelable-background-task/>.
 //!
 //! TODO Reviewed ??-??-2026.
 

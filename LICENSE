@@ -52,7 +52,9 @@ Unless you explicitly state otherwise, any contribution intentionally submitted 
 
 This project incorporates most of the [Rust Cookbook][rust-cookbook~website]↗, licensed under the Creative Commons Zero v1.0 Universal License. Thanks to its many [contributors][rust-cookbook~contributors~website]↗.
 
-This project, by its very nature, includes code examples for hundreds of Rust crates, distributed under their respective licenses.
+See bk/src/appendices/third_party_credits.md for the locations and terms of
+third-party material reused in the book. The restrictions in this license
+apply only to Materials covered by this license.
 
 The vast majority of these libraries are licensed under the [MIT] and/or [Apache 2.0] licenses.
 

@@ -75,5 +75,7 @@ When a mostly synchronous application needs async work, create or own a Tokio ru
 
 - [Concurrency](../concurrency/index.md).
 
+See [Third-Party Credits](../../appendices/third_party_credits.md) for source and license information.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

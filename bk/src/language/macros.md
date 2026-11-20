@@ -406,6 +406,8 @@ The same workspace has a compile-fail case in `language/tests/ui/debug_print_uni
   - [Write Proc Macros](../categories/development-tools_procedural-macro-helpers/write_proc_macros.md).
 - [Rust Patterns](../categories/rust-patterns/index.md).
 
+See [Third-Party Credits](../appendices/third_party_credits.md) for source and license information.
+
 See [String Concatenation](../categories/text-processing/string_concat.md) for more details.
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

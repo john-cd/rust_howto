@@ -175,6 +175,8 @@ Start small: fix a typo, improve a code example, or add a link before taking on 
 
 This guide is based on the **contributing.md**. [Make your own][contributing.md~make-your-own]↗!
 
+See [Third-Party Credits](../third_party_credits.md) for source and license information.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 [ex~contributing~code-of-conduct]: #code-of-conduct

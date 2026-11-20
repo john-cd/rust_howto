@@ -14,6 +14,8 @@ Thanks to the many [contributors][rust-cookbook-contributors~repo]↗ of the "Ru
 
 ## Legal {#legal}
 
+See [Third-Party Credits](third_party_credits.md) for the sources and licenses of material reused in the book.
+
 Please review the [LICENSE][rust-howto~license~repo]↗ file.
 
 {{#include refs.incl.md}}

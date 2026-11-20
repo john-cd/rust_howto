@@ -119,5 +119,7 @@ The following example demonstrates the implementation of a basic smart pointer:
 - [Rust Patterns](../categories/rust-patterns/index.md).
 - [Shared State](../categories/concurrency/shared_state.md).
 
+See [Third-Party Credits](../appendices/third_party_credits.md) for source and license information.
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -112,5 +112,7 @@ Use [`qsv`][c~qsv~repo]↗{{hi:qsv}} to inspect or reshape a file from the shell
 - [Data Engineering](../../other/data-processing/data_engineering.md#arrow-csv) for reading CSV into typed Arrow columns.
 - [Encoding index][p~encoding] for text, binary, and format-specific serialization guidance.
 
+See [Third-Party Credits](../../appendices/third_party_credits.md) for source and license information.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

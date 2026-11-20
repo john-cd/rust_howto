@@ -81,5 +81,7 @@ The above is adapted from:
 - [[traits | Traits]].
 - [[variables | Variables]].
 
+See [Third-Party Credits](../appendices/third_party_credits.md) for source and license information.
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}

@@ -105,5 +105,7 @@ Use [`serde_bytes`][c~serde_bytes~docs] for byte buffers when the format disting
 - [CSV](csv.md).
 - [Encoding category](index.md).
 
+See [Third-Party Credits](../../appendices/third_party_credits.md) for source and license information.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}

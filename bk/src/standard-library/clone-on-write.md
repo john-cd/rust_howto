@@ -56,21 +56,13 @@ The `Into` trait is the dual of [`From`][c~std::convert::From~docs]↗{{hi:std::
 
 ## Convert a `Cow` to a Borrowed or Owned Type {#convert-cow-to-str}
 
-To use as a borrowed type, call a method from one of the following traits:
+Pass a reference to the `Cow<str>` where a function accepts `&str`. To keep the text after its input buffer goes away, call `into_owned()`. It clones borrowed text or moves an existing `String`.
 
-- [`std::borrow::Borrow`][c~std::borrow::Borrow~docs]↗{{hi:std::borrow::Borrow}},
-- [`std::convert::AsRef`][c~std::convert::AsRef~docs]↗{{hi:std::convert::AsRef}},
-- [`std::ops::Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} explicitly or implicitly through a coercion{{hi:Coercion}}.
-
-To convert to an owned type, use [`std::borrow::Cow::into_owned`][c~std::borrow::Cow::into_owned~docs]↗{{hi:std::borrow::Cow::into_owned}}, or [`std::string::ToString`][c~std::string::ToString~docs]↗{{hi:std::string::ToString}} if a `Cow<str>`. Alternatively, use any method to get a reference and then call [`std::borrow::ToOwned`][c~std::borrow::ToOwned~docs]↗{{hi:std::borrow::ToOwned}}.
-
-The following example demonstrates how to convert a `Cow<str>` to a `&str` or a `String`:
+This example reads a status label through a slice, then saves it before dropping the input buffer.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/cow/cow_to_borrowed_owned.rs:example}}
 ```
-
-This example was adapted from a [StackOverflow discussion][stackoverflow~how-do-i-get-a-str-or-string-from-stdborrowcowstr]↗.
 
 ## Use `Arc`, `Rc`, `Box` as `Cow` Alternatives {#cow-alternatives}
 

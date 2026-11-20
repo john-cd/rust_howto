@@ -1,70 +1,24 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! `divan` is a Rust benchmarking framework.
-//!
-//!
-//! To use `divan`, add the following to your project's `Cargo.toml`:
-//! ```toml
-//! [dev-dependencies]
-//!
-//! divan = "0.1.21"
-//! [[bench]]
-//! name = "divan"
-//! harness = false
-//! ```
-//!
-//!
-//! Run the benchmark with `cargo bench`.
-//! This example demonstrates how to benchmark a recursive Fibonacci function.
+//! Measures the cost of finding a separator near the end of a byte buffer.
 
-/// Define a `fibonacci` function to benchmark.
-fn compute_fibonacci(n: u64) -> u64 {
-    match n {
-        0 => 0,
-        1 => 1,
-        _ => compute_fibonacci(n - 2) + compute_fibonacci(n - 1),
-    }
+/// Finds the byte offset of the first newline.
+fn first_newline(input: &[u8]) -> Option<usize> {
+    input.iter().position(|&byte| byte == b'\n')
 }
 
-/// The benchmarks.
-mod bench {
-    use super::*;
+/// Measures the scan over two buffer lengths, with setup outside the timer.
+#[divan::bench(args = [64, 4096])]
+fn scan_for_newline(bencher: divan::Bencher, len: usize) {
+    let mut input = vec![b'x'; len];
+    input[len - 1] = b'\n';
 
-    /// Register the function above for benchmarking.
-    #[divan::bench]
-    fn fibonacci() -> u64 {
-        compute_fibonacci(divan::black_box(20))
-    }
+    bencher.bench_local(|| first_newline(divan::black_box(input.as_slice())));
 }
 
-/// When `harness` is set to false, we are responsible for defining a `main()`
-/// function to run tests and benchmarks.
+/// Runs the registered benchmarks when Cargo builds this target as a benchmark.
 fn main() {
-    run_benchmarks();
-}
-
-/// Runs the registered benchmarks when this file is built as a benchmark.
-fn run_benchmarks() {
-    // Run registered benchmarks.
-    #[cfg(not(test))]
     divan::main();
 }
-// Example adapted from https://nikolaivazquez.com/blog/divan/
 // ANCHOR_END: example
-
-/// Runs the example through its program entry point.
-pub fn run() {
-    run_benchmarks();
-}
-
-/// Checks that the benchmark entry point is available in test mode.
-#[cfg(test)]
-mod tests {
-
-    /// The benchmark entry point compiles when the harness is built for tests.
-    #[test]
-    fn test_divan_example_entry_point() {
-        main();
-    }
-}

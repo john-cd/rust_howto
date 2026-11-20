@@ -155,6 +155,8 @@ This topic is covered in the [Async](../categories/asynchronous/index.md) chapte
 - [[structs | Structs]].
 - [[trait_objects_and_dynamic_dispatch | Trait Objects]].
 
+See [Third-Party Credits](../appendices/third_party_credits.md) for source and license information.
+
 {{#include refs.incl.md}}
 {{#include ../refs/link-refs.md}}
 

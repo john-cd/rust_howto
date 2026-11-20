@@ -655,6 +655,8 @@
   - [Documentation Generation](appendices/contributing/documentation_generation.md)
   - [Publication to `crates.io`](appendices/contributing/publication_to_crates.io.md)
 
+[Third-Party Credits](appendices/third_party_credits.md)
+
 [Thanks](appendices/thanks.md)
 
 {{#include refs.incl.md}}

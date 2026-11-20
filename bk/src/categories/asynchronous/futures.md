@@ -56,6 +56,8 @@ The [`futures`][c~futures~docs]↗{{hi:futures}} crate provides an extension tra
 
 - [Tokio](tokio.md).
 
+See [Third-Party Credits](../../appendices/third_party_credits.md) for source and license information.
+
 {{#include refs.incl.md}}
 {{#include ../../refs/link-refs.md}}
 
