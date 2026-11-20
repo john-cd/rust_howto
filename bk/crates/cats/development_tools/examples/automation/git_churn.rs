@@ -15,12 +15,20 @@ use gix::bstr::ByteSlice;
 use gix::object::tree::diff::Action;
 
 /// Counts the commits (among the last `limit`, first parent only) that
-/// touched each path.
+/// touched each path. Shallow boundary commits have no available parent diff.
 fn churn(repo: &gix::Repository, limit: usize) -> anyhow::Result<BTreeMap<String, usize>> {
     let mut counts = BTreeMap::new();
     let head = repo.head_commit()?;
+    let shallow_commits = repo.shallow_commits()?;
     for info in head.ancestors().first_parent_only().all()?.take(limit) {
         let commit = info?.object()?;
+        if shallow_commits
+            .as_ref()
+            .is_some_and(|ids| ids.binary_search(&commit.id).is_ok())
+        {
+            continue;
+        }
+
         let tree = commit.tree()?;
         // The first commit has no parent: compare with the empty tree.
         let parent_tree = match commit.parent_ids().next() {
@@ -68,15 +76,64 @@ pub fn run() -> anyhow::Result<()> {
     entry()
 }
 
-/// Counts recent file changes in the checkout containing this example.
+/// Exercises history traversal with a temporary repository.
 #[cfg(test)]
 mod tests {
+    use std::process::Command;
+
     use super::*;
 
-    /// Counts recent file changes in the checkout containing this example.
+    /// Runs a Git fixture command and surfaces its diagnostic on failure.
+    fn git(dir: &Path, args: &[&str]) -> anyhow::Result<()> {
+        let output = Command::new("git")
+            .current_dir(dir)
+            .args([
+                "-c",
+                "user.name=Test Author",
+                "-c",
+                "user.email=test@example.invalid",
+                "-c",
+                "commit.gpgsign=false",
+            ])
+            .args(args)
+            .output()?;
+        anyhow::ensure!(
+            output.status.success(),
+            "git {args:?} failed: {}",
+            String::from_utf8_lossy(&output.stderr)
+        );
+        Ok(())
+    }
+
+    /// Counts changes in full history and skips the boundary in a shallow clone.
     #[test]
-    fn counts_changes_in_the_example_checkout() -> anyhow::Result<()> {
-        main()
+    fn counts_changes_up_to_the_available_history() -> anyhow::Result<()> {
+        let temp = tempfile::tempdir()?;
+        let full = temp.path().join("full");
+        git(temp.path(), &["init", "--quiet", "full"])?;
+        for content in ["first", "second"] {
+            std::fs::write(full.join("notes.txt"), content)?;
+            git(&full, &["add", "--", "notes.txt"])?;
+            git(&full, &["commit", "--quiet", "-m", content])?;
+        }
+        assert_eq!(
+            churn_at(&full, 20)?,
+            BTreeMap::from([("notes.txt".into(), 2)])
+        );
+
+        git(
+            temp.path(),
+            &[
+                "clone",
+                "--quiet",
+                "--depth=1",
+                "--no-local",
+                "full",
+                "shallow",
+            ],
+        )?;
+        assert!(churn_at(&temp.path().join("shallow"), 20)?.is_empty());
+        Ok(())
     }
 
     /// Reports a clear failure for a temporary directory outside any repository.
