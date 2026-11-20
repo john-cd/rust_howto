@@ -56,9 +56,11 @@ export CARGO_BUILD_TARGET_DIR := build_target_dir
 export CARGO_TERM_QUIET := env("CARGO_TERM_QUIET", "true")
 host_build_volume := if os() == "windows" { trim(shell('pwsh.exe -NoLogo -NoProfile -File "$1" -BuildRoot "$2"', join(build_repo, "scripts/cargo-host.ps1"), build_code_build_root)) } else { "ok" }
 export CARGO_BUILD_BUILD_DIR := if host_build_volume == "ok" { build_intermediate_dir } else { error("Cargo build root must use NTFS or ReFS (Rust 1.100.0 or newer)") }
-export RUSTC_WRAPPER := env("RUSTC_WRAPPER", "sccache")
-export CARGO_BUILD_RUSTC_WRAPPER := env("CARGO_BUILD_RUSTC_WRAPPER", "sccache")
-export CARGO_INCREMENTAL := "0"
+# Use direct rustc by default on Windows to avoid sccache's MSVC command-line limit.
+build_wrapper_default := if os_family() == "windows" { "" } else { "sccache" }
+export RUSTC_WRAPPER := env("RUSTC_WRAPPER", build_wrapper_default)
+export CARGO_BUILD_RUSTC_WRAPPER := env("CARGO_BUILD_RUSTC_WRAPPER", build_wrapper_default)
+export CARGO_INCREMENTAL := env("CARGO_INCREMENTAL", if os_family() == "windows" { "1" } else { "0" })
 export SCCACHE_DIR := build_code_sccache_root
 export SCCACHE_CACHE_SIZE := "45G"
 export SCCACHE_BASEDIRS := build_sccache_basedirs
