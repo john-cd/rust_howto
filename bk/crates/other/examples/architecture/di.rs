@@ -70,8 +70,6 @@ trait Conversation: Interface {
 
 /// A conversation in English, which greets using an injected greeter.
 #[derive(Component)]
-
-/// A conversation in English, which greets using an injected greeter.
 #[shaku(interface = Conversation)]
 struct EnglishConversation {
     // Components can depend on other components.
