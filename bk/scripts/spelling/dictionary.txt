@@ -1355,6 +1355,7 @@ OneSignal
 Oniguruma
 Onto
 OpEn
+Opam
 OpenAI
 OpenAL
 OpenAPI
@@ -3821,6 +3822,7 @@ onesignal
 onnx
 onnxruntime
 oorandom
+opam
 open
 openapi
 opencl
@@ -3946,6 +3948,8 @@ portaudio
 portsAttributes
 postage
 postcard
+postcondition
+postconditions
 postgres
 postgresql
 postmates
