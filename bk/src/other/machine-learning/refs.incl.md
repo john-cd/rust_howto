@@ -5,7 +5,6 @@
 [ex~ml~smartcore]: classical_ml.md#smartcore
 [ex~science~classical-ml]: classical_machine_learning.md#classical-ml
 [ex~science~deep-learning]: deep_learning.md#deep-learning
-[c~cudarc~docs]: https://docs.rs/cudarc
 [c~cudarc~repo]: https://github.com/coreylowman/cudarc
 [c~dfdx~docs]: https://docs.rs/dfdx
 [c~dfdx~repo]: https://github.com/chelsea0x3b/dfdx

@@ -2294,7 +2294,10 @@
 [c~cubecl~lib.rs~badge]: https://img.shields.io/badge/lib.rs-cubecl-yellow
 [c~cubecl~repo]: https://github.com/tracel-ai/cubecl
 [c~cubecl~repo~badge]: https://img.shields.io/badge/cubecl-steelblue?logo=github
+[c~cudarc~crates.io]: https://crates.io/crates/cudarc
+[c~cudarc~crates.io~badge]: https://img.shields.io/badge/crates.io-cudarc-crimson
 [c~cudarc~docs]: https://docs.rs/cudarc/
+[c~cudarc~docs~badge]: https://img.shields.io/crates/v/cudarc?label=cudarc
 [c~curl~crates.io]: https://crates.io/crates/curl
 [c~curl~crates.io~badge]: https://img.shields.io/badge/crates.io-curl-crimson
 [c~curl~docs]: https://docs.rs/curl
@@ -6079,7 +6082,10 @@
 [c~oorandom~recent-downloads~badge]: https://img.shields.io/crates/dr/oorandom
 [c~oorandom~repo]: https://hg.sr.ht/~icefox/oorandom
 [c~oorandom~repo~badge]: https://img.shields.io/badge/oorandom-steelblue?logo=github
+[c~opencl3~crates.io]: https://crates.io/crates/opencl3
+[c~opencl3~crates.io~badge]: https://img.shields.io/badge/crates.io-opencl3-crimson
 [c~opencl3~docs]: https://docs.rs/opencl3/
+[c~opencl3~docs~badge]: https://img.shields.io/crates/v/opencl3?label=opencl3
 [c~opencv~crates.io]: https://crates.io/crates/opencv
 [c~opencv~crates.io~badge]: https://img.shields.io/badge/crates.io-opencv-crimson
 [c~opencv~docs]: https://docs.rs/opencv
