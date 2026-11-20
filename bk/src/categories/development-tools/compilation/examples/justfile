@@ -1,16 +1,18 @@
 # TODO Reviewed ??-??-2026.
 
+manifest_path := join(justfile_directory(), "../../../../../crates/Cargo.toml")
+
 default:
     @just --list --unsorted
 
 check:
-    cargo check
+    cargo check --manifest-path {{ quote(manifest_path) }}
 
 build: check
-    cargo build
+    cargo build --manifest-path {{ quote(manifest_path) }}
 
 test filter="":
-    cargo test {{ quote(filter) }}
+    cargo test --manifest-path {{ quote(manifest_path) }} {{ quote(filter) }}
 
 @where:
     echo {{ quote("Invoked from " + invocation_directory()) }}
