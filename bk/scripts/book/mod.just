@@ -47,14 +47,21 @@ _default:
     {{ python }} "{{ source_directory() }}/refdefs.py" check --book-root "{{ root }}"
     {{ python }} "{{ source_directory() }}/../indices/update_refdefs_for_examples.py" check --book-root "{{ root }}"
 
-# Install the pinned mdbook-utils revision used by the book tooling.
+# Use the pinned mdbook-utils revision installed by CI, or install it locally.
 @_install-mdbook-utils:
-    cargo install --git https://github.com/john-cd/mdbook-utils --rev {{ mdbook_utils_rev }} --locked mdbook-utils
+    if [[ "${MDBOOK_TOOLS_PREINSTALLED:-false}" == true ]]; then \
+        command -v mdbook-utils >/dev/null; \
+    else \
+        cargo install --git https://github.com/john-cd/mdbook-utils --rev {{ mdbook_utils_rev }} --locked mdbook-utils; \
+    fi
 
-# Install the pinned word-index preprocessor when a developer renders outside CI.
-# Install the pinned mdbook-indexing preprocessor used to render the book.
+# Use the pinned indexing preprocessor installed by CI, or install it locally.
 @_install-mdbook-indexing:
-    cargo install --locked --version {{ mdbook_indexing_version }} mdbook-indexing
+    if [[ "${MDBOOK_TOOLS_PREINSTALLED:-false}" == true ]]; then \
+        command -v mdbook-indexing >/dev/null; \
+    else \
+        cargo install --locked --version {{ mdbook_indexing_version }} mdbook-indexing; \
+    fi
 
 # Generate the external crates.io category page from its checked-in snapshot.
 @_generate-index-category:

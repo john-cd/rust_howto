@@ -114,7 +114,8 @@ if [ "${BUILD_PDF:-false}" != "true" ] && [ -n "$PANDOC_BACKEND" ]; then
     mv "$PANDOC_BACKEND" "$PANDOC_BACKEND.ci-disabled"
     trap 'kill "$MONITOR_PID" 2>/dev/null || true; mv "$PANDOC_BACKEND.ci-disabled" "$PANDOC_BACKEND" 2>/dev/null || true' EXIT
 fi
-just bb
+# The image already contains the pinned mdBook tools.
+MDBOOK_TOOLS_PREINSTALLED=true just bb
 python3 scripts/book/check_search_index.py
 if [ -n "$PANDOC_BACKEND" ] && [ -f "$PANDOC_BACKEND.ci-disabled" ]; then
     mv "$PANDOC_BACKEND.ci-disabled" "$PANDOC_BACKEND"
