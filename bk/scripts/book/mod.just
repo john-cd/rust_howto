@@ -55,7 +55,7 @@ _default:
 
 # Use the pinned mdbook-utils revision installed by CI, or install it locally.
 @_install-mdbook-utils:
-    if [[ "${MDBOOK_TOOLS_PREINSTALLED:-false}" == true ]]; then \
+    if [ "${MDBOOK_TOOLS_PREINSTALLED:-false}" = true ]; then \
         command -v mdbook-utils >/dev/null; \
     else \
         cargo install --git https://github.com/john-cd/mdbook-utils --rev {{ mdbook_utils_rev }} --locked mdbook-utils; \
@@ -63,7 +63,7 @@ _default:
 
 # Use the pinned indexing preprocessor installed by CI, or install it locally.
 @_install-mdbook-indexing:
-    if [[ "${MDBOOK_TOOLS_PREINSTALLED:-false}" == true ]]; then \
+    if [ "${MDBOOK_TOOLS_PREINSTALLED:-false}" = true ]; then \
         command -v mdbook-indexing >/dev/null; \
     else \
         cargo install --locked --version {{ mdbook_indexing_version }} mdbook-indexing; \
