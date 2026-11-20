@@ -7,7 +7,7 @@ use clap::Subcommand;
 
 /// `afl` (American Fuzzy Lop) is a popular fuzz testing tool, and `afl` is a Rust crate that
 /// provides support for integrating AFL with Rust programs.
-#[cfg(not(windows))]
+#[cfg(all(not(windows), any(fuzzing, test)))]
 mod afl;
 
 /// `bolero` is a fuzzing frontend for Rust that supports multiple engines like libFuzzer, AFL, and
@@ -26,7 +26,7 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     /// Runs the `afl` example.
-    #[cfg(not(windows))]
+    #[cfg(all(not(windows), fuzzing))]
     #[command(name = "afl")]
     Afl,
 
@@ -39,7 +39,7 @@ enum Commands {
 fn dispatch(cli: Cli) {
     if let Some(command) = cli.command {
         match command {
-            #[cfg(not(windows))]
+            #[cfg(all(not(windows), fuzzing))]
             Commands::Afl => {
                 afl::run();
             }
@@ -62,12 +62,12 @@ mod tests {
 
     use super::*;
 
-    /// Every example is exposed as a subcommand on non-Windows platforms.
-    #[cfg(not(windows))]
+    /// Both example subcommands are available in AFL-instrumented builds.
+    #[cfg(all(not(windows), fuzzing))]
     const SUBCOMMANDS: &[&str] = &["afl", "bolero_example"];
 
-    /// Only the portable example is exposed on Windows.
-    #[cfg(windows)]
+    /// Ordinary builds expose the portable example.
+    #[cfg(not(all(not(windows), fuzzing)))]
     const SUBCOMMANDS: &[&str] = &["bolero_example"];
 
     /// Confirms that the command and its arguments are valid.

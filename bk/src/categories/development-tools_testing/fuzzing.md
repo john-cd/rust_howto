@@ -67,7 +67,9 @@ To get started:
 
 Fuzz testing provides pseudo-random input to find crashes and stability issues. AFL++ is a coverage-guided fuzzer; [`afl`][c~afl~docs]↗{{hi:afl}} provides Rust bindings for writing and running AFL++ targets.
 
-```rust,editable
+Use the instrumented build and select the `afl` subcommand as shown below.
+
+```rust,editable,noplayground
 {{#include ../../../crates/cats/development_tools_testing/examples/fuzzing/afl.rs:example}}
 ```
 
