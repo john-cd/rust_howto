@@ -1,12 +1,11 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Serialize and deserialize a struct with `bincode` 1.3.3.
+//! Historical example of the Bincode 1.3.3 wire format.
 //!
-//! Bincode 1.3.3 provides the familiar `serialize` and `deserialize` helpers.
-//! The project considers this release complete; Bincode 2 is unmaintained, so
-//! evaluate actively maintained alternatives before choosing a format for a
-//! new system.
+//! Bincode is unmaintained. The `serialize` and `deserialize` helpers show how
+//! existing Bincode 1.3.3 data is written and read. For new compact Serde
+//! messages, consider Postcard, which uses its own wire format.
 
 use serde::Deserialize;
 use serde::Serialize;
