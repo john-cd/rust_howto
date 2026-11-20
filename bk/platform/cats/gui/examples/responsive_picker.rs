@@ -52,7 +52,7 @@ impl eframe::App for App {
                     }
                 }
                 Err(mpsc::TryRecvError::Empty) => {
-                    ui.ctx().request_repaint_after(Duration::from_millis(32))
+                    ui.ctx().request_repaint_after(Duration::from_millis(32));
                 }
                 Err(mpsc::TryRecvError::Disconnected) => {
                     self.pending = None;
