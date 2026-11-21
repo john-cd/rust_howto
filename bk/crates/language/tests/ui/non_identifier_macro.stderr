@@ -1,12 +1,12 @@
 error: This macro only accepts an identifier.
- --> tests/ui/../../examples/macros/identifier_only_macro.rs
-  |
-  | macro_rules! must_be_an_identifier {
+  --> tests/ui/../../examples/macros/identifier_only_macro.rs
+   |
+   | macro_rules! must_be_an_identifier {
 ...
-  |         compile_error!("This macro only accepts an identifier.")
-  |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  |
- ::: tests/ui/non_identifier_macro.rs:9:13
-  |
-9 |     let _ = must_be_an_identifier!(42);
-  |             -------------------------- in this macro invocation
+   |         compile_error!("This macro only accepts an identifier.")
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+  ::: tests/ui/non_identifier_macro.rs:10:13
+   |
+10 |     let _ = must_be_an_identifier!(42);
+   |             -------------------------- in this macro invocation

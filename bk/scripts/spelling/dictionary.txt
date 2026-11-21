@@ -207,6 +207,7 @@ Bitvector
 Blandy
 Block
 BodyExt
+Boettger’s
 Bonjour
 BonsaiDB
 Boolean
@@ -1355,6 +1356,7 @@ OneSignal
 Oniguruma
 Onto
 OpEn
+Opam
 OpenAI
 OpenAL
 OpenAPI
@@ -2009,6 +2011,7 @@ Tokenizing
 Tokio
 Tokio's
 TokioIo
+Tolnay
 Toml
 TopDocs
 Topological
@@ -2043,6 +2046,7 @@ TryInto
 TryStreamExt
 Tuple
 Turing
+Turon’s
 Turso
 Tweede
 Twiggy's
@@ -2081,6 +2085,7 @@ Uninstrumented
 Unionfind
 Univalent
 Unix
+Unlicense
 Unorm
 UnsafeCell
 Unsized
@@ -3821,6 +3826,7 @@ onesignal
 onnx
 onnxruntime
 oorandom
+opam
 open
 openapi
 opencl
@@ -3946,6 +3952,8 @@ portaudio
 portsAttributes
 postage
 postcard
+postcondition
+postconditions
 postgres
 postgresql
 postmates

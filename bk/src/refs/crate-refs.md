@@ -5988,6 +5988,9 @@
 [c~oauth2~lib.rs~badge]: https://img.shields.io/badge/lib.rs-oauth2-yellow
 [c~oauth2~repo]: https://github.com/ramosbugs/oauth2-rs
 [c~oauth2~repo~badge]: https://img.shields.io/badge/oauth2-steelblue?logo=github
+[c~objc2-foundation~crates.io]: https://crates.io/crates/objc2-foundation
+[c~objc2-foundation~docs]: https://docs.rs/objc2-foundation
+[c~objc2-foundation~repo]: https://github.com/madsmtm/objc2
 [c~objc2~crates.io]: https://crates.io/crates/objc2
 [c~objc2~crates.io~badge]: https://img.shields.io/badge/crates.io-objc2-crimson
 [c~objc2~docs]: https://docs.rs/objc2
@@ -9210,6 +9213,9 @@
 [c~syn~lib.rs~badge]: https://img.shields.io/badge/lib.rs-syn-yellow
 [c~syn~repo]: https://github.com/dtolnay/syn
 [c~syn~repo~badge]: https://img.shields.io/badge/syn-steelblue?logo=github
+[c~sysctl~crates.io]: https://crates.io/crates/sysctl
+[c~sysctl~docs]: https://docs.rs/sysctl
+[c~sysctl~repo]: https://github.com/johalun/sysctl-rs
 [c~sysinfo~crates.io]: https://crates.io/crates/sysinfo
 [c~sysinfo~crates.io~badge]: https://img.shields.io/badge/crates.io-sysinfo-crimson
 [c~sysinfo~docs]: https://docs.rs/sysinfo
