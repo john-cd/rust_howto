@@ -219,6 +219,9 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
     liblzma-dev \
     libreadline-dev \
     librocksdb-dev \
+    fonts-noto-cjk \
+    fonts-noto-color-emoji \
+    fonts-noto-core \
     librsvg2-bin \
     librsvg2-dev \
     libsqlite3-dev \

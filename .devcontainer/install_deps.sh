@@ -177,6 +177,7 @@ if [[ "$(uname -m)" == x86_64 ]]; then
 else
     cargo binstall --no-confirm --secure --version 0.14.2 typst-cli
 fi
+sudo apt-get install -y --no-install-recommends fonts-noto-cjk fonts-noto-color-emoji fonts-noto-core
 cargo binstall --no-confirm --secure --version "$JUST_VERSION" just
 cargo binstall --no-confirm --secure --force --version "$CARGO_FMT_TOML_VERSION" cargo-fmt-toml
 cargo binstall --no-confirm --secure --force --version "$DPRINT_VERSION" dprint

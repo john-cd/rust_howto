@@ -58,6 +58,15 @@ Run the repository build setup once per checkout:
 just build-setup
 ```
 
+To check the built PDF's extracted Unicode, install the pinned verifier dependency
+and run the extraction audit:
+
+```powershell
+python -m pip install --target D:/packages/rust_howto_pdf_check -r bk/scripts/book/pdf-verify-requirements.txt
+$env:PYTHONPATH = 'D:/packages/rust_howto_pdf_check'
+python bk/scripts/book/verify_pdf_unicode.py D:/target/rust_howto/main/book/pandoc/pdf/book.pdf
+```
+
 ## Run book recipes
 
 From `bk`, the main workspace recipes are:

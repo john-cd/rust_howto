@@ -246,6 +246,7 @@ filters = [
   { type = "lua", path = "scripts/book/pdf_badges.lua" },
   { type = "lua", path = "scripts/book/pdf_links.lua" },
   { type = "lua", path = "scripts/book/pdf_tables.lua" },
+  { type = "lua", path = "scripts/book/pdf_text.lua" },
 ]
 include-in-header = [
   "theme/pdf.typ",
