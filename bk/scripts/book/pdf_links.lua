@@ -138,6 +138,14 @@ local function resolve_link(link)
             end
         end
     end
+    if FORMAT == "typst" and link.target:match("^https?://")
+        and not link.content:find_if(function(inline)
+            return inline.t == "Image"
+        end) then
+        link.content:insert(1, pandoc.RawInline("typst", '#text(fill: rgb("#174ea6"), weight: "regular")['))
+        link.content:insert(pandoc.RawInline("typst", "]"))
+        return link
+    end
 end
 
 return {

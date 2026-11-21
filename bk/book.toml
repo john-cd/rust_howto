@@ -246,7 +246,7 @@ filters = [
   { type = "lua", path = "scripts/book/pdf_badges.lua" },
   { type = "lua", path = "scripts/book/pdf_links.lua" },
 ]
-include-in-header = ["theme/pdf.typ", "theme/pdf-draft.typ"]
+include-in-header = ["theme/pdf.typ", "theme/pdf-draft.typ", "theme/pdf-links.typ"]
 include-before-body = ["theme/pdf-front.typ"]
 
 # `mdbook-pandoc` overrides Pandoc's defaults for the following options to better support mdBooks
