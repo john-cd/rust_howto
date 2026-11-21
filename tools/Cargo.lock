@@ -185,6 +185,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "book-audit"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "clap",
+ "html5ever",
+ "percent-encoding",
+ "regex",
+ "serde_json",
+ "tempfile",
+ "toml",
+ "url",
+ "walkdir",
+]
+
+[[package]]
 name = "book_templates"
 version = "0.1.3"
 

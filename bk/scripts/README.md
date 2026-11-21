@@ -11,7 +11,7 @@ Use `just` to list root recipes and modules, then `just <module>` to list a modu
 | Module | Windows support | Unix support |
 | --- | --- | --- |
 | `anchors`, `chapters`, `crates`, `examples`, `includes`, `titles`, `toc`, `urls`, `wikilinks` | Their listed processing recipes have Windows implementations. Several use Git Bash; see each module's `mod.just`. | Their listed processing recipes. |
-| `book` | Full build, `refdefs-generate`, `refdefs-check`, category/alphabetical index generation, static-file copy, sitemap, `serve`, and `quick`. `quick` runs its Bash preview through Git Bash. | Full build and serve recipes, plus the faster `quick` preview. |
+| `book` | Full build and rendered-content audits, `refdefs-generate`, `refdefs-check`, category/alphabetical index generation, static-file copy, sitemap, `serve`, and `quick`. Audits cover rendered links, the word index, Playground imports, visible TODOs, and the generated search index. | Full build and rendered-content audits, serve recipes, plus the faster `quick` preview. `future` also checks staged preview links. |
 | `code` | Format, build, Clippy, nextest, doctests, package run, and temp cleanup. `heavy_test` and `heavytestall` are Unix-only. | Same, including heavy tests that start external services. |
 | `deps` | Cargo update, crate information, and cargo-deny checks. | Same. |
 | `docker` | `push_dev` only; it requires Docker credentials and publishes an image. | Docker image push and service-list recipes. |

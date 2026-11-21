@@ -12,13 +12,12 @@ From the repository root, render a fresh preview and verify its chapter links:
 
 ```console
 just --justfile bk/justfile book future
-python later/check_preview_links.py bk/book/future
 ```
 
-The checker requires every chapter listed in the staged summary to have rendered.
-It checks internal destinations, fragments, and unresolved reference labels in the
-publication scope. Pass `--include-deferred` to report link findings for Aerospace
-and Cryptocurrencies as well.
+The recipe checks that every chapter listed in the staged summary rendered and
+checks internal destinations, fragments, and unresolved reference labels in the
+publication scope. To include deferred Aerospace and Cryptocurrencies pages when
+rerunning the audit, use `just --justfile bk/scripts/book/mod.just audit-preview-links true`.
 
 ## Workspace Organization
 

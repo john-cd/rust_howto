@@ -36,12 +36,45 @@ _default:
 # Render future chapters with their own summary and the shared reference definitions.
 @future: _release_mbdbook-scrub
     mdbook build {{ quote(root + "/../later") }} --dest-dir {{ quote(root + "/book/future") }}
+    @just --justfile "{{ source_file() }}" audit-preview-links
 
 # Build the book from its Markdown files (incl. refdefs, index, categories, sitemap, and static assets)
-@buildbook: _release_mbdbook-scrub _install-mdbook-indexing refdefs-check _generate-index-category
+@buildbook: _release_mbdbook-scrub _install-mdbook-indexing refdefs-check _generate-index-category audit-visible-todos
     just --justfile "{{ source_directory() }}/../bash/mod.just" mdbook-build
     just --justfile "{{ source_directory() }}/../bash/mod.just" sitemap
     just --justfile "{{ source_directory() }}/../bash/mod.just" copystatic
+    @just --justfile "{{ source_file() }}" audit-rendered-links
+    @just --justfile "{{ source_file() }}" audit-word-index
+    @just --justfile "{{ source_file() }}" audit-playground
+    @just --justfile "{{ source_file() }}" audit-search-index
+
+# Reject visible TODO placeholders in the license and published Markdown.
+@audit-visible-todos:
+    cargo run --manifest-path "{{ root }}/../tools/Cargo.toml" --locked -p book-audit -- --repo-root "{{ root }}/.." visible-todos
+
+# Check all required rendered chapters, local links, and fragments.
+@audit-rendered-links:
+    cargo run --manifest-path "{{ root }}/../tools/Cargo.toml" --locked -p book-audit -- --repo-root "{{ root }}/.." rendered-links bk/book/html --all-chapters
+
+# Check links emitted by the word-index page.
+@audit-word-index:
+    cargo run --manifest-path "{{ root }}/../tools/Cargo.toml" --locked -p book-audit -- --repo-root "{{ root }}/.." word-index bk/book/html
+
+# Check runnable Playground imports against the pinned crate list.
+@audit-playground:
+    cargo run --manifest-path "{{ root }}/../tools/Cargo.toml" --locked -p book-audit -- --repo-root "{{ root }}/.." playground bk/book/html --book-root bk
+
+# Check the generated mdBook search index for visible terms and excluded chapters.
+@audit-search-index:
+    cargo run --manifest-path "{{ root }}/../tools/Cargo.toml" --locked -p book-audit -- --repo-root "{{ root }}/.." search-index --book-root bk
+
+# Check the staged future preview, optionally including deferred categories.
+@audit-preview-links include_deferred="false":
+    if [ "{{ include_deferred }}" = "true" ]; then \
+        cargo run --manifest-path "{{ root }}/../tools/Cargo.toml" --locked -p book-audit -- --repo-root "{{ root }}/.." preview-links bk/book/future --include-deferred; \
+    else \
+        cargo run --manifest-path "{{ root }}/../tools/Cargo.toml" --locked -p book-audit -- --repo-root "{{ root }}/.." preview-links bk/book/future; \
+    fi
 
 # Merge missing dependency references into the curated crate reference file.
 @refdefs-generate: _install-mdbook-utils

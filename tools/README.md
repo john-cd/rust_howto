@@ -5,6 +5,7 @@
 This workspace contains tools written in Rust, which you may use to manage the book.
 
 - `clean` is a very simple tool to clean `crates/**/temp` before and after testing.
+- `book-audit` validates rendered book links, preview output, search-index contents, Playground imports, and visible TODOs.
 - `crate_indices` creates the `crates by category` and `crates (alphabetical)` pages.
 - `example-integrity` inventories chapters, code snippets, and Cargo targets, auditing example integrity across the book.
 - `mdbook-private` is a repository-local mdBook 0.5 port of `mdbook-private` that filters or styles private chapters and sections.
@@ -57,6 +58,21 @@ cargo run --locked -p example-integrity -- unused-examples [--book-root <PATH>] 
 - `--repo-root <PATH>`: Specify the repository root directory to scan (defaults to the containing repository).
 - `tests`: Report example test-convention coverage. Informational by default; add `--fail` to gate on violations.
 - `unused-examples`: List `.rs` files under the selected book's `crates/` directory that native includes in `bk/src` and `later/src` do not reference.
+
+### `book-audit`
+
+Checks generated HTML, staged previews, the mdBook search index, runnable Playground imports, and visible TODO placeholders. The `just book buildbook` recipe runs the published-book checks; `just book future` builds the future-book preview and checks its links.
+
+```sh
+cargo run --locked -p book-audit -- --repo-root <REPO> rendered-links bk/book/html --all-chapters
+cargo run --locked -p book-audit -- --repo-root <REPO> word-index bk/book/html
+cargo run --locked -p book-audit -- --repo-root <REPO> playground bk/book/html --book-root bk
+cargo run --locked -p book-audit -- --repo-root <REPO> search-index --book-root bk
+cargo run --locked -p book-audit -- --repo-root <REPO> preview-links bk/book/future [--include-deferred]
+cargo run --locked -p book-audit -- --repo-root <REPO> visible-todos
+```
+
+Rendered-link and preview findings include the rendered file and line when available. All checks return a failing exit status when they find a gap.
 
 ### `mdbook-private`
 

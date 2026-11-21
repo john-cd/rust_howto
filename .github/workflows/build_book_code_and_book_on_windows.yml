@@ -201,5 +201,4 @@ jobs:
         run: |
           python scripts/book/test_refdefs.py
           just bb
-          python scripts/book/check_search_index.py
         working-directory: bk

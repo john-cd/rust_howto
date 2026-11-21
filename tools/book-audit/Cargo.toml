@@ -1,0 +1,37 @@
+# TODO Reviewed ??-??-2026.
+
+[package]
+name = "book-audit"
+version.workspace = true
+description = "Rendered book and visible-content integrity checks"
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+publish.workspace = true
+
+[dependencies]
+# Flexible concrete Error type built on std::error::Error
+anyhow.workspace = true
+# A simple to use, efficient, and full-featured Command Line Argument Parser
+clap.workspace = true
+# A fast, standards-compliant HTML tokenizer
+html5ever.workspace = true
+# A lightweight regex engine that optimizes for binary size and compilation time.
+regex.workspace = true
+# A JSON serialization file format
+serde_json.workspace = true
+# Native TOML parser and serializer
+toml.workspace = true
+# URL library for resolving rendered links
+url.workspace = true
+# Recursively walk directories
+walkdir.workspace = true
+# Decodes escaped URL paths and fragments
+percent-encoding.workspace = true
+
+[dev-dependencies]
+# A library for managing temporary files and directories.
+tempfile.workspace = true
+
+[lints]
+workspace = true

@@ -3,6 +3,7 @@
 [workspace]
 resolver = "3"
 members = [
+    "book-audit",
     "clean",
     "crate_indices",
     "example-integrity",
@@ -29,6 +30,8 @@ chrono = "0.4.45"
 clap = { version = "4.6.7", features = ["cargo", "derive"] }
 # A simple to use, efficient, and full-featured Command Line Argument Parser
 clap_builder = "4.6.7"
+# A fast, standards-compliant HTML tokenizer.
+html5ever = "0.39.0"
 # API client for crates.io
 crates_io_api = "0.12.0"
 # Measures Rust benchmark performance with statistical analysis and comparison reports.
@@ -47,6 +50,8 @@ mockito = "1.7.2"
 once_cell = "1.21.4"
 # A collection of Rust-based tools for processing Markdown files, particularly for books and documentation projects.
 parse_lib = { version = "0.1.3", path = "../book_tooling/parse_lib" }
+# Decodes escaped paths and fragments from rendered local links.
+percent-encoding = "2.3.2"
 # A lightweight regex engine that optimizes for binary size and compilation time.
 regex = "1.13.1"
 # higher level HTTP client library
