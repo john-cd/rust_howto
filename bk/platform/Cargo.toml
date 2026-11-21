@@ -1374,7 +1374,8 @@ volatile_composites = "warn"
 # Checks for while loops comparing floating point values.
 while_float = "warn"
 
-# Keep this local fix until all active dependency paths can use the maintained v3 crate.
+# Keep this local fix while Wasmer still requires v2; Alloy has moved off this path.
+# Review by 2027-01-19: https://github.com/john-cd/rust_howto/issues/2462
 [patch.crates-io]
 # Almost drop-in replacement to panics in proc-macros
 proc-macro-error2 = { path = "patches/proc-macro-error2" }
