@@ -234,7 +234,18 @@ fn target_batches(
     check: bool,
     targets: &[PathBuf],
 ) -> Result<Vec<Vec<PathBuf>>> {
-    let is_windows = cfg!(windows);
+    target_batches_for_platform(rustfmt, edition, config, check, targets, cfg!(windows))
+}
+
+/// Splits target paths using the selected platform's argument budget.
+fn target_batches_for_platform(
+    rustfmt: &Path,
+    edition: &str,
+    config: Option<&Path>,
+    check: bool,
+    targets: &[PathBuf],
+    is_windows: bool,
+) -> Result<Vec<Vec<PathBuf>>> {
     let mut fixed_arguments = vec![
         rustfmt.as_os_str(),
         OsStr::new("--edition"),
@@ -288,5 +299,62 @@ fn estimated_argument_length(argument: &OsStr, windows: bool) -> usize {
         argument.to_string_lossy().encode_utf16().count() + 4
     } else {
         argument.len() + 1
+    }
+}
+
+/// Verifies rustfmt batching limits and Windows command-line budget handling.
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// Keeps batches within the per-process target count and preserves target order.
+    #[test]
+    fn target_batches_split_at_the_target_count() -> Result<()> {
+        let targets = (0..17)
+            .map(|index| PathBuf::from(format!("src/{index}.rs")))
+            .collect::<Vec<_>>();
+
+        let batches = target_batches(Path::new("rustfmt"), "2024", None, true, &targets)?;
+        assert_eq!(
+            batches.iter().map(Vec::len).collect::<Vec<_>>(),
+            [MAX_TARGETS_PER_BATCH, 1]
+        );
+        assert_eq!(batches.into_iter().flatten().collect::<Vec<_>>(), targets);
+        Ok(())
+    }
+
+    /// Splits Windows batches by command-line size and rejects a single oversized path.
+    #[test]
+    fn windows_batches_respect_the_command_line_budget() -> Result<()> {
+        let targets = [
+            PathBuf::from(format!("C:\\{}", "a".repeat(12_050))),
+            PathBuf::from(format!("C:\\{}", "b".repeat(12_050))),
+        ];
+        let batches = target_batches_for_platform(
+            Path::new("C:\\rustfmt.exe"),
+            "2024",
+            Some(Path::new("C:\\rustfmt.toml")),
+            true,
+            &targets,
+            true,
+        )?;
+        assert_eq!(batches.len(), 2);
+        assert!(batches.iter().all(|batch| batch.len() == 1));
+
+        let oversized = [PathBuf::from(format!(
+            "C:\\{}",
+            "x".repeat(WINDOWS_COMMAND_LINE_BUDGET)
+        ))];
+        let error = target_batches_for_platform(
+            Path::new("C:\\rustfmt.exe"),
+            "2024",
+            None,
+            false,
+            &oversized,
+            true,
+        )
+        .expect_err("a single oversized Windows argument should fail");
+        assert!(error.to_string().contains("Windows command-line budget"));
+        Ok(())
     }
 }
