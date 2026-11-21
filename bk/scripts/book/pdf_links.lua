@@ -4,6 +4,61 @@ local chapter_sources = {}
 local source_targets = {}
 local link_chapter
 
+local function disambiguate_duplicate_headers(document)
+    local header_info = {}
+    local title_identifiers = {}
+    document:walk({
+        Header = function(heading)
+            local identifier = heading.identifier
+            if identifier == "" then return end
+            local scope = identifier:match("^(.-%.md__)") or ""
+            if not title_identifiers[scope] then title_identifiers[scope] = identifier end
+            local info = header_info[identifier]
+            if not info then
+                info = { count = 0 }
+                header_info[identifier] = info
+            end
+            info.count = info.count + 1
+        end,
+    })
+
+    local reserved = {}
+    for identifier, info in pairs(header_info) do
+        reserved[identifier] = true
+    end
+
+    local seen = {}
+    return document:walk({
+        Header = function(heading)
+            local identifier = heading.identifier
+            local info = header_info[identifier]
+            if not info or info.count < 2 then return end
+
+            seen[identifier] = (seen[identifier] or 0) + 1
+            local scope = identifier:match("^(.-%.md__)") or ""
+            local is_title_identifier = identifier == title_identifiers[scope]
+            local is_chapter_title = is_title_identifier and seen[identifier] == 1
+            local rename = is_chapter_title or seen[identifier] > (is_title_identifier and 2 or 1)
+
+            if not rename then return end
+
+            local base = identifier .. (is_chapter_title and "-pdf-chapter" or "-pdf")
+            local destination = base
+            local suffix = 2
+            while reserved[destination] do
+                destination = base .. "-" .. suffix
+                suffix = suffix + 1
+            end
+            reserved[destination] = true
+            return pandoc.Header(
+                heading.level,
+                heading.content,
+                pandoc.Attr(destination, heading.classes, heading.attributes)
+            )
+        end,
+    })
+end
+
 local function decode_percent_escapes(value)
     return (value:gsub("%%(%x%x)", function(hex)
         return string.char(tonumber(hex, 16))
@@ -26,6 +81,7 @@ local function source_path(prefix)
 end
 
 local function header(heading)
+    local original_identifier = heading.identifier
     local prefix = heading.identifier:match("^(.-%.md__)")
     if prefix and prefix ~= link_chapter then
         link_chapter = prefix
@@ -47,6 +103,7 @@ local function header(heading)
         end
         heading_targets[heading.identifier] = true
     end
+    if heading.identifier ~= original_identifier then return heading end
 end
 
 local function anchor(span)
@@ -160,6 +217,7 @@ local function resolve_link(link)
 end
 
 return {
+    { Pandoc = disambiguate_duplicate_headers },
     { traverse = "topdown", Header = header, Span = anchor },
     { traverse = "topdown", Header = function(heading)
           link_chapter = heading.identifier:match("^(.-%.md__)") or link_chapter
