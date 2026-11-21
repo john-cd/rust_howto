@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Sorts the same words using German and Swedish collation.
 
 // ANCHOR: example

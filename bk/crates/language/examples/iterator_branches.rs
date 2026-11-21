@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Returns two iterator implementations through a generated enum.
 
 // ANCHOR: example

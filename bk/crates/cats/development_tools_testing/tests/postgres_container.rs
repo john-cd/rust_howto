@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Checks PostgreSQL queries and type mappings against disposable Docker containers.
 
 // ANCHOR: example

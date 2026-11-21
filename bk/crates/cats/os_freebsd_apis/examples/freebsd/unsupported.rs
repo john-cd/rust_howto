@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Fallback behavior for the FreeBSD-only example.
 
 /// Reports that the kernel query requires FreeBSD.

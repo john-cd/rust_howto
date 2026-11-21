@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Convert a synchronous callback's result into an FFI-safe status.
 
 use std::panic::UnwindSafe;

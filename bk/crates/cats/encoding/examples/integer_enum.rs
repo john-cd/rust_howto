@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Serializes an enum using its protocol's assigned integer codes.
 
 // ANCHOR: example

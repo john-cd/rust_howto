@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Encodes and decodes a small AVIF image entirely in memory.
 
 // ANCHOR: example

@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Compare ordinary summation with Neumaier compensated summation.
 
 // ANCHOR: example

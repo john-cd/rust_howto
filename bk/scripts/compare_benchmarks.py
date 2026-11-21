@@ -1,3 +1,4 @@
+# TODO Reviewed ??-??-2026.
 """Compare two command binaries using interleaved, repeated wall-clock runs."""
 
 import argparse

@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Runnable entry point for the sensors example.
 /// Provides i2c temperature behavior for the sensors component.
 mod i2c_temperature;

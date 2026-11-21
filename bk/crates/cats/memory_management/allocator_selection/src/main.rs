@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Application entry point for allocator selection.
 /// Provides global allocator behavior for the src component.
 mod global_allocator;

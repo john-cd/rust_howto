@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Encodes a state transition in the type system.
 
 // ANCHOR: example

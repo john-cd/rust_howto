@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Compiles the Rust shader and validates the generated Vulkan SPIR-V.
 
 use std::env;

@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! A minimal command registry shared with linked extension crates.
 
 use std::collections::BTreeMap;

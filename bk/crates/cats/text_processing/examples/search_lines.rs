@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Finds matching lines and collects their line numbers without invoking a CLI.
 
 // ANCHOR: example

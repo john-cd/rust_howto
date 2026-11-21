@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Renders source spans and a hint for a small parser diagnostic.
 
 // ANCHOR: example

@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Resolve a repeated or skipped wall-clock time explicitly.
 
 use jiff::ToSpan;

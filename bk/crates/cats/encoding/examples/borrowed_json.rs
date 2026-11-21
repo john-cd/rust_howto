@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Compares input-backed JSON fields with owned fields read from a stream.
 
 // ANCHOR: example

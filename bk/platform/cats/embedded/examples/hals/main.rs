@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Runnable entry point for the hals example.
 /// Provides blink output pin behavior for the hals component.
 mod blink_output_pin;

@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Reads a Windows-1252 fixture as UTF-8 text, one line at a time.
 
 // ANCHOR: example

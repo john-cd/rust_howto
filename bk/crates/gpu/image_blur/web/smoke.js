@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 // Tests the staged Rust benchmark's WGSL in a browser WebGPU implementation.
 const result = document.querySelector("#result");
 const width = 130;

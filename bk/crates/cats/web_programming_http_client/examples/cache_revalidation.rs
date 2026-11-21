@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Models a fresh cache hit and an ETag-based revalidation without a network.
 
 // ANCHOR: example

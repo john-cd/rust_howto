@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Compare explicit command lists with a distributed inventory.
 
 use plugin_registry::Command;

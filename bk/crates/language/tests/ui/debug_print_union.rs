@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! A union cannot derive the book's DebugPrint trait.
 
 #[derive(proc_macros::DebugPrint)]

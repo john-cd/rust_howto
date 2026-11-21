@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 // A separable 5-tap Gaussian blur with clamped edges and one final rounding.
 struct Image {
     width: u32,

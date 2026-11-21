@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Runnable entry point for the text rendering example.
 /// Provides rasterize glyph behavior for the text rendering component.
 mod rasterize_glyph;

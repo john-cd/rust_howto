@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Runnable entry point for the wasm basics example.
 /// Provides inspect wasm module behavior for the wasm basics component.
 mod inspect_wasm_module;

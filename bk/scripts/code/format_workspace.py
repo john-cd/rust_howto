@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# TODO Reviewed ??-??-2026.
 """Run rustfmt over Cargo targets in bounded command-line chunks."""
 
 from __future__ import annotations

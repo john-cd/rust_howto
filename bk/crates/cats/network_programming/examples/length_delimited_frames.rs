@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Decodes length-prefixed messages across arbitrary stream read boundaries.
 
 // ANCHOR: example

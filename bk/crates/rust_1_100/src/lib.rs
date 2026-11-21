@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Book examples for features stabilized in Rust 1.100.
 
 // ANCHOR: never_type

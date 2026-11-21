@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! A small Lambda handler that can also be tested without AWS.
 
 // ANCHOR: example

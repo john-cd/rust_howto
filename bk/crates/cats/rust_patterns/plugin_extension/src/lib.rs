@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! One extension crate linked into the registry example.
 
 use plugin_registry::Command;

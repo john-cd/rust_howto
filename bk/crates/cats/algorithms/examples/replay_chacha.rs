@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Replays a fixed sequence of draws with a named generator.
 
 // ANCHOR: example

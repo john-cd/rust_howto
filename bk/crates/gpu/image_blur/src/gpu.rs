@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Uploads a grayscale image, runs both compute passes, and reads the result back.
 
 use std::sync::mpsc;

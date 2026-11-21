@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026. -->
 [third-party-book-copyright]: https://john-cd.com/rust_howto/third-party-licenses/Rust-Book-COPYRIGHT.txt
 [third-party-cancellation]: https://github.com/Canop/blog-cancelable-background-task/blob/main/README.md
 [third-party-license-0]: https://github.com/rust-lang-nursery/rust-cookbook/blob/master/LICENSE-CC0

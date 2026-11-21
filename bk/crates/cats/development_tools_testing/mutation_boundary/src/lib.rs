@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! A tiny boundary with a test that initially misses its equality case.
 
 // ANCHOR: example

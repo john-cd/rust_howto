@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Pin a borrowed future, observe its cancellation, and own spawned tasks.
 
 use std::future::pending;

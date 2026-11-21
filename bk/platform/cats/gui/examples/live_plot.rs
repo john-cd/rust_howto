@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Adds simulated samples to an interactive desktop plot.
 
 // ANCHOR: example

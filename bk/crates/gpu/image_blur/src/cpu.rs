@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Computes the integer blur using two passes over contiguous image rows.
 
 use rayon::prelude::*;

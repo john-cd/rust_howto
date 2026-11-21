@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Typed library errors and an application diagnostic boundary.
 
 use std::io::Write;

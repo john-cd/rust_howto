@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Runnable entry point for the embassy example.
 /// Provides embassy behavior for the embassy component.
 mod embassy;

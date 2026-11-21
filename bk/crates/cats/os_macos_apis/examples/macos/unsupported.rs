@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Fallback behavior for the macOS-only example.
 
 /// Reports that the Foundation query requires macOS.

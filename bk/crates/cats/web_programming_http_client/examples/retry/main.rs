@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Runnable entry point for the retry example.
 /// Provides exponential backoff behavior for the retry component.
 mod exponential_backoff;

@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! A borrowed allocation passed across an `extern "C"` function boundary.
 
 // ANCHOR: example

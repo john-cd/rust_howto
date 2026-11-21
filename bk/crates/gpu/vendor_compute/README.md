@@ -1,3 +1,4 @@
+<!-- TODO Reviewed ??-??-2026. -->
 # CUDA and OpenCL Compute Examples
 
 These examples double 130 unsigned integers and compare the complete readback with a CPU reference. They share a lockfile and have independent Cargo features. The compile check uses dynamic loading and does not need a GPU or either vendor runtime.

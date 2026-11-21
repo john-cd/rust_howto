@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Streams bytes through a Zstandard encoder and decoder.
 
 // ANCHOR: example

@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Compares a parallel CPU image blur with GPU compute including host transfers.
 
 mod cpu;

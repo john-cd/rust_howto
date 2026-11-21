@@ -1,3 +1,4 @@
+// TODO Reviewed ??-??-2026.
 //! Writes the vertices and flat color of a red triangle.
 
 #![no_std]
