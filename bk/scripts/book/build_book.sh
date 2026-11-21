@@ -16,15 +16,15 @@ fi
 
 case "${BUILD_PDF:-0}" in
     1|true)
-        for tool in mdbook-pandoc pandoc tectonic rsvg-convert; do
+        for tool in mdbook-pandoc pandoc typst; do
             if ! command -v "$tool" >/dev/null; then
                 printf 'PDF build requires %s on PATH.\n' "$tool" >&2
                 exit 1
             fi
         done
-        if [[ "$OSTYPE" == msys* && -z "${TECTONIC_CACHE_DIR:-}" ]]; then
-            TECTONIC_CACHE_DIR="$(cygpath -am "${CODE_CACHE_ROOT:-D:/cache}/tectonic")"
-            export TECTONIC_CACHE_DIR
+        if [[ ( "$OSTYPE" == msys* || "$OSTYPE" == cygwin* ) && -z "${TYPST_PACKAGE_CACHE_PATH:-}" ]]; then
+            TYPST_PACKAGE_CACHE_PATH="$(cygpath -am "${CODE_CACHE_ROOT:-D:/cache}/typst")"
+            export TYPST_PACKAGE_CACHE_PATH
         fi
         export MDBOOK_OUTPUT__PANDOC__OPTIONAL=false
         ;;
@@ -37,6 +37,10 @@ case "${BUILD_PDF:-0}" in
         ;;
 esac
 
-mdbook build "$root"
+if [[ ( "${BUILD_PDF:-0}" == 1 || "${BUILD_PDF:-0}" == true ) && ( "$OSTYPE" == msys* || "$OSTYPE" == cygwin* ) ]]; then
+    python "$root/scripts/book/build_pdf_windows.py" "$root"
+else
+    mdbook build "$root"
+fi
 
 echo "DONE"

@@ -58,7 +58,7 @@ Read the `justfile`{{hi:justfile}} or the [just module][c~just~programmer-manual
 
 ## Build the Book as a PDF {#build-book-pdf}
 
-Put `mdbook-pandoc`, `pandoc`, `tectonic`, and `rsvg-convert` on PATH. On Debian-based systems, `librsvg2-bin` supplies `rsvg-convert`. On Windows, install `mingw-w64-ucrt-x86_64-librsvg` with MSYS2 and add its `ucrt64/bin` directory to the build shell's PATH.
+Put `mdbook-pandoc`, `pandoc`, and Typst 0.14.2 or newer on PATH. Typst emits the tagged PDF and does not require Tectonic or `rsvg-convert`.
 
 From `bk/`, run the full build with PDF output and local link warnings treated as errors.
 
@@ -66,7 +66,7 @@ From `bk/`, run the full build with PDF output and local link warnings treated a
 BUILD_PDF=1 MDBOOK_OUTPUT__LINKCHECK__WARNING_POLICY=error just bb
 ```
 
-The PDF is written to `book/pandoc/pdf/book.pdf`. On Windows the build script defaults Tectonic's cache to `D:/cache/tectonic`. Set `TECTONIC_CACHE_DIR` to override it or when invoking `mdbook build` directly. The first render may download TeX files and fetch remote images. The PDF uses linked text for Shields.io badges and preserves other images.
+The PDF is written to `book/pandoc/pdf/book.pdf`. On Windows the build script uses a Pandoc defaults file when the generated chapter list exceeds the command-line length limit. The Typst package cache defaults to `D:/cache/typst`; set `TYPST_PACKAGE_CACHE_PATH` to override it. The first render may download Typst packages and fetch remote images. Shields.io badges become readable labels while retaining their links.
 
 ## Use a "Dev Container" Feature {#dev-container-feature}
 
