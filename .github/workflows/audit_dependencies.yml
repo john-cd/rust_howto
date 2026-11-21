@@ -3,6 +3,7 @@
 ## Audits maintained Cargo dependency roots with `cargo deny` (advisories, licenses, bans and sources).
 ## Configuration: `bk/crates/deny.toml`. Also runs weekly because new advisories appear without code changes.
 ## Immutable Cargo fixtures under `bk/scripts` are excluded from automated dependency updates/audits.
+## Run the repository checks with `just --justfile tools/justfile check-lints` and `check-audit-workflow`.
 name: Audit dependencies
 
 on:
@@ -114,8 +115,19 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-      - run: python3 scripts/check_audit_workflow_paths.py
-      - run: python3 -m unittest scripts.tests.test_check_audit_workflow_paths
+      - name: Check out Book Tooling
+        uses: ./.github/actions/checkout-book-tooling
+        with:
+          token: ${{ secrets.BOOK_TOOLING_TOKEN }}
+      - name: Set up Rust
+        uses: ./.github/actions/setup-rust
+        with:
+          cache: "false"
+          nightly: skip
+          components: ""
+      - run: cargo run --manifest-path tools/Cargo.toml --locked -p repo-audit -- sync-lints --check
+      - run: cargo run --manifest-path tools/Cargo.toml --locked -p repo-audit -- audit-workflow-paths
+      - run: cargo test --manifest-path tools/Cargo.toml --locked -p repo-audit
 
   cargo-deny:
     name: cargo deny (${{ matrix.checks }})

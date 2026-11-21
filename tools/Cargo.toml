@@ -8,6 +8,7 @@ members = [
     "example-integrity",
     "mdbook-private",
     "mdbook-scrub",
+    "repo-audit",
     "setup-build",
     "templ",
     "tool_lib",
@@ -54,6 +55,8 @@ reqwest = { version = "0.13.5", features = ["blocking"] }
 semver = "1.0.28"
 # A generic serialization/deserialization framework
 serde = { version = "1.0.229", features = ["derive"] }
+# A YAML parser for checking GitHub Actions workflow configuration.
+serde_yaml_ng = "0.10.0"
 # A JSON serialization file format
 serde_json = "1.0.154"
 # A diff library for Rust

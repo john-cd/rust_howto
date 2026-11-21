@@ -120,6 +120,18 @@ _default:
 @audit-examples:
     cargo run --locked -p example-integrity -- --fail
 
+# Synchronize the configured Cargo manifests with scripts/lints/*.toml.
+@sync-lints:
+    cargo run --manifest-path "{{ root }}/Cargo.toml" --locked -p repo-audit -- sync-lints
+
+# Fail when a configured Cargo manifest has drifted from its shared lint profile.
+@check-lints:
+    cargo run --manifest-path "{{ root }}/Cargo.toml" --locked -p repo-audit -- sync-lints --check
+
+# Check that the dependency-audit workflow covers every configured workspace manifest.
+@check-audit-workflow:
+    cargo run --manifest-path "{{ root }}/Cargo.toml" --locked -p repo-audit -- audit-workflow-paths
+
 # ---- Release and example maintenance ---------------------------------------
 
 # Build release binaries and copy them into the repository's bin/ directory.

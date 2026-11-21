@@ -1,7 +1,7 @@
 # TODO Reviewed ??-??-2026.
 
 # Shared lint policy for the strict (maintained tooling workspaces) profile.
-# Generated into each workspace Cargo.toml by scripts/sync_lints.py; edit here, then run `python3 scripts/sync_lints.py`.
+# Generated into each workspace Cargo.toml by `just --justfile tools/justfile sync-lints`; edit here, then run that recipe.
 
 [workspace.lints.rust]
 # Prohibit unsafe code blocks across the workspace unless explicitly audited

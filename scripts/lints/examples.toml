@@ -1,7 +1,7 @@
 # TODO Reviewed ??-??-2026.
 
 # Shared lint policy for the examples (book and staging example workspaces) profile.
-# Generated into each workspace Cargo.toml by scripts/sync_lints.py; edit here, then run `python3 scripts/sync_lints.py`.
+# Generated into each workspace Cargo.toml by `just --justfile tools/justfile sync-lints`; edit here, then run that recipe.
 
 [workspace.lints.rust]
 # Prohibit unsafe code blocks across the workspace unless explicitly audited
@@ -41,7 +41,8 @@ trivial_numeric_casts = "allow"
 
 # Catch unexpected cfg condition names or values. `cargo llvm-cov` supplies `coverage`
 # when it instruments a build, allowing timing tests to distinguish measurement from execution.
-unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage)"] }
+# Cargo fuzz supplies `fuzzing` for the AFL example targets.
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage)", "cfg(fuzzing)"] }
 
 # Require unsafe operations inside unsafe fn to be wrapped in unsafe blocks
 unsafe_op_in_unsafe_fn = "warn"
@@ -60,6 +61,10 @@ trivial_casts = "allow"
 
 # Allow module-qualified identifiers where qualification disambiguates domain types
 unused_qualifications = "allow"
+
+# Custom example targets can use optional dependencies that Cargo's lint cannot see.
+[workspace.lints.cargo]
+unused_dependencies = "allow"
 
 # Rustdoc documentation lints
 [workspace.lints.rustdoc]

@@ -53,7 +53,8 @@ trivial_numeric_casts = "allow"
 
 # Catch unexpected cfg condition names or values. `cargo llvm-cov` supplies `coverage`
 # when it instruments a build, allowing timing tests to distinguish measurement from execution.
-unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage)"] }
+# Cargo fuzz supplies `fuzzing` for the AFL example targets.
+unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage)", "cfg(fuzzing)"] }
 
 # Require unsafe operations inside unsafe fn to be wrapped in unsafe blocks
 unsafe_op_in_unsafe_fn = "warn"
@@ -73,6 +74,10 @@ trivial_casts = "allow"
 # Allow module-qualified identifiers where qualification disambiguates domain types
 unused_qualifications = "allow"
 
+# Custom example targets can use optional dependencies that Cargo's lint cannot see.
+[workspace.lints.cargo]
+unused_dependencies = "allow"
+
 # Rustdoc documentation lints
 [workspace.lints.rustdoc]
 all = "warn"
@@ -82,11 +87,6 @@ broken_intra_doc_links = "warn"
 
 # Detect crates missing crate-level module documentation
 missing_crate_level_docs = "warn"
-
-# Optional dependencies used only by custom `[[example]]` targets are not
-# detected by Cargo's unused-dependency analysis.
-[workspace.lints.cargo]
-unused_dependencies = "allow"
 
 # See also clippy.toml
 [workspace.lints.clippy]
@@ -1368,7 +1368,6 @@ volatile_composites = "warn"
 
 # Checks for while loops comparing floating point values.
 while_float = "warn"
-
 # Keep this local fix while Shuttle codegen still requires v2; Alloy has moved off this path.
 # Review by 2027-01-19: https://github.com/john-cd/rust_howto/issues/2462
 [patch.crates-io]

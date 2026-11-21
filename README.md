@@ -39,6 +39,10 @@ paths and diagnostics are implemented directly in the justfile.
 - `just build-env` displays the effective environment, checkout, and branch.
 - `just cargo <subcommand> [args...]` runs Cargo with this checkout's output
   paths.
+- `just --justfile tools/justfile sync-lints` updates the generated Cargo lint
+  tables; `check-lints` checks them without writing.
+- `just --justfile tools/justfile check-audit-workflow` checks dependency-audit
+  workflow path coverage.
 
 The repository root is not a Cargo workspace. Use the owning workspace justfile,
 or select a manifest from the root, for example:

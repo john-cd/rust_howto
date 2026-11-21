@@ -150,6 +150,7 @@ trivial_numeric_casts = "allow"
 
 # Catch unexpected cfg condition names or values. `cargo llvm-cov` supplies `coverage`
 # when it instruments a build, allowing timing tests to distinguish measurement from execution.
+# Cargo fuzz supplies `fuzzing` for the AFL example targets.
 unexpected_cfgs = { level = "warn", check-cfg = ["cfg(coverage)", "cfg(fuzzing)"] }
 
 # Require unsafe operations inside unsafe fn to be wrapped in unsafe blocks
@@ -169,6 +170,10 @@ trivial_casts = "allow"
 
 # Allow module-qualified identifiers where qualification disambiguates domain types
 unused_qualifications = "allow"
+
+# Custom example targets can use optional dependencies that Cargo's lint cannot see.
+[workspace.lints.cargo]
+unused_dependencies = "allow"
 
 # Rustdoc documentation lints
 [workspace.lints.rustdoc]
@@ -1460,7 +1465,6 @@ volatile_composites = "warn"
 
 # Checks for while loops comparing floating point values.
 while_float = "warn"
-
 [patch.crates-io]
 # WebAuthn 0.6.2 resolves crypto-glue 0.2.2, which still requests the removed rsa/sha2 feature.
 # Keep this compatibility patch until crypto-glue publishes a release without that request.
