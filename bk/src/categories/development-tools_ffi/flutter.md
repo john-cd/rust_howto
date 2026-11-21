@@ -71,7 +71,7 @@ For an existing Flutter project, run `flutter_rust_bridge_codegen integrate` fro
 The generator converts supported Rust and Dart types at the boundary. You do not need to serialize every argument manually.
 
 - [`serde`][c~serde~docs]↗{{hi:serde}} is useful when the application also needs an explicit storage or network format.
-- [`bincode`][c~bincode~docs]↗{{hi:bincode}} is one possible Rust binary format, but Dart needs a compatible decoder if you choose to send those bytes.
+- For a binary format, consider [CBOR](../encoding/no_external_schema.md#ciborium) and use compatible encoders and decoders on both sides.
 
 For more complex interactions, you might use platform channels, but [`flutter_rust_bridge`][c~flutter_rust_bridge~docs]↗{{hi:flutter_rust_bridge}} often abstracts this away.
 

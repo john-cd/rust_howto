@@ -44,10 +44,10 @@ Replace the application and crate names with those generated for your project. T
 Use the following crates:
 
 - [[serde | `serde`]] for serializing and deserializing data exchanged between Rust and Erlang/Elixir.
-- [`bincode`][c~bincode~docs]↗{{hi:bincode}} is a compact binary format that is often used for efficient communication.
+- For a binary wire protocol, consider [CBOR](../encoding/no_external_schema.md#ciborium) if both Rust and the BEAM application support it.
 - [`erlang_term`][c~erlang-term~docs]{{hi:erlang_term}} converts Erlang External Term Format to Rust objects, without using Erlang NIFs.
 
-Within a NIF, Rustler's `Encoder` and `Decoder` convert terms directly; a separate serialization format is unnecessary for ordinary integers, strings, tuples, or maps. Use existing atoms for a fixed protocol vocabulary, `#[derive(NifStruct)]` with its matching Elixir module for structs, or `#[derive(NifMap)]` for maps. Do not create an unbounded number of atoms from user input. `serde` and a binary format are options only when both ends explicitly agree on the wire format; BEAM does not decode `bincode` automatically.
+Within a NIF, Rustler's `Encoder` and `Decoder` convert terms directly; a separate serialization format is unnecessary for ordinary integers, strings, tuples, or maps. Use existing atoms for a fixed protocol vocabulary, `#[derive(NifStruct)]` with its matching Elixir module for structs, or `#[derive(NifMap)]` for maps. Do not create an unbounded number of atoms from user input. `serde` and a binary format are options only when both ends agree on the wire format and have a compatible decoder.
 
 ### Schedule Long Work and Retain State {#nif-scheduling-and-state}
 
