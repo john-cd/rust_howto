@@ -29,6 +29,21 @@ The full book build and normal `serve` recipe ensure the pinned `mdbook-indexing
 
 The `links insert_category_links` recipe previews category links in published `src/` pages without changing files. Review the diff, then run `links insert_category_links_apply` to write the changes. Categories with a published book page use a local `[p~category-...]` reference; other categories keep their crates.io link. The optional `--include-drafts` flag remains supported for external legacy book roots; this repository no longer has a `bk/drafts` tree. The preprocessor-directive variant is tracked in issue [#248](https://github.com/john-cd/rust_howto/issues/248).
 
+## Rust command parity review
+
+The candidate Rust commands cover related work, but each has a behavior gap that affects its existing Just recipe. These scripts remain the authoritative entry points until the listed difference is addressed.
+
+| Existing recipe | Rust candidate | Behavior that still differs |
+| --- | --- | --- |
+| `toc list_missing_chapters` | `mdbook-utils markdown identify-files-not-in-summary` | The Rust command includes `.incl.md` and `*refs.md` files and prints paths; the recipe excludes those files and emits ready-to-paste Markdown links. |
+| `urls list_duplicated` | `mdbook-utils links duplicate-links` | The recipe counts raw destinations only in `src/refs/*.md`; the Rust command scans parsed links across a Markdown root and writes a Markdown report. |
+| `refdefs check` | `book_tool refdefs-audit` | The Rust audit reports include-scoped provenance and unused definitions, but it does not report uses with no definition, which the recipe includes. |
+| `links replace_inline_links` | `book_tool inline-links` | The recipe previews by default, writes only with `--write`, uses stable URL-hash labels in sibling `refs.incl.md` files, and skips inline code. The Rust command writes in place and stores numeric definitions in the same file. |
+| `urls check` / `check_advisory` | `book_tool link-check` | The recipe checks Markdown, TOML, and YAML, classifies failures, and supports advisory exit status. The Rust command checks HTTP(S) links in Markdown and has no advisory mode. |
+| `book refdefs-generate` / `refdefs-check` | `mdbook-utils refdefs generate` | The Python wrapper already calls the Rust generator, then normalizes Cargo package labels, preserves curated destinations, merges or checks the output, and verifies the pinned tool revision. |
+
+The recipes above retain their existing implementations because direct substitution would change their output or omit checks.
+
 ## Just version and module behavior
 
 Use the pinned `just` version shown in `.devcontainer/.env`; the current supported baseline is `1.59.0`. The development-container setup scripts install the pinned version. To inspect the commands exposed by the root and an individual module, run these from the repository root:

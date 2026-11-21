@@ -40,7 +40,8 @@ _default:
 
 # review suggest_links_for_bare_urls
 
-# (Rough) Convert inline links e.g. [...](http://...) into reference-style links: [...][...] [...]: http://...
+# Preview conversion of eligible HTTP(S) links; use `--write` to apply. Keep this wrapper while the
+# Rust command writes in place and uses different labels and reference-file placement.
 @replace_inline_links:
     ./replace_inline_links.sh {{ root }}
 

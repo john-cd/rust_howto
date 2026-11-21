@@ -76,11 +76,12 @@ _default:
         cargo run --manifest-path "{{ root }}/../tools/Cargo.toml" --locked -p book-audit -- --repo-root "{{ root }}/.." preview-links bk/book/future; \
     fi
 
-# Merge missing dependency references into the curated crate reference file.
+# Generate raw dependency references with `mdbook-utils`, then normalize labels and merge them
+# into the curated crate reference file while preserving existing destinations.
 @refdefs-generate: _install-mdbook-utils
     {{ python }} "{{ source_directory() }}/refdefs.py" generate --book-root "{{ root }}"
 
-# Check for missing dependency references without rewriting authoring files.
+# Check dependency references using the same normalized merge as generation, without writing files.
 @refdefs-check: _install-mdbook-utils
     {{ python }} "{{ source_directory() }}/refdefs.py" check --book-root "{{ root }}"
     {{ python }} "{{ source_directory() }}/../indices/update_refdefs_for_examples.py" check --book-root "{{ root }}"

@@ -14,7 +14,8 @@ _default:
 
 ## ---- MAIN TOC MANAGEMENT -----------------------------------
 
-# List (sub)chapters that somehow were not added in `SUMMARY.md`
+# List (sub)chapters missing from `SUMMARY.md`. The Rust candidate also reports `.incl.md` and
+# reference files; keep this filtered Markdown-list wrapper until the command supports exclusions.
 @list_missing_chapters:
     ./list_missing_chapters_in_toc.sh {{ root }}
 

@@ -14,11 +14,12 @@ _default:
 
 ## ---- URL MANAGEMENT -----------------------------------
 
-# Check that URLs (to external websites) are valid and working; exit nonzero on any failure.
+# Check URLs across Markdown, TOML, and YAML; lychee also supplies status classes and advisory
+# mode that `book_tool link-check` does not expose.
 @check:
     ./check_urls.sh {{ root }}
 
-# Same as check, but report failures without failing (advisory).
+# Same file scope and diagnostics as `check`, but report failures without failing (advisory).
 @check_advisory:
     ./check_urls.sh --advisory {{ root }}
 
@@ -26,6 +27,7 @@ _default:
 @test:
     bash ./test_check_urls.sh
 
-# List duplicated URLs (noting that they can't always be avoided).
+# Count raw URL duplicates in global reference files. `mdbook-utils duplicate-links` scans parsed
+# Markdown links and writes a different report.
 @list_duplicated:
     ./list_duplicated_urls.sh {{ root }}

@@ -25,7 +25,8 @@ _default:
 @sort:
     ./sort_refdefs.sh {{ root }}
 
-# List links without corresponding reference definitions and vice versa
+# List links without corresponding reference definitions and vice versa. `book_tool refdefs-audit`
+# reports include-scoped definition provenance and unused entries but does not report undefined labels.
 @check:
     ./check_refdefs.sh {{ root }}
 
