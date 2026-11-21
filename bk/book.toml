@@ -242,7 +242,10 @@ to = "typst"
 # PDF-specific settings
 # Typst preserves semantic document structure and writes PDF tags by default.
 pdf-engine = "typst"
-filters = [{ type = "lua", path = "scripts/book/pdf_badges.lua" }]
+filters = [
+  { type = "lua", path = "scripts/book/pdf_badges.lua" },
+  { type = "lua", path = "scripts/book/pdf_links.lua" },
+]
 include-in-header = ["theme/pdf.typ", "theme/pdf-draft.typ"]
 include-before-body = ["theme/pdf-front.typ"]
 
