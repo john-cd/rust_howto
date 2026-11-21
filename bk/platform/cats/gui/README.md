@@ -51,6 +51,35 @@ The counter's headless state test also passed.
 | Tauri | Keep the plain Rust greeting in `web` (features `dioxus,tauri`). A native Tauri run requires the separately scaffolded frontend, build script, and system webview described in the [book](../../../src/categories/gui/web_based_gui.md#tauri). |
 | Tao and Wry | Keep the sample sources while the GTK 3 / `glib 0.18` dependency chain blocks the workspace integration. Follow [#2213](https://github.com/john-cd/rust_howto/issues/2213) for Wry IPC validation. |
 
+## Native Slint counter verification
+
+From the repository root on a Windows desktop, run:
+
+```powershell
+$env:SLINT_BACKEND = 'winit-software'
+just cargo run --manifest-path bk/platform/Cargo.toml --locked -p gui --example retained_mode_gui --features slint -- slint
+Remove-Item Env:SLINT_BACKEND
+```
+
+For [#2427](https://github.com/john-cd/rust_howto/issues/2427), the corrected
+recipe was built from base revision `f18b401f9` with this change and exercised on
+Windows build 26300 with Slint 1.18.1. The original recipe showed literal
+`{root.counter}` text. After fixing the binding, the window displayed
+`Count: 0`. Tab focused **Increment**, Space changed the label to `Count: 1`,
+and a pointer click changed it to `Count: 2`. The layout redrew at both the
+maximized and restored sizes without clipping the button or count. In a fresh
+run, Win+Up and Win+Down maximized and restored the window with the count
+still at zero. Alt+F4 closed the window with exit code 0.
+
+The headless baseline can run without an interactive desktop:
+
+```sh
+just cargo test --manifest-path bk/platform/Cargo.toml --locked -p gui --example retained_mode_gui --features slint
+```
+
+The headless callback test now asserts both the counter value and label before
+and after invoking the callback. It passed along with the four CLI tests.
+
 ## Bounded Background Work
 
 The `background_work` example demonstrates revision-tagged replies, errors and shutdown:

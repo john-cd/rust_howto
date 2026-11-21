@@ -9,13 +9,13 @@
 //! code through callbacks and setters. It targets desktops and embedded
 //! devices.
 
-// methods.
-
 slint::slint! {
     import { Button, VerticalBox } from "std-widgets.slint";
 
     export component App inherits Window {
+        title: "Slint Counter";
         in-out property <int> counter: 0;
+        out property <string> counter_label: "Count: " + root.counter;
         callback increment_counter();
 
         VerticalBox {
@@ -24,7 +24,7 @@ slint::slint! {
                 clicked => { root.increment_counter(); }
             }
             Text {
-                text: "Count: {root.counter}";
+                text: root.counter_label;
             }
         }
     }
@@ -64,7 +64,7 @@ pub fn run() -> anyhow::Result<()> {
 mod tests {
     use super::*;
 
-    /// Updates the counter through its callback without requiring a display server.
+    /// Updates the counter and its label through the callback without a display server.
     #[test]
     fn increments_counter_without_a_display() -> anyhow::Result<()> {
         i_slint_backend_testing::init_no_event_loop();
@@ -72,8 +72,10 @@ mod tests {
         connect_counter_increment(&app);
 
         assert_eq!(app.get_counter(), 0);
+        assert_eq!(app.get_counter_label(), "Count: 0");
         app.invoke_increment_counter();
         assert_eq!(app.get_counter(), 1);
+        assert_eq!(app.get_counter_label(), "Count: 1");
 
         Ok(())
     }

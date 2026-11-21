@@ -29,7 +29,7 @@ Snapshot from GitHub on November 20, 2026. Open each epic for its full subissue 
 ### Hardware, platform, and SDK validation ([#2240](https://github.com/john-cd/rust_howto/issues/2240))
 
 - With an appropriate runner, validate the migrated browser and WASI walkthroughs ([#2429](https://github.com/john-cd/rust_howto/issues/2429)) or get a native Flutter/Dart consumer running ([#2430](https://github.com/john-cd/rust_howto/issues/2430)).
-- With a native desktop, check Slint rendering and input ([#2427](https://github.com/john-cd/rust_howto/issues/2427)). A desktop with WebKitGTK can also exercise the Wry IPC path ([#2213](https://github.com/john-cd/rust_howto/issues/2213)).
+- With a desktop that has WebKitGTK, exercise the Wry IPC path ([#2213](https://github.com/john-cd/rust_howto/issues/2213)).
 - Pick a documented native FFI, GEOS, science, or finance path with its SDK or service available ([#2432](https://github.com/john-cd/rust_howto/issues/2432), [#2433](https://github.com/john-cd/rust_howto/issues/2433)).
 - Select a board or emulator and prepare a bounded firmware run ([#2355](https://github.com/john-cd/rust_howto/issues/2355)). Physical evidence still needs the board, probe, or device.
 
