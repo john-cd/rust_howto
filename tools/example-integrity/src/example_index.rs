@@ -85,9 +85,10 @@ pub fn check_example_index(book_root: &Path) -> Result<Vec<String>> {
     if current == expected {
         Ok(Vec::new())
     } else {
-        Ok(vec![format!(
+        Ok(vec![
             "src/indices/examples_index.md is out of date; run the example-index generate command"
-        )])
+                .to_owned(),
+        ])
     }
 }
 
