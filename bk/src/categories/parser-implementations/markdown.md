@@ -24,7 +24,9 @@ From `bk/crates`, check this example with `cargo test --locked -p parser_impleme
 
 ## `markdown` {#markdown}
 
-{{#badges markdown compilers=Compilers encoding=Encoding parser-implementations="Parser implementations" parsing="Parsing tools" text-processing="Text processing"}}
+[docs.rs][c~markdown~docs] · [crates.io][c~markdown~crates.io] · [Repository][c~markdown~repo] · [lib.rs][c~markdown~lib.rs]
+
+Categories: [Compilers][cat~compilers], [Encoding][cat~encoding], [Parser implementations][cat~parser-implementations], [Parsing tools][cat~parsing], [Text processing][cat~text-processing].
 
 {{hi:CommonMark}}
 {{hi:markdown}}
@@ -44,7 +46,9 @@ Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p par
 
 ## `comrak` {#comrak}
 
-{{#badges comrak command-line-utilities="Command line utilities" parsing="Parsing tools" text-processing="Text processing"}}{{hi:CommonMark}}{{hi:Markdown}}
+[docs.rs][c~comrak~docs] · [crates.io][c~comrak~crates.io] · [Repository][c~comrak~repo] · [lib.rs][c~comrak~lib.rs]
+
+Categories: [Command line utilities][cat~command-line-utilities], [Parsing tools][cat~parsing], [Text processing][cat~text-processing].{{hi:CommonMark}}{{hi:Markdown}}
 
 [`comrak`][c~comrak~docs]↗{{hi:comrak}} is a 100% CommonMark-compatible GitHub Flavored Markdown parser and formatter.
 
