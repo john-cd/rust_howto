@@ -44,12 +44,12 @@ _default:
 # Format all packages and their local path-based dependencies
 @fmtall:
     echo "Formatting all packages and their local path-based dependencies in {{ quote(code_root) }}"
-    cd {{ quote(code_root) }} && {{ if os_family() == "windows" { "python ../scripts/code/format_workspace.py format" } else { "cargo +" + rustfmt_toolchain + " fmt --all" } }}
+    cd {{ quote(code_root) }} && {{ if os_family() == "windows" { "cargo run --locked --manifest-path " + quote(root + "/tools/Cargo.toml") + " -p workspace-fmt -- --workspace-root " + quote(code_root) + " format" } else { "cargo +" + rustfmt_toolchain + " fmt --all" } }}
 
 # Check Rust formatting of all packages without changing files
 @fmtcheck:
     echo "Checking formatting of all packages in {{ quote(code_root) }}"
-    cd {{ quote(code_root) }} && {{ if os_family() == "windows" { "python ../scripts/code/format_workspace.py check" } else { "cargo +" + rustfmt_toolchain + " fmt --all -- --check" } }}
+    cd {{ quote(code_root) }} && {{ if os_family() == "windows" { "cargo run --locked --manifest-path " + quote(root + "/tools/Cargo.toml") + " -p workspace-fmt -- --workspace-root " + quote(code_root) + " check" } else { "cargo +" + rustfmt_toolchain + " fmt --all -- --check" } }}
 
 # Format Cargo manifests in the book examples workspace
 @fmt-toml:

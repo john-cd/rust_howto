@@ -13,6 +13,7 @@ This workspace contains tools written in Rust, which you may use to manage the b
 - `recipe-tables` updates recipe table fragments from local references and headings.
 - `templ` generates markdown links and reference definitions. The outputs can be copy-pasted into the book's markdown where needed.
 - `tool_lib` is a Rust library shared between all Rust CLI tools.
+- `workspace-fmt` runs rustfmt over local workspace targets in bounded process batches.
 
 ## Tools Overview and Usage
 
@@ -67,6 +68,18 @@ cargo run --locked -p example-integrity -- --repo-root . index generate --book-r
 cargo run --locked -p example-integrity -- --repo-root . index check --book-root bk
 cargo run --locked -p example-integrity -- --repo-root . index refdefs generate --book-root bk
 cargo run --locked -p example-integrity -- --repo-root . index refdefs check --book-root bk
+```
+
+### `workspace-fmt`
+
+Runs `rustup which rustfmt` for the toolchain selected by `RUSTFMT_TOOLCHAIN`,
+uses Cargo metadata to collect local Rust targets, and invokes rustfmt in bounded
+batches. The `format` and `check` subcommands back the Windows book-code
+formatting recipes.
+
+```sh
+cargo run --locked -p workspace-fmt -- --workspace-root bk/crates format
+cargo run --locked -p workspace-fmt -- --workspace-root bk/crates check
 ```
 
 ### `book-audit`
