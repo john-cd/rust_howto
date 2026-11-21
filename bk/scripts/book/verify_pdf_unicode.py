@@ -18,7 +18,7 @@ FORBIDDEN_MARKERS = (
     "cat~*",
     r"cat\~\*",
 )
-EMOJI_CHARACTER_LITERAL = re.compile(r"let\s+s\s*:\s*char\s*=\s*'😀';")
+EMOJI_CHARACTER_LITERAL = re.compile(r"let\s+s\s*:\s*char\s*=\s*'😀'\s*;")
 
 
 def main() -> int:
