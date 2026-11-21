@@ -1379,5 +1379,6 @@ while_float = "warn"
 [patch.crates-io]
 # Almost drop-in replacement to panics in proc-macros
 proc-macro-error2 = { path = "patches/proc-macro-error2" }
-# Backport Zenoh's 0.11.6 lz4_flex bump to the 1.10.2 crate until a release is published.
+# Zenoh 1.10.2 still selects affected lz4_flex; the compatible upstream fix is not released yet.
+# Review by 2027-01-19: https://github.com/john-cd/rust_howto/issues/2405
 zenoh-transport = { path = "patches/zenoh-transport-1.10.2" }
