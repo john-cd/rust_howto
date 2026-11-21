@@ -430,3 +430,78 @@ fn write_atomic(path: &Path, contents: &[u8]) -> Result<()> {
         .map_err(|error| error.error)
         .with_context(|| format!("could not replace {}", path.display()))
 }
+
+/// Verifies generated example indexes and chapter-derived reference definitions.
+#[cfg(test)]
+mod tests {
+    use tempfile::tempdir;
+
+    use super::*;
+
+    /// Preserves the review marker and hidden block while selecting example chapters in sidebar
+    /// order.
+    #[test]
+    fn generated_example_index_preserves_content_and_filters_chapters() -> Result<()> {
+        let directory = tempdir()?;
+        let src = directory.path().join("src");
+        fs::create_dir_all(src.join("indices"))?;
+        fs::write(
+            src.join("SUMMARY.md"),
+            "# Summary\n\n- [Guides](guide.md)\n  - [Recipes](recipe.md)\n  - [Included](included.md)\n  - [Empty](empty.md)\n",
+        )?;
+        fs::write(src.join("guide.md"), "# Guides\n")?;
+        fs::write(src.join("recipe.md"), "# Recipes\n")?;
+        fs::write(
+            src.join("recipe.incl.md"),
+            "| Example | Description |\n| [Demo][ex~demo] | A recipe |\n",
+        )?;
+        fs::write(
+            src.join("included.md"),
+            "# Included\n\n{{#include ../crates/demo/src/main.rs}}\n",
+        )?;
+        fs::write(src.join("empty.md"), "# Empty\n")?;
+        fs::write(
+            src.join("indices/examples_index.md"),
+            "<!-- TODO Reviewed 2026-11-20. -->\n\n# Index of Examples\n\n<div class=\"hidden\">\n<!-- retained -->\n</div>\n",
+        )?;
+
+        assert!(generate_example_index(directory.path())?);
+        let generated = fs::read_to_string(src.join("indices/examples_index.md"))?;
+        assert_eq!(
+            generated,
+            "<!-- TODO Reviewed 2026-11-20. -->\n\n# Index of Examples\n\n## Guides\n\n### [Recipes](../recipe.md)\n\n{{#include ../recipe.incl.md}}\n\n### [Included](../included.md)\n\n{{#include refs.incl.md}}\n{{#include ../refs/link-refs.md}}\n\n<div class=\"hidden\">\n<!-- retained -->\n</div>\n"
+        );
+        assert!(check_example_index(directory.path())?.is_empty());
+        assert!(!generate_example_index(directory.path())?);
+        Ok(())
+    }
+
+    /// Resolves relative example references from the index directory and retains manual entries and
+    /// URLs.
+    #[test]
+    fn generated_example_references_preserve_manual_entries_and_normalize_paths() -> Result<()> {
+        let directory = tempdir()?;
+        let src = directory.path().join("src");
+        fs::create_dir_all(src.join("indices"))?;
+        fs::create_dir_all(src.join("chapter"))?;
+        fs::write(
+            src.join("chapter/refs.incl.md"),
+            "[ex~demo]: examples/demo.md#run\n[ex~remote]: https://example.test/demo\n",
+        )?;
+        fs::write(
+            src.join("indices/refs.incl.md"),
+            "<!-- hand-written references -->\n\n[manual]: https://example.test/manual\n[ex~demo]: ../old/demo.md#old\n",
+        )?;
+
+        assert!(!check_example_refdefs(directory.path())?.is_empty());
+        assert!(generate_example_refdefs(directory.path())?);
+        let generated = fs::read_to_string(src.join("indices/refs.incl.md"))?;
+        assert!(generated.contains("<!-- hand-written references -->"));
+        assert!(generated.contains("[manual]: https://example.test/manual"));
+        assert!(generated.contains("[ex~demo]: ../chapter/examples/demo.md#run"));
+        assert!(generated.contains("[ex~remote]: https://example.test/demo"));
+        assert!(check_example_refdefs(directory.path())?.is_empty());
+        assert!(!generate_example_refdefs(directory.path())?);
+        Ok(())
+    }
+}
