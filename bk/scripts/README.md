@@ -20,7 +20,7 @@ Use `just` to list root recipes and modules, then `just <module>` to list a modu
 | `indices` | `crate_indices` and `crate_page` use the built helper binary. | Those recipes and the Bash-based index/reference generators. |
 | `links` | Link insertion, cross-linking, URL suggestions, inline-link conversion, and reference lookup run through Git Bash. | Same. |
 | `hooks` | Run and install prek hooks, configure Git Town, and install prek on Windows. | Run and install prek hooks, configure Git Town, and install prek. |
-| `recipes` | Recipe table fixer runs with Python. | Recipe table fixer runs with Python. |
+| `recipes` | Recipe table fixer runs through the Rust `recipe-tables` command. | Recipe table fixer runs through the Rust `recipe-tables` command. |
 | `refdefs` | Sort reference files with the shared Bash helper. Other collection and validation scripts are Unix-only. | Sort, check, collect, and relabel recipes. |
 | `spelling` | `spell` runs the pinned Typos configuration over book, draft, and future Markdown. The optional Aspell check and dictionary recipes run through Git Bash. | Same Typos and Aspell recipes. |
 | `utils` | `mdbook-utils` and `templ` helper commands. | Same. |

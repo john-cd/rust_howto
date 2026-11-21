@@ -14,7 +14,7 @@ _default:
 
 ## ---- RECIPE TABLE MANAGEMENT -----------------------------------
 
-# (BEWARE: modifies files directly) Add links to recipes to `<subchapter>.incl.md` files, using the local reference definitions in `refs.incl.md`. Also makes the titles in the recipe tables match the corresponding headings of the subchapters.
+# (BEWARE: modifies files directly) Add links to recipes to `<subchapter>.incl.md` files, using local reference definitions. Also sync table titles with the subchapter headings.
 [confirm]
 @fix_recipe_tables:
-    python3 "{{ source_directory() }}/fix_recipe_tables.py" "{{ root }}" || python "{{ source_directory() }}/fix_recipe_tables.py" "{{ root }}"
+    cargo run --manifest-path "{{ root }}/../tools/Cargo.toml" --locked -p recipe-tables -- "{{ root }}"

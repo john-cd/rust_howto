@@ -1,0 +1,27 @@
+# TODO Reviewed ??-??-2026.
+
+[package]
+name = "recipe-tables"
+version.workspace = true
+description = "Synchronize book recipe tables from local reference definitions"
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+publish.workspace = true
+
+[dependencies]
+# Flexible concrete Error type built on std::error::Error
+anyhow.workspace = true
+# A simple to use, efficient, and full-featured Command Line Argument Parser
+clap.workspace = true
+# Decodes escaped recipe reference paths and anchors
+percent-encoding.workspace = true
+# A lightweight regex engine that optimizes for binary size and compilation time.
+regex.workspace = true
+# A library for managing temporary files and directories; persists edits atomically.
+tempfile.workspace = true
+# Recursively walk book source files
+walkdir.workspace = true
+
+[lints]
+workspace = true

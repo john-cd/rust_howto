@@ -9,6 +9,7 @@ members = [
     "example-integrity",
     "mdbook-private",
     "mdbook-scrub",
+    "recipe-tables",
     "repo-audit",
     "setup-build",
     "templ",

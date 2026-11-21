@@ -2166,6 +2166,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "recipe-tables"
+version = "0.1.2"
+dependencies = [
+ "anyhow",
+ "clap",
+ "percent-encoding",
+ "regex",
+ "tempfile",
+ "walkdir",
+]
+
+[[package]]
 name = "redox_syscall"
 version = "0.5.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"

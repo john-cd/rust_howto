@@ -10,6 +10,7 @@ This workspace contains tools written in Rust, which you may use to manage the b
 - `example-integrity` inventories chapters, code snippets, and Cargo targets, auditing example integrity across the book.
 - `mdbook-private` is a repository-local mdBook 0.5 port of `mdbook-private` that filters or styles private chapters and sections.
 - `mdbook-scrub` is a custom mdBook preprocessor that removes hidden sections/chapters and expands custom directives.
+- `recipe-tables` updates recipe table fragments from local references and headings.
 - `templ` generates markdown links and reference definitions. The outputs can be copy-pasted into the book's markdown where needed.
 - `tool_lib` is a Rust library shared between all Rust CLI tools.
 
@@ -73,6 +74,18 @@ cargo run --locked -p book-audit -- --repo-root <REPO> visible-todos
 ```
 
 Rendered-link and preview findings include the rendered file and line when available. All checks return a failing exit status when they find a gap.
+
+### `recipe-tables`
+
+Updates `bk/src` and an optional `bk/drafts` tree from local `ex~` references. It synchronizes recipe headings and crate/category badges, inserts missing rows, preserves content outside each table, and writes changed fragments with same-directory atomic replacement.
+
+```sh
+# Run from the repository root
+cargo run --manifest-path tools/Cargo.toml --locked -p recipe-tables -- bk
+
+# Or use the existing Just entry point
+just --justfile bk/justfile recipes fix_recipe_tables
+```
 
 ### `mdbook-private`
 

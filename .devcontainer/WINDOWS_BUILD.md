@@ -73,9 +73,9 @@ just s    # Serve the book locally.
 ```
 
 The `quick` recipe (`just q`) runs its Bash preview through Git Bash.
-`just spell` uses Typos, and `just lnk <pattern>` uses the Windows
-`mdbook-utils` binary. `just recipes fix_recipe_tables` uses Python, and
-`just refdefs sort` runs the shared Bash helper.
+`just spell` uses Typos, `just lnk <pattern>` uses the Windows `mdbook-utils`
+binary, `just recipes fix_recipe_tables` uses the Rust `recipe-tables` command,
+and `just refdefs sort` runs the shared Bash helper.
 
 Run `just --list` for root recipes and modules, then
 `just <module> --list` for a module's recipes. Each imported module owns its
