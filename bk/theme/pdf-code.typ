@@ -18,3 +18,27 @@
   radius: 2pt,
 )
 #show block.where(fill: rgb("#f4f6f9")): set text(font: "DejaVu Sans Mono", size: 7.8pt)
+#show block.where(fill: rgb("#f4f6f9")): set par(
+  linebreaks: "simple",
+  hanging-indent: 1.2em,
+)
+
+// Pandoc emits raw newlines between syntax-highlighted source lines. Typst
+// otherwise treats them as spaces and can lay a whole example out as one long
+// line. Preserve source breaks; soft wraps use the hanging indent above.
+#let Skylighting(fill: none, number: false, start: 1, sourcelines) = {
+  let blocks = []
+  let line_number = start - 1
+  let background = rgb("#f4f6f9")
+  for source_line in sourcelines {
+    if number {
+      line_number = line_number + 1
+      blocks += box(
+        width: if start + sourcelines.len() > 999 { 30pt } else { 24pt },
+        text(fill: rgb("#667085"), [#line_number]),
+      )
+    }
+    blocks += source_line + linebreak()
+  }
+  block(fill: background, blocks)
+}
