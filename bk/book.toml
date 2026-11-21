@@ -255,5 +255,7 @@ table-of-contents = true # include an automatically generated table of contents
 # (see https://pandoc.org/MANUAL.html#defaults-files) but written in TOML instead of YAML.
 
 # For example, to pass variables (https://pandoc.org/MANUAL.html#variables):
-# [output.pandoc.profile.pdf.variables]
-# variable-name = "value"
+[output.pandoc.profile.pdf.variables]
+papersize = "us-letter"
+section-numbering = "1.1"
+margin = { x = "0.85in", y = "0.75in" }
