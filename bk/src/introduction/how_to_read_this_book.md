@@ -2,7 +2,7 @@
 
 # How to Read This Book
 
-Open the menu in the upper-left corner to show the table of contents. Select the arrow beside a section to see its chapters.
+In the web edition, open the menu in the upper-left corner to show the table of contents. Select the arrow beside a section to see its chapters. In the PDF, use the linked contents at the front or open your viewer's bookmarks panel.
 
 - The book first summarizes core concepts of the [language][p~lang] and often-used elements of the [standard library][p~standard-library] (if they are not covered elsewhere). The [[code_organization | code organization]] section explains how Rust code should be structured, depending on your project's needs.
 - The ecosystem chapters cover Rust tools and libraries. Most sections follow the [categories][crates.io~category_slugs]↗ on [`crates.io`][crates.io~website]↗{{hi:crates.io}}, so you can browse the same category there or search [`lib.rs`][lib.rs~website]↗ for related crates.
@@ -14,11 +14,11 @@ Open the menu in the upper-left corner to show the table of contents. Select the
 
 ## Find a Recipe {#look-for-solution-for-specific-task}
 
-Search from the top toolbar or browse the categories in the sidebar. The [index of examples][p~index~examples] lists recipes by task. Use the [word index][p~word-index] to look up a concept, a crate name, or a fully qualified Rust item such as [`parking_lot::ReentrantMutex`][c~parking_lot::ReentrantMutex~docs]↗{{hi:parking_lot::ReentrantMutex}}. You can also browse crates [[crates_alphabetical | alphabetically]] or [[crates_by_category | by category]].
+Search from the web toolbar or use your PDF viewer's Find command. Browse categories in the web sidebar or the PDF contents. The [index of examples][p~index~examples] lists recipes by task. Use the [word index][p~word-index] to look up a concept, a crate name, or a fully qualified Rust item such as [`parking_lot::ReentrantMutex`][c~parking_lot::ReentrantMutex~docs]↗{{hi:parking_lot::ReentrantMutex}}. You can also browse crates [[crates_alphabetical | alphabetically]] or [[crates_by_category | by category]].
 
 ## Use the Code Examples {#how-to-use-code-examples}
 
-Many recipes are self-contained programs that you can copy into your own projects. Use the Play button when the snippet fits the Playground's available crates and environment. Follow the recipe's Cargo command when it needs the workspace's dependency versions or features, local files, native tools, or sockets. An illustrative fragment shows the part to put in a larger program. The following instructions show how to set up a local project for a typical recipe.
+Many recipes are self-contained programs that you can copy into your own projects. Use the Play button when the snippet fits the Playground's available crates and environment. Follow the recipe's Cargo command when it needs the workspace's dependency versions or features, local files, native tools, or sockets. An illustrative fragment shows the part to put in a larger program. In the PDF, copy the code or open the corresponding recipe in the web edition. The following instructions show how to set up a local project for a typical recipe.
 
 Consider the following example for generating a random number:
 
