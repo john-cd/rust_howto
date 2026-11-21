@@ -20,16 +20,27 @@ local function normalize_table(table)
     if FORMAT ~= "typst" then return end
     -- mdBook emits empty header rows for headerless tables; Pandoc otherwise
     -- serializes those rows as invalid Typst calls.
+    local function normalize(rows)
+        for _, row in ipairs(rows) do
+            for _, cell in ipairs(row.cells) do
+                cell.row_span = math.max(1, cell.row_span)
+                cell.col_span = math.max(1, cell.col_span)
+            end
+        end
+        return rows
+    end
+
     local head = table.head
-    head.rows = head.rows:filter(function(row) return #row.cells > 0 end)
+    head.rows = normalize(head.rows:filter(function(row) return #row.cells > 0 end))
     table.head = head
     local bodies = table.bodies
     for _, body in ipairs(bodies) do
-        body.head = body.head:filter(function(row) return #row.cells > 0 end)
+        body.head = normalize(body.head:filter(function(row) return #row.cells > 0 end))
+        body.body = normalize(body.body:filter(function(row) return #row.cells > 0 end))
     end
     table.bodies = bodies
     local foot = table.foot
-    foot.rows = foot.rows:filter(function(row) return #row.cells > 0 end)
+    foot.rows = normalize(foot.rows:filter(function(row) return #row.cells > 0 end))
     table.foot = foot
     improve_pdf_table_widths(table)
     return table
