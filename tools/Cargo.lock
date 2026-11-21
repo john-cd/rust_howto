@@ -195,6 +195,7 @@ dependencies = [
  "anyhow",
  "book_templates",
  "parse_lib",
+ "same-file",
  "serde",
  "tempfile",
  "toml",

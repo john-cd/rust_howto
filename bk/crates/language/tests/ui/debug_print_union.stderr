@@ -1,5 +1,5 @@
 error: DebugPrint does not support unions
- --> tests/ui/debug_print_union.rs:4:7
+ --> tests/ui/debug_print_union.rs:5:7
   |
-4 | union Unsupported {
+5 | union Unsupported {
   |       ^^^^^^^^^^^

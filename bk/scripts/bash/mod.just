@@ -10,6 +10,7 @@ set windows-shell := ["C:/Program Files/Git/bin/bash.exe", "-uc"]
 
 root := clean(source_directory() + "/../..")
 book_root := replace(root, "\\", "/")
+sitemap_base_url := env("BASE_URL", "https://john-cd.com/rust_howto/")
 book_script := replace(root + "/scripts/book/build_book.sh", "\\", "/")
 
 # ---- Book build helpers -----------------------------------------------------
@@ -22,7 +23,7 @@ mdbook-build:
 # Generate the sitemap using mdbook-utils from the book root.
 sitemap:
     echo "Generate the sitemap"
-    cd "{{ book_root }}" && mdbook-utils sitemap
+    cd "{{ book_root }}" && mdbook-utils sitemap --base-url {{ quote(sitemap_base_url) }}
 
 # Copy static assets into the generated HTML directory.
 copystatic:
