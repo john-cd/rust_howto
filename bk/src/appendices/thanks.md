@@ -2,7 +2,7 @@
 
 # Thanks
 
-This reference guide is written and edited by [S. John CD][john-cd~repo]↗.
+This reference guide is written and edited by [S. John Cruchon-Dupeyrat][john-cd~repo]↗.
 
 ## This Book Includes Most of the "Rust Cookbook" {#rust-cookbook}
 
