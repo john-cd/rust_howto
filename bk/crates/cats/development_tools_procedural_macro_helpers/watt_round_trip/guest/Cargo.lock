@@ -4,8 +4,8 @@ version = 4
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.67"
-source = "git+https://github.com/dtolnay/watt?rev=bbc76489df8ebc4af304b8f2875dd5ede90420a5#b230603236f96a1f59649741b3b7df6634e85344"
+version = "1.0.107"
+source = "git+https://github.com/dtolnay/watt?rev=8f16788f649efcfb6c1995d5c7357e2504d426fb#8f16788f649efcfb6c1995d5c7357e2504d426fb"
 
 [[package]]
 name = "watt_guest"

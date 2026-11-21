@@ -10,9 +10,11 @@ publish = false
 crate-type = ["cdylib"]
 
 [dependencies]
-proc-macro2 = "=1.0.67"
+# Watt's current fork is 1.0.107; keep tracking removal of the Git patch here.
+# Review by 2027-01-19: https://github.com/john-cd/rust_howto/issues/2461
+proc-macro2 = "=1.0.107"
 
 [patch.crates-io]
-proc-macro2 = { git = "https://github.com/dtolnay/watt", rev = "bbc76489df8ebc4af304b8f2875dd5ede90420a5" }
+proc-macro2 = { git = "https://github.com/dtolnay/watt", rev = "8f16788f649efcfb6c1995d5c7357e2504d426fb" }
 
 [workspace]
