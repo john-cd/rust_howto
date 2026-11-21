@@ -50,11 +50,22 @@ local function header(heading)
 end
 
 local function anchor(span)
-    if not link_chapter or span.identifier == "" then return end
-    local destination = span.identifier
-    if destination:sub(1, #link_chapter) ~= link_chapter then
-        destination = link_chapter .. destination
+    if not link_chapter then return end
+    local name = span.attributes.name
+    local index_anchor = name and name:match("^a%d+$")
+    if span.identifier == "" and index_anchor then
+        local destination = link_chapter .. name
+        heading_targets[destination] = true
+        if FORMAT == "typst" then
+            return pandoc.RawInline("typst", "#box(width: 0pt)[]<" .. destination .. ">")
+        end
+        span.identifier = destination
+        span.attributes.name = nil
+        return span
     end
+    if span.identifier == "" then return end
+    local destination = span.identifier
+    if destination:sub(1, #link_chapter) ~= link_chapter then destination = link_chapter .. destination end
     if FORMAT == "typst" and heading_targets[destination] then
         local base = destination
         local suffix = 2
