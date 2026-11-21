@@ -8,6 +8,7 @@ members = [
     "example-integrity",
     "mdbook-private",
     "mdbook-scrub",
+    "setup-build",
     "templ",
     "tool_lib",
 ]

@@ -47,7 +47,8 @@ or select a manifest from the root, for example:
 just cargo check --manifest-path tools/Cargo.toml
 ```
 
-Run `just build-setup` once per checkout to create the ignored links used by
+Run `just build-setup` once per checkout to run the Rust `setup-build` command
+and create the ignored links used by
 direct Cargo commands. On Windows, prefer `just cargo` so Cargo receives
 absolute external paths instead of relying on junctions.
 

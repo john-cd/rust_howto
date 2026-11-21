@@ -12,7 +12,7 @@ Status: implementation in progress (issue #2000). Keep `just` as the task runner
 - About 70 `[unix]` and 24 `[windows]` attributes. Recipes are duplicated per OS only in `book`, `docs`, `hooks`, `recipes`, `utils` and a few others. These modules had **only `[unix]` recipes and no Windows counterpart**: `anchors`, `chapters`, `crates`, `examples`, `gh`, `includes`, `spelling`, `titles`, `toc`, `urls`, `wikilinks`. The `quick` book-preview recipe also lacked Windows support; Windows counterparts or shared Bash recipes have now been added for these gaps.
 - The unix scripts lean on `grep -P`, `comm`, `sed -r`, `mktemp`, `realpath`, `/tmp`, `rm --recursive` and `aspell`/`lychee`.
 - The `RUSTC_WRAPPER` overrides in `bk/scripts/code/mod.just` and `later/justfile` use Bash assignment syntax in shared Unix and Windows recipes.
-- `scripts/build.just` reads configurable `CODE_*_ROOT` values and computes per-checkout target/build paths and the registered-worktree `SCCACHE_BASEDIRS` list directly in Just. `setup-build.sh` / `setup-build.ps1` remain two ports of the same ~90 lines.
+- `scripts/build.just` reads configurable `CODE_*_ROOT` values and computes per-checkout target/build paths and the registered-worktree `SCCACHE_BASEDIRS` list directly in Just. The Rust `setup-build` command owns the cross-platform link and worktree operations.
 - CI already runs on `ubuntu`, `windows-2025` and `macos-15`, and the repo already ships Rust helper binaries (`tools/`, `bin/clean.exe`, `mdbook-utils`) and one Python script (`refdefs.py`).
 
 The simple recipes (`cargo ...`, `just code ...`) already work on both OSes. The pain is concentrated in the roughly 40 shell scripts and the duplicated `[unix]`/`[windows]` pairs.

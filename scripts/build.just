@@ -53,6 +53,7 @@ done
 
 export CARGO_TARGET_DIR := build_target_dir
 export CARGO_BUILD_TARGET_DIR := build_target_dir
+build_setup_binary := join(build_target_dir, if os() == "windows" { "debug/setup-build.exe" } else { "debug/setup-build" })
 export CARGO_TERM_QUIET := env("CARGO_TERM_QUIET", "true")
 host_build_volume := if os() == "windows" { trim(shell('pwsh.exe -NoLogo -NoProfile -File "$1" -BuildRoot "$2"', join(build_repo, "scripts/cargo-host.ps1"), build_code_build_root)) } else { "ok" }
 export CARGO_BUILD_BUILD_DIR := if host_build_volume == "ok" { build_intermediate_dir } else { error("Cargo build root must use NTFS or ReFS (Rust 1.100.0 or newer)") }
@@ -91,34 +92,21 @@ export npm_config_cache := env("npm_config_cache", join(build_code_packages_root
 # ---- Build directories and cache -------------------------------------------
 
 # Connect direct Cargo commands to the same persistent directories as just.
-[windows]
 build-setup:
-    pwsh.exe -NoLogo -NoProfile -File "{{ build_repo }}/scripts/setup-build.ps1"
+    cargo build --manifest-path "{{ build_repo }}/tools/Cargo.toml" -p setup-build --bin setup-build
+    {{ quote(build_setup_binary) }} --repo-root {{ quote(build_repo) }} setup
 
 # Refresh the shared daemon's base directories while no Rust build is running.
-[windows]
 cache-setup:
-    pwsh.exe -NoLogo -NoProfile -File "{{ build_repo }}/scripts/setup-build.ps1" -RestartCache
+    cargo build --manifest-path "{{ build_repo }}/tools/Cargo.toml" -p setup-build --bin setup-build
+    {{ quote(build_setup_binary) }} --repo-root {{ quote(build_repo) }} restart-cache
 
 # Create a named branch in a known slot; existing slots are preserved for reuse.
-[windows]
 worktree slot branch:
-    pwsh.exe -NoLogo -NoProfile -File "{{ build_repo }}/scripts/setup-build.ps1" -Slot "{{ slot }}" -Branch "{{ branch }}" -TargetDir "{{ build_inherited_target }}" -BuildDir "{{ build_inherited_intermediate }}"
+    cargo build --manifest-path "{{ build_repo }}/tools/Cargo.toml" -p setup-build --bin setup-build
+    {{ quote(build_setup_binary) }} --repo-root {{ quote(build_repo) }} worktree --slot {{ quote(slot) }} --branch {{ quote(branch) }} --target-dir {{ quote(build_inherited_target) }} --build-dir {{ quote(build_inherited_intermediate) }}
 
-# Connect this checkout to its external Cargo output and compiler-cache directories.
-[unix]
-build-setup:
-    bash "{{ build_repo }}/scripts/setup-build.sh"
-
-# Restart the shared sccache daemon with the registered worktree base directories.
-[unix]
-cache-setup:
-    bash "{{ build_repo }}/scripts/setup-build.sh" --restart-cache
-
-# Create a named worktree slot and configure its external build directories.
-[unix]
-worktree slot branch:
-    bash "{{ build_repo }}/scripts/setup-build.sh" --slot "{{ slot }}" "{{ branch }}" "{{ build_inherited_target }}" "{{ build_inherited_intermediate }}"
+# These operations use the same Rust command on Unix and Windows.
 # ---- Environment diagnostics -----------------------------------------------
 
 # Print the active worktree paths and compiler-cache configuration.

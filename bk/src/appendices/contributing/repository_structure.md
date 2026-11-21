@@ -64,7 +64,7 @@ The book's [GitHub repository][rust-howto~repo]↗ is a "monorepo" with multiple
   - The [`tools`][rust-howto~tools~repo]↗ workspace builds a few CLI binaries that share a common `tool_lib` library.
   - In the base folder of each project, type [`just`][c~just~docs]↗{{hi:just}} at the shell prompt for a list of commands you can use to format, check, build, lint and test the code. `just release` builds tools in release mode and copies the binaries into the `bin` folder (in the repo root).
 
-Run `just build-setup` to link Cargo's `target` and intermediate `build` directories to the configured per-checkout cache directories. The root `.cargo/config.toml` and shared `scripts/build.just` configure these paths for the independent workspaces. Run the setup once before using Cargo directly in a checkout. The `just worktree` recipe sets up new slots automatically.
+Run `just build-setup` to invoke the Rust `setup-build` command and link Cargo's `target` and intermediate `build` directories to the configured per-checkout cache directories. The root `.cargo/config.toml` and shared `scripts/build.just` configure these paths for the independent workspaces. Run the setup once before using Cargo directly in a checkout. The `just worktree` recipe sets up new slots automatically.
 
 Consult the `README.md` files of each crate for more details.
 
