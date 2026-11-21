@@ -1,7 +1,7 @@
 # TODO Reviewed ??-??-2026.
 
 [book]
-authors = ["John CD"]
+authors = ["S. John Cruchon-Dupeyrat"]
 language = "en"
 # src = "src"  # the directory with the markdown sources, "src" by default
 title = "The Rust How-to Book"
