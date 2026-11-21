@@ -323,6 +323,19 @@ RUN wget -q "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/p
 ## Copy only binaries from builder to keep the base image lean
 COPY --from=tool-builder /usr/local/cargo/bin/ /usr/local/cargo/bin/
 
+## Install the tagged PDF engine alongside Tectonic.
+RUN if [ "$TARGETARCH" = "amd64" ]; then \
+        archive=/tmp/typst.tar.xz; \
+        curl --fail --location --proto '=https' --tlsv1.2 \
+            'https://github.com/typst/typst/releases/download/v0.14.2/typst-x86_64-unknown-linux-musl.tar.xz' \
+            --output "$archive"; \
+        echo "a6044cbad2a954deb921167e257e120ac0a16b20339ec01121194ff9d394996d  ${archive}" | sha256sum --check; \
+        tar -xJf "$archive" --strip-components=1 -C /usr/local/cargo/bin typst-x86_64-unknown-linux-musl/typst; \
+        rm "$archive"; \
+    else \
+        cargo binstall --no-confirm --secure --version 0.14.2 typst-cli; \
+    fi
+
 ## Prefer the pinned Tectonic release binary on Linux x86_64; use Cargo for other architectures.
 RUN if [ "$TARGETARCH" = "amd64" ]; then \
         archive="/tmp/tectonic-${TECTONIC_VERSION}-x86_64-unknown-linux-gnu.tar.gz"; \

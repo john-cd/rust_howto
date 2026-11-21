@@ -125,6 +125,22 @@ function Add-UserPath {
 
 Add-UserPath -Directory $pandocDirectory
 
+$typstVersion = '0.14.2'
+$typstPlatform = 'typst-x86_64-pc-windows-msvc'
+$typstRoot = Join-Path (Join-Path $toolsRoot 'typst') $typstVersion
+$typstDirectory = Join-Path $typstRoot $typstPlatform
+if (-not (Test-Path -LiteralPath (Join-Path $typstDirectory 'typst.exe') -PathType Leaf)) {
+    $typstArchive = Join-Path $env:TEMP "typst-$typstVersion-windows.zip"
+    Invoke-WebRequest -Uri "https://github.com/typst/typst/releases/download/v$typstVersion/$typstPlatform.zip" -OutFile $typstArchive
+    $typstHash = (Get-FileHash -LiteralPath $typstArchive -Algorithm SHA256).Hash.ToLowerInvariant()
+    if ($typstHash -ne '51353994ac83218c3497052e89b2c432c53b9d4439cdc1b361e2ea4798ebfc13') {
+        throw "Typst archive SHA-256 did not match the pinned digest: $typstHash"
+    }
+    Expand-Archive -LiteralPath $typstArchive -DestinationPath $typstRoot -Force
+    Remove-Item -LiteralPath $typstArchive
+}
+Add-UserPath -Directory $typstDirectory
+
 # Install OpenSSL through the pinned vcpkg release so openssl-sys can discover
 # the x64 libraries using its default Rust/MSVC triplet.
 function Install-VcpkgOpenSsl {

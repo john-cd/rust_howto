@@ -216,7 +216,7 @@ expand = true # partial words will match longer terms
 
 # mdbook-pandoc configuration
 # https://crates.io/crates/mdbook-pandoc
-# PDF rendering requires `pandoc`, `tectonic`, and `rsvg-convert` on PATH.
+# Tagged PDF rendering requires Pandoc and Typst 0.14.2 or newer on PATH.
 
 [output.pandoc]
 optional = true # CI and Windows HTML builds may skip the PDF backend; request it explicitly in CI to run it.
@@ -237,13 +237,14 @@ show-hidden-lines = false
 # options to pass to Pandoc (see https://pandoc.org/MANUAL.html#defaults-files)
 [output.pandoc.profile.pdf]
 output-file = "book.pdf" # output file (within the profile's build directory)
-to = "latex" # output format
+to = "typst"
 
 # PDF-specific settings
-# Use tectonic as the PDF engine: it is self-contained and does not require a separate LaTeX installation.
-# See https://tectonic-typesetting.github.io
-pdf-engine = "tectonic"
+# Typst preserves semantic document structure and writes PDF tags by default.
+pdf-engine = "typst"
 filters = [{ type = "lua", path = "scripts/book/pdf_badges.lua" }]
+include-in-header = ["theme/pdf.typ", "theme/pdf-draft.typ"]
+include-before-body = ["theme/pdf-front.typ"]
 
 # `mdbook-pandoc` overrides Pandoc's defaults for the following options to better support mdBooks
 file-scope = true # parse each file individually before combining

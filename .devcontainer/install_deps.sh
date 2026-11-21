@@ -166,6 +166,17 @@ cargo binstall --no-confirm --secure --version "$MATURIN_VERSION" maturin
 cargo binstall --no-confirm --secure --version "$MDBOOK_VERSION" mdbook
 cargo binstall --no-confirm --secure --version "$MDBOOK_LINKCHECK_VERSION" mdbook-linkcheck
 cargo binstall --no-confirm --secure --version "$MDBOOK_PANDOC_VERSION" mdbook-pandoc
+if [[ "$(uname -m)" == x86_64 ]]; then
+    typst_archive="$(mktemp)"
+    curl --fail --location --proto '=https' --tlsv1.2 \
+        'https://github.com/typst/typst/releases/download/v0.14.2/typst-x86_64-unknown-linux-musl.tar.xz' \
+        --output "$typst_archive"
+    echo "a6044cbad2a954deb921167e257e120ac0a16b20339ec01121194ff9d394996d  ${typst_archive}" | sha256sum --check
+    tar -xJf "$typst_archive" --strip-components=1 -C "$HOME/.cargo/bin" typst-x86_64-unknown-linux-musl/typst
+    rm -f "$typst_archive"
+else
+    cargo binstall --no-confirm --secure --version 0.14.2 typst-cli
+fi
 cargo binstall --no-confirm --secure --version "$JUST_VERSION" just
 cargo binstall --no-confirm --secure --force --version "$CARGO_FMT_TOML_VERSION" cargo-fmt-toml
 cargo binstall --no-confirm --secure --force --version "$DPRINT_VERSION" dprint
