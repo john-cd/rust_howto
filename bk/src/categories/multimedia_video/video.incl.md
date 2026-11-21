@@ -2,4 +2,4 @@
 
 | Recipe | Crates | Categories |
 | --- | --- | --- |
-| [Play Video][ex~multimedia_video~video] | {{!crate }} | {{#categories multimedia::video=Video}} |
+| [Play Video][ex~multimedia_video~video] | | {{#categories multimedia::video=Video}} |

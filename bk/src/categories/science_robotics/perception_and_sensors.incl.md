@@ -2,4 +2,4 @@
 
 | Recipe | Crates | Categories |
 | --- | --- | --- |
-| | {{!crate }} | {{#categories science::robotics=Robotics}} |
+| | | {{#categories science::robotics=Robotics}} |

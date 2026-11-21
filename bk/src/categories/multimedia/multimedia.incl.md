@@ -2,4 +2,4 @@
 
 | Recipe | Crates | Categories |
 | --- | --- | --- |
-| [Multimedia][ex~multimedia~multimedia] | {{!crate }} | {{#categories multimedia=Multimedia}} |
+| [Multimedia][ex~multimedia~multimedia] | | {{#categories multimedia=Multimedia}} |

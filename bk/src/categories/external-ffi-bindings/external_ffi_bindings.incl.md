@@ -2,4 +2,4 @@
 
 | Recipe | Crates | Categories |
 | --- | --- | --- |
-| [C Bindings][ex~external-ffi-bindings~ffi] | {{!crate }} | {{#categories external-ffi-bindings="External FFI bindings"}} |
+| [C Bindings][ex~external-ffi-bindings~ffi] | | {{#categories external-ffi-bindings="External FFI bindings"}} |
