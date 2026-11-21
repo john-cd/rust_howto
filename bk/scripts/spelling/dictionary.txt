@@ -1812,6 +1812,7 @@ ShowOption
 Shriram
 Sig
 SignalKind
+SignedDuration
 Signature
 SigningKey
 Simbody
