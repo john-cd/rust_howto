@@ -2,7 +2,7 @@
 
 # `example-integrity`
 
-This read-only tool inventories the book's Markdown chapters, recursive includes,
+This tool inventories the book's Markdown chapters, recursive includes,
 Rust code snippets, Cargo targets, reachable Rust modules, and documented exceptions.
 It inventories `bk/src` and `later/src` and recognizes visible command walkthroughs
 independently of Cargo-backed examples.
@@ -33,3 +33,16 @@ cargo run --locked -p example-integrity -- unused-examples [--book-root <PATH>] 
 the selected book's `crates/` tree and recognizes native includes from `bk/src`
 and `later/src`. The existing no-subcommand invocation and JSON schema remain
 available for the strict chapter/include audit.
+
+Generate or check the example index and its derived reference definitions with:
+
+```sh
+cargo run --locked -p example-integrity -- --repo-root . index generate --book-root bk
+cargo run --locked -p example-integrity -- --repo-root . index check --book-root bk
+cargo run --locked -p example-integrity -- --repo-root . index refdefs generate --book-root bk
+cargo run --locked -p example-integrity -- --repo-root . index refdefs check --book-root bk
+```
+
+Index generation preserves the review marker and hidden block in the existing
+index. Reference generation keeps hand-written definitions and updates only the
+derived example destinations.

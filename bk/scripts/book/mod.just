@@ -84,7 +84,7 @@ _default:
 # Check dependency references using the same normalized merge as generation, without writing files.
 @refdefs-check: _install-mdbook-utils
     {{ python }} "{{ source_directory() }}/refdefs.py" check --book-root "{{ root }}"
-    {{ python }} "{{ source_directory() }}/../indices/update_refdefs_for_examples.py" check --book-root "{{ root }}"
+    cargo run --locked --manifest-path "{{ root }}/../tools/Cargo.toml" -p example-integrity -- --repo-root "{{ root }}/.." index refdefs check --book-root bk
 
 # Use the pinned mdbook-utils revision installed by CI, or install it locally.
 @_install-mdbook-utils:

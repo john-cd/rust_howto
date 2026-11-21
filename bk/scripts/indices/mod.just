@@ -44,7 +44,7 @@ _default:
 # Outputs the contents of index of examples `src/examples_index.md` (reading the local tables of content of all subchapters)
 [group('index of examples')]
 generate_index_of_examples:
-    ./generate_index_of_examples.sh {{ root }}
+    cargo run --locked --manifest-path "{{ root }}/tools/Cargo.toml" -p example-integrity -- --repo-root "{{ root }}" index generate --book-root bk
 
 # Verify that standalone and nested example entries appear in the generated index.
 [group('index of examples')]
@@ -56,7 +56,7 @@ test_generate_index_of_examples:
 # Add, to `src/refs.incl.md`, missing references that are required for the index of examples (found in `examples_index.md`)
 [group('index of examples')]
 update_refdefs_for_examples:
-    {{ if os_family() == "windows" { "python" } else { "python3" } }} "{{ source_directory() }}/update_refdefs_for_examples.py" generate --book-root "{{ root }}"
+    cargo run --locked --manifest-path "{{ root }}/tools/Cargo.toml" -p example-integrity -- --repo-root "{{ root }}" index refdefs generate --book-root bk
 
 # Usage: just indices update_refdefs_for_examples (cross-platform; `just book refdefs-check` runs the matching check)
 ## ---- OTHERS --------------------------------

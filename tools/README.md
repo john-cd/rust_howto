@@ -60,6 +60,15 @@ cargo run --locked -p example-integrity -- unused-examples [--book-root <PATH>] 
 - `tests`: Report example test-convention coverage. Informational by default; add `--fail` to gate on violations.
 - `unused-examples`: List `.rs` files under the selected book's `crates/` directory that native includes in `bk/src` and `later/src` do not reference.
 
+Generate or check the example index and derived example references with:
+
+```sh
+cargo run --locked -p example-integrity -- --repo-root . index generate --book-root bk
+cargo run --locked -p example-integrity -- --repo-root . index check --book-root bk
+cargo run --locked -p example-integrity -- --repo-root . index refdefs generate --book-root bk
+cargo run --locked -p example-integrity -- --repo-root . index refdefs check --book-root bk
+```
+
 ### `book-audit`
 
 Checks generated HTML, staged previews, the mdBook search index, runnable Playground imports, and visible TODO placeholders. The `just book buildbook` recipe runs the published-book checks; `just book future` builds the future-book preview and checks its links.

@@ -13,6 +13,10 @@ use anyhow::Result;
 use clap::Parser;
 use clap::Subcommand;
 use example_integrity::build_report;
+use example_integrity::check_example_index;
+use example_integrity::check_example_refdefs;
+use example_integrity::generate_example_index;
+use example_integrity::generate_example_refdefs;
 use example_integrity::survey_example_tests;
 use walkdir::WalkDir;
 
@@ -59,6 +63,54 @@ enum Operation {
         #[arg(long)]
         summary: bool,
     },
+
+    /// Generate or check the example index and derived example references.
+    Index {
+        #[command(subcommand)]
+        command: IndexCommand,
+    },
+}
+
+/// A generation or validation operation for book indexes.
+#[derive(Debug, Subcommand)]
+enum IndexCommand {
+    /// Generate the chapter index from the published Summary.
+    Generate {
+        /// Book directory containing `src/SUMMARY.md`.
+        #[arg(long, default_value = "bk")]
+        book_root: PathBuf,
+    },
+
+    /// Check whether the chapter index matches the published Summary.
+    Check {
+        /// Book directory containing `src/SUMMARY.md`.
+        #[arg(long, default_value = "bk")]
+        book_root: PathBuf,
+    },
+
+    /// Generate or check example reference definitions.
+    Refdefs {
+        #[command(subcommand)]
+        command: RefdefsCommand,
+    },
+}
+
+/// A generation or validation operation for example reference definitions.
+#[derive(Debug, Subcommand)]
+enum RefdefsCommand {
+    /// Generate derived references while preserving hand-written entries.
+    Generate {
+        /// Book directory containing `src/indices/refs.incl.md`.
+        #[arg(long, default_value = "bk")]
+        book_root: PathBuf,
+    },
+
+    /// Check derived references without changing files.
+    Check {
+        /// Book directory containing `src/indices/refs.incl.md`.
+        #[arg(long, default_value = "bk")]
+        book_root: PathBuf,
+    },
 }
 
 /// Returns the repository root containing this package.
@@ -67,6 +119,15 @@ fn default_repository_root() -> PathBuf {
         .parent()
         .and_then(std::path::Path::parent)
         .map_or_else(|| PathBuf::from("."), std::path::Path::to_path_buf)
+}
+
+/// Resolves a user-selected path relative to the repository root when needed.
+fn resolve_path(repo_root: &Path, path: PathBuf) -> PathBuf {
+    if path.is_absolute() {
+        path
+    } else {
+        repo_root.join(path)
+    }
 }
 
 /// Scans the repository and writes the selected report to stdout.
@@ -132,6 +193,72 @@ fn run_with(args: Args) -> Result<ExitCode> {
                 ExitCode::SUCCESS
             })
         }
+        Some(Operation::Index { command }) => run_index(&repo_root, command),
+    }
+}
+
+/// Generates or checks the example index and its derived reference definitions.
+///
+/// # Errors
+///
+/// Returns an error if source files cannot be read or generated files cannot be replaced.
+fn run_index(repo_root: &Path, command: IndexCommand) -> Result<ExitCode> {
+    match command {
+        IndexCommand::Generate { book_root } => {
+            let book_root = resolve_path(repo_root, book_root);
+            let changed = generate_example_index(&book_root)?;
+            let target = book_root.join("src/indices/examples_index.md");
+            if changed {
+                println!("Updated {}", target.display());
+            } else {
+                println!("Already up to date: {}", target.display());
+            }
+            Ok(ExitCode::SUCCESS)
+        }
+        IndexCommand::Check { book_root } => {
+            let book_root = resolve_path(repo_root, book_root);
+            let findings = check_example_index(&book_root)?;
+            print_findings(&findings);
+            Ok(exit_for_findings(&findings))
+        }
+        IndexCommand::Refdefs { command } => match command {
+            RefdefsCommand::Generate { book_root } => {
+                let book_root = resolve_path(repo_root, book_root);
+                let changed = generate_example_refdefs(&book_root)?;
+                let target = book_root.join("src/indices/refs.incl.md");
+                if changed {
+                    println!("Updated {}", target.display());
+                } else {
+                    println!("Already up to date: {}", target.display());
+                }
+                Ok(ExitCode::SUCCESS)
+            }
+            RefdefsCommand::Check { book_root } => {
+                let book_root = resolve_path(repo_root, book_root);
+                let findings = check_example_refdefs(&book_root)?;
+                print_findings(&findings);
+                Ok(exit_for_findings(&findings))
+            }
+        },
+    }
+}
+
+/// Writes each generated-index finding to stderr.
+fn print_findings(findings: &[String]) {
+    for finding in findings {
+        eprintln!("{finding}");
+    }
+    if findings.is_empty() {
+        println!("Checks passed.");
+    }
+}
+
+/// Returns a failing status when an audit produced findings.
+fn exit_for_findings(findings: &[impl Sized]) -> ExitCode {
+    if findings.is_empty() {
+        ExitCode::SUCCESS
+    } else {
+        ExitCode::FAILURE
     }
 }
 

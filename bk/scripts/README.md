@@ -17,7 +17,7 @@ Use `just` to list root recipes and modules, then `just <module>` to list a modu
 | `docker` | `push_dev` only; it requires Docker credentials and publishes an image. | Docker image push and service-list recipes. |
 | `docs` | The `doc` and `docall` preview recipes return an explicit Unix-only error. | Build and serve package or workspace documentation. |
 | `gh` | All listed recipes run through Git Bash and use the GitHub CLI. | All listed recipes. |
-| `indices` | `crate_indices` and `crate_page` use the built helper binary. | Those recipes and the Bash-based index/reference generators. |
+| `indices` | `crate_indices`, `crate_page`, and example-index generation use Rust binaries. | The same Rust commands. |
 | `links` | Link insertion, cross-linking, URL suggestions, inline-link conversion, and reference lookup run through Git Bash. | Same. |
 | `hooks` | Run and install prek hooks, configure Git Town, and install prek on Windows. | Run and install prek hooks, configure Git Town, and install prek. |
 | `recipes` | Recipe table fixer runs through the Rust `recipe-tables` command. | Recipe table fixer runs through the Rust `recipe-tables` command. |

@@ -3,7 +3,7 @@
 [package]
 name = "example-integrity"
 version.workspace = true
-description = "Read-only chapter, include, and Cargo target inventory for the Rust How-to book"
+description = "Chapter, include, Cargo target, and generated index integrity tools"
 edition.workspace = true
 rust-version.workspace = true
 license-file.workspace = true
@@ -37,12 +37,12 @@ syn = { version = "3.0.10", features = ["full"] }
 toml.workspace = true
 # Recursively walk a directory.
 walkdir.workspace = true
+# Secure temporary files for replacing generated Markdown safely.
+tempfile.workspace = true
 
 [dev-dependencies]
 # Measures Rust benchmark performance with statistical analysis and comparison reports.
 criterion.workspace = true
-# A library for managing temporary files and directories.
-tempfile.workspace = true
 
 [lints]
 workspace = true
