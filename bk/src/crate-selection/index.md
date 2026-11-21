@@ -55,12 +55,13 @@ You can also search or post on Rust chat servers and forums - see [[blogs_and_fo
 - [Top Rust Libraries 2026][libs.tech-rust~website]↗ and [State of the Crates 2025][blog~state-of-the-crates]↗ are dated snapshots; use them to discover candidates, then verify current maintenance and compatibility.
 - [r/rust: "What are some less popular but well-made crates you'd like others to know about?"][reddit~what_are_some_less_popular_but_wellmade_crates]↗ contains community recommendations.
 - ["Must know" Rust Crates][must_know_rust_crates~website]↗ and [RustRepo][rustrepo~website]↗ collect additional crate recommendations and project listings.
+- [`rust-stdx/stdx`][rust-stdx~repo]↗ is an unofficial extended standard library inspired by Go's standard library.
 
 You may also consult older resources, such as:
 
 - [Best of Rust Crates][reddit~best-of-rust-crates]↗.
 - [Rust Starter Pack][rust-starter-pack~website]↗{{hi:Rust starter pack}}.
-- [![stdx][c~stdx~repo~badge]][c~stdx~repo]↗{{hi:stdx}}.
+- [`brson/stdx`][c~stdx~repo]↗{{hi:stdx}}.
 
 ## Related Topics
 

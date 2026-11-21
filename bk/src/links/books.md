@@ -12,6 +12,7 @@ The following includes books and other long-form writings about Rust.
 - [Awesome Rust Books][rustbooks~repo]↗ [(fork)][rustbooks~fork~repo]↗.
 - [LearnRust][learnrust~repo]↗: A "list of resources to learn Rust - Roadmap from beginner to advanced level". Includes a book section.
 - [`rust-learning`][rust-learning~repo]↗: A bunch of links to books, blog posts, articles, videos, etc. for learning Rust.
+- [Rustmax][rustmax~website]↗ ([GitHub repository][rustmax~repo]↗) offers a guide to the Rust ecosystem and a collection of crates and tools. The project is experimental and unsupported.
 
 ## Essential and Official Books {#official-books}
 

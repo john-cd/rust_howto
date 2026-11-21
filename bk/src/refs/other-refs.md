@@ -968,7 +968,7 @@
 [kcl-lang~website]: https://kcl-lang.io/docs/user_docs/getting-started
 [kdab~website]: https://kdab.com
 [kellnr~repo]: https://github.com/kellnr/kellnr
-[kerkour~website]: https://kerkour.com
+[kerkour~website]: https://kerkour.com/
 [keterrest~repo]: https://github.com/anhvdq/keterrest
 [key_derivation_function]: https://en.wikipedia.org/wiki/Key_derivation_function
 [keyrock~website]: https://keyrock.com
@@ -1360,6 +1360,7 @@
 [rust-shed~repo]: https://github.com/facebookexperimental/rust-shed
 [rust-starter-pack~website]: https://opheron.github.io/rust-starter-pack
 [rust-state-machine-pattern]: https://hoverbear.org/blog/rust-state-machine-pattern
+[rust-stdx~repo]: https://github.com/rust-stdx/stdx
 [rust-templates~repo]: https://github.com/search?q=template+language%3ARust&type=repositories
 [rust-terminfo~repo]: https://github.com/meh/rust-terminfo
 [rust-tokio-template~repo]: https://github.com/Finomnis/rust-tokio-template/tree/main
@@ -1399,6 +1400,8 @@
 [rustjobs~website]: https://rustjobs.com
 [rustlab.it~website]: https://rustlab.it
 [rustmagazine~website]: https://rustmagazine.org
+[rustmax~repo]: https://github.com/brson/rustmax
+[rustmax~website]: https://www.rustmax.net/
 [rustmeup-resources-rust-blogs~website]: https://rustmeup.com/resources/rust-blogs
 [rustmeup-tutorials-cross-platform-development~website]: https://rustmeup.com/tutorials/cross-platform-development
 [rustnationuk~website]: https://rustnationuk.com

@@ -66,7 +66,7 @@ You may also consult the lists of [Medium Blogs Tagged with 'Rust'][blog~medium~
 | [Rust Trends][rust-trends~website]↗ | Biweekly newsletter on all things Rust. |
 | [`smallcultfollowing.com/babysteps`][smallcultfollowing~website]↗ | General thoughts about Rust by Niko Matsakis. |
 | [Steve Klabnik][steveklabnik~website]↗ | Rust, Ruby on Rails. |
-| [Sylvain Kerkour][kerkour~website]↗ | Black Hat Rust. |
+| [Sylvain Kerkour][kerkour~website]↗ | Articles on Rust, including cross-compilation and the extended standard library project. |
 | [`tavianator.com`][tavianator~website]↗ | Technical articles on performance and low-level programming. |
 | [`tedinski.com/archive`][tedinski~website]↗ | An archive of posts on various programming topics. |
 | Writing an OS in Rust: [`os.phil-opp.com`][blog~writing-an-OS-in-rust]↗ | A classic blog series on building a basic OS in Rust. |
