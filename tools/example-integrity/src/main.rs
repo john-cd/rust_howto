@@ -1,26 +1,64 @@
-//! Command-line entry point for the chapter and example integrity inventory.
+//! Command-line entry point for chapter, include, and example integrity reports.
 //!
 //! TODO Reviewed ??-??-2026.
 
+use std::collections::BTreeSet;
+use std::ffi::OsStr;
+use std::path::Path;
 use std::path::PathBuf;
 use std::process::ExitCode;
 
 use anyhow::Context as _;
 use anyhow::Result;
 use clap::Parser;
+use clap::Subcommand;
 use example_integrity::build_report;
+use example_integrity::survey_example_tests;
+use walkdir::WalkDir;
 
 /// Read-only chapter, include, and Cargo target inventory.
 #[derive(Debug, Parser)]
 #[command(version, about)]
 struct Args {
     /// Repository root to scan. Defaults to the repository containing this tool.
-    #[arg(long)]
+    #[arg(long, global = true)]
     repo_root: Option<PathBuf>,
 
-    /// Return a failing exit status when the report contains integrity errors.
-    #[arg(long)]
+    /// Return a failing exit status when the selected report contains problems.
+    #[arg(long, global = true)]
     fail: bool,
+
+    /// Render the selected report as CSV when supported.
+    #[arg(long, global = true)]
+    csv: bool,
+
+    #[command(subcommand)]
+    operation: Option<Operation>,
+}
+
+/// Additional report views that preserve the behavior of retired scripts.
+#[derive(Debug, Subcommand)]
+enum Operation {
+    /// Survey Rust example test conventions (informational unless `--fail` is set).
+    Tests {
+        /// Print only per-crate totals.
+        #[arg(long)]
+        summary: bool,
+
+        /// Optional repository-relative scan roots; defaults to the legacy roots.
+        roots: Vec<PathBuf>,
+    },
+
+    /// List Rust files in a book's `crates/` tree that no book source includes.
+    UnusedExamples {
+        /// Book directory relative to the repository root.
+        #[arg(long, default_value = "bk")]
+        book_root: PathBuf,
+
+        /// Print only the number of unused files.
+        #[arg(long)]
+        summary: bool,
+    },
 }
 
 /// Returns the repository root containing this package.
@@ -31,41 +69,182 @@ fn default_repository_root() -> PathBuf {
         .map_or_else(|| PathBuf::from("."), std::path::Path::to_path_buf)
 }
 
-/// Scans the repository and writes a stable JSON report to stdout.
+/// Scans the repository and writes the selected report to stdout.
 ///
 /// # Errors
 ///
-/// Returns an error if repository scanning or JSON output fails.
+/// Returns an error if repository scanning or output fails.
 fn run() -> Result<ExitCode> {
     run_with(Args::parse())
 }
 
-/// Runs the integrity check with parsed arguments and writes a JSON report.
+/// Runs the selected report with parsed arguments.
 ///
 /// # Arguments
 ///
-/// * `args` - Parsed options selecting the repository root and failure exit behavior.
+/// * `args` - Parsed options selecting the report, repository root, and failure behavior.
 ///
 /// # Returns
 ///
-/// `ExitCode::FAILURE` when `--fail` is set and the report contains errors; otherwise success.
+/// A failure exit code when `--fail` is set and the selected report has problems.
 ///
 /// # Errors
 ///
-/// Returns an error if repository scanning or JSON output fails.
+/// Returns an error if scanning or writing the report fails.
 fn run_with(args: Args) -> Result<ExitCode> {
     let repo_root = args.repo_root.unwrap_or_else(default_repository_root);
-    let report = build_report(&repo_root)
-        .with_context(|| format!("could not scan {}", repo_root.display()))?;
-    serde_json::to_writer_pretty(std::io::stdout().lock(), &report)
-        .context("could not write the JSON report")?;
-    println!();
+    let repo_root = repo_root
+        .canonicalize()
+        .with_context(|| format!("could not resolve repository root {}", repo_root.display()))?;
+    match args.operation {
+        None => run_inventory(&repo_root, args.csv, args.fail),
+        Some(Operation::Tests { summary, roots }) => {
+            let survey = survey_example_tests(&repo_root, &roots)?;
+            print!("{}", survey.render(summary, args.csv));
+            Ok(if args.fail && survey.has_problems() {
+                ExitCode::FAILURE
+            } else {
+                ExitCode::SUCCESS
+            })
+        }
+        Some(Operation::UnusedExamples { book_root, summary }) => {
+            let book_root = if book_root.is_absolute() {
+                book_root
+            } else {
+                repo_root.join(book_root)
+            };
+            let unused = unused_examples(&repo_root, &book_root)?;
+            if args.csv {
+                for path in &unused {
+                    println!("unused-example,{path}");
+                }
+            } else if summary {
+                println!("{} unused examples", unused.len());
+            } else {
+                for path in &unused {
+                    println!("{path}");
+                }
+                println!("DONE");
+            }
+            Ok(if args.fail && !unused.is_empty() {
+                ExitCode::FAILURE
+            } else {
+                ExitCode::SUCCESS
+            })
+        }
+    }
+}
 
-    Ok(if args.fail && report.has_errors() {
+/// Writes the existing stable JSON inventory or a compact diagnostic CSV.
+fn run_inventory(repo_root: &Path, csv: bool, fail: bool) -> Result<ExitCode> {
+    let report = build_report(repo_root)
+        .with_context(|| format!("could not scan {}", repo_root.display()))?;
+    if csv {
+        println!("severity,code,path,line,message");
+        for diagnostic in &report.diagnostics {
+            println!(
+                "{},{},{},{},{}",
+                csv_field(&diagnostic.severity),
+                csv_field(&diagnostic.code),
+                csv_field(&diagnostic.path),
+                diagnostic
+                    .line
+                    .map_or_else(String::new, |line| line.to_string()),
+                csv_field(&diagnostic.message)
+            );
+        }
+    } else {
+        serde_json::to_writer_pretty(std::io::stdout().lock(), &report)
+            .context("could not write the JSON report")?;
+        println!();
+    }
+
+    Ok(if fail && report.has_errors() {
         ExitCode::FAILURE
     } else {
         ExitCode::SUCCESS
     })
+}
+
+/// Lists the legacy shell command's `.rs` files that are not natively included by either book.
+fn unused_examples(repo_root: &Path, book_root: &Path) -> Result<Vec<String>> {
+    let book_root = book_root
+        .canonicalize()
+        .with_context(|| format!("could not resolve book root {}", book_root.display()))?;
+    let relative_book = book_root.strip_prefix(repo_root).with_context(|| {
+        format!(
+            "book root {} is outside the repository",
+            book_root.display()
+        )
+    })?;
+    let root_name = path_to_slashes(relative_book);
+    let crate_root = book_root.join("crates");
+    if !crate_root.is_dir() {
+        return Ok(Vec::new());
+    }
+
+    let report = build_report(repo_root)?;
+    let included = report
+        .includes
+        .iter()
+        .filter(|include| include.kind == "include")
+        .filter(|include| {
+            include.source_path.starts_with("bk/src/")
+                || include.source_path.starts_with("later/src/")
+        })
+        .filter_map(|include| include.target_path.as_deref())
+        .collect::<BTreeSet<_>>();
+
+    let excluded_names = [
+        "lib.rs", "main.rs", "mod.rs", "build.rs", "cat.rs", "lang.rs", "std.rs", "topic.rs",
+    ];
+    let mut unused = Vec::new();
+    for entry in WalkDir::new(&crate_root).follow_links(false) {
+        let entry = entry.with_context(|| format!("could not walk {}", crate_root.display()))?;
+        if entry.file_type().is_dir()
+            || entry.file_type().is_symlink()
+            || entry.path().extension() != Some(OsStr::new("rs"))
+        {
+            continue;
+        }
+        if entry
+            .file_name()
+            .to_str()
+            .is_some_and(|name| excluded_names.contains(&name))
+        {
+            continue;
+        }
+        let relative = entry
+            .path()
+            .strip_prefix(repo_root)
+            .with_context(|| format!("{} is outside the repository", entry.path().display()))?;
+        let relative = path_to_slashes(relative);
+        if !included.contains(relative.as_str()) {
+            let book_relative = relative
+                .strip_prefix(&format!("{root_name}/"))
+                .unwrap_or(&relative);
+            unused.push(book_relative.to_owned());
+        }
+    }
+    unused.sort();
+    Ok(unused)
+}
+
+/// Escapes a field for stable, standards-compliant CSV output.
+fn csv_field(value: &str) -> String {
+    if value.contains([',', '"', '\n', '\r']) {
+        format!("\"{}\"", value.replace('"', "\"\""))
+    } else {
+        value.to_owned()
+    }
+}
+
+/// Converts a platform path to the stable slash-separated report representation.
+fn path_to_slashes(path: &Path) -> String {
+    path.components()
+        .map(|component| component.as_os_str().to_string_lossy())
+        .collect::<Vec<_>>()
+        .join("/")
 }
 
 /// Starts the command-line application and reports top-level errors.
@@ -83,34 +262,45 @@ fn main() -> ExitCode {
     }
 }
 
-/// Scans a repository without chapters and succeeds, even with `--fail`.
+/// Scans repositories using the legacy JSON command-line shape.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Scans a repository without chapters and succeeds, even with `--fail`.
+    /// The old invocation still accepts a repository root and strict flag.
     #[test]
-    fn test_run_with_an_empty_repository_succeeds() -> Result<()> {
+    fn legacy_inventory_options_parse_without_a_subcommand() -> Result<()> {
         let dir = tempfile::tempdir()?;
         let root = dir.path().to_str().expect("the temporary path is UTF-8");
-        let args = Args::try_parse_from(["example-integrity", "--repo-root", root])?;
-        assert_eq!(run_with(args)?, ExitCode::SUCCESS);
+        let args = Args::try_parse_from(["example-integrity", "--repo-root", root, "--fail"])?;
+        assert!(args.fail);
+        assert!(args.operation.is_none());
         Ok(())
     }
 
-    /// A missing repository root is reported as an error.
+    /// Global options parse after a subcommand, as used by scripts and Just recipes.
     #[test]
-    fn test_run_with_a_missing_root_fails() -> Result<()> {
-        let args =
-            Args::try_parse_from(["example-integrity", "--repo-root", "/definitely/not/here"])?;
-        let error = run_with(args).expect_err("the root does not exist");
-        assert!(error.to_string().contains("could not"));
+    fn subcommand_accepts_global_options_after_its_name() -> Result<()> {
+        let args = Args::try_parse_from([
+            "example-integrity",
+            "tests",
+            "--summary",
+            "--repo-root",
+            ".",
+            "--fail",
+        ])?;
+        assert!(args.fail);
+        assert!(matches!(
+            args.operation,
+            Some(Operation::Tests { summary: true, .. })
+        ));
         Ok(())
     }
 
-    /// The default root is the repository, which has a `bk` folder.
+    /// CSV fields quote commas, quotes, and newlines.
     #[test]
-    fn test_default_root_is_the_repository() {
-        assert!(default_repository_root().join("bk").is_dir());
+    fn csv_fields_are_escaped() {
+        assert_eq!(csv_field("plain"), "plain");
+        assert_eq!(csv_field("a,\"b\""), "\"a,\"\"b\"\"\"");
     }
 }

@@ -47,10 +47,16 @@ just audit-examples
 
 # Or run directly via cargo
 cargo run --locked -p example-integrity -- [--repo-root <PATH>] [--fail]
+
+# Survey example test conventions or list unreferenced book sources
+cargo run --locked -p example-integrity -- tests [--summary] [--csv] [ROOT ...]
+cargo run --locked -p example-integrity -- unused-examples [--book-root <PATH>] [--summary]
 ```
 
 - `--fail`: Exit with a failure status if any integrity errors are found.
 - `--repo-root <PATH>`: Specify the repository root directory to scan (defaults to the containing repository).
+- `tests`: Report example test-convention coverage. Informational by default; add `--fail` to gate on violations.
+- `unused-examples`: List `.rs` files under the selected book's `crates/` directory that native includes in `bk/src` and `later/src` do not reference.
 
 ### `mdbook-private`
 

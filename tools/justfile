@@ -120,6 +120,14 @@ _default:
 @audit-examples:
     cargo run --locked -p example-integrity -- --fail
 
+# Survey example test conventions and list files in the book crate tree that are not included.
+@audit-example-tests:
+    cargo run --locked -p example-integrity -- tests --summary
+
+# List book crate sources that no published or future-book page includes.
+@list-unused-examples:
+    cargo run --locked -p example-integrity -- unused-examples
+
 # Synchronize the configured Cargo manifests with scripts/lints/*.toml.
 @sync-lints:
     cargo run --manifest-path "{{ root }}/Cargo.toml" --locked -p repo-audit -- sync-lints

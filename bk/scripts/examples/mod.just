@@ -23,7 +23,7 @@ _default:
 
 # List examples (.rs files) in `crates/**/tests` that may not be included in the book markdown.
 @list_not_used_in_book:
-    ./list_examples_not_used_in_book.sh {{ quote(justfile_directory()) }}
+    cargo run --manifest-path "{{ root }}/../tools/Cargo.toml" --locked -p example-integrity -- --repo-root "{{ root }}/.." unused-examples --book-root bk
 
 # The script matches e.g. {{#include ../../../crates/cats/development_tools_debugging/examples/<...>/type_name_of_val.rs:example}}
 # and extracts the file names, then compare to the list of test files

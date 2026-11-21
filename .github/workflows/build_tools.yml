@@ -104,4 +104,6 @@ jobs:
             cargo test --workspace --all-targets --locked --all-features
             cargo test --workspace --doc --locked --all-features
             cargo run --locked -p example-integrity -- --fail
+            cargo run --locked -p example-integrity -- tests --summary
+            cargo run --locked -p example-integrity -- unused-examples --summary
           '
