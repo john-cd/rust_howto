@@ -4,6 +4,8 @@
 
 {{#include parse.incl.md}}
 
+The Chrono examples are retained for existing code; this book treats Chrono as soft-deprecated for new code. Use Jiff for named time zones and calendar arithmetic, or `time` for fixed offsets, format descriptions, and `no_std` support.
+
 ## Examine the Date and Time {#examine-date-and-time}
 
 [![chrono][c~chrono~docs~badge]][c~chrono~docs]{{hi:chrono}} [![cat~date-and-time][cat~date-and-time~badge]][cat~date-and-time]{{hi:Date and time}}
@@ -50,13 +52,13 @@ Escape sequences for `parse_from_str` follow Chrono's [`strftime` format rules][
 {{#include ../../../crates/cats/date_and_time/examples/chrono/parse_string_into_datetime.rs:example}}
 ```
 
-## `humantime` (legacy) {#humantime}
+## `humantime` (soft-deprecated) {#humantime}
 
 {{#badges humantime date-and-time="Date and time"}}{{hi:Parser}}{{hi:Time}}{{hi:Human}}{{hi:Duration}}{{hi:Human-friendly}}
 
-[RustSec advisory RUSTSEC-2026-0542](https://rustsec.org/advisories/RUSTSEC-2026-0542.html) lists `humantime` as unmaintained and reports no patched release. For new inputs, use [Jiff's `SignedDuration` or `Timestamp`](index.md#using-jiff). For RFC 3339 timestamps, [`time`](time_crate.md) also provides a parser for `OffsetDateTime`. Check the accepted syntax and whether negative durations are allowed before migrating existing configuration.
+[RustSec advisory RUSTSEC-2026-0542](https://rustsec.org/advisories/RUSTSEC-2026-0542.html) lists `humantime` as unmaintained and reports no patched release, so this book treats it as soft-deprecated for new code. For elapsed durations, use [Jiff's `SignedDuration`](index.md#using-jiff); for RFC 3339 timestamps, use [`time::OffsetDateTime`](time_crate.md). Check the accepted syntax and whether negative durations are allowed before migrating existing configuration.
 
-This legacy example uses `humantime` to parse and format `std::time::Duration` values. The example parses `2h 30m 15s` into a duration and formats it back into a human-readable string. `humantime` also supports RFC 3339 timestamps when an application needs to parse a `SystemTime`.
+This example is retained to explain existing `humantime` code. It parses and formats `std::time::Duration` values: for example, it parses `2h 30m 15s` and formats the result as human-readable text. `humantime` also supports RFC 3339 timestamps when an application needs to parse a `SystemTime`.
 
 ```rust,editable
 {{#include ../../../crates/cats/date_and_time/examples/humantime.rs:example}}
