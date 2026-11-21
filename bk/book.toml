@@ -247,6 +247,7 @@ filters = [
   { type = "lua", path = "scripts/book/pdf_links.lua" },
   { type = "lua", path = "scripts/book/pdf_tables.lua" },
   { type = "lua", path = "scripts/book/pdf_word_index.lua" },
+  { type = "lua", path = "scripts/book/pdf_category_index.lua" },
   { type = "lua", path = "scripts/book/pdf_text.lua" },
 ]
 include-in-header = [
