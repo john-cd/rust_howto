@@ -33,7 +33,7 @@ fn main() {
 
     // Character type (Unicode scalar value).
     let r: char = 'a';
-    let s: char = '😀'; // Unicode emoji.
+    let s: char = '😀'; // Unicode emoji (grinning face).
     let t: char = '∞'; // Unicode symbol.
 
     // Print all values.
