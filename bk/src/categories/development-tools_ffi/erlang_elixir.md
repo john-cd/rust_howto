@@ -62,7 +62,7 @@ Use [`ResourceArc<T>`][ffi~rustler-resource] for native state shared with BEAM t
 
 For release distribution, [`rustler_precompiled`][ffi~rustler-precompiled] downloads platform-specific NIF artifacts and checks their checksums. Publish artifacts for the supported target triples and NIF ABI versions, retain a documented source-build fallback, and exercise loading in `mix test` on each supported runtime.
 
-From `bk/platform`, run `cargo test --locked -p development_tools_ffi --example erlang_elixir --features erlang` for the pure greeting and arithmetic tests. Build the NIF library with `cargo build --locked -p development_tools_ffi --example my_rust_library --features erlang`, then set `RUSTLER_NIF_PATH` to the library path without its platform extension, compile `Elixir.MyRustLibrary.erl` with `erlc`, and call the module from an Erlang shell. This separate load check verifies BEAM registration; Elixir term-conversion tests still belong in the generated Mix project.
+From `bk/platform`, run `cargo test --locked -p development_tools_ffi --example erlang_elixir --features erlang` for the pure greeting and arithmetic tests. Build the NIF library with `cargo build --locked -p development_tools_ffi --example my_rust_library --features erlang`, then set `RUSTLER_NIF_PATH` to the library path without its platform extension, compile `Elixir.MyRustLibrary.erl` with the Erlang compiler, and call the module from an Erlang shell. This separate load check verifies BEAM registration; Elixir term-conversion tests still belong in the generated Mix project.
 
 ## Other Considerations {#other-considerations .skip}
 
