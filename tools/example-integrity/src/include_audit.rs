@@ -156,3 +156,74 @@ fn relative_path(book_root: &Path, path: &Path) -> Result<String> {
         .collect::<Vec<_>>()
         .join("/"))
 }
+
+/// Verifies include audit findings, accepted spellings, and legacy path exclusions.
+#[cfg(test)]
+mod tests {
+    use tempfile::tempdir;
+
+    use super::*;
+
+    /// Reports missing local references while accepting the exact directive and excluding support
+    /// files.
+    #[test]
+    fn local_reference_audit_preserves_legacy_exclusions() -> Result<()> {
+        let directory = tempdir()?;
+        let source = directory.path().join("src/sections");
+        fs::create_dir_all(&source)?;
+        fs::write(source.join("missing.md"), "# Missing\n")?;
+        fs::write(
+            source.join("ready.md"),
+            "# Ready\n{{#include refs.incl.md}}\n",
+        )?;
+        fs::write(source.join("table.incl.md"), "table support\n")?;
+        fs::write(source.join("chapter.refs.md"), "reference support\n")?;
+        fs::write(source.join("backup.md.bak"), "backup\n")?;
+        fs::write(source.join("word_index.md"), "generated index\n")?;
+
+        assert_eq!(
+            check_local_reference_includes(directory.path())?,
+            [
+                "missing local reference include in src/sections/missing.md; expected {{#include refs.incl.md}}"
+            ]
+        );
+        Ok(())
+    }
+
+    /// Reports nested subchapters and accepts the optional leading underscore in table includes.
+    #[test]
+    fn subchapter_audit_preserves_legacy_roots_and_exclusions() -> Result<()> {
+        let directory = tempdir()?;
+        let src = directory.path().join("src");
+        fs::create_dir_all(src.join("chapters"))?;
+        fs::create_dir_all(src.join("crates"))?;
+        fs::write(src.join("chapters/missing.md"), "# Missing\n")?;
+        fs::write(
+            src.join("chapters/ready.md"),
+            "# Ready\n{{#include _ready.incl.md}}\n",
+        )?;
+        fs::write(src.join("chapters/table.incl.md"), "table support\n")?;
+        fs::write(src.join("chapters/refs.md"), "reference support\n")?;
+        fs::write(src.join("chapters/generated_index.md"), "generated index\n")?;
+        fs::write(src.join("top_level.md"), "# Top level\n")?;
+        fs::write(src.join("crates/demo.md"), "# Crate page\n")?;
+
+        assert_eq!(
+            check_subchapter_table_includes(directory.path())?,
+            [
+                "missing subchapter table include in src/chapters/missing.md; consider adding --> {{#include missing.incl.md}}"
+            ]
+        );
+        Ok(())
+    }
+
+    /// Rejects a repository path whose book source directory is missing.
+    #[test]
+    fn include_audits_reject_a_missing_source_root() -> Result<()> {
+        let directory = tempdir()?;
+        let error = check_local_reference_includes(directory.path())
+            .expect_err("a book without src should be invalid");
+        assert!(error.to_string().contains("src"));
+        Ok(())
+    }
+}
