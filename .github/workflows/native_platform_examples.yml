@@ -112,3 +112,6 @@ jobs:
             cd bk/crates
             cargo clippy -p os_freebsd_apis --all-targets --locked -- --deny warnings
             cargo test -p os_freebsd_apis --all-targets --locked
+            # Exercise nix wrappers that call the Unix libc on a real Unix host.
+            cargo clippy -p os_unix_apis --all-targets --locked -- --deny warnings
+            cargo test -p os_unix_apis --all-targets --locked

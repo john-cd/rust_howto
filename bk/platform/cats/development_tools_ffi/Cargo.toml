@@ -41,6 +41,13 @@ path = "examples/erlang_elixir/main.rs"
 test = true
 
 [[example]]
+name = "my_rust_library"
+path = "examples/erlang_elixir/nif.rs"
+crate-type = ["cdylib"]
+required-features = ["erlang"]
+test = false
+
+[[example]]
 name = "flutter"
 path = "examples/flutter/main.rs"
 test = true

@@ -33,10 +33,10 @@ defmodule MyRustLibrary do
 end
 ```
 
-Replace the application and crate names with those generated for your project. The [Rustler Mix guide][ffi~rustler-mix] explains dependency setup and loading. The included example uses Rustler 0.39 and separates ordinary Rust logic from NIF wrappers:
+Replace the application and crate names with those generated for your project. The [Rustler Mix guide][ffi~rustler-mix] explains dependency setup and loading. The included package provides a `my_rust_library` `cdylib` target using Rustler 0.39. Its sibling Erlang module names the same BEAM module and loads the library from `RUSTLER_NIF_PATH`:
 
 ```rust,noplayground
-{{#include ../../../platform/cats/development_tools_ffi/examples/erlang_elixir/rustler.rs:example}}
+{{#include ../../../platform/cats/development_tools_ffi/examples/erlang_elixir/nif.rs:example}}
 ```
 
 ## Communication/Serialization (for both Ports and NIFs) {#communication-serialization}
@@ -62,7 +62,7 @@ Use [`ResourceArc<T>`][ffi~rustler-resource] for native state shared with BEAM t
 
 For release distribution, [`rustler_precompiled`][ffi~rustler-precompiled] downloads platform-specific NIF artifacts and checks their checksums. Publish artifacts for the supported target triples and NIF ABI versions, retain a documented source-build fallback, and exercise loading in `mix test` on each supported runtime.
 
-From `bk/platform`, run `cargo test --locked -p development_tools_ffi --example erlang_elixir` for the pure greeting and arithmetic tests. Add `--features erlang` to compile the NIF wrappers. These Rust tests do not load a NIF into BEAM; loading and Elixir term-conversion tests belong in the generated Mix project.
+From `bk/platform`, run `cargo test --locked -p development_tools_ffi --example erlang_elixir --features erlang` for the pure greeting and arithmetic tests. Build the NIF library with `cargo build --locked -p development_tools_ffi --example my_rust_library --features erlang`, then set `RUSTLER_NIF_PATH` to the library path without its platform extension, compile `Elixir.MyRustLibrary.erl` with the Erlang compiler, and call the module from an Erlang shell. This separate load check verifies BEAM registration; Elixir term-conversion tests still belong in the generated Mix project.
 
 ## Other Considerations {#other-considerations .skip}
 
