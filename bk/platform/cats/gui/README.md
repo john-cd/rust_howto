@@ -29,6 +29,28 @@ cargo test --package gui
 
 Code examples correspond to chapters in `later/src/categories/gui` or related book sections.
 
+## Optional GUI paths
+
+From the repository root, run the Iced counter independently of the other
+retained-mode frameworks:
+
+```sh
+just cargo run --manifest-path bk/platform/Cargo.toml --locked -p gui --example iced --features iced
+```
+
+For [#2423](https://github.com/john-cd/rust_howto/issues/2423), the standalone
+target in this change was built from base revision `f18b401f9` with only the
+`iced` feature on native Windows (build 26300). The counter rendered `0`,
+clicking **+** and **−** displayed `1` and `0`, and Alt+F4 exited with code 0.
+The counter's headless state test also passed.
+
+| Path | Disposition |
+| --- | --- |
+| Floem | Keep the opt-in `floem` subcommand of `retained_mode_gui` (features `slint,floem`). Native execution was deferred. |
+| Xilem | Keep the existing experimental standalone `xilem` target behind the `xilem` feature. Native execution was deferred. |
+| Tauri | Keep the plain Rust greeting in `web` (features `dioxus,tauri`). A native Tauri run requires the separately scaffolded frontend, build script, and system webview described in the [book](../../../src/categories/gui/web_based_gui.md#tauri). |
+| Tao and Wry | Keep the sample sources while the GTK 3 / `glib 0.18` dependency chain blocks the workspace integration. Follow [#2213](https://github.com/john-cd/rust_howto/issues/2213) for Wry IPC validation. |
+
 ## Bounded Background Work
 
 The `background_work` example demonstrates revision-tagged replies, errors and shutdown:

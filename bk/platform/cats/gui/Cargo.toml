@@ -49,6 +49,12 @@ required-features = ["slint"]
 test = true
 
 [[example]]
+name = "iced"
+path = "examples/retained_mode_gui/iced_main.rs"
+required-features = ["iced"]
+test = true
+
+[[example]]
 name = "xilem"
 path = "examples/retained_mode_gui/xilem_main.rs"
 required-features = ["xilem"]

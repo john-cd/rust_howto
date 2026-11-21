@@ -27,6 +27,8 @@ Check a toolkit's current platform, renderer, and release notes before choosing 
 
 [`iced`][c~iced~docs] follows the Elm Architecture: model application state, represent user actions as messages, update the state, and describe the view from it. Its current documentation lists Windows, macOS, Linux, and Web targets; the project still calls the library experimental.
 
+From `bk/platform`, run the standalone counter with `cargo run --locked -p gui --example iced --features iced`.
+
 ```rust,noplayground
 {{#include ../../../platform/cats/gui/examples/retained_mode_gui/iced.rs:example}}
 ```

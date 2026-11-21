@@ -36,7 +36,6 @@ Snapshot from GitHub on November 20, 2026. Open each epic for its full subissue 
 ### Code examples and example fixes ([#2435](https://github.com/john-cd/rust_howto/issues/2435))
 
 - Migrate one direct `chrono` or `humantime` example, or one `bincode` 1 example ([#2419](https://github.com/john-cd/rust_howto/issues/2419), [#2424](https://github.com/john-cd/rust_howto/issues/2424)).
-- Enable and run one dormant GUI example path ([#2423](https://github.com/john-cd/rust_howto/issues/2423)).
 - Prototype a client-only SurrealDB example and audit the resulting license graph ([#2282](https://github.com/john-cd/rust_howto/issues/2282)).
 
 ### Book prose fixes ([#2436](https://github.com/john-cd/rust_howto/issues/2436))
