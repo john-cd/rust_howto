@@ -15,6 +15,8 @@ use clap::Subcommand;
 use example_integrity::build_report;
 use example_integrity::check_example_index;
 use example_integrity::check_example_refdefs;
+use example_integrity::check_local_reference_includes;
+use example_integrity::check_subchapter_table_includes;
 use example_integrity::generate_example_index;
 use example_integrity::generate_example_refdefs;
 use example_integrity::survey_example_tests;
@@ -69,6 +71,12 @@ enum Operation {
         #[command(subcommand)]
         command: IndexCommand,
     },
+
+    /// Audit local reference and subchapter table includes.
+    Includes {
+        #[command(subcommand)]
+        command: IncludeCommand,
+    },
 }
 
 /// A generation or validation operation for book indexes.
@@ -108,6 +116,24 @@ enum RefdefsCommand {
     /// Check derived references without changing files.
     Check {
         /// Book directory containing `src/indices/refs.incl.md`.
+        #[arg(long, default_value = "bk")]
+        book_root: PathBuf,
+    },
+}
+
+/// A read-only audit of one kind of Markdown include.
+#[derive(Debug, Subcommand)]
+enum IncludeCommand {
+    /// Find source files without `{{#include refs.incl.md}}`.
+    LocalRefs {
+        /// Book directory containing the source `src/` tree.
+        #[arg(long, default_value = "bk")]
+        book_root: PathBuf,
+    },
+
+    /// Find nested chapters without their corresponding local recipe table.
+    SubchapterTables {
+        /// Book directory containing the source `src/` tree.
         #[arg(long, default_value = "bk")]
         book_root: PathBuf,
     },
@@ -194,6 +220,29 @@ fn run_with(args: Args) -> Result<ExitCode> {
             })
         }
         Some(Operation::Index { command }) => run_index(&repo_root, command),
+        Some(Operation::Includes { command }) => Ok(run_includes(&repo_root, command)),
+    }
+}
+
+/// Runs one include audit, using distinct exit codes for findings and invalid input.
+fn run_includes(repo_root: &Path, command: IncludeCommand) -> ExitCode {
+    let findings = match command {
+        IncludeCommand::LocalRefs { book_root } => {
+            check_local_reference_includes(&resolve_path(repo_root, book_root))
+        }
+        IncludeCommand::SubchapterTables { book_root } => {
+            check_subchapter_table_includes(&resolve_path(repo_root, book_root))
+        }
+    };
+    match findings {
+        Ok(findings) => {
+            print_findings(&findings);
+            exit_for_findings(&findings)
+        }
+        Err(error) => {
+            eprintln!("include audit could not run: {error:#}");
+            ExitCode::from(2)
+        }
     }
 }
 

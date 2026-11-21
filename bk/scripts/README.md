@@ -10,7 +10,8 @@ Use `just` to list root recipes and modules, then `just <module>` to list a modu
 
 | Module | Windows support | Unix support |
 | --- | --- | --- |
-| `anchors`, `chapters`, `crates`, `examples`, `includes`, `titles`, `toc`, `urls`, `wikilinks` | Their listed processing recipes have Windows implementations. Several use Git Bash; see each module's `mod.just`. | Their listed processing recipes. |
+| `anchors`, `chapters`, `crates`, `examples`, `titles`, `toc`, `urls`, `wikilinks` | Their listed processing recipes have Windows implementations. Several use Git Bash; see each module's `mod.just`. | Their listed processing recipes. |
+| `includes` | Read-only local-reference and subchapter include audits run through the Rust `example-integrity` command. | Same Rust audits. |
 | `book` | Full build and rendered-content audits, `refdefs-generate`, `refdefs-check`, category/alphabetical index generation, static-file copy, sitemap, `serve`, and `quick`. Audits cover rendered links, the word index, Playground imports, visible TODOs, and the generated search index. | Full build and rendered-content audits, serve recipes, plus the faster `quick` preview. `future` also checks staged preview links. |
 | `code` | Format, build, Clippy, nextest, doctests, package run, and temp cleanup. `heavy_test` and `heavytestall` are Unix-only. | Same, including heavy tests that start external services. |
 | `deps` | Cargo update, crate information, and cargo-deny checks. | Same. |

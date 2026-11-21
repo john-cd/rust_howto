@@ -46,3 +46,17 @@ cargo run --locked -p example-integrity -- --repo-root . index refdefs check --b
 Index generation preserves the review marker and hidden block in the existing
 index. Reference generation keeps hand-written definitions and updates only the
 derived example destinations.
+
+Run the read-only include audits with:
+
+```sh
+cargo run --locked -p example-integrity -- --repo-root . includes local-refs --book-root bk
+cargo run --locked -p example-integrity -- --repo-root . includes subchapter-tables --book-root bk
+```
+
+The local-reference audit scans files under `bk/src`, excluding `.incl.md`,
+`*refs.md`, `*.bak`, and `word_index.md`. The subchapter audit scans nested
+Markdown chapters, excluding `*index.md`, `.incl.md`, `*refs.md`, top-level
+source files, and direct Markdown files under `crates/`. Existing table includes
+with a leading underscore remain accepted. Both commands return 0 when clean, 1
+when findings are reported, and 2 when the book root or source scan is invalid.

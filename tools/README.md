@@ -7,7 +7,7 @@ This workspace contains tools written in Rust, which you may use to manage the b
 - `clean` is a very simple tool to clean `crates/**/temp` before and after testing.
 - `book-audit` validates rendered book links, preview output, search-index contents, Playground imports, and visible TODOs.
 - `crate_indices` creates the `crates by category` and `crates (alphabetical)` pages.
-- `example-integrity` inventories chapters, code snippets, and Cargo targets, auditing example integrity across the book.
+- `example-integrity` audits chapters, includes, code snippets, Cargo targets, and generated example indexes.
 - `mdbook-private` is a repository-local mdBook 0.5 port of `mdbook-private` that filters or styles private chapters and sections.
 - `mdbook-scrub` is a custom mdBook preprocessor that removes hidden sections/chapters and expands custom directives.
 - `recipe-tables` updates recipe table fragments from local references and headings.
@@ -68,6 +68,13 @@ cargo run --locked -p example-integrity -- --repo-root . index generate --book-r
 cargo run --locked -p example-integrity -- --repo-root . index check --book-root bk
 cargo run --locked -p example-integrity -- --repo-root . index refdefs generate --book-root bk
 cargo run --locked -p example-integrity -- --repo-root . index refdefs check --book-root bk
+```
+
+The same command provides read-only local-reference and subchapter-table audits:
+
+```sh
+cargo run --locked -p example-integrity -- --repo-root . includes local-refs --book-root bk
+cargo run --locked -p example-integrity -- --repo-root . includes subchapter-tables --book-root bk
 ```
 
 ### `workspace-fmt`
