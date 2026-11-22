@@ -23,7 +23,6 @@ harness = false
 anyhow.workspace = true
 # A simple to use, efficient, and full-featured Command Line Argument Parser
 clap.workspace = true
-# Builds Rust token streams with quasi-quoting macros for procedural macros.
 quote = "1.0.47"
 # A lightweight regex engine that optimizes for binary size and compilation time.
 regex.workspace = true
@@ -31,14 +30,13 @@ regex.workspace = true
 serde.workspace = true
 # A JSON serialization file format
 serde_json.workspace = true
-# Parser for Rust source code
 syn = { version = "3.0.10", features = ["full"] }
+# Secure temporary files for replacing generated Markdown safely.
+tempfile.workspace = true
 # A native Rust encoder and decoder of TOML-formatted files and streams. Provides implementations of the standard Serialize/Deserialize traits for...
 toml.workspace = true
 # Recursively walk a directory.
 walkdir.workspace = true
-# Secure temporary files for replacing generated Markdown safely.
-tempfile.workspace = true
 
 [dev-dependencies]
 # Measures Rust benchmark performance with statistical analysis and comparison reports.

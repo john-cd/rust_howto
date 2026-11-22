@@ -16,6 +16,8 @@ anyhow.workspace = true
 clap.workspace = true
 # A fast, standards-compliant HTML tokenizer
 html5ever.workspace = true
+# Decodes escaped URL paths and fragments
+percent-encoding.workspace = true
 # A lightweight regex engine that optimizes for binary size and compilation time.
 regex.workspace = true
 # A JSON serialization file format
@@ -26,8 +28,6 @@ toml.workspace = true
 url.workspace = true
 # Recursively walk directories
 walkdir.workspace = true
-# Decodes escaped URL paths and fragments
-percent-encoding.workspace = true
 
 [dev-dependencies]
 # A library for managing temporary files and directories.
