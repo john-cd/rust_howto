@@ -224,7 +224,7 @@ tracing = "0.1.44"
 # Utilities for implementing and composing `tracing` subscribers.
 tracing-subscriber = "0.3.23"
 # URL library for Rust, based on the WHATWG URL Standard
-url = "2.5.8"
+url = "2.5.9"
 # A GPU compute-centric 2D renderer.
 vello = { version = "0.11.0", optional = true } # Uses wgpu 30, matching this workspace.
 # Cross-platform, safe, pure-rust graphics API

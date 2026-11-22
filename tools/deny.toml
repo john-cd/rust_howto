@@ -18,6 +18,9 @@ targets = [
 version = 2
 unmaintained = "workspace"
 unsound = "workspace"
+ignore = [
+  { id = "RUSTSEC-2026-0543", reason = "chrono 0.4.45 is selected transitively through crates_io_api 0.12.0 in the tools workspace; no compatible upstream release is available yet. Recheck the dependency path and remove this exception by 2027-01-19. https://github.com/john-cd/rust_howto/issues/2247" },
+]
 yanked = "deny"
 
 [licenses]

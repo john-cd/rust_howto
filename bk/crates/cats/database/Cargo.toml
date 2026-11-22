@@ -172,7 +172,7 @@ tokio-postgres = { version = "0.7.18", optional = true }
 # Additional utilities for working with Tokio.
 tokio-util = { version = "0.7.20", features = ["compat"] }
 # URL library for Rust, based on the WHATWG URL Standard
-url = "2.5.8" # Validate Elasticsearch endpoints and their security policy.
+url = "2.5.9" # Validate Elasticsearch endpoints and their security policy.
 # A library to generate and parse UUIDs.
 uuid = { version = "1.29.2", features = ["v4"] }
 

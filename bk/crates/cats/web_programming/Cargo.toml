@@ -79,7 +79,7 @@ scraper = "0.29.0"
 # An event-driven, non-blocking I/O platform for writing asynchronous I/O backed applications.
 tokio = { version = "1.54.1", features = ["macros", "rt-multi-thread"] }
 # URL library for Rust, based on the WHATWG URL Standard
-url = "2.5.8"
+url = "2.5.9"
 
 [lints]
 workspace = true

@@ -42,7 +42,7 @@ anyhow = "1.0.104"
 # Random number generators and other randomness functionality.
 rand = { version = "0.10.3", features = ["thread_rng"] }
 # URL library for Rust, based on the WHATWG URL Standard
-url = "2.5.8"
+url = "2.5.9"
 
 [lints]
 workspace = true
