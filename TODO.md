@@ -9,7 +9,7 @@ Track implementation, acceptance criteria, and validation evidence in
 
 ## Current epics and work that can start
 
-Snapshot from GitHub on November 20, 2026. Open each epic for its full subissue list, current blockers, and acceptance criteria.
+Open each GitHub epic for its full subissue list, current blockers, and acceptance criteria.
 
 ### Upstream waits and security remediation ([#2116](https://github.com/john-cd/rust_howto/issues/2116))
 
@@ -28,23 +28,16 @@ Snapshot from GitHub on November 20, 2026. Open each epic for its full subissue 
 
 ### Hardware, platform, and SDK validation ([#2240](https://github.com/john-cd/rust_howto/issues/2240))
 
-- With an appropriate runner, validate the migrated browser and WASI walkthroughs ([#2429](https://github.com/john-cd/rust_howto/issues/2429)) or get a native Flutter/Dart consumer running ([#2430](https://github.com/john-cd/rust_howto/issues/2430)).
 - With a desktop that has WebKitGTK, exercise the Wry IPC path ([#2213](https://github.com/john-cd/rust_howto/issues/2213)).
-- Pick a documented native FFI, GEOS, science, or finance path with its SDK or service available ([#2432](https://github.com/john-cd/rust_howto/issues/2432), [#2433](https://github.com/john-cd/rust_howto/issues/2433)).
 - Select a board or emulator and prepare a bounded firmware run ([#2355](https://github.com/john-cd/rust_howto/issues/2355)). Physical evidence still needs the board, probe, or device.
 
 ### Code examples and example fixes ([#2435](https://github.com/john-cd/rust_howto/issues/2435))
 
-- Migrate one direct `chrono` or `humantime` example, or one `bincode` 1 example ([#2419](https://github.com/john-cd/rust_howto/issues/2419), [#2424](https://github.com/john-cd/rust_howto/issues/2424)).
 - Prototype a client-only SurrealDB example and audit the resulting license graph ([#2282](https://github.com/john-cd/rust_howto/issues/2282)).
-
-### Book prose fixes ([#2436](https://github.com/john-cd/rust_howto/issues/2436))
-
-- Correct the SQLite transaction recipe's error documentation and check the rendered recipe ([#2438](https://github.com/john-cd/rust_howto/issues/2438)).
 
 ### Infrastructure fixes and improvements ([#2437](https://github.com/john-cd/rust_howto/issues/2437))
 
-- Dispatch the book workflow with deployment disabled ([#2207](https://github.com/john-cd/rust_howto/issues/2207)). Coordinate the separate deployment-enabled run and record the Pages result.
+- Verify the build-only workflow, then coordinate the separate deployment run and record the Pages result ([#2207](https://github.com/john-cd/rust_howto/issues/2207)).
 
 <!-- recommended-issue-order:end -->
 
