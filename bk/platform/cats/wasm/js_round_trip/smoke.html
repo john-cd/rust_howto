@@ -1,0 +1,42 @@
+<!doctype html>
+<!-- TODO Reviewed ??-??-2026. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>WebAssembly greeting smoke test</title>
+    <link rel="icon" href="data:,">
+  </head>
+  <body>
+    <output>Loading WebAssembly…</output>
+    <script type="module">
+      const result = document.querySelector("output");
+
+      function checkGreeting(greet) {
+        const greeting = greet("  Zoë 🌱  ");
+        if (greeting !== "Hello, Zoë 🌱!") {
+          throw new Error(`Unexpected greeting: ${greeting}`);
+        }
+
+        try {
+          greet("  ");
+        } catch (error) {
+          if (error instanceof Error && error.message === "Name must not be empty") {
+            return greeting;
+          }
+          throw error;
+        }
+        throw new Error("An empty name should throw a JavaScript Error");
+      }
+
+      try {
+        const { default: init, greet } = await import("./wasm_js_round_trip.js");
+        await init();
+        const greeting = checkGreeting(greet);
+        result.textContent = `${greeting} Empty-name error checked.`;
+      } catch (error) {
+        result.textContent = `Wasm smoke test failed: ${error.message}`;
+        throw error;
+      }
+    </script>
+  </body>
+</html>

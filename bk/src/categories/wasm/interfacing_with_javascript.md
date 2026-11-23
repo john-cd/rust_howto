@@ -87,11 +87,13 @@ The Node script checks both paths. The Unicode greeting exercises string convers
 {{#include ../../../platform/cats/wasm/js_round_trip/smoke.cjs:example}}
 ```
 
-Install Node.js, the Wasm target, and the version of the CLI that matches the pinned `wasm-bindgen` dependency. From the repository root, run:
+Install Node.js and check that `wasm-bindgen --version` reports `0.2.130`,
+the version pinned in the guest's manifest. If you need that CLI version,
+run `cargo install --locked wasm-bindgen-cli --version 0.2.130`. From the
+repository root, run:
 
 ```sh
 rustup target add wasm32-unknown-unknown
-cargo install --locked wasm-bindgen-cli --version 0.2.130
 cargo build --locked --release --target wasm32-unknown-unknown \
   --target-dir target/wasm-js-demo --manifest-path bk/platform/cats/wasm/js_round_trip/Cargo.toml
 wasm-bindgen --target nodejs --out-dir target/wasm-js-demo/node \
@@ -100,7 +102,26 @@ node bk/platform/cats/wasm/js_round_trip/smoke.cjs \
   target/wasm-js-demo/node/wasm_js_round_trip.js
 ```
 
-The test prints `Wasm greeting and JavaScript error checked.` after both assertions. For browser delivery, use `--target web` instead and import and await the generated module's initializer before calling `greet`. Test DOM interactions in a browser with [`wasm-bindgen-test`][wasm-bindgen-test~guide]↗.
+The test prints `Wasm greeting and JavaScript error checked.` after both assertions.
+
+## Run the Same Guest in a Browser {#browser-round-trip}
+
+Generate browser bindings from the same `.wasm` file. The smoke page imports
+the generated module and awaits its initializer before calling `greet`.
+Copy the page beside the generated files and serve that directory over HTTP
+with Python 3:
+
+```sh
+wasm-bindgen --target web --out-dir target/wasm-js-demo/web \
+  target/wasm-js-demo/wasm32-unknown-unknown/release/wasm_js_round_trip.wasm
+cp bk/platform/cats/wasm/js_round_trip/smoke.html target/wasm-js-demo/web/index.html
+python -m http.server 8000 --bind 127.0.0.1 --directory target/wasm-js-demo/web
+```
+
+Open `http://127.0.0.1:8000` in a browser. The page displays
+`Hello, Zoë 🌱! Empty-name error checked.` when both calls behave as expected.
+For Rust test suites that exercise DOM interactions, see
+[`wasm-bindgen-test`][wasm-bindgen-test~guide]↗.
 
 ## Related topics {#related-topics .skip}
 
