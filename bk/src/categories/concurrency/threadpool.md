@@ -22,7 +22,7 @@ Test this Cargo-backed example from `bk/crates` with `cargo test --locked -p con
 
 This recipe renders independent Julia-set rows with Rayon and saves the resulting image. Rayon is a good fit for parallel work over Rust collections.
 
-[![julia set][web-julia-set]][web-julia-set]
+[![Julia-set fractal produced by the parallel Rayon rendering example][web-julia-set]][web-julia-set]
 
 The example uses `image::ImageBuffer` to store RGB pixels and Rayon to render rows in parallel. It writes `temp/output.png` using the PNG-only image codec configuration shared with the thumbnail examples.
 
