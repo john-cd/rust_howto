@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026. -->
+
 # CPU and GPU Image Blur
 
 This standalone project compares the same separable 5-tap grayscale blur on Rayon and wgpu. Each timed GPU sample includes a host upload, two compute passes, a copy into a mappable buffer, and readback. Both paths allocate and warm up before measurement. The program compares every returned pixel and reports medians of seven samples. A separate resident-data column measures submission and completion with the same input already on the device. Use a release build for meaningful timings.

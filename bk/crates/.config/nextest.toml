@@ -154,7 +154,7 @@ final-status-level = "skip"
 
 # This fixture compiles a cold dependency graph in its own Cargo target directory.
 [[profile.ci.overrides]]
-filter = 'package(=web_programming_http_server) & test(=debug_handler_rejects_a_misplaced_body_extractor)'
+filter = "package(=web_programming_http_server) & test(=debug_handler_rejects_a_misplaced_body_extractor)"
 slow-timeout = { period = "60s", terminate-after = 6 }
 
 [profile.ci.junit]

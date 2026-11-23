@@ -1,9 +1,10 @@
 <!-- TODO Reviewed ??-??-2026. -->
+
 # Notices for Eclipse zenoh
 
 This content is produced and maintained by the Eclipse zenoh project.
 
- * Project home: https://projects.eclipse.org/projects/iot.zenoh
+- Project home: https://projects.eclipse.org/projects/iot.zenoh
 
 ## Trademarks
 
@@ -29,12 +30,12 @@ SPDX-License-Identifier: EPL-2.0 OR Apache-2.0
 
 The project maintains the following source code repositories:
 
- * https://github.com/eclipse-zenoh/zenoh.git
- * https://github.com/eclipse-zenoh/zenoh-c.git
- * https://github.com/eclipse-zenoh/zenoh-java.git
- * https://github.com/eclipse-zenoh/zenoh-go.git
- * https://github.com/eclipse-zenoh/zenoh-python.git
+- https://github.com/eclipse-zenoh/zenoh.git
+- https://github.com/eclipse-zenoh/zenoh-c.git
+- https://github.com/eclipse-zenoh/zenoh-java.git
+- https://github.com/eclipse-zenoh/zenoh-go.git
+- https://github.com/eclipse-zenoh/zenoh-python.git
 
 ## Third-party Content
 
- *To be completed...*
+_To be completed..._

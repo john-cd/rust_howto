@@ -1,4 +1,5 @@
 <!-- TODO Reviewed ??-??-2026. -->
+
 # Rust How-To hidden notes audit
 
 The initial scan found 282 blocks. GitHub confirmed all 39 issues linked by explicit issue URLs were closed. The cleanup removed 52 link occurrences.
