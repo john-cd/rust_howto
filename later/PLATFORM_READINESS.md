@@ -40,7 +40,7 @@ just cargo test --manifest-path bk/crates/Cargo.toml --locked -p science --featu
 
 | Category | Tested, promotable subset | Remaining gap |
 | --- | --- | --- |
-| [GUI](../bk/src/categories/gui/index.md) | egui interaction/layout/text logic; Windows Winit creation, minifb pixels, and Softbuffer presentation. | 36 default/minifb/Softbuffer tests passed with 7 interactive tests ignored; Slint added 5 headless tests with 1 interactive test ignored. Native self-closing presentation checks passed. The egui harness also passed Tab/Enter activation and state retention after a narrower viewport. Platform screen readers and the wider native-backend matrix remain open in [#2359](https://github.com/john-cd/rust_howto/issues/2359), [#2213](https://github.com/john-cd/rust_howto/issues/2213). |
+| [GUI](../bk/src/categories/gui/index.md) | egui interaction/layout/text logic; Windows Winit creation, minifb pixels, Softbuffer presentation, and [native Slint counter interaction](#windows-slint-counter). | 36 default/minifb/Softbuffer tests passed with 7 interactive tests ignored. Native self-closing presentation checks passed. The egui harness also passed Tab/Enter activation and state retention after a narrower viewport. Platform screen readers and the wider native-backend matrix remain open in [#2359](https://github.com/john-cd/rust_howto/issues/2359), [#2213](https://github.com/john-cd/rust_howto/issues/2213). |
 | [Embedded](../bk/src/categories/embedded/index.md) | Explicitly host-side HAL mocks, bounded messages, protocol/storage logic, and the Embassy host-task example. | 18 host tests passed after fixing deadline-task reuse. The standalone RP2040 firmware linked for `thumbv6m-none-eabi`. The ARM ELF contains a boot stage and vector table. Physical board, probe, flash, and sensor checks remain in [#2355](https://github.com/john-cd/rust_howto/issues/2355). |
 | [Robotics](../bk/src/categories/science_robotics/index.md) | PID/control, pathfinding, kinematics, nearest-neighbor, mock-I2C, and physics simulation recipes. | Default host tests passed. A Jazzy container verified the ROS 2 round trip. Physical robot/device validation remains in [#2355](https://github.com/john-cd/rust_howto/issues/2355). |
 | [Audio](../bk/src/categories/multimedia_audio/index.md) | WAV, synthesis, resampling, parsing, and the bundled synthetic HRIR/HRTF convolution recipe. | Host tests and a one-second Windows CPAL output-stream test passed. Linux JACK loopback and ALSA output also passed. Audible quality remains outside the automated checks: [#2356](https://github.com/john-cd/rust_howto/issues/2356). |
@@ -147,6 +147,18 @@ fields or reject the call.
 - [GTK/Relm4](../bk/src/categories/gui/gtk.md): Linux GTK 4.18.6 under Xvfb passed the GTK button assertions and Relm4 model checks. Both corrected launchers opened, resized to 400 × 300, and closed cleanly in an isolated build using the staged sources and the workspace's direct GTK, Relm4, and Clap versions. Accessibility was disabled for the virtual display run. [#2359](https://github.com/john-cd/rust_howto/issues/2359) retains the accessibility and other backend checks.
 - [No Allocation](https://john-cd.com/rust_howto/categories/no-std/no_alloc.html): the recipes and package are already published in `bk`. The published example passed its test and `--no-default-features` check. The duplicate future preview was subsequently removed in [#2361](https://github.com/john-cd/rust_howto/issues/2361); links now target the published chapter.
 - Physical embedded/robotics, drones/UAVs, MIDI-device I/O, screen-reader behavior, and untested GUI/engine backends remain excluded from broad readiness claims. Their existing or new issues name the required host/device evidence.
+
+### Windows Slint counter
+
+On November 23, 2026, the locked `gui` example at revision `377c1ed4f` ran on
+native Windows build 26300 with Slint 1.18.1 and `SLINT_BACKEND=winit-software`.
+The window rendered **Increment** and `Count: 0`. Tab focused the button, Space
+changed the count to 1, and a pointer click changed it to 2. The button and count
+remained visible after widening the window. The title-bar maximize and restore
+controls preserved the displayed count. Alt+F4 closed the window with exit code 0.
+The locked headless baseline passed five tests and skipped the opt-in window test.
+See the [build and launch commands](../bk/platform/cats/gui/README.md#native-slint-counter-verification)
+and [#2359](https://github.com/john-cd/rust_howto/issues/2359).
 
 ## Reproduce the Checks
 
