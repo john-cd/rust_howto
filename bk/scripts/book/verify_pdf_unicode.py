@@ -3,12 +3,11 @@
 
 from __future__ import annotations
 
-from pathlib import Path
 import re
 import sys
+from pathlib import Path
 
 from pypdf import PdfReader
-
 
 INVALID_CODE_POINTS = ("\ufffd", "\uffff")
 FORBIDDEN_MARKERS = (
@@ -47,12 +46,16 @@ def main() -> int:
         for marker in FORBIDDEN_MARKERS:
             if marker in extracted:
                 failures.append(f"page {page_number}: unresolved marker {marker!r}")
-        found_emoji_literal = found_emoji_literal or bool(EMOJI_CHARACTER_LITERAL.search(extracted))
+        found_emoji_literal = found_emoji_literal or bool(
+            EMOJI_CHARACTER_LITERAL.search(extracted)
+        )
         found_pi = found_pi or "π" in extracted
 
     for code_point, count in replacement_counts.items():
         if count:
-            failures.append(f"found {count} U+{ord(code_point):04X} replacement characters")
+            failures.append(
+                f"found {count} U+{ord(code_point):04X} replacement characters"
+            )
     if not found_emoji_literal:
         failures.append("the emoji character literal is missing or corrupted")
     if not found_pi:
