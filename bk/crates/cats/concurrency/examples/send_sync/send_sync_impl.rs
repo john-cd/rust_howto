@@ -280,5 +280,5 @@ mod tests {
 // valid until the strong count reaches zero, then being reclaimed exactly
 // once. From `bk/crates`, run `cargo +nightly miri test -p concurrency
 // --example send_sync final_owner_drops_value_once_on_another_thread`. Miri can
-// catch invalid pointer use and report the leaked allocation; it does not model
-// weak-memory reorderings, which need a faithful Loom model.
+// detect invalid pointer use and leaks in the executions it explores. Its weak-memory\n// emulation
+// also covers some ordering behaviors.
