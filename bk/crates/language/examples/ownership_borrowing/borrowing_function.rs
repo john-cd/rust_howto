@@ -1,9 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Demonstrates the concept of borrowing in Rust.
-
-// This struct does not implement `Copy` and has therefore "move semantics":
+//! Borrows a struct so the caller can keep using it after the call.
 
 /// A struct that does not implement `Copy`, so it has move semantics.
 #[derive(Debug)]
@@ -11,9 +9,6 @@ struct MyStruct(
     /// Boolean state used by the borrowing and synchronization example.
     bool,
 );
-
-// This function takes an (immutable) reference to `MyStruct`.
-// We can read but not modify `s1`.
 
 /// Prints `s`, which is borrowed immutably.
 fn calculate(s: &MyStruct) {
@@ -24,16 +19,12 @@ fn calculate(s: &MyStruct) {
 /// again.
 fn main() {
     let s1 = MyStruct(true);
-    // `ref_s1` is an immutable reference to `s1`.
-    // We call the action of creating a reference "borrowing".
+    // Borrow `s1` without transferring ownership.
     let ref_s1 = &s1;
 
-    // We pass the reference to `calculate`:
     calculate(ref_s1);
 
-    // `s` goes out of scope at the end of the `calculate` function.
-    // Because this function does not have ownership of what it refers
-    // to, `s1` is _not_ dropped and remains valid after borrowing:
+    // The caller still owns `s1` after `calculate` returns.
     println!("{s1:?}");
 
     // Immutable references are `Copy`, thus `ref_s1` is also still valid:

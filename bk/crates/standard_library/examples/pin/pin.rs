@@ -3,9 +3,9 @@
 // ANCHOR: example
 //! Pinning values with `Pin` and `PhantomPinned`.
 //!
-//! `Pin` promises that a value will not be moved in memory. Futures made by
-//! `async` blocks can hold references into themselves, so they must stay put
-//! while polled. `PhantomPinned` marks a type that must not be moved.
+//! A future can hold references into itself across an `.await`. Once pinned,
+//! an address-sensitive future must stay at the same address until it is
+//! dropped. `PhantomPinned` prevents automatic implementation of `Unpin`.
 
 use std::marker::PhantomPinned;
 use std::pin::Pin;
@@ -36,15 +36,8 @@ impl PinnedParent {
 
 /// Pins values on the stack and on the heap.
 fn main() {
-    // In order to pin a value, we wrap a pointer to that value (of some type
-    // `Ptr`) in a `Pin<Ptr>`. `Pin<Ptr>` can wrap any pointer type,
-    // forming a promise that the _pointee_ will not be moved or otherwise
-    // invalidated.
-
-    // 1. **Trivial case:** If the pointee value's type implements `Unpin`, which
-    // cancels the effect of `Pin`, we can wrap any pointer to that value in
-    // `Pin` directly via `Pin::new`.
-    // That allows `x` to participate in `Pin`-bound APIs.
+    // An `i32` implements `Unpin`, so `Pin::new` accepts a mutable reference
+    // to it. This lets us pass the integer to an API that expects `Pin`.
     let mut x = 42;
     let pinned_x: Pin<&mut i32> = Pin::new(&mut x);
 
@@ -54,13 +47,7 @@ fn main() {
     assert_eq!(*r, 42);
     println!("Pinned value: {}", *r);
 
-    // 2. **General case:**
-    // If the pointee value's type does not implement `Unpin`, then Rust will
-    // not let us use `Pin::new`; creating a pin requires an unsafe operation.
-    //
-    // The programmer MUST guarantee the underlying data truly
-    // does not move in the `unsafe` code. Here, we have exclusive control of
-    // `y`.
+    // Pin a local value manually to illustrate the contract of `Pin::new_unchecked`.
     {
         /// Demonstrates a type that does not implement `Unpin`.
         struct NotUnpin {
@@ -72,6 +59,7 @@ fn main() {
         let mut y = NotUnpin {
             _pin: PhantomPinned,
         };
+        // SAFETY: `y` stays in this local binding until it is dropped in place.
         let _pinned_y = unsafe { Pin::new_unchecked(&mut y) };
     }
 
@@ -86,9 +74,7 @@ fn main() {
     });
     let _pinned_field: Pin<&mut PinnedField> = parent.as_mut().field();
 
-    // 3. **Pinned Box**: The simplest way to pin a value that
-    // does not implement `Unpin` is to put that value inside a `Box` and
-    // then wrapping it in a `Pin`.
+    // `Box::pin` safely pins the future in a heap allocation.
     // Example from <https://doc.rust-lang.org/std/pin/struct.Pin.html#pinning-a-value-inside-a-box>.
 
     /// Returns the input incremented by one when awaited.
@@ -106,12 +92,7 @@ fn main() {
     // This is a generic method to go from `&Pin<Pointer<T>>` to `Pin<&T>`.
     let _pinned_fut = pinned_box_fut.as_ref(); // `Pin<&(impl Future<Output = u32>)>`.
 
-    // 4. **`pin!` Macro**:
-    // There are some situations where it is desirable or even required (e.g.,
-    // in a `#[no_std]` context) to pin a value which does not implement `Unpin`
-    // to its location _on the stack_. Doing so is possible using the `pin!`
-    // macro. Unlike `Box::pin`, this does not systematically create a new
-    // heap allocation. <https://doc.rust-lang.org/std/pin/macro.pin.html>.
+    // `pin!` pins a local value without allocating a box.
     use core::pin::pin;
 
     /// Type used to demonstrate pinning a mutable reference.

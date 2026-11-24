@@ -26,7 +26,7 @@ To bring items from an external crate into scope, without having to write their 
 
 ## Bring a Function in Scope Idiomatically {#bring-function-in-scope}
 
-It is idiomatic to bring the function's parent module into scope, not the function itself, then refer to the function via its shortened path `a_module::a_function()`.
+When calling a function from another module, conventionally import its parent module and call `a_module::a_function()`. The qualifier shows where the function comes from.
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/use/use2.rs:example}}
@@ -34,13 +34,13 @@ It is idiomatic to bring the function's parent module into scope, not the functi
 
 ## Bring a Struct or Enum in Scope Idiomatically {#bring-struct-or-enum-in-scope}
 
-On the other hand, when bringing in [structs][p~structs], [enums][p~enums], and other items in scope, it is idiomatic to specify the full path in the [`use`][keyword~use]↗{{hi:use}} statement and refer to the type via its name.
+For [structs][p~structs] and [enums][p~enums], conventionally import the type itself with a [`use`][keyword~use]↗{{hi:use}} declaration. You can then refer to the type by name.
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/use/use3.rs:example}}
 ```
 
-Note: Rust doesn't allow importing two items with the same name into one scope. In that case, bring their modules into scope or write their full paths.
+If two imports would introduce the same type name, qualify each type with its module or give one import an alias with `as`.
 
 ## Reexport Items with `pub use` {#pub-use}
 

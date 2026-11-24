@@ -12,11 +12,11 @@
 
 The [`Rc<T>`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} type (for "Reference Counted") enables _shared ownership_ of a value.
 
-- `Rc` maintains a reference count of the number of owners. You can create additional references to the data using the [`clone`][c~std::clone::Clone~docs]↗{{hi:std::clone::Clone}} method. Cloning an `Rc` only increments the reference count without duplicating the data. When the last owner goes out of scope, the data is automatically cleaned up (dropped).
+- Calling [`clone`][c~std::clone::Clone~docs]↗{{hi:std::clone::Clone}} creates another owner of the same value and increments its strong reference count. Dropping the last strong owner drops the value.
 - If you need mutability, put a [`Cell`][c~std::cell::Cell~docs]↗{{hi:std::cell::Cell}} or [`RefCell`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}} inside the `Rc`.
 - `Rc` automatically dereferences to `T` (via the [`Deref`][c~std::ops::Deref~docs]↗{{hi:std::ops::Deref}} trait), so you can call `T`'s methods on a value of type `Rc<T>`.
 - `Rc` is commonly used in [data structures][p~data-structures], such as graphs and linked lists, where multiple nodes might need to share ownership of certain nodes or data.
-- Keep in mind that `Rc` is not thread-safe. For concurrent scenarios, you should use [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}}, which provides similar functionality with thread safety.
+- Use `Rc` within one thread. To share ownership across threads, use [`Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} with a thread-safe inner type. `Arc` makes the reference count atomic.
 
 The following example demonstrates common operations with `Rc`:
 
@@ -24,15 +24,15 @@ The following example demonstrates common operations with `Rc`:
 {{#include ../../crates/standard_library/examples/reference_counting/rc.rs:example}}
 ```
 
-Also of note: the [`Weak`][c~std::rc::Weak~docs]↗{{hi:std::rc::Weak}} (weak reference) type, typically obtained via `Rc::downgrade`, allows for non-owning (weak) references to the data. This can help prevent reference cycles that could lead to memory leaks.
+Use `Rc::downgrade` to create a [`Weak`][c~std::rc::Weak~docs]↗{{hi:std::rc::Weak}} reference when a link should not keep its target alive. For example, a tree can use strong references to children and weak references back to parents.
 
 ## Share Ownership of a Value with Interior Mutability via `Rc` and `RefCell` {#rc-refcell}
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}}
 
-[`Rc<T>`][c~std::rc::Rc~docs]↗{{hi:std::rc::Rc}} allows you to share data between multiple parts of a single-threaded program, but it does not allow unrestricted _mutability_ by itself. If multiple mutable references to the same value were allowed, they would violate Rust's exclusive-access rules and could cause undefined behavior. `Rc<T>` is not `Send`, so it cannot be used to share its value across threads and does not itself create cross-thread data races.
+Cloning an `Rc<T>` gives each owner shared access to the same `T`.
 
-If you need mutability inside an `Rc`, you can use [`RefCell<T>`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}}, which offers _interior mutability_: `RefCell<T>` enforces borrowing rules _at runtime_ instead of compile-time. It allows mutable borrows to the inner data at runtime, but _panics_ if borrowing rules are violated (again, only one mutable borrow is allowed at a time).
+Wrap the value in [`RefCell<T>`][c~std::cell::RefCell~docs]↗{{hi:std::cell::RefCell}} when several owners need to mutate it. `borrow()` permits multiple readers. `borrow_mut()` requires exclusive access until its guard is dropped. Both methods panic on a conflicting borrow. Use `try_borrow()` or `try_borrow_mut()` when the caller should handle that conflict.
 
 See [[interior_mutability | Interior Mutability]] for more details.
 
