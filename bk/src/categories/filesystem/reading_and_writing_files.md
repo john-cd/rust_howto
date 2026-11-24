@@ -40,7 +40,7 @@ This example demonstrates how to check whether two files refer to the same file 
 
 The example uses [`memmap2`][c~memmap2~docs]↗{{hi:memmap2}} to read a file through a memory map{{hi:Memory map}}. It indexes a byte slice to read from several offsets{{hi:Non-sequential reads}} without calling [`File::seek`][c~std::fs::File::seek~docs]↗{{hi:std::fs::File::seek}}.
 
-Creating a file-backed mapping with [`Mmap::map`][c~memmap2::Mmap::map~docs]↗{{hi:memmap2::Mmap::map}} is unsafe. The caller must ensure the file contents remain valid for reads through the mapping. Concurrent changes to the file can cause undefined behavior.
+Creating a file-backed mapping with [`Mmap::map`][c~memmap2::Mmap::map~docs]↗{{hi:memmap2::Mmap::map}} is unsafe. The example writes to a fresh temporary file and maps the same handle. Concurrent runs therefore use separate files. The caller must ensure the file contents remain valid for reads through the mapping. Concurrent changes to the file can cause undefined behavior.
 
 The final part writes to a separate, anonymous mapping. Its bytes have no backing file.
 

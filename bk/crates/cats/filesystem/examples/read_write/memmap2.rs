@@ -7,7 +7,6 @@
 //! system can page in on demand. The caller must prevent changes to the file
 //! that would invalidate reads through the mapping.
 
-use std::fs::File;
 use std::io::Error;
 use std::io::Write as _;
 
@@ -17,14 +16,10 @@ use memmap2::MmapOptions;
 
 /// Writes a file, then reads it through a read-only memory map.
 fn main() -> Result<(), Error> {
-    write!(
-        File::create("temp/content.txt")?,
-        "My hovercraft is full of eels!"
-    )?;
-    // Open the file for reading:
-    let file = File::open("temp/content.txt")?;
-    // Create a read-only memory map of the file. This is unsafe because it
-    // relies on the file not being modified externally:
+    let mut file = tempfile::tempfile()?;
+    write!(file, "My hovercraft is full of eels!")?;
+    // SAFETY: Each invocation owns a fresh file. No handle escapes and no
+    // writes occur while the mapping is live.
     let map = unsafe { Mmap::map(&file)? };
     // `Mmap` is `Deref<Target = [u8]>` and therefore can be used like a slice.
     // Assert that a slice of the memory map matches the expected bytes:
@@ -63,10 +58,6 @@ mod tests {
     /// Verifies that the memmap2 example's main path succeeds.
     #[test]
     fn test_memmap2_example_entry_point() -> anyhow::Result<()> {
-        use std::fs;
-        if !fs::exists("temp")? {
-            fs::create_dir("temp")?;
-        }
         main()?;
         Ok(())
     }
