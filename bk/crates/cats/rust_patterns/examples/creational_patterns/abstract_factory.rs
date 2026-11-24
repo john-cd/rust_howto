@@ -11,8 +11,8 @@
 //! The following example simulates building a UI library that needs to support
 //! different themes, like "Light" and "Dark." Each theme will have its own set
 //! of widgets: buttons, text boxes, and so on. The Abstract Factory pattern
-//! lets us define an interface for creating these families of widgets,
-//!  and then we can have concrete factories for each theme.
+//! lets you define an interface for creating these families of widgets,
+//!  and then you can have concrete factories for each theme.
 
 // Operations common to all concrete objects.
 

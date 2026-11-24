@@ -41,17 +41,17 @@ async fn my_async_function() {
         info!("I'm also in the span!");
     });
 
-    // We can also instrument async code:
+    // Also instrument async code:
     async move {
-        // If we yield here, the span will be exited,
-        // and re-entered when we resume.
+        // If you yield here, the span will be exited,
+        // and re-entered when you resume.
         some_other_async_function().await;
         info!("I'm still in the span!");
     }
     .instrument(span) // Instrument the async block with the span...
     .await; // ...and await it.
 
-    // We can also instrument an async function call.
+    // Also instrument an async function call.
     // This will create a new span for the duration of the function call.
     let _some_value = some_other_async_function()
         .instrument(debug_span!("some_other_async_function_scope"))

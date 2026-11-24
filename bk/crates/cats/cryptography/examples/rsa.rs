@@ -23,7 +23,7 @@ use rsa::PublicKey;
 
 // RSA encryption and decryption.
 //
-// In this example, we:
+// In this example, you:
 // - generate a 2048-bit RSA private key using `PrivateKey::new`.
 // - derive the corresponding public key using `PublicKey::from`.
 // - encrypt a message to be encrypted using the public key with

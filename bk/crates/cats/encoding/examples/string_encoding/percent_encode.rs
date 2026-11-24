@@ -20,7 +20,7 @@ const FRAGMENT: &AsciiSet = &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').ad
 
 /// Percent-encodes a string, then decodes it.
 fn main() -> Result<(), Utf8Error> {
-    // The input string we want to encode.
+    // The input string you want to encode.
     // The FRAGMENT AsciiSet encodes spaces as %20 while leaving the plus sign
     // unchanged.
     let input = "confident, +productive systems programming";

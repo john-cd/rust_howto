@@ -17,12 +17,12 @@
 // ```
 //
 // Then define a `UserRepository` trait and a `UserService` struct that uses
-// it. We then use `mockall` to create a mock implementation of
+// it. You then use `mockall` to create a mock implementation of
 // `UserRepository` for testing `UserService`.
 use mockall::predicate::*;
 use mockall::*;
 
-/// Define our data model.
+/// Define the data model.
 #[derive(Debug, Clone, PartialEq)]
 struct User {
     /// Unique identifier of the user.
@@ -37,7 +37,7 @@ struct User {
 
 /// The `UserRepository` trait defines the interface for interacting with user
 /// data. The `#[automock]` attribute automatically generates a mock
-/// implementation of your trait, named Mock{TraitName}. In our case, it creates
+/// implementation of your trait, named Mock{TraitName}. In this example, it creates
 /// a `MockUserRepository`.
 #[automock]
 trait UserRepository {
@@ -104,7 +104,7 @@ impl UserRepository for ActualRepository {
     ///   this operation.
     fn find_by_id(&self, id: u64) -> Option<User> {
         // In a real implementation, this would query a database. For this
-        // example, we'll just return a dummy user if the ID is 1.
+        // example, you'll just return a dummy user if the ID is 1.
         (id == 1).then(|| User {
             id,
             name: "John Doe".to_owned(),
@@ -148,7 +148,7 @@ mod tests {
         let mut mock_repo = MockUserRepository::new();
 
         // Set up expectations for `find_by_id`.
-        // We expect `find_by_id` to be called once with id 1:
+        // You expect `find_by_id` to be called once with id 1:
         mock_repo
             .expect_find_by_id() // The method we're setting expectations for
             .with(eq(1)) // The argument we expect (using predicate). You can also use custom
@@ -163,10 +163,10 @@ mod tests {
                 })
             });
 
-        // Create our service with the mock repository:
+        // Create the service with the mock repository:
         let service = UserService::new(mock_repo);
 
-        // Call the method we want to test:
+        // Call the method you want to test:
         let result = service.get_user(1);
 
         // Assert the result:
@@ -183,7 +183,7 @@ mod tests {
         let mut mock_repo = MockUserRepository::new();
 
         // Set up expectations:
-        // We expect `find_by_id` to be called once with id 999 and return
+        // You expect `find_by_id` to be called once with id 999 and return
         // `None`:
         mock_repo
             .expect_find_by_id()
@@ -191,10 +191,10 @@ mod tests {
             .times(1)
             .returning(|_| None);
 
-        // Create our service with the mock repository:
+        // Create the service with the mock repository:
         let service = UserService::new(mock_repo);
 
-        // Call the method we want to test:
+        // Call the method you want to test:
         let result = service.get_user(999);
 
         // Assert the result:
@@ -206,7 +206,7 @@ mod tests {
     fn test_update_user_email() {
         let mut mock_repo = MockUserRepository::new();
 
-        // Set up expectations for find_by_id, we expect it to be called once
+        // Set up expectations for find_by_id, you expect it to be called once
         // with id 1.
         mock_repo
             .expect_find_by_id()
@@ -220,7 +220,7 @@ mod tests {
                 })
             });
 
-        // Set up expectations for save, we expect it to be called once with a
+        // Set up expectations for save, you expect it to be called once with a
         // user with id 1, name "John Doe" and email
         // "newemail@example.com".
         mock_repo
@@ -231,10 +231,10 @@ mod tests {
             .times(1)
             .returning(|_| Ok(()));
 
-        // Create our service with the mock repository.
+        // Create the service with the mock repository.
         let service = UserService::new(mock_repo);
 
-        // Call the method we want to test.
+        // Call the method you want to test.
         let result = service.update_user_email(1, "newemail@example.com".to_owned());
 
         // Assert the result.

@@ -59,7 +59,7 @@ fn main() {
     // Print the state of the SmallVec after popping.
     println!("SmallVec after popping: {small_vec:?}");
 
-    // SmallVec dereferences to a slice, so we can use normal slice indexing and
+    // SmallVec dereferences to a slice, so you can use normal slice indexing and
     // other slice methods.
     small_vec[0] = small_vec[1] + small_vec[2];
     small_vec.sort();

@@ -29,7 +29,7 @@ fn main() -> anyhow::Result<()> {
     );
     // Note: under the cover, `get` returns an `IVec`, which is a data structure
     // that makes some things more efficient. IVec implements `AsRef<[u8]>`,
-    // so we can use `&` above.
+    // so you can use `&` above.
     assert_eq!(db.get(b"key1")?, Some(sled::IVec::from(b"Hello, Sled!")));
 
     // `key2` does not exist:

@@ -65,7 +65,7 @@ fn main() -> anyhow::Result<()> {
         max_payload_size = 1048576
     "#;
 
-    // Parse the TOML string into our `Config` struct.
+    // Parse the TOML string into the `Config` struct.
     let config: Config = toml::from_str(toml_str)?;
     println!("Parsed config: {config:#?}");
 

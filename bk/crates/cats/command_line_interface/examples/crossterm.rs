@@ -49,8 +49,8 @@ fn example() -> anyhow::Result<()> {
     execute!(stdout, EnableMouseCapture)?;
 
     // Clear the screen and move cursor to the top left.
-    // We can queue commands instead of executing them directly.
-    // When we call `Write::flush`, these commands will be executed.
+    // Queue commands instead of executing them directly.
+    // When you call `Write::flush`, these commands will be executed.
     queue!(stdout, Clear(ClearType::All), cursor::MoveTo(0, 0))?;
     // Many other commands...
     stdout.flush()?;
@@ -64,9 +64,9 @@ fn example() -> anyhow::Result<()> {
         SetBackgroundColor(Color::White),
         Print("Hello, Crossterm!\n")
     )?;
-    // We can use the `execute` function rather than the macro.
+    // Use the `execute` function rather than the macro.
     // The `execute` function returns itself,
-    // therefore we could queue another command.
+    // therefore you could queue another command.
     // Reset the color to the default:
     stdout.execute(style::ResetColor)?;
 

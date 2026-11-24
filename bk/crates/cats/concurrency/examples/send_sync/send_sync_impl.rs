@@ -37,8 +37,6 @@ mod my {
         // Pointer to the inner data structure.
         /// A pointer to the shared data and reference count.
         ptr: *mut ArcInner<T>,
-        // We want `Arc` to behave like a `ArcInner<T>`, despite the fact that
-        // it does not own one, thus we use `PhantomData`.
         /// A marker that tells the compiler that `Arc` behaves like an owner
         /// of the inner data.
         phantom: PhantomData<ArcInner<T>>,
@@ -65,7 +63,7 @@ mod my {
             });
             let ptr = Box::into_raw(inner);
             println!("Created `Arc` with reference count 1.");
-            // SAFETY: `ptr` points to the `ArcInner` we just allocated.
+            // SAFETY: `ptr` points to the newly allocated `ArcInner`.
             unsafe { Self::from_inner(ptr) }
         }
 

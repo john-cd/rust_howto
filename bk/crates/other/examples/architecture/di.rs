@@ -1,8 +1,8 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! Dependency Injection (DI) is a design pattern that allows us to decouple
-//! components of our application.
+//! Dependency Injection (DI) is a design pattern that allows you to decouple
+//! components of the application.
 //!
 //! Shaku is a Rust dependency injection library.
 //!

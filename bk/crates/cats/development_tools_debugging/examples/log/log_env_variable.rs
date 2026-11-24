@@ -45,7 +45,7 @@ fn init_logger() {
         .try_init()
         .ok();
 
-    // Alternatively, `Env` lets us tweak which environment variables to read
+    // Alternatively, `Env` lets you tweak which environment variables to read
     // and what the default value is if they're missing.
     //
     // let env = env_logger::Env::default()

@@ -84,7 +84,7 @@ fn main() -> Result<()> {
         .instantiate(&mut store, &module)
         .context("failed to instantiate module")?;
 
-    // Without a linker, we can also directly instantiate the module:
+    // Without a linker, you can also directly instantiate the module:
     // ```
     // let instance =
     //     Instance::new(&mut store, &module, &[]).context("Failed to create WASM instance")?;
@@ -94,7 +94,7 @@ fn main() -> Result<()> {
     let greet = instance
         .get_export(&mut store, "greet")
         // `get_export` returns an `Extern`, which can be a function, global,
-        // memory, or table. We need to convert it to a function.
+        // memory, or table. You need to convert it to a function.
         .and_then(|ext: Extern| {
             ext.into_func() // Returns the underlying `Func`, if this external is a function.
         })

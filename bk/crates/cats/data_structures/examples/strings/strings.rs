@@ -82,7 +82,7 @@ fn string_literals() {
     let literal: &'static str = "Hello, world!";
     println!("String literal: '{literal}'");
 
-    // We can't directly modify a string literal.
+    // You can't directly modify a string literal.
     // ERROR: literal.push_str("!");
 
     // String literals can be used to create a `String`.

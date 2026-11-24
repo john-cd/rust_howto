@@ -8,7 +8,7 @@
 /// Example code for a library.
 /// In real-life, this code would be in a separate crate.
 ///
-/// We define unique error types and error wrappers below.
+/// You define unique error types and error wrappers below.
 mod mylib {
 
     use miette::Diagnostic;
@@ -44,8 +44,8 @@ mod mylib {
         /// Something went wrong at a location in the source code.
         #[error("Something went wrong!")]
         SomethingWentWrong {
-            // The `Source` that we're gonna be printing snippets out of.
-            // This can be a `String` if we don't have or care about file
+            // Source text from which the diagnostic prints excerpts.
+            // This can be a `String` if you don't have or care about file
             // names.
             /// The source code to print snippets from.
             #[source_code]

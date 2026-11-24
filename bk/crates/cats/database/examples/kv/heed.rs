@@ -32,7 +32,7 @@ fn main() -> anyhow::Result<()> {
     };
 
     // Create the default unnamed database inside a write transaction, which
-    // is committed along with the database. We specify the key type as a
+    // is committed along with the database. You specify the key type as a
     // 32-bit unsigned integer in native endianness and the value type as a
     // string.
     let wtxn = env.write_txn()?;
@@ -47,7 +47,7 @@ fn main() -> anyhow::Result<()> {
     // environment.
     let mut wtxn = env.write_txn()?;
 
-    // Write data to the database. We insert a key-value pair where the key is
+    // Write data to the database. You insert a key-value pair where the key is
     // 1 and the value is "Hello, world!".
     db.put(&mut wtxn, &1, "Hello, world!")?;
     // Commit the write transaction to persist the changes.

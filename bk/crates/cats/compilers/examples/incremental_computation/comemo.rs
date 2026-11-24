@@ -25,8 +25,7 @@ use comemo::track;
 /// Memoized function to compute a derived value based on the configuration.
 ///
 /// Note the `#[memoize]` attribute.
-/// We also wrapped the `config` argument in comemo's `Tracked` container.
-/// It automatically track all config accesses during a memoized call.
+/// The `Tracked` wrapper records which configuration values the memoized call reads.
 #[memoize]
 fn compute_derived_value(config: Tracked<'_, Config>) -> i32 {
     // The only methods accessible on `Tracked<T>` are those defined in an

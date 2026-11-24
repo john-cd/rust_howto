@@ -9,7 +9,7 @@ use clap::Subcommand;
 mod memmap2;
 /// Demonstrates writing to and reading from a file.
 mod read_file;
-/// Check whether we are reading & writing to the same file.
+/// Check whether you are reading & writing to the same file.
 mod same_file;
 
 /// Command-line arguments.

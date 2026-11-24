@@ -52,7 +52,7 @@ pub fn run() {
 mod tests {
     use super::*;
 
-    /// Runs the us states example through its entry point.
+    /// Runs the US states example through its entry point.
     #[test]
     fn test_us_states_example_entry_point() {
         main();

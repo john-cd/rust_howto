@@ -45,7 +45,7 @@ async fn main() -> Result<()> {
 
     anyhow::ensure!(reader.cdrs().len() == 1, "expected one ZIP entry");
     for i in 0..reader.cdrs().len() {
-        // File names in an archive are untrusted; here we only compare them.
+        // File names in an archive are untrusted; here you only compare them.
         let filename = reader.cdrs()[i]
             .insecure_file_name
             .as_str()

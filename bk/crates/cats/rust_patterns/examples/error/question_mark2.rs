@@ -17,7 +17,7 @@ use std::error::Error;
 /// This function will return an error if the string cannot be parsed as a `u16`
 /// or if the parsed value is zero.
 fn parse_port(s: &str) -> Result<u16, Box<dyn Error>> {
-    // We need to use `Box<dyn Error>` as the error type, because the returned
+    // Use `Box<dyn Error>` as the error type, because the returned
     // error type cannot be determined during compile time: It will either
     // contain an instance of `std::num::ParseIntError` (from the parse
     // method, when parsing fails), or a string (when the port is zero).

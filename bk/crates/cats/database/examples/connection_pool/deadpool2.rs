@@ -34,7 +34,7 @@ struct Config {
 }
 
 impl Config {
-    // With the `serde` feature enabled, we can read the configuration using the
+    // With the `serde` feature enabled, you can read the configuration using the
     // `config` crate.
 
     /// Reads the configuration from the environment variables.

@@ -43,7 +43,7 @@ fn progress() {
     // Finish the progress bar:
     pb.finish_with_message("done"); // or use .finish();
 
-    // Alternatively, we could wrap an iterator with a progress bar:
+    // Alternatively, you could wrap an iterator with a progress bar:
     // use indicatif::ProgressIterator;
     // for _ in (0..100).progress() {
     //     thread::sleep(Duration::from_millis(50));

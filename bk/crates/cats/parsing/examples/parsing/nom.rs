@@ -20,7 +20,7 @@ fn parse_number(input: &str) -> IResult<&str, u32> {
     // digits.
     //
     // `map_res` is a combinator that applies a function returning a `Result`
-    // over the result of a parser. In this case, we use `str::parse` to
+    // over the result of a parser. In this case, you use `str::parse` to
     // convert the string of digits into a `u32` integer. If `str::parse`
     // fails (e.g., the string is not a valid number), `map_res` will return an
     // error.

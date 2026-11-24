@@ -46,7 +46,7 @@ impl<T> Spinlock<T> {
     /// lock when dropped.
     #[inline]
     pub fn lock(&self) -> SpinlockGuard<'_, T> {
-        // Spin until we successfully acquire the lock.
+        // Spin until this thread acquires the lock.
         // `compare_exchange_weak` is often preferred in loops, as it can be
         // more performant on some platforms, even if it spuriously fails.
         while self
@@ -59,11 +59,11 @@ impl<T> Spinlock<T> {
             )
             .is_err()
         {
-            // Lock is currently held, hint to the CPU that we are spinning.
+            // Lock is currently held, hint to the CPU that this thread is spinning.
             // This can improve performance on hyper-threaded CPUs.
             std::hint::spin_loop();
         }
-        // We successfully acquired the lock, return the guard:
+        // Return the guard for the acquired lock.
         SpinlockGuard {
             lock: self,
             exclusive: PhantomData,
@@ -117,7 +117,7 @@ impl<T> Deref for SpinlockGuard<'_, T> {
     /// Allows immutable access to the protected data.
     #[inline]
     fn deref(&self) -> &Self::Target {
-        // Safety: We know the lock is held, because the guard exists.
+        // SAFETY: The guard holds the lock for the duration of this borrow.
         // `UnsafeCell::get()` returns a raw pointer. Dereferencing it is
         // unsafe, but justified here by the lock mechanism.
         unsafe { &*self.lock.data.get() }
@@ -128,7 +128,7 @@ impl<T> DerefMut for SpinlockGuard<'_, T> {
     /// Allows mutable access to the protected data.
     #[inline]
     fn deref_mut(&mut self) -> &mut Self::Target {
-        // Safety: We know the lock is held, because the guard exists.
+        // SAFETY: The guard holds the lock for the duration of this borrow.
         unsafe { &mut *self.lock.data.get() }
     }
 }

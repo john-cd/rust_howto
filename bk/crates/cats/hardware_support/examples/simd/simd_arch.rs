@@ -90,11 +90,11 @@ pub fn dot(a: &[f32], b: &[f32]) -> f32 {
     #[cfg(target_arch = "x86_64")]
     {
         if is_x86_feature_detected!("avx2") {
-            // SAFETY: we just checked that the CPU supports AVX2.
+            // SAFETY: the runtime feature check confirmed support for AVX2.
             return unsafe { dot_avx2(a, b) };
         }
         if is_x86_feature_detected!("sse2") {
-            // SAFETY: we just checked that the CPU supports SSE2.
+            // SAFETY: the runtime feature check confirmed support for SSE2.
             return unsafe { dot_sse2(a, b) };
         }
     }

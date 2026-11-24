@@ -15,7 +15,7 @@ use byteorder::LittleEndian;
 use byteorder::ReadBytesExt;
 use byteorder::WriteBytesExt;
 
-// Define a struct `Payload` to represent the data we want to encode/decode.
+// Define a struct `Payload` to represent the data you want to encode/decode.
 
 /// The data to encode.
 #[derive(Default, PartialEq, Debug)]

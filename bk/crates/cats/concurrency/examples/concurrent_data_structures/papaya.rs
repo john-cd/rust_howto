@@ -19,7 +19,7 @@ fn populate_concurrent_ranges(map: &HashMap<char, i32>) {
         // Pin the map.
         // Pinning and unpinning the table is relatively cheap but not free.
         // Therefore, pin reuse is encouraged, within reason, noting that,
-        // as long as we are holding on to a pin, you
+        // as long as you are holding on to a pin, you
         // are preventing the map from performing garbage collection.
         s.spawn(|| {
             let m = map.pin();

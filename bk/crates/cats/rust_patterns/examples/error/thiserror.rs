@@ -15,7 +15,7 @@ use thiserror::Error;
 /// trait.
 #[derive(Error, Debug)]
 pub enum DataStoreError {
-    // A `Display` impl is generated for your error if we provide
+    // A `Display` impl is generated for your error if you provide
     // #[error("...")] messages on the struct or each variant of your enum.
     /// The data store disconnected.
     #[error("data store disconnected")]

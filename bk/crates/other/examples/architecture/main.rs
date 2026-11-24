@@ -8,7 +8,7 @@ use clap::Subcommand;
 /// CQRS (Command Query Responsibility Segregation) is an architectural pattern that separates the
 /// models for reading and writing data.
 mod cqrs;
-/// Dependency Injection (DI) is a design pattern that allows us to decouple
+/// Dependency Injection (DI) is a design pattern that allows you to decouple
 mod di;
 /// Event-driven architecture: producers publish events to subscribers.
 mod event_bus;

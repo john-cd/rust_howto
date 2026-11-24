@@ -90,7 +90,7 @@ impl ractor::Actor for Greeter {
         // process the message and stop normally.
         let _ = message.reply_to.send(reply);
 
-        // In this case, we stop the actor after just one message:
+        // In this case, you stop the actor after just one message:
         myself.stop(Some("Received greeting.".into()));
         Ok(())
     }

@@ -9,7 +9,7 @@
 
 // Runs the example.
 // `faux` mocks the methods of structs for testing without
-// complicating or polluting our code.
+// complicating or polluting the code.
 
 /// Represents a user with an ID and a name.
 #[derive(Debug, Clone, PartialEq)]
@@ -176,7 +176,7 @@ mod tests {
             name: "Alice".to_owned(),
         };
 
-        // Configure `get_user` to return our test user.
+        // Configure `get_user` to return the test user.
         when!(mock_db.get_user).then(move |id| (id == 1).then(|| user.clone()));
 
         // Configure `save_user` to always succeed.

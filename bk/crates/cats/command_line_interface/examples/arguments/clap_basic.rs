@@ -39,7 +39,7 @@ fn cli() -> Command {
                 .value_parser(value_parser!(PathBuf))
                 .help("Enter the path of a file"),
         )
-    // We can also use the `arg!` macro:
+    // Also use the `arg!` macro:
     // `.arg(clap::arg!(-c --config <CONFIG> "Optionally sets a config file to
     // use"))`.
 }

@@ -85,16 +85,16 @@ pub enum Commands {
 fn main() -> Result<()> {
     // `Clap` returns a Cli struct populated from `std::env::args_os()`...
     let cli = Cli::try_parse()?;
-    // We also could use `parse()`.
+    // You also could use `parse()`.
 
-    // The argument values we got...
+    // The argument values you got...
     println!("Path: {:?}", cli.path);
 
     // Use `unwrap_or` to set defaults for optional arguments
     // (or use `default_value_t` as above).
     println!("Pattern: {:?}", cli.pattern.unwrap_or("".to_owned()));
 
-    // We can also see how many times a particular flag or argument occurred.
+    // Also see how many times a particular flag or argument occurred.
     // Note, only flags can have multiple occurrences.
     match cli.debug {
         0 => println!("Debug mode is off"),

@@ -46,7 +46,7 @@ async fn root() -> &'static str {
     // charset=utf-8`
 }
 
-// The `Path` extractor gives us the path parameters (here `id` in
+// The `Path` extractor gives you the path parameters (here `id` in
 // `/users/{id}`) and deserializes them.
 
 /// Returns a message that contains the user identifier from the path.

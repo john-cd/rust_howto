@@ -47,7 +47,7 @@ fn main() {
     let alice2 = Student { id: 1 }; // Same ID.
     let bob = Student { id: 2 };
 
-    // Let's make sure the hashing relationship above stands.
+    // Make sure the hashing relationship above stands.
     assert_eq!(alice, alice2);
     assert_eq!(calculate_hash(&alice), calculate_hash(&alice2));
 
@@ -56,7 +56,7 @@ fn main() {
     grades.insert(bob, 87);
 
     // Look up a student's grade using their ID.
-    // Note that we create a new Student instance for lookup,
+    // Note that you create a new Student instance for lookup,
     // but it's considered the same key if the IDs match.
     let lookup_student = Student { id: 2 };
     if let Some(grade) = grades.get(&lookup_student) {

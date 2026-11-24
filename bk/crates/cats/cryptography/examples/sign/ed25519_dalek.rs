@@ -21,10 +21,10 @@ use rand_core::UnwrapErr;
 /// This example demonstrates the basic usage of the `ed25519-dalek` crate for
 /// generating Ed25519 keypairs, signing messages, and verifying signatures.
 fn main() -> anyhow::Result<()> {
-    // First, we need to generate a Keypair, which includes both public and
-    // secret halves of an asymmetric key. To do so, we need a
+    // First, you need to generate a Keypair, which includes both public and
+    // secret halves of an asymmetric key. To do so, you need a
     // cryptographically secure pseudorandom number generator (CSPRNG).
-    // For this example, we'll use the operating system's builtin PRNG:
+    // For this example, you'll use the operating system's builtin PRNG:
 
     let mut csprng = UnwrapErr(SysRng);
     let signing_key: SigningKey = SigningKey::generate(&mut csprng);

@@ -20,10 +20,8 @@ use anyhow::anyhow;
 use libc::c_char; // C char, which is not the same as a Rust `char`.
 use libc::c_int; // C int.
 
-// The function declarations defined in `libc` make it unnecessary to manually
-// declare the C functions we want to use in an "extern" block. Otherwise, we
-// would have to write:
-// unsafe extern "C" {
+// `libc` supplies the C function declarations. Declaring them manually would\n// require an
+// `extern` block: unsafe extern "C" {
 // // Declares an external C function `puts` that takes a pointer
 // // to a `c_char` (a C string) and returns an `i32`:
 //     fn puts(s: *const c_char) -> i32;
@@ -37,8 +35,8 @@ use libc::c_int; // C int.
 /// Prints a message by calling the C function `puts`.
 fn print() -> anyhow::Result<()> {
     // C strings (nul-terminated array of bytes) are different from Rust
-    // strings, thus we can't pass the latter directly to a C function.
-    // We therefore use a `CString`, which represents an owned, C-compatible,
+    // strings, thus you can't pass the latter directly to a C function.
+    // You therefore use a `CString`, which represents an owned, C-compatible,
     // nul-terminated string with no nul bytes in the middle.
     let message = CString::new("Hello from Rust using libc!")?;
 
@@ -79,7 +77,7 @@ unsafe fn cstr_to_rust_string(cstr_ptr: *const c_char) -> anyhow::Result<String>
 
 /// 2. Using `getenv` to get an environment variable.
 fn env() -> anyhow::Result<()> {
-    // We first create a `CStr` literal containing the env. variable name.
+    // You first create a `CStr` literal containing the env. variable name.
     // Note the `c` before the literal.
     let var_name: &CStr = c"PATH";
 
@@ -88,7 +86,7 @@ fn env() -> anyhow::Result<()> {
     // converted to an owned Rust string immediately and is not retained.
     let path_value: *mut c_char = unsafe { libc::getenv(var_name.as_ptr()) };
     // BEWARE: You need to take into account the lifetime of the `*const/mut
-    // c_char` pointers and who owns them. Depending on the C API, we may
+    // c_char` pointers and who owns them. Depending on the C API, you may
     // need to call a special deallocation function on the string.
 
     // SAFETY: `getenv` returns either null or a NUL-terminated environment

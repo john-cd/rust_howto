@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! A factory is quite useful when we need to create objects of different types
+//! A factory is quite useful when you need to create objects of different types
 //! that share a common interface, without needing to know the exact type at
 //! compile time.
 
@@ -45,7 +45,7 @@ impl Shape for Square {
     }
 }
 
-// A enum that represents the types of shapes we can create.
+// A enum that represents the types of shapes you can create.
 
 /// The kinds of shapes that the factory can create.
 enum ShapeType {
@@ -83,8 +83,8 @@ fn main() {
     let circle = ShapeFactory::create_shape(ShapeType::Circle, 5.0);
     let square = ShapeFactory::create_shape(ShapeType::Square, 10.0);
 
-    // We use the ShapeFactory to create instances of Circle and Square without
-    // directly knowing their concrete types. We only interact with them
+    // You use the ShapeFactory to create instances of Circle and Square without
+    // directly knowing their concrete types. You only interact with them
     // through the Shape trait.
     circle.draw();
     square.draw();

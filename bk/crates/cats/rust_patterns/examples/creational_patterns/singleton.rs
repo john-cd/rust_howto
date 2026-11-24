@@ -36,15 +36,15 @@ impl Settings {
 }
 
 // OnceCell is a thread-safe cell that can be written to only once.
-// We wrap our Settings instance in a Mutex to ensure thread-safe access and
-// modification. Since multiple threads might try to access the singleton, we
+// You wrap the Settings instance in a Mutex to ensure thread-safe access and
+// modification. Since multiple threads might try to access the singleton, you
 // need to protect it from race conditions.
 
 /// The single, lazily initialized instance of the settings.
 static SETTINGS: OnceLock<Mutex<Settings>> = OnceLock::new();
 // You could also use `std::sync::LazyLock`.
 
-// Single point of access to our Settings instance.
+// Single point of access to the Settings instance.
 
 /// Returns the singleton, creating it on first use.
 fn get_settings() -> &'static Mutex<Settings> {

@@ -5,7 +5,7 @@
 //! and print the differences.
 //!
 //! The `diff` crate provides functionality for computing the differences
-//! between sequences. In this example, we use it to compare lines within two
+//! between sequences. In this example, you use it to compare lines within two
 //! strings.
 
 use diff::Result;

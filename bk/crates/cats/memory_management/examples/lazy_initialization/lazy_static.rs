@@ -57,13 +57,13 @@ fn main() -> anyhow::Result<()> {
     );
 
     // The macro generates a unique type that implements `Deref<TYPE>` and
-    // stores it in a static with name `NAME`. Here, we use `*` to dereference
+    // stores it in a static with name `NAME`. Here, you use `*` to dereference
     // and retrieve the inner value.
     println!("Count: {}", *COUNT);
 
     // Working with the COUNTER:
     // The (mutable) shared state within the Mutex can only be accessed once the
-    // lock is held. Our non-atomic increment is safe because we're the only
+    // lock is held. The non-atomic increment is safe because you're the only
     // thread which can access the shared state when the lock is held.
     {
         let mut counter: MutexGuard<'_, i32> = COUNTER

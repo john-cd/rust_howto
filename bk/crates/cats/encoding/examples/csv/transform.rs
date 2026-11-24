@@ -73,7 +73,7 @@ fn transform_csv(data: &str) -> Result<String> {
     let mut reader = csv::Reader::from_reader(data.as_bytes());
     // Deserialize as `Row`, using the implementation above.
     for result in reader.deserialize() {
-        // We need to provide a type hint for automatic deserialization.
+        // Provide a type hint for automatic deserialization.
         let res: Row = result?;
 
         // Serialize the tuple as CSV into `Vec<u8>`.

@@ -66,9 +66,6 @@ mod tests {
         assert!(m.is_err());
     }
 
-    // Verify that we don't get confused by negative numbers (that look
-    // like flags).
-
     /// Checks that negative numbers are accepted as words.
     #[test]
     fn test_cmd_query_neg_numbers() {

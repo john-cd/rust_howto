@@ -98,8 +98,8 @@ struct SelfReferential {
     // The vast majority of Rust types have no address-sensitive states.
     // These types implement the `Unpin` auto-trait, which cancels the
     // restrictive effects of `Pin` when the pointee type `T` is `Unpin`.
-    // In this example, we rely upon pinning for soundness and must ensure
-    // that the type is not automatically marked as `Unpin`. We do so by
+    // In this example, you rely upon pinning for soundness and must ensure
+    // that the type is not automatically marked as `Unpin`. You do so by
     // adding a `PhantomPinned` marker field.
     /// A marker that makes the type `!Unpin`.
     #[pin]
@@ -193,8 +193,8 @@ fn future_projection_example() {
 /// with an enum.
 ///
 /// By passing an argument with the same name as the projection method
-/// to the `pin_project` attribute, we can name the projection type returned
-/// from the method. This allows us to use pattern matching on the projected
+/// to the `pin_project` attribute, you can name the projection type returned
+/// from the method. This allows you to use pattern matching on the projected
 /// types.
 #[pin_project(project = EnumProj)]
 enum PinnedEnum<T, U> {

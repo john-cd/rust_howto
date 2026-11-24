@@ -15,7 +15,7 @@ fn main() {
     let second: &String = frozen.push_get(Box::new("second".to_owned()));
     let third: &String = frozen.push_get(Box::new("third".to_owned()));
 
-    // Importantly, `first` and `second` are still valid even though we added
+    // Importantly, `first` and `second` are still valid even though you added
     // `third`:
     assert_eq!(first, "first");
     assert_eq!(second, "second");

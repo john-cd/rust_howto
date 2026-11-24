@@ -14,7 +14,7 @@ use heapless::index_map::FnvIndexMap;
 /// Fills a fixed-capacity vector and handles the error when it is full.
 fn main() {
     // `heapless` collections have a fixed capacity determined at compile time.
-    // Here we define a fixed-size vector with capacity of 3.
+    // Define a fixed-size vector with capacity of 3.
     let mut vec: Vec<u32, 3> = Vec::new();
 
     vec.push(1)
@@ -50,7 +50,7 @@ fn main() {
     println!("String length: {}", string.len());
     println!("String capacity: {}", string.capacity());
 
-    // Returns an error, if we exceed the capacity:
+    // Returns an error, if you exceed the capacity:
     let result = string.push_str(" It is too much!");
     if let Err(err) = result {
         println!("Error pushing to string: {err:?}"); // `err` is simply `()`.

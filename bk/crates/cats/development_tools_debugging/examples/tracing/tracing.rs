@@ -39,7 +39,7 @@ fn main() {
 
     // Structured fields on events (and spans) are specified using the syntax
     // `field_name = field_value`. Fields are separated by commas.
-    // Here, we record an event with two fields:
+    // Record an event with two fields:
     event!(
         Level::INFO,
         answer = 42,

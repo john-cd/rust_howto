@@ -10,7 +10,7 @@
 //! other Arrow-compatible systems (like Python's `PyArrow`, Spark, etc.)
 //! without expensive serialization/deserialization.
 //!
-//! - SQL Support: We can query data registered within `DataFusion` using standard SQL.
+//! - SQL Support: You can query data registered within `DataFusion` using standard SQL.
 //! - `DataFrame` API: It also provides a programmatic `DataFrame` API (similar in concept to Pandas
 //!   or Polars) for building query plans step-by-step in Rust code.
 //!

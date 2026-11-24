@@ -58,7 +58,7 @@ async fn fetch_url(url: hyper::Uri) -> anyhow::Result<()> {
     println!("Response: {}", res.status());
     println!("Headers: {:#?}\n", res.headers());
 
-    // Stream the body, writing each chunk to stdout as we get it
+    // Stream the body, writing each chunk to stdout as you get it
     // (instead of buffering and printing at the end).
     while let Some(next) = res.frame().await {
         let frame = next?;
@@ -75,7 +75,7 @@ async fn fetch_url(url: hyper::Uri) -> anyhow::Result<()> {
 /// Fetches a URL with `hyper` and prints the response.
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // Parse our URL...
+    // Parse the URL...
     let url = "http://httpbin.org/ip".parse::<hyper::Uri>()?;
 
     fetch_url(url).await?;

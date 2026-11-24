@@ -7,7 +7,7 @@ use anyhow::Context as _;
 use anyhow::ensure;
 use tokio_postgres::Client;
 
-/// In this example, we:
+/// In this example, you:
 ///
 /// - Connect to a PostgreSQL database using `tokio_postgres::connect`.
 /// - Spawn the connection on a separate task using `tokio::spawn`.

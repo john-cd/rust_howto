@@ -82,7 +82,7 @@ fn main() -> anyhow::Result<()> {
     }
 
     // Query the database to retrieve all authors and print their details.
-    // The query returns rows, and we iterate over them to extract author
+    // The query returns rows, and you iterate over them to extract author
     // information.
     for row in client
         .query("SELECT id, name, country FROM author ORDER BY name", &[])

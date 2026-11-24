@@ -35,7 +35,7 @@ fn main() -> io::Result<()> {
 
     // The same applies to the standard error of the current process:
     let mut stderr = io::stderr();
-    // We could lock `stderr` as well.
+    // You could lock `stderr` as well.
     stderr.write_all(b"There was an error.\n")?;
     // `eprintln!` also writes a line to standard error, with formatting.
 

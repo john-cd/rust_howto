@@ -37,7 +37,7 @@ fn example() {
     //
     // Enable or disable various Markdown extensions through the
     // `Options` struct to get fine-grained control over the parsing
-    // process. Here, we enable all common extensions.
+    // process. Here, you enable all common extensions.
     let options = Options::all();
 
     // `Parser::new_ext(markdown_input, options)` creates a `Parser` instance.

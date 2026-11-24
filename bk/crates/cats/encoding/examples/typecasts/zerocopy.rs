@@ -38,7 +38,7 @@ use std::mem::size_of;
 // `FromBytes` indicates that a type may safely be converted from an
 // arbitrary byte sequence This is useful for efficiently deserializing
 // structured data from raw bytes. Do not implement this trait yourself!
-// Instead, derive it, as we do below.
+// Instead, derive it, as you do below.
 use zerocopy::FromBytes;
 // There is also a `TryFromBytes` trait for types that may safely be
 // converted from certain byte sequences (conditional on runtime checks).
@@ -59,7 +59,7 @@ use zerocopy::IntoBytes;
 // about certain aspects of a type's layout.
 use zerocopy::KnownLayout;
 
-// 1. Let's first demonstrate `FromZeros`:
+// 1. Start with `FromZeros`:
 
 /// A struct that can be created from zeroed bytes.
 #[derive(FromZeros, Debug)]
@@ -85,7 +85,7 @@ fn manipulate_zero_bytes() {
     assert_eq!(my_struct2.field, [0; 8]);
 }
 
-// 2. We then define a fictive network `PacketHeader` structure.
+// 2. You then define a fictive network `PacketHeader` structure.
 
 // As discussed above, all user-defined composite types (structs, enums,
 // unions...) have a representation that specifies what the layout (its size,
@@ -96,7 +96,7 @@ fn manipulate_zero_bytes() {
 // most often `repr(C)`, as C is the lingua-franca of the programming world.
 // It means that their layout is exactly that C or C++ expect.
 #[repr(C)]
-// We derive the Zerocopy traits that are required to convert from / to bytes.
+// You derive the Zerocopy traits that are required to convert from / to bytes.
 /// The header of a packet.
 #[derive(FromBytes, IntoBytes, Immutable, KnownLayout, PartialEq, Debug)]
 struct PacketHeader {

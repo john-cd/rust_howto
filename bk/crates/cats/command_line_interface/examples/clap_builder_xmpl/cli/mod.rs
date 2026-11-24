@@ -59,7 +59,7 @@ fn cli() -> Command {
         .styles(styles)
         .args([arg_filepaths(), arg_config(), arg_verbose()])
         .infer_subcommands(true) // Allow partial matches of subcommand names and their aliases. For example, to match a
-        // subcommand named test, one could use t, te, tes, and test. We define three
+        // subcommand named test, one could use t, te, tes, and test. You define three
         // subcommands.
         .subcommand(opencmd::cmd())
         .subcommand(querycmd::cmd())
@@ -186,7 +186,7 @@ mod tests {
         }
     }
 
-    // Test that we can't pass both filepath arguments and the open
+    // Test that you can't pass both filepath arguments and the open
     // command. You can play with
     //  .subcommand_precedence_over_arg(true) // If true, prevent
     // subcommands from being consumed as an arguments value. and

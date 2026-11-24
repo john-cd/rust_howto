@@ -54,7 +54,7 @@ async fn run_pool_with_limit(inputs: Vec<u64>, limit: usize) -> Outcome {
                 None => break,
             }
         }
-        // Wait for any one task; `None` means the set is empty (and, since we
+        // Wait for any one task; `None` means the set is empty (and, since you
         // just filled it, that there is no more input).
         match set.join_next().await {
             None => break,

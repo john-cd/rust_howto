@@ -22,7 +22,7 @@ use mail_parser::MessageParser;
 use tokio::net::TcpStream;
 use tokio_native_tls::TlsConnector;
 
-/// A message reduced to the fields we care about.
+/// A message reduced to the fields you care about.
 #[derive(Debug, PartialEq, Eq)]
 pub struct Summary {
     /// Subject line from the message.

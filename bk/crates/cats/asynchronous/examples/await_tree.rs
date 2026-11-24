@@ -106,7 +106,7 @@ async fn bar(n: i32) {
 /// `baz` is an asynchronous function that spawns an anonymous background task
 /// that never completes.
 async fn baz(n: i32) {
-    // Inside the scope of a registered/instrumented task, we can also directly
+    // Inside the scope of a registered/instrumented task, you can also directly
     // spawn new tasks with `await_tree::spawn` or `spawn_anonymous`
     // to register them in the same registry. Anonymous tasks don't belong to a
     // specific tree but can be printed via `collect_anonymous`.

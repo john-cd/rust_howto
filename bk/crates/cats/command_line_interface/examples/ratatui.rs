@@ -99,7 +99,7 @@ impl App {
     fn ui(&self, frame: &mut Frame) {
         // The most important method on `Frame` is `render_widget()`,
         // which renders any type that implements the `Widget` trait:
-        // `Paragraph`, `Line`... Here, we render the `App` itself,
+        // `Paragraph`, `Line`... Here, you render the `App` itself,
         // which implements `Widget` below.
         frame.render_widget(self, frame.area());
     }
@@ -166,16 +166,16 @@ impl Widget for &App {
             )
             .split(area);
 
-        // Within the root widget (and its children), we call the `render`
-        // method, passing in the area which we want to render the
-        // widgets to. Here, we draw a `Block` widget with a title:
+        // Within the root widget (and its children), you call the `render`
+        // method, passing in the area which you want to render the
+        // widgets to. Here, you draw a `Block` widget with a title:
         let title_block = Block::default().borders(Borders::ALL).title(Span::styled(
             "Ratatui example",
             Style::default().fg(Color::Yellow),
         ));
         title_block.render(chunks[0], buf);
 
-        // We can create a custom Widget struct to encapsulate the rendering
+        // Create a custom Widget struct to encapsulate the rendering
         // logic:
         MiddleWidget::new("This is an example of using ratatui to create terminal user interfaces")
             .render(chunks[1], buf);

@@ -66,10 +66,10 @@ fn main() -> std::io::Result<()> {
     // a. Make sure that handles to files inside the directory are dropped
     // before the `TempDir` goes out of scope.
     drop(temp_file);
-    // b. By closing the `TempDir` explicitly, we can check that it has
-    // been deleted successfully. If we don't close it explicitly,
+    // b. By closing the `TempDir` explicitly, you can check that it has
+    // been deleted successfully. If you don't close it explicitly,
     // the directory will still be deleted when `temp_dir` goes out
-    // of scope, but we won't know whether deleting the directory
+    // of scope, but you won't know whether deleting the directory
     // succeeded.
     temp_dir.close()?;
 

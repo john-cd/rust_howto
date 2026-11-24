@@ -74,7 +74,7 @@ fn main() {
 
     let dir = f1.div_assign_round(3.0, Round::Down);
     // The direction of the rounding is returned.
-    // Since we rounded down, direction is `Ordering::Less`.
+    // Since you rounded down, direction is `Ordering::Less`.
     assert_eq!(dir, Ordering::Less);
 
     let product_ref = &f1 * &f2;

@@ -69,7 +69,7 @@ fn format() {
     let info = format!("{0} {1} {0}", "+", "-");
     println!("{info}"); // Output: + - +
 
-    // We can format numbers with specific precision and alignment:
+    // Format numbers with specific precision and alignment:
     let pi = std::f32::consts::PI;
     println!("Pi to two decimal places: {pi:.2}");
     // Output: Pi to two decimal places: `3.14`.

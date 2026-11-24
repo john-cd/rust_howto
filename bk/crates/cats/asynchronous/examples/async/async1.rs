@@ -14,7 +14,7 @@ use std::future::Future;
 /// An empty value produced and consumed by the example tasks.
 struct SomeStruct;
 
-// Most often, we will use async functions.
+// Most often, you will use async functions.
 // Rust transforms the `async fn` at compile time into a state machine
 // that _implicitly_ returns a `Future`. A `Future` represents an
 // asynchronous computation that might not have finished yet.
@@ -59,8 +59,8 @@ async fn do_something() {
     futures::join!(f1, f2); // You could use `tokio::join!` as well.
 }
 
-// We replace `fn main()` by `async fn main()` and declare which
-// executor runtime we'll use - in this case, Tokio. The runtime crate
+// You replace `fn main()` by `async fn main()` and declare which
+// executor runtime you'll use - in this case, Tokio. The runtime crate
 // must be added to `Cargo.toml`:
 // ```toml
 // `tokio = { version = "1", features = ["full"] }`.

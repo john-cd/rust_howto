@@ -24,7 +24,7 @@ use std::collections::BinaryHeap;
 /// Pushes values into a binary heap and pops them in priority order.
 fn main() {
     // Declare a `BinaryHeap<i32>`.
-    // Type inference lets us omit an explicit type signature.
+    // Type inference lets you omit an explicit type signature.
     let mut heap = BinaryHeap::new();
 
     // Push elements into the `BinaryHeap`.
@@ -41,7 +41,7 @@ fn main() {
     // or `None` if it is empty. Its cost is O(1) in the worst case.
     assert_eq!(heap.peek(), Some(&9));
 
-    // We can iterate over the items in the heap, although they are
+    // Iterate over the items in the heap, although they are
     // returned in an arbitrary order:
     println!("Iteration:");
     for x in &heap {
@@ -60,7 +60,7 @@ fn main() {
     // The heap should now be empty:
     assert!(heap.is_empty());
 
-    // If we need a "min-heap" instead of a "max-heap",
+    // For a min-heap,
     // use `std::cmp::Reverse` to invert the order.
     let mut heap = BinaryHeap::new();
     heap.push(Reverse(3));

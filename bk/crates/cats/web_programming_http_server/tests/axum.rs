@@ -50,7 +50,7 @@ async fn root(State(state): State<Arc<AppState>>) -> String {
 
 /// Returns a user by ID.
 ///
-/// The [`Path`] extractor gives us the path parameters (here `id` in
+/// The [`Path`] extractor gives you the path parameters (here `id` in
 /// `/users/{id}`) and deserializes them.
 async fn get_user(Path(id): Path<u64>) -> String {
     format!("User {id}")

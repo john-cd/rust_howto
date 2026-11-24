@@ -33,8 +33,8 @@ fn my_function(my_arg: usize) {
 async fn my_async_function() {
     trace!("I'm in my_async_span.");
 
-    // If we yield here, the span will be exited,
-    // and re-entered when we resume.
+    // If you yield here, the span will be exited,
+    // and re-entered when you resume.
     some_other_async_function().await;
 }
 

@@ -12,7 +12,7 @@
 /// Adds two numbers, but panics when the first one is 42.
 #[tracing::instrument]
 fn add(a: i32, b: i32) -> i32 {
-    // For testing purposes, we make it fail for only 1 in billions of possible
+    // For testing purposes, you make it fail for only 1 in billions of possible
     // inputs:
     assert!(a != 42, "Oh no, a failing corner case!");
     a + b // Note the possibility of overflow as well
@@ -41,7 +41,7 @@ mod verification {
     /// Proves that adding zero to a number returns that number.
     #[kani::proof]
     fn add_zero_identity() {
-        // We use `kani::any()` to represent all possible `i32` values:
+        // You use `kani::any()` to represent all possible `i32` values:
         let a = kani::any();
         let result = add(a, 0);
         // State the property that should be true:
@@ -69,8 +69,8 @@ mod verification {
     #[kani::proof]
     fn add_is_non_negative() {
         let a = kani::any();
-        // We set preconditions:
-        // We assume that 'a' is non-negative.
+        // You set preconditions:
+        // You assume that 'a' is non-negative.
         kani::assume(a >= 0);
 
         let b = kani::any();

@@ -26,7 +26,7 @@ fn main() -> anyhow::Result<()> {
     let file = File::create(&path)?;
     let mut zip = ZipWriter::new(file);
 
-    // Define file options for the files we'll add.
+    // Define file options for the files you'll add.
     let options = SimpleFileOptions::default()
         .compression_method(zip::CompressionMethod::Deflated)
         // Read, write, execute for owner and group, read and execute for

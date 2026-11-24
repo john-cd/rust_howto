@@ -18,7 +18,7 @@ pub fn log_calls(_attr: TokenStream, item: TokenStream) -> TokenStream {
     // not including the outer delimiters.
 
     // The second `TokenStream` is the rest of the annotated item, including
-    // other attributes on the item. Here, we parse the annotated function:
+    // other attributes on the item. Here, you parse the annotated function:
     let input_fn = syn::parse_macro_input!(item as syn::ItemFn);
 
     let fn_name = &input_fn.sig.ident; // The function's name.
@@ -73,7 +73,7 @@ pub fn debug_print_derive(input: proc_macro::TokenStream) -> proc_macro::TokenSt
     // The generated implementation formats `self` with `Debug`, so the type
     // deriving `DebugPrint` must also implement `Debug`.
     // Generate the implementation of the `DebugPrint` trait.
-    // `quote!` allows us to write Rust code directly, and `#ident`,
+    // `quote!` allows you to write Rust code directly, and `#ident`,
     // `#ty_generics`, etc. are "splices" that insert the captured syntax
     // elements.
     let expanded = quote::quote! {
@@ -107,7 +107,7 @@ pub fn debug_print_derive(input: proc_macro::TokenStream) -> proc_macro::TokenSt
 pub fn sql(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     // Here, `input` contains all the tokens passed to the macro call (e.g.,
     // SELECT * FROM users WHERE id = 1).
-    // For this simple example, we'll just treat the input as a string literal
+    // For this simple example, you'll just treat the input as a string literal
     // and wrap it. For robust parsing of complex SQL, you'd use a dedicated
     // parser.
     // `TokenStream::to_string()` normalizes token spacing and does not preserve
@@ -133,7 +133,7 @@ pub fn sql(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
 
 // `proc-macro2` allows manipulating TokenStreams outside of a procedural macro
 // context, making it easier to write unit tests for procedural macros.
-// Here we define the core logic using `proc_macro2::TokenStream`.
+// Define the core logic using `proc_macro2::TokenStream`.
 
 /// Replaces the identifier `old_ident` with `new_ident` in `input`.
 fn process_tokens(input: proc_macro2::TokenStream) -> proc_macro2::TokenStream {
@@ -155,7 +155,7 @@ fn process_tokens(input: proc_macro2::TokenStream) -> proc_macro2::TokenStream {
         .collect()
 }
 
-// Then we expose the procedural macro interface which seamlessly converts
+// Then you expose the procedural macro interface which seamlessly converts
 // between `proc_macro::TokenStream` and `proc_macro2::TokenStream`.
 
 /// A function-like macro that renames an identifier in the tokens it receives.
@@ -170,7 +170,7 @@ pub fn replace_ident(input: proc_macro::TokenStream) -> proc_macro::TokenStream 
     proc_macro::TokenStream::from(output2)
 }
 
-// And we can write unit tests for the core logic directly!
+// And you can write unit tests for the core logic directly!
 
 /// Checks that `old_ident` is replaced.
 #[cfg(test)]

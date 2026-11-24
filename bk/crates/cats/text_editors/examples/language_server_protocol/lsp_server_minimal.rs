@@ -74,7 +74,7 @@ fn run_server(connection: Connection) -> anyhow::Result<()> {
 /// Returns an error if sending or receiving an LSP message, parsing the document URI, or decoding
 /// the hover response fails.
 fn main() -> anyhow::Result<()> {
-    // Two connected ends: the first for the server, the second for us.
+    // Two connected ends: the first for the server, the second for you.
     let (server_side, client) = Connection::memory();
     let server = thread::spawn(move || run_server(server_side));
 

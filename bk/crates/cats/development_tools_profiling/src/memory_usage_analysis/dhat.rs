@@ -24,12 +24,12 @@
 
 /// The heap profiling works by using a global allocator that wraps the system
 /// allocator and tracks all heap allocations.
-/// We set `dhat::Alloc` as the global allocator
+/// You set `dhat::Alloc` as the global allocator
 /// using the `#[global_allocator]` attribute.
 #[global_allocator]
 static ALLOC: dhat::Alloc = dhat::Alloc;
 
-/// When we run the code below with:
+/// When you run the code below with:
 ///
 /// cargo run --features dhat-heap
 /// `dhat` will collect heap profiling information.
@@ -83,8 +83,8 @@ fn main() {
     adhoc_profiling();
 }
 
-// `dhat` also supports heap usage testing, where we can write tests and then
-// check that they allocated as much heap memory as we expected.
+// `dhat` also supports heap usage testing, where you can write tests and then
+// check that they allocated as much heap memory as you expected.
 // Example adapted from <https://docs.rs/dhat/latest/dhat/>
 // ANCHOR_END: example
 
@@ -111,7 +111,7 @@ mod tests {
 
         let _stats = dhat::HeapStats::get();
 
-        // Now we may assert allocations and number of bytes.
+        // Now you may assert allocations and number of bytes.
         // The exact numbers may depend on the compiler version and the
         // platform.
 

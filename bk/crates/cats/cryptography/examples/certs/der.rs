@@ -17,7 +17,7 @@ use der::Sequence;
 // back using the `der` crate.
 
 // Define a struct to be encoded/decoded
-// Note that we derive the `Sequence` trait.
+// Note that you derive the `Sequence` trait.
 
 /// A sequence of two fields, encoded as a DER `SEQUENCE`.
 #[derive(Debug, PartialEq, Sequence)]

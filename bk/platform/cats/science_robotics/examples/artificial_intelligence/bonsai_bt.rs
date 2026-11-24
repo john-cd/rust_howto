@@ -9,7 +9,7 @@
 //! simple counter. The BT consists of a sequence of actions that increment or
 //! decrement the counter, with pauses in between.
 //!
-//! A Behavior Tree (BT) is a data structure in which we can set the rules of
+//! A Behavior Tree (BT) is a data structure in which you can set the rules of
 //! how certain behaviors can occur, and the order in which they would
 //! execute. BTs are a very efficient way of creating complex systems that are
 //! both modular and reactive. These properties have led to the spread of BT
@@ -126,7 +126,7 @@ fn main() -> anyhow::Result<()> {
     assert_eq!(*count, 1);
 
     // If the behavior tree concludes (reaches a steady state),
-    // we can reset the tree back to it's initial state at t = 0.0.
+    // you can reset the tree back to it's initial state at t = 0.0.
     bt.reset_bt();
 
     Ok(())

@@ -152,7 +152,7 @@ fn demonstrate_slices() {
     let _whole_cake: &[_] = &numbers;
 
     // In Rust, it's common to use slices, rather than vectors, as
-    // arguments, when we just want to provide read access:
+    // arguments, when you just want to provide read access:
 
     /// Prints each value in an integer slice.
     fn read_vec(v: &[i32]) {

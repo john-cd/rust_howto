@@ -605,7 +605,7 @@ mod tests {
     /// Runs the cqrs example through its entry point.
     #[test]
     fn test_cqrs_example_entry_point() -> anyhow::Result<()> {
-        // We just execute main, which shouldn't panic
+        // You just execute main, which shouldn't panic
         main()?;
         Ok(())
     }

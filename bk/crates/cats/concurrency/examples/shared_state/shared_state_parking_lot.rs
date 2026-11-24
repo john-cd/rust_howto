@@ -26,7 +26,7 @@ static mut VAL: usize = 0;
 
 /// Returns the cached value, computing it on the first call.
 fn get_cached_val() -> usize {
-    // Accessing a `static mut` is unsafe much of the time, unless we do so
+    // Accessing a `static mut` is unsafe much of the time, unless you do so
     // in a synchronized fashion (e.g. write once or read all):
     unsafe {
         // The given closure will be executed if this is the first time

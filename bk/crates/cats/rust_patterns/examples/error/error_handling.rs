@@ -22,7 +22,7 @@ fn main() {
     // `Result` value, which is either success (`Ok`) or failure (`Err`).
     let result: Result<usize, std::io::Error> = my_cursor.read_line(&mut my_string);
 
-    // We can process the `Result` as needed.
+    // Process the `Result` as needed.
     match result {
         Ok(0) => println!("End of file reached."),
         Ok(n) => println!("The total number of bytes read is {n}."),

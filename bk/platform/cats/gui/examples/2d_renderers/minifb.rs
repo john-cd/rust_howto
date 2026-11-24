@@ -102,7 +102,7 @@ fn throttle_frame_rate(last_frame: Instant, target_duration: Duration) -> Instan
 ///
 /// Returns an error if window creation or native buffer presentation fails.
 fn run_window(smoke: bool) -> Result<()> {
-    // The window owns the OS surface; the buffer is our own CPU-side
+    // The window owns the OS surface; the application owns the CPU-side
     // framebuffer with one `0xAARRGGBB` value per pixel.
     let mut window = create_window()?;
     let mut buffer = vec![0u32; WIDTH * HEIGHT];

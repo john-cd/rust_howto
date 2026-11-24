@@ -7,7 +7,7 @@
 //! The `deadpool` crate provides a generic connection pool implementation that
 //! can be used with any type that implements the `managed::Manager` trait.
 //!
-//! In this example, we create a simple `Server` type that represents a
+//! In this example, you create a simple `Server` type that represents a
 //! connection to a server. The `Manager` type is responsible for creating and
 //! recycling `Server` instances.
 

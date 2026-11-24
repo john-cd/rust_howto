@@ -23,7 +23,7 @@ fn main() {
     // a `Result<u32, ParseIntError>`.
     let result: Result<u32, std::num::ParseIntError> = number_str.parse();
 
-    // If the error is not recoverable at this point, we can cause the
+    // If the error is not recoverable at this point, you can cause the
     // program to crash if this instance of `Result` is an `Err` value:
 
     // 1. `unwrap()` can be called on the `Result` to extract the `u32` value.

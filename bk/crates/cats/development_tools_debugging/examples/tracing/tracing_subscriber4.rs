@@ -37,7 +37,7 @@ fn main() {
     // shorter log lines; it displays each event's fields, along with fields
     // from the current span context, but other information is abbreviated.
 
-    // Create a subscriber that uses our custom event format, and
+    // Create a subscriber that uses the custom event format, and
     // set it as the default.
     // - `fmt()` is essentially shorthand for `SubscriberBuilder::default()`.
     // - `init()` installs this Subscriber as the global default.

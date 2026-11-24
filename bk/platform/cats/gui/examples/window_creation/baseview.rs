@@ -10,7 +10,7 @@
 //!
 //! `baseview` abstracts the platform-specific windowing APIs (`winapi`,
 //! `cocoa`, `xcb`) into a platform-independent API, but otherwise gets out of
-//! your way so we can write plugin UIs.
+//! your way so you can write plugin UIs.
 //!
 //! Requirements (Linux):
 //! ```sh

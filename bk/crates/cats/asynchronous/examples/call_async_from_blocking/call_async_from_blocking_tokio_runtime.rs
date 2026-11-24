@@ -13,7 +13,7 @@ fn main() {
     // Create a new multi-threaded runtime. The runtime is used to
     // execute asynchronous tasks.
     let runtime = tokio::runtime::Builder::new_multi_thread()
-        // Set the number of worker threads. In this case, we only
+        // Set the number of worker threads. In this case, you only
         // need one.
         .worker_threads(1)
         .enable_all()
@@ -33,7 +33,7 @@ fn main() {
     // Wait for all of them to complete.
     for handle in handles {
         // The `spawn` method returns a `JoinHandle`. A `JoinHandle` is
-        // a future, so we can wait for it using `block_on`.
+        // a future, so you can wait for it using `block_on`.
         runtime
             .block_on(handle)
             .expect("the call async from blocking tokio runtime example invariant should hold");
