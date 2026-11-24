@@ -28,8 +28,8 @@ Save this example as `bacon.toml` beside a Rust workspace's `Cargo.toml`. Run `b
 
 The project uses several tools and techniques to optimize the Rust development experience within Docker:
 
-- **`cargo binstall`**: To speed up the image build process, we use [`cargo-binstall`][c~cargo-binstall~repo]↗ to install Rust tools as pre-compiled binaries whenever possible, rather than compiling them from source.
-- **`sccache`**: We use [`sccache`][c~sccache~repo]↗ (Shared Compilation Cache) to cache Rust compilation artifacts. This significantly speeds up subsequent builds by avoiding redundant compilation.
+- **`cargo binstall`**: The image build uses [`cargo-binstall`][c~cargo-binstall~repo]↗ to install Rust tools as pre-compiled binaries whenever possible, rather than compiling them from source.
+- **`sccache`**: The build uses [`sccache`][c~sccache~repo]↗ (Shared Compilation Cache) to cache Rust compilation artifacts. This significantly speeds up subsequent builds by avoiding redundant compilation.
 
 For background on when a separate Rust compiler cache helps, see [Why You Need `sccache`][blog~why_you_need_sccache]↗.
 

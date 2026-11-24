@@ -4,7 +4,7 @@
 
 {{#include linear_algebra.incl.md}}
 
-We will use three key crates:
+The examples use three crates:
 
 - [`nalgebra`][c~nalgebra~docs]↗{{hi:nalgebra}}, a general-purpose linear algebra library with transformations and statically-sized or dynamically-sized matrices. However it supports only vectors (1d) and matrices (2d) and not higher-dimensional tensors.
 - [`ndarray`][c~ndarray~docs]↗{{hi:ndarray}} is less featureful than [`nalgebra`][c~nalgebra~docs]↗ but supports arbitrarily dimensioned arrays.

@@ -10,6 +10,8 @@ Use `just s` to serve a preview at [http://localhost:3000][localhost:3000]↗. U
 
 ## Edit a chapter
 
+Address the reader directly when giving instructions, for example, “Run `cargo test`.” When explaining behavior in a chapter or a code comment, name the actor, for example, “The parser returns an error.” Reserve first person for an identifiable speaker, such as a maintainer describing a decision or a user quoted in an example.
+
 Add or edit Markdown under `bk/src/`. The table of contents in `bk/src/SUMMARY.md` controls navigation, so add an entry whenever you add or move a published chapter. Many pages include a sibling `*.incl.md` file and shared reference definitions; preserve those fragments instead of copying their contents into generated pages.
 
 The keyboard-accessible **Suggest an edit** button in each page's toolbar opens its Markdown source on the `develop` branch. If the source is an include-only wrapper, edit its referenced `*.incl.md` file or shared reference file under `bk/src/`; the wrapper usually only connects those fragments.

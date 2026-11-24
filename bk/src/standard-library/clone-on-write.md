@@ -46,7 +46,7 @@ It is common to return a [`Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Co
 
 Use the [`Into`][c~std::convert::Into~docs]↗{{hi:std::convert::Into}} trait to construct `Cow`.
 
-The `Into` trait is the dual of [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}} and is implemented for all types that implement `From`. Since `impl<'a> From<&'a str> for Cow<'a, str>` and `impl<'a> From<String> for Cow<'a, str>` are in the standard library, we can simply call `into()` to convert a `&str` or a `String` into `Cow`.
+The `Into` trait is the dual of [`From`][c~std::convert::From~docs]↗{{hi:std::convert::From}} and is implemented for all types that implement `From`. Since `impl<'a> From<&'a str> for Cow<'a, str>` and `impl<'a> From<String> for Cow<'a, str>` are in the standard library, you can call `into()` to convert a `&str` or a `String` into `Cow`.
 
 [`Cow`][c~std::borrow::Cow~docs]↗{{hi:std::borrow::Cow}} implements `From` for a number of other common types as well: (references to) `Vec`, `Path`, `PathBuf`, `OsStr`, `OsString`, etc.
 

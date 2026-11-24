@@ -20,7 +20,7 @@ Robotics AI is still maturing in Rust, but Rust's safety and performance are a g
 
 {{#badges bonsai-bt}}
 
-[`bonsai-bt`][c~bonsai-bt~docs]↗{{hi:bonsai-bt}} is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][wikipedia~behavior-tree]↗ (BT) is a data structure in which we can set the rules of how certain behavior's can occur, and the order in which they would execute. BTs are a very efficient way of creating complex systems that are both modular and reactive. These properties are crucial in many applications, which has led to the spread of BT from computer game programming to many branches of AI and Robotics.
+[`bonsai-bt`][c~bonsai-bt~docs]↗{{hi:bonsai-bt}} is a Rust implementation of behavior trees. A [Behavior Tree (Wikipedia)][wikipedia~behavior-tree]↗ (BT) organizes actions and conditions into a tree. Its control nodes determine which child runs next based on the result of the current one. Behavior trees are used in games and robotics.
 
 ```rust,noplayground
 {{#include ../../../platform/cats/science_robotics/examples/artificial_intelligence/bonsai_bt.rs:example}}

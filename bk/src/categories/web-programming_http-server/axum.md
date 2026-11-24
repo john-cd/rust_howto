@@ -43,7 +43,7 @@ For examples of middleware and other extensions, see [Axum Extras](axum_extras.m
 
 **Rust Axum Clean Demo** is a GitHub template that brings together almost all the best practices and features for building a production-ready API server with [Axum][c~axum~repo]↗ and [SQLx][c~sqlx~repo]↗.
 
-While Axum's official examples do a fantastic job of demonstrating individual features (routing, extractors, middleware, etc.), I found it really helpful to have everything wired up in **one** cohesive structure:
+The template combines routing, extractors, middleware, and database access in one application:
 
 - **Domain-first modularity**: each domain (user, auth, device, file...) lives in its own module, with controllers, DB layer, and models neatly organized
 - **Clean Architecture** & dependency inversion via traits,

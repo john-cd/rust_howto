@@ -18,7 +18,7 @@ Use the [`pub`][keyword~pub]↗{{hi:pub}} keyword before an item's definition to
 
 There are two exceptions to the "privacy by default" rule: Enum variants in a [`pub enum`][keyword~enum]↗{{hi:pub enum}} are public by default. Associated items (incl. functions and methods) in a `pub` [[traits | trait]] are also public by default.
 
-Also note that, if we use [`pub`][keyword~pub]↗{{hi:pub}} before a struct definition, we make the struct public, but the fields of the struct will still be private. Mark relevant fields with `pub`:
+Marking a struct [`pub`][keyword~pub]↗{{hi:pub}} makes the type public. Its fields are private by default. Mark each field that callers should access with `pub`:
 
 ```rust,editable
 {{#include ../../crates/code_organization/examples/visibility/public_by_default.rs:example}}

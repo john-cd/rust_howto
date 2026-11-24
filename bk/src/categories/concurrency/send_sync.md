@@ -14,7 +14,7 @@ The [`std::marker::Send`][c~std::marker::Send~docs]↗{{hi:std::marker::Send}} a
 | --- | --- |
 | [`std::marker::Send`][c~std::marker::Send~docs]↗{{hi:std::marker::Send}} and [`std::marker::Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}} | primitives; `(T1, T2)↗`, `[T; N]`, `&[T]`, `struct { x: T }`, `Arc`, `Vec`, `Box`, [`Option`][c~std::option::Option~docs]↗{{hi:Option}} (depending on underlying types); [`String`][c~std::string::ToString~docs]↗{{hi:String}}, `&str`; `Mutex`, `Atomic*`... |
 | `!Send` and `!Sync` | `Rc`, raw pointers `*const T`,`*mut T`, types from external libraries or the operating system that are not thread safe. |
-| `Send` and `!Sync` | `mpsc::Receiver<T>`; `UnsafeCell`, `Cell`, `RefCell`: when a type has interior mutability, we must be sure that we mutate it from one place only, but this place can be everywhere as long as it is singular. |
+| `Send` and `!Sync` | `mpsc::Receiver<T>`, `UnsafeCell<T>`, `Cell<T>`, and `RefCell<T>` when `T: Send`. Ownership can move to another thread. Sharing a reference across threads would bypass the exclusive access these types require. |
 | `!Send` and `Sync` (rare) | `RwLockReadGuard`, `RwWriteGuard` and [`MutexGuard`][c~std::sync::MutexGuard~docs]↗{{hi:MutexGuard}}; `&mut T` if `T` is `!Send`; structs which use thread-local storage and accesses that info in `Drop`. |
 
 ## `Send` Trait {#send}
@@ -29,7 +29,7 @@ An important exception is `Rc`. By cloning, it allows data to have multiple owne
 
 A type is [`std::marker::Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}} if it is safe to be referenced from multiple threads _simultaneously_. This is trivial for immutable objects, but mutations need to be synchronized (performed in sequence with the same order being seen by all threads). This is often done using a `Mutex` or `RwLock` which allows one thread to proceed while others must wait. By enforcing a shared order of changes, these types can turn a non-`Sync` object into a `Sync` object. Another mechanism for making objects `Sync` is to use [atomic types][p~atomic-types], which are essentially `Sync` primitives.
 
-`Arc` is an `Rc` that uses an atomic type for the reference count. Hence, it can be used by multiple threads without the count getting out of sync. If the data that the `Arc` points to is `Sync`, the entire object is `Sync`. If the data is not `Sync` (e.g. a mutable type), it can be made `Sync` using a `Mutex`. Hence the proliferation of `Arc<Mutex<T>>` types in multi-threaded Rust code, as we will see below.
+`Arc<T>` uses an atomic reference count. With the default allocator, it implements `Send` and `Sync` when `T` implements both traits. Use `Arc<Mutex<T>>` to share mutable state across threads when `T: Send`. The mutex grants exclusive access to its contents.
 
 By utilizing [interior mutability][p~interior-mutability], types like `Mutex` and `RwLock` provide safe ways to modify data that is shared across threads.
 
@@ -37,11 +37,11 @@ By utilizing [interior mutability][p~interior-mutability], types like `Mutex` an
 
 `Send` and `Sync` are automatically derived [traits][p~traits]. This means that, unlike almost every other trait, if a type is composed entirely of `Send` or `Sync` types, then it is `Send` or `Sync`.
 
-If we want to work with non-[`Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}} / `Send` types like raw pointers, we need to build an abstraction on which `Send` and `Sync` can be derived.
+Raw pointers implement neither `Send` nor [`Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}}. A wrapper can implement either trait with `unsafe impl` if its author can justify the corresponding thread-safety guarantee.
 
 The following example provides a simplified implementation of [`std::sync::Arc`][c~std::sync::Arc~docs]↗{{hi:std::sync::Arc}} (atomic reference counted). Each `my::Arc` owns one strong count on a shared `ArcInner` allocation. Cloning uses a checked atomic increment, and the final drop pairs its Release decrement with an Acquire fence before reconstructing the owning `Box`. That final `Box` drop destroys the value once and frees the allocation. The example is for studying unsafe ownership invariants, not for production use.
 
-By implementing the unsafe marker [traits][p~traits] [`std::marker::Send`][c~std::marker::Send~docs]↗{{hi:std::marker::Send}} and `Sync` on `my::Arc`, we guarantee that it can be sent and shared across threads safely. The implementation must prevent data races and invalid memory access; otherwise it can cause undefined behavior. The included test moves the final owner to another thread and checks that the value is dropped once. Run the documented Miri command to check pointer validity, drop behavior, and allocation leaks for that execution; Miri does not model weak-memory reorderings. Caveat lector!
+By implementing the unsafe marker [traits][p~traits] [`std::marker::Send`][c~std::marker::Send~docs]↗{{hi:std::marker::Send}} and `Sync` on `my::Arc`, the example asserts that it can be sent and shared across threads safely. The implementation must prevent data races and invalid memory access; otherwise it can cause undefined behavior. The included test moves the final owner to another thread and checks that the value is dropped once. Run the documented Miri command to check pointer validity, drop behavior, and allocation leaks for that execution; Miri does not model weak-memory reorderings.
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/send_sync/send_sync_impl.rs:example}}

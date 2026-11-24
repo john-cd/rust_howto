@@ -6,11 +6,11 @@
 
 Property-based testing involves defining properties that your code should satisfy for a wide range of input values. You describe the general behavior of the program, and the testing framework generates random inputs to check if the properties hold true. Example:
 
-Suppose we have a [sorting](../algorithms/sorting.md) function. A property we could test is that the output list has the same length as the input list and the elements are in increasing order.
+A [sorting](../algorithms/sorting.md) function should return the same elements in nondecreasing order. These properties apply to empty inputs and repeated values as well as inputs with distinct elements.
 
 Consider the following crates for property-based testing:
 
-- [`proptest`][c~proptest~docs]↗{{hi:proptest}} is a powerful crate for property-based testing, where we define properties that your code should satisfy, and [`proptest`][c~proptest~docs]↗{{hi:proptest}} generates many random inputs to verify those properties.
+- [`proptest`][c~proptest~docs]↗{{hi:proptest}} generates test inputs and checks each one against the properties you specify.
 - [`quickcheck`][c~quickcheck~docs]↗{{hi:quickcheck}} is another property-based testing crate. `proptest` is often preferred for its flexibility.
 
 ## `proptest` {#proptesting}

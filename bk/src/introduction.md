@@ -5,33 +5,19 @@
 <div class="warning">
 Work in Progress
 
-This book is going through HEAVY EDITS. Pardon the dust.
-
-A large number of chapters and examples are currently hidden, as I am reorganizing the book.
+Some chapters and examples are hidden while the book is being reorganized.
 
 </div>
 
 ## What You Will Find Here
 
-This book is "everything you need for day-to-day Rust coding, in one place". It is a compendium of **code examples** and **resources** for the **Rust programming language** and its **ecosystem**.
-
-It combines a summary of the language and of key features of the standard library; a "cookbook" with a large number of code examples to accomplish common programming tasks; and numerous links to Rust resources (books, blogs, example code, videos, meetings & events, etc).
-
-In particular, it emphasizes coverage of **foundational Rust tools and crates**, libraries that are not part of the standard library but are very commonly used and that every experienced Rust developer should know - or at least know about.
+This book pairs Rust recipes with explanations of the language, standard library, and ecosystem. Use it to find working examples for common tasks and links to the documentation for each tool or crate.
 
 ## The Rust Programming Language, in a Few Words
 
-You are likely reading this book, because you are aware that Rust is a modern programming language that offers high safety, reliability, and performance.
+Rust gives you control over memory layout and allocation. Its ownership and type systems prevent use-after-free errors, double frees, and data races in safe Rust.{{hi:Type safety}}{{hi:Memory safety}}{{hi:Concurrency}} Memory leaks{{hi:Memory leaks}} are still possible, for example when reference-counted values form a cycle.
 
-It emphasizes type safety{{hi:Type safety}}, memory safety{{hi:Memory safety}} without the overhead of a garbage collector, and fearless concurrency{{hi:Concurrency}} - that is, without code brittleness and refactoring fears. Rust's ownership and type systems prevent many memory-safety errors, including use-after-free and double-free bugs, and prevent data races in safe code. Memory leaks{{hi:Memory leaks}} remain possible (for example, through `Rc` cycles or `mem::forget`), but they are memory-safe. No rewrite of prototypes in a "production" language is necessary.
-
-It is a language with both low-level control and high-level, yet zero-cost, abstractions, bridging the capabilities of, say, C or C++ with that of Python. It supports powerful features such as pattern matching{{hi:Pattern matching}}, algebraic data types{{hi:Algebraic data types}}, higher-order functions{{hi:Higher-order functions}}, generics{{hi:Generics}}, traits{{hi:Traits}}, macros{{hi:Macros}}, and asynchronous programming{{hi:Async}}.
-
-It compiles for many CPUs and operating systems (or no OS), making it suitable for a wide range of applications - from [embedded][cat~embedded]↗{{hi:embedded}} development & systems programming to web development.
-
-Above all, Rust's key strength is that it forces you - and assists you greatly in - writing high-quality code. Writing Rust can take more time upfront, but that translates into fewer flaky tests, fewer irreproducible bugs, fewer customer service tickets, fewer costly production environment failures (which, of course, happen in the middle of the night), fewer security breaches. Its rigor results in higher productivity overall.
-
-It has also a very rich ecosystem of crates, for anything from [algorithms][p~category-algorithms]{{hi:algorithms}} to websockets - as we will discover in this book.
+The recipes cover language features such as pattern matching{{hi:Pattern matching}}, generics{{hi:Generics}}, and traits{{hi:Traits}}, alongside crates for tasks ranging from [algorithms][p~category-algorithms]{{hi:algorithms}} to [embedded development][cat~embedded]↗{{hi:embedded}}.
 
 ## Who Should Read This Book
 

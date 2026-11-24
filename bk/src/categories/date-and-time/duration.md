@@ -10,7 +10,7 @@
 
 Measures [`std::time::Instant::elapsed`][c~std::time::Instant::elapsed~docs]↗{{hi:std::time::Instant::elapsed}} since [`std::time::Instant::now`][c~std::time::Instant::now~docs]↗{{hi:std::time::Instant::now}}.
 
-Calling [`std::time::Instant::elapsed`][c~std::time::Instant::elapsed~docs]↗{{hi:std::time::Instant::elapsed}} returns a [`std::time::Duration`][c~std::time::Duration~docs]↗{{hi:std::time::Duration}} that we print at the end of the example. This method will not mutate or reset the [`std::time::Instant`][c~std::time::Instant~docs]↗{{hi:std::time::Instant}} object.
+Calling [`std::time::Instant::elapsed`][c~std::time::Instant::elapsed~docs]↗{{hi:std::time::Instant::elapsed}} returns a [`std::time::Duration`][c~std::time::Duration~docs]↗{{hi:std::time::Duration}} that the example prints. This method will not mutate or reset the [`std::time::Instant`][c~std::time::Instant~docs]↗{{hi:std::time::Instant}} object.
 
 ```rust,editable
 {{#include ../../../crates/cats/date_and_time/examples/duration/profile.rs:example}}

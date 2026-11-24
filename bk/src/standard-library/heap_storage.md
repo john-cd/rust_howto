@@ -69,7 +69,7 @@ Because their underlying concrete types are obscured, trait objects are dynamica
 
 The Rust compiler needs to know the exact size of a type at compile time, but a recursive data structure's size is potentially unbounded.
 
-For example, in the following, we define a linked list that has an unknown number of nodes, thus its size is not fixed. It could not be stored directly on the stack. By using [`Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}}, which has a defined size on the stack, we can create a local variable. The actual `Node` data will be stored on the heap.
+A linked list can have any number of nodes. Each link uses a [`Box`][c~std::boxed::Box~docs]↗{{hi:std::boxed::Box}} to point to the next node on the heap. This indirection gives the node type a known size even though the length of the list varies.
 
 ```rust,editable
 {{#include ../../crates/standard_library/examples/box/box_recursive.rs:example}}

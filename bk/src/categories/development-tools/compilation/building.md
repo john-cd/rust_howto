@@ -58,7 +58,7 @@ RUN apk add just
 
 {{#badges bacon development-tools="Development tools" command-line-utilities="Command line utilities"}}
 
-[`bacon`][c~bacon~docs]↗{{hi:bacon}} is a background rust code checker. It is designed for minimal interaction, so that we can just let it run, alongside your editor, and be notified of warnings, errors, or test failures in your Rust code.
+[`bacon`][c~bacon~docs]↗{{hi:bacon}} checks Rust code in the background. Leave it running alongside your editor to see warnings, errors, and test failures as you work.
 
 ```sh
 # Install or Update `bacon`
@@ -73,7 +73,7 @@ bacon clippy
 
 ## Related Topics {#related-topics .skip}
 
-Consider [`cargo-make`][c~cargo-make~docs]↗{{hi:cargo-make}} if we want something with a bulkier syntax but more cross-platform portability.
+Consider [`cargo-make`][c~cargo-make~docs]↗{{hi:cargo-make}} for tasks that need to run across platforms.
 
 See also the [Rust Compilation section](../index.md#rust-compilation) in the Development Tools overview.
 

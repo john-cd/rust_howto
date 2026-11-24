@@ -14,7 +14,7 @@ References are similar to pointers but come with strict safety guarantees: they 
 
 A reference type has a _lifetime_ that describes how long the reference may be used. The compiler checks that the referent remains valid for that lifetime. A borrow can end before the variable it borrows goes out of scope.{{hi:Dangling references}}
 
-The Rust compiler infers most lifetimes (see below), therefore we will most often write references with an implicit lifetime:
+Rust’s lifetime elision rules let you omit lifetime annotations in many function signatures:
 
 - `&i32`: a shared reference.
 - `&mut i32`: a mutable reference with an implicit lifetime.
