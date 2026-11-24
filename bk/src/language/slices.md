@@ -23,7 +23,7 @@ A few important points:
 
 - Slices _do not own_ the data they point to. This makes them efficient, as they avoid unnecessary copying.
 - They allow you to work with parts of a collection, enabling flexibility in data manipulation.
-- Slice references are "fat pointers", i.e. they store a pointer and the length of the sequence they refer to, thus they have twice the size of pointers to regular `Sized` types.
+- A slice reference carries a data pointer and the number of elements. Current implementations use two machine words. Portable code should avoid relying on that exact size.
 - As a primitive type, `slice` implements a large number of methods, for example to `swap` two elements; `reverse` the order of elements in the slice in place; `iter`ate elements; create `chunks` or overlapping windows into the slice; figure out if the slice `contains` an element with the given value, etc. See also:
   - [`slice::sort_by`][primitive~slice::sort_by]↗,
   - [`slice::split_at`][primitive~slice::split_at]↗.
