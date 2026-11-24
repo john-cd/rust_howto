@@ -221,9 +221,8 @@ fn unit_return_value(file_path: &str) -> Result<(), anyhow::Error> {
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let file_path = "example.txt";
     open_file(file_path);
-    // Ignore the `Result` return values
-    // to avoid returning early and to exercise all the code.
-    // You will rarely need to do this.
+    // This demonstration discards the results so each example runs even if
+    // an earlier read fails. Application code should handle or propagate errors.
     let _ = read_file(file_path);
     let _ = read_file2(file_path);
     let _ = read_and_parse_file(file_path);

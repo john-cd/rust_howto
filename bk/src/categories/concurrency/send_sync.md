@@ -4,7 +4,7 @@
 
 {{#include send_sync.incl.md}}
 
-The [`std::marker::Send`][c~std::marker::Send~docs]↗{{hi:std::marker::Send}} and [`std::marker::Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}} [traits][p~traits] are fundamental to Rust's [concurrency][p~concurrency]. You can think of `Send` as "Exclusive access is thread-safe," and `Sync` as "Shared access is thread-safe."
+The [`std::marker::Send`][c~std::marker::Send~docs]↗{{hi:std::marker::Send}} and [`std::marker::Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}} [traits][p~traits] are fundamental to Rust's [concurrency][p~concurrency]. `Send` describes whether ownership can cross a thread boundary. `Sync` describes whether threads can safely share a reference.
 
 `T` is `Sync` if and only if `&T` is `Send`.
 
@@ -15,19 +15,19 @@ The [`std::marker::Send`][c~std::marker::Send~docs]↗{{hi:std::marker::Send}} a
 | [`std::marker::Send`][c~std::marker::Send~docs]↗{{hi:std::marker::Send}} and [`std::marker::Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}} | primitives; `(T1, T2)↗`, `[T; N]`, `&[T]`, `struct { x: T }`, `Arc`, `Vec`, `Box`, [`Option`][c~std::option::Option~docs]↗{{hi:Option}} (depending on underlying types); [`String`][c~std::string::ToString~docs]↗{{hi:String}}, `&str`; `Mutex`, `Atomic*`... |
 | `!Send` and `!Sync` | `Rc`, raw pointers `*const T`,`*mut T`, types from external libraries or the operating system that are not thread safe. |
 | `Send` and `!Sync` | `mpsc::Receiver<T>`, `UnsafeCell<T>`, `Cell<T>`, and `RefCell<T>` when `T: Send`. Ownership can move to another thread. Sharing a reference across threads would bypass the exclusive access these types require. |
-| `!Send` and `Sync` (rare) | `RwLockReadGuard`, `RwWriteGuard` and [`MutexGuard`][c~std::sync::MutexGuard~docs]↗{{hi:MutexGuard}}; `&mut T` if `T` is `!Send`; structs which use thread-local storage and accesses that info in `Drop`. |
+| `!Send` and `Sync` | A [`MutexGuard<T>`][c~std::sync::MutexGuard~docs]↗{{hi:MutexGuard}} can be shared by reference when `T: Sync`. The acquiring thread must drop the guard. |
 
 ## `Send` Trait {#send}
 
 A type is [`std::marker::Send`][c~std::marker::Send~docs]↗{{hi:std::marker::Send}} if it can be _transferred across thread boundaries_. Most types in Rust are `Send` by default, as long as they don't contain non-`Send` types.
 
-`Send` allows an object to be used by two or more threads at _different times_. Thread 'A' can create and use an object, then send it to thread 'B', so thread 'B' can use the object while thread 'A' cannot. The Rust [ownership model][p~ownership-and-borrowing] can be used to enforce this non-overlapping use. In other words, `Send` means that a type is safe to _move_ from one thread to another. If the same type also implements [`std::marker::Copy`][c~std::marker::Copy~docs]↗{{hi:std::marker::Copy}}, it is safe to _copy_ from one thread to another.
+For example, sending a `String` through a channel moves the string to the receiving thread. The sender can no longer read it after the move.
 
-An important exception is `Rc`. By cloning, it allows data to have multiple owners. If one owner in thread 'A' could send the `Rc` to another thread, giving ownership to thread 'B', there could be other owners in thread 'A' that can still use the object. Since the reference count is modified non-atomically, the value of the count on the two threads may get out of sync and one thread may drop the pointed-at value while there are owners in the other thread. Therefore `Rc` does not implement `Send`.
+`Rc` illustrates why `Send` matters. Cloning an `Rc` creates another owner of the same allocation. If one owner could move to another thread, both threads could update the same non-atomic reference count concurrently.
 
 ## `Sync` Trait {#sync}
 
-A type is [`std::marker::Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}} if it is safe to be referenced from multiple threads _simultaneously_. This is trivial for immutable objects, but mutations need to be synchronized (performed in sequence with the same order being seen by all threads). This is often done using a `Mutex` or `RwLock` which allows one thread to proceed while others must wait. By enforcing a shared order of changes, these types can turn a non-`Sync` object into a `Sync` object. Another mechanism for making objects `Sync` is to use [atomic types][p~atomic-types], which are essentially `Sync` primitives.
+A type is [`Sync`][c~std::marker::Sync~docs]↗{{hi:std::marker::Sync}} when multiple threads can safely hold shared references to it. For shared mutable state, a `Mutex` serializes access, an `RwLock` allows multiple readers or one writer, and [atomic types][p~atomic-types] support synchronized operations on individual values.
 
 `Arc<T>` uses an atomic reference count. With the default allocator, it implements `Send` and `Sync` when `T` implements both traits. Use `Arc<Mutex<T>>` to share mutable state across threads when `T: Send`. The mutex grants exclusive access to its contents.
 

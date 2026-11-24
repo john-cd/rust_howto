@@ -16,7 +16,7 @@ fn main() {
     print_coordinates(point);
 
     // The same works with closure arguments.
-    // Destructure a mutable reference into `x`, a `i32` variable.
+    // Destructure a mutable reference into `x`, an `i32` variable.
     // Note the second `mut` to make `x` mutable within the closure!
     let add_one = |&mut mut x| -> i32 {
         x += 1;

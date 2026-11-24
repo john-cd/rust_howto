@@ -38,9 +38,8 @@ fn main() -> anyhow::Result<()> {
         enable_stderr: true,
     };
 
-    // You create below any number of layers, based on the dynamically loaded
-    // config file. You box the layers, which are of varied types, as
-    // type-erased trait objects, so that they could be pushed to the `Vec`.
+    // The configuration selects the layers. Boxing each layer lets one vector
+    // hold layers with different concrete types.
     let mut layers: Vec<Box<dyn Layer<_> + Send + Sync>> = Vec::new();
 
     if cfg.enable_log_file {
@@ -57,8 +56,7 @@ fn main() -> anyhow::Result<()> {
     let mut reload_handle: Option<Handle<_, _>> = None;
     if cfg.enable_stdout {
         let layer = fmt::layer().pretty().with_filter(LevelFilter::WARN);
-        // You wrap this `layer` using the `reload` module to get a reload
-        // handle.
+        // Keep the handle so the application can change this layer at runtime.
         let (layer, handle) = reload::Layer::new(layer);
         layers.push(Box::new(layer));
         reload_handle = Some(handle);
