@@ -32,13 +32,9 @@ pub enum ConfigValue {
     ),
 }
 
-// The DSL Macro.
-//
-// The `#[macro_export]` attribute makes the `config!` macro available to other
-// crates. See <https://doc.rust-lang.org/reference/macros-by-example.html#path-based-scope>.
+// This local macro expands where `ConfigValue` is in scope.
 
 /// Builds a `HashMap` of configuration values from a declarative syntax.
-#[macro_export]
 macro_rules! config {
 
     // Once the parser begins consuming tokens for a metavariable, it cannot stop or backtrack.
@@ -60,14 +56,14 @@ macro_rules! config {
     ($key:ident : true) => {
         {
             let mut map = std::collections::HashMap::new();
-            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::Boolean(true));
+            map.insert(stringify!($key).to_string(), ConfigValue::Boolean(true));
             map
         }
     };
     ($key:ident : false) => {
         {
             let mut map = std::collections::HashMap::new();
-            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::Boolean(false));
+            map.insert(stringify!($key).to_string(), ConfigValue::Boolean(false));
             map
         }
     };
@@ -76,7 +72,7 @@ macro_rules! config {
     ($key:ident : $value:literal) => {
         {
             let mut map = std::collections::HashMap::new();
-            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::String($value.to_string()));
+            map.insert(stringify!($key).to_string(), ConfigValue::String($value.to_string()));
             map
         }
     };
@@ -89,14 +85,14 @@ macro_rules! config {
     ($key:ident : true, $($rest:tt)*) => {
         {
             let mut map = config!($($rest)*);
-            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::Boolean(true));
+            map.insert(stringify!($key).to_string(), ConfigValue::Boolean(true));
             map
         }
     };
     ($key:ident : false, $($rest:tt)*) => {
         {
             let mut map = config!($($rest)*);
-            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::Boolean(false));
+            map.insert(stringify!($key).to_string(), ConfigValue::Boolean(false));
             map
         }
     };
@@ -105,7 +101,7 @@ macro_rules! config {
     ($key:ident : $value:literal, $($rest:tt)*) => {
         {
             let mut map = config!($($rest)*);
-            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::String($value.to_string()));
+            map.insert(stringify!($key).to_string(), ConfigValue::String($value.to_string()));
             map
         }
     };
@@ -114,7 +110,7 @@ macro_rules! config {
     ($key:ident { $($inner_config:tt)* }) => {
         {
             let mut map = std::collections::HashMap::new();
-            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::Map(config!($($inner_config)*)));
+            map.insert(stringify!($key).to_string(), ConfigValue::Map(config!($($inner_config)*)));
             map
         }
     };
@@ -123,7 +119,7 @@ macro_rules! config {
     ($key:ident { $($inner_config:tt)* }, $($rest:tt)*) => {
         {
             let mut map = config!($($rest)*);
-            map.insert(stringify!($key).to_string(), $crate::macro_by_example_dsl::ConfigValue::Map(config!($($inner_config)*)));
+            map.insert(stringify!($key).to_string(), ConfigValue::Map(config!($($inner_config)*)));
             map
         }
     };
