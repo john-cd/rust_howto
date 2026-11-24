@@ -395,7 +395,9 @@ fn create_windows_junction(_destination: &Path, _link: &Path) -> Result<()> {
 /// Creates a Unix directory symlink to the external output directory.
 #[cfg(unix)]
 fn create_unix_symlink(destination: &Path, link: &Path) -> Result<()> {
-    std::os::unix::fs::symlink(destination, link)
+    use std::os::unix::fs::symlink;
+
+    symlink(destination, link)
         .with_context(|| format!("could not create symlink {}", link.display()))
 }
 
@@ -619,10 +621,10 @@ mod tests {
         fs::create_dir(&other)?;
         let link = dir.path().join("target");
 
-        std::os::unix::fs::symlink(&other, &link)?;
+        create_unix_symlink(&other, &link)?;
 
         assert!(connect_link(&link, &destination).is_err());
-        assert!(connect_link(&link, &other.canonicalize()?).is_ok());
+        connect_link(&link, &other.canonicalize()?)?;
         Ok(())
     }
 }
