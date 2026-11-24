@@ -46,8 +46,10 @@ const ENTRY_POINTS: &[&str] = &["main.rs", "lib.rs", "mod.rs", "build.rs"];
 
 /// Shared `include directive` used by this module.
 static INCLUDE_DIRECTIVE: LazyLock<Regex> = LazyLock::new(|| {
-    Regex::new(r"\{\{#(?P<kind>include|rustdoc_include)\s+(?P<target>[^}\s]+)\s*\}\}")
-        .expect("the include directive regex is valid")
+    Regex::new(
+        r"(?P<escape>\\)?\{\{#(?P<kind>include|rustdoc_include)\s+(?P<target>[^}\s]+)\s*\}\}",
+    )
+    .expect("the include directive regex is valid")
 });
 
 /// Shared `custom example` used by this module.
@@ -772,6 +774,9 @@ impl ScanState {
             }
             let mut directives = Vec::new();
             for capture in INCLUDE_DIRECTIVE.captures_iter(&line) {
+                if capture.name("escape").is_some() {
+                    continue;
+                }
                 let kind = capture.name("kind").expect("kind capture exists").as_str();
                 let target = capture
                     .name("target")
@@ -1857,7 +1862,7 @@ mod tests {
         write_fixture(
             root,
             "bk/src/chapter.md",
-            "# Chapter\n\n{{#include fragments/one.md}}\n\n{{#example demo}}\n\n{{#include ../crates/one/examples/first/main.rs:example}}\n\n```rust\n{{#include ../crates/one/examples/first/main.rs:missing}}\n{{#include ../crates/one/examples/first/missing.rs:example}}\n```\n\n```rust\nlet value = 1;\n```\n\n<div class=\"hidden\">\n{{#include missing-hidden.rs}}\n</div>\n",
+            "# Chapter\n\n\\{{#include escaped.rs}} {{#include fragments/one.md}}\n\n{{#example demo}}\n\n{{#include ../crates/one/examples/first/main.rs:example}}\n\n```rust\n{{#include ../crates/one/examples/first/main.rs:missing}}\n{{#include ../crates/one/examples/first/missing.rs:example}}\n```\n\n```rust\nlet value = 1;\n```\n\n<div class=\"hidden\">\n{{#include missing-hidden.rs}}\n</div>\n",
         );
         write_fixture(
             root,
@@ -1896,6 +1901,12 @@ mod tests {
                 && diagnostic.path == "bk/src/SUMMARY.md"
                 && diagnostic.line == Some(4)
         }));
+        assert!(
+            !report
+                .includes
+                .iter()
+                .any(|include| include.target_path.as_deref() == Some("bk/src/escaped.rs"))
+        );
         let custom_example = report
             .includes
             .iter()
