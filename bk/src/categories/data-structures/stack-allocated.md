@@ -19,7 +19,7 @@ Fixed-capacity collections are useful when a maximum size is known or dynamic al
 
 {{#badges arrayvec data-structures="Data structures" no-std="No standard library"}}{{hi:Array}}{{hi:Data-structure}}{{hi:No_std}}{{hi:Stack}}{{hi:Vector}}
 
-[`arrayvec`][c~arrayvec~docs]↗{{hi:arrayvec}} provides the types `ArrayVec` and `ArrayString`, which are stack-allocated, fixed-capacity array-backed vector and string types.
+[`arrayvec`][c~arrayvec~docs]↗{{hi:arrayvec}} provides the types `ArrayVec` and `ArrayString`, which store vector elements and string bytes inline, up to a fixed capacity.
 
 `ArrayVec` is a vector-like collection with a fixed capacity determined at compile time. Its elements are stored inline in the array-backed value, so it does not allocate when it grows; this does not by itself guarantee better performance. It offers a simple API and dereferences to a `slice`, so the full `slice` API is available:
 
@@ -51,9 +51,9 @@ The following demonstrates the usage of `TinyVec`:
 
 {{#badges heapless data-structures="Data structures" no-std="No standard library"}}{{hi:No heap}}
 
-The [`heapless`][c~heapless~docs]↗{{hi:heapless}} crate provides fixed-size data structures that don't require dynamic memory allocation. This means they are backed by _static memory allocation_ (on the stack, in a static variable, or even in the heap, despite the name) and have _fixed_ capacities determined at compile time. They don't implicitly and unpredictably re-allocate at runtime.
+The [`heapless`][c~heapless~docs]↗{{hi:heapless}} collections in this example store their elements inline. Their capacities are fixed at compile time.
 
-This can be particularly useful for [embedded](../embedded/index.md) systems or performance-critical applications, where dynamic memory allocation is not feasible or desirable: operations on [`heapless`][c~heapless~docs]↗{{hi:heapless}} data structures do not involve a memory allocator, reducing the risk of memory allocation failures. In addition, operations like `push` and `pop` are truly constant time, as there is no dynamic resizing involved.
+For an [embedded](../embedded/index.md) application, a fixed capacity gives the collection a predictable storage requirement. Pushing onto a full `heapless::Vec` returns the rejected element, so the caller can decide how to handle it.
 
 [`heapless`][c~heapless~docs]↗{{hi:heapless}} includes:
 
@@ -69,7 +69,7 @@ This can be particularly useful for [embedded](../embedded/index.md) systems or 
 - `heapless::mpmc::Queue`, a fixed-capacity multiple-producer multiple-consumer queue (the `Q*` aliases were removed in heapless 0.9; this module is deprecated in that release).
 - `heapless::spsc::Queue`, a statically allocated single-producer single-consumer lock-free queue.
 
-Keep in mind that choosing `heapless` is a trade-off: gain performance and determinism, but lose the flexibility of dynamic resizing. The following example demonstrates the basic usage of `heapless` collections:
+The example shows how to create and use fixed-capacity collections:
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/data_structures/examples/stack_allocated/heapless.rs:example}}

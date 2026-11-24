@@ -27,8 +27,7 @@ impl Person {
     }
 }
 
-/// Sorts a vector of structs, by their derived order and by a chosen field.
-/// Sorts a vector of `Person`s in several ways and prints the results.
+/// Sorts people by derived order, descending age, and a custom comparison.
 fn main() {
     let mut people = vec![
         Person::new("Zoe".to_owned(), 25),
@@ -36,10 +35,7 @@ fn main() {
         Person::new("John".to_owned(), 1),
     ];
 
-    // Sort people by derived natural order (in this case, name and age):
-    // The derived `Ord` implementation compares struct fields in
-    // lexicographical order, matching their definition sequence (`name` is
-    // compared first, then `age` if names match).
+    // Derived `Ord` compares names first and breaks ties by age.
     people.sort();
 
     assert_eq!(
@@ -64,7 +60,7 @@ fn main() {
         ]
     );
 
-    // Use a comparator to sort by name length, then age descending:
+    // Compare name lengths in bytes, then put the older person first on ties.
     people.sort_by(|left, right| {
         left.name
             .len()

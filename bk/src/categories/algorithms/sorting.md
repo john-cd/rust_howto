@@ -4,9 +4,7 @@
 
 {{#include sorting.incl.md}}
 
-No single crate is the "sorting crate", as the standard library is often sufficient.
-
-The primary sorting methods are found on slices (`&[T]`). You'll typically call them on a `Vec<T>` or an array.
+The standard library provides sorting methods on mutable slices (`&mut [T]`). You can call them directly on a mutable vector or array.
 
 - `slice::sort()` is stable: equal elements keep their original relative order. Its current implementation is driftsort, which adapts to existing order in the input.
 - `slice::sort_unstable()` may reorder equal elements. Its current implementation is based on ipnsort and sorts in place.
@@ -48,9 +46,9 @@ A vector{{hi:Vector}} of [`f32`][primitive~f32]↗{{hi:f32}} or [`f64`][primitiv
 
 [![std][c~std~docs~badge]][c~std~docs]{{hi:std}} [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}{{hi:Sorting}}
 
-The following example sorts a vector{{hi:Vector}} of `Person` structs with properties `name` and `age` by its natural order (by name and age). In order to make the `Person` struct sortable, we need to implement four traits [`std::cmp::Eq`][c~std::cmp::Eq~docs]↗{{hi:std::cmp::Eq}}, [`std::cmp::PartialEq`][c~std::cmp::PartialEq~docs]↗{{hi:std::cmp::PartialEq}}, [`std::cmp::Ord`][c~std::cmp::Ord~docs]↗{{hi:std::cmp::Ord}} and [`std::cmp::PartialOrd`][c~std::cmp::PartialOrd~docs]↗{{hi:std::cmp::PartialOrd}}. These traits can be simply derived with an attribute, producing a lexicographic ordering based on the top-to-bottom declaration order of the struct's members.
+The example sorts a vector{{hi:Vector}} of `Person` values. Deriving `PartialEq`, `Eq`, `PartialOrd`, and [`Ord`][c~std::cmp::Ord~docs]↗ gives `Person` an ordering based on its fields. Because `name` is declared first, `sort()` compares names first and uses `age` to break ties.
 
-To sort in a different way, provide a custom comparator function to the [`std::vec::Vec::sort_by`][c~std::vec::Vec::sort_by~docs]↗{{hi:std::vec::Vec::sort_by}} method:
+To sort the oldest people first, the example uses `sort_by_key` with `Reverse(age)`. Its final [`sort_by`][c~std::vec::Vec::sort_by~docs]↗ comparison sorts names by their length in bytes and breaks ties by descending age.
 
 ```rust,editable
 {{#include ../../../crates/cats/algorithms/examples/sort/sort_struct.rs:example}}

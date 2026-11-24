@@ -2,31 +2,21 @@
 
 # How to Read This Book
 
-Click on the "three stacked bars" on the top left corner, in order to reveal the table of contents in the left sidebar.
-
-The book is organized in a few major sections. Click on a heading (with an arrow) to expand it and navigate to chapters within the book.
+Open the menu in the upper-left corner to show the table of contents. Select the arrow beside a section to see its chapters.
 
 - The book first summarizes core concepts of the [language][p~lang] and often-used elements of the [standard library][p~standard-library] (if they are not covered elsewhere). The [[code_organization | code organization]] section explains how Rust code should be structured, depending on your project's needs.
-- The bulk of the book focuses on the Rust ecosystem, meaning Rust tools and public libraries that you reuse in your project. It is divided in subsections named, whenever possible, after the [categories][crates.io~category_slugs]↗ of [`crates.io`][crates.io~website]↗{{hi:crates.io}}, the central registry of public Rust crates. That means you can easily list and search for related crates using `crates.io` or [`lib.rs`][lib.rs~website]↗.
-- Each chapter within each subsection contains a list of recipes. The recipes are simple statements of a task to accomplish, like "generate random numbers in a range"; and each recipe is tagged with badges indicating which _crates_ they use, like [![rand][c~rand~docs~badge]][c~rand~docs], and which categories on [`crates.io`][crates.io~website]↗{{hi:crates.io}} those crates belong to, like [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}.
+- The ecosystem chapters cover Rust tools and libraries. Most sections follow the [categories][crates.io~category_slugs]↗ on [`crates.io`][crates.io~website]↗{{hi:crates.io}}, so you can browse the same category there or search [`lib.rs`][lib.rs~website]↗ for related crates.
+- Each recipe answers a specific question, such as how to generate a random number in a range. Its badges identify the crates it uses, such as [![rand][c~rand~docs~badge]][c~rand~docs], and their categories, such as [![cat~algorithms][cat~algorithms~badge]][cat~algorithms]{{hi:Algorithms}}.
 - The [[crate_selection | crate selection]] chapter in the "Resources" section provides additional pointers on how to locate crates suitable for your project.
 - The [links][p~links] section provides pointers to notable Rust websites, [learning](../links/learning_rust.md) resources, cheat sheets, [[books | books]], [[example_code | code examples]], etc.
 - The indices include a word index, an index of examples in the book, and [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] lists of crates used in the book.
 - The [contributing][p~contributing] section details how to contribute to the book itself.
 
-## Look for a Solution for a Specific Task {#look-for-solution-for-specific-task}
+## Find a Recipe {#look-for-solution-for-specific-task}
 
-If you are simply looking for the solution to a given task, the easiest ways to find a specific recipe are to:
-
-- Use the search button (in the top toolbar),
-- Scan the left-side bar for categories you are interested in,
-- Scan the [index of examples][p~index~examples], and from there, click on the name of the recipe to view it,
-- Look up into the [word index][p~word-index], which lists concepts, crates (in lower case), and Rust items (using their full path e.g. [`parking_lot::ReentrantMutex`][c~parking_lot::ReentrantMutex~docs]↗{{hi:parking_lot::ReentrantMutex}}),
-- Consult the [[crates_alphabetical | alphabetical]] and [[crates_by_category | categorical]] crates indices, then search for the crate name.
+Search from the top toolbar or browse the categories in the sidebar. The [index of examples][p~index~examples] lists recipes by task. Use the [word index][p~word-index] to look up a concept, a crate name, or a fully qualified Rust item such as [`parking_lot::ReentrantMutex`][c~parking_lot::ReentrantMutex~docs]↗{{hi:parking_lot::ReentrantMutex}}. You can also browse crates [[crates_alphabetical | alphabetically]] or [[crates_by_category | by category]].
 
 ## Use the Code Examples {#how-to-use-code-examples}
-
-Code examples, a.k.a. recipes, are designed to give you instant access to working code, along with an explanation of what it is doing, and to guide you to further information. Most recipes can be copied to the clipboard; edited in place; and run on the Rust playground by clicking the "right arrow" button. The results, if any, are displayed below the example.
 
 Many recipes are self-contained programs that you can copy into your own projects. Use the Play button when the snippet fits the Playground's available crates and environment. Follow the recipe's Cargo command when it needs the workspace's dependency versions or features, local files, native tools, or sockets. An illustrative fragment shows the part to put in a larger program. The following instructions show how to set up a local project for a typical recipe.
 
@@ -65,11 +55,7 @@ The [`xmpl`][rust-howto~xmpl~repo]↗ folder in the book's GitHub repo contains 
 
 ## A Note about Error Handling {#note-about-error-handling}
 
-Error handling in Rust is robust but can require a bit of boilerplate. Because of this, one often sees Rust examples filled with [`unwrap`][c~std::result::Result::unwrap~docs]↗{{hi:unwrap}} calls, instead of proper error handling.
-
-Since this book's recipes are intended to be reused as-is and encourage best practices, they set up error handling correctly when there are [`Result`][c~std::result::Result~docs]↗{{hi:Result}} types involved.
-
-In most examples, we have chosen to use [`anyhow::Result`][c~anyhow::Result~docs]↗ (from the [`anyhow`][c~anyhow~docs]↗{{hi:anyhow}} crate) as the return type of any fallible function (instead of writing `std::result::Result<_, Box<dyn std::error::Error>>` or using custom [`Result`][c~std::result::Result~docs]↗{{hi:Result}} or [`Error`][c~std::error::Error~docs]↗{{hi:std::error::Error}} types). Within the code, we use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator to easily propagate any error that implements the [`std::error::Error`][c~std::error::Error~docs]↗ trait. The structure generally looks like the following:
+Calling [`unwrap`][c~std::result::Result::unwrap~docs]↗{{hi:unwrap}} on an `Err` panics. Many recipes instead return [`anyhow::Result`][c~anyhow::Result~docs]↗ and use the [`?`][book~rust~ch09-02-recoverable-errors-with-result-?]↗{{hi:?}} operator. On success, `?` yields the value inside `Ok`. On failure, it converts the error to the function’s error type and returns early.
 
 ```rust,editable
 {{#include ../../crates/about/examples/about1.rs:example}}

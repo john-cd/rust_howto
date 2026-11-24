@@ -38,11 +38,11 @@ This example demonstrates how to check whether two files refer to the same file 
 
 [![memmap2][c~memmap2~docs~badge]][c~memmap2~docs]{{hi:memmap2}} [![cat~filesystem][cat~filesystem~badge]][cat~filesystem]{{hi:Filesystem}}
 
-In the following example, we create a memory map{{hi:Memory map}} of a file using [`memmap2`][c~memmap2~docs]↗{{hi:memmap2}} and simulate some non-sequential reads{{hi:Non-sequential reads}} from the file. Using a memory map simplifies navigation of a [`std::fs::File`][c~std::fs::File~docs]↗{{hi:std::fs::File}} - by indexing into a slice rather than dealing with [`std::fs::File::seek`][c~std::fs::File::seek~docs]↗.{{hi:std::fs::File::seek}}Memory mapping may also enhance performance in applications that require large data processing or frequent file access.
+The example uses [`memmap2`][c~memmap2~docs]↗{{hi:memmap2}} to read a file through a memory map{{hi:Memory map}}. It indexes a byte slice to read from several offsets{{hi:Non-sequential reads}} without calling [`File::seek`][c~std::fs::File::seek~docs]↗{{hi:std::fs::File::seek}}.
 
-Note that the [`memmap2::Mmap::map`][c~memmap2::Mmap::map~docs]↗{{hi:memmap2::Mmap::map}} function assumes the file behind the memory map is not being modified at the same time by another process or else [a race condition][wikipedia~race-condition]↗ may occur.
+Creating a file-backed mapping with [`Mmap::map`][c~memmap2::Mmap::map~docs]↗{{hi:memmap2::Mmap::map}} is unsafe. The caller must ensure the file contents remain valid for reads through the mapping. Concurrent changes to the file can cause undefined behavior.
 
-It is also possible to write to a `File` as if it were a `&mut [u8]` by using mutable memory maps.
+The final part writes to a separate, anonymous mapping. Its bytes have no backing file.
 
 ```rust,editable,noplayground
 {{#include ../../../crates/cats/filesystem/examples/read_write/memmap2.rs:example}}

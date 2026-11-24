@@ -12,7 +12,7 @@ Send diagnostics and progress to standard error so standard output can remain ma
 
 {{#badges inquire command-line-interface="Command-line interface" value-formatting="Value formatting"}}
 
-[`inquire`][c~inquire~docs]↗{{hi:inquire}} provides several different prompts, in order to interactively ask the user for information via the CLI.
+[`inquire`][c~inquire~docs]↗{{hi:inquire}} provides interactive prompts for collecting input at the command line.
 
 It offers a range of built-in prompts for various data types, including text input, selections, confirmations, and password entry, simplifying the creation of interactive CLI applications.
 

@@ -3,10 +3,9 @@
 // ANCHOR: example
 //! Demonstrates reading from a memory-mapped file.
 //!
-//! Memory mapping makes the operating system expose a file as if it were part
-//! of memory, loading pages on demand. It is efficient for large files, but if
-//! another process changes the file while mapped, the behaviour is undefined,
-//! which is why it needs `unsafe`.
+//! A file-backed mapping exposes file contents as bytes that the operating
+//! system can page in on demand. The caller must prevent changes to the file
+//! that would invalidate reads through the mapping.
 
 use std::fs::File;
 use std::io::Error;
@@ -30,7 +29,7 @@ fn main() -> Result<(), Error> {
     // `Mmap` is `Deref<Target = [u8]>` and therefore can be used like a slice.
     // Assert that a slice of the memory map matches the expected bytes:
     assert_eq!(&map[3..13], b"hovercraft");
-    // Collect bytes from the memory map at random indexes:
+    // Read bytes at selected offsets in the mapping.
     let random_indexes = [0, 1, 2, 19, 22, 10, 11, 29];
     let random_bytes: Vec<u8> = random_indexes.iter().map(|&idx| map[idx]).collect();
     assert_eq!(&*random_bytes, b"My loaf!");
