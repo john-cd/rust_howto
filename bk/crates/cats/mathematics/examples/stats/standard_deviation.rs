@@ -57,6 +57,11 @@ fn std_deviation(data: &[i32]) -> Option<f64> {
     }
 }
 
+/// Standardizes an observation when the population has positive dispersion.
+fn z_score(value: i32, mean: f64, deviation: f64) -> Option<f64> {
+    (deviation > 0.0).then(|| (f64::from(value) - mean) / deviation)
+}
+
 /// Prints the mean and standard deviation of a list.
 fn main() {
     let data = [3, 1, 6, 1, 5, 8, 1, 8, 10, 11];
@@ -70,11 +75,7 @@ fn main() {
     assert!(matches!(data_std_deviation, Some(value) if (value - 3.6110942).abs() < 1e-6));
 
     let zscore = match (data_mean, data_std_deviation) {
-        (Some(mean), Some(std_deviation)) => {
-            let diff = f64::from(data[4]) - mean;
-
-            Some(diff / std_deviation)
-        }
+        (Some(mean), Some(deviation)) => z_score(data[4], mean, deviation),
         _ => None,
     };
     println!(
@@ -94,6 +95,15 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// Constant and singleton populations have no defined z-score.
+    #[test]
+    fn zero_dispersion_has_no_z_score() {
+        for data in [&[7][..], &[7, 7, 7][..]] {
+            let deviation = std_deviation(data).expect("nonempty population");
+            assert_eq!(z_score(7, 7.0, deviation), None);
+        }
+    }
 
     /// data.
     #[test]

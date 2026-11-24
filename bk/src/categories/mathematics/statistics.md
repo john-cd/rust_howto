@@ -36,7 +36,7 @@ This example calculates the standard deviation and z-score of a set of measureme
 
 This example computes the population standard deviation: it divides the sum of squared differences from the mean by the number of measurements, then takes the square root with f64's [`sqrt`][primitive~f64::sqrt]↗{{hi:f64::sqrt}}. The sample standard deviation instead divides by `n - 1` and requires at least two observations.
 
-The z-score is the number of standard deviations a single measurement spans away from the mean of the data set.
+A z-score measures the signed distance from the mean in units of population standard deviation. It is undefined when every observation is equal, including in a singleton population.
 
 ```rust,editable
 {{#include ../../../crates/cats/mathematics/examples/stats/standard_deviation.rs:example}}
