@@ -90,9 +90,9 @@ unsafe impl<T: Send> Sync for Spinlock<T> {}
 // --- SpinlockGuard Implementation ---
 
 /// An RAII guard that unlocks the spinlock when dropped.
-/// If an instance of this struct is created but not used (e.g., assigned to a
-/// variable), the lock is immediately released, which is likely unintended.
-/// The `must_use` attribute helps prevent this mistake.
+/// A standalone `lock.lock();` releases its temporary guard at the end of the
+/// statement. A named binding, including `_guard`, holds the lock until the
+/// binding leaves scope or the caller explicitly drops the guard.
 #[must_use = "if unused, the spinlock will immediately unlock"]
 pub struct SpinlockGuard<'a, T> {
     /// The spinlock that this guard holds.

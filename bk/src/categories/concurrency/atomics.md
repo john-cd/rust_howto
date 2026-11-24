@@ -42,7 +42,7 @@ The [`arc-swap::ArcSwap`][c~arc-swap::ArcSwap~docs]↗{{hi:arc-swap::ArcSwap}} t
 
 A spinlock{{hi:Spinlock}} is a simple synchronization primitive that uses busy-waiting (spinning) to acquire a lock. A spinlock continually retries acquisition. A [`std::sync::Mutex`][c~std::sync::Mutex~docs]↗{{hi:std::sync::Mutex}} can block a waiting thread under contention. Prefer a mutex for application code and treat this spinlock as an example of acquire and release ordering.
 
-The following example implements a spinlock using [`std::sync::atomic::AtomicBool`][c~std::sync::atomic::AtomicBool~docs]↗{{hi:std::sync::atomic::AtomicBool}} with RAII-based locking via a guard type:
+The following example implements a spinlock using [`std::sync::atomic::AtomicBool`][c~std::sync::atomic::AtomicBool~docs]↗{{hi:std::sync::atomic::AtomicBool}} with a guard that releases the lock on drop. Bind the guard to keep the lock across statements, or call `drop(guard)` to release it before leaving the scope:
 
 ```rust,editable
 {{#include ../../../crates/cats/concurrency/examples/atomics/spinlock.rs:example}}
