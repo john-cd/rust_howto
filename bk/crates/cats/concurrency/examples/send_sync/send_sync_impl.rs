@@ -62,7 +62,6 @@ mod my {
                 data,
             });
             let ptr = Box::into_raw(inner);
-            println!("Created `Arc` with reference count 1.");
             // SAFETY: `ptr` points to the newly allocated `ArcInner`.
             unsafe { Self::from_inner(ptr) }
         }
@@ -105,16 +104,14 @@ mod my {
         /// Panics if incrementing the strong reference count would overflow.
         fn clone(&self) -> Self {
             // Increase the count only if it will not wrap and invalidate the
-            // ownership guarantee. `fetch_update` leaves the count unchanged
+            // ownership guarantee. `try_update` leaves the count unchanged
             // when `checked_add` fails.
-            let previous_count = self
-                .inner()
+            self.inner()
                 .count
                 .try_update(Ordering::Relaxed, Ordering::Relaxed, |count| {
                     count.checked_add(1)
                 })
                 .unwrap_or_else(|_| panic!("Arc strong reference count overflow"));
-            println!("Increased the reference count; previous value: {previous_count}");
             Self {
                 ptr: self.ptr,
                 phantom: PhantomData,
@@ -146,7 +143,6 @@ mod my {
             // `count` is atomic, so this is thread-safe.
             let previous_count = self.inner().count.fetch_sub(1, Ordering::Release);
             if previous_count != 1 {
-                println!("Decreased reference count; previous count: {previous_count}");
                 return;
             }
             // Pair this acquire fence with every Release decrement so the
@@ -156,8 +152,6 @@ mod my {
             // SAFETY: the count reached zero, so this is the unique final
             // owner. `Box::from_raw` drops `T` once and frees the allocation.
             unsafe { drop(Box::from_raw(self.ptr)) };
-
-            println!("`Arc` data fully dropped!");
         }
     }
 
