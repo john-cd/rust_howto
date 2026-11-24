@@ -89,6 +89,7 @@ jobs:
         run: |
           # Keep the Rust image's PATH instead of replacing it with login profile values.
           docker run --rm \
+            --mount "type=bind,source=$GITHUB_WORKSPACE/.github/workflows/audit_dependencies.yml,target=/code/.github/workflows/audit_dependencies.yml,readonly" \
             --mount "type=bind,source=$GITHUB_WORKSPACE/bk,target=/code/bk,readonly" \
             --mount "type=bind,source=$GITHUB_WORKSPACE/later,target=/code/later,readonly" \
             --mount "type=bind,source=$GITHUB_WORKSPACE/scripts,target=/code/scripts,readonly" \
