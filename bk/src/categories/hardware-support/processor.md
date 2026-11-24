@@ -73,7 +73,7 @@ All three implementations use the common prefix when the input lengths differ. T
 When SIMD pays off:
 
 - SIMD helps on long, contiguous numeric loops. Measure with [Criterion](../development-tools_profiling/benchmarking.md) before and after.
-- SIMD changes the order of floating-point additions, so results can differ from the scalar version in the last bits. The example's fixtures use small integers, which `f32` represents exactly.
+- SIMD changes the order of floating-point additions, so cancellation can produce a large relative difference from the scalar result. The example's fixtures use small integers, which `f32` represents exactly.
 - Handle `NaN` and infinity deliberately; lane-wise operations propagate them without any check.
 - WebAssembly has its own `simd128` target feature, enabled at compile time rather than detected at run time.
 

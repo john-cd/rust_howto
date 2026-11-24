@@ -8,7 +8,7 @@
 //!
 //! SIMD pays off on long, contiguous numeric loops; measure with `criterion`
 //! before and after. Note that SIMD changes the order of floating-point
-//! additions, so results can differ in the last bits from the scalar version
+//! additions, so cancellation can produce a large relative difference from the scalar result
 //! (the fixtures below use small integers, which `f32` represents exactly).
 
 #[cfg(target_arch = "x86_64")]
@@ -142,6 +142,17 @@ mod tests {
     #[test]
     fn test_simd_arch_example_entry_point() {
         main();
+    }
+
+    /// Cancellation gives different scalar and four-lane sums for identical inputs.
+    #[cfg(target_arch = "x86_64")]
+    #[test]
+    fn cancellation_changes_reduction_result() {
+        let values = [1e20, 1.0, -1e20, 1.0, -1e20, 1.0, 1e20, 1.0];
+        let weights = [1.0; 8];
+        assert_eq!(dot_scalar(&values, &weights), 1.0);
+        // SAFETY: SSE2 is a baseline x86_64 feature.
+        assert_eq!(unsafe { dot_sse2(&values, &weights) }, 4.0);
     }
 
     /// Matches scalar results for empty inputs, vector tails, and full vectors.
