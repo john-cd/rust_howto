@@ -32,7 +32,7 @@ fn main() {
 
     // Destructuring with arrays:
     let arr: [i32; 3] = [1, 2, 3];
-    let [first, _, third] = arr; // Here, we ignore the second value.
+    let [first, _, third] = arr; // `_` skips the second element.
     // `first` and `third` are `i32`.
     println!("first: {first}, third: {third}");
 

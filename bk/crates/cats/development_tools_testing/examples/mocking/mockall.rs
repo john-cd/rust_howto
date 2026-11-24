@@ -147,13 +147,11 @@ mod tests {
     fn test_get_user_success() {
         let mut mock_repo = MockUserRepository::new();
 
-        // Set up expectations for `find_by_id`.
-        // You expect `find_by_id` to be called once with id 1:
+        // The service must look up user 1 exactly once.
         mock_repo
-            .expect_find_by_id() // The method we're setting expectations for
-            .with(eq(1)) // The argument we expect (using predicate). You can also use custom
-            // functions: .withf(|user| user.id == 1)
-            .times(1) // How many times we expect it to be called
+            .expect_find_by_id()
+            .with(eq(1))
+            .times(1)
             .returning(|_| {
                 // What it should return
                 Some(User {
