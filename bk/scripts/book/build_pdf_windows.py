@@ -5,13 +5,12 @@ from __future__ import annotations
 
 import json
 import os
-from pathlib import Path
 import re
 import subprocess
 import sys
 import tomllib
+from pathlib import Path
 from urllib.parse import unquote
-
 
 NATIVE_PREFIXES = (
     "[RawBlock",
@@ -72,14 +71,18 @@ def ordered_chapters(summary: Path, native_root: Path) -> list[Path]:
         relative = Path(unquote(match.group(1).replace("\\", "/")))
         chapter = (native_root / relative).resolve()
         if not chapter.is_relative_to(native_root.resolve()):
-            raise RuntimeError(f"chapter path escapes the Pandoc input directory: {relative}")
+            raise RuntimeError(
+                f"chapter path escapes the Pandoc input directory: {relative}"
+            )
         if chapter in seen:
             continue
         if not chapter.is_file():
             raise RuntimeError(f"missing preprocessed chapter: {relative.as_posix()}")
         contents = chapter.read_text(encoding="utf-8", errors="replace").lstrip()
         if not contents.startswith(NATIVE_PREFIXES):
-            raise RuntimeError(f"chapter is not a Pandoc native AST: {relative.as_posix()}")
+            raise RuntimeError(
+                f"chapter is not a Pandoc native AST: {relative.as_posix()}"
+            )
         chapters.append(chapter)
         seen.add(chapter)
 
@@ -112,7 +115,9 @@ def rewrite_local_images(typst_file: Path, native_root: Path) -> None:
             raise RuntimeError(f"the generated PDF source still contains {marker!r}")
     for required in ("😀", "π"):
         if required not in source:
-            raise RuntimeError(f"the generated PDF source is missing required Unicode: {required}")
+            raise RuntimeError(
+                f"the generated PDF source is missing required Unicode: {required}"
+            )
     typst_file.write_text(source, encoding="utf-8", newline="\n")
 
 
@@ -214,7 +219,10 @@ def main() -> int:
         return 0
 
     diagnostics = f"{build.stdout}\n{build.stderr}".lower()
-    command_line_limit = "os error 206" in diagnostics or "filename or extension is too long" in diagnostics
+    command_line_limit = (
+        "os error 206" in diagnostics
+        or "filename or extension is too long" in diagnostics
+    )
     if os.name != "nt" or not command_line_limit:
         return build.returncode
 
