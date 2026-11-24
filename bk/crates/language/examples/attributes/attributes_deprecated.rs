@@ -21,7 +21,7 @@ pub fn foo() {
 /// Calls a deprecated function.
 fn main() {
     // Use of a deprecated item.
-    // Normally, we would get a warning about using a deprecated function.
+    // Normally, you would get a warning about using a deprecated function.
     // Call the deprecated function.
     foo();
     // Expected output: foo

@@ -8,7 +8,7 @@ use std::collections::HashMap;
 /// `derive` is a powerful tool that automatically
 /// implements certain traits for your structs and enums.
 ///
-/// Here we derive several common traits for a simple struct `S` that wraps an
+/// Derive several common traits for a simple struct `S` that wraps an
 /// `i32`.
 #[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone, Copy, Hash, Default)]
 struct S(
@@ -29,7 +29,7 @@ fn simple_tests() {
 
 // The `Hash` trait enables types to be hashed, which means they can
 // be used as keys in hash-based collections like `HashMap` and `HashSet`.
-// When we use `#[derive(Hash)]` on a struct, the derived implementation
+// When you use `#[derive(Hash)]` on a struct, the derived implementation
 // will typically hash each field of the struct in sequence and combine these
 // hashes into a single hash value for the entire struct instance.
 

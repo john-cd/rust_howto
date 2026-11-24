@@ -17,7 +17,7 @@ mod a_module {
     }
 }
 
-// We can also explicitly mark the top module as `pub(crate)`:
+// Also explicitly mark the top module as `pub(crate)`:
 
 /// A `pub(crate)` module.
 pub(crate) mod b_module {

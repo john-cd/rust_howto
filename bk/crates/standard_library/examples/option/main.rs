@@ -9,7 +9,7 @@ use clap::Subcommand;
 mod option_combinators;
 /// Handling an `Option` with `match`.
 mod option_match;
-/// The `?` operator shines when we have a sequence of operations, each of which might fail.
+/// The `?` operator shines when you have a sequence of operations, each of which might fail.
 mod option_question_mark;
 /// Borrowing the content of an `Option` with `as_ref` and `as_mut`.
 mod option_ref;

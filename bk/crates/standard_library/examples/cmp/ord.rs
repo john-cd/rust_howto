@@ -10,7 +10,7 @@
 use std::cmp::Ordering;
 
 // A struct to represent a software version.
-// The `Eq` trait has no methods, thus we can derive it automatically.
+// The `Eq` trait has no methods, thus you can derive it automatically.
 
 /// A semantic version number.
 #[derive(Debug, Eq)]
@@ -33,7 +33,7 @@ impl PartialEq for Version {
     }
 }
 
-// Implement `PartialOrd`. Since our ordering is total, `partial_cmp`
+// Implement `PartialOrd`. Since the ordering is total, `partial_cmp`
 // can simply wrap the result of `cmp` in `Some`.
 impl PartialOrd for Version {
     /// Reuses total ordering so PartialOrd and Ord cannot disagree.
@@ -57,11 +57,11 @@ impl Ord for Version {
                         // versions.
                         self.patch.cmp(&other.patch)
                     }
-                    // If minor versions differ, that's our result.
+                    // If minor versions differ, that's the result.
                     other_ordering => other_ordering,
                 }
             }
-            // If major versions differ, that's our result.
+            // If major versions differ, that's the result.
             other_ordering => other_ordering,
         }
     }
@@ -85,7 +85,7 @@ fn main() {
         patch: 0,
     };
 
-    // We can sort a collection of versions:
+    // Sort a collection of versions:
     let mut versions = vec![v3, v1, v2];
     println!("Before sorting: {versions:?}");
 

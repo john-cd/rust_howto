@@ -10,7 +10,7 @@ struct Message(
     String,
 );
 
-// Implement `From` to convert from a `u8` slice to our custom struct.
+// Implement `From` to convert from a `u8` slice to the custom struct.
 impl From<&[u8]> for Message {
     /// Constructs this type from the supplied source value.
     fn from(bytes: &[u8]) -> Self {

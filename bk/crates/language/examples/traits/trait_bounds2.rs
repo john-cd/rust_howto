@@ -12,7 +12,7 @@ trait Summary {
 /// This function accepts a reference to any type `T` that implements the
 /// `Summary` trait.
 fn notify<T: Summary>(item: &T) {
-    // Since `item` is guaranteed to implement `Summary`, we can call its
+    // Since `item` is guaranteed to implement `Summary`, you can call its
     // `summarize` method.
     println!("Breaking news! {}", item.summarize());
 }

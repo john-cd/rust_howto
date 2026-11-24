@@ -43,7 +43,7 @@ fn main() {
     let a: usize = 42;
     a.some_public_method();
 
-    // We can't implement the trait on another type here:
+    // You can't implement the trait on another type here:
     // ERROR: trait `Sealed` is private
     // impl a_module::Sealed for i32 {}
 

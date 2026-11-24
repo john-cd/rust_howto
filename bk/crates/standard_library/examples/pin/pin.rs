@@ -37,11 +37,11 @@ impl PinnedParent {
 /// Pins values on the stack and on the heap.
 fn main() {
     // An `i32` implements `Unpin`, so `Pin::new` accepts a mutable reference
-    // to it. This lets us pass the integer to an API that expects `Pin`.
+    // to it. This lets you pass the integer to an API that expects `Pin`.
     let mut x = 42;
     let pinned_x: Pin<&mut i32> = Pin::new(&mut x);
 
-    // Conversely, we can unwrap the pin to get the underlying mutable reference
+    // Conversely, you can unwrap the pin to get the underlying mutable reference
     // to the value.
     let r = Pin::into_inner(pinned_x);
     assert_eq!(*r, 42);

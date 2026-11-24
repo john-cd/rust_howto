@@ -12,7 +12,7 @@ fn private_in_top_module() -> &'static str {
     "Called private_in_top_module."
 }
 
-// Let's define an inner module inline with the `mod` keyword.
+// Define an inner module inline with the `mod` keyword.
 // Modules are private by default.
 
 /// A private module.
@@ -32,7 +32,7 @@ mod my_module {
     }
 
     // Define a public nested module with the `pub` keyword.
-    // We make both the module and its inner function public.
+    // You make both the module and its inner function public.
 
     /// A public nested module.
     pub mod nested_public_module {
@@ -74,7 +74,7 @@ fn main() {
     println!("{}", private_in_top_module());
 
     // In the same way, `my_module` is _private_, but _accessible_ from
-    // `main()`. Here, we define an alias:
+    // `main()`. Here, you define an alias:
     use my_module as alias;
 
     // Private items are inaccessible from a parent module.
@@ -85,7 +85,7 @@ fn main() {
     // items within a module.
     println!("{}", my_module::public_function());
 
-    // We can also use the alias:
+    // Also use the alias:
     println!("{}", alias::public_function());
 
     // Paths can include multiple segments to reach nested modules.

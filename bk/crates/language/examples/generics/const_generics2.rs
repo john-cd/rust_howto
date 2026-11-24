@@ -14,7 +14,7 @@ trait FixedSizeBuffer {
     fn get_buffer(&self) -> &[u8];
 }
 
-// With const generics, we can implement this for any array of bytes:
+// With const generics, you can implement this for any array of bytes:
 impl<const N: usize> FixedSizeBuffer for [u8; N] {
     // The capacity is the array size.
 

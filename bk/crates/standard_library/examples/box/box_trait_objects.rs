@@ -5,7 +5,7 @@
 //!
 //! `Box` can be used to store an owned trait object on the heap.
 
-// Let's define an example trait and implement it on two structs.
+// Define an example trait and implement it on two structs.
 
 /// A shape with an area.
 trait Shape {

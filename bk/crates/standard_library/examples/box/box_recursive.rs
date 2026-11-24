@@ -47,7 +47,7 @@ impl Node {
 // The linked list has an unknown number of nodes, thus its size is not
 // fixed. It could not be stored directly on the stack, because the
 // compiler needs to know the size of the data type at compile time.
-// By using `Box`, which has a defined size on the stack, we can create the
+// By using `Box`, which has a defined size on the stack, you can create the
 // `head` local variable . The actual `Node` data will be stored on the heap.
 
 /// Builds a linked list and prints it.

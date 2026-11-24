@@ -62,7 +62,7 @@ fn do_instead() {
     /// Atomic counter that supports concurrent updates without a mutex.
     static COUNTER: AtomicU64 = AtomicU64::new(0);
 
-    // The static persists across calls, so remember where we started.
+    // The static persists across calls, so remember where you started.
     let initial = COUNTER.load(Ordering::Relaxed);
     println!("Initial COUNTER value: {initial}");
     // Be sure to analyze your use case to determine the correct `Ordering` to
@@ -108,7 +108,7 @@ fn or_do_that() {
     /// Counter protected by a mutex for safe shared mutation.
     static SAFE_COUNTER: Mutex<u32> = Mutex::new(0);
 
-    // The static persists across calls, so remember where we started.
+    // The static persists across calls, so remember where you started.
     let initial = *SAFE_COUNTER.lock().expect("mutex should not be poisoned");
     println!("Initial SAFE_COUNTER value: {initial}");
 

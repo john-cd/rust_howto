@@ -3,26 +3,25 @@
 // ANCHOR: example
 //! Borrowing the content of an `Option` with `as_ref`.
 
-// `Option::as_ref()` allows us to get an `Option<&String>`.
-// This lets us borrow the inner `String` if it exists, without moving it out of
+// `Option::as_ref()` allows you to get an `Option<&String>`.
+// This lets you borrow the inner `String` if it exists, without moving it out of
 // `maybe_name`.
 
 /// Prints the name, if there is one, without consuming the `Option`.
 fn process_optional_string(maybe_name: Option<String>) {
     let borrowed_name: Option<&String> = maybe_name.as_ref();
-    // If we used `maybe_name.unwrap()`, `maybe_name` would be consumed.
+    // If you used `maybe_name.unwrap()`, `maybe_name` would be consumed.
     // let consumed_name = maybe_name.unwrap();
 
     if let Some(name_ref) = borrowed_name {
         println!("The name is: {name_ref}");
-        // We can still use `maybe_name` here,
-        // because `as_ref()` didn't consume it.
+        // `as_ref()` borrowed `maybe_name`, so it remains available.
         println!("Original option (still valid): {maybe_name:?}");
     } else {
         println!("No name provided.");
     }
 
-    // We can also get `Option<&str>` directly if the inner type is `String`.
+    // Also get `Option<&str>` directly if the inner type is `String`.
     // `as_deref` is a shortcut for `opt.as_ref().map(|s| s.as_str())` or
     // equivalent `opt.as_ref().map(|s| &*s)`.
     let borrowed_str: Option<&str> = maybe_name.as_deref();

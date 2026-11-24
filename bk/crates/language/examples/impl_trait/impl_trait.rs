@@ -52,7 +52,7 @@ fn get_animal() -> impl Speak {
     Dog
 }
 
-// This function would NOT compile if we tried to return different types.
+// This function would NOT compile if you tried to return different types.
 // Use a trait object in that situation:
 // fn get_animal(is_dog: bool) -> impl Speak {
 //     if is_dog {

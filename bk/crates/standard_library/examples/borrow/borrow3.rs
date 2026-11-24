@@ -22,7 +22,7 @@ mod cis {
     impl From<String> for CaseInsensitiveString {
         /// Constructs this type from the supplied source value.
         fn from(s: String) -> Self {
-            // We store the lowercase version of the string.
+            // You store the lowercase version of the string.
             Self(s.to_ascii_lowercase())
         }
     }

@@ -14,7 +14,7 @@ trait Message {
     fn send_message(&self);
 }
 
-// Create a struct that will implement our trait.
+// Create a struct that will implement the trait.
 
 /// A worker that sends a message.
 struct Worker {

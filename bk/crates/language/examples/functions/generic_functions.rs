@@ -31,7 +31,7 @@ fn main() {
     // The type parameter `T` is inferred to be `i32` in this case.
     generic(1);
 
-    // We can also explicitly specify the type parameter `char` for `generic()`.
+    // Also explicitly specify the type parameter `char` for `generic()`.
     // Note the use of the 'turbofish' notation: `::<T>`.
     generic::<char>('a');
 

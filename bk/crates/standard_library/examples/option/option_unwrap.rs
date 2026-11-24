@@ -13,7 +13,7 @@
 /// `unwrap()` and `expect()` retrieve the inner value of a `Option`.
 ///
 /// BEWARE: if the `Option` is `None`, they will cause your program to panic.
-/// You should only use `unwrap()` or `expect()` when we are absolutely certain
+/// You should only use `unwrap()` or `expect()` when you are absolutely certain
 /// that the `Option` will be `Some`.
 fn unwrap_expect() {
     let x = Some(10);
@@ -44,7 +44,7 @@ fn unwrap_or_unwrap_or_else() {
     let _ = config_setting.unwrap_or_default(); // 0.
 
     // `unwrap_or_else` is useful when the default value is expensive to
-    // compute, and we only want to compute it if the `Option` is `None`.
+    // compute, and you only want to compute it if the `Option` is `None`.
     let config_setting: Option<u32> = None;
     let _ = config_setting.unwrap_or_else(|| {
         println!("Calculating expensive default...");

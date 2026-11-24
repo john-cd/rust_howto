@@ -53,8 +53,8 @@ macro_rules! must_be_string {
 }
 
 // 4. Ensure that only certain types can be processed by a macro.
-//    - Define a trait that describes the action we want to perform. This creates a common interface
-//      for different types to implement.
+//    - Define a trait that describes the action you want to perform. This creates a common
+//      interface for different types to implement.
 
 /// A trait implemented only for the types that the macro accepts.
 trait Processable {
@@ -62,7 +62,7 @@ trait Processable {
     fn process(&self) {}
 }
 
-// B. Create a helper macro to implement our trait for e.g. all integer types at
+// B. Create a helper macro to implement the trait for e.g. all integer types at
 
 /// Implements the `Processable` trait for the given integer types.
 //    once. This avoids a lot of repetitive boilerplate code.

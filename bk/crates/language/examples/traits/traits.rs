@@ -45,13 +45,13 @@ fn main() {
         author: "author".to_owned(),
         content: "...".to_owned(),
     };
-    // Since the type implements the trait, we can call its method.
+    // Since the type implements the trait, you can call its method.
     println!("Summary: {}", na.summarize());
     println!("Content: {}", na.content);
 
     // The method call above is equivalent to:
     NewsArticle::summarize(&na);
-    // Or, if we needed to fully disambiguate:
+    // Or, if you needed to fully disambiguate:
     <NewsArticle as Summary>::summarize(&na);
 }
 // ANCHOR_END: example

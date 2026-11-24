@@ -24,12 +24,12 @@ fn main() {
     // Note that the inherent functionality of `Rc` is implemented as associated
     // functions, not methods, thus the `Rc::rc_func(&rc)` calls.
 
-    // `Rc` is a smart pointer, so we can dereference it.
+    // `Rc` is a smart pointer, so you can dereference it.
     println!("{:?}", *a);
-    // The `.` operator lets us call methods on the underlying vector.
+    // The `.` operator lets you call methods on the underlying vector.
     b.iter().for_each(|x| print!("{x} "));
 
-    // We can get a mutable reference to the inner value, if there are NO OTHER
+    // Get a mutable reference to the inner value, if there are NO OTHER
     // `Rc` (or `Weak`) pointers to the same allocation. Returns `None`
     // otherwise. Consider also `make_mut`, which will clone the inner value
     // when there are other `Rc` pointers.
@@ -37,7 +37,7 @@ fn main() {
     *Rc::get_mut(&mut y).expect("the Rc should be uniquely owned") = 5;
     assert_eq!(*y, 5);
 
-    // We can also consume the `Rc` to return its inner value if the `Rc` has
+    // Also consume the `Rc` to return its inner value if the `Rc` has
     // exactly one strong reference. See also `Rc::into_inner`.
     let x = Rc::new(6);
     assert_eq!(Rc::try_unwrap(x), Ok(6));

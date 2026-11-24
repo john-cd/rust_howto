@@ -10,11 +10,11 @@
 /// Declares and modifies variables.
 fn main() {
     // By default, variables are immutable.
-    // Once we give the variable a value, the value won't change.
+    // Once you give the variable a value, the value won't change.
     // This default immutability helps prevent common programming errors,
     // especially in concurrent programming.
     let i = 5;
-    // We cannot change the value of an immutable variable.
+    // You cannot change the value of an immutable variable.
     // ERROR: i = 6;
     println!("i: {i}");
 
@@ -33,11 +33,11 @@ fn main() {
 
     // Declare a mutable variable with `let mut`:
     let mut st = String::new();
-    // We can modify or reassign a mutable variable.
+    // Modify or reassign a mutable variable.
     st.push_str("42");
     st = "43".to_owned();
     println!("st: {st}");
-    // We cannot change its type:
+    // You cannot change its type:
     // ERROR: st = 42;
 }
 

@@ -31,11 +31,11 @@ impl<T> Deref for MyBox<T> {
 fn main() {
     let wrapped = MyBox(String::from("Hello, Deref!"));
 
-    // Even though `wrapped` is a `MyBox<String>`, we can call `len()`
+    // Even though `wrapped` is a `MyBox<String>`, you can call `len()`
     // as if it's a `String`, thanks to automatic deref coercion.
     println!("Length: {}", wrapped.len());
 
-    // We can also explicitly dereference:
+    // Also explicitly dereference:
     println!("Uppercase: {}", (*wrapped).to_uppercase());
 }
 // ANCHOR_END: example

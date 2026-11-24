@@ -21,7 +21,7 @@ fn print_length<T: AsRef<str>>(s: T) -> usize {
     s_ref.len()
 }
 
-/// Let's call `print_length` with arguments of various types.
+/// Call `print_length` with arguments of various types.
 fn string_slice() {
     let string = String::from("Hello, world!");
     let str_slice: &str = "Hello, Rust!";
@@ -46,7 +46,7 @@ fn print_vec<T: AsRef<[i32]>>(input: T) -> usize {
 }
 
 // `Vec<T>` and `[T; N]` implement `AsRef<[T]>`.
-// We can also pass a reference to a vector or array, thanks to a blanket
+// Also pass a reference to a vector or array, thanks to a blanket
 // `impl AsRef<U> for &T where T: AsRef<U>` in the standard library.
 
 /// Passes a vector and an array to a function that takes `AsRef<[i32]>`.

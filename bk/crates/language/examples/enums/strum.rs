@@ -16,7 +16,7 @@ use strum::EnumIter;
 use strum::EnumString;
 use strum::IntoEnumIterator as _; // Import the trait to use .iter().
 
-// We derive a few `strum` traits in addition to standard `Debug` and
+// You derive a few `strum` traits in addition to standard `Debug` and
 // `PartialEq`:
 // - `Display` to easily print the enum variant as a string,
 // - `EnumString` to parse a string into an enum variant,

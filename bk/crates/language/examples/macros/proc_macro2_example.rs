@@ -3,7 +3,7 @@
 // ANCHOR: example
 //! Rewriting tokens with a procedural macro built on `proc-macro2`.
 
-// Import our custom procedural macro that was built using `proc-macro2`.
+// Import the custom procedural macro that was built using `proc-macro2`.
 use proc_macros::replace_ident;
 
 /// Uses `replace_ident!` to rename an identifier.

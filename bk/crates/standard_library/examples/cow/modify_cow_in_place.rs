@@ -21,7 +21,7 @@ fn modify_string(input: &mut Cow<str>) {
     // Note the mutable reference.
     if input.contains("Rust") {
         // `to_mut()` will clone the `Cow` if it's borrowed,
-        // ensuring we have an owned `String` to modify.
+        // ensuring you have an owned `String` to modify.
         input.to_mut().push_str(" is awesome!");
     }
 }

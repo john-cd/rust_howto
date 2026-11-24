@@ -7,7 +7,7 @@ use std::fmt::Debug;
 use std::fmt::Display;
 
 // Generic functions can accept trait bounds.
-// Here we define a generic function `print_value` that takes one argument
+// Define a generic function `print_value` that takes one argument
 // `value` of any type `T`. The `T: std::fmt::Debug` part is a trait bound,
 // meaning `T` must implement the `Debug` trait, so that it can be printed using
 // the `{:?}` format specifier.
@@ -18,7 +18,7 @@ fn print_value<T: Debug>(value: T) {
 }
 
 /// Type constraints can be written in a separate `where` clause for clarity.
-/// We can also combine multiple trait bounds with `+`.
+/// Also combine multiple trait bounds with `+`.
 fn print_value2<T>(value: T)
 where
     T: Debug + Display,

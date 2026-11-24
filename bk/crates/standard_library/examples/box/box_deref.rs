@@ -41,7 +41,7 @@ mod tests {
         let boxed: Box<u8> = Box::new(1);
         assert_eq!(*boxed, 1);
         let boxed = Box::new("example");
-        // Auto-deref lets us call `str` methods directly.
+        // Auto-deref lets you call `str` methods directly.
         assert_eq!(boxed.len(), 7);
         assert_eq!(boxed.to_uppercase(), "EXAMPLE");
     }

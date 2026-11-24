@@ -66,8 +66,8 @@ fn main() {
     let s = a_module::PublicStructPublicField { public_val: true };
     println!("public_val = {}", s.public_val);
 
-    // We can't access `private_val`,
-    // but we can use the public associated function to create the struct:
+    // You can't access `private_val`,
+    // but you can use the public associated function to create the struct:
     // ERROR: let _ = a_module::PublicStruct { private_val: true };
     let p = a_module::PublicStruct::new(false);
     println!("private_val = {}", p.val());

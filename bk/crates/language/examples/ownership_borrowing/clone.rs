@@ -30,7 +30,7 @@ fn main() {
     // ...but `s1` and `s2` do NOT point to the same heap memory location.
     assert!(!std::ptr::eq(s1.as_ptr(), s2.as_ptr()));
 
-    // `s1` and `s2` are independent of each other. Let's modify `s1`:
+    // Appending to `s1` leaves the cloned string `s2` unchanged.
     s1.push('!');
     assert_ne!(s1, s2);
 

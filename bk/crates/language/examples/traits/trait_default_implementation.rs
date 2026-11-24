@@ -22,7 +22,7 @@ trait Summary {
     }
 }
 
-/// Let's define a `Blog` struct...
+/// Define a `Blog` struct...
 struct Blog {
     /// The author of the blog post.
     author: String,
@@ -44,9 +44,9 @@ fn main() {
     };
     // ...and call the method implemented by default in the trait.
     println!("{}", blog.summarize());
-    // Because we've implemented `summarize_author` for `Blog`, the `Summary`
-    // trait has given us the behavior of the `summarize` method without
-    // requiring us to write any more code.
+    // Because you've implemented `summarize_author` for `Blog`, the `Summary`
+    // trait has given you the behavior of the `summarize` method without
+    // requiring you to write any more code.
 }
 
 // Adapted from <https://doc.rust-lang.org/book/ch10-02-traits.html>.

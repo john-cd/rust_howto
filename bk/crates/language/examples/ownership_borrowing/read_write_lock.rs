@@ -17,11 +17,11 @@ struct MyStruct(
 fn main() {
     let mut s1 = MyStruct(true);
 
-    // We can take multiple immutable (shared) references at the same time:
+    // Take multiple immutable (shared) references at the same time:
     let ref_s1 = &s1;
     let ref_s2 = &s1;
 
-    // We cannot modify `s1` while holding shared references to it.
+    // You cannot modify `s1` while holding shared references to it.
     // s1.0 = false;
     // ERROR: the borrow checker rejects this assignment while the shared
     // references are still in use.

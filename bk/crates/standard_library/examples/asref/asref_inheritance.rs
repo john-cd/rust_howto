@@ -85,7 +85,7 @@ impl AsRef<MediaFile> for ImageFile {
     }
 }
 
-// We also need to implement `AsRef` for the "base type":
+// Implement `AsRef` for `MediaFile` itself:
 impl AsRef<Self> for MediaFile {
     /// Views this value as ref.
     fn as_ref(&self) -> &Self {
@@ -135,7 +135,7 @@ fn main() {
         photo.width, photo.height, photo.camera_model
     );
 
-    // We can also pass a bare `MediaFile`:
+    // Also pass a bare `MediaFile`:
     let bare_file = MediaFile {
         id: "TXT_001".to_owned(),
         filename: "notes.txt".to_owned(),

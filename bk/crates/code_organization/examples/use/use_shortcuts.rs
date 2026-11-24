@@ -26,7 +26,7 @@ fn main() {
     // Use the alias defined above:
     destruct(v);
 
-    // The `self` import lets us write `iter::...` and `empty()` directly.
+    // The `self` import lets you write `iter::...` and `empty()` directly.
     let count = iter::once(1).chain(empty()).count();
 
     // `Write` comes from the `std::io::prelude::*` glob import.

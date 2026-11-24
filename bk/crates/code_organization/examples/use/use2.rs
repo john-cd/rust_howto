@@ -21,7 +21,7 @@ use front_of_house::hosting;
 
 /// Calls a function through a shortened path.
 fn eat_at_restaurant() -> &'static str {
-    // We can now access the function within the `hosting` module,
+    // Now access the function within the `hosting` module,
     // without writing the whole path e.g.
     // `front_of_house::hosting::add_to_waitlist()`.
     //

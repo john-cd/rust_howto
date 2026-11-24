@@ -3,12 +3,12 @@
 // ANCHOR: example
 //! This macro provides a domain-specific language (DSL) for defining
 //! configuration for an application. Instead of using a `HashMap`, or a
-//! `struct` directly, we want a more declarative, human-readable way to specify
+//! `struct` directly, you want a more declarative, human-readable way to specify
 //! settings.
 
 use std::collections::HashMap;
 
-// Simplified representation of the types of values our configuration can hold:
+// Simplified representation of the types of values the configuration can hold:
 
 /// A configuration value.
 #[derive(Debug, PartialEq, Clone)]
@@ -32,7 +32,7 @@ pub enum ConfigValue {
     ),
 }
 
-// Our DSL Macro.
+// The DSL Macro.
 //
 // The `#[macro_export]` attribute makes the `config!` macro available to other
 // crates. See <https://doc.rust-lang.org/reference/macros-by-example.html#path-based-scope>.

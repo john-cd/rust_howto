@@ -8,7 +8,7 @@
 mod a {
 
     /// Nested module.
-    /// We prefix `mod b` with `pub` to make it public.
+    /// You prefix `mod b` with `pub` to make it public.
     pub mod b {
 
         /// Public function.
@@ -33,7 +33,7 @@ use a::b;
 
 // A relative path starts from the current module and uses
 // `self`, or an identifier in the current module.
-// We could also write: `use self::a::b;`.
+// You could also write: `use self::a::b;`.
 
 /// Refers to items with full and shortened paths and with `use` declarations.
 fn main() {

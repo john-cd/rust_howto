@@ -9,8 +9,8 @@
 
 use std::ops::Add;
 
-// The struct we want to overload the '+' operator for.
-// We derive a few convenience traits, incl. `Debug` to allow for easy printing
+// The struct you want to overload the '+' operator for.
+// You derive a few convenience traits, incl. `Debug` to allow for easy printing
 // with `{:?}`.
 
 /// A point in two dimensions.
@@ -23,7 +23,7 @@ struct Point {
     y: i32,
 }
 
-// Implementation of the `Add` trait for our `Point` struct.
+// Implementation of the `Add` trait for the `Point` struct.
 impl Add for Point {
     // `type Output` specifies what type the `+` operator will return.
     type Output = Self;
@@ -44,7 +44,7 @@ fn main() {
     let p1 = Point { x: 1, y: 5 };
     let p2 = Point { x: 2, y: 3 };
 
-    // Here we use the overloaded '+' operator:
+    // Use the overloaded '+' operator:
     let p3 = p1 + p2;
     assert_eq!(p3, Point { x: 3, y: 8 });
 

@@ -16,7 +16,7 @@ use std::borrow::Cow;
 /// present.
 fn remove_whitespaces(s: &str) -> Cow<'_, str> {
     if s.contains(' ') {
-        // Allocate, since we need to modify the string.
+        // Allocate, since you need to modify the string.
         Cow::Owned(s.to_owned().replace(' ', ""))
     } else {
         // Nothing to do: just return the string slice.

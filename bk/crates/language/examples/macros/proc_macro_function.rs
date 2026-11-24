@@ -8,7 +8,7 @@
 //! that check queries at compile time do. It must be defined in a crate of its
 //! own.
 
-// Import our custom function-like macro.
+// Import the custom function-like macro.
 use proc_macros::sql;
 
 /// Calls the macro with SQL queries.

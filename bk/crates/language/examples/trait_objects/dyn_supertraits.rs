@@ -46,7 +46,7 @@ fn say_hello_and_goodbye(entity: &dyn Greet) {
     println!("{}", entity.greet());
 
     // Because `Greet` has `Message` as a supertrait,
-    // we can also call `Message`'s methods.
+    // you can also call `Message`'s methods.
     println!("{}", entity.message("Goodbye."));
 }
 
@@ -56,11 +56,11 @@ fn main() {
         name: String::from("Alice"),
     };
 
-    // We can directly pass a reference to `person`,
+    // Directly pass a reference to `person`,
     // because it implements `Greet`.
     say_hello_and_goodbye(&person);
 
-    // We can also explicitly create a trait object reference:
+    // Also explicitly create a trait object reference:
     let greet_obj: &dyn Greet = &person;
     say_hello_and_goodbye(greet_obj);
 }

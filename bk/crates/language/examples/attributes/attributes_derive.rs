@@ -24,7 +24,7 @@ struct Point {
 fn main() {
     let p1 = Point { x: 10, y: 20 };
 
-    // Because we derived `Debug`, we can print the struct using the `{:?}`
+    // Because you derived `Debug`, you can print the struct using the `{:?}`
     // format specifier. Without `#[derive(Debug)]`, this line would cause a
     // compile-time error.
     println!("The point is: {p1:?}");

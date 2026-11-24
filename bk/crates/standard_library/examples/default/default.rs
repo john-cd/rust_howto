@@ -72,7 +72,7 @@ fn main() {
         config2.timeout, config2.retries, config2.endpoint, config2.logging_enabled
     );
 
-    // We can also use struct update syntax to override specific fields:
+    // Also use struct update syntax to override specific fields:
     let custom_config = Config {
         timeout: 10000,
         ..Config::default()

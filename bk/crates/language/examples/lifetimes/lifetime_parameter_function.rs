@@ -22,7 +22,7 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 
 /// Compares strings with different lifetimes.
 fn main() {
-    // We define two variables, one with a scope / lifetime
+    // You define two variables, one with a scope / lifetime
     // shorter than the other.
     let x = String::from("looooooong");
     let l;

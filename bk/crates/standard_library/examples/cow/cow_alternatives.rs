@@ -26,7 +26,7 @@ fn main() {
 
     let mut handles = vec![];
     for i in 0..2 {
-        // We clone `Arc`, not the underlying string slice or lock!
+        // You clone `Arc`, not the underlying string slice or lock!
         let string_slice_clone = Arc::clone(&string_slice);
         let shared_mutable_string_clone = Arc::clone(&shared_mutable_string);
         let handle = thread::spawn(move || {

@@ -76,7 +76,7 @@ fn main() {
     let refer: &'static usize = &LEN;
     println!("The length again: {refer}");
 
-    // Let's create a struct that implements a `Drop` destructor:
+    // Create a struct that implements a `Drop` destructor:
 
     /// Prints a message when its value is dropped.
     struct PrintOnDrop(

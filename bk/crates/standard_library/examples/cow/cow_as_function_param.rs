@@ -30,7 +30,7 @@ fn main() {
     let owned_text: Cow<str> = Cow::Owned(String::from("Hello, world!"));
     process_text(owned_text);
 
-    // We can also pass a `String` or string slice directly, calling `into()`.
+    // Also pass a `String` or string slice directly, calling `into()`.
     let direct_string = String::from("Another example");
     process_text(direct_string.into());
 }

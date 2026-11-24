@@ -17,7 +17,7 @@ use std::fmt;
 //     }
 // }
 
-/// Tuple struct wrapping the type we want to add a non-local trait to.
+/// Tuple struct wrapping the type you want to add a non-local trait to.
 ///
 /// This is the 'newtype pattern'.
 struct Wrapper(

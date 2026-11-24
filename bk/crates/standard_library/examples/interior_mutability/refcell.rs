@@ -2,7 +2,7 @@
 
 // ANCHOR: example
 //! `RefCell<T>` is a smart pointer that provides interior mutability.
-//! It allows us to mutate data even when there are immutable references to it.
+//! It allows you to mutate data even when there are immutable references to it.
 //! It enforces borrowing rules _at runtime_, panicking if they are violated.
 //!
 //! `RefCell<T>` is useful to modify data that is behind an
@@ -21,7 +21,7 @@ fn main() {
         println!("Borrowed (immutable): {borrowed_data:?}");
 
         // Multiple immutable borrows are allowed.
-        // We can borrow the data immutably again here.
+        // Borrow the data immutably again here.
         let _borrowed_data2 = data.borrow();
     }
     // The immutable borrow ends here (when the `Ref` guard returned by `borrow`
@@ -34,8 +34,8 @@ fn main() {
         println!("Borrowed (mutable): {borrowed_data:?}");
 
         // Only one mutable borrow is allowed at a time.
-        // We can't borrow the data again while it's borrowed mutably. This
-        // would panic if we used `borrow` or `borrow_mut`.
+        // You can't borrow the data again while it's borrowed mutably. This
+        // would panic if you used `borrow` or `borrow_mut`.
         assert!(data.try_borrow().is_err());
         assert!(data.try_borrow_mut().is_err());
     }
@@ -50,7 +50,7 @@ fn main() {
         // already borrowed mutably.
     }
 
-    // We can also consume the `RefCell`, returning the wrapped value.
+    // Also consume the `RefCell`, returning the wrapped value.
     let _data = data.into_inner();
 }
 // ANCHOR_END: example

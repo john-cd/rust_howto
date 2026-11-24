@@ -22,7 +22,7 @@ fn main() {
     let x = "example";
     println!("x: {x}");
 
-    // Let's create an inner scope (block) with curly brackets:
+    // Create an inner scope (block) with curly brackets:
     {
         let x = "within scope";
         println!("x: {x}");

@@ -16,7 +16,7 @@ struct Color(
     /// Blue component of the color.
     pub i32,
 );
-// We choose here to make all fields public.
+// You choose here to make all fields public.
 
 /// A unit-like struct.
 ///

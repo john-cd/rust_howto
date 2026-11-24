@@ -22,8 +22,7 @@ trait OutlinePrint: fmt::Display {
     /// Prints `self` in a box of asterisks.
     fn outline_print(&self) {
         println!("* {self} *");
-        // We can use `println!` here,
-        // because `self` is guaranteed to implement `Display`.
+        // The `Display` bound lets `println!` format `self`.
     }
 }
 

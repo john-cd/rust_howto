@@ -20,7 +20,7 @@ fn examples() {
     println!("Hello!");
 
     // 3. They can be used in a pattern.
-    // Let's first write a simple macro-by-example for the next example.
+    // First write a simple macro-by-example for the next example.
     // It wraps an identifier in `Some()`.
     macro_rules! pat {
         ($i:ident) => {
@@ -34,7 +34,7 @@ fn examples() {
 }
 
 // 4. Function-like macros can be used in a type alias.
-// Let's first write a macro-by-example that defines a tuple type:
+// First write a macro-by-example that defines a tuple type:
 
 /// Defines a tuple type of the two given types.
 macro_rules! Tuple {

@@ -18,9 +18,9 @@ pub trait DebugPrint {
     fn debug_print(&self);
 }
 
-// Apply our custom derive macro.
+// Apply the custom derive macro.
 // This will automatically `impl DebugPrint for` the struct.
-// We also derive the standard `Debug` trait.
+// You also derive the standard `Debug` trait.
 
 // ANCHOR: derive_usage
 /// A user, with a derived [`DebugPrint`] implementation.

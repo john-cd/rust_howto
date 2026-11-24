@@ -7,7 +7,7 @@
 /// syntax as the return type, where `T` is the type of the items the iterator
 /// will yield.
 fn count_up_to(max: i32) -> impl Iterator<Item = i32> {
-    // In this case, we convert a range into an iterator,
+    // In this case, you convert a range into an iterator,
     // then transform it further.
     (0..max).map(|x| x + 1)
 }

@@ -7,7 +7,7 @@
 //! compile time and rewrites the item it is attached to. This one wraps a
 //! function to log its calls. It must be defined in a crate of its own.
 
-// Import our custom attribute macro.
+// Import the custom attribute macro.
 use proc_macros::log_calls;
 
 // Apply the custom attribute macro.

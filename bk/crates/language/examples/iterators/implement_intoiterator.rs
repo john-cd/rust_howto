@@ -7,7 +7,7 @@
 //! type.
 
 /// A custom collection type.
-/// In this example, we simply wrap a `Vec`.
+/// In this example, you simply wrap a `Vec`.
 #[derive(Debug)]
 struct MyVec<T> {
     /// The items of the collection.
@@ -58,9 +58,9 @@ impl<T> Iterator for MyVecIntoIterator<T> {
     fn next(&mut self) -> Option<Self::Item> {
         (!self.data.is_empty()).then(|| self.data.remove(0))
     }
-    // `next()` is the only method we are required to implement.
+    // `next()` is the only method you are required to implement.
     // The `Iterator` trait implements a large number of default methods, which
-    // we get for free.
+    // you get for free.
 }
 
 /// Iterates over a custom collection with a `for` loop.
@@ -69,7 +69,7 @@ fn main() {
     my_vec.push(1);
     my_vec.push(2);
 
-    // Our custom collection can now be used in a `for` loop.
+    // The custom collection can now be used in a `for` loop.
     // The `for` loop calls `into_iter()` under the covers.
     for element in my_vec {
         println!("Element: {element}");

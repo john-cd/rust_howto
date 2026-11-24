@@ -28,7 +28,7 @@ fn func<K, V, R: Default>(key: K, value: V) -> R {
 /// Generic function with a type parameter that has a trait bound.
 ///
 /// The `T: Debug` constraint means that `T` must implement the `Debug` trait,
-/// allowing us to format it using the `{:?}` syntax.
+/// allowing you to format it using the `{:?}` syntax.
 fn print_debug<T: Debug>(t: T) {
     println!("{t:?}");
 }
@@ -114,7 +114,7 @@ impl<T> Processor<T> for S {
     }
 }
 
-/// Let's define a tuple struct with a type parameter.
+/// Define a tuple struct with a type parameter.
 ///
 /// This is a struct that contains two fields of type `T`.
 struct TupleStruct<T>(
@@ -149,7 +149,7 @@ fn main() {
     print_type("hello");
     // `T` is `i32`.
     print_type(42);
-    // We can also specify the type explicitly using the `turbofish` notation
+    // Also specify the type explicitly using the `turbofish` notation
     // `::<...>`.
     print_type::<f64>(3.1);
 
@@ -183,7 +183,7 @@ fn main() {
     // explicitly, since it cannot be inferred from the context.
     let _map = StringMap::<String>::new();
 
-    // We could also write:
+    // You could also write:
     let _map2: StringMap<String> = StringMap::new();
 
     // A type parameter with a default type:

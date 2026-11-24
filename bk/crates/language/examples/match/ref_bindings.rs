@@ -47,7 +47,7 @@ fn main() {
     if let Some(ref mut name_mut) = robot_name {
         name_mut.push_str(" Rodriguez"); /* `name_mut` is `&mut String` */
     }
-    // `robot_name` remains available, since we did not move its contents.
+    // `robot_name` remains available, since you did not move its contents.
     println!("Full name: {robot_name:?}"); // Some("Bender Rodriguez")
 
     // Note that `ref` works in `let` bindings as well, but its use is

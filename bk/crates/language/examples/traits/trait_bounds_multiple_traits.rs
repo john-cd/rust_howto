@@ -10,8 +10,8 @@ use std::fmt::Debug;
 /// `Debug` and `Clone` traits. Note the `+`
 fn func<T: Debug + Clone>(t: &T) {
     println!("{:?}", t.clone());
-    // We can call `clone` because `T` implements `Clone`.
-    // We can also print `t` with `:?` because it implements `Debug`.
+    // Call `clone` because `T` implements `Clone`.
+    // Also print `t` with `:?` because it implements `Debug`.
 }
 
 /// It may be equivalently be written in a `where` clause:
@@ -36,7 +36,7 @@ struct S;
 /// Calls the functions that require both traits.
 fn main() {
     let s = S;
-    // Since `S` implements both `Debug` and `Clone`, we can call the above
+    // Since `S` implements both `Debug` and `Clone`, you can call the above
     // functions:
     func(&s);
     func2(&s);

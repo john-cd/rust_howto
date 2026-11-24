@@ -14,7 +14,7 @@ use std::collections::HashMap;
 // With the above, `HashMap` can be used without prefix in the current
 // module.
 
-// We can prefix the path with `::`.
+// Prefix the path with `::`.
 // This is useful to disambiguate between a local module and an external
 // crate.
 use ::anyhow::Result;
@@ -28,8 +28,7 @@ fn main() -> Result<()> {
     // Use `HashMap` from the `collections` module of the `std` crate.
     let _h: HashMap<String, String> = HashMap::new();
 
-    // We can of course continue to refer to an item in an external crate by
-    // its full path:
+    // The full path still works after the import:
     let _h: HashMap<String, String> = std::collections::HashMap::new();
 
     println!("use_external_crate example: imported items from external crates");

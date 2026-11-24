@@ -20,7 +20,7 @@ mod a_module {
     // into scope, with the `public_function` name.
     // Since `use` is preceded by `pub`, the `public_function` name is public.
     pub use private_module::public_function;
-    // We can rename the item that is re-exported:
+    // Rename the item that is re-exported:
     pub use private_module::public_function as another_name;
 }
 

@@ -20,7 +20,7 @@ fn open_file(file_path: &str) {
     // Fallible functions like `File::open` return a `Result`...
     let open_result: Result<File, io::Error> = File::open(file_path);
 
-    // We could handle their `Result` there and then...
+    // You could handle their `Result` there and then...
     match open_result {
         Err(e) => eprintln!("An error occurred while opening the file: {e}"),
         Ok(file) => println!("Opened {file:?}"),
@@ -114,7 +114,7 @@ impl std::fmt::Display for MyError {
     }
 }
 
-// We should also implement the `From` trait:
+// You should also implement the `From` trait:
 impl From<io::Error> for MyError {
     /// Wraps an I/O error in the example error type.
     ///
@@ -221,7 +221,7 @@ fn unit_return_value(file_path: &str) -> Result<(), anyhow::Error> {
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let file_path = "example.txt";
     open_file(file_path);
-    // Here we ignore the `Result` return values
+    // Ignore the `Result` return values
     // to avoid returning early and to exercise all the code.
     // You will rarely need to do this.
     let _ = read_file(file_path);

@@ -19,7 +19,7 @@ fn slice_from_array() {
     let all: &[i32] = &array[..];
     println!("Entire array: {all:?}");
 
-    // We can also coerce an array to a slice:
+    // Also coerce an array to a slice:
     let arr_slice: &[i32] = &[10, 20];
     println!("{arr_slice:?}");
 }

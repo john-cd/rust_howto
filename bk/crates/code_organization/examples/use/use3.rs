@@ -3,21 +3,21 @@
 // ANCHOR: example
 //! Importing items from the standard library with `use`.
 
-// This `use` statement allows us to use `HashMap` directly without having to
+// This `use` statement allows you to use `HashMap` directly without having to
 // specify its full path.
 // IDIOM: import the `struct` itself, not its parent module.
 use std::collections::HashMap;
 
 // `HashMap` is declared in the standard library (`std`), which is an external
-// crate. We therefore prefix the path with the crate's name.
+// crate. You therefore prefix the path with the crate's name.
 
 /// Builds a map with the imported `HashMap`.
 /// Uses an imported `HashMap`.
 fn build_map() -> HashMap<u32, String> {
-    // We now refer to `HashMap` by its name.
+    // You now refer to `HashMap` by its name.
     let mut mymap: HashMap<u32, String> = HashMap::new();
 
-    // Let's add something to it...
+    // Add something to it...
     mymap.entry(42).or_insert("my favorite number".into());
     mymap
 }

@@ -33,7 +33,7 @@
 // }
 
 /// This is the required documentation for `S`.
-/// We also had to derive `Debug` to avoid a warning.
+/// You also had to derive `Debug` to avoid a warning.
 #[derive(Debug)]
 pub(crate) struct S;
 

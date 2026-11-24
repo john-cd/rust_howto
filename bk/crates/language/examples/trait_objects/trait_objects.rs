@@ -43,7 +43,7 @@ struct Screen {
     /// Like all DSTs, trait objects must be used behind some type of pointer -
     /// here, `Box`.
     ///
-    /// We use a trait object here, because the `Screen` may hold a mix of
+    /// You use a trait object here, because the `Screen` may hold a mix of
     /// `Button` and `Text` objects, which may be unknown until run-time.
     /// A generic type would not work here - it would allow only one type or
     /// the other, not a mix of both.

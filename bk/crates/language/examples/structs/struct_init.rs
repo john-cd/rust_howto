@@ -47,7 +47,7 @@ impl User {
 
 /// Creates users with a function and with an associated function.
 fn main() {
-    // We create an instance of the struct by calling a function:
+    // You create an instance of the struct by calling a function:
     let user1: User = build_user("user@example.com".into(), "user".to_owned());
 
     println!("user1: {user1:?}");

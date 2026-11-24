@@ -39,7 +39,7 @@ enum Message {
 impl Message {
     /// Prints a description of the message.
     fn call(&self) {
-        // The `match` keyword allows us to compare a value against a series of
+        // The `match` keyword allows you to compare a value against a series of
         // patterns. Each pattern can have associated code that will be
         // run if the value matches the pattern.
         match self {

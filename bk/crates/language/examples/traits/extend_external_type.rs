@@ -24,7 +24,7 @@ impl MyHash for i64 {
 /// Calls the method that the trait adds to `i64`.
 fn main() {
     let x = 1i64;
-    // Since `i64` implements the `MyHash` trait, we can call its method.
+    // Since `i64` implements the `MyHash` trait, you can call its method.
     println!("{}", x.myhash());
 }
 // ANCHOR_END: example

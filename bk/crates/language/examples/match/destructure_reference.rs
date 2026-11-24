@@ -8,7 +8,7 @@ fn main() {
     // Given a reference...
     let reference: &i32 = &42;
 
-    // ...we can destructure it into its pointed-to type.
+    // ...you can destructure it into its pointed-to type.
     // Note that `&` is on the left side.
     let &value = reference;
 

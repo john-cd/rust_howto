@@ -55,7 +55,7 @@ fn main() {
     // `only_if_static` is only defined for `'static`.
     e.only_if_static();
 
-    // Let's create another instance with a lifetime shorter than `'static`:
+    // Create another instance with a lifetime shorter than `'static`:
     let another_part = String::from("another part");
     let e2: Excerpt<'_> = Excerpt {
         part: &another_part,

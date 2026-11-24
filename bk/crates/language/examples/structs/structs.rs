@@ -4,7 +4,7 @@
 //! The `main` function creates an instance of the `User` struct.
 //! It then prints the struct to the console.
 
-/// We first define the struct's fields (which can be of any type).
+/// You first define the struct's fields (which can be of any type).
 /// The `User` struct has four fields: `active`, `username`, `email`, and
 /// `sign_in_count`.
 #[derive(Debug)]

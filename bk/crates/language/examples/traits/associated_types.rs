@@ -26,7 +26,7 @@ struct MyIterator(
     u32,
 );
 
-// We implement the trait for a given struct...
+// You implement the trait for a given struct...
 impl Iterator for MyIterator {
     // ...and define what associated type should be used here.
     // You can use `Self` in the associated type definition.

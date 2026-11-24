@@ -15,8 +15,7 @@ use std::str;
 // The following function includes calls that can fail:
 // - Errors are caught and propagated back to the caller with the `?` operator.
 // - Note how the function returns a `Result` type.
-// - We have chosen to use the flexible `Result` type alias from the very commonly used `anyhow`
-//   library.
+// - The function uses the `anyhow::Result` type alias.
 // - This function does not panic.
 
 /// Converts the example IPv6 byte string into a typed address.
@@ -41,7 +40,7 @@ fn example() -> anyhow::Result<IpAddr> {
     // This only executes if `parse` returns `Ok`:
     println!("{addr:?}");
 
-    // Happy path: we return `Ok`.
+    // Happy path: you return `Ok`.
     Ok(addr)
 }
 
