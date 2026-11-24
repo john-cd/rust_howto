@@ -1,7 +1,7 @@
 // TODO Reviewed ??-??-2026.
 
 // ANCHOR: example
-//! A tree of `CancellationToken`s: cancelling a parent cancels its children,
+//! A tree of `CancellationToken`s: canceling a parent cancels its children,
 //! but not the other way around. Workers check the token in a `select!`.
 //!
 //! Cancellation is cooperative: a task stops only at an `.await` where it
@@ -17,7 +17,7 @@ use tokio::time::sleep;
 use tokio_util::sync::CancellationToken;
 use tokio_util::task::TaskTracker;
 
-/// A worker that "works" for an hour unless it is cancelled.
+/// A worker that "works" for an hour unless it is canceled.
 async fn worker(token: CancellationToken) -> &'static str {
     select! {
         () = token.cancelled() => "cancelled",
@@ -25,13 +25,13 @@ async fn worker(token: CancellationToken) -> &'static str {
     }
 }
 
-/// Cancelling the parent stops the children; the reverse is not true.
+/// Canceling the parent stops the children; the reverse is not true.
 async fn demo() {
     let parent = CancellationToken::new();
     let child_a = parent.child_token();
     let child_b = parent.child_token();
 
-    // Cancelling a child does not touch the parent or the sibling.
+    // Canceling a child does not touch the parent or the sibling.
     child_a.cancel();
     assert!(child_a.is_cancelled());
     assert!(!parent.is_cancelled());
@@ -45,7 +45,7 @@ async fn demo() {
     // No more tasks will be added; `wait` can complete.
     tracker.close();
 
-    // Cancelling the parent reaches `child_b`.
+    // Canceling the parent reaches `child_b`.
     parent.cancel();
     tracker.wait().await;
 
@@ -72,12 +72,12 @@ pub fn run() {
     main();
 }
 
-/// Checks that cancelling the root token reaches all child tasks.
+/// Checks that canceling the root token reaches all child tasks.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Checks that cancelling the root token reaches all child tasks.
+    /// Checks that canceling the root token reaches all child tasks.
     #[test]
     fn test_cancellation_tree_example_entry_point() {
         main();

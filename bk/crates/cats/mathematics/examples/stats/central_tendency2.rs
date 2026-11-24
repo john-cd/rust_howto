@@ -4,7 +4,7 @@
 //! Calculates the mode of a dataset.
 //!
 //! The mode is the most frequent value. It is the only measure of central
-//! tendency that works for categories, such as the most common colour.
+//! tendency that works for categories, such as the most common color.
 
 use std::collections::HashMap;
 

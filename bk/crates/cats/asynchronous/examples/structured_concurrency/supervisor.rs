@@ -2,7 +2,7 @@
 
 // ANCHOR: example
 //! A supervisor that restarts a failing task with capped exponential backoff
-//! and stops when it is cancelled.
+//! and stops when it is canceled.
 //!
 //! A supervisor restarts a task that fails, as in Erlang. Exponential backoff
 //! doubles the wait after each failure up to a cap, so a service that is down
@@ -20,7 +20,7 @@ fn backoff(attempt: u32, base: Duration, cap: Duration) -> Duration {
     base.saturating_mul(2_u32.saturating_pow(attempt)).min(cap)
 }
 
-/// Runs `task` until it succeeds or `token` is cancelled. Returns the delays
+/// Runs `task` until it succeeds or `token` is canceled. Returns the delays
 /// that were waited between attempts.
 async fn supervise<F, Fut>(token: CancellationToken, mut task: F) -> Vec<Duration>
 where
@@ -63,7 +63,7 @@ async fn demo() {
     let millis: Vec<u128> = delays.iter().map(Duration::as_millis).collect();
     assert_eq!(millis, vec![100, 200, 400, 400]);
 
-    // A cancelled supervisor stops instead of restarting.
+    // A canceled supervisor stops instead of restarting.
     let token = CancellationToken::new();
     token.cancel();
     let delays = supervise(token, |_| async { Err("always fails".to_owned()) }).await;

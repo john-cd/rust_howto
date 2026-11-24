@@ -12,9 +12,8 @@ use std::hash::DefaultHasher;
 use std::hash::Hash;
 use std::hash::Hasher;
 
-// Custom struct that will be used as a key.
-// `Hash` and `Eq` traits must be implemented in order to use the struct as a
-// `HashMap` key. Implement them manually or use the `derive` attribute.
+// A `HashMap` key must implement `Hash` and `Eq`. Deriving both traits
+// ensures that equal keys have equal hashes.
 
 /// A student, used as a `HashMap` key.
 #[derive(Debug, PartialEq, Eq)]

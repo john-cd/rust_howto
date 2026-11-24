@@ -26,7 +26,7 @@ struct Outcome {
     /// Number of tasks that ended in a panic.
     panicked: usize,
 
-    /// Number of tasks cancelled before returning.
+    /// Number of tasks canceled before returning.
     cancelled: usize,
 }
 
@@ -71,7 +71,7 @@ async fn run_pool(inputs: Vec<u64>) -> Outcome {
     run_pool_with_limit(inputs, LIMIT).await
 }
 
-/// `abort_all` cancels the remaining tasks; they report a cancelled
+/// `abort_all` cancels the remaining tasks; they report a canceled
 /// `JoinError`.
 async fn abort_demo() -> usize {
     let mut set = JoinSet::new();

@@ -5,7 +5,7 @@
 //!   async-aware diagnostics.
 //! - Its `Subscriber` trait represents the functionality necessary to collect this trace data.
 //! - The `tracing-subscriber` crate contains tools for composing subscribers out of smaller units
-//!   of behaviour, and batteries-included implementations of common subscriber functionality.
+//!   of behavior, and batteries-included implementations of common subscriber functionality.
 //! - In particular, the `tracing_subscriber::fmt` module provides a default implementation of the
 //!   `Subscriber` trait that records `Events` and `Spans` by formatting them as text and logging
 //!   them to stdout.
@@ -24,9 +24,8 @@ fn main() {
     // initialize and install the global subscriber for your application:
     tracing_subscriber::fmt::init();
 
-    // This is typicaly called early in the `main()` function of your
-    // application. `init()` should not be called by libraries!
-    // That will cause conflicts when executables try to set them later.
+    // Install the global subscriber early in `main` so it receives startup
+    // events. Libraries emit events and leave subscriber setup to the application.
 
     // `fmt::init()` sets up a subscriber that logs to the console
     // and filters logs at runtime based on the `RUST_LOG` environment

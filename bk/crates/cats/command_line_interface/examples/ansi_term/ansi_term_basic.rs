@@ -4,7 +4,7 @@
 //! Demonstrates basic usage of the maintained `nu-ansi-term` crate.
 //!
 //! ANSI escape sequences are special character sequences that terminals
-//! interpret as styling (colour, bold) instead of text. These crates generate
+//! interpret as styling (color, bold) instead of text. These crates generate
 //! them for you. Most modern terminals support them; output redirected to a
 //! file should usually omit them.
 

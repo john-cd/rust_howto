@@ -138,7 +138,7 @@ mod tests {
         main()
     }
 
-    /// Stops the cron loop promptly when its cancellation token is cancelled.
+    /// Stops the cron loop promptly when its cancellation token is canceled.
     #[tokio::test(start_paused = true)]
     async fn cancelled_token_stops_the_loop_immediately() -> anyhow::Result<()> {
         let schedule = Schedule::from_str("*/10 * * * * *")?;

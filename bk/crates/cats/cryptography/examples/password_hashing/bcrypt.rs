@@ -29,8 +29,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     println!("Hashed password: {hashed_password}");
 
-    // 2) Later, in order to verify a password, the hash is retrieved from the
-    // database, and the password is checked against it:
+    // 2) At login, check the supplied password against the stored hash.
 
     let is_valid = verify(&password, &hashed_password)?;
     println!("Password is valid: {is_valid}");

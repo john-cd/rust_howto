@@ -3,7 +3,7 @@
 // ANCHOR: example
 //! Composing a `tracing` subscriber from layers and filters.
 //!
-//! Layers add behaviour to a subscriber and stack: one layer might print to the
+//! Layers add behavior to a subscriber and stack: one layer might print to the
 //! terminal, another write JSON to a file, and a filter drop noisy modules.
 //! Each layer sees every event.
 

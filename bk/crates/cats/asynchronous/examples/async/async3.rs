@@ -48,7 +48,7 @@ mod tests {
         assert!(err.is_panic());
     }
 
-    /// Confirms that the aborted task is reported as cancelled.
+    /// Confirms that the aborted task is reported as canceled.
     #[tokio::test]
     async fn aborted_task_is_reported_as_cancelled() {
         let handle = tokio::spawn(std::future::pending::<()>());

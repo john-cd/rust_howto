@@ -4,7 +4,7 @@
 //! Highlights source code with `syntect` (TextMate grammars and themes), as
 //! HTML and as terminal escape codes.
 //!
-//! Syntax highlighting colours code by the role of each token. `syntect` uses
+//! Syntax highlighting colors code by the role of each token. `syntect` uses
 //! the same grammars and themes as Sublime Text and TextMate, and here emits
 //! HTML for web pages or documentation.
 

@@ -9,7 +9,7 @@
 
 use mlua::prelude::*;
 
-// In standalone mode, `mlua` allows to add scripting support.
+// Embed Lua in a Rust application to run scripts against Rust-provided data.
 
 /// Creates a Lua table from Rust and iterates over it in Lua.
 ///

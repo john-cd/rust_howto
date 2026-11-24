@@ -3,10 +3,10 @@
 // ANCHOR: example
 //! Create a simple `baseview` window and respond to basic window events.
 //!
-//! The window stays open until the close button is requested.
+//! The window stays open until the user requests that it close.
 //!
-//! `baseview` is a specialized, low-level window creation library targetting
-//! windows to be embedded in other applications (e.g. audio plugin UIs).
+//! `baseview` can create windows embedded in a host application, such as an
+//! audio plug-in editor.
 //!
 //! `baseview` abstracts the platform-specific windowing APIs (`winapi`,
 //! `cocoa`, `xcb`) into a platform-independent API, but otherwise gets out of

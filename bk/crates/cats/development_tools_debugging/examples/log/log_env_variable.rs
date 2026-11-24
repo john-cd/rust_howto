@@ -34,7 +34,7 @@ fn init_logger() {
     // Typically you would use:
     // `env_logger::init();`
 
-    // Initialise a logger with filter level Off,
+    // Initialize a logger with filter level Off,
     // then override the log filter from an environment variable called
     // MY_APP_LOG:
     env_logger::Builder::new()

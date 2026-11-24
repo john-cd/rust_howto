@@ -10,7 +10,7 @@
 
 use tokio_util::sync::CancellationToken;
 
-/// Cancels a child task when its parent token is cancelled.
+/// Cancels a child task when its parent token is canceled.
 async fn cancel_child_task() -> anyhow::Result<bool> {
     let parent = CancellationToken::new();
     let child = parent.child_token();
@@ -46,12 +46,12 @@ pub fn run() -> anyhow::Result<()> {
     run_example()
 }
 
-/// Verifies cancelling a parent token wakes a child task.
+/// Verifies canceling a parent token wakes a child task.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// Verifies cancelling a parent token wakes a child task.
+    /// Verifies canceling a parent token wakes a child task.
     #[test]
     fn cancelling_parent_wakes_child_task() -> anyhow::Result<()> {
         let runtime = tokio::runtime::Builder::new_current_thread().build()?;

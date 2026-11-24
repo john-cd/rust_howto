@@ -36,8 +36,7 @@ fn example() -> Result<(), Box<dyn Error>> {
     let password_hash = password_hash.to_string();
     println!("Hashed password: {password_hash}");
 
-    // 2) Later, in order to verify a password, the hash is retrieved from the
-    // database, and the password is checked against it.
+    // 2) At login, check the supplied password against the stored hash.
 
     let parsed_hash = PasswordHash::new(&password_hash)?;
     let is_valid = scrypt.verify_password(password, &parsed_hash).is_ok();

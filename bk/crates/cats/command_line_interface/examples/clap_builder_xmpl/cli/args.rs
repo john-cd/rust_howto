@@ -153,7 +153,7 @@ mod tests {
         );
     }
 
-    /// Test passing the "config" argument via an enviroment variable.
+    /// Reads the config argument from an environment variable.
     #[test]
     fn test_arg_config_env() -> std::io::Result<()> {
         check_environment(Some("config.toml"), None)

@@ -4,7 +4,7 @@
 //! Blur an image in memory using a Gaussian filter.
 //!
 //! A Gaussian blur replaces each pixel with a weighted average of its
-//! neighbours, with nearer pixels counting more. It is used to reduce noise, to
+//! neighbors, with nearer pixels counting more. It is used to reduce noise, to
 //! soften backgrounds and as a first step of edge detection. A larger sigma
 //! gives a stronger blur.
 

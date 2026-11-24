@@ -53,7 +53,7 @@ impl Slot {
         }
     }
 
-    /// Publishes `value` unless cancelled; returns whether it published.
+    /// Publishes `value` unless canceled; returns whether it published.
     fn publish(&self, value: u32) -> bool {
         if self.cancelled.load(Ordering::Acquire) {
             return false;

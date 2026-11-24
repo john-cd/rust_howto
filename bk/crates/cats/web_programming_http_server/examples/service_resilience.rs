@@ -25,7 +25,7 @@ enum Operation {
     Write,
     /// Request that fails immediately with a non-retryable error.
     PermanentFailure,
-    /// Request that never completes and must be cancelled by the total deadline.
+    /// Request that never completes and must be canceled by the total deadline.
     Stall,
 }
 

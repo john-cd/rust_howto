@@ -104,7 +104,7 @@ async fn publish_order(js: &jetstream::Context, order: &Order) -> anyhow::Result
     Ok(())
 }
 
-/// Pulls batches until `shutdown` is cancelled or a batch comes back empty.
+/// Pulls batches until `shutdown` is canceled or a batch comes back empty.
 async fn consume(
     stream: &jetstream::stream::Stream,
     processor: &mut Processor,

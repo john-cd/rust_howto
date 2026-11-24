@@ -4,7 +4,7 @@
 //! An `async fn` in a trait, implemented by a health checker.
 //!
 //! Since Rust 1.75, traits can declare `async fn` directly. A trait lets
-//! different types provide the same behaviour, such as several kinds of health
+//! different types provide the same behavior, such as several kinds of health
 //! check, behind one interface.
 
 /// A health checker that implements [`HealthCheck`].

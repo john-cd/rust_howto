@@ -41,7 +41,7 @@ fn main() -> anyhow::Result<()> {
     for statement in &statements {
         // `statement` is a top-level construct: SELECT, INSERT, CREATE, etc.
         match statement {
-            // SELECT statment.
+            // Inspect the body of the query.
             Statement::Query(query) => match &*query.body {
                 // SELECT .. FROM .. HAVING (no ORDER BY or set operations).
                 SetExpr::Select(select) => {

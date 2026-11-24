@@ -16,7 +16,7 @@ use tokio::time::interval;
 use tokio::time::sleep;
 use tokio_util::sync::CancellationToken;
 
-/// Runs `job` every `period` until `token` is cancelled. Returns how many
+/// Runs `job` every `period` until `token` is canceled. Returns how many
 /// times the job ran.
 async fn run_periodically<F, Fut>(period: Duration, token: CancellationToken, mut job: F) -> u32
 where

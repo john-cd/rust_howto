@@ -5,7 +5,7 @@
 //!
 //! `dbg!` prints the expression, its value and the file and line to standard
 //! error, and returns the value, so you can wrap any expression without
-//! changing behaviour. It is meant for temporary debugging; remove it before
+//! changing behavior. It is meant for temporary debugging; remove it before
 //! committing.
 
 /// Demonstrates that `dbg!` prints an expression and returns it.
