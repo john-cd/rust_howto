@@ -31,21 +31,39 @@ class CiModes(unittest.TestCase):
                 command.write_text(mock, newline="\n")
                 command.chmod(0o755)
             sleep = binary / "sleep"
-            sleep.write_text('#!/bin/bash\nexec /usr/bin/sleep 0.01\n', newline="\n")
+            sleep.write_text("#!/bin/bash\nexec /usr/bin/sleep 0.01\n", newline="\n")
             sleep.chmod(0o755)
             spell = spelling / "spellcheck.sh"
             spell.write_text(mock, newline="\n")
             spell.chmod(0o755)
             log = root / "commands.log"
-            env = dict(os.environ, CI_LOG=log.as_posix(), FIXTURE_BIN=binary.as_posix(),
-                       CI_SCRIPT=script.as_posix())
-            for key in ("VALIDATE_CODE", "SKIP_TESTS", "SKIP_BOOK_BUILD", "BUILD_PDF", "NEXTEST_ARGS"):
+            env = dict(
+                os.environ,
+                CI_LOG=log.as_posix(),
+                FIXTURE_BIN=binary.as_posix(),
+                CI_SCRIPT=script.as_posix(),
+            )
+            for key in (
+                "VALIDATE_CODE",
+                "SKIP_TESTS",
+                "SKIP_BOOK_BUILD",
+                "BUILD_PDF",
+                "NEXTEST_ARGS",
+            ):
                 env.pop(key, None)
             env["BUILD_PDF"] = "true"
             env.update(overrides)
             result = subprocess.run(
-                [bash, "-c", 'export PATH="$(cygpath -u "$FIXTURE_BIN" 2>/dev/null || printf "%s" "$FIXTURE_BIN"):$PATH"; bash "$CI_SCRIPT"'],
-                cwd=root, env=env, capture_output=True, text=True, timeout=20,
+                [
+                    bash,
+                    "-c",
+                    'export PATH="$(cygpath -u "$FIXTURE_BIN" 2>/dev/null || printf "%s" "$FIXTURE_BIN"):$PATH"; bash "$CI_SCRIPT"',
+                ],
+                cwd=root,
+                env=env,
+                capture_output=True,
+                text=True,
+                timeout=20,
                 check=False,
             )
             self.assertEqual(result.returncode, 0, result.stderr)
