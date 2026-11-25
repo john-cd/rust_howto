@@ -407,6 +407,7 @@ Crockford
 CrosVM
 Crubit
 Cruby
+Cruchon
 Cryptape
 Crypto
 Cryptograhic
@@ -547,6 +548,7 @@ Dropshot
 Drysdale
 DuckDB
 DungeonFog
+Dupeyrat
 Durations
 DynClone
 DynProg
@@ -3786,6 +3788,7 @@ nominomicon
 nonblocking
 nonces
 nonconvex
+nondecreasing
 noninteractive
 nonnegative
 noplayground
@@ -4255,6 +4258,7 @@ rustlang
 rustler
 rustls
 rustmagazine
+rustmax
 rustmeup
 rustnationuk
 rustnl
