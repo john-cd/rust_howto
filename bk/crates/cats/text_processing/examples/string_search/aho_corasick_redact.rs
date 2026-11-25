@@ -4,9 +4,8 @@
 //! Redacts many words in a log line with one reusable, case-insensitive
 //! `aho-corasick` automaton.
 //!
-//! Redaction replaces sensitive words, such as names or tokens, before text is
-//! logged or shared. Building the Aho-Corasick matcher once and reusing it
-//! keeps this fast when there are many words.
+//! This example masks configured fruit names in sample text. Build the
+//! Aho-Corasick matcher once and reuse it for each input.
 
 use aho_corasick::AhoCorasick;
 use aho_corasick::MatchKind;
@@ -16,7 +15,7 @@ fn redactor(words: &[&str]) -> Result<AhoCorasick, aho_corasick::BuildError> {
     AhoCorasick::builder()
         .ascii_case_insensitive(true)
         // Prefer the longest word at a given position:
-        // "password" over "pass".
+        // "pineapple" over "pine".
         .match_kind(MatchKind::LeftmostLongest)
         .build(words)
 }
@@ -27,26 +26,26 @@ fn redact(ac: &AhoCorasick, text: &str) -> String {
     ac.replace_all(text, &replacements)
 }
 
-/// Finds and redacts configured secret words in a sample string.
+/// Finds and redacts configured fruit names in a sample string.
 ///
 /// # Errors
 ///
 /// Returns an error if a step of the example fails.
 fn main() -> anyhow::Result<()> {
-    let ac = redactor(&["pass", "password", "token"])?;
+    let ac = redactor(&["pine", "pineapple", "pear"])?;
 
-    let line = "User sent Password=hunter2 and TOKEN=abc, pass it on";
+    let line = "Basket: Pineapple, PEAR, pine";
     let redacted = redact(&ac, line);
     println!("{redacted}");
 
-    assert_eq!(redacted, "User sent ***=hunter2 and ***=abc, *** it on");
+    assert_eq!(redacted, "Basket: ***, ***, ***");
     // The same automaton can be reused for any number of texts.
     assert_eq!(redact(&ac, "no secrets"), "no secrets");
     Ok(())
 }
 // ANCHOR_END: example
 
-/// Finds and redacts configured secret words in a sample string.
+/// Finds and redacts configured fruit names in a sample string.
 ///
 /// # Errors
 ///
