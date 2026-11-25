@@ -115,7 +115,7 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
-/// index and
+/// Exercises indexing and search against Meilisearch.
 #[cfg(test)]
 mod tests {
     use super::*;

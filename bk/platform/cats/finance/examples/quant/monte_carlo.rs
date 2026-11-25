@@ -43,19 +43,19 @@ pub fn run() {
     main();
 }
 
-/// payoff.
+/// Tests the simulated call price against deterministic and analytic results.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// payoff.
+    /// A zero-volatility call has the deterministic discounted payoff.
     #[test]
     fn zero_volatility_matches_the_deterministic_payoff() {
         let expected = 100.0 - 100.0 * (-0.05_f64).exp();
         assert!((estimate_call(0.0, 7) - expected).abs() < 1e-9);
     }
 
-    /// value.
+    /// The simulated call price stays within tolerance of the analytic price.
     #[test]
     fn sampled_price_approximates_the_analytic_price() {
         assert!((estimate_call(0.20, 7) - 10.450_583_572_185_565).abs() < 0.25);

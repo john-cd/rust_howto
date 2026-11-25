@@ -45,7 +45,7 @@ pub fn run() -> Result<(), Error> {
     main()
 }
 
-/// function.
+/// Checks that embedded Ruby calls the Rust greeting.
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -56,7 +56,7 @@ mod tests {
         assert_eq!(hello_rust("Ada".to_owned()), "Hello, Ada!");
     }
 
-    /// function.
+    /// Checks that embedded Ruby calls the Rust greeting.
     #[test]
     #[ignore = "needs Ruby headers and libruby"]
     fn embedded_ruby_returns_the_rust_greeting() {

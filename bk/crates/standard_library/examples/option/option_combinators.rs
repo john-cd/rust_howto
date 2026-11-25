@@ -37,12 +37,12 @@ pub fn run() {
     main();
 }
 
-/// options.
+/// Exercises the option combinator example.
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    /// options.
+    /// Exercises the option combinator example.
     #[test]
     fn test_parse_even_half() {
         assert_eq!(parse_even_half("24"), Some(12));

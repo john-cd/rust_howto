@@ -121,7 +121,7 @@ pub fn run() -> anyhow::Result<()> {
     main()
 }
 
-/// because each
+/// Tests scheduling behavior with a bounded run.
 #[cfg(test)]
 mod tests {
     use super::*;
