@@ -35,68 +35,72 @@ trap 'kill $MONITOR_PID 2>/dev/null || true' EXIT
 
 echo "----------"
 
+repo_root="$(pwd -P)"
+
 ## Spell checks
 bk/scripts/spelling/spellcheck.sh list
 
-## Audit each independent Rust workspace with the shared policy.
-## cargo-deny covers advisories, licenses, bans, and sources. cargo-audit uses the
-## same RustSec advisory database; monthly Cargo updates are handled by Dependabot.
-repo_root="$(pwd -P)"
-just fmt-toml-check
-for manifest in \
-    "bk/crates/Cargo.toml" \
-    "tools/Cargo.toml" \
-    "xmpl/Cargo.toml" \
-    "publish/Cargo.toml"; do
-    echo "Auditing ${manifest}"
+if [ "${VALIDATE_CODE:-true}" = "true" ]; then
+    ## Audit each independent Rust workspace with the shared policy.
+    ## cargo-deny covers advisories, licenses, bans, and sources. cargo-audit uses the
+    ## same RustSec advisory database; monthly Cargo updates are handled by Dependabot.
+    repo_root="$(pwd -P)"
+    just fmt-toml-check
+    for manifest in \
+        "bk/crates/Cargo.toml" \
+        "tools/Cargo.toml" \
+        "xmpl/Cargo.toml" \
+        "publish/Cargo.toml"; do
+        echo "Auditing ${manifest}"
+        cargo deny \
+            --manifest-path "${repo_root}/${manifest}" \
+            --workspace \
+            --config "${repo_root}/bk/crates/deny.toml" \
+            check all --hide-inclusion-graph
+    done
+
+    ## `later/crates` is staging content with its own policy (`later/crates/deny.toml`:
+    ## triaged advisories, the pinned Kube Git source, and the egui font licenses).
+    echo "Auditing later/crates/Cargo.toml"
     cargo deny \
-        --manifest-path "${repo_root}/${manifest}" \
+        --manifest-path "${repo_root}/later/crates/Cargo.toml" \
         --workspace \
-        --config "${repo_root}/bk/crates/deny.toml" \
+        --config "${repo_root}/later/crates/deny.toml" \
         check all --hide-inclusion-graph
-done
 
-## `later/crates` is staging content with its own policy (`later/crates/deny.toml`:
-## triaged advisories, the pinned Kube Git source, and the egui font licenses).
-echo "Auditing later/crates/Cargo.toml"
-cargo deny \
-    --manifest-path "${repo_root}/later/crates/Cargo.toml" \
-    --workspace \
-    --config "${repo_root}/later/crates/deny.toml" \
-    check all --hide-inclusion-graph
+    cd bk/crates
 
-cd bk/crates
+    ## Checks the Rust code formatting
+    ## Fails if not formatted properly
+    cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
 
-## Checks the Rust code formatting
-## Fails if not formatted properly
-cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
+    ## Fetch the dependencies
+    cargo fetch
 
-## Fetch the dependencies
-cargo fetch
+    ## Make sure all examples (and tools) compile
+    ## - We prefer `cargo build ...` to `cargo check --workspace --all-targets --locked --profile ci`
+    ## Some diagnostics and errors are only emitted during code generation, so they inherently won't be reported with cargo check.
+    ## - `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
+    ## - See .cargo/config.toml for the `ci` profile config. We removed optimizations, since we will run / test the examples just once.
+    ## - Some examples require external services e.g. Redis, Mongodb... and are excluded from testing / hidden behind feature flags.
+    cargo build --workspace --all-targets --locked --profile ci --all-features
 
-## Make sure all examples (and tools) compile
-## - We prefer `cargo build ...` to `cargo check --workspace --all-targets --locked --profile ci`
-## Some diagnostics and errors are only emitted during code generation, so they inherently won't be reported with cargo check.
-## - `--all-targets` is equivalent to specifying `--lib --bins --tests --benches --examples`.
-## - See .cargo/config.toml for the `ci` profile config. We removed optimizations, since we will run / test the examples just once.
-## - Some examples require external services e.g. Redis, Mongodb... and are excluded from testing / hidden behind feature flags.
-cargo build --workspace --all-targets --locked --profile ci --all-features
+    ## Make sure that all examples are linted
+    ## - Elevate clippy warnings to errors, which will in turn fail the build.
+    cargo clippy --workspace --all-targets --locked --profile ci --all-features --keep-going -- --deny warnings
 
-## Make sure that all examples are linted
-## - Elevate clippy warnings to errors, which will in turn fail the build.
-cargo clippy --workspace --all-targets --locked --profile ci --all-features --keep-going -- --deny warnings
+    if [ "${SKIP_TESTS:-false}" != "true" ]; then
+        ## Test all code examples (except heavy tests and "ignore_in_ci" tests)
+        ## NEXTEST_ARGS can be used to pass --partition hash:K/N
+        nextest_args=()
+        if [[ -n "${NEXTEST_ARGS:-}" ]]; then
+            read -r -a nextest_args <<< "$NEXTEST_ARGS"
+        fi
+        cargo nextest run --config-file .config/nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar --all-features --status-level pass "${nextest_args[@]}"
 
-if [ "${SKIP_TESTS:-false}" != "true" ]; then
-    ## Test all code examples (except heavy tests and "ignore_in_ci" tests)
-    ## NEXTEST_ARGS can be used to pass --partition hash:K/N
-    nextest_args=()
-    if [[ -n "${NEXTEST_ARGS:-}" ]]; then
-        read -r -a nextest_args <<< "$NEXTEST_ARGS"
+        ## `nextest` does not handle doctests.
+        cargo test --workspace --doc --locked --profile ci -- --show-output
     fi
-    cargo nextest run --config-file .config/nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar --all-features --status-level pass "${nextest_args[@]}"
-
-    ## `nextest` does not handle doctests.
-    cargo test --workspace --doc --locked --profile ci -- --show-output
 fi
 ## NOTE supersedes: mdbook test / skeptic tests
 
@@ -106,7 +110,7 @@ if [ "${SKIP_BOOK_BUILD:-false}" = "true" ]; then
 fi
 
 ## Build the book through the supported recipe. PDF output is opt-in.
-cd ..
+cd "${repo_root:-$(pwd -P)}/bk"
 python3 scripts/book/test_refdefs.py
 python3 scripts/book/refdefs.py check --book-root .
 PANDOC_BACKEND="$(command -v mdbook-pandoc || true)"

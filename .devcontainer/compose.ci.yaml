@@ -67,6 +67,12 @@ services:
       cache_to:
         ##  In the `max` cache mode, all docker layers are cached, even those of intermediate steps.
         - type=gha,mode=max,scope=${GHA_CACHE_SCOPE:?Set GHA_CACHE_SCOPE in .devcontainer/.env or the host environment},ignore-error=true
+    environment:
+      CODE_TARGET_ROOT: /code/target
+      CODE_BUILD_ROOT: /code/build
+      CARGO_TARGET_DIR: /code/target/rust_howto/main
+      CARGO_BUILD_TARGET_DIR: /code/target/rust_howto/main
+      CARGO_BUILD_BUILD_DIR: /code/build/rust_howto/main
     volumes:
       ## Path where the container will write the book HTML / JS to, on the CI host (provided by GitHub Action)
       - type: bind
@@ -81,6 +87,14 @@ services:
         read_only: true
         bind:
           create_host_path: false
-    # Integration tests launch binaries from Cargo's target directory.
-    tmpfs:
-      - /code/target:rw,nosuid,nodev,exec,size=5g
+      # Persist runtime compiler outputs; BuildKit's layer cache does not cache docker run.
+      - type: bind
+        source: ../.ci/target
+        target: /code/target
+        bind:
+          create_host_path: true
+      - type: bind
+        source: ../.ci/build
+        target: /code/build
+        bind:
+          create_host_path: true

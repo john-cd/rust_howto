@@ -4,7 +4,7 @@
 
 | File                                      | Trigger                                                                                       | Purpose                                                                                                                                                                                                                                         |
 | ----------------------------------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `build_deploy_book.yml`                   | push / PR to `develop`, manual, `workflow_call`                                               | Linux, in Docker. PRs: build, test, lint and render the book. Pushes: build and push the CI image, run tests in two partitions, build the book, upload the Pages artifact. A manual run with `deploy_to_gh_pages` also deploys to GitHub Pages. |
+| `build_deploy_book.yml`                   | push / PR to `develop`, manual, `workflow_call`                                               | Linux, in Docker. PRs: build, test, lint and render the book. Pushes: build and push the CI image, compile/lint/test once, render the book without repeating code validation, upload the Pages artifact. A manual run with `deploy_to_gh_pages` also deploys to GitHub Pages. |
 | `build_book_code_and_book_on_windows.yml` | push / PR to `develop`, manual                                                                | Native Windows build, lint and test of `bk/crates` and `tools/`, then renders the book.                                                                                                                                                         |
 | `build_book_code_on_macos.yml`            | push / PR to `develop` touching `bk`, CI configs, scripts, Cargo files, manual                | Native macOS build, lint, format check, dependency audit, and test execution for `bk/crates`.                                                                                                                                                   |
 | `build_tools.yml`                         | push / PR to `develop`, manual                                                                | Builds and tests the `tools/` workspace in the `local-tool-builder` Docker stage.                                                                                                                                                               |
@@ -56,3 +56,20 @@ uses `--remote` to advance the submodule.
 The submodule is public, so CI can initialize it without a repository secret.
 `BOOK_TOOLING_TOKEN` remains an optional input for authenticated access. For
 local Docker builds, initialize the submodule with your Git credentials first.
+
+## CI cost and local checks
+
+Pushes containing only recognized prose changes skip Linux Rust validation; PRs still render
+and spellcheck the book. Native Windows/macOS code workflows follow Rust/configuration paths.
+Unknown files, fixtures, manifests, toolchains and workflow changes retain full validation.
+The final Linux rendering job uses `VALIDATE_CODE=false`; this skips workspace audits, formatting,
+compilation, Clippy and tests already handled by the validation job. Book-specific audits and
+preprocessors still run. Runtime `/code/target` and `/code/build` are bind-mounted to the host
+cache; the final job restores the same cache identity. Validation cancels superseded runs,
+while explicitly requested publication keeps the protected Pages concurrency group.
+
+Trusted Windows static checks and optional tools-workspace compilation can be run through
+[local_runners' manual workflow](https://github.com/john-cd/local_runners/actions/workflows/rust-repositories.yml).
+It resolves the current `develop` SHA, runs only when dispatched by the owner, and serializes
+the three Rust repositories on J-RAZER. Fork PRs remain on GitHub-hosted runners. Full local
+checks require 15 GiB free on D: and use two Cargo workers; static checks remain available.

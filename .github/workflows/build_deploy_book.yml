@@ -33,6 +33,7 @@ on:
     paths:
       - "bk/**"
       - "tools/**"
+      - "mdbook-utils"
       - "book_tooling"
       - ".gitmodules"
       - ".devcontainer/**"
@@ -50,6 +51,7 @@ on:
     paths:
       - "bk/**"
       - "tools/**"
+      - "mdbook-utils"
       - "book_tooling"
       - ".gitmodules"
       - ".devcontainer/**"
@@ -79,12 +81,10 @@ on:
 permissions:
   contents: read
 
-## Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-## However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-## Pull request validations are not deployments: they are grouped per branch and superseded by newer pushes.
+# Build-only runs can supersede each other; requested publications finish in order.
 concurrency:
-  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.ref) || 'pages' }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: ${{ inputs.deploy_to_gh_pages && 'pages' || format('book-validation-{0}', github.ref) }}
+  cancel-in-progress: ${{ !inputs.deploy_to_gh_pages }}
 
 # Default to bash
 defaults:
@@ -101,10 +101,45 @@ env:
   CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
   CARGO_INCREMENTAL: "0"
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+    outputs:
+      code: ${{ steps.filter.outputs.code }}
+      container: ${{ steps.filter.outputs.container }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: dorny/paths-filter@0e4a8c6effa4802afeda77dc8d303f8176d7dfad # v3
+        id: filter
+        with:
+          predicate-quantifier: every
+          filters: |
+            code:
+              - '**'
+              - '!README.md'
+              - '!TODO.md'
+              - '!AGENTS.md'
+              - '!CONTRIBUTING.md'
+              - '!CHANGELOG.md'
+              - '!RELEASES.md'
+              - '!.github/workflows/README.md'
+              - '!bk/src/**/*.md'
+              - '!later/src/**/*.md'
+            container:
+              - '{.devcontainer/**,.dockerignore,.github/workflows/**}'
+      - name: Check CI entrypoint modes without compilation
+        run: python3 .devcontainer/test_ci_modes.py
   validate-pr:
+    needs: changes
     if: ${{ github.event_name == 'pull_request' }}
     name: Validate book and examples on Linux (PR)
     runs-on: ubuntu-latest
+    timeout-minutes: 180
     env:
       IMAGE_PULL_POLICY: never
     steps:
@@ -136,12 +171,14 @@ jobs:
         run: |
           docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml run \
             --rm --build --pull never \
+            -e VALIDATE_CODE="${{ needs.changes.outputs.code }}" \
             rust-howto-book
 
   ## Introduction to GitHub Actions with Docker: https://docs.docker.com/guides/gha/
   build-image:
     if: ${{ github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest
+    timeout-minutes: 180
     outputs:
       image_name: ${{ env.IMAGE_NAME }}
     steps:
@@ -195,15 +232,12 @@ jobs:
         working-directory: ./.devcontainer/
 
   test:
-    if: ${{ github.event_name != 'pull_request' }}
-    needs: build-image
+    if: ${{ github.event_name != 'pull_request' && (github.event_name != 'push' || needs.changes.outputs.code == 'true') }}
+    needs: [changes, build-image]
     runs-on: ubuntu-latest
+    timeout-minutes: 180
     env:
       IMAGE_PULL_POLICY: missing
-    strategy:
-      fail-fast: false
-      matrix:
-        partition: [1, 2]
     steps:
       - name: Code checkout
         # actions/checkout v7.0.1
@@ -219,8 +253,8 @@ jobs:
         uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0
         with:
           shared-key: "rust-howto-shared"
-          cache-targets: "false"
-          key: config-v1-${{ github.workflow }}-${{ github.job }}-${{ runner.arch }}-${{
+          cache-targets: "true"
+          key: runtime-v2-${{ github.workflow }}-${{ runner.arch }}-${{
             hashFiles('**/.cargo/config.toml', '**/rust-toolchain.toml', '**/Cargo.lock') }}
           cache-directories: ${{ github.workspace }}/.ci/build/rust_howto/main
           save-if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}',
@@ -234,21 +268,24 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Check portable GPU examples
-        if: ${{ matrix.partition == 1 }}
         run: |
           cargo test --locked --manifest-path bk/crates/gpu/image_blur/Cargo.toml
           cargo check --locked --manifest-path bk/crates/gpu/vendor_compute/Cargo.toml --all-targets --all-features
-      - name: Run partitioned tests
+      - name: Build, lint, and run all tests once
         run: |
           docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml run --rm \
-            -e NEXTEST_ARGS="--partition hash:${{ matrix.partition }}/2" \
             -e SKIP_BOOK_BUILD="true" \
             rust-howto-book
+      - name: Restore cache ownership
+        if: always()
+        run: |
+          if [ -d .ci ]; then sudo chown -R "$(id -u):$(id -g)" .ci; fi
 
   build-book:
-    if: ${{ github.event_name != 'pull_request' }}
-    needs: test
+    if: ${{ always() && !cancelled() && github.event_name != 'pull_request' && needs.build-image.result == 'success' && (needs.test.result == 'success' || needs.test.result == 'skipped') }}
+    needs: [changes, build-image, test]
     runs-on: ubuntu-latest
+    timeout-minutes: 180
     env:
       IMAGE_PULL_POLICY: missing
     steps:
@@ -266,10 +303,10 @@ jobs:
         uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0
         with:
           shared-key: "rust-howto-shared"
-          cache-targets: "false"
+          cache-targets: "true"
           save-if: ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}',
             github.event.repository.default_branch) }} # Only restore in the final build stage
-          key: config-v1-${{ github.workflow }}-${{ github.job }}-${{ runner.arch }}-${{
+          key: runtime-v2-${{ github.workflow }}-${{ runner.arch }}-${{
             hashFiles('**/.cargo/config.toml', '**/rust-toolchain.toml', '**/Cargo.lock') }}
           cache-directories: ${{ github.workspace }}/.ci/build/rust_howto/main
           workspaces: "bk/crates -> ${{ github.workspace }}/.ci/target/rust_howto/main\nlater/crates -> ${{ github.workspace
@@ -283,9 +320,14 @@ jobs:
       - name: Build the book
         run: |
           docker compose -f .devcontainer/compose.yaml -f .devcontainer/compose.ci.yaml run --rm \
+            -e VALIDATE_CODE="false" \
             -e SKIP_TESTS="true" \
             -e BUILD_PDF="${{ inputs.build_pdf || false }}" \
             rust-howto-book
+      - name: Restore cache ownership
+        if: always()
+        run: |
+          if [ -d .ci ]; then sudo chown -R "$(id -u):$(id -g)" .ci; fi
       - name: Upload artifacts
         # actions/upload-pages-artifact v5.0.0
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
@@ -306,6 +348,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    timeout-minutes: 180
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

@@ -7,7 +7,11 @@ on:
   push:
     branches: [develop]
     paths:
-      - "bk/**"
+      - "bk/crates/**"
+      - "bk/platform/**"
+      - "bk/scripts/**"
+      - "bk/justfile"
+      - "bk/book.toml"
       - ".devcontainer/**"
       - ".github/workflows/**"
       - ".github/actions/**"
@@ -19,7 +23,11 @@ on:
   pull_request:
     branches: [develop]
     paths:
-      - "bk/**"
+      - "bk/crates/**"
+      - "bk/platform/**"
+      - "bk/scripts/**"
+      - "bk/justfile"
+      - "bk/book.toml"
       - ".devcontainer/**"
       - ".github/workflows/**"
       - ".github/actions/**"
