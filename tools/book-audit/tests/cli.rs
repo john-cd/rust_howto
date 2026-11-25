@@ -41,13 +41,16 @@ fn visible_todos_command_reports_actionable_locations() {
         .expect("license should be written");
     fs::write(
         directory.path().join("bk/src/page.md"),
-        "# Page\nTODO remove this\n",
+        "~~~~\n~~~\nTODO example\n~~~~text\nTODO still in example\n~~~~\nTODO remove this\n````\n```\nTODO example\n````\nTODO visible\n",
     )
     .expect("the page should be written");
 
     let output = run(directory.path(), &["visible-todos"]);
     assert!(!output.status.success());
-    assert!(String::from_utf8_lossy(&output.stderr).contains("bk/src/page.md:2: visible TODO"));
+    let stderr = String::from_utf8_lossy(&output.stderr);
+    assert!(stderr.contains("bk/src/page.md:7: visible TODO"));
+    assert!(stderr.contains("bk/src/page.md:12: visible TODO"));
+    assert_eq!(stderr.matches("visible TODO:").count(), 2);
 }
 
 /// The search-index command accepts mdBook's JSON.parse wrapper and prints its index count.
