@@ -18,7 +18,7 @@ static TODO_PLACEHOLDER: LazyLock<Regex> = LazyLock::new(|| {
 
 /// Matches a Markdown code fence opener or closer.
 static FENCE: LazyLock<Regex> = LazyLock::new(|| {
-    Regex::new(r"^ {0,3}(`{3,}|~{3,})").expect("the Markdown fence regex is valid")
+    Regex::new("^ {0,3}(`{3,}|~{3,})").expect("the Markdown fence regex is valid")
 });
 
 /// Matches the repository-wide TODO review marker excluded from the scan.
@@ -126,7 +126,9 @@ fn visible_todo_lines(source: &str) -> Vec<(usize, String)> {
                 Some((opening_marker, opening_length))
                     if marker == opening_marker
                         && length >= opening_length
-                        && line[fence.end()..].trim_matches([' ', '\t']).is_empty() =>
+                        && line
+                            .get(fence.end()..)
+                            .is_some_and(|tail| tail.trim_matches([' ', '\t']).is_empty()) =>
                 {
                     open_fence = None;
                 }

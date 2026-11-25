@@ -157,7 +157,7 @@ fn has_posting(value: &Value, stem: &str, document_count: usize) -> bool {
         .is_some_and(|fields| {
             fields.values().any(|field| {
                 let node = stem.chars().fold(field.get("root"), |node, letter| {
-                    node.and_then(|node| node.get(letter.to_string()))
+                    node?.get(letter.to_string())
                 });
                 node.and_then(|node| node.get("docs"))
                     .and_then(Value::as_object)
