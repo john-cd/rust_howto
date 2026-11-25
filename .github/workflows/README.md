@@ -65,7 +65,8 @@ Unknown files, fixtures, manifests, toolchains and workflow changes retain full 
 The final Linux rendering job uses `VALIDATE_CODE=false`; this skips workspace audits, formatting,
 compilation, Clippy and tests already handled by the validation job. Book-specific audits and
 preprocessors still run. Runtime `/code/target` and `/code/build` are bind-mounted to the host
-cache; the final job restores the same cache identity. Validation cancels superseded runs,
+cache; the final job restores the same cache identity. Each CI image is tagged with its source commit
+so parallel validations cannot pull another run's source snapshot. Validation cancels superseded runs,
 while explicitly requested publication keeps the protected Pages concurrency group.
 
 Trusted Windows static checks and optional tools-workspace compilation can be run through

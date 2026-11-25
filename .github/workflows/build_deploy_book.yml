@@ -93,6 +93,8 @@ defaults:
 
 env:
   IMAGE_NAME: johncd/rust_howto_ci
+  # Parallel validation runs must never pull another commit's source-containing image.
+  IMAGE_VERSION: ${{ github.sha }}
 
   CODE_TARGET_ROOT: ${{ github.workspace }}/.ci/target
   CODE_BUILD_ROOT: ${{ github.workspace }}/.ci/build
