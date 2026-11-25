@@ -17,8 +17,6 @@ keywords = ["patterns", "cookbook", "howto", "how-to", "documentation", "Rust bi
 categories = ["cryptography::cryptocurrencies"]
 autolib = false
 
-# LATER
-
 [[example]]
 name = "cryptocurrencies"
 path = "examples/cryptocurrencies/main.rs"
