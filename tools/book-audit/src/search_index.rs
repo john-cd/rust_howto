@@ -65,6 +65,12 @@ pub fn check_search_index(book_root: &Path) -> anyhow::Result<SearchIndexReport>
         }
     }
     indexes.sort();
+    let entry = fs::read_to_string(html_root.join("index.html"))?;
+    let active = entry.lines().find_map(|line| {
+        let (_, value) = line.split_once("window.path_to_searchindex_js = ")?;
+        value.trim().strip_prefix('"')?.split('"').next()
+    });
+    indexes.retain(|path| path.file_name().and_then(|name| name.to_str()) == active);
     let mut report = SearchIndexReport {
         index_count: indexes.len(),
         findings: Vec::new(),
@@ -77,15 +83,21 @@ pub fn check_search_index(book_root: &Path) -> anyhow::Result<SearchIndexReport>
         return Ok(report);
     }
 
-    let mut search_index = String::new();
+    let mut searchable = [false; 2];
+    let mut hidden = false;
     let mut document_urls = Vec::new();
     for path in &indexes {
         let text = fs::read_to_string(path)
             .map_err(|error| anyhow::anyhow!("could not read {}: {error}", path.display()))?;
-        search_index.push_str(&text);
+
         match parse_index_json(&text) {
             Ok(value) => match value.get("doc_urls").and_then(Value::as_array) {
                 Some(urls) => {
+                    searchable[0] |= has_posting(&value, "serd", urls.len());
+                    searchable[1] |= has_posting(&value, "tokio", urls.len());
+                    hidden |= value
+                        .pointer("/index/documentStore/docs")
+                        .is_some_and(|docs| docs.to_string().contains("expecting"));
                     for (index, url) in urls.iter().enumerate() {
                         if let Some(url) = url.as_str() {
                             document_urls.push(url.to_owned());
@@ -111,7 +123,8 @@ pub fn check_search_index(book_root: &Path) -> anyhow::Result<SearchIndexReport>
 
     let missing_terms = ["serde", "tokio"]
         .into_iter()
-        .filter(|term| !search_index.contains(term))
+        .zip(searchable)
+        .filter_map(|(term, found)| (!found).then_some(term))
         .collect::<Vec<_>>();
     if !missing_terms.is_empty() {
         report.findings.push(format!(
@@ -119,7 +132,7 @@ pub fn check_search_index(book_root: &Path) -> anyhow::Result<SearchIndexReport>
             missing_terms.join(", ")
         ));
     }
-    if search_index.contains("expecting") {
+    if hidden {
         report
             .findings
             .push("Hidden content leaked into the search index: expecting".to_owned());
@@ -134,6 +147,26 @@ pub fn check_search_index(book_root: &Path) -> anyhow::Result<SearchIndexReport>
             .push("Draft or staging chapters leaked into the search index".to_owned());
     }
     Ok(report)
+}
+
+/// Checks for a term posting whose document ID exists in the URL list.
+fn has_posting(value: &Value, stem: &str, document_count: usize) -> bool {
+    value
+        .pointer("/index/index")
+        .and_then(Value::as_object)
+        .is_some_and(|fields| {
+            fields.values().any(|field| {
+                let node = stem.chars().fold(field.get("root"), |node, letter| {
+                    node.and_then(|node| node.get(letter.to_string()))
+                });
+                node.and_then(|node| node.get("docs"))
+                    .and_then(Value::as_object)
+                    .is_some_and(|docs| {
+                        docs.keys()
+                            .any(|id| id.parse::<usize>().is_ok_and(|id| id < document_count))
+                    })
+            })
+        })
 }
 
 /// Extracts a JSON index from mdBook's `JSON.parse('...')` wrapper or a raw JSON object.
@@ -200,6 +233,10 @@ mod tests {
         let index_dir = directory.path().join("book/html");
         fs::create_dir_all(&index_dir)?;
         fs::write(
+            index_dir.join("index.html"),
+            r#"window.path_to_searchindex_js = "searchindex-1.js";"#,
+        )?;
+        fs::write(
             index_dir.join("searchindex-1.js"),
             "window.search = Object.assign(window.search, JSON.parse('{\"doc_urls\":[\"chapter.html\",\"later/preview.html\"],\"body\":\"serde tokio\"}'));",
         )?;
@@ -226,6 +263,10 @@ mod tests {
         let directory = tempfile::tempdir()?;
         let index_dir = directory.path().join("book/html");
         fs::create_dir_all(&index_dir)?;
+        fs::write(
+            index_dir.join("index.html"),
+            r#"window.path_to_searchindex_js = "searchindex-1.js";"#,
+        )?;
         fs::write(
             index_dir.join("searchindex-1.js"),
             "window.search = Object.assign(window.search, JSON.parse('{\"doc_urls\":[broken],\"body\":\"serde tokio\"}'));",

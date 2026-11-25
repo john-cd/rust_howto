@@ -60,8 +60,21 @@ fn search_index_command_accepts_a_valid_generated_index() {
     let output = directory.path().join("bk/book/html");
     fs::create_dir_all(&output).expect("the HTML directory should be created");
     fs::write(
+        output.join("index.html"),
+        r#"window.path_to_searchindex_js = "searchindex-1.js";"#,
+    )
+    .expect("the page should be written");
+    let valid = r#"{"doc_urls":["chapter.html"],"index":{"index":{"body":{"root":{"s":{"e":{"r":{"d":{"docs":{"0":{"tf":1}}}}}},"t":{"o":{"k":{"i":{"o":{"docs":{"0":{"tf":1}}}}}}}}}}}}"#;
+    fs::write(output.join("searchindex-stale.js"), valid).expect("write stale index");
+    fs::write(
         output.join("searchindex-1.js"),
-        "window.search = Object.assign(window.search, JSON.parse('{\"doc_urls\":[\"chapter.html\"],\"body\":\"serde tokio\"}'));",
+        r#"{"doc_urls":["serde.html","tokio.html"]}"#,
+    )
+    .expect("write invalid active index");
+    assert!(!run(directory.path(), &["search-index"]).status.success());
+    fs::write(
+        output.join("searchindex-1.js"),
+        format!("window.search = Object.assign(window.search, JSON.parse('{valid}'));"),
     )
     .expect("the index should be written");
 
