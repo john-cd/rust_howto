@@ -64,7 +64,6 @@ gloo-net = "0.7.0"
 gloo-storage = "0.4.0"
 # Icon data from free icon libraries.
 icondata = { version = "0.7.0", default-features = false, features = ["lucide"] }
-# LATER add example?
 # Bindings for all JS global objects and functions in all JS environments like Node.js and browsers, built on `#[wasm_bindgen]` using the...
 js-sys = "0.3.107"
 # Leptos is a full-stack, isomorphic Rust web framework leveraging fine-grained reactivity to build declarative user interfaces.
