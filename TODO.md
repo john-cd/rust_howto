@@ -2,257 +2,38 @@
 
 # Task tracking
 
-Track implementation, acceptance criteria, and validation evidence in
-[GitHub Issues][issues]. Recheck the live issue before starting work.
+[Open GitHub issues][issues] track acceptance criteria, validation results, and blockers.
 
 <!-- recommended-issue-order:start -->
 
-## Current epics and work that can start
+## Open work
 
-Open each GitHub epic for its full subissue list, current blockers, and acceptance criteria.
-
-### Upstream waits and security remediation ([#2116](https://github.com/john-cd/rust_howto/issues/2116))
-
-- Check whether new upstream releases unblock any locked dependency paths. The ZIP, SQLite, and other compatibility upgrades remain gated by upstream releases. Direct example migrations are listed under code examples below.
-
-### Maintainer decisions ([#2215](https://github.com/john-cd/rust_howto/issues/2215))
-
-- Decide licensing and analytics policy ([#2408](https://github.com/john-cd/rust_howto/issues/2408), [#2409](https://github.com/john-cd/rust_howto/issues/2409)).
-- Decide external listings, NLP and DSL coverage, and first-edition PDF scope ([#2413](https://github.com/john-cd/rust_howto/issues/2413), [#2416](https://github.com/john-cd/rust_howto/issues/2416), [#2417](https://github.com/john-cd/rust_howto/issues/2417)).
-- Supply or defer the Chrome bookmarks export and choose reviewed drafts to promote ([#2415](https://github.com/john-cd/rust_howto/issues/2415), [#2414](https://github.com/john-cd/rust_howto/issues/2414)).
-
-### Human review ([#2216](https://github.com/john-cd/rust_howto/issues/2216))
-
-- Review the five priority chapters ([#2418](https://github.com/john-cd/rust_howto/issues/2418)) or one recipe group ([#2421](https://github.com/john-cd/rust_howto/issues/2421), [#2422](https://github.com/john-cd/rust_howto/issues/2422)).
-- Review repository tooling, workflows, scripts, and metadata ([#2420](https://github.com/john-cd/rust_howto/issues/2420)). Record editorial decisions in the issue and update review markers after the actual review.
-
-### Hardware, platform, and SDK validation ([#2240](https://github.com/john-cd/rust_howto/issues/2240))
-
-- With a desktop that has WebKitGTK, exercise the Wry IPC path ([#2213](https://github.com/john-cd/rust_howto/issues/2213)).
-- Select a board or emulator and prepare a bounded firmware run ([#2355](https://github.com/john-cd/rust_howto/issues/2355)). Physical evidence still needs the board, probe, or device.
-
-### Code examples and example fixes ([#2435](https://github.com/john-cd/rust_howto/issues/2435))
-
-- Prototype a client-only SurrealDB example and audit the resulting license graph ([#2282](https://github.com/john-cd/rust_howto/issues/2282)).
-
-### Infrastructure fixes and improvements ([#2437](https://github.com/john-cd/rust_howto/issues/2437))
-
-- Verify the build-only workflow, then coordinate the separate deployment run and record the Pages result ([#2207](https://github.com/john-cd/rust_howto/issues/2207)).
+| Area | Next action |
+| --- | --- |
+| [Dependency updates and advisories][deps] | Audit the [staging and platform ZIP exceptions][zip] against their current lockfiles. The [book ZIP alerts][book-zip] still depend on ggez. |
+| [Maintainer decisions][decisions] | Decide the [analytics policy][analytics] and [first-edition PDF requirements][edition]. The epic also tracks external listings, NLP and DSL coverage, bookmarks, and draft selection. |
+| [Human review][review] | Select a chapter or repository file group from the epic and record the editorial decision there. |
+| [Platform and hardware validation][hosts] | Run [Wasmer Singlepass on macOS][wasmer], verify [screen-reader and backend behavior][gui], or exercise the [firmware and physical-device examples][devices]. |
+| [Code examples][examples] | Compare the client-only and embedded [SurrealDB examples][surreal] and audit their locked license graphs. |
+| [PDF accessibility][pdf] | Verify [reading order, multi-page tables, and keyboard link access][reading] in a current full-book PDF. |
+| [Book link checking][linkcheck] | Identify links that depend on parent-directory traversal and verify the strict local check with traversal disabled. |
 
 <!-- recommended-issue-order:end -->
 
-## Publication fixes, November 18, 2026
-
-Implemented issues [#2382](https://github.com/john-cd/rust_howto/issues/2382) through
-[#2396](https://github.com/john-cd/rust_howto/issues/2396) in focused local commits.
-The [owner review][nov18-review] records the original evidence. GitHub remains
-the tracker for publication and any follow-up.
-
-- The fresh mdBook HTML render contains 488 HTML files. The internal-link, word-index, search, and Playground checks passed.
-- All 60 focused example tests, targeted strict Clippy, and the pointer-provenance Miri test passed.
-- The example-integrity release command passed. The index generator fixture covers standalone and nested recipes.
-- Nightly format checks passed in all 77 book packages when run individually. The single book-wide Rustfmt invocation hit Windows error 206.
-- Workspace lint checks passed. The book needed a run with the compiler wrappers disabled to work around the Windows command-length failure in sccache. The strict dependency reference check also passed.
-
-## Publication review, November 18, 2026
-
-The book needs another editorial pass before publication. The [review on #2216][nov18-review] records the
-chapter assessment and a crate-by-crate comparison for all 61 crates.io categories in the published sidebar.
-The audit used local develop revision `5ca1a6f3d`. Its 471 TOC entries rendered successfully with mdBook 0.5.4.
-All-chapters, word-index and search-index checks passed. Of the 336 pages with Rust code, 35 had no
-incoming link from the example index. Some are overview pages that share recipes.
-
-| Priority | Reader-facing work |
-| --- | --- |
-| P2 | Correct the [shared-reference call-trait rule](https://github.com/john-cd/rust_howto/issues/2394) in Closures. |
-| P2 | Repair [stale draft links][nov18-links] and [missing profiling redirects][nov18-redirects]. |
-| P2 | Reconcile [recipe and crate indices][nov18-indices] and [Playground eligibility][nov18-play]. |
-| P2 | Fix the [benchmark correctness check][nov18-bench], [broadcast task completion][nov18-broadcast] and [standalone Moka setup][nov18-cache]. |
-| P2 | Make the [example integrity report][nov18-integrity] distinguish command walkthroughs, retired roots and genuinely untested Rust. |
-| P3 | Improve [sidebar and related-topic navigation][nov18-nav] and the [worked A* explanation][nov18-astar]. |
-| P3 | Add recipes for [borrowed and owned JSON input][nov18-serde] and [streaming Zstandard][nov18-zstd]. |
-
-Of 4,270 unique HTTPS destinations in rendered chapter links, 2,366 returned success and 11 returned 404.
-The other 1,893 were inconclusive, including requests deferred after host rate limits.
-[External link findings and verified replacements](https://github.com/john-cd/rust_howto/issues/2396) supplement the stale draft links above.
-
-The locked, offline Windows example targets for caching, async channels and graph algorithms passed 50 tests.
-Removing both sorts from a temporary copy of the benchmark still passed its checksum test. Workspace tests alone
-also miss setup instructions that omit a required feature. The full example workspace, other platforms and PDF
-were outside this audit. The November 17 snapshot is historical. #2364 and #2365 have since closed.
-
-[nov18-review]: https://github.com/john-cd/rust_howto/issues/2216#issuecomment-6994339621
-[nov18-links]: https://github.com/john-cd/rust_howto/issues/2389
-[nov18-redirects]: https://github.com/john-cd/rust_howto/issues/2390
-[nov18-indices]: https://github.com/john-cd/rust_howto/issues/2387
-[nov18-play]: https://github.com/john-cd/rust_howto/issues/2393
-[nov18-bench]: https://github.com/john-cd/rust_howto/issues/2382
-[nov18-broadcast]: https://github.com/john-cd/rust_howto/issues/2383
-[nov18-cache]: https://github.com/john-cd/rust_howto/issues/2384
-[nov18-integrity]: https://github.com/john-cd/rust_howto/issues/2392
-[nov18-nav]: https://github.com/john-cd/rust_howto/issues/2388
-[nov18-astar]: https://github.com/john-cd/rust_howto/issues/2385
-[nov18-serde]: https://github.com/john-cd/rust_howto/issues/2386
-[nov18-zstd]: https://github.com/john-cd/rust_howto/issues/2391
-
-## Historical review, November 17, 2026
-
-This snapshot records the findings and priorities at the time of the review. See the current epics above for active work.
-
-### Findings at the time
-
-- **P2 — [#2364](https://github.com/john-cd/rust_howto/issues/2364):** Reject missing, empty,
-  and incomplete rendered output in the all-chapters release check. Missing and empty
-  directories currently return success.
-- **P2 — [#2365](https://github.com/john-cd/rust_howto/issues/2365):** Keep Windows non-PDF
-  builds usable when the optional Pandoc backend is installed. The current non-PDF route
-  still invokes it and fails with Windows error 206 after HTML/linkcheck succeeds.
-- Related tooling: **P1** [book_tooling#89](https://github.com/john-cd/book_tooling/issues/89)
-  tracks deletion of used Unicode reference definitions; **P2**
-  [mdbook-utils#278](https://github.com/john-cd/mdbook-utils/issues/278) tracks invalid extracted
-  Rust from hidden hash markers.
-
-### Validation and owner follow-ups
-
-- [#2207][i2207] tracks the remaining manual `build_deploy_book.yml` dispatch with deployment
-  disabled and then enabled, plus the Pages result. The hosted Linux, Windows, and macOS checks
-  passed on PR #2401's tested tree; the post-merge macOS and FreeBSD advisory run passed, and
-  Book Tooling CI plus mdbook-utils CI and Pages runs also pass. PR #2303 is closed and unmerged.
-- [#2116][i2116], [#2247](https://github.com/john-cd/rust_howto/issues/2247), and
-  [#2245](https://github.com/john-cd/rust_howto/issues/2245) own dependency/advisory follow-ups;
-  [#2282](https://github.com/john-cd/rust_howto/issues/2282) and
-  [#2283](https://github.com/john-cd/rust_howto/issues/2283) own license metadata decisions.
-- [#2216][i2216] and [#2215][i2215] retain human editorial and maintainer decisions.
-  Automated review does not replace those decisions or date human review markers.
-- [#2240][i2240] and [#2213][i2213] retain host, hardware, desktop, and accessibility
-  acceptance work.
-- The other chat owns the `later/` migration plan and its migration/readiness issues.
-  This review does not change that plan or duplicate its checklist.
-
-The fresh published HTML contains 397 HTML files and passes the current all-chapters and
-word-index checks. The full mdBook command failed after HTML/linkcheck, in the installed
-Pandoc backend (Windows error 206); it is not a successful full book build. The search index
-is about 18.97 MB uncompressed; browser startup measurements remain unverified. The tooling
-repositories pass 628 tests combined and strict all-target Clippy. Full book-example Cargo
-tests, external links, PDF, deployment, and native Linux/macOS checks were not run here.
-
-## Historical book review, November 16, 2026
-
-Reviewed the committed `develop` revision [`31b76b925`][baseline], which
-matched `origin/develop`. The inventory covers 133 published, 245 draft, and
-184 future table-of-contents entries. Spot checks focused on foundational
-Rust semantics, the first promoted recipes, and the next migration candidates.
-
-- [#2273][links] · The full local link-check build passed on `75c31d963`.
-  The release check now covers all published HTML pages, including the root
-  and legacy introduction URLs. It passes on the current render and detects
-  unresolved references and broken links in the original audit render.
-- [#2274][index] · Verified all word-index fragments in the current render.
-  The release check in `465832a57` catches all 14 failures from the old render.
-  The check is integrated on `develop`.
-- [#2275][run] · Audited 479 rendered Rust fences against the Playground
-  crate list and local execution requirements. Moved 46 workspace-only
-  blocks and excerpts out of the Playground and documented local commands.
-  The final render has 329 runnable blocks, down from 375. The Slices and
-  Ownership controls are unchanged, and the Slices book doctests passed.
-  Offline hashing, cache, number-formatting, and plugin tests passed.
-  The remaining Windows Cargo sweep passed on `ad96171a1` with Rust 1.100.0
-  on `x86_64-pc-windows-msvc`. The locked, offline run covered 25 example
-  targets with 212 tests passed, zero failures, and one existing multimap
-  test ignored because it requires external resources.
-- [#2276][owners] · Corrected `Clone`, `Copy`, reborrowing, and `Box`
-  guarantees in `d31ce9992`. All 17 ownership example tests and strict
-  Clippy passed.
-- [#2277][life] · Corrected common lifetime selection, nested references,
-  and static bounds in `d6ed36b28`. All 22 lifetime example tests and
-  strict Clippy passed. The new negative example produced `E0597`.
-- The duplicate future No Allocation preview was removed under
-  [#2361](https://github.com/john-cd/rust_howto/issues/2361). Platform and ML
-  migration readiness is recorded in [later/PLATFORM_READINESS.md](later/PLATFORM_READINESS.md).
-- **P2** [#2279][ranges] · The draft HTTP range recipe can combine chunks from
-  different versions and leave a partial destination.
-
-The published and draft HTML builds completed with mdBook 0.5.4. The
-published link checker reported 224 potential incomplete links, a mix of
-reader-facing defects and literal syntax examples. The future render reported
-a missing include even though the chapter remained in its table of contents.
-Rust 1.100 Windows probes confirmed shared allocation after `Arc::clone`,
-boxed-slice pointer metadata, a valid mutable reborrow, and a safe mutation
-through `&mut str`. Locked offline tests passed for WebSockets,
-No Allocation, and Unicode (four tests). Full workspace tests and external
-links were outside this review.
-
-## Historical publication follow-ups
-
-The former draft book is retired under [#2349](https://github.com/john-cd/rust_howto/issues/2349). Its chapter migrations are complete; published chapters live in `bk/src`, and unpublished material stays in `later/src`. The historical migration and curation records remain in Git history. Publication alone does not close an issue's remaining runtime or acceptance checks.
-
-- Verify any remaining acceptance criteria for WebSockets [#2250][i2250], Number Formatting [#2251][i2251], Images [#2252][i2252], `no_std` [#2253][i2253], and No Allocation [#2269][i2269].
-- Continue the focused workflow work tracked by Tokio cancellation [#2257][i2257], the loopback HTTP client [#2280][http], Axum updates [#2259][i2259], bounded retries/backpressure [#2260][i2260], and Unicode [#2278][unicode]. Recheck each live issue and current published content before duplicating work.
-- Review future content through macro diagnostics [#2281][macro], [Wasm basics][wasm], WIT guest/host work [#2105][i2105], and local Lambda invocation [#2267][i2267]. Validate the documented target and host/browser behavior before promotion.
-
-For each promotion, move the chosen prose and references with its runnable example, update the published contents and indexes, and repair staging links. Run targeted locked tests, render the affected books, and record validation on the owning issue. Preserve human review markers and record review decisions on [#2216][i2216].
-
-## Historical coverage follow-ups
-
-The earlier [coverage audit #2249][i2249] and the [Clippy chapter #2248][i2248]
-are complete. Pointer provenance [#2270][i2270], CI benchmarking
-[#2271][i2271], and panic handling [#2272][i2272] are published.
-
-- **P2** [#2254][i2254] · Document version-dependent language and standard
-  library changes against the Rust 1.98.1 baseline.
-- **P2** [#2255][i2255] · Update Cargo dependency and publishing guidance.
-- **P2** [#2256][i2256] · Publish a measured Cargo timings workflow.
-- **P2** [#2258][i2258] · Show typed library errors through a CLI boundary.
-- **P3** [#2261][i2261] · Compare explicit and distributed registration.
-- **P3** [#2262][i2262] · Explain floating-point summation and SIMD trade-offs.
-- **P3** [#2263][i2263] · Show Jiff DST ambiguity and nonexistent times.
-- **P3** [#2265][i2265] · Show a surviving mutation and the assertion that
-  detects it.
-- **P3** [#2268][i2268] · Test a local Iroh peer round trip and failure cases.
-
-[issues]: https://github.com/john-cd/rust_howto/issues
-[baseline]: https://github.com/john-cd/rust_howto/tree/31b76b925db6aaff1d57de64d01588d77fdd2655
-[wasm]: bk/src/categories/wasm/wasm_basics.md
-[i2105]: https://github.com/john-cd/rust_howto/issues/2105
-[i2116]: https://github.com/john-cd/rust_howto/issues/2116
-[i2202]: https://github.com/john-cd/rust_howto/issues/2202
-[i2207]: https://github.com/john-cd/rust_howto/issues/2207
-[i2211]: https://github.com/john-cd/rust_howto/issues/2211
-[i2213]: https://github.com/john-cd/rust_howto/issues/2213
-[i2214]: https://github.com/john-cd/rust_howto/issues/2214
-[i2215]: https://github.com/john-cd/rust_howto/issues/2215
-[i2216]: https://github.com/john-cd/rust_howto/issues/2216
-[i2240]: https://github.com/john-cd/rust_howto/issues/2240
-[i2248]: https://github.com/john-cd/rust_howto/issues/2248
-[i2249]: https://github.com/john-cd/rust_howto/issues/2249
-[i2250]: https://github.com/john-cd/rust_howto/issues/2250
-[i2251]: https://github.com/john-cd/rust_howto/issues/2251
-[i2252]: https://github.com/john-cd/rust_howto/issues/2252
-[i2253]: https://github.com/john-cd/rust_howto/issues/2253
-[i2254]: https://github.com/john-cd/rust_howto/issues/2254
-[i2255]: https://github.com/john-cd/rust_howto/issues/2255
-[i2256]: https://github.com/john-cd/rust_howto/issues/2256
-[i2257]: https://github.com/john-cd/rust_howto/issues/2257
-[i2258]: https://github.com/john-cd/rust_howto/issues/2258
-[i2259]: https://github.com/john-cd/rust_howto/issues/2259
-[i2260]: https://github.com/john-cd/rust_howto/issues/2260
-[i2261]: https://github.com/john-cd/rust_howto/issues/2261
-[i2262]: https://github.com/john-cd/rust_howto/issues/2262
-[i2263]: https://github.com/john-cd/rust_howto/issues/2263
-[i2265]: https://github.com/john-cd/rust_howto/issues/2265
-[i2266]: https://github.com/john-cd/rust_howto/issues/2266
-[i2267]: https://github.com/john-cd/rust_howto/issues/2267
-[i2268]: https://github.com/john-cd/rust_howto/issues/2268
-[i2269]: https://github.com/john-cd/rust_howto/issues/2269
-[i2270]: https://github.com/john-cd/rust_howto/issues/2270
-[i2271]: https://github.com/john-cd/rust_howto/issues/2271
-[i2272]: https://github.com/john-cd/rust_howto/issues/2272
-[links]: https://github.com/john-cd/rust_howto/issues/2273
-[index]: https://github.com/john-cd/rust_howto/issues/2274
-[run]: https://github.com/john-cd/rust_howto/issues/2275
-[owners]: https://github.com/john-cd/rust_howto/issues/2276
-[life]: https://github.com/john-cd/rust_howto/issues/2277
-[unicode]: https://github.com/john-cd/rust_howto/issues/2278
-[ranges]: https://github.com/john-cd/rust_howto/issues/2279
-[http]: https://github.com/john-cd/rust_howto/issues/2280
-[macro]: https://github.com/john-cd/rust_howto/issues/2281
+[issues]: https://github.com/john-cd/rust_howto/issues?q=is%3Aissue+is%3Aopen
+[deps]: https://github.com/john-cd/rust_howto/issues/2116
+[zip]: https://github.com/john-cd/rust_howto/issues/2434
+[book-zip]: https://github.com/john-cd/rust_howto/issues/2402
+[decisions]: https://github.com/john-cd/rust_howto/issues/2215
+[analytics]: https://github.com/john-cd/rust_howto/issues/2409
+[edition]: https://github.com/john-cd/rust_howto/issues/2417
+[review]: https://github.com/john-cd/rust_howto/issues/2216
+[hosts]: https://github.com/john-cd/rust_howto/issues/2240
+[wasmer]: https://github.com/john-cd/rust_howto/issues/2431
+[gui]: https://github.com/john-cd/rust_howto/issues/2428
+[devices]: https://github.com/john-cd/rust_howto/issues/2355
+[examples]: https://github.com/john-cd/rust_howto/issues/2435
+[surreal]: https://github.com/john-cd/rust_howto/issues/2282
+[pdf]: https://github.com/john-cd/rust_howto/issues/2444
+[reading]: https://github.com/john-cd/rust_howto/issues/2454
+[linkcheck]: https://github.com/john-cd/rust_howto/issues/2559
