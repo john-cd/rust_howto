@@ -1,3 +1,20 @@
+# Workflow contract documentation (maintained with the implementation).
+# Workflow contract: rust_howto / Check native platform examples (advisory).
+# Purpose: Compile, lint or test the Rust source for the scope selected by the commands below;
+# Validate the maintained source with the tools and commands listed in this job.
+# Execution: push, pull_request, workflow_dispatch. Trigger branches/paths below are the
+# authoritative input boundary.
+# Manual operation: use the Actions tab or gh workflow run; input defaults below apply unless
+# explicitly overridden.
+# Cost boundary: path filters avoid provisioning this workflow for unrelated changes; include shared
+# scripts, pins and manifests when its inputs change.
+# Run policy: newer runs replace obsolete validation in the same group.
+# Access: workflow token permissions are {"contents": "read"}; job-level overrides below own any
+# elevated access.
+# Maintenance: keep full-SHA action references/tool pins coordinated with Dependabot and the
+# repository configuration. See README.md in this directory for the job map and local validation.
+# End workflow contract documentation.
+
 # TODO Reviewed ??-??-2026.
 
 name: Check native platform examples (advisory)
@@ -42,6 +59,9 @@ env:
   CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
   CARGO_INCREMENTAL: "0"
 jobs:
+  # Job macos: Compile, lint or test the Rust source for the scope selected by the commands below.
+  # Keep compiler/profile/feature selections aligned so adjacent commands reuse outputs; retain real
+  # binary generation, doctests and distinct minimum-version checks.
   macos:
     name: macOS APIs and Objective-C (advisory)
     runs-on: macos-15
@@ -58,6 +78,8 @@ jobs:
           persist-credentials: false
       - name: Load pinned tool versions
         uses: ./.github/actions/load-pinned-versions
+      # Install the compiler/components required by this lane. Keep the stable, minimum-version and
+      # formatter toolchains distinct where their contracts differ.
       - name: Set up Rust
         uses: ./.github/actions/setup-rust
         with:
@@ -67,12 +89,16 @@ jobs:
             bk/crates -> ../../target/later-native
             bk/platform -> ../../target/later-native
           cache-key: native-macos
+      # Clippy performs compiler checking for these targets/features as well as linting. Keep a
+      # separate cargo check only when it covers a different compiler, target or feature set.
       - name: Lint native macOS APIs
         run: cargo clippy -p os_macos_apis --all-targets --locked -- --deny warnings
         working-directory: bk/crates
       - name: Test native macOS APIs
         run: cargo test -p os_macos_apis --all-targets --locked
         working-directory: bk/crates
+      # Clippy performs compiler checking for these targets/features as well as linting. Keep a
+      # separate cargo check only when it covers a different compiler, target or feature set.
       - name: Lint Objective-C integration
         run: cargo clippy -p development_tools_ffi --example objc --features objc --locked -- --deny warnings
         working-directory: bk/platform
@@ -80,6 +106,9 @@ jobs:
         run: cargo test -p development_tools_ffi --example objc --features objc --locked
         working-directory: bk/platform
 
+  # Job freebsd: Validate the maintained source with the tools and commands listed in this job.
+  # Keep compatible checks in the same job to reuse installed dependencies and build outputs;
+  # distinct OS/feature entries retain their behavior coverage.
   freebsd:
     name: FreeBSD APIs (advisory)
     runs-on: ubuntu-24.04

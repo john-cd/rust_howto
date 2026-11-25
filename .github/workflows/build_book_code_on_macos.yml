@@ -1,3 +1,19 @@
+# Workflow contract documentation (maintained with the implementation).
+# Workflow contract: rust_howto / Build book code on macOS.
+# Purpose: Compile, lint or test the Rust source for the scope selected by the commands below.
+# Execution: push, pull_request, workflow_dispatch. Trigger branches/paths below are the
+# authoritative input boundary.
+# Manual operation: use the Actions tab or gh workflow run; input defaults below apply unless
+# explicitly overridden.
+# Cost boundary: path filters avoid provisioning this workflow for unrelated changes; include shared
+# scripts, pins and manifests when its inputs change.
+# Run policy: newer runs replace obsolete validation in the same group.
+# Access: workflow token permissions are {"contents": "read"}; job-level overrides below own any
+# elevated access.
+# Maintenance: keep full-SHA action references/tool pins coordinated with Dependabot and the
+# repository configuration. See README.md in this directory for the job map and local validation.
+# End workflow contract documentation.
+
 # TODO Reviewed ??-??-2026.
 
 ## Build and test the book's Rust examples on a supported macOS runner.
@@ -58,6 +74,10 @@ defaults:
     shell: bash
 
 jobs:
+  # Job build-book-code-on-macos: Compile, lint or test the Rust source for the scope selected by
+  # the commands below.
+  # Keep compiler/profile/feature selections aligned so adjacent commands reuse outputs; retain real
+  # binary generation, doctests and distinct minimum-version checks.
   build-book-code-on-macos:
     name: Build book code on macOS
     runs-on: macos-15
@@ -73,6 +93,8 @@ jobs:
       - name: Load pinned tool versions
         uses: ./.github/actions/load-pinned-versions
 
+      # Install the compiler/components required by this lane. Keep the stable, minimum-version and
+      # formatter toolchains distinct where their contracts differ.
       - name: Set up Rust toolchains and cache
         uses: ./.github/actions/setup-rust
         with:
@@ -87,6 +109,8 @@ jobs:
       - name: Install Protocol Buffers compiler
         run: brew install protobuf ninja
 
+      # Install the tool versions consumed by the following checks. Prefer the existing prebuilt
+      # installer path to recompiling development tools on every fresh runner.
       - name: Install Nextest and cargo-deny
         # taiki-e/install-action v2.88.0
         uses: taiki-e/install-action@68a389c788b2cd04016ce8c80ee23b80d2ab3d68
@@ -105,14 +129,20 @@ jobs:
         run: cargo fetch
         working-directory: bk/crates
 
+      # Retain real code generation/linking for the requested build scope; a typecheck alone cannot
+      # prove linked binaries/examples can be produced.
       - name: Build
         run: cargo build --workspace --all-targets --locked --profile ci
         working-directory: bk/crates
 
+      # Clippy performs compiler checking for these targets/features as well as linting. Keep a
+      # separate cargo check only when it covers a different compiler, target or feature set.
       - name: Clippy
         run: cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
         working-directory: bk/crates
 
+      # Run compiled test binaries with the configured Nextest profile. Nextest does not run Rust
+      # doctests; retain the separate cargo test --doc step where present.
       - name: Run tests and fail on process leaks
         run: |
           cargo nextest run --config-file .config/nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar

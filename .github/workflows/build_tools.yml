@@ -1,3 +1,19 @@
+# Workflow contract documentation (maintained with the implementation).
+# Workflow contract: rust_howto / Build tools on Linux.
+# Purpose: Compile, lint or test the Rust source for the scope selected by the commands below.
+# Execution: push, pull_request, workflow_dispatch. Trigger branches/paths below are the
+# authoritative input boundary.
+# Manual operation: use the Actions tab or gh workflow run; input defaults below apply unless
+# explicitly overridden.
+# Cost boundary: path filters avoid provisioning this workflow for unrelated changes; include shared
+# scripts, pins and manifests when its inputs change.
+# Run policy: newer runs replace obsolete validation in the same group.
+# Access: workflow token permissions are {"contents": "read"}; job-level overrides below own any
+# elevated access.
+# Maintenance: keep full-SHA action references/tool pins coordinated with Dependabot and the
+# repository configuration. See README.md in this directory for the job map and local validation.
+# End workflow contract documentation.
+
 # TODO Reviewed ??-??-2026.
 
 ## Builds the `tools/` workspace inside the `local-tool-builder` Docker stage (Linux).
@@ -56,7 +72,11 @@ env:
   CARGO_BUILD_BUILD_DIR: ${{ github.workspace }}/.ci/build/rust_howto/main
   CARGO_INCREMENTAL: "0"
 jobs:
+  # Job build: Compile, lint or test the Rust source for the scope selected by the commands below.
+  # Keep compiler/profile/feature selections aligned so adjacent commands reuse outputs; retain real
+  # binary generation, doctests and distinct minimum-version checks.
   build:
+    timeout-minutes: 120
     runs-on: ubuntu-latest
     steps:
       - name: Code checkout (clones the Git repository)
@@ -85,6 +105,8 @@ jobs:
             --cache-to type=gha,mode=max,scope="$cache_scope" \
             --load .
 
+      # Clippy performs compiler checking for these targets/features as well as linting. Keep a
+      # separate cargo check only when it covers a different compiler, target or feature set.
       - name: Run tools tests inside container
         run: |
           # Keep the Rust image's PATH instead of replacing it with login profile values.

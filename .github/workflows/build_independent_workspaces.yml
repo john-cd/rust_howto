@@ -1,3 +1,19 @@
+# Workflow contract documentation (maintained with the implementation).
+# Workflow contract: rust_howto / Build independent workspaces on Linux.
+# Purpose: Compile, lint or test the Rust source for the scope selected by the commands below.
+# Execution: push, pull_request, workflow_dispatch. Trigger branches/paths below are the
+# authoritative input boundary.
+# Manual operation: use the Actions tab or gh workflow run; input defaults below apply unless
+# explicitly overridden.
+# Cost boundary: path filters avoid provisioning this workflow for unrelated changes; include shared
+# scripts, pins and manifests when its inputs change.
+# Run policy: newer runs replace obsolete validation in the same group.
+# Access: workflow token permissions are {"contents": "read"}; job-level overrides below own any
+# elevated access.
+# Maintenance: keep full-SHA action references/tool pins coordinated with Dependabot and the
+# repository configuration. See README.md in this directory for the job map and local validation.
+# End workflow contract documentation.
+
 # TODO Reviewed ??-??-2026.
 
 ## Formats, lints and tests the independent example workspaces (`xmpl` and `publish`) on Linux.
@@ -56,6 +72,12 @@ defaults:
     shell: bash
 
 jobs:
+  # Job independent-workspace: Compile, lint or test the Rust source for the scope selected by the
+  # commands below.
+  # Keep compiler/profile/feature selections aligned so adjacent commands reuse outputs; retain real
+  # binary generation, doctests and distinct minimum-version checks.
+  # Matrix entries are independent runners. Keep OS/toolchain/feature-specific tests; consolidate
+  # only checks whose inputs are identical.
   independent-workspace:
     name: ${{ matrix.workspace }}
     runs-on: ubuntu-24.04
@@ -77,6 +99,8 @@ jobs:
         uses: ./.github/actions/load-pinned-versions
 
       ## The toolchain input is the pinned stable version, which satisfies the declared MSRV (`rust-version`).
+      # Install the compiler/components required by this lane. Keep the stable, minimum-version and
+      # formatter toolchains distinct where their contracts differ.
       - name: Set up Rust toolchains and cache
         uses: ./.github/actions/setup-rust
         with:
@@ -109,6 +133,8 @@ jobs:
         run: cargo fetch --locked
         working-directory: ${{ matrix.workspace }}
 
+      # Clippy performs compiler checking for these targets/features as well as linting. Keep a
+      # separate cargo check only when it covers a different compiler, target or feature set.
       - name: Clippy
         run: cargo clippy --workspace --all-targets --locked -- --deny warnings
         working-directory: ${{ matrix.workspace }}
@@ -117,6 +143,8 @@ jobs:
         run: cargo test --workspace --all-targets --locked
         working-directory: ${{ matrix.workspace }}
 
+      # Execute documentation examples separately: passing unit/integration tests or Nextest does
+      # not establish doctest correctness.
       - name: Doctests
         if: ${{ matrix.doctests }}
         run: cargo test --workspace --doc --locked

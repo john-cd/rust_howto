@@ -1,3 +1,16 @@
+# Workflow contract documentation (maintained with the implementation).
+# Workflow contract: rust_howto / Cleanup GitHub Action caches.
+# Purpose: Validate the maintained source with the tools and commands listed in this job.
+# Execution: workflow_dispatch. Trigger branches/paths below are the authoritative input boundary.
+# Manual operation: use the Actions tab or gh workflow run; input defaults below apply unless
+# explicitly overridden.
+# Run policy: newer runs replace obsolete validation in the same group.
+# Access: workflow token permissions are {"actions": "write"}; job-level overrides below own any
+# elevated access.
+# Maintenance: keep full-SHA action references/tool pins coordinated with Dependabot and the
+# repository configuration. See README.md in this directory for the job map and local validation.
+# End workflow contract documentation.
+
 # TODO Reviewed ??-??-2026.
 
 name: Cleanup GitHub Action caches
@@ -7,8 +20,17 @@ on:
 permissions:
   actions: write
 
+# Serialize side effects; superseded validation may stop before spending more runner time.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
+  # Job cleanup: Validate the maintained source with the tools and commands listed in this job.
+  # Keep compatible checks in the same job to reuse installed dependencies and build outputs;
+  # distinct OS/feature entries retain their behavior coverage.
   cleanup:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
       - name: Cleanup

@@ -1,3 +1,21 @@
+# Workflow contract documentation (maintained with the implementation).
+# Workflow contract: rust_howto / Audit dependencies.
+# Purpose: Compile, lint or test the Rust source for the scope selected by the commands below;
+# Validate the maintained source with the tools and commands listed in this job; Validate the
+# maintained source with the tools and commands listed in this job.
+# Execution: push, pull_request, schedule, workflow_dispatch. Trigger branches/paths below are the
+# authoritative input boundary.
+# Manual operation: use the Actions tab or gh workflow run; input defaults below apply unless
+# explicitly overridden.
+# Cost boundary: path filters avoid provisioning this workflow for unrelated changes; include shared
+# scripts, pins and manifests when its inputs change.
+# Run policy: newer runs replace obsolete validation in the same group.
+# Access: workflow token permissions are {"contents": "read"}; job-level overrides below own any
+# elevated access.
+# Maintenance: keep full-SHA action references/tool pins coordinated with Dependabot and the
+# repository configuration. See README.md in this directory for the job map and local validation.
+# End workflow contract documentation.
+
 # TODO Reviewed ??-??-2026.
 
 ## Audits maintained Cargo dependency roots with `cargo deny` (advisories, licenses, bans and sources).
@@ -110,7 +128,12 @@ concurrency:
 
 jobs:
   ## Regression check: the trigger paths must cover every audited workspace.
+  # Job check-trigger-paths: Compile, lint or test the Rust source for the scope selected by the
+  # commands below.
+  # Keep compiler/profile/feature selections aligned so adjacent commands reuse outputs; retain real
+  # binary generation, doctests and distinct minimum-version checks.
   check-trigger-paths:
+    timeout-minutes: 120
     name: audit workflow trigger paths
     runs-on: ubuntu-24.04
     steps:
@@ -119,6 +142,8 @@ jobs:
         uses: ./.github/actions/checkout-book-tooling
         with:
           token: ${{ secrets.BOOK_TOOLING_TOKEN }}
+      # Install the compiler/components required by this lane. Keep the stable, minimum-version and
+      # formatter toolchains distinct where their contracts differ.
       - name: Set up Rust
         uses: ./.github/actions/setup-rust
         with:
@@ -129,7 +154,13 @@ jobs:
       - run: cargo run --manifest-path tools/Cargo.toml --locked -p repo-audit -- audit-workflow-paths
       - run: cargo test --manifest-path tools/Cargo.toml --locked -p repo-audit
 
+  # Job cargo-deny: Validate the maintained source with the tools and commands listed in this job.
+  # Keep compatible checks in the same job to reuse installed dependencies and build outputs;
+  # distinct OS/feature entries retain their behavior coverage.
+  # Matrix entries are independent runners. Keep OS/toolchain/feature-specific tests; consolidate
+  # only checks whose inputs are identical.
   cargo-deny:
+    timeout-minutes: 120
     name: cargo deny (${{ matrix.checks }})
     runs-on: ubuntu-24.04
     strategy:
@@ -151,7 +182,14 @@ jobs:
 
   ## Independent Cargo roots use the `later/crates` policy or reuse the book's policy.
   ## This broad matrix remains advisory; the primary book policy checks stay required.
+  # Job cargo-deny-other: Validate the maintained source with the tools and commands listed in this
+  # job.
+  # Keep compatible checks in the same job to reuse installed dependencies and build outputs;
+  # distinct OS/feature entries retain their behavior coverage.
+  # Matrix entries are independent runners. Keep OS/toolchain/feature-specific tests; consolidate
+  # only checks whose inputs are identical.
   cargo-deny-other:
+    timeout-minutes: 120
     name: cargo deny (${{ matrix.workspace }})
     runs-on: ubuntu-24.04
     strategy:

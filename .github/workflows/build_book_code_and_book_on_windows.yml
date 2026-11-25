@@ -1,3 +1,19 @@
+# Workflow contract documentation (maintained with the implementation).
+# Workflow contract: rust_howto / Build book code (and book) on Windows.
+# Purpose: Compile, lint or test the Rust source for the scope selected by the commands below.
+# Execution: push, pull_request, workflow_dispatch. Trigger branches/paths below are the
+# authoritative input boundary.
+# Manual operation: use the Actions tab or gh workflow run; input defaults below apply unless
+# explicitly overridden.
+# Cost boundary: path filters avoid provisioning this workflow for unrelated changes; include shared
+# scripts, pins and manifests when its inputs change.
+# Run policy: newer runs replace obsolete validation in the same group.
+# Access: workflow token permissions are {"contents": "read"}; job-level overrides below own any
+# elevated access.
+# Maintenance: keep full-SHA action references/tool pins coordinated with Dependabot and the
+# repository configuration. See README.md in this directory for the job map and local validation.
+# End workflow contract documentation.
+
 # TODO Reviewed ??-??-2026.
 
 ## Builds and tests the book code and the `tools/` workspace, and renders the book, natively on Windows.
@@ -73,7 +89,12 @@ defaults:
 
 ## See `ci.sh` for equivalent steps when using Docker
 jobs:
+  # Job build-book-code-on-windows: Compile, lint or test the Rust source for the scope selected by
+  # the commands below.
+  # Keep compiler/profile/feature selections aligned so adjacent commands reuse outputs; retain real
+  # binary generation, doctests and distinct minimum-version checks.
   build-book-code-on-windows:
+    timeout-minutes: 120
     name: Build book code on Windows
     runs-on: windows-2025
     steps:
@@ -90,6 +111,8 @@ jobs:
       - name: Load pinned tool versions
         uses: ./.github/actions/load-pinned-versions
 
+      # Export trusted step outputs for later steps in this job. GITHUB_ENV requires assignments or
+      # its explicit multiline syntax; comments in pin files are not assignments.
       - name: Install OpenSSL for Vcpkg
         shell: pwsh
         run: |
@@ -102,6 +125,8 @@ jobs:
           Add-Content -LiteralPath $env:GITHUB_ENV -Value "VCPKGRS_TRIPLET=$env:VCPKGRS_TRIPLET" -Encoding utf8
           vcpkg install "openssl:$($env:VCPKGRS_TRIPLET)"
 
+      # Install the compiler/components required by this lane. Keep the stable, minimum-version and
+      # formatter toolchains distinct where their contracts differ.
       - name: Set up Rust (pinned stable + nightly rustfmt, cached)
         uses: ./.github/actions/setup-rust
         with:
@@ -133,6 +158,8 @@ jobs:
           cargo +1.98.1 check --workspace --all-targets --locked
         working-directory: bk/crates
 
+      # Install the tool versions consumed by the following checks. Prefer the existing prebuilt
+      # installer path to recompiling development tools on every fresh runner.
       - name: Install mdBook, mdBook linkcheck, Nextest, Just and cargo-deny (prebuilt binaries)
         # taiki-e/install-action v2.88.0
         uses: taiki-e/install-action@68a389c788b2cd04016ce8c80ee23b80d2ab3d68
@@ -169,20 +196,28 @@ jobs:
         run: cargo fetch
         working-directory: bk/crates
 
+      # Retain real code generation/linking for the requested build scope; a typecheck alone cannot
+      # prove linked binaries/examples can be produced.
       - name: Build
         run: cargo build --workspace --all-targets --locked --profile ci
         working-directory: bk/crates
 
+      # Clippy performs compiler checking for these targets/features as well as linting. Keep a
+      # separate cargo check only when it covers a different compiler, target or feature set.
       - name: Clippy
         run: cargo clippy --workspace --all-targets --locked --profile ci -- --deny warnings
         working-directory: bk/crates
 
+      # Run compiled test binaries with the configured Nextest profile. Nextest does not run Rust
+      # doctests; retain the separate cargo test --doc step where present.
       - name: Run tests and fail on process leaks
         run: |
           cargo nextest run --config-file .config/nextest.toml --workspace --all-targets --locked --cargo-profile ci --profile ci --hide-progress-bar
           cargo test --workspace --doc --locked --profile ci -- --show-output
         working-directory: bk/crates
 
+      # Clippy performs compiler checking for these targets/features as well as linting. Keep a
+      # separate cargo check only when it covers a different compiler, target or feature set.
       - name: Test examples requiring Rust 1.100
         working-directory: bk/crates/rust_1_100
         run: |
@@ -194,6 +229,8 @@ jobs:
         run: cargo +"$RUSTFMT_TOOLCHAIN" build --bins --locked --release -Z unstable-options --artifact-dir "../bin"
         working-directory: tools
 
+      # Clippy performs compiler checking for these targets/features as well as linting. Keep a
+      # separate cargo check only when it covers a different compiler, target or feature set.
       - name: Format, lint, build, and test helper workspace
         run: |
           cargo +"$RUSTFMT_TOOLCHAIN" fmt --all --check
