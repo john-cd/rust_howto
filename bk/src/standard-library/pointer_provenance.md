@@ -8,7 +8,7 @@ A pointer carries more than an address: it also has provenance that determines w
 {{#include ../../crates/standard_library/examples/pointer_provenance.rs:example}}
 ```
 
-Run `cargo test -p standard_library --example pointer_provenance` from `bk/crates`. With the Miri component installed on a compatible nightly toolchain, run `cargo +nightly miri test -p standard_library --example pointer_provenance` from the same directory.
+Run `cargo test -p standard_library --example pointer_provenance` from `bk/crates`. With the Miri component installed on a compatible nightly toolchain, run `cargo +nightly-2026-11-16 miri test -p standard_library --example pointer_provenance` from the same directory.
 
 [`addr` and `with_addr`](https://doc.rust-lang.org/std/primitive.pointer.html#method.with_addr) keep the new pointer tied to the original pointer's allocation. An integer address alone does not establish a valid pointer. Casting an arbitrary integer to a raw pointer does not prove that it is aligned, initialized, in bounds, or still live. Prefer a safe slice or reference whenever the API allows it. A real foreign API must document ownership, lifetime, nullability, and aliasing separately.
 

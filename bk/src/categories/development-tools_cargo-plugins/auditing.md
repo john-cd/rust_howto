@@ -100,7 +100,7 @@ cargo install --locked cargo-machete
 cargo machete
 
 cargo install --locked cargo-udeps
-cargo +nightly udeps
+cargo +nightly-2026-11-16 udeps
 ```
 
 These tools differ in maintenance, scope, and toolchain requirements. Check their upstream releases and issue activity before adopting one. `cargo-crev` identifies itself as work in progress, and `cargo-udeps` requires nightly to run.

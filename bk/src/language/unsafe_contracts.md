@@ -46,7 +46,7 @@ From `bk/crates`, use a normal test and then run it under Miri with a compatible
 
 ```console
 cargo test --locked -p standard_library --example pointer_provenance
-cargo +nightly miri test --locked -p standard_library --example pointer_provenance
+cargo +nightly-2026-11-16 miri test --locked -p standard_library --example pointer_provenance
 ```
 
 The fixture covers empty, short, and readable slices. Miri checks the executed

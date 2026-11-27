@@ -6,7 +6,7 @@ Scripting in Rust has two distinct forms: running Rust source as a lightweight s
 
 ## Run Rust Source as a Script
 
-Cargo's single-file script support uses frontmatter and is currently an unstable nightly feature. Its command-line form is `cargo +nightly -Zscript script.rs`; check the [Cargo unstable feature documentation][cargo-script-nightly] before relying on it. [`rust-script`][c~rust-script~repo]↗{{hi:rust-script}} is another script runner.
+Cargo's single-file script support uses frontmatter and is currently an unstable nightly feature. Its command-line form is `cargo +nightly-2026-11-16 -Zscript script.rs`; check the [Cargo unstable feature documentation][cargo-script-nightly] before relying on it. [`rust-script`][c~rust-script~repo]↗{{hi:rust-script}} is another script runner.
 
 Save the example as `config_path.rs`. The `---cargo` block declares the script's dependency, and Clap parses `--config` as a path. The script prints the selected path. The first invocation resolves and builds the dependencies. Run without `--config` to use the default, `settings.toml`.
 
@@ -15,7 +15,7 @@ Save the example as `config_path.rs`. The `---cargo` block declares the script's
 ```
 
 ```sh
-cargo +nightly -Zscript config_path.rs --config local.toml
+cargo +nightly-2026-11-16 -Zscript config_path.rs --config local.toml
 ```
 
 The command prints `local.toml`. Use a regular Cargo package when you need a checked-in lockfile and a stable-toolchain workflow.

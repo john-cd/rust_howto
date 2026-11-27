@@ -278,7 +278,7 @@ mod tests {
 }
 // Miri: the `unsafe` code above relies on the raw `ArcInner` pointer staying
 // valid until the strong count reaches zero, then being reclaimed exactly
-// once. From `bk/crates`, run `cargo +nightly miri test -p concurrency
+// once. From `bk/crates`, run `cargo +nightly-2026-11-16 miri test -p concurrency
 // --example send_sync final_owner_drops_value_once_on_another_thread`. Miri can
 // detect invalid pointer use and leaks in the executions it explores. Its weak-memory\n// emulation
 // also covers some ordering behaviors.

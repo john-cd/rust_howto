@@ -4,6 +4,8 @@
 
 This standalone project uses Rust-GPU 0.11.0 on its pinned nightly, `nightly-2026-08-15`. It needs a C++ toolchain to compile the bundled SPIR-V Tools and a Vulkan driver with graphics support for the rendering test. The build script compiles the `no_std` shader, validates it for Vulkan 1.1, and embeds the resulting SPIR-V in the wgpu host binary.
 
+The SPIR-V backend uses Rust compiler internals, so update the compiler pin alongside a compatible Rust-GPU release. See the [Rust-GPU 0.11.0 toolchain](https://github.com/Rust-GPU/rust-gpu/blob/v0.11.0/rust-toolchain.toml).
+
 From the repository root:
 
 ```console

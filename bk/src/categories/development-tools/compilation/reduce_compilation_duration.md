@@ -51,7 +51,7 @@ Remove unused dependencies and disable unneeded optional features when their beh
 
 ```bash
 cargo install cargo-udeps --locked
-cargo +nightly udeps
+cargo +nightly-2026-11-16 udeps
 ```
 
 ## Compiler-Level Optimizations {#compiler-level-optimizations .skip}
@@ -102,7 +102,7 @@ The Cranelift backend can generate development code faster than LLVM on supporte
 
 ```bash
 rustup component add rustc-codegen-cranelift-preview --toolchain nightly
-cargo +nightly build -Z codegen-backend
+cargo +nightly-2026-11-16 build -Z codegen-backend
 ```
 
 ```toml
@@ -124,7 +124,7 @@ The nightly `-Z threads` option enables parallel frontend work. Start with a mod
 rustflags = ["-Z", "threads=8"]
 ```
 
-Run this configuration with `cargo +nightly build`. Do not add `-Z` flags to a stable toolchain's shared configuration.
+Run this configuration with `cargo +nightly-2026-11-16 build`. Do not add `-Z` flags to a stable toolchain's shared configuration.
 
 ## Build Machine Hardware Considerations {#build-machine-hardware-considerations .skip}
 

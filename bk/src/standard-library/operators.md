@@ -22,7 +22,7 @@ For example, to overload the `+` operator for a custom type, you would implement
 
 ## Add Function-like Behavior to a Custom Type {#function-like-behavior}
 
-The `std::ops` module also provides traits for function-like / closure-like behavior: `Fn`, `FnMut`, and `FnOnce`. You can make your own types callable like functions by implementing these traits. This is _unstable_ and requires nightly Rust. The example requires nightly Rust. Save the complete block as `callable.rs` and compile it with `rustc +nightly callable.rs`. The source file also contains tests. From the repository root, compile those with `rustc +nightly --edition 2024 --test bk/crates/standard_library/examples/ops/callable.rs` and run the resulting test executable.
+The `std::ops` module also provides traits for function-like / closure-like behavior: `Fn`, `FnMut`, and `FnOnce`. You can make your own types callable like functions by implementing these traits. This is _unstable_ and requires nightly Rust. The example requires nightly Rust. Save the complete block as `callable.rs` and compile it with `rustc +nightly-2026-11-16 callable.rs`. The source file also contains tests. From the repository root, compile those with `rustc +nightly-2026-11-16 --edition 2024 --test bk/crates/standard_library/examples/ops/callable.rs` and run the resulting test executable.
 
 ```rust,ignore
 {{#include ../../crates/standard_library/examples/ops/callable.rs:example}}

@@ -10,7 +10,8 @@ Keep this file, README, contributor guidance, and configuration comments synchro
 
 1. Share LF/UTF-8 editing defaults and language formatting conventions.
    Markdownlint enforces compact table spacing. dprint preserves table layout so the checks agree.
-2. Pin nightly Rustfmt to `nightly-2026-11-11` and align lint baselines while preserving stricter rules, domain limits, and teaching examples.
+2. Pin nightly Rustfmt to `nightly-2026-11-16` and align lint baselines while preserving stricter rules, domain limits, and teaching examples.
+   A dated nightly keeps Rustfmt output consistent across developer machines and CI as the nightly channel moves. When bumping it, update the formatter defaults and run the repository's formatting check with the new toolchain.
 3. Enumerate maintained dependency roots and use predictable monthly grouped updates.
 4. Isolate checkout outputs, align dependency compiler flags, and make CI caches configuration-aware.
 5. Validate format/lint and representative builds; measure cold/warm time and output size before

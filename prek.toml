@@ -39,7 +39,7 @@ hooks = [
 [[repos]]
 repo = "local"
 hooks = [
-  { id = "format-rust-code", name = "Format staged Rust files", entry = "rustfmt +nightly-2026-11-11 --config skip_children=true", files = '\.rs$', exclude = '^later/src/other/scripting/examples/config_path\.rs$', language = "system" },
+  { id = "format-rust-code", name = "Format staged Rust files", entry = "rustfmt +nightly-2026-11-16 --config skip_children=true", files = '\.rs$', exclude = '^later/src/other/scripting/examples/config_path\.rs$', language = "system" },
   { id = "ruff-format-python-extension", name = "Ruff format (Python extension)", entry = "just --justfile bk/platform/cats/development_tools_ffi/python_extension/justfile format", language = "system", files = '^bk/platform/cats/development_tools_ffi/python_extension/.*\.py$', types = [
     "python",
   ], pass_filenames = false },

@@ -29,10 +29,10 @@ The native shim embeds the artifact by absolute path and calls the exported func
 From the repository root in PowerShell, rebuild the guest and its standard library for the WebAssembly MVP instruction set. The standard library shipped with current Rust targets newer Wasm features, which Watt 0.5 may reject during decoding.
 
 ```powershell
-rustup toolchain install nightly-2026-11-11 --profile minimal --component rust-src
+rustup toolchain install nightly-2026-11-16 --profile minimal --component rust-src
 $demo = "bk/crates/cats/development_tools_procedural_macro_helpers/watt_round_trip"
 $env:CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_RUSTFLAGS = "-C target-cpu=mvp"
-cargo +nightly-2026-11-11 build -Z build-std=std,panic_abort --locked --release `
+cargo +nightly-2026-11-16 build -Z build-std=std,panic_abort --locked --release `
   --target wasm32-unknown-unknown --target-dir target/watt-demo --manifest-path "$demo/guest/Cargo.toml"
 $env:WATT_DEMO_WASM = (Resolve-Path target/watt-demo/wasm32-unknown-unknown/release/watt_guest.wasm).Path
 cargo test --locked --manifest-path "$demo/Cargo.toml" --target-dir target/watt-demo

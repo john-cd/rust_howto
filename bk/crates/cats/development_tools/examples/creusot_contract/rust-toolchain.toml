@@ -1,4 +1,6 @@
 # TODO Reviewed ??-??-2026.
+# Creusot 0.14.0 requires this exact compiler because the verifier uses rustc internals.
+# https://github.com/creusot-rs/creusot/blob/v0.14.0/rust-toolchain
 [toolchain]
 channel = "nightly-2026-08-03"
 components = ["rustfmt", "rustc-dev", "llvm-tools"]

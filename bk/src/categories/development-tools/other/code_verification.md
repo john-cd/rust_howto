@@ -45,6 +45,8 @@ Consult the [Kani documentation][c~kani~docs]↗ for current host requirements a
 
 [`Creusot`][creusot~repo]↗ is a deductive verifier that checks whether Rust code satisfies stated preconditions and postconditions. It complements tests and Miri, which execute selected inputs, and bounded model checking with Kani, which explores a harness's bounded inputs: Creusot attempts to prove the contract for every input that satisfies its precondition. The result applies only to the stated contract and code that Creusot supports; an incomplete contract does not establish a broader behavior.
 
+The verifier uses Rust compiler internals and requires the exact nightly specified by [Creusot 0.14.0](https://github.com/creusot-rs/creusot/blob/v0.14.0/rust-toolchain). Update the compiler pin alongside a compatible Creusot release.
+
 This independent example pins Creusot 0.14.0, `creusot-std` 0.14.0, and the required Rust toolchain `nightly-2026-08-03`. On a supported Linux or macOS host with Cargo, Opam, `curl`, and the [Creusot build prerequisites][creusot~guide~v0.14.0], initialize Opam and install the tagged release:
 
 ```sh

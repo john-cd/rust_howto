@@ -1,4 +1,6 @@
 # TODO Reviewed ??-??-2026.
+# Rust-GPU 0.11.0 requires this exact compiler because its SPIR-V backend uses rustc internals.
+# https://github.com/Rust-GPU/rust-gpu/blob/v0.11.0/rust-toolchain.toml
 [toolchain]
 channel = "nightly-2026-08-15"
 profile = "minimal"

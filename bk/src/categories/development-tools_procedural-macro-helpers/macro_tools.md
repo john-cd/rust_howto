@@ -18,13 +18,13 @@ When authoring a derive macro, parse the input into a syntax tree before inspect
 
 ```bash
 cargo install cargo-expand
-rustup component add rustfmt --toolchain nightly
+rustup component add rustfmt --toolchain nightly-2026-11-16
 
 # With nightly selected for the project:
 cargo expand --lib path::to::module
 
 # Or select nightly for this command only:
-cargo +nightly expand --lib path::to::module
+cargo +nightly-2026-11-16 expand --lib path::to::module
 ```
 
 Expanded output is for inspection and debugging. Treat it as a view of generated code, not a replacement for the macro's source or a stable API.
